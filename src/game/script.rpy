@@ -29,16 +29,16 @@ screen dialog_choices(responses):
 
 
 init python:
-    renpy.add_python_directory('dlg')
-    from dlg.engine import (
+    renpy.add_python_directory('engine')
+    from engine.dialog import (
         start_dialog,
         get_available_responses,
         choose_response,
         advance_to_state,
         is_state_defined
     )
-    from dlg.dmorte_one import (dmorte_one)
-    from dlg.settings import (current_settings)
+    from engine.dmorte_one import (dmorte_one)
+    from engine.settings import (current_settings)
 
     characters = {
         'teller': teller,

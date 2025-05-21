@@ -6,9 +6,9 @@ def emptyFunction():
     return
 
 """
-  'original_ref' references to NearInfinity id of the line:
-  - 's1' is 'STATE 1'
-  - 'r1' is 'RESPONSE 1'
+'original_ref' references to NearInfinity id of the line:
+- 's1' is 'STATE 1'
+- 'r1' is 'RESPONSE 1'
 """
 class DialogStateBuilder:
     def __init__(self, state_id):
