@@ -2,6 +2,9 @@ dialog_db = {}
 current_dialog_state = None
 last_response = None
 
+def emptyFunction():
+    return
+
 """
   'original_ref' references to NearInfinity id of the line:
   - 's1' is 'STATE 1'
@@ -12,20 +15,25 @@ class DialogStateBuilder:
         self.state_id = state_id
         self.npc_lines = []
         self.responses = {}
-        self.last_saved_response = 0
+        self.next_available_response_id = 0
+
+    def add_active_npc_line(self, npc, line, action, original_ref):
+        """Add an NPC line to the dialog state"""
+        self.npc_lines.append([ npc, line, action ])
+        return self
 
     def add_npc_line(self, npc, line, original_ref):
         """Add an NPC line to the dialog state"""
-        self.npc_lines.append([npc, line])
+        self.npc_lines.append([ npc, line, emptyFunction ])
         return self
 
     def add_response(self, text, next_state, original_ref):
         """Add a player response to the dialog state"""
-        self.last_saved_response = self.last_saved_response + 1
-        self.responses[self.last_saved_response] = {
+        self.responses[self.next_available_response_id] = {
             "text": text,
             "next_state": next_state
         }
+        self.next_available_response_id = self.next_available_response_id + 1
         return self
 
     def done(self):
