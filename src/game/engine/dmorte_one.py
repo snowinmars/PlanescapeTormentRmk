@@ -1,15 +1,13 @@
-# DLG/DMORTE1.DLG
-
 import renpy
-from dlg.engine import (DialogStateBuilder)
-from dlg.settings import (
+from engine.dialog import (DialogStateBuilder)
+from engine.settings import (
     pick_morgue_key,
     kick_morte,
     join_morte,
     change_good,
     change_good_morte
 )
-from dlg.transforms import (
+from engine.transforms import (
     center_left,
     center_right,
     center_left_down,
@@ -27,6 +25,7 @@ def show_morte(sprite, start_pos, end_pos = None, duration=0.5):
 def hide_morte():
     renpy.exports.hide('morte_img')
 
+# DLG/DMORTE1.DLG
 def dmorte_one():
     teller        = renpy.store.characters['teller']
     morte_unknown = renpy.store.characters['morte_unknown']
