@@ -1,0 +1,1 @@
+image bg mourge1 = "bg/mourge1.png"

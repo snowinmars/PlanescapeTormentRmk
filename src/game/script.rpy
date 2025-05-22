@@ -1,23 +1,3 @@
-define teller        = Character('', color='#c8ffc8')
-define morte_unknown = Character('?', color='#c8ffc8')
-define morte         = Character('Морт', color='#c8ffc8')
-define scares        = Character('', color='#c8ffc8')
-
-image morte_img angry     = 'morte_angry.png'
-image morte_img exited    = 'morte_exited.png'
-image morte_img grumpy    = 'morte_grumpy.png'
-image morte_img laughing  = 'morte_laughing.png'
-image morte_img sad       = 'morte_sad.png'
-image morte_img scared1   = 'morte_scared1.png'
-image morte_img scared2   = 'morte_scared2.png'
-image morte_img smiling1  = 'morte_smiling1.png'
-image morte_img smiling2  = 'morte_smiling2.png'
-image morte_img smiling3  = 'morte_smiling3.png'
-image morte_img terrified = 'morte_terrified.png'
-image morte_img tired     = 'morte_tired.png'
-
-
-
 screen dialog_choices(responses):
     vbox:
         style_prefix "choice"
@@ -28,7 +8,7 @@ screen dialog_choices(responses):
 
 
 
-init python:
+init 1 python:
     renpy.add_python_directory('engine')
     from engine.dialog import (
         start_dialog,
@@ -37,7 +17,7 @@ init python:
         advance_to_state,
         is_state_defined
     )
-    from engine.dmorte_one import (dmorte_one)
+    from engine.dlg_dmorte_one import (dlg_dmorte_one)
     from engine.settings import (current_settings)
 
     characters = {
@@ -61,7 +41,7 @@ init python:
         'morte_img tired':     'morte_img tired',
     }
 
-    dmorte_one()
+    dlg_dmorte_one()
 
     def pronounce(npc_lines):
         for line in npc_lines:
@@ -80,34 +60,6 @@ label start:
 
 
 
-label menu_loop:
-    menu:
-        ""
-        "Снова поговорить с черепом" if not current_settings()['in_party_morte']:
-            jump dmorte_one_join
-        "Попробовать открыть одну из дверей" if current_settings()['morgue_key_picked_up']:
-            jump open_morgue_door
-
-
-
-label dmorte_one_join:
-    $ dmorte_one_join_id = 26
-    $ npc_lines = start_dialog(dmorte_one_join_id)
-    python:
-        pronounce(npc_lines)
-    jump dialog_loop
-
-
-
-label dmorte_one_introducing:
-    $ dmorte_one_introducing_id = 0
-    $ npc_lines = start_dialog(dmorte_one_introducing_id)
-    python:
-        pronounce(npc_lines)
-    jump dialog_loop
-
-
-
 label dialog_loop:
     $ responses = get_available_responses()
     call screen dialog_choices(responses)
@@ -120,7 +72,7 @@ label dialog_loop:
             pronounce(npc_lines)
         jump dialog_loop
     else:
-        jump menu_loop
+        jump morgue_menu_loop_1
 
 
 

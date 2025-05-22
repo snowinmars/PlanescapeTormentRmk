@@ -26,7 +26,7 @@ def hide_morte():
     renpy.exports.hide('morte_img')
 
 # DLG/DMORTE1.DLG
-def dmorte_one():
+def dlg_dmorte_one():
     teller        = renpy.store.characters['teller']
     morte_unknown = renpy.store.characters['morte_unknown']
     morte         = renpy.store.characters['morte']
@@ -135,6 +135,8 @@ def dmorte_one():
         .add_npc_line(morte, "Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу", 's15') \
         .add_response("Ну хорошо... Я собью одного из них и заберу ключ.", 99999999_18, 'r18') \
         .done() # was r18 -> s16
+
+    # Removed because these lines is about gameplay mechanics, that the vn does not have
 
     # DialogStateBuilder(16) \
     #     .add_npc_line(morte, "Хорошо, но перед этим неплохо бы вооружиться. Кажется, здесь где-то на полках есть скальпель.", 's16') \
