@@ -3,6 +3,7 @@ def default_settings():
         'key_picked_up_in_morgue': False,
         'in_party_morte': False,
         'ready_to_kill_in_morgue': False,
+        'talk_dummy_in_morgue': False,
         'dummies_killed_in_morgue': 0,
         'good': 0,
         'good_morte': 0,
@@ -34,10 +35,14 @@ def pick_up_key_in_morgue():
     global settings
     settings['key_picked_up_in_morgue'] = True
 
-def ready_to_kill_in_morgue():
+def ready_to_kill_in_morgue(value):
     global settings
-    settings['ready_to_kill_in_morgue'] = True
+    settings['ready_to_kill_in_morgue'] = value
 
 def kill_dummy_in_mougue():
     global settings
     settings['dummies_killed_in_morgue'] = settings['dummies_killed_in_morgue'] + 1
+
+def talk_dummy_in_morgue():
+    global settings
+    settings['talk_dummy_in_morgue'] = True

@@ -71,8 +71,6 @@ label dialog_loop:
         python:
             pronounce(npc_lines)
         jump dialog_loop
-    # else:
-    #     jump morgue_menu_loop_1
 
 
 
