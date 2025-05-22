@@ -1,3 +1,7 @@
+src/game/d_raw/*
+!src/game/d_raw/DMORTE1.D
+!src/game/d_raw/DMORTE2.D
+
 # Created by https://www.toptal.com/developers/gitignore/api/renpy
 # Edit at https://www.toptal.com/developers/gitignore?templates=renpy
 
