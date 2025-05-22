@@ -5,6 +5,13 @@ last_response = None
 def emptyFunction():
     return
 
+allowed_line_endings = tuple([
+    '.',
+    '.',
+    '?',
+    '!',
+])
+
 """
 'original_ref' references to NearInfinity id of the line:
 - 's1' is 'STATE 1'
@@ -17,17 +24,25 @@ class DialogStateBuilder:
         self.responses = {}
         self.next_available_response_id = 0
 
-    def add_active_npc_line(self, npc, line, action, original_ref):
+    def _check_line(self, line):
+        if not line.endswith(allowed_line_endings):
+            raise Exception(f'Line "{line}" ends with unallowed char. Fix it')
+        if len(line) > 150:
+            raise Exception(f'Line "{line}" is too long: {len(line)} > 150')
+
+    def add_active_npc_line(self, npc, line, action, state_id, say_id):
         """Add an NPC line to the dialog state"""
+        self._check_line(line)
         self.npc_lines.append([ npc, line, action ])
         return self
 
-    def add_npc_line(self, npc, line, original_ref):
+    def add_npc_line(self, npc, line, state_id, say_id):
         """Add an NPC line to the dialog state"""
+        self._check_line(line)
         self.npc_lines.append([ npc, line, emptyFunction ])
         return self
 
-    def add_response(self, text, next_state, original_ref):
+    def add_response(self, text, next_state, response_id):
         """Add a player response to the dialog state"""
         self.responses[self.next_available_response_id] = {
             "text": text,
