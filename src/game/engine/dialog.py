@@ -104,13 +104,13 @@ def choose_response(response_id):
     response = dialog_db[current_dialog_state]["responses"][response_id]
     last_response = response_id
 
-    # No NPC lines for this response, advance to next state immediately
     current_dialog_state = response["next_state"]
     return current_dialog_state
 
-
 def advance_to_state(state_id):
     """Directly advance to a specific state (for branching)"""
+    if state_id < 0:
+        raise Exception(f"Dialog state {state_id} should be >= 0")
     global current_dialog_state
     current_dialog_state = state_id
     return get_current_npc_lines()

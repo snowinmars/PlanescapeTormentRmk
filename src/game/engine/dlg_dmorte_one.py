@@ -8,6 +8,7 @@ from engine.settings import (
     pick_up_key_in_morgue,
     ready_to_kill_in_morgue,
     kill_dummy_in_mougue,
+    talk_dummy_in_morgue,
 )
 from engine.transforms import (
     center_left,
@@ -28,13 +29,18 @@ def hide_morte():
     renpy.exports.hide('morte_img')
 
 def ready_to_kill():
-    ready_to_kill_in_morgue()
+    ready_to_kill_in_morgue(True)
 
 def kill_dummy():
     kill_dummy_in_mougue()
 
 def pick_up_key():
     pick_up_key_in_morgue()
+    ready_to_kill_in_morgue(False)
+
+def talk_dummy():
+    talk_dummy_in_morgue()
+    kill_dummy_in_mougue()
 
 # DLG/DMORTE1.DLG
 def dlg_dmorte_one():
@@ -42,7 +48,7 @@ def dlg_dmorte_one():
     morte_unknown = renpy.store.characters['morte_unknown']
     morte         = renpy.store.characters['morte']
     scares        = renpy.store.characters['scares']
-    EXIT = -1
+    EXIT          = -1
 
     # from -
     DialogStateBuilder(0) \
@@ -154,7 +160,7 @@ def dlg_dmorte_one():
         .add_npc_line(morte, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы.", 'state14', 'say39823') \
         .add_npc_line(morte, "Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.", 'state14', 'say39823') \
         .add_response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 15, 'response39824') \
-        .add_response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?", 99999999_18, 'response39825') \
+        .add_response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ? Ладно.", 99999999_18, 'response39825') \
         .done()
 
     # from 14.0
@@ -226,19 +232,17 @@ def dlg_dmorte_one():
         .add_response("Вперед.", EXIT, 'response39846') \
         .done()
 
-    # from 23.0
+    # from -
     DialogStateBuilder(99999999_23) \
         .add_npc_line(teller, "Вы втыкаете скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-        .add_npc_line(teller, "В них нет ни жизни, ни разума. Вы без сожалений вбиваете скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-') \
-        .add_npc_line(teller, "Вы осматриваете его, но ключа не обнаруживаете.", '-', '-') \
-        .add_npc_line(teller, "Зато следующий труп при падении подозрительно звякает.", '-', '-') \
-        .add_response("(Осмотреть)", 24, 'r29') \
+        .add_active_npc_line(teller, "В них нет ни жизни, ни разума. Вы без сожалений вбиваете скальпель между глаз до тех пор, пока ходячий труп не падает.", lambda: kill_dummy(), '-', '-') \
+        .add_response("(...)", EXIT, '-') \
         .done()
 
-    # from 99999999_23.0
+    # from -
     DialogStateBuilder(24) \
         .add_npc_line(morte, "Отлично, похоже, ты позаботился о правильном трупе.", 'state24', 'say0') \
-        .add_npc_line(teller, "Вы поднимаете кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-') \
+        .add_npc_line(teller, "Вы достаёте из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-') \
         .add_active_npc_line(morte, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", lambda: pick_up_key(), 'state25', 'say39849') \
         .add_response("Тогда я перепробую все двери.", EXIT, 'response39850') \
         .done()
@@ -291,11 +295,12 @@ def dlg_dmorte_one():
     # from 32.0
     DialogStateBuilder(33) \
         .add_npc_line(morte, "Слушай шеф... Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали.", 'state33', 'say42302') \
-        .add_npc_line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 'state33', 'say42302') \
+        .add_active_npc_line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", lambda: talk_dummy(), 'state33', 'say42302') \
         .add_response("Хорошо. Идем.", EXIT, 'response42303') \
         .done()
 
     # from -
     DialogStateBuilder(34) \
-        .add_npc_line(morte, "Кажется, просителю повезло, шеф. Смотри... у него в руке ключ».", 'state34', 'say42306') \
+        .add_active_npc_line(morte, "Кажется, просителю повезло, шеф. Смотри... у него в руке ключ».", lambda: pick_up_key(), 'state34', 'say42306') \
+        .add_response("Хорошо. Идем.", EXIT, 'response42303') \
         .done()
