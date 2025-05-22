@@ -1,0 +1,13 @@
+# manually sync with script.rpy 'character_reactions' variable
+image morte_img angry     = 'morte_angry.png'
+image morte_img exited    = 'morte_exited.png'
+image morte_img grumpy    = 'morte_grumpy.png'
+image morte_img laughing  = 'morte_laughing.png'
+image morte_img sad       = 'morte_sad.png'
+image morte_img scared1   = 'morte_scared1.png'
+image morte_img scared2   = 'morte_scared2.png'
+image morte_img smiling1  = 'morte_smiling1.png'
+image morte_img smiling2  = 'morte_smiling2.png'
+image morte_img smiling3  = 'morte_smiling3.png'
+image morte_img terrified = 'morte_terrified.png'
+image morte_img tired     = 'morte_tired.png'
