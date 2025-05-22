@@ -9,10 +9,11 @@ export type Answer = Readonly<{
     targetStateId: number | 'EXIT';
 }>
 
-export type State = Readonly<{
+// TODO [snow]: add Readonly
+export type State = {
     stateId: number;
     paths: Path[];
     sayId: number;
     stateBody: string;
     answers: Answer[];
-}>
+}

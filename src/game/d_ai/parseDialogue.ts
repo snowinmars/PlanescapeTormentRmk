@@ -37,11 +37,8 @@ export const parseDialogue = (inputText: string): State[] => {
         if (currentState) {
             const sayMatch = line.match(/SAY #(\d+)\s*\/\*\s*(.*?)\s*\*\//);
             if (sayMatch) {
-                currentState = {
-                    ...currentState,
-                    sayId: parseInt(sayMatch[1], 10),
-                    stateBody: sayMatch[2],
-                }
+                currentState.sayId = parseInt(sayMatch[1], 10);
+                currentState.stateBody = sayMatch[2];
                 i++;
                 continue;
             }

@@ -1,6 +1,7 @@
 {
   "name": "d_ai",
   "version": "1.0.0",
+  "type": "module",
   "description": "Use https://github.com/Argent77/NearInfinity to parse .dlg to .d, use d_ai to parse .d to .json to renpy builder",
   "main": "index.ts",
   "author": "snowinmars",
