@@ -7,13 +7,17 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
 
     for (const state of states) {
         try {
-            const f = `# from ${state.paths.length > 0 ? state.paths.map(x => `${x.fromStateId}.${x.responseIndex}`).join(' ') : '-'}`;
+            let builder = '';
 
-            let builder = `${f}\nDialogStateBuilder('${statePrefix}${state.stateId}') \\\n    .with_npc_lines() \\\n`;
+            if (state.free) {
+                builder += `######\n# ${state.free}\n######\n`
+            }
 
+            const fromPath = `# from ${state.paths.length > 0 ? state.paths.map(x => `${x.fromStateId}.${x.responseIndex}`).join(' ') : '-'}`;
+            builder += `${fromPath}\nDialogStateBuilder('${statePrefix}${state.stateId}') \\\n    .with_npc_lines() \\\n`;
             builder += `        .line(SPEAKER, "${trimTrahs(state.stateBody)}", 's${state.stateId}', 'say${state.sayId}') \\\n`;
-
             builder += '    .with_responses() \\\n'
+
             for (const answer of state.answers) {
                 const targetId = answer.targetStateId === -1 ? 'EXIT' : `'${statePrefix}${answer.targetStateId}'`;
                 builder += `        .response("${trimTrahs(answer.answerBody)}", ${targetId}, 'r', 'reply${answer.answerId}')`;

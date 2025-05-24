@@ -20,4 +20,5 @@ export type State = {
     sayId: number;
     stateBody: string;
     answers: Answer[];
+    free: string | null | undefined;
 }

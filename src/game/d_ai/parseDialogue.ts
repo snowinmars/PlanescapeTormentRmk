@@ -30,7 +30,8 @@ export const parseDialogue = (inputText: string): State[] => {
                 paths,
                 sayId: 0,
                 stateBody: '',
-                answers: []
+                answers: [],
+                free: undefined
             };
             states.push(currentState);
             i++;
@@ -46,7 +47,14 @@ export const parseDialogue = (inputText: string): State[] => {
                 continue;
             }
 
-            const answerMatch = line.match(/IF\s+~(.*?)~?\s*THEN REPLY #(\d+)\s*\/\*\s*(.*?)\s*\*\/(.*?)(?:JOURNAL #(\d+) \/\*(.*)\*\/)?(?:(?:GOTO (\d+))|EXIT)/);
+            const externMatch = line.match(/EXTERN (.*) (\d+)/)
+            if (externMatch) {
+                const targetFile = externMatch[1];
+                const targetLine = externMatch[2];
+                currentState.free = `Check EXTENDS ${targetFile} : ${targetLine}`;
+            }
+
+            const answerMatch = line.match(/IF\s+~(.*?)~?\s*THEN REPLY #(\d+)\s*\/\*\s*(.*?)\s*\*\/(.*?)(?:JOURNAL #(\d+) \/\*(.*)\*\/)?(?:(?:GOTO (\d+))|EXIT|EXTERN.*)/);
             if (answerMatch) {
                 const condition = bets(answerMatch[1]);
                 const answerId = parseInt(answerMatch[2], 10);

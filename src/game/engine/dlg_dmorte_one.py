@@ -2,7 +2,7 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from engine.settings_global import (
     current_global_settings,
-    set_morte_in_party,
+    set_in_party_morte,
     change_good,
     change_good_morte,
     travel
@@ -37,10 +37,10 @@ def _hide_morte():
     renpy.exports.hide('morte_img')
 
 def _kick_morte():
-    set_morte_in_party(False)
+    set_in_party_morte(False)
 
 def _join_morte():
-    set_morte_in_party(True)
+    set_in_party_morte(True)
 
 def _ready_to_kill():
     ready_to_kill(True)
@@ -57,6 +57,7 @@ def _talk_dummy():
     kill_dummy()
 
 # DLG/DMORTE1.DLG
+# DLG/DZM782.DLG
 def dlg_dmorte_one():
     teller        = renpy.store.characters['teller']
     morte_unknown = renpy.store.characters['morte_unknown']
@@ -363,10 +364,10 @@ def dlg_dmorte_one():
             .response("Хорошо. Идем.", EXIT, 'r?', 'reply42303') \
         .done()
 
-    # from -
-    DialogStateBuilder('DMORTE1.D_s34') \
+    DialogStateBuilder('DMORTE1.D_s99999999_33') \
         .with_npc_lines() \
-            .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306').with_action(lambda: _pick_up_key()) \
+            .line(teller, "Я вижу ключ - он висит на шее у одного из трупов. Задержав дыхание, я протягиваю руку и срываю ключ резким движением.", '-', '-').with_action(lambda: _pick_up_key()) \
+            .line(teller, "Труп слегка поворачивается на меня, но через несколько секунд возвращается к своему бесконечному занятию.", '-', '-').with_action(lambda: _pick_up_key()) \
         .with_responses() \
-            .response("Хорошо. Идем.", EXIT, 'r?', 'reply42303') \
+            .response("(...)", EXIT, '-', '-') \
         .done()

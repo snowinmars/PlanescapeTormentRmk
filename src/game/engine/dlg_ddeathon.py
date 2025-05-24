@@ -2,7 +2,7 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from engine.settings_global import (
     current_global_settings,
-    set_morte_in_party,
+    set_in_party_morte,
     change_good,
     change_good_morte,
     travel,
@@ -32,7 +32,7 @@ from engine.transforms import (
 )
 
 def _init():
-    travel('morgue2')
+    travel('death_names')
 
 def _r4_action():
     meet_death_of_names()
@@ -85,16 +85,14 @@ def _r40_condition():
 
 def dlg_ddeathon():
     teller        = renpy.store.characters['teller']
-    morte_unknown = renpy.store.characters['morte_unknown']
     morte         = renpy.store.characters['morte']
-    scares        = renpy.store.characters['scares']
     death_names   = renpy.store.characters['death_names']
     EXIT          = -1
 
     # from -
     DialogStateBuilder('DDEATHON.D_s0') \
         .with_npc_lines() \
-            .line(teller, "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны.", 's0', 'say7288') \
+            .line(teller, "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны.", 's0', 'say7288').with_action(lambda: _init()) \
             .line(teller, "Правая рука короче левой, и он покачивает ее на перевязи, будто убаюкивая малое дитя.", 's0', 'say7288') \
         .with_responses() \
             .response("Приветствую.", 'DDEATHON.D_s1', 'r0', 'reply7289') \

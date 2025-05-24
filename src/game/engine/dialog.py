@@ -30,8 +30,8 @@ class DialogStateBuilder:
     def _check_line(self, line):
         if not line.endswith(allowed_line_endings):
             raise Exception(f'Line "{line}" ends with unallowed char. Fix it')
-        if len(line) > 150:
-            raise Exception(f'Line "{line}" is too long: {len(line)} > 150')
+        if len(line) > 200:
+            raise Exception(f'Line "{line}" is too long: {len(line)} > 200')
 
     def with_npc_lines(self):
         """Returns an NpcLinesBuilder subbuilder"""
