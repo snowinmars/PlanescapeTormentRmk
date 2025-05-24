@@ -9,6 +9,7 @@ import {promises as fs} from 'fs';
 const goFiles = [
     'DMORTE1.D',
     'DMORTE2.D',
+    'DDEATHON.D',
 ];
 
 const go = async (fromFile: string, cleanFile: string, toFile: string, statePrefix: string): Promise<void> => {

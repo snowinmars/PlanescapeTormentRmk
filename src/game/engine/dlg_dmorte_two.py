@@ -46,7 +46,7 @@ def _set_morte_mortuary_walkthrough(value):
 
 def _unblock_journal():
     unblock_journal()
-    update_journal('strref39516')
+    update_journal('39516')
 
 def _check_char_prop(who, gtValue, prop):
     return True
