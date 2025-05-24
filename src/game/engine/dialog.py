@@ -23,6 +23,8 @@ class DialogStateBuilder:
         self.npc_lines = []
         self.responses = {}
         self.next_available_response_id = 0
+        self._current_line = None
+        self._current_response = None
 
     def _check_line(self, line):
         if not line.endswith(allowed_line_endings):
@@ -30,31 +32,90 @@ class DialogStateBuilder:
         if len(line) > 150:
             raise Exception(f'Line "{line}" is too long: {len(line)} > 150')
 
-    def add_active_npc_line(self, npc, line, action, state_id, say_id):
-        """Add an NPC line to the dialog state"""
-        self._check_line(line)
-        self.npc_lines.append([ npc, line, action ])
-        return self
+    def with_npc_lines(self):
+        """Returns an NpcLinesBuilder subbuilder"""
+        return DialogStateBuilder.NpcLinesBuilder(self)
 
-    def add_npc_line(self, npc, line, state_id, say_id):
-        """Add an NPC line to the dialog state"""
-        self._check_line(line)
-        self.npc_lines.append([ npc, line, emptyFunction ])
-        return self
+    class NpcLinesBuilder:
+        def __init__(self, parent_builder):
+            self.parent = parent_builder
+            self.last_line = {}
+            self.lines = []
 
-    def add_response(self, text, next_state, response_id):
-        """Add a player response to the dialog state"""
-        self.responses[self.next_available_response_id] = {
-            "text": text,
-            "next_state": next_state
-        }
-        self.next_available_response_id = self.next_available_response_id + 1
-        return self
+        def line(self, npc, text, state_id, say_id):
+            """Start building an NPC line"""
+            self.parent._check_line(text)
 
-    def done(self):
-        """Finalize the dialog state and add it to the dialog database"""
-        add_dialog_state(self.state_id, self.npc_lines, self.responses)
-        return
+            if 'text' in self.last_line:
+                self.lines.append(self.last_line)
+
+            self.last_line = {}
+            self.last_line['npc'] = npc
+            self.last_line['text'] = text
+            return self
+
+        def with_action(self, action):
+            """Add action to the current NPC line"""
+            self.last_line['action'] = action
+            return self
+
+        def with_responses(self):
+            """Add NPC line with no action"""
+            if 'text' in self.last_line:
+                self.lines.append(self.last_line)
+
+            for l in self.lines:
+                self.parent.npc_lines.append([
+                    l['npc'],
+                    l['text'],
+                    l['action'] if 'action' in l else emptyFunction
+                ])
+            return DialogStateBuilder.ResponsesBuilder(self)
+
+
+    class ResponsesBuilder:
+        def __init__(self, parent_builder):
+            self.parent = parent_builder
+            self.last_response = {}
+            self.responses = []
+
+        def response(self, text, next_state, response_id, reply_id):
+            """Start building a response"""
+            if 'text' in self.last_response:
+                self.responses.append(self.last_response)
+
+            self.last_response = {}
+            self.last_response['text'] = text
+            self.last_response['next_state'] = next_state
+            return self
+
+        def with_condition(self, condition):
+            """Add condition to the current response"""
+            self.last_response['condition'] = condition,
+            return self
+
+        def with_action(self, action):
+            """Add action to the current response"""
+            self.last_response['action'] = action,
+            return self
+
+        def done(self):
+            """Add response with no precheck"""
+            if self.last_response['text'] is not None:
+                self.responses.append(self.last_response)
+
+            for r in self.responses:
+                self.parent.parent.responses[self.parent.parent.next_available_response_id] = {
+                    "text": r['text'],
+                    "next_state": r['next_state'],
+                    "action": r['action'] if 'action' in r else None,
+                    "condition": r['condition'] if 'condition' in r else None,
+                }
+
+                self.parent.parent.next_available_response_id += 1
+
+            add_dialog_state(self.parent.parent.state_id, self.parent.parent.npc_lines, self.parent.parent.responses)
+            return self
 
 def add_dialog_state(state_id, npc_lines, responses):
     """
@@ -109,8 +170,6 @@ def choose_response(response_id):
 
 def advance_to_state(state_id):
     """Directly advance to a specific state (for branching)"""
-    if state_id < 0:
-        raise Exception(f"Dialog state {state_id} should be >= 0")
     global current_dialog_state
     current_dialog_state = state_id
     return get_current_npc_lines()

@@ -18,7 +18,7 @@ init 1 python:
         is_state_defined
     )
     from engine.dlg_dmorte_one import (dlg_dmorte_one)
-    from engine.settings import (current_settings)
+    # from engine.dlg_dmorte_two import (dlg_dmorte_two)
 
     characters = {
         'teller': teller,
@@ -42,6 +42,7 @@ init 1 python:
     }
 
     dlg_dmorte_one()
+    # dlg_dmorte_two()
 
     def pronounce(npc_lines):
         for line in npc_lines:
