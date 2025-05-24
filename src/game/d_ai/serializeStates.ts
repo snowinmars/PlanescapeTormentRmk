@@ -15,12 +15,12 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
 
             builder += '    .with_responses() \\\n'
             for (const answer of state.answers) {
-                const targetId = answer.targetStateId === 'EXIT' ? 'EXIT' : `${statePrefix}${answer.targetStateId}`;
-                builder += `        .response("${trimTrahs(answer.answerBody)}", '${targetId}', 'r', 'reply${answer.answerId}')`;
-                if (answer.condition.length !== 0) {
+                const targetId = answer.targetStateId === -1 ? 'EXIT' : `'${statePrefix}${answer.targetStateId}'`;
+                builder += `        .response("${trimTrahs(answer.answerBody)}", ${targetId}, 'r', 'reply${answer.answerId}')`;
+                if (answer.condition?.length !== 0) {
                     builder += `.with_condition(lambda: '${answer.condition}')`
                 }
-                if (answer.action.length !== 0) {
+                if (answer.action?.length !== 0) {
                     builder += `.with_action(lambda: '${answer.action}')`
                 }
                 builder += ' \\\n'

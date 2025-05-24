@@ -26,12 +26,14 @@ init 1 python:
     )
     from engine.dlg_dmorte_one import (dlg_dmorte_one)
     from engine.dlg_dmorte_two import (dlg_dmorte_two)
+    from engine.dlg_ddeathon   import (dlg_ddeathon)
 
     characters = {
         'teller': teller,
         'morte_unknown': morte_unknown,
         'morte': morte,
         'scares': scares,
+        'death_names': death_names
     }
     character_reactions = {
         'morte_img angry':     'morte_img angry',
@@ -50,6 +52,7 @@ init 1 python:
 
     dlg_dmorte_one()
     dlg_dmorte_two()
+    dlg_ddeathon()
 
     def pronounce(npc_lines):
         for line in npc_lines:

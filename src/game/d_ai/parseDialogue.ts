@@ -54,7 +54,8 @@ export const parseDialogue = (inputText: string): State[] => {
                 const action = bets(answerMatch[4]);
                 const journalId = parseInt(answerMatch[5]);
                 const journalBody = bets(answerMatch[6]);
-                const targetStateId = parseInt(answerMatch[7], 10);
+                const _targetStateId = parseInt(answerMatch[7], 10)
+                const targetStateId = isNaN(_targetStateId) ? -1 : _targetStateId
 
                 if (targetStateId !== null) {
                     const answer: Answer = {

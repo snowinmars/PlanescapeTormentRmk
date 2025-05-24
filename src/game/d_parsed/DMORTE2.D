@@ -102,7 +102,7 @@ DialogStateBuilder('DMORTE2.D_s11') \
     .with_npc_lines() \
         .line(SPEAKER, "Записывай в него каждый свой шаг. Если начнешь забывать важные вещи… например, кто ты… или, что еще важнее, кто *я*… то воспользуйся им, чтобы освежить свою память.", 's11', 'say41176') \
     .with_responses() \
-        .response("Ладно… Уяснил. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41177').with_action(lambda: ' JOURNAL #39516 /* ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ */ ') \
+        .response("Ладно… Уяснил. Идем.", EXIT, 'r', 'reply41177').with_action(lambda: ' JOURNAL #39516 /* ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ */ ') \
     .done()
 
 # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0
@@ -118,7 +118,7 @@ DialogStateBuilder('DMORTE2.D_s12') \
         .response("До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?", 'DMORTE2.D_s23', 'r', 'reply41184').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
         .response("Как мне использовать эти бинты?", 'DMORTE2.D_s21', 'r', 'reply41185').with_condition(lambda: '  PartyHasItem("Bandage") ') \
         .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", 'DMORTE2.D_s8', 'r', 'reply41186').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", 'DMORTE2.D_sNaN', 'r', 'reply41187').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r', 'reply41187').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 12.0
@@ -129,7 +129,7 @@ DialogStateBuilder('DMORTE2.D_s13') \
         .response("Мне просто нужно освежить свою память, вот и все.", 'DMORTE2.D_s14', 'r', 'reply41189') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r', 'reply41190') \
         .response("Ладно, забудь. Идем.", 'DMORTE2.D_s8', 'r', 'reply41191').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно, забудь. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41192').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно, забудь. Идем.", EXIT, 'r', 'reply41192').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 13.0
@@ -140,7 +140,7 @@ DialogStateBuilder('DMORTE2.D_s14') \
         .response("Фарод… хм-м. Продолжай.", 'DMORTE2.D_s15', 'r', 'reply41194') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r', 'reply41195') \
         .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_s8', 'r', 'reply41196').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41197').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply41197').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 14.0
@@ -151,7 +151,7 @@ DialogStateBuilder('DMORTE2.D_s15') \
         .response("Когда я очнулся, рядом со мной не было дневника?", 'DMORTE2.D_s16', 'r', 'reply41199') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r', 'reply41200') \
         .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_s8', 'r', 'reply41201').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41203').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply41203').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 15.0
@@ -162,7 +162,7 @@ DialogStateBuilder('DMORTE2.D_s16') \
         .response("Ты уверен, что не знаешь никого по имени Фарод?", 'DMORTE2.D_s17', 'r', 'reply41204') \
         .response("И то правда. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r', 'reply41205') \
         .response("Ладно. Идем.", 'DMORTE2.D_s8', 'r', 'reply41206').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41207').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply41207').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 16.0
@@ -172,7 +172,7 @@ DialogStateBuilder('DMORTE2.D_s17') \
     .with_responses() \
         .response("Перед тем как мы пойдем, у меня есть еще вопросы…", 'DMORTE2.D_s12', 'r', 'reply41209') \
         .response("Ладно. Идем.", 'DMORTE2.D_s8', 'r', 'reply41210').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41211').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply41211').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 12.1
@@ -182,7 +182,7 @@ DialogStateBuilder('DMORTE2.D_s18') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r', 'reply41213') \
         .response("Это все, что я хотел узнать. Спасибо.", 'DMORTE2.D_s8', 'r', 'reply41214').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Это все, что я хотел узнать. Спасибо.", 'DMORTE2.D_sNaN', 'r', 'reply41215').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Это все, что я хотел узнать. Спасибо.", EXIT, 'r', 'reply41215').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 12.2 12.3
@@ -193,7 +193,7 @@ DialogStateBuilder('DMORTE2.D_s19') \
         .response("Я запутался… какое тленным дело, если я сбегу?", 'DMORTE2.D_s20', 'r', 'reply41217') \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r', 'reply41218') \
         .response("Понятно. Тогда я буду осторожен.", 'DMORTE2.D_s8', 'r', 'reply41219').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Понятно. Тогда я буду осторожен.", 'DMORTE2.D_sNaN', 'r', 'reply41220').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Понятно. Тогда я буду осторожен.", EXIT, 'r', 'reply41220').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 19.0
@@ -203,7 +203,7 @@ DialogStateBuilder('DMORTE2.D_s20') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r', 'reply41222') \
         .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r', 'reply41223').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_sNaN', 'r', 'reply41224').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41224').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 12.6
@@ -213,7 +213,7 @@ DialogStateBuilder('DMORTE2.D_s21') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r', 'reply41226') \
         .response("Спасибо. Думаю, я смогу с ними справиться.", 'DMORTE2.D_s8', 'r', 'reply41227').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Спасибо. Думаю, я смогу с ними справиться.", 'DMORTE2.D_sNaN', 'r', 'reply41228').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Спасибо. Думаю, я смогу с ними справиться.", EXIT, 'r', 'reply41228').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 12.4
@@ -223,7 +223,7 @@ DialogStateBuilder('DMORTE2.D_s22') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r', 'reply41230') \
         .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r', 'reply41231').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_sNaN', 'r', 'reply41232').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41232').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
     .done()
 
 # from 12.5
@@ -233,7 +233,7 @@ DialogStateBuilder('DMORTE2.D_s23') \
     .with_responses() \
         .response("Последняя возможность? Погоди… о *чем* это ты толкуешь?", 'DMORTE2.D_s24', 'r', 'reply41234') \
         .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE2.D_s12', 'r', 'reply41235') \
-        .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_sNaN', 'r', 'reply41236') \
+        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41236') \
     .done()
 
 # from 23.0
@@ -244,7 +244,7 @@ DialogStateBuilder('DMORTE2.D_s24') \
         .response("Нет… не очень, если честно.", 'DMORTE2.D_s25', 'r', 'reply41238') \
         .response("Ты это *несерьезно*.", 'DMORTE2.D_s25', 'r', 'reply41239').with_condition(lambda: '  CheckStatGT(Protagonist,12,INT) ') \
         .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE2.D_s12', 'r', 'reply41240') \
-        .response("Я достаточно наслушался. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41241') \
+        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41241') \
     .done()
 
 # from 24.0 24.1
@@ -254,7 +254,7 @@ DialogStateBuilder('DMORTE2.D_s25') \
     .with_responses() \
         .response("Постой… разве ты не говорил до этого, что я *не мертвый*?", 'DMORTE2.D_s26', 'r', 'reply41243') \
         .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE2.D_s12', 'r', 'reply41244') \
-        .response("Я достаточно наслушался. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41245') \
+        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41245') \
     .done()
 
 # from 25.0
@@ -263,7 +263,7 @@ DialogStateBuilder('DMORTE2.D_s26') \
         .line(SPEAKER, "Ну… хорошо, *ты*, может быть, и не мертвый, а вот *я* — да. И как я уже говорил, я не против разделить гроб с какой-нибудь из здешних красивеньких жилистых покойниц. Морт начинает в предвкушении щелкать зубами. Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится…", 's26', 'say41246') \
     .with_responses() \
         .response("У меня есть другие вопросы к тебе, Морт…", 'DMORTE2.D_s12', 'r', 'reply41247') \
-        .response("Я достаточно наслушался. Идем.", 'DMORTE2.D_sNaN', 'r', 'reply41248') \
+        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41248') \
     .done()
 
 # from -
@@ -271,7 +271,7 @@ DialogStateBuilder('DMORTE2.D_s27') \
     .with_npc_lines() \
         .line(SPEAKER, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?", 's27', 'say41250') \
     .with_responses() \
-        .response("Да… идем.", 'DMORTE2.D_sNaN', 'r', 'reply41251').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Да… идем.", EXIT, 'r', 'reply41251').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
         .response("Не сейчас, Морт.", 'DMORTE2.D_s28', 'r', 'reply41252') \
     .done()
 
@@ -281,7 +281,7 @@ DialogStateBuilder('DMORTE2.D_s28') \
         .line(SPEAKER, "Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 's28', 'say41253') \
     .with_responses() \
         .response("Морт, у тебя НЕТ ни того, ни другого.", 'DMORTE2.D_s29', 'r', 'reply41254') \
-        .response("Ладно. Я передумал. Давай, идем.", 'DMORTE2.D_sNaN', 'r', 'reply41255').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply41255').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
         .response("Не сейчас, Морт. Может быть, потом.", 'DMORTE2.D_s29', 'r', 'reply41256') \
     .done()
 
@@ -290,7 +290,7 @@ DialogStateBuilder('DMORTE2.D_s29') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?", 's29', 'say41257') \
     .with_responses() \
-        .response("Ладно. Я передумал. Давай, идем.", 'DMORTE2.D_sNaN', 'r', 'reply41258').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply41258').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
         .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE2.D_s30', 'r', 'reply41259') \
     .done()
 
@@ -299,7 +299,7 @@ DialogStateBuilder('DMORTE2.D_s30') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.", 's30', 'say41260') \
     .with_responses() \
-        .response("Я так и сделаю. Прощай, Морт.", 'DMORTE2.D_sNaN', 'r', 'reply41261') \
+        .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r', 'reply41261') \
     .done()
 
 # from -
@@ -323,5 +323,5 @@ DialogStateBuilder('DMORTE2.D_s33') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… ну… *Возможно*. Чтобы определить это, нужно потрясти черепушкой вон с тем парящим трухлявиком. Вот только я не уверен, что это хорошая идея.", 's33', 'say41266') \
     .with_responses() \
-        .response("Мне нужны ответы. Я поговорю с ним.", 'DMORTE2.D_sNaN', 'r', 'reply41267') \
+        .response("Мне нужны ответы. Я поговорю с ним.", EXIT, 'r', 'reply41267') \
     .done()
