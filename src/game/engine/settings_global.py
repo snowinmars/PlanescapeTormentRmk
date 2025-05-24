@@ -1,11 +1,12 @@
-from engine.journal_notes import {journal_notes}
+from engine.journal_notes import (journal_notes)
 
 def default_global_settings():
     return {
         'morte_in_party': False,
         'jorunal_allowed': False,
         'good': 0,
-        'good_morte': 0
+        'good_morte': 0,
+        'location': None
     }
 
 global_settings = default_global_settings()
@@ -33,3 +34,7 @@ def unblock_journal():
 def update_journal(note_id):
     global global_settings
     global_settings['journal_notes'] = journal_notes[note_id]
+
+def travel(value):
+    global global_settings
+    global_settings['location'] = value

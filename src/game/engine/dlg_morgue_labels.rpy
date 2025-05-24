@@ -19,7 +19,11 @@ label morgue_menu_loop_1:
         from engine.settings_global import (current_global_settings)
         from engine.settings_morgue import (current_morgue_settings)
         def m0():
-            return current_global_settings()['morte_in_party']
+            return current_global_settings()['morte_in_party'] \
+            and current_global_settings()['location'] == 'morgue1'
+        def m00():
+            return current_global_settings()['morte_in_party'] \
+            and current_global_settings()['location'] == 'morgue2'
         def m1():
             return not current_global_settings()['morte_in_party']
         def m2():
@@ -38,10 +42,14 @@ label morgue_menu_loop_1:
             and current_morgue_settings()['dummies_killed'] < 3
         def m6():
             return current_morgue_settings()['key_picked_up']
+        def m7():
+            return current_morgue_settings()['saw_dhall']
 
     menu:
         ""
         "Поговорить с Мортом" if m0():
+            jump dmorte_one_talk_morte
+        "Поговорить с Мортом" if m00():
             jump dmorte_one_talk_morte
         "Пригласить Морта в группу" if m1():
             jump dmorte_one_join
@@ -54,8 +62,18 @@ label morgue_menu_loop_1:
         "Поговорить с ходячим трупом" if m5():
             jump dmorte_one_talk_and_loot_dummies
         "Попробовать открыть одну из дверей" if m6():
-            jump open_morgue_door
+            jump dmorte_one_open_morgue_door
+        "Подойти к существу около большой книги" if m7():
+            jump dmorte_two_talk_dhall
 
+
+label dev:
+    scene bg mourge1
+    $ dev_id = 'DMORTE1.D_s34'
+    $ npc_lines = start_dialog(dev_id)
+    python:
+        pronounce(npc_lines)
+    jump morgue_dialog_loop
 
 
 label dmorte_one_introducing:
@@ -111,6 +129,32 @@ label dmorte_one_talk_morte:
     scene bg mourge1
     $ dmorte_one_introducing_id = 'DMORTE1.D_s30'
     $ npc_lines = start_dialog(dmorte_one_introducing_id)
+    python:
+        pronounce(npc_lines)
+    jump morgue_dialog_loop
+
+
+label dmorte_two_talk_morte:
+    scene bg mourge1
+    $ dmorte_two_talk_morte_id = 'DMORTE2.D_s12'
+    $ npc_lines = start_dialog(dmorte_two_talk_morte_id)
+    python:
+        pronounce(npc_lines)
+    jump morgue_dialog_loop
+
+
+label dmorte_one_open_morgue_door:
+    scene bg mourge2
+    $ dmorte_one_open_morgue_door_id = 'DMORTE2.D_s0'
+    $ npc_lines = start_dialog(dmorte_one_open_morgue_door_id)
+    python:
+        pronounce(npc_lines)
+    jump morgue_dialog_loop
+
+
+label dmorte_two_talk_dhall:
+    $ dmorte_one_open_morgue_door_id = 'DMORTE2.D_s0'
+    $ npc_lines = start_dialog(dmorte_one_open_morgue_door_id)
     python:
         pronounce(npc_lines)
     jump morgue_dialog_loop

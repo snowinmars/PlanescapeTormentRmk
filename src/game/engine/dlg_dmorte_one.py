@@ -5,14 +5,14 @@ from engine.settings_global import (
     set_morte_in_party,
     change_good,
     change_good_morte,
+    travel
 )
 from engine.settings_morgue import (
     current_morgue_settings,
     pick_up_key,
     ready_to_kill,
     kill_dummy,
-    talk_dummy,
-    mortuary_walkthrough,
+    talk_dummy
 )
 from engine.transforms import (
     center_left,
@@ -52,9 +52,6 @@ def _talk_dummy():
     talk_dummy()
     kill_dummy()
 
-def _set_mortuary_walkthrough():
-    mortuary_walkthrough(True)
-
 # DLG/DMORTE1.DLG
 def dlg_dmorte_one():
     teller        = renpy.store.characters['teller']
@@ -63,6 +60,8 @@ def dlg_dmorte_one():
     scares        = renpy.store.characters['scares']
     EXIT          = -1
 
+    travel('morgue1')
+
     # from -
     DialogStateBuilder('DMORTE1.D_s0') \
         .with_npc_lines() \
@@ -70,12 +69,12 @@ def dlg_dmorte_one():
             .line(morte_unknown, "Изображаешь из себя труп или пытаешься обмануть трухлявых?", 's0', 'say39792').with_action(lambda: _join_morte()) \
             .line(morte_unknown, "Я уж думал, что ты дал дуба.", 's0', 'say39792').with_action(lambda: _show_morte('morte_img smiling3',  center_left_down)) \
         .with_responses() \
-            .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r0', 'reply39793') \
+            .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r0', 'reply39793').with_action(lambda: _join_morte()) \
         .done()
 
     # from 0.0
     DialogStateBuilder('DMORTE1.D_s1') \
-        .with_npc_lines()\
+        .with_npc_lines() \
             .line(morte_unknown, "Э... кто я? А как насчет *тебя* для начала? Кто ты?", 's1', 'say39795') \
         .with_responses() \
             .response("Я... не знаю. Не могу вспомнить.", 'DMORTE1.D_s2', 'r1', 'reply39796') \
@@ -84,7 +83,7 @@ def dlg_dmorte_one():
 
     # from 1.0 3.0 4.0
     DialogStateBuilder('DMORTE1.D_s2') \
-        .with_npc_lines()\
+        .with_npc_lines() \
             .line(morte_unknown, "Ты не можешь вспомнить свое *имя*? Хе.", 's2', 'say39798') \
             .line(morte, "Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт.", 's2', 'say39798') \
         .with_responses() \
@@ -94,7 +93,7 @@ def dlg_dmorte_one():
     # from 1.1
     DialogStateBuilder('DMORTE1.D_s3') \
         .with_npc_lines() \
-            .line(morte, "Ага, а я спросил тебя *вторым*. Как твое имя?", 's3', 'say39800') \
+            .line(morte_unknown, "Ага, а я спросил тебя *вторым*. Как твое имя?", 's3', 'say39800') \
         .with_responses() \
             .response("Я... не знаю. Не могу вспомнить.", 'DMORTE1.D_s2', 'r4', 'reply39801') \
             .response("Ты первый, череп. В последний раз спрашиваю.", 'DMORTE1.D_s4', 'r5', 'reply39802') \
@@ -103,7 +102,7 @@ def dlg_dmorte_one():
     # from 3.1
     DialogStateBuilder('DMORTE1.D_s4') \
         .with_npc_lines() \
-        .line(morte, "Пф-ф... да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?", 's4', 'say39803') \
+            .line(morte_unknown, "Пф-ф... да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?", 's4', 'say39803') \
         .with_responses() \
             .response("Я... не знаю. Не могу вспомнить.", 'DMORTE1.D_s2', 'r6', 'reply39804') \
         .done()
@@ -256,7 +255,7 @@ def dlg_dmorte_one():
     # from 21.0
     DialogStateBuilder('DMORTE1.D_s22') \
         .with_npc_lines() \
-            .line(morte, "Э... без проблем. Я помогу тебе.", 's22', 'say0') \
+            .line(morte, "Э... без проблем. Я помогу тебе.", 's22', 'say39843') \
         .with_responses() \
             .response("Я рад, что мы поняли друг друга.", 'DMORTE1.D_s23', 'r28', 'reply39844') \
         .done()
@@ -264,7 +263,7 @@ def dlg_dmorte_one():
     # from 19.1 20.1 21.1 22.0
     DialogStateBuilder('DMORTE1.D_s23') \
         .with_npc_lines() \
-            .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью...", 's23', 'say0').with_action(lambda: _ready_to_kill()) \
+            .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью...", 's23', 'say39845').with_action(lambda: _ready_to_kill()) \
         .with_responses() \
             .response("Вперед.", EXIT, 'r29', 'reply39846') \
         .done()
@@ -293,8 +292,8 @@ def dlg_dmorte_one():
         .with_npc_lines() \
             .line(morte, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?", 's26', 'say39851') \
         .with_responses() \
-            .response("Да... идем.", 'DMORTE1.D_s27', 'r32', 'reply39852').with_action(lambda: _join_morte()) \
-            .response("Не сейчас, Морт.", 'DMORTE1.D_s27', 'r33', 'reply?') \
+            .response("Да... идем.", 'DMORTE1.D_sNaN', 'r32', 'reply39852').with_action(lambda: _join_morte()) \
+            .response("Не сейчас, Морт.", 'DMORTE1.D_s27', 'r33', 'reply39853') \
         .done()
 
     # from 26.1
@@ -305,7 +304,7 @@ def dlg_dmorte_one():
         .with_responses() \
             .response("Морт, у тебя НЕТ ни того, ни другого.", 'DMORTE1.D_s28', 'r34', 'reply39855') \
             .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r35', 'reply39856').with_action(lambda: _join_morte()) \
-            .response("Не сейчас, Морт. Может быть потом", 'DMORTE1.D_s28', 'r36', 'reply?') \
+            .response("Не сейчас, Морт. Может быть потом.", 'DMORTE1.D_s28', 'r36', 'reply39857') \
         .done()
 
     # from 27.0 27.2
@@ -316,7 +315,7 @@ def dlg_dmorte_one():
             .line(morte, "Или это из-за того, что у меня нет рук? Что?", 's28', 'say39858') \
         .with_responses() \
             .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r37', 'reply39859').with_action(lambda: _join_morte()) \
-            .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE1.D_s29', 'r38', 'reply?') \
+            .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE1.D_s29', 'r38', 'reply39860') \
         .done()
 
     # from 28.1
@@ -325,6 +324,14 @@ def dlg_dmorte_one():
             .line(morte, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.", 's29', 'say39861').with_action(lambda: _kick_morte()) \
         .with_responses() \
             .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r39', 'reply39862') \
+        .done()
+
+    # from -
+    DialogStateBuilder('DMORTE1.D_s30') \
+        .with_npc_lines() \
+            .line(morte, "Что тебя гложет, шеф?", 's30', 'say39863') \
+        .with_responses() \
+            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r40', 'reply39864') \
         .done()
 
     # from -
@@ -349,7 +356,7 @@ def dlg_dmorte_one():
     DialogStateBuilder('DMORTE1.D_s33') \
         .with_npc_lines() \
             .line(morte, "Слушай шеф... Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали.", 's33', 'say42302') \
-        .line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302').with_action(lambda: _talk_dummy()) \
+            .line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302').with_action(lambda: _talk_dummy()) \
         .with_responses() \
             .response("Хорошо. Идем.", EXIT, 'r?', 'reply42303') \
         .done()
@@ -358,14 +365,6 @@ def dlg_dmorte_one():
     DialogStateBuilder('DMORTE1.D_s34') \
         .with_npc_lines() \
             .line(morte, "Кажется, просителю повезло, шеф. Смотри... у него в руке ключ.", 's34', 'say42306').with_action(lambda: _pick_up_key()) \
-        .with_responses() \
-            .response("Хорошо. Идем.", EXIT, 'r?', 'reply42303') \
-        .done()
-
-    # from -
-    DialogStateBuilder('DMORTE1.D_s30') \
-        .with_npc_lines() \
-            .line(morte, "Что тебя гложет, шеф?.", 's30', 'say?').with_action(lambda: _set_mortuary_walkthrough()) \
         .with_responses() \
             .response("Хорошо. Идем.", EXIT, 'r?', 'reply42303') \
         .done()
