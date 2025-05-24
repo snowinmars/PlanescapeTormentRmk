@@ -2,7 +2,7 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from engine.settings_global import (
     current_global_settings,
-    set_morte_in_party,
+    set_in_party_morte,
     change_good,
     change_good_morte,
     unblock_journal,
@@ -64,7 +64,6 @@ def _saw_dhall():
 # DLG/DMORTE2.DLG
 def dlg_dmorte_two():
     teller        = renpy.store.characters['teller']
-    morte_unknown = renpy.store.characters['morte_unknown']
     morte         = renpy.store.characters['morte']
     scares        = renpy.store.characters['scares']
     EXIT          = -1
@@ -417,4 +416,48 @@ def dlg_dmorte_two():
             .line(morte, "Э… ну… *Возможно*. Чтобы определить это, нужно потрясти черепушкой вон с тем парящим трухлявиком. Вот только я не уверен, что это хорошая идея.", 's33', 'say41266') \
         .with_responses() \
             .response("Мне нужны ответы. Я поговорю с ним.", EXIT, 'r88', 'reply41267').with_action(lambda: _saw_dhall()) \
+        .done()
+
+
+
+
+
+
+
+
+    # from -
+    DialogStateBuilder('DMORTE1.D_s34') \
+        .with_npc_lines() \
+            .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306') \
+        .with_responses() \
+            .response("(Осмотреть)", 'DZM782.D_s0', 'r?', 'reply42303') \
+        .done()
+
+    # from -
+    DialogStateBuilder('DZM782.D_s0') \
+        .with_npc_lines() \
+            .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом. На его лбу вырезан номер 782, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
+        .with_responses() \
+            .response("Я ищу ключ… быть может, он у тебя?", 'DZM782.D_s1', 'r', 'reply24712').with_condition(lambda: '  !NearbyDialog("DMorte1") ') \
+            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM782.D_s2', 'r', 'reply24713') \
+            .response("Было приятно с тобой поболтать. Прощай.", 'DZM782.D_s2', 'r', 'reply24714') \
+            .response("Оставить труп в покое.", EXIT, 'r', 'reply24717') \
+        .done()
+
+    # from 0.1
+    DialogStateBuilder('DZM782.D_s1') \
+        .with_npc_lines() \
+            .line(teller, "Труп не отвечает.", 's1', 'say24710') \
+        .with_responses() \
+            .response("Тогда неважно. Прощай.", EXIT, 'r', 'reply24711') \
+            .response("Оставить труп в покое.", EXIT, 'r', 'reply42304') \
+        .done()
+
+    # from 0.2 0.3
+    DialogStateBuilder('DZM782.D_s2') \
+        .with_npc_lines() \
+            .line(teller, "Кажется, у этого трупа есть какой-то ключ. Он крепко держит его в левой руке, сжимая его большим и указательным пальцем мертвой хваткой. Чтобы взять ключ, тебе придется сломать руку.", 's2', 'say24715') \
+        .with_responses() \
+            .response("Мне нужен этот ключ, труп… похоже, тебе уже недолго осталось прозябать в этом мире.", EXIT, 'r', 'reply24716').with_action(lambda: ' DO ~ForceAttack(Protagonist,"ZM782") ~ ') \
+            .response("Оставить труп в покое.", EXIT, 'r', 'reply42305') \
         .done()

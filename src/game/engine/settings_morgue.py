@@ -6,7 +6,9 @@ def default_morgue_settings():
         'saw_dhall': False,
         'mortuary_walkthrough': 0,
         'morte_mortuary_walkthrough': 0,
-        'dummies_killed': 0
+        'dummies_killed': 0,
+        'lawful_vaxis': False,
+        'alarm': False
     }
 
 morgue_settings = default_morgue_settings()

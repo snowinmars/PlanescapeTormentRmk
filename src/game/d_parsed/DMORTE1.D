@@ -281,6 +281,9 @@ DialogStateBuilder('DMORTE1.D_s33') \
         .response("Хорошо. Идем.", EXIT, 'r', 'reply42303') \
     .done()
 
+######
+# Check EXTENDS ~DZM782~ : 2
+######
 # from -
 DialogStateBuilder('DMORTE1.D_s34') \
     .with_npc_lines() \
