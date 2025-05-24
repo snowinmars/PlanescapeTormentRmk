@@ -7,6 +7,7 @@ from engine.settings_global import (
     change_good_morte,
     unblock_journal,
     update_journal,
+    travel,
 )
 from engine.settings_morgue import (
     current_morgue_settings,
@@ -24,6 +25,18 @@ from engine.transforms import (
     center_left_down,
     center_right_down
 )
+
+def _init():
+    travel('morgue2')
+    _show_morte('morte_img smiling3', center_left_down)
+    pick_up_key(False)
+
+def _show_morte(sprite, start_pos, end_pos = None, duration=0.5):
+    end_pos = start_pos if end_pos is None else end_pos
+    renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
+
+def _hide_morte():
+    renpy.exports.hide('morte_img')
 
 def _set_mortuary_walkthrough(value):
     mortuary_walkthrough(value)
@@ -47,9 +60,6 @@ def _was_morte_mortuary_walkthrough():
 def _saw_dhall():
     saw_dhall()
 
-def _s0_action():
-    travel('morgue2')
-    _show_morte('morte_img smiling3',  center_left_down)
 
 # DLG/DMORTE2.DLG
 def dlg_dmorte_two():
@@ -62,7 +72,7 @@ def dlg_dmorte_two():
     # from -
     DialogStateBuilder('DMORTE2.D_s0') \
         .with_npc_lines() \
-            .line(teller, "Двери открываются с лёгким шорохом.", '-', '-').with_action(lambda: _s0_action()) \
+            .line(teller, "Двери открываются с лёгким шорохом.", '-', '-').with_action(lambda: _init()) \
             .line(morte, "Тсссс… Небольшой совет, шеф: с этого момента я бы вел себя потише. Не нужно больше вписывать трупы в книгу мертвых без необходимости…", 's0', 'say41144') \
             .line(morte, "…особенно женские. К тому же, их убийство может заинтересовать здешних смотрителей.", 's0', 'say41144') \
         .with_responses() \
@@ -76,7 +86,7 @@ def dlg_dmorte_two():
     DialogStateBuilder('DMORTE2.D_s1') \
         .with_npc_lines() \
             .line(morte, "Они зовут себя 'тленными'. Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица.", 's1', 'say41149') \
-            .line(morte, "Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть... и лучше раньше, чем позже.", 's1', 'say41149') \
+            .line(morte, "Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть… и лучше раньше, чем позже.", 's1', 'say41149') \
         .with_responses() \
             .response("Я запутался… какое тленным дело, если я сбегу?", 'DMORTE2.D_s2', 'r4', 'reply41150') \
         .done()
@@ -105,8 +115,8 @@ def dlg_dmorte_two():
     # from 0.2 2.1 3.1
     DialogStateBuilder('DMORTE2.D_s4') \
         .with_npc_lines() \
-            .line(morte, "Чт... ты *серьезно*? Послушай, шеф, у этих мертвых крошек есть последняя возможность познакомиться с такими крутыми громилами как мы.", 's4', 'say41159') \
-            .line(morte, "Нам следует быть более *деликатными*... не ломать их ради ключей, не отрывать им конечности, ничего такого.", 's4', 'say41159') \
+            .line(morte, "Чт… ты *серьезно*? Послушай, шеф, у этих мертвых крошек есть последняя возможность познакомиться с такими крутыми громилами как мы.", 's4', 'say41159') \
+            .line(morte, "Нам следует быть более *деликатными*… не ломать их ради ключей, не отрывать им конечности, ничего такого.", 's4', 'say41159') \
         .with_responses() \
             .response("Последняя возможность? Погоди… о *чем* это ты толкуешь?", 'DMORTE2.D_s5', 'r11', 'reply41160') \
         .done()
@@ -132,10 +142,10 @@ def dlg_dmorte_two():
     # from 6.0
     DialogStateBuilder('DMORTE2.D_s7') \
         .with_npc_lines() \
-            .line(morte, "Ну... хорошо, *ты*, может быть, и не мертвый, а вот *я* — да.", 's7', 'say41166') \
+            .line(morte, "Ну… хорошо, *ты*, может быть, и не мертвый, а вот *я* — да.", 's7', 'say41166') \
             .line(morte, "И как я уже говорил, я не против разделить гроб с какой-нибудь из здешних красивеньких жилистых покойниц.", 's7', 'say41166') \
             .line(teller, "Морт начинает в предвкушении щелкать зубами.", 's7', 'say41166') \
-            .line(morte, "Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится...", 's7', 'say41166') \
+            .line(morte, "Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится…", 's7', 'say41166') \
         .with_responses() \
             .response("Еще раз, кто эти смотрители?", 'DMORTE2.D_s1', 'r15', 'reply41167') \
             .response("Но откуда берутся все эти трупы?", 'DMORTE2.D_s3', 'r16', 'reply41168') \
@@ -179,7 +189,7 @@ def dlg_dmorte_two():
 
     DialogStateBuilder('DMORTE2.D_s31') \
         .with_npc_lines() \
-            .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас", '-', '-')
+            .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас.", '-', '-') \
             .line(morte, "Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.", 's31', 'say41262') \
         .with_responses() \
             .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _set_morte_mortuary_walkthrough(2)) \
@@ -188,7 +198,7 @@ def dlg_dmorte_two():
     # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0
     DialogStateBuilder('DMORTE2.D_s12') \
         .with_npc_lines() \
-            .line(morte, "Что гложет тебя, шеф?", 's12', 'say41178') \
+            .line(morte, "Что гложет тебя, шеф?", 's12', 'say41178').with_action(lambda: _show_morte('morte_img smiling3', center_left_down)) \
         .with_responses() \
             .response("Можешь еще раз прочитать, что у меня вытатуировано на спине?", 'DMORTE2.D_s13', 'r22', 'reply41179') \
             .response("Еще раз, что это за место?", 'DMORTE2.D_s18', 'r23', 'reply41180') \
@@ -216,7 +226,7 @@ def dlg_dmorte_two():
         .with_npc_lines() \
             .line(morte, "Готов поспорить, что услышу ЭТО много раз.", 's14', 'say41193') \
             .line(teller, "Морт прочищает горло.", 's14', 'say41193') \
-            .line(morte, "Посмотрим…...", 's14', 'say41193') \
+            .line(morte, "Посмотрим…", 's14', 'say41193') \
             .line(scares, "«Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ».", 's14', 'say41193') \
             .line(scares, "«Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело».", 's14', 'say41193') \
             .line(scares, "«ФАРОД сможет дополнить оставшуюся часть истории, если его уже не записали в книгу мертвых».", 's14', 'say41193') \

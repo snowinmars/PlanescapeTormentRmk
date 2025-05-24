@@ -15,9 +15,9 @@ def current_morgue_settings():
     global morgue_settings
     return morgue_settings
 
-def pick_up_key():
+def pick_up_key(value):
     global morgue_settings
-    morgue_settings['key_picked_up'] = True
+    morgue_settings['key_picked_up'] = value
 
 def ready_to_kill(value):
     global morgue_settings

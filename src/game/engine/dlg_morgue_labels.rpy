@@ -50,7 +50,7 @@ label morgue_menu_loop_1:
         "Поговорить с Мортом" if m0():
             jump dmorte_one_talk_morte
         "Поговорить с Мортом" if m00():
-            jump dmorte_one_talk_morte
+            jump dmorte_two_talk_morte
         "Пригласить Морта в группу" if m1():
             jump dmorte_one_join
         "Атаковать ходячий труп" if m2():
