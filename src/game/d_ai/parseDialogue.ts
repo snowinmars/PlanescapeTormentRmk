@@ -43,33 +43,24 @@ export const parseDialogue = (inputText: string): State[] => {
                 continue;
             }
 
-            const answerMatch = line.match(/IF\s+(~.*?~)?\s*THEN REPLY #(\d+)\s*\/\*\s*(.*?)\s*\*\//);
+            const answerMatch = line.match(/IF\s+~(.*?)~?\s*THEN REPLY #(\d+)\s*\/\*\s*(.*?)\s*\*\/(.*?)(?:JOURNAL #(\d+) \/\*(.*)\*\/)?(?:(?:GOTO (\d+))|EXIT)/);
             if (answerMatch) {
+                const condition = answerMatch[1];
                 const answerId = parseInt(answerMatch[2], 10);
                 const answerBody = answerMatch[3];
-
-                // Check if GOTO is on the same line
-                const sameLineGotoMatch = line.match(/GOTO (\d+)|EXIT/);
-                let targetStateId: number | 'EXIT' | null = null;
-
-                if (sameLineGotoMatch) {
-                    targetStateId = sameLineGotoMatch[1] ? parseInt(sameLineGotoMatch[1], 10) : 'EXIT';
-                } else {
-                    // Check next line for GOTO
-                    if (i + 1 < lines.length) {
-                        const nextLine = lines[i + 1];
-                        const nextLineGotoMatch = nextLine.match(/GOTO (\d+)|EXIT/);
-                        if (nextLineGotoMatch) {
-                            targetStateId = nextLineGotoMatch[1] ? parseInt(nextLineGotoMatch[1], 10) : 'EXIT';
-                            i++; // Skip the next line since we've processed it
-                        }
-                    }
-                }
+                const action = answerMatch[4];
+                const journalId = parseInt(answerMatch[5]);
+                const journalBody = answerMatch[6];
+                const targetStateId = parseInt(answerMatch[7], 10);
 
                 if (targetStateId !== null) {
                     const answer: Answer = {
+                        condition,
                         answerId,
                         answerBody,
+                        action,
+                        journalId,
+                        journalBody,
                         targetStateId
                     };
 

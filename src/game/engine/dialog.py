@@ -91,12 +91,12 @@ class DialogStateBuilder:
 
         def with_condition(self, condition):
             """Add condition to the current response"""
-            self.last_response['condition'] = condition,
+            self.last_response['condition'] = condition
             return self
 
         def with_action(self, action):
             """Add action to the current response"""
-            self.last_response['action'] = action,
+            self.last_response['action'] = action
             return self
 
         def done(self):
@@ -109,7 +109,7 @@ class DialogStateBuilder:
                     "text": r['text'],
                     "next_state": r['next_state'],
                     "action": r['action'] if 'action' in r else None,
-                    "condition": r['condition'] if 'condition' in r else None,
+                    "condition": r['condition'] if 'condition' in r else None
                 }
 
                 self.parent.parent.next_available_response_id += 1

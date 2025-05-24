@@ -1,215 +1,283 @@
 EXIT = -1
 # from -
-DialogStateBuilder(0) \
-    .add_npc_line(SPEAKER, "Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».~", 'state0', 'say39792') \
-    .add_response("Чт?.. Ты кто?", 1, 'response39793') \
+DialogStateBuilder('DMORTE1.D_s0') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».~ [MRT001]", 's0', 'say39792') \
+    .with_responses() \
     .done()
 
 # from 0.0
-DialogStateBuilder(1) \
-    .add_npc_line(SPEAKER, "Э... кто я? А как насчет *тебя* для начала? Кто ты?", 'state1', 'say39795') \
-    .add_response("Я... не знаю. Не могу вспомнить».~", 2, 'response39796') \
-    .add_response("Я *первый* спросил тебя, череп».~", 3, 'response39797') \
+DialogStateBuilder('DMORTE1.D_s1') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Э... кто я? А как насчет *тебя* для начала? Кто ты?", 's1', 'say39795') \
+    .with_responses() \
+        .response("Я... не знаю. Не могу вспомнить».~", 'DMORTE1.D_s2', 'r', 'reply39796').with_action(lambda: ' ') \
+        .response("Я *первый* спросил тебя, череп».~", 'DMORTE1.D_s3', 'r', 'reply39797').with_action(lambda: ' ') \
     .done()
 
 # from 1.0 3.0 4.0
-DialogStateBuilder(2) \
-    .add_npc_line(SPEAKER, "Ты не можешь вспомнить свое *имя*? Хе. Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт».~", 'state2', 'say39798') \
-    .add_response("Заперт?", 5, 'response39799') \
+DialogStateBuilder('DMORTE1.D_s2') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ты не можешь вспомнить свое *имя*? Хе. Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт».~", 's2', 'say39798') \
+    .with_responses() \
+        .response("Заперт?", 'DMORTE1.D_s5', 'r', 'reply39799').with_action(lambda: ' ') \
     .done()
 
 # from 1.1
-DialogStateBuilder(3) \
-    .add_npc_line(SPEAKER, "Ага, а я спросил тебя *вторым*. Как твое имя?", 'state3', 'say39800') \
-    .add_response("Я... не знаю. Не могу вспомнить».~", 2, 'response39801') \
-    .add_response("Ты первый, череп. В последний раз спрашиваю».~", 4, 'response39802') \
+DialogStateBuilder('DMORTE1.D_s3') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ага, а я спросил тебя *вторым*. Как твое имя?", 's3', 'say39800') \
+    .with_responses() \
+        .response("Я... не знаю. Не могу вспомнить».~", 'DMORTE1.D_s2', 'r', 'reply39801').with_action(lambda: ' ') \
+        .response("Ты первый, череп. В последний раз спрашиваю».~", 'DMORTE1.D_s4', 'r', 'reply39802').with_action(lambda: ' ') \
     .done()
 
 # from 3.1
-DialogStateBuilder(4) \
-    .add_npc_line(SPEAKER, "Пф-ф... да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Зовут Мортом. А кто ты?", 'state4', 'say39803') \
-    .add_response("Я... не знаю. Не могу вспомнить».~", 2, 'response39804') \
+DialogStateBuilder('DMORTE1.D_s4') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Пф-ф... да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Зовут Мортом. А кто ты?", 's4', 'say39803') \
+    .with_responses() \
+        .response("Я... не знаю. Не могу вспомнить».~", 'DMORTE1.D_s2', 'r', 'reply39804').with_action(lambda: ' ') \
     .done()
 
 # from 2.0
-DialogStateBuilder(5) \
-    .add_npc_line(SPEAKER, "Ага, и поскольку ты еще не успел размять ноги, вот тебе новость: я перепробовал все двери, и эта комната заперта крепче пояса целомудрия».~", 'state5', 'say39805') \
-    .add_response("Мы заперты... где? Что это за место?", 6, 'response39806') \
+DialogStateBuilder('DMORTE1.D_s5') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ага, и поскольку ты еще не успел размять ноги, вот тебе новость: я перепробовал все двери, и эта комната заперта крепче пояса целомудрия».~", 's5', 'say39805') \
+    .with_responses() \
+        .response("Мы заперты... где? Что это за место?", 'DMORTE1.D_s6', 'r', 'reply39806').with_action(lambda: ' ') \
     .done()
 
 # from 5.0
-DialogStateBuilder(6) \
-    .add_npc_line(SPEAKER, "Оно называется 'Моргом'... это такое большое черное здание с чарующей архитектурой беременной паучихи».~", 'state6', 'say39807') \
-    .add_response("Морг? Постой... я умер?", 7, 'response39808') \
+DialogStateBuilder('DMORTE1.D_s6') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Оно называется 'Моргом'... это такое большое черное здание с чарующей архитектурой беременной паучихи».~", 's6', 'say39807') \
+    .with_responses() \
+        .response("Морг? Постой... я умер?", 'DMORTE1.D_s7', 'r', 'reply39808').with_action(lambda: ' ') \
     .done()
 
 # from 6.0
-DialogStateBuilder(7) \
-    .add_npc_line(SPEAKER, "Не похоже. Хотя на тебе куча шрамов... выглядит так, словно какой-то пень изрисовал тебя всего ножом. Еще одна причина свалить отсюда побыстрее, пока тот, кто изрезал тебя, не вернулся назад и не завершил свою работу».~", 'state7', 'say39809') \
-    .add_response("Шрамы? Они так плохи?", 8, 'response39810') \
+DialogStateBuilder('DMORTE1.D_s7') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Не похоже. Хотя на тебе куча шрамов... выглядит так, словно какой-то пень изрисовал тебя всего ножом. Еще одна причина свалить отсюда побыстрее, пока тот, кто изрезал тебя, не вернулся назад и не завершил свою работу».~", 's7', 'say39809') \
+    .with_responses() \
+        .response("Шрамы? Они так плохи?", 'DMORTE1.D_s8', 'r', 'reply39810').with_action(lambda: ' ') \
     .done()
 
 # from 7.0
-DialogStateBuilder(8) \
-    .add_npc_line(SPEAKER, "Ну... художество на груди не ТАК уж плохо выглядит... но то, что на спине... — Морт делает паузу. — Скажем так, шеф, у тебя целая галерея татуировок на спине. Тут что-то написано...", 'state8', 'say39811') \
-    .add_response("Татуировки на моей спине? Что там написано?", 9, 'response39812') \
+DialogStateBuilder('DMORTE1.D_s8') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ну... художество на груди не ТАК уж плохо выглядит... но то, что на спине... — Морт делает паузу. — Скажем так, шеф, у тебя целая галерея татуировок на спине. Тут что-то написано...", 's8', 'say39811') \
+    .with_responses() \
+        .response("Татуировки на моей спине? Что там написано?", 'DMORTE1.D_s9', 'r', 'reply39812').with_action(lambda: ' ') \
     .done()
 
 # from 8.0
-DialogStateBuilder(9) \
-    .add_npc_line(SPEAKER, "", 'state9', 'say0') \
-    .add_response("Фарод?.. А там есть еще что-нибудь?", 10, 'response39814') \
+DialogStateBuilder('DMORTE1.D_s9') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's9', 'say0') \
+    .with_responses() \
+        .response("Фарод?.. А там есть еще что-нибудь?", 'DMORTE1.D_s10', 'r', 'reply39814').with_action(lambda: ' ') \
     .done()
 
 # from 9.0
-DialogStateBuilder(10) \
-    .add_npc_line(SPEAKER, "Ага, здесь есть еще немного... — Морт умолкает. — Посмотрим... вот продолжение...» 'Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому, КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода'.~", 'state10', 'say39815') \
-    .add_response("Неудивительно, что спина так болит: да там целая чертова поэма. А дневник, который должен быть со мной... он был возле меня, пока я здесь валялся?", 11, 'response39816') \
+DialogStateBuilder('DMORTE1.D_s10') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's10', 'say0') \
+    .with_responses() \
+        .response("Неудивительно, что спина так болит: да там целая чертова поэма. А дневник, который должен быть со мной... он был возле меня, пока я здесь валялся?", 'DMORTE1.D_s11', 'r', 'reply39816').with_action(lambda: ' ') \
     .done()
 
 # from 10.0
-DialogStateBuilder(11) \
-    .add_npc_line(SPEAKER, "Нет... тебя обобрали догола, когда доставили сюда. Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле».~", 'state11', 'say39817') \
-    .add_response("А как насчет Фарода? Ты его знаешь?", 12, 'response39818') \
+DialogStateBuilder('DMORTE1.D_s11') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Нет... тебя обобрали догола, когда доставили сюда. Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле».~", 's11', 'say39817') \
+    .with_responses() \
+        .response("А как насчет Фарода? Ты его знаешь?", 'DMORTE1.D_s12', 'r', 'reply39818').with_action(lambda: ' ') \
     .done()
 
 # from 11.0
-DialogStateBuilder(12) \
-    .add_npc_line(SPEAKER, "Нет, не знаю... С другой стороны, я вообще мало кого знаю. В общем, КТО-НИБУДЬ да знает, как добраться до этого Фарода... э, то есть, как только мы выберемся отсюда».~", 'state12', 'say39819') \
-    .add_response("И *как* же мы выберемся отсюда?", 13, 'response39820') \
+DialogStateBuilder('DMORTE1.D_s12') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Нет, не знаю... С другой стороны, я вообще мало кого знаю. В общем, КТО-НИБУДЬ да знает, как добраться до этого Фарода... э, то есть, как только мы выберемся отсюда».~", 's12', 'say39819') \
+    .with_responses() \
+        .response("И *как* же мы выберемся отсюда?", 'DMORTE1.D_s13', 'r', 'reply39820').with_action(lambda: ' ') \
     .done()
 
 # from 12.0
-DialogStateBuilder(13) \
-    .add_npc_line(SPEAKER, "Ну, если все двери заперты, значит, нам понадобится ключ. Есть шанс, что он есть у одного из ходячих трупов в этой комнате».~", 'state13', 'say39821') \
-    .add_response("Ходячих трупов?", 14, 'response39822') \
+DialogStateBuilder('DMORTE1.D_s13') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ну, если все двери заперты, значит, нам понадобится ключ. Есть шанс, что он есть у одного из ходячих трупов в этой комнате».~", 's13', 'say39821') \
+    .with_responses() \
+        .response("Ходячих трупов?", 'DMORTE1.D_s14', 'r', 'reply39822').with_action(lambda: ' ') \
     .done()
 
 # from 13.0
-DialogStateBuilder(14) \
-    .add_npc_line(SPEAKER, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым».~", 'state14', 'say39823') \
-    .add_response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа».~", 15, 'response39824') \
-    .add_response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?", 16, 'response39825') \
+DialogStateBuilder('DMORTE1.D_s14') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым».~", 's14', 'say39823') \
+    .with_responses() \
+        .response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?", 'DMORTE1.D_s16', 'r', 'reply39825').with_action(lambda: ' ') \
     .done()
 
 # from 14.0
-DialogStateBuilder(15) \
-    .add_npc_line(SPEAKER, "Погоди, ты что, думаешь, что причинишь им боль? Они уже МЕРТВЫ. Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу».~", 'state15', 'say39826') \
-    .add_response("Ну хорошо... Я собью одного из них и заберу ключ».~", 16, 'response39827') \
+DialogStateBuilder('DMORTE1.D_s15') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Погоди, ты что, думаешь, что причинишь им боль? Они уже МЕРТВЫ. Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу».~", 's15', 'say39826') \
+    .with_responses() \
+        .response("Ну хорошо... Я собью одного из них и заберу ключ».~", 'DMORTE1.D_s16', 'r', 'reply39827').with_action(lambda: ' ') \
     .done()
 
 # from 14.1 15.0
-DialogStateBuilder(16) \
-    .add_npc_line(SPEAKER, "", 'state16', 'say0') \
-    .add_response("Ладно, я поищу его».~", 17, 'response39829') \
+DialogStateBuilder('DMORTE1.D_s16') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's16', 'say0') \
+    .with_responses() \
+        .response("Ладно, я поищу его».~", 'DMORTE1.D_s17', 'r', 'reply39829').with_action(lambda: ' ') \
     .done()
 
 # from 16.0
-DialogStateBuilder(17) \
-    .add_npc_line(SPEAKER, "", 'state17', 'say0') \
+DialogStateBuilder('DMORTE1.D_s17') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's17', 'say0') \
+    .with_responses() \
     .done()
 
 # from -
-DialogStateBuilder(18) \
-    .add_npc_line(SPEAKER, "", 'state18', 'say0') \
-    .add_response("Ладно... Я поищу».~", EXIT, 'response39833') \
+DialogStateBuilder('DMORTE1.D_s18') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's18', 'say0') \
+    .with_responses() \
+        .response("Ладно... Я поищу».~", 'DMORTE1.D_sNaN', 'r', 'reply39833').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(19) \
-    .add_npc_line(SPEAKER, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами... и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».~", 'state19', 'say39834') \
-    .add_response("А, может, ты мне *поможешь*, Морт?", 20, 'response39835') \
-    .add_response("Хорошо». ~", 23, 'response39836') \
+DialogStateBuilder('DMORTE1.D_s19') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами... и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».~", 's19', 'say39834') \
+    .with_responses() \
+        .response("А, может, ты мне *поможешь*, Морт?", 'DMORTE1.D_s20', 'r', 'reply39835').with_action(lambda: ' ') \
+        .response("Хорошо». ~", 'DMORTE1.D_s23', 'r', 'reply39836').with_action(lambda: ' ') \
     .done()
 
 # from 19.0
-DialogStateBuilder(20) \
-    .add_npc_line(SPEAKER, "Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту».~", 'state20', 'say39837') \
-    .add_response("Я имел ввиду помощь в нападении на *трупов*».~", 21, 'response39838') \
-    .add_response("Ну хорошо тогда».~", 23, 'response39839') \
+DialogStateBuilder('DMORTE1.D_s20') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту».~", 's20', 'say39837') \
+    .with_responses() \
+        .response("Я имел ввиду помощь в нападении на *трупов*».~", 'DMORTE1.D_s21', 'r', 'reply39838').with_action(lambda: ' ') \
+        .response("Ну хорошо тогда».~", 'DMORTE1.D_s23', 'r', 'reply39839').with_action(lambda: ' ') \
     .done()
 
 # from 20.0
-DialogStateBuilder(21) \
-    .add_npc_line(SPEAKER, "Я? Я романтик, а не солдат. Я только под ногами буду путаться».~", 'state21', 'say39840') \
-    .add_response("Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель».~", 22, 'response39841') \
-    .add_response("Ну хорошо тогда».~", 23, 'response39842') \
+DialogStateBuilder('DMORTE1.D_s21') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Я? Я романтик, а не солдат. Я только под ногами буду путаться».~", 's21', 'say39840') \
+    .with_responses() \
+        .response("Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель».~", 'DMORTE1.D_s22', 'r', 'reply39841').with_action(lambda: ' ') \
+        .response("Ну хорошо тогда».~", 'DMORTE1.D_s23', 'r', 'reply39842').with_action(lambda: ' ') \
     .done()
 
 # from 21.0
-DialogStateBuilder(22) \
-    .add_npc_line(SPEAKER, "", 'state22', 'say0') \
-    .add_response("Я рад, что мы поняли друг друга».~", 23, 'response39844') \
+DialogStateBuilder('DMORTE1.D_s22') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's22', 'say0') \
+    .with_responses() \
+        .response("Я рад, что мы поняли друг друга».~", 'DMORTE1.D_s23', 'r', 'reply39844').with_action(lambda: ' ') \
     .done()
 
 # from 19.1 20.1 21.1 22.0
-DialogStateBuilder(23) \
-    .add_npc_line(SPEAKER, "", 'state23', 'say0') \
-    .add_response("Вперед».~", EXIT, 'response39846') \
+DialogStateBuilder('DMORTE1.D_s23') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's23', 'say0') \
+    .with_responses() \
+        .response("Вперед».~", 'DMORTE1.D_sNaN', 'r', 'reply39846').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(24) \
-    .add_npc_line(SPEAKER, "", 'state24', 'say0') \
-    .add_response("Хорошо». ~", EXIT, 'response39848') \
+DialogStateBuilder('DMORTE1.D_s24') \
+    .with_npc_lines()\
+        .line(SPEAKER, "", 's24', 'say0') \
+    .with_responses() \
+        .response("Хорошо». ~", 'DMORTE1.D_sNaN', 'r', 'reply39848').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(25) \
-    .add_npc_line(SPEAKER, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате».~", 'state25', 'say39849') \
-    .add_response("Тогда я перепробую все двери».~", EXIT, 'response39850') \
+DialogStateBuilder('DMORTE1.D_s25') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате».~", 's25', 'say39849') \
+    .with_responses() \
+        .response("Тогда я перепробую все двери».~", 'DMORTE1.D_sNaN', 'r', 'reply39850').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(26) \
-    .add_npc_line(SPEAKER, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»~ [MRT516]", 'state26', 'say39851') \
-    .add_response("Да... идем».~", 27, 'response39852') \
+DialogStateBuilder('DMORTE1.D_s26') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»~ [MRT516]", 's26', 'say39851') \
+    .with_responses() \
+        .response("Не сейчас, Морт».~", 'DMORTE1.D_s27', 'r', 'reply39853').with_action(lambda: ' ') \
     .done()
 
 # from 26.1
-DialogStateBuilder(27) \
-    .add_npc_line(SPEAKER, "Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 'state27', 'say39854') \
-    .add_response("Морт, у тебя НЕТ ни того, ни другого».~", 28, 'response39855') \
-    .add_response("Ладно. Я передумал. Давай, идем».~", 28, 'response39856') \
+DialogStateBuilder('DMORTE1.D_s27') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 's27', 'say39854') \
+    .with_responses() \
+        .response("Морт, у тебя НЕТ ни того, ни другого».~", 'DMORTE1.D_s28', 'r', 'reply39855').with_action(lambda: ' ') \
+        .response("Не сейчас, Морт. Может быть потом».~", 'DMORTE1.D_s28', 'r', 'reply39857').with_action(lambda: ' ') \
     .done()
 
 # from 27.0 27.2
-DialogStateBuilder(28) \
-    .add_npc_line(SPEAKER, "Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?", 'state28', 'say39858') \
-    .add_response("Ладно. Я передумал. Давай, идем».~", 29, 'response39859') \
+DialogStateBuilder('DMORTE1.D_s28') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?", 's28', 'say39858') \
+    .with_responses() \
+        .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт».~", 'DMORTE1.D_s29', 'r', 'reply39860').with_action(lambda: ' ') \
     .done()
 
 # from 28.1
-DialogStateBuilder(29) \
-    .add_npc_line(SPEAKER, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь».~", 'state29', 'say39861') \
-    .add_response("Я так и сделаю. Прощай, Морт».~", EXIT, 'response39862') \
+DialogStateBuilder('DMORTE1.D_s29') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь».~", 's29', 'say39861') \
+    .with_responses() \
+        .response("Я так и сделаю. Прощай, Морт».~", 'DMORTE1.D_sNaN', 'r', 'reply39862').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(30) \
-    .add_npc_line(SPEAKER, "Что тебя гложет, шеф?»~ [MRT515]", 'state30', 'say39863') \
-    .add_response("Пока ничего, Морт. Просто проверяю, что ты еще со мной».~", EXIT, 'response39864') \
+DialogStateBuilder('DMORTE1.D_s30') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Что тебя гложет, шеф?»~ [MRT515]", 's30', 'say39863') \
+    .with_responses() \
+        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной».~", 'DMORTE1.D_sNaN', 'r', 'reply39864').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(31) \
-    .add_npc_line(SPEAKER, "Э, шеф... они не слышат тебя, понятно? Они мертвы».~", 'state31', 'say42298') \
-    .add_response("Но ты ведь тоже мертв. И разговариваешь со мной».~", 32, 'response42299') \
+DialogStateBuilder('DMORTE1.D_s31') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Э, шеф... они не слышат тебя, понятно? Они мертвы».~", 's31', 'say42298') \
+    .with_responses() \
+        .response("Но ты ведь тоже мертв. И разговариваешь со мной».~", 'DMORTE1.D_s32', 'r', 'reply42299').with_action(lambda: ' ') \
     .done()
 
 # from 31.0
-DialogStateBuilder(32) \
-    .add_npc_line(SPEAKER, "Ага, но *я* особенный. Смерть не смогла убить мою жажду к жизни. А здешние трупы... — Морт обводит комнату взглядом. — Они и при жизни из себя ничего не представляли».~", 'state32', 'say42300') \
-    .add_response("Понятно...", 33, 'response42301') \
+DialogStateBuilder('DMORTE1.D_s32') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Ага, но *я* особенный. Смерть не смогла убить мою жажду к жизни. А здешние трупы... — Морт обводит комнату взглядом. — Они и при жизни из себя ничего не представляли».~", 's32', 'say42300') \
+    .with_responses() \
+        .response("Понятно...", 'DMORTE1.D_s33', 'r', 'reply42301').with_action(lambda: ' ') \
     .done()
 
 # from 32.0
-DialogStateBuilder(33) \
-    .add_npc_line(SPEAKER, "Слушай шеф... Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали. Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 'state33', 'say42302') \
-    .add_response("Хорошо. Идем».~", EXIT, 'response42303') \
+DialogStateBuilder('DMORTE1.D_s33') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Слушай шеф... Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали. Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302') \
+    .with_responses() \
+        .response("Хорошо. Идем».~", 'DMORTE1.D_sNaN', 'r', 'reply42303').with_action(lambda: ' ') \
     .done()
 
 # from -
-DialogStateBuilder(34) \
-    .add_npc_line(SPEAKER, "Кажется, просителю повезло, шеф. Смотри... у него в руке ключ».~", 'state34', 'say42306') \
+DialogStateBuilder('DMORTE1.D_s34') \
+    .with_npc_lines()\
+        .line(SPEAKER, "Кажется, просителю повезло, шеф. Смотри... у него в руке ключ».~", 's34', 'say42306') \
+    .with_responses() \
     .done()
