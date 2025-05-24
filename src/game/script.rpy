@@ -2,9 +2,16 @@ screen dialog_choices(responses):
     vbox:
         style_prefix "choice"
         for response_id, response in responses.items():
-            textbutton response['text']:
-                action Return(response_id)
-                style "choice_button"
+            $ plainResponse = 'condition' not in response or response['condition'] is None
+            $ visibleConditiolanResponse = 'condition' in response and response['condition'] is not None and response['condition']()
+
+            if plainResponse or visibleConditiolanResponse:
+                textbutton response['text']:
+                    if 'action' in response and response['action'] is not None:
+                        action [Return(response_id), response['action']]
+                    else:
+                        action Return(response_id)
+                    style "choice_button"
 
 
 

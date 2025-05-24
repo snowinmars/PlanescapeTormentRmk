@@ -4,7 +4,8 @@ def default_morgue_settings():
         'ready_to_kill': False,
         'talk_dummy': False,
         'mortuary_walkthrough': False,
-        'dummies_killed': 0,
+        'morte_mortuary_walkthrough': False,
+        'dummies_killed': 0
     }
 
 morgue_settings = default_morgue_settings()
@@ -32,3 +33,7 @@ def talk_dummy():
 def mortuary_walkthrough(value):
     global morgue_settings
     morgue_settings['mortuary_walkthrough'] = value
+
+def morte_mortuary_walkthrough(value):
+    global morgue_settings
+    morgue_settings['morte_mortuary_walkthrough'] = value

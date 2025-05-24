@@ -60,7 +60,7 @@ label morgue_menu_loop_1:
 
 label dmorte_one_introducing:
     scene bg mourge1
-    $ dmorte_one_introducing_id = 'dlg_dmorte_one s0'
+    $ dmorte_one_introducing_id = 'DMORTE1.D_s0'
     $ npc_lines = start_dialog(dmorte_one_introducing_id)
     python:
         pronounce(npc_lines)
@@ -68,7 +68,7 @@ label dmorte_one_introducing:
 
 
 label dmorte_one_kill_dummies:
-    $ dmorte_one_kill_dummies_id = 'dlg_dmorte_one s99999999_23'
+    $ dmorte_one_kill_dummies_id = 'DMORTE1.D_s99999999_23'
     $ npc_lines = start_dialog(dmorte_one_kill_dummies_id)
     python:
         pronounce(npc_lines)
@@ -76,7 +76,7 @@ label dmorte_one_kill_dummies:
 
 
 label dmorte_one_loot_dummies:
-    $ dmorte_one_loot_dummies_id = 'dlg_dmorte_one s24'
+    $ dmorte_one_loot_dummies_id = 'DMORTE1.D_s24'
     $ npc_lines = start_dialog(dmorte_one_loot_dummies_id)
     python:
         pronounce(npc_lines)
@@ -84,7 +84,7 @@ label dmorte_one_loot_dummies:
 
 
 label dmorte_one_talk_dummies:
-    $ dmorte_one_talk_dummies_id = 'dlg_dmorte_one s33'
+    $ dmorte_one_talk_dummies_id = 'DMORTE1.D_s33'
     $ npc_lines = start_dialog(dmorte_one_talk_dummies_id)
     python:
         pronounce(npc_lines)
@@ -92,7 +92,7 @@ label dmorte_one_talk_dummies:
 
 
 label dmorte_one_talk_and_loot_dummies:
-    $ dmorte_one_talk_dummies_id = 'dlg_dmorte_one s34'
+    $ dmorte_one_talk_dummies_id = 'DMORTE1.D_s34'
     $ npc_lines = start_dialog(dmorte_one_talk_dummies_id)
     python:
         pronounce(npc_lines)
@@ -100,7 +100,7 @@ label dmorte_one_talk_and_loot_dummies:
 
 
 label dmorte_one_join:
-    $ dmorte_one_join_id = 'dlg_dmorte_one s26'
+    $ dmorte_one_join_id = 'DMORTE1.D_s26'
     $ npc_lines = start_dialog(dmorte_one_join_id)
     python:
         pronounce(npc_lines)
@@ -109,7 +109,7 @@ label dmorte_one_join:
 
 label dmorte_one_talk_morte:
     scene bg mourge1
-    $ dmorte_one_introducing_id = 'dlg_dmorte_one s30'
+    $ dmorte_one_introducing_id = 'DMORTE1.D_s30'
     $ npc_lines = start_dialog(dmorte_one_introducing_id)
     python:
         pronounce(npc_lines)

@@ -4,8 +4,12 @@ export type Path = Readonly<{
 }>
 
 export type Answer = Readonly<{
+    condition: string;
+    action: string;
     answerId: number;
     answerBody: string;
+    journalId: number;
+    journalBody: string;
     targetStateId: number | 'EXIT';
 }>
 
