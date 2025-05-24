@@ -13,9 +13,10 @@ const goFiles = [
 
 const go = async (fromFile: string, cleanFile: string, toFile: string, statePrefix: string): Promise<void> => {
     const raw: string = await fs.readFile(fromFile, 'utf8');
-    const cleaned = clean(raw);
+    let cleaned = clean(raw);
     await fs.writeFile(cleanFile, cleaned, 'utf8');
-    const dialogue = parseDialogue(raw);
+    cleaned = await fs.readFile(cleanFile, 'utf8');
+    const dialogue = parseDialogue(cleaned);
     const builder = serializeStates(dialogue, statePrefix);
     await fs.writeFile(toFile, builder, 'utf8');
 }

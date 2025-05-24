@@ -10,6 +10,7 @@ allowed_line_endings = tuple([
     '.',
     '?',
     '!',
+    '…'
 ])
 
 """

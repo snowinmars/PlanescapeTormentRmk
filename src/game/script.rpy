@@ -25,7 +25,7 @@ init 1 python:
         is_state_defined
     )
     from engine.dlg_dmorte_one import (dlg_dmorte_one)
-    # from engine.dlg_dmorte_two import (dlg_dmorte_two)
+    from engine.dlg_dmorte_two import (dlg_dmorte_two)
 
     characters = {
         'teller': teller,
@@ -49,7 +49,7 @@ init 1 python:
     }
 
     dlg_dmorte_one()
-    # dlg_dmorte_two()
+    dlg_dmorte_two()
 
     def pronounce(npc_lines):
         for line in npc_lines:
@@ -60,6 +60,13 @@ init 1 python:
 
 
 label start:
+    menu:
+        "dev":
+            jump dev
+        "start_":
+            jump start_
+
+label start_:
     teller "Вы открываете глаза в тусклом помещении."
     teller "Голова раскалывается, первое движение отзывается резкой болью слева -"
     teller "Болью настолько сильной, что не очень понятно, где именно слева."
@@ -79,7 +86,6 @@ label dialog_loop:
         python:
             pronounce(npc_lines)
         jump dialog_loop
-
 
 
 label end:

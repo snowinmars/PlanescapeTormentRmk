@@ -1,5 +1,8 @@
 import type { Answer, Path, State } from './types';
 
+// better empty than spaces
+const bets = (x: string | null | undefined) => x?.trim().length === 0 ? '' : x;
+
 export const parseDialogue = (inputText: string): State[] => {
     const states: State[] = [];
     const lines = inputText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
@@ -45,12 +48,12 @@ export const parseDialogue = (inputText: string): State[] => {
 
             const answerMatch = line.match(/IF\s+~(.*?)~?\s*THEN REPLY #(\d+)\s*\/\*\s*(.*?)\s*\*\/(.*?)(?:JOURNAL #(\d+) \/\*(.*)\*\/)?(?:(?:GOTO (\d+))|EXIT)/);
             if (answerMatch) {
-                const condition = answerMatch[1];
+                const condition = bets(answerMatch[1]);
                 const answerId = parseInt(answerMatch[2], 10);
                 const answerBody = answerMatch[3];
-                const action = answerMatch[4];
+                const action = bets(answerMatch[4]);
                 const journalId = parseInt(answerMatch[5]);
-                const journalBody = answerMatch[6];
+                const journalBody = bets(answerMatch[6]);
                 const targetStateId = parseInt(answerMatch[7], 10);
 
                 if (targetStateId !== null) {

@@ -3,8 +3,9 @@ def default_morgue_settings():
         'key_picked_up': False,
         'ready_to_kill': False,
         'talk_dummy': False,
-        'mortuary_walkthrough': False,
-        'morte_mortuary_walkthrough': False,
+        'saw_dhall': False,
+        'mortuary_walkthrough': 0,
+        'morte_mortuary_walkthrough': 0,
         'dummies_killed': 0
     }
 
@@ -37,3 +38,6 @@ def mortuary_walkthrough(value):
 def morte_mortuary_walkthrough(value):
     global morgue_settings
     morgue_settings['morte_mortuary_walkthrough'] = value
+
+def saw_dhall():
+    morgue_settings['saw_dhall'] = True

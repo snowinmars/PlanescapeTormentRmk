@@ -1,8 +1,7 @@
 const skips = ['//', 'BEGIN ~', '^NПРИМЕЧАНИЕ'];
-const knowns = ['IF ~', 'SAY #', 'END', '~ THEN'];
+const knowns = ['IF ~', 'SAY #', 'END', '~ THEN BEGIN'];
 
 export const clean = (inputText: string): string => {
-    console.log('clean');
     const result: string[] = [];
     const lines = inputText.split('\n').map(line => line.length === 0 ? line : line.trim());
 
@@ -32,10 +31,6 @@ export const clean = (inputText: string): string => {
             continue;
         }
 
-        if (line.startsWith('SAY #') && line.includes('/*') && !line.includes('*/')) {
-            line = line + '*/';
-        }
-
         if (knowns.some(x => line.startsWith(x))) {
             result.push(line);
         } else {
@@ -45,5 +40,5 @@ export const clean = (inputText: string): string => {
         i++;
     }
 
-    return result.join('\n');
+    return result.map(x => x.startsWith('SAY #') && x.includes('/*') && !x.includes('*/') ? x + '*/' : x).join('\n');
 }
