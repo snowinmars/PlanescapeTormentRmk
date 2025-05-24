@@ -10,43 +10,49 @@ label morgue_dialog_loop:
             pronounce(npc_lines)
         jump morgue_dialog_loop
     else:
-      jump morgue_menu_loop_1
+        jump morgue_menu_loop_1
 
 
 
 label morgue_menu_loop_1:
     python:
+        from engine.settings_global import (current_global_settings)
+        from engine.settings_morgue import (current_morgue_settings)
+        def m0():
+            return current_global_settings()['morte_in_party']
         def m1():
-            return current_settings()['ready_to_kill_in_morgue'] \
-            and current_settings()['dummies_killed_in_morgue'] < 3
+            return not current_global_settings()['morte_in_party']
         def m2():
-            return current_settings()['ready_to_kill_in_morgue'] \
-            and current_settings()['dummies_killed_in_morgue'] >= 3
+            return current_morgue_settings()['ready_to_kill'] \
+            and current_morgue_settings()['dummies_killed'] < 3
         def m3():
-            return current_settings()['ready_to_kill_in_morgue'] \
-            and not current_settings()['talk_dummy_in_morgue'] \
-            and current_settings()['dummies_killed_in_morgue'] < 3
+            return current_morgue_settings()['ready_to_kill'] \
+            and current_morgue_settings()['dummies_killed'] >= 3
         def m4():
-            return current_settings()['ready_to_kill_in_morgue'] \
-            and current_settings()['talk_dummy_in_morgue'] \
-            and current_settings()['dummies_killed_in_morgue'] < 3
+            return current_morgue_settings()['ready_to_kill'] \
+            and not current_morgue_settings()['talk_dummy'] \
+            and current_morgue_settings()['dummies_killed'] < 3
         def m5():
-            return not current_settings()['in_party_morte']
+            return current_morgue_settings()['ready_to_kill'] \
+            and current_morgue_settings()['talk_dummy'] \
+            and current_morgue_settings()['dummies_killed'] < 3
         def m6():
-            return current_settings()['key_picked_up_in_morgue']
+            return current_morgue_settings()['key_picked_up']
 
     menu:
         ""
-        "Атаковать ходячий труп" if m1():
-            jump dmorte_one_kill_dummies
-        "Осмотреть трупы" if m2():
-            jump dmorte_one_loot_dummies
-        "Поговорить с ходячим трупом" if m3():
-            jump dmorte_one_talk_dummies
-        "Поговорить с ходячим трупом" if m4():
-            jump dmorte_one_talk_and_loot_dummies
-        "Пригласить Морта в группу" if m5():
+        "Поговорить с Мортом" if m0():
+            jump dmorte_one_talk_morte
+        "Пригласить Морта в группу" if m1():
             jump dmorte_one_join
+        "Атаковать ходячий труп" if m2():
+            jump dmorte_one_kill_dummies
+        "Осмотреть трупы" if m3():
+            jump dmorte_one_loot_dummies
+        "Поговорить с ходячим трупом" if m4():
+            jump dmorte_one_talk_dummies
+        "Поговорить с ходячим трупом" if m5():
+            jump dmorte_one_talk_and_loot_dummies
         "Попробовать открыть одну из дверей" if m6():
             jump open_morgue_door
 
@@ -54,25 +60,23 @@ label morgue_menu_loop_1:
 
 label dmorte_one_introducing:
     scene bg mourge1
-    $ dmorte_one_introducing_id = 0
+    $ dmorte_one_introducing_id = 'dlg_dmorte_one s0'
     $ npc_lines = start_dialog(dmorte_one_introducing_id)
     python:
         pronounce(npc_lines)
     jump morgue_dialog_loop
 
 
-
 label dmorte_one_kill_dummies:
-    $ dmorte_one_kill_dummies_id = 99999999_23
+    $ dmorte_one_kill_dummies_id = 'dlg_dmorte_one s99999999_23'
     $ npc_lines = start_dialog(dmorte_one_kill_dummies_id)
     python:
         pronounce(npc_lines)
     jump morgue_dialog_loop
 
 
-
 label dmorte_one_loot_dummies:
-    $ dmorte_one_loot_dummies_id = 24
+    $ dmorte_one_loot_dummies_id = 'dlg_dmorte_one s24'
     $ npc_lines = start_dialog(dmorte_one_loot_dummies_id)
     python:
         pronounce(npc_lines)
@@ -80,36 +84,33 @@ label dmorte_one_loot_dummies:
 
 
 label dmorte_one_talk_dummies:
-    $ dmorte_one_talk_dummies_id = 33
+    $ dmorte_one_talk_dummies_id = 'dlg_dmorte_one s33'
     $ npc_lines = start_dialog(dmorte_one_talk_dummies_id)
     python:
         pronounce(npc_lines)
     jump morgue_dialog_loop
-
 
 
 label dmorte_one_talk_and_loot_dummies:
-    $ dmorte_one_talk_dummies_id = 34
+    $ dmorte_one_talk_dummies_id = 'dlg_dmorte_one s34'
     $ npc_lines = start_dialog(dmorte_one_talk_dummies_id)
     python:
         pronounce(npc_lines)
     jump morgue_dialog_loop
 
 
-
-label dmorte_one_general_talk:
-    scene bg mourge1
-    $ dmorte_one_general_talk_id = 0
-    $ npc_lines = start_dialog(dmorte_one_general_talk_id)
-    python:
-        pronounce(npc_lines)
-    jump morgue_menu_loop_1
-
-
-
 label dmorte_one_join:
-    $ dmorte_one_join_id = 26
+    $ dmorte_one_join_id = 'dlg_dmorte_one s26'
     $ npc_lines = start_dialog(dmorte_one_join_id)
     python:
         pronounce(npc_lines)
-    jump morgue_menu_loop_1
+    jump morgue_dialog_loop
+
+
+label dmorte_one_talk_morte:
+    scene bg mourge1
+    $ dmorte_one_introducing_id = 'dlg_dmorte_one s30'
+    $ npc_lines = start_dialog(dmorte_one_introducing_id)
+    python:
+        pronounce(npc_lines)
+    jump morgue_dialog_loop
