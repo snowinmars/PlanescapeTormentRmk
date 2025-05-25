@@ -1,4 +1,128 @@
+def _r827_action():
+    DO ~SetGlobal("0202_Dhall_Face_Player","AR0202",1) ~
+def _r5070_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5071_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5072_condition():
+    return current_global_settings()['meet_deionarra']
+def _r5073_condition():
+    return _check_char_prop_gt('protagonist',12,'int') return _check_char_prop_lt('protagonist',13,'wis')
+def _r5074_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r6064_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r13288_condition():
+    return current_global_settings()['meet_deionarra']
+def _r830_condition():
+    return not current_morgue_settings()['vaxis_lawful']
+def _r830_action():
+    DO ~ set_vaxis_betray(2) ~ update_journal('39468')    # '39468': ' ~Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса. ~ '
+def _r831_condition():
+    return current_morgue_settings()['vaxis_lawful']
+def _r831_action():
+    DO ~ set_vaxis_betray(2) change_good_once(-3, 'evil_dhall_2') ~ update_journal('39469')    # '39469': ' ~Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса.~ '
+def _r839_condition():
+    return current_global_settings()['in_party_morte']
+def _r835_condition():
+    return not current_global_settings()['in_party_morte'] return not current_morgue_settings()['alarmed']
+def _r5058_condition():
+    return not current_global_settings()['in_party_morte'] return current_morgue_settings()['alarmed']
+def _r842_condition():
+    return current_global_settings()['meet_dhall']
+def _r843_condition():
+    return current_global_settings()['meet_dhall']
+def _r843_action():
+    DO ~change_good_once(-1, 'evil_dhall_1') ~
+def _r5062_condition():
+    return not current_global_settings()['meet_dhall']
+def _r854_condition():
+    return current_global_settings()['meet_vaxis'] return not current_global_settings()['dead_vaxis'] return not current_morgue_settings()['vaxis_left'] return not current_morgue_settings()['vaxis_betrayed']
+def _r858_condition():
+    return not current_global_settings()['escape_mortuary'] return not current_global_settings()['visited_ar0200']
+def _r5069_action():
+    update_journal('39460')    # '39460': ' ~Я спросил Дхолла, знает ли он меня, и он ответил, что знает обо мне очень мало, и еще меньше — о моих спутниках, сопровождавших меня в прошлом. Вероятно, их тела находятся здесь, в Морге... возможно, увидев их, я смогу что-нибудь вспомнить. ~ '
+def _r870_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r886_action():
+    update_journal('39463')    # '39463': ' ~По всей видимости, мое тело доставил сюда на повозке Фарод вместе с кучей других трупов. Был ли я действительно *мертв*, когда он это делал? ~ '
+def _r891_condition():
+    return not current_global_settings()['meet_pharod']
+def _r892_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r898_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r906_action():
+    update_journal('39464')    # '39464': ' ~Дхолл сказал мне, что Фарода можно найти за пределами Морга, в месте под названием «Улей». Он не хочет, чтобы я охотился за Фародом, но ведь это не он потерял память и восстал из мертвых, так что он может оставить свое мнение при себе. Дхолл посоветовал мне узнать местонахождение Фарода у кого-нибудь в Улье. ~ '
+def _r910_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r921_action():
+    update_journal('39461')    # '39461': ' ~Дхолл сказал мне, что в мемориальном зале на первом этаже Морга погребена женщина, которая сопровождала меня. ~ '
+def _r931_condition():
+    return _check_char_prop_gt('protagonist',11,'int')
+def _r931_action():
+    update_journal('39462')    # '39462': ' ~Дхолл сказал мне, что это благодаря ему мои визиты в Морг остаются в тайне от остальных тленных. До тех пор, пока он остается писарем в приемной, он будет единственным, кто видит мое тело, прибывающее сюда. ~ '
+def _r936_action():
+    DO ~change_good_once(1, 'good_dhall_1') ~
+def _r942_condition():
+    Global("Journal","GLOBAL",0)
+def _r943_condition():
+    return not current_global_settings()['meet_pharod']
+def _r6026_condition():
+    return not current_global_settings()['meet_pharod']
+def _r874_condition():
+    return current_global_settings()['meet_pharod']
+def _r948_condition():
+    return not current_global_settings()['meet_pharod']
+def _r6027_condition():
+    return not current_global_settings()['meet_pharod']
+def _r6066_condition():
+    return current_global_settings()['meet_pharod']
+def _r953_action():
+    DO ~meet_dustmen() ~
+def _r958_action():
+    DO ~meet_dustmen() ~
+def _r1301_action():
+    update_journal('39470')    # '39470': ' ~Дхолл предположил, что раны, полученные мною, незначительны по сравнению с теми, что нанесены моему разуму... Он также предположил, что эти раны стали причиной моей потери памяти, и что увечья разума не ограничились амнезией. Эта мысль мне неприятна: неплохо бы слышать побольше *хороших* новостей время от времени. ~ '
+def _r964_condition():
+    return not current_global_settings()['meet_pharod']
+def _r968_condition():
+    return not current_global_settings()['meet_pharod']
+def _r974_action():
+    DO ~meet_dustmen() ~
+def _r985_action():
+    DO ~meet_dustmen() ~
+def _r5076_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5077_condition():
+    return current_global_settings()['meet_deionarra']
+def _r5078_condition():
+    return _check_char_prop_gt('protagonist',12,'int') return _check_char_prop_lt('protagonist',13,'wis')
+def _r5079_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r5081_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5082_condition():
+    return _check_char_prop_gt('protagonist',12,'int') return _check_char_prop_lt('protagonist',13,'wis')
+def _r5083_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r1327_action():
+    DO ~Setreturn current_global_settings()['meet_dhall'] ~
+def _r5731_action():
+    update_journal('39459')    # '39459': ' ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ '
+def _r5732_action():
+    update_journal('39459')    # '39459': ' ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ '
+def _r6032_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r6033_action():
+    DO ~meet_dustmen() ~
+def _r6051_action():
+    DO ~change_good_once(1, 'good_dhall_2') ~
+def _r6053_action():
+    DO ~change_good_once(-1, 'evil_dhall_3') ~
+
 EXIT = -1
+
 ######
 # Check EXTENDS ~DMORTE~ : 104
 ######
@@ -14,7 +138,7 @@ DialogStateBuilder('DDHALL.D_s1') \
     .with_npc_lines() \
         .line(SPEAKER, "Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя. Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный, — он откладывает перо, — но глухотой я еще не страдаю.", 's1', 'say826') \
     .with_responses() \
-        .response("Неугомонный? Ты меня знаешь?", 'DDHALL.D_s44', 'r', 'reply827').with_action(lambda: ' DO ~SetGlobal("0202_Dhall_Face_Player","AR0202",1) ~ ') \
+        .response("Неугомонный? Ты меня знаешь?", 'DDHALL.D_s44', 'r', 'reply827').with_action(lambda: _r827_action()) \
     .done()
 
 # from 21.0
@@ -22,14 +146,14 @@ DialogStateBuilder('DDHALL.D_s2') \
     .with_npc_lines() \
         .line(SPEAKER, "Тебе знакома женщина, чьи останки погребены внизу, в мемориальном зале? Я думаю, что в прошлом она путешествовала вместе с тобой… Дхолл начинает кашлять, но ему удается перевести дыхание. Я ошибаюсь?", 's2', 'say829') \
     .with_responses() \
-        .response("Где ее тело?", 'DDHALL.D_s42', 'r', 'reply5070').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Я ничего о ней не знаю.", 'DDHALL.D_s43', 'r', 'reply5071').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Она узнала меня, но я не смог ее вспомнить.", 'DDHALL.D_s28', 'r', 'reply5072').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5073').with_condition(lambda: '  CheckStatGT(Protagonist,12,INT) CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5074').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
+        .response("Где ее тело?", 'DDHALL.D_s42', 'r', 'reply5070').with_condition(lambda: _r5070_condition()) \
+        .response("Я ничего о ней не знаю.", 'DDHALL.D_s43', 'r', 'reply5071').with_condition(lambda: _r5071_condition()) \
+        .response("Она узнала меня, но я не смог ее вспомнить.", 'DDHALL.D_s28', 'r', 'reply5072').with_condition(lambda: _r5072_condition()) \
+        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5073').with_condition(lambda: _r5073_condition()) \
+        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5074').with_condition(lambda: _r5074_condition()) \
         .response("Возможно. У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r', 'reply6063') \
-        .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r', 'reply6064').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Возможно, нет. Прощай.", 'DDHALL.D_s11', 'r', 'reply13288').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
+        .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r', 'reply6064').with_condition(lambda: _r6064_condition()) \
+        .response("Возможно, нет. Прощай.", 'DDHALL.D_s11', 'r', 'reply13288').with_condition(lambda: _r13288_condition()) \
     .done()
 
 # from 9.0
@@ -37,8 +161,8 @@ DialogStateBuilder('DDHALL.D_s3') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл пристально смотрит на тебя. Ты уверен?", 's3', 'say832') \
     .with_responses() \
-        .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r', 'reply830').with_condition(lambda: '  Global("Lawful_Vaxis_1","GLOBAL",0) ').with_action(lambda: ' DO ~AddexperienceParty(250) SetGlobal("Betray_Vaxis","GLOBAL",2) ~ JOURNAL #39468 /* ~Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса. ~ */ ') \
-        .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r', 'reply831').with_condition(lambda: '  Global("Lawful_Vaxis_1","GLOBAL",1) ').with_action(lambda: ' DO ~AddexperienceParty(250) SetGlobal("Betray_Vaxis","GLOBAL",2) IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3) ~ JOURNAL #39469 /* ~Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса.~ */ ') \
+        .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r', 'reply830').with_condition(lambda: _r830_condition()).with_action(lambda: _r830_action()) \
+        .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r', 'reply831').with_condition(lambda: _r831_condition()).with_action(lambda: _r831_action()) \
         .response("Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply834') \
     .done()
 
@@ -59,10 +183,10 @@ DialogStateBuilder('DDHALL.D_s5') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента. Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду. Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.", 's5', 'say838') \
     .with_responses() \
-        .response("Приветствую.", EXIT, 'r', 'reply839').with_condition(lambda: '  NearbyDialog("DMorte") ') \
-        .response("Приветствую.", 'DDHALL.D_s7', 'r', 'reply835').with_condition(lambda: '  !NearbyDialog("DMorte") Global("Mortuary_Alert","GLOBAL",0) ') \
-        .response("Приветствую.", 'DDHALL.D_s6', 'r', 'reply5058').with_condition(lambda: '  !NearbyDialog("DMorte") Global("Mortuary_Alert","GLOBAL",1) ') \
-        .response("Оставить старого писаря в покое.", EXIT, 'r', 'reply5060') \
+        .response("Приветствую.", EXIT, 'r', 'reply839').with_condition(lambda: _r839_condition()).with_action(lambda: _dispose()) \
+        .response("Приветствую.", 'DDHALL.D_s7', 'r', 'reply835').with_condition(lambda: _r835_condition()) \
+        .response("Приветствую.", 'DDHALL.D_s6', 'r', 'reply5058').with_condition(lambda: _r5058_condition()) \
+        .response("Оставить старого писаря в покое.", EXIT, 'r', 'reply5060').with_action(lambda: _dispose()) \
     .done()
 
 # from 5.2
@@ -70,10 +194,10 @@ DialogStateBuilder('DDHALL.D_s6') \
     .with_npc_lines() \
         .line(SPEAKER, "Его серые глаза сверкают, когда он отрывает свой взгляд от книги. Подозреваю, что это ты в ответе за нападения в Морге. Это… Они тихо кашляет, затем тяжело хрипит. Это не позволит тебе обрести следующую жизнь.", 's6', 'say841') \
     .with_responses() \
-        .response("Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…", 'DDHALL.D_s9', 'r', 'reply842').with_condition(lambda: '  GlobalGT("Dhall","GLOBAL",0) ') \
-        .response("Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…", 'DDHALL.D_s9', 'r', 'reply843').with_condition(lambda: '  GlobalGT("Dhall","GLOBAL",0) ').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_1","GLOBALGood",-1) ~ ') \
-        .response("Ты знаешь меня?", 'DDHALL.D_s44', 'r', 'reply5062').with_condition(lambda: '  Global("Dhall","GLOBAL",0) ') \
-        .response("Прощай.", EXIT, 'r', 'reply5063') \
+        .response("Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…", 'DDHALL.D_s9', 'r', 'reply842').with_condition(lambda: _r842_condition()) \
+        .response("Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…", 'DDHALL.D_s9', 'r', 'reply843').with_condition(lambda: _r843_condition()).with_action(lambda: _r843_action()) \
+        .response("Ты знаешь меня?", 'DDHALL.D_s44', 'r', 'reply5062').with_condition(lambda: _r5062_condition()) \
+        .response("Прощай.", EXIT, 'r', 'reply5063').with_action(lambda: _dispose()) \
     .done()
 
 # from 5.1
@@ -100,11 +224,11 @@ DialogStateBuilder('DDHALL.D_s9') \
     .with_npc_lines() \
         .line(SPEAKER, "Хорошо. Что ты хочешь узнать?", 's9', 'say852') \
     .with_responses() \
-        .response("Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?", 'DDHALL.D_s3', 'r', 'reply854').with_condition(lambda: '  Global("Vaxis","GLOBAL",1) !Dead("Vaxis") Global("Vaxis_Leave","GLOBAL",0) Global("Betray_Vaxis","GLOBAL",0) ') \
+        .response("Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?", 'DDHALL.D_s3', 'r', 'reply854').with_condition(lambda: _r854_condition()) \
         .response("Что это за место?", 'DDHALL.D_s10', 'r', 'reply857') \
         .response("Как я попал сюда?", 'DDHALL.D_s15', 'r', 'reply855') \
-        .response("Не подскажешь, как мне выбраться отсюда?", 'DDHALL.D_s13', 'r', 'reply858').with_condition(lambda: '  Global("Escape_Mortuary","GLOBAL",0) Global("AR0200_Visited","GLOBAL",0) ') \
-        .response("Ты знаешь, кто я?", 'DDHALL.D_s21', 'r', 'reply5069').with_action(lambda: ' JOURNAL #39460 /* ~Я спросил Дхолла, знает ли он меня, и он ответил, что знает обо мне очень мало, и еще меньше — о моих спутниках, сопровождавших меня в прошлом. Вероятно, их тела находятся здесь, в Морге... возможно, увидев их, я смогу что-нибудь вспомнить. ~ */ ') \
+        .response("Не подскажешь, как мне выбраться отсюда?", 'DDHALL.D_s13', 'r', 'reply858').with_condition(lambda: _r858_condition()) \
+        .response("Ты знаешь, кто я?", 'DDHALL.D_s21', 'r', 'reply5069').with_action(lambda: _r5069_action()) \
         .response("Чем ты здесь занимаешься?", 'DDHALL.D_s25', 'r', 'reply5748') \
         .response("Твой кашель ужасен. Ты хорошо себя чувствуешь?", 'DDHALL.D_s26', 'r', 'reply6065') \
         .response("Ничего… прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply41663') \
@@ -129,7 +253,7 @@ DialogStateBuilder('DDHALL.D_s11') \
     .with_npc_lines() \
         .line(SPEAKER, "Когда ты собираешься уйти, Дхолл произносит: Знай: я не завидую тебе, Неугомонный. Твои возрождения — проклятье, которого я бы не смог вынести. Ты должен смириться с этим. Когда-нибудь твой путь вернет тебя сюда… Дхолл кашляет, из его горла доносятся хрипы. Это путь всех существ из плоти и костей.", 's11', 'say867') \
     .with_responses() \
-        .response("Тогда, возможно, мы еще встретимся, Дхолл.", EXIT, 'r', 'reply41564') \
+        .response("Тогда, возможно, мы еще встретимся, Дхолл.", EXIT, 'r', 'reply41564').with_action(lambda: _dispose()) \
     .done()
 
 # from 2.3 2.4 42.2 42.3 43.1 43.2
@@ -137,7 +261,7 @@ DialogStateBuilder('DDHALL.D_s12') \
     .with_npc_lines() \
         .line(SPEAKER, "Несомненно, они здесь, но я не знаю ни их имен, ни где они лежат. Ты прошел путь, по которому ходят многие, но немногие выживают, — Дхолл обводит вокруг тебя рукой. — Все умершие прибывают сюда. Кое-кто из них, должно быть, путешествовал с тобой.", 's12', 'say868') \
     .with_responses() \
-        .response("Где та женщина, которую ты упомянул?", 'DDHALL.D_s42', 'r', 'reply870').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
+        .response("Где та женщина, которую ты упомянул?", 'DDHALL.D_s42', 'r', 'reply870').with_condition(lambda: _r870_condition()) \
         .response("Я не вижу изъяна в твоих рассуждениях. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply871') \
         .response("Тогда я поищу их. Возможно, они смогут возродить мою память. Прощай.", 'DDHALL.D_s11', 'r', 'reply872') \
     .done()
@@ -148,7 +272,7 @@ DialogStateBuilder('DDHALL.D_s13') \
         .line(SPEAKER, "Хм-м… Главные ворота — самый очевидный выход, но они не выпустят никого, кроме тленных… — Дхолл заходится в кашле, затем продолжает. — У одного из проводников у главных ворот есть ключ к ним, но он вряд ли откроет их для тебя, разве что ты будешь весьма убедительным.", 's13', 'say875') \
     .with_responses() \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply876') \
-        .response("Тогда прощай, Дхолл.", EXIT, 'r', 'reply877') \
+        .response("Тогда прощай, Дхолл.", EXIT, 'r', 'reply877').with_action(lambda: _dispose()) \
     .done()
 
 # from 10.3
@@ -169,7 +293,7 @@ DialogStateBuilder('DDHALL.D_s15') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл презрительно фыркает, как будто его воротит от воспоминания об этом. К Моргу тебя доставила твоя ветхая карета, Неугомонный. Увидев ее, ты мог бы возомнить себя аристократом, учитывая количеств подданных, лежащих в ней зловонной разлагающейся кучей.", 's15', 'say885') \
     .with_responses() \
-        .response("Я приехал сюда на повозке?", 'DDHALL.D_s16', 'r', 'reply886').with_action(lambda: ' JOURNAL #39463 /* ~По всей видимости, мое тело доставил сюда на повозке Фарод вместе с кучей других трупов. Был ли я действительно *мертв*, когда он это делал? ~ */ ') \
+        .response("Я приехал сюда на повозке?", 'DDHALL.D_s16', 'r', 'reply886').with_action(lambda: _r886_action()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply887') \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply888') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply889') \
@@ -180,8 +304,8 @@ DialogStateBuilder('DDHALL.D_s16') \
     .with_npc_lines() \
         .line(SPEAKER, "Да… твое тело лежало где-то посреди горы трупов. Дхолл снова заходится в приступе кашля, который ему удается побороть только несколько минут спустя. Твоим 'сенешалем', как всегда, был Фарод, который был рад доставить твое тело к вратам Морга за несколько медяков.", 's16', 'say890') \
     .with_responses() \
-        .response("Кто этот Фарод?", 'DDHALL.D_s17', 'r', 'reply891').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
-        .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r', 'reply892').with_condition(lambda: '  CheckStatGT(Protagonist,11,WIS) ') \
+        .response("Кто этот Фарод?", 'DDHALL.D_s17', 'r', 'reply891').with_condition(lambda: _r891_condition()) \
+        .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r', 'reply892').with_condition(lambda: _r892_condition()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply893') \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply894') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5753') \
@@ -193,7 +317,7 @@ DialogStateBuilder('DDHALL.D_s17') \
         .line(SPEAKER, "Он… сборщик мертвых. Дхолл переводит дыхание, затем продолжает: У нас в городе есть такие люди, которые собирают тела тех, кто вступил на путь Истинной Смерти, и приносят их нам для подобающего погребения.", 's17', 'say895') \
     .with_responses() \
         .response("Где я могу найти этого Фарода?", 'DDHALL.D_s18', 'r', 'reply897') \
-        .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r', 'reply898').with_condition(lambda: '  CheckStatGT(Protagonist,11,WIS) ') \
+        .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r', 'reply898').with_condition(lambda: _r898_condition()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply899') \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply5754') \
         .response("Тогда пойду и разыщу этого Фарода. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply6031') \
@@ -215,7 +339,7 @@ DialogStateBuilder('DDHALL.D_s19') \
     .with_npc_lines() \
         .line(SPEAKER, "Голос Дхолла начинает звучать предостерегающе. Не ищи Фарода, Неугомонный. Я уверен, что ты попросту пройдешь еще один полный круг, и не станешь от этого мудрее, зато обогатишь Фарода на несколько медяков. Прими смерть, Неугомонный. Не повторяй свой круг страданий.", 's19', 'say901') \
     .with_responses() \
-        .response("Мне *нужно* найти его. Ты не знаешь, где он может быть?", 'DDHALL.D_s20', 'r', 'reply906').with_action(lambda: ' JOURNAL #39464 /* ~Дхолл сказал мне, что Фарода можно найти за пределами Морга, в месте под названием «Улей». Он не хочет, чтобы я охотился за Фародом, но ведь это не он потерял память и восстал из мертвых, так что он может оставить свое мнение при себе. Дхолл посоветовал мне узнать местонахождение Фарода у кого-нибудь в Улье. ~ */ ') \
+        .response("Мне *нужно* найти его. Ты не знаешь, где он может быть?", 'DDHALL.D_s20', 'r', 'reply906').with_action(lambda: _r906_action()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply905') \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply907') \
         .response("Я не могу больше с тобой говорить. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5756') \
@@ -226,7 +350,7 @@ DialogStateBuilder('DDHALL.D_s20') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл умолкает на минуту. Когда же он начинает говорить, то становится ясно, что он делает это с явной неохотой. Я не знаю, в каком притоне находится логово Фарода в данный момент, но могу предположить, что оно где-то за воротами Морга, в Улье. Возможно, кто-то из местных знает, где его найти.", 's20', 'say908') \
     .with_responses() \
-        .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r', 'reply910').with_condition(lambda: '  CheckStatGT(Protagonist,11,WIS) ') \
+        .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r', 'reply910').with_condition(lambda: _r910_condition()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply909') \
         .response("Спасибо. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply5757') \
         .response("Тогда я пойду и поспрашиваю тамошних жителей. Прощай.", 'DDHALL.D_s11', 'r', 'reply6030') \
@@ -237,7 +361,7 @@ DialogStateBuilder('DDHALL.D_s21') \
     .with_npc_lines() \
         .line(SPEAKER, "О тебе, Неугомонный, я знаю совсем немного. О твоих спутниках, лежащих теперь под нашим присмотром, я знаю ненамного больше, — Дхолл вздыхает. — Прошу тебя, Неугомонный, больше не проси никого идти с тобой: за тобой остается только несчастье. Не разделяй свою ношу с другими.", 's21', 'say914') \
     .with_responses() \
-        .response("Меня кто-то сопровождал в пути? Они здесь?", 'DDHALL.D_s2', 'r', 'reply921').with_action(lambda: ' JOURNAL #39461 /* ~Дхолл сказал мне, что в мемориальном зале на первом этаже Морга погребена женщина, которая сопровождала меня. ~ */ ') \
+        .response("Меня кто-то сопровождал в пути? Они здесь?", 'DDHALL.D_s2', 'r', 'reply921').with_action(lambda: _r921_action()) \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply922') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply923') \
     .done()
@@ -279,7 +403,7 @@ DialogStateBuilder('DDHALL.D_s25') \
     .with_npc_lines() \
         .line(SPEAKER, "Я — писарь. Я веду учет всех тел, которые поступают в Морг. Дхолл снова кашляет, затем глубоко вздыхает. И пока поток трупов идет через Морг, я буду при своей должности.", 's25', 'say930') \
     .with_responses() \
-        .response("Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?", 'DDHALL.D_s24', 'r', 'reply931').with_condition(lambda: '  CheckStatGT(Protagonist,11,INT) ').with_action(lambda: ' JOURNAL #39462 /* ~Дхолл сказал мне, что это благодаря ему мои визиты в Морг остаются в тайне от остальных тленных. До тех пор, пока он остается писарем в приемной, он будет единственным, кто видит мое тело, прибывающее сюда. ~ */ ') \
+        .response("Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?", 'DDHALL.D_s24', 'r', 'reply931').with_condition(lambda: _r931_condition()).with_action(lambda: _r931_action()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply932') \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply933') \
         .response("Отлично. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6040') \
@@ -291,7 +415,7 @@ DialogStateBuilder('DDHALL.D_s26') \
         .line(SPEAKER, "Я уже близок к Истинной Смерти, Неугомонный. Уже скоро я пересеку Границу Вечности и обрету покой, который давно искал. Я устал от этой смертной сферы… — Дхолл тяжело вздыхает. — Для такого, как я, на планах больше нет чудес.", 's26', 'say934') \
     .with_responses() \
         .response("Границу Вечности?", 'DDHALL.D_s41', 'r', 'reply935') \
-        .response("Ты уверен? Должен же быть способ помочь тебе.", 'DDHALL.D_s27', 'r', 'reply936').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALGood_Dhall_1","GLOBALGood",1) ~ ') \
+        .response("Ты уверен? Должен же быть способ помочь тебе.", 'DDHALL.D_s27', 'r', 'reply936').with_action(lambda: _r936_action()) \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply937') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply960') \
     .done()
@@ -320,11 +444,11 @@ DialogStateBuilder('DDHALL.D_s29') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл умолкает в раздумье. Скорее всего. Ты что-то потерял… что-то особенно ценное? — он хмурится, понижая тон. — Вряд ли Фарод будет делать исключения для чего либо, кроме вживленных в плоть вещей, но порой даже этого недостаточно, чтобы остановить его жадность.", 's29', 'say941') \
     .with_responses() \
-        .response("Я потерял дневник.", 'DDHALL.D_s31', 'r', 'reply942').with_condition(lambda: '  Global("Journal","GLOBAL",0) ') \
-        .response("Хм-м. Ты не знаешь, где мне найти Фарода?", 'DDHALL.D_s18', 'r', 'reply943').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
+        .response("Я потерял дневник.", 'DDHALL.D_s31', 'r', 'reply942').with_condition(lambda: _r942_condition()) \
+        .response("Хм-м. Ты не знаешь, где мне найти Фарода?", 'DDHALL.D_s18', 'r', 'reply943').with_condition(lambda: _r943_condition()) \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply944') \
-        .response("Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply6026').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
-        .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply874').with_condition(lambda: '  GlobalGT("Pharod","GLOBAL",0) ') \
+        .response("Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply6026').with_condition(lambda: _r6026_condition()) \
+        .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply874').with_condition(lambda: _r874_condition()) \
     .done()
 
 # from 28.0
@@ -341,10 +465,10 @@ DialogStateBuilder('DDHALL.D_s31') \
     .with_npc_lines() \
         .line(SPEAKER, "Дневник? Если он представляет хоть какую-то ценность, то он наверняка в руках Фарода.", 's31', 'say850') \
     .with_responses() \
-        .response("Где мне найти этого Фарода?", 'DDHALL.D_s18', 'r', 'reply948').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
+        .response("Где мне найти этого Фарода?", 'DDHALL.D_s18', 'r', 'reply948').with_condition(lambda: _r948_condition()) \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply949') \
-        .response("В таком случае, я должен разыскать его. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply6027').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
-        .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6066').with_condition(lambda: '  GlobalGT("Pharod","GLOBAL",0) ') \
+        .response("В таком случае, я должен разыскать его. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply6027').with_condition(lambda: _r6027_condition()) \
+        .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6066').with_condition(lambda: _r6066_condition()) \
     .done()
 
 # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
@@ -353,7 +477,7 @@ DialogStateBuilder('DDHALL.D_s32') \
         .line(SPEAKER, "Это место, куда мертвых доставляют для погребения или кремации. Забота об умерших, покинувших эту тень жизни и ступивших на путь Истинной Смерти, входит в обязанности тленных, — Дхолл от волнения понижает тон. — Должно быть, ты был тяжело ранен, раз не узнаешь это место. Это практически твой дом.", 's32', 'say950') \
     .with_responses() \
         .response("Тень жизни?", 'DDHALL.D_s33', 'r', 'reply951') \
-        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply953').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0) ~ ') \
+        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply953').with_action(lambda: _r953_action()) \
         .response("Тленных?", 'DDHALL.D_s47', 'r', 'reply954') \
         .response("Сигил?", 'DDHALL.D_s37', 'r', 'reply955') \
         .response("Ранен?", 'DDHALL.D_s34', 'r', 'reply956') \
@@ -367,7 +491,7 @@ DialogStateBuilder('DDHALL.D_s33') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, тень. Видишь ли, Неугомонный, эта жизнь… она не настоящая. Наши с тобой жизни — всего лишь тени, жалкое подобие от того, что было однажды жизнью. Эта 'жизнь' — то, куда мы попадаем *после* того, как умираем. А здесь мы… в западне. В клетке. До тех пор, пока не достигнем Истинной Смерти.", 's33', 'say957') \
     .with_responses() \
-        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply958').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0) ~ ') \
+        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply958').with_action(lambda: _r958_action()) \
         .response("Почему ты решил, что эта жизнь ненастоящая?", 'DDHALL.D_s50', 'r', 'reply959') \
         .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r', 'reply5736') \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply5737') \
@@ -379,7 +503,7 @@ DialogStateBuilder('DDHALL.D_s34') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, раны, украшающие твое тело… Получи их более слабый человек, он бы уже был на пути к Истинной Смерти, а у тебя некоторые из них уже зажили, — Дхолл надрывно кашляет, затем успокаивается. — Но это всего лишь поверхностные раны.", 's34', 'say961') \
     .with_responses() \
-        .response("Всего лишь поверхностные раны? Что ты имеешь в виду?", 'DDHALL.D_s53', 'r', 'reply1301').with_action(lambda: ' JOURNAL #39470 /* ~Дхолл предположил, что раны, полученные мною, незначительны по сравнению с теми, что нанесены моему разуму... Он также предположил, что эти раны стали причиной моей потери памяти, и что увечья разума не ограничились амнезией. Эта мысль мне неприятна: неплохо бы слышать побольше *хороших* новостей время от времени. ~ */ ') \
+        .response("Всего лишь поверхностные раны? Что ты имеешь в виду?", 'DDHALL.D_s53', 'r', 'reply1301').with_action(lambda: _r1301_action()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply1302') \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply5746') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5747') \
@@ -391,7 +515,7 @@ DialogStateBuilder('DDHALL.D_s35') \
         .line(SPEAKER, "Есть люди, которых я уважаю, Неугомонный, — Дхолл успокаивает свое неровное дыхание. — Фарод не входит в их число. Он носит свою дурную репутацию как знак гордости и свободно распоряжается имуществом умерших. Он рыцарь легкой наживы, подлая мразь самого низкого пошиба.", 's35', 'say962') \
     .with_responses() \
         .response("Рыцарь легкой наживы?", 'DDHALL.D_s36', 'r', 'reply963') \
-        .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r', 'reply964').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
+        .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r', 'reply964').with_condition(lambda: _r964_condition()) \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply965') \
         .response("Звучит ободряюще. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6028') \
     .done()
@@ -402,7 +526,7 @@ DialogStateBuilder('DDHALL.D_s36') \
         .line(SPEAKER, "Рыцарь легкой наживы, — Дхолл кашляет, — вор. Все, кого Фарод приносит к нашим стенам, лишены всего имущества, которым они обладали при жизни. Фарод присваивает себе все, что ему удается вырвать из их окоченевших пальцев.", 's36', 'say966') \
     .with_responses() \
         .response("Мог ли Фарод взять что-нибудь у *меня*?", 'DDHALL.D_s29', 'r', 'reply967') \
-        .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r', 'reply968').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
+        .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r', 'reply968').with_condition(lambda: _r968_condition()) \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply969') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6029') \
     .done()
@@ -422,7 +546,7 @@ DialogStateBuilder('DDHALL.D_s38') \
     .with_npc_lines() \
         .line(SPEAKER, "Неугомонный — имя не хуже других… — Дхолл переводит дыхание. — Ведь что-то держит тебя здесь, не так ли? Какое-то незаконченное дело, какая-то страсть, которая должна быть подавлена, прежде чем ты сможешь достигнуть Истинной Смерти?", 's38', 'say973') \
     .with_responses() \
-        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply974').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0) ~ ') \
+        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply974').with_action(lambda: _r974_action()) \
         .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r', 'reply975') \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply5749') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5750') \
@@ -434,7 +558,7 @@ DialogStateBuilder('DDHALL.D_s39') \
         .line(SPEAKER, "Ты будешь делать то же, что и раньше, Неугомонный. Разыщешь того любителя звенелок, того плешивого идиота, Червеволосого, и вернешь свое имущество. После продолжишь свои бессмысленные поиски, пытаясь выполнить бессмысленные задания, собирая бессмысленные предметы. Затем ты падешь и вернешься назад к нам. Сэкономь время и поговори с мной сейчас, чтобы нам не пришлось вновь заводить этот разговор, когда твои воспоминания снова покинут тебя.", 's39', 'say884') \
     .with_responses() \
         .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply976') \
-        .response("Прощай, Дхолл.", EXIT, 'r', 'reply977') \
+        .response("Прощай, Дхолл.", EXIT, 'r', 'reply977').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -443,7 +567,7 @@ DialogStateBuilder('DDHALL.D_s40') \
         .line(SPEAKER, "Дхолл мельком смотрит на тебя. Итак. Ты вернулся… Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает: …приветствую тебя снова, Неугомонный.", 's40', 'say978') \
     .with_responses() \
         .response("У меня к тебе другие вопросы, Дхолл.", 'DDHALL.D_s9', 'r', 'reply979') \
-        .response("Неважно. Прощай.", EXIT, 'r', 'reply980') \
+        .response("Неважно. Прощай.", EXIT, 'r', 'reply980').with_action(lambda: _dispose()) \
     .done()
 
 # from 26.0 52.0
@@ -452,7 +576,7 @@ DialogStateBuilder('DDHALL.D_s41') \
         .line(SPEAKER, "Границу между владениями тени этой жизни и Истинной Смерти.", 's41', 'say983') \
     .with_responses() \
         .response("Тень этой жизни?", 'DDHALL.D_s33', 'r', 'reply984') \
-        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply985').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0) ~ ') \
+        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply985').with_action(lambda: _r985_action()) \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply5739') \
         .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r', 'reply5740') \
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5741') \
@@ -463,10 +587,10 @@ DialogStateBuilder('DDHALL.D_s42') \
     .with_npc_lines() \
         .line(SPEAKER, "В северо-западном мемориальном зале, этажом ниже. Проверь гробы… ее имя должно быть на одной из мемориальных табличек. Возможно, это оживит твои воспоминания.", 's42', 'say5075') \
     .with_responses() \
-        .response("Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.", 'DDHALL.D_s43', 'r', 'reply5076').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Да, она утверждает, что знает меня, но я не могу ее вспомнить.", 'DDHALL.D_s28', 'r', 'reply5077').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5078').with_condition(lambda: '  CheckStatGT(Protagonist,12,INT) CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5079').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
+        .response("Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.", 'DDHALL.D_s43', 'r', 'reply5076').with_condition(lambda: _r5076_condition()) \
+        .response("Да, она утверждает, что знает меня, но я не могу ее вспомнить.", 'DDHALL.D_s28', 'r', 'reply5077').with_condition(lambda: _r5077_condition()) \
+        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5078').with_condition(lambda: _r5078_condition()) \
+        .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r', 'reply5079').with_condition(lambda: _r5079_condition()) \
         .response("Возможно, мне стоит найти ее. Перед уходом у меня есть к тебе другие вопросы…", 'DDHALL.D_s9', 'r', 'reply6067') \
         .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r', 'reply6068') \
     .done()
@@ -476,9 +600,9 @@ DialogStateBuilder('DDHALL.D_s43') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл не отвечает. Он просто молчаливо смотрит на тебя.", 's43', 'say5080') \
     .with_responses() \
-        .response("Где я могу найти ее?", 'DDHALL.D_s42', 'r', 'reply5081').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r', 'reply5082').with_condition(lambda: '  CheckStatGT(Protagonist,12,INT) CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r', 'reply5083').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
+        .response("Где я могу найти ее?", 'DDHALL.D_s42', 'r', 'reply5081').with_condition(lambda: _r5081_condition()) \
+        .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r', 'reply5082').with_condition(lambda: _r5082_condition()) \
+        .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r', 'reply5083').with_condition(lambda: _r5083_condition()) \
         .response("У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r', 'reply6069') \
         .response("Тогда прощай.", 'DDHALL.D_s11', 'r', 'reply6070') \
     .done()
@@ -488,7 +612,7 @@ DialogStateBuilder('DDHALL.D_s44') \
     .with_npc_lines() \
         .line(SPEAKER, "Знаю ли я тебя? Я… — в голосе писца звучит горечь. — Я *никогда* не знал тебя, Неугомонный. Не больше, чем ты знал о себе сам. Он умолкает на секунду. Ты ведь все забыл, не так ли?", 's44', 'say840') \
     .with_responses() \
-        .response("*Кто* ты?", 'DDHALL.D_s45', 'r', 'reply1327').with_action(lambda: ' DO ~SetGlobal("Dhall","GLOBAL",1) ~ ') \
+        .response("*Кто* ты?", 'DDHALL.D_s45', 'r', 'reply1327').with_action(lambda: _r1327_action()) \
     .done()
 
 # from 44.0
@@ -496,8 +620,8 @@ DialogStateBuilder('DDHALL.D_s45') \
     .with_npc_lines() \
         .line(SPEAKER, "Как всегда, вопрос. И как всегда, неправильный. Он делает легкий поклон, но движение вызывает у него неожиданный приступ кашля. Я… Он умолкает на минуту, переводя дыхание. Я… Дхолл.", 's45', 'say5728') \
     .with_responses() \
-        .response("Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…", 'DDHALL.D_s9', 'r', 'reply5731').with_action(lambda: ' JOURNAL #39459 /* ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ */ ') \
-        .response("У меня нет времени на это. Прощай.", 'DDHALL.D_s46', 'r', 'reply5732').with_action(lambda: ' JOURNAL #39459 /* ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ */ ') \
+        .response("Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…", 'DDHALL.D_s9', 'r', 'reply5731').with_action(lambda: _r5731_action()) \
+        .response("У меня нет времени на это. Прощай.", 'DDHALL.D_s46', 'r', 'reply5732').with_action(lambda: _r5732_action()) \
     .done()
 
 # from 45.1
@@ -505,7 +629,7 @@ DialogStateBuilder('DDHALL.D_s46') \
     .with_npc_lines() \
         .line(SPEAKER, "Хорошо, Неугомонный, — Дхолл кивает. — Но, боюсь, в данном вопросе время тебе не враг, — он снова берется за перо. — Когда ты снова захочешь поговорить, я буду здесь.", 's46', 'say5730') \
     .with_responses() \
-        .response("Я еще вернусь. Прощай.", EXIT, 'r', 'reply40005') \
+        .response("Я еще вернусь. Прощай.", EXIT, 'r', 'reply40005').with_action(lambda: _dispose()) \
     .done()
 
 # from 32.2
@@ -513,8 +637,8 @@ DialogStateBuilder('DDHALL.D_s47') \
     .with_npc_lines() \
         .line(SPEAKER, "Мы — тленные, фракция, собравшая всех тех, кто понял иллюзорность этой жизни. Мы ждем следующей жизни и помогаем другим в их путешествии.", 's47', 'say847') \
     .with_responses() \
-        .response("Может, ты мне объяснишь, почему тленные хотят моей смерти?", 'DDHALL.D_s22', 'r', 'reply6032').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
-        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply6033').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0) ~ ') \
+        .response("Может, ты мне объяснишь, почему тленные хотят моей смерти?", 'DDHALL.D_s22', 'r', 'reply6032').with_condition(lambda: _r6032_condition()) \
+        .response("Истинной Смерти?", 'DDHALL.D_s48', 'r', 'reply6033').with_action(lambda: _r6033_action()) \
         .response("Иллюзорность этой жизни?", 'DDHALL.D_s33', 'r', 'reply6034') \
         .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r', 'reply6035') \
         .response("У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r', 'reply6036') \
@@ -548,9 +672,9 @@ DialogStateBuilder('DDHALL.D_s50') \
     .with_npc_lines() \
         .line(SPEAKER, "А что заставляет тебя думать, что эта жизнь *настоящая*? Прислушайся к себе. Разве ты не чувствуешь какую-то опустошенность? — Дхолл качает головой. — Это чистилище. Здесь только горе. Несчастье. Страдание. Они не являются элементами 'жизни'. Они — часть клетки, в которой мы заперты в этой тени.", 's50', 'say853') \
     .with_responses() \
-        .response("Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них.", 'DDHALL.D_s51', 'r', 'reply6051').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALGood_Dhall_2","GLOBALGood",1) ~ ') \
+        .response("Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них.", 'DDHALL.D_s51', 'r', 'reply6051').with_action(lambda: _r6051_action()) \
         .response("Заперты? Каким образом?", 'DDHALL.D_s51', 'r', 'reply6052') \
-        .response("Довольно этой философии. Как все это относится к тому, что я оказался здесь?", 'DDHALL.D_s51', 'r', 'reply6053').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_3","GLOBALGood",-1) ~ ') \
+        .response("Довольно этой философии. Как все это относится к тому, что я оказался здесь?", 'DDHALL.D_s51', 'r', 'reply6053').with_action(lambda: _r6053_action()) \
     .done()
 
 # from 50.0 50.1 50.2

@@ -1,11 +1,71 @@
+def _r7295_action():
+    meet_death_of_names() update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
+def _r7297_condition():
+    return current_global_settings()['know_xachariah_name']
+def _r7298_condition():
+    return current_global_settings()['meet_deionarra']
+def _r7299_condition():
+    return current_global_settings()['meet_dhall'] return not current_global_settings()['dead_dhall']
+def _r7300_condition():
+    return current_global_settings()['meet_dhall'] return current_global_settings()['dead_dhall'] return current_global_settings()['pass_death_of_names_dhall']
+def _r7303_condition():
+    return current_global_settings()['pass_death_of_names_quentin']
+def _r7304_action():
+    DO ~pass_death_of_names_adahn()
+    change_adan_once('Adahn_Death_of_Names_1') ~
+def _r7310_condition():
+    PartyGoldGT(2) return current_global_settings()['know_xachariah_name']
+def _r7311_condition():
+    return current_global_settings()['meet_deionarra']
+def _r7312_condition():
+    PartyGoldGT(2) return current_global_settings()['meet_dhall'] return current_global_settings()['dead_dhall'] return not current_global_settings()['pass_death_of_names_dhall']
+def _r7312_action():
+    DO ~TakePartyGold(3) Setreturn current_global_settings()['pass_death_of_names_dhall'] ~
+def _r7313_condition():
+    PartyGoldGT(2) return current_global_settings()['meet_dhall'] return not current_global_settings()['dead_dhall']
+def _r7317_condition():
+    PartyGoldGT(2) return current_global_settings()['quentin'] return current_global_settings()['dead_quentin'] return not current_global_settings()['death_of_names_quentin']
+def _r7317_action():
+    DO ~TakePartyGold(3) Setreturn current_global_settings()['pass_death_of_names_quentin'] ~
+def _r9768_condition():
+    PartyGoldGT(2) return current_global_settings()['quentin'] !return current_global_settings()['dead_quentin']
+def _r9769_condition():
+    PartyGoldGT(2) Global("Crier_Quest","GLOBAL",1)
+def _r9769_action():
+    DO ~TakePartyGold(3) AddexperienceParty(500) SetGlobal("Crier_Quest","GLOBAL",2) ~ update_journal('26108')    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
+def _r9770_condition():
+    PartyGoldLT(3)
+def _r26086_condition():
+    PartyGoldGT(2)
+def _r7362_condition():
+    return current_global_settings()['know_xachariah_name']
+def _r7363_condition():
+    return current_global_settings()['meet_deionarra']
+def _r7364_condition():
+    return current_global_settings()['meet_dhall'] return not current_global_settings()['dead_dhall']
+def _r7365_condition():
+    return current_global_settings()['meet_dhall'] return current_global_settings()['dead_dhall'] return current_global_settings()['pass_death_of_names_dhall']
+def _r7366_condition():
+    Global("Know_Xixi","GLOBAL",1) GlobalLT("Xixi_Back","GLOBAL",2)
+def _r7367_condition():
+    Global("Know_Xixi","GLOBAL",1) Global("Xixi_Back","GLOBAL",3)
+def _r7368_condition():
+    return current_global_settings()['pass_death_of_names_quentin']
+def _r9771_condition():
+    Global("Crier_Quest","GLOBAL",2)
+def _r9772_action():
+    DO ~pass_death_of_names_adahn()
+    change_adan_once('Adahn_Death_of_Names_1') ~
+
 EXIT = -1
+
 # from -
 DialogStateBuilder('DDEATHON.D_s0') \
     .with_npc_lines() \
         .line(SPEAKER, "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны. Правая рука короче левой, и он покачивает ее на перевязи, будто убаюкивая малое дитя.", 's0', 'say7288') \
     .with_responses() \
         .response("Приветствую.", 'DDEATHON.D_s1', 'r', 'reply7289') \
-        .response("Оставить мужчину в покое.", EXIT, 'r', 'reply7290') \
+        .response("Оставить мужчину в покое.", EXIT, 'r', 'reply7290').with_action(lambda: _dispose()) \
     .done()
 
 # from 0.0
@@ -22,7 +82,7 @@ DialogStateBuilder('DDEATHON.D_s2') \
     .with_npc_lines() \
         .line(SPEAKER, "Нет имени, нет имени, ничем не помогу тебе, — нараспев произносит тленный. — Нужно имя, чтобы увидеть, где оно умерло.", 's2', 'say7294') \
     .with_responses() \
-        .response("Что?", 'DDEATHON.D_s3', 'r', 'reply7295').with_action(lambda: ' DO ~SetGlobal("Death_of_Names","GLOBAL",1) ~ JOURNAL #66659 /* ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ */ ') \
+        .response("Что?", 'DDEATHON.D_s3', 'r', 'reply7295').with_action(lambda: _r7295_action()) \
     .done()
 
 # from 2.0
@@ -30,14 +90,14 @@ DialogStateBuilder('DDEATHON.D_s3') \
     .with_npc_lines() \
         .line(SPEAKER, "Получив имя при рождении, верни его назад, когда оно тебе больше не нужно. Смерть-имен, Смерть-имен. Его глаза скользят по монолиту и по стенам. Много имен похоронено здесь Смертью-имен. Скажи мне имя, и я покажу его могилу.", 's3', 'say7296') \
     .with_responses() \
-        .response("Захария.", 'DDEATHON.D_s10', 'r', 'reply7297').with_condition(lambda: '  GlobalGT("Xachariah_Name","GLOBAL",0) ') \
-        .response("Дейонарра.", 'DDEATHON.D_s10', 'r', 'reply7298').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7299').with_condition(lambda: '  GlobalGT("Dhall","GLOBAL",0) !Dead("Dhall") ') \
-        .response("Дхолл.", 'DDEATHON.D_s10', 'r', 'reply7300').with_condition(lambda: '  GlobalGT("Dhall","GLOBAL",0) Dead("Dhall") Global("Death_of_Names_Dhall","GLOBAL",1) ') \
-        .response("Квентин.", 'DDEATHON.D_s13', 'r', 'reply7303').with_condition(lambda: '  Global("Death_of_Names_Quentin","GLOBAL",1) ') \
-        .response("Э… Не знаю. Попробуй 'Адан'.", 'DDEATHON.D_s4', 'r', 'reply7304').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALAdahn_Death_of_Names_1","GLOBALAdahn",1) ~ ') \
+        .response("Захария.", 'DDEATHON.D_s10', 'r', 'reply7297').with_condition(lambda: _r7297_condition()) \
+        .response("Дейонарра.", 'DDEATHON.D_s10', 'r', 'reply7298').with_condition(lambda: _r7298_condition()) \
+        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7299').with_condition(lambda: _r7299_condition()) \
+        .response("Дхолл.", 'DDEATHON.D_s10', 'r', 'reply7300').with_condition(lambda: _r7300_condition()) \
+        .response("Квентин.", 'DDEATHON.D_s13', 'r', 'reply7303').with_condition(lambda: _r7303_condition()) \
+        .response("Э… Не знаю. Попробуй 'Адан'.", 'DDEATHON.D_s4', 'r', 'reply7304').with_action(lambda: _r7304_action()) \
         .response("Хм-м. А ты можешь похоронить для меня имя?", 'DDEATHON.D_s5', 'r', 'reply9766') \
-        .response("На сегодня имен нет. Извини, что отвлек тебя.", EXIT, 'r', 'reply9767') \
+        .response("На сегодня имен нет. Извини, что отвлек тебя.", EXIT, 'r', 'reply9767').with_action(lambda: _dispose()) \
     .done()
 
 # from 3.2 3.5 5.3 5.5 9.4 9.6 9.10
@@ -47,7 +107,7 @@ DialogStateBuilder('DDEATHON.D_s4') \
     .with_responses() \
         .response("Давай попробуем другое имя…", 'DDEATHON.D_s9', 'r', 'reply7306') \
         .response("Ты можешь похоронить для меня имя?", 'DDEATHON.D_s5', 'r', 'reply7307') \
-        .response("Хорошо… Извини, что отвлек.", EXIT, 'r', 'reply7308') \
+        .response("Хорошо… Извини, что отвлек.", EXIT, 'r', 'reply7308').with_action(lambda: _dispose()) \
     .done()
 
 # from 3.6 4.1 7.1 9.1 10.2 11.1 12.1 13.2 14.1 16.1
@@ -55,15 +115,15 @@ DialogStateBuilder('DDEATHON.D_s5') \
     .with_npc_lines() \
         .line(SPEAKER, "Он кивает, затем вынимает маленькую руку из перевязи на боку. Она атрофирована… по размерам не больше детской. Чтоб похоронить, нужно звенелки заплатить. Три медяка, три.", 's5', 'say7309') \
     .with_responses() \
-        .response("Захария.", 'DDEATHON.D_s12', 'r', 'reply7310').with_condition(lambda: '  PartyGoldGT(2) GlobalGT("Xachariah_Name","GLOBAL",0) ') \
-        .response("Дейонарра.", 'DDEATHON.D_s12', 'r', 'reply7311').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Дхолл.", 'DDEATHON.D_s6', 'r', 'reply7312').with_condition(lambda: '  PartyGoldGT(2) GlobalGT("Dhall","GLOBAL",0) Dead("Dhall") Global("Death_of_Names_Dhall","GLOBAL",0) ').with_action(lambda: ' DO ~TakePartyGold(3) SetGlobal("Death_of_Names_Dhall","GLOBAL",1) ~ ') \
-        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7313').with_condition(lambda: '  PartyGoldGT(2) GlobalGT("Dhall","GLOBAL",0) !Dead("Dhall") ') \
-        .response("Квентин.", 'DDEATHON.D_s15', 'r', 'reply7317').with_condition(lambda: '  PartyGoldGT(2) GlobalGT("Quentin","GLOBAL",0) Dead("Quentin") Global("Death_of_Names_Quentin","GLOBAL",0) ').with_action(lambda: ' DO ~TakePartyGold(3) SetGlobal("Death_of_Names_Quentin","GLOBAL",1) ~ ') \
-        .response("Квентин.", 'DDEATHON.D_s4', 'r', 'reply9768').with_condition(lambda: '  PartyGoldGT(2) GlobalGT("Quentin","GLOBAL",0) !Dead("Quentin") ') \
-        .response("Хм-м… Эс-Аннон.", 'DDEATHON.D_s6', 'r', 'reply9769').with_condition(lambda: '  PartyGoldGT(2) Global("Crier_Quest","GLOBAL",1) ').with_action(lambda: ' DO ~TakePartyGold(3) AddexperienceParty(500) SetGlobal("Crier_Quest","GLOBAL",2) ~ JOURNAL #26108 /* ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ */ ') \
-        .response("У меня нет ни одной… звенелки. Может быть, в другой раз.", EXIT, 'r', 'reply9770').with_condition(lambda: '  PartyGoldLT(3) ') \
-        .response("На сегодня имен нет. Прощай.", EXIT, 'r', 'reply26086').with_condition(lambda: '  PartyGoldGT(2) ') \
+        .response("Захария.", 'DDEATHON.D_s12', 'r', 'reply7310').with_condition(lambda: _r7310_condition()) \
+        .response("Дейонарра.", 'DDEATHON.D_s12', 'r', 'reply7311').with_condition(lambda: _r7311_condition()) \
+        .response("Дхолл.", 'DDEATHON.D_s6', 'r', 'reply7312').with_condition(lambda: _r7312_condition()).with_action(lambda: _r7312_action()) \
+        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7313').with_condition(lambda: _r7313_condition()) \
+        .response("Квентин.", 'DDEATHON.D_s15', 'r', 'reply7317').with_condition(lambda: _r7317_condition()).with_action(lambda: _r7317_action()) \
+        .response("Квентин.", 'DDEATHON.D_s4', 'r', 'reply9768').with_condition(lambda: _r9768_condition()) \
+        .response("Хм-м… Эс-Аннон.", 'DDEATHON.D_s6', 'r', 'reply9769').with_condition(lambda: _r9769_condition()).with_action(lambda: _r9769_action()) \
+        .response("У меня нет ни одной… звенелки. Может быть, в другой раз.", EXIT, 'r', 'reply9770').with_condition(lambda: _r9770_condition()).with_action(lambda: _dispose()) \
+        .response("На сегодня имен нет. Прощай.", EXIT, 'r', 'reply26086').with_condition(lambda: _r26086_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 5.2 5.6
@@ -81,7 +141,7 @@ DialogStateBuilder('DDEATHON.D_s7') \
     .with_responses() \
         .response("Я хотел бы, чтобы ты поискал для меня имя…", 'DDEATHON.D_s9', 'r', 'reply7353') \
         .response("Я хотел бы похоронить другое имя.", 'DDEATHON.D_s5', 'r', 'reply7354') \
-        .response("Спасибо. Прощай.", EXIT, 'r', 'reply7355') \
+        .response("Спасибо. Прощай.", EXIT, 'r', 'reply7355').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -90,7 +150,7 @@ DialogStateBuilder('DDEATHON.D_s8') \
         .line(SPEAKER, "Перед тобой Смерть-имен. Он стоит перед монументом с искривленной улыбкой, а его рука висит на перевязи.", 's8', 'say7356') \
     .with_responses() \
         .response("Приветствую.", 'DDEATHON.D_s9', 'r', 'reply7357') \
-        .response("Оставить его в покое.", EXIT, 'r', 'reply7358') \
+        .response("Оставить его в покое.", EXIT, 'r', 'reply7358').with_action(lambda: _dispose()) \
     .done()
 
 # from 4.0 7.0 8.0 10.1 11.0 12.0 13.1 14.0 16.0
@@ -100,16 +160,16 @@ DialogStateBuilder('DDEATHON.D_s9') \
     .with_responses() \
         .response("Я… не знаю.", 'DDEATHON.D_s2', 'r', 'reply7360') \
         .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r', 'reply7361') \
-        .response("Захария.", 'DDEATHON.D_s10', 'r', 'reply7362').with_condition(lambda: '  GlobalGT("Xachariah_Name","GLOBAL",0) ') \
-        .response("Дейонарра.", 'DDEATHON.D_s10', 'r', 'reply7363').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7364').with_condition(lambda: '  GlobalGT("Dhall","GLOBAL",0) !Dead("Dhall") ') \
-        .response("Дхолл.", 'DDEATHON.D_s10', 'r', 'reply7365').with_condition(lambda: '  GlobalGT("Dhall","GLOBAL",0) Dead("Dhall") Global("Death_of_Names_Dhall","GLOBAL",1) ') \
-        .response("Сиси.", 'DDEATHON.D_s4', 'r', 'reply7366').with_condition(lambda: '  Global("Know_Xixi","GLOBAL",1) GlobalLT("Xixi_Back","GLOBAL",2) ') \
-        .response("Сиси.", 'DDEATHON.D_s10', 'r', 'reply7367').with_condition(lambda: '  Global("Know_Xixi","GLOBAL",1) Global("Xixi_Back","GLOBAL",3) ') \
-        .response("Квентин.", 'DDEATHON.D_s13', 'r', 'reply7368').with_condition(lambda: '  Global("Death_of_Names_Quentin","GLOBAL",1) ') \
-        .response("Эс-Аннон.", 'DDEATHON.D_s10', 'r', 'reply9771').with_condition(lambda: '  Global("Crier_Quest","GLOBAL",2) ') \
-        .response("Э… 'Адан'?", 'DDEATHON.D_s4', 'r', 'reply9772').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALAdahn_Death_of_Names_1","GLOBALAdahn",1) ~ ') \
-        .response("Извини за беспокойство. Прощай.", EXIT, 'r', 'reply26109') \
+        .response("Захария.", 'DDEATHON.D_s10', 'r', 'reply7362').with_condition(lambda: _r7362_condition()) \
+        .response("Дейонарра.", 'DDEATHON.D_s10', 'r', 'reply7363').with_condition(lambda: _r7363_condition()) \
+        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7364').with_condition(lambda: _r7364_condition()) \
+        .response("Дхолл.", 'DDEATHON.D_s10', 'r', 'reply7365').with_condition(lambda: _r7365_condition()) \
+        .response("Сиси.", 'DDEATHON.D_s4', 'r', 'reply7366').with_condition(lambda: _r7366_condition()) \
+        .response("Сиси.", 'DDEATHON.D_s10', 'r', 'reply7367').with_condition(lambda: _r7367_condition()) \
+        .response("Квентин.", 'DDEATHON.D_s13', 'r', 'reply7368').with_condition(lambda: _r7368_condition()) \
+        .response("Эс-Аннон.", 'DDEATHON.D_s10', 'r', 'reply9771').with_condition(lambda: _r9771_condition()) \
+        .response("Э… 'Адан'?", 'DDEATHON.D_s4', 'r', 'reply9772').with_action(lambda: _r9772_action()) \
+        .response("Извини за беспокойство. Прощай.", EXIT, 'r', 'reply26109').with_action(lambda: _dispose()) \
     .done()
 
 # from 3.0 3.1 3.3 9.2 9.3 9.5 9.7 9.9
@@ -120,7 +180,7 @@ DialogStateBuilder('DDEATHON.D_s10') \
         .response("Осмотреть то место, куда он указывает.", 'DDEATHON.D_s11', 'r', 'reply7370') \
         .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7371') \
         .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r', 'reply7372') \
-        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7373') \
+        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7373').with_action(lambda: _dispose()) \
     .done()
 
 # from 10.0
@@ -130,7 +190,7 @@ DialogStateBuilder('DDEATHON.D_s11') \
     .with_responses() \
         .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7375') \
         .response("Я хотел бы похоронить имя…", 'DDEATHON.D_s5', 'r', 'reply7376') \
-        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7377') \
+        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7377').with_action(lambda: _dispose()) \
     .done()
 
 # from 5.0 5.1
@@ -140,7 +200,7 @@ DialogStateBuilder('DDEATHON.D_s12') \
     .with_responses() \
         .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7380') \
         .response("Я хотел бы похоронить имя…", 'DDEATHON.D_s5', 'r', 'reply7382') \
-        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7383') \
+        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7383').with_action(lambda: _dispose()) \
     .done()
 
 # from 3.4 9.8
@@ -151,7 +211,7 @@ DialogStateBuilder('DDEATHON.D_s13') \
         .response("Осмотреть то место, куда он указывает.", 'DDEATHON.D_s14', 'r', 'reply7386') \
         .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7387') \
         .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r', 'reply7388') \
-        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7390') \
+        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7390').with_action(lambda: _dispose()) \
     .done()
 
 # from 13.0
@@ -161,7 +221,7 @@ DialogStateBuilder('DDEATHON.D_s14') \
     .with_responses() \
         .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7392') \
         .response("Я хотел бы похоронить имя…", 'DDEATHON.D_s5', 'r', 'reply7394') \
-        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7403') \
+        .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7403').with_action(lambda: _dispose()) \
     .done()
 
 # from 5.4
@@ -179,5 +239,5 @@ DialogStateBuilder('DDEATHON.D_s16') \
     .with_responses() \
         .response("Я хотел бы, чтобы ты поискал для меня имя…", 'DDEATHON.D_s9', 'r', 'reply7407') \
         .response("Я хотел бы похоронить другое имя.", 'DDEATHON.D_s5', 'r', 'reply7408') \
-        .response("Спасибо. Прощай.", EXIT, 'r', 'reply7409') \
+        .response("Спасибо. Прощай.", EXIT, 'r', 'reply7409').with_action(lambda: _dispose()) \
     .done()

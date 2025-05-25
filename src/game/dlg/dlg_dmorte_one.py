@@ -1,16 +1,17 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from engine.settings_global import (
-    current_global_settings,
+from settings.settings_global import (
     set_in_party_morte,
     change_good,
     change_good_morte,
+    kill_morte,
+    meet_morte,
     travel
 )
-from engine.settings_morgue import (
-    current_morgue_settings,
-    pick_up_key,
-    ready_to_kill,
+from settings.settings_morgue import (
+    pick_up_intro_key,
+    pick_up_scalpel,
+    ready_to_kill_dummies,
     kill_dummy,
     talk_dummy
 )
@@ -21,58 +22,54 @@ from engine.transforms import (
     center_right_down
 )
 
+###
 def _init():
     travel('morgue1')
+    meet_morte()
     _show_morte('morte_img smiling1', center_right_down)
-
-def _r16_action():
-    change_good_morte(1)
-    change_good(1)
-
-def _show_morte(sprite, start_pos, end_pos = None, duration=0.5):
+    set_in_party_morte(True)
+def _dispose():
+    _hide('morte_img')
+def _show(sprite, start_pos, end_pos = None, duration=0.5):
     end_pos = start_pos if end_pos is None else end_pos
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
-
-def _hide_morte():
-    renpy.exports.hide('morte_img')
-
-def _kick_morte():
-    set_in_party_morte(False)
-
+def _hide(sprite):
+    renpy.exports.hide()
+def _check_char_prop_gt(who, gtValue, prop):
+    return True
+def _check_char_prop_lt(who, gtValue, prop):
+    return True
+###
 def _join_morte():
     set_in_party_morte(True)
-
-def _ready_to_kill():
-    ready_to_kill(True)
-
-def _kill_dummy():
-    kill_dummy()
-
-def _pick_up_key():
-    pick_up_key(True)
-    ready_to_kill(False)
-
-def _talk_dummy():
-    talk_dummy()
-    kill_dummy()
+    _dispose()
+def _ready_to_kill_dummies():
+    ready_to_kill_dummies(True)
+def _kill_morte():
+    kill_morte()
+def _s19_action():
+    pick_up_scalpel()
+###
+def _r39824_action():
+    change_good_once(1, 'good_morte_1')
+###
 
 # DLG/DMORTE1.DLG
-# DLG/DZM782.DLG
 def dlg_dmorte_one():
     teller        = renpy.store.characters['teller']
     morte_unknown = renpy.store.characters['morte_unknown']
     morte         = renpy.store.characters['morte']
     scares        = renpy.store.characters['scares']
-    EXIT          = -1
+    EXIT = -1
 
     # from -
     DialogStateBuilder('DMORTE1.D_s0') \
         .with_npc_lines() \
             .line(morte_unknown, "Эй, шеф. Ты в порядке?", 's0', 'say39792').with_action(lambda: _init()) \
-            .line(morte_unknown, "Изображаешь из себя труп или пытаешься обмануть трухлявых?", 's0', 'say39792').with_action(lambda: _join_morte()) \
-            .line(morte_unknown, "Я уж думал, что ты дал дуба.", 's0', 'say39792').with_action(lambda: _show_morte('morte_img smiling3',  center_left_down)) \
+            .line(morte_unknown, "Изображаешь из себя труп или пытаешься обмануть трухлявых?", 's0', 'say39792') \
+            .line(morte_unknown, "Я уж думал, что ты дал дуба.", 's0', 'say39792').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
-            .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r0', 'reply39793').with_action(lambda: _join_morte()) \
+            .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r0', 'reply39793') \
         .done()
 
     # from 0.0
@@ -204,7 +201,7 @@ def dlg_dmorte_one():
             .line(morte, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы.", 's14', 'say39823') \
             .line(morte, "Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.", 's14', 'say39823') \
         .with_responses() \
-            .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE1.D_s15', 'r16', 'reply39824').with_action(lambda: _r16_action()) \
+            .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE1.D_s15', 'r16', 'reply39824').with_action(lambda: _r39824_action()) \
             .response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ? Ладно.", 'DMORTE1.D_s99999999_18', 'r17', 'reply39825') \
         .done()
 
@@ -222,15 +219,15 @@ def dlg_dmorte_one():
     # from 15.0
     DialogStateBuilder('DMORTE1.D_s99999999_18') \
         .with_npc_lines() \
-            .line(teller, "На одной из полок вы заметили что-то металлическое. Вы подходите ближе.", '-', '-') \
+            .line(teller, "На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.", 's18', 'say39832') \
         .with_responses() \
-            .response("(Осмотреть)", 'DMORTE1.D_s19', '-', '-') \
+            .response("(Осмотреть полки)", 'DMORTE1.D_s19', 'r19', 'reply39833') \
         .done()
 
-    # from 99999999_18.0
+    # from -
     DialogStateBuilder('DMORTE1.D_s19') \
         .with_npc_lines() \
-            .line(morte, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами…", 's19', 'say39834') \
+            .line(morte, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами…", 's19', 'say39834').with_action(lambda: _s19_action()) \
             .line(morte, "… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы.", 's19', 'say39834') \
         .with_responses() \
             .response("А, может, ты мне *поможешь*, Морт?", 'DMORTE1.D_s20', 'r22', 'reply39835') \
@@ -266,36 +263,36 @@ def dlg_dmorte_one():
     # from 19.1 20.1 21.1 22.0
     DialogStateBuilder('DMORTE1.D_s23') \
         .with_npc_lines() \
-            .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845').with_action(lambda: _ready_to_kill()) \
+            .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845').with_action(lambda: _ready_to_kill_dummies()) \
         .with_responses() \
-            .response("Вперед.", EXIT, 'r29', 'reply39846') \
+            .response("Вперед.", EXIT, 'r29', 'reply39846').with_action(lambda: _dispose()) \
         .done()
 
     # from -
     DialogStateBuilder('DMORTE1.D_s99999999_23') \
         .with_npc_lines() \
-            .line(teller, "Вы втыкаете скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Вы без сожалений вбиваете скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dummy()) \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dummy()) \
         .with_responses() \
-            .response("(…)", EXIT, '-', '-') \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .done()
 
     # from -
     DialogStateBuilder('DMORTE1.D_s24') \
         .with_npc_lines() \
-            .line(morte, "Отлично, похоже, ты позаботился о правильном трупе.", 's24', 'say0') \
-            .line(teller, "Вы достаёте из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-') \
+            .line(morte, "Отлично, похоже, ты позаботился о правильном трупе.", 's24', 'say0').with_action(lambda: _show('morte_img default',  center_left_down)) \
+            .line(teller, "Я достаю из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-') \
             .line(morte, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", 's25', 'say39849').with_action(lambda: _pick_up_key()) \
         .with_responses() \
-            .response("Тогда я перепробую все двери.", EXIT, 'r31', 'reply39850') \
+            .response("Тогда я перепробую все двери.", EXIT, 'r31', 'reply39850').with_action(lambda: _dispose()) \
         .done()
 
     # from -
     DialogStateBuilder('DMORTE1.D_s26') \
         .with_npc_lines() \
-            .line(morte, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?", 's26', 'say39851') \
+            .line(morte, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?", 's26', 'say39851').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
-            .response("Да… идем.", 'DMORTE1.D_sNaN', 'r32', 'reply39852').with_action(lambda: _join_morte()) \
+            .response("Да… идем.", EXIT, 'r32', 'reply39852').with_action(lambda: _join_morte()) \
             .response("Не сейчас, Морт.", 'DMORTE1.D_s27', 'r33', 'reply39853') \
         .done()
 
@@ -326,15 +323,15 @@ def dlg_dmorte_one():
         .with_npc_lines() \
             .line(morte, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.", 's29', 'say39861').with_action(lambda: _kick_morte()) \
         .with_responses() \
-            .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r39', 'reply39862') \
+            .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r39', 'reply39862').with_action(lambda: _dispose()) \
         .done()
 
     # from -
     DialogStateBuilder('DMORTE1.D_s30') \
         .with_npc_lines() \
-            .line(morte, "Что тебя гложет, шеф?", 's30', 'say39863') \
+            .line(morte, "Что тебя гложет, шеф?", 's30', 'say39863').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
-            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r40', 'reply39864') \
+            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r40', 'reply39864').with_action(lambda: _dispose()) \
         .done()
 
     # from -
@@ -342,7 +339,7 @@ def dlg_dmorte_one():
         .with_npc_lines() \
             .line(morte, "Э, шеф… они не слышат тебя, понятно? Они мертвы.", 's31', 'say42298') \
         .with_responses() \
-            .response("Но ты ведь тоже мертв. И разговариваешь со мной.", 'DMORTE1.D_s32', 'r?', 'reply42299') \
+            .response("Но ты ведь тоже мертв. И разговариваешь со мной.", 'DMORTE1.D_s32', 'r41', 'reply42299') \
         .done()
 
     # from 31.0
@@ -352,7 +349,7 @@ def dlg_dmorte_one():
             .line(teller, "Морт обводит комнату взглядом.", 's32', 'say42300') \
             .line(morte, "Они и при жизни из себя ничего не представляли.", 's32', 'say42300') \
         .with_responses() \
-            .response("Понятно…", 'DMORTE1.D_s33', 'r?', 'reply42301') \
+            .response("Понятно…", 'DMORTE1.D_s33', 'r42', 'reply42301') \
         .done()
 
     # from 32.0
@@ -361,13 +358,32 @@ def dlg_dmorte_one():
             .line(morte, "Слушай шеф… Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали.", 's33', 'say42302') \
             .line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302').with_action(lambda: _talk_dummy()) \
         .with_responses() \
-            .response("Хорошо. Идем.", EXIT, 'r?', 'reply42303') \
+            .response("Хорошо. Идем.", EXIT, 'r43', 'reply42303').with_action(lambda: _dispose()) \
         .done()
 
-    DialogStateBuilder('DMORTE1.D_s99999999_33') \
+    DialogStateBuilder('DMORTE1.D_s99999999_34') \
         .with_npc_lines() \
-            .line(teller, "Я вижу ключ - он висит на шее у одного из трупов. Задержав дыхание, я протягиваю руку и срываю ключ резким движением.", '-', '-').with_action(lambda: _pick_up_key()) \
-            .line(teller, "Труп слегка поворачивается на меня, но через несколько секунд возвращается к своему бесконечному занятию.", '-', '-').with_action(lambda: _pick_up_key()) \
+            .line(morte, "Слушай шеф…", 's33', 'say42302') \
+            .line(teller, "Я хватаю черепушку и разбиваю её о землю.", '-', '-').with_action(lambda: _kill_morte()) \
+        .with_responses() \
+            .response("...", EXIT, 'r?', 'reply42303') \
+        .done()
+
+    # from -
+    DialogStateBuilder('DMORTE1.D_s34') \
+        .with_npc_lines() \
+            .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306') \
+        .with_responses() \
+            .response("(Осмотреть)", 'DZM782.D_s0', 'r?', 'reply42303') \
+        .done()
+
+    ######
+    # Manually checked EXTENDS ~DZM782~ : 2
+    ######
+    # from -
+    DialogStateBuilder('DMORTE1.D_s34') \
+        .with_npc_lines() \
+            .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306') \
         .with_responses() \
             .response("(...)", EXIT, '-', '-') \
         .done()

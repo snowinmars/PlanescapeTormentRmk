@@ -1,10 +1,24 @@
+def _r39793_action():
+    DO ~set_in_party_morte() ~
+def _r39824_action():
+    DO ~change_good_once(1, 'good_morte_1') ~
+def _r39831_action():
+    DO ~ShowFirstTimeHelp() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r39852_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r39856_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r39859_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+
 EXIT = -1
+
 # from -
 DialogStateBuilder('DMORTE1.D_s0') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба. [MRT001]", 's0', 'say39792') \
     .with_responses() \
-        .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r', 'reply39793').with_action(lambda: ' DO ~SetGlobal("Morte","GLOBAL",1) ~ ') \
+        .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r', 'reply39793').with_action(lambda: _r39793_action()) \
     .done()
 
 # from 0.0
@@ -118,7 +132,7 @@ DialogStateBuilder('DMORTE1.D_s14') \
     .with_npc_lines() \
         .line(SPEAKER, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.", 's14', 'say39823') \
     .with_responses() \
-        .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE1.D_s15', 'r', 'reply39824').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALGood_Morte_1","GLOBALGood",1) ~ ') \
+        .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE1.D_s15', 'r', 'reply39824').with_action(lambda: _r39824_action()) \
         .response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?", 'DMORTE1.D_s16', 'r', 'reply39825') \
     .done()
 
@@ -143,7 +157,7 @@ DialogStateBuilder('DMORTE1.D_s17') \
     .with_npc_lines() \
         .line(SPEAKER, "И последнее: эти трупы медлительны, но их удар — все равно что поцелуй тарана. Если они начнут доставать тебя, помни, что ты можешь БЕГАТЬ, а они — нет. Используй это, чтобы держаться на дистанции, если тебе нужно восстановиться.", 's17', 'say39830') \
     .with_responses() \
-        .response("Хорошо. Спасибо за совет.", EXIT, 'r', 'reply39831').with_action(lambda: ' DO ~ShowFirstTimeHelp() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Хорошо. Спасибо за совет.", EXIT, 'r', 'reply39831').with_action(lambda: _r39831_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -151,7 +165,7 @@ DialogStateBuilder('DMORTE1.D_s18') \
     .with_npc_lines() \
         .line(SPEAKER, "На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.", 's18', 'say39832') \
     .with_responses() \
-        .response("Ладно… Я поищу.", EXIT, 'r', 'reply39833') \
+        .response("Ладно… Я поищу.", EXIT, 'r', 'reply39833').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -194,7 +208,7 @@ DialogStateBuilder('DMORTE1.D_s23') \
     .with_npc_lines() \
         .line(SPEAKER, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845') \
     .with_responses() \
-        .response("Вперед.", EXIT, 'r', 'reply39846') \
+        .response("Вперед.", EXIT, 'r', 'reply39846').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -202,7 +216,7 @@ DialogStateBuilder('DMORTE1.D_s24') \
     .with_npc_lines() \
         .line(SPEAKER, "Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда.", 's24', 'say39847') \
     .with_responses() \
-        .response("Хорошо.", EXIT, 'r', 'reply39848') \
+        .response("Хорошо.", EXIT, 'r', 'reply39848').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -210,7 +224,7 @@ DialogStateBuilder('DMORTE1.D_s25') \
     .with_npc_lines() \
         .line(SPEAKER, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", 's25', 'say39849') \
     .with_responses() \
-        .response("Тогда я перепробую все двери.", EXIT, 'r', 'reply39850') \
+        .response("Тогда я перепробую все двери.", EXIT, 'r', 'reply39850').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -218,7 +232,7 @@ DialogStateBuilder('DMORTE1.D_s26') \
     .with_npc_lines() \
         .line(SPEAKER, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а? [MRT516]", 's26', 'say39851') \
     .with_responses() \
-        .response("Да… идем.", EXIT, 'r', 'reply39852').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Да… идем.", EXIT, 'r', 'reply39852').with_action(lambda: _r39852_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Не сейчас, Морт.", 'DMORTE1.D_s27', 'r', 'reply39853') \
     .done()
 
@@ -228,7 +242,7 @@ DialogStateBuilder('DMORTE1.D_s27') \
         .line(SPEAKER, "Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 's27', 'say39854') \
     .with_responses() \
         .response("Морт, у тебя НЕТ ни того, ни другого.", 'DMORTE1.D_s28', 'r', 'reply39855') \
-        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply39856').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply39856').with_action(lambda: _r39856_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Не сейчас, Морт. Может быть потом.", 'DMORTE1.D_s28', 'r', 'reply39857') \
     .done()
 
@@ -237,7 +251,7 @@ DialogStateBuilder('DMORTE1.D_s28') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?", 's28', 'say39858') \
     .with_responses() \
-        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply39859').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply39859').with_action(lambda: _r39859_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE1.D_s29', 'r', 'reply39860') \
     .done()
 
@@ -246,7 +260,7 @@ DialogStateBuilder('DMORTE1.D_s29') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.", 's29', 'say39861') \
     .with_responses() \
-        .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r', 'reply39862') \
+        .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r', 'reply39862').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -254,7 +268,7 @@ DialogStateBuilder('DMORTE1.D_s30') \
     .with_npc_lines() \
         .line(SPEAKER, "Что тебя гложет, шеф? [MRT515]", 's30', 'say39863') \
     .with_responses() \
-        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r', 'reply39864') \
+        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r', 'reply39864').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -278,7 +292,7 @@ DialogStateBuilder('DMORTE1.D_s33') \
     .with_npc_lines() \
         .line(SPEAKER, "Слушай шеф… Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали. Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302') \
     .with_responses() \
-        .response("Хорошо. Идем.", EXIT, 'r', 'reply42303') \
+        .response("Хорошо. Идем.", EXIT, 'r', 'reply42303').with_action(lambda: _dispose()) \
     .done()
 
 ######

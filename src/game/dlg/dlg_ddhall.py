@@ -1,38 +1,18 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from engine.settings_global import (
-    current_global_settings,
-    set_in_party_morte,
+from settings.settings_global import (
     change_good,
-    change_good_morte,
-    travel,
-    meet_death_of_names,
-    set_xachariah_name,
-    meet_deionarra,
-    meet_dhall,
-    meet_vaxis,
+    current_global_settings,
     kill_dhall,
-    pass_death_of_names_quentin,
-    pass_death_of_names_dhall,
-    pass_death_of_names_adahn,
-    increment_crier_quest,
-    increment_adahn,
-    set_vaxis_betray,
-    set_evil_dhall_1,
-    set_evil_dhall_2,
-    set_evil_dhall_3,
-    set_good_dhall_1,
-    set_good_dhall_2,
+    meet_dhall,
     meet_dustmen,
+    travel,
     update_journal
 )
-from engine.settings_morgue import (
+from settings.settings_morgue import (
     current_morgue_settings,
-    pick_up_key,
-    ready_to_kill,
-    kill_dummy,
-    talk_dummy,
-    morte_mortuary_walkthrough
+    morte_mortuary_walkthrough,
+    set_vaxis_betray
 )
 from engine.transforms import (
     center_left,
@@ -41,149 +21,169 @@ from engine.transforms import (
     center_right_down
 )
 
+###
 def _init():
     travel('ddhall')
-
-def _check_char_prop(who, gtValue, prop):
+def _dispose():
+    _hide('dhall_img')
+    _hide('morte_img')
+def _show(sprite, start_pos, end_pos = None, duration=0.5):
+    end_pos = start_pos if end_pos is None else end_pos
+    renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
+def _hide(sprite):
+    renpy.exports.hide()
+def _check_char_prop_gt(who, gtValue, prop):
     return True
-
-def _r15_condition():
+def _check_char_prop_lt(who, gtValue, prop):
+    return True
+###
+###
+def _r5070_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5071_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5072_condition():
+    return current_global_settings()['meet_deionarra']
+def _r5073_condition():
+    return _check_char_prop_gt('protagonist',12,'int') \
+    and _check_char_prop_lt('protagonist',13,'wis')
+def _r5074_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r6064_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r13288_condition():
+    return current_global_settings()['meet_deionarra']
+def _r830_condition():
+    return not current_morgue_settings()['vaxis_lawful']
+def _r830_action():
+    set_vaxis_betray(2)
+    update_journal('39468')
+def _r831_condition():
+    return current_morgue_settings()['vaxis_lawful']
+def _r831_action():
+    set_vaxis_betray(2)
+    change_good_once(-3, 'evil_dhall_2')
+    update_journal('39469')
+def _r839_condition():
     return current_global_settings()['in_party_morte']
-
-def _r16_condition():
+def _r835_condition():
     return not current_global_settings()['in_party_morte'] \
-    and not current_morgue_settings()['alarm']
-
-def _r17_condition():
+    and not current_morgue_settings()['alarmed']
+def _r5058_condition():
     return not current_global_settings()['in_party_morte'] \
-    and current_morgue_settings()['alarm']
-
-def _r19_r20_condition():
+    and current_morgue_settings()['alarmed']
+def _r842_condition():
     return current_global_settings()['meet_dhall']
-
-def _r20_action():
-    set_evil_dhall_1()
-    change_good(-1)
-
-def _r21_condition():
+def _r843_condition():
+    return current_global_settings()['meet_dhall']
+def _r843_action():
+    change_good_once(-1, 'evil_dhall_1')
+def _r5062_condition():
     return not current_global_settings()['meet_dhall']
-
-def _r28_condition():
+def _r854_condition():
     return current_global_settings()['meet_vaxis'] \
     and not current_global_settings()['dead_vaxis'] \
-    and not current_global_settings()['vaxis_left'] \
-    and not current_global_settings()['vaxis_betrayed']
-
-def _r31_condition():
+    and not current_morgue_settings()['vaxis_left'] \
+    and not current_morgue_settings()['vaxis_betrayed']
+def _r858_condition():
     # TODO [snow]: how can they be different?..
     return not current_global_settings()['escape_mortuary'] \
     and not current_global_settings()['visited_ar0200']
-
-def _r32_action():
+def _r5069_action():
     update_journal('39460')
-
-def _r2_r3_r8_r44_r160_condition():
+def _r870_condition():
     return not current_global_settings()['meet_deionarra']
-
-def _r4_r9_r161_condition():
-    return current_global_settings()['meet_deionarra']
-
-def _r5_condition():
-    return _check_char_prop('Protagonist',12,'INT') \
-    and _check_char_prop('Protagonist',13,'WIS')
-
-def _r6_condition():
-    return _check_char_prop('Protagonist',12,'WIS')
-
-def _r10_condition():
-    return not current_morgue_settings()['lawful_vaxis']
-
-def _r10_action():
-    set_vaxis_betray(2)
-    update_journal('39468')
-
-def _r11_condition():
-    return current_morgue_settings()['lawful_vaxis']
-
-def _r11_action():
-    set_vaxis_betray(2)
-    set_evil_dhall_2()
-    change_good(-3)
-    update_journal('39469')
-
-def _r55_action():
+def _r886_action():
     update_journal('39463')
-
-def _r59_r109_r111_r115_r117_r137_r141_condition():
+def _r891_condition():
     return not current_global_settings()['meet_pharod']
-
-def _r112_r118_condition():
-    return current_global_settings()['meet_pharod']
-
-def _r60_r65_r77_condition():
-    return _check_char_prop('Protagonist',11,'WIS')
-
-def _r73_action():
+def _r892_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r898_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r906_action():
     update_journal('39464')
-
-def _r81_action():
+def _r910_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r921_action():
     update_journal('39461')
-
-def _r95_condition():
-    return _check_char_prop('Protagonist',11,'INT')
-
-def _r95_action():
+def _r931_condition():
+    return _check_char_prop_gt('protagonist',11,'int')
+def _r931_action():
     update_journal('39462')
-
-def _r100_action():
-    set_good_dhall_1()
-    change_good(1)
-
-def _r108_condition():
+def _r936_action():
+    change_good_once(1, 'good_dhall_1')
+def _r942_condition():
     return not current_global_settings()['journal']
-
-def _r120_r127_r147_r156_r176_action():
+def _r943_condition():
+    return not current_global_settings()['meet_pharod']
+def _r6026_condition():
+    return not current_global_settings()['meet_pharod']
+def _r874_condition():
+    return current_global_settings()['meet_pharod']
+def _r948_condition():
+    return not current_global_settings()['meet_pharod']
+def _r6027_condition():
+    return not current_global_settings()['meet_pharod']
+def _r6066_condition():
+    return current_global_settings()['meet_pharod']
+def _r953_action():
     meet_dustmen()
-
-def _r132_action():
+def _r958_action():
+    meet_dustmen()
+def _r1301_action():
     update_journal('39470')
-
-def _r162_r167_condition():
-    _check_char_prop('Protagonist',12,'INT')
-    _check_char_prop('Protagonist',13,'WIS')
-
-def _r163_r168_condition():
-    _check_char_prop('Protagonist',12,'WIS')
-
-def _r171_action():
-    meet_dhall()
-
-def _r172_action():
+def _r964_condition():
+    return not current_global_settings()['meet_pharod']
+def _r968_condition():
+    return not current_global_settings()['meet_pharod']
+def _r974_action():
+    meet_dustmen()
+def _r985_action():
+    meet_dustmen()
+def _r5076_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5077_condition():
+    return current_global_settings()['meet_deionarra']
+def _r5078_condition():
+    return _check_char_prop_gt('protagonist',12,'int') \
+    and _check_char_prop_lt('protagonist',13,'wis')
+def _r5079_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r5081_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r5082_condition():
+    return _check_char_prop_gt('protagonist',12,'int') \
+    and _check_char_prop_lt('protagonist',13,'wis')
+def _r5083_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r1327_action():
+    return current_global_settings()['meet_dhall']
+def _r5731_action():
     update_journal('39459')
-
-def _r173_action():
+def _r5732_action():
     update_journal('39459')
-
-def _r175_condition():
+def _r6032_condition():
     return current_morgue_settings()['morte_mortuary_walkthrough'] == 1
+def _r6033_action():
+    meet_dustmen()
+def _r6051_action():
+    change_good_once(1, 'good_dhall_2')
+def _r6053_action():
+    change_good_once(-1, 'evil_dhall_3')
+###
 
-def _r189_action():
-    set_good_dhall_2()
-    change_good(1)
-
-def _r191_action():
-    set_evil_dhall_3()
-    change_good(-1)
-
+# DLG/DDHALL.DLG
+# DLG/DMORTE.DLG
 def dlg_ddhall():
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dhall         = renpy.store.characters['dhall']
     dhall_unknown = renpy.store.characters['dhall_unknown']
-    EXIT          = -1
+    EXIT = -1
 
     ######
-    # Manually checked EXTENDS ~DMORTE~ : 104
+    # Check EXTENDS ~DMORTE~ : 104
     ######
     # from -
     DialogStateBuilder('DDHALL.D_s0') \
@@ -194,7 +194,7 @@ def dlg_ddhall():
             .line(morte, "И мы *тем более* не должны болтать с больными трухляками.", 's104', 'say5053') \
             .line(morte, "Давай, пошли отсюда. Чем быстрее мы свалим отсюда, тем лучш…", 's104', 'say5053') \
             .line(teller, "Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя.", 's1', 'say826') \
-            .line(dhall_unknown, "Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный.", 's1', 'say826') \
+            .line(dhall_unknown, "Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный.", 's1', 'say826').with_action(lambda: _show('dhall_img default', center_right_down)) \
             .line(teller, "Он откладывает перо.", 's1', 'say826') \
             .line(dhall_unknown, "Но глухотой я еще не страдаю.", 's1', 'say826') \
         .with_responses() \
@@ -208,14 +208,14 @@ def dlg_ddhall():
             .line(teller, "Дхолл начинает кашлять, но ему удается перевести дыхание.", 's2', 'say829') \
             .line(dhall, "Я ошибаюсь?", 's2', 'say829') \
         .with_responses() \
-            .response("Где ее тело?", 'DDHALL.D_s42', 'r2', 'reply5070').with_condition(lambda: _r2_r3_r8_r44_r160_condition()) \
-            .response("Я ничего о ней не знаю.", 'DDHALL.D_s43', 'r3', 'reply5071').with_condition(lambda: _r2_r3_r8_r44_r160_condition()) \
-            .response("Она узнала меня, но я не смог ее вспомнить.", 'DDHALL.D_s28', 'r4', 'reply5072').with_condition(lambda: _r4_r9_r161_condition()) \
-            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r5', 'reply5073').with_condition(lambda: _r5_condition()) \
-            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r6', 'reply5074').with_condition(lambda: _r6_condition()) \
+            .response("Где ее тело?", 'DDHALL.D_s42', 'r2', 'reply5070').with_condition(lambda: _r5070_condition()) \
+            .response("Я ничего о ней не знаю.", 'DDHALL.D_s43', 'r3', 'reply5071').with_condition(lambda: _r5071_condition()) \
+            .response("Она узнала меня, но я не смог ее вспомнить.", 'DDHALL.D_s28', 'r4', 'reply5072').with_condition(lambda: _r5072_condition()) \
+            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r5', 'reply5073').with_condition(lambda: _r5073_condition()) \
+            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r6', 'reply5074').with_condition(lambda: _r5074_condition()) \
             .response("Возможно. У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r7', 'reply6063') \
-            .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r8', 'reply6064').with_condition(lambda: _r2_r3_r8_r44_r160_condition()) \
-            .response("Возможно, нет. Прощай.", 'DDHALL.D_s11', 'r9', 'reply13288').with_condition(lambda: _r4_r9_r161_condition()) \
+            .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r8', 'reply6064').with_condition(lambda: _r6064_condition()) \
+            .response("Возможно, нет. Прощай.", 'DDHALL.D_s11', 'r9', 'reply13288').with_condition(lambda: _r13288_condition()) \
         .done()
 
     # from 9.0
@@ -224,8 +224,8 @@ def dlg_ddhall():
             .line(teller, "Дхолл пристально смотрит на тебя.", 's3', 'say832') \
             .line(dhall, "Ты уверен?", 's3', 'say832') \
         .with_responses() \
-            .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r10', 'reply830').with_condition(lambda: _r10_condition()).with_action(lambda: _r10_action()) \
-            .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r11', 'reply831').with_condition(lambda: _r11_condition()).with_action(lambda: _r11_action()) \
+            .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r10', 'reply830').with_condition(lambda: _r830_condition()).with_action(lambda: _r830_action()) \
+            .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r11', 'reply831').with_condition(lambda: _r831_condition()).with_action(lambda: _r831_action()) \
             .response("Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r12', 'reply834') \
         .done()
 
@@ -250,19 +250,18 @@ def dlg_ddhall():
             .line(teller, "Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.", 's5', 'say838') \
             .line(teller, "Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.", 's5', 'say838') \
         .with_responses() \
-            .response("Приветствую.", 'DMORTE.D_s102', 'r15', 'reply839').with_condition(lambda: _r15_condition()) \
-            .response("Приветствую.", 'DDHALL.D_s7', 'r16', 'reply835').with_condition(lambda: _r16_condition()) \
-            .response("Приветствую.", 'DDHALL.D_s6', 'r17', 'reply5058').with_condition(lambda: _r17_condition()) \
-            .response("Оставить старого писаря в покое.", EXIT, 'r18', 'reply5060') \
+            .response("Приветствую.", 'DMORTE.D_s102', 'r15', 'reply839').with_condition(lambda: _r839_condition()) \
+            .response("Приветствую.", 'DDHALL.D_s7', 'r16', 'reply835').with_condition(lambda: _r835_condition()) \
+            .response("Приветствую.", 'DDHALL.D_s6', 'r17', 'reply5058').with_condition(lambda: _r5058_condition()) \
+            .response("Оставить старого писаря в покое.", EXIT, 'r18', 'reply5060').with_action(lambda: _dispose()) \
         .done()
 
     # from DDHALL.D_s5
     DialogStateBuilder('DMORTE.D_s102') \
         .with_npc_lines() \
-            .line(morte, "Эй, шеф! Ты что творишь?!", 's102', 'say5049') \
+            .line(morte, "Эй, шеф! Ты что творишь?!", 's102', 'say5049').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
             .response("Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда.", 'DDHALL.D_s0', 'r276', 'reply5050') \
-        .done()
 
     # from 5.2
     DialogStateBuilder('DDHALL.D_s6') \
@@ -272,17 +271,17 @@ def dlg_ddhall():
             .line(teller, "Он тихо кашляет, затем тяжело хрипит.", 's6', 'say841') \
             .line(dhall, "Это не позволит тебе обрести следующую жизнь.", 's6', 'say841') \
         .with_responses() \
-            .response("Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…", 'DDHALL.D_s9', 'r19', 'reply842').with_condition(lambda: _r19_r20_condition()) \
-            .response("Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…", 'DDHALL.D_s9', 'r20', 'reply843').with_condition(lambda: _r19_r20_condition()).with_action(lambda: _r20_action()) \
-            .response("Ты знаешь меня?", 'DDHALL.D_s44', 'r21', 'reply5062').with_condition(lambda: _r21_condition()) \
-            .response("Прощай.", EXIT, 'r22', 'reply5063') \
+            .response("Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…", 'DDHALL.D_s9', 'r19', 'reply842').with_condition(lambda: _r842_condition()) \
+            .response("Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…", 'DDHALL.D_s9', 'r20', 'reply843').with_condition(lambda: _r843_condition()).with_action(lambda: _r843_action()) \
+            .response("Ты знаешь меня?", 'DDHALL.D_s44', 'r21', 'reply5062').with_condition(lambda: _r5062_condition()) \
+            .response("Прощай.", EXIT, 'r22', 'reply5063').with_action(lambda: _dispose()) \
         .done()
 
     # from 5.1
     DialogStateBuilder('DDHALL.D_s7') \
         .with_npc_lines() \
             .line(teller, "Писарь прекращает вести записи в стоящую перед ним книгу и оглядывается. Его глаза похожи на два гвоздя, забитые в его череп.", 's7', 'say844') \
-            .line(dhall_unknown, "Итак…", 's7', 'say844') \
+            .line(dhall_unknown, "Итак…", 's7', 'say844').with_action(lambda: _show('dhall_img default', center_right_down)) \
             .line(teller, "Его голос уставший, как будто он повторял это уже много раз.", 's7', 'say844') \
             .line(dhall_unknown, "Ты пробудился ото сна и вернулся в свои грезы.", 's7', 'say844') \
             .line(teller, "Он продолжает более уважительным голосом.", 's7', 'say844') \
@@ -308,11 +307,11 @@ def dlg_ddhall():
         .with_npc_lines() \
             .line(dhall, "Хорошо. Что ты хочешь узнать?", 's9', 'say852') \
         .with_responses() \
-            .response("Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?", 'DDHALL.D_s3', 'r28', 'reply854').with_condition(lambda: _r28_condition()) \
+            .response("Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?", 'DDHALL.D_s3', 'r28', 'reply854').with_condition(lambda: _r854_condition()) \
             .response("Что это за место?", 'DDHALL.D_s10', 'r29', 'reply857') \
             .response("Как я попал сюда?", 'DDHALL.D_s15', 'r30', 'reply855') \
-            .response("Не подскажешь, как мне выбраться отсюда?", 'DDHALL.D_s13', 'r31', 'reply858').with_condition(lambda: _r31_condition()) \
-            .response("Ты знаешь, кто я?", 'DDHALL.D_s21', 'r32', 'reply5069') \
+            .response("Не подскажешь, как мне выбраться отсюда?", 'DDHALL.D_s13', 'r31', 'reply858').with_condition(lambda: _r858_condition()) \
+            .response("Ты знаешь, кто я?", 'DDHALL.D_s21', 'r32', 'reply5069').with_action(lambda: _r5069_action()) \
             .response("Чем ты здесь занимаешься?", 'DDHALL.D_s25', 'r33', 'reply5748') \
             .response("Твой кашель ужасен. Ты хорошо себя чувствуешь?", 'DDHALL.D_s26', 'r34', 'reply6065') \
             .response("Ничего… прощай, Дхолл.", 'DDHALL.D_s11', 'r35', 'reply41663') \
@@ -344,7 +343,7 @@ def dlg_ddhall():
             .line(teller, "Дхолл кашляет, из его горла доносятся хрипы.", 's11', 'say867') \
             .line(dhall, "Это путь всех существ из плоти и костей.", 's11', 'say867') \
         .with_responses() \
-            .response("Тогда, возможно, мы еще встретимся, Дхолл.", EXIT, 'r43', 'reply41564') \
+            .response("Тогда, возможно, мы еще встретимся, Дхолл.", EXIT, 'r43', 'reply41564').with_action(lambda: _dispose()) \
         .done()
 
     # from 2.3 2.4 42.2 42.3 43.1 43.2
@@ -354,7 +353,7 @@ def dlg_ddhall():
             .line(teller, "Дхолл обводит вокруг тебя рукой.", 's12', 'say868') \
             .line(dhall, "Все умершие прибывают сюда. Кое-кто из них, должно быть, путешествовал с тобой.", 's12', 'say868') \
         .with_responses() \
-            .response("Где та женщина, которую ты упомянул?", 'DDHALL.D_s42', 'r44', 'reply870').with_condition(lambda: _r2_r3_r8_r44_r160_condition()) \
+            .response("Где та женщина, которую ты упомянул?", 'DDHALL.D_s42', 'r44', 'reply870').with_condition(lambda: _r870_condition()) \
             .response("Я не вижу изъяна в твоих рассуждениях. У меня еще вопросы…", 'DDHALL.D_s9', 'r45', 'reply871') \
             .response("Тогда я поищу их. Возможно, они смогут возродить мою память. Прощай.", 'DDHALL.D_s11', 'r46', 'reply872') \
         .done()
@@ -367,7 +366,7 @@ def dlg_ddhall():
             .line(dhall, "У одного из проводников у главных ворот есть ключ к ним, но он вряд ли откроет их для тебя, разве что ты будешь весьма убедительным.", 's13', 'say875') \
         .with_responses() \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r47', 'reply876') \
-            .response("Тогда прощай, Дхолл.", EXIT, 'r48', 'reply877') \
+            .response("Тогда прощай, Дхолл.", EXIT, 'r48', 'reply877').with_action(lambda: _dispose()) \
         .done()
 
     # from 10.3
@@ -393,7 +392,7 @@ def dlg_ddhall():
             .line(dhall, "К Моргу тебя доставила твоя ветхая карета, Неугомонный.", 's15', 'say885') \
             .line(dhall, "Увидев ее, ты мог бы возомнить себя аристократом, учитывая количеств подданных, лежащих в ней зловонной разлагающейся кучей.", 's15', 'say885') \
         .with_responses() \
-            .response("Я приехал сюда на повозке?", 'DDHALL.D_s16', 'r55', 'reply886').with_action(lambda: _r55_action()) \
+            .response("Я приехал сюда на повозке?", 'DDHALL.D_s16', 'r55', 'reply886').with_action(lambda: _r886_action()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r56', 'reply887') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r57', 'reply888') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r58', 'reply889') \
@@ -406,8 +405,8 @@ def dlg_ddhall():
             .line(teller, "Дхолл снова заходится в приступе кашля, который ему удается побороть только несколько минут спустя.", 's16', 'say890') \
             .line(dhall, "Твоим 'сенешалем', как всегда, был Фарод, который был рад доставить твое тело к вратам Морга за несколько медяков.", 's16', 'say890') \
         .with_responses() \
-            .response("Кто этот Фарод?", 'DDHALL.D_s17', 'r59', 'reply891').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
-            .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r60', 'reply892').with_condition(lambda: _r60_r65_r77_condition()) \
+            .response("Кто этот Фарод?", 'DDHALL.D_s17', 'r59', 'reply891').with_condition(lambda: _r891_condition()) \
+            .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r60', 'reply892').with_condition(lambda: _r892_condition()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r61', 'reply893') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r62', 'reply894') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r63', 'reply5753') \
@@ -421,7 +420,7 @@ def dlg_ddhall():
             .line(dhall, "У нас в городе есть такие люди, которые собирают тела тех, кто вступил на путь Истинной Смерти, и приносят их нам для подобающего погребения.", 's17', 'say895') \
         .with_responses() \
             .response("Где я могу найти этого Фарода?", 'DDHALL.D_s18', 'r64', 'reply897') \
-            .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r65', 'reply898').with_condition(lambda: _r60_r65_r77_condition()) \
+            .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r65', 'reply898').with_condition(lambda: _r898_condition()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r66', 'reply899') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r67', 'reply5754') \
             .response("Тогда пойду и разыщу этого Фарода. Прощай, Дхолл.", 'DDHALL.D_s19', 'r68', 'reply6031') \
@@ -445,7 +444,7 @@ def dlg_ddhall():
             .line(dhall, "Не ищи Фарода, Неугомонный. Я уверен, что ты попросту пройдешь еще один полный круг, и не станешь от этого мудрее, зато обогатишь Фарода на несколько медяков.", 's19', 'say901') \
             .line(dhall, "Прими смерть, Неугомонный. Не повторяй свой круг страданий.", 's19', 'say901') \
         .with_responses() \
-            .response("Мне *нужно* найти его. Ты не знаешь, где он может быть?", 'DDHALL.D_s20', 'r73', 'reply906').with_action(lambda: _r73_action()) \
+            .response("Мне *нужно* найти его. Ты не знаешь, где он может быть?", 'DDHALL.D_s20', 'r73', 'reply906').with_action(lambda: _r906_action()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r74', 'reply905') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r75', 'reply907') \
             .response("Я не могу больше с тобой говорить. Прощай, Дхолл.", 'DDHALL.D_s11', 'r76', 'reply5756') \
@@ -458,7 +457,7 @@ def dlg_ddhall():
             .line(dhall, "Я не знаю, в каком притоне находится логово Фарода в данный момент, но могу предположить, что оно где-то за воротами Морга, в Улье.", 's20', 'say908') \
             .line(dhall, "Возможно, кто-то из местных знает, где его найти.", 's20', 'say908') \
         .with_responses() \
-            .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r77', 'reply910').with_condition(lambda: _r60_r65_r77_condition()) \
+            .response("Похоже, тебе не очень-то нравится Фарод.", 'DDHALL.D_s35', 'r77', 'reply910').with_condition(lambda: _r910_condition()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r78', 'reply909') \
             .response("Спасибо. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r79', 'reply5757') \
             .response("Тогда я пойду и поспрашиваю тамошних жителей. Прощай.", 'DDHALL.D_s11', 'r80', 'reply6030') \
@@ -471,7 +470,7 @@ def dlg_ddhall():
             .line(teller, "Дхолл вздыхает.", 's21', 'say914') \
             .line(dhall, "Прошу тебя, Неугомонный, больше не проси никого идти с тобой: за тобой остается только несчастье. Не разделяй свою ношу с другими.", 's21', 'say914') \
         .with_responses() \
-            .response("Меня кто-то сопровождал в пути? Они здесь?", 'DDHALL.D_s2', 'r81', 'reply921').with_action(lambda: _r81_action()) \
+            .response("Меня кто-то сопровождал в пути? Они здесь?", 'DDHALL.D_s2', 'r81', 'reply921').with_action(lambda: _r921_action()) \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r82', 'reply922') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r83', 'reply923') \
         .done()
@@ -521,7 +520,7 @@ def dlg_ddhall():
             .line(teller, "Дхолл снова кашляет, затем глубоко вздыхает.", 's25', 'say930') \
             .line(dhall, "И пока поток трупов идет через Морг, я буду при своей должности.", 's25', 'say930') \
         .with_responses() \
-            .response("Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?", 'DDHALL.D_s24', 'r95', 'reply931').with_condition(lambda: _r95_condition()).with_action(lambda: _r95_action()) \
+            .response("Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?", 'DDHALL.D_s24', 'r95', 'reply931').with_condition(lambda: _r931_condition()).with_action(lambda: _r931_action()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r96', 'reply932') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r97', 'reply933') \
             .response("Отлично. Прощай, Дхолл.", 'DDHALL.D_s11', 'r98', 'reply6040') \
@@ -535,7 +534,7 @@ def dlg_ddhall():
             .line(dhall, "Для такого, как я, на планах больше нет чудес.", 's26', 'say934') \
         .with_responses() \
             .response("Границу Вечности?", 'DDHALL.D_s41', 'r99', 'reply935') \
-            .response("Ты уверен? Должен же быть способ помочь тебе.", 'DDHALL.D_s27', 'r100', 'reply936').with_action(lambda: _r100_action()) \
+            .response("Ты уверен? Должен же быть способ помочь тебе.", 'DDHALL.D_s27', 'r100', 'reply936').with_action(lambda: _r936_action()) \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r101', 'reply937') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r102', 'reply960') \
         .done()
@@ -569,11 +568,11 @@ def dlg_ddhall():
             .line(teller, "Он хмурится, понижая тон.", 's29', 'say941') \
             .line(dhall, "Вряд ли Фарод будет делать исключения для чего либо, кроме вживленных в плоть вещей, но порой даже этого недостаточно, чтобы остановить его жадность.", 's29', 'say941') \
         .with_responses() \
-            .response("Я потерял дневник.", 'DDHALL.D_s31', 'r108', 'reply942').with_condition(lambda: _r108_condition()) \
-            .response("Хм-м. Ты не знаешь, где мне найти Фарода?", 'DDHALL.D_s18', 'r109', 'reply943').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
+            .response("Я потерял дневник.", 'DDHALL.D_s31', 'r108', 'reply942').with_condition(lambda: _r942_condition()) \
+            .response("Хм-м. Ты не знаешь, где мне найти Фарода?", 'DDHALL.D_s18', 'r109', 'reply943').with_condition(lambda: _r943_condition()) \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r110', 'reply944') \
-            .response("Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.", 'DDHALL.D_s19', 'r111', 'reply6026').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
-            .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r112', 'reply874').with_condition(lambda: _r112_r118_condition()) \
+            .response("Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.", 'DDHALL.D_s19', 'r111', 'reply6026').with_condition(lambda: _r6026_condition()) \
+            .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r112', 'reply874').with_condition(lambda: _r874_condition()) \
         .done()
 
     # from 28.0
@@ -591,10 +590,10 @@ def dlg_ddhall():
         .with_npc_lines() \
             .line(dhall, "Дневник? Если он представляет хоть какую-то ценность, то он наверняка в руках Фарода.", 's31', 'say850') \
         .with_responses() \
-            .response("Где мне найти этого Фарода?", 'DDHALL.D_s18', 'r115', 'reply948').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
+            .response("Где мне найти этого Фарода?", 'DDHALL.D_s18', 'r115', 'reply948').with_condition(lambda: _r948_condition()) \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r116', 'reply949') \
-            .response("В таком случае, я должен разыскать его. Прощай, Дхолл.", 'DDHALL.D_s19', 'r117', 'reply6027').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
-            .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r118', 'reply6066').with_condition(lambda: _r112_r118_condition()) \
+            .response("В таком случае, я должен разыскать его. Прощай, Дхолл.", 'DDHALL.D_s19', 'r117', 'reply6027').with_condition(lambda: _r6027_condition()) \
+            .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r118', 'reply6066').with_condition(lambda: _r6066_condition()) \
         .done()
 
     # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
@@ -605,7 +604,7 @@ def dlg_ddhall():
             .line(dhall, "Должно быть, ты был тяжело ранен, раз не узнаешь это место. Это практически твой дом.", 's32', 'say950') \
         .with_responses() \
             .response("Тень жизни?", 'DDHALL.D_s33', 'r119', 'reply951') \
-            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r120', 'reply953').with_action(lambda: _r120_r127_r147_r156_r176_action()) \
+            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r120', 'reply953').with_action(lambda: _r953_action()) \
             .response("Тленных?", 'DDHALL.D_s47', 'r121', 'reply954') \
             .response("Сигил?", 'DDHALL.D_s37', 'r122', 'reply955') \
             .response("Ранен?", 'DDHALL.D_s34', 'r123', 'reply956') \
@@ -621,7 +620,7 @@ def dlg_ddhall():
             .line(dhall, "Наши с тобой жизни — всего лишь тени, жалкое подобие от того, что было однажды жизнью. Эта 'жизнь' — то, куда мы попадаем *после* того, как умираем.", 's33', 'say957') \
             .line(dhall, "А здесь мы… в западне. В клетке. До тех пор, пока не достигнем Истинной Смерти.", 's33', 'say957') \
         .with_responses() \
-            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r127', 'reply958').with_action(lambda: _r120_r127_r147_r156_r176_action()) \
+            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r127', 'reply958').with_action(lambda: _r958_action()) \
             .response("Почему ты решил, что эта жизнь ненастоящая?", 'DDHALL.D_s50', 'r128', 'reply959') \
             .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r129', 'reply5736') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r130', 'reply5737') \
@@ -635,7 +634,7 @@ def dlg_ddhall():
             .line(teller, "Дхолл надрывно кашляет, затем успокаивается.", 's34', 'say961') \
             .line(dhall, "Но это всего лишь поверхностные раны.", 's34', 'say961') \
         .with_responses() \
-            .response("Всего лишь поверхностные раны? Что ты имеешь в виду?", 'DDHALL.D_s53', 'r132', 'reply1301').with_action(lambda: _r132_action()) \
+            .response("Всего лишь поверхностные раны? Что ты имеешь в виду?", 'DDHALL.D_s53', 'r132', 'reply1301').with_action(lambda: _r1301_action()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r133', 'reply1302') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r134', 'reply5746') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r135', 'reply5747') \
@@ -650,7 +649,7 @@ def dlg_ddhall():
             .line(dhall, "Он рыцарь легкой наживы, подлая мразь самого низкого пошиба.", 's35', 'say962') \
         .with_responses() \
             .response("Рыцарь легкой наживы?", 'DDHALL.D_s36', 'r136', 'reply963') \
-            .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r137', 'reply964').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
+            .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r137', 'reply964').with_condition(lambda: _r964_condition()) \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r138', 'reply965') \
             .response("Звучит ободряюще. Прощай, Дхолл.", 'DDHALL.D_s11', 'r139', 'reply6028') \
         .done()
@@ -664,7 +663,7 @@ def dlg_ddhall():
             .line(dhall, "Фарод присваивает себе все, что ему удается вырвать из их окоченевших пальцев.", 's36', 'say966') \
         .with_responses() \
             .response("Мог ли Фарод взять что-нибудь у *меня*?", 'DDHALL.D_s29', 'r140', 'reply967') \
-            .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r141', 'reply968').with_condition(lambda: _r59_r109_r111_r115_r117_r137_r141_condition()) \
+            .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r141', 'reply968').with_condition(lambda: _r968_condition()) \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r142', 'reply969') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r143', 'reply6029') \
         .done()
@@ -686,7 +685,7 @@ def dlg_ddhall():
             .line(teller, "Дхолл переводит дыхание.", 's38', 'say973') \
             .line(dhall, "Ведь что-то держит тебя здесь, не так ли? Какое-то незаконченное дело, какая-то страсть, которая должна быть подавлена, прежде чем ты сможешь достигнуть Истинной Смерти?", 's38', 'say973') \
         .with_responses() \
-            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r147', 'reply974').with_action(lambda: _r120_r127_r147_r156_r176_action()) \
+            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r147', 'reply974').with_action(lambda: _r974_action()) \
             .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r148', 'reply975') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r149', 'reply5749') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r150', 'reply5750') \
@@ -700,19 +699,19 @@ def dlg_ddhall():
             .line(dhall, "Сэкономь время и поговори с мной сейчас, чтобы нам не пришлось вновь заводить этот разговор, когда твои воспоминания снова покинут тебя.", 's39', 'say884') \
         .with_responses() \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r151', 'reply976') \
-            .response("Прощай, Дхолл.", EXIT, 'r152', 'reply977') \
+            .response("Прощай, Дхолл.", EXIT, 'r152', 'reply977').with_action(lambda: _dispose()) \
         .done()
 
     # from -
     DialogStateBuilder('DDHALL.D_s40') \
         .with_npc_lines() \
-            .line(teller, "Дхолл мельком смотрит на тебя.", 's40', 'say978') \
+            .line(teller, "Дхолл мельком смотрит на тебя.", 's40', 'say978').with_action(lambda: _show('dhall_img default', center_right_down)) \
             .line(dhall, "Итак. Ты вернулся…", 's40', 'say978') \
             .line(teller, "Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает говорить.", 's40', 'say978') \
             .line(dhall, "…приветствую тебя снова, Неугомонный.", 's40', 'say978') \
         .with_responses() \
             .response("У меня к тебе другие вопросы, Дхолл.", 'DDHALL.D_s9', 'r153', 'reply979') \
-            .response("Неважно. Прощай.", EXIT, 'r154', 'reply980') \
+            .response("Неважно. Прощай.", EXIT, 'r154', 'reply980').with_action(lambda: _dispose()) \
         .done()
 
     # from 26.0 52.0
@@ -721,7 +720,7 @@ def dlg_ddhall():
             .line(dhall, "Границу между владениями тени этой жизни и Истинной Смерти.", 's41', 'say983') \
         .with_responses() \
             .response("Тень этой жизни?", 'DDHALL.D_s33', 'r155', 'reply984') \
-            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r156', 'reply985').with_action(lambda: _r120_r127_r147_r156_r176_action()) \
+            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r156', 'reply985').with_action(lambda: _r985_action()) \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r157', 'reply5739') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r158', 'reply5740') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r159', 'reply5741') \
@@ -732,10 +731,10 @@ def dlg_ddhall():
         .with_npc_lines() \
             .line(dhall, "В северо-западном мемориальном зале, этажом ниже. Проверь гробы… ее имя должно быть на одной из мемориальных табличек. Возможно, это оживит твои воспоминания.", 's42', 'say5075') \
         .with_responses() \
-            .response("Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.", 'DDHALL.D_s43', 'r160', 'reply5076').with_condition(lambda: _r2_r3_r8_r44_r160_condition()) \
-            .response("Да, она утверждает, что знает меня, но я не могу ее вспомнить.", 'DDHALL.D_s28', 'r161', 'reply5077').with_condition(lambda: _r4_r9_r161_condition()) \
-            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r162', 'reply5078').with_condition(lambda: _r162_r167_condition()) \
-            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r163', 'reply5079').with_condition(lambda: _r163_r168_condition()) \
+            .response("Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.", 'DDHALL.D_s43', 'r160', 'reply5076').with_condition(lambda: _r5076_condition()) \
+            .response("Да, она утверждает, что знает меня, но я не могу ее вспомнить.", 'DDHALL.D_s28', 'r161', 'reply5077').with_condition(lambda: _r5077_condition()) \
+            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r162', 'reply5078').with_condition(lambda: _r5078_condition()) \
+            .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r163', 'reply5079').with_condition(lambda: _r5079_condition()) \
             .response("Возможно, мне стоит найти ее. Перед уходом у меня есть к тебе другие вопросы…", 'DDHALL.D_s9', 'r164', 'reply6067') \
             .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r165', 'reply6068') \
         .done()
@@ -745,9 +744,9 @@ def dlg_ddhall():
         .with_npc_lines() \
             .line(teller, "Дхолл не отвечает. Он просто молчаливо смотрит на тебя.", 's43', 'say5080') \
         .with_responses() \
-            .response("Где я могу найти ее?", 'DDHALL.D_s42', 'r166', 'reply5081').with_condition(lambda: _r2_r3_r8_r44_r160_condition()) \
-            .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r167', 'reply5082').with_condition(lambda: _r162_r167_condition()) \
-            .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r168', 'reply5083').with_condition(lambda: _r163_r168_condition()) \
+            .response("Где я могу найти ее?", 'DDHALL.D_s42', 'r166', 'reply5081').with_condition(lambda: _r5081_condition()) \
+            .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r167', 'reply5082').with_condition(lambda: _r5082_condition()) \
+            .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r168', 'reply5083').with_condition(lambda: _r5083_condition()) \
             .response("У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r169', 'reply6069') \
             .response("Тогда прощай.", 'DDHALL.D_s11', 'r170', 'reply6070') \
         .done()
@@ -757,11 +756,11 @@ def dlg_ddhall():
         .with_npc_lines() \
             .line(dhall_unknown, "Знаю ли я тебя? Я…", 's44', 'say840') \
             .line(teller, "В голосе писца звучит горечь.", 's44', 'say840') \
-            .line(dhall_unknown, "Я *никогда* не знал тебя, Неугомонный. Не больше, чем ты знал о себе сам. Он умолкает на секунду. Ты ведь все забыл, не так ли?", 's44', 'say840') \
+            .line(dhall_unknown, "Я *никогда* не знал тебя, Неугомонный. Не больше, чем ты знал о себе сам.", 's44', 'say840') \
             .line(teller, "Он умолкает на секунду.", 's44', 'say840') \
             .line(dhall_unknown, "Ты ведь все забыл, не так ли?", 's44', 'say840') \
         .with_responses() \
-            .response("*Кто* ты?", 'DDHALL.D_s45', 'r171', 'reply1327').with_action(lambda: _r171_action()) \
+            .response("*Кто* ты?", 'DDHALL.D_s45', 'r171', 'reply1327').with_action(lambda: _r1327_action()) \
         .done()
 
     # from 44.0
@@ -771,8 +770,8 @@ def dlg_ddhall():
             .line(dhall_unknown, "Он делает легкий поклон, но движение вызывает у него неожиданный приступ кашля.", 's45', 'say5728') \
             .line(dhall, "Я… Он умолкает на минуту, переводя дыхание. Я… Дхолл.", 's45', 'say5728') \
         .with_responses() \
-            .response("Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…", 'DDHALL.D_s9', 'r172', 'reply5731').with_action(lambda: _r172_action()) \
-            .response("У меня нет времени на это. Прощай.", 'DDHALL.D_s46', 'r173', 'reply5732').with_action(lambda: _r173_action()) \
+            .response("Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…", 'DDHALL.D_s9', 'r172', 'reply5731').with_action(lambda: _r5731_action()) \
+            .response("У меня нет времени на это. Прощай.", 'DDHALL.D_s46', 'r173', 'reply5732').with_action(lambda: _r5732_action()) \
         .done()
 
     # from 45.1
@@ -784,7 +783,7 @@ def dlg_ddhall():
             .line(teller, "Он снова берется за перо.", 's46', 'say5730') \
             .line(dhall, "Когда ты снова захочешь поговорить, я буду здесь.", 's46', 'say5730') \
         .with_responses() \
-            .response("Я еще вернусь. Прощай.", EXIT, 'r174', 'reply40005') \
+            .response("Я еще вернусь. Прощай.", EXIT, 'r174', 'reply40005').with_action(lambda: _dispose()) \
         .done()
 
     # from 32.2
@@ -792,8 +791,8 @@ def dlg_ddhall():
         .with_npc_lines() \
             .line(dhall, "Мы — тленные, фракция, собравшая всех тех, кто понял иллюзорность этой жизни. Мы ждем следующей жизни и помогаем другим в их путешествии.", 's47', 'say847') \
         .with_responses() \
-            .response("Может, ты мне объяснишь, почему тленные хотят моей смерти?", 'DDHALL.D_s22', 'r175', 'reply6032').with_condition(lambda: _r175_condition()) \
-            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r176', 'reply6033').with_action(lambda: _r120_r127_r147_r156_r176_action()) \
+            .response("Может, ты мне объяснишь, почему тленные хотят моей смерти?", 'DDHALL.D_s22', 'r175', 'reply6032').with_condition(lambda: _r6032_condition()) \
+            .response("Истинной Смерти?", 'DDHALL.D_s48', 'r176', 'reply6033').with_action(lambda: _r6033_action()) \
             .response("Иллюзорность этой жизни?", 'DDHALL.D_s33', 'r177', 'reply6034') \
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r178', 'reply6035') \
             .response("У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r179', 'reply6036') \
@@ -831,9 +830,9 @@ def dlg_ddhall():
             .line(teller, "Дхолл качает головой.", 's50', 'say853') \
             .line(dhall, "Это чистилище. Здесь только горе. Несчастье. Страдание. Они не являются элементами 'жизни'. Они — часть клетки, в которой мы заперты в этой тени.", 's50', 'say853') \
         .with_responses() \
-            .response("Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них.", 'DDHALL.D_s51', 'r189', 'reply6051').with_action(lambda: _r189_action()) \
+            .response("Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них.", 'DDHALL.D_s51', 'r189', 'reply6051').with_action(lambda: _r6051_action()) \
             .response("Заперты? Каким образом?", 'DDHALL.D_s51', 'r190', 'reply6052') \
-            .response("Довольно этой философии. Как все это относится к тому, что я оказался здесь?", 'DDHALL.D_s51', 'r191', 'reply6053').with_action(lambda: _r191_action()) \
+            .response("Довольно этой философии. Как все это относится к тому, что я оказался здесь?", 'DDHALL.D_s51', 'r191', 'reply6053').with_action(lambda: _r6053_action()) \
         .done()
 
     # from 50.0 50.1 50.2
@@ -872,4 +871,15 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r200', 'reply5743') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r201', 'reply5744') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r202', 'reply5745') \
+        .done()
+
+    DialogStateBuilder('DDHALL.D_s99999999_54') \
+        .with_npc_lines() \
+            .line(teller, "Дхалл не должен жить.",'-', '-').with_action(lambda: _kill_dhall()) \
+            .line(teller, "Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.",'-', '-') \
+            .line(teller, "И ему мешает кашель.",'-', '-') \
+            .line(teller, "...",'-', '-') \
+            .line(teller, "Перо, которое он до этого держал в руке, упало в тень книги.",'-', '-') \
+        .with_responses() \
+            .response("(...)", EXIT, '-', '-').with_action(lambda: _hide('dhall_img')) \
         .done()

@@ -1,13 +1,1415 @@
+def _r17833_action():
+    DO ~GiveItem("KeyPR",Protagonist) set_in_party_morte() SetGlobal("Scars","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r1006_condition():
+    Global("Scars","GLOBAL",1)
+def _r1015_condition():
+    Global("Scars","GLOBAL",1)
+def _r1019_condition():
+    return _check_char_prop_gt('protagonist',11,'int')
+def _r1088_action():
+    DO ~SetGlobal("Scars","GLOBAL",1) ~
+def _r1050_condition():
+    return _check_char_prop_lt('protagonist',12,'int')
+def _r1051_condition():
+    return _check_char_prop_gt('protagonist',11,'int')
+def _r1079_action():
+    DO ~set_in_party_morte() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r1077_condition():
+    Global("Scars","GLOBAL",1)
+def _r1083_condition():
+    Global("Scars","GLOBAL",1)
+def _r1095_condition():
+    Global("Scars","GLOBAL",1)
+def _r1120_condition():
+    Global("Scars","GLOBAL",1)
+def _r1125_condition():
+    Global("Scars","GLOBAL",1)
+def _r1130_condition():
+    Global("Scars","GLOBAL",1)
+def _r1845_action():
+    DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~
+def _r1846_action():
+    DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~
+def _r1847_action():
+    DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~
+def _r2080_action():
+    DO ~SetGlobal("Know_Mimir","GLOBAL",1) SetGlobal("Morte_Mimir","GLOBAL",1) ~
+def _r9029_condition():
+    Global("Know_Gith","GLOBAL",0)
+def _r9029_action():
+    DO ~SetGlobal("Know_Gith","GLOBAL",1) ~
+def _r9030_condition():
+    Global("Know_Gith","GLOBAL",1)
+def _r2603_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r2602_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r2605_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r6952_condition():
+    Global("Know_Lady","GLOBAL",0)
+def _r6952_action():
+    DO ~SetGlobal("Know_Lady","GLOBAL",1) ~
+def _r6953_condition():
+    Global("Know_Lady","GLOBAL",1)
+def _r6954_condition():
+    Global("Know_Lady","GLOBAL",1)
+def _r3474_action():
+    update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
+def _r3483_action():
+    update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
+def _r3871_action():
+    DO ~SetGlobal("Warning","GLOBAL",1) ~
+def _r3874_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r3877_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r3965_action():
+    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+def _r3966_action():
+    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+def _r3969_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+def _r3970_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+def _r3971_condition():
+    PartyHasItem("Prybar")
+def _r3972_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+def _r3972_action():
+    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+def _r3973_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+def _r3988_action():
+    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+def _r4023_condition():
+    return _check_char_prop_lt('protagonist',13,'wis')
+def _r4024_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r4027_condition():
+    return _check_char_prop_lt('protagonist',13,'wis')
+def _r4028_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r4029_action():
+    DO ~change_good_once(1, 'good_giant_skel_mort_1') ~
+def _r4031_condition():
+    return _check_char_prop_lt('protagonist',13,'wis')
+def _r4032_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r4034_condition():
+    return _check_char_prop_lt('protagonist',13,'wis')
+def _r4144_action():
+    DO ~SetGlobal("Warning","GLOBAL",1) ~
+def _r4145_action():
+    DO ~SetGlobal("Warning","GLOBAL",1) ~
+def _r4142_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r4143_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r4140_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r4339_action():
+    DO ~SetGlobal("Warning","GLOBAL",1) ~
+def _r4342_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r4345_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r4676_action():
+    update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+def _r4678_action():
+    DO ~change_law_once(-3, 'chaotic_vaxis_3') ~
+def _r4679_action():
+    DO ~change_law_once(-1, 'chaotic_vaxis_4') ~
+def _r4682_action():
+    DO ~change_law_once(3, 'lawful_vaxis_3') ~
+def _r4686_condition():
+    return _check_char_prop_gt('protagonist',13,'int')
+def _r4687_action():
+    DO ~change_law_once(1, 'lawful_vaxis_2') change_good_once(1, 'good_vaxis_2') ~
+def _r4693_action():
+    update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+def _r4695_action():
+    DO ~change_law_once(-3, 'chaotic_vaxis_3') ~
+def _r4699_action():
+    DO ~change_law_once(3, 'lawful_vaxis_3') ~
+def _r64535_condition():
+    Global("Vaxis_Zombie_XP","GLOBAL",0)
+def _r64535_action():
+    DO ~FadeToColor([20.0],0) Wait(1) SetNamelessDisguise(ZOMBIE) Wait(2) FadeFromColor([20.0],0) AddexperienceParty(500) SetGlobal("Vaxis_Zombie_XP","GLOBAL",1) ~
+def _r64534_condition():
+    Global("Vaxis_Zombie_XP","GLOBAL",1)
+def _r64534_action():
+    DO ~FadeToColor([20.0],0) Wait(1) SetNamelessDisguise(ZOMBIE) Wait(2) FadeFromColor([20.0],0) ~
+def _r5030_action():
+    DO ~SetGlobal("Warning","GLOBAL",1) ~
+def _r5033_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r5036_action():
+    DO ~SetGlobal("Warning","GLOBAL",2) ~
+def _r6075_action():
+    DO ~SetGlobal("Morte_Deionarra_Quip_1","GLOBAL",1) ~
+def _r6325_condition():
+    HasItem("Cobble","Post")
+def _r6326_condition():
+    !HasItem("Cobble","Post")
+def _r6327_condition():
+    return _check_char_prop_gt('protagonist',11,'int') return _check_char_prop_lt('protagonist',12,'wis')
+def _r6328_condition():
+    return _check_char_prop_gt('protagonist',11,'wis')
+def _r6329_condition():
+    return _check_char_prop_lt('protagonist',12,'int') return _check_char_prop_lt('protagonist',12,'wis')
+def _r6330_condition():
+    return current_morgue_settings()['can_speak_with_dead']
+def _r6658_action():
+    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+def _r6659_action():
+    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+def _r6664_condition():
+    Global("42_Secret","GLOBAL",1)
+def _r6665_condition():
+    return _check_char_prop_gt('protagonist',12,'wis') Global("42_Secret","GLOBAL",0)
+def _r6957_action():
+    DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
+def _r7056_condition():
+    Global("Morte_Quip","GLOBAL",1)
+def _r7056_action():
+    DO ~SetGlobal("Morte_Zombie_Female_Bar_Quip","GLOBAL",1) ~
+def _r7057_condition():
+    Global("Morte_Quip","GLOBAL",0)
+def _r7057_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r7058_condition():
+    Global("Morte_Quip","GLOBAL",0)
+def _r7058_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r7483_action():
+    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~
+def _r7485_action():
+    DO ~IncrementGlobal("Morte_Taunt","GLOBAL",1) ~
+def _r11977_action():
+    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) change_law_once(-1, 'chaotic_ingress_teeth_2') change_good_once(-1, 'evil_ingress_teeth_1') ~
+def _r11980_action():
+    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) change_law_once(-1, 'chaotic_ingress_teeth_2') change_good_once(-1, 'evil_ingress_teeth_1') ~
+def _r11982_action():
+    DO ~MoraleDec("Morte",1) ~
+def _r11983_action():
+    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) ~
+def _r11985_condition():
+    Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+def _r11986_condition():
+    Global("Good_Ingress_Teeth_1","GLOBAL",1)
+def _r11988_condition():
+    Global("Good_Ingress_Teeth_1","GLOBAL",1)
+def _r11989_condition():
+    Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+def _r11990_condition():
+    Global("Good_Ingress_Teeth_1","GLOBAL",1)
+def _r11991_condition():
+    Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+def _r12554_action():
+    DO ~MoraleDec("Morte",2) Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself) ~
+def _r12555_action():
+    DO ~Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself) ~
+def _r12556_action():
+    DO ~SetGlobal("BariA","AR0400",2) ~
+def _r12855_condition():
+    Global("Know_Mimir","GLOBAL",0)
+def _r12855_action():
+    DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~
+def _r12858_condition():
+    Global("Know_Mimir","GLOBAL",0)
+def _r12858_action():
+    DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~
+def _r12860_action():
+    DO ~SetGlobal("Morte_Mimir","GLOBAL",1) ~
+def _r12861_action():
+    DO ~SetGlobal("Morte_Mimir","GLOBAL",1) ~
+def _r13774_condition():
+    Global("Know_Chaosmen","GLOBAL",0)
+def _r13774_action():
+    DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) SetGlobal("Know_Chaosmen","GLOBAL",1) ~
+def _r13775_condition():
+    Global("Know_Chaosmen","GLOBAL",1)
+def _r13775_action():
+    DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) ~
+def _r13776_condition():
+    Global("Know_Chaosmen","GLOBAL",1)
+def _r13776_action():
+    DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) ~
+def _r13986_condition():
+    Global("Know_Chaosmen","GLOBAL",0)
+def _r13986_action():
+    DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) SetGlobal("Know_Chaosmen","GLOBAL",1) ~
+def _r13987_condition():
+    Global("Know_Chaosmen","GLOBAL",1)
+def _r13987_action():
+    DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) ~
+def _r13988_condition():
+    Global("Know_Chaosmen","GLOBAL",1)
+def _r13988_action():
+    DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) ~
+def _r13989_condition():
+    Global("Join_Chaosmen","GLOBAL",0)
+def _r14275_condition():
+    Global("Mortai_Contract","GLOBAL",1) GlobalGT("Coppereyes_Contract","GLOBAL",0)
+def _r14276_condition():
+    Global("Mortai_Contract","GLOBAL",1) Global("Coppereyes_Contract","GLOBAL",0)
+def _r14277_condition():
+    Global("Mortai_Contract","GLOBAL",0) GlobalGT("Coppereyes_Contract","GLOBAL",0)
+def _r14278_condition():
+    Global("Mortai_Contract","GLOBAL",0) Global("Coppereyes_Contract","GLOBAL",0)
+def _r15492_action():
+    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",-1) ~
+def _r65537_condition():
+    GlobalGT("Morte_Mimir","GLOBAL",1)
+def _r15495_action():
+    DO ~SetGlobal("Adyzoel","AR0400",2) ~
+def _r16881_condition():
+    return _check_char_prop_lt('protagonist',13,'wis')
+def _r16882_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r16882_action():
+    DO ~IncrementGlobal("Tree_Helpers","AR0400",1) ~
+def _r16884_condition():
+    NearbyDialog("DAnnah") Global("Tree_A","AR0400",0)
+def _r16884_action():
+    DO ~SetGlobal("Tree_A","AR0400",1) ~
+def _r16885_condition():
+    NearbyDialog("DIgnus") Global("Tree_I","AR0400",0)
+def _r16885_action():
+    DO ~SetGlobal("Tree_I","AR0400",1) ~
+def _r16886_condition():
+    NearbyDialog("DGrace") Global("Tree_G","AR0400",0)
+def _r16886_action():
+    DO ~SetGlobal("Tree_G","AR0400",1) ~
+def _r16887_condition():
+    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0)
+def _r16887_action():
+    DO ~SetGlobal("Tree_D","AR0400",1) ~
+def _r16888_condition():
+    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) Global("Dakkon_Slave","Global",1)
+def _r16888_action():
+    DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1) SetGlobal("Tree_D","AR0400",1) ~
+def _r16889_condition():
+    NearbyDialog("DNordom") Global("Tree_N","AR0400",0)
+def _r16889_action():
+    DO ~SetGlobal("Tree_N","AR0400",1) ~
+def _r16890_condition():
+    NearbyDialog("DVhail") Global("Tree_V","AR0400",0)
+def _r16890_action():
+    DO ~SetGlobal("Tree_V","AR0400",1) ~
+def _r16893_condition():
+    return current_global_settings()['in_party_morte'] Global("Tree_M","AR0400",0)
+def _r16893_action():
+    DO ~SetGlobal("Tree_M","AR0400",1) ~
+def _r16894_condition():
+    NearbyDialog("DAnnah") Global("Tree_A","AR0400",0)
+def _r16894_action():
+    DO ~SetGlobal("Tree_A","AR0400",1) ~
+def _r16895_condition():
+    NearbyDialog("DIgnus") Global("Tree_I","AR0400",0)
+def _r16895_action():
+    DO ~SetGlobal("Tree_I","AR0400",1) ~
+def _r16896_condition():
+    NearbyDialog("DGrace") Global("Tree_G","AR0400",0)
+def _r16896_action():
+    DO ~SetGlobal("Tree_G","AR0400",1) ~
+def _r16897_condition():
+    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0)
+def _r16897_action():
+    DO ~SetGlobal("Tree_D","AR0400",1) ~
+def _r16898_condition():
+    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) Global("Dakkon_Slave","Global",1)
+def _r16898_action():
+    DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1) SetGlobal("Tree_D","AR0400",1) ~
+def _r16899_condition():
+    NearbyDialog("DVhail") Global("Tree_V","AR0400",0)
+def _r16899_action():
+    DO ~SetGlobal("Tree_V","AR0400",1) ~
+def _r17583_condition():
+    NearbyDialog("DAnnah")
+def _r17584_condition():
+    PartyGoldGT(39)
+def _r17584_action():
+    DO ~TakePartyGold(40) ~
+def _r17585_condition():
+    PartyGoldGT(39)
+def _r17586_condition():
+    PartyGoldGT(39)
+def _r17587_condition():
+    PartyGoldLT(40)
+def _r17588_condition():
+    PartyGoldLT(40)
+def _r18802_action():
+    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~
+def _r18578_action():
+    DO ~change_law_once(1, 'lawful_yellow_1') ~
+def _r18808_action():
+    DO ~change_good_once(1, 'good_yellow_1') ~
+def _r18820_condition():
+    PartyGoldGT(4)
+def _r18820_action():
+    DO ~TakePartyGold(5) ~
+def _r18821_condition():
+    PartyGoldGT(49)
+def _r18821_action():
+    DO ~TakePartyGold(50) ~
+def _r18822_condition():
+    PartyGoldGT(99)
+def _r18822_action():
+    DO ~TakePartyGold(100) ~
+def _r18823_condition():
+    PartyGoldGT(499)
+def _r18823_action():
+    DO ~TakePartyGold(500) ~
+def _r18824_condition():
+    PartyGoldLT(5)
+def _r18829_condition():
+    return _check_char_prop_gt('protagonist',11,'int')
+def _r18830_condition():
+    return _check_char_prop_lt('protagonist',12,'int')
+def _r18830_action():
+    DO ~DestroyPartyGold(5) ~
+def _r18833_condition():
+    PartyGoldGT(4)
+def _r18833_action():
+    DO ~TakePartyGold(5) ~
+def _r18834_condition():
+    PartyGoldGT(9)
+def _r18834_action():
+    DO ~TakePartyGold(10) ~
+def _r18835_condition():
+    PartyGoldGT(49)
+def _r18835_action():
+    DO ~TakePartyGold(50) change_good_once(1, 'good_yellow_2') ~
+def _r18836_condition():
+    PartyGoldGT(99)
+def _r18836_action():
+    DO ~TakePartyGold(100) change_good_once(1, 'good_yellow_2') ~
+def _r19668_condition():
+    Global("Speak_With_Dead","GLOBAL",0)
+def _r19669_condition():
+    Global("Speak_With_Dead","GLOBAL",1)
+def _r19670_condition():
+    Global("Speak_With_Dead","GLOBAL",0)
+def _r19671_condition():
+    Global("Speak_With_Dead","GLOBAL",1)
+def _r20612_condition():
+    GlobalLT("Know_Marta_Work","GLOBAL",3)
+def _r20612_action():
+    DO ~SetGlobal("Know_Marta_Work","GLOBAL",3) ~ update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+def _r20613_condition():
+    GlobalGT("Know_Marta_Work","GLOBAL",2)
+def _r20613_action():
+    update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+def _r24697_condition():
+    Global("Know_Lady","GLOBAL",0)
+def _r24697_action():
+    DO ~SetGlobal("Know_Lady","GLOBAL",1) ~
+def _r24698_condition():
+    Global("Know_Lady","GLOBAL",1)
+def _r24699_condition():
+    Global("Know_Lady","GLOBAL",1)
+def _r24700_condition():
+    return _check_char_prop_lt('protagonist',13,'wis') return _check_char_prop_gt('protagonist',12,'int')
+def _r24701_condition():
+    return _check_char_prop_gt('protagonist',12,'wis')
+def _r22850_action():
+    DO ~change_law_once(-1, 'chaotic_cube_3') ~
+def _r22853_action():
+    DO ~change_law_once(-1, 'chaotic_cube_4') ~
+def _r22856_action():
+    DO ~change_law_once(-1, 'chaotic_cube_5') ~
+def _r24904_action():
+    DO ~set_in_party_morte() ~
+def _r24905_action():
+    DO ~set_in_party_morte() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r24925_action():
+    DO ~change_good_once(1, 'good_morte_1') ~
+def _r24932_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ update_journal('24933')    # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
+def _r66902_condition():
+    GlobalGT("Morte_Mimir","GLOBAL",1)
+def _r25967_condition():
+    return _check_char_prop_gt('protagonist',14,'int')
+def _r27316_condition():
+    return _check_char_prop_gt('protagonist',12,'int')
+def _r65536_condition():
+    GlobalGT("Morte_Mimir","GLOBAL",1)
+def _r27916_condition():
+    return _check_char_prop_gt('protagonist',14,'int')
+def _r28041_action():
+    DO ~TakePartyGold(10) ~
+def _r28042_action():
+    DO ~TakePartyGold(10) ~
+def _r28038_condition():
+    Global("Malmaner","GLOBAL",3) !Global("Chaotic_Malmaner_1","GLOBAL",1)
+def _r28038_action():
+    DO ~TakePartyGold(30) ~
+def _r28039_condition():
+    Global("Malmaner","GLOBAL",3) !Global("Chaotic_Malmaner_1","GLOBAL",1)
+def _r28039_action():
+    DO ~TakePartyGold(30) ~
+def _r28040_condition():
+    Global("Malmaner","GLOBAL",3) Global("Chaotic_Malmaner_1","GLOBAL",1)
+def _r28040_action():
+    DO ~TakePartyGold(50) ~
+def _r28044_condition():
+    Global("Malmaner","GLOBAL",3) Global("Chaotic_Malmaner_1","GLOBAL",1)
+def _r28044_action():
+    DO ~TakePartyGold(50) ~
+def _r28045_condition():
+    Global("Malmaner","GLOBAL",5) !Global("Chaotic_Malmaner_1","GLOBAL",3)
+def _r28045_action():
+    DO ~TakePartyGold(50) ~
+def _r28046_condition():
+    Global("Malmaner","GLOBAL",5) !Global("Chaotic_Malmaner_1","GLOBAL",3)
+def _r28046_action():
+    DO ~TakePartyGold(50) ~
+def _r28047_condition():
+    Global("Malmaner","GLOBAL",5) Global("Chaotic_Malmaner_1","GLOBAL",3)
+def _r28047_action():
+    DO ~TakePartyGold(80) ~
+def _r28048_condition():
+    Global("Malmaner","GLOBAL",5) Global("Chaotic_Malmaner_1","GLOBAL",3)
+def _r28048_action():
+    DO ~TakePartyGold(80) ~
+def _r28743_action():
+    DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~
+def _r28744_condition():
+    return _check_char_prop_gt('protagonist',14,'chr')
+def _r28744_action():
+    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",2) SetGlobal("Morte_Stolen","GLOBAL",3) ~
+def _r28745_condition():
+    return _check_char_prop_lt('protagonist',15,'chr')
+def _r28745_action():
+    DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~
+def _r28967_condition():
+    return _check_char_prop_gt('protagonist',14,'int')
+def _r28968_condition():
+    Global("CW_Sal_Hint","GLOBAL",1)
+def _r28968_action():
+    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+def _r28971_condition():
+    Global("CW_Sal_Hint","GLOBAL",1)
+def _r28971_action():
+    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+def _r28975_condition():
+    Global("CW_Sal_Hint","GLOBAL",1)
+def _r28975_action():
+    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+def _r28976_action():
+    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+def _r28980_condition():
+    Global("Know_Ravel","GLOBAL",1)
+def _r30822_condition():
+    return _check_char_prop_lt('protagonist',9,'int')
+def _r30823_condition():
+    return _check_char_prop_gt('protagonist',8,'int')
+def _r30824_condition():
+    return _check_char_prop_gt('protagonist',8,'int')
+def _r30825_condition():
+    GlobalGT("Able","GLOBAL",0)
+def _r30826_condition():
+    Global("Able","GLOBAL",0)
+def _r30826_action():
+    DO ~SetGlobal("Able","GLOBAL",1) ~
+def _r31567_action():
+    DO ~OpenDoor("Statue") Kill(Protagonist) ~
+def _r32370_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32375_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32380_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32385_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32390_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32395_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32400_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r32405_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r33076_action():
+    DO ~SetGlobal("Lecture_Ghysis","GLOBAL",2) ~
+def _r33959_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r33963_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r33966_action():
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+def _r65541_condition():
+    Global("Morte_Talent","GLOBAL",0)
+def _r65542_condition():
+    Global("Morte_Talent","GLOBAL",1)
+def _r65543_condition():
+    Global("Morte_Tattoo_XP","GLOBAL",1)
+def _r65545_condition():
+    Global("Know_Mimir","GLOBAL",1) Global("Morte_Story","GLOBAL",0)
+def _r65546_condition():
+    Global("Morte_Story","GLOBAL",1)
+def _r65547_condition():
+    Global("Know_Morte_Pillar","GLOBAL",1)
+def _r65548_condition():
+    GlobalGT("Know_Blood_War","GLOBAL",0)
+def _r65549_condition():
+    GlobalGT("Know_Ravel","GLOBAL",0) Global("Ravel","GLOBAL",0)
+def _r34991_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35001_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r34993_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35023_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35033_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35025_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35055_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35065_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35057_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35087_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35097_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35089_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35119_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35129_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35121_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35151_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35161_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35153_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35183_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35193_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35185_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35215_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35225_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35217_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35247_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35257_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35249_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35279_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35289_action():
+    DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
+def _r35281_action():
+    DO ~change_law_once(-1, 'morte_zombie_1') ~
+def _r35319_action():
+    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+def _r35342_action():
+    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+def _r35360_action():
+    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+def _r35344_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+def _r35352_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+def _r35355_condition():
+    PartyHasItem("Prybar")
+def _r35358_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+def _r35358_action():
+    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+def _r35359_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+def _r35396_action():
+    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+def _r35419_action():
+    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+def _r35437_action():
+    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+def _r35421_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+def _r35429_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+def _r35432_condition():
+    PartyHasItem("Prybar")
+def _r35435_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+def _r35435_action():
+    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+def _r35436_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+def _r35473_action():
+    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+def _r35496_action():
+    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+def _r35514_action():
+    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+def _r35498_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+def _r35506_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+def _r35509_condition():
+    PartyHasItem("Prybar")
+def _r35512_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+def _r35512_action():
+    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+def _r35513_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+def _r35550_action():
+    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+def _r35573_action():
+    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+def _r35591_action():
+    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+def _r35575_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+def _r35583_condition():
+    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+def _r35586_condition():
+    PartyHasItem("Prybar")
+def _r35589_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+def _r35589_action():
+    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+def _r35590_condition():
+    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+def _r39716_action():
+    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+def _r39719_action():
+    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+def _r39721_action():
+    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+def _r39722_action():
+    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+def _r40069_condition():
+    return not current_global_settings()['in_party_morte'] HPPercent(Protagonist,100)
+def _r40070_condition():
+    return not current_global_settings()['in_party_morte'] HPPercentGT(Protagonist,49)
+def _r40071_condition():
+    return not current_global_settings()['in_party_morte'] HPPercentLT(Protagonist,50)
+def _r40077_condition():
+    Global("Nenny","GLOBAL",2)
+def _r40078_condition():
+    Global("Nenny","GLOBAL",2)
+def _r40079_condition():
+    Global("Nenny","GLOBAL",1)
+def _r40080_condition():
+    Global("Nenny","GLOBAL",1)
+def _r40848_action():
+    DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
+def _r40852_action():
+    DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
+def _r40856_action():
+    DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
+def _r41837_action():
+    update_journal('39516')    # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
+def _r41842_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41843_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41845_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41846_condition():
+    PartyHasItem("Bandage")
+def _r41847_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41848_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41852_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41853_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41857_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41858_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41862_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41863_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41867_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41868_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41871_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41872_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41875_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41876_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41880_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41881_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41884_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41885_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41888_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41889_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41892_condition():
+    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41893_condition():
+    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+def _r41900_condition():
+    return _check_char_prop_gt('protagonist',12,'int')
+def _r41911_action():
+    DO ~set_morte_mortuary_walkthrough_2() ~
+def _r41921_condition():
+    Global("Story_Reekwind_Curse","GLOBAL",1) Global("Jumble_Reekwind","GLOBAL",0)
+def _r41921_action():
+    DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1) ~ update_journal('67862')    # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
+def _r67864_condition():
+    Global("Jumble_Reekwind","GLOBAL",1)
+def _r43909_condition():
+    PartyHasItem("Decant") Global("Seek_Word","GLOBAL",1)
+def _r43910_condition():
+    Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn")
+def _r43910_action():
+    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+def _r43911_condition():
+    GlobalLT("Aelwyn","GLOBAL",2)
+def _r43917_condition():
+    PartyHasItem("Decant") Global("Seek_Word","GLOBAL",1)
+def _r43918_condition():
+    Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn")
+def _r43918_action():
+    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+def _r43919_condition():
+    GlobalLT("Aelwyn","GLOBAL",2)
+def _r45029_action():
+    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+def _r45093_action():
+    update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+def _r45103_action():
+    update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+def _r50166_action():
+    DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
+def _r50325_condition():
+    Global("Know_Lady","GLOBAL",0)
+def _r50325_action():
+    DO ~SetGlobal("Know_Lady","GLOBAL",1) ~
+def _r50328_condition():
+    Global("Know_Lady","GLOBAL",1)
+def _r50329_condition():
+    Global("Know_Lady","GLOBAL",1)
+def _r50416_action():
+    DO ~MoraleDec("Morte",1) ~
+def _r52577_condition():
+    NearbyDialog("Dgrace")
+def _r52577_action():
+    DO ~SetGlobal("Ravel_Grace","GLOBAL",2) ~
+def _r52578_condition():
+    !NearbyDialog("DGrace") NearbyDialog("DAnnah")
+def _r52578_action():
+    DO ~SetGlobal("Ravel_Annah","GLOBAL",2) ~
+def _r52579_condition():
+    !NearbyDialog("DGrace") !NearbyDialog("DAnnah")
+def _r53625_condition():
+    Global("Morte_Story","GLOBAL",1)
+def _r53625_action():
+    DO ~MoraleDec("Morte",1) ~
+def _r53627_condition():
+    Global("Morte_Story","GLOBAL",0)
+def _r53629_action():
+    DO ~SetGlobal("Morte_Story","GLOBAL",1) ~ update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+def _r53630_action():
+    DO ~MoraleDec("Morte",1) SetGlobal("Morte_Story","GLOBAL",1) ~ update_journal('53661')    # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
+def _r53662_condition():
+    NearbyDialog("Dannah")
+def _r53663_condition():
+    !NearbyDialog("Dannah")
+def _r54105_condition():
+    !NearbyDialog("DDakkon")
+def _r53795_action():
+    DO ~MoraleDec("Morte",1) ~
+def _r53801_action():
+    DO ~MoraleDec("Morte",1) ~
+def _r53807_action():
+    update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+def _r53825_condition():
+    NearbyDialog("Dgrace")
+def _r53825_action():
+    DO ~SetGlobal("Pillar_Musk","AR1001",1) ~
+def _r53826_condition():
+    NearbyDialog("Dannah") !NearbyDialog("Dgrace")
+def _r53826_action():
+    DO ~SetGlobal("Pillar_Musk","AR1001",1) ~
+def _r53827_condition():
+    !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+def _r53832_condition():
+    Global("Specialist","GLOBAL",4)
+def _r53833_condition():
+    Global("Specialist","GLOBAL",5)
+def _r53834_condition():
+    Global("Specialist","GLOBAL",6)
+def _r53835_condition():
+    !Global("Specialist","GLOBAL",4) !Global("Specialist","GLOBAL",5) !Global("Specialist","GLOBAL",6)
+def _r53836_condition():
+    Global("Where_Fhjull","AR1001",0)
+def _r53837_condition():
+    Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube")
+def _r53838_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace")
+def _r53839_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah")
+def _r53840_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+def _r53841_action():
+    DO ~SetGlobal("Pillar_Question","AR1001",0) ~
+def _r53843_action():
+    DO ~change_good_once(-1, 'evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
+def _r53844_condition():
+    Global("Where_Fhjull","AR1001",0)
+def _r53863_condition():
+    Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube")
+def _r53864_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace")
+def _r53865_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah")
+def _r53866_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+def _r53867_action():
+    DO ~SetGlobal("Pillar_Question","AR1001",0) ~
+def _r53850_action():
+    DO ~change_good_once(-1, 'evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
+def _r53851_condition():
+    Global("Where_Fhjull","AR1001",0)
+def _r53852_condition():
+    Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube")
+def _r53853_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace")
+def _r53854_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah")
+def _r53855_condition():
+    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+def _r53856_action():
+    DO ~SetGlobal("Pillar_Question","AR1001",0) ~
+def _r54160_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54165_condition():
+    !NearbyDialog("DDakkon")
+def _r54166_condition():
+    NearbyDialog("DDakkon") return _check_char_prop_gt('protagonist',13,'wis')
+def _r54167_condition():
+    NearbyDialog("DDakkon") return _check_char_prop_lt('protagonist',14,'wis')
+def _r54172_condition():
+    !NearbyDialog("DDakkon")
+def _r54173_condition():
+    NearbyDialog("DDakkon") return _check_char_prop_gt('protagonist',13,'wis')
+def _r54174_condition():
+    NearbyDialog("DDakkon") return _check_char_prop_lt('protagonist',14,'wis')
+def _r54179_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54180_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54180_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54189_condition():
+    InParty("Morte")
+def _r54190_condition():
+    !InParty("Morte")
+def _r54191_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54192_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54192_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54194_condition():
+    InParty("Morte")
+def _r54195_condition():
+    !InParty("Morte")
+def _r54196_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54197_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54197_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54200_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54201_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54201_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54204_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54205_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54205_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54207_condition():
+    InParty("Morte")
+def _r54208_condition():
+    !InParty("Morte")
+def _r54209_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54210_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54210_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54213_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54214_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54214_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54217_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54218_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54218_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54220_condition():
+    return _check_char_prop_gt('protagonist',15,'int') NearbyDialog("Ddakkon")
+def _r54221_condition():
+    return _check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") GlobalGT("Dakkon","GLOBAL",0)
+def _r54223_condition():
+    return _check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") Global("Dakkon","GLOBAL",0)
+def _r54226_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54227_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54227_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54230_condition():
+    return current_global_settings()['meet_deionarra']
+def _r54231_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r54232_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54233_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54233_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54235_condition():
+    return current_global_settings()['meet_deionarra']
+def _r54236_condition():
+    return not current_global_settings()['meet_deionarra']
+def _r54237_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54238_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54238_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54241_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54242_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54242_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54244_action():
+    DO ~SetGlobal("Morte_Quip_Regret_Portal","GLOBAL",2) ~
+def _r54245_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54246_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54246_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54250_condition():
+    GlobalGT("BD_MORTE_MORALE","GLOBAL",5)
+def _r54252_condition():
+    GlobalLT("BD_MORTE_MORALE","GLOBAL",6)
+def _r54255_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54262_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54262_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54264_condition():
+    return _check_char_prop_gt('protagonist',15,'wis')
+def _r54266_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54267_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54267_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54269_condition():
+    return _check_char_prop_gt('protagonist',15,'wis')
+def _r54271_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54272_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54272_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54275_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+def _r54276_condition():
+    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+def _r54276_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54278_condition():
+    InParty("Morte") Global("Morte_Morale_Fortress_Portal","AR0202",0)
+def _r54278_action():
+    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) SetGlobal("Morte_Morale_Fortress_Portal","AR0202",1) ~
+def _r54279_condition():
+    InParty("Morte")
+def _r54280_condition():
+    !InParty("Morte")
+def _r54280_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54282_condition():
+    GlobalGT("Ravel_Grace","GLOBAL",0) GlobalGT("Ravel_Morte","GLOBAL",0) GlobalLT("Torment_Fell","GLOBAL",2) NearbyDialog("Dgrace")
+def _r54283_condition():
+    GlobalGT("Ravel_Grace","GLOBAL",0) GlobalGT("Ravel_Morte","GLOBAL",0) Global("Torment_Fell","GLOBAL",2) NearbyDialog("Dgrace")
+def _r54284_condition():
+    GlobalGT("Ravel_Morte","GLOBAL",0) GlobalLT("Torment_Fell","GLOBAL",2) !NearbyDialog("Dgrace")
+def _r54285_condition():
+    GlobalGT("Ravel_Morte","GLOBAL",0) Global("Torment_Fell","GLOBAL",2) !NearbyDialog("Dgrace")
+def _r54286_condition():
+    Global("Ravel_Morte","GLOBAL",0)
+def _r54832_condition():
+    InParty("Morte")
+def _r54833_condition():
+    !InParty("Morte")
+def _r54833_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54835_condition():
+    InParty("Morte")
+def _r54836_condition():
+    !InParty("Morte")
+def _r54836_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r54838_condition():
+    InParty("Morte")
+def _r54839_condition():
+    !InParty("Morte")
+def _r54839_action():
+    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+def _r55849_condition():
+    !NearbyDialog("DGrace")
+def _r55850_condition():
+    !NearbyDialog("DGrace")
+def _r55875_condition():
+    return _check_char_prop_gt('protagonist',15,'int')
+def _r55902_action():
+    DO ~change_law_once(-1, 'chaotic_nordom_5') ~
+def _r55925_action():
+    DO ~SetGlobal("Know_Mechanus","GLOBAL",1) ~
+def _r55931_action():
+    DO ~change_law_once(2, 'lawful_nordom_2') ~
+def _r55941_action():
+    DO ~change_law_once(-2, 'chaotic_nordom_4') ~
+def _r61411_condition():
+    PartyGoldGT(499)
+def _r61412_condition():
+    PartyGoldLT(500)
+def _r61414_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65554_condition():
+    Global("Morte_Warning","GLOBAL",1)
+def _r65558_condition():
+    return not current_global_settings()['meet_pharod']
+def _r65559_condition():
+    return current_global_settings()['meet_pharod']
+def _r65566_condition():
+    Global("Morte_Warning","GLOBAL",1)
+def _r65565_condition():
+    Global("Journal","GLOBAL",0)
+def _r65569_condition():
+    Global("Morte_Tattoo_XP","GLOBAL",0)
+def _r65569_action():
+    DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1) AddexperienceParty(1000) ~ update_journal('65573')    # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
+def _r65570_condition():
+    Global("Morte_Tattoo_XP","GLOBAL",1)
+def _r65613_condition():
+    GlobalGT("Morte_Stolen","GLOBAL",2)
+def _r65621_action():
+    DO ~SetGlobal("Morte_Talent","GLOBAL",1) ~ update_journal('65625')    # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
+def _r65622_condition():
+    GlobalGT("Morte_Stolen","GLOBAL",2)
+def _r65627_condition():
+    GlobalGT("Morte_Stolen","GLOBAL",2)
+def _r65631_action():
+    update_journal('65637')    # '65637': ' ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ '
+def _r65639_condition():
+    return not current_global_settings()['meet_pharod']
+def _r65640_condition():
+    return current_global_settings()['meet_pharod'] Global("Pharod_Quest","GLOBAL",1)
+def _r65641_condition():
+    GlobalGT("Pharod_Quest","GLOBAL",1) !Global("AR0401_Visited","GLOBAL",1)
+def _r65642_condition():
+    Global("AR0401_Visited","GLOBAL",1) Global("AR0500_Visited","GLOBAL",0)
+def _r65643_condition():
+    Global("AR0500_Visited","GLOBAL",1) Global("Know_Ravel","GLOBAL",0)
+def _r65644_condition():
+    Global("Know_Ravel","GLOBAL",1) Global("Know_Ravel_Key","GLOBAL",0)
+def _r65645_condition():
+    Global("Know_Ravel","GLOBAL",1) GlobalGT("Know_Ravel_Key","GLOBAL",0) Global("AR0610_Visited","GLOBAL",0)
+def _r65646_condition():
+    Global("AR0610_Visited","GLOBAL",1) Global("AR0700_Visited","GLOBAL",0)
+def _r65647_condition():
+    Global("AR0700_Visited","GLOBAL",1)
+def _r65666_condition():
+    Global("AR0601_Visited","GLOBAL",0)
+def _r65666_action():
+    update_journal('65669')    # '65669': ' ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ '
+def _r65674_condition():
+    Global("Know_Ravel_Key","GLOBAL",1)
+def _r65674_action():
+    update_journal('65678')    # '65678': ' ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ '
+def _r65693_condition():
+    return not current_global_settings()['meet_pharod']
+def _r65700_condition():
+    Global("Grace_Silver_Mimir","GLOBAL",1)
+def _r65708_condition():
+    Global("Grace_Smell_Mimir","GLOBAL",1)
+def _r65709_condition():
+    Global("Morte_Tattoo_XP","GLOBAL",1)
+def _r65710_action():
+    update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
+def _r65711_action():
+    update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
+def _r65718_condition():
+    Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",0)
+def _r65719_condition():
+    Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",1)
+def _r65731_action():
+    DO ~SetGlobal("Morte_Story","GLOBAL",1) ~
+def _r65733_action():
+    DO ~AddexperienceParty(12000) ~
+def _r65738_condition():
+    return _check_char_prop_gt('protagonist',13,'wis')
+def _r65739_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65740_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65743_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65744_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65747_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65748_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65750_condition():
+    Global("Chaotic_Morte_1","GLOBAL",0)
+def _r65750_action():
+    DO ~change_law_once(1, 'lawful_morte_1') ~
+def _r65751_condition():
+    Global("Lawful_Morte_1","GLOBAL",0)
+def _r65751_action():
+    DO ~change_law_once(-1, 'chaotic_morte_1') change_good_once(-1, 'evil_morte_1') ~
+def _r65753_action():
+    update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+def _r65754_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65755_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65758_action():
+    DO ~PlaySoundNotRanged("SPTR_01") FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65759_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65760_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65763_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65766_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65769_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65772_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65774_condition():
+    Global("Memory_Morte_Pillar","GLOBAL",0)
+def _r65774_action():
+    DO ~SetGlobal("Memory_Morte_Pillar","GLOBAL",1) GiveExperience(Protagonist,12000) FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65775_condition():
+    Global("Memory_Morte_Pillar","GLOBAL",1)
+def _r65775_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65778_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65779_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65781_action():
+    DO ~PlaySoundNotRanged("SPTR_01") FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65782_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65783_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65786_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65787_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65789_action():
+    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+def _r65790_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65791_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65794_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65795_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65798_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65799_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65801_condition():
+    Global("Know_Morte_Pillar","GLOBAL",0)
+def _r65802_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65803_condition():
+    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+def _r65821_action():
+    DO ~AddexperienceParty(12000) MoraleInc("Morte",3) PermanentStatChange("Morte",STR,RAISE,4) PermanentStatChange("Morte",DEX,RAISE,2) PermanentStatChange("Morte",CON,RAISE,2) SetGlobal("BD_MorteStory","GLOBAL",1) ~ update_journal('65825')    # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
+def _r66347_condition():
+    Global("Morte_Talent","GLOBAL",0)
+def _r66348_condition():
+    Global("Morte_Talent","GLOBAL",1)
+def _r66349_condition():
+    Global("Morte_Tattoo_XP","GLOBAL",1)
+def _r66351_condition():
+    Global("Know_Mimir","GLOBAL",1) Global("Morte_Story","GLOBAL",0)
+def _r66352_condition():
+    Global("Morte_Story","GLOBAL",1)
+def _r66353_condition():
+    Global("Know_Morte_Pillar","GLOBAL",1)
+def _r66354_condition():
+    GlobalGT("Know_Blood_War","GLOBAL",0)
+def _r66355_condition():
+    GlobalGT("Know_Ravel","GLOBAL",0) Global("Ravel","GLOBAL",0)
+def _r68176_action():
+    DO ~SetGlobal("Fortress_Morte","GLOBAL",4) JoinPartyEx(TRUE) ~
+def _r68178_condition():
+    Global("Trans_Vanish","GLOBAL",0) GlobalGT("Fortress_Party_Roof","GLOBAL",1)
+def _r68189_condition():
+    Global("Trans_Vanish","GLOBAL",1) GlobalGT("Fortress_Dakkon","GLOBAL",0)
+def _r68189_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~
+def _r68190_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) GlobalGT("Fortress_Annah","GLOBAL",0)
+def _r68190_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~
+def _r68191_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) GlobalGT("Fortress_Grace","GLOBAL",0)
+def _r68191_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~
+def _r68192_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0)
+def _r68192_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~
+def _r68193_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0)
+def _r68193_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+def _r68194_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Vhailor","GLOBAL",0) GlobalGT("Fortress_Nordom","GLOBAL",0)
+def _r68194_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~
+def _r68239_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+def _r68239_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~
+def _r68438_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Nordom","GLOBAL",0)
+def _r68438_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~
+def _r68439_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+def _r68439_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~
+def _r68446_condition():
+    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0)
+def _r68446_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+def _r68503_condition():
+    Global("Trans_Vanish","GLOBAL",0) Global("Fortress_Party_Roof","GLOBAL",1)
+def _r68175_condition():
+    GlobalGT("Fortress_Annah","GLOBAL",0)
+def _r68175_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~
+def _r68179_condition():
+    GlobalGT("Fortress_Dakkon","GLOBAL",0)
+def _r68179_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~
+def _r68180_condition():
+    GlobalGT("Fortress_Grace","GLOBAL",0)
+def _r68180_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~
+def _r68181_condition():
+    GlobalGT("Fortress_Nordom","GLOBAL",0)
+def _r68181_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~
+def _r68182_condition():
+    GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0)
+def _r68182_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~
+def _r68183_condition():
+    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0)
+def _r68183_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+def _r68319_condition():
+    GlobalGT("Fortress_Annah","GLOBAL",0)
+def _r68319_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~
+def _r68320_condition():
+    GlobalGT("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+def _r68320_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~
+def _r68321_condition():
+    GlobalGT("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+def _r68321_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~
+def _r68322_condition():
+    GlobalGT("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+def _r68322_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~
+def _r68323_condition():
+    GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+def _r68323_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~
+def _r68324_condition():
+    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+def _r68324_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+def _r68325_condition():
+    Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+def _r68325_action():
+    DO ~QuitGame(FINALE,0,0) ~
+def _r68490_condition():
+    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1)
+def _r68490_action():
+    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+def _r68491_condition():
+    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+def _r68491_action():
+    DO ~QuitGame(FINALE,0,0) ~
+def _r68492_condition():
+    GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+def _r68492_action():
+    DO ~QuitGame(FINALE,0,0) ~
+
 EXIT = -1
+
 # from -
 DialogStateBuilder('DMORTE.D_s0') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба.", 's0', 'say986') \
     .with_responses() \
         .response("Кто ты?", 'DMORTE.D_s1', 'r', 'reply987') \
-        .response("Не обращать внимания на говорящий череп и изучить комнату.", EXIT, 'r', 'reply989') \
-        .response("Вдохнуть поглубже, встряхнуть головой и не обращать внимания на говорящий с тобой череп.", EXIT, 'r', 'reply988') \
-        .response("Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся, закончил свои дела и присоединился ко мне НЕМЕДЛЕННО.", EXIT, 'r', 'reply17833').with_action(lambda: ' DO ~GiveItem("KeyPR",Protagonist) SetGlobal("Morte","GLOBAL",1) SetGlobal("Scars","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Не обращать внимания на говорящий череп и изучить комнату.", EXIT, 'r', 'reply989').with_action(lambda: _dispose()) \
+        .response("Вдохнуть поглубже, встряхнуть головой и не обращать внимания на говорящий с тобой череп.", EXIT, 'r', 'reply988').with_action(lambda: _dispose()) \
+        .response("Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся, закончил свои дела и присоединился ко мне НЕМЕДЛЕННО.", EXIT, 'r', 'reply17833').with_action(lambda: _r17833_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 0.0 29.0 31.0
@@ -18,7 +1420,7 @@ DialogStateBuilder('DMORTE.D_s1') \
         .response("Я… не знаю.", 'DMORTE.D_s2', 'r', 'reply992') \
         .response("Я не знаю… Не могу вспомнить.", 'DMORTE.D_s3', 'r', 'reply995') \
         .response("Я первый спросил тебя, череп.", 'DMORTE.D_s4', 'r', 'reply993') \
-        .response("Не обращать внимания на череп и изучить комнату.", EXIT, 'r', 'reply991') \
+        .response("Не обращать внимания на череп и изучить комнату.", EXIT, 'r', 'reply991').with_action(lambda: _dispose()) \
     .done()
 
 # from 1.0 4.0 5.0
@@ -27,9 +1429,9 @@ DialogStateBuilder('DMORTE.D_s2') \
         .line(SPEAKER, "Ты не знаешь, кто ты такой, а? *Мог* бы просто сказать: 'забей, пень'. Что ж, ладно… бестолочью притворяешься. Проверяешь, есть ли мне до этого дело. Я Морт. Приветствую, добро пожаловать и далее по списку.", 's2', 'say997') \
     .with_responses() \
         .response("Где я, Морт?", 'DMORTE.D_s6', 'r', 'reply998') \
-        .response("Ты знаешь, как мне отсюда выбраться?", 'DMORTE.D_s21', 'r', 'reply1006').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
+        .response("Ты знаешь, как мне отсюда выбраться?", 'DMORTE.D_s21', 'r', 'reply1006').with_condition(lambda: _r1006_condition()) \
         .response("Как я попал сюда?", 'DMORTE.D_s20', 'r', 'reply1080') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1087') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1087').with_action(lambda: _dispose()) \
     .done()
 
 # from 1.1 4.1 5.1
@@ -39,7 +1441,7 @@ DialogStateBuilder('DMORTE.D_s3') \
     .with_responses() \
         .response("Чувствующие?", 'DMORTE.D_s12', 'r', 'reply1000') \
         .response("Шрамы?", 'DMORTE.D_s13', 'r', 'reply1001') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1002') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1002').with_action(lambda: _dispose()) \
     .done()
 
 # from 1.2
@@ -50,7 +1452,7 @@ DialogStateBuilder('DMORTE.D_s4') \
         .response("Я… не знаю.", 'DMORTE.D_s2', 'r', 'reply1004') \
         .response("Я не знаю… Не могу вспомнить.", 'DMORTE.D_s3', 'r', 'reply1005') \
         .response("Ты первый, череп.", 'DMORTE.D_s5', 'r', 'reply1007') \
-        .response("Не обращать внимания на череп и изучить комнату.", EXIT, 'r', 'reply994') \
+        .response("Не обращать внимания на череп и изучить комнату.", EXIT, 'r', 'reply994').with_action(lambda: _dispose()) \
     .done()
 
 # from 4.2
@@ -60,7 +1462,7 @@ DialogStateBuilder('DMORTE.D_s5') \
     .with_responses() \
         .response("Я… не знаю.", 'DMORTE.D_s2', 'r', 'reply1009') \
         .response("Я не знаю… Я ничего не могу вспомнить.", 'DMORTE.D_s3', 'r', 'reply1010') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1011') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1011').with_action(lambda: _dispose()) \
     .done()
 
 # from 2.0 29.1 31.1
@@ -69,8 +1471,8 @@ DialogStateBuilder('DMORTE.D_s6') \
         .line(SPEAKER, "Ты находишься в дыре под названием Морг… это такое большое черное здание с чарующей архитектурой беременной паучихи.", 's6', 'say1012') \
     .with_responses() \
         .response("Морг? Я умер?", 'DMORTE.D_s7', 'r', 'reply1013') \
-        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1015').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1085') \
+        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1015').with_condition(lambda: _r1015_condition()) \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1085').with_action(lambda: _dispose()) \
     .done()
 
 # from 6.0 9.0
@@ -81,8 +1483,8 @@ DialogStateBuilder('DMORTE.D_s7') \
         .response("Прошу прощения… Морг? Что это за место?", 'DMORTE.D_s10', 'r', 'reply1016') \
         .response("Возвращают к жизни в качестве раба?", 'DMORTE.D_s9', 'r', 'reply1017') \
         .response("Но почему я тогда могу ходить?", 'DMORTE.D_s11', 'r', 'reply1018') \
-        .response("Говоришь, люди тащат сюда мертвецов? Это так я сюда попал?", 'DMORTE.D_s8', 'r', 'reply1019').with_condition(lambda: '  CheckStatGT(Protagonist,11,INT) ') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1020') \
+        .response("Говоришь, люди тащат сюда мертвецов? Это так я сюда попал?", 'DMORTE.D_s8', 'r', 'reply1019').with_condition(lambda: _r1019_condition()) \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1020').with_action(lambda: _dispose()) \
     .done()
 
 # from 7.3
@@ -92,7 +1494,7 @@ DialogStateBuilder('DMORTE.D_s8') \
     .with_responses() \
         .response("Зачем кому-то понадобилось тащить меня сюда?", 'DMORTE.D_s14', 'r', 'reply1029') \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1030') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1137') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1137').with_action(lambda: _dispose()) \
     .done()
 
 # from 7.1
@@ -103,7 +1505,7 @@ DialogStateBuilder('DMORTE.D_s9') \
         .response("Разве я должен здесь быть? Я мертв?", 'DMORTE.D_s7', 'r', 'reply1113') \
         .response("Как я выгляжу? Насколько плохи мои шрамы?", 'DMORTE.D_s13', 'r', 'reply1114') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1115') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1116') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1116').with_action(lambda: _dispose()) \
     .done()
 
 # from 7.0
@@ -114,7 +1516,7 @@ DialogStateBuilder('DMORTE.D_s10') \
         .response("Разве я должен здесь быть? Я мертв?", 'DMORTE.D_s16', 'r', 'reply1109') \
         .response("*Как* я выгляжу? Насколько плохи мои шрамы?", 'DMORTE.D_s13', 'r', 'reply1110') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1111') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1112') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1112').with_action(lambda: _dispose()) \
     .done()
 
 # from 7.2
@@ -125,7 +1527,7 @@ DialogStateBuilder('DMORTE.D_s11') \
         .response("Может, я умер? И поэтому я здесь?", 'DMORTE.D_s16', 'r', 'reply1133') \
         .response("Насколько плохо я выгляжу?", 'DMORTE.D_s13', 'r', 'reply1134') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1135') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1136') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1136').with_action(lambda: _dispose()) \
     .done()
 
 # from 3.0 33.0
@@ -135,7 +1537,7 @@ DialogStateBuilder('DMORTE.D_s12') \
     .with_responses() \
         .response("Шрамы?", 'DMORTE.D_s13', 'r', 'reply1027') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1028') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1143') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1143').with_action(lambda: _dispose()) \
     .done()
 
 # from 3.1 9.1 10.1 11.1 12.0 33.1
@@ -143,9 +1545,9 @@ DialogStateBuilder('DMORTE.D_s13') \
     .with_npc_lines() \
         .line(SPEAKER, "Это как будто какой-нибудь рубака решил разрисовать тебя ножом. Ты весь в шрамах… даже на спине, не считая… — делает паузу. — Скажем так: пень, у тебя на спине целая галерея наколок. Тут что-то написано…", 's13', 'say1026') \
     .with_responses() \
-        .response("Что там написано?", 'DMORTE.D_s34', 'r', 'reply1088').with_action(lambda: ' DO ~SetGlobal("Scars","GLOBAL",1) ~ ') \
+        .response("Что там написано?", 'DMORTE.D_s34', 'r', 'reply1088').with_action(lambda: _r1088_action()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1089') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1090') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1090').with_action(lambda: _dispose()) \
     .done()
 
 # from 8.0 29.3
@@ -155,7 +1557,7 @@ DialogStateBuilder('DMORTE.D_s14') \
     .with_responses() \
         .response("Звенелки? Какие еще 'звенелки'?", 'DMORTE.D_s15', 'r', 'reply1032') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1033') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1142') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1142').with_action(lambda: _dispose()) \
     .done()
 
 # from 14.0
@@ -165,7 +1567,7 @@ DialogStateBuilder('DMORTE.D_s15') \
     .with_responses() \
         .response("Я не могу вспомнить, откуда я.", 'DMORTE.D_s19', 'r', 'reply1035') \
         .response("Забудь об этом. У меня есть несколько вопросов…", 'DMORTE.D_s31', 'r', 'reply1036') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1138') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1138').with_action(lambda: _dispose()) \
     .done()
 
 # from 10.0 11.0
@@ -177,7 +1579,7 @@ DialogStateBuilder('DMORTE.D_s16') \
         .response("Книга мертвых?", 'DMORTE.D_s17', 'r', 'reply1039') \
         .response("Документов?", 'DMORTE.D_s18', 'r', 'reply1040') \
         .response("Забудь об этом. У меня есть несколько вопросов…", 'DMORTE.D_s31', 'r', 'reply1041') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1150') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1150').with_action(lambda: _dispose()) \
     .done()
 
 # from 16.1 18.0
@@ -187,7 +1589,7 @@ DialogStateBuilder('DMORTE.D_s17') \
     .with_responses() \
         .response("Что это за документ… контракт… о котором ты говорил?", 'DMORTE.D_s18', 'r', 'reply1151') \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1152') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1153') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1153').with_action(lambda: _dispose()) \
     .done()
 
 # from 16.2 17.0
@@ -197,7 +1599,7 @@ DialogStateBuilder('DMORTE.D_s18') \
     .with_responses() \
         .response("Что ты там говорил насчет книги мертвых?", 'DMORTE.D_s17', 'r', 'reply1154') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1155') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1156') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1156').with_action(lambda: _dispose()) \
     .done()
 
 # from 15.0
@@ -207,7 +1609,7 @@ DialogStateBuilder('DMORTE.D_s19') \
     .with_responses() \
         .response("Я не знаю… Я ничего не могу вспомнить.", 'DMORTE.D_s32', 'r', 'reply1139') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1140') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1141') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1141').with_action(lambda: _dispose()) \
     .done()
 
 # from 2.2 31.2
@@ -217,7 +1619,7 @@ DialogStateBuilder('DMORTE.D_s20') \
     .with_responses() \
         .response("Я не знаю… Я ничего не могу вспомнить.", 'DMORTE.D_s32', 'r', 'reply1097') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1098') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1099') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1099').with_action(lambda: _dispose()) \
     .done()
 
 # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
@@ -228,9 +1630,9 @@ DialogStateBuilder('DMORTE.D_s21') \
         .response("Тленные?", 'DMORTE.D_s30', 'r', 'reply1047') \
         .response("Я… сбегу.", 'DMORTE.D_s22', 'r', 'reply1048') \
         .response("Я все объясню этим… тленным.", 'DMORTE.D_s25', 'r', 'reply1049') \
-        .response("Что мне делать?", 'DMORTE.D_s23', 'r', 'reply1050').with_condition(lambda: '  CheckStatLT(Protagonist,12,INT) ') \
-        .response("Почему бы тебе не сказать? Похоже, у тебя уже заготовлен ответ.", 'DMORTE.D_s23', 'r', 'reply1051').with_condition(lambda: '  CheckStatGT(Protagonist,11,INT) ') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1081') \
+        .response("Что мне делать?", 'DMORTE.D_s23', 'r', 'reply1050').with_condition(lambda: _r1050_condition()) \
+        .response("Почему бы тебе не сказать? Похоже, у тебя уже заготовлен ответ.", 'DMORTE.D_s23', 'r', 'reply1051').with_condition(lambda: _r1051_condition()) \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1081').with_action(lambda: _dispose()) \
     .done()
 
 # from 21.1
@@ -240,7 +1642,7 @@ DialogStateBuilder('DMORTE.D_s22') \
     .with_responses() \
         .response("Ты меня заинтересовал. Продолжай.", 'DMORTE.D_s23', 'r', 'reply1053') \
         .response("Забудь об этом. У меня есть несколько вопросов…", 'DMORTE.D_s31', 'r', 'reply1054') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1145') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1145').with_action(lambda: _dispose()) \
     .done()
 
 # from 21.3 21.4 22.0 26.0
@@ -251,7 +1653,7 @@ DialogStateBuilder('DMORTE.D_s23') \
         .response("Продолжай…", 'DMORTE.D_s24', 'r', 'reply1058') \
         .response("У тебя нет рук. Как *ты* можешь мне помочь?", 'DMORTE.D_s24', 'r', 'reply1059') \
         .response("Забудь об этом. У меня есть несколько вопросов…", 'DMORTE.D_s31', 'r', 'reply1060') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1146') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1146').with_action(lambda: _dispose()) \
     .done()
 
 # from 23.0 23.1
@@ -262,7 +1664,7 @@ DialogStateBuilder('DMORTE.D_s24') \
         .response("По рукам.", 'DMORTE.D_s28', 'r', 'reply1057') \
         .response("По рукам. У меня есть дурное предчувствие, что нам судьбой предрешено путешествовать вместе, Морт.", 'DMORTE.D_s27', 'r', 'reply1062') \
         .response("Забудь об этом. У меня есть несколько вопросов…", 'DMORTE.D_s31', 'r', 'reply1063') \
-        .response("Нет уж, спасибо. От твоей трескотни голова раскалывается. Я сам найду выход.", EXIT, 'r', 'reply1147') \
+        .response("Нет уж, спасибо. От твоей трескотни голова раскалывается. Я сам найду выход.", EXIT, 'r', 'reply1147').with_action(lambda: _dispose()) \
     .done()
 
 # from 21.2
@@ -273,7 +1675,7 @@ DialogStateBuilder('DMORTE.D_s25') \
         .response("Звучит, как какие-то крайности… Зачем им это делать?", 'DMORTE.D_s26', 'r', 'reply1065') \
         .response("Что ж, стража у них должна быть чертовски крутой, чтобы взять меня.", 'DMORTE.D_s26', 'r', 'reply1066') \
         .response("Забудь об этом. У меня есть несколько вопросов…", 'DMORTE.D_s31', 'r', 'reply1067') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1149') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1149').with_action(lambda: _dispose()) \
     .done()
 
 # from 25.0 25.1
@@ -283,7 +1685,7 @@ DialogStateBuilder('DMORTE.D_s26') \
     .with_responses() \
         .response("И каков твой план?..", 'DMORTE.D_s23', 'r', 'reply1069') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1070') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1148') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1148').with_action(lambda: _dispose()) \
     .done()
 
 # from 24.1
@@ -300,7 +1702,7 @@ DialogStateBuilder('DMORTE.D_s28') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну хорошо… а теперь вперед, сваливаем отсюда. Двери выхода заперты, так что нам понадобится ключ. Есть шанс, что он у одного из ходячих трупов в этой комнате.", 's28', 'say1072') \
     .with_responses() \
-        .response("Ходячих трупов?", 'DMORTE.D_s240', 'r', 'reply1079').with_action(lambda: ' DO ~SetGlobal("Morte","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ходячих трупов?", 'DMORTE.D_s240', 'r', 'reply1079').with_action(lambda: _r1079_action()) \
     .done()
 
 # from -
@@ -310,9 +1712,9 @@ DialogStateBuilder('DMORTE.D_s29') \
     .with_responses() \
         .response("Кто ты?", 'DMORTE.D_s1', 'r', 'reply1075') \
         .response("Где я?", 'DMORTE.D_s6', 'r', 'reply1076') \
-        .response("Ты знаешь, как мне отсюда выбраться?", 'DMORTE.D_s21', 'r', 'reply1077').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
+        .response("Ты знаешь, как мне отсюда выбраться?", 'DMORTE.D_s21', 'r', 'reply1077').with_condition(lambda: _r1077_condition()) \
         .response("Как я попал сюда?", 'DMORTE.D_s14', 'r', 'reply1078') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1086') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1086').with_action(lambda: _dispose()) \
     .done()
 
 # from 21.0
@@ -320,9 +1722,9 @@ DialogStateBuilder('DMORTE.D_s30') \
     .with_npc_lines() \
         .line(SPEAKER, "Трухлявые? Они смотрят за этим местом. Ты их не пропустишь… Они питают особую тягу к черному цвету и окоченевшему выражению лица. Они зовут себя 'тленными' и притворяются фракцией, но они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Держись от них подальше.", 's30', 'say1082') \
     .with_responses() \
-        .response("И как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1083').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
+        .response("И как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1083').with_condition(lambda: _r1083_condition()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1084') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1144') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1144').with_action(lambda: _dispose()) \
     .done()
 
 # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
@@ -333,8 +1735,8 @@ DialogStateBuilder('DMORTE.D_s31') \
         .response("Кто ты?", 'DMORTE.D_s1', 'r', 'reply1092') \
         .response("Где я?", 'DMORTE.D_s6', 'r', 'reply1093') \
         .response("Как я попал сюда?", 'DMORTE.D_s20', 'r', 'reply1094') \
-        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1095').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1096') \
+        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1095').with_condition(lambda: _r1095_condition()) \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1096').with_action(lambda: _dispose()) \
     .done()
 
 # from 16.0 19.0 20.0
@@ -344,7 +1746,7 @@ DialogStateBuilder('DMORTE.D_s32') \
     .with_responses() \
         .response("Да.", 'DMORTE.D_s33', 'r', 'reply1101') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1102') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1103') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1103').with_action(lambda: _dispose()) \
     .done()
 
 # from 32.0
@@ -355,7 +1757,7 @@ DialogStateBuilder('DMORTE.D_s33') \
         .response("Чувствующих?", 'DMORTE.D_s12', 'r', 'reply1105') \
         .response("Шрамы?", 'DMORTE.D_s13', 'r', 'reply1106') \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1107') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1108') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1108').with_action(lambda: _dispose()) \
     .done()
 
 # from 13.0
@@ -365,9 +1767,9 @@ DialogStateBuilder('DMORTE.D_s34') \
     .with_responses() \
         .response("Неудивительно, что моя спина болит. Ты знаешь кого-нибудь с именем Фарод?", 'DMORTE.D_s36', 'r', 'reply1118') \
         .response("Ты не видел при мне дневника, когда я там лежал?", 'DMORTE.D_s35', 'r', 'reply1119') \
-        .response("Ты знаешь, как мне отсюда выбраться?", 'DMORTE.D_s21', 'r', 'reply1120').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
+        .response("Ты знаешь, как мне отсюда выбраться?", 'DMORTE.D_s21', 'r', 'reply1120').with_condition(lambda: _r1120_condition()) \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1121') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1122') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1122').with_action(lambda: _dispose()) \
     .done()
 
 # from 34.1 36.0
@@ -376,9 +1778,9 @@ DialogStateBuilder('DMORTE.D_s35') \
         .line(SPEAKER, "Нет… тебя обобрали догола, когда доставили сюда. Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле.", 's35', 'say1123') \
     .with_responses() \
         .response("Ты знаешь кого-нибудь по имени Фарод?", 'DMORTE.D_s36', 'r', 'reply1124') \
-        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1125').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
+        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1125').with_condition(lambda: _r1125_condition()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1126') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1127') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1127').with_action(lambda: _dispose()) \
     .done()
 
 # from 34.0 35.0
@@ -387,9 +1789,9 @@ DialogStateBuilder('DMORTE.D_s36') \
         .line(SPEAKER, "Нет, не знаю. С другой стороны, я вообще мало кого знаю. В общем, кто-нибудь да знает, как добраться до этого Фарода… то есть, как только мы выберемся отсюда.", 's36', 'say1128') \
     .with_responses() \
         .response("При мне не было дневника, когда я там лежал?", 'DMORTE.D_s35', 'r', 'reply1129') \
-        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1130').with_condition(lambda: '  Global("Scars","GLOBAL",1) ') \
+        .response("Как мне выбраться отсюда?", 'DMORTE.D_s21', 'r', 'reply1130').with_condition(lambda: _r1130_condition()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s31', 'r', 'reply1131') \
-        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1132') \
+        .response("Не обращать внимания на Морта и изучить комнату.", EXIT, 'r', 'reply1132').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -400,10 +1802,10 @@ DialogStateBuilder('DMORTE.D_s37') \
     .with_npc_lines() \
         .line(SPEAKER, "Вот это удача! Кажется, то, что мы ищем, мы в твоем скромном убежище, красавица.", 's37', 'say1818') \
     .with_responses() \
-        .response("На самом деле, я потерял дневник.", EXIT, 'r', 'reply1820') \
-        .response("Может, ты поможешь мне найти то, что я потерял, красавица.", EXIT, 'r', 'reply1819') \
-        .response("Я ничего не терял, но у меня есть несколько вопросов…", EXIT, 'r', 'reply1821') \
-        .response("Я должен идти. Прощай.", EXIT, 'r', 'reply1822') \
+        .response("На самом деле, я потерял дневник.", EXIT, 'r', 'reply1820').with_action(lambda: _dispose()) \
+        .response("Может, ты поможешь мне найти то, что я потерял, красавица.", EXIT, 'r', 'reply1819').with_action(lambda: _dispose()) \
+        .response("Я ничего не терял, но у меня есть несколько вопросов…", EXIT, 'r', 'reply1821').with_action(lambda: _dispose()) \
+        .response("Я должен идти. Прощай.", EXIT, 'r', 'reply1822').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -414,9 +1816,9 @@ DialogStateBuilder('DMORTE.D_s38') \
     .with_npc_lines() \
         .line(SPEAKER, "Шеф, ты не можешь одолжить мне немного звенелок… э-э… у меня этого так давно не было.", 's38', 'say1844') \
     .with_responses() \
-        .response("Э… полагаю, это никому *не повредит*…", EXIT, 'r', 'reply1845').with_action(lambda: ' DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~ ') \
-        .response("Я даже не хочу спрашивать, как ты намереваешься это совершить.", EXIT, 'r', 'reply1846').with_action(lambda: ' DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~ ') \
-        .response("Послушай, Морт… вообще-то, нам нужно идти. Прощай, красавица.", EXIT, 'r', 'reply1847').with_action(lambda: ' DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~ ') \
+        .response("Э… полагаю, это никому *не повредит*…", EXIT, 'r', 'reply1845').with_action(lambda: _r1845_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Я даже не хочу спрашивать, как ты намереваешься это совершить.", EXIT, 'r', 'reply1846').with_action(lambda: _r1846_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Послушай, Морт… вообще-то, нам нужно идти. Прощай, красавица.", EXIT, 'r', 'reply1847').with_action(lambda: _r1847_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -427,7 +1829,7 @@ DialogStateBuilder('DMORTE.D_s39') \
     .with_npc_lines() \
         .line(SPEAKER, "Она имеет в виду деньги.", 's39', 'say2000') \
     .with_responses() \
-        .response("О.", EXIT, 'r', 'reply2001') \
+        .response("О.", EXIT, 'r', 'reply2001').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -438,7 +1840,7 @@ DialogStateBuilder('DMORTE.D_s40') \
     .with_npc_lines() \
         .line(SPEAKER, "Это же очевидно, что ни ты, ни твой хвост не продаются. Ты бы все равно на них не прожила.", 's40', 'say2048') \
     .with_responses() \
-        .response("Э…", EXIT, 'r', 'reply2049') \
+        .response("Э…", EXIT, 'r', 'reply2049').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -449,8 +1851,8 @@ DialogStateBuilder('DMORTE.D_s41') \
     .with_npc_lines() \
         .line(SPEAKER, "Она — тифлинг, шеф. В них есть немного демонической крови, из-за которой они становятся немного подозрительными и бдительными… симпатичный хвостик, кстати. Жаль только, что он приделан к такому уродливому телу.", 's41', 'say2067') \
     .with_responses() \
-        .response("Ого, а…", EXIT, 'r', 'reply2068') \
-        .response("Эй, неплохо сказано, Морт.", EXIT, 'r', 'reply2069') \
+        .response("Ого, а…", EXIT, 'r', 'reply2068').with_action(lambda: _dispose()) \
+        .response("Эй, неплохо сказано, Морт.", EXIT, 'r', 'reply2069').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -461,8 +1863,8 @@ DialogStateBuilder('DMORTE.D_s42') \
     .with_npc_lines() \
         .line(SPEAKER, "Что же ты не *пытаешься* расколоть мою челюсть? Только и дело, что слышу пустую болтовню от всяких отбросов Улья! Давай, попробуй! Я тебе ноги откушу!", 's42', 'say2074') \
     .with_responses() \
-        .response("Хватит!", EXIT, 'r', 'reply2076') \
-        .response("Хватит! Мы уходим.", EXIT, 'r', 'reply2075') \
+        .response("Хватит!", EXIT, 'r', 'reply2076').with_action(lambda: _dispose()) \
+        .response("Хватит! Мы уходим.", EXIT, 'r', 'reply2075').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -473,7 +1875,7 @@ DialogStateBuilder('DMORTE.D_s43') \
     .with_npc_lines() \
         .line(SPEAKER, "Мимир — это говорящая энциклопедия. Это я, шеф.", 's43', 'say2079') \
     .with_responses() \
-        .response("Понятно.", EXIT, 'r', 'reply2080').with_action(lambda: ' DO ~SetGlobal("Know_Mimir","GLOBAL",1) SetGlobal("Morte_Mimir","GLOBAL",1) ~ ') \
+        .response("Понятно.", EXIT, 'r', 'reply2080').with_action(lambda: _r2080_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -484,10 +1886,10 @@ DialogStateBuilder('DMORTE.D_s44') \
     .with_npc_lines() \
         .line(SPEAKER, "Бросай это дело, шеф. Говорить с гитом — все равно что из остролистника варенье делать. Пойдем.", 's44', 'say2348') \
     .with_responses() \
-        .response("Это гит?", 'DMORTE.D_s135', 'r', 'reply9029').with_condition(lambda: '  Global("Know_Gith","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Know_Gith","GLOBAL",1) ~ ') \
-        .response("Это гит?", 'DMORTE.D_s135', 'r', 'reply9030').with_condition(lambda: '  Global("Know_Gith","GLOBAL",1) ') \
-        .response("Я пока еще не готов уйти. Сначала я задам ему пару вопросов…", EXIT, 'r', 'reply9031') \
-        .response("Оставить гита в покое.", EXIT, 'r', 'reply9032') \
+        .response("Это гит?", 'DMORTE.D_s135', 'r', 'reply9029').with_condition(lambda: _r9029_condition()).with_action(lambda: _r9029_action()) \
+        .response("Это гит?", 'DMORTE.D_s135', 'r', 'reply9030').with_condition(lambda: _r9030_condition()) \
+        .response("Я пока еще не готов уйти. Сначала я задам ему пару вопросов…", EXIT, 'r', 'reply9031').with_action(lambda: _dispose()) \
+        .response("Оставить гита в покое.", EXIT, 'r', 'reply9032').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -498,8 +1900,8 @@ DialogStateBuilder('DMORTE.D_s45') \
     .with_npc_lines() \
         .line(SPEAKER, "Не стоит утруждать себя пустыми разговорами со старым Незнание-это-Счастье. Пошли отсюда, шеф.", 's45', 'say2354') \
     .with_responses() \
-        .response("Я пока еще не готов уйти. Сначала я задам ему пару вопросов…", EXIT, 'r', 'reply9033') \
-        .response("Оставить гита в покое.", EXIT, 'r', 'reply9034') \
+        .response("Я пока еще не готов уйти. Сначала я задам ему пару вопросов…", EXIT, 'r', 'reply9033').with_action(lambda: _dispose()) \
+        .response("Оставить гита в покое.", EXIT, 'r', 'reply9034').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -507,8 +1909,8 @@ DialogStateBuilder('DMORTE.D_s46') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's46', 'say2601') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s47', 'r', 'reply2603').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s47', 'r', 'reply2602').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s47', 'r', 'reply2603').with_action(lambda: _r2603_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s47', 'r', 'reply2602').with_action(lambda: _r2602_action()) \
     .done()
 
 # from 46.0 46.1 121.1 121.2
@@ -516,10 +1918,10 @@ DialogStateBuilder('DMORTE.D_s47') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's47', 'say2604') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s49', 'r', 'reply2605').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s49', 'r', 'reply2605').with_action(lambda: _r2605_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s48', 'r', 'reply2606') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s48', 'r', 'reply2607') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply2608') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply2608').with_action(lambda: _dispose()) \
     .done()
 
 # from 47.1 47.2
@@ -527,7 +1929,7 @@ DialogStateBuilder('DMORTE.D_s48') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's48', 'say2609') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply2610') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply2610').with_action(lambda: _dispose()) \
     .done()
 
 # from 47.0
@@ -535,7 +1937,7 @@ DialogStateBuilder('DMORTE.D_s49') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's49', 'say2611') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply2612') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply2612').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -582,9 +1984,9 @@ DialogStateBuilder('DMORTE.D_s54') \
     .with_npc_lines() \
         .line(SPEAKER, "Говорят, что они слуги Леди Боли. Они парят повсюду и ломают, чинят и латают Сигил по ее капризу. Они хуже трупных мух, — Морт вздыхает. — Не нужно их трогать, а не то Леди… рассердится.", 's54', 'say2789') \
     .with_responses() \
-        .response("'Леди Боли'? Кто это?", 'DMORTE.D_s113', 'r', 'reply6952').with_condition(lambda: '  Global("Know_Lady","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Know_Lady","GLOBAL",1) ~ ') \
-        .response("Что ты можешь рассказать о Леди Боли?", 'DMORTE.D_s113', 'r', 'reply6953').with_condition(lambda: '  Global("Know_Lady","GLOBAL",1) ') \
-        .response("Понятно.", EXIT, 'r', 'reply6954').with_condition(lambda: '  Global("Know_Lady","GLOBAL",1) ') \
+        .response("'Леди Боли'? Кто это?", 'DMORTE.D_s113', 'r', 'reply6952').with_condition(lambda: _r6952_condition()).with_action(lambda: _r6952_action()) \
+        .response("Что ты можешь рассказать о Леди Боли?", 'DMORTE.D_s113', 'r', 'reply6953').with_condition(lambda: _r6953_condition()) \
+        .response("Понятно.", EXIT, 'r', 'reply6954').with_condition(lambda: _r6954_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -595,9 +1997,9 @@ DialogStateBuilder('DMORTE.D_s55') \
     .with_npc_lines() \
         .line(SPEAKER, "Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?", 's55', 'say3473') \
     .with_responses() \
-        .response("Что не так с ее руками?", 'DMORTE.D_s56', 'r', 'reply3474').with_action(lambda: ' JOURNAL #38205 /* ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ */ ') \
-        .response("Прикоснуться к женщине, привлечь ее внимание.", EXIT, 'r', 'reply3475') \
-        .response("Оставить ее в покое.", EXIT, 'r', 'reply3476') \
+        .response("Что не так с ее руками?", 'DMORTE.D_s56', 'r', 'reply3474').with_action(lambda: _r3474_action()) \
+        .response("Прикоснуться к женщине, привлечь ее внимание.", EXIT, 'r', 'reply3475').with_action(lambda: _dispose()) \
+        .response("Оставить ее в покое.", EXIT, 'r', 'reply3476').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -608,8 +2010,8 @@ DialogStateBuilder('DMORTE.D_s56') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… она из тифлингов, шеф. В их жилах течет лихая кровь нечисти. Кто-то из предков спутался с каким-то нечистым духом. Из-за этого некоторые из них немного тронутые… и обычно выглядят они соответствующе.", 's56', 'say3477') \
     .with_responses() \
-        .response("Прикоснуться к женщине, привлечь ее внимание.", EXIT, 'r', 'reply3478') \
-        .response("Оставить ее в покое.", EXIT, 'r', 'reply3479') \
+        .response("Прикоснуться к женщине, привлечь ее внимание.", EXIT, 'r', 'reply3478').with_action(lambda: _dispose()) \
+        .response("Оставить ее в покое.", EXIT, 'r', 'reply3479').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -617,8 +2019,8 @@ DialogStateBuilder('DMORTE.D_s57') \
     .with_npc_lines() \
         .line(SPEAKER, "Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?", 's57', 'say3480') \
     .with_responses() \
-        .response("Что не так с ее руками?", 'DMORTE.D_s58', 'r', 'reply3483').with_action(lambda: ' JOURNAL #38205 /* ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ */ ') \
-        .response("Уйти.", EXIT, 'r', 'reply3484') \
+        .response("Что не так с ее руками?", 'DMORTE.D_s58', 'r', 'reply3483').with_action(lambda: _r3483_action()) \
+        .response("Уйти.", EXIT, 'r', 'reply3484').with_action(lambda: _dispose()) \
     .done()
 
 # from 57.0
@@ -626,7 +2028,7 @@ DialogStateBuilder('DMORTE.D_s58') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… она из тифлингов, шеф. В их жилах течет лихая кровь нечисти. Кто-то из предков спутался с каким-то нечистым духом. Из-за этого некоторые из них немного тронутые… и обычно выглядят они соответствующе.", 's58', 'say3481') \
     .with_responses() \
-        .response("Уйти.", EXIT, 'r', 'reply3482') \
+        .response("Уйти.", EXIT, 'r', 'reply3482').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -637,9 +2039,9 @@ DialogStateBuilder('DMORTE.D_s59') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, у тебя новая подруга, шеф. Может, вас оставить наедине на часок, или?..", 's59', 'say3487') \
     .with_responses() \
-        .response("Замолкни, Морт.", EXIT, 'r', 'reply3488') \
-        .response("Продолжать строить из себя зомби.", EXIT, 'r', 'reply3489') \
-        .response("Оттолкнуть женщину.", EXIT, 'r', 'reply3490') \
+        .response("Замолкни, Морт.", EXIT, 'r', 'reply3488').with_action(lambda: _dispose()) \
+        .response("Продолжать строить из себя зомби.", EXIT, 'r', 'reply3489').with_action(lambda: _dispose()) \
+        .response("Оттолкнуть женщину.", EXIT, 'r', 'reply3490').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -657,8 +2059,8 @@ DialogStateBuilder('DMORTE.D_s61') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Эй! Что ты делаешь?", 's61', 'say3870') \
     .with_responses() \
-        .response("Я *хотел* поговорить с этим парнем. Проблемы?", 'DMORTE.D_s62', 'r', 'reply3871').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",1) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply3872') \
+        .response("Я *хотел* поговорить с этим парнем. Проблемы?", 'DMORTE.D_s62', 'r', 'reply3871').with_action(lambda: _r3871_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply3872').with_action(lambda: _dispose()) \
     .done()
 
 # from 61.0
@@ -666,8 +2068,8 @@ DialogStateBuilder('DMORTE.D_s62') \
     .with_npc_lines() \
         .line(SPEAKER, "Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.", 's62', 'say3873') \
     .with_responses() \
-        .response("Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.", 'DMORTE.D_s64', 'r', 'reply3874').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Согласен. Идем.", EXIT, 'r', 'reply3875') \
+        .response("Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.", 'DMORTE.D_s64', 'r', 'reply3874').with_action(lambda: _r3874_action()) \
+        .response("Согласен. Идем.", EXIT, 'r', 'reply3875').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -675,8 +2077,8 @@ DialogStateBuilder('DMORTE.D_s63') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Ты оглох, что ли? Ты что творишь?", 's63', 'say3876') \
     .with_responses() \
-        .response("Слушай, я хочу поговорить с этим парнем. Проблемы?", 'DMORTE.D_s64', 'r', 'reply3877').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply3878') \
+        .response("Слушай, я хочу поговорить с этим парнем. Проблемы?", 'DMORTE.D_s64', 'r', 'reply3877').with_action(lambda: _r3877_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply3878').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -687,8 +2089,8 @@ DialogStateBuilder('DMORTE.D_s64') \
     .with_npc_lines() \
         .line(SPEAKER, "Тогда *не слушай* меня больше — тебя похоронят.", 's64', 'say3879') \
     .with_responses() \
-        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply3880') \
-        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply3881') \
+        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply3880').with_action(lambda: _dispose()) \
+        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply3881').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -696,8 +2098,8 @@ DialogStateBuilder('DMORTE.D_s65') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.", 's65', 'say3964') \
     .with_responses() \
-        .response("И что?", 'DMORTE.D_s66', 'r', 'reply3965').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",-1) ~ ') \
-        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s66', 'r', 'reply3966').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",1) ~ ') \
+        .response("И что?", 'DMORTE.D_s66', 'r', 'reply3965').with_action(lambda: _r3965_action()) \
+        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s66', 'r', 'reply3966').with_action(lambda: _r3966_action()) \
         .response("Ну, тогда ладно. Может, в другой раз.", 'DMORTE.D_s66', 'r', 'reply3967') \
     .done()
 
@@ -709,11 +2111,11 @@ DialogStateBuilder('DMORTE.D_s66') \
     .with_npc_lines() \
         .line(SPEAKER, "Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.", 's66', 'say3968') \
     .with_responses() \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply3969').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply3970').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply3971').with_condition(lambda: '  PartyHasItem("Prybar") ') \
-        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s67', 'r', 'reply3972').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ ') \
-        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply3973').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ') \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply3969').with_condition(lambda: _r3969_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply3970').with_condition(lambda: _r3970_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply3971').with_condition(lambda: _r3971_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s67', 'r', 'reply3972').with_condition(lambda: _r3972_condition()).with_action(lambda: _r3972_action()) \
+        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply3973').with_condition(lambda: _r3973_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 66.3
@@ -741,7 +2143,7 @@ DialogStateBuilder('DMORTE.D_s69') \
         .line(SPEAKER, "Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.", 's69', 'say3981') \
     .with_responses() \
         .response("А ты, значит, нет?", 'DMORTE.D_s70', 'r', 'reply3982') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply3983') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply3983').with_action(lambda: _dispose()) \
     .done()
 
 # from 67.2 68.1 69.0 127.0
@@ -750,7 +2152,7 @@ DialogStateBuilder('DMORTE.D_s70') \
         .line(SPEAKER, "Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.", 's70', 'say3984') \
     .with_responses() \
         .response("Да? Зато у *меня* все при себе.", 'DMORTE.D_s71', 'r', 'reply3985') \
-        .response("Идем.", EXIT, 'r', 'reply3986') \
+        .response("Идем.", EXIT, 'r', 'reply3986').with_action(lambda: _dispose()) \
     .done()
 
 # from 70.0
@@ -758,8 +2160,8 @@ DialogStateBuilder('DMORTE.D_s71') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.", 's71', 'say3987') \
     .with_responses() \
-        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s72', 'r', 'reply3988').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1) ~ ') \
-        .response("Идем.", EXIT, 'r', 'reply3989') \
+        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s72', 'r', 'reply3988').with_action(lambda: _r3988_action()) \
+        .response("Идем.", EXIT, 'r', 'reply3989').with_action(lambda: _dispose()) \
     .done()
 
 # from 71.0
@@ -767,7 +2169,7 @@ DialogStateBuilder('DMORTE.D_s72') \
     .with_npc_lines() \
         .line(SPEAKER, "Помощь тебе в побеге из препараторской только что теперь добавлена в мой растущий список сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.", 's72', 'say3990') \
     .with_responses() \
-        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply3991') \
+        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply3991').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -786,8 +2188,8 @@ DialogStateBuilder('DMORTE.D_s74') \
     .with_npc_lines() \
         .line(SPEAKER, "Ой… извини. Морт подлетает к голове скелета, смотрит на нее, затем спускается вниз, попутно изучая доспехи и клинок. О да. Да, думаю, такое подойдет.", 's74', 'say4020') \
     .with_responses() \
-        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4023').with_condition(lambda: '  CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4024').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
+        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4023').with_condition(lambda: _r4023_condition()).with_action(lambda: _dispose()) \
+        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4024').with_condition(lambda: _r4024_condition()).with_action(lambda: _dispose()) \
         .response("Ну не знаю. Оно такое здоровое, вряд ли ты сможешь с таким управиться.", 'DMORTE.D_s75', 'r', 'reply4025') \
         .response("Я думаю, лучше оставить его в покое.", 'DMORTE.D_s75', 'r', 'reply4026') \
     .done()
@@ -800,10 +2202,10 @@ DialogStateBuilder('DMORTE.D_s75') \
     .with_npc_lines() \
         .line(SPEAKER, "А какого тогда Баатора ты СПРАШИВАЕШЬ меня? Практикуешься в навыках жестокости? — Морт негодующе раскачивается. — И это после всего, что я сделал для тебя…", 's75', 'say4021') \
     .with_responses() \
-        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4027').with_condition(lambda: '  CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4028').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
-        .response("Я думаю о твоей безопасности, Морт. Я опасаюсь, что присоединив твою голову к этому, причиню какой-нибудь вред тебе.", 'DMORTE.D_s76', 'r', 'reply4029').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALGood_Giant_Skel_Mort_1","GLOBALGood",1) ~ ') \
-        .response("Все же я думаю, что лучше оставить его в покое. Идем отсюда.", EXIT, 'r', 'reply4030') \
+        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4027').with_condition(lambda: _r4027_condition()).with_action(lambda: _dispose()) \
+        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4028').with_condition(lambda: _r4028_condition()).with_action(lambda: _dispose()) \
+        .response("Я думаю о твоей безопасности, Морт. Я опасаюсь, что присоединив твою голову к этому, причиню какой-нибудь вред тебе.", 'DMORTE.D_s76', 'r', 'reply4029').with_action(lambda: _r4029_action()) \
+        .response("Все же я думаю, что лучше оставить его в покое. Идем отсюда.", EXIT, 'r', 'reply4030').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -814,10 +2216,10 @@ DialogStateBuilder('DMORTE.D_s76') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт уставился на тебя. Мы что теперь, ЖЕНАТЫ? Что это за бред — 'я не хочу причинить тебе вред'? — Морт выразительно на тебя смотрит. — Если ты ПО-НАСТОЯЩЕМУ обо мне заботишься, то найди способ закрепить мою голову на теле гигантского скелета.", 's76', 'say4022') \
     .with_responses() \
-        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4031').with_condition(lambda: '  CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4032').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
-        .response("Извини, я не так сильно о тебе забочусь. Идем.", EXIT, 'r', 'reply4033') \
-        .response("Я говорю, оставь его в покое. А теперь идем отсюда.", EXIT, 'r', 'reply4034').with_condition(lambda: '  CheckStatLT(Protagonist,13,WIS) ') \
+        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4031').with_condition(lambda: _r4031_condition()).with_action(lambda: _dispose()) \
+        .response("Хорошо… секунду, я вытащу из него голову.", EXIT, 'r', 'reply4032').with_condition(lambda: _r4032_condition()).with_action(lambda: _dispose()) \
+        .response("Извини, я не так сильно о тебе забочусь. Идем.", EXIT, 'r', 'reply4033').with_action(lambda: _dispose()) \
+        .response("Я говорю, оставь его в покое. А теперь идем отсюда.", EXIT, 'r', 'reply4034').with_condition(lambda: _r4034_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -825,8 +2227,8 @@ DialogStateBuilder('DMORTE.D_s77') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Эй! Что ты делаешь?", 's77', 'say4134') \
     .with_responses() \
-        .response("Я *хотел* поговорить с этим парнем. Проблемы?", 'DMORTE.D_s78', 'r', 'reply4144').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",1) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply4145').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",1) ~ ') \
+        .response("Я *хотел* поговорить с этим парнем. Проблемы?", 'DMORTE.D_s78', 'r', 'reply4144').with_action(lambda: _r4144_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply4145').with_action(lambda: _r4145_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 77.0
@@ -834,8 +2236,8 @@ DialogStateBuilder('DMORTE.D_s78') \
     .with_npc_lines() \
         .line(SPEAKER, "Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.", 's78', 'say4135') \
     .with_responses() \
-        .response("Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.", 'DMORTE.D_s80', 'r', 'reply4142').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Согласен. Идем.", EXIT, 'r', 'reply4143').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
+        .response("Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.", 'DMORTE.D_s80', 'r', 'reply4142').with_action(lambda: _r4142_action()) \
+        .response("Согласен. Идем.", EXIT, 'r', 'reply4143').with_action(lambda: _r4143_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -843,8 +2245,8 @@ DialogStateBuilder('DMORTE.D_s79') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Ты оглох, что ли? Ты что творишь?", 's79', 'say4136') \
     .with_responses() \
-        .response("Слушай, я хочу поговорить с этим парнем. Проблемы?", 'DMORTE.D_s80', 'r', 'reply4140').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply4141') \
+        .response("Слушай, я хочу поговорить с этим парнем. Проблемы?", 'DMORTE.D_s80', 'r', 'reply4140').with_action(lambda: _r4140_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply4141').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -855,8 +2257,8 @@ DialogStateBuilder('DMORTE.D_s80') \
     .with_npc_lines() \
         .line(SPEAKER, "Тогда *не слушай* меня больше — тебя похоронят.", 's80', 'say4137') \
     .with_responses() \
-        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply4138') \
-        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply4139') \
+        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply4138').with_action(lambda: _dispose()) \
+        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply4139').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -864,8 +2266,8 @@ DialogStateBuilder('DMORTE.D_s81') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Эй! Что ты делаешь?", 's81', 'say4338') \
     .with_responses() \
-        .response("Я *хотел* поговорить с этой дамочкой. Проблемы?", 'DMORTE.D_s82', 'r', 'reply4339').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",1) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply4340') \
+        .response("Я *хотел* поговорить с этой дамочкой. Проблемы?", 'DMORTE.D_s82', 'r', 'reply4339').with_action(lambda: _r4339_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply4340').with_action(lambda: _dispose()) \
     .done()
 
 # from 81.0
@@ -873,8 +2275,8 @@ DialogStateBuilder('DMORTE.D_s82') \
     .with_npc_lines() \
         .line(SPEAKER, "Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.", 's82', 'say4341') \
     .with_responses() \
-        .response("Спасибо за совет, но *все еще* хочу поговорить с этой дамочкой.", 'DMORTE.D_s84', 'r', 'reply4342').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Согласен. Идем.", EXIT, 'r', 'reply4343') \
+        .response("Спасибо за совет, но *все еще* хочу поговорить с этой дамочкой.", 'DMORTE.D_s84', 'r', 'reply4342').with_action(lambda: _r4342_action()) \
+        .response("Согласен. Идем.", EXIT, 'r', 'reply4343').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -882,8 +2284,8 @@ DialogStateBuilder('DMORTE.D_s83') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Ты оглох, что ли? Ты что творишь?", 's83', 'say4344') \
     .with_responses() \
-        .response("Слушай, я хочу поговорить с этой дамочкой. Проблемы?", 'DMORTE.D_s84', 'r', 'reply4345').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply4346') \
+        .response("Слушай, я хочу поговорить с этой дамочкой. Проблемы?", 'DMORTE.D_s84', 'r', 'reply4345').with_action(lambda: _r4345_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply4346').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -894,8 +2296,8 @@ DialogStateBuilder('DMORTE.D_s84') \
     .with_npc_lines() \
         .line(SPEAKER, "Тогда *не слушай* меня больше — тебя похоронят.", 's84', 'say4347') \
     .with_responses() \
-        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply4348') \
-        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply4349') \
+        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply4348').with_action(lambda: _dispose()) \
+        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply4349').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -903,7 +2305,7 @@ DialogStateBuilder('DMORTE.D_s85') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт шепотом вклинивается в разговор. О силы… этот пень — *анархист*. Строить из себя зомби — это первое, что может взбрести в их пустые головы.", 's85', 'say4675') \
     .with_responses() \
-        .response("Анархист?", 'DMORTE.D_s86', 'r', 'reply4676').with_action(lambda: ' JOURNAL #64512 /* ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ */ ') \
+        .response("Анархист?", 'DMORTE.D_s86', 'r', 'reply4676').with_action(lambda: _r4676_action()) \
     .done()
 
 ######
@@ -914,11 +2316,11 @@ DialogStateBuilder('DMORTE.D_s86') \
     .with_npc_lines() \
         .line(SPEAKER, "Анархисты… это такая фракция… Похоже, Морт еле сдерживает поток оскорблений, но затем замечает, что зомби смотрит на вас обоих, внимательно слушая. …они, э, хотят *освободить* всех от оков правительства. Свергнуть старый порядок, чтобы установить новый — без никаких порядков.", 's86', 'say4677') \
     .with_responses() \
-        .response("Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.", EXIT, 'r', 'reply4678').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_3","GLOBALLaw",-3) ~ ') \
-        .response("Ложь: Похоже на благородное стремление. Любой анархист, посвятивший себя столь высокой цели, *определенно* является мне другом.", EXIT, 'r', 'reply4679').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_4","GLOBALLaw",-1) ~ ') \
-        .response("Это все довольно… противоречиво.", EXIT, 'r', 'reply4680') \
-        .response("Это одна из самых идиотских вещей, которую я когда-либо слышал.", EXIT, 'r', 'reply4681') \
-        .response("Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.", EXIT, 'r', 'reply4682').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_3","GLOBALLaw",3) ~ ') \
+        .response("Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.", EXIT, 'r', 'reply4678').with_action(lambda: _r4678_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ложь: Похоже на благородное стремление. Любой анархист, посвятивший себя столь высокой цели, *определенно* является мне другом.", EXIT, 'r', 'reply4679').with_action(lambda: _r4679_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Это все довольно… противоречиво.", EXIT, 'r', 'reply4680').with_action(lambda: _dispose()) \
+        .response("Это одна из самых идиотских вещей, которую я когда-либо слышал.", EXIT, 'r', 'reply4681').with_action(lambda: _dispose()) \
+        .response("Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.", EXIT, 'r', 'reply4682').with_action(lambda: _r4682_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -928,8 +2330,8 @@ DialogStateBuilder('DMORTE.D_s87') \
     .with_responses() \
         .response("Я смущаю ТЕБЯ?", 'DMORTE.D_s88', 'r', 'reply4684') \
         .response("Я просто хотел узнать, о чем этот… труп… говорит. Ясно?", 'DMORTE.D_s88', 'r', 'reply4685') \
-        .response("Не моя вина, что никто в этом сумасшедшем… 'чокнутом'… месте не говорит нормально… или хотя бы не ВЫГЛЯДИТ так.", 'DMORTE.D_s88', 'r', 'reply4686').with_condition(lambda: '  CheckStatGT(Protagonist,13,INT) ') \
-        .response("Слушай, я НЕ хочу лгать этому парню. Лучше говорить с ним напрямую.", 'DMORTE.D_s88', 'r', 'reply4687').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1) IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1) ~ ') \
+        .response("Не моя вина, что никто в этом сумасшедшем… 'чокнутом'… месте не говорит нормально… или хотя бы не ВЫГЛЯДИТ так.", 'DMORTE.D_s88', 'r', 'reply4686').with_condition(lambda: _r4686_condition()) \
+        .response("Слушай, я НЕ хочу лгать этому парню. Лучше говорить с ним напрямую.", 'DMORTE.D_s88', 'r', 'reply4687').with_action(lambda: _r4687_action()) \
     .done()
 
 ######
@@ -940,9 +2342,9 @@ DialogStateBuilder('DMORTE.D_s88') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт вздыхает. Слушай, шеф… ты должен понимать свою ситуацию. Ты не сможешь разгуливать, рассказывая всем одну только ПРАВДУ. Мы не должны делать себя целями ловца кроликов, ясно?", 's88', 'say4688') \
     .with_responses() \
-        .response("Ловец кроликов? Цели? Что это… а, неважно.", EXIT, 'r', 'reply4689') \
-        .response("Замолкни, Морт.", EXIT, 'r', 'reply4690') \
-        .response("Я… я запомню это. Мне нужно поговорить с этим 'зомби'.", EXIT, 'r', 'reply4691') \
+        .response("Ловец кроликов? Цели? Что это… а, неважно.", EXIT, 'r', 'reply4689').with_action(lambda: _dispose()) \
+        .response("Замолкни, Морт.", EXIT, 'r', 'reply4690').with_action(lambda: _dispose()) \
+        .response("Я… я запомню это. Мне нужно поговорить с этим 'зомби'.", EXIT, 'r', 'reply4691').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -950,7 +2352,7 @@ DialogStateBuilder('DMORTE.D_s89') \
     .with_npc_lines() \
         .line(SPEAKER, "Погоди… — говорит Морт удивленно. — Да этот пень — *анархист*. Ха. Строить из себя зомби — это первое, что может взбрести в их пустые головы.", 's89', 'say4692') \
     .with_responses() \
-        .response("Анархист?", 'DMORTE.D_s90', 'r', 'reply4693').with_action(lambda: ' JOURNAL #64512 /* ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ */ ') \
+        .response("Анархист?", 'DMORTE.D_s90', 'r', 'reply4693').with_action(lambda: _r4693_action()) \
     .done()
 
 ######
@@ -961,11 +2363,11 @@ DialogStateBuilder('DMORTE.D_s90') \
     .with_npc_lines() \
         .line(SPEAKER, "Анархисты — это фракция, которая тратит свое время на слежку за представителями власти и на поиски способов низвергнуть все, от чего несет порядком или контролем, — Морт фыркает. — Анархисты считают, что каждый пень на планах должен быть свободен и счастлив искать свою собственную 'правду', как только правительство будет сожжено дотла. Они хотят основать новый порядок, в котором не будет никакого порядка.", 's90', 'say4694') \
     .with_responses() \
-        .response("Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.", EXIT, 'r', 'reply4695').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_3","GLOBALLaw",-3) ~ ') \
-        .response("Это все довольно… противоречиво.", EXIT, 'r', 'reply4696') \
-        .response("Это одна из самых идиотских вещей, которую я когда-либо слышал.", EXIT, 'r', 'reply4697') \
-        .response("Как хочешь.", EXIT, 'r', 'reply4698') \
-        .response("Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.", EXIT, 'r', 'reply4699').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_3","GLOBALLaw",3) ~ ') \
+        .response("Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.", EXIT, 'r', 'reply4695').with_action(lambda: _r4695_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Это все довольно… противоречиво.", EXIT, 'r', 'reply4696').with_action(lambda: _dispose()) \
+        .response("Это одна из самых идиотских вещей, которую я когда-либо слышал.", EXIT, 'r', 'reply4697').with_action(lambda: _dispose()) \
+        .response("Как хочешь.", EXIT, 'r', 'reply4698').with_action(lambda: _dispose()) \
+        .response("Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.", EXIT, 'r', 'reply4699').with_action(lambda: _r4699_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -976,8 +2378,8 @@ DialogStateBuilder('DMORTE.D_s91') \
     .with_npc_lines() \
         .line(SPEAKER, "Он говорит, что этот Фарод продал очень много жмуриков… трупов… тленным. Ну, сборщики занимаются этим — находят тела мертвых и продают их тленным. Похоже, этот Фарод запродал так много жмуриков, что трухлявые начали подозревать, что он записывает жителей Улья в книгу мертвых раньше положенного срока… ну, ты понял, просто убивает их.", 's91', 'say4700') \
     .with_responses() \
-        .response("Понятно. Я хотел бы знать кое-что еще…", EXIT, 'r', 'reply4701') \
-        .response("Да этот Фарод просто святой. Возможно, позже у меня будут другие вопросы. Никуда не уходи.", EXIT, 'r', 'reply4702') \
+        .response("Понятно. Я хотел бы знать кое-что еще…", EXIT, 'r', 'reply4701').with_action(lambda: _dispose()) \
+        .response("Да этот Фарод просто святой. Возможно, позже у меня будут другие вопросы. Никуда не уходи.", EXIT, 'r', 'reply4702').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -988,8 +2390,8 @@ DialogStateBuilder('DMORTE.D_s92') \
     .with_npc_lines() \
         .line(SPEAKER, "Он хочет знать, не обокрал ли кто тебя. Наверно, интересуется, что случилось.", 's92', 'say4703') \
     .with_responses() \
-        .response("Понятно. Я хотел бы знать кое-что еще…", EXIT, 'r', 'reply4704') \
-        .response("Да, я жду не дождусь поймать этого вора. Слушай, возможно, позже у меня будут другие вопросы. Никуда не уходи.", EXIT, 'r', 'reply4705') \
+        .response("Понятно. Я хотел бы знать кое-что еще…", EXIT, 'r', 'reply4704').with_action(lambda: _dispose()) \
+        .response("Да, я жду не дождусь поймать этого вора. Слушай, возможно, позже у меня будут другие вопросы. Никуда не уходи.", EXIT, 'r', 'reply4705').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1010,8 +2412,8 @@ DialogStateBuilder('DMORTE.D_s94') \
     .with_npc_lines() \
         .line(SPEAKER, "Не могу поверить, что ты делаешь это. Ты, что, СОВСЕМ спятил?", 's94', 'say4708') \
     .with_responses() \
-        .response("Бред, как по мне…", EXIT, 'r', 'reply64535').with_condition(lambda: '  Global("Vaxis_Zombie_XP","GLOBAL",0) ').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(1) SetNamelessDisguise(ZOMBIE) Wait(2) FadeFromColor([20.0],0) AddexperienceParty(500) SetGlobal("Vaxis_Zombie_XP","GLOBAL",1) ~ ') \
-        .response("Бред, как по мне…", EXIT, 'r', 'reply64534').with_condition(lambda: '  Global("Vaxis_Zombie_XP","GLOBAL",1) ').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(1) SetNamelessDisguise(ZOMBIE) Wait(2) FadeFromColor([20.0],0) ~ ') \
+        .response("Бред, как по мне…", EXIT, 'r', 'reply64535').with_condition(lambda: _r64535_condition()).with_action(lambda: _r64535_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Бред, как по мне…", EXIT, 'r', 'reply64534').with_condition(lambda: _r64534_condition()).with_action(lambda: _r64534_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -1022,8 +2424,8 @@ DialogStateBuilder('DMORTE.D_s95') \
     .with_npc_lines() \
         .line(SPEAKER, "А нельзя ли ему зашить рот потуже?", 's95', 'say4710') \
     .with_responses() \
-        .response("Замоокни, Моот…", EXIT, 'r', 'reply4711') \
-        .response("Ммм-ХММФ!", EXIT, 'r', 'reply4712') \
+        .response("Замоокни, Моот…", EXIT, 'r', 'reply4711').with_action(lambda: _dispose()) \
+        .response("Ммм-ХММФ!", EXIT, 'r', 'reply4712').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1031,8 +2433,8 @@ DialogStateBuilder('DMORTE.D_s96') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Эй! Что ты делаешь?", 's96', 'say5029') \
     .with_responses() \
-        .response("Я *хотел* поговорить с этим парнем. Проблемы?", 'DMORTE.D_s97', 'r', 'reply5030').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",1) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply5031') \
+        .response("Я *хотел* поговорить с этим парнем. Проблемы?", 'DMORTE.D_s97', 'r', 'reply5030').with_action(lambda: _r5030_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply5031').with_action(lambda: _dispose()) \
     .done()
 
 # from 96.0
@@ -1040,8 +2442,8 @@ DialogStateBuilder('DMORTE.D_s97') \
     .with_npc_lines() \
         .line(SPEAKER, "Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.", 's97', 'say5032') \
     .with_responses() \
-        .response("Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.", 'DMORTE.D_s99', 'r', 'reply5033').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Согласен. Идем.", EXIT, 'r', 'reply5034') \
+        .response("Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.", 'DMORTE.D_s99', 'r', 'reply5033').with_action(lambda: _r5033_action()) \
+        .response("Согласен. Идем.", EXIT, 'r', 'reply5034').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1049,8 +2451,8 @@ DialogStateBuilder('DMORTE.D_s98') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Ты оглох, что ли? Ты что творишь?", 's98', 'say5035') \
     .with_responses() \
-        .response("Слушай, я хочу поговорить с этим парнем. Проблемы?", 'DMORTE.D_s99', 'r', 'reply5036').with_action(lambda: ' DO ~SetGlobal("Warning","GLOBAL",2) ~ ') \
-        .response("Ничего. Идем.", EXIT, 'r', 'reply5037') \
+        .response("Слушай, я хочу поговорить с этим парнем. Проблемы?", 'DMORTE.D_s99', 'r', 'reply5036').with_action(lambda: _r5036_action()) \
+        .response("Ничего. Идем.", EXIT, 'r', 'reply5037').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1061,8 +2463,8 @@ DialogStateBuilder('DMORTE.D_s99') \
     .with_npc_lines() \
         .line(SPEAKER, "Тогда *не слушай* меня больше — тебя похоронят.", 's99', 'say5038') \
     .with_responses() \
-        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply5039') \
-        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply5040') \
+        .response("Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.", EXIT, 'r', 'reply5039').with_action(lambda: _dispose()) \
+        .response("А, ты прав. Забудь об этом. Идем.", EXIT, 'r', 'reply5040').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1073,7 +2475,7 @@ DialogStateBuilder('DMORTE.D_s100') \
     .with_npc_lines() \
         .line(SPEAKER, "Что ты *наделал*? Если ты хочешь убить его, сделай это!", 's100', 'say5041') \
     .with_responses() \
-        .response("Я это и *хотел*! Я свернул ему шею! Он не должен теперь шевелиться!", EXIT, 'r', 'reply5042') \
+        .response("Я это и *хотел*! Я свернул ему шею! Он не должен теперь шевелиться!", EXIT, 'r', 'reply5042').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1119,8 +2521,8 @@ DialogStateBuilder('DMORTE.D_s105') \
     .with_npc_lines() \
         .line(SPEAKER, "Шеф, ты как, вернулся? Ты вроде как завис.", 's105', 'say6071') \
     .with_responses() \
-        .response("Нет, я в порядке. Ты знаешь, что это был за дух?", 'DMORTE.D_s106', 'r', 'reply6075').with_action(lambda: ' DO ~SetGlobal("Morte_Deionarra_Quip_1","GLOBAL",1) ~ ') \
-        .response("Я в порядке. Идем.", EXIT, 'r', 'reply6076') \
+        .response("Нет, я в порядке. Ты знаешь, что это был за дух?", 'DMORTE.D_s106', 'r', 'reply6075').with_action(lambda: _r6075_action()) \
+        .response("Я в порядке. Идем.", EXIT, 'r', 'reply6076').with_action(lambda: _dispose()) \
     .done()
 
 # from 105.0
@@ -1144,7 +2546,7 @@ DialogStateBuilder('DMORTE.D_s108') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… нет, просто ты ненадолго завис и стоял как вкопанный. Я уж стал бояться, что ты снова свихнешься и набросишься на меня.", 's108', 'say6074') \
     .with_responses() \
-        .response("Нет, я в порядке… кажется. Идем.", EXIT, 'r', 'reply6079') \
+        .response("Нет, я в порядке… кажется. Идем.", EXIT, 'r', 'reply6079').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1155,13 +2557,13 @@ DialogStateBuilder('DMORTE.D_s109') \
     .with_npc_lines() \
         .line(SPEAKER, "Это напоминает мне одну мою работенку. Кажется, он смущен. Ну, только… без махания руками.", 's109', 'say6324') \
     .with_responses() \
-        .response("Осмотреть труп.", EXIT, 'r', 'reply6325').with_condition(lambda: '  HasItem("Cobble","Post") ') \
-        .response("Осмотреть труп.", EXIT, 'r', 'reply6326').with_condition(lambda: '  !HasItem("Cobble","Post") ') \
-        .response("Хм-м. Интересно, это сработает с другими записками?..", EXIT, 'r', 'reply6327').with_condition(lambda: '  CheckStatGT(Protagonist,11,INT) CheckStatLT(Protagonist,12,WIS) ') \
-        .response("Хм-м. Интересно, это сработает с другими записками?..", EXIT, 'r', 'reply6328').with_condition(lambda: '  CheckStatGT(Protagonist,11,WIS) ') \
-        .response("Осмотреть другие записки.", EXIT, 'r', 'reply6329').with_condition(lambda: '  CheckStatLT(Protagonist,12,INT) CheckStatLT(Protagonist,12,WIS) ') \
-        .response("Использовать на трупе свою способность История костей.", EXIT, 'r', 'reply6330').with_condition(lambda: '  Global("Speak_with_Dead","GLOBAL",1) ') \
-        .response("Оставить труп в покое.", EXIT, 'r', 'reply6331') \
+        .response("Осмотреть труп.", EXIT, 'r', 'reply6325').with_condition(lambda: _r6325_condition()).with_action(lambda: _dispose()) \
+        .response("Осмотреть труп.", EXIT, 'r', 'reply6326').with_condition(lambda: _r6326_condition()).with_action(lambda: _dispose()) \
+        .response("Хм-м. Интересно, это сработает с другими записками?..", EXIT, 'r', 'reply6327').with_condition(lambda: _r6327_condition()).with_action(lambda: _dispose()) \
+        .response("Хм-м. Интересно, это сработает с другими записками?..", EXIT, 'r', 'reply6328').with_condition(lambda: _r6328_condition()).with_action(lambda: _dispose()) \
+        .response("Осмотреть другие записки.", EXIT, 'r', 'reply6329').with_condition(lambda: _r6329_condition()).with_action(lambda: _dispose()) \
+        .response("Использовать на трупе свою способность История костей.", EXIT, 'r', 'reply6330').with_condition(lambda: _r6330_condition()).with_action(lambda: _dispose()) \
+        .response("Оставить труп в покое.", EXIT, 'r', 'reply6331').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1172,9 +2574,9 @@ DialogStateBuilder('DMORTE.D_s110') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.", 's110', 'say6609') \
     .with_responses() \
-        .response("И что?", EXIT, 'r', 'reply6658').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",-1) ~ ') \
-        .response("О… Я не хотел ему навредить.", EXIT, 'r', 'reply6659').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",1) ~ ') \
-        .response("Ну, тогда ладно. Может, в другой раз.", EXIT, 'r', 'reply6660') \
+        .response("И что?", EXIT, 'r', 'reply6658').with_action(lambda: _r6658_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("О… Я не хотел ему навредить.", EXIT, 'r', 'reply6659').with_action(lambda: _r6659_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ну, тогда ладно. Может, в другой раз.", EXIT, 'r', 'reply6660').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1185,9 +2587,9 @@ DialogStateBuilder('DMORTE.D_s111') \
     .with_npc_lines() \
         .line(SPEAKER, "Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…", 's111', 'say6610') \
     .with_responses() \
-        .response("Седобородый?", EXIT, 'r', 'reply6661') \
-        .response("Не думаю, что он имеет что-то против.", EXIT, 'r', 'reply6662') \
-        .response("Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.", EXIT, 'r', 'reply6663') \
+        .response("Седобородый?", EXIT, 'r', 'reply6661').with_action(lambda: _dispose()) \
+        .response("Не думаю, что он имеет что-то против.", EXIT, 'r', 'reply6662').with_action(lambda: _dispose()) \
+        .response("Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.", EXIT, 'r', 'reply6663').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1198,10 +2600,10 @@ DialogStateBuilder('DMORTE.D_s112') \
     .with_npc_lines() \
         .line(SPEAKER, "Может, уже хватит? У него руки сейчас отвалятся.", 's112', 'say6611') \
     .with_responses() \
-        .response("Скрестить свои руки.", EXIT, 'r', 'reply6664').with_condition(lambda: '  Global("42_Secret","GLOBAL",1) ') \
-        .response("Подстроиться под движения скелета… посмотреть, что получится.", EXIT, 'r', 'reply6665').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) Global("42_Secret","GLOBAL",0) ') \
-        .response("Э…", EXIT, 'r', 'reply6666') \
-        .response("Оставить скелета в покое.", EXIT, 'r', 'reply6667') \
+        .response("Скрестить свои руки.", EXIT, 'r', 'reply6664').with_condition(lambda: _r6664_condition()).with_action(lambda: _dispose()) \
+        .response("Подстроиться под движения скелета… посмотреть, что получится.", EXIT, 'r', 'reply6665').with_condition(lambda: _r6665_condition()).with_action(lambda: _dispose()) \
+        .response("Э…", EXIT, 'r', 'reply6666').with_action(lambda: _dispose()) \
+        .response("Оставить скелета в покое.", EXIT, 'r', 'reply6667').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1212,7 +2614,7 @@ DialogStateBuilder('DMORTE.D_s113') \
     .with_npc_lines() \
         .line(SPEAKER, "Она заправляет городом. Ты узнаешь ее, когда увидишь: у нее вокруг лица клинки, она ростом с гиганта и парит над землей, совсем как эти парни. Морт кивает на дабуса, смотрящего на вас обоих. Про нее никто почти ничего не знает… она не очень говорлива. Все, что тебе следует знать: не зли ее. Если увидишь ее, мой тебе совет — тикай.", 's113', 'say6771') \
     .with_responses() \
-        .response("Понятно.", EXIT, 'r', 'reply2784') \
+        .response("Понятно.", EXIT, 'r', 'reply2784').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1223,7 +2625,7 @@ DialogStateBuilder('DMORTE.D_s114') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти козлиные морды пытаются сказать. Нужен переводчик? Поищи коренного сигильца.", 's114', 'say6784') \
     .with_responses() \
-        .response("Понятно.", EXIT, 'r', 'reply6955') \
+        .response("Понятно.", EXIT, 'r', 'reply6955').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1244,8 +2646,8 @@ DialogStateBuilder('DMORTE.D_s116') \
     .with_npc_lines() \
         .line(SPEAKER, "Вот *ты* и скажи, бесовка.", 's116', 'say6790') \
     .with_responses() \
-        .response("Хватит, Морт. Анна, ты можешь задать ему другие вопросы?", EXIT, 'r', 'reply6956') \
-        .response("Забудь. Уходим отсюда.", EXIT, 'r', 'reply6957').with_action(lambda: ' DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~ ') \
+        .response("Хватит, Морт. Анна, ты можешь задать ему другие вопросы?", EXIT, 'r', 'reply6956').with_action(lambda: _dispose()) \
+        .response("Забудь. Уходим отсюда.", EXIT, 'r', 'reply6957').with_action(lambda: _r6957_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -1256,7 +2658,7 @@ DialogStateBuilder('DMORTE.D_s117') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси нашу маленькую бесовку, — он кивает на Анну. — Она из Улья.", 's117', 'say6794') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply6958') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply6958').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1267,7 +2669,7 @@ DialogStateBuilder('DMORTE.D_s118') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? — он кивает на Даккона. — Попроси нашего ханжу-молчуна перевести.", 's118', 'say6797') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply6959') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply6959').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1278,7 +2680,7 @@ DialogStateBuilder('DMORTE.D_s119') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси танарри, — он кивает на Падшую Грацию. — Наверное, она все время общалась с этими парнями.", 's119', 'say6800') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply6960') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply6960').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1294,9 +2696,9 @@ DialogStateBuilder('DMORTE.D_s121') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты *видел*, как эта мертвая красотка меня осматривала? — зубы Морта стучат в предвкушении. — Она ищет какого-то счастливчика-рубаку, который согреет ее уютненький гробик.", 's121', 'say7041') \
     .with_responses() \
-        .response("*Пожалуйста*, только не начинай.", 'DMORTE.D_s122', 'r', 'reply7056').with_condition(lambda: '  Global("Morte_Quip","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Morte_Zombie_Female_Bar_Quip","GLOBAL",1) ~ ') \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s47', 'r', 'reply7057').with_condition(lambda: '  Global("Morte_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Что, ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s47', 'r', 'reply7058').with_condition(lambda: '  Global("Morte_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("*Пожалуйста*, только не начинай.", 'DMORTE.D_s122', 'r', 'reply7056').with_condition(lambda: _r7056_condition()).with_action(lambda: _r7056_action()) \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s47', 'r', 'reply7057').with_condition(lambda: _r7057_condition()).with_action(lambda: _r7057_action()) \
+        .response("Что, ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s47', 'r', 'reply7058').with_condition(lambda: _r7058_condition()).with_action(lambda: _r7058_action()) \
     .done()
 
 # from 121.0
@@ -1306,7 +2708,7 @@ DialogStateBuilder('DMORTE.D_s122') \
     .with_responses() \
         .response("Продолжай в том же духе, и *я* отправлю тебя куда-нибудь полетать.", 'DMORTE.D_s123', 'r', 'reply7059') \
         .response("Морт, *ты* — череп. Для всех ты только череп. Смирись с этим.", 'DMORTE.D_s124', 'r', 'reply7060') \
-        .response("Понимаю. А теперь идем отсюда, хорошо?", EXIT, 'r', 'reply7061') \
+        .response("Понимаю. А теперь идем отсюда, хорошо?", EXIT, 'r', 'reply7061').with_action(lambda: _dispose()) \
     .done()
 
 # from 122.0
@@ -1315,7 +2717,7 @@ DialogStateBuilder('DMORTE.D_s123') \
         .line(SPEAKER, "Ого, шеф… Морт немного отлетает, чтобы ты не смог до него дотянуться. Женщинам больше нравятся любовники, а не бойцы.", 's123', 'say7043') \
     .with_responses() \
         .response("Ты, наверное, *последний* из всех, от кого я хотел бы слушать советы по части романтики.", 'DMORTE.D_s126', 'r', 'reply7062') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7063') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7063').with_action(lambda: _dispose()) \
     .done()
 
 # from 122.1
@@ -1324,7 +2726,7 @@ DialogStateBuilder('DMORTE.D_s124') \
         .line(SPEAKER, "Да, я просто череп, но у меня большое сердце.", 's124', 'say7044') \
     .with_responses() \
         .response("Вообще-то, у тебя его *тоже* нет.", 'DMORTE.D_s125', 'r', 'reply7064') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7065') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7065').with_action(lambda: _dispose()) \
     .done()
 
 # from 124.0
@@ -1332,8 +2734,8 @@ DialogStateBuilder('DMORTE.D_s125') \
     .with_npc_lines() \
         .line(SPEAKER, "Тебе наплевать на мою жизнь, мои мечты и чаяния?! Отлично, ну и пусть. У меня нет сердца, зато у меня есть *душа*.", 's125', 'say7045') \
     .with_responses() \
-        .response("Ну, вообще-то, я могу поспорить на что угодно, что… а, забудь. Идем.", EXIT, 'r', 'reply7066') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7067') \
+        .response("Ну, вообще-то, я могу поспорить на что угодно, что… а, забудь. Идем.", EXIT, 'r', 'reply7066').with_action(lambda: _dispose()) \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7067').with_action(lambda: _dispose()) \
     .done()
 
 # from 123.0
@@ -1341,7 +2743,7 @@ DialogStateBuilder('DMORTE.D_s126') \
     .with_npc_lines() \
         .line(SPEAKER, "Будь у тебя хоть половина того здравого смысла, с которым ты умер, ты бы понял, — голос Морта становится жутко самодовольным. — Что касается летописей любви, отмечу, что все они были написаны мной.", 's126', 'say7046') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7068') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply7068').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1350,7 +2752,7 @@ DialogStateBuilder('DMORTE.D_s127') \
         .line(SPEAKER, "Морт изучает скелет, но затем качает головой. Не… Этот слишком чистый… на нем почти не осталось мяса. К тому же, я никогда не смогу очистить кости от этой побелки.", 's127', 'say7071') \
     .with_responses() \
         .response("Не знаю, если он — 'слишком чистый'… то тебе стоит изучить значение слова чистота.", 'DMORTE.D_s70', 'r', 'reply7076') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply7077') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply7077').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1371,8 +2773,8 @@ DialogStateBuilder('DMORTE.D_s129') \
     .with_npc_lines() \
         .line(SPEAKER, "Мимир — это говорящая энциклопедия. Это я, шеф.", 's129', 'say7187') \
     .with_responses() \
-        .response("Понятно. Ладно, не парься насчет этого, Морт. Если поглядеть на нее, то я скорее спасаю тебя от второй смерти.", EXIT, 'r', 'reply7483').with_action(lambda: ' DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~ ') \
-        .response("Просто уходим отсюда. Прощай, красавица.", EXIT, 'r', 'reply7484') \
+        .response("Понятно. Ладно, не парься насчет этого, Морт. Если поглядеть на нее, то я скорее спасаю тебя от второй смерти.", EXIT, 'r', 'reply7483').with_action(lambda: _r7483_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Просто уходим отсюда. Прощай, красавица.", EXIT, 'r', 'reply7484').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1380,7 +2782,7 @@ DialogStateBuilder('DMORTE.D_s130') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт, словно загипнотизированный, очарованно слушает поток оскорблений, изливающийся изо рта проститутки. После этой словесной лавины Морт несколько мгновений молчит, затем поворачивается к тебе. Ого, шеф. Есть несколько новых ругательств в моем старом добром арсенале. Он поворачивается назад к переводящей дыхание проститутке. И я тебя тоже люблю. [MRT387]", 's130', 'say7188') \
     .with_responses() \
-        .response("Уйти.", EXIT, 'r', 'reply7485').with_action(lambda: ' DO ~IncrementGlobal("Morte_Taunt","GLOBAL",1) ~ ') \
+        .response("Уйти.", EXIT, 'r', 'reply7485').with_action(lambda: _r7485_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -1389,7 +2791,7 @@ DialogStateBuilder('DMORTE.D_s131') \
         .line(SPEAKER, "Ого, шеф. Морт встревает прежде, чем ты заговариваешь с существом. Лучше захлопнись. Тебе не следует трясти своей черепушкой с нечистью на улице. Пойдем.", 's131', 'say7775') \
     .with_responses() \
         .response("Я хочу задать ему несколько вопросов…", 'DMORTE.D_s132', 'r', 'reply7776') \
-        .response("Оставить существо в покое.", EXIT, 'r', 'reply7777') \
+        .response("Оставить существо в покое.", EXIT, 'r', 'reply7777').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1400,8 +2802,8 @@ DialogStateBuilder('DMORTE.D_s132') \
     .with_npc_lines() \
         .line(SPEAKER, "Нет, не хочешь. Морт украдкой смотрит на существо, затем поворачивается назад, понижая голос до шепота. Они очень обидчивы. Давай уйдем отсюда.", 's132', 'say7778') \
     .with_responses() \
-        .response("Я все же рискну.", EXIT, 'r', 'reply7779') \
-        .response("Оставить существо в покое.", EXIT, 'r', 'reply7780') \
+        .response("Я все же рискну.", EXIT, 'r', 'reply7779').with_action(lambda: _dispose()) \
+        .response("Оставить существо в покое.", EXIT, 'r', 'reply7780').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1420,8 +2822,8 @@ DialogStateBuilder('DMORTE.D_s134') \
     .with_npc_lines() \
         .line(SPEAKER, "А, нет, ничего… жизнь — лучший учитель, знаешь ли, — он кивает на существо. — Давай, продолжай.", 's134', 'say7807') \
     .with_responses() \
-        .response("Я так и сделаю.", EXIT, 'r', 'reply7808') \
-        .response("Ладно, неважно. Идем.", EXIT, 'r', 'reply7809') \
+        .response("Я так и сделаю.", EXIT, 'r', 'reply7808').with_action(lambda: _dispose()) \
+        .response("Ладно, неважно. Идем.", EXIT, 'r', 'reply7809').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1432,8 +2834,8 @@ DialogStateBuilder('DMORTE.D_s135') \
     .with_npc_lines() \
         .line(SPEAKER, "Ага, 'гит'… Морт оглядывается на гита, который все еще смотрит на тебя. Поговорим об этом в другой раз.", 's135', 'say2349') \
     .with_responses() \
-        .response("Я пока еще не готов уйти. Сначала я задам ему пару вопросов…", EXIT, 'r', 'reply9035') \
-        .response("Оставить гита в покое.", EXIT, 'r', 'reply9036') \
+        .response("Я пока еще не готов уйти. Сначала я задам ему пару вопросов…", EXIT, 'r', 'reply9035').with_action(lambda: _dispose()) \
+        .response("Оставить гита в покое.", EXIT, 'r', 'reply9036').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1441,7 +2843,7 @@ DialogStateBuilder('DMORTE.D_s136') \
     .with_npc_lines() \
         .line(SPEAKER, "Брось, шеф… ты убьешь бедолагу, прежде чем тебе удастся его разбудить!", 's136', 'say9860') \
     .with_responses() \
-        .response("Ты прав, Морт. Идем.", EXIT, 'r', 'reply9882') \
+        .response("Ты прав, Морт. Идем.", EXIT, 'r', 'reply9882').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1450,7 +2852,7 @@ DialogStateBuilder('DMORTE.D_s137') \
         .line(SPEAKER, "Морт подлетает. О чем речь, шеф?", 's137', 'say11946') \
     .with_responses() \
         .response("Видишь эти зубы?", 'DMORTE.D_s138', 'r', 'reply11974') \
-        .response("Ничего, неважно.", EXIT, 'r', 'reply11975') \
+        .response("Ничего, неважно.", EXIT, 'r', 'reply11975').with_action(lambda: _dispose()) \
     .done()
 
 # from 137.0
@@ -1466,8 +2868,8 @@ DialogStateBuilder('DMORTE.D_s139') \
         .line(SPEAKER, "Задвинься, — Морт вздрагивает. — А ты бы хотел, чтобы они оказались в *тебе*?", 's139', 'say11948') \
     .with_responses() \
         .response("Ладно тебе, Морт, кажется, ты им нравишься. Посмотри, как они на тебя смотрят.", 'DMORTE.D_s140', 'r', 'reply11976') \
-        .response("Схватить Морта, сунуть зубы ему в рот.", 'DMORTE.D_s141', 'r', 'reply11977').with_action(lambda: ' DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) IncrementGlobalOnceEx("GLOBALChaotic_Ingress_Teeth_2","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_Ingress_Teeth_1","GLOBALGood",-1) ~ ') \
-        .response("Тогда неважно.", EXIT, 'r', 'reply11978') \
+        .response("Схватить Морта, сунуть зубы ему в рот.", 'DMORTE.D_s141', 'r', 'reply11977').with_action(lambda: _r11977_action()) \
+        .response("Тогда неважно.", EXIT, 'r', 'reply11978').with_action(lambda: _dispose()) \
     .done()
 
 # from 139.0
@@ -1475,9 +2877,9 @@ DialogStateBuilder('DMORTE.D_s140') \
     .with_npc_lines() \
         .line(SPEAKER, "Лучше этим мелким засранцам не приближаться ко мне, иначе я… — Морт умолкает. — Знаешь, я понятия не имею, чем угрожать зубам.", 's140', 'say11949') \
     .with_responses() \
-        .response("Осмотреть зубы.", EXIT, 'r', 'reply11979') \
-        .response("Схватить Морта, сунуть зубы ему в рот.", 'DMORTE.D_s141', 'r', 'reply11980').with_action(lambda: ' DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) IncrementGlobalOnceEx("GLOBALChaotic_Ingress_Teeth_2","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_Ingress_Teeth_1","GLOBALGood",-1) ~ ') \
-        .response("Тогда неважно.", EXIT, 'r', 'reply11981') \
+        .response("Осмотреть зубы.", EXIT, 'r', 'reply11979').with_action(lambda: _dispose()) \
+        .response("Схватить Морта, сунуть зубы ему в рот.", 'DMORTE.D_s141', 'r', 'reply11980').with_action(lambda: _r11980_action()) \
+        .response("Тогда неважно.", EXIT, 'r', 'reply11981').with_action(lambda: _dispose()) \
     .done()
 
 # from 139.1 140.1
@@ -1485,7 +2887,7 @@ DialogStateBuilder('DMORTE.D_s141') \
     .with_npc_lines() \
         .line(SPEAKER, "Схватка длится не долго. Ты ловишь Морта в захват — единственное движение, которое ты можешь сделать — и, пока он, кусаясь, пытается освободиться, зубы спрыгивают с твоей руки и налетают на его челюсть. Морт воет, а зубы Ингресс быстро выкорчевывают его старые зубы и прыгают в открывшиеся полости.", 's141', 'say11950') \
     .with_responses() \
-        .response("Ну вот, Морт. Ведь было не так плохо?", 'DMORTE.D_s143', 'r', 'reply11982').with_action(lambda: ' DO ~MoraleDec("Morte",1) ~ ') \
+        .response("Ну вот, Морт. Ведь было не так плохо?", 'DMORTE.D_s143', 'r', 'reply11982').with_action(lambda: _r11982_action()) \
     .done()
 
 # from 149.0
@@ -1493,7 +2895,7 @@ DialogStateBuilder('DMORTE.D_s142') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт продолжает выть. Зубы начинают обустраиваться и пускать корни с жутким хрустом.", 's142', 'say11951') \
     .with_responses() \
-        .response("Морт? С тобой все в порядке?", 'DMORTE.D_s143', 'r', 'reply11983').with_action(lambda: ' DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) ~ ') \
+        .response("Морт? С тобой все в порядке?", 'DMORTE.D_s143', 'r', 'reply11983').with_action(lambda: _r11983_action()) \
     .done()
 
 # from 141.0 142.0
@@ -1509,8 +2911,8 @@ DialogStateBuilder('DMORTE.D_s144') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт что-то тебе бормочет, его глаза широко раскрыты.", 's144', 'say11953') \
     .with_responses() \
-        .response("Значит… они тебе нравятся?", 'DMORTE.D_s145', 'r', 'reply11985').with_condition(lambda: '  Global("Evil_Ingress_Teeth_1","GLOBAL",1) ') \
-        .response("Морт, ты в порядке?", 'DMORTE.D_s150', 'r', 'reply11986').with_condition(lambda: '  Global("Good_Ingress_Teeth_1","GLOBAL",1) ') \
+        .response("Значит… они тебе нравятся?", 'DMORTE.D_s145', 'r', 'reply11985').with_condition(lambda: _r11985_condition()) \
+        .response("Морт, ты в порядке?", 'DMORTE.D_s150', 'r', 'reply11986').with_condition(lambda: _r11986_condition()) \
     .done()
 
 # from 144.0
@@ -1526,8 +2928,8 @@ DialogStateBuilder('DMORTE.D_s146') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт пробует двигать челюстью. Странно. Но неплохо, — внезапно зубы превращаются в клыки. — О-о-о! Они меняются! Они превращаются в нормальные зубы, потом в клики, потом обратно… Думаю, они мне понравятся.", 's146', 'say11955') \
     .with_responses() \
-        .response("Извини, Морт. Я не желал тебе зла.", 'DMORTE.D_s147', 'r', 'reply11988').with_condition(lambda: '  Global("Good_Ingress_Teeth_1","GLOBAL",1) ') \
-        .response("Вот видишь? Разве я не был прав?", 'DMORTE.D_s147', 'r', 'reply11989').with_condition(lambda: '  Global("Evil_Ingress_Teeth_1","GLOBAL",1) ') \
+        .response("Извини, Морт. Я не желал тебе зла.", 'DMORTE.D_s147', 'r', 'reply11988').with_condition(lambda: _r11988_condition()) \
+        .response("Вот видишь? Разве я не был прав?", 'DMORTE.D_s147', 'r', 'reply11989').with_condition(lambda: _r11989_condition()) \
     .done()
 
 # from 146.0 146.1
@@ -1535,8 +2937,8 @@ DialogStateBuilder('DMORTE.D_s147') \
     .with_npc_lines() \
         .line(SPEAKER, "О, я все еще зол на тебя, — отвечает Морт. Он ухмыляется, его зубы снова превращаются в клыки. Погоди мне.", 's147', 'say11956') \
     .with_responses() \
-        .response("Э… месть еще никому не помогала, Морт… Э, пошли.", EXIT, 'r', 'reply11990').with_condition(lambda: '  Global("Good_Ingress_Teeth_1","GLOBAL",1) ') \
-        .response("Поблагодаришь меня позже. Вот увидишь.", EXIT, 'r', 'reply11991').with_condition(lambda: '  Global("Evil_Ingress_Teeth_1","GLOBAL",1) ') \
+        .response("Э… месть еще никому не помогала, Морт… Э, пошли.", EXIT, 'r', 'reply11990').with_condition(lambda: _r11990_condition()).with_action(lambda: _dispose()) \
+        .response("Поблагодаришь меня позже. Вот увидишь.", EXIT, 'r', 'reply11991').with_condition(lambda: _r11991_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1581,8 +2983,8 @@ DialogStateBuilder('DMORTE.D_s152') \
     .with_npc_lines() \
         .line(SPEAKER, "Шеф, я более чем уверен, что эти пни — не самые большие шишки. Мне кажется, что они сбежали и теперь ищут какой-нибудь способ повысить свой статус в Бааторе. Тебе не стоит разговаривать с ними, шеф… непонятно, в какую игру они играют, а тебя они могут поджарить… буквально.", 's152', 'say12449') \
     .with_responses() \
-        .response("Хорошо, Морт. Я задам еще парочку вопросов этим двум…", EXIT, 'r', 'reply12450') \
-        .response("Хорошо, Морт. С этими я закончил.", EXIT, 'r', 'reply12451') \
+        .response("Хорошо, Морт. Я задам еще парочку вопросов этим двум…", EXIT, 'r', 'reply12450').with_action(lambda: _dispose()) \
+        .response("Хорошо, Морт. С этими я закончил.", EXIT, 'r', 'reply12451').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1593,10 +2995,10 @@ DialogStateBuilder('DMORTE.D_s153') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт подлетает поближе и шепчет тебе на ухо: Он *прав*, шеф… Не знаю, что вас так взбесило…", 's153', 'say12466') \
     .with_responses() \
-        .response("Хорошо… Я только хотел задать вопрос…", EXIT, 'r', 'reply12553') \
-        .response("Умолкни, ноющий череп! А ты, козлик, сдохни…", EXIT, 'r', 'reply12554').with_action(lambda: ' DO ~MoraleDec("Morte",2) Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself) ~ ') \
-        .response("Э, нет… это все *ты*, и ты об этом пожалеешь…", EXIT, 'r', 'reply12555').with_action(lambda: ' DO ~Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself) ~ ') \
-        .response("Тогда забудь об этом. Прощай.", EXIT, 'r', 'reply12556').with_action(lambda: ' DO ~SetGlobal("BariA","AR0400",2) ~ ') \
+        .response("Хорошо… Я только хотел задать вопрос…", EXIT, 'r', 'reply12553').with_action(lambda: _dispose()) \
+        .response("Умолкни, ноющий череп! А ты, козлик, сдохни…", EXIT, 'r', 'reply12554').with_action(lambda: _r12554_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Э, нет… это все *ты*, и ты об этом пожалеешь…", EXIT, 'r', 'reply12555').with_action(lambda: _r12555_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда забудь об этом. Прощай.", EXIT, 'r', 'reply12556').with_action(lambda: _r12556_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -1618,8 +3020,8 @@ DialogStateBuilder('DMORTE.D_s155') \
         .line(SPEAKER, "Морт пытается отстраниться под общим взглядом. Что? Что? Тебе кажется, что будь у него губы, то он бы сейчас невинно посвистывал.", 's155', 'say12621') \
     .with_responses() \
         .response("Ты можешь это объяснить, Морт?", 'DMORTE.D_s156', 'r', 'reply12854') \
-        .response("Что такое 'мимир'?", 'DMORTE.D_s157', 'r', 'reply12855').with_condition(lambda: '  Global("Know_Mimir","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~ ') \
-        .response("Не обращай на него внимания… Ты можешь ответить на мои вопросы?", EXIT, 'r', 'reply12856') \
+        .response("Что такое 'мимир'?", 'DMORTE.D_s157', 'r', 'reply12855').with_condition(lambda: _r12855_condition()).with_action(lambda: _r12855_action()) \
+        .response("Не обращай на него внимания… Ты можешь ответить на мои вопросы?", EXIT, 'r', 'reply12856').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1631,8 +3033,8 @@ DialogStateBuilder('DMORTE.D_s156') \
         .line(SPEAKER, "Ну, я скажу, что мы должны выслушать этого мужчину. Правильно? Морт поворачивается к ловцу крыс и окидывает его тяжелым взглядом.", 's156', 'say12622') \
     .with_responses() \
         .response("Нет… давай лучше выслушаем, что скажешь ты, Морт.", 'DMORTE.D_s158', 'r', 'reply12857') \
-        .response("Секунду… что такое 'мимир'?", 'DMORTE.D_s157', 'r', 'reply12858').with_condition(lambda: '  Global("Know_Mimir","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~ ') \
-        .response("Повернуться к ловцу крыс.", EXIT, 'r', 'reply12859') \
+        .response("Секунду… что такое 'мимир'?", 'DMORTE.D_s157', 'r', 'reply12858').with_condition(lambda: _r12858_condition()).with_action(lambda: _r12858_action()) \
+        .response("Повернуться к ловцу крыс.", EXIT, 'r', 'reply12859').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1643,8 +3045,8 @@ DialogStateBuilder('DMORTE.D_s157') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт смущенно закатывает глаза. Это… говорящая энциклопедия. Не то, чтобы я этим гордился. А теперь давай выслушаем этого приятеля, хорошо?", 's157', 'say12623') \
     .with_responses() \
-        .response("Хорошо.", EXIT, 'r', 'reply12860').with_action(lambda: ' DO ~SetGlobal("Morte_Mimir","GLOBAL",1) ~ ') \
-        .response("Нет, я выслушал достаточно. Прощай, крысолов.", EXIT, 'r', 'reply12861').with_action(lambda: ' DO ~SetGlobal("Morte_Mimir","GLOBAL",1) ~ ') \
+        .response("Хорошо.", EXIT, 'r', 'reply12860').with_action(lambda: _r12860_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Нет, я выслушал достаточно. Прощай, крысолов.", EXIT, 'r', 'reply12861').with_action(lambda: _r12861_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -1655,8 +3057,8 @@ DialogStateBuilder('DMORTE.D_s158') \
     .with_npc_lines() \
         .line(SPEAKER, "Да ладно, шеф… зачем мне тебя отвлекать? Я сказал тебе все полезное, что знаю *сам*. Пусть лучше этот пень выскажется по этой теме.", 's158', 'say12624') \
     .with_responses() \
-        .response("Хорошо.", EXIT, 'r', 'reply12862') \
-        .response("Неважно. Пошли… Прощай, крысолов.", EXIT, 'r', 'reply12863') \
+        .response("Хорошо.", EXIT, 'r', 'reply12862').with_action(lambda: _dispose()) \
+        .response("Неважно. Пошли… Прощай, крысолов.", EXIT, 'r', 'reply12863').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1677,9 +3079,9 @@ DialogStateBuilder('DMORTE.D_s160') \
     .with_npc_lines() \
         .line(SPEAKER, "Умереть, шеф… умереть.", 's160', 'say12626') \
     .with_responses() \
-        .response("А вот ты достаточно дружелюбен, крысолов…", EXIT, 'r', 'reply12864') \
-        .response("Понятно. Еще вопрос…", EXIT, 'r', 'reply12865') \
-        .response("Спасибо за информацию. Прощай.", EXIT, 'r', 'reply12866') \
+        .response("А вот ты достаточно дружелюбен, крысолов…", EXIT, 'r', 'reply12864').with_action(lambda: _dispose()) \
+        .response("Понятно. Еще вопрос…", EXIT, 'r', 'reply12865').with_action(lambda: _dispose()) \
+        .response("Спасибо за информацию. Прощай.", EXIT, 'r', 'reply12866').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1690,9 +3092,9 @@ DialogStateBuilder('DMORTE.D_s161') \
     .with_npc_lines() \
         .line(SPEAKER, "Умереть, шеф… умереть.", 's161', 'say12627') \
     .with_responses() \
-        .response("А… Что ты говорил о людях, которые платят за крыс?", EXIT, 'r', 'reply12867') \
-        .response("Понятно Я хотел бы узнать о кое-чем еще…", EXIT, 'r', 'reply12868') \
-        .response("Понятно. Прощай.", EXIT, 'r', 'reply12869') \
+        .response("А… Что ты говорил о людях, которые платят за крыс?", EXIT, 'r', 'reply12867').with_action(lambda: _dispose()) \
+        .response("Понятно Я хотел бы узнать о кое-чем еще…", EXIT, 'r', 'reply12868').with_action(lambda: _dispose()) \
+        .response("Понятно. Прощай.", EXIT, 'r', 'reply12869').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1700,9 +3102,9 @@ DialogStateBuilder('DMORTE.D_s162') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, вот уж у кого шарики за ролики заехали, — Морт закатывает глаза. — Бессмысленно общаться с хаоситеками, шеф. Они все из ума выжили.", 's162', 'say13748') \
     .with_responses() \
-        .response("Хаоситеки?", 'DMORTE.D_s163', 'r', 'reply13774').with_condition(lambda: '  Global("Know_Chaosmen","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) SetGlobal("Know_Chaosmen","GLOBAL",1) ~ ') \
-        .response("Еще раз, кто такие хаоситеки?", 'DMORTE.D_s163', 'r', 'reply13775').with_condition(lambda: '  Global("Know_Chaosmen","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) ~ ') \
-        .response("Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.", EXIT, 'r', 'reply13776').with_condition(lambda: '  Global("Know_Chaosmen","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) ~ ') \
+        .response("Хаоситеки?", 'DMORTE.D_s163', 'r', 'reply13774').with_condition(lambda: _r13774_condition()).with_action(lambda: _r13774_action()) \
+        .response("Еще раз, кто такие хаоситеки?", 'DMORTE.D_s163', 'r', 'reply13775').with_condition(lambda: _r13775_condition()).with_action(lambda: _r13775_action()) \
+        .response("Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.", EXIT, 'r', 'reply13776').with_condition(lambda: _r13776_condition()).with_action(lambda: _r13776_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 162.0 162.1
@@ -1711,7 +3113,7 @@ DialogStateBuilder('DMORTE.D_s163') \
         .line(SPEAKER, "Они типа 'фракция', у которой нет никаких правил… кроме того, чтобы не держать у себя в голове одну мысль слишком долго. Иногда их еще называют хаоситами. Полагаю, нет нужды объяснять почему.", 's163', 'say13749') \
     .with_responses() \
         .response("А как тогда к ним приходят люди?", 'DMORTE.D_s164', 'r', 'reply13777') \
-        .response("Понятно. Идем.", EXIT, 'r', 'reply13778') \
+        .response("Понятно. Идем.", EXIT, 'r', 'reply13778').with_action(lambda: _dispose()) \
     .done()
 
 # from 163.0
@@ -1719,7 +3121,7 @@ DialogStateBuilder('DMORTE.D_s164') \
     .with_npc_lines() \
         .line(SPEAKER, "Они просто привлекают новых людей, словно мух… наверное, тех, кто и так уже достаточно спятил или хаотичен. Не думаю, что у них есть для этого вербовщики… хотя наверняка на их счет ничего нельзя сказать.", 's164', 'say13750') \
     .with_responses() \
-        .response("Понятно. Спасибо за информацию.", EXIT, 'r', 'reply13779') \
+        .response("Понятно. Спасибо за информацию.", EXIT, 'r', 'reply13779').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -1727,9 +3129,9 @@ DialogStateBuilder('DMORTE.D_s165') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, вот уж у кого шарики за ролики заехали, — Морт закатывает глаза. — Бессмысленно общаться с хаоситеками, шеф. Они все из ума выжили.", 's165', 'say13828') \
     .with_responses() \
-        .response("Хаоситеки?", 'DMORTE.D_s166', 'r', 'reply13986').with_condition(lambda: '  Global("Know_Chaosmen","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) SetGlobal("Know_Chaosmen","GLOBAL",1) ~ ') \
-        .response("Еще раз, кто такие хаоситеки?", 'DMORTE.D_s166', 'r', 'reply13987').with_condition(lambda: '  Global("Know_Chaosmen","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) ~ ') \
-        .response("Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.", EXIT, 'r', 'reply13988').with_condition(lambda: '  Global("Know_Chaosmen","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) ~ ') \
+        .response("Хаоситеки?", 'DMORTE.D_s166', 'r', 'reply13986').with_condition(lambda: _r13986_condition()).with_action(lambda: _r13986_action()) \
+        .response("Еще раз, кто такие хаоситеки?", 'DMORTE.D_s166', 'r', 'reply13987').with_condition(lambda: _r13987_condition()).with_action(lambda: _r13987_action()) \
+        .response("Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.", EXIT, 'r', 'reply13988').with_condition(lambda: _r13988_condition()).with_action(lambda: _r13988_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 165.0 165.1
@@ -1737,8 +3139,8 @@ DialogStateBuilder('DMORTE.D_s166') \
     .with_npc_lines() \
         .line(SPEAKER, "Они типа 'фракция', у которой нет никаких правил… кроме того, чтобы не держать у себя в голове одну мысль слишком долго. Иногда их еще называют хаоситами. Полагаю, нет нужды объяснять почему.", 's166', 'say13829') \
     .with_responses() \
-        .response("А как тогда к ним приходят люди?", 'DMORTE.D_s167', 'r', 'reply13989').with_condition(lambda: '  Global("Join_Chaosmen","GLOBAL",0) ') \
-        .response("Понятно. Тогда пойдем.", EXIT, 'r', 'reply13990') \
+        .response("А как тогда к ним приходят люди?", 'DMORTE.D_s167', 'r', 'reply13989').with_condition(lambda: _r13989_condition()) \
+        .response("Понятно. Тогда пойдем.", EXIT, 'r', 'reply13990').with_action(lambda: _dispose()) \
     .done()
 
 # from 166.0
@@ -1746,7 +3148,7 @@ DialogStateBuilder('DMORTE.D_s167') \
     .with_npc_lines() \
         .line(SPEAKER, "Они просто привлекают новых людей, словно мух… наверное, тех, кто и так уже достаточно спятил или хаотичен. Не думаю, что у них есть для этого вербовщики… хотя наверняка на их счет ничего нельзя сказать.", 's167', 'say13830') \
     .with_responses() \
-        .response("Понятно. Спасибо за информацию.", EXIT, 'r', 'reply13991') \
+        .response("Понятно. Спасибо за информацию.", EXIT, 'r', 'reply13991').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1757,10 +3159,10 @@ DialogStateBuilder('DMORTE.D_s168') \
     .with_npc_lines() \
         .line(SPEAKER, "Ладно, шеф… — шепчет тебе Морт. — Идем. Этот трухлявенький скоро станет удобрением.", 's168', 'say14075') \
     .with_responses() \
-        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14275').with_condition(lambda: '  Global("Mortai_Contract","GLOBAL",1) GlobalGT("Coppereyes_Contract","GLOBAL",0) ') \
-        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14276').with_condition(lambda: '  Global("Mortai_Contract","GLOBAL",1) Global("Coppereyes_Contract","GLOBAL",0) ') \
-        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14277').with_condition(lambda: '  Global("Mortai_Contract","GLOBAL",0) GlobalGT("Coppereyes_Contract","GLOBAL",0) ') \
-        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14278').with_condition(lambda: '  Global("Mortai_Contract","GLOBAL",0) Global("Coppereyes_Contract","GLOBAL",0) ') \
+        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14275').with_condition(lambda: _r14275_condition()).with_action(lambda: _dispose()) \
+        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14276').with_condition(lambda: _r14276_condition()).with_action(lambda: _dispose()) \
+        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14277').with_condition(lambda: _r14277_condition()).with_action(lambda: _dispose()) \
+        .response("Похоже на то. Пойдем отсюда.", EXIT, 'r', 'reply14278').with_condition(lambda: _r14278_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1827,7 +3229,7 @@ DialogStateBuilder('DMORTE.D_s175') \
     .with_npc_lines() \
         .line(SPEAKER, "Что-то не так, принцесса? Разучилась говорить? Лучше подбери свою упавшую челюсть, пока что-нибудь в горло не залетело! Все верно, ты меня слышала! Забирай свой лифчик с рюшечками и прячься под юбку к мамке! И передай ей от меня привет!", 's175', 'say15345') \
     .with_responses() \
-        .response("Морт, *сейчас же* заткнись.", 'DMORTE.D_s176', 'r', 'reply15492').with_action(lambda: ' DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",-1) ~ ') \
+        .response("Морт, *сейчас же* заткнись.", 'DMORTE.D_s176', 'r', 'reply15492').with_action(lambda: _r15492_action()) \
         .response("Позволить Морту продолжить.", 'DMORTE.D_s177', 'r', 'reply15493') \
     .done()
 
@@ -1869,7 +3271,7 @@ DialogStateBuilder('DMORTE.D_s179') \
     .with_npc_lines() \
         .line(SPEAKER, "Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда.", 's179', 'say15349') \
     .with_responses() \
-        .response("Но ты ведь НЕ мимир, Морт…", EXIT, 'r', 'reply65537').with_condition(lambda: '  GlobalGT("Morte_Mimir","GLOBAL",1) ') \
+        .response("Но ты ведь НЕ мимир, Морт…", EXIT, 'r', 'reply65537').with_condition(lambda: _r65537_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1880,8 +3282,8 @@ DialogStateBuilder('DMORTE.D_s180') \
     .with_npc_lines() \
         .line(SPEAKER, "Брось, шеф… ты же не собираешься спустить ему это с рук? Давай-ка выпорем этого жеманного шалопая! Я займусь его глазами, пока ты будешь выколачивать из него дурь!", 's180', 'say15350') \
     .with_responses() \
-        .response("Ты прав… давай с ним разберемся.", EXIT, 'r', 'reply15494') \
-        .response("Не в этот раз, Морт. Пошли.", EXIT, 'r', 'reply15495').with_action(lambda: ' DO ~SetGlobal("Adyzoel","AR0400",2) ~ ') \
+        .response("Ты прав… давай с ним разберемся.", EXIT, 'r', 'reply15494').with_action(lambda: _dispose()) \
+        .response("Не в этот раз, Морт. Пошли.", EXIT, 'r', 'reply15495').with_action(lambda: _r15495_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -1892,9 +3294,9 @@ DialogStateBuilder('DMORTE.D_s181') \
     .with_npc_lines() \
         .line(SPEAKER, "А? А, да, шеф, конечно — как скажешь.", 's181', 'say16613') \
     .with_responses() \
-        .response("Спасибо. У меня есть вопросы, Скорбящий…", EXIT, 'r', 'reply16881').with_condition(lambda: '  CheckStatLT(Protagonist,13,WIS) ') \
-        .response("Я серьезно, Морт. Приложишь в этом усилия?", 'DMORTE.D_s182', 'r', 'reply16882').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ').with_action(lambda: ' DO ~IncrementGlobal("Tree_Helpers","AR0400",1) ~ ') \
-        .response("Спасибо, Морт. Прощай, Скорбящий-по-деревьям.", EXIT, 'r', 'reply16883') \
+        .response("Спасибо. У меня есть вопросы, Скорбящий…", EXIT, 'r', 'reply16881').with_condition(lambda: _r16881_condition()).with_action(lambda: _dispose()) \
+        .response("Я серьезно, Морт. Приложишь в этом усилия?", 'DMORTE.D_s182', 'r', 'reply16882').with_condition(lambda: _r16882_condition()).with_action(lambda: _r16882_action()) \
+        .response("Спасибо, Морт. Прощай, Скорбящий-по-деревьям.", EXIT, 'r', 'reply16883').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1905,15 +3307,15 @@ DialogStateBuilder('DMORTE.D_s182') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт некоторое время молча на тебя смотрит, а затем кивает. Да, я смогу. Если это настолько важно для тебя, я сделаю это.", 's182', 'say16614') \
     .with_responses() \
-        .response("Спасибо. Анна? А ты?", EXIT, 'r', 'reply16884').with_condition(lambda: '  NearbyDialog("DAnnah") Global("Tree_A","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_A","AR0400",1) ~ ') \
-        .response("Спасибо. Игнус?", EXIT, 'r', 'reply16885').with_condition(lambda: '  NearbyDialog("DIgnus") Global("Tree_I","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_I","AR0400",1) ~ ') \
-        .response("Спасибо. Грация, ты не могла бы в этом помочь?", EXIT, 'r', 'reply16886').with_condition(lambda: '  NearbyDialog("DGrace") Global("Tree_G","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_G","AR0400",1) ~ ') \
-        .response("Спасибо. Даккон, ты поможешь этому человеку?", EXIT, 'r', 'reply16887').with_condition(lambda: '  NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_D","AR0400",1) ~ ') \
-        .response("Спасибо. Даккон, помоги этому человеку.", EXIT, 'r', 'reply16888').with_condition(lambda: '  NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) Global("Dakkon_Slave","Global",1) ').with_action(lambda: ' DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1) SetGlobal("Tree_D","AR0400",1) ~ ') \
-        .response("Спасибо. Нордом, как ты думаешь, ты сможешь помочь?", EXIT, 'r', 'reply16889').with_condition(lambda: '  NearbyDialog("DNordom") Global("Tree_N","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_N","AR0400",1) ~ ') \
-        .response("Спасибо. Вейлор, ты сможешь помочь?", EXIT, 'r', 'reply16890').with_condition(lambda: '  NearbyDialog("DVhail") Global("Tree_V","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_V","AR0400",1) ~ ') \
-        .response("Спасибо. У меня есть вопросы, Скорбящий…", EXIT, 'r', 'reply16891') \
-        .response("Спасибо, Морт. Прощай, Скорбящий-по-деревьям.", EXIT, 'r', 'reply16892') \
+        .response("Спасибо. Анна? А ты?", EXIT, 'r', 'reply16884').with_condition(lambda: _r16884_condition()).with_action(lambda: _r16884_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. Игнус?", EXIT, 'r', 'reply16885').with_condition(lambda: _r16885_condition()).with_action(lambda: _r16885_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. Грация, ты не могла бы в этом помочь?", EXIT, 'r', 'reply16886').with_condition(lambda: _r16886_condition()).with_action(lambda: _r16886_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. Даккон, ты поможешь этому человеку?", EXIT, 'r', 'reply16887').with_condition(lambda: _r16887_condition()).with_action(lambda: _r16887_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. Даккон, помоги этому человеку.", EXIT, 'r', 'reply16888').with_condition(lambda: _r16888_condition()).with_action(lambda: _r16888_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. Нордом, как ты думаешь, ты сможешь помочь?", EXIT, 'r', 'reply16889').with_condition(lambda: _r16889_condition()).with_action(lambda: _r16889_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. Вейлор, ты сможешь помочь?", EXIT, 'r', 'reply16890').with_condition(lambda: _r16890_condition()).with_action(lambda: _r16890_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо. У меня есть вопросы, Скорбящий…", EXIT, 'r', 'reply16891').with_action(lambda: _dispose()) \
+        .response("Спасибо, Морт. Прощай, Скорбящий-по-деревьям.", EXIT, 'r', 'reply16892').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1944,15 +3346,15 @@ DialogStateBuilder('DMORTE.D_s185') \
     .with_npc_lines() \
         .line(SPEAKER, "Знаешь, шеф, я повидал много причудливых штуковин… Но он поразил мой разум только тем, что это вообще *возможно*.", 's185', 'say16617') \
     .with_responses() \
-        .response("Спасибо тебе, Нордом. Морт? Что думаешь насчет этого?", 'DMORTE.D_s181', 'r', 'reply16893').with_condition(lambda: '  NearbyDialog("DMorte") Global("Tree_M","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_M","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. Анна? А ты?", EXIT, 'r', 'reply16894').with_condition(lambda: '  NearbyDialog("DAnnah") Global("Tree_A","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_A","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. Игнус?", EXIT, 'r', 'reply16895').with_condition(lambda: '  NearbyDialog("DIgnus") Global("Tree_I","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_I","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. Грация, ты не могла бы в этом помочь?", EXIT, 'r', 'reply16896').with_condition(lambda: '  NearbyDialog("DGrace") Global("Tree_G","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_G","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. Даккон, ты поможешь этому человеку?", EXIT, 'r', 'reply16897').with_condition(lambda: '  NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_D","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. Даккон, помоги этому человеку.", EXIT, 'r', 'reply16898').with_condition(lambda: '  NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) Global("Dakkon_Slave","Global",1) ').with_action(lambda: ' DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1) SetGlobal("Tree_D","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. Вейлор, ты сможешь помочь?", EXIT, 'r', 'reply16899').with_condition(lambda: '  NearbyDialog("DVhail") Global("Tree_V","AR0400",0) ').with_action(lambda: ' DO ~SetGlobal("Tree_V","AR0400",1) ~ ') \
-        .response("Спасибо тебе, Нордом. У меня есть несколько вопросов, Скорбящий…", EXIT, 'r', 'reply16900') \
-        .response("Я благодарен тебе, Нордом. Прощай, Скорбящий-по-деревьям.", EXIT, 'r', 'reply16901') \
+        .response("Спасибо тебе, Нордом. Морт? Что думаешь насчет этого?", 'DMORTE.D_s181', 'r', 'reply16893').with_condition(lambda: _r16893_condition()).with_action(lambda: _r16893_action()) \
+        .response("Спасибо тебе, Нордом. Анна? А ты?", EXIT, 'r', 'reply16894').with_condition(lambda: _r16894_condition()).with_action(lambda: _r16894_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо тебе, Нордом. Игнус?", EXIT, 'r', 'reply16895').with_condition(lambda: _r16895_condition()).with_action(lambda: _r16895_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо тебе, Нордом. Грация, ты не могла бы в этом помочь?", EXIT, 'r', 'reply16896').with_condition(lambda: _r16896_condition()).with_action(lambda: _r16896_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо тебе, Нордом. Даккон, ты поможешь этому человеку?", EXIT, 'r', 'reply16897').with_condition(lambda: _r16897_condition()).with_action(lambda: _r16897_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо тебе, Нордом. Даккон, помоги этому человеку.", EXIT, 'r', 'reply16898').with_condition(lambda: _r16898_condition()).with_action(lambda: _r16898_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо тебе, Нордом. Вейлор, ты сможешь помочь?", EXIT, 'r', 'reply16899').with_condition(lambda: _r16899_condition()).with_action(lambda: _r16899_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Спасибо тебе, Нордом. У меня есть несколько вопросов, Скорбящий…", EXIT, 'r', 'reply16900').with_action(lambda: _dispose()) \
+        .response("Я благодарен тебе, Нордом. Прощай, Скорбящий-по-деревьям.", EXIT, 'r', 'reply16901').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1973,12 +3375,12 @@ DialogStateBuilder('DMORTE.D_s187') \
     .with_npc_lines() \
         .line(SPEAKER, "Почему бы и нет, босс? Будет весело пнуть его, если будет поганое настроение, верно? Хм-м… Ладно, по крайней мере, я могу пнуть от твоего имени. А еще хочется взглянуть на пятидесятифутовый прыжок от уголька!", 's187', 'say17533') \
     .with_responses() \
-        .response("Что думаешь, Анна?", EXIT, 'r', 'reply17583').with_condition(lambda: '  NearbyDialog("DAnnah") ') \
-        .response("Я возьму одного, торговец.", EXIT, 'r', 'reply17584').with_condition(lambda: '  PartyGoldGT(39) ').with_action(lambda: ' DO ~TakePartyGold(40) ~ ') \
-        .response("Лучше не разбрасываться медяками. У меня есть несколько вопросов, торговец…", EXIT, 'r', 'reply17585').with_condition(lambda: '  PartyGoldGT(39) ') \
-        .response("Лучше я поберегу свои медяки, торговец. Прощай.", EXIT, 'r', 'reply17586').with_condition(lambda: '  PartyGoldGT(39) ') \
-        .response("У меня не хватает денег, торговец, но у меня есть несколько вопросов…", EXIT, 'r', 'reply17587').with_condition(lambda: '  PartyGoldLT(40) ') \
-        .response("Неважно, торговец, мне все равно не хватает монет. Прощай.", EXIT, 'r', 'reply17588').with_condition(lambda: '  PartyGoldLT(40) ') \
+        .response("Что думаешь, Анна?", EXIT, 'r', 'reply17583').with_condition(lambda: _r17583_condition()).with_action(lambda: _dispose()) \
+        .response("Я возьму одного, торговец.", EXIT, 'r', 'reply17584').with_condition(lambda: _r17584_condition()).with_action(lambda: _r17584_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Лучше не разбрасываться медяками. У меня есть несколько вопросов, торговец…", EXIT, 'r', 'reply17585').with_condition(lambda: _r17585_condition()).with_action(lambda: _dispose()) \
+        .response("Лучше я поберегу свои медяки, торговец. Прощай.", EXIT, 'r', 'reply17586').with_condition(lambda: _r17586_condition()).with_action(lambda: _dispose()) \
+        .response("У меня не хватает денег, торговец, но у меня есть несколько вопросов…", EXIT, 'r', 'reply17587').with_condition(lambda: _r17587_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, торговец, мне все равно не хватает монет. Прощай.", EXIT, 'r', 'reply17588').with_condition(lambda: _r17588_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -1989,13 +3391,13 @@ DialogStateBuilder('DMORTE.D_s188') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт поворачивается к жителю Улья. Отвали.", 's188', 'say18801') \
     .with_responses() \
-        .response("Этот череп ты не получишь.", EXIT, 'r', 'reply18802').with_action(lambda: ' DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~ ') \
-        .response("Это не твой череп.", EXIT, 'r', 'reply18803') \
-        .response("Правда: Вперед, забирай череп.", EXIT, 'r', 'reply18804') \
-        .response("Напасть на него, как только он потеряет бдительность: Вперед, забирай череп.", EXIT, 'r', 'reply18805') \
-        .response("Правда: Если тебе удастся доказать, что череп твой, я отдам его тебе. Так будет честно.", EXIT, 'r', 'reply18578').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALLawful_Yellow_1","GLOBALLaw",1) ~ ') \
-        .response("Кто ты?", EXIT, 'r', 'reply18807') \
-        .response("Я куплю у тебя череп. Пойдет?", EXIT, 'r', 'reply18808').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALGood_Yellow_1","GLOBALGood",1) ~ ') \
+        .response("Этот череп ты не получишь.", EXIT, 'r', 'reply18802').with_action(lambda: _r18802_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Это не твой череп.", EXIT, 'r', 'reply18803').with_action(lambda: _dispose()) \
+        .response("Правда: Вперед, забирай череп.", EXIT, 'r', 'reply18804').with_action(lambda: _dispose()) \
+        .response("Напасть на него, как только он потеряет бдительность: Вперед, забирай череп.", EXIT, 'r', 'reply18805').with_action(lambda: _dispose()) \
+        .response("Правда: Если тебе удастся доказать, что череп твой, я отдам его тебе. Так будет честно.", EXIT, 'r', 'reply18578').with_action(lambda: _r18578_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Кто ты?", EXIT, 'r', 'reply18807').with_action(lambda: _dispose()) \
+        .response("Я куплю у тебя череп. Пойдет?", EXIT, 'r', 'reply18808').with_action(lambda: _r18808_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -2007,8 +3409,8 @@ DialogStateBuilder('DMORTE.D_s189') \
         .line(SPEAKER, "Морт держит в зубах один из его пальцев, словно это какая-то жуткая сигара. Удерживая палец, он проговаривает: Еще раз тронешь — и твоя рука присоединится к пальцу, пень.", 's189', 'say18809') \
     .with_responses() \
         .response("Морт! Верни ему палец.", 'DMORTE.D_s190', 'r', 'reply18810') \
-        .response("Не повезло тебе. Сгинь, полукровка.", EXIT, 'r', 'reply18811') \
-        .response("Это будет тебе хорошим уроком. Прощай.", EXIT, 'r', 'reply18812') \
+        .response("Не повезло тебе. Сгинь, полукровка.", EXIT, 'r', 'reply18811').with_action(lambda: _dispose()) \
+        .response("Это будет тебе хорошим уроком. Прощай.", EXIT, 'r', 'reply18812').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2019,8 +3421,8 @@ DialogStateBuilder('DMORTE.D_s190') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт выплевывает в него палец. Тот отскакивает от его груди и падает на землю.", 's190', 'say18813') \
     .with_responses() \
-        .response("Не повезло тебе. Сгинь, полукровка.", EXIT, 'r', 'reply18814') \
-        .response("Это будет тебе хорошим уроком. Прощай.", EXIT, 'r', 'reply18815') \
+        .response("Не повезло тебе. Сгинь, полукровка.", EXIT, 'r', 'reply18814').with_action(lambda: _dispose()) \
+        .response("Это будет тебе хорошим уроком. Прощай.", EXIT, 'r', 'reply18815').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2031,7 +3433,7 @@ DialogStateBuilder('DMORTE.D_s191') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт подлетает и перехватывает тебя: Шеф, ничего не давай этому отребью.", 's191', 'say18816') \
     .with_responses() \
-        .response("Я…", EXIT, 'r', 'reply18817') \
+        .response("Я…", EXIT, 'r', 'reply18817').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2052,12 +3454,12 @@ DialogStateBuilder('DMORTE.D_s193') \
     .with_npc_lines() \
         .line(SPEAKER, "Шеф, *не надо*.", 's193', 'say18819') \
     .with_responses() \
-        .response("Дать ему пять медяков.", EXIT, 'r', 'reply18820').with_condition(lambda: '  PartyGoldGT(4) ').with_action(lambda: ' DO ~TakePartyGold(5) ~ ') \
-        .response("Дать ему пятьдесят медяков.", EXIT, 'r', 'reply18821').with_condition(lambda: '  PartyGoldGT(49) ').with_action(lambda: ' DO ~TakePartyGold(50) ~ ') \
-        .response("Дать ему сто медяков.", EXIT, 'r', 'reply18822').with_condition(lambda: '  PartyGoldGT(99) ').with_action(lambda: ' DO ~TakePartyGold(100) ~ ') \
-        .response("Дать ему пятьсот медяков.", EXIT, 'r', 'reply18823').with_condition(lambda: '  PartyGoldGT(499) ').with_action(lambda: ' DO ~TakePartyGold(500) ~ ') \
-        .response("У меня нет ни одной монеты.", EXIT, 'r', 'reply18824').with_condition(lambda: '  PartyGoldLT(5) ') \
-        .response("Забудь мое предложение. Это не твой череп, и ты его не получишь.", EXIT, 'r', 'reply18825') \
+        .response("Дать ему пять медяков.", EXIT, 'r', 'reply18820').with_condition(lambda: _r18820_condition()).with_action(lambda: _r18820_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Дать ему пятьдесят медяков.", EXIT, 'r', 'reply18821').with_condition(lambda: _r18821_condition()).with_action(lambda: _r18821_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Дать ему сто медяков.", EXIT, 'r', 'reply18822').with_condition(lambda: _r18822_condition()).with_action(lambda: _r18822_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Дать ему пятьсот медяков.", EXIT, 'r', 'reply18823').with_condition(lambda: _r18823_condition()).with_action(lambda: _r18823_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("У меня нет ни одной монеты.", EXIT, 'r', 'reply18824').with_condition(lambda: _r18824_condition()).with_action(lambda: _dispose()) \
+        .response("Забудь мое предложение. Это не твой череп, и ты его не получишь.", EXIT, 'r', 'reply18825').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2068,10 +3470,10 @@ DialogStateBuilder('DMORTE.D_s194') \
     .with_npc_lines() \
         .line(SPEAKER, "Я летаю с самым большим болваном во всей мультивселенной.", 's194', 'say18826') \
     .with_responses() \
-        .response("… и что, Желтопалый? Еще раз обчищу тебя — и *что*?", EXIT, 'r', 'reply18827') \
-        .response("Теперь, когда все утряслось, Желтопалый, у меня есть несколько вопросов…", EXIT, 'r', 'reply18828') \
-        .response("Прощай, Желтопалый.", EXIT, 'r', 'reply18829').with_condition(lambda: '  CheckStatGT(Protagonist,11,INT) ') \
-        .response("Прощай, Желтопалый.", EXIT, 'r', 'reply18830').with_condition(lambda: '  CheckStatLT(Protagonist,12,INT) ').with_action(lambda: ' DO ~DestroyPartyGold(5) ~ ') \
+        .response("… и что, Желтопалый? Еще раз обчищу тебя — и *что*?", EXIT, 'r', 'reply18827').with_action(lambda: _dispose()) \
+        .response("Теперь, когда все утряслось, Желтопалый, у меня есть несколько вопросов…", EXIT, 'r', 'reply18828').with_action(lambda: _dispose()) \
+        .response("Прощай, Желтопалый.", EXIT, 'r', 'reply18829').with_condition(lambda: _r18829_condition()).with_action(lambda: _dispose()) \
+        .response("Прощай, Желтопалый.", EXIT, 'r', 'reply18830').with_condition(lambda: _r18830_condition()).with_action(lambda: _r18830_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -2092,11 +3494,11 @@ DialogStateBuilder('DMORTE.D_s196') \
     .with_npc_lines() \
         .line(SPEAKER, "Если смотреть с моей позиции, так она никого не балует.", 's196', 'say18832') \
     .with_responses() \
-        .response("Дать ему пять медяков.", EXIT, 'r', 'reply18833').with_condition(lambda: '  PartyGoldGT(4) ').with_action(lambda: ' DO ~TakePartyGold(5) ~ ') \
-        .response("Дать ему десять медяков.", EXIT, 'r', 'reply18834').with_condition(lambda: '  PartyGoldGT(9) ').with_action(lambda: ' DO ~TakePartyGold(10) ~ ') \
-        .response("Дать ему пятьдесят медяков.", EXIT, 'r', 'reply18835').with_condition(lambda: '  PartyGoldGT(49) ').with_action(lambda: ' DO ~TakePartyGold(50) IncrementGlobalOnceEx("GLOBALGood_Yellow_2","GLOBALGood",1) ~ ') \
-        .response("Дать ему сто медяков.", EXIT, 'r', 'reply18836').with_condition(lambda: '  PartyGoldGT(99) ').with_action(lambda: ' DO ~TakePartyGold(100) IncrementGlobalOnceEx("GLOBALGood_Yellow_2","GLOBALGood",1) ~ ') \
-        .response("Беру свои слова обратно. Уходи и больше мне не попадайся.", EXIT, 'r', 'reply18837') \
+        .response("Дать ему пять медяков.", EXIT, 'r', 'reply18833').with_condition(lambda: _r18833_condition()).with_action(lambda: _r18833_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Дать ему десять медяков.", EXIT, 'r', 'reply18834').with_condition(lambda: _r18834_condition()).with_action(lambda: _r18834_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Дать ему пятьдесят медяков.", EXIT, 'r', 'reply18835').with_condition(lambda: _r18835_condition()).with_action(lambda: _r18835_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Дать ему сто медяков.", EXIT, 'r', 'reply18836').with_condition(lambda: _r18836_condition()).with_action(lambda: _r18836_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Беру свои слова обратно. Уходи и больше мне не попадайся.", EXIT, 'r', 'reply18837').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2117,8 +3519,8 @@ DialogStateBuilder('DMORTE.D_s198') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт склоняет голову. Как скажешь, босс.", 's198', 'say19032') \
     .with_responses() \
-        .response("Хорошо. Охо, у меня есть другие вопросы.", EXIT, 'r', 'reply19033') \
-        .response("Хорошо. Идем.", EXIT, 'r', 'reply19034') \
+        .response("Хорошо. Охо, у меня есть другие вопросы.", EXIT, 'r', 'reply19033').with_action(lambda: _dispose()) \
+        .response("Хорошо. Идем.", EXIT, 'r', 'reply19034').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2138,8 +3540,8 @@ DialogStateBuilder('DMORTE.D_s200') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт закатывает глаза. Ха! Однажды ты поймешь, о чем я говорю.", 's200', 'say19552') \
     .with_responses() \
-        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19668').with_condition(lambda: '  Global("Speak_With_Dead","GLOBAL",0) ') \
-        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19669').with_condition(lambda: '  Global("Speak_With_Dead","GLOBAL",1) ') \
+        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19668').with_condition(lambda: _r19668_condition()).with_action(lambda: _dispose()) \
+        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19669').with_condition(lambda: _r19669_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2150,8 +3552,8 @@ DialogStateBuilder('DMORTE.D_s201') \
     .with_npc_lines() \
         .line(SPEAKER, "Ага, видишь ли, это я… эй! — Морт поворачивается к тебе. — Ты что, издеваешься надо мной?", 's201', 'say19553') \
     .with_responses() \
-        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19670').with_condition(lambda: '  Global("Speak_With_Dead","GLOBAL",0) ') \
-        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19671').with_condition(lambda: '  Global("Speak_With_Dead","GLOBAL",1) ') \
+        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19670').with_condition(lambda: _r19670_condition()).with_action(lambda: _dispose()) \
+        .response("Не обращать на него внимания, поздороваться с зомби.", EXIT, 'r', 'reply19671').with_condition(lambda: _r19671_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2163,8 +3565,8 @@ DialogStateBuilder('DMORTE.D_s202') \
         .line(SPEAKER, "Э… даже не знаю, захочешь ли ты говорить с этой… тварью.", 's202', 'say19681') \
     .with_responses() \
         .response("Почему нет, Морт?", 'DMORTE.D_s203', 'r', 'reply19691') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply19692') \
-        .response("Не обращать внимания на Морта, поздороваться с упырем.", EXIT, 'r', 'reply19693') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply19692').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, поздороваться с упырем.", EXIT, 'r', 'reply19693').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2175,8 +3577,8 @@ DialogStateBuilder('DMORTE.D_s203') \
     .with_npc_lines() \
         .line(SPEAKER, "Когда-то они были людьми… Они, или их предки, ели трупы, и вот во что они превратились. Довольно таки мерзкая вещь, шеф… На самом деле, они больше похожи на животных. *Опасных* животных.", 's203', 'say19682') \
     .with_responses() \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply19694') \
-        .response("Я все равно с ним поговорю.", EXIT, 'r', 'reply19695') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply19694').with_action(lambda: _dispose()) \
+        .response("Я все равно с ним поговорю.", EXIT, 'r', 'reply19695').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2189,8 +3591,8 @@ DialogStateBuilder('DMORTE.D_s204') \
     .with_responses() \
         .response("Морт, ты меня удивляешь… Это нежить женского пола. Обычно этого для тебя достаточно.", 'DMORTE.D_s206', 'r', 'reply19713') \
         .response("Почему нет, Морт?", 'DMORTE.D_s205', 'r', 'reply19714') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply19715') \
-        .response("Не обращать внимания на Морта, поздороваться с упырем.", EXIT, 'r', 'reply19716') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply19715').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, поздороваться с упырем.", EXIT, 'r', 'reply19716').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2201,8 +3603,8 @@ DialogStateBuilder('DMORTE.D_s205') \
     .with_npc_lines() \
         .line(SPEAKER, "Когда-то они были людьми… Они, или их предки, ели трупы, и вот во что они превратились. Довольно таки мерзкая вещь, шеф… На самом деле, они больше похожи на животных. *Опасных* животных.", 's205', 'say19703') \
     .with_responses() \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply19717') \
-        .response("Я все равно с ней поговорю.", EXIT, 'r', 'reply19718') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply19717').with_action(lambda: _dispose()) \
+        .response("Я все равно с ней поговорю.", EXIT, 'r', 'reply19718').with_action(lambda: _dispose()) \
     .done()
 
 # from 204.0
@@ -2240,9 +3642,9 @@ DialogStateBuilder('DMORTE.D_s209') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт поворачивается к Марте. Да, 'штучки', — он поворачивается к тебе. — Все дело в смысле слов.", 's209', 'say20471') \
     .with_responses() \
-        .response("Марта, зачем ты достаешь из трупов зубы и швы?", EXIT, 'r', 'reply20612').with_condition(lambda: '  GlobalLT("Know_Marta_Work","GLOBAL",3) ').with_action(lambda: ' DO ~SetGlobal("Know_Marta_Work","GLOBAL",3) ~ JOURNAL #20538 /* ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ */ ') \
-        .response("Марта, зачем ты достаешь из трупов зубы и швы?", EXIT, 'r', 'reply20613').with_condition(lambda: '  GlobalGT("Know_Marta_Work","GLOBAL",2) ').with_action(lambda: ' JOURNAL #20538 /* ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ */ ') \
-        .response("Э… ладно. Мне нужно идти, Марта. Прощай.", EXIT, 'r', 'reply20614') \
+        .response("Марта, зачем ты достаешь из трупов зубы и швы?", EXIT, 'r', 'reply20612').with_condition(lambda: _r20612_condition()).with_action(lambda: _r20612_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Марта, зачем ты достаешь из трупов зубы и швы?", EXIT, 'r', 'reply20613').with_condition(lambda: _r20613_condition()).with_action(lambda: _r20613_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Э… ладно. Мне нужно идти, Марта. Прощай.", EXIT, 'r', 'reply20614').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2279,9 +3681,9 @@ DialogStateBuilder('DMORTE.D_s213') \
     .with_npc_lines() \
         .line(SPEAKER, "Говорят, что они слуги Леди Боли. Они парят повсюду и ломают, чинят и латают Сигил по ее капризу. Они хуже трупных мух, — Морт вздыхает. — Не нужно их трогать, а не то Леди… рассердится.", 's213', 'say21604') \
     .with_responses() \
-        .response("'Леди Боли'? Кто это?", 'DMORTE.D_s214', 'r', 'reply24697').with_condition(lambda: '  Global("Know_Lady","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Know_Lady","GLOBAL",1) ~ ') \
-        .response("Что ты можешь рассказать о Леди Боли?", 'DMORTE.D_s214', 'r', 'reply24698').with_condition(lambda: '  Global("Know_Lady","GLOBAL",1) ') \
-        .response("Понятно.", EXIT, 'r', 'reply24699').with_condition(lambda: '  Global("Know_Lady","GLOBAL",1) ') \
+        .response("'Леди Боли'? Кто это?", 'DMORTE.D_s214', 'r', 'reply24697').with_condition(lambda: _r24697_condition()).with_action(lambda: _r24697_action()) \
+        .response("Что ты можешь рассказать о Леди Боли?", 'DMORTE.D_s214', 'r', 'reply24698').with_condition(lambda: _r24698_condition()) \
+        .response("Понятно.", EXIT, 'r', 'reply24699').with_condition(lambda: _r24699_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2292,9 +3694,9 @@ DialogStateBuilder('DMORTE.D_s214') \
     .with_npc_lines() \
         .line(SPEAKER, "Она заправляет городом. Ты узнаешь ее, когда увидишь: у нее вокруг лица клинки, она ростом с гиганта и парит над землей, совсем как эти парни. Морт кивает на дабуса, смотрящего на вас обоих. Про нее никто почти ничего не знает… она не очень говорлива. Все, что тебе следует знать: не зли ее. Если увидишь ее, мой тебе совет — тикай.", 's214', 'say21605') \
     .with_responses() \
-        .response("Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.", 'DMORTE.D_s215', 'r', 'reply24700').with_condition(lambda: '  CheckStatLT(Protagonist,13,WIS) CheckStatGT(Protagonist,12,INT) ') \
-        .response("Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.", 'DMORTE.D_s215', 'r', 'reply24701').with_condition(lambda: '  CheckStatGT(Protagonist,12,WIS) ') \
-        .response("Понятно.", EXIT, 'r', 'reply24702') \
+        .response("Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.", 'DMORTE.D_s215', 'r', 'reply24700').with_condition(lambda: _r24700_condition()) \
+        .response("Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.", 'DMORTE.D_s215', 'r', 'reply24701').with_condition(lambda: _r24701_condition()) \
+        .response("Понятно.", EXIT, 'r', 'reply24702').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2305,7 +3707,7 @@ DialogStateBuilder('DMORTE.D_s215') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт, едва взглянув на дабуса, смотрит теперь во все глаза. Ага! Я знал, что вы, козлиные морды, умеете ходить! Я знал это! Морт ликующе возвращается к тебе. Ха! Должно быть, этот не такой уж отрешенный, чтобы парить над землей.", 's215', 'say21606') \
     .with_responses() \
-        .response("Может быть…", EXIT, 'r', 'reply24703') \
+        .response("Может быть…", EXIT, 'r', 'reply24703').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2316,7 +3718,7 @@ DialogStateBuilder('DMORTE.D_s216') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти козлиные морды пытаются сказать. Нужен переводчик? Поищи коренного сигильца.", 's216', 'say21607') \
     .with_responses() \
-        .response("Понятно.", EXIT, 'r', 'reply24704') \
+        .response("Понятно.", EXIT, 'r', 'reply24704').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2327,7 +3729,7 @@ DialogStateBuilder('DMORTE.D_s217') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси нашу маленькую бесовку, — он кивает на Анну. — Она из Улья.", 's217', 'say21608') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply24705') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply24705').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2338,7 +3740,7 @@ DialogStateBuilder('DMORTE.D_s218') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? — он кивает на Даккона. — Попроси нашего ханжу-молчуна перевести.", 's218', 'say21609') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply24706') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply24706').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2349,7 +3751,7 @@ DialogStateBuilder('DMORTE.D_s219') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси танарри, — он кивает на Падшую Грацию. — Наверное, она все время общалась с этими парнями.", 's219', 'say21610') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply24707') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply24707').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2360,8 +3762,8 @@ DialogStateBuilder('DMORTE.D_s220') \
     .with_npc_lines() \
         .line(SPEAKER, "Да вы просто хотите их убить. Для тленных чувства являются угрозой.", 's220', 'say22061') \
     .with_responses() \
-        .response("У меня есть другие вопросы…", EXIT, 'r', 'reply22062') \
-        .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply22063') \
+        .response("У меня есть другие вопросы…", EXIT, 'r', 'reply22062').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply22063').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2369,8 +3771,8 @@ DialogStateBuilder('DMORTE.D_s221') \
     .with_npc_lines() \
         .line(SPEAKER, "Глядя на тебя, Морт качает головой.", 's221', 'say22849') \
     .with_responses() \
-        .response("Что такое, куб-герой? 'Морт — глупый череп'? Но как же, разве это не так, куб-герой?", 'DMORTE.D_s222', 'r', 'reply22850').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_3","GLOBALLaw",-1) ~ ') \
-        .response("Отложить куб.", EXIT, 'r', 'reply22851') \
+        .response("Что такое, куб-герой? 'Морт — глупый череп'? Но как же, разве это не так, куб-герой?", 'DMORTE.D_s222', 'r', 'reply22850').with_action(lambda: _r22850_action()) \
+        .response("Отложить куб.", EXIT, 'r', 'reply22851').with_action(lambda: _dispose()) \
     .done()
 
 # from 221.0
@@ -2378,8 +3780,8 @@ DialogStateBuilder('DMORTE.D_s222') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Он не говорил этого!", 's222', 'say22852') \
     .with_responses() \
-        .response("Нет, говорил! Он только что это сказал!", 'DMORTE.D_s223', 'r', 'reply22853').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_4","GLOBALLaw",-1) ~ ') \
-        .response("Отложить куб.", EXIT, 'r', 'reply22854') \
+        .response("Нет, говорил! Он только что это сказал!", 'DMORTE.D_s223', 'r', 'reply22853').with_action(lambda: _r22853_action()) \
+        .response("Отложить куб.", EXIT, 'r', 'reply22854').with_action(lambda: _dispose()) \
     .done()
 
 # from 222.0
@@ -2387,8 +3789,8 @@ DialogStateBuilder('DMORTE.D_s223') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт?!.. А ну дай его сюда!", 's223', 'say22855') \
     .with_responses() \
-        .response("Нет, он мой. Да и все равно он хочет играть только со мной. Разве не так, куб-герой? Да, именно так!", 'DMORTE.D_s224', 'r', 'reply22856').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_5","GLOBALLaw",-1) ~ ') \
-        .response("Отложить куб.", EXIT, 'r', 'reply22857') \
+        .response("Нет, он мой. Да и все равно он хочет играть только со мной. Разве не так, куб-герой? Да, именно так!", 'DMORTE.D_s224', 'r', 'reply22856').with_action(lambda: _r22856_action()) \
+        .response("Отложить куб.", EXIT, 'r', 'reply22857').with_action(lambda: _dispose()) \
     .done()
 
 # from 223.0
@@ -2397,7 +3799,7 @@ DialogStateBuilder('DMORTE.D_s224') \
         .line(SPEAKER, "Я. Просто. Хочу. Подержать. Его. На. Секундочку.", 's224', 'say22858') \
     .with_responses() \
         .response("Но у тебя все равно нет рук.", 'DMORTE.D_s225', 'r', 'reply22859') \
-        .response("Отложить куб.", EXIT, 'r', 'reply22860') \
+        .response("Отложить куб.", EXIT, 'r', 'reply22860').with_action(lambda: _dispose()) \
     .done()
 
 # from 224.0
@@ -2413,7 +3815,7 @@ DialogStateBuilder('DMORTE.D_s226') \
     .with_npc_lines() \
         .line(SPEAKER, "Я разнесу этот мордонский куб на куски. [MRT251]", 's226', 'say22863') \
     .with_responses() \
-        .response("Ты что-то слышал, куб-герой? Нет? Я тоже!", EXIT, 'r', 'reply22864') \
+        .response("Ты что-то слышал, куб-герой? Нет? Я тоже!", EXIT, 'r', 'reply22864').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2431,7 +3833,7 @@ DialogStateBuilder('DMORTE.D_s228') \
     .with_npc_lines() \
         .line(SPEAKER, "Знаешь, босс, меня уже начинало тошнить от его… постоянных… пауз… так что хорошо… что он… уже заткнулся.", 's228', 'say24174') \
     .with_responses() \
-        .response("Очень смешно, Морт. Пошли.", EXIT, 'r', 'reply24175') \
+        .response("Очень смешно, Морт. Пошли.", EXIT, 'r', 'reply24175').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2439,7 +3841,7 @@ DialogStateBuilder('DMORTE.D_s229') \
     .with_npc_lines() \
         .line(SPEAKER, "Босс, а что мы будем делать с бесконечным запасом воды? Где пожар, а?", 's229', 'say24176') \
     .with_responses() \
-        .response("Позже он может пригодиться, Морт. Пошли.", EXIT, 'r', 'reply24177') \
+        .response("Позже он может пригодиться, Морт. Пошли.", EXIT, 'r', 'reply24177').with_action(lambda: _dispose()) \
         .response("Так будет правильно, Морт.", 'DMORTE.D_s230', 'r', 'reply24178') \
     .done()
 
@@ -2448,7 +3850,7 @@ DialogStateBuilder('DMORTE.D_s230') \
     .with_npc_lines() \
         .line(SPEAKER, "Так будет правильно? Если ты не забыл, босс, у нас самих есть чем заняться! Хотя что бы ты там не решил — ты тут главный. Тьфу…", 's230', 'say24179') \
     .with_responses() \
-        .response("Спасибо за одобрение, Морт. Пошли.", EXIT, 'r', 'reply24180') \
+        .response("Спасибо за одобрение, Морт. Пошли.", EXIT, 'r', 'reply24180').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2456,8 +3858,8 @@ DialogStateBuilder('DMORTE.D_s231') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф… Ты в порядке? Я думал, что ты дал дуба.", 's231', 'say24903') \
     .with_responses() \
-        .response("Чт?.. Ты кто?", 'DMORTE.D_s232', 'r', 'reply24904').with_action(lambda: ' DO ~SetGlobal("Morte","GLOBAL",1) ~ ') \
-        .response("Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся и присоединился ко мне НЕМЕДЛЕННО.", EXIT, 'r', 'reply24905').with_action(lambda: ' DO ~SetGlobal("Morte","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Чт?.. Ты кто?", 'DMORTE.D_s232', 'r', 'reply24904').with_action(lambda: _r24904_action()) \
+        .response("Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся и присоединился ко мне НЕМЕДЛЕННО.", EXIT, 'r', 'reply24905').with_action(lambda: _r24905_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 231.0
@@ -2531,7 +3933,7 @@ DialogStateBuilder('DMORTE.D_s240') \
     .with_npc_lines() \
         .line(SPEAKER, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.", 's240', 'say24924') \
     .with_responses() \
-        .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE.D_s241', 'r', 'reply24925').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALGood_Morte_1","GLOBALGood",1) ~ ') \
+        .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE.D_s241', 'r', 'reply24925').with_action(lambda: _r24925_action()) \
         .response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?", 'DMORTE.D_s242', 'r', 'reply24926') \
     .done()
 
@@ -2556,7 +3958,7 @@ DialogStateBuilder('DMORTE.D_s243') \
     .with_npc_lines() \
         .line(SPEAKER, "И последнее: эти трупы медлительны, но их удар — все равно что поцелуй тарана. Если они начнут доставать тебя, помни, что ты можешь БЕГАТЬ, а они — нет. Используй это, чтобы держаться на дистанции, если тебе нужно восстановиться.", 's243', 'say24931') \
     .with_responses() \
-        .response("Хорошо. Спасибо за совет.", EXIT, 'r', 'reply24932').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ JOURNAL #24933 /* ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ */ ') \
+        .response("Хорошо. Спасибо за совет.", EXIT, 'r', 'reply24932').with_action(lambda: _r24932_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -2567,7 +3969,7 @@ DialogStateBuilder('DMORTE.D_s244') \
     .with_npc_lines() \
         .line(SPEAKER, "Это типа говорящей энциклопедии, шеф. На самом деле, мне не хочется об этом говорить.", 's244', 'say25962') \
     .with_responses() \
-        .response("Но ты ведь НЕ мимир, Морт…", EXIT, 'r', 'reply66902').with_condition(lambda: '  GlobalGT("Morte_Mimir","GLOBAL",1) ') \
+        .response("Но ты ведь НЕ мимир, Морт…", EXIT, 'r', 'reply66902').with_condition(lambda: _r66902_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2586,9 +3988,9 @@ DialogStateBuilder('DMORTE.D_s246') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да. Хорошо, — Морт закатывает глаза и начинает ворчать. — Тогда уж лучше быть *мертвым*…", 's246', 'say25966') \
     .with_responses() \
-        .response("Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?", EXIT, 'r', 'reply25967').with_condition(lambda: '  CheckStatGT(Protagonist,14,INT) ') \
-        .response("У меня есть несколько вопросов к этой женщине…", EXIT, 'r', 'reply25968') \
-        .response("Оставить женщину в покое.", EXIT, 'r', 'reply25969') \
+        .response("Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?", EXIT, 'r', 'reply25967').with_condition(lambda: _r25967_condition()).with_action(lambda: _dispose()) \
+        .response("У меня есть несколько вопросов к этой женщине…", EXIT, 'r', 'reply25968').with_action(lambda: _dispose()) \
+        .response("Оставить женщину в покое.", EXIT, 'r', 'reply25969').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2599,8 +4001,8 @@ DialogStateBuilder('DMORTE.D_s247') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт перебивает ее: Понимаешь, шеф, есть много признаков *качественного* мимира. Некоторые — например, я — намного лучше других. Более… э-э… 'самосознательные', говоря научным языком.", 's247', 'say25970') \
     .with_responses() \
-        .response("Хм-м.", EXIT, 'r', 'reply25971') \
-        .response("Понятно.", EXIT, 'r', 'reply25972') \
+        .response("Хм-м.", EXIT, 'r', 'reply25971').with_action(lambda: _dispose()) \
+        .response("Понятно.", EXIT, 'r', 'reply25972').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2666,7 +4068,7 @@ DialogStateBuilder('DMORTE.D_s254') \
         .line(SPEAKER, "Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?", 's254', 'say27290') \
     .with_responses() \
         .response("Нет… не очень, если честно.", 'DMORTE.D_s255', 'r', 'reply27315') \
-        .response("Ты это не серьезно.", 'DMORTE.D_s255', 'r', 'reply27316').with_condition(lambda: '  CheckStatGT(Protagonist,12,INT) ') \
+        .response("Ты это не серьезно.", 'DMORTE.D_s255', 'r', 'reply27316').with_condition(lambda: _r27316_condition()) \
     .done()
 
 # from 254.0 254.1
@@ -2708,7 +4110,7 @@ DialogStateBuilder('DMORTE.D_s259') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, как в дневнике. Если начнешь забывать важные вещи, вроде того, где ты находишься, открой его и освежи свою память. Понятно?", 's259', 'say27295') \
     .with_responses() \
-        .response("Ладно… Уяснил. Идем.", EXIT, 'r', 'reply27323') \
+        .response("Ладно… Уяснил. Идем.", EXIT, 'r', 'reply27323').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2716,7 +4118,7 @@ DialogStateBuilder('DMORTE.D_s260') \
     .with_npc_lines() \
         .line(SPEAKER, "На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.", 's260', 'say27296') \
     .with_responses() \
-        .response("Ладно… Я поищу.", EXIT, 'r', 'reply27324') \
+        .response("Ладно… Я поищу.", EXIT, 'r', 'reply27324').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2725,7 +4127,7 @@ DialogStateBuilder('DMORTE.D_s261') \
         .line(SPEAKER, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы.", 's261', 'say27297') \
     .with_responses() \
         .response("А, может, ты мне *поможешь*, Морт?", 'DMORTE.D_s262', 'r', 'reply27325') \
-        .response("Хорошо.", EXIT, 'r', 'reply27326') \
+        .response("Хорошо.", EXIT, 'r', 'reply27326').with_action(lambda: _dispose()) \
     .done()
 
 # from 261.0
@@ -2734,7 +4136,7 @@ DialogStateBuilder('DMORTE.D_s262') \
         .line(SPEAKER, "Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту.", 's262', 'say27298') \
     .with_responses() \
         .response("Я имел ввиду помощь в нападении на *трупов*.", 'DMORTE.D_s263', 'r', 'reply27327') \
-        .response("Ну ладно.", EXIT, 'r', 'reply27328') \
+        .response("Ну ладно.", EXIT, 'r', 'reply27328').with_action(lambda: _dispose()) \
     .done()
 
 # from 262.0
@@ -2743,7 +4145,7 @@ DialogStateBuilder('DMORTE.D_s263') \
         .line(SPEAKER, "Я? Я романтик, а не солдат. Я только под ногами буду путаться.", 's263', 'say27299') \
     .with_responses() \
         .response("Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель.", 'DMORTE.D_s264', 'r', 'reply27329') \
-        .response("Ну ладно.", EXIT, 'r', 'reply27330') \
+        .response("Ну ладно.", EXIT, 'r', 'reply27330').with_action(lambda: _dispose()) \
     .done()
 
 # from 263.0
@@ -2751,7 +4153,7 @@ DialogStateBuilder('DMORTE.D_s264') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… без проблем. Я помогу тебе.", 's264', 'say27300') \
     .with_responses() \
-        .response("Рад, что мы друг друга понимаем. За дело.", EXIT, 'r', 'reply27331') \
+        .response("Рад, что мы друг друга понимаем. За дело.", EXIT, 'r', 'reply27331').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2759,7 +4161,7 @@ DialogStateBuilder('DMORTE.D_s265') \
     .with_npc_lines() \
         .line(SPEAKER, "Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда.", 's265', 'say27301') \
     .with_responses() \
-        .response("Хорошо.", EXIT, 'r', 'reply27332') \
+        .response("Хорошо.", EXIT, 'r', 'reply27332').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2767,7 +4169,7 @@ DialogStateBuilder('DMORTE.D_s266') \
     .with_npc_lines() \
         .line(SPEAKER, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", 's266', 'say27302') \
     .with_responses() \
-        .response("Тогда я перепробую все двери.", EXIT, 'r', 'reply27333') \
+        .response("Тогда я перепробую все двери.", EXIT, 'r', 'reply27333').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2788,7 +4190,7 @@ DialogStateBuilder('DMORTE.D_s268') \
     .with_npc_lines() \
         .line(SPEAKER, "Это типа говорящей энциклопедии, шеф. На самом деле, мне не хочется об этом говорить.", 's268', 'say27912') \
     .with_responses() \
-        .response("Но ты ведь НЕ мимир, Морт…", EXIT, 'r', 'reply65536').with_condition(lambda: '  GlobalGT("Morte_Mimir","GLOBAL",1) ') \
+        .response("Но ты ведь НЕ мимир, Морт…", EXIT, 'r', 'reply65536').with_condition(lambda: _r65536_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2807,9 +4209,9 @@ DialogStateBuilder('DMORTE.D_s270') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да. Хорошо, — Морт закатывает глаза и начинает ворчать. — Тогда уж лучше быть *мертвым*…", 's270', 'say27915') \
     .with_responses() \
-        .response("Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?", EXIT, 'r', 'reply27916').with_condition(lambda: '  CheckStatGT(Protagonist,14,INT) ') \
-        .response("У меня есть несколько вопросов к этой женщине…", EXIT, 'r', 'reply27917') \
-        .response("Оставить женщину в покое.", EXIT, 'r', 'reply27918') \
+        .response("Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?", EXIT, 'r', 'reply27916').with_condition(lambda: _r27916_condition()).with_action(lambda: _dispose()) \
+        .response("У меня есть несколько вопросов к этой женщине…", EXIT, 'r', 'reply27917').with_action(lambda: _dispose()) \
+        .response("Оставить женщину в покое.", EXIT, 'r', 'reply27918').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2820,8 +4222,8 @@ DialogStateBuilder('DMORTE.D_s271') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт перебивает ее: Понимаешь, шеф, есть много признаков *качественного* мимира. Некоторые — например, я — намного лучше других. Более… э-э… 'самосознательные', говоря научным языком.", 's271', 'say27919') \
     .with_responses() \
-        .response("Хм-м.", EXIT, 'r', 'reply27920') \
-        .response("Понятно.", EXIT, 'r', 'reply27921') \
+        .response("Хм-м.", EXIT, 'r', 'reply27920').with_action(lambda: _dispose()) \
+        .response("Понятно.", EXIT, 'r', 'reply27921').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2842,9 +4244,9 @@ DialogStateBuilder('DMORTE.D_s273') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт одобрительно кивает. Эй, а этот парень не так уж плох.", 's273', 'say28036') \
     .with_responses() \
-        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28041').with_action(lambda: ' DO ~TakePartyGold(10) ~ ') \
-        .response("Бросить Малманеру десять медных монет.", EXIT, 'r', 'reply28042').with_action(lambda: ' DO ~TakePartyGold(10) ~ ') \
-        .response("Правда? Будем считать, что я этого не слышал, Морт. Пошли.", EXIT, 'r', 'reply28043') \
+        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28041').with_action(lambda: _r28041_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Бросить Малманеру десять медных монет.", EXIT, 'r', 'reply28042').with_action(lambda: _r28042_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Правда? Будем считать, что я этого не слышал, Морт. Пошли.", EXIT, 'r', 'reply28043').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2855,15 +4257,15 @@ DialogStateBuilder('DMORTE.D_s274') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт одобрительно кивает. Эй, а этот парень не так уж плох.", 's274', 'say28037') \
     .with_responses() \
-        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28038').with_condition(lambda: '  Global("Malmaner","GLOBAL",3) !Global("Chaotic_Malmaner_1","GLOBAL",1) ').with_action(lambda: ' DO ~TakePartyGold(30) ~ ') \
-        .response("Бросить Малманеру тридцать медных монет.", EXIT, 'r', 'reply28039').with_condition(lambda: '  Global("Malmaner","GLOBAL",3) !Global("Chaotic_Malmaner_1","GLOBAL",1) ').with_action(lambda: ' DO ~TakePartyGold(30) ~ ') \
-        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28040').with_condition(lambda: '  Global("Malmaner","GLOBAL",3) Global("Chaotic_Malmaner_1","GLOBAL",1) ').with_action(lambda: ' DO ~TakePartyGold(50) ~ ') \
-        .response("Бросить Малманеру пятьдесят медных монет.", EXIT, 'r', 'reply28044').with_condition(lambda: '  Global("Malmaner","GLOBAL",3) Global("Chaotic_Malmaner_1","GLOBAL",1) ').with_action(lambda: ' DO ~TakePartyGold(50) ~ ') \
-        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28045').with_condition(lambda: '  Global("Malmaner","GLOBAL",5) !Global("Chaotic_Malmaner_1","GLOBAL",3) ').with_action(lambda: ' DO ~TakePartyGold(50) ~ ') \
-        .response("Бросить Малманеру пятьдесят медных монет.", EXIT, 'r', 'reply28046').with_condition(lambda: '  Global("Malmaner","GLOBAL",5) !Global("Chaotic_Malmaner_1","GLOBAL",3) ').with_action(lambda: ' DO ~TakePartyGold(50) ~ ') \
-        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28047').with_condition(lambda: '  Global("Malmaner","GLOBAL",5) Global("Chaotic_Malmaner_1","GLOBAL",3) ').with_action(lambda: ' DO ~TakePartyGold(80) ~ ') \
-        .response("Бросить Малманеру восемьдесят медных монет.", EXIT, 'r', 'reply28048').with_condition(lambda: '  Global("Malmaner","GLOBAL",5) Global("Chaotic_Malmaner_1","GLOBAL",3) ').with_action(lambda: ' DO ~TakePartyGold(80) ~ ') \
-        .response("Правда? Будем считать, что я этого не слышал, Морт. Пошли.", EXIT, 'r', 'reply28049') \
+        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28038').with_condition(lambda: _r28038_condition()).with_action(lambda: _r28038_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Бросить Малманеру тридцать медных монет.", EXIT, 'r', 'reply28039').with_condition(lambda: _r28039_condition()).with_action(lambda: _r28039_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28040').with_condition(lambda: _r28040_condition()).with_action(lambda: _r28040_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Бросить Малманеру пятьдесят медных монет.", EXIT, 'r', 'reply28044').with_condition(lambda: _r28044_condition()).with_action(lambda: _r28044_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28045').with_condition(lambda: _r28045_condition()).with_action(lambda: _r28045_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Бросить Малманеру пятьдесят медных монет.", EXIT, 'r', 'reply28046').with_condition(lambda: _r28046_condition()).with_action(lambda: _r28046_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ладно, вот… забирай свои деньги, Малманер.", EXIT, 'r', 'reply28047').with_condition(lambda: _r28047_condition()).with_action(lambda: _r28047_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Бросить Малманеру восемьдесят медных монет.", EXIT, 'r', 'reply28048').with_condition(lambda: _r28048_condition()).with_action(lambda: _r28048_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Правда? Будем считать, что я этого не слышал, Морт. Пошли.", EXIT, 'r', 'reply28049').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2912,7 +4314,7 @@ DialogStateBuilder('DMORTE.D_s279') \
     .with_npc_lines() \
         .line(SPEAKER, "Пожалуй, только для глаз! Мне почему-то КАЖЕТСЯ, что стоит какой-нибудь цыпочке чуть-чуть оголиться, как ты уже принимаешь ее в команду! — Морт умолкает. — Не то чтобы я против. Просто подумал, что стоит об этом сказать.", 's279', 'say28635') \
     .with_responses() \
-        .response("Заметано, Морт. Госпожа Грация… Может, я слишком забегаю вперед, но ты не хотела бы отправиться с нами в путешествие?", EXIT, 'r', 'reply28636') \
+        .response("Заметано, Морт. Госпожа Грация… Может, я слишком забегаю вперед, но ты не хотела бы отправиться с нами в путешествие?", EXIT, 'r', 'reply28636').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2930,9 +4332,9 @@ DialogStateBuilder('DMORTE.D_s281') \
     .with_npc_lines() \
         .line(SPEAKER, "Спасибо, шеф. Не могу выразить свою радость тем, что я снова с тобой. Его голос истекает сарказмом. А еще я научился новому приемчику, пока был там.", 's281', 'say28738') \
     .with_responses() \
-        .response("Ага. Отлично. Я очень рад, что ты вернулся назад.", EXIT, 'r', 'reply28743').with_action(lambda: ' DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~ ') \
-        .response("Извини, приятель. Я хотел его обмануть.", 'DMORTE.D_s282', 'r', 'reply28744').with_condition(lambda: '  CheckStatGT(Protagonist,14,CHR) ').with_action(lambda: ' DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",2) SetGlobal("Morte_Stolen","GLOBAL",3) ~ ') \
-        .response("Извини, приятель. Я хотел его обмануть.", 'DMORTE.D_s283', 'r', 'reply28745').with_condition(lambda: '  CheckStatLT(Protagonist,15,CHR) ').with_action(lambda: ' DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~ ') \
+        .response("Ага. Отлично. Я очень рад, что ты вернулся назад.", EXIT, 'r', 'reply28743').with_action(lambda: _r28743_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Извини, приятель. Я хотел его обмануть.", 'DMORTE.D_s282', 'r', 'reply28744').with_condition(lambda: _r28744_condition()).with_action(lambda: _r28744_action()) \
+        .response("Извини, приятель. Я хотел его обмануть.", 'DMORTE.D_s283', 'r', 'reply28745').with_condition(lambda: _r28745_condition()).with_action(lambda: _r28745_action()) \
     .done()
 
 # from 281.1
@@ -2940,7 +4342,7 @@ DialogStateBuilder('DMORTE.D_s282') \
     .with_npc_lines() \
         .line(SPEAKER, "Правда? В этом чувствуется твой стиль, босс. Хорошо придумано. Ты условно прощен. Просто не делай так больше.", 's282', 'say28739') \
     .with_responses() \
-        .response("Конечно, Морт. Идем.", EXIT, 'r', 'reply28746') \
+        .response("Конечно, Морт. Идем.", EXIT, 'r', 'reply28746').with_action(lambda: _dispose()) \
     .done()
 
 # from 281.2
@@ -2948,8 +4350,8 @@ DialogStateBuilder('DMORTE.D_s283') \
     .with_npc_lines() \
         .line(SPEAKER, "Почему-то мне в это верится с трудом. Давай просто забудем о случившемся. Идем.", 's283', 'say28740') \
     .with_responses() \
-        .response("Отлично.", EXIT, 'r', 'reply28747') \
-        .response("Морт, я блефовал. Вот увидишь.", EXIT, 'r', 'reply28748') \
+        .response("Отлично.", EXIT, 'r', 'reply28747').with_action(lambda: _dispose()) \
+        .response("Морт, я блефовал. Вот увидишь.", EXIT, 'r', 'reply28748').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -2957,7 +4359,7 @@ DialogStateBuilder('DMORTE.D_s284') \
     .with_npc_lines() \
         .line(SPEAKER, "Спасибо, босс. Давай убираться отсюда! — Морт делает паузу. — А, кстати, босс… Эти ребята действительно соображают. Я научился у них паре острот.", 's284', 'say28741') \
     .with_responses() \
-        .response("Идем.", EXIT, 'r', 'reply28749') \
+        .response("Идем.", EXIT, 'r', 'reply28749').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2968,10 +4370,10 @@ DialogStateBuilder('DMORTE.D_s285') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… шеф? Ты ведь раньше видел статуи? Ты ведь знаешь, что они не разговаривают?", 's285', 'say28962') \
     .with_responses() \
-        .response("Подумай, Морт: ты — летающий и говорящий череп, который отрицает существование живых статуй.", 'DMORTE.D_s286', 'r', 'reply28967').with_condition(lambda: '  CheckStatGT(Protagonist,14,INT) ') \
-        .response("Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?", EXIT, 'r', 'reply28968').with_condition(lambda: '  Global("CW_Sal_Hint","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~ ') \
-        .response("Может быть. Я просто к нему прикоснусь…", EXIT, 'r', 'reply28969') \
-        .response("Уйти.", EXIT, 'r', 'reply28970') \
+        .response("Подумай, Морт: ты — летающий и говорящий череп, который отрицает существование живых статуй.", 'DMORTE.D_s286', 'r', 'reply28967').with_condition(lambda: _r28967_condition()) \
+        .response("Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?", EXIT, 'r', 'reply28968').with_condition(lambda: _r28968_condition()).with_action(lambda: _r28968_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Может быть. Я просто к нему прикоснусь…", EXIT, 'r', 'reply28969').with_action(lambda: _dispose()) \
+        .response("Уйти.", EXIT, 'r', 'reply28970').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -2982,9 +4384,9 @@ DialogStateBuilder('DMORTE.D_s286') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну… э… м-м. Тут ты прав, босс.", 's286', 'say28963') \
     .with_responses() \
-        .response("Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?", EXIT, 'r', 'reply28971').with_condition(lambda: '  Global("CW_Sal_Hint","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~ ') \
-        .response("Конечно, Морт. Я просто к нему прикоснусь…", EXIT, 'r', 'reply28972') \
-        .response("Уйти.", EXIT, 'r', 'reply28973') \
+        .response("Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?", EXIT, 'r', 'reply28971').with_condition(lambda: _r28971_condition()).with_action(lambda: _r28971_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Конечно, Морт. Я просто к нему прикоснусь…", EXIT, 'r', 'reply28972').with_action(lambda: _dispose()) \
+        .response("Уйти.", EXIT, 'r', 'reply28973').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3003,9 +4405,9 @@ DialogStateBuilder('DMORTE.D_s288') \
     .with_npc_lines() \
         .line(SPEAKER, "Конечно, босс. Я это знал.", 's288', 'say28965') \
     .with_responses() \
-        .response("Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?", EXIT, 'r', 'reply28975').with_condition(lambda: '  Global("CW_Sal_Hint","GLOBAL",1) ').with_action(lambda: ' DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~ ') \
-        .response("Ударить статую.", EXIT, 'r', 'reply28976').with_action(lambda: ' DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~ ') \
-        .response("Уйти.", EXIT, 'r', 'reply28977') \
+        .response("Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?", EXIT, 'r', 'reply28975').with_condition(lambda: _r28975_condition()).with_action(lambda: _r28975_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ударить статую.", EXIT, 'r', 'reply28976').with_action(lambda: _r28976_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Уйти.", EXIT, 'r', 'reply28977').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3016,10 +4418,10 @@ DialogStateBuilder('DMORTE.D_s289') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт закатывает глаза и издает бульканье. О силы, нет, только не еще один пень, говорящий… вот… так!", 's289', 'say28966') \
     .with_responses() \
-        .response("У меня есть вопросы о тебе…", EXIT, 'r', 'reply28978') \
-        .response("У меня есть вопросы об этом месте.", EXIT, 'r', 'reply28979') \
-        .response("Что ты знаешь о Равель Заморочке?", EXIT, 'r', 'reply28980').with_condition(lambda: '  Global("Know_Ravel","GLOBAL",1) ') \
-        .response("Я потом к тебе загляну. Прощай.", EXIT, 'r', 'reply28981') \
+        .response("У меня есть вопросы о тебе…", EXIT, 'r', 'reply28978').with_action(lambda: _dispose()) \
+        .response("У меня есть вопросы об этом месте.", EXIT, 'r', 'reply28979').with_action(lambda: _dispose()) \
+        .response("Что ты знаешь о Равель Заморочке?", EXIT, 'r', 'reply28980').with_condition(lambda: _r28980_condition()).with_action(lambda: _dispose()) \
+        .response("Я потом к тебе загляну. Прощай.", EXIT, 'r', 'reply28981').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3060,9 +4462,9 @@ DialogStateBuilder('DMORTE.D_s293') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт раскрывает рот. Гляди, за тобой — еще один летающий череп!", 's293', 'say30817') \
     .with_responses() \
-        .response("Самому поискать череп.", EXIT, 'r', 'reply30822').with_condition(lambda: '  CheckStatLT(Protagonist,9,INT) ') \
-        .response("Дать Морту повеселиться.", EXIT, 'r', 'reply30823').with_condition(lambda: '  CheckStatGT(Protagonist,8,INT) ') \
-        .response("Брось, Морт. У меня к нему вопросы…", EXIT, 'r', 'reply30824').with_condition(lambda: '  CheckStatGT(Protagonist,8,INT) ') \
+        .response("Самому поискать череп.", EXIT, 'r', 'reply30822').with_condition(lambda: _r30822_condition()).with_action(lambda: _dispose()) \
+        .response("Дать Морту повеселиться.", EXIT, 'r', 'reply30823').with_condition(lambda: _r30823_condition()).with_action(lambda: _dispose()) \
+        .response("Брось, Морт. У меня к нему вопросы…", EXIT, 'r', 'reply30824').with_condition(lambda: _r30824_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3093,8 +4495,8 @@ DialogStateBuilder('DMORTE.D_s296') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт покачивается, как будто пожимает плечами. Предпочитаю называть это проницательностью по части человеческой природы.", 's296', 'say30820') \
     .with_responses() \
-        .response("У меня есть несколько вопросов…", EXIT, 'r', 'reply30825').with_condition(lambda: '  GlobalGT("Able","GLOBAL",0) ') \
-        .response("Снова привлечь внимание человека.", EXIT, 'r', 'reply30826').with_condition(lambda: '  Global("Able","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Able","GLOBAL",1) ~ ') \
+        .response("У меня есть несколько вопросов…", EXIT, 'r', 'reply30825').with_condition(lambda: _r30825_condition()).with_action(lambda: _dispose()) \
+        .response("Снова привлечь внимание человека.", EXIT, 'r', 'reply30826').with_condition(lambda: _r30826_condition()).with_action(lambda: _r30826_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3112,7 +4514,7 @@ DialogStateBuilder('DMORTE.D_s298') \
     .with_npc_lines() \
         .line(SPEAKER, "Клянусь шипастыми сиськами Леди, вот это…  Внезапно все стихает. Остатки твоих чувств меркнут и покидают тебя.  [MRT387]", 's298', 'say31566') \
     .with_responses() \
-        .response("Пасть во тьму, став жертвой страшного проклятья Гангройгидона.", EXIT, 'r', 'reply31567').with_action(lambda: ' DO ~OpenDoor("Statue") Kill(Protagonist) ~ ') \
+        .response("Пасть во тьму, став жертвой страшного проклятья Гангройгидона.", EXIT, 'r', 'reply31567').with_action(lambda: _r31567_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3123,9 +4525,9 @@ DialogStateBuilder('DMORTE.D_s299') \
     .with_npc_lines() \
         .line(SPEAKER, "'Тайнах'?! Секундочку! Мы же не собираемся *слушать* этого пустомелю? Да ладно… пойдем лучше найдем парочку цыпочек-чувствующих, которые еще ни разу не пробовали пламенной страсти от прикосновения губ черепа. Он в предвкушении водит бровями.", 's299', 'say32367') \
     .with_responses() \
-        .response("Тише, Морт. Мы подождем… по крайней мере немного.", EXIT, 'r', 'reply32368') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32369') \
-        .response("Ты прав, Морт, идем отсюда.", EXIT, 'r', 'reply32370').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Тише, Морт. Мы подождем… по крайней мере немного.", EXIT, 'r', 'reply32368').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32369').with_action(lambda: _dispose()) \
+        .response("Ты прав, Морт, идем отсюда.", EXIT, 'r', 'reply32370').with_action(lambda: _r32370_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3136,10 +4538,10 @@ DialogStateBuilder('DMORTE.D_s300') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: Начало новых страданий.", 's300', 'say32371') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32372') \
-        .response("Морт, помолчи.", EXIT, 'r', 'reply32373') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32374') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32375').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32372').with_action(lambda: _dispose()) \
+        .response("Морт, помолчи.", EXIT, 'r', 'reply32373').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32374').with_action(lambda: _dispose()) \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32375').with_action(lambda: _r32375_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3150,10 +4552,10 @@ DialogStateBuilder('DMORTE.D_s301') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: Ага, как же.", 's301', 'say32376') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32377') \
-        .response("Морт, тише.", EXIT, 'r', 'reply32378') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32377').with_action(lambda: _dispose()) \
+        .response("Морт, тише.", EXIT, 'r', 'reply32378').with_action(lambda: _dispose()) \
         .response("Не обращать внимания на Морта, продолжать слушать.", 'DMORTE.D_s303', 'r', 'reply32379') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32380').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32380').with_action(lambda: _r32380_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3164,10 +4566,10 @@ DialogStateBuilder('DMORTE.D_s302') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: И бесконечной скуки.", 's302', 'say32381') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32382') \
-        .response("Морт, пожалуйста, тише.", EXIT, 'r', 'reply32383') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32384') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32385').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32382').with_action(lambda: _dispose()) \
+        .response("Морт, пожалуйста, тише.", EXIT, 'r', 'reply32383').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32384').with_action(lambda: _dispose()) \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32385').with_action(lambda: _r32385_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3178,10 +4580,10 @@ DialogStateBuilder('DMORTE.D_s303') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: Кажется, теперь мы оба знаем, куда отправимся после смерти.", 's303', 'say32386') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32387') \
-        .response("Морт, хватит болтать.", EXIT, 'r', 'reply32388') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32389') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32390').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32387').with_action(lambda: _dispose()) \
+        .response("Морт, хватит болтать.", EXIT, 'r', 'reply32388').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32389').with_action(lambda: _dispose()) \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32390').with_action(lambda: _r32390_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3192,10 +4594,10 @@ DialogStateBuilder('DMORTE.D_s304') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: Это если только повезет.", 's304', 'say32391') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32392') \
-        .response("Хватит, Морт.", EXIT, 'r', 'reply32393') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32394') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32395').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32392').with_action(lambda: _dispose()) \
+        .response("Хватит, Морт.", EXIT, 'r', 'reply32393').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32394').with_action(lambda: _dispose()) \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32395').with_action(lambda: _r32395_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3206,10 +4608,10 @@ DialogStateBuilder('DMORTE.D_s305') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: И это типа стимул? Чтобы вляпаться в это *опять*? Ха, не могу дождаться, когда я снова стану летающим черепом. Ура! Забей на этого неудачника. Походу, он еще сам никогда не умирал, верно?", 's305', 'say32396') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32397') \
-        .response("Хватит, Морт. Тише.", EXIT, 'r', 'reply32398') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32399') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32400').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32397').with_action(lambda: _dispose()) \
+        .response("Хватит, Морт. Тише.", EXIT, 'r', 'reply32398').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32399').with_action(lambda: _dispose()) \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32400').with_action(lambda: _r32400_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3220,10 +4622,10 @@ DialogStateBuilder('DMORTE.D_s306') \
     .with_npc_lines() \
         .line(SPEAKER, "Шепот Морта: А, еще один дешевый лозунг.", 's306', 'say32401') \
     .with_responses() \
-        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32402') \
-        .response("Морт, помолчи.", EXIT, 'r', 'reply32403') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32404') \
-        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32405').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Молча кивнуть Морту.", EXIT, 'r', 'reply32402').with_action(lambda: _dispose()) \
+        .response("Морт, помолчи.", EXIT, 'r', 'reply32403').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply32404').with_action(lambda: _dispose()) \
+        .response("Точно. Пошли отсюда, Морт.", EXIT, 'r', 'reply32405').with_action(lambda: _r32405_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3244,8 +4646,8 @@ DialogStateBuilder('DMORTE.D_s308') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт, увильнув от взгляда докладчика, поворачивается к тебе и шепотом произносит: Давай, шеф. Задай ему жару по этому поводу.", 's308', 'say32407') \
     .with_responses() \
-        .response("Да, у меня есть вопрос…", EXIT, 'r', 'reply32408') \
-        .response("Вопросов нет. Мой приятель ошибся.", EXIT, 'r', 'reply32409') \
+        .response("Да, у меня есть вопрос…", EXIT, 'r', 'reply32408').with_action(lambda: _dispose()) \
+        .response("Вопросов нет. Мой приятель ошибся.", EXIT, 'r', 'reply32409').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3256,9 +4658,9 @@ DialogStateBuilder('DMORTE.D_s309') \
     .with_npc_lines() \
         .line(SPEAKER, "Отлично! Еще одна смерть! Подпишите меня! Среди слушателей раздается хохот. Докладчик выглядит сердитым.", 's309', 'say32410') \
     .with_responses() \
-        .response("Что происходит, когда они умирают?", EXIT, 'r', 'reply32411') \
-        .response("У меня есть другие вопросы…", EXIT, 'r', 'reply32412') \
-        .response("Это все, что я хотел узнать.", EXIT, 'r', 'reply32413') \
+        .response("Что происходит, когда они умирают?", EXIT, 'r', 'reply32411').with_action(lambda: _dispose()) \
+        .response("У меня есть другие вопросы…", EXIT, 'r', 'reply32412').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел узнать.", EXIT, 'r', 'reply32413').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3270,7 +4672,7 @@ DialogStateBuilder('DMORTE.D_s310') \
         .line(SPEAKER, "Хочешь, я отшлепаю эту пустоголовую цыпочку, шеф?", 's310', 'say32651') \
     .with_responses() \
         .response("И никакого милосердия, Морт.", 'DMORTE.D_s316', 'r', 'reply32661') \
-        .response("Нет, Морт… Я справлюсь с этим.", EXIT, 'r', 'reply32662') \
+        .response("Нет, Морт… Я справлюсь с этим.", EXIT, 'r', 'reply32662').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3291,9 +4693,9 @@ DialogStateBuilder('DMORTE.D_s312') \
     .with_npc_lines() \
         .line(SPEAKER, "Когда ты становишься на колени перед женщиной, Морт кричит: Шеф! Ты шутишь надо мной! То есть, я хочу сказать, ты же не будешь *этого* делать…", 's312', 'say32653') \
     .with_responses() \
-        .response("Не обращать внимания на Морта, вылизать сапог девушки.", EXIT, 'r', 'reply32663') \
+        .response("Не обращать внимания на Морта, вылизать сапог девушки.", EXIT, 'r', 'reply32663').with_action(lambda: _dispose()) \
         .response("Просто я не хочу никаких неприятностей, Морт. Если мы будем не осторожны, то я смогу позвать стражу.", 'DMORTE.D_s313', 'r', 'reply32664') \
-        .response("Ты прав, Морт. Идем.", EXIT, 'r', 'reply32665') \
+        .response("Ты прав, Морт. Идем.", EXIT, 'r', 'reply32665').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3304,8 +4706,8 @@ DialogStateBuilder('DMORTE.D_s313') \
     .with_npc_lines() \
         .line(SPEAKER, "В этом есть что-то… но все же…", 's313', 'say32654') \
     .with_responses() \
-        .response("Забудь, Морт. Послушайте, мадам… Давайте прекратим это, пока я не позвал стражу.", EXIT, 'r', 'reply32666') \
-        .response("Ты прав, Морт. Пошли отсюда.", EXIT, 'r', 'reply32667') \
+        .response("Забудь, Морт. Послушайте, мадам… Давайте прекратим это, пока я не позвал стражу.", EXIT, 'r', 'reply32666').with_action(lambda: _dispose()) \
+        .response("Ты прав, Морт. Пошли отсюда.", EXIT, 'r', 'reply32667').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3370,9 +4772,9 @@ DialogStateBuilder('DMORTE.D_s320') \
     .with_npc_lines() \
         .line(SPEAKER, "Кровавая война? Это еще скучней, чем слушать, как законники декламируют законы. Давай-ка найдем пару молоденьких чувствующих, нуждающихся в просвещении по части любовных страстей! В предвкушении он водит бровями.", 's320', 'say33073') \
     .with_responses() \
-        .response("Нет, Морт… Я хочу послушать это.", EXIT, 'r', 'reply33074') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply33075') \
-        .response("Ладно, Морт, пошли.", EXIT, 'r', 'reply33076').with_action(lambda: ' DO ~SetGlobal("Lecture_Ghysis","GLOBAL",2) ~ ') \
+        .response("Нет, Морт… Я хочу послушать это.", EXIT, 'r', 'reply33074').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply33075').with_action(lambda: _dispose()) \
+        .response("Ладно, Морт, пошли.", EXIT, 'r', 'reply33076').with_action(lambda: _r33076_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -3393,8 +4795,8 @@ DialogStateBuilder('DMORTE.D_s322') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт качает в твою сторону, обращаясь к мужчине: Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?", 's322', 'say33301') \
     .with_responses() \
-        .response("Полегче, Морт…", EXIT, 'r', 'reply33302') \
-        .response("Не обращать внимания на Морта.", EXIT, 'r', 'reply33303') \
+        .response("Полегче, Морт…", EXIT, 'r', 'reply33302').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта.", EXIT, 'r', 'reply33303').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -3415,8 +4817,8 @@ DialogStateBuilder('DMORTE.D_s324') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт качает в твою сторону, обращаясь к мужчине: Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?", 's324', 'say33429') \
     .with_responses() \
-        .response("Полегче, Морт…", EXIT, 'r', 'reply33430') \
-        .response("Не обращать внимания на Морта.", EXIT, 'r', 'reply33433') \
+        .response("Полегче, Морт…", EXIT, 'r', 'reply33430').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта.", EXIT, 'r', 'reply33433').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3424,7 +4826,7 @@ DialogStateBuilder('DMORTE.D_s325') \
     .with_npc_lines() \
         .line(SPEAKER, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а? [MRT516]", 's325', 'say33958') \
     .with_responses() \
-        .response("Да… идем.", EXIT, 'r', 'reply33959').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Да… идем.", EXIT, 'r', 'reply33959').with_action(lambda: _r33959_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Не сейчас, Морт.", 'DMORTE.D_s326', 'r', 'reply33960') \
     .done()
 
@@ -3434,7 +4836,7 @@ DialogStateBuilder('DMORTE.D_s326') \
         .line(SPEAKER, "Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 's326', 'say33961') \
     .with_responses() \
         .response("Морт, у тебя НЕТ ни того, ни другого.", 'DMORTE.D_s327', 'r', 'reply33962') \
-        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply33963').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply33963').with_action(lambda: _r33963_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Не сейчас, Морт. Может быть, потом.", 'DMORTE.D_s327', 'r', 'reply33964') \
     .done()
 
@@ -3443,7 +4845,7 @@ DialogStateBuilder('DMORTE.D_s327') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?", 's327', 'say33965') \
     .with_responses() \
-        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply33966').with_action(lambda: ' DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ ') \
+        .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r', 'reply33966').with_action(lambda: _r33966_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE.D_s328', 'r', 'reply33967') \
     .done()
 
@@ -3452,7 +4854,7 @@ DialogStateBuilder('DMORTE.D_s328') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.", 's328', 'say33968') \
     .with_responses() \
-        .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r', 'reply33969') \
+        .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r', 'reply33969').with_action(lambda: _dispose()) \
     .done()
 
 # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
@@ -3462,17 +4864,17 @@ DialogStateBuilder('DMORTE.D_s329') \
     .with_responses() \
         .response("Можешь еще раз прочитать, что у меня вытатуировано на спине?", 'DMORTE.D_s649', 'r', 'reply65539') \
         .response("Расскажи мне немного о Сигиле.", 'DMORTE.D_s659', 'r', 'reply65540') \
-        .response("Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?", 'DMORTE.D_s663', 'r', 'reply65541').with_condition(lambda: '  Global("Morte_Talent","GLOBAL",0) ') \
-        .response("Морт… еще раз, какие у тебя есть способности?", 'DMORTE.D_s666', 'r', 'reply65542').with_condition(lambda: '  Global("Morte_Talent","GLOBAL",1) ') \
-        .response("Морт, почему ты не прочитал последнюю строку татуировки на моей спине?", 'DMORTE.D_s654', 'r', 'reply65543').with_condition(lambda: '  Global("Morte_Tattoo_XP","GLOBAL",1) ') \
+        .response("Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?", 'DMORTE.D_s663', 'r', 'reply65541').with_condition(lambda: _r65541_condition()) \
+        .response("Морт… еще раз, какие у тебя есть способности?", 'DMORTE.D_s666', 'r', 'reply65542').with_condition(lambda: _r65542_condition()) \
+        .response("Морт, почему ты не прочитал последнюю строку татуировки на моей спине?", 'DMORTE.D_s654', 'r', 'reply65543').with_condition(lambda: _r65543_condition()) \
         .response("Мне нужен совет. Что, по-твоему, нужно делать дальше?", 'DMORTE.D_s669', 'r', 'reply65544') \
-        .response("Ты говорил, что ты — мимир, верно, Морт?", 'DMORTE.D_s684', 'r', 'reply65545').with_condition(lambda: '  Global("Know_Mimir","GLOBAL",1) Global("Morte_Story","GLOBAL",0) ') \
-        .response("Расскажи мне еще раз, как ты оказался в Колонне Черепов.", 'DMORTE.D_s693', 'r', 'reply65546').with_condition(lambda: '  Global("Morte_Story","GLOBAL",1) ') \
-        .response("Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?", 'DMORTE.D_s715', 'r', 'reply65547').with_condition(lambda: '  Global("Know_Morte_Pillar","GLOBAL",1) ') \
-        .response("Что ты знаешь о Кровавой войне?", 'DMORTE.D_s723', 'r', 'reply65548').with_condition(lambda: '  GlobalGT("Know_Blood_War","GLOBAL",0) ') \
-        .response("Что тебе известно про ночную ведьму Равель?", 'DMORTE.D_s722', 'r', 'reply65549').with_condition(lambda: '  GlobalGT("Know_Ravel","GLOBAL",0) Global("Ravel","GLOBAL",0) ') \
+        .response("Ты говорил, что ты — мимир, верно, Морт?", 'DMORTE.D_s684', 'r', 'reply65545').with_condition(lambda: _r65545_condition()) \
+        .response("Расскажи мне еще раз, как ты оказался в Колонне Черепов.", 'DMORTE.D_s693', 'r', 'reply65546').with_condition(lambda: _r65546_condition()) \
+        .response("Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?", 'DMORTE.D_s715', 'r', 'reply65547').with_condition(lambda: _r65547_condition()) \
+        .response("Что ты знаешь о Кровавой войне?", 'DMORTE.D_s723', 'r', 'reply65548').with_condition(lambda: _r65548_condition()) \
+        .response("Что тебе известно про ночную ведьму Равель?", 'DMORTE.D_s722', 'r', 'reply65549').with_condition(lambda: _r65549_condition()) \
         .response("Как ты умер, Морт?", 'DMORTE.D_s726', 'r', 'reply65550') \
-        .response("Ничего, Морт. Просто проверяю, что ты все еще со мной.", EXIT, 'r', 'reply65551') \
+        .response("Ничего, Морт. Просто проверяю, что ты все еще со мной.", EXIT, 'r', 'reply65551').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3480,8 +4882,8 @@ DialogStateBuilder('DMORTE.D_s330') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's330', 'say34990') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s331', 'r', 'reply34991').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s331', 'r', 'reply35001').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s331', 'r', 'reply34991').with_action(lambda: _r34991_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s331', 'r', 'reply35001').with_action(lambda: _r35001_action()) \
     .done()
 
 # from 330.0 330.1
@@ -3489,10 +4891,10 @@ DialogStateBuilder('DMORTE.D_s331') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's331', 'say34992') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s332', 'r', 'reply34993').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s332', 'r', 'reply34993').with_action(lambda: _r34993_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s333', 'r', 'reply34996') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s333', 'r', 'reply34999') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35000') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35000').with_action(lambda: _dispose()) \
     .done()
 
 # from 331.0
@@ -3500,7 +4902,7 @@ DialogStateBuilder('DMORTE.D_s332') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's332', 'say34994') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply34995') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply34995').with_action(lambda: _dispose()) \
     .done()
 
 # from 331.1 331.2
@@ -3508,7 +4910,7 @@ DialogStateBuilder('DMORTE.D_s333') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's333', 'say34997') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply34998') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply34998').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3516,8 +4918,8 @@ DialogStateBuilder('DMORTE.D_s334') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's334', 'say35022') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s335', 'r', 'reply35023').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s335', 'r', 'reply35033').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s335', 'r', 'reply35023').with_action(lambda: _r35023_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s335', 'r', 'reply35033').with_action(lambda: _r35033_action()) \
     .done()
 
 # from 334.0 334.1
@@ -3525,10 +4927,10 @@ DialogStateBuilder('DMORTE.D_s335') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's335', 'say35024') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s336', 'r', 'reply35025').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s336', 'r', 'reply35025').with_action(lambda: _r35025_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s337', 'r', 'reply35028') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s337', 'r', 'reply35031') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35032') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35032').with_action(lambda: _dispose()) \
     .done()
 
 # from 335.0
@@ -3536,7 +4938,7 @@ DialogStateBuilder('DMORTE.D_s336') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's336', 'say35026') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35027') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35027').with_action(lambda: _dispose()) \
     .done()
 
 # from 335.1 335.2
@@ -3544,7 +4946,7 @@ DialogStateBuilder('DMORTE.D_s337') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's337', 'say35029') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35030') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35030').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3552,8 +4954,8 @@ DialogStateBuilder('DMORTE.D_s338') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's338', 'say35054') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s339', 'r', 'reply35055').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s339', 'r', 'reply35065').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s339', 'r', 'reply35055').with_action(lambda: _r35055_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s339', 'r', 'reply35065').with_action(lambda: _r35065_action()) \
     .done()
 
 # from 338.0 338.1
@@ -3561,10 +4963,10 @@ DialogStateBuilder('DMORTE.D_s339') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's339', 'say35056') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s340', 'r', 'reply35057').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s340', 'r', 'reply35057').with_action(lambda: _r35057_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s341', 'r', 'reply35060') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s341', 'r', 'reply35063') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35064') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35064').with_action(lambda: _dispose()) \
     .done()
 
 # from 339.0
@@ -3572,7 +4974,7 @@ DialogStateBuilder('DMORTE.D_s340') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's340', 'say35058') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35059') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35059').with_action(lambda: _dispose()) \
     .done()
 
 # from 339.1 339.2
@@ -3580,7 +4982,7 @@ DialogStateBuilder('DMORTE.D_s341') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's341', 'say35061') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35062') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35062').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3588,8 +4990,8 @@ DialogStateBuilder('DMORTE.D_s342') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's342', 'say35086') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s343', 'r', 'reply35087').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s343', 'r', 'reply35097').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s343', 'r', 'reply35087').with_action(lambda: _r35087_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s343', 'r', 'reply35097').with_action(lambda: _r35097_action()) \
     .done()
 
 # from 342.0 342.1
@@ -3597,10 +4999,10 @@ DialogStateBuilder('DMORTE.D_s343') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's343', 'say35088') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s344', 'r', 'reply35089').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s344', 'r', 'reply35089').with_action(lambda: _r35089_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s345', 'r', 'reply35092') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s345', 'r', 'reply35095') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35096') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35096').with_action(lambda: _dispose()) \
     .done()
 
 # from 343.0
@@ -3608,7 +5010,7 @@ DialogStateBuilder('DMORTE.D_s344') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's344', 'say35090') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35091') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35091').with_action(lambda: _dispose()) \
     .done()
 
 # from 343.1 343.2
@@ -3616,7 +5018,7 @@ DialogStateBuilder('DMORTE.D_s345') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's345', 'say35093') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35094') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35094').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3624,8 +5026,8 @@ DialogStateBuilder('DMORTE.D_s346') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's346', 'say35118') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s347', 'r', 'reply35119').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s347', 'r', 'reply35129').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s347', 'r', 'reply35119').with_action(lambda: _r35119_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s347', 'r', 'reply35129').with_action(lambda: _r35129_action()) \
     .done()
 
 # from 346.0 346.1
@@ -3633,10 +5035,10 @@ DialogStateBuilder('DMORTE.D_s347') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's347', 'say35120') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s348', 'r', 'reply35121').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s348', 'r', 'reply35121').with_action(lambda: _r35121_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s349', 'r', 'reply35124') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s349', 'r', 'reply35127') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35128') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35128').with_action(lambda: _dispose()) \
     .done()
 
 # from 347.0
@@ -3644,7 +5046,7 @@ DialogStateBuilder('DMORTE.D_s348') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's348', 'say35122') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35123') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35123').with_action(lambda: _dispose()) \
     .done()
 
 # from 347.1 347.2
@@ -3652,7 +5054,7 @@ DialogStateBuilder('DMORTE.D_s349') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's349', 'say35125') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35126') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35126').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3660,8 +5062,8 @@ DialogStateBuilder('DMORTE.D_s350') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's350', 'say35150') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s351', 'r', 'reply35151').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s351', 'r', 'reply35161').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s351', 'r', 'reply35151').with_action(lambda: _r35151_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s351', 'r', 'reply35161').with_action(lambda: _r35161_action()) \
     .done()
 
 # from 350.0 350.1
@@ -3669,10 +5071,10 @@ DialogStateBuilder('DMORTE.D_s351') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's351', 'say35152') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s352', 'r', 'reply35153').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s352', 'r', 'reply35153').with_action(lambda: _r35153_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s353', 'r', 'reply35156') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s353', 'r', 'reply35159') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35160') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35160').with_action(lambda: _dispose()) \
     .done()
 
 # from 351.0
@@ -3680,7 +5082,7 @@ DialogStateBuilder('DMORTE.D_s352') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's352', 'say35154') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35155') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35155').with_action(lambda: _dispose()) \
     .done()
 
 # from 351.1 351.2
@@ -3688,7 +5090,7 @@ DialogStateBuilder('DMORTE.D_s353') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's353', 'say35157') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35158') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35158').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3696,8 +5098,8 @@ DialogStateBuilder('DMORTE.D_s354') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's354', 'say35182') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s355', 'r', 'reply35183').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s355', 'r', 'reply35193').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s355', 'r', 'reply35183').with_action(lambda: _r35183_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s355', 'r', 'reply35193').with_action(lambda: _r35193_action()) \
     .done()
 
 # from 354.0 354.1
@@ -3705,10 +5107,10 @@ DialogStateBuilder('DMORTE.D_s355') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's355', 'say35184') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s356', 'r', 'reply35185').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s356', 'r', 'reply35185').with_action(lambda: _r35185_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s357', 'r', 'reply35188') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s357', 'r', 'reply35191') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35192') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35192').with_action(lambda: _dispose()) \
     .done()
 
 # from 355.0
@@ -3716,7 +5118,7 @@ DialogStateBuilder('DMORTE.D_s356') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's356', 'say35186') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35187') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35187').with_action(lambda: _dispose()) \
     .done()
 
 # from 355.1 355.2
@@ -3724,7 +5126,7 @@ DialogStateBuilder('DMORTE.D_s357') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's357', 'say35189') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35190') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35190').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3732,8 +5134,8 @@ DialogStateBuilder('DMORTE.D_s358') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's358', 'say35214') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s359', 'r', 'reply35215').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s359', 'r', 'reply35225').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s359', 'r', 'reply35215').with_action(lambda: _r35215_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s359', 'r', 'reply35225').with_action(lambda: _r35225_action()) \
     .done()
 
 # from 358.0 358.1
@@ -3741,10 +5143,10 @@ DialogStateBuilder('DMORTE.D_s359') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's359', 'say35216') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s360', 'r', 'reply35217').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s360', 'r', 'reply35217').with_action(lambda: _r35217_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s361', 'r', 'reply35220') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s361', 'r', 'reply35223') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35224') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35224').with_action(lambda: _dispose()) \
     .done()
 
 # from 359.0
@@ -3752,7 +5154,7 @@ DialogStateBuilder('DMORTE.D_s360') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's360', 'say35218') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35219') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35219').with_action(lambda: _dispose()) \
     .done()
 
 # from 359.1 359.2
@@ -3760,7 +5162,7 @@ DialogStateBuilder('DMORTE.D_s361') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's361', 'say35221') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35222') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35222').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3768,8 +5170,8 @@ DialogStateBuilder('DMORTE.D_s362') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's362', 'say35246') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s363', 'r', 'reply35247').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s363', 'r', 'reply35257').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s363', 'r', 'reply35247').with_action(lambda: _r35247_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s363', 'r', 'reply35257').with_action(lambda: _r35257_action()) \
     .done()
 
 # from 362.0 362.1
@@ -3777,10 +5179,10 @@ DialogStateBuilder('DMORTE.D_s363') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's363', 'say35248') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s364', 'r', 'reply35249').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s364', 'r', 'reply35249').with_action(lambda: _r35249_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s365', 'r', 'reply35252') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s365', 'r', 'reply35255') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35256') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35256').with_action(lambda: _dispose()) \
     .done()
 
 # from 363.0
@@ -3788,7 +5190,7 @@ DialogStateBuilder('DMORTE.D_s364') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's364', 'say35250') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35251') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35251').with_action(lambda: _dispose()) \
     .done()
 
 # from 363.1 363.2
@@ -3796,7 +5198,7 @@ DialogStateBuilder('DMORTE.D_s365') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's365', 'say35253') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35254') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35254').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3804,8 +5206,8 @@ DialogStateBuilder('DMORTE.D_s366') \
     .with_npc_lines() \
         .line(SPEAKER, "Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?", 's366', 'say35278') \
     .with_responses() \
-        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s367', 'r', 'reply35279').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
-        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s367', 'r', 'reply35289').with_action(lambda: ' DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~ ') \
+        .response("О чем это ты *толкуешь*?", 'DMORTE.D_s367', 'r', 'reply35279').with_action(lambda: _r35279_action()) \
+        .response("Ты имеешь в виду этот бессмысленный пустой могильный взгляд?", 'DMORTE.D_s367', 'r', 'reply35289').with_action(lambda: _r35289_action()) \
     .done()
 
 # from 366.0 366.1
@@ -3813,10 +5215,10 @@ DialogStateBuilder('DMORTE.D_s367') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!", 's367', 'say35280') \
     .with_responses() \
-        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s368', 'r', 'reply35281').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1) ~ ') \
+        .response("Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.", 'DMORTE.D_s368', 'r', 'reply35281').with_action(lambda: _r35281_action()) \
         .response("По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.", 'DMORTE.D_s369', 'r', 'reply35284') \
         .response("По-моему, тебе стоит время от времени отключать свое воображение.", 'DMORTE.D_s369', 'r', 'reply35287') \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35288') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35288').with_action(lambda: _dispose()) \
     .done()
 
 # from 367.0
@@ -3824,7 +5226,7 @@ DialogStateBuilder('DMORTE.D_s368') \
     .with_npc_lines() \
         .line(SPEAKER, "Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры', 'у меня великолепное тело' и 'я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.", 's368', 'say35282') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35283') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35283').with_action(lambda: _dispose()) \
     .done()
 
 # from 367.1 367.2
@@ -3832,7 +5234,7 @@ DialogStateBuilder('DMORTE.D_s369') \
     .with_npc_lines() \
         .line(SPEAKER, "Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями 'А?' 'Чего здесь творится?' 'Куда пропала моя па-па-память?'", 's369', 'say35285') \
     .with_responses() \
-        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35286') \
+        .response("Как знаешь, Морт. Идем.", EXIT, 'r', 'reply35286').with_action(lambda: _dispose()) \
     .done()
 
 # from 377.3
@@ -3860,7 +5262,7 @@ DialogStateBuilder('DMORTE.D_s372') \
         .line(SPEAKER, "Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.", 's372', 'say35314') \
     .with_responses() \
         .response("А ты, значит, нет?", 'DMORTE.D_s373', 'r', 'reply35315') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply35324') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply35324').with_action(lambda: _dispose()) \
     .done()
 
 # from 370.2 371.1 372.0
@@ -3869,7 +5271,7 @@ DialogStateBuilder('DMORTE.D_s373') \
         .line(SPEAKER, "Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.", 's373', 'say35316') \
     .with_responses() \
         .response("Да? Зато у *меня* все при себе.", 'DMORTE.D_s374', 'r', 'reply35317') \
-        .response("Идем.", EXIT, 'r', 'reply35323') \
+        .response("Идем.", EXIT, 'r', 'reply35323').with_action(lambda: _dispose()) \
     .done()
 
 # from 373.0
@@ -3877,8 +5279,8 @@ DialogStateBuilder('DMORTE.D_s374') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.", 's374', 'say35318') \
     .with_responses() \
-        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s375', 'r', 'reply35319').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1) ~ ') \
-        .response("Идем.", EXIT, 'r', 'reply35322') \
+        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s375', 'r', 'reply35319').with_action(lambda: _r35319_action()) \
+        .response("Идем.", EXIT, 'r', 'reply35322').with_action(lambda: _dispose()) \
     .done()
 
 # from 374.0
@@ -3886,7 +5288,7 @@ DialogStateBuilder('DMORTE.D_s375') \
     .with_npc_lines() \
         .line(SPEAKER, "Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.", 's375', 'say35320') \
     .with_responses() \
-        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35321') \
+        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35321').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3894,8 +5296,8 @@ DialogStateBuilder('DMORTE.D_s376') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.", 's376', 'say35341') \
     .with_responses() \
-        .response("И что?", 'DMORTE.D_s377', 'r', 'reply35342').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",-1) ~ ') \
-        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s377', 'r', 'reply35360').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",1) ~ ') \
+        .response("И что?", 'DMORTE.D_s377', 'r', 'reply35342').with_action(lambda: _r35342_action()) \
+        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s377', 'r', 'reply35360').with_action(lambda: _r35360_action()) \
         .response("Ну, тогда ладно. Может, в другой раз.", 'DMORTE.D_s377', 'r', 'reply35361') \
     .done()
 
@@ -3907,11 +5309,11 @@ DialogStateBuilder('DMORTE.D_s377') \
     .with_npc_lines() \
         .line(SPEAKER, "Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.", 's377', 'say35343') \
     .with_responses() \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35344').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35352').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35355').with_condition(lambda: '  PartyHasItem("Prybar") ') \
-        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s370', 'r', 'reply35358').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ ') \
-        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35359').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ') \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35344').with_condition(lambda: _r35344_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35352').with_condition(lambda: _r35352_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35355').with_condition(lambda: _r35355_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s370', 'r', 'reply35358').with_condition(lambda: _r35358_condition()).with_action(lambda: _r35358_action()) \
+        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35359').with_condition(lambda: _r35359_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 385.3
@@ -3939,7 +5341,7 @@ DialogStateBuilder('DMORTE.D_s380') \
         .line(SPEAKER, "Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.", 's380', 'say35391') \
     .with_responses() \
         .response("А ты, значит, нет?", 'DMORTE.D_s381', 'r', 'reply35392') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply35401') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply35401').with_action(lambda: _dispose()) \
     .done()
 
 # from 378.2 379.1 380.0
@@ -3948,7 +5350,7 @@ DialogStateBuilder('DMORTE.D_s381') \
         .line(SPEAKER, "Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.", 's381', 'say35393') \
     .with_responses() \
         .response("Да? Зато у *меня* все при себе.", 'DMORTE.D_s382', 'r', 'reply35394') \
-        .response("Идем.", EXIT, 'r', 'reply35400') \
+        .response("Идем.", EXIT, 'r', 'reply35400').with_action(lambda: _dispose()) \
     .done()
 
 # from 381.0
@@ -3956,8 +5358,8 @@ DialogStateBuilder('DMORTE.D_s382') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.", 's382', 'say35395') \
     .with_responses() \
-        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s383', 'r', 'reply35396').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1) ~ ') \
-        .response("Идем.", EXIT, 'r', 'reply35399') \
+        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s383', 'r', 'reply35396').with_action(lambda: _r35396_action()) \
+        .response("Идем.", EXIT, 'r', 'reply35399').with_action(lambda: _dispose()) \
     .done()
 
 # from 382.0
@@ -3965,7 +5367,7 @@ DialogStateBuilder('DMORTE.D_s383') \
     .with_npc_lines() \
         .line(SPEAKER, "Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.", 's383', 'say35397') \
     .with_responses() \
-        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35398') \
+        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35398').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -3973,8 +5375,8 @@ DialogStateBuilder('DMORTE.D_s384') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.", 's384', 'say35418') \
     .with_responses() \
-        .response("И что?", 'DMORTE.D_s385', 'r', 'reply35419').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",-1) ~ ') \
-        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s385', 'r', 'reply35437').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",1) ~ ') \
+        .response("И что?", 'DMORTE.D_s385', 'r', 'reply35419').with_action(lambda: _r35419_action()) \
+        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s385', 'r', 'reply35437').with_action(lambda: _r35437_action()) \
         .response("Ну, тогда ладно. Может, в другой раз.", 'DMORTE.D_s385', 'r', 'reply35438') \
     .done()
 
@@ -3986,11 +5388,11 @@ DialogStateBuilder('DMORTE.D_s385') \
     .with_npc_lines() \
         .line(SPEAKER, "Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.", 's385', 'say35420') \
     .with_responses() \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35421').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35429').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35432').with_condition(lambda: '  PartyHasItem("Prybar") ') \
-        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s378', 'r', 'reply35435').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ ') \
-        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35436').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ') \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35421').with_condition(lambda: _r35421_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35429').with_condition(lambda: _r35429_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35432').with_condition(lambda: _r35432_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s378', 'r', 'reply35435').with_condition(lambda: _r35435_condition()).with_action(lambda: _r35435_action()) \
+        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35436').with_condition(lambda: _r35436_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 393.3
@@ -4018,7 +5420,7 @@ DialogStateBuilder('DMORTE.D_s388') \
         .line(SPEAKER, "Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.", 's388', 'say35468') \
     .with_responses() \
         .response("А ты, значит, нет?", 'DMORTE.D_s389', 'r', 'reply35469') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply35478') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply35478').with_action(lambda: _dispose()) \
     .done()
 
 # from 386.2 387.1 388.0
@@ -4027,7 +5429,7 @@ DialogStateBuilder('DMORTE.D_s389') \
         .line(SPEAKER, "Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.", 's389', 'say35470') \
     .with_responses() \
         .response("Да? Зато у *меня* все при себе.", 'DMORTE.D_s390', 'r', 'reply35471') \
-        .response("Идем.", EXIT, 'r', 'reply35477') \
+        .response("Идем.", EXIT, 'r', 'reply35477').with_action(lambda: _dispose()) \
     .done()
 
 # from 389.0
@@ -4035,8 +5437,8 @@ DialogStateBuilder('DMORTE.D_s390') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.", 's390', 'say35472') \
     .with_responses() \
-        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s391', 'r', 'reply35473').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1) ~ ') \
-        .response("Идем.", EXIT, 'r', 'reply35476') \
+        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s391', 'r', 'reply35473').with_action(lambda: _r35473_action()) \
+        .response("Идем.", EXIT, 'r', 'reply35476').with_action(lambda: _dispose()) \
     .done()
 
 # from 390.0
@@ -4044,7 +5446,7 @@ DialogStateBuilder('DMORTE.D_s391') \
     .with_npc_lines() \
         .line(SPEAKER, "Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.", 's391', 'say35474') \
     .with_responses() \
-        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35475') \
+        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35475').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -4052,8 +5454,8 @@ DialogStateBuilder('DMORTE.D_s392') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.", 's392', 'say35495') \
     .with_responses() \
-        .response("И что?", 'DMORTE.D_s393', 'r', 'reply35496').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",-1) ~ ') \
-        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s393', 'r', 'reply35514').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",1) ~ ') \
+        .response("И что?", 'DMORTE.D_s393', 'r', 'reply35496').with_action(lambda: _r35496_action()) \
+        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s393', 'r', 'reply35514').with_action(lambda: _r35514_action()) \
         .response("Ну, тогда ладно. Может, в другой раз.", 'DMORTE.D_s393', 'r', 'reply35515') \
     .done()
 
@@ -4065,11 +5467,11 @@ DialogStateBuilder('DMORTE.D_s393') \
     .with_npc_lines() \
         .line(SPEAKER, "Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.", 's393', 'say35497') \
     .with_responses() \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35498').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35506').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35509').with_condition(lambda: '  PartyHasItem("Prybar") ') \
-        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s386', 'r', 'reply35512').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ ') \
-        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35513').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ') \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35498').with_condition(lambda: _r35498_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35506').with_condition(lambda: _r35506_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35509').with_condition(lambda: _r35509_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s386', 'r', 'reply35512').with_condition(lambda: _r35512_condition()).with_action(lambda: _r35512_action()) \
+        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35513').with_condition(lambda: _r35513_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 401.3
@@ -4097,7 +5499,7 @@ DialogStateBuilder('DMORTE.D_s396') \
         .line(SPEAKER, "Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.", 's396', 'say35545') \
     .with_responses() \
         .response("А ты, значит, нет?", 'DMORTE.D_s397', 'r', 'reply35546') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply35555') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply35555').with_action(lambda: _dispose()) \
     .done()
 
 # from 394.2 395.1 396.0
@@ -4106,7 +5508,7 @@ DialogStateBuilder('DMORTE.D_s397') \
         .line(SPEAKER, "Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.", 's397', 'say35547') \
     .with_responses() \
         .response("Да? Зато у *меня* все при себе.", 'DMORTE.D_s398', 'r', 'reply35548') \
-        .response("Идем.", EXIT, 'r', 'reply35554') \
+        .response("Идем.", EXIT, 'r', 'reply35554').with_action(lambda: _dispose()) \
     .done()
 
 # from 397.0
@@ -4114,8 +5516,8 @@ DialogStateBuilder('DMORTE.D_s398') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.", 's398', 'say35549') \
     .with_responses() \
-        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s399', 'r', 'reply35550').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1) ~ ') \
-        .response("Идем.", EXIT, 'r', 'reply35553') \
+        .response("Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.", 'DMORTE.D_s399', 'r', 'reply35550').with_action(lambda: _r35550_action()) \
+        .response("Идем.", EXIT, 'r', 'reply35553').with_action(lambda: _dispose()) \
     .done()
 
 # from 398.0
@@ -4123,7 +5525,7 @@ DialogStateBuilder('DMORTE.D_s399') \
     .with_npc_lines() \
         .line(SPEAKER, "Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.", 's399', 'say35551') \
     .with_responses() \
-        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35552') \
+        .response("Очень приятно это слышать. Идем.", EXIT, 'r', 'reply35552').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -4131,8 +5533,8 @@ DialogStateBuilder('DMORTE.D_s400') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.", 's400', 'say35572') \
     .with_responses() \
-        .response("И что?", 'DMORTE.D_s401', 'r', 'reply35573').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",-1) ~ ') \
-        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s401', 'r', 'reply35591').with_action(lambda: ' DO ~IncrementGlobal("Good","GLOBAL",1) ~ ') \
+        .response("И что?", 'DMORTE.D_s401', 'r', 'reply35573').with_action(lambda: _r35573_action()) \
+        .response("О… Я не хотел ему навредить.", 'DMORTE.D_s401', 'r', 'reply35591').with_action(lambda: _r35591_action()) \
         .response("Ну, тогда ладно. Может, в другой раз.", 'DMORTE.D_s401', 'r', 'reply35592') \
     .done()
 
@@ -4144,11 +5546,11 @@ DialogStateBuilder('DMORTE.D_s401') \
     .with_npc_lines() \
         .line(SPEAKER, "Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.", 's401', 'say35574') \
     .with_responses() \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35575').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35583').with_condition(lambda: '  !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ') \
-        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35586').with_condition(lambda: '  PartyHasItem("Prybar") ') \
-        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s394', 'r', 'reply35589').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ ') \
-        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35590').with_condition(lambda: '  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ') \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35575').with_condition(lambda: _r35575_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35583').with_condition(lambda: _r35583_condition()).with_action(lambda: _dispose()) \
+        .response("Попробовать вытащить скобы из суставов скелета.", EXIT, 'r', 'reply35586').with_condition(lambda: _r35586_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, может быть, в другой раз.", 'DMORTE.D_s394', 'r', 'reply35589').with_condition(lambda: _r35589_condition()).with_action(lambda: _r35589_action()) \
+        .response("Неважно, может быть, в другой раз.", EXIT, 'r', 'reply35590').with_condition(lambda: _r35590_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4159,7 +5561,7 @@ DialogStateBuilder('DMORTE.D_s402') \
     .with_npc_lines() \
         .line(SPEAKER, "Я уже втрескался в эту крошку по уши!", 's402', 'say38265') \
     .with_responses() \
-        .response("А написать или показать жестами?", EXIT, 'r', 'reply38267') \
+        .response("А написать или показать жестами?", EXIT, 'r', 'reply38267').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4170,7 +5572,7 @@ DialogStateBuilder('DMORTE.D_s403') \
     .with_npc_lines() \
         .line(SPEAKER, "Ой!", 's403', 'say38266') \
     .with_responses() \
-        .response("А?", EXIT, 'r', 'reply38268') \
+        .response("А?", EXIT, 'r', 'reply38268').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4228,7 +5630,7 @@ DialogStateBuilder('DMORTE.D_s409') \
         .line(SPEAKER, "Нет-нет, я расскажу… Просто я решил, что стоит немного поныть — согласно обычаю. К тому же, я люблю, когда мне уделяют внимание.", 's409', 'say39566') \
     .with_responses() \
         .response("Нет уж, Морт. Я не желаю слышать ее.", 'DMORTE.D_s410', 'r', 'reply39715') \
-        .response("Ладно… тогда давай.", 'DMORTE.D_s414', 'r', 'reply39716').with_action(lambda: ' DO ~SetGlobal("Yves_Shared","AR0605",1) ~ ') \
+        .response("Ладно… тогда давай.", 'DMORTE.D_s414', 'r', 'reply39716').with_action(lambda: _r39716_action()) \
     .done()
 
 # from 409.0
@@ -4238,7 +5640,7 @@ DialogStateBuilder('DMORTE.D_s410') \
     .with_responses() \
         .response("Не может быть, чтобы все было настолько хорошо.", 'DMORTE.D_s411', 'r', 'reply39717') \
         .response("Что такое денуэман?", 'DMORTE.D_s412', 'r', 'reply39718') \
-        .response("Ладно… валяй.", 'DMORTE.D_s414', 'r', 'reply39719').with_action(lambda: ' DO ~SetGlobal("Yves_Shared","AR0605",1) ~ ') \
+        .response("Ладно… валяй.", 'DMORTE.D_s414', 'r', 'reply39719').with_action(lambda: _r39719_action()) \
     .done()
 
 # from 410.0
@@ -4247,7 +5649,7 @@ DialogStateBuilder('DMORTE.D_s411') \
         .line(SPEAKER, "Может! Может! *Давай*!", 's411', 'say39568') \
     .with_responses() \
         .response("Постой… что такое денуэман?", 'DMORTE.D_s412', 'r', 'reply39720') \
-        .response("Ладно, валяй.", 'DMORTE.D_s414', 'r', 'reply39721').with_action(lambda: ' DO ~SetGlobal("Yves_Shared","AR0605",1) ~ ') \
+        .response("Ладно, валяй.", 'DMORTE.D_s414', 'r', 'reply39721').with_action(lambda: _r39721_action()) \
     .done()
 
 # from 410.1 411.0
@@ -4255,7 +5657,7 @@ DialogStateBuilder('DMORTE.D_s412') \
     .with_npc_lines() \
         .line(SPEAKER, "Понятия не имею! Но *звучит* впечатляюще!", 's412', 'say39569') \
     .with_responses() \
-        .response("Ладно, валяй.", 'DMORTE.D_s414', 'r', 'reply39722').with_action(lambda: ' DO ~SetGlobal("Yves_Shared","AR0605",1) ~ ') \
+        .response("Ладно, валяй.", 'DMORTE.D_s414', 'r', 'reply39722').with_action(lambda: _r39722_action()) \
     .done()
 
 # from 408.1
@@ -4274,8 +5676,8 @@ DialogStateBuilder('DMORTE.D_s414') \
         .line(SPEAKER, "Сидел себе старик на краю темной дороги, так? Он не был уверен, в какую сторону идти, и он не помнил, куда он направлялся и кем он был. Он присел ненадолго, чтобы дать отдых своим уставшим ногам, и вдруг видит перед собой старуху. Она беззубо улыбнулась и, хихикая, промолвила: 'А теперь твое третье желание. Каким оно будет?'", 's414', 'say39571') \
     .with_responses() \
         .response("Продолжай, Морт.", 'DMORTE.D_s415', 'r', 'reply39724') \
-        .response("Погоди… У меня есть вопросы к Ив…", EXIT, 'r', 'reply39725') \
-        .response("Морт, мы послушаем ее в другой раз. Счастливо, Ив.", EXIT, 'r', 'reply39726') \
+        .response("Погоди… У меня есть вопросы к Ив…", EXIT, 'r', 'reply39725').with_action(lambda: _dispose()) \
+        .response("Морт, мы послушаем ее в другой раз. Счастливо, Ив.", EXIT, 'r', 'reply39726').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4287,8 +5689,8 @@ DialogStateBuilder('DMORTE.D_s415') \
         .line(SPEAKER, "'Третье желание? — ответил старик в замешательстве. — Как оно может быть третьим, если второго и первого не было?'", 's415', 'say39572') \
     .with_responses() \
         .response("Продолжай, Морт.", 'DMORTE.D_s416', 'r', 'reply39727') \
-        .response("Погоди… У меня есть вопросы к Ив…", EXIT, 'r', 'reply39728') \
-        .response("Морт, мы послушаем ее в другой раз. Счастливо, Ив.", EXIT, 'r', 'reply39729') \
+        .response("Погоди… У меня есть вопросы к Ив…", EXIT, 'r', 'reply39728').with_action(lambda: _dispose()) \
+        .response("Морт, мы послушаем ее в другой раз. Счастливо, Ив.", EXIT, 'r', 'reply39729').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4300,8 +5702,8 @@ DialogStateBuilder('DMORTE.D_s416') \
         .line(SPEAKER, "'Ты уже загадал два желания — со смехом ответила старая карга, — но твоим вторым желанием было, чтобы все стало таким, каким оно было до того, как ты загадал первое желание. Потому ты ничего и не помнишь: ведь все так, как было до того, как ты начал загадывать желания. Так что у тебя осталось одно желание'.", 's416', 'say39573') \
     .with_responses() \
         .response("Продолжай, Морт.", 'DMORTE.D_s417', 'r', 'reply39752') \
-        .response("Погоди… У меня есть вопросы к Ив…", EXIT, 'r', 'reply39753') \
-        .response("Морт, мы послушаем ее в другой раз. Счастливо, Ив.", EXIT, 'r', 'reply39754') \
+        .response("Погоди… У меня есть вопросы к Ив…", EXIT, 'r', 'reply39753').with_action(lambda: _dispose()) \
+        .response("Морт, мы послушаем ее в другой раз. Счастливо, Ив.", EXIT, 'r', 'reply39754').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4352,11 +5754,11 @@ DialogStateBuilder('DMORTE.D_s421') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт вертится вокруг тебя, подшучивая над очевидностью слов девушки. Силы небесные, шеф… а ведь она права! Как я раньше не заметил… ты же весь в *шрамах*!", 's421', 'say40068') \
     .with_responses() \
-        .response("Это все старые шрамы. Я в порядке.", EXIT, 'r', 'reply40069').with_condition(lambda: '  !NearbyDialog("DMorte") HPPercent(Protagonist,100) ') \
-        .response("Только немного. Я очень скоро поправлюсь.", EXIT, 'r', 'reply40070').with_condition(lambda: '  !NearbyDialog("DMorte") HPPercentGT(Protagonist,49) ') \
-        .response("Да. И очень сильно.", EXIT, 'r', 'reply40071').with_condition(lambda: '  !NearbyDialog("DMorte") HPPercentLT(Protagonist,50) ') \
-        .response("Не думай об этом. У меня еще вопросы…", EXIT, 'r', 'reply40072') \
-        .response("Не волнуйся об этом. Счастливо.", EXIT, 'r', 'reply40073') \
+        .response("Это все старые шрамы. Я в порядке.", EXIT, 'r', 'reply40069').with_condition(lambda: _r40069_condition()).with_action(lambda: _dispose()) \
+        .response("Только немного. Я очень скоро поправлюсь.", EXIT, 'r', 'reply40070').with_condition(lambda: _r40070_condition()).with_action(lambda: _dispose()) \
+        .response("Да. И очень сильно.", EXIT, 'r', 'reply40071').with_condition(lambda: _r40071_condition()).with_action(lambda: _dispose()) \
+        .response("Не думай об этом. У меня еще вопросы…", EXIT, 'r', 'reply40072').with_action(lambda: _dispose()) \
+        .response("Не волнуйся об этом. Счастливо.", EXIT, 'r', 'reply40073').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -4375,10 +5777,10 @@ DialogStateBuilder('DMORTE.D_s423') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт умолкает.", 's423', 'say40076') \
     .with_responses() \
-        .response("Нет проблем, Ненни.", EXIT, 'r', 'reply40077').with_condition(lambda: '  Global("Nenny","GLOBAL",2) ') \
-        .response("Следи, чтобы это больше не повторилось, Ненни.", EXIT, 'r', 'reply40078').with_condition(lambda: '  Global("Nenny","GLOBAL",2) ') \
-        .response("Нет проблем, барышня.", EXIT, 'r', 'reply40079').with_condition(lambda: '  Global("Nenny","GLOBAL",1) ') \
-        .response("Следи, чтобы это больше не повторилось, девочка.", EXIT, 'r', 'reply40080').with_condition(lambda: '  Global("Nenny","GLOBAL",1) ') \
+        .response("Нет проблем, Ненни.", EXIT, 'r', 'reply40077').with_condition(lambda: _r40077_condition()).with_action(lambda: _dispose()) \
+        .response("Следи, чтобы это больше не повторилось, Ненни.", EXIT, 'r', 'reply40078').with_condition(lambda: _r40078_condition()).with_action(lambda: _dispose()) \
+        .response("Нет проблем, барышня.", EXIT, 'r', 'reply40079').with_condition(lambda: _r40079_condition()).with_action(lambda: _dispose()) \
+        .response("Следи, чтобы это больше не повторилось, девочка.", EXIT, 'r', 'reply40080').with_condition(lambda: _r40080_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4399,8 +5801,8 @@ DialogStateBuilder('DMORTE.D_s425') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт бурчит себе под нос: Думаю, хорошо, что там *вообще* хоть что-нибудь есть.", 's425', 'say40082') \
     .with_responses() \
-        .response("У меня другой вопрос, Ненни…", EXIT, 'r', 'reply40083') \
-        .response("Это все, что я хотел узнать, Ненни. Прощай.", EXIT, 'r', 'reply40084') \
+        .response("У меня другой вопрос, Ненни…", EXIT, 'r', 'reply40083').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел узнать, Ненни. Прощай.", EXIT, 'r', 'reply40084').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4411,9 +5813,9 @@ DialogStateBuilder('DMORTE.D_s426') \
     .with_npc_lines() \
         .line(SPEAKER, "Ооо, нет… ты просто *обязан* нам сейчас же все рассказать.", 's426', 'say40222') \
     .with_responses() \
-        .response("Да… пожалуйста, расскажи нам.", EXIT, 'r', 'reply40223') \
-        .response("Брось это, Морт. У меня к нему другой вопрос…", EXIT, 'r', 'reply40224') \
-        .response("Забудь об этом, Морт. Идем.", EXIT, 'r', 'reply40225') \
+        .response("Да… пожалуйста, расскажи нам.", EXIT, 'r', 'reply40223').with_action(lambda: _dispose()) \
+        .response("Брось это, Морт. У меня к нему другой вопрос…", EXIT, 'r', 'reply40224').with_action(lambda: _dispose()) \
+        .response("Забудь об этом, Морт. Идем.", EXIT, 'r', 'reply40225').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4424,10 +5826,10 @@ DialogStateBuilder('DMORTE.D_s427') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт подлетает поближе к тебе и шепчет: Мне жаль ее любовника. Он не представляет, как плохо обстоят дела. От таких девчонок, как эта, одни проблемы.", 's427', 'say40275') \
     .with_responses() \
-        .response("Это звучит не очень мудро, Джульетта. Довольствуйся тем, что имеешь.", EXIT, 'r', 'reply40276') \
-        .response("Что у тебя на уме, Джульетта?", EXIT, 'r', 'reply40277') \
-        .response("У меня еще вопросы, Джульетта…", EXIT, 'r', 'reply40278') \
-        .response("Это все, что я хотел узнать, Джульетта. Прощай.", EXIT, 'r', 'reply40279') \
+        .response("Это звучит не очень мудро, Джульетта. Довольствуйся тем, что имеешь.", EXIT, 'r', 'reply40276').with_action(lambda: _dispose()) \
+        .response("Что у тебя на уме, Джульетта?", EXIT, 'r', 'reply40277').with_action(lambda: _dispose()) \
+        .response("У меня еще вопросы, Джульетта…", EXIT, 'r', 'reply40278').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел узнать, Джульетта. Прощай.", EXIT, 'r', 'reply40279').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4438,9 +5840,9 @@ DialogStateBuilder('DMORTE.D_s428') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт тихонько шепчет: Ух ты… жуткая девчонка.", 's428', 'say40685') \
     .with_responses() \
-        .response("Прошу прощения, миледи… Не думал, что тут кто-нибудь есть.", EXIT, 'r', 'reply40686') \
-        .response("У меня есть несколько вопросов, миледи…", EXIT, 'r', 'reply40687') \
-        .response("В таком случае, прощайте, миледи.", EXIT, 'r', 'reply40688') \
+        .response("Прошу прощения, миледи… Не думал, что тут кто-нибудь есть.", EXIT, 'r', 'reply40686').with_action(lambda: _dispose()) \
+        .response("У меня есть несколько вопросов, миледи…", EXIT, 'r', 'reply40687').with_action(lambda: _dispose()) \
+        .response("В таком случае, прощайте, миледи.", EXIT, 'r', 'reply40688').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4452,9 +5854,9 @@ DialogStateBuilder('DMORTE.D_s429') \
         .line(SPEAKER, "Брось, шеф! Мы в доме, где полным-полно самых сексуальных цыпочек по эту сторону мультивселенной, а ты останавливаешься, чтобы поболтать с *модронами*?", 's429', 'say40846') \
     .with_responses() \
         .response("Что ты можешь рассказать о них, Морт?", 'DMORTE.D_s430', 'r', 'reply40847') \
-        .response("Не обращать внимания на Морта и поздороваться с модроном.", EXIT, 'r', 'reply40848').with_action(lambda: ' DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~ ') \
+        .response("Не обращать внимания на Морта и поздороваться с модроном.", EXIT, 'r', 'reply40848').with_action(lambda: _r40848_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Прошу прощения, Морт, но я разговариваю с модроном.", 'DMORTE.D_s431', 'r', 'reply40849') \
-        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply40850') \
+        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply40850').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4465,9 +5867,9 @@ DialogStateBuilder('DMORTE.D_s430') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт издает звук крайнего отвращения. Что тут сказать? Мелкие назойливые механические жучки… без передыху трудятся над навязыванием закона и порядка в мультивселенной. Заметь, не *добра*… только порядка. Давай просто забудем о них и пойдем поболтаем с дамочками, а?", 's430', 'say40851') \
     .with_responses() \
-        .response("Не обращать внимания на Морта и поздороваться с модроном.", EXIT, 'r', 'reply40852').with_action(lambda: ' DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~ ') \
+        .response("Не обращать внимания на Морта и поздороваться с модроном.", EXIT, 'r', 'reply40852').with_action(lambda: _r40852_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Прошу прощения, Морт, но я разговариваю с модроном.", 'DMORTE.D_s431', 'r', 'reply40853') \
-        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply40854') \
+        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply40854').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4478,7 +5880,7 @@ DialogStateBuilder('DMORTE.D_s431') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт громко вздыхает. Ладно, как знаешь… Только не говори, что я тебя не предупреждал. Хотя ты, наверное, многого от них не добьешься… у них довольно странная манера разговора.", 's431', 'say40855') \
     .with_responses() \
-        .response("Приветствую…", EXIT, 'r', 'reply40856').with_action(lambda: ' DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~ ') \
+        .response("Приветствую…", EXIT, 'r', 'reply40856').with_action(lambda: _r40856_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -4519,8 +5921,8 @@ DialogStateBuilder('DMORTE.D_s435') \
     .with_npc_lines() \
         .line(SPEAKER, "Конечно, шеф, как скажешь. Хороша, чертовка, а? — Морт фыркает, затем двигает бровями. — Это мне *нравится*!", 's435', 'say41633') \
     .with_responses() \
-        .response("Уверен, так оно и есть, Морт, но мне нужно с ней поговорить.", EXIT, 'r', 'reply41634') \
-        .response("Ладно… Тогда идем, Морт.", EXIT, 'r', 'reply41635') \
+        .response("Уверен, так оно и есть, Морт, но мне нужно с ней поговорить.", EXIT, 'r', 'reply41634').with_action(lambda: _dispose()) \
+        .response("Ладно… Тогда идем, Морт.", EXIT, 'r', 'reply41635').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4532,7 +5934,7 @@ DialogStateBuilder('DMORTE.D_s436') \
         .line(SPEAKER, "Как будто бы я оставил его где-то рядом, если бы оно у меня было! Что, услышала слово бордель и решила, что сможешь срубить здесь немного звенелок, блохастая помойная шлюха? Ха! Поверить не могу, что они пустили тебя внутрь со всеми этими блохами, падающими с твоих лохматых ног!", 's436', 'say41636') \
     .with_responses() \
         .response("Эй вы, двое. Прекратите.", 'DMORTE.D_s435', 'r', 'reply41637') \
-        .response("Позволить им продолжать.", EXIT, 'r', 'reply41638') \
+        .response("Позволить им продолжать.", EXIT, 'r', 'reply41638').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4563,7 +5965,7 @@ DialogStateBuilder('DMORTE.D_s439') \
     .with_npc_lines() \
         .line(SPEAKER, "Не буду, *тифлинг*. Хотя признаю, что узнал пару новых вещей… неплохо придумано, шеф! [MRT387]", 's439', 'say41641') \
     .with_responses() \
-        .response("Конечно, Морт.", EXIT, 'r', 'reply41642') \
+        .response("Конечно, Морт.", EXIT, 'r', 'reply41642').with_action(lambda: _dispose()) \
     .done()
 
 # from 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
@@ -4595,7 +5997,7 @@ DialogStateBuilder('DMORTE.D_s443') \
     .with_npc_lines() \
         .line(SPEAKER, "Записывай в него каждый свой шаг. Если начнешь забывать важные вещи… например, кто ты… или, что еще важнее, кто *я*… то воспользуйся им, чтобы освежить свою память.", 's443', 'say41836') \
     .with_responses() \
-        .response("Ладно… Уяснил. Идем.", EXIT, 'r', 'reply41837').with_action(lambda: ' JOURNAL #39516 /* ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ */ ') \
+        .response("Ладно… Уяснил. Идем.", EXIT, 'r', 'reply41837').with_action(lambda: _r41837_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
@@ -4605,13 +6007,13 @@ DialogStateBuilder('DMORTE.D_s444') \
     .with_responses() \
         .response("Можешь еще раз прочитать, что у меня вытатуировано на спине?", 'DMORTE.D_s445', 'r', 'reply41840') \
         .response("Еще раз, что это за место?", 'DMORTE.D_s450', 'r', 'reply41841') \
-        .response("Это место такое огромное… Кто за ним присматривает?", 'DMORTE.D_s451', 'r', 'reply41842').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Еще раз, кто эти смотрители?", 'DMORTE.D_s451', 'r', 'reply41843').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Это место такое огромное… Кто за ним присматривает?", 'DMORTE.D_s451', 'r', 'reply41842').with_condition(lambda: _r41842_condition()) \
+        .response("Еще раз, кто эти смотрители?", 'DMORTE.D_s451', 'r', 'reply41843').with_condition(lambda: _r41843_condition()) \
         .response("Эти трупы… откуда они все берутся?", 'DMORTE.D_s454', 'r', 'reply41844') \
-        .response("До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?", 'DMORTE.D_s455', 'r', 'reply41845').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
-        .response("Как мне использовать эти бинты?", 'DMORTE.D_s453', 'r', 'reply41846').with_condition(lambda: '  PartyHasItem("Bandage") ') \
-        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", 'DMORTE.D_s440', 'r', 'reply41847').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r', 'reply41848').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?", 'DMORTE.D_s455', 'r', 'reply41845').with_condition(lambda: _r41845_condition()) \
+        .response("Как мне использовать эти бинты?", 'DMORTE.D_s453', 'r', 'reply41846').with_condition(lambda: _r41846_condition()) \
+        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", 'DMORTE.D_s440', 'r', 'reply41847').with_condition(lambda: _r41847_condition()) \
+        .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r', 'reply41848').with_condition(lambda: _r41848_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 444.0
@@ -4621,8 +6023,8 @@ DialogStateBuilder('DMORTE.D_s445') \
     .with_responses() \
         .response("Мне просто нужно освежить свою память.", 'DMORTE.D_s446', 'r', 'reply41850') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s444', 'r', 'reply41851') \
-        .response("Ладно, забудь. Идем.", 'DMORTE.D_s440', 'r', 'reply41852').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно, забудь. Идем.", EXIT, 'r', 'reply41853').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно, забудь. Идем.", 'DMORTE.D_s440', 'r', 'reply41852').with_condition(lambda: _r41852_condition()) \
+        .response("Ладно, забудь. Идем.", EXIT, 'r', 'reply41853').with_condition(lambda: _r41853_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 445.0
@@ -4632,8 +6034,8 @@ DialogStateBuilder('DMORTE.D_s446') \
     .with_responses() \
         .response("Фарод… хм-м. Продолжай.", 'DMORTE.D_s447', 'r', 'reply41855') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s444', 'r', 'reply41856') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE.D_s440', 'r', 'reply41857').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply41858').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE.D_s440', 'r', 'reply41857').with_condition(lambda: _r41857_condition()) \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply41858').with_condition(lambda: _r41858_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 446.0
@@ -4643,8 +6045,8 @@ DialogStateBuilder('DMORTE.D_s447') \
     .with_responses() \
         .response("Когда я очнулся, рядом со мной не было дневника?", 'DMORTE.D_s448', 'r', 'reply41860') \
         .response("Тогда ладно. У меня есть другие вопросы…", 'DMORTE.D_s444', 'r', 'reply41861') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE.D_s440', 'r', 'reply41862').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply41863').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE.D_s440', 'r', 'reply41862').with_condition(lambda: _r41862_condition()) \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply41863').with_condition(lambda: _r41863_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 447.0
@@ -4654,8 +6056,8 @@ DialogStateBuilder('DMORTE.D_s448') \
     .with_responses() \
         .response("Ты уверен, что не знаешь никого по имени Фарод?", 'DMORTE.D_s449', 'r', 'reply41865') \
         .response("И то правда. У меня есть другие вопросы…", 'DMORTE.D_s444', 'r', 'reply41866') \
-        .response("Ладно. Идем.", 'DMORTE.D_s440', 'r', 'reply41867').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply41868').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно. Идем.", 'DMORTE.D_s440', 'r', 'reply41867').with_condition(lambda: _r41867_condition()) \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply41868').with_condition(lambda: _r41868_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 448.0
@@ -4664,8 +6066,8 @@ DialogStateBuilder('DMORTE.D_s449') \
         .line(SPEAKER, "Неа. В общем, какой-нибудь пень да знает, как добраться до него. Надо поспрашивать в округе… ПОСЛЕ того, как мы выберемся отсюда.", 's449', 'say41869') \
     .with_responses() \
         .response("Перед тем как мы пойдем, у меня есть еще вопросы…", 'DMORTE.D_s444', 'r', 'reply41870') \
-        .response("Ладно. Идем.", 'DMORTE.D_s440', 'r', 'reply41871').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply41872').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно. Идем.", 'DMORTE.D_s440', 'r', 'reply41871').with_condition(lambda: _r41871_condition()) \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply41872').with_condition(lambda: _r41872_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 444.1
@@ -4674,8 +6076,8 @@ DialogStateBuilder('DMORTE.D_s450') \
         .line(SPEAKER, "Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи.", 's450', 'say41873') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE.D_s444', 'r', 'reply41874') \
-        .response("Это все, что я хотел узнать. Спасибо.", 'DMORTE.D_s440', 'r', 'reply41875').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Это все, что я хотел узнать. Спасибо.", EXIT, 'r', 'reply41876').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Это все, что я хотел узнать. Спасибо.", 'DMORTE.D_s440', 'r', 'reply41875').with_condition(lambda: _r41875_condition()) \
+        .response("Это все, что я хотел узнать. Спасибо.", EXIT, 'r', 'reply41876').with_condition(lambda: _r41876_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 444.2 444.3
@@ -4685,8 +6087,8 @@ DialogStateBuilder('DMORTE.D_s451') \
     .with_responses() \
         .response("Я запутался… какое тленным дело, если я сбегу?", 'DMORTE.D_s452', 'r', 'reply41878') \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE.D_s444', 'r', 'reply41879') \
-        .response("Понятно. Тогда я буду осторожен.", 'DMORTE.D_s440', 'r', 'reply41880').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Понятно. Тогда я буду осторожен.", EXIT, 'r', 'reply41881').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Понятно. Тогда я буду осторожен.", 'DMORTE.D_s440', 'r', 'reply41880').with_condition(lambda: _r41880_condition()) \
+        .response("Понятно. Тогда я буду осторожен.", EXIT, 'r', 'reply41881').with_condition(lambda: _r41881_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 451.0
@@ -4695,8 +6097,8 @@ DialogStateBuilder('DMORTE.D_s452') \
         .line(SPEAKER, "Ты что, вообще ничего не слушал?! Я сказал, что трухлявые верят в то, что ВСЕ должны умереть, и лучше раньше, чем позже. Думаешь, что трупы, которых ты видел, счастливее в книге мертвых, чем вне ее?", 's452', 'say41882') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE.D_s444', 'r', 'reply41883') \
-        .response("Ладно… Я… попробую это запомнить.", 'DMORTE.D_s440', 'r', 'reply41884').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41885').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно… Я… попробую это запомнить.", 'DMORTE.D_s440', 'r', 'reply41884').with_condition(lambda: _r41884_condition()) \
+        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41885').with_condition(lambda: _r41885_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 444.6
@@ -4705,8 +6107,8 @@ DialogStateBuilder('DMORTE.D_s453') \
         .line(SPEAKER, "Нууу… просто *используй* их. Останавливает кровотечение и все такое.", 's453', 'say41886') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE.D_s444', 'r', 'reply41887') \
-        .response("Спасибо. Думаю, я смогу с ними справиться.", 'DMORTE.D_s440', 'r', 'reply41888').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Спасибо. Думаю, я смогу с ними справиться.", EXIT, 'r', 'reply41889').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Спасибо. Думаю, я смогу с ними справиться.", 'DMORTE.D_s440', 'r', 'reply41888').with_condition(lambda: _r41888_condition()) \
+        .response("Спасибо. Думаю, я смогу с ними справиться.", EXIT, 'r', 'reply41889').with_condition(lambda: _r41889_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 444.4
@@ -4715,8 +6117,8 @@ DialogStateBuilder('DMORTE.D_s454') \
         .line(SPEAKER, "Смерть посещает планы каждый день, шеф. Эти увальни — все, что осталось от тех бедолаг, кто продал свои тела смотрителям.", 's454', 'say41890') \
     .with_responses() \
         .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE.D_s444', 'r', 'reply41891') \
-        .response("Ладно… Я… попробую это запомнить.", 'DMORTE.D_s440', 'r', 'reply41892').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ') \
-        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41893').with_condition(lambda: '  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ') \
+        .response("Ладно… Я… попробую это запомнить.", 'DMORTE.D_s440', 'r', 'reply41892').with_condition(lambda: _r41892_condition()) \
+        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41893').with_condition(lambda: _r41893_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 444.5
@@ -4726,7 +6128,7 @@ DialogStateBuilder('DMORTE.D_s455') \
     .with_responses() \
         .response("Последняя возможность? Погоди… о *чем* это ты толкуешь?", 'DMORTE.D_s456', 'r', 'reply41895') \
         .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE.D_s444', 'r', 'reply41896') \
-        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41897') \
+        .response("Ладно… Я… попробую это запомнить.", EXIT, 'r', 'reply41897').with_action(lambda: _dispose()) \
     .done()
 
 # from 455.0
@@ -4735,9 +6137,9 @@ DialogStateBuilder('DMORTE.D_s456') \
         .line(SPEAKER, "Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?", 's456', 'say41898') \
     .with_responses() \
         .response("Нет… не очень, если честно.", 'DMORTE.D_s457', 'r', 'reply41899') \
-        .response("Ты это *несерьезно*.", 'DMORTE.D_s457', 'r', 'reply41900').with_condition(lambda: '  CheckStatGT(Protagonist,12,INT) ') \
+        .response("Ты это *несерьезно*.", 'DMORTE.D_s457', 'r', 'reply41900').with_condition(lambda: _r41900_condition()) \
         .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE.D_s444', 'r', 'reply41901') \
-        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41902') \
+        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41902').with_action(lambda: _dispose()) \
     .done()
 
 # from 456.0 456.1
@@ -4747,7 +6149,7 @@ DialogStateBuilder('DMORTE.D_s457') \
     .with_responses() \
         .response("Постой… разве ты не говорил до этого, что я *не мертвый*?", 'DMORTE.D_s458', 'r', 'reply41904') \
         .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE.D_s444', 'r', 'reply41905') \
-        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41906') \
+        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41906').with_action(lambda: _dispose()) \
     .done()
 
 # from 457.0
@@ -4756,7 +6158,7 @@ DialogStateBuilder('DMORTE.D_s458') \
         .line(SPEAKER, "Ну… хорошо, *ты*, может быть, и не мертвый, а вот *я* — да. И как я уже говорил, я не против разделить гроб с какой-нибудь из здешних красивеньких жилистых покойниц. Морт начинает в предвкушении щелкать зубами. Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится…", 's458', 'say41907') \
     .with_responses() \
         .response("У меня есть другие вопросы к тебе, Морт…", 'DMORTE.D_s444', 'r', 'reply41908') \
-        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41909') \
+        .response("Я достаточно наслушался. Идем.", EXIT, 'r', 'reply41909').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -4764,7 +6166,7 @@ DialogStateBuilder('DMORTE.D_s459') \
     .with_npc_lines() \
         .line(SPEAKER, "Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.", 's459', 'say41910') \
     .with_responses() \
-        .response("Что такое?", 'DMORTE.D_s460', 'r', 'reply41911').with_action(lambda: ' DO ~SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1) ~ ') \
+        .response("Что такое?", 'DMORTE.D_s460', 'r', 'reply41911').with_action(lambda: _r41911_action()) \
     .done()
 
 # from 459.0
@@ -4780,7 +6182,7 @@ DialogStateBuilder('DMORTE.D_s461') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… ну… *Возможно*. Чтобы определить это, нужно потрясти черепушкой вон с тем парящим трухлявиком. Вот только я не уверен, что это хорошая идея.", 's461', 'say41915') \
     .with_responses() \
-        .response("Мне нужны ответы. Я поговорю с ним.", EXIT, 'r', 'reply41916') \
+        .response("Мне нужны ответы. Я поговорю с ним.", EXIT, 'r', 'reply41916').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4791,10 +6193,10 @@ DialogStateBuilder('DMORTE.D_s462') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт шепчет: В каком-то дурдоме недостает постояльца.", 's462', 'say41919') \
     .with_responses() \
-        .response("Джамбл, у меня несколько вопросов…", EXIT, 'r', 'reply41920') \
-        .response("Ты тот, кто проклял Вонючку, не так ли?", EXIT, 'r', 'reply41921').with_condition(lambda: '  Global("Story_Reekwind_Curse","GLOBAL",1) Global("Jumble_Reekwind","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1) ~ JOURNAL #67862 /* ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ */ ') \
-        .response("Я хотел бы, чтобы ты снял проклятие с Вонючки.", EXIT, 'r', 'reply67864').with_condition(lambda: '  Global("Jumble_Reekwind","GLOBAL",1) ') \
-        .response("А теперь я ухожу, Джамбл. Прощай.", EXIT, 'r', 'reply41922') \
+        .response("Джамбл, у меня несколько вопросов…", EXIT, 'r', 'reply41920').with_action(lambda: _dispose()) \
+        .response("Ты тот, кто проклял Вонючку, не так ли?", EXIT, 'r', 'reply41921').with_condition(lambda: _r41921_condition()).with_action(lambda: _r41921_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Я хотел бы, чтобы ты снял проклятие с Вонючки.", EXIT, 'r', 'reply67864').with_condition(lambda: _r67864_condition()).with_action(lambda: _dispose()) \
+        .response("А теперь я ухожу, Джамбл. Прощай.", EXIT, 'r', 'reply41922').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4805,10 +6207,10 @@ DialogStateBuilder('DMORTE.D_s463') \
     .with_npc_lines() \
         .line(SPEAKER, "Ого… шеф, похоже, что в тебя только что бросили проклятье…", 's463', 'say41923') \
     .with_responses() \
-        .response("Что ты со мной сделал Джамбл?", EXIT, 'r', 'reply41924') \
-        .response("Джамбл… пожалуйста, убери это, что бы ты там не натворил.", EXIT, 'r', 'reply41925') \
-        .response("Что бы ты там не сделал, Джамбл, убери это… или ты об этом горько пожалеешь.", EXIT, 'r', 'reply41926') \
-        .response("Пошли уже, Морт.", EXIT, 'r', 'reply41927') \
+        .response("Что ты со мной сделал Джамбл?", EXIT, 'r', 'reply41924').with_action(lambda: _dispose()) \
+        .response("Джамбл… пожалуйста, убери это, что бы ты там не натворил.", EXIT, 'r', 'reply41925').with_action(lambda: _dispose()) \
+        .response("Что бы ты там не сделал, Джамбл, убери это… или ты об этом горько пожалеешь.", EXIT, 'r', 'reply41926').with_action(lambda: _dispose()) \
+        .response("Пошли уже, Морт.", EXIT, 'r', 'reply41927').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4829,8 +6231,8 @@ DialogStateBuilder('DMORTE.D_s465') \
     .with_npc_lines() \
         .line(SPEAKER, "Доверься мне, малыш. Начни игнорировать ее, придумай какие-нибудь придирки, пусть гадает — и тогда она станет из кожи вон лезть, лишь бы понять, в чем дело. Верно, шеф?", 's465', 'say42930') \
     .with_responses() \
-        .response("Да… Она подумает, что что-то не так, и в кои-то веки он превратится из мишени в игрока.", EXIT, 'r', 'reply42931') \
-        .response("Нет… это плохая идея.", EXIT, 'r', 'reply42932') \
+        .response("Да… Она подумает, что что-то не так, и в кои-то веки он превратится из мишени в игрока.", EXIT, 'r', 'reply42931').with_action(lambda: _dispose()) \
+        .response("Нет… это плохая идея.", EXIT, 'r', 'reply42932').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4851,11 +6253,11 @@ DialogStateBuilder('DMORTE.D_s467') \
     .with_npc_lines() \
         .line(SPEAKER, "Ух ты.", 's467', 'say43908') \
     .with_responses() \
-        .response("Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.", EXIT, 'r', 'reply43909').with_condition(lambda: '  PartyHasItem("Decant") Global("Seek_Word","GLOBAL",1) ') \
-        .response("Немель? Твоя подруга Эльвин ищет тебя.", EXIT, 'r', 'reply43910').with_condition(lambda: '  Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn") ').with_action(lambda: ' DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ JOURNAL #39490 /* ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ */ ') \
-        .response("Ты кого-то ищешь?", EXIT, 'r', 'reply43911').with_condition(lambda: '  GlobalLT("Aelwyn","GLOBAL",2) ') \
-        .response("У меня есть несколько вопросов…", EXIT, 'r', 'reply43912') \
-        .response("Мне ничего не нужно, Немель. Прощай.", EXIT, 'r', 'reply43913') \
+        .response("Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.", EXIT, 'r', 'reply43909').with_condition(lambda: _r43909_condition()).with_action(lambda: _dispose()) \
+        .response("Немель? Твоя подруга Эльвин ищет тебя.", EXIT, 'r', 'reply43910').with_condition(lambda: _r43910_condition()).with_action(lambda: _r43910_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ты кого-то ищешь?", EXIT, 'r', 'reply43911').with_condition(lambda: _r43911_condition()).with_action(lambda: _dispose()) \
+        .response("У меня есть несколько вопросов…", EXIT, 'r', 'reply43912').with_action(lambda: _dispose()) \
+        .response("Мне ничего не нужно, Немель. Прощай.", EXIT, 'r', 'reply43913').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4886,11 +6288,11 @@ DialogStateBuilder('DMORTE.D_s470') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт резко останавливается и отворачивается, что-то неразборчиво бормоча.", 's470', 'say43916') \
     .with_responses() \
-        .response("Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.", EXIT, 'r', 'reply43917').with_condition(lambda: '  PartyHasItem("Decant") Global("Seek_Word","GLOBAL",1) ') \
-        .response("Немель? Твоя подруга Эльвин ищет тебя.", EXIT, 'r', 'reply43918').with_condition(lambda: '  Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn") ').with_action(lambda: ' DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ JOURNAL #39490 /* ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ */ ') \
-        .response("Ты кого-то ищешь?", EXIT, 'r', 'reply43919').with_condition(lambda: '  GlobalLT("Aelwyn","GLOBAL",2) ') \
-        .response("У меня есть несколько вопросов…", EXIT, 'r', 'reply43920') \
-        .response("Мне ничего не нужно, Немель. Прощай.", EXIT, 'r', 'reply43921') \
+        .response("Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.", EXIT, 'r', 'reply43917').with_condition(lambda: _r43917_condition()).with_action(lambda: _dispose()) \
+        .response("Немель? Твоя подруга Эльвин ищет тебя.", EXIT, 'r', 'reply43918').with_condition(lambda: _r43918_condition()).with_action(lambda: _r43918_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ты кого-то ищешь?", EXIT, 'r', 'reply43919').with_condition(lambda: _r43919_condition()).with_action(lambda: _dispose()) \
+        .response("У меня есть несколько вопросов…", EXIT, 'r', 'reply43920').with_action(lambda: _dispose()) \
+        .response("Мне ничего не нужно, Немель. Прощай.", EXIT, 'r', 'reply43921').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -4898,7 +6300,7 @@ DialogStateBuilder('DMORTE.D_s471') \
     .with_npc_lines() \
         .line(SPEAKER, "Да ладно, шеф… Уверен, мы ведь сможем *что-нибудь* придумать. А? А?", 's471', 'say43922') \
     .with_responses() \
-        .response("Забудь об этом, Морт. Идем.", EXIT, 'r', 'reply43923') \
+        .response("Забудь об этом, Морт. Идем.", EXIT, 'r', 'reply43923').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -4949,9 +6351,9 @@ DialogStateBuilder('DMORTE.D_s476') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт громко вздыхает. Брось, шеф, мы что, и впрямь останемся на это?", 's476', 'say45026') \
     .with_responses() \
-        .response("Морт, просто немного помолчи. Я хочу послушать.", EXIT, 'r', 'reply45027') \
-        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply45028') \
-        .response("Ты прав, Морт. Идем.", EXIT, 'r', 'reply45029').with_action(lambda: ' DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~ ') \
+        .response("Морт, просто немного помолчи. Я хочу послушать.", EXIT, 'r', 'reply45027').with_action(lambda: _dispose()) \
+        .response("Не обращать внимания на Морта, продолжать слушать.", EXIT, 'r', 'reply45028').with_action(lambda: _dispose()) \
+        .response("Ты прав, Морт. Идем.", EXIT, 'r', 'reply45029').with_action(lambda: _r45029_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -4968,8 +6370,8 @@ DialogStateBuilder('DMORTE.D_s478') \
         .line(SPEAKER, "У этих трупов котелок уже почти не варит, так что они могут выполнять не больше одного задания одновременно… если приказать им делать что-то, то они будут это делать до тех пор, пока кто-нибудь их не остановит. Этот бедолага, наверное, закончил свою работу, но сообщить об этом ему забыли.", 's478', 'say45091') \
     .with_responses() \
         .response("А кто отдает им приказы?", 'DMORTE.D_s481', 'r', 'reply45092') \
-        .response("Ты что-то сказал про 'правило трех'. Что ты имел ввиду?", 'DMORTE.D_s479', 'r', 'reply45093').with_action(lambda: ' JOURNAL #39477 /* ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ */ ') \
-        .response("Ладно. Давай двигаться дальше.", EXIT, 'r', 'reply45094') \
+        .response("Ты что-то сказал про 'правило трех'. Что ты имел ввиду?", 'DMORTE.D_s479', 'r', 'reply45093').with_action(lambda: _r45093_action()) \
+        .response("Ладно. Давай двигаться дальше.", EXIT, 'r', 'reply45094').with_action(lambda: _dispose()) \
     .done()
 
 # from 478.1 481.0
@@ -4989,8 +6391,8 @@ DialogStateBuilder('DMORTE.D_s480') \
         .line(SPEAKER, "По мне, так все это фигня. Если ты возьмешь с потолка число, любое число, и попытаешься к нему приделать великий смысл, то ты всегда найдешь кучу каких-нибудь совпадений.", 's480', 'say45098') \
     .with_responses() \
         .response("Понятно. До этого ты говорил о том, что кто-то отдал этому трупу приказ, а потом забыл его остановить. А кто отдает трупам приказы?", 'DMORTE.D_s481', 'r', 'reply45099') \
-        .response("Понятно. Я хочу еще намного осмотреть этого зомби…", EXIT, 'r', 'reply45100') \
-        .response("Ладно. Давай двигаться дальше.", EXIT, 'r', 'reply45101') \
+        .response("Понятно. Я хочу еще намного осмотреть этого зомби…", EXIT, 'r', 'reply45100').with_action(lambda: _dispose()) \
+        .response("Ладно. Давай двигаться дальше.", EXIT, 'r', 'reply45101').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5001,9 +6403,9 @@ DialogStateBuilder('DMORTE.D_s481') \
     .with_npc_lines() \
         .line(SPEAKER, "Их выписал из книги мертвых либо один из здешних смотрителей, либо какой-то некромант. Скорее всего, это один из смотрителей… в конце концов, это им нужна дешевая рабочая сила.", 's481', 'say45102') \
     .with_responses() \
-        .response("Понятно. А что ты там говорил до этого… про 'правило трех'?", 'DMORTE.D_s479', 'r', 'reply45103').with_action(lambda: ' JOURNAL #39477 /* ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ */ ') \
-        .response("Понятно. Я хочу еще намного осмотреть этого зомби…", EXIT, 'r', 'reply45104') \
-        .response("Ладно. Давай двигаться дальше.", EXIT, 'r', 'reply45105') \
+        .response("Понятно. А что ты там говорил до этого… про 'правило трех'?", 'DMORTE.D_s479', 'r', 'reply45103').with_action(lambda: _r45103_action()) \
+        .response("Понятно. Я хочу еще намного осмотреть этого зомби…", EXIT, 'r', 'reply45104').with_action(lambda: _dispose()) \
+        .response("Ладно. Давай двигаться дальше.", EXIT, 'r', 'reply45105').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5044,8 +6446,8 @@ DialogStateBuilder('DMORTE.D_s485') \
     .with_npc_lines() \
         .line(SPEAKER, "О-о, аукцион! Может, подыщем мне здесь тело.", 's485', 'say45711') \
     .with_responses() \
-        .response("Хорошо, Морт. Я не забуду об этом спросить.", EXIT, 'r', 'reply45712') \
-        .response("Тогда давай уходить отсюда.", EXIT, 'r', 'reply45713') \
+        .response("Хорошо, Морт. Я не забуду об этом спросить.", EXIT, 'r', 'reply45712').with_action(lambda: _dispose()) \
+        .response("Тогда давай уходить отсюда.", EXIT, 'r', 'reply45713').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5056,8 +6458,8 @@ DialogStateBuilder('DMORTE.D_s486') \
     .with_npc_lines() \
         .line(SPEAKER, "Должно быть, это любовь. Это ведь любовь, да, босс?", 's486', 'say45714') \
     .with_responses() \
-        .response("Прекратите, вы оба. Мне нужно задать несколько вопросов.", EXIT, 'r', 'reply45715') \
-        .response("Как скажешь, Морт. Давай оставим в покое этого парня.", EXIT, 'r', 'reply45716') \
+        .response("Прекратите, вы оба. Мне нужно задать несколько вопросов.", EXIT, 'r', 'reply45715').with_action(lambda: _dispose()) \
+        .response("Как скажешь, Морт. Давай оставим в покое этого парня.", EXIT, 'r', 'reply45716').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5078,8 +6480,8 @@ DialogStateBuilder('DMORTE.D_s488') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, у этой дубинки что-то вроде зависти к чужой мудрости. Забей, палка.", 's488', 'say47813') \
     .with_responses() \
-        .response("Умолкни. У меня есть другие вопросы…", EXIT, 'r', 'reply47814') \
-        .response("На этом разговор окончен.", EXIT, 'r', 'reply47815') \
+        .response("Умолкни. У меня есть другие вопросы…", EXIT, 'r', 'reply47814').with_action(lambda: _dispose()) \
+        .response("На этом разговор окончен.", EXIT, 'r', 'reply47815').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -5087,7 +6489,7 @@ DialogStateBuilder('DMORTE.D_s489') \
     .with_npc_lines() \
         .line(SPEAKER, "Оо, гитьянки. Могу поспорить, Даккон будет *так* рад помочь.", 's489', 'say49443') \
     .with_responses() \
-        .response("Спасибо за ценное замечание, Морт. Идем.", EXIT, 'r', 'reply49444') \
+        .response("Спасибо за ценное замечание, Морт. Идем.", EXIT, 'r', 'reply49444').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5108,8 +6510,8 @@ DialogStateBuilder('DMORTE.D_s491') \
     .with_npc_lines() \
         .line(SPEAKER, "Вот *ты* и скажи, бесовка.", 's491', 'say50164') \
     .with_responses() \
-        .response("Хватит, Морт. Анна, ты можешь задать ему другие вопросы?", EXIT, 'r', 'reply50165') \
-        .response("Забудь. Уходим отсюда.", EXIT, 'r', 'reply50166').with_action(lambda: ' DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~ ') \
+        .response("Хватит, Морт. Анна, ты можешь задать ему другие вопросы?", EXIT, 'r', 'reply50165').with_action(lambda: _dispose()) \
+        .response("Забудь. Уходим отсюда.", EXIT, 'r', 'reply50166').with_action(lambda: _r50166_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -5120,7 +6522,7 @@ DialogStateBuilder('DMORTE.D_s492') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти козлиные морды пытаются сказать. Нужен переводчик? Поищи коренного сигильца.", 's492', 'say50263') \
     .with_responses() \
-        .response("Понятно.", EXIT, 'r', 'reply50264') \
+        .response("Понятно.", EXIT, 'r', 'reply50264').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5131,7 +6533,7 @@ DialogStateBuilder('DMORTE.D_s493') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси нашу маленькую бесовку, — он кивает на Анну. — Она из Улья.", 's493', 'say50266') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply50267') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply50267').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5142,7 +6544,7 @@ DialogStateBuilder('DMORTE.D_s494') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? — он кивает на Даккона. — Попроси нашего ханжу-молчуна перевести.", 's494', 'say50269') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply50270') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply50270').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5153,7 +6555,7 @@ DialogStateBuilder('DMORTE.D_s495') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси танарри, — он кивает на Падшую Грацию. — Наверное, она все время общалась с этими парнями.", 's495', 'say50272') \
     .with_responses() \
-        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply50273') \
+        .response("Наверное, так и стоит поступить…", EXIT, 'r', 'reply50273').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -5180,9 +6582,9 @@ DialogStateBuilder('DMORTE.D_s498') \
     .with_npc_lines() \
         .line(SPEAKER, "Говорят, что они слуги Леди Боли. Они парят повсюду и ломают, чинят и латают Сигил по ее капризу. Они хуже трупных мух, — Морт вздыхает. — Не нужно их трогать, а не то Леди… рассердится.", 's498', 'say50324') \
     .with_responses() \
-        .response("'Леди Боли'? Кто это?", 'DMORTE.D_s499', 'r', 'reply50325').with_condition(lambda: '  Global("Know_Lady","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Know_Lady","GLOBAL",1) ~ ') \
-        .response("Что ты можешь рассказать о Леди Боли?", 'DMORTE.D_s499', 'r', 'reply50328').with_condition(lambda: '  Global("Know_Lady","GLOBAL",1) ') \
-        .response("Понятно.", EXIT, 'r', 'reply50329').with_condition(lambda: '  Global("Know_Lady","GLOBAL",1) ') \
+        .response("'Леди Боли'? Кто это?", 'DMORTE.D_s499', 'r', 'reply50325').with_condition(lambda: _r50325_condition()).with_action(lambda: _r50325_action()) \
+        .response("Что ты можешь рассказать о Леди Боли?", 'DMORTE.D_s499', 'r', 'reply50328').with_condition(lambda: _r50328_condition()) \
+        .response("Понятно.", EXIT, 'r', 'reply50329').with_condition(lambda: _r50329_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5193,7 +6595,7 @@ DialogStateBuilder('DMORTE.D_s499') \
     .with_npc_lines() \
         .line(SPEAKER, "Она заправляет городом. Ты узнаешь ее, когда увидишь: у нее вокруг лица клинки, она ростом с гиганта и парит над землей, совсем как эти парни. Морт кивает на дабуса, смотрящего на вас обоих. Про нее никто почти ничего не знает… она не очень говорлива. Все, что тебе следует знать: не зли ее. Если увидишь ее, мой тебе совет — тикай.", 's499', 'say50326') \
     .with_responses() \
-        .response("Понятно.", EXIT, 'r', 'reply50327') \
+        .response("Понятно.", EXIT, 'r', 'reply50327').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -5212,7 +6614,7 @@ DialogStateBuilder('DMORTE.D_s501') \
         .line(SPEAKER, "ЧТО? Наверно, ты шутишь? Брось, дай посмотреть!", 's501', 'say50414') \
     .with_responses() \
         .response("Показать ему Кодекс.", 'DMORTE.D_s503', 'r', 'reply50415') \
-        .response("Нет, Морт. Просто забудь, что ты его видел.", 'DMORTE.D_s502', 'r', 'reply50416').with_action(lambda: ' DO ~MoraleDec("Morte",1) ~ ') \
+        .response("Нет, Морт. Просто забудь, что ты его видел.", 'DMORTE.D_s502', 'r', 'reply50416').with_action(lambda: _r50416_action()) \
     .done()
 
 ######
@@ -5243,9 +6645,9 @@ DialogStateBuilder('DMORTE.D_s504') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй! Эй! Эй! Ты ведь *шутишь*, правда? Ты *не можешь* говорить это серьезно, шеф!", 's504', 'say50697') \
     .with_responses() \
-        .response("Я серьезно. Берешь его, Вришика?", EXIT, 'r', 'reply50698') \
-        .response("Нет. У меня есть другой вопрос, Вришика…", EXIT, 'r', 'reply50699') \
-        .response("Ты прав, Морт: это была не лучшая идея. Пошли.", EXIT, 'r', 'reply50700') \
+        .response("Я серьезно. Берешь его, Вришика?", EXIT, 'r', 'reply50698').with_action(lambda: _dispose()) \
+        .response("Нет. У меня есть другой вопрос, Вришика…", EXIT, 'r', 'reply50699').with_action(lambda: _dispose()) \
+        .response("Ты прав, Морт: это была не лучшая идея. Пошли.", EXIT, 'r', 'reply50700').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5266,7 +6668,7 @@ DialogStateBuilder('DMORTE.D_s506') \
     .with_npc_lines() \
         .line(SPEAKER, "Она-то его проглотила, но я не уверен, из *того* ли конца он вышел.", 's506', 'say52571') \
     .with_responses() \
-        .response("Довольно… Послушай, Равель. Ты забрала мою смертность, и зла это причинило больше, чем добра. Я хочу вернуть ее обратно: похоже, она у тебя залежалась.", EXIT, 'r', 'reply52572') \
+        .response("Довольно… Послушай, Равель. Ты забрала мою смертность, и зла это причинило больше, чем добра. Я хочу вернуть ее обратно: похоже, она у тебя залежалась.", EXIT, 'r', 'reply52572').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5295,9 +6697,9 @@ DialogStateBuilder('DMORTE.D_s509') \
     .with_npc_lines() \
         .line(SPEAKER, "Умолкни?! — Морт клацает зубами. — Черта с два! Мне кажется, что мы уже достаточно наслушались, как эта старая карга трясет своей черепушкой, но теперь она уже перегибает палку, говоря, что у меня нет кожи! Ну и ЧТО?! Очевидно, тот факт, что у НЕЕ есть кожа, просто творит чудеса с ЕЕ видом! Она что, думает, мне *нравится* все время быть ГОЛЫМ? И *еще*…", 's509', 'say52576') \
     .with_responses() \
-        .response("Морт! Хватит! Равель, послушай…", EXIT, 'r', 'reply52577').with_condition(lambda: '  NearbyDialog("Dgrace") ').with_action(lambda: ' DO ~SetGlobal("Ravel_Grace","GLOBAL",2) ~ ') \
-        .response("Морт! Хватит! Равель, послушай…", EXIT, 'r', 'reply52578').with_condition(lambda: '  !NearbyDialog("DGrace") NearbyDialog("DAnnah") ').with_action(lambda: ' DO ~SetGlobal("Ravel_Annah","GLOBAL",2) ~ ') \
-        .response("Морт! Хватит! Равель, послушай…", EXIT, 'r', 'reply52579').with_condition(lambda: '  !NearbyDialog("DGrace") !NearbyDialog("DAnnah") ') \
+        .response("Морт! Хватит! Равель, послушай…", EXIT, 'r', 'reply52577').with_condition(lambda: _r52577_condition()).with_action(lambda: _r52577_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Морт! Хватит! Равель, послушай…", EXIT, 'r', 'reply52578').with_condition(lambda: _r52578_condition()).with_action(lambda: _r52578_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Морт! Хватит! Равель, послушай…", EXIT, 'r', 'reply52579').with_condition(lambda: _r52579_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5308,7 +6710,7 @@ DialogStateBuilder('DMORTE.D_s510') \
     .with_npc_lines() \
         .line(SPEAKER, "Что за бред. Ну где мы тогда сейчас находимся, технически?", 's510', 'say52644') \
     .with_responses() \
-        .response("Я и правда не хочу об этом знать, Морт.", EXIT, 'r', 'reply52771') \
+        .response("Я и правда не хочу об этом знать, Морт.", EXIT, 'r', 'reply52771').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5329,9 +6731,9 @@ DialogStateBuilder('DMORTE.D_s512') \
     .with_npc_lines() \
         .line(SPEAKER, "Только ты делаешь шаг к колонне, Морт шепчет тебе: Пссс! Шеф! Шеф… слушай, я не могу позволить этой штуковине увидеть себя. Тебе придется убрать меня отсюда… оставь меня где-нибудь, а потом подбери позже, или еще чего…", 's512', 'say53624') \
     .with_responses() \
-        .response("Забудь об этом, Морт. Я поговорю с ней прямо сейчас…", EXIT, 'r', 'reply53625').with_condition(lambda: '  Global("Morte_Story","GLOBAL",1) ').with_action(lambda: ' DO ~MoraleDec("Morte",1) ~ ') \
-        .response("Почему, Морт? Что происходит?", 'DMORTE.D_s513', 'r', 'reply53627').with_condition(lambda: '  Global("Morte_Story","GLOBAL",0) ') \
-        .response("Хорошо. Тогда пошли.", EXIT, 'r', 'reply53628') \
+        .response("Забудь об этом, Морт. Я поговорю с ней прямо сейчас…", EXIT, 'r', 'reply53625').with_condition(lambda: _r53625_condition()).with_action(lambda: _r53625_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Почему, Морт? Что происходит?", 'DMORTE.D_s513', 'r', 'reply53627').with_condition(lambda: _r53627_condition()) \
+        .response("Хорошо. Тогда пошли.", EXIT, 'r', 'reply53628').with_action(lambda: _dispose()) \
     .done()
 
 # from 512.1
@@ -5339,9 +6741,9 @@ DialogStateBuilder('DMORTE.D_s513') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… Я, правда, не хочу об этом говорить. Пойдем-ка отсюда, а? Голос Морта дрожит от страха. Его глаза бегают, смотря то на тебя, то на огромную колонну из голов.", 's513', 'say53626') \
     .with_responses() \
-        .response("Я не могу позволить тебе держать так много секретов, Морт. Тебе придется рассказать мне, что здесь происходит.", 'DMORTE.D_s514', 'r', 'reply53629').with_action(lambda: ' DO ~SetGlobal("Morte_Story","GLOBAL",1) ~ JOURNAL #53633 /* ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ */ ') \
-        .response("Хватит уклоняться от ответа, Морт. *Сейчас же* выкладывай, что здесь происходит, или ты *хочешь*, чтобы мы поболтали с головами?", 'DMORTE.D_s514', 'r', 'reply53630').with_action(lambda: ' DO ~MoraleDec("Morte",1) SetGlobal("Morte_Story","GLOBAL",1) ~ JOURNAL #53661 /* ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ */ ') \
-        .response("Хорошо. Тогда пошли.", EXIT, 'r', 'reply53631') \
+        .response("Я не могу позволить тебе держать так много секретов, Морт. Тебе придется рассказать мне, что здесь происходит.", 'DMORTE.D_s514', 'r', 'reply53629').with_action(lambda: _r53629_action()) \
+        .response("Хватит уклоняться от ответа, Морт. *Сейчас же* выкладывай, что здесь происходит, или ты *хочешь*, чтобы мы поболтали с головами?", 'DMORTE.D_s514', 'r', 'reply53630').with_action(lambda: _r53630_action()) \
+        .response("Хорошо. Тогда пошли.", EXIT, 'r', 'reply53631').with_action(lambda: _dispose()) \
     .done()
 
 # from 513.0 513.1
@@ -5349,8 +6751,8 @@ DialogStateBuilder('DMORTE.D_s514') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт вздыхает, не в силах встретиться с тобой взглядом. Наконец, он сдается. Ладно, ладно… Я тебе расскажу. На Авернусе, первом слое Баатора, есть колонна, сделанная из голов всех тех, кто своей ложью привел кого-нибудь к смерти. Ну… это и есть она. Видишь ли, когда-то я в ней был. Та еще история.", 's514', 'say53632') \
     .with_responses() \
-        .response("Значит… ты был одной из тех голов?", 'DMORTE.D_s516', 'r', 'reply53662').with_condition(lambda: '  NearbyDialog("Dannah") ') \
-        .response("Значит… ты был одной из тех голов?", 'DMORTE.D_s515', 'r', 'reply53663').with_condition(lambda: '  !NearbyDialog("Dannah") ') \
+        .response("Значит… ты был одной из тех голов?", 'DMORTE.D_s516', 'r', 'reply53662').with_condition(lambda: _r53662_condition()) \
+        .response("Значит… ты был одной из тех голов?", 'DMORTE.D_s515', 'r', 'reply53663').with_condition(lambda: _r53663_condition()) \
     .done()
 
 # from 514.1
@@ -5386,7 +6788,7 @@ DialogStateBuilder('DMORTE.D_s518') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким. Те воспоминания, они… слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны…", 's518', 'say53668') \
     .with_responses() \
-        .response("Продолжай…", 'DMORTE.D_s520', 'r', 'reply54105').with_condition(lambda: '  !NearbyDialog("DDakkon") ') \
+        .response("Продолжай…", 'DMORTE.D_s520', 'r', 'reply54105').with_condition(lambda: _r54105_condition()) \
     .done()
 
 ######
@@ -5397,11 +6799,11 @@ DialogStateBuilder('DMORTE.D_s519') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт смотрит на Даккона, потом на тебя. Думаю, да. Это именно то, что случается, когда ты умираешь. Ты… забываешь. Я, пожалуй, не был образцовым членом общества при жизни… но, черт, есть ли такие вообще? — Морт снова вздыхает. — Ну, с этим я ничего не могу поделать. Нет ничего хуже, чем все время быть честным. Ладно, слушай, шеф, если та куча голов меня увидит, она захочет меня вернуть, *еще как* захочет. Ты не должен этого допустить!", 's519', 'say53794') \
     .with_responses() \
-        .response("Забудь об этом, Морт. Я поговорю с ней прямо сейчас…", EXIT, 'r', 'reply53795').with_action(lambda: ' DO ~MoraleDec("Morte",1) ~ ') \
+        .response("Забудь об этом, Морт. Я поговорю с ней прямо сейчас…", EXIT, 'r', 'reply53795').with_action(lambda: _r53795_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Погоди… как ты освободился из Колонны?", 'DMORTE.D_s521', 'r', 'reply53796') \
         .response("Постой… почему там, в Морге, ты не сказал, что знал меня?", 'DMORTE.D_s523', 'r', 'reply53797') \
         .response("Минутку. И как давно ты меня знаешь, Морт?", 'DMORTE.D_s524', 'r', 'reply53798') \
-        .response("Ладно. Пошли, Морт.", EXIT, 'r', 'reply53799') \
+        .response("Ладно. Пошли, Морт.", EXIT, 'r', 'reply53799').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5412,11 +6814,11 @@ DialogStateBuilder('DMORTE.D_s520') \
     .with_npc_lines() \
         .line(SPEAKER, "Как бы там ни было, я, пожалуй, не был образцовым членом общества при жизни… но, черт, есть ли такие вообще? — Морт снова вздыхает. — Ну, с этим я ничего не могу поделать. Нет ничего хуже, чем все время быть честным. Ладно, слушай, шеф, если та куча голов меня увидит, она захочет меня вернуть, *еще как* захочет. Ты не должен этого допустить!", 's520', 'say53800') \
     .with_responses() \
-        .response("Забудь об этом, Морт. Я поговорю с ней прямо сейчас…", EXIT, 'r', 'reply53801').with_action(lambda: ' DO ~MoraleDec("Morte",1) ~ ') \
+        .response("Забудь об этом, Морт. Я поговорю с ней прямо сейчас…", EXIT, 'r', 'reply53801').with_action(lambda: _r53801_action()).with_action(lambda: _dispose())  ### replace two actions with one \
         .response("Погоди… как ты освободился из Колонны?", 'DMORTE.D_s521', 'r', 'reply53802') \
         .response("Постой… почему там, в Морге, ты не сказал, что знал меня?", 'DMORTE.D_s523', 'r', 'reply53803') \
         .response("Минутку. И как давно ты меня знаешь, Морт?", 'DMORTE.D_s524', 'r', 'reply53804') \
-        .response("Ладно. Пошли, Морт.", EXIT, 'r', 'reply53805') \
+        .response("Ладно. Пошли, Морт.", EXIT, 'r', 'reply53805').with_action(lambda: _dispose()) \
     .done()
 
 # from 519.1 520.1 523.1 524.1
@@ -5424,7 +6826,7 @@ DialogStateBuilder('DMORTE.D_s521') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну… ты меня вытащил, шеф. Я пробился на поверхность Колонны — ты ведь был уже здесь раньше — и вопил до тех пор, пока ты меня не заметил. Я умолял освободить себя, клялся, что пойду за тобой, буду делиться с тобой своими знаниями до конца твоих дней… Я просто не представлял, насколько это затянется, пока ты меня не выдернул.", 's521', 'say53806') \
     .with_responses() \
-        .response("А как насчет знаний Колонны?..", 'DMORTE.D_s522', 'r', 'reply53807').with_action(lambda: ' JOURNAL #53633 /* ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ */ ') \
+        .response("А как насчет знаний Колонны?..", 'DMORTE.D_s522', 'r', 'reply53807').with_action(lambda: _r53807_action()) \
     .done()
 
 # from 521.0
@@ -5435,7 +6837,7 @@ DialogStateBuilder('DMORTE.D_s522') \
         .response("А сейчас я поговорю с Колонной…", 'DMORTE.D_s512', 'r', 'reply53809') \
         .response("Почему там, в Морге, ты не сказал, что знал меня?", 'DMORTE.D_s523', 'r', 'reply53810') \
         .response("И как давно ты меня знаешь, Морт?", 'DMORTE.D_s524', 'r', 'reply53811') \
-        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply53812') \
+        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply53812').with_action(lambda: _dispose()) \
     .done()
 
 # from 519.2 520.2 522.1 524.2
@@ -5446,7 +6848,7 @@ DialogStateBuilder('DMORTE.D_s523') \
         .response("А сейчас я поговорю с Колонной…", 'DMORTE.D_s512', 'r', 'reply53814') \
         .response("Как ты освободился из Колонны?", 'DMORTE.D_s521', 'r', 'reply53815') \
         .response("И как давно ты меня знаешь, Морт?", 'DMORTE.D_s524', 'r', 'reply53816') \
-        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply53817') \
+        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply53817').with_action(lambda: _dispose()) \
     .done()
 
 # from 519.3 520.3 522.2 523.2
@@ -5457,7 +6859,7 @@ DialogStateBuilder('DMORTE.D_s524') \
         .response("А сейчас я поговорю с Колонной…", 'DMORTE.D_s512', 'r', 'reply53819') \
         .response("Как ты освободился из Колонны?", 'DMORTE.D_s521', 'r', 'reply53820') \
         .response("Почему там, в Морге, ты не сказал, что знал меня?", 'DMORTE.D_s523', 'r', 'reply53821') \
-        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply53822') \
+        .response("Хорошо. Идем, Морт.", EXIT, 'r', 'reply53822').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5478,10 +6880,10 @@ DialogStateBuilder('DMORTE.D_s526') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт трясется от страха, его зубы стучат. Я не могу вернуться, шеф! Не могу! Не могу! Не могу!", 's526', 'say53824') \
     .with_responses() \
-        .response("Он не вернется к вам. А у меня есть вопросы…", EXIT, 'r', 'reply53825').with_condition(lambda: '  NearbyDialog("Dgrace") ').with_action(lambda: ' DO ~SetGlobal("Pillar_Musk","AR1001",1) ~ ') \
-        .response("Он не вернется к вам. А у меня есть вопросы…", EXIT, 'r', 'reply53826').with_condition(lambda: '  NearbyDialog("Dannah") !NearbyDialog("Dgrace") ').with_action(lambda: ' DO ~SetGlobal("Pillar_Musk","AR1001",1) ~ ') \
-        .response("Он не вернется в Колонну Черепов. А у меня есть вопросы…", EXIT, 'r', 'reply53827').with_condition(lambda: '  !NearbyDialog("Dgrace") !NearbyDialog("Dannah") ') \
-        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53828') \
+        .response("Он не вернется к вам. А у меня есть вопросы…", EXIT, 'r', 'reply53825').with_condition(lambda: _r53825_condition()).with_action(lambda: _r53825_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Он не вернется к вам. А у меня есть вопросы…", EXIT, 'r', 'reply53826').with_condition(lambda: _r53826_condition()).with_action(lambda: _r53826_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Он не вернется в Колонну Черепов. А у меня есть вопросы…", EXIT, 'r', 'reply53827').with_condition(lambda: _r53827_condition()).with_action(lambda: _dispose()) \
+        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53828').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5512,16 +6914,16 @@ DialogStateBuilder('DMORTE.D_s529') \
     .with_npc_lines() \
         .line(SPEAKER, "Шеф? Нет! Нет! Ты *не можешь*! Брось это!", 's529', 'say53831') \
     .with_responses() \
-        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s530', 'r', 'reply53832').with_condition(lambda: '  Global("Specialist","GLOBAL",4) ') \
-        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s530', 'r', 'reply53833').with_condition(lambda: '  Global("Specialist","GLOBAL",5) ') \
-        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s530', 'r', 'reply53834').with_condition(lambda: '  Global("Specialist","GLOBAL",6) ') \
-        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s531', 'r', 'reply53835').with_condition(lambda: '  !Global("Specialist","GLOBAL",4) !Global("Specialist","GLOBAL",5) !Global("Specialist","GLOBAL",6) ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53836').with_condition(lambda: '  Global("Where_Fhjull","AR1001",0) ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53837').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53838').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53839').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53840').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah") ') \
-        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53841').with_action(lambda: ' DO ~SetGlobal("Pillar_Question","AR1001",0) ~ ') \
+        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s530', 'r', 'reply53832').with_condition(lambda: _r53832_condition()) \
+        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s530', 'r', 'reply53833').with_condition(lambda: _r53833_condition()) \
+        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s530', 'r', 'reply53834').with_condition(lambda: _r53834_condition()) \
+        .response("Не волнуйся, Морт: я заберу тебя позже.", 'DMORTE.D_s531', 'r', 'reply53835').with_condition(lambda: _r53835_condition()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53836').with_condition(lambda: _r53836_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53837').with_condition(lambda: _r53837_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53838').with_condition(lambda: _r53838_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53839').with_condition(lambda: _r53839_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53840').with_condition(lambda: _r53840_condition()).with_action(lambda: _dispose()) \
+        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53841').with_action(lambda: _r53841_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -5532,13 +6934,13 @@ DialogStateBuilder('DMORTE.D_s530') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт смотрит на тебя скептически. Ты *уверен*? *Клянешься*? Эй, о чем это я?! Нет! Ни за что! Эй, ты ведь *не можешь* вернуть меня туда?!", 's530', 'say53842') \
     .with_responses() \
-        .response("Схватить Морта и швырнуть его в Колонну Черепов.", EXIT, 'r', 'reply53843').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALEvil_Pillar_2","GLOBALGood",-1) SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~ ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53844').with_condition(lambda: '  Global("Where_Fhjull","AR1001",0) ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53863').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53864').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53865').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53866').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah") ') \
-        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53867').with_action(lambda: ' DO ~SetGlobal("Pillar_Question","AR1001",0) ~ ') \
+        .response("Схватить Морта и швырнуть его в Колонну Черепов.", EXIT, 'r', 'reply53843').with_action(lambda: _r53843_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53844').with_condition(lambda: _r53844_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53863').with_condition(lambda: _r53863_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53864').with_condition(lambda: _r53864_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53865').with_condition(lambda: _r53865_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53866').with_condition(lambda: _r53866_condition()).with_action(lambda: _dispose()) \
+        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53867').with_action(lambda: _r53867_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -5549,13 +6951,13 @@ DialogStateBuilder('DMORTE.D_s531') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт некоторое время смотрит на тебя, разинув рот. ЧЕГО? Ни за что! Ты уже не такой сильный, каким был, когда… слушай, забудь об этом; ты не сможешь этого сделать, не получится! Эй, ты же *не можешь* вернуть меня туда?!", 's531', 'say53849') \
     .with_responses() \
-        .response("Схватить Морта и швырнуть его в Колонну Черепов.", EXIT, 'r', 'reply53850').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALEvil_Pillar_2","GLOBALGood",-1) SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~ ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53851').with_condition(lambda: '  Global("Where_Fhjull","AR1001",0) ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53852').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53853').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53854').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah") ') \
-        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53855').with_condition(lambda: '  Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah") ') \
-        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53856').with_action(lambda: ' DO ~SetGlobal("Pillar_Question","AR1001",0) ~ ') \
+        .response("Схватить Морта и швырнуть его в Колонну Черепов.", EXIT, 'r', 'reply53850').with_action(lambda: _r53850_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53851').with_condition(lambda: _r53851_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53852').with_condition(lambda: _r53852_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53853').with_condition(lambda: _r53853_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53854').with_condition(lambda: _r53854_condition()).with_action(lambda: _dispose()) \
+        .response("Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?", EXIT, 'r', 'reply53855').with_condition(lambda: _r53855_condition()).with_action(lambda: _dispose()) \
+        .response("Уходим отсюда, Морт. Давай.", EXIT, 'r', 'reply53856').with_action(lambda: _r53856_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -5567,7 +6969,7 @@ DialogStateBuilder('DMORTE.D_s532') \
         .line(SPEAKER, "Эй… постой! Не так быстро! Колонна… Я мог бы рассказать вам, где находится Фьюл Раздвоенный Язык! Ну же, разве вы не это хотите знать? Что, если он расскажет это вместо меня? А? Что скажете?", 's532', 'say53857') \
     .with_responses() \
         .response("Постой, Морт. Мы не будем выдавать Фьюла.", 'DMORTE.D_s533', 'r', 'reply53858') \
-        .response("Ждать ответа Колонны.", EXIT, 'r', 'reply53859') \
+        .response("Ждать ответа Колонны.", EXIT, 'r', 'reply53859').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5578,8 +6980,8 @@ DialogStateBuilder('DMORTE.D_s533') \
     .with_npc_lines() \
         .line(SPEAKER, "Чего? Ты что, *спятил*? Ты продаешь *меня*, а не того *НЕЧИСТОГО*?! Он помог тебе только потому, что он проклят, принужден к этому! А как же *я*? Кто вытащил тебя из Морга, дружище? Кто будет стоять… э, парить… возле тебя, когда ты встретишь то, что ждет тебя в той Крепости Чего-то-там?! А? А? НЕ ФЬЮЛ ТОЛСТОЗАДЫЙ, ЭТО УЖ ТОЧНО!", 's533', 'say53860') \
     .with_responses() \
-        .response("Ладно, ладно. Колонна, что скажете?", EXIT, 'r', 'reply53861') \
-        .response("Извини, Морт. Твой выход.", EXIT, 'r', 'reply53862') \
+        .response("Ладно, ладно. Колонна, что скажете?", EXIT, 'r', 'reply53861').with_action(lambda: _dispose()) \
+        .response("Извини, Морт. Твой выход.", EXIT, 'r', 'reply53862').with_action(lambda: _dispose()) \
     .done()
 
 # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
@@ -5589,7 +6991,7 @@ DialogStateBuilder('DMORTE.D_s534') \
     .with_responses() \
         .response("Можешь рассказать еще раз, что ждет нас по ту сторону портала?", 'DMORTE.D_s544', 'r', 'reply54156') \
         .response("Я готов, Морт. Лучше мне уже не подготовиться. Ты со мной?", 'DMORTE.D_s535', 'r', 'reply54157') \
-        .response("Возможно, ты прав… Дай мне подготовиться поосновательней.", EXIT, 'r', 'reply54158') \
+        .response("Возможно, ты прав… Дай мне подготовиться поосновательней.", EXIT, 'r', 'reply54158').with_action(lambda: _dispose()) \
     .done()
 
 # from 534.1
@@ -5597,7 +6999,7 @@ DialogStateBuilder('DMORTE.D_s535') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну… — Морт с тяжелым вздохом смотрит на мерцающий синий занавес. — Конечно. Пошли. Ведь лучше попадать в разные места, чем трясти черепушкой в Морге, верно?", 's535', 'say54159') \
     .with_responses() \
-        .response("Ну хорошо…", EXIT, 'r', 'reply54160').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Ну хорошо…", EXIT, 'r', 'reply54160').with_action(lambda: _r54160_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -5617,9 +7019,9 @@ DialogStateBuilder('DMORTE.D_s537') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, это насчет того места, куда мы собираемся попасть… или, э-э-э, где… мы уже *были*.", 's537', 'say54164') \
     .with_responses() \
-        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54165').with_condition(lambda: '  !NearbyDialog("DDakkon") ') \
-        .response("'Где МЫ уже были?' О чем это ты?", EXIT, 'r', 'reply54166').with_condition(lambda: '  NearbyDialog("DDakkon") CheckStatGT(Protagonist,13,WIS) ') \
-        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54167').with_condition(lambda: '  NearbyDialog("DDakkon") CheckStatLT(Protagonist,14,WIS) ') \
+        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54165').with_condition(lambda: _r54165_condition()) \
+        .response("'Где МЫ уже были?' О чем это ты?", EXIT, 'r', 'reply54166').with_condition(lambda: _r54166_condition()).with_action(lambda: _dispose()) \
+        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54167').with_condition(lambda: _r54167_condition()) \
     .done()
 
 # from -
@@ -5639,9 +7041,9 @@ DialogStateBuilder('DMORTE.D_s539') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, это насчет того места, куда ты собираешься попасть или, э-э-э, где… ты уже *был*.", 's539', 'say54171') \
     .with_responses() \
-        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54172').with_condition(lambda: '  !NearbyDialog("DDakkon") ') \
-        .response("'Где МЫ уже были?' О чем это ты?", EXIT, 'r', 'reply54173').with_condition(lambda: '  NearbyDialog("DDakkon") CheckStatGT(Protagonist,13,WIS) ') \
-        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54174').with_condition(lambda: '  NearbyDialog("DDakkon") CheckStatLT(Protagonist,14,WIS) ') \
+        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54172').with_condition(lambda: _r54172_condition()) \
+        .response("'Где МЫ уже были?' О чем это ты?", EXIT, 'r', 'reply54173').with_condition(lambda: _r54173_condition()).with_action(lambda: _dispose()) \
+        .response("'Где МЫ уже были?' О чем это ты?", 'DMORTE.D_s540', 'r', 'reply54174').with_condition(lambda: _r54174_condition()) \
     .done()
 
 # from 537.0 537.2 539.0 539.2
@@ -5652,8 +7054,8 @@ DialogStateBuilder('DMORTE.D_s540') \
         .response("Ты не *знал*? Как такое могло случиться?", 'DMORTE.D_s541', 'r', 'reply54176') \
         .response("Так, значит, ты С САМОГО НАЧАЛА мог мне СКАЗАТЬ, где находится портал, ЧЕМ является портальный ключ, ПОЧЕМУ я бессмертен, ЧТО случилось с моей смертностью И что это связано с Крепостью?! Я тебя *УБЬЮ*, Морт!..", 'DMORTE.D_s542', 'r', 'reply54177') \
         .response("Морт, я жду объяснений… только без лжи и жульничества, только не сейчас.", 'DMORTE.D_s541', 'r', 'reply54178') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54179').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54180').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54179').with_condition(lambda: _r54179_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54180').with_condition(lambda: _r54180_condition()).with_action(lambda: _r54180_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 540.0 540.2
@@ -5661,10 +7063,10 @@ DialogStateBuilder('DMORTE.D_s541') \
     .with_npc_lines() \
         .line(SPEAKER, "Это было очень трудно объяснить, пока ты здесь не *оказался*… Кроме того, ты не знал, э-э-э, *другого* тебя — он точно не был из тех вояк, кто ДЕЛИЛСЯ с нами своими мыслями. То есть, я знал, что он искал КАКОЕ-ТО место, но не знал, почему, где оно находится или ЧТО из себя представляет, так что я НИЧЕГО не мог сказать тебе, потому что НИЧЕГО не знал! Я… только знаю, что случилось, когда мы ПОПАЛИ туда…", 's541', 'say54181') \
     .with_responses() \
-        .response("И… что случилось?", 'DMORTE.D_s544', 'r', 'reply54189').with_condition(lambda: '  InParty("Morte") ') \
-        .response("И… что случилось?", 'DMORTE.D_s543', 'r', 'reply54190').with_condition(lambda: '  !InParty("Morte") ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54191').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54192').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("И… что случилось?", 'DMORTE.D_s544', 'r', 'reply54189').with_condition(lambda: _r54189_condition()) \
+        .response("И… что случилось?", 'DMORTE.D_s543', 'r', 'reply54190').with_condition(lambda: _r54190_condition()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54191').with_condition(lambda: _r54191_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54192').with_condition(lambda: _r54192_condition()).with_action(lambda: _r54192_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 540.1
@@ -5672,10 +7074,10 @@ DialogStateBuilder('DMORTE.D_s542') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт явно встревожен. Нет! Нет! Мы… Я… никогда НЕ ЗНАЛ ничего из этого! А ты был не из самых общительных вояк на планах! Тот… тот *другой* ты хранил КУЧУ секретов при себе, и мы даже не знали, ЗАЧЕМ нам нужно попасть в это место или даже ЧТО из себя оно представляет! Я только знаю, что случилось, когда мы ПОПАЛИ туда…", 's542', 'say54193') \
     .with_responses() \
-        .response("И… что случилось?", 'DMORTE.D_s544', 'r', 'reply54194').with_condition(lambda: '  InParty("Morte") ') \
-        .response("И… что случилось?", 'DMORTE.D_s543', 'r', 'reply54195').with_condition(lambda: '  !InParty("Morte") ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54196').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54197').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("И… что случилось?", 'DMORTE.D_s544', 'r', 'reply54194').with_condition(lambda: _r54194_condition()) \
+        .response("И… что случилось?", 'DMORTE.D_s543', 'r', 'reply54195').with_condition(lambda: _r54195_condition()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54196').with_condition(lambda: _r54196_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54197').with_condition(lambda: _r54197_condition()).with_action(lambda: _r54197_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 541.1 542.1
@@ -5684,8 +7086,8 @@ DialogStateBuilder('DMORTE.D_s543') \
         .line(SPEAKER, "Ну, мы попали туда — в эту КРЕПОСТЬ, но мы даже не успели встать на ноги, как нас РАЗДЕЛИЛИ, и нам пришлось сражаться за собственные жизни… Так что *первая* вещь, которую я хочу сказать тебе: если ты решил пойти туда, есть большая вероятность, что всякий, кто вступит в этот портал, окажется *очень* далеко от других. Мысль в том, что тебе могут понадобиться твои спутники…", 's543', 'say54198') \
     .with_responses() \
         .response("Почему ты об этом заговорил?", 'DMORTE.D_s545', 'r', 'reply54199') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54200').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54201').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54200').with_condition(lambda: _r54200_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54201').with_condition(lambda: _r54201_condition()).with_action(lambda: _r54201_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 534.0 541.0 542.0
@@ -5694,8 +7096,8 @@ DialogStateBuilder('DMORTE.D_s544') \
         .line(SPEAKER, "Ну, мы попали туда… в эту КРЕПОСТЬ, но мы даже не успели встать на ноги, как нас РАЗДЕЛИЛИ, и нам пришлось сражаться за собственные жизни… — он содрогается. — Так что *первая* вещь, которую я хочу сказать тебе — если ты решил пойти туда, есть большая вероятность, что всякий, кто вступит в этот портал, окажется *очень* далеко от других. Мысль в том, что даже разделенные, мы можем оказаться единственной твоей надеждой…", 's544', 'say54202') \
     .with_responses() \
         .response("Почему ты об этом заговорил?", 'DMORTE.D_s545', 'r', 'reply54203') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54204').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54205').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54204').with_condition(lambda: _r54204_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54205').with_condition(lambda: _r54205_condition()).with_action(lambda: _r54205_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 543.0 544.0
@@ -5703,10 +7105,10 @@ DialogStateBuilder('DMORTE.D_s545') \
     .with_npc_lines() \
         .line(SPEAKER, "Что бы тебя не ждало там, в Крепости, шеф, оно уже побеждало тебя… не знаю, как тогда тебе удалось выжить, но если ты снова падешь, тебе понадобится кто-то, кто сможет вытащить тебя из этой Крепости…", 's545', 'say54206') \
     .with_responses() \
-        .response("Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.", 'DMORTE.D_s547', 'r', 'reply54207').with_condition(lambda: '  InParty("Morte") ') \
-        .response("Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.", 'DMORTE.D_s546', 'r', 'reply54208').with_condition(lambda: '  !InParty("Morte") ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54209').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54210').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.", 'DMORTE.D_s547', 'r', 'reply54207').with_condition(lambda: _r54207_condition()) \
+        .response("Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.", 'DMORTE.D_s546', 'r', 'reply54208').with_condition(lambda: _r54208_condition()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54209').with_condition(lambda: _r54209_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54210').with_condition(lambda: _r54210_condition()).with_action(lambda: _r54210_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 545.1
@@ -5715,8 +7117,8 @@ DialogStateBuilder('DMORTE.D_s546') \
         .line(SPEAKER, "Эта Крепость сожалений… она тянется на многие ЛИГИ, шеф. Она называется Крепостью, но она очень похожа на ПЛАН. Одни только камни, тьма и тени — тени повсюду. Если ты пойдешь туда… тебе лучше быть готовым.", 's546', 'say54211') \
     .with_responses() \
         .response("Что произошло, когда мы впервые оказались там?", 'DMORTE.D_s548', 'r', 'reply54212') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54213').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54214').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54213').with_condition(lambda: _r54213_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54214').with_condition(lambda: _r54214_condition()).with_action(lambda: _r54214_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 545.0
@@ -5725,8 +7127,8 @@ DialogStateBuilder('DMORTE.D_s547') \
         .line(SPEAKER, "Эта Крепость сожалений… она тянется на многие ЛИГИ, шеф. Она называется Крепостью, но она очень похожа на ПЛАН. Одни только камни, тьма и тени — тени повсюду. Если мы пойдем туда… нам лучше быть готовыми.", 's547', 'say54215') \
     .with_responses() \
         .response("Что произошло, когда мы впервые оказались там?", 'DMORTE.D_s548', 'r', 'reply54216') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54217').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54218').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54217').with_condition(lambda: _r54217_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54218').with_condition(lambda: _r54218_condition()).with_action(lambda: _r54218_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 546.0 547.0
@@ -5734,12 +7136,12 @@ DialogStateBuilder('DMORTE.D_s548') \
     .with_npc_lines() \
         .line(SPEAKER, "Не знаю, что случилось с ТОБОЙ, шеф, но я знаю, что произошло со МНОЙ… Я все время носился от одного укрытия к другому, эти тени ползли вслед за мной, пытаясь пригвоздить меня к земле… а потом я просто… внезапно мы оказались 'снаружи', как будто кто-то нас вытащил…", 's548', 'say54219') \
     .with_responses() \
-        .response("Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.", 'DMORTE.D_s565', 'r', 'reply54220').with_condition(lambda: '  CheckStatGT(Protagonist,15,INT) NearbyDialog("Ddakkon") ') \
-        .response("Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.", 'DMORTE.D_s549', 'r', 'reply54221').with_condition(lambda: '  CheckStatGT(Protagonist,15,INT) !NearbyDialog("Ddakkon") GlobalGT("Dakkon","GLOBAL",0) ') \
-        .response("Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.", 'DMORTE.D_s550', 'r', 'reply54223').with_condition(lambda: '  CheckStatGT(Protagonist,15,INT) !NearbyDialog("Ddakkon") Global("Dakkon","GLOBAL",0) ') \
+        .response("Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.", 'DMORTE.D_s565', 'r', 'reply54220').with_condition(lambda: _r54220_condition()) \
+        .response("Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.", 'DMORTE.D_s549', 'r', 'reply54221').with_condition(lambda: _r54221_condition()) \
+        .response("Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.", 'DMORTE.D_s550', 'r', 'reply54223').with_condition(lambda: _r54223_condition()) \
         .response("Понятно. Что еще ты можешь сказать?", 'DMORTE.D_s552', 'r', 'reply54225') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54226').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54227').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54226').with_condition(lambda: _r54226_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54227').with_condition(lambda: _r54227_condition()).with_action(lambda: _r54227_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 548.1
@@ -5747,10 +7149,10 @@ DialogStateBuilder('DMORTE.D_s549') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт умолкает на некоторое время. Нет… Там были и другие. Там были… Даккон, эта чувствующая цыпочка, Дейонарра, слепой лучник, который почти все время был пьян до беспамятства, ты и я… Было такое ощущение, что мы прыгнули в ад и тут же вернулись. Очевидно, тебе, мне и Даккону это удалось, а те двоим — нет. Даже не знаю, что случилось с ними.", 's549', 'say54229') \
     .with_responses() \
-        .response("Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что Дейонарра и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54230').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что те женщина и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54231').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54232').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54233').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что Дейонарра и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54230').with_condition(lambda: _r54230_condition()) \
+        .response("Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что те женщина и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54231').with_condition(lambda: _r54231_condition()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54232').with_condition(lambda: _r54232_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54233').with_condition(lambda: _r54233_condition()).with_action(lambda: _r54233_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 548.2
@@ -5758,10 +7160,10 @@ DialogStateBuilder('DMORTE.D_s550') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт умолкает на некоторое время. Нет… Там были и другие. Там были… старый гит, Даккон, эта чувствующая цыпочка, Дейонарра, слепой лучник, который почти все время был пьян до беспамятства, ты и я… Было такое ощущение, что мы прыгнули в ад и тут же вернулись. Очевидно, тебе, мне и Даккону это удалось, а те двоим — нет. Даже не знаю, что случилось с ними.", 's550', 'say54234') \
     .with_responses() \
-        .response("Ты сказал, что Дейонарра и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54235').with_condition(lambda: '  GlobalGT("Deionarra","GLOBAL",0) ') \
-        .response("Ты сказал, что эта женщина, Дейонарра, и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54236').with_condition(lambda: '  Global("Deionarra","GLOBAL",0) ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54237').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54238').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Ты сказал, что Дейонарра и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54235').with_condition(lambda: _r54235_condition()) \
+        .response("Ты сказал, что эта женщина, Дейонарра, и лучник не вернулись из Крепости?", 'DMORTE.D_s551', 'r', 'reply54236').with_condition(lambda: _r54236_condition()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54237').with_condition(lambda: _r54237_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54238').with_condition(lambda: _r54238_condition()).with_action(lambda: _r54238_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 549.0 549.1 550.0 550.1
@@ -5770,8 +7172,8 @@ DialogStateBuilder('DMORTE.D_s551') \
         .line(SPEAKER, "Морт качает головой. По крайней мере, я об этом ничего не знаю.", 's551', 'say54239') \
     .with_responses() \
         .response("Ты можешь мне еще что-нибудь рассказать об этой Крепости?", 'DMORTE.D_s552', 'r', 'reply54240') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54241').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54242').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54241').with_condition(lambda: _r54241_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54242').with_condition(lambda: _r54242_condition()).with_action(lambda: _r54242_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 548.3 551.0
@@ -5779,9 +7181,9 @@ DialogStateBuilder('DMORTE.D_s552') \
     .with_npc_lines() \
         .line(SPEAKER, "Больше ничего, шеф. Кроме того, что мы были вынуждены разделиться сразу после прибытия, что это место ОГРОМНО, что оно кишит тенями… и что где-то в Крепости есть нечто гораздо могущественнее *любого* из нас. Больше мне нечего сказать…", 's552', 'say54243') \
     .with_responses() \
-        .response("Ты *уверен*? Возможно, это будет наша последняя возможность поговорить друг с другом…", 'DMORTE.D_s553', 'r', 'reply54244').with_action(lambda: ' DO ~SetGlobal("Morte_Quip_Regret_Portal","GLOBAL",2) ~ ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54245').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54246').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Ты *уверен*? Возможно, это будет наша последняя возможность поговорить друг с другом…", 'DMORTE.D_s553', 'r', 'reply54244').with_action(lambda: _r54244_action()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54245').with_condition(lambda: _r54245_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54246').with_condition(lambda: _r54246_condition()).with_action(lambda: _r54246_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 552.0
@@ -5789,10 +7191,10 @@ DialogStateBuilder('DMORTE.D_s553') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну… — Морт делает паузу. — Да, есть еще одна вещь, которую ты должен знать. ТЫ, которого я знал раньше, ТЫ, который привел нас сюда, отличается от тебя. Во всем.", 's553', 'say54249') \
     .with_responses() \
-        .response("О чем это ты?", 'DMORTE.D_s554', 'r', 'reply54250').with_condition(lambda: '  GlobalGT("BD_MORTE_MORALE","GLOBAL",5) ') \
-        .response("О чем это ты?", 'DMORTE.D_s555', 'r', 'reply54252').with_condition(lambda: '  GlobalLT("BD_MORTE_MORALE","GLOBAL",6) ') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54255').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54262').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("О чем это ты?", 'DMORTE.D_s554', 'r', 'reply54250').with_condition(lambda: _r54250_condition()) \
+        .response("О чем это ты?", 'DMORTE.D_s555', 'r', 'reply54252').with_condition(lambda: _r54252_condition()) \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54255').with_condition(lambda: _r54255_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54262').with_condition(lambda: _r54262_condition()).with_action(lambda: _r54262_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 553.0
@@ -5800,10 +7202,10 @@ DialogStateBuilder('DMORTE.D_s554') \
     .with_npc_lines() \
         .line(SPEAKER, "Другой ТЫ, он… он не особенно заботился о других. Ни о ком. Мы могли бы ВСЕ погибнуть в Крепости, а он бы и глазом не моргнул. Так что… я просто хочу, чтобы ты почувствовал разницу… *Ты* нравишься мне больше. ГОРАЗДО больше.", 's554', 'say54263') \
     .with_responses() \
-        .response("Но это не все, что ты хочешь сказать, верно?", 'DMORTE.D_s556', 'r', 'reply54264').with_condition(lambda: '  CheckStatGT(Protagonist,15,WIS) ') \
+        .response("Но это не все, что ты хочешь сказать, верно?", 'DMORTE.D_s556', 'r', 'reply54264').with_condition(lambda: _r54264_condition()) \
         .response("Это все?", 'DMORTE.D_s556', 'r', 'reply54265') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54266').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54267').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54266').with_condition(lambda: _r54266_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54267').with_condition(lambda: _r54267_condition()).with_action(lambda: _r54267_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 553.1
@@ -5811,10 +7213,10 @@ DialogStateBuilder('DMORTE.D_s555') \
     .with_npc_lines() \
         .line(SPEAKER, "Я только хотел сказать, что несмотря на твое упрямство, ТЫ сильнее духом, чем он когда либо был. Другой ТЫ, он… он был отделен от других. Так что… я просто хочу, чтобы ты об этом знал.", 's555', 'say54268') \
     .with_responses() \
-        .response("Но это не все, что ты хочешь сказать, верно?", 'DMORTE.D_s556', 'r', 'reply54269').with_condition(lambda: '  CheckStatGT(Protagonist,15,WIS) ') \
+        .response("Но это не все, что ты хочешь сказать, верно?", 'DMORTE.D_s556', 'r', 'reply54269').with_condition(lambda: _r54269_condition()) \
         .response("Это все?", 'DMORTE.D_s556', 'r', 'reply54270') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54271').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54272').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54271').with_condition(lambda: _r54271_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54272').with_condition(lambda: _r54272_condition()).with_action(lambda: _r54272_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 554.0 554.1 555.0 555.1
@@ -5823,8 +7225,8 @@ DialogStateBuilder('DMORTE.D_s556') \
         .line(SPEAKER, "Нет… — Морт делает паузу. — Еще одно — может быть, мне не очень нравился *другой* ты, но он был очень умным воякой, никого умнее я не встречал. У него на все случаи всегда был запасной план. И если он умер в Крепости, это значит… ну…", 's556', 'say54273') \
     .with_responses() \
         .response("Ты не считаешь, что у меня может получиться?", 'DMORTE.D_s557', 'r', 'reply54274') \
-        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54275').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte") ') \
-        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54276').with_condition(lambda: '  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Неважно, Морт. Я готов шагнуть в портал — ты со мной?", 'DMORTE.D_s534', 'r', 'reply54275').with_condition(lambda: _r54275_condition()) \
+        .response("Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.", EXIT, 'r', 'reply54276').with_condition(lambda: _r54276_condition()).with_action(lambda: _r54276_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 556.0
@@ -5832,9 +7234,9 @@ DialogStateBuilder('DMORTE.D_s557') \
     .with_npc_lines() \
         .line(SPEAKER, "Нет… — Морт качает головой. — Не в этом дело, шеф. Не всегда важно, кто умнее, или могущественнее, или сильнее… Иногда все сводится к тому, кто ты и чего ты хочешь *на самом деле*. То есть, когда-то ты хотел стать бессмертным, но чего ты хотел *на самом деле*? Просто на этот раз будь уверен в том, чего ты хочешь — вот что я хочу сказать.", 's557', 'say54277') \
     .with_responses() \
-        .response("Ладно. Послушай, Морт… Мы ведь никогда об этом не говорили, но ты ведь не хочешь идти в этом место, верно? Я пойму, если ты не пойдешь.", 'DMORTE.D_s558', 'r', 'reply54278').with_condition(lambda: '  InParty("Morte") Global("Morte_Morale_Fortress_Portal","AR0202",0) ').with_action(lambda: ' DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) SetGlobal("Morte_Morale_Fortress_Portal","AR0202",1) ~ ') \
-        .response("Понятно. Если ты высказался — пошли. Ты готов?", 'DMORTE.D_s534', 'r', 'reply54279').with_condition(lambda: '  InParty("Morte") ') \
-        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54280').with_condition(lambda: '  !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Ладно. Послушай, Морт… Мы ведь никогда об этом не говорили, но ты ведь не хочешь идти в этом место, верно? Я пойму, если ты не пойдешь.", 'DMORTE.D_s558', 'r', 'reply54278').with_condition(lambda: _r54278_condition()).with_action(lambda: _r54278_action()) \
+        .response("Понятно. Если ты высказался — пошли. Ты готов?", 'DMORTE.D_s534', 'r', 'reply54279').with_condition(lambda: _r54279_condition()) \
+        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54280').with_condition(lambda: _r54280_condition()).with_action(lambda: _r54280_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -5845,11 +7247,11 @@ DialogStateBuilder('DMORTE.D_s558') \
     .with_npc_lines() \
         .line(SPEAKER, "Да… Я знаю, шеф. Не буду лгать — я не хочу туда… но я пойду. Просто знай: как только мы войдем в портал, это больше не будет касаться только *тебя*. Наши жизни окажутся в твоих руках, и мы не сможем вернуться, если умрем.", 's558', 'say54281') \
     .with_responses() \
-        .response("Тогда почему же ты…", EXIT, 'r', 'reply54282').with_condition(lambda: '  GlobalGT("Ravel_Grace","GLOBAL",0) GlobalGT("Ravel_Morte","GLOBAL",0) GlobalLT("Torment_Fell","GLOBAL",2) NearbyDialog("Dgrace") ') \
-        .response("Тогда почему же ты…", EXIT, 'r', 'reply54283').with_condition(lambda: '  GlobalGT("Ravel_Grace","GLOBAL",0) GlobalGT("Ravel_Morte","GLOBAL",0) Global("Torment_Fell","GLOBAL",2) NearbyDialog("Dgrace") ') \
-        .response("Тогда почему же ты…", 'DMORTE.D_s562', 'r', 'reply54284').with_condition(lambda: '  GlobalGT("Ravel_Morte","GLOBAL",0) GlobalLT("Torment_Fell","GLOBAL",2) !NearbyDialog("Dgrace") ') \
-        .response("Тогда почему же ты…", 'DMORTE.D_s563', 'r', 'reply54285').with_condition(lambda: '  GlobalGT("Ravel_Morte","GLOBAL",0) Global("Torment_Fell","GLOBAL",2) !NearbyDialog("Dgrace") ') \
-        .response("Тогда почему же ты…", 'DMORTE.D_s564', 'r', 'reply54286').with_condition(lambda: '  Global("Ravel_Morte","GLOBAL",0) ') \
+        .response("Тогда почему же ты…", EXIT, 'r', 'reply54282').with_condition(lambda: _r54282_condition()).with_action(lambda: _dispose()) \
+        .response("Тогда почему же ты…", EXIT, 'r', 'reply54283').with_condition(lambda: _r54283_condition()).with_action(lambda: _dispose()) \
+        .response("Тогда почему же ты…", 'DMORTE.D_s562', 'r', 'reply54284').with_condition(lambda: _r54284_condition()) \
+        .response("Тогда почему же ты…", 'DMORTE.D_s563', 'r', 'reply54285').with_condition(lambda: _r54285_condition()) \
+        .response("Тогда почему же ты…", 'DMORTE.D_s564', 'r', 'reply54286').with_condition(lambda: _r54286_condition()) \
     .done()
 
 ######
@@ -5887,8 +7289,8 @@ DialogStateBuilder('DMORTE.D_s562') \
     .with_npc_lines() \
         .line(SPEAKER, "То, что Равель сказала там, в лабиринте… она сказала, что ты притягиваешь страдающих людей как магнит, — Морт качает головой. — Может, это потому что *ты* страдал все это время. Возможно, когда ты со всем разберешься… может, тогда и *мы* обретем чуточку покоя. Возможно.", 's562', 'say54831') \
     .with_responses() \
-        .response("Может быть. Значит… ты со мной, Морт?", 'DMORTE.D_s534', 'r', 'reply54832').with_condition(lambda: '  InParty("Morte") ') \
-        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54833').with_condition(lambda: '  !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Может быть. Значит… ты со мной, Морт?", 'DMORTE.D_s534', 'r', 'reply54832').with_condition(lambda: _r54832_condition()) \
+        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54833').with_condition(lambda: _r54833_condition()).with_action(lambda: _r54833_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 558.3
@@ -5896,8 +7298,8 @@ DialogStateBuilder('DMORTE.D_s563') \
     .with_npc_lines() \
         .line(SPEAKER, "То, что Равель сказала там, в лабиринте, и то, что Фелл сказал о том символе Мучения? Они сказали, что ты страдающих людей как магнит, — Морт качает головой. — Может, это потому что *ты* страдал все это время. Возможно, когда ты со всем разберешься… может, тогда и *мы* обретем чуточку покоя. Возможно.", 's563', 'say54834') \
     .with_responses() \
-        .response("Может быть. Значит… ты со мной, Морт?", 'DMORTE.D_s534', 'r', 'reply54835').with_condition(lambda: '  InParty("Morte") ') \
-        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54836').with_condition(lambda: '  !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Может быть. Значит… ты со мной, Морт?", 'DMORTE.D_s534', 'r', 'reply54835').with_condition(lambda: _r54835_condition()) \
+        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54836').with_condition(lambda: _r54836_condition()).with_action(lambda: _r54836_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 558.4
@@ -5905,8 +7307,8 @@ DialogStateBuilder('DMORTE.D_s564') \
     .with_npc_lines() \
         .line(SPEAKER, "Я знал тебя, шеф, уже долгое время, и есть в тебе *кое-что*: ты притягиваешь страдающих людей как магнит, — Морт качает головой. — Может, это потому что *ты* страдал все это время. Возможно, когда ты со всем разберешься… может, тогда и *мы* обретем чуточку покоя. Возможно.", 's564', 'say54837') \
     .with_responses() \
-        .response("Может быть. Значит… ты со мной, Морт?", 'DMORTE.D_s534', 'r', 'reply54838').with_condition(lambda: '  InParty("Morte") ') \
-        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54839').with_condition(lambda: '  !InParty("Morte") ').with_action(lambda: ' DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~ ') \
+        .response("Может быть. Значит… ты со мной, Морт?", 'DMORTE.D_s534', 'r', 'reply54838').with_condition(lambda: _r54838_condition()) \
+        .response("Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.", EXIT, 'r', 'reply54839').with_condition(lambda: _r54839_condition()).with_action(lambda: _r54839_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 ######
@@ -5947,7 +7349,7 @@ DialogStateBuilder('DMORTE.D_s568') \
     .with_npc_lines() \
         .line(SPEAKER, "Они говорили со мной, как Колонна Черепов… — Морт понижает тон. — Они *знали*…", 's568', 'say54843') \
     .with_responses() \
-        .response("Ладно. Слушайте, вы двое: мне нужно знать все, что вы можете рассказать мне об этой крепости…", EXIT, 'r', 'reply54844') \
+        .response("Ладно. Слушайте, вы двое: мне нужно знать все, что вы можете рассказать мне об этой крепости…", EXIT, 'r', 'reply54844').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -5986,7 +7388,7 @@ DialogStateBuilder('DMORTE.D_s572') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, видишь ли, иногда модроны становятся немного хаотичными, и когда это случается… что ж, полагаю, *лучше* всего объяснить это так: модрон-бродяга — это что-то вроде… модрона наоборот.", 's572', 'say55834') \
     .with_responses() \
-        .response("Так значит, это… модрон наоборот?", EXIT, 'r', 'reply55836') \
+        .response("Так значит, это… модрон наоборот?", EXIT, 'r', 'reply55836').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -6006,8 +7408,8 @@ DialogStateBuilder('DMORTE.D_s574') \
         .line(SPEAKER, "Шеф, я понятия не имею, о чем трещит этот куб.", 's574', 'say55841') \
     .with_responses() \
         .response("А я-то думал, что ты — *эксперт* по планам.", 'DMORTE.D_s575', 'r', 'reply55842') \
-        .response("Ну хорошо. Нордом, у меня есть к тебе другие вопросы…", EXIT, 'r', 'reply55843') \
-        .response("Тогда забудь об этом. Пошли дальше.", EXIT, 'r', 'reply55844') \
+        .response("Ну хорошо. Нордом, у меня есть к тебе другие вопросы…", EXIT, 'r', 'reply55843').with_action(lambda: _dispose()) \
+        .response("Тогда забудь об этом. Пошли дальше.", EXIT, 'r', 'reply55844').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6018,8 +7420,8 @@ DialogStateBuilder('DMORTE.D_s575') \
     .with_npc_lines() \
         .line(SPEAKER, "Чт… Я знаю побольше *твоего*, шатающийся и ни черта не помнящий хрипун! Кстати, вот тебе еще три сведения, чтобы тарахтели в твоей пустой черепушке: во-первых, НЕ СУЩЕСТВУЕТ экспертов по планам; во-вторых, я — лучшее из того, что ты можешь найти; и, в-третьих, проявляй ко мне хоть немного уважения. Зачем? Смотри пункт второй.", 's575', 'say55845') \
     .with_responses() \
-        .response("Ну хорошо. Нордом, у меня есть к тебе другие вопросы…", EXIT, 'r', 'reply55846') \
-        .response("Тогда забудь об этом. Пошли дальше.", EXIT, 'r', 'reply55847') \
+        .response("Ну хорошо. Нордом, у меня есть к тебе другие вопросы…", EXIT, 'r', 'reply55846').with_action(lambda: _dispose()) \
+        .response("Тогда забудь об этом. Пошли дальше.", EXIT, 'r', 'reply55847').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6030,8 +7432,8 @@ DialogStateBuilder('DMORTE.D_s576') \
     .with_npc_lines() \
         .line(SPEAKER, "Механус? Скучный во всех смыслах этого слова, шеф. Представь себе план, наполненный модронами и большими вертящимися шестернями — вот и весь великий, огромный и СКУЧНЫЙ план Механус. Слишком много законов, слишком нудно. О таком месте ты даже и думать не захочешь, не то чтобы посетить.", 's576', 'say55848') \
     .with_responses() \
-        .response("Что имел в виду под 'нулевым домом', Нордом?", EXIT, 'r', 'reply55849').with_condition(lambda: '  !NearbyDialog("DGrace") ') \
-        .response("Неважно, Морт. Я достаточно наслушался. Идем.", EXIT, 'r', 'reply55850').with_condition(lambda: '  !NearbyDialog("DGrace") ') \
+        .response("Что имел в виду под 'нулевым домом', Нордом?", EXIT, 'r', 'reply55849').with_condition(lambda: _r55849_condition()).with_action(lambda: _dispose()) \
+        .response("Неважно, Морт. Я достаточно наслушался. Идем.", EXIT, 'r', 'reply55850').with_condition(lambda: _r55850_condition()).with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6042,8 +7444,8 @@ DialogStateBuilder('DMORTE.D_s577') \
     .with_npc_lines() \
         .line(SPEAKER, "Прошу ПРОЩЕНИЯ, мисс Жрица Благочестивости, но Механус — САМОЕ скучное место в мультивселенной… Единственное интересное событие, которое могло бы там произойти, — это если бы *ты* туда пришла… — Морт закатывает глаза. — Но у меня есть подозрение, что даже *это* утратило бы свое очарование через какое-то время.", 's577', 'say55855') \
     .with_responses() \
-        .response("Что имел в виду под 'нулевым домом', Нордом?", EXIT, 'r', 'reply55857') \
-        .response("Неважно, Морт. Я достаточно наслушался. Идем.", EXIT, 'r', 'reply55858') \
+        .response("Что имел в виду под 'нулевым домом', Нордом?", EXIT, 'r', 'reply55857').with_action(lambda: _dispose()) \
+        .response("Неважно, Морт. Я достаточно наслушался. Идем.", EXIT, 'r', 'reply55858').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6054,9 +7456,9 @@ DialogStateBuilder('DMORTE.D_s578') \
     .with_npc_lines() \
         .line(SPEAKER, "Все модроны — части этой 'совокупности', шеф, все равно что огромное хранилище энергии… Когда один из них умирает, энергия, затраченная для создания модрона, возвращается в хранилище, и создается новый модрон. Дело вот в чем… когда модроны съезжают с катушек, они типа обрывают эту связь, при этом оставляя у себя немного энергии.", 's578', 'say55860') \
     .with_responses() \
-        .response("Итак… Нордом, этот Механус — источник энергии?", EXIT, 'r', 'reply55862') \
-        .response("Ясно. Нордом, у меня есть к тебе другие вопросы…", EXIT, 'r', 'reply55864') \
-        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55865') \
+        .response("Итак… Нордом, этот Механус — источник энергии?", EXIT, 'r', 'reply55862').with_action(lambda: _dispose()) \
+        .response("Ясно. Нордом, у меня есть к тебе другие вопросы…", EXIT, 'r', 'reply55864').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55865').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6094,10 +7496,10 @@ DialogStateBuilder('DMORTE.D_s582') \
     .with_npc_lines() \
         .line(SPEAKER, "Вот как?! Я?! Ну… Да, ты совершенно… да-а, ты это слышал, шеф? То, что сказала суккубка? Она права. Меня легче понять, я 'умею подбирать слова', знаю, что говорю. Видишь, как я тебе нужен!", 's582', 'say55873') \
     .with_responses() \
-        .response("Ладно, тогда у меня другой вопрос: вы оба говорите, что Нордом — часть этого Источника, но он от него отрезан. И что когда модрон умирает, он возвращается туда. С Нордомом будет так же?", 'DMORTE.D_s583', 'r', 'reply55875').with_condition(lambda: '  CheckStatGT(Protagonist,15,INT) ') \
-        .response("Я и не отрицаю, Морт. Итак… Нордом, этот источник энергии, о котором ты упоминал… он на Механусе?", EXIT, 'r', 'reply55876') \
-        .response("Ну хорошо. Нордом, у меня есть другие вопросы к тебе…", EXIT, 'r', 'reply55877') \
-        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55879') \
+        .response("Ладно, тогда у меня другой вопрос: вы оба говорите, что Нордом — часть этого Источника, но он от него отрезан. И что когда модрон умирает, он возвращается туда. С Нордомом будет так же?", 'DMORTE.D_s583', 'r', 'reply55875').with_condition(lambda: _r55875_condition()) \
+        .response("Я и не отрицаю, Морт. Итак… Нордом, этот источник энергии, о котором ты упоминал… он на Механусе?", EXIT, 'r', 'reply55876').with_action(lambda: _dispose()) \
+        .response("Ну хорошо. Нордом, у меня есть другие вопросы к тебе…", EXIT, 'r', 'reply55877').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55879').with_action(lambda: _dispose()) \
     .done()
 
 # from 582.0
@@ -6125,8 +7527,8 @@ DialogStateBuilder('DMORTE.D_s585') \
         .line(SPEAKER, "Ну, они заберут его энергию, шеф, и создадут еще одного модрона, но это будет уже не Нордом, потому что он теперь уже *не совсем* модрон, в нем слишком много от планов. Они сделают замену на не-Нордома.", 's585', 'say55890') \
     .with_responses() \
         .response("Значит… став бродягой, он превратился… в смертного?", 'DMORTE.D_s586', 'r', 'reply55892') \
-        .response("Ну хорошо. Нордом, у меня есть другие вопросы к тебе…", EXIT, 'r', 'reply55894') \
-        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55895') \
+        .response("Ну хорошо. Нордом, у меня есть другие вопросы к тебе…", EXIT, 'r', 'reply55894').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55895').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6137,8 +7539,8 @@ DialogStateBuilder('DMORTE.D_s586') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт на миг умолкает. Ну… да, можно и так сказать. То есть, если бы он не устроил свой маленький бродяжный бунт, с ним бы все было в порядке… Если бы он умер, появился бы еще один модрон — точная его копия. Но поскольку он 'обратился'… ну, когда он умрет, эта частичка потеряется.", 's586', 'say55897') \
     .with_responses() \
-        .response("Ну хорошо. Нордом, у меня есть другие вопросы к тебе…", EXIT, 'r', 'reply55898') \
-        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55900') \
+        .response("Ну хорошо. Нордом, у меня есть другие вопросы к тебе…", EXIT, 'r', 'reply55898').with_action(lambda: _dispose()) \
+        .response("Это все, что я хотел знать. Пошли.", EXIT, 'r', 'reply55900').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6149,10 +7551,10 @@ DialogStateBuilder('DMORTE.D_s587') \
     .with_npc_lines() \
         .line(SPEAKER, "Аййй! Во имя сил, пожалей мою голову и прекрати это! Если ты продолжишь спрашивать его об этом без конца, у него коленвал погнется!", 's587', 'say55901') \
     .with_responses() \
-        .response("А что, это *идея*, Морт.", 'DMORTE.D_s588', 'r', 'reply55902').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Nordom_5","GLOBALLaw",-1) ~ ') \
+        .response("А что, это *идея*, Морт.", 'DMORTE.D_s588', 'r', 'reply55902').with_action(lambda: _r55902_action()) \
         .response("Ну, я хотел услышать от него ответ, и я добивался этого от него", 'DMORTE.D_s589', 'r', 'reply55905') \
-        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55906') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55907') \
+        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55906').with_action(lambda: _dispose()) \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55907').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6164,8 +7566,8 @@ DialogStateBuilder('DMORTE.D_s588') \
         .line(SPEAKER, "О, — Морт 'ухмыляется'. — Мог бы хоть ЧТО-ТО сказать. Пожалуйста, продолжай. Я не против… — Морт щелкает зубами, изображая Нордома. — Если хочешь что-нибудь узнать о модронах — спроси МЕНЯ.", 's588', 'say55909') \
     .with_responses() \
         .response("Ладно, Морт… Что ты можешь рассказать мне о модронах?", 'DMORTE.D_s590', 'r', 'reply55910') \
-        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55912') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55913') \
+        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55912').with_action(lambda: _dispose()) \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55913').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6177,8 +7579,8 @@ DialogStateBuilder('DMORTE.D_s589') \
         .line(SPEAKER, "Слушай, шеф, ОБЫЧНЫЕ модроны с трудом понимают что-либо, что не касается их базовых задач, и этот тупой полигон только что попал на планы. Не запутывай куб, хорошо? По крайней мере, пока он вооружен. Если хочешь узнать что-то про модронов, спрашивай меня, а не его.", 's589', 'say55914') \
     .with_responses() \
         .response("Ладно, Морт… Что ты можешь рассказать мне о модронах?", 'DMORTE.D_s590', 'r', 'reply55915') \
-        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55917') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55918') \
+        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55917').with_action(lambda: _dispose()) \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55918').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6190,9 +7592,9 @@ DialogStateBuilder('DMORTE.D_s590') \
         .line(SPEAKER, "Шеф, все выглядит так: модроны — это дурацкие геометрические фигуры, которые бряцают по своему родному плану, Механусу. Они все такие аккуратные, упорядоченные, и хотят, чтобы и ОСТАЛЬНАЯ мультивселенная была такой же. Вот почему они такие надоедливые.", 's590', 'say55921') \
     .with_responses() \
         .response("Что плохого в том, чтобы попытаться навести порядок в мультивселенной?", 'DMORTE.D_s592', 'r', 'reply55923') \
-        .response("Что еще за Механус?", 'DMORTE.D_s591', 'r', 'reply55925').with_action(lambda: ' DO ~SetGlobal("Know_Mechanus","GLOBAL",1) ~ ') \
-        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55926') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55928') \
+        .response("Что еще за Механус?", 'DMORTE.D_s591', 'r', 'reply55925').with_action(lambda: _r55925_action()) \
+        .response("Неважно. У меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55926').with_action(lambda: _dispose()) \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55928').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6203,10 +7605,10 @@ DialogStateBuilder('DMORTE.D_s591') \
     .with_npc_lines() \
         .line(SPEAKER, "Это план, откуда происходят все эти механические дармоеды. Спроси его о нем, увидишь, что он скажет. Там они садятся в кружок и без конца все раскладывают по полочкам… Создать перечень, положить на место *то*, положить на место *это*, придумать закон, и так далее и тому подобное.", 's591', 'say55930') \
     .with_responses() \
-        .response("Правда: Похоже, это благородное стремление. Что плохого в том, чтобы попытаться навести порядок в мультивселенной?", 'DMORTE.D_s592', 'r', 'reply55931').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALLawful_Nordom_2","GLOBALLaw",2) ~ ') \
+        .response("Правда: Похоже, это благородное стремление. Что плохого в том, чтобы попытаться навести порядок в мультивселенной?", 'DMORTE.D_s592', 'r', 'reply55931').with_action(lambda: _r55931_action()) \
         .response("Кажется, тебе это не кажется захватывающим.", 'DMORTE.D_s592', 'r', 'reply55935') \
-        .response("У меня есть вопросы к Нордому…", EXIT, 'r', 'reply55936') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55937') \
+        .response("У меня есть вопросы к Нордому…", EXIT, 'r', 'reply55936').with_action(lambda: _dispose()) \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply55937').with_action(lambda: _dispose()) \
     .done()
 
 # from 590.0 591.0 591.1
@@ -6224,9 +7626,9 @@ DialogStateBuilder('DMORTE.D_s593') \
     .with_npc_lines() \
         .line(SPEAKER, "Потому что, шеф, хаос тоже должен иметь место. Если бы все было так, как это видят *модроны*, это не было бы похоже на жизнь.. по крайней мере, на жизнь, которой я хочу жить. Они только и хотят, чтобы все *структурировать*. Ух-х.", 's593', 'say55940') \
     .with_responses() \
-        .response("Правда: Согласен. Должно быть место и для хаоса… если будет чересчур много законов, получится застой. Слушай, у меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55941').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Nordom_4","GLOBALLaw",-2) ~ ') \
-        .response("Понятно. Слушай, у меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55942') \
-        .response("Тогда ладно. Давай двигаться дальше.", EXIT, 'r', 'reply55944') \
+        .response("Правда: Согласен. Должно быть место и для хаоса… если будет чересчур много законов, получится застой. Слушай, у меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55941').with_action(lambda: _r55941_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Понятно. Слушай, у меня есть другие вопросы к Нордому…", EXIT, 'r', 'reply55942').with_action(lambda: _dispose()) \
+        .response("Тогда ладно. Давай двигаться дальше.", EXIT, 'r', 'reply55944').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6247,7 +7649,7 @@ DialogStateBuilder('DMORTE.D_s595') \
     .with_npc_lines() \
         .line(SPEAKER, "Погоди, шеф… Баатор — это ПЛОХОЕ место. Нечистый, вероятно, что-то утаил от нас… и даже если эта 'Колонна Черепов' и существует, возможно, мы могли бы найти кого-нибудь еще, кто знает, как добраться до Крепости, не побывав при этом на одном из самых опасных планов в мультивселенной.", 's595', 'say56030') \
     .with_responses() \
-        .response("Ты что-то утаил, Раздвоенный Язык?", EXIT, 'r', 'reply56031') \
+        .response("Ты что-то утаил, Раздвоенный Язык?", EXIT, 'r', 'reply56031').with_action(lambda: _dispose()) \
         .response("Почему ты не хочешь туда идти, Морт?", 'DMORTE.D_s596', 'r', 'reply56032') \
     .done()
 
@@ -6259,7 +7661,7 @@ DialogStateBuilder('DMORTE.D_s596') \
     .with_npc_lines() \
         .line(SPEAKER, "Там опасно, шеф. Я бы лучше туда не ходил. Я бывал там — не лучшее место. Ясно?", 's596', 'say56033') \
     .with_responses() \
-        .response("Мы еще поговорим об этом позже. Раздвоенный Язык, у меня есть несколько вопросов…", EXIT, 'r', 'reply56034') \
+        .response("Мы еще поговорим об этом позже. Раздвоенный Язык, у меня есть несколько вопросов…", EXIT, 'r', 'reply56034').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -6267,7 +7669,7 @@ DialogStateBuilder('DMORTE.D_s597') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот мужик появляется *повсюду*!", 's597', 'say56936') \
     .with_responses() \
-        .response("Да, но он нам помог. Идем.", EXIT, 'r', 'reply56937') \
+        .response("Да, но он нам помог. Идем.", EXIT, 'r', 'reply56937').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -6282,8 +7684,8 @@ DialogStateBuilder('DMORTE.D_s599') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, быть мертвым не так уж плохо. Посмотри на это с другой стороны: по крайней мере, тебе больше не придется разговаривать с этими дурацкими закорючками.", 's599', 'say60950') \
     .with_responses() \
-        .response("Молчи, Морт. Я с этим разберусь. Ты не мог бы сказать, что случилось?", EXIT, 'r', 'reply61111') \
-        .response("Забудь. Я оставлю тебя здесь.", EXIT, 'r', 'reply61112') \
+        .response("Молчи, Морт. Я с этим разберусь. Ты не мог бы сказать, что случилось?", EXIT, 'r', 'reply61111').with_action(lambda: _dispose()) \
+        .response("Забудь. Я оставлю тебя здесь.", EXIT, 'r', 'reply61112').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6294,9 +7696,9 @@ DialogStateBuilder('DMORTE.D_s600') \
     .with_npc_lines() \
         .line(SPEAKER, "Э… шеф… что скажешь? Как насчет того, чтобы одолжить старому Морту немного звенелок? Знаешь, прошло уже много времени…", 's600', 'say61408') \
     .with_responses() \
-        .response("Конечно, почему бы и нет. Мисс?", EXIT, 'r', 'reply61411').with_condition(lambda: '  PartyGoldGT(499) ') \
-        .response("Извини, Морт, наличность закончилась. Идем.", EXIT, 'r', 'reply61412').with_condition(lambda: '  PartyGoldLT(500) ') \
-        .response("Морт, нам правда нужно идти. Прощай, красавица.", EXIT, 'r', 'reply61413') \
+        .response("Конечно, почему бы и нет. Мисс?", EXIT, 'r', 'reply61411').with_condition(lambda: _r61411_condition()).with_action(lambda: _dispose()) \
+        .response("Извини, Морт, наличность закончилась. Идем.", EXIT, 'r', 'reply61412').with_condition(lambda: _r61412_condition()).with_action(lambda: _dispose()) \
+        .response("Морт, нам правда нужно идти. Прощай, красавица.", EXIT, 'r', 'reply61413').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -6307,7 +7709,7 @@ DialogStateBuilder('DMORTE.D_s601') \
     .with_npc_lines() \
         .line(SPEAKER, "Отлично! Спасибо, шеф! Морт поворачивается к уходящей женщине.", 's601', 'say61409') \
     .with_responses() \
-        .response("Подождать, пока он не вернется.", EXIT, 'r', 'reply61414').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
+        .response("Подождать, пока он не вернется.", EXIT, 'r', 'reply61414').with_action(lambda: _r61414_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -6315,7 +7717,7 @@ DialogStateBuilder('DMORTE.D_s602') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, Морт лишь смутно осознает твое присутствие: он то глупо хихикает, то томно вздыхает.", 's602', 'say61410') \
     .with_responses() \
-        .response("Хорошо… Думаю, что все прошло хорошо. Прощай, красавица.", EXIT, 'r', 'reply61415') \
+        .response("Хорошо… Думаю, что все прошло хорошо. Прощай, красавица.", EXIT, 'r', 'reply61415').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -6698,7 +8100,7 @@ DialogStateBuilder('DMORTE.D_s647') \
         .line(SPEAKER, "Погоди-ка, шеф… взгляни на это. Взглянув вниз, ты замечаешь множество грязных следов, ведущих в арку… и не поворачивающих обратно. Здесь, должно быть, портал или что-то вроде этого.", 's647', 'say64990') \
     .with_responses() \
         .response("Портал? Как его открыть?", 'DMORTE.D_s648', 'r', 'reply64991') \
-        .response("Может, и так. Идем.", EXIT, 'r', 'reply64993') \
+        .response("Может, и так. Идем.", EXIT, 'r', 'reply64993').with_action(lambda: _dispose()) \
     .done()
 
 # from 647.0
@@ -6706,7 +8108,7 @@ DialogStateBuilder('DMORTE.D_s648') \
     .with_npc_lines() \
         .line(SPEAKER, "Без понятия, шеф. Но это должен быть распространенный ключ: гляди, сколько народу через него ходит! Может, кто из местных бандюков подскажет…", 's648', 'say64992') \
     .with_responses() \
-        .response("Тогда я поспрашиваю в округе. Пошли.", EXIT, 'r', 'reply64994') \
+        .response("Тогда я поспрашиваю в округе. Пошли.", EXIT, 'r', 'reply64994').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.0 729.0
@@ -6715,9 +8117,9 @@ DialogStateBuilder('DMORTE.D_s649') \
         .line(SPEAKER, "Эй, шеф, *да ладно* тебе. Только не говори, что ты снова все забыл.", 's649', 'say65552') \
     .with_responses() \
         .response("Мне просто нужно освежить свою память.", 'DMORTE.D_s650', 'r', 'reply65553') \
-        .response("Нет, просто на этот раз я хочу услышать *всю* историю — давай, освежи мою память.", 'DMORTE.D_s650', 'r', 'reply65554').with_condition(lambda: '  Global("Morte_Warning","GLOBAL",1) ') \
+        .response("Нет, просто на этот раз я хочу услышать *всю* историю — давай, освежи мою память.", 'DMORTE.D_s650', 'r', 'reply65554').with_condition(lambda: _r65554_condition()) \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65555') \
-        .response("Ладно, забудь. Идем.", EXIT, 'r', 'reply65556') \
+        .response("Ладно, забудь. Идем.", EXIT, 'r', 'reply65556').with_action(lambda: _dispose()) \
     .done()
 
 # from 649.0 649.1
@@ -6725,10 +8127,10 @@ DialogStateBuilder('DMORTE.D_s650') \
     .with_npc_lines() \
         .line(SPEAKER, "Готов поспорить, что услышу ЭТО много раз, — Морт прочищает горло. — Посмотрим…  'Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его уже не записали в книгу мертвых'.", 's650', 'say65557') \
     .with_responses() \
-        .response("Фарод… хм-м. Продолжай.", 'DMORTE.D_s651', 'r', 'reply65558').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
-        .response("Продолжай.", 'DMORTE.D_s651', 'r', 'reply65559').with_condition(lambda: '  GlobalGT("Pharod","GLOBAL",0) ') \
+        .response("Фарод… хм-м. Продолжай.", 'DMORTE.D_s651', 'r', 'reply65558').with_condition(lambda: _r65558_condition()) \
+        .response("Продолжай.", 'DMORTE.D_s651', 'r', 'reply65559').with_condition(lambda: _r65559_condition()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65560') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply65561') \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply65561').with_action(lambda: _dispose()) \
     .done()
 
 # from 650.0 650.1
@@ -6736,10 +8138,10 @@ DialogStateBuilder('DMORTE.D_s651') \
     .with_npc_lines() \
         .line(SPEAKER, "Сейчас, сейчас, погоди, — Морт на миг умолкает. — Хорошо, вот последний кусок…  'Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому, КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода'.", 's651', 'say65562') \
     .with_responses() \
-        .response("А дальше? Что там написано после этого?", 'DMORTE.D_s652', 'r', 'reply65566').with_condition(lambda: '  Global("Morte_Warning","GLOBAL",1) ') \
-        .response("Когда я очнулся, рядом со мной не было дневника?", 'DMORTE.D_s682', 'r', 'reply65565').with_condition(lambda: '  Global("Journal","GLOBAL",0) ') \
+        .response("А дальше? Что там написано после этого?", 'DMORTE.D_s652', 'r', 'reply65566').with_condition(lambda: _r65566_condition()) \
+        .response("Когда я очнулся, рядом со мной не было дневника?", 'DMORTE.D_s682', 'r', 'reply65565').with_condition(lambda: _r65565_condition()) \
         .response("Тогда ладно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65567') \
-        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply65568') \
+        .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r', 'reply65568').with_action(lambda: _dispose()) \
     .done()
 
 # from 651.1
@@ -6747,10 +8149,10 @@ DialogStateBuilder('DMORTE.D_s652') \
     .with_npc_lines() \
         .line(SPEAKER, "О чем это ты, шеф? Здесь больше ничего нет.", 's652', 'say65563') \
     .with_responses() \
-        .response("А как насчет 'Не верь черепу'?", 'DMORTE.D_s654', 'r', 'reply65569').with_condition(lambda: '  Global("Morte_Tattoo_XP","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1) AddexperienceParty(1000) ~ JOURNAL #65573 /* ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ */ ') \
-        .response("А как насчет 'Не верь черепу'?", 'DMORTE.D_s654', 'r', 'reply65570').with_condition(lambda: '  Global("Morte_Tattoo_XP","GLOBAL",1) ') \
+        .response("А как насчет 'Не верь черепу'?", 'DMORTE.D_s654', 'r', 'reply65569').with_condition(lambda: _r65569_condition()).with_action(lambda: _r65569_action()) \
+        .response("А как насчет 'Не верь черепу'?", 'DMORTE.D_s654', 'r', 'reply65570').with_condition(lambda: _r65570_condition()) \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65571') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65572') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65572').with_action(lambda: _dispose()) \
     .done()
 
 # from 651.0
@@ -6760,7 +8162,7 @@ DialogStateBuilder('DMORTE.D_s653') \
     .with_responses() \
         .response("Как ты думаешь, что означает эта часть? Тебе не кажется, что здесь говорится о *тебе*?", 'DMORTE.D_s655', 'r', 'reply65574') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65575') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65576') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65576').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.4 652.0 652.1 729.4
@@ -6770,7 +8172,7 @@ DialogStateBuilder('DMORTE.D_s654') \
     .with_responses() \
         .response("Правда? А как ты думаешь, что это означает? Тебе не кажется, что здесь говорится о *тебе*?", 'DMORTE.D_s655', 'r', 'reply65578') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65579') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65580') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65580').with_action(lambda: _dispose()) \
     .done()
 
 # from 653.0 654.0
@@ -6780,7 +8182,7 @@ DialogStateBuilder('DMORTE.D_s655') \
     .with_responses() \
         .response("А ты не *лжешь* мне, Морт?", 'DMORTE.D_s656', 'r', 'reply65582') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65583') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65584') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65584').with_action(lambda: _dispose()) \
     .done()
 
 # from 655.0
@@ -6790,7 +8192,7 @@ DialogStateBuilder('DMORTE.D_s656') \
     .with_responses() \
         .response("*Пока*. Мне не нравится тот факт, что ты утаил эту строку от меня. Я хотел бы знать: может, ты *еще* чего-то недосказал с тех пор, как мы путешествуем вместе.", 'DMORTE.D_s657', 'r', 'reply65587') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65586') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65588') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65588').with_action(lambda: _dispose()) \
     .done()
 
 # from 656.0
@@ -6800,7 +8202,7 @@ DialogStateBuilder('DMORTE.D_s657') \
     .with_responses() \
         .response("Если есть ЧТО-ТО еще, то советую тебе побыстрее об этом рассказать.", 'DMORTE.D_s658', 'r', 'reply65590') \
         .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65591') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65592') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65592').with_action(lambda: _dispose()) \
     .done()
 
 # from 657.0
@@ -6809,7 +8211,7 @@ DialogStateBuilder('DMORTE.D_s658') \
         .line(SPEAKER, "Шеф, серьезно, больше сказать нечего. Я не хочу от тебя что-либо утаивать.", 's658', 'say65593') \
     .with_responses() \
         .response("Ладно, Морт. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65594') \
-        .response("Очень надеюсь на это. Идем.", EXIT, 'r', 'reply65595') \
+        .response("Очень надеюсь на это. Идем.", EXIT, 'r', 'reply65595').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.1 729.1
@@ -6819,7 +8221,7 @@ DialogStateBuilder('DMORTE.D_s659') \
     .with_responses() \
         .response("Что-нибудь еще?", 'DMORTE.D_s660', 'r', 'reply65597') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65598') \
-        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65599') \
+        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65599').with_action(lambda: _dispose()) \
     .done()
 
 # from 659.0
@@ -6829,7 +8231,7 @@ DialogStateBuilder('DMORTE.D_s660') \
     .with_responses() \
         .response("Ключи?", 'DMORTE.D_s661', 'r', 'reply65601') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65602') \
-        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65603') \
+        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65603').with_action(lambda: _dispose()) \
     .done()
 
 # from 660.0
@@ -6839,7 +8241,7 @@ DialogStateBuilder('DMORTE.D_s661') \
     .with_responses() \
         .response("Где, например?", 'DMORTE.D_s662', 'r', 'reply65605') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65606') \
-        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65607') \
+        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65607').with_action(lambda: _dispose()) \
     .done()
 
 # from 661.0
@@ -6848,7 +8250,7 @@ DialogStateBuilder('DMORTE.D_s662') \
         .line(SPEAKER, "Да где угодно, шеф. Буквально. В любое место, которое ты можешь себе вообразить, есть портал. Вот почему Сигил так популярен на планах.", 's662', 'say65608') \
     .with_responses() \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65609') \
-        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65610') \
+        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65610').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.2 729.2
@@ -6857,9 +8259,9 @@ DialogStateBuilder('DMORTE.D_s663') \
         .line(SPEAKER, "Эй! Чесание языком — моя лучшая черта. Он постукивает зубами, а затем 'скалится'. А? А?", 's663', 'say65611') \
     .with_responses() \
         .response("О-о, *очень* приятно это слышать.", 'DMORTE.D_s664', 'r', 'reply65612') \
-        .response("Да-да, я уже знаю о Потоке Проклятий, Морт. Мне очень интересно, чем ты занимался, когда оказался у Лотара.", 'DMORTE.D_s667', 'r', 'reply65613').with_condition(lambda: '  GlobalGT("Morte_Stolen","GLOBAL",2) ') \
+        .response("Да-да, я уже знаю о Потоке Проклятий, Морт. Мне очень интересно, чем ты занимался, когда оказался у Лотара.", 'DMORTE.D_s667', 'r', 'reply65613').with_condition(lambda: _r65613_condition()) \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65614') \
-        .response("Неважно Идем.", EXIT, 'r', 'reply65615') \
+        .response("Неважно Идем.", EXIT, 'r', 'reply65615').with_action(lambda: _dispose()) \
     .done()
 
 # from 663.0
@@ -6869,7 +8271,7 @@ DialogStateBuilder('DMORTE.D_s664') \
     .with_responses() \
         .response("Э… Чем *это* может быть полезно?", 'DMORTE.D_s665', 'r', 'reply65617') \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65618') \
-        .response("Неважно Идем.", EXIT, 'r', 'reply65619') \
+        .response("Неважно Идем.", EXIT, 'r', 'reply65619').with_action(lambda: _dispose()) \
     .done()
 
 # from 664.0
@@ -6877,10 +8279,10 @@ DialogStateBuilder('DMORTE.D_s665') \
     .with_npc_lines() \
         .line(SPEAKER, "Это один из моих талантов… Я называю его 'Потоком Проклятий'. Видишь ли, иногда я могу вогнать в краску кого-нибудь, просто пустив в его адрес какую-нибудь колкость. Конечно же, после этого обычно мне приходится долго бегать… но суть ты уловил.", 's665', 'say65620') \
     .with_responses() \
-        .response("А как это действует?", 'DMORTE.D_s666', 'r', 'reply65621').with_action(lambda: ' DO ~SetGlobal("Morte_Talent","GLOBAL",1) ~ JOURNAL #65625 /* ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ */ ') \
-        .response("Что-нибудь еще?", 'DMORTE.D_s667', 'r', 'reply65622').with_condition(lambda: '  GlobalGT("Morte_Stolen","GLOBAL",2) ') \
+        .response("А как это действует?", 'DMORTE.D_s666', 'r', 'reply65621').with_action(lambda: _r65621_action()) \
+        .response("Что-нибудь еще?", 'DMORTE.D_s667', 'r', 'reply65622').with_condition(lambda: _r65622_condition()) \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65623') \
-        .response("Хм-м. Это может пригодиться. Идем.", EXIT, 'r', 'reply65624') \
+        .response("Хм-м. Это может пригодиться. Идем.", EXIT, 'r', 'reply65624').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.3 665.0 729.3
@@ -6888,9 +8290,9 @@ DialogStateBuilder('DMORTE.D_s666') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, я могу извергать проклятия на любого до тех пор, пока они в припадке безумства не начнут гоняться за мной.", 's666', 'say65626') \
     .with_responses() \
-        .response("А еще что-нибудь ты умеешь?", 'DMORTE.D_s667', 'r', 'reply65627').with_condition(lambda: '  GlobalGT("Morte_Stolen","GLOBAL",2) ') \
+        .response("А еще что-нибудь ты умеешь?", 'DMORTE.D_s667', 'r', 'reply65627').with_condition(lambda: _r65627_condition()) \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65628') \
-        .response("Хм-м. Это может пригодиться. Идем.", EXIT, 'r', 'reply65629') \
+        .response("Хм-м. Это может пригодиться. Идем.", EXIT, 'r', 'reply65629').with_action(lambda: _dispose()) \
     .done()
 
 # from 663.1 665.1 666.0
@@ -6898,9 +8300,9 @@ DialogStateBuilder('DMORTE.D_s667') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, пока я пылился на полке у Лотара в ожидании того, когда ты меня не выкупишь — спасибо за бесцельно проведенное там время, — я завел там несколько друзей, и они сказали, что если мне понадобится помощь, то я могу их позвать.", 's667', 'say65630') \
     .with_responses() \
-        .response("Друзей? О чем это ты?", 'DMORTE.D_s668', 'r', 'reply65631').with_action(lambda: ' JOURNAL #65637 /* ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ */ ') \
+        .response("Друзей? О чем это ты?", 'DMORTE.D_s668', 'r', 'reply65631').with_action(lambda: _r65631_action()) \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65632') \
-        .response("Приятно слышать это. Идем.", EXIT, 'r', 'reply65633') \
+        .response("Приятно слышать это. Идем.", EXIT, 'r', 'reply65633').with_action(lambda: _dispose()) \
     .done()
 
 # from 667.0
@@ -6909,7 +8311,7 @@ DialogStateBuilder('DMORTE.D_s668') \
         .line(SPEAKER, "Ну, по моему свисту они появляются просто из ниоткуда. Они — та еще кучка драчунов: кусаются как *змеи*.", 's668', 'say65634') \
     .with_responses() \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65635') \
-        .response("Приятно слышать это. Идем.", EXIT, 'r', 'reply65636') \
+        .response("Приятно слышать это. Идем.", EXIT, 'r', 'reply65636').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.5 729.5
@@ -6917,17 +8319,17 @@ DialogStateBuilder('DMORTE.D_s669') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, вот как *я* все себе представляю…", 's669', 'say65638') \
     .with_responses() \
-        .response("Продолжай…", 'DMORTE.D_s671', 'r', 'reply65639').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
-        .response("Продолжай…", 'DMORTE.D_s672', 'r', 'reply65640').with_condition(lambda: '  Global("Pharod","GLOBAL",1) Global("Pharod_Quest","GLOBAL",1) ') \
-        .response("Продолжай…", 'DMORTE.D_s673', 'r', 'reply65641').with_condition(lambda: '  GlobalGT("Pharod_Quest","GLOBAL",1) !Global("AR0401_Visited","GLOBAL",1) ') \
-        .response("Продолжай…", 'DMORTE.D_s670', 'r', 'reply65642').with_condition(lambda: '  Global("AR0401_Visited","GLOBAL",1) Global("AR0500_Visited","GLOBAL",0) ') \
-        .response("Продолжай…", 'DMORTE.D_s674', 'r', 'reply65643').with_condition(lambda: '  Global("AR0500_Visited","GLOBAL",1) Global("Know_Ravel","GLOBAL",0) ') \
-        .response("Продолжай…", 'DMORTE.D_s675', 'r', 'reply65644').with_condition(lambda: '  Global("Know_Ravel","GLOBAL",1) Global("Know_Ravel_Key","GLOBAL",0) ') \
-        .response("Продолжай…", 'DMORTE.D_s677', 'r', 'reply65645').with_condition(lambda: '  Global("Know_Ravel","GLOBAL",1) GlobalGT("Know_Ravel_Key","GLOBAL",0) Global("AR0610_Visited","GLOBAL",0) ') \
-        .response("Продолжай…", 'DMORTE.D_s680', 'r', 'reply65646').with_condition(lambda: '  Global("AR0610_Visited","GLOBAL",1) Global("AR0700_Visited","GLOBAL",0) ') \
-        .response("Продолжай…", 'DMORTE.D_s681', 'r', 'reply65647').with_condition(lambda: '  Global("AR0700_Visited","GLOBAL",1) ') \
+        .response("Продолжай…", 'DMORTE.D_s671', 'r', 'reply65639').with_condition(lambda: _r65639_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s672', 'r', 'reply65640').with_condition(lambda: _r65640_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s673', 'r', 'reply65641').with_condition(lambda: _r65641_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s670', 'r', 'reply65642').with_condition(lambda: _r65642_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s674', 'r', 'reply65643').with_condition(lambda: _r65643_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s675', 'r', 'reply65644').with_condition(lambda: _r65644_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s677', 'r', 'reply65645').with_condition(lambda: _r65645_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s680', 'r', 'reply65646').with_condition(lambda: _r65646_condition()) \
+        .response("Продолжай…", 'DMORTE.D_s681', 'r', 'reply65647').with_condition(lambda: _r65647_condition()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65648') \
-        .response("Если подумать, забудь об этом. Пошли.", EXIT, 'r', 'reply65649') \
+        .response("Если подумать, забудь об этом. Пошли.", EXIT, 'r', 'reply65649').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.3
@@ -6936,7 +8338,7 @@ DialogStateBuilder('DMORTE.D_s670') \
         .line(SPEAKER, "Как по мне, это твое шоу, шеф. Тут я мало что могу подсказать.", 's670', 'say65650') \
     .with_responses() \
         .response("Это что-то *новое*. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65651') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65652') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65652').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.0
@@ -6945,7 +8347,7 @@ DialogStateBuilder('DMORTE.D_s671') \
         .line(SPEAKER, "Я считаю, что ты должен попробовать отыскать этого 'Фарода', где бы ни находилась его берлога. У тебя бы не было этих указаний на спине, не будь у него хоть какое-то понятие о том, что с тобой стряслось. Кто-нибудь из местных ОБЯЗАТЕЛЬНО должен знать, где он находится.", 's671', 'say65653') \
     .with_responses() \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65654') \
-        .response("Хорошо. Давай тогда искать его.", EXIT, 'r', 'reply65655') \
+        .response("Хорошо. Давай тогда искать его.", EXIT, 'r', 'reply65655').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.1
@@ -6954,7 +8356,7 @@ DialogStateBuilder('DMORTE.D_s672') \
         .line(SPEAKER, "Скажем, мы могли бы попробовать найти поскорее этот 'бронзовый шар' и принести его старому костылю.", 's672', 'say65656') \
     .with_responses() \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65657') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65658') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65658').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.2
@@ -6963,7 +8365,7 @@ DialogStateBuilder('DMORTE.D_s673') \
         .line(SPEAKER, "Скажем, мы могли бы выяснить, где нашли твой труп. Возможно, мы смогли бы узнать, кто записал тебя в книгу мертвых.", 's673', 'say65659') \
     .with_responses() \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65660') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65661') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65661').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.4
@@ -6972,7 +8374,7 @@ DialogStateBuilder('DMORTE.D_s674') \
         .line(SPEAKER, "Скажем, мы могли бы разыскать тех, кто что-нибудь о тебе знает… и как ты стал таким. В районах должны найтись толковые рубаки, которым известно что-нибудь интересное о тебе.", 's674', 'say65662') \
     .with_responses() \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65663') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65664') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65664').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.5
@@ -6980,9 +8382,9 @@ DialogStateBuilder('DMORTE.D_s675') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, нам нужно выяснить больше про эту ночную ведьму, Равель. И должен тебе признаться, шеф: я *не горю* желанием это делать. Однако мудрецы Фестхолла или какие-нибудь камни переживаний могут нам что-то подсказать.", 's675', 'say65665') \
     .with_responses() \
-        .response("Фестхолл? Камни переживаний?", 'DMORTE.D_s676', 'r', 'reply65666').with_condition(lambda: '  Global("AR0601_Visited","GLOBAL",0) ').with_action(lambda: ' JOURNAL #65669 /* ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ */ ') \
+        .response("Фестхолл? Камни переживаний?", 'DMORTE.D_s676', 'r', 'reply65666').with_condition(lambda: _r65666_condition()).with_action(lambda: _r65666_action()) \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65667') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65668') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65668').with_action(lambda: _dispose()) \
     .done()
 
 # from 675.0
@@ -6991,7 +8393,7 @@ DialogStateBuilder('DMORTE.D_s676') \
         .line(SPEAKER, "Извини, шеф, я все забываю, что у тебя знания, как у зеленого первичника. Слушай, Фестхолл — это главная берлога фракции чувствующих в Чиновничьем районе. Там есть библиотеки камней переживаний, а еще куча мудрецов, лекторов и наставников, которые могли бы пролить свет на то, что случилось с Равель.", 's676', 'say65670') \
     .with_responses() \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65671') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65672') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65672').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.6
@@ -6999,10 +8401,10 @@ DialogStateBuilder('DMORTE.D_s677') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, Равель попала в лабиринт. И все же возможно есть КАКОЙ-НИБУДЬ ключ и КАКОЙ-НИБУДЬ портал, которые могли бы нас туда доставить, если ты все еще этого хочешь.", 's677', 'say65673') \
     .with_responses() \
-        .response("Ты не знаешь, чем может быть ключ к ее лабиринту?", 'DMORTE.D_s678', 'r', 'reply65674').with_condition(lambda: '  Global("Know_Ravel_Key","GLOBAL",1) ').with_action(lambda: ' JOURNAL #65678 /* ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ */ ') \
+        .response("Ты не знаешь, чем может быть ключ к ее лабиринту?", 'DMORTE.D_s678', 'r', 'reply65674').with_condition(lambda: _r65674_condition()).with_action(lambda: _r65674_action()) \
         .response("Ты не знаешь, где мне найти портал в ее лабиринт?", 'DMORTE.D_s679', 'r', 'reply65675') \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65676') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65677') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65677').with_action(lambda: _dispose()) \
     .done()
 
 # from 677.0
@@ -7012,7 +8414,7 @@ DialogStateBuilder('DMORTE.D_s678') \
     .with_responses() \
         .response("Ты не знаешь, где мне найти портал в ее лабиринт?", 'DMORTE.D_s679', 'r', 'reply65680') \
         .response("Неплохой совет… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65681') \
-        .response("Ладно. Продолжим поиски.", EXIT, 'r', 'reply65682') \
+        .response("Ладно. Продолжим поиски.", EXIT, 'r', 'reply65682').with_action(lambda: _dispose()) \
     .done()
 
 # from 677.1 678.0
@@ -7021,7 +8423,7 @@ DialogStateBuilder('DMORTE.D_s679') \
         .line(SPEAKER, "Хоть убей, не знаю, шеф. В Сигиле полно порталов. Я бы начал с Фестхолла — сомневаюсь, что он там, но тамошние камни переживаний могут кое-что рассказать об этом. А если не получится, можно все забыть про это и заставить кого-нибудь СДЕЛАТЬ нам портал.", 's679', 'say65683') \
     .with_responses() \
         .response("Хорошо. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65684') \
-        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65685') \
+        .response("Хорошо. Тогда идем.", EXIT, 'r', 'reply65685').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.7
@@ -7030,7 +8432,7 @@ DialogStateBuilder('DMORTE.D_s680') \
         .line(SPEAKER, "Скажем, мы могли бы найти то, что нам нужно, и к чертям сваливать отсюда, шеф. От этого места у меня мурашки, хоть у меня и нет кожи. Хорошо?", 's680', 'say65686') \
     .with_responses() \
         .response("И то правда. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65687') \
-        .response("Ну хорошо. Продолжим путь.", EXIT, 'r', 'reply65688') \
+        .response("Ну хорошо. Продолжим путь.", EXIT, 'r', 'reply65688').with_action(lambda: _dispose()) \
     .done()
 
 # from 669.8
@@ -7039,7 +8441,7 @@ DialogStateBuilder('DMORTE.D_s681') \
         .line(SPEAKER, "Ты меня понял, шеф. Это целиком твое шоу, я просто буду рядом.", 's681', 'say65689') \
     .with_responses() \
         .response("И то правда. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65690') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65691') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65691').with_action(lambda: _dispose()) \
     .done()
 
 # from 651.2
@@ -7047,9 +8449,9 @@ DialogStateBuilder('DMORTE.D_s682') \
     .with_npc_lines() \
         .line(SPEAKER, "Нет… ты был обобран догола. Как я уже говорил, похоже, что достаточно того дневника, что написан у тебя на теле.", 's682', 'say65692') \
     .with_responses() \
-        .response("Ты уверен, что не знаешь никого по имени Фарод?", 'DMORTE.D_s683', 'r', 'reply65693').with_condition(lambda: '  Global("Pharod","GLOBAL",0) ') \
+        .response("Ты уверен, что не знаешь никого по имени Фарод?", 'DMORTE.D_s683', 'r', 'reply65693').with_condition(lambda: _r65693_condition()) \
         .response("И то правда. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65694') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65695') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65695').with_action(lambda: _dispose()) \
     .done()
 
 # from 682.0
@@ -7058,7 +8460,7 @@ DialogStateBuilder('DMORTE.D_s683') \
         .line(SPEAKER, "Не-а. В общем, какой-нибудь пень должен знать, как добраться до него. Надо поспрашивать местных.", 's683', 'say65696') \
     .with_responses() \
         .response("Перед тем как мы пойдем, у меня есть еще вопросы…", 'DMORTE.D_s329', 'r', 'reply65697') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65698') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65698').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.6 729.6
@@ -7066,9 +8468,9 @@ DialogStateBuilder('DMORTE.D_s684') \
     .with_npc_lines() \
         .line(SPEAKER, "Ага… мимир — это летающая энциклопедия. Запихиваешь в него информацию и получаешь обратно.", 's684', 'say65699') \
     .with_responses() \
-        .response("Но разве мимиры не сделаны из серебристого металла?", 'DMORTE.D_s685', 'r', 'reply65700').with_condition(lambda: '  Global("Grace_Silver_Mimir","GLOBAL",1) ') \
+        .response("Но разве мимиры не сделаны из серебристого металла?", 'DMORTE.D_s685', 'r', 'reply65700').with_condition(lambda: _r65700_condition()) \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65701') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65702') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65702').with_action(lambda: _dispose()) \
     .done()
 
 # from 684.0
@@ -7078,7 +8480,7 @@ DialogStateBuilder('DMORTE.D_s685') \
     .with_responses() \
         .response("Не думаю, что ты — мимир, Морт. Что ты такое?", 'DMORTE.D_s686', 'r', 'reply65704') \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65705') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65706') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65706').with_action(lambda: _dispose()) \
     .done()
 
 # from 685.0
@@ -7086,10 +8488,10 @@ DialogStateBuilder('DMORTE.D_s686') \
     .with_npc_lines() \
         .line(SPEAKER, "Это что, допрос? Да что *ты* вообще знаешь о мимирах?", 's686', 'say65707') \
     .with_responses() \
-        .response("Я знаю достаточно, чтобы считать, что ты лжешь мне.", 'DMORTE.D_s687', 'r', 'reply65708').with_condition(lambda: '  Global("Grace_Smell_Mimir","GLOBAL",1) ') \
-        .response("Я знаю достаточно, чтобы считать, что ты лжешь мне. Сначала та забытая строчка на моей спине, говорящая не верить тебе, теперь это. И что я должен думать?", 'DMORTE.D_s687', 'r', 'reply65709').with_condition(lambda: '  Global("Morte_Tattoo_XP","GLOBAL",1) ') \
-        .response("Пожалуй, ничего. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65710').with_action(lambda: ' JOURNAL #65712 /* ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ */ ') \
-        .response("Тогда неважно. Идем.", EXIT, 'r', 'reply65711').with_action(lambda: ' JOURNAL #65712 /* ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ */ ') \
+        .response("Я знаю достаточно, чтобы считать, что ты лжешь мне.", 'DMORTE.D_s687', 'r', 'reply65708').with_condition(lambda: _r65708_condition()) \
+        .response("Я знаю достаточно, чтобы считать, что ты лжешь мне. Сначала та забытая строчка на моей спине, говорящая не верить тебе, теперь это. И что я должен думать?", 'DMORTE.D_s687', 'r', 'reply65709').with_condition(lambda: _r65709_condition()) \
+        .response("Пожалуй, ничего. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65710').with_action(lambda: _r65710_action()) \
+        .response("Тогда неважно. Идем.", EXIT, 'r', 'reply65711').with_action(lambda: _r65711_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from 686.0 686.1
@@ -7099,7 +8501,7 @@ DialogStateBuilder('DMORTE.D_s687') \
     .with_responses() \
         .response("Чем же тогда ты *являешься*?", 'DMORTE.D_s688', 'r', 'reply65714') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65715') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65716') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65716').with_action(lambda: _dispose()) \
     .done()
 
 # from 687.0
@@ -7107,10 +8509,10 @@ DialogStateBuilder('DMORTE.D_s688') \
     .with_npc_lines() \
         .line(SPEAKER, "Я летающий череп, который много знает.", 's688', 'say65717') \
     .with_responses() \
-        .response("А как насчет твоего бааторийского запаха?", 'DMORTE.D_s690', 'r', 'reply65718').with_condition(lambda: '  Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",0) ') \
-        .response("А как насчет твоего бааторийского запаха?", 'DMORTE.D_s689', 'r', 'reply65719').with_condition(lambda: '  Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",1) ') \
+        .response("А как насчет твоего бааторийского запаха?", 'DMORTE.D_s690', 'r', 'reply65718').with_condition(lambda: _r65718_condition()) \
+        .response("А как насчет твоего бааторийского запаха?", 'DMORTE.D_s689', 'r', 'reply65719').with_condition(lambda: _r65719_condition()) \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65720') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65721') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65721').with_action(lambda: _dispose()) \
     .done()
 
 # from 688.1
@@ -7120,7 +8522,7 @@ DialogStateBuilder('DMORTE.D_s689') \
     .with_responses() \
         .response("А я *был* там, Морт. Я бродил по Авернусу.", 'DMORTE.D_s691', 'r', 'reply65723') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65724') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply65725') \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply65725').with_action(lambda: _dispose()) \
     .done()
 
 # from 688.0
@@ -7130,7 +8532,7 @@ DialogStateBuilder('DMORTE.D_s690') \
     .with_responses() \
         .response("Она ведь определенно что-то почувствовала — это же бааторийский запах, верно?", 'DMORTE.D_s691', 'r', 'reply65727') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65728') \
-        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply65729') \
+        .response("Забудь об этом. Идем.", EXIT, 'r', 'reply65729').with_action(lambda: _dispose()) \
     .done()
 
 # from 689.0 690.0
@@ -7138,7 +8540,7 @@ DialogStateBuilder('DMORTE.D_s691') \
     .with_npc_lines() \
         .line(SPEAKER, "Тогда… да, но… ну да. Да, я пахну немного. *Прошу прощения*.", 's691', 'say65730') \
     .with_responses() \
-        .response("*Почему* ты пахнешь как Баатор?", 'DMORTE.D_s692', 'r', 'reply65731').with_action(lambda: ' DO ~SetGlobal("Morte_Story","GLOBAL",1) ~ ') \
+        .response("*Почему* ты пахнешь как Баатор?", 'DMORTE.D_s692', 'r', 'reply65731').with_action(lambda: _r65731_action()) \
     .done()
 
 # from 691.0
@@ -7146,7 +8548,7 @@ DialogStateBuilder('DMORTE.D_s692') \
     .with_npc_lines() \
         .line(SPEAKER, "Я был в тамошних преисподних. Довольно долго был. А эта вонь въедается в тебя.", 's692', 'say65732') \
     .with_responses() \
-        .response("Ты был в тех преисподних? Что ты там ДЕЛАЛ?", 'DMORTE.D_s693', 'r', 'reply65733').with_action(lambda: ' DO ~AddexperienceParty(12000) ~ ') \
+        .response("Ты был в тех преисподних? Что ты там ДЕЛАЛ?", 'DMORTE.D_s693', 'r', 'reply65733').with_action(lambda: _r65733_action()) \
     .done()
 
 # from 329.7 692.0 729.7
@@ -7170,9 +8572,9 @@ DialogStateBuilder('DMORTE.D_s695') \
         .line(SPEAKER, "Э… — Морт на секунду умолкает. — Да, ты прав, в этом нет ничего веселого. Понимаешь, я знал кучу вещей, пока был жив. И может быть, когда я знал что-то, то не всегда говорил об этом правду. Мне кажется, я, возможно, исказить правду пару раз и этим прописать кое-кого в книгу мертвых раньше срока.", 's695', 'say65736') \
     .with_responses() \
         .response("Ты помнишь, кого?", 'DMORTE.D_s697', 'r', 'reply65737') \
-        .response("И это был я, не так ли?", 'DMORTE.D_s696', 'r', 'reply65738').with_condition(lambda: '  CheckStatGT(Protagonist,13,WIS) ') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65739').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65740').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("И это был я, не так ли?", 'DMORTE.D_s696', 'r', 'reply65738').with_condition(lambda: _r65738_condition()) \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65739').with_condition(lambda: _r65739_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65740').with_condition(lambda: _r65740_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 695.1
@@ -7181,8 +8583,8 @@ DialogStateBuilder('DMORTE.D_s696') \
         .line(SPEAKER, "Морт задерживает на тебе взгляд. Да. Не знаю, *откуда* мне это известно, шеф, но мне так кажется. Я думаю, что это из-за тебя меня туда послали. Это стало последней каплей. Дело в том, что я не помню, что случилось: я даже не помню, каким был человеком, или какой была моя жизнь до того, как я очнулся в Колонне.", 's696', 'say65741') \
     .with_responses() \
         .response("Почему ты забыл?", 'DMORTE.D_s698', 'r', 'reply65742') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65743').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65744').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65743').with_condition(lambda: _r65743_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65744').with_condition(lambda: _r65744_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 695.0
@@ -7191,8 +8593,8 @@ DialogStateBuilder('DMORTE.D_s697') \
         .line(SPEAKER, "Не знаю, *откуда* мне это известно, шеф, но мне так кажется, это был *ты*. По крайней мере однажды. Дело в том, что я не помню, что произошло. я даже не помню, каким был человеком, или какой была моя жизнь до того, как я очнулся в Колонне.", 's697', 'say65745') \
     .with_responses() \
         .response("Почему ты забыл?", 'DMORTE.D_s698', 'r', 'reply65746') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65747').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65748').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65747').with_condition(lambda: _r65747_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65748').with_condition(lambda: _r65748_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 696.0 697.0
@@ -7200,8 +8602,8 @@ DialogStateBuilder('DMORTE.D_s698') \
     .with_npc_lines() \
         .line(SPEAKER, "Обычно так происходит, когда ты умираешь. Уверен, что тебе это знакомо. Ты просто… забываешь. Думаю, я был не самым уважаемым членом общества при жизни… но черт возьми, а кто был? — Морт вздыхает. — С этим я ничего не могу поделать. Нет ничего хуже, чем быть *честным* все время.", 's698', 'say65749') \
     .with_responses() \
-        .response("Кроме как быть приговоренным к преисподней. Это гораздо хуже, чем говорить правду.", 'DMORTE.D_s699', 'r', 'reply65750').with_condition(lambda: '  Global("Chaotic_Morte_1","GLOBAL",0) ').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALLawful_Morte_1","GLOBALLaw",1) ~ ') \
-        .response("Да, это так… Но тебе следует подбирать свою ложь поосторожней.", 'DMORTE.D_s699', 'r', 'reply65751').with_condition(lambda: '  Global("Lawful_Morte_1","GLOBAL",0) ').with_action(lambda: ' DO ~IncrementGlobalOnceEx("GLOBALChaotic_Morte_1","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_Morte_1","GLOBALGood",-1) ~ ') \
+        .response("Кроме как быть приговоренным к преисподней. Это гораздо хуже, чем говорить правду.", 'DMORTE.D_s699', 'r', 'reply65750').with_condition(lambda: _r65750_condition()).with_action(lambda: _r65750_action()) \
+        .response("Да, это так… Но тебе следует подбирать свою ложь поосторожней.", 'DMORTE.D_s699', 'r', 'reply65751').with_condition(lambda: _r65751_condition()).with_action(lambda: _r65751_action()) \
     .done()
 
 # from 698.0 698.1
@@ -7209,9 +8611,9 @@ DialogStateBuilder('DMORTE.D_s699') \
     .with_npc_lines() \
         .line(SPEAKER, "Да… ты прав. *Снова*. Морт щелкает зубами. Это напоминает похрустывание пальцами. Думаю, все добро, зло, ложь и обман возвращается к нам. И когда меня прописали в книгу мертвых, настал мой черед платить перевозчику.", 's699', 'say65752') \
     .with_responses() \
-        .response("Так как же тебе удалось выбраться из Колонны?", 'DMORTE.D_s700', 'r', 'reply65753').with_action(lambda: ' JOURNAL #53633 /* ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ */ ') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65754').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65755').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Так как же тебе удалось выбраться из Колонны?", 'DMORTE.D_s700', 'r', 'reply65753').with_action(lambda: _r65753_action()) \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65754').with_condition(lambda: _r65754_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65755').with_condition(lambda: _r65755_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 699.0
@@ -7219,9 +8621,9 @@ DialogStateBuilder('DMORTE.D_s700') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну… это ты помог мне, шеф. Когда ты объявился перед Колонной Черепов, я пробился наружу. Мои очевидные эрудиция и очарование привлекли твое внимание — ты знал, что именно *я* был головой, которая больше всех знала. Так что я подписался под твою сделку.", 's700', 'say65757') \
     .with_responses() \
-        .response("Сделку?..", 'DMORTE.D_s701', 'r', 'reply65758').with_action(lambda: ' DO ~PlaySoundNotRanged("SPTR_01") FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65759').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65760').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Сделку?..", 'DMORTE.D_s701', 'r', 'reply65758').with_action(lambda: _r65758_action()) \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65759').with_condition(lambda: _r65759_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65760').with_condition(lambda: _r65760_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 700.0
@@ -7230,7 +8632,7 @@ DialogStateBuilder('DMORTE.D_s701') \
         .line(SPEAKER, "Пока Морт говорит, твое зрение заволакивает кроваво-красным, ты слышишь оглушительный рев, ужасный *пронзительный* гомон голосов, болтовни, визжания, криков. ВСЕ они молят, кричат об освобождении, а голос Морта… слабый, едва слышный в этой урагане. Он звучит отчаянно, напугано и… жалостно, трагически *потерянно*.", 's701', 'say65761') \
     .with_responses() \
         .response("Эхо: Ты. Череп. Говори.", 'DMORTE.D_s702', 'r', 'reply65762') \
-        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65763').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
+        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65763').with_action(lambda: _r65763_action()) \
     .done()
 
 # from 701.0
@@ -7239,7 +8641,7 @@ DialogStateBuilder('DMORTE.D_s702') \
         .line(SPEAKER, "Ревущие голоса утихают, ты смотришь на маленький череп, на его трещины в адском свете. Он смотрит на тебя. По его лицу течет кровь и гной, его зубы стучат словно от холода. Я… я с-с-смогу п-п-помочь тебе. Я з-з-знаю, что т-т-тебе надо… все эти головы… их знания… п-п-прошу тебя, *умоляю*, освободи меня. Позволь мне *помочь* тебе. Я расскажу тебе о чем угодно, обо *всем*.", 's702', 'say65764') \
     .with_responses() \
         .response("Эхо: *Так* ли это? ПОКЛЯНИСЬ в этом, череп. ПОКЛЯНИСЬ, что ты будешь служить мне до конца моих дней, иначе ты останешься здесь.", 'DMORTE.D_s703', 'r', 'reply65765') \
-        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65766').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
+        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65766').with_action(lambda: _r65766_action()) \
     .done()
 
 # from 702.0
@@ -7248,7 +8650,7 @@ DialogStateBuilder('DMORTE.D_s703') \
         .line(SPEAKER, "Клянусь. Клянусь… только, *пожалуйста*, освободи меня… Я… Ты видишь, как Морт тошнотворно глотает, его гордость становится осязаемой. Я… *умоляю* тебя. Позволь мне *помочь* тебе. Пожалуйста.", 's703', 'say65767') \
     .with_responses() \
         .response("Эхо: Хорошо. Я освобожу тебя.", 'DMORTE.D_s704', 'r', 'reply65768') \
-        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65769').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
+        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65769').with_action(lambda: _r65769_action()) \
     .done()
 
 # from 703.0
@@ -7257,7 +8659,7 @@ DialogStateBuilder('DMORTE.D_s704') \
         .line(SPEAKER, "Твое зрение смещается, как будто ты движешься. Какофония криков и рева начинается снова, кошмарные вопли, рычание, выпады и оскорбления… ты чувствуешь, как твои руки погружаются в грязную трясину колонны, состоящую из кусающих клыков и челюстей. Твои руки хватают небольшой череп и вырывают его из колонны как гнилой зуб…", 's704', 'say65770') \
     .with_responses() \
         .response("Эхо: ГОТОВО.", 'DMORTE.D_s705', 'r', 'reply65771') \
-        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65772').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
+        .response("Стряхнуть с себя воспоминание.", 'DMORTE.D_s706', 'r', 'reply65772').with_action(lambda: _r65772_action()) \
     .done()
 
 # from 704.0
@@ -7265,8 +8667,8 @@ DialogStateBuilder('DMORTE.D_s705') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты смотришь вниз, на кровавый череп в своих израненных руках. Его глаза покрыты гноем колонны, зубы стучат, снова и снова. Он напоминает тебе визжащего новорожденного, беспомощного и — в глазах человека, которым ты когда-то был, — жалкого.", 's705', 'say65773') \
     .with_responses() \
-        .response("Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.", 'DMORTE.D_s706', 'r', 'reply65774').with_condition(lambda: '  Global("Memory_Morte_Pillar","GLOBAL",0) ').with_action(lambda: ' DO ~SetGlobal("Memory_Morte_Pillar","GLOBAL",1) GiveExperience(Protagonist,12000) FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
-        .response("Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.", 'DMORTE.D_s706', 'r', 'reply65775').with_condition(lambda: '  Global("Memory_Morte_Pillar","GLOBAL",1) ').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
+        .response("Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.", 'DMORTE.D_s706', 'r', 'reply65774').with_condition(lambda: _r65774_condition()).with_action(lambda: _r65774_action()) \
+        .response("Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.", 'DMORTE.D_s706', 'r', 'reply65775').with_condition(lambda: _r65775_condition()).with_action(lambda: _r65775_action()) \
     .done()
 
 # from 701.1 702.1 703.1 704.1 705.0 705.1
@@ -7275,8 +8677,8 @@ DialogStateBuilder('DMORTE.D_s706') \
         .line(SPEAKER, "Видение расплывается, пелена уходит прочь, а Морт все еще продолжает без умолку болтать. Мы поговорили некоторое время, согласовывая обязательства сделки. Думаю, мы произвели друг на друга хорошее впечатление, так что ты предложил мне выйти из Колонны, и с тех пор я рад находится рядом с тобой.", 's706', 'say65776') \
     .with_responses() \
         .response("Э… И что случилось потом?", 'DMORTE.D_s707', 'r', 'reply65777') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65778').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65779').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65778').with_condition(lambda: _r65778_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65779').with_condition(lambda: _r65779_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 706.0
@@ -7284,9 +8686,9 @@ DialogStateBuilder('DMORTE.D_s707') \
     .with_npc_lines() \
         .line(SPEAKER, "Я не знаю. Как только я выбрался, я потерял почти все знания Колонны. То есть, я хочу сказать, откуда мне было знать, я ведь ни разу не был вне этой чертовой штуки… но ты отнесся к этому с большим пониманием…", 's707', 'say65780') \
     .with_responses() \
-        .response("Ты потерял все знания, которые имел?..", 'DMORTE.D_s708', 'r', 'reply65781').with_action(lambda: ' DO ~PlaySoundNotRanged("SPTR_01") FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65782').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65783').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Ты потерял все знания, которые имел?..", 'DMORTE.D_s708', 'r', 'reply65781').with_action(lambda: _r65781_action()) \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65782').with_condition(lambda: _r65782_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65783').with_condition(lambda: _r65783_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 707.0
@@ -7295,8 +8697,8 @@ DialogStateBuilder('DMORTE.D_s708') \
         .line(SPEAKER, "Твое зрение снова затуманивается, голова идет кругом, кишки завязывает в узел. Ты слышишь треск костей и крики Морта: он воет от боли, просит кого-то прекратить, прекратить *убивать* его… а твоя рука продолжает бить, снова и снова…", 's708', 'say65784') \
     .with_responses() \
         .response("Эхо: Будь ты ПРОКЛЯТ, череп, ты ОБМАНУЛ меня. Я БРОШУ ТЕБЯ НАЗАД В ЭТУ ЧЕРТОВУ КОЛОННУ И ОСТАВЛЮ ТЕБЯ ТАМ *ПОДЫХАТЬ*.", 'DMORTE.D_s709', 'r', 'reply65785') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65786').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65787').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65786').with_condition(lambda: _r65786_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65787').with_condition(lambda: _r65787_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 708.0
@@ -7304,9 +8706,9 @@ DialogStateBuilder('DMORTE.D_s709') \
     .with_npc_lines() \
         .line(SPEAKER, "Слышится звук удара кости о что-то металлическое, пол или стену. Разлетаются выбитые зубы. Ты слышишь Морта, скулящего как побитый пес, молящего тебя…", 's709', 'say65788') \
     .with_responses() \
-        .response("Эхо: ЗНАЙ, ЧТО ТВОИ СТРАДАНИЯ В КОЛОННЕ БУДУТ *НИЧЕМ* ПО СРАВНЕНИЮ С ТЕМ МУЧЕНИЕМ, КОТОРЫЕ ТЫ *ИСПЫТАЕШЬ* У МЕНЯ.", 'DMORTE.D_s710', 'r', 'reply65789').with_action(lambda: ' DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~ ') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65790').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65791').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Эхо: ЗНАЙ, ЧТО ТВОИ СТРАДАНИЯ В КОЛОННЕ БУДУТ *НИЧЕМ* ПО СРАВНЕНИЮ С ТЕМ МУЧЕНИЕМ, КОТОРЫЕ ТЫ *ИСПЫТАЕШЬ* У МЕНЯ.", 'DMORTE.D_s710', 'r', 'reply65789').with_action(lambda: _r65789_action()) \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65790').with_condition(lambda: _r65790_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65791').with_condition(lambda: _r65791_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 709.0
@@ -7315,8 +8717,8 @@ DialogStateBuilder('DMORTE.D_s710') \
         .line(SPEAKER, "Видение снова отступает, превращая вопль Морта в размеренный ритм его болтовни. И ты понял, что я все еще полезен для тебя, поэтому я до сих пор следую за тобой по пятам.", 's710', 'say65792') \
     .with_responses() \
         .response("Морт, а что я хотел от Колонны? И сколько прошло времени с тех пор, как я тебя освободил?", 'DMORTE.D_s711', 'r', 'reply65793') \
-        .response("Э, забудь об этом, Морт… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65794').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65795').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Э, забудь об этом, Морт… У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65794').with_condition(lambda: _r65794_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65795').with_condition(lambda: _r65795_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 710.0
@@ -7325,8 +8727,8 @@ DialogStateBuilder('DMORTE.D_s711') \
         .line(SPEAKER, "Морт задумывается. Ну, достаточно давно, я не знаю точно, шеф. Несколько веков, наверное. Я всегда делал все, что мог, чтобы помочь тебе, но… — Морт вздыхает. — Это не так просто. Я не знаю, что тебе было нужно от Колонны: как только ты меня вырвал из нее, я все забыл.", 's711', 'say65796') \
     .with_responses() \
         .response("Морт, почему ты ничего не СКАЗАЛ тогда, в Морге?", 'DMORTE.D_s712', 'r', 'reply65797') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65798').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65799').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65798').with_condition(lambda: _r65798_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65799').with_condition(lambda: _r65799_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 711.0
@@ -7334,9 +8736,9 @@ DialogStateBuilder('DMORTE.D_s712') \
     .with_npc_lines() \
         .line(SPEAKER, "Неожиданно Морт начинает защищаться. Потому что я никогда не *знал*, кем ты можешь стать! Некоторые твои воплощения были совершенно безумными! Однажды ты проснулся, одержимый идеей, что это *я* был твоим черепом, и преследовал меня вокруг Шпиля, пытаясь разбить и проглотить… к счастью, на улице ты попал под повозку. Другой ты, 'добрый и законопослушный', пытался засунуть меня обратно в Колонну, потому что 'там мне и место', — Морт ухмыляется. — *Вот* почему. Кроме того, твое незнание не принесло вреда…", 's712', 'say65800') \
     .with_responses() \
-        .response("Так значит, ты был со мной все это время?", 'DMORTE.D_s713', 'r', 'reply65801').with_condition(lambda: '  Global("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65802').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65803').with_condition(lambda: '  GlobalGT("Know_Morte_Pillar","GLOBAL",0) ') \
+        .response("Так значит, ты был со мной все это время?", 'DMORTE.D_s713', 'r', 'reply65801').with_condition(lambda: _r65801_condition()) \
+        .response("Забудь об этом, Морт. У меня есть несколько вопросов…", 'DMORTE.D_s329', 'r', 'reply65802').with_condition(lambda: _r65802_condition()) \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65803').with_condition(lambda: _r65803_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 712.0
@@ -7353,7 +8755,7 @@ DialogStateBuilder('DMORTE.D_s714') \
     .with_responses() \
         .response("А если серьезно, Морт, почему ты до сих пор путешествуешь со мной?", 'DMORTE.D_s715', 'r', 'reply65806') \
         .response("Тогда ладно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65807') \
-        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65808') \
+        .response("Неважно, Морт. Идем дальше.", EXIT, 'r', 'reply65808').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.8 714.0 729.8
@@ -7363,7 +8765,7 @@ DialogStateBuilder('DMORTE.D_s715') \
     .with_responses() \
         .response("Не знаю. Тебе ведь не обязательно кружить вокруг меня, раз я тебя освободил.", 'DMORTE.D_s716', 'r', 'reply65810') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65811') \
-        .response("Забудь об этом, Морт. Пошли.", EXIT, 'r', 'reply65812') \
+        .response("Забудь об этом, Морт. Пошли.", EXIT, 'r', 'reply65812').with_action(lambda: _dispose()) \
     .done()
 
 # from 715.0
@@ -7401,7 +8803,7 @@ DialogStateBuilder('DMORTE.D_s720') \
     .with_npc_lines() \
         .line(SPEAKER, "Дело в том, что я, кем бы я ни был прежде, не *видел* всех последствий своей лжи и обмана. А когда я в Колонне впервые увидел тебя, я почему-то *знал*, что я тебя однажды предал. Однажды… давным-давно, — Морт вздыхает. — И это все, что я знаю.", 's720', 'say65820') \
     .with_responses() \
-        .response("Понятно. Спасибо за разъяснения, Морт.", 'DMORTE.D_s721', 'r', 'reply65821').with_action(lambda: ' DO ~AddexperienceParty(12000) MoraleInc("Morte",3) PermanentStatChange("Morte",STR,RAISE,4) PermanentStatChange("Morte",DEX,RAISE,2) PermanentStatChange("Morte",CON,RAISE,2) SetGlobal("BD_MorteStory","GLOBAL",1) ~ JOURNAL #65825 /* ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ */ ') \
+        .response("Понятно. Спасибо за разъяснения, Морт.", 'DMORTE.D_s721', 'r', 'reply65821').with_action(lambda: _r65821_action()) \
     .done()
 
 # from 720.0
@@ -7410,7 +8812,7 @@ DialogStateBuilder('DMORTE.D_s721') \
         .line(SPEAKER, "А, не благодари… Морт вздыхает. К твоему удивлению, его голос каким-то образом стал более твердым и уверенным. Некоторые трещины и сколы в его черепе исчезли, как после исцеления. Это мне нужно тебя благодарить. Я прямо чувствую, как сбросил Планы со своих плеч… образно выражаясь.", 's721', 'say65822') \
     .with_responses() \
         .response("У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65823') \
-        .response("Отлично, Морт. Пошли.", EXIT, 'r', 'reply65824') \
+        .response("Отлично, Морт. Пошли.", EXIT, 'r', 'reply65824').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.10 729.10
@@ -7419,7 +8821,7 @@ DialogStateBuilder('DMORTE.D_s722') \
         .line(SPEAKER, "Ну, она — ночная ведьма. И она определенно чокнутая настолько, что из всех людей бессмертным сделала ТЕБЯ. То есть, она могла бы выбрать меня, — Морт закатывает глаза. — Тем не менее, вряд ли мы хотим найти того, кто настолько чокнутый, чтобы скрестить клинки с Леди Боли.", 's722', 'say65826') \
     .with_responses() \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65827') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65828') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65828').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.9 729.9
@@ -7429,7 +8831,7 @@ DialogStateBuilder('DMORTE.D_s723') \
     .with_responses() \
         .response("Продолжай…", 'DMORTE.D_s724', 'r', 'reply65830') \
         .response("Неважно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65831') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65832') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65832').with_action(lambda: _dispose()) \
     .done()
 
 # from 723.0
@@ -7445,7 +8847,7 @@ DialogStateBuilder('DMORTE.D_s725') \
         .line(SPEAKER, "И вот однажды они встретились. Они посмотрели друг на друга, и каждой из рас не понравилось, как другая трактует зло. И с тех пор они воюют. Это один сплошной ночной кошмар. Но покуда обе эти расы заняты друг другом, они не разбегаются по всем планам.", 's725', 'say65834') \
     .with_responses() \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65835') \
-        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65836') \
+        .response("Это все, что я хотел знать. Идем.", EXIT, 'r', 'reply65836').with_action(lambda: _dispose()) \
     .done()
 
 # from 329.11 729.11
@@ -7455,7 +8857,7 @@ DialogStateBuilder('DMORTE.D_s726') \
     .with_responses() \
         .response("А что случилось с твоим телом?", 'DMORTE.D_s727', 'r', 'reply65839') \
         .response("Понятно. У меня есть другие вопросы…", 'DMORTE.D_s329', 'r', 'reply65840') \
-        .response("Ладно. Идем.", EXIT, 'r', 'reply65841') \
+        .response("Ладно. Идем.", EXIT, 'r', 'reply65841').with_action(lambda: _dispose()) \
     .done()
 
 # from 726.0
@@ -7472,7 +8874,7 @@ DialogStateBuilder('DMORTE.D_s728') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт сверкает на тебя гневным взглядом. Я уже почти верю, что ты — какое-то ходячее проклятие, обреченное следовать за мной по пятам.", 's728', 'say65844') \
     .with_responses() \
-        .response("Ой-ой, кто бы говорил. Идем.", EXIT, 'r', 'reply65845') \
+        .response("Ой-ой, кто бы говорил. Идем.", EXIT, 'r', 'reply65845').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -7482,17 +8884,17 @@ DialogStateBuilder('DMORTE.D_s729') \
     .with_responses() \
         .response("Можешь еще раз прочитать, что у меня вытатуировано на спине?", 'DMORTE.D_s649', 'r', 'reply66345') \
         .response("Расскажи мне немного о Сигиле.", 'DMORTE.D_s659', 'r', 'reply66346') \
-        .response("Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?", 'DMORTE.D_s663', 'r', 'reply66347').with_condition(lambda: '  Global("Morte_Talent","GLOBAL",0) ') \
-        .response("Морт… еще раз, какие у тебя есть способности?", 'DMORTE.D_s666', 'r', 'reply66348').with_condition(lambda: '  Global("Morte_Talent","GLOBAL",1) ') \
-        .response("Морт, почему ты не прочитал последнюю строку татуировки на моей спине?", 'DMORTE.D_s654', 'r', 'reply66349').with_condition(lambda: '  Global("Morte_Tattoo_XP","GLOBAL",1) ') \
+        .response("Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?", 'DMORTE.D_s663', 'r', 'reply66347').with_condition(lambda: _r66347_condition()) \
+        .response("Морт… еще раз, какие у тебя есть способности?", 'DMORTE.D_s666', 'r', 'reply66348').with_condition(lambda: _r66348_condition()) \
+        .response("Морт, почему ты не прочитал последнюю строку татуировки на моей спине?", 'DMORTE.D_s654', 'r', 'reply66349').with_condition(lambda: _r66349_condition()) \
         .response("Мне нужен совет. Что, по-твоему, нужно делать дальше?", 'DMORTE.D_s669', 'r', 'reply66350') \
-        .response("Ты говорил, что ты — мимир, верно, Морт?", 'DMORTE.D_s684', 'r', 'reply66351').with_condition(lambda: '  Global("Know_Mimir","GLOBAL",1) Global("Morte_Story","GLOBAL",0) ') \
-        .response("Расскажи мне еще раз, как ты оказался в Колонне Черепов.", 'DMORTE.D_s693', 'r', 'reply66352').with_condition(lambda: '  Global("Morte_Story","GLOBAL",1) ') \
-        .response("Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?", 'DMORTE.D_s715', 'r', 'reply66353').with_condition(lambda: '  Global("Know_Morte_Pillar","GLOBAL",1) ') \
-        .response("Что ты знаешь о Кровавой войне?", 'DMORTE.D_s723', 'r', 'reply66354').with_condition(lambda: '  GlobalGT("Know_Blood_War","GLOBAL",0) ') \
-        .response("Что тебе известно про ночную ведьму Равель?", 'DMORTE.D_s722', 'r', 'reply66355').with_condition(lambda: '  GlobalGT("Know_Ravel","GLOBAL",0) Global("Ravel","GLOBAL",0) ') \
+        .response("Ты говорил, что ты — мимир, верно, Морт?", 'DMORTE.D_s684', 'r', 'reply66351').with_condition(lambda: _r66351_condition()) \
+        .response("Расскажи мне еще раз, как ты оказался в Колонне Черепов.", 'DMORTE.D_s693', 'r', 'reply66352').with_condition(lambda: _r66352_condition()) \
+        .response("Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?", 'DMORTE.D_s715', 'r', 'reply66353').with_condition(lambda: _r66353_condition()) \
+        .response("Что ты знаешь о Кровавой войне?", 'DMORTE.D_s723', 'r', 'reply66354').with_condition(lambda: _r66354_condition()) \
+        .response("Что тебе известно про ночную ведьму Равель?", 'DMORTE.D_s722', 'r', 'reply66355').with_condition(lambda: _r66355_condition()) \
         .response("Как ты умер, Морт?", 'DMORTE.D_s726', 'r', 'reply66356') \
-        .response("Ничего, Морт. Просто проверяю, что ты все еще со мной.", EXIT, 'r', 'reply66357') \
+        .response("Ничего, Морт. Просто проверяю, что ты все еще со мной.", EXIT, 'r', 'reply66357').with_action(lambda: _dispose()) \
     .done()
 
 # from -
@@ -7500,7 +8902,7 @@ DialogStateBuilder('DMORTE.D_s730') \
     .with_npc_lines() \
         .line(SPEAKER, "Эй, шеф, ты доверяешь этим двум? Они могли бы научить *меня* парочке вещей… [MRT387]", 's730', 'say66816') \
     .with_responses() \
-        .response("Я тоже так думаю, Морт. Пошли.", EXIT, 'r', 'reply66817') \
+        .response("Я тоже так думаю, Морт. Пошли.", EXIT, 'r', 'reply66817').with_action(lambda: _dispose()) \
     .done()
 
 ######
@@ -7528,7 +8930,7 @@ DialogStateBuilder('DMORTE.D_s733') \
     .with_npc_lines() \
         .line(SPEAKER, "Едва ты собираешься прикоснуться к Морту, как вдруг он произносит: Эй-эй-эй! Погоди, шеф. Э-э-э… мне тебе нужно кое-что тебе сказать. [MRT242]", 's733', 'say68171') \
     .with_responses() \
-        .response("Морт?!.. Ты не мертвый!", 'DMORTE.D_s734', 'r', 'reply68176').with_action(lambda: ' DO ~SetGlobal("Fortress_Morte","GLOBAL",4) JoinPartyEx(TRUE) ~ ') \
+        .response("Морт?!.. Ты не мертвый!", 'DMORTE.D_s734', 'r', 'reply68176').with_action(lambda: _r68176_action()) \
     .done()
 
 # from 733.0
@@ -7547,18 +8949,18 @@ DialogStateBuilder('DMORTE.D_s735') \
     .with_npc_lines() \
         .line(SPEAKER, "Ну, *да*, шеф. Ведь ты бы все равно не умер. Я имею в виду, если бы ты пал, тебе бы понадобился кто-то, кто бы запомнил все. К тому же, ты ведь знаешь, какой я бесполезный в бою, если только не оскорбляю какого-нибудь мага или типа того…", 's735', 'say68173') \
     .with_responses() \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", 'DMORTE.D_s736', 'r', 'reply68178').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",0) GlobalGT("Fortress_Party_Roof","GLOBAL",1) ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68189').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) GlobalGT("Fortress_Dakkon","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68190').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) GlobalGT("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68191').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) GlobalGT("Fortress_Grace","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68192').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68193').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68194').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Vhailor","GLOBAL",0) GlobalGT("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68239').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68438').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68439').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68446').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ ') \
-        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68503').with_condition(lambda: '  Global("Trans_Vanish","GLOBAL",0) Global("Fortress_Party_Roof","GLOBAL",1) ') \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", 'DMORTE.D_s736', 'r', 'reply68178').with_condition(lambda: _r68178_condition()) \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68189').with_condition(lambda: _r68189_condition()).with_action(lambda: _r68189_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68190').with_condition(lambda: _r68190_condition()).with_action(lambda: _r68190_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68191').with_condition(lambda: _r68191_condition()).with_action(lambda: _r68191_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68192').with_condition(lambda: _r68192_condition()).with_action(lambda: _r68192_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68193').with_condition(lambda: _r68193_condition()).with_action(lambda: _r68193_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68194').with_condition(lambda: _r68194_condition()).with_action(lambda: _r68194_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68239').with_condition(lambda: _r68239_condition()).with_action(lambda: _r68239_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68438').with_condition(lambda: _r68438_condition()).with_action(lambda: _r68438_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68439').with_condition(lambda: _r68439_condition()).with_action(lambda: _r68439_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68446').with_condition(lambda: _r68446_condition()).with_action(lambda: _r68446_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…", EXIT, 'r', 'reply68503').with_condition(lambda: _r68503_condition()).with_action(lambda: _dispose()) \
     .done()
 
 # from 735.0
@@ -7566,12 +8968,12 @@ DialogStateBuilder('DMORTE.D_s736') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты снова используешь свою силу…", 's736', 'say68174') \
     .with_responses() \
-        .response("Возродить Анну.", EXIT, 'r', 'reply68175').with_condition(lambda: '  GlobalGT("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~ ') \
-        .response("Возродить Даккона.", EXIT, 'r', 'reply68179').with_condition(lambda: '  GlobalGT("Fortress_Dakkon","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~ ') \
-        .response("Возродить Падшую Грацию.", EXIT, 'r', 'reply68180').with_condition(lambda: '  GlobalGT("Fortress_Grace","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~ ') \
-        .response("Возродить Нордома.", EXIT, 'r', 'reply68181').with_condition(lambda: '  GlobalGT("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~ ') \
-        .response("Возродить Игнуса.", EXIT, 'r', 'reply68182').with_condition(lambda: '  GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~ ') \
-        .response("Возродить Вейлора.", EXIT, 'r', 'reply68183').with_condition(lambda: '  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ ') \
+        .response("Возродить Анну.", EXIT, 'r', 'reply68175').with_condition(lambda: _r68175_condition()).with_action(lambda: _r68175_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Возродить Даккона.", EXIT, 'r', 'reply68179').with_condition(lambda: _r68179_condition()).with_action(lambda: _r68179_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Возродить Падшую Грацию.", EXIT, 'r', 'reply68180').with_condition(lambda: _r68180_condition()).with_action(lambda: _r68180_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Возродить Нордома.", EXIT, 'r', 'reply68181').with_condition(lambda: _r68181_condition()).with_action(lambda: _r68181_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Возродить Игнуса.", EXIT, 'r', 'reply68182').with_condition(lambda: _r68182_condition()).with_action(lambda: _r68182_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("Возродить Вейлора.", EXIT, 'r', 'reply68183').with_condition(lambda: _r68183_condition()).with_action(lambda: _r68183_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -7611,16 +9013,16 @@ DialogStateBuilder('DMORTE.D_s741') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт молча смотрит на тебя, затем вздыхает. Не то чтобы я сильно растрогался, и все же мне, э-э, было приятно с тобой путешествовать, шеф. [MRT109]", 's741', 'say68318') \
     .with_responses() \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68319').with_condition(lambda: '  GlobalGT("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68320').with_condition(lambda: '  GlobalGT("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68321').with_condition(lambda: '  GlobalGT("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68322').with_condition(lambda: '  GlobalGT("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68323').with_condition(lambda: '  GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68324').with_condition(lambda: '  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68325').with_condition(lambda: '  Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) ').with_action(lambda: ' DO ~QuitGame(FINALE,0,0) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68490').with_condition(lambda: '  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) ').with_action(lambda: ' DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68491').with_condition(lambda: '  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~QuitGame(FINALE,0,0) ~ ') \
-        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68492').with_condition(lambda: '  GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) ').with_action(lambda: ' DO ~QuitGame(FINALE,0,0) ~ ') \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68319').with_condition(lambda: _r68319_condition()).with_action(lambda: _r68319_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68320').with_condition(lambda: _r68320_condition()).with_action(lambda: _r68320_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68321').with_condition(lambda: _r68321_condition()).with_action(lambda: _r68321_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68322').with_condition(lambda: _r68322_condition()).with_action(lambda: _r68322_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68323').with_condition(lambda: _r68323_condition()).with_action(lambda: _r68323_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68324').with_condition(lambda: _r68324_condition()).with_action(lambda: _r68324_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68325').with_condition(lambda: _r68325_condition()).with_action(lambda: _r68325_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68490').with_condition(lambda: _r68490_condition()).with_action(lambda: _r68490_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68491').with_condition(lambda: _r68491_condition()).with_action(lambda: _r68491_action()).with_action(lambda: _dispose())  ### replace two actions with one \
+        .response("ПРОЩАЙ, МОРТ.", EXIT, 'r', 'reply68492').with_condition(lambda: _r68492_condition()).with_action(lambda: _r68492_action()).with_action(lambda: _dispose())  ### replace two actions with one \
     .done()
 
 # from -
@@ -7628,5 +9030,5 @@ DialogStateBuilder('DMORTE.D_s742') \
     .with_npc_lines() \
         .line(SPEAKER, "Морт молча смотрит на тебя, затем вздыхает. Не то чтобы я сильно растрогался, и все же мне, э-э, было приятно с тобой путешествовать, шеф. [MRT109]", 's742', 'say68408') \
     .with_responses() \
-        .response("Тогда возьмемся за дело…", EXIT, 'r', 'reply68409') \
+        .response("Тогда возьмемся за дело…", EXIT, 'r', 'reply68409').with_action(lambda: _dispose()) \
     .done()
