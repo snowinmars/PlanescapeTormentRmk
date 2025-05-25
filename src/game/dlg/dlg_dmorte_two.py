@@ -1,15 +1,16 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
+    current_global_settings,
     unblock_journal,
     update_journal,
-    travel
+    set_in_party_morte,
+    travel,
 )
 from settings.settings_morgue import (
     current_morgue_settings,
     pick_up_intro_key,
-    mortuary_walkthrough,
-    morte_mortuary_walkthrough,
+    set_morte_mortuary_walkthrough,
     saw_dhall
 )
 from engine.transforms import (
@@ -22,7 +23,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue2')
-    _show_morte('morte_img default', center_left_down)
+    _show('morte_img default', center_left_down)
     pick_up_intro_key(False)
 def _dispose():
     _hide('morte_img')
@@ -30,7 +31,7 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     end_pos = start_pos if end_pos is None else end_pos
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
-    renpy.exports.hide()
+    renpy.exports.hide(sprite)
 def _check_char_prop_gt(who, gtValue, prop):
     return True
 def _check_char_prop_lt(who, gtValue, prop):
@@ -43,13 +44,13 @@ def _saw_dhall():
     saw_dhall()
 ###
 def _r41145_action():
-    set_morte_mortuary_walkthrough_1()
+    set_morte_mortuary_walkthrough(1)
 def _r41146_action():
-    set_morte_mortuary_walkthrough_1()
+    set_morte_mortuary_walkthrough(1)
 def _r41147_action():
-    set_morte_mortuary_walkthrough_1()
+    set_morte_mortuary_walkthrough(1)
 def _r41148_action():
-    set_morte_mortuary_walkthrough_1()
+    set_morte_mortuary_walkthrough(1)
 def _r41163_condition():
     return _check_char_prop_gt('protagonist',12,'int')
 def _r41177_action():
@@ -108,7 +109,9 @@ def _r41232_condition():
 def _r41239_condition():
     return _check_char_prop_gt('protagonist',12,'int')
 def _r41263_action():
-    set_morte_mortuary_walkthrough_2()
+    set_morte_mortuary_walkthrough(2)
+def _reply41263_action():
+    set_morte_mortuary_walkthrough(2)
 ###
 
 # DLG/DMORTE2.DLG
@@ -242,7 +245,7 @@ def dlg_dmorte_two():
             .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас.", '-', '-') \
             .line(morte, "Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.", 's31', 'say41262') \
         .with_responses() \
-            .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _set_morte_mortuary_walkthrough(2)) \
+            .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _reply41263_action()) \
         .done()
 
     # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0

@@ -1,13 +1,11 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
+    current_global_settings,
     travel
 )
 from settings.settings_morgue import (
-    pick_up_intro_key,
-    ready_to_kill_dummies,
-    kill_dummy,
-    talk_dummy
+    current_morgue_settings
 )
 from engine.transforms import (
     center_left,
@@ -56,7 +54,7 @@ def _r45519_action():
 def _r45520_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45521_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r45532_condition():
     return not changed_law_once('zombie_chaotic')
 def _r45532_action():
@@ -66,7 +64,7 @@ def _r45533_condition():
 def _r45534_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45535_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 ###
 
 # DLG/DZM985.DLG

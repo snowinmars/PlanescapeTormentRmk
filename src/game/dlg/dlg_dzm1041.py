@@ -1,14 +1,12 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
+    current_global_settings,
     travel,
     meet_bei
 )
 from settings.settings_morgue import (
-    pick_up_intro_key,
-    ready_to_kill_dummies,
-    kill_dummy,
-    talk_dummy
+    current_morgue_settings
 )
 from engine.transforms import (
     center_left,
@@ -43,10 +41,10 @@ def _r6577_condition():
 def _r6578_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6579_condition():
-    return current_morgue_settings()['can_speak_with_dead'] \
+    return current_global_settings()['can_speak_with_dead'] \
     and not current_global_settings()['meet_bei']
 def _r6580_condition():
-    return current_morgue_settings()['can_speak_with_dead'] \
+    return current_global_settings()['can_speak_with_dead'] \
     and current_global_settings()['meet_bei']
 def _r6583_action():
     meet_bei()

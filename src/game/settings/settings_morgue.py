@@ -2,12 +2,9 @@ def default_morgue_settings():
     return {
         'has_intro_key': False,
         'has_tome_ba': False,
-        'ready_to_kill_dummies': False,
-        'talk_dummy': False,
         'mortuary_walkthrough': 0,
         'morte_mortuary_walkthrough_1': False,
         'morte_mortuary_walkthrough_2': False,
-        'dummies_killed': 0,
         'alarmed': False,
         'vaxis_lawful': False,
         'vaxis_left': False,
@@ -21,7 +18,10 @@ def default_morgue_settings():
         'has_scalpel': False,
         'has_needles': 0,
         'has_1201_note': False,
-        'has_dzm1664_page': False
+        'has_dzm1664_page': False,
+        'dead_dzm569': False,
+        'dead_dzm825': False,
+        'dead_dzm782': False,
     }
 
 morgue_settings = default_morgue_settings()
@@ -62,23 +62,11 @@ def pick_up_intro_key(value):
     global morgue_settings
     morgue_settings['has_intro_key'] = value
 
-def ready_to_kill_dummies(value):
-    global morgue_settings
-    morgue_settings['ready_to_kill_dummies'] = value
-
-def kill_dummy():
-    global morgue_settings
-    morgue_settings['dummies_killed'] = morgue_settings['dummies_killed'] + 1
-
-def talk_dummy():
-    global morgue_settings
-    morgue_settings['talk_dummy'] = True
-
 def mortuary_walkthrough(value):
     global morgue_settings
     morgue_settings['mortuary_walkthrough'] = value
 
-def morte_mortuary_walkthrough(value):
+def set_morte_mortuary_walkthrough(value):
     global morgue_settings
     morgue_settings['morte_mortuary_walkthrough'] = value
 
@@ -96,3 +84,15 @@ def pick_tome_ba():
 def pick_dzm1664_page():
     global morgue_settings
     morgue_settings['has_dzm1664_page'] = True
+
+def kill_dzm569():
+    global morgue_settings
+    morgue_settings['dead_dzm569'] = True
+
+def kill_dzm825():
+    global morgue_settings
+    morgue_settings['dead_dzm825'] = True
+
+def kill_dzm782():
+    global morgue_settings
+    morgue_settings['dead_dzm782'] = True

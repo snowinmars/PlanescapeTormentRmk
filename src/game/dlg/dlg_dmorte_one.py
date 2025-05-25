@@ -1,9 +1,9 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
+    current_global_settings,
     set_in_party_morte,
-    change_good,
-    change_good_morte,
+    change_good_once,
     kill_morte,
     meet_morte,
     travel
@@ -11,9 +11,9 @@ from settings.settings_global import (
 from settings.settings_morgue import (
     pick_up_intro_key,
     pick_up_scalpel,
-    ready_to_kill_dummies,
-    kill_dummy,
-    talk_dummy
+    kill_dzm569,
+    kill_dzm825,
+    kill_dzm782
 )
 from engine.transforms import (
     center_left,
@@ -26,7 +26,7 @@ from engine.transforms import (
 def _init():
     travel('morgue1')
     meet_morte()
-    _show_morte('morte_img smiling1', center_right_down)
+    _show('morte_img default', center_left_down)
     set_in_party_morte(True)
 def _dispose():
     _hide('morte_img')
@@ -34,7 +34,7 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     end_pos = start_pos if end_pos is None else end_pos
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
-    renpy.exports.hide()
+    renpy.exports.hide(sprite)
 def _check_char_prop_gt(who, gtValue, prop):
     return True
 def _check_char_prop_lt(who, gtValue, prop):
@@ -43,12 +43,18 @@ def _check_char_prop_lt(who, gtValue, prop):
 def _join_morte():
     set_in_party_morte(True)
     _dispose()
-def _ready_to_kill_dummies():
-    ready_to_kill_dummies(True)
 def _kill_morte():
     kill_morte()
 def _s19_action():
     pick_up_scalpel()
+def _s25_action():
+    pick_up_intro_key()
+def _kill_dzm569():
+    kill_dzm569()
+def _kill_dzm825():
+    kill_dzm825()
+def _kill_dzm782():
+    kill_dzm782()
 ###
 def _r39824_action():
     change_good_once(1, 'good_morte_1')
@@ -219,7 +225,7 @@ def dlg_dmorte_one():
     # from 15.0
     DialogStateBuilder('DMORTE1.D_s99999999_18') \
         .with_npc_lines() \
-            .line(teller, "На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.", 's18', 'say39832') \
+            .line(morte, "На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.", 's18', 'say39832') \
         .with_responses() \
             .response("(Осмотреть полки)", 'DMORTE1.D_s19', 'r19', 'reply39833') \
         .done()
@@ -263,26 +269,48 @@ def dlg_dmorte_one():
     # from 19.1 20.1 21.1 22.0
     DialogStateBuilder('DMORTE1.D_s23') \
         .with_npc_lines() \
-            .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845').with_action(lambda: _ready_to_kill_dummies()) \
+            .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845') \
         .with_responses() \
             .response("Вперед.", EXIT, 'r29', 'reply39846').with_action(lambda: _dispose()) \
         .done()
 
     # from -
-    DialogStateBuilder('DMORTE1.D_s99999999_23') \
+    DialogStateBuilder('DMORTE1.D_s99999999_569') \
         .with_npc_lines() \
+            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dummy()) \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm569()) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+        .done()
+
+    # from -
+    DialogStateBuilder('DMORTE1.D_s99999999_825') \
+        .with_npc_lines() \
+            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm825()) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+        .done()
+
+    # from -
+    DialogStateBuilder('DMORTE1.D_s99999999_782') \
+        .with_npc_lines() \
+            .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708') \
+            .line(teller, "На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm782()) \
+        .with_responses() \
+            .response("(…)", 'DMORTE1.D_s24', '-', '-').with_action(lambda: _dispose()) \
         .done()
 
     # from -
     DialogStateBuilder('DMORTE1.D_s24') \
         .with_npc_lines() \
             .line(morte, "Отлично, похоже, ты позаботился о правильном трупе.", 's24', 'say0').with_action(lambda: _show('morte_img default',  center_left_down)) \
-            .line(teller, "Я достаю из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-') \
-            .line(morte, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", 's25', 'say39849').with_action(lambda: _pick_up_key()) \
+            .line(teller, "Я достаю из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-').with_action(lambda: _s25_action()) \
+            .line(morte, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", 's25', 'say39849') \
         .with_responses() \
             .response("Тогда я перепробую все двери.", EXIT, 'r31', 'reply39850').with_action(lambda: _dispose()) \
         .done()
