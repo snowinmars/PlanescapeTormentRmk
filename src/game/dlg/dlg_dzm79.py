@@ -1,15 +1,13 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
+    current_global_settings,
     travel,
     change_good_once,
     change_law_once
 )
 from settings.settings_morgue import (
-    pick_up_intro_key,
-    ready_to_kill_dummies,
-    kill_dummy,
-    talk_dummy,
+    current_morgue_settings,
     know_copper_earring_secret
 )
 from engine.transforms import (
@@ -29,7 +27,7 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     end_pos = start_pos if end_pos is None else end_pos
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
-    renpy.exports.hide()
+    renpy.exports.hide(sprite)
 def _check_char_prop_gt(who, gtValue, prop):
     return True
 def _check_char_prop_lt(who, gtValue, prop):
@@ -45,7 +43,7 @@ def _r34946_action():
 def _r34947_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r34948_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r64279_condition():
     return not current_morgue_settings()['has_copper_earring']
 def _r64279_action():

@@ -9,7 +9,7 @@ def _r34936_action():
 def _r34937_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r34940_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r34934_condition():
     HasItem("Bandage","ZM396")
 def _r34934_action():
@@ -23,7 +23,7 @@ def _r45113_condition():
 def _r45114_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45115_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 
 EXIT = -1
 

@@ -7,9 +7,9 @@ def _r6577_condition():
 def _r6578_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6579_condition():
-    return current_morgue_settings()['can_speak_with_dead'] Global("Bei","GLOBAL",0)
+    return current_global_settings()['can_speak_with_dead'] Global("Bei","GLOBAL",0)
 def _r6580_condition():
-    return current_morgue_settings()['can_speak_with_dead'] Global("Bei","GLOBAL",1)
+    return current_global_settings()['can_speak_with_dead'] Global("Bei","GLOBAL",1)
 def _r6583_action():
     DO ~meet_bei() ~
 def _r9096_action():

@@ -7,7 +7,7 @@ def _r24569_condition():
 def _r24570_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r24573_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r24574_condition():
     return not current_morgue_settings()['mortuary_walkthrough'] !PartyHasItem("KeyPr")
 def _r42312_condition():

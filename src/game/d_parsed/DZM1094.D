@@ -7,7 +7,7 @@ def _r6566_condition():
 def _r6567_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6568_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r6568_action():
     DO ~set_asonje_state(1) ~
 def _r9247_action():

@@ -1,7 +1,7 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
-    change_good,
+    change_good_once,
     current_global_settings,
     kill_dhall,
     meet_dhall,
@@ -11,7 +11,6 @@ from settings.settings_global import (
 )
 from settings.settings_morgue import (
     current_morgue_settings,
-    morte_mortuary_walkthrough,
     set_vaxis_betray
 )
 from engine.transforms import (
@@ -31,7 +30,7 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     end_pos = start_pos if end_pos is None else end_pos
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
-    renpy.exports.hide()
+    renpy.exports.hide(sprite)
 def _check_char_prop_gt(who, gtValue, prop):
     return True
 def _check_char_prop_lt(who, gtValue, prop):

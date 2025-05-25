@@ -7,7 +7,7 @@ def _r34946_action():
 def _r34947_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r34948_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r64279_condition():
     return not current_morgue_settings()['has_copper_earring']
 def _r64279_action():

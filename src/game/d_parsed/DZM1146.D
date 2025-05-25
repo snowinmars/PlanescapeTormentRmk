@@ -7,7 +7,7 @@ def _r6522_condition():
 def _r6523_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6524_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r6524_action():
     DO ~meet_crispy() ~
 def _r9415_action():

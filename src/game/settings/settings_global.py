@@ -20,6 +20,7 @@ def default_global_settings():
         'dead_quentin': False,
         'dead_vaxis': False,
         'dead_pharod': False,
+        'dead_morte': False,
 
         'good': 0,
         'law': 0,
@@ -41,7 +42,7 @@ def default_global_settings():
 
         'location': None,
 
-        'know_know_xachariah_name': False,
+        'know_xachariah_name': False,
         'crier_quest': False,
         'xixi_back': False,
         'escape_mortuary': False,
@@ -115,13 +116,6 @@ def meet_morte():
     global global_settings
     global_settings['meet_morte'] = True
 
-def change_adan_once(amount, id):
-    if id in tracked:
-        return
-    global global_settings
-    global_settings['good'] = global_settings['good'] + amount
-    tracked.append(id)
-
 ###
 
 def kill_dhall():
@@ -131,6 +125,7 @@ def kill_dhall():
 def kill_morte():
     global global_settings
     global_settings['dead_morte'] = True
+    global_settings['in_party_morte'] = True
 
 def kill_vaxis():
     global global_settings
@@ -148,10 +143,6 @@ def kill_pharod():
 
 tracked = []
 
-def change_good(amount):
-    global global_settings
-    global_settings['good'] = global_settings['good'] + amount
-
 def change_good_once(amount, id):
     if id in tracked:
         return
@@ -161,10 +152,6 @@ def change_good_once(amount, id):
 
 def changed_good_once(id):
     return id in tracked
-
-def change_law(amount):
-    global global_settings
-    global_settings['law'] = global_settings['law'] + amount
 
 def change_law_once(amount, id):
     if id in tracked:
@@ -176,9 +163,12 @@ def change_law_once(amount, id):
 def changed_law_once(id):
     return id in tracked
 
-def change_good_morte(amount):
+def change_adan_once(amount, id):
+    if id in tracked:
+        return
     global global_settings
-    global_settings['good_morte'] = global_settings['good_morte'] + amount
+    global_settings['good'] = global_settings['good'] + amount
+    tracked.append(id)
 
 ###
 
@@ -196,10 +186,6 @@ def travel(value):
 
 ###
 
-def set_know_xachariah_name(value):
-    global global_settings
-    global_settings['know_xachariah_name'] = value
-
 def set_crier_quest(value):
     global global_settings
     global_settings['crier_quest'] = value
@@ -215,10 +201,6 @@ def pass_death_of_names_dhall():
 def pass_death_of_names_adahn():
     global global_settings
     global_settings['death_of_names_adahn'] = True
-
-def increment_xixi_back():
-    global global_settings
-    global_settings['xixi_back'] = global_settings['xixi_back'] + 1
 
 def set_asonje_state(value):
     global global_settings

@@ -1,13 +1,11 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
+    current_global_settings,
     travel
 )
 from settings.settings_morgue import (
-    pick_up_intro_key,
-    ready_to_kill_dummies,
-    kill_dummy,
-    talk_dummy,
+    current_morgue_settings,
     pick_up_scalpel
 )
 from engine.transforms import (
@@ -39,7 +37,7 @@ def _r45420_condition():
 def _r45421_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45422_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r45480_condition():
     return current_global_settings()['has_scalpel']
 def _r45480_action():
@@ -62,7 +60,7 @@ def _r45508_condition():
 def _r45510_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45512_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 ###
 
 # DLG/DZM506.DLG

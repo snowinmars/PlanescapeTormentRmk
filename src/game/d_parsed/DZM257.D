@@ -7,7 +7,7 @@ def _r6511_condition():
 def _r6512_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6513_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r9562_action():
     DO ~change_law_once(-1, 'chaotic_zom257_1') ~
 

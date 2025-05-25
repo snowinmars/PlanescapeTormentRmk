@@ -7,7 +7,7 @@ def _r6488_condition():
 def _r6489_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6490_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 
 EXIT = -1
 

@@ -3,7 +3,7 @@ def _r34954_condition():
 def _r34957_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r34958_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r34956_condition():
     return current_morgue_settings()['has_scalpel']
 def _r34956_action():
@@ -19,7 +19,7 @@ def _r45130_condition():
 def _r45131_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45132_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 
 EXIT = -1
 

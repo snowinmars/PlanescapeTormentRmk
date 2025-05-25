@@ -7,7 +7,7 @@ def _r6500_condition():
 def _r6501_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r6502_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r6502_action():
     DO ~meet_oinosian() ~
 def _r9664_condition():

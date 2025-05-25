@@ -4,8 +4,8 @@ import type { Answer, Path, State } from './types';
 const trimTrahs = (x: string) => x.replaceAll('~', '').replaceAll('«', '').replaceAll('»', '').replaceAll('...', '…').trim();
 
 const wellKnownFunctions: string[][] = [
-    ['Global("Speak_with_Dead","GLOBAL",1)', 'return current_morgue_settings()[\'can_speak_with_dead\']'],
-    ['Global("Speak_with_Dead","GLOBAL",0)', 'return not current_morgue_settings()[\'can_speak_with_dead\']'],
+    ['Global("Speak_with_Dead","GLOBAL",1)', 'return current_global_settings()[\'can_speak_with_dead\']'],
+    ['Global("Speak_with_Dead","GLOBAL",0)', 'return not current_global_settings()[\'can_speak_with_dead\']'],
     ['Global("Vaxis_Exposed","GLOBAL",1)', 'return current_morgue_settings()[\'vaxis_exposed\']'],
     ['Global("Vaxis_Exposed","GLOBAL",0)', 'return not current_morgue_settings()[\'vaxis_exposed\']'],
     ['Global("Mortuary_Walkthrough","GLOBAL",0)', 'return not current_morgue_settings()[\'mortuary_walkthrough\']'],

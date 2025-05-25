@@ -159,7 +159,7 @@ def _r6328_condition():
 def _r6329_condition():
     return _check_char_prop_lt('protagonist',12,'int') return _check_char_prop_lt('protagonist',12,'wis')
 def _r6330_condition():
-    return current_morgue_settings()['can_speak_with_dead']
+    return current_global_settings()['can_speak_with_dead']
 def _r6658_action():
     DO ~IncrementGlobal("Good","GLOBAL",-1) ~
 def _r6659_action():
