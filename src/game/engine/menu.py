@@ -22,9 +22,9 @@ class MenuBuilder:
         }
         return self
 
-    def jump(self, target_title):
+    def jump(self, label_id):
         """Set the jump target for the current option"""
-        self._current_option['label_id'] = target_title
+        self._current_option['label_id'] = label_id
         return self
 
     def when(self, condition):
@@ -36,6 +36,7 @@ class MenuBuilder:
         """Set the priority for the current option"""
         self._current_option['priority'] = value
         return self
+
     def done(self, manager):
         """Register all built options with a MenuManager"""
         if not self._menu_name:
