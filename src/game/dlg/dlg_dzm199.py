@@ -46,14 +46,14 @@ def _r34981_condition():
 ###
 
 # DLG/DZM199.DLG
-def dlg_dzm199():
+def dlg_dzm199(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm199        = renpy.store.characters['dzm199']
-    EXIT = -1
+    EXIT          = -1
 
-    # from -
-    DialogStateBuilder('DZM199.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM199.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.", 's0', 'say34975') \
             .line(teller, "На его лбу выгравирован номер «199»; его губы сшиты.", 's0', 'say34975') \
@@ -64,20 +64,20 @@ def dlg_dzm199():
             .response("Использовать на трупе свою способность История костей.", 'DZM199.D_s2', 'r3', 'reply34981').with_condition(lambda: _r34981_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply34984').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r5', 'reply34985').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0 0.1 0.2
-    DialogStateBuilder('DZM199.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM199.D_s1', '# from 0.0 0.1 0.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say34977') \
         .with_responses() \
             .response("Оставить зомби в покое.", EXIT, 'r6', 'reply34978').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3
-    DialogStateBuilder('DZM199.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM199.D_s2', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34982') \
         .with_responses() \
             .response("Оставить зомби в покое.", EXIT, 'r7', 'reply34983').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

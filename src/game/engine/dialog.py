@@ -1,9 +1,4 @@
-dialog_db = {}
-current_dialog_state = None
-last_response = None
-
-def emptyFunction():
-    return
+import renpy
 
 allowed_line_endings = tuple([
     '.',
@@ -14,13 +9,11 @@ allowed_line_endings = tuple([
 ])
 
 """
-'original_ref' references to NearInfinity id of the line:
-- 's1' is 'STATE 1'
-- 'r1' is 'RESPONSE 1'
+References and ids are from the NearInfinity
 """
 class DialogStateBuilder:
-    def __init__(self, state_id):
-        self.state_id = state_id
+    def __init__(self):
+        self.state_id = None
         self.npc_lines = []
         self.responses = {}
         self.next_available_response_id = 0
@@ -33,8 +26,16 @@ class DialogStateBuilder:
         if len(line) > 200:
             raise Exception(f'Line "{line}" is too long: {len(line)} > 200')
 
+    def state(self, state_id, comment):
+        self.state_id = state_id
+        self.npc_lines = []
+        self.responses = {}
+        self.next_available_response_id = 0
+        self._current_line = None
+        self._current_response = None
+        return self
+
     def with_npc_lines(self):
-        """Returns an NpcLinesBuilder subbuilder"""
         return DialogStateBuilder.NpcLinesBuilder(self)
 
     class NpcLinesBuilder:
@@ -69,7 +70,7 @@ class DialogStateBuilder:
                 self.parent.npc_lines.append([
                     l['npc'],
                     l['text'],
-                    l['action'] if 'action' in l else emptyFunction
+                    l['action'] if 'action' in l else None
                 ])
             return DialogStateBuilder.ResponsesBuilder(self)
 
@@ -81,7 +82,6 @@ class DialogStateBuilder:
             self.responses = []
 
         def response(self, text, next_state, response_id, reply_id):
-            """Start building a response"""
             if 'text' in self.last_response:
                 self.responses.append(self.last_response)
 
@@ -91,17 +91,14 @@ class DialogStateBuilder:
             return self
 
         def with_condition(self, condition):
-            """Add condition to the current response"""
             self.last_response['condition'] = condition
             return self
 
         def with_action(self, action):
-            """Add action to the current response"""
             self.last_response['action'] = action
             return self
 
-        def done(self):
-            """Add response with no precheck"""
+        def push(self, manager):
             if self.last_response['text'] is not None:
                 self.responses.append(self.last_response)
 
@@ -115,65 +112,47 @@ class DialogStateBuilder:
 
                 self.parent.parent.next_available_response_id += 1
 
-            add_dialog_state(self.parent.parent.state_id, self.parent.parent.npc_lines, self.parent.parent.responses)
-            return self
+            manager.add_dialog_state(self.parent.parent.state_id, self.parent.parent.npc_lines, self.parent.parent.responses)
+            return self.parent.parent
 
-def add_dialog_state(state_id, npc_lines, responses):
-    """
-    Add a new dialog state to the database.
+class DialogManager:
+    def __init__(self):
+        self.dialog_db = {}
+        self.current_dialog_state = None
+        self.last_response = None
 
-    Parameters:
-    - state_id: Integer state identifier
-    - npc_lines: List of strings the NPC says
-    - responses: Dictionary of response options:
-        {response_id: {"text": response_text,
-                        "npc_lines": response_npc_lines,
-                        "next_state": next_state_id}}
-    """
-    global dialog_db
+    def add_dialog_state(self, state_id, npc_lines, responses):
+        self.dialog_db[state_id] = {
+            "npc_lines": npc_lines,
+            "responses": responses
+        }
 
-    # if dialog_db[state_id] is not None:
-    #     raise Exception(f'Dialog state {state_id} already exists')
+    def start_dialog(self, initial_state):
+        self.current_dialog_state = initial_state
+        return self.get_current_npc_lines()
 
-    dialog_db[state_id] = {
-        "npc_lines": npc_lines,
-        "responses": responses
-    }
+    def get_current_npc_lines(self):
+        return self.dialog_db[self.current_dialog_state]["npc_lines"]
 
-def start_dialog(initial_state):
-    """Start a dialog with the given initial state"""
-    global current_dialog_state
-    current_dialog_state = initial_state
-    return get_current_npc_lines()
+    def get_available_responses(self):
+        return self.dialog_db[self.current_dialog_state]["responses"]
 
-def get_current_npc_lines():
-    """Get NPC lines for the current state"""
-    global current_dialog_state, dialog_db
-    return dialog_db[current_dialog_state]["npc_lines"]
+    def choose_response(self, response_id):
+        response = self.dialog_db[self.current_dialog_state]["responses"][response_id]
+        self.last_response = response_id
 
-def get_available_responses():
-    """Get all available responses for the current state"""
-    global current_dialog_state, dialog_db
-    return dialog_db[current_dialog_state]["responses"]
+        self.current_dialog_state = response["next_state"]
+        return self.current_dialog_state
 
-def choose_response(response_id):
-    """
-    Choose a response and advance the dialog.
-    Returns NPC lines for the response and new state.
-    """
-    global current_dialog_state, last_response, dialog_db
+    def advance_to_state(self, state_id):
+        self.current_dialog_state = state_id
+        return self.get_current_npc_lines()
 
-    response = dialog_db[current_dialog_state]["responses"][response_id]
-    last_response = response_id
+    def is_state_defined(self, state_id):
+        return state_id in self.dialog_db
 
-    current_dialog_state = response["next_state"]
-    return current_dialog_state
-
-def advance_to_state(state_id):
-    """Directly advance to a specific state (for branching)"""
-    global current_dialog_state
-    current_dialog_state = state_id
-    return get_current_npc_lines()
-
-def is_state_defined(state_id):
-    return state_id in dialog_db
+    def pronounce(self, npc_lines):
+        for line in npc_lines:
+            if line[2]:
+                line[2]()
+            renpy.exports.say(line[0], line[1])

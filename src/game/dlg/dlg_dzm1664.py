@@ -44,14 +44,14 @@ def _r47014_action():
 ###
 
 # DLG/DZM1664.DLG
-def dlg_dzm1664():
+def dlg_dzm1664(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm1664       = renpy.store.characters['dzm1664']
     EXIT = -1
 
-    # from 5.0
-    DialogStateBuilder('DZM1664.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s0', '# from 5.0') \
         .with_npc_lines() \
             .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002') \
             .line(teller, "На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.", 's0', 'say47002') \
@@ -62,55 +62,55 @@ def dlg_dzm1664():
             .response("Использовать на трупе свою способность История костей.", 'DZM1664.D_s2', 'r3', 'reply47006').with_condition(lambda: _r47006_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply47007').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply47008').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.2 6.0
-    DialogStateBuilder('DZM1664.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s1', '# from 0.2 6.0') \
         .with_npc_lines() \
             .line(teller, "Зомби безучастно пялится в стену.", 's1', 'say47009') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply47010').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3
-    DialogStateBuilder('DZM1664.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s2', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Труп даже не шевелится. Несмотря на недавнюю смерть, похоже, что он не сможет ответить на твои вопросы.", 's2', 'say47011') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply47012').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0
-    DialogStateBuilder('DZM1664.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s3', '# from 0.0') \
         .with_npc_lines() \
             .line(teller, "Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Тем не менее, просматривая их, ты обнаруживаешь вырванную страницу между двумя книгами.", 's3', 'say47013') \
             .line(teller, "Неожиданно у тебя возникает ощущение, что кто-то поместил ее сюда, чтобы спрятать.", 's3', 'say47013') \
         .with_responses() \
             .response("Взять страницу.", 'DZM1664.D_s4', 'r8', 'reply47014').with_action(lambda: _r47014_action()) \
-        .done()
+        .push(manager)
 
-    # from 3.0
-    DialogStateBuilder('DZM1664.D_s4') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s4', '# from 3.0') \
         .with_npc_lines() \
             .line(teller, "Кажется, эта страница не из бухгалтерских книг… похоже, она из какого-то регистрационного журнала. Корешок ровный, как будто страницу срезали ножом, и ты подозреваешь, что ее удалили специально.", 's4', 'say47015') \
         .with_responses() \
             .response("Прочитать ее.", 'DZM1664.D_s5', 'r9', 'reply47016') \
-        .done()
+        .push(manager)
 
-    # from 4.0
-    DialogStateBuilder('DZM1664.D_s5') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s5', '# from 4.0') \
         .with_npc_lines() \
             .line(teller, "Ты бегло осматриваешь страницу… это список тел, доставленных в Морг и зарегистрированных в Приемной комнате. Все записи принадлежат недавно прибывшим телам.", 's5', 'say47017') \
         .with_responses() \
             .response("Снова осмотреть зомби.", 'DZM1664.D_s0', 'r10', 'reply47018') \
             .response("Взять страницу с собой и уйти.", EXIT, 'r11', 'reply47019').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1
-    DialogStateBuilder('DZM1664.D_s6') \
+    DialogStateBuilder() \
+    .state('DZM1664.D_s6', '# from 0.1') \
         .with_npc_lines() \
             .line(teller, "Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Ты снова просматриваешь тексты, но больше ничего не находишь.", 's6', 'say47021') \
         .with_responses() \
             .response("И как это тебя угораздило стать библиотекарем? Другие места были заняты?", 'DZM1664.D_s1', 'r12', 'reply47022') \
             .response("Оставить зомби в покое.", EXIT, 'r13', 'reply47023').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

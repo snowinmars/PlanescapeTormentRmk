@@ -55,17 +55,14 @@ def _r42313_condition():
 ###
 
 # DLG/DZM825.DLG
-def dlg_dzm825():
+def dlg_dzm825(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm825        = renpy.store.characters['dzm825']
-    EXIT = -1
+    EXIT          = -1
 
-    ######
-    # Check EXTENDS ~DMORTE1~ : 31
-    ######
-    # from -
-    DialogStateBuilder('DZM825.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM825.D_s0', '# from - // # Check EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564') \
         .with_responses() \
@@ -77,30 +74,27 @@ def dlg_dzm825():
             .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply42308').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply42309').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1 0.2 0.3 3.1
-    DialogStateBuilder('DZM825.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM825.D_s1', '# from 0.1 0.2 0.3 3.1') \
         .with_npc_lines() \
             .line(teller, "Труп уставился в землю и не отвечает.", 's1', 'say24566') \
         .with_responses() \
             .response("Тогда неважно. Прощай.", EXIT, 'r8', 'reply24567').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply42310').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.4
-    DialogStateBuilder('DZM825.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM825.D_s2', '# from 0.4') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say24571') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r10', 'reply24572').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    ######
-    # Check EXTENDS ~DMORTE1~ : 31
-    ######
-    # from 0.5
-    DialogStateBuilder('DZM825.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM825.D_s3', '# from 0.5 // # Check EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "У этого трупа ничего нет… но ты замечаешь, что его руки сильно перевязаны.", 's3', 'say42311') \
         .with_responses() \
@@ -108,4 +102,4 @@ def dlg_dzm825():
             .response("Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?", 'DZM825.D_s1', 'r12', 'reply42313').with_condition(lambda: _r42313_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r13', 'reply42314').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r14', 'reply42315').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

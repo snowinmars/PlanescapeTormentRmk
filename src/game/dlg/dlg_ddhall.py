@@ -174,18 +174,15 @@ def _r6053_action():
 
 # DLG/DDHALL.DLG
 # DLG/DMORTE.DLG
-def dlg_ddhall():
+def dlg_ddhall(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dhall         = renpy.store.characters['dhall']
     dhall_unknown = renpy.store.characters['dhall_unknown']
-    EXIT = -1
+    EXIT          = -1
 
-    ######
-    # Check EXTENDS ~DMORTE~ : 104
-    ######
-    # from -
-    DialogStateBuilder('DDHALL.D_s0') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 104') \
         .with_npc_lines() \
             .line(morte, "Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…", 's103', 'say5052') \
             .line(teller, "Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.", 's0', 'say822') \
@@ -198,10 +195,10 @@ def dlg_ddhall():
             .line(dhall_unknown, "Но глухотой я еще не страдаю.", 's1', 'say826') \
         .with_responses() \
             .response("Неугомонный? Ты меня знаешь?", 'DDHALL.D_s44', 'r0', 'reply827') \
-        .done()
+        .push(manager)
 
-    # from 21.0
-    DialogStateBuilder('DDHALL.D_s2') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s2', '# from 21.0') \
         .with_npc_lines() \
             .line(dhall, "Тебе знакома женщина, чьи останки погребены внизу, в мемориальном зале? Я думаю, что в прошлом она путешествовала вместе с тобой…", 's2', 'say829') \
             .line(teller, "Дхолл начинает кашлять, но ему удается перевести дыхание.", 's2', 'say829') \
@@ -215,10 +212,10 @@ def dlg_ddhall():
             .response("Возможно. У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r7', 'reply6063') \
             .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r8', 'reply6064').with_condition(lambda: _r6064_condition()) \
             .response("Возможно, нет. Прощай.", 'DDHALL.D_s11', 'r9', 'reply13288').with_condition(lambda: _r13288_condition()) \
-        .done()
+        .push(manager)
 
-    # from 9.0
-    DialogStateBuilder('DDHALL.D_s3') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s3', '# from 9.0') \
         .with_npc_lines() \
             .line(teller, "Дхолл пристально смотрит на тебя.", 's3', 'say832') \
             .line(dhall, "Ты уверен?", 's3', 'say832') \
@@ -226,10 +223,10 @@ def dlg_ddhall():
             .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r10', 'reply830').with_condition(lambda: _r830_condition()).with_action(lambda: _r830_action()) \
             .response("Да. Он очень хорошо замаскировался.", 'DDHALL.D_s4', 'r11', 'reply831').with_condition(lambda: _r831_condition()).with_action(lambda: _r831_action()) \
             .response("Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r12', 'reply834') \
-        .done()
+        .push(manager)
 
-    # from 3.0 3.1
-    DialogStateBuilder('DDHALL.D_s4') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s4', '# from 3.0 3.1') \
         .with_npc_lines() \
             .line(dhall, "Я…", 's4', 'say833') \
             .line(teller, "У Дхолла начинается очередной приступ кашля. Спустя минуту или две его дыхание становится достаточно спокойным, чтобы он смог продолжить.", 's4', 'say833') \
@@ -237,13 +234,10 @@ def dlg_ddhall():
         .with_responses() \
             .response("Спасибо. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r13', 'reply836') \
             .response("Отлично. Прощай.", 'DDHALL.D_s11', 'r14', 'reply837') \
-        .done()
+        .push(manager)
 
-    ######
-    # Manually checked EXTENDS ~DMORTE~ : 102
-    ######
-    # from -
-    DialogStateBuilder('DDHALL.D_s5') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s5', '# from - // # Manually checked EXTENDS ~DMORTE~ : 102') \
         .with_npc_lines() \
             .line(teller, "Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.", 's5', 'say838') \
             .line(teller, "Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.", 's5', 'say838') \
@@ -253,17 +247,18 @@ def dlg_ddhall():
             .response("Приветствую.", 'DDHALL.D_s7', 'r16', 'reply835').with_condition(lambda: _r835_condition()) \
             .response("Приветствую.", 'DDHALL.D_s6', 'r17', 'reply5058').with_condition(lambda: _r5058_condition()) \
             .response("Оставить старого писаря в покое.", EXIT, 'r18', 'reply5060').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from DDHALL.D_s5
-    DialogStateBuilder('DMORTE.D_s102') \
+    DialogStateBuilder() \
+    .state('DMORTE.D_s102', '# from DDHALL.D_s5') \
         .with_npc_lines() \
             .line(morte, "Эй, шеф! Ты что творишь?!", 's102', 'say5049').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
             .response("Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда.", 'DDHALL.D_s0', 'r276', 'reply5050') \
+        .push(manager)
 
-    # from 5.2
-    DialogStateBuilder('DDHALL.D_s6') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s6', '# from 5.2') \
         .with_npc_lines() \
             .line(teller, "Его серые глаза сверкают, когда он отрывает свой взгляд от книги.", 's6', 'say841') \
             .line(dhall, "Подозреваю, что это ты в ответе за нападения в Морге. Это…", 's6', 'say841') \
@@ -274,10 +269,10 @@ def dlg_ddhall():
             .response("Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…", 'DDHALL.D_s9', 'r20', 'reply843').with_condition(lambda: _r843_condition()).with_action(lambda: _r843_action()) \
             .response("Ты знаешь меня?", 'DDHALL.D_s44', 'r21', 'reply5062').with_condition(lambda: _r5062_condition()) \
             .response("Прощай.", EXIT, 'r22', 'reply5063').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 5.1
-    DialogStateBuilder('DDHALL.D_s7') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s7', '# from 5.1') \
         .with_npc_lines() \
             .line(teller, "Писарь прекращает вести записи в стоящую перед ним книгу и оглядывается. Его глаза похожи на два гвоздя, забитые в его череп.", 's7', 'say844') \
             .line(dhall_unknown, "Итак…", 's7', 'say844').with_action(lambda: _show('dhall_img default', center_right_down)) \
@@ -287,10 +282,10 @@ def dlg_ddhall():
             .line(dhall_unknown, "Приятно встретиться… снова, Неугомонный.", 's7', 'say844') \
         .with_responses() \
             .response("Неугомонный? Ты меня знаешь?", 'DDHALL.D_s44', 'r23', 'reply845') \
-        .done()
+        .push(manager)
 
-    # from 22.0
-    DialogStateBuilder('DDHALL.D_s8') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s8', '# from 22.0') \
         .with_npc_lines() \
             .line(dhall, "Ты должен понять. Твое существование для них — богохульство.", 's8', 'say851') \
             .line(dhall, "Многие из нашей фракции распорядились бы тебя кремировать… если бы узнали о твоем несчастье.", 's8', 'say851') \
@@ -299,10 +294,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r25', 'reply911') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r26', 'reply913') \
             .response("Я выслушал достаточно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r27', 'reply6038') \
-        .done()
+        .push(manager)
 
-    # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
-    DialogStateBuilder('DDHALL.D_s9') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s9', '# from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1') \
         .with_npc_lines() \
             .line(dhall, "Хорошо. Что ты хочешь узнать?", 's9', 'say852') \
         .with_responses() \
@@ -314,10 +309,10 @@ def dlg_ddhall():
             .response("Чем ты здесь занимаешься?", 'DDHALL.D_s25', 'r33', 'reply5748') \
             .response("Твой кашель ужасен. Ты хорошо себя чувствуешь?", 'DDHALL.D_s26', 'r34', 'reply6065') \
             .response("Ничего… прощай, Дхолл.", 'DDHALL.D_s11', 'r35', 'reply41663') \
-        .done()
+        .push(manager)
 
-    # from 9.1
-    DialogStateBuilder('DDHALL.D_s10') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s10', '# from 9.1') \
         .with_npc_lines() \
             .line(dhall, "Ты находишься в Морге, Неугомонный. Ты снова… пришел…", 's10', 'say859') \
             .line(teller, "Не успев закончить, Дхолл заходится в приступе кашля.", 's10', 'say859') \
@@ -331,10 +326,10 @@ def dlg_ddhall():
             .response("Как я попал сюда?", 'DDHALL.D_s15', 'r40', 'reply864') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r41', 'reply865') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r42', 'reply866') \
-        .done()
+        .push(manager)
 
-    # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
-    DialogStateBuilder('DDHALL.D_s11') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s11', '# from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2') \
         .with_npc_lines() \
             .line(teller, "Когда ты собираешься уйти, Дхолл начинает говорить.", 's11', 'say867') \
             .line(dhall, "Знай: я не завидую тебе, Неугомонный. Твои возрождения — проклятье, которого я бы не смог вынести.", 's11', 'say867') \
@@ -343,10 +338,10 @@ def dlg_ddhall():
             .line(dhall, "Это путь всех существ из плоти и костей.", 's11', 'say867') \
         .with_responses() \
             .response("Тогда, возможно, мы еще встретимся, Дхолл.", EXIT, 'r43', 'reply41564').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 2.3 2.4 42.2 42.3 43.1 43.2
-    DialogStateBuilder('DDHALL.D_s12') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s12', '# from 2.3 2.4 42.2 42.3 43.1 43.2') \
         .with_npc_lines() \
             .line(dhall, "Несомненно, они здесь, но я не знаю ни их имен, ни где они лежат. Ты прошел путь, по которому ходят многие, но немногие выживают.", 's12', 'say868') \
             .line(teller, "Дхолл обводит вокруг тебя рукой.", 's12', 'say868') \
@@ -355,10 +350,10 @@ def dlg_ddhall():
             .response("Где та женщина, которую ты упомянул?", 'DDHALL.D_s42', 'r44', 'reply870').with_condition(lambda: _r870_condition()) \
             .response("Я не вижу изъяна в твоих рассуждениях. У меня еще вопросы…", 'DDHALL.D_s9', 'r45', 'reply871') \
             .response("Тогда я поищу их. Возможно, они смогут возродить мою память. Прощай.", 'DDHALL.D_s11', 'r46', 'reply872') \
-        .done()
+        .push(manager)
 
-    # from 9.3
-    DialogStateBuilder('DDHALL.D_s13') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s13', '# from 9.3') \
         .with_npc_lines() \
             .line(dhall, "Хм-м… Главные ворота — самый очевидный выход, но они не выпустят никого, кроме тленных…", 's13', 'say875') \
             .line(teller, "Дхолл заходится в кашле, затем продолжает.", 's13', 'say875') \
@@ -366,10 +361,10 @@ def dlg_ddhall():
         .with_responses() \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r47', 'reply876') \
             .response("Тогда прощай, Дхолл.", EXIT, 'r48', 'reply877').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 10.3
-    DialogStateBuilder('DDHALL.D_s14') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s14', '# from 10.3') \
         .with_npc_lines() \
             .line(dhall, "Да, *снова*. Ты попадал сюда много раз, Неугомонный.", 's14', 'say878') \
             .line(dhall, "Я надеялся, что этот раз будет последним, учитывая полученные тобой раны.", 's14', 'say878') \
@@ -382,10 +377,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r52', 'reply879') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r53', 'reply5751') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r54', 'reply5752') \
-        .done()
+        .push(manager)
 
-    # from 9.2 10.4 32.5
-    DialogStateBuilder('DDHALL.D_s15') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s15', '# from 9.2 10.4 32.5') \
         .with_npc_lines() \
             .line(teller, "Дхолл презрительно фыркает, как будто его воротит от воспоминания об этом.", 's15', 'say885') \
             .line(dhall, "К Моргу тебя доставила твоя ветхая карета, Неугомонный.", 's15', 'say885') \
@@ -395,10 +390,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r56', 'reply887') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r57', 'reply888') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r58', 'reply889') \
-        .done()
+        .push(manager)
 
-    # from 15.0
-    DialogStateBuilder('DDHALL.D_s16') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s16', '# from 15.0') \
         .with_npc_lines() \
             .line(dhall, "Да… твое тело лежало где-то посреди горы трупов.", 's16', 'say890') \
             .line(teller, "Дхолл снова заходится в приступе кашля, который ему удается побороть только несколько минут спустя.", 's16', 'say890') \
@@ -409,10 +404,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r61', 'reply893') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r62', 'reply894') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r63', 'reply5753') \
-        .done()
+        .push(manager)
 
-    # from 16.0
-    DialogStateBuilder('DDHALL.D_s17') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s17', '# from 16.0') \
         .with_npc_lines() \
             .line(dhall, "Он… сборщик мертвых.", 's17', 'say895') \
             .line(teller, "Дхолл переводит дыхание, затем продолжает.", 's17', 'say895') \
@@ -423,10 +418,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r66', 'reply899') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r67', 'reply5754') \
             .response("Тогда пойду и разыщу этого Фарода. Прощай, Дхолл.", 'DDHALL.D_s19', 'r68', 'reply6031') \
-        .done()
+        .push(manager)
 
-    # from 17.0 29.1 31.0 35.1 36.1
-    DialogStateBuilder('DDHALL.D_s18') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s18', '# from 17.0 29.1 31.0 35.1 36.1') \
         .with_npc_lines() \
             .line(dhall, "Если все пойдет своим чередом, Неугомонный, то скорее Фарод найдет тебя и притащит нам сюда, чем ты найдешь ту лужу грязи, в которой он барахтается.", 's18', 'say900') \
         .with_responses() \
@@ -434,10 +429,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r70', 'reply903') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r71', 'reply904') \
             .response("У меня такое чувство, что наши пути еще пересекутся. Прощай, Дхолл.", 'DDHALL.D_s19', 'r72', 'reply5755') \
-        .done()
+        .push(manager)
 
-    # from 17.4 18.0 18.3 29.3 31.2
-    DialogStateBuilder('DDHALL.D_s19') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s19', '# from 17.4 18.0 18.3 29.3 31.2') \
         .with_npc_lines() \
             .line(teller, "Голос Дхолла начинает звучать предостерегающе.", 's19', 'say901') \
             .line(dhall, "Не ищи Фарода, Неугомонный. Я уверен, что ты попросту пройдешь еще один полный круг, и не станешь от этого мудрее, зато обогатишь Фарода на несколько медяков.", 's19', 'say901') \
@@ -447,10 +442,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r74', 'reply905') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r75', 'reply907') \
             .response("Я не могу больше с тобой говорить. Прощай, Дхолл.", 'DDHALL.D_s11', 'r76', 'reply5756') \
-        .done()
+        .push(manager)
 
-    # from 19.0
-    DialogStateBuilder('DDHALL.D_s20') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s20', '# from 19.0') \
         .with_npc_lines() \
             .line(teller, "Дхолл умолкает на минуту. Когда же он начинает говорить, то становится ясно, что он делает это с явной неохотой.", 's20', 'say908') \
             .line(dhall, "Я не знаю, в каком притоне находится логово Фарода в данный момент, но могу предположить, что оно где-то за воротами Морга, в Улье.", 's20', 'say908') \
@@ -460,10 +455,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r78', 'reply909') \
             .response("Спасибо. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r79', 'reply5757') \
             .response("Тогда я пойду и поспрашиваю тамошних жителей. Прощай.", 'DDHALL.D_s11', 'r80', 'reply6030') \
-        .done()
+        .push(manager)
 
-    # from 9.4
-    DialogStateBuilder('DDHALL.D_s21') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s21', '# from 9.4') \
         .with_npc_lines() \
             .line(dhall, "О тебе, Неугомонный, я знаю совсем немного. О твоих спутниках, лежащих теперь под нашим присмотром, я знаю ненамного больше.", 's21', 'say914') \
             .line(teller, "Дхолл вздыхает.", 's21', 'say914') \
@@ -472,10 +467,10 @@ def dlg_ddhall():
             .response("Меня кто-то сопровождал в пути? Они здесь?", 'DDHALL.D_s2', 'r81', 'reply921').with_action(lambda: _r921_action()) \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r82', 'reply922') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r83', 'reply923') \
-        .done()
+        .push(manager)
 
-    # from 47.0
-    DialogStateBuilder('DDHALL.D_s22') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s22', '# from 47.0') \
         .with_npc_lines() \
             .line(teller, "Дхолл вздыхает.", 's22', 'say915') \
             .line(dhall, "Говорят, что есть души, которые не могут достичь Истинной Смерти. Смерть отказалась от них, и их имена никогда не попадут в книгу мертвых.", 's22', 'say915') \
@@ -485,10 +480,10 @@ def dlg_ddhall():
             .response("Ясно. Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r85', 'reply918') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r86', 'reply919') \
             .response("Думаю, я услышал достаточно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r87', 'reply920') \
-        .done()
+        .push(manager)
 
-    # from 8.0
-    DialogStateBuilder('DDHALL.D_s23') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s23', '# from 8.0') \
         .with_npc_lines() \
             .line(dhall, "Потому что заставлять тебя принимать нашу веру несправедливо. Ты должен оставить тень этой жизни по своей воле, а не по нашей.", 's23', 'say924') \
             .line(teller, "Дхолл, кажется, готов разразиться очередным приступом кашля, но с некоторыми усилиями ему удается сдержаться.", 's23', 'say924') \
@@ -498,10 +493,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r89', 'reply928') \
             .response("Хорошо. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r90', 'reply925') \
             .response("Я выслушал достаточно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r91', 'reply6039') \
-        .done()
+        .push(manager)
 
-    # from 25.0
-    DialogStateBuilder('DDHALL.D_s24') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s24', '# from 25.0') \
         .with_npc_lines() \
             .line(dhall, "Я — единственный, кто регистрирует тела, поступающие в наши залы, Неугомонный.", 's24', 'say929') \
             .line(teller, "Дхолл начинает кашлять, затем успокаивается.", 's24', 'say929') \
@@ -510,10 +505,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r92', 'reply1305') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r93', 'reply6041') \
             .response("Кажется, я обязан тебе. Прощай, Дхолл.", 'DDHALL.D_s11', 'r94', 'reply6042') \
-        .done()
+        .push(manager)
 
-    # from 9.5 23.0
-    DialogStateBuilder('DDHALL.D_s25') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s25', '# from 9.5 23.0') \
         .with_npc_lines() \
             .line(dhall, "Я — писарь. Я веду учет всех тел, которые поступают в Морг.", 's25', 'say930') \
             .line(teller, "Дхолл снова кашляет, затем глубоко вздыхает.", 's25', 'say930') \
@@ -523,10 +518,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r96', 'reply932') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r97', 'reply933') \
             .response("Отлично. Прощай, Дхолл.", 'DDHALL.D_s11', 'r98', 'reply6040') \
-        .done()
+        .push(manager)
 
-    # from 9.6
-    DialogStateBuilder('DDHALL.D_s26') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s26', '# from 9.6') \
         .with_npc_lines() \
             .line(dhall, "Я уже близок к Истинной Смерти, Неугомонный. Уже скоро я пересеку Границу Вечности и обрету покой, который давно искал. Я устал от этой смертной сферы…", 's26', 'say934') \
             .line(teller, "Дхолл тяжело вздыхает.", 's26', 'say934') \
@@ -536,19 +531,19 @@ def dlg_ddhall():
             .response("Ты уверен? Должен же быть способ помочь тебе.", 'DDHALL.D_s27', 'r100', 'reply936').with_action(lambda: _r936_action()) \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r101', 'reply937') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r102', 'reply960') \
-        .done()
+        .push(manager)
 
-    # from 26.1
-    DialogStateBuilder('DDHALL.D_s27') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s27', '# from 26.1') \
         .with_npc_lines() \
             .line(dhall, "Я не желаю жить вечно или возрождаться, Неугомонный. Я не смогу этого вынести.", 's27', 'say938') \
         .with_responses() \
             .response("Хорошо. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r103', 'reply1303') \
             .response("Пусть будет так. Прощай, Дхолл.", 'DDHALL.D_s11', 'r104', 'reply1304') \
-        .done()
+        .push(manager)
 
-    # from 2.2 42.1
-    DialogStateBuilder('DDHALL.D_s28') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s28', '# from 2.2 42.1') \
         .with_npc_lines() \
             .line(dhall, "Она *разговаривала* с тобой?", 's28', 'say939') \
             .line(teller, "Дхолл переходит на шепот.", 's28', 'say939') \
@@ -557,10 +552,10 @@ def dlg_ddhall():
             .response("Она разговаривала со мной, Дхолл. Ее душа находится здесь.", 'DDHALL.D_s30', 'r105', 'reply981') \
             .response("Возможно, я это выдумал. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r106', 'reply982') \
             .response("Не уверен, что она достигла Истинной Смерти. Прощай, Дхолл.", 'DDHALL.D_s11', 'r107', 'reply873') \
-        .done()
+        .push(manager)
 
-    # from 36.0
-    DialogStateBuilder('DDHALL.D_s29') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s29', '# from 36.0') \
         .with_npc_lines() \
             .line(teller, "Дхолл умолкает в раздумье.", 's29', 'say941') \
             .line(dhall, "Скорее всего. Ты что-то потерял… что-то особенно ценное?", 's29', 'say941') \
@@ -572,20 +567,20 @@ def dlg_ddhall():
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r110', 'reply944') \
             .response("Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.", 'DDHALL.D_s19', 'r111', 'reply6026').with_condition(lambda: _r6026_condition()) \
             .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r112', 'reply874').with_condition(lambda: _r874_condition()) \
-        .done()
+        .push(manager)
 
-    # from 28.0
-    DialogStateBuilder('DDHALL.D_s30') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s30', '# from 28.0') \
         .with_npc_lines() \
             .line(teller, "Дхолл описывает пальцем полукруг в воздухе перед собой.", 's30', 'say945') \
             .line(dhall, "Это дурное знамение, Неугомонный. Я молюсь о том, чтобы это оказалось твоим сном… и все же боюсь, это не так.", 's30', 'say945') \
         .with_responses() \
             .response("Возможно, мне показалось. У меня еще вопросы.", 'DDHALL.D_s9', 'r113', 'reply946') \
             .response("Возможно, мы поговорим об этом позже. Прощай, Дхолл.", 'DDHALL.D_s11', 'r114', 'reply947') \
-        .done()
+        .push(manager)
 
-    # from 29.0
-    DialogStateBuilder('DDHALL.D_s31') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s31', '# from 29.0') \
         .with_npc_lines() \
             .line(dhall, "Дневник? Если он представляет хоть какую-то ценность, то он наверняка в руках Фарода.", 's31', 'say850') \
         .with_responses() \
@@ -593,10 +588,10 @@ def dlg_ddhall():
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r116', 'reply949') \
             .response("В таком случае, я должен разыскать его. Прощай, Дхолл.", 'DDHALL.D_s19', 'r117', 'reply6027').with_condition(lambda: _r6027_condition()) \
             .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r118', 'reply6066').with_condition(lambda: _r6066_condition()) \
-        .done()
+        .push(manager)
 
-    # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
-    DialogStateBuilder('DDHALL.D_s32') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s32', '# from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0') \
         .with_npc_lines() \
             .line(dhall, "Это место, куда мертвых доставляют для погребения или кремации. Забота об умерших, покинувших эту тень жизни и ступивших на путь Истинной Смерти, входит в обязанности тленных.", 's32', 'say950') \
             .line(teller, "Дхолл от волнения понижает тон.", 's32', 'say950') \
@@ -610,10 +605,10 @@ def dlg_ddhall():
             .response("Как я попал сюда?", 'DDHALL.D_s15', 'r124', 'reply846') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r125', 'reply5735') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r126', 'reply6062') \
-        .done()
+        .push(manager)
 
-    # from 10.2 14.2 32.0 41.0 47.2 49.0
-    DialogStateBuilder('DDHALL.D_s33') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s33', '# from 10.2 14.2 32.0 41.0 47.2 49.0') \
         .with_npc_lines() \
             .line(dhall, "Да, тень. Видишь ли, Неугомонный, эта жизнь… она не настоящая.", 's33', 'say957') \
             .line(dhall, "Наши с тобой жизни — всего лишь тени, жалкое подобие от того, что было однажды жизнью. Эта 'жизнь' — то, куда мы попадаем *после* того, как умираем.", 's33', 'say957') \
@@ -624,10 +619,10 @@ def dlg_ddhall():
             .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r129', 'reply5736') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r130', 'reply5737') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r131', 'reply5738') \
-        .done()
+        .push(manager)
 
-    # from 14.1 32.4
-    DialogStateBuilder('DDHALL.D_s34') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s34', '# from 14.1 32.4') \
         .with_npc_lines() \
             .line(dhall, "Да, раны, украшающие твое тело… Получи их более слабый человек, он бы уже был на пути к Истинной Смерти, а у тебя некоторые из них уже зажили.", 's34', 'say961') \
             .line(teller, "Дхолл надрывно кашляет, затем успокаивается.", 's34', 'say961') \
@@ -637,10 +632,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r133', 'reply1302') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r134', 'reply5746') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r135', 'reply5747') \
-        .done()
+        .push(manager)
 
-    # from 16.1 17.1 20.0
-    DialogStateBuilder('DDHALL.D_s35') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s35', '# from 16.1 17.1 20.0') \
         .with_npc_lines() \
             .line(dhall, "Есть люди, которых я уважаю, Неугомонный.", 's35', 'say962') \
             .line(teller, "Дхолл успокаивает свое неровное дыхание.", 's35', 'say962') \
@@ -651,10 +646,10 @@ def dlg_ddhall():
             .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r137', 'reply964').with_condition(lambda: _r964_condition()) \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r138', 'reply965') \
             .response("Звучит ободряюще. Прощай, Дхолл.", 'DDHALL.D_s11', 'r139', 'reply6028') \
-        .done()
+        .push(manager)
 
-    # from 35.0
-    DialogStateBuilder('DDHALL.D_s36') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s36', '# from 35.0') \
         .with_npc_lines() \
             .line(dhall, "Рыцарь легкой наживы.", 's36', 'say966') \
             .line(teller, "Дхолл кашляет.", 's36', 'say966') \
@@ -665,20 +660,20 @@ def dlg_ddhall():
             .response("Ты не знаешь, где я могу найти Фарода?", 'DDHALL.D_s18', 'r141', 'reply968').with_condition(lambda: _r968_condition()) \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r142', 'reply969') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r143', 'reply6029') \
-        .done()
+        .push(manager)
 
-    # from 32.3
-    DialogStateBuilder('DDHALL.D_s37') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s37', '# from 32.3') \
         .with_npc_lines() \
             .line(dhall, "Сигил — это наш прекрасный город, Неугомонный.", 's37', 'say970') \
         .with_responses() \
             .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r144', 'reply971') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r145', 'reply972') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r146', 'reply5758') \
-        .done()
+        .push(manager)
 
-    # from 10.1 14.0
-    DialogStateBuilder('DDHALL.D_s38') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s38', '# from 10.1 14.0') \
         .with_npc_lines() \
             .line(dhall, "Неугомонный — имя не хуже других…", 's38', 'say973') \
             .line(teller, "Дхолл переводит дыхание.", 's38', 'say973') \
@@ -688,10 +683,10 @@ def dlg_ddhall():
             .response("Расскажи мне еще о Морге.", 'DDHALL.D_s32', 'r148', 'reply975') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r149', 'reply5749') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r150', 'reply5750') \
-        .done()
+        .push(manager)
 
-    # from -
-    DialogStateBuilder('DDHALL.D_s39') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s39', '# from -') \
         .with_npc_lines() \
             .line(dhall, "Ты будешь делать то же, что и раньше, Неугомонный. Разыщешь того любителя звенелок, того плешивого идиота, Червеволосого, и вернешь свое имущество.", 's39', 'say884') \
             .line(dhall, "После продолжишь свои бессмысленные поиски, пытаясь выполнить бессмысленные задания, собирая бессмысленные предметы. Затем ты падешь и вернешься назад к нам.", 's39', 'say884') \
@@ -699,10 +694,10 @@ def dlg_ddhall():
         .with_responses() \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r151', 'reply976') \
             .response("Прощай, Дхолл.", EXIT, 'r152', 'reply977').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from -
-    DialogStateBuilder('DDHALL.D_s40') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s40', '# from -') \
         .with_npc_lines() \
             .line(teller, "Дхолл мельком смотрит на тебя.", 's40', 'say978').with_action(lambda: _show('dhall_img default', center_right_down)) \
             .line(dhall, "Итак. Ты вернулся…", 's40', 'say978') \
@@ -711,10 +706,10 @@ def dlg_ddhall():
         .with_responses() \
             .response("У меня к тебе другие вопросы, Дхолл.", 'DDHALL.D_s9', 'r153', 'reply979') \
             .response("Неважно. Прощай.", EXIT, 'r154', 'reply980').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 26.0 52.0
-    DialogStateBuilder('DDHALL.D_s41') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s41', '# from 26.0 52.0') \
         .with_npc_lines() \
             .line(dhall, "Границу между владениями тени этой жизни и Истинной Смерти.", 's41', 'say983') \
         .with_responses() \
@@ -723,10 +718,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r157', 'reply5739') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r158', 'reply5740') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r159', 'reply5741') \
-        .done()
+        .push(manager)
 
-    # from 2.0 12.0 43.0
-    DialogStateBuilder('DDHALL.D_s42') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s42', '# from 2.0 12.0 43.0') \
         .with_npc_lines() \
             .line(dhall, "В северо-западном мемориальном зале, этажом ниже. Проверь гробы… ее имя должно быть на одной из мемориальных табличек. Возможно, это оживит твои воспоминания.", 's42', 'say5075') \
         .with_responses() \
@@ -736,10 +731,10 @@ def dlg_ddhall():
             .response("Ты говорил, что здесь есть другие. Кто они?", 'DDHALL.D_s12', 'r163', 'reply5079').with_condition(lambda: _r5079_condition()) \
             .response("Возможно, мне стоит найти ее. Перед уходом у меня есть к тебе другие вопросы…", 'DDHALL.D_s9', 'r164', 'reply6067') \
             .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r165', 'reply6068') \
-        .done()
+        .push(manager)
 
-    # from 2.1 42.0
-    DialogStateBuilder('DDHALL.D_s43') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s43', '# from 2.1 42.0') \
         .with_npc_lines() \
             .line(teller, "Дхолл не отвечает. Он просто молчаливо смотрит на тебя.", 's43', 'say5080') \
         .with_responses() \
@@ -748,10 +743,10 @@ def dlg_ddhall():
             .response("Ты говорил, что здесь похоронены и другие мои спутники. Где они?", 'DDHALL.D_s12', 'r168', 'reply5083').with_condition(lambda: _r5083_condition()) \
             .response("У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r169', 'reply6069') \
             .response("Тогда прощай.", 'DDHALL.D_s11', 'r170', 'reply6070') \
-        .done()
+        .push(manager)
 
-    # from 1.0 6.2 7.0
-    DialogStateBuilder('DDHALL.D_s44') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s44', '# from 1.0 6.2 7.0') \
         .with_npc_lines() \
             .line(dhall_unknown, "Знаю ли я тебя? Я…", 's44', 'say840') \
             .line(teller, "В голосе писца звучит горечь.", 's44', 'say840') \
@@ -760,10 +755,10 @@ def dlg_ddhall():
             .line(dhall_unknown, "Ты ведь все забыл, не так ли?", 's44', 'say840') \
         .with_responses() \
             .response("*Кто* ты?", 'DDHALL.D_s45', 'r171', 'reply1327').with_action(lambda: _r1327_action()) \
-        .done()
+        .push(manager)
 
-    # from 44.0
-    DialogStateBuilder('DDHALL.D_s45') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s45', '# from 44.0') \
         .with_npc_lines() \
             .line(dhall_unknown, "Как всегда, вопрос. И как всегда, неправильный.", 's45', 'say5728') \
             .line(dhall_unknown, "Он делает легкий поклон, но движение вызывает у него неожиданный приступ кашля.", 's45', 'say5728') \
@@ -771,10 +766,10 @@ def dlg_ddhall():
         .with_responses() \
             .response("Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…", 'DDHALL.D_s9', 'r172', 'reply5731').with_action(lambda: _r5731_action()) \
             .response("У меня нет времени на это. Прощай.", 'DDHALL.D_s46', 'r173', 'reply5732').with_action(lambda: _r5732_action()) \
-        .done()
+        .push(manager)
 
-    # from 45.1
-    DialogStateBuilder('DDHALL.D_s46') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s46', '# from 45.1') \
         .with_npc_lines() \
             .line(dhall, "Хорошо, Неугомонный.", 's46', 'say5730') \
             .line(teller, "Дхолл кивает.", 's46', 'say5730') \
@@ -783,10 +778,10 @@ def dlg_ddhall():
             .line(dhall, "Когда ты снова захочешь поговорить, я буду здесь.", 's46', 'say5730') \
         .with_responses() \
             .response("Я еще вернусь. Прощай.", EXIT, 'r174', 'reply40005').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 32.2
-    DialogStateBuilder('DDHALL.D_s47') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s47', '# from 32.2') \
         .with_npc_lines() \
             .line(dhall, "Мы — тленные, фракция, собравшая всех тех, кто понял иллюзорность этой жизни. Мы ждем следующей жизни и помогаем другим в их путешествии.", 's47', 'say847') \
         .with_responses() \
@@ -796,10 +791,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r178', 'reply6035') \
             .response("У меня есть другие вопросы к тебе…", 'DDHALL.D_s9', 'r179', 'reply6036') \
             .response("Тогда прощай.", 'DDHALL.D_s11', 'r180', 'reply6037') \
-        .done()
+        .push(manager)
 
-    # from 32.1 33.0 38.0 41.1 47.1
-    DialogStateBuilder('DDHALL.D_s48') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s48', '# from 32.1 33.0 38.0 41.1 47.1') \
         .with_npc_lines() \
             .line(dhall, "Истинная Смерть — это небытие. Состояние, свободное от мыслей, чувств, страстей.", 's48', 'say848') \
             .line(teller, "Дхолл кашляет, затем восстанавливает неровное дыхание.", 's48', 'say848') \
@@ -809,10 +804,10 @@ def dlg_ddhall():
             .response("Ого. Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r182', 'reply6044') \
             .response("Понятно… У меня есть другие вопросы.", 'DDHALL.D_s9', 'r183', 'reply6045') \
             .response("Я должен идти. Прощай, Дхолл.", 'DDHALL.D_s11', 'r184', 'reply6046') \
-        .done()
+        .push(manager)
 
-    # from 48.0
-    DialogStateBuilder('DDHALL.D_s49') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s49', '# from 48.0') \
         .with_npc_lines() \
             .line(dhall, "По-твоему, лучше оставаться в тени того, что раньше называлось жизнью? Я так не думаю.", 's49', 'say849') \
         .with_responses() \
@@ -820,10 +815,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r186', 'reply6048') \
             .response("Понятно… У меня есть другие вопросы.", 'DDHALL.D_s9', 'r187', 'reply6049') \
             .response("Я должен идти. Прощай, Дхолл.", 'DDHALL.D_s11', 'r188', 'reply6050') \
-        .done()
+        .push(manager)
 
-    # from 33.1
-    DialogStateBuilder('DDHALL.D_s50') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s50', '# from 33.1') \
         .with_npc_lines() \
             .line(dhall, "А что заставляет тебя думать, что эта жизнь *настоящая*? Прислушайся к себе. Разве ты не чувствуешь какую-то опустошенность?", 's50', 'say853') \
             .line(teller, "Дхолл качает головой.", 's50', 'say853') \
@@ -832,10 +827,10 @@ def dlg_ddhall():
             .response("Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них.", 'DDHALL.D_s51', 'r189', 'reply6051').with_action(lambda: _r6051_action()) \
             .response("Заперты? Каким образом?", 'DDHALL.D_s51', 'r190', 'reply6052') \
             .response("Довольно этой философии. Как все это относится к тому, что я оказался здесь?", 'DDHALL.D_s51', 'r191', 'reply6053').with_action(lambda: _r6053_action()) \
-        .done()
+        .push(manager)
 
-    # from 50.0 50.1 50.2
-    DialogStateBuilder('DDHALL.D_s51') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s51', '# from 50.0 50.1 50.2') \
         .with_npc_lines() \
             .line(teller, "Дхолл качает головой.", 's51', 'say5733') \
             .line(dhall, "Страсти — тяжелый груз. Многих они приковали к этой тени жизни.", 's51', 'say5733') \
@@ -845,10 +840,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r193', 'reply6055') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r194', 'reply6056') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r195', 'reply6057') \
-        .done()
+        .push(manager)
 
-    # from 51.0
-    DialogStateBuilder('DDHALL.D_s52') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s52', '# from 51.0') \
         .with_npc_lines() \
             .line(dhall, "Убей в себе страсти. Отбрось нужду в переживаниях. Когда ты будешь действительно очищен, кольцо возрождений прервется, и ты обретешь покой.", 's52', 'say5734') \
             .line(teller, "Дхолл делает вздох… как будто смерть клокочет в его глотке.", 's52', 'say5734') \
@@ -858,10 +853,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r197', 'reply6059') \
             .response("У меня есть другие вопросы…", 'DDHALL.D_s9', 'r198', 'reply6060') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r199', 'reply6061') \
-        .done()
+        .push(manager)
 
-    # from 34.0
-    DialogStateBuilder('DDHALL.D_s53') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s53', '# from 34.0') \
         .with_npc_lines() \
             .line(dhall, "Я говорю о ранах разума. Ты ведь многое забыл, не так ли? Возможно, настоящие раны гораздо глубже, чем эти шрамы, украшающие твое тело.", 's53', 'say5742') \
             .line(teller, "Дхолл снова кашляет.", 's53', 'say5742') \
@@ -870,9 +865,10 @@ def dlg_ddhall():
             .response("Расскажи мне побольше о Морге.", 'DDHALL.D_s32', 'r200', 'reply5743') \
             .response("Понятно. У меня еще вопросы…", 'DDHALL.D_s9', 'r201', 'reply5744') \
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r202', 'reply5745') \
-        .done()
+        .push(manager)
 
-    DialogStateBuilder('DDHALL.D_s99999999_54') \
+    DialogStateBuilder() \
+    .state('DDHALL.D_s99999999_54', '-') \
         .with_npc_lines() \
             .line(teller, "Дхалл не должен жить.",'-', '-').with_action(lambda: _kill_dhall()) \
             .line(teller, "Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.",'-', '-') \
@@ -881,4 +877,4 @@ def dlg_ddhall():
             .line(teller, "Перо, которое он до этого держал в руке, упало в тень книги.",'-', '-') \
         .with_responses() \
             .response("(...)", EXIT, '-', '-').with_action(lambda: _hide('dhall_img')) \
-        .done()
+        .push(manager)

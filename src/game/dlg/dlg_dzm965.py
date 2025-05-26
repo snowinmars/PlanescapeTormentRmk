@@ -44,26 +44,23 @@ def _r45072_condition():
 ###
 
 # DLG/DZM965.DLG
-def dlg_dzm965():
+def dlg_dzm965(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm965        = renpy.store.characters['dzm965']
     EXIT          = -1
 
-    ######
-    # Check EXTENDS ~DMORTE~ : 477
-    ######
-    # from -
-    DialogStateBuilder('DZM965.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM965.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 477') \
         .with_npc_lines() \
             .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's0', 'say34920') \
             .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's0', 'say34920') \
         .with_responses() \
             .response("(...)", EXIT, '-', '-').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from -
-    DialogStateBuilder('DZM965.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM965.D_s1', '# from -') \
         .with_npc_lines() \
             .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922') \
             .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
@@ -74,20 +71,20 @@ def dlg_dzm965():
             .response("Использовать на трупе свою способность История костей.", 'DZM965.D_s3', 'r4', 'reply45072').with_condition(lambda: _r45072_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply45073').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply45074').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 1.0 1.1 1.2
-    DialogStateBuilder('DZM965.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM965.D_s2', '# from 1.0 1.1 1.2') \
         .with_npc_lines() \
             .line(teller, "Труп уставился на тебя невидящим взглядом.", 's2', 'say34927') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply34928').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 1.3
-    DialogStateBuilder('DZM965.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM965.D_s3', '# from 1.3') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's3', 'say45069') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45075').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

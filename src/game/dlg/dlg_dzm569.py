@@ -55,17 +55,14 @@ def _r42295_condition():
 ###
 
 # DLG/DZM569.DLG
-def dlg_dzm569():
+def dlg_dzm569(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
-    dzm569         = renpy.store.characters['dzm569']
-    EXIT = -1
+    dzm569        = renpy.store.characters['dzm569']
+    EXIT          = -1
 
-    ######
-    # Check EXTENDS ~DMORTE1~ : 31
-    ######
-    # from -
-    DialogStateBuilder('DZM569.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM569.D_s0', '# from - // # Check EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
         .with_responses() \
@@ -77,30 +74,27 @@ def dlg_dzm569():
             .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM569.D_s3', 'r5', 'reply24585').with_condition(lambda: _r24585_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply42290').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r7', 'reply42291').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1 0.2 0.3 3.1
-    DialogStateBuilder('DZM569.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM569.D_s1', '# from 0.1 0.2 0.3 3.1') \
         .with_npc_lines() \
             .line(teller, "Труп молчаливо уставился на тебя.", 's1', 'say24577') \
         .with_responses() \
             .response("Тогда неважно. Прощай.", EXIT, 'r8', 'reply24578').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r9', 'reply42292').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.4
-    DialogStateBuilder('DZM569.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM569.D_s2', '# from 0.4') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say24582') \
         .with_responses() \
             .response("Оставить зомби в покое.", EXIT, 'r10', 'reply24583').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    ######
-    # Check EXTENDS ~DMORTE1~ : 31
-    ######
-    # from 0.5
-    DialogStateBuilder('DZM569.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM569.D_s3', '# from 0.5 // # Check EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "Похоже, у этого трупа нет ключа… да и вряд ли он смог бы им воспользоваться. Его пальцы перебиты, как будто кто-то постучал по ним молотком.", 's3', 'say42293') \
         .with_responses() \
@@ -108,4 +102,4 @@ def dlg_dzm569():
             .response("Похоже, что нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?", 'DZM569.D_s1', 'r12', 'reply42295').with_condition(lambda: _r42295_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r13', 'reply42296').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r14', 'reply42297').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

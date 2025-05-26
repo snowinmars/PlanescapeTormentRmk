@@ -54,14 +54,14 @@ def _r45115_condition():
 ###
 
 # DLG/DZM396.DLG
-def dlg_dzm396():
+def dlg_dzm396(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm396        = renpy.store.characters['dzm396']
-    EXIT = -1
+    EXIT          = -1
 
-    # from -
-    DialogStateBuilder('DZM396.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM396.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.", 's0', 'say34931') \
         .with_responses() \
@@ -72,36 +72,36 @@ def dlg_dzm396():
             .response("Использовать на трупе свою способность История костей.", 'DZM396.D_s2', 'r4', 'reply34940').with_condition(lambda: _r34940_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply34941').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply45106').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0 0.1 0.3 4.0 4.1 4.2
-    DialogStateBuilder('DZM396.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM396.D_s1', '# from 0.0 0.1 0.3 4.0 4.1 4.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say34933') \
         .with_responses() \
             .response("Попробовать забрать бинты у зомби.", 'DZM396.D_s3', 'r7', 'reply34934') \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45107').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.4 4.3
-    DialogStateBuilder('DZM396.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM396.D_s2', '# from 0.4 4.3') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34938') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply34939').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.2 1.0
-    DialogStateBuilder('DZM396.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM396.D_s3', '# from 0.2 1.0') \
         .with_npc_lines() \
             .line(teller, "Ты протягиваешь руку и забираешь бинты из рук трупа. Труп даже не обратил на это внимания; он продолжает перевязывать тела.", 's3', 'say45108') \
         .with_responses() \
             .response("Снова осмотреть труп.", 'DZM396.D_s4', 'r10', 'reply45109') \
             .response("Оставить труп в покое.", EXIT, 'r11', 'reply45110').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 3.0
-    DialogStateBuilder('DZM396.D_s4') \
+    DialogStateBuilder() \
+    .state('DZM396.D_s4', '# from 3.0') \
         .with_npc_lines() \
             .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов.", 's4', 'say45111') \
             .line(teller, "На левом виске у него выбит номер «396», а его губы крепко зашиты.", 's4', 'say45111') \
@@ -112,4 +112,4 @@ def dlg_dzm396():
             .response("Использовать на трупе свою способность История костей.", 'DZM396.D_s2', 'r15', 'reply45115').with_condition(lambda: _r45115_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r16', 'reply45116').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r17', 'reply45117').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

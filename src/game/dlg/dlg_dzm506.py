@@ -64,14 +64,14 @@ def _r45512_condition():
 ###
 
 # DLG/DZM506.DLG
-def dlg_dzm506():
+def dlg_dzm506(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
-    dzm506         = renpy.store.characters['dzm506']
-    EXIT = -1
+    dzm506        = renpy.store.characters['dzm506']
+    EXIT          = -1
 
-    # from 3.2
-    DialogStateBuilder('DZM506.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM506.D_s0', '# from 3.2') \
         .with_npc_lines() \
             .line(teller, "Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…", 's0', 'say45419') \
             .line(teller, "В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.", 's0', 'say45419') \
@@ -81,26 +81,26 @@ def dlg_dzm506():
             .response("Использовать на трупе свою способность История костей.", 'DZM506.D_s2', 'r2', 'reply45422').with_condition(lambda: _r45422_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r3', 'reply45423').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r4', 'reply45424').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1 4.0 4.1 5.0 5.1 5.2
-    DialogStateBuilder('DZM506.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM506.D_s1', '# from 0.1 4.0 4.1 5.0 5.1 5.2') \
         .with_npc_lines() \
             .line(teller, "Труп самозабвенно смотрит вперед.", 's1', 'say45425') \
         .with_responses() \
             .response("Оставить зомби в покое.", EXIT, 'r5', 'reply45478').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.2 5.3
-    DialogStateBuilder('DZM506.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM506.D_s2', '# from 0.2 5.3') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45426') \
         .with_responses() \
             .response("Оставить зомби в покое.", EXIT, 'r6', 'reply45479').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0
-    DialogStateBuilder('DZM506.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM506.D_s3', '# from 0.0') \
         .with_npc_lines() \
             .line(teller, "Швы опоясывают тело, пробегая по рукам через весь торс наверх по шее и скрываясь в копне белых волос. Проходя по пересечениям швов, ты замечаешь, что кто-то приколол иголку ко лбу…", 's3', 'say45427') \
             .line(teller, "…в иглу вдета нить, которая выходит из шва на черепе. Ты мог бы вытащить ее, если бы у тебя было что-нибудь, чтобы разрезать нить.", 's3', 'say45427') \
@@ -109,10 +109,10 @@ def dlg_dzm506():
             .response("Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь.", EXIT, 'r8', 'reply45481').with_condition(lambda: _r45481_condition()).with_action(lambda: _dispose()) \
             .response("Снова осмотреть труп.", 'DZM506.D_s0', 'r9', 'reply45482') \
             .response("Оставить труп в покое.", EXIT, 'r10', 'reply45483').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 3.0
-    DialogStateBuilder('DZM506.D_s4') \
+    DialogStateBuilder() \
+    .state('DZM506.D_s4', '# from 3.0') \
         .with_npc_lines() \
             .line(teller, "Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер «78».", 's4', 'say45428') \
         .with_responses() \
@@ -120,10 +120,10 @@ def dlg_dzm506():
             .response("Похоже, у тебя два разных обозначения, труп.", 'DZM506.D_s1', 'r12', 'reply45496').with_condition(lambda: _r45496_condition()) \
             .response("Снова осмотреть труп.", 'DZM506.D_s5', 'r13', 'reply50097') \
             .response("Оставить зомби в покое.", EXIT, 'r14', 'reply66889').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 4.2
-    DialogStateBuilder('DZM506.D_s5') \
+    DialogStateBuilder() \
+    .state('DZM506.D_s5', '# from 4.2') \
         .with_npc_lines() \
             .line(teller, "Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер «506», в месте, где кожа отвалилась ото лба, на кости выбит номер «78».", 's5', 'say45429') \
         .with_responses() \
@@ -133,4 +133,4 @@ def dlg_dzm506():
             .response("Использовать на трупе свою способность История костей.", 'DZM506.D_s2', 'r18', 'reply45512').with_condition(lambda: _r45512_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r19', 'reply45513').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r20', 'reply45514').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

@@ -47,14 +47,14 @@ def _r64271_action():
 ###
 
 # DLG/DZM732.DLG
-def dlg_dzm732():
+def dlg_dzm732(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm732        = renpy.store.characters['dzm732']
     EXIT          = -1
 
-    # from 4.0
-    DialogStateBuilder('DZM732.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM732.D_s0', '# from 4.0') \
         .with_npc_lines() \
             .line(teller, "У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно…", 's0', 'say6529') \
             .line(teller, "…тебе остается только гадать, когда потерял человек глаза — до смерти или после.", 's0', 'say6529') \
@@ -65,26 +65,26 @@ def dlg_dzm732():
             .response("Использовать на трупе свою способность История костей.", 'DZM732.D_s2', 'r3', 'reply6535').with_condition(lambda: _r6535_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6536').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply6537').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0 0.1 0.2
-    DialogStateBuilder('DZM732.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM732.D_s1', '# from 0.0 0.1 0.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6530') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6538').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3
-    DialogStateBuilder('DZM732.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM732.D_s2', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say6531') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply6539').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from -
-    DialogStateBuilder('DZM732.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM732.D_s3', '# from -') \
         .with_npc_lines() \
             .line(teller, "У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732».", 's3', 'say64270') \
             .line(teller, "Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после.", 's3', 'say64270') \
@@ -92,10 +92,10 @@ def dlg_dzm732():
         .with_responses() \
             .response("Взять том из его рук… осторожно.", 'DZM732.D_s4', 'r8', 'reply64271').with_action(lambda: _r64271_action()) \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply64272').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 3.0
-    DialogStateBuilder('DZM732.D_s4') \
+    DialogStateBuilder() \
+    .state('DZM732.D_s4', '# from 3.0') \
         .with_npc_lines() \
             .line(teller, "Ты осторожно берешь книгу из рук трупа — он даже не замечает этого.", 's4', 'say64273') \
             .line(teller, "Похоже, это книга заклинаний и оберегов: она исписана схемами и таблицами, описывающими различные аспекты искусства некромантии.", 's4', 'say64273') \
@@ -103,4 +103,4 @@ def dlg_dzm732():
         .with_responses() \
             .response("Снова осмотреть труп.", 'DZM732.D_s0', 'r10', 'reply64274') \
             .response("Оставить труп в покое.", EXIT, 'r11', 'reply64275').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
