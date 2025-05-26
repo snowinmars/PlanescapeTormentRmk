@@ -1,19 +1,3 @@
-screen dialog_choices(responses):
-    vbox:
-        style_prefix "choice"
-        for response_id, response in responses.items():
-            $ plainResponse = 'condition' not in response or response['condition'] is None
-            $ visibleConditiolanResponse = 'condition' in response and response['condition'] is not None and response['condition']()
-
-            if plainResponse or visibleConditiolanResponse:
-                textbutton response['text']:
-                    if 'action' in response and response['action'] is not None:
-                        action [Return(response_id), response['action']]
-                    else:
-                        action Return(response_id)
-                    style "choice_button"
-
-
 init 1 python:
     renpy.add_python_directory('dlg')
     renpy.add_python_directory('engine')
@@ -52,7 +36,7 @@ init 1 python:
     from dlg.dlg_dzm1508    import (dlg_dzm1508)
     from dlg.dlg_dzm1664    import (dlg_dzm1664)
 
-    characters = {
+    renpy.store.characters = {
         'teller': teller,
         'morte_unknown': morte_unknown,
         'morte': morte,
@@ -85,7 +69,7 @@ init 1 python:
         'dzm1508': dzm1508,
         'dzm1664': dzm1664,
     }
-    character_reactions = {
+    renpy.store.character_reactions = {
         'morte_img default':  'morte_img default',
         'dhall_img default':   'dhall_img default',
         'dzm79_image': 'dzm79_image',
@@ -147,6 +131,22 @@ init 1 python:
 
 
 label start:
+    $ from engine.label import (LabelFlowBuilder)
+    $ from labels.morgue_labels import (build_label_flow)
+    $ from engine.menu import (MenuManager)
+    $ from labels.morgue_menu import (build_morgue_menu)
+
+    $ global global_label_registry
+    $ global global_menu_manager
+    $ global_label_registry = {}
+    $ global_menu_manager = MenuManager()
+
+    $ label_builder = LabelFlowBuilder()
+    $ build_label_flow(label_builder)
+    $ label_builder.build(global_label_registry)
+
+    $ global_menu_manager = build_morgue_menu(global_menu_manager)
+
     menu:
         "dev":
             jump dev
@@ -159,20 +159,8 @@ label start_:
     teller "Голова раскалывается, первое движение отзывается резкой болью слева -"
     teller "Болью настолько сильной, что не очень понятно, где именно слева."
     teller "Я постепенно встаю с каменного...стола? и поднимаю взгляд."
-    jump dmorte_one_introducing
-
-
-label dialog_loop:
-    $ responses = get_available_responses()
-    call screen dialog_choices(responses)
-    $ response_id = _return
-    $ next_state = choose_response(response_id)
-
-    if is_state_defined(next_state):
-        $ npc_lines = advance_to_state(next_state)
-        python:
-            pronounce(npc_lines)
-        jump dialog_loop
+    $ current_dialog_key = "dmorte_one_introducing"
+    jump dialog_dispatcher
 
 
 label end:

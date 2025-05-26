@@ -22,7 +22,9 @@ saves/
 *.so
 
 *.rpyc
+*.rpyc.bak
 *.rpymc
+*.rpymc.bak
 
 
 # The log file and other misc things #

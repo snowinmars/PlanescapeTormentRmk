@@ -4,7 +4,7 @@ from settings.settings_morgue import (current_morgue_settings)
 from engine.menu import (MenuBuilder)
 
 def build_morgue_menu(menu_manager):
-    MenuBuilder("morgue_main") \
+    return MenuBuilder("morgue_main") \
         .option("Поговорить с Мортом") \
         .jump("dmorte_one_talk_morte") \
         .when(lambda: current_global_settings()['in_party_morte'] \
@@ -39,7 +39,7 @@ def build_morgue_menu(menu_manager):
         .jump("dmorte_one_kill_dzm782") \
         .when(lambda: not current_morgue_settings()['dead_dzm782']) \
         \
-        .option("Поговорить с ходячим и плешивым трупом") \
+        .option("Поговорить с ходячим плешивым трупом") \
         .jump("dmorte_one_talk_dzm569") \
         .when(lambda: not current_morgue_settings()['dead_dzm569']) \
         \

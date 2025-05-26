@@ -26,6 +26,8 @@ from engine.transforms import (
 def _init():
     travel('morgue1')
     meet_morte()
+    renpy.exports.scene()
+    renpy.exports.show("bg mourge1")
     _show('morte_img default', center_left_down)
     set_in_party_morte(True)
 def _dispose():
