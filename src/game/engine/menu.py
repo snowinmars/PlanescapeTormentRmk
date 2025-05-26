@@ -45,7 +45,6 @@ class MenuBuilder:
         self._complete()
         for option in self._options:
             manager.add_option(self._menu_name, option)
-        return manager
 
     def _complete(self):
         if self._current_option is None:

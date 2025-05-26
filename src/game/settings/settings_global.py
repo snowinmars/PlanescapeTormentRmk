@@ -1,3 +1,7 @@
+import logging
+
+global global_settings
+
 def default_global_settings():
     return {
         'in_party_morte': False,
@@ -51,92 +55,98 @@ def default_global_settings():
     }
 
 global_settings = default_global_settings()
+devlog = logging.getLogger('log')
 
 def current_global_settings():
-    global global_settings
     return global_settings
+
+def changed_good_once(id):
+    return id in tracked
+
+def changed_law_once(id):
+    return id in tracked
 
 ###
 
 def set_in_party_morte(value):
-    global global_settings
+    devlog.debug('set_in_party_morte: %s', value)
     global_settings['in_party_morte'] = value
 
 ###
 
 def meet_death_of_names():
-    global global_settings
+    devlog.debug('meet_death_of_names')
     global_settings['death_of_names'] = True
 
 def meet_crispy():
-    global global_settings
+    devlog.debug('meet_crispy')
     global_settings['meet_crispy'] = True
 
 def meet_bei():
-    global global_settings
+    devlog.debug('meet_bei')
     global_settings['meet_bei'] = True
 
 def meet_asonje():
-    global global_settings
+    devlog.debug('meet_asonje')
     global_settings['meet_asonje'] = True
 
 def meet_oinosian():
-    global global_settings
+    devlog.debug('meet_oinosian')
     global_settings['meet_oinosian'] = True
 
 def meet_xixi():
-    global global_settings
+    devlog.debug('meet_xixi')
     global_settings['meet_xixi'] = True
 
 def meet_quentin():
-    global global_settings
+    devlog.debug('meet_quentin')
     global_settings['meet_quentin'] = True
 
 def meet_deionarra():
-    global global_settings
+    devlog.debug('meet_deionarra')
     global_settings['meet_deionarra'] = True
 
 def meet_vaxis():
-    global global_settings
+    devlog.debug('meet_vaxis')
     global_settings['meet_vaxis'] = True
 
 def meet_pharod():
-    global global_settings
+    devlog.debug('meet_pharod')
     global_settings['meet_pharod'] = True
 
 def meet_dustmen():
-    global global_settings
+    devlog.debug('meet_dustmen')
     global_settings['meet_dustmen'] = True
 
 def meet_dhall():
-    global global_settings
+    devlog.debug('meet_dhall')
     global_settings['meet_dhall'] = True
 
 def meet_morte():
-    global global_settings
+    devlog.debug('meet_morte')
     global_settings['meet_morte'] = True
 
 ###
 
 def kill_dhall():
-    global global_settings
+    devlog.debug('kill_dhall')
     global_settings['dead_dhall'] = True
 
 def kill_morte():
-    global global_settings
+    devlog.debug('kill_morte')
     global_settings['dead_morte'] = True
     global_settings['in_party_morte'] = True
 
 def kill_vaxis():
-    global global_settings
+    devlog.debug('kill_vaxis')
     global_settings['dead_vaxis'] = True
 
 def kill_quentin():
-    global global_settings
+    devlog.debug('kill_quentin')
     global_settings['dead_quentin'] = True
 
 def kill_pharod():
-    global global_settings
+    devlog.debug('kill_pharod')
     global_settings['dead_pharod'] = True
 
 ###
@@ -145,63 +155,60 @@ tracked = []
 
 def change_good_once(amount, id):
     if id in tracked:
+        devlog.debug('change_good_once - in tracked %s', id)
         return
-    global global_settings
+    devlog.debug('change_good_once by %s + %s - wasnt in tracked %s', global_settings['good'], amount, id)
     global_settings['good'] = global_settings['good'] + amount
     tracked.append(id)
-
-def changed_good_once(id):
-    return id in tracked
 
 def change_law_once(amount, id):
     if id in tracked:
+        devlog.debug('change_law_once - in tracked %s', id)
         return
-    global global_settings
+    devlog.debug('change_law_once by %s + %s - wasnt in tracked %s', global_settings['law'], amount, id)
     global_settings['law'] = global_settings['law'] + amount
     tracked.append(id)
 
-def changed_law_once(id):
-    return id in tracked
-
-def change_adan_once(amount, id):
+def change_adahn_once(amount, id):
     if id in tracked:
+        devlog.debug('change_adahn_once - in tracked %s', id)
         return
-    global global_settings
-    global_settings['good'] = global_settings['good'] + amount
+    devlog.debug('change_adahn_once by %s + %s - wasnt in tracked %s', global_settings['adahn'], amount, id)
+    global_settings['adahn'] = global_settings['adahn'] + amount
     tracked.append(id)
 
 ###
 
 def unblock_journal():
-    global global_settings
+    devlog.debug('unblock_journal')
     global_settings['jorunal_allowed'] = True
 
 def update_journal(note_id):
-    global global_settings
+    devlog.debug('update_journal %s', note_id)
     global_settings['journal_note_ids'].append(note_id)
 
 def travel(value):
-    global global_settings
+    devlog.debug('travel to %s', value)
     global_settings['location'] = value
 
 ###
 
 def set_crier_quest(value):
-    global global_settings
+    devlog.debug('set_crier_quest: %s', value)
     global_settings['crier_quest'] = value
 
 def pass_death_of_names_quentin():
-    global global_settings
+    devlog.debug('pass_death_of_names_quentin')
     global_settings['death_of_names_quentin'] = True
 
 def pass_death_of_names_dhall():
-    global global_settings
+    devlog.debug('pass_death_of_names_dhall')
     global_settings['death_of_names_dhall'] = True
 
 def pass_death_of_names_adahn():
-    global global_settings
+    devlog.debug('pass_death_of_names_adahn')
     global_settings['death_of_names_adahn'] = True
 
 def set_asonje_state(value):
-    global global_settings
+    devlog.debug('set_asonje_state: %s', value)
     global_settings['asonje_state'] = value

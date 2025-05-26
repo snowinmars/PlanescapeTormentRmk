@@ -4,6 +4,9 @@ import sys
 import renpy.loader
 
 # does not work, but seems interesting
+# the point is to detect non-imported modules
+# by default RenPy fails in runtime
+# but I want to fails at a build time
 class ImportValidator(ast.NodeVisitor):
     def __init__(self):
         self.used_names = set()
