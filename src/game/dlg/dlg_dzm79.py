@@ -4,7 +4,8 @@ from settings.settings_global import (
     current_global_settings,
     travel,
     change_good_once,
-    change_law_once
+    change_law_once,
+    update_journal
 )
 from settings.settings_morgue import (
     current_morgue_settings,
@@ -20,6 +21,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue2')
+    renpy.exports.show("bg mourge1")
     _show('dzm79_img default', center_right_down)
 def _dispose():
     _hide('dzm79_img')
@@ -61,10 +63,11 @@ def dlg_dzm79(manager):
     dzm79         = renpy.store.characters['dzm79']
     EXIT          = -1
 
+    # Starts: DZM79.D_s0
     DialogStateBuilder() \
     .state('DZM79.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Голова трупа была отрублена, а после наспех пришита назад.", 's0', 'say34942') \
+            .line(teller, "Голова трупа была отрублена, а после наспех пришита назад.", 's0', 'say34942').with_action(lambda: _init()) \
             .line(teller, "Несколько различных швов, все в разной степени потрепанности, указывают на то, голова в процессе работы постоянно отваливалась и возвращалась на место.", 's0', 'say34942') \
             .line(teller, "На виске вырезан номер «79», рядом с неровным зубчатым кругом, выжженным на лбу.", 's0', 'say34942') \
         .with_responses() \
@@ -81,6 +84,9 @@ def dlg_dzm79(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say34944') \
         .with_responses() \
+            .response("Осмотреть зубчатый круг.", 'DZM79.D_s3', 'r1', 'reply34946').with_condition(lambda: _r34946_condition()).with_action(lambda: _r34946_action()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM79.D_s2', 'r3', 'reply34948').with_condition(lambda: _r34948_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply34951').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply34945').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -89,6 +95,9 @@ def dlg_dzm79(manager):
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34949') \
         .with_responses() \
+            .response("Осмотреть зубчатый круг.", 'DZM79.D_s3', 'r1', 'reply34946').with_condition(lambda: _r34946_condition()).with_action(lambda: _r34946_action()) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM79.D_s1', 'r2', 'reply34947').with_condition(lambda: _r34947_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply34951').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply34950').with_action(lambda: _dispose()) \
         .push(manager)
 

@@ -3,7 +3,9 @@ from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
     travel,
-    meet_oinosian
+    meet_oinosian,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -18,6 +20,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm310_img default', center_right_down)
 def _dispose():
     _hide('dzm310_img')
@@ -55,10 +58,11 @@ def dlg_dzm310(manager):
     dzm310        = renpy.store.characters['dzm310']
     EXIT          = -1
 
+    # Starts: DZM310.D_s0
     DialogStateBuilder() \
     .state('DZM310.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.", 's0', 'say6495') \
+            .line(teller, "Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.", 's0', 'say6495').with_action(lambda: _init()) \
             .line(teller, "Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.", 's0', 'say6495') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM310.D_s1', 'r0', 'reply6499').with_condition(lambda: _r6499_condition()).with_action(lambda: _r6499_action()) \
@@ -74,12 +78,15 @@ def dlg_dzm310(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6496') \
         .with_responses() \
+            .response("Использовать на трупе свою способность История костей.", 'DZM310.D_s2', 'r3', 'reply6502').with_condition(lambda: _r6502_condition()).with_action(lambda: _r6502_action()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6503').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6505').with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
     .state('DZM310.D_s2', '# from 0.3') \
         .with_npc_lines() \
+            .line(teller, "В глазах трупа нет даже намека на понимание; они продолжают смотреть каждый в свою сторону.", 's1', 'say6508') \
             .line(teller, "Ты уж было решаешь, что труп слишком далек от того, чтобы отвечать…", 's2', 'say6498') \
             .line(teller, "…но вдруг ты замечаешь страдания, отпечатанные на его лице, и ощущаешь в них беспредельное отчаяние — дух точно вернулся в свою старую оболочку.", 's2', 'say6498') \
         .with_responses() \
@@ -106,7 +113,6 @@ def dlg_dzm310(manager):
     DialogStateBuilder() \
     .state('DZM310.D_s4', '# from 3.0') \
         .with_npc_lines() \
-            .line(teller, "Я никто, милорд; бедное насекомое, отчаянно вцепившееся в Башню Утрат в Ойносе. Когда-то меня называли Арабеймом, милорд… давно, очень давно.", 's4', 'say9643') \
             .line(dzm310, "Я никто, милорд; бедное насекомое, отчаянно вцепившееся в Башню Утрат в Ойносе. Когда-то меня называли Арабеймом, милорд… давно, очень давно.", 's4', 'say9643') \
         .with_responses() \
             .response("Башне Утрат?", 'DZM310.D_s13', 'r17', 'reply9666') \
@@ -131,7 +137,7 @@ def dlg_dzm310(manager):
     .state('DZM310.D_s6', '# from 3.2') \
         .with_npc_lines() \
             .line(dzm310, "Я был убит разбойниками, милорд. Я напился и заблудился по улицам Улья. В конце концов, я стал добычей банды головорезов. Вот и все.", 's6', 'say9645') \
-            .line(teller, "Наверно, моя жизнь стоила даже меньше тех медяков, которые получил сборщик за мое тело.", 's6', 'say9645') \
+            .line(dzm310, "Наверно, моя жизнь стоила даже меньше тех медяков, которые получил сборщик за мое тело.", 's6', 'say9645') \
         .with_responses() \
             .response("Почему ты такого низкого мнения о своей жизни?", 'DZM310.D_s16', 'r25', 'reply9674') \
             .response("Сборщик?", 'DZM310.D_s15', 'r26', 'reply9675') \
@@ -217,7 +223,7 @@ def dlg_dzm310(manager):
     .state('DZM310.D_s14', '# from 11.0 13.0') \
         .with_npc_lines() \
             .line(dzm310, "Я знаю его только как Повелителя, милорд. Он — лорд Хин-Ойна, принц нечисти, несказанно могущественный ультралот.", 's14', 'say9653') \
-            .line(teller, "Он тот, кому принадлежит моя душа, и будет принадлежать вечно, обреченная чахнуть под его ступней, пока вечность не будет перемолота в Забвение.", 's14', 'say9653') \
+            .line(dzm310, "Он тот, кому принадлежит моя душа, и будет принадлежать вечно, обреченная чахнуть под его ступней, пока вечность не будет перемолота в Забвение.", 's14', 'say9653') \
         .with_responses() \
             .response("Расскажи мне об этом 'Хин-Ойне'.", 'DZM310.D_s13', 'r50', 'reply9699') \
             .response("У меня есть другие вопросы…", 'DZM310.D_s3', 'r51', 'reply9700') \

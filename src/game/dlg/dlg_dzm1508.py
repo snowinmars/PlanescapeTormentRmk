@@ -2,7 +2,9 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -17,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm1508_img default', center_right_down)
 def _dispose():
     _hide('dzm1508_img')
@@ -53,7 +56,7 @@ def dlg_dzm1508(manager):
     DialogStateBuilder() \
     .state('DZM1508.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.", 's0', 'say46745') \
+            .line(teller, "На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.", 's0', 'say46745').with_action(lambda: _init()) \
             .line(teller, "Номер «1508» вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.", 's0', 'say46745') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM1508.D_s1', 'r0', 'reply46746').with_condition(lambda: _r46746_condition()).with_action(lambda: _r46746_action()) \

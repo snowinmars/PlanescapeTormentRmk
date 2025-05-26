@@ -363,33 +363,6 @@ def dlg_dmorte_one(manager):
         .push(manager)
 
     DialogStateBuilder() \
-    .state('DMORTE1.D_s31', '# from -') \
-        .with_npc_lines() \
-            .line(morte, "Э, шеф… они не слышат тебя, понятно? Они мертвы.", 's31', 'say42298') \
-        .with_responses() \
-            .response("Но ты ведь тоже мертв. И разговариваешь со мной.", 'DMORTE1.D_s32', 'r41', 'reply42299') \
-        .push(manager)
-
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s32', '# from 31.0') \
-        .with_npc_lines() \
-            .line(morte, "Ага, но *я* особенный. Смерть не смогла убить мою жажду к жизни. А здешние трупы…", 's32', 'say42300') \
-            .line(teller, "Морт обводит комнату взглядом.", 's32', 'say42300') \
-            .line(morte, "Они и при жизни из себя ничего не представляли.", 's32', 'say42300') \
-        .with_responses() \
-            .response("Понятно…", 'DMORTE1.D_s33', 'r42', 'reply42301') \
-        .push(manager)
-
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s33', '# from 32.0') \
-        .with_npc_lines() \
-            .line(morte, "Слушай шеф… Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали.", 's33', 'say42302') \
-            .line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302').with_action(lambda: _talk_dummy()) \
-        .with_responses() \
-            .response("Хорошо. Идем.", EXIT, 'r43', 'reply42303').with_action(lambda: _dispose()) \
-        .push(manager)
-
-    DialogStateBuilder() \
     .state('DMORTE1.D_s99999999_34', '-') \
         .with_npc_lines() \
             .line(morte, "Слушай шеф…", 's33', 'say42302') \
@@ -405,11 +378,3 @@ def dlg_dmorte_one(manager):
         .with_responses() \
             .response("(Осмотреть)", 'DZM782.D_s0', 'r?', 'reply42303') \
         .push(manager)
-
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s34', '# from - // # Manually checked EXTENDS ~DZM782~ : 2') \
-        .with_npc_lines() \
-            .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306') \
-        .with_responses() \
-            .response("(...)", EXIT, '-', '-') \
-    .push(manager)

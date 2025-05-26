@@ -2,7 +2,9 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -17,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm1201_img default', center_right_down)
 def _dispose():
     _hide('dzm1201_img')
@@ -65,7 +68,7 @@ def dlg_dzm1201(manager):
     DialogStateBuilder() \
     .state('DZM1201.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.", 's0', 'say34953') \
+            .line(teller, "На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.", 's0', 'say34953').with_action(lambda: _init()) \
             .line(teller, "Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.", 's0', 'say34953') \
         .with_responses() \
             .response("Попробовать вытащить записку.", 'DZM1201.D_s1', 'r0', 'reply34954').with_condition(lambda: _r34954_condition()) \

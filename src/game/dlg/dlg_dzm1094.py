@@ -4,7 +4,12 @@ from settings.settings_global import (
     current_global_settings,
     travel,
     meet_asonje,
-    set_asonje_state
+    set_asonje_state,
+    change_law_once,
+    changed_law_once,
+    change_good_once,
+    changed_good_once,
+    change_adahn_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -19,6 +24,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm1094_img default', center_right_down)
 def _dispose():
     _hide('dzm1094_img')
@@ -85,10 +91,17 @@ def dlg_dzm1094(manager):
     asonje        = renpy.store.characters['asonje']
     EXIT          = -1
 
+    current_global_settings()['in_party_morte'] = True
+    current_morgue_settings()['vaxis_exposed'] = True
+    current_global_settings()['can_speak_with_dead'] = True
+    current_morgue_settings()['has_copper_earring'] = True
+    current_morgue_settings()['has_scalpel'] = True
+
+    # Starts: DZM1094.D_s0
     DialogStateBuilder() \
     .state('DZM1094.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.", 's0', 'say6562') \
+            .line(teller, "У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.", 's0', 'say6562').with_action(lambda: _init()) \
             .line(teller, "Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.", 's0', 'say6562') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM1094.D_s1', 'r0', 'reply6565').with_condition(lambda: _r6565_condition()).with_action(lambda: _r6565_action()) \
@@ -104,6 +117,8 @@ def dlg_dzm1094(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6563') \
         .with_responses() \
+            .response("Использовать на трупе свою способность История костей.", 'DZM1094.D_s2', 'r3', 'reply6568').with_condition(lambda: _r6568_condition()).with_action(lambda: _r6568_action()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6569').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6571').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -238,7 +253,7 @@ def dlg_dzm1094(manager):
     .state('DZM1094.D_s13', '# from 3.1') \
         .with_npc_lines() \
             .line(teller, "Он немного обдумывает это, затем начинает хохотать.", 's13', 'say9234') \
-            .line(asonje, "Да! Это все объясняет, не так ли? Постой, я знаю тебя?", 's13', 'say9234') \
+            .line(dzm1094, "Да! Это все объясняет, не так ли? Постой, я знаю тебя?", 's13', 'say9234') \
             .line(teller, "Он склоняет голову набок, внимательно смотря на тебя. Похоже, для него опознание твоей личности — своего рода увлекательная игра.", 's13', 'say9234') \
         .with_responses() \
             .response("Нет, сомневаюсь, что мы знакомы. У меня вопрос к тебе…", 'DZM1094.D_s14', 'r42', 'reply9280') \
@@ -249,7 +264,7 @@ def dlg_dzm1094(manager):
     .state('DZM1094.D_s14', '# from 3.2 13.0') \
         .with_npc_lines() \
             .line(teller, "Дух пожимает плечами и улыбается, слегка посмеиваясь.", 's14', 'say9235') \
-            .line(asonje, "Возможно, ты прав! Что ты хочешь узнать от меня?", 's14', 'say9235') \
+            .line(dzm1094, "Возможно, ты прав! Что ты хочешь узнать от меня?", 's14', 'say9235') \
             .line(teller, "Он начинает рассеянно вытягивать остатки швов из своих губ и бросать их на пол, один за одним.", 's14', 'say9235') \
         .with_responses() \
             .response("Так кто ты?", 'DZM1094.D_s15', 'r44', 'reply9282').with_condition(lambda: _r9282_condition()) \

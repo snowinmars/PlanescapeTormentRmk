@@ -1,4 +1,4 @@
-def build_label_flow(label_builder):
+def build_morgue_label_flow(label_builder):
     label_builder \
         .start_with("dmorte_one_introducing") \
             .say("DMORTE1.D_s0") \

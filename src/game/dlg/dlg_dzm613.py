@@ -2,7 +2,9 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -17,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm613_img default', center_right_down)
 def _dispose():
     _hide('dzm613_img')
@@ -50,10 +53,11 @@ def dlg_dzm613(manager):
     dzm613        = renpy.store.characters['dzm613']
     EXIT          = -1
 
+    # Starts: DZM613.D_s0
     DialogStateBuilder() \
     .state('DZM613.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры «613», но на коже между «1» и «3» виден большой пробел шириной с палец.", 's0', 'say6540') \
+            .line(teller, "На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры «613», но на коже между «1» и «3» виден большой пробел шириной с палец.", 's0', 'say6540').with_action(lambda: _init()) \
             .line(teller, "Приглядевшись, ты с трудом различаешь вырезанную «2».", 's0', 'say6540') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM613.D_s1', 'r0', 'reply6543').with_condition(lambda: _r6543_condition()).with_action(lambda: _r6543_action()) \
@@ -69,6 +73,8 @@ def dlg_dzm613(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6541') \
         .with_responses() \
+            .response("Использовать на трупе свою способность История костей.", 'DZM613.D_s2', 'r3', 'reply6546').with_condition(lambda: _r6546_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6547').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6549').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -77,5 +83,7 @@ def dlg_dzm613(manager):
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say6542') \
         .with_responses() \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM613.D_s1', 'r2', 'reply6545').with_condition(lambda: _r6545_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6547').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply6550').with_action(lambda: _dispose()) \
         .push(manager)
