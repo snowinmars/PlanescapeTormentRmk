@@ -85,37 +85,37 @@ init 2 python:
         'dzm1664': dzm1664,
     }
     renpy.store.character_reactions = {
-        'morte_img default':  'morte_img default',
+        'morte_img default':   'morte_img default',
         'dhall_img default':   'dhall_img default',
-        'dzm79_image': 'dzm79_image',
-        'dzm199_image': 'dzm199_image',
-        'dzm257_image': 'dzm257_image',
-        'dzm310_image': 'dzm310_image',
-        'dzm396_image': 'dzm396_image',
-        'dzm463_image': 'dzm463_image',
-        'dzm475_image': 'dzm475_image',
-        'dzm506_image': 'dzm506_image',
-        'dzm569_image': 'dzm569_image',
-        'dzm613_image': 'dzm613_image',
-        'dzm732_image': 'dzm732_image',
-        'dzm782_image': 'dzm782_image',
-        'dzm825_image': 'dzm825_image',
-        'dzm965_image': 'dzm965_image',
-        'dzm985_image': 'dzm985_image',
-        'dzm1041_image': 'dzm1041_image',
-        'dzm1094_image': 'dzm1094_image',
-        'dzm1146_image': 'dzm1146_image',
-        'dzm1201_image': 'dzm1201_image',
-        'dzm1445_image': 'dzm1445_image',
-        'dzm1508_image': 'dzm1508_image',
-        'dzm1664_image': 'dzm1664_image',
+        'dzm79_img default':   'dzm79_img default',
+        'dzm199_img default':  'dzm199_img default',
+        'dzm257_img default':  'dzm257_img default',
+        'dzm310_img default':  'dzm310_img default',
+        'dzm396_img default':  'dzm396_img default',
+        'dzm463_img default':  'dzm463_img default',
+        'dzm475_img default':  'dzm475_img default',
+        'dzm506_img default':  'dzm506_img default',
+        'dzm569_img default':  'dzm569_img default',
+        'dzm613_img default':  'dzm613_img default',
+        'dzm732_img default':  'dzm732_img default',
+        'dzm782_img default':  'dzm782_img default',
+        'dzm825_img default':  'dzm825_img default',
+        'dzm965_img default':  'dzm965_img default',
+        'dzm985_img default':  'dzm985_img default',
+        'dzm1041_img default': 'dzm1041_img default',
+        'dzm1094_img default': 'dzm1094_img default',
+        'dzm1146_img default': 'dzm1146_img default',
+        'dzm1201_img default': 'dzm1201_img default',
+        'dzm1445_img default': 'dzm1445_img default',
+        'dzm1508_img default': 'dzm1508_img default',
+        'dzm1664_img default': 'dzm1664_img default',
     }
 
 
 label start:
     python:
         from engine.label import (LabelFlowBuilder)
-        from labels.morgue_labels import (build_label_flow)
+        from labels.all_labels import (build_all_labels)
         from engine.dialog import (DialogManager)
         from engine.menu import (MenuManager)
         from labels.morgue_menu import (build_morgue_menu)
@@ -133,7 +133,7 @@ label start:
         devlog.info('Building label flow...')
         now = int(time.time())
         label_builder = LabelFlowBuilder()
-        build_label_flow(label_builder)
+        build_all_labels(label_builder)
         label_builder.build(global_label_registry)
         devlog.info('Done building label flow, took %s', int(time.time()) - now)
 
@@ -149,7 +149,8 @@ label start:
 
     menu:
         "dev":
-            jump dev
+            $ current_dialog_key = "dev"
+            jump dialog_dispatcher
         "start_":
             teller "Я прихожу в себя в тусклом помещении."
             teller "Голова раскалывается, первое движение отзывается резкой болью слева -"

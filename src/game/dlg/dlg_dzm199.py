@@ -19,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm199_img default', center_right_down)
 def _dispose():
     _hide('dzm199_img')
@@ -52,10 +53,11 @@ def dlg_dzm199(manager):
     dzm199        = renpy.store.characters['dzm199']
     EXIT          = -1
 
+    # Starts: DZM199.D_s0
     DialogStateBuilder() \
     .state('DZM199.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.", 's0', 'say34975') \
+            .line(teller, "От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.", 's0', 'say34975').with_action(lambda: _init()) \
             .line(teller, "На его лбу выгравирован номер «199»; его губы сшиты.", 's0', 'say34975') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM199.D_s1', 'r0', 'reply34976').with_condition(lambda: _r34976_condition()).with_action(lambda: _r34976_action()) \
@@ -71,6 +73,8 @@ def dlg_dzm199(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say34977') \
         .with_responses() \
+            .response("Использовать на трупе свою способность История костей.", 'DZM199.D_s2', 'r3', 'reply34981').with_condition(lambda: _r34981_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply34984').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r6', 'reply34978').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -79,5 +83,7 @@ def dlg_dzm199(manager):
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34982') \
         .with_responses() \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM199.D_s1', 'r2', 'reply34980').with_condition(lambda: _r34980_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply34984').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r7', 'reply34983').with_action(lambda: _dispose()) \
         .push(manager)

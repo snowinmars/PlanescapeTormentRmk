@@ -2,7 +2,9 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -17,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm1664_img default', center_right_down)
 def _dispose():
     _hide('dzm1664_img')
@@ -53,7 +56,7 @@ def dlg_dzm1664(manager):
     DialogStateBuilder() \
     .state('DZM1664.D_s0', '# from 5.0') \
         .with_npc_lines() \
-            .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002') \
+            .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002').with_action(lambda: _init()) \
             .line(teller, "На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.", 's0', 'say47002') \
         .with_responses() \
             .response("Осмотреть книги.", 'DZM1664.D_s3', 'r0', 'reply47003').with_condition(lambda: _r47003_condition()) \

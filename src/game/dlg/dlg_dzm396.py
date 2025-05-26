@@ -2,10 +2,13 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
-    current_morgue_settings
+    current_morgue_settings,
+    pick_up_bandages
 )
 from engine.transforms import (
     center_left,
@@ -17,6 +20,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm396_img default', center_right_down)
 def _dispose():
     _hide('dzm396_img')
@@ -32,17 +36,24 @@ def _check_char_prop_lt(who, gtValue, prop):
 ###
 ###
 def _r34932_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not changed_law_once('zombie_chaotic') \
+    and not current_morgue_settings()['has_bandages']
 def _r34932_action():
     change_law_once(-1, 'zombie_chaotic')
 def _r34935_condition():
-    return changed_law_once('zombie_chaotic')
+    return changed_law_once('zombie_chaotic') \
+    and not current_morgue_settings()['has_bandages']
 def _r34937_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r34940_condition():
     return current_global_settings()['can_speak_with_dead']
 def _r45112_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not changed_law_once('zombie_chaotic') \
+    and current_morgue_settings()['has_bandages']
+def _r34936_condition():
+    return not current_morgue_settings()['has_bandages']
+def _r34936_action():
+    pick_up_bandages()
 def _r45112_action():
     change_law_once(-1, 'zombie_chaotic')
 def _r45113_condition():
@@ -60,14 +71,15 @@ def dlg_dzm396(manager):
     dzm396        = renpy.store.characters['dzm396']
     EXIT          = -1
 
+    # Starts: DZM396.D_s0
     DialogStateBuilder() \
     .state('DZM396.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.", 's0', 'say34931') \
+            .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.", 's0', 'say34931').with_action(lambda: _init()) \
         .with_responses() \
             .response("Ты не против, если я одолжу у тебя эти бинты?", 'DZM396.D_s1', 'r0', 'reply34932').with_condition(lambda: _r34932_condition()).with_action(lambda: _r34932_action()) \
             .response("Ты не против, если я одолжу у тебя эти бинты?", 'DZM396.D_s1', 'r1', 'reply34935').with_condition(lambda: _r34935_condition()) \
-            .response("Попробовать забрать бинты у зомби.", 'DZM396.D_s3', 'r2', 'reply34936') \
+            .response("Попробовать забрать бинты у зомби.", 'DZM396.D_s3', 'r2', 'reply34936').with_condition(lambda: _r34936_condition()).with_action(lambda: _r34936_action()) \
             .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM396.D_s1', 'r3', 'reply34937').with_condition(lambda: _r34937_condition()) \
             .response("Использовать на трупе свою способность История костей.", 'DZM396.D_s2', 'r4', 'reply34940').with_condition(lambda: _r34940_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply34941').with_action(lambda: _dispose()) \
@@ -79,7 +91,9 @@ def dlg_dzm396(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say34933') \
         .with_responses() \
-            .response("Попробовать забрать бинты у зомби.", 'DZM396.D_s3', 'r7', 'reply34934') \
+            .response("Попробовать забрать бинты у зомби.", 'DZM396.D_s3', 'r2', 'reply34936').with_condition(lambda: _r34936_condition()).with_action(lambda: _r34936_action()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM396.D_s2', 'r4', 'reply34940').with_condition(lambda: _r34940_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply34941').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45107').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -88,6 +102,11 @@ def dlg_dzm396(manager):
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34938') \
         .with_responses() \
+            .response("Ты не против, если я одолжу у тебя эти бинты?", 'DZM396.D_s1', 'r0', 'reply34932').with_condition(lambda: _r34932_condition()).with_action(lambda: _r34932_action()) \
+            .response("Ты не против, если я одолжу у тебя эти бинты?", 'DZM396.D_s1', 'r1', 'reply34935').with_condition(lambda: _r34935_condition()) \
+            .response("Попробовать забрать бинты у зомби.", 'DZM396.D_s3', 'r2', 'reply34936').with_condition(lambda: _r34936_condition()).with_action(lambda: _r34936_action()) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM396.D_s1', 'r3', 'reply34937').with_condition(lambda: _r34937_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply34941').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply34939').with_action(lambda: _dispose()) \
         .push(manager)
 

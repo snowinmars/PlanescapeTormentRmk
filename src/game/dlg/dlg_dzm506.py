@@ -2,11 +2,14 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings,
-    pick_up_scalpel
+    pick_up_needle,
+    pick_up_506_thread
 )
 from engine.transforms import (
     center_left,
@@ -18,6 +21,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm506_img default', center_right_down)
 def _dispose():
     _hide('dzm506_img')
@@ -33,18 +37,18 @@ def _check_char_prop_lt(who, gtValue, prop):
 ###
 ###
 def _r45420_condition():
-    return not current_morgue_settings()['506_thread']
+    return not current_morgue_settings()['has_506_thread']
 def _r45421_condition():
     return current_morgue_settings()['vaxis_exposed']
 def _r45422_condition():
     return current_global_settings()['can_speak_with_dead']
 def _r45480_condition():
-    return current_global_settings()['has_scalpel']
+    return current_morgue_settings()['has_scalpel']
 def _r45480_action():
-    set_506_thread()
+    pick_up_506_thread()
     pick_up_needle()
 def _r45481_condition():
-    return not current_global_settings()['has_scalpel']
+    return not current_morgue_settings()['has_scalpel']
 def _r45484_condition():
     return not changed_law_once('zombie_chaotic')
 def _r45484_action():
@@ -70,10 +74,11 @@ def dlg_dzm506(manager):
     dzm506        = renpy.store.characters['dzm506']
     EXIT          = -1
 
+    # Starts: DZM506.D_s0
     DialogStateBuilder() \
     .state('DZM506.D_s0', '# from 3.2') \
         .with_npc_lines() \
-            .line(teller, "Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…", 's0', 'say45419') \
+            .line(teller, "Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…", 's0', 'say45419').with_action(lambda: _init()) \
             .line(teller, "В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.", 's0', 'say45419') \
         .with_responses() \
             .response("Осмотреть швы.", 'DZM506.D_s3', 'r0', 'reply45420').with_condition(lambda: _r45420_condition()) \
@@ -88,6 +93,9 @@ def dlg_dzm506(manager):
         .with_npc_lines() \
             .line(teller, "Труп самозабвенно смотрит вперед.", 's1', 'say45425') \
         .with_responses() \
+            .response("Осмотреть швы.", 'DZM506.D_s3', 'r0', 'reply45420').with_condition(lambda: _r45420_condition()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM506.D_s2', 'r2', 'reply45422').with_condition(lambda: _r45422_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r3', 'reply45423').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r5', 'reply45478').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -96,6 +104,9 @@ def dlg_dzm506(manager):
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45426') \
         .with_responses() \
+            .response("Осмотреть швы.", 'DZM506.D_s3', 'r0', 'reply45420').with_condition(lambda: _r45420_condition()) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM506.D_s1', 'r1', 'reply45421').with_condition(lambda: _r45421_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r3', 'reply45423').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r6', 'reply45479').with_action(lambda: _dispose()) \
         .push(manager)
 

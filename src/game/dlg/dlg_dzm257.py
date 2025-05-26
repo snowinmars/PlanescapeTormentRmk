@@ -2,7 +2,9 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -17,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm257_img default', center_right_down)
 def _dispose():
     _hide('dzm257_img')
@@ -52,10 +55,11 @@ def dlg_dzm257(manager):
     dzm257        = renpy.store.characters['dzm257']
     EXIT          = -1
 
+    # Starts: DZM257.D_s0
     DialogStateBuilder() \
     .state('DZM257.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.", 's0', 'say6507') \
+            .line(teller, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.", 's0', 'say6507').with_action(lambda: _init()) \
             .line(teller, "Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.", 's0', 'say6507') \
         .with_responses() \
             .response("У тебя голова не кружится из-за глаз?", 'DZM257.D_s1', 'r0', 'reply6510').with_condition(lambda: _r6510_condition()).with_action(lambda: _r6510_action()) \
@@ -71,6 +75,8 @@ def dlg_dzm257(manager):
         .with_npc_lines() \
             .line(teller, "В глазах трупа нет даже намека на понимание; они продолжают смотреть каждый в свою сторону.", 's1', 'say6508') \
         .with_responses() \
+            .response("Использовать на трупе свою способность История костей.", 'DZM257.D_s2', 'r3', 'reply6513').with_condition(lambda: _r6513_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6514').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6516').with_action(lambda: _dispose()) \
         .push(manager)
 

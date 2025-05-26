@@ -2,7 +2,9 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    travel
+    travel,
+    change_law_once,
+    changed_law_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -17,6 +19,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm1445_img default', center_right_down)
 def _dispose():
     _hide('dzm1445_img')
@@ -53,7 +56,7 @@ def dlg_dzm1445(manager):
     DialogStateBuilder() \
     .state('DZM1445.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни.", 's0', 'say46756') \
+            .line(teller, "Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни.", 's0', 'say46756').with_action(lambda: _init()) \
             .line(teller, "На лбу у него вытатуирован номер «1445», а его губы крепко сшиты.", 's0', 'say46756') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM1445.D_s1', 'r0', 'reply46757').with_condition(lambda: _r46757_condition()).with_action(lambda: _r46757_action()) \

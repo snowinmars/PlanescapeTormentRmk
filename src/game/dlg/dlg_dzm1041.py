@@ -3,7 +3,11 @@ from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
     travel,
-    meet_bei
+    meet_bei,
+    change_law_once,
+    changed_law_once,
+    change_good_once,
+    changed_good_once
 )
 from settings.settings_morgue import (
     current_morgue_settings
@@ -18,6 +22,7 @@ from engine.transforms import (
 ###
 def _init():
     travel('morgue1')
+    renpy.exports.show("bg mourge1")
     _show('dzm1041_img default', center_right_down)
 def _dispose():
     _hide('dzm1041_img')
@@ -89,10 +94,11 @@ def dlg_dzm1041(manager):
     bei           = renpy.store.characters['bei']
     EXIT          = -1
 
+    # Starts: DZM1041.D_s0
     DialogStateBuilder() \
     .state('DZM1041.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "У этого поднятого трупа мужчины на лбу вырезан номер «1041». Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно экзотическую внешность.", 's0', 'say6573') \
+            .line(teller, "У этого поднятого трупа мужчины на лбу вырезан номер «1041». Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно экзотическую внешность.", 's0', 'say6573').with_action(lambda: _init()) \
             .line(teller, "Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.", 's0', 'say6573') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM1041.D_s1', 'r0', 'reply6576').with_condition(lambda: _r6576_condition()).with_action(lambda: _r6576_action()) \
@@ -109,6 +115,9 @@ def dlg_dzm1041(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6574') \
         .with_responses() \
+            .response("Использовать на трупе свою способность История костей.", 'DZM1041.D_s2', 'r3', 'reply6579').with_condition(lambda: _r6579_condition()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM1041.D_s37', 'r4', 'reply6580').with_condition(lambda: _r6580_condition()) \
+            .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply6581').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply6582').with_action(lambda: _dispose()) \
         .push(manager)
 

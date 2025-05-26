@@ -1,9 +1,3 @@
-label dev:
-    $ logging.getLogger('log').debug('label dev')
-    $ current_dialog_key = 'DMORTE1.D_s99999999_18'
-    jump dialog_dispatcher
-
-
 # Display choses inbetween dialog lines
 #   These choses does not lead to a new label
 #   Responses for this screen defines in 'dlg/x.py' files

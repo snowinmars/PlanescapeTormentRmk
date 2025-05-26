@@ -18,11 +18,12 @@ def default_morgue_settings():
         'saw_dhall': False,
         'know_copper_earring_secret': False,
         'has_copper_earring': False,
-        '506_thread': False,
+        'has_506_thread': False,
         'has_scalpel': False,
         'has_needles': 0,
         'has_1201_note': False,
         'has_dzm1664_page': False,
+        'has_bandages': False,
         'dead_dzm569': False,
         'dead_dzm825': False,
         'dead_dzm782': False,
@@ -36,9 +37,13 @@ def current_morgue_settings():
 def has_scalpel():
     return morgue_settings['has_scalpel']
 
-def set_506_thread():
-    devlog.debug('set_506_thread')
-    morgue_settings['506_thread'] = True
+def pick_up_506_thread():
+    devlog.debug('pick_up_506_thread')
+    morgue_settings['has_506_thread'] = True
+
+def pick_up_bandages():
+    devlog.debug('pick_up_bandages')
+    morgue_settings['has_bandages'] = True
 
 def pick_up_1201_note():
     devlog.debug('pick_up_1201_note')
