@@ -2,7 +2,7 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    change_adan_once,
+    change_adahn_once,
     set_crier_quest,
     meet_death_of_names,
     pass_death_of_names_adahn,
@@ -21,10 +21,6 @@ from engine.transforms import (
 ###
 def _init():
     travel('death_names')
-def _dispose():
-    return
-def _init():
-    travel('ddhall')
 def _dispose():
     return
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -56,7 +52,7 @@ def _r7303_condition():
     return current_global_settings()['pass_death_of_names_quentin']
 def _r7304_action():
     pass_death_of_names_adahn()
-    change_adan_once('Adahn_Death_of_Names_1')
+    change_adahn_once('Adahn_Death_of_Names_1')
 def _r7310_condition():
     return current_global_settings()['know_xachariah_name']
 def _r7311_condition():
@@ -107,7 +103,7 @@ def _r9771_condition():
     return current_global_settings()['crier_quest'] == 2
 def _r9772_action():
     pass_death_of_names_adahn()
-    change_adan_once('Adahn_Death_of_Names_1')
+    change_adahn_once('Adahn_Death_of_Names_1')
 ###
 
 # DLG/DDEATHON.DLG

@@ -1,3 +1,7 @@
+import logging
+
+global morgue_settings
+
 def default_morgue_settings():
     return {
         'has_intro_key': False,
@@ -23,76 +27,75 @@ def default_morgue_settings():
         'dead_dzm825': False,
         'dead_dzm782': False,
     }
-
 morgue_settings = default_morgue_settings()
+devlog = logging.getLogger('log')
 
 def current_morgue_settings():
-    global morgue_settings
     return morgue_settings
 
+def has_scalpel():
+    return morgue_settings['has_scalpel']
+
 def set_506_thread():
-    global morgue_settings
+    devlog.debug('set_506_thread')
     morgue_settings['506_thread'] = True
 
 def pick_up_1201_note():
-    global morgue_settings
+    devlog.debug('pick_up_1201_note')
     morgue_settings['has_1201_note'] = True
 
 def pick_up_scalpel():
-    global morgue_settings
+    devlog.debug('pick_up_scalpel')
     morgue_settings['has_scalpel'] = True
 
 def pick_up_needle():
-    global morgue_settings
+    devlog.debug('pick_up_needle: %s + 1', morgue_settings['has_needles'])
     morgue_settings['has_needles'] = morgue_settings['has_needles'] + 1
 
-def has_scalpel():
-    global morgue_settings
-    return morgue_settings['has_scalpel']
-
 def expose_vaxis():
-    global morgue_settings
+    devlog.debug('expose_vaxis')
     morgue_settings['expose_vaxis'] = True
 
 def know_copper_earring_secret():
-    global morgue_settings
+    devlog.debug('know_copper_earring_secret')
     morgue_settings['know_copper_earring_secret'] = True
 
 def pick_up_intro_key(value):
-    global morgue_settings
+    devlog.debug('pick_up_intro_key: %s', value)
     morgue_settings['has_intro_key'] = value
 
 def mortuary_walkthrough(value):
-    global morgue_settings
+    devlog.debug('mortuary_walkthrough: %s', value)
     morgue_settings['mortuary_walkthrough'] = value
 
 def set_morte_mortuary_walkthrough(value):
-    global morgue_settings
+    devlog.debug('set_morte_mortuary_walkthrough: %s', value)
     morgue_settings['morte_mortuary_walkthrough'] = value
 
 def saw_dhall():
+    devlog.debug('saw_dhall')
     morgue_settings['saw_dhall'] = True
 
 def set_vaxis_betray(value):
-    global morgue_settings
+    devlog.debug('set_vaxis_betray: %s', value)
     morgue_settings['vaxis_betray'] = value
 
 def pick_tome_ba():
-    global morgue_settings
+    devlog.debug('pick_tome_ba')
     morgue_settings['has_tome_ba'] = True
 
 def pick_dzm1664_page():
-    global morgue_settings
+    devlog.debug('pick_dzm1664_page')
     morgue_settings['has_dzm1664_page'] = True
 
 def kill_dzm569():
-    global morgue_settings
+    devlog.debug('kill_dzm569')
     morgue_settings['dead_dzm569'] = True
 
 def kill_dzm825():
-    global morgue_settings
+    devlog.debug('kill_dzm825')
     morgue_settings['dead_dzm825'] = True
 
 def kill_dzm782():
-    global morgue_settings
+    devlog.debug('kill_dzm782')
     morgue_settings['dead_dzm782'] = True

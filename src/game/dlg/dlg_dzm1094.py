@@ -68,7 +68,7 @@ def _r9291_action():
     set_asonje_state(2)
     _dispose()
 def _r9304_action():
-    change_adan_once('DZM1094.D_s23', 1)
+    change_adahn_once('DZM1094.D_s23', 1)
 def _r9306_condition():
     return current_global_settings()['asonje_state'] != 2
 def _r9307_condition():

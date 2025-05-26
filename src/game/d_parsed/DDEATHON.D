@@ -12,7 +12,7 @@ def _r7303_condition():
     return current_global_settings()['pass_death_of_names_quentin']
 def _r7304_action():
     DO ~pass_death_of_names_adahn()
-    change_adan_once('Adahn_Death_of_Names_1') ~
+    change_adahn_once('Adahn_Death_of_Names_1') ~
 def _r7310_condition():
     PartyGoldGT(2) return current_global_settings()['know_xachariah_name']
 def _r7311_condition():
@@ -55,7 +55,7 @@ def _r9771_condition():
     Global("Crier_Quest","GLOBAL",2)
 def _r9772_action():
     DO ~pass_death_of_names_adahn()
-    change_adan_once('Adahn_Death_of_Names_1') ~
+    change_adahn_once('Adahn_Death_of_Names_1') ~
 
 EXIT = -1
 

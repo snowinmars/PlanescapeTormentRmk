@@ -1,4 +1,5 @@
 label dev:
+    $ logging.getLogger('log').debug('label dev')
     $ current_dialog_key = 'DMORTE1.D_s99999999_18'
     jump dialog_dispatcher
 

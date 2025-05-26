@@ -112,7 +112,7 @@ const pasteAligment = (body: string): string => {
                 result = 'meet_dustmen()'
                 break;
             case 'adahn':
-                result = 'pass_death_of_names_adahn()\n    change_adan_once(\'Adahn_Death_of_Names_1\')'
+                result = 'pass_death_of_names_adahn()\n    change_adahn_once(\'Adahn_Death_of_Names_1\')'
                 break;
             default:
                 result = match[0];
