@@ -44,14 +44,14 @@ def _r6590_condition():
 ###
 
 # DLG/DZM475.DLG
-def dlg_dzm475():
+def dlg_dzm475(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
-    dzm475         = renpy.store.characters['dzm475']
-    EXIT = -1
+    dzm475        = renpy.store.characters['dzm475']
+    EXIT          = -1
 
-    # from -
-    DialogStateBuilder('DZM475.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM475.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.", 's0', 'say6584') \
             .line(teller, "На проржавевшей табличке над его левым глазом выбит номер «475». Его рот намертво закрыт; от него несет бальзамирующей жидкостью.", 's0', 'say6584') \
@@ -62,20 +62,20 @@ def dlg_dzm475():
             .response("Использовать на трупе свою способность История костей.", 'DZM475.D_s2', 'r3', 'reply6590').with_condition(lambda: _r6590_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6591').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply6592').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0 0.1 0.2
-    DialogStateBuilder('DZM475.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM475.D_s1', '# from 0.0 0.1 0.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6585') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6593').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3
-    DialogStateBuilder('DZM475.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM475.D_s2', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say6586') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply6594').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

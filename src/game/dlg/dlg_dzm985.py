@@ -68,17 +68,14 @@ def _r45535_condition():
 ###
 
 # DLG/DZM985.DLG
-def dlg_dzm985():
+def dlg_dzm985(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
-    dzm985         = renpy.store.characters['dzm985']
-    EXIT = -1
+    dzm985        = renpy.store.characters['dzm985']
+    EXIT          = -1
 
-    ######
-    # Check EXTENDS ~DMORTE~ : 482
-    ######
-    # from -
-    DialogStateBuilder('DZM985.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 482') \
         .with_npc_lines() \
             .line(teller, "Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.", 's0', 'say45515') \
             .line(teller, "Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.", 's0', 'say45515') \
@@ -91,26 +88,26 @@ def dlg_dzm985():
             .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r5', 'reply45521').with_condition(lambda: _r45521_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply45522').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply45523').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.4 5.0 5.1 5.2
-    DialogStateBuilder('DZM985.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s1', '# from 0.4 5.0 5.1 5.2') \
         .with_npc_lines() \
             .line(teller, "Труп самозабвенно смотрит вперед, не подавая никаких признаков того, что он тебя услышал.", 's1', 'say45524') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45525').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.5 5.3
-    DialogStateBuilder('DZM985.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s2', '# from 0.5 5.3') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45526') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply45527').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1 6.0
-    DialogStateBuilder('DZM985.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s3', '# from 0.1 6.0') \
         .with_npc_lines() \
             .line(teller, "В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево.", 's3', 'say45528') \
             .line(teller, "Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин.", 's3', 'say45528') \
@@ -118,21 +115,18 @@ def dlg_dzm985():
             .line(teller, "Спустя мгновенье, нога падает с сочным гулким ударом.", 's3', 'say45528') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r10', '-').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    ######
-    # Check EXTENDS ~DMORTE~ : 482
-    ######
-    # from 0.2
-    DialogStateBuilder('DZM985.D_s4') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s4', '# from 0.2 // # Check EXTENDS ~DMORTE~ : 482') \
         .with_npc_lines() \
             .line(teller, "Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…", 's4', 'say45530') \
         .with_responses() \
                 .response("Оставить труп в покое.", EXIT, 'r11', '-').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from -
-    DialogStateBuilder('DZM985.D_s5') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s5', '# from -') \
         .with_npc_lines() \
             .line(teller, "Похоже, кто-то заменил этому трупу левую руку и ногу от другого тела. Левая нога короче, чем надо, но теперь, по крайней мере, труп может стоять.", 's5', 'say45531') \
         .with_responses() \
@@ -142,22 +136,22 @@ def dlg_dzm985():
             .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r15', 'reply45535').with_condition(lambda: _r45535_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r16', 'reply45536').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r17', 'reply45537').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3
-    DialogStateBuilder('DZM985.D_s6') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s6', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Ты тянешься к левой руке трупа, желая помочь ему устоять.", 's6', 'say45538') \
             .line(teller, "Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…", 's6', 'say45538') \
         .with_responses() \
             .response("Ой-ой…", 'DZM985.D_s3', 'r18', 'reply45539') \
-        .done()
+        .push(manager)
 
-    # from 3.0
-    DialogStateBuilder('DZM985.D_s7') \
+    DialogStateBuilder() \
+    .state('DZM985.D_s7', '# from 3.0') \
         .with_npc_lines() \
             .line(teller, "Рассматривая гнилые остатки тела, ты замечаешь, левая рука совсем не тронута.", 's7', 'say64205') \
             .line(teller, "Она отвалилась от туловища во время падения, и совсем не похоже, чтобы она была поражена трупным гниением, как это случилось с остальной частью тела.", 's7', 'say64205') \
         .with_responses() \
             .response("Хм-м. Думаю, я смогу найти применение этой руке…", EXIT, 'r19', 'reply64206').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

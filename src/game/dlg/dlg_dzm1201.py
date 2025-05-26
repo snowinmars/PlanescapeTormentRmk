@@ -56,14 +56,14 @@ def _r45132_condition():
 ###
 
 # DLG/DZM1201.DLG
-def dlg_dzm1201():
+def dlg_dzm1201(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm1201       = renpy.store.characters['dzm1201']
-    EXIT = -1
+    EXIT          = -1
 
-    # from -
-    DialogStateBuilder('DZM1201.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM1201.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.", 's0', 'say34953') \
             .line(teller, "Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.", 's0', 'say34953') \
@@ -73,46 +73,46 @@ def dlg_dzm1201():
             .response("Использовать на трупе свою способность История костей.", 'DZM1201.D_s4', 'r2', 'reply34958').with_condition(lambda: _r34958_condition()) \
             .response("Было приятно поболтать с тобой. Прощай.", EXIT, 'r3', 'reply34959').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r4', 'reply34962').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0
-    DialogStateBuilder('DZM1201.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM1201.D_s1', '# from 0.0') \
         .with_npc_lines() \
             .line(teller, "Записка во рту зомби заляпана гноем. Если ты попытаешься вытащить бумагу сквозь стежки, она порвется на части.", 's1', 'say34955') \
             .line(teller, "Попытка вскрыть зомби уничтожит записку — тебе нужно найти деликатный способ удалить швы перед тем, как достать записку.", 's1', 'say34955') \
         .with_responses() \
             .response("Срезать швы скальпелем.", 'DZM1201.D_s2', 'r5', 'reply34956').with_condition(lambda: _r34956_condition()).with_action(lambda: _r34956_action()) \
             .response("Хм-м. Если бы у меня было что-нибудь, чтобы разрезать эти швы…", EXIT, 'r6', 'reply45122').with_condition(lambda: _r45122_condition()).with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 1.0
-    DialogStateBuilder('DZM1201.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM1201.D_s2', '# from 1.0') \
         .with_npc_lines() \
             .line(teller, "Ты ловко перерезаешь швы на рту зомби, и его челюсти раскрываются. Ты осторожно вынимаешь записку изо рта трупа…", 's2', 'say34960') \
             .line(teller, "…несмотря на состояние бумаги, записи все еще можно разобрать.", 's2', 'say34960') \
         .with_responses() \
             .response("Снова осмотреть труп.", 'DZM1201.D_s5', 'r7', 'reply34961') \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45123').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1 5.0 5.1 5.2
-    DialogStateBuilder('DZM1201.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM1201.D_s3', '# from 0.1 5.0 5.1 5.2') \
         .with_npc_lines() \
             .line(teller, "Молочно-белые глаза трупа смотрят на тебя без выражения.", 's3', 'say45124') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply45125').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.2 5.3
-    DialogStateBuilder('DZM1201.D_s4') \
+    DialogStateBuilder() \
+    .state('DZM1201.D_s4', '# from 0.2 5.3') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's4', 'say45126') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r10', 'reply45127').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 2.0
-    DialogStateBuilder('DZM1201.D_s5') \
+    DialogStateBuilder() \
+    .state('DZM1201.D_s5', '# from 2.0') \
         .with_npc_lines() \
             .line(teller, "На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти, создавая впечатление, что он плачет. Его челюсть распахнута, из уголка рта течет струйка гноя.", 's5', 'say45128') \
         .with_responses() \
@@ -122,4 +122,4 @@ def dlg_dzm1201():
             .response("Использовать на трупе свою способность История костей.", 'DZM1201.D_s4', 'r14', 'reply45132').with_condition(lambda: _r45132_condition()) \
             .response("Было приятно поболтать с тобой. Прощай.", EXIT, 'r15', 'reply45133').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r16', 'reply45134').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

@@ -44,14 +44,14 @@ def _r6490_condition():
 ###
 
 # DLG/DZM463.DLG
-def dlg_dzm463():
+def dlg_dzm463(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
-    dzm463         = renpy.store.characters['dzm463']
-    EXIT = -1
+    dzm463        = renpy.store.characters['dzm463']
+    EXIT          = -1
 
-    # from -
-    DialogStateBuilder('DZM463.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM463.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say6484') \
         .with_responses() \
@@ -61,20 +61,20 @@ def dlg_dzm463():
             .response("Использовать на трупе свою способность История костей.", 'DZM463.D_s2', 'r3', 'reply6490').with_condition(lambda: _r6490_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6491').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply6492').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0 0.1 0.2
-    DialogStateBuilder('DZM463.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM463.D_s1', '# from 0.0 0.1 0.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6486') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6493').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3
-    DialogStateBuilder('DZM463.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM463.D_s2', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say6487') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply6494').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

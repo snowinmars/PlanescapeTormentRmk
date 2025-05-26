@@ -38,17 +38,14 @@ def _r24712_condition():
 ###
 
 # DLG/DZM782.DLG
-def dlg_dzm782():
+def dlg_dzm782(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm782        = renpy.store.characters['dzm782']
-    EXIT = -1
+    EXIT          = -1
 
-    ######
-    # Manually checked EXTENDS ~DMORTE1~ : 34
-    ######
-    # from -
-    DialogStateBuilder('DZM782.D_s0') \
+    DialogStateBuilder() \
+    .state('DZM782.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE1~ : 34') \
         .with_npc_lines() \
             .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708') \
             .line(teller, "На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
@@ -58,23 +55,23 @@ def dlg_dzm782():
             .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM782.D_s2', 'r2', 'reply24713') \
             .response("Было приятно с тобой поболтать. Прощай.", 'DZM782.D_s2', 'r3', 'reply24714') \
             .response("Оставить труп в покое.", EXIT, 'r4', 'reply24717').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1
-    DialogStateBuilder('DZM782.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM782.D_s1', '# from 0.1') \
         .with_npc_lines() \
             .line(teller, "Труп не отвечает.", 's1', 'say24710') \
         .with_responses() \
             .response("Тогда неважно. Прощай.", EXIT, 'r5', 'reply24711').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply42304').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.2 0.3
-    DialogStateBuilder('DZM782.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM782.D_s2', '# from 0.2 0.3') \
         .with_npc_lines() \
             .line(teller, "Кажется, у этого трупа есть какой-то ключ. Он крепко держит его в левой руке, сжимая его большим и указательным пальцем мертвой хваткой.", 's2', 'say24715') \
             .line(teller, "Чтобы взять ключ, тебе придется сломать руку.", 's2', 'say24715') \
         .with_responses() \
             .response("Мне нужен этот ключ, труп… похоже, тебе уже недолго осталось прозябать в этом мире.", EXIT, 'r7', 'reply24716').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply42305').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)

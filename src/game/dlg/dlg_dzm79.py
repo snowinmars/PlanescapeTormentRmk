@@ -55,13 +55,14 @@ def _r64280_action():
 ###
 
 # DLG/DZM79.DLG
-def dlg_dzm79():
+def dlg_dzm79(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm79         = renpy.store.characters['dzm79']
-    EXIT = -1
-    # from -
-    DialogStateBuilder('DZM79.D_s0') \
+    EXIT          = -1
+
+    DialogStateBuilder() \
+    .state('DZM79.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "Голова трупа была отрублена, а после наспех пришита назад.", 's0', 'say34942') \
             .line(teller, "Несколько различных швов, все в разной степени потрепанности, указывают на то, голова в процессе работы постоянно отваливалась и возвращалась на место.", 's0', 'say34942') \
@@ -73,30 +74,30 @@ def dlg_dzm79():
             .response("Использовать на трупе свою способность История костей.", 'DZM79.D_s2', 'r3', 'reply34948').with_condition(lambda: _r34948_condition()) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply34951').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply34952').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.0 0.2
-    DialogStateBuilder('DZM79.D_s1') \
+    DialogStateBuilder() \
+    .state('DZM79.D_s1', '# from 0.0 0.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say34944') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply34945').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.3 3.0 3.1
-    DialogStateBuilder('DZM79.D_s2') \
+    DialogStateBuilder() \
+    .state('DZM79.D_s2', '# from 0.3 3.0 3.1') \
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34949') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply34950').with_action(lambda: _dispose()) \
-        .done()
+        .push(manager)
 
-    # from 0.1
-    DialogStateBuilder('DZM79.D_s3') \
+    DialogStateBuilder() \
+    .state('DZM79.D_s3', '# from 0.1') \
         .with_npc_lines() \
             .line(teller, "Похоже, зубчатый круг на лбу трупа был выжжен очень давно, возможно даже еще до того, как он умер. Возможно, это какой-то религиозный символ или ритуальный знак.", 's3', 'say64278') \
             .line(teller, "Ты замечаешь, что в одной из впадин между внутренними зубцами есть маленький треугольник, как будто у него есть какое-то особое назначение.", 's3', 'say64278') \
         .with_responses() \
             .response("Хм-м. Интересно… что здесь делает эта отметина, а, труп?", 'DZM79.D_s2', 'r8', 'reply64279').with_condition(lambda: _r64279_condition()).with_action(lambda: _r64279_action()) \
             .response("Хм-м… Не удивлюсь, если зазор между зубцами совпадет с выемками на той медной сережке…", 'DZM79.D_s2', 'r9', 'reply64280').with_condition(lambda: _r64280_condition()).with_action(lambda: _r64280_action()) \
-        .done()
+        .push(manager)

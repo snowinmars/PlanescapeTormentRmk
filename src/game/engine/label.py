@@ -1,13 +1,4 @@
 import renpy
-from engine.dialog import (
-    start_dialog
-)
-
-def pronounce(npc_lines):
-    for line in npc_lines:
-        if line[2]:
-            line[2]()
-        renpy.say(line[0], line[1])
 
 class LabelFlowBuilder:
     def __init__(self):
