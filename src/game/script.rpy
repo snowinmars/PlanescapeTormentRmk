@@ -1,4 +1,5 @@
 init 1 python:
+    # setup logger
     import os
     import sys
     import logging
@@ -46,6 +47,7 @@ init 1 python:
     devlog.info("Game directory: %s" % gamedir)
 
 init 2 python:
+    # setup global characters and images
     renpy.add_python_directory('dlg')
     renpy.add_python_directory('engine')
     renpy.add_python_directory('labels')
@@ -111,42 +113,43 @@ init 2 python:
         'dzm1664_img default': 'dzm1664_img default',
     }
 
+init 3 python:
+    # engine warm up
+    from engine.label import (LabelFlowBuilder)
+    from labels.all_labels import (build_all_labels)
+    from engine.dialog import (DialogManager)
+    from engine.menu import (MenuManager)
+    from labels.morgue_menu import (build_morgue_menu)
+    from dlg.dlg_all import (dlg_all)
+
+    global global_label_registry
+    global global_menu_manager
+    global global_dialog_manager
+    global_label_registry = {}
+    global_menu_manager = MenuManager()
+    global_dialog_manager = DialogManager()
+
+    devlog = logging.getLogger('log')
+
+    devlog.info('Building label flow...')
+    now = int(time.time())
+    label_builder = LabelFlowBuilder()
+    build_all_labels(label_builder)
+    label_builder.build(global_label_registry)
+    devlog.info('Done building label flow, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building morgue menu...')
+    build_morgue_menu(global_menu_manager)
+    devlog.info('Done building morgue menu, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building dialog manager...')
+    dlg_all(global_dialog_manager)
+    devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
+
 
 label start:
-    python:
-        from engine.label import (LabelFlowBuilder)
-        from labels.all_labels import (build_all_labels)
-        from engine.dialog import (DialogManager)
-        from engine.menu import (MenuManager)
-        from labels.morgue_menu import (build_morgue_menu)
-        from dlg.dlg_all import (dlg_all)
-
-        global global_label_registry
-        global global_menu_manager
-        global global_dialog_manager
-        global_label_registry = {}
-        global_menu_manager = MenuManager()
-        global_dialog_manager = DialogManager()
-
-        devlog = logging.getLogger('log')
-
-        devlog.info('Building label flow...')
-        now = int(time.time())
-        label_builder = LabelFlowBuilder()
-        build_all_labels(label_builder)
-        label_builder.build(global_label_registry)
-        devlog.info('Done building label flow, took %s', int(time.time()) - now)
-
-        now = int(time.time())
-        devlog.info('Building morgue menu...')
-        build_morgue_menu(global_menu_manager)
-        devlog.info('Done building morgue menu, took %s', int(time.time()) - now)
-
-        now = int(time.time())
-        devlog.info('Building dialog manager...')
-        dlg_all(global_dialog_manager)
-        devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
-
     menu:
         "dev":
             $ current_dialog_key = "dev"
