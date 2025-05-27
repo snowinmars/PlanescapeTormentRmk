@@ -11,18 +11,18 @@ const wellKnownFunctions: string[][] = [
     ['Global("Mortuary_Walkthrough","GLOBAL",0)', 'return not current_morgue_settings()[\'mortuary_walkthrough\']'],
     ['GlobalGT("Mortuary_Walkthrough","GLOBAL",0)', 'return not current_morgue_settings()[\'mortuary_walkthrough\']'],
     ['Global("Mortuary_Walkthrough","GLOBAL",1)', 'return current_morgue_settings()[\'mortuary_walkthrough\']'],
-    ['Global("Zombie_Chaotic","GLOBAL",0)',  'return not changed_law_once(\'zombie_chaotic\')'],
+    ['Global("Zombie_Chaotic","GLOBAL",0)', 'return not changed_law_once(\'zombie_chaotic\')'],
     ['Global("Zombie_Chaotic","GLOBAL",1)', 'return changed_law_once(\'zombie_chaotic\')'],
     ['DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~', 'change_law_once(-1, \'zombie_chaotic\')'],
     ['Global("Pharod","GLOBAL",0)', 'return not current_global_settings()[\'meet_pharod\']'],
     ['Global("Pharod","GLOBAL",1)', 'return current_global_settings()[\'meet_pharod\']'],
     ['GlobalGT("Pharod","GLOBAL",0)', 'return current_global_settings()[\'meet_pharod\']'],
-    ['NearbyDialog("DMorte1")', 'return current_global_settings()[\'in_party_morte\']'],
-    ['!NearbyDialog("DMorte1")', 'return not current_global_settings()[\'in_party_morte\']'],
-    ['NearbyDialog("DMorte")', 'return current_global_settings()[\'in_party_morte\']'],
-    ['!NearbyDialog("DMorte")', 'return not current_global_settings()[\'in_party_morte\']'],
-    ['NearbyDialog("Dmorte")', 'return current_global_settings()[\'in_party_morte\']'],
-    ['!NearbyDialog("Dmorte")', 'return not current_global_settings()[\'in_party_morte\']'],
+    ['NearbyDialog("DMorte1")', 'return global_settings_manager.get_in_party_morte()'],
+    ['!NearbyDialog("DMorte1")', 'return not global_settings_manager.get_in_party_morte()'],
+    ['NearbyDialog("DMorte")', 'return global_settings_manager.get_in_party_morte()'],
+    ['!NearbyDialog("DMorte")', 'return not global_settings_manager.get_in_party_morte()'],
+    ['NearbyDialog("Dmorte")', 'return global_settings_manager.get_in_party_morte()'],
+    ['!NearbyDialog("Dmorte")', 'return not global_settings_manager.get_in_party_morte()'],
     ['GlobalGT("Dhall","GLOBAL",0)', 'return current_global_settings()[\'meet_dhall\']'],
     ['!Dead("Dhall")', 'return not current_global_settings()[\'dead_dhall\']'],
     ['Dead("Dhall")', 'return current_global_settings()[\'dead_dhall\']'],
@@ -53,23 +53,24 @@ const wellKnownFunctions: string[][] = [
     ['!Dead("Vaxis")', 'return not current_global_settings()[\'dead_vaxis\']'],
     ['Global("Vaxis_Leave","GLOBAL",0)', 'return not current_morgue_settings()[\'vaxis_left\']'],
     ['Global("Betray_Vaxis","GLOBAL",0)', 'return not current_morgue_settings()[\'vaxis_betrayed\']'],
-    ['Global("Dhall","GLOBAL",0)', 'return not current_global_settings()[\'meet_dhall\']' ],
-    ['Global("Dhall","GLOBAL",1)', 'return current_global_settings()[\'meet_dhall\']' ],
-    ['GlobalGT("Dhall","GLOBAL",0)', 'return current_global_settings()[\'meet_dhall\']' ],
+    ['Global("Dhall","GLOBAL",0)', 'return not current_global_settings()[\'meet_dhall\']'],
+    ['Global("Dhall","GLOBAL",1)', 'return current_global_settings()[\'meet_dhall\']'],
+    ['GlobalGT("Dhall","GLOBAL",0)', 'return current_global_settings()[\'meet_dhall\']'],
     ['Global("Mortuary_Alert","GLOBAL",0)', 'return not current_morgue_settings()[\'alarmed\']'],
     ['Global("Mortuary_Alert","GLOBAL",1)', 'return current_morgue_settings()[\'alarmed\']'],
     ['GlobalGT("Mortuary_Alert","GLOBAL",0)', 'return current_morgue_settings()[\'alarmed\']'],
     ['Global("Escape_Mortuary","GLOBAL",0)', 'return not current_global_settings()[\'escape_mortuary\']'],
     ['Global("AR0200_Visited","GLOBAL",0)', 'return not current_global_settings()[\'visited_ar0200\']'],
-    ['SetGlobal("Morte","GLOBAL",1)', 'set_in_party_morte()'],
+    ['SetGlobal("Morte","GLOBAL",1)', 'global_settings_manager.set_in_party_morte(True)'],
+    ['SetGlobal("Morte","GLOBAL",0)', 'global_settings_manager.set_in_party_morte(False)'],
     ['Global("Know_Copper_Earring_Secret","GLOBAL",0)', 'return not current_morgue_settings()[\'know_copper_earring_secret\']'],
     ['SetGlobal("Know_Copper_Earring_Secret","GLOBAL",1)', 'know_copper_earring_secret()'],
     ['PartyHasItem("CopEarC")', 'return current_morgue_settings()[\'has_copper_earring\']'],
     ['!PartyHasItem("CopEarC")', 'return not current_morgue_settings()[\'has_copper_earring\']'],
     ['SetGlobal("Oinosian","GLOBAL",1)', 'meet_oinosian()'],
-    ['Global("Oinosian","GLOBAL",0)', 'return not current_global_settings()[\'meet_oinosian\']' ],
-    ['Global("Oinosian","GLOBAL",1)', 'return current_global_settings()[\'meet_oinosian\']' ],
-    ['GlobalGT("Oinosian","GLOBAL",0)', 'return current_global_settings()[\'meet_oinosian\']' ],
+    ['Global("Oinosian","GLOBAL",0)', 'return not current_global_settings()[\'meet_oinosian\']'],
+    ['Global("Oinosian","GLOBAL",1)', 'return current_global_settings()[\'meet_oinosian\']'],
+    ['GlobalGT("Oinosian","GLOBAL",0)', 'return current_global_settings()[\'meet_oinosian\']'],
     ['SetGlobal("Know_Xixi","GLOBAL",1)', 'meet_xixi()'],
     ['SetGlobal("Bei","GLOBAL",1)', 'meet_bei()'],
     ['SetGlobal("Asonje","GLOBAL",1)', 'set_asonje_state(1)'],
@@ -94,12 +95,12 @@ const pasteAligment = (body: string): string => {
     var matches = body.matchAll(regex);
     if (!matches) return body;
 
-    for(const match of matches) {
+    for (const match of matches) {
         const id = match[1].replace('GLOBAL', '').toLowerCase();
         const prop = match[2].replace('GLOBAL', '').toLowerCase();
         const amount = parseInt(match[3]);
         let result = '';
-        switch(prop) {
+        switch (prop) {
             case 'good':
             case 'evil':
                 result = `change_good_once(${amount}, '${id}')`
@@ -129,7 +130,7 @@ const pasteCheckStat = (body: string): string => {
     var matches = body.matchAll(regex);
     if (!matches) return body;
 
-    for(const match of matches) {
+    for (const match of matches) {
         const type = match[1].toLowerCase();
         const char = match[2].toLowerCase();
         const amount = parseInt(match[3]);
@@ -146,7 +147,7 @@ const pasteJournals = (body: string): string => {
     var matches = body.matchAll(regex);
     if (!matches) return body;
 
-    for(const match of matches) {
+    for (const match of matches) {
         const journalId = match[1];
         const journalBody = match[2];
         const result = `update_journal('${journalId}')    # '${journalId}': '${journalBody}'`
@@ -157,7 +158,7 @@ const pasteJournals = (body: string): string => {
 }
 
 const pasteWellKnownFunctions = (body: string): string => {
-    for(const r of wellKnownFunctions) {
+    for (const r of wellKnownFunctions) {
         body = body.replaceAll(r[0], r[1]);
     }
 

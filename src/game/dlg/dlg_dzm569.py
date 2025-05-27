@@ -16,6 +16,8 @@ from engine.transforms import (
     center_right_down
 )
 
+global global_settings_manager
+
 ###
 def _init():
     travel('morgue1')
@@ -37,11 +39,11 @@ def _check_char_prop_lt(who, gtValue, prop):
 def _r24576_condition():
     return not current_morgue_settings()['mortuary_walkthrough'] \
     and not current_morgue_settings()['has_intro_key'] \
-    and current_global_settings()['in_party_morte']
+    and global_settings_manager.get_in_party_morte()
 def _r24579_condition():
     return not current_morgue_settings()['mortuary_walkthrough'] \
     and not current_morgue_settings()['has_intro_key'] \
-    and not current_global_settings()['in_party_morte']
+    and not global_settings_manager.get_in_party_morte()
 def _r24580_condition():
     return not current_morgue_settings()['mortuary_walkthrough']
 def _r24581_condition():
@@ -52,9 +54,9 @@ def _r24585_condition():
     return not current_morgue_settings()['mortuary_walkthrough'] \
     and not current_morgue_settings()['has_intro_key']
 def _r42294_condition():
-    return current_global_settings()['in_party_morte']
+    return global_settings_manager.get_in_party_morte()
 def _r42295_condition():
-    return not current_global_settings()['in_party_morte']
+    return not global_settings_manager.get_in_party_morte()
 ###
 
 # DLG/DZM569.DLG

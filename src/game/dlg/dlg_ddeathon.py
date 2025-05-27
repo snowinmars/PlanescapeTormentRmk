@@ -18,6 +18,8 @@ from engine.transforms import (
     center_right_down
 )
 
+global global_settings_manager
+
 ###
 def _init():
     travel('death_names')

@@ -18,6 +18,8 @@ from engine.transforms import (
     center_right_down
 )
 
+global global_settings_manager
+
 ###
 def _init():
     travel('morgue1')
@@ -37,22 +39,22 @@ def _check_char_prop_lt(who, gtValue, prop):
 ###
 ###
 def _r45516_condition():
-    return current_global_settings()['in_party_morte']
+    return global_settings_manager.get_in_party_morte()
 def _r45516_action():
     change_law_once(-1, 'chaotic_zm985_1')
     change_good_once(-1, 'evil_zm985_1')
 def _r45517_condition():
-    return not current_global_settings()['in_party_morte']
+    return not global_settings_manager.get_in_party_morte()
 def _r45517_action():
     change_law_once(-1, 'chaotic_zm985_1')
     change_good_once(-1, 'evil_zm985_1')
 def _r45518_condition():
-    return current_global_settings()['in_party_morte']
+    return global_settings_manager.get_in_party_morte()
 def _r45518_action():
     change_law_once(1, 'lawful_zm985_1')
     change_good_once(1, 'good_zm985_1')
 def _r45519_condition():
-    return not current_global_settings()['in_party_morte']
+    return not global_settings_manager.get_in_party_morte()
 def _r45519_action():
     change_law_once(1, 'lawful_zm985_1')
     change_good_once(1, 'good_zm985_1')

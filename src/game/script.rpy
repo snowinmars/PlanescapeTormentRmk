@@ -121,13 +121,16 @@ init 3 python:
     from engine.menu import (MenuManager)
     from labels.morgue_menu import (build_morgue_menu)
     from dlg.dlg_all import (dlg_all)
+    from settings.settings_def import (build_settings)
 
     global global_label_registry
     global global_menu_manager
     global global_dialog_manager
+    global global_settings_manager
     global_label_registry = {}
     global_menu_manager = MenuManager()
     global_dialog_manager = DialogManager()
+    global_settings_manager = SettingsManager()
 
     devlog = logging.getLogger('log')
 
@@ -137,6 +140,11 @@ init 3 python:
     build_all_labels(label_builder)
     label_builder.build(global_label_registry)
     devlog.info('Done building label flow, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building settings manager...')
+    build_settings(global_settings_manager)
+    devlog.info('Done building settings manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building morgue menu...')

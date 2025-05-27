@@ -16,6 +16,8 @@ from engine.transforms import (
     center_right_down
 )
 
+global global_settings_manager
+
 ###
 def _init():
     travel('morgue1')
@@ -35,9 +37,9 @@ def _check_char_prop_lt(who, gtValue, prop):
 ###
 ###
 def _r24709_condition():
-    return current_global_settings()['in_party_morte']
+    return global_settings_manager.get_in_party_morte()
 def _r24712_condition():
-    return not current_global_settings()['in_party_morte']
+    return not global_settings_manager.get_in_party_morte()
 ###
 
 # DLG/DZM782.DLG
