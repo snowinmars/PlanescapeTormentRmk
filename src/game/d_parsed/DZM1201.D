@@ -1,25 +1,25 @@
 def _r34954_condition():
     Global("1201_Note_Retrieved","GLOBAL",0)
 def _r34957_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r34958_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r34956_condition():
-    return current_morgue_settings()['has_scalpel']
+    return gsm.get_has_scalpel()
 def _r34956_action():
     DO ~SetGlobal("1201_Note_Retrieved","GLOBAL",1) GiveItemCreate("N1201",Protagonist,1,0,0)  ~
 def _r45122_condition():
-    return not current_morgue_settings()['has_scalpel']
+    return not gsm.get_has_scalpel()
 def _r45129_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r45129_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r45130_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r45131_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r45132_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 
 EXIT = -1
 

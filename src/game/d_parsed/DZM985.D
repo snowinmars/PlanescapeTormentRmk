@@ -1,33 +1,33 @@
 def _r45516_condition():
-    return current_global_settings()['in_party_morte']
+    return gsm.get_in_party_morte()
 def _r45516_action():
-    DO ~change_law_once(-1, 'chaotic_zm985_1') change_good_once(-1, 'evil_zm985_1') PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
+    DO ~gsm.dec_once_law('chaotic_zm985_1') gsm.dec_once_good('evil_zm985_1') PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
 def _r45517_condition():
-    return not current_global_settings()['in_party_morte']
+    return not gsm.get_in_party_morte()
 def _r45517_action():
-    DO ~change_law_once(-1, 'chaotic_zm985_1') change_good_once(-1, 'evil_zm985_1') PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
+    DO ~gsm.dec_once_law('chaotic_zm985_1') gsm.dec_once_good('evil_zm985_1') PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
 def _r45518_condition():
-    return current_global_settings()['in_party_morte']
+    return gsm.get_in_party_morte()
 def _r45518_action():
-    DO ~change_law_once(1, 'lawful_zm985_1') change_good_once(1, 'good_zm985_1') ~
+    DO ~gsm.inc_once_law('lawful_zm985_1') gsm.inc_once_good('good_zm985_1') ~
 def _r45519_condition():
-    return not current_global_settings()['in_party_morte']
+    return not gsm.get_in_party_morte()
 def _r45519_action():
-    DO ~change_law_once(1, 'lawful_zm985_1') change_good_once(1, 'good_zm985_1') ~
+    DO ~gsm.inc_once_law('lawful_zm985_1') gsm.inc_once_good('good_zm985_1') ~
 def _r45520_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r45521_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r45532_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r45532_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r45533_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r45534_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r45535_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r45539_action():
     DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
 

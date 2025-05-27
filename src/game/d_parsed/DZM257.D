@@ -1,15 +1,15 @@
 def _r6510_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r6510_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r6511_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r6512_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r6513_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r9562_action():
-    DO ~change_law_once(-1, 'chaotic_zom257_1') ~
+    DO ~gsm.dec_once_law('chaotic_zom257_1') ~
 
 EXIT = -1
 

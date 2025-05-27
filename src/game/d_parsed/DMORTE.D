@@ -1,5 +1,5 @@
 def _r17833_action():
-    DO ~GiveItem("KeyPR",Protagonist) set_in_party_morte() SetGlobal("Scars","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    DO ~GiveItem("KeyPR",Protagonist) gsm.set_in_party_morte(True) SetGlobal("Scars","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
 def _r1006_condition():
     Global("Scars","GLOBAL",1)
 def _r1015_condition():
@@ -13,7 +13,7 @@ def _r1050_condition():
 def _r1051_condition():
     return _check_char_prop_gt('protagonist',11,'int')
 def _r1079_action():
-    DO ~set_in_party_morte() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    DO ~gsm.set_in_party_morte(True) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
 def _r1077_condition():
     Global("Scars","GLOBAL",1)
 def _r1083_condition():
@@ -45,7 +45,7 @@ def _r2603_action():
 def _r2602_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r2605_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r6952_condition():
     Global("Know_Lady","GLOBAL",0)
 def _r6952_action():
@@ -55,9 +55,9 @@ def _r6953_condition():
 def _r6954_condition():
     Global("Know_Lady","GLOBAL",1)
 def _r3474_action():
-    update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
+    gsm.update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
 def _r3483_action():
-    update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
+    gsm.update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
 def _r3871_action():
     DO ~SetGlobal("Warning","GLOBAL",1) ~
 def _r3874_action():
@@ -81,7 +81,7 @@ def _r3972_action():
 def _r3973_condition():
     Global("Morte_Skel_Mort_Quip","GLOBAL",1)
 def _r3988_action():
-    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
 def _r4023_condition():
     return _check_char_prop_lt('protagonist',13,'wis')
 def _r4024_condition():
@@ -91,7 +91,7 @@ def _r4027_condition():
 def _r4028_condition():
     return _check_char_prop_gt('protagonist',12,'wis')
 def _r4029_action():
-    DO ~change_good_once(1, 'good_giant_skel_mort_1') ~
+    DO ~gsm.inc_once_good('good_giant_skel_mort_1') ~
 def _r4031_condition():
     return _check_char_prop_lt('protagonist',13,'wis')
 def _r4032_condition():
@@ -115,23 +115,23 @@ def _r4342_action():
 def _r4345_action():
     DO ~SetGlobal("Warning","GLOBAL",2) ~
 def _r4676_action():
-    update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+    gsm.update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
 def _r4678_action():
-    DO ~change_law_once(-3, 'chaotic_vaxis_3') ~
+    DO ~gsm.dec_once_law('chaotic_vaxis_3', 3) ~
 def _r4679_action():
-    DO ~change_law_once(-1, 'chaotic_vaxis_4') ~
+    DO ~gsm.dec_once_law('chaotic_vaxis_4') ~
 def _r4682_action():
-    DO ~change_law_once(3, 'lawful_vaxis_3') ~
+    DO ~gsm.inc_once_law('lawful_vaxis_3', 3) ~
 def _r4686_condition():
     return _check_char_prop_gt('protagonist',13,'int')
 def _r4687_action():
-    DO ~change_law_once(1, 'lawful_vaxis_2') change_good_once(1, 'good_vaxis_2') ~
+    DO ~gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2') ~
 def _r4693_action():
-    update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+    gsm.update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
 def _r4695_action():
-    DO ~change_law_once(-3, 'chaotic_vaxis_3') ~
+    DO ~gsm.dec_once_law('chaotic_vaxis_3', 3) ~
 def _r4699_action():
-    DO ~change_law_once(3, 'lawful_vaxis_3') ~
+    DO ~gsm.inc_once_law('lawful_vaxis_3', 3) ~
 def _r64535_condition():
     Global("Vaxis_Zombie_XP","GLOBAL",0)
 def _r64535_action():
@@ -159,7 +159,7 @@ def _r6328_condition():
 def _r6329_condition():
     return _check_char_prop_lt('protagonist',12,'int') return _check_char_prop_lt('protagonist',12,'wis')
 def _r6330_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r6658_action():
     DO ~IncrementGlobal("Good","GLOBAL",-1) ~
 def _r6659_action():
@@ -187,9 +187,9 @@ def _r7483_action():
 def _r7485_action():
     DO ~IncrementGlobal("Morte_Taunt","GLOBAL",1) ~
 def _r11977_action():
-    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) change_law_once(-1, 'chaotic_ingress_teeth_2') change_good_once(-1, 'evil_ingress_teeth_1') ~
+    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) gsm.dec_once_law('chaotic_ingress_teeth_2') gsm.dec_once_good('evil_ingress_teeth_1') ~
 def _r11980_action():
-    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) change_law_once(-1, 'chaotic_ingress_teeth_2') change_good_once(-1, 'evil_ingress_teeth_1') ~
+    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) gsm.dec_once_law('chaotic_ingress_teeth_2') gsm.dec_once_good('evil_ingress_teeth_1') ~
 def _r11982_action():
     DO ~MoraleDec("Morte",1) ~
 def _r11983_action():
@@ -299,7 +299,7 @@ def _r16890_condition():
 def _r16890_action():
     DO ~SetGlobal("Tree_V","AR0400",1) ~
 def _r16893_condition():
-    return current_global_settings()['in_party_morte'] Global("Tree_M","AR0400",0)
+    return gsm.get_in_party_morte() Global("Tree_M","AR0400",0)
 def _r16893_action():
     DO ~SetGlobal("Tree_M","AR0400",1) ~
 def _r16894_condition():
@@ -343,9 +343,9 @@ def _r17588_condition():
 def _r18802_action():
     DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~
 def _r18578_action():
-    DO ~change_law_once(1, 'lawful_yellow_1') ~
+    DO ~gsm.inc_once_law('lawful_yellow_1') ~
 def _r18808_action():
-    DO ~change_good_once(1, 'good_yellow_1') ~
+    DO ~gsm.inc_once_good('good_yellow_1') ~
 def _r18820_condition():
     PartyGoldGT(4)
 def _r18820_action():
@@ -381,11 +381,11 @@ def _r18834_action():
 def _r18835_condition():
     PartyGoldGT(49)
 def _r18835_action():
-    DO ~TakePartyGold(50) change_good_once(1, 'good_yellow_2') ~
+    DO ~TakePartyGold(50) gsm.inc_once_good('good_yellow_2') ~
 def _r18836_condition():
     PartyGoldGT(99)
 def _r18836_action():
-    DO ~TakePartyGold(100) change_good_once(1, 'good_yellow_2') ~
+    DO ~TakePartyGold(100) gsm.inc_once_good('good_yellow_2') ~
 def _r19668_condition():
     Global("Speak_With_Dead","GLOBAL",0)
 def _r19669_condition():
@@ -397,11 +397,11 @@ def _r19671_condition():
 def _r20612_condition():
     GlobalLT("Know_Marta_Work","GLOBAL",3)
 def _r20612_action():
-    DO ~SetGlobal("Know_Marta_Work","GLOBAL",3) ~ update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+    DO ~SetGlobal("Know_Marta_Work","GLOBAL",3) ~ gsm.update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
 def _r20613_condition():
     GlobalGT("Know_Marta_Work","GLOBAL",2)
 def _r20613_action():
-    update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+    gsm.update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
 def _r24697_condition():
     Global("Know_Lady","GLOBAL",0)
 def _r24697_action():
@@ -415,19 +415,19 @@ def _r24700_condition():
 def _r24701_condition():
     return _check_char_prop_gt('protagonist',12,'wis')
 def _r22850_action():
-    DO ~change_law_once(-1, 'chaotic_cube_3') ~
+    DO ~gsm.dec_once_law('chaotic_cube_3') ~
 def _r22853_action():
-    DO ~change_law_once(-1, 'chaotic_cube_4') ~
+    DO ~gsm.dec_once_law('chaotic_cube_4') ~
 def _r22856_action():
-    DO ~change_law_once(-1, 'chaotic_cube_5') ~
+    DO ~gsm.dec_once_law('chaotic_cube_5') ~
 def _r24904_action():
-    DO ~set_in_party_morte() ~
+    DO ~gsm.set_in_party_morte(True) ~
 def _r24905_action():
-    DO ~set_in_party_morte() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    DO ~gsm.set_in_party_morte(True) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
 def _r24925_action():
-    DO ~change_good_once(1, 'good_morte_1') ~
+    DO ~gsm.inc_once_good('good_morte_1') ~
 def _r24932_action():
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ update_journal('24933')    # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
+    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ gsm.update_journal('24933')    # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
 def _r66902_condition():
     GlobalGT("Morte_Mimir","GLOBAL",1)
 def _r25967_condition():
@@ -561,63 +561,63 @@ def _r34991_action():
 def _r35001_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r34993_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35023_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35033_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35025_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35055_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35065_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35057_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35087_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35097_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35089_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35119_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35129_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35121_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35151_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35161_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35153_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35183_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35193_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35185_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35215_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35225_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35217_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35247_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35257_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35249_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35279_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35289_action():
     DO ~SetGlobal("Morte_Quip","GLOBAL",1) ~
 def _r35281_action():
-    DO ~change_law_once(-1, 'morte_zombie_1') ~
+    DO ~gsm.dec_once_law('morte_zombie_1') ~
 def _r35319_action():
-    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
 def _r35342_action():
     DO ~IncrementGlobal("Good","GLOBAL",-1) ~
 def _r35360_action():
@@ -635,7 +635,7 @@ def _r35358_action():
 def _r35359_condition():
     Global("Morte_Skel_Mort_Quip","GLOBAL",1)
 def _r35396_action():
-    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
 def _r35419_action():
     DO ~IncrementGlobal("Good","GLOBAL",-1) ~
 def _r35437_action():
@@ -653,7 +653,7 @@ def _r35435_action():
 def _r35436_condition():
     Global("Morte_Skel_Mort_Quip","GLOBAL",1)
 def _r35473_action():
-    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
 def _r35496_action():
     DO ~IncrementGlobal("Good","GLOBAL",-1) ~
 def _r35514_action():
@@ -671,7 +671,7 @@ def _r35512_action():
 def _r35513_condition():
     Global("Morte_Skel_Mort_Quip","GLOBAL",1)
 def _r35550_action():
-    DO ~change_law_once(-1, 'chaotic_skeleton_mort_1') ~
+    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
 def _r35573_action():
     DO ~IncrementGlobal("Good","GLOBAL",-1) ~
 def _r35591_action():
@@ -697,11 +697,11 @@ def _r39721_action():
 def _r39722_action():
     DO ~SetGlobal("Yves_Shared","AR0605",1) ~
 def _r40069_condition():
-    return not current_global_settings()['in_party_morte'] HPPercent(Protagonist,100)
+    return not gsm.get_in_party_morte() HPPercent(Protagonist,100)
 def _r40070_condition():
-    return not current_global_settings()['in_party_morte'] HPPercentGT(Protagonist,49)
+    return not gsm.get_in_party_morte() HPPercentGT(Protagonist,49)
 def _r40071_condition():
-    return not current_global_settings()['in_party_morte'] HPPercentLT(Protagonist,50)
+    return not gsm.get_in_party_morte() HPPercentLT(Protagonist,50)
 def _r40077_condition():
     Global("Nenny","GLOBAL",2)
 def _r40078_condition():
@@ -717,59 +717,59 @@ def _r40852_action():
 def _r40856_action():
     DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
 def _r41837_action():
-    update_journal('39516')    # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
+    gsm.update_journal('39516')    # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
 def _r41842_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41843_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41845_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41846_condition():
     PartyHasItem("Bandage")
 def _r41847_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41848_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41852_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41853_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41857_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41858_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41862_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41863_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41867_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41868_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41871_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41872_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41875_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41876_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41880_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41881_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41884_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41885_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41888_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41889_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41892_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41893_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41900_condition():
     return _check_char_prop_gt('protagonist',12,'int')
 def _r41911_action():
@@ -777,7 +777,7 @@ def _r41911_action():
 def _r41921_condition():
     Global("Story_Reekwind_Curse","GLOBAL",1) Global("Jumble_Reekwind","GLOBAL",0)
 def _r41921_action():
-    DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1) ~ update_journal('67862')    # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
+    DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1) ~ gsm.update_journal('67862')    # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
 def _r67864_condition():
     Global("Jumble_Reekwind","GLOBAL",1)
 def _r43909_condition():
@@ -785,7 +785,7 @@ def _r43909_condition():
 def _r43910_condition():
     Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn")
 def _r43910_action():
-    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ gsm.update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 def _r43911_condition():
     GlobalLT("Aelwyn","GLOBAL",2)
 def _r43917_condition():
@@ -793,15 +793,15 @@ def _r43917_condition():
 def _r43918_condition():
     Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn")
 def _r43918_action():
-    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ gsm.update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 def _r43919_condition():
     GlobalLT("Aelwyn","GLOBAL",2)
 def _r45029_action():
     DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
 def _r45093_action():
-    update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+    gsm.update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
 def _r45103_action():
-    update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+    gsm.update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
 def _r50166_action():
     DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
 def _r50325_condition():
@@ -831,9 +831,9 @@ def _r53625_action():
 def _r53627_condition():
     Global("Morte_Story","GLOBAL",0)
 def _r53629_action():
-    DO ~SetGlobal("Morte_Story","GLOBAL",1) ~ update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+    DO ~SetGlobal("Morte_Story","GLOBAL",1) ~ gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 def _r53630_action():
-    DO ~MoraleDec("Morte",1) SetGlobal("Morte_Story","GLOBAL",1) ~ update_journal('53661')    # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
+    DO ~MoraleDec("Morte",1) SetGlobal("Morte_Story","GLOBAL",1) ~ gsm.update_journal('53661')    # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
 def _r53662_condition():
     NearbyDialog("Dannah")
 def _r53663_condition():
@@ -845,7 +845,7 @@ def _r53795_action():
 def _r53801_action():
     DO ~MoraleDec("Morte",1) ~
 def _r53807_action():
-    update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+    gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 def _r53825_condition():
     NearbyDialog("Dgrace")
 def _r53825_action():
@@ -877,7 +877,7 @@ def _r53840_condition():
 def _r53841_action():
     DO ~SetGlobal("Pillar_Question","AR1001",0) ~
 def _r53843_action():
-    DO ~change_good_once(-1, 'evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
+    DO ~gsm.dec_once_good('evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
 def _r53844_condition():
     Global("Where_Fhjull","AR1001",0)
 def _r53863_condition():
@@ -891,7 +891,7 @@ def _r53866_condition():
 def _r53867_action():
     DO ~SetGlobal("Pillar_Question","AR1001",0) ~
 def _r53850_action():
-    DO ~change_good_once(-1, 'evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
+    DO ~gsm.dec_once_good('evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
 def _r53851_condition():
     Global("Where_Fhjull","AR1001",0)
 def _r53852_condition():
@@ -991,9 +991,9 @@ def _r54227_condition():
 def _r54227_action():
     DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
 def _r54230_condition():
-    return current_global_settings()['meet_deionarra']
+    return gsm.get_meet_deionarra()
 def _r54231_condition():
-    return not current_global_settings()['meet_deionarra']
+    return not gsm.get_meet_deionarra()
 def _r54232_condition():
     GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
 def _r54233_condition():
@@ -1001,9 +1001,9 @@ def _r54233_condition():
 def _r54233_action():
     DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
 def _r54235_condition():
-    return current_global_settings()['meet_deionarra']
+    return gsm.get_meet_deionarra()
 def _r54236_condition():
-    return not current_global_settings()['meet_deionarra']
+    return not gsm.get_meet_deionarra()
 def _r54237_condition():
     GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
 def _r54238_condition():
@@ -1101,13 +1101,13 @@ def _r55850_condition():
 def _r55875_condition():
     return _check_char_prop_gt('protagonist',15,'int')
 def _r55902_action():
-    DO ~change_law_once(-1, 'chaotic_nordom_5') ~
+    DO ~gsm.dec_once_law('chaotic_nordom_5') ~
 def _r55925_action():
     DO ~SetGlobal("Know_Mechanus","GLOBAL",1) ~
 def _r55931_action():
-    DO ~change_law_once(2, 'lawful_nordom_2') ~
+    DO ~gsm.inc_once_law('lawful_nordom_2', 2) ~
 def _r55941_action():
-    DO ~change_law_once(-2, 'chaotic_nordom_4') ~
+    DO ~gsm.dec_once_law('chaotic_nordom_4', 2) ~
 def _r61411_condition():
     PartyGoldGT(499)
 def _r61412_condition():
@@ -1117,9 +1117,9 @@ def _r61414_action():
 def _r65554_condition():
     Global("Morte_Warning","GLOBAL",1)
 def _r65558_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r65559_condition():
-    return current_global_settings()['meet_pharod']
+    return gsm.get_meet_pharod()
 def _r65566_condition():
     Global("Morte_Warning","GLOBAL",1)
 def _r65565_condition():
@@ -1127,23 +1127,23 @@ def _r65565_condition():
 def _r65569_condition():
     Global("Morte_Tattoo_XP","GLOBAL",0)
 def _r65569_action():
-    DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1) AddexperienceParty(1000) ~ update_journal('65573')    # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
+    DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1) AddexperienceParty(1000) ~ gsm.update_journal('65573')    # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
 def _r65570_condition():
     Global("Morte_Tattoo_XP","GLOBAL",1)
 def _r65613_condition():
     GlobalGT("Morte_Stolen","GLOBAL",2)
 def _r65621_action():
-    DO ~SetGlobal("Morte_Talent","GLOBAL",1) ~ update_journal('65625')    # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
+    DO ~SetGlobal("Morte_Talent","GLOBAL",1) ~ gsm.update_journal('65625')    # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
 def _r65622_condition():
     GlobalGT("Morte_Stolen","GLOBAL",2)
 def _r65627_condition():
     GlobalGT("Morte_Stolen","GLOBAL",2)
 def _r65631_action():
-    update_journal('65637')    # '65637': ' ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ '
+    gsm.update_journal('65637')    # '65637': ' ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ '
 def _r65639_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r65640_condition():
-    return current_global_settings()['meet_pharod'] Global("Pharod_Quest","GLOBAL",1)
+    return gsm.get_meet_pharod() Global("Pharod_Quest","GLOBAL",1)
 def _r65641_condition():
     GlobalGT("Pharod_Quest","GLOBAL",1) !Global("AR0401_Visited","GLOBAL",1)
 def _r65642_condition():
@@ -1161,13 +1161,13 @@ def _r65647_condition():
 def _r65666_condition():
     Global("AR0601_Visited","GLOBAL",0)
 def _r65666_action():
-    update_journal('65669')    # '65669': ' ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ '
+    gsm.update_journal('65669')    # '65669': ' ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ '
 def _r65674_condition():
     Global("Know_Ravel_Key","GLOBAL",1)
 def _r65674_action():
-    update_journal('65678')    # '65678': ' ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ '
+    gsm.update_journal('65678')    # '65678': ' ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ '
 def _r65693_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r65700_condition():
     Global("Grace_Silver_Mimir","GLOBAL",1)
 def _r65708_condition():
@@ -1175,9 +1175,9 @@ def _r65708_condition():
 def _r65709_condition():
     Global("Morte_Tattoo_XP","GLOBAL",1)
 def _r65710_action():
-    update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
+    gsm.update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
 def _r65711_action():
-    update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
+    gsm.update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
 def _r65718_condition():
     Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",0)
 def _r65719_condition():
@@ -1203,13 +1203,13 @@ def _r65748_condition():
 def _r65750_condition():
     Global("Chaotic_Morte_1","GLOBAL",0)
 def _r65750_action():
-    DO ~change_law_once(1, 'lawful_morte_1') ~
+    DO ~gsm.inc_once_law('lawful_morte_1') ~
 def _r65751_condition():
     Global("Lawful_Morte_1","GLOBAL",0)
 def _r65751_action():
-    DO ~change_law_once(-1, 'chaotic_morte_1') change_good_once(-1, 'evil_morte_1') ~
+    DO ~gsm.dec_once_law('chaotic_morte_1') gsm.dec_once_good('evil_morte_1') ~
 def _r65753_action():
-    update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+    gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 def _r65754_condition():
     GlobalGT("Know_Morte_Pillar","GLOBAL",0)
 def _r65755_condition():
@@ -1271,7 +1271,7 @@ def _r65802_condition():
 def _r65803_condition():
     GlobalGT("Know_Morte_Pillar","GLOBAL",0)
 def _r65821_action():
-    DO ~AddexperienceParty(12000) MoraleInc("Morte",3) PermanentStatChange("Morte",STR,RAISE,4) PermanentStatChange("Morte",DEX,RAISE,2) PermanentStatChange("Morte",CON,RAISE,2) SetGlobal("BD_MorteStory","GLOBAL",1) ~ update_journal('65825')    # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
+    DO ~AddexperienceParty(12000) MoraleInc("Morte",3) PermanentStatChange("Morte",STR,RAISE,4) PermanentStatChange("Morte",DEX,RAISE,2) PermanentStatChange("Morte",CON,RAISE,2) SetGlobal("BD_MorteStory","GLOBAL",1) ~ gsm.update_journal('65825')    # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
 def _r66347_condition():
     Global("Morte_Talent","GLOBAL",0)
 def _r66348_condition():

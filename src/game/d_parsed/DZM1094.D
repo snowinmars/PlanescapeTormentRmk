@@ -1,27 +1,27 @@
 def _r6565_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r6565_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r6566_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r6567_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r6568_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r6568_action():
     DO ~set_asonje_state(1) ~
 def _r9247_action():
-    DO ~change_good_once(-1, 'evil_asonje_1') set_asonje_state(3) ~
+    DO ~gsm.dec_once_good('evil_asonje_1') set_asonje_state(3) ~
 def _r9256_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r9276_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r9282_condition():
-    return current_global_settings()['asonje_state'] != 2
+    return gsm.get_asonje_state() != 2
 def _r9286_condition():
-    return current_global_settings()['asonje_state'] == 2
+    return gsm.get_asonje_state() == 2
 def _r9319_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r9289_action():
     DO ~set_asonje_state(2) ~
 def _r9290_action():
@@ -31,11 +31,11 @@ def _r9291_action():
 def _r9304_action():
     DO ~IncrementGlobal("Adahn","GLOBAL",1) ~
 def _r9306_condition():
-    return current_global_settings()['asonje_state'] != 2
+    return gsm.get_asonje_state() != 2
 def _r9307_condition():
-    return current_global_settings()['asonje_state'] == 2
+    return gsm.get_asonje_state() == 2
 def _r9312_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 
 EXIT = -1
 

@@ -1,21 +1,21 @@
 def _r34943_action():
-    DO ~change_law_once(-1, 'zombie_chaotic') ~
+    DO ~gsm.dec_once_law('zombie_chaotic') ~
 def _r34946_condition():
-    return not current_morgue_settings()['know_copper_earring_secret']
+    return not gsm.get_know_copper_earring_secret()
 def _r34946_action():
     DO ~know_copper_earring_secret() ~
 def _r34947_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r34948_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r64279_condition():
-    return not current_morgue_settings()['has_copper_earring']
+    return not gsm.get_has_copper_earring()
 def _r64279_action():
-    update_journal('64536')    # '64536': ' ~На лбу зомби #79 я обнаружил странный зубчатый круг. По каким-то причинам этот знак кажется мне важным, однако я не знаю, почему.~ '
+    gsm.update_journal('64536')    # '64536': ' ~На лбу зомби #79 я обнаружил странный зубчатый круг. По каким-то причинам этот знак кажется мне важным, однако я не знаю, почему.~ '
 def _r64280_condition():
-    return current_morgue_settings()['has_copper_earring']
+    return gsm.get_has_copper_earring()
 def _r64280_action():
-    update_journal('64537')    # '64537': ' ~На лбу зомби #79 я обнаружил странный зубчатый круг. Символ по виду напоминает старую медную сережку, которую я нашел в юго-восточной препараторской — возможно, они как-то связаны между собой.~ '
+    gsm.update_journal('64537')    # '64537': ' ~На лбу зомби #79 я обнаружил странный зубчатый круг. Символ по виду напоминает старую медную сережку, которую я нашел в юго-восточной препараторской — возможно, они как-то связаны между собой.~ '
 
 EXIT = -1
 

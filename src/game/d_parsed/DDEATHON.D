@@ -1,61 +1,61 @@
 def _r7295_action():
-    meet_death_of_names() update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
+    gsm.set_meet_death_of_names(True) gsm.update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
 def _r7297_condition():
-    return current_global_settings()['know_xachariah_name']
+    return gsm.get_know_xachariah_name()
 def _r7298_condition():
-    return current_global_settings()['meet_deionarra']
+    return gsm.get_meet_deionarra()
 def _r7299_condition():
-    return current_global_settings()['meet_dhall'] return not current_global_settings()['dead_dhall']
+    return gsm.get_meet_dhall() return not gsm.get_dead_dhall()
 def _r7300_condition():
-    return current_global_settings()['meet_dhall'] return current_global_settings()['dead_dhall'] return current_global_settings()['pass_death_of_names_dhall']
+    return gsm.get_meet_dhall() return gsm.get_dead_dhall() return gsm.get_pass_death_of_names_dhall()
 def _r7303_condition():
-    return current_global_settings()['pass_death_of_names_quentin']
+    return gsm.get_pass_death_of_names_quentin()
 def _r7304_action():
-    DO ~pass_death_of_names_adahn()
-    change_adahn_once('Adahn_Death_of_Names_1') ~
+    DO ~gsm.set_death_of_names_adahn(True)
+    gsm.inc_once_adahn('Adahn_Death_of_Names_1') ~
 def _r7310_condition():
-    PartyGoldGT(2) return current_global_settings()['know_xachariah_name']
+    PartyGoldGT(2) return gsm.get_know_xachariah_name()
 def _r7311_condition():
-    return current_global_settings()['meet_deionarra']
+    return gsm.get_meet_deionarra()
 def _r7312_condition():
-    PartyGoldGT(2) return current_global_settings()['meet_dhall'] return current_global_settings()['dead_dhall'] return not current_global_settings()['pass_death_of_names_dhall']
+    PartyGoldGT(2) return gsm.get_meet_dhall() return gsm.get_dead_dhall() return not gsm.get_pass_death_of_names_dhall()
 def _r7312_action():
-    DO ~TakePartyGold(3) Setreturn current_global_settings()['pass_death_of_names_dhall'] ~
+    DO ~TakePartyGold(3) Setreturn gsm.get_pass_death_of_names_dhall() ~
 def _r7313_condition():
-    PartyGoldGT(2) return current_global_settings()['meet_dhall'] return not current_global_settings()['dead_dhall']
+    PartyGoldGT(2) return gsm.get_meet_dhall() return not gsm.get_dead_dhall()
 def _r7317_condition():
-    PartyGoldGT(2) return current_global_settings()['quentin'] return current_global_settings()['dead_quentin'] return not current_global_settings()['death_of_names_quentin']
+    PartyGoldGT(2) return gsm.get_quentin() return gsm.get_dead_quentin() return not gsm.get_death_of_names_quentin()
 def _r7317_action():
-    DO ~TakePartyGold(3) Setreturn current_global_settings()['pass_death_of_names_quentin'] ~
+    DO ~TakePartyGold(3) Setreturn gsm.get_pass_death_of_names_quentin() ~
 def _r9768_condition():
-    PartyGoldGT(2) return current_global_settings()['quentin'] !return current_global_settings()['dead_quentin']
+    PartyGoldGT(2) return gsm.get_quentin() !return gsm.get_dead_quentin()
 def _r9769_condition():
     PartyGoldGT(2) Global("Crier_Quest","GLOBAL",1)
 def _r9769_action():
-    DO ~TakePartyGold(3) AddexperienceParty(500) SetGlobal("Crier_Quest","GLOBAL",2) ~ update_journal('26108')    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
+    DO ~TakePartyGold(3) AddexperienceParty(500) SetGlobal("Crier_Quest","GLOBAL",2) ~ gsm.update_journal('26108')    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
 def _r9770_condition():
     PartyGoldLT(3)
 def _r26086_condition():
     PartyGoldGT(2)
 def _r7362_condition():
-    return current_global_settings()['know_xachariah_name']
+    return gsm.get_know_xachariah_name()
 def _r7363_condition():
-    return current_global_settings()['meet_deionarra']
+    return gsm.get_meet_deionarra()
 def _r7364_condition():
-    return current_global_settings()['meet_dhall'] return not current_global_settings()['dead_dhall']
+    return gsm.get_meet_dhall() return not gsm.get_dead_dhall()
 def _r7365_condition():
-    return current_global_settings()['meet_dhall'] return current_global_settings()['dead_dhall'] return current_global_settings()['pass_death_of_names_dhall']
+    return gsm.get_meet_dhall() return gsm.get_dead_dhall() return gsm.get_pass_death_of_names_dhall()
 def _r7366_condition():
     Global("Know_Xixi","GLOBAL",1) GlobalLT("Xixi_Back","GLOBAL",2)
 def _r7367_condition():
     Global("Know_Xixi","GLOBAL",1) Global("Xixi_Back","GLOBAL",3)
 def _r7368_condition():
-    return current_global_settings()['pass_death_of_names_quentin']
+    return gsm.get_pass_death_of_names_quentin()
 def _r9771_condition():
     Global("Crier_Quest","GLOBAL",2)
 def _r9772_action():
-    DO ~pass_death_of_names_adahn()
-    change_adahn_once('Adahn_Death_of_Names_1') ~
+    DO ~gsm.set_death_of_names_adahn(True)
+    gsm.inc_once_adahn('Adahn_Death_of_Names_1') ~
 
 EXIT = -1
 

@@ -1,31 +1,31 @@
 def _r45420_condition():
     Global("506_Thread","GLOBAL",0)
 def _r45421_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r45422_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r45480_condition():
-    return current_morgue_settings()['has_scalpel']
+    return gsm.get_has_scalpel()
 def _r45480_action():
     DO ~SetGlobal("506_Thread","GLOBAL",1) GiveItemCreate("Needle",Protagonist,1,0,0) AddexperienceParty(100) ~
 def _r45481_condition():
-    return not current_morgue_settings()['has_scalpel']
+    return not gsm.get_has_scalpel()
 def _r45484_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r45484_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r45496_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r45502_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r45502_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r45508_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r45510_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r45512_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 
 EXIT = -1
 

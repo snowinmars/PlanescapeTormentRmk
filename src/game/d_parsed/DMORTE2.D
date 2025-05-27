@@ -9,59 +9,59 @@ def _r41148_action():
 def _r41163_condition():
     return _check_char_prop_gt('protagonist',12,'int')
 def _r41177_action():
-    update_journal('39516')    # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
+    gsm.update_journal('39516')    # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
 def _r41181_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41182_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41184_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41185_condition():
     PartyHasItem("Bandage")
 def _r41186_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41187_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41191_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41192_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41196_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41197_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41201_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41203_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41206_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41207_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41210_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41211_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41214_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41215_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41219_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41220_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41223_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41224_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41227_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41228_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41231_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41232_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
+    return gsm.get_morte_mortuary_walkthrough_1()
 def _r41239_condition():
     return _check_char_prop_gt('protagonist',12,'int')
 def _r41251_action():

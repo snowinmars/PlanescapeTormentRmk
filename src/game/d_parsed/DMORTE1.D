@@ -1,7 +1,7 @@
 def _r39793_action():
-    DO ~set_in_party_morte() ~
+    DO ~gsm.set_in_party_morte(True) ~
 def _r39824_action():
-    DO ~change_good_once(1, 'good_morte_1') ~
+    DO ~gsm.inc_once_good('good_morte_1') ~
 def _r39831_action():
     DO ~ShowFirstTimeHelp() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
 def _r39852_action():

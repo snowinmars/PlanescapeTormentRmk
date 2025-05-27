@@ -1,17 +1,17 @@
 def _r6499_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r6499_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r6500_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r6501_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r6502_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r6502_action():
-    DO ~meet_oinosian() ~
+    DO ~gsm.set_meet_oinosian(True) ~
 def _r9664_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 
 EXIT = -1
 

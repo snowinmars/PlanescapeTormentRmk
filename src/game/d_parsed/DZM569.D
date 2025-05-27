@@ -1,19 +1,19 @@
 def _r24576_condition():
-    return not current_morgue_settings()['mortuary_walkthrough'] !PartyHasItem("KeyPr") return current_global_settings()['in_party_morte']
+    return not gsm.get_mortuary_walkthrough() !PartyHasItem("KeyPr") return gsm.get_in_party_morte()
 def _r24579_condition():
-    return not current_morgue_settings()['mortuary_walkthrough'] !PartyHasItem("KeyPr") return not current_global_settings()['in_party_morte']
+    return not gsm.get_mortuary_walkthrough() !PartyHasItem("KeyPr") return not gsm.get_in_party_morte()
 def _r24580_condition():
-    return not current_morgue_settings()['mortuary_walkthrough']
+    return not gsm.get_mortuary_walkthrough()
 def _r24581_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r24584_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 def _r24585_condition():
-    return not current_morgue_settings()['mortuary_walkthrough'] !PartyHasItem("KeyPr")
+    return not gsm.get_mortuary_walkthrough() !PartyHasItem("KeyPr")
 def _r42294_condition():
-    return current_global_settings()['in_party_morte']
+    return gsm.get_in_party_morte()
 def _r42295_condition():
-    return not current_global_settings()['in_party_morte']
+    return not gsm.get_in_party_morte()
 
 EXIT = -1
 

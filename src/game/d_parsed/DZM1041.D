@@ -1,43 +1,43 @@
 def _r6576_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r6576_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r6577_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r6578_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r6579_condition():
-    return current_global_settings()['can_speak_with_dead'] Global("Bei","GLOBAL",0)
+    return gsm.get_can_speak_with_dead() return not gsm.get_meet_bei()
 def _r6580_condition():
-    return current_global_settings()['can_speak_with_dead'] Global("Bei","GLOBAL",1)
+    return gsm.get_can_speak_with_dead() return gsm.get_meet_bei()
 def _r6583_action():
-    DO ~meet_bei() ~
+    DO ~gsm.set_meet_bei(True) ~
 def _r9096_action():
-    DO ~meet_bei() ~
+    DO ~gsm.set_meet_bei(True) ~
 def _r9097_action():
-    DO ~meet_bei() ~
+    DO ~gsm.set_meet_bei(True) ~
 def _r9109_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r9145_condition():
-    return not current_global_settings()['meet_pharod']
+    return not gsm.get_meet_pharod()
 def _r9161_action():
-    DO ~change_good_once(1, 'good_bei_1') ~
+    DO ~gsm.inc_once_good('good_bei_1') ~
 def _r9162_action():
-    DO ~change_good_once(-1, 'evil_bei_1') ~
+    DO ~gsm.dec_once_good('evil_bei_1') ~
 def _r9187_condition():
     return _check_char_prop_gt('protagonist',13,'int')
 def _r9200_action():
-    DO ~change_good_once(1, 'good_bei_2') ~
+    DO ~gsm.inc_once_good('good_bei_2') ~
 def _r9201_action():
-    DO ~change_law_once(-1, 'chaotic_bei_1') ~
+    DO ~gsm.dec_once_law('chaotic_bei_1') ~
 def _r9207_action():
-    DO ~change_good_once(1, 'good_bei_3') meet_xixi() ~
+    DO ~gsm.inc_once_good('good_bei_3') gsm.get_meet_xixi() ~
 def _r9208_action():
-    DO ~change_good_once(-1, 'evil_bei_2') change_law_once(-1, 'chaotic_bei_2') meet_xixi() ~
+    DO ~gsm.dec_once_good('evil_bei_2') gsm.dec_once_law('chaotic_bei_2') gsm.get_meet_xixi() ~
 def _r9209_action():
-    DO ~meet_xixi() ~
+    DO ~gsm.get_meet_xixi() ~
 def _r9210_action():
-    DO ~meet_xixi() ~
+    DO ~gsm.get_meet_xixi() ~
 
 EXIT = -1
 

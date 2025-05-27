@@ -1,7 +1,7 @@
 def _r24709_condition():
-    return current_global_settings()['in_party_morte']
+    return gsm.get_in_party_morte()
 def _r24712_condition():
-    return not current_global_settings()['in_party_morte']
+    return not gsm.get_in_party_morte()
 def _r24716_action():
     DO ~ForceAttack(Protagonist,"ZM782") ~
 
