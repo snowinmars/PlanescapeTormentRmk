@@ -1,17 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    unblock_journal,
-    update_journal,
-    travel,
-)
-from settings.settings_morgue import (
-    current_morgue_settings,
-    pick_up_intro_key,
-    set_morte_mortuary_walkthrough,
-    saw_dhall
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -19,11 +7,11 @@ from engine.transforms import (
     center_right_down
 )
 
-global global_settings_manager
+
 
 ###
-def _init():
-    travel('morgue2')
+def _init(gsm):
+    gsm.set_location('morgue2')
     _show('morte_img default', center_left_down)
     pick_up_intro_key(False)
 def _dispose():
@@ -38,81 +26,76 @@ def _check_char_prop_gt(who, gtValue, prop):
 def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
-def _join_morte():
-    global_settings_manager.set_in_party_morte(True)
-    _dispose()
-def _saw_dhall():
-    saw_dhall()
 ###
-def _r41145_action():
-    set_morte_mortuary_walkthrough(1)
-def _r41146_action():
-    set_morte_mortuary_walkthrough(1)
-def _r41147_action():
-    set_morte_mortuary_walkthrough(1)
-def _r41148_action():
-    set_morte_mortuary_walkthrough(1)
-def _r41163_condition():
+def _r41145_action(gsm):
+    gsm.set_morte_mortuary_walkthrough(1)
+def _r41146_action(gsm):
+    gsm.set_morte_mortuary_walkthrough(1)
+def _r41147_action(gsm):
+    gsm.set_morte_mortuary_walkthrough(1)
+def _r41148_action(gsm):
+    gsm.set_morte_mortuary_walkthrough(1)
+def _r41163_condition(gsm):
     return _check_char_prop_gt('protagonist',12,'int')
-def _r41177_action():
-    unblock_journal()
-    update_journal('39516')
-def _r41181_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41182_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41184_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41186_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41187_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41191_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41192_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41196_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41197_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41201_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41203_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41206_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41207_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41210_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41211_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41214_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41215_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41219_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41220_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41223_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41224_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41227_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41228_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41231_condition():
-    return not current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41232_condition():
-    return current_morgue_settings()['morte_mortuary_walkthrough_1']
-def _r41239_condition():
+def _r41177_action(gsm):
+    gsm.set_unblock_journal(True)
+    gsm.update_journal('39516')
+def _r41181_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41182_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41184_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41186_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41187_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41191_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41192_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41196_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41197_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41201_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41203_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41206_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41207_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41210_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41211_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41214_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41215_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41219_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41220_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41223_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41224_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41227_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41228_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41231_condition(gsm):
+    return not gsm.get_morte_mortuary_walkthrough_1()
+def _r41232_condition(gsm):
+    return gsm.get_morte_mortuary_walkthrough_1()
+def _r41239_condition(gsm):
     return _check_char_prop_gt('protagonist',12,'int')
-def _r41263_action():
-    set_morte_mortuary_walkthrough(2)
-def _reply41263_action():
-    set_morte_mortuary_walkthrough(2)
+def _r41263_action(gsm):
+    gsm.set_morte_mortuary_walkthrough(2)
+def _reply41263_action(gsm):
+    gsm.set_morte_mortuary_walkthrough(2)
 ###
 
 # DLG/DMORTE2.DLG
@@ -122,18 +105,19 @@ def dlg_dmorte_two(manager):
     morte         = renpy.store.characters['morte']
     scares        = renpy.store.characters['scares']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     DialogStateBuilder() \
     .state('DMORTE2.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Двери открываются с лёгким шорохом.", '-', '-').with_action(lambda: _init()) \
+            .line(teller, "Двери открываются с лёгким шорохом.", '-', '-').with_action(lambda: _init(gsm)) \
             .line(morte, "Тсссс… Небольшой совет, шеф: с этого момента я бы вел себя потише. Не нужно больше вписывать трупы в книгу мертвых без необходимости…", 's0', 'say41144') \
             .line(morte, "…особенно женские. К тому же, их убийство может заинтересовать здешних смотрителей.", 's0', 'say41144') \
         .with_responses() \
-            .response("Кажется, ты еще не говорил об этом… *кто* такие эти смотрители?", 'DMORTE2.D_s1', 'r1', 'reply41145').with_action(lambda: _r41145_action()) \
-            .response("Эти трупы… откуда они все берутся?", 'DMORTE2.D_s3', 'r2', 'reply41146').with_action(lambda: _r41146_action()) \
-            .response("Почему тебя так заботят женские тела?", 'DMORTE2.D_s4', 'r3', 'reply41147').with_action(lambda: _r41147_action()) \
-            .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r4', 'reply41148').with_action(lambda: _r41148_action()) \
+            .response("Кажется, ты еще не говорил об этом… *кто* такие эти смотрители?", 'DMORTE2.D_s1', 'r1', 'reply41145').with_action(lambda: _r41145_action(gsm)) \
+            .response("Эти трупы… откуда они все берутся?", 'DMORTE2.D_s3', 'r2', 'reply41146').with_action(lambda: _r41146_action(gsm)) \
+            .response("Почему тебя так заботят женские тела?", 'DMORTE2.D_s4', 'r3', 'reply41147').with_action(lambda: _r41147_action(gsm)) \
+            .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r4', 'reply41148').with_action(lambda: _r41148_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -181,7 +165,7 @@ def dlg_dmorte_two(manager):
             .line(morte, "Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?", 's5', 'say41161') \
         .with_responses() \
             .response("Нет… не очень, если честно.", 'DMORTE2.D_s6', 'r12', 'reply41162') \
-            .response("Ты это *несерьезно*.", 'DMORTE2.D_s6', 'r13', 'reply41163').with_condition(lambda: _r41163_condition()) \
+            .response("Ты это *несерьезно*.", 'DMORTE2.D_s6', 'r13', 'reply41163').with_condition(lambda: _r41163_condition(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -238,7 +222,7 @@ def dlg_dmorte_two(manager):
             .line(morte, "Записывай в него каждый свой шаг. Если начнешь забывать важные вещи… например, кто ты… или, что еще важнее, кто *я*…", 's11', 'say41176') \
             .line(morte, "…то воспользуйся им, чтобы освежить свою память.", 's11', 'say41176') \
         .with_responses() \
-            .response("Ладно… Уяснил. Идем.", 'DMORTE2.D_s31', 'r21', 'reply41177').with_action(lambda: _r41177_action()) \
+            .response("Ладно… Уяснил. Идем.", 'DMORTE2.D_s31', 'r21', 'reply41177').with_action(lambda: _r41177_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -247,7 +231,7 @@ def dlg_dmorte_two(manager):
             .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас.", '-', '-') \
             .line(morte, "Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.", 's31', 'say41262') \
         .with_responses() \
-            .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _reply41263_action()) \
+            .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _reply41263_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -257,12 +241,12 @@ def dlg_dmorte_two(manager):
         .with_responses() \
             .response("Можешь еще раз прочитать, что у меня вытатуировано на спине?", 'DMORTE2.D_s13', 'r22', 'reply41179') \
             .response("Еще раз, что это за место?", 'DMORTE2.D_s18', 'r23', 'reply41180') \
-            .response("Это место такое огромное… Кто за ним присматривает?", 'DMORTE2.D_s19', 'r24', 'reply41181').with_condition(lambda: _r41181_condition()) \
-            .response("Еще раз, кто эти смотрители?", 'DMORTE2.D_s19', 'r25', 'reply41182').with_condition(lambda: _r41182_condition()) \
+            .response("Это место такое огромное… Кто за ним присматривает?", 'DMORTE2.D_s19', 'r24', 'reply41181').with_condition(lambda: _r41181_condition(gsm)) \
+            .response("Еще раз, кто эти смотрители?", 'DMORTE2.D_s19', 'r25', 'reply41182').with_condition(lambda: _r41182_condition(gsm)) \
             .response("Эти трупы… откуда они все берутся?", 'DMORTE2.D_s22', 'r26', 'reply41183') \
-            .response("До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?", 'DMORTE2.D_s23', 'r27', 'reply41184').with_condition(lambda: _r41184_condition()) \
-            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", 'DMORTE2.D_s8', 'r29', 'reply41186').with_condition(lambda: _r41186_condition()) \
-            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r30', 'reply41187').with_condition(lambda: _r41187_condition()).with_action(lambda: _dispose()) \
+            .response("До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?", 'DMORTE2.D_s23', 'r27', 'reply41184').with_condition(lambda: _r41184_condition(gsm)) \
+            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", 'DMORTE2.D_s8', 'r29', 'reply41186').with_condition(lambda: _r41186_condition(gsm)) \
+            .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r30', 'reply41187').with_condition(lambda: _r41187_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -272,8 +256,8 @@ def dlg_dmorte_two(manager):
         .with_responses() \
             .response("Мне просто нужно освежить свою память, вот и все.", 'DMORTE2.D_s14', 'r31', 'reply41189') \
             .response("Ладно, неважно. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r32', 'reply41190') \
-            .response("Ладно, забудь. Идем.", 'DMORTE2.D_s8', 'r33', 'reply41191').with_condition(lambda: _r41191_condition()) \
-            .response("Ладно, забудь. Идем.", EXIT, 'r34', 'reply41192').with_condition(lambda: _r41192_condition()).with_action(lambda: _dispose()) \
+            .response("Ладно, забудь. Идем.", 'DMORTE2.D_s8', 'r33', 'reply41191').with_condition(lambda: _r41191_condition(gsm)) \
+            .response("Ладно, забудь. Идем.", EXIT, 'r34', 'reply41192').with_condition(lambda: _r41192_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -288,8 +272,8 @@ def dlg_dmorte_two(manager):
         .with_responses() \
             .response("Фарод… хм-м. Продолжай.", 'DMORTE2.D_s15', 'r35', 'reply41194') \
             .response("Неважно. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r36', 'reply41195') \
-            .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_s8', 'r37', 'reply41196').with_condition(lambda: _r41196_condition()) \
-            .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r38', 'reply41197').with_condition(lambda: _r41197_condition()).with_action(lambda: _dispose()) \
+            .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_s8', 'r37', 'reply41196').with_condition(lambda: _r41196_condition(gsm)) \
+            .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r38', 'reply41197').with_condition(lambda: _r41197_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -304,8 +288,8 @@ def dlg_dmorte_two(manager):
         .with_responses() \
             .response("Когда я очнулся, рядом со мной не было дневника?", 'DMORTE2.D_s16', 'r39', 'reply41199') \
             .response("Неважно. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r40', 'reply41200') \
-            .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_s8', 'r41', 'reply41201').with_condition(lambda: _r41201_condition()) \
-            .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r42', 'reply41203').with_condition(lambda: _r41203_condition()).with_action(lambda: _dispose()) \
+            .response("Забудь. Я уже достаточно наслушался. Идем.", 'DMORTE2.D_s8', 'r41', 'reply41201').with_condition(lambda: _r41201_condition(gsm)) \
+            .response("Забудь. Я уже достаточно наслушался. Идем.", EXIT, 'r42', 'reply41203').with_condition(lambda: _r41203_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -315,8 +299,8 @@ def dlg_dmorte_two(manager):
         .with_responses() \
             .response("Ты уверен, что не знаешь никого по имени Фарод?", 'DMORTE2.D_s17', 'r43', 'reply41204') \
             .response("И то правда. У меня есть другие вопросы…", 'DMORTE2.D_s12', 'r44', 'reply41205') \
-            .response("Ладно. Идем.", 'DMORTE2.D_s8', 'r45', 'reply41206').with_condition(lambda: _r41206_condition()) \
-            .response("Ладно. Идем.", EXIT, 'r46', 'reply41207').with_condition(lambda: _r41207_condition()).with_action(lambda: _dispose()) \
+            .response("Ладно. Идем.", 'DMORTE2.D_s8', 'r45', 'reply41206').with_condition(lambda: _r41206_condition(gsm)) \
+            .response("Ладно. Идем.", EXIT, 'r46', 'reply41207').with_condition(lambda: _r41207_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -325,8 +309,8 @@ def dlg_dmorte_two(manager):
             .line(morte, "Неа. В общем, какой-нибудь пень да знает, как добраться до него. Надо поспрашивать в округе… ПОСЛЕ того, как мы выберемся отсюда.", 's17', 'say41208') \
         .with_responses() \
             .response("Перед тем как мы пойдем, у меня есть еще вопросы…", 'DMORTE2.D_s12', 'r47', 'reply41209') \
-            .response("Ладно. Идем.", 'DMORTE2.D_s8', 'r48', 'reply41210').with_condition(lambda: _r41210_condition()) \
-            .response("Ладно. Идем.", EXIT, 'r49', 'reply41211').with_condition(lambda: _r41211_condition()).with_action(lambda: _dispose()) \
+            .response("Ладно. Идем.", 'DMORTE2.D_s8', 'r48', 'reply41210').with_condition(lambda: _r41210_condition(gsm)) \
+            .response("Ладно. Идем.", EXIT, 'r49', 'reply41211').with_condition(lambda: _r41211_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -335,8 +319,8 @@ def dlg_dmorte_two(manager):
             .line(morte, "Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи.", 's18', 'say41212') \
         .with_responses() \
             .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r50', 'reply41213') \
-            .response("Это все, что я хотел узнать. Спасибо.", 'DMORTE2.D_s8', 'r51', 'reply41214').with_condition(lambda: _r41214_condition()) \
-            .response("Это все, что я хотел узнать. Спасибо.", EXIT, 'r52', 'reply41215').with_condition(lambda: _r41215_condition()).with_action(lambda: _dispose()) \
+            .response("Это все, что я хотел узнать. Спасибо.", 'DMORTE2.D_s8', 'r51', 'reply41214').with_condition(lambda: _r41214_condition(gsm)) \
+            .response("Это все, что я хотел узнать. Спасибо.", EXIT, 'r52', 'reply41215').with_condition(lambda: _r41215_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -347,8 +331,8 @@ def dlg_dmorte_two(manager):
         .with_responses() \
             .response("Я запутался… какое тленным дело, если я сбегу?", 'DMORTE2.D_s20', 'r53', 'reply41217') \
             .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r54', 'reply41218') \
-            .response("Понятно. Тогда я буду осторожен.", 'DMORTE2.D_s8', 'r55', 'reply41219').with_condition(lambda: _r41219_condition()) \
-            .response("Понятно. Тогда я буду осторожен.", EXIT, 'r56', 'reply41220').with_condition(lambda: _r41220_condition()).with_action(lambda: _dispose()) \
+            .response("Понятно. Тогда я буду осторожен.", 'DMORTE2.D_s8', 'r55', 'reply41219').with_condition(lambda: _r41219_condition(gsm)) \
+            .response("Понятно. Тогда я буду осторожен.", EXIT, 'r56', 'reply41220').with_condition(lambda: _r41220_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -358,8 +342,8 @@ def dlg_dmorte_two(manager):
             .line(morte, "Думаешь, что трупы, которых ты видел, счастливее в книге мертвых, чем вне ее?", 's20', 'say41221') \
         .with_responses() \
             .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r57', 'reply41222') \
-            .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r58', 'reply41223').with_condition(lambda: _r41223_condition()) \
-            .response("Ладно… Я… попробую это запомнить.", EXIT, 'r59', 'reply41224').with_condition(lambda: _r41224_condition()).with_action(lambda: _dispose()) \
+            .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r58', 'reply41223').with_condition(lambda: _r41223_condition(gsm)) \
+            .response("Ладно… Я… попробую это запомнить.", EXIT, 'r59', 'reply41224').with_condition(lambda: _r41224_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -368,8 +352,8 @@ def dlg_dmorte_two(manager):
             .line(morte, "Смерть посещает планы каждый день, шеф. Эти увальни — все, что осталось от тех бедолаг, кто продал свои тела смотрителям.", 's22', 'say41229') \
         .with_responses() \
             .response("Ясно. У меня есть другие вопросы к тебе…", 'DMORTE2.D_s12', 'r63', 'reply41230') \
-            .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r64', 'reply41231').with_condition(lambda: _r41231_condition()) \
-            .response("Ладно… Я… попробую это запомнить.", EXIT, 'r65', 'reply41232').with_condition(lambda: _r41232_condition()).with_action(lambda: _dispose()) \
+            .response("Ладно… Я… попробую это запомнить.", 'DMORTE2.D_s8', 'r64', 'reply41231').with_condition(lambda: _r41231_condition(gsm)) \
+            .response("Ладно… Я… попробую это запомнить.", EXIT, 'r65', 'reply41232').with_condition(lambda: _r41232_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -389,7 +373,7 @@ def dlg_dmorte_two(manager):
             .line(morte, "Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?", 's24', 'say41237') \
         .with_responses() \
             .response("Нет… не очень, если честно.", 'DMORTE2.D_s25', 'r69', 'reply41238') \
-            .response("Ты это *несерьезно*.", 'DMORTE2.D_s25', 'r70', 'reply41239').with_condition(lambda: _r41239_condition()) \
+            .response("Ты это *несерьезно*.", 'DMORTE2.D_s25', 'r70', 'reply41239').with_condition(lambda: _r41239_condition(gsm)) \
             .response("Неважно. У меня к тебе еще вопросы…", 'DMORTE2.D_s12', 'r71', 'reply41240') \
             .response("Я достаточно наслушался. Идем.", EXIT, 'r72', 'reply41241').with_action(lambda: _dispose()) \
         .push(manager)

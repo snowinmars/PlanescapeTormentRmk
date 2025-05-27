@@ -119,18 +119,18 @@ init 3 python:
     from labels.all_labels import (build_all_labels)
     from engine.dialog import (DialogManager)
     from engine.menu import (MenuManager)
+    from engine.settings import (SettingsManager)
     from labels.morgue_menu import (build_morgue_menu)
     from dlg.dlg_all import (dlg_all)
-    from settings.settings_def import (build_settings)
+    from setting.settings_def import (build_settings)
 
-    global global_label_registry
-    global global_menu_manager
-    global global_dialog_manager
-    global global_settings_manager
-    global_label_registry = {}
-    global_menu_manager = MenuManager()
-    global_dialog_manager = DialogManager()
-    global_settings_manager = SettingsManager()
+    # Обычно тупорылые сыны собак пишут в node_modules
+    # but for some reason if the 'setting' fodler name is 'settings', it fails to import
+
+    renpy.store.global_label_registry = {}
+    renpy.store.global_settings_manager = SettingsManager()
+    renpy.store.global_menu_manager = MenuManager()
+    renpy.store.global_dialog_manager = DialogManager()
 
     devlog = logging.getLogger('log')
 
@@ -138,22 +138,22 @@ init 3 python:
     now = int(time.time())
     label_builder = LabelFlowBuilder()
     build_all_labels(label_builder)
-    label_builder.build(global_label_registry)
+    label_builder.build(renpy.store.global_label_registry)
     devlog.info('Done building label flow, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building settings manager...')
-    build_settings(global_settings_manager)
+    build_settings(renpy.store.global_settings_manager)
     devlog.info('Done building settings manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building morgue menu...')
-    build_morgue_menu(global_menu_manager)
+    build_morgue_menu(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
     devlog.info('Done building morgue menu, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building dialog manager...')
-    dlg_all(global_dialog_manager)
+    dlg_all(renpy.store.global_dialog_manager)
     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
 
 
