@@ -83,6 +83,8 @@ def _r9312_condition():
     return not current_global_settings()['meet_pharod']
 ###
 
+global global_settings_manager
+
 # DLG/DZM1094.DLG
 def dlg_dzm1094(manager):
     teller        = renpy.store.characters['teller']
@@ -91,7 +93,7 @@ def dlg_dzm1094(manager):
     asonje        = renpy.store.characters['asonje']
     EXIT          = -1
 
-    current_global_settings()['in_party_morte'] = True
+    global_settings_manager.set_in_party_morte(True)
     current_morgue_settings()['vaxis_exposed'] = True
     current_global_settings()['can_speak_with_dead'] = True
     current_morgue_settings()['has_copper_earring'] = True

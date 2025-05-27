@@ -2,7 +2,6 @@ import renpy
 from engine.dialog import (DialogStateBuilder)
 from settings.settings_global import (
     current_global_settings,
-    set_in_party_morte,
     change_good_once,
     kill_morte,
     meet_morte,
@@ -22,6 +21,8 @@ from engine.transforms import (
     center_right_down
 )
 
+global global_settings_manager
+
 ###
 def _init():
     travel('morgue1')
@@ -29,7 +30,7 @@ def _init():
     renpy.exports.scene()
     renpy.exports.show("bg mourge1")
     _show('morte_img default', center_left_down)
-    set_in_party_morte(True)
+    global_settings_manager.set_in_party_morte(True)
 def _dispose():
     _hide('morte_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -43,7 +44,7 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 def _join_morte():
-    set_in_party_morte(True)
+    global_settings_manager.set_in_party_morte(True)
     _dispose()
 def _kill_morte():
     kill_morte()

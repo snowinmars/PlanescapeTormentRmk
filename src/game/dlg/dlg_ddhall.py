@@ -20,6 +20,8 @@ from engine.transforms import (
     center_right_down
 )
 
+global global_settings_manager
+
 ###
 def _init():
     travel('ddhall')
@@ -64,12 +66,12 @@ def _r831_action():
     change_good_once(-3, 'evil_dhall_2')
     update_journal('39469')
 def _r839_condition():
-    return current_global_settings()['in_party_morte']
+    return global_settings_manager.get_in_party_morte()
 def _r835_condition():
-    return not current_global_settings()['in_party_morte'] \
+    return not global_settings_manager.get_in_party_morte() \
     and not current_morgue_settings()['alarmed']
 def _r5058_condition():
-    return not current_global_settings()['in_party_morte'] \
+    return not global_settings_manager.get_in_party_morte() \
     and current_morgue_settings()['alarmed']
 def _r842_condition():
     return current_global_settings()['meet_dhall']

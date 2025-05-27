@@ -4,7 +4,6 @@ from settings.settings_global import (
     current_global_settings,
     unblock_journal,
     update_journal,
-    set_in_party_morte,
     travel,
 )
 from settings.settings_morgue import (
@@ -19,6 +18,8 @@ from engine.transforms import (
     center_left_down,
     center_right_down
 )
+
+global global_settings_manager
 
 ###
 def _init():
@@ -38,7 +39,7 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 def _join_morte():
-    set_in_party_morte(True)
+    global_settings_manager.set_in_party_morte(True)
     _dispose()
 def _saw_dhall():
     saw_dhall()
