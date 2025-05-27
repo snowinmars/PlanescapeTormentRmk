@@ -1,3 +1,5 @@
+# Each settings_id will be transformed to a bunch of functions into the gsm
+#   see the builder flow for more
 def build_settings(manager):
     manager \
         .register('in_party_morte', False) \
