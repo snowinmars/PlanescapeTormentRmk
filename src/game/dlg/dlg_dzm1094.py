@@ -1,19 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    meet_asonje,
-    set_asonje_state,
-    change_law_once,
-    changed_law_once,
-    change_good_once,
-    changed_good_once,
-    change_adahn_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -22,8 +8,8 @@ from engine.transforms import (
 )
 
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm1094_img default', center_right_down)
 def _dispose():
@@ -38,40 +24,40 @@ def _check_char_prop_gt(who, gtValue, prop):
 def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
-def s5_action():
-    meet_asonje()
+def s5_action(gsm):
+    gsm.set_meet_asonje(True)
 ###
-def _r6565_condition():
-    return not changed_law_once('zombie_chaotic')
-def _r6565_action():
-    change_law_once(-1, 'zombie_chaotic')
-def _r6566_condition():
-    return changed_law_once('zombie_chaotic')
-def _r6567_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r6568_condition():
-    return current_global_settings()['can_speak_with_dead']
-def _r6568_action():
-    set_asonje_state(1)
-def _r9247_action():
-    change_good_once(-1, 'evil_asonje_1')
-    set_asonje_state(3)
-def _r9256_condition():
-    return not current_global_settings()['meet_pharod']
-def _r9276_condition():
-    return not current_global_settings()['meet_pharod']
-def _r9282_condition():
-    return current_global_settings()['asonje_state'] != 2
-def _r9286_condition():
-    return current_global_settings()['asonje_state'] == 2
-def _r9319_condition():
-    return not current_global_settings()['meet_pharod']
-def _r9289_action():
-    set_asonje_state(2)
-def _r9290_action():
-    set_asonje_state(2)
-def _r9291_action():
-    set_asonje_state(2)
+def _r6565_condition(gsm):
+    return not gsm.once_tracked('zombie_chaotic')
+def _r6565_action(gsm):
+    gsm.dec_once_law('zombie_chaotic')
+def _r6566_condition(gsm):
+    return gsm.once_tracked('zombie_chaotic')
+def _r6567_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r6568_condition(gsm):
+    return gsm.get_can_speak_with_dead()
+def _r6568_action(gsm):
+    gsm.set_asonje_state(1)
+def _r9247_action(gsm):
+    gsm.dec_once_good('evil_asonje_1')
+    gsm.set_asonje_state(3)
+def _r9256_condition(gsm):
+    return not gsm.get_meet_pharod()
+def _r9276_condition(gsm):
+    return not gsm.get_meet_pharod()
+def _r9282_condition(gsm):
+    return gsm.get_asonje_state() != 2
+def _r9286_condition(gsm):
+    return gsm.get_asonje_state() == 2
+def _r9319_condition(gsm):
+    return not gsm.get_meet_pharod()
+def _r9289_action(gsm):
+    gsm.set_asonje_state(2)
+def _r9290_action(gsm):
+    gsm.set_asonje_state(2)
+def _r9291_action(gsm):
+    gsm.set_asonje_state(2)
     _dispose()
 def _r9304_action():
     change_adahn_once('DZM1094.D_s23', 1)
@@ -83,8 +69,6 @@ def _r9312_condition():
     return not current_global_settings()['meet_pharod']
 ###
 
-global global_settings_manager
-
 # DLG/DZM1094.DLG
 def dlg_dzm1094(manager):
     teller        = renpy.store.characters['teller']
@@ -92,24 +76,25 @@ def dlg_dzm1094(manager):
     dzm1094       = renpy.store.characters['dzm1094']
     asonje        = renpy.store.characters['asonje']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
-    global_settings_manager.set_in_party_morte(True)
-    current_morgue_settings()['vaxis_exposed'] = True
-    current_global_settings()['can_speak_with_dead'] = True
-    current_morgue_settings()['has_copper_earring'] = True
-    current_morgue_settings()['has_scalpel'] = True
+    gsm.set_in_party_morte(True)
+    gsm.set_vaxis_exposed(True)
+    gsm.set_can_speak_with_dead(True)
+    gsm.set_has_copper_earring(True)
+    gsm.set_has_scalpel(True)
 
     # Starts: DZM1094.D_s0
     DialogStateBuilder() \
     .state('DZM1094.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.", 's0', 'say6562').with_action(lambda: _init()) \
+            .line(teller, "У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.", 's0', 'say6562').with_action(lambda: _init(gsm)) \
             .line(teller, "Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.", 's0', 'say6562') \
         .with_responses() \
-            .response("Итак… что тут у нас интересного?", 'DZM1094.D_s1', 'r0', 'reply6565').with_condition(lambda: _r6565_condition()).with_action(lambda: _r6565_action()) \
-            .response("Итак… что тут у нас интересного?", 'DZM1094.D_s1', 'r1', 'reply6566').with_condition(lambda: _r6566_condition()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM1094.D_s1', 'r2', 'reply6567').with_condition(lambda: _r6567_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM1094.D_s2', 'r3', 'reply6568').with_condition(lambda: _r6568_condition()).with_action(lambda: _r6568_action()) \
+            .response("Итак… что тут у нас интересного?", 'DZM1094.D_s1', 'r0', 'reply6565').with_condition(lambda: _r6565_condition(gsm)).with_action(lambda: _r6565_action(gsm)) \
+            .response("Итак… что тут у нас интересного?", 'DZM1094.D_s1', 'r1', 'reply6566').with_condition(lambda: _r6566_condition(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM1094.D_s1', 'r2', 'reply6567').with_condition(lambda: _r6567_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM1094.D_s2', 'r3', 'reply6568').with_condition(lambda: _r6568_condition(gsm)).with_action(lambda: _r6568_action(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6569').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply6570').with_action(lambda: _dispose()) \
         .push(manager)
@@ -119,7 +104,7 @@ def dlg_dzm1094(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6563') \
         .with_responses() \
-            .response("Использовать на трупе свою способность История костей.", 'DZM1094.D_s2', 'r3', 'reply6568').with_condition(lambda: _r6568_condition()).with_action(lambda: _r6568_action()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM1094.D_s2', 'r3', 'reply6568').with_condition(lambda: _r6568_condition(gsm)).with_action(lambda: _r6568_action(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6569').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6571').with_action(lambda: _dispose()) \
         .push(manager)
@@ -142,7 +127,7 @@ def dlg_dzm1094(manager):
             .line(dzm1094, "Где… где я? Какое странное место. Я тебя знаю?", 's3', 'say9224') \
             .line(teller, "Он осторожно кашляет, потирая окоченевшую глотку.", 's3', 'say9224') \
         .with_responses() \
-            .response("Ты здесь, чтобы отвечать на *мои* вопросы, дух.", 'DZM1094.D_s4', 'r9', 'reply9247').with_action(lambda: _r9247_action()) \
+            .response("Ты здесь, чтобы отвечать на *мои* вопросы, дух.", 'DZM1094.D_s4', 'r9', 'reply9247').with_action(lambda: _r9247_action(gsm)) \
             .response("Ты… по крайней мере твои останки… находятся в морге.", 'DZM1094.D_s13', 'r10', 'reply9248') \
             .response("Нет, сомневаюсь, что мы знакомы. У меня вопрос к тебе…", 'DZM1094.D_s14', 'r11', 'reply9249') \
             .response("Вряд ли. Прощай.", EXIT, 'r12', 'reply9250').with_action(lambda: _dispose()) \
@@ -160,14 +145,14 @@ def dlg_dzm1094(manager):
             .response("Как ты попал сюда? То есть, как стал зомби?", 'DZM1094.D_s7', '15', 'reply9253') \
             .response("Где ты… где находится твой дух… сейчас?", 'DZM1094.D_s8', 'r16', 'reply9254') \
             .response("Что ты знаешь об этом месте?", 'DZM1094.D_s9', 'r17', 'reply9255') \
-            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s10', 'r18', 'reply9256').with_condition(lambda: _r9256_condition()) \
+            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s10', 'r18', 'reply9256').with_condition(lambda: _r9256_condition(gsm)) \
             .response("Ничего, неважно.", EXIT, 'r19', 'reply9257').with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
     .state('DZM1094.D_s5', '# from 4.0 11.0') \
         .with_npc_lines() \
-            .line(asonje, "Меня зовут Асонж. Я могу уйти?", 's5', 'say9226').with_action(lambda: s5_action()) \
+            .line(asonje, "Меня зовут Асонж. Я могу уйти?", 's5', 'say9226').with_action(lambda: s5_action(gsm)) \
         .with_responses() \
             .response("Нет, у меня есть другие вопросы…", 'DZM1094.D_s11', 'r20', 'reply9258') \
             .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r21', 'reply9259').with_action(lambda: _dispose()) \
@@ -238,7 +223,7 @@ def dlg_dzm1094(manager):
             .response("Как ты попал сюда? То есть, как стал зомби?", 'DZM1094.D_s7', 'r35', 'reply9273') \
             .response("Где ты… где находится твой дух… сейчас?", 'DZM1094.D_s8', 'r36', 'reply9274') \
             .response("Что ты знаешь об этом месте?", 'DZM1094.D_s9', 'r37', 'reply9275') \
-            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s10', 'r38', 'reply9276').with_condition(lambda: _r9276_condition()) \
+            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s10', 'r38', 'reply9276').with_condition(lambda: _r9276_condition(gsm)) \
             .response("Ничего, неважно.", EXIT, 'r39', 'reply9277').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -269,13 +254,13 @@ def dlg_dzm1094(manager):
             .line(dzm1094, "Возможно, ты прав! Что ты хочешь узнать от меня?", 's14', 'say9235') \
             .line(teller, "Он начинает рассеянно вытягивать остатки швов из своих губ и бросать их на пол, один за одним.", 's14', 'say9235') \
         .with_responses() \
-            .response("Так кто ты?", 'DZM1094.D_s15', 'r44', 'reply9282').with_condition(lambda: _r9282_condition()) \
-            .response("Так кто ты?", 'DZM1094.D_s25', 'r45', 'reply9286').with_condition(lambda: _r9286_condition()) \
+            .response("Так кто ты?", 'DZM1094.D_s15', 'r44', 'reply9282').with_condition(lambda: _r9282_condition(gsm)) \
+            .response("Так кто ты?", 'DZM1094.D_s25', 'r45', 'reply9286').with_condition(lambda: _r9286_condition(gsm)) \
             .response("Откуда ты?", 'DZM1094.D_s16', 'r46', 'reply9287') \
             .response("Как ты попал сюда? То есть, как стал зомби?", 'DZM1094.D_s17', 'r47', 'reply9288') \
             .response("Где ты… где находится твой дух… сейчас?", 'DZM1094.D_s18', 'r48', 'reply9317') \
             .response("Что ты знаешь об этом месте?", 'DZM1094.D_s19', 'r49', 'reply9318') \
-            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s20', 'r50', 'reply9319').with_condition(lambda: _r9319_condition()) \
+            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s20', 'r50', 'reply9319').with_condition(lambda: _r9319_condition(gsm)) \
             .response("Ничего, неважно.", EXIT, 'r51', 'reply9320').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -284,9 +269,9 @@ def dlg_dzm1094(manager):
         .with_npc_lines() \
             .line(asonje, "Меня зовут Асонж. А как тебя?", 's15', 'say9236') \
         .with_responses() \
-            .response("Я… не знаю.", 'DZM1094.D_s21', 'r52', 'reply9289').with_action(lambda: _r9289_action()) \
-            .response("Я скажу тебе в другой раз. У меня есть вопрос…", 'DZM1094.D_s22', 'r53', 'reply9290').with_action(lambda: _r9290_action()) \
-            .response("Может быть в другой раз. Прощай.", EXIT, 'r54', 'reply9291').with_action(lambda: _r9291_action()) \
+            .response("Я… не знаю.", 'DZM1094.D_s21', 'r52', 'reply9289').with_action(lambda: _r9289_action(gsm)) \
+            .response("Я скажу тебе в другой раз. У меня есть вопрос…", 'DZM1094.D_s22', 'r53', 'reply9290').with_action(lambda: _r9290_action(gsm)) \
+            .response("Может быть в другой раз. Прощай.", EXIT, 'r54', 'reply9291').with_action(lambda: _r9291_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -352,7 +337,7 @@ def dlg_dzm1094(manager):
             .line(teller, "Дух выжидающе смотрит на тебя.", 's21', 'say9242') \
         .with_responses() \
             .response("Можешь называть меня, как хочешь. У меня есть вопрос…", 'DZM1094.D_s22', 'r66', 'reply9303') \
-            .response("Придумать имя: Ну, не знаю… 'Адан'?", 'DZM1094.D_s23', 'r67', 'reply9304').with_action(lambda: _r9304_action()) \
+            .response("Придумать имя: Ну, не знаю… 'Адан'?", 'DZM1094.D_s23', 'r67', 'reply9304').with_action(lambda: _r9304_action(gsm)) \
             .response("Нет, это неважно. Прощай.", EXIT, 'r68', 'reply9305').with_action(lambda: _dispose()) \
         .push(manager)
 
@@ -362,13 +347,13 @@ def dlg_dzm1094(manager):
             .line(asonje, "Конечно. Спрашивай!", 's22', 'say9243') \
             .line(teller, "Он довольно улыбается, с интересом ожидая твоего вопроса. Последний шов был убран, и теперь его улыбка не такая зловещая.", 's22', 'say9243') \
         .with_responses() \
-            .response("Так кто ты?", 'DZM1094.D_s15', 'r69', 'reply9306').with_condition(lambda: _r9306_condition()) \
-            .response("Так кто ты?", 'DZM1094.D_s25', 'r70', 'reply9307').with_condition(lambda: _r9307_condition()) \
+            .response("Так кто ты?", 'DZM1094.D_s15', 'r69', 'reply9306').with_condition(lambda: _r9306_condition(gsm)) \
+            .response("Так кто ты?", 'DZM1094.D_s25', 'r70', 'reply9307').with_condition(lambda: _r9307_condition(gsm)) \
             .response("Откуда ты?", 'DZM1094.D_s16', 'r71', 'reply9308') \
             .response("Как ты попал сюда? То есть, как стал зомби?", 'DZM1094.D_s17', 'r72', 'reply9309') \
             .response("Где ты… где находится твой дух… сейчас?", 'DZM1094.D_s18', 'r73', 'reply9310') \
             .response("Что ты знаешь об этом месте?", 'DZM1094.D_s19', 'r74', 'reply9311') \
-            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s20', 'r75', 'reply9312').with_condition(lambda: _r9312_condition()) \
+            .response("Ты знаешь кого-нибудь по имени Фарод?", 'DZM1094.D_s20', 'r75', 'reply9312').with_condition(lambda: _r9312_condition(gsm)) \
             .response("Ничего, неважно.", EXIT, 'r76', 'reply9321').with_action(lambda: _dispose()) \
         .push(manager)
 

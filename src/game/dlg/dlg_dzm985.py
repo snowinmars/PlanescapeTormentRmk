@@ -1,16 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    change_law_once,
-    changed_law_once,
-    change_good_once,
-    changed_good_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -18,11 +7,11 @@ from engine.transforms import (
     center_right_down
 )
 
-global global_settings_manager
+
 
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm985_img default', center_right_down)
 def _dispose():
@@ -38,40 +27,40 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r45516_condition():
-    return global_settings_manager.get_in_party_morte()
-def _r45516_action():
-    change_law_once(-1, 'chaotic_zm985_1')
-    change_good_once(-1, 'evil_zm985_1')
-def _r45517_condition():
-    return not global_settings_manager.get_in_party_morte()
-def _r45517_action():
-    change_law_once(-1, 'chaotic_zm985_1')
-    change_good_once(-1, 'evil_zm985_1')
-def _r45518_condition():
-    return global_settings_manager.get_in_party_morte()
-def _r45518_action():
-    change_law_once(1, 'lawful_zm985_1')
-    change_good_once(1, 'good_zm985_1')
-def _r45519_condition():
-    return not global_settings_manager.get_in_party_morte()
-def _r45519_action():
-    change_law_once(1, 'lawful_zm985_1')
-    change_good_once(1, 'good_zm985_1')
-def _r45520_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r45521_condition():
-    return current_global_settings()['can_speak_with_dead']
-def _r45532_condition():
-    return not changed_law_once('zombie_chaotic')
-def _r45532_action():
-    change_law_once(-1, 'zombie_chaotic')
-def _r45533_condition():
-    return changed_law_once('zombie_chaotic')
-def _r45534_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r45535_condition():
-    return current_global_settings()['can_speak_with_dead']
+def _r45516_condition(gsm):
+    return gsm.get_in_party_morte()
+def _r45516_action(gsm):
+    gsm.dec_once_law('chaotic_zm985_1')
+    gsm.dec_once_good('evil_zm985_1')
+def _r45517_condition(gsm):
+    return not gsm.get_in_party_morte()
+def _r45517_action(gsm):
+    gsm.dec_once_law('chaotic_zm985_1')
+    gsm.dec_once_good('evil_zm985_1')
+def _r45518_condition(gsm):
+    return gsm.get_in_party_morte()
+def _r45518_action(gsm):
+    gsm.inc_once_law('lawful_zm985_1')
+    gsm.inc_once_good('good_zm985_1')
+def _r45519_condition(gsm):
+    return not gsm.get_in_party_morte()
+def _r45519_action(gsm):
+    gsm.inc_once_law('lawful_zm985_1')
+    gsm.inc_once_good('good_zm985_1')
+def _r45520_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r45521_condition(gsm):
+    return gsm.get_can_speak_with_dead()
+def _r45532_condition(gsm):
+    return not gsm.once_tracked('zombie_chaotic')
+def _r45532_action(gsm):
+    gsm.dec_once_law('zombie_chaotic')
+def _r45533_condition(gsm):
+    return gsm.once_tracked('zombie_chaotic')
+def _r45534_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r45535_condition(gsm):
+    return gsm.get_can_speak_with_dead()
 ###
 
 # DLG/DZM985.DLG
@@ -80,20 +69,21 @@ def dlg_dzm985(manager):
     morte         = renpy.store.characters['morte']
     dzm985        = renpy.store.characters['dzm985']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     # Starts: DZM985.D_s0
     DialogStateBuilder() \
     .state('DZM985.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE~ : 482') \
         .with_npc_lines() \
-            .line(teller, "Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.", 's0', 'say45515').with_action(lambda: _init()) \
+            .line(teller, "Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.", 's0', 'say45515').with_action(lambda: _init(gsm)) \
             .line(teller, "Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.", 's0', 'say45515') \
         .with_responses() \
-            .response("Толкнуть труп.", 'DMORTE.D_s482', 'r0', 'reply45516').with_condition(lambda: _r45516_condition()).with_action(lambda: _r45516_action()) \
-            .response("Толкнуть труп.", 'DZM985.D_s3', 'r1', 'reply45517').with_condition(lambda: _r45517_condition()).with_action(lambda: _r45517_action()) \
-            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s4', 'r2', 'reply45518').with_condition(lambda: _r45518_condition()).with_action(lambda: _r45518_action()) \
-            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s6', 'r3', 'reply45519').with_condition(lambda: _r45519_condition()).with_action(lambda: _r45519_action()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM985.D_s1', 'r4', 'reply45520').with_condition(lambda: _r45520_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r5', 'reply45521').with_condition(lambda: _r45521_condition()) \
+            .response("Толкнуть труп.", 'DMORTE.D_s482', 'r0', 'reply45516').with_condition(lambda: _r45516_condition(gsm)).with_action(lambda: _r45516_action(gsm)) \
+            .response("Толкнуть труп.", 'DZM985.D_s3', 'r1', 'reply45517').with_condition(lambda: _r45517_condition(gsm)).with_action(lambda: _r45517_action(gsm)) \
+            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s4', 'r2', 'reply45518').with_condition(lambda: _r45518_condition(gsm)).with_action(lambda: _r45518_action(gsm)) \
+            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s6', 'r3', 'reply45519').with_condition(lambda: _r45519_condition(gsm)).with_action(lambda: _r45519_action(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM985.D_s1', 'r4', 'reply45520').with_condition(lambda: _r45520_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r5', 'reply45521').with_condition(lambda: _r45521_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply45522').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply45523').with_action(lambda: _dispose()) \
         .push(manager)
@@ -103,11 +93,11 @@ def dlg_dzm985(manager):
         .with_npc_lines() \
             .line(teller, "Труп самозабвенно смотрит вперед, не подавая никаких признаков того, что он тебя услышал.", 's1', 'say45524') \
         .with_responses() \
-            .response("Толкнуть труп.", EXIT, 'r0', 'reply45516').with_condition(lambda: _r45516_condition()).with_action(lambda: _r45516_action()) \
-            .response("Толкнуть труп.", 'DZM985.D_s3', 'r1', 'reply45517').with_condition(lambda: _r45517_condition()).with_action(lambda: _r45517_action()) \
-            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s4', 'r2', 'reply45518').with_condition(lambda: _r45518_condition()).with_action(lambda: _r45518_action()) \
-            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s6', 'r3', 'reply45519').with_condition(lambda: _r45519_condition()).with_action(lambda: _r45519_action()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r5', 'reply45521').with_condition(lambda: _r45521_condition()) \
+            .response("Толкнуть труп.", EXIT, 'r0', 'reply45516').with_condition(lambda: _r45516_condition(gsm)).with_action(lambda: _r45516_action(gsm)) \
+            .response("Толкнуть труп.", 'DZM985.D_s3', 'r1', 'reply45517').with_condition(lambda: _r45517_condition(gsm)).with_action(lambda: _r45517_action(gsm)) \
+            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s4', 'r2', 'reply45518').with_condition(lambda: _r45518_condition(gsm)).with_action(lambda: _r45518_action(gsm)) \
+            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s6', 'r3', 'reply45519').with_condition(lambda: _r45519_condition(gsm)).with_action(lambda: _r45519_action(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r5', 'reply45521').with_condition(lambda: _r45521_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply45522').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45525').with_action(lambda: _dispose()) \
         .push(manager)
@@ -117,11 +107,11 @@ def dlg_dzm985(manager):
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45526') \
         .with_responses() \
-            .response("Толкнуть труп.", EXIT, 'r0', 'reply45516').with_condition(lambda: _r45516_condition()).with_action(lambda: _r45516_action()) \
-            .response("Толкнуть труп.", 'DZM985.D_s3', 'r1', 'reply45517').with_condition(lambda: _r45517_condition()).with_action(lambda: _r45517_action()) \
-            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s4', 'r2', 'reply45518').with_condition(lambda: _r45518_condition()).with_action(lambda: _r45518_action()) \
-            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s6', 'r3', 'reply45519').with_condition(lambda: _r45519_condition()).with_action(lambda: _r45519_action()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM985.D_s1', 'r4', 'reply45520').with_condition(lambda: _r45520_condition()) \
+            .response("Толкнуть труп.", EXIT, 'r0', 'reply45516').with_condition(lambda: _r45516_condition(gsm)).with_action(lambda: _r45516_action(gsm)) \
+            .response("Толкнуть труп.", 'DZM985.D_s3', 'r1', 'reply45517').with_condition(lambda: _r45517_condition(gsm)).with_action(lambda: _r45517_action(gsm)) \
+            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s4', 'r2', 'reply45518').with_condition(lambda: _r45518_condition(gsm)).with_action(lambda: _r45518_action(gsm)) \
+            .response("Помочь трупу остаться в равновесии.", 'DZM985.D_s6', 'r3', 'reply45519').with_condition(lambda: _r45519_condition(gsm)).with_action(lambda: _r45519_action(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM985.D_s1', 'r4', 'reply45520').with_condition(lambda: _r45520_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply45522').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply45527').with_action(lambda: _dispose()) \
         .push(manager)
@@ -155,10 +145,10 @@ def dlg_dzm985(manager):
         .with_npc_lines() \
             .line(teller, "Похоже, кто-то заменил этому трупу левую руку и ногу от другого тела. Левая нога короче, чем надо, но теперь, по крайней мере, труп может стоять.", 's5', 'say45531') \
         .with_responses() \
-            .response("Извини, что сбил тебя с ног. Я случайно.", 'DZM985.D_s1', 'r12', 'reply45532').with_condition(lambda: _r45532_condition()).with_action(lambda: _r45532_action()) \
-            .response("Извини, что сбил тебя с ног. Я случайно.", 'DZM985.D_s1', 'r13', 'reply45533').with_condition(lambda: _r45533_condition()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM985.D_s1', 'r14', 'reply45534').with_condition(lambda: _r45534_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r15', 'reply45535').with_condition(lambda: _r45535_condition()) \
+            .response("Извини, что сбил тебя с ног. Я случайно.", 'DZM985.D_s1', 'r12', 'reply45532').with_condition(lambda: _r45532_condition(gsm)).with_action(lambda: _r45532_action(gsm)) \
+            .response("Извини, что сбил тебя с ног. Я случайно.", 'DZM985.D_s1', 'r13', 'reply45533').with_condition(lambda: _r45533_condition(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM985.D_s1', 'r14', 'reply45534').with_condition(lambda: _r45534_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM985.D_s2', 'r15', 'reply45535').with_condition(lambda: _r45535_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r16', 'reply45536').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r17', 'reply45537').with_action(lambda: _dispose()) \
         .push(manager)

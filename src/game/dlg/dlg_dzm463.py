@@ -1,14 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    change_law_once,
-    changed_law_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -16,9 +7,11 @@ from engine.transforms import (
     center_right_down
 )
 
+
+
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm463_img default', center_right_down)
 def _dispose():
@@ -34,16 +27,16 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r6485_condition():
-    return not changed_law_once('zombie_chaotic')
-def _r6485_action():
-    change_law_once(-1, 'zombie_chaotic')
-def _r6488_condition():
-    return changed_law_once('zombie_chaotic')
-def _r6489_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r6490_condition():
-    return current_global_settings()['can_speak_with_dead']
+def _r6485_condition(gsm):
+    return not gsm.once_tracked('zombie_chaotic')
+def _r6485_action(gsm):
+    gsm.dec_once_law('zombie_chaotic')
+def _r6488_condition(gsm):
+    return gsm.once_tracked('zombie_chaotic')
+def _r6489_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r6490_condition(gsm):
+    return gsm.get_can_speak_with_dead()
 ###
 
 # DLG/DZM463.DLG
@@ -52,17 +45,18 @@ def dlg_dzm463(manager):
     morte         = renpy.store.characters['morte']
     dzm463        = renpy.store.characters['dzm463']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     # Starts: DZM463.D_s0
     DialogStateBuilder() \
     .state('DZM463.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say6484').with_action(lambda: _init()) \
+            .line(teller, "Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say6484').with_action(lambda: _init(gsm)) \
         .with_responses() \
-            .response("Итак… что тут у нас интересного?", 'DZM463.D_s1', 'r0', 'reply6485').with_condition(lambda: _r6485_condition()).with_action(lambda: _r6485_action()) \
-            .response("Итак… что тут у нас интересного?", 'DZM463.D_s1', 'r1', 'reply6488').with_condition(lambda: _r6488_condition()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM463.D_s1', 'r2', 'reply6489').with_condition(lambda: _r6489_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM463.D_s2', 'r3', 'reply6490').with_condition(lambda: _r6490_condition()) \
+            .response("Итак… что тут у нас интересного?", 'DZM463.D_s1', 'r0', 'reply6485').with_condition(lambda: _r6485_condition(gsm)).with_action(lambda: _r6485_action(gsm)) \
+            .response("Итак… что тут у нас интересного?", 'DZM463.D_s1', 'r1', 'reply6488').with_condition(lambda: _r6488_condition(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM463.D_s1', 'r2', 'reply6489').with_condition(lambda: _r6489_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM463.D_s2', 'r3', 'reply6490').with_condition(lambda: _r6490_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6491').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply6492').with_action(lambda: _dispose()) \
         .push(manager)
@@ -72,7 +66,7 @@ def dlg_dzm463(manager):
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say6486') \
         .with_responses() \
-            .response("Использовать на трупе свою способность История костей.", 'DZM463.D_s2', 'r3', 'reply6490').with_condition(lambda: _r6490_condition()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM463.D_s2', 'r3', 'reply6490').with_condition(lambda: _r6490_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6491').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6493').with_action(lambda: _dispose()) \
         .push(manager)
@@ -82,7 +76,7 @@ def dlg_dzm463(manager):
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say6487') \
         .with_responses() \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM463.D_s1', 'r2', 'reply6489').with_condition(lambda: _r6489_condition()) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM463.D_s1', 'r2', 'reply6489').with_condition(lambda: _r6489_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6491').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply6494').with_action(lambda: _dispose()) \
         .push(manager)

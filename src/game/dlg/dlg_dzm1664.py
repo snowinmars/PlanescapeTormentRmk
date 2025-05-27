@@ -1,14 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    change_law_once,
-    changed_law_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -17,8 +8,8 @@ from engine.transforms import (
 )
 
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    sgm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm1664_img default', center_right_down)
 def _dispose():
@@ -34,16 +25,16 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r47003_condition():
-    return not current_morgue_settings()['has_dzm1664_page']
-def _r47004_condition():
-    return current_morgue_settings()['has_dzm1664_page']
-def _r47005_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r47006_condition():
-    return current_global_settings()['can_speak_with_dead']
-def _r47014_action():
-    pick_dzm1664_page()
+def _r47003_condition(gsm):
+    return gsm.get_has_dzm1664_page()
+def _r47004_condition(gsm):
+    return gsm.get_has_dzm1664_page()
+def _r47005_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r47006_condition(gsm):
+    return gsm.get_can_speak_with_dead()
+def _r47014_action(gsm):
+    sgm.set_pick_dzm1664_page(True)
 ###
 
 # DLG/DZM1664.DLG
@@ -51,18 +42,19 @@ def dlg_dzm1664(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm1664       = renpy.store.characters['dzm1664']
-    EXIT = -1
+    EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     DialogStateBuilder() \
     .state('DZM1664.D_s0', '# from 5.0') \
         .with_npc_lines() \
-            .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002').with_action(lambda: _init()) \
+            .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002').with_action(lambda: _init(gsm)) \
             .line(teller, "На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.", 's0', 'say47002') \
         .with_responses() \
-            .response("Осмотреть книги.", 'DZM1664.D_s3', 'r0', 'reply47003').with_condition(lambda: _r47003_condition()) \
-            .response("Снова осмотреть книги.", 'DZM1664.D_s6', 'r1', 'reply47004').with_condition(lambda: _r47004_condition()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM1664.D_s1', 'r2', 'reply47005').with_condition(lambda: _r47005_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM1664.D_s2', 'r3', 'reply47006').with_condition(lambda: _r47006_condition()) \
+            .response("Осмотреть книги.", 'DZM1664.D_s3', 'r0', 'reply47003').with_condition(lambda: _r47003_condition(gsm)) \
+            .response("Снова осмотреть книги.", 'DZM1664.D_s6', 'r1', 'reply47004').with_condition(lambda: _r47004_condition(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM1664.D_s1', 'r2', 'reply47005').with_condition(lambda: _r47005_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM1664.D_s2', 'r3', 'reply47006').with_condition(lambda: _r47006_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply47007').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply47008').with_action(lambda: _dispose()) \
         .push(manager)
@@ -89,7 +81,7 @@ def dlg_dzm1664(manager):
             .line(teller, "Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Тем не менее, просматривая их, ты обнаруживаешь вырванную страницу между двумя книгами.", 's3', 'say47013') \
             .line(teller, "Неожиданно у тебя возникает ощущение, что кто-то поместил ее сюда, чтобы спрятать.", 's3', 'say47013') \
         .with_responses() \
-            .response("Взять страницу.", 'DZM1664.D_s4', 'r8', 'reply47014').with_action(lambda: _r47014_action()) \
+            .response("Взять страницу.", 'DZM1664.D_s4', 'r8', 'reply47014').with_action(lambda: _r47014_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \

@@ -1,16 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    change_adahn_once,
-    set_crier_quest,
-    meet_death_of_names,
-    pass_death_of_names_adahn,
-    pass_death_of_names_dhall,
-    pass_death_of_names_quentin,
-    travel,
-    update_journal
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -21,8 +10,8 @@ from engine.transforms import (
 global global_settings_manager
 
 ###
-def _init():
-    travel('death_names')
+def _init(gsm):
+    gsm.set_location('death_names')
 def _dispose():
     return
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -36,76 +25,76 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r7295_action():
-    meet_death_of_names()
-    update_journal('66659')
-def _r7297_condition():
-    return current_global_settings()['know_xachariah_name']
-def _r7298_condition():
-    return current_global_settings()['meet_deionarra']
-def _r7299_condition():
-    return current_global_settings()['meet_dhall'] \
-    and not current_global_settings()['dead_dhall']
-def _r7300_condition():
-    return current_global_settings()['meet_dhall'] \
-    and current_global_settings()['dead_dhall'] \
-    and current_global_settings()['pass_death_of_names_dhall']
-def _r7303_condition():
-    return current_global_settings()['pass_death_of_names_quentin']
-def _r7304_action():
-    pass_death_of_names_adahn()
-    change_adahn_once('Adahn_Death_of_Names_1')
-def _r7310_condition():
-    return current_global_settings()['know_xachariah_name']
-def _r7311_condition():
-    return current_global_settings()['meet_deionarra']
-def _r7312_condition():
-    return current_global_settings()['meet_dhall'] \
-    and current_global_settings()['dead_dhall'] \
-    and not current_global_settings()['pass_death_of_names_dhall']
-def _r7312_action():
-    return current_global_settings()['pass_death_of_names_dhall']
-def _r7313_condition():
-    return current_global_settings()['meet_dhall'] \
-    and not current_global_settings()['dead_dhall']
-def _r7317_condition():
-    return current_global_settings()['quentin'] \
-    and current_global_settings()['dead_quentin'] \
-    and not current_global_settings()['death_of_names_quentin']
-def _r7317_action():
-    pass_death_of_names_quentin()
-def _r9768_condition():
-    return current_global_settings()['quentin'] \
-    and not current_global_settings()['dead_quentin']
-def _r9769_condition():
-    return current_global_settings()['crier_quest'] == 1
-def _r9769_action():
-    set_crier_quest(2)
-    update_journal('26108')
-def _r7362_condition():
-    return current_global_settings()['know_xachariah_name']
-def _r7363_condition():
-    return current_global_settings()['meet_deionarra']
-def _r7364_condition():
-    return current_global_settings()['meet_dhall'] \
-    and not current_global_settings()['dead_dhall']
-def _r7365_condition():
-    return current_global_settings()['meet_dhall'] \
-    and current_global_settings()['dead_dhall'] \
-    and current_global_settings()['pass_death_of_names_dhall']
-def _r7366_condition():
-    return current_global_settings()['meet_xixi'] \
-    and current_global_settings()['xixi_back'] <= 2
-def _r7367_condition():
-    return current_global_settings()['meet_xixi'] \
-    and current_global_settings()['xixi_back'] == 3
-def _r7368_condition():
-    return current_global_settings()['pass_death_of_names_quentin']
-def _r9771_condition():
-    return current_global_settings()['crier_quest'] == 2
-def _r9772_action():
-    pass_death_of_names_adahn()
-    change_adahn_once('Adahn_Death_of_Names_1')
+def _r7295_action(gsm):
+    gsm.set_meet_death_of_names(True)
+    gsm.update_journal('66659')
+def _r7297_condition(gsm):
+    return gsm.get_know_xachariah_name()
+def _r7298_condition(gsm):
+    return gsm.get_meet_deionarra()
+def _r7299_condition(gsm):
+    return gsm.get_meet_dhall() \
+    and not gsm.get_dead_dhall()
+def _r7300_condition(gsm):
+    return gsm.get_meet_dhall() \
+    and gsm.get_dead_dhall() \
+    and gsm.get_pass_death_of_names_dhall()
+def _r7303_condition(gsm):
+    return gsm.get_pass_death_of_names_quentin()
+def _r7304_action(gsm):
+    gsm.set_death_of_names_adahn(True)
+    gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+def _r7310_condition(gsm):
+    return gsm.get_know_xachariah_name()
+def _r7311_condition(gsm):
+    return gsm.get_meet_deionarra()
+def _r7312_condition(gsm):
+    return gsm.get_meet_dhall() \
+    and gsm.get_dead_dhall() \
+    and not gsm.get_pass_death_of_names_dhall()
+def _r7312_action(gsm):
+    return gsm.get_pass_death_of_names_dhall()
+def _r7313_condition(gsm):
+    return gsm.get_meet_dhall() \
+    and not gsm.get_dead_dhall()
+def _r7317_condition(gsm):
+    return gsm.get_meet_quentin() \
+    and gsm.get_dead_quentin() \
+    and not gsm.get_death_of_names_quentin()
+def _r7317_action(gsm):
+    gsm.set_pass_death_of_names_quentin(True)
+def _r9768_condition(gsm):
+    return gsm.get_meet_quentin() \
+    and not gsm.get_dead_quentin()
+def _r9769_condition(gsm):
+    return gsm.get_crier_quest() == 1
+def _r9769_action(gsm):
+    gsm.set_crier_quest(2)
+    gsm.update_journal('26108')
+def _r7362_condition(gsm):
+    return gsm.get_know_xachariah_name()
+def _r7363_condition(gsm):
+    return gsm.get_meet_deionarra()
+def _r7364_condition(gsm):
+    return gsm.get_meet_dhall() \
+    and not gsm.get_dead_dhall()
+def _r7365_condition(gsm):
+    return gsm.get_meet_dhall() \
+    and gsm.get_dead_dhall() \
+    and gsm.get_pass_death_of_names_dhall()
+def _r7366_condition(gsm):
+    return gsm.get_meet_xixi() \
+    and gsm.get_xixi_back() <= 2
+def _r7367_condition(gsm):
+    return gsm.get_meet_xixi() \
+    and gsm.get_xixi_back() == 3
+def _r7368_condition(gsm):
+    return gsm.get_pass_death_of_names_quentin()
+def _r9771_condition(gsm):
+    return gsm.get_crier_quest() == 2
+def _r9772_action(gsm):
+    gsm.set_death_of_names_adahn(True)
+    gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 ###
 
 # DLG/DDEATHON.DLG
@@ -114,11 +103,12 @@ def dlg_ddeathon(manager):
     morte         = renpy.store.characters['morte']
     death_names   = renpy.store.characters['death_names']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     DialogStateBuilder() \
     .state('DDEATHON.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны.", 's0', 'say7288').with_action(lambda: _init()) \
+            .line(teller, "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны.", 's0', 'say7288').with_action(lambda: _init(gsm)) \
             .line(teller, "Правая рука короче левой, и он покачивает ее на перевязи, будто убаюкивая малое дитя.", 's0', 'say7288') \
         .with_responses() \
             .response("Приветствую.", 'DDEATHON.D_s1', 'r0', 'reply7289') \
@@ -143,7 +133,7 @@ def dlg_ddeathon(manager):
             .line(teller, "Тленный произносит слова нараспев.", 's2', 'say7294') \
             .line(death_names, "Нужно имя, чтобы увидеть, где оно умерло.", 's2', 'say7294') \
         .with_responses() \
-            .response("Что?", 'DDEATHON.D_s3', 'r4', 'reply7295').with_action(lambda: _r7295_action()) \
+            .response("Что?", 'DDEATHON.D_s3', 'r4', 'reply7295').with_action(lambda: _r7295_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -153,12 +143,12 @@ def dlg_ddeathon(manager):
             .line(teller, "Его глаза скользят по монолиту и по стенам.", 's3', 'say7296') \
             .line(death_names, "Много имен похоронено здесь Смертью-имен. Скажи мне имя, и я покажу его могилу.", 's3', 'say7296') \
         .with_responses() \
-            .response("Захария.", 'DDEATHON.D_s10', 'r5', 'reply7297').with_condition(lambda: _r7297_condition()) \
-            .response("Дейонарра.", 'DDEATHON.D_s10', 'r6', 'reply7298').with_condition(lambda: _r7298_condition()) \
-            .response("Дхолл.", 'DDEATHON.D_s4', 'r7', 'reply7299').with_condition(lambda: _r7299_condition()) \
-            .response("Дхолл.", 'DDEATHON.D_s10', 'r8', 'reply7300').with_condition(lambda: _r7300_condition()) \
-            .response("Квентин.", 'DDEATHON.D_s13', 'r9', 'reply7303').with_condition(lambda: _r7303_condition()) \
-            .response("Э… Не знаю. Попробуй 'Адан'.", 'DDEATHON.D_s4', 'r10', 'reply7304').with_action(lambda: _r7304_action()) \
+            .response("Захария.", 'DDEATHON.D_s10', 'r5', 'reply7297').with_condition(lambda: _r7297_condition(gsm)) \
+            .response("Дейонарра.", 'DDEATHON.D_s10', 'r6', 'reply7298').with_condition(lambda: _r7298_condition(gsm)) \
+            .response("Дхолл.", 'DDEATHON.D_s4', 'r7', 'reply7299').with_condition(lambda: _r7299_condition(gsm)) \
+            .response("Дхолл.", 'DDEATHON.D_s10', 'r8', 'reply7300').with_condition(lambda: _r7300_condition(gsm)) \
+            .response("Квентин.", 'DDEATHON.D_s13', 'r9', 'reply7303').with_condition(lambda: _r7303_condition(gsm)) \
+            .response("Э… Не знаю. Попробуй 'Адан'.", 'DDEATHON.D_s4', 'r10', 'reply7304').with_action(lambda: _r7304_action(gsm)) \
             .response("Хм-м. А ты можешь похоронить для меня имя?", 'DDEATHON.D_s5', 'r11', 'reply9766') \
             .response("На сегодня имен нет. Извини, что отвлек тебя.", EXIT, 'r12', 'reply9767').with_action(lambda: _dispose()) \
         .push(manager)
@@ -180,13 +170,13 @@ def dlg_ddeathon(manager):
             .line(teller, "Он кивает, затем вынимает маленькую руку из перевязи на боку. Она атрофирована… по размерам не больше детской.", 's5', 'say7309') \
             .line(death_names, "Чтоб похоронить, нужно звенелки заплатить. Три медяка, три.", 's5', 'say7309') \
         .with_responses() \
-            .response("Захария.", 'DDEATHON.D_s12', 'r16', 'reply7310').with_condition(lambda: _r7310_condition()) \
-            .response("Дейонарра.", 'DDEATHON.D_s12', 'r17', 'reply7311').with_condition(lambda: _r7311_condition()) \
-            .response("Дхолл.", 'DDEATHON.D_s6', 'r18', 'reply7312').with_condition(lambda: _r7312_condition()).with_action(lambda: _r7312_action()) \
-            .response("Дхолл.", 'DDEATHON.D_s4', 'r19', 'reply7313').with_condition(lambda: _r7313_condition()) \
-            .response("Квентин.", 'DDEATHON.D_s15', 'r20', 'reply7317').with_condition(lambda: _r7317_condition()).with_action(lambda: _r7317_action()) \
-            .response("Квентин.", 'DDEATHON.D_s4', 'r21', 'reply9768').with_condition(lambda: _r9768_condition()) \
-            .response("Хм-м… Эс-Аннон.", 'DDEATHON.D_s6', 'r22', 'reply9769').with_condition(lambda: _r9769_condition()).with_action(lambda: _r9769_action()) \
+            .response("Захария.", 'DDEATHON.D_s12', 'r16', 'reply7310').with_condition(lambda: _r7310_condition(gsm)) \
+            .response("Дейонарра.", 'DDEATHON.D_s12', 'r17', 'reply7311').with_condition(lambda: _r7311_condition(gsm)) \
+            .response("Дхолл.", 'DDEATHON.D_s6', 'r18', 'reply7312').with_condition(lambda: _r7312_condition(gsm)).with_action(lambda: _r7312_action(gsm)) \
+            .response("Дхолл.", 'DDEATHON.D_s4', 'r19', 'reply7313').with_condition(lambda: _r7313_condition(gsm)) \
+            .response("Квентин.", 'DDEATHON.D_s15', 'r20', 'reply7317').with_condition(lambda: _r7317_condition(gsm)).with_action(lambda: _r7317_action(gsm)) \
+            .response("Квентин.", 'DDEATHON.D_s4', 'r21', 'reply9768').with_condition(lambda: _r9768_condition(gsm)) \
+            .response("Хм-м… Эс-Аннон.", 'DDEATHON.D_s6', 'r22', 'reply9769').with_condition(lambda: _r9769_condition(gsm)).with_action(lambda: _r9769_action(gsm)) \
             .response("У меня нет ни одной… звенелки. Может быть, в другой раз.", EXIT, 'r23', 'reply9770').with_action(lambda: _dispose()) \
             .response("На сегодня имен нет. Прощай.", EXIT, 'r24', 'reply26086').with_action(lambda: _dispose()) \
         .push(manager)
@@ -231,15 +221,15 @@ def dlg_ddeathon(manager):
         .with_responses() \
             .response("Я… не знаю.", 'DDEATHON.D_s2', 'r31', 'reply7360') \
             .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r32', 'reply7361') \
-            .response("Захария.", 'DDEATHON.D_s10', 'r33', 'reply7362').with_condition(lambda: _r7362_condition()) \
-            .response("Дейонарра.", 'DDEATHON.D_s10', 'r34', 'reply7363').with_condition(lambda: _r7363_condition()) \
-            .response("Дхолл.", 'DDEATHON.D_s4', 'r35', 'reply7364').with_condition(lambda: _r7364_condition()) \
-            .response("Дхолл.", 'DDEATHON.D_s10', 'r36', 'reply7365').with_condition(lambda: _r7365_condition()) \
-            .response("Сиси.", 'DDEATHON.D_s4', 'r37', 'reply7366').with_condition(lambda: _r7366_condition()) \
-            .response("Сиси.", 'DDEATHON.D_s10', 'r38', 'reply7367').with_condition(lambda: _r7367_condition()) \
-            .response("Квентин.", 'DDEATHON.D_s13', 'r39', 'reply7368').with_condition(lambda: _r7368_condition()) \
-            .response("Эс-Аннон.", 'DDEATHON.D_s10', 'r40', 'reply9771').with_condition(lambda: _r9771_condition()) \
-            .response("Э… 'Адан'?", 'DDEATHON.D_s4', 'r41', 'reply9772').with_action(lambda: _r9772_action()) \
+            .response("Захария.", 'DDEATHON.D_s10', 'r33', 'reply7362').with_condition(lambda: _r7362_condition(gsm)) \
+            .response("Дейонарра.", 'DDEATHON.D_s10', 'r34', 'reply7363').with_condition(lambda: _r7363_condition(gsm)) \
+            .response("Дхолл.", 'DDEATHON.D_s4', 'r35', 'reply7364').with_condition(lambda: _r7364_condition(gsm)) \
+            .response("Дхолл.", 'DDEATHON.D_s10', 'r36', 'reply7365').with_condition(lambda: _r7365_condition(gsm)) \
+            .response("Сиси.", 'DDEATHON.D_s4', 'r37', 'reply7366').with_condition(lambda: _r7366_condition(gsm)) \
+            .response("Сиси.", 'DDEATHON.D_s10', 'r38', 'reply7367').with_condition(lambda: _r7367_condition(gsm)) \
+            .response("Квентин.", 'DDEATHON.D_s13', 'r39', 'reply7368').with_condition(lambda: _r7368_condition(gsm)) \
+            .response("Эс-Аннон.", 'DDEATHON.D_s10', 'r40', 'reply9771').with_condition(lambda: _r9771_condition(gsm)) \
+            .response("Э… 'Адан'?", 'DDEATHON.D_s4', 'r41', 'reply9772').with_action(lambda: _r9772_action(gsm)) \
             .response("Извини за беспокойство. Прощай.", EXIT, 'r42', 'reply26109').with_action(lambda: _dispose()) \
         .push(manager)
 

@@ -1,14 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    change_law_once,
-    changed_law_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -16,9 +7,11 @@ from engine.transforms import (
     center_right_down
 )
 
+
+
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm475_img default', center_right_down)
 def _dispose():
@@ -35,15 +28,15 @@ def _check_char_prop_lt(who, gtValue, prop):
 ###
 ###
 def _r6587_condition():
-    return not changed_law_once('zombie_chaotic')
+    return not gsm.once_tracked('zombie_chaotic')
 def _r6587_action():
-    change_law_once(-1, 'zombie_chaotic')
+    gsm.dec_once_law('zombie_chaotic')
 def _r6588_condition():
-    return changed_law_once('zombie_chaotic')
+    return gsm.once_tracked('zombie_chaotic')
 def _r6589_condition():
-    return current_morgue_settings()['vaxis_exposed']
+    return gsm.get_vaxis_exposed()
 def _r6590_condition():
-    return current_global_settings()['can_speak_with_dead']
+    return gsm.get_can_speak_with_dead()
 ###
 
 # DLG/DZM475.DLG
@@ -57,7 +50,7 @@ def dlg_dzm475(manager):
     DialogStateBuilder() \
     .state('DZM475.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.", 's0', 'say6584').with_action(lambda: _init()) \
+            .line(teller, "Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.", 's0', 'say6584').with_action(lambda: _init(gsm)) \
             .line(teller, "На проржавевшей табличке над его левым глазом выбит номер «475». Его рот намертво закрыт; от него несет бальзамирующей жидкостью.", 's0', 'say6584') \
         .with_responses() \
             .response("Итак… что тут у нас интересного?", 'DZM475.D_s1', 'r0', 'reply6587').with_condition(lambda: _r6587_condition()).with_action(lambda: _r6587_action()) \

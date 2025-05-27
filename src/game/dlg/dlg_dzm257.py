@@ -1,14 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    change_law_once,
-    changed_law_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -16,9 +7,11 @@ from engine.transforms import (
     center_right_down
 )
 
+
+
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm257_img default', center_right_down)
 def _dispose():
@@ -34,18 +27,18 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r6510_condition():
-    return not changed_law_once('zombie_chaotic')
-def _r6510_action():
-    change_law_once(-1, 'zombie_chaotic')
-def _r6511_condition():
-    return changed_law_once('zombie_chaotic')
-def _r6512_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r6513_condition():
-    return current_global_settings()['can_speak_with_dead']
-def _r9562_action():
-    change_law_once(-1, 'chaotic_zom257_1')
+def _r6510_condition(gsm):
+    return not gsm.once_tracked('zombie_chaotic')
+def _r6510_action(gsm):
+    gsm.dec_once_law('zombie_chaotic')
+def _r6511_condition(gsm):
+    return gsm.once_tracked('zombie_chaotic')
+def _r6512_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r6513_condition(gsm):
+    return gsm.get_can_speak_with_dead()
+def _r9562_action(gsm):
+    gsm.dec_once_law('chaotic_zom257_1')
 ###
 
 # DLG/DZM257.DLG
@@ -54,18 +47,19 @@ def dlg_dzm257(manager):
     morte         = renpy.store.characters['morte']
     dzm257        = renpy.store.characters['dzm257']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     # Starts: DZM257.D_s0
     DialogStateBuilder() \
     .state('DZM257.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.", 's0', 'say6507').with_action(lambda: _init()) \
+            .line(teller, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.", 's0', 'say6507').with_action(lambda: _init(gsm)) \
             .line(teller, "Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.", 's0', 'say6507') \
         .with_responses() \
-            .response("У тебя голова не кружится из-за глаз?", 'DZM257.D_s1', 'r0', 'reply6510').with_condition(lambda: _r6510_condition()).with_action(lambda: _r6510_action()) \
-            .response("У тебя голова не кружится из-за глаз?", 'DZM257.D_s1', 'r1', 'reply6511').with_condition(lambda: _r6511_condition()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM257.D_s1', 'r2', 'reply6512').with_condition(lambda: _r6512_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM257.D_s2', 'r3', 'reply6513').with_condition(lambda: _r6513_condition()) \
+            .response("У тебя голова не кружится из-за глаз?", 'DZM257.D_s1', 'r0', 'reply6510').with_condition(lambda: _r6510_condition(gsm)).with_action(lambda: _r6510_action(gsm)) \
+            .response("У тебя голова не кружится из-за глаз?", 'DZM257.D_s1', 'r1', 'reply6511').with_condition(lambda: _r6511_condition(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM257.D_s1', 'r2', 'reply6512').with_condition(lambda: _r6512_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM257.D_s2', 'r3', 'reply6513').with_condition(lambda: _r6513_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6514').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply6515').with_action(lambda: _dispose()) \
         .push(manager)
@@ -75,7 +69,7 @@ def dlg_dzm257(manager):
         .with_npc_lines() \
             .line(teller, "В глазах трупа нет даже намека на понимание; они продолжают смотреть каждый в свою сторону.", 's1', 'say6508') \
         .with_responses() \
-            .response("Использовать на трупе свою способность История костей.", 'DZM257.D_s2', 'r3', 'reply6513').with_condition(lambda: _r6513_condition()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM257.D_s2', 'r3', 'reply6513').with_condition(lambda: _r6513_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r4', 'reply6514').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply6516').with_action(lambda: _dispose()) \
         .push(manager)
@@ -109,7 +103,7 @@ def dlg_dzm257(manager):
             .line(teller, "На мгновение дух успокаивается, затем взрывается потоком громкого, сводящего с ума бессмысленного бормотания. Какофония сводит с ума, угрожая поставить тебя на колени.", 's4', 'say9554') \
             .line(teller, "Так же внезапно, как и началось, все… прекращается. Труп стоит, тихо подергиваясь.", 's4', 'say9554') \
         .with_responses() \
-            .response("Я не совсем уловил последнюю часть. Ты можешь повторить это еще раз?", 'DZM257.D_s4', 'r12', 'reply9562').with_action(lambda: _r9562_action()) \
+            .response("Я не совсем уловил последнюю часть. Ты можешь повторить это еще раз?", 'DZM257.D_s4', 'r12', 'reply9562').with_action(lambda: _r9562_action(gsm)) \
             .response("Я не понимаю. Тем не менее, у меня есть вопрос…", 'DZM257.D_s5', 'r13', 'reply9563') \
             .response("Я тебя не понимаю. Прощай.", 'DZM257.D_s6', 'r14', 'reply9564') \
         .push(manager)

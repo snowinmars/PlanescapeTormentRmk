@@ -1,14 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    travel,
-    change_law_once,
-    changed_law_once
-)
-from settings.settings_morgue import (
-    current_morgue_settings
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -16,11 +7,11 @@ from engine.transforms import (
     center_right_down
 )
 
-global global_settings_manager
+
 
 ###
-def _init():
-    travel('morgue1')
+def _init(gsm):
+    gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
     _show('dzm825_img default', center_right_down)
 def _dispose():
@@ -36,27 +27,27 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r24565_condition():
-    return not current_morgue_settings()['mortuary_walkthrough'] \
-    and not current_morgue_settings()['has_intro_key'] \
-    and global_settings_manager.get_in_party_morte()
-def _r24568_condition():
-    return not current_morgue_settings()['mortuary_walkthrough'] \
-    and not current_morgue_settings()['has_intro_key'] \
-    and not global_settings_manager.get_in_party_morte()
-def _r24569_condition():
-    return not current_morgue_settings()['mortuary_walkthrough']
-def _r24570_condition():
-    return current_morgue_settings()['vaxis_exposed']
-def _r24573_condition():
-    return current_global_settings()['can_speak_with_dead']
-def _r24574_condition():
-    return not current_morgue_settings()['mortuary_walkthrough'] \
-    and not current_morgue_settings()['has_intro_key']
-def _r42312_condition():
-    return global_settings_manager.get_in_party_morte()
-def _r42313_condition():
-    return not global_settings_manager.get_in_party_morte()
+def _r24565_condition(gsm):
+    return not gsm.get_mortuary_walkthrough() \
+    and not gsm.get_has_intro_key() \
+    and gsm.get_in_party_morte()
+def _r24568_condition(gsm):
+    return not gsm.get_mortuary_walkthrough() \
+    and not gsm.get_has_intro_key() \
+    and not gsm.get_in_party_morte()
+def _r24569_condition(gsm):
+    return not gsm.get_mortuary_walkthrough()
+def _r24570_condition(gsm):
+    return gsm.get_vaxis_exposed()
+def _r24573_condition(gsm):
+    return gsm.get_can_speak_with_dead()
+def _r24574_condition(gsm):
+    return not gsm.get_mortuary_walkthrough() \
+    and not gsm.get_has_intro_key()
+def _r42312_condition(gsm):
+    return gsm.get_in_party_morte()
+def _r42313_condition(gsm):
+    return not gsm.get_in_party_morte()
 ###
 
 # DLG/DZM825.DLG
@@ -65,19 +56,20 @@ def dlg_dzm825(manager):
     morte         = renpy.store.characters['morte']
     dzm825        = renpy.store.characters['dzm825']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     # Starts: DZM825.D_s0
     DialogStateBuilder() \
     .state('DZM825.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
-            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564').with_action(lambda: _init()) \
+            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564').with_action(lambda: _init(gsm)) \
         .with_responses() \
-            .response("Я ищу ключ… быть может, он у тебя?", 'DMORTE1.D_s31', 'r0', 'reply24565').with_condition(lambda: _r24565_condition()) \
-            .response("Я ищу ключ… быть может, он у тебя?", 'DZM825.D_s1', 'r1', 'reply24568').with_condition(lambda: _r24568_condition()) \
-            .response("Итак… что тут у нас интересного?", 'DZM825.D_s1', 'r2', 'reply24569').with_condition(lambda: _r24569_condition()) \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM825.D_s1', 'r3', 'reply24570').with_condition(lambda: _r24570_condition()) \
-            .response("Использовать на трупе свою способность История костей.", 'DZM825.D_s2', 'r4', 'reply24573').with_condition(lambda: _r24573_condition()) \
-            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition()) \
+            .response("Я ищу ключ… быть может, он у тебя?", 'DMORTE1.D_s31', 'r0', 'reply24565').with_condition(lambda: _r24565_condition(gsm)) \
+            .response("Я ищу ключ… быть может, он у тебя?", 'DZM825.D_s1', 'r1', 'reply24568').with_condition(lambda: _r24568_condition(gsm)) \
+            .response("Итак… что тут у нас интересного?", 'DZM825.D_s1', 'r2', 'reply24569').with_condition(lambda: _r24569_condition(gsm)) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM825.D_s1', 'r3', 'reply24570').with_condition(lambda: _r24570_condition(gsm)) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM825.D_s2', 'r4', 'reply24573').with_condition(lambda: _r24573_condition(gsm)) \
+            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply42308').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply42309').with_action(lambda: _dispose()) \
         .push(manager)
@@ -87,8 +79,8 @@ def dlg_dzm825(manager):
         .with_npc_lines() \
             .line(teller, "Труп уставился в землю и не отвечает.", 's1', 'say24566') \
         .with_responses() \
-            .response("Использовать на трупе свою способность История костей.", 'DZM825.D_s2', 'r4', 'reply24573').with_condition(lambda: _r24573_condition()) \
-            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition()) \
+            .response("Использовать на трупе свою способность История костей.", 'DZM825.D_s2', 'r4', 'reply24573').with_condition(lambda: _r24573_condition(gsm)) \
+            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition(gsm)) \
             .response("Тогда неважно. Прощай.", EXIT, 'r8', 'reply24567').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply42310').with_action(lambda: _dispose()) \
         .push(manager)
@@ -98,8 +90,8 @@ def dlg_dzm825(manager):
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say24571') \
         .with_responses() \
-            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM825.D_s1', 'r3', 'reply24570').with_condition(lambda: _r24570_condition()) \
-            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition()) \
+            .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM825.D_s1', 'r3', 'reply24570').with_condition(lambda: _r24570_condition(gsm)) \
+            .response("Осмотреть труп, проверить, есть ли у него ключ.", 'DZM825.D_s3', 'r5', 'reply24574').with_condition(lambda: _r24574_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r6', 'reply42308').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r10', 'reply24572').with_action(lambda: _dispose()) \
         .push(manager)
@@ -109,8 +101,8 @@ def dlg_dzm825(manager):
         .with_npc_lines() \
             .line(teller, "У этого трупа ничего нет… но ты замечаешь, что его руки сильно перевязаны.", 's3', 'say42311') \
         .with_responses() \
-            .response("Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?", 'DMORTE1.D_s31', 'r11', 'reply42312').with_condition(lambda: _r42312_condition()) \
-            .response("Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?", 'DZM825.D_s1', 'r12', 'reply42313').with_condition(lambda: _r42313_condition()) \
+            .response("Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?", 'DMORTE1.D_s31', 'r11', 'reply42312').with_condition(lambda: _r42312_condition(gsm)) \
+            .response("Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?", 'DZM825.D_s1', 'r12', 'reply42313').with_condition(lambda: _r42313_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r13', 'reply42314').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r14', 'reply42315').with_action(lambda: _dispose()) \
         .push(manager)

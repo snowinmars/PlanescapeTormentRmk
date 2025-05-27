@@ -1,19 +1,5 @@
 import renpy
 from engine.dialog import (DialogStateBuilder)
-from settings.settings_global import (
-    current_global_settings,
-    change_good_once,
-    kill_morte,
-    meet_morte,
-    travel
-)
-from settings.settings_morgue import (
-    pick_up_intro_key,
-    pick_up_scalpel,
-    kill_dzm569,
-    kill_dzm825,
-    kill_dzm782
-)
 from engine.transforms import (
     center_left,
     center_right,
@@ -24,13 +10,13 @@ from engine.transforms import (
 global global_settings_manager
 
 ###
-def _init():
-    travel('morgue1')
-    meet_morte()
+def _init(gsm):
+    gsm.set_location('morgue1')
+    gsm.set_meet_morte(True)
     renpy.exports.scene()
     renpy.exports.show("bg mourge1")
     _show('morte_img default', center_left_down)
-    global_settings_manager.set_in_party_morte(True)
+    gsm.set_in_party_morte(True)
 def _dispose():
     _hide('morte_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -43,24 +29,24 @@ def _check_char_prop_gt(who, gtValue, prop):
 def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
-def _join_morte():
-    global_settings_manager.set_in_party_morte(True)
+def _join_morte(gsm):
+    gsm.set_in_party_morte(True)
     _dispose()
-def _kill_morte():
-    kill_morte()
-def _s19_action():
-    pick_up_scalpel()
-def _s25_action():
-    pick_up_intro_key()
-def _kill_dzm569():
-    kill_dzm569()
-def _kill_dzm825():
-    kill_dzm825()
-def _kill_dzm782():
-    kill_dzm782()
+def _kill_morte(gsm):
+    gsm.set_dead_morte(True)
+def _s19_action(gsm):
+    gsm.set_has_scalpel(True)
+def _s25_action(gsm):
+    gsm.set_has_intro_key(True)
+def _kill_dzm569(gsm):
+    gsm.set_dead_dzm569(True)
+def _kill_dzm825(gsm):
+    gsm.set_dead_dzm825(True)
+def _kill_dzm782(gsm):
+    gsm.set_dead_dzm782(True)
 ###
-def _r39824_action():
-    change_good_once(1, 'good_morte_1')
+def _r39824_action(gsm):
+    gsm.inc_once_good('good_morte_1')
 ###
 
 # DLG/DMORTE1.DLG
@@ -70,11 +56,12 @@ def dlg_dmorte_one(manager):
     morte         = renpy.store.characters['morte']
     scares        = renpy.store.characters['scares']
     EXIT          = -1
+    gsm           = renpy.store.global_settings_manager
 
     DialogStateBuilder() \
     .state('DMORTE1.D_s0', '# from -') \
         .with_npc_lines() \
-            .line(morte_unknown, "Эй, шеф. Ты в порядке?", 's0', 'say39792').with_action(lambda: _init()) \
+            .line(morte_unknown, "Эй, шеф. Ты в порядке?", 's0', 'say39792').with_action(lambda: _init(gsm)) \
             .line(morte_unknown, "Изображаешь из себя труп или пытаешься обмануть трухлявых?", 's0', 'say39792') \
             .line(morte_unknown, "Я уж думал, что ты дал дуба.", 's0', 'say39792').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
@@ -210,7 +197,7 @@ def dlg_dmorte_one(manager):
             .line(morte, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы.", 's14', 'say39823') \
             .line(morte, "Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.", 's14', 'say39823') \
         .with_responses() \
-            .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE1.D_s15', 'r16', 'reply39824').with_action(lambda: _r39824_action()) \
+            .response("А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.", 'DMORTE1.D_s15', 'r16', 'reply39824').with_action(lambda: _r39824_action(gsm)) \
             .response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ? Ладно.", 'DMORTE1.D_s99999999_18', 'r17', 'reply39825') \
         .push(manager)
 
@@ -234,7 +221,7 @@ def dlg_dmorte_one(manager):
     DialogStateBuilder() \
     .state('DMORTE1.D_s19', '# from -') \
         .with_npc_lines() \
-            .line(morte, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами…", 's19', 'say39834').with_action(lambda: _s19_action()) \
+            .line(morte, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами…", 's19', 'say39834').with_action(lambda: _s19_action(gsm)) \
             .line(morte, "… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы.", 's19', 'say39834') \
         .with_responses() \
             .response("А, может, ты мне *поможешь*, Морт?", 'DMORTE1.D_s20', 'r22', 'reply39835') \
@@ -280,9 +267,9 @@ def dlg_dmorte_one(manager):
         .with_npc_lines() \
             .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm569()) \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm569(gsm)) \
         .with_responses() \
-            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("(…gsm)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder() \
@@ -310,7 +297,7 @@ def dlg_dmorte_one(manager):
     .state('DMORTE1.D_s24', '# from -') \
         .with_npc_lines() \
             .line(morte, "Отлично, похоже, ты позаботился о правильном трупе.", 's24', 'say0').with_action(lambda: _show('morte_img default',  center_left_down)) \
-            .line(teller, "Я достаю из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-').with_action(lambda: _s25_action()) \
+            .line(teller, "Я достаю из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-').with_action(lambda: _s25_action(gsm)) \
             .line(morte, "Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.", 's25', 'say39849') \
         .with_responses() \
             .response("Тогда я перепробую все двери.", EXIT, 'r31', 'reply39850').with_action(lambda: _dispose()) \
@@ -321,7 +308,7 @@ def dlg_dmorte_one(manager):
         .with_npc_lines() \
             .line(morte, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?", 's26', 'say39851').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
-            .response("Да… идем.", EXIT, 'r32', 'reply39852').with_action(lambda: _join_morte()) \
+            .response("Да… идем.", EXIT, 'r32', 'reply39852').with_action(lambda: _join_morte(gsm)) \
             .response("Не сейчас, Морт.", 'DMORTE1.D_s27', 'r33', 'reply39853') \
         .push(manager)
 
@@ -332,7 +319,7 @@ def dlg_dmorte_one(manager):
             .line(morte, "Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 's27', 'say39854') \
         .with_responses() \
             .response("Морт, у тебя НЕТ ни того, ни другого.", 'DMORTE1.D_s28', 'r34', 'reply39855') \
-            .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r35', 'reply39856').with_action(lambda: _join_morte()) \
+            .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r35', 'reply39856').with_action(lambda: _join_morte(gsm)) \
             .response("Не сейчас, Морт. Может быть потом.", 'DMORTE1.D_s28', 'r36', 'reply39857') \
         .push(manager)
 
@@ -343,7 +330,7 @@ def dlg_dmorte_one(manager):
             .line(morte, "Погоди, разве я что-то не так сказал?", 's28', 'say39858') \
             .line(morte, "Или это из-за того, что у меня нет рук? Что?", 's28', 'say39858') \
         .with_responses() \
-            .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r37', 'reply39859').with_action(lambda: _join_morte()) \
+            .response("Ладно. Я передумал. Давай, идем.", EXIT, 'r37', 'reply39859').with_action(lambda: _join_morte(gsm)) \
             .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE1.D_s29', 'r38', 'reply39860') \
         .push(manager)
 
@@ -367,7 +354,7 @@ def dlg_dmorte_one(manager):
     .state('DMORTE1.D_s99999999_34', '-') \
         .with_npc_lines() \
             .line(morte, "Слушай шеф…", 's33', 'say42302') \
-            .line(teller, "Я хватаю черепушку и разбиваю её о землю.", '-', '-').with_action(lambda: _kill_morte()) \
+            .line(teller, "Я хватаю черепушку и разбиваю её о землю.", '-', '-').with_action(lambda: _kill_morte(gsm)) \
         .with_responses() \
             .response("...", EXIT, 'r?', 'reply42303') \
         .push(manager)
