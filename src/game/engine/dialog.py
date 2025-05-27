@@ -82,6 +82,9 @@ class DialogStateBuilder:
             self.responses = []
 
         def response(self, text, next_state, response_id, reply_id):
+            if (response_id == 'r'):
+                raise Exception(f'There cannot be default response id for line "{text}"')
+
             if 'text' in self.last_response:
                 self.responses.append(self.last_response)
 
