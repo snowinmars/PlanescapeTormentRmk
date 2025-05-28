@@ -17,9 +17,14 @@ class MenuBuilder:
         self._current_option = {
             'title': title,
             'label_id': None,
+            'location_id': None,
             'condition': None,
             'priority': 0
         }
+        return self
+
+    def in_location(self, location_id):
+        self._current_option['location_id'] = location_id
         return self
 
     def jump(self, label_id):
