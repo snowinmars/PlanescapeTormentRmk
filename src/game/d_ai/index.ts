@@ -2,9 +2,10 @@
 // node --experimental-strip-types index.ts
 
 import { clean } from './clean.ts';
-import {parseDialogue} from './parseDialogue.ts';
-import {serializeStates} from './serializeStates.ts';
-import {promises as fs} from 'fs';
+import { parseDialogue } from './parseDialogue.ts';
+import { serializeStates } from './serializeStates.ts';
+import { promises as fs } from 'fs';
+import * as path from 'path'
 
 const goFiles = [
     'DMORTE1.D',
@@ -47,4 +48,10 @@ const go = async (fromFile: string, cleanFile: string, toFile: string, statePref
     await fs.writeFile(toFile, builder, 'utf8');
 }
 
-Promise.all(goFiles.map(x => go(`..\\d_raw\\${x}`, `..\\d_clean\\${x}`, `..\\d_parsed\\${x}`, `${x}_s`)));
+console.log(process.cwd())
+Promise.all(goFiles.map(x => {
+    const raw = path.join(process.cwd(), '../d_raw')
+    const clean = path.join(process.cwd(), '../d_clean')
+    const parsed = path.join(process.cwd(), '../d_parsed')
+    return go(path.join(raw, x), path.join(clean, x), path.join(parsed, x), `${x}_s`);
+}));

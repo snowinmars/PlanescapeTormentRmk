@@ -1,0 +1,13 @@
+services:
+  d_ai:
+    image: d_ai
+    hostname: d_ai
+    container_name: d_ai
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../d_raw/:/d_raw
+      - ../d_clean/:/d_clean
+      - ../d_parsed/:/d_parsed
+    command: yarn start
