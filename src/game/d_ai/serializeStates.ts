@@ -191,7 +191,7 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
             }
 
             const fromPath = `# from ${state.paths.length > 0 ? state.paths.map(x => `${x.fromStateId}.${x.responseIndex}`).join(' ') : '-'}`;
-            builder += `${fromPath}\nDialogStateBuilder('${statePrefix}${state.stateId}') \\\n    .with_npc_lines() \\\n`;
+            builder += `DialogStateBuilder('${statePrefix}${state.stateId}', 'fromPath') \\\n    .with_npc_lines() \\\n`;
             builder += `        .line(SPEAKER, "${trimTrahs(state.stateBody)}", 's${state.stateId}', 'say${state.sayId}') \\\n`;
             builder += '    .with_responses() \\\n'
 
@@ -202,14 +202,14 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
                 builder += `        .response("${trimTrahs(answer.answerBody)}", ${targetId}, 'r', 'reply${answer.answerId}')`;
                 if (answer.condition && answer.condition.length !== 0) {
                     const conditionFunctionName = `_r${answer.answerId}_condition`;
-                    logicBuilder += `def ${conditionFunctionName}():\n    ${answer.condition.trim()}\n`;
-                    builder += `.with_condition(lambda: ${conditionFunctionName}())`;
+                    logicBuilder += `def ${conditionFunctionName}(gsm):\n    ${answer.condition.trim()}\n`;
+                    builder += `.with_condition(lambda: ${conditionFunctionName}(gsm))`;
                 }
                 if (answer.action && answer.action.length !== 0) {
                     hasAction = true;
                     const actionFunctionName = `_r${answer.answerId}_action`;
-                    logicBuilder += `def ${actionFunctionName}():\n    ${answer.action.trim()}\n`;
-                    builder += `.with_action(lambda: ${actionFunctionName}())`
+                    logicBuilder += `def ${actionFunctionName}(gsm):\n    ${answer.action.trim()}\n`;
+                    builder += `.with_action(lambda: ${actionFunctionName}(gsm))`
                 }
                 if (targetId === 'EXIT') {
                     builder += `.with_action(lambda: _dispose())`
