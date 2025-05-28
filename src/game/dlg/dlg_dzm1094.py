@@ -75,14 +75,8 @@ def dlg_dzm1094(manager):
     morte         = renpy.store.characters['morte']
     dzm1094       = renpy.store.characters['dzm1094']
     asonje        = renpy.store.characters['asonje']
-    EXIT          = -1
     gsm           = renpy.store.global_settings_manager
-
-    gsm.set_in_party_morte(True)
-    gsm.set_vaxis_exposed(True)
-    gsm.set_can_speak_with_dead(True)
-    gsm.set_has_copper_earring(True)
-    gsm.set_has_scalpel(True)
+    EXIT          = -1
 
     # Starts: DZM1094.D_s0
     DialogStateBuilder() \

@@ -55,11 +55,11 @@ def dlg_dmorte_one(manager):
     morte_unknown = renpy.store.characters['morte_unknown']
     morte         = renpy.store.characters['morte']
     scares        = renpy.store.characters['scares']
-    EXIT          = -1
     gsm           = renpy.store.global_settings_manager
+    EXIT          = -1
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s0', '# from -') \
+    # Starts with DMORTE1.D_s0 DMORTE1.D_s26 DMORTE1.D_s30
+    DialogStateBuilder().state('DMORTE1.D_s0', '# from -') \
         .with_npc_lines() \
             .line(morte_unknown, "Эй, шеф. Ты в порядке?", 's0', 'say39792').with_action(lambda: _init(gsm)) \
             .line(morte_unknown, "Изображаешь из себя труп или пытаешься обмануть трухлявых?", 's0', 'say39792') \
@@ -68,8 +68,7 @@ def dlg_dmorte_one(manager):
             .response("Чт?.. Ты кто?", 'DMORTE1.D_s1', 'r0', 'reply39793') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s1', '# from 0.0') \
+    DialogStateBuilder().state('DMORTE1.D_s1', '# from 0.0') \
         .with_npc_lines() \
             .line(morte_unknown, "Э… кто я? А как насчет *тебя* для начала? Кто ты?", 's1', 'say39795') \
         .with_responses() \
@@ -77,8 +76,7 @@ def dlg_dmorte_one(manager):
             .response("Я *первый* спросил тебя, череп.", 'DMORTE1.D_s3', 'r2', 'reply39797') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s2', '# from 1.0 3.0 4.0') \
+    DialogStateBuilder().state('DMORTE1.D_s2', '# from 1.0 3.0 4.0') \
         .with_npc_lines() \
             .line(morte_unknown, "Ты не можешь вспомнить свое *имя*? Хе.", 's2', 'say39798') \
             .line(morte, "Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт.", 's2', 'say39798') \
@@ -86,8 +84,7 @@ def dlg_dmorte_one(manager):
             .response("Заперт?", 'DMORTE1.D_s5', 'r3', 'reply39799') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s3', '# from 1.1') \
+    DialogStateBuilder().state('DMORTE1.D_s3', '# from 1.1') \
         .with_npc_lines() \
             .line(morte_unknown, "Ага, а я спросил тебя *вторым*. Как твое имя?", 's3', 'say39800') \
         .with_responses() \
@@ -95,32 +92,28 @@ def dlg_dmorte_one(manager):
             .response("Ты первый, череп. В последний раз спрашиваю.", 'DMORTE1.D_s4', 'r5', 'reply39802') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s4', '# from 3.1') \
+    DialogStateBuilder().state('DMORTE1.D_s4', '# from 3.1') \
         .with_npc_lines() \
             .line(morte_unknown, "Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Я - летающий череп. А кто ты?", 's4', 'say39803') \
         .with_responses() \
             .response("Я… не знаю. Не могу вспомнить.", 'DMORTE1.D_s2', 'r6', 'reply39804') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s5', '# from 2.0') \
+    DialogStateBuilder().state('DMORTE1.D_s5', '# from 2.0') \
         .with_npc_lines() \
             .line(morte, "Ага, и поскольку ты еще не успел размять ноги, вот тебе новость: я перепробовал все двери, и эта комната заперта крепче пояса целомудрия.", 's5', 'say39805') \
         .with_responses() \
             .response("Мы заперты… где? Что это за место?", 'DMORTE1.D_s6', 'r7', 'reply39806') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s6', '# from 5.0') \
+    DialogStateBuilder().state('DMORTE1.D_s6', '# from 5.0') \
         .with_npc_lines() \
             .line(morte, "Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи.", 's6', 'say39807') \
         .with_responses() \
             .response("Морг? Постой… я умер?", 'DMORTE1.D_s7', 'r8', 'reply39808') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s7', '# from 6.0') \
+    DialogStateBuilder().state('DMORTE1.D_s7', '# from 6.0') \
         .with_npc_lines() \
             .line(morte, "Не похоже. Хотя на тебе куча шрамов… выглядит так, словно какой-то пень изрисовал тебя всего ножом.", 's7', 'say39809') \
             .line(morte, "Еще одна причина свалить отсюда побыстрее, пока тот, кто изрезал тебя, не вернулся назад и не завершил свою работу.", 's7', 'say39809') \
@@ -128,8 +121,7 @@ def dlg_dmorte_one(manager):
             .response("Шрамы? Они так плохи?", 'DMORTE1.D_s8', 'r9', 'reply39810') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s8', '# from 7.0') \
+    DialogStateBuilder().state('DMORTE1.D_s8', '# from 7.0') \
         .with_npc_lines() \
             .line(morte, "Ну… художество на груди не ТАК уж плохо выглядит… но то, что на спине…", 's8', 'say39811') \
             .line(teller, "Морт делает паузу.", 's8', 'say39811') \
@@ -138,8 +130,7 @@ def dlg_dmorte_one(manager):
             .response("Татуировки на моей спине? Что там написано?", 'DMORTE1.D_s9', 'r10', 'reply39812') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s9', '# from 8.0') \
+    DialogStateBuilder().state('DMORTE1.D_s9', '# from 8.0') \
         .with_npc_lines() \
             .line(morte, "Ха! Похоже, тебя доставили с инструкцией…", 's9', 'say39813') \
             .line(teller, "Морт прочищает горло.", 's9', 'say39813') \
@@ -151,8 +142,7 @@ def dlg_dmorte_one(manager):
             .response("Фарод?.. А там есть еще что-нибудь?", 'DMORTE1.D_s10', 'r11', 'reply39814') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s10', '# from 9.0') \
+    DialogStateBuilder().state('DMORTE1.D_s10', '# from 9.0') \
         .with_npc_lines() \
             .line(morte, "Ага, здесь есть еще немного…", 's10', 'say39815') \
             .line(teller, "Морт умолкает.", 's10', 'say39815') \
@@ -164,8 +154,7 @@ def dlg_dmorte_one(manager):
             .response("Неудивительно, что спина так болит: да там целая чертова поэма. А дневник, который должен быть со мной… он был возле меня, пока я здесь валялся?", 'DMORTE1.D_s11', 'r12', 'reply39816') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s11', '# from 10.0') \
+    DialogStateBuilder().state('DMORTE1.D_s11', '# from 10.0') \
         .with_npc_lines() \
             .line(morte, "Нет… тебя обобрали догола, когда доставили сюда.", 's11', 'say39817') \
             .line(morte, "Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле.", 's11', 'say39817') \
@@ -173,8 +162,7 @@ def dlg_dmorte_one(manager):
             .response("А как насчет Фарода? Ты его знаешь?", 'DMORTE1.D_s12', 'r13', 'reply39818') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s12', '# from 11.0') \
+    DialogStateBuilder().state('DMORTE1.D_s12', '# from 11.0') \
         .with_npc_lines() \
             .line(morte, "Нет, не знаю… С другой стороны, я вообще мало кого знаю.", 's12', 'say39819') \
             .line(morte, "В общем, КТО-НИБУДЬ да знает, как добраться до этого Фарода… э, то есть, как только мы выберемся отсюда.", 's12', 'say39819') \
@@ -182,8 +170,7 @@ def dlg_dmorte_one(manager):
             .response("И *как* же мы выберемся отсюда?", 'DMORTE1.D_s13', 'r14', 'reply39820') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s13', '# from 12.0') \
+    DialogStateBuilder().state('DMORTE1.D_s13', '# from 12.0') \
         .with_npc_lines() \
             .line(morte, "Ну, если все двери заперты, значит, нам понадобится ключ.", 's13', 'say39821') \
             .line(morte, "Есть шанс, что он есть у одного из ходячих трупов в этой комнате.", 's13', 'say39821') \
@@ -191,8 +178,7 @@ def dlg_dmorte_one(manager):
             .response("Ходячих трупов?", 'DMORTE1.D_s14', 'r15', 'reply39822') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s14', '# from 13.0') \
+    DialogStateBuilder().state('DMORTE1.D_s14', '# from 13.0') \
         .with_npc_lines() \
             .line(morte, "Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы.", 's14', 'say39823') \
             .line(morte, "Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.", 's14', 'say39823') \
@@ -201,8 +187,7 @@ def dlg_dmorte_one(manager):
             .response("Так значит, я должен напасть на одного из этих трупов и забрать у него ключ? Ладно.", 'DMORTE1.D_s99999999_18', 'r17', 'reply39825') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s15', '# from 14.0') \
+    DialogStateBuilder().state('DMORTE1.D_s15', '# from 14.0') \
         .with_npc_lines() \
             .line(morte, "Погоди, ты что, думаешь, что причинишь им боль? Они уже МЕРТВЫ.", 's15', 'say39826') \
             .line(morte, "Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу.", 's15', 'say39826') \
@@ -210,16 +195,14 @@ def dlg_dmorte_one(manager):
             .response("Ну хорошо… Я собью одного из них и заберу ключ.", 'DMORTE1.D_s99999999_18', 'r18', 'reply39827') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s99999999_18', '# from 15.0 // # was r18 -> s16 // # s16, s17, s18 got removed because these lines is about gameplay mechanics, that the visual novel does not have') \
+    DialogStateBuilder().state('DMORTE1.D_s99999999_18', '# from 15.0 // # was r18 -> s16 // # s16, s17, s18 got removed because these lines is about gameplay mechanics, that the visual novel does not have') \
         .with_npc_lines() \
             .line(morte, "На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.", 's18', 'say39832') \
         .with_responses() \
             .response("(Осмотреть полки)", 'DMORTE1.D_s19', 'r19', 'reply39833') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s19', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s19', '# from -') \
         .with_npc_lines() \
             .line(morte, "Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами…", 's19', 'say39834').with_action(lambda: _s19_action(gsm)) \
             .line(morte, "… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы.", 's19', 'say39834') \
@@ -228,8 +211,7 @@ def dlg_dmorte_one(manager):
             .response("Хорошо.", 'DMORTE1.D_s23', 'r23', 'reply39836') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s20', '# from 19.0') \
+    DialogStateBuilder().state('DMORTE1.D_s20', '# from 19.0') \
         .with_npc_lines() \
             .line(morte, "Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту.", 's20', 'say39837') \
         .with_responses() \
@@ -237,8 +219,7 @@ def dlg_dmorte_one(manager):
             .response("Ну хорошо тогда.", 'DMORTE1.D_s23', 'r25', 'reply39839') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s21', '# from 20.0') \
+    DialogStateBuilder().state('DMORTE1.D_s21', '# from 20.0') \
         .with_npc_lines() \
             .line(morte, "Я? Я романтик, а не солдат. Я только под ногами буду путаться.", 's21', 'say39840') \
         .with_responses() \
@@ -246,24 +227,21 @@ def dlg_dmorte_one(manager):
             .response("Ну хорошо тогда.", 'DMORTE1.D_s23', 'r27', 'reply39842') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s22', '# from 21.0') \
+    DialogStateBuilder().state('DMORTE1.D_s22', '# from 21.0') \
         .with_npc_lines() \
             .line(morte, "Э… без проблем. Я помогу тебе.", 's22', 'say39843') \
         .with_responses() \
             .response("Я рад, что мы поняли друг друга.", 'DMORTE1.D_s23', 'r28', 'reply39844') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s23', '# from 19.1 20.1 21.1 22.0') \
+    DialogStateBuilder().state('DMORTE1.D_s23', '# from 19.1 20.1 21.1 22.0') \
         .with_npc_lines() \
             .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845') \
         .with_responses() \
             .response("Вперед.", EXIT, 'r29', 'reply39846').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s99999999_569', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s99999999_569', '# from -') \
         .with_npc_lines() \
             .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
@@ -293,8 +271,7 @@ def dlg_dmorte_one(manager):
             .response("(…)", 'DMORTE1.D_s24', '-', '-').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s24', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s24', '# from -') \
         .with_npc_lines() \
             .line(morte, "Отлично, похоже, ты позаботился о правильном трупе.", 's24', 'say0').with_action(lambda: _show('morte_img default',  center_left_down)) \
             .line(teller, "Я достаю из-под тела кусок железа, в котором с трудом можно опознать правильную форму.", '-', '-').with_action(lambda: _s25_action(gsm)) \
@@ -303,8 +280,7 @@ def dlg_dmorte_one(manager):
             .response("Тогда я перепробую все двери.", EXIT, 'r31', 'reply39850').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s26', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s26', '# from -') \
         .with_npc_lines() \
             .line(morte, "Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?", 's26', 'say39851').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
@@ -312,8 +288,7 @@ def dlg_dmorte_one(manager):
             .response("Не сейчас, Морт.", 'DMORTE1.D_s27', 'r33', 'reply39853') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s27', '# from 26.1') \
+    DialogStateBuilder().state('DMORTE1.D_s27', '# from 26.1') \
         .with_npc_lines() \
             .line(morte, "Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс.", 's27', 'say39854') \
             .line(morte, "Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?", 's27', 'say39854') \
@@ -323,8 +298,7 @@ def dlg_dmorte_one(manager):
             .response("Не сейчас, Морт. Может быть потом.", 'DMORTE1.D_s28', 'r36', 'reply39857') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s28', '# from 27.0 27.2') \
+    DialogStateBuilder().state('DMORTE1.D_s28', '# from 27.0 27.2') \
         .with_npc_lines() \
             .line(morte, "Ты пытаешься задеть мои чувства, шеф?", 's28', 'say39858') \
             .line(morte, "Погоди, разве я что-то не так сказал?", 's28', 'say39858') \
@@ -334,16 +308,14 @@ def dlg_dmorte_one(manager):
             .response("Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.", 'DMORTE1.D_s29', 'r38', 'reply39860') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s29', '# from 28.1') \
+    DialogStateBuilder().state('DMORTE1.D_s29', '# from 28.1') \
         .with_npc_lines() \
             .line(morte, "Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.", 's29', 'say39861').with_action(lambda: _kick_morte()) \
         .with_responses() \
             .response("Я так и сделаю. Прощай, Морт.", EXIT, 'r39', 'reply39862').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s30', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s30', '# from -') \
         .with_npc_lines() \
             .line(morte, "Что тебя гложет, шеф?", 's30', 'say39863').with_action(lambda: _show('morte_img default',  center_left_down)) \
         .with_responses() \
@@ -359,8 +331,7 @@ def dlg_dmorte_one(manager):
             .response("...", EXIT, 'r?', 'reply42303') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s34', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s34', '# from - // Manually checked EXTENDS ~DZM782~ : 2') \
         .with_npc_lines() \
             .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306') \
         .with_responses() \
