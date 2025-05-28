@@ -38,10 +38,10 @@ const wellKnownFunctions: string[][] = [
     ['Dead("Quentin")', 'return gsm.get_dead_quentin()'],
     ['Global("Death_of_Names_Quentin","GLOBAL",0)', 'return not gsm.get_death_of_names_quentin()'],
     ['Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)', 'return gsm.get_morte_mortuary_walkthrough_1()'],
-    ['SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)', 'set_morte_mortuary_walkthrough_1()'],
+    ['SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)', 'set_morte_mortuary_walkthrough_1(True)'],
     ['Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)', 'return not gsm.get_morte_mortuary_walkthrough_1()'],
     ['Global("Morte_Mortuary_Walkthrough_2","GLOBAL",1)', 'return gsm.get_morte_mortuary_walkthrough_2()'],
-    ['SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1)', 'set_morte_mortuary_walkthrough_2()'],
+    ['SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1)', 'gsm.set_morte_mortuary_walkthrough_2(True)'],
     ['Global("Morte_Mortuary_Walkthrough_2","GLOBAL",0)', 'return not gsm.get_morte_mortuary_walkthrough_2()'],
     ['AddexperienceParty(250)', ''],
     ['Global("Lawful_Vaxis_1","GLOBAL",0)', 'return not gsm.get_vaxis_lawful()'],
@@ -87,6 +87,11 @@ const wellKnownFunctions: string[][] = [
     ['Global("Bei","GLOBAL",1)', 'return gsm.get_meet_bei()'],
     ['PartyHasItem("Scalpel")', 'return gsm.get_has_scalpel()'],
     ['!PartyHasItem("Scalpel")', 'return not gsm.get_has_scalpel()'],
+    ['PartyHasItem("KeyPr")', 'return gsm.get_has_intro_key()'],
+    ['!PartyHasItem("KeyPr")', 'return not gsm.get_has_intro_key()'],
+    ['Global("Page_Taken","GLOBAL",0)', 'return not gsm.get_has_dzm1664_page()'],
+    ['Global("Page_Taken","GLOBAL",1)', 'return gsm.get_has_dzm1664_page()'],
+    ['SetGlobal("Page_Taken","GLOBAL",1)', 'gsm.set_pick_dzm1664_page(True)'],
 ].sort((lhs, rhs) => rhs[0].length - lhs[0].length) // from longest to shortest
 
 const pasteAligment = (body: string): string => {
@@ -178,7 +183,7 @@ const pasteWellKnownFunctions = (body: string): string => {
 }
 
 export const serializeStates = (states: State[], statePrefix: string): string => {
-    let result = 'EXIT = -1\n\n';
+    let result = 'gsm           = renpy.store.global_settings_manager\n\nEXIT          = -1\n\n';
 
     let logicBuilder = '';
 
@@ -191,7 +196,7 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
             }
 
             const fromPath = `# from ${state.paths.length > 0 ? state.paths.map(x => `${x.fromStateId}.${x.responseIndex}`).join(' ') : '-'}`;
-            builder += `DialogStateBuilder('${statePrefix}${state.stateId}', 'fromPath') \\\n    .with_npc_lines() \\\n`;
+            builder += `DialogStateBuilder().state('${statePrefix}${state.stateId}', '${fromPath}') \\\n    .with_npc_lines() \\\n`;
             builder += `        .line(SPEAKER, "${trimTrahs(state.stateBody)}", 's${state.stateId}', 'say${state.sayId}') \\\n`;
             builder += '    .with_responses() \\\n'
 
@@ -218,7 +223,7 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
                 builder += ' \\\n'
             }
 
-            builder += '    .done()';
+            builder += '    .push(manager)';
             result += builder + '\n\n';
         } catch (e: unknown) {
             console.error(statePrefix, state);

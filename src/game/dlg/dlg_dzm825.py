@@ -7,8 +7,6 @@ from engine.transforms import (
     center_right_down
 )
 
-
-
 ###
 def _init(gsm):
     gsm.set_location('morgue1')
@@ -55,12 +53,11 @@ def dlg_dzm825(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm825        = renpy.store.characters['dzm825']
-    EXIT          = -1
     gsm           = renpy.store.global_settings_manager
+    EXIT          = -1
 
     # Starts: DZM825.D_s0
-    DialogStateBuilder() \
-    .state('DZM825.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE1~ : 31') \
+    DialogStateBuilder().state('DZM825.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564').with_action(lambda: _init(gsm)) \
         .with_responses() \
@@ -74,8 +71,7 @@ def dlg_dzm825(manager):
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply42309').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM825.D_s1', '# from 0.1 0.2 0.3 3.1') \
+    DialogStateBuilder().state('DZM825.D_s1', '# from 0.1 0.2 0.3 3.1') \
         .with_npc_lines() \
             .line(teller, "Труп уставился в землю и не отвечает.", 's1', 'say24566') \
         .with_responses() \
@@ -85,8 +81,7 @@ def dlg_dzm825(manager):
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply42310').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM825.D_s2', '# from 0.4') \
+    DialogStateBuilder().state('DZM825.D_s2', '# from 0.4') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say24571') \
         .with_responses() \
@@ -96,8 +91,7 @@ def dlg_dzm825(manager):
             .response("Оставить труп в покое.", EXIT, 'r10', 'reply24572').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM825.D_s3', '# from 0.5 // # Manually checked EXTENDS ~DMORTE1~ : 31') \
+    DialogStateBuilder().state('DZM825.D_s3', '# from 0.5 // # Manually checked EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "У этого трупа ничего нет… но ты замечаешь, что его руки сильно перевязаны.", 's3', 'say42311') \
         .with_responses() \
@@ -107,16 +101,14 @@ def dlg_dzm825(manager):
             .response("Оставить труп в покое.", EXIT, 'r14', 'reply42315').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s31', '# from -') \
+    DialogStateBuilder().state('DMORTE1.D_s31', '# from -') \
         .with_npc_lines() \
             .line(morte, "Э, шеф… они не слышат тебя, понятно? Они мертвы.", 's31', 'say42298') \
         .with_responses() \
             .response("Но ты ведь тоже мертв. И разговариваешь со мной.", 'DMORTE1.D_s32', 'r41', 'reply42299') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s32', '# from 31.0') \
+    DialogStateBuilder().state('DMORTE1.D_s32', '# from 31.0') \
         .with_npc_lines() \
             .line(morte, "Ага, но *я* особенный. Смерть не смогла убить мою жажду к жизни. А здешние трупы…", 's32', 'say42300') \
             .line(teller, "Морт обводит комнату взглядом.", 's32', 'say42300') \
@@ -125,8 +117,7 @@ def dlg_dzm825(manager):
             .response("Понятно…", 'DMORTE1.D_s33', 'r42', 'reply42301') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s33', '# from 32.0') \
+    DialogStateBuilder().state('DMORTE1.D_s33', '# from 32.0') \
         .with_npc_lines() \
             .line(morte, "Слушай шеф… Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали.", 's33', 'say42302') \
             .line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302') \

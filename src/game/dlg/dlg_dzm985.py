@@ -7,8 +7,6 @@ from engine.transforms import (
     center_right_down
 )
 
-
-
 ###
 def _init(gsm):
     gsm.set_location('morgue1')
@@ -68,8 +66,8 @@ def dlg_dzm985(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm985        = renpy.store.characters['dzm985']
-    EXIT          = -1
     gsm           = renpy.store.global_settings_manager
+    EXIT          = -1
 
     # Starts: DZM985.D_s0
     DialogStateBuilder() \

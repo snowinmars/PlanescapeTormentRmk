@@ -7,8 +7,6 @@ from engine.transforms import (
     center_right_down
 )
 
-
-
 ###
 def _init(gsm):
     gsm.set_location('morgue1')
@@ -27,15 +25,15 @@ def _check_char_prop_lt(who, gtValue, prop):
     return True
 ###
 ###
-def _r46746_condition():
+def _r46746_condition(gsm):
     return not gsm.once_tracked('zombie_chaotic')
-def _r46746_action():
+def _r46746_action(gsm):
     gsm.dec_once_law('zombie_chaotic')
-def _r46749_condition():
+def _r46749_condition(gsm):
     return gsm.once_tracked('zombie_chaotic')
-def _r46750_condition():
+def _r46750_condition(gsm):
     return gsm.get_vaxis_exposed()
-def _r46751_condition():
+def _r46751_condition(gsm):
     return gsm.get_can_speak_with_dead()
 ###
 
@@ -44,11 +42,10 @@ def dlg_dzm1508(manager):
     teller        = renpy.store.characters['teller']
     morte         = renpy.store.characters['morte']
     dzm1508       = renpy.store.characters['dzm1508']
-    EXIT          = -1
     gsm           = renpy.store.global_settings_manager
+    EXIT          = -1
 
-    DialogStateBuilder() \
-    .state('DZM1508.D_s0', '# from -') \
+    DialogStateBuilder().state('DZM1508.D_s0', '# from -') \
         .with_npc_lines() \
             .line(teller, "На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.", 's0', 'say46745').with_action(lambda: _init(gsm)) \
             .line(teller, "Номер «1508» вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.", 's0', 'say46745') \
@@ -61,16 +58,14 @@ def dlg_dzm1508(manager):
             .response("Оставить труп в покое.", EXIT, 'r5', 'reply46755').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM1508.D_s1', '# from 0.0 0.1 0.2') \
+    DialogStateBuilder().state('DZM1508.D_s1', '# from 0.0 0.1 0.2') \
         .with_npc_lines() \
             .line(teller, "Труп продолжает пялиться на тебя.", 's1', 'say46747') \
         .with_responses() \
             .response("Оставить труп в покое.", EXIT, 'r6', 'reply46748').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM1508.D_s2', '# from 0.3') \
+    DialogStateBuilder().state('DZM1508.D_s2', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say46752') \
         .with_responses() \
