@@ -8,13 +8,18 @@ import { promises as fs } from 'fs';
 import * as path from 'path'
 
 const goFiles = [
-    'DMORTE1.D',
-    'DZM782.D',
-    'DMORTE2.D',
     'DDEATHON.D',
     'DDHALL.D',
     'DMORTE.D',
-    'DZM79.D',
+    'DMORTE1.D',
+    'DMORTE2.D',
+    'DZM1041.D',
+    'DZM1094.D',
+    'DZM1146.D',
+    'DZM1201.D',
+    'DZM1445.D',
+    'DZM1508.D',
+    'DZM1664.D',
     'DZM199.D',
     'DZM257.D',
     'DZM310.D',
@@ -26,16 +31,11 @@ const goFiles = [
     'DZM613.D',
     'DZM732.D',
     'DZM782.D',
+    'DZM782.D',
+    'DZM79.D',
     'DZM825.D',
     'DZM965.D',
     'DZM985.D',
-    'DZM1041.D',
-    'DZM1094.D',
-    'DZM1146.D',
-    'DZM1201.D',
-    'DZM1445.D',
-    'DZM1508.D',
-    'DZM1664.D',
 ];
 
 const go = async (fromFile: string, cleanFile: string, toFile: string, statePrefix: string): Promise<void> => {
