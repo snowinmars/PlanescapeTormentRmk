@@ -10,7 +10,7 @@ class SettingsManager:
 
     def update_journal(self, note_id):
         devlog.debug('Update journal with %s', note_id)
-        if node_id not in self._settings['journal_note_ids']:
+        if note_id not in self._settings['journal_note_ids']:
             self._settings['journal_note_ids'].append(note_id)
 
     def register(self, setting_id, default_value):

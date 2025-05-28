@@ -11,7 +11,7 @@ from engine.transforms import (
 def _init(gsm):
     gsm.set_location('morgue2')
     _show('morte_img default', center_left_down)
-    pick_up_intro_key(False)
+    gsm.set_has_intro_key(False)
 def _dispose():
     _hide('morte_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -29,17 +29,17 @@ def _r41251_action(gsm):
     gsm.set_in_party_morte(True)
     _dispose()
 def _r41145_action(gsm):
-    set_morte_mortuary_walkthrough_1(True)
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41146_action(gsm):
-    set_morte_mortuary_walkthrough_1(True)
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41147_action(gsm):
-    set_morte_mortuary_walkthrough_1(True)
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41148_action(gsm):
-    set_morte_mortuary_walkthrough_1(True)
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41163_condition(gsm):
     return _check_char_prop_gt('protagonist',12,'int')
 def _r41177_action(gsm):
-    gsm.set_unblock_journal(True)
+    gsm.set_jorunal_allowed(True)
     gsm.update_journal('39516')
 def _r41181_condition(gsm):
     return not gsm.get_morte_mortuary_walkthrough_1()
@@ -220,7 +220,7 @@ def dlg_dmorte_two(manager):
             .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас.", '-', '-') \
             .line(morte, "Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.", 's31', 'say41262') \
         .with_responses() \
-            .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _reply41263_action(gsm)) \
+            .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _r41263_action(gsm)) \
         .push(manager)
 
     DialogStateBuilder().state('DMORTE2.D_s12', '# from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0') \
