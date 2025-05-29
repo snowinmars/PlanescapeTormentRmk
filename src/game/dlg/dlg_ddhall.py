@@ -21,6 +21,14 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dhall(gsm):
+    gsm.set_dead_dhall(True)
+# def _s825_action(gsm):
+#     _show('dhall_img default', center_right_down)
+#     gsm.set_meet_dhall(True)
+# def _s838_action(gsm):
+#     _show('dhall_img default', center_right_down)
+#     gsm.set_meet_dhall(True)
 ###
 def _r5070_condition(gsm):
     return not gsm.get_meet_deionarra()
@@ -142,7 +150,7 @@ def _r5082_condition(gsm):
 def _r5083_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r1327_action(gsm):
-    return gsm.get_meet_dhall()
+    gsm.set_meet_dhall(True)
 def _r5731_action(gsm):
     gsm.update_journal('39459')
 def _r5732_action(gsm):
@@ -157,7 +165,6 @@ def _r6053_action(gsm):
     gsm.dec_once_good('evil_dhall_3')
 ###
 
-# DLG/DDHALL.DLG
 # DLG/DMORTE.DLG
 def dlg_ddhall(manager):
     teller        = renpy.store.characters['teller']
@@ -167,6 +174,7 @@ def dlg_ddhall(manager):
     EXIT          = -1
     gsm           = renpy.store.global_settings_manager
 
+    # Starts with DDHALL.D_s0 DDHALL.D_s5
     DialogStateBuilder() \
     .state('DDHALL.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 104') \
         .with_npc_lines() \
@@ -176,7 +184,7 @@ def dlg_ddhall(manager):
             .line(morte, "И мы *тем более* не должны болтать с больными трухляками.", 's104', 'say5053') \
             .line(morte, "Давай, пошли отсюда. Чем быстрее мы свалим отсюда, тем лучш…", 's104', 'say5053') \
             .line(teller, "Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя.", 's1', 'say826') \
-            .line(dhall_unknown, "Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный.", 's1', 'say826').with_action(lambda: _show('dhall_img default', center_right_down)) \
+            .line(dhall_unknown, "Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный.", 's1', 'say826') \
             .line(teller, "Он откладывает перо.", 's1', 'say826') \
             .line(dhall_unknown, "Но глухотой я еще не страдаю.", 's1', 'say826') \
         .with_responses() \
@@ -856,11 +864,15 @@ def dlg_ddhall(manager):
     DialogStateBuilder() \
     .state('DDHALL.D_s99999999_54', '-') \
         .with_npc_lines() \
-            .line(teller, "Дхалл не должен жить.",'-', '-').with_action(lambda: _kill_dhall()) \
-            .line(teller, "Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.",'-', '-') \
-            .line(teller, "И ему мешает кашель.",'-', '-') \
+            .line(teller, "Это не должно жить.",'-', '-').with_condition(lambda: not gsm.get_meet_dhall()).with_action(lambda: _kill_dhall(gsm)) \
+            .line(teller, "Дхалл не должен жить.",'-', '-').with_condition(lambda: gsm.get_meet_dhall()).with_action(lambda: _kill_dhall(gsm)) \
+            .line(teller, "Оно не успевает даже посмотреть на меня. Слишком старо. Слишком слабо.",'-', '-').with_condition(lambda: not gsm.get_meet_dhall()) \
+            .line(teller, "Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.",'-', '-').with_condition(lambda: gsm.get_meet_dhall()) \
+            .line(teller, "От моих ударов оно заходится кашлем.",'-', '-').with_condition(lambda: not gsm.get_meet_dhall()) \
+            .line(teller, "И ему мешает кашель.",'-', '-').with_condition(lambda: gsm.get_meet_dhall()) \
             .line(teller, "...",'-', '-') \
-            .line(teller, "Перо, которое он до этого держал в руке, упало в тень книги.",'-', '-') \
+            .line(teller, "Перо, которое оно до этого держал в руке, упало в тень книги.",'-', '-').with_condition(lambda: not gsm.get_meet_dhall()) \
+            .line(teller, "Перо, которое он до этого держал в руке, упало в тень книги.",'-', '-').with_condition(lambda: gsm.get_meet_dhall()) \
         .with_responses() \
             .response("(...)", EXIT, '-', '-').with_action(lambda: _hide('dhall_img')) \
         .push(manager)

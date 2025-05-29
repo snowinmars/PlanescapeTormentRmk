@@ -5,7 +5,8 @@ allowed_line_endings = tuple([
     '.',
     '?',
     '!',
-    '…'
+    '…',
+    '»'
 ])
 
 """
@@ -45,7 +46,6 @@ class DialogStateBuilder:
             self.lines = []
 
         def line(self, npc, text, state_id, say_id):
-            """Start building an NPC line"""
             self.parent._check_line(text)
 
             if 'text' in self.last_line:
@@ -57,20 +57,22 @@ class DialogStateBuilder:
             return self
 
         def with_action(self, action):
-            """Add action to the current NPC line"""
             self.last_line['action'] = action
             return self
 
+        def with_condition(self, condition):
+            self.last_line['condition'] = condition
+            return self
+
         def with_responses(self):
-            """Add NPC line with no action"""
-            if 'text' in self.last_line:
-                self.lines.append(self.last_line)
+            self.lines.append(self.last_line)
 
             for l in self.lines:
                 self.parent.npc_lines.append([
                     l['npc'],
                     l['text'],
-                    l['action'] if 'action' in l else None
+                    l['action'] if 'action' in l else None,
+                    l['condition'] if 'condition' in l else None
                 ])
             return DialogStateBuilder.ResponsesBuilder(self)
 
@@ -158,4 +160,7 @@ class DialogManager:
         for line in npc_lines:
             if line[2]:
                 line[2]()
-            renpy.exports.say(line[0], line[1])
+            if line[3] is not None and line[3]():
+                renpy.exports.say(line[0], line[1])
+            if line[3] is None:
+                renpy.exports.say(line[0], line[1])

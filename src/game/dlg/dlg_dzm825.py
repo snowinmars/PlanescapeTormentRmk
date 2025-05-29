@@ -11,6 +11,7 @@ from engine.transforms import (
 def _init(gsm):
     gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
+    gsm.set_meet_dzm825(True)
     _show('dzm825_img default', center_right_down)
 def _dispose():
     _hide('dzm825_img')
@@ -20,6 +21,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm825(gsm):
+    gsm.set_dead_dzm825(True)
 ###
 def _r24565_condition(gsm):
     return not gsm.get_mortuary_walkthrough() \
@@ -119,4 +122,14 @@ def dlg_dzm825(manager):
             .line(morte, "Давай оставим разговоры с мертвецами сумасшедшим, ладно?", 's33', 'say42302') \
         .with_responses() \
             .response("Хорошо. Идем.", EXIT, 'r43', 'reply42303').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder() \
+    .state('DMORTE1.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm825(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

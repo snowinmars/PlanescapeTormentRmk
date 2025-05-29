@@ -7,16 +7,13 @@ from engine.transforms import (
     center_right_down
 )
 
-global global_settings_manager
-
 ###
 def _init(gsm):
     gsm.set_location('morgue1')
+    gsm.set_in_party_morte(True)
     gsm.set_meet_morte(True)
-    renpy.exports.scene()
     renpy.exports.show("bg mourge1")
     _show('morte_img default', center_left_down)
-    gsm.set_in_party_morte(True)
 def _dispose():
     _hide('morte_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -35,11 +32,17 @@ def _s19_action(gsm):
 def _s25_action(gsm):
     gsm.set_has_intro_key(True)
 def _kill_dzm569(gsm):
+    gsm.set_meet_dzm569(True)
     gsm.set_dead_dzm569(True)
 def _kill_dzm825(gsm):
+    gsm.set_meet_dzm825(True)
     gsm.set_dead_dzm825(True)
 def _kill_dzm782(gsm):
+    gsm.set_meet_dzm782(True)
     gsm.set_dead_dzm782(True)
+def _kill_dzm965(gsm):
+    gsm.set_meet_dzm965(True)
+    gsm.set_dead_dzm965(True)
 ###
 def _r39824_action(gsm):
     gsm.inc_once_good('good_morte_1')
@@ -235,36 +238,6 @@ def dlg_dmorte_one(manager):
             .line(morte, "Тогда настало время познакомить этих трупов с их второй смертью…", 's23', 'say39845') \
         .with_responses() \
             .response("Вперед.", EXIT, 'r29', 'reply39846').with_action(lambda: _dispose()) \
-        .push(manager)
-
-    DialogStateBuilder().state('DMORTE1.D_s99999999_569', '# from -') \
-        .with_npc_lines() \
-            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm569(gsm)) \
-        .with_responses() \
-            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
-        .push(manager)
-
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s99999999_825', '# from -') \
-        .with_npc_lines() \
-            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm825(gsm)) \
-        .with_responses() \
-            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
-        .push(manager)
-
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s99999999_782', '# from -') \
-        .with_npc_lines() \
-            .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708') \
-            .line(teller, "На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm782(gsm)) \
-        .with_responses() \
-            .response("(…)", 'DMORTE1.D_s24', '-', '-').with_action(lambda: _dispose()) \
         .push(manager)
 
     DialogStateBuilder().state('DMORTE1.D_s24', '# from -') \

@@ -21,6 +21,8 @@ def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
 ###
+def _r41267_action(gsm):
+    gsm.set_saw_dhall(True)
 def _r41251_action(gsm):
     gsm.set_in_party_morte(True)
     _dispose()
@@ -418,5 +420,5 @@ def dlg_dmorte_two(manager):
         .with_npc_lines() \
             .line(morte, "Э… ну… *Возможно*. Чтобы определить это, нужно потрясти черепушкой вон с тем парящим трухлявиком. Вот только я не уверен, что это хорошая идея.", 's33', 'say41266') \
         .with_responses() \
-            .response("Мне нужны ответы. Я поговорю с ним.", EXIT, 'r88', 'reply41267').with_action(lambda: _dispose()) \
+            .response("Мне нужны ответы. Я поговорю с ним.", EXIT, 'r88', 'reply41267').with_action(lambda: _r41267_action(gsm)) \
         .push(manager)

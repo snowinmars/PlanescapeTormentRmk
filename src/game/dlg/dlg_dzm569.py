@@ -11,6 +11,7 @@ from engine.transforms import (
 def _init(gsm):
     gsm.set_location('morgue1')
     renpy.exports.show("bg mourge1")
+    gsm.set_meet_dzm569(True)
     _show('dzm569_img default', center_right_down)
 def _dispose():
     _hide('dzm569_img')
@@ -20,6 +21,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm569(gsm):
+    gsm.set_dead_dzm569(True)
 ###
 def _r24576_condition(gsm):
     return not gsm.get_mortuary_walkthrough() \
@@ -94,4 +97,13 @@ def dlg_dzm569(manager):
             .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM569.D_s1', 'r3', 'reply24581').with_condition(lambda: _r24581_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r13', 'reply42296').with_action(lambda: _dispose()) \
             .response("Оставить зомби в покое.", EXIT, 'r14', 'reply42297').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DMORTE1.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm569(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

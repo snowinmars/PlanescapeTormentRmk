@@ -28,7 +28,7 @@ def _r45115_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM396.D_s0', '# from -') \
+DialogStateBuilder().state('DZM396.D_s0', '# from -')\
     .with_npc_lines() \
         .line(SPEAKER, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер 396; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов… похоже, они могут пригодиться.", 's0', 'say34931') \
     .with_responses() \
@@ -41,7 +41,7 @@ DialogStateBuilder().state('DZM396.D_s0', '# from -') \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45106').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM396.D_s1', '# from 0.0 0.1 0.3 4.0 4.1 4.2') \
+DialogStateBuilder().state('DZM396.D_s1', '# from 0.0 0.1 0.3 4.0 4.1 4.2')\
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say34933') \
     .with_responses() \
@@ -49,14 +49,14 @@ DialogStateBuilder().state('DZM396.D_s1', '# from 0.0 0.1 0.3 4.0 4.1 4.2') \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45107').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM396.D_s2', '# from 0.4 4.3') \
+DialogStateBuilder().state('DZM396.D_s2', '# from 0.4 4.3')\
     .with_npc_lines() \
         .line(SPEAKER, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34938') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply34939').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM396.D_s3', '# from 0.2 1.0') \
+DialogStateBuilder().state('DZM396.D_s3', '# from 0.2 1.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Ты протягиваешь руку и забираешь бинты из рук трупа. Труп даже не обратил на это внимания; он продолжает перевязывать тела.", 's3', 'say45108') \
     .with_responses() \
@@ -64,7 +64,7 @@ DialogStateBuilder().state('DZM396.D_s3', '# from 0.2 1.0') \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45110').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM396.D_s4', '# from 3.0') \
+DialogStateBuilder().state('DZM396.D_s4', '# from 3.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов. На левом виске у него выбит номер 396, а его губы крепко зашиты.", 's4', 'say45111') \
     .with_responses() \

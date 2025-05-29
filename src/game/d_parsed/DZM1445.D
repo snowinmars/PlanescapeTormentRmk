@@ -12,7 +12,7 @@ def _r46762_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM1445.D_s0', '# from -') \
+DialogStateBuilder().state('DZM1445.D_s0', '# from -')\
     .with_npc_lines() \
         .line(SPEAKER, "Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни. На лбу у него вытатуирован номер 1445, а его губы крепко сшиты.", 's0', 'say46756') \
     .with_responses() \
@@ -24,14 +24,14 @@ DialogStateBuilder().state('DZM1445.D_s0', '# from -') \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply46766').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1445.D_s1', '# from 0.0 0.1 0.2') \
+DialogStateBuilder().state('DZM1445.D_s1', '# from 0.0 0.1 0.2')\
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say46758') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply46759').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1445.D_s2', '# from 0.3') \
+DialogStateBuilder().state('DZM1445.D_s2', '# from 0.3')\
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say46763') \
     .with_responses() \

@@ -14,7 +14,7 @@ def _r9562_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM257.D_s0', '# from -') \
+DialogStateBuilder().state('DZM257.D_s0', '# from -')\
     .with_npc_lines() \
         .line(SPEAKER, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо. Ты с трудом различаешь номер 257 на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.", 's0', 'say6507') \
     .with_responses() \
@@ -26,14 +26,14 @@ DialogStateBuilder().state('DZM257.D_s0', '# from -') \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply6515').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s1', '# from 0.0 0.1 0.2') \
+DialogStateBuilder().state('DZM257.D_s1', '# from 0.0 0.1 0.2')\
     .with_npc_lines() \
         .line(SPEAKER, "В глазах трупа нет даже намека на понимание; они продолжают смотреть каждый в свою сторону.", 's1', 'say6508') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply6516').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s2', '# from 0.3') \
+DialogStateBuilder().state('DZM257.D_s2', '# from 0.3')\
     .with_npc_lines() \
         .line(SPEAKER, "Дух врывается назад в тело с такой силой, что труп, охваченный судорогой, отлетает назад! Тело, извиваясь и мечась в безумном танце, тотчас поднимается на ноги, размахивая руками, разрывая швы и тряся отваливающимися кусками плоти. Глаза трупа выпучиваются и вращаются, а сам он без конца хихикает как сумасшедший…", 's2', 'say6509') \
     .with_responses() \
@@ -41,7 +41,7 @@ DialogStateBuilder().state('DZM257.D_s2', '# from 0.3') \
         .response("Оставить духа в покое.", EXIT, 'r', 'reply9558').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s3', '# from 2.0') \
+DialogStateBuilder().state('DZM257.D_s3', '# from 2.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Одержимый труп кричит нараспев, громкость и тон его голоса беспорядочно меняются. ТЫ — ДУХ, Я — ЖИВОЙ, это ТЫ ответишь на вопросы мои! Кажется, твой смущенный вид ему понравился. Он вставляет в рот свои костяные пальцы и растягивается его в зловещей усмешке, одержимо смеясь и высовывая мясистый белый язык.", 's3', 'say9553') \
     .with_responses() \
@@ -50,7 +50,7 @@ DialogStateBuilder().state('DZM257.D_s3', '# from 2.0') \
         .response("Оставить в покое беспокойного духа.", 'DZM257.D_s6', 'r', 'reply9561') \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s4', '# from 3.0 4.0 5.0') \
+DialogStateBuilder().state('DZM257.D_s4', '# from 3.0 4.0 5.0')\
     .with_npc_lines() \
         .line(SPEAKER, "На мгновение дух успокаивается, затем взрывается потоком громкого, сводящего с ума бессмысленного бормотания. Какофония сводит с ума, угрожая поставить тебя на колени. Так же внезапно, как и началось, все… прекращается. Труп стоит, тихо подергиваясь.", 's4', 'say9554') \
     .with_responses() \
@@ -59,7 +59,7 @@ DialogStateBuilder().state('DZM257.D_s4', '# from 3.0 4.0 5.0') \
         .response("Я тебя не понимаю. Прощай.", 'DZM257.D_s6', 'r', 'reply9564') \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s5', '# from 3.1 4.1 5.1') \
+DialogStateBuilder().state('DZM257.D_s5', '# from 3.1 4.1 5.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Дух снова кричит нараспев: На вопросы ЖИВЫХ МЕРТВЫЙ ответит. ТАК было, так ЕСТЬ и будет ТАК. На мои ОТВЕТЫ ты задашь вопросы! Выражение твоего лица очень ему нравится; он пускается в такой дикий пляс, что ты уже начинаешь сомневаться, что труп вынесет такое обращение над собой. Пока он скачет, ты даже слышишь грохот и треск костей и звук лопающихся сухожилий.", 's5', 'say9555') \
     .with_responses() \
@@ -68,7 +68,7 @@ DialogStateBuilder().state('DZM257.D_s5', '# from 3.1 4.1 5.1') \
         .response("Махнуть рукой и оставить в покое бормочущего духа.", 'DZM257.D_s6', 'r', 'reply9567') \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s6', '# from 3.2 4.2 5.2') \
+DialogStateBuilder().state('DZM257.D_s6', '# from 3.2 4.2 5.2')\
     .with_npc_lines() \
         .line(SPEAKER, "Покидая тело, дух растягивает губы в понимающей улыбке. Его дикие сверкающие глаза впиваются в тебя пронизывающим взглядом психопата. Он шепчет одно единственное слово, старательно произнося каждую букву, будто перебирает жемчужное ожерелье: Лимбо…", 's6', 'say9556') \
     .with_responses() \
@@ -76,7 +76,7 @@ DialogStateBuilder().state('DZM257.D_s6', '# from 3.2 4.2 5.2') \
         .response("Не обращать на него внимания, отвернуться.", EXIT, 'r', 'reply9569').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM257.D_s7', '# from 6.0') \
+DialogStateBuilder().state('DZM257.D_s7', '# from 6.0')\
     .with_npc_lines() \
         .line(SPEAKER, "…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.", 's7', 'say9557') \
     .with_responses() \

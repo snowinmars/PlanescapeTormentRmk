@@ -29,13 +29,16 @@ const wellKnownFunctions: string[][] = [
     ['Global("Deionarra","GLOBAL",0)', 'return not gsm.get_meet_deionarra()'],
     ['Global("Deionarra","GLOBAL",1)', 'return gsm.get_meet_deionarra()'],
     ['GlobalGT("Deionarra","GLOBAL",0)', 'return gsm.get_meet_deionarra()'],
+    ['SetGlobal("Death_of_Names_Dhall","GLOBAL",1)', 'gsm.set_pass_death_of_names_dhall(True)'],
     ['Global("Death_of_Names_Dhall","GLOBAL",1)', 'return gsm.get_pass_death_of_names_dhall()'],
     ['Global("Death_of_Names_Dhall","GLOBAL",0)', 'return not gsm.get_pass_death_of_names_dhall()'],
     ['Global("Death_of_Names_Quentin","GLOBAL",1)', 'return gsm.get_pass_death_of_names_quentin()'],
+    ['SetGlobal("Death_of_Names_Quentin","GLOBAL",1)', 'gsm.set_pass_death_of_names_quentin(True)'],
     ['DO ~SetGlobal("Death_of_Names","GLOBAL",1) ~', 'gsm.set_meet_death_of_names(True)'],
     ['GlobalGT("Xachariah_Name","GLOBAL",0)', 'return gsm.get_know_xachariah_name()'],
     ['GlobalGT("Quentin","GLOBAL",0)', 'return gsm.get_quentin()'],
     ['Dead("Quentin")', 'return gsm.get_dead_quentin()'],
+    ['!Dead("Quentin")', 'return not gsm.get_dead_quentin()'],
     ['Global("Death_of_Names_Quentin","GLOBAL",0)', 'return not gsm.get_death_of_names_quentin()'],
     ['Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)', 'return gsm.get_morte_mortuary_walkthrough_1()'],
     ['SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)', 'set_morte_mortuary_walkthrough_1(True)'],
@@ -92,6 +95,25 @@ const wellKnownFunctions: string[][] = [
     ['Global("Page_Taken","GLOBAL",0)', 'return not gsm.get_has_dzm1664_page()'],
     ['Global("Page_Taken","GLOBAL",1)', 'return gsm.get_has_dzm1664_page()'],
     ['SetGlobal("Page_Taken","GLOBAL",1)', 'gsm.set_pick_dzm1664_page(True)'],
+    ['Global("Crier_Quest","GLOBAL",1)', 'return gsm.get_crier_quest() == 1'],
+    ['Global("Crier_Quest","GLOBAL",2)', 'return gsm.get_crier_quest() == 2'],
+    ['Global("Crier_Quest","GLOBAL",3)', 'return gsm.get_crier_quest() == 3'],
+    ['GlobalLT("Crier_Quest","GLOBAL",1)', 'return gsm.get_crier_quest() <= 1'],
+    ['GlobalLT("Crier_Quest","GLOBAL",2)', 'return gsm.get_crier_quest() <= 2'],
+    ['GlobalLT("Crier_Quest","GLOBAL",3)', 'return gsm.get_crier_quest() <= 3'],
+    ['Global("Know_Xixi","GLOBAL",0)', 'return not gsm.get_meet_xixi()'],
+    ['Global("Know_Xixi","GLOBAL",1)', 'return gsm.get_meet_xixi()'],
+    ['SetGlobal("Crier_Quest","GLOBAL",2)', 'gsm.set_crier_quest(2)'],
+    ['Global("Xixi_Back","GLOBAL",1)', 'return gsm.get_xixi_back() == 1'],
+    ['Global("Xixi_Back","GLOBAL",1)', 'return gsm.get_xixi_back() == 1'],
+    ['Global("Xixi_Back","GLOBAL",2)', 'return gsm.get_xixi_back() == 2'],
+    ['Global("Xixi_Back","GLOBAL",3)', 'return gsm.get_xixi_back() == 3'],
+    ['GlobalLT("Xixi_Back","GLOBAL",1)', 'return gsm.get_xixi_back() <= 1'],
+    ['GlobalLT("Xixi_Back","GLOBAL",2)', 'return gsm.get_xixi_back() <= 2'],
+    ['GlobalLT("Xixi_Back","GLOBAL",3)', 'return gsm.get_xixi_back() <= 3'],
+    ['Global("Morte_Quip","GLOBAL",0)', 'return not gsm.get_morte_quip()'],
+    ['Global("Morte_Quip","GLOBAL",1)', 'return gsm.get_morte_quip()'],
+    ['SetGlobal("Morte_Quip","GLOBAL",1)', 'gsm.set_morte_quip(True)'],
 ].sort((lhs, rhs) => rhs[0].length - lhs[0].length) // from longest to shortest
 
 const pasteAligment = (body: string): string => {
@@ -191,12 +213,14 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
         try {
             let builder = '';
 
-            if (state.free) {
-                builder += `######\n# ${state.free}\n######\n`
-            }
-
             const fromPath = `# from ${state.paths.length > 0 ? state.paths.map(x => `${x.fromStateId}.${x.responseIndex}`).join(' ') : '-'}`;
-            builder += `DialogStateBuilder().state('${statePrefix}${state.stateId}', '${fromPath}') \\\n    .with_npc_lines() \\\n`;
+            builder += `DialogStateBuilder().state('${statePrefix}${state.stateId}', '${fromPath}`;
+            if (state.free) {
+                builder += ` // ${state.free}')`
+            } else {
+                builder += `')`
+            }
+            builder += `\\\n    .with_npc_lines() \\\n`;
             builder += `        .line(SPEAKER, "${trimTrahs(state.stateBody)}", 's${state.stateId}', 'say${state.sayId}') \\\n`;
             builder += '    .with_responses() \\\n'
 

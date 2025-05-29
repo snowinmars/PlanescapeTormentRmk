@@ -42,7 +42,7 @@ def _r9210_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM1041.D_s0', '# from -') \
+DialogStateBuilder().state('DZM1041.D_s0', '# from -')\
     .with_npc_lines() \
         .line(SPEAKER, "У этого поднятого трупа мужчины на лбу вырезан номер 1041. Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно экзотическую внешность. Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.", 's0', 'say6573') \
     .with_responses() \
@@ -55,14 +55,14 @@ DialogStateBuilder().state('DZM1041.D_s0', '# from -') \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply9095').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s1', '# from 0.0 0.1 0.2') \
+DialogStateBuilder().state('DZM1041.D_s1', '# from 0.0 0.1 0.2')\
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say6574') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply6582').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s2', '# from 0.3') \
+DialogStateBuilder().state('DZM1041.D_s2', '# from 0.3')\
     .with_npc_lines() \
         .line(SPEAKER, "В миг, когда дух возвращается в свою прежнюю обитель, труп вздрагивает. Его миндалевидные глаза снова темнеют, бледная кожа приобретает слегка бронзовый оттенок. Он выпрямляется, отряхивая пыль из одежды.  Заметив, наконец, вызывающего, призрак бросает на тебя пытливый взгляд, затем делает легкий поклон.", 's2', 'say6575') \
     .with_responses() \
@@ -71,7 +71,7 @@ DialogStateBuilder().state('DZM1041.D_s2', '# from 0.3') \
         .response("Оставить духа.", EXIT, 'r', 'reply9097').with_action(lambda: _r9097_action(gsm)).with_action(lambda: _dispose())  ### replace two actions with one \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s3', '# from 2.0') \
+DialogStateBuilder().state('DZM1041.D_s3', '# from 2.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Несколько мгновений дух удовлетворенно улыбается. Он собирается, закладывает одну руку за спину и начинает тихо, нараспев декламировать:  Сян цзянь ши нань, бе и нань Дун фэн у ли, бай хуа цань Чунь цань дао сы, сы фань цзинь Да цзю чэн хуй, лэй ши гань.  Сказав это, он принимает довольный вид, терпеливо ожидая твоей реакции.", 's3', 'say9060') \
     .with_responses() \
@@ -80,7 +80,7 @@ DialogStateBuilder().state('DZM1041.D_s3', '# from 2.0') \
         .response("Я не понимаю тебя. Прощай.", EXIT, 'r', 'reply9100').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s4', '# from 2.1') \
+DialogStateBuilder().state('DZM1041.D_s4', '# from 2.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Ты открываешь рот, чтобы задать вопрос, но дух опережает тебя, начав тихо, нараспев декламировать:  Сян цзянь ши нань, бе и нань Дун фэн у ли, бай хуа цань Чунь цань дао сы, сы фань цзинь Да цзю чэн хуй, лэй ши гань.  Сказав это, он принимает довольный вид, терпеливо ожидая твоей реакции.", 's4', 'say9061') \
     .with_responses() \
@@ -89,7 +89,7 @@ DialogStateBuilder().state('DZM1041.D_s4', '# from 2.1') \
         .response("Я не понимаю тебя. Прощай.", EXIT, 'r', 'reply9103').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s5', '# from 3.0 3.1 4.0 4.1') \
+DialogStateBuilder().state('DZM1041.D_s5', '# from 3.0 3.1 4.0 4.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Дух на некоторое время умолкает, словно чтобы поразмыслить. Затем он начинает говорить, с сильным акцентом, и все же с весьма изысканным произношением. Прости меня, достопочтенный господин. Прошло немало времени с тех пор, как я говорил на твоем языке. Не сомневаюсь, что мой дух был призван сюда, чтобы отвечать на твои вопросы. Что же ты хотел узнать от меня?", 's5', 'say9062') \
     .with_responses() \
@@ -102,7 +102,7 @@ DialogStateBuilder().state('DZM1041.D_s5', '# from 3.0 3.1 4.0 4.1') \
         .response("Ничего, неважно.", EXIT, 'r', 'reply9110').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s6', '# from 5.0 14.0') \
+DialogStateBuilder().state('DZM1041.D_s6', '# from 5.0 14.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Трудно объяснить, кто я… а вот кем я *был* — нет. Я был известен как Чжуань Бэй, наставник и телохранитель Лю Сиси, дочери Цензора Ши-аня.", 's6', 'say9063') \
     .with_responses() \
@@ -112,7 +112,7 @@ DialogStateBuilder().state('DZM1041.D_s6', '# from 5.0 14.0') \
         .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply9114').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s7', '# from 5.1 14.1') \
+DialogStateBuilder().state('DZM1041.D_s7', '# from 5.1 14.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Я родом из места под названием Шоу Лунь… места, которое я когда-то считал центром вселенной Похоже, на него накатили теплые воспоминания. Столько мест, столько миров. Раньше я считал себя довольно образованным человеком, и все же перед смертью я знал слишком мало…", 's7', 'say9064') \
     .with_responses() \
@@ -121,7 +121,7 @@ DialogStateBuilder().state('DZM1041.D_s7', '# from 5.1 14.1') \
         .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply9117').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s8', '# from 5.2 14.2') \
+DialogStateBuilder().state('DZM1041.D_s8', '# from 5.2 14.2')\
     .with_npc_lines() \
         .line(SPEAKER, "Я был убит одним из тех, с кем я попал в этот мир. Я охотился за ним в этом городе многие недели — за это время я успел изучить ваш язык, — но он нашел меня первым. Он профессиональный убийца; он застигнул меня врасплох и убил меня во сне.", 's8', 'say9065') \
     .with_responses() \
@@ -133,7 +133,7 @@ DialogStateBuilder().state('DZM1041.D_s8', '# from 5.2 14.2') \
         .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply9123').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s9', '# from 5.4 14.4') \
+DialogStateBuilder().state('DZM1041.D_s9', '# from 5.4 14.4')\
     .with_npc_lines() \
         .line(SPEAKER, "Об этом здании? Совершенно ничего. Я слышал о нем, знаю, что мое тело работает здесь, но это все. Я довольно мало знаю об этом великом городе, 'Сигиле'. Недели, проведенные здесь, я потратил на поиски людей, с которыми попал в этот мир, и на изучение языка; хоть это и огорчало меня, но времени на другие вещи у меня не было. А ведь я мог познать мириады чудес этого места…", 's9', 'say9066') \
     .with_responses() \
@@ -144,7 +144,7 @@ DialogStateBuilder().state('DZM1041.D_s9', '# from 5.4 14.4') \
         .response("Хорошо. Возможно, мы еще встретимся.", EXIT, 'r', 'reply9128').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s10', '# from 5.5 14.5') \
+DialogStateBuilder().state('DZM1041.D_s10', '# from 5.5 14.5')\
     .with_npc_lines() \
         .line(SPEAKER, "Нет, это имя ничего для меня не значит. Я прошу прощения, но в данном вопросе я тебе не помощник.", 's10', 'say9067') \
     .with_responses() \
@@ -152,7 +152,7 @@ DialogStateBuilder().state('DZM1041.D_s10', '# from 5.5 14.5') \
         .response("Хорошо. Возможно, мы еще встретимся.", EXIT, 'r', 'reply9130').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s11', '# from 5.3 14.3') \
+DialogStateBuilder().state('DZM1041.D_s11', '# from 5.3 14.3')\
     .with_npc_lines() \
         .line(SPEAKER, "На миг тебе кажется, что дух огорчен.  Я… Мой дух находится во владениях прославленного магистрата Яньвана, в Дворце Правосудия.", 's11', 'say9068') \
     .with_responses() \
@@ -161,7 +161,7 @@ DialogStateBuilder().state('DZM1041.D_s11', '# from 5.3 14.3') \
         .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply9133').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s12', '# from 6.0 16.1') \
+DialogStateBuilder().state('DZM1041.D_s12', '# from 6.0 16.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Да. Там, откуда я родом, это встречается не так уж редко. Моей обязанностью было все время находиться рядом с госпожой Лю, и не только оберегать ее, но и обучать. Я был уважаемым учителем, а также фехтовальщиком. Возможно, я послужил бы ей лучше, будь я лучшим фехтовальщиком…", 's12', 'say9069') \
     .with_responses() \
@@ -170,7 +170,7 @@ DialogStateBuilder().state('DZM1041.D_s12', '# from 6.0 16.1') \
         .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply9136').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s13', '# from 6.1') \
+DialogStateBuilder().state('DZM1041.D_s13', '# from 6.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Впечатляюще? Да, как для меня, то даже слишком. Я… я подвел госпожу Лю и Цензора в своей миссии.", 's13', 'say9070') \
     .with_responses() \
@@ -179,7 +179,7 @@ DialogStateBuilder().state('DZM1041.D_s13', '# from 6.1') \
         .response("Ясно. Возможно, мы еще встретимся.", EXIT, 'r', 'reply9139').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s14', '# from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1') \
+DialogStateBuilder().state('DZM1041.D_s14', '# from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Дух кивает с неожиданной грацией, как для иссохшего трупа. Пожалуйста, спрашивай все, что пожелаешь.", 's14', 'say9071') \
     .with_responses() \
@@ -193,7 +193,7 @@ DialogStateBuilder().state('DZM1041.D_s14', '# from 6.2 7.1 8.4 9.3 10.0 11.1 12
         .response("Неважно. Прощай.", EXIT, 'r', 'reply9147').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s15', '# from 11.0') \
+DialogStateBuilder().state('DZM1041.D_s15', '# from 11.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Ну, видишь ли… — дух на время умолкает в раздумьях, потирая иссохшие руки трупа. — Прибыв туда, после недолгого ожидания меня должны были сопроводить в мое конечное, *истинное* место назначения. Тем не менее, пока меня вели по дворцу, началась какая-то суматоха, и меня оставили в комнате, пообещав, что тотчас же вернутся.", 's15', 'say9072') \
     .with_responses() \
@@ -203,7 +203,7 @@ DialogStateBuilder().state('DZM1041.D_s15', '# from 11.0') \
         .response("Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.", EXIT, 'r', 'reply9151').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s16', '# from 7.0 8.0 8.1 9.1 12.0 13.0') \
+DialogStateBuilder().state('DZM1041.D_s16', '# from 7.0 8.0 8.1 9.1 12.0 13.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Я расскажу тебе всю историю. Как наставник и телохранитель Лю Сиси, я, конечно же, отвечал за ее безопасность и образование. Одним ясным вечером мы стояли на балконе, выходившем во внутренний двор, где я показывал ей различные созвездия.", 's16', 'say9073') \
     .with_responses() \
@@ -212,7 +212,7 @@ DialogStateBuilder().state('DZM1041.D_s16', '# from 7.0 8.0 8.1 9.1 12.0 13.0') 
         .response("Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.", EXIT, 'r', 'reply9154').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s17', '# from 8.2 9.0') \
+DialogStateBuilder().state('DZM1041.D_s17', '# from 8.2 9.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Ах, это. Однажды ночью я встретил на улице девушку. Она принадлежала к организации под названием Тленные, той самой, что присматривает за этим комплексом. Она сделала мне предложение, согласно которому в обмен за небольшую сумму мое тело может быть… использовано… здесь после моей кончины.", 's17', 'say9074') \
     .with_responses() \
@@ -221,7 +221,7 @@ DialogStateBuilder().state('DZM1041.D_s17', '# from 8.2 9.0') \
         .response("Это все, что я хотел узнать. Прощай.", EXIT, 'r', 'reply9157').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s18', '# from 8.3 9.2') \
+DialogStateBuilder().state('DZM1041.D_s18', '# from 8.3 9.2')\
     .with_npc_lines() \
         .line(SPEAKER, "На самом деле, лингвистика всегда представляла для меня большой интерес. Будучи студентом, я обнаружил, что могу без особых проблем изучать новые наречия.", 's18', 'say9075') \
     .with_responses() \
@@ -229,7 +229,7 @@ DialogStateBuilder().state('DZM1041.D_s18', '# from 8.3 9.2') \
         .response("Понятно. Спасибо за разговор. Прощай.", EXIT, 'r', 'reply9159').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s19', '# from 15.0 20.0') \
+DialogStateBuilder().state('DZM1041.D_s19', '# from 15.0 20.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Видишь ли… за мной так никто и не вернулся. Я терпеливо ждал несколько дней, но безуспешно. В конце концов, я покинул комнату и стал бродить по дворцу в надежде на то, что кто-нибудь проведет меня… Он тихо вздыхает, выдыхая легкое облачко бальзамирующей жидкости. Там 9001 комната, и в каждой из них меня направляли в другую. Я словно навеки попал в трясину.", 's19', 'say9076') \
     .with_responses() \
@@ -239,7 +239,7 @@ DialogStateBuilder().state('DZM1041.D_s19', '# from 15.0 20.0') \
         .response("Желаю тебе удачи. Прощай.", EXIT, 'r', 'reply9163').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s20', '# from 15.1') \
+DialogStateBuilder().state('DZM1041.D_s20', '# from 15.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Не могу сказать. Все это сильно огорчает меня! Он умолкает, чтобы восстановить самообладание. При этом его закостеневшие суставы и сухожилия тихонько поскрипывают.", 's20', 'say9077') \
     .with_responses() \
@@ -248,7 +248,7 @@ DialogStateBuilder().state('DZM1041.D_s20', '# from 15.1') \
         .response("Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.", EXIT, 'r', 'reply9166').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s21', '# from 16.0') \
+DialogStateBuilder().state('DZM1041.D_s21', '# from 16.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Да-да, конечно. Пока мы стояли, с крыши над балконом внезапно спрыгнули двое убийц, скорее всего, чтобы убить или похитить госпожу Лю. Позвав стражу, я обнажил свой клинок и бросился на ее защиту. В разгар битвы перила балкона обломились, и мы вчетвером упали в Нефритовый Портал.", 's21', 'say9078') \
     .with_responses() \
@@ -257,7 +257,7 @@ DialogStateBuilder().state('DZM1041.D_s21', '# from 16.0') \
         .response("Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.", EXIT, 'r', 'reply9169').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s22', '# from 17.0') \
+DialogStateBuilder().state('DZM1041.D_s22', '# from 17.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Пожалуй, только сначала… В конце концов, эта идея немного жутковата. Но поговорив с ней немного, я понял, что они, тленные, разделяют со мной взгляды на смерть. Мое тело? Это всего лишь оболочка, не более. Я верю, что их 'Истинная Смерть' будет тем достойным местом, которого лично я когда-нибудь достигну… полностью освободившись и отделившись от материального мира. И если мое тело, служившее этой цели в качестве моей смертной оболочки, сможет служить здесь каким-нибудь целям, тем лучше. Дух учтиво улыбается тебе.", 's22', 'say9079') \
     .with_responses() \
@@ -265,7 +265,7 @@ DialogStateBuilder().state('DZM1041.D_s22', '# from 17.0') \
         .response("Интересно. Теперь мне лучше уйти. Прощай.", EXIT, 'r', 'reply9171').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s23', '# from 21.0') \
+DialogStateBuilder().state('DZM1041.D_s23', '# from 21.0')\
     .with_npc_lines() \
         .line(SPEAKER, "О! Прошу прощения за упущение… Нефритовый Портал — это круглый водоем во внутреннем дворе. Он выложен зелеными и белыми стеатитами и назван Порталом из-за того, что время от времени в отражении его мерцающих вод можно увидеть совершенно другое место.", 's23', 'say9080') \
     .with_responses() \
@@ -274,7 +274,7 @@ DialogStateBuilder().state('DZM1041.D_s23', '# from 21.0') \
         .response("Пока это все, что я хотел знать. Прощай.", EXIT, 'r', 'reply9174').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s24', '# from 19.1') \
+DialogStateBuilder().state('DZM1041.D_s24', '# from 19.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Твое предложение великодушно. Но я боюсь, что здесь ничего нельзя поделать… Я уверен, что со временем все-таки найду свой путь. Так или иначе, благодарю тебя.", 's24', 'say9081') \
     .with_responses() \
@@ -282,7 +282,7 @@ DialogStateBuilder().state('DZM1041.D_s24', '# from 19.1') \
         .response("Не стоит беспокоиться. Теперь мне лучше уйти. Прощай.", EXIT, 'r', 'reply9176').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s25', '# from 19.2 33.1 35.1') \
+DialogStateBuilder().state('DZM1041.D_s25', '# from 19.2 33.1 35.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Дух недовольно смотрит на тебя, в глазах трупа вспыхивает призрачный огонек. Кажется, ты его оскорбил.", 's25', 'say9082') \
     .with_responses() \
@@ -290,7 +290,7 @@ DialogStateBuilder().state('DZM1041.D_s25', '# from 19.2 33.1 35.1') \
         .response("Отойти, оставить парящего духа.", EXIT, 'r', 'reply9178').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s26', '# from 14.6') \
+DialogStateBuilder().state('DZM1041.D_s26', '# from 14.6')\
     .with_npc_lines() \
         .line(SPEAKER, "Ах, это… э-э… это стихи. Трудно перевести. Может, есть другой вопрос? Он неловко улыбается.", 's26', 'say9083') \
     .with_responses() \
@@ -299,7 +299,7 @@ DialogStateBuilder().state('DZM1041.D_s26', '# from 14.6') \
         .response("Нет. Собственно, пожалуй, мне уже пора идти. Прощай.", EXIT, 'r', 'reply9181').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s27', '# from 23.0') \
+DialogStateBuilder().state('DZM1041.D_s27', '# from 23.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Как я уже сказал, мы упали в Нефритовый Портал. Я даже и не предполагал, что он *на самом* деле был порталом, во всех смыслах этого слова, и все же это так! Неожиданно я очутился в незнакомом переулке, лежащий со сломанной ногой. Придя в себя, я успел увидеть, как убийцы убегают, унося на плечах Лю Сиси.", 's27', 'say9084') \
     .with_responses() \
@@ -308,7 +308,7 @@ DialogStateBuilder().state('DZM1041.D_s27', '# from 23.0') \
         .response("Понятно. Спасибо тебе, но мне уже пора.", EXIT, 'r', 'reply9184').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s28', '# from 26.1') \
+DialogStateBuilder().state('DZM1041.D_s28', '# from 26.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Хорошо. Он ненадолго задумывается, барабаня длинными костлявыми пальцами трупа. Затем он начинает декламировать в более твердом, выверенном ритме:  Как встречаться нам тяжело, так тяжело расставаться. Ветер жизни лишился сил, все цветы увядают. Лишь когда шелкопряд умрет, нити дум прекратятся. Лишь когда фитиль догорит, слезы свечи иссякнут.  Он учтиво улыбается тебе.", 's28', 'say9085') \
     .with_responses() \
@@ -318,7 +318,7 @@ DialogStateBuilder().state('DZM1041.D_s28', '# from 26.1') \
         .response("О. Спасибо, что разъяснил мне это. Прощай.", EXIT, 'r', 'reply9188').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s29', '# from 28.1') \
+DialogStateBuilder().state('DZM1041.D_s29', '# from 28.1')\
     .with_npc_lines() \
         .line(SPEAKER, "Ну, мне стыдно признаться, но это было деликатной попыткой сказать… сказать, что, наверно, лучше бы тебе оставить в покое души мертвых. У меня больше нет желания быть частью этого, — дух делает широкий жест, охватывая все, что находится вокруг него, — мира.", 's29', 'say9086') \
     .with_responses() \
@@ -326,7 +326,7 @@ DialogStateBuilder().state('DZM1041.D_s29', '# from 28.1') \
         .response("Я понимаю. В таком случае, прощай.", EXIT, 'r', 'reply9190').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s30', '# from 28.2') \
+DialogStateBuilder().state('DZM1041.D_s30', '# from 28.2')\
     .with_npc_lines() \
         .line(SPEAKER, "А… э-э… нет. Я не хотел быть столь прямолинеен, чтобы избежать конфронтации. Это всего лишь означает, что у меня нет больше желания быть частью этого, — дух делает широкий жест, охватывая все, что находится вокруг него, — мира.", 's30', 'say9087') \
     .with_responses() \
@@ -334,7 +334,7 @@ DialogStateBuilder().state('DZM1041.D_s30', '# from 28.2') \
         .response("Я понимаю. В таком случае, прощай.", EXIT, 'r', 'reply9192').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s31', '# from 27.0') \
+DialogStateBuilder().state('DZM1041.D_s31', '# from 27.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Ну, это почти все. Мне пришлось хромать с болью в ноге, пока я не нашел того, кто вылечил мою ногу. Он взял в качестве платы все те небольшие накопления, что у меня были. У этого целителя и у других людей я научился здешнему языку, не переставая разыскивать двух убийц и свою подопечную.", 's31', 'say9088') \
     .with_responses() \
@@ -344,7 +344,7 @@ DialogStateBuilder().state('DZM1041.D_s31', '# from 27.0') \
         .response("Я выслушаю оставшуюся часть истории в другой раз. Прощай.", EXIT, 'r', 'reply9196').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s32', '# from 31.0 38.0') \
+DialogStateBuilder().state('DZM1041.D_s32', '# from 31.0 38.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Я поймал одного из них, но он не пожелал говорить. Я казнил его и положил его голову в шелковый мешок, чтобы преподнести ее Цензору, когда я вернусь назад с его дочерью, — на миг он мрачнеет, потом продолжает. — Другой убийца… ускользнул от меня. Даже больше: он убил меня, прежде чем я смог убить его и спасти свою подопечную. Мне жаль, но теперь для меня уже все кончено.", 's32', 'say9089') \
     .with_responses() \
@@ -353,7 +353,7 @@ DialogStateBuilder().state('DZM1041.D_s32', '# from 31.0 38.0') \
         .response("Восхитительно. Теперь мне следует оставить тебя. Прощай.", EXIT, 'r', 'reply9199').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s33', '# from 32.0') \
+DialogStateBuilder().state('DZM1041.D_s33', '# from 32.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Нет, но я был уверен, что смог бы найти способ. Хотя теперь это под сомнением.", 's33', 'say9090') \
     .with_responses() \
@@ -363,7 +363,7 @@ DialogStateBuilder().state('DZM1041.D_s33', '# from 32.0') \
         .response("Хм-м. Мне пора. Удачи тебе.", EXIT, 'r', 'reply9203').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s34', '# from 33.0') \
+DialogStateBuilder().state('DZM1041.D_s34', '# from 33.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Твое предложение отличает в тебе благородного человека… тем не менее, прошло не меньше семидесяти пяти лет с тех пор, как я был убит. Человек, убивший меня, давно уже мертв, и Сиси, скорее всего, тоже.", 's34', 'say9091') \
     .with_responses() \
@@ -371,7 +371,7 @@ DialogStateBuilder().state('DZM1041.D_s34', '# from 33.0') \
         .response("Тогда неважно. Прощай.", EXIT, 'r', 'reply9206').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s35', '# from -') \
+DialogStateBuilder().state('DZM1041.D_s35', '# from -')\
     .with_npc_lines() \
         .line(SPEAKER, "Убийца похож на меня внешне, над бровью у него татуировка лотоса. Заметив твое смятение, он добавляет: Это такой цветок с семью лепестками. Лю Сиси — это молодая девушка, ей всего лишь четырнадцать лет. Возможно, она или убийца знают путь назад и как снова активировать портал.", 's35', 'say9092') \
     .with_responses() \
@@ -381,7 +381,7 @@ DialogStateBuilder().state('DZM1041.D_s35', '# from -') \
         .response("Это все, что мне нужно. Прощай.", EXIT, 'r', 'reply9210').with_action(lambda: _r9210_action(gsm)).with_action(lambda: _dispose())  ### replace two actions with one \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s36', '# from 35.0') \
+DialogStateBuilder().state('DZM1041.D_s36', '# from 35.0')\
     .with_npc_lines() \
         .line(SPEAKER, "Ты добрый и благородный человек. Однако не делай этого для меня… девушка и ее отец — вот кому нужна твоя помощь.", 's36', 'say9093') \
     .with_responses() \
@@ -389,7 +389,7 @@ DialogStateBuilder().state('DZM1041.D_s36', '# from 35.0') \
         .response("Я понимаю. Прощай, дух.", EXIT, 'r', 'reply9212').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s37', '# from 0.4') \
+DialogStateBuilder().state('DZM1041.D_s37', '# from 0.4')\
     .with_npc_lines() \
         .line(SPEAKER, "Я определенно не ожидал увидеть тебя снова, — дух учтиво кланяется, но его лицо остается непроницаемым. — Что тебе нужно от меня?", 's37', 'say9094') \
     .with_responses() \
@@ -397,7 +397,7 @@ DialogStateBuilder().state('DZM1041.D_s37', '# from 0.4') \
         .response("Ничего, я оставляю тебя в покое.", EXIT, 'r', 'reply9214').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM1041.D_s38', '# from 31.1') \
+DialogStateBuilder().state('DZM1041.D_s38', '# from 31.1')\
     .with_npc_lines() \
         .line(SPEAKER, "На самом деле, лингвистика всегда представляла для меня большой интерес. Будучи студентом, я обнаружил, что могу без особых проблем изучать новые наречия.", 's38', 'say9718') \
     .with_responses() \
