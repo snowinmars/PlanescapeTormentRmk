@@ -32,7 +32,6 @@ def _r45539_action(gsm):
     DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 ######

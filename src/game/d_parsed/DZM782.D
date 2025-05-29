@@ -6,7 +6,6 @@ def _r24716_action(gsm):
     DO ~ForceAttack(Protagonist,"ZM782") ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 ######

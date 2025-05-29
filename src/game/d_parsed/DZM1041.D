@@ -25,7 +25,7 @@ def _r9161_action(gsm):
 def _r9162_action(gsm):
     DO ~gsm.dec_once_good('evil_bei_1') ~
 def _r9187_condition(gsm):
-    return _check_char_prop_gt('protagonist',13,'int')
+    return gsm.check_char_prop_gt('protagonist',13,'int')
 def _r9200_action(gsm):
     DO ~gsm.inc_once_good('good_bei_2') ~
 def _r9201_action(gsm):
@@ -40,7 +40,6 @@ def _r9210_action(gsm):
     DO ~gsm.get_meet_xixi() ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM1041.D_s0', '# from -') \

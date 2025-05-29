@@ -10,7 +10,6 @@ def _r6546_condition(gsm):
     return gsm.get_can_speak_with_dead()
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM613.D_s0', '# from -') \

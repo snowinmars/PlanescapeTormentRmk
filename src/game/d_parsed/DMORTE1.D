@@ -12,7 +12,6 @@ def _r39859_action(gsm):
     DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DMORTE1.D_s0', '# from -') \

@@ -16,7 +16,6 @@ def _r42313_condition(gsm):
     return not gsm.get_in_party_morte()
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 ######

@@ -58,7 +58,6 @@ def _r9772_action(gsm):
     gsm.inc_once_adahn('Adahn_Death_of_Names_1') ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DDEATHON.D_s0', '# from -') \

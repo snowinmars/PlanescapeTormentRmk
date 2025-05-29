@@ -12,7 +12,6 @@ def _r9562_action(gsm):
     DO ~gsm.dec_once_law('chaotic_zom257_1') ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM257.D_s0', '# from -') \

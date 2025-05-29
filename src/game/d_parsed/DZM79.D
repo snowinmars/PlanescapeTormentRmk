@@ -3,7 +3,7 @@ def _r34943_action(gsm):
 def _r34946_condition(gsm):
     return not gsm.get_know_copper_earring_secret()
 def _r34946_action(gsm):
-    DO ~know_copper_earring_secret() ~
+    DO ~gsm.set_know_copper_earring_secret(True) ~
 def _r34947_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r34948_condition(gsm):
@@ -18,7 +18,6 @@ def _r64280_action(gsm):
     gsm.update_journal('64537')    # '64537': ' ~На лбу зомби #79 я обнаружил странный зубчатый круг. Символ по виду напоминает старую медную сережку, которую я нашел в юго-восточной препараторской — возможно, они как-то связаны между собой.~ '
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM79.D_s0', '# from -') \

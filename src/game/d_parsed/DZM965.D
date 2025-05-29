@@ -10,7 +10,6 @@ def _r45072_condition(gsm):
     return gsm.get_can_speak_with_dead()
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 ######

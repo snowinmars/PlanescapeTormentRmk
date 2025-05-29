@@ -19,10 +19,6 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
     renpy.exports.hide(sprite)
-def _check_char_prop_gt(who, gtValue, prop):
-    return True
-def _check_char_prop_lt(who, gtValue, prop):
-    return True
 ###
 ###
 def _r41251_action(gsm):
@@ -37,7 +33,7 @@ def _r41147_action(gsm):
 def _r41148_action(gsm):
     gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41163_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int')
+    return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r41177_action(gsm):
     gsm.set_jorunal_allowed(True)
     gsm.update_journal('39516')
@@ -92,7 +88,7 @@ def _r41231_condition(gsm):
 def _r41232_condition(gsm):
     return gsm.get_morte_mortuary_walkthrough_1()
 def _r41239_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int')
+    return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r41263_action(gsm):
     gsm.set_morte_mortuary_walkthrough_2(True)
 def _r41263_action(gsm):

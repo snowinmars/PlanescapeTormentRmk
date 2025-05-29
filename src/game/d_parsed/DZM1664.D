@@ -10,7 +10,6 @@ def _r47014_action(gsm):
     DO ~GiveItemCreate("Logpage",Protagonist,1,0,0) gsm.set_pick_dzm1664_page(True) ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM1664.D_s0', '# from 5.0') \

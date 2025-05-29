@@ -18,7 +18,6 @@ def _r9434_condition(gsm):
     return not gsm.get_meet_pharod()
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM1146.D_s0', '# from -') \

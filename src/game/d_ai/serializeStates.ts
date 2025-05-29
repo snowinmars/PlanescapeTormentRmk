@@ -64,7 +64,7 @@ const wellKnownFunctions: string[][] = [
     ['SetGlobal("Morte","GLOBAL",1)', 'gsm.set_in_party_morte(True)'],
     ['SetGlobal("Morte","GLOBAL",0)', 'gsm.set_in_party_morte(False)'],
     ['Global("Know_Copper_Earring_Secret","GLOBAL",0)', 'return not gsm.get_know_copper_earring_secret()'],
-    ['SetGlobal("Know_Copper_Earring_Secret","GLOBAL",1)', 'know_copper_earring_secret()'],
+    ['SetGlobal("Know_Copper_Earring_Secret","GLOBAL",1)', 'gsm.set_know_copper_earring_secret(True)'],
     ['PartyHasItem("CopEarC")', 'return gsm.get_has_copper_earring()'],
     ['!PartyHasItem("CopEarC")', 'return not gsm.get_has_copper_earring()'],
     ['SetGlobal("Oinosian","GLOBAL",1)', 'gsm.set_meet_oinosian(True)'],
@@ -148,7 +148,7 @@ const pasteCheckStat = (body: string): string => {
         const char = match[2].toLowerCase();
         const amount = parseInt(match[3]);
         const prop = match[4].toLowerCase();
-        const result = `return _check_char_prop_${type}('${char}',${amount},'${prop}')`
+        const result = `return gsm.check_char_prop_${type}('${char}',${amount},'${prop}')`
         body = body.replaceAll(match[0], result);
     }
 
@@ -183,7 +183,7 @@ const pasteWellKnownFunctions = (body: string): string => {
 }
 
 export const serializeStates = (states: State[], statePrefix: string): string => {
-    let result = 'gsm           = renpy.store.global_settings_manager\n\nEXIT          = -1\n\n';
+    let result = 'gsm           = renpy.store.global_settings_manager\nEXIT          = -1\n\n';
 
     let logicBuilder = '';
 

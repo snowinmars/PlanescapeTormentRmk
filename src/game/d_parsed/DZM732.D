@@ -12,7 +12,6 @@ def _r64271_action(gsm):
     DO ~GiveItem("TomeBA",Protagonist) ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DZM732.D_s0', '# from 4.0') \

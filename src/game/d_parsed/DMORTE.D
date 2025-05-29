@@ -5,13 +5,13 @@ def _r1006_condition(gsm):
 def _r1015_condition(gsm):
     Global("Scars","GLOBAL",1)
 def _r1019_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'int')
+    return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r1088_action(gsm):
     DO ~SetGlobal("Scars","GLOBAL",1) ~
 def _r1050_condition(gsm):
-    return _check_char_prop_lt('protagonist',12,'int')
+    return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r1051_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'int')
+    return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r1079_action(gsm):
     DO ~gsm.set_in_party_morte(True) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
 def _r1077_condition(gsm):
@@ -69,9 +69,9 @@ def _r3965_action(gsm):
 def _r3966_action(gsm):
     DO ~IncrementGlobal("Good","GLOBAL",1) ~
 def _r3969_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r3970_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r3971_condition(gsm):
     PartyHasItem("Prybar")
 def _r3972_condition(gsm):
@@ -83,21 +83,21 @@ def _r3973_condition(gsm):
 def _r3988_action(gsm):
     DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
 def _r4023_condition(gsm):
-    return _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4024_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r4027_condition(gsm):
-    return _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4028_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r4029_action(gsm):
     DO ~gsm.inc_once_good('good_giant_skel_mort_1') ~
 def _r4031_condition(gsm):
-    return _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4032_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r4034_condition(gsm):
-    return _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4144_action(gsm):
     DO ~SetGlobal("Warning","GLOBAL",1) ~
 def _r4145_action(gsm):
@@ -123,7 +123,7 @@ def _r4679_action(gsm):
 def _r4682_action(gsm):
     DO ~gsm.inc_once_law('lawful_vaxis_3', 3) ~
 def _r4686_condition(gsm):
-    return _check_char_prop_gt('protagonist',13,'int')
+    return gsm.check_char_prop_gt('protagonist',13,'int')
 def _r4687_action(gsm):
     DO ~gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2') ~
 def _r4693_action(gsm):
@@ -153,11 +153,11 @@ def _r6325_condition(gsm):
 def _r6326_condition(gsm):
     !HasItem("Cobble","Post")
 def _r6327_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'int') return _check_char_prop_lt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',11,'int') return gsm.check_char_prop_lt('protagonist',12,'wis')
 def _r6328_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'wis')
+    return gsm.check_char_prop_gt('protagonist',11,'wis')
 def _r6329_condition(gsm):
-    return _check_char_prop_lt('protagonist',12,'int') return _check_char_prop_lt('protagonist',12,'wis')
+    return gsm.check_char_prop_lt('protagonist',12,'int') return gsm.check_char_prop_lt('protagonist',12,'wis')
 def _r6330_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r6658_action(gsm):
@@ -167,7 +167,7 @@ def _r6659_action(gsm):
 def _r6664_condition(gsm):
     Global("42_Secret","GLOBAL",1)
 def _r6665_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis') Global("42_Secret","GLOBAL",0)
+    return gsm.check_char_prop_gt('protagonist',12,'wis') Global("42_Secret","GLOBAL",0)
 def _r6957_action(gsm):
     DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
 def _r7056_condition(gsm):
@@ -265,9 +265,9 @@ def _r65537_condition(gsm):
 def _r15495_action(gsm):
     DO ~SetGlobal("Adyzoel","AR0400",2) ~
 def _r16881_condition(gsm):
-    return _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r16882_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r16882_action(gsm):
     DO ~IncrementGlobal("Tree_Helpers","AR0400",1) ~
 def _r16884_condition(gsm):
@@ -365,9 +365,9 @@ def _r18823_action(gsm):
 def _r18824_condition(gsm):
     PartyGoldLT(5)
 def _r18829_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'int')
+    return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r18830_condition(gsm):
-    return _check_char_prop_lt('protagonist',12,'int')
+    return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r18830_action(gsm):
     DO ~DestroyPartyGold(5) ~
 def _r18833_condition(gsm):
@@ -411,9 +411,9 @@ def _r24698_condition(gsm):
 def _r24699_condition(gsm):
     Global("Know_Lady","GLOBAL",1)
 def _r24700_condition(gsm):
-    return _check_char_prop_lt('protagonist',13,'wis') return _check_char_prop_gt('protagonist',12,'int')
+    return gsm.check_char_prop_lt('protagonist',13,'wis') return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r24701_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r22850_action(gsm):
     DO ~gsm.dec_once_law('chaotic_cube_3') ~
 def _r22853_action(gsm):
@@ -431,13 +431,13 @@ def _r24932_action(gsm):
 def _r66902_condition(gsm):
     GlobalGT("Morte_Mimir","GLOBAL",1)
 def _r25967_condition(gsm):
-    return _check_char_prop_gt('protagonist',14,'int')
+    return gsm.check_char_prop_gt('protagonist',14,'int')
 def _r27316_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int')
+    return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r65536_condition(gsm):
     GlobalGT("Morte_Mimir","GLOBAL",1)
 def _r27916_condition(gsm):
-    return _check_char_prop_gt('protagonist',14,'int')
+    return gsm.check_char_prop_gt('protagonist',14,'int')
 def _r28041_action(gsm):
     DO ~TakePartyGold(10) ~
 def _r28042_action(gsm):
@@ -477,15 +477,15 @@ def _r28048_action(gsm):
 def _r28743_action(gsm):
     DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~
 def _r28744_condition(gsm):
-    return _check_char_prop_gt('protagonist',14,'chr')
+    return gsm.check_char_prop_gt('protagonist',14,'chr')
 def _r28744_action(gsm):
     DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",2) SetGlobal("Morte_Stolen","GLOBAL",3) ~
 def _r28745_condition(gsm):
-    return _check_char_prop_lt('protagonist',15,'chr')
+    return gsm.check_char_prop_lt('protagonist',15,'chr')
 def _r28745_action(gsm):
     DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~
 def _r28967_condition(gsm):
-    return _check_char_prop_gt('protagonist',14,'int')
+    return gsm.check_char_prop_gt('protagonist',14,'int')
 def _r28968_condition(gsm):
     Global("CW_Sal_Hint","GLOBAL",1)
 def _r28968_action(gsm):
@@ -503,11 +503,11 @@ def _r28976_action(gsm):
 def _r28980_condition(gsm):
     Global("Know_Ravel","GLOBAL",1)
 def _r30822_condition(gsm):
-    return _check_char_prop_lt('protagonist',9,'int')
+    return gsm.check_char_prop_lt('protagonist',9,'int')
 def _r30823_condition(gsm):
-    return _check_char_prop_gt('protagonist',8,'int')
+    return gsm.check_char_prop_gt('protagonist',8,'int')
 def _r30824_condition(gsm):
-    return _check_char_prop_gt('protagonist',8,'int')
+    return gsm.check_char_prop_gt('protagonist',8,'int')
 def _r30825_condition(gsm):
     GlobalGT("Able","GLOBAL",0)
 def _r30826_condition(gsm):
@@ -623,9 +623,9 @@ def _r35342_action(gsm):
 def _r35360_action(gsm):
     DO ~IncrementGlobal("Good","GLOBAL",1) ~
 def _r35344_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35352_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35355_condition(gsm):
     PartyHasItem("Prybar")
 def _r35358_condition(gsm):
@@ -641,9 +641,9 @@ def _r35419_action(gsm):
 def _r35437_action(gsm):
     DO ~IncrementGlobal("Good","GLOBAL",1) ~
 def _r35421_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35429_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35432_condition(gsm):
     PartyHasItem("Prybar")
 def _r35435_condition(gsm):
@@ -659,9 +659,9 @@ def _r35496_action(gsm):
 def _r35514_action(gsm):
     DO ~IncrementGlobal("Good","GLOBAL",1) ~
 def _r35498_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35506_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35509_condition(gsm):
     PartyHasItem("Prybar")
 def _r35512_condition(gsm):
@@ -677,9 +677,9 @@ def _r35573_action(gsm):
 def _r35591_action(gsm):
     DO ~IncrementGlobal("Good","GLOBAL",1) ~
 def _r35575_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_lt('protagonist',13,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35583_condition(gsm):
-    !PartyHasItem("Prybar") return _check_char_prop_gt('protagonist',12,'str')
+    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35586_condition(gsm):
     PartyHasItem("Prybar")
 def _r35589_condition(gsm):
@@ -771,7 +771,7 @@ def _r41892_condition(gsm):
 def _r41893_condition(gsm):
     return gsm.get_morte_mortuary_walkthrough_1()
 def _r41900_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int')
+    return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r41911_action(gsm):
     DO ~gsm.set_morte_mortuary_walkthrough_2(True) ~
 def _r41921_condition(gsm):
@@ -909,15 +909,15 @@ def _r54160_action(gsm):
 def _r54165_condition(gsm):
     !NearbyDialog("DDakkon")
 def _r54166_condition(gsm):
-    NearbyDialog("DDakkon") return _check_char_prop_gt('protagonist',13,'wis')
+    NearbyDialog("DDakkon") return gsm.check_char_prop_gt('protagonist',13,'wis')
 def _r54167_condition(gsm):
-    NearbyDialog("DDakkon") return _check_char_prop_lt('protagonist',14,'wis')
+    NearbyDialog("DDakkon") return gsm.check_char_prop_lt('protagonist',14,'wis')
 def _r54172_condition(gsm):
     !NearbyDialog("DDakkon")
 def _r54173_condition(gsm):
-    NearbyDialog("DDakkon") return _check_char_prop_gt('protagonist',13,'wis')
+    NearbyDialog("DDakkon") return gsm.check_char_prop_gt('protagonist',13,'wis')
 def _r54174_condition(gsm):
-    NearbyDialog("DDakkon") return _check_char_prop_lt('protagonist',14,'wis')
+    NearbyDialog("DDakkon") return gsm.check_char_prop_lt('protagonist',14,'wis')
 def _r54179_condition(gsm):
     GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
 def _r54180_condition(gsm):
@@ -979,11 +979,11 @@ def _r54218_condition(gsm):
 def _r54218_action(gsm):
     DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
 def _r54220_condition(gsm):
-    return _check_char_prop_gt('protagonist',15,'int') NearbyDialog("Ddakkon")
+    return gsm.check_char_prop_gt('protagonist',15,'int') NearbyDialog("Ddakkon")
 def _r54221_condition(gsm):
-    return _check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") GlobalGT("Dakkon","GLOBAL",0)
+    return gsm.check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") GlobalGT("Dakkon","GLOBAL",0)
 def _r54223_condition(gsm):
-    return _check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") Global("Dakkon","GLOBAL",0)
+    return gsm.check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") Global("Dakkon","GLOBAL",0)
 def _r54226_condition(gsm):
     GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
 def _r54227_condition(gsm):
@@ -1035,7 +1035,7 @@ def _r54262_condition(gsm):
 def _r54262_action(gsm):
     DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
 def _r54264_condition(gsm):
-    return _check_char_prop_gt('protagonist',15,'wis')
+    return gsm.check_char_prop_gt('protagonist',15,'wis')
 def _r54266_condition(gsm):
     GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
 def _r54267_condition(gsm):
@@ -1043,7 +1043,7 @@ def _r54267_condition(gsm):
 def _r54267_action(gsm):
     DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
 def _r54269_condition(gsm):
-    return _check_char_prop_gt('protagonist',15,'wis')
+    return gsm.check_char_prop_gt('protagonist',15,'wis')
 def _r54271_condition(gsm):
     GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
 def _r54272_condition(gsm):
@@ -1099,7 +1099,7 @@ def _r55849_condition(gsm):
 def _r55850_condition(gsm):
     !NearbyDialog("DGrace")
 def _r55875_condition(gsm):
-    return _check_char_prop_gt('protagonist',15,'int')
+    return gsm.check_char_prop_gt('protagonist',15,'int')
 def _r55902_action(gsm):
     DO ~gsm.dec_once_law('chaotic_nordom_5') ~
 def _r55925_action(gsm):
@@ -1187,7 +1187,7 @@ def _r65731_action(gsm):
 def _r65733_action(gsm):
     DO ~AddexperienceParty(12000) ~
 def _r65738_condition(gsm):
-    return _check_char_prop_gt('protagonist',13,'wis')
+    return gsm.check_char_prop_gt('protagonist',13,'wis')
 def _r65739_condition(gsm):
     GlobalGT("Know_Morte_Pillar","GLOBAL",0)
 def _r65740_condition(gsm):
@@ -1400,7 +1400,6 @@ def _r68492_action(gsm):
     DO ~QuitGame(FINALE,0,0) ~
 
 gsm           = renpy.store.global_settings_manager
-
 EXIT          = -1
 
 DialogStateBuilder().state('DMORTE.D_s0', '# from -') \

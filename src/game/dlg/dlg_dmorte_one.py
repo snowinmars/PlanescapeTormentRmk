@@ -24,10 +24,6 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
     renpy.exports.hide(sprite)
-def _check_char_prop_gt(who, gtValue, prop):
-    return True
-def _check_char_prop_lt(who, gtValue, prop):
-    return True
 ###
 def _join_morte(gsm):
     gsm.set_in_party_morte(True)
