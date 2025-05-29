@@ -8,6 +8,12 @@ class SettingsManager:
         self._tracked = []
         self._settings['journal_note_ids'] = []
 
+    def check_char_prop_gt(self, who, gtValue, prop):
+        return True
+
+    def check_char_prop_lt(self, who, gtValue, prop):
+        return True
+
     def update_journal(self, note_id):
         devlog.debug('Update journal with %s', note_id)
         if note_id not in self._settings['journal_note_ids']:

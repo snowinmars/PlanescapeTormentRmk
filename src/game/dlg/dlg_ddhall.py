@@ -20,10 +20,6 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
     renpy.exports.hide(sprite)
-def _check_char_prop_gt(who, gtValue, prop):
-    return True
-def _check_char_prop_lt(who, gtValue, prop):
-    return True
 ###
 ###
 def _r5070_condition(gsm):
@@ -33,10 +29,10 @@ def _r5071_condition(gsm):
 def _r5072_condition(gsm):
     return gsm.get_meet_deionarra()
 def _r5073_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int') \
-    and _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'int') \
+    and gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r5074_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r6064_condition(gsm):
     return not gsm.get_meet_deionarra()
 def _r13288_condition(gsm):
@@ -86,17 +82,17 @@ def _r886_action(gsm):
 def _r891_condition(gsm):
     return not gsm.get_meet_pharod()
 def _r892_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'wis')
+    return gsm.check_char_prop_gt('protagonist',11,'wis')
 def _r898_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'wis')
+    return gsm.check_char_prop_gt('protagonist',11,'wis')
 def _r906_action(gsm):
     gsm.update_journal('39464')
 def _r910_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'wis')
+    return gsm.check_char_prop_gt('protagonist',11,'wis')
 def _r921_action(gsm):
     gsm.update_journal('39461')
 def _r931_condition(gsm):
-    return _check_char_prop_gt('protagonist',11,'int')
+    return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r931_action(gsm):
     gsm.update_journal('39462')
 def _r936_action(gsm):
@@ -134,17 +130,17 @@ def _r5076_condition(gsm):
 def _r5077_condition(gsm):
     return gsm.get_meet_deionarra()
 def _r5078_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int') \
-    and _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'int') \
+    and gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r5079_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r5081_condition(gsm):
     return not gsm.get_meet_deionarra()
 def _r5082_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'int') \
-    and _check_char_prop_lt('protagonist',13,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'int') \
+    and gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r5083_condition(gsm):
-    return _check_char_prop_gt('protagonist',12,'wis')
+    return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r1327_action(gsm):
     return gsm.get_meet_dhall()
 def _r5731_action(gsm):

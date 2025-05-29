@@ -19,10 +19,6 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
     renpy.exports.show(renpy.store.character_reactions[sprite], at_list=[start_pos])
 def _hide(sprite):
     renpy.exports.hide(sprite)
-def _check_char_prop_gt(who, gtValue, prop):
-    return True
-def _check_char_prop_lt(who, gtValue, prop):
-    return True
 ###
 ###
 def _r6576_condition(gsm):
@@ -55,7 +51,7 @@ def _r9161_action(gsm):
 def _r9162_action(gsm):
     gsm.dec_once_good('evil_bei_1')
 def _r9187_condition(gsm):
-    return _check_char_prop_gt('protagonist',13,'int')
+    return gsm.check_char_prop_gt('protagonist',13,'int')
 def _r9200_action(gsm):
     gsm.inc_once_good('good_bei_2')
 def _r9201_action(gsm):
