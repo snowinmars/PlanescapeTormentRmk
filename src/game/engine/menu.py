@@ -1,3 +1,4 @@
+import renpy
 class MenuOption:
     def __init__(self, title, label_id, condition, priority=0):
         self.title = title
@@ -6,8 +7,8 @@ class MenuOption:
         self.priority = priority
 
 class MenuBuilder:
-    def __init__(self, menu_name):
-        self._menu_name = menu_name
+    def __init__(self, location_id):
+        self._location_id = location_id
         self._options = []
         self._current_option = None
 
@@ -17,14 +18,9 @@ class MenuBuilder:
         self._current_option = {
             'title': title,
             'label_id': None,
-            'location_id': None,
             'condition': None,
             'priority': 0
         }
-        return self
-
-    def in_location(self, location_id):
-        self._current_option['location_id'] = location_id
         return self
 
     def jump(self, label_id):
@@ -44,12 +40,12 @@ class MenuBuilder:
 
     def done(self, manager):
         """Register all built options with a MenuManager"""
-        if not self._menu_name:
-            raise Exception("Menu name not specified")
+        if not self._location_id:
+            raise Exception("Menu location_id not specified")
 
         self._complete()
         for option in self._options:
-            manager.add_option(self._menu_name, option)
+            manager.add_option(self._location_id, option)
 
     def _complete(self):
         if self._current_option is None:
@@ -66,15 +62,29 @@ class MenuBuilder:
 
 class MenuManager:
     def __init__(self):
-        self.menu_options = {}
+        self._registry = {}
 
-    def add_option(self, menu_name, option):
-        if menu_name not in self.menu_options:
-            self.menu_options[menu_name] = []
-        self.menu_options[menu_name].append(option)
-        self.menu_options[menu_name].sort(key=lambda x: x.priority, reverse=True) # set highest first
+    def add_option(self, location_id, option):
+        if location_id not in self._registry:
+            self._registry[location_id] = []
+        self._registry[location_id].append(option)
+        self._registry[location_id].sort(key=lambda x: x.priority, reverse=True)  # set highest first
 
-    def get_available_options(self, menu_name):
-        if menu_name not in self.menu_options:
+    def get_available_options(self, location_id):
+        if location_id not in self._registry:
             return []
-        return [opt for opt in self.menu_options[menu_name] if opt.condition is not None and opt.condition()]
+
+        menu_items = [opt for opt in self._registry[location_id] if opt.condition is not None and opt.condition()]
+        if len(menu_items) == 0:
+            builder = 'register keys ['
+            for a in self._registry.keys():
+                builder += f'"{a}", '
+            builder += ']?'
+
+            if location_id in self._registry:
+                builder = f'Why menu items for location "{location_id}" were not found in {builder}'
+            else:
+                builder = f'Why location "{location_id}" was not found in {builder}'
+            raise Exception(builder)
+
+        return menu_items

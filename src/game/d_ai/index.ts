@@ -36,6 +36,17 @@ const goFiles = [
     'DZM825.D',
     'DZM965.D',
     'DZM985.D',
+    'DZF114.D',
+    'DZF444.D',
+    'DZF594.D',
+    'DZF626.D',
+    'DZF679.D',
+    'DZF832.D',
+    'DZF891.D',
+    'DZF916.D',
+    'DZF1072.D',
+    'DZF1096.D',
+    'DZF1148.D',
 ];
 
 const go = async (fromFile: string, cleanFile: string, toFile: string, statePrefix: string): Promise<void> => {

@@ -12,7 +12,7 @@ def build_morgue_label_flow(label_builder):
         .start_with("dmorte_one_talk_and_loot_dummies") \
             .say('DMORTE1.D_s34') \
             .end_with('morgue_dialog_loop') \
-        .start_with("dmorte_one_join") \
+        .start_with("dmorte_join") \
             .say('DMORTE1.D_s26') \
             .end_with('morgue_dialog_loop') \
         .start_with("dmorte_one_talk_morte") \
@@ -37,13 +37,22 @@ def build_morgue_label_flow(label_builder):
             .say('DDHALL.D_s99999999_54') \
             .end_with('morgue_dialog_loop') \
         .start_with("dmorte_one_kill_dzm569") \
-            .say('DMORTE1.D_s99999999_569') \
+            .say('DZM825.D_s99999999_k') \
             .end_with('morgue_dialog_loop') \
         .start_with("dmorte_one_kill_dzm825") \
-            .say('DMORTE1.D_s99999999_825') \
+            .say('DZM825.D_s99999999_k') \
             .end_with('morgue_dialog_loop') \
         .start_with("dmorte_one_kill_dzm782") \
-            .say('DMORTE1.D_s99999999_782') \
+            .say('DZM782.D_s99999999_k') \
+            .end_with('morgue_dialog_loop') \
+        .start_with("dmorte_one_kill_dzm965") \
+            .say('DZM965.D_s99999999_k') \
+            .end_with('morgue_dialog_loop') \
+        .start_with("dmorte_one_kill_dzf594") \
+            .say('DZF594.D_s99999999_k') \
+            .end_with('morgue_dialog_loop') \
+        .start_with("dmorte_one_kill_dzf626") \
+            .say('DZF626.D_s99999999_k') \
             .end_with('morgue_dialog_loop') \
         .start_with("dmorte_one_talk_dzm569") \
             .say('DZM569.D_s0') \
@@ -53,4 +62,13 @@ def build_morgue_label_flow(label_builder):
             .end_with('morgue_dialog_loop') \
         .start_with("dmorte_one_talk_dzm782") \
             .say('DZM782.D_s0') \
+            .end_with('morgue_dialog_loop') \
+        .start_with("dmorte_one_talk_dzm965") \
+            .say('DZM965.D_s0') \
+            .end_with('morgue_dialog_loop') \
+        .start_with("dmorte_one_talk_dzf594") \
+            .say('DZF594.D_s0') \
+            .end_with('morgue_dialog_loop') \
+        .start_with("dmorte_one_talk_dzf626") \
+            .say('DZF626.D_s0') \
             .end_with('morgue_dialog_loop')

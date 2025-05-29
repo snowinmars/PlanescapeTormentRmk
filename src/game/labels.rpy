@@ -51,16 +51,16 @@ label morgue_dialog_loop:
             renpy.store.global_dialog_manager.pronounce(npc_lines)
         jump morgue_dialog_loop
     else:
-        $ available_options = renpy.store.global_menu_manager.get_available_options("morgue_main")
+        $ available_options = renpy.store.global_menu_manager.get_available_options(renpy.store.global_settings_manager.get_location())
         call screen decision_choices(available_options)
 
 
 label dialog_dispatcher:
-    if current_dialog_key not in renpy.store.global_label_registry:
+    if current_dialog_key not in renpy.store.global_label_registry.registry:
         $ renpy.exports.say('snowinmars', f'AAA, {current_dialog_key} is not in the global_label_registry')
         $ raise Exception(f'AAA, {current_dialog_key} is not in the global_label_registry')
 
-    $ initial_state = renpy.store.global_label_registry[current_dialog_key]
+    $ initial_state = renpy.store.global_label_registry.registry[current_dialog_key]
     $ npc_lines = renpy.store.global_dialog_manager.start_dialog(initial_state)
     $ renpy.store.global_dialog_manager.pronounce(npc_lines)
     $ current_dialog_key = None

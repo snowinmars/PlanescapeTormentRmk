@@ -156,7 +156,7 @@ define gui.button_width = None
 define gui.button_height = None
 
 ## Границы каждой стороны кнопки в порядке слева, сверху, справа, снизу.
-define gui.button_borders = Borders(6, 6, 6, 6)
+define gui.button_borders = Borders(2, 2, 2, 2)
 
 ## Если True, фон изображения будет моститься. Если False, фон изображения будет
 ## линейно масштабирован.
@@ -262,7 +262,7 @@ define gui.skip_ypos = 15
 define gui.notify_ypos = 68
 
 ## Интервал между выборами в меню.
-define gui.choice_spacing = 33
+define gui.choice_spacing = 3
 
 ## Кнопки в секции навигации главного и игрового меню.
 define gui.navigation_spacing = 6

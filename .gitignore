@@ -27,6 +27,17 @@ src/game/d_raw/*
 !src/game/d_raw/DZM825.D
 !src/game/d_raw/DZM965.D
 !src/game/d_raw/DZM985.D
+!src/game/d_raw/DZF114.D
+!src/game/d_raw/DZF444.D
+!src/game/d_raw/DZF594.D
+!src/game/d_raw/DZF626.D
+!src/game/d_raw/DZF679.D
+!src/game/d_raw/DZF832.D
+!src/game/d_raw/DZF891.D
+!src/game/d_raw/DZF916.D
+!src/game/d_raw/DZF1072.D
+!src/game/d_raw/DZF1096.D
+!src/game/d_raw/DZF1148.D
 
 # Created by https://www.toptal.com/developers/gitignore/api/renpy
 # Edit at https://www.toptal.com/developers/gitignore?templates=renpy

@@ -384,6 +384,7 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
+    padding (6, 6)
 
     background "gui/overlay/main_menu.png"
 

@@ -48,36 +48,38 @@ init 1 python:
 
 init 2 python:
     # setup global characters and images
+    renpy.add_python_directory('chars')
     renpy.add_python_directory('dlg')
+    renpy.add_python_directory('menu')
     renpy.add_python_directory('engine')
     renpy.add_python_directory('labels')
     renpy.add_python_directory('settings')
 
     renpy.store.characters = {
-        'teller': teller,
+        'teller':        teller,
         'morte_unknown': morte_unknown,
-        'morte': morte,
-        'scares': scares,
-        'death_names': death_names,
-        'dhall': dhall,
+        'morte':         morte,
+        'scares':        scares,
+        'death_names':   death_names,
+        'dhall':         dhall,
         'dhall_unknown': dhall_unknown,
-        'bei': bei,
-        'asonje': asonje,
-        'dzm79': dzm79,
-        'dzm199': dzm199,
-        'dzm257': dzm257,
-        'dzm310': dzm310,
-        'dzm396': dzm396,
-        'dzm463': dzm463,
-        'dzm475': dzm475,
-        'dzm506': dzm506,
-        'dzm569': dzm569,
-        'dzm613': dzm613,
-        'dzm732': dzm732,
-        'dzm782': dzm782,
-        'dzm825': dzm825,
-        'dzm965': dzm965,
-        'dzm985': dzm985,
+        'bei':           bei,
+        'asonje':        asonje,
+        'dzm79':   dzm79,
+        'dzm199':  dzm199,
+        'dzm257':  dzm257,
+        'dzm310':  dzm310,
+        'dzm396':  dzm396,
+        'dzm463':  dzm463,
+        'dzm475':  dzm475,
+        'dzm506':  dzm506,
+        'dzm569':  dzm569,
+        'dzm613':  dzm613,
+        'dzm732':  dzm732,
+        'dzm782':  dzm782,
+        'dzm825':  dzm825,
+        'dzm965':  dzm965,
+        'dzm985':  dzm985,
         'dzm1041': dzm1041,
         'dzm1094': dzm1094,
         'dzm1146': dzm1146,
@@ -85,6 +87,17 @@ init 2 python:
         'dzm1445': dzm1445,
         'dzm1508': dzm1508,
         'dzm1664': dzm1664,
+        'dzf114' : dzf114,
+        'dzf444' : dzf444,
+        'dzf594' : dzf594,
+        'dzf626' : dzf626,
+        'dzf679' : dzf679,
+        'dzf832' : dzf832,
+        'dzf891' : dzf891,
+        'dzf916' : dzf916,
+        'dzf1072': dzf1072,
+        'dzf1096': dzf1096,
+        'dzf1148': dzf1148,
     }
     renpy.store.character_reactions = {
         'morte_img default':   'morte_img default',
@@ -111,53 +124,68 @@ init 2 python:
         'dzm1445_img default': 'dzm1445_img default',
         'dzm1508_img default': 'dzm1508_img default',
         'dzm1664_img default': 'dzm1664_img default',
+        'dzf114_img default':  'dzf114_img default',
+        'dzf444_img default':  'dzf444_img default',
+        'dzf594_img default':  'dzf594_img default',
+        'dzf626_img default':  'dzf626_img default',
+        'dzf679_img default':  'dzf679_img default',
+        'dzf832_img default':  'dzf832_img default',
+        'dzf891_img default':  'dzf891_img default',
+        'dzf916_img default':  'dzf916_img default',
+        'dzf1072_img default': 'dzf1072_img default',
+        'dzf1096_img default': 'dzf1096_img default',
+        'dzf1148_img default': 'dzf1148_img default',
     }
 
 init 3 python:
     # engine warm up
-    from engine.label import (LabelFlowBuilder)
-    from labels.all_labels import (build_all_labels)
     from engine.dialog import (DialogManager)
     from engine.menu import (MenuManager)
     from engine.settings import (SettingsManager)
-    from labels.morgue_menu import (build_morgue_menu)
-    from dlg.dlg_all import (dlg_all)
-    from setting.settings_def import (build_settings)
-
+    from engine.events import (EventManager)
+    from engine.label_flow import (LabelFlowBuilder, LabelFlowManager)
+    from labels.all_labels import (build_all_labels)
+    from menus.all_menus import (build_all_menus)
+    from dlg.all_dlgs import (build_all_dlgs)
+    from setting.all_settings import (build_all_settings)
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
-    renpy.store.global_label_registry = {}
-    renpy.store.global_settings_manager = SettingsManager()
+    # config.font_replacement_map["DejaVuSansMono.ttf", False, False] = ("DejaVuSansMono.ttf", False, False)
+
+    renpy.store.global_event_manager = EventManager()
+    renpy.store.global_label_registry = LabelFlowManager()
+    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_dialog_manager = DialogManager()
 
     devlog = logging.getLogger('log')
 
+    now = int(time.time())
+    devlog.info('Building settings manager...')
+    build_all_settings(renpy.store.global_settings_manager)
+    devlog.info('Done building settings manager, took %s', int(time.time()) - now)
+
     devlog.info('Building label flow...')
     now = int(time.time())
-    label_builder = LabelFlowBuilder()
-    build_all_labels(label_builder)
-    label_builder.build(renpy.store.global_label_registry)
+    label_flow_builder = LabelFlowBuilder()
+    build_all_labels(label_flow_builder, renpy.store.global_settings_manager)
+    renpy.store.global_label_registry.register(label_flow_builder)
     devlog.info('Done building label flow, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building settings manager...')
-    build_settings(renpy.store.global_settings_manager)
-    devlog.info('Done building settings manager, took %s', int(time.time()) - now)
-
-    now = int(time.time())
     devlog.info('Building morgue menu...')
-    build_morgue_menu(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
+    build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
     devlog.info('Done building morgue menu, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building dialog manager...')
-    dlg_all(renpy.store.global_dialog_manager)
+    build_all_dlgs(renpy.store.global_dialog_manager)
     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
 
 
 label start:
+    show screen event_manager_display
     menu:
         "dev":
             $ current_dialog_key = "dev"

@@ -1,5 +1,3 @@
-import renpy
-
 class LabelFlowBuilder:
     def __init__(self):
         self.current_label = None
@@ -35,6 +33,11 @@ class LabelFlowBuilder:
             self.label_data[self.current_label]['end_jump'] = jump_target
         return self
 
-    def build(self, label_registry):
-        for label_name, data in self.label_data.items():
-            label_registry[label_name] = data['dialog_id']
+
+class LabelFlowManager:
+    def __init__(self):
+        self.registry = {}
+
+    def register(self, label_builder):
+        for label_name, data in label_builder.label_data.items():
+            self.registry[label_name] = data['dialog_id']

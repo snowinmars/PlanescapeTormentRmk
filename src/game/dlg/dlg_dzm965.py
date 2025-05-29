@@ -9,8 +9,9 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
+    gsm.set_location('morgue2')
     renpy.exports.show("bg mourge1")
+    gsm.set_meet_dzm965(True)
     _show('dzm965_img default', center_right_down)
 def _dispose():
     _hide('dzm965_img')
@@ -20,6 +21,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm965(gsm):
+    gsm.set_dead_dzm965(True)
 ###
 def _r34923_condition(gsm):
     return not gsm.once_tracked('zombie_chaotic')
@@ -85,4 +88,15 @@ def dlg_dzm965(manager):
             .response("Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.", 'DZM965.D_s2', 'r3', 'reply45071').with_condition(lambda: _r45071_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r5', 'reply45073').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45075').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM965.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922') \
+            .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
+            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «965» на открывшейся кости.", 's0', 'say24575') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm965(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)
