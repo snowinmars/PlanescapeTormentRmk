@@ -51,9 +51,10 @@ class DialogStateBuilder:
             if 'text' in self.last_line:
                 self.lines.append(self.last_line)
 
-            self.last_line = {}
-            self.last_line['npc'] = npc
-            self.last_line['text'] = text
+            self.last_line = {
+                'npc': npc,
+                'text': text
+            }
             return self
 
         def with_action(self, action):
@@ -68,12 +69,12 @@ class DialogStateBuilder:
             self.lines.append(self.last_line)
 
             for l in self.lines:
-                self.parent.npc_lines.append([
-                    l['npc'],
-                    l['text'],
-                    l['action'] if 'action' in l else None,
-                    l['condition'] if 'condition' in l else None
-                ])
+                self.parent.npc_lines.append({
+                    "npc": l['npc'],
+                    "text": l['text'],
+                    "action": l['action'] if 'action' in l else None,
+                    "condition": l['condition'] if 'condition' in l else None
+                })
             return DialogStateBuilder.ResponsesBuilder(self)
 
 
@@ -84,15 +85,16 @@ class DialogStateBuilder:
             self.responses = []
 
         def response(self, text, next_state, response_id, reply_id):
-            if (response_id == 'r'):
+            if response_id == 'r':
                 raise Exception(f'There cannot be default response id for line "{text}"')
 
             if 'text' in self.last_response:
                 self.responses.append(self.last_response)
 
-            self.last_response = {}
-            self.last_response['text'] = text
-            self.last_response['next_state'] = next_state
+            self.last_response = {
+                'text': text,
+                'next_state': next_state
+            }
             return self
 
         def with_condition(self, condition):
@@ -145,6 +147,7 @@ class DialogManager:
     def choose_response(self, response_id):
         response = self.dialog_db[self.current_dialog_state]["responses"][response_id]
         self.last_response = response_id
+        renpy.store.global_history_manager(renpy.store.characters['the_nameless_one'], response['text'])
 
         self.current_dialog_state = response["next_state"]
         return self.current_dialog_state
@@ -158,9 +161,10 @@ class DialogManager:
 
     def pronounce(self, npc_lines):
         for line in npc_lines:
-            if line[2]:
-                line[2]()
-            if line[3] is not None and line[3]():
-                renpy.exports.say(line[0], line[1])
-            if line[3] is None:
-                renpy.exports.say(line[0], line[1])
+            if 'action' in line and line['action']:
+                line['action']()
+            always = 'condition' not in line or line['condition'] is None
+            conditional_ok = 'condition' in line and line['condition'] is not None and line['condition']()
+            if always or conditional_ok:
+                renpy.exports.say(line['npc'], line['line'])
+                renpy.store.global_history_manager(line['npc'], line['line'])

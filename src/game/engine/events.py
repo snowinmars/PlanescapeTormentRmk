@@ -1,10 +1,11 @@
+import time
+
 class EventManager:
     def __init__(self, max_entries=100):
         self.max_entries = max_entries
         self.events = []
 
     def write_event(self, event_text, event_category="general"):
-        import time
         timestamp = time.strftime("[%H:%M]")
         entry = (timestamp, event_category, event_text)
 

@@ -1,4 +1,6 @@
 # manually sync with script.rpy 'characters' variable
+define the_nameless_one = Character('Безымянный', color='#c8ffc8')
+
 define teller        = Character('',            color='#c8ffc8')
 define morte_unknown = Character('?',           color='#c8ffc8')
 define morte         = Character('Морт',        color='#c8ffc8')
@@ -8,7 +10,6 @@ define dhall         = Character('Дхолл',       color='#c8ffc8')
 define dhall_unknown = Character('?',           color='#c8ffc8')
 define bei           = Character('Бэй',         color='#c8ffc8')
 define asonje        = Character('Асонж',       color='#c8ffc8')
-
 
 define dzm79   = Character('Зомби 79',   color='#c8ffc8')
 define dzm199  = Character('Зомби 199',  color='#c8ffc8')
