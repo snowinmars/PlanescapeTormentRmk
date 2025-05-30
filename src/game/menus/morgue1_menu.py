@@ -1,17 +1,22 @@
 ﻿def build_morgue1_menu(menu_builder, gsm):
-    return menu_builder \
+    menu_builder \
         .option("Поговорить с Мортом") \
-        .jump("dmorte_one_talk_morte") \
-        .when(lambda: gsm.get_in_party_morte() \
-                      and not gsm.get_dead_morte()) \
+            .jump("dmorte_one_talk_morte") \
+            .when(lambda: gsm.get_in_party_morte() \
+                          and not gsm.get_dead_morte()) \
         .option("Убить Морта") \
-        .jump("dmorte_one_kill_morte") \
-        .when(lambda: gsm.get_in_party_morte() \
-                      and not gsm.get_dead_morte()) \
+            .jump("dmorte_one_kill_morte") \
+            .when(lambda: gsm.get_in_party_morte() \
+                          and not gsm.get_dead_morte()) \
         .option("Пригласить Морта в группу") \
             .jump("dmorte_join") \
             .when(lambda: not gsm.get_in_party_morte() \
-                      and not gsm.get_dead_morte()) \
+                          and not gsm.get_dead_morte()) \
+        .option("Попробовать открыть одну из дверей") \
+            .jump("dmorte_one_open_morgue_door") \
+            .when(lambda: gsm.get_has_intro_key())
+
+    menu_builder \
         .option("Атаковать плешивый ходячий труп") \
             .jump("dmorte_one_kill_dzm569") \
             .when(lambda: not gsm.get_dead_dzm569() \
@@ -59,7 +64,6 @@
         .option("Поговорить с трупом «782»") \
             .jump("dmorte_one_talk_dzm782") \
             .when(lambda: not gsm.get_dead_dzm782() \
-                          and gsm.get_meet_dzm782()) \
-        .option("Попробовать открыть одну из дверей") \
-            .jump("dmorte_one_open_morgue_door") \
-            .when(lambda: gsm.get_has_intro_key())
+                          and gsm.get_meet_dzm782())
+
+    return menu_builder

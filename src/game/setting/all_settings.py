@@ -1,63 +1,7 @@
 # Each settings_id will be transformed to a bunch of functions into the gsm
 #   see the builder flow for more
-def build_all_settings(manager):
+def build_dz_settings(manager):
     manager \
-        .register('in_party_morte', False) \
-        .register('meet_xixi', False) \
-        .register('meet_quentin', False) \
-        .register('meet_deionarra', False) \
-        .register('meet_vaxis', False) \
-        .register('meet_pharod', False) \
-        .register('meet_dustmen', False) \
-        .register('meet_dhall', False) \
-        .register('meet_morte', False) \
-        .register('meet_oinosian', False) \
-        .register('meet_bei', False) \
-        .register('meet_asonje', False) \
-        .register('meet_crispy', False) \
-        .register('dead_dhall', False) \
-        .register('dead_quentin', False) \
-        .register('dead_vaxis', False) \
-        .register('dead_pharod', False) \
-        .register('dead_morte', False) \
-        .register('adahn', 0) \
-        .register('good', 0) \
-        .register('law', 0) \
-        .register('good_morte', 0) \
-        .register('jorunal_allowed', False) \
-        .register('can_speak_with_dead', False) \
-        .register('death_of_names', False) \
-        .register('death_of_names_quentin', False) \
-        .register('death_of_names_dhall', False) \
-        .register('death_of_names_adahn', False) \
-        .register('location', None) \
-        .register('know_xachariah_name', False) \
-        .register('crier_quest', False) \
-        .register('xixi_back', False) \
-        .register('escape_mortuary', False) \
-        .register('visited_ar0200', False) \
-        .register('asonje_state', 0) \
-        .register('has_intro_key', False) \
-        .register('has_tome_ba', False) \
-        .register('mortuary_walkthrough', 0) \
-        .register('morte_mortuary_walkthrough_1', False) \
-        .register('morte_mortuary_walkthrough_2', False) \
-        .register('alarmed', False) \
-        .register('vaxis_lawful', False) \
-        .register('vaxis_left', False) \
-        .register('vaxis_betrayed', False) \
-        .register('vaxis_betray', 0) \
-        .register('vaxis_exposed', False) \
-        .register('saw_dhall', False) \
-        .register('know_copper_earring_secret', False) \
-        .register('has_copper_earring', False) \
-        .register('has_506_thread', False) \
-        .register('has_scalpel', False) \
-        .register('has_needles', 0) \
-        .register('has_1201_note', False) \
-        .register('has_dzm1664_page', False) \
-        .register('has_bandages', False) \
-        .register('morte_quip', False) \
         .register('meet_dzm79', False) \
         .register('meet_dzm199', False) \
         .register('meet_dzm257', False) \
@@ -124,3 +68,80 @@ def build_all_settings(manager):
         .register('dead_dzf1072', False) \
         .register('dead_dzf1096', False) \
         .register('dead_dzf1148', False)
+
+
+def build_npc_dead_or_alive_settings(manager):
+    npcs = [
+        'xixi',
+        'quentin',
+        'deionarra',
+        'vaxis',
+        'pharod',
+        'dhall',
+        'morte',
+        'oinosian',
+        'bei',
+        'asonje',
+        'crispy',
+        'death_of_names',
+    ]
+
+    for npc in npcs:
+        manager \
+            .register(f'meet_{npc}', False) \
+            .register(f'dead_{npc}', False)
+
+
+def build_party_settings(manager):
+    manager \
+        .register('in_party_morte', False)
+
+
+def build_other_settings(manager):
+    manager \
+        .register('dustmen', None) \
+        .register('jorunal_allowed', False) \
+        .register('location', None) \
+        .register('adahn', 0) \
+        .register('good', 0) \
+        .register('law', 0) \
+        .register('good_morte', 0) \
+        .register('jorunal_allowed', False) \
+        .register('can_speak_with_dead', False) \
+        .register('death_of_names_quentin', False) \
+        .register('death_of_names_dhall', False) \
+        .register('death_of_names_adahn', False) \
+        .register('know_xachariah_name', False) \
+        .register('crier_quest', False) \
+        .register('xixi_back', False) \
+        .register('escape_mortuary', False) \
+        .register('visited_ar0200', False) \
+        .register('asonje_state', 0) \
+        .register('has_intro_key', False) \
+        .register('has_tome_ba', False) \
+        .register('mortuary_walkthrough', 0) \
+        .register('morte_mortuary_walkthrough_1', False) \
+        .register('morte_mortuary_walkthrough_2', False) \
+        .register('alarmed', False) \
+        .register('vaxis_lawful', False) \
+        .register('vaxis_left', False) \
+        .register('vaxis_betrayed', False) \
+        .register('vaxis_betray', 0) \
+        .register('vaxis_exposed', False) \
+        .register('saw_dhall', False) \
+        .register('know_copper_earring_secret', False) \
+        .register('has_copper_earring', False) \
+        .register('has_506_thread', False) \
+        .register('has_scalpel', False) \
+        .register('has_needles', 0) \
+        .register('has_1201_note', False) \
+        .register('has_dzm1664_page', False) \
+        .register('has_bandages', False) \
+        .register('morte_quip', False)
+
+
+def build_all_settings(manager):
+    build_dz_settings(manager)
+    build_npc_dead_or_alive_settings(manager)
+    build_party_settings(manager)
+    build_other_settings(manager)

@@ -50,12 +50,14 @@ init 2 python:
     # setup global characters and images
     renpy.add_python_directory('chars')
     renpy.add_python_directory('dlg')
+    renpy.add_python_directory('dlg/dz')
     renpy.add_python_directory('menu')
     renpy.add_python_directory('engine')
     renpy.add_python_directory('labels')
     renpy.add_python_directory('settings')
 
     renpy.store.characters = {
+        'the_nameless_one': the_nameless_one
         'teller':        teller,
         'morte_unknown': morte_unknown,
         'morte':         morte,
@@ -143,6 +145,7 @@ init 3 python:
     from engine.menu import (MenuManager)
     from engine.settings import (SettingsManager)
     from engine.events import (EventManager)
+    from engine.history import (HistoryManager)
     from engine.label_flow import (LabelFlowBuilder, LabelFlowManager)
     from labels.all_labels import (build_all_labels)
     from menus.all_menus import (build_all_menus)
@@ -151,13 +154,14 @@ init 3 python:
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
-    # config.font_replacement_map["DejaVuSansMono.ttf", False, False] = ("DejaVuSansMono.ttf", False, False)
+    config.history_length = 0  # Disable Ren'Py's built-in history
 
     renpy.store.global_event_manager = EventManager()
     renpy.store.global_label_registry = LabelFlowManager()
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_dialog_manager = DialogManager()
+    renpy.store.global_history_manager = HistoryManager()
 
     devlog = logging.getLogger('log')
 
@@ -182,6 +186,11 @@ init 3 python:
     devlog.info('Building dialog manager...')
     build_all_dlgs(renpy.store.global_dialog_manager)
     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
+
+
+on "show" action If(renpy.get_screen("custom_history"), true=Hide("custom_history"))
+mousewheel:
+    action Show("custom_history")
 
 
 label start:
