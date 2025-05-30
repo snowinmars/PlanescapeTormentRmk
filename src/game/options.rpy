@@ -153,6 +153,7 @@ define config.save_directory = "PlanescapeTormentRmk-1747768621"
 
 define config.window_icon = "gui/window_icon.png"
 
+define config.image_cache_size = 10
 
 ## Настройка Дистрибутива ######################################################
 ##

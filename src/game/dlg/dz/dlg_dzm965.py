@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue2')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary2')
+    renpy.exports.show("bg mortuary2")
     gsm.set_meet_dzm965(True)
     _show('dzm965_img default', center_right_down)
 def _dispose():
@@ -44,7 +44,7 @@ def dlg_dzm965(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    # Starts: DZM965.D_s0 # Starts: DZM965.D_s1
+    # Starts: DZM965.D_s0 DZM965.D_s1 DZM965.D_s99999999_k
     DialogStateBuilder() \
     .state('DZM965.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 477') \
         .with_npc_lines() \
@@ -92,7 +92,7 @@ def dlg_dzm965(manager):
 
     DialogStateBuilder().state('DZM965.D_s99999999_k', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922') \
+            .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922').with_action(lambda: _init(gsm)) \
             .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
             .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «965» на открывшейся кости.", 's0', 'say24575') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \

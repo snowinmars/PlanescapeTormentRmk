@@ -9,9 +9,9 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue2')
+    gsm.set_location('mortuary2')
+    renpy.exports.show("bg mortuary2")
     _show('morte_img default', center_left_down)
-    gsm.set_has_intro_key(False)
 def _dispose():
     _hide('morte_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -20,6 +20,9 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _s31_action(gsm):
+    gsm.set_location('mortuary3')
+    renpy.exports.show("bg mortuary3")
 ###
 def _r41267_action(gsm):
     gsm.set_saw_dhall(True)
@@ -39,6 +42,7 @@ def _r41163_condition(gsm):
 def _r41177_action(gsm):
     gsm.set_jorunal_allowed(True)
     gsm.update_journal('39516')
+    _dispose()
 def _r41181_condition(gsm):
     return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41182_condition(gsm):
@@ -209,13 +213,12 @@ def dlg_dmorte_two(manager):
             .line(morte, "Записывай в него каждый свой шаг. Если начнешь забывать важные вещи… например, кто ты… или, что еще важнее, кто *я*…", 's11', 'say41176') \
             .line(morte, "…то воспользуйся им, чтобы освежить свою память.", 's11', 'say41176') \
         .with_responses() \
-            .response("Ладно… Уяснил. Идем.", 'DMORTE2.D_s31', 'r21', 'reply41177').with_action(lambda: _r41177_action(gsm)) \
+            .response("Ладно… Уяснил. Идем.", EXIT, 'r21', 'reply41177').with_action(lambda: _r41177_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE2.D_s31', '-') \
+    DialogStateBuilder().state('DMORTE2.D_s31', '-') \
         .with_npc_lines() \
-            .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас.", '-', '-') \
+            .line(teller, "Я делаю несколько шагов вперёд и слышу удивлённый возглас.", '-', '-').with_action(lambda: _s31_action(gsm)) \
             .line(morte, "Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.", 's31', 'say41262') \
         .with_responses() \
             .response("Что такое?", 'DMORTE2.D_s32', 'r86', 'reply41263').with_action(lambda: _r41263_action(gsm)) \

@@ -9,118 +9,97 @@ allowed_line_endings = tuple([
     '»'
 ])
 
-"""
-References and ids are from the NearInfinity
-"""
 class DialogStateBuilder:
     def __init__(self):
         self.state_id = None
         self.npc_lines = []
         self.responses = {}
+        self.init_action = None
         self.next_available_response_id = 0
-        self._current_line = None
+        self._current_npc_line = None
         self._current_response = None
+        self._current_context = None
 
-    def _check_line(self, line):
-        if not line.endswith(allowed_line_endings):
-            raise Exception(f'Line "{line}" ends with unallowed char. Fix it')
-        if len(line) > 200:
-            raise Exception(f'Line "{line}" is too long: {len(line)} > 200')
+    def _complete_current(self):
+        if self._current_context == 'npc_line' and self._current_npc_line is not None:
+            self.npc_lines.append(self._current_npc_line)
+            self._current_npc_line = None
+        elif self._current_context == 'response' and self._current_response is not None:
+            rid = self.next_available_response_id
+            self.responses[rid] = self._current_response
+            self.next_available_response_id += 1
+            self._current_response = None
+        self._current_context = None
 
     def state(self, state_id, comment):
+        self._complete_current()
         self.state_id = state_id
         self.npc_lines = []
         self.responses = {}
+        self.init_action = None
         self.next_available_response_id = 0
-        self._current_line = None
+        self._current_npc_line = None
         self._current_response = None
+        self._current_context = None
+        return self
+
+    def with_action(self, action):
+        if self._current_context == 'npc_line':
+            self._current_npc_line['action'] = action
+        elif self._current_context == 'response':
+            self._current_response['action'] = action
+        else:
+            self.init_action = action
+        return self
+
+    def with_condition(self, condition):
+        if self._current_context == 'npc_line':
+            self._current_npc_line['condition'] = condition
+        elif self._current_context == 'response':
+            self._current_response['condition'] = condition
         return self
 
     def with_npc_lines(self):
-        return DialogStateBuilder.NpcLinesBuilder(self)
+        return self
 
-    class NpcLinesBuilder:
-        def __init__(self, parent_builder):
-            self.parent = parent_builder
-            self.last_line = {}
-            self.lines = []
+    def line(self, npc, text, state_id, say_id):
+        self._complete_current()
+        self._current_npc_line = {
+            'npc': npc,
+            'text': text,
+            'action': None,
+            'condition': None
+        }
+        self._current_context = 'npc_line'
+        return self
 
-        def line(self, npc, text, state_id, say_id):
-            self.parent._check_line(text)
+    def with_responses(self):
+        return self
 
-            if 'text' in self.last_line:
-                self.lines.append(self.last_line)
+    def response(self, text, next_state, response_id, reply_id):
+        if response_id == 'r':
+            raise Exception(f'There cannot be default response id for line "{text}"')
+        self._complete_current()
+        self._current_response = {
+            'text': text,
+            'next_state': next_state,
+            'action': None,
+            'condition': None
+        }
+        self._current_context = 'response'
+        return self
 
-            self.last_line = {
-                'npc': npc,
-                'text': text
-            }
-            return self
+    def push(self, manager):
+        self._complete_current()
+        for line in self.npc_lines:
+            text = line['text']
+            if not text.endswith(allowed_line_endings):
+                raise Exception(f'Line "{text}" ends with unallowed char. Fix it')
+            if len(text) > 200:
+                raise Exception(f'Line "{text}" is too long: {len(text)} > 200')
+        manager.add_dialog_state(self.state_id, self.npc_lines, self.responses, self.init_action)
+        return self
 
-        def with_action(self, action):
-            self.last_line['action'] = action
-            return self
-
-        def with_condition(self, condition):
-            self.last_line['condition'] = condition
-            return self
-
-        def with_responses(self):
-            self.lines.append(self.last_line)
-
-            for l in self.lines:
-                self.parent.npc_lines.append({
-                    "npc": l['npc'],
-                    "text": l['text'],
-                    "action": l['action'] if 'action' in l else None,
-                    "condition": l['condition'] if 'condition' in l else None
-                })
-            return DialogStateBuilder.ResponsesBuilder(self)
-
-
-    class ResponsesBuilder:
-        def __init__(self, parent_builder):
-            self.parent = parent_builder
-            self.last_response = {}
-            self.responses = []
-
-        def response(self, text, next_state, response_id, reply_id):
-            if response_id == 'r':
-                raise Exception(f'There cannot be default response id for line "{text}"')
-
-            if 'text' in self.last_response:
-                self.responses.append(self.last_response)
-
-            self.last_response = {
-                'text': text,
-                'next_state': next_state
-            }
-            return self
-
-        def with_condition(self, condition):
-            self.last_response['condition'] = condition
-            return self
-
-        def with_action(self, action):
-            self.last_response['action'] = action
-            return self
-
-        def push(self, manager):
-            if self.last_response['text'] is not None:
-                self.responses.append(self.last_response)
-
-            for r in self.responses:
-                self.parent.parent.responses[self.parent.parent.next_available_response_id] = {
-                    "text": r['text'],
-                    "next_state": r['next_state'],
-                    "action": r['action'] if 'action' in r else None,
-                    "condition": r['condition'] if 'condition' in r else None
-                }
-
-                self.parent.parent.next_available_response_id += 1
-
-            manager.add_dialog_state(self.parent.parent.state_id, self.parent.parent.npc_lines, self.parent.parent.responses)
-            return self.parent.parent
 
 class DialogManager:
     def __init__(self):
@@ -128,10 +107,11 @@ class DialogManager:
         self.current_dialog_state = None
         self.last_response = None
 
-    def add_dialog_state(self, state_id, npc_lines, responses):
+    def add_dialog_state(self, state_id, npc_lines, responses, init_action):
         self.dialog_db[state_id] = {
             "npc_lines": npc_lines,
-            "responses": responses
+            "responses": responses,
+            'init_action': init_action
         }
 
     def start_dialog(self, initial_state):
@@ -141,13 +121,16 @@ class DialogManager:
     def get_current_npc_lines(self):
         return self.dialog_db[self.current_dialog_state]["npc_lines"]
 
+    def get_current_init_action(self):
+        return self.dialog_db[self.current_dialog_state]["init_action"]
+
     def get_available_responses(self):
         return self.dialog_db[self.current_dialog_state]["responses"]
 
     def choose_response(self, response_id):
         response = self.dialog_db[self.current_dialog_state]["responses"][response_id]
         self.last_response = response_id
-        renpy.store.global_history_manager(renpy.store.characters['the_nameless_one'], response['text'])
+        renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'], response['text'])
 
         self.current_dialog_state = response["next_state"]
         return self.current_dialog_state
@@ -161,10 +144,10 @@ class DialogManager:
 
     def pronounce(self, npc_lines):
         for line in npc_lines:
-            if 'action' in line and line['action']:
+            if line.get('action'):
                 line['action']()
             always = 'condition' not in line or line['condition'] is None
-            conditional_ok = 'condition' in line and line['condition'] is not None and line['condition']()
+            conditional_ok = line.get('condition') and line['condition']()
             if always or conditional_ok:
-                renpy.exports.say(line['npc'], line['line'])
-                renpy.store.global_history_manager(line['npc'], line['line'])
+                renpy.exports.say(line['npc'], line['text'])
+                renpy.store.global_history_manager.write_line(line['npc'], line['text'])

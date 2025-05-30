@@ -9,10 +9,12 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
+    gsm.set_location('mortuary1')
     gsm.set_in_party_morte(True)
     gsm.set_meet_morte(True)
-    renpy.exports.show("bg mourge1")
+    renpy.exports.show("bg mortuary1")
+    # renpy.exports.show("bg mortuary", at_list=[renpy.display.transform.Transform(pos=(-350, -2000))])
+    # renpy.exports.transition(renpy.display.transition.Dissolve(1.0))
     _show('morte_img default', center_left_down)
 def _dispose():
     _hide('morte_img')
@@ -22,6 +24,9 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kick_morte(gsm):
+    gsm.set_in_party_morte(False)
+    _dispose()
 def _join_morte(gsm):
     gsm.set_in_party_morte(True)
     _dispose()
@@ -31,18 +36,6 @@ def _s19_action(gsm):
     gsm.set_has_scalpel(True)
 def _s25_action(gsm):
     gsm.set_has_intro_key(True)
-def _kill_dzm569(gsm):
-    gsm.set_meet_dzm569(True)
-    gsm.set_dead_dzm569(True)
-def _kill_dzm825(gsm):
-    gsm.set_meet_dzm825(True)
-    gsm.set_dead_dzm825(True)
-def _kill_dzm782(gsm):
-    gsm.set_meet_dzm782(True)
-    gsm.set_dead_dzm782(True)
-def _kill_dzm965(gsm):
-    gsm.set_meet_dzm965(True)
-    gsm.set_dead_dzm965(True)
 ###
 def _r39824_action(gsm):
     gsm.inc_once_good('good_morte_1')

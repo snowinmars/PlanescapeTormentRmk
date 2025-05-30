@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue2')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary2')
+    renpy.exports.show("bg mortuary2")
     gsm.set_meet_dzf594(True)
     _show('dzf594_img default', center_right_down)
 def _dispose():
@@ -82,7 +82,7 @@ def dlg_dzf594(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    # Starts: DZf594.D_s0
+    # Starts: DZf594.D_s0 DZF594.D_s99999999_k
     DialogStateBuilder().state('DZF594.D_s0', '# from - // Manually checked EXTENDS ~DMORTE~ : 334')\
         .with_npc_lines() \
             .line(teller, "Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.", 's0', 'say35018').with_action(lambda: _init(gsm)) \
@@ -169,7 +169,7 @@ def dlg_dzf594(manager):
 
     DialogStateBuilder().state('DZF594.D_s99999999_k', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.", 's0', 'say35018') \
+            .line(teller, "Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.", 's0', 'say35018').with_action(lambda: _init(gsm)) \
             .line(teller, "На ее лбу угольным карандашом нацарапан номер «594».", 's0', 'say35018') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
             .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm594(gsm)) \

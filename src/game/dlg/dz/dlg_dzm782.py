@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary1')
+    renpy.exports.show("bg mortuary1")
     gsm.set_meet_dzm782(True)
     _show('dzm782_img default', center_right_down)
 def _dispose():
@@ -46,7 +46,7 @@ def dlg_dzm782(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    # Starts: DZM782.D_s0
+    # Starts: DZM782.D_s0 DZM782.D_s99999999_k
     DialogStateBuilder().state('DZM782.D_s0', '# from 34.0 // # Manually checked EXTENDS ~DMORTE1~ : 34') \
         .with_npc_lines() \
             .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708').with_action(lambda: _init(gsm)) \
@@ -106,7 +106,7 @@ def dlg_dzm782(manager):
     DialogStateBuilder() \
     .state('DZM782.D_s99999999_k', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708') \
+            .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708').with_action(lambda: _init(gsm)) \
             .line(teller, "На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
             .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm782(gsm)) \

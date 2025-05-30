@@ -101,7 +101,6 @@ def build_other_settings(manager):
     manager \
         .register('dustmen', None) \
         .register('jorunal_allowed', False) \
-        .register('location', None) \
         .register('adahn', 0) \
         .register('good', 0) \
         .register('law', 0) \

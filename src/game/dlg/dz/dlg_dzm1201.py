@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary3')
+    renpy.exports.show("bg mortuary3")
     _show('dzm1201_img default', center_right_down)
 def _dispose():
     _hide('dzm1201_img')
@@ -20,6 +20,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm1201(gsm):
+    gsm.set_dead_dzm1201(True)
 ###
 def _r34954_condition(gsm):
     return not gsm.get_has_1201_note()
@@ -30,7 +32,7 @@ def _r34958_condition(gsm):
 def _r34956_condition(gsm):
     return gsm.get_has_scalpel()
 def _r34956_action(gsm):
-    gsm.set_pick_up_1201_note()
+    gsm.set_has_1201_note(True)
 def _r45122_condition(gsm):
     return not gsm.get_has_scalpel()
 def _r45129_condition(gsm):
@@ -113,4 +115,13 @@ def dlg_dzm1201(manager):
             .response("Использовать на трупе свою способность История костей.", 'DZM1201.D_s4', 'r14', 'reply45132').with_condition(lambda: _r45132_condition(gsm)) \
             .response("Было приятно поболтать с тобой. Прощай.", EXIT, 'r15', 'reply45133').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r16', 'reply45134').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM1201.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти, создавая впечатление, что он плачет. Его челюсть распахнута, из уголка рта течет струйка гноя.", 's5', 'say45128') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm1201(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

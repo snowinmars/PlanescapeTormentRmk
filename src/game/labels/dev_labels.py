@@ -1,6 +1,8 @@
 def build_dev_label_flow(label_builder, gsm):
-    gsm.set_location('morgue2')
+    gsm.set_location('mortuary1')
+    gsm.set_in_party_morte(True)
+    gsm.set_has_scalpel(True)
     label_builder \
         .start_with("dev") \
-            .say("DMORTE2.D_s33") \
-            .end_with("morgue_dialog_loop")
+            .say("DMORTE1.D_s24") \
+            .end_with("mortuary_dialog_loop")

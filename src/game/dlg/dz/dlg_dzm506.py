@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary1')
+    renpy.exports.show("bg mortuary1")
     _show('dzm506_img default', center_right_down)
 def _dispose():
     _hide('dzm506_img')
@@ -30,8 +30,8 @@ def _r45422_condition(gsm):
 def _r45480_condition(gsm):
     return gsm.get_has_scalpel()
 def _r45480_action(gsm):
-    gsm.set_pick_up_506_thread(True)
-    gsm.set_pick_up_needle(True)
+    gsm.set_has_506_thread(True)
+    gsm.set_has_needle(True)
 def _r45481_condition(gsm):
     return not gsm.get_has_scalpel()
 def _r45484_condition(gsm):

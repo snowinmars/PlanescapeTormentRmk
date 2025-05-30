@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue2')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary2')
+    renpy.exports.show("bg mortuary2")
     gsm.set_meet_dzf626(True)
     _show('dzf626_img default', center_right_down)
 def _dispose():
@@ -82,7 +82,7 @@ def dlg_dzf626(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    # Starts: DZf626.D_s0
+    # Starts: DZf626.D_s0 DZF626.D_s99999999_k
     DialogStateBuilder().state('DZF626.D_s0', '# from - // Manually checked EXTENDS ~DMORTE~ : 338')\
         .with_npc_lines() \
             .line(teller, "Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.", 's0', 'say35050').with_action(lambda: _init(gsm)) \
