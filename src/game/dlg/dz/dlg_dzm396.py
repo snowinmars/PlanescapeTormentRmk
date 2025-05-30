@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary3')
+    renpy.exports.show("bg mortuary3")
     _show('dzm396_img default', center_right_down)
 def _dispose():
     _hide('dzm396_img')
@@ -20,6 +20,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm396(gsm):
+    gsm.set_dead_dzm396(True)
 ###
 def _r34932_condition(gsm):
     return not gsm.once_tracked('zombie_chaotic') \
@@ -39,7 +41,7 @@ def _r45112_condition(gsm):
 def _r34936_condition(gsm):
     return not gsm.get_has_bandages()
 def _r34936_action(gsm):
-    gsm.set_pick_up_bandages(True)
+    gsm.set_has_bandages(True)
 def _r45112_action(gsm):
     gsm.dec_once_law('zombie_chaotic')
 def _r45113_condition(gsm):
@@ -109,7 +111,7 @@ def dlg_dzm396(manager):
     DialogStateBuilder() \
     .state('DZM396.D_s4', '# from 3.0') \
         .with_npc_lines() \
-            .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов.", 's4', 'say45111') \
+            .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности.", 's4', 'say45111') \
             .line(teller, "На левом виске у него выбит номер «396», а его губы крепко зашиты.", 's4', 'say45111') \
         .with_responses() \
             .response("Извини, что забрал те бинты. Просто мне они нужны больше, чем этим телам.", 'DZM396.D_s1', 'r12', 'reply45112').with_condition(lambda: _r45112_condition(gsm)).with_action(lambda: _r45112_action(gsm)) \
@@ -118,4 +120,13 @@ def dlg_dzm396(manager):
             .response("Использовать на трупе свою способность История костей.", 'DZM396.D_s2', 'r15', 'reply45115').with_condition(lambda: _r45115_condition(gsm)) \
             .response("Было приятно с тобой поболтать. Прощай.", EXIT, 'r16', 'reply45116').with_action(lambda: _dispose()) \
             .response("Оставить труп в покое.", EXIT, 'r17', 'reply45117').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM396.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты.", 's0', 'say34931').with_action(lambda: _init(gsm)) \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm396(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

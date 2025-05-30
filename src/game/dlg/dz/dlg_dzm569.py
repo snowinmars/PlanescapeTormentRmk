@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary1')
+    renpy.exports.show("bg mortuary1")
     gsm.set_meet_dzm569(True)
     _show('dzm569_img default', center_right_down)
 def _dispose():
@@ -41,6 +41,8 @@ def _r24584_condition(gsm):
 def _r24585_condition(gsm):
     return not gsm.get_mortuary_walkthrough() \
     and not gsm.get_has_intro_key()
+def _r42295_condition(gsm):
+    return not gsm.get_in_party_morte()
 ###
 
 # DLG/DZM569.DLG
@@ -51,7 +53,7 @@ def dlg_dzm569(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    # Starts: DZM569.D_s0
+    # Starts: DZM569.D_s0 DZM569.D_s99999999_k
     DialogStateBuilder().state('DZM569.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575').with_action(lambda: _init(gsm)) \
@@ -99,9 +101,9 @@ def dlg_dzm569(manager):
             .response("Оставить зомби в покое.", EXIT, 'r14', 'reply42297').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE1.D_s99999999_k', '# from -') \
+    DialogStateBuilder().state('DZM569.D_s99999999_k', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575') \
+            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.", 's0', 'say24575').with_action(lambda: _init(gsm)) \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
             .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm569(gsm)) \
         .with_responses() \

@@ -39,20 +39,37 @@ screen decision_choices(available_options):
                 style "choice_button"
 
 
-label morgue_dialog_loop:
+label mortuary_dialog_loop:
     $ responses = renpy.store.global_dialog_manager.get_available_responses()
+    if responses is None or len(responses) == 0:
+        # init_action should be executed in the `prononce()` method
+        #   but only if there are some lines in it
+        #   if it is just a walk action, it should be executed here
+        $ init_action = renpy.store.global_dialog_manager.get_current_init_action()
+        if init_action is not None:
+            $ init_action()
+        jump show_graphics_menu
+
     call screen dialog_choices(responses)
     $ response_id = _return
+    if response_id == -17:  # custom_history_response
+        jump mortuary_dialog_loop
+
     $ next_state = renpy.store.global_dialog_manager.choose_response(response_id)
 
     if renpy.store.global_dialog_manager.is_state_defined(next_state):
         $ npc_lines = renpy.store.global_dialog_manager.advance_to_state(next_state)
-        python:
-            renpy.store.global_dialog_manager.pronounce(npc_lines)
-        jump morgue_dialog_loop
+        $ renpy.store.global_dialog_manager.pronounce(npc_lines)
+        jump mortuary_dialog_loop
     else:
-        $ available_options = renpy.store.global_menu_manager.get_available_options(renpy.store.global_settings_manager.get_location())
-        call screen decision_choices(available_options)
+        jump show_graphics_menu
+
+
+label show_graphics_menu:
+    $ available_options = renpy.store.global_menu_manager.get_available_graphic_options(renpy.store.global_settings_manager.get_location())
+    $ background = renpy.store.global_menu_manager.get_background(renpy.store.global_settings_manager.get_location())
+    # call screen decision_choices(available_options)
+    $ renpy.call_screen("image_based_menu", options=available_options, background=background)
 
 
 label dialog_dispatcher:
@@ -64,4 +81,4 @@ label dialog_dispatcher:
     $ npc_lines = renpy.store.global_dialog_manager.start_dialog(initial_state)
     $ renpy.store.global_dialog_manager.pronounce(npc_lines)
     $ current_dialog_key = None
-    jump morgue_dialog_loop
+    jump mortuary_dialog_loop

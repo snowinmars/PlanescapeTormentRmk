@@ -45,7 +45,7 @@ class MenuBuilder:
             'priority': 0,
             'idle_image': None,
             'hover_image': None,
-            'tooltip': None,
+            'tooltip': title,
             'xpos': None,
             'ypos': None,
             'width': None,
@@ -74,10 +74,6 @@ class MenuBuilder:
 
     def hover_image(self, hover_image):
         self._current_graphic_option['hover_image'] = hover_image
-        return self
-
-    def tooltip(self, tooltip):
-        self._current_graphic_option['tooltip'] = tooltip
         return self
 
     def position(self, xpos, ypos):
@@ -164,7 +160,7 @@ class MenuManager:
         if location_id not in self._graphic_registry:
             return []
 
-        menu_items = [opt for opt in self._graphic_registry[location_id] if opt.condition is not None and opt.condition()]
+        menu_items = [opt for opt in self._graphic_registry[location_id] if (opt.condition is None) or (opt.condition is not None and opt.condition())]
         if len(menu_items) != 0:
             return menu_items
 
@@ -178,3 +174,6 @@ class MenuManager:
         else:
             builder = f'Why location "{location_id}" was not found in graphic {builder}?'
         raise Exception(builder)
+
+    def get_background(self, location_id):
+        return f"bg/{location_id}.png"

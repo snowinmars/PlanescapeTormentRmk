@@ -57,7 +57,7 @@ init 2 python:
     renpy.add_python_directory('settings')
 
     renpy.store.characters = {
-        'the_nameless_one': the_nameless_one
+        'the_nameless_one': the_nameless_one,
         'teller':        teller,
         'morte_unknown': morte_unknown,
         'morte':         morte,
@@ -101,6 +101,7 @@ init 2 python:
         'dzf1096': dzf1096,
         'dzf1148': dzf1148,
     }
+
     renpy.store.character_reactions = {
         'morte_img default':   'morte_img default',
         'dhall_img default':   'dhall_img default',
@@ -154,8 +155,6 @@ init 3 python:
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
-    config.history_length = 0  # Disable Ren'Py's built-in history
-
     renpy.store.global_event_manager = EventManager()
     renpy.store.global_label_registry = LabelFlowManager()
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
@@ -178,32 +177,55 @@ init 3 python:
     devlog.info('Done building label flow, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building morgue menu...')
+    devlog.info('Building mortuary menu...')
     build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
-    devlog.info('Done building morgue menu, took %s', int(time.time()) - now)
+    devlog.info('Done building mortuary menu, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building dialog manager...')
     build_all_dlgs(renpy.store.global_dialog_manager)
     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
 
-
-on "show" action If(renpy.get_screen("custom_history"), true=Hide("custom_history"))
-mousewheel:
-    action Show("custom_history")
+    # on "show" action If(renpy.get_screen("custom_history"), true=Hide("custom_history"))
+    # mousewheel:
+    #     action Show("custom_history")
+    config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
+    config.underlay.append(
+        renpy.Keymap(
+            show_custom_history = Show("custom_history")
+        )
+    )
+    config.keymap['hide_windows'].append('HIDE_custom_history')
+    config.keymap['HIDE_custom_history'] = ['K_ESCAPE', 'mouseup_3']
+    config.underlay.append(
+        renpy.Keymap(
+            HIDE_custom_history = [Hide("custom_history"), Hide("history")]
+        )
+    )
 
 
 label start:
     show screen event_manager_display
+    show screen mouse_coordinates
     menu:
         "dev":
             $ current_dialog_key = "dev"
             jump dialog_dispatcher
         "start_":
-            teller "Я прихожу в себя в тусклом помещении."
-            teller "Голова раскалывается, первое движение отзывается резкой болью слева -"
-            teller "Болью настолько сильной, что не очень понятно, где именно слева."
-            teller "Я постепенно встаю с каменного...стола? и поднимаю взгляд."
+            $ l1 = "Я прихожу в себя в тусклом помещении."
+            $ l2 = "Голова раскалывается, первое движение отзывается резкой болью слева -"
+            $ l3 = "Болью настолько сильной, что не очень понятно, где именно слева."
+            $ l4 = "Я постепенно встаю с каменного...стола? и поднимаю взгляд."
+
+            $ renpy.exports.say(teller, l1)
+            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l1)
+            $ renpy.exports.say(teller, l2)
+            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l2)
+            $ renpy.exports.say(teller, l3)
+            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l3)
+            $ renpy.exports.say(teller, l4)
+            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l4)
+
             $ current_dialog_key = "dmorte_one_introducing"
             jump dialog_dispatcher
 

@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary1')
+    renpy.exports.show("bg mortuary1")
     gsm.set_meet_dzm825(True)
     _show('dzm825_img default', center_right_down)
 def _dispose():
@@ -55,7 +55,7 @@ def dlg_dzm825(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    # Starts: DZM825.D_s0
+    # Starts: DZM825.D_s0 DZM825.D_s99999999_k
     DialogStateBuilder().state('DZM825.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE1~ : 31') \
         .with_npc_lines() \
             .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564').with_action(lambda: _init(gsm)) \
@@ -125,9 +125,9 @@ def dlg_dzm825(manager):
         .push(manager)
 
     DialogStateBuilder() \
-    .state('DMORTE1.D_s99999999_k', '# from -') \
+    .state('DZM825.D_s99999999_k', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564') \
+            .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564').with_action(lambda: _init(gsm)) \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
             .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm825(gsm)) \
         .with_responses() \

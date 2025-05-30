@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue2')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary3')
+    renpy.exports.show("bg mortuary3")
     gsm.set_meet_dzf1096(True)
     _show('dzf1096_img default', center_right_down)
 def _dispose():
@@ -21,6 +21,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzf1096(gsm):
+    gsm.set_dead_dzf1096(True)
 ###
 def _r35083_condition(gsm):
     return not gsm.once_tracked('zombie_chaotic')
@@ -149,4 +151,14 @@ def dlg_dzf1096(manager):
             .line(morte, "...ты будешь бегать вокруг с воплями «А?» «Чего здесь творится?» «Куда пропала моя па-па-память?»", 's345', 'say35093') \
         .with_responses() \
             .response("Как знаешь, Морт. Идем.", EXIT, 'r766', 'reply35094').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZF1096.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли.", 's0', 'say35082').with_action(lambda: _init(gsm)) \
+            .line(teller, "Кто-то под трафарет написал номер «1096» у нее на лбу; ее губы крепко зашиты.", 's0', 'say35082') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzf1096(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

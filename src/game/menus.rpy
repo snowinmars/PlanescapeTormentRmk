@@ -1,63 +1,42 @@
 ﻿transform pulse_effect:
-    linear 0.5 alpha 0.7
+    linear 0.5 alpha 0.5
+    linear 0.55 alpha 1.0
+    linear 5 alpha 1.0
     linear 0.5 alpha 1.0
+    linear 0.5 alpha 0.5
     repeat
 
-screen image_menu():
-    imagebutton:
-        idle "interactive_item.png"
-        hover Transform("interactive_item.png", matrixcolor=BrightnessMatrix(0.2))
-        at pulse_effect
-        xpos 100 ypos 100
-        action Return("interact")
-
-
-screen image_menu():
+screen image_based_menu(options, background, tooltip_style={}):
     default tt = Tooltip("")
+    add background
 
-    imagemap:
-        ground "menu_background.png"
-        hover "menu_background_hover.png"
-
-        hotspot (100, 100, 200, 50) action Return("option1") hovered tt.Action("Choose Option 1")
-        hotspot (100, 200, 200, 50) action Return("option2") hovered tt.Action("Choose Option 2")
-
-    # Show tooltip text
-    if tt.value:
-        text tt.value:
-            xalign 0.5 ypos 50
-            style "tooltip_text"
-
-
-# renpy.call_screen("image_based_menu", options=options)
-screen image_based_menu(options, background=None, tooltip_style={}):
-    default tt = Tooltip("")
-
-    # Background image if provided
-    if background:
-        add background
-
-    # Interactive options
-    for opt in options:
+    for opt in filter(lambda opt: hasattr(opt, 'idle_image') and opt.idle_image is not None, options):
+        # Interactive options
         imagebutton:
             idle opt.idle_image
             hover opt.hover_image or Transform(opt.idle_image, matrixcolor=BrightnessMatrix(0.2))
+            at pulse_effect
             xpos opt.xpos
             ypos opt.ypos
-            action Jump(opt.label_id)  # SetVariable("current_dialog_key", item.label_id),
+            action [
+                SetVariable("current_dialog_key", opt.label_id),
+                Jump("dialog_dispatcher")
+            ]
             hovered tt.Action(opt.tooltip or opt.title)
             unhovered tt.Action("")
 
-    # Tooltip display
+    vbox:
+        align (0.5, 0.5)
+        spacing 10
+        for opt in filter(lambda opt: not hasattr(opt, 'idle_image') or opt.idle_image is None, options):
+            # Fallback text menu for debugging
+                textbutton opt.title action [
+                        SetVariable("current_dialog_key", opt.label_id),
+                        Jump("dialog_dispatcher")
+                    ]
+
     if tt.value:
         text tt.value:
             xalign 0.5
             ypos 50
-            **tooltip_style
-
-    # Fallback text menu for debugging
-    if not any(opt.idle_image for opt in options):
-        vbox:
-            align (0.5, 0.5)
-            for opt in options:
-                textbutton opt.title action Jump(opt.label_id)
+            # **tooltip_style

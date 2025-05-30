@@ -1624,7 +1624,7 @@ END
 IF ~~ THEN BEGIN 260 // from:
 SAY #27296 /* ~«На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками».~ */
 IF ~~ THEN REPLY #27324 /* ~«Ладно... Я поищу».~ */ EXIT
-END
+END 
 ~ THEN BEGIN 261 // from:
 SAY #27297 /* ~«Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами... и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».~ */
 IF ~~ THEN REPLY #27325 /* ~«А, может, ты мне *поможешь*, Морт?»~ */ GOTO 262
@@ -1740,7 +1740,7 @@ END
 IF ~~ THEN BEGIN 280 // from:
 SAY #28637 /* ~«Мой товарищ в шрамах хотел сказать: с нами ДВУМЯ... Кстати, я Морт. Прошу простить моего товарища за то, что он не соизволил представить нас друг другу... Мне кажется, ваше присоединение к нам — ОТЛИЧНАЯ идея. У нас много места для суккуба. МНОГО места».~ */
 IF ~~ THEN EXTERN ~DGRACE~ 119
-END
+END 
 ~ THEN BEGIN 281 // from:
 SAY #28738 /* ~«Спасибо, шеф. Не могу выразить свою радость тем, что я снова с тобой». Его голос истекает сарказмом. «А еще я научился новому приемчику, пока был там».~ */
 IF ~~ THEN REPLY #28743 /* ~«Ага. Отлично. Я очень рад, что ты вернулся назад».~ */ DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~ EXIT
@@ -2009,7 +2009,7 @@ IF ~~ THEN BEGIN 324 // from:
 SAY #33429 /* ~Морт качает в твою сторону, обращаясь к мужчине: «Я показывал на этого огромного пня, знаток... не на тебя! Без обид, ага?»~ */
 IF ~~ THEN REPLY #33430 /* ~«Полегче, Морт...»~ */ EXTERN ~DGHIVEF~ 49
 IF ~~ THEN REPLY #33433 /* ~Не обращать внимания на Морта.~ */ EXTERN ~DGHIVEF~ 49
-END
+END 
 ~ THEN BEGIN 325 // from:
 SAY #33958 /* ~«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»~ [MRT516] */
 IF ~~ THEN REPLY #33959 /* ~«Да... идем».~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
@@ -2740,7 +2740,7 @@ END
 IF ~~ THEN BEGIN 443 // from: 442.0
 SAY #41836 /* ~«Записывай в него каждый свой шаг. Если начнешь забывать важные вещи... например, кто ты... или, что еще важнее, кто *я*... то воспользуйся им, чтобы освежить свою память». */
 IF ~~ THEN REPLY #41837 /* ~«Ладно... Уяснил. Идем».~ */ JOURNAL #39516 /* ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ */ EXIT
-END
+END 
 ~ THEN BEGIN 444 // from: 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
 SAY #41838 /* ~«Что тебя гложет, шеф?»~ [MRT515] */
 IF ~~ THEN REPLY #41840 /* ~«Можешь еще раз прочитать, что у меня вытатуировано на спине?»~ */ GOTO 445
@@ -3020,7 +3020,7 @@ IF ~~ THEN BEGIN 486 // from:
 SAY #45714 /* ~«Должно быть, это любовь. Это ведь любовь, да, босс?»~ */
 IF ~~ THEN REPLY #45715 /* ~«Прекратите, вы оба. Мне нужно задать несколько вопросов».~ */ EXTERN ~DGILTSP~ 4
 IF ~~ THEN REPLY #45716 /* ~«Как скажешь, Морт. Давай оставим в покое этого парня».~ */ EXIT
-END
+END 
 ~ THEN BEGIN 487 // from:
 SAY #45996 /* ~«Эй, смотри! Еще одна летающая голова».~ */
 IF ~~ THEN EXTERN ~DVAULT9~ 0
@@ -4520,7 +4520,7 @@ END
 IF ~~ THEN BEGIN 728 // from: 727.1
 SAY #65844 /* ~Морт сверкает на тебя гневным взглядом. «Я уже почти верю, что ты — какое-то ходячее проклятие, обреченное следовать за мной по пятам».~ */
 IF ~~ THEN REPLY #65845 /* ~«Ой-ой, кто бы говорил. Идем».~ */ EXIT
-END
+END 
 ~ THEN BEGIN 729 // from:
 SAY #66344 /* ~«Что тебя гложет, шеф?»~ [MRT515] */
 IF ~~ THEN REPLY #66345 /* ~«Можешь еще раз прочитать, что у меня вытатуировано на спине?»~ */ GOTO 649
@@ -4551,7 +4551,7 @@ END
 IF ~~ THEN BEGIN 732 // from:
 SAY #67600 /* ~«Может быть, вы двое уже закончите с этим, а то мне придется позвать дабуса, что вас отцепить друг от дружки! — Морт *фыркает*. — Или хотя бы дайте поучаствовать».~ */
 IF ~~ THEN EXTERN ~DANNAH~ 446
-END
+END 
 ~ THEN BEGIN 733 // from:
 SAY #68171 /* ~Едва ты собираешься прикоснуться к Морту, как вдруг он произносит: «Эй-эй-эй! Погоди, шеф. Э-э-э... мне тебе нужно кое-что тебе сказать».~ [MRT242] */
 IF ~~ THEN REPLY #68176 /* ~«Морт?!.. Ты не мертвый!»~ */ DO ~SetGlobal("Fortress_Morte","GLOBAL",4) JoinPartyEx(TRUE) ~ GOTO 734
@@ -4586,7 +4586,7 @@ IF ~  GlobalGT("Fortress_Grace","GLOBAL",0) ~ THEN REPLY #68180 /* ~Возрод
 IF ~  GlobalGT("Fortress_Nordom","GLOBAL",0) ~ THEN REPLY #68181 /* ~Возродить Нордома.~ */ DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~ EXIT
 IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0) ~ THEN REPLY #68182 /* ~Возродить Игнуса.~ */ DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~ EXIT
 IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) ~ THEN REPLY #68183 /* ~Возродить Вейлора.~ */ DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ EXIT
-END
+END 
 ~ THEN BEGIN 737 // from:
 SAY #68310 /* ~Едва ты собираешься прикоснуться к Морту, как вдруг он взлетает в воздух. «Э-э-э... Погоди, шеф. Тебе не нужно возрождать меня. Я, понимаешь, э-э-э, типа просто лежал тут, слушал вас двоих».~ */
 IF ~~ THEN REPLY #68311 /* ~ТЫ ПРИТВОРЯЛСЯ МЕРТВЫМ.~ */ GOTO 738
@@ -4619,8 +4619,8 @@ IF ~  Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) 
 IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) ~ THEN REPLY #68490 /* ~ПРОЩАЙ, МОРТ.~ */ DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~ EXIT
 IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) ~ THEN REPLY #68491 /* ~ПРОЩАЙ, МОРТ.~ */ DO ~QuitGame(FINALE,0,0) ~ EXIT
 IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) ~ THEN REPLY #68492 /* ~ПРОЩАЙ, МОРТ.~ */ DO ~QuitGame(FINALE,0,0) ~ EXIT
-END
+END 
 ~ THEN BEGIN 742 // from:
 SAY #68408 /* ~Морт молча смотрит на тебя, затем вздыхает. «Не то чтобы я сильно растрогался, и все же мне, э-э, было приятно с тобой путешествовать, шеф».~ [MRT109] */
 IF ~~ THEN REPLY #68409 /* ~«Тогда возьмемся за дело...»~ */ EXIT
-END
+END 

@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('morgue1')
-    renpy.exports.show("bg mourge1")
+    gsm.set_location('mortuary1')
+    renpy.exports.show("bg mortuary1")
     _show('dzm1094_img default', center_right_down)
 def _dispose():
     _hide('dzm1094_img')

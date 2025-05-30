@@ -5,7 +5,11 @@ devlog = logging.getLogger('log')
 class SettingsManager:
     def __init__(self, event_manager):
         self.tracked = []
-        self._registry = {'journal_note_ids': []}
+        self._registry = {
+            'journal_note_ids': [],
+            'location': None,
+            'visited_locations': []
+        }
         self.event_manager = event_manager
 
     def check_char_prop_gt(self, who, gtValue, prop):
@@ -18,6 +22,17 @@ class SettingsManager:
         devlog.debug('Update journal with %s', note_id)
         if note_id not in self._registry['journal_note_ids']:
             self._registry['journal_note_ids'].append(note_id)
+
+    def set_location(self, location_id):
+        self._registry['location'] = location_id
+        if not self.is_visited_location(location_id):
+            self._registry['visited_locations'].append(location_id)
+
+    def get_location(self):
+        return self._registry['location']
+
+    def is_visited_location(self, location_id):
+        return location_id in self._registry['visited_locations']
 
     def register(self, setting_id, default_value):
         self._registry[setting_id] = default_value

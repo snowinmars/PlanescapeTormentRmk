@@ -6,7 +6,7 @@ class HistoryManager:
         self.max_entries = max_entries
         self.lines = []
 
-    def write_event(self, who, what):
+    def write_line(self, who, what):
         at = time.strftime("[%H:%M]")
         entry = ({"at": at, "who": who, "what": what})
 
