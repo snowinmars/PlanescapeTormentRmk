@@ -132,7 +132,7 @@ def build_other_settings(manager):
         .register('has_copper_earring', False) \
         .register('has_506_thread', False) \
         .register('has_scalpel', False) \
-        .register('has_needles', 0) \
+        .register('has_needle', 0) \
         .register('has_1201_note', False) \
         .register('has_dzm1664_page', False) \
         .register('has_bandages', False) \

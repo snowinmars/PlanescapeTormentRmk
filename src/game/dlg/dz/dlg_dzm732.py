@@ -34,7 +34,7 @@ def _r6534_condition(gsm):
 def _r6535_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r64271_action(gsm):
-    gsm.set_pick_tome_ba(True)
+    gsm.set_has_tome_ba(True)
 ###
 
 # DLG/DZM732.DLG

@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('mortuary1')
-    renpy.exports.show("bg mortuary1")
+    gsm.set_location('mortuary5')
+    renpy.exports.show("bg mortuary5")
     _show('dzm257_img default', center_right_down)
 def _dispose():
     _hide('dzm257_img')
@@ -20,6 +20,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm257(gsm):
+    gsm.set_dead_dzm257(True)
 ###
 def _r6510_condition(gsm):
     return not gsm.once_tracked('zombie_chaotic')
@@ -132,4 +134,14 @@ def dlg_dzm257(manager):
             .line(teller, "…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.", 's7', 'say9557') \
         .with_responses() \
             .response("(...)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM257.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.", 's0', 'say6507').with_action(lambda: _init(gsm)) \
+            .line(teller, "Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.", 's0', 'say6507') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm257(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)
