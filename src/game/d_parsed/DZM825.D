@@ -18,7 +18,7 @@ def _r42313_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM825.D_s0', '# from - // Check EXTENDS ~DMORTE1~ : 31')\
+DialogStateBuilder().state('DZM825.D_s0', '# from - // Check EXTENDS ~DMORTE1~ : 31') \
     .with_npc_lines() \
         .line(SPEAKER, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.", 's0', 'say24564') \
     .with_responses() \
@@ -32,7 +32,7 @@ DialogStateBuilder().state('DZM825.D_s0', '# from - // Check EXTENDS ~DMORTE1~ :
         .response("Оставить труп в покое.", EXIT, 'r', 'reply42309').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM825.D_s1', '# from 0.1 0.2 0.3 3.1')\
+DialogStateBuilder().state('DZM825.D_s1', '# from 0.1 0.2 0.3 3.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп уставился в землю и не отвечает.", 's1', 'say24566') \
     .with_responses() \
@@ -40,14 +40,14 @@ DialogStateBuilder().state('DZM825.D_s1', '# from 0.1 0.2 0.3 3.1')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply42310').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM825.D_s2', '# from 0.4')\
+DialogStateBuilder().state('DZM825.D_s2', '# from 0.4') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say24571') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply24572').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM825.D_s3', '# from 0.5 // Check EXTENDS ~DMORTE1~ : 31')\
+DialogStateBuilder().state('DZM825.D_s3', '# from 0.5 // Check EXTENDS ~DMORTE1~ : 31') \
     .with_npc_lines() \
         .line(SPEAKER, "У этого трупа ничего нет… но ты замечаешь, что его руки сильно перевязаны. Бинты могут пригодиться, если снять их с трупа.", 's3', 'say42311') \
     .with_responses() \

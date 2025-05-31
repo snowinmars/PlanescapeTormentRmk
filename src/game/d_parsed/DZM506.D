@@ -7,7 +7,7 @@ def _r45422_condition(gsm):
 def _r45480_condition(gsm):
     return gsm.get_has_scalpel()
 def _r45480_action(gsm):
-    DO ~SetGlobal("506_Thread","GLOBAL",1) GiveItemCreate("Needle",Protagonist,1,0,0) AddexperienceParty(100) ~
+    DO ~SetGlobal("506_Thread","GLOBAL",1) gsm.set_has_needle(True) AddexperienceParty(100) ~
 def _r45481_condition(gsm):
     return not gsm.get_has_scalpel()
 def _r45484_condition(gsm):
@@ -30,7 +30,7 @@ def _r45512_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM506.D_s0', '# from 3.2')\
+DialogStateBuilder().state('DZM506.D_s0', '# from 3.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот покрытый швами труп вяло передвигается между двумя плитами. Номер 506 вышит у него на лбу… и на боку шеи… и на правой руке… В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.", 's0', 'say45419') \
     .with_responses() \
@@ -41,21 +41,21 @@ DialogStateBuilder().state('DZM506.D_s0', '# from 3.2')\
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply45424').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM506.D_s1', '# from 0.1 4.0 4.1 5.0 5.1 5.2')\
+DialogStateBuilder().state('DZM506.D_s1', '# from 0.1 4.0 4.1 5.0 5.1 5.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп самозабвенно смотрит вперед.", 's1', 'say45425') \
     .with_responses() \
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply45478').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM506.D_s2', '# from 0.2 5.3')\
+DialogStateBuilder().state('DZM506.D_s2', '# from 0.2 5.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45426') \
     .with_responses() \
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply45479').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM506.D_s3', '# from 0.0')\
+DialogStateBuilder().state('DZM506.D_s3', '# from 0.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Швы опоясывают тело, пробегая по рукам через весь торс наверх по шее и скрываясь в копне белых волос. Проходя по пересечениям швов, ты замечаешь, что кто-то приколол иголку ко лбу… в иглу вдета нить, которая выходит из шва на черепе. Ты мог бы вытащить ее, если бы у тебя было что-нибудь, чтобы разрезать нить.", 's3', 'say45427') \
     .with_responses() \
@@ -65,7 +65,7 @@ DialogStateBuilder().state('DZM506.D_s3', '# from 0.0')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45483').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM506.D_s4', '# from 3.0')\
+DialogStateBuilder().state('DZM506.D_s4', '# from 3.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер 78.", 's4', 'say45428') \
     .with_responses() \
@@ -75,7 +75,7 @@ DialogStateBuilder().state('DZM506.D_s4', '# from 3.0')\
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply66889').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM506.D_s5', '# from 4.2')\
+DialogStateBuilder().state('DZM506.D_s5', '# from 4.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер 506, в месте, где кожа отвалилась ото лба, на кости выбит номер 78.", 's5', 'say45429') \
     .with_responses() \

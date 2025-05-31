@@ -12,13 +12,13 @@ def _r45072_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM965.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 477')\
+DialogStateBuilder().state('DZM965.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 477') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.", 's0', 'say34920') \
     .with_responses() \
     .push(manager)
 
-DialogStateBuilder().state('DZM965.D_s1', '# from -')\
+DialogStateBuilder().state('DZM965.D_s1', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
     .with_responses() \
@@ -30,14 +30,14 @@ DialogStateBuilder().state('DZM965.D_s1', '# from -')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45074').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM965.D_s2', '# from 1.0 1.1 1.2')\
+DialogStateBuilder().state('DZM965.D_s2', '# from 1.0 1.1 1.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп уставился на тебя невидящим взглядом.", 's2', 'say34927') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply34928').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM965.D_s3', '# from 1.3')\
+DialogStateBuilder().state('DZM965.D_s3', '# from 1.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's3', 'say45069') \
     .with_responses() \

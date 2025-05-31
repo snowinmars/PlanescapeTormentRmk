@@ -1,17 +1,17 @@
 def build_mortuary2_menu(menu_builder, gsm):
     menu_builder \
-        .option("Поговорить с Мортом") \
-            .jump("dmorte_two_talk_morte") \
-            .when(lambda: gsm.get_in_party_morte() \
+        .option("Убить Морта") \
+            .jump("dmorte_one_kill_morte") \
+            .when(lambda: gsm.get_meet_morte() \
+                          and gsm.get_in_party_morte() \
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
             .position(550, 880) \
             .size(20, 20) \
-        .option("Убить Морта") \
-            .jump("dmorte_one_kill_morte") \
-            .when(lambda: gsm.get_meet_morte() \
-                          and gsm.get_in_party_morte() \
+        .option("Поговорить с Мортом") \
+            .jump("dmorte_two_talk_morte") \
+            .when(lambda: gsm.get_in_party_morte() \
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
@@ -22,7 +22,7 @@ def build_mortuary2_menu(menu_builder, gsm):
             .when(lambda: not gsm.get_in_party_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(550, 880) \
+            .position(550, 900) \
             .size(20, 20) \
         .option("Пройти в следующую комнату") \
             .jump("dmorte_one_mortuary_go_2_3_scene") \

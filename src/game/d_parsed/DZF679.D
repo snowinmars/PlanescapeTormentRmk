@@ -36,7 +36,7 @@ def _r35202_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZF679.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 354')\
+DialogStateBuilder().state('DZF679.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 354') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, это труп довольно таки старой, даже древней женщины. Если не обращать внимание на зловоние бальзамирующей жидкости, швы на ее рту и номер 679, вышитый на правой щеке, то она выглядит почти так же, как и в последние годы своей жизни.", 's0', 'say35178') \
     .with_responses() \
@@ -52,7 +52,7 @@ DialogStateBuilder().state('DZF679.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 
         .response("Оставить труп в покое.", EXIT, 'r', 'reply35208').with_condition(lambda: _r35208_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZF679.D_s1', '# from 0.0 0.1 0.2 // Check EXTENDS ~DMORTE~ : 354')\
+DialogStateBuilder().state('DZF679.D_s1', '# from 0.0 0.1 0.2 // Check EXTENDS ~DMORTE~ : 354') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say35180') \
     .with_responses() \
@@ -61,7 +61,7 @@ DialogStateBuilder().state('DZF679.D_s1', '# from 0.0 0.1 0.2 // Check EXTENDS ~
         .response("Тогда прощай.", EXIT, 'r', 'reply35195').with_condition(lambda: _r35195_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZF679.D_s2', '# from 0.3 // Check EXTENDS ~DMORTE~ : 354')\
+DialogStateBuilder().state('DZF679.D_s2', '# from 0.3 // Check EXTENDS ~DMORTE~ : 354') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say35199') \
     .with_responses() \
@@ -70,7 +70,7 @@ DialogStateBuilder().state('DZF679.D_s2', '# from 0.3 // Check EXTENDS ~DMORTE~ 
         .response("Тогда прощай.", EXIT, 'r', 'reply35202').with_condition(lambda: _r35202_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZF679.D_s3', '# from -')\
+DialogStateBuilder().state('DZF679.D_s3', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's3', 'say35209') \
     .with_responses() \

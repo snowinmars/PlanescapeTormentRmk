@@ -34,7 +34,7 @@ def _r45539_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM985.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 482')\
+DialogStateBuilder().state('DZM985.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 482') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот труп, номер 985, встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью. Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.", 's0', 'say45515') \
     .with_responses() \
@@ -48,33 +48,33 @@ DialogStateBuilder().state('DZM985.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45523').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s1', '# from 0.4 5.0 5.1 5.2')\
+DialogStateBuilder().state('DZM985.D_s1', '# from 0.4 5.0 5.1 5.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп самозабвенно смотрит вперед, не подавая никаких признаков того, что он тебя услышал.", 's1', 'say45524') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45525').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s2', '# from 0.5 5.3')\
+DialogStateBuilder().state('DZM985.D_s2', '# from 0.5 5.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45526') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45527').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s3', '# from 0.1 6.0')\
+DialogStateBuilder().state('DZM985.D_s3', '# from 0.1 6.0') \
     .with_npc_lines() \
         .line(SPEAKER, "В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево. Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин. К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке смирно. Спустя мгновенье, нога падает с сочным гулким ударом.", 's3', 'say45528') \
     .with_responses() \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s4', '# from 0.2 // Check EXTENDS ~DMORTE~ : 482')\
+DialogStateBuilder().state('DZM985.D_s4', '# from 0.2 // Check EXTENDS ~DMORTE~ : 482') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…", 's4', 'say45530') \
     .with_responses() \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s5', '# from -')\
+DialogStateBuilder().state('DZM985.D_s5', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, кто-то заменил этому трупу левую руку и ногу от другого тела. Левая нога короче, чем надо, но теперь, по крайней мере, труп может стоять.", 's5', 'say45531') \
     .with_responses() \
@@ -86,14 +86,14 @@ DialogStateBuilder().state('DZM985.D_s5', '# from -')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply45537').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s6', '# from 0.3')\
+DialogStateBuilder().state('DZM985.D_s6', '# from 0.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…", 's6', 'say45538') \
     .with_responses() \
         .response("Ой-ой…", 'DZM985.D_s3', 'r', 'reply45539').with_action(lambda: _r45539_action(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DZM985.D_s7', '# from 3.0')\
+DialogStateBuilder().state('DZM985.D_s7', '# from 3.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Рассматривая гнилые остатки тела, ты замечаешь, левая рука совсем не тронута: она отвалилась от туловища во время падения, и совсем не похоже, чтобы она была поражена трупным гниением, как это случилось с остальной частью тела.", 's7', 'say64205') \
     .with_responses() \

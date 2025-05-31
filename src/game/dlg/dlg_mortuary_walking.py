@@ -34,3 +34,6 @@ def dlg_mortuary_walking(manager):
     DialogStateBuilder().state('mortuary_walking_3_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '3')).push(manager)
     DialogStateBuilder().state('mortuary_walking_4_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '4')).push(manager)
     DialogStateBuilder().state('mortuary_walking_5_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '5')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_6_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '6')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_7_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '7')).push(manager)
+    DialogStateBuilder().state('dmorte_one_mortuary_go_8_up', '# from -').with_action(lambda: _visit_mortuary(gsm, '11')).push(manager)

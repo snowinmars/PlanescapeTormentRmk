@@ -171,8 +171,15 @@ def dlg_dzf626(manager):
         .with_npc_lines() \
             .line(teller, "Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.", 's0', 'say35050').with_action(lambda: _init(gsm)) \
             .line(teller, "Номер «626» вышит на правой щеке, прямо под глазом.", 's0', 'say35050') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm626(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZF626.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZF626.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я делаю её лицо симметричным. Будь у неё глаза, она бы смотрела на меня.", '-', '-') \
+            .line(teller, "Смотрела бы без ни жизни и без разума в них. Есть ли работа для слепых трупов?", '-', '-').with_action(lambda: _kill_dzm626(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

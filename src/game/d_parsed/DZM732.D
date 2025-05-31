@@ -14,7 +14,7 @@ def _r64271_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM732.D_s0', '# from 4.0')\
+DialogStateBuilder().state('DZM732.D_s0', '# from 4.0') \
     .with_npc_lines() \
         .line(SPEAKER, "У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер 732. Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после.", 's0', 'say6529') \
     .with_responses() \
@@ -26,21 +26,21 @@ DialogStateBuilder().state('DZM732.D_s0', '# from 4.0')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply6537').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM732.D_s1', '# from 0.0 0.1 0.2')\
+DialogStateBuilder().state('DZM732.D_s1', '# from 0.0 0.1 0.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say6530') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply6538').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM732.D_s2', '# from 0.3')\
+DialogStateBuilder().state('DZM732.D_s2', '# from 0.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say6531') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply6539').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM732.D_s3', '# from -')\
+DialogStateBuilder().state('DZM732.D_s3', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер 732. Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после. Ты замечаешь, что в руках он несет тяжелую книгу, как будто он где-то ее забрал.", 's3', 'say64270') \
     .with_responses() \
@@ -48,7 +48,7 @@ DialogStateBuilder().state('DZM732.D_s3', '# from -')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply64272').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM732.D_s4', '# from 3.0')\
+DialogStateBuilder().state('DZM732.D_s4', '# from 3.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты осторожно берешь книгу из рук трупа — он даже не замечает этого. Похоже, это книга заклинаний и оберегов: она исписана схемами и таблицами, описывающими различные аспекты искусства некромантии. Сама по себе книга очень тяжелая. Каким бы неуклюжим не был зомби, он, должно быть, очень силен.", 's4', 'say64273') \
     .with_responses() \

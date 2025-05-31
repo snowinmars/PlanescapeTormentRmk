@@ -20,7 +20,7 @@ def _r64280_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM79.D_s0', '# from -')\
+DialogStateBuilder().state('DZM79.D_s0', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Голова трупа была отрублена, а после наспех пришита назад. Несколько различных швов, все в разной степени потрепанности, указывают на то, голова в процессе работы постоянно отваливалась и возвращалась на место. На виске вырезан номер 79, рядом с неровным зубчатым кругом, выжженным на лбу.", 's0', 'say34942') \
     .with_responses() \
@@ -32,21 +32,21 @@ DialogStateBuilder().state('DZM79.D_s0', '# from -')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply34952').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM79.D_s1', '# from 0.0 0.2')\
+DialogStateBuilder().state('DZM79.D_s1', '# from 0.0 0.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say34944') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply34945').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM79.D_s2', '# from 0.3 3.0 3.1')\
+DialogStateBuilder().state('DZM79.D_s2', '# from 0.3 3.0 3.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34949') \
     .with_responses() \
         .response("Оставить труп в покое.", EXIT, 'r', 'reply34950').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM79.D_s3', '# from 0.1')\
+DialogStateBuilder().state('DZM79.D_s3', '# from 0.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, зубчатый круг на лбу трупа был выжжен очень давно, возможно даже еще до того, как он умер. Возможно, это какой-то религиозный символ или ритуальный знак. Ты замечаешь, что в одной из впадин между внутренними зубцами есть маленький треугольник, как будто у него есть какое-то особое назначение.", 's3', 'say64278') \
     .with_responses() \

@@ -65,7 +65,7 @@ def _r931_action(gsm):
 def _r936_action(gsm):
     DO ~gsm.inc_once_good('good_dhall_1') ~
 def _r942_condition(gsm):
-    Global("Journal","GLOBAL",0)
+    return not gsm.get_journal()
 def _r943_condition(gsm):
     return not gsm.get_meet_pharod()
 def _r6026_condition(gsm):
@@ -124,20 +124,20 @@ def _r6053_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DDHALL.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 104')\
+DialogStateBuilder().state('DDHALL.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 104') \
     .with_npc_lines() \
         .line(SPEAKER, "Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.", 's0', 'say822') \
     .with_responses() \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s1', '# from -')\
+DialogStateBuilder().state('DDHALL.D_s1', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя. Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный, — он откладывает перо, — но глухотой я еще не страдаю.", 's1', 'say826') \
     .with_responses() \
         .response("Неугомонный? Ты меня знаешь?", 'DDHALL.D_s44', 'r', 'reply827').with_action(lambda: _r827_action(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s2', '# from 21.0')\
+DialogStateBuilder().state('DDHALL.D_s2', '# from 21.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Тебе знакома женщина, чьи останки погребены внизу, в мемориальном зале? Я думаю, что в прошлом она путешествовала вместе с тобой… Дхолл начинает кашлять, но ему удается перевести дыхание. Я ошибаюсь?", 's2', 'say829') \
     .with_responses() \
@@ -151,7 +151,7 @@ DialogStateBuilder().state('DDHALL.D_s2', '# from 21.0')\
         .response("Возможно, нет. Прощай.", 'DDHALL.D_s11', 'r', 'reply13288').with_condition(lambda: _r13288_condition(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s3', '# from 9.0')\
+DialogStateBuilder().state('DDHALL.D_s3', '# from 9.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл пристально смотрит на тебя. Ты уверен?", 's3', 'say832') \
     .with_responses() \
@@ -160,7 +160,7 @@ DialogStateBuilder().state('DDHALL.D_s3', '# from 9.0')\
         .response("Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…", 'DDHALL.D_s9', 'r', 'reply834') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s4', '# from 3.0 3.1')\
+DialogStateBuilder().state('DDHALL.D_s4', '# from 3.0 3.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Я… У Дхолла начинается очередной приступ кашля. Спустя минуту или две его дыхание становится достаточно спокойным, чтобы он смог продолжить. Я… незамедлительно предупрежу стражу.", 's4', 'say833') \
     .with_responses() \
@@ -168,7 +168,7 @@ DialogStateBuilder().state('DDHALL.D_s4', '# from 3.0 3.1')\
         .response("Отлично. Прощай.", 'DDHALL.D_s11', 'r', 'reply837') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s5', '# from - // Check EXTENDS ~DMORTE~ : 102')\
+DialogStateBuilder().state('DDHALL.D_s5', '# from - // Check EXTENDS ~DMORTE~ : 102') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента. Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду. Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.", 's5', 'say838') \
     .with_responses() \
@@ -178,7 +178,7 @@ DialogStateBuilder().state('DDHALL.D_s5', '# from - // Check EXTENDS ~DMORTE~ : 
         .response("Оставить старого писаря в покое.", EXIT, 'r', 'reply5060').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s6', '# from 5.2')\
+DialogStateBuilder().state('DDHALL.D_s6', '# from 5.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Его серые глаза сверкают, когда он отрывает свой взгляд от книги. Подозреваю, что это ты в ответе за нападения в Морге. Это… Они тихо кашляет, затем тяжело хрипит. Это не позволит тебе обрести следующую жизнь.", 's6', 'say841') \
     .with_responses() \
@@ -188,14 +188,14 @@ DialogStateBuilder().state('DDHALL.D_s6', '# from 5.2')\
         .response("Прощай.", EXIT, 'r', 'reply5063').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s7', '# from 5.1')\
+DialogStateBuilder().state('DDHALL.D_s7', '# from 5.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Писарь прекращает вести записи в стоящую перед ним книгу и оглядывается. Его глаза похожи на два гвоздя, забитые в его череп. Итак… Его голос уставший, как будто он повторял это уже много раз. Ты пробудился ото сна и вернулся в свои грезы. Он продолжает более уважительным голосом. Приятно встретиться… снова, Неугомонный.", 's7', 'say844') \
     .with_responses() \
         .response("Неугомонный? Ты меня знаешь?", 'DDHALL.D_s44', 'r', 'reply845') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s8', '# from 22.0')\
+DialogStateBuilder().state('DDHALL.D_s8', '# from 22.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты должен понять. Твое существование для них — богохульство. Многие из нашей фракции распорядились бы тебя кремировать… если бы узнали о твоем несчастье.", 's8', 'say851') \
     .with_responses() \
@@ -205,7 +205,7 @@ DialogStateBuilder().state('DDHALL.D_s8', '# from 22.0')\
         .response("Я выслушал достаточно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6038') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s9', '# from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1')\
+DialogStateBuilder().state('DDHALL.D_s9', '# from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Хорошо. Что ты хочешь узнать?", 's9', 'say852') \
     .with_responses() \
@@ -219,7 +219,7 @@ DialogStateBuilder().state('DDHALL.D_s9', '# from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 1
         .response("Ничего… прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply41663') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s10', '# from 9.1')\
+DialogStateBuilder().state('DDHALL.D_s10', '# from 9.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты находишься в Морге, Неугомонный. Ты снова… пришел… Не успев закончить, Дхолл заходится в приступе кашля. Спустя некоторое время он берет себя в руки, и его дыхание снова становится неровным хрипом. …это зал ожидания для тех, кто собирается покинуть тень этой жизни.", 's10', 'say859') \
     .with_responses() \
@@ -232,14 +232,14 @@ DialogStateBuilder().state('DDHALL.D_s10', '# from 9.1')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply866') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s11', '# from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2')\
+DialogStateBuilder().state('DDHALL.D_s11', '# from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Когда ты собираешься уйти, Дхолл произносит: Знай: я не завидую тебе, Неугомонный. Твои возрождения — проклятье, которого я бы не смог вынести. Ты должен смириться с этим. Когда-нибудь твой путь вернет тебя сюда… Дхолл кашляет, из его горла доносятся хрипы. Это путь всех существ из плоти и костей.", 's11', 'say867') \
     .with_responses() \
         .response("Тогда, возможно, мы еще встретимся, Дхолл.", EXIT, 'r', 'reply41564').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s12', '# from 2.3 2.4 42.2 42.3 43.1 43.2')\
+DialogStateBuilder().state('DDHALL.D_s12', '# from 2.3 2.4 42.2 42.3 43.1 43.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Несомненно, они здесь, но я не знаю ни их имен, ни где они лежат. Ты прошел путь, по которому ходят многие, но немногие выживают, — Дхолл обводит вокруг тебя рукой. — Все умершие прибывают сюда. Кое-кто из них, должно быть, путешествовал с тобой.", 's12', 'say868') \
     .with_responses() \
@@ -248,7 +248,7 @@ DialogStateBuilder().state('DDHALL.D_s12', '# from 2.3 2.4 42.2 42.3 43.1 43.2')
         .response("Тогда я поищу их. Возможно, они смогут возродить мою память. Прощай.", 'DDHALL.D_s11', 'r', 'reply872') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s13', '# from 9.3')\
+DialogStateBuilder().state('DDHALL.D_s13', '# from 9.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Хм-м… Главные ворота — самый очевидный выход, но они не выпустят никого, кроме тленных… — Дхолл заходится в кашле, затем продолжает. — У одного из проводников у главных ворот есть ключ к ним, но он вряд ли откроет их для тебя, разве что ты будешь весьма убедительным.", 's13', 'say875') \
     .with_responses() \
@@ -256,7 +256,7 @@ DialogStateBuilder().state('DDHALL.D_s13', '# from 9.3')\
         .response("Тогда прощай, Дхолл.", EXIT, 'r', 'reply877').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s14', '# from 10.3')\
+DialogStateBuilder().state('DDHALL.D_s14', '# from 10.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, *снова*. Ты попадал сюда много раз, Неугомонный. Я надеялся, что этот раз будет последним, учитывая полученные тобой раны, — он вздыхает. — Когда же ты откажешься от своих страстей и покинешь эту тень жизни?", 's14', 'say878') \
     .with_responses() \
@@ -268,7 +268,7 @@ DialogStateBuilder().state('DDHALL.D_s14', '# from 10.3')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5752') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s15', '# from 9.2 10.4 32.5')\
+DialogStateBuilder().state('DDHALL.D_s15', '# from 9.2 10.4 32.5') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл презрительно фыркает, как будто его воротит от воспоминания об этом. К Моргу тебя доставила твоя ветхая карета, Неугомонный. Увидев ее, ты мог бы возомнить себя аристократом, учитывая количеств подданных, лежащих в ней зловонной разлагающейся кучей.", 's15', 'say885') \
     .with_responses() \
@@ -278,7 +278,7 @@ DialogStateBuilder().state('DDHALL.D_s15', '# from 9.2 10.4 32.5')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply889') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s16', '# from 15.0')\
+DialogStateBuilder().state('DDHALL.D_s16', '# from 15.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Да… твое тело лежало где-то посреди горы трупов. Дхолл снова заходится в приступе кашля, который ему удается побороть только несколько минут спустя. Твоим 'сенешалем', как всегда, был Фарод, который был рад доставить твое тело к вратам Морга за несколько медяков.", 's16', 'say890') \
     .with_responses() \
@@ -289,7 +289,7 @@ DialogStateBuilder().state('DDHALL.D_s16', '# from 15.0')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5753') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s17', '# from 16.0')\
+DialogStateBuilder().state('DDHALL.D_s17', '# from 16.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Он… сборщик мертвых. Дхолл переводит дыхание, затем продолжает: У нас в городе есть такие люди, которые собирают тела тех, кто вступил на путь Истинной Смерти, и приносят их нам для подобающего погребения.", 's17', 'say895') \
     .with_responses() \
@@ -300,7 +300,7 @@ DialogStateBuilder().state('DDHALL.D_s17', '# from 16.0')\
         .response("Тогда пойду и разыщу этого Фарода. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply6031') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s18', '# from 17.0 29.1 31.0 35.1 36.1')\
+DialogStateBuilder().state('DDHALL.D_s18', '# from 17.0 29.1 31.0 35.1 36.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Если все пойдет своим чередом, Неугомонный, то скорее Фарод найдет тебя и притащит нам сюда, чем ты найдешь ту лужу грязи, в которой он барахтается.", 's18', 'say900') \
     .with_responses() \
@@ -310,7 +310,7 @@ DialogStateBuilder().state('DDHALL.D_s18', '# from 17.0 29.1 31.0 35.1 36.1')\
         .response("У меня такое чувство, что наши пути еще пересекутся. Прощай, Дхолл.", 'DDHALL.D_s19', 'r', 'reply5755') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s19', '# from 17.4 18.0 18.3 29.3 31.2')\
+DialogStateBuilder().state('DDHALL.D_s19', '# from 17.4 18.0 18.3 29.3 31.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Голос Дхолла начинает звучать предостерегающе. Не ищи Фарода, Неугомонный. Я уверен, что ты попросту пройдешь еще один полный круг, и не станешь от этого мудрее, зато обогатишь Фарода на несколько медяков. Прими смерть, Неугомонный. Не повторяй свой круг страданий.", 's19', 'say901') \
     .with_responses() \
@@ -320,7 +320,7 @@ DialogStateBuilder().state('DDHALL.D_s19', '# from 17.4 18.0 18.3 29.3 31.2')\
         .response("Я не могу больше с тобой говорить. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5756') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s20', '# from 19.0')\
+DialogStateBuilder().state('DDHALL.D_s20', '# from 19.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл умолкает на минуту. Когда же он начинает говорить, то становится ясно, что он делает это с явной неохотой. Я не знаю, в каком притоне находится логово Фарода в данный момент, но могу предположить, что оно где-то за воротами Морга, в Улье. Возможно, кто-то из местных знает, где его найти.", 's20', 'say908') \
     .with_responses() \
@@ -330,7 +330,7 @@ DialogStateBuilder().state('DDHALL.D_s20', '# from 19.0')\
         .response("Тогда я пойду и поспрашиваю тамошних жителей. Прощай.", 'DDHALL.D_s11', 'r', 'reply6030') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s21', '# from 9.4')\
+DialogStateBuilder().state('DDHALL.D_s21', '# from 9.4') \
     .with_npc_lines() \
         .line(SPEAKER, "О тебе, Неугомонный, я знаю совсем немного. О твоих спутниках, лежащих теперь под нашим присмотром, я знаю ненамного больше, — Дхолл вздыхает. — Прошу тебя, Неугомонный, больше не проси никого идти с тобой: за тобой остается только несчастье. Не разделяй свою ношу с другими.", 's21', 'say914') \
     .with_responses() \
@@ -339,7 +339,7 @@ DialogStateBuilder().state('DDHALL.D_s21', '# from 9.4')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply923') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s22', '# from 47.0')\
+DialogStateBuilder().state('DDHALL.D_s22', '# from 47.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл вздыхает. Говорят, что есть души, которые не могут достичь Истинной Смерти. Смерть отказалась от них, и их имена никогда не попадут в книгу мертвых. Подняться из мертвых, как это сделал ты… Это наводит на мысль, что ты — одна из таких душ. Само твое существование неприемлемо для нашей фракции.", 's22', 'say915') \
     .with_responses() \
@@ -349,7 +349,7 @@ DialogStateBuilder().state('DDHALL.D_s22', '# from 47.0')\
         .response("Думаю, я услышал достаточно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply920') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s23', '# from 8.0')\
+DialogStateBuilder().state('DDHALL.D_s23', '# from 8.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Потому что заставлять тебя принимать нашу веру несправедливо. Ты должен оставить тень этой жизни по своей воле, а не по нашей. Дхолл, кажется, готов разразиться очередным приступом кашля, но с некоторыми усилиями ему удается сдержаться. И покуда я не покину свою должность, я буду защищать твое право искать свою правду.", 's23', 'say924') \
     .with_responses() \
@@ -359,7 +359,7 @@ DialogStateBuilder().state('DDHALL.D_s23', '# from 8.0')\
         .response("Я выслушал достаточно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6039') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s24', '# from 25.0')\
+DialogStateBuilder().state('DDHALL.D_s24', '# from 25.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Я — единственный, кто регистрирует тела, поступающие в наши залы, Неугомонный. Дхолл начинает кашлять, затем успокаивается. Только я вижу лица тех, кто лежит на наших плитах. Тайна твоего существования со мной в безопасности.", 's24', 'say929') \
     .with_responses() \
@@ -368,7 +368,7 @@ DialogStateBuilder().state('DDHALL.D_s24', '# from 25.0')\
         .response("Кажется, я обязан тебе. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6042') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s25', '# from 9.5 23.0')\
+DialogStateBuilder().state('DDHALL.D_s25', '# from 9.5 23.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Я — писарь. Я веду учет всех тел, которые поступают в Морг. Дхолл снова кашляет, затем глубоко вздыхает. И пока поток трупов идет через Морг, я буду при своей должности.", 's25', 'say930') \
     .with_responses() \
@@ -378,7 +378,7 @@ DialogStateBuilder().state('DDHALL.D_s25', '# from 9.5 23.0')\
         .response("Отлично. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6040') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s26', '# from 9.6')\
+DialogStateBuilder().state('DDHALL.D_s26', '# from 9.6') \
     .with_npc_lines() \
         .line(SPEAKER, "Я уже близок к Истинной Смерти, Неугомонный. Уже скоро я пересеку Границу Вечности и обрету покой, который давно искал. Я устал от этой смертной сферы… — Дхолл тяжело вздыхает. — Для такого, как я, на планах больше нет чудес.", 's26', 'say934') \
     .with_responses() \
@@ -388,7 +388,7 @@ DialogStateBuilder().state('DDHALL.D_s26', '# from 9.6')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply960') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s27', '# from 26.1')\
+DialogStateBuilder().state('DDHALL.D_s27', '# from 26.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Я не желаю жить вечно или возрождаться, Неугомонный. Я не смогу этого вынести.", 's27', 'say938') \
     .with_responses() \
@@ -396,7 +396,7 @@ DialogStateBuilder().state('DDHALL.D_s27', '# from 26.1')\
         .response("Пусть будет так. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply1304') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s28', '# from 2.2 42.1')\
+DialogStateBuilder().state('DDHALL.D_s28', '# from 2.2 42.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Она *разговаривала* с тобой? — Дхолл переходит на шепот. — Ты случаем не *бредишь*, Неугомонный? Она достигла Истинной Смерти и ушла туда, куда тебе не добраться.", 's28', 'say939') \
     .with_responses() \
@@ -405,7 +405,7 @@ DialogStateBuilder().state('DDHALL.D_s28', '# from 2.2 42.1')\
         .response("Не уверен, что она достигла Истинной Смерти. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply873') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s29', '# from 36.0')\
+DialogStateBuilder().state('DDHALL.D_s29', '# from 36.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл умолкает в раздумье. Скорее всего. Ты что-то потерял… что-то особенно ценное? — он хмурится, понижая тон. — Вряд ли Фарод будет делать исключения для чего либо, кроме вживленных в плоть вещей, но порой даже этого недостаточно, чтобы остановить его жадность.", 's29', 'say941') \
     .with_responses() \
@@ -416,7 +416,7 @@ DialogStateBuilder().state('DDHALL.D_s29', '# from 36.0')\
         .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply874').with_condition(lambda: _r874_condition(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s30', '# from 28.0')\
+DialogStateBuilder().state('DDHALL.D_s30', '# from 28.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл описывает пальцем полукруг в воздухе перед собой. Это дурное знамение, Неугомонный. Я молюсь о том, чтобы это оказалось твоим сном… и все же боюсь, это не так.", 's30', 'say945') \
     .with_responses() \
@@ -424,7 +424,7 @@ DialogStateBuilder().state('DDHALL.D_s30', '# from 28.0')\
         .response("Возможно, мы поговорим об этом позже. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply947') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s31', '# from 29.0')\
+DialogStateBuilder().state('DDHALL.D_s31', '# from 29.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дневник? Если он представляет хоть какую-то ценность, то он наверняка в руках Фарода.", 's31', 'say850') \
     .with_responses() \
@@ -434,7 +434,7 @@ DialogStateBuilder().state('DDHALL.D_s31', '# from 29.0')\
         .response("Понятно. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6066').with_condition(lambda: _r6066_condition(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s32', '# from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0')\
+DialogStateBuilder().state('DDHALL.D_s32', '# from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Это место, куда мертвых доставляют для погребения или кремации. Забота об умерших, покинувших эту тень жизни и ступивших на путь Истинной Смерти, входит в обязанности тленных, — Дхолл от волнения понижает тон. — Должно быть, ты был тяжело ранен, раз не узнаешь это место. Это практически твой дом.", 's32', 'say950') \
     .with_responses() \
@@ -448,7 +448,7 @@ DialogStateBuilder().state('DDHALL.D_s32', '# from 8.1 10.0 14.3 15.1 16.2 17.2 
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6062') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s33', '# from 10.2 14.2 32.0 41.0 47.2 49.0')\
+DialogStateBuilder().state('DDHALL.D_s33', '# from 10.2 14.2 32.0 41.0 47.2 49.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, тень. Видишь ли, Неугомонный, эта жизнь… она не настоящая. Наши с тобой жизни — всего лишь тени, жалкое подобие от того, что было однажды жизнью. Эта 'жизнь' — то, куда мы попадаем *после* того, как умираем. А здесь мы… в западне. В клетке. До тех пор, пока не достигнем Истинной Смерти.", 's33', 'say957') \
     .with_responses() \
@@ -459,7 +459,7 @@ DialogStateBuilder().state('DDHALL.D_s33', '# from 10.2 14.2 32.0 41.0 47.2 49.0
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5738') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s34', '# from 14.1 32.4')\
+DialogStateBuilder().state('DDHALL.D_s34', '# from 14.1 32.4') \
     .with_npc_lines() \
         .line(SPEAKER, "Да, раны, украшающие твое тело… Получи их более слабый человек, он бы уже был на пути к Истинной Смерти, а у тебя некоторые из них уже зажили, — Дхолл надрывно кашляет, затем успокаивается. — Но это всего лишь поверхностные раны.", 's34', 'say961') \
     .with_responses() \
@@ -469,7 +469,7 @@ DialogStateBuilder().state('DDHALL.D_s34', '# from 14.1 32.4')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5747') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s35', '# from 16.1 17.1 20.0')\
+DialogStateBuilder().state('DDHALL.D_s35', '# from 16.1 17.1 20.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Есть люди, которых я уважаю, Неугомонный, — Дхолл успокаивает свое неровное дыхание. — Фарод не входит в их число. Он носит свою дурную репутацию как знак гордости и свободно распоряжается имуществом умерших. Он рыцарь легкой наживы, подлая мразь самого низкого пошиба.", 's35', 'say962') \
     .with_responses() \
@@ -479,7 +479,7 @@ DialogStateBuilder().state('DDHALL.D_s35', '# from 16.1 17.1 20.0')\
         .response("Звучит ободряюще. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6028') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s36', '# from 35.0')\
+DialogStateBuilder().state('DDHALL.D_s36', '# from 35.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Рыцарь легкой наживы, — Дхолл кашляет, — вор. Все, кого Фарод приносит к нашим стенам, лишены всего имущества, которым они обладали при жизни. Фарод присваивает себе все, что ему удается вырвать из их окоченевших пальцев.", 's36', 'say966') \
     .with_responses() \
@@ -489,7 +489,7 @@ DialogStateBuilder().state('DDHALL.D_s36', '# from 35.0')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6029') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s37', '# from 32.3')\
+DialogStateBuilder().state('DDHALL.D_s37', '# from 32.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Сигил — это наш прекрасный город, Неугомонный.", 's37', 'say970') \
     .with_responses() \
@@ -498,7 +498,7 @@ DialogStateBuilder().state('DDHALL.D_s37', '# from 32.3')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5758') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s38', '# from 10.1 14.0')\
+DialogStateBuilder().state('DDHALL.D_s38', '# from 10.1 14.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Неугомонный — имя не хуже других… — Дхолл переводит дыхание. — Ведь что-то держит тебя здесь, не так ли? Какое-то незаконченное дело, какая-то страсть, которая должна быть подавлена, прежде чем ты сможешь достигнуть Истинной Смерти?", 's38', 'say973') \
     .with_responses() \
@@ -508,7 +508,7 @@ DialogStateBuilder().state('DDHALL.D_s38', '# from 10.1 14.0')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5750') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s39', '# from -')\
+DialogStateBuilder().state('DDHALL.D_s39', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Ты будешь делать то же, что и раньше, Неугомонный. Разыщешь того любителя звенелок, того плешивого идиота, Червеволосого, и вернешь свое имущество. После продолжишь свои бессмысленные поиски, пытаясь выполнить бессмысленные задания, собирая бессмысленные предметы. Затем ты падешь и вернешься назад к нам. Сэкономь время и поговори с мной сейчас, чтобы нам не пришлось вновь заводить этот разговор, когда твои воспоминания снова покинут тебя.", 's39', 'say884') \
     .with_responses() \
@@ -516,7 +516,7 @@ DialogStateBuilder().state('DDHALL.D_s39', '# from -')\
         .response("Прощай, Дхолл.", EXIT, 'r', 'reply977').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s40', '# from -')\
+DialogStateBuilder().state('DDHALL.D_s40', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл мельком смотрит на тебя. Итак. Ты вернулся… Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает: …приветствую тебя снова, Неугомонный.", 's40', 'say978') \
     .with_responses() \
@@ -524,7 +524,7 @@ DialogStateBuilder().state('DDHALL.D_s40', '# from -')\
         .response("Неважно. Прощай.", EXIT, 'r', 'reply980').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s41', '# from 26.0 52.0')\
+DialogStateBuilder().state('DDHALL.D_s41', '# from 26.0 52.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Границу между владениями тени этой жизни и Истинной Смерти.", 's41', 'say983') \
     .with_responses() \
@@ -535,7 +535,7 @@ DialogStateBuilder().state('DDHALL.D_s41', '# from 26.0 52.0')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply5741') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s42', '# from 2.0 12.0 43.0')\
+DialogStateBuilder().state('DDHALL.D_s42', '# from 2.0 12.0 43.0') \
     .with_npc_lines() \
         .line(SPEAKER, "В северо-западном мемориальном зале, этажом ниже. Проверь гробы… ее имя должно быть на одной из мемориальных табличек. Возможно, это оживит твои воспоминания.", 's42', 'say5075') \
     .with_responses() \
@@ -547,7 +547,7 @@ DialogStateBuilder().state('DDHALL.D_s42', '# from 2.0 12.0 43.0')\
         .response("Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.", 'DDHALL.D_s11', 'r', 'reply6068') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s43', '# from 2.1 42.0')\
+DialogStateBuilder().state('DDHALL.D_s43', '# from 2.1 42.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл не отвечает. Он просто молчаливо смотрит на тебя.", 's43', 'say5080') \
     .with_responses() \
@@ -558,14 +558,14 @@ DialogStateBuilder().state('DDHALL.D_s43', '# from 2.1 42.0')\
         .response("Тогда прощай.", 'DDHALL.D_s11', 'r', 'reply6070') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s44', '# from 1.0 6.2 7.0')\
+DialogStateBuilder().state('DDHALL.D_s44', '# from 1.0 6.2 7.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Знаю ли я тебя? Я… — в голосе писца звучит горечь. — Я *никогда* не знал тебя, Неугомонный. Не больше, чем ты знал о себе сам. Он умолкает на секунду. Ты ведь все забыл, не так ли?", 's44', 'say840') \
     .with_responses() \
         .response("*Кто* ты?", 'DDHALL.D_s45', 'r', 'reply1327').with_action(lambda: _r1327_action(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s45', '# from 44.0')\
+DialogStateBuilder().state('DDHALL.D_s45', '# from 44.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Как всегда, вопрос. И как всегда, неправильный. Он делает легкий поклон, но движение вызывает у него неожиданный приступ кашля. Я… Он умолкает на минуту, переводя дыхание. Я… Дхолл.", 's45', 'say5728') \
     .with_responses() \
@@ -573,14 +573,14 @@ DialogStateBuilder().state('DDHALL.D_s45', '# from 44.0')\
         .response("У меня нет времени на это. Прощай.", 'DDHALL.D_s46', 'r', 'reply5732').with_action(lambda: _r5732_action(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s46', '# from 45.1')\
+DialogStateBuilder().state('DDHALL.D_s46', '# from 45.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Хорошо, Неугомонный, — Дхолл кивает. — Но, боюсь, в данном вопросе время тебе не враг, — он снова берется за перо. — Когда ты снова захочешь поговорить, я буду здесь.", 's46', 'say5730') \
     .with_responses() \
         .response("Я еще вернусь. Прощай.", EXIT, 'r', 'reply40005').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s47', '# from 32.2')\
+DialogStateBuilder().state('DDHALL.D_s47', '# from 32.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Мы — тленные, фракция, собравшая всех тех, кто понял иллюзорность этой жизни. Мы ждем следующей жизни и помогаем другим в их путешествии.", 's47', 'say847') \
     .with_responses() \
@@ -592,7 +592,7 @@ DialogStateBuilder().state('DDHALL.D_s47', '# from 32.2')\
         .response("Тогда прощай.", 'DDHALL.D_s11', 'r', 'reply6037') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s48', '# from 32.1 33.0 38.0 41.1 47.1')\
+DialogStateBuilder().state('DDHALL.D_s48', '# from 32.1 33.0 38.0 41.1 47.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Истинная Смерть — это небытие. Состояние, свободное от мыслей, чувств, страстей. Дхолл кашляет, затем восстанавливает неровное дыхание. Состояние чистоты.", 's48', 'say848') \
     .with_responses() \
@@ -602,7 +602,7 @@ DialogStateBuilder().state('DDHALL.D_s48', '# from 32.1 33.0 38.0 41.1 47.1')\
         .response("Я должен идти. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6046') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s49', '# from 48.0')\
+DialogStateBuilder().state('DDHALL.D_s49', '# from 48.0') \
     .with_npc_lines() \
         .line(SPEAKER, "По-твоему, лучше оставаться в тени того, что раньше называлось жизнью? Я так не думаю.", 's49', 'say849') \
     .with_responses() \
@@ -612,7 +612,7 @@ DialogStateBuilder().state('DDHALL.D_s49', '# from 48.0')\
         .response("Я должен идти. Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6050') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s50', '# from 33.1')\
+DialogStateBuilder().state('DDHALL.D_s50', '# from 33.1') \
     .with_npc_lines() \
         .line(SPEAKER, "А что заставляет тебя думать, что эта жизнь *настоящая*? Прислушайся к себе. Разве ты не чувствуешь какую-то опустошенность? — Дхолл качает головой. — Это чистилище. Здесь только горе. Несчастье. Страдание. Они не являются элементами 'жизни'. Они — часть клетки, в которой мы заперты в этой тени.", 's50', 'say853') \
     .with_responses() \
@@ -621,7 +621,7 @@ DialogStateBuilder().state('DDHALL.D_s50', '# from 33.1')\
         .response("Довольно этой философии. Как все это относится к тому, что я оказался здесь?", 'DDHALL.D_s51', 'r', 'reply6053').with_action(lambda: _r6053_action(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s51', '# from 50.0 50.1 50.2')\
+DialogStateBuilder().state('DDHALL.D_s51', '# from 50.0 50.1 50.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Дхолл качает головой. Страсти — тяжелый груз. Многих они приковали к этой тени жизни. Цепляясь за эмоции, ты будешь без конца возрождаться в этой 'жизни', в постоянных муках, так никогда и не познав чистоты Истинной Смерти.", 's51', 'say5733') \
     .with_responses() \
@@ -631,7 +631,7 @@ DialogStateBuilder().state('DDHALL.D_s51', '# from 50.0 50.1 50.2')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6057') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s52', '# from 51.0')\
+DialogStateBuilder().state('DDHALL.D_s52', '# from 51.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Убей в себе страсти. Отбрось нужду в переживаниях. Когда ты будешь действительно очищен, кольцо возрождений прервется, и ты обретешь покой. Дхолл делает вздох… как будто смерть клокочет в его глотке. За нашими бренными телами, за Границей Вечности, находится покой, к которому стремится каждая душа.", 's52', 'say5734') \
     .with_responses() \
@@ -641,7 +641,7 @@ DialogStateBuilder().state('DDHALL.D_s52', '# from 51.0')\
         .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r', 'reply6061') \
     .push(manager)
 
-DialogStateBuilder().state('DDHALL.D_s53', '# from 34.0')\
+DialogStateBuilder().state('DDHALL.D_s53', '# from 34.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Я говорю о ранах разума. Ты ведь многое забыл, не так ли? Возможно, настоящие раны гораздо глубже, чем эти шрамы, украшающие твое тело, — Дхолл снова кашляет, — но только ты можешь знать это точно.", 's53', 'say5742') \
     .with_responses() \

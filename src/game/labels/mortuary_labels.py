@@ -1,18 +1,30 @@
 def build_mortuary_label_flow(label_builder):
     label_builder \
         .start_with("dmorte_one_introducing").say("DMORTE1.D_s0").end_with("mortuary_dialog_loop") \
-        .start_with("dmorte_one_loot_dummies").say("DMORTE1.D_s24").end_with("mortuary_dialog_loop") \
-        .start_with("dmorte_one_talk_dummies").say("DMORTE1.D_s33").end_with("mortuary_dialog_loop") \
-        .start_with("dmorte_one_talk_and_loot_dummies").say('DMORTE1.D_s34').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_join").say('DMORTE1.D_s26').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_talk_morte").say('DMORTE1.D_s30').end_with('mortuary_dialog_loop') \
-        .start_with("dmorte_one_kill_morte").say('DMORTE1.D_s99999999_34').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_kill_morte").say('DMORTE1.D_s99999999_k').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_two_talk_morte").say('DMORTE2.D_s12').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_has_embalm").say('DVAXIS.D_s99999999_e').end_with('mortuary_dialog_loop')
+
+    label_builder \
         .start_with("dmorte_two_meet_dhall").say('DDHALL.D_s5').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_two_talk_dhall").say('DDHALL.D_s40').end_with('mortuary_dialog_loop')
 
     label_builder \
-        .start_with("dmorte_two_kill_dhall").say('DDHALL.D_s99999999_54').end_with('mortuary_dialog_loop')
+        .start_with("dmorte_one_kill_first_eivene").say('DEIVENE.D_s99999999_k1').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_kill_eivene").say('DEIVENE.D_s99999999_k2').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_talk_first_eivene").say('DEIVENE.D_s0').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_talk_eivene").say('DEIVENE.D_s15').end_with('mortuary_dialog_loop')
+
+    label_builder \
+        .start_with("dmorte_one_kill_first_vaxis").say('DVAXIS.D_s99999999_k1').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_kill_vaxis").say('DVAXIS.D_s99999999_k2').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_talk_first_vaxis").say('DVAXIS.D_s0').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_talk_vaxis").say('DVAXIS.D_s57').end_with('mortuary_dialog_loop')
+
+    label_builder \
+        .start_with("dmorte_two_kill_dhall").say('DDHALL.D_s99999999_k').end_with('mortuary_dialog_loop')
 
     label_builder \
         .start_with("dmorte_one_kill_dzm569").say('DZM569.D_s99999999_k').end_with('mortuary_dialog_loop') \
@@ -72,12 +84,6 @@ def build_mortuary_label_flow(label_builder):
         .start_with("dmorte_one_talk_dzm985").say('DZM985.D_s0').end_with('mortuary_dialog_loop')
 
     label_builder \
-        .start_with("dmorte_one_kill_first_eivene").say('DEIVENE.D_s99999999_k1').end_with('mortuary_dialog_loop') \
-        .start_with("dmorte_one_kill_eivene").say('DEIVENE.D_s99999999_k2').end_with('mortuary_dialog_loop') \
-        .start_with("dmorte_one_talk_first_eivene").say('DEIVENE.D_s0').end_with('mortuary_dialog_loop') \
-        .start_with("dmorte_one_talk_eivene").say('DEIVENE.D_s15').end_with('mortuary_dialog_loop')
-
-    label_builder \
         .start_with("dmorte_one_mortuary_go_1_visit").say('mortuary_walking_1_visit').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_1_2_scene").say('DMORTE2.D_s0').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_2_visit").say('mortuary_walking_2_visit').end_with('mortuary_dialog_loop') \
@@ -85,6 +91,9 @@ def build_mortuary_label_flow(label_builder):
         .start_with("dmorte_one_mortuary_go_3_visit").say('mortuary_walking_3_visit').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_4_visit").say('mortuary_walking_4_visit').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_5_visit").say('mortuary_walking_5_visit').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_mortuary_go_6_visit").say('mortuary_walking_6_visit').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_mortuary_go_7_visit").say('mortuary_walking_7_visit').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_1_8_closed").say('mortuary_walking_1_8_closed').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_1_up_closed").say('mortuary_walking_1_up_closed').end_with('mortuary_dialog_loop') \
-        .start_with("dmorte_one_mortuary_go_1_down_closed").say('mortuary_walking_1_down_closed').end_with('mortuary_dialog_loop')
+        .start_with("dmorte_one_mortuary_go_1_down_closed").say('mortuary_walking_1_down_closed').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_mortuary_go_8_up").say('dmorte_one_mortuary_go_8_up').end_with('mortuary_dialog_loop')

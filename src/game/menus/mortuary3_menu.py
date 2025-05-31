@@ -1,15 +1,15 @@
 ﻿def build_mortuary3_menu(menu_builder, gsm):
     menu_builder \
-        .option("Поговорить с Мортом") \
-            .jump("dmorte_two_talk_morte") \
+        .option("Убить Морта") \
+            .jump("dmorte_one_kill_morte") \
             .when(lambda: gsm.get_in_party_morte() \
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
             .position(350, 770) \
             .size(20, 20) \
-        .option("Убить Морта") \
-            .jump("dmorte_one_kill_morte") \
+        .option("Поговорить с Мортом") \
+            .jump("dmorte_two_talk_morte") \
             .when(lambda: gsm.get_in_party_morte() \
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
@@ -22,7 +22,7 @@
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(350, 770) \
+            .position(350, 790) \
             .size(20, 20) \
         .option("Пройти в следующую комнату") \
             .jump("dmorte_one_mortuary_go_4_visit") \

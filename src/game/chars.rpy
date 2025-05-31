@@ -12,6 +12,8 @@ define bei            = Character('Бэй',         color='#c8ffc8')
 define asonje         = Character('Асонж',       color='#c8ffc8')
 define eivene_unknown = Character('?',       color='#c8ffc8')
 define eivene         = Character('Эи-Вейн',       color='#c8ffc8')
+define vaxis_unknown  = Character('?',       color='#c8ffc8')
+define vaxis          = Character('Ваксис',       color='#c8ffc8')
 
 define dzm79   = Character('Зомби 79',   color='#c8ffc8')
 define dzm199  = Character('Зомби 199',  color='#c8ffc8')

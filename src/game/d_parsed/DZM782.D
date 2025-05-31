@@ -8,7 +8,7 @@ def _r24716_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM782.D_s0', '# from - // Check EXTENDS ~DMORTE1~ : 34')\
+DialogStateBuilder().state('DZM782.D_s0', '# from - // Check EXTENDS ~DMORTE1~ : 34') \
     .with_npc_lines() \
         .line(SPEAKER, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом. На его лбу вырезан номер 782, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
     .with_responses() \
@@ -19,7 +19,7 @@ DialogStateBuilder().state('DZM782.D_s0', '# from - // Check EXTENDS ~DMORTE1~ :
         .response("Оставить труп в покое.", EXIT, 'r', 'reply24717').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM782.D_s1', '# from 0.1')\
+DialogStateBuilder().state('DZM782.D_s1', '# from 0.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не отвечает.", 's1', 'say24710') \
     .with_responses() \
@@ -27,7 +27,7 @@ DialogStateBuilder().state('DZM782.D_s1', '# from 0.1')\
         .response("Оставить труп в покое.", EXIT, 'r', 'reply42304').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM782.D_s2', '# from 0.2 0.3')\
+DialogStateBuilder().state('DZM782.D_s2', '# from 0.2 0.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Кажется, у этого трупа есть какой-то ключ. Он крепко держит его в левой руке, сжимая его большим и указательным пальцем мертвой хваткой. Чтобы взять ключ, тебе придется сломать руку.", 's2', 'say24715') \
     .with_responses() \

@@ -12,7 +12,7 @@ def _r34981_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM199.D_s0', '# from -')\
+DialogStateBuilder().state('DZM199.D_s0', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть. На его лбу выгравирован номер 199; его губы сшиты.", 's0', 'say34975') \
     .with_responses() \
@@ -24,14 +24,14 @@ DialogStateBuilder().state('DZM199.D_s0', '# from -')\
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply34985').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM199.D_s1', '# from 0.0 0.1 0.2')\
+DialogStateBuilder().state('DZM199.D_s1', '# from 0.0 0.1 0.2') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает пялиться на тебя.", 's1', 'say34977') \
     .with_responses() \
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply34978').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM199.D_s2', '# from 0.3')\
+DialogStateBuilder().state('DZM199.D_s2', '# from 0.3') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say34982') \
     .with_responses() \

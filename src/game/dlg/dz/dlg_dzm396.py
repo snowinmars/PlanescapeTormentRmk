@@ -12,6 +12,7 @@ def _init(gsm):
     gsm.set_location('mortuary3')
     renpy.exports.show("bg mortuary3")
     _show('dzm396_img default', center_right_down)
+    gsm.set_meet_dzm396(True)
 def _dispose():
     _hide('dzm396_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -125,8 +126,16 @@ def dlg_dzm396(manager):
     DialogStateBuilder().state('DZM396.D_s99999999_k', '# from -') \
         .with_npc_lines() \
             .line(teller, "Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты.", 's0', 'say34931').with_action(lambda: _init(gsm)) \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm396(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM396.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    # TODO [snow]: spawn a new medic once per day
+    DialogStateBuilder().state('DZM396.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я швыряю труп на одного из пациентов - и бью ему в грудь, пока она не открывается гноящимися сгустками. Пустые глаза трупа устало смотрят в потолок.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Плодить ему подобных ближайшие часы больше некому.", '-', '-').with_action(lambda: _kill_dzm396(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

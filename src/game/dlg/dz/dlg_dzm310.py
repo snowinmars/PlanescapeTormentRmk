@@ -11,6 +11,7 @@ from engine.transforms import (
 def _init(gsm):
     gsm.set_location('mortuary1')
     renpy.exports.show("bg mortuary1")
+    gsm.set_meet_dzm310(True)
     _show('dzm310_img default', center_right_down)
 def _dispose():
     _hide('dzm310_img')

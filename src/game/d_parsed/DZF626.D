@@ -36,7 +36,7 @@ def _r35074_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZF626.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 338')\
+DialogStateBuilder().state('DZF626.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 338') \
     .with_npc_lines() \
         .line(SPEAKER, "Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе. Номер 626 вышит на правой щеке, прямо под глазом.", 's0', 'say35050') \
     .with_responses() \
@@ -52,7 +52,7 @@ DialogStateBuilder().state('DZF626.D_s0', '# from - // Check EXTENDS ~DMORTE~ : 
         .response("Оставить труп в покое.", EXIT, 'r', 'reply35080').with_condition(lambda: _r35080_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZF626.D_s1', '# from 0.0 0.1 0.2 // Check EXTENDS ~DMORTE~ : 338')\
+DialogStateBuilder().state('DZF626.D_s1', '# from 0.0 0.1 0.2 // Check EXTENDS ~DMORTE~ : 338') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп продолжает смотреть на тебя одним уцелевшим глазом.", 's1', 'say35052') \
     .with_responses() \
@@ -61,7 +61,7 @@ DialogStateBuilder().state('DZF626.D_s1', '# from 0.0 0.1 0.2 // Check EXTENDS ~
         .response("Тогда прощай.", EXIT, 'r', 'reply35067').with_condition(lambda: _r35067_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZF626.D_s2', '# from 0.3 // Check EXTENDS ~DMORTE~ : 338')\
+DialogStateBuilder().state('DZF626.D_s2', '# from 0.3 // Check EXTENDS ~DMORTE~ : 338') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say35071') \
     .with_responses() \
@@ -70,7 +70,7 @@ DialogStateBuilder().state('DZF626.D_s2', '# from 0.3 // Check EXTENDS ~DMORTE~ 
         .response("Тогда прощай.", EXIT, 'r', 'reply35074').with_condition(lambda: _r35074_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZF626.D_s3', '# from -')\
+DialogStateBuilder().state('DZF626.D_s3', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Этот труп не шевелится. Кажется, он далек от того, чтобы отвечать на твои вопросы.", 's3', 'say35081') \
     .with_responses() \

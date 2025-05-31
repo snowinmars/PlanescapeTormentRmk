@@ -1,4 +1,4 @@
-def build_mortuary4_menu(menu_builder, gsm):
+def build_mortuary6_menu(menu_builder, gsm):
     menu_builder \
         .option("Убить Морта") \
             .jump("dmorte_one_kill_morte") \
@@ -6,7 +6,7 @@ def build_mortuary4_menu(menu_builder, gsm):
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(540, 390) \
+            .position(1400, 220) \
             .size(20, 20) \
         .option("Поговорить с Мортом") \
             .jump("dmorte_two_talk_morte") \
@@ -14,7 +14,7 @@ def build_mortuary4_menu(menu_builder, gsm):
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(540, 370) \
+            .position(1400, 240) \
             .size(20, 20) \
         .option("Пригласить Морта в группу") \
             .jump("dmorte_join") \
@@ -22,61 +22,61 @@ def build_mortuary4_menu(menu_builder, gsm):
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(540, 370) \
+            .position(1400, 240) \
             .size(20, 20) \
         .option("Пройти в следующую комнату") \
-            .jump("dmorte_one_mortuary_go_5_visit") \
-            .when(lambda: not gsm.is_visited_location('mortuary5')) \
+            .jump("dmorte_one_mortuary_go_7_visit") \
+            .when(lambda: not gsm.is_visited_location('mortuary6')) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(1590, 400) \
+            .position(1470, 1000) \
             .size(20, 20) \
-        .option("Пройти в северо-восточную комнату") \
-            .jump("dmorte_one_mortuary_go_5_visit") \
-            .when(lambda: gsm.is_visited_location('mortuary5')) \
+        .option("Пройти в юго-восточную комнату") \
+            .jump("dmorte_one_mortuary_go_7_visit") \
+            .when(lambda: gsm.is_visited_location('mortuary6')) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(1590, 400) \
+            .position(1470, 1000) \
             .size(20, 20) \
-        .option("Пройти в северо-западную комнату") \
-            .jump("dmorte_one_mortuary_go_3_visit") \
+        .option("Пройти в северную-восточную комнату") \
+            .jump("dmorte_one_mortuary_go_5_visit") \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(140, 500) \
+            .position(1380, 70) \
             .size(20, 20)
 
     menu_builder \
-        .option("Атаковать труп с книгами") \
-            .jump("dmorte_one_kill_dzm1664") \
-            .when(lambda: not gsm.get_dead_dzm1664() \
-                          and not gsm.get_meet_dzm1664()) \
+        .option("Атаковать труп") \
+            .jump("dmorte_one_kill_first_vaxis") \
+            .when(lambda: not gsm.get_dead_vaxis() \
+                          and not gsm.get_meet_vaxis()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(880, 700) \
+            .position(1340, 700) \
             .size(20, 20) \
-        .option("Атаковать труп «1664»") \
-            .jump("dmorte_one_kill_dzm1664") \
-            .when(lambda: not gsm.get_dead_dzm1664() \
-                          and gsm.get_meet_dzm1664()) \
+        .option("Атаковать Ваксиса") \
+            .jump("dmorte_one_kill_vaxis") \
+            .when(lambda: not gsm.get_dead_vaxis() \
+                          and gsm.get_meet_vaxis()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(880, 700) \
+            .position(1340, 700) \
             .size(20, 20) \
-        .option("Поговорить с трупом с книгами") \
-            .jump("dmorte_one_talk_dzm1664") \
-            .when(lambda: not gsm.get_dead_dzm1664() \
-                          and not gsm.get_meet_dzm1664()) \
+        .option("Поговорить с трупом") \
+            .jump("dmorte_one_talk_first_vaxis") \
+            .when(lambda: not gsm.get_dead_vaxis() \
+                          and not gsm.get_meet_vaxis()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(880, 720) \
+            .position(1340, 720) \
             .size(20, 20) \
-        .option("Поговорить трупом «1664»") \
-            .jump("dmorte_one_talk_dzm1664") \
-            .when(lambda: not gsm.get_dead_dzm1664() \
-                          and gsm.get_meet_dzm1664()) \
+        .option("Поговорить с Ваксисом") \
+            .jump("dmorte_one_talk_vaxis") \
+            .when(lambda: not gsm.get_dead_vaxis() \
+                          and gsm.get_meet_vaxis()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(880, 720) \
+            .position(1340, 720) \
             .size(20, 20)
 
     return menu_builder

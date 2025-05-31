@@ -11,6 +11,7 @@ from engine.transforms import (
 def _init(gsm):
     gsm.set_location('mortuary5')
     renpy.exports.show("bg mortuary5")
+    gsm.set_meet_dzm257(True)
     _show('dzm257_img default', center_right_down)
 def _dispose():
     _hide('dzm257_img')
@@ -140,8 +141,15 @@ def dlg_dzm257(manager):
         .with_npc_lines() \
             .line(teller, "Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.", 's0', 'say6507').with_action(lambda: _init(gsm)) \
             .line(teller, "Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.", 's0', 'say6507') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm257(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM257.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM257.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я бью между глаз. Пустые глаза вращаются в разные стороны, но так ни не могут посмотреть на меня.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я бью его до тех пор, пока он не падает.", '-', '-').with_action(lambda: _kill_dzm257(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

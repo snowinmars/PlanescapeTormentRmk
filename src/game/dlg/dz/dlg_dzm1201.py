@@ -12,6 +12,7 @@ def _init(gsm):
     gsm.set_location('mortuary3')
     renpy.exports.show("bg mortuary3")
     _show('dzm1201_img default', center_right_down)
+    gsm.set_meet_dzm1201(True)
 def _dispose():
     _hide('dzm1201_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -120,7 +121,14 @@ def dlg_dzm1201(manager):
     DialogStateBuilder().state('DZM1201.D_s99999999_k', '# from -') \
         .with_npc_lines() \
             .line(teller, "На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти, создавая впечатление, что он плачет. Его челюсть распахнута, из уголка рта течет струйка гноя.", 's5', 'say45128') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM1201.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM1201.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я не знаю, откуда взялись чернила. Труп не реагирует на мои удары: пустые слёзы пустых глаз.", '-', '-') \
             .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm1201(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \

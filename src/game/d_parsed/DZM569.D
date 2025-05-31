@@ -18,7 +18,7 @@ def _r42295_condition(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DZM569.D_s0', '# from - // Check EXTENDS ~DMORTE1~ : 31')\
+DialogStateBuilder().state('DZM569.D_s0', '# from - // Check EXTENDS ~DMORTE1~ : 31') \
     .with_npc_lines() \
         .line(SPEAKER, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер 569 на открывшейся кости.", 's0', 'say24575') \
     .with_responses() \
@@ -32,7 +32,7 @@ DialogStateBuilder().state('DZM569.D_s0', '# from - // Check EXTENDS ~DMORTE1~ :
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply42291').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM569.D_s1', '# from 0.1 0.2 0.3 3.1')\
+DialogStateBuilder().state('DZM569.D_s1', '# from 0.1 0.2 0.3 3.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп молчаливо уставился на тебя.", 's1', 'say24577') \
     .with_responses() \
@@ -40,14 +40,14 @@ DialogStateBuilder().state('DZM569.D_s1', '# from 0.1 0.2 0.3 3.1')\
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply42292').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM569.D_s2', '# from 0.4')\
+DialogStateBuilder().state('DZM569.D_s2', '# from 0.4') \
     .with_npc_lines() \
         .line(SPEAKER, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say24582') \
     .with_responses() \
         .response("Оставить зомби в покое.", EXIT, 'r', 'reply24583').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DZM569.D_s3', '# from 0.5 // Check EXTENDS ~DMORTE1~ : 31')\
+DialogStateBuilder().state('DZM569.D_s3', '# from 0.5 // Check EXTENDS ~DMORTE1~ : 31') \
     .with_npc_lines() \
         .line(SPEAKER, "Похоже, у этого трупа нет ключа… да и вряд ли он смог бы им воспользоваться. Его пальцы перебиты, как будто кто-то постучал по ним молотком. Ты замечаешь, что его левое плечо сильно перевязано… бинтами можно воспользоваться, если снять их с трупа.", 's3', 'say42293') \
     .with_responses() \
