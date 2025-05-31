@@ -24,8 +24,14 @@ class SettingsManager:
             self._registry['journal_note_ids'].append(note_id)
 
     def set_location(self, location_id):
+        line = f'set location_id = {location_id}'
+        devlog.debug(line)
+        self.event_manager.write_event(line)
         self._registry['location'] = location_id
         if not self.is_visited_location(location_id):
+            line = f'remember {location_id} as visited'
+            devlog.debug(line)
+            self.event_manager.write_event(line)
             self._registry['visited_locations'].append(location_id)
 
     def get_location(self):
@@ -46,11 +52,15 @@ class SettingsManager:
             self._registry[setting_id] = value
         def setter_once(id, value):
             if id in self.tracked:
-                devlog.debug('did not set %s to %s: already in tracked with id %s', setting_id, value, id)
+                line = f'did not set {setting_id} to {value}: already in tracked with id {id}'
+                devlog.debug(line)
+                self.event_manager.write_event(line)
                 return
-            devlog.debug('set %s to %s: track with id %s', setting_id, value, id)
             self._registry[setting_id] = value
             self.tracked.append(id)
+            line = f'set {setting_id} to {value}: track with id {id}'
+            devlog.debug(line)
+            self.event_manager.write_event(line)
         def inc(value = 1):
             line = f'inc {setting_id} = {self._registry[setting_id]} + 1'
             devlog.debug(line)
@@ -63,18 +73,26 @@ class SettingsManager:
             self._registry[setting_id] = self._registry[setting_id] - 1
         def inc_once(id, value = 1):
             if id in self.tracked:
-                devlog.debug('did not inc %s to %s + 1: already in tracked with id %s', setting_id, self._registry[setting_id], id)
+                line = f'did not inc {setting_id} to {self._registry[setting_id]} + 1: already in tracked with id {id}'
+                devlog.debug(line)
+                self.event_manager.write_event(line)
                 return
-            devlog.debug('set %s to %s + 1: track with id %s', setting_id, self._registry[setting_id], id)
             self._registry[setting_id] = self._registry[setting_id] + 1
             self.tracked.append(id)
+            line = f'set {setting_id} to {self._registry[setting_id]} + 1: track with id {id}'
+            devlog.debug(line)
+            self.event_manager.write_event(line)
         def dec_once(id, value = 1):
             if id in self.tracked:
-                devlog.debug('did not dec %s to %s - 1: already in tracked with id %s', setting_id, self._registry[setting_id], id)
+                line = f'did not dec {setting_id} to {self._registry[setting_id]} - 1: already in tracked with id {id}'
+                devlog.debug(line)
+                self.event_manager.write_event(line)
                 return
-            devlog.debug('set %s to %s - 1: track with id %s', setting_id, self._registry[setting_id], id)
             self._registry[setting_id] = self._registry[setting_id] - 1
             self.tracked.append(id)
+            line = f'set {setting_id} to {self._registry[setting_id]} - 1: track with id {id}'
+            devlog.debug(line)
+            self.event_manager.write_event(line)
         def once_tracker(id):
             return id in self.tracked
 

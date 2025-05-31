@@ -21,6 +21,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _has_no_key(gsm):
+    return not gsm.get_has_intro_key()
 def _kill_dzm782(gsm):
     gsm.set_dead_dzm782(True)
 ###
@@ -103,13 +105,20 @@ def dlg_dzm782(manager):
             .response("(...)", 'DZM782.D_s2', '-', '-') \
     .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM782.D_s99999999_k', '# from -') \
+    DialogStateBuilder().state('DZM782.D_s99999999_k', '# from -') \
         .with_npc_lines() \
             .line(teller, "Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.", 's0', 'say24708').with_action(lambda: _init(gsm)) \
             .line(teller, "На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.", 's0', 'say24708') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm782(gsm)) \
         .with_responses() \
-            .response("(…)", 'DMORTE1.D_s24', '-', '-').with_action(lambda: _dispose()) \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM782.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM782.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Некоторое время я смотрю в ненавидящие меня глаза, пока не понимаю, что эта эмоция обращена не ко мне. Это застывшая маска, которую труп не в состоянии изменить.", '-', '-') \
+            .line(teller, "В его ненавидящих глазах поселилась пустота. В них нет ни жизни, ни разума. Я без сожалений расширяю дом для пустоты.", '-', '-').with_action(lambda: _kill_dzm782(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("(…)", 'DMORTE1.D_s24', '-', '-').with_condition(lambda: _has_no_key(gsm)).with_action(lambda: _dispose()) \
         .push(manager)

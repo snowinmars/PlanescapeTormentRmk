@@ -1,28 +1,28 @@
 ﻿def build_mortuary1_menu(menu_builder, gsm):
     menu_builder \
-        .option("Поговорить с Мортом") \
-            .jump("dmorte_one_talk_morte") \
-            .when(lambda: gsm.get_in_party_morte() \
-                          and not gsm.get_dead_morte()) \
-            .idle_image("images/graphics_idle.png") \
-                .hover_image("images/graphics_hover.png") \
-                .position(1400, 400) \
-                .size(20, 20) \
         .option("Убить Морта") \
             .jump("dmorte_one_kill_morte") \
             .when(lambda: gsm.get_in_party_morte() \
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(1400, 420) \
+            .position(1400, 400) \
             .size(20, 20) \
+        .option("Поговорить с Мортом") \
+            .jump("dmorte_one_talk_morte") \
+            .when(lambda: gsm.get_in_party_morte() \
+                          and not gsm.get_dead_morte()) \
+            .idle_image("images/graphics_idle.png") \
+                .hover_image("images/graphics_hover.png") \
+                .position(1400, 420) \
+                .size(20, 20) \
         .option("Пригласить Морта в группу") \
             .jump("dmorte_join") \
             .when(lambda: not gsm.get_in_party_morte() \
                           and not gsm.get_dead_morte()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(1400, 400) \
+            .position(1400, 420) \
             .size(20, 20) \
         .option("Открыть дверь") \
             .jump("dmorte_one_mortuary_go_1_2_scene") \

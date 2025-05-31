@@ -12,6 +12,7 @@ def _init(gsm):
     gsm.set_location('mortuary4')
     renpy.exports.show("bg mortuary4")
     _show('dzm1664_img default', center_right_down)
+    gsm.set_meet_dzm1664(True)
 def _dispose():
     _hide('dzm1664_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -105,8 +106,15 @@ def dlg_dzm1664(manager):
         .with_npc_lines() \
             .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002').with_action(lambda: _init(gsm)) \
             .line(teller, "На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.", 's0', 'say47002') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm1664(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM1664.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM1664.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я ставлю ему подножнку. Книги рассыпаются по всей комнате. Труп некоторое время смотрит на них, а потом переводит взгляд на меня.", '-', '-') \
+            .line(teller, "Пустой взгляд: он не делает попытку собрать книги. В его взгляде нет ни жизни, ни разума. Я оставляю его тело рядом с книгами.", '-', '-').with_action(lambda: _kill_dzm1664(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

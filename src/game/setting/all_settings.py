@@ -85,6 +85,7 @@ def build_npc_dead_or_alive_settings(manager):
         'crispy',
         'death_of_names',
         'eivene',
+        'soego'
     ]
 
     for npc in npcs:
@@ -123,11 +124,6 @@ def build_other_settings(manager):
         .register('morte_mortuary_walkthrough_1', False) \
         .register('morte_mortuary_walkthrough_2', False) \
         .register('mortualy_alarmed', False) \
-        .register('vaxis_lawful', False) \
-        .register('vaxis_left', False) \
-        .register('vaxis_betrayed', False) \
-        .register('vaxis_betray', 0) \
-        .register('vaxis_exposed', False) \
         .register('saw_dhall', False) \
         .register('know_copper_earring_secret', False) \
         .register('has_copper_earring', False) \
@@ -143,7 +139,24 @@ def build_other_settings(manager):
         .register('ravel_eivene', False) \
         .register('embalm_key_quest', False) \
         .register('has_keyem', False) \
-        .register('42_Secret', False)
+        .register('42_Secret', False) \
+        .register('embalm_key_quest', False) \
+        .register('keyem', False) \
+        .register('vaxis_leave', False) \
+        .register('vaxis_orders', False) \
+        .register('vaxis_zombie_disguise', False) \
+        .register('appearance', False) \
+        .register('vaxis_help', False) \
+        .register('strong_arm_vaxis', False) \
+        .register('journal', False) \
+        .register('vaxis_zombie_xp', False) \
+        .register('looks_like', False) \
+        .register('morte_vaxis_quip_2', False) \
+        .register('morte_vaxis_quip_1', False) \
+        .register('bonechrm', False) \
+        .register('vaxis_exposes_soego', False) \
+        .register('vaxis_exposed', False) \
+        .register('vaxis_aggressive', False)
 
 
 def build_all_settings(manager):

@@ -124,12 +124,18 @@ def dlg_dzm825(manager):
             .response("Хорошо. Идем.", EXIT, 'r43', 'reply42303').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM825.D_s99999999_k', '# from -') \
+    DialogStateBuilder().state('DZM825.D_s99999999_k', '# from -') \
         .with_npc_lines() \
             .line(teller, "Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».", 's0', 'say24564').with_action(lambda: _init(gsm)) \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm825(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM825.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM825.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я беру голову трупа за волосы и поднимаю на уровень своего взгляда. Он смотрит на меня пустыми глазами.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я изо всей силы сдёргиваю голову с его тела.", '-', '-').with_action(lambda: _kill_dzm825(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

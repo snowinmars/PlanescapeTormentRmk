@@ -73,7 +73,7 @@ def _r5062_condition(gsm):
 def _r854_condition(gsm):
     return gsm.get_meet_vaxis() \
     and not gsm.get_dead_vaxis() \
-    and not gsm.get_vaxis_left() \
+    and not gsm.get_vaxis_leave() \
     and not gsm.get_vaxis_betrayed()
 def _r858_condition(gsm):
     # TODO [snow]: how can they be different?..
@@ -859,8 +859,7 @@ def dlg_ddhall(manager):
             .response("Прощай, Дхолл.", 'DDHALL.D_s11', 'r202', 'reply5745') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DDHALL.D_s99999999_54', '-') \
+    DialogStateBuilder().state('DDHALL.D_s99999999_k', '-') \
         .with_npc_lines() \
             .line(teller, "Это не должно жить.",'-', '-').with_condition(lambda: not gsm.get_meet_dhall()).with_action(lambda: _kill_dhall(gsm)) \
             .line(teller, "Дхалл не должен жить.",'-', '-').with_condition(lambda: gsm.get_meet_dhall()).with_action(lambda: _kill_dhall(gsm)) \

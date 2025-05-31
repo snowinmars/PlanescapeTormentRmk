@@ -12,6 +12,7 @@ def _init(gsm):
     gsm.set_location('mortuary2')
     renpy.exports.show("bg mortuary1")
     _show('dzm79_img default', center_right_down)
+    gsm.set_meet_dzm79(True)
 def _dispose():
     _hide('dzm79_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):

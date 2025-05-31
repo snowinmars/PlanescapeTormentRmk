@@ -284,18 +284,25 @@ def dlg_dmorte_one(manager):
             .response("Пока ничего, Морт. Просто проверяю, что ты еще со мной.", EXIT, 'r40', 'reply39864').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE1.D_s99999999_34', '-') \
+    DialogStateBuilder().state('DMORTE1.D_s99999999_k', '-') \
+        .with_npc_lines() \
+            .line(teller, "Я больше не хочу видеть этот череп.", '-', '-').with_action(lambda: _kill_morte(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить Морта.", 'DMORTE1.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DMORTE1.D_s99999999_k_', '-') \
         .with_npc_lines() \
             .line(morte, "Слушай шеф…", 's33', 'say42302') \
             .line(teller, "Я хватаю черепушку и разбиваю её о землю.", '-', '-').with_action(lambda: _kill_morte(gsm)) \
         .with_responses() \
-            .response("...", EXIT, 'r?', 'reply42303') \
+            .response("...", EXIT, '-', '-') \
         .push(manager)
 
     DialogStateBuilder().state('DMORTE1.D_s34', '# from - // Manually checked EXTENDS ~DZM782~ : 2') \
         .with_npc_lines() \
             .line(morte, "Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.", 's34', 'say42306') \
         .with_responses() \
-            .response("(Осмотреть)", 'DZM782.D_s0', 'r?', 'reply42303') \
+            .response("(Осмотреть)", 'DZM782.D_s0', '-', 'reply42303') \
         .push(manager)

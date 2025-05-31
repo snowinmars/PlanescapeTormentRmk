@@ -12,6 +12,7 @@ def _init(gsm):
     gsm.set_location('mortuary5')
     renpy.exports.show("bg mortuary5")
     _show('dzm506_img default', center_right_down)
+    gsm.set_meet_dzm506(True)
 def _dispose():
     _hide('dzm506_img')
 def _show(sprite, start_pos, end_pos = None, duration=0.5):
@@ -138,8 +139,15 @@ def dlg_dzm506(manager):
         .with_npc_lines() \
             .line(teller, "Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…", 's0', 'say45419').with_action(lambda: _init(gsm)) \
             .line(teller, "В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.", 's0', 'say45419') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm506(gsm)) \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM506.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM506.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Карта на этом трупе примитивна. Даже если я и сбился бы на ней с пути - заблудиться я бы не смог. Я рисую новые улицы, новые - с каждым ударом.", '-', '-') \
+            .line(teller, "Труп осматривает себя пустыми глазами. В них нет ни жизни, ни разума. А потом падает.", '-', '-').with_action(lambda: _kill_dzm506(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

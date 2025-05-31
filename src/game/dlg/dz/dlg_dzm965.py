@@ -95,16 +95,6 @@ def dlg_dzm965(manager):
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45075').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DZM965.D_s99999999_k', '# from -') \
-        .with_npc_lines() \
-            .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922').with_action(lambda: _init(gsm)) \
-            .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
-            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
-            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm965(gsm)) \
-        .with_responses() \
-            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
-        .push(manager)
-
     DialogStateBuilder().state('DMORTE.D_s478', '# from 477.0')\
         .with_npc_lines() \
             .line(morte, "У этих трупов котелок уже почти не варит, так что они могут выполнять не больше одного задания одновременно…", 's478', 'say45091') \
@@ -141,4 +131,21 @@ def dlg_dzm965(manager):
             .response("Понятно. А что ты там говорил до этого… про 'правило трех'?", 'DMORTE.D_s479', 'r1069', 'reply45103').with_action(lambda: _r45103_action(gsm)) \
             .response("Понятно. Я хочу еще намного осмотреть этого зомби…", 'DZM965.D_s1', 'r1070', 'reply45104').with_action(lambda: _dispose()) \
             .response("Ладно. Давай двигаться дальше.", EXIT, 'r1071', 'reply45105').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM965.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922').with_action(lambda: _init(gsm)) \
+            .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
+        .with_responses() \
+            .response("Уйти.", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("Убить зомби.", 'DZM965.D_s99999999_k_', '-', '-') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM965.D_s99999999_k_', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Я поджидаю труп на одном из углов его маршрута. Он идёт прямо на меня, смотря на моё оружие пустыми глазами.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я прерываю его цикл.", '-', '-').with_action(lambda: _kill_dzm965(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

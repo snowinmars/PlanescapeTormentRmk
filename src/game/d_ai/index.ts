@@ -51,6 +51,7 @@ const goFiles = [
     'DMORTE1.D',
     'DMORTE2.D',
     'DEIVENE.D',
+    'DVAXIS.D',
     ...goFilesDz,
 ];
 
