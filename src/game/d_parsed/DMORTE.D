@@ -165,9 +165,9 @@ def _r6658_action(gsm):
 def _r6659_action(gsm):
     DO ~IncrementGlobal("Good","GLOBAL",1) ~
 def _r6664_condition(gsm):
-    Global("42_Secret","GLOBAL",1)
+    return gsm.get_42_Secret()
 def _r6665_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',12,'wis') Global("42_Secret","GLOBAL",0)
+    return gsm.check_char_prop_gt('protagonist',12,'wis') return not gsm.get_42_Secret()
 def _r6957_action(gsm):
     DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
 def _r7056_condition(gsm):

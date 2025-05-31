@@ -1,6 +1,7 @@
 # manually sync with script.rpy 'character_reactions' variable
 image morte_img default  = 'morte_smiling3.png'
 image dhall_img default   = 'dhall_default.png'
+image eivene_img default   = 'eivene_default.png'
 
 image dzm79_img default = 'dzm79_default.png'
 image dzm199_img default = 'dzm199_default.png'

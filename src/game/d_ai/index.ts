@@ -7,12 +7,7 @@ import { serializeStates } from './serializeStates.ts';
 import { promises as fs } from 'fs';
 import * as path from 'path'
 
-const goFiles = [
-    'DDEATHON.D',
-    'DDHALL.D',
-    'DMORTE.D',
-    'DMORTE1.D',
-    'DMORTE2.D',
+const goFilesDz = [
     'DZM1041.D',
     'DZM1094.D',
     'DZM1146.D',
@@ -47,6 +42,16 @@ const goFiles = [
     'DZF1072.D',
     'DZF1096.D',
     'DZF1148.D',
+]
+
+const goFiles = [
+    'DDEATHON.D',
+    'DDHALL.D',
+    'DMORTE.D',
+    'DMORTE1.D',
+    'DMORTE2.D',
+    'DEIVENE.D',
+    ...goFilesDz,
 ];
 
 const go = async (fromFile: string, cleanFile: string, toFile: string, statePrefix: string): Promise<void> => {

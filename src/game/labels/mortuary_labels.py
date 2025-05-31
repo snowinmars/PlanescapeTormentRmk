@@ -72,6 +72,12 @@ def build_mortuary_label_flow(label_builder):
         .start_with("dmorte_one_talk_dzm985").say('DZM985.D_s0').end_with('mortuary_dialog_loop')
 
     label_builder \
+        .start_with("dmorte_one_kill_first_eivene").say('DEIVENE.D_s99999999_k1').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_kill_eivene").say('DEIVENE.D_s99999999_k2').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_talk_first_eivene").say('DEIVENE.D_s0').end_with('mortuary_dialog_loop') \
+        .start_with("dmorte_one_talk_eivene").say('DEIVENE.D_s15').end_with('mortuary_dialog_loop')
+
+    label_builder \
         .start_with("dmorte_one_mortuary_go_1_visit").say('mortuary_walking_1_visit').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_1_2_scene").say('DMORTE2.D_s0').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_mortuary_go_2_visit").say('mortuary_walking_2_visit').end_with('mortuary_dialog_loop') \

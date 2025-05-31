@@ -27,7 +27,7 @@ def _r839_condition(gsm):
 def _r835_condition(gsm):
     return not gsm.get_in_party_morte() return not gsm.get_alarmed()
 def _r5058_condition(gsm):
-    return not gsm.get_in_party_morte() return gsm.get_alarmed()
+    return not gsm.get_in_party_morte() return gsm.get_mortualy_alarmed()
 def _r842_condition(gsm):
     return gsm.get_meet_dhall()
 def _r843_condition(gsm):

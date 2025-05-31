@@ -7,7 +7,7 @@ def _r47005_condition(gsm):
 def _r47006_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r47014_action(gsm):
-    DO ~GiveItemCreate("Logpage",Protagonist,1,0,0) gsm.set_pick_dzm1664_page(True) ~
+    DO ~GiveItemCreate("Logpage",Protagonist,1,0,0) gsm.set_has_dzm1664_page(True) ~
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

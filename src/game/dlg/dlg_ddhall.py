@@ -7,8 +7,6 @@ from engine.transforms import (
     center_right_down
 )
 
-
-
 ###
 def _init(gsm):
     gsm.set_location('ddhall')
@@ -60,10 +58,10 @@ def _r839_condition(gsm):
     return gsm.get_in_party_morte()
 def _r835_condition(gsm):
     return not gsm.get_in_party_morte() \
-    and not gsm.get_alarmed()
+    and not gsm.get_mortualy_alarmed()
 def _r5058_condition(gsm):
     return not gsm.get_in_party_morte() \
-    and gsm.get_alarmed()
+    and gsm.get_mortualy_alarmed()
 def _r842_condition(gsm):
     return gsm.get_meet_dhall()
 def _r843_condition(gsm):
@@ -178,7 +176,7 @@ def dlg_ddhall(manager):
     DialogStateBuilder() \
     .state('DDHALL.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 104') \
         .with_npc_lines() \
-            .line(morte, "Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…", 's103', 'say5052') \
+            .line(morte, "Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…", 's103', 'say5052').with_action(lambda: _init(gsm)) \
             .line(teller, "Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.", 's0', 'say822') \
             .line(teller, "Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.", 's0', 'say822') \
             .line(morte, "И мы *тем более* не должны болтать с больными трухляками.", 's104', 'say5053') \
@@ -233,7 +231,7 @@ def dlg_ddhall(manager):
     DialogStateBuilder() \
     .state('DDHALL.D_s5', '# from - // # Manually checked EXTENDS ~DMORTE~ : 102') \
         .with_npc_lines() \
-            .line(teller, "Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.", 's5', 'say838') \
+            .line(teller, "Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.", 's5', 'say838').with_action(lambda: _init(gsm)) \
             .line(teller, "Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.", 's5', 'say838') \
             .line(teller, "Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.", 's5', 'say838') \
         .with_responses() \
