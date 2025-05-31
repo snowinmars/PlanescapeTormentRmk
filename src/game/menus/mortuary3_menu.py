@@ -25,13 +25,13 @@
             .position(350, 770) \
             .size(20, 20) \
         .option("Пройти в следующую комнату") \
-            .jump("dmorte_one_mortuary_go_3_4_scene") \
+            .jump("dmorte_one_mortuary_go_4_visit") \
             .when(lambda: not gsm.is_visited_location('mortuary4')) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
             .position(960, 320) \
             .size(20, 20) \
-        .option("Пройти в северо-западную комнату") \
+        .option("Пройти в северную комнату") \
             .jump("dmorte_one_mortuary_go_4_visit") \
             .when(lambda: gsm.is_visited_location('mortuary4')) \
             .idle_image("images/graphics_idle.png") \

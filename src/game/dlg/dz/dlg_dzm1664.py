@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    sgm.set_location('mortuary1')
-    renpy.exports.show("bg mortuary1")
+    gsm.set_location('mortuary4')
+    renpy.exports.show("bg mortuary4")
     _show('dzm1664_img default', center_right_down)
 def _dispose():
     _hide('dzm1664_img')
@@ -20,6 +20,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm1664(gsm):
+    gsm.set_dead_dzm1664(True)
 ###
 def _r47003_condition(gsm):
     return not gsm.get_has_dzm1664_page()
@@ -30,7 +32,7 @@ def _r47005_condition(gsm):
 def _r47006_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r47014_action(gsm):
-    gsm.set_pick_dzm1664_page(True)
+    gsm.set_has_dzm1664_page(True)
 ###
 
 # DLG/DZM1664.DLG
@@ -97,4 +99,14 @@ def dlg_dzm1664(manager):
         .with_responses() \
             .response("И как это тебя угораздило стать библиотекарем? Другие места были заняты?", 'DZM1664.D_s1', 'r12', 'reply47022') \
             .response("Оставить зомби в покое.", EXIT, 'r13', 'reply47023').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM1664.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.", 's0', 'say47002').with_action(lambda: _init(gsm)) \
+            .line(teller, "На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.", 's0', 'say47002') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm1664(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)

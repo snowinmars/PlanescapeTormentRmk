@@ -94,7 +94,7 @@ const wellKnownFunctions: string[][] = [
     ['!PartyHasItem("KeyPr")', 'return not gsm.get_has_intro_key()'],
     ['Global("Page_Taken","GLOBAL",0)', 'return not gsm.get_has_dzm1664_page()'],
     ['Global("Page_Taken","GLOBAL",1)', 'return gsm.get_has_dzm1664_page()'],
-    ['SetGlobal("Page_Taken","GLOBAL",1)', 'gsm.set_pick_dzm1664_page(True)'],
+    ['SetGlobal("Page_Taken","GLOBAL",1)', 'gsm.set_has_dzm1664_page(True)'],
     ['Global("Crier_Quest","GLOBAL",1)', 'return gsm.get_crier_quest() == 1'],
     ['Global("Crier_Quest","GLOBAL",2)', 'return gsm.get_crier_quest() == 2'],
     ['Global("Crier_Quest","GLOBAL",3)', 'return gsm.get_crier_quest() == 3'],

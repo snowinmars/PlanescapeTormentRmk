@@ -14,21 +14,23 @@ def dlg_mortuary_walking(manager):
     gsm           = renpy.store.global_settings_manager
     EXIT          = -1
 
-    DialogStateBuilder().state('mortuary_walking_s1', '# from -') \
+    DialogStateBuilder().state('mortuary_walking_1_8_closed', '# from -') \
         .with_npc_lines() \
             .line(teller, "Дверь не поддаётся.", '-', '-') \
         .push(manager)
 
-    DialogStateBuilder().state('mortuary_walking_s2', '# from -') \
+    DialogStateBuilder().state('mortuary_walking_1_up_closed', '# from -') \
         .with_npc_lines() \
             .line(teller, "Дверь не поддаётся.", '-', '-') \
         .push(manager)
 
-    DialogStateBuilder().state('mortuary_walking_s3', '# from -') \
+    DialogStateBuilder().state('mortuary_walking_1_down_closed', '# from -') \
         .with_npc_lines() \
             .line(teller, "Дверь не поддаётся.", '-', '-') \
         .push(manager)
 
-    DialogStateBuilder().state('mortuary_walking_s4', '# from -').with_action(lambda: _visit_mortuary(gsm, '1')).push(manager)
-    DialogStateBuilder().state('mortuary_walking_s5', '# from -').with_action(lambda: _visit_mortuary(gsm, '2')).push(manager)
-    DialogStateBuilder().state('mortuary_walking_s6', '# from -').with_action(lambda: _visit_mortuary(gsm, '3')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_1_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '1')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_2_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '2')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_3_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '3')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_4_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '4')).push(manager)
+    DialogStateBuilder().state('mortuary_walking_5_visit', '# from -').with_action(lambda: _visit_mortuary(gsm, '5')).push(manager)

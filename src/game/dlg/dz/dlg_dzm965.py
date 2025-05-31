@@ -24,6 +24,10 @@ def _hide(sprite):
 def _kill_dzm965(gsm):
     gsm.set_dead_dzm965(True)
 ###
+def _r45093_action(gsm):
+    gsm.update_journal('39477')
+def _r45103_action(gsm):
+    gsm.update_journal('39477')
 def _r34923_condition(gsm):
     return not gsm.once_tracked('zombie_chaotic')
 def _r34923_action(gsm):
@@ -46,12 +50,13 @@ def dlg_dzm965(manager):
 
     # Starts: DZM965.D_s0 DZM965.D_s1 DZM965.D_s99999999_k
     DialogStateBuilder() \
-    .state('DZM965.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 477') \
+    .state('DZM965.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE~ : 477') \
         .with_npc_lines() \
             .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's0', 'say34920').with_action(lambda: _init(gsm)) \
             .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's0', 'say34920') \
+            .line(morte, "Ха. Кажется, кто-то забыл приказать этому бедолаге прекратить следовать правилу трех.", 's477', 'say45088') \
         .with_responses() \
-            .response("(...)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("О чем это ты?", 'DMORTE.D_s478', 'r1061', 'reply45089') \
         .push(manager)
 
     DialogStateBuilder() \
@@ -94,9 +99,46 @@ def dlg_dzm965(manager):
         .with_npc_lines() \
             .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922').with_action(lambda: _init(gsm)) \
             .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
-            .line(teller, "Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «965» на открывшейся кости.", 's0', 'say24575') \
             .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
             .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm965(gsm)) \
         .with_responses() \
             .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DMORTE.D_s478', '# from 477.0')\
+        .with_npc_lines() \
+            .line(morte, "У этих трупов котелок уже почти не варит, так что они могут выполнять не больше одного задания одновременно…", 's478', 'say45091') \
+            .line(morte, "Если приказать им делать что-то, то они будут это делать до тех пор, пока кто-нибудь их не остановит.", 's478', 'say45091') \
+            .line(morte, "Этот бедолага, наверное, закончил свою работу, но сообщить об этом ему забыли.", 's478', 'say45091') \
+        .with_responses() \
+            .response("А кто отдает им приказы?", 'DMORTE.D_s481', 'r1062', 'reply45092') \
+            .response("Ты что-то сказал про 'правило трех'. Что ты имел ввиду?", 'DMORTE.D_s479', 'r1063', 'reply45093').with_action(lambda: _r45093_action(gsm)) \
+            .response("Ладно. Давай двигаться дальше.", EXIT, 'r1064', 'reply45094').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DMORTE.D_s479', '# from 478.1 481.0')\
+        .with_npc_lines() \
+            .line(morte, "А? Ну, правило трех — это один из пресловутых законов планов, согласно которому все на свете случается по трое…", 's479', 'say45095') \
+            .line(morte, "…или состоит из трех частей… или что всегда есть выбор из трех вариантов, ну и так далее.", 's479', 'say45095') \
+        .with_responses() \
+            .response("Ты так говоришь, как будто не очень веришь в это.", 'DMORTE.D_s480', 'r1065', 'reply45096') \
+        .push(manager)
+
+    DialogStateBuilder().state('DMORTE.D_s480', '# from 479.0 // Check EXTENDS ~DZM965~ : 1')\
+        .with_npc_lines() \
+            .line(morte, "По мне, так все это фигня. Если ты возьмешь с потолка число, любое число, и попытаешься к нему приделать великий смысл, то ты всегда найдешь кучу каких-нибудь совпадений.", 's480', 'say45098') \
+        .with_responses() \
+            .response("Понятно. До этого ты говорил о том, что кто-то отдал этому трупу приказ, а потом забыл его остановить. А кто отдает трупам приказы?", 'DMORTE.D_s481', 'r1066', 'reply45099') \
+            .response("Понятно. Я хочу еще намного осмотреть этого зомби…", 'DZM965.D_s1', 'r1067', 'reply45100').with_action(lambda: _dispose()) \
+            .response("Ладно. Давай двигаться дальше.", EXIT, 'r1068', 'reply45101').with_action(lambda: _dispose()) \
+        .push(manager)
+
+    DialogStateBuilder().state('DMORTE.D_s481', '# from 478.0 480.0 // Check EXTENDS ~DZM965~ : 1')\
+        .with_npc_lines() \
+            .line(morte, "Их выписал из книги мертвых либо один из здешних смотрителей, либо какой-то некромант.", 's481', 'say45102') \
+            .line(morte, "Скорее всего, это один из смотрителей… в конце концов, это им нужна дешевая рабочая сила.", 's481', 'say45102') \
+        .with_responses() \
+            .response("Понятно. А что ты там говорил до этого… про 'правило трех'?", 'DMORTE.D_s479', 'r1069', 'reply45103').with_action(lambda: _r45103_action(gsm)) \
+            .response("Понятно. Я хочу еще намного осмотреть этого зомби…", 'DZM965.D_s1', 'r1070', 'reply45104').with_action(lambda: _dispose()) \
+            .response("Ладно. Давай двигаться дальше.", EXIT, 'r1071', 'reply45105').with_action(lambda: _dispose()) \
         .push(manager)

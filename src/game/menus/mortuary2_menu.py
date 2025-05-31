@@ -31,7 +31,7 @@ def build_mortuary2_menu(menu_builder, gsm):
             .hover_image("images/graphics_hover.png") \
             .position(500, 100) \
             .size(20, 20) \
-        .option("Пройти в следующую комнату") \
+        .option("Пройти в северо-западную комнату") \
             .jump("dmorte_one_mortuary_go_3_visit") \
             .when(lambda: gsm.is_visited_location('mortuary3')) \
             .idle_image("images/graphics_idle.png") \
@@ -52,7 +52,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and not gsm.get_meet_dzm965()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(530, 720) \
+            .position(490, 520) \
             .size(20, 20) \
         .option("Атаковать труп «965»") \
             .jump("dmorte_one_kill_dzm965") \
@@ -60,7 +60,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and gsm.get_meet_dzm965()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(530, 720) \
+            .position(490, 520) \
             .size(20, 20) \
         .option("Поговорить с бродящим трупом") \
             .jump("dmorte_one_first_talk_dzm965") \
@@ -68,7 +68,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and not gsm.get_meet_dzm965()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(530, 740) \
+            .position(490, 540) \
             .size(20, 20) \
         .option("Поговорить трупом «965»") \
             .jump("dmorte_one_talk_dzm965") \
@@ -76,7 +76,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and gsm.get_meet_dzm965()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(530, 740) \
+            .position(490, 540) \
             .size(20, 20)
 
     menu_builder \
@@ -86,7 +86,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and not gsm.get_meet_dzf594()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(490, 520) \
+            .position(530, 720) \
             .size(20, 20) \
         .option("Атаковать труп «594»") \
             .jump("dmorte_one_kill_dzf594") \
@@ -94,7 +94,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and gsm.get_meet_dzf594()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(490, 520) \
+            .position(530, 720) \
             .size(20, 20) \
         .option("Поговорить с неуклюжим трупом") \
             .jump("dmorte_one_talk_dzf594") \
@@ -102,7 +102,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and not gsm.get_meet_dzf594()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(490, 540) \
+            .position(530, 740) \
             .size(20, 20) \
         .option("Поговорить трупом «594»") \
             .jump("dmorte_one_talk_dzf594") \
@@ -110,7 +110,7 @@ def build_mortuary2_menu(menu_builder, gsm):
                           and gsm.get_meet_dzf594()) \
             .idle_image("images/graphics_idle.png") \
             .hover_image("images/graphics_hover.png") \
-            .position(490, 540) \
+            .position(530, 740) \
             .size(20, 20)
 
     menu_builder \

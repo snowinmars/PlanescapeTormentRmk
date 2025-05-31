@@ -9,8 +9,8 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('mortuary1')
-    renpy.exports.show("bg mortuary1")
+    gsm.set_location('mortuary5')
+    renpy.exports.show("bg mortuary5")
     _show('dzm985_img default', center_right_down)
 def _dispose():
     _hide('dzm985_img')
@@ -20,6 +20,8 @@ def _show(sprite, start_pos, end_pos = None, duration=0.5):
 def _hide(sprite):
     renpy.exports.hide(sprite)
 ###
+def _kill_dzm985(gsm):
+    gsm.set_dead_dzm985(True)
 ###
 def _r45516_condition(gsm):
     return gsm.get_in_party_morte()
@@ -66,8 +68,7 @@ def dlg_dzm985(manager):
     EXIT          = -1
 
     # Starts: DZM985.D_s0
-    DialogStateBuilder() \
-    .state('DZM985.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE~ : 482') \
+    DialogStateBuilder().state('DZM985.D_s0', '# from - // # Manually checked EXTENDS ~DMORTE~ : 482') \
         .with_npc_lines() \
             .line(teller, "Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.", 's0', 'say45515').with_action(lambda: _init(gsm)) \
             .line(teller, "Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.", 's0', 'say45515') \
@@ -82,8 +83,7 @@ def dlg_dzm985(manager):
             .response("Оставить труп в покое.", EXIT, 'r7', 'reply45523').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM985.D_s1', '# from 0.4 5.0 5.1 5.2') \
+    DialogStateBuilder().state('DZM985.D_s1', '# from 0.4 5.0 5.1 5.2') \
         .with_npc_lines() \
             .line(teller, "Труп самозабвенно смотрит вперед, не подавая никаких признаков того, что он тебя услышал.", 's1', 'say45524') \
         .with_responses() \
@@ -96,8 +96,7 @@ def dlg_dzm985(manager):
             .response("Оставить труп в покое.", EXIT, 'r8', 'reply45525').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM985.D_s2', '# from 0.5 5.3') \
+    DialogStateBuilder().state('DZM985.D_s2', '# from 0.5 5.3') \
         .with_npc_lines() \
             .line(teller, "Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.", 's2', 'say45526') \
         .with_responses() \
@@ -110,8 +109,7 @@ def dlg_dzm985(manager):
             .response("Оставить труп в покое.", EXIT, 'r9', 'reply45527').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM985.D_s3', '# from 0.1 6.0') \
+    DialogStateBuilder().state('DZM985.D_s3', '# from 0.1 6.0') \
         .with_npc_lines() \
             .line(teller, "В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево.", 's3', 'say45528') \
             .line(teller, "Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин.", 's3', 'say45528') \
@@ -124,8 +122,7 @@ def dlg_dzm985(manager):
             .response("Оставить труп в покое.", EXIT, 'r10', '-').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM985.D_s4', '# from 0.2 // # Manually checked EXTENDS ~DMORTE~ : 482') \
+    DialogStateBuilder().state('DZM985.D_s4', '# from 0.2 // # Manually checked EXTENDS ~DMORTE~ : 482') \
         .with_npc_lines() \
             .line(teller, "Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…", 's4', 'say45530') \
             .line(morte, "Э… шеф… осторож…", 's482', 'say45540') \
@@ -133,9 +130,8 @@ def dlg_dzm985(manager):
             .response("Ой-ой…", 'DZM985.D_s3', 'r18', 'reply45539') \
         .push(manager)
 
-    # TODO [snow]: project restore?
-    DialogStateBuilder() \
-    .state('DZM985.D_s5', '# from -') \
+    # TODO [snow]: Is this line from project restore?
+    DialogStateBuilder().state('DZM985.D_s5', '# from -') \
         .with_npc_lines() \
             .line(teller, "Похоже, кто-то заменил этому трупу левую руку и ногу от другого тела. Левая нога короче, чем надо, но теперь, по крайней мере, труп может стоять.", 's5', 'say45531') \
         .with_responses() \
@@ -147,8 +143,7 @@ def dlg_dzm985(manager):
             .response("Оставить труп в покое.", EXIT, 'r17', 'reply45537').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM985.D_s6', '# from 0.3') \
+    DialogStateBuilder().state('DZM985.D_s6', '# from 0.3') \
         .with_npc_lines() \
             .line(teller, "Ты тянешься к левой руке трупа, желая помочь ему устоять.", 's6', 'say45538') \
             .line(teller, "Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…", 's6', 'say45538') \
@@ -156,8 +151,7 @@ def dlg_dzm985(manager):
             .response("Ой-ой…", 'DZM985.D_s3', 'r18', 'reply45539') \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DZM985.D_s7', '# from 3.0') \
+    DialogStateBuilder().state('DZM985.D_s7', '# from 3.0') \
         .with_npc_lines() \
             .line(teller, "Рассматривая гнилые остатки тела, ты замечаешь, левая рука совсем не тронута.", 's7', 'say64205') \
             .line(teller, "Она отвалилась от туловища во время падения, и совсем не похоже, чтобы она была поражена трупным гниением, как это случилось с остальной частью тела.", 's7', 'say64205') \
@@ -165,10 +159,19 @@ def dlg_dzm985(manager):
             .response("Хм-м. Думаю, я смогу найти применение этой руке…", EXIT, 'r19', 'reply64206').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder() \
-    .state('DMORTE.D_s482', '# from - // # Check EXTENDS ~DZM985~ : 3') \
+    DialogStateBuilder().state('DMORTE.D_s482', '# from - // # Check EXTENDS ~DZM985~ : 3') \
         .with_npc_lines() \
             .line(morte, "Э… шеф… осторож…", 's482', 'say45540') \
         .with_responses() \
             .response("Ой-ой…", 'DZM985.D_s3', 'r18', 'reply45539') \
+        .push(manager)
+
+    DialogStateBuilder().state('DZM985.D_s99999999_k', '# from -') \
+        .with_npc_lines() \
+            .line(teller, "Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.", 's1', 'say34922').with_action(lambda: _init(gsm)) \
+            .line(teller, "На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.", 's1', 'say34922') \
+            .line(teller, "Я втыкаю скальпель в один из ходящих трупов. Пустые глаза поворачиваются к вам и несколько секунд недоумённо смотрят в ответ.", '-', '-') \
+            .line(teller, "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает.", '-', '-').with_action(lambda: _kill_dzm985(gsm)) \
+        .with_responses() \
+            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
         .push(manager)
