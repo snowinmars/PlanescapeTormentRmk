@@ -60,8 +60,9 @@ const wellKnownFunctions: string[][] = [
     ['Global("Dhall","GLOBAL",1)', 'return gsm.get_meet_dhall()'],
     ['GlobalGT("Dhall","GLOBAL",0)', 'return gsm.get_meet_dhall()'],
     ['Global("Mortuary_Alert","GLOBAL",0)', 'return not gsm.get_alarmed()'],
-    ['Global("Mortuary_Alert","GLOBAL",1)', 'return gsm.get_alarmed()'],
-    ['GlobalGT("Mortuary_Alert","GLOBAL",0)', 'return gsm.get_alarmed()'],
+    ['SetGlobal("Mortuary_Alert","GLOBAL",1)', 'gsm.set_mortualy_alarmed(True)'],
+    ['Global("Mortuary_Alert","GLOBAL",1)', 'return gsm.get_mortualy_alarmed()'],
+    ['GlobalGT("Mortuary_Alert","GLOBAL",0)', 'return gsm.get_mortualy_alarmed()'],
     ['Global("Escape_Mortuary","GLOBAL",0)', 'return not gsm.get_escape_mortuary()'],
     ['Global("AR0200_Visited","GLOBAL",0)', 'return not gsm.get_visited_ar0200()'],
     ['SetGlobal("Morte","GLOBAL",1)', 'gsm.set_in_party_morte(True)'],
@@ -114,6 +115,28 @@ const wellKnownFunctions: string[][] = [
     ['Global("Morte_Quip","GLOBAL",0)', 'return not gsm.get_morte_quip()'],
     ['Global("Morte_Quip","GLOBAL",1)', 'return gsm.get_morte_quip()'],
     ['SetGlobal("Morte_Quip","GLOBAL",1)', 'gsm.set_morte_quip(True)'],
+    ['SetGlobal("EiVene","GLOBAL",1)', 'gsm.set_meet_eivene(True)'],
+    ['Global("EiVene","GLOBAL",1)', 'return gsm.get_meet_eivene(True)'],
+    ['Global("EiVene","GLOBAL",0)', 'return not gsm.get_meet_eivene(True)'],
+    ['PartyHasItem("Embalm")', 'return gsm.get_has_embalm()'],
+    ['PartyHasItem("Needle")', 'return gsm.get_has_needle()'],
+    ['SetGlobal("EiVene_Delivery","GLOBAL",1)', 'gsm.set_eivene_delivery(True)'],
+    ['Global("EiVene_Delivery","GLOBAL",1)', 'return gsm.get_eivene_delivery()'],
+    ['Global("EiVene_Delivery","GLOBAL",0)', 'return not gsm.get_eivene_delivery()'],
+    ['SetGlobal("Ravel_EiVene","GLOBAL",1)', 'gsm.set_ravel_eivene(True)'],
+    ['Global("Ravel_EiVene","GLOBAL",1)', 'return gsm.get_ravel_eivene()'],
+    ['Global("Ravel_EiVene","GLOBAL",0)', 'return not gsm.get_ravel_eivene()'],
+    ['Global("Embalm_Key_Quest","GLOBAL",0)', 'return gsm.get_embalm_key_quest() == 0'],
+    ['Global("Embalm_Key_Quest","GLOBAL",1)', 'return gsm.get_embalm_key_quest() == 1'],
+    ['Global("Embalm_Key_Quest","GLOBAL",2)', 'return gsm.get_embalm_key_quest() == 2'],
+    ['SetGlobal("Embalm_Key_Quest","GLOBAL",1)', 'gsm.set_embalm_key_quest(1)'],
+    ['SetGlobal("Embalm_Key_Quest","GLOBAL",2)', 'gsm.set_embalm_key_quest(2)'],
+    ['HasItem("KeyEm","EiVene")', 'return gsm.get_has_keyem()'],
+    ['!HasItem("KeyEm","EiVene")', 'return not gsm.get_has_keyem()'],
+    ['GiveItem("KeyEm",Protagonist)', 'gsm.set_has_keyem(True)'],
+    ['SetGlobal("42_Secret","GLOBAL",1)', 'gsm.set_42_Secret(True)'],
+    ['Global("42_Secret","GLOBAL",1)', 'return gsm.get_42_Secret()'],
+    ['Global("42_Secret","GLOBAL",0)', 'return not gsm.get_42_Secret()'],
 ].sort((lhs, rhs) => rhs[0].length - lhs[0].length) // from longest to shortest
 
 const pasteAligment = (body: string): string => {
@@ -220,7 +243,7 @@ export const serializeStates = (states: State[], statePrefix: string): string =>
             } else {
                 builder += `')`
             }
-            builder += `\\\n    .with_npc_lines() \\\n`;
+            builder += ` \\\n    .with_npc_lines() \\\n`;
             builder += `        .line(SPEAKER, "${trimTrahs(state.stateBody)}", 's${state.stateId}', 'say${state.sayId}') \\\n`;
             builder += '    .with_responses() \\\n'
 

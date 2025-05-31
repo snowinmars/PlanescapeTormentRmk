@@ -84,6 +84,7 @@ def build_npc_dead_or_alive_settings(manager):
         'asonje',
         'crispy',
         'death_of_names',
+        'eivene',
     ]
 
     for npc in npcs:
@@ -121,7 +122,7 @@ def build_other_settings(manager):
         .register('mortuary_walkthrough', 0) \
         .register('morte_mortuary_walkthrough_1', False) \
         .register('morte_mortuary_walkthrough_2', False) \
-        .register('alarmed', False) \
+        .register('mortualy_alarmed', False) \
         .register('vaxis_lawful', False) \
         .register('vaxis_left', False) \
         .register('vaxis_betrayed', False) \
@@ -136,7 +137,13 @@ def build_other_settings(manager):
         .register('has_1201_note', False) \
         .register('has_dzm1664_page', False) \
         .register('has_bandages', False) \
-        .register('morte_quip', False)
+        .register('morte_quip', False) \
+        .register('has_embalm', False) \
+        .register('eivene_delivery', False) \
+        .register('ravel_eivene', False) \
+        .register('embalm_key_quest', False) \
+        .register('has_keyem', False) \
+        .register('42_Secret', False)
 
 
 def build_all_settings(manager):

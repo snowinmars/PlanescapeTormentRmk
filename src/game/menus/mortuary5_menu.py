@@ -46,6 +46,40 @@ def build_mortuary5_menu(menu_builder, gsm):
             .size(20, 20)
 
     menu_builder \
+        .option("Атаковать хрупкую девушку") \
+            .jump("dmorte_one_kill_first_eivene") \
+            .when(lambda: not gsm.get_dead_eivene() \
+                          and not gsm.get_meet_eivene()) \
+            .idle_image("images/graphics_idle.png") \
+            .hover_image("images/graphics_hover.png") \
+            .position(1000, 530) \
+            .size(20, 20) \
+        .option("Атаковать Эи-Вейн") \
+            .jump("dmorte_one_kill_eivene") \
+            .when(lambda: not gsm.get_dead_eivene() \
+                          and gsm.get_meet_eivene()) \
+            .idle_image("images/graphics_idle.png") \
+            .hover_image("images/graphics_hover.png") \
+            .position(1000, 530) \
+            .size(20, 20) \
+        .option("Поговорить с хрупкой девушкой") \
+            .jump("dmorte_one_talk_first_eivene") \
+            .when(lambda: not gsm.get_dead_eivene() \
+                          and not gsm.get_meet_eivene()) \
+            .idle_image("images/graphics_idle.png") \
+            .hover_image("images/graphics_hover.png") \
+            .position(1000, 550) \
+            .size(20, 20) \
+        .option("Поговорить с Эи-Вейн") \
+            .jump("dmorte_one_talk_eivene") \
+            .when(lambda: not gsm.get_dead_eivene() \
+                          and gsm.get_meet_eivene()) \
+            .idle_image("images/graphics_idle.png") \
+            .hover_image("images/graphics_hover.png") \
+            .position(1000, 550) \
+            .size(20, 20)
+
+    menu_builder \
         .option("Атаковать косой труп") \
             .jump("dmorte_one_kill_dzm257") \
             .when(lambda: not gsm.get_dead_dzm257() \
