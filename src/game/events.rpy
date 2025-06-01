@@ -1,5 +1,5 @@
 screen event_manager_display(position=(0, 0.22), width=0.2, height=0.2, categories=None):
-    zorder 100
+    zorder 101
     style_prefix "event_manager"
 
     # Calculate positions

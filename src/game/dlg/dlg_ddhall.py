@@ -9,7 +9,9 @@ from engine.transforms import (
 
 ###
 def _init(gsm):
-    gsm.set_location('ddhall')
+    gsm.set_location('mortuary3')
+    _show('morte_img default',  center_left_down)
+    _show('dhall_img default', center_right_down)
 def _dispose():
     _hide('dhall_img')
     _hide('morte_img')
@@ -21,12 +23,6 @@ def _hide(sprite):
 ###
 def _kill_dhall(gsm):
     gsm.set_dead_dhall(True)
-# def _s825_action(gsm):
-#     _show('dhall_img default', center_right_down)
-#     gsm.set_meet_dhall(True)
-# def _s838_action(gsm):
-#     _show('dhall_img default', center_right_down)
-#     gsm.set_meet_dhall(True)
 ###
 def _r5070_condition(gsm):
     return not gsm.get_meet_deionarra()
@@ -244,7 +240,7 @@ def dlg_ddhall(manager):
     DialogStateBuilder() \
     .state('DMORTE.D_s102', '# from DDHALL.D_s5') \
         .with_npc_lines() \
-            .line(morte, "Эй, шеф! Ты что творишь?!", 's102', 'say5049').with_action(lambda: _show('morte_img default',  center_left_down)) \
+            .line(morte, "Эй, шеф! Ты что творишь?!", 's102', 'say5049') \
         .with_responses() \
             .response("Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда.", 'DDHALL.D_s0', 'r276', 'reply5050') \
         .push(manager)
@@ -267,7 +263,7 @@ def dlg_ddhall(manager):
     .state('DDHALL.D_s7', '# from 5.1') \
         .with_npc_lines() \
             .line(teller, "Писарь прекращает вести записи в стоящую перед ним книгу и оглядывается. Его глаза похожи на два гвоздя, забитые в его череп.", 's7', 'say844') \
-            .line(dhall_unknown, "Итак…", 's7', 'say844').with_action(lambda: _show('dhall_img default', center_right_down)) \
+            .line(dhall_unknown, "Итак…", 's7', 'say844').with_action(lambda: _init()) \
             .line(teller, "Его голос уставший, как будто он повторял это уже много раз.", 's7', 'say844') \
             .line(dhall_unknown, "Ты пробудился ото сна и вернулся в свои грезы.", 's7', 'say844') \
             .line(teller, "Он продолжает более уважительным голосом.", 's7', 'say844') \
@@ -691,7 +687,7 @@ def dlg_ddhall(manager):
     DialogStateBuilder() \
     .state('DDHALL.D_s40', '# from -') \
         .with_npc_lines() \
-            .line(teller, "Дхолл мельком смотрит на тебя.", 's40', 'say978').with_action(lambda: _show('dhall_img default', center_right_down)) \
+            .line(teller, "Дхолл мельком смотрит на тебя.", 's40', 'say978').with_action(lambda: _init()) \
             .line(dhall, "Итак. Ты вернулся…", 's40', 'say978') \
             .line(teller, "Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает говорить.", 's40', 'say978') \
             .line(dhall, "…приветствую тебя снова, Неугомонный.", 's40', 'say978') \

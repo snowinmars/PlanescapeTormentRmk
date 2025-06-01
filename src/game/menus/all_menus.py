@@ -9,10 +9,17 @@ from engine.menu import (MenuBuilder)
 
 
 def build_all_menus(menu_manager, gsm):
-    build_mortuary1_menu(MenuBuilder('mortuary1'), gsm).done(menu_manager)
-    build_mortuary2_menu(MenuBuilder('mortuary2'), gsm).done(menu_manager)
-    build_mortuary3_menu(MenuBuilder('mortuary3'), gsm).done(menu_manager)
-    build_mortuary4_menu(MenuBuilder('mortuary4'), gsm).done(menu_manager)
-    build_mortuary5_menu(MenuBuilder('mortuary5'), gsm).done(menu_manager)
-    build_mortuary6_menu(MenuBuilder('mortuary6'), gsm).done(menu_manager)
-    build_mortuary7_menu(MenuBuilder('mortuary7'), gsm).done(menu_manager)
+    for builder in build_mortuary1_menu('mortuary1', gsm):
+        builder.done(menu_manager)
+    for builder in build_mortuary2_menu('mortuary2', gsm):
+        builder.done(menu_manager)
+    for builder in build_mortuary3_menu('mortuary3', gsm):
+        builder.done(menu_manager)
+    for builder in build_mortuary4_menu('mortuary4', gsm):
+        builder.done(menu_manager)
+    for builder in build_mortuary5_menu('mortuary5', gsm):
+        builder.done(menu_manager)
+    for builder in build_mortuary6_menu('mortuary6', gsm):
+        builder.done(menu_manager)
+    for builder in build_mortuary7_menu('mortuary7', gsm):
+        builder.done(menu_manager)

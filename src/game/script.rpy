@@ -153,11 +153,13 @@ init 3 python:
     from engine.settings import (SettingsManager)
     from engine.events import (EventManager)
     from engine.history import (HistoryManager)
+    from engine.inventory import (InventoryManager)
     from engine.label_flow import (LabelFlowBuilder, LabelFlowManager)
     from labels.all_labels import (build_all_labels)
     from menus.all_menus import (build_all_menus)
     from dlg.all_dlgs import (build_all_dlgs)
     from setting.all_settings import (build_all_settings)
+    from setting.all_inventory import (build_all_inventory)
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
@@ -167,6 +169,7 @@ init 3 python:
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_dialog_manager = DialogManager()
     renpy.store.global_history_manager = HistoryManager()
+    renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
     devlog = logging.getLogger('log')
 
@@ -174,6 +177,11 @@ init 3 python:
     devlog.info('Building settings manager...')
     build_all_settings(renpy.store.global_settings_manager)
     devlog.info('Done building settings manager, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building inventory manager...')
+    build_all_inventory(renpy.store.global_inventory_manager)
+    devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
 
     devlog.info('Building label flow...')
     now = int(time.time())
@@ -192,20 +200,23 @@ init 3 python:
     build_all_dlgs(renpy.store.global_dialog_manager)
     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
 
-    # on "show" action If(renpy.get_screen("custom_history"), true=Hide("custom_history"))
-    # mousewheel:
-    #     action Show("custom_history")
     config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
     config.underlay.append(
         renpy.Keymap(
             show_custom_history = Show("custom_history")
         )
     )
-    config.keymap['hide_windows'].append('HIDE_custom_history')
-    config.keymap['HIDE_custom_history'] = ['K_ESCAPE', 'mouseup_3']
+    config.keymap['HIDE_custom_screens'] = ['K_ESCAPE', 'mouseup_3']
+    config.keymap['hide_windows'].append('HIDE_custom_screens')
     config.underlay.append(
         renpy.Keymap(
-            HIDE_custom_history = [Hide("custom_history"), Hide("history")]
+            HIDE_custom_screens = [Hide("custom_history"), Hide("history"), Hide("inventory_screen"), Return(-1)]
+        )
+    )
+    config.keymap['show_inventory'] = ['i']
+    config.underlay.append(
+        renpy.Keymap(
+            show_inventory = Show("inventory_screen")
         )
     )
 
@@ -213,6 +224,7 @@ init 3 python:
 label start:
     show screen event_manager_display
     show screen mouse_coordinates
+    show screen inventory_button
     menu:
         "dev":
             $ current_dialog_key = "dev"

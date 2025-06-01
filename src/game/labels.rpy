@@ -52,7 +52,7 @@ label mortuary_dialog_loop:
 
     call screen dialog_choices(responses)
     $ response_id = _return
-    if response_id == -17:  # custom_history_response
+    if response_id < 0:
         jump mortuary_dialog_loop
 
     $ next_state = renpy.store.global_dialog_manager.choose_response(response_id)
@@ -67,12 +67,16 @@ label mortuary_dialog_loop:
 
 label show_graphics_menu:
     $ available_options = renpy.store.global_menu_manager.get_available_graphic_options(renpy.store.global_settings_manager.get_location())
+    $ available_static = renpy.store.global_menu_manager.get_available_static_graphic(renpy.store.global_settings_manager.get_location())
     $ background = renpy.store.global_menu_manager.get_background(renpy.store.global_settings_manager.get_location())
     # call screen decision_choices(available_options)
-    $ renpy.call_screen("image_based_menu", options=available_options, background=background)
+    $ renpy.call_screen("image_based_menu", options=available_options, static=available_static, background=background)
 
 
 label dialog_dispatcher:
+    if current_dialog_key is None:
+        jump mortuary_dialog_loop
+
     if current_dialog_key not in renpy.store.global_label_registry.registry:
         $ renpy.exports.say('snowinmars', f'AAA, {current_dialog_key} is not in the global_label_registry')
         $ raise Exception(f'AAA, {current_dialog_key} is not in the global_label_registry')
