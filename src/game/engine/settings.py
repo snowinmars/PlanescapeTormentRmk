@@ -37,6 +37,9 @@ class SettingsManager:
     def get_location(self):
         return self._registry['location']
 
+    def get_setting_value(self, setting_id):
+        return self._registry[setting_id]
+
     def is_visited_location(self, location_id):
         return location_id in self._registry['visited_locations']
 

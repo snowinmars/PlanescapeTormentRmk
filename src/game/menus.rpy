@@ -6,12 +6,12 @@
     linear 0.5 alpha 0.5
     repeat
 
-screen image_based_menu(options, background, tooltip_style={}):
+screen image_based_menu(options, static, background, tooltip_style={}):
     default tt = Tooltip("")
     add background
+    zorder 100
 
-    for opt in filter(lambda opt: hasattr(opt, 'idle_image') and opt.idle_image is not None, options):
-        # Interactive options
+    for opt in options:
         imagebutton:
             idle opt.idle_image
             hover opt.hover_image or Transform(opt.idle_image, matrixcolor=BrightnessMatrix(0.2))
@@ -19,21 +19,16 @@ screen image_based_menu(options, background, tooltip_style={}):
             xpos opt.xpos
             ypos opt.ypos
             action [
-                SetVariable("current_dialog_key", opt.label_id),
+                SetVariable("current_dialog_key", opt.get_label_id()),
                 Jump("dialog_dispatcher")
             ]
-            hovered tt.Action(opt.tooltip or opt.title)
+            hovered tt.Action(opt.get_tooltip() or opt.get_title())
             unhovered tt.Action("")
 
-    vbox:
-        align (0.5, 0.5)
-        spacing 10
-        for opt in filter(lambda opt: not hasattr(opt, 'idle_image') or opt.idle_image is None, options):
-            # Fallback text menu for debugging
-                textbutton opt.title action [
-                        SetVariable("current_dialog_key", opt.label_id),
-                        Jump("dialog_dispatcher")
-                    ]
+    for opt in static:
+        add opt.image:
+            xpos opt.xpos
+            ypos opt.ypos
 
     if tt.value:
         text tt.value:

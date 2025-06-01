@@ -5,5 +5,5 @@ def build_dev_label_flow(label_builder, gsm):
 
     label_builder \
         .start_with("dev") \
-            .say("mortuary_walking_6_visit") \
+            .say("DMORTE1.D_s23") \
             .end_with("mortuary_dialog_loop")

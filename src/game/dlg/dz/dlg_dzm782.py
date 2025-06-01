@@ -23,6 +23,8 @@ def _hide(sprite):
 ###
 def _has_no_key(gsm):
     return not gsm.get_has_intro_key()
+def _has_key(gsm):
+    return gsm.get_has_intro_key()
 def _kill_dzm782(gsm):
     gsm.set_dead_dzm782(True)
 ###
@@ -119,6 +121,6 @@ def dlg_dzm782(manager):
             .line(teller, "Некоторое время я смотрю в ненавидящие меня глаза, пока не понимаю, что эта эмоция обращена не ко мне. Это застывшая маска, которую труп не в состоянии изменить.", '-', '-') \
             .line(teller, "В его ненавидящих глазах поселилась пустота. В них нет ни жизни, ни разума. Я без сожалений расширяю дом для пустоты.", '-', '-').with_action(lambda: _kill_dzm782(gsm)) \
         .with_responses() \
-            .response("(…)", EXIT, '-', '-').with_action(lambda: _dispose()) \
+            .response("(…)", EXIT, '-', '-').with_condition(lambda: _has_key(gsm)).with_action(lambda: _dispose()) \
             .response("(…)", 'DMORTE1.D_s24', '-', '-').with_condition(lambda: _has_no_key(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
