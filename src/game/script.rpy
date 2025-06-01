@@ -227,7 +227,7 @@ label start:
     show screen inventory_button
     menu:
         "dev":
-            $ current_dialog_key = "dev"
+            $ renpy.store.global_dialog_key = "dev"
             jump dialog_dispatcher
         "start_":
             $ l1 = "Я прихожу в себя в тусклом помещении."
@@ -244,7 +244,7 @@ label start:
             $ renpy.exports.say(teller, l4)
             $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l4)
 
-            $ current_dialog_key = "dmorte_one_introducing"
+            $ renpy.store.global_dialog_key = "dmorte_one_introducing"
             jump dialog_dispatcher
 
 

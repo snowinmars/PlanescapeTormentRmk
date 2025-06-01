@@ -33,7 +33,7 @@ screen decision_choices(available_options):
         for item in available_options:
             textbutton item.title:
                 action [
-                    SetVariable("current_dialog_key", item.label_id),
+                    SetVariable("renpy.store.global_dialog_key", item.label_id),
                     Jump("dialog_dispatcher")
                 ]
                 style "choice_button"
@@ -74,15 +74,15 @@ label show_graphics_menu:
 
 
 label dialog_dispatcher:
-    if current_dialog_key is None:
+    if renpy.store.global_dialog_key is None:
         jump mortuary_dialog_loop
 
-    if current_dialog_key not in renpy.store.global_label_registry.registry:
-        $ renpy.exports.say('snowinmars', f'AAA, {current_dialog_key} is not in the global_label_registry')
-        $ raise Exception(f'AAA, {current_dialog_key} is not in the global_label_registry')
+    if renpy.store.global_dialog_key not in renpy.store.global_label_registry.registry:
+        $ renpy.exports.say('snowinmars', f'AAA, {renpy.store.global_dialog_key} is not in the global_label_registry')
+        $ raise Exception(f'AAA, {renpy.store.global_dialog_key} is not in the global_label_registry')
 
-    $ initial_state = renpy.store.global_label_registry.registry[current_dialog_key]
+    $ initial_state = renpy.store.global_label_registry.registry[renpy.store.global_dialog_key]
     $ npc_lines = renpy.store.global_dialog_manager.start_dialog(initial_state)
     $ renpy.store.global_dialog_manager.pronounce(npc_lines)
-    $ current_dialog_key = None
+    $ renpy.store.global_dialog_key = None
     jump mortuary_dialog_loop

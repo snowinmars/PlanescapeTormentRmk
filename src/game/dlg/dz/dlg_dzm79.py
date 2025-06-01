@@ -33,11 +33,11 @@ def _r34947_condition(gsm):
 def _r34948_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r64279_condition(gsm):
-    return not gsm.get_has_copper_earring()
+    return not gsm.get_has_copper_earring_closed()
 def _r64279_action(gsm):
     gsm.update_journal('64536')
 def _r64280_condition(gsm):
-    return gsm.get_has_copper_earring()
+    return gsm.get_has_copper_earring_closed()
 def _r64280_action(gsm):
     gsm.update_journal('64537')
 ###

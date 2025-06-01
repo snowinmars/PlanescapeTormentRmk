@@ -5,7 +5,9 @@ def build_mortuary_label_flow(label_builder):
         .start_with("dmorte_one_talk_morte").say('DMORTE1.D_s30').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_one_kill_morte").say('DMORTE1.D_s99999999_k').end_with('mortuary_dialog_loop') \
         .start_with("dmorte_two_talk_morte").say('DMORTE2.D_s12').end_with('mortuary_dialog_loop') \
-        .start_with("dmorte_one_has_embalm").say('DVAXIS.D_s99999999_e').end_with('mortuary_dialog_loop')
+        .start_with("dmorte_one_has_embalm").say('DVAXIS.D_s99999999_e').end_with('mortuary_dialog_loop') \
+        .start_with('dmorte_one_copearc').say('COPEARC.D_s0').end_with('mortuary_dialog_loop') \
+        .start_with('dmorte_one_1201_note').say('DN1201.D_s0').end_with('mortuary_dialog_loop')
 
     label_builder \
         .start_with("dmorte_two_meet_dhall").say('DDHALL.D_s5').end_with('mortuary_dialog_loop') \

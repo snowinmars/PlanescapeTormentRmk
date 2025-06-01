@@ -19,7 +19,7 @@ screen image_based_menu(options, static, background, tooltip_style={}):
             xpos opt.xpos
             ypos opt.ypos
             action [
-                SetVariable("current_dialog_key", opt.get_label_id()),
+                SetVariable("renpy.store.global_dialog_key", opt.get_label_id()),
                 Jump("dialog_dispatcher")
             ]
             hovered tt.Action(opt.get_tooltip() or opt.get_title())
