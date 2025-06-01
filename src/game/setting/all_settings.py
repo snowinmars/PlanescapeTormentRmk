@@ -126,11 +126,12 @@ def build_other_settings(manager):
         .register('mortualy_alarmed', False) \
         .register('saw_dhall', False) \
         .register('know_copper_earring_secret', False) \
-        .register('has_copper_earring', False) \
+        .register('has_copper_earring_closed', False) \
+        .register('has_copper_earring_opened', False) \
         .register('has_506_thread', False) \
         .register('has_scalpel', False) \
         .register('has_needle', 0) \
-        .register('has_1201_note', False) \
+        .register('has_1201_note', 0) \
         .register('has_dzm1664_page', False) \
         .register('has_bandages', False) \
         .register('morte_quip', False) \
@@ -156,8 +157,13 @@ def build_other_settings(manager):
         .register('bonechrm', False) \
         .register('vaxis_exposes_soego', False) \
         .register('vaxis_exposed', False) \
-        .register('vaxis_aggressive', False)
-
+        .register('vaxis_aggressive', False) \
+        .register('ur_1201', False) \
+        .register('lr_1201', False) \
+        .register('ll_1201', False) \
+        .register('ul_1201', False) \
+        .register('tearring', False) \
+        .register('1201_note_quest', 0)
 
 def build_all_settings(manager):
     build_dz_settings(manager)

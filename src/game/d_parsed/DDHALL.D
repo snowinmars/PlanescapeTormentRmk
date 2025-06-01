@@ -37,7 +37,7 @@ def _r843_action(gsm):
 def _r5062_condition(gsm):
     return not gsm.get_meet_dhall()
 def _r854_condition(gsm):
-    return gsm.get_meet_vaxis() return not gsm.get_dead_vaxis() return not gsm.get_vaxis_left() return not gsm.get_vaxis_betrayed()
+    return gsm.get_meet_vaxis() return not gsm.get_dead_vaxis() return not gsm.get_vaxis_leave() return not gsm.get_vaxis_betrayed()
 def _r858_condition(gsm):
     return not gsm.get_escape_mortuary() return not gsm.get_visited_ar0200()
 def _r5069_action(gsm):

@@ -1,8 +1,8 @@
 screen inventory_button():
     imagebutton:
         align (0.95, 0.05)
-        idle "images/inventory.png"
-        hover "images/inventory.png"
+        idle "images/icons/inventory.png"
+        hover "images/icons/inventory.png"
         action ShowMenu("inventory_screen")
 
 style inventory_description:
@@ -10,7 +10,22 @@ style inventory_description:
     size 16
     layout "tex"
 
+style inventory_name:
+    font gui.text_font
+    size 20
+    xalign 0.5
+
 screen inventory_screen():
+    python:
+        class UseItemAction(Action):
+            def __init__(self, item):
+                self.item = item
+
+            def __call__(self):
+                if self.item.use_action:
+                    self.item.use_action()
+                    # renpy.restart_interaction()
+
     modal True
     zorder 101
 
@@ -45,20 +60,32 @@ screen inventory_screen():
 
             vbox:
                 xsize 600
-                label "Описание" xalign 0.5
+                if renpy.store.global_inventory_manager.selected_item:
+                    label renpy.store.global_inventory_manager.selected_item.name:
+                        style "inventory_name"
 
-                frame:
-                    background Solid("#222")
+                viewport:
                     xfill True
                     yfill True
-                    padding (20, 20)
+                    mousewheel True
+                    scrollbars "vertical"
 
                     if renpy.store.global_inventory_manager.selected_item:
                         vbox:
+                            # background Solid("#222")
+                            # padding (20, 20)
                             spacing 30
                             add renpy.store.global_inventory_manager.selected_item.detail_image xalign 0.5
                             text renpy.store.global_inventory_manager.selected_item.description:
                                 style "inventory_description"
+
+                            if renpy.store.global_inventory_manager.selected_item.use_action:
+                                textbutton "Использовать":
+                                    action UseItemAction(renpy.store.global_inventory_manager.selected_item)
+                                    xalign 0.5
+                                    ypadding 10
+                                    xpadding 30
+                                    margin (0, 30, 0, 0)
                     else:
                         text "Select an item" xalign 0.5 yalign 0.5
 

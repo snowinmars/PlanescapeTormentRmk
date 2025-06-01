@@ -205,9 +205,9 @@ def _r4457_condition(gsm):
 def _r4457_action(gsm):
     DO ~gsm.dec_once_good('evil_vaxis_1') ~
 def _r4469_condition(gsm):
-    return not gsm.get_vaxis_left()
+    return not gsm.get_vaxis_leave()
 def _r4469_action(gsm):
-    DO ~gsm.set_vaxis_leave(True) gsm.set_has_bandage(True) gsm.set_has_bandage(True) gsm.set_has_bandage(True) gsm.set_has_embalm(True) gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0) AddexperienceParty(500) ~ gsm.update_journal('64517')    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
+    DO ~gsm.set_vaxis_leave(True) gsm.set_has_bandages(True) gsm.set_has_bandages(True) gsm.set_has_bandages(True) gsm.set_has_embalm(True) gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0) AddexperienceParty(500) ~ gsm.update_journal('64517')    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
 def _r4474_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4474_action(gsm):
@@ -271,21 +271,21 @@ def _r4502_condition(gsm):
 def _r4502_action(gsm):
     DO ~ gsm.set_has_keyem(False) gsm.set_vaxis_has_keyem(True) ~
 def _r64520_condition(gsm):
-    return gsm.get_meet_eivene(True)
+    return gsm.get_meet_eivene()
 def _r64520_action(gsm):
     gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
 def _r4503_condition(gsm):
-    return not gsm.get_meet_eivene(True)
+    return not gsm.get_meet_eivene()
 def _r4503_action(gsm):
     gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
 def _r4504_action(gsm):
     DO ~gsm.dec_once_law('chaotic_vaxis_6') ~
 def _r4506_condition(gsm):
-    return gsm.get_meet_eivene(True)
+    return gsm.get_meet_eivene()
 def _r4506_action(gsm):
     gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
 def _r66150_condition(gsm):
-    return not gsm.get_meet_eivene(True)
+    return not gsm.get_meet_eivene()
 def _r66150_action(gsm):
     gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
 def _r4508_condition(gsm):
@@ -317,9 +317,9 @@ def _r4524_condition(gsm):
 def _r4525_condition(gsm):
     return gsm.get_vaxis_help()
 def _r4526_condition(gsm):
-    return gsm.get_vaxis_zombie_disguise() == 1 return not gsm.appearance()
+    return gsm.get_vaxis_zombie_disguise() == 1 return not gsm.get_appearance()
 def _r4527_condition(gsm):
-    return gsm.get_vaxis_zombie_disguise() == 2 return not gsm.appearance()
+    return gsm.get_vaxis_zombie_disguise() == 2 return not gsm.get_appearance()
 def _r4528_condition(gsm):
     return gsm.get_vaxis_orders()
 def _r4673_condition(gsm):
@@ -393,9 +393,9 @@ def _r4599_condition(gsm):
 def _r4600_condition(gsm):
     return gsm.get_embalm_key_quest() > 0
 def _r4604_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',12,'int') return not gsm.appearance()
+    return gsm.check_char_prop_gt('protagonist',12,'int') return not gsm.get_appearance()
 def _r4609_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',12,'int') return not gsm.appearance()
+    return gsm.check_char_prop_gt('protagonist',12,'int') return not gsm.get_appearance()
 def _r4610_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',10,'chr')
 def _r4611_condition(gsm):
@@ -405,7 +405,7 @@ def _r4612_condition(gsm):
 def _r4613_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',9,'chr')
 def _r4615_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',12,'int') return not gsm.appearance()
+    return gsm.check_char_prop_gt('protagonist',12,'int') return not gsm.get_appearance()
 def _r4616_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',13,'chr')
 def _r4617_condition(gsm):
