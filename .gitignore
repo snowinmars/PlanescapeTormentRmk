@@ -1,9 +1,13 @@
 src/game/d_raw/*
+!src/game/d_raw/COPEARC.D
 !src/game/d_raw/DDEATHON.D
 !src/game/d_raw/DDHALL.D
 !src/game/d_raw/DMORTE.D
 !src/game/d_raw/DMORTE1.D
 !src/game/d_raw/DMORTE2.D
+!src/game/d_raw/DEIVENE.D
+!src/game/d_raw/DN1201.D
+!src/game/d_raw/DVAXIS.D
 !src/game/d_raw/DZM1041.D
 !src/game/d_raw/DZM1094.D
 !src/game/d_raw/DZM1146.D
