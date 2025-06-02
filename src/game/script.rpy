@@ -56,95 +56,6 @@ init 2 python:
     renpy.add_python_directory('labels')
     renpy.add_python_directory('settings')
 
-    renpy.store.characters = {
-        'the_nameless_one': the_nameless_one,
-        'teller':           teller,
-        'morte_unknown':    morte_unknown,
-        'morte':            morte,
-        'scares':           scares,
-        'death_names':      death_names,
-        'dhall':            dhall,
-        'dhall_unknown':    dhall_unknown,
-        'bei':              bei,
-        'asonje':           asonje,
-        'eivene':           eivene,
-        'eivene_unknown':   eivene_unknown,
-        'vaxis':            vaxis,
-        'vaxis_unknown':    vaxis_unknown,
-        'dzm79':   dzm79,
-        'dzm199':  dzm199,
-        'dzm257':  dzm257,
-        'dzm310':  dzm310,
-        'dzm396':  dzm396,
-        'dzm463':  dzm463,
-        'dzm475':  dzm475,
-        'dzm506':  dzm506,
-        'dzm569':  dzm569,
-        'dzm613':  dzm613,
-        'dzm732':  dzm732,
-        'dzm782':  dzm782,
-        'dzm825':  dzm825,
-        'dzm965':  dzm965,
-        'dzm985':  dzm985,
-        'dzm1041': dzm1041,
-        'dzm1094': dzm1094,
-        'dzm1146': dzm1146,
-        'dzm1201': dzm1201,
-        'dzm1445': dzm1445,
-        'dzm1508': dzm1508,
-        'dzm1664': dzm1664,
-        'dzf114' : dzf114,
-        'dzf444' : dzf444,
-        'dzf594' : dzf594,
-        'dzf626' : dzf626,
-        'dzf679' : dzf679,
-        'dzf832' : dzf832,
-        'dzf891' : dzf891,
-        'dzf916' : dzf916,
-        'dzf1072': dzf1072,
-        'dzf1096': dzf1096,
-        'dzf1148': dzf1148,
-    }
-
-    renpy.store.character_reactions = {
-        'morte_img default':   'morte_img default',
-        'dhall_img default':   'dhall_img default',
-        'eivene_img default':  'eivene_img default',
-        'vaxis_img default':   'vaxis_img default',
-        'dzm79_img default':   'dzm79_img default',
-        'dzm199_img default':  'dzm199_img default',
-        'dzm257_img default':  'dzm257_img default',
-        'dzm310_img default':  'dzm310_img default',
-        'dzm396_img default':  'dzm396_img default',
-        'dzm463_img default':  'dzm463_img default',
-        'dzm475_img default':  'dzm475_img default',
-        'dzm506_img default':  'dzm506_img default',
-        'dzm569_img default':  'dzm569_img default',
-        'dzm613_img default':  'dzm613_img default',
-        'dzm732_img default':  'dzm732_img default',
-        'dzm782_img default':  'dzm782_img default',
-        'dzm825_img default':  'dzm825_img default',
-        'dzm965_img default':  'dzm965_img default',
-        'dzm985_img default':  'dzm985_img default',
-        'dzm1041_img default': 'dzm1041_img default',
-        'dzm1094_img default': 'dzm1094_img default',
-        'dzm1146_img default': 'dzm1146_img default',
-        'dzm1201_img default': 'dzm1201_img default',
-        'dzm1445_img default': 'dzm1445_img default',
-        'dzm1508_img default': 'dzm1508_img default',
-        'dzm1664_img default': 'dzm1664_img default',
-        'dzf114_img default':  'dzf114_img default',
-        'dzf444_img default':  'dzf444_img default',
-        'dzf594_img default':  'dzf594_img default',
-        'dzf626_img default':  'dzf626_img default',
-        'dzf679_img default':  'dzf679_img default',
-        'dzf832_img default':  'dzf832_img default',
-        'dzf891_img default':  'dzf891_img default',
-        'dzf916_img default':  'dzf916_img default',
-        'dzf1072_img default': 'dzf1072_img default',
-        'dzf1096_img default': 'dzf1096_img default',
-        'dzf1148_img default': 'dzf1148_img default',
-    }
 
 init 3 python:
     # engine warm up
@@ -227,25 +138,13 @@ label start:
     show screen inventory_button
     menu:
         "dev":
-            $ renpy.store.global_dialog_key = "dev"
-            jump dialog_dispatcher
+            jump 'dev'
         "start_":
-            $ l1 = "Я прихожу в себя в тусклом помещении."
-            $ l2 = "Голова раскалывается, первое движение отзывается резкой болью слева -"
-            $ l3 = "Болью настолько сильной, что не очень понятно, где именно слева."
-            $ l4 = "Я постепенно встаю с каменного...стола? и поднимаю взгляд."
-
-            $ renpy.exports.say(teller, l1)
-            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l1)
-            $ renpy.exports.say(teller, l2)
-            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l2)
-            $ renpy.exports.say(teller, l3)
-            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l3)
-            $ renpy.exports.say(teller, l4)
-            $ renpy.store.global_history_manager.write_line(renpy.store.characters['the_nameless_one'].name, l4)
-
-            $ renpy.store.global_dialog_key = "dmorte_one_introducing"
-            jump dialog_dispatcher
+            teller "Я прихожу в себя в тусклом помещении."
+            teller "Голова раскалывается, первое движение отзывается резкой болью слева -"
+            teller "Болью настолько сильной, что не очень понятно, где именно слева."
+            teller "Я постепенно встаю с каменного...стола? и поднимаю взгляд."
+            jump 'dmorte_one_introducing'
 
 
 label end:

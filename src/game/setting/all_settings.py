@@ -106,6 +106,9 @@ def build_other_settings(manager):
         .register('adahn', 0) \
         .register('good', 0) \
         .register('law', 0) \
+        .register('gold', 0) \
+        .register('exp', 0) \
+        .register('read_scars', False) \
         .register('good_morte', 0) \
         .register('jorunal_allowed', False) \
         .register('can_speak_with_dead', False) \
@@ -115,9 +118,10 @@ def build_other_settings(manager):
         .register('know_xachariah_name', False) \
         .register('crier_quest', False) \
         .register('xixi_back', False) \
+        .register('know_xixi', False) \
         .register('escape_mortuary', False) \
         .register('visited_ar0200', False) \
-        .register('asonje_state', 0) \
+        .register('asonje_quest_state', 0) \
         .register('has_intro_key', False) \
         .register('has_tome_ba', False) \
         .register('mortuary_walkthrough', 0) \
@@ -134,13 +138,14 @@ def build_other_settings(manager):
         .register('has_1201_note', 0) \
         .register('has_dzm1664_page', False) \
         .register('has_bandages', False) \
+        .register('has_bandages_zm396', False) \
         .register('morte_quip', False) \
         .register('has_embalm', False) \
         .register('eivene_delivery', False) \
         .register('ravel_eivene', False) \
         .register('embalm_key_quest', False) \
         .register('has_keyem', False) \
-        .register('42_Secret', False) \
+        .register('42_secret', False) \
         .register('embalm_key_quest', False) \
         .register('keyem', False) \
         .register('vaxis_leave', False) \
@@ -163,7 +168,8 @@ def build_other_settings(manager):
         .register('ll_1201', False) \
         .register('ul_1201', False) \
         .register('tearring', False) \
-        .register('1201_note_quest', 0)
+        .register('1201_note_quest', 0) \
+        .register('morte_harlot_quip_1', False)
 
 def build_all_settings(manager):
     build_dz_settings(manager)
