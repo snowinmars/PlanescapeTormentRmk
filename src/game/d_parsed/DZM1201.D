@@ -1,5 +1,5 @@
 def _r34954_condition(gsm):
-    Global("1201_Note_Retrieved","GLOBAL",0)
+    return not gsm.get_1201_note_retrieved()
 def _r34957_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r34958_condition(gsm):
@@ -7,15 +7,15 @@ def _r34958_condition(gsm):
 def _r34956_condition(gsm):
     return gsm.get_has_scalpel()
 def _r34956_action(gsm):
-    DO ~SetGlobal("1201_Note_Retrieved","GLOBAL",1) GiveItemCreate("N1201",Protagonist,1,0,0)  ~
+    gsm.set_1201_note_retrieved(True) gsm.set_has_1201_note(True) gsm.inc_exp(250)
 def _r45122_condition(gsm):
     return not gsm.get_has_scalpel()
 def _r45129_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r45129_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r45130_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r45131_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r45132_condition(gsm):

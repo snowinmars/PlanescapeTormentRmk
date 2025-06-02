@@ -1,11 +1,11 @@
 def _r41145_action(gsm):
-    DO ~set_morte_mortuary_walkthrough_1(True) ~
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41146_action(gsm):
-    DO ~set_morte_mortuary_walkthrough_1(True) ~
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41147_action(gsm):
-    DO ~set_morte_mortuary_walkthrough_1(True) ~
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41148_action(gsm):
-    DO ~set_morte_mortuary_walkthrough_1(True) ~
+    gsm.set_morte_mortuary_walkthrough_1(True)
 def _r41163_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r41177_action(gsm):
@@ -17,7 +17,7 @@ def _r41182_condition(gsm):
 def _r41184_condition(gsm):
     return gsm.get_morte_mortuary_walkthrough_1()
 def _r41185_condition(gsm):
-    PartyHasItem("Bandage")
+    return gsm.get_has_bandages()
 def _r41186_condition(gsm):
     return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41187_condition(gsm):
@@ -65,13 +65,13 @@ def _r41232_condition(gsm):
 def _r41239_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r41251_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r41255_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r41258_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r41263_action(gsm):
-    DO ~gsm.set_morte_mortuary_walkthrough_2(True) ~
+    gsm.set_morte_mortuary_walkthrough_2(True)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

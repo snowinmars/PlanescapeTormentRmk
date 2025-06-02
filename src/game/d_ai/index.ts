@@ -4,6 +4,7 @@
 import { clean } from './clean.ts';
 import { parseDialogue } from './parseDialogue.ts';
 import { serializeStates } from './serializeStates.ts';
+import { serializeStatesPlain } from "./serializeStatesPlain.ts";
 import { promises as fs } from 'fs';
 import * as path from 'path'
 
@@ -50,14 +51,14 @@ const goFiles = [
     'DMORTE',
     'DMORTE1',
     'DMORTE2',
-    'DEIVENE',
-    'DVAXIS',
-    'COPEARC',
-    'DN1201',
+    // 'DEIVENE',
+    // 'DVAXIS',
+    // 'COPEARC',
+    // 'DN1201',
     ...goFilesDz,
 ];
 
-const go = async (fromFile: string, cleanFile: string, toFile: string, statePrefix: string): Promise<void> => {
+const go = async (fromFile: string, cleanFile: string, toFile: string, toPlainFile: string, statePrefix: string): Promise<void> => {
     const raw: string = await fs.readFile(fromFile, 'utf8');
     let cleaned = clean(raw);
     await fs.writeFile(cleanFile, cleaned, 'utf8');
@@ -65,12 +66,14 @@ const go = async (fromFile: string, cleanFile: string, toFile: string, statePref
     const dialogue = parseDialogue(cleaned);
     const builder = serializeStates(dialogue, statePrefix);
     await fs.writeFile(toFile, builder, 'utf8');
+    const plainBuilder = serializeStatesPlain(dialogue, statePrefix);
+    await fs.writeFile(toPlainFile, plainBuilder, 'utf8');
 }
 
-console.log(process.cwd())
 Promise.all(goFiles.map(x => `${x}.D`).map(x => {
     const raw = path.join(process.cwd(), '../d_raw')
     const clean = path.join(process.cwd(), '../d_clean')
     const parsed = path.join(process.cwd(), '../d_parsed')
-    return go(path.join(raw, x), path.join(clean, x), path.join(parsed, x), `${x}_s`);
-}));
+    const parsedPlain = path.join(process.cwd(), '../d_parsed_plain')
+    return go(path.join(raw, x), path.join(clean, x), path.join(parsed, x), path.join(parsedPlain, x), `${x}_s`);
+})).catch(e => console.error(e));

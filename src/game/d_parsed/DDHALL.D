@@ -1,5 +1,5 @@
 def _r827_action(gsm):
-    DO ~SetGlobal("0202_Dhall_Face_Player","AR0202",1) ~
+    gsm.set_meet_dhall(True)
 def _r5070_condition(gsm):
     return not gsm.get_meet_deionarra()
 def _r5071_condition(gsm):
@@ -17,15 +17,15 @@ def _r13288_condition(gsm):
 def _r830_condition(gsm):
     return not gsm.get_vaxis_lawful()
 def _r830_action(gsm):
-    DO ~ set_vaxis_betray(2) ~ gsm.update_journal('39468')    # '39468': ' ~Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса. ~ '
+    gsm.inc_exp(250)    # '39468': ' ~Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса. ~ '
 def _r831_condition(gsm):
     return gsm.get_vaxis_lawful()
 def _r831_action(gsm):
-    DO ~ set_vaxis_betray(2) gsm.dec_once_good('evil_dhall_2', 3) ~ gsm.update_journal('39469')    # '39469': ' ~Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса.~ '
+    gsm.inc_exp(250)    # '39469': ' ~Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса.~ '
 def _r839_condition(gsm):
     return gsm.get_in_party_morte()
 def _r835_condition(gsm):
-    return not gsm.get_in_party_morte() return not gsm.get_alarmed()
+    return not gsm.get_in_party_morte() return not gsm.get_mortualy_alarmed()
 def _r5058_condition(gsm):
     return not gsm.get_in_party_morte() return gsm.get_mortualy_alarmed()
 def _r842_condition(gsm):
@@ -33,13 +33,13 @@ def _r842_condition(gsm):
 def _r843_condition(gsm):
     return gsm.get_meet_dhall()
 def _r843_action(gsm):
-    DO ~gsm.dec_once_good('evil_dhall_1') ~
+    gsm.dec_once_good('evil_dhall_1')
 def _r5062_condition(gsm):
     return not gsm.get_meet_dhall()
 def _r854_condition(gsm):
-    return gsm.get_meet_vaxis() return not gsm.get_dead_vaxis() return not gsm.get_vaxis_leave() return not gsm.get_vaxis_betrayed()
+    return gsm.get_meet_vaxis() return not gsm.get_dead_vaxis() return not gsm.get_vaxis_leave() return gsm.get_vaxis_betrayed() == 0
 def _r858_condition(gsm):
-    return not gsm.get_escape_mortuary() return not gsm.get_visited_ar0200()
+    return not gsm.get_escape_mortuary() return not gsm.is_internal_location_visited('AR0200')
 def _r5069_action(gsm):
     gsm.update_journal('39460')    # '39460': ' ~Я спросил Дхолла, знает ли он меня, и он ответил, что знает обо мне очень мало, и еще меньше — о моих спутниках, сопровождавших меня в прошлом. Вероятно, их тела находятся здесь, в Морге... возможно, увидев их, я смогу что-нибудь вспомнить. ~ '
 def _r870_condition(gsm):
@@ -63,7 +63,7 @@ def _r931_condition(gsm):
 def _r931_action(gsm):
     gsm.update_journal('39462')    # '39462': ' ~Дхолл сказал мне, что это благодаря ему мои визиты в Морг остаются в тайне от остальных тленных. До тех пор, пока он остается писарем в приемной, он будет единственным, кто видит мое тело, прибывающее сюда. ~ '
 def _r936_action(gsm):
-    DO ~gsm.inc_once_good('good_dhall_1') ~
+    gsm.inc_once_good('good_dhall_1')
 def _r942_condition(gsm):
     return not gsm.get_journal()
 def _r943_condition(gsm):
@@ -79,9 +79,9 @@ def _r6027_condition(gsm):
 def _r6066_condition(gsm):
     return gsm.get_meet_pharod()
 def _r953_action(gsm):
-    DO ~gsm.set_meet_dustmen(True) ~
+    gsm.set_meet_dustmen(True)
 def _r958_action(gsm):
-    DO ~gsm.set_meet_dustmen(True) ~
+    gsm.set_meet_dustmen(True)
 def _r1301_action(gsm):
     gsm.update_journal('39470')    # '39470': ' ~Дхолл предположил, что раны, полученные мною, незначительны по сравнению с теми, что нанесены моему разуму... Он также предположил, что эти раны стали причиной моей потери памяти, и что увечья разума не ограничились амнезией. Эта мысль мне неприятна: неплохо бы слышать побольше *хороших* новостей время от времени. ~ '
 def _r964_condition(gsm):
@@ -89,9 +89,9 @@ def _r964_condition(gsm):
 def _r968_condition(gsm):
     return not gsm.get_meet_pharod()
 def _r974_action(gsm):
-    DO ~gsm.set_meet_dustmen(True) ~
+    gsm.set_meet_dustmen(True)
 def _r985_action(gsm):
-    DO ~gsm.set_meet_dustmen(True) ~
+    gsm.set_meet_dustmen(True)
 def _r5076_condition(gsm):
     return not gsm.get_meet_deionarra()
 def _r5077_condition(gsm):
@@ -107,7 +107,7 @@ def _r5082_condition(gsm):
 def _r5083_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r1327_action(gsm):
-    DO ~Setreturn gsm.get_meet_dhall() ~
+    gsm.set_meet_dhall(True)
 def _r5731_action(gsm):
     gsm.update_journal('39459')    # '39459': ' ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ '
 def _r5732_action(gsm):
@@ -115,11 +115,11 @@ def _r5732_action(gsm):
 def _r6032_condition(gsm):
     return gsm.get_morte_mortuary_walkthrough_1()
 def _r6033_action(gsm):
-    DO ~gsm.set_meet_dustmen(True) ~
+    gsm.set_meet_dustmen(True)
 def _r6051_action(gsm):
-    DO ~gsm.inc_once_good('good_dhall_2') ~
+    gsm.inc_once_good('good_dhall_2')
 def _r6053_action(gsm):
-    DO ~gsm.dec_once_good('evil_dhall_3') ~
+    gsm.dec_once_good('evil_dhall_3')
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

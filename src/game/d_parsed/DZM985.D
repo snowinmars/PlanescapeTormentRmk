@@ -1,35 +1,35 @@
 def _r45516_condition(gsm):
     return gsm.get_in_party_morte()
 def _r45516_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_zm985_1') gsm.dec_once_good('evil_zm985_1') PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
+    gsm.dec_once_law('chaotic_zm985_1') gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
 def _r45517_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r45517_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_zm985_1') gsm.dec_once_good('evil_zm985_1') PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
+    gsm.dec_once_law('chaotic_zm985_1') gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
 def _r45518_condition(gsm):
     return gsm.get_in_party_morte()
 def _r45518_action(gsm):
-    DO ~gsm.inc_once_law('lawful_zm985_1') gsm.inc_once_good('good_zm985_1') ~
+    gsm.inc_once_law('lawful_zm985_1') gsm.inc_once_good('good_zm985_1')
 def _r45519_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r45519_action(gsm):
-    DO ~gsm.inc_once_law('lawful_zm985_1') gsm.inc_once_good('good_zm985_1') ~
+    gsm.inc_once_law('lawful_zm985_1') gsm.inc_once_good('good_zm985_1')
 def _r45520_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r45521_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r45532_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r45532_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r45533_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r45534_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r45535_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r45539_action(gsm):
-    DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~
+    # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

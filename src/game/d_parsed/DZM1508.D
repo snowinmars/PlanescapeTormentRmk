@@ -1,9 +1,9 @@
 def _r46746_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r46746_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r46749_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r46750_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r46751_condition(gsm):

@@ -1,7 +1,13 @@
 import type { Answer, Path, State } from './types';
 
 // better empty than spaces
-const bets = (x: string | null | undefined) => x?.trim().length === 0 ? '' : x;
+const bets = function (x: string | null | undefined) {
+    if (!x) return x
+    let value = x.trim().length === 0 ? '' : x.trim();
+    if (value.startsWith('DO ~')) value = value.slice(4)
+    if (value.endsWith('~')) value = value.slice(0, -1);
+    return value;
+};
 
 export const parseDialogue = (inputText: string): State[] => {
     const states: State[] = [];

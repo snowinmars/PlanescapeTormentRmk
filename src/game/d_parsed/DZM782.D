@@ -3,7 +3,7 @@ def _r24709_condition(gsm):
 def _r24712_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r24716_action(gsm):
-    DO ~ForceAttack(Protagonist,"ZM782") ~
+    # ?.attack('Protagonist').by('ZM782')
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

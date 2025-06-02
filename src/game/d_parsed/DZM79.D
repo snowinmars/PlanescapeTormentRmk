@@ -1,9 +1,9 @@
 def _r34943_action(gsm):
-    DO ~gsm.dec_once_law('zombie_chaotic') ~
+    gsm.dec_once_law('zombie_chaotic')
 def _r34946_condition(gsm):
     return not gsm.get_know_copper_earring_secret()
 def _r34946_action(gsm):
-    DO ~gsm.set_know_copper_earring_secret(True) ~
+    gsm.set_know_copper_earring_secret(True)
 def _r34947_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r34948_condition(gsm):

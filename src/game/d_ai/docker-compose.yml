@@ -7,7 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../d_raw/:/d_raw
-      - ../d_clean/:/d_clean
-      - ../d_parsed/:/d_parsed
+      - ../d_raw/:/d_raw/
+      - ../d_clean/:/d_clean/
+      - ../d_parsed/:/d_parsed/
+      - ../d_parsed_plain/:/d_parsed_plain/
     command: yarn start

@@ -1,5 +1,5 @@
 def _r45420_condition(gsm):
-    Global("506_Thread","GLOBAL",0)
+    return not gsm.get_has_506_thread()
 def _r45421_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r45422_condition(gsm):
@@ -7,21 +7,21 @@ def _r45422_condition(gsm):
 def _r45480_condition(gsm):
     return gsm.get_has_scalpel()
 def _r45480_action(gsm):
-    DO ~SetGlobal("506_Thread","GLOBAL",1) gsm.set_has_needle(True) AddexperienceParty(100) ~
+    gsm.set_has_506_thread(True) gsm.set_has_needle(True) gsm.inc_exp(100)
 def _r45481_condition(gsm):
     return not gsm.get_has_scalpel()
 def _r45484_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r45484_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r45496_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r45502_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r45502_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r45508_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r45510_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r45512_condition(gsm):

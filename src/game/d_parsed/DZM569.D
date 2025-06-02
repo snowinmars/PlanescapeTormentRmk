@@ -3,7 +3,7 @@ def _r24576_condition(gsm):
 def _r24579_condition(gsm):
     return not gsm.get_mortuary_walkthrough() return not gsm.get_has_intro_key() return not gsm.get_in_party_morte()
 def _r24580_condition(gsm):
-    return not gsm.get_mortuary_walkthrough()
+    return gsm.get_mortuary_walkthrough()
 def _r24581_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r24584_condition(gsm):

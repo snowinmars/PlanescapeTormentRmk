@@ -1,5 +1,5 @@
 def _r7295_action(gsm):
-    gsm.set_meet_death_of_names(True) gsm.update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
+    gsm.set_meet_death_of_names(True) ~ gsm.update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
 def _r7297_condition(gsm):
     return gsm.get_know_xachariah_name()
 def _r7298_condition(gsm):
@@ -11,8 +11,8 @@ def _r7300_condition(gsm):
 def _r7303_condition(gsm):
     return gsm.get_pass_death_of_names_quentin()
 def _r7304_action(gsm):
-    DO ~gsm.set_death_of_names_adahn(True)
-    gsm.inc_once_adahn('Adahn_Death_of_Names_1') ~
+    gsm.set_death_of_names_adahn(True)
+    gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 def _r7310_condition(gsm):
     PartyGoldGT(2) return gsm.get_know_xachariah_name()
 def _r7311_condition(gsm):
@@ -20,19 +20,19 @@ def _r7311_condition(gsm):
 def _r7312_condition(gsm):
     PartyGoldGT(2) return gsm.get_meet_dhall() return gsm.get_dead_dhall() return not gsm.get_pass_death_of_names_dhall()
 def _r7312_action(gsm):
-    DO ~TakePartyGold(3) gsm.set_pass_death_of_names_dhall(True) ~
+    gsm.inc_gold(3)
 def _r7313_condition(gsm):
     PartyGoldGT(2) return gsm.get_meet_dhall() return not gsm.get_dead_dhall()
 def _r7317_condition(gsm):
-    PartyGoldGT(2) return gsm.get_quentin() return gsm.get_dead_quentin() return not gsm.get_death_of_names_quentin()
+    PartyGoldGT(2) return gsm.get_meet_quentin() return gsm.get_dead_quentin() return not gsm.get_pass_death_of_names_quentin()
 def _r7317_action(gsm):
-    DO ~TakePartyGold(3) gsm.set_pass_death_of_names_quentin(True) ~
+    gsm.inc_gold(3)
 def _r9768_condition(gsm):
-    PartyGoldGT(2) return gsm.get_quentin() return not gsm.get_dead_quentin()
+    PartyGoldGT(2) return gsm.get_meet_quentin() return not gsm.get_dead_quentin()
 def _r9769_condition(gsm):
     PartyGoldGT(2) return gsm.get_crier_quest() == 1
 def _r9769_action(gsm):
-    DO ~TakePartyGold(3) AddexperienceParty(500) gsm.set_crier_quest(2) ~ gsm.update_journal('26108')    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
+    gsm.inc_gold(3)    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
 def _r9770_condition(gsm):
     PartyGoldLT(3)
 def _r26086_condition(gsm):
@@ -46,16 +46,16 @@ def _r7364_condition(gsm):
 def _r7365_condition(gsm):
     return gsm.get_meet_dhall() return gsm.get_dead_dhall() return gsm.get_pass_death_of_names_dhall()
 def _r7366_condition(gsm):
-    return gsm.get_meet_xixi() return gsm.get_xixi_back() <= 2
+    return gsm.get_know_xixi() return gsm.get_xixi_back() < 2
 def _r7367_condition(gsm):
-    return gsm.get_meet_xixi() return gsm.get_xixi_back() == 3
+    return gsm.get_know_xixi() return gsm.get_xixi_back() == 3
 def _r7368_condition(gsm):
     return gsm.get_pass_death_of_names_quentin()
 def _r9771_condition(gsm):
     return gsm.get_crier_quest() == 2
 def _r9772_action(gsm):
-    DO ~gsm.set_death_of_names_adahn(True)
-    gsm.inc_once_adahn('Adahn_Death_of_Names_1') ~
+    gsm.set_death_of_names_adahn(True)
+    gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

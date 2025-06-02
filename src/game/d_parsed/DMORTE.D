@@ -1,87 +1,87 @@
 def _r17833_action(gsm):
-    DO ~GiveItem("KeyPR",Protagonist) gsm.set_in_party_morte(True) SetGlobal("Scars","GLOBAL",1) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_has_intro_key(True) gsm.set_meet_morte(True) gsm.set_read_scars(True) gsm.set_in_party_morte(True)
 def _r1006_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1015_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1019_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r1088_action(gsm):
-    DO ~SetGlobal("Scars","GLOBAL",1) ~
+    gsm.set_read_scars(True)
 def _r1050_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r1051_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r1079_action(gsm):
-    DO ~gsm.set_in_party_morte(True) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_meet_morte(True) gsm.set_in_party_morte(True)
 def _r1077_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1083_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1095_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1120_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1125_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1130_condition(gsm):
-    Global("Scars","GLOBAL",1)
+    return gsm.get_read_scars()
 def _r1845_action(gsm):
-    DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_harlot_quip_1(True)
 def _r1846_action(gsm):
-    DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_harlot_quip_1(True)
 def _r1847_action(gsm):
-    DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_harlot_quip_1(True)
 def _r2080_action(gsm):
-    DO ~SetGlobal("Know_Mimir","GLOBAL",1) SetGlobal("Morte_Mimir","GLOBAL",1) ~
+    gsm.set_know_mimir(True) gsm.set_morte_mimir(True)
 def _r9029_condition(gsm):
-    Global("Know_Gith","GLOBAL",0)
+    return not gsm.get_know_gith()
 def _r9029_action(gsm):
-    DO ~SetGlobal("Know_Gith","GLOBAL",1) ~
+    gsm.set_know_gith(True)
 def _r9030_condition(gsm):
-    Global("Know_Gith","GLOBAL",1)
+    return gsm.get_know_gith()
 def _r2603_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r2602_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r2605_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r6952_condition(gsm):
-    Global("Know_Lady","GLOBAL",0)
+    return not gsm.get_know_lady()
 def _r6952_action(gsm):
-    DO ~SetGlobal("Know_Lady","GLOBAL",1) ~
+    gsm.set_know_lady(True)
 def _r6953_condition(gsm):
-    Global("Know_Lady","GLOBAL",1)
+    return gsm.get_know_lady()
 def _r6954_condition(gsm):
-    Global("Know_Lady","GLOBAL",1)
+    return gsm.get_know_lady()
 def _r3474_action(gsm):
     gsm.update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
 def _r3483_action(gsm):
     gsm.update_journal('38205')    # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
 def _r3871_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",1) ~
+    gsm.set_warning(1)
 def _r3874_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r3877_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r3965_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+    gsm.dec_good()
 def _r3966_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+    gsm.inc_good()
 def _r3969_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r3970_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r3971_condition(gsm):
-    PartyHasItem("Prybar")
+    return gsm.get_has_prybar()
 def _r3972_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+    return not gsm.get_morte_skel_mort_quip()
 def _r3972_action(gsm):
-    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+    gsm.set_morte_skel_mort_quip(True)
 def _r3973_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+    return gsm.get_morte_skel_mort_quip()
 def _r3988_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
+    gsm.dec_once_law('chaotic_skeleton_mort_1')
 def _r4023_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4024_condition(gsm):
@@ -91,7 +91,7 @@ def _r4027_condition(gsm):
 def _r4028_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r4029_action(gsm):
-    DO ~gsm.inc_once_good('good_giant_skel_mort_1') ~
+    gsm.inc_once_good('good_giant_skel_mort_1')
 def _r4031_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4032_condition(gsm):
@@ -99,59 +99,59 @@ def _r4032_condition(gsm):
 def _r4034_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r4144_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",1) ~
+    gsm.set_warning(1)
 def _r4145_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",1) ~
+    gsm.set_warning(1)
 def _r4142_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r4143_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r4140_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r4339_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",1) ~
+    gsm.set_warning(1)
 def _r4342_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r4345_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r4676_action(gsm):
     gsm.update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
 def _r4678_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_3', 3) ~
+    gsm.dec_once_law('chaotic_vaxis_3', 3)
 def _r4679_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_4') ~
+    gsm.dec_once_law('chaotic_vaxis_4')
 def _r4682_action(gsm):
-    DO ~gsm.inc_once_law('lawful_vaxis_3', 3) ~
+    gsm.inc_once_law('lawful_vaxis_3', 3)
 def _r4686_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',13,'int')
 def _r4687_action(gsm):
-    DO ~gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2') ~
+    gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2')
 def _r4693_action(gsm):
     gsm.update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
 def _r4695_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_3', 3) ~
+    gsm.dec_once_law('chaotic_vaxis_3', 3)
 def _r4699_action(gsm):
-    DO ~gsm.inc_once_law('lawful_vaxis_3', 3) ~
+    gsm.inc_once_law('lawful_vaxis_3', 3)
 def _r64535_condition(gsm):
     return not gsm.get_vaxis_global_xp()
 def _r64535_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) AddexperienceParty(500) gsm.set_vaxis_global_xp(True) ~
+    FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) gsm.inc_exp(500)
 def _r64534_condition(gsm):
     return gsm.get_vaxis_global_xp()
 def _r64534_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0)
 def _r5030_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",1) ~
+    gsm.set_warning(1)
 def _r5033_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r5036_action(gsm):
-    DO ~SetGlobal("Warning","GLOBAL",2) ~
+    gsm.set_warning(2)
 def _r6075_action(gsm):
-    DO ~SetGlobal("Morte_Deionarra_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_deionarra_quip_1(True)
 def _r6325_condition(gsm):
-    HasItem("Cobble","Post")
+    HasItem("Cobble","Post")  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
 def _r6326_condition(gsm):
-    !HasItem("Cobble","Post")
+    !HasItem("Cobble","Post")  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
 def _r6327_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int') return gsm.check_char_prop_lt('protagonist',12,'wis')
 def _r6328_condition(gsm):
@@ -161,177 +161,177 @@ def _r6329_condition(gsm):
 def _r6330_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r6658_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+    gsm.dec_good()
 def _r6659_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+    gsm.inc_good()
 def _r6664_condition(gsm):
-    return gsm.get_42_Secret()
+    return gsm.get_42_secret()
 def _r6665_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',12,'wis') return not gsm.get_42_Secret()
+    return gsm.check_char_prop_gt('protagonist',12,'wis') return not gsm.get_42_secret()
 def _r6957_action(gsm):
-    DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
+    gsm.set_translate_dabus(False)
 def _r7056_condition(gsm):
     return gsm.get_morte_quip()
 def _r7056_action(gsm):
-    DO ~SetGlobal("Morte_Zombie_Female_Bar_Quip","GLOBAL",1) ~
+    gsm.set_morte_zombie_female_bar_quip(True)
 def _r7057_condition(gsm):
     return not gsm.get_morte_quip()
 def _r7057_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r7058_condition(gsm):
     return not gsm.get_morte_quip()
 def _r7058_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r7483_action(gsm):
-    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~
+    gsm.inc_bd_morte_morale()
 def _r7485_action(gsm):
-    DO ~IncrementGlobal("Morte_Taunt","GLOBAL",1) ~
+    gsm.inc_morte_taunt()
 def _r11977_action(gsm):
-    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) gsm.dec_once_law('chaotic_ingress_teeth_2') gsm.dec_once_good('evil_ingress_teeth_1') ~
+    gsm.set_ingress_teeth_installed(True) gsm.dec_once_law('chaotic_ingress_teeth_2') gsm.dec_once_good('evil_ingress_teeth_1')
 def _r11980_action(gsm):
-    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) gsm.dec_once_law('chaotic_ingress_teeth_2') gsm.dec_once_good('evil_ingress_teeth_1') ~
+    gsm.set_ingress_teeth_installed(True) gsm.dec_once_law('chaotic_ingress_teeth_2') gsm.dec_once_good('evil_ingress_teeth_1')
 def _r11982_action(gsm):
-    DO ~MoraleDec("Morte",1) ~
+    gsm.dec_morale_morte()
 def _r11983_action(gsm):
-    DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1) ~
+    gsm.set_ingress_teeth_installed(True)
 def _r11985_condition(gsm):
-    Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+    return gsm.get_evil_ingress_teeth_1()
 def _r11986_condition(gsm):
-    Global("Good_Ingress_Teeth_1","GLOBAL",1)
+    return gsm.get_good_ingress_teeth_1()
 def _r11988_condition(gsm):
-    Global("Good_Ingress_Teeth_1","GLOBAL",1)
+    return gsm.get_good_ingress_teeth_1()
 def _r11989_condition(gsm):
-    Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+    return gsm.get_evil_ingress_teeth_1()
 def _r11990_condition(gsm):
-    Global("Good_Ingress_Teeth_1","GLOBAL",1)
+    return gsm.get_good_ingress_teeth_1()
 def _r11991_condition(gsm):
-    Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+    return gsm.get_evil_ingress_teeth_1()
 def _r12554_action(gsm):
-    DO ~MoraleDec("Morte",2) Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself) ~
+    gsm.dec_morale_morte(2) Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself)
 def _r12555_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself)
 def _r12556_action(gsm):
-    DO ~SetGlobal("BariA","AR0400",2) ~
+    gsm.set_baria(2)
 def _r12855_condition(gsm):
-    Global("Know_Mimir","GLOBAL",0)
+    return not gsm.get_know_mimir()
 def _r12855_action(gsm):
-    DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~
+    gsm.set_know_mimir(True)
 def _r12858_condition(gsm):
-    Global("Know_Mimir","GLOBAL",0)
+    return not gsm.get_know_mimir()
 def _r12858_action(gsm):
-    DO ~SetGlobal("Know_Mimir","GLOBAL",1) ~
+    gsm.set_know_mimir(True)
 def _r12860_action(gsm):
-    DO ~SetGlobal("Morte_Mimir","GLOBAL",1) ~
+    gsm.set_morte_mimir(True)
 def _r12861_action(gsm):
-    DO ~SetGlobal("Morte_Mimir","GLOBAL",1) ~
+    gsm.set_morte_mimir(True)
 def _r13774_condition(gsm):
-    Global("Know_Chaosmen","GLOBAL",0)
+    return not gsm.get_know_chaosmen()
 def _r13774_action(gsm):
-    DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) SetGlobal("Know_Chaosmen","GLOBAL",1) ~
+    gsm.set_morte_sdthug_quip_1(True) gsm.set_know_chaosmen(True)
 def _r13775_condition(gsm):
-    Global("Know_Chaosmen","GLOBAL",1)
+    return gsm.get_know_chaosmen()
 def _r13775_action(gsm):
-    DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_sdthug_quip_1(True)
 def _r13776_condition(gsm):
-    Global("Know_Chaosmen","GLOBAL",1)
+    return gsm.get_know_chaosmen()
 def _r13776_action(gsm):
-    DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_sdthug_quip_1(True)
 def _r13986_condition(gsm):
-    Global("Know_Chaosmen","GLOBAL",0)
+    return not gsm.get_know_chaosmen()
 def _r13986_action(gsm):
-    DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) SetGlobal("Know_Chaosmen","GLOBAL",1) ~
+    gsm.set_morte_wilder_quip_1(True) gsm.set_know_chaosmen(True)
 def _r13987_condition(gsm):
-    Global("Know_Chaosmen","GLOBAL",1)
+    return gsm.get_know_chaosmen()
 def _r13987_action(gsm):
-    DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_wilder_quip_1(True)
 def _r13988_condition(gsm):
-    Global("Know_Chaosmen","GLOBAL",1)
+    return gsm.get_know_chaosmen()
 def _r13988_action(gsm):
-    DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1) ~
+    gsm.set_morte_wilder_quip_1(True)
 def _r13989_condition(gsm):
-    Global("Join_Chaosmen","GLOBAL",0)
+    return not gsm.get_join_chaosmen()
 def _r14275_condition(gsm):
-    Global("Mortai_Contract","GLOBAL",1) GlobalGT("Coppereyes_Contract","GLOBAL",0)
+    return gsm.get_mortai_contract() return gsm.get_coppereyes_contract()
 def _r14276_condition(gsm):
-    Global("Mortai_Contract","GLOBAL",1) Global("Coppereyes_Contract","GLOBAL",0)
+    return gsm.get_mortai_contract() return not gsm.get_coppereyes_contract()
 def _r14277_condition(gsm):
-    Global("Mortai_Contract","GLOBAL",0) GlobalGT("Coppereyes_Contract","GLOBAL",0)
+    return not gsm.get_mortai_contract() return gsm.get_coppereyes_contract()
 def _r14278_condition(gsm):
-    Global("Mortai_Contract","GLOBAL",0) Global("Coppereyes_Contract","GLOBAL",0)
+    return not gsm.get_mortai_contract() return not gsm.get_coppereyes_contract()
 def _r15492_action(gsm):
-    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",-1) ~
+    gsm.inc_bd_morte_morale()
 def _r65537_condition(gsm):
-    GlobalGT("Morte_Mimir","GLOBAL",1)
+    return false  # GlobalGT("Morte_Mimir","GLOBAL",1)
 def _r15495_action(gsm):
-    DO ~SetGlobal("Adyzoel","AR0400",2) ~
+    gsm.set_adyzoel(2)
 def _r16881_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',13,'wis')
 def _r16882_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r16882_action(gsm):
-    DO ~IncrementGlobal("Tree_Helpers","AR0400",1) ~
+    gsm.inc_tree_helpers()
 def _r16884_condition(gsm):
-    NearbyDialog("DAnnah") Global("Tree_A","AR0400",0)
+    return gsm.get_in_party_annah() return not gsm.get_tree_a()
 def _r16884_action(gsm):
-    DO ~SetGlobal("Tree_A","AR0400",1) ~
+    gsm.set_tree_a(True)
 def _r16885_condition(gsm):
-    NearbyDialog("DIgnus") Global("Tree_I","AR0400",0)
+    return gsm.get_in_party_ignus() return not gsm.get_tree_i()
 def _r16885_action(gsm):
-    DO ~SetGlobal("Tree_I","AR0400",1) ~
+    gsm.set_tree_i(True)
 def _r16886_condition(gsm):
-    NearbyDialog("DGrace") Global("Tree_G","AR0400",0)
+    return gsm.get_in_party_grace() return not gsm.get_tree_g()
 def _r16886_action(gsm):
-    DO ~SetGlobal("Tree_G","AR0400",1) ~
+    gsm.set_tree_g(True)
 def _r16887_condition(gsm):
-    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0)
+    return gsm.get_in_party_dakkon() return not gsm.get_tree_d()
 def _r16887_action(gsm):
-    DO ~SetGlobal("Tree_D","AR0400",1) ~
+    gsm.set_tree_d(True)
 def _r16888_condition(gsm):
-    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) Global("Dakkon_Slave","Global",1)
+    return gsm.get_in_party_dakkon() return not gsm.get_tree_d() return gsm.get_dakkon_slave()
 def _r16888_action(gsm):
-    DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1) SetGlobal("Tree_D","AR0400",1) ~
+    gsm.inc_bd_dakkon_morale() gsm.set_tree_d(True)
 def _r16889_condition(gsm):
-    NearbyDialog("DNordom") Global("Tree_N","AR0400",0)
+    return gsm.get_in_party_nordom() return not gsm.get_tree_n()
 def _r16889_action(gsm):
-    DO ~SetGlobal("Tree_N","AR0400",1) ~
+    gsm.set_tree_n(True)
 def _r16890_condition(gsm):
-    NearbyDialog("DVhail") Global("Tree_V","AR0400",0)
+    return gsm.get_in_party_vhail() return not gsm.get_tree_v()
 def _r16890_action(gsm):
-    DO ~SetGlobal("Tree_V","AR0400",1) ~
+    gsm.set_tree_v(True)
 def _r16893_condition(gsm):
-    return gsm.get_in_party_morte() Global("Tree_M","AR0400",0)
+    return gsm.get_in_party_morte() return not gsm.get_tree_m()
 def _r16893_action(gsm):
-    DO ~SetGlobal("Tree_M","AR0400",1) ~
+    gsm.set_tree_m(True)
 def _r16894_condition(gsm):
-    NearbyDialog("DAnnah") Global("Tree_A","AR0400",0)
+    return gsm.get_in_party_annah() return not gsm.get_tree_a()
 def _r16894_action(gsm):
-    DO ~SetGlobal("Tree_A","AR0400",1) ~
+    gsm.set_tree_a(True)
 def _r16895_condition(gsm):
-    NearbyDialog("DIgnus") Global("Tree_I","AR0400",0)
+    return gsm.get_in_party_ignus() return not gsm.get_tree_i()
 def _r16895_action(gsm):
-    DO ~SetGlobal("Tree_I","AR0400",1) ~
+    gsm.set_tree_i(True)
 def _r16896_condition(gsm):
-    NearbyDialog("DGrace") Global("Tree_G","AR0400",0)
+    return gsm.get_in_party_grace() return not gsm.get_tree_g()
 def _r16896_action(gsm):
-    DO ~SetGlobal("Tree_G","AR0400",1) ~
+    gsm.set_tree_g(True)
 def _r16897_condition(gsm):
-    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0)
+    return gsm.get_in_party_dakkon() return not gsm.get_tree_d()
 def _r16897_action(gsm):
-    DO ~SetGlobal("Tree_D","AR0400",1) ~
+    gsm.set_tree_d(True)
 def _r16898_condition(gsm):
-    NearbyDialog("DDakkon") Global("Tree_D","AR0400",0) Global("Dakkon_Slave","Global",1)
+    return gsm.get_in_party_dakkon() return not gsm.get_tree_d() return gsm.get_dakkon_slave()
 def _r16898_action(gsm):
-    DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1) SetGlobal("Tree_D","AR0400",1) ~
+    gsm.inc_bd_dakkon_morale() gsm.set_tree_d(True)
 def _r16899_condition(gsm):
-    NearbyDialog("DVhail") Global("Tree_V","AR0400",0)
+    return gsm.get_in_party_vhail() return not gsm.get_tree_v()
 def _r16899_action(gsm):
-    DO ~SetGlobal("Tree_V","AR0400",1) ~
+    gsm.set_tree_v(True)
 def _r17583_condition(gsm):
-    NearbyDialog("DAnnah")
+    return gsm.get_in_party_annah()
 def _r17584_condition(gsm):
     PartyGoldGT(39)
 def _r17584_action(gsm):
-    DO ~TakePartyGold(40) ~
+    gsm.inc_gold(40)
 def _r17585_condition(gsm):
     PartyGoldGT(39)
 def _r17586_condition(gsm):
@@ -341,27 +341,27 @@ def _r17587_condition(gsm):
 def _r17588_condition(gsm):
     PartyGoldLT(40)
 def _r18802_action(gsm):
-    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) ~
+    gsm.inc_bd_morte_morale()
 def _r18578_action(gsm):
-    DO ~gsm.inc_once_law('lawful_yellow_1') ~
+    gsm.inc_once_law('lawful_yellow_1')
 def _r18808_action(gsm):
-    DO ~gsm.inc_once_good('good_yellow_1') ~
+    gsm.inc_once_good('good_yellow_1')
 def _r18820_condition(gsm):
     PartyGoldGT(4)
 def _r18820_action(gsm):
-    DO ~TakePartyGold(5) ~
+    gsm.inc_gold(5)
 def _r18821_condition(gsm):
     PartyGoldGT(49)
 def _r18821_action(gsm):
-    DO ~TakePartyGold(50) ~
+    gsm.inc_gold(50)
 def _r18822_condition(gsm):
     PartyGoldGT(99)
 def _r18822_action(gsm):
-    DO ~TakePartyGold(100) ~
+    gsm.inc_gold(100)
 def _r18823_condition(gsm):
     PartyGoldGT(499)
 def _r18823_action(gsm):
-    DO ~TakePartyGold(500) ~
+    gsm.inc_gold(500)
 def _r18824_condition(gsm):
     PartyGoldLT(5)
 def _r18829_condition(gsm):
@@ -369,139 +369,139 @@ def _r18829_condition(gsm):
 def _r18830_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r18830_action(gsm):
-    DO ~DestroyPartyGold(5) ~
+    gsm.dec_gold(5)
 def _r18833_condition(gsm):
     PartyGoldGT(4)
 def _r18833_action(gsm):
-    DO ~TakePartyGold(5) ~
+    gsm.inc_gold(5)
 def _r18834_condition(gsm):
     PartyGoldGT(9)
 def _r18834_action(gsm):
-    DO ~TakePartyGold(10) ~
+    gsm.inc_gold(10)
 def _r18835_condition(gsm):
     PartyGoldGT(49)
 def _r18835_action(gsm):
-    DO ~TakePartyGold(50) gsm.inc_once_good('good_yellow_2') ~
+    gsm.inc_gold(50) gsm.inc_once_good('good_yellow_2')
 def _r18836_condition(gsm):
     PartyGoldGT(99)
 def _r18836_action(gsm):
-    DO ~TakePartyGold(100) gsm.inc_once_good('good_yellow_2') ~
+    gsm.inc_gold(100) gsm.inc_once_good('good_yellow_2')
 def _r19668_condition(gsm):
-    Global("Speak_With_Dead","GLOBAL",0)
+    return not gsm.get_can_speak_with_dead()
 def _r19669_condition(gsm):
-    Global("Speak_With_Dead","GLOBAL",1)
+    return gsm.get_can_speak_with_dead()
 def _r19670_condition(gsm):
-    Global("Speak_With_Dead","GLOBAL",0)
+    return not gsm.get_can_speak_with_dead()
 def _r19671_condition(gsm):
-    Global("Speak_With_Dead","GLOBAL",1)
+    return gsm.get_can_speak_with_dead()
 def _r20612_condition(gsm):
-    GlobalLT("Know_Marta_Work","GLOBAL",3)
+    return gsm.get_know_marta_work() < 3
 def _r20612_action(gsm):
-    DO ~SetGlobal("Know_Marta_Work","GLOBAL",3) ~ gsm.update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+    gsm.set_know_marta_work(3) ~ gsm.update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
 def _r20613_condition(gsm):
-    GlobalGT("Know_Marta_Work","GLOBAL",2)
+    return gsm.get_know_marta_work() > 2
 def _r20613_action(gsm):
     gsm.update_journal('20538')    # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
 def _r24697_condition(gsm):
-    Global("Know_Lady","GLOBAL",0)
+    return not gsm.get_know_lady()
 def _r24697_action(gsm):
-    DO ~SetGlobal("Know_Lady","GLOBAL",1) ~
+    gsm.set_know_lady(True)
 def _r24698_condition(gsm):
-    Global("Know_Lady","GLOBAL",1)
+    return gsm.get_know_lady()
 def _r24699_condition(gsm):
-    Global("Know_Lady","GLOBAL",1)
+    return gsm.get_know_lady()
 def _r24700_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',13,'wis') return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r24701_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'wis')
 def _r22850_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_cube_3') ~
+    gsm.dec_once_law('chaotic_cube_3')
 def _r22853_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_cube_4') ~
+    gsm.dec_once_law('chaotic_cube_4')
 def _r22856_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_cube_5') ~
+    gsm.dec_once_law('chaotic_cube_5')
 def _r24904_action(gsm):
-    DO ~gsm.set_in_party_morte(True) ~
+    gsm.set_meet_morte(True)
 def _r24905_action(gsm):
-    DO ~gsm.set_in_party_morte(True) ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_meet_morte(True) gsm.set_in_party_morte(True)
 def _r24925_action(gsm):
-    DO ~gsm.inc_once_good('good_morte_1') ~
+    gsm.inc_once_good('good_morte_1')
 def _r24932_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ gsm.update_journal('24933')    # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
+    gsm.set_in_party_morte(True) ~ gsm.update_journal('24933')    # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
 def _r66902_condition(gsm):
-    GlobalGT("Morte_Mimir","GLOBAL",1)
+    return false  # GlobalGT("Morte_Mimir","GLOBAL",1)
 def _r25967_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',14,'int')
 def _r27316_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r65536_condition(gsm):
-    GlobalGT("Morte_Mimir","GLOBAL",1)
+    return false  # GlobalGT("Morte_Mimir","GLOBAL",1)
 def _r27916_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',14,'int')
 def _r28041_action(gsm):
-    DO ~TakePartyGold(10) ~
+    gsm.inc_gold(10)
 def _r28042_action(gsm):
-    DO ~TakePartyGold(10) ~
+    gsm.inc_gold(10)
 def _r28038_condition(gsm):
-    Global("Malmaner","GLOBAL",3) !Global("Chaotic_Malmaner_1","GLOBAL",1)
+    return gsm.get_malmaner() == 3 return gsm.get_chaotic_malmaner_1() != 1
 def _r28038_action(gsm):
-    DO ~TakePartyGold(30) ~
+    gsm.inc_gold(30)
 def _r28039_condition(gsm):
-    Global("Malmaner","GLOBAL",3) !Global("Chaotic_Malmaner_1","GLOBAL",1)
+    return gsm.get_malmaner() == 3 return gsm.get_chaotic_malmaner_1() != 1
 def _r28039_action(gsm):
-    DO ~TakePartyGold(30) ~
+    gsm.inc_gold(30)
 def _r28040_condition(gsm):
-    Global("Malmaner","GLOBAL",3) Global("Chaotic_Malmaner_1","GLOBAL",1)
+    return gsm.get_malmaner() == 3 return gsm.get_chaotic_malmaner_1() == 1
 def _r28040_action(gsm):
-    DO ~TakePartyGold(50) ~
+    gsm.inc_gold(50)
 def _r28044_condition(gsm):
-    Global("Malmaner","GLOBAL",3) Global("Chaotic_Malmaner_1","GLOBAL",1)
+    return gsm.get_malmaner() == 3 return gsm.get_chaotic_malmaner_1() == 1
 def _r28044_action(gsm):
-    DO ~TakePartyGold(50) ~
+    gsm.inc_gold(50)
 def _r28045_condition(gsm):
-    Global("Malmaner","GLOBAL",5) !Global("Chaotic_Malmaner_1","GLOBAL",3)
+    return gsm.get_malmaner() == 5 return gsm.get_chaotic_malmaner_1() != 3
 def _r28045_action(gsm):
-    DO ~TakePartyGold(50) ~
+    gsm.inc_gold(50)
 def _r28046_condition(gsm):
-    Global("Malmaner","GLOBAL",5) !Global("Chaotic_Malmaner_1","GLOBAL",3)
+    return gsm.get_malmaner() == 5 return gsm.get_chaotic_malmaner_1() != 3
 def _r28046_action(gsm):
-    DO ~TakePartyGold(50) ~
+    gsm.inc_gold(50)
 def _r28047_condition(gsm):
-    Global("Malmaner","GLOBAL",5) Global("Chaotic_Malmaner_1","GLOBAL",3)
+    return gsm.get_malmaner() == 5 return gsm.get_chaotic_malmaner_1() == 3
 def _r28047_action(gsm):
-    DO ~TakePartyGold(80) ~
+    gsm.inc_gold(80)
 def _r28048_condition(gsm):
-    Global("Malmaner","GLOBAL",5) Global("Chaotic_Malmaner_1","GLOBAL",3)
+    return gsm.get_malmaner() == 5 return gsm.get_chaotic_malmaner_1() == 3
 def _r28048_action(gsm):
-    DO ~TakePartyGold(80) ~
+    gsm.inc_gold(80)
 def _r28743_action(gsm):
-    DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~
+    gsm.set_morte_stolen(3)
 def _r28744_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',14,'chr')
 def _r28744_action(gsm):
-    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",2) SetGlobal("Morte_Stolen","GLOBAL",3) ~
+    gsm.inc_bd_morte_morale() gsm.set_morte_stolen(3)
 def _r28745_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',15,'chr')
 def _r28745_action(gsm):
-    DO ~SetGlobal("Morte_Stolen","GLOBAL",3) ~
+    gsm.set_morte_stolen(3)
 def _r28967_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',14,'int')
 def _r28968_condition(gsm):
-    Global("CW_Sal_Hint","GLOBAL",1)
+    return gsm.get_cw_sal_hint()
 def _r28968_action(gsm):
-    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+    gsm.set_qui_sai(2)
 def _r28971_condition(gsm):
-    Global("CW_Sal_Hint","GLOBAL",1)
+    return gsm.get_cw_sal_hint()
 def _r28971_action(gsm):
-    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+    gsm.set_qui_sai(2)
 def _r28975_condition(gsm):
-    Global("CW_Sal_Hint","GLOBAL",1)
+    return gsm.get_cw_sal_hint()
 def _r28975_action(gsm):
-    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+    gsm.set_qui_sai(2)
 def _r28976_action(gsm):
-    DO ~SetGlobal("Qui_Sai","GLOBAL",2) ~
+    gsm.set_qui_sai(2)
 def _r28980_condition(gsm):
-    Global("Know_Ravel","GLOBAL",1)
+    return gsm.get_know_ravel()
 def _r30822_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',9,'int')
 def _r30823_condition(gsm):
@@ -509,213 +509,213 @@ def _r30823_condition(gsm):
 def _r30824_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',8,'int')
 def _r30825_condition(gsm):
-    GlobalGT("Able","GLOBAL",0)
+    return gsm.get_able()
 def _r30826_condition(gsm):
-    Global("Able","GLOBAL",0)
+    return not gsm.get_able()
 def _r30826_action(gsm):
-    DO ~SetGlobal("Able","GLOBAL",1) ~
+    gsm.set_able(True)
 def _r31567_action(gsm):
-    DO ~OpenDoor("Statue") Kill(Protagonist) ~
+    OpenDoor("Statue") Kill(Protagonist)
 def _r32370_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32375_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32380_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32385_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32390_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32395_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32400_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r32405_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r33076_action(gsm):
-    DO ~SetGlobal("Lecture_Ghysis","GLOBAL",2) ~
+    gsm.set_lecture_ghysis(2)
 def _r33959_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r33963_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r33966_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r65541_condition(gsm):
-    Global("Morte_Talent","GLOBAL",0)
+    return not gsm.get_morte_talent()
 def _r65542_condition(gsm):
-    Global("Morte_Talent","GLOBAL",1)
+    return gsm.get_morte_talent()
 def _r65543_condition(gsm):
-    Global("Morte_Tattoo_XP","GLOBAL",1)
+    return gsm.get_morte_tattoo_xp()
 def _r65545_condition(gsm):
-    Global("Know_Mimir","GLOBAL",1) Global("Morte_Story","GLOBAL",0)
+    return gsm.get_know_mimir() return not gsm.get_morte_story()
 def _r65546_condition(gsm):
-    Global("Morte_Story","GLOBAL",1)
+    return gsm.get_morte_story()
 def _r65547_condition(gsm):
-    Global("Know_Morte_Pillar","GLOBAL",1)
+    return gsm.get_know_morte_pillar()
 def _r65548_condition(gsm):
-    GlobalGT("Know_Blood_War","GLOBAL",0)
+    return gsm.get_know_blood_war()
 def _r65549_condition(gsm):
-    GlobalGT("Know_Ravel","GLOBAL",0) Global("Ravel","GLOBAL",0)
+    return gsm.get_know_ravel() return not gsm.get_meet_ravel()
 def _r34991_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35001_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r34993_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35023_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35033_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35025_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35055_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35065_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35057_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35087_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35097_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35089_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35119_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35129_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35121_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35151_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35161_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35153_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35183_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35193_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35185_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35215_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35225_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35217_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35247_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35257_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35249_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35279_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35289_action(gsm):
-    DO ~gsm.set_morte_quip(True) ~
+    gsm.set_morte_quip(True)
 def _r35281_action(gsm):
-    DO ~gsm.dec_once_law('morte_zombie_1') ~
+    gsm.dec_once_law('morte_zombie_1')
 def _r35319_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
+    gsm.dec_once_law('chaotic_skeleton_mort_1')
 def _r35342_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+    gsm.dec_good()
 def _r35360_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+    gsm.inc_good()
 def _r35344_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35352_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35355_condition(gsm):
-    PartyHasItem("Prybar")
+    return gsm.get_has_prybar()
 def _r35358_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+    return not gsm.get_morte_skel_mort_quip()
 def _r35358_action(gsm):
-    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+    gsm.set_morte_skel_mort_quip(True)
 def _r35359_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+    return gsm.get_morte_skel_mort_quip()
 def _r35396_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
+    gsm.dec_once_law('chaotic_skeleton_mort_1')
 def _r35419_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+    gsm.dec_good()
 def _r35437_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+    gsm.inc_good()
 def _r35421_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35429_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35432_condition(gsm):
-    PartyHasItem("Prybar")
+    return gsm.get_has_prybar()
 def _r35435_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+    return not gsm.get_morte_skel_mort_quip()
 def _r35435_action(gsm):
-    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+    gsm.set_morte_skel_mort_quip(True)
 def _r35436_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+    return gsm.get_morte_skel_mort_quip()
 def _r35473_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
+    gsm.dec_once_law('chaotic_skeleton_mort_1')
 def _r35496_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+    gsm.dec_good()
 def _r35514_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+    gsm.inc_good()
 def _r35498_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35506_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35509_condition(gsm):
-    PartyHasItem("Prybar")
+    return gsm.get_has_prybar()
 def _r35512_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+    return not gsm.get_morte_skel_mort_quip()
 def _r35512_action(gsm):
-    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+    gsm.set_morte_skel_mort_quip(True)
 def _r35513_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+    return gsm.get_morte_skel_mort_quip()
 def _r35550_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_skeleton_mort_1') ~
+    gsm.dec_once_law('chaotic_skeleton_mort_1')
 def _r35573_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",-1) ~
+    gsm.dec_good()
 def _r35591_action(gsm):
-    DO ~IncrementGlobal("Good","GLOBAL",1) ~
+    gsm.inc_good()
 def _r35575_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_lt('protagonist',13,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_lt('protagonist',13,'str')
 def _r35583_condition(gsm):
-    !PartyHasItem("Prybar") return gsm.check_char_prop_gt('protagonist',12,'str')
+    return not gsm.get_has_prybar() return gsm.check_char_prop_gt('protagonist',12,'str')
 def _r35586_condition(gsm):
-    PartyHasItem("Prybar")
+    return gsm.get_has_prybar()
 def _r35589_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+    return not gsm.get_morte_skel_mort_quip()
 def _r35589_action(gsm):
-    DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~
+    gsm.set_morte_skel_mort_quip(True)
 def _r35590_condition(gsm):
-    Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+    return gsm.get_morte_skel_mort_quip()
 def _r39716_action(gsm):
-    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+    gsm.set_yves_shared(True)
 def _r39719_action(gsm):
-    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+    gsm.set_yves_shared(True)
 def _r39721_action(gsm):
-    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+    gsm.set_yves_shared(True)
 def _r39722_action(gsm):
-    DO ~SetGlobal("Yves_Shared","AR0605",1) ~
+    gsm.set_yves_shared(True)
 def _r40069_condition(gsm):
-    return not gsm.get_in_party_morte() HPPercent(Protagonist,100)
+    return not gsm.get_in_party_morte() return gsm.get_hp() == 100
 def _r40070_condition(gsm):
-    return not gsm.get_in_party_morte() HPPercentGT(Protagonist,49)
+    return not gsm.get_in_party_morte() return gsm.get_hp() > 49
 def _r40071_condition(gsm):
-    return not gsm.get_in_party_morte() HPPercentLT(Protagonist,50)
+    return not gsm.get_in_party_morte() return gsm.get_hp() < 50
 def _r40077_condition(gsm):
-    Global("Nenny","GLOBAL",2)
+    return gsm.get_nenny() == 2
 def _r40078_condition(gsm):
-    Global("Nenny","GLOBAL",2)
+    return gsm.get_nenny() == 2
 def _r40079_condition(gsm):
-    Global("Nenny","GLOBAL",1)
+    return gsm.get_nenny() == 1
 def _r40080_condition(gsm):
-    Global("Nenny","GLOBAL",1)
+    return gsm.get_nenny() == 1
 def _r40848_action(gsm):
-    DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
+    gsm.set_met_modrons(True)
 def _r40852_action(gsm):
-    DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
+    gsm.set_met_modrons(True)
 def _r40856_action(gsm):
-    DO ~SetGlobal("Met_Modrons","GLOBAL",1) ~
+    gsm.set_met_modrons(True)
 def _r41837_action(gsm):
     gsm.update_journal('39516')    # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
 def _r41842_condition(gsm):
@@ -725,7 +725,7 @@ def _r41843_condition(gsm):
 def _r41845_condition(gsm):
     return gsm.get_morte_mortuary_walkthrough_1()
 def _r41846_condition(gsm):
-    PartyHasItem("Bandage")
+    return gsm.get_has_bandages()
 def _r41847_condition(gsm):
     return not gsm.get_morte_mortuary_walkthrough_1()
 def _r41848_condition(gsm):
@@ -773,631 +773,631 @@ def _r41893_condition(gsm):
 def _r41900_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',12,'int')
 def _r41911_action(gsm):
-    DO ~gsm.set_morte_mortuary_walkthrough_2(True) ~
+    gsm.set_morte_mortuary_walkthrough_2(True)
 def _r41921_condition(gsm):
-    Global("Story_Reekwind_Curse","GLOBAL",1) Global("Jumble_Reekwind","GLOBAL",0)
+    return gsm.get_story_reekwind_curse() return not gsm.get_jumble_reekwind()
 def _r41921_action(gsm):
-    DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1) ~ gsm.update_journal('67862')    # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
+    gsm.set_jumble_reekwind(True) ~ gsm.update_journal('67862')    # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
 def _r67864_condition(gsm):
-    Global("Jumble_Reekwind","GLOBAL",1)
+    return gsm.get_jumble_reekwind()
 def _r43909_condition(gsm):
-    PartyHasItem("Decant") Global("Seek_Word","GLOBAL",1)
+    return gsm.get_has_decant() return gsm.get_seek_word()
 def _r43910_condition(gsm):
-    Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn")
+    return gsm.get_aelwyn() == 2 return not gsm.get_dead_aelwyn()
 def _r43910_action(gsm):
-    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ gsm.update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+    gsm.set_nemelle(3) gsm.set_aelwyn(4) ~ gsm.update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 def _r43911_condition(gsm):
-    GlobalLT("Aelwyn","GLOBAL",2)
+    return gsm.get_aelwyn() < 2
 def _r43917_condition(gsm):
-    PartyHasItem("Decant") Global("Seek_Word","GLOBAL",1)
+    return gsm.get_has_decant() return gsm.get_seek_word()
 def _r43918_condition(gsm):
-    Global("Aelwyn","GLOBAL",2) !Dead("Aelwyn")
+    return gsm.get_aelwyn() == 2 return not gsm.get_dead_aelwyn()
 def _r43918_action(gsm):
-    DO ~SetGlobal("Nemelle","GLOBAL",3) SetGlobal("Aelwyn","GLOBAL",4) ~ gsm.update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+    gsm.set_nemelle(3) gsm.set_aelwyn(4) ~ gsm.update_journal('39490')    # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 def _r43919_condition(gsm):
-    GlobalLT("Aelwyn","GLOBAL",2)
+    return gsm.get_aelwyn() < 2
 def _r45029_action(gsm):
-    DO ~SetGlobal("Lecture_Death","GLOBAL",2) ~
+    gsm.set_lecture_death(2)
 def _r45093_action(gsm):
     gsm.update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
 def _r45103_action(gsm):
     gsm.update_journal('39477')    # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
 def _r50166_action(gsm):
-    DO ~SetGlobal("Translate_Dabus","GLOBAL",0) ~
+    gsm.set_translate_dabus(False)
 def _r50325_condition(gsm):
-    Global("Know_Lady","GLOBAL",0)
+    return not gsm.get_know_lady()
 def _r50325_action(gsm):
-    DO ~SetGlobal("Know_Lady","GLOBAL",1) ~
+    gsm.set_know_lady(True)
 def _r50328_condition(gsm):
-    Global("Know_Lady","GLOBAL",1)
+    return gsm.get_know_lady()
 def _r50329_condition(gsm):
-    Global("Know_Lady","GLOBAL",1)
+    return gsm.get_know_lady()
 def _r50416_action(gsm):
-    DO ~MoraleDec("Morte",1) ~
+    gsm.dec_morale_morte()
 def _r52577_condition(gsm):
-    NearbyDialog("Dgrace")
+    return gsm.get_in_party_grace()
 def _r52577_action(gsm):
-    DO ~SetGlobal("Ravel_Grace","GLOBAL",2) ~
+    gsm.set_ravel_grace(2)
 def _r52578_condition(gsm):
-    !NearbyDialog("DGrace") NearbyDialog("DAnnah")
+    return not gsm.get_in_party_grace() return gsm.get_in_party_annah()
 def _r52578_action(gsm):
-    DO ~SetGlobal("Ravel_Annah","GLOBAL",2) ~
+    gsm.set_ravel_annah(2)
 def _r52579_condition(gsm):
-    !NearbyDialog("DGrace") !NearbyDialog("DAnnah")
+    return not gsm.get_in_party_grace() return not gsm.get_in_party_annah()
 def _r53625_condition(gsm):
-    Global("Morte_Story","GLOBAL",1)
+    return gsm.get_morte_story()
 def _r53625_action(gsm):
-    DO ~MoraleDec("Morte",1) ~
+    gsm.dec_morale_morte()
 def _r53627_condition(gsm):
-    Global("Morte_Story","GLOBAL",0)
+    return not gsm.get_morte_story()
 def _r53629_action(gsm):
-    DO ~SetGlobal("Morte_Story","GLOBAL",1) ~ gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+    gsm.set_morte_story(True) ~ gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 def _r53630_action(gsm):
-    DO ~MoraleDec("Morte",1) SetGlobal("Morte_Story","GLOBAL",1) ~ gsm.update_journal('53661')    # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
+    gsm.dec_morale_morte() gsm.set_morte_story(True) ~ gsm.update_journal('53661')    # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
 def _r53662_condition(gsm):
-    NearbyDialog("Dannah")
+    return gsm.get_in_party_annah()
 def _r53663_condition(gsm):
-    !NearbyDialog("Dannah")
+    return not gsm.get_in_party_annah()
 def _r54105_condition(gsm):
-    !NearbyDialog("DDakkon")
+    return not gsm.get_in_party_dakkon()
 def _r53795_action(gsm):
-    DO ~MoraleDec("Morte",1) ~
+    gsm.dec_morale_morte()
 def _r53801_action(gsm):
-    DO ~MoraleDec("Morte",1) ~
+    gsm.dec_morale_morte()
 def _r53807_action(gsm):
     gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 def _r53825_condition(gsm):
-    NearbyDialog("Dgrace")
+    return gsm.get_in_party_grace()
 def _r53825_action(gsm):
-    DO ~SetGlobal("Pillar_Musk","AR1001",1) ~
+    gsm.set_pillar_musk(True)
 def _r53826_condition(gsm):
-    NearbyDialog("Dannah") !NearbyDialog("Dgrace")
+    return gsm.get_in_party_annah() return not gsm.get_in_party_grace()
 def _r53826_action(gsm):
-    DO ~SetGlobal("Pillar_Musk","AR1001",1) ~
+    gsm.set_pillar_musk(True)
 def _r53827_condition(gsm):
-    !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+    return not gsm.get_in_party_grace() return not gsm.get_in_party_annah()
 def _r53832_condition(gsm):
-    Global("Specialist","GLOBAL",4)
+    return gsm.get_specialist() == 4
 def _r53833_condition(gsm):
-    Global("Specialist","GLOBAL",5)
+    return gsm.get_specialist() == 5
 def _r53834_condition(gsm):
-    Global("Specialist","GLOBAL",6)
+    return gsm.get_specialist() == 6
 def _r53835_condition(gsm):
-    !Global("Specialist","GLOBAL",4) !Global("Specialist","GLOBAL",5) !Global("Specialist","GLOBAL",6)
+    return gsm.get_specialist() != 4 return gsm.get_specialist() != 5 return gsm.get_specialist() != 6
 def _r53836_condition(gsm):
-    Global("Where_Fhjull","AR1001",0)
+    return not gsm.get_where_fhjull()
 def _r53837_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube")
+    return gsm.get_where_fhjull() return gsm.get_has_cube()
 def _r53838_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return gsm.get_in_party_grace()
 def _r53839_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return not gsm.get_in_party_grace() return gsm.get_in_party_annah()
 def _r53840_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return not gsm.get_in_party_grace() return not gsm.get_in_party_annah()
 def _r53841_action(gsm):
-    DO ~SetGlobal("Pillar_Question","AR1001",0) ~
+    gsm.set_pillar_question(False)
 def _r53843_action(gsm):
-    DO ~gsm.dec_once_good('evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
+    gsm.dec_once_good('evil_pillar_2') gsm.set_pillar(2) StartCutSceneMode() # ?.startCutScene('1001Cut1')
 def _r53844_condition(gsm):
-    Global("Where_Fhjull","AR1001",0)
+    return not gsm.get_where_fhjull()
 def _r53863_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube")
+    return gsm.get_where_fhjull() return gsm.get_has_cube()
 def _r53864_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return gsm.get_in_party_grace()
 def _r53865_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return not gsm.get_in_party_grace() return gsm.get_in_party_annah()
 def _r53866_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return not gsm.get_in_party_grace() return not gsm.get_in_party_annah()
 def _r53867_action(gsm):
-    DO ~SetGlobal("Pillar_Question","AR1001",0) ~
+    gsm.set_pillar_question(False)
 def _r53850_action(gsm):
-    DO ~gsm.dec_once_good('evil_pillar_2') SetGlobal("Pillar ","GLOBAL",2) StartCutSceneMode() StartCutSceneEx("1001Cut1",FALSE) ~
+    gsm.dec_once_good('evil_pillar_2') gsm.set_pillar(2) StartCutSceneMode() # ?.startCutScene('1001Cut1')
 def _r53851_condition(gsm):
-    Global("Where_Fhjull","AR1001",0)
+    return not gsm.get_where_fhjull()
 def _r53852_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) PartyHasItem("Cube")
+    return gsm.get_where_fhjull() return gsm.get_has_cube()
 def _r53853_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") NearbyDialog("Dgrace")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return gsm.get_in_party_grace()
 def _r53854_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") NearbyDialog("Dannah")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return not gsm.get_in_party_grace() return gsm.get_in_party_annah()
 def _r53855_condition(gsm):
-    Global("Where_Fhjull","AR1001",1) !PartyHasItem("Cube") !NearbyDialog("Dgrace") !NearbyDialog("Dannah")
+    return gsm.get_where_fhjull() return not gsm.get_has_cube() return not gsm.get_in_party_grace() return not gsm.get_in_party_annah()
 def _r53856_action(gsm):
-    DO ~SetGlobal("Pillar_Question","AR1001",0) ~
+    gsm.set_pillar_question(False)
 def _r54160_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54165_condition(gsm):
-    !NearbyDialog("DDakkon")
+    return not gsm.get_in_party_dakkon()
 def _r54166_condition(gsm):
-    NearbyDialog("DDakkon") return gsm.check_char_prop_gt('protagonist',13,'wis')
+    return gsm.get_in_party_dakkon() return gsm.check_char_prop_gt('protagonist',13,'wis')
 def _r54167_condition(gsm):
-    NearbyDialog("DDakkon") return gsm.check_char_prop_lt('protagonist',14,'wis')
+    return gsm.get_in_party_dakkon() return gsm.check_char_prop_lt('protagonist',14,'wis')
 def _r54172_condition(gsm):
-    !NearbyDialog("DDakkon")
+    return not gsm.get_in_party_dakkon()
 def _r54173_condition(gsm):
-    NearbyDialog("DDakkon") return gsm.check_char_prop_gt('protagonist',13,'wis')
+    return gsm.get_in_party_dakkon() return gsm.check_char_prop_gt('protagonist',13,'wis')
 def _r54174_condition(gsm):
-    NearbyDialog("DDakkon") return gsm.check_char_prop_lt('protagonist',14,'wis')
+    return gsm.get_in_party_dakkon() return gsm.check_char_prop_lt('protagonist',14,'wis')
 def _r54179_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54180_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54180_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54189_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54190_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54191_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54192_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54192_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54194_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54195_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54196_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54197_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54197_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54200_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54201_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54201_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54204_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54205_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54205_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54207_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54208_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54209_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54210_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54210_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54213_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54214_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54214_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54217_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54218_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54218_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54220_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',15,'int') NearbyDialog("Ddakkon")
+    return gsm.check_char_prop_gt('protagonist',15,'int') return gsm.get_in_party_dakkon()
 def _r54221_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") GlobalGT("Dakkon","GLOBAL",0)
+    return gsm.check_char_prop_gt('protagonist',15,'int') return not gsm.get_in_party_dakkon() return gsm.get_meet_dakkon()
 def _r54223_condition(gsm):
-    return gsm.check_char_prop_gt('protagonist',15,'int') !NearbyDialog("Ddakkon") Global("Dakkon","GLOBAL",0)
+    return gsm.check_char_prop_gt('protagonist',15,'int') return not gsm.get_in_party_dakkon() return not gsm.get_meet_dakkon()
 def _r54226_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54227_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54227_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54230_condition(gsm):
     return gsm.get_meet_deionarra()
 def _r54231_condition(gsm):
     return not gsm.get_meet_deionarra()
 def _r54232_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54233_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54233_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54235_condition(gsm):
     return gsm.get_meet_deionarra()
 def _r54236_condition(gsm):
     return not gsm.get_meet_deionarra()
 def _r54237_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54238_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54238_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54241_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54242_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54242_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54244_action(gsm):
-    DO ~SetGlobal("Morte_Quip_Regret_Portal","GLOBAL",2) ~
+    gsm.set_morte_quip_regret_portal(2)
 def _r54245_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54246_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54246_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54250_condition(gsm):
-    GlobalGT("BD_MORTE_MORALE","GLOBAL",5)
+    return gsm.get_bd_morte_morale() > 5
 def _r54252_condition(gsm):
-    GlobalLT("BD_MORTE_MORALE","GLOBAL",6)
+    return gsm.get_bd_morte_morale() < 6
 def _r54255_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54262_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54262_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54264_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',15,'wis')
 def _r54266_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54267_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54267_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54269_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',15,'wis')
 def _r54271_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54272_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54272_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54275_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return gsm.get_in_party_morte()
 def _r54276_condition(gsm):
-    GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1) !InParty("Morte")
+    return gsm.get_morte_quip_regret_portal() > 1 return not gsm.get_in_party_morte()
 def _r54276_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54278_condition(gsm):
-    InParty("Morte") Global("Morte_Morale_Fortress_Portal","AR0202",0)
+    return gsm.get_in_party_morte() return gsm.get_morte_morale_fortress_portal() == 0
 def _r54278_action(gsm):
-    DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1) SetGlobal("Morte_Morale_Fortress_Portal","AR0202",1) ~
+    gsm.inc_bd_morte_morale() gsm.set_morte_morale_fortress_portal(1)
 def _r54279_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54280_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54280_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54282_condition(gsm):
-    GlobalGT("Ravel_Grace","GLOBAL",0) GlobalGT("Ravel_Morte","GLOBAL",0) GlobalLT("Torment_Fell","GLOBAL",2) NearbyDialog("Dgrace")
+    return gsm.get_ravel_grace() > 0 return gsm.get_ravel_morte() return gsm.get_torment_fell() < 2 return gsm.get_in_party_grace()
 def _r54283_condition(gsm):
-    GlobalGT("Ravel_Grace","GLOBAL",0) GlobalGT("Ravel_Morte","GLOBAL",0) Global("Torment_Fell","GLOBAL",2) NearbyDialog("Dgrace")
+    return gsm.get_ravel_grace() > 0 return gsm.get_ravel_morte() return gsm.get_torment_fell() == 2 return gsm.get_in_party_grace()
 def _r54284_condition(gsm):
-    GlobalGT("Ravel_Morte","GLOBAL",0) GlobalLT("Torment_Fell","GLOBAL",2) !NearbyDialog("Dgrace")
+    return gsm.get_ravel_morte() return gsm.get_torment_fell() < 2 return not gsm.get_in_party_grace()
 def _r54285_condition(gsm):
-    GlobalGT("Ravel_Morte","GLOBAL",0) Global("Torment_Fell","GLOBAL",2) !NearbyDialog("Dgrace")
+    return gsm.get_ravel_morte() return gsm.get_torment_fell() == 2 return not gsm.get_in_party_grace()
 def _r54286_condition(gsm):
-    Global("Ravel_Morte","GLOBAL",0)
+    return not gsm.get_ravel_morte()
 def _r54832_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54833_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54833_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54835_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54836_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54836_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r54838_condition(gsm):
-    InParty("Morte")
+    return gsm.get_in_party_morte()
 def _r54839_condition(gsm):
-    !InParty("Morte")
+    return not gsm.get_in_party_morte()
 def _r54839_action(gsm):
-    DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE) ~
+    SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 def _r55849_condition(gsm):
-    !NearbyDialog("DGrace")
+    return not gsm.get_in_party_grace()
 def _r55850_condition(gsm):
-    !NearbyDialog("DGrace")
+    return not gsm.get_in_party_grace()
 def _r55875_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',15,'int')
 def _r55902_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_nordom_5') ~
+    gsm.dec_once_law('chaotic_nordom_5')
 def _r55925_action(gsm):
-    DO ~SetGlobal("Know_Mechanus","GLOBAL",1) ~
+    gsm.set_know_mechanus(True)
 def _r55931_action(gsm):
-    DO ~gsm.inc_once_law('lawful_nordom_2', 2) ~
+    gsm.inc_once_law('lawful_nordom_2', 2)
 def _r55941_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_nordom_4', 2) ~
+    gsm.dec_once_law('chaotic_nordom_4', 2)
 def _r61411_condition(gsm):
     PartyGoldGT(499)
 def _r61412_condition(gsm):
     PartyGoldLT(500)
 def _r61414_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65554_condition(gsm):
-    Global("Morte_Warning","GLOBAL",1)
+    return gsm.get_morte_warning()
 def _r65558_condition(gsm):
     return not gsm.get_meet_pharod()
 def _r65559_condition(gsm):
     return gsm.get_meet_pharod()
 def _r65566_condition(gsm):
-    Global("Morte_Warning","GLOBAL",1)
+    return gsm.get_morte_warning()
 def _r65565_condition(gsm):
     return not gsm.get_journal()
 def _r65569_condition(gsm):
-    Global("Morte_Tattoo_XP","GLOBAL",0)
+    return not gsm.get_morte_tattoo_xp()
 def _r65569_action(gsm):
-    DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1) AddexperienceParty(1000) ~ gsm.update_journal('65573')    # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
+    gsm.set_morte_tattoo_xp(True) gsm.inc_exp(1000)    # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
 def _r65570_condition(gsm):
-    Global("Morte_Tattoo_XP","GLOBAL",1)
+    return gsm.get_morte_tattoo_xp()
 def _r65613_condition(gsm):
-    GlobalGT("Morte_Stolen","GLOBAL",2)
+    return gsm.get_morte_stolen() > 2
 def _r65621_action(gsm):
-    DO ~SetGlobal("Morte_Talent","GLOBAL",1) ~ gsm.update_journal('65625')    # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
+    gsm.set_morte_talent(True) ~ gsm.update_journal('65625')    # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
 def _r65622_condition(gsm):
-    GlobalGT("Morte_Stolen","GLOBAL",2)
+    return gsm.get_morte_stolen() > 2
 def _r65627_condition(gsm):
-    GlobalGT("Morte_Stolen","GLOBAL",2)
+    return gsm.get_morte_stolen() > 2
 def _r65631_action(gsm):
     gsm.update_journal('65637')    # '65637': ' ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ '
 def _r65639_condition(gsm):
     return not gsm.get_meet_pharod()
 def _r65640_condition(gsm):
-    return gsm.get_meet_pharod() Global("Pharod_Quest","GLOBAL",1)
+    return gsm.get_meet_pharod() return gsm.get_pharod_quest() == 1
 def _r65641_condition(gsm):
-    GlobalGT("Pharod_Quest","GLOBAL",1) !Global("AR0401_Visited","GLOBAL",1)
+    return gsm.get_pharod_quest() > 1 return not gsm.is_internal_location_visited('AR0401')
 def _r65642_condition(gsm):
-    Global("AR0401_Visited","GLOBAL",1) Global("AR0500_Visited","GLOBAL",0)
+    return gsm.is_internal_location_visited('AR0401') return not gsm.is_internal_location_visited('AR0500')
 def _r65643_condition(gsm):
-    Global("AR0500_Visited","GLOBAL",1) Global("Know_Ravel","GLOBAL",0)
+    return gsm.is_internal_location_visited('AR0500') return not gsm.get_know_ravel()
 def _r65644_condition(gsm):
-    Global("Know_Ravel","GLOBAL",1) Global("Know_Ravel_Key","GLOBAL",0)
+    return gsm.get_know_ravel() return not gsm.get_know_ravel_key()
 def _r65645_condition(gsm):
-    Global("Know_Ravel","GLOBAL",1) GlobalGT("Know_Ravel_Key","GLOBAL",0) Global("AR0610_Visited","GLOBAL",0)
+    return gsm.get_know_ravel() return gsm.get_know_ravel_key() return not gsm.is_internal_location_visited('AR0610')
 def _r65646_condition(gsm):
-    Global("AR0610_Visited","GLOBAL",1) Global("AR0700_Visited","GLOBAL",0)
+    return gsm.is_internal_location_visited('AR0610') return not gsm.is_internal_location_visited('AR0700')
 def _r65647_condition(gsm):
-    Global("AR0700_Visited","GLOBAL",1)
+    return gsm.is_internal_location_visited('AR0700')
 def _r65666_condition(gsm):
-    Global("AR0601_Visited","GLOBAL",0)
+    return not gsm.is_internal_location_visited('AR0601')
 def _r65666_action(gsm):
     gsm.update_journal('65669')    # '65669': ' ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ '
 def _r65674_condition(gsm):
-    Global("Know_Ravel_Key","GLOBAL",1)
+    return gsm.get_know_ravel_key()
 def _r65674_action(gsm):
     gsm.update_journal('65678')    # '65678': ' ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ '
 def _r65693_condition(gsm):
     return not gsm.get_meet_pharod()
 def _r65700_condition(gsm):
-    Global("Grace_Silver_Mimir","GLOBAL",1)
+    return gsm.get_grace_silver_mimir()
 def _r65708_condition(gsm):
-    Global("Grace_Smell_Mimir","GLOBAL",1)
+    return gsm.get_grace_smell_mimir()
 def _r65709_condition(gsm):
-    Global("Morte_Tattoo_XP","GLOBAL",1)
+    return gsm.get_morte_tattoo_xp()
 def _r65710_action(gsm):
     gsm.update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
 def _r65711_action(gsm):
     gsm.update_journal('65712')    # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
 def _r65718_condition(gsm):
-    Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",0)
+    return gsm.get_grace_smell_mimir() return not gsm.is_internal_location_visited('AR1000')
 def _r65719_condition(gsm):
-    Global("Grace_Smell_Mimir","GLOBAL",1) Global("AR1000_Visited","GLOBAL",1)
+    return gsm.get_grace_smell_mimir() return gsm.is_internal_location_visited('AR1000')
 def _r65731_action(gsm):
-    DO ~SetGlobal("Morte_Story","GLOBAL",1) ~
+    gsm.set_morte_story(True)
 def _r65733_action(gsm):
-    DO ~AddexperienceParty(12000) ~
+    gsm.inc_exp(12000)
 def _r65738_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',13,'wis')
 def _r65739_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65740_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65743_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65744_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65747_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65748_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65750_condition(gsm):
-    Global("Chaotic_Morte_1","GLOBAL",0)
+    return not gsm.get_chaotic_morte_1()
 def _r65750_action(gsm):
-    DO ~gsm.inc_once_law('lawful_morte_1') ~
+    gsm.inc_once_law('lawful_morte_1')
 def _r65751_condition(gsm):
-    Global("Lawful_Morte_1","GLOBAL",0)
+    return not gsm.get_lawful_morte_1()
 def _r65751_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_morte_1') gsm.dec_once_good('evil_morte_1') ~
+    gsm.dec_once_law('chaotic_morte_1') gsm.dec_once_good('evil_morte_1')
 def _r65753_action(gsm):
     gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 def _r65754_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65755_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65758_action(gsm):
-    DO ~PlaySoundNotRanged("SPTR_01") FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    # ?.play_sound('SPTR_01') FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65759_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65760_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65763_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65766_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65769_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65772_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65774_condition(gsm):
-    Global("Memory_Morte_Pillar","GLOBAL",0)
+    return not gsm.get_memory_morte_pillar()
 def _r65774_action(gsm):
-    DO ~SetGlobal("Memory_Morte_Pillar","GLOBAL",1) GiveExperience(Protagonist,12000) FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    gsm.set_memory_morte_pillar(True) gsm.dec_exp(Protagonist,12000) FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0], 0)
 def _r65775_condition(gsm):
-    Global("Memory_Morte_Pillar","GLOBAL",1)
+    return gsm.get_memory_morte_pillar()
 def _r65775_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65778_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65779_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65781_action(gsm):
-    DO ~PlaySoundNotRanged("SPTR_01") FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    # ?.play_sound('SPTR_01') FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65782_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65783_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65786_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65787_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65789_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
 def _r65790_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65791_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65794_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65795_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65798_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65799_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65801_condition(gsm):
-    Global("Know_Morte_Pillar","GLOBAL",0)
+    return not gsm.get_know_morte_pillar()
 def _r65802_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65803_condition(gsm):
-    GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+    return gsm.get_know_morte_pillar()
 def _r65821_action(gsm):
-    DO ~AddexperienceParty(12000) MoraleInc("Morte",3) PermanentStatChange("Morte",STR,RAISE,4) PermanentStatChange("Morte",DEX,RAISE,2) PermanentStatChange("Morte",CON,RAISE,2) SetGlobal("BD_MorteStory","GLOBAL",1) ~ gsm.update_journal('65825')    # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
+    gsm.inc_exp(12000) gsm.inc_morale_morte(3) # ?.PermanentStatChange(Morte",STR,RAISE,4) PermanentStatChange("Morte",DEX,RAISE,2) PermanentStatChange("Morte, ,CON, RAISE, 2) gsm.set_bd_morte_story(True) ~ gsm.update_journal('65825')    # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
 def _r66347_condition(gsm):
-    Global("Morte_Talent","GLOBAL",0)
+    return not gsm.get_morte_talent()
 def _r66348_condition(gsm):
-    Global("Morte_Talent","GLOBAL",1)
+    return gsm.get_morte_talent()
 def _r66349_condition(gsm):
-    Global("Morte_Tattoo_XP","GLOBAL",1)
+    return gsm.get_morte_tattoo_xp()
 def _r66351_condition(gsm):
-    Global("Know_Mimir","GLOBAL",1) Global("Morte_Story","GLOBAL",0)
+    return gsm.get_know_mimir() return not gsm.get_morte_story()
 def _r66352_condition(gsm):
-    Global("Morte_Story","GLOBAL",1)
+    return gsm.get_morte_story()
 def _r66353_condition(gsm):
-    Global("Know_Morte_Pillar","GLOBAL",1)
+    return gsm.get_know_morte_pillar()
 def _r66354_condition(gsm):
-    GlobalGT("Know_Blood_War","GLOBAL",0)
+    return gsm.get_know_blood_war()
 def _r66355_condition(gsm):
-    GlobalGT("Know_Ravel","GLOBAL",0) Global("Ravel","GLOBAL",0)
+    return gsm.get_know_ravel() return not gsm.get_meet_ravel()
 def _r68176_action(gsm):
-    DO ~SetGlobal("Fortress_Morte","GLOBAL",4) JoinPartyEx(TRUE) ~
+    gsm.set_fortress_morte(4) JoinPartyEx(TRUE)
 def _r68178_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",0) GlobalGT("Fortress_Party_Roof","GLOBAL",1)
+    return not gsm.get_trans_vanish() return false  # GlobalGT("Fortress_Party_Roof","GLOBAL",1)
 def _r68189_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) GlobalGT("Fortress_Dakkon","GLOBAL",0)
+    return gsm.get_trans_vanish() return gsm.get_fortress_dakkon()
 def _r68189_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204d0')
 def _r68190_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) GlobalGT("Fortress_Annah","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return gsm.get_fortress_annah()
 def _r68190_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204a0')
 def _r68191_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) GlobalGT("Fortress_Grace","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return gsm.get_fortress_grace()
 def _r68191_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204g0')
 def _r68192_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return gsm.get_fortress_ignus() return not gsm.get_fortress_ignus_battle()
 def _r68192_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204i0')
 def _r68193_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return not gsm.get_fortress_ignus() return gsm.get_fortress_vhailor() return not gsm.get_fortress_vhailor_battle()
 def _r68193_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204v0')
 def _r68194_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Vhailor","GLOBAL",0) GlobalGT("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return not gsm.get_fortress_ignus() return not gsm.get_fortress_vhailor() return gsm.get_fortress_nordom()
 def _r68194_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204n0')
 def _r68239_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return not gsm.get_fortress_ignus() return not gsm.get_fortress_vhailor() return not gsm.get_fortress_nordom()
 def _r68239_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204tr')
 def _r68438_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return not gsm.get_fortress_ignus() return gsm.get_fortress_vhailor() return gsm.get_fortress_vhailor_battle() return not gsm.get_fortress_nordom()
 def _r68438_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204tr')
 def _r68439_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return gsm.get_fortress_ignus() return gsm.get_fortress_ignus_battle() return not gsm.get_fortress_vhailor() return not gsm.get_fortress_nordom()
 def _r68439_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204tr",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204tr')
 def _r68446_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",1) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0)
+    return gsm.get_trans_vanish() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_grace() return gsm.get_fortress_ignus() return gsm.get_fortress_ignus_battle() return gsm.get_fortress_vhailor() return not gsm.get_fortress_vhailor_battle()
 def _r68446_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204v0')
 def _r68503_condition(gsm):
-    Global("Trans_Vanish","GLOBAL",0) Global("Fortress_Party_Roof","GLOBAL",1)
+    return not gsm.get_trans_vanish() return gsm.get_fortress_party_roof()
 def _r68175_condition(gsm):
-    GlobalGT("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_annah()
 def _r68175_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204a0')
 def _r68179_condition(gsm):
-    GlobalGT("Fortress_Dakkon","GLOBAL",0)
+    return gsm.get_fortress_dakkon()
 def _r68179_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204d0')
 def _r68180_condition(gsm):
-    GlobalGT("Fortress_Grace","GLOBAL",0)
+    return gsm.get_fortress_grace()
 def _r68180_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204g0')
 def _r68181_condition(gsm):
-    GlobalGT("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_fortress_nordom()
 def _r68181_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204n0')
 def _r68182_condition(gsm):
-    GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0)
+    return gsm.get_fortress_ignus() return not gsm.get_fortress_ignus_battle()
 def _r68182_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204i0')
 def _r68183_condition(gsm):
-    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0)
+    return gsm.get_fortress_vhailor() return not gsm.get_fortress_vhailor_battle()
 def _r68183_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204v0')
 def _r68319_condition(gsm):
-    GlobalGT("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_annah()
 def _r68319_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204a0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204a0')
 def _r68320_condition(gsm):
-    GlobalGT("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_dakkon() return not gsm.get_fortress_annah()
 def _r68320_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204d0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204d0')
 def _r68321_condition(gsm):
-    GlobalGT("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah()
 def _r68321_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204g0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204g0')
 def _r68322_condition(gsm):
-    GlobalGT("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_nordom() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah()
 def _r68322_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204n0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204n0')
 def _r68323_condition(gsm):
-    GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_ignus() return not gsm.get_fortress_ignus_battle() return not gsm.get_fortress_nordom() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah()
 def _r68323_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204i0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204i0')
 def _r68324_condition(gsm):
-    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+    return gsm.get_fortress_vhailor() return not gsm.get_fortress_vhailor_battle() return not gsm.get_fortress_ignus() return not gsm.get_fortress_nordom() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah()
 def _r68324_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204v0')
 def _r68325_condition(gsm):
-    Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0)
+    return not gsm.get_fortress_vhailor() return not gsm.get_fortress_ignus() return not gsm.get_fortress_nordom() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah()
 def _r68325_action(gsm):
-    DO ~QuitGame(FINALE,0,0) ~
+    QuitGame(FINALE,0,0)
 def _r68490_condition(gsm):
-    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",0) GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1)
+    return gsm.get_fortress_vhailor() return not gsm.get_fortress_vhailor_battle() return gsm.get_fortress_ignus() return not gsm.get_fortress_nordom() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return gsm.get_fortress_ignus_battle()
 def _r68490_action(gsm):
-    DO ~StartCutSceneMode() StartCutSceneEx("1204v0",FALSE) ~
+    StartCutSceneMode() # ?.startCutScene('1204v0')
 def _r68491_condition(gsm):
-    GlobalGT("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Vhailor_Battle","GLOBAL",1) Global("Fortress_Ignus","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_fortress_vhailor() return gsm.get_fortress_vhailor_battle() return not gsm.get_fortress_ignus() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_nordom()
 def _r68491_action(gsm):
-    DO ~QuitGame(FINALE,0,0) ~
+    QuitGame(FINALE,0,0)
 def _r68492_condition(gsm):
-    GlobalGT("Fortress_Ignus","GLOBAL",0) Global("Fortress_Ignus_Battle","GLOBAL",1) Global("Fortress_Vhailor","GLOBAL",0) Global("Fortress_Grace","GLOBAL",0) Global("Fortress_Dakkon","GLOBAL",0) Global("Fortress_Annah","GLOBAL",0) Global("Fortress_Nordom","GLOBAL",0)
+    return gsm.get_fortress_ignus() return gsm.get_fortress_ignus_battle() return not gsm.get_fortress_vhailor() return not gsm.get_fortress_grace() return not gsm.get_fortress_dakkon() return not gsm.get_fortress_annah() return not gsm.get_fortress_nordom()
 def _r68492_action(gsm):
-    DO ~QuitGame(FINALE,0,0) ~
+    QuitGame(FINALE,0,0)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

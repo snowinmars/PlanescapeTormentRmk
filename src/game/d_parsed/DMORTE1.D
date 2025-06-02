@@ -1,15 +1,15 @@
 def _r39793_action(gsm):
-    DO ~gsm.set_in_party_morte(True) ~
+    gsm.set_meet_morte(True)
 def _r39824_action(gsm):
-    DO ~gsm.inc_once_good('good_morte_1') ~
+    gsm.inc_once_good('good_morte_1')
 def _r39831_action(gsm):
-    DO ~ShowFirstTimeHelp() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+     gsm.set_in_party_morte(True)
 def _r39852_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r39856_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 def _r39859_action(gsm):
-    DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~
+    gsm.set_in_party_morte(True)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

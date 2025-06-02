@@ -1,15 +1,15 @@
 def _r6510_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r6510_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r6511_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r6512_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r6513_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r9562_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_zom257_1') ~
+    gsm.dec_once_law('chaotic_zom257_1')
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

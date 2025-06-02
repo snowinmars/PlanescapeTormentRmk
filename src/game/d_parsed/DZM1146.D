@@ -1,19 +1,19 @@
 def _r6521_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r6521_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r6522_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r6523_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r6524_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r6524_action(gsm):
-    DO ~gsm.set_meet_crispy(True) ~
+    gsm.set_meet_crispy(True)
 def _r9415_action(gsm):
-    DO ~gsm.inc_once_good('good_crispy_1') ~
+    gsm.inc_once_good('good_crispy_1')
 def _r9426_action(gsm):
-    DO ~gsm.dec_once_good('evil_crispy_1') gsm.dec_once_law('chaotic_crispy_1') ~
+    gsm.dec_once_good('evil_crispy_1') gsm.dec_once_law('chaotic_crispy_1')
 def _r9434_condition(gsm):
     return not gsm.get_meet_pharod()
 
