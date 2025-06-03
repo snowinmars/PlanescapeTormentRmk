@@ -3,7 +3,7 @@ python:
         gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
 
-        return python:
+python:
     def _r34987_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r35004_condition(gsm):
@@ -50,23 +50,23 @@ python:
 
 
 # s0 # say34986
-label DZF114.D_s0:  # from - # Check EXTENDS ~DMORTE~ : 330
+label dzf114_s0:  # from - # Check EXTENDS ~DMORTE~ : 330
     SPEAKER 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер 114, вырезанный у нее на лбу. Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
 
     menu:
         'Итак… чем занимаешься вечером?' if _r34987_condition(gsm):
             # r0 # reply34987
             $ _r34987_action(gsm)
-            jump 'DZF114.D_s1'
+            jump 'dzf114_s1'
         'Итак… чем занимаешься вечером?' if _r35004_condition(gsm):
             # r1 # reply35004
-            jump 'DZF114.D_s1'
+            jump 'dzf114_s1'
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r35005_condition(gsm):
             # r2 # reply35005
-            jump 'DZF114.D_s1'
+            jump 'dzf114_s1'
         'Использовать на трупе свою способность История костей.' if _r35006_condition(gsm):
             # r3 # reply35006
-            jump 'DZF114.D_s2'
+            jump 'dzf114_s2'
         'Было приятно с тобой поболтать. Прощай.' if _r35011_condition(gsm):
             # r4 # reply35011
             jump 'show_graphics_menu'
@@ -88,7 +88,7 @@ label DZF114.D_s0:  # from - # Check EXTENDS ~DMORTE~ : 330
 
 
 # s1 # say34988
-label DZF114.D_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 330
+label dzf114_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 330
     SPEAKER 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -104,7 +104,7 @@ label DZF114.D_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 330
 
 
 # s2 # say35007
-label DZF114.D_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 330
+label dzf114_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 330
     SPEAKER 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -120,7 +120,7 @@ label DZF114.D_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 330
 
 
 # s3 # say35017
-label DZF114.D_s3:  # from -
+label dzf114_s3:  # from -
     SPEAKER 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump 'show_graphics_menu'

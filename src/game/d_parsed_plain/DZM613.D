@@ -3,7 +3,7 @@ python:
         gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
 
-        return python:
+python:
     def _r6543_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r6544_condition(gsm):
@@ -18,23 +18,23 @@ python:
 
 
 # s0 # say6540
-label DZM613.D_s0:  # from -
+label dzm613_s0:  # from -
     SPEAKER 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры 613, но на коже между 1 и 3 виден большой пробел шириной с палец. Приглядевшись, ты с трудом различаешь вырезанную 2.'
 
     menu:
         'Итак… что тут у нас интересного?' if _r6543_condition(gsm):
             # r0 # reply6543
             $ _r6543_action(gsm)
-            jump 'DZM613.D_s1'
+            jump 'dzm613_s1'
         'Итак… что тут у нас интересного?' if _r6544_condition(gsm):
             # r1 # reply6544
-            jump 'DZM613.D_s1'
+            jump 'dzm613_s1'
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6545_condition(gsm):
             # r2 # reply6545
-            jump 'DZM613.D_s1'
+            jump 'dzm613_s1'
         'Использовать на трупе свою способность История костей.' if _r6546_condition(gsm):
             # r3 # reply6546
-            jump 'DZM613.D_s2'
+            jump 'dzm613_s2'
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6547
             jump 'show_graphics_menu'
@@ -44,7 +44,7 @@ label DZM613.D_s0:  # from -
 
 
 # s1 # say6541
-label DZM613.D_s1:  # from 0.0 0.1 0.2
+label dzm613_s1:  # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -54,7 +54,7 @@ label DZM613.D_s1:  # from 0.0 0.1 0.2
 
 
 # s2 # say6542
-label DZM613.D_s2:  # from 0.3
+label dzm613_s2:  # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

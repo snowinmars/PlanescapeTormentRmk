@@ -3,7 +3,7 @@ python:
         gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
 
-        return python:
+python:
     def _r35147_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r35164_condition(gsm):
@@ -50,23 +50,23 @@ python:
 
 
 # s0 # say35146
-label DZF832.D_s0:  # from - # Check EXTENDS ~DMORTE~ : 350
+label dzf832_s0:  # from - # Check EXTENDS ~DMORTE~ : 350
     SPEAKER 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет. Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер 832 элегантным шрифтом.'
 
     menu:
         'Итак… чем занимаешься вечером?' if _r35147_condition(gsm):
             # r0 # reply35147
             $ _r35147_action(gsm)
-            jump 'DZF832.D_s1'
+            jump 'dzf832_s1'
         'Итак… чем занимаешься вечером?' if _r35164_condition(gsm):
             # r1 # reply35164
-            jump 'DZF832.D_s1'
+            jump 'dzf832_s1'
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r35165_condition(gsm):
             # r2 # reply35165
-            jump 'DZF832.D_s1'
+            jump 'dzf832_s1'
         'Использовать на трупе свою способность История костей.' if _r35166_condition(gsm):
             # r3 # reply35166
-            jump 'DZF832.D_s2'
+            jump 'dzf832_s2'
         'Было приятно с тобой поболтать. Прощай.' if _r35171_condition(gsm):
             # r4 # reply35171
             jump 'show_graphics_menu'
@@ -88,7 +88,7 @@ label DZF832.D_s0:  # from - # Check EXTENDS ~DMORTE~ : 350
 
 
 # s1 # say35148
-label DZF832.D_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 350
+label dzf832_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 350
     SPEAKER 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -104,7 +104,7 @@ label DZF832.D_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 350
 
 
 # s2 # say35167
-label DZF832.D_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350
+label dzf832_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -120,7 +120,7 @@ label DZF832.D_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350
 
 
 # s3 # say35177
-label DZF832.D_s3:  # from -
+label dzf832_s3:  # from -
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump 'show_graphics_menu'

@@ -6,6 +6,7 @@ const toSingleReturn = (input: string): string => {
 
     const processedLines = lines.map(line => {
         if (line.trim().startsWith('def')) return line;
+        if (line.trim() == 'python:') return line;
 
         const returnStatements = line.split('return').map(s => s.trim()).filter(s => s.length > 0);
         if (returnStatements.length === 0) return line;

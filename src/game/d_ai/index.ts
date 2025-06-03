@@ -98,6 +98,6 @@ Promise.all(goFiles.map(x => `${x}.D`).map(x => {
         toFile: path.join(parsed, x),
         toPlainFile: path.join(parsedPlain, x),
         settingsFile: settings,
-        statePrefix: `${x}_s`
+        statePrefix: `${x.replace('.D', '').toLowerCase()}_s`
     });
 })).catch(e => console.error(e));

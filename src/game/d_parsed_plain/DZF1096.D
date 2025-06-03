@@ -3,7 +3,7 @@ python:
         gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
 
-        return python:
+python:
     def _r35083_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r35100_condition(gsm):
@@ -50,23 +50,23 @@ python:
 
 
 # s0 # say35082
-label DZF1096.D_s0:  # from - # Check EXTENDS ~DMORTE~ : 342
+label dzf1096_s0:  # from - # Check EXTENDS ~DMORTE~ : 342
     SPEAKER 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли. Кто-то под трафарет написал номер 1096 у нее на лбу; ее губы крепко зашиты.'
 
     menu:
         'Э… Красивая коса.' if _r35083_condition(gsm):
             # r0 # reply35083
             $ _r35083_action(gsm)
-            jump 'DZF1096.D_s1'
+            jump 'dzf1096_s1'
         'Э… Красивая коса.' if _r35100_condition(gsm):
             # r1 # reply35100
-            jump 'DZF1096.D_s1'
+            jump 'dzf1096_s1'
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r35101_condition(gsm):
             # r2 # reply35101
-            jump 'DZF1096.D_s1'
+            jump 'dzf1096_s1'
         'Использовать на трупе свою способность История костей.' if _r35102_condition(gsm):
             # r3 # reply35102
-            jump 'DZF1096.D_s2'
+            jump 'dzf1096_s2'
         'Было приятно с тобой поболтать. Прощай.' if _r35107_condition(gsm):
             # r4 # reply35107
             jump 'show_graphics_menu'
@@ -88,7 +88,7 @@ label DZF1096.D_s0:  # from - # Check EXTENDS ~DMORTE~ : 342
 
 
 # s1 # say35084
-label DZF1096.D_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 342
+label dzf1096_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 342
     SPEAKER 'Труп не отвечает. Ты сомневаешься, знает ли она вообще о твоем присутствии.'
 
     menu:
@@ -104,7 +104,7 @@ label DZF1096.D_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 342
 
 
 # s2 # say35103
-label DZF1096.D_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 342
+label dzf1096_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 342
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -120,7 +120,7 @@ label DZF1096.D_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 342
 
 
 # s3 # say35113
-label DZF1096.D_s3:  # from -
+label dzf1096_s3:  # from -
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump 'show_graphics_menu'

@@ -1,7 +1,7 @@
 python:
     def _r24716_action(gsm):        # ?.attack('Protagonist').by('ZM782')
 
-        return python:
+python:
     def _r24709_condition(gsm):
         return gsm.get_in_party_morte()
     def _r24712_condition(gsm):
@@ -12,7 +12,7 @@ python:
 
 
 # s0 # say24708
-label DZM782.D_s0:  # from - # Check EXTENDS ~DMORTE1~ : 34
+label dzm782_s0:  # from - # Check EXTENDS ~DMORTE1~ : 34
     SPEAKER 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом. На его лбу вырезан номер 782, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
@@ -21,20 +21,20 @@ label DZM782.D_s0:  # from - # Check EXTENDS ~DMORTE1~ : 34
             jump 'show_graphics_menu'
         'Я ищу ключ… быть может, он у тебя?' if _r24712_condition(gsm):
             # r1 # reply24712
-            jump 'DZM782.D_s1'
+            jump 'dzm782_s1'
         'Осмотреть труп, проверить, есть ли у него ключ.':
             # r2 # reply24713
-            jump 'DZM782.D_s2'
+            jump 'dzm782_s2'
         'Было приятно с тобой поболтать. Прощай.':
             # r3 # reply24714
-            jump 'DZM782.D_s2'
+            jump 'dzm782_s2'
         'Оставить труп в покое.':
             # r4 # reply24717
             jump 'show_graphics_menu'
 
 
 # s1 # say24710
-label DZM782.D_s1:  # from 0.1
+label dzm782_s1:  # from 0.1
     SPEAKER 'Труп не отвечает.'
 
     menu:
@@ -47,7 +47,7 @@ label DZM782.D_s1:  # from 0.1
 
 
 # s2 # say24715
-label DZM782.D_s2:  # from 0.2 0.3
+label dzm782_s2:  # from 0.2 0.3
     SPEAKER 'Кажется, у этого трупа есть какой-то ключ. Он крепко держит его в левой руке, сжимая его большим и указательным пальцем мертвой хваткой. Чтобы взять ключ, тебе придется сломать руку.'
 
     menu:

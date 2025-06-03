@@ -3,7 +3,7 @@ python:
         gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
 
-        return python:
+python:
     def _r46757_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r46760_condition(gsm):
@@ -18,23 +18,23 @@ python:
 
 
 # s0 # say46756
-label DZM1445.D_s0:  # from -
+label dzm1445_s0:  # from -
     SPEAKER 'Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни. На лбу у него вытатуирован номер 1445, а его губы крепко сшиты.'
 
     menu:
         'Итак… что тут у нас интересного?' if _r46757_condition(gsm):
             # r0 # reply46757
             $ _r46757_action(gsm)
-            jump 'DZM1445.D_s1'
+            jump 'dzm1445_s1'
         'Итак… что тут у нас интересного?' if _r46760_condition(gsm):
             # r1 # reply46760
-            jump 'DZM1445.D_s1'
+            jump 'dzm1445_s1'
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r46761_condition(gsm):
             # r2 # reply46761
-            jump 'DZM1445.D_s1'
+            jump 'dzm1445_s1'
         'Использовать на трупе свою способность История костей.' if _r46762_condition(gsm):
             # r3 # reply46762
-            jump 'DZM1445.D_s2'
+            jump 'dzm1445_s2'
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46765
             jump 'show_graphics_menu'
@@ -44,7 +44,7 @@ label DZM1445.D_s0:  # from -
 
 
 # s1 # say46758
-label DZM1445.D_s1:  # from 0.0 0.1 0.2
+label dzm1445_s1:  # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -54,7 +54,7 @@ label DZM1445.D_s1:  # from 0.0 0.1 0.2
 
 
 # s2 # say46763
-label DZM1445.D_s2:  # from 0.3
+label dzm1445_s2:  # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

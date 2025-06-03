@@ -1,6 +1,6 @@
 
 
-        return python:
+python:
     def _r24576_condition(gsm):
         return not gsm.get_mortuary_walkthrough() \
                and not gsm.get_has_intro_key() \
@@ -28,7 +28,7 @@ python:
 
 
 # s0 # say24575
-label DZM569.D_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
+label dzm569_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
     SPEAKER 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер 569 на открывшейся кости.'
 
     menu:
@@ -37,19 +37,19 @@ label DZM569.D_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
             jump 'show_graphics_menu'
         'Я ищу ключ… быть может, он у тебя?' if _r24579_condition(gsm):
             # r1 # reply24579
-            jump 'DZM569.D_s1'
+            jump 'dzm569_s1'
         'Итак… что тут у нас интересного?' if _r24580_condition(gsm):
             # r2 # reply24580
-            jump 'DZM569.D_s1'
+            jump 'dzm569_s1'
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r24581_condition(gsm):
             # r3 # reply24581
-            jump 'DZM569.D_s1'
+            jump 'dzm569_s1'
         'Использовать на трупе свою способность История костей.' if _r24584_condition(gsm):
             # r4 # reply24584
-            jump 'DZM569.D_s2'
+            jump 'dzm569_s2'
         'Осмотреть труп, проверить, есть ли у него ключ.' if _r24585_condition(gsm):
             # r5 # reply24585
-            jump 'DZM569.D_s3'
+            jump 'dzm569_s3'
         'Было приятно с тобой поболтать. Прощай.':
             # r6 # reply42290
             jump 'show_graphics_menu'
@@ -59,7 +59,7 @@ label DZM569.D_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
 
 
 # s1 # say24577
-label DZM569.D_s1:  # from 0.1 0.2 0.3 3.1
+label dzm569_s1:  # from 0.1 0.2 0.3 3.1
     SPEAKER 'Труп молчаливо уставился на тебя.'
 
     menu:
@@ -72,7 +72,7 @@ label DZM569.D_s1:  # from 0.1 0.2 0.3 3.1
 
 
 # s2 # say24582
-label DZM569.D_s2:  # from 0.4
+label dzm569_s2:  # from 0.4
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -82,7 +82,7 @@ label DZM569.D_s2:  # from 0.4
 
 
 # s3 # say42293
-label DZM569.D_s3:  # from 0.5 # Check EXTENDS ~DMORTE1~ : 31
+label dzm569_s3:  # from 0.5 # Check EXTENDS ~DMORTE1~ : 31
     SPEAKER 'Похоже, у этого трупа нет ключа… да и вряд ли он смог бы им воспользоваться. Его пальцы перебиты, как будто кто-то постучал по ним молотком. Ты замечаешь, что его левое плечо сильно перевязано… бинтами можно воспользоваться, если снять их с трупа.'
 
     menu:
@@ -91,7 +91,7 @@ label DZM569.D_s3:  # from 0.5 # Check EXTENDS ~DMORTE1~ : 31
             jump 'show_graphics_menu'
         'Похоже, что нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if _r42295_condition(gsm):
             # r12 # reply42295
-            jump 'DZM569.D_s1'
+            jump 'dzm569_s1'
         'Было приятно с тобой поболтать. Прощай.':
             # r13 # reply42296
             jump 'show_graphics_menu'

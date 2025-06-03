@@ -60,168 +60,168 @@ def _r9772_action(gsm):
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
 
-DialogStateBuilder().state('DDEATHON.D_s0', '# from -') \
+DialogStateBuilder().state('ddeathon_s0', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны. Правая рука короче левой, и он покачивает ее на перевязи, будто убаюкивая малое дитя.", 's0', 'say7288') \
     .with_responses() \
-        .response("Приветствую.", 'DDEATHON.D_s1', 'r', 'reply7289') \
+        .response("Приветствую.", 'ddeathon_s1', 'r', 'reply7289') \
         .response("Оставить мужчину в покое.", EXIT, 'r', 'reply7290').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s1', '# from 0.0') \
+DialogStateBuilder().state('ddeathon_s1', '# from 0.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Глаза тленного скользят по тебе. Имя. Когда он произносит это слово, голос его звучит, как звон колокольчика.", 's1', 'say7291') \
     .with_responses() \
-        .response("Я… не знаю.", 'DDEATHON.D_s2', 'r', 'reply7292') \
-        .response("Э… прости, что отвлек.", 'DDEATHON.D_s2', 'r', 'reply7293') \
+        .response("Я… не знаю.", 'ddeathon_s2', 'r', 'reply7292') \
+        .response("Э… прости, что отвлек.", 'ddeathon_s2', 'r', 'reply7293') \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s2', '# from 1.0 1.1 9.0') \
+DialogStateBuilder().state('ddeathon_s2', '# from 1.0 1.1 9.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Нет имени, нет имени, ничем не помогу тебе, — нараспев произносит тленный. — Нужно имя, чтобы увидеть, где оно умерло.", 's2', 'say7294') \
     .with_responses() \
-        .response("Что?", 'DDEATHON.D_s3', 'r', 'reply7295').with_action(lambda: _r7295_action(gsm)) \
+        .response("Что?", 'ddeathon_s3', 'r', 'reply7295').with_action(lambda: _r7295_action(gsm)) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s3', '# from 2.0') \
+DialogStateBuilder().state('ddeathon_s3', '# from 2.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Получив имя при рождении, верни его назад, когда оно тебе больше не нужно. Смерть-имен, Смерть-имен. Его глаза скользят по монолиту и по стенам. Много имен похоронено здесь Смертью-имен. Скажи мне имя, и я покажу его могилу.", 's3', 'say7296') \
     .with_responses() \
-        .response("Захария.", 'DDEATHON.D_s10', 'r', 'reply7297').with_condition(lambda: _r7297_condition(gsm)) \
-        .response("Дейонарра.", 'DDEATHON.D_s10', 'r', 'reply7298').with_condition(lambda: _r7298_condition(gsm)) \
-        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7299').with_condition(lambda: _r7299_condition(gsm)) \
-        .response("Дхолл.", 'DDEATHON.D_s10', 'r', 'reply7300').with_condition(lambda: _r7300_condition(gsm)) \
-        .response("Квентин.", 'DDEATHON.D_s13', 'r', 'reply7303').with_condition(lambda: _r7303_condition(gsm)) \
-        .response("Э… Не знаю. Попробуй 'Адан'.", 'DDEATHON.D_s4', 'r', 'reply7304').with_action(lambda: _r7304_action(gsm)) \
-        .response("Хм-м. А ты можешь похоронить для меня имя?", 'DDEATHON.D_s5', 'r', 'reply9766') \
+        .response("Захария.", 'ddeathon_s10', 'r', 'reply7297').with_condition(lambda: _r7297_condition(gsm)) \
+        .response("Дейонарра.", 'ddeathon_s10', 'r', 'reply7298').with_condition(lambda: _r7298_condition(gsm)) \
+        .response("Дхолл.", 'ddeathon_s4', 'r', 'reply7299').with_condition(lambda: _r7299_condition(gsm)) \
+        .response("Дхолл.", 'ddeathon_s10', 'r', 'reply7300').with_condition(lambda: _r7300_condition(gsm)) \
+        .response("Квентин.", 'ddeathon_s13', 'r', 'reply7303').with_condition(lambda: _r7303_condition(gsm)) \
+        .response("Э… Не знаю. Попробуй 'Адан'.", 'ddeathon_s4', 'r', 'reply7304').with_action(lambda: _r7304_action(gsm)) \
+        .response("Хм-м. А ты можешь похоронить для меня имя?", 'ddeathon_s5', 'r', 'reply9766') \
         .response("На сегодня имен нет. Извини, что отвлек тебя.", EXIT, 'r', 'reply9767').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s4', '# from 3.2 3.5 5.3 5.5 9.4 9.6 9.10') \
+DialogStateBuilder().state('ddeathon_s4', '# from 3.2 3.5 5.3 5.5 9.4 9.6 9.10') \
     .with_npc_lines() \
         .line(SPEAKER, "Он качает головой. Еще не умерло это имя. Не похоронено здесь. Еще не время, еще не время.", 's4', 'say7305') \
     .with_responses() \
-        .response("Давай попробуем другое имя…", 'DDEATHON.D_s9', 'r', 'reply7306') \
-        .response("Ты можешь похоронить для меня имя?", 'DDEATHON.D_s5', 'r', 'reply7307') \
+        .response("Давай попробуем другое имя…", 'ddeathon_s9', 'r', 'reply7306') \
+        .response("Ты можешь похоронить для меня имя?", 'ddeathon_s5', 'r', 'reply7307') \
         .response("Хорошо… Извини, что отвлек.", EXIT, 'r', 'reply7308').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s5', '# from 3.6 4.1 7.1 9.1 10.2 11.1 12.1 13.2 14.1 16.1') \
+DialogStateBuilder().state('ddeathon_s5', '# from 3.6 4.1 7.1 9.1 10.2 11.1 12.1 13.2 14.1 16.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Он кивает, затем вынимает маленькую руку из перевязи на боку. Она атрофирована… по размерам не больше детской. Чтоб похоронить, нужно звенелки заплатить. Три медяка, три.", 's5', 'say7309') \
     .with_responses() \
-        .response("Захария.", 'DDEATHON.D_s12', 'r', 'reply7310').with_condition(lambda: _r7310_condition(gsm)) \
-        .response("Дейонарра.", 'DDEATHON.D_s12', 'r', 'reply7311').with_condition(lambda: _r7311_condition(gsm)) \
-        .response("Дхолл.", 'DDEATHON.D_s6', 'r', 'reply7312').with_condition(lambda: _r7312_condition(gsm)).with_action(lambda: _r7312_action(gsm)) \
-        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7313').with_condition(lambda: _r7313_condition(gsm)) \
-        .response("Квентин.", 'DDEATHON.D_s15', 'r', 'reply7317').with_condition(lambda: _r7317_condition(gsm)).with_action(lambda: _r7317_action(gsm)) \
-        .response("Квентин.", 'DDEATHON.D_s4', 'r', 'reply9768').with_condition(lambda: _r9768_condition(gsm)) \
-        .response("Хм-м… Эс-Аннон.", 'DDEATHON.D_s6', 'r', 'reply9769').with_condition(lambda: _r9769_condition(gsm)).with_action(lambda: _r9769_action(gsm)) \
+        .response("Захария.", 'ddeathon_s12', 'r', 'reply7310').with_condition(lambda: _r7310_condition(gsm)) \
+        .response("Дейонарра.", 'ddeathon_s12', 'r', 'reply7311').with_condition(lambda: _r7311_condition(gsm)) \
+        .response("Дхолл.", 'ddeathon_s6', 'r', 'reply7312').with_condition(lambda: _r7312_condition(gsm)).with_action(lambda: _r7312_action(gsm)) \
+        .response("Дхолл.", 'ddeathon_s4', 'r', 'reply7313').with_condition(lambda: _r7313_condition(gsm)) \
+        .response("Квентин.", 'ddeathon_s15', 'r', 'reply7317').with_condition(lambda: _r7317_condition(gsm)).with_action(lambda: _r7317_action(gsm)) \
+        .response("Квентин.", 'ddeathon_s4', 'r', 'reply9768').with_condition(lambda: _r9768_condition(gsm)) \
+        .response("Хм-м… Эс-Аннон.", 'ddeathon_s6', 'r', 'reply9769').with_condition(lambda: _r9769_condition(gsm)).with_action(lambda: _r9769_action(gsm)) \
         .response("У меня нет ни одной… звенелки. Может быть, в другой раз.", EXIT, 'r', 'reply9770').with_condition(lambda: _r9770_condition(gsm)).with_action(lambda: _dispose()) \
         .response("На сегодня имен нет. Прощай.", EXIT, 'r', 'reply26086').with_condition(lambda: _r26086_condition(gsm)).with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s6', '# from 5.2 5.6') \
+DialogStateBuilder().state('ddeathon_s6', '# from 5.2 5.6') \
     .with_npc_lines() \
         .line(SPEAKER, "Медяки падают в руку Смерти-Имен, и он прячет ее назад. Его глаза, закатившись, неожиданно оживают и взметаются в поисках места на монолите и стенах мемориала.", 's6', 'say7350') \
     .with_responses() \
-        .response("Подождать…", 'DDEATHON.D_s7', 'r', 'reply7351') \
+        .response("Подождать…", 'ddeathon_s7', 'r', 'reply7351') \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s7', '# from 6.0') \
+DialogStateBuilder().state('ddeathon_s7', '# from 6.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Он находит на стене место, быстро подходит к нему и наклоняется, затем принимается высекать что-то на стене. Спустя несколько минут он завершает работу, поднимается и возвращается к тебе. Похоронено. Последнее слово заставляет тебя почувствовать себя неуютно.", 's7', 'say7352') \
     .with_responses() \
-        .response("Я хотел бы, чтобы ты поискал для меня имя…", 'DDEATHON.D_s9', 'r', 'reply7353') \
-        .response("Я хотел бы похоронить другое имя.", 'DDEATHON.D_s5', 'r', 'reply7354') \
+        .response("Я хотел бы, чтобы ты поискал для меня имя…", 'ddeathon_s9', 'r', 'reply7353') \
+        .response("Я хотел бы похоронить другое имя.", 'ddeathon_s5', 'r', 'reply7354') \
         .response("Спасибо. Прощай.", EXIT, 'r', 'reply7355').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s8', '# from -') \
+DialogStateBuilder().state('ddeathon_s8', '# from -') \
     .with_npc_lines() \
         .line(SPEAKER, "Перед тобой Смерть-имен. Он стоит перед монументом с искривленной улыбкой, а его рука висит на перевязи.", 's8', 'say7356') \
     .with_responses() \
-        .response("Приветствую.", 'DDEATHON.D_s9', 'r', 'reply7357') \
+        .response("Приветствую.", 'ddeathon_s9', 'r', 'reply7357') \
         .response("Оставить его в покое.", EXIT, 'r', 'reply7358').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s9', '# from 4.0 7.0 8.0 10.1 11.0 12.0 13.1 14.0 16.0') \
+DialogStateBuilder().state('ddeathon_s9', '# from 4.0 7.0 8.0 10.1 11.0 12.0 13.1 14.0 16.0') \
     .with_npc_lines() \
         .line(SPEAKER, "И снова глаза тленного глядят на тебя. Имя. Когда он произносит это слово, голос его звучит, как звон колокольчика.", 's9', 'say7359') \
     .with_responses() \
-        .response("Я… не знаю.", 'DDEATHON.D_s2', 'r', 'reply7360') \
-        .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r', 'reply7361') \
-        .response("Захария.", 'DDEATHON.D_s10', 'r', 'reply7362').with_condition(lambda: _r7362_condition(gsm)) \
-        .response("Дейонарра.", 'DDEATHON.D_s10', 'r', 'reply7363').with_condition(lambda: _r7363_condition(gsm)) \
-        .response("Дхолл.", 'DDEATHON.D_s4', 'r', 'reply7364').with_condition(lambda: _r7364_condition(gsm)) \
-        .response("Дхолл.", 'DDEATHON.D_s10', 'r', 'reply7365').with_condition(lambda: _r7365_condition(gsm)) \
-        .response("Сиси.", 'DDEATHON.D_s4', 'r', 'reply7366').with_condition(lambda: _r7366_condition(gsm)) \
-        .response("Сиси.", 'DDEATHON.D_s10', 'r', 'reply7367').with_condition(lambda: _r7367_condition(gsm)) \
-        .response("Квентин.", 'DDEATHON.D_s13', 'r', 'reply7368').with_condition(lambda: _r7368_condition(gsm)) \
-        .response("Эс-Аннон.", 'DDEATHON.D_s10', 'r', 'reply9771').with_condition(lambda: _r9771_condition(gsm)) \
-        .response("Э… 'Адан'?", 'DDEATHON.D_s4', 'r', 'reply9772').with_action(lambda: _r9772_action(gsm)) \
+        .response("Я… не знаю.", 'ddeathon_s2', 'r', 'reply7360') \
+        .response("Я хотел бы похоронить имя.", 'ddeathon_s5', 'r', 'reply7361') \
+        .response("Захария.", 'ddeathon_s10', 'r', 'reply7362').with_condition(lambda: _r7362_condition(gsm)) \
+        .response("Дейонарра.", 'ddeathon_s10', 'r', 'reply7363').with_condition(lambda: _r7363_condition(gsm)) \
+        .response("Дхолл.", 'ddeathon_s4', 'r', 'reply7364').with_condition(lambda: _r7364_condition(gsm)) \
+        .response("Дхолл.", 'ddeathon_s10', 'r', 'reply7365').with_condition(lambda: _r7365_condition(gsm)) \
+        .response("Сиси.", 'ddeathon_s4', 'r', 'reply7366').with_condition(lambda: _r7366_condition(gsm)) \
+        .response("Сиси.", 'ddeathon_s10', 'r', 'reply7367').with_condition(lambda: _r7367_condition(gsm)) \
+        .response("Квентин.", 'ddeathon_s13', 'r', 'reply7368').with_condition(lambda: _r7368_condition(gsm)) \
+        .response("Эс-Аннон.", 'ddeathon_s10', 'r', 'reply9771').with_condition(lambda: _r9771_condition(gsm)) \
+        .response("Э… 'Адан'?", 'ddeathon_s4', 'r', 'reply9772').with_action(lambda: _r9772_action(gsm)) \
         .response("Извини за беспокойство. Прощай.", EXIT, 'r', 'reply26109').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s10', '# from 3.0 3.1 3.3 9.2 9.3 9.5 9.7 9.9') \
+DialogStateBuilder().state('ddeathon_s10', '# from 3.0 3.1 3.3 9.2 9.3 9.5 9.7 9.9') \
     .with_npc_lines() \
         .line(SPEAKER, "Он закатывает глаза. Дико поблескивая, его взгляд пробегается по стенам монумента, с нечеловеческой скоростью просматривая имена. Затем он указывает на одну из стен. Похоронено.", 's10', 'say7369') \
     .with_responses() \
-        .response("Осмотреть то место, куда он указывает.", 'DDEATHON.D_s11', 'r', 'reply7370') \
-        .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7371') \
-        .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r', 'reply7372') \
+        .response("Осмотреть то место, куда он указывает.", 'ddeathon_s11', 'r', 'reply7370') \
+        .response("У меня есть другое имя…", 'ddeathon_s9', 'r', 'reply7371') \
+        .response("Я хотел бы похоронить имя.", 'ddeathon_s5', 'r', 'reply7372') \
         .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7373').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s11', '# from 10.0') \
+DialogStateBuilder().state('ddeathon_s11', '# from 10.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Это то самое имя, которое ты запросил. Оно выбито на черном камне тонкой вязью, и практически теряется в море имен, окружающих его.", 's11', 'say7374') \
     .with_responses() \
-        .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7375') \
-        .response("Я хотел бы похоронить имя…", 'DDEATHON.D_s5', 'r', 'reply7376') \
+        .response("У меня есть другое имя…", 'ddeathon_s9', 'r', 'reply7375') \
+        .response("Я хотел бы похоронить имя…", 'ddeathon_s5', 'r', 'reply7376') \
         .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7377').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s12', '# from 5.0 5.1') \
+DialogStateBuilder().state('ddeathon_s12', '# from 5.0 5.1') \
     .with_npc_lines() \
         .line(SPEAKER, "Он качает головой. Похоронено.", 's12', 'say7378') \
     .with_responses() \
-        .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7380') \
-        .response("Я хотел бы похоронить имя…", 'DDEATHON.D_s5', 'r', 'reply7382') \
+        .response("У меня есть другое имя…", 'ddeathon_s9', 'r', 'reply7380') \
+        .response("Я хотел бы похоронить имя…", 'ddeathon_s5', 'r', 'reply7382') \
         .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7383').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s13', '# from 3.4 9.8') \
+DialogStateBuilder().state('ddeathon_s13', '# from 3.4 9.8') \
     .with_npc_lines() \
         .line(SPEAKER, "Он закатывает глаза. Дико поблескивая, его взгляд пробегается по стенам монумента, с нечеловеческой скоростью просматривая имена. Затем он указывает на одну из стен. Похоронено.", 's13', 'say7384') \
     .with_responses() \
-        .response("Осмотреть то место, куда он указывает.", 'DDEATHON.D_s14', 'r', 'reply7386') \
-        .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7387') \
-        .response("Я хотел бы похоронить имя.", 'DDEATHON.D_s5', 'r', 'reply7388') \
+        .response("Осмотреть то место, куда он указывает.", 'ddeathon_s14', 'r', 'reply7386') \
+        .response("У меня есть другое имя…", 'ddeathon_s9', 'r', 'reply7387') \
+        .response("Я хотел бы похоронить имя.", 'ddeathon_s5', 'r', 'reply7388') \
         .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7390').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s14', '# from 13.0') \
+DialogStateBuilder().state('ddeathon_s14', '# from 13.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Имя Квентина, высеченное на черном камне слегка неровным почерком. К несчастью для Квентина, его имя не разломило монумент пополам, так и не оправдав его надежд.", 's14', 'say7391') \
     .with_responses() \
-        .response("У меня есть другое имя…", 'DDEATHON.D_s9', 'r', 'reply7392') \
-        .response("Я хотел бы похоронить имя…", 'DDEATHON.D_s5', 'r', 'reply7394') \
+        .response("У меня есть другое имя…", 'ddeathon_s9', 'r', 'reply7392') \
+        .response("Я хотел бы похоронить имя…", 'ddeathon_s5', 'r', 'reply7394') \
         .response("Просто проверяю. Прощай.", EXIT, 'r', 'reply7403').with_action(lambda: _dispose()) \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s15', '# from 5.4') \
+DialogStateBuilder().state('ddeathon_s15', '# from 5.4') \
     .with_npc_lines() \
         .line(SPEAKER, "Медяки падают в руку Смерти-Имен, и он прячет ее назад. Его глаза, закатившись, неожиданно оживают и взметаются в поисках места на монолите и стенах мемориала.", 's15', 'say7404') \
     .with_responses() \
-        .response("Подождать…", 'DDEATHON.D_s16', 'r', 'reply7405') \
+        .response("Подождать…", 'ddeathon_s16', 'r', 'reply7405') \
     .push(manager)
 
-DialogStateBuilder().state('DDEATHON.D_s16', '# from 15.0') \
+DialogStateBuilder().state('ddeathon_s16', '# from 15.0') \
     .with_npc_lines() \
         .line(SPEAKER, "Он поворачивается к основанию монолита, быстро подбегает к нему, наклоняется и начинает что-то на нем высекать. К несчастью для Квентина, монумент не разломился после его имени. Мгновение спустя Смерть-имен завершает работу, поднимается и возвращается к тебе. Похоронено. Последнее слово заставляет тебя почувствовать себя неуютно.", 's16', 'say7406') \
     .with_responses() \
-        .response("Я хотел бы, чтобы ты поискал для меня имя…", 'DDEATHON.D_s9', 'r', 'reply7407') \
-        .response("Я хотел бы похоронить другое имя.", 'DDEATHON.D_s5', 'r', 'reply7408') \
+        .response("Я хотел бы, чтобы ты поискал для меня имя…", 'ddeathon_s9', 'r', 'reply7407') \
+        .response("Я хотел бы похоронить другое имя.", 'ddeathon_s5', 'r', 'reply7408') \
         .response("Спасибо. Прощай.", EXIT, 'r', 'reply7409').with_action(lambda: _dispose()) \
     .push(manager)
