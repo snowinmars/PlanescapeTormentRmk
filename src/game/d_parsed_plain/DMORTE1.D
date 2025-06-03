@@ -1,4 +1,4 @@
-python:
+init python:
     def _r39793_action(gsm):        
         gsm.set_meet_morte(True)
     def _r39824_action(gsm):        
@@ -14,8 +14,23 @@ python:
 
 
 
-python:
-    gsm           = renpy.store.global_settings_manager
+
+
+define gsm = renpy.store.global_settings_manager
+
+
+# ###
+# Original:  DLG/DMORTE1.DLG
+# Starts:    dmorte1_s
+# ###
+
+
+label dmorte1_init:
+    return
+
+
+label dmorte1_dispose:
+    jump show_graphics_menu
 
 
 # s0 # say39792
@@ -26,7 +41,7 @@ label dmorte1_s0:  # from -
         'Чт?.. Ты кто?':
             # r0 # reply39793
             $ _r39793_action(gsm)
-            jump 'dmorte1_s1'
+            jump dmorte1_s1
 
 
 # s1 # say39795
@@ -36,10 +51,10 @@ label dmorte1_s1:  # from 0.0
     menu:
         'Я… не знаю. Не могу вспомнить.':
             # r1 # reply39796
-            jump 'dmorte1_s2'
+            jump dmorte1_s2
         'Я *первый* спросил тебя, череп.':
             # r2 # reply39797
-            jump 'dmorte1_s3'
+            jump dmorte1_s3
 
 
 # s2 # say39798
@@ -49,7 +64,7 @@ label dmorte1_s2:  # from 1.0 3.0 4.0
     menu:
         'Заперт?':
             # r3 # reply39799
-            jump 'dmorte1_s5'
+            jump dmorte1_s5
 
 
 # s3 # say39800
@@ -59,10 +74,10 @@ label dmorte1_s3:  # from 1.1
     menu:
         'Я… не знаю. Не могу вспомнить.':
             # r4 # reply39801
-            jump 'dmorte1_s2'
+            jump dmorte1_s2
         'Ты первый, череп. В последний раз спрашиваю.':
             # r5 # reply39802
-            jump 'dmorte1_s4'
+            jump dmorte1_s4
 
 
 # s4 # say39803
@@ -72,7 +87,7 @@ label dmorte1_s4:  # from 3.1
     menu:
         'Я… не знаю. Не могу вспомнить.':
             # r6 # reply39804
-            jump 'dmorte1_s2'
+            jump dmorte1_s2
 
 
 # s5 # say39805
@@ -82,7 +97,7 @@ label dmorte1_s5:  # from 2.0
     menu:
         'Мы заперты… где? Что это за место?':
             # r7 # reply39806
-            jump 'dmorte1_s6'
+            jump dmorte1_s6
 
 
 # s6 # say39807
@@ -92,7 +107,7 @@ label dmorte1_s6:  # from 5.0
     menu:
         'Морг? Постой… я умер?':
             # r8 # reply39808
-            jump 'dmorte1_s7'
+            jump dmorte1_s7
 
 
 # s7 # say39809
@@ -102,7 +117,7 @@ label dmorte1_s7:  # from 6.0
     menu:
         'Шрамы? Они так плохи?':
             # r9 # reply39810
-            jump 'dmorte1_s8'
+            jump dmorte1_s8
 
 
 # s8 # say39811
@@ -112,7 +127,7 @@ label dmorte1_s8:  # from 7.0
     menu:
         'Татуировки на моей спине? Что там написано?':
             # r10 # reply39812
-            jump 'dmorte1_s9'
+            jump dmorte1_s9
 
 
 # s9 # say39813
@@ -122,7 +137,7 @@ label dmorte1_s9:  # from 8.0
     menu:
         'Фарод?.. А там есть еще что-нибудь?':
             # r11 # reply39814
-            jump 'dmorte1_s10'
+            jump dmorte1_s10
 
 
 # s10 # say39815
@@ -132,7 +147,7 @@ label dmorte1_s10:  # from 9.0
     menu:
         'Неудивительно, что спина так болит: да там целая чертова поэма. А дневник, который должен быть со мной… он был возле меня, пока я здесь валялся?':
             # r12 # reply39816
-            jump 'dmorte1_s11'
+            jump dmorte1_s11
 
 
 # s11 # say39817
@@ -142,7 +157,7 @@ label dmorte1_s11:  # from 10.0
     menu:
         'А как насчет Фарода? Ты его знаешь?':
             # r13 # reply39818
-            jump 'dmorte1_s12'
+            jump dmorte1_s12
 
 
 # s12 # say39819
@@ -152,7 +167,7 @@ label dmorte1_s12:  # from 11.0
     menu:
         'И *как* же мы выберемся отсюда?':
             # r14 # reply39820
-            jump 'dmorte1_s13'
+            jump dmorte1_s13
 
 
 # s13 # say39821
@@ -162,7 +177,7 @@ label dmorte1_s13:  # from 12.0
     menu:
         'Ходячих трупов?':
             # r15 # reply39822
-            jump 'dmorte1_s14'
+            jump dmorte1_s14
 
 
 # s14 # say39823
@@ -173,10 +188,10 @@ label dmorte1_s14:  # from 13.0
         'А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.':
             # r16 # reply39824
             $ _r39824_action(gsm)
-            jump 'dmorte1_s15'
+            jump dmorte1_s15
         'Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?':
             # r17 # reply39825
-            jump 'dmorte1_s16'
+            jump dmorte1_s16
 
 
 # s15 # say39826
@@ -186,7 +201,7 @@ label dmorte1_s15:  # from 14.0
     menu:
         'Ну хорошо… Я собью одного из них и заберу ключ.':
             # r18 # reply39827
-            jump 'dmorte1_s16'
+            jump dmorte1_s16
 
 
 # s16 # say39828
@@ -196,7 +211,7 @@ label dmorte1_s16:  # from 14.1 15.0
     menu:
         'Ладно, я поищу его.':
             # r19 # reply39829
-            jump 'dmorte1_s17'
+            jump dmorte1_s17
 
 
 # s17 # say39830
@@ -207,7 +222,7 @@ label dmorte1_s17:  # from 16.0
         'Хорошо. Спасибо за совет.':
             # r20 # reply39831
             $ _r39831_action(gsm)
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s18 # say39832
@@ -217,7 +232,7 @@ label dmorte1_s18:  # from -
     menu:
         'Ладно… Я поищу.':
             # r21 # reply39833
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s19 # say39834
@@ -227,10 +242,10 @@ label dmorte1_s19:  # from -
     menu:
         'А, может, ты мне *поможешь*, Морт?':
             # r22 # reply39835
-            jump 'dmorte1_s20'
+            jump dmorte1_s20
         'Хорошо.':
             # r23 # reply39836
-            jump 'dmorte1_s23'
+            jump dmorte1_s23
 
 
 # s20 # say39837
@@ -240,10 +255,10 @@ label dmorte1_s20:  # from 19.0
     menu:
         'Я имел ввиду помощь в нападении на *трупов*.':
             # r24 # reply39838
-            jump 'dmorte1_s21'
+            jump dmorte1_s21
         'Ну хорошо тогда.':
             # r25 # reply39839
-            jump 'dmorte1_s23'
+            jump dmorte1_s23
 
 
 # s21 # say39840
@@ -253,10 +268,10 @@ label dmorte1_s21:  # from 20.0
     menu:
         'Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель.':
             # r26 # reply39841
-            jump 'dmorte1_s22'
+            jump dmorte1_s22
         'Ну хорошо тогда.':
             # r27 # reply39842
-            jump 'dmorte1_s23'
+            jump dmorte1_s23
 
 
 # s22 # say39843
@@ -266,7 +281,7 @@ label dmorte1_s22:  # from 21.0
     menu:
         'Я рад, что мы поняли друг друга.':
             # r28 # reply39844
-            jump 'dmorte1_s23'
+            jump dmorte1_s23
 
 
 # s23 # say39845
@@ -276,7 +291,7 @@ label dmorte1_s23:  # from 19.1 20.1 21.1 22.0
     menu:
         'Вперед.':
             # r29 # reply39846
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s24 # say39847
@@ -286,7 +301,7 @@ label dmorte1_s24:  # from -
     menu:
         'Хорошо.':
             # r30 # reply39848
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s25 # say39849
@@ -296,7 +311,7 @@ label dmorte1_s25:  # from -
     menu:
         'Тогда я перепробую все двери.':
             # r31 # reply39850
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s26 # say39851
@@ -307,10 +322,10 @@ label dmorte1_s26:  # from -
         'Да… идем.':
             # r32 # reply39852
             $ _r39852_action(gsm)
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Не сейчас, Морт.':
             # r33 # reply39853
-            jump 'dmorte1_s27'
+            jump dmorte1_s27
 
 
 # s27 # say39854
@@ -320,14 +335,14 @@ label dmorte1_s27:  # from 26.1
     menu:
         'Морт, у тебя НЕТ ни того, ни другого.':
             # r34 # reply39855
-            jump 'dmorte1_s28'
+            jump dmorte1_s28
         'Ладно. Я передумал. Давай, идем.':
             # r35 # reply39856
             $ _r39856_action(gsm)
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Не сейчас, Морт. Может быть потом.':
             # r36 # reply39857
-            jump 'dmorte1_s28'
+            jump dmorte1_s28
 
 
 # s28 # say39858
@@ -338,10 +353,10 @@ label dmorte1_s28:  # from 27.0 27.2
         'Ладно. Я передумал. Давай, идем.':
             # r37 # reply39859
             $ _r39859_action(gsm)
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r38 # reply39860
-            jump 'dmorte1_s29'
+            jump dmorte1_s29
 
 
 # s29 # say39861
@@ -351,7 +366,7 @@ label dmorte1_s29:  # from 28.1
     menu:
         'Я так и сделаю. Прощай, Морт.':
             # r39 # reply39862
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s30 # say39863
@@ -361,7 +376,7 @@ label dmorte1_s30:  # from -
     menu:
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.':
             # r40 # reply39864
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s31 # say42298
@@ -371,7 +386,7 @@ label dmorte1_s31:  # from -
     menu:
         'Но ты ведь тоже мертв. И разговариваешь со мной.':
             # r41 # reply42299
-            jump 'dmorte1_s32'
+            jump dmorte1_s32
 
 
 # s32 # say42300
@@ -381,7 +396,7 @@ label dmorte1_s32:  # from 31.0
     menu:
         'Понятно…':
             # r42 # reply42301
-            jump 'dmorte1_s33'
+            jump dmorte1_s33
 
 
 # s33 # say42302
@@ -391,11 +406,11 @@ label dmorte1_s33:  # from 32.0
     menu:
         'Хорошо. Идем.':
             # r43 # reply42303
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s34 # say42306
 label dmorte1_s34:  # from - # Check EXTENDS ~DZM782~ : 2
     SPEAKER 'Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.'
 
-    jump 'show_graphics_menu'
+    jump show_graphics_menu

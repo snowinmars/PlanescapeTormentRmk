@@ -1,4 +1,4 @@
-python:
+init python:
     def _r45516_action(gsm):        
         gsm.dec_once_law('chaotic_zm985_1') 
         gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
@@ -12,11 +12,12 @@ python:
         gsm.inc_once_law('lawful_zm985_1') 
         gsm.inc_once_good('good_zm985_1')
     def _r45532_action(gsm):        
-        gsm.dec_law() 
+        gsm.dec_law('law') 
         gsm.set_zombie_chaotic(True)
     def _r45539_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
 
-python:
+
+init python:
     def _r45516_condition(gsm):
         return gsm.get_in_party_morte()
     def _r45517_condition(gsm):
@@ -38,8 +39,22 @@ python:
     def _r45535_condition(gsm):
         return gsm.get_can_speak_with_dead()
 
-python:
-    gsm           = renpy.store.global_settings_manager
+
+define gsm = renpy.store.global_settings_manager
+
+
+# ###
+# Original:  DLG/DZM985.DLG
+# Starts:    dzm985_s
+# ###
+
+
+label dzm985_init:
+    return
+
+
+label dzm985_dispose:
+    jump show_graphics_menu
 
 
 # s0 # say45515
@@ -50,31 +65,31 @@ label dzm985_s0:  # from - # Check EXTENDS ~DMORTE~ : 482
         'Толкнуть труп.' if _r45516_condition(gsm):
             # r0 # reply45516
             $ _r45516_action(gsm)
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Толкнуть труп.' if _r45517_condition(gsm):
             # r1 # reply45517
             $ _r45517_action(gsm)
-            jump 'dzm985_s3'
+            jump dzm985_s3
         'Помочь трупу остаться в равновесии.' if _r45518_condition(gsm):
             # r2 # reply45518
             $ _r45518_action(gsm)
-            jump 'dzm985_s4'
+            jump dzm985_s4
         'Помочь трупу остаться в равновесии.' if _r45519_condition(gsm):
             # r3 # reply45519
             $ _r45519_action(gsm)
-            jump 'dzm985_s6'
+            jump dzm985_s6
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45520_condition(gsm):
             # r4 # reply45520
-            jump 'dzm985_s1'
+            jump dzm985_s1
         'Использовать на трупе свою способность История костей.' if _r45521_condition(gsm):
             # r5 # reply45521
-            jump 'dzm985_s2'
+            jump dzm985_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r6 # reply45522
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Оставить труп в покое.':
             # r7 # reply45523
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s1 # say45524
@@ -84,7 +99,7 @@ label dzm985_s1:  # from 0.4 5.0 5.1 5.2
     menu:
         'Оставить труп в покое.':
             # r8 # reply45525
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s2 # say45526
@@ -94,20 +109,20 @@ label dzm985_s2:  # from 0.5 5.3
     menu:
         'Оставить труп в покое.':
             # r9 # reply45527
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s3 # say45528
 label dzm985_s3:  # from 0.1 6.0
     SPEAKER 'В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево. Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин. К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке смирно. Спустя мгновенье, нога падает с сочным гулким ударом.'
 
-    jump 'show_graphics_menu'
+    jump show_graphics_menu
 
 # s4 # say45530
 label dzm985_s4:  # from 0.2 # Check EXTENDS ~DMORTE~ : 482
     SPEAKER 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
 
-    jump 'show_graphics_menu'
+    jump show_graphics_menu
 
 # s5 # say45531
 label dzm985_s5:  # from -
@@ -117,22 +132,22 @@ label dzm985_s5:  # from -
         'Извини, что сбил тебя с ног. Я случайно.' if _r45532_condition(gsm):
             # r10 # reply45532
             $ _r45532_action(gsm)
-            jump 'dzm985_s1'
+            jump dzm985_s1
         'Извини, что сбил тебя с ног. Я случайно.' if _r45533_condition(gsm):
             # r11 # reply45533
-            jump 'dzm985_s1'
+            jump dzm985_s1
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45534_condition(gsm):
             # r12 # reply45534
-            jump 'dzm985_s1'
+            jump dzm985_s1
         'Использовать на трупе свою способность История костей.' if _r45535_condition(gsm):
             # r13 # reply45535
-            jump 'dzm985_s2'
+            jump dzm985_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r14 # reply45536
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Оставить труп в покое.':
             # r15 # reply45537
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s6 # say45538
@@ -143,7 +158,7 @@ label dzm985_s6:  # from 0.3
         'Ой-ой…':
             # r16 # reply45539
             $ _r45539_action(gsm)
-            jump 'dzm985_s3'
+            jump dzm985_s3
 
 
 # s7 # say64205
@@ -153,4 +168,4 @@ label dzm985_s7:  # from 3.0
     menu:
         'Хм-м. Думаю, я смогу найти применение этой руке…':
             # r17 # reply64206
-            jump 'show_graphics_menu'
+            jump show_graphics_menu

@@ -1,9 +1,10 @@
-python:
+init python:
     def _r6587_action(gsm):        
-        gsm.dec_law() 
+        gsm.dec_law('law') 
         gsm.set_zombie_chaotic(True)
 
-python:
+
+init python:
     def _r6587_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r6588_condition(gsm):
@@ -13,8 +14,22 @@ python:
     def _r6590_condition(gsm):
         return gsm.get_can_speak_with_dead()
 
-python:
-    gsm           = renpy.store.global_settings_manager
+
+define gsm = renpy.store.global_settings_manager
+
+
+# ###
+# Original:  DLG/DZM475.DLG
+# Starts:    dzm475_s
+# ###
+
+
+label dzm475_init:
+    return
+
+
+label dzm475_dispose:
+    jump show_graphics_menu
 
 
 # s0 # say6584
@@ -25,22 +40,22 @@ label dzm475_s0:  # from -
         'Итак… что тут у нас интересного?' if _r6587_condition(gsm):
             # r0 # reply6587
             $ _r6587_action(gsm)
-            jump 'dzm475_s1'
+            jump dzm475_s1
         'Итак… что тут у нас интересного?' if _r6588_condition(gsm):
             # r1 # reply6588
-            jump 'dzm475_s1'
+            jump dzm475_s1
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6589_condition(gsm):
             # r2 # reply6589
-            jump 'dzm475_s1'
+            jump dzm475_s1
         'Использовать на трупе свою способность История костей.' if _r6590_condition(gsm):
             # r3 # reply6590
-            jump 'dzm475_s2'
+            jump dzm475_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6591
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Оставить труп в покое.':
             # r5 # reply6592
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s1 # say6585
@@ -50,7 +65,7 @@ label dzm475_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6593
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s2 # say6586
@@ -60,4 +75,4 @@ label dzm475_s2:  # from 0.3
     menu:
         'Оставить труп в покое.':
             # r7 # reply6594
-            jump 'show_graphics_menu'
+            jump show_graphics_menu

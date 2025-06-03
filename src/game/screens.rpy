@@ -209,7 +209,8 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            hbox:
+                textbutton i.caption action [i.action, Function(narrator.add_history, kind="adv",who=__(the_nameless_one.name),what=__(i.caption))]
 
 
 style choice_vbox is vbox
@@ -950,10 +951,12 @@ style history_name:
     xsize gui.history_name_width
 
 style history_name_text:
+    size 14
     min_width gui.history_name_width
     textalign gui.history_name_xalign
 
 style history_text:
+    size gui.history_text_size
     xpos gui.history_text_xpos
     ypos gui.history_text_ypos
     xanchor gui.history_text_xalign

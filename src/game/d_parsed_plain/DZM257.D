@@ -1,11 +1,12 @@
-python:
+init python:
     def _r6510_action(gsm):        
-        gsm.dec_law() 
+        gsm.dec_law('law') 
         gsm.set_zombie_chaotic(True)
     def _r9562_action(gsm):        
         gsm.dec_once_law('chaotic_zom257_1')
 
-python:
+
+init python:
     def _r6510_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r6511_condition(gsm):
@@ -15,8 +16,22 @@ python:
     def _r6513_condition(gsm):
         return gsm.get_can_speak_with_dead()
 
-python:
-    gsm           = renpy.store.global_settings_manager
+
+define gsm = renpy.store.global_settings_manager
+
+
+# ###
+# Original:  DLG/DZM257.DLG
+# Starts:    dzm257_s
+# ###
+
+
+label dzm257_init:
+    return
+
+
+label dzm257_dispose:
+    jump show_graphics_menu
 
 
 # s0 # say6507
@@ -27,22 +42,22 @@ label dzm257_s0:  # from -
         'У тебя голова не кружится из-за глаз?' if _r6510_condition(gsm):
             # r0 # reply6510
             $ _r6510_action(gsm)
-            jump 'dzm257_s1'
+            jump dzm257_s1
         'У тебя голова не кружится из-за глаз?' if _r6511_condition(gsm):
             # r1 # reply6511
-            jump 'dzm257_s1'
+            jump dzm257_s1
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6512_condition(gsm):
             # r2 # reply6512
-            jump 'dzm257_s1'
+            jump dzm257_s1
         'Использовать на трупе свою способность История костей.' if _r6513_condition(gsm):
             # r3 # reply6513
-            jump 'dzm257_s2'
+            jump dzm257_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6514
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Оставить труп в покое.':
             # r5 # reply6515
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s1 # say6508
@@ -52,7 +67,7 @@ label dzm257_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6516
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s2 # say6509
@@ -62,10 +77,10 @@ label dzm257_s2:  # from 0.3
     menu:
         'Э-э… У меня к тебе вопрос, дух…':
             # r7 # reply6517
-            jump 'dzm257_s3'
+            jump dzm257_s3
         'Оставить духа в покое.':
             # r8 # reply9558
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s3 # say9553
@@ -75,13 +90,13 @@ label dzm257_s3:  # from 2.0
     menu:
         'Хорошо… задавай свои вопросы.':
             # r9 # reply9559
-            jump 'dzm257_s4'
+            jump dzm257_s4
         'Нет. Это я хотел задать *тебе* вопрос…':
             # r10 # reply9560
-            jump 'dzm257_s5'
+            jump dzm257_s5
         'Оставить в покое беспокойного духа.':
             # r11 # reply9561
-            jump 'dzm257_s6'
+            jump dzm257_s6
 
 
 # s4 # say9554
@@ -92,13 +107,13 @@ label dzm257_s4:  # from 3.0 4.0 5.0
         'Я не совсем уловил последнюю часть. Ты можешь повторить это еще раз?':
             # r12 # reply9562
             $ _r9562_action(gsm)
-            jump 'dzm257_s4'
+            jump dzm257_s4
         'Я не понимаю. Тем не менее, у меня есть вопрос…':
             # r13 # reply9563
-            jump 'dzm257_s5'
+            jump dzm257_s5
         'Я тебя не понимаю. Прощай.':
             # r14 # reply9564
-            jump 'dzm257_s6'
+            jump dzm257_s6
 
 
 # s5 # say9555
@@ -108,13 +123,13 @@ label dzm257_s5:  # from 3.1 4.1 5.1
     menu:
         'Ну хорошо… задавай свои вопросы.':
             # r15 # reply9565
-            jump 'dzm257_s4'
+            jump dzm257_s4
         'Ты не понимаешь. У меня вопрос к *тебе*…':
             # r16 # reply9566
-            jump 'dzm257_s5'
+            jump dzm257_s5
         'Махнуть рукой и оставить в покое бормочущего духа.':
             # r17 # reply9567
-            jump 'dzm257_s6'
+            jump dzm257_s6
 
 
 # s6 # say9556
@@ -124,14 +139,14 @@ label dzm257_s6:  # from 3.2 4.2 5.2
     menu:
         'Что?':
             # r18 # reply9568
-            jump 'dzm257_s7'
+            jump dzm257_s7
         'Не обращать на него внимания, отвернуться.':
             # r19 # reply9569
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s7 # say9557
 label dzm257_s7:  # from 6.0
     SPEAKER '…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.'
 
-    jump 'show_graphics_menu'
+    jump show_graphics_menu

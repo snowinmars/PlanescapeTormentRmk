@@ -6,17 +6,17 @@ init 4 python:
         renpy.restart_interaction()
 
 
-screen preferences():
-    tag menu
-    use game_menu(_("Preferences")):
-        vbox:
-            hbox:
-                box_wrap True
-                vbox:
-                    style_prefix "check"
-                    label _("Display")
-                    textbutton _("Show Mouse Coordinates") action Function(toggle_coordinates):
-                        selected persistent.show_coordinates
+# screen preferences():
+#     tag menu
+#     use game_menu(_("Preferences")):
+#         vbox:
+#             hbox:
+#                 box_wrap True
+#                 vbox:
+#                     style_prefix "check"
+#                     label _("Display")
+#                     textbutton _("Show Mouse Coordinates") action Function(toggle_coordinates):
+#                         selected persistent.show_coordinates
 
 
 style coordinates_text:

@@ -1,4 +1,4 @@
-﻿python:
+﻿init python:
     def _r41145_action(gsm):
         gsm.set_morte_mortuary_walkthrough_1(True)
     def _r41146_action(gsm):
@@ -18,7 +18,7 @@
     def _r41263_action(gsm):
         gsm.set_morte_mortuary_walkthrough_2(True)
 
-python:
+init python:
     def _r41163_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'int')
     def _r41181_condition(gsm):
@@ -76,23 +76,8 @@ python:
     def _r41239_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'int')
 
-python:
-    gsm           = renpy.store.global_settings_manager
 
-
-label dmorte2_init:
-    $ gsm.set_location('mortuary2')
-    $ gsm.set_in_party_morte(True)
-    $ gsm.set_meet_morte(True)
-    scene "bg mortuary2"
-    show 'morte_img default' at center_left_down
-
-    return
-
-
-label dmorte2_dispose:
-    hide 'morte_img'
-    jump 'show_graphics_menu'
+define gsm = renpy.store.global_settings_manager
 
 
 # ###
@@ -101,8 +86,24 @@ label dmorte2_dispose:
 # ###
 
 
+label dmorte2_init:
+    $ gsm.set_location('mortuary2')
+    $ gsm.set_in_party_morte(True)
+    $ gsm.set_meet_morte(True)
+    scene bg mortuary2
+    show morte_img default at center_left_down
+
+    return
+
+
+label dmorte2_dispose:
+    hide morte_img
+    jump show_graphics_menu
+
+
 # s0 # say41144
 label dmorte2_s0:  # from -
+    call dmorte2_init
     teller "Двери открываются с лёгким шорохом."
     morte 'Тсссс… Небольшой совет, шеф: с этого момента я бы вел себя потише.'
     morte 'Не нужно больше вписывать трупы в книгу мертвых без необходимости…'
@@ -112,19 +113,19 @@ label dmorte2_s0:  # from -
         'Кажется, ты еще не говорил об этом… *кто* такие эти смотрители?':
             # r0 # reply41145
             $ _r41145_action(gsm)
-            jump 'dmorte2_s1'
+            jump dmorte2_s1
         'Эти трупы… откуда они все берутся?':
             # r1 # reply41146
             $ _r41146_action(gsm)
-            jump 'dmorte2_s3'
+            jump dmorte2_s3
         'Почему тебя так заботят женские тела?':
             # r2 # reply41147
             $ _r41147_action(gsm)
-            jump 'dmorte2_s4'
+            jump dmorte2_s4
         'Ладно… Я… попробую это запомнить.':
             # r3 # reply41148
             $ _r41148_action(gsm)
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
 
 
 # s1 # say41149
@@ -135,7 +136,7 @@ label dmorte2_s1:  # from 0.0 3.0 7.0
     menu:
         'Я запутался… какое тленным дело, если я сбегу?':
             # r4 # reply41150
-            jump 'dmorte2_s2'
+            jump dmorte2_s2
 
 
 # s2 # say41151
@@ -146,13 +147,13 @@ label dmorte2_s2:  # from 1.0
     menu:
         'Эти трупы, которых я видел здесь… откуда они все берутся?':
             # r5 # reply41152
-            jump 'dmorte2_s3'
+            jump dmorte2_s3
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?':
             # r6 # reply41153
-            jump 'dmorte2_s4'
+            jump dmorte2_s4
         'Ладно… Я… попробую это запомнить.':
             # r7 # reply41154
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
 
 
 # s3 # say41155
@@ -162,13 +163,13 @@ label dmorte2_s3:  # from 0.1 2.0 7.1
     menu:
         'Просвяти меня… *кто* такие эти смотрители?':
             # r8 # reply41156
-            jump 'dmorte2_s1'
+            jump dmorte2_s1
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?':
             # r9 # reply41157
-            jump 'dmorte2_s4'
+            jump dmorte2_s4
         'Ладно… Я… попробую это запомнить.':
             # r10 # reply41158
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
 
 
 # s4 # say41159
@@ -179,7 +180,7 @@ label dmorte2_s4:  # from 0.2 2.1 3.1
     menu:
         'Последняя возможность? Погоди… о *чем* это ты толкуешь?':
             # r11 # reply41160
-            jump 'dmorte2_s5'
+            jump dmorte2_s5
 
 
 # s5 # say41161
@@ -189,10 +190,10 @@ label dmorte2_s5:  # from 4.0
     menu:
         'Нет… не очень, если честно.':
             # r12 # reply41162
-            jump 'dmorte2_s6'
+            jump dmorte2_s6
         'Ты это *несерьезно*.' if _r41163_condition(gsm):
             # r13 # reply41163
-            jump 'dmorte2_s6'
+            jump dmorte2_s6
 
 
 # s6 # say41164
@@ -203,7 +204,7 @@ label dmorte2_s6:  # from 5.0 5.1
     menu:
         'Постой… разве ты не говорил до этого, что я *не мертвый*?':
             # r14 # reply41165
-            jump 'dmorte2_s7'
+            jump dmorte2_s7
 
 
 # s7 # say41166
@@ -216,13 +217,13 @@ label dmorte2_s7:  # from 6.0
     menu:
         'Еще раз, кто эти смотрители?':
             # r15 # reply41167
-            jump 'dmorte2_s1'
+            jump dmorte2_s1
         'Но откуда берутся все эти трупы?':
             # r16 # reply41168
-            jump 'dmorte2_s3'
+            jump dmorte2_s3
         'Ладно… Я попробую это запомнить.':
             # r17 # reply41169
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
 
 
 # s8 # say41170
@@ -233,7 +234,7 @@ label dmorte2_s8:  # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.
     menu:
         'Хорошо… если у меня возникнут вопросы, я спрошу у тебя.':
             # r18 # reply41171
-            jump 'dmorte2_s9'
+            jump dmorte2_s9
 
 
 # s9 # say41172
@@ -244,7 +245,7 @@ label dmorte2_s9:  # from 8.0
     menu:
         'Если бы у меня был бы дневник, который *должен* был быть рядом со мной, я бы так и поступил.':
             # r19 # reply41173
-            jump 'dmorte2_s10'
+            jump dmorte2_s10
 
 
 # s10 # say41174
@@ -254,7 +255,7 @@ label dmorte2_s10:  # from 9.0
     menu:
         'Хм-м. Ну хорошо. Хуже от этого не будет… Заведу себе новый.':
             # r20 # reply41175
-            jump 'dmorte2_s11'
+            jump dmorte2_s11
 
 
 # s11 # say41176
@@ -266,7 +267,7 @@ label dmorte2_s11:  # from 10.0
         'Ладно… Уяснил. Идем.':
             # r21 # reply41177
             $ _r41177_action(gsm)
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s12 # say41178
@@ -276,31 +277,31 @@ label dmorte2_s12:  # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.
     menu:
         'Можешь еще раз прочитать, что у меня вытатуировано на спине?':
             # r22 # reply41179
-            jump 'dmorte2_s13'
+            jump dmorte2_s13
         'Еще раз, что это за место?':
             # r23 # reply41180
-            jump 'dmorte2_s18'
+            jump dmorte2_s18
         'Это место такое огромное… Кто за ним присматривает?' if _r41181_condition(gsm):
             # r24 # reply41181
-            jump 'dmorte2_s19'
+            jump dmorte2_s19
         'Еще раз, кто эти смотрители?' if _r41182_condition(gsm):
             # r25 # reply41182
-            jump 'dmorte2_s19'
+            jump dmorte2_s19
         'Эти трупы… откуда они все берутся?':
             # r26 # reply41183
-            jump 'dmorte2_s22'
+            jump dmorte2_s22
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?' if _r41184_condition(gsm):
             # r27 # reply41184
-            jump 'dmorte2_s23'
+            jump dmorte2_s23
         'Как мне использовать эти бинты?' if _r41185_condition(gsm):
             # r28 # reply41185
-            jump 'dmorte2_s21'
+            jump dmorte2_s21
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if _r41186_condition(gsm):
             # r29 # reply41186
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if _r41187_condition(gsm):
             # r30 # reply41187
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s13 # say41188
@@ -310,16 +311,16 @@ label dmorte2_s13:  # from 12.0
     menu:
         'Мне просто нужно освежить свою память, вот и все.':
             # r31 # reply41189
-            jump 'dmorte2_s14'
+            jump dmorte2_s14
         'Ладно, неважно. У меня есть другие вопросы…':
             # r32 # reply41190
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Ладно, забудь. Идем.' if _r41191_condition(gsm):
             # r33 # reply41191
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Ладно, забудь. Идем.' if _r41192_condition(gsm):
             # r34 # reply41192
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s14 # say41193
@@ -334,16 +335,16 @@ label dmorte2_s14:  # from 13.0
     menu:
         'Фарод… хм-м. Продолжай.':
             # r35 # reply41194
-            jump 'dmorte2_s15'
+            jump dmorte2_s15
         'Неважно. У меня есть другие вопросы…':
             # r36 # reply41195
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Забудь. Я уже достаточно наслушался. Идем.' if _r41196_condition(gsm):
             # r37 # reply41196
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Забудь. Я уже достаточно наслушался. Идем.' if _r41197_condition(gsm):
             # r38 # reply41197
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s15 # say41198
@@ -358,16 +359,16 @@ label dmorte2_s15:  # from 14.0
     menu:
         'Когда я очнулся, рядом со мной не было дневника?':
             # r39 # reply41199
-            jump 'dmorte2_s16'
+            jump dmorte2_s16
         'Неважно. У меня есть другие вопросы…':
             # r40 # reply41200
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Забудь. Я уже достаточно наслушался. Идем.' if _r41201_condition(gsm):
             # r41 # reply41201
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Забудь. Я уже достаточно наслушался. Идем.' if _r41203_condition(gsm):
             # r42 # reply41203
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s16 # say41202
@@ -377,16 +378,16 @@ label dmorte2_s16:  # from 15.0
     menu:
         'Ты уверен, что не знаешь никого по имени Фарод?':
             # r43 # reply41204
-            jump 'dmorte2_s17'
+            jump dmorte2_s17
         'И то правда. У меня есть другие вопросы…':
             # r44 # reply41205
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Ладно. Идем.' if _r41206_condition(gsm):
             # r45 # reply41206
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Ладно. Идем.' if _r41207_condition(gsm):
             # r46 # reply41207
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s17 # say41208
@@ -396,13 +397,13 @@ label dmorte2_s17:  # from 16.0
     menu:
         'Перед тем как мы пойдем, у меня есть еще вопросы…':
             # r47 # reply41209
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Ладно. Идем.' if _r41210_condition(gsm):
             # r48 # reply41210
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Ладно. Идем.' if _r41211_condition(gsm):
             # r49 # reply41211
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s18 # say41212
@@ -412,13 +413,13 @@ label dmorte2_s18:  # from 12.1
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r50 # reply41213
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Это все, что я хотел узнать. Спасибо.' if _r41214_condition(gsm):
             # r51 # reply41214
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Это все, что я хотел узнать. Спасибо.' if _r41215_condition(gsm):
             # r52 # reply41215
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s19 # say41216
@@ -429,16 +430,16 @@ label dmorte2_s19:  # from 12.2 12.3
     menu:
         'Я запутался… какое тленным дело, если я сбегу?':
             # r53 # reply41217
-            jump 'dmorte2_s20'
+            jump dmorte2_s20
         'Ясно. У меня есть другие вопросы к тебе…':
             # r54 # reply41218
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Понятно. Тогда я буду осторожен.' if _r41219_condition(gsm):
             # r55 # reply41219
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Понятно. Тогда я буду осторожен.' if _r41220_condition(gsm):
             # r56 # reply41220
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s20 # say41221
@@ -449,13 +450,13 @@ label dmorte2_s20:  # from 19.0
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r57 # reply41222
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Ладно… Я… попробую это запомнить.' if _r41223_condition(gsm):
             # r58 # reply41223
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Ладно… Я… попробую это запомнить.' if _r41224_condition(gsm):
             # r59 # reply41224
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s21 # say41225
@@ -465,13 +466,13 @@ label dmorte2_s21:  # from 12.6
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r60 # reply41226
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Спасибо. Думаю, я смогу с ними справиться.' if _r41227_condition(gsm):
             # r61 # reply41227
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Спасибо. Думаю, я смогу с ними справиться.' if _r41228_condition(gsm):
             # r62 # reply41228
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s22 # say41229
@@ -481,13 +482,13 @@ label dmorte2_s22:  # from 12.4
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r63 # reply41230
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Ладно… Я… попробую это запомнить.' if _r41231_condition(gsm):
             # r64 # reply41231
-            jump 'dmorte2_s8'
+            jump dmorte2_s8
         'Ладно… Я… попробую это запомнить.' if _r41232_condition(gsm):
             # r65 # reply41232
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s23 # say41233
@@ -498,13 +499,13 @@ label dmorte2_s23:  # from 12.5
     menu:
         'Последняя возможность? Погоди… о *чем* это ты толкуешь?':
             # r66 # reply41234
-            jump 'dmorte2_s24'
+            jump dmorte2_s24
         'Неважно. У меня к тебе еще вопросы…':
             # r67 # reply41235
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Ладно… Я… попробую это запомнить.':
             # r68 # reply41236
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s24 # say41237
@@ -514,16 +515,16 @@ label dmorte2_s24:  # from 23.0
     menu:
         'Нет… не очень, если честно.':
             # r69 # reply41238
-            jump 'dmorte2_s25'
+            jump dmorte2_s25
         'Ты это *несерьезно*.' if _r41239_condition(gsm):
             # r70 # reply41239
-            jump 'dmorte2_s25'
+            jump dmorte2_s25
         'Неважно. У меня к тебе еще вопросы…':
             # r71 # reply41240
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Я достаточно наслушался. Идем.':
             # r72 # reply41241
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s25 # say41242
@@ -534,13 +535,13 @@ label dmorte2_s25:  # from 24.0 24.1
     menu:
         'Постой… разве ты не говорил до этого, что я *не мертвый*?':
             # r73 # reply41243
-            jump 'dmorte2_s26'
+            jump dmorte2_s26
         'Неважно. У меня к тебе еще вопросы…':
             # r74 # reply41244
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Я достаточно наслушался. Идем.':
             # r75 # reply41245
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s26 # say41246
@@ -553,10 +554,10 @@ label dmorte2_s26:  # from 25.0
     menu:
         'У меня есть другие вопросы к тебе, Морт…':
             # r76 # reply41247
-            jump 'dmorte2_s12'
+            jump dmorte2_s12
         'Я достаточно наслушался. Идем.':
             # r77 # reply41248
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s27 # say41250
@@ -567,10 +568,10 @@ label dmorte2_s27:  # from -
         'Да… идем.':
             # r78 # reply41251
             $ _r41251_action(gsm)
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
         'Не сейчас, Морт.':
             # r79 # reply41252
-            jump 'dmorte2_s28'
+            jump dmorte2_s28
 
 
 # s28 # say41253
@@ -581,14 +582,14 @@ label dmorte2_s28:  # from 27.1
     menu:
         'Морт, у тебя НЕТ ни того, ни другого.':
             # r80 # reply41254
-            jump 'dmorte2_s29'
+            jump dmorte2_s29
         'Ладно. Я передумал. Давай, идем.':
             # r81 # reply41255
             $ _r41255_action(gsm)
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
         'Не сейчас, Морт. Может быть, потом.':
             # r82 # reply41256
-            jump 'dmorte2_s29'
+            jump dmorte2_s29
 
 
 # s29 # say41257
@@ -601,10 +602,10 @@ label dmorte2_s29:  # from 28.0 28.2
         'Ладно. Я передумал. Давай, идем.':
             # r83 # reply41258
             $ _r41258_action(gsm)
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r84 # reply41259
-            jump 'dmorte2_s30'
+            jump dmorte2_s30
 
 
 # s30 # say41260
@@ -614,7 +615,7 @@ label dmorte2_s30:  # from 29.1
     menu:
         'Я так и сделаю. Прощай, Морт.':
             # r85 # reply41261
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose
 
 
 # s31 # say41262
@@ -625,7 +626,7 @@ label dmorte2_s31:  # from -
         'Что такое?':
             # r86 # reply41263
             $ _r41263_action(gsm)
-            jump 'dmorte2_s32'
+            jump dmorte2_s32
 
 
 # s32 # say41264
@@ -635,7 +636,7 @@ label dmorte2_s32:  # from 31.0
     menu:
         'А мое имя может быть там?':
             # r87 # reply41265
-            jump 'dmorte2_s33'
+            jump dmorte2_s33
 
 
 # s33 # say41266
@@ -645,4 +646,4 @@ label dmorte2_s33:  # from 32.0
     menu:
         'Мне нужны ответы. Я поговорю с ним.':
             # r88 # reply41267
-            jump 'dmorte2_dispose'
+            jump dmorte2_dispose

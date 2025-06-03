@@ -1,6 +1,6 @@
-python:
+init python:
     def _r6565_action(gsm):        
-        gsm.dec_law() 
+        gsm.dec_law('law') 
         gsm.set_zombie_chaotic(True)
     def _r6568_action(gsm):        
         gsm.set_meet_asonje(True)
@@ -18,7 +18,8 @@ python:
     
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 
-python:
+
+init python:
     def _r6565_condition(gsm):
         return not gsm.get_zombie_chaotic()
     def _r6566_condition(gsm):
@@ -44,8 +45,22 @@ python:
     def _r9312_condition(gsm):
         return not gsm.get_meet_pharod()
 
-python:
-    gsm           = renpy.store.global_settings_manager
+
+define gsm = renpy.store.global_settings_manager
+
+
+# ###
+# Original:  DLG/DZM1094.DLG
+# Starts:    dzm1094_s
+# ###
+
+
+label dzm1094_init:
+    return
+
+
+label dzm1094_dispose:
+    jump show_graphics_menu
 
 
 # s0 # say6562
@@ -56,23 +71,23 @@ label dzm1094_s0:  # from -
         'Итак… что тут у нас интересного?' if _r6565_condition(gsm):
             # r0 # reply6565
             $ _r6565_action(gsm)
-            jump 'dzm1094_s1'
+            jump dzm1094_s1
         'Итак… что тут у нас интересного?' if _r6566_condition(gsm):
             # r1 # reply6566
-            jump 'dzm1094_s1'
+            jump dzm1094_s1
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6567_condition(gsm):
             # r2 # reply6567
-            jump 'dzm1094_s1'
+            jump dzm1094_s1
         'Использовать на трупе свою способность История костей.' if _r6568_condition(gsm):
             # r3 # reply6568
             $ _r6568_action(gsm)
-            jump 'dzm1094_s2'
+            jump dzm1094_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6569
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
         'Оставить труп в покое.':
             # r5 # reply6570
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s1 # say6563
@@ -82,7 +97,7 @@ label dzm1094_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6571
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s2 # say6564
@@ -92,10 +107,10 @@ label dzm1094_s2:  # from 0.3
     menu:
         'Я хотел бы задать тебе вопрос…':
             # r7 # reply6572
-            jump 'dzm1094_s3'
+            jump dzm1094_s3
         'Оставить духа.':
             # r8 # reply9246
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s3 # say9224
@@ -106,16 +121,16 @@ label dzm1094_s3:  # from 2.0
         'Ты здесь, чтобы отвечать на *мои* вопросы, дух.':
             # r9 # reply9247
             $ _r9247_action(gsm)
-            jump 'dzm1094_s4'
+            jump dzm1094_s4
         'Ты… по крайней мере твои останки… находятся в морге.':
             # r10 # reply9248
-            jump 'dzm1094_s13'
+            jump dzm1094_s13
         'Нет, сомневаюсь, что мы знакомы. У меня вопрос к тебе…':
             # r11 # reply9249
-            jump 'dzm1094_s14'
+            jump dzm1094_s14
         'Вряд ли. Прощай.':
             # r12 # reply9250
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s4 # say9225
@@ -125,25 +140,25 @@ label dzm1094_s4:  # from 3.0
     menu:
         'Так кто ты?':
             # r13 # reply9251
-            jump 'dzm1094_s5'
+            jump dzm1094_s5
         'Откуда ты?':
             # r14 # reply9252
-            jump 'dzm1094_s6'
+            jump dzm1094_s6
         'Как ты попал сюда? То есть, как стал зомби?':
             # r15 # reply9253
-            jump 'dzm1094_s7'
+            jump dzm1094_s7
         'Где ты… где находится твой дух… сейчас?':
             # r16 # reply9254
-            jump 'dzm1094_s8'
+            jump dzm1094_s8
         'Что ты знаешь об этом месте?':
             # r17 # reply9255
-            jump 'dzm1094_s9'
+            jump dzm1094_s9
         'Ты знаешь кого-нибудь по имени Фарод?' if _r9256_condition(gsm):
             # r18 # reply9256
-            jump 'dzm1094_s10'
+            jump dzm1094_s10
         'Ничего, неважно.':
             # r19 # reply9257
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s5 # say9226
@@ -153,10 +168,10 @@ label dzm1094_s5:  # from 4.0 11.0
     menu:
         'Нет, у меня есть другие вопросы…':
             # r20 # reply9258
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Это все, что я хотел узнать. Прощай.':
             # r21 # reply9259
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s6 # say9227
@@ -166,10 +181,10 @@ label dzm1094_s6:  # from 4.1 11.1
     menu:
         'Да, еще один вопрос…':
             # r22 # reply9260
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Это все, что я хотел узнать. Прощай.':
             # r23 # reply9261
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s7 # say9228
@@ -179,10 +194,10 @@ label dzm1094_s7:  # from 4.2 11.2
     menu:
         'Да, еще один вопрос…':
             # r24 # reply9262
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Это все, что я хотел узнать. Прощай.':
             # r25 # reply9263
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s8 # say9229
@@ -192,10 +207,10 @@ label dzm1094_s8:  # from 4.3 11.3
     menu:
         'Нет, у меня есть другие вопросы…':
             # r26 # reply9264
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Да. Прощай.':
             # r27 # reply9265
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s9 # say9230
@@ -205,13 +220,13 @@ label dzm1094_s9:  # from 4.4 11.4
     menu:
         'Тогда как же твое тело попало сюда на работу в эти унылые залы?':
             # r28 # reply9266
-            jump 'dzm1094_s12'
+            jump dzm1094_s12
         'У меня есть другие вопросы…':
             # r29 # reply9267
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Это все, что я хотел узнать. Прощай.':
             # r30 # reply9268
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s10 # say9231
@@ -221,10 +236,10 @@ label dzm1094_s10:  # from 4.5 11.5
     menu:
         'Тогда у меня есть другой вопрос…':
             # r31 # reply9269
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Это все, что я хотел узнать. Прощай.':
             # r32 # reply9270
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s11 # say9232
@@ -234,25 +249,25 @@ label dzm1094_s11:  # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
     menu:
         'Так кто ты?':
             # r33 # reply9271
-            jump 'dzm1094_s5'
+            jump dzm1094_s5
         'Откуда ты?':
             # r34 # reply9272
-            jump 'dzm1094_s6'
+            jump dzm1094_s6
         'Как ты попал сюда? То есть, как стал зомби?':
             # r35 # reply9273
-            jump 'dzm1094_s7'
+            jump dzm1094_s7
         'Где ты… где находится твой дух… сейчас?':
             # r36 # reply9274
-            jump 'dzm1094_s8'
+            jump dzm1094_s8
         'Что ты знаешь об этом месте?':
             # r37 # reply9275
-            jump 'dzm1094_s9'
+            jump dzm1094_s9
         'Ты знаешь кого-нибудь по имени Фарод?' if _r9276_condition(gsm):
             # r38 # reply9276
-            jump 'dzm1094_s10'
+            jump dzm1094_s10
         'Ничего, неважно.':
             # r39 # reply9277
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s12 # say9233
@@ -262,10 +277,10 @@ label dzm1094_s12:  # from 9.0
     menu:
         'Нет, у меня есть другие вопросы…':
             # r40 # reply9278
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Это все, что я хотел узнать. Прощай.':
             # r41 # reply9279
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s13 # say9234
@@ -275,10 +290,10 @@ label dzm1094_s13:  # from 3.1
     menu:
         'Нет, сомневаюсь, что мы знакомы. У меня вопрос к тебе…':
             # r42 # reply9280
-            jump 'dzm1094_s14'
+            jump dzm1094_s14
         'Вряд ли. Прощай.':
             # r43 # reply9281
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s14 # say9235
@@ -288,28 +303,28 @@ label dzm1094_s14:  # from 3.2 13.0
     menu:
         'Так кто ты?' if _r9282_condition(gsm):
             # r44 # reply9282
-            jump 'dzm1094_s15'
+            jump dzm1094_s15
         'Так кто ты?' if _r9286_condition(gsm):
             # r45 # reply9286
-            jump 'dzm1094_s25'
+            jump dzm1094_s25
         'Откуда ты?':
             # r46 # reply9287
-            jump 'dzm1094_s16'
+            jump dzm1094_s16
         'Как ты попал сюда? То есть, как стал зомби?':
             # r47 # reply9288
-            jump 'dzm1094_s17'
+            jump dzm1094_s17
         'Где ты… где находится твой дух… сейчас?':
             # r48 # reply9317
-            jump 'dzm1094_s18'
+            jump dzm1094_s18
         'Что ты знаешь об этом месте?':
             # r49 # reply9318
-            jump 'dzm1094_s19'
+            jump dzm1094_s19
         'Ты знаешь кого-нибудь по имени Фарод?' if _r9319_condition(gsm):
             # r50 # reply9319
-            jump 'dzm1094_s20'
+            jump dzm1094_s20
         'Ничего, неважно.':
             # r51 # reply9320
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s15 # say9236
@@ -320,15 +335,15 @@ label dzm1094_s15:  # from 14.0 22.0
         'Я… не знаю.':
             # r52 # reply9289
             $ _r9289_action(gsm)
-            jump 'dzm1094_s21'
+            jump dzm1094_s21
         'Я скажу тебе в другой раз. У меня есть вопрос…':
             # r53 # reply9290
             $ _r9290_action(gsm)
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Может быть в другой раз. Прощай.':
             # r54 # reply9291
             $ _r9291_action(gsm)
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s16 # say9237
@@ -338,10 +353,10 @@ label dzm1094_s16:  # from 14.2 22.2
     menu:
         'Понятно. У меня есть другой вопрос…':
             # r55 # reply9292
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Это все, что я хотел узнать. Прощай.':
             # r56 # reply9293
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s17 # say9238
@@ -351,10 +366,10 @@ label dzm1094_s17:  # from 14.3 22.3
     menu:
         'У меня есть другие вопросы…':
             # r57 # reply9294
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Это все, что я хотел узнать. Прощай.':
             # r58 # reply9295
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s18 # say9239
@@ -364,10 +379,10 @@ label dzm1094_s18:  # from 14.4 22.4
     menu:
         'Понятно. У меня есть другой вопрос…':
             # r59 # reply9296
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Это все, что я хотел узнать. Прощай.':
             # r60 # reply9297
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s19 # say9240
@@ -377,13 +392,13 @@ label dzm1094_s19:  # from 14.5 22.5
     menu:
         'Ты что-нибудь знаешь о городе, окружающем Морг?':
             # r61 # reply9298
-            jump 'dzm1094_s24'
+            jump dzm1094_s24
         'Понятно. У меня есть другой вопрос…':
             # r62 # reply9299
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Это все, что я хотел узнать. Прощай.':
             # r63 # reply9300
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s20 # say9241
@@ -393,10 +408,10 @@ label dzm1094_s20:  # from 14.6 22.6
     menu:
         'Возможно. У меня есть другой вопрос…':
             # r64 # reply9301
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Не знаю. Прощай.':
             # r65 # reply9302
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s21 # say9242
@@ -406,14 +421,14 @@ label dzm1094_s21:  # from 15.0
     menu:
         'Можешь называть меня, как хочешь. У меня есть вопрос…':
             # r66 # reply9303
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Придумать имя: Ну, не знаю… 'Адан'?':
             # r67 # reply9304
             $ _r9304_action(gsm)
-            jump 'dzm1094_s23'
+            jump dzm1094_s23
         'Нет, это неважно. Прощай.':
             # r68 # reply9305
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s22 # say9243
@@ -423,28 +438,28 @@ label dzm1094_s22:  # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.
     menu:
         'Так кто ты?' if _r9306_condition(gsm):
             # r69 # reply9306
-            jump 'dzm1094_s15'
+            jump dzm1094_s15
         'Так кто ты?' if _r9307_condition(gsm):
             # r70 # reply9307
-            jump 'dzm1094_s25'
+            jump dzm1094_s25
         'Откуда ты?':
             # r71 # reply9308
-            jump 'dzm1094_s16'
+            jump dzm1094_s16
         'Как ты попал сюда? То есть, как стал зомби?':
             # r72 # reply9309
-            jump 'dzm1094_s17'
+            jump dzm1094_s17
         'Где ты… где находится твой дух… сейчас?':
             # r73 # reply9310
-            jump 'dzm1094_s18'
+            jump dzm1094_s18
         'Что ты знаешь об этом месте?':
             # r74 # reply9311
-            jump 'dzm1094_s19'
+            jump dzm1094_s19
         'Ты знаешь кого-нибудь по имени Фарод?' if _r9312_condition(gsm):
             # r75 # reply9312
-            jump 'dzm1094_s20'
+            jump dzm1094_s20
         'Ничего, неважно.':
             # r76 # reply9321
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s23 # say9244
@@ -454,10 +469,10 @@ label dzm1094_s23:  # from 21.1
     menu:
         'Да, есть…':
             # r77 # reply9313
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Нет, нету. Прощай.':
             # r78 # reply9314
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s24 # say9245
@@ -467,10 +482,10 @@ label dzm1094_s24:  # from 19.0
     menu:
         'Да… наверное. У меня есть другой вопрос…':
             # r79 # reply9315
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Возможно. Прощай.':
             # r80 # reply9316
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s25 # say9283
@@ -480,10 +495,10 @@ label dzm1094_s25:  # from 14.1 22.1
     menu:
         'У меня есть другие вопросы…':
             # r81 # reply9284
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Это все, что я хотел узнать. Прощай.':
             # r82 # reply9285
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s26 # say20061
@@ -493,10 +508,10 @@ label dzm1094_s26:  # from -
     menu:
         'У меня есть несколько вопросов…':
             # r83 # reply20063
-            jump 'dzm1094_s22'
+            jump dzm1094_s22
         'Я просто проходил мимо. Прощай.':
             # r84 # reply20064
-            jump 'show_graphics_menu'
+            jump show_graphics_menu
 
 
 # s27 # say20062
@@ -506,7 +521,7 @@ label dzm1094_s27:  # from -
     menu:
         'У меня есть несколько вопросов…':
             # r85 # reply20065
-            jump 'dzm1094_s11'
+            jump dzm1094_s11
         'Я просто проходил мимо. Прощай.':
             # r86 # reply20066
-            jump 'show_graphics_menu'
+            jump show_graphics_menu

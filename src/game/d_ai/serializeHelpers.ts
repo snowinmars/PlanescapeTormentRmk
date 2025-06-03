@@ -1,284 +1,176 @@
-﻿import { wellKnownFunctions } from "./wellKnownFunctions.ts";
+﻿import { wellKnownReplacements } from "./wellKnownReplacements.ts";
 
-export const trimTrahs = (x: string) => x.replaceAll('~', '').replaceAll('«', '').replaceAll('»', '').replaceAll('...', '…').trim();
+export const trimTrash = (input: string) =>
+  input.replaceAll(/[~«»]/g, '').replaceAll('...', '…').trim();
 
-const pasteOnceAligment = (body: string): string => {
-    // DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_3","GLOBALGood",-1) ~
-    const regex = /IncrementGlobalOnceEx\("(.*?)","(.*?)",(.*?)\)/g
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
+type StringTransformer = (body: string) => string;
 
-    for (const match of matches) {
-        const id = match[1].replace('GLOBAL', '').toLowerCase();
-        const prop = match[2].replace('GLOBAL', '').toLowerCase();
-        const amount = parseInt(match[3]);
-        let result = '';
-        switch (prop) {
-            case 'good':
-            case 'evil':
-                if (amount === 1) result = `gsm.inc_once_good('${id}')`
-                else if (amount === -1) result = `gsm.dec_once_good('${id}')`
-                else if (amount > 0) result = `gsm.inc_once_good('${id}', ${amount})`
-                else if (amount < 0) result = `gsm.dec_once_good('${id}', ${-amount})`
-                else `raise Exception("Why do you trying to change setting by zero delta?")`
-                break;
-            case 'law':
-            case 'chaotic':
-                if (amount === 1) result = `gsm.inc_once_law('${id}')`
-                else if (amount === -1) result = `gsm.dec_once_law('${id}')`
-                else if (amount > 0) result = `gsm.inc_once_law('${id}', ${amount})`
-                else if (amount < 0) result = `gsm.dec_once_law('${id}', ${-amount})`
-                else `raise Exception("Why do you trying to change setting by zero delta?")`
-                break;
-            case 'know_dustmen':
-                result = 'gsm.set_meet_dustmen(True)'
-                break;
-            case 'adahn':
-                result = 'gsm.set_death_of_names_adahn(True)\n    gsm.inc_once_adahn(\'Adahn_Death_of_Names_1\')'
-                break;
-            default:
-                result = match[0];
-                continue;
-        }
-        body = body.replaceAll(match[0], result);
+// Alignment transformation utilities
+const createAlignmentHandler = (prefix: string) => (id: string, amount: number) => {
+  if (amount === 1) return `gsm.inc_${prefix}('${id}')`;
+  if (amount === -1) return `gsm.dec_${prefix}('${id}')`;
+  if (amount > 0) return `gsm.inc_${prefix}('${id}', ${amount})`;
+  if (amount < 0) return `gsm.dec_${prefix}('${id}', ${-amount})`;
+  return `raise Exception("Cannot change setting by zero delta")`;
+};
+
+const handleSpecialCases = (prop: string) => {
+  switch (prop) {
+    case 'know_dustmen': return 'gsm.set_meet_dustmen(True)';
+    case 'adahn':
+      return 'gsm.set_death_of_names_adahn(True)\n    gsm.inc_once_adahn(\'Adahn_Death_of_Names_1\')';
+    default: return null;
+  }
+};
+
+// Individual transformation functions
+const transformOnceAlignment: StringTransformer = (body) => {
+  const regex = /IncrementGlobalOnceEx\("(.*?)","(.*?)",(.*?)\)/g;
+
+  return body.replace(regex, (_, globalId, property, amountStr) => {
+    const id = globalId.replace('GLOBAL', '').toLowerCase();
+    const prop = property.replace('GLOBAL', '').toLowerCase();
+    const amount = parseInt(amountStr);
+
+    const specialCase = handleSpecialCases(prop);
+    if (specialCase) return specialCase;
+
+    switch (prop) {
+      case 'good':
+      case 'evil':
+        return createAlignmentHandler('once_good')(id, amount);
+      case 'law':
+      case 'chaotic':
+        return createAlignmentHandler('once_law')(id, amount);
+      default:
+        return _; // Return original match
     }
+  });
+};
 
-    return body;
-}
+const transformAlignment: StringTransformer = (body) => {
+  const regex = /IncrementGlobal\("(.*?)",".*?",(.*?)\)/g;
 
-const pasteAligment = (body: string): string => {
-    // DO ~IncrementGlobal("Law","GLOBAL",-1) ~
-    // IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
-    const regex = /IncrementGlobal\("(.*?)",".*?",(.*?)\)/g
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
+  return body.replace(regex, (_, property, amountStr) => {
+    const prop = property.toLowerCase();
+    const amount = parseInt(amountStr);
 
-    for (const match of matches) {
-        const prop = match[1].toLowerCase();
-        const amount = parseInt(match[2]);
-        let result = '';
-        switch (prop) {
-            case 'good':
-            case 'evil':
-                if (amount === 1) result = `gsm.inc_good()`
-                else if (amount === -1) result = `gsm.dec_good()`
-                else if (amount > 0) result = `gsm.inc_good(${amount})`
-                else if (amount < 0) result = `gsm.dec_good(${-amount})`
-                else `raise Exception("Why do you trying to change setting by zero delta?")`
-                break;
-            case 'law':
-            case 'chaotic':
-                if (amount === 1) result = `gsm.inc_law()`
-                else if (amount === -1) result = `gsm.dec_law()`
-                else if (amount > 0) result = `gsm.inc_law(${amount})`
-                else if (amount < 0) result = `gsm.dec_law(${-amount})`
-                else `raise Exception("Why do you trying to change setting by zero delta?")`
-                break;
-            case 'know_dustmen':
-                result = 'gsm.set_meet_dustmen(True)'
-                break;
-            case 'adahn':
-                result = 'gsm.set_death_of_names_adahn(True)\n    gsm.inc_once_adahn(\'Adahn_Death_of_Names_1\')'
-                break;
-            default:
-                result = match[0];
-                continue;
-        }
-        body = body.replaceAll(match[0], result);
+    const specialCase = handleSpecialCases(prop);
+    if (specialCase) return specialCase;
+
+    switch (prop) {
+      case 'good':
+      case 'evil':
+        return createAlignmentHandler('good')(prop, amount);
+      case 'law':
+      case 'chaotic':
+        return createAlignmentHandler('law')(prop, amount);
+      default:
+        return _; // Return original match
     }
+  });
+};
 
-    return body;
-}
+const transformCheckStat: StringTransformer = (body) =>
+  body.replace(/CheckStat(GT|LT)\((.*?),(\d+),(.*?)\)/g,
+    (_, operator, character, amount, property) =>
+      `return gsm.check_char_prop_${operator.toLowerCase()}('${character.toLowerCase()}',${amount},'${property.toLowerCase()}')`
+  );
 
-const pasteCheckStat = (body: string): string => {
-    const regex = /CheckStat(GT|LT)\((.*?),(\d+),(.*?)\)/g
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
+const transformJournals: StringTransformer = (body) =>
+  body.replace(/JOURNAL #(\d+) \/\*(.*)\*\//g,
+    (_, journalId, journalBody) =>
+      `gsm.update_journal('${journalId}')    # '${journalId}': '${journalBody}'`
+  );
 
-    for (const match of matches) {
-        const type = match[1].toLowerCase();
-        const char = match[2].toLowerCase();
-        const amount = parseInt(match[3]);
-        const prop = match[4].toLowerCase();
-        const result = `return gsm.check_char_prop_${type}('${char}',${amount},'${prop}')`
-        body = body.replaceAll(match[0], result);
+const transformSounds: StringTransformer = (body) =>
+  body.replace(/PlaySoundNotRanged\("(.*)"\)/g,
+    (_, soundId) => `# ?.play_sound('${soundId}')`
+  );
+
+const transformForceAttack: StringTransformer = (body) =>
+  body.replace(/ForceAttack\((.*),"(.*)"\)/g,
+    (_, attacker, target) => `# ?.attack('${attacker}').by('${target}')`
+  );
+
+const transformGold = (regex: RegExp, handler: (amount: number) => string): StringTransformer =>
+  (body) => body.replace(regex, (_, amountStr) =>
+    handler(parseInt(amountStr))
+  );
+
+const transformTakeGold = transformGold(
+  /TakePartyGold\((.*)\)/g,
+  amount => amount > 0 ? `gsm.dec_gold(${amount})` : `gsm.inc_gold(${-amount})`
+);
+
+const transformDestroyGold = transformGold(
+  /DestroyPartyGold\((.*)\)/g,
+  amount => `gsm.dec_gold(${amount})`
+);
+
+const transformPartyExp = transformGold(
+  /AddexperienceParty\((.*)\)/g,
+  amount => amount > 0 ? `gsm.inc_exp(${amount})` : `gsm.dec_exp(${-amount})`
+);
+
+const transformNpcExp: StringTransformer = (body) =>
+  body.replace(/GiveExperience\((.*),(.*)\)/g,
+    (_, character, amountStr) => {
+      const amount = parseInt(amountStr);
+      return amount > 0
+        ? `gsm.inc_exp('${character}', ${amount})`
+        : `gsm.dec_exp('${character}', ${-amount})`;
     }
+  );
 
-    return body;
-}
+const transformCutScene: StringTransformer = (body) =>
+  body.replace(/StartCutSceneEx\("(.*)".*/g,
+    (_, sceneId) => `# ?.startCutScene('${sceneId}')`
+  );
 
-const pasteJournals = (body: string): string => {
-    const regex = /JOURNAL #(\d+) \/\*(.*)\*\//g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
+const transformPermanentStat: StringTransformer = (body) =>
+  body.replace(/PermanentStatChange\("(.*)"(.*),(.*),(\d+)\)/g,
+    (_, character, property, action, amount) =>
+      `# ?.PermanentStatChange(${character}, ${property}, ${action}, ${amount})`
+  );
 
-    for (const match of matches) {
-        const journalId = match[1];
-        const journalBody = match[2];
-        const result = `gsm.update_journal('${journalId}')    # '${journalId}': '${journalBody}'`
-        body = body.replaceAll(match[0], result);
+const transformVisitedLocation: StringTransformer = (body) =>
+  body.replace(/(!)?Global\("(.*?)_Visited",.*?,(\d)\)/g,
+    (_, notOperator, locationId, value) => {
+      const isVisited = (notOperator === '!') !== (value === '1');
+      return `return${isVisited ? ' ' : ' not '}gsm.is_internal_location_visited('${locationId}')`;
     }
+  );
 
-    return body;
-}
+// Transformation pipeline
+const transformers: StringTransformer[] = [
+  transformJournals,
+  transformCheckStat,
+  transformOnceAlignment,
+  transformAlignment,
+  transformSounds,
+  transformForceAttack,
+  transformTakeGold,
+  transformDestroyGold,
+  transformPartyExp,
+  transformNpcExp,
+  transformPermanentStat,
+  transformCutScene,
+  transformVisitedLocation
+];
 
-const pasteSounds = (body: string): string => {
-    const regex = /PlaySoundNotRanged\("(.*)"\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
+export const transformScript = (body: string): string => {
+  let transformedBody = body;
 
-    for (const match of matches) {
-        const soundId = match[1];
-        const result = `# ?.play_sound('${soundId}')`
-        body = body.replaceAll(match[0], result);
-    }
+  // Apply well-known replacements
+  for (const [pattern, replacement] of wellKnownReplacements) {
+    transformedBody = transformedBody.replaceAll(pattern, replacement);
+  }
 
-    return body;
-}
+  // Apply transformations in sequence
+  for (const transformer of transformers) {
+    transformedBody = transformer(transformedBody);
+  }
 
-const pasteForceAttack = (body: string): string => {
-    const regex = /ForceAttack\((.*),"(.*)"\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const who = match[1];
-        const whom = match[2];
-        const result = `# ?.attack('${who}').by('${whom}')`
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pasteTakeGold = (body: string): string => {
-    const regex = /TakePartyGold\((.*)\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const amount = parseInt(match[1]);
-        const result = amount > 0 ? `gsm.inc_gold(${amount})` : `gsm.dec_gold(${-amount})`;
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pasteDestroyGold = (body: string): string => {
-    const regex = /DestroyPartyGold\((.*)\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const amount = parseInt(match[1]);
-        const result = `gsm.dec_gold(${amount})`;
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pastePartyExp = (body: string): string => {
-    const regex = /AddexperienceParty\((.*)\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const amount = parseInt(match[1]);
-        const result = amount > 0 ? `gsm.inc_exp(${amount})` : `gsm.dec_exp(${-amount})`;
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pasteNpcExp = (body: string): string => {
-    // GiveExperience(Protagonist,12000)
-    const regex = /GiveExperience\((.*),(.*)\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const who = match[1];
-        const amount = parseInt(match[2]);
-        const result = amount > 0 ? `gsm.inc_exp('${who}', ${amount})` : `gsm.dec_exp(${who}, ${-amount})`;
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pasteCutScene = (body: string): string => {
-    // StartCutSceneEx("1001Cut1",FALSE)
-    const regex = /StartCutSceneEx\("(.*)".*/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const id = match[1];
-        const result = `# ?.startCutScene('${id}')`
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pastePermanentStatChange = (body: string): string => {
-    // PermanentStatChange("Morte",STR,RAISE,4)
-    const regex = /PermanentStatChange\("(.*)"(.*),(.*),(\d+)\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const who = match[1];
-        const prop = match[2];
-        const action = match[3];
-        const amount = parseInt(match[4]);
-        const result = `# ?.PermanentStatChange(${who}, ${prop}, ${action}, ${amount})`
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-const pasteVisitedLocation = (body: string): string => {
-    // Global("AR0500_Visited","GLOBAL",1)
-    const regex = /(!)?Global\("(.*?)_Visited",.*?,(\d)\)/g;
-    const matches = body.matchAll(regex);
-    if (!matches) return body;
-
-    for (const match of matches) {
-        const not = match[1] === '!';
-        const location_internal_id = match[2];
-        const isVisited = not !== (match[3] === '1');
-        const result = `return${isVisited ? ' ' : ' not '}gsm.is_internal_location_visited('${location_internal_id}')`;
-        body = body.replaceAll(match[0], result);
-    }
-
-    return body;
-}
-
-export const pasteWellKnownFunctions = (body: string): string => {
-    for (const r of wellKnownFunctions) {
-        body = body.replaceAll(r[0], r[1]);
-    }
-
-    [
-        pasteJournals,
-        pasteCheckStat,
-        pasteOnceAligment,
-        pasteAligment,
-        pasteSounds,
-        pasteForceAttack,
-        pasteTakeGold,
-        pasteDestroyGold,
-        pastePartyExp,
-        pasteNpcExp,
-        pastePermanentStatChange,
-        pasteCutScene,
-        pasteVisitedLocation,
-    ].map(f => body = f(body))
-
-    return body;
-}
+  return transformedBody;
+};
