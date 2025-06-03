@@ -10,7 +10,7 @@ from engine.transforms import (
 ###
 def _init(gsm):
     gsm.set_location('mortuary2')
-    renpy.exports.show("bg mortuary1")
+    renpy.exports.show("bg mortuary2")
     gsm.set_meet_dzf114(True)
     _show('dzf114_img default', center_right_down)
 def _dispose():

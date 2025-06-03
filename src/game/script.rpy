@@ -59,27 +59,27 @@ init 2 python:
 
 init 3 python:
     # engine warm up
-    from engine.dialog import (DialogManager)
+#     from engine.dialog import (DialogManager)
     from engine.menu import (MenuManager)
     from engine.settings import (SettingsManager)
     from engine.events import (EventManager)
-    from engine.history import (HistoryManager)
+#     from engine.history import (HistoryManager)
     from engine.inventory import (InventoryManager)
-    from engine.label_flow import (LabelFlowBuilder, LabelFlowManager)
-    from labels.all_labels import (build_all_labels)
+#     from engine.label_flow import (LabelFlowBuilder, LabelFlowManager)
+#     from labels.all_labels import (build_all_labels)
     from menus.all_menus import (build_all_menus)
-    from dlg.all_dlgs import (build_all_dlgs)
+#     from dlg.all_dlgs import (build_all_dlgs)
     from setting.all_settings import (build_all_settings)
     from setting.all_inventory import (build_all_inventory)
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
     renpy.store.global_event_manager = EventManager()
-    renpy.store.global_label_registry = LabelFlowManager()
+#     renpy.store.global_label_registry = LabelFlowManager()
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
     renpy.store.global_menu_manager = MenuManager()
-    renpy.store.global_dialog_manager = DialogManager()
-    renpy.store.global_history_manager = HistoryManager()
+#     renpy.store.global_history_manager = HistoryManager()
+#     renpy.store.global_dialog_manager = DialogManager()
     renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
     devlog = logging.getLogger('log')
@@ -94,36 +94,36 @@ init 3 python:
     build_all_inventory(renpy.store.global_inventory_manager)
     devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
 
-    devlog.info('Building label flow...')
-    now = int(time.time())
-    label_flow_builder = LabelFlowBuilder()
-    build_all_labels(label_flow_builder, renpy.store.global_settings_manager)
-    renpy.store.global_label_registry.register(label_flow_builder)
-    devlog.info('Done building label flow, took %s', int(time.time()) - now)
+#     devlog.info('Building label flow...')
+#     now = int(time.time())
+#     label_flow_builder = LabelFlowBuilder()
+#     build_all_labels(label_flow_builder, renpy.store.global_settings_manager)
+#     renpy.store.global_label_registry.register(label_flow_builder)
+#     devlog.info('Done building label flow, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building mortuary menu...')
     build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
     devlog.info('Done building mortuary menu, took %s', int(time.time()) - now)
 
-    now = int(time.time())
-    devlog.info('Building dialog manager...')
-    build_all_dlgs(renpy.store.global_dialog_manager)
-    devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
+#     now = int(time.time())
+#     devlog.info('Building dialog manager...')
+#     build_all_dlgs(renpy.store.global_dialog_manager)
+#     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
 
-    config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
-    config.underlay.append(
-        renpy.Keymap(
-            show_custom_history = Show("custom_history")
-        )
-    )
-    config.keymap['HIDE_custom_screens'] = ['K_ESCAPE', 'mouseup_3']
-    config.keymap['hide_windows'].append('HIDE_custom_screens')
-    config.underlay.append(
-        renpy.Keymap(
-            HIDE_custom_screens = [Hide("custom_history"), Hide("history"), Hide("inventory_screen"), Return(-1)]
-        )
-    )
+#     config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
+#     config.underlay.append(
+#         renpy.Keymap(
+#             show_custom_history = Show("custom_history")
+#         )
+#     )
+#     config.keymap['HIDE_custom_screens'] = ['K_ESCAPE', 'mouseup_3']
+#     config.keymap['hide_windows'].append('HIDE_custom_screens')
+#     config.underlay.append(
+#         renpy.Keymap(
+#             HIDE_custom_screens = [Hide("custom_history"), Hide("history"), Hide("inventory_screen"), Return(-1)]
+#         )
+#     )
     config.keymap['show_inventory'] = ['i']
     config.underlay.append(
         renpy.Keymap(
@@ -139,12 +139,8 @@ label start:
     menu:
         "dev":
             jump 'dev'
-        "start_":
-            teller "Я прихожу в себя в тусклом помещении."
-            teller "Голова раскалывается, первое движение отзывается резкой болью слева -"
-            teller "Болью настолько сильной, что не очень понятно, где именно слева."
-            teller "Я постепенно встаю с каменного...стола? и поднимаю взгляд."
-            jump 'dmorte_one_introducing'
+        "start":
+            jump 'dmorte1_s0'
 
 
 label end:
