@@ -1,43 +1,37 @@
-﻿const booleanSe3tting = (from: string, to: string, withDead = false): string[][] => {
-    // May I be wrong? I mart.
-    return [
-        [`SetGlobal("${from}","GLOBAL",1)`,    `gsm.set_${to}(True)`],
-        [`Global("${from}","GLOBAL",0)`,       `return not gsm.get_${to}()`],
-        [`Global("${from}","GLOBAL",1)`,       `return gsm.get_${to}()`],
-        [`GlobalGT("${from}","GLOBAL",0)`,     `return gsm.get_${to}()`],
-        // [`GlobalGT("${from}","GLOBAL",1)`,     `return false`],
-        // [`GlobalLT("${from}","GLOBAL",0)`,     `return false`],
-        [`GlobalLT("${from}","GLOBAL",1)`,     `return not gsm.get_${to}()`],
-        [`!Global("${from}","GLOBAL",0)`,      `return gsm.get_${to}()`],
-        [`!Global("${from}","GLOBAL",1)`,      `return not gsm.get_${to}()`],
-        [`!GlobalGT("${from}","GLOBAL",0)`,    `return not gsm.get_${to}()`],
-        // [`!GlobalGT("${from}","GLOBAL",1)`,    `return true`],
-        // [`!GlobalLT("${from}","GLOBAL",0)`,    `return true`],
-        [`!GlobalLT("${from}","GLOBAL",1)`,    `return gsm.get_${to}()`],
-    ]
-}
+﻿export type KnownSettings = Readonly<{
+    name: string;
+    type: 'boolean' | 'integer';
+}>
+const knownSettingsName: Record<string, KnownSettings> = {};
 
 const setting = (from: string, to: string, env = 'GLOBAL', meetAndDead = false): string[][] => {
     return [
         ...(
             (!meetAndDead) ? [to] :
                 (meetAndDead) ? [`meet_${to}`, `dead_${to}`] : []
-        ).flatMap(x => [
-            [`SetGlobal("${from}","${env}",0)`, `gsm.set_${x}(False)`],
-            [`SetGlobal("${from}","${env}",1)`, `gsm.set_${x}(True)`],
-            [`Global("${from}","${env}",0)`,    `return not gsm.get_${x}()`],
-            [`Global("${from}","${env}",1)`,    `return gsm.get_${x}()`],
-            [`GlobalGT("${from}","${env}",1)`,  `return false  # GlobalGT("${from}","${env}",1)`],
-            [`GlobalLT("${from}","${env}",0)`,  `return false  # GlobalLT("${from}","${env}",0)`],
-            [`GlobalGT("${from}","${env}",0)`,  `return gsm.get_${x}()`],
-            [`GlobalLT("${from}","${env}",1)`,  `return not gsm.get_${x}()`],
-            [`!Global("${from}","${env}",0)`,   `return gsm.get_${x}()`],
-            [`!Global("${from}","${env}",1)`,   `return not gsm.get_${x}()`],
-            [`!GlobalGT("${from}","${env}",0)`, `return not gsm.get_${x}()`],
-            [`!GlobalGT("${from}","${env}",1)`, `return true  # !GlobalGT("${from}","${env}",1)`],
-            [`!GlobalLT("${from}","${env}",0)`, `return true  # !GlobalLT("${from}","${env}",0)`],
-            [`!GlobalLT("${from}","${env}",1)`, `return gsm.get_${x}()`]
-        ]),
+        ).flatMap(x => {
+            knownSettingsName[x] = {
+                name: x,
+                type: "boolean",
+            };
+            return [
+                // May I be wrong? I mart.
+                [`SetGlobal("${from}","${env}",0)`, `gsm.set_${x}(False)`],
+                [`SetGlobal("${from}","${env}",1)`, `gsm.set_${x}(True)`],
+                [`Global("${from}","${env}",0)`,    `return not gsm.get_${x}()`],
+                [`Global("${from}","${env}",1)`,    `return gsm.get_${x}()`],
+                [`GlobalGT("${from}","${env}",1)`,  `return false  # GlobalGT("${from}","${env}",1)`],
+                [`GlobalLT("${from}","${env}",0)`,  `return false  # GlobalLT("${from}","${env}",0)`],
+                [`GlobalGT("${from}","${env}",0)`,  `return gsm.get_${x}()`],
+                [`GlobalLT("${from}","${env}",1)`,  `return not gsm.get_${x}()`],
+                [`!Global("${from}","${env}",0)`,   `return gsm.get_${x}()`],
+                [`!Global("${from}","${env}",1)`,   `return not gsm.get_${x}()`],
+                [`!GlobalGT("${from}","${env}",0)`, `return not gsm.get_${x}()`],
+                [`!GlobalGT("${from}","${env}",1)`, `return true  # !GlobalGT("${from}","${env}",1)`],
+                [`!GlobalLT("${from}","${env}",0)`, `return true  # !GlobalLT("${from}","${env}",0)`],
+                [`!GlobalLT("${from}","${env}",1)`, `return gsm.get_${x}()`]
+            ]
+        }),
         [`Dead("${from}")`, `return gsm.get_dead_${to}()`],
         [`!Dead("${from}")`, `return not gsm.get_dead_${to}()`],
     ];
@@ -47,55 +41,69 @@ const firstToLower = (x: string): string => x[0].toLowerCase() + x.slice(1);
 
 const booleanSetting = (from: string, to: string, env = 'GLOBAL'): string[][] => setting(from, to, env, false);
 const npcSetting = (from: string, to: string, env = 'GLOBAL'): string[][] => setting(from, to, env, true);
-const partyNpc = (from: string, to: string): string[][] => [
-    ...npcSetting(from, to),
-    // with Xxx
-    [`SetGlobal("${from}","GLOBAL",1)`, `gsm.set_in_party_${to}(True)`],
-    [`SetGlobal("${from}","GLOBAL",0)`, `gsm.set_in_party_${to}(False)`],
-    [`Global("${from}","GLOBAL",1)`, `return gsm.get_in_party_${to}()`],
-    [`Global("${from}","GLOBAL",0)`, `return not gsm.get_in_party_${to}()`],
-    [`NearbyDialog("${from}")`, `return gsm.get_in_party_${to}()`],
-    [`!NearbyDialog("${from}")`, `return not gsm.get_in_party_${to}()`],
-    [`InParty("${from}")`, `return gsm.get_in_party_${to}()`],
-    [`!InParty("${from}")`, `return not gsm.get_in_party_${to}()`],
-    [`MoraleDec("${from}",1)`, `gsm.dec_morale_${to}()`],
-    [`MoraleInc("${from}",1)`, `gsm.inc_morale_${to}()`],
-    [`MoraleDec("${from}",2)`, `gsm.dec_morale_${to}(2)`],
-    [`MoraleInc("${from}",2)`, `gsm.inc_morale_${to}(2)`],
-    [`MoraleDec("${from}",3)`, `gsm.dec_morale_${to}(3)`],
-    [`MoraleInc("${from}",3)`, `gsm.inc_morale_${to}(3)`],
-    // with DXxx
-    [`SetGlobal("D${from}","GLOBAL",1)`, `gsm.set_in_party_${to}(True)`],
-    [`SetGlobal("D${from}","GLOBAL",0)`, `gsm.set_in_party_${to}(False)`],
-    [`Global("D${from}","GLOBAL",1)`, `return gsm.get_in_party_${to}()`],
-    [`Global("D${from}","GLOBAL",0)`, `return not gsm.get_in_party_${to}()`],
-    [`NearbyDialog("D${from}")`, `return gsm.get_in_party_${to}()`],
-    [`!NearbyDialog("D${from}")`, `return not gsm.get_in_party_${to}()`],
-    [`InParty("D${from}")`, `return gsm.get_in_party_${to}()`],
-    [`!InParty("D${from}")`, `return not gsm.get_in_party_${to}()`],
-    [`MoraleDec("D${from}",1)`, `gsm.dec_morale_${to}()`],
-    [`MoraleInc("D${from}",1)`, `gsm.inc_morale_${to}()`],
-    [`MoraleDec("D${from}",2)`, `gsm.dec_morale_${to}(2)`],
-    [`MoraleInc("D${from}",2)`, `gsm.inc_morale_${to}(2)`],
-    [`MoraleDec("D${from}",3)`, `gsm.dec_morale_${to}(3)`],
-    [`MoraleInc("D${from}",3)`, `gsm.inc_morale_${to}(3)`],
-    // with Dxxx
-    [`SetGlobal("D${firstToLower(from)}","GLOBAL",1)`, `gsm.set_in_party_${to}(True)`],
-    [`SetGlobal("D${firstToLower(from)}","GLOBAL",0)`, `gsm.set_in_party_${to}(False)`],
-    [`Global("D${firstToLower(from)}","GLOBAL",1)`, `return gsm.get_in_party_${to}()`],
-    [`Global("D${firstToLower(from)}","GLOBAL",0)`, `return not gsm.get_in_party_${to}()`],
-    [`NearbyDialog("D${firstToLower(from)}")`, `return gsm.get_in_party_${to}()`],
-    [`!NearbyDialog("D${firstToLower(from)}")`, `return not gsm.get_in_party_${to}()`],
-    [`InParty("D${firstToLower(from)}")`, `return gsm.get_in_party_${to}()`],
-    [`!InParty("D${firstToLower(from)}")`, `return not gsm.get_in_party_${to}()`],
-    [`MoraleDec("D${firstToLower(from)}",1)`, `gsm.dec_morale_${to}()`],
-    [`MoraleInc("D${firstToLower(from)}",1)`, `gsm.inc_morale_${to}()`],
-    [`MoraleDec("D${firstToLower(from)}",2)`, `gsm.dec_morale_${to}(2)`],
-    [`MoraleInc("D${firstToLower(from)}",2)`, `gsm.inc_morale_${to}(2)`],
-    [`MoraleDec("D${firstToLower(from)}",3)`, `gsm.dec_morale_${to}(3)`],
-    [`MoraleInc("D${firstToLower(from)}",3)`, `gsm.inc_morale_${to}(3)`],
-];
+const partyNpc = (from: string, to: string): string[][] => {
+    knownSettingsName[`in_party_${to}`] = {
+        name: `in_party_${to}`,
+        type: "boolean",
+    };
+    knownSettingsName[`morale_${to}`] = {
+        name: `morale_${to}`,
+        type: "integer",
+    };
+    return [
+        ...npcSetting(from, to),
+        // with Xxx
+        [`SetGlobal("${from}","GLOBAL",1)`, `gsm.set_in_party_${to}(True)`],
+        [`SetGlobal("${from}","GLOBAL",0)`, `gsm.set_in_party_${to}(False)`],
+        [`Global("${from}","GLOBAL",1)`, `return gsm.get_in_party_${to}()`],
+        [`Global("${from}","GLOBAL",0)`, `return not gsm.get_in_party_${to}()`],
+        [`NearbyDialog("${from}")`, `return gsm.get_in_party_${to}()`],
+        [`!NearbyDialog("${from}")`, `return not gsm.get_in_party_${to}()`],
+        [`InParty("${from}")`, `return gsm.get_in_party_${to}()`],
+        [`!InParty("${from}")`, `return not gsm.get_in_party_${to}()`],
+        [`MoraleDec("${from}",1)`, `gsm.dec_morale_${to}()`],
+        [`MoraleInc("${from}",1)`, `gsm.inc_morale_${to}()`],
+        [`MoraleDec("${from}",2)`, `gsm.dec_morale_${to}(2)`],
+        [`MoraleInc("${from}",2)`, `gsm.inc_morale_${to}(2)`],
+        [`MoraleDec("${from}",3)`, `gsm.dec_morale_${to}(3)`],
+        [`MoraleInc("${from}",3)`, `gsm.inc_morale_${to}(3)`],
+        // with DXxx
+        [`SetGlobal("D${from}","GLOBAL",1)`, `gsm.set_in_party_${to}(True)`],
+        [`SetGlobal("D${from}","GLOBAL",0)`, `gsm.set_in_party_${to}(False)`],
+        [`Global("D${from}","GLOBAL",1)`, `return gsm.get_in_party_${to}()`],
+        [`Global("D${from}","GLOBAL",0)`, `return not gsm.get_in_party_${to}()`],
+        [`NearbyDialog("D${from}")`, `return gsm.get_in_party_${to}()`],
+        [`!NearbyDialog("D${from}")`, `return not gsm.get_in_party_${to}()`],
+        [`InParty("D${from}")`, `return gsm.get_in_party_${to}()`],
+        [`!InParty("D${from}")`, `return not gsm.get_in_party_${to}()`],
+        [`MoraleDec("D${from}",1)`, `gsm.dec_morale_${to}()`],
+        [`MoraleInc("D${from}",1)`, `gsm.inc_morale_${to}()`],
+        [`MoraleDec("D${from}",2)`, `gsm.dec_morale_${to}(2)`],
+        [`MoraleInc("D${from}",2)`, `gsm.inc_morale_${to}(2)`],
+        [`MoraleDec("D${from}",3)`, `gsm.dec_morale_${to}(3)`],
+        [`MoraleInc("D${from}",3)`, `gsm.inc_morale_${to}(3)`],
+        // with Dxxx
+        [`SetGlobal("D${firstToLower(from)}","GLOBAL",1)`, `gsm.set_in_party_${to}(True)`],
+        [`SetGlobal("D${firstToLower(from)}","GLOBAL",0)`, `gsm.set_in_party_${to}(False)`],
+        [`Global("D${firstToLower(from)}","GLOBAL",1)`, `return gsm.get_in_party_${to}()`],
+        [`Global("D${firstToLower(from)}","GLOBAL",0)`, `return not gsm.get_in_party_${to}()`],
+        [`NearbyDialog("D${firstToLower(from)}")`, `return gsm.get_in_party_${to}()`],
+        [`!NearbyDialog("D${firstToLower(from)}")`, `return not gsm.get_in_party_${to}()`],
+        [`InParty("D${firstToLower(from)}")`, `return gsm.get_in_party_${to}()`],
+        [`!InParty("D${firstToLower(from)}")`, `return not gsm.get_in_party_${to}()`],
+        [`MoraleDec("D${firstToLower(from)}",1)`, `gsm.dec_morale_${to}()`],
+        [`MoraleInc("D${firstToLower(from)}",1)`, `gsm.inc_morale_${to}()`],
+        [`MoraleDec("D${firstToLower(from)}",2)`, `gsm.dec_morale_${to}(2)`],
+        [`MoraleInc("D${firstToLower(from)}",2)`, `gsm.inc_morale_${to}(2)`],
+        [`MoraleDec("D${firstToLower(from)}",3)`, `gsm.dec_morale_${to}(3)`],
+        [`MoraleInc("D${firstToLower(from)}",3)`, `gsm.inc_morale_${to}(3)`],
+    ];
+};
 const integerSetting = (from: string, to: string, values: number[], env = 'GLOBAL'): string[][] => {
+    knownSettingsName[to] = {
+        name: to,
+        type: "integer",
+    };
     const result: string[][] = [];
     for (const i of [-1,1,2]) {
         result.push([`IncrementGlobal("${from}","${env}",${i})`, `gsm.inc_${to}()`]);
@@ -109,26 +117,114 @@ const integerSetting = (from: string, to: string, values: number[], env = 'GLOBA
 }
 
 const playerItemSetting = (from: string, to: string): string[][] => {
+    knownSettingsName[`has_${to}`] = {
+        name: `has_${to}`,
+        type: "boolean",
+    };
     return [
-        [`GiveItem("${from}",Protagonist)`, `gsm.set_${to}(True)`],
-        [`GiveItemCreate("${from}",Protagonist,1,0,0)`, `gsm.set_${to}(True)`],
-        [`TakeItem("${from}",Protagonist)`, `gsm.set_${to}(False)`],
-        [`DestroyPartyItem("${from}",TRUE)`, `gsm.set_${to}(False)`],
-        [`TakePartyItemNum("${from}",1)`, `gsm.set_${to}(False)`], // always -1 is false?
-        [`PartyHasItem("${from}")`, `return gsm.get_${to}()`],
-        [`!PartyHasItem("${from}")`, `return not gsm.get_${to}()`],
+        [`GiveItem("${from}",Protagonist)`, `gsm.set_has_${to}(True)`],
+        [`GiveItemCreate("${from}",Protagonist,1,0,0)`, `gsm.set_has_${to}(True)`],
+        [`TakeItem("${from}",Protagonist)`, `gsm.set_has_${to}(False)`],
+        [`DestroyPartyItem("${from}",TRUE)`, `gsm.set_has_${to}(False)`],
+        [`TakePartyItemNum("${from}",1)`, `gsm.set_has_${to}(False)`], // always -1 is false?
+        [`PartyHasItem("${from}")`, `return gsm.get_has_${to}()`],
+        [`!PartyHasItem("${from}")`, `return not gsm.get_has_${to}()`],
     ]
 }
 
 const tree = (): string[][] => {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     const result: string[][] = [];
-    for (const letter of letters) result.push(...booleanSetting(`Tree_${letter}`, `tree_${letter.toLowerCase()}`, 'AR0400'));
+    for (const letter of letters) {
+        knownSettingsName[`tree_${letter.toLowerCase()}`] = {
+            name: `tree_${letter.toLowerCase()}`,
+            type: "boolean",
+        };
+        result.push(...booleanSetting(`Tree_${letter}`, `tree_${letter.toLowerCase()}`, 'AR0400'));
+    }
     return result;
+}
+
+// Register zombies in runtime settings
+const zombies = (): string[][] => {
+    const none = '00000000-CA6E-4C2E-B4E3-000000000000';
+    return [
+        ...npcSetting(none, 'dzm79'),
+        ...npcSetting(none, 'dzm199'),
+        ...npcSetting(none, 'dzm257'),
+        ...npcSetting(none, 'dzm310'),
+        ...npcSetting(none, 'dzm396'),
+        ...npcSetting(none, 'dzm463'),
+        ...npcSetting(none, 'dzm475'),
+        ...npcSetting(none, 'dzm506'),
+        ...npcSetting(none, 'dzm569'),
+        ...npcSetting(none, 'dzm613'),
+        ...npcSetting(none, 'dzm732'),
+        ...npcSetting(none, 'dzm782'),
+        ...npcSetting(none, 'dzm825'),
+        ...npcSetting(none, 'dzm965'),
+        ...npcSetting(none, 'dzm985'),
+        ...npcSetting(none, 'dzm1041'),
+        ...npcSetting(none, 'dzm1094'),
+        ...npcSetting(none, 'dzm1146'),
+        ...npcSetting(none, 'dzm1201'),
+        ...npcSetting(none, 'dzm1445'),
+        ...npcSetting(none, 'dzm1508'),
+        ...npcSetting(none, 'dzm1664'),
+        ...npcSetting(none, 'dzf114'),
+        ...npcSetting(none, 'dzf444'),
+        ...npcSetting(none, 'dzf594'),
+        ...npcSetting(none, 'dzf626'),
+        ...npcSetting(none, 'dzf679'),
+        ...npcSetting(none, 'dzf832'),
+        ...npcSetting(none, 'dzf891'),
+        ...npcSetting(none, 'dzf916'),
+        ...npcSetting(none, 'dzf1072'),
+        ...npcSetting(none, 'dzf1096'),
+        ...npcSetting(none, 'dzf1148'),
+        ...npcSetting(none, 'dzm79'),
+        ...npcSetting(none, 'dzm199'),
+        ...npcSetting(none, 'dzm257'),
+        ...npcSetting(none, 'dzm310'),
+        ...npcSetting(none, 'dzm396'),
+        ...npcSetting(none, 'dzm463'),
+        ...npcSetting(none, 'dzm475'),
+        ...npcSetting(none, 'dzm506'),
+        ...npcSetting(none, 'dzm569'),
+        ...npcSetting(none, 'dzm613'),
+        ...npcSetting(none, 'dzm732'),
+        ...npcSetting(none, 'dzm782'),
+        ...npcSetting(none, 'dzm825'),
+        ...npcSetting(none, 'dzm965'),
+        ...npcSetting(none, 'dzm985'),
+        ...npcSetting(none, 'dzm1041'),
+        ...npcSetting(none, 'dzm1094'),
+        ...npcSetting(none, 'dzm1146'),
+        ...npcSetting(none, 'dzm1201'),
+        ...npcSetting(none, 'dzm1445'),
+        ...npcSetting(none, 'dzm1508'),
+        ...npcSetting(none, 'dzm1664'),
+        ...npcSetting(none, 'dzf114'),
+        ...npcSetting(none, 'dzf444'),
+        ...npcSetting(none, 'dzf594'),
+        ...npcSetting(none, 'dzf626'),
+        ...npcSetting(none, 'dzf679'),
+        ...npcSetting(none, 'dzf832'),
+        ...npcSetting(none, 'dzf891'),
+        ...npcSetting(none, 'dzf916'),
+        ...npcSetting(none, 'dzf1072'),
+        ...npcSetting(none, 'dzf1096'),
+        ...npcSetting(none, 'dzf1148'),
+    ]
+}
+
+export const getKnownSettingsName = (): KnownSettings[] => {
+    return Object.values(knownSettingsName);
 }
 
 export const wellKnownFunctions: string[][] = [
     ...tree(),
+    ...zombies(),
     ...partyNpc('Morte', 'morte'),
     ...partyNpc('Annah', 'annah'),
     ...partyNpc('Ignus', 'ignus'),
@@ -274,22 +370,22 @@ export const wellKnownFunctions: string[][] = [
     ...integerSetting('Nenny', 'nenny', [0,1,2]),
     ...integerSetting('Adyzoel', 'adyzoel', [0,1,2], 'AR0400'),
     ...integerSetting('BariA', 'baria', [0,1,2], 'AR0400'),
-    ...playerItemSetting('KeyPR', 'has_intro_key'),
-    ...playerItemSetting('KeyPr', 'has_intro_key'), // ?
-    ...playerItemSetting('TomeBA', 'has_tome_ba'),
-    ...playerItemSetting('Bandage', 'has_bandages'),
-    ...playerItemSetting('CopEarC', 'has_copper_earring_closed'),
-    ...playerItemSetting('CopEarO', 'has_copper_earring_opened'),
-    ...playerItemSetting('Scalpel', 'has_scalpel'),
-    ...playerItemSetting('Embalm', 'has_embalm'),
-    ...playerItemSetting('Needle', 'has_needle'),
-    ...playerItemSetting('BoneChrm', 'has_bone_chrm'),
+    ...playerItemSetting('KeyPR', 'intro_key'),
+    ...playerItemSetting('KeyPr', 'intro_key'), // ?
+    ...playerItemSetting('TomeBA', 'tome_ba'),
+    ...playerItemSetting('Bandage', 'bandages'),
+    ...playerItemSetting('CopEarC', 'copper_earring_closed'),
+    ...playerItemSetting('CopEarO', 'copper_earring_opened'),
+    ...playerItemSetting('Scalpel', 'scalpel'),
+    ...playerItemSetting('Embalm', 'embalm'),
+    ...playerItemSetting('Needle', 'needle'),
+    ...playerItemSetting('BoneChrm', 'bone_chrm'),
     ...playerItemSetting('TEarring', 'tearring'),
     ...playerItemSetting('Logpage', 'logpage'),
-    ...playerItemSetting('N1201', 'has_1201_note'),
-    ...playerItemSetting('Prybar', 'has_prybar'),
-    ...playerItemSetting('Decant', 'has_decant'),
-    ...playerItemSetting('Cube', 'has_cube'),
+    ...playerItemSetting('N1201', '1201_note'),
+    ...playerItemSetting('Prybar', 'prybar'),
+    ...playerItemSetting('Decant', 'decant'),
+    ...playerItemSetting('Cube', 'cube'),
     ['ShowFirstTimeHelp()', ''],
     ['SetGlobal("0202_Dhall_Face_Player","AR0202",1)', 'gsm.set_meet_dhall(True)'],
     ['ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'gsm.set_in_party_morte(True)'],

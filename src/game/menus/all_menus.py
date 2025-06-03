@@ -5,7 +5,6 @@ from menus.mortuary4_menu import (build_mortuary4_menu)
 from menus.mortuary5_menu import (build_mortuary5_menu)
 from menus.mortuary6_menu import (build_mortuary6_menu)
 from menus.mortuary7_menu import (build_mortuary7_menu)
-from engine.menu import (MenuBuilder)
 
 
 def build_all_menus(menu_manager, gsm):
