@@ -7,13 +7,13 @@ def _r3414_condition(gsm):
 def _r3415_condition(gsm):
     return gsm.get_in_party_morte()
 def _r3418_action(gsm):
-    DO ~FaceObject(Protagonist) ~
+    FaceObject(Protagonist)
 def _r3422_action(gsm):
-    DO ~gsm.set_meet_eivene(True) ~
+    gsm.set_meet_eivene(True)
 def _r3424_condition(gsm):
     return gsm.get_has_embalm() return gsm.get_has_needle()
 def _r3424_action(gsm):
-    DO ~TakePartyItemNum("Embalm",1) TakePartyItemNum("Needle",1) gsm.set_eivene_delivery(True)  ~ gsm.update_journal('37701')    # '37701': ' ~В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Оба предмета у меня уже были, так что я сразу же дал их ей. ~ '
+    gsm.set_has_embalm(False) gsm.set_has_needle(False) gsm.set_eivene_delivery(True) gsm.inc_exp(250)    # '37701': ' ~В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Оба предмета у меня уже были, так что я сразу же дал их ей. ~ '
 def _r3425_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r3425_action(gsm):
@@ -41,9 +41,9 @@ def _r3442_condition(gsm):
 def _r3443_condition(gsm):
     return gsm.get_in_party_morte()
 def _r3491_action(gsm):
-    DO ~PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) gsm.set_mortualy_alarmed(True) ~
+    # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) gsm.set_mortualy_alarmed(True)
 def _r3449_action(gsm):
-    DO ~PermanentStatChange(Protagonist,MAXHITPOINTS,RAISE,1) FullHeal(Protagonist) gsm.set_ravel_eivene(True) ~ gsm.update_journal('38199')    # '38199': ' ~После того, как я принес Эи-Вейн бальзамирующую жидкость и нитку, она зашила мои шрамы и нанесла бальзамирующую жидкость на мое тело. Довольно странно, но я чувствую себя... здоровее.~ '
+    PermanentStatChange(Protagonist,MAXHITPOINTS,RAISE,1) FullHeal(Protagonist) gsm.set_ravel_eivene(True) ~ gsm.update_journal('38199')    # '38199': ' ~После того, как я принес Эи-Вейн бальзамирующую жидкость и нитку, она зашила мои шрамы и нанесла бальзамирующую жидкость на мое тело. Довольно странно, но я чувствую себя... здоровее.~ '
 def _r3452_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r3453_condition(gsm):
@@ -51,13 +51,13 @@ def _r3453_condition(gsm):
 def _r3456_condition(gsm):
     return gsm.get_embalm_key_quest() == 1 return gsm.get_has_keyem()
 def _r3456_action(gsm):
-    DO ~ gsm.set_embalm_key_quest(2) gsm.set_has_keyem(True) ~
+    gsm.inc_exp(250)
 def _r3457_condition(gsm):
     return gsm.get_embalm_key_quest() == 1 return not gsm.get_has_keyem()
 def _r3459_condition(gsm):
-    return not gsm.get_42_Secret()
+    return not gsm.get_42_secret()
 def _r3459_action(gsm):
-    DO ~PlaySoundNotRanged("SPTR_01") ~ gsm.update_journal('61612')    # '61612': ' ~Наблюдая за тем, как Эи-Вейн зашивает своими когтями тело умершего, я что-то вспомнил... Очень давно я делал точно такое же действие над телом, однако при этом я ничего не вынимал, а наоборот, что-то положил *внутрь* тела. Такое чувство, что я положил что-то, что смогу позже забрать. В воспоминании я скрестил свои руки на груди, и труп повторил мои движения... на его черепе был написан номер «42». ~ '
+    # ?.play_sound('SPTR_01') ~ gsm.update_journal('61612')    # '61612': ' ~Наблюдая за тем, как Эи-Вейн зашивает своими когтями тело умершего, я что-то вспомнил... Очень давно я делал точно такое же действие над телом, однако при этом я ничего не вынимал, а наоборот, что-то положил *внутрь* тела. Такое чувство, что я положил что-то, что смогу позже забрать. В воспоминании я скрестил свои руки на груди, и труп повторил мои движения... на его черепе был написан номер «42». ~ '
 def _r3463_condition(gsm):
     return not gsm.get_eivene_delivery()
 def _r4351_condition(gsm):
@@ -65,11 +65,11 @@ def _r4351_condition(gsm):
 def _r3469_condition(gsm):
     return gsm.get_has_embalm() return gsm.get_has_needle()
 def _r3469_action(gsm):
-    DO ~TakePartyItemNum("Embalm",1) TakePartyItemNum("Needle",1) gsm.set_eivene_delivery(True)  ~ gsm.update_journal('38202')    # '38202': ' ~Я принес Эи-Вейн бальзамирующую жидкость и нитку. Не могу сказать, что она ужасно обрадовалась этому. ~ '
+    gsm.set_has_embalm(False) gsm.set_has_needle(False) gsm.set_eivene_delivery(True) gsm.inc_exp(250)    # '38202': ' ~Я принес Эи-Вейн бальзамирующую жидкость и нитку. Не могу сказать, что она ужасно обрадовалась этому. ~ '
 def _r3470_condition(gsm):
     return gsm.get_embalm_key_quest() == 1 return gsm.get_has_keyem()
 def _r3470_action(gsm):
-    DO ~ gsm.set_embalm_key_quest(2) gsm.set_has_keyem(True) ~
+    gsm.inc_exp(250)
 def _r3497_condition(gsm):
     return gsm.get_embalm_key_quest() == 1 return not gsm.get_has_keyem()
 def _r3494_condition(gsm):
@@ -85,7 +85,7 @@ def _r3496_action(gsm):
 def _r3501_condition(gsm):
     return gsm.get_embalm_key_quest() == 1 return gsm.get_has_keyem()
 def _r3501_action(gsm):
-    DO ~ gsm.set_embalm_key_quest(2) gsm.set_has_keyem(True) ~
+    gsm.inc_exp(250)
 def _r3502_condition(gsm):
     return gsm.get_embalm_key_quest() == 1 return not gsm.get_has_keyem()
 def _r4354_condition(gsm):
@@ -93,11 +93,11 @@ def _r4354_condition(gsm):
 def _r4355_condition(gsm):
     return gsm.get_eivene_delivery()
 def _r63478_condition(gsm):
-    return not gsm.get_42_Secret()
+    return not gsm.get_42_secret()
 def _r63478_action(gsm):
-    DO ~GiveExperience(Protagonist,250) gsm.set_42_Secret(True) ~
+    gsm.inc_exp('Protagonist', 250)
 def _r63479_condition(gsm):
-    return gsm.get_42_Secret()
+    return gsm.get_42_secret()
 def _r63482_condition(gsm):
     return not gsm.get_eivene_delivery()
 def _r63481_condition(gsm):

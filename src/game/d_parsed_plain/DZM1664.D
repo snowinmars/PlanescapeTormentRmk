@@ -1,6 +1,6 @@
 python:
     def _r47014_action(gsm):        
-        gsm.set_logpage(True) 
+        gsm.set_has_logpage(True) 
         gsm.set_has_dzm1664_page(True)
 
         return python:

@@ -1,13 +1,13 @@
 def _r46725_condition(gsm):
     return gsm.get_know_copper_earring_secret()
 def _r46725_action(gsm):
-    DO ~ ~
+    gsm.inc_exp(250)
 def _r46728_condition(gsm):
     return gsm.get_know_copper_earring_secret()
 def _r46728_action(gsm):
-    DO ~ ~
+    gsm.inc_exp(250)
 def _r46733_action(gsm):
-    DO ~TransformPartyItem("CopEarC","CopEarO",1,0,0) ~
+    TransformPartyItem("CopEarC","CopEarO",1,0,0)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

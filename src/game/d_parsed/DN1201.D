@@ -1,47 +1,47 @@
 def _r44994_action(gsm):
-    DO ~gsm.set_ur_1201(True) gsm.set_1201_note_quest(1) ~
+    gsm.set_ur_1201(True) gsm.set_1201_note_quest(1)
 def _r44995_action(gsm):
-    DO ~gsm.set_lr_1201(True) ~
+    gsm.set_lr_1201(True)
 def _r44996_action(gsm):
-    DO ~gsm.set_ll_1201(True) ~
+    gsm.set_ll_1201(True)
 def _r44997_action(gsm):
-    DO ~gsm.set_ul_1201(True) ~
+    gsm.set_ul_1201(True)
 def _r44998_action(gsm):
-    DO ~gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0) ~
+    gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0)
 def _r45000_condition(gsm):
     return not gsm.get_ur_1201()
 def _r45000_action(gsm):
-    DO ~gsm.set_ur_1201(True) ~
+    gsm.set_ur_1201(True)
 def _r45001_condition(gsm):
     return not gsm.get_lr_1201() return gsm.get_1201_note_quest() == 1
 def _r45001_action(gsm):
-    DO ~gsm.set_1201_note_quest(2) gsm.set_lr_1201(True) ~
+    gsm.set_1201_note_quest(2) gsm.set_lr_1201(True)
 def _r45002_condition(gsm):
     return not gsm.get_lr_1201() return gsm.get_1201_note_quest() != 1
 def _r45002_action(gsm):
-    DO ~gsm.set_lr_1201(True) gsm.set_1201_note_quest(0) ~
+    gsm.set_lr_1201(True) gsm.set_1201_note_quest(0)
 def _r45003_condition(gsm):
     return not gsm.get_ll_1201()
 def _r45003_action(gsm):
-    DO ~gsm.set_ll_1201(True) gsm.set_1201_note_quest(0) ~
+    gsm.set_ll_1201(True) gsm.set_1201_note_quest(0)
 def _r45004_condition(gsm):
     return not gsm.get_ul_1201() return gsm.get_1201_note_quest() != 2
 def _r45004_action(gsm):
-    DO ~gsm.set_ul_1201(True) gsm.set_1201_note_quest(0) ~
+    gsm.set_ul_1201(True) gsm.set_1201_note_quest(0)
 def _r45005_condition(gsm):
     return not gsm.get_ul_1201() return gsm.get_1201_note_quest() == 2
 def _r45006_action(gsm):
-    DO ~gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0) ~
+    gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0)
 def _r45008_action(gsm):
-    DO ~gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0) ~
+    gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0)
 def _r45017_action(gsm):
-    DO ~gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0) ~
+    gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0)
 def _r45018_action(gsm):
-    DO ~gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0) ~
+    gsm.set_ur_1201(False) gsm.set_lr_1201(False) gsm.set_ll_1201(False) gsm.set_ul_1201(False) gsm.set_1201_note_quest(0)
 def _r45023_action(gsm):
-    DO ~ ~
+    gsm.inc_exp(250)
 def _r45025_action(gsm):
-    DO ~gsm.set_tearring(True) gsm.set_has_1201_note(False) ~
+    GiveItemCreate("TEarring",Protagonist,3,0,0) gsm.set_has_1201_note(False)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

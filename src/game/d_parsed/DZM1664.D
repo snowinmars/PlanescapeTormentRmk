@@ -7,7 +7,7 @@ def _r47005_condition(gsm):
 def _r47006_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r47014_action(gsm):
-    gsm.set_logpage(True) gsm.set_has_dzm1664_page(True)
+    gsm.set_has_logpage(True) gsm.set_has_dzm1664_page(True)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1

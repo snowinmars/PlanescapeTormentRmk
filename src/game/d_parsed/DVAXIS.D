@@ -1,15 +1,15 @@
 def _r454_condition(gsm):
-    return not gsm.once_tracked('zombie_chaotic')
+    return not gsm.get_zombie_chaotic()
 def _r454_action(gsm):
-    gsm.dec_once_law('zombie_chaotic')
+    gsm.dec_law() gsm.set_zombie_chaotic(True)
 def _r455_condition(gsm):
-    return gsm.once_tracked('zombie_chaotic')
+    return gsm.get_zombie_chaotic()
 def _r456_condition(gsm):
     return gsm.get_vaxis_exposed()
 def _r457_condition(gsm):
     return gsm.get_can_speak_with_dead()
 def _r461_action(gsm):
-    DO ~gsm.set_meet_vaxis(True) ~
+    gsm.set_meet_vaxis(True)
 def _r464_action(gsm):
     gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
 def _r465_action(gsm):
@@ -21,29 +21,29 @@ def _r468_condition(gsm):
 def _r472_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r472_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r473_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r475_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r476_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_2') ~
+    gsm.dec_once_good('evil_vaxis_2')
 def _r477_action(gsm):
-    DO ~gsm.inc_once_law('lawful_vaxis_1') gsm.inc_once_good('good_vaxis_1') ~
+    gsm.inc_once_law('lawful_vaxis_1') gsm.inc_once_good('good_vaxis_1')
 def _r480_action(gsm):
-    DO ~gsm.set_meet_vaxis(True) ~ gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+    gsm.set_meet_vaxis(True) ~ gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
 def _r481_action(gsm):
-    DO ~gsm.set_meet_vaxis(True) ~ gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+    gsm.set_meet_vaxis(True) ~ gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
 def _r482_action(gsm):
-    DO ~gsm.set_meet_vaxis(True) ~ gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+    gsm.set_meet_vaxis(True) ~ gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
 def _r484_condition(gsm):
     return not gsm.get_escape_mortuary()
 def _r487_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r487_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r488_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r491_condition(gsm):
     return not gsm.get_escape_mortuary()
 def _r492_condition(gsm):
@@ -51,11 +51,11 @@ def _r492_condition(gsm):
 def _r493_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r493_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_2') ~
+    gsm.dec_once_law('chaotic_vaxis_2')
 def _r494_condition(gsm):
     return gsm.get_in_party_morte()
 def _r494_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_2') ~
+    gsm.dec_once_law('chaotic_vaxis_2')
 def _r495_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r496_condition(gsm):
@@ -63,23 +63,23 @@ def _r496_condition(gsm):
 def _r1306_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r1306_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r1348_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r1348_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r1359_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r1359_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r1360_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'chr') return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r1360_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r1361_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r1361_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r4362_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4363_condition(gsm):
@@ -87,27 +87,27 @@ def _r4363_condition(gsm):
 def _r4364_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4364_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4365_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4365_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4368_condition(gsm):
     return not gsm.get_escape_mortuary()
 def _r4370_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'chr') return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r4370_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r4371_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r4371_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_1') ~
+    gsm.dec_once_law('chaotic_vaxis_1')
 def _r4379_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r4380_condition(gsm):
     return gsm.get_in_party_morte()
 def _r4381_action(gsm):
-    DO ~gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2') ~
+    gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2')
 def _r4385_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4386_condition(gsm):
@@ -115,13 +115,13 @@ def _r4386_condition(gsm):
 def _r4387_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4387_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4388_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4388_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4391_action(gsm):
-    DO ~gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2') ~
+    gsm.inc_once_law('lawful_vaxis_2') gsm.inc_once_good('good_vaxis_2')
 def _r4395_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4396_condition(gsm):
@@ -129,29 +129,29 @@ def _r4396_condition(gsm):
 def _r4397_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4397_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4398_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4398_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4401_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4401_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4402_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4402_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4405_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r4408_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r4409_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4410_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',11,'chr')
 def _r4413_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r4426_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r4427_condition(gsm):
@@ -159,13 +159,13 @@ def _r4427_condition(gsm):
 def _r4428_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r4428_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4429_condition(gsm):
     return gsm.get_in_party_morte()
 def _r4429_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4434_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_5') ~
+    gsm.dec_once_law('chaotic_vaxis_5')
 def _r4438_condition(gsm):
     return not gsm.get_escape_mortuary()
 def _r4440_condition(gsm):
@@ -175,21 +175,21 @@ def _r4441_condition(gsm):
 def _r4442_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4442_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4443_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4443_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4446_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'chr') return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r4447_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'chr') return gsm.check_char_prop_lt('protagonist',12,'int')
 def _r4447_action(gsm):
-    DO ~gsm.set_vaxis_orders(True) ~
+    gsm.set_vaxis_orders(True)
 def _r4448_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'int')
 def _r4448_action(gsm):
-    DO ~gsm.set_vaxis_orders(True) ~
+    gsm.set_vaxis_orders(True)
 def _r4452_condition(gsm):
     return not gsm.get_escape_mortuary()
 def _r4454_condition(gsm):
@@ -199,19 +199,19 @@ def _r4455_condition(gsm):
 def _r4456_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4456_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4457_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4457_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4469_condition(gsm):
     return not gsm.get_vaxis_leave()
 def _r4469_action(gsm):
-    DO ~gsm.set_vaxis_leave(True) gsm.set_has_bandages(True) gsm.set_has_bandages(True) gsm.set_has_bandages(True) gsm.set_has_embalm(True) gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0) AddexperienceParty(500) ~ gsm.update_journal('64517')    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
+    gsm.set_vaxis_leave(True) gsm.set_has_bandages(True) gsm.set_has_bandages(True) gsm.set_has_bandages(True) gsm.set_has_embalm(True) gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0) gsm.inc_exp(500)    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
 def _r4474_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4474_action(gsm):
-    DO ~gsm.inc_once_good('good_vaxis_3') ~
+    gsm.inc_once_good('good_vaxis_3')
 def _r4475_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4476_condition(gsm):
@@ -219,11 +219,11 @@ def _r4476_condition(gsm):
 def _r4477_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4477_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4478_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4478_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4482_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4483_condition(gsm):
@@ -231,45 +231,45 @@ def _r4483_condition(gsm):
 def _r4484_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4484_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4485_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4485_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4672_action(gsm):
-    DO ~gsm.set_strong_arm_vaxis(True) ~
+    gsm.set_strong_arm_vaxis(True)
 def _r4489_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4489_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4490_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4490_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4494_condition(gsm):
-    return gsm.get_has_keyem()
+    PartyHasItem("KeyEm")
 def _r4494_action(gsm):
-    DO ~ gsm.set_has_keyem(False) gsm.set_vaxis_has_keyem(True) ~
+    gsm.inc_exp(250)
 def _r4496_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4496_action(gsm):
-    DO ~gsm.set_vaxis_orders(False) ~
+    gsm.set_vaxis_orders(False)
 def _r4497_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',11,'chr')
 def _r4497_action(gsm):
-    DO ~gsm.set_vaxis_orders(False) ~
+    gsm.set_vaxis_orders(False)
 def _r4498_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',12,'str')
 def _r4498_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') gsm.set_vaxis_orders(False) ~
+    gsm.dec_once_good('evil_vaxis_1') gsm.set_vaxis_orders(False)
 def _r4499_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',11,'str')
 def _r4499_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') gsm.set_vaxis_orders(False) ~
+    gsm.dec_once_good('evil_vaxis_1') gsm.set_vaxis_orders(False)
 def _r4502_condition(gsm):
-    return gsm.get_has_keyem()
+    PartyHasItem("KeyEm")
 def _r4502_action(gsm):
-    DO ~ gsm.set_has_keyem(False) gsm.set_vaxis_has_keyem(True) ~
+    gsm.inc_exp(250)
 def _r64520_condition(gsm):
     return gsm.get_meet_eivene()
 def _r64520_action(gsm):
@@ -279,7 +279,7 @@ def _r4503_condition(gsm):
 def _r4503_action(gsm):
     gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
 def _r4504_action(gsm):
-    DO ~gsm.dec_once_law('chaotic_vaxis_6') ~
+    gsm.dec_once_law('chaotic_vaxis_6')
 def _r4506_condition(gsm):
     return gsm.get_meet_eivene()
 def _r4506_action(gsm):
@@ -291,25 +291,25 @@ def _r66150_action(gsm):
 def _r4508_condition(gsm):
     return gsm.get_embalm_key_quest() == 0
 def _r4508_action(gsm):
-    DO ~gsm.set_embalm_key_quest(1) ~
+    gsm.set_embalm_key_quest(1)
 def _r4509_condition(gsm):
     return gsm.get_embalm_key_quest() == 0
 def _r4509_action(gsm):
-    DO ~gsm.set_embalm_key_quest(1) ~
+    gsm.set_embalm_key_quest(1)
 def _r4510_condition(gsm):
     return gsm.get_embalm_key_quest() != 0
 def _r4511_condition(gsm):
     return gsm.get_embalm_key_quest() != 0
 def _r4519_action(gsm):
-    DO ~ gsm.set_has_keyem(False) gsm.set_vaxis_has_keyem(True) gsm.set_embalm_key_quest(3) ~
+    gsm.inc_exp(250) gsm.set_embalm_key_quest(3)
 def _r4521_condition(gsm):
     return not gsm.get_escape_mortuary()
 def _r4521_action(gsm):
-    DO ~gsm.set_embalm_key_quest(3) ~ gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
+    gsm.set_embalm_key_quest(3) ~ gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
 def _r4522_condition(gsm):
     return gsm.get_escape_mortuary()
 def _r4522_action(gsm):
-    DO ~gsm.set_embalm_key_quest(3) ~ gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
+    gsm.set_embalm_key_quest(3) ~ gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
 def _r64508_condition(gsm):
     return not gsm.get_escape_mortuary() return not gsm.get_vaxis_help() return gsm.get_embalm_key_quest() == 0 return gsm.get_strong_arm_vaxis()
 def _r4524_condition(gsm):
@@ -359,17 +359,17 @@ def _r64511_condition(gsm):
 def _r64527_condition(gsm):
     return not gsm.get_has_bone_chrm()
 def _r64527_action(gsm):
-    DO ~ gsm.set_vaxis_help(True) ~ gsm.update_journal('64528')    # '64528': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга. ~ '
+    gsm.inc_exp(250)    # '64528': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга. ~ '
 def _r4568_condition(gsm):
     return gsm.get_has_bone_chrm()
 def _r4568_action(gsm):
-    DO ~ gsm.set_vaxis_help(True) ~ gsm.update_journal('64529')    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
+    gsm.inc_exp(250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
 def _r4569_condition(gsm):
     return gsm.get_has_bone_chrm()
 def _r4569_action(gsm):
-    DO ~ gsm.set_vaxis_help(True) ~ gsm.update_journal('64529')    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
+    gsm.inc_exp(250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
 def _r4580_action(gsm):
-    DO ~gsm.set_vaxis_exposes_soego(True) ~ gsm.update_journal('64530')    # '64530': ' ~Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях.~ '
+    gsm.set_vaxis_exposes_soego(True) ~ gsm.update_journal('64530')    # '64530': ' ~Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях.~ '
 def _r4586_condition(gsm):
     return gsm.get_embalm_key_quest() == 1
 def _r4587_condition(gsm):
@@ -379,15 +379,15 @@ def _r4588_condition(gsm):
 def _r4589_condition(gsm):
     return gsm.get_embalm_key_quest() != 1 return gsm.get_embalm_key_quest() != 2 return gsm.get_vaxis_orders()
 def _r4592_condition(gsm):
-    return gsm.get_embalm_key_quest() == 1 return gsm.get_has_keyem()
+    return gsm.get_embalm_key_quest() == 1 PartyHasItem("KeyEm")
 def _r4592_action(gsm):
-    DO ~ gsm.set_has_keyem(False) ~
+    gsm.inc_exp(250)
 def _r4593_condition(gsm):
-    return gsm.get_embalm_key_quest() == 2 return gsm.get_has_keyem()
+    return gsm.get_embalm_key_quest() == 2 PartyHasItem("KeyEm")
 def _r4593_action(gsm):
-    DO ~ gsm.set_has_keyem(False) ~
+    gsm.inc_exp(250)
 def _r4594_condition(gsm):
-    return gsm.get_embalm_key_quest() == 1 return not gsm.get_has_keyem()
+    return gsm.get_embalm_key_quest() == 1 !PartyHasItem("KeyEm")
 def _r4599_condition(gsm):
     return gsm.get_embalm_key_quest() == 0
 def _r4600_condition(gsm):
@@ -417,61 +417,61 @@ def _r4674_condition(gsm):
 def _r4620_condition(gsm):
     return gsm.get_has_embalm() return gsm.get_has_needle()
 def _r4620_action(gsm):
-    DO ~gsm.set_vaxis_zombie_disguise(2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE) ~
+    gsm.set_vaxis_zombie_disguise(2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE)
 def _r4621_action(gsm):
-    DO ~gsm.set_vaxis_zombie_disguise(1) ~
+    gsm.set_vaxis_zombie_disguise(1)
 def _r4622_action(gsm):
-    DO ~gsm.set_vaxis_zombie_disguise(1) ~
+    gsm.set_vaxis_zombie_disguise(1)
 def _r4623_action(gsm):
-    DO ~gsm.set_vaxis_zombie_disguise(1) ~
+    gsm.set_vaxis_zombie_disguise(1)
 def _r4625_action(gsm):
-    DO ~gsm.set_vaxis_zombie_disguise(1) ~
+    gsm.set_vaxis_zombie_disguise(1)
 def _r4628_action(gsm):
-    DO ~gsm.set_vaxis_zombie_disguise(1) ~
+    gsm.set_vaxis_zombie_disguise(1)
 def _r4630_condition(gsm):
     return not gsm.get_in_party_morte() return not gsm.get_vaxis_global_xp()
 def _r4630_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) AddexperienceParty(500) gsm.set_vaxis_global_xp(True) ~
+    FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) gsm.inc_exp(500)
 def _r4631_condition(gsm):
     return gsm.get_in_party_morte() return not gsm.get_morte_vaxis_quip_1()
 def _r4631_action(gsm):
-    DO ~gsm.set_morte_vaxis_quip_1(True) ~
+    gsm.set_morte_vaxis_quip_1(True)
 def _r4632_condition(gsm):
     return gsm.get_in_party_morte() return gsm.get_morte_vaxis_quip_1()
 def _r4632_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0)
 def _r64533_condition(gsm):
     return not gsm.get_in_party_morte() return gsm.get_vaxis_global_xp()
 def _r64533_action(gsm):
-    DO ~FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) ~
+    FadeToColor([20.0],0) Wait(1) gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0)
 def _r4634_condition(gsm):
     return not gsm.get_in_party_morte()
 def _r4635_condition(gsm):
     return gsm.get_in_party_morte() return not gsm.get_morte_vaxis_quip_2()
 def _r4635_action(gsm):
-    DO ~gsm.set_morte_vaxis_quip_2(True) ~
+    gsm.set_morte_vaxis_quip_2(True)
 def _r4636_condition(gsm):
     return gsm.get_in_party_morte() return gsm.get_morte_vaxis_quip_2()
 def _r4638_action(gsm):
     gsm.update_journal('64531')    # '64531': ' ~В обмен на иголку, нитку и бальзамирующую жидкость Ваксис замаскировал меня под зомби. Он предупредил меня, что бег может разрушить маскировку, и что я не должен ни с кем разговаривать, будучи замаскированным. Зомби ведь «не разговаривают». ~ '
 def _r4645_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r4651_action(gsm):
-    DO ~gsm.dec_once_good('evil_vaxis_1') ~
+    gsm.dec_once_good('evil_vaxis_1')
 def _r4656_condition(gsm):
     return not gsm.get_vaxis_help()
 def _r64532_condition(gsm):
     return gsm.get_vaxis_help()
 def _r4661_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r4664_condition(gsm):
     return gsm.check_char_prop_gt('protagonist',10,'chr')
 def _r4665_condition(gsm):
     return gsm.check_char_prop_lt('protagonist',11,'chr')
 def _r4666_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 def _r4669_action(gsm):
-    DO ~Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~
+    Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 gsm           = renpy.store.global_settings_manager
 EXIT          = -1
