@@ -1,4 +1,5 @@
-﻿export type KnownSettings = Readonly<{
+﻿const none = '00000000-CA6E-4C2E-B4E3-000000000000';
+export type KnownSettings = Readonly<{
     name: string;
     type: 'boolean' | 'integer';
 }>
@@ -147,7 +148,6 @@ const tree = (): string[][] => {
 
 // Register zombies in runtime settings
 const zombies = (): string[][] => {
-    const none = '00000000-CA6E-4C2E-B4E3-000000000000';
     return [
         ...npcSetting(none, 'dzm79'),
         ...npcSetting(none, 'dzm199'),
@@ -222,7 +222,7 @@ export const getKnownSettingsName = (): KnownSettings[] => {
     return Object.values(knownSettingsName);
 }
 
-export const wellKnownFunctions: string[][] = [
+export const wellKnownReplacements: string[][] = [
     ...tree(),
     ...zombies(),
     ...partyNpc('Morte', 'morte'),
@@ -246,6 +246,8 @@ export const wellKnownFunctions: string[][] = [
     ...npcSetting('Soego', 'soego'),
     ...npcSetting('Ravel', 'ravel'),
     ...npcSetting('Aelwyn', 'aelwyn'),
+    ...booleanSetting(none, 'know_dzm257_spirit'),
+    ...booleanSetting(none, 'know_oinosian_name'),
     ...booleanSetting('Evil_Ingress_Teeth_1', 'evil_ingress_teeth_1'),
     ...booleanSetting('Good_Ingress_Teeth_1', 'good_ingress_teeth_1'),
     ...booleanSetting('1201_Note_Retrieved', '1201_note_retrieved'),
@@ -389,7 +391,7 @@ export const wellKnownFunctions: string[][] = [
     ['ShowFirstTimeHelp()', ''],
     ['SetGlobal("0202_Dhall_Face_Player","AR0202",1)', 'gsm.set_meet_dhall(True)'],
     ['ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'gsm.set_in_party_morte(True)'],
-    ['HasItem("Bandage","ZM396")', 'return gsm.get_has_bandages_zm396'],
+    ['HasItem("Bandage","ZM396")', 'return gsm.get_has_bandages_zm396()'],
     ['NearbyDialog("DMorte1")', 'return gsm.get_in_party_morte()'],
     ['!NearbyDialog("DMorte1")', 'return not gsm.get_in_party_morte()'],
     ['SetGlobal("Betray_Vaxis","GLOBAL",2)', 'set_vaxis_betray(2)'],

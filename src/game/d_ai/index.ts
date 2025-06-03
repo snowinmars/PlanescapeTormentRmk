@@ -3,12 +3,11 @@
 
 import { clean } from './clean.ts';
 import { parseDialogue } from './parseDialogue.ts';
-import { serializeStates } from './serializeStates.ts';
 import { serializeStatesPlain } from "./serializeStatesPlain.ts";
 import { setupSettings } from "./setupSettings.ts";
 import { promises as fs, existsSync, unlinkSync, closeSync, openSync } from 'fs';
 import * as path from 'path'
-import {getKnownSettingsName} from "./wellKnownFunctions.ts";
+import {getKnownSettingsName} from "./wellKnownReplacements.ts";
 
 const goFilesDz = [
     'DZM1041',
@@ -64,21 +63,18 @@ type GoProps = Readonly<{
     fromFile: string;
     cleanFile: string;
     toFile: string;
-    toPlainFile: string;
-    settingsFile: string;
+    area: string;
     statePrefix: string;
 }>
 
-const go = async ({fromFile, cleanFile, toFile, toPlainFile, settingsFile, statePrefix}: GoProps): Promise<void> => {
+const go = async ({fromFile, cleanFile, toFile, area, statePrefix}: GoProps): Promise<void> => {
     const raw: string = await fs.readFile(fromFile, 'utf8');
     let cleaned = clean(raw);
     await fs.writeFile(cleanFile, cleaned, 'utf8');
     cleaned = await fs.readFile(cleanFile, 'utf8');
     const dialogue = parseDialogue(cleaned);
-    const builder = serializeStates(dialogue, statePrefix);
-    await fs.writeFile(toFile, builder, 'utf8');
-    const plainBuilder = serializeStatesPlain(dialogue, statePrefix);
-    await fs.writeFile(toPlainFile, plainBuilder, 'utf8');
+    const plainBuilder = serializeStatesPlain(dialogue, area, statePrefix);
+    await fs.writeFile(toFile, plainBuilder, 'utf8');
 }
 
 const settings = path.join(process.cwd(), '../setting/generated.py')
@@ -90,14 +86,12 @@ fs.writeFile(settings, readySettings, 'utf8').catch(e => console.error(e));
 Promise.all(goFiles.map(x => `${x}.D`).map(x => {
     const raw = path.join(process.cwd(), '../d_raw')
     const clean = path.join(process.cwd(), '../d_clean')
-    const parsed = path.join(process.cwd(), '../d_parsed')
     const parsedPlain = path.join(process.cwd(), '../d_parsed_plain')
     return go({
         fromFile: path.join(raw, x),
         cleanFile: path.join(clean, x),
-        toFile: path.join(parsed, x),
-        toPlainFile: path.join(parsedPlain, x),
-        settingsFile: settings,
-        statePrefix: `${x.replace('.D', '').toLowerCase()}_s`
+        toFile: path.join(parsedPlain, x),
+        area: x.replace('.D', '').toLowerCase(),
+        statePrefix: '_s'
     });
 })).catch(e => console.error(e));

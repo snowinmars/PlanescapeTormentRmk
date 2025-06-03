@@ -131,6 +131,22 @@ init 3 python:
         )
     )
 
+transform center_left:
+    xalign 0.4
+    yalign 0.5
+
+transform center_right:
+    xalign 0.6
+    yalign 0.5
+
+transform center_left_down:
+    xalign 0.4
+    yalign 0.4
+
+transform center_right_down:
+    xalign 0.6
+    yalign 0.4
+
 
 label start:
     show screen event_manager_display
@@ -138,9 +154,9 @@ label start:
     show screen inventory_button
     menu:
         "dev":
-            jump 'dev'
+            jump dmorte1_s23
         "start":
-            jump 'dmorte1_s0'
+            jump dmorte1_s0
 
 
 label end:

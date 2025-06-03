@@ -1,12 +1,12 @@
 ﻿import type {State} from './types';
-import {pasteWellKnownFunctions, trimTrahs} from './serializeHelpers.ts';
+import {transformScript, trimTrash} from './serializeHelpers.ts';
 
 const toSingleReturn = (input: string): string => {
     const lines = input.split('\n');
 
     const processedLines = lines.map(line => {
         if (line.trim().startsWith('def')) return line;
-        if (line.trim() == 'python:') return line;
+        if (line.trim() == 'init python:') return line;
 
         const returnStatements = line.split('return').map(s => s.trim()).filter(s => s.length > 0);
         if (returnStatements.length === 0) return line;
@@ -24,8 +24,8 @@ const toSingleBody = (input: string): string => {
     return input.replaceAll('gsm.', '\n        gsm.');
 }
 
-export const serializeStatesPlain = (states: State[], statePrefix: string): string => {
-    let result = 'python:\n    gsm           = renpy.store.global_settings_manager\n\n';
+export const serializeStatesPlain = (states: State[], area: string, statePrefix: string): string => {
+    let result = `define gsm = renpy.store.global_settings_manager\n\n\n# ###\n# Original:  DLG/${area.toUpperCase()}.DLG\n# Starts:    ${area}_s\n# ###\n\n\nlabel ${area}_init:\n    return\n\n\nlabel ${area}_dispose:\n    jump show_graphics_menu\n\n`;
     let logicActionsBuilder = '';
     let logicConditionsBuilder = '';
     let globalResponseCounter = 0
@@ -35,14 +35,14 @@ export const serializeStatesPlain = (states: State[], statePrefix: string): stri
         const fromPath = `from ${state.paths.length > 0 ? state.paths.map(x => `${x.fromStateId}.${x.responseIndex}`).join(' ') : '-'}`;
 
         builder += `\n# s${state.stateId} # say${state.sayId}\n`;
-        builder += `label ${statePrefix}${state.stateId}:  # ${fromPath}`;
+        builder += `label ${area}${statePrefix}${state.stateId}:  # ${fromPath}`;
         builder += state.free ? ` # ${state.free}\n` : `\n`
 
-        builder += `    SPEAKER '${trimTrahs(state.stateBody)}'\n\n`;
+        builder += `    SPEAKER '${trimTrash(state.stateBody)}'\n\n`;
 
         const hasNoAnswers = state.answers.length === 0
         if (hasNoAnswers) {
-            builder += `    jump 'show_graphics_menu'`
+            builder += `    jump show_graphics_menu`
             result += `${builder}\n`
             continue;
         }
@@ -50,9 +50,9 @@ export const serializeStatesPlain = (states: State[], statePrefix: string): stri
         builder += '    menu:\n';
 
         for (const answer of state.answers) {
-            const targetId = answer.targetStateId === -1 ? `'show_graphics_menu'` : `'${statePrefix}${answer.targetStateId}'`;
+            const targetId = answer.targetStateId === -1 ? `show_graphics_menu` : `${area}${statePrefix}${answer.targetStateId}`;
 
-            builder += `        '${trimTrahs(answer.answerBody)}'`
+            builder += `        '${trimTrash(answer.answerBody)}'`
 
             if (answer.condition && answer.condition.length !== 0) {
                 const conditionFunctionName = `_r${answer.answerId}_condition`;
@@ -81,12 +81,12 @@ export const serializeStatesPlain = (states: State[], statePrefix: string): stri
         result += `${builder}\n`
     }
 
-    if (logicActionsBuilder !== '') logicActionsBuilder = `python:\n${logicActionsBuilder}`
-    if (logicConditionsBuilder !== '') logicConditionsBuilder = `python:\n${logicConditionsBuilder}`
+    if (logicActionsBuilder !== '') logicActionsBuilder = `init python:\n${logicActionsBuilder}`
+    if (logicConditionsBuilder !== '') logicConditionsBuilder = `init python:\n${logicConditionsBuilder}`
 
     return [
-        toSingleBody(pasteWellKnownFunctions(logicActionsBuilder.trim())),
-        toSingleReturn(pasteWellKnownFunctions(logicConditionsBuilder.trim())),
+        toSingleBody(transformScript(logicActionsBuilder.trim())),
+        toSingleReturn(transformScript(logicConditionsBuilder.trim())),
         result.trim(),
-    ].join('\n\n');
+    ].join('\n\n\n');
 }
