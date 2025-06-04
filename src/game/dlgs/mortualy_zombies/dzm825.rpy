@@ -26,7 +26,8 @@ init python:
         return not gsm.get_in_party_morte()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###

@@ -12,8 +12,3 @@ def build_dev_label_flow(label_builder, gsm):
     gsm.set_has_bandages(True)
     gsm.set_has_embalm(True)
     gsm.set_has_keyem(True)
-
-    label_builder \
-        .start_with("dev") \
-            .say("DMORTE1.D_s23") \
-            .end_with("mortuary_dialog_loop")

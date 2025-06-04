@@ -1,5 +1,5 @@
 init python:
-def _has_key_has_morte(gsm):
+    def _has_key_has_morte(gsm):
         return gsm.get_in_party_morte() \
                and gsm.get_has_intro_key()
     def _no_key_has_morte(gsm):
@@ -22,12 +22,13 @@ init python:
         return _no_key_no_morte(gsm)
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
 # Original:  DLG/DZM782.DLG
-# Starts:    dzm782_s0
+# Starts:    dzm782_s0 dzm782_kill
 # ###
 
 

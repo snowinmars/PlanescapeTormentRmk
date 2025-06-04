@@ -1,6 +1,6 @@
 ﻿init python:
     def _r7295_action(gsm):
-        gsm.set_meet_death_of_names(True) ~
+        gsm.set_meet_death_of_names(True)
         gsm.update_journal('66659')
     def _r7304_action(gsm):
         gsm.set_death_of_names_adahn(True)
@@ -71,7 +71,8 @@ init python:
         return gsm.get_crier_quest() == 2
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
@@ -158,7 +159,7 @@ label ddeathon_s3:  # from 2.0
         'Квентин.' if _r7303_condition(gsm):
             # r9 # reply7303
             jump ddeathon_s13
-        'Э… Не знаю. Попробуй 'Адан'.':
+        'Э… Не знаю. Попробуй «Адан».':
             # r10 # reply7304
             $ _r7304_action(gsm)
             jump ddeathon_s4
@@ -306,7 +307,7 @@ label ddeathon_s9:  # from 4.0 7.0 8.0 10.1 11.0 12.0 13.1 14.0 16.0
         'Эс-Аннон.' if _r9771_condition(gsm):
             # r40 # reply9771
             jump ddeathon_s10
-        'Э… 'Адан'?':
+        'Э… «Адан»?':
             # r41 # reply9772
             $ _r9772_action(gsm)
             jump ddeathon_s4

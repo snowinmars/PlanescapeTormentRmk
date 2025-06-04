@@ -46,7 +46,8 @@ init python:
         return not gsm.get_meet_pharod()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
@@ -422,7 +423,7 @@ label dzm1094_s21:  # from 15.0
         'Можешь называть меня, как хочешь. У меня есть вопрос…':
             # r66 # reply9303
             jump dzm1094_s22
-        'Придумать имя: Ну, не знаю… 'Адан'?':
+        'Придумать имя: Ну, не знаю… «Адан»?':
             # r67 # reply9304
             $ _r9304_action(gsm)
             jump dzm1094_s23

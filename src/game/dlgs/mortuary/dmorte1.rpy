@@ -15,12 +15,13 @@
         gsm.set_has_intro_key(True)
 
 
-default gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
 # Original:  DLG/DMORTE1.DLG
-# Starts:    dmorte1_s0 dmorte1_s24 dmorte1_s26 dmorte1_s30
+# Starts:    dmorte1_s0 dmorte1_s24 dmorte1_s26 dmorte1_s30 dmorte1_kill
 # ###
 
 
@@ -325,7 +326,7 @@ label dmorte1_s23:  # from 19.1 20.1 21.1 22.0
 
 # s24 # say39847
 label dmorte1_s24:  # from -
-    jump dmorte1_init
+    call dmorte1_init
     morte 'Отлично, похоже, ты позаботился о правильном трупе.'
     teller 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
     $ _s24_action(gsm)
@@ -339,7 +340,7 @@ label dmorte1_s24:  # from -
 
 # s26 # say39851
 label dmorte1_s26:  # from -
-    jump dmorte1_init
+    call dmorte1_init
     morte 'Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?'
 
     menu:
@@ -398,8 +399,8 @@ label dmorte1_s29:  # from 28.1
 
 # s30 # say39863
 label dmorte1_s30:  # from -
-    jump dmorte1_init
-    morte 'Что тебя гложет, шеф? [MRT515]'
+    call dmorte1_init
+    morte 'Что тебя гложет, шеф?'
 
     menu:
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.':
@@ -444,17 +445,18 @@ label dmorte1_s34:  # from - # Check EXTENDS ~DZM782~ : 2
     jump dmorte1_dispose
 
 
-label dmorte1_s99999999_kill:
+label dmorte1_kill:
+    call dmorte1_init
     teller "Я больше не хочу видеть этот череп."
 
     menu:
         'Уйти.':
             jump dmorte1_dispose
         'Убить Морта.':
-            jump dmorte1_s99999999_killed
+            jump dmorte1_killed
 
 
-label dmorte1_s99999999_killed:
+label dmorte1_killed:
     morte "Слушай шеф…"
     teller "Я хватаю черепушку и разбиваю её о землю."
 

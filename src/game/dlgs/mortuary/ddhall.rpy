@@ -135,7 +135,8 @@ init python:
         return gsm.get_morte_mortuary_walkthrough_1()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###

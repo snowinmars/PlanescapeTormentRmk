@@ -77,7 +77,8 @@ init python:
                and gsm.get_1201_note_quest() == 2
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###

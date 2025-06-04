@@ -25,7 +25,8 @@ const toSingleBody = (input: string): string => {
 }
 
 export const serializeStatesPlain = (states: State[], area: string, statePrefix: string): string => {
-    let result = `define gsm = renpy.store.global_settings_manager\n\n\n# ###\n# Original:  DLG/${area.toUpperCase()}.DLG\n# Starts:    ${area}_s\n# ###\n\n\nlabel ${area}_init:\n    return\n\n\nlabel ${area}_dispose:\n    jump show_graphics_menu\n\n`;
+    let result = `init 10 python:
+    gsm = renpy.store.global_settings_manager\n\n\n# ###\n# Original:  DLG/${area.toUpperCase()}.DLG\n# Starts:    ${area}_s\n# ###\n\n\nlabel ${area}_init:\n    return\n\n\nlabel ${area}_dispose:\n    jump show_graphics_menu\n\n`;
     let logicActionsBuilder = '';
     let logicConditionsBuilder = '';
     let globalResponseCounter = 0
@@ -81,12 +82,30 @@ export const serializeStatesPlain = (states: State[], area: string, statePrefix:
         result += `${builder}\n`
     }
 
-    if (logicActionsBuilder !== '') logicActionsBuilder = `init python:\n${logicActionsBuilder}`
-    if (logicConditionsBuilder !== '') logicConditionsBuilder = `init python:\n${logicConditionsBuilder}`
+    if (logicActionsBuilder !== '') logicActionsBuilder = `init python:
+${logicActionsBuilder}`
+    if (logicConditionsBuilder !== '') logicConditionsBuilder = `init python:
+${logicConditionsBuilder}`
 
     return [
         toSingleBody(transformScript(logicActionsBuilder.trim())),
         toSingleReturn(transformScript(logicConditionsBuilder.trim())),
         result.trim(),
     ].join('\n\n\n').trim();
+}
+
+const replaceNestedQuotes = (text: string): string => {
+    if ((text.match(/'/g) || []).length < 2) return text;
+
+    const firstQuotePos = text.indexOf("'");
+    const lastQuotePos = text.lastIndexOf("'");
+
+    if (firstQuotePos === lastQuotePos) return text;
+
+    // Replace all quotes except first and last
+    const before = text.substring(0, firstQuotePos + 1);
+    const middle = text.substring(firstQuotePos + 1, lastQuotePos).replace(/'/g, "«");
+    const after = text.substring(lastQuotePos);
+
+    return before + middle.replace(/'/g, "»") + after;
 }

@@ -11,7 +11,8 @@
         gsm.update_journal('39477')
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
