@@ -64,7 +64,7 @@ label dzm1094_dispose:
 
 
 # s0 # say6562
-label dzm1094_s0:  # from -
+label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)~ THEN BEGIN 0 // from:
     SPEAKER 'У этого ходячего трупа на лбу вырезан номер 1094. Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака. Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
 
     menu:
@@ -489,7 +489,7 @@ label dzm1094_s24:  # from 19.0
 
 
 # s25 # say9283
-label dzm1094_s25:  # from 14.1 22.1
+label dzm1094_s25:  # from 14.1 22.1 # GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
     SPEAKER 'Меня зовут Асонж.'
 
     menu:
@@ -502,7 +502,7 @@ label dzm1094_s25:  # from 14.1 22.1
 
 
 # s26 # say20061
-label dzm1094_s26:  # from -
+label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
     SPEAKER 'Снова вернулся, а? Он широко улыбается.'
 
     menu:

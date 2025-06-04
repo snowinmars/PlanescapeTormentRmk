@@ -1643,7 +1643,7 @@ label dmorte_dispose:
 
 
 # s0 # say986
-label dmorte_s0:  # from -
+label dmorte_s0:  # from - # IF ~~ THEN BEGIN 0 // from:
     SPEAKER 'Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба.'
 
     menu:
@@ -2307,7 +2307,7 @@ label dmorte_s36:  # from 34.0 35.0
 
 
 # s37 # say1818
-label dmorte_s37:  # from - # Check EXTENDS ~DHARLOTN~ : 11
+label dmorte_s37:  # from - # Check EXTENDS ~DHARLOTN~ : 2Check EXTENDS ~DHARLOTN~ : 3Check EXTENDS ~DHARLOTN~ : 9Check EXTENDS ~DHARLOTN~ : 11
     SPEAKER 'Вот это удача! Кажется, то, что мы ищем, мы в твоем скромном убежище, красавица.'
 
     menu:
@@ -2326,7 +2326,7 @@ label dmorte_s37:  # from - # Check EXTENDS ~DHARLOTN~ : 11
 
 
 # s38 # say1844
-label dmorte_s38:  # from - # Check EXTENDS ~DHARLOTN~ : 7
+label dmorte_s38:  # from - # Check EXTENDS ~DHARLOTN~ : 7Check EXTENDS ~DHARLOTN~ : 7
     SPEAKER 'Шеф, ты не можешь одолжить мне немного звенелок… э-э… у меня этого так давно не было.'
 
     menu:
@@ -2365,7 +2365,7 @@ label dmorte_s40:  # from - # Check EXTENDS ~DANNAH~ : 13
 
 
 # s41 # say2067
-label dmorte_s41:  # from - # Check EXTENDS ~DANNAH~ : 17
+label dmorte_s41:  # from - # Check EXTENDS ~DANNAH~ : 17Check EXTENDS ~DANNAH~ : 17
     SPEAKER 'Она — тифлинг, шеф. В них есть немного демонической крови, из-за которой они становятся немного подозрительными и бдительными… симпатичный хвостик, кстати. Жаль только, что он приделан к такому уродливому телу.'
 
     menu:
@@ -2378,7 +2378,7 @@ label dmorte_s41:  # from - # Check EXTENDS ~DANNAH~ : 17
 
 
 # s42 # say2074
-label dmorte_s42:  # from - # Check EXTENDS ~DANNAH~ : 14
+label dmorte_s42:  # from - # Check EXTENDS ~DANNAH~ : 18Check EXTENDS ~DANNAH~ : 14
     SPEAKER 'Что же ты не *пытаешься* расколоть мою челюсть? Только и дело, что слышу пустую болтовню от всяких отбросов Улья! Давай, попробуй! Я тебе ноги откушу!'
 
     menu:
@@ -2593,7 +2593,7 @@ label dmorte_s58:  # from 57.0
 
 
 # s59 # say3487
-label dmorte_s59:  # from - # Check EXTENDS ~DEIVENE~ : 10
+label dmorte_s59:  # from - # Check EXTENDS ~DEIVENE~ : 11Check EXTENDS ~DEIVENE~ : 11Check EXTENDS ~DEIVENE~ : 10
     SPEAKER 'Похоже, у тебя новая подруга, шеф. Может, вас оставить наедине на часок, или?..'
 
     menu:
@@ -2688,7 +2688,7 @@ label dmorte_s65:  # from -
 
 
 # s66 # say3968
-label dmorte_s66:  # from 65.0 65.1 65.2 # Check EXTENDS ~DSKELW~ : 6
+label dmorte_s66:  # from 65.0 65.1 65.2 # Check EXTENDS ~DSKELW~ : 4Check EXTENDS ~DSKELW~ : 5Check EXTENDS ~DSKELW~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
@@ -2800,7 +2800,7 @@ label dmorte_s73:  # from -
 
 
 # s74 # say4020
-label dmorte_s74:  # from 73.0 # Check EXTENDS ~DGIANTSK~ : 3
+label dmorte_s74:  # from 73.0 # Check EXTENDS ~DGIANTSK~ : 2Check EXTENDS ~DGIANTSK~ : 3
     SPEAKER 'Ой… извини. Морт подлетает к голове скелета, смотрит на нее, затем спускается вниз, попутно изучая доспехи и клинок. О да. Да, думаю, такое подойдет.'
 
     menu:
@@ -2819,7 +2819,7 @@ label dmorte_s74:  # from 73.0 # Check EXTENDS ~DGIANTSK~ : 3
 
 
 # s75 # say4021
-label dmorte_s75:  # from 74.2 74.3 # Check EXTENDS ~DGIANTSK~ : 3
+label dmorte_s75:  # from 74.2 74.3 # Check EXTENDS ~DGIANTSK~ : 2Check EXTENDS ~DGIANTSK~ : 3
     SPEAKER 'А какого тогда Баатора ты СПРАШИВАЕШЬ меня? Практикуешься в навыках жестокости? — Морт негодующе раскачивается. — И это после всего, что я сделал для тебя…'
 
     menu:
@@ -2839,7 +2839,7 @@ label dmorte_s75:  # from 74.2 74.3 # Check EXTENDS ~DGIANTSK~ : 3
 
 
 # s76 # say4022
-label dmorte_s76:  # from 75.2 # Check EXTENDS ~DGIANTSK~ : 3
+label dmorte_s76:  # from 75.2 # Check EXTENDS ~DGIANTSK~ : 2Check EXTENDS ~DGIANTSK~ : 3
     SPEAKER 'Морт уставился на тебя. Мы что теперь, ЖЕНАТЫ? Что это за бред — 'я не хочу причинить тебе вред'? — Морт выразительно на тебя смотрит. — Если ты ПО-НАСТОЯЩЕМУ обо мне заботишься, то найди способ закрепить мою голову на теле гигантского скелета.'
 
     menu:
@@ -2981,7 +2981,7 @@ label dmorte_s85:  # from -
 
 
 # s86 # say4677
-label dmorte_s86:  # from 85.0 # Check EXTENDS ~DVAXIS~ : 10
+label dmorte_s86:  # from 85.0 # Check EXTENDS ~DVAXIS~ : 11Check EXTENDS ~DVAXIS~ : 11Check EXTENDS ~DVAXIS~ : 10Check EXTENDS ~DVAXIS~ : 10Check EXTENDS ~DVAXIS~ : 10
     SPEAKER 'Анархисты… это такая фракция… Похоже, Морт еле сдерживает поток оскорблений, но затем замечает, что зомби смотрит на вас обоих, внимательно слушая. …они, э, хотят *освободить* всех от оков правительства. Свергнуть старый порядок, чтобы установить новый — без никаких порядков.'
 
     menu:
@@ -3026,7 +3026,7 @@ label dmorte_s87:  # from -
 
 
 # s88 # say4688
-label dmorte_s88:  # from 87.0 87.1 87.2 87.3 # Check EXTENDS ~DVAXIS~ : 15
+label dmorte_s88:  # from 87.0 87.1 87.2 87.3 # Check EXTENDS ~DVAXIS~ : 15Check EXTENDS ~DVAXIS~ : 15Check EXTENDS ~DVAXIS~ : 15
     SPEAKER 'Морт вздыхает. Слушай, шеф… ты должен понимать свою ситуацию. Ты не сможешь разгуливать, рассказывая всем одну только ПРАВДУ. Мы не должны делать себя целями ловца кроликов, ясно?'
 
     menu:
@@ -3053,7 +3053,7 @@ label dmorte_s89:  # from -
 
 
 # s90 # say4694
-label dmorte_s90:  # from 89.0 # Check EXTENDS ~DVAXIS~ : 71
+label dmorte_s90:  # from 89.0 # Check EXTENDS ~DVAXIS~ : 71Check EXTENDS ~DVAXIS~ : 71Check EXTENDS ~DVAXIS~ : 71Check EXTENDS ~DVAXIS~ : 71Check EXTENDS ~DVAXIS~ : 71
     SPEAKER 'Анархисты — это фракция, которая тратит свое время на слежку за представителями власти и на поиски способов низвергнуть все, от чего несет порядком или контролем, — Морт фыркает. — Анархисты считают, что каждый пень на планах должен быть свободен и счастлив искать свою собственную 'правду', как только правительство будет сожжено дотла. Они хотят основать новый порядок, в котором не будет никакого порядка.'
 
     menu:
@@ -3109,7 +3109,7 @@ label dmorte_s93:  # from - # Check EXTENDS ~DVAXIS~ : 61
     jump show_graphics_menu
 
 # s94 # say4708
-label dmorte_s94:  # from - # Check EXTENDS ~DVAXIS~ : 66
+label dmorte_s94:  # from - # Check EXTENDS ~DVAXIS~ : 66Check EXTENDS ~DVAXIS~ : 66
     SPEAKER 'Не могу поверить, что ты делаешь это. Ты, что, СОВСЕМ спятил?'
 
     menu:
@@ -3124,7 +3124,7 @@ label dmorte_s94:  # from - # Check EXTENDS ~DVAXIS~ : 66
 
 
 # s95 # say4710
-label dmorte_s95:  # from - # Check EXTENDS ~DVAXIS~ : 67
+label dmorte_s95:  # from - # Check EXTENDS ~DVAXIS~ : 67Check EXTENDS ~DVAXIS~ : 67
     SPEAKER 'А нельзя ли ему зашить рот потуже?'
 
     menu:
@@ -3274,7 +3274,7 @@ label dmorte_s108:  # from 107.0
 
 
 # s109 # say6324
-label dmorte_s109:  # from - # Check EXTENDS ~DPOST~ : 2
+label dmorte_s109:  # from - # Check EXTENDS ~DPOST~ : 3Check EXTENDS ~DPOST~ : 4Check EXTENDS ~DPOST~ : 5Check EXTENDS ~DPOST~ : 5Check EXTENDS ~DPOST~ : 5Check EXTENDS ~DPOST~ : 2
     SPEAKER 'Это напоминает мне одну мою работенку. Кажется, он смущен. Ну, только… без махания руками.'
 
     menu:
@@ -3302,7 +3302,7 @@ label dmorte_s109:  # from - # Check EXTENDS ~DPOST~ : 2
 
 
 # s110 # say6609
-label dmorte_s110:  # from - # Check EXTENDS ~DS42~ : 1
+label dmorte_s110:  # from - # Check EXTENDS ~DS42~ : 1Check EXTENDS ~DS42~ : 1Check EXTENDS ~DS42~ : 1
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
@@ -3320,7 +3320,7 @@ label dmorte_s110:  # from - # Check EXTENDS ~DS42~ : 1
 
 
 # s111 # say6610
-label dmorte_s111:  # from - # Check EXTENDS ~DS42~ : 1
+label dmorte_s111:  # from - # Check EXTENDS ~DS42~ : 1Check EXTENDS ~DS42~ : 1Check EXTENDS ~DS42~ : 1
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
@@ -3336,7 +3336,7 @@ label dmorte_s111:  # from - # Check EXTENDS ~DS42~ : 1
 
 
 # s112 # say6611
-label dmorte_s112:  # from - # Check EXTENDS ~DS42~ : 10
+label dmorte_s112:  # from - # Check EXTENDS ~DS42~ : 4Check EXTENDS ~DS42~ : 9Check EXTENDS ~DS42~ : 10
     SPEAKER 'Может, уже хватит? У него руки сейчас отвалятся.'
 
     menu:
@@ -3381,7 +3381,7 @@ label dmorte_s115:  # from - # Check EXTENDS ~DANNAH~ : 43
     jump show_graphics_menu
 
 # s116 # say6790
-label dmorte_s116:  # from - # Check EXTENDS ~DDABUS~ : 6
+label dmorte_s116:  # from - # Check EXTENDS ~DANNAH~ : 40Check EXTENDS ~DDABUS~ : 6
     SPEAKER 'Вот *ты* и скажи, бесовка.'
 
     menu:
@@ -3880,7 +3880,7 @@ label dmorte_s156:  # from 155.0 # Check EXTENDS ~DCREED~ : 32
 
 
 # s157 # say12623
-label dmorte_s157:  # from 155.1 156.1 # Check EXTENDS ~DCREED~ : 59
+label dmorte_s157:  # from 155.1 156.1 # Check EXTENDS ~DCREED~ : 32Check EXTENDS ~DCREED~ : 59
     SPEAKER 'Морт смущенно закатывает глаза. Это… говорящая энциклопедия. Не то, чтобы я этим гордился. А теперь давай выслушаем этого приятеля, хорошо?'
 
     menu:
@@ -3895,7 +3895,7 @@ label dmorte_s157:  # from 155.1 156.1 # Check EXTENDS ~DCREED~ : 59
 
 
 # s158 # say12624
-label dmorte_s158:  # from 156.0 # Check EXTENDS ~DCREED~ : 59
+label dmorte_s158:  # from 156.0 # Check EXTENDS ~DCREED~ : 32Check EXTENDS ~DCREED~ : 59
     SPEAKER 'Да ладно, шеф… зачем мне тебя отвлекать? Я сказал тебе все полезное, что знаю *сам*. Пусть лучше этот пень выскажется по этой теме.'
 
     menu:
@@ -3914,7 +3914,7 @@ label dmorte_s159:  # from - # Check EXTENDS ~DCREED~ : 40
     jump show_graphics_menu
 
 # s160 # say12626
-label dmorte_s160:  # from - # Check EXTENDS ~DCREED~ : 59
+label dmorte_s160:  # from - # Check EXTENDS ~DCREED~ : 49Check EXTENDS ~DCREED~ : 15Check EXTENDS ~DCREED~ : 59
     SPEAKER 'Умереть, шеф… умереть.'
 
     menu:
@@ -3930,7 +3930,7 @@ label dmorte_s160:  # from - # Check EXTENDS ~DCREED~ : 59
 
 
 # s161 # say12627
-label dmorte_s161:  # from - # Check EXTENDS ~DCREED~ : 59
+label dmorte_s161:  # from - # Check EXTENDS ~DCREED~ : 18Check EXTENDS ~DCREED~ : 15Check EXTENDS ~DCREED~ : 59
     SPEAKER 'Умереть, шеф… умереть.'
 
     menu:
@@ -4030,7 +4030,7 @@ label dmorte_s167:  # from 166.0
 
 
 # s168 # say14075
-label dmorte_s168:  # from - # Check EXTENDS ~DAWAIT~ : 15
+label dmorte_s168:  # from - # Check EXTENDS ~DAWAIT~ : 6Check EXTENDS ~DAWAIT~ : 6Check EXTENDS ~DAWAIT~ : 6Check EXTENDS ~DAWAIT~ : 15
     SPEAKER 'Ладно, шеф… — шепчет тебе Морт. — Идем. Этот трухлявенький скоро станет удобрением.'
 
     menu:
@@ -4118,13 +4118,13 @@ label dmorte_s177:  # from 175.1 # Check EXTENDS ~DADYZOEL~ : 33
     jump show_graphics_menu
 
 # s178 # say15348
-label dmorte_s178:  # from - # Check EXTENDS ~DADYZOEL~ : 35
+label dmorte_s178:  # from - # Check EXTENDS ~DADYZOEL~ : 35 # ~SetGlobal("Know_Mimir","GLOBAL",1) ~ EXTERN ~DADYZOEL~ 35
     SPEAKER 'Что? Шеф, я всего лишь мимир! Я не умею 'драться на дуэли'!'
 
     jump show_graphics_menu
 
 # s179 # say15349
-label dmorte_s179:  # from - # Check EXTENDS ~DADYZOEL~ : 36
+label dmorte_s179:  # from - # Check EXTENDS ~DADYZOEL~ : 36Check EXTENDS ~DADYZOEL~ : 36
     SPEAKER 'Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда.'
 
     menu:
@@ -4165,7 +4165,7 @@ label dmorte_s181:  # from 185.0 # Check EXTENDS ~DMFTREE~ : 28
 
 
 # s182 # say16614
-label dmorte_s182:  # from 181.1 # Check EXTENDS ~DMFTREE~ : 28
+label dmorte_s182:  # from 181.1 # Check EXTENDS ~DANNAH~ : 99Check EXTENDS ~DIGNUS~ : 11Check EXTENDS ~DGRACE~ : 14Check EXTENDS ~DDAKKON~ : 74Check EXTENDS ~DDAKKON~ : 75Check EXTENDS ~DNORDOM~ : 1Check EXTENDS ~DVHAIL~ : 1Check EXTENDS ~DMFTREE~ : 28
     SPEAKER 'Морт некоторое время молча на тебя смотрит, а затем кивает. Да, я смогу. Если это настолько важно для тебя, я сделаю это.'
 
     menu:
@@ -4218,7 +4218,7 @@ label dmorte_s184:  # from - # Check EXTENDS ~DNORDOM~ : 3
     jump show_graphics_menu
 
 # s185 # say16617
-label dmorte_s185:  # from - # Check EXTENDS ~DMFTREE~ : 28
+label dmorte_s185:  # from - # Check EXTENDS ~DANNAH~ : 99Check EXTENDS ~DIGNUS~ : 11Check EXTENDS ~DGRACE~ : 14Check EXTENDS ~DDAKKON~ : 74Check EXTENDS ~DDAKKON~ : 75Check EXTENDS ~DVHAIL~ : 1Check EXTENDS ~DMFTREE~ : 28
     SPEAKER 'Знаешь, шеф, я повидал много причудливых штуковин… Но он поразил мой разум только тем, что это вообще *возможно*.'
 
     menu:
@@ -4265,7 +4265,7 @@ label dmorte_s186:  # from - # Check EXTENDS ~DIGNUS~ : 13
     jump show_graphics_menu
 
 # s187 # say17533
-label dmorte_s187:  # from - # Check EXTENDS ~D300MER5~ : 2
+label dmorte_s187:  # from - # Check EXTENDS ~DANNAH~ : 107Check EXTENDS ~D300MER5~ : 5Check EXTENDS ~D300MER5~ : 2Check EXTENDS ~D300MER5~ : 2
     SPEAKER 'Почему бы и нет, босс? Будет весело пнуть его, если будет поганое настроение, верно? Хм-м… Ладно, по крайней мере, я могу пнуть от твоего имени. А еще хочется взглянуть на пятидесятифутовый прыжок от уголька!'
 
     menu:
@@ -4291,7 +4291,7 @@ label dmorte_s187:  # from - # Check EXTENDS ~D300MER5~ : 2
 
 
 # s188 # say18801
-label dmorte_s188:  # from - # Check EXTENDS ~DCOLYLFN~ : 14
+label dmorte_s188:  # from - # Check EXTENDS ~DCOLYLFN~ : 5Check EXTENDS ~DCOLYLFN~ : 6Check EXTENDS ~DCOLYLFN~ : 9Check EXTENDS ~DCOLYLFN~ : 10Check EXTENDS ~DCOLYLFN~ : 12Check EXTENDS ~DCOLYLFN~ : 13Check EXTENDS ~DCOLYLFN~ : 14
     SPEAKER 'Морт поворачивается к жителю Улья. Отвали.'
 
     menu:
@@ -4322,7 +4322,7 @@ label dmorte_s188:  # from - # Check EXTENDS ~DCOLYLFN~ : 14
 
 
 # s189 # say18809
-label dmorte_s189:  # from - # Check EXTENDS ~DCOLYLFN~ : 11
+label dmorte_s189:  # from - # Check EXTENDS ~DCOLYLFN~ : 11Check EXTENDS ~DCOLYLFN~ : 11
     SPEAKER 'Морт держит в зубах один из его пальцев, словно это какая-то жуткая сигара. Удерживая палец, он проговаривает: Еще раз тронешь — и твоя рука присоединится к пальцу, пень.'
 
     menu:
@@ -4338,7 +4338,7 @@ label dmorte_s189:  # from - # Check EXTENDS ~DCOLYLFN~ : 11
 
 
 # s190 # say18813
-label dmorte_s190:  # from 189.0 # Check EXTENDS ~DCOLYLFN~ : 11
+label dmorte_s190:  # from 189.0 # Check EXTENDS ~DCOLYLFN~ : 11Check EXTENDS ~DCOLYLFN~ : 11
     SPEAKER 'Морт выплевывает в него палец. Тот отскакивает от его груди и падает на землю.'
 
     menu:
@@ -4367,7 +4367,7 @@ label dmorte_s192:  # from - # Check EXTENDS ~DCOLYLFN~ : 16
     jump show_graphics_menu
 
 # s193 # say18819
-label dmorte_s193:  # from - # Check EXTENDS ~DCOLYLFN~ : 6
+label dmorte_s193:  # from - # Check EXTENDS ~DCOLYLFN~ : 18Check EXTENDS ~DCOLYLFN~ : 18Check EXTENDS ~DCOLYLFN~ : 18Check EXTENDS ~DCOLYLFN~ : 18Check EXTENDS ~DCOLYLFN~ : 19Check EXTENDS ~DCOLYLFN~ : 6
     SPEAKER 'Шеф, *не надо*.'
 
     menu:
@@ -4396,7 +4396,7 @@ label dmorte_s193:  # from - # Check EXTENDS ~DCOLYLFN~ : 6
 
 
 # s194 # say18826
-label dmorte_s194:  # from - # Check EXTENDS ~DCOLYLFN~ : 41
+label dmorte_s194:  # from - # Check EXTENDS ~DCOLYLFN~ : 20Check EXTENDS ~DCOLYLFN~ : 23Check EXTENDS ~DCOLYLFN~ : 41
     SPEAKER 'Я летаю с самым большим болваном во всей мультивселенной.'
 
     menu:
@@ -4422,7 +4422,7 @@ label dmorte_s195:  # from - # Check EXTENDS ~DCOLYLFN~ : 52
     jump show_graphics_menu
 
 # s196 # say18832
-label dmorte_s196:  # from - # Check EXTENDS ~DCOLYLFN~ : 61
+label dmorte_s196:  # from - # Check EXTENDS ~DCOLYLFN~ : 53Check EXTENDS ~DCOLYLFN~ : 53Check EXTENDS ~DCOLYLFN~ : 53Check EXTENDS ~DCOLYLFN~ : 53Check EXTENDS ~DCOLYLFN~ : 61
     SPEAKER 'Если смотреть с моей позиции, так она никого не балует.'
 
     menu:
@@ -4480,7 +4480,7 @@ label dmorte_s199:  # from -
 
 
 # s200 # say19552
-label dmorte_s200:  # from 199.0 # Check EXTENDS ~DZOMCITF~ : 3
+label dmorte_s200:  # from 199.0 # Check EXTENDS ~DZOMCITF~ : 1Check EXTENDS ~DZOMCITF~ : 3
     SPEAKER 'Морт закатывает глаза. Ха! Однажды ты поймешь, о чем я говорю.'
 
     menu:
@@ -4493,7 +4493,7 @@ label dmorte_s200:  # from 199.0 # Check EXTENDS ~DZOMCITF~ : 3
 
 
 # s201 # say19553
-label dmorte_s201:  # from 199.1 # Check EXTENDS ~DZOMCITF~ : 3
+label dmorte_s201:  # from 199.1 # Check EXTENDS ~DZOMCITF~ : 1Check EXTENDS ~DZOMCITF~ : 3
     SPEAKER 'Ага, видишь ли, это я… эй! — Морт поворачивается к тебе. — Ты что, издеваешься надо мной?'
 
     menu:
@@ -4585,7 +4585,7 @@ label dmorte_s208:  # from - # Check EXTENDS ~DMARTA~ : 15
     jump show_graphics_menu
 
 # s209 # say20471
-label dmorte_s209:  # from - # Check EXTENDS ~DMARTA~ : 16
+label dmorte_s209:  # from - # Check EXTENDS ~DMARTA~ : 16Check EXTENDS ~DMARTA~ : 16
     SPEAKER 'Морт поворачивается к Марте. Да, 'штучки', — он поворачивается к тебе. — Все дело в смысле слов.'
 
     menu:
@@ -4985,7 +4985,7 @@ label dmorte_s243:  # from 242.0
 
 
 # s244 # say25962
-label dmorte_s244:  # from - # Check EXTENDS ~DCWRUSHF~ : 27
+label dmorte_s244:  # from - # Check EXTENDS ~DCWRUSHF~ : 27Check EXTENDS ~DCWRUSHF~ : 27
     SPEAKER 'Это типа говорящей энциклопедии, шеф. На самом деле, мне не хочется об этом говорить.'
 
     menu:
@@ -5005,7 +5005,7 @@ label dmorte_s245:  # from -
 
 
 # s246 # say25966
-label dmorte_s246:  # from 245.0 # Check EXTENDS ~DCWRUSHF~ : 2
+label dmorte_s246:  # from 245.0 # Check EXTENDS ~DCWRUSHF~ : 28Check EXTENDS ~DCWRUSHF~ : 2
     SPEAKER 'Да-да. Хорошо, — Морт закатывает глаза и начинает ворчать. — Тогда уж лучше быть *мертвым*…'
 
     menu:
@@ -5021,7 +5021,7 @@ label dmorte_s246:  # from 245.0 # Check EXTENDS ~DCWRUSHF~ : 2
 
 
 # s247 # say25970
-label dmorte_s247:  # from - # Check EXTENDS ~DCWRUSHF~ : 29
+label dmorte_s247:  # from - # Check EXTENDS ~DCWRUSHF~ : 29Check EXTENDS ~DCWRUSHF~ : 29
     SPEAKER 'Морт перебивает ее: Понимаешь, шеф, есть много признаков *качественного* мимира. Некоторые — например, я — намного лучше других. Более… э-э… 'самосознательные', говоря научным языком.'
 
     menu:
@@ -5265,7 +5265,7 @@ label dmorte_s267:  # from - # Check EXTENDS ~DCWCAFEF~ : 15
     jump show_graphics_menu
 
 # s268 # say27912
-label dmorte_s268:  # from - # Check EXTENDS ~DCWCAFEF~ : 50
+label dmorte_s268:  # from - # Check EXTENDS ~DCWCAFEF~ : 50Check EXTENDS ~DCWCAFEF~ : 50
     SPEAKER 'Это типа говорящей энциклопедии, шеф. На самом деле, мне не хочется об этом говорить.'
 
     menu:
@@ -5285,7 +5285,7 @@ label dmorte_s269:  # from -
 
 
 # s270 # say27915
-label dmorte_s270:  # from 269.0 # Check EXTENDS ~DCWCAFEF~ : 4
+label dmorte_s270:  # from 269.0 # Check EXTENDS ~DCWCAFEF~ : 51Check EXTENDS ~DCWCAFEF~ : 4
     SPEAKER 'Да-да. Хорошо, — Морт закатывает глаза и начинает ворчать. — Тогда уж лучше быть *мертвым*…'
 
     menu:
@@ -5301,7 +5301,7 @@ label dmorte_s270:  # from 269.0 # Check EXTENDS ~DCWCAFEF~ : 4
 
 
 # s271 # say27919
-label dmorte_s271:  # from - # Check EXTENDS ~DCWCAFEF~ : 52
+label dmorte_s271:  # from - # Check EXTENDS ~DCWCAFEF~ : 52Check EXTENDS ~DCWCAFEF~ : 52
     SPEAKER 'Морт перебивает ее: Понимаешь, шеф, есть много признаков *качественного* мимира. Некоторые — например, я — намного лучше других. Более… э-э… 'самосознательные', говоря научным языком.'
 
     menu:
@@ -5320,7 +5320,7 @@ label dmorte_s272:  # from - # Check EXTENDS ~DCWCAFEF~ : 50
     jump show_graphics_menu
 
 # s273 # say28036
-label dmorte_s273:  # from - # Check EXTENDS ~DMALMANR~ : 15
+label dmorte_s273:  # from - # Check EXTENDS ~DMALMANR~ : 13Check EXTENDS ~DMALMANR~ : 14Check EXTENDS ~DMALMANR~ : 15
     SPEAKER 'Морт одобрительно кивает. Эй, а этот парень не так уж плох.'
 
     menu:
@@ -5338,7 +5338,7 @@ label dmorte_s273:  # from - # Check EXTENDS ~DMALMANR~ : 15
 
 
 # s274 # say28037
-label dmorte_s274:  # from - # Check EXTENDS ~DMALMANR~ : 15
+label dmorte_s274:  # from - # Check EXTENDS ~DMALMANR~ : 13Check EXTENDS ~DMALMANR~ : 14Check EXTENDS ~DMALMANR~ : 13Check EXTENDS ~DMALMANR~ : 14Check EXTENDS ~DMALMANR~ : 13Check EXTENDS ~DMALMANR~ : 14Check EXTENDS ~DMALMANR~ : 13Check EXTENDS ~DMALMANR~ : 14Check EXTENDS ~DMALMANR~ : 15
     SPEAKER 'Морт одобрительно кивает. Эй, а этот парень не так уж плох.'
 
     menu:
@@ -5476,7 +5476,7 @@ label dmorte_s284:  # from -
 
 
 # s285 # say28962
-label dmorte_s285:  # from - # Check EXTENDS ~DQUISAI~ : 3
+label dmorte_s285:  # from - # Check EXTENDS ~DQUISAI~ : 5Check EXTENDS ~DQUISAI~ : 3
     SPEAKER 'Э… шеф? Ты ведь раньше видел статуи? Ты ведь знаешь, что они не разговаривают?'
 
     menu:
@@ -5496,7 +5496,7 @@ label dmorte_s285:  # from - # Check EXTENDS ~DQUISAI~ : 3
 
 
 # s286 # say28963
-label dmorte_s286:  # from 285.0 # Check EXTENDS ~DQUISAI~ : 3
+label dmorte_s286:  # from 285.0 # Check EXTENDS ~DQUISAI~ : 5Check EXTENDS ~DQUISAI~ : 3
     SPEAKER 'Ну… э… м-м. Тут ты прав, босс.'
 
     menu:
@@ -5523,7 +5523,7 @@ label dmorte_s287:  # from -
 
 
 # s288 # say28965
-label dmorte_s288:  # from 287.0 # Check EXTENDS ~DQUISAI~ : 23
+label dmorte_s288:  # from 287.0 # Check EXTENDS ~DQUISAI~ : 5Check EXTENDS ~DQUISAI~ : 23
     SPEAKER 'Конечно, босс. Я это знал.'
 
     menu:
@@ -5541,7 +5541,7 @@ label dmorte_s288:  # from 287.0 # Check EXTENDS ~DQUISAI~ : 23
 
 
 # s289 # say28966
-label dmorte_s289:  # from - # Check EXTENDS ~DQUISAI~ : 29
+label dmorte_s289:  # from - # Check EXTENDS ~DQUISAI~ : 11Check EXTENDS ~DQUISAI~ : 30Check EXTENDS ~DQUISAI~ : 29
     SPEAKER 'Морт закатывает глаза и издает бульканье. О силы, нет, только не еще один пень, говорящий… вот… так!'
 
     menu:
@@ -5578,7 +5578,7 @@ label dmorte_s292:  # from - # Check EXTENDS ~DABLE~ : 2
     jump show_graphics_menu
 
 # s293 # say30817
-label dmorte_s293:  # from - # Check EXTENDS ~DABLE~ : 10
+label dmorte_s293:  # from - # Check EXTENDS ~DABLE~ : 10Check EXTENDS ~DABLE~ : 10Check EXTENDS ~DABLE~ : 10
     SPEAKER 'Морт раскрывает рот. Гляди, за тобой — еще один летающий череп!'
 
     menu:
@@ -5606,7 +5606,7 @@ label dmorte_s295:  # from - # Check EXTENDS ~DABLE~ : 12
     jump show_graphics_menu
 
 # s296 # say30820
-label dmorte_s296:  # from - # Check EXTENDS ~DABLE~ : 13
+label dmorte_s296:  # from - # Check EXTENDS ~DABLE~ : 16Check EXTENDS ~DABLE~ : 13
     SPEAKER 'Морт покачивается, как будто пожимает плечами. Предпочитаю называть это проницательностью по части человеческой природы.'
 
     menu:
@@ -5637,7 +5637,7 @@ label dmorte_s298:  # from -
 
 
 # s299 # say32367
-label dmorte_s299:  # from - # Check EXTENDS ~DDEATHAD~ : 1
+label dmorte_s299:  # from - # Check EXTENDS ~DDEATHAD~ : 1Check EXTENDS ~DDEATHAD~ : 1
     SPEAKER ''Тайнах'?! Секундочку! Мы же не собираемся *слушать* этого пустомелю? Да ладно… пойдем лучше найдем парочку цыпочек-чувствующих, которые еще ни разу не пробовали пламенной страсти от прикосновения губ черепа. Он в предвкушении водит бровями.'
 
     menu:
@@ -5654,7 +5654,7 @@ label dmorte_s299:  # from - # Check EXTENDS ~DDEATHAD~ : 1
 
 
 # s300 # say32371
-label dmorte_s300:  # from - # Check EXTENDS ~DDEATHAD~ : 2
+label dmorte_s300:  # from - # Check EXTENDS ~DDEATHAD~ : 2Check EXTENDS ~DDEATHAD~ : 2Check EXTENDS ~DDEATHAD~ : 2
     SPEAKER 'Шепот Морта: Начало новых страданий.'
 
     menu:
@@ -5674,7 +5674,7 @@ label dmorte_s300:  # from - # Check EXTENDS ~DDEATHAD~ : 2
 
 
 # s301 # say32376
-label dmorte_s301:  # from - # Check EXTENDS ~DDEATHAD~ : 3
+label dmorte_s301:  # from - # Check EXTENDS ~DDEATHAD~ : 3Check EXTENDS ~DDEATHAD~ : 3
     SPEAKER 'Шепот Морта: Ага, как же.'
 
     menu:
@@ -5694,7 +5694,7 @@ label dmorte_s301:  # from - # Check EXTENDS ~DDEATHAD~ : 3
 
 
 # s302 # say32381
-label dmorte_s302:  # from - # Check EXTENDS ~DDEATHAD~ : 5
+label dmorte_s302:  # from - # Check EXTENDS ~DDEATHAD~ : 5Check EXTENDS ~DDEATHAD~ : 5Check EXTENDS ~DDEATHAD~ : 5
     SPEAKER 'Шепот Морта: И бесконечной скуки.'
 
     menu:
@@ -5714,7 +5714,7 @@ label dmorte_s302:  # from - # Check EXTENDS ~DDEATHAD~ : 5
 
 
 # s303 # say32386
-label dmorte_s303:  # from 301.2 # Check EXTENDS ~DDEATHAD~ : 6
+label dmorte_s303:  # from 301.2 # Check EXTENDS ~DDEATHAD~ : 6Check EXTENDS ~DDEATHAD~ : 6Check EXTENDS ~DDEATHAD~ : 6
     SPEAKER 'Шепот Морта: Кажется, теперь мы оба знаем, куда отправимся после смерти.'
 
     menu:
@@ -5734,7 +5734,7 @@ label dmorte_s303:  # from 301.2 # Check EXTENDS ~DDEATHAD~ : 6
 
 
 # s304 # say32391
-label dmorte_s304:  # from - # Check EXTENDS ~DDEATHAD~ : 8
+label dmorte_s304:  # from - # Check EXTENDS ~DDEATHAD~ : 8Check EXTENDS ~DDEATHAD~ : 8Check EXTENDS ~DDEATHAD~ : 8
     SPEAKER 'Шепот Морта: Это если только повезет.'
 
     menu:
@@ -5754,7 +5754,7 @@ label dmorte_s304:  # from - # Check EXTENDS ~DDEATHAD~ : 8
 
 
 # s305 # say32396
-label dmorte_s305:  # from - # Check EXTENDS ~DDEATHAD~ : 9
+label dmorte_s305:  # from - # Check EXTENDS ~DDEATHAD~ : 9Check EXTENDS ~DDEATHAD~ : 9Check EXTENDS ~DDEATHAD~ : 9
     SPEAKER 'Шепот Морта: И это типа стимул? Чтобы вляпаться в это *опять*? Ха, не могу дождаться, когда я снова стану летающим черепом. Ура! Забей на этого неудачника. Походу, он еще сам никогда не умирал, верно?'
 
     menu:
@@ -5774,7 +5774,7 @@ label dmorte_s305:  # from - # Check EXTENDS ~DDEATHAD~ : 9
 
 
 # s306 # say32401
-label dmorte_s306:  # from - # Check EXTENDS ~DDEATHAD~ : 11
+label dmorte_s306:  # from - # Check EXTENDS ~DDEATHAD~ : 11Check EXTENDS ~DDEATHAD~ : 11Check EXTENDS ~DDEATHAD~ : 11
     SPEAKER 'Шепот Морта: А, еще один дешевый лозунг.'
 
     menu:
@@ -5800,7 +5800,7 @@ label dmorte_s307:  # from - # Check EXTENDS ~DDEATHAD~ : 15
     jump show_graphics_menu
 
 # s308 # say32407
-label dmorte_s308:  # from - # Check EXTENDS ~DDEATHAD~ : 16
+label dmorte_s308:  # from - # Check EXTENDS ~DDEATHAD~ : 17Check EXTENDS ~DDEATHAD~ : 16
     SPEAKER 'Морт, увильнув от взгляда докладчика, поворачивается к тебе и шепотом произносит: Давай, шеф. Задай ему жару по этому поводу.'
 
     menu:
@@ -5813,7 +5813,7 @@ label dmorte_s308:  # from - # Check EXTENDS ~DDEATHAD~ : 16
 
 
 # s309 # say32410
-label dmorte_s309:  # from - # Check EXTENDS ~DDEATHAD~ : 18
+label dmorte_s309:  # from - # Check EXTENDS ~DDEATHAD~ : 26Check EXTENDS ~DDEATHAD~ : 17Check EXTENDS ~DDEATHAD~ : 18
     SPEAKER 'Отлично! Еще одна смерть! Подпишите меня! Среди слушателей раздается хохот. Докладчик выглядит сердитым.'
 
     menu:
@@ -5848,7 +5848,7 @@ label dmorte_s311:  # from - # Check EXTENDS ~DSARHAVA~ : 4
     jump show_graphics_menu
 
 # s312 # say32653
-label dmorte_s312:  # from - # Check EXTENDS ~DSARHAVA~ : 13
+label dmorte_s312:  # from - # Check EXTENDS ~DSARHAVA~ : 14Check EXTENDS ~DSARHAVA~ : 13
     SPEAKER 'Когда ты становишься на колени перед женщиной, Морт кричит: Шеф! Ты шутишь надо мной! То есть, я хочу сказать, ты же не будешь *этого* делать…'
 
     menu:
@@ -5864,7 +5864,7 @@ label dmorte_s312:  # from - # Check EXTENDS ~DSARHAVA~ : 13
 
 
 # s313 # say32654
-label dmorte_s313:  # from 312.1 # Check EXTENDS ~DSARHAVA~ : 13
+label dmorte_s313:  # from 312.1 # Check EXTENDS ~DSARHAVA~ : 7Check EXTENDS ~DSARHAVA~ : 13
     SPEAKER 'В этом есть что-то… но все же…'
 
     menu:
@@ -5913,7 +5913,7 @@ label dmorte_s319:  # from - # Check EXTENDS ~DSARHAVA~ : 42
     jump show_graphics_menu
 
 # s320 # say33073
-label dmorte_s320:  # from - # Check EXTENDS ~DGHYSIS~ : 1
+label dmorte_s320:  # from - # Check EXTENDS ~DGHYSIS~ : 1Check EXTENDS ~DGHYSIS~ : 1
     SPEAKER 'Кровавая война? Это еще скучней, чем слушать, как законники декламируют законы. Давай-ка найдем пару молоденьких чувствующих, нуждающихся в просвещении по части любовных страстей! В предвкушении он водит бровями.'
 
     menu:
@@ -5936,7 +5936,7 @@ label dmorte_s321:  # from - # Check EXTENDS ~DGHIVEM~ : 49
     jump show_graphics_menu
 
 # s322 # say33301
-label dmorte_s322:  # from - # Check EXTENDS ~DGHIVEM~ : 51
+label dmorte_s322:  # from - # Check EXTENDS ~DGHIVEM~ : 51Check EXTENDS ~DGHIVEM~ : 51
     SPEAKER 'Морт качает в твою сторону, обращаясь к мужчине: Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?'
 
     menu:
@@ -5955,7 +5955,7 @@ label dmorte_s323:  # from - # Check EXTENDS ~DGHIVEF~ : 47
     jump show_graphics_menu
 
 # s324 # say33429
-label dmorte_s324:  # from - # Check EXTENDS ~DGHIVEF~ : 49
+label dmorte_s324:  # from - # Check EXTENDS ~DGHIVEF~ : 49Check EXTENDS ~DGHIVEF~ : 49
     SPEAKER 'Морт качает в твою сторону, обращаясь к мужчине: Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?'
 
     menu:
@@ -6716,7 +6716,7 @@ label dmorte_s376:  # from -
 
 
 # s377 # say35343
-label dmorte_s377:  # from 376.0 376.1 376.2 # Check EXTENDS ~DS1221~ : 6
+label dmorte_s377:  # from 376.0 376.1 376.2 # Check EXTENDS ~DS1221~ : 4Check EXTENDS ~DS1221~ : 5Check EXTENDS ~DS1221~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
@@ -6836,7 +6836,7 @@ label dmorte_s384:  # from -
 
 
 # s385 # say35420
-label dmorte_s385:  # from 384.0 384.1 384.2 # Check EXTENDS ~DS748~ : 6
+label dmorte_s385:  # from 384.0 384.1 384.2 # Check EXTENDS ~DS748~ : 4Check EXTENDS ~DS748~ : 5Check EXTENDS ~DS748~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
@@ -6956,7 +6956,7 @@ label dmorte_s392:  # from -
 
 
 # s393 # say35497
-label dmorte_s393:  # from 392.0 392.1 392.2 # Check EXTENDS ~DS996~ : 6
+label dmorte_s393:  # from 392.0 392.1 392.2 # Check EXTENDS ~DS996~ : 4Check EXTENDS ~DS996~ : 5Check EXTENDS ~DS996~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
@@ -7076,7 +7076,7 @@ label dmorte_s400:  # from -
 
 
 # s401 # say35574
-label dmorte_s401:  # from 400.0 400.1 400.2 # Check EXTENDS ~DS863~ : 6
+label dmorte_s401:  # from 400.0 400.1 400.2 # Check EXTENDS ~DS863~ : 4Check EXTENDS ~DS863~ : 5Check EXTENDS ~DS863~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
@@ -7212,7 +7212,7 @@ label dmorte_s412:  # from 410.1 411.0
 
 
 # s413 # say39570
-label dmorte_s413:  # from 408.1
+label dmorte_s413:  # from 408.1 # ~SetGlobal("Yves_Shared","AR0605",1) ~ GOTO 414
     SPEAKER 'Ладно, ладно…'
 
     jump show_graphics_menu
@@ -7290,7 +7290,7 @@ label dmorte_s420:  # from - # Check EXTENDS ~DANNAH~ : 196
     jump show_graphics_menu
 
 # s421 # say40068
-label dmorte_s421:  # from - # Check EXTENDS ~DNENNY~ : 3
+label dmorte_s421:  # from - # Check EXTENDS ~DNENNY~ : 2Check EXTENDS ~DNENNY~ : 2Check EXTENDS ~DNENNY~ : 2Check EXTENDS ~DNENNY~ : 3
     SPEAKER 'Морт вертится вокруг тебя, подшучивая над очевидностью слов девушки. Силы небесные, шеф… а ведь она права! Как я раньше не заметил… ты же весь в *шрамах*!'
 
     menu:
@@ -7322,7 +7322,7 @@ label dmorte_s422:  # from -
 
 
 # s423 # say40076
-label dmorte_s423:  # from 422.0 # Check EXTENDS ~DNENNY~ : 9
+label dmorte_s423:  # from 422.0 # Check EXTENDS ~DNENNY~ : 9Check EXTENDS ~DNENNY~ : 9Check EXTENDS ~DNENNY~ : 9Check EXTENDS ~DNENNY~ : 9
     SPEAKER 'Морт умолкает.'
 
     menu:
@@ -7360,7 +7360,7 @@ label dmorte_s425:  # from - # Check EXTENDS ~DNENNY~ : 3
 
 
 # s426 # say40222
-label dmorte_s426:  # from - # Check EXTENDS ~DBROCUS4~ : 2
+label dmorte_s426:  # from - # Check EXTENDS ~DBROCUS4~ : 4Check EXTENDS ~DBROCUS4~ : 2
     SPEAKER 'Ооо, нет… ты просто *обязан* нам сейчас же все рассказать.'
 
     menu:
@@ -7376,7 +7376,7 @@ label dmorte_s426:  # from - # Check EXTENDS ~DBROCUS4~ : 2
 
 
 # s427 # say40275
-label dmorte_s427:  # from - # Check EXTENDS ~DSADJULI~ : 24
+label dmorte_s427:  # from - # Check EXTENDS ~DSADJULI~ : 12Check EXTENDS ~DSADJULI~ : 13Check EXTENDS ~DSADJULI~ : 24
     SPEAKER 'Морт подлетает поближе к тебе и шепчет: Мне жаль ее любовника. Он не представляет, как плохо обстоят дела. От таких девчонок, как эта, одни проблемы.'
 
     menu:
@@ -7395,7 +7395,7 @@ label dmorte_s427:  # from - # Check EXTENDS ~DSADJULI~ : 24
 
 
 # s428 # say40685
-label dmorte_s428:  # from - # Check EXTENDS ~DMARISSA~ : 3
+label dmorte_s428:  # from - # Check EXTENDS ~DMARISSA~ : 2Check EXTENDS ~DMARISSA~ : 3
     SPEAKER 'Морт тихонько шепчет: Ух ты… жуткая девчонка.'
 
     menu:
@@ -7477,7 +7477,7 @@ label dmorte_s434:  # from - # Check EXTENDS ~DKIMASXI~ : 2
     jump show_graphics_menu
 
 # s435 # say41633
-label dmorte_s435:  # from 436.0 # Check EXTENDS ~DKIMASXI~ : 4
+label dmorte_s435:  # from 436.0 # Check EXTENDS ~DKIMASXI~ : 14Check EXTENDS ~DKIMASXI~ : 4
     SPEAKER 'Конечно, шеф, как скажешь. Хороша, чертовка, а? — Морт фыркает, затем двигает бровями. — Это мне *нравится*!'
 
     menu:
@@ -7870,7 +7870,7 @@ label dmorte_s461:  # from 460.0
 
 
 # s462 # say41919
-label dmorte_s462:  # from - # Check EXTENDS ~DJUMBLE~ : 9
+label dmorte_s462:  # from - # Check EXTENDS ~DJUMBLE~ : 2Check EXTENDS ~DJUMBLE~ : 8Check EXTENDS ~DJUMBLE~ : 9
     SPEAKER 'Морт шепчет: В каком-то дурдоме недостает постояльца.'
 
     menu:
@@ -7890,7 +7890,7 @@ label dmorte_s462:  # from - # Check EXTENDS ~DJUMBLE~ : 9
 
 
 # s463 # say41923
-label dmorte_s463:  # from - # Check EXTENDS ~DJUMBLE~ : 7
+label dmorte_s463:  # from - # Check EXTENDS ~DJUMBLE~ : 7Check EXTENDS ~DJUMBLE~ : 7Check EXTENDS ~DJUMBLE~ : 7
     SPEAKER 'Ого… шеф, похоже, что в тебя только что бросили проклятье…'
 
     menu:
@@ -7915,7 +7915,7 @@ label dmorte_s464:  # from - # Check EXTENDS ~DMONTAGU~ : 29
     jump show_graphics_menu
 
 # s465 # say42930
-label dmorte_s465:  # from - # Check EXTENDS ~DMONTAGU~ : 31
+label dmorte_s465:  # from - # Check EXTENDS ~DMONTAGU~ : 30Check EXTENDS ~DMONTAGU~ : 31
     SPEAKER 'Доверься мне, малыш. Начни игнорировать ее, придумай какие-нибудь придирки, пусть гадает — и тогда она станет из кожи вон лезть, лишь бы понять, в чем дело. Верно, шеф?'
 
     menu:
@@ -7934,7 +7934,7 @@ label dmorte_s466:  # from - # Check EXTENDS ~DKIINA~ : 35
     jump show_graphics_menu
 
 # s467 # say43908
-label dmorte_s467:  # from - # Check EXTENDS ~DNEML~ : 11
+label dmorte_s467:  # from - # Check EXTENDS ~DNEML~ : 4Check EXTENDS ~DNEML~ : 6Check EXTENDS ~DNEML~ : 14Check EXTENDS ~DNEML~ : 11
     SPEAKER 'Ух ты.'
 
     menu:
@@ -7969,7 +7969,7 @@ label dmorte_s469:  # from - # Check EXTENDS ~DANNAH~ : 210
     jump show_graphics_menu
 
 # s470 # say43916
-label dmorte_s470:  # from - # Check EXTENDS ~DNEML~ : 11
+label dmorte_s470:  # from - # Check EXTENDS ~DNEML~ : 4Check EXTENDS ~DNEML~ : 6Check EXTENDS ~DNEML~ : 14Check EXTENDS ~DNEML~ : 11
     SPEAKER 'Морт резко останавливается и отворачивается, что-то неразборчиво бормоча.'
 
     menu:
@@ -8026,7 +8026,7 @@ label dmorte_s475:  # from - # Check EXTENDS ~DUDESIRE~ : 2
     jump show_graphics_menu
 
 # s476 # say45026
-label dmorte_s476:  # from - # Check EXTENDS ~D3PLANEA~ : 1
+label dmorte_s476:  # from - # Check EXTENDS ~D3PLANEA~ : 1Check EXTENDS ~D3PLANEA~ : 1
     SPEAKER 'Морт громко вздыхает. Брось, шеф, мы что, и впрямь останемся на это?'
 
     menu:
@@ -8192,7 +8192,7 @@ label dmorte_s490:  # from - # Check EXTENDS ~DANNAH~ : 242
     jump show_graphics_menu
 
 # s491 # say50164
-label dmorte_s491:  # from - # Check EXTENDS ~DADABUS~ : 6
+label dmorte_s491:  # from - # Check EXTENDS ~DANNAH~ : 240Check EXTENDS ~DADABUS~ : 6
     SPEAKER 'Вот *ты* и скажи, бесовка.'
 
     menu:
@@ -8335,7 +8335,7 @@ label dmorte_s503:  # from 500.2 501.0 # Check EXTENDS ~DCODEXI~ : 2
     jump show_graphics_menu
 
 # s504 # say50697
-label dmorte_s504:  # from - # Check EXTENDS ~DVRISCH~ : 7
+label dmorte_s504:  # from - # Check EXTENDS ~DVRISCH~ : 45Check EXTENDS ~DVRISCH~ : 7
     SPEAKER 'Эй! Эй! Эй! Ты ведь *шутишь*, правда? Ты *не можешь* говорить это серьезно, шеф!'
 
     menu:
@@ -8351,7 +8351,7 @@ label dmorte_s504:  # from - # Check EXTENDS ~DVRISCH~ : 7
 
 
 # s505 # say50701
-label dmorte_s505:  # from - # Check EXTENDS ~DVRISCH~ : 46
+label dmorte_s505:  # from - # Check EXTENDS ~DVRISCH~ : 46 # ~DropInventory() LeaveParty() ~ EXTERN ~DVRISCH~ 46
     SPEAKER 'Не могу в это поверить… ты и до этого довольно низко падал, шеф, но это уже слишком. Увидимся в Бааторе, ты, искалеченный мелкостручковый вероломный неблагодарный искромсанный говножующий жирноволосый кривозубый жалкий кусок забывчивого мусора! Помяни мои слова, чертов ублюдок, продолжай в том же духе — и уже скоро откинешься *навсегда*… и тогда уж ты свое получишь!'
 
     jump show_graphics_menu
@@ -8383,7 +8383,7 @@ label dmorte_s508:  # from -
 
 
 # s509 # say52576
-label dmorte_s509:  # from 508.0 # Check EXTENDS ~DRAVEL~ : 68
+label dmorte_s509:  # from 508.0 # Check EXTENDS ~DRAVEL~ : 66Check EXTENDS ~DRAVEL~ : 67Check EXTENDS ~DRAVEL~ : 68
     SPEAKER 'Умолкни?! — Морт клацает зубами. — Черта с два! Мне кажется, что мы уже достаточно наслушались, как эта старая карга трясет своей черепушкой, но теперь она уже перегибает палку, говоря, что у меня нет кожи! Ну и ЧТО?! Очевидно, тот факт, что у НЕЕ есть кожа, просто творит чудеса с ЕЕ видом! Она что, думает, мне *нравится* все время быть ГОЛЫМ? И *еще*…'
 
     menu:
@@ -8617,7 +8617,7 @@ label dmorte_s525:  # from - # Check EXTENDS ~DPILLAR~ : 10
     jump show_graphics_menu
 
 # s526 # say53824
-label dmorte_s526:  # from - # Check EXTENDS ~DPILLAR~ : 50
+label dmorte_s526:  # from - # Check EXTENDS ~DPILLAR~ : 2Check EXTENDS ~DPILLAR~ : 2Check EXTENDS ~DPILLAR~ : 12Check EXTENDS ~DPILLAR~ : 50
     SPEAKER 'Морт трясется от страха, его зубы стучат. Я не могу вернуться, шеф! Не могу! Не могу! Не могу!'
 
     menu:
@@ -8650,7 +8650,7 @@ label dmorte_s528:  # from - # Check EXTENDS ~DPILLAR~ : 17
     jump show_graphics_menu
 
 # s529 # say53831
-label dmorte_s529:  # from - # Check EXTENDS ~DPILLAR~ : 50
+label dmorte_s529:  # from - # Check EXTENDS ~DPILLAR~ : 19Check EXTENDS ~DPILLAR~ : 20Check EXTENDS ~DPILLAR~ : 21Check EXTENDS ~DPILLAR~ : 22Check EXTENDS ~DPILLAR~ : 23Check EXTENDS ~DPILLAR~ : 50
     SPEAKER 'Шеф? Нет! Нет! Ты *не можешь*! Брось это!'
 
     menu:
@@ -8688,7 +8688,7 @@ label dmorte_s529:  # from - # Check EXTENDS ~DPILLAR~ : 50
 
 
 # s530 # say53842
-label dmorte_s530:  # from 529.0 529.1 529.2 # Check EXTENDS ~DPILLAR~ : 50
+label dmorte_s530:  # from 529.0 529.1 529.2 # Check EXTENDS ~DPILLAR~ : 19Check EXTENDS ~DPILLAR~ : 20Check EXTENDS ~DPILLAR~ : 21Check EXTENDS ~DPILLAR~ : 22Check EXTENDS ~DPILLAR~ : 23Check EXTENDS ~DPILLAR~ : 50
     SPEAKER 'Морт смотрит на тебя скептически. Ты *уверен*? *Клянешься*? Эй, о чем это я?! Нет! Ни за что! Эй, ты ведь *не можешь* вернуть меня туда?!'
 
     menu:
@@ -8718,7 +8718,7 @@ label dmorte_s530:  # from 529.0 529.1 529.2 # Check EXTENDS ~DPILLAR~ : 50
 
 
 # s531 # say53849
-label dmorte_s531:  # from 529.3 # Check EXTENDS ~DPILLAR~ : 50
+label dmorte_s531:  # from 529.3 # Check EXTENDS ~DPILLAR~ : 19Check EXTENDS ~DPILLAR~ : 20Check EXTENDS ~DPILLAR~ : 21Check EXTENDS ~DPILLAR~ : 22Check EXTENDS ~DPILLAR~ : 23Check EXTENDS ~DPILLAR~ : 50
     SPEAKER 'Морт некоторое время смотрит на тебя, разинув рот. ЧЕГО? Ни за что! Ты уже не такой сильный, каким был, когда… слушай, забудь об этом; ты не сможешь этого сделать, не получится! Эй, ты же *не можешь* вернуть меня туда?!'
 
     menu:
@@ -8761,7 +8761,7 @@ label dmorte_s532:  # from - # Check EXTENDS ~DPILLAR~ : 19
 
 
 # s533 # say53860
-label dmorte_s533:  # from 532.0 # Check EXTENDS ~DPILLAR~ : 18
+label dmorte_s533:  # from 532.0 # Check EXTENDS ~DPILLAR~ : 19Check EXTENDS ~DPILLAR~ : 18
     SPEAKER 'Чего? Ты что, *спятил*? Ты продаешь *меня*, а не того *НЕЧИСТОГО*?! Он помог тебе только потому, что он проклят, принужден к этому! А как же *я*? Кто вытащил тебя из Морга, дружище? Кто будет стоять… э, парить… возле тебя, когда ты встретишь то, что ждет тебя в той Крепости Чего-то-там?! А? А? НЕ ФЬЮЛ ТОЛСТОЗАДЫЙ, ЭТО УЖ ТОЧНО!'
 
     menu:
@@ -9206,7 +9206,7 @@ label dmorte_s557:  # from 556.0
 
 
 # s558 # say54281
-label dmorte_s558:  # from 557.0 # Check EXTENDS ~DGRACE~ : 170
+label dmorte_s558:  # from 557.0 # Check EXTENDS ~DGRACE~ : 169Check EXTENDS ~DGRACE~ : 170
     SPEAKER 'Да… Я знаю, шеф. Не буду лгать — я не хочу туда… но я пойду. Просто знай: как только мы войдем в портал, это больше не будет касаться только *тебя*. Наши жизни окажутся в твоих руках, и мы не сможем вернуться, если умрем.'
 
     menu:
@@ -9387,7 +9387,7 @@ label dmorte_s575:  # from 574.0 # Check EXTENDS ~DNORDOM~ : 74
 
 
 # s576 # say55848
-label dmorte_s576:  # from - # Check EXTENDS ~DNORDOM~ : 65
+label dmorte_s576:  # from - # Check EXTENDS ~DGRACE~ : 184Check EXTENDS ~DNORDOM~ : 65
     SPEAKER 'Механус? Скучный во всех смыслах этого слова, шеф. Представь себе план, наполненный модронами и большими вертящимися шестернями — вот и весь великий, огромный и СКУЧНЫЙ план Механус. Слишком много законов, слишком нудно. О таком месте ты даже и думать не захочешь, не то чтобы посетить.'
 
     menu:
@@ -9413,7 +9413,7 @@ label dmorte_s577:  # from - # Check EXTENDS ~DNORDOM~ : 65
 
 
 # s578 # say55860
-label dmorte_s578:  # from - # Check EXTENDS ~DNORDOM~ : 74
+label dmorte_s578:  # from - # Check EXTENDS ~DGRACE~ : 186Check EXTENDS ~DNORDOM~ : 67Check EXTENDS ~DNORDOM~ : 74
     SPEAKER 'Все модроны — части этой 'совокупности', шеф, все равно что огромное хранилище энергии… Когда один из них умирает, энергия, затраченная для создания модрона, возвращается в хранилище, и создается новый модрон. Дело вот в чем… когда модроны съезжают с катушек, они типа обрывают эту связь, при этом оставляя у себя немного энергии.'
 
     menu:
@@ -9447,7 +9447,7 @@ label dmorte_s581:  # from -
     jump show_graphics_menu
 
 # s582 # say55873
-label dmorte_s582:  # from - # Check EXTENDS ~DNORDOM~ : 74
+label dmorte_s582:  # from - # Check EXTENDS ~DNORDOM~ : 67Check EXTENDS ~DNORDOM~ : 74
     SPEAKER 'Вот как?! Я?! Ну… Да, ты совершенно… да-а, ты это слышал, шеф? То, что сказала суккубка? Она права. Меня легче понять, я 'умею подбирать слова', знаю, что говорю. Видишь, как я тебе нужен!'
 
     menu:
@@ -9502,7 +9502,7 @@ label dmorte_s585:  # from 584.0 # Check EXTENDS ~DNORDOM~ : 74
 
 
 # s586 # say55897
-label dmorte_s586:  # from 585.0 # Check EXTENDS ~DNORDOM~ : 74
+label dmorte_s586:  # from 585.0 # Check EXTENDS ~DNORDOM~ : 74Check EXTENDS ~DNORDOM~ : 74
     SPEAKER 'Морт на миг умолкает. Ну… да, можно и так сказать. То есть, если бы он не устроил свой маленький бродяжный бунт, с ним бы все было в порядке… Если бы он умер, появился бы еще один модрон — точная его копия. Но поскольку он 'обратился'… ну, когда он умрет, эта частичка потеряется.'
 
     menu:
@@ -9613,7 +9613,7 @@ label dmorte_s592:  # from 590.0 591.0 591.1
     jump show_graphics_menu
 
 # s593 # say55940
-label dmorte_s593:  # from 592.0 # Check EXTENDS ~DNORDOM~ : 74
+label dmorte_s593:  # from 592.0 # Check EXTENDS ~DNORDOM~ : 74Check EXTENDS ~DNORDOM~ : 74
     SPEAKER 'Потому что, шеф, хаос тоже должен иметь место. Если бы все было так, как это видят *модроны*, это не было бы похоже на жизнь.. по крайней мере, на жизнь, которой я хочу жить. Они только и хотят, чтобы все *структурировать*. Ух-х.'
 
     menu:
@@ -9725,13 +9725,13 @@ label dmorte_s602:  # from -
 
 
 # s603 # say61481
-label dmorte_s603:  # from -
+label dmorte_s603:  # from - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Моим? Я — голова Векны. [MRT562]'
 
     jump show_graphics_menu
 
 # s604 # say61482
-label dmorte_s604:  # from -
+label dmorte_s604:  # from - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Боги услышали мои молитвы! [MRT485]'
 
     jump show_graphics_menu
@@ -9743,19 +9743,19 @@ label dmorte_s605:  # from - # Check EXTENDS ~BGRACE~ : 3
     jump show_graphics_menu
 
 # s606 # say61484
-label dmorte_s606:  # from -
+label dmorte_s606:  # from - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER '*Пожалуйста*, мы можем сменить тему? [MRT559B]'
 
     jump show_graphics_menu
 
 # s607 # say61485
-label dmorte_s607:  # from -
+label dmorte_s607:  # from - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Я? Я *ле пети Морт*. [MRT560]'
 
     jump show_graphics_menu
 
 # s608 # say61486
-label dmorte_s608:  # from -
+label dmorte_s608:  # from - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Что сказать? Я — *Мементо Морте*. [MRT561]'
 
     jump show_graphics_menu
@@ -9767,13 +9767,13 @@ label dmorte_s609:  # from - # Check EXTENDS ~BGRACE~ : 7
     jump show_graphics_menu
 
 # s610 # say61488
-label dmorte_s610:  # from -
+label dmorte_s610:  # from - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Ничего! Ничего такого. Важного. [MRT486B]'
 
     jump show_graphics_menu
 
 # s611 # say61489
-label dmorte_s611:  # from -
+label dmorte_s611:  # from - # ~SetGlobal("Grace_Talked_Morte","GLOBAL",0) ~ EXIT
     SPEAKER 'Гав! Гав! Хе-хе-хе! [MRT484]'
 
     jump show_graphics_menu
@@ -9797,7 +9797,7 @@ label dmorte_s614:  # from - # Check EXTENDS ~BANNAH~ : 3
     jump show_graphics_menu
 
 # s615 # say63456
-label dmorte_s615:  # from -
+label dmorte_s615:  # from - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",3) ~ EXIT
     SPEAKER 'Я перестал дышать с тех пор, как увидел тебя, бесовка. [MRT524]'
 
     jump show_graphics_menu
@@ -9827,7 +9827,7 @@ label dmorte_s619:  # from - # Check EXTENDS ~BANNAH~ : 12
     jump show_graphics_menu
 
 # s620 # say63462
-label dmorte_s620:  # from -
+label dmorte_s620:  # from - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",8) ~ EXIT
     SPEAKER 'Я могу придумать способы и похуже. [MRT525]'
 
     jump show_graphics_menu
@@ -9839,13 +9839,13 @@ label dmorte_s621:  # from - # Check EXTENDS ~BANNAH~ : 15
     jump show_graphics_menu
 
 # s622 # say63464
-label dmorte_s622:  # from -
+label dmorte_s622:  # from - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",0) ~ EXIT
     SPEAKER 'С той точки, где я парю, она выглядит хорошенькой. [MRT533B]'
 
     jump show_graphics_menu
 
 # s623 # say63666
-label dmorte_s623:  # from -
+label dmorte_s623:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Я заметил. Почему бы тебе не поделиться своей проницательностью с шефом, а? [MRT563]'
 
     jump show_graphics_menu
@@ -9857,7 +9857,7 @@ label dmorte_s624:  # from - # Check EXTENDS ~BNORDOM~ : 2
     jump show_graphics_menu
 
 # s625 # say63668
-label dmorte_s625:  # from -
+label dmorte_s625:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",3) ~ EXIT
     SPEAKER 'Тогда почему бы тебе не стать чуточку 'эффективнее', пустомеля-полигон. [MRT469A]'
 
     jump show_graphics_menu
@@ -9875,13 +9875,13 @@ label dmorte_s627:  # from - # Check EXTENDS ~BNORDOM~ : 6
     jump show_graphics_menu
 
 # s628 # say63671
-label dmorte_s628:  # from -
+label dmorte_s628:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",5) ~ EXIT
     SPEAKER 'Тогда ответ — да. [MRT565B]'
 
     jump show_graphics_menu
 
 # s629 # say63672
-label dmorte_s629:  # from -
+label dmorte_s629:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",6) ~ EXIT
     SPEAKER 'Я сейчас тебе приделаю девятнадцатую, если ты не заткнешь свою пасть. [MRT564]'
 
     jump show_graphics_menu
@@ -9893,7 +9893,7 @@ label dmorte_s630:  # from - # Check EXTENDS ~BNORDOM~ : 9
     jump show_graphics_menu
 
 # s631 # say63674
-label dmorte_s631:  # from -
+label dmorte_s631:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",7) ~ EXIT
     SPEAKER 'Добро пожаловать на планы, сынок. [MRT569B]'
 
     jump show_graphics_menu
@@ -9905,7 +9905,7 @@ label dmorte_s632:  # from - # Check EXTENDS ~BNORDOM~ : 11
     jump show_graphics_menu
 
 # s633 # say63676
-label dmorte_s633:  # from -
+label dmorte_s633:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",8) ~ EXIT
     SPEAKER 'Тогда ответ на твой вопрос — да. [MRT568B]'
 
     jump show_graphics_menu
@@ -9917,7 +9917,7 @@ label dmorte_s634:  # from - # Check EXTENDS ~BNORDOM~ : 13
     jump show_graphics_menu
 
 # s635 # say63678
-label dmorte_s635:  # from -
+label dmorte_s635:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",9) ~ EXIT
     SPEAKER 'Эй. Некоторые читают словарь, а некоторые — его пишут. [MRT572B]'
 
     jump show_graphics_menu
@@ -9947,7 +9947,7 @@ label dmorte_s639:  # from - # Check EXTENDS ~BNORDOM~ : 20
     jump show_graphics_menu
 
 # s640 # say63683
-label dmorte_s640:  # from -
+label dmorte_s640:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Если ты не заткнешь свою пасть, я тебе сейчас это покажу. [MRT576C]'
 
     jump show_graphics_menu
@@ -9959,25 +9959,25 @@ label dmorte_s641:  # from - # Check EXTENDS ~DGRACE~ : 373
     jump show_graphics_menu
 
 # s642 # say63685
-label dmorte_s642:  # from -
+label dmorte_s642:  # from - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",0) ~ EXIT
     SPEAKER 'Поверь мне. Анна заслуживает поцелуя. [MRT575B]'
 
     jump show_graphics_menu
 
 # s643 # say63686
-label dmorte_s643:  # from -
+label dmorte_s643:  # from - # ~SetGlobal("Nordom_Talked_Annah","GLOBAL",0) ~ EXIT
     SPEAKER '::Невинно посвистывает:: [MRT472A]'
 
     jump show_graphics_menu
 
 # s644 # say63688
-label dmorte_s644:  # from -
+label dmorte_s644:  # from - # ~SetGlobal("Nordom_Talked_Grace","GLOBAL",2) ~ EXIT
     SPEAKER 'Никто! Никто ему этого не говорил! [MRT473D]'
 
     jump show_graphics_menu
 
 # s645 # say63689
-label dmorte_s645:  # from -
+label dmorte_s645:  # from - # ~SetGlobal("Nordom_Talked_Grace","GLOBAL",3) ~ EXIT
     SPEAKER 'Это чисто добровольное действие с их стороны, идиот. Э… или я не все знаю. [MRT577]'
 
     jump show_graphics_menu
@@ -11026,7 +11026,7 @@ label dmorte_s712:  # from 711.0
 
 
 # s713 # say65804
-label dmorte_s713:  # from 712.0
+label dmorte_s713:  # from 712.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",1) ~ GOTO 714
     SPEAKER 'Ну да, шеф. Я же обещал. Морт всегда держит свои обещания, — он делает паузу. — Ну, почти всегда. Хе-хе. Была одна крошка с Арбореи, которая…'
 
     jump show_graphics_menu
@@ -11090,7 +11090,7 @@ label dmorte_s718:  # from 717.0
     jump show_graphics_menu
 
 # s719 # say65818
-label dmorte_s719:  # from 718.0
+label dmorte_s719:  # from 718.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",2) ~ GOTO 720
     SPEAKER 'Я имею в виду, сначала я думал, что это побочный эффект того, что 'связывает' меня с тобой… но спустя несколько сотен лет, я понял, что это нечто *большее*… более глубокое. Я просто почувствовал, что каким-то образом *связан* с тобой. Возможно, это все твои страдания, шеф… твои муки. Я не знаю. Возможно, я чувствую… ну, не знаю… что я *ответственный* за то, что я сделал. Что, если это из-за меня ты стал таким?'
 
     jump show_graphics_menu

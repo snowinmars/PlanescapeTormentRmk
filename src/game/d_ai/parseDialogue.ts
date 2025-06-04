@@ -15,9 +15,14 @@ export const parseDialogue = (inputText: string): State[] => {
 
     let currentState: State | null = null;
     let i = 0;
+    let beforeStartBuffer = '';
 
     while (i < lines.length) {
         const line = lines[i];
+
+        if (!currentState) {
+            beforeStartBuffer += line;
+        }
 
         const stateBeginMatch = line.match(/THEN BEGIN (\d+)\s*\/\/ from:(.*)/);
         if (stateBeginMatch) {
@@ -37,9 +42,10 @@ export const parseDialogue = (inputText: string): State[] => {
                 sayId: 0,
                 stateBody: '',
                 answers: [],
-                free: undefined
+                free: beforeStartBuffer
             };
             states.push(currentState);
+            beforeStartBuffer = '';
             i++;
             continue;
         }
@@ -48,16 +54,31 @@ export const parseDialogue = (inputText: string): State[] => {
             const sayMatch = line.match(/SAY #(\d+)\s*\/\*\s*(.*?)\s*\*\//);
             if (sayMatch) {
                 currentState.sayId = parseInt(sayMatch[1], 10);
-                currentState.stateBody = sayMatch[2];
+                currentState.stateBody = sayMatch[2].trim();
                 i++;
                 continue;
             }
 
             const externMatch = line.match(/EXTERN (.*) (\d+)/)
             if (externMatch) {
-                const targetFile = externMatch[1];
-                const targetLine = externMatch[2];
-                currentState.free = `Check EXTENDS ${targetFile} : ${targetLine}`;
+                const targetFile = externMatch[1].trim();
+                const targetLine = externMatch[2].trim();
+                if (currentState.free) currentState.free += `Check EXTENDS ${targetFile} : ${targetLine}`;
+                else currentState.free = `Check EXTENDS ${targetFile} : ${targetLine}`;
+            }
+
+            const justAction1Match = line.match(/IF ~~ THEN DO(.*)/)
+            if (justAction1Match) {
+                const value = justAction1Match[1].trim();
+                if (currentState.free) currentState.free += ` # ${value}`;
+                else currentState.free = value;
+            }
+
+            const justAction2Match = line.match(/IF ~ ([^~]*)$/)
+            if (justAction2Match) {
+                const value = justAction2Match[1].trim();
+                if (currentState.free) currentState.free += ` # ${value}`;
+                else currentState.free = value;
             }
 
             const answerMatch = line.match(/IF\s+~(.*?)~?\s*THEN REPLY #(\d+)\s*\/\*\s*(.*?)\s*\*\/(.*?)(?:JOURNAL #(\d+) \/\*(.*)\*\/)?(?:(?:GOTO (\d+))|EXIT|EXTERN.*)/);

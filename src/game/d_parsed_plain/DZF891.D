@@ -65,7 +65,7 @@ label dzf891_dispose:
 
 
 # s0 # say35274
-label dzf891_s0:  # from - # Check EXTENDS ~DMORTE~ : 366
+label dzf891_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 366Check EXTENDS ~DMORTE~ : 366
     SPEAKER 'Этот труп женщины выглядит особенно отвратительно: он лишен ушей, носа и губ. Чтобы зашить рот, препарирующему пришлось стягивать кожу вокруг рта очень туго; через оставшуюся открытой щель все еще можно разглядеть ряд кривых желтых зубов. На лбу вырезан номер 891.'
 
     menu:
@@ -119,7 +119,7 @@ label dzf891_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 366
 
 
 # s2 # say35295
-label dzf891_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 366
+label dzf891_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 366 # False())
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

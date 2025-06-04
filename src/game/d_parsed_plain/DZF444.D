@@ -65,7 +65,7 @@ label dzf444_dispose:
 
 
 # s0 # say35210
-label dzf444_s0:  # from - # Check EXTENDS ~DMORTE~ : 358
+label dzf444_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 358Check EXTENDS ~DMORTE~ : 358
     SPEAKER 'У этого трупа женщины ужасный вид. Ее грубая, обработанная бальзамом кожа покрыта сотнями небольших укусов, вероятно, крысиных. Судя по складкам вокруг ран, они, скорее всего, были нанесены еще до того, как труп препарировали. Ее губы зашиты, а на лице темно-синими чернилами выведен номер 444.'
 
     menu:
@@ -119,7 +119,7 @@ label dzf444_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 358
 
 
 # s2 # say35231
-label dzf444_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 358
+label dzf444_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 358 # False())
     SPEAKER 'Труп не реагирует. Кажется, он слишкомдалек от того, чтобы отвечать на твои вопросы.'
 
     menu:

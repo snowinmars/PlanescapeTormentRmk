@@ -538,7 +538,7 @@ label dvaxis_dispose:
 
 
 # s0 # say453
-label dvaxis_s0:  # from -
+label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // from: # False())
     SPEAKER 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
@@ -758,7 +758,7 @@ label dvaxis_s8:  # from 7.2
 
 
 # s9 # say1363
-label dvaxis_s9:  # from 7.3 # Check EXTENDS ~DMORTE~ : 85
+label dvaxis_s9:  # from 7.3 # Check EXTENDS ~DMORTE~ : 85Check EXTENDS ~DMORTE~ : 85
     SPEAKER 'Он изучает тебя более пристально. Ты фпион? Ты иф яфейки?'
 
     menu:
@@ -1030,7 +1030,7 @@ label dvaxis_s22:  # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
 
 # s23 # say4425
-label dvaxis_s23:  # from 21.0 22.0 # Check EXTENDS ~DMORTE~ : 89
+label dvaxis_s23:  # from 21.0 22.0 # Check EXTENDS ~DMORTE~ : 89Check EXTENDS ~DMORTE~ : 89
     SPEAKER 'Зомби в страхе умолкает, ничего не желая говорить.'
 
     menu:
@@ -1678,7 +1678,7 @@ label dvaxis_s55:  # from 43.10
 
 
 # s56 # say4582
-label dvaxis_s56:  # from 55.0
+label dvaxis_s56:  # from 55.0 # GlobalGT("Vaxis","GLOBAL",0)
     SPEAKER 'Фтвааный. Не твуфявый, не анавфифт. Гуава двугие… — пожимает плечами. — Как у квыфы. Фтванно.'
 
     menu:

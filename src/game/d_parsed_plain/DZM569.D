@@ -1,6 +1,3 @@
-
-
-
 init python:
     def _r24576_condition(gsm):
         return not gsm.get_mortuary_walkthrough() \
@@ -43,7 +40,7 @@ label dzm569_dispose:
 
 
 # s0 # say24575
-label dzm569_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
+label dzm569_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE1~ : 31
     SPEAKER 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер 569 на открывшейся кости.'
 
     menu:

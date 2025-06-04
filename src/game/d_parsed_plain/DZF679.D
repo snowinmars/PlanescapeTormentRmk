@@ -65,7 +65,7 @@ label dzf679_dispose:
 
 
 # s0 # say35178
-label dzf679_s0:  # from - # Check EXTENDS ~DMORTE~ : 354
+label dzf679_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 354Check EXTENDS ~DMORTE~ : 354
     SPEAKER 'Похоже, это труп довольно таки старой, даже древней женщины. Если не обращать внимание на зловоние бальзамирующей жидкости, швы на ее рту и номер 679, вышитый на правой щеке, то она выглядит почти так же, как и в последние годы своей жизни.'
 
     menu:
@@ -119,7 +119,7 @@ label dzf679_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 354
 
 
 # s2 # say35199
-label dzf679_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 354
+label dzf679_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 354 # False())
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

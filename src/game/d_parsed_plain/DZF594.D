@@ -65,7 +65,7 @@ label dzf594_dispose:
 
 
 # s0 # say35018
-label dzf594_s0:  # from - # Check EXTENDS ~DMORTE~ : 334
+label dzf594_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 334Check EXTENDS ~DMORTE~ : 334
     SPEAKER 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани. На ее лбу угольным карандашом нацарапан номер 594.'
 
     menu:
@@ -119,7 +119,7 @@ label dzf594_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 334
 
 
 # s2 # say35039
-label dzf594_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 334
+label dzf594_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 334 # False())
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

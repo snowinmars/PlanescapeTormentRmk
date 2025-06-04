@@ -34,7 +34,7 @@ label dmorte1_dispose:
 
 
 # s0 # say39792
-label dmorte1_s0:  # from -
+label dmorte1_s0:  # from - # ~ THEN BEGIN 0 // from:
     SPEAKER 'Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба. [MRT001]'
 
     menu:

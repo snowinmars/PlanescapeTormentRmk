@@ -1,6 +1,3 @@
-
-
-
 init python:
     def _r24565_condition(gsm):
         return not gsm.get_mortuary_walkthrough() \
@@ -43,7 +40,7 @@ label dzm825_dispose:
 
 
 # s0 # say24564
-label dzm825_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
+label dzm825_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE1~ : 31
     SPEAKER 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.'
 
     menu:

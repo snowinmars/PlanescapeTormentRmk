@@ -140,7 +140,7 @@ label deivene_dispose:
 
 
 # s0 # say3404
-label deivene_s0:  # from -
+label deivene_s0:  # from - # IF ~  Global("EiVene","GLOBAL",0)~ THEN BEGIN 0 // from:
     SPEAKER 'Перед тобой хрупкая девушка с бледным лицом. Из-за впалой кожи на щеках и шее кажется, будто она голодает. Судя по всему, она увлечена обследованием тела, лежащим перед ней, тыкая по телу пальцем.'
 
     menu:
@@ -276,7 +276,7 @@ label deivene_s8:  # from 7.1
 
 
 # s9 # say3439
-label deivene_s9:  # from 7.0 8.0 # Check EXTENDS ~DMORTE~ : 59
+label deivene_s9:  # from 7.0 8.0 # Check EXTENDS ~DMORTE~ : 59Check EXTENDS ~DMORTE~ : 59
     SPEAKER 'Спустя несколько минут она заканчивает. Щелкнув когтями, она поворачивается к тебе. К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.'
 
     menu:
@@ -346,7 +346,7 @@ label deivene_s13:  # from 12.0 # Check EXTENDS ~DMORTE~ : 60
 
 
 # s14 # say3454
-label deivene_s14:  # from 13.0
+label deivene_s14:  # from 13.0 # Global("EiVene","GLOBAL",1)
     SPEAKER 'Эи-Вейн в последний раз прикасается к твоему телу, еще раз фыркает, кивает, а затем отмахивается своими когтями. Готово. Пшел-пшел.'
 
     menu:
@@ -383,7 +383,7 @@ label deivene_s15:  # from -
 
 
 # s16 # say3464
-label deivene_s16:  # from 15.0
+label deivene_s16:  # from 15.0 # ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) Wait(3) ~ GOTO 26
     SPEAKER 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
 
     jump show_graphics_menu

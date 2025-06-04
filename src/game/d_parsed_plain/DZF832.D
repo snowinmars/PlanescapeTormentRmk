@@ -65,7 +65,7 @@ label dzf832_dispose:
 
 
 # s0 # say35146
-label dzf832_s0:  # from - # Check EXTENDS ~DMORTE~ : 350
+label dzf832_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 350Check EXTENDS ~DMORTE~ : 350
     SPEAKER 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет. Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер 832 элегантным шрифтом.'
 
     menu:
@@ -119,7 +119,7 @@ label dzf832_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 350
 
 
 # s2 # say35167
-label dzf832_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350
+label dzf832_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350 # False())
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
