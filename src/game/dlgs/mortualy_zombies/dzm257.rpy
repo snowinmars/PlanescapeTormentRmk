@@ -3,7 +3,7 @@ init python:
         gsm.set_dead_dzm257(True)
     def _know_dzm257_spirit_action(gsm):
         gsm.set_know_dzm257_spirit(True)
-    def _know_dzm257_spirit_condition(gsm)
+    def _know_dzm257_spirit_condition(gsm):
         return gsm.get_know_dzm257_spirit()
 
 
@@ -26,7 +26,8 @@ init python:
         return gsm.get_can_speak_with_dead()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
@@ -70,10 +71,10 @@ label dzm257_s0:  # from -
             jump dzm257_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6514
-            jump dzf1096_dispose
+            jump dzm257_dispose
         'Оставить труп в покое.':
             # r5 # reply6515
-            jump dzf1096_dispose
+            jump dzm257_dispose
 
 
 # s1 # say6508
@@ -86,10 +87,10 @@ label dzm257_s1:  # from 0.0 0.1 0.2
             jump dzm257_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6514
-            jump dzf1096_dispose
+            jump dzm257_dispose
         'Оставить труп в покое.':
             # r6 # reply6516
-            jump dzf1096_dispose
+            jump dzm257_dispose
 
 
 # s2 # say6509
@@ -105,7 +106,7 @@ label dzm257_s2:  # from 0.3
             jump dzm257_s3
         'Оставить духа в покое.':
             # r8 # reply9558
-            jump dzf1096_dispose
+            jump dzm257_dispose
 
 
 # s3 # say9553
@@ -175,30 +176,31 @@ label dzm257_s6:  # from 3.2 4.2 5.2
             jump dzm257_s7
         'Не обращать на него внимания, отвернуться.':
             # r19 # reply9569
-            jump dzf1096_dispose
+            jump dzm257_dispose
 
 
 # s7 # say9557
 label dzm257_s7:  # from 6.0
     teller '…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.'
 
-    jump dzf1096_dispose
+    jump dzm257_dispose
 
 
 
-label dzf1096_kill:
+label dzf257_kill:
     teller 'Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.'
     teller 'Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.'
-    teller 'Когда ты вернул в него дух, он кричал.' if _know_dzm257_spirit_condition()
+    if _know_dzm257_spirit_condition():
+        teller 'Когда ты вернул в него дух, он кричал.'
 
     menu:
         '(Уйти.)':
-            jump dzf1096_dispose
+            jump dzm257_dispose
         '(Убить зомби).':
-            jump dzf1096_killed
+            jump dzf257_killed
 
-label dzf1096_killed:
-    $ _kill_dzf1096(gsm)
+label dzf257_killed:
+    $ _kill_dzf257(gsm)
     teller 'Я бью между глаз. Пустые глаза вращаются в разные стороны, но так ни не могут посмотреть на меня.'
     teller 'В них нет ни жизни, ни разума. Я бью его до тех пор, пока он не падает.'
-    jump dzf1096_dispose
+    jump dzm257_dispose

@@ -47,7 +47,8 @@ init python:
         return gsm.get_can_speak_with_dead()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###

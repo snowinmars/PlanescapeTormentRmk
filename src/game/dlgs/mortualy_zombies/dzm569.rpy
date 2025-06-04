@@ -27,12 +27,13 @@ init python:
         return not gsm.get_in_party_morte()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
 # Original:  DLG/DZM569.DLG
-# Starts:    dzm569_s0
+# Starts:    dzm569_s0 dzm569_kill
 # ###
 
 

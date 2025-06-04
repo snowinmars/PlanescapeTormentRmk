@@ -1,7 +1,13 @@
 ﻿import { wellKnownReplacements } from "./wellKnownReplacements.ts";
 
 export const trimTrash = (input: string) =>
-  input.replaceAll(/[~«»]/g, '').replaceAll('...', '…').trim();
+  replaceNestedQuotes(input.replaceAll(/[~«»]/g, '').replaceAll('...', '…').trim());
+
+const replaceNestedQuotes = (text: string): string => {
+    return text.replace(/(^|\W)'([^']+)'(\W|$)/g, (match, p1, p2, p3) => {
+        return `${p1}«${p2}»${p3}`;
+    });
+}
 
 type StringTransformer = (body: string) => string;
 
@@ -162,7 +168,7 @@ const transformers: StringTransformer[] = [
   transformNpcExp,
   transformPermanentStat,
   transformCutScene,
-  transformVisitedLocation
+  transformVisitedLocation,
 ];
 
 export const transformScript = (body: string): string => {

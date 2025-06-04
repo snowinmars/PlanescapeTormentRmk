@@ -7,16 +7,16 @@ def build_mortuary1_menu(location_id, gsm):
         .with_main_texture('images/menu_sprites/morte.png', lambda: not gsm.get_dead_morte(), 1360, 400)
         .auto_position(1400, 400)
         .option('Убить Морта')
-        .jump("dmorte_one_kill_morte") \
+        .jump("dmorte1_kill") \
         .when(lambda: gsm.get_in_party_morte() \
                       and not gsm.get_dead_morte()) \
         .style('kill') \
         .option(lambda: 'Поговорить с Мортом'
                 if gsm.get_in_party_morte()
                 else 'Пригласить Морта в группу') \
-        .jump(lambda: 'dmorte_one_talk_morte'
+        .jump(lambda: 'dmorte1_s30'
                 if gsm.get_in_party_morte()
-                else 'dmorte_join') \
+                else 'dmorte1_s26') \
         .when(lambda: not gsm.get_dead_morte()) \
         .style('talk')
     )
@@ -27,13 +27,13 @@ def build_mortuary1_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «569»'
                 if gsm.get_meet_dzm569()
                 else 'Атаковать плешивый ходячий труп') \
-        .jump("dmorte_one_kill_dzm569") \
+        .jump("dzm569_kill") \
         .when(lambda: not gsm.get_dead_dzm569()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «569»'
                 if gsm.get_meet_dzm569()
                 else 'Поговорить с ходячим плешивым трупом') \
-        .jump("dmorte_one_talk_dzm569") \
+        .jump("dzm569_s0") \
         .when(lambda: not gsm.get_dead_dzm569()) \
         .style('talk')
     )
@@ -44,13 +44,13 @@ def build_mortuary1_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «825»'
                 if gsm.get_meet_dzm825()
                 else 'Атаковать ходячий труп повешенного') \
-        .jump("dmorte_one_kill_dzm825") \
+        .jump("dzm825_kill") \
         .when(lambda: not gsm.get_dead_dzm825()) \
         .style('kill') \
         .option(lambda: 'Поговорить с трупом «825»'
                 if gsm.get_meet_dzm825()
                 else 'Поговорить с ходячим трупом повешенного') \
-        .jump("dmorte_one_talk_dzm825") \
+        .jump("dzm825_s0") \
         .when(lambda: not gsm.get_dead_dzm825()) \
         .style('talk')
     )
@@ -61,13 +61,13 @@ def build_mortuary1_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «782»'
                 if gsm.get_meet_dzm782()
                 else 'Атаковать ходячий труп, полный ненависти') \
-        .jump("dmorte_one_kill_dzm782") \
+        .jump("dzm782_kill") \
         .when(lambda: not gsm.get_dead_dzm782()) \
         .style('kill') \
         .option(lambda: 'Поговорить с трупом «782»'
                 if gsm.get_meet_dzm782()
                 else 'Поговорить с ходячим трупом, полным ненависти') \
-        .jump("dmorte_one_talk_dzm782") \
+        .jump("dzm782_s0") \
         .when(lambda: not gsm.get_dead_dzm782()) \
         .style('talk')
     )

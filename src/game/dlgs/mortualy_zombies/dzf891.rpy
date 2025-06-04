@@ -47,7 +47,8 @@ init python:
                and not gsm.get_morte_quip()
 
 
-define gsm = renpy.store.global_settings_manager
+init 10 python:
+    gsm = renpy.store.global_settings_manager
 
 
 # ###
