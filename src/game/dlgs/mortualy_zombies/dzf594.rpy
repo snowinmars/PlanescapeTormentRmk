@@ -1,5 +1,5 @@
 init python:
-    def _kill_dzm594(gsm):
+    def _kill_dzf594(gsm):
         gsm.set_dead_dzf594(True)
 
 
@@ -203,7 +203,7 @@ label dzf594_kill:
 
 
 label dzf594_killed:
-    $ _kill_dzm594(gsm)
+    $ _kill_dzf594(gsm)
     teller 'Её кожа и правда тонкая - как летнее платье; удивительно приятная на ощупь. Она смотрит на меня пустыми глазами.'
     teller 'В них нет ни жизни, ни разума. Я без сожалений снимаю с неё остатки жизни.'
     jump dzf594_dispose

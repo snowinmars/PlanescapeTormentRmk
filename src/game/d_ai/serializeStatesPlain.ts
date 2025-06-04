@@ -88,5 +88,5 @@ export const serializeStatesPlain = (states: State[], area: string, statePrefix:
         toSingleBody(transformScript(logicActionsBuilder.trim())),
         toSingleReturn(transformScript(logicConditionsBuilder.trim())),
         result.trim(),
-    ].join('\n\n\n');
+    ].join('\n\n\n').trim();
 }
