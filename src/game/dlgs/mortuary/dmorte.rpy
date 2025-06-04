@@ -181,3 +181,8 @@ label dmorte_s482:  # from - # Check EXTENDS ~DZM985~ : 3
 
 
 # ### ends extern 482
+
+
+# ### starts extern 102
+# moved into ddhall_s0
+# ### ends extern 102

@@ -93,24 +93,29 @@ const transformForceAttack: StringTransformer = (body) =>
     (_, attacker, target) => `# ?.attack('${attacker}').by('${target}')`
   );
 
-const transformGold = (regex: RegExp, handler: (amount: number) => string): StringTransformer =>
+const transformByRegex = (regex: RegExp, handler: (amount: number) => string): StringTransformer =>
   (body) => body.replace(regex, (_, amountStr) =>
     handler(parseInt(amountStr))
   );
 
-const transformTakeGold = transformGold(
+const transformTakeGold = transformByRegex(
   /TakePartyGold\((.*)\)/g,
   amount => amount > 0 ? `gsm.dec_gold(${amount})` : `gsm.inc_gold(${-amount})`
 );
 
-const transformDestroyGold = transformGold(
+const transformDestroyGold = transformByRegex(
   /DestroyPartyGold\((.*)\)/g,
   amount => `gsm.dec_gold(${amount})`
 );
 
-const transformPartyExp = transformGold(
+const transformPartyExp = transformByRegex(
   /AddexperienceParty\((.*)\)/g,
   amount => amount > 0 ? `gsm.inc_exp(${amount})` : `gsm.dec_exp(${-amount})`
+);
+
+const transformPartyGold = transformByRegex(
+    /PartyGoldGT\((.*)\)/g,
+    amount => `return gsm.get_gold() > ${amount}`
 );
 
 const transformNpcExp: StringTransformer = (body) =>
@@ -153,6 +158,7 @@ const transformers: StringTransformer[] = [
   transformTakeGold,
   transformDestroyGold,
   transformPartyExp,
+  transformPartyGold,
   transformNpcExp,
   transformPermanentStat,
   transformCutScene,
