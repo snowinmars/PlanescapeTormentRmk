@@ -755,23 +755,23 @@ init python:
     def _r17583_condition(gsm):
         return gsm.get_in_party_annah()
     def _r17584_condition(gsm):
-        return PartyGoldGT(39)
+        return gsm.get_gold() > 39
     def _r17585_condition(gsm):
-        return PartyGoldGT(39)
+        return gsm.get_gold() > 39
     def _r17586_condition(gsm):
-        return PartyGoldGT(39)
+        return gsm.get_gold() > 39
     def _r17587_condition(gsm):
         return PartyGoldLT(40)
     def _r17588_condition(gsm):
         return PartyGoldLT(40)
     def _r18820_condition(gsm):
-        return PartyGoldGT(4)
+        return gsm.get_gold() > 4
     def _r18821_condition(gsm):
-        return PartyGoldGT(49)
+        return gsm.get_gold() > 49
     def _r18822_condition(gsm):
-        return PartyGoldGT(99)
+        return gsm.get_gold() > 99
     def _r18823_condition(gsm):
-        return PartyGoldGT(499)
+        return gsm.get_gold() > 499
     def _r18824_condition(gsm):
         return PartyGoldLT(5)
     def _r18829_condition(gsm):
@@ -779,13 +779,13 @@ init python:
     def _r18830_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',12,'int')
     def _r18833_condition(gsm):
-        return PartyGoldGT(4)
+        return gsm.get_gold() > 4
     def _r18834_condition(gsm):
-        return PartyGoldGT(9)
+        return gsm.get_gold() > 9
     def _r18835_condition(gsm):
-        return PartyGoldGT(49)
+        return gsm.get_gold() > 49
     def _r18836_condition(gsm):
-        return PartyGoldGT(99)
+        return gsm.get_gold() > 99
     def _r19668_condition(gsm):
         return not gsm.get_can_speak_with_dead()
     def _r19669_condition(gsm):
@@ -1327,7 +1327,7 @@ init python:
     def _r55875_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',15,'int')
     def _r61411_condition(gsm):
-        return PartyGoldGT(499)
+        return gsm.get_gold() > 499
     def _r61412_condition(gsm):
         return PartyGoldLT(500)
     def _r65554_condition(gsm):

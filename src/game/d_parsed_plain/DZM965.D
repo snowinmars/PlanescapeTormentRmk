@@ -33,7 +33,7 @@ label dzm965_dispose:
 
 
 # s0 # say34920
-label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte")~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 477 # !NearbyDialog("Dmorte"))
+label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte")~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 477 # !NearbyDialog("Dmorte")
     SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.'
 
     jump show_graphics_menu

@@ -119,7 +119,7 @@ label dzf832_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 350
 
 
 # s2 # say35167
-label dzf832_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350 # False())
+label dzf832_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 350 # False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

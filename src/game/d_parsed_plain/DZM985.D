@@ -1,18 +1,18 @@
 init python:
-    def _r45516_action(gsm):
-        gsm.dec_once_law('chaotic_zm985_1')
+    def _r45516_action(gsm):        
+        gsm.dec_once_law('chaotic_zm985_1') 
         gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-    def _r45517_action(gsm):
-        gsm.dec_once_law('chaotic_zm985_1')
+    def _r45517_action(gsm):        
+        gsm.dec_once_law('chaotic_zm985_1') 
         gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-    def _r45518_action(gsm):
-        gsm.inc_once_law('lawful_zm985_1')
+    def _r45518_action(gsm):        
+        gsm.inc_once_law('lawful_zm985_1') 
         gsm.inc_once_good('good_zm985_1')
-    def _r45519_action(gsm):
-        gsm.inc_once_law('lawful_zm985_1')
+    def _r45519_action(gsm):        
+        gsm.inc_once_law('lawful_zm985_1') 
         gsm.inc_once_good('good_zm985_1')
-    def _r45532_action(gsm):
-        gsm.dec_law('law')
+    def _r45532_action(gsm):        
+        gsm.dec_law('law') 
         gsm.set_zombie_chaotic(True)
     def _r45539_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
 
@@ -119,7 +119,7 @@ label dzm985_s3:  # from 0.1 6.0 # ~PlaySoundNotRanged("SPE_11") SetAnimState(My
     jump show_graphics_menu
 
 # s4 # say45530
-label dzm985_s4:  # from 0.2 # Check EXTENDS ~DMORTE~ : 482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482 # GlobalGT("Topple_985","GLOBAL",0))
+label dzm985_s4:  # from 0.2 # Check EXTENDS ~DMORTE~ : 482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482 # GlobalGT("Topple_985","GLOBAL",0)
     SPEAKER 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
 
     jump show_graphics_menu

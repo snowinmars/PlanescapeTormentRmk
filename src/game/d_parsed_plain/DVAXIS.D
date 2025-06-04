@@ -538,7 +538,7 @@ label dvaxis_dispose:
 
 
 # s0 # say453
-label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // from: # False())
+label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // from: # False()
     SPEAKER 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:

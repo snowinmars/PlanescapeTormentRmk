@@ -119,7 +119,7 @@ label dzf1096_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 342
 
 
 # s2 # say35103
-label dzf1096_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 342 # False())
+label dzf1096_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 342 # False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
