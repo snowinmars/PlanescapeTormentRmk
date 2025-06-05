@@ -170,7 +170,7 @@ def dlg_ddhall(manager):
 
     # Starts with DDHALL.D_s0 DDHALL.D_s5
     DialogStateBuilder() \
-    .state('DDHALL.D_s0', '# from - // # Check EXTENDS ~DMORTE~ : 104') \
+    .state('DDHALL.D_s0', '# from - // # Check EXTERN ~DMORTE~ : 104') \
         .with_npc_lines() \
             .line(morte, "Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…", 's103', 'say5052').with_action(lambda: _init(gsm)) \
             .line(teller, "Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.", 's0', 'say822') \
@@ -225,7 +225,7 @@ def dlg_ddhall(manager):
         .push(manager)
 
     DialogStateBuilder() \
-    .state('DDHALL.D_s5', '# from - // # Manually checked EXTENDS ~DMORTE~ : 102') \
+    .state('DDHALL.D_s5', '# from - // # Manually checked EXTERN ~DMORTE~ : 102') \
         .with_npc_lines() \
             .line(teller, "Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.", 's5', 'say838').with_action(lambda: _init(gsm)) \
             .line(teller, "Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.", 's5', 'say838') \

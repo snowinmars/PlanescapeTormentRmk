@@ -50,7 +50,7 @@ label dzm825_dispose:
 
 
 # s0 # say24564
-label dzm825_s0:  # from - # Check EXTENDS ~DMORTE1~ : 31
+label dzm825_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1_s31
     call dzm825_init
     teller 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.'
 
@@ -123,7 +123,7 @@ label dzm825_s2:  # from 0.4
 
 
 # s3 # say42311
-label dzm825_s3:  # from 0.5 # Check EXTENDS ~DMORTE1~ : 31
+label dzm825_s3:  # from 0.5 # Check EXTERN ~DMORTE1~ : 31
     teller 'У этого трупа ничего нет… но ты замечаешь, что его руки сильно перевязаны. Бинты могут пригодиться, если снять их с трупа.'
 
     menu:

@@ -61,7 +61,6 @@ label dzf444_init:
     $ gsm.set_meet_dzf444(True)
     scene bg mortuary2
     show dzf444_img default at center_left_down
-
     return
 
 
@@ -71,7 +70,7 @@ label dzf444_dispose:
 
 
 # s0 # say35210
-label dzf444_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 358 as dmorte_s330
+label dzf444_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 358 as dmorte_s330
     call dzf444_init
     teller 'У этого трупа женщины ужасный вид. Ее грубая, обработанная бальзамом кожа покрыта сотнями небольших укусов, вероятно, крысиных.'
     teller 'Судя по складкам вокруг ран, они, скорее всего, были нанесены еще до того, как труп препарировали. Ее губы зашиты, а на лице темно-синими чернилами выведен номер «444».'
@@ -111,7 +110,7 @@ label dzf444_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 358 as dmorte_s
 
 
 # s1 # say35212
-label dzf444_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 358 as dmorte_s330 (dmorte_s358 in the original Ps:T)
+label dzf444_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 358 as dmorte_s330 (dmorte_s358 in the original Ps:T)
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -148,7 +147,7 @@ label dzf444_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 358 a
 
 
 # s2 # say35231
-label dzf444_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 358 as dmorte_s330 (dmorte_s358 in the original Ps:T)
+label dzf444_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 358 as dmorte_s330 (dmorte_s358 in the original Ps:T)
     teller 'Труп не реагирует. Кажется, он слишкомдалек от того, чтобы отвечать на твои вопросы.'
 
     menu:

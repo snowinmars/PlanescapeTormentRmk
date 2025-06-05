@@ -71,7 +71,7 @@ label dzf916_dispose:
 
 
 # s0 # say24719
-label dzf916_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 46 as dmorte_s330
+label dzf916_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 46 as dmorte_s330
     call dzf916_init
     teller 'Труп женщины смотрит на тебя пустым взглядом. На ее лбу вырезан номер «916»; ее губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
@@ -110,7 +110,7 @@ label dzf916_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 46 as dmorte_s3
 
 
 # s1 # say24721
-label dzf916_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 46 as dmorte_s330
+label dzf916_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 46 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -147,7 +147,7 @@ label dzf916_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 46 as
 
 
 # s2 # say24740
-label dzf916_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 46 as dmorte_s330
+label dzf916_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 46 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

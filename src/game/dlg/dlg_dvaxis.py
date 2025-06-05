@@ -700,7 +700,7 @@ def dlg_dvaxis(manager):
             .response("Э-э, сейчас у меня нет времени на разговоры… может, как-нибудь в другой раз.", 'DVAXIS.D_s4', 'r44', 'reply1362') \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s9', '# from 7.3 // Manually checked EXTENDS ~DMORTE~ : 85') \
+    DialogStateBuilder().state('DVAXIS.D_s9', '# from 7.3 // Manually checked EXTERN ~DMORTE~ : 85') \
         .with_npc_lines() \
             .line(teller, "Он изучает тебя более пристально.", 's9', 'say1363') \
             .line(vaxis_unknown, "Ты фпион? Ты иф яфейки?", 's9', 'say1363') \
@@ -716,7 +716,7 @@ def dlg_dvaxis(manager):
             .response("Анархист?", 'DMORTE.D_s86', 'r238', 'reply4676').with_action(lambda: _r4676_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s86', '# from 85.0 // Manually checked EXTENDS ~DVAXIS~ : 10') \
+    DialogStateBuilder().state('DMORTE.D_s86', '# from 85.0 // Manually checked EXTERN ~DVAXIS~ : 10') \
         .with_npc_lines() \
             .line(morte, "Анархисты… это такая фракция…", 's86', 'say4677') \
             .line(teller, "Похоже, Морт еле сдерживает поток оскорблений, но затем замечает, что зомби смотрит на вас обоих, внимательно слушая.", 's86', 'say4677') \
@@ -764,7 +764,7 @@ def dlg_dvaxis(manager):
             .response("Поговорим об этом в другой раз.", 'DVAXIS.D_s4', 'r59', 'reply4376') \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s13', '# from 12.0 // Manually checked EXTENDS ~DMORTE~ : 87') \
+    DialogStateBuilder().state('DVAXIS.D_s13', '# from 12.0 // Manually checked EXTERN ~DMORTE~ : 87') \
         .with_npc_lines() \
             .line(teller, "Зомби смотрит на тебя как на умалишенного.", 's13', 'say4377') \
             .line(vaxis_unknown, "Ты фпятил?", 's13', 'say4377') \
@@ -789,7 +789,7 @@ def dlg_dvaxis(manager):
             .response("Слушай, я НЕ хочу лгать этому парню. Лучше говорить с ним напрямую.", 'DMORTE.D_s88', 'r247', 'reply4687').with_action(lambda: _r4687_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s88', '# from 87.0 87.1 87.2 87.3 // Manually checked EXTENDS ~DVAXIS~ : 15') \
+    DialogStateBuilder().state('DMORTE.D_s88', '# from 87.0 87.1 87.2 87.3 // Manually checked EXTERN ~DVAXIS~ : 15') \
         .with_npc_lines() \
             .line(teller, "Морт вздыхает.", 's88', 'say4688') \
             .line(morte, "Слушай, шеф… ты должен понимать свою ситуацию. Ты не сможешь разгуливать, рассказывая всем одну только ПРАВДУ. Мы не должны делать себя целями ловца кроликов, ясно?", 's88', 'say4688') \
@@ -896,7 +896,7 @@ def dlg_dvaxis(manager):
             .response("Это все, что я хотел знать. А теперь прочь с дороги, *зомби*.", EXIT, 'r97', 'reply4424').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s23', '# from 21.0 22.0 // Manually checked EXTENDS ~DMORTE~ : 89') \
+    DialogStateBuilder().state('DVAXIS.D_s23', '# from 21.0 22.0 // Manually checked EXTERN ~DMORTE~ : 89') \
         .with_npc_lines() \
             .line(teller, "Зомби в страхе умолкает, ничего не желая говорить.", 's23', 'say4425') \
         .with_responses() \
@@ -916,7 +916,7 @@ def dlg_dvaxis(manager):
             .response("Анархист?", 'DMORTE.D_s90', 'r251', 'reply4693').with_action(lambda: _r4693_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s90', '# from 89.0 // Manually checked EXTENDS ~DVAXIS~ : 71') \
+    DialogStateBuilder().state('DMORTE.D_s90', '# from 89.0 // Manually checked EXTERN ~DVAXIS~ : 71') \
         .with_npc_lines() \
             .line(morte, "Анархисты — это фракция, которая тратит свое время на слежку за представителями власти и на поиски способов низвергнуть все, от чего несет порядком или контролем.", 's90', 'say4694') \
             .line(teller, "Морт фыркает.", 's90', 'say4694') \
@@ -1100,7 +1100,7 @@ def dlg_dvaxis(manager):
             .response("Я еще вернусь.", EXIT, 'r170', 'reply4511').with_condition(lambda: _r4511_condition(gsm)).with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s39', '# from 43.12 // Manually checked EXTENDS ~DMORTE~ : 93') \
+    DialogStateBuilder().state('DVAXIS.D_s39', '# from 43.12 // Manually checked EXTERN ~DMORTE~ : 93') \
         .with_npc_lines() \
             .line(vaxis_unknown, "Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби.", 's39', 'say4512') \
             .line(teller, "Зомби хихикает через зашитые губы, потом стучит себя по голове.", 's39', 'say4512') \
@@ -1185,7 +1185,7 @@ def dlg_dvaxis(manager):
             .response("Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.", EXIT, 'r198', 'reply4545').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s46', '# from 44.1 45.0 // Manually checked EXTENDS ~DMORTE~ : 91') \
+    DialogStateBuilder().state('DVAXIS.D_s46', '# from 44.1 45.0 // Manually checked EXTERN ~DMORTE~ : 91') \
         .with_npc_lines() \
             .line(vaxis_unknown, "Он фбофик. Пвинофит твупы ф Моуг, пводает их твуфвым. Пвинофит МУОГО твупоф. Твуфявые ненают, откуда он их беет. Дуают, он пифет пьей в кьигу мертфых.", 's46', 'say4546') \
         .with_responses() \
@@ -1195,7 +1195,7 @@ def dlg_dvaxis(manager):
             .response("Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.", EXIT, 'r202', 'reply4550').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s91', '# from - // Manually checked EXTENDS ~DVAXIS~ : 43') \
+    DialogStateBuilder().state('DMORTE.D_s91', '# from - // Manually checked EXTERN ~DVAXIS~ : 43') \
         .with_npc_lines() \
             .line(morte, "Он говорит, что этот Фарод продал очень много жмуриков… трупов… тленным. Ну, сборщики занимаются этим — находят тела мертвых и продают их тленным.", 's91', 'say4700') \
             .line(morte, "Похоже, этот Фарод запродал так много жмуриков, что трухлявые начали подозревать, что он записывает жителей Улья в книгу мертвых раньше положенного срока… ну, ты понял, просто убивает их.", 's91', 'say4700') \
@@ -1204,7 +1204,7 @@ def dlg_dvaxis(manager):
             .response("Да этот Фарод просто святой. Возможно, позже у меня будут другие вопросы. Никуда не уходи.", EXIT, 'r258', 'reply4702') \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s47', '# from 43.7 // Manually checked EXTENDS ~DMORTE~ : 92') \
+    DialogStateBuilder().state('DVAXIS.D_s47', '# from 43.7 // Manually checked EXTERN ~DMORTE~ : 92') \
         .with_npc_lines() \
             .line(vaxis_unknown, "Ненают. Какой-то пей обфифтил тея?", 's47', 'say4551') \
         .with_responses() \
@@ -1214,7 +1214,7 @@ def dlg_dvaxis(manager):
             .response("Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.", EXIT, 'r206', 'reply4555').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s92', '# from - // Manually checked EXTENDS ~DVAXIS~ : 43') \
+    DialogStateBuilder().state('DMORTE.D_s92', '# from - // Manually checked EXTERN ~DVAXIS~ : 43') \
     .with_npc_lines() \
         .line(morte, "Он хочет знать, не обокрал ли кто тебя. Наверно, интересуется, что случилось.", 's92', 'say4703') \
     .with_responses() \
@@ -1412,7 +1412,7 @@ def dlg_dvaxis(manager):
             .response("Нет… нет… так тоже неплохо. Прощай.", EXIT, 'r263', 'reply4628').with_action(lambda: _r4628_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s65', '# from 63.0 // Check EXTENDS ~DMORTE~ : 94') \
+    DialogStateBuilder().state('DVAXIS.D_s65', '# from 63.0 // Check EXTERN ~DMORTE~ : 94') \
         .with_npc_lines() \
             .line(teller, "Зомби берет у тебя предметы и приступает к работе…", 's65', 'say4629') \
         .with_responses() \
@@ -1422,7 +1422,7 @@ def dlg_dvaxis(manager):
             .response("Попробовать не двигаться.", 'DVAXIS.D_s66', 'r267', 'reply64533').with_condition(lambda: _r64533_condition(gsm)).with_action(lambda: _r64533_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s94', '# from - // Check EXTENDS ~DVAXIS~ : 66') \
+    DialogStateBuilder().state('DMORTE.D_s94', '# from - // Check EXTERN ~DVAXIS~ : 66') \
         .with_npc_lines() \
             .line(morte, "Не могу поверить, что ты делаешь это. Ты, что, СОВСЕМ спятил?", 's94', 'say4708') \
         .with_responses() \
@@ -1430,7 +1430,7 @@ def dlg_dvaxis(manager):
             .response("Бред, как по мне…", 'DVAXIS.D_s66', 'r263', 'reply64534').with_condition(lambda: _r64534_condition(gsm)).with_action(lambda: _r64534_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DVAXIS.D_s66', '# from 65.0 65.2 65.3 // Check EXTENDS ~DMORTE~ : 95') \
+    DialogStateBuilder().state('DVAXIS.D_s66', '# from 65.0 65.2 65.3 // Check EXTERN ~DMORTE~ : 95') \
         .with_npc_lines() \
             .line(teller, "Зомби обильно натирает твое тело бальзамирующей жидкостью, затем широкими стежками зашивает несколько шрамов.", 's66', 'say4633') \
             .line(teller, "Начав с ног, он медленно поднимается наверх, зашивая в конце концов твои губы.", 's66', 'say4633') \

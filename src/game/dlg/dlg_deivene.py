@@ -189,7 +189,7 @@ def dlg_deivene(manager):
             .response("Оставить ее в покое.", EXIT, 'r8', 'reply3419').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DEIVENE.D_s3', '# from 1.1 // Check EXTENDS ~DMORTE~ : 55') \
+    DialogStateBuilder().state('DEIVENE.D_s3', '# from 1.1 // Check EXTERN ~DMORTE~ : 55') \
         .with_npc_lines() \
             .line(teller, "Женщина не отвечает.", 's3', 'say3420') \
             .line(morte, "Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?", 's55', 'say3473') \
@@ -199,7 +199,7 @@ def dlg_deivene(manager):
             .response("Оставить ее в покое.", EXIT, 'r171', 'reply3476').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s56', '# from 55.0 // Check EXTENDS ~DEIVENE~ : 4')\
+    DialogStateBuilder().state('DMORTE.D_s56', '# from 55.0 // Check EXTERN ~DEIVENE~ : 4')\
         .with_npc_lines() \
             .line(morte, "Э… она из тифлингов, шеф. В их жилах течет лихая кровь нечисти. Кто-то из предков спутался с каким-то нечистым духом.", 's56', 'say3477') \
             .line(morte, "Из-за этого некоторые из них немного тронутые… и обычно выглядят они соответствующе.", 's56', 'say3477') \
@@ -257,7 +257,7 @@ def dlg_deivene(manager):
             .response("Уйти. Быстро.", EXIT, 'r22', 'reply3438').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DEIVENE.D_s9', '# from 7.0 8.0 // Check EXTENDS ~DMORTE~ : 59') \
+    DialogStateBuilder().state('DEIVENE.D_s9', '# from 7.0 8.0 // Check EXTERN ~DMORTE~ : 59') \
         .with_npc_lines() \
             .line(teller, "Спустя несколько минут она заканчивает. Щелкнув когтями, она поворачивается к тебе.", 's9', 'say3439') \
             .line(teller, "К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.", 's9', 'say3439') \
@@ -297,7 +297,7 @@ def dlg_deivene(manager):
             .response("Оттолкнуть ее, уйти.", 'DEIVENE.D_s10', 'r31', 'reply3450') \
         .push(manager)
 
-    DialogStateBuilder().state('DEIVENE.D_s13', '# from 12.0 // Check EXTENDS ~DMORTE~ : 60') \
+    DialogStateBuilder().state('DEIVENE.D_s13', '# from 12.0 // Check EXTERN ~DMORTE~ : 60') \
         .with_npc_lines() \
             .line(teller, "Эи-Вейн начинает зашивать твои шрамы; ощущения при этом на удивление безболезненны.  Закончив, она обнюхивает тебя, хмурится, затем окунает пальцы в бальзамирующую жидкость.", 's13', 'say3451') \
             .line(teller, "В течении нескольких минут она наносит жидкость на твое тело… довольно странно, но ты чувствуешь себя *лучше*.", 's13', 'say3451') \
@@ -370,14 +370,14 @@ def dlg_deivene(manager):
             .response("Уйти.", EXIT, 'r48', 'reply3496').with_action(lambda: _r3496_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DEIVENE.D_s19', '# from 1.3 // Check EXTENDS ~DMORTE~ : 56') \
+    DialogStateBuilder().state('DEIVENE.D_s19', '# from 1.3 // Check EXTERN ~DMORTE~ : 56') \
         .with_npc_lines() \
             .line(teller, "Женщина не отвечает.", 's19', 'say3472') \
         .with_responses() \
             .response("(Обернуться к Морту)", 'DMORTE.D_s56', 'r169', 'reply3474').with_action(lambda: _r3474_action(gsm)) \
         .push(manager)
 
-    DialogStateBuilder().state('DEIVENE.D_s20', '# from 5.2 5.4 // Check EXTENDS ~DMORTE~ : 57') \
+    DialogStateBuilder().state('DEIVENE.D_s20', '# from 5.2 5.4 // Check EXTERN ~DMORTE~ : 57') \
         .with_npc_lines() \
             .line(teller, "Она отворачивается… непохоже, чтобы она тебя услышала.", 's20', 'say3485') \
             .line(morte, "Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?", 's57', 'say3480') \
@@ -386,7 +386,7 @@ def dlg_deivene(manager):
             .response("Уйти.", EXIT, 'r175', 'reply3484').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DEIVENE.D_s21', '# from 18.1 // Check EXTENDS ~DMORTE~ : 58') \
+    DialogStateBuilder().state('DEIVENE.D_s21', '# from 18.1 // Check EXTERN ~DMORTE~ : 58') \
         .with_npc_lines() \
             .line(teller, "Она отворачивается… непохоже, чтобы она тебя услышала. Должно быть, ее слух не лучше зрения.", 's21', 'say3486') \
         .with_responses() \
@@ -438,7 +438,7 @@ def dlg_deivene(manager):
             .response("Уйти.", EXIT, 'r176', 'reply3482').with_action(lambda: _dispose()) \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s59', '# from - // Check EXTENDS ~DEIVENE~ : 10')\
+    DialogStateBuilder().state('DMORTE.D_s59', '# from - // Check EXTERN ~DEIVENE~ : 10')\
         .with_npc_lines() \
             .line(morte, "Похоже, у тебя новая подруга, шеф. Может, вас оставить наедине на часок, или?..", 's59', 'say3487') \
         .with_responses() \
@@ -447,7 +447,7 @@ def dlg_deivene(manager):
             .response("Оттолкнуть женщину.", 'DEIVENE.D_s10', 'r179', 'reply3490') \
         .push(manager)
 
-    DialogStateBuilder().state('DMORTE.D_s60', '# from - // Check EXTENDS ~DEIVENE~ : 14')\
+    DialogStateBuilder().state('DMORTE.D_s60', '# from - // Check EXTERN ~DEIVENE~ : 14')\
         .with_npc_lines() \
             .line(morte, "Это второй случай в моей жизни, когда я счастлив, что у меня нет носа.", 's60', 'say3492') \
         .with_responses() \

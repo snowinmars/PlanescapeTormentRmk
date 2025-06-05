@@ -76,7 +76,7 @@ label dzf1072_dispose:
 
 
 # s0 # say35114
-label dzf1072_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 346 as dmorte_s330
+label dzf1072_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 346 as dmorte_s330
     call dzf1072_init
     teller 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения.'
     teller 'У нее нет челюсти, часть мяса отвалилась от черепа, обнажая номер «1072», выбитый на кости.'
@@ -116,7 +116,7 @@ label dzf1072_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 346 as dmorte_
 
 
 # s1 # say35116
-label dzf1072_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 346 as dmorte_s330
+label dzf1072_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 346 as dmorte_s330
     teller 'Труп не отвечает на твой голос. Возможно, это связано с отсутствием челюсти. Или ей просто нечего сказать.'
 
     menu:
@@ -153,7 +153,7 @@ label dzf1072_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 346 
 
 
 # s2 # say35135
-label dzf1072_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 346 as dmorte_s330
+label dzf1072_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 346 as dmorte_s330
     teller 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

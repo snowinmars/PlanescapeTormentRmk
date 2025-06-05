@@ -66,7 +66,7 @@ label dzf1072_dispose:
 
 
 # s0 # say35114
-label dzf1072_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 346Check EXTENDS ~DMORTE~ : 346
+label dzf1072_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 346
     SPEAKER 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения. У нее нет челюсти, часть мяса отвалилась от черепа, обнажая номер 1072, выбитый на кости.'
 
     menu:
@@ -104,7 +104,7 @@ label dzf1072_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~
 
 
 # s1 # say35116
-label dzf1072_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 346
+label dzf1072_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 346
     SPEAKER 'Труп не отвечает на твой голос. Возможно, это связано с отсутствием челюсти. Или ей просто нечего сказать.'
 
     menu:
@@ -120,7 +120,7 @@ label dzf1072_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 346
 
 
 # s2 # say35135
-label dzf1072_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 346 # False()
+label dzf1072_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 346 # False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

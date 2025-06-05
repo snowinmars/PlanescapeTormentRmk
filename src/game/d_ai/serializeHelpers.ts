@@ -140,9 +140,15 @@ const transformCutScene: StringTransformer = (body) =>
   );
 
 const transformPermanentStat: StringTransformer = (body) =>
-  body.replace(/PermanentStatChange\("(.*)"(.*),(.*),(\d+)\)/g,
+  body.replace(/PermanentStatChange\("?(.*)"?,(.*),(.*),(\d+)\)/g,
     (_, character, property, action, amount) =>
-      `# ?.PermanentStatChange(${character}, ${property}, ${action}, ${amount})`
+      `gsm.change_stat_permanent('${character}', '${property}', '${action}', ${amount})`
+  );
+
+const transformFullHeal: StringTransformer = (body) =>
+    body.replace(/FullHeal\((.*?)\)/g,
+        (_, who) =>
+      `gsm.full_heal('${who}')`
   );
 
 const transformVisitedLocation: StringTransformer = (body) =>
@@ -167,6 +173,7 @@ const transformers: StringTransformer[] = [
   transformPartyGold,
   transformNpcExp,
   transformPermanentStat,
+  transformFullHeal,
   transformCutScene,
   transformVisitedLocation,
 ];

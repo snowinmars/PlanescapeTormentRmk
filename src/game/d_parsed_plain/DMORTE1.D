@@ -411,7 +411,7 @@ label dmorte1_s33:  # from 32.0
 
 
 # s34 # say42306
-label dmorte1_s34:  # from - # Check EXTENDS ~DZM782~ : 2
+label dmorte1_s34:  # from - # Check EXTERN ~DZM782~ : 2
     SPEAKER 'Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.'
 
     jump show_graphics_menu

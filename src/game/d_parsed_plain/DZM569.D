@@ -41,7 +41,7 @@ label dzm569_dispose:
 
 
 # s0 # say24575
-label dzm569_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE1~ : 31
+label dzm569_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE1~ : 31
     SPEAKER 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер 569 на открывшейся кости.'
 
     menu:
@@ -95,7 +95,7 @@ label dzm569_s2:  # from 0.4
 
 
 # s3 # say42293
-label dzm569_s3:  # from 0.5 # Check EXTENDS ~DMORTE1~ : 31
+label dzm569_s3:  # from 0.5 # Check EXTERN ~DMORTE1~ : 31
     SPEAKER 'Похоже, у этого трупа нет ключа… да и вряд ли он смог бы им воспользоваться. Его пальцы перебиты, как будто кто-то постучал по ним молотком. Ты замечаешь, что его левое плечо сильно перевязано… бинтами можно воспользоваться, если снять их с трупа.'
 
     menu:

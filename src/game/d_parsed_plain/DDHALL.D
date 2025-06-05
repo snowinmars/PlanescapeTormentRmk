@@ -154,7 +154,7 @@ label ddhall_dispose:
 
 
 # s0 # say822
-label ddhall_s0:  # from - # IF ~~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 104
+label ddhall_s0:  # from - # IF ~~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 104
     SPEAKER 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
     jump show_graphics_menu
@@ -233,7 +233,7 @@ label ddhall_s4:  # from 3.0 3.1 # Global("Dhall","GLOBAL",0)
 
 
 # s5 # say838
-label ddhall_s5:  # from - # Check EXTENDS ~DMORTE~ : 102
+label ddhall_s5:  # from - # Check EXTERN ~DMORTE~ : 102
     SPEAKER 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента. Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду. Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
 
     menu:

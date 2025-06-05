@@ -1,207 +1,216 @@
+﻿init python:
+    def _embalm(gsm):
+        gsm.set_has_embalm(True)
+    def _kill_vaxis(gsm):
+        gsm.set_dead_vaxis(True)
+    def _meet_vaxis(gsm):
+        return gsm.get_meet_vaxis()
+    def _not_meet_vaxis(gsm):
+        return not gsm.get_meet_vaxis()
+    def _get_vaxis_name(gsm):
+        return vaxis if gsm.get_know_vaxis_name() else vaxis_unknown
+    def _set_vaxis_name(gsm):
+        gsm.set_know_vaxis_name(True)
+
+
 init python:
-    def _r454_action(gsm):        
-        gsm.dec_law('law') 
+    def _r454_action(gsm):
+        gsm.dec_law('law')
         gsm.set_zombie_chaotic(True)
-    def _r461_action(gsm):        
+    def _r461_action(gsm):
         gsm.set_meet_vaxis(True)
-    def _r464_action(gsm):        
-        gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
-    def _r465_action(gsm):        
-        gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
-    def _r466_action(gsm):        
-        gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
-    def _r472_action(gsm):        
+    def _r464_action(gsm):
+        gsm.update_journal('64513')
+    def _r465_action(gsm):
+        gsm.update_journal('64513')
+    def _r466_action(gsm):
+        gsm.update_journal('64513')
+    def _r472_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r473_action(gsm):        
+    def _r473_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r475_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r476_action(gsm):        
+    def _r476_action(gsm):
         gsm.dec_once_good('evil_vaxis_2')
-    def _r477_action(gsm):        
-        gsm.inc_once_law('lawful_vaxis_1') 
+    def _r477_action(gsm):
+        gsm.inc_once_law('lawful_vaxis_1')
         gsm.inc_once_good('good_vaxis_1')
-    def _r480_action(gsm):        
-        gsm.set_meet_vaxis(True) ~ 
-        gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
-    def _r481_action(gsm):        
-        gsm.set_meet_vaxis(True) ~ 
-        gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
-    def _r482_action(gsm):        
-        gsm.set_meet_vaxis(True) ~ 
-        gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
-    def _r487_action(gsm):        
+    def _r480_action(gsm):
+        gsm.set_meet_vaxis(True)
+        gsm.update_journal('64513')
+    def _r481_action(gsm):
+        gsm.set_meet_vaxis(True)
+        gsm.update_journal('64513')
+    def _r482_action(gsm):
+        gsm.set_meet_vaxis(True)
+        gsm.update_journal('64513')
+    def _r487_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r488_action(gsm):        
+    def _r488_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r493_action(gsm):        
+    def _r493_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_2')
-    def _r494_action(gsm):        
+    def _r494_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_2')
-    def _r1306_action(gsm):        
+    def _r1306_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r1348_action(gsm):        
+    def _r1348_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r1359_action(gsm):        
+    def _r1359_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r1360_action(gsm):        
+    def _r1360_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r1361_action(gsm):        
+    def _r1361_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r4364_action(gsm):        
+    def _r4364_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4365_action(gsm):        
+    def _r4365_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4370_action(gsm):        
+    def _r4370_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r4371_action(gsm):        
+    def _r4371_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_1')
-    def _r4381_action(gsm):        
-        gsm.inc_once_law('lawful_vaxis_2') 
+    def _r4381_action(gsm):
+        gsm.inc_once_law('lawful_vaxis_2')
         gsm.inc_once_good('good_vaxis_2')
-    def _r4387_action(gsm):        
+    def _r4387_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4388_action(gsm):        
+    def _r4388_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4391_action(gsm):        
-        gsm.inc_once_law('lawful_vaxis_2') 
+    def _r4391_action(gsm):
+        gsm.inc_once_law('lawful_vaxis_2')
         gsm.inc_once_good('good_vaxis_2')
-    def _r4397_action(gsm):        
+    def _r4397_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4398_action(gsm):        
+    def _r4398_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4401_action(gsm):        
+    def _r4401_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4402_action(gsm):        
+    def _r4402_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4405_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4408_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4413_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4428_action(gsm):        
+    def _r4428_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4429_action(gsm):        
+    def _r4429_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4434_action(gsm):        
+    def _r4434_action(gsm):
         gsm.dec_once_law('chaotic_vaxis_5')
-    def _r4442_action(gsm):        
+    def _r4442_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4443_action(gsm):        
+    def _r4443_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4447_action(gsm):        
+    def _r4447_action(gsm):
         gsm.set_vaxis_orders(True)
-    def _r4448_action(gsm):        
+    def _r4448_action(gsm):
         gsm.set_vaxis_orders(True)
-    def _r4456_action(gsm):        
+    def _r4456_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4457_action(gsm):        
+    def _r4457_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4469_action(gsm):        
-        gsm.set_vaxis_leave(True) 
-        gsm.set_has_bandages(True) 
-        gsm.set_has_bandages(True) 
-        gsm.set_has_bandages(True) 
-        gsm.set_has_embalm(True) 
-        gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0) 
-        gsm.inc_exp(500)    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
-    def _r4474_action(gsm):        
-        gsm.inc_once_good('good_vaxis_3')
-    def _r4477_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
-    def _r4478_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
-    def _r4484_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
-    def _r4485_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
-    def _r4672_action(gsm):        
-        gsm.set_strong_arm_vaxis(True)
-    def _r4489_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
-    def _r4490_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
-    def _r4494_action(gsm):        
-        gsm.inc_exp(250)
-    def _r4496_action(gsm):        
-        gsm.set_vaxis_orders(False)
-    def _r4497_action(gsm):        
-        gsm.set_vaxis_orders(False)
-    def _r4498_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1') 
-        gsm.set_vaxis_orders(False)
-    def _r4499_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1') 
-        gsm.set_vaxis_orders(False)
-    def _r4502_action(gsm):        
-        gsm.inc_exp(250)
-    def _r64520_action(gsm):        
-        gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
-    def _r4503_action(gsm):        
-        gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
-    def _r4504_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_6')
-    def _r4506_action(gsm):        
-        gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
-    def _r66150_action(gsm):        
-        gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
-    def _r4508_action(gsm):        
-        gsm.set_embalm_key_quest(1)
-    def _r4509_action(gsm):        
-        gsm.set_embalm_key_quest(1)
-    def _r4519_action(gsm):        
-        gsm.inc_exp(250)
-    def _r4521_action(gsm):        
-        gsm.set_embalm_key_quest(3) ~ 
-        gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
-    def _r4522_action(gsm):        
-        gsm.set_embalm_key_quest(3) ~ 
-        gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
-    def _r4539_action(gsm):        
-        gsm.update_journal('64522')    # '64522': ' ~Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока. ~ '
-    def _r4543_action(gsm):        
-        gsm.update_journal('64522')    # '64522': ' ~Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока. ~ '
-    def _r64527_action(gsm):        
-        gsm.inc_exp(250)    # '64528': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга. ~ '
-    def _r4568_action(gsm):        
-        gsm.inc_exp(250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
-    def _r4569_action(gsm):        
-        gsm.inc_exp(250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
-    def _r4580_action(gsm):        
-        gsm.set_vaxis_exposes_soego(True) ~ 
-        gsm.update_journal('64530')    # '64530': ' ~Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях.~ '
-    def _r4592_action(gsm):        
-        gsm.inc_exp(250)
-    def _r4593_action(gsm):        
-        gsm.inc_exp(250)
-    def _r4620_action(gsm):        
-        gsm.set_vaxis_zombie_disguise(2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE)
-    def _r4621_action(gsm):        
-        gsm.set_vaxis_zombie_disguise(1)
-    def _r4622_action(gsm):        
-        gsm.set_vaxis_zombie_disguise(1)
-    def _r4623_action(gsm):        
-        gsm.set_vaxis_zombie_disguise(1)
-    def _r4625_action(gsm):        
-        gsm.set_vaxis_zombie_disguise(1)
-    def _r4628_action(gsm):        
-        gsm.set_vaxis_zombie_disguise(1)
-    def _r4630_action(gsm):        FadeToColor([20.0],0) Wait(1) 
-        gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) 
+    def _r4469_action(gsm):
+        gsm.set_vaxis_leave(True)
+        gsm.set_has_bandages(True)
+        gsm.set_has_bandages(True)
+        gsm.set_has_bandages(True)
+        gsm.set_has_embalm(True)
+        gsm.set_has_needle(True) # GiveItemCreate("Knife",Protagonist,1,0,0)
         gsm.inc_exp(500)
-    def _r4631_action(gsm):        
-        gsm.set_morte_vaxis_quip_1(True)
-    def _r4632_action(gsm):        FadeToColor([20.0],0) Wait(1) 
-        gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0)
-    def _r64533_action(gsm):        FadeToColor([20.0],0) Wait(1) 
-        gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0)
-    def _r4635_action(gsm):        
-        gsm.set_morte_vaxis_quip_2(True)
-    def _r4638_action(gsm):        
-        gsm.update_journal('64531')    # '64531': ' ~В обмен на иголку, нитку и бальзамирующую жидкость Ваксис замаскировал меня под зомби. Он предупредил меня, что бег может разрушить маскировку, и что я не должен ни с кем разговаривать, будучи замаскированным. Зомби ведь «не разговаривают». ~ '
-    def _r4645_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4651_action(gsm):        
+    def _r4474_action(gsm):
+        gsm.inc_once_good('good_vaxis_3')
+    def _r4477_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
-    def _r4661_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4666_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4669_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+    def _r4478_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+    def _r4484_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+    def _r4485_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+    def _r4672_action(gsm):
+        gsm.set_strong_arm_vaxis(True)
+    def _r4489_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+    def _r4490_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+    def _r4494_action(gsm):
+        gsm.inc_exp(250)
+    def _r4496_action(gsm):
+        gsm.set_vaxis_orders(False)
+    def _r4497_action(gsm):
+        gsm.set_vaxis_orders(False)
+    def _r4498_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+        gsm.set_vaxis_orders(False)
+    def _r4499_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
+        gsm.set_vaxis_orders(False)
+    def _r4502_action(gsm):
+        gsm.inc_exp(250)
+    def _r64520_action(gsm):
+        gsm.update_journal('64519')
+    def _r4503_action(gsm):
+        gsm.update_journal('64518')
+    def _r4504_action(gsm):
+        gsm.dec_once_law('chaotic_vaxis_6')
+    def _r4506_action(gsm):
+        gsm.update_journal('64519')
+    def _r66150_action(gsm):
+        gsm.update_journal('64518')
+    def _r4508_action(gsm):
+        gsm.set_embalm_key_quest(1)
+    def _r4509_action(gsm):
+        gsm.set_embalm_key_quest(1)
+    def _r4519_action(gsm):
+        gsm.inc_exp(250)
+    def _r4521_action(gsm):
+        gsm.set_embalm_key_quest(3)
+        gsm.update_journal('64521')
+    def _r4522_action(gsm):
+        gsm.set_embalm_key_quest(3)
+        gsm.update_journal('64521')
+    def _r4539_action(gsm):
+        gsm.update_journal('64522')
+    def _r4543_action(gsm):
+        gsm.update_journal('64522')
+    def _r64527_action(gsm):
+        gsm.inc_exp(250)
+    def _r4568_action(gsm):
+        gsm.inc_exp(250)
+    def _r4569_action(gsm):
+        gsm.inc_exp(250)
+    def _r4580_action(gsm):
+        gsm.set_vaxis_exposes_soego(True)
+        gsm.update_journal('64530')
+    def _r4592_action(gsm):
+        gsm.inc_exp(250)
+    def _r4593_action(gsm):
+        gsm.inc_exp(250)
+    def _r4620_action(gsm):
+        gsm.set_vaxis_zombie_disguise(2)
+        # DestroyPartyItem("Embalm",FALSE)
+        # DestroyPartyItem("Needle",FALSE)
+    def _r4621_action(gsm):
+        gsm.set_vaxis_zombie_disguise(1)
+    def _r4622_action(gsm):
+        gsm.set_vaxis_zombie_disguise(1)
+    def _r4623_action(gsm):
+        gsm.set_vaxis_zombie_disguise(1)
+    def _r4625_action(gsm):
+        gsm.set_vaxis_zombie_disguise(1)
+    def _r4628_action(gsm):
+        gsm.set_vaxis_zombie_disguise(1)
+    def _r4630_action(gsm):
+        gsm.set_looks_like("zombie")
+        gsm.inc_exp(500)
+    def _r4631_action(gsm):
+        gsm.set_morte_vaxis_quip_1(True)
+    def _r4632_action(gsm):
+        gsm.set_looks_like("zombie")
+    def _r64533_action(gsm):
+        gsm.set_looks_like("zombie")
+    def _r4635_action(gsm):
+        gsm.set_morte_vaxis_quip_2(True)
+    def _r4638_action(gsm):
+        gsm.update_journal('64531')
+    def _r4651_action(gsm):
+        gsm.dec_once_good('evil_vaxis_1')
 
 
 init python:
@@ -529,21 +538,26 @@ init 10 python:
 
 # ###
 # Original:  DLG/DVAXIS.DLG
-# Starts:    dvaxis_s
+# Starts:    dvaxis_s0 dvaxis_s57 dvaxis_s69
 # ###
 
 
 label dvaxis_init:
+    $ gsm.set_location('mortuary6')
+    $ gsm.set_meet_vaxis(True)
+    scene bg mortuary6
+    show vaxis_img default at center_left_down
     return
 
 
 label dvaxis_dispose:
+    hide vaxis_img
     jump show_graphics_menu
 
 
 # s0 # say453
 label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // from: # False()
-    SPEAKER 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
+    teller 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
         'Итак… что тут у нас интересного?' if _r454_condition(gsm):
@@ -564,12 +578,12 @@ label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // f
             jump dvaxis_s5
         'Оставить труп в покое.':
             # r5 # reply459
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s1 # say460
 label dvaxis_s1:  # from 0.3
-    SPEAKER 'Довольно странно, но твоя способность не работает с этим трупом.'
+    teller 'Довольно странно, но твоя способность не работает с этим трупом.'
 
     menu:
         'Ткнуть его в глаз.':
@@ -578,12 +592,12 @@ label dvaxis_s1:  # from 0.3
             jump dvaxis_s2
         'Оставить труп в покое.':
             # r7 # reply462
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s2 # say463
 label dvaxis_s2:  # from 1.0
-    SPEAKER 'После твоего тычка в глаз труп, рефлекторно закрыв руками лицо, издает нечленораздельный вопль. Он начинает что-то невнятно бормотать, сыпля проклятиями в твой адрес.'
+    teller 'После твоего тычка в глаз труп, рефлекторно закрыв руками лицо, издает нечленораздельный вопль. Он начинает что-то невнятно бормотать, сыпля проклятиями в твой адрес.'
 
     menu:
         'Ты не зомби! Кто ты?':
@@ -602,7 +616,8 @@ label dvaxis_s2:  # from 1.0
 
 # s3 # say467
 label dvaxis_s3:  # from 2.2 5.2
-    SPEAKER 'Ты уже почти отвернулся, как зомби начинает что-то бормотать… кажется, он пытается что-то сказать, но с зашитым ртом это сделать трудно. Фто ТЫ? Фто тее нао?'
+    teller 'Ты уже почти отвернулся, как зомби начинает что-то бормотать… кажется, он пытается что-то сказать, но с зашитым ртом это сделать трудно.'
+    vaxis_unknown 'Фто ТЫ? Фто тее нао?'
 
     menu:
         'Я ищу выход отсюда. Ты можешь мне помочь?' if _r468_condition(gsm):
@@ -629,29 +644,33 @@ label dvaxis_s3:  # from 2.2 5.2
 
 # s4 # say471
 label dvaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    SPEAKER 'Ты уже почти отвернулся, как зомби начинает издавать низкое протяжное ворчание: Никоу ничео не говои пво МЕЯ. Моучи. Не говои НИФЕО твуфявым, — он прикладывает палец к губам. — Фффф. После этого он проводит пальцем по горлу. Или ты уфнефь нафегда. ПОЯЛ мея?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Ты уже почти отвернулся, как зомби начинает издавать низкое протяжное ворчание.'
+    x 'Никоу ничео не говои пво МЕЯ. Моучи. Не говои НИФЕО твуфявым.'
+    teller 'Он прикладывает палец к губам.'
+    x 'Фффф. После этого он проводит пальцем по горлу. Или ты уфнефь нафегда. ПОЯЛ мея?'
 
     menu:
         'Ты пытаешься меня ЗАПУГАТЬ? Ну все… готовься к смерти.':
             # r17 # reply475
-            $ _r475_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Ложь: Я даже и *не думал* ничего говорить тленным о тебе.':
             # r18 # reply476
             $ _r476_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Правда: Обещаю, что я ничего не скажу о тебе тленным.':
             # r19 # reply477
             $ _r477_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Как хочешь. У тебя свои дела, у меня — свои.':
             # r20 # reply478
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s5 # say479
 label dvaxis_s5:  # from 0.0 0.1 0.2 0.4
-    SPEAKER 'Зомби от неожиданности моргает при твоем обращении. А? Фто?'
+    teller 'Зомби от неожиданности моргает при твоем обращении.'
+    vaxis_unknown 'А? Фто?'
 
     menu:
         'Ты не зомби! Кто ты?':
@@ -670,7 +689,9 @@ label dvaxis_s5:  # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label dvaxis_s6:  # from 2.0 2.1 5.0 5.1
-    SPEAKER 'Зомби пытается что-то сказать сквозь зашитые губы. На его лице странная смесь испуга и злобы. Фто ТЫ? Фего тее нао?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби пытается что-то сказать сквозь зашитые губы. На его лице странная смесь испуга и злобы.'
+    x 'Фто ТЫ? Фего тее нао?'
 
     menu:
         'Я ищу выход отсюда. Ты можешь мне помочь?' if _r484_condition(gsm):
@@ -697,7 +718,11 @@ label dvaxis_s6:  # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label dvaxis_s7:  # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    SPEAKER 'Кажется, зомби не расслышал тебя. Он осматривает тебя с ног до головы, затем хмурится. Фто ты фдефь делаефь? — его глаза недоверчиво сужаются. — Фпионифь за Мертфяками?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Кажется, зомби не расслышал тебя. Он осматривает тебя с ног до головы, затем хмурится.'
+    x 'Фто ты фдефь делаефь?'
+    teller 'Его глаза недоверчиво сужаются.'
+    x 'Фпионифь за Мертфяками?'
 
     menu:
         'Нет. Я пытаюсь сбежать отсюда.' if _r491_condition(gsm):
@@ -735,7 +760,9 @@ label dvaxis_s7:  # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label dvaxis_s8:  # from 7.2
-    SPEAKER 'Он изучает тебя более пристально. Ты фпион? Ты иф яфейки?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он изучает тебя более пристально.'
+    x 'Ты фпион? Ты иф яфейки?'
 
     menu:
         'А?':
@@ -762,21 +789,27 @@ label dvaxis_s8:  # from 7.2
 
 
 # s9 # say1363
-label dvaxis_s9:  # from 7.3 # Check EXTERN ~DMORTE~ : 85
-    SPEAKER 'Он изучает тебя более пристально. Ты фпион? Ты иф яфейки?'
+label dvaxis_s9:  # from 7.3 # Manually checked EXTERN ~DMORTE~ : 85
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он изучает тебя более пристально.'
+    x 'Ты фпион? Ты иф яфейки?'
 
     menu:
         'А?':
             # r45 # reply4359
-            jump show_graphics_menu
+            jump dmorte_s85
         'Яфейки?':
             # r46 # reply4360
-            jump show_graphics_menu
+            jump dmorte_s85
 
 
 # s10 # say4361
 label dvaxis_s10:  # from 8.0 8.1
-    SPEAKER 'Хмурясь, он шипит на тебя. Ты не фпион! — он гонит тебя прочь. — Профь! Профь!'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Хмурясь, он шипит на тебя.'
+    x 'Ты не фпион!'
+    teller 'Он гонит тебя прочь.'
+    x 'Профь! Профь!'
 
     menu:
         'Сперва ты расскажешь мне, что ты здесь делаешь, или я позову стражу.' if _r4362_condition(gsm):
@@ -800,7 +833,8 @@ label dvaxis_s10:  # from 8.0 8.1
 
 # s11 # say4366
 label dvaxis_s11:  # from -
-    SPEAKER 'Зомби согласно кивает. Кажется, ты замечаешь, что под слоем маскировки его распирает от гордости.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби согласно кивает. Кажется, ты замечаешь, что под слоем маскировки его распирает от гордости.'
 
     menu:
         'Ты поможешь мне выбраться отсюда?' if _r4368_condition(gsm):
@@ -824,7 +858,9 @@ label dvaxis_s11:  # from -
 
 # s12 # say4373
 label dvaxis_s12:  # from 7.0 11.0
-    SPEAKER 'Зомби выглядит заинтересованным. Пвоулемы? Фево ты натвовил?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби выглядит заинтересованным.'
+    x 'Пвоулемы? Фево ты натвовил?'
 
     menu:
         'Я очнулся на одной из плит на верхнем этаже.':
@@ -839,8 +875,10 @@ label dvaxis_s12:  # from 7.0 11.0
 
 
 # s13 # say4377
-label dvaxis_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 87
-    SPEAKER 'Зомби смотрит на тебя как на умалишенного. Ты фпятил?'
+label dvaxis_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 87
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби смотрит на тебя как на умалишенного.'
+    x 'Ты фпятил?'
 
     menu:
         'Да, я фпятил. Я окончательно фпятил.':
@@ -851,7 +889,7 @@ label dvaxis_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 87
             jump dvaxis_s16
         'Фпятил? Что это значит?' if _r4380_condition(gsm):
             # r62 # reply4380
-            jump show_graphics_menu
+            jump dmorte_s87
         'Я знаю, в это трудно поверить, но я говорю правду: я очнулся из мертвых на одной из плит на верхнем этаже.':
             # r63 # reply4381
             $ _r4381_action(gsm)
@@ -866,7 +904,9 @@ label dvaxis_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 87
 
 # s14 # say4384
 label dvaxis_s14:  # from 13.0 13.3 15.0
-    SPEAKER 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя. Ты фпятил! Профь от мея!'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя.'
+    x 'Ты фпятил! Профь от мея!'
 
     menu:
         'Я никуда не уйду. Рассказывай, что ты здесь делаешь, или я позову стражу.' if _r4385_condition(gsm):
@@ -890,7 +930,7 @@ label dvaxis_s14:  # from 13.0 13.3 15.0
 
 # s15 # say4390
 label dvaxis_s15:  # from -
-    SPEAKER 'Фальшивый зомби недоверчиво смотрит на вас обоих.'
+    teller 'Фальшивый зомби недоверчиво смотрит на вас обоих.'
 
     menu:
         'Это правда — я очнулся на одной из здешних плит.':
@@ -907,7 +947,9 @@ label dvaxis_s15:  # from -
 
 # s16 # say4394
 label dvaxis_s16:  # from 13.1
-    SPEAKER 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя. Пуфтогоовый! Приурок! Профь от мея, пей! Профь!'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя.'
+    x 'Пуфтогоовый! Приурок! Профь от мея, пей! Профь!'
 
     menu:
         'Я никуда не уйду. Рассказывай, что ты здесь делаешь, или я позову стражу.' if _r4395_condition(gsm):
@@ -931,7 +973,9 @@ label dvaxis_s16:  # from 13.1
 
 # s17 # say4400
 label dvaxis_s17:  # from 7.5 10.1 14.1 16.1 25.3 27.3
-    SPEAKER 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка. Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
+    x 'Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу.'
 
     menu:
         'Ты не сможешь сбежать, если я УБЬЮ тебя. А теперь отвечай, или я сделаю твою маскировку настоящей.' if _r4401_condition(gsm):
@@ -949,13 +993,14 @@ label dvaxis_s17:  # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label dvaxis_s18:  # from 17.0
-    SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
+    x 'Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят.'
 
     menu:
         'Я рискну. Готовься к смерти.':
             # r82 # reply4405
-            $ _r4405_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
             # r83 # reply4406
             jump dvaxis_s4
@@ -963,13 +1008,14 @@ label dvaxis_s18:  # from 17.0
 
 # s19 # say4407
 label dvaxis_s19:  # from 7.6 10.2 14.2 16.2 25.4 27.4
-    SPEAKER 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка. ТЫ пытаеффя фапифать МЕЯ ф кьигу мертфых? У мея фдефь пвячуффа двуфья, у тея фдефь *никоо*. Твонеф мея — они тея пвиконфят.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
+    x 'ТЫ пытаеффя фапифать МЕЯ ф кьигу мертфых? У мея фдефь пвячуффа двуфья, у тея фдефь *никоо*. Твонеф мея — они тея пвиконфят.'
 
     menu:
         'Я рискну. Готовься к смерти.':
             # r84 # reply4408
-            $ _r4408_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Что, если я раскрою твою маскировку перед стражей?' if _r4409_condition(gsm):
             # r85 # reply4409
             jump dvaxis_s21
@@ -983,13 +1029,14 @@ label dvaxis_s19:  # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label dvaxis_s20:  # from 19.2
-    SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
+    x 'Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу.'
 
     menu:
         'Это был твой последний шанс, труп. Готовься к смерти.':
             # r88 # reply4413
-            $ _r4413_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже, *зомби*.':
             # r89 # reply4414
             jump dvaxis_s4
@@ -997,7 +1044,11 @@ label dvaxis_s20:  # from 19.2
 
 # s21 # say4415
 label dvaxis_s21:  # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    SPEAKER 'Недобрый блеск в твоих глазах не оставляет от его самонадеянности и следа. Не-не-не! Не наа фвать фтражу! — он явно напуган. — Я-я-я фпионю фа твуфявыми, говою, фео увиву. Ни-нифео больфе.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Недобрый блеск в твоих глазах не оставляет от его самонадеянности и следа.'
+    x 'Не-не-не! Не наа фвать фтражу!'
+    teller 'Он явно напуган.'
+    x 'Я-я-я фпионю фа твуфявыми, говою, фео увиву. Ни-нифео больфе.'
 
     menu:
         'Шпионишь? Для кого?':
@@ -1011,12 +1062,15 @@ label dvaxis_s21:  # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
             jump dvaxis_s43
         'Это все, что я хотел узнать. Прощай, *зомби*.':
             # r93 # reply4419
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s22 # say4420
 label dvaxis_s22:  # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    SPEAKER 'Не-не-не! Не твогаи мея! Факт того, что ты явно превосходишь зомби в грубой силе, очевидно, повлиял на его решение, и от его самонадеянности не осталось и следа. Я-я-я фпионю за твуфьявыми, говою, фео увиву. Ни-нифео больфе.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Не-не-не! Не твогаи мея!'
+    teller 'Факт того, что ты явно превосходишь зомби в грубой силе, очевидно, повлиял на его решение, и от его самонадеянности не осталось и следа.'
+    x 'Я-я-я фпионю за твуфьявыми, говою, фео увиву. Ни-нифео больфе.'
 
     menu:
         'Шпионишь? Для кого?':
@@ -1030,12 +1084,12 @@ label dvaxis_s22:  # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
             jump dvaxis_s43
         'Это все, что я хотел знать. А теперь прочь с дороги, *зомби*.':
             # r97 # reply4424
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s23 # say4425
-label dvaxis_s23:  # from 21.0 22.0 # Check EXTERN ~DMORTE~ : 89
-    SPEAKER 'Зомби в страхе умолкает, ничего не желая говорить.'
+label dvaxis_s23:  # from 21.0 22.0 # Manually checked EXTERN ~DMORTE~ : 89
+    teller 'Зомби в страхе умолкает, ничего не желая говорить.'
 
     menu:
         'Ну же, для кого ты следишь за этим местом?' if _r4426_condition(gsm):
@@ -1043,7 +1097,7 @@ label dvaxis_s23:  # from 21.0 22.0 # Check EXTERN ~DMORTE~ : 89
             jump dvaxis_s70
         'Ну же, для кого ты следишь за этим местом?' if _r4427_condition(gsm):
             # r99 # reply4427
-            jump show_graphics_menu
+            jump dmorte_s89
         'Если ты скажешь мне прямо сейчас, для кого ты шпионишь, будет ГОРАЗДО меньше боли.' if _r4428_condition(gsm):
             # r100 # reply4428
             $ _r4428_action(gsm)
@@ -1051,7 +1105,7 @@ label dvaxis_s23:  # from 21.0 22.0 # Check EXTERN ~DMORTE~ : 89
         'Если ты скажешь мне прямо сейчас, для кого ты шпионишь, будет ГОРАЗДО меньше боли.' if _r4429_condition(gsm):
             # r101 # reply4429
             $ _r4429_action(gsm)
-            jump show_graphics_menu
+            jump dmorte_s89
         'Тогда неважно. Так чем же, по твоим наблюдениям, занимаются тленные?':
             # r102 # reply4430
             jump dvaxis_s29
@@ -1060,12 +1114,15 @@ label dvaxis_s23:  # from 21.0 22.0 # Check EXTERN ~DMORTE~ : 89
             jump dvaxis_s43
         'Тогда забудь об этом. Прощай, *зомби*.':
             # r104 # reply4432
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s24 # say4433
 label dvaxis_s24:  # from 3.3 6.3 8.2
-    SPEAKER 'Иффефь мея? Вафем? — он искоса смотрит на тебя. — У тея соофение двя мея?'
+    $ x = _get_vaxis_name(gsm)
+    x 'Иффефь мея? Вафем?'
+    teller 'Он искоса смотрит на тебя.'
+    x 'У тея соофение двя мея?'
 
     menu:
         'Ложь: Да, у меня есть сообщение для тебя.':
@@ -1082,7 +1139,9 @@ label dvaxis_s24:  # from 3.3 6.3 8.2
 
 # s25 # say4437
 label dvaxis_s25:  # from 24.2
-    SPEAKER 'Яростно шепчет. Тада фео тее *надо*, пей?!'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Яростно шепчет.'
+    x 'Тада фео тее *надо*, пей?!'
 
     menu:
         'Я ищу выход отсюда. Ты можешь мне помочь?' if _r4438_condition(gsm):
@@ -1112,7 +1171,8 @@ label dvaxis_s25:  # from 24.2
 
 # s26 # say4445
 label dvaxis_s26:  # from 24.0
-    SPEAKER 'Какое фоофение?'
+    $ x = _get_vaxis_name(gsm)
+    x 'Какое фоофение?'
 
     menu:
         'Ты должен сообщить мне свое задание.' if _r4446_condition(gsm):
@@ -1136,7 +1196,9 @@ label dvaxis_s26:  # from 24.0
 
 # s27 # say4451
 label dvaxis_s27:  # from 24.1 26.3 26.4
-    SPEAKER 'Его глаза в ярости сужаются. Ты не фьяфной. Фто ты?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Его глаза в ярости сужаются.'
+    x 'Ты не фьяфной. Фто ты?'
 
     menu:
         'Я ищу выход отсюда. Ты можешь мне помочь?' if _r4452_condition(gsm):
@@ -1166,7 +1228,8 @@ label dvaxis_s27:  # from 24.1 26.3 26.4
 
 # s28 # say4459
 label dvaxis_s28:  # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    SPEAKER 'Я фпионю фа твуфьявыми. Говою, чео вифу. Нифео больфе.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Я фпионю фа твуфьявыми. Говою, чео вифу. Нифео больфе.'
 
     menu:
         'И чем же, по твоим наблюдениям, занимаются тленные?':
@@ -1177,12 +1240,15 @@ label dvaxis_s28:  # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
             jump dvaxis_s43
         'Это все, что я хотел узнать. Прощай.':
             # r129 # reply4462
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s29 # say4463
 label dvaxis_s29:  # from 21.1 22.1 23.4 28.0 70.1 71.2
-    SPEAKER 'Нифео. Они нифео ни деают. Нифео не нафол. Твупы, твупы, пвофто твупы. Твуфьявые *нифео* ни деают, — его глаза деловито сужаются. — Буу дальфе фледить.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Нифео. Они нифео ни деают. Нифео не нафол. Твупы, твупы, пвофто твупы. Твуфьявые *нифео* ни деают.'
+    teller 'Его глаза деловито сужаются.'
+    x 'Буу дальфе фледить.'
 
     menu:
         'Понятно. Я хотел спросить у тебя еще кое-что…':
@@ -1190,12 +1256,14 @@ label dvaxis_s29:  # from 21.1 22.1 23.4 28.0 70.1 71.2
             jump dvaxis_s43
         'Это все, что я хотел узнать. Прощай.':
             # r131 # reply4465
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s30 # say4466
 label dvaxis_s30:  # from 26.1 26.2
-    SPEAKER 'Он сужает глаза, будто пытаясь тебя вычислить. Какие вафповявения?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он сужает глаза, будто пытаясь тебя вычислить.'
+    x 'Какие вафповявения?'
 
     menu:
         'Доложи свою миссию.':
@@ -1213,12 +1281,14 @@ label dvaxis_s30:  # from 26.1 26.2
             jump dvaxis_s35
         'Твои распоряжения будут переданы в свое время. Я вернусь.':
             # r136 # reply4471
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s31 # say4472
 label dvaxis_s31:  # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    SPEAKER 'Он на секунду умолкает, затем медленно, будто бы понимающе кивает. Пофеу я доувен помоать тее?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он на секунду умолкает, затем медленно, будто бы понимающе кивает.'
+    x 'Пофеу я доувен помоать тее?'
 
     menu:
         'Потому что мне нужна твоя помощь.':
@@ -1249,7 +1319,9 @@ label dvaxis_s31:  # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label dvaxis_s32:  # from 31.0
-    SPEAKER 'Зомби едва усмехается. Фем *нао* фео-то, но нифто нифео *не дает*. *Дай* мне фео-нить, и, *мовет*, я помоу.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби едва усмехается.'
+    x 'Фем *нао* фео-то, но нифто нифео *не дает*. *Дай* мне фео-нить, и, *мовет*, я помоу.'
 
     menu:
         'Что тебе надо?':
@@ -1276,7 +1348,9 @@ label dvaxis_s32:  # from 31.0
 
 # s33 # say4487
 label dvaxis_s33:  # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    SPEAKER 'Он оглядывает тебя с ног до головы, как бы примериваясь, сможет ли он с тобой справиться, останавливается на шрамах и решает не делать этого. Хм-м. Ты мовефь убевать фееф поуталы.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он оглядывает тебя с ног до головы, как бы примериваясь, сможет ли он с тобой справиться, останавливается на шрамах и решает не делать этого.'
+    x 'Хм-м. Ты мовефь убевать фееф поуталы.'
 
     menu:
         'Порталы?':
@@ -1287,7 +1361,9 @@ label dvaxis_s33:  # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label dvaxis_s34:  # from 31.3 32.2 35.3
-    SPEAKER 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка. Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
+    x 'Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу.'
 
     menu:
         'Ты не сможешь сбежать, если я УБЬЮ тебя. А теперь отвечай, или я сделаю твою маскировку настоящей.' if _r4489_condition(gsm):
@@ -1305,7 +1381,8 @@ label dvaxis_s34:  # from 31.3 32.2 35.3
 
 # s35 # say4493
 label dvaxis_s35:  # from 30.3 31.1 32.0
-    SPEAKER 'Тее нуно найти *кьюч* дья мея. Нуен желефный кьюч к байвамовофной комуафе.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Тее нуно найти *кьюч* дья мея. Нуен желефный кьюч к байвамовофной комуафе.'
 
     menu:
         'Ты имеешь в виду этот ключ?' if _r4494_condition(gsm):
@@ -1338,7 +1415,12 @@ label dvaxis_s35:  # from 30.3 31.1 32.0
 
 # s36 # say4501
 label dvaxis_s36:  # from 35.1 58.2
-    SPEAKER 'Он у твуфьявой, — он показывает на свои глаза. — У нее воутые глафифи… Затем он делает движение руками, похожее на стрижку ножницами. Лефвия на пайфах.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Он у твуфьявой.'
+    teller 'Он показывает на свои глаза.'
+    x 'У нее воутые глафифи…'
+    teller 'Затем он делает движение руками, похожее на стрижку ножницами.'
+    x 'Лефвия на пайфах.'
 
     menu:
         'Я уже с ней встречался. Вот ключ.' if _r4502_condition(gsm):
@@ -1361,7 +1443,7 @@ label dvaxis_s36:  # from 35.1 58.2
 
 # s37 # say4505
 label dvaxis_s37:  # from 36.3
-    SPEAKER 'Зомби моргает. Кажется, он тебя не понял.'
+    teller 'Зомби моргает. Кажется, он тебя не понял.'
 
     menu:
         'Это была шутка, видишь ли, ты… а, забудь, найду я твой ключ.' if _r4506_condition(gsm):
@@ -1376,61 +1458,74 @@ label dvaxis_s37:  # from 36.3
 
 # s38 # say4507
 label dvaxis_s38:  # from 36.1 36.2 37.0 37.1
-    SPEAKER 'Зомби косо на тебя смотрит. Ефи тея поимают, не говои никоу обо мне, или я добеусь до тея, когда ты буешь фпать.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби косо на тебя смотрит.'
+    x 'Ефи тея поимают, не говои никоу обо мне, или я добеусь до тея, когда ты буешь фпать.'
 
     menu:
         'Я найду твой треклятый ключ… но лучше бы тебе быть поосторожнее со своими угрозами, слышишь меня?' if _r4508_condition(gsm):
             # r167 # reply4508
             $ _r4508_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Я еще вернусь.' if _r4509_condition(gsm):
             # r168 # reply4509
             $ _r4509_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Я найду твой треклятый ключ… но лучше бы тебе быть поосторожнее со своими угрозами, слышишь меня?' if _r4510_condition(gsm):
             # r169 # reply4510
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Я еще вернусь.' if _r4511_condition(gsm):
             # r170 # reply4511
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s39 # say4512
-label dvaxis_s39:  # from 43.12 # Check EXTERN ~DMORTE~ : 93
-    SPEAKER 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби, — зомби хихикает через зашитые губы, потом стучит себя по голове. — Твуфяки тууупые.'
+label dvaxis_s39:  # from 43.12 # Manually checked EXTERN ~DMORTE~ : 93
+    $ x = _get_vaxis_name(gsm)
+    x 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби.'
+    teller 'Зомби хихикает через зашитые губы, потом стучит себя по голове.'
+    x 'Твуфяки тууупые.'
+    morte 'Ага, уж кто тупые, так это *они*. Это точно.'
 
-    jump show_graphics_menu
+    jump dvaxis_dispose
 
 # s40 # say4514
 label dvaxis_s40:  # from -
-    SPEAKER 'Я фду тея фдефь. Найди кьюч, — зомби улыбается мертвецким оскалом. — Потом я помоу тее.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Я фду тея фдефь. Найди кьюч.'
+    teller 'Зомби улыбается мертвецким оскалом.'
+    x 'Потом я помоу тее.'
 
     menu:
         'Если я найду его, то принесу.':
             # r171 # reply4515
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Тогда забудь об этом.':
             # r172 # reply4516
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s41 # say4517
 label dvaxis_s41:  # from -
-    SPEAKER 'Глаза зомби расширяются, он протягивает руку и прищелкивает пальцами. Дай его мие.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Глаза зомби расширяются, он протягивает руку и прищелкивает пальцами.'
+    x 'Дай его мие.'
 
     menu:
         'Секундочку. Я хочу кое-что взамен.':
             # r173 # reply4518
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'На, бери.':
             # r174 # reply4519
             $ _r4519_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s42 # say4520
 label dvaxis_s42:  # from 35.0 36.0 58.0 58.1
-    SPEAKER 'Глаза зомби расширены, он выхватывает ключ из твоей руки. Затем он поворачивается, все время кивая. Хорофо… хорофо.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Глаза зомби расширены, он выхватывает ключ из твоей руки. Затем он поворачивается, все время кивая.'
+    x 'Хорофо… хорофо.'
 
     menu:
         'А теперь… Как мне выбраться отсюда?' if _r4521_condition(gsm):
@@ -1445,7 +1540,8 @@ label dvaxis_s42:  # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label dvaxis_s43:  # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    SPEAKER 'Фто ты хофефь уфнать?'
+    $ x = _get_vaxis_name(gsm)
+    x 'Фто ты хофефь уфнать?'
 
     menu:
         'Как мне выбраться отсюда?' if _r64508_condition(gsm):
@@ -1489,12 +1585,19 @@ label dvaxis_s43:  # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2
             jump dvaxis_s39
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r190 # reply4536
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s44 # say4537
 label dvaxis_s44:  # from 43.6
-    SPEAKER 'Фа-ОД? — нахмурившись, зомби напряженно думает. — Я… фвыфал, фто он фиет де-то ф Уле, — он качает головой. — Нефнаю где, — он снова хмурится. — Твуфявые фодят ф ума, они не ЛЮЯТ Фа-ода.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Фа-ОД?'
+    teller 'Нахмурившись, зомби напряженно думает.'
+    x 'Я… фвыфал, фто он фиет де-то ф Уле.'
+    teller 'Он качает головой.'
+    x 'Нефнаю где.'
+    teller 'Он снова хмурится.'
+    x 'Твуфявые фодят ф ума, они не ЛЮЯТ Фа-ода.'
 
     menu:
         'Улей?':
@@ -1509,12 +1612,13 @@ label dvaxis_s44:  # from 43.6
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r194 # reply4541
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s45 # say4542
 label dvaxis_s45:  # from 44.0
-    SPEAKER 'Твуффобы фнауви.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Твуффобы фнауви.'
 
     menu:
         'А почему тленные не любят Фарода?':
@@ -1526,12 +1630,13 @@ label dvaxis_s45:  # from 44.0
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r197 # reply4545
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s46 # say4546
-label dvaxis_s46:  # from 44.1 45.0 # Check EXTERN ~DMORTE~ : 91
-    SPEAKER 'Он фбофик. Пвинофит твупы ф Моуг, пводает их твуфвым. Пвинофит МУОГО твупоф. Твуфявые ненают, откуда он их беет. Дуают, он пифет пьей в кьигу мертфых.'
+label dvaxis_s46:  # from 44.1 45.0 # Manually checked EXTERN ~DMORTE~ : 91
+    $ x = _get_vaxis_name(gsm)
+    x 'Он фбофик. Пвинофит твупы ф Моуг, пводает их твуфвым. Пвинофит МУОГО твупоф. Твуфявые ненают, откуда он их беет. Дуают, он пифет пьей в кьигу мертфых.'
 
     menu:
         'Э-э… что?' if _r4547_condition(gsm):
@@ -1539,18 +1644,19 @@ label dvaxis_s46:  # from 44.1 45.0 # Check EXTERN ~DMORTE~ : 91
             jump dvaxis_s48
         'Э-э… что?' if _r4548_condition(gsm):
             # r199 # reply4548
-            jump show_graphics_menu
+            jump dmorte_s91
         'А… Есть кое-что еще, о чем я хочу узнать…':
             # r200 # reply4549
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r201 # reply4550
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s47 # say4551
-label dvaxis_s47:  # from 43.7 # Check EXTERN ~DMORTE~ : 92
-    SPEAKER 'Ненают. Какой-то пей обфифтил тея?'
+label dvaxis_s47:  # from 43.7 # Manually checked EXTERN ~DMORTE~ : 92
+    $ x = _get_vaxis_name(gsm)
+    x 'Ненают. Какой-то пей обфифтил тея?'
 
     menu:
         'Э-э… что?' if _r4552_condition(gsm):
@@ -1558,18 +1664,18 @@ label dvaxis_s47:  # from 43.7 # Check EXTERN ~DMORTE~ : 92
             jump dvaxis_s48
         'Э-э… что?' if _r4553_condition(gsm):
             # r203 # reply4553
-            jump show_graphics_menu
+            jump dmorte_s92
         'А… Есть кое-что еще, о чем я хочу узнать…':
             # r204 # reply4554
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r205 # reply4555
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s48 # say4556
 label dvaxis_s48:  # from 46.0 47.0
-    SPEAKER 'Зомби пытается сказать, умолкает, пытается снова, затем вздыхает. Очевидно, что доходчивей он сказать не сможет.'
+    teller 'Зомби пытается сказать, умолкает, пытается снова, затем вздыхает. Очевидно, что доходчивей он сказать не сможет.'
 
     menu:
         'А… Есть кое-что еще, о чем я хочу узнать…':
@@ -1577,12 +1683,16 @@ label dvaxis_s48:  # from 46.0 47.0
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r207 # reply4558
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s49 # say4559
 label dvaxis_s49:  # from 30.1 42.0 43.0 43.1
-    SPEAKER 'Зомби ворчит. Ты мовешь убевафь феев поуталы, — он взмахивает руками. — Пуф.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби ворчит.'
+    x 'Ты мовешь убевафь феев поуталы.'
+    teller 'Он взмахивает руками.'
+    x 'Пуф.'
 
     menu:
         'Порталы? Что за порталы?':
@@ -1592,7 +1702,10 @@ label dvaxis_s49:  # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label dvaxis_s50:  # from 33.0 49.0
-    SPEAKER 'Поуталы… — зомби окидывает широким жестом пространство вокруг себя. — Поуталы вефде.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Поуталы…'
+    teller 'Зомби окидывает широким жестом пространство вокруг себя.'
+    x 'Поуталы вефде.'
 
     menu:
         'Ты можешь показать мне один из этих порталов?' if _r4564_condition(gsm):
@@ -1611,7 +1724,13 @@ label dvaxis_s50:  # from 33.0 49.0
 
 # s51 # say4567
 label dvaxis_s51:  # from 50.1 50.2 50.3 72.0
-    SPEAKER 'Зомби кивает. Тее надо выити, пойти ф арку на певом этаже, февео-фападный фал… Тее нувна кофть паица, фогнутоо в кьюк… — он поднимает указательный палец и сгибает его в крюк. — Ефли у тея кьюч, иди в авку и пуыгай ф тайную гуобицу. И ты выбралфя отфюда. Тайный выфод, — он энергично кивает. — Там ты мовефь ОДОФНУТЬ.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби кивает.'
+    x 'Тее надо выити, пойти ф арку на певом этаже, февео-фападный фал… Тее нувна кофть паица, фогнутоо в кьюк…'
+    teller 'Он поднимает указательный палец и сгибает его в крюк.'
+    x 'Ефли у тея кьюч, иди в авку и пуыгай ф тайную гуобицу. И ты выбралфя отфюда. Тайный выфод.'
+    teller 'Он энергично кивает.'
+    x 'Там ты мовефь одофнуть.'
 
     menu:
         'Кость согнутого пальца? А где можно найти ее?' if _r64527_condition(gsm):
@@ -1625,12 +1744,17 @@ label dvaxis_s51:  # from 50.1 50.2 50.3 72.0
         'Арка в северо-западной комнате, на первом этаже? Хорошо, я проверю.' if _r4569_condition(gsm):
             # r215 # reply4569
             $ _r4569_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s52 # say4570
 label dvaxis_s52:  # from 43.2
-    SPEAKER 'Фуфай! Фапомиай! — в голосе зомби слышна раздраженность. — Арка, пеувый этаж, феверо-фападная коуната… — он поднимает указательный палец и сгибает его. — Тее нувна кофть паица, фогнутая. Ты попаефь ф тайную гуобицу. Тайный выфод. Там ты мовефь ОДОФНУТЬ.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Фуфай! Фапомиай!'
+    teller 'В голосе зомби слышна раздраженность.'
+    x 'Арка, пеувый этаж, феверо-фападная коуната…'
+    teller 'Он поднимает указательный палец и сгибает его.'
+    x 'Тее нувна кофть паица, фогнутая. Ты попаефь ф тайную гуобицу. Тайный выфод. Там ты мовефь ОДОФНУТЬ.'
 
     menu:
         'Есть еще кое-что, что я хочу узнать…':
@@ -1638,12 +1762,15 @@ label dvaxis_s52:  # from 43.2
             jump dvaxis_s43
         'Арка в северо-западной комнате, на первом этаже, открывается костью изогнутого пальца? Хорошо, на этот раз запомнил.':
             # r217 # reply4572
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s53 # say4573
 label dvaxis_s53:  # from 43.8
-    SPEAKER 'Пифец, — пожимает плечами. — Фтарый. Вовтый.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Пифец.'
+    teller 'Пожимает плечами.'
+    x 'Фтарый. Вовтый.'
 
     menu:
         'Полагаю, добавить больше нечего. Я хочу знать кое-что еще…':
@@ -1651,12 +1778,15 @@ label dvaxis_s53:  # from 43.8
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r219 # reply4575
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s54 # say4576
 label dvaxis_s54:  # from 43.9
-    SPEAKER 'Э? — хмурится. — Фто она?'
+    $ x = _get_vaxis_name(gsm)
+    x 'Э?'
+    teller 'Хмурится.'
+    x 'Фто она?'
 
     menu:
         'Забудь. Я хочу знать кое-что еще…':
@@ -1664,12 +1794,13 @@ label dvaxis_s54:  # from 43.9
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r221 # reply4578
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s55 # say4579
 label dvaxis_s55:  # from 43.10
-    SPEAKER 'Пвоводник. На пеувом этаже. Фто ты хофефь фнать о нем?'
+    $ x = _get_vaxis_name(gsm)
+    x 'Пвоводник. На пеувом этаже. Фто ты хофефь фнать о нем?'
 
     menu:
         'Что ты знаешь о нем?':
@@ -1678,12 +1809,15 @@ label dvaxis_s55:  # from 43.10
             jump dvaxis_s56
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r223 # reply4581
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s56 # say4582
 label dvaxis_s56:  # from 55.0 # GlobalGT("Vaxis","GLOBAL",0)
-    SPEAKER 'Фтвааный. Не твуфявый, не анавфифт. Гуава двугие… — пожимает плечами. — Как у квыфы. Фтванно.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Фтвааный. Не твуфявый, не анавфифт. Гуава двугие…'
+    teller 'Пожимает плечами.'
+    x 'Как у квыфы. Фтванно.'
 
     menu:
         'Хорошо, что только он странный в этом месте. Я хочу знать кое-что еще…':
@@ -1691,12 +1825,12 @@ label dvaxis_s56:  # from 55.0 # GlobalGT("Vaxis","GLOBAL",0)
             jump dvaxis_s43
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
             # r225 # reply4584
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s57 # say4585
 label dvaxis_s57:  # from -
-    SPEAKER 'Ты видишь фальшивого зомби. Ты удивлен его маскировке… его дыхание едва заметно, ты практически не можешь уловить его.'
+    teller 'Ты видишь фальшивого зомби. Ты удивлен его маскировке… его дыхание едва заметно, ты практически не можешь уловить его.'
 
     menu:
         'Приветствую.' if _r4586_condition(gsm):
@@ -1713,12 +1847,14 @@ label dvaxis_s57:  # from -
             jump dvaxis_s58
         'Оставить его в покое.':
             # r230 # reply4590
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s58 # say4591
 label dvaxis_s58:  # from 57.0 57.1 57.3
-    SPEAKER 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем поворачивается к тебе: Фто?'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем поворачивается к тебе.'
+    teller 'Фто?'
 
     menu:
         'Вот ключ к бальзамационной комнате, который ты хотел.' if _r4592_condition(gsm):
@@ -1737,12 +1873,14 @@ label dvaxis_s58:  # from 57.0 57.1 57.3
             jump dvaxis_s43
         'Неважно.':
             # r235 # reply4596
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s59 # say4597
 label dvaxis_s59:  # from 57.2
-    SPEAKER 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем шипит на тебя. Ухои! Вон!'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем шипит на тебя.'
+    x 'Ухои! Вон!'
 
     menu:
         'Нет. Сначала у меня несколько вопросов к тебе…':
@@ -1753,12 +1891,15 @@ label dvaxis_s59:  # from 57.2
             jump dvaxis_s4
         'Тогда неважно.' if _r4600_condition(gsm):
             # r238 # reply4600
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s60 # say4601
 label dvaxis_s60:  # from 43.11
-    SPEAKER 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби, — зомби хихикает через зашитые губы, потом стучит себя по голове. — Твуфяки тууупые.'
+    $ x = _get_vaxis_name(gsm)
+    x 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби.'
+    teller 'Зомби хихикает через зашитые губы, потом стучит себя по голове.'
+    x 'Твуфяки тууупые.'
 
     menu:
         'Ага, уж кто тупой, так это они. Это точно.':
@@ -1775,12 +1916,14 @@ label dvaxis_s60:  # from 43.11
             jump dvaxis_s43
         'Мне нужно идти. Прощай.':
             # r243 # reply4606
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s61 # say4607
 label dvaxis_s61:  # from 60.0
-    SPEAKER 'Зомби определенно не понял сарказма, энергично кивая словам. Тупие твуфявые. Ив мея ХОВОФЫЙ фомби.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби определенно не понял сарказма, энергично кивая словам.'
+    x 'Тупие твуфявые. Ив мея ХОВОФЫЙ фомби.'
 
     menu:
         'Это не больно?':
@@ -1800,12 +1943,16 @@ label dvaxis_s61:  # from 60.0
             jump dvaxis_s43
         'Мне нужно идти. Прощай.' if _r4613_condition(gsm):
             # r249 # reply4613
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s62 # say4614
 label dvaxis_s62:  # from 60.1 61.0
-    SPEAKER 'Он смотрит на твои шрамы. А как ты думаефь? По мие, нет, не офень, — бьет себя по груди. — Я КИЕПКИЙ.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он смотрит на твои шрамы.'
+    x 'А как ты думаефь? По мие, нет, не офень.'
+    teller 'Бьет себя по груди.'
+    x 'Я КИЕПКИЙ.'
 
     menu:
         'Довольно неплохая маскировка. А ты можешь и меня замаскировать под зомби?' if _r4615_condition(gsm):
@@ -1822,12 +1969,16 @@ label dvaxis_s62:  # from 60.1 61.0
             jump dvaxis_s43
         'Мне нужно идти. Прощай.' if _r4674_condition(gsm):
             # r254 # reply4674
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s63 # say4619
 label dvaxis_s63:  # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    SPEAKER 'Что-то бормоча, он несколько раз оглядывает тебя с ног до головы, затем кивает. Уху. Мие нуна банка баифама, — показывает на шрамы на твоей груди. — И игоука ф ниткой.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Что-то бормоча, он несколько раз оглядывает тебя с ног до головы, затем кивает.'
+    x 'Уху. Мие нуна банка баифама.'
+    teller 'Показывает на шрамы на твоей груди.'
+    x 'И игоука ф ниткой.'
 
     menu:
         'На, бери.' if _r4620_condition(gsm):
@@ -1841,16 +1992,18 @@ label dvaxis_s63:  # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
         'Может, быть в другой раз, спасибо… Прощай.':
             # r257 # reply4622
             $ _r4622_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'Бальзамирующая жидкость и нитка? Пойду, поищу их.':
             # r258 # reply4623
             $ _r4623_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s64 # say4624
 label dvaxis_s64:  # from 61.2 61.3 62.1 62.2
-    SPEAKER 'Странным взглядом он осматривает тебя с ног до головы. Ты будефь ХОВОФЫМ фомби. Мовно фделать из тея фомби? ХОВОФАЯ мафкиофка.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Странным взглядом он осматривает тебя с ног до головы.'
+    teller 'Ты будефь ХОВОФЫМ фомби. Мовно фделать из тея фомби? ХОВОФАЯ мафкиофка.'
 
     menu:
         'Спасибо. У меня есть другие вопросы к тебе…':
@@ -1866,12 +2019,12 @@ label dvaxis_s64:  # from 61.2 61.3 62.1 62.2
         'Нет… нет… так тоже неплохо. Прощай.':
             # r262 # reply4628
             $ _r4628_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s65 # say4629
-label dvaxis_s65:  # from 63.0 # Check EXTERN ~DMORTE~ : 94
-    SPEAKER 'Зомби берет у тебя предметы и приступает к работе…'
+label dvaxis_s65:  # from 63.0 # Manually checked EXTERN ~DMORTE~ : 94
+    teller 'Зомби берет у тебя предметы и приступает к работе…'
 
     menu:
         'Попробовать не двигаться.' if _r4630_condition(gsm):
@@ -1881,7 +2034,7 @@ label dvaxis_s65:  # from 63.0 # Check EXTERN ~DMORTE~ : 94
         'Попробовать не двигаться.' if _r4631_condition(gsm):
             # r264 # reply4631
             $ _r4631_action(gsm)
-            jump show_graphics_menu
+            jump dmorte_s94
         'Попробовать не двигаться.' if _r4632_condition(gsm):
             # r265 # reply4632
             $ _r4632_action(gsm)
@@ -1893,8 +2046,9 @@ label dvaxis_s65:  # from 63.0 # Check EXTERN ~DMORTE~ : 94
 
 
 # s66 # say4633
-label dvaxis_s66:  # from 65.0 65.2 65.3 # Check EXTERN ~DMORTE~ : 95
-    SPEAKER 'Зомби обильно натирает твое тело бальзамирующей жидкостью, затем широкими стежками зашивает несколько шрамов. Начав с ног, он медленно поднимается наверх, зашивая в конце концов твои губы.'
+label dvaxis_s66:  # from 65.0 65.2 65.3 # Manually checked EXTERN ~DMORTE~ : 95
+    teller 'Зомби обильно натирает твое тело бальзамирующей жидкостью, затем широкими стежками зашивает несколько шрамов.'
+    teller 'Начав с ног, он медленно поднимается наверх, зашивая в конце концов твои губы.'
 
     menu:
         'Ммм-ммф-ммм… Фпафибо.' if _r4634_condition(gsm):
@@ -1903,7 +2057,7 @@ label dvaxis_s66:  # from 65.0 65.2 65.3 # Check EXTERN ~DMORTE~ : 95
         'Ммм-ммф-ммм… Фпафибо.' if _r4635_condition(gsm):
             # r268 # reply4635
             $ _r4635_action(gsm)
-            jump show_graphics_menu
+            jump dmorte_s95
         'Ммм-ммф-ммм… Фпафибо.' if _r4636_condition(gsm):
             # r269 # reply4636
             jump dvaxis_s67
@@ -1911,7 +2065,9 @@ label dvaxis_s66:  # from 65.0 65.2 65.3 # Check EXTERN ~DMORTE~ : 95
 
 # s67 # say4637
 label dvaxis_s67:  # from 66.0 66.2
-    SPEAKER 'Зомби держит тебя за руку. Офтововно! Вафгоов вафофет фвы, науфив мафкивку. Фомби не говоят. Поняу? Говои медвенно, офтовоно.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби держит тебя за руку.'
+    x 'Офтововно! Вафгоов вафофет фвы, науфив мафкивку. Фомби не говоят. Поняу? Говои медвенно, офтовоно.'
 
     menu:
         'Ммф… ммм. Я… понимаю.':
@@ -1922,36 +2078,41 @@ label dvaxis_s67:  # from 66.0 66.2
 
 # s68 # say4639
 label dvaxis_s68:  # from 67.0
-    SPEAKER 'Зомби хмурится. Мафкирофка не деужится доуго… бальфам выфыхает, фвы рвутфя, — он жмет плечами. — Фнаружи Морга от нее нифего не офтанетфя. Не бегай! Ефли ты побежифь, то науфифь вфю мафкирофку.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби хмурится.'
+    x 'Мафкирофка не деужится доуго… бальфам выфыхает, фвы рвутфя.'
+    teller 'Он жмет плечами.'
+    x 'Фнаружи Морга от нее нифего не офтанетфя. Не бегай! Ефли ты побежифь, то науфифь вфю мафкирофку.'
 
     menu:
         'Снова кивнуть, уйти.':
             # r271 # reply4640
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s69 # say4641
-label dvaxis_s69:  # from -
-    SPEAKER 'Зомби хмурится. Фде-то я тея виел. Мы не виелифь раньфе?'
+label dvaxis_s69:  # from - # orphan
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби хмурится.'
+    x 'Фде-то я тея виел. Мы не виелифь раньфе?'
 
     menu:
         'Может быть. Где ты меня видел?':
             # r272 # reply4642
-            jump show_graphics_menu
+            jump dvaxis_dispose
         'X.':
             # r273 # reply4643
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s70 # say4644
 label dvaxis_s70:  # from 23.0 23.2 71.0 71.1
-    SPEAKER 'К твоему удивлению, зомби отступается от тебя… Он начинает со страхом озираться.'
+    teller 'К твоему удивлению, зомби отступается от тебя… Он начинает со страхом озираться.'
 
     menu:
         'Не хочешь говорить? Тогда приготовься кричать.':
             # r274 # reply4645
-            $ _r4645_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Тогда неважно. Так чем же, по твоим наблюдениям, занимаются тленные?':
             # r275 # reply4646
             jump dvaxis_s29
@@ -1960,12 +2121,12 @@ label dvaxis_s70:  # from 23.0 23.2 71.0 71.1
             jump dvaxis_s43
         'Тогда забудь об этом. Прощай, *зомби*.':
             # r277 # reply4648
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s71 # say4649
 label dvaxis_s71:  # from -
-    SPEAKER 'Зомби смотрит на вас обоих с явной опаской, продолжая молчать… но что-то в его выражении говорит тебе, что предположение Морта верно.'
+    teller 'Зомби смотрит на вас обоих с явной опаской, продолжая молчать… но что-то в его выражении говорит тебе, что предположение Морта верно.'
 
     menu:
         'Значит, анархисты? Так за кем вы тут следите?':
@@ -1983,12 +2144,18 @@ label dvaxis_s71:  # from -
             jump dvaxis_s43
         'Тогда забудь об этом. Прощай, *зомби*.':
             # r282 # reply4654
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s72 # say4655
 label dvaxis_s72:  # from 30.2
-    SPEAKER 'Зомби выглядит сбитым с толку, но затем пожимает плечами, начиная копаться в своей заляпанной тунике. Вфе тихо, твувявыя не февелятся, нифего новоо с пофледнего отфета. Спустя несколько секунд он протягивает тебе какие-то предметы, затем ворчит: Вот Судя по запаху, они прятались очень глубоко, чтобы их невозможно было найти в случае обыска. Я фкоро уйду.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби выглядит сбитым с толку, но затем пожимает плечами, начиная копаться в своей заляпанной тунике.'
+    x 'Вфе тихо, твувявыя не февелятся, нифего новоо с пофледнего отфета.'
+    teller 'Спустя несколько секунд он протягивает тебе какие-то предметы, затем ворчит.'
+    x 'Вот.'
+    teller 'Судя по запаху, они прятались очень глубоко, чтобы их невозможно было найти в случае обыска.'
+    x 'Я фкоро уйду.'
 
     menu:
         'Уйдешь? Как?' if _r4656_condition(gsm):
@@ -1996,28 +2163,33 @@ label dvaxis_s72:  # from 30.2
             jump dvaxis_s51
         'Отлично. Прощай, Ваксис.' if _r64532_condition(gsm):
             # r284 # reply64532
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s73 # say4658
 label dvaxis_s73:  # from -
-    SPEAKER 'Зомби ворчит: Поутал в арке — пеувый этав, феверо-фападная коумата, нувен кофтяной паиец дья откуывания, — он кивает. — Удафи.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Зомби ворчит.'
+    x 'Поутал в арке — пеувый этав, феверо-фападная коумата, нувен кофтяной паиец дья откуывания.'
+    teller 'Он кивает.'
+    x 'Удафи.'
 
     menu:
         'Э-э… Ладно.':
             # r285 # reply4659
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s74 # say4660
 label dvaxis_s74:  # from 34.0
-    SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
+    x 'Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят.'
 
     menu:
         'Это был твой последний шанс. Готовься к смерти.':
             # r286 # reply4661
-            $ _r4661_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*!':
             # r287 # reply4662
             jump dvaxis_s4
@@ -2025,7 +2197,9 @@ label dvaxis_s74:  # from 34.0
 
 # s75 # say4663
 label dvaxis_s75:  # from 31.4 32.3 35.4
-    SPEAKER 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка. ТЫ пытаеффя фапифать МЕЯ ф кьигу мертфых? У мея фдефь пвячуффа двуфья, у тея фдефь *никоо*. Твонеф мея — они тея пвиконфят.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
+    x 'ТЫ пытаеффя фапифать МЕЯ ф кьигу мертфых? У мея фдефь пвячуффа двуфья, у тея фдефь *никоо*. Твонеф мея — они тея пвиконфят.'
 
     menu:
         'А что, если я раскрою твою маскировку страже?' if _r4664_condition(gsm):
@@ -2036,8 +2210,7 @@ label dvaxis_s75:  # from 31.4 32.3 35.4
             jump dvaxis_s76
         'Я рискну. Готовься к смерти.':
             # r290 # reply4666
-            $ _r4666_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
             # r291 # reply4667
             jump dvaxis_s4
@@ -2045,13 +2218,14 @@ label dvaxis_s75:  # from 31.4 32.3 35.4
 
 # s76 # say4668
 label dvaxis_s76:  # from 75.1
-    SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
+    x 'Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу.'
 
     menu:
         'Это был твой последний шанс, труп. Готовься к смерти.':
             # r292 # reply4669
-            $ _r4669_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_attack
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
             # r293 # reply4670
             jump dvaxis_s4
@@ -2059,7 +2233,9 @@ label dvaxis_s76:  # from 75.1
 
 # s77 # say64523
 label dvaxis_s77:  # from 51.0
-    SPEAKER 'Он пожимает плечами. Доувен быть де-то фдефь… Ифи на фкладах навеуху. Мовет быть, там.'
+    $ x = _get_vaxis_name(gsm)
+    teller 'Он пожимает плечами.'
+    teller 'Доувен быть де-то фдефь… Ифи на фкладах навеуху. Мовет быть, там.'
 
     menu:
         'Хорошо. У меня есть другие вопросы…':
@@ -2067,4 +2243,55 @@ label dvaxis_s77:  # from 51.0
             jump dvaxis_s43
         'Хорошо. Я проверю наверху, есть ли там изогнутая кость пальца, потом пойду на первый этаж, к одной из арок в северо-западной комнате. Все ясно.':
             # r295 # reply64525
-            jump show_graphics_menu
+            jump dvaxis_dispose
+
+
+label dvaxis_attack:
+    teller "Я набрасываюсь на Ваксиса. Он очень хочет жить, но я сильнее и быстрее. И я хочу жить больше, чем он."
+    teller "Через несколько секунд тело Ваксиса падает на спину. В его глазах остался человеческий страх перед внезапной смертью."
+    jump dvaxis_dispose
+
+
+label dvaxis_kill:
+    call dvaxis_init
+    if _meet_vaxis(gsm):
+        jump dvaxis_kill_known
+    if _not_meet_vaxis(gsm):
+        jump dvaxis_kill_unknown
+
+
+label dvaxis_kill_unknown:
+    teller"Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида."
+
+    menu:
+        'Уйти.':
+            jump dvaxis_dispose
+        'Убить зомби.':
+            jump dvaxis_killed_unknown
+
+
+
+label dvaxis_kill_known:
+    teller"Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида."
+
+    menu:
+        'Уйти.':
+            jump dvaxis_dispose
+        'Убить зомби.':
+            jump dvaxis_killed_known
+
+
+label dvaxis_killed_unknown:
+    $ _kill_vaxis(gsm)
+    teller "Я бью ходящий труп так, что он сгибается пополам. Зомби неожиданно отпрыгивает и вскрикивает."
+    vaxis_unknown "ААА! Фто ты..."
+    teller "Я без сожалений бью его до тех пор, пока ходячий труп не падает на спину. В его глазах остался человеческий страх перед внезапной смертью."
+    jump dvaxis_dispose
+
+
+label dvaxis_killed_known:
+    $ _kill_vaxis(gsm)
+    teller "Я бью Ваксиса так, что он сгибается пополам. Он неожиданно отпрыгивает и вскрикивает."
+    vaxis "ААА! Фто ты..."
+    teller "Я без сожалений бью его до тех пор, пока он не падает на спину. В его глазах остался человеческий страх перед внезапной смертью."
+    jump dvaxis_dispose

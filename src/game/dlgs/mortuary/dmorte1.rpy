@@ -31,7 +31,6 @@ label dmorte1_init:
     $ gsm.set_meet_morte(True)
     scene bg mortuary1
     show morte_img default at center_left_down
-
     return
 
 
@@ -439,10 +438,10 @@ label dmorte1_s33:  # from 32.0
 
 
 # s34 # say42306
-label dmorte1_s34:  # from - # Check EXTENDS ~DZM782~ : 2
+label dmorte1_s34:  # from - # Manually checked EXTERN ~DZM782~ : 2 as dzm782_s2
     morte 'Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.'
 
-    jump dmorte1_dispose
+    jump dzm782_s2
 
 
 label dmorte1_kill:

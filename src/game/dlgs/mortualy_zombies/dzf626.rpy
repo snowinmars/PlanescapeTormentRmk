@@ -76,7 +76,7 @@ label dzf626_dispose:
 
 
 # s0 # say35050
-label dzf626_s0:  # from - # from - # Manually checked EXTENDS ~DMORTE~ : 338 as dmorte_s330
+label dzf626_s0:  # from - # from - # Manually checked EXTERN ~DMORTE~ : 338 as dmorte_s330
     call dzf626_init
     teller 'Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.'
     teller 'Номер «626» вышит на правой щеке, прямо под глазом.'
@@ -116,7 +116,7 @@ label dzf626_s0:  # from - # from - # Manually checked EXTENDS ~DMORTE~ : 338 as
 
 
 # s1 # say35052
-label dzf626_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 338
+label dzf626_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 338
     teller 'Труп продолжает смотреть на тебя одним уцелевшим глазом.'
 
     menu:
@@ -152,7 +152,7 @@ label dzf626_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 338
             jump dzf626_dispose
 
 # s2 # say35071
-label dzf626_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 338
+label dzf626_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 338
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

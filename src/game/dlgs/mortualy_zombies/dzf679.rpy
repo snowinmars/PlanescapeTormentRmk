@@ -71,7 +71,7 @@ label dzf679_dispose:
 
 
 # s0 # say35178
-label dzf679_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 354 as dmorte_s330
+label dzf679_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 354 as dmorte_s330
     call dzf679_init
     teller 'Похоже, это труп довольно таки старой, даже древней женщины.'
     teller 'Если не обращать внимание на зловоние бальзамирующей жидкости, швы на ее рту и номер «679», вышитый на правой щеке, то она выглядит почти так же, как и в последние годы своей жизни.'
@@ -111,7 +111,7 @@ label dzf679_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 354 as dmorte_s
 
 
 # s1 # say35180
-label dzf679_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 354 as dmorte_s330
+label dzf679_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 354 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -151,7 +151,7 @@ label dzf679_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 354 a
 
 
 # s2 # say35199
-label dzf679_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 354 as dmorte_s330
+label dzf679_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 354 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

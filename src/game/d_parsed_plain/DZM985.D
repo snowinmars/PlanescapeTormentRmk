@@ -59,7 +59,7 @@ label dzm985_dispose:
 
 
 # s0 # say45515
-label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 482
+label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 482
     SPEAKER 'Этот труп, номер 985, встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью. Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.'
 
     menu:
@@ -120,7 +120,7 @@ label dzm985_s3:  # from 0.1 6.0 # ~PlaySoundNotRanged("SPE_11") SetAnimState(My
     jump show_graphics_menu
 
 # s4 # say45530
-label dzm985_s4:  # from 0.2 # Check EXTENDS ~DMORTE~ : 482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482 # GlobalGT("Topple_985","GLOBAL",0)
+label dzm985_s4:  # from 0.2 # Check EXTERN ~DMORTE~ : 482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482 # GlobalGT("Topple_985","GLOBAL",0)
     SPEAKER 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
 
     jump show_graphics_menu

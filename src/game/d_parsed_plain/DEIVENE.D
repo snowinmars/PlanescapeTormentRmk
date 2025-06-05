@@ -19,7 +19,9 @@ init python:
         gsm.update_journal('37702')    # '37702': ' ~В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Они должны быть где-то в Морге, возможно в одной из соседних комнат. ~ '
     def _r3491_action(gsm):        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) 
         gsm.set_mortualy_alarmed(True)
-    def _r3449_action(gsm):        PermanentStatChange(Protagonist,MAXHITPOINTS,RAISE,1) FullHeal(Protagonist) 
+    def _r3449_action(gsm):        
+        gsm.change_stat_permanent('Protagonist', 'MAXHITPOINTS', 'RAISE', 1) 
+        gsm.full_heal('Protagonist') 
         gsm.set_ravel_eivene(True) ~ 
         gsm.update_journal('38199')    # '38199': ' ~После того, как я принес Эи-Вейн бальзамирующую жидкость и нитку, она зашила мои шрамы и нанесла бальзамирующую жидкость на мое тело. Довольно странно, но я чувствую себя... здоровее.~ '
     def _r3456_action(gsm):        
@@ -190,7 +192,7 @@ label deivene_s2:  # from 1.0 1.2
 
 
 # s3 # say3420
-label deivene_s3:  # from 1.1 # Check EXTENDS ~DMORTE~ : 55
+label deivene_s3:  # from 1.1 # Check EXTERN ~DMORTE~ : 55
     SPEAKER 'Женщина не отвечает.'
 
     jump show_graphics_menu
@@ -277,7 +279,7 @@ label deivene_s8:  # from 7.1
 
 
 # s9 # say3439
-label deivene_s9:  # from 7.0 8.0 # Check EXTENDS ~DMORTE~ : 59Check EXTENDS ~DMORTE~ : 59
+label deivene_s9:  # from 7.0 8.0 # Check EXTERN ~DMORTE~ : 59
     SPEAKER 'Спустя несколько минут она заканчивает. Щелкнув когтями, она поворачивается к тебе. К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.'
 
     menu:
@@ -334,7 +336,7 @@ label deivene_s12:  # from 11.0
 
 
 # s13 # say3451
-label deivene_s13:  # from 12.0 # Check EXTENDS ~DMORTE~ : 60
+label deivene_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 60
     SPEAKER 'Эи-Вейн начинает зашивать твои шрамы; ощущения при этом на удивление безболезненны.  Закончив, она обнюхивает тебя, хмурится, затем окунает пальцы в бальзамирующую жидкость. В течении нескольких минут она наносит жидкость на твое тело… довольно странно, но ты чувствуешь себя *лучше*.'
 
     menu:
@@ -430,19 +432,19 @@ label deivene_s18:  # from 14.0 17.1 22.0
 
 
 # s19 # say3472
-label deivene_s19:  # from 1.3 # Check EXTENDS ~DMORTE~ : 56
+label deivene_s19:  # from 1.3 # Check EXTERN ~DMORTE~ : 56
     SPEAKER 'Женщина не отвечает.'
 
     jump show_graphics_menu
 
 # s20 # say3485
-label deivene_s20:  # from 5.2 5.4 # Check EXTENDS ~DMORTE~ : 57
+label deivene_s20:  # from 5.2 5.4 # Check EXTERN ~DMORTE~ : 57
     SPEAKER 'Она отворачивается… непохоже, чтобы она тебя услышала.'
 
     jump show_graphics_menu
 
 # s21 # say3486
-label deivene_s21:  # from 18.1 # Check EXTENDS ~DMORTE~ : 58
+label deivene_s21:  # from 18.1 # Check EXTERN ~DMORTE~ : 58
     SPEAKER 'Она отворачивается… непохоже, чтобы она тебя услышала. Должно быть, ее слух не лучше зрения.'
 
     jump show_graphics_menu

@@ -66,7 +66,7 @@ label dzf1096_dispose:
 
 
 # s0 # say35082
-label dzf1096_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 342Check EXTENDS ~DMORTE~ : 342
+label dzf1096_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 342
     SPEAKER 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли. Кто-то под трафарет написал номер 1096 у нее на лбу; ее губы крепко зашиты.'
 
     menu:
@@ -104,7 +104,7 @@ label dzf1096_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTENDS ~
 
 
 # s1 # say35084
-label dzf1096_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 342
+label dzf1096_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 342
     SPEAKER 'Труп не отвечает. Ты сомневаешься, знает ли она вообще о твоем присутствии.'
 
     menu:
@@ -120,7 +120,7 @@ label dzf1096_s1:  # from 0.0 0.1 0.2 # Check EXTENDS ~DMORTE~ : 342
 
 
 # s2 # say35103
-label dzf1096_s2:  # from 0.3 # Check EXTENDS ~DMORTE~ : 342 # False()
+label dzf1096_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 342 # False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

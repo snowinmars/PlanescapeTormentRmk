@@ -63,8 +63,11 @@ export const parseDialogue = (inputText: string): State[] => {
             if (externMatch) {
                 const targetFile = externMatch[1].trim();
                 const targetLine = externMatch[2].trim();
-                if (currentState.free) currentState.free += `Check EXTENDS ${targetFile} : ${targetLine}`;
-                else currentState.free = `Check EXTENDS ${targetFile} : ${targetLine}`;
+                const freeValue = `Check EXTERN ${targetFile} : ${targetLine}`;
+                if (!currentState.free?.includes(freeValue)) {
+                    if (currentState.free) currentState.free += freeValue;
+                    else currentState.free = freeValue;
+                }
             }
 
             const justAction1Match = line.match(/IF ~~ THEN DO(.*)/)

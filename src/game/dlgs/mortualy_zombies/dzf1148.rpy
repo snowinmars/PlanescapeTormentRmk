@@ -71,7 +71,7 @@ label dzf1148_dispose:
 
 
 # s0 # say35242
-label dzf1148_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 362 as dmorte_s330
+label dzf1148_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 362 as dmorte_s330
     call dzf1148_init
     teller 'Кожа этого женского трупа покрыто замысловатыми узорами татуировок. Кожа на лбу отвалилась, так что номер 1148 вырезан прямо на черепе. Ее рот зашит крепкими грубыми стежками.'
 
@@ -110,7 +110,7 @@ label dzf1148_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 362 as dmorte_
 
 
 # s1 # say35244
-label dzf1148_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 362 as dmorte_s330
+label dzf1148_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 362 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -147,7 +147,7 @@ label dzf1148_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 362 
 
 
 # s2 # say35263
-label dzf1148_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 362 as dmorte_s330
+label dzf1148_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 362 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

@@ -71,7 +71,7 @@ label dzf891_dispose:
 
 
 # s0 # say35274
-label dzf891_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 366 as dmorte_s330
+label dzf891_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 366 as dmorte_s330
     call dzf891_init
     teller 'Этот труп женщины выглядит особенно отвратительно: он лишен ушей, носа и губ.'
     teller 'Чтобы зашить рот, препарирующему пришлось стягивать кожу вокруг рта очень туго; через оставшуюся открытой щель все еще можно разглядеть ряд кривых желтых зубов. На лбу вырезан номер «891».'
@@ -111,7 +111,7 @@ label dzf891_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 366 as dmorte_s
 
 
 # s1 # say35276
-label dzf891_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 366 as dmorte_s330
+label dzf891_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 366 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -148,7 +148,7 @@ label dzf891_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 366 a
 
 
 # s2 # say35295
-label dzf891_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 366 as dmorte_s330
+label dzf891_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 366 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
