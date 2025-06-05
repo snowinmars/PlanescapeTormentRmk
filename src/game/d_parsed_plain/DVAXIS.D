@@ -1,6 +1,6 @@
 init python:
     def _r454_action(gsm):        
-        gsm.dec_law('law') 
+        gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
     def _r461_action(gsm):        
         gsm.set_meet_vaxis(True)
@@ -11,15 +11,15 @@ init python:
     def _r466_action(gsm):        
         gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
     def _r472_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r473_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r475_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r476_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_2')
+        gsm.dec_once_good()
     def _r477_action(gsm):        
-        gsm.inc_once_law('lawful_vaxis_1') 
-        gsm.inc_once_good('good_vaxis_1')
+        gsm.inc_once_law() 
+        gsm.inc_once_good()
     def _r480_action(gsm):        
         gsm.set_meet_vaxis(True) ~ 
         gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
@@ -30,70 +30,70 @@ init python:
         gsm.set_meet_vaxis(True) ~ 
         gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
     def _r487_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r488_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r493_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_2')
+        gsm.dec_once_law()
     def _r494_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_2')
+        gsm.dec_once_law()
     def _r1306_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r1348_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r1359_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r1360_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r1361_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r4364_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4365_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4370_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r4371_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_1')
+        gsm.dec_once_law()
     def _r4381_action(gsm):        
-        gsm.inc_once_law('lawful_vaxis_2') 
-        gsm.inc_once_good('good_vaxis_2')
+        gsm.inc_once_law() 
+        gsm.inc_once_good()
     def _r4387_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4388_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4391_action(gsm):        
-        gsm.inc_once_law('lawful_vaxis_2') 
-        gsm.inc_once_good('good_vaxis_2')
+        gsm.inc_once_law() 
+        gsm.inc_once_good()
     def _r4397_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4398_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4401_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4402_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4405_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4408_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4413_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4428_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4429_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4434_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_5')
+        gsm.dec_once_law()
     def _r4442_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4443_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4447_action(gsm):        
         gsm.set_vaxis_orders(True)
     def _r4448_action(gsm):        
         gsm.set_vaxis_orders(True)
     def _r4456_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4457_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4469_action(gsm):        
         gsm.set_vaxis_leave(True) 
         gsm.set_has_bandages(True) 
@@ -101,43 +101,43 @@ init python:
         gsm.set_has_bandages(True) 
         gsm.set_has_embalm(True) 
         gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0) 
-        gsm.inc_exp(500)    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
+        gsm.inc_exp_custom('party', 500)    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
     def _r4474_action(gsm):        
-        gsm.inc_once_good('good_vaxis_3')
+        gsm.inc_once_good()
     def _r4477_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4478_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4484_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4485_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4672_action(gsm):        
         gsm.set_strong_arm_vaxis(True)
     def _r4489_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4490_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4494_action(gsm):        
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4496_action(gsm):        
         gsm.set_vaxis_orders(False)
     def _r4497_action(gsm):        
         gsm.set_vaxis_orders(False)
     def _r4498_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1') 
+        gsm.dec_once_good() 
         gsm.set_vaxis_orders(False)
     def _r4499_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1') 
+        gsm.dec_once_good() 
         gsm.set_vaxis_orders(False)
     def _r4502_action(gsm):        
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r64520_action(gsm):        
         gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
     def _r4503_action(gsm):        
         gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
     def _r4504_action(gsm):        
-        gsm.dec_once_law('chaotic_vaxis_6')
+        gsm.dec_once_law()
     def _r4506_action(gsm):        
         gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
     def _r66150_action(gsm):        
@@ -147,7 +147,7 @@ init python:
     def _r4509_action(gsm):        
         gsm.set_embalm_key_quest(1)
     def _r4519_action(gsm):        
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4521_action(gsm):        
         gsm.set_embalm_key_quest(3) ~ 
         gsm.update_journal('64521')    # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
@@ -159,18 +159,18 @@ init python:
     def _r4543_action(gsm):        
         gsm.update_journal('64522')    # '64522': ' ~Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока. ~ '
     def _r64527_action(gsm):        
-        gsm.inc_exp(250)    # '64528': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга. ~ '
+        gsm.inc_exp_custom('party', 250)    # '64528': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга. ~ '
     def _r4568_action(gsm):        
-        gsm.inc_exp(250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
+        gsm.inc_exp_custom('party', 250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
     def _r4569_action(gsm):        
-        gsm.inc_exp(250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
+        gsm.inc_exp_custom('party', 250)    # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
     def _r4580_action(gsm):        
         gsm.set_vaxis_exposes_soego(True) ~ 
         gsm.update_journal('64530')    # '64530': ' ~Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях.~ '
     def _r4592_action(gsm):        
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4593_action(gsm):        
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4620_action(gsm):        
         gsm.set_vaxis_zombie_disguise(2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE)
     def _r4621_action(gsm):        
@@ -185,7 +185,7 @@ init python:
         gsm.set_vaxis_zombie_disguise(1)
     def _r4630_action(gsm):        FadeToColor([20.0],0) Wait(1) 
         gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0) 
-        gsm.inc_exp(500)
+        gsm.inc_exp_custom('party', 500)
     def _r4631_action(gsm):        
         gsm.set_morte_vaxis_quip_1(True)
     def _r4632_action(gsm):        FadeToColor([20.0],0) Wait(1) 
@@ -198,7 +198,7 @@ init python:
         gsm.update_journal('64531')    # '64531': ' ~В обмен на иголку, нитку и бальзамирующую жидкость Ваксис замаскировал меня под зомби. Он предупредил меня, что бег может разрушить маскировку, и что я не должен ни с кем разговаривать, будучи замаскированным. Зомби ведь «не разговаривают». ~ '
     def _r4645_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4651_action(gsm):        
-        gsm.dec_once_good('evil_vaxis_1')
+        gsm.dec_once_good()
     def _r4661_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4666_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4669_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)

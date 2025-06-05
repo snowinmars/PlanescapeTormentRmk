@@ -53,7 +53,7 @@ init python:
         gsm.set_ul_1201(False) 
         gsm.set_1201_note_quest(0)
     def _r45023_action(gsm):        
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r45025_action(gsm):        GiveItemCreate("TEarring",Protagonist,3,0,0) 
         gsm.set_has_1201_note(False)
 

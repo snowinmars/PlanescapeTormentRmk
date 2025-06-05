@@ -1,6 +1,6 @@
 init python:
     def _r6533_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r64271_action(gsm):
         gsm.set_has_tome_ba(True)

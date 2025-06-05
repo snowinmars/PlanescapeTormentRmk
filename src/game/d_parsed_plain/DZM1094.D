@@ -1,11 +1,11 @@
 init python:
     def _r6565_action(gsm):        
-        gsm.dec_law('law') 
+        gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
     def _r6568_action(gsm):        
         gsm.set_meet_asonje(True)
     def _r9247_action(gsm):        
-        gsm.dec_once_good('evil_asonje_1') 
+        gsm.dec_once_good() 
         gsm.set_asonje_quest_state(3)
     def _r9289_action(gsm):        
         gsm.set_asonje_quest_state(2)

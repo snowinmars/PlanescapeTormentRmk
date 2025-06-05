@@ -1,6 +1,6 @@
 init python:
     def _r34943_action(gsm):        
-        gsm.dec_once_law('zombie_chaotic')
+        gsm.dec_once_law()
     def _r34946_action(gsm):        
         gsm.set_know_copper_earring_secret(True)
     def _r64279_action(gsm):        

@@ -13,6 +13,8 @@ init python:
                and not gsm.get_has_intro_key()
     def _kill_dzm782(gsm):
         gsm.set_dead_dzm782(True)
+    def _pick_key_up(gsm):
+        gsm.set_has_intro_key(True)
 
 
 init python:
@@ -113,6 +115,7 @@ label dzm782_take_key_1:
 
 label dzm782_take_key_2:
     teller 'С лёгким звуком ключ оказывается в моих руках.'
+    $ _pick_key_up(gsm)
     jump dzm782_dispose
 
 

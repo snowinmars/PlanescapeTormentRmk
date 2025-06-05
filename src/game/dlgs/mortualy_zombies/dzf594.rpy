@@ -5,7 +5,7 @@ init python:
 
 init python:
     def _r35019_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -58,7 +58,7 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF594.DLG
-# Starts:    dzf594_s0 dzf626_skill
+# Starts:    dzf594_s0 dzf594_kill
 # ###
 
 

@@ -7,7 +7,7 @@ init python:
 
 init python:
     def _r6576_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r6583_action(gsm):
         gsm.set_meet_bei(True)

@@ -5,7 +5,7 @@ init python:
         gsm.set_has_embalm(False)
         gsm.set_has_needle(False)
         gsm.set_eivene_delivery(True)
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r3425_action(gsm):
         gsm.update_journal('37702')
     def _r3426_action(gsm):
@@ -22,20 +22,20 @@ init python:
     def _r3449_action(gsm):
         gsm.change_stat_permanent('Protagonist', 'MAXHITPOINTS', 'RAISE', 1)
         gsm.full_heal('Protagonist')
-        gsm.set_ravel_eivene(True) ~
+        gsm.set_ravel_eivene(True)
         gsm.update_journal('38199')
     def _r3456_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r3459_action(gsm):
-        # ?.play_sound('SPTR_01') ~
+        # ?.play_sound('SPTR_01')
         gsm.update_journal('61612')
     def _r3469_action(gsm):
         gsm.set_has_embalm(False)
         gsm.set_has_needle(False)
         gsm.set_eivene_delivery(True)
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r3470_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r3494_action(gsm):
         gsm.update_journal('38203')
     def _r3495_action(gsm):
@@ -43,9 +43,10 @@ init python:
     def _r3496_action(gsm):
         gsm.update_journal('38203')
     def _r3501_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r63478_action(gsm):
-        gsm.inc_exp('Protagonist', 250)
+        gsm.inc_exp_custom('Protagonist', 250)
+        gsm.set_42_secret(True)
 
 
 init python:

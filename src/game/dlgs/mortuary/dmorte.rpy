@@ -11,6 +11,30 @@
         gsm.update_journal('39477')
     def _r4676_action(gsm):
         gsm.update_journal('64512')
+    def _r3483_action(gsm):
+        gsm.update_journal('38205')
+    def _r4678_action(gsm):
+        gsm.dec_once_law(3)
+    def _r4679_action(gsm):
+        gsm.dec_once_law()
+    def _r4682_action(gsm):
+        gsm.inc_once_law(3)
+    def _r4687_action(gsm):
+        gsm.inc_once_law()
+        gsm.inc_once_good()
+    def _r4693_action(gsm):
+        gsm.update_journal('64512')
+    def _r4695_action(gsm):
+        gsm.dec_once_law(3)
+    def _r4699_action(gsm):
+        gsm.inc_once_law(3)
+    def _r64535_action(gsm):      #  FadeToColor([20.0],0) Wait(1)
+        gsm.set_looks_like("zombie")# Wait(2) FadeFromColor([20.0],0)
+        gsm.inc_exp_custom('party', 500)
+    def _r64534_action(gsm):        #FadeToColor([20.0],0) Wait(1)
+        gsm.set_looks_like("zombie") #Wait(2) FadeFromColor([20.0],0)
+    def _r3474_action(gsm):
+        gsm.update_journal('38205')
 
 
 init 10 python:
@@ -25,11 +49,11 @@ init 10 python:
 
 label dmorte_s330_init:
     show morte_img default at center_left_down
-
     return
 
 label dmorte_s330_dispose:
     hide morte_img
+    jump show_graphics_menu
 
 
 # ### starts extern 330
@@ -123,7 +147,7 @@ label dmorte_s478:  # from 477.0
             jump dmorte_s479
         'Ладно. Давай двигаться дальше.':
             # r983 # reply45094
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 
 
 # s479 # say45095
@@ -150,7 +174,7 @@ label dmorte_s480:  # from 479.0 # Check EXTERN ~DZM965~ : 1
             jump dzm965_s1
         'Ладно. Давай двигаться дальше.':
             # r987 # reply45101
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 
 
 # s481 # say45102
@@ -167,7 +191,7 @@ label dmorte_s481:  # from 478.0 480.0 # Check EXTERN ~DZM965~ : 1
             jump dzm965_s1
         'Ладно. Давай двигаться дальше.':
             # r990 # reply45105
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 # #
 # ##
 # ### ends extern 477
@@ -178,7 +202,7 @@ label dmorte_s481:  # from 478.0 480.0 # Check EXTERN ~DZM965~ : 1
 # #
 # s482 # say45540
 label dmorte_s482:  # from - # Check EXTERN ~DZM985~ : 3
-    SPEAKER 'Э… шеф… осторож…'
+    morte 'Э… шеф… осторож…'
 
     jump dzm985_s3
 # #
@@ -337,10 +361,10 @@ label dmorte_s91:  # from - # Check EXTERN ~DVAXIS~ : 43
     menu:
         'Понятно. Я хотел бы знать кое-что еще…':
             # r254 # reply4701
-            jump show_graphics_menu
+            jump dvaxis_s43
         'Да этот Фарод просто святой. Возможно, позже у меня будут другие вопросы. Никуда не уходи.':
             # r255 # reply4702
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 # #
 # ##
 # ### ends extern 91
@@ -356,10 +380,10 @@ label dmorte_s92:  # from - # Check EXTERN ~DVAXIS~ : 43
     menu:
         'Понятно. Я хотел бы знать кое-что еще…':
             # r256 # reply4704
-            jump show_graphics_menu
+            jump dvaxis_s43
         'Да, я жду не дождусь поймать этого вора. Слушай, возможно, позже у меня будут другие вопросы. Никуда не уходи.':
             # r257 # reply4705
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 # #
 # ##
 # ### ends extern 92
@@ -381,11 +405,11 @@ label dmorte_s94:  # from - # Check EXTERN ~DVAXIS~ : 66
         'Бред, как по мне…' if _r64535_condition(gsm):
             # r258 # reply64535
             $ _r64535_action(gsm)
-            jump show_graphics_menu
+            jump dvaxis_s66
         'Бред, как по мне…' if _r64534_condition(gsm):
             # r259 # reply64534
             $ _r64534_action(gsm)
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 # #
 # ##
 # ### ends extern 94
@@ -401,10 +425,10 @@ label dmorte_s95:  # from - # Check EXTERN ~DVAXIS~ : 67
     menu:
         'Замоокни, Моот…':
             # r260 # reply4711
-            jump show_graphics_menu
+            jump dvaxis_s67
         'Ммм-ХММФ!':
             # r261 # reply4712
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 # #
 # ##
 # ### ends extern 95
@@ -458,7 +482,7 @@ label dmorte_s55:  # from - # Manually checked EXTERN ~DEIVENE~ : 4 as deivene_s
             jump deivene_s4
         'Оставить ее в покое.':
             # r169 # reply3476
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 
 
 # s56 # say3477
@@ -472,7 +496,7 @@ label dmorte_s56:  # from 55.0 # Manually checked EXTERN ~DEIVENE~ : 4 as deiven
             jump deivene_s4
         'Оставить ее в покое.':
             # r171 # reply3479
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 
 
 # s57 # say3480
@@ -486,7 +510,7 @@ label dmorte_s57:  # from -
             jump dmorte_s58
         'Уйти.':
             # r173 # reply3484
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 
 
 # s58 # say3481
@@ -496,7 +520,7 @@ label dmorte_s58:  # from 57.0
     menu:
         'Уйти.':
             # r174 # reply3482
-            jump show_graphics_menu
+            jump dmorte_s330_dispose
 
 
 # s59 # say3487

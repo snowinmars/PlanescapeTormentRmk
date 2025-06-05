@@ -95,6 +95,12 @@ label dmorte2_init:
     show morte_img default at center_left_down
     return
 
+label dmorte2_init3:
+    $ gsm.set_location('mortuary3')
+    scene bg mortuary3
+    show morte_img default at center_left_down
+    return
+
 
 label dmorte2_dispose:
     hide morte_img
@@ -620,6 +626,7 @@ label dmorte2_s30:  # from 29.1
 
 # s31 # say41262
 label dmorte2_s31:  # from -
+    call dmorte2_init3
     morte 'Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.'
 
     menu:

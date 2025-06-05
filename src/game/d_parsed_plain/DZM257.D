@@ -1,9 +1,9 @@
 init python:
     def _r6510_action(gsm):        
-        gsm.dec_law('law') 
+        gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
     def _r9562_action(gsm):        
-        gsm.dec_once_law('chaotic_zom257_1')
+        gsm.dec_once_law()
 
 
 init python:

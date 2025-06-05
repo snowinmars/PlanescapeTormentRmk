@@ -1,6 +1,6 @@
 init python:
     def _r6576_action(gsm):        
-        gsm.dec_law('law') 
+        gsm.dec_law() 
         gsm.set_zombie_chaotic(True)
     def _r6583_action(gsm):        
         gsm.set_meet_bei(True)
@@ -9,19 +9,19 @@ init python:
     def _r9097_action(gsm):        
         gsm.set_meet_bei(True)
     def _r9161_action(gsm):        
-        gsm.inc_once_good('good_bei_1')
+        gsm.inc_once_good()
     def _r9162_action(gsm):        
-        gsm.dec_once_good('evil_bei_1')
+        gsm.dec_once_good()
     def _r9200_action(gsm):        
-        gsm.inc_once_good('good_bei_2')
+        gsm.inc_once_good()
     def _r9201_action(gsm):        
-        gsm.dec_once_law('chaotic_bei_1')
+        gsm.dec_once_law()
     def _r9207_action(gsm):        
-        gsm.inc_once_good('good_bei_3') 
+        gsm.inc_once_good() 
         gsm.set_know_xixi(True)
     def _r9208_action(gsm):        
-        gsm.dec_once_good('evil_bei_2') 
-        gsm.dec_once_law('chaotic_bei_2') 
+        gsm.dec_once_good() 
+        gsm.dec_once_law() 
         gsm.set_know_xixi(True)
     def _r9209_action(gsm):        
         gsm.set_know_xixi(True)

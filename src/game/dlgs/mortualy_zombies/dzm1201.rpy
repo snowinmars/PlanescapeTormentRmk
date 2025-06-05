@@ -2,9 +2,9 @@ init python:
     def _r34956_action(gsm):
         gsm.set_1201_note_retrieved(True)
         gsm.set_has_1201_note(True)
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r45129_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 

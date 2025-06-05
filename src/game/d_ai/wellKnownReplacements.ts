@@ -42,6 +42,15 @@ const firstToLower = (x: string): string => x[0].toLowerCase() + x.slice(1);
 
 const booleanSetting = (from: string, to: string, env = 'GLOBAL'): string[][] => setting(from, to, env, false);
 const npcSetting = (from: string, to: string, env = 'GLOBAL'): string[][] => setting(from, to, env, true);
+const fractionSetting = (to: string, env = 'GLOBAL'): string[][] => {
+    [
+        `meet_${to}`,
+    ].map(x => knownSettingsName[x] = {
+        name: x,
+        type: "boolean",
+    });
+    return [];
+}
 const partyNpc = (from: string, to: string): string[][] => {
     knownSettingsName[`in_party_${to}`] = {
         name: `in_party_${to}`,
@@ -246,11 +255,13 @@ export const wellKnownReplacements: string[][] = [
     ...npcSetting('Soego', 'soego'),
     ...npcSetting('Ravel', 'ravel'),
     ...npcSetting('Aelwyn', 'aelwyn'),
+    ...fractionSetting('dustmen'),
     ...booleanSetting(none, 'know_dzm257_spirit'),
     ...booleanSetting(none, 'know_oinosian_name'),
     ...booleanSetting(none, 'know_bei_name'),
     ...booleanSetting(none, 'know_asonje_name'),
     ...booleanSetting(none, 'know_vaxis_name'),
+    ...booleanSetting(none, 'has_bandages_zm396'),
     ...booleanSetting('Evil_Ingress_Teeth_1', 'evil_ingress_teeth_1'),
     ...booleanSetting('Good_Ingress_Teeth_1', 'good_ingress_teeth_1'),
     ...booleanSetting('1201_Note_Retrieved', '1201_note_retrieved'),

@@ -1,25 +1,10 @@
 from engine.menu import (MenuBuilder)
+from menus.morte_menu import (morte_menu)
 
 def build_mortuary2_menu(location_id, gsm):
     builders = []
 
-    builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/morte.png', lambda: not gsm.get_dead_morte(), 510, 880)
-        .auto_position(550, 880)
-        .option('Убить Морта')
-        .jump("dmorte_one_kill_morte") \
-        .when(lambda: gsm.get_in_party_morte() \
-                      and not gsm.get_dead_morte()) \
-        .style('kill') \
-        .option(lambda: 'Поговорить с Мортом'
-                if gsm.get_in_party_morte()
-                else 'Пригласить Морта в группу') \
-        .jump(lambda: 'dmorte_two_talk_morte'
-                if gsm.get_in_party_morte()
-                else 'dmorte_join') \
-        .when(lambda: not gsm.get_dead_morte()) \
-        .style('talk')
-    )
+    builders.append(morte_menu(gsm, location_id, 510, 880))
 
     builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm965(), 450, 520)
@@ -27,15 +12,15 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «965»'
                 if gsm.get_meet_dzm965()
                 else 'Атаковать бродящий труп') \
-        .jump("dmorte_one_kill_dzm965") \
+        .jump("dzm965_kill") \
         .when(lambda: not gsm.get_dead_dzm965()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «965»'
                 if gsm.get_meet_dzm965()
                 else 'Поговорить с бродящим трупом') \
-        .jump(lambda: 'dmorte_one_talk_dzm965'
+        .jump(lambda: 'dzm965_s1'
               if gsm.get_meet_dzm965()
-              else 'dmorte_one_first_talk_dzm965') \
+              else 'dzm965_s0') \
         .when(lambda: not gsm.get_dead_dzm965()) \
         .style('talk')
     )
@@ -46,13 +31,13 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «594»'
                 if gsm.get_meet_dzf594()
                 else 'Атаковать неуклюжий труп') \
-        .jump("dmorte_one_kill_dzf594") \
+        .jump("dzf594_kill") \
         .when(lambda: not gsm.get_dead_dzf594()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «594»'
                 if gsm.get_meet_dzf594()
                 else 'Поговорить с неуклюжим трупом') \
-        .jump("dmorte_one_talk_dzf594") \
+        .jump("dzf594_s0") \
         .when(lambda: not gsm.get_dead_dzf594()) \
         .style('talk')
     )
@@ -63,13 +48,13 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «626»'
                 if gsm.get_meet_dzf626()
                 else 'Атаковать разбитый труп') \
-        .jump("dmorte_one_kill_dzf626") \
+        .jump("dzf626_kill") \
         .when(lambda: not gsm.get_dead_dzf626()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «626»'
                 if gsm.get_meet_dzf626()
                 else 'Поговорить с разбитым трупом') \
-        .jump("dmorte_one_talk_dzf626") \
+        .jump("dzf626_s0") \
         .when(lambda: not gsm.get_dead_dzf626()) \
         .style('talk')
     )
@@ -79,16 +64,16 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Пройти в северо-западную комнату'
                 if gsm.is_visited_location('mortuary3')
                 else "Открыть дверь") \
-        .jump(lambda: 'dmorte_one_mortuary_go_3_visit'
+        .jump(lambda: 'mortuary_walking_3_visit'
                 if gsm.is_visited_location('mortuary3')
-                else 'dmorte_one_mortuary_go_2_3_scene') \
+                else 'mortuary_walking_3_scene') \
         .style('open')
     )
 
     builders.append(MenuBuilder(location_id) \
         .auto_position(660, 980) \
         .option("Пройти в юго-западную комнату") \
-        .jump("dmorte_one_mortuary_go_1_visit") \
+        .jump("mortuary_walking_1_visit") \
         .style('open')
     )
 
