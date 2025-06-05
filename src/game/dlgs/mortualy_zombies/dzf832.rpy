@@ -71,7 +71,7 @@ label dzf832_dispose:
 
 
 # s0 # say35146
-label dzf832_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 350 as dmorte_s330
+label dzf832_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 350 as dmorte_s330
     call dzf832_init
     teller 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет.'
     teller 'Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер «832» элегантным шрифтом.'
@@ -111,7 +111,7 @@ label dzf832_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 350 as dmorte_s
 
 
 # s1 # say35148
-label dzf832_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 350 as dmorte_s330
+label dzf832_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 350 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -148,7 +148,7 @@ label dzf832_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 350 a
 
 
 # s2 # say35167
-label dzf832_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 350 as dmorte_s330
+label dzf832_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 350 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

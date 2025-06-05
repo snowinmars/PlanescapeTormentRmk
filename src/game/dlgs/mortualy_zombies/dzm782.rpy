@@ -46,7 +46,7 @@ label dzm782_dispose:
 
 
 # s0 # say24708
-label dzm782_s0:  # from - # Manually checked EXTENDS ~DMORTE1~ : 34 as dmorte1_s34
+label dzm782_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 34 as dmorte1_s34
     call dzm782_init
     teller 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.'
     teller 'На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'

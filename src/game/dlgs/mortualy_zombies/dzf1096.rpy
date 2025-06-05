@@ -76,7 +76,7 @@ label dzf1096_dispose:
 
 
 # s0 # say35082
-label dzf1096_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 342 as dmorte_s330
+label dzf1096_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 342 as dmorte_s330
     call dzf1096_init
     teller 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли.'
     teller 'Кто-то под трафарет написал номер «1096» у нее на лбу; ее губы крепко зашиты.'
@@ -116,7 +116,7 @@ label dzf1096_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 342 as dmorte_
 
 
 # s1 # say35084
-label dzf1096_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 342 as dmorte_s330
+label dzf1096_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 342 as dmorte_s330
     teller 'Труп не отвечает. Ты сомневаешься, знает ли она вообще о твоем присутствии.'
 
     menu:
@@ -153,7 +153,7 @@ label dzf1096_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 342 
 
 
 # s2 # say35103
-label dzf1096_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 342 as dmorte_s330
+label dzf1096_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 342 as dmorte_s330
     teller 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

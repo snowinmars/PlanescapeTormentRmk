@@ -160,34 +160,8 @@ label ddhall_dispose:
     jump show_graphics_menu
 
 
-
-
-# s102 # say5049
-label dmorte_s102:  # from -
-    call ddhall_init
-    morte 'Эй, шеф! Ты что творишь?!'
-
-    menu:
-        'Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда.':
-            # r271 # reply5050
-            jump dmorte_s103
-
-
-# s103 # say5052
-label dmorte_s103:  # from 102.0 # Check EXTENDS ~DDHALL~ : 0
-    morte 'Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…'
-
-    jump ddhall_s0
-
-# s104 # say5053
-label dmorte_s104:  # from - # Check EXTENDS ~DDHALL~ : 1
-    morte 'И мы *тем более* не должны болтать с больными трухляками. Давай, пошли отсюда. Чем быстрее мы свалим отсюда, тем лучш…'
-
-    jump ddhall_s1
-
-
 # s0 # say822
-label ddhall_s0:  # from - # IF ~~ THEN BEGIN 0 // from:Check EXTENDS ~DMORTE~ : 104
+label ddhall_s0:  # from - # IF ~~ THEN BEGIN 0 // from: Manually checked EXTERN ~DMORTE~ : 104 as dmorte_s104
     SPEAKER 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
     jump dmorte_s104
@@ -274,7 +248,7 @@ label ddhall_s4:  # from 3.0 3.1 # Global("Dhall","GLOBAL",0)
 
 
 # s5 # say838
-label ddhall_s5:  # from - # Check EXTENDS ~DMORTE~ : 102
+label ddhall_s5:  # from - # Manually checked EXTERN ~DMORTE~ : 102 as dmorte_s102
     call ddhall_init
     SPEAKER 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
     SPEAKER 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
@@ -283,7 +257,7 @@ label ddhall_s5:  # from - # Check EXTENDS ~DMORTE~ : 102
     menu:
         'Приветствую.' if _r839_condition(gsm):
             # r14 # reply839
-            jump ddhall_init
+            jump dmorte_s102
         'Приветствую.' if _r835_condition(gsm):
             # r15 # reply835
             jump ddhall_s7
@@ -292,7 +266,7 @@ label ddhall_s5:  # from - # Check EXTENDS ~DMORTE~ : 102
             jump ddhall_s6
         'Оставить старого писаря в покое.':
             # r17 # reply5060
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s6 # say841
@@ -315,7 +289,7 @@ label ddhall_s6:  # from 5.2
             jump ddhall_s44
         'Прощай.':
             # r21 # reply5063
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s7 # say844
@@ -426,7 +400,7 @@ label ddhall_s11:  # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3
     menu:
         'Тогда, возможно, мы еще встретимся, Дхолл.':
             # r42 # reply41564
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s12 # say868
@@ -459,7 +433,7 @@ label ddhall_s13:  # from 9.3
             jump ddhall_s9
         'Тогда прощай, Дхолл.':
             # r47 # reply877
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s14 # say878
@@ -1005,7 +979,7 @@ label ddhall_s39:  # from - # Global("Dhall","GLOBAL",1)
             jump ddhall_s9
         'Прощай, Дхолл.':
             # r151 # reply977
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s40 # say978
@@ -1022,7 +996,7 @@ label ddhall_s40:  # from -
             jump ddhall_s9
         'Неважно. Прощай.':
             # r153 # reply980
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s41 # say983
@@ -1139,7 +1113,7 @@ label ddhall_s46:  # from 45.1
     menu:
         'Я еще вернусь. Прощай.':
             # r173 # reply40005
-            jump ddhall_init
+            jump ddhall_dispose
 
 
 # s47 # say847

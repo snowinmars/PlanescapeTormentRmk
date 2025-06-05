@@ -61,7 +61,6 @@ label dzf114_init:
     $ gsm.set_meet_dzf114(True)
     scene bg mortuary2
     show dzf114_img default at center_left_down
-
     return
 
 
@@ -71,7 +70,7 @@ label dzf114_dispose:
 
 
 # s0 # say34986
-label dzf114_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 330 as dmorte_s330
+label dzf114_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 330 as dmorte_s330
     call dzf114_init
     teller 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер «114», вырезанный у нее на лбу.'
     teller 'Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
@@ -110,7 +109,7 @@ label dzf114_s0:  # from - # Manually checked EXTENDS ~DMORTE~ : 330 as dmorte_s
             jump dzf114_dispose
 
 # s1 # say34988
-label dzf114_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 330 as dmorte_s330
+label dzf114_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 330 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -147,7 +146,7 @@ label dzf114_s1:  # from 0.0 0.1 0.2 # Manually checked EXTENDS ~DMORTE~ : 330 a
 
 
 # s2 # say35007
-label dzf114_s2:  # from 0.3 # Manually checked EXTENDS ~DMORTE~ : 330 as dmorte_s330
+label dzf114_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 330 as dmorte_s330
     teller 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

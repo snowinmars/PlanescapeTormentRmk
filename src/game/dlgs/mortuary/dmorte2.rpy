@@ -93,7 +93,6 @@ label dmorte2_init:
     $ gsm.set_meet_morte(True)
     scene bg mortuary2
     show morte_img default at center_left_down
-
     return
 
 
