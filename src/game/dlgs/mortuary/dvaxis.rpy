@@ -1,5 +1,5 @@
 ﻿init python:
-    def _embalm(gsm):
+    def _take_embalm(gsm):
         gsm.set_has_embalm(True)
     def _kill_vaxis(gsm):
         gsm.set_dead_vaxis(True)
@@ -15,7 +15,7 @@
 
 init python:
     def _r454_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r461_action(gsm):
         gsm.set_meet_vaxis(True)
@@ -112,7 +112,7 @@ init python:
         gsm.set_has_bandages(True)
         gsm.set_has_embalm(True)
         gsm.set_has_needle(True) # GiveItemCreate("Knife",Protagonist,1,0,0)
-        gsm.inc_exp(500)
+        gsm.inc_exp_custom('party', 500)
     def _r4474_action(gsm):
         gsm.inc_once_good('good_vaxis_3')
     def _r4477_action(gsm):
@@ -130,7 +130,7 @@ init python:
     def _r4490_action(gsm):
         gsm.dec_once_good('evil_vaxis_1')
     def _r4494_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4496_action(gsm):
         gsm.set_vaxis_orders(False)
     def _r4497_action(gsm):
@@ -142,7 +142,7 @@ init python:
         gsm.dec_once_good('evil_vaxis_1')
         gsm.set_vaxis_orders(False)
     def _r4502_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r64520_action(gsm):
         gsm.update_journal('64519')
     def _r4503_action(gsm):
@@ -158,7 +158,7 @@ init python:
     def _r4509_action(gsm):
         gsm.set_embalm_key_quest(1)
     def _r4519_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4521_action(gsm):
         gsm.set_embalm_key_quest(3)
         gsm.update_journal('64521')
@@ -170,18 +170,18 @@ init python:
     def _r4543_action(gsm):
         gsm.update_journal('64522')
     def _r64527_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4568_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4569_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4580_action(gsm):
         gsm.set_vaxis_exposes_soego(True)
         gsm.update_journal('64530')
     def _r4592_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4593_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r4620_action(gsm):
         gsm.set_vaxis_zombie_disguise(2)
         # DestroyPartyItem("Embalm",FALSE)
@@ -198,7 +198,7 @@ init python:
         gsm.set_vaxis_zombie_disguise(1)
     def _r4630_action(gsm):
         gsm.set_looks_like("zombie")
-        gsm.inc_exp(500)
+        gsm.inc_exp_custom('party', 500)
     def _r4631_action(gsm):
         gsm.set_morte_vaxis_quip_1(True)
     def _r4632_action(gsm):
@@ -538,7 +538,7 @@ init 10 python:
 
 # ###
 # Original:  DLG/DVAXIS.DLG
-# Starts:    dvaxis_s0 dvaxis_s57 dvaxis_s69
+# Starts:    dvaxis_s0 dvaxis_s57 dvaxis_s69 dvaxis_kill
 # ###
 
 
@@ -2295,3 +2295,8 @@ label dvaxis_killed_known:
     vaxis "ААА! Фто ты..."
     teller "Я без сожалений бью его до тех пор, пока он не падает на спину. В его глазах остался человеческий страх перед внезапной смертью."
     jump dvaxis_dispose
+
+
+label dvaxis_embalm:
+    $ _take_embalm(gsm)
+    teller "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Мне стоит взять парочку."

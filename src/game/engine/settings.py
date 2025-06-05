@@ -2,6 +2,20 @@ import logging
 
 devlog = logging.getLogger('log')
 
+internal_location_dict = {
+    'AR0200': 'my_cutom',
+    'AR1001': 'my_cutom',
+    'AR0605': 'my_cutom',
+    'AR0400': 'my_cutom',
+    'AR0202': 'my_cutom',
+    'AR0500': 'my_cutom',
+    'AR0401': 'my_cutom',
+    'AR0610': 'my_cutom',
+    'AR0700': 'my_cutom',
+    'AR1000': 'my_cutom',
+    'AR': 'my_cutom',
+}
+
 class SettingsManager:
     def __init__(self, event_manager):
         self.tracked = []
@@ -42,6 +56,23 @@ class SettingsManager:
 
     def is_visited_location(self, location_id):
         return location_id in self._registry['visited_locations']
+
+    def is_internal_location_visited(self, internal_location_id):
+        location_id = internal_location_dict[internal_location_id]
+        # return self.is_visited_location(location_id)
+        return True
+
+    def change_stat_permanent(self, who, prop, action, amount):
+        return
+
+    def inc_exp_custom(self, who, amount):
+        return
+
+    def dec_exp_custom(self, who, amount):
+        return
+
+    def full_heal(self, who):
+        return
 
     def register(self, setting_id, default_value):
         self._registry[setting_id] = default_value

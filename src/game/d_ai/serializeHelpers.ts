@@ -13,10 +13,10 @@ type StringTransformer = (body: string) => string;
 
 // Alignment transformation utilities
 const createAlignmentHandler = (prefix: string) => (id: string, amount: number) => {
-  if (amount === 1) return `gsm.inc_${prefix}('${id}')`;
-  if (amount === -1) return `gsm.dec_${prefix}('${id}')`;
-  if (amount > 0) return `gsm.inc_${prefix}('${id}', ${amount})`;
-  if (amount < 0) return `gsm.dec_${prefix}('${id}', ${-amount})`;
+  if (amount === 1) return `gsm.inc_${prefix}()`;
+  if (amount === -1) return `gsm.dec_${prefix}()`;
+  if (amount > 0) return `gsm.inc_${prefix}(${amount})`;
+  if (amount < 0) return `gsm.dec_${prefix}(${-amount})`;
   return `raise Exception("Cannot change setting by zero delta")`;
 };
 
@@ -116,7 +116,7 @@ const transformDestroyGold = transformByRegex(
 
 const transformPartyExp = transformByRegex(
   /AddexperienceParty\((.*)\)/g,
-  amount => amount > 0 ? `gsm.inc_exp(${amount})` : `gsm.dec_exp(${-amount})`
+  amount => amount > 0 ? `gsm.inc_exp_custom('party', ${amount})` : `gsm.dec_exp_custom('party', ${-amount})`
 );
 
 const transformPartyGold = transformByRegex(
@@ -129,8 +129,8 @@ const transformNpcExp: StringTransformer = (body) =>
     (_, character, amountStr) => {
       const amount = parseInt(amountStr);
       return amount > 0
-        ? `gsm.inc_exp('${character}', ${amount})`
-        : `gsm.dec_exp('${character}', ${-amount})`;
+        ? `gsm.inc_exp_custom('${character}', ${amount})`
+        : `gsm.dec_exp_custom('${character}', ${-amount})`;
     }
   );
 

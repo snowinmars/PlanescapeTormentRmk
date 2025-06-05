@@ -9,12 +9,12 @@ init python:
     def _r45480_action(gsm):
         gsm.set_has_506_thread(True)
         gsm.set_has_needle(True)
-        gsm.inc_exp(100)
+        gsm.inc_exp_custom('party', 100)
     def _r45484_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r45502_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 

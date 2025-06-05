@@ -1,6 +1,8 @@
 init python:
     def _s3_action(gsm):
         gsm.set_topple_985(True)
+    def _kill_dzm985(gsm):
+        gsm.set_dead_dzm985(True)
 
 
 init python:
@@ -17,7 +19,7 @@ init python:
         gsm.inc_once_law('lawful_zm985_1')
         gsm.inc_once_good('good_zm985_1')
     def _r45532_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r45539_action(gsm):
         # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
@@ -53,14 +55,14 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM985.DLG
-# Starts:    dzm985_s
+# Starts:    dzm985_s0
 # ###
 
 
 label dzm985_init:
-    $ gsm.set_location('mortuary2')
+    $ gsm.set_location('mortuary5')
     $ gsm.set_meet_dzm985(True)
-    scene bg mortuary2
+    scene bg mortuary5
     show dzm985_img default at center_left_down
     return
 
@@ -178,6 +180,7 @@ label dzm985_s3:  # from 0.1 6.0 # PlaySoundNotRanged("SPE_11") SetAnimState(Mys
     teller 'К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке смирно.'
     teller 'Спустя мгновенье, нога падает с сочным гулким ударом.'
     $ _s3_action(gsm)
+    $ _kill_dzm985(gsm)
 
     jump dzm985_s7
 

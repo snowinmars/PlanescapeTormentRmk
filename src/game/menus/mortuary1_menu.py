@@ -1,25 +1,10 @@
 ﻿from engine.menu import (MenuBuilder)
+from menus.morte_menu import (morte_menu)
 
 def build_mortuary1_menu(location_id, gsm):
     builders = []
 
-    builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/morte.png', lambda: not gsm.get_dead_morte(), 1360, 400)
-        .auto_position(1400, 400)
-        .option('Убить Морта')
-        .jump("dmorte1_kill") \
-        .when(lambda: gsm.get_in_party_morte() \
-                      and not gsm.get_dead_morte()) \
-        .style('kill') \
-        .option(lambda: 'Поговорить с Мортом'
-                if gsm.get_in_party_morte()
-                else 'Пригласить Морта в группу') \
-        .jump(lambda: 'dmorte1_s30'
-                if gsm.get_in_party_morte()
-                else 'dmorte1_s26') \
-        .when(lambda: not gsm.get_dead_morte()) \
-        .style('talk')
-    )
+    builders.append(morte_menu(gsm, location_id, 1360, 400))
 
     builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm569(), 400, 720)
@@ -77,9 +62,9 @@ def build_mortuary1_menu(location_id, gsm):
         .option(lambda: 'Открыть дверь в западную комнату'
                 if gsm.is_visited_location('mortuary2')
                 else "Открыть дверь") \
-        .jump(lambda: 'dmorte_one_mortuary_go_2_visit'
+        .jump(lambda: 'mortuary_walking_2_visit'
                 if gsm.is_visited_location('mortuary2')
-                else 'dmorte_one_mortuary_go_1_2_scene') \
+                else 'mortuary_walking_2_scene') \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )
@@ -87,7 +72,7 @@ def build_mortuary1_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(1240, 1000) \
         .option("Открыть дверь") \
-        .jump("dmorte_one_mortuary_go_1_8_closed") \
+        .jump("mortuary_walking_1_8_closed") \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )
@@ -95,7 +80,7 @@ def build_mortuary1_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(940, 220) \
         .option("Открыть дверь") \
-        .jump("dmorte_one_mortuary_go_1_up_closed") \
+        .jump("mortuary_walking_1_up_closed") \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )
@@ -103,7 +88,7 @@ def build_mortuary1_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(790, 280) \
         .option("Открыть дверь") \
-        .jump("dmorte_one_mortuary_go_1_down_closed") \
+        .jump("mortuary_walking_1_down_closed") \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )

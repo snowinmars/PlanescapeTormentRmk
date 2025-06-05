@@ -155,7 +155,7 @@ label start:
     menu:
         "dev":
             $ gsm = renpy.store.global_settings_manager
-            $ gsm.set_location('mortuary1')
+            $ gsm.set_location('mortuary5')
             $ gsm.set_in_party_morte(True)
             $ gsm.set_has_intro_key(True)
             $ gsm.set_has_tome_ba(True)
@@ -168,7 +168,7 @@ label start:
             $ gsm.set_has_embalm(True)
             # $ gsm.set_has_keyem(True)
 
-            jump dmorte1_s23
+            jump show_graphics_menu
         "start":
             jump dmorte1_s0
 

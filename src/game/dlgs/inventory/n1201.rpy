@@ -53,7 +53,7 @@
         gsm.set_ul_1201(False)
         gsm.set_1201_note_quest(0)
     def _r45023_action(gsm):
-        gsm.inc_exp(250)
+        gsm.inc_exp_custom('party', 250)
     def _r45025_action(gsm):
         gsm.set_has_tearring(True)
         gsm.set_has_1201_note(False)

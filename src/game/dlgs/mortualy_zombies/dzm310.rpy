@@ -7,7 +7,7 @@ init python:
 
 init python:
     def _r6499_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r6502_action(gsm):
         gsm.set_meet_oinosian(True)

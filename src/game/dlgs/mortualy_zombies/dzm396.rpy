@@ -4,11 +4,11 @@ init python:
     def _get_took_dzm396_bandages(gsm):
         gsm.get_has_bandages_zm396()
     def _r34936_condition(gsm):
-        not get_has_bandages_zm396()
+        not gsm.get_has_bandages_zm396()
 
 init python:
     def _r34932_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
     def _r34936_action(gsm):
         gsm.set_has_bandages_zm396(True)
@@ -17,29 +17,28 @@ init python:
         gsm.set_has_bandages_zm396(True)
         gsm.set_has_bandages(True)
     def _r45112_action(gsm):
-        gsm.dec_law('law')
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
 init python:
     def _r34932_condition(gsm):
-        return not get_has_bandages_zm396() \
+        return not gsm.get_has_bandages_zm396() \
                and not gsm.get_zombie_chaotic()
     def _r34935_condition(gsm):
-        return not get_has_bandages_zm396() \
+        return not gsm.get_has_bandages_zm396() \
                and gsm.get_zombie_chaotic()
     def _r34937_condition(gsm):
         return gsm.get_vaxis_exposed()
     def _r34940_condition(gsm):
         return gsm.get_can_speak_with_dead()
     def _r34934_condition(gsm):
-        return not get_has_bandages_zm396() \
-               and gsm.get_has_bandages_zm396()
+        return not gsm.get_has_bandages_zm396()
     def _r45112_condition(gsm):
-        return get_has_bandages_zm396() \
+        return gsm.get_has_bandages_zm396() \
                and not gsm.get_zombie_chaotic()
     def _r45113_condition(gsm):
-        return get_has_bandages_zm396() \
+        return gsm.get_has_bandages_zm396() \
                and gsm.get_zombie_chaotic()
     def _r45114_condition(gsm):
         return gsm.get_vaxis_exposed()
