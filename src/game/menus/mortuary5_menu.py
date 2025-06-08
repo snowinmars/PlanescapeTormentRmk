@@ -12,17 +12,17 @@ def build_mortuary5_menu(location_id, gsm):
         # .option(lambda: 'Атаковать Эи-Вейн'
         #         if gsm.get_meet_eivene()
         #         else 'Атаковать хрупкую девушку') \
-        # .jump(lambda: 'dmorte_one_kill_eivene'
+        # .jump(lambda: 'start_deivene_kill'
         #       if gsm.get_meet_eivene()
-        #       else 'dmorte_one_kill_first_eivene') \
+        #       else 'start_deivene_kill_first') \
         # .when(lambda: not gsm.get_dead_eivene()) \
         # .style('kill') \
         .option(lambda: 'Поговорить с Эи-Вейн'
                 if gsm.get_meet_eivene()
                 else 'Поговорить с хрупкой девушкой') \
-        .jump(lambda: 'deivene_s15'
+        .jump(lambda: 'start_deivene_talk'
               if gsm.get_meet_eivene()
-              else 'deivene_s0') \
+              else 'start_deivene_talk_first') \
         .when(lambda: not gsm.get_dead_eivene()) \
         .style('talk')
     )
@@ -33,13 +33,13 @@ def build_mortuary5_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «257»'
                 if gsm.get_meet_dzm257()
                 else 'Атаковать косой труп') \
-        .jump("dzm257_kill") \
+        .jump("start_dzm257_kill") \
         .when(lambda: not gsm.get_dead_dzm257()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «257»'
                 if gsm.get_meet_dzm257()
                 else 'Поговорить с косым трупом') \
-        .jump("dzm257_s0") \
+        .jump("start_dzm257_talk") \
         .when(lambda: not gsm.get_dead_dzm257()) \
         .style('talk')
     )
@@ -50,15 +50,15 @@ def build_mortuary5_menu(location_id, gsm):
         # .option(lambda: 'Атаковать труп «506»'
         #         if gsm.get_meet_dzm506()
         #         else 'Атаковать труп со швами') \
-        # .jump("dmorte_one_kill_dzm506") \
+        # .jump("start_dzm506_kill") \
         # .when(lambda: not gsm.get_dead_dzm506()) \
         # .style('kill') \
         .option(lambda: 'Поговорить c трупом «506»'
                 if gsm.get_meet_dzm506()
                 else 'Поговорить с трупом со швами') \
-        .jump(lambda: 'dzm506_s5'
+        .jump(lambda: 'start_dzm506_talk'
                 if gsm.get_has_506_thread()
-                else 'dzm506_s0') \
+                else 'start_dzm506_talk_first') \
         .when(lambda: not gsm.get_dead_dzm506()) \
         .style('talk')
     )
@@ -69,13 +69,13 @@ def build_mortuary5_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «985»'
                 if gsm.get_meet_dzm985()
                 else 'Атаковать качающийся труп') \
-        .jump("dzm985_s3") \
+        .jump("start_dzm985_kill") \
         .when(lambda: not gsm.get_dead_dzm985()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «985»'
                 if gsm.get_meet_dzm985()
                 else 'Поговорить с качающимся трупом') \
-        .jump("dzm985_s0") \
+        .jump("start_dzm985_talk") \
         .when(lambda: not gsm.get_dead_dzm985()) \
         .style('talk')
     )

@@ -30,18 +30,24 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1146.DLG
-# Starts:    dzm1146_s0 dzm1146_s20
 # ###
 
 
+label start_dzm1146_talk_first:
+    call dzm1146_init
+    jump dzm1146_s0
+label start_dzm1146_talk:
+    call dzm1146_init
+    jump dzm1146_s20
+label start_dzm1146_kill:
+    call dzm1146_init
+    jump dzm1146_s3
 label dzm1146_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm1146(True)
     scene bg mortuary1
     show dzm1146_img default at center_left_down
     return
-
-
 label dzm1146_dispose:
     hide dzm1146_img
     jump show_graphics_menu
@@ -49,7 +55,6 @@ label dzm1146_dispose:
 
 # s0 # say6518
 label dzm1146_s0:  # from - # IF ~  Global("Crispy","GLOBAL",0)~ THEN BEGIN 0 // from:
-    call dzm1146_init
     teller 'На лбу этого ходячего трупа вырезан номер «1146», губы зашиты грубой черной ниткой. Все тело покрыто ужасающими шрамами — даже хуже, чем у тебя самого. Кажется, хозяин тела сгорел заживо.'
     teller 'У него нет носа, ушей и нескольких пальцев, вероятно, потерянных в давнем пожаре. Когда ты загораживаешь ему путь, чтобы привлечь его внимание, он останавливается и смотрит на тебя пустым взглядом.'
 
@@ -387,7 +392,6 @@ label dzm1146_s19:  # from 18.0 # Global("Crispy","GLOBAL",1)
 
 # s20 # say20099
 label dzm1146_s20:  # from -
-    call dzm1146_init
     dzm1146 'Опять?!'
 
     menu:

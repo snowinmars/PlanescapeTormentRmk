@@ -62,14 +62,18 @@ init 10 python:
 # ###
 
 
+label start_dzf1072_talk:
+    call dzf1072_init
+    jump dzf1072_s0
+label start_dzf1072_kill:
+    call dzf1072_init
+    jump dzf1072_kill
 label dzf1072_init:
     $ gsm.set_location('mortuary3')
     $ gsm.set_meet_dzf1072(True)
     scene bg mortuary3
     show dzf1072_img default at center_left_down
     return
-
-
 label dzf1072_dispose:
     hide dzf1072_img
     jump show_graphics_menu
@@ -77,7 +81,6 @@ label dzf1072_dispose:
 
 # s0 # say35114
 label dzf1072_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 346 as dmorte_s330
-    call dzf1072_init
     teller 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения.'
     teller 'У нее нет челюсти, часть мяса отвалилась от черепа, обнажая номер «1072», выбитый на кости.'
 
@@ -190,7 +193,6 @@ label dzf1072_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 346 as dmorte
 
 
 label dzf1072_kill:
-    call dzf1072_init
     teller 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения.'
     teller 'У нее нет челюсти, часть мяса отвалилась от черепа, обнажая номер «1072», выбитый на кости.'
 

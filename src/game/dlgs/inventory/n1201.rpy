@@ -83,14 +83,12 @@ init 10 python:
 
 # ###
 # Original:  DLG/DN1201.DLG
-# Starts:    dn1201_s0
 # ###
 
-
+label start_n1201_note_talk:
+    jump dn1201_s0
 label dn1201_init:
     return
-
-
 label dn1201_dispose:
     jump show_graphics_menu
 

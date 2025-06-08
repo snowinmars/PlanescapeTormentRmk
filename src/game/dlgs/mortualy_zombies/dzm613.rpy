@@ -21,18 +21,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM613.DLG
-# Starts:    dzm613_s0
 # ###
 
 
+label start_dzm613_talk:
+    call dzm613_init
+    jump dzm613_s0
+label start_dzm613_kill:
+    call dzm613_init
+    jump dzm613_kill
 label dzm613_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm613(True)
     scene bg mortuary1
     show dzm613_img default at center_left_down
     return
-
-
 label dzm613_dispose:
     hide dzm613_img
     jump show_graphics_menu
@@ -40,7 +43,6 @@ label dzm613_dispose:
 
 # s0 # say6540
 label dzm613_s0:  # from -
-    call dzm613_init
     teller 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры 613, но на коже между «1» и «3» виден большой пробел шириной с палец.'
     teller 'Приглядевшись, ты с трудом различаешь вырезанную «2».'
 

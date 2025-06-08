@@ -23,18 +23,24 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM732.DLG
-# Starts:    dzm732_s0 dzm732_s3
 # ###
 
 
+label start_dzm732_talk_first:
+    call dzm732_init
+    jump dzm732_s3
+label start_dzm732_talk:
+    call dzm732_init
+    jump dzm732_s0
+label start_dzm732_kill:
+    call dzm732_init
+    jump dzm732_kill
 label dzm732_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm732(True)
     scene bg mortuary1
     show dzm732_img default at center_left_down
     return
-
-
 label dzm732_dispose:
     hide dzm732_img
     jump show_graphics_menu
@@ -42,7 +48,6 @@ label dzm732_dispose:
 
 # s0 # say6529
 label dzm732_s0:  # from 4.0
-    call dzm732_init
     teller 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно…'
     teller '…тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
 

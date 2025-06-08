@@ -33,18 +33,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM569.DLG
-# Starts:    dzm569_s0 dzm569_kill
 # ###
 
 
+label start_dzm569_talk:
+    call dzm569_init
+    jump dzm569_s0
+label start_dzm569_kill:
+    call dzm569_init
+    jump dzm569_kill
 label dzm569_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm569(True)
     scene bg mortuary1
     show dzm569_img default at center_left_down
     return
-
-
 label dzm569_dispose:
     hide dzm569_img
     jump show_graphics_menu
@@ -52,7 +55,6 @@ label dzm569_dispose:
 
 # s0 # say24575
 label dzm569_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1_s31
-    call dzm569_init
     teller 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.'
 
     menu:
@@ -143,7 +145,6 @@ label dzm569_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1
 
 
 label dzm569_kill:
-    call dzm569_init
     teller 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.'
 
     menu:

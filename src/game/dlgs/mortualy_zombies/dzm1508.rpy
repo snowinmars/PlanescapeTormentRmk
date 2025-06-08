@@ -21,18 +21,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1508.DLG
-# Starts:    dzm1508_s0
 # ###
 
 
+label start_dzm1508_talk:
+    call dzm1508_init
+    jump dzm1508_s0
+label start_dzm1508_kill:
+    call dzm1508_init
+    jump dzm1508_kill
 label dzm1508_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm1508(True)
     scene bg mortuary1
     show dzm1508_img default at center_left_down
     return
-
-
 label dzm1508_dispose:
     hide dzm1508_img
     jump show_graphics_menu
@@ -40,7 +43,6 @@ label dzm1508_dispose:
 
 # s0 # say46745
 label dzm1508_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
-    call dzm1508_init
     teller 'На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.'
     teller 'Номер «1508» вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.'
 

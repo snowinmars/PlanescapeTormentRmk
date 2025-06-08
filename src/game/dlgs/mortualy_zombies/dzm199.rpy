@@ -21,18 +21,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM199.DLG
-# Starts:    dzm199_s0
 # ###
 
 
+label start_dzm199_talk:
+    call dzm199_init
+    jump dzm199_s0
+label start_dzm199_kill:
+    call dzm199_init
+    jump dzm199_kill
 label dzm199_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm199(True)
     scene bg mortuary1
     show dzm199_img default at center_left_down
     return
-
-
 label dzm199_dispose:
     hide dzm199_img
     jump show_graphics_menu
@@ -40,7 +43,6 @@ label dzm199_dispose:
 
 # s0 # say34975
 label dzm199_s0:  # from -
-    call dzm199_init
     teller 'От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.'
     teller 'На его лбу выгравирован номер «199»; его губы сшиты.'
 

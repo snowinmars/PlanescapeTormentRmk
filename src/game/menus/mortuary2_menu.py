@@ -12,15 +12,15 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «965»'
                 if gsm.get_meet_dzm965()
                 else 'Атаковать бродящий труп') \
-        .jump("dzm965_kill") \
+        .jump("start_dzm965_kill") \
         .when(lambda: not gsm.get_dead_dzm965()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «965»'
                 if gsm.get_meet_dzm965()
                 else 'Поговорить с бродящим трупом') \
-        .jump(lambda: 'dzm965_s1'
+        .jump(lambda: 'start_dzm965_talk'
               if gsm.get_meet_dzm965()
-              else 'dzm965_s0') \
+              else 'start_dzm965_talk_first') \
         .when(lambda: not gsm.get_dead_dzm965()) \
         .style('talk')
     )
@@ -31,13 +31,13 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «594»'
                 if gsm.get_meet_dzf594()
                 else 'Атаковать неуклюжий труп') \
-        .jump("dzf594_kill") \
+        .jump("start_dzf594_kill") \
         .when(lambda: not gsm.get_dead_dzf594()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «594»'
                 if gsm.get_meet_dzf594()
                 else 'Поговорить с неуклюжим трупом') \
-        .jump("dzf594_s0") \
+        .jump("start_dzf594_talk") \
         .when(lambda: not gsm.get_dead_dzf594()) \
         .style('talk')
     )
@@ -48,13 +48,13 @@ def build_mortuary2_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «626»'
                 if gsm.get_meet_dzf626()
                 else 'Атаковать разбитый труп') \
-        .jump("dzf626_kill") \
+        .jump("start_dzf626_kill") \
         .when(lambda: not gsm.get_dead_dzf626()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «626»'
                 if gsm.get_meet_dzf626()
                 else 'Поговорить с разбитым трупом') \
-        .jump("dzf626_s0") \
+        .jump("start_dzf626_talk") \
         .when(lambda: not gsm.get_dead_dzf626()) \
         .style('talk')
     )

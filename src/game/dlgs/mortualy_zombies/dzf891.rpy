@@ -53,18 +53,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF891.DLG
-# Starts:    dzf891_s0
 # ###
 
 
+label start_dzf891_talk:
+    call dzf891_init
+    jump dzf891_s0
+label start_dzf891_kill:
+    call dzf891_init
+    jump dzf891_kill
 label dzf891_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf891(True)
     scene bg mortuary2
     show dzf891_img default at center_left_down
     return
-
-
 label dzf891_dispose:
     hide dzf891_img
     jump show_graphics_menu
@@ -72,7 +75,6 @@ label dzf891_dispose:
 
 # s0 # say35274
 label dzf891_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 366 as dmorte_s330
-    call dzf891_init
     teller 'Этот труп женщины выглядит особенно отвратительно: он лишен ушей, носа и губ.'
     teller 'Чтобы зашить рот, препарирующему пришлось стягивать кожу вокруг рта очень туго; через оставшуюся открытой щель все еще можно разглядеть ряд кривых желтых зубов. На лбу вырезан номер «891».'
 

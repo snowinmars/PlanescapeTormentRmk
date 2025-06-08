@@ -62,14 +62,24 @@ init 10 python:
 # ###
 
 
+label start_dzm1094_talk_first:
+    call dzm1094_init
+    jump dzm1094_s0
+label start_dzm1094_talk_good:
+    call dzm1094_init
+    jump dzm1094_s26
+label start_dzm1094_talk_bad:
+    call dzm1094_init
+    jump dzm1094_s27
+label start_dzm1094_kill:
+    call dzm1094_init
+    jump dzm1094_kill
 label dzm1094_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm1094(True)
     scene bg mortuary1
     show dzm1094_img default at center_left_down
     return
-
-
 label dzm1094_dispose:
     hide dzm1094_img
     jump show_graphics_menu
@@ -77,7 +87,6 @@ label dzm1094_dispose:
 
 # s0 # say6562
 label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)~ THEN BEGIN 0 // from:
-    call dzm1094_init
     teller 'У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.'
     teller 'Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
 
@@ -582,7 +591,6 @@ label dzm1094_s25:  # from 14.1 22.1 # GlobalGT("Asonje","GLOBAL",0) GlobalLT("A
 
 # s26 # say20061
 label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
-    call dzm1094_init
     $ x = get_know_asonje_name(gsm)
     x 'Снова вернулся, а?'
     teller 'Он широко улыбается.'
@@ -598,7 +606,6 @@ label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
 
 # s27 # say20062
 label dzm1094_s27:  # from -
-    call dzm1094_init
     $ x = get_know_asonje_name(gsm)
     x 'А, это ты… снова. Он хмурится, глядя в сторону.'
     teller 'Он хмурится, глядя в сторону.'

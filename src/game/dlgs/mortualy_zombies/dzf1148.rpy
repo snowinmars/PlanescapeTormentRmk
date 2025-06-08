@@ -53,18 +53,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF1148.DLG
-# Starts:    dzf1148_s0
 # ###
 
 
+label start_dzf1148_talk:
+    call dzf1148_init
+    jump dzf1148_s0
+label start_dzf1148_kill:
+    call dzf1148_init
+    jump dzf1148_kill
 label dzf1148_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf1148(True)
     scene bg mortuary2
     show dzf1148_img default at center_left_down
     return
-
-
 label dzf1148_dispose:
     hide dzf1148_img
     jump show_graphics_menu
@@ -72,7 +75,6 @@ label dzf1148_dispose:
 
 # s0 # say35242
 label dzf1148_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 362 as dmorte_s330
-    call dzf1148_init
     teller 'Кожа этого женского трупа покрыто замысловатыми узорами татуировок. Кожа на лбу отвалилась, так что номер 1148 вырезан прямо на черепе. Ее рот зашит крепкими грубыми стежками.'
 
     menu:
