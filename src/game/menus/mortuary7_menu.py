@@ -22,11 +22,10 @@ def build_mortuary7_menu(location_id, gsm):
         .style('open')
     )
 
-
     builders.append(MenuBuilder(location_id) \
-        .auto_position(730, 220) \
+        .auto_position(1110, 350) \
         .option("Взять бальзамирующую жидкость") \
-        .jump("dvaxis_embalm") \
+        .jump("mortuary_walking_1_pick_embalm") \
         .when(lambda: not gsm.get_has_embalm()) \
         .style('open')
     )

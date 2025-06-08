@@ -70,6 +70,14 @@ def build_mortuary1_menu(location_id, gsm):
     )
 
     builders.append(MenuBuilder(location_id) \
+        .auto_position(520, 440) \
+        .option("Взять скальпель") \
+        .jump("mortuary_walking_1_pick_scalpel") \
+        .when(lambda: not gsm.get_has_scalpel()) \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
         .auto_position(1240, 1000) \
         .option("Открыть дверь") \
         .jump("mortuary_walking_1_8_closed") \

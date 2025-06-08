@@ -1,3 +1,7 @@
+init python:
+    def _take_embalm(gsm):
+        gsm.set_has_embalm(True)
+
 init 10 python:
     gsm = renpy.store.global_settings_manager
 
@@ -74,3 +78,14 @@ label mortuary_walking_8_up_visit:
     $ gsm.set_location('mortuaryx')
     scene bg mortuaryx
     jump show_graphics_menu
+
+label mortuary_walking_1_pick_scalpel:
+    $ gsm.set_has_scalpel(True)
+    scene bg mortuary1
+    teller "Ты подбираешь скальпель с одной из полок."
+    jump show_graphics_menu
+
+label mortuary_walking_1_pick_embalm:
+    $ _take_embalm(gsm)
+    teller "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Ты берёшь парочку."
+    jump dvaxis_dispose

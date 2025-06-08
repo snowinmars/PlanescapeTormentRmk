@@ -126,15 +126,6 @@ label dzf1072_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 346 a
         'Использовать на трупе свою способность История костей.' if _r35134_condition(gsm):
             # r3 # reply35134
             jump dzf1072_s2
-        'Было приятно с тобой поболтать. Прощай.' if _r35139_condition(gsm):
-            # r4 # reply35139
-            jump dmorte_s330
-        'Было приятно с тобой поболтать. Прощай.' if _r35141_condition(gsm):
-            # r6 # reply35141
-            jump dzf1072_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35143_condition(gsm):
-            # r8 # reply35143
-            jump dzf1072_dispose
         'Тогда прощай.' if _r35117_condition(gsm):
             # r10 # reply35117
             jump dmorte_s330
@@ -163,15 +154,6 @@ label dzf1072_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 346 as dmorte
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r35133_condition(gsm):
             # r2 # reply35133
             jump dzf1072_s1
-        'Было приятно с тобой поболтать. Прощай.' if _r35139_condition(gsm):
-            # r4 # reply35139
-            jump dmorte_s330
-        'Было приятно с тобой поболтать. Прощай.' if _r35141_condition(gsm):
-            # r6 # reply35141
-            jump dzf1072_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35143_condition(gsm):
-            # r8 # reply35143
-            jump dzf1072_dispose
         'Тогда прощай.' if _r35136_condition(gsm):
             # r13 # reply35136
             jump dmorte_s330
