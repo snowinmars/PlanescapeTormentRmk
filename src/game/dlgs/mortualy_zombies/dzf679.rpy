@@ -53,18 +53,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF679.DLG
-# Starts:    dzf679_s0
 # ###
 
 
+label start_dzf679_talk:
+    call dzf679_init
+    jump dzf679_s0
+label start_dzf679_kill:
+    call dzf679_init
+    jump dzf679_kill
 label dzf679_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf679(True)
     scene bg mortuary2
     show dzf679_img default at center_left_down
     return
-
-
 label dzf679_dispose:
     hide dzf679_img
     jump show_graphics_menu
@@ -72,7 +75,6 @@ label dzf679_dispose:
 
 # s0 # say35178
 label dzf679_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 354 as dmorte_s330
-    call dzf679_init
     teller 'Похоже, это труп довольно таки старой, даже древней женщины.'
     teller 'Если не обращать внимание на зловоние бальзамирующей жидкости, швы на ее рту и номер «679», вышитый на правой щеке, то она выглядит почти так же, как и в последние годы своей жизни.'
 

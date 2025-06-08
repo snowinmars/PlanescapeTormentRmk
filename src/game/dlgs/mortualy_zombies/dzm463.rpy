@@ -21,18 +21,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM463.DLG
-# Starts:    dzm463_s0
 # ###
 
 
+label start_dzm463_talk:
+    call dzm463_init
+    jump dzm463_s0
+label start_dzm463_kill:
+    call dzm463_init
+    jump dzm463_kill
 label dzm463_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm463(True)
     scene bg mortuary1
     show dzm463_img default at center_left_down
     return
-
-
 label dzm463_dispose:
     hide dzm463_img
     jump show_graphics_menu
@@ -40,7 +43,6 @@ label dzm463_dispose:
 
 # s0 # say6484
 label dzm463_s0:  # from -
-    call dzm463_init
     teller 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:

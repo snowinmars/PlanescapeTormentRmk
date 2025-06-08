@@ -62,14 +62,18 @@ init 10 python:
 # ###
 
 
+label start_dzf1096_talk:
+    call dzf1096_init
+    jump dzf1096_s0
+label start_dzf1096_kill:
+    call dzf1096_init
+    jump dzf1096_kill
 label dzf1096_init:
     $ gsm.set_location('mortuary3')
     $ gsm.set_meet_dzf1096(True)
     scene bg mortuary3
     show dzf1096_img default at center_left_down
     return
-
-
 label dzf1096_dispose:
     hide dzf1096_img
     jump show_graphics_menu
@@ -77,7 +81,6 @@ label dzf1096_dispose:
 
 # s0 # say35082
 label dzf1096_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 342 as dmorte_s330
-    call dzf1096_init
     teller 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли.'
     teller 'Кто-то под трафарет написал номер «1096» у нее на лбу; ее губы крепко зашиты.'
 

@@ -26,18 +26,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1664.DLG
-# Starts:    dzm1664_s0 dzm1664_kill
 # ###
 
 
+label start_dzm1664_talk:
+    call dzm1664_init
+    jump dzm1664_s0
+label start_dzm1664_kill:
+    call dzm1664_init
+    jump dzm1664_kill
 label dzm1664_init:
     $ gsm.set_location('mortuary4')
     $ gsm.set_meet_dzm1664(True)
     scene bg mortuary4
     show dzm1664_img default at center_left_down
     return
-
-
 label dzm1664_dispose:
     hide dzm1664_img
     jump show_graphics_menu
@@ -45,7 +48,6 @@ label dzm1664_dispose:
 
 # s0 # say47002
 label dzm1664_s0:  # from 5.0 # IF ~  True()~ THEN BEGIN 0 // from: 5.0
-    call dzm1664_init
     teller 'Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.'
     teller 'На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
 
@@ -150,7 +152,6 @@ label dzm1664_s6:  # from 0.1
 
 
 label dzm1664_kill:
-    call dzm1664_init
     teller 'Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно.'
     teller 'На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
 

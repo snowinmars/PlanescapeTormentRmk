@@ -132,10 +132,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DEIVENE.DLG
-# Starts:    deivene_s0 deivene_s15
 # ###
 
 
+label start_deivene_talk_first:
+    call deivene_init
+    jump deivene_s0
+label start_deivene_talk:
+    call deivene_init
+    jump deivene_s15
+label start_deivene_kill_first:
+    call deivene_init
+    jump deivene_kill_first
+label start_deivene_kill:
+    call deivene_init
+    jump deivene_kill
 label deivene_init:
     $ gsm.set_location('mortuary5')
     $ gsm.set_in_party_morte(True)
@@ -143,8 +154,6 @@ label deivene_init:
     scene bg mortuary5
     show eivene_img default at center_left_down
     return
-
-
 label deivene_dispose:
     hide eivene_img
     jump show_graphics_menu

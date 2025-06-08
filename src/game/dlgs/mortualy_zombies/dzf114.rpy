@@ -52,18 +52,20 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF114.DLG
-# Starts:    dzf114_s0
 # ###
 
-
+label start_dzf114_talk:
+    call dzf114_init
+    jump dzf114_s0
+label start_dzf114_kill:
+    call dzf114_init
+    jump dzf114_kill
 label dzf114_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf114(True)
     scene bg mortuary2
     show dzf114_img default at center_left_down
     return
-
-
 label dzf114_dispose:
     hide dzf114_img
     jump show_graphics_menu
@@ -71,7 +73,6 @@ label dzf114_dispose:
 
 # s0 # say34986
 label dzf114_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 330 as dmorte_s330
-    call dzf114_init
     teller 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер «114», вырезанный у нее на лбу.'
     teller 'Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
 

@@ -55,18 +55,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM985.DLG
-# Starts:    dzm985_s0
 # ###
 
 
+label start_dzm985_talk:
+    call dzm985_init
+    jump dzm985_s0
+label start_dzm985_kill:
+    call dzm985_init
+    jump dzm985_s3
 label dzm985_init:
     $ gsm.set_location('mortuary5')
     $ gsm.set_meet_dzm985(True)
     scene bg mortuary5
     show dzm985_img default at center_left_down
     return
-
-
 label dzm985_dispose:
     hide dzm985_img
     jump show_graphics_menu
@@ -74,7 +77,6 @@ label dzm985_dispose:
 
 # s0 # say45515
 label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0 // from: Manually checked EXTERN ~DMORTE~ : 482 as dmorte1_s482
-    call dzm985_init
     teller 'Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.'
     teller 'Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.'
 

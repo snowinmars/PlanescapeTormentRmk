@@ -35,18 +35,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1201.DLG
-# Starts:    dzm1201_s0
 # ###
 
 
+label start_dzm1201_talk:
+    call dzm1201_init
+    jump dzm1201_s0
+label start_dzm1201_kill:
+    call dzm1201_init
+    jump dzm1201_kill
 label dzm1201_init:
     $ gsm.set_location('mortuary3')
     $ gsm.set_meet_dzm1201(True)
     scene bg mortuary3
     show dzm1201_img default at center_left_down
     return
-
-
 label dzm1201_dispose:
     hide dzm1201_img
     jump show_graphics_menu
@@ -54,7 +57,6 @@ label dzm1201_dispose:
 
 # s0 # say34953
 label dzm1201_s0:  # from - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)~ THEN BEGIN 0 // from:
-    call dzm1201_init
     teller 'На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.'
     teller 'Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.'
 

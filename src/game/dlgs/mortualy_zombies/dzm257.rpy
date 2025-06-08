@@ -32,18 +32,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM257.DLG
-# Starts:    dzm257_s0 dzm257_kill
 # ###
 
 
+label start_dzm257_talk:
+    call dzm257_init
+    jump dzm257_s0
+label start_dzm257_kill:
+    call dzm257_init
+    jump dzm257_kill
 label dzm257_init:
     $ gsm.set_location('mortuary5')
     $ gsm.set_meet_dzm257(True)
     scene bg mortuary5
     show dzm257_img default at center_left_down
     return
-
-
 label dzm257_dispose:
     hide dzm257_img
     jump show_graphics_menu
@@ -51,7 +54,6 @@ label dzm257_dispose:
 
 # s0 # say6507
 label dzm257_s0:  # from -
-    call dzm257_init
     teller 'Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.'
     teller 'Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.'
 

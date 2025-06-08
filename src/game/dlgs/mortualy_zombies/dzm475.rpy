@@ -21,18 +21,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM475.DLG
-# Starts:    dzm475_s0
 # ###
 
 
+label start_dzm475_talk:
+    call dzm475_init
+    jump dzm475_s0
+label start_dzm475_kill:
+    call dzm475_init
+    jump dzm475_kill
 label dzm475_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm475(True)
     scene bg mortuary1
     show dzm475_img default at center_left_down
     return
-
-
 label dzm475_dispose:
     hide dzm475_img
     jump show_graphics_menu
@@ -40,7 +43,6 @@ label dzm475_dispose:
 
 # s0 # say6584
 label dzm475_s0:  # from -
-    call dzm475_init
     teller 'Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.'
     teller 'На проржавевшей табличке над его левым глазом выбит номер «475». Его рот намертво закрыт; от него несет бальзамирующей жидкостью.'
 

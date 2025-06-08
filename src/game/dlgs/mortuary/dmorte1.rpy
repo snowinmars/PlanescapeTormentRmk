@@ -25,6 +25,12 @@ init 10 python:
 # ###
 
 
+label start_dmorte1_talk:
+    call dmorte1_init
+    jump dmorte1_s0
+label start_dmorte1_kill:
+    call dmorte1_init
+    jump dmorte1_kill
 label dmorte1_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_in_party_morte(True)
@@ -32,8 +38,6 @@ label dmorte1_init:
     scene bg mortuary1
     show morte_img default at center_left_down
     return
-
-
 label dmorte1_dispose:
     hide morte_img
     jump show_graphics_menu

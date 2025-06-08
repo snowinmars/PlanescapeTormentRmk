@@ -58,18 +58,20 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF626.DLG
-# Starts:    dzf626_s0 dzf626_kill
 # ###
 
-
+label start_dzf626_talk:
+    call dzf626_init
+    jump dzf626_s0
+label start_dzf626_kill:
+    call dzf626_init
+    jump dzf626_kill
 label dzf626_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf626(True)
     scene bg mortuary2
     show dzf626_img default at center_left_down
     return
-
-
 label dzf626_dispose:
     hide dzf626_img
     jump show_graphics_menu
@@ -77,7 +79,6 @@ label dzf626_dispose:
 
 # s0 # say35050
 label dzf626_s0:  # from - # from - # Manually checked EXTERN ~DMORTE~ : 338 as dmorte_s330
-    call dzf626_init
     teller 'Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.'
     teller 'Номер «626» вышит на правой щеке, прямо под глазом.'
 
@@ -190,7 +191,6 @@ label dzf626_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 338
 
 
 label dzf626_kill:
-    call dzf626_init
     teller 'Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.'
     teller 'Номер «626» вышит на правой щеке, прямо под глазом.'
     teller 'Ты думаешь о том, как разрезал бы её кожу.'

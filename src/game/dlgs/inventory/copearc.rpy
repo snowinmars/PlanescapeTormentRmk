@@ -20,15 +20,16 @@ init 10 python:
 
 # ###
 # Original:  DLG/DCOPEARC.DLG
-# Starts:    copearc_s0
 # ###
 
 
+label start_copper_earring_closed_talk:
+    jump copearc_s0
 label copearc_init:
+    show copearc_img default at center
     return
-
-
 label copearc_dispose:
+    hide copearc_img
     jump show_graphics_menu
 
 

@@ -24,7 +24,7 @@ init 1 python:
             os.remove(l)
 
     config.version = config_version
-    config.reject_backslash = False # required to make the above work with with RenPy:
+    config.reject_backslash = False  # required to make the above work with with RenPy:
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     sys.setdefaultencoding('utf-8')
 
@@ -47,39 +47,26 @@ init 1 python:
     devlog.info("Game directory: %s" % gamedir)
 
 init 2 python:
-    # setup global characters and images
-    renpy.add_python_directory('chars')
-    renpy.add_python_directory('dlg')
-    renpy.add_python_directory('dlg/dz')
     renpy.add_python_directory('menu')
     renpy.add_python_directory('engine')
-    renpy.add_python_directory('labels')
     renpy.add_python_directory('settings')
 
 
 init 3 python:
     # engine warm up
-#     from engine.dialog import (DialogManager)
     from engine.menu import (MenuManager)
     from engine.settings import (SettingsManager)
     from engine.events import (EventManager)
-#     from engine.history import (HistoryManager)
     from engine.inventory import (InventoryManager)
-#     from engine.label_flow import (LabelFlowBuilder, LabelFlowManager)
-#     from labels.all_labels import (build_all_labels)
     from menus.all_menus import (build_all_menus)
-#     from dlg.all_dlgs import (build_all_dlgs)
     from setting.all_settings import (build_all_settings)
     from setting.all_inventory import (build_all_inventory)
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
     renpy.store.global_event_manager = EventManager()
-#     renpy.store.global_label_registry = LabelFlowManager()
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
     renpy.store.global_menu_manager = MenuManager()
-#     renpy.store.global_history_manager = HistoryManager()
-#     renpy.store.global_dialog_manager = DialogManager()
     renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
     devlog = logging.getLogger('log')
@@ -94,22 +81,10 @@ init 3 python:
     build_all_inventory(renpy.store.global_inventory_manager)
     devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
 
-#     devlog.info('Building label flow...')
-#     now = int(time.time())
-#     label_flow_builder = LabelFlowBuilder()
-#     build_all_labels(label_flow_builder, renpy.store.global_settings_manager)
-#     renpy.store.global_label_registry.register(label_flow_builder)
-#     devlog.info('Done building label flow, took %s', int(time.time()) - now)
-
     now = int(time.time())
     devlog.info('Building mortuary menu...')
     build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
     devlog.info('Done building mortuary menu, took %s', int(time.time()) - now)
-
-#     now = int(time.time())
-#     devlog.info('Building dialog manager...')
-#     build_all_dlgs(renpy.store.global_dialog_manager)
-#     devlog.info('Done building dialog manager, took %s', int(time.time()) - now)
 
 #     config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
 #     config.underlay.append(
@@ -130,22 +105,6 @@ init 3 python:
             show_inventory = Show("inventory_screen")
         )
     )
-
-transform center_left:
-    xalign 0.4
-    yalign 0.5
-
-transform center_right:
-    xalign 0.6
-    yalign 0.5
-
-transform center_left_down:
-    xalign 0.4
-    yalign 0.4
-
-transform center_right_down:
-    xalign 0.6
-    yalign 0.4
 
 
 label start:

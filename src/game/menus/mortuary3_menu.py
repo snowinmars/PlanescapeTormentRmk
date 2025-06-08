@@ -12,17 +12,17 @@ def build_mortuary3_menu(location_id, gsm):
         # .option(lambda: 'Убить Дхалла' \
         #         if gsm.get_meet_dhall() \
         #         else 'Убить существо около большой книги') \
-        # .jump(lambda: 'dmorte_two_kill_dhall' \
-        #       if gsm.get_meet_dhall() \
-        #       else 'dmorte_two_kill_dhall') \
+        # .jump(lambda: 'start_ddhall_kill' \
+        #     if gsm.get_meet_dhall() \
+        #     else 'start_ddhall_kill_first') \
         # .when(lambda: not gsm.get_dead_dhall()) \
         # .style('kill') \
         .option(lambda: 'Поговорить с Дхаллом' \
                 if gsm.get_meet_dhall() \
                 else 'Подойти к существу около большой книги') \
-        .jump(lambda: 'ddhall_s40' \
+        .jump(lambda: 'start_ddhall_talk' \
               if gsm.get_meet_dhall() \
-              else 'ddhall_s5') \
+              else 'start_ddhall_talk_first') \
         .when(lambda: not gsm.get_dead_dhall()) \
         .style('talk')
     )
@@ -33,15 +33,15 @@ def build_mortuary3_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «396»' \
                 if gsm.get_meet_dzm396() \
                 else 'Атаковать труп медбрата') \
-        .jump("dmorte_one_kill_dzm396") \
+        .jump("start_dzm396_kill") \
         .when(lambda: not gsm.get_dead_dzm396()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «396»' \
                 if gsm.get_meet_dzm396() \
                 else 'Поговорить с трупом медбрата') \
-        .jump(lambda: 'dzm396_s4' \
+        .jump(lambda: 'start_dzm396_talk' \
                 if gsm.get_has_bandages_zm396() \
-                else 'dzm396_s0') \
+                else 'start_dzm396_talk_first') \
         .when(lambda: not gsm.get_dead_dzm396()) \
         .style('talk')
     )
@@ -69,13 +69,13 @@ def build_mortuary3_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «1096»'
                 if gsm.get_meet_dzf1096()
                 else 'Атаковать труп с косой на шее') \
-        .jump("dzf1096_kill") \
+        .jump("start_dzf1096_kill") \
         .when(lambda: not gsm.get_dead_dzf1096()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «1096»'
                 if gsm.get_meet_dzf1096()
                 else 'Поговорить с трупом с косой на шее') \
-        .jump("dzf1096_s0") \
+        .jump("start_dzf1096_talk") \
         .when(lambda: not gsm.get_dead_dzf1096()) \
         .style('talk')
     )

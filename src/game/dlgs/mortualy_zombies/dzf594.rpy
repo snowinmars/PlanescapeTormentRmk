@@ -58,18 +58,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF594.DLG
-# Starts:    dzf594_s0 dzf594_kill
 # ###
 
 
+label start_dzf594_talk:
+    call dzf594_init
+    jump dzf594_s0
+label start_dzf594_kill:
+    call dzf594_init
+    jump dzf594_kill
 label dzf594_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf594(True)
     scene bg mortuary2
     show dzf594_img default at center_left_down
     return
-
-
 label dzf594_dispose:
     hide dzf594_img
     jump show_graphics_menu
@@ -77,7 +80,6 @@ label dzf594_dispose:
 
 # s0 # say35018
 label dzf594_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 334 as dmorte_s330
-    call dzf594_init
     teller 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.'
     teller 'На ее лбу угольным карандашом нацарапан номер «594».'
 
@@ -190,7 +192,6 @@ label dzf594_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 334
 
 
 label dzf594_kill:
-    call dzf594_init
     teller 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.'
     teller 'На ее лбу угольным карандашом нацарапан номер «594».'
     teller 'Ты думаешь о том, как разрезал бы её кожу.'

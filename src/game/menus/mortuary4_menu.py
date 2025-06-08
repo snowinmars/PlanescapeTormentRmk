@@ -12,13 +12,13 @@ def build_mortuary4_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «1664»'
                 if gsm.get_meet_dzm1664()
                 else 'Атаковать труп с книгами') \
-        .jump("dzm1664_kill") \
+        .jump("start_dzm1664_kill") \
         .when(lambda: not gsm.get_dead_dzm1664()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «1664»'
                 if gsm.get_meet_dzm1664()
                 else 'Поговорить с трупом с книгами') \
-        .jump("dzm1664_s0") \
+        .jump("start_dzm1664_talk") \
         .when(lambda: not gsm.get_dead_dzm1664()) \
         .style('talk')
     )

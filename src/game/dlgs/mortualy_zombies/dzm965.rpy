@@ -29,14 +29,21 @@ init 10 python:
 # ###
 
 
+label start_dzm965_talk_first:
+    call dzm965_init
+    jump dzm965_s0
+label start_dzm965_talk:
+    call dzm965_init
+    jump dzm965_s1
+label start_dzm965_kill:
+    call dzm965_init
+    jump dzm965_kill
 label dzm965_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzm965(True)
     scene bg mortuary2
     show dzm965_img default at center_left_down
     return
-
-
 label dzm965_dispose:
     hide dzm965_img
     jump show_graphics_menu
@@ -44,7 +51,6 @@ label dzm965_dispose:
 
 # s0 # say34920
 label dzm965_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 477 as dmorte1_s477
-    call dzm965_init
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
@@ -52,7 +58,6 @@ label dzm965_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 477 as dmorte1_s
 
 # s1 # say34922
 label dzm965_s1:  # from -
-    call dzm965_init
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
@@ -111,7 +116,6 @@ label dzm965_s3:  # from 1.3
 
 
 label dzm965_kill:
-    call dzm965_init
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 

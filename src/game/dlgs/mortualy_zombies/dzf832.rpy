@@ -53,18 +53,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF832.DLG
-# Starts:    dzf832_s0
 # ###
 
 
+label start_dzf832_talk:
+    call dzf832_init
+    jump dzf832_s0
+label start_dzf832_kill:
+    call dzf832_init
+    jump dzf832_kill
 label dzf832_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf832(True)
     scene bg mortuary2
     show dzf832_img default at center_left_down
     return
-
-
 label dzf832_dispose:
     hide dzf832_img
     jump show_graphics_menu
@@ -72,7 +75,6 @@ label dzf832_dispose:
 
 # s0 # say35146
 label dzf832_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 350 as dmorte_s330
-    call dzf832_init
     teller 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет.'
     teller 'Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер «832» элегантным шрифтом.'
 

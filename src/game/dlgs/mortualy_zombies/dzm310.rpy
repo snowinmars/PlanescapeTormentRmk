@@ -32,18 +32,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM310.DLG
-# Starts:    dzm310_s0
 # ###
 
 
+label start_dzm310_talk:
+    call dzm310_init
+    jump dzm310_s0
+label start_dzm310_kill:
+    call dzm310_init
+    jump dzm310_kill
 label dzm310_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm310(True)
     scene bg mortuary1
     show dzm310_img default at center_left_down
     return
-
-
 label dzm310_dispose:
     hide dzm310_img
     jump show_graphics_menu
@@ -51,7 +54,6 @@ label dzm310_dispose:
 
 # s0 # say6495
 label dzm310_s0:  # from -
-    call dzm310_init
     teller 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'
     teller 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
 

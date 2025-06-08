@@ -2,12 +2,10 @@ import renpy
 from engine.inventory import (InventoryItem)
 
 def _has_copper_earring_closed_action():
-    renpy.store.global_dialog_key = "dmorte_one_copearc"
-    renpy.exports.jump('dialog_dispatcher')
+    renpy.exports.jump('start_copper_earring_closed_talk')
 
 def _has_1201_note_action():
-    renpy.store.global_dialog_key = "dmorte_one_1201_note"
-    renpy.exports.jump('dialog_dispatcher')
+    renpy.exports.jump('start_n1201_note_talk')
 
 def build_all_inventory(manager):
     manager.register(InventoryItem(

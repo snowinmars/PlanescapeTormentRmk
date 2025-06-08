@@ -50,7 +50,6 @@ init 10 python:
 label dmorte_s330_init:
     show morte_img default at center_left_down
     return
-
 label dmorte_s330_dispose:
     hide morte_img
     jump show_graphics_menu

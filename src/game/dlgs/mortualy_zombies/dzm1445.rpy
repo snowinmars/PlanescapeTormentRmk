@@ -21,18 +21,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1445.DLG
-# Starts:    dzm1445_s0
 # ###
 
 
+label start_dzm1445_talk:
+    call dzm1445_init
+    jump dzm1445_s0
+label start_dzm1445_kill:
+    call dzm1445_init
+    jump dzm1445_kill
 label dzm1445_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm1445(True)
     scene bg mortuary1
     show dzm1445_img default at center_left_down
     return
-
-
 label dzm1445_dispose:
     hide dzm1445_img
     jump show_graphics_menu
@@ -40,7 +43,6 @@ label dzm1445_dispose:
 
 # s0 # say46756
 label dzm1445_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
-    call dzm1445_init
     teller 'Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни.'
     teller 'На лбу у него вытатуирован номер «1445», а его губы крепко сшиты.'
 

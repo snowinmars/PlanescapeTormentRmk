@@ -32,18 +32,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM825.DLG
-# Starts:    dzm825_s0 dzm825_kill
 # ###
 
 
+label start_dzm825_talk:
+    call dzm825_init
+    jump dzm825_s0
+label start_dzm825_kill:
+    call dzm825_init
+    jump dzm825_kill
 label dzm825_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm825(True)
     scene bg mortuary1
     show dzm825_img default at center_left_down
     return
-
-
 label dzm825_dispose:
     hide dzm825_img
     jump show_graphics_menu
@@ -51,7 +54,6 @@ label dzm825_dispose:
 
 # s0 # say24564
 label dzm825_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1_s31
-    call dzm825_init
     teller 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.'
 
     menu:
@@ -142,7 +144,6 @@ label dzm825_s3:  # from 0.5 # Check EXTERN ~DMORTE1~ : 31
 
 
 label dzm825_kill:
-    call dzm825_init
     teller 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».'
 
     menu:

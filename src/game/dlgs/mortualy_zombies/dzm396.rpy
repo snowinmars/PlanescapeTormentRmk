@@ -52,18 +52,24 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM396.DLG
-# Starts:    dzm396_s0 dzm396_s4
 # ###
 
 
+label start_dzm396_talk_first:
+    call dzm396_init
+    jump dzm396_s0
+label start_dzm396_talk:
+    call dzm396_init
+    jump dzm396_s4
+label start_dzm396_kill:
+    call dzm396_init
+    jump dzm396_kill
 label dzm396_init:
     $ gsm.set_location('mortuary3')
     $ gsm.set_meet_dzm396(True)
     scene bg mortuary3
     show dzm396_img default at center_left_down
     return
-
-
 label dzm396_dispose:
     hide dzm396_img
     jump show_graphics_menu
@@ -71,7 +77,6 @@ label dzm396_dispose:
 
 # s0 # say34931
 label dzm396_s0:  # from -
-    call dzm396_init
     teller 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.'
 
     menu:

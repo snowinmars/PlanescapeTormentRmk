@@ -57,14 +57,18 @@ init 10 python:
 # ###
 
 
+label start_dzf916_talk:
+    call dzf916_init
+    jump dzf916_s0
+label start_dzf916_kill:
+    call dzf916_init
+    jump dzf916_kill
 label dzf916_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf916(True)
     scene bg mortuary2
     show dzf916_img default at center_left_down
     return
-
-
 label dzf916_dispose:
     hide dzf916_img
     jump show_graphics_menu
@@ -72,7 +76,6 @@ label dzf916_dispose:
 
 # s0 # say24719
 label dzf916_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 46 as dmorte_s330
-    call dzf916_init
     teller 'Труп женщины смотрит на тебя пустым взглядом. На ее лбу вырезан номер «916»; ее губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:

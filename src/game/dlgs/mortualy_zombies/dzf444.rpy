@@ -52,18 +52,21 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF444.DLG
-# Starts:    dzf444_s0
 # ###
 
 
+label start_dzf444_talk:
+    call dzf444_init
+    jump dzf444_s0
+label start_dzf444_kill:
+    call dzf444_init
+    jump dzf444_kill
 label dzf444_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzf444(True)
     scene bg mortuary2
     show dzf444_img default at center_left_down
     return
-
-
 label dzf444_dispose:
     hide dzf444_img
     jump show_graphics_menu
@@ -71,7 +74,6 @@ label dzf444_dispose:
 
 # s0 # say35210
 label dzf444_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 358 as dmorte_s330
-    call dzf444_init
     teller 'У этого трупа женщины ужасный вид. Ее грубая, обработанная бальзамом кожа покрыта сотнями небольших укусов, вероятно, крысиных.'
     teller 'Судя по складкам вокруг ран, они, скорее всего, были нанесены еще до того, как труп препарировали. Ее губы зашиты, а на лице темно-синими чернилами выведен номер «444».'
 

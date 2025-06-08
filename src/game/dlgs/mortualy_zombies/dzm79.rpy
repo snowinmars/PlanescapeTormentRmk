@@ -32,14 +32,18 @@ init 10 python:
 # ###
 
 
+label start_dzm79_talk:
+    call dzm79_init
+    jump dzm79_s0
+label start_dzm79_kill:
+    call dzm79_init
+    jump dzm79_kill
 label dzm79_init:
     $ gsm.set_location('mortuary2')
     $ gsm.set_meet_dzm79(True)
     scene bg mortuary2
     show dzm79_img default at center_left_down
     return
-
-
 label dzm79_dispose:
     hide dzm79_img
     jump show_graphics_menu
@@ -47,7 +51,6 @@ label dzm79_dispose:
 
 # s0 # say34942
 label dzm79_s0:  # from -
-    call dzm79_init
     teller 'Голова трупа была отрублена, а после наспех пришита назад.'
     teller 'Несколько различных швов, все в разной степени потрепанности, указывают на то, голова в процессе работы постоянно отваливалась и возвращалась на место.'
     teller 'На виске вырезан номер «79», рядом с неровным зубчатым кругом, выжженным на лбу.'

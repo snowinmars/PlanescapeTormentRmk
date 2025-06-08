@@ -49,18 +49,24 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM506.DLG
-# Starts:    dzm506_s0 dzm506_s5
 # ###
 
 
+label start_dzm506_talk_first:
+    call dzm506_init
+    jump dzm506_s0
+label start_dzm506_talk:
+    call dzm506_init
+    jump dzm506_s5
+label start_dzm506_kill:
+    call dzm506_init
+    jump dzm506_kill
 label dzm506_init:
     $ gsm.set_location('mortuary5')
     $ gsm.set_meet_dzm506(True)
     scene bg mortuary5
     show dzm506_img default at center_left_down
     return
-
-
 label dzm506_dispose:
     hide dzm506_img
     jump show_graphics_menu
@@ -68,7 +74,6 @@ label dzm506_dispose:
 
 # s0 # say45419
 label dzm506_s0:  # from 3.2
-    call dzm506_init
     teller 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…'
     teller 'В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
 
@@ -190,7 +195,6 @@ label dzm506_s5:  # from 4.2
 
 
 label dzm506_kill:
-    call dzm506_init
     if _know_506_secret(gsm):
         teller 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…'
         teller 'В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'

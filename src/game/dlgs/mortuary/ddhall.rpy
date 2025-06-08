@@ -141,18 +141,27 @@ init 10 python:
 
 # ###
 # Original:  DLG/DDHALL.DLG
-# Starts:    ddhall_s5 ddhall_s40
 # ###
 
 
+label start_ddhall_talk_first:
+    call ddhall_init
+    jump ddhall_s5
+label start_ddhall_talk:
+    call ddhall_init
+    jump ddhall_s40
+label start_ddhall_kill_first:
+    call ddhall_init
+    jump ddhall_kill_first
+label start_ddhall_kill:
+    call ddhall_init
+    jump ddhall_kill
 label ddhall_init:
     $ gsm.set_location('mortuary3')
     scene bg mortuary3
     show morte_img default at center_left_down
     show dhall_img default at center_right_down
     return
-
-
 label ddhall_dispose:
     hide morte_img
     hide dhall_img
@@ -248,7 +257,6 @@ label ddhall_s4:  # from 3.0 3.1 # Global("Dhall","GLOBAL",0)
 
 # s5 # say838
 label ddhall_s5:  # from - # Manually checked EXTERN ~DMORTE~ : 102 as dmorte_s102
-    call ddhall_init
     teller 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
     teller 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
     teller 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
@@ -983,7 +991,6 @@ label ddhall_s39:  # from - # Global("Dhall","GLOBAL",1)
 
 # s40 # say978
 label ddhall_s40:  # from -
-    call ddhall_init
     teller 'Дхолл мельком смотрит на тебя.'
     dhall 'Итак. Ты вернулся…'
     teller 'Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает.'

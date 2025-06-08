@@ -63,18 +63,24 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1041.DLG
-# Starts:    dzm1041_s0 dzm1041_s37
 # ###
 
 
+label start_dzm1041_talk_first:
+    call dzm1041_init
+    jump dzm1041_s0
+label start_dzm1041_talk:
+    call dzm1041_init
+    jump dzm1041_s37
+label start_dzm1041_kill:
+    call dzm1041_init
+    jump dzm1041_kill
 label dzm1041_init:
     $ gsm.set_location('mortuary1')
     $ gsm.set_meet_dzm1041(True)
     scene bg mortuary1
     show dzm1041_img default at center_left_down
     return
-
-
 label dzm1041_dispose:
     hide dzm1041_img
     jump show_graphics_menu
@@ -82,7 +88,6 @@ label dzm1041_dispose:
 
 # s0 # say6573
 label dzm1041_s0:  # from - # IF ~  Global("Bei","GLOBAL",0)~ THEN BEGIN 0 // from:
-    call dzm1041_init
     teller 'У этого поднятого трупа мужчины на лбу вырезан номер «1041». Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно экзотическую внешность.'
     teller 'Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.'
 
