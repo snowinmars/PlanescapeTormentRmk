@@ -88,7 +88,7 @@ init 10 python:
 
 
 label dmorte2_init:
-    $ gsm.set_location('mortuary2')
+    $ gsm.set_location('mortuary_f2r2')
     $ gsm.set_in_party_morte(True)
     $ gsm.set_meet_morte(True)
     scene bg mortuary2
@@ -96,7 +96,7 @@ label dmorte2_init:
     return
 
 label dmorte2_init3:
-    $ gsm.set_location('mortuary3')
+    $ gsm.set_location('mortuary_f2r3')
     scene bg mortuary3
     show morte_img default at center_left_down
     return

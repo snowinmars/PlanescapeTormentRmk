@@ -69,7 +69,7 @@ label start_dzf1096_kill:
     call dzf1096_init
     jump dzf1096_kill
 label dzf1096_init:
-    $ gsm.set_location('mortuary3')
+    $ gsm.set_location('mortuary_f2r3')
     $ gsm.set_meet_dzf1096(True)
     scene bg mortuary3
     show dzf1096_img default at center_left_down

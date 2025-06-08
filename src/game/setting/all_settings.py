@@ -8,5 +8,6 @@ def build_all_settings(manager):
     manager \
         .register('good', 0) \
         .register('law', 0) \
+        .register('lore', 0) \
         .register('gold', 0) \
         .register('exp', 0)

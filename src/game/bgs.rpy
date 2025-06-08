@@ -1,9 +1,20 @@
-image bg mortuary = "bg/mortuary.png"
-image bg mortuary1 = "bg/mortuary1.png"
-image bg mortuary2 = "bg/mortuary2.png"
-image bg mortuary3 = "bg/mortuary3.png"
-image bg mortuary4 = "bg/mortuary4.png"
-image bg mortuary5 = "bg/mortuary5.png"
-image bg mortuary6 = "bg/mortuary6.png"
-image bg mortuary7 = "bg/mortuary7.png"
-image bg mortuary8 = "bg/mortuary8.png"
+image bg mortuary_f2r1 = "bg/mortuary_f2r1.png"
+image bg mortuary_f2r2 = "bg/mortuary_f2r2.png"
+image bg mortuary_f2r3 = "bg/mortuary_f2r3.png"
+image bg mortuary_f2r4 = "bg/mortuary_f2r4.png"
+image bg mortuary_f2r5 = "bg/mortuary_f2r5.png"
+image bg mortuary_f2r6 = "bg/mortuary_f2r6.png"
+image bg mortuary_f2r7 = "bg/mortuary_f2r7.png"
+image bg mortuary_f2r8 = "bg/mortuary_f2r8.png"
+
+image bg mortuary_f3r8 = 'bg/mortuary_f3r8.png'
+image bg mortuary_f3r2 = 'bg/mortuary_f3r2.png'
+image bg mortuary_f3r4 = 'bg/mortuary_f3r4.png'
+image bg mortuary_f3r6 = 'bg/mortuary_f3r6.png'
+
+image bg mortuary_f1rc = 'bg/mortuary_f1rc.png'
+image bg mortuary_f1r1 = 'bg/mortuary_f1r1.png'
+image bg mortuary_f1r3 = 'bg/mortuary_f1r3.png'
+image bg mortuary_f1r5 = 'bg/mortuary_f1r5.png'
+image bg mortuary_f1r6 = 'bg/mortuary_f1r6.png'
+image bg mortuary_f1r7 = 'bg/mortuary_f1r7.png'

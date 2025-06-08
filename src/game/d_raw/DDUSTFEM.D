@@ -1,0 +1,515 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250303)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DDUSTFEM.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ru_RU\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DDUSTFEM~
+
+IF ~  Global("Appearance","GLOBAL",1)
+~ THEN BEGIN 0 // from:
+  SAY #298 /* ~Тленная не обращает на тебя внимания. Должно быть, она спутала тебя с одним из мертвых рабочих.~ */
+  IF ~~ THEN REPLY #299 /* ~«Приветствую».~ */ GOTO 1
+  IF ~~ THEN REPLY #318 /* ~«Кто ты?»~ */ GOTO 1
+  IF ~~ THEN REPLY #1168 /* ~«Что это за место?»~ */ GOTO 1
+  IF ~~ THEN REPLY #1169 /* ~«У меня есть пара вопросов...» ~ */ GOTO 1
+  IF ~~ THEN REPLY #1170 /* ~Оставить ее в покое.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #1171 /* ~Тленная подпрыгивает от неожиданности. Затем она поворачивает к тебе голову. Она выглядит потрясенной: должно быть, маскировка у тебя весьма неплохая.~ */
+  IF ~~ THEN REPLY #1172 /* ~Воспользоваться эффектом неожиданности и свернуть ей шею, пока она не позвала на помощь.~ */ GOTO 41
+  IF ~~ THEN REPLY #1174 /* ~«У меня есть несколько вопросов». ~ */ GOTO 2
+  IF ~~ THEN REPLY #1175 /* ~Уйти. Быстро.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
+  SAY #1176 /* ~Тленная отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.~ */
+  IF ~~ THEN REPLY #1225 /* ~«Ну хорошо...»~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+  SAY #1177 /* ~Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.~ */
+  IF ~~ THEN REPLY #1226 /* ~«Приветствую».~ */ GOTO 4
+  IF ~~ THEN REPLY #1227 /* ~«Кто ты?»~ */ GOTO 4
+  IF ~~ THEN REPLY #1228 /* ~«Что это за место?»~ */ GOTO 4
+  IF ~~ THEN REPLY #1229 /* ~«У меня есть пара вопросов...» ~ */ GOTO 4
+  IF ~~ THEN REPLY #1230 /* ~Оставить ее в покое.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1 3.2 3.3 40.2 40.3
+  SAY #1178 /* ~Тленная медленно поднимает свою голову и оборачивается к тебе. «Ты потерялся?»~ */
+  IF ~~ THEN REPLY #1231 /* ~«Да».~ */ GOTO 5
+  IF ~~ THEN REPLY #1232 /* ~«Нет».~ */ GOTO 6
+  IF ~~ THEN REPLY #1233 /* ~«Нет, я не потерялся. У меня есть несколько вопросов...»~ */ GOTO 6
+  IF ~~ THEN REPLY #1234 /* ~«Прощай».~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 16.2 51.1
+  SAY #1179 /* ~«Я позову стражу, они тебя живо выведут. Погоди минутку».~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1235 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1236 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 41
+  IF ~~ THEN REPLY #1237 /* ~Уйти. Быстро.~ */ GOTO 2
+  IF ~~ THEN REPLY #1238 /* ~Подождать.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 4.2 51.2 51.3
+  SAY #1180 /* ~«Если ты не потерялся, то что же ты здесь делаешь?»~ */
+  IF ~~ THEN REPLY #1239 /* ~«Это тебя не касается».~ */ GOTO 7
+  IF ~~ THEN REPLY #1240 /* ~«Я очнулся на одной из плит в вашей препараторской».~ */ GOTO 8
+  IF ~~ THEN REPLY #1241 /* ~«Я хочу повидаться кое с кем».~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1242 /* ~«Я пришел сюда на похороны, но, похоже, произошла ошибка».~ */ GOTO 16
+  IF ~~ THEN REPLY #1243 /* ~Уйти. Быстро.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0 20.0
+  SAY #1181 /* ~«Боюсь, что меня касается. Может, стражники развяжут твой язык». Тленная делает шаг назад, кажется, она собирается позвать стражников.~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1244 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1245 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 41
+  IF ~~ THEN REPLY #1246 /* ~«Давай, зови их. Буду рад с ними встретиться».~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.1 16.0 20.1
+  SAY #1182 /* ~«Любишь пошутить? Тогда может поделишься своими шутками со стражниками». Тленная отступает на шаг; кажется, она собирается позвать стражников.~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1247 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1248 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 41
+  IF ~~ THEN REPLY #1249 /* ~«Давай, зови их. Буду рад с ними встретиться».~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.2 20.2
+  SAY #1183 /* ~«Кого ты хочешь увидеть?»~ */
+  IF ~~ THEN REPLY #1251 /* ~«Это не твое дело».~ */ GOTO 7
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #1253 /* ~«Я хочу повидаться с Дхоллом».~ */ GOTO 10
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+!Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #1255 /* ~«Я хочу повидаться с Дхоллом».~ */ GOTO 11
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #1258 /* ~«Я хочу повидаться с Дейонаррой».~ */ GOTO 13
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+!Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #4336 /* ~«Я хочу повидаться с Дейонаррой».~ */ GOTO 12
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #33224 /* ~«Я хочу повидаться с Соэго».~ */ GOTO 15
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+!Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #33226 /* ~«Я хочу повидаться с Соэго».~ */ GOTO 14
+  IF ~  CheckStatGT(Protagonist,12,INT)
+NumTimesTalkedTo(1)
+~ THEN REPLY #33227 /* ~Ложь: «Э-э... с Аданом. Он все еще работает здесь?..»~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 21
+  IF ~  CheckStatGT(Protagonist,12,INT)
+NumTimesTalkedToGT(1)
+~ THEN REPLY #33229 /* ~Ложь: «Э-э... с Аданом. Он все еще работает здесь?..»~ */ GOTO 21
+  IF ~~ THEN REPLY #33231 /* ~«Ой, нет. Я оговорился».~ */ GOTO 20
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+  SAY #1184 /* ~«Дхолла можно найти в приемной комнате на этом этаже. Должна предупредить... Дхолл очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его».~ */
+  IF ~~ THEN REPLY #1259 /* ~«Хорошо. Спасибо за информацию».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2
+  SAY #1185 /* ~«Дхолл скорее всего в приемной комнате на втором этаже. Он очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его».~ */
+  IF ~~ THEN REPLY #1260 /* ~«Хорошо. Спасибо за информацию».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.4 19.1
+  SAY #1186 /* ~«Дейонаррой? На первом этаже в мемориальном зале похоронена женщина. Может быть, это она?»~ */
+  IF ~~ THEN REPLY #1261 /* ~«Скорее всего. Спасибо».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+  SAY #1187 /* ~«Дейонаррой? В северо-западном мемориальном зале похоронена женщина. Может быть, это она?»~ */
+  IF ~~ THEN REPLY #1262 /* ~«Скорее всего. Спасибо».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 14 // from: 9.6
+  SAY #1188 /* ~«Скорее всего, Соэго находится у главных ворот на первом этаже. Он работает проводником в часы антипика».~ */
+  IF ~~ THEN REPLY #1263 /* ~«Отлично. Спасибо».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.5
+  SAY #1189 /* ~«Скорее всего, Соэго находится у главных ворот. Он работает проводником в часы антипика».~ */
+  IF ~~ THEN REPLY #1264 /* ~«Отлично. Спасибо».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.3 20.3
+  SAY #1190 /* ~«Кто был погребен? Возможно, служба проводится в другом конце Морга».~ */
+  IF ~~ THEN REPLY #1265 /* ~«Ты не понимаешь... ошибка в том, что похоронить собирались МЕНЯ».~ */ GOTO 8
+  IF ~~ THEN REPLY #1266 /* ~«Может быть. Где еще проводят службу?»~ */ GOTO 17
+  IF ~~ THEN REPLY #1267 /* ~«Ты можешь указать выход отсюда?»~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1
+  SAY #1191 /* ~«По всему периметру Морга расположены погребальные залы. Они расположены вдоль стены на первом и втором этажах. Тебе известно имя усопшего?»~ */
+  IF ~~ THEN REPLY #1268 /* ~«Нет».~ */ GOTO 18
+  IF ~~ THEN REPLY #1269 /* ~«Да».~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+  SAY #1192 /* ~«Тогда тебе стоит поговорить с одним из проводников у главных ворот. Они тебе помогут».~ */
+  IF ~~ THEN REPLY #1270 /* ~«Отлично. Спасибо».~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.1
+  SAY #1193 /* ~Тленная ждет.~ */
+  IF ~~ THEN REPLY #1271 /* ~«Прошу прощения... Я оговорился. Мне неизвестно имя усопшего».~ */ GOTO 20
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #1272 /* ~«Это имя — Дейонарра».~ */ GOTO 12
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #1273 /* ~Ложь: «Имя... э-э, Адан».~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 21
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #1274 /* ~Ложь: «Имя... э-э, Адан».~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1275 /* ~Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1276 /* ~Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.~ */ GOTO 45
+  IF ~~ THEN REPLY #1277 /* ~Убежать от нее.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 20 // from: 9.9 19.0
+  SAY #1194 /* ~«Понятно. И что же ты здесь делаешь?»~ */
+  IF ~~ THEN REPLY #1278 /* ~«Это не твое дело».~ */ GOTO 7
+  IF ~~ THEN REPLY #1279 /* ~«Я очнулся на одной из плит в вашей препараторской».~ */ GOTO 8
+  IF ~~ THEN REPLY #1280 /* ~«Я хочу повидаться кое с кем».~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1281 /* ~«Я пришел сюда на похороны, но, похоже, произошла ошибка».~ */ GOTO 16
+  IF ~~ THEN REPLY #1282 /* ~Убежать от нее.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.7 9.8 19.2 19.3
+  SAY #1195 /* ~«Это имя мне незнакомо. Справься у одного из проводников у главных ворот... они смогут сориентировать тебя лучше, чем я».~ */
+  IF ~~ THEN REPLY #1283 /* ~«Хорошо. Я так и сделаю. Прощай».~ */ EXIT
+END
+
+IF ~  Global("Appearance","GLOBAL",2)
+~ THEN BEGIN 22 // from:
+  SAY #1196 /* ~Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.~ */
+  IF ~~ THEN REPLY #1284 /* ~«Приветствую».~ */ GOTO 23
+  IF ~~ THEN REPLY #1285 /* ~Оставить ее в покое.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+  SAY #1197 /* ~Она медленно оборачивается, ее взгляд мельком скользит по твоей одежде. «Приветствую тебя, посвященный».~ */
+  IF ~~ THEN REPLY #1286 /* ~«Кто ты?»~ */ GOTO 24
+  IF ~~ THEN REPLY #1287 /* ~«Что это за место?»~ */ GOTO 25
+  IF ~~ THEN REPLY #1288 /* ~«У меня есть пара вопросов...» ~ */ GOTO 26
+  IF ~~ THEN REPLY #1289 /* ~Оставить ее в покое.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #1198 /* ~«У меня такой же вопрос. Твое лицо мне незнакомо. Как тебя зовут?»~ */
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #1290 /* ~Ложь: «Имя... э-э, Адан».~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #1291 /* ~Ложь: «Имя... э-э, Адан».~ */ GOTO 49
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #1292 /* ~«Как меня зовут — не твое дело. Я должен идти. Прощай».~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #1293 /* ~«Как меня зовут — не твое дело. Я должен идти. Прощай».~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 25 // from: 23.1
+  SAY #1199 /* ~«Это Морг...» Тленная какое-то время смотрит на тебя, как бы оценивая только что тобою сказанное. «Как, ты сказал, тебя зовут?»~ */
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #1294 /* ~Ложь: «Имя... э-э, Адан».~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #1295 /* ~Ложь: «Имя... э-э, Адан».~ */ GOTO 49
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #1296 /* ~«Как меня зовут — не твое дело. Я должен идти. Прощай».~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #1297 /* ~«Как меня зовут — не твое дело. Я должен идти. Прощай».~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 26 // from: 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
+  SAY #1200 /* ~Тленная терпеливо ждет твоего продолжения.~ */
+  IF ~~ THEN REPLY #1298 /* ~«Можешь показать мне, где выход?»~ */ GOTO 27
+  IF ~~ THEN REPLY #1299 /* ~«Ты знаешь кого-нибудь по имени Фарод?»~ */ GOTO 28
+  IF ~~ THEN REPLY #1300 /* ~«Я потерял дневник. Тебе ничего такого не попадалось?»~ */ GOTO 39
+  IF ~~ THEN REPLY #1328 /* ~«Неважно. Извини за беспокойство».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.0
+  SAY #1201 /* ~«Ты можешь просто выйти через главные ворота. Они на первом этаже».~ */
+  IF ~~ THEN REPLY #1329 /* ~«У меня есть другие вопросы...»~ */ GOTO 26
+  IF ~~ THEN REPLY #1330 /* ~«Спасибо. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 28 // from: 26.1
+  SAY #1202 /* ~«Это имя... — тленная на секунду умолкает. — Это имя *звучит* знакомо... Кажется, я припоминаю сборщика с таким именем. Писец Дхолл может знать о нем больше».~ */
+  IF ~~ THEN REPLY #1331 /* ~«Сборщика?»~ */ GOTO 29
+  IF ~~ THEN REPLY #1334 /* ~«Дхолл?»~ */ GOTO 30
+  IF ~~ THEN REPLY #1338 /* ~«У меня есть другие вопросы...»~ */ GOTO 26
+  IF ~~ THEN REPLY #1395 /* ~«Спасибо за уделенное время. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0
+  SAY #1203 /* ~«Сборщики... они собирают тех, кто умер на улицах Сигила, и доставляют их в Морг... — тленная умолкает, хмуря брови. — Ты нездешний. Кто ты?»~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #1396 /* ~«Я недавно посвящен. Прости мое невежество».~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #1397 /* ~«Я... недавно здесь. Я... пытаюсь изучить обстановку».~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #1398 /* ~«Ну... к чему имена? Храни веру, э-э, посвященная».~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #1399 /* ~«Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай».~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.1
+  SAY #1204 /* ~«Дхолл — один из самых уважаемых членов нашей фракции. Наверное, никто не размышлял о сущности Истинной Смерти и не заслужил ее больше, чем он. У него много знаний, которыми он может поделиться. Если ты незнаком с ним, то я советую тебе как можно раньше воспользоваться этой возможностью. Ему осталось не так долго жить в тени этого существования».~ */
+  IF ~~ THEN REPLY #4280 /* ~«Ему еще недолго жить в тени этого существования?»~ */ GOTO 31
+  IF ~  Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #4281 /* ~«Где я могу найти Дхолла?»~ */ GOTO 32
+  IF ~  !Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #4282 /* ~«Где я могу найти Дхолла?»~ */ GOTO 33
+  IF ~~ THEN REPLY #4283 /* ~«У меня есть другие вопросы...»~ */ GOTO 26
+  IF ~~ THEN REPLY #33245 /* ~«Спасибо за информацию. Я поговорю с ним».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 31 // from: 30.0 32.0 33.0
+  SAY #1205 /* ~Кивок. «Дхолл болен. Он стар, даже по меркам гитцераев. Несомненно, смерть последует за болезнью, которую он подхватил. Ему повезло».~ */
+  IF ~~ THEN REPLY #4284 /* ~«По меркам гитцераев?»~ */ GOTO 34
+  IF ~~ THEN REPLY #4285 /* ~«Что это еще за *гитцераи*?»~ */ GOTO 35
+  IF ~~ THEN REPLY #4286 /* ~«Повезло?»~ */ GOTO 36
+  IF ~~ THEN REPLY #4287 /* ~«Понятно. У меня есть другие вопросы...» ~ */ GOTO 26
+  IF ~~ THEN REPLY #4337 /* ~«Спасибо за уделенное время. Мне нужно идти».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 32 // from: 30.1
+  SAY #1206 /* ~«Дхолл находится в приемной комнате в северо-западной части этого этажа. Должна предупредить... Дхолл очень занят... то время, которое он не занят своими обязанностями, отбирает у него болезнь».~ */
+  IF ~~ THEN REPLY #4288 /* ~«Дхолл болен?»~ */ GOTO 31
+  IF ~~ THEN REPLY #4289 /* ~«Спасибо за уделенное время. Мне нужно идти. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 33 // from: 30.2
+  SAY #1207 /* ~«Дхолл скорее всего в приемной комнате на втором этаже. Лучше не отвлекай его слишком сильно — он очень занят... то время, которое он не занят своими обязанностями, отбирает у него болезнь».~ */
+  IF ~~ THEN REPLY #4290 /* ~«Дхолл болен?»~ */ GOTO 31
+  IF ~~ THEN REPLY #4291 /* ~«Спасибо за уделенное время. Мне нужно идти. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.0
+  SAY #1208 /* ~«Да, гитцераи живут гораздо дольше, чем люди».~ */
+  IF ~~ THEN REPLY #4292 /* ~«Что это еще за *гитцераи*?»~ */ GOTO 35
+  IF ~~ THEN REPLY #4293 /* ~«Как это Дхоллу повезло? От него хотят избавиться?»~ */ GOTO 36
+  IF ~~ THEN REPLY #4294 /* ~«О, у меня есть другие вопросы...»~ */ GOTO 26
+  IF ~~ THEN REPLY #4295 /* ~«Спасибо за уделенное время. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 35 // from: 31.1 34.0
+  SAY #1209 /* ~«Гитцерай — это... — тленная умолкает, пристально глядя на тебя. — Ты ведь нездешний. Кто ты?»~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4296 /* ~«Я недавно посвящен. Прости мое невежество».~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4297 /* ~«Я... недавно здесь. Я... пытаюсь изучить обстановку».~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4298 /* ~«Ну... к чему имена? Храни веру, э-э, посвященная».~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4300 /* ~«Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай».~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 36 // from: 31.2 34.1
+  SAY #1210 /* ~«Ему повезло в том, что он достигнет Истинной Смерти. Он больше не будет странствовать в тени этого существования».~ */
+  IF ~~ THEN REPLY #4299 /* ~«И... это хорошо?»~ */ GOTO 37
+  IF ~~ THEN REPLY #4301 /* ~«Понятно. И правда, очень повезло. У меня есть другие вопросы...»~ */ GOTO 26
+  IF ~~ THEN REPLY #4302 /* ~«Понятно. Ну что ж, мне нужно идти. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+  SAY #1211 /* ~Тленная кивает. «Да». Она хмурится, затем пристально смотрит на тебя. «Ты нездешний. Кто ты?»~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4303 /* ~«Я недавно посвящен. Прости мое невежество».~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4304 /* ~«Я... недавно здесь. Я... пытаюсь изучить обстановку».~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4305 /* ~«Ну... к чему имена? Храни веру, э-э, посвященная».~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4306 /* ~«Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай».~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 38 // from:
+  SAY #1212 /* ~«Ты не из наших. Кто ты? Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? — Тленная отступает на шаг. — Стража! Стража!»~ */
+  IF ~~ THEN REPLY #4307 /* ~«Проклятье!»~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #4308 /* ~«Тс-с-с! Я не смогу тебе ответить под такой крик!»~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+IncrementGlobal("Law","GLOBAL",-1)
+~ EXIT
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #4309 /* ~«Тс-с-с! Я не смогу тебе ответить под такой крик!»~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 26.2
+  SAY #1213 /* ~«Дневник? Не встречала такого».~ */
+  IF ~~ THEN REPLY #4310 /* ~«У меня есть другие вопросы...»~ */ GOTO 26
+  IF ~~ THEN REPLY #4311 /* ~«Я должен идти. Прощай».~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from:
+  SAY #1214 /* ~Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Warning","GLOBAL",0)
+~ THEN REPLY #4312 /* ~«Приветствую».~ */ EXTERN ~DMORTE~ 81
+  IF ~  NearbyDialog("DMorte")
+Global("Warning","GLOBAL",1)
+~ THEN REPLY #4313 /* ~«Приветствую».~ */ EXTERN ~DMORTE~ 83
+  IF ~  NearbyDialog("DMorte")
+GlobalGT("Warning","GLOBAL",1)
+~ THEN REPLY #4314 /* ~«Приветствую».~ */ GOTO 4
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4315 /* ~«Приветствую».~ */ GOTO 4
+  IF ~~ THEN REPLY #4316 /* ~Оставить ее в покое.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 1.0 5.1 7.1 8.1 47.1
+  SAY #1215 /* ~Тленная не успевает и слова вымолвить, как твои руки хватают ее голову за виски и резко сворачивают ее влево. ~ */
+  IF ~~ THEN REPLY #4317 /* ~«Нельзя дать тебе предупредить своих друзей...»~ */ DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0 45.0
+  SAY #1216 /* ~В шее раздается характерный хруст, и тело тленной безвольно падает в твои объятия.~ */
+  IF ~  Global("Choke_Memory","GLOBAL",0)
+~ THEN REPLY #4318 /* ~«Лучше ты, чем я, трухлявка». ~ */ DO ~IncrementGlobal("Choke","GLOBAL",1)
+SetGlobal("Choke_Memory","GLOBAL",1)
+PlaySoundNotRanged("SPTR_01")
+IncrementGlobal("Choke_Dustman","GLOBAL",1)
+AddexperienceParty(15)
+~ GOTO 43
+  IF ~  GlobalGT("Choke_Memory","GLOBAL",0)
+~ THEN REPLY #4319 /* ~«Лучше ты, чем я, трухлявка». ~ */ DO ~IncrementGlobal("Choke_Dustman","GLOBAL",1)
+IncrementGlobal("Choke","GLOBAL",1)
+Kill(Myself)
+Deactivate(Myself)
+AddexperienceParty(15)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+  SAY #1217 /* ~К своему удивлению, это действие происходит практически инстинктивно, будто ты проделывал это уже много раз... с этой мыслью всплывает воспоминание, но оно недостаточно сильно для того, чтобы за него зацепиться.~ */
+  IF ~~ THEN REPLY #4320 /* ~Оставить тело, уйти.~ */ DO ~Kill(Myself)
+GiveExperience(Protagonist,250)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 5.0 7.0 8.0 19.4 47.0
+  SAY #1218 /* ~Ты недостаточно быстр, и тленная уворачивается от твоего выпада. Отступив на шаг, она быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.~ */
+  IF ~~ THEN REPLY #4321 /* ~«Ну хорошо...»~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 19.5
+  SAY #1219 /* ~Ты наклоняешься, чтобы «шепнуть» ей что-то на ухо, тленная тоже наклоняется. Как только она оказывается на расстоянии вытянутой руки, ты хватаешь ее за виски и резко сворачиваешь голову влево. ~ */
+  IF ~~ THEN REPLY #4322 /* ~«Нельзя дать тебе предупредить своих друзей...»~ */ DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 46 // from: 24.3 25.3 29.3 35.3 37.3 49.3 50.1
+  SAY #1220 /* ~Тленная явно что-то подозревает. Похоже, она хочет что-то сказать, затем едва заметно качает головой и возвращается к своим обязанностям.~ */
+  IF ~~ THEN REPLY #4323 /* ~Уйти прочь.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
+  SAY #1221 /* ~Тленная внимательно тебя осматривает. «Ты не из наших. Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Кажется, здесь есть дело для стражников...»~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4324 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4325 /* ~Свернуть ей шею до того, как она сможет позвать на помощь.~ */ GOTO 41
+  IF ~~ THEN REPLY #4326 /* ~Уйти. Быстро.~ */ GOTO 2
+  IF ~~ THEN REPLY #4327 /* ~«Нет-нет... не он, э-э... то есть, я хотел сказать, не шпион... понимаешь, я пробудился на одной из плит... и...»~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 48 // from: 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
+  SAY #1222 /* ~Тленная кивает и возвращается к своим делам.~ */
+  IF ~~ THEN REPLY #4328 /* ~Уйти прочь.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 24.0 24.1 25.0 25.1
+  SAY #1223 /* ~Тленная хмурится. «Это имя мне незнакомо».~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4329 /* ~«Я недавно посвящен. Прости мое невежество».~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4331 /* ~«Я... недавно здесь. Я... пытаюсь изучить порядки».~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4332 /* ~«Ну... к чему имена? Храни веру, э-э, посвященная».~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4333 /* ~«Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай».~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 50 // from: 29.0 35.0 37.0 49.0
+  SAY #1224 /* ~Тленная продолжает хмуриться, но затем слегка кивает. «Ну хорошо. Что я могу сделать для тебя, посвященный?»~ */
+  IF ~~ THEN REPLY #4334 /* ~«У меня есть пара вопросов...» ~ */ GOTO 26
+  IF ~~ THEN REPLY #4335 /* ~«На этот раз — ничего. Прощай».~ */ GOTO 46
+END
+
+IF ~  Global("Appearance","GLOBAL",0)
+~ THEN BEGIN 51 // from:
+  SAY #66683 /* ~Тленная бросает на тебя каменный взгляд. «Ты потерялся?»~ */
+  IF ~  Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66684 /* ~«Нет, я член фракции. Я просто осматриваю Морг».~ */ GOTO 52
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66685 /* ~«Да».~ */ GOTO 5
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66686 /* ~«Нет».~ */ GOTO 6
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66687 /* ~«Нет, я не потерялся. У меня есть несколько вопросов...»~ */ GOTO 6
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66688 /* ~«Прощай».~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+  SAY #66689 /* ~Тленная какое-то время пристально на тебя смотрит, затем кивает. «Хорошо. Если тебе нужна помощь, дай мне знать».~ */
+  IF ~~ THEN REPLY #66690 /* ~«Конечно. Прощай». ~ */ EXIT
+END

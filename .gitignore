@@ -42,7 +42,13 @@ src/game/d_raw/*
 !src/game/d_raw/DZF1072.D
 !src/game/d_raw/DZF1096.D
 !src/game/d_raw/DZF1148.D
-
+!src/game/d_raw/DS42.D
+!src/game/d_raw/DS748.D
+!src/game/d_raw/DS863.D
+!src/game/d_raw/DS996.D
+!src/game/d_raw/DS1221.D
+!src/game/d_raw/DDUST.D
+!src/game/d_raw/DDUSTFEM.D
 # Created by https://www.toptal.com/developers/gitignore/api/renpy
 # Edit at https://www.toptal.com/developers/gitignore?templates=renpy
 

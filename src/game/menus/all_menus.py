@@ -8,17 +8,17 @@ from menus.mortuary7_menu import (build_mortuary7_menu)
 
 
 def build_all_menus(menu_manager, gsm):
-    for builder in build_mortuary1_menu('mortuary1', gsm):
+    for builder in build_mortuary1_menu('mortuary_f2r1', gsm):
         builder.done(menu_manager)
-    for builder in build_mortuary2_menu('mortuary2', gsm):
+    for builder in build_mortuary2_menu('mortuary_f2r2', gsm):
         builder.done(menu_manager)
-    for builder in build_mortuary3_menu('mortuary3', gsm):
+    for builder in build_mortuary3_menu('mortuary_f2r3', gsm):
         builder.done(menu_manager)
-    for builder in build_mortuary4_menu('mortuary4', gsm):
+    for builder in build_mortuary4_menu('mortuary_f2r4', gsm):
         builder.done(menu_manager)
-    for builder in build_mortuary5_menu('mortuary5', gsm):
+    for builder in build_mortuary5_menu('mortuary_f2r5', gsm):
         builder.done(menu_manager)
-    for builder in build_mortuary6_menu('mortuary6', gsm):
+    for builder in build_mortuary6_menu('mortuary_f2r6', gsm):
         builder.done(menu_manager)
-    for builder in build_mortuary7_menu('mortuary7', gsm):
+    for builder in build_mortuary7_menu('mortuary_f2r7', gsm):
         builder.done(menu_manager)

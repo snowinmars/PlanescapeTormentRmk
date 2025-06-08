@@ -43,7 +43,7 @@ label start_dzm1146_kill:
     call dzm1146_init
     jump dzm1146_s3
 label dzm1146_init:
-    $ gsm.set_location('mortuary1')
+    $ gsm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm1146(True)
     scene bg mortuary1
     show dzm1146_img default at center_left_down
