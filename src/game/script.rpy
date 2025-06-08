@@ -114,7 +114,7 @@ label start:
     menu:
         "dev":
             $ gsm = renpy.store.global_settings_manager
-            $ gsm.set_location('mortuary5')
+            $ gsm.set_location('mortuary_f2r5')
             $ gsm.set_in_party_morte(True)
             $ gsm.set_has_intro_key(True)
             $ gsm.set_has_tome_ba(True)

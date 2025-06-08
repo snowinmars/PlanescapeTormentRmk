@@ -148,7 +148,7 @@ label start_deivene_kill:
     call deivene_init
     jump deivene_kill
 label deivene_init:
-    $ gsm.set_location('mortuary5')
+    $ gsm.set_location('mortuary_f2r5')
     $ gsm.set_in_party_morte(True)
     $ gsm.set_meet_eivene(True)
     scene bg mortuary5

@@ -150,14 +150,14 @@ label start_ddhall_talk_first:
 label start_ddhall_talk:
     call ddhall_init
     jump ddhall_s40
-label start_ddhall_kill_first:
+label start_ddhall_kill_first:  # TODO [snow]: give gsm.set_has_dhall_feather(True)
     call ddhall_init
     jump ddhall_kill_first
 label start_ddhall_kill:
     call ddhall_init
     jump ddhall_kill
 label ddhall_init:
-    $ gsm.set_location('mortuary3')
+    $ gsm.set_location('mortuary_f2r3')
     scene bg mortuary3
     show morte_img default at center_left_down
     show dhall_img default at center_right_down

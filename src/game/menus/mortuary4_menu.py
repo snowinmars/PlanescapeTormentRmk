@@ -26,7 +26,7 @@ def build_mortuary4_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(1590, 400)
         .option(lambda: 'Пройти в северо-восточную комнату'
-                if gsm.is_visited_location('mortuary5')
+                if gsm.is_visited_location('mortuary_f2r5')
                 else "Открыть дверь") \
         .jump('mortuary_walking_5_visit') \
         .style('open')

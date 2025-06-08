@@ -10,6 +10,13 @@ import * as path from 'path'
 import {getKnownSettingsName} from "./wellKnownReplacements.ts";
 
 const goFilesDz = [
+    'DS42',
+    'DS748',
+    'DS863',
+    'DS996',
+    'DS1221',
+    'DDUST',
+    'DDUSTFEM',
     'DZM1041',
     'DZM1094',
     'DZM1146',

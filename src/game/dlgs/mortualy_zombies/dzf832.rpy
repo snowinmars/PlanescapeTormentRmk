@@ -63,7 +63,7 @@ label start_dzf832_kill:
     call dzf832_init
     jump dzf832_kill
 label dzf832_init:
-    $ gsm.set_location('mortuary2')
+    $ gsm.set_location('mortuary_f2r2')
     $ gsm.set_meet_dzf832(True)
     scene bg mortuary2
     show dzf832_img default at center_left_down

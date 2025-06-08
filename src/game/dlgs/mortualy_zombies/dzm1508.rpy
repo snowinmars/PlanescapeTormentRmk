@@ -31,7 +31,7 @@ label start_dzm1508_kill:
     call dzm1508_init
     jump dzm1508_kill
 label dzm1508_init:
-    $ gsm.set_location('mortuary1')
+    $ gsm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm1508(True)
     scene bg mortuary1
     show dzm1508_img default at center_left_down

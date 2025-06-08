@@ -75,7 +75,7 @@ label start_dzm1094_kill:
     call dzm1094_init
     jump dzm1094_kill
 label dzm1094_init:
-    $ gsm.set_location('mortuary1')
+    $ gsm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm1094(True)
     scene bg mortuary1
     show dzm1094_img default at center_left_down

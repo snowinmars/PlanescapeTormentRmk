@@ -40,7 +40,7 @@ label start_dzm782_kill:
     call dzm782_init
     jump dzm782_kill
 label dzm782_init:
-    $ gsm.set_location('mortuary1')
+    $ gsm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm782(True)
     scene bg mortuary1
     show dzm782_img default at center_left_down
