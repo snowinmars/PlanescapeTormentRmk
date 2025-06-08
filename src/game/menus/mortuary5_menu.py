@@ -47,12 +47,12 @@ def build_mortuary5_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm506(), 1160, 700)
         .auto_position(1200, 700)
-        # .option(lambda: 'Атаковать труп «506»'
-        #         if gsm.get_meet_dzm506()
-        #         else 'Атаковать труп со швами') \
-        # .jump("start_dzm506_kill") \
-        # .when(lambda: not gsm.get_dead_dzm506()) \
-        # .style('kill') \
+        .option(lambda: 'Атаковать труп «506»'
+                if gsm.get_meet_dzm506()
+                else 'Атаковать труп со швами') \
+        .jump("start_dzm506_kill") \
+        .when(lambda: not gsm.get_dead_dzm506()) \
+        .style('kill') \
         .option(lambda: 'Поговорить c трупом «506»'
                 if gsm.get_meet_dzm506()
                 else 'Поговорить с трупом со швами') \

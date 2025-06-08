@@ -12,15 +12,17 @@ def build_mortuary6_menu(location_id, gsm):
         .option(lambda: 'Атаковать Ваксиса'
                 if gsm.get_meet_vaxis()
                 else 'Атаковать труп') \
-        .jump('dvaxis_kill') \
+        .jump(lambda: 'start_dvaxis_kill'
+              if gsm.get_meet_vaxis()
+              else 'start_dvaxis_kill_first') \
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('kill') \
         .option(lambda: 'Поговорить c Ваксисом'
                 if gsm.get_meet_vaxis()
                 else 'Поговорить с трупом') \
-        .jump(lambda: 'dvaxis_s57'
+        .jump(lambda: 'start_dvaxis_talk'
               if gsm.get_meet_vaxis()
-              else 'dvaxis_s0') \
+              else 'start_dvaxis_talk_first') \
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('talk')
     )

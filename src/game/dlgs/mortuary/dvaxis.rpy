@@ -1,6 +1,4 @@
 ﻿init python:
-    def _take_embalm(gsm):
-        gsm.set_has_embalm(True)
     def _kill_vaxis(gsm):
         gsm.set_dead_vaxis(True)
     def _meet_vaxis(gsm):
@@ -538,18 +536,27 @@ init 10 python:
 
 # ###
 # Original:  DLG/DVAXIS.DLG
-# Starts:    dvaxis_s0 dvaxis_s57 dvaxis_s69 dvaxis_kill
+# Starts:    dvaxis_s0 dvaxis_s57 dvaxis_kill # orphan: dvaxis_s69
 # ###
 
-
+label start_dvaxis_talk:
+    call dvaxis_init
+    jump dvaxis_s57
+label start_dvaxis_talk_first:
+    call dvaxis_init
+    jump dvaxis_s0
+label start_dvaxis_kill:
+    call dvaxis_init
+    jump dvaxis_kill
+label start_dvaxis_kill_first:
+    call dvaxis_init
+    jump dvaxis_kill_first
 label dvaxis_init:
     $ gsm.set_location('mortuary6')
     $ gsm.set_meet_vaxis(True)
     scene bg mortuary6
     show vaxis_img default at center_left_down
     return
-
-
 label dvaxis_dispose:
     hide vaxis_img
     jump show_graphics_menu
@@ -654,15 +661,15 @@ label dvaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2
         'Ты пытаешься меня ЗАПУГАТЬ? Ну все… готовься к смерти.':
             # r17 # reply475
             jump dvaxis_attack
-        'Ложь: Я даже и *не думал* ничего говорить тленным о тебе.':
+        'Ложь: Я даже и *не думал* ничего говорить тленным о тебе. Прощай.':
             # r18 # reply476
             $ _r476_action(gsm)
             jump dvaxis_dispose
-        'Правда: Обещаю, что я ничего не скажу о тебе тленным.':
+        'Правда: Обещаю, что я ничего не скажу о тебе тленным. Прощай.':
             # r19 # reply477
             $ _r477_action(gsm)
             jump dvaxis_dispose
-        'Как хочешь. У тебя свои дела, у меня — свои.':
+        'Как хочешь. У тебя свои дела, у меня — свои. Прощай.':
             # r20 # reply478
             jump dvaxis_dispose
 
@@ -1487,7 +1494,7 @@ label dvaxis_s39:  # from 43.12 # Manually checked EXTERN ~DMORTE~ : 93
     x 'Твуфяки тууупые.'
     morte 'Ага, уж кто тупые, так это *они*. Это точно.'
 
-    jump dvaxis_dispose
+    jump dvaxis_s61
 
 # s40 # say4514
 label dvaxis_s40:  # from -
@@ -1506,7 +1513,7 @@ label dvaxis_s40:  # from -
 
 
 # s41 # say4517
-label dvaxis_s41:  # from -
+label dvaxis_s41:  # from - # orphan
     $ x = _get_vaxis_name(gsm)
     teller 'Глаза зомби расширяются, он протягивает руку и прищелкивает пальцами.'
     x 'Дай его мие.'
@@ -2253,35 +2260,27 @@ label dvaxis_attack:
 
 
 label dvaxis_kill:
-    call dvaxis_init
-    if _meet_vaxis(gsm):
-        jump dvaxis_kill_known
-    if _not_meet_vaxis(gsm):
-        jump dvaxis_kill_unknown
-
-
-label dvaxis_kill_unknown:
     teller"Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида."
 
     menu:
         'Уйти.':
             jump dvaxis_dispose
         'Убить зомби.':
-            jump dvaxis_killed_unknown
+            jump dvaxis_killed
 
 
 
-label dvaxis_kill_known:
+label dvaxis_kill_first:
     teller"Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида."
 
     menu:
         'Уйти.':
             jump dvaxis_dispose
         'Убить зомби.':
-            jump dvaxis_killed_known
+            jump dvaxis_killed
 
 
-label dvaxis_killed_unknown:
+label dvaxis_killed_first:
     $ _kill_vaxis(gsm)
     teller "Я бью ходящий труп так, что он сгибается пополам. Зомби неожиданно отпрыгивает и вскрикивает."
     vaxis_unknown "ААА! Фто ты..."
@@ -2289,14 +2288,9 @@ label dvaxis_killed_unknown:
     jump dvaxis_dispose
 
 
-label dvaxis_killed_known:
+label dvaxis_killed:
     $ _kill_vaxis(gsm)
     teller "Я бью Ваксиса так, что он сгибается пополам. Он неожиданно отпрыгивает и вскрикивает."
     vaxis "ААА! Фто ты..."
     teller "Я без сожалений бью его до тех пор, пока он не падает на спину. В его глазах остался человеческий страх перед внезапной смертью."
     jump dvaxis_dispose
-
-
-label dvaxis_embalm:
-    $ _take_embalm(gsm)
-    teller "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Мне стоит взять парочку."

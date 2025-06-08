@@ -49,16 +49,16 @@ def build_mortuary3_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm1201(), 660, 930)
         .auto_position(700, 930)
-        # .option(lambda: 'Атаковать труп «1201»'
-        #         if gsm.get_meet_dzm1201()
-        #         else 'Атаковать труп с чернильницей') \
-        # .jump("dzm1201_kill") \
-        # .when(lambda: not gsm.get_dead_dzm1201()) \
-        # .style('kill') \
+        .option(lambda: 'Атаковать труп «1201»'
+                if gsm.get_meet_dzm1201()
+                else 'Атаковать труп с чернильницей') \
+        .jump("start_dzm1201_kill") \
+        .when(lambda: not gsm.get_dead_dzm1201()) \
+        .style('kill') \
         .option(lambda: 'Поговорить c трупом «1201»'
                 if gsm.get_meet_dzm1201()
                 else 'Поговорить с трупом с чернильницей') \
-        .jump("dzm1201_s0") \
+        .jump("start_dzm1201_talk") \
         .when(lambda: not gsm.get_dead_dzm1201()) \
         .style('talk')
     )
@@ -86,13 +86,13 @@ def build_mortuary3_menu(location_id, gsm):
         .option(lambda: 'Атаковать труп «1072»'
                 if gsm.get_meet_dzf1072()
                 else 'Атаковать труп без челюсти') \
-        .jump("dzf1072_kill") \
+        .jump("start_dzf1072_kill") \
         .when(lambda: not gsm.get_dead_dzf1072()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «1072»'
                 if gsm.get_meet_dzf1072()
                 else 'Поговорить с трупом без челюсти') \
-        .jump("dzf1072_s0") \
+        .jump("start_dzf1072_talk") \
         .when(lambda: not gsm.get_dead_dzf1072()) \
         .style('talk')
     )
@@ -109,7 +109,7 @@ def build_mortuary3_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(160, 1000) \
         .option("Пройти в западную комнату") \
-        .jump("mortuary_walking_2_scene") \
+        .jump("mortuary_walking_2_visit") \
         .style('open')
     )
 
