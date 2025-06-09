@@ -17,6 +17,7 @@
 
 init 10 python:
     gsm = renpy.store.global_settings_manager
+    glm = renpy.store.global_location_manager
 
 
 # ###
@@ -32,7 +33,7 @@ label start_dmorte1_kill:
     call dmorte1_init
     jump dmorte1_kill
 label dmorte1_init:
-    $ gsm.set_location('mortuary_f2r1')
+    $ glm.set_location('mortuary_f2r1')
     $ gsm.set_in_party_morte(True)
     $ gsm.set_meet_morte(True)
     scene bg mortuary1

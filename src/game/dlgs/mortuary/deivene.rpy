@@ -128,6 +128,7 @@ init python:
 
 init 10 python:
     gsm = renpy.store.global_settings_manager
+    glm = renpy.store.global_location_manager
 
 
 # ###
@@ -148,7 +149,7 @@ label start_deivene_kill:
     call deivene_init
     jump deivene_kill
 label deivene_init:
-    $ gsm.set_location('mortuary_f2r5')
+    $ glm.set_location('mortuary_f2r5')
     $ gsm.set_in_party_morte(True)
     $ gsm.set_meet_eivene(True)
     scene bg mortuary5

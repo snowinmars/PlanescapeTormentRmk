@@ -33,9 +33,14 @@ init python:
     def _r4309_action(gsm):        
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4317_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-    def _r4318_action(gsm):        IncrementGlobal("Choke","GLOBAL",1) SetGlobal("Choke_Memory","GLOBAL",1) # ?.play_sound('SPTR_01') IncrementGlobal("Choke_Dustman","GLOBAL",1) 
+    def _r4318_action(gsm):        
+        gsm.inc_choke() 
+        gsm.set_choke_memory(True) # ?.play_sound('SPTR_01') 
+        gsm.inc_choke_dustman() 
         gsm.inc_exp_custom('party', 15)
-    def _r4319_action(gsm):        IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself) 
+    def _r4319_action(gsm):        
+        gsm.inc_choke_dustman() 
+        gsm.inc_choke() Kill(Myself) Deactivate(Myself) 
         gsm.inc_exp_custom('party', 15)
     def _r4320_action(gsm):        Kill(Myself) 
         gsm.inc_exp_custom('Protagonist', 250)
@@ -60,17 +65,23 @@ init python:
     def _r1248_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'dex')
     def _r1253_condition(gsm):
-        return gsm.get_meet_dhall() Global("Current_Area","GLOBAL",202)
+        return gsm.get_meet_dhall() \
+               and glm.is_visited_internal_location('AR0202')
     def _r1255_condition(gsm):
-        return gsm.get_meet_dhall() !Global("Current_Area","GLOBAL",202)
+        return gsm.get_meet_dhall() \
+               and not glm.is_visited_internal_location('AR0202')
     def _r1258_condition(gsm):
-        return gsm.get_meet_deionarra() Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_deionarra() \
+               and glm.is_visited_internal_location('AR0201')
     def _r4336_condition(gsm):
-        return gsm.get_meet_deionarra() !Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_deionarra() \
+               and not glm.is_visited_internal_location('AR0201')
     def _r33224_condition(gsm):
-        return gsm.get_meet_soego() Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_soego() \
+               and glm.is_visited_internal_location('AR0201')
     def _r33226_condition(gsm):
-        return gsm.get_meet_soego() !Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_soego() \
+               and not glm.is_visited_internal_location('AR0201')
     def _r33227_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'int') NumTimesTalkedTo(1)
     def _r33229_condition(gsm):
@@ -112,9 +123,9 @@ init python:
     def _r1399_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r4281_condition(gsm):
-        return Global("Current_Area","GLOBAL",202)
+        return glm.is_visited_internal_location('AR0202')
     def _r4282_condition(gsm):
-        return !Global("Current_Area","GLOBAL",202)
+        return not glm.is_visited_internal_location('AR0202')
     def _r4296_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r4297_condition(gsm):
@@ -147,9 +158,9 @@ init python:
     def _r4315_condition(gsm):
         return not gsm.get_in_party_morte()
     def _r4318_condition(gsm):
-        return Global("Choke_Memory","GLOBAL",0)
+        return not gsm.get_choke_memory()
     def _r4319_condition(gsm):
-        return GlobalGT("Choke_Memory","GLOBAL",0)
+        return gsm.get_choke_memory()
     def _r4324_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',13,'dex')
     def _r4325_condition(gsm):
@@ -163,15 +174,15 @@ init python:
     def _r4333_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r66684_condition(gsm):
-        return Global("Join_Dustmen","GLOBAL",1)
+        return gsm.get_join_dustmen()
     def _r66685_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
     def _r66686_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
     def _r66687_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
     def _r66688_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
 
 
 init 10 python:

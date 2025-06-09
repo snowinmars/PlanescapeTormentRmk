@@ -1,47 +1,48 @@
 init python:
     def _r313_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        gsm.set_mortualy_alarmed(True)
     def _r3888_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        gsm.set_mortualy_alarmed(True)
     def _r3886_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        gsm.set_mortualy_alarmed(True)
     def _r33189_action(gsm):
         gsm.set_death_of_names_adahn(True)
-
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
     def _r371_action(gsm):
         gsm.set_death_of_names_adahn(True)
-
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
     def _r450_action(gsm):
         gsm.set_death_of_names_adahn(True)
-
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
     def _r399_action(gsm):
         gsm.set_death_of_names_adahn(True)
-
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
     def _r448_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        gsm.set_mortualy_alarmed(True)
     def _r449_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        gsm.set_mortualy_alarmed(True)
         gsm.dec_law()
     def _r1339_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.set_mortualy_alarmed(True)
-    def _r1426_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        gsm.set_mortualy_alarmed(True)
+    def _r1426_action(gsm):
+        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        return
     def _r1428_action(gsm):
-        gsm.set_choke_memory(True) # ?.play_sound('SPTR_01')
-        gsm.inc_choke_dustman()
-        gsm.inc_choke() Kill(Myself) Deactivate(Myself)
+        SetGlobal("Choke_Memory","GLOBAL",1)
+    # ?.play_sound('SPTR_01') IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
-    def _r1429_action(gsm):
-        gsm.inc_choke_dustman()
-        gsm.inc_choke() Kill(Myself) Deactivate(Myself)
+    def _r1429_action(gsm):        IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
     def _r3882_action(gsm):        Kill(Myself)
         gsm.inc_exp_custom('Protagonist', 250)
@@ -66,23 +67,17 @@ init python:
     def _r3885_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'dex')
     def _r342_condition(gsm):
-        return gsm.get_meet_dhall() \
-               and glm.is_visited_internal_location('AR0202')
+        return gsm.get_meet_dhall() Global("Current_Area","GLOBAL",202)
     def _r343_condition(gsm):
-        return gsm.get_meet_dhall() \
-               and not glm.is_visited_internal_location('AR0202')
+        return gsm.get_meet_dhall() !Global("Current_Area","GLOBAL",202)
     def _r33183_condition(gsm):
-        return gsm.get_meet_deionarra() \
-               and glm.is_visited_internal_location('AR0201')
+        return gsm.get_meet_deionarra() Global("Current_Area","GLOBAL",201)
     def _r33185_condition(gsm):
-        return gsm.get_meet_deionarra() \
-               and not glm.is_visited_internal_location('AR0201')
+        return gsm.get_meet_deionarra() !Global("Current_Area","GLOBAL",201)
     def _r33186_condition(gsm):
-        return gsm.get_meet_soego() \
-               and glm.is_visited_internal_location('AR0201')
+        return gsm.get_meet_soego() Global("Current_Area","GLOBAL",201)
     def _r33187_condition(gsm):
-        return gsm.get_meet_soego() \
-               and not glm.is_visited_internal_location('AR0201')
+        return gsm.get_meet_soego() !Global("Current_Area","GLOBAL",201)
     def _r33189_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'int') NumTimesTalkedTo(1)
     def _r33190_condition(gsm):
@@ -124,9 +119,9 @@ init python:
     def _r3920_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r416_condition(gsm):
-        return glm.is_visited_internal_location('AR0202')
+        return Global("Current_Area","GLOBAL",202)
     def _r417_condition(gsm):
-        return not glm.is_visited_internal_location('AR0202')
+        return !Global("Current_Area","GLOBAL",202)
     def _r436_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r3909_condition(gsm):
@@ -159,9 +154,9 @@ init python:
     def _r1423_condition(gsm):
         return not gsm.get_in_party_morte()
     def _r1428_condition(gsm):
-        return not gsm.get_choke_memory()
+        return Global("Choke_Memory","GLOBAL",0)
     def _r1429_condition(gsm):
-        return gsm.get_choke_memory()
+        return GlobalGT("Choke_Memory","GLOBAL",0)
     def _r3914_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',13,'dex')
     def _r3915_condition(gsm):
@@ -175,15 +170,15 @@ init python:
     def _r3901_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r66675_condition(gsm):
-        return gsm.get_join_dustmen()
+        return Global("Join_Dustmen","GLOBAL",1)
     def _r66676_condition(gsm):
-        return not gsm.get_join_dustmen()
+        return !Global("Join_Dustmen","GLOBAL",1)
     def _r66677_condition(gsm):
-        return not gsm.get_join_dustmen()
+        return !Global("Join_Dustmen","GLOBAL",1)
     def _r66678_condition(gsm):
-        return not gsm.get_join_dustmen()
+        return !Global("Join_Dustmen","GLOBAL",1)
     def _r66679_condition(gsm):
-        return not gsm.get_join_dustmen()
+        return !Global("Join_Dustmen","GLOBAL",1)
 
 
 init 10 python:

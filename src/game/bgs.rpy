@@ -7,10 +7,10 @@ image bg mortuary_f2r6 = "bg/mortuary_f2r6.png"
 image bg mortuary_f2r7 = "bg/mortuary_f2r7.png"
 image bg mortuary_f2r8 = "bg/mortuary_f2r8.png"
 
-image bg mortuary_f3r8 = 'bg/mortuary_f3r8.png'
 image bg mortuary_f3r2 = 'bg/mortuary_f3r2.png'
 image bg mortuary_f3r4 = 'bg/mortuary_f3r4.png'
 image bg mortuary_f3r6 = 'bg/mortuary_f3r6.png'
+image bg mortuary_f3r8 = 'bg/mortuary_f3r8.png'
 
 image bg mortuary_f1rc = 'bg/mortuary_f1rc.png'
 image bg mortuary_f1r1 = 'bg/mortuary_f1r1.png'

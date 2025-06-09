@@ -2,19 +2,19 @@ init python:
     def _r6613_action(gsm):        
         gsm.dec_once_law()
     def _r6614_action(gsm):        
-        gsm.dec_law() SetGlobal("Skeleton_Chaotic","GLOBAL",1)
-    def _r6617_action(gsm):        SetGlobal("Skeleton_Examine","GLOBAL",1)
-    def _r6618_action(gsm):        SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1)
+        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
+    def _r6617_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
+    def _r6618_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
     def _r6629_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
-    def _r6632_action(gsm):        SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1)
+    def _r6632_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
     def _r6635_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
     def _r6640_action(gsm):        Kill(Myself)
     def _r6642_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
     def _r6645_action(gsm):        
         gsm.inc_exp_custom('party', 250)
-    def _r6650_action(gsm):        SetGlobal("Skeleton_Examine","GLOBAL",1)
+    def _r6650_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
     def _r6652_action(gsm):        
         gsm.inc_exp_custom('party', 250)
     def _r58984_action(gsm):        GiveItemCreate("GSKnife",Protagonist,1,0,0) GiveItemCreate("Rags",Protagonist,1,0,0) GiveItemCreate("Clotchrm",Protagonist,1,0,0) GiveItemCreate("Clotchrm",Protagonist,1,0,0) GiveGoldForce(99)
@@ -24,19 +24,18 @@ init python:
     def _r6612_condition(gsm):
         return gsm.get_42_secret()
     def _r6614_condition(gsm):
-        return Global("Skeleton_Chaotic","GLOBAL",0)
+        return glm.is_visited_internal_location('AR0000')
     def _r6615_condition(gsm):
-        return Global("Skeleton_Chaotic","GLOBAL",1)
+        return glm.is_visited_internal_location('AR0001')
     def _r6616_condition(gsm):
         return gsm.get_can_speak_with_dead()
     def _r6618_condition(gsm):
-        return Global("Skeleton_Examine","GLOBAL",1) \
-               and gsm.get_in_party_morte() Global("Morte_Skel_Mort_Quip2","GLOBAL",0)
+        return glm.is_visited_internal_location('AR0000')
     def _r6619_condition(gsm):
-        return Global("Skeleton_Examine","GLOBAL",1) \
-               and gsm.get_in_party_morte() Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+        return glm.is_visited_internal_location('AR0001')
     def _r6620_condition(gsm):
-        return not gsm.get_in_party_morte() Global("Skeleton_Examine","GLOBAL",1)
+        return not gsm.get_in_party_morte() \
+               and glm.is_visited_internal_location('AR0001')
     def _r6621_condition(gsm):
         return gsm.get_in_party_morte() \
                and gsm.get_morte_skel_mort_quip()
@@ -64,9 +63,11 @@ init python:
     def _r63495_condition(gsm):
         return gsm.get_42_secret()
     def _r6632_condition(gsm):
-        return gsm.get_in_party_morte() Global("Morte_Skel_Mort_Quip2","GLOBAL",0)
+        return gsm.get_in_party_morte() \
+               and glm.is_visited_internal_location('AR0000')
     def _r6633_condition(gsm):
-        return gsm.get_in_party_morte() Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+        return gsm.get_in_party_morte() \
+               and glm.is_visited_internal_location('AR0001')
     def _r6634_condition(gsm):
         return not gsm.get_in_party_morte()
     def _r6635_condition(gsm):
