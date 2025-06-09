@@ -49,6 +49,7 @@ init python:
 
 init 10 python:
     gsm = renpy.store.global_settings_manager
+    glm = renpy.store.global_location_manager
 
 
 # ###
@@ -63,7 +64,7 @@ label start_dzf1148_kill:
     call dzf1148_init
     jump dzf1148_kill
 label dzf1148_init:
-    $ gsm.set_location('mortuary_f2r2')
+    $ glm.set_location('mortuary_f2r2')
     $ gsm.set_meet_dzf1148(True)
     scene bg mortuary2
     show dzf1148_img default at center_left_down

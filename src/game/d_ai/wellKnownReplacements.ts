@@ -19,14 +19,14 @@ const setting = (from: string, to: string, env = 'GLOBAL', meetAndDead = false):
                 // May I be wrong? I mart.
                 [`SetGlobal("${from}","${env}",0)`, `gsm.set_${x}(False)`],
                 [`SetGlobal("${from}","${env}",1)`, `gsm.set_${x}(True)`],
-                [`Global("${from}","${env}",0)`,    `return not gsm.get_${x}()`],
-                [`Global("${from}","${env}",1)`,    `return gsm.get_${x}()`],
-                [`GlobalGT("${from}","${env}",1)`,  `return false  # GlobalGT("${from}","${env}",1)`],
-                [`GlobalLT("${from}","${env}",0)`,  `return false  # GlobalLT("${from}","${env}",0)`],
-                [`GlobalGT("${from}","${env}",0)`,  `return gsm.get_${x}()`],
-                [`GlobalLT("${from}","${env}",1)`,  `return not gsm.get_${x}()`],
-                [`!Global("${from}","${env}",0)`,   `return gsm.get_${x}()`],
-                [`!Global("${from}","${env}",1)`,   `return not gsm.get_${x}()`],
+                [`Global("${from}","${env}",0)`, `return not gsm.get_${x}()`],
+                [`Global("${from}","${env}",1)`, `return gsm.get_${x}()`],
+                [`GlobalGT("${from}","${env}",1)`, `return false  # GlobalGT("${from}","${env}",1)`],
+                [`GlobalLT("${from}","${env}",0)`, `return false  # GlobalLT("${from}","${env}",0)`],
+                [`GlobalGT("${from}","${env}",0)`, `return gsm.get_${x}()`],
+                [`GlobalLT("${from}","${env}",1)`, `return not gsm.get_${x}()`],
+                [`!Global("${from}","${env}",0)`, `return gsm.get_${x}()`],
+                [`!Global("${from}","${env}",1)`, `return not gsm.get_${x}()`],
                 [`!GlobalGT("${from}","${env}",0)`, `return not gsm.get_${x}()`],
                 [`!GlobalGT("${from}","${env}",1)`, `return true  # !GlobalGT("${from}","${env}",1)`],
                 [`!GlobalLT("${from}","${env}",0)`, `return true  # !GlobalLT("${from}","${env}",0)`],
@@ -115,14 +115,14 @@ const integerSetting = (from: string, to: string, values: number[], env = 'GLOBA
         type: "integer",
     };
     const result: string[][] = [];
-    for (const i of [-1,1,2]) {
+    for (const i of [-1, 1, 2]) {
         result.push([`IncrementGlobal("${from}","${env}",${i})`, `gsm.inc_${to}()`]);
     }
     for (const value of values) result.push([`SetGlobal("${from}","${env}",${value})`, `gsm.set_${to}(${value})`]);
-    for (const value of values) result.push([`Global("${from}","${env}",${value})`,    `return gsm.get_${to}() == ${value}`]);
-    for (const value of values) result.push([`!Global("${from}","${env}",${value})`,   `return gsm.get_${to}() != ${value}`]);
-    for (const value of values) result.push([`GlobalLT("${from}","${env}",${value})`,  `return gsm.get_${to}() < ${value}`]);
-    for (const value of values) result.push([`GlobalGT("${from}","${env}",${value})`,  `return gsm.get_${to}() > ${value}`]);
+    for (const value of values) result.push([`Global("${from}","${env}",${value})`, `return gsm.get_${to}() == ${value}`]);
+    for (const value of values) result.push([`!Global("${from}","${env}",${value})`, `return gsm.get_${to}() != ${value}`]);
+    for (const value of values) result.push([`GlobalLT("${from}","${env}",${value})`, `return gsm.get_${to}() < ${value}`]);
+    for (const value of values) result.push([`GlobalGT("${from}","${env}",${value})`, `return gsm.get_${to}() > ${value}`]);
     return result;
 }
 
@@ -354,39 +354,43 @@ export const wellKnownReplacements: string[][] = [
     ...booleanSetting('Morte_Wilder_Quip_1', 'morte_wilder_quip_1'),
     ...booleanSetting('Morte_SDThug_Quip_1', 'morte_sdthug_quip_1'),
     ...booleanSetting('Topple_985', 'topple_985'),
-    ...integerSetting('Tree_Helpers', 'tree_helpers', [0,1], 'AR0400'),
-    ...integerSetting('Pharod_Quest', 'pharod_quest', [0,1]),
-    ...integerSetting('Torment_Fell', 'torment_fell', [0,1,2]),
-    ...integerSetting('Specialist', 'specialist', [0,1,2,3,4,5,6]),
-    ...integerSetting('Chaotic_Malmaner_1', 'chaotic_malmaner_1', [0,1,2,3]),
-    ...integerSetting('Malmaner', 'malmaner', [0,1,2,3,4,5]),
-    ...integerSetting('Pillar ', 'pillar',[0,1,2]), // with space, yes
-    ...integerSetting('Nemelle', 'nemelle',[0,1,2,3,4]),
-    ...integerSetting('Aelwyn', 'aelwyn',[0,1,2,3,4]),
-    ...integerSetting('Lecture_Death', 'lecture_death',[0,1,2]),
-    ...integerSetting('Lecture_Ghysis', 'lecture_ghysis',[0,1,2]),
-    ...integerSetting('Morte_Stolen', 'morte_stolen',[0,1,2,3]),
-    ...integerSetting('Qui_Sai', 'qui_sai',[0,1,2]),
-    ...integerSetting('Warning', 'warning', [0,1,2]),
-    ...integerSetting('Betray_Vaxis', 'vaxis_betrayed', [0,1,2]),
-    ...integerSetting('Asonje', 'asonje_quest_state', [0,1,2,3]),
-    ...integerSetting('Crier_Quest', 'crier_quest', [0,1,2,3]),
-    ...integerSetting('Xixi_Back', 'xixi_back', [0,1,2,3]),
-    ...integerSetting('Embalm_Key_Quest', 'embalm_key_quest', [0,1,2,3]),
-    ...integerSetting('1201_Note', '1201_note_quest', [0,1,2]),
-    ...integerSetting('Vaxis_Zombie_Disguise', 'vaxis_zombie_disguise', [0,1,2]),
-    ...integerSetting('BD_MORTE_MORALE', 'bd_morte_morale', [0,1,2,3,4,5,6,-1]),
-    ...integerSetting('BD_DAKKON_MORALE', 'bd_dakkon_morale', [0,1,-1]),
-    ...integerSetting('Morte_Taunt', 'morte_taunt', [0,1]),
-    ...integerSetting('Ravel_Grace', 'ravel_grace', [0,1,2,3]),
-    ...integerSetting('Ravel_Annah', 'ravel_annah', [0,1,2,3]),
-    ...integerSetting('Know_Marta_Work', 'know_marta_work', [0,1,2,3]),
-    ...integerSetting('Morte_Quip_Regret_Portal', 'morte_quip_regret_portal', [0,1,2]),
-    ...integerSetting('Morte_Morale_Fortress_Portal', 'morte_morale_fortress_portal', [0,1], 'AR0202'),
-    ...integerSetting('Fortress_Morte', 'fortress_morte', [0,1,2,3,4]),
-    ...integerSetting('Nenny', 'nenny', [0,1,2]),
-    ...integerSetting('Adyzoel', 'adyzoel', [0,1,2], 'AR0400'),
-    ...integerSetting('BariA', 'baria', [0,1,2], 'AR0400'),
+    ...booleanSetting('Choke_Memory', 'choke_memory'),
+    ...booleanSetting('Join_Dustmen', 'join_dustmen'),
+    ...integerSetting('Choke_Dustman', 'choke_dustman', [0, 1]),
+    ...integerSetting('Choke', 'choke', [0, 1]),
+    ...integerSetting('Tree_Helpers', 'tree_helpers', [0, 1], 'AR0400'),
+    ...integerSetting('Pharod_Quest', 'pharod_quest', [0, 1]),
+    ...integerSetting('Torment_Fell', 'torment_fell', [0, 1, 2]),
+    ...integerSetting('Specialist', 'specialist', [0, 1, 2, 3, 4, 5, 6]),
+    ...integerSetting('Chaotic_Malmaner_1', 'chaotic_malmaner_1', [0, 1, 2, 3]),
+    ...integerSetting('Malmaner', 'malmaner', [0, 1, 2, 3, 4, 5]),
+    ...integerSetting('Pillar ', 'pillar', [0, 1, 2]), // with space, yes
+    ...integerSetting('Nemelle', 'nemelle', [0, 1, 2, 3, 4]),
+    ...integerSetting('Aelwyn', 'aelwyn', [0, 1, 2, 3, 4]),
+    ...integerSetting('Lecture_Death', 'lecture_death', [0, 1, 2]),
+    ...integerSetting('Lecture_Ghysis', 'lecture_ghysis', [0, 1, 2]),
+    ...integerSetting('Morte_Stolen', 'morte_stolen', [0, 1, 2, 3]),
+    ...integerSetting('Qui_Sai', 'qui_sai', [0, 1, 2]),
+    ...integerSetting('Warning', 'warning', [0, 1, 2]),
+    ...integerSetting('Betray_Vaxis', 'vaxis_betrayed', [0, 1, 2]),
+    ...integerSetting('Asonje', 'asonje_quest_state', [0, 1, 2, 3]),
+    ...integerSetting('Crier_Quest', 'crier_quest', [0, 1, 2, 3]),
+    ...integerSetting('Xixi_Back', 'xixi_back', [0, 1, 2, 3]),
+    ...integerSetting('Embalm_Key_Quest', 'embalm_key_quest', [0, 1, 2, 3]),
+    ...integerSetting('1201_Note', '1201_note_quest', [0, 1, 2]),
+    ...integerSetting('Vaxis_Zombie_Disguise', 'vaxis_zombie_disguise', [0, 1, 2]),
+    ...integerSetting('BD_MORTE_MORALE', 'bd_morte_morale', [0, 1, 2, 3, 4, 5, 6, -1]),
+    ...integerSetting('BD_DAKKON_MORALE', 'bd_dakkon_morale', [0, 1, -1]),
+    ...integerSetting('Morte_Taunt', 'morte_taunt', [0, 1]),
+    ...integerSetting('Ravel_Grace', 'ravel_grace', [0, 1, 2, 3]),
+    ...integerSetting('Ravel_Annah', 'ravel_annah', [0, 1, 2, 3]),
+    ...integerSetting('Know_Marta_Work', 'know_marta_work', [0, 1, 2, 3]),
+    ...integerSetting('Morte_Quip_Regret_Portal', 'morte_quip_regret_portal', [0, 1, 2]),
+    ...integerSetting('Morte_Morale_Fortress_Portal', 'morte_morale_fortress_portal', [0, 1], 'AR0202'),
+    ...integerSetting('Fortress_Morte', 'fortress_morte', [0, 1, 2, 3, 4]),
+    ...integerSetting('Nenny', 'nenny', [0, 1, 2]),
+    ...integerSetting('Adyzoel', 'adyzoel', [0, 1, 2], 'AR0400'),
+    ...integerSetting('BariA', 'baria', [0, 1, 2], 'AR0400'),
     ...playerItemSetting('KeyPR', 'intro_key'),
     ...playerItemSetting('KeyPr', 'intro_key'), // ?
     ...playerItemSetting('TomeBA', 'tome_ba'),

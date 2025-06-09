@@ -532,6 +532,7 @@ init python:
 
 init 10 python:
     gsm = renpy.store.global_settings_manager
+    glm = renpy.store.global_location_manager
 
 
 # ###
@@ -552,7 +553,7 @@ label start_dvaxis_kill_first:
     call dvaxis_init
     jump dvaxis_kill_first
 label dvaxis_init:
-    $ gsm.set_location('mortuary_f2r6')
+    $ glm.set_location('mortuary_f2r6')
     $ gsm.set_meet_vaxis(True)
     scene bg mortuary6
     show vaxis_img default at center_left_down

@@ -2,26 +2,12 @@ import logging
 
 devlog = logging.getLogger('log')
 
-internal_location_dict = {
-    'AR0200': 'my_cutom',
-    'AR1001': 'my_cutom',
-    'AR0605': 'my_cutom',
-    'AR0400': 'my_cutom',
-    'AR0202': 'my_cutom',
-    'AR0500': 'my_cutom',
-    'AR0401': 'my_cutom',
-    'AR0610': 'my_cutom',
-    'AR0700': 'my_cutom',
-    'AR1000': 'my_cutom',
-    'AR': 'my_cutom',
-}
 
 class SettingsManager:
     def __init__(self, event_manager):
         self.tracked = []
         self._registry = {
             'journal_note_ids': [],
-            'location': None,
             'visited_locations': []
         }
         self.event_manager = event_manager
@@ -37,30 +23,8 @@ class SettingsManager:
         if note_id not in self._registry['journal_note_ids']:
             self._registry['journal_note_ids'].append(note_id)
 
-    def set_location(self, location_id):
-        line = f'set location_id = {location_id}'
-        devlog.debug(line)
-        self.event_manager.write_event(line)
-        self._registry['location'] = location_id
-        if not self.is_visited_location(location_id):
-            line = f'remember {location_id} as visited'
-            devlog.debug(line)
-            self.event_manager.write_event(line)
-            self._registry['visited_locations'].append(location_id)
-
-    def get_location(self):
-        return self._registry['location']
-
     def get_setting_value(self, setting_id):
         return self._registry[setting_id]
-
-    def is_visited_location(self, location_id):
-        return location_id in self._registry['visited_locations']
-
-    def is_internal_location_visited(self, internal_location_id):
-        location_id = internal_location_dict[internal_location_id]
-        # return self.is_visited_location(location_id)
-        return True
 
     def change_stat_permanent(self, who, prop, action, amount):
         return

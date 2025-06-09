@@ -50,21 +50,26 @@ init 2 python:
     renpy.add_python_directory('menu')
     renpy.add_python_directory('engine')
     renpy.add_python_directory('settings')
+    renpy.add_python_directory('locations')
 
 
 init 3 python:
     # engine warm up
+    from engine.events import (EventManager)
     from engine.menu import (MenuManager)
     from engine.settings import (SettingsManager)
-    from engine.events import (EventManager)
     from engine.inventory import (InventoryManager)
+    from engine.locations import (LocationBuilder, LocationManager)
+
     from menus.all_menus import (build_all_menus)
     from setting.all_settings import (build_all_settings)
     from setting.all_inventory import (build_all_inventory)
+    from locations.all_locations import (build_all_locations)
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
 
     renpy.store.global_event_manager = EventManager()
+    renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
@@ -82,9 +87,16 @@ init 3 python:
     devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building mortuary menu...')
+    devlog.info('Building menu...')
     build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
-    devlog.info('Done building mortuary menu, took %s', int(time.time()) - now)
+    devlog.info('Done building menu, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building locations mapping...')
+    builder = LocationBuilder()
+    builder = build_all_locations(builder)
+    renpy.store.global_location_manager.register(builder.mappings, builder.build_reverse_mappings())
+    devlog.info('Done building locations mapping, took %s', int(time.time()) - now)
 
 #     config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
 #     config.underlay.append(
@@ -114,7 +126,8 @@ label start:
     menu:
         "dev":
             $ gsm = renpy.store.global_settings_manager
-            $ gsm.set_location('mortuary_f2r5')
+            $ glm = renpy.store.global_location_manager
+            $ glm.set_location('mortuary_f2r5')
             $ gsm.set_in_party_morte(True)
             $ gsm.set_has_intro_key(True)
             $ gsm.set_has_tome_ba(True)
