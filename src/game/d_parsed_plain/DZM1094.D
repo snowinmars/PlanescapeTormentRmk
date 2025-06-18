@@ -1,21 +1,21 @@
 init python:
-    def _r6565_action(gsm):        
-        gsm.dec_law() 
+    def _r6565_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r6568_action(gsm):        
+    def _r6568_action(gsm):
         gsm.set_meet_asonje(True)
-    def _r9247_action(gsm):        
-        gsm.dec_once_good() 
+    def _r9247_action(gsm):
+        gsm.dec_once_good()
         gsm.set_asonje_quest_state(3)
-    def _r9289_action(gsm):        
+    def _r9289_action(gsm):
         gsm.set_asonje_quest_state(2)
-    def _r9290_action(gsm):        
+    def _r9290_action(gsm):
         gsm.set_asonje_quest_state(2)
-    def _r9291_action(gsm):        
+    def _r9291_action(gsm):
         gsm.set_asonje_quest_state(2)
-    def _r9304_action(gsm):        
+    def _r9304_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
+
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 
 
@@ -52,7 +52,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1094.DLG
-# Starts:    dzm1094_s
 # ###
 
 
@@ -65,7 +64,7 @@ label dzm1094_dispose:
 
 
 # s0 # say6562
-label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)
     SPEAKER 'У этого ходячего трупа на лбу вырезан номер 1094. Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака. Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
 
     menu:
@@ -490,7 +489,7 @@ label dzm1094_s24:  # from 19.0
 
 
 # s25 # say9283
-label dzm1094_s25:  # from 14.1 22.1 # GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
+label dzm1094_s25:  # from 14.1 22.1
     SPEAKER 'Меня зовут Асонж.'
 
     menu:
@@ -503,7 +502,7 @@ label dzm1094_s25:  # from 14.1 22.1 # GlobalGT("Asonje","GLOBAL",0) GlobalLT("A
 
 
 # s26 # say20061
-label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
+label dzm1094_s26:  # from - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
     SPEAKER 'Снова вернулся, а? Он широко улыбается.'
 
     menu:
@@ -516,7 +515,7 @@ label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
 
 
 # s27 # say20062
-label dzm1094_s27:  # from -
+label dzm1094_s27:  # from - # IF ~  Global("Asonje","GLOBAL",3)
     SPEAKER 'А, это ты… снова. Он хмурится, глядя в сторону.'
 
     menu:

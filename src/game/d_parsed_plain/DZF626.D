@@ -1,6 +1,6 @@
 init python:
-    def _r35051_action(gsm):        
-        gsm.dec_law() 
+    def _r35051_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF626.DLG
-# Starts:    dzf626_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf626_dispose:
 
 
 # s0 # say35050
-label dzf626_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 338
+label dzf626_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 338
     SPEAKER 'Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе. Номер 626 вышит на правой щеке, прямо под глазом.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf626_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 338
 
 
 # s2 # say35071
-label dzf626_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 338 # False()
+label dzf626_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 338
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf626_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 338 # False()
 
 
 # s3 # say35081
-label dzf626_s3:  # from -
+label dzf626_s3:  # from - # IF ~  False()
     SPEAKER 'Этот труп не шевелится. Кажется, он далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

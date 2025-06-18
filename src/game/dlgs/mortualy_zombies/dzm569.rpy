@@ -55,7 +55,7 @@ label dzm569_dispose:
 
 
 # s0 # say24575
-label dzm569_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1_s31
+label dzm569_s0:  # from - # IF ~  True() # Manually checked EXTERN ~DMORTE1~ : 31
     teller 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.'
 
     menu:

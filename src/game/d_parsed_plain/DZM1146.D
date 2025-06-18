@@ -1,13 +1,13 @@
 init python:
-    def _r6521_action(gsm):        
-        gsm.dec_law() 
+    def _r6521_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r6524_action(gsm):        
+    def _r6524_action(gsm):
         gsm.set_meet_crispy(True)
-    def _r9415_action(gsm):        
+    def _r9415_action(gsm):
         gsm.inc_once_good()
-    def _r9426_action(gsm):        
-        gsm.dec_once_good() 
+    def _r9426_action(gsm):
+        gsm.dec_once_good()
         gsm.dec_once_law()
 
 
@@ -30,7 +30,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1146.DLG
-# Starts:    dzm1146_s
 # ###
 
 
@@ -43,7 +42,7 @@ label dzm1146_dispose:
 
 
 # s0 # say6518
-label dzm1146_s0:  # from - # IF ~  Global("Crispy","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm1146_s0:  # from - # IF ~  Global("Crispy","GLOBAL",0)
     SPEAKER 'На лбу этого ходячего трупа вырезан номер 1146, губы зашиты грубой черной ниткой. Все тело покрыто ужасающими шрамами — даже хуже, чем у тебя самого. Кажется, хозяин тела сгорел заживо. У него нет носа, ушей и нескольких пальцев, вероятно, потерянных в давнем пожаре. Когда ты загораживаешь ему путь, чтобы привлечь его внимание, он останавливается и смотрит на тебя пустым взглядом.'
 
     menu:
@@ -337,7 +336,7 @@ label dzm1146_s18:  # from 12.0 14.0
 
 
 # s19 # say9744
-label dzm1146_s19:  # from 18.0 # Global("Crispy","GLOBAL",1)
+label dzm1146_s19:  # from 18.0
     SPEAKER 'Без понятия. Я был уже порядочно поджарен, прежде чем его остановили, если это кому и удалось. Кажется, припоминаю, как за ним в самом начале гнались люди, выкрикивали его имя… э-э… а! Игнис, кажется так. Игнис. Или типа того. Надеюсь, этому неудачнику досталось больше, чем мне!'
 
     menu:
@@ -350,7 +349,7 @@ label dzm1146_s19:  # from 18.0 # Global("Crispy","GLOBAL",1)
 
 
 # s20 # say20099
-label dzm1146_s20:  # from -
+label dzm1146_s20:  # from - # IF ~  Global("Crispy","GLOBAL",1)
     SPEAKER 'Опять?!'
 
     menu:

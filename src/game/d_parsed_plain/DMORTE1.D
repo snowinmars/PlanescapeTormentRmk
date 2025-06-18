@@ -1,15 +1,15 @@
 init python:
-    def _r39793_action(gsm):        
+    def _r39793_action(gsm):
         gsm.set_meet_morte(True)
-    def _r39824_action(gsm):        
+    def _r39824_action(gsm):
         gsm.inc_once_good()
-    def _r39831_action(gsm):         
+    def _r39831_action(gsm):
         gsm.set_in_party_morte(True)
-    def _r39852_action(gsm):        
+    def _r39852_action(gsm):
         gsm.set_in_party_morte(True)
-    def _r39856_action(gsm):        
+    def _r39856_action(gsm):
         gsm.set_in_party_morte(True)
-    def _r39859_action(gsm):        
+    def _r39859_action(gsm):
         gsm.set_in_party_morte(True)
 
 
@@ -22,7 +22,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DMORTE1.DLG
-# Starts:    dmorte1_s
 # ###
 
 
@@ -35,7 +34,7 @@ label dmorte1_dispose:
 
 
 # s0 # say39792
-label dmorte1_s0:  # from - # ~ THEN BEGIN 0 // from:
+label dmorte1_s0:  # from -
     SPEAKER 'Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба. [MRT001]'
 
     menu:

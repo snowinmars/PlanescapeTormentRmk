@@ -1,7 +1,7 @@
 init python:
-    def _r46725_action(gsm):        
+    def _r46725_action(gsm):
         gsm.inc_exp_custom('party', 250)
-    def _r46728_action(gsm):        
+    def _r46728_action(gsm):
         gsm.inc_exp_custom('party', 250)
     def _r46733_action(gsm):        TransformPartyItem("CopEarC","CopEarO",1,0,0)
 
@@ -19,7 +19,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/COPEARC.DLG
-# Starts:    copearc_s
 # ###
 
 
@@ -32,7 +31,7 @@ label copearc_dispose:
 
 
 # s0 # say46723
-label copearc_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label copearc_s0:  # from - # IF ~  True()
     SPEAKER 'Эта медная серьга на вид невероятно древняя. Похоже, она предназначена для ношения, но у нее нет ничего, что позволило бы прицепить ее к твоему уху. Тем не менее, на внутренней поверхности серьги есть несколько странных выемок.'
 
     menu:

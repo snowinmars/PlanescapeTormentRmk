@@ -77,7 +77,7 @@ label dzm396_dispose:
 
 
 # s0 # say34931
-label dzm396_s0:  # from -
+label dzm396_s0:  # from - # IF ~  HasItem("Bandage","ZM396")
     teller 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.'
 
     menu:
@@ -163,7 +163,7 @@ label dzm396_s3:  # from 0.2 1.0
 
 
 # s4 # say45111
-label dzm396_s4:  # from 3.0
+label dzm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396") TODO [snow]: wtf is this if?
     if not _get_took_dzm396_bandages(gsm):
         teller 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.'
     if _get_took_dzm396_bandages(gsm):

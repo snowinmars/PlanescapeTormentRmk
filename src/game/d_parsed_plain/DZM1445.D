@@ -1,6 +1,6 @@
 init python:
-    def _r46757_action(gsm):        
-        gsm.dec_law() 
+    def _r46757_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1445.DLG
-# Starts:    dzm1445_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm1445_dispose:
 
 
 # s0 # say46756
-label dzm1445_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm1445_s0:  # from - # IF ~  True()
     SPEAKER 'Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни. На лбу у него вытатуирован номер 1445, а его губы крепко сшиты.'
 
     menu:

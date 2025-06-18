@@ -1,10 +1,10 @@
 init python:
-    def _r34956_action(gsm):        
-        gsm.set_1201_note_retrieved(True) 
-        gsm.set_has_1201_note(True) 
+    def _r34956_action(gsm):
+        gsm.set_1201_note_retrieved(True)
+        gsm.set_has_1201_note(True)
         gsm.inc_exp_custom('party', 250)
-    def _r45129_action(gsm):        
-        gsm.dec_law() 
+    def _r45129_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -35,7 +35,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1201.DLG
-# Starts:    dzm1201_s
 # ###
 
 
@@ -48,7 +47,7 @@ label dzm1201_dispose:
 
 
 # s0 # say34953
-label dzm1201_s0:  # from - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm1201_s0:  # from - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
     SPEAKER 'На лбу этого трупа чернилами написан номер 1201, чернила стекли на глаза, щеки и челюсти. Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.'
 
     menu:
@@ -107,7 +106,7 @@ label dzm1201_s3:  # from 0.1 5.0 5.1 5.2
 
 
 # s4 # say45126
-label dzm1201_s4:  # from 0.2 5.3 # Global("1201_Note_Retrieved","GLOBAL",1)
+label dzm1201_s4:  # from 0.2 5.3
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -117,7 +116,7 @@ label dzm1201_s4:  # from 0.2 5.3 # Global("1201_Note_Retrieved","GLOBAL",1)
 
 
 # s5 # say45128
-label dzm1201_s5:  # from 2.0
+label dzm1201_s5:  # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
     SPEAKER 'На лбу этого трупа чернилами написан номер 1201, чернила стекли на глаза, щеки и челюсти, создавая впечатление, что он плачет. Его челюсть распахнута, из уголка рта течет струйка гноя.'
 
     menu:

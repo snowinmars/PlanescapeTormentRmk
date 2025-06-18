@@ -54,7 +54,7 @@ label dzm310_dispose:
 
 
 # s0 # say6495
-label dzm310_s0:  # from -
+label dzm310_s0:  # from - # IF ~  Global("Oinosian","GLOBAL",0)
     teller 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'
     teller 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
 
@@ -391,7 +391,7 @@ label dzm310_s17:  # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14
     jump dzm310_dispose
 
 # s18 # say20102
-label dzm310_s18:  # from -
+label dzm310_s18:  # from - # IF ~  Global("Oinosian","GLOBAL",1)
     teller 'Похоже, этот труп сгорбился под тяжестью страданий духа.'
 
     menu:

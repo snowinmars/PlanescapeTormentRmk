@@ -128,7 +128,7 @@ label ds42_dispose:
 
 
 # s0 # say6595
-label ds42_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // Manually checked EXTERN ~DMORTE~ : 110 Manually checked EXTERN ~DMORTE~ : 111
+label ds42_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 110 Manually checked EXTERN ~DMORTE~ : 111
     teller 'Скелет поворачивается к тебе. На лбу у него высечено число 42.'
     teller 'Многие его кости, преимущественно челюсти и суставы, обмотаны кожаными ремешками. Его тело скрывает черный комбинезон.'
 

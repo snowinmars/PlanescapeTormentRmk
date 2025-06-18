@@ -1,50 +1,52 @@
 init python:
-    def _r1225_action(gsm):        
+    def _r1225_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r1246_action(gsm):        
+    def _r1246_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r1249_action(gsm):        
+    def _r1249_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r33227_action(gsm):        
+    def _r33227_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1') 
+
+        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
-    def _r1273_action(gsm):        
+    def _r1273_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1') 
+
+        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
-    def _r1290_action(gsm):        
+    def _r1290_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1') 
+
+        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
-    def _r1294_action(gsm):        
+    def _r1294_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1') 
+
+        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
-    def _r4307_action(gsm):        
+    def _r4307_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4308_action(gsm):        
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) 
+    def _r4308_action(gsm):
+        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.dec_law()
-    def _r4309_action(gsm):        
+    def _r4309_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4317_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-    def _r4318_action(gsm):        
-        gsm.inc_choke() 
-        gsm.set_choke_memory(True) # ?.play_sound('SPTR_01') 
-        gsm.inc_choke_dustman() 
+    def _r4318_action(gsm):
+        gsm.inc_choke()
+        gsm.set_choke_memory(True) # ?.play_sound('SPTR_01')
+        gsm.inc_choke_dustman()
         gsm.inc_exp_custom('party', 15)
-    def _r4319_action(gsm):        
-        gsm.inc_choke_dustman() 
-        gsm.inc_choke() Kill(Myself) Deactivate(Myself) 
+    def _r4319_action(gsm):
+        gsm.inc_choke_dustman()
+        gsm.inc_choke()
+        gsm.set_dead_ddustfem(True) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
-    def _r4320_action(gsm):        Kill(Myself) 
+    def _r4320_action(gsm):
+        gsm.set_dead_ddustfem(True)
         gsm.inc_exp_custom('Protagonist', 250)
-    def _r4321_action(gsm):        
+    def _r4321_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4322_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
 
@@ -191,7 +193,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DDUSTFEM.DLG
-# Starts:    ddustfem_s
 # ###
 
 
@@ -204,7 +205,7 @@ label ddustfem_dispose:
 
 
 # s0 # say298
-label ddustfem_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)~ THEN BEGIN 0 // from:
+label ddustfem_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)
     SPEAKER 'Тленная не обращает на тебя внимания. Должно быть, она спутала тебя с одним из мертвых рабочих.'
 
     menu:
@@ -557,7 +558,7 @@ label ddustfem_s20:  # from 9.9 19.0
 
 
 # s21 # say1195
-label ddustfem_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
+label ddustfem_s21:  # from 9.7 9.8 19.2 19.3
     SPEAKER 'Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я.'
 
     menu:
@@ -567,7 +568,7 @@ label ddustfem_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
 
 
 # s22 # say1196
-label ddustfem_s22:  # from -
+label ddustfem_s22:  # from - # IF ~  Global("Appearance","GLOBAL",2)
     SPEAKER 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
@@ -884,7 +885,7 @@ label ddustfem_s39:  # from 26.2
 
 
 # s40 # say1214
-label ddustfem_s40:  # from - # Check EXTERN ~DMORTE~ : 81Check EXTERN ~DMORTE~ : 83
+label ddustfem_s40:  # from - # Check EXTERN ~DMORTE~ : 81 Check EXTERN ~DMORTE~ : 83
     SPEAKER 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
@@ -1023,7 +1024,7 @@ label ddustfem_s49:  # from 24.0 24.1 25.0 25.1
 
 
 # s50 # say1224
-label ddustfem_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0)
+label ddustfem_s50:  # from 29.0 35.0 37.0 49.0
     SPEAKER 'Тленная продолжает хмуриться, но затем слегка кивает. Ну хорошо. Что я могу сделать для тебя, посвященный?'
 
     menu:
@@ -1036,7 +1037,7 @@ label ddustfem_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0
 
 
 # s51 # say66683
-label ddustfem_s51:  # from -
+label ddustfem_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
     SPEAKER 'Тленная бросает на тебя каменный взгляд. Ты потерялся?'
 
     menu:

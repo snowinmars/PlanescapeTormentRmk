@@ -1,6 +1,6 @@
 init python:
-    def _r35243_action(gsm):        
-        gsm.dec_law() 
+    def _r35243_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF1148.DLG
-# Starts:    dzf1148_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf1148_dispose:
 
 
 # s0 # say35242
-label dzf1148_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 362
+label dzf1148_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 362
     SPEAKER 'Кожа этого женского трупа покрыто замысловатыми узорами татуировок. Кожа на лбу отвалилась, так что номер 1148 вырезан прямо на черепе. Ее рот зашит крепкими грубыми стежками.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf1148_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 362
 
 
 # s2 # say35263
-label dzf1148_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 362 # False()
+label dzf1148_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 362
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf1148_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 362 # False()
 
 
 # s3 # say35273
-label dzf1148_s3:  # from -
+label dzf1148_s3:  # from - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

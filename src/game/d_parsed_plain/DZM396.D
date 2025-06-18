@@ -1,13 +1,13 @@
 init python:
-    def _r34932_action(gsm):        
-        gsm.dec_law() 
+    def _r34932_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r34936_action(gsm):        
+    def _r34936_action(gsm):
         gsm.set_has_bandages(True)
-    def _r34934_action(gsm):        
+    def _r34934_action(gsm):
         gsm.set_has_bandages(True)
-    def _r45112_action(gsm):        
-        gsm.dec_law() 
+    def _r45112_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -38,7 +38,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM396.DLG
-# Starts:    dzm396_s
 # ###
 
 
@@ -51,7 +50,7 @@ label dzm396_dispose:
 
 
 # s0 # say34931
-label dzm396_s0:  # from - # IF ~  HasItem("Bandage","ZM396")~ THEN BEGIN 0 // from:
+label dzm396_s0:  # from - # IF ~  HasItem("Bandage","ZM396")
     SPEAKER 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер 396; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов… похоже, они могут пригодиться.'
 
     menu:
@@ -105,7 +104,7 @@ label dzm396_s2:  # from 0.4 4.3
 
 
 # s3 # say45108
-label dzm396_s3:  # from 0.2 1.0 # !HasItem("Bandage","ZM396")
+label dzm396_s3:  # from 0.2 1.0
     SPEAKER 'Ты протягиваешь руку и забираешь бинты из рук трупа. Труп даже не обратил на это внимания; он продолжает перевязывать тела.'
 
     menu:
@@ -118,7 +117,7 @@ label dzm396_s3:  # from 0.2 1.0 # !HasItem("Bandage","ZM396")
 
 
 # s4 # say45111
-label dzm396_s4:  # from 3.0
+label dzm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
     SPEAKER 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов. На левом виске у него выбит номер 396, а его губы крепко зашиты.'
 
     menu:

@@ -1,6 +1,6 @@
 init python:
-    def _r35019_action(gsm):        
-        gsm.dec_law() 
+    def _r35019_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF594.DLG
-# Starts:    dzf594_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf594_dispose:
 
 
 # s0 # say35018
-label dzf594_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 334
+label dzf594_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 334
     SPEAKER 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани. На ее лбу угольным карандашом нацарапан номер 594.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf594_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 334
 
 
 # s2 # say35039
-label dzf594_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 334 # False()
+label dzf594_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 334
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf594_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 334 # False()
 
 
 # s3 # say35049
-label dzf594_s3:  # from -
+label dzf594_s3:  # from - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

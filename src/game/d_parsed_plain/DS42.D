@@ -1,23 +1,37 @@
 init python:
-    def _r6613_action(gsm):        
+    def _r6613_action(gsm):
         gsm.dec_once_law()
-    def _r6614_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
-    def _r6617_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r6618_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r6629_action(gsm):        
+    def _r6614_action(gsm):
+        gsm.dec_law()
+        glm.set_location('AR0001')
+    def _r6617_action(gsm):
+        glm.set_location('AR0001')
+    def _r6618_action(gsm):
+        glm.set_location('AR0001')
+    def _r6629_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r6632_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r6635_action(gsm):        
+    def _r6632_action(gsm):
+        glm.set_location('AR0001')
+    def _r6635_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r6640_action(gsm):        Kill(Myself)
-    def _r6642_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
-    def _r6645_action(gsm):        
+    def _r6640_action(gsm):
+        gsm.set_dead_ds42(True)
+    def _r6642_action(gsm):
+        gsm.set_dead_ds42(True)
+        gsm.set_has_spike(True)
+        gsm.set_has_strap(True)
+    def _r6645_action(gsm):
         gsm.inc_exp_custom('party', 250)
-    def _r6650_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r6652_action(gsm):        
+    def _r6650_action(gsm):
+        glm.set_location('AR0001')
+    def _r6652_action(gsm):
         gsm.inc_exp_custom('party', 250)
-    def _r58984_action(gsm):        GiveItemCreate("GSKnife",Protagonist,1,0,0) GiveItemCreate("Rags",Protagonist,1,0,0) GiveItemCreate("Clotchrm",Protagonist,1,0,0) GiveItemCreate("Clotchrm",Protagonist,1,0,0) GiveGoldForce(99)
+    def _r58984_action(gsm):
+        gsm.set_has_gs_knife(True)
+        gsm.set_has_rags(True)
+        gsm.set_has_clotchrm(True)
+        gsm.set_has_clotchrm(True)
+        gsm.inc_gold(99)
 
 
 init python:
@@ -99,7 +113,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DS42.DLG
-# Starts:    ds42_s
 # ###
 
 
@@ -112,7 +125,7 @@ label ds42_dispose:
 
 
 # s0 # say6595
-label ds42_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 110Check EXTERN ~DMORTE~ : 111
+label ds42_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 110 Check EXTERN ~DMORTE~ : 111
     SPEAKER 'Скелет поворачивается к тебе. На лбу у него высечено число 42; многие его кости, преимущественно челюсти и суставы, обмотаны кожаными ремешками. Его тело скрывает черный комбинезон.'
 
     menu:
@@ -198,7 +211,7 @@ label ds42_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 111
 
 
 # s3 # say6598
-label ds42_s3:  # from 0.5 10.2 # Check EXTERN ~DMORTE~ : 110Check EXTERN ~DMORTE~ : 111
+label ds42_s3:  # from 0.5 10.2 # Check EXTERN ~DMORTE~ : 110 Check EXTERN ~DMORTE~ : 111
     SPEAKER 'Удивительно, как этот мешок костей еще не развалился. Его пожелтевшие кости покрыты гипсом и несколькими слоями вонючего клея… В просветах, где видны кости, ты различаешь сотни мелких трещин. Хотя кто-то позаботился о том, чтобы перемотать скелет кожаными ремешками и соединить его кости скобами в суставах, ремешки уже износились, а скобы вот-вот выпадут.'
 
     menu:

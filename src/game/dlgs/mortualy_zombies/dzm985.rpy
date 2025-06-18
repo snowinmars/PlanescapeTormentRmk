@@ -1,7 +1,6 @@
 init python:
     def _s3_action(gsm):
         gsm.set_topple_985(True)
-    def _kill_dzm985(gsm):
         gsm.set_dead_dzm985(True)
 
 
@@ -77,7 +76,7 @@ label dzm985_dispose:
 
 
 # s0 # say45515
-label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0 // from: Manually checked EXTERN ~DMORTE~ : 482 as dmorte1_s482
+label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0 // from: Manually checked EXTERN ~DMORTE~ : 482
     teller 'Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.'
     teller 'Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.'
 
@@ -183,18 +182,17 @@ label dzm985_s3:  # from 0.1 6.0 # PlaySoundNotRanged("SPE_11") SetAnimState(Mys
     teller 'К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке смирно.'
     teller 'Спустя мгновенье, нога падает с сочным гулким ударом.'
     $ _s3_action(gsm)
-    $ _kill_dzm985(gsm)
 
     jump dzm985_s7
 
 # s4 # say45530
-label dzm985_s4:  # from 0.2 # Manually checked EXTERN ~DMORTE~ : 482 as dmorte1_s482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) # GlobalGT("Topple_985","GLOBAL",0)
+label dzm985_s4:  # from 0.2 # Manually checked EXTERN ~DMORTE~ : 482 as dmorte1_s482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
     teller 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
 
     jump dmorte_s482
 
 # s5 # say45531
-label dzm985_s5:  # from - # TODO [snow]: orphan? Search in project restoration?
+label dzm985_s5:  # from - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
     teller 'Похоже, кто-то заменил этому трупу левую руку и ногу от другого тела. Левая нога короче, чем надо, но теперь, по крайней мере, труп может стоять.'
 
     menu:

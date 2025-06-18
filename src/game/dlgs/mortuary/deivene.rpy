@@ -161,7 +161,7 @@ label deivene_dispose:
 
 
 # s0 # say3404
-label deivene_s0:  # from - # IF ~  Global("EiVene","GLOBAL",0)~ THEN BEGIN 0 // from:
+label deivene_s0:  # from - # IF ~  Global("EiVene","GLOBAL",0)
     call deivene_init
     teller 'Перед тобой хрупкая девушка с бледным лицом. Из-за впалой кожи на щеках и шее кажется, будто она голодает.'
     teller 'Судя по всему, она увлечена обследованием тела, лежащим перед ней, тыкая по телу пальцем.'
@@ -383,7 +383,7 @@ label deivene_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 60
 
 
 # s14 # say3454
-label deivene_s14:  # from 13.0 # Global("EiVene","GLOBAL",1)
+label deivene_s14:  # from 13.0
     teller 'Эи-Вейн в последний раз прикасается к твоему телу, еще раз фыркает, кивает, а затем отмахивается своими когтями.'
     eivene 'Готово. Пшел-пшел.'
 
@@ -401,7 +401,7 @@ label deivene_s14:  # from 13.0 # Global("EiVene","GLOBAL",1)
 
 
 # s15 # say3458
-label deivene_s15:  # from -
+label deivene_s15:  # from - # IF ~  Global("EiVene","GLOBAL",1)
     call deivene_init
     teller 'Перед тобой Эи-Вейн. Она все еще потрошит труп своими когтями. Ритм движений когтей что-то тебе напоминает, но ты не можешь вспомнить что.'
 

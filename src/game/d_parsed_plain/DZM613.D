@@ -1,6 +1,6 @@
 init python:
-    def _r6543_action(gsm):        
-        gsm.dec_law() 
+    def _r6543_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM613.DLG
-# Starts:    dzm613_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm613_dispose:
 
 
 # s0 # say6540
-label dzm613_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm613_s0:  # from - # IF ~  True()
     SPEAKER 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры 613, но на коже между 1 и 3 виден большой пробел шириной с палец. Приглядевшись, ты с трудом различаешь вырезанную 2.'
 
     menu:

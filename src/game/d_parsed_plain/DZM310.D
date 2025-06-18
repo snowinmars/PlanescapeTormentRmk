@@ -1,8 +1,8 @@
 init python:
-    def _r6499_action(gsm):        
-        gsm.dec_law() 
+    def _r6499_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r6502_action(gsm):        
+    def _r6502_action(gsm):
         gsm.set_meet_oinosian(True)
 
 
@@ -25,7 +25,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM310.DLG
-# Starts:    dzm310_s
 # ###
 
 
@@ -38,7 +37,7 @@ label dzm310_dispose:
 
 
 # s0 # say6495
-label dzm310_s0:  # from - # IF ~  Global("Oinosian","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm310_s0:  # from - # IF ~  Global("Oinosian","GLOBAL",0)
     SPEAKER 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер 310; воздух вокруг него насыщен формальдегидом. Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
 
     menu:
@@ -333,13 +332,13 @@ label dzm310_s16:  # from 6.0
 
 
 # s17 # say9656
-label dzm310_s17:  # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1 # Global("Oinosian","GLOBAL",1)
+label dzm310_s17:  # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
     SPEAKER 'Ты даже не замечаешь, как дух покинул тело, до тех пор, пока зомби, неуклюже шагая, не вернулся к своей работе.'
 
     jump show_graphics_menu
 
 # s18 # say20102
-label dzm310_s18:  # from -
+label dzm310_s18:  # from - # IF ~  Global("Oinosian","GLOBAL",1)
     SPEAKER 'Похоже, этот труп сгорбился под тяжестью страданий духа.'
 
     menu:

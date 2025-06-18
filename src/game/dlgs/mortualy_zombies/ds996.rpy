@@ -176,7 +176,7 @@ label ds996_dispose:
 
 
 # s0 # say35460
-label ds996_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // Manually checked EXTERN ~DMORTE~ : 392 Manually checked EXTERN ~DMORTE~ : 388 Manually checked EXTERN ~DMORTE~ : 386
+label ds996_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 392 Manually checked EXTERN ~DMORTE~ : 388 Manually checked EXTERN ~DMORTE~ : 386
     teller 'Этот скелет довольно стар: кожаные ремешки потрескались и истерлись от времени.'
     teller 'На лбу с особым искусством вырезано слово ПОКАЙСЯ; более грубая рука уже позднее высекла на обоих висках число 996.'
 
@@ -362,7 +362,7 @@ label ds996_s6:  # from 0.9 0.12 3.3 3.6
 
 
 # s7 # say35536
-label ds996_s7:  # from - # False()
+label ds996_s7:  # from - # IF ~  False()
     teller 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump ds996_dispose

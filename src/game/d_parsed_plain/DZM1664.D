@@ -1,6 +1,6 @@
 init python:
-    def _r47014_action(gsm):        
-        gsm.set_has_logpage(True) 
+    def _r47014_action(gsm):
+        gsm.set_has_logpage(True)
         gsm.set_has_dzm1664_page(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1664.DLG
-# Starts:    dzm1664_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm1664_dispose:
 
 
 # s0 # say47002
-label dzm1664_s0:  # from 5.0 # IF ~  True()~ THEN BEGIN 0 // from: 5.0
+label dzm1664_s0:  # from 5.0 # IF ~  True()
     SPEAKER 'Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно. На лбу виден недавно вышитый номер 1664. Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
 
     menu:

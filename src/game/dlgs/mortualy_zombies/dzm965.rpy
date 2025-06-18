@@ -26,7 +26,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM965.DLG
-# Starts:    dzm965_s0 dzm965_s1 dzm965_kill
 # ###
 
 
@@ -51,14 +50,14 @@ label dzm965_dispose:
 
 
 # s0 # say34920
-label dzm965_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 477 as dmorte1_s477
+label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte") # Manually checked EXTERN ~DMORTE~ : 477
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
     jump dmorte_s477
 
 # s1 # say34922
-label dzm965_s1:  # from -
+label dzm965_s1:  # from - # IF ~  !NearbyDialog("Dmorte")
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 

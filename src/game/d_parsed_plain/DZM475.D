@@ -1,6 +1,6 @@
 init python:
-    def _r6587_action(gsm):        
-        gsm.dec_law() 
+    def _r6587_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM475.DLG
-# Starts:    dzm475_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm475_dispose:
 
 
 # s0 # say6584
-label dzm475_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm475_s0:  # from - # IF ~  True()
     SPEAKER 'Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе. На проржавевшей табличке над его левым глазом выбит номер 475. Его рот намертво закрыт; от него несет бальзамирующей жидкостью.'
 
     menu:

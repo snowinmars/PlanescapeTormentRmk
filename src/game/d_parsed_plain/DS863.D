@@ -1,26 +1,38 @@
 init python:
-    def _r35538_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35562_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35569_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35602_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35610_action(gsm):        
+    def _r35538_action(gsm):
+        gsm.dec_law()
+        glm.set_location('AR0001')
+    def _r35562_action(gsm):
+        gsm.dec_law()
+        glm.set_location('AR0001')
+    def _r35569_action(gsm):
+        glm.set_location('AR0001')
+    def _r35602_action(gsm):
+        glm.set_location('AR0001')
+    def _r35610_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35540_action(gsm):        
+    def _r35540_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35566_action(gsm):        
+    def _r35566_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35571_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35599_action(gsm):        
+    def _r35571_action(gsm):
+        glm.set_location('AR0001')
+    def _r35599_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35577_action(gsm):        
+    def _r35577_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35580_action(gsm):        
+    def _r35580_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35585_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
-    def _r35588_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
-    def _r64266_action(gsm):        GiveItem("DRemind",Protagonist)
+    def _r35585_action(gsm):
+        gsm.set_dead_ds863(True)
+        gsm.set_has_spike(True)
+        gsm.set_has_strap(True)
+    def _r35588_action(gsm):
+        gsm.set_dead_ds863(True)
+        gsm.set_has_spike(True)
+        gsm.set_has_strap(True)
+    def _r64266_action(gsm):
+        gsm.set_has_dremind(True)
 
 
 init python:
@@ -151,7 +163,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DS863.DLG
-# Starts:    ds863_s
 # ###
 
 
@@ -164,7 +175,7 @@ label ds863_dispose:
 
 
 # s0 # say35537
-label ds863_s0:  # from 10.0 # IF ~  !HasItem("DRemind","S863")~ THEN BEGIN 0 // from: 10.0Check EXTERN ~DMORTE~ : 400Check EXTERN ~DMORTE~ : 396Check EXTERN ~DMORTE~ : 394
+label ds863_s0:  # from 10.0 # IF ~  !HasItem("DRemind","S863") Check EXTERN ~DMORTE~ : 400 Check EXTERN ~DMORTE~ : 396 Check EXTERN ~DMORTE~ : 394
     SPEAKER 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов. Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек. На лбу высечен номер 863… но сзади череп имеет открытую пустую полость.'
 
     menu:
@@ -261,7 +272,7 @@ label ds863_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 394
 
 
 # s3 # say35570
-label ds863_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 400Check EXTERN ~DMORTE~ : 394
+label ds863_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 400 Check EXTERN ~DMORTE~ : 394
     SPEAKER 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия. Ремни привязаны к железными скобам, вбитым в суставы скелета. Кажется, этот скелет сослужил хорошую службу: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
 
     menu:
@@ -338,7 +349,7 @@ label ds863_s5:  # from 0.8 0.11 3.2 3.5
 
 
 # s6 # say35587
-label ds863_s6:  # from 0.9 0.12 3.3 3.6 # False()
+label ds863_s6:  # from 0.9 0.12 3.3 3.6
     SPEAKER 'С помощью ломика ты вырываешь скобы из суставов. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
 
     menu:
@@ -349,13 +360,13 @@ label ds863_s6:  # from 0.9 0.12 3.3 3.6 # False()
 
 
 # s7 # say35613
-label ds863_s7:  # from - # HasItem("DRemind","S863")
+label ds863_s7:  # from - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu
 
 # s8 # say64262
-label ds863_s8:  # from -
+label ds863_s8:  # from - # IF ~  HasItem("DRemind","S863")
     SPEAKER 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов. Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек. На лбу высечен номер 863… но сзади череп имеет открытую пустую полость. Ты замечаешь, что кто-то воспользовался этим и поместил внутрь черепа пергаментный свиток.'
 
     menu:

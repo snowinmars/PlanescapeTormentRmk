@@ -1,6 +1,6 @@
 init python:
-    def _r24720_action(gsm):        
-        gsm.dec_law() 
+    def _r24720_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF916.DLG
-# Starts:    dzf916_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf916_dispose:
 
 
 # s0 # say24719
-label dzf916_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 46
+label dzf916_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 46
     SPEAKER 'Труп женщины смотрит на тебя пустым взглядом. На ее лбу вырезан номер 916; ее губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf916_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 46
 
 
 # s2 # say24740
-label dzf916_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 46 # False()
+label dzf916_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 46
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf916_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 46 # False()
 
 
 # s3 # say24750
-label dzf916_s3:  # from -
+label dzf916_s3:  # from - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

@@ -1,25 +1,36 @@
 init python:
     def _r35384_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
+        gsm.dec_law() 
+        glm.set_location('AR0001')
     def _r35408_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35415_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35448_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
+        gsm.dec_law() 
+        glm.set_location('AR0001')
+    def _r35415_action(gsm):        
+        glm.set_location('AR0001')
+    def _r35448_action(gsm):        
+        glm.set_location('AR0001')
     def _r35456_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
     def _r35386_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
     def _r35412_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
-    def _r35417_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
+    def _r35417_action(gsm):        
+        glm.set_location('AR0001')
     def _r35445_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
     def _r35423_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
     def _r35426_action(gsm):        
         gsm.set_morte_skel_mort_quip(True)
-    def _r35431_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
-    def _r35434_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
+    def _r35431_action(gsm):        
+        gsm.set_dead_ds748(True) 
+        gsm.set_has_spike(True) 
+        gsm.set_has_strap(True)
+    def _r35434_action(gsm):        
+        gsm.set_dead_ds748(True) 
+        gsm.set_has_spike(True) 
+        gsm.set_has_strap(True)
 
 
 init python:
@@ -150,7 +161,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DS748.DLG
-# Starts:    ds748_s
 # ###
 
 
@@ -163,7 +173,7 @@ label ds748_dispose:
 
 
 # s0 # say35383
-label ds748_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 384Check EXTERN ~DMORTE~ : 380Check EXTERN ~DMORTE~ : 378
+label ds748_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 384 Check EXTERN ~DMORTE~ : 380 Check EXTERN ~DMORTE~ : 378
     SPEAKER 'Этот скелет — 748, судя по номеру, выбитому над бровью, — выделяется только тем, что некоторые из его зубов вставные, и сделаны из красновато-коричневого камня. Совершенно очевидно, что они не представляют никакой ценности, иначе их бы удалили те, кто за ним смотрит.'
 
     menu:
@@ -260,7 +270,7 @@ label ds748_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 378
 
 
 # s3 # say35416
-label ds748_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 384Check EXTERN ~DMORTE~ : 378
+label ds748_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 384 Check EXTERN ~DMORTE~ : 378
     SPEAKER 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия. Ремни привязаны к железными скобам, вбитым в суставы скелета. Кажется, этот скелет сослужил хорошую службу: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
 
     menu:
@@ -337,7 +347,7 @@ label ds748_s5:  # from 0.8 0.11 3.2 3.5
 
 
 # s6 # say35433
-label ds748_s6:  # from 0.9 0.12 3.3 3.6 # False()
+label ds748_s6:  # from 0.9 0.12 3.3 3.6
     SPEAKER 'С помощью ломика ты вырываешь скобы из суставов. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
 
     menu:
@@ -348,7 +358,7 @@ label ds748_s6:  # from 0.9 0.12 3.3 3.6 # False()
 
 
 # s7 # say35459
-label ds748_s7:  # from -
+label ds748_s7:  # from - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

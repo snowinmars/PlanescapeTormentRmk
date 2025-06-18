@@ -79,7 +79,7 @@ label dzf626_dispose:
 
 
 # s0 # say35050
-label dzf626_s0:  # from - # from - # Manually checked EXTERN ~DMORTE~ : 338 as dmorte_s330
+label dzf626_s0:  # from - # from - # IF ~  True() Manually checked EXTERN ~DMORTE~ : 338 as dmorte_s330
     teller 'Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.'
     teller 'Номер «626» вышит на правой щеке, прямо под глазом.'
 

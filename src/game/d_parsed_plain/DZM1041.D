@@ -1,31 +1,31 @@
 init python:
-    def _r6576_action(gsm):        
-        gsm.dec_law() 
+    def _r6576_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r6583_action(gsm):        
+    def _r6583_action(gsm):
         gsm.set_meet_bei(True)
-    def _r9096_action(gsm):        
+    def _r9096_action(gsm):
         gsm.set_meet_bei(True)
-    def _r9097_action(gsm):        
+    def _r9097_action(gsm):
         gsm.set_meet_bei(True)
-    def _r9161_action(gsm):        
+    def _r9161_action(gsm):
         gsm.inc_once_good()
-    def _r9162_action(gsm):        
+    def _r9162_action(gsm):
         gsm.dec_once_good()
-    def _r9200_action(gsm):        
+    def _r9200_action(gsm):
         gsm.inc_once_good()
-    def _r9201_action(gsm):        
+    def _r9201_action(gsm):
         gsm.dec_once_law()
-    def _r9207_action(gsm):        
-        gsm.inc_once_good() 
+    def _r9207_action(gsm):
+        gsm.inc_once_good()
         gsm.set_know_xixi(True)
-    def _r9208_action(gsm):        
-        gsm.dec_once_good() 
-        gsm.dec_once_law() 
+    def _r9208_action(gsm):
+        gsm.dec_once_good()
+        gsm.dec_once_law()
         gsm.set_know_xixi(True)
-    def _r9209_action(gsm):        
+    def _r9209_action(gsm):
         gsm.set_know_xixi(True)
-    def _r9210_action(gsm):        
+    def _r9210_action(gsm):
         gsm.set_know_xixi(True)
 
 
@@ -56,7 +56,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1041.DLG
-# Starts:    dzm1041_s
 # ###
 
 
@@ -69,7 +68,7 @@ label dzm1041_dispose:
 
 
 # s0 # say6573
-label dzm1041_s0:  # from - # IF ~  Global("Bei","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm1041_s0:  # from - # IF ~  Global("Bei","GLOBAL",0)
     SPEAKER 'У этого поднятого трупа мужчины на лбу вырезан номер 1041. Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно экзотическую внешность. Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.'
 
     menu:
@@ -702,7 +701,7 @@ label dzm1041_s35:  # from -
 
 
 # s36 # say9093
-label dzm1041_s36:  # from 35.0 # Global("Bei","GLOBAL",1)
+label dzm1041_s36:  # from 35.0
     SPEAKER 'Ты добрый и благородный человек. Однако не делай этого для меня… девушка и ее отец — вот кому нужна твоя помощь.'
 
     menu:
@@ -715,7 +714,7 @@ label dzm1041_s36:  # from 35.0 # Global("Bei","GLOBAL",1)
 
 
 # s37 # say9094
-label dzm1041_s37:  # from 0.4
+label dzm1041_s37:  # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
     SPEAKER 'Я определенно не ожидал увидеть тебя снова, — дух учтиво кланяется, но его лицо остается непроницаемым. — Что тебе нужно от меня?'
 
     menu:

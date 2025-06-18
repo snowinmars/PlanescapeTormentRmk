@@ -1,6 +1,6 @@
 init python:
-    def _r34923_action(gsm):        
-        gsm.dec_law() 
+    def _r34923_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM965.DLG
-# Starts:    dzm965_s
 # ###
 
 
@@ -34,13 +33,13 @@ label dzm965_dispose:
 
 
 # s0 # say34920
-label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte")~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 477 # !NearbyDialog("Dmorte")
+label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte") Check EXTERN ~DMORTE~ : 477
     SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.'
 
     jump show_graphics_menu
 
 # s1 # say34922
-label dzm965_s1:  # from -
+label dzm965_s1:  # from - # IF ~  !NearbyDialog("Dmorte")
     SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.'
 
     menu:

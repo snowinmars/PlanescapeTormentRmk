@@ -1,8 +1,8 @@
 init python:
-    def _r6533_action(gsm):        
-        gsm.dec_law() 
+    def _r6533_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r64271_action(gsm):        
+    def _r64271_action(gsm):
         gsm.set_has_tome_ba(True)
 
 
@@ -23,7 +23,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM732.DLG
-# Starts:    dzm732_s
 # ###
 
 
@@ -36,7 +35,7 @@ label dzm732_dispose:
 
 
 # s0 # say6529
-label dzm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")~ THEN BEGIN 0 // from: 4.0
+label dzm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
     SPEAKER 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер 732. Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
 
     menu:
@@ -72,7 +71,7 @@ label dzm732_s1:  # from 0.0 0.1 0.2
 
 
 # s2 # say6531
-label dzm732_s2:  # from 0.3 # HasItem("TomeBA","ZM732")
+label dzm732_s2:  # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -82,7 +81,7 @@ label dzm732_s2:  # from 0.3 # HasItem("TomeBA","ZM732")
 
 
 # s3 # say64270
-label dzm732_s3:  # from -
+label dzm732_s3:  # from - # IF ~  HasItem("TomeBA","ZM732")
     SPEAKER 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер 732. Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после. Ты замечаешь, что в руках он несет тяжелую книгу, как будто он где-то ее забрал.'
 
     menu:

@@ -1,6 +1,6 @@
 init python:
-    def _r46746_action(gsm):        
-        gsm.dec_law() 
+    def _r46746_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1508.DLG
-# Starts:    dzm1508_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm1508_dispose:
 
 
 # s0 # say46745
-label dzm1508_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm1508_s0:  # from - # IF ~  True()
     SPEAKER 'На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной. Номер 1508 вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.'
 
     menu:

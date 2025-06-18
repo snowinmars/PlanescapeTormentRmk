@@ -150,7 +150,7 @@ label dzf444_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 358 as
 
 
 # s2 # say35231
-label dzf444_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 358 as dmorte_s330 (dmorte_s358 in the original Ps:T)
+label dzf444_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 358 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишкомдалек от того, чтобы отвечать на твои вопросы.'
 
     menu:

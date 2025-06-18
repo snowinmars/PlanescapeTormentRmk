@@ -1,20 +1,20 @@
 init python:
-    def _r7295_action(gsm):        
-        gsm.set_meet_death_of_names(True) ~ 
+    def _r7295_action(gsm):
+        gsm.set_meet_death_of_names(True) ~
         gsm.update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
-    def _r7304_action(gsm):        
+    def _r7304_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
+
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-    def _r7312_action(gsm):        
+    def _r7312_action(gsm):
         gsm.dec_gold(3)
-    def _r7317_action(gsm):        
+    def _r7317_action(gsm):
         gsm.dec_gold(3)
-    def _r9769_action(gsm):        
+    def _r9769_action(gsm):
         gsm.dec_gold(3)    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
-    def _r9772_action(gsm):        
+    def _r9772_action(gsm):
         gsm.set_death_of_names_adahn(True)
-    
+
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 
 
@@ -79,7 +79,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DDEATHON.DLG
-# Starts:    ddeathon_s
 # ###
 
 
@@ -92,7 +91,7 @@ label ddeathon_dispose:
 
 
 # s0 # say7288
-label ddeathon_s0:  # from - # IF ~  Global("Death_of_Names","GLOBAL",0)~ THEN BEGIN 0 // from:
+label ddeathon_s0:  # from - # IF ~  Global("Death_of_Names","GLOBAL",0)
     SPEAKER 'Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны. Правая рука короче левой, и он покачивает ее на перевязи, будто убаюкивая малое дитя.'
 
     menu:
@@ -224,7 +223,7 @@ label ddeathon_s6:  # from 5.2 5.6
 
 
 # s7 # say7352
-label ddeathon_s7:  # from 6.0 # GlobalGT("Death_of_Names","GLOBAL",0)
+label ddeathon_s7:  # from 6.0
     SPEAKER 'Он находит на стене место, быстро подходит к нему и наклоняется, затем принимается высекать что-то на стене. Спустя несколько минут он завершает работу, поднимается и возвращается к тебе. Похоронено. Последнее слово заставляет тебя почувствовать себя неуютно.'
 
     menu:
@@ -240,7 +239,7 @@ label ddeathon_s7:  # from 6.0 # GlobalGT("Death_of_Names","GLOBAL",0)
 
 
 # s8 # say7356
-label ddeathon_s8:  # from -
+label ddeathon_s8:  # from - # IF ~  GlobalGT("Death_of_Names","GLOBAL",0)
     SPEAKER 'Перед тобой Смерть-имен. Он стоит перед монументом с искривленной улыбкой, а его рука висит на перевязи.'
 
     menu:

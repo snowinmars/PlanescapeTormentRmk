@@ -15,7 +15,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM782.DLG
-# Starts:    dzm782_s
 # ###
 
 
@@ -28,7 +27,7 @@ label dzm782_dispose:
 
 
 # s0 # say24708
-label dzm782_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE1~ : 34
+label dzm782_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE1~ : 34
     SPEAKER 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом. На его лбу вырезан номер 782, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:

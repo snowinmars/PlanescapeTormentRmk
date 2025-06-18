@@ -1,6 +1,6 @@
 init python:
-    def _r6485_action(gsm):        
-        gsm.dec_law() 
+    def _r6485_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM463.DLG
-# Starts:    dzm463_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm463_dispose:
 
 
 # s0 # say6484
-label dzm463_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm463_s0:  # from - # IF ~  True()
     SPEAKER 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 463, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:

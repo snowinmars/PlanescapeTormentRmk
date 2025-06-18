@@ -28,7 +28,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM825.DLG
-# Starts:    dzm825_s
 # ###
 
 
@@ -41,7 +40,7 @@ label dzm825_dispose:
 
 
 # s0 # say24564
-label dzm825_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE1~ : 31
+label dzm825_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE1~ : 31
     SPEAKER 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.'
 
     menu:

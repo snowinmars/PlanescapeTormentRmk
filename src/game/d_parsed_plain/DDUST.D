@@ -37,13 +37,16 @@ init python:
     def _r1428_action(gsm):
         gsm.set_choke_memory(True) # ?.play_sound('SPTR_01')
         gsm.inc_choke_dustman()
-        gsm.inc_choke() Kill(Myself) Deactivate(Myself)
+        gsm.inc_choke()
+        gsm.set_dead_ddust(True) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
     def _r1429_action(gsm):
         gsm.inc_choke_dustman()
-        gsm.inc_choke() Kill(Myself) Deactivate(Myself)
+        gsm.inc_choke()
+        gsm.set_dead_ddust(True) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
-    def _r3882_action(gsm):        Kill(Myself)
+    def _r3882_action(gsm):
+        gsm.set_dead_ddust(True)
         gsm.inc_exp_custom('Protagonist', 250)
     def _r3884_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
@@ -192,7 +195,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DDUST.DLG
-# Starts:    ddust_s
 # ###
 
 
@@ -205,7 +207,7 @@ label ddust_dispose:
 
 
 # s0 # say300
-label ddust_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)~ THEN BEGIN 0 // from:
+label ddust_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)
     SPEAKER 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.'
 
     menu:
@@ -558,7 +560,7 @@ label ddust_s20:  # from 9.9 19.0
 
 
 # s21 # say368
-label ddust_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
+label ddust_s21:  # from 9.7 9.8 19.2 19.3
     SPEAKER 'Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я.'
 
     menu:
@@ -568,7 +570,7 @@ label ddust_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
 
 
 # s22 # say294
-label ddust_s22:  # from -
+label ddust_s22:  # from - # IF ~  Global("Appearance","GLOBAL",2)
     SPEAKER 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью. Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
@@ -885,7 +887,7 @@ label ddust_s39:  # from 26.2
 
 
 # s40 # say1419
-label ddust_s40:  # from - # Check EXTERN ~DMORTE~ : 61Check EXTERN ~DMORTE~ : 63
+label ddust_s40:  # from - # Check EXTERN ~DMORTE~ : 61 Check EXTERN ~DMORTE~ : 63
     SPEAKER 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью. Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
@@ -1024,7 +1026,7 @@ label ddust_s49:  # from 24.0 24.1 25.0 25.1
 
 
 # s50 # say3897
-label ddust_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0)
+label ddust_s50:  # from 29.0 35.0 37.0 49.0
     SPEAKER 'Тленный продолжает хмуриться, но затем слегка кивает. Ну хорошо. Что я могу сделать для тебя, посвященный?'
 
     menu:
@@ -1037,7 +1039,7 @@ label ddust_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0)
 
 
 # s51 # say66674
-label ddust_s51:  # from -
+label ddust_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
     SPEAKER 'Тленный бросает на тебя каменный взгляд. Ты потерялся?'
 
     menu:

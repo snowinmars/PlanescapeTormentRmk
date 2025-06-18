@@ -1,13 +1,13 @@
 init python:
-    def _r45480_action(gsm):        
-        gsm.set_has_506_thread(True) 
-        gsm.set_has_needle(True) 
+    def _r45480_action(gsm):
+        gsm.set_has_506_thread(True)
+        gsm.set_has_needle(True)
         gsm.inc_exp_custom('party', 100)
-    def _r45484_action(gsm):        
-        gsm.dec_law() 
+    def _r45484_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r45502_action(gsm):        
-        gsm.dec_law() 
+    def _r45502_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -42,7 +42,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM506.DLG
-# Starts:    dzm506_s
 # ###
 
 
@@ -55,7 +54,7 @@ label dzm506_dispose:
 
 
 # s0 # say45419
-label dzm506_s0:  # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)~ THEN BEGIN 0 // from: 3.2
+label dzm506_s0:  # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
     SPEAKER 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер 506 вышит у него на лбу… и на боку шеи… и на правой руке… В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
 
     menu:
@@ -117,7 +116,7 @@ label dzm506_s3:  # from 0.0
 
 
 # s4 # say45428
-label dzm506_s4:  # from 3.0 # Global("506_Thread","GLOBAL",1)
+label dzm506_s4:  # from 3.0
     SPEAKER 'Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер 78.'
 
     menu:
@@ -137,7 +136,7 @@ label dzm506_s4:  # from 3.0 # Global("506_Thread","GLOBAL",1)
 
 
 # s5 # say45429
-label dzm506_s5:  # from 4.2
+label dzm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
     SPEAKER 'Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер 506, в месте, где кожа отвалилась ото лба, на кости выбит номер 78.'
 
     menu:

@@ -1,6 +1,6 @@
 init python:
-    def _r35083_action(gsm):        
-        gsm.dec_law() 
+    def _r35083_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF1096.DLG
-# Starts:    dzf1096_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf1096_dispose:
 
 
 # s0 # say35082
-label dzf1096_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 342
+label dzf1096_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 342
     SPEAKER 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли. Кто-то под трафарет написал номер 1096 у нее на лбу; ее губы крепко зашиты.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf1096_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 342
 
 
 # s2 # say35103
-label dzf1096_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 342 # False()
+label dzf1096_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 342
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf1096_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 342 # False()
 
 
 # s3 # say35113
-label dzf1096_s3:  # from -
+label dzf1096_s3:  # from - # IF ~  False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

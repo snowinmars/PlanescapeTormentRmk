@@ -1,25 +1,36 @@
 init python:
-    def _r35461_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35485_action(gsm):        
-        gsm.dec_law() Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35492_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35525_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35533_action(gsm):        
+    def _r35461_action(gsm):
+        gsm.dec_law()
+        glm.set_location('AR0001')
+    def _r35485_action(gsm):
+        gsm.dec_law()
+        glm.set_location('AR0001')
+    def _r35492_action(gsm):
+        glm.set_location('AR0001')
+    def _r35525_action(gsm):
+        glm.set_location('AR0001')
+    def _r35533_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35463_action(gsm):        
+    def _r35463_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35489_action(gsm):        
+    def _r35489_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35494_action(gsm):        Setreturn glm.is_visited_internal_location('AR0001')
-    def _r35522_action(gsm):        
+    def _r35494_action(gsm):
+        glm.set_location('AR0001')
+    def _r35522_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35500_action(gsm):        
+    def _r35500_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35503_action(gsm):        
+    def _r35503_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35508_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
-    def _r35511_action(gsm):        Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0)
+    def _r35508_action(gsm):
+        gsm.set_dead_ds996(True)
+        gsm.set_has_spike(True)
+        gsm.set_has_strap(True)
+    def _r35511_action(gsm):
+        gsm.set_dead_ds996(True)
+        gsm.set_has_spike(True)
+        gsm.set_has_strap(True)
 
 
 init python:
@@ -150,7 +161,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DS996.DLG
-# Starts:    ds996_s
 # ###
 
 
@@ -163,7 +173,7 @@ label ds996_dispose:
 
 
 # s0 # say35460
-label ds996_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 392Check EXTERN ~DMORTE~ : 388Check EXTERN ~DMORTE~ : 386
+label ds996_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 392 Check EXTERN ~DMORTE~ : 388 Check EXTERN ~DMORTE~ : 386
     SPEAKER 'Этот скелет довольно стар: кожаные ремешки потрескались и истерлись от времени. На лбу с особым искусством вырезано слово ПОКАЙСЯ; более грубая рука уже позднее высекла на обоих висках число 996.'
 
     menu:
@@ -260,7 +270,7 @@ label ds996_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 386
 
 
 # s3 # say35493
-label ds996_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 392Check EXTERN ~DMORTE~ : 386
+label ds996_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 392 Check EXTERN ~DMORTE~ : 386
     SPEAKER 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия. Ремни привязаны к железными скобам, вбитым в суставы скелета. Кажется, этот скелет довольно долго служил: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
 
     menu:
@@ -337,7 +347,7 @@ label ds996_s5:  # from 0.8 0.11 3.2 3.5
 
 
 # s6 # say35510
-label ds996_s6:  # from 0.9 0.12 3.3 3.6 # False()
+label ds996_s6:  # from 0.9 0.12 3.3 3.6
     SPEAKER 'С помощью ломика ты вырываешь скобы из суставов. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
 
     menu:
@@ -348,7 +358,7 @@ label ds996_s6:  # from 0.9 0.12 3.3 3.6 # False()
 
 
 # s7 # say35536
-label ds996_s7:  # from -
+label ds996_s7:  # from - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

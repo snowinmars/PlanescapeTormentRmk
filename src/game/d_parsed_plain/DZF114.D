@@ -1,6 +1,6 @@
 init python:
-    def _r34987_action(gsm):        
-        gsm.dec_law() 
+    def _r34987_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF114.DLG
-# Starts:    dzf114_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf114_dispose:
 
 
 # s0 # say34986
-label dzf114_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 330
+label dzf114_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 330
     SPEAKER 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер 114, вырезанный у нее на лбу. Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf114_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 330
 
 
 # s2 # say35007
-label dzf114_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 330 # False()
+label dzf114_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 330
     SPEAKER 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf114_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 330 # False()
 
 
 # s3 # say35017
-label dzf114_s3:  # from -
+label dzf114_s3:  # from - # IF ~  False()
     SPEAKER 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

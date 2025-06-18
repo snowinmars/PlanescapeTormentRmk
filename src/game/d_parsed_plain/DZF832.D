@@ -1,6 +1,6 @@
 init python:
-    def _r35147_action(gsm):        
-        gsm.dec_law() 
+    def _r35147_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF832.DLG
-# Starts:    dzf832_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf832_dispose:
 
 
 # s0 # say35146
-label dzf832_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 350
+label dzf832_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 350
     SPEAKER 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет. Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер 832 элегантным шрифтом.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf832_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 350
 
 
 # s2 # say35167
-label dzf832_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 350 # False()
+label dzf832_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 350
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf832_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 350 # False()
 
 
 # s3 # say35177
-label dzf832_s3:  # from -
+label dzf832_s3:  # from - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

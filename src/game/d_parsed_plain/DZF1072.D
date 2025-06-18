@@ -1,6 +1,6 @@
 init python:
-    def _r35115_action(gsm):        
-        gsm.dec_law() 
+    def _r35115_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -53,7 +53,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF1072.DLG
-# Starts:    dzf1072_s
 # ###
 
 
@@ -66,7 +65,7 @@ label dzf1072_dispose:
 
 
 # s0 # say35114
-label dzf1072_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:Check EXTERN ~DMORTE~ : 346
+label dzf1072_s0:  # from - # IF ~  True() Check EXTERN ~DMORTE~ : 346
     SPEAKER 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения. У нее нет челюсти, часть мяса отвалилась от черепа, обнажая номер 1072, выбитый на кости.'
 
     menu:
@@ -120,7 +119,7 @@ label dzf1072_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 346
 
 
 # s2 # say35135
-label dzf1072_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 346 # False()
+label dzf1072_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 346
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -136,7 +135,7 @@ label dzf1072_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 346 # False()
 
 
 # s3 # say35145
-label dzf1072_s3:  # from -
+label dzf1072_s3:  # from - # IF ~  False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump show_graphics_menu

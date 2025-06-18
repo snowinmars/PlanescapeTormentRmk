@@ -1,8 +1,8 @@
 init python:
-    def _r6510_action(gsm):        
-        gsm.dec_law() 
+    def _r6510_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
-    def _r9562_action(gsm):        
+    def _r9562_action(gsm):
         gsm.dec_once_law()
 
 
@@ -23,7 +23,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM257.DLG
-# Starts:    dzm257_s
 # ###
 
 
@@ -36,7 +35,7 @@ label dzm257_dispose:
 
 
 # s0 # say6507
-label dzm257_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm257_s0:  # from - # IF ~  True()
     SPEAKER 'Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо. Ты с трудом различаешь номер 257 на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.'
 
     menu:

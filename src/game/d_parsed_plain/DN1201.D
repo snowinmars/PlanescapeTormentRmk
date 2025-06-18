@@ -1,60 +1,60 @@
 init python:
-    def _r44994_action(gsm):        
-        gsm.set_ur_1201(True) 
-        gsm.set_1201_note_quest(1)
-    def _r44995_action(gsm):        
-        gsm.set_lr_1201(True)
-    def _r44996_action(gsm):        
-        gsm.set_ll_1201(True)
-    def _r44997_action(gsm):        
-        gsm.set_ul_1201(True)
-    def _r44998_action(gsm):        
-        gsm.set_ur_1201(False) 
-        gsm.set_lr_1201(False) 
-        gsm.set_ll_1201(False) 
-        gsm.set_ul_1201(False) 
-        gsm.set_1201_note_quest(0)
-    def _r45000_action(gsm):        
+    def _r44994_action(gsm):
         gsm.set_ur_1201(True)
-    def _r45001_action(gsm):        
-        gsm.set_1201_note_quest(2) 
+        gsm.set_1201_note_quest(1)
+    def _r44995_action(gsm):
         gsm.set_lr_1201(True)
-    def _r45002_action(gsm):        
-        gsm.set_lr_1201(True) 
+    def _r44996_action(gsm):
+        gsm.set_ll_1201(True)
+    def _r44997_action(gsm):
+        gsm.set_ul_1201(True)
+    def _r44998_action(gsm):
+        gsm.set_ur_1201(False)
+        gsm.set_lr_1201(False)
+        gsm.set_ll_1201(False)
+        gsm.set_ul_1201(False)
         gsm.set_1201_note_quest(0)
-    def _r45003_action(gsm):        
-        gsm.set_ll_1201(True) 
+    def _r45000_action(gsm):
+        gsm.set_ur_1201(True)
+    def _r45001_action(gsm):
+        gsm.set_1201_note_quest(2)
+        gsm.set_lr_1201(True)
+    def _r45002_action(gsm):
+        gsm.set_lr_1201(True)
         gsm.set_1201_note_quest(0)
-    def _r45004_action(gsm):        
-        gsm.set_ul_1201(True) 
+    def _r45003_action(gsm):
+        gsm.set_ll_1201(True)
         gsm.set_1201_note_quest(0)
-    def _r45006_action(gsm):        
-        gsm.set_ur_1201(False) 
-        gsm.set_lr_1201(False) 
-        gsm.set_ll_1201(False) 
-        gsm.set_ul_1201(False) 
+    def _r45004_action(gsm):
+        gsm.set_ul_1201(True)
         gsm.set_1201_note_quest(0)
-    def _r45008_action(gsm):        
-        gsm.set_ur_1201(False) 
-        gsm.set_lr_1201(False) 
-        gsm.set_ll_1201(False) 
-        gsm.set_ul_1201(False) 
+    def _r45006_action(gsm):
+        gsm.set_ur_1201(False)
+        gsm.set_lr_1201(False)
+        gsm.set_ll_1201(False)
+        gsm.set_ul_1201(False)
         gsm.set_1201_note_quest(0)
-    def _r45017_action(gsm):        
-        gsm.set_ur_1201(False) 
-        gsm.set_lr_1201(False) 
-        gsm.set_ll_1201(False) 
-        gsm.set_ul_1201(False) 
+    def _r45008_action(gsm):
+        gsm.set_ur_1201(False)
+        gsm.set_lr_1201(False)
+        gsm.set_ll_1201(False)
+        gsm.set_ul_1201(False)
         gsm.set_1201_note_quest(0)
-    def _r45018_action(gsm):        
-        gsm.set_ur_1201(False) 
-        gsm.set_lr_1201(False) 
-        gsm.set_ll_1201(False) 
-        gsm.set_ul_1201(False) 
+    def _r45017_action(gsm):
+        gsm.set_ur_1201(False)
+        gsm.set_lr_1201(False)
+        gsm.set_ll_1201(False)
+        gsm.set_ul_1201(False)
         gsm.set_1201_note_quest(0)
-    def _r45023_action(gsm):        
+    def _r45018_action(gsm):
+        gsm.set_ur_1201(False)
+        gsm.set_lr_1201(False)
+        gsm.set_ll_1201(False)
+        gsm.set_ul_1201(False)
+        gsm.set_1201_note_quest(0)
+    def _r45023_action(gsm):
         gsm.inc_exp_custom('party', 250)
-    def _r45025_action(gsm):        GiveItemCreate("TEarring",Protagonist,3,0,0) 
+    def _r45025_action(gsm):        GiveItemCreate("TEarring",Protagonist,3,0,0)
         gsm.set_has_1201_note(False)
 
 
@@ -83,7 +83,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DN1201.DLG
-# Starts:    dn1201_s
 # ###
 
 
@@ -96,7 +95,7 @@ label dn1201_dispose:
 
 
 # s0 # say44993
-label dn1201_s0:  # from 1.6 3.0 # IF ~  True()~ THEN BEGIN 0 // from: 1.6 3.0
+label dn1201_s0:  # from 1.6 3.0 # IF ~  True()
     SPEAKER 'На этой вонючей записке под текстом изображена странная диаграмма. Кажется, она указывает, что тебе следует загнуть уголки записки к центру. На каждом из уголков есть ряд странных отметок: одна отметка в верхнем правом, две — в нижнем правом, три — в нижнем левом и ни одной в верхнем левом.'
 
     menu:

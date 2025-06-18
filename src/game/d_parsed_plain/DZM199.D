@@ -1,6 +1,6 @@
 init python:
-    def _r34976_action(gsm):        
-        gsm.dec_law() 
+    def _r34976_action(gsm):
+        gsm.dec_law()
         gsm.set_zombie_chaotic(True)
 
 
@@ -21,7 +21,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM199.DLG
-# Starts:    dzm199_s
 # ###
 
 
@@ -34,7 +33,7 @@ label dzm199_dispose:
 
 
 # s0 # say34975
-label dzm199_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from:
+label dzm199_s0:  # from - # IF ~  True()
     SPEAKER 'От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть. На его лбу выгравирован номер 199; его губы сшиты.'
 
     menu:

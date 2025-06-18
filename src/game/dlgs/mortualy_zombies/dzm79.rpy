@@ -29,7 +29,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM79.DLG
-# Starts:    dzm79_s0
 # ###
 
 

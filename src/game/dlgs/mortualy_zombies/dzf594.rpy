@@ -79,7 +79,7 @@ label dzf594_dispose:
 
 
 # s0 # say35018
-label dzf594_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 334 as dmorte_s330
+label dzf594_s0:  # from - # IF ~  True() Manually checked EXTERN ~DMORTE~ : 334 as dmorte_s330
     teller 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.'
     teller 'На ее лбу угольным карандашом нацарапан номер «594».'
 
