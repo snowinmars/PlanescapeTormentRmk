@@ -1,13 +1,10 @@
 init python:
     def _r313_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.set_mortualy_alarmed(True)
+        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r3888_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.set_mortualy_alarmed(True)
+        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r3886_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.set_mortualy_alarmed(True)
+        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r33189_action(gsm):
         gsm.set_death_of_names_adahn(True)
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
@@ -25,30 +22,37 @@ init python:
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
         gsm.dec_law()
     def _r448_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.set_mortualy_alarmed(True)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r449_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.set_mortualy_alarmed(True)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.dec_law()
     def _r1339_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.set_mortualy_alarmed(True)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.set_mortualy_alarmed(True)
     def _r1426_action(gsm):
         # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
         return
     def _r1428_action(gsm):
-        SetGlobal("Choke_Memory","GLOBAL",1)
-    # ?.play_sound('SPTR_01') IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself)
+        gsm.set_choke_memory(True)
+        # ?.play_sound('SPTR_01')
+        gsm.inc_choke_dustman()
+        gsm.inc_choke() # Kill(Myself) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
-    def _r1429_action(gsm):        IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself)
+    def _r1429_action(gsm):
+        gsm.inc_choke_dustman()
+        gsm.inc_choke() # Kill(Myself) Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
     def _r3882_action(gsm):        Kill(Myself)
         gsm.inc_exp_custom('Protagonist', 250)
     def _r3884_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r3890_action(gsm):        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        gsm.set_mortualy_alarmed(True)
+        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+    def _r3890_action(gsm):
+        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        return
 
 
 init python:
@@ -67,27 +71,35 @@ init python:
     def _r3885_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'dex')
     def _r342_condition(gsm):
-        return gsm.get_meet_dhall() Global("Current_Area","GLOBAL",202)
+        return gsm.get_meet_dhall() \
+               and glm.is_visited_internal_location('AR0202')
     def _r343_condition(gsm):
-        return gsm.get_meet_dhall() !Global("Current_Area","GLOBAL",202)
+        return gsm.get_meet_dhall() \
+               and not glm.is_visited_internal_location('AR0202')
     def _r33183_condition(gsm):
-        return gsm.get_meet_deionarra() Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_deionarra() \
+               and glm.is_visited_internal_location('AR0201')
     def _r33185_condition(gsm):
-        return gsm.get_meet_deionarra() !Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_deionarra() \
+               and not glm.is_visited_internal_location('AR0201')
     def _r33186_condition(gsm):
-        return gsm.get_meet_soego() Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_soego() \
+               and glm.is_visited_internal_location('AR0201')
     def _r33187_condition(gsm):
-        return gsm.get_meet_soego() !Global("Current_Area","GLOBAL",201)
+        return gsm.get_meet_soego() \
+               and not glm.is_visited_internal_location('AR0201')
     def _r33189_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') NumTimesTalkedTo(1)
+        return gsm.check_char_prop_gt('protagonist',12,'int') \
+               and gsm.get_talked_to_dust_times() == 1
     def _r33190_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') NumTimesTalkedToGT(1)
+        return gsm.check_char_prop_gt('protagonist',12,'int') \
+               and gsm.get_talked_to_dust_times() > 1
     def _r370_condition(gsm):
         return gsm.get_meet_deionarra()
     def _r371_condition(gsm):
-        return NumTimesTalkedTo(1)
+        return gsm.get_talked_to_dust_times() == 1
     def _r372_condition(gsm):
-        return NumTimesTalkedToGT(1)
+        return gsm.get_talked_to_dust_times() > 1
     def _r373_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',13,'dex')
     def _r1335_condition(gsm):
@@ -95,17 +107,17 @@ init python:
     def _r378_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',11,'int')
     def _r450_condition(gsm):
-        return NumTimesTalkedTo(1)
+        return gsm.get_talked_to_dust_times() == 1
     def _r1337_condition(gsm):
-        return NumTimesTalkedToGT(1)
+        return gsm.get_talked_to_dust_times() > 1
     def _r3904_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',13,'chr')
     def _r3905_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r399_condition(gsm):
-        return NumTimesTalkedTo(1)
+        return gsm.get_talked_to_dust_times() == 1
     def _r3906_condition(gsm):
-        return NumTimesTalkedToGT(1)
+        return gsm.get_talked_to_dust_times() > 1
     def _r3907_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',13,'chr')
     def _r3908_condition(gsm):
@@ -119,9 +131,9 @@ init python:
     def _r3920_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r416_condition(gsm):
-        return Global("Current_Area","GLOBAL",202)
+        return glm.is_visited_internal_location('AR0202')
     def _r417_condition(gsm):
-        return !Global("Current_Area","GLOBAL",202)
+        return not glm.is_visited_internal_location('AR0202')
     def _r436_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r3909_condition(gsm):
@@ -139,9 +151,9 @@ init python:
     def _r3913_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r449_condition(gsm):
-        return NumTimesTalkedTo(1)
+        return gsm.get_talked_to_dust_times() == 1
     def _r1339_condition(gsm):
-        return NumTimesTalkedToGT(1)
+        return gsm.get_talked_to_dust_times() > 1
     def _r1420_condition(gsm):
         return gsm.get_in_party_morte() \
                and gsm.get_warning() == 0
@@ -154,9 +166,9 @@ init python:
     def _r1423_condition(gsm):
         return not gsm.get_in_party_morte()
     def _r1428_condition(gsm):
-        return Global("Choke_Memory","GLOBAL",0)
+        return not gsm.get_choke_memory()
     def _r1429_condition(gsm):
-        return GlobalGT("Choke_Memory","GLOBAL",0)
+        return gsm.get_choke_memory()
     def _r3914_condition(gsm):
         return gsm.check_char_prop_lt('protagonist',13,'dex')
     def _r3915_condition(gsm):
@@ -170,15 +182,15 @@ init python:
     def _r3901_condition(gsm):
         return gsm.check_char_prop_gt('protagonist',12,'chr')
     def _r66675_condition(gsm):
-        return Global("Join_Dustmen","GLOBAL",1)
+        return gsm.get_join_dustmen()
     def _r66676_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
     def _r66677_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
     def _r66678_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
     def _r66679_condition(gsm):
-        return !Global("Join_Dustmen","GLOBAL",1)
+        return not gsm.get_join_dustmen()
 
 
 init 10 python:
@@ -187,21 +199,26 @@ init 10 python:
 
 # ###
 # Original:  DLG/DDUST.DLG
-# Starts:    ddust_s
 # ###
 
 
+label start_ddust_talk_first:
+    call ddust_init
+    jump ddust_s3
+label start_ddust_talk:
+    call ddust_init
+    jump ddust_s0
 label ddust_init:
+    show dust_img default at center_left_down
     return
-
-
 label ddust_dispose:
+    hide dust_img
     jump show_graphics_menu
 
 
 # s0 # say300
 label ddust_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)~ THEN BEGIN 0 // from:
-    SPEAKER 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.'
+    teller 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.'
 
     menu:
         'Приветствую.':
@@ -223,7 +240,8 @@ label ddust_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)~ THEN BEGIN 0 
 
 # s1 # say307
 label ddust_s1:  # from 0.0 0.1 0.2 0.3
-    SPEAKER 'Тленный подпрыгивает от неожиданности. Затем он поворачивает к тебе голову. Он выглядит потрясенным: должно быть, маскировка у тебя весьма неплохая.'
+    teller 'Тленный подпрыгивает от неожиданности. Затем он поворачивает к тебе голову.'
+    teller 'Он выглядит потрясенным: должно быть, маскировка у тебя весьма неплохая.'
 
     menu:
         'Воспользоваться эффектом неожиданности и свернуть ему шею до того, как он сможет позвать на помощь.':
@@ -239,7 +257,8 @@ label ddust_s1:  # from 0.0 0.1 0.2 0.3
 
 # s2 # say309
 label ddust_s2:  # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
-    SPEAKER 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
+    teller 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза.'
+    teller 'В ответ во всем Морге раздается звон огромного железного колокола.'
 
     menu:
         'Ну хорошо…':
@@ -250,7 +269,8 @@ label ddust_s2:  # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
 
 # s3 # say314
 label ddust_s3:  # from -
-    SPEAKER 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью. Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
+    teller 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью.'
+    teller 'Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
         'Приветствую.':
@@ -272,7 +292,8 @@ label ddust_s3:  # from -
 
 # s4 # say321
 label ddust_s4:  # from 3.0 3.1 3.2 3.3 40.2 40.3
-    SPEAKER 'Тленный медленно поднимает свою голову и оборачивается к тебе. Ты потерялся?'
+    teller 'Тленный медленно поднимает свою голову и оборачивается к тебе.'
+    dust 'Ты потерялся?'
 
     menu:
         'Да.':
@@ -291,7 +312,7 @@ label ddust_s4:  # from 3.0 3.1 3.2 3.3 40.2 40.3
 
 # s5 # say326
 label ddust_s5:  # from 4.0 4.3 6.4 16.2 51.1
-    SPEAKER 'Я позову стражу, они тебя живо выведут. Погоди минуточку.'
+    dust 'Я позову стражу, они тебя живо выведут. Погоди минуточку.'
 
     menu:
         'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r327_condition(gsm):
@@ -310,7 +331,7 @@ label ddust_s5:  # from 4.0 4.3 6.4 16.2 51.1
 
 # s6 # say330
 label ddust_s6:  # from 4.1 4.2 51.2 51.3
-    SPEAKER 'Если ты не потерялся, что же ты здесь делаешь?'
+    dust 'Если ты не потерялся, что же ты здесь делаешь?'
 
     menu:
         'Это тебя не касается.':
@@ -332,7 +353,8 @@ label ddust_s6:  # from 4.1 4.2 51.2 51.3
 
 # s7 # say335
 label ddust_s7:  # from 6.0 9.0 20.0
-    SPEAKER 'Боюсь, что касается. Может, стражники развяжут твой язык. Тленный отступает на шаг; кажется, он собирается позвать стражников.'
+    dust 'Боюсь, что касается. Может, стражники развяжут твой язык.'
+    teller 'Тленный отступает на шаг; кажется, он собирается позвать стражников.'
 
     menu:
         'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r344_condition(gsm):
@@ -349,7 +371,8 @@ label ddust_s7:  # from 6.0 9.0 20.0
 
 # s8 # say336
 label ddust_s8:  # from 6.1 16.0 20.1
-    SPEAKER 'Любишь пошутить? Тогда, может, ты поделишься своими шутками со стражниками. Тленный отступает на шаг; кажется, он собирается позвать стражников.'
+    dust 'Любишь пошутить? Тогда, может, ты поделишься своими шутками со стражниками.'
+    teller 'Тленный отступает на шаг; кажется, он собирается позвать стражников.'
 
     menu:
         'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r358_condition(gsm):
@@ -366,7 +389,7 @@ label ddust_s8:  # from 6.1 16.0 20.1
 
 # s9 # say338
 label ddust_s9:  # from 6.2 20.2
-    SPEAKER 'Кого ты хочешь увидеть?'
+    dust 'Кого ты хочешь увидеть?'
 
     menu:
         'Это не твое дело.':
@@ -404,7 +427,8 @@ label ddust_s9:  # from 6.2 20.2
 
 # s10 # say345
 label ddust_s10:  # from 9.1
-    SPEAKER 'Дхолла можно найти в приемной комнате на этом этаже. Должен предупредить… Дхолл очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его.'
+    dust 'Дхолла можно найти в приемной комнате на этом этаже. Должен предупредить… Дхолл очень занят, а здоровье у него подкошено.'
+    dust 'Если у тебя к нему несрочное дело, то лучше не беспокоить его.'
 
     menu:
         'Хорошо. Спасибо за информацию.':
@@ -414,7 +438,8 @@ label ddust_s10:  # from 9.1
 
 # s11 # say346
 label ddust_s11:  # from 9.2
-    SPEAKER 'Скорее всего, Дхолл в приемной комнате на втором этаже. Он очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его.'
+    dust 'Скорее всего, Дхолл в приемной комнате на втором этаже. Он очень занят, а здоровье у него подкошено.'
+    dust 'Если у тебя к нему несрочное дело, то лучше не беспокоить его.'
 
     menu:
         'Хорошо. Спасибо за информацию.':
@@ -424,7 +449,7 @@ label ddust_s11:  # from 9.2
 
 # s12 # say349
 label ddust_s12:  # from 9.4 19.1
-    SPEAKER 'Дейонаррой? На первом этаже в мемориальном зале похоронена женщина. Может быть, это она?'
+    dust 'Дейонаррой? На первом этаже в мемориальном зале похоронена женщина. Может быть, это она?'
 
     menu:
         'Скорее всего. Спасибо.':
@@ -434,7 +459,7 @@ label ddust_s12:  # from 9.4 19.1
 
 # s13 # say350
 label ddust_s13:  # from 9.3
-    SPEAKER 'Дейонаррой? В северо-западном мемориальном зале похоронена женщина. Может быть, это она?'
+    dust 'Дейонаррой? В северо-западном мемориальном зале похоронена женщина. Может быть, это она?'
 
     menu:
         'Скорее всего. Спасибо.':
@@ -444,7 +469,7 @@ label ddust_s13:  # from 9.3
 
 # s14 # say351
 label ddust_s14:  # from 9.6
-    SPEAKER 'Скорее всего, Соэго находится у главных ворот на первом этаже. Он работает проводником в часы антипика.'
+    dust 'Скорее всего, Соэго находится у главных ворот на первом этаже. Он работает проводником в часы антипика.'
 
     menu:
         'Отлично. Спасибо.':
@@ -454,7 +479,7 @@ label ddust_s14:  # from 9.6
 
 # s15 # say355
 label ddust_s15:  # from 9.5
-    SPEAKER 'Скорее всего, Соэго находится у главных ворот. Он работает проводником в часы антипика.'
+    dust 'Скорее всего, Соэго находится у главных ворот. Он работает проводником в часы антипика.'
 
     menu:
         'Отлично. Спасибо.':
@@ -464,7 +489,7 @@ label ddust_s15:  # from 9.5
 
 # s16 # say357
 label ddust_s16:  # from 6.3 20.3
-    SPEAKER 'Кто был погребен? Возможно, служба проводится в другом конце Морга.'
+    dust 'Кто был погребен? Возможно, служба проводится в другом конце Морга.'
 
     menu:
         'Ты не понимаешь… ошибка в том, что похоронить собирались МЕНЯ.':
@@ -480,7 +505,8 @@ label ddust_s16:  # from 6.3 20.3
 
 # s17 # say362
 label ddust_s17:  # from 16.1
-    SPEAKER 'По всему периметру Морга расположены погребальные залы. Они расположены вдоль стены на первом и втором этажах. Тебе известно имя усопшего?'
+    dust 'По всему периметру Морга расположены погребальные залы. Они расположены вдоль стены на первом и втором этажах.'
+    dust 'Тебе известно имя усопшего?'
 
     menu:
         'Нет.':
@@ -493,7 +519,7 @@ label ddust_s17:  # from 16.1
 
 # s18 # say365
 label ddust_s18:  # from 17.0
-    SPEAKER 'Тогда тебе стоит поговорить с одним из проводников у главных ворот. Они тебе помогут.'
+    dust 'Тогда тебе стоит поговорить с одним из проводников у главных ворот. Они тебе помогут.'
 
     menu:
         'Отлично. Спасибо.':
@@ -503,7 +529,7 @@ label ddust_s18:  # from 17.0
 
 # s19 # say367
 label ddust_s19:  # from 17.1
-    SPEAKER 'Тленный ждет.'
+    teller 'Тленный ждет.'
 
     menu:
         'Прошу прощения… Я оговорился. Мне неизвестно имя усопшего.':
@@ -532,7 +558,7 @@ label ddust_s19:  # from 17.1
 
 # s20 # say374
 label ddust_s20:  # from 9.9 19.0
-    SPEAKER 'Понятно. И что же ты здесь делаешь?'
+    dust 'Понятно. И что же ты здесь делаешь?'
 
     menu:
         'Это не твое дело.':
@@ -554,7 +580,7 @@ label ddust_s20:  # from 9.9 19.0
 
 # s21 # say368
 label ddust_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
-    SPEAKER 'Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я.'
+    dust 'Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я.'
 
     menu:
         'Хорошо. Я так и сделаю. Прощай.':
@@ -564,7 +590,8 @@ label ddust_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
 
 # s22 # say294
 label ddust_s22:  # from -
-    SPEAKER 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью. Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
+    teller 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью.'
+    teller 'Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
         'Приветствую.':
@@ -577,7 +604,8 @@ label ddust_s22:  # from -
 
 # s23 # say381
 label ddust_s23:  # from 22.0
-    SPEAKER 'Он медленно оборачивается, его взгляд мельком скользит по твоей одежде. Приветствую тебя, посвященный.'
+    teller 'Он медленно оборачивается, его взгляд мельком скользит по твоей одежде.'
+    dust 'Приветствую тебя, посвященный.'
 
     menu:
         'Кто ты?':
@@ -596,7 +624,7 @@ label ddust_s23:  # from 22.0
 
 # s24 # say393
 label ddust_s24:  # from 23.0
-    SPEAKER 'У меня такой же вопрос. Твое лицо мне незнакомо. Как тебя зовут?'
+    dust 'У меня такой же вопрос. Твое лицо мне незнакомо. Как тебя зовут?'
 
     menu:
         'Ложь: Меня зовут… э-э, Адан.' if _r450_condition(gsm):
@@ -616,7 +644,9 @@ label ddust_s24:  # from 23.0
 
 # s25 # say394
 label ddust_s25:  # from 23.1
-    SPEAKER 'Это Морг… Тленная какое-то время смотрит на тебя, как бы оценивая только что тобою сказанное. Как, ты сказал, тебя зовут?'
+    dust 'Это Морг…'
+    teller 'Тленный какое-то время смотрит на тебя, как бы оценивая только что тобою сказанное.'
+    dust 'Как, ты сказал, тебя зовут?'
 
     menu:
         'Ложь: Меня зовут… э-э, Адан.' if _r399_condition(gsm):
@@ -636,7 +666,7 @@ label ddust_s25:  # from 23.1
 
 # s26 # say400
 label ddust_s26:  # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
-    SPEAKER 'Тленный терпеливо ждет твоего продолжения.'
+    teller 'Тленный терпеливо ждет твоего продолжения.'
 
     menu:
         'Можешь показать мне выход?':
@@ -655,7 +685,7 @@ label ddust_s26:  # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
 
 # s27 # say405
 label ddust_s27:  # from 26.0
-    SPEAKER 'Ты можешь просто выйти через главные ворота. Они на первом этаже.'
+    dust 'Ты можешь просто выйти через главные ворота. Они на первом этаже.'
 
     menu:
         'У меня есть другие вопросы…':
@@ -668,7 +698,9 @@ label ddust_s27:  # from 26.0
 
 # s28 # say408
 label ddust_s28:  # from 26.1
-    SPEAKER 'Это имя… — тленный на секунду умолкает. — Это имя *звучит* знакомо… Кажется, я припоминаю сборщика с таким именем. Писец Дхолл может знать о нем больше.'
+    dust 'Это имя…'
+    teller 'Тленный на секунду умолкает.'
+    dust 'Это имя *звучит* знакомо… Кажется, я припоминаю сборщика с таким именем. Писец Дхолл может знать о нем больше.'
 
     menu:
         'Сборщика?':
@@ -687,7 +719,9 @@ label ddust_s28:  # from 26.1
 
 # s29 # say412
 label ddust_s29:  # from 28.0
-    SPEAKER 'Сборщики… они собирают тех, кто умер на улицах Сигила, и доставляют их в Морг… — тленный умолкает, хмуря брови. — Ты нездешний. Кто ты?'
+    dust 'Сборщики… они собирают тех, кто умер на улицах Сигила, и доставляют их в Морг…'
+    teller 'Тленный умолкает, хмуря брови.'
+    dust 'Ты нездешний. Кто ты?'
 
     menu:
         'Я недавно посвящен. Прости мое невежество.' if _r413_condition(gsm):
@@ -706,7 +740,9 @@ label ddust_s29:  # from 28.0
 
 # s30 # say414
 label ddust_s30:  # from 28.1
-    SPEAKER 'Дхолл — один из самых уважаемых членов нашей фракции. Наверное, никто не размышлял о сущности Истинной Смерти и не заслужил ее больше, чем он. У него много знаний, которыми он может поделиться. Если ты незнаком с ним, то я советую тебе как можно раньше воспользоваться этой возможностью. Ему осталось не так долго жить в тени этого существования.'
+    dust 'Дхолл — один из самых уважаемых членов нашей фракции. Наверное, никто не размышлял о сущности Истинной Смерти и не заслужил ее больше, чем он.'
+    dust 'У него много знаний, которыми он может поделиться. Если ты незнаком с ним, то я советую тебе как можно раньше воспользоваться этой возможностью.'
+    dust 'Ему осталось не так долго жить в тени этого существования.'
 
     menu:
         '*Ему осталось не так долго жить?*':
@@ -728,7 +764,8 @@ label ddust_s30:  # from 28.1
 
 # s31 # say419
 label ddust_s31:  # from 30.0 32.0 33.0
-    SPEAKER 'Кивок. Дхолл болен. Он стар, даже по меркам гитцераев. Несомненно, смерть последует за болезнью, которую он подхватил. Ему повезло.'
+    teller 'Кивок.'
+    dust 'Дхолл болен. Он стар, даже по меркам гитцераев. Несомненно, смерть последует за болезнью, которую он подхватил. Ему повезло.'
 
     menu:
         'По меркам гитцераев?':
@@ -750,7 +787,8 @@ label ddust_s31:  # from 30.0 32.0 33.0
 
 # s32 # say427
 label ddust_s32:  # from 30.1
-    SPEAKER 'Дхолл находится в приемной комнате в северо-западной части этого этажа. Должен предупредить… Дхолл очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь.'
+    dust 'Дхолл находится в приемной комнате в северо-западной части этого этажа. Должен предупредить… Дхолл очень занят…'
+    dust 'То время, которое он не занят своими обязанностями, отбирает у него болезнь.'
 
     menu:
         'Дхолл болен?':
@@ -763,7 +801,8 @@ label ddust_s32:  # from 30.1
 
 # s33 # say426
 label ddust_s33:  # from 30.2
-    SPEAKER 'Дхолл скорее всего находится в приемной комнате на втором этаже. Лучше не отвлекай его слишком сильно, он очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь.'
+    dust 'Дхолл скорее всего находится в приемной комнате на втором этаже. Лучше не отвлекай его слишком сильно, он очень занят…'
+    dust 'То время, которое он не занят своими обязанностями, отбирает у него болезнь.'
 
     menu:
         'Дхолл болен?':
@@ -776,7 +815,7 @@ label ddust_s33:  # from 30.2
 
 # s34 # say432
 label ddust_s34:  # from 31.0
-    SPEAKER 'Да, гитцераи живут гораздо дольше, чем люди.'
+    dust 'Да, гитцераи живут гораздо дольше, чем люди.'
 
     menu:
         'Что это еще за *гитцераи*?':
@@ -795,7 +834,9 @@ label ddust_s34:  # from 31.0
 
 # s35 # say435
 label ddust_s35:  # from 31.1 34.0
-    SPEAKER 'Гитцераи — это… Тленный умолкает, затем хмурится, бросив на тебя пристальный взгляд. Ты ведь нездешний. Кто ты?'
+    dust 'Гитцераи — это…'
+    teller 'Тленный умолкает, затем хмурится, бросив на тебя пристальный взгляд.'
+    dust 'Ты ведь нездешний. Кто ты?'
 
     menu:
         'Я недавно посвящен. Прости мое невежество.' if _r436_condition(gsm):
@@ -814,7 +855,7 @@ label ddust_s35:  # from 31.1 34.0
 
 # s36 # say439
 label ddust_s36:  # from 31.2 34.1
-    SPEAKER 'Ему повезло в том, что он достигнет Истинной Смерти. Он больше не будет странствовать в тени этого существования.'
+    dust 'Ему повезло в том, что он достигнет Истинной Смерти. Он больше не будет странствовать в тени этого существования.'
 
     menu:
         'И… это хорошо?':
@@ -830,7 +871,10 @@ label ddust_s36:  # from 31.2 34.1
 
 # s37 # say444
 label ddust_s37:  # from 36.0
-    SPEAKER 'Тленный кивает. Да. Он хмурится, затем пристально смотрит на тебя. Ты ведь не здешний. Кто ты?'
+    teller 'Тленный кивает.'
+    dust 'Да.'
+    teller 'Он хмурится, затем пристально смотрит на тебя.'
+    dust 'Ты ведь не здешний. Кто ты?'
 
     menu:
         'Я недавно посвящен. Прости мое невежество.' if _r445_condition(gsm):
@@ -849,7 +893,7 @@ label ddust_s37:  # from 36.0
 
 # s38 # say447
 label ddust_s38:  # from -
-    SPEAKER 'Ты не из наших. Кто ты? Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Стража! Стража!'
+    dust 'Ты не из наших. Кто ты? Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Стража! Стража!'
 
     menu:
         'Проклятье!':
@@ -868,7 +912,7 @@ label ddust_s38:  # from -
 
 # s39 # say398
 label ddust_s39:  # from 26.2
-    SPEAKER 'Дневник? Не встречал такого.'
+    dust 'Дневник? Не встречал такого.'
 
     menu:
         'У меня есть другие вопросы…':
@@ -880,16 +924,17 @@ label ddust_s39:  # from 26.2
 
 
 # s40 # say1419
-label ddust_s40:  # from - # Check EXTERN ~DMORTE~ : 61Check EXTERN ~DMORTE~ : 63
-    SPEAKER 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью. Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
+label ddust_s40:  # from - # Manually checked EXTERN ~DMORTE~ : 61 Manually checked EXTERN ~DMORTE~ : 63
+    teller 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью.'
+    teller 'Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
         'Приветствую.' if _r1420_condition(gsm):
             # r130 # reply1420
-            jump show_graphics_menu
+            jump dmorte_s61
         'Приветствую.' if _r1421_condition(gsm):
             # r131 # reply1421
-            jump show_graphics_menu
+            jump dmorte_s63
         'Приветствую.' if _r1422_condition(gsm):
             # r132 # reply1422
             jump ddust_s4
@@ -903,7 +948,7 @@ label ddust_s40:  # from - # Check EXTERN ~DMORTE~ : 61Check EXTERN ~DMORTE~ : 6
 
 # s41 # say1425
 label ddust_s41:  # from 1.0 5.1 7.1 8.1 47.1
-    SPEAKER 'Тленный не успевает и слова вымолвить, как твои руки хватают его голову за виски и резко сворачивают ее влево.'
+    teller 'Тленный не успевает и слова вымолвить, как твои руки хватают его голову за виски и резко сворачивают ее влево.'
 
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
@@ -914,7 +959,7 @@ label ddust_s41:  # from 1.0 5.1 7.1 8.1 47.1
 
 # s42 # say1427
 label ddust_s42:  # from 41.0 45.0
-    SPEAKER 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.'
+    teller 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.'
 
     menu:
         'Лучше ты, чем я, трухлявый.' if _r1428_condition(gsm):
@@ -929,7 +974,8 @@ label ddust_s42:  # from 41.0 45.0
 
 # s43 # say1430
 label ddust_s43:  # from 42.0
-    SPEAKER 'К своему удивлению, это действие происходит практически инстинктивно, будто ты проделывал это уже много раз… с этой мыслью всплывает воспоминание, но оно недостаточно сильно для того, чтобы за него зацепиться.'
+    teller 'К своему удивлению, это действие происходит практически инстинктивно, будто ты проделывал это уже много раз…'
+    teller '…с этой мыслью всплывает воспоминание, но оно недостаточно сильно для того, чтобы за него зацепиться.'
 
     menu:
         'Оставить тело, уйти.':
@@ -940,7 +986,8 @@ label ddust_s43:  # from 42.0
 
 # s44 # say3883
 label ddust_s44:  # from 5.0 7.0 8.0 19.4 47.0
-    SPEAKER 'Ты недостаточно быстр, и тленный уворачивается от твоего выпада. Отступив на шаг, он быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
+    teller 'Ты недостаточно быстр, и тленный уворачивается от твоего выпада.'
+    teller 'Отступив на шаг, он быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
 
     menu:
         'Ну хорошо…':
@@ -951,7 +998,8 @@ label ddust_s44:  # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say3889
 label ddust_s45:  # from 19.5
-    SPEAKER 'Ты наклоняешься, чтобы шепнуть ему что-то на ухо, тленный тоже наклоняется. Как только он оказывается на расстоянии вытянутой руки, ты хватаешь его за виски и резко сворачиваешь голову влево.'
+    teller 'Ты наклоняешься, чтобы шепнуть ему что-то на ухо, тленный тоже наклоняется.'
+    teller 'Как только он оказывается на расстоянии вытянутой руки, ты хватаешь его за виски и резко сворачиваешь голову влево.'
 
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
@@ -962,7 +1010,7 @@ label ddust_s45:  # from 19.5
 
 # s46 # say3891
 label ddust_s46:  # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
-    SPEAKER 'Тленный явно что-то подозревает. Похоже, он хочет что-то сказать, затем едва качает головой и возвращается к своим обязанностям.'
+    teller 'Тленный явно что-то подозревает. Похоже, он хочет что-то сказать, затем едва качает головой и возвращается к своим обязанностям.'
 
     menu:
         'Уйти прочь.':
@@ -972,7 +1020,8 @@ label ddust_s46:  # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
 # s47 # say3893
 label ddust_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
-    SPEAKER 'Тленный внимательно тебя осматривает. Ты не из наших. Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Кажется, здесь есть дело для стражников…'
+    teller 'Тленный внимательно тебя осматривает.'
+    dust 'Ты не из наших. Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Кажется, здесь есть дело для стражников…'
 
     menu:
         'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r3914_condition(gsm):
@@ -991,7 +1040,7 @@ label ddust_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
 # s48 # say3894
 label ddust_s48:  # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
-    SPEAKER 'Тленный кивает, затем возвращается к своим обязанностям.'
+    teller 'Тленный кивает, затем возвращается к своим обязанностям.'
 
     menu:
         'Уйти прочь.':
@@ -1001,7 +1050,8 @@ label ddust_s48:  # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 
 
 # s49 # say3896
 label ddust_s49:  # from 24.0 24.1 25.0 25.1
-    SPEAKER 'Тленный хмурится. Это имя мне незнакомо.'
+    teller 'Тленный хмурится.'
+    dust 'Это имя мне незнакомо.'
 
     menu:
         'Я недавно посвящен. Прости мое невежество.' if _r3898_condition(gsm):
@@ -1020,7 +1070,8 @@ label ddust_s49:  # from 24.0 24.1 25.0 25.1
 
 # s50 # say3897
 label ddust_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0)
-    SPEAKER 'Тленный продолжает хмуриться, но затем слегка кивает. Ну хорошо. Что я могу сделать для тебя, посвященный?'
+    teller 'Тленный продолжает хмуриться, но затем слегка кивает.'
+    dust 'Ну хорошо. Что я могу сделать для тебя, посвященный?'
 
     menu:
         'У меня есть пара вопросов…':
@@ -1033,7 +1084,8 @@ label ddust_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0)
 
 # s51 # say66674
 label ddust_s51:  # from -
-    SPEAKER 'Тленный бросает на тебя каменный взгляд. Ты потерялся?'
+    teller 'Тленный бросает на тебя каменный взгляд.'
+    dust 'Ты потерялся?'
 
     menu:
         'Нет, я член фракции. Я просто осматриваю Морг.' if _r66675_condition(gsm):
@@ -1055,7 +1107,8 @@ label ddust_s51:  # from -
 
 # s52 # say66681
 label ddust_s52:  # from 51.0
-    SPEAKER 'Тленный какое-то время пристально на тебя смотрит, затем кивает. Хорошо. Если тебе нужна помощь, дай мне знать.'
+    teller 'Тленный какое-то время пристально на тебя смотрит, затем кивает.'
+    dust 'Хорошо. Если тебе нужна помощь, дай мне знать.'
 
     menu:
         'Конечно. Прощай.':

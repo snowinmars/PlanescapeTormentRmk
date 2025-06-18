@@ -11,5 +11,6 @@ services:
       - ../d_clean/:/d_clean/
       - ../d_parsed/:/d_parsed/
       - ../d_parsed_plain/:/d_parsed_plain/
+      - ../dlgs/:/dlgs/
       - ../setting/:/setting/
     command: yarn start

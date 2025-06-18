@@ -1,5 +1,5 @@
-﻿import type {State} from './types';
-import {transformScript, trimTrash} from './serializeHelpers.ts';
+﻿import type { State } from './types';
+import { transformScript, trimTrash } from './serializeHelpers.ts';
 
 const toSingleReturn = (input: string): string => {
     const lines = input.split('\n');
@@ -26,7 +26,7 @@ const toSingleBody = (input: string): string => {
 
 export const serializeStatesPlain = (states: State[], area: string, statePrefix: string): string => {
     let result = `init 10 python:
-    gsm = renpy.store.global_settings_manager\n\n\n# ###\n# Original:  DLG/${area.toUpperCase()}.DLG\n# Starts:    ${area}_s\n# ###\n\n\nlabel ${area}_init:\n    return\n\n\nlabel ${area}_dispose:\n    jump show_graphics_menu\n\n`;
+    gsm = renpy.store.global_settings_manager\n\n\n# ###\n# Original:  DLG/${area.toUpperCase()}.DLG\n# ###\n\n\nlabel ${area}_init:\n    return\n\n\nlabel ${area}_dispose:\n    jump show_graphics_menu\n\n`;
     let logicActionsBuilder = '';
     let logicConditionsBuilder = '';
     let globalResponseCounter = 0
@@ -87,9 +87,10 @@ ${logicActionsBuilder}`
     if (logicConditionsBuilder !== '') logicConditionsBuilder = `init python:
 ${logicConditionsBuilder}`
 
+    const targetNpc = area.startsWith('D') ? area.slice(1) : area;
     return [
-        toSingleBody(transformScript(logicActionsBuilder.trim())),
-        toSingleReturn(transformScript(logicConditionsBuilder.trim())),
+        toSingleBody(transformScript(logicActionsBuilder.trim(), targetNpc)),
+        toSingleReturn(transformScript(logicConditionsBuilder.trim(), targetNpc)),
         result.trim(),
     ].join('\n\n\n').trim();
 }

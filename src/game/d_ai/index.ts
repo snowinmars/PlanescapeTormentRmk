@@ -2,12 +2,13 @@
 // node --experimental-strip-types index.ts
 
 import { clean } from './clean.ts';
+import { pythonIsC } from './c.ts';
 import { parseDialogue } from './parseDialogue.ts';
 import { serializeStatesPlain } from "./serializeStatesPlain.ts";
 import { setupSettings } from "./setupSettings.ts";
 import { promises as fs, existsSync, unlinkSync, closeSync, openSync } from 'fs';
 import * as path from 'path'
-import {getKnownSettingsName} from "./wellKnownReplacements.ts";
+import { getKnownSettingsName } from "./wellKnownReplacements.ts";
 
 const goFilesDz = [
     'DS42',
@@ -66,7 +67,7 @@ const goFiles = [
     ...goFilesDz,
 ];
 
-type GoProps = Readonly<{
+type ParseAndSerializeProps = Readonly<{
     fromFile: string;
     cleanFile: string;
     toFile: string;
@@ -74,7 +75,7 @@ type GoProps = Readonly<{
     statePrefix: string;
 }>
 
-const go = async ({fromFile, cleanFile, toFile, area, statePrefix}: GoProps): Promise<void> => {
+const parseAndSerialize = async ({ fromFile, cleanFile, toFile, area, statePrefix }: ParseAndSerializeProps): Promise<void> => {
     const raw: string = await fs.readFile(fromFile, 'utf8');
     let cleaned = clean(raw);
     await fs.writeFile(cleanFile, cleaned, 'utf8');
@@ -94,7 +95,7 @@ Promise.all(goFiles.map(x => `${x}.D`).map(x => {
     const raw = path.join(process.cwd(), '../d_raw')
     const clean = path.join(process.cwd(), '../d_clean')
     const parsedPlain = path.join(process.cwd(), '../d_parsed_plain')
-    return go({
+    return parseAndSerialize({
         fromFile: path.join(raw, x),
         cleanFile: path.join(clean, x),
         toFile: path.join(parsedPlain, x),
@@ -102,3 +103,12 @@ Promise.all(goFiles.map(x => `${x}.D`).map(x => {
         statePrefix: '_s'
     });
 })).catch(e => console.error(e));
+
+pythonIsC({
+    dlgsDir: path.join(process.cwd(), '../dlgs'),
+}).then(x => {
+    if (x && x.length) {
+        x.map(y => console.error(y));
+        throw new Error('The game will crash at runtime. Moron.')
+    }
+}).catch(e => console.error(e));
