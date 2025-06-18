@@ -45,9 +45,11 @@ init python:
         gsm.inc_exp_custom('party', 15)
     def _r4319_action(gsm):
         gsm.inc_choke_dustman()
-        gsm.inc_choke() Kill(Myself) Deactivate(Myself)
+        gsm.inc_choke()
+        gsm.set_dead_ddustfem(True) # Deactivate(Myself)
         gsm.inc_exp_custom('party', 15)
-    def _r4320_action(gsm):        Kill(Myself)
+    def _r4320_action(gsm):
+        gsm.set_dead_ddustfem(True)
         gsm.inc_exp_custom('Protagonist', 250)
     def _r4321_action(gsm):
         gsm.set_mortualy_alarmed(True)
@@ -218,7 +220,7 @@ label ddustfem_dispose:
 
 
 # s0 # say298
-label ddustfem_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)~ THEN BEGIN 0 // from:
+label ddustfem_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)
     teller 'Тленная не обращает на тебя внимания. Должно быть, она спутала тебя с одним из мертвых рабочих.'
 
     menu:
@@ -576,7 +578,7 @@ label ddustfem_s20:  # from 9.9 19.0
 
 
 # s21 # say1195
-label ddustfem_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
+label ddustfem_s21:  # from 9.7 9.8 19.2 19.3
     dustfem 'Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я.'
 
     menu:
@@ -586,7 +588,7 @@ label ddustfem_s21:  # from 9.7 9.8 19.2 19.3 # Global("Appearance","GLOBAL",2)
 
 
 # s22 # say1196
-label ddustfem_s22:  # from -
+label ddustfem_s22:  # from - # IF ~  Global("Appearance","GLOBAL",2)
     teller 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
@@ -1067,7 +1069,7 @@ label ddustfem_s49:  # from 24.0 24.1 25.0 25.1
 
 
 # s50 # say1224
-label ddustfem_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0)
+label ddustfem_s50:  # from 29.0 35.0 37.0 49.0
     teller 'Тленная продолжает хмуриться, но затем слегка кивает.'
     dustfem 'Ну хорошо. Что я могу сделать для тебя, посвященный?'
 
@@ -1081,7 +1083,7 @@ label ddustfem_s50:  # from 29.0 35.0 37.0 49.0 # Global("Appearance","GLOBAL",0
 
 
 # s51 # say66683
-label ddustfem_s51:  # from -
+label ddustfem_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
     teller 'Тленная бросает на тебя каменный взгляд.'
     dustfem 'Ты потерялся?'
 

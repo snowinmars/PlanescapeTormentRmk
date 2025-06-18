@@ -536,9 +536,9 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DVAXIS.DLG
-# Starts:    dvaxis_s0 dvaxis_s57 dvaxis_kill # orphan: dvaxis_s69
+# Original:  DLG/DVAXIS.DLG  #  orphan: dvaxis_s69
 # ###
+
 
 label start_dvaxis_talk:
     call dvaxis_init
@@ -564,7 +564,7 @@ label dvaxis_dispose:
 
 
 # s0 # say453
-label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // from: # False()
+label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)
     teller 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер 821, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
@@ -590,7 +590,7 @@ label dvaxis_s0:  # from - # IF ~  Global("Vaxis","GLOBAL",0)~ THEN BEGIN 0 // f
 
 
 # s1 # say460
-label dvaxis_s1:  # from 0.3
+label dvaxis_s1:  # from 0.3 # IF ~  False()
     teller 'Довольно странно, но твоя способность не работает с этим трупом.'
 
     menu:
@@ -1821,7 +1821,7 @@ label dvaxis_s55:  # from 43.10
 
 
 # s56 # say4582
-label dvaxis_s56:  # from 55.0 # GlobalGT("Vaxis","GLOBAL",0)
+label dvaxis_s56:  # from 55.0
     $ x = _get_vaxis_name(gsm)
     x 'Фтвааный. Не твуфявый, не анавфифт. Гуава двугие…'
     teller 'Пожимает плечами.'
@@ -1837,7 +1837,7 @@ label dvaxis_s56:  # from 55.0 # GlobalGT("Vaxis","GLOBAL",0)
 
 
 # s57 # say4585
-label dvaxis_s57:  # from -
+label dvaxis_s57:  # from - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
     teller 'Ты видишь фальшивого зомби. Ты удивлен его маскировке… его дыхание едва заметно, ты практически не можешь уловить его.'
 
     menu:

@@ -59,7 +59,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZM1094.DLG
-# Starts:    dzm1094_s0 dzm1094_s26 dzm1094_s27
 # ###
 
 
@@ -87,7 +86,7 @@ label dzm1094_dispose:
 
 
 # s0 # say6562
-label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)
     teller 'У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.'
     teller 'Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
 
@@ -577,7 +576,7 @@ label dzm1094_s24:  # from 19.0
 
 
 # s25 # say9283
-label dzm1094_s25:  # from 14.1 22.1 # GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
+label dzm1094_s25:  # from 14.1 22.1
     asonje 'Меня зовут Асонж.'
     $ _set_asonje_name(gsm)
 
@@ -591,7 +590,7 @@ label dzm1094_s25:  # from 14.1 22.1 # GlobalGT("Asonje","GLOBAL",0) GlobalLT("A
 
 
 # s26 # say20061
-label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
+label dzm1094_s26:  # from - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
     $ x = get_know_asonje_name(gsm)
     x 'Снова вернулся, а?'
     teller 'Он широко улыбается.'
@@ -606,7 +605,7 @@ label dzm1094_s26:  # from - # Global("Asonje","GLOBAL",3)
 
 
 # s27 # say20062
-label dzm1094_s27:  # from -
+label dzm1094_s27:  # from - # Global("Asonje","GLOBAL",3)
     $ x = get_know_asonje_name(gsm)
     x 'А, это ты… снова. Он хмурится, глядя в сторону.'
     teller 'Он хмурится, глядя в сторону.'

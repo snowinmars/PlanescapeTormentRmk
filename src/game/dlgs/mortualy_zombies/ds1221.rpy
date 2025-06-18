@@ -176,7 +176,7 @@ label ds1221_dispose:
 
 
 # s0 # say35306
-label ds1221_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // from: Manually checked EXTERN ~DMORTE~ : 376 Manually checked EXTERN ~DMORTE~ : 372 Manually checked EXTERN ~DMORTE~ : 370
+label ds1221_s0:  # from - # IF ~  True() // from: Manually checked EXTERN ~DMORTE~ : 376 Manually checked EXTERN ~DMORTE~ : 372 Manually checked EXTERN ~DMORTE~ : 370
     teller 'Этот оживленный скелет ужасно воняет, как будто бы его совсем недавно ободрали и препарировали.'
     teller 'Его челюсти и основные суставы крепко связаны кожаными ремешками, поверх тела надет грубый комбинезон. На его лбу вырезан номер 1221.'
 
@@ -364,7 +364,7 @@ label ds1221_s6:  # from 0.9 0.12 3.3 3.6
 
 
 # s7 # say35382
-label ds1221_s7:  # from - # False()
+label ds1221_s7:  # from - # IF ~  False()
     teller 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump ds1221_dispose

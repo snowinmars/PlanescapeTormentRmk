@@ -59,7 +59,7 @@ label dzm1201_dispose:
 
 
 # s0 # say34953
-label dzm1201_s0:  # from - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)~ THEN BEGIN 0 // from:
+label dzm1201_s0:  # from - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
     teller 'На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.'
     teller 'Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.'
 
@@ -127,7 +127,7 @@ label dzm1201_s3:  # from 0.1 5.0 5.1 5.2
 
 
 # s4 # say45126
-label dzm1201_s4:  # from 0.2 5.3 # Global("1201_Note_Retrieved","GLOBAL",1)
+label dzm1201_s4:  # from 0.2 5.3
     teller 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
@@ -143,7 +143,7 @@ label dzm1201_s4:  # from 0.2 5.3 # Global("1201_Note_Retrieved","GLOBAL",1)
 
 
 # s5 # say45128
-label dzm1201_s5:  # from 2.0
+label dzm1201_s5:  # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
     teller 'На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти, создавая впечатление, что он плачет.'
     teller 'Его челюсть распахнута, из уголка рта течет струйка гноя.'
 

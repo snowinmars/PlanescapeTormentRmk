@@ -54,7 +54,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF916.DLG
-# Starts:    dzf916_s0
 # ###
 
 

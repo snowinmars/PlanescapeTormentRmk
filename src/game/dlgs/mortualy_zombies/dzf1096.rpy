@@ -59,7 +59,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DZF1096.DLG
-# Starts:    dzf1096_s0 dzf1096_kill
 # ###
 
 

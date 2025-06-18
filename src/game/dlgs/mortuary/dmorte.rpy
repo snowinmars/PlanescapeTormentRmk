@@ -153,7 +153,6 @@ init 10 python:
 
 # ###
 # Original:  DLG/DMORTE.DLG
-# Starts:    dmorte_s330
 # ###
 
 

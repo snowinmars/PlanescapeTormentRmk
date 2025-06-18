@@ -178,7 +178,7 @@ label ds863_dispose:
 
 
 # s0 # say35537
-label ds863_s0:  # from 10.0 # IF ~  !HasItem("DRemind","S863")~ THEN BEGIN 0 // from: 10.0 Manually checked EXTERN ~DMORTE~ : 400 Manually checked EXTERN ~DMORTE~ : 396 Manually checked EXTERN ~DMORTE~ : 394
+label ds863_s0:  # from 10.0 # IF ~  !HasItem("DRemind","S863") Manually checked EXTERN ~DMORTE~ : 400 Manually checked EXTERN ~DMORTE~ : 396 Manually checked EXTERN ~DMORTE~ : 394
     teller 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов.'
     teller 'Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек.'
     teller 'На лбу высечен номер 863… но сзади череп имеет открытую пустую полость.'
@@ -357,7 +357,7 @@ label ds863_s5:  # from 0.8 0.11 3.2 3.5
 
 
 # s6 # say35587
-label ds863_s6:  # from 0.9 0.12 3.3 3.6 # False()
+label ds863_s6:  # from 0.9 0.12 3.3 3.6
     teller 'С помощью ломика ты вырываешь скобы из суставов. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
 
     menu:
@@ -368,13 +368,14 @@ label ds863_s6:  # from 0.9 0.12 3.3 3.6 # False()
 
 
 # s7 # say35613
-label ds863_s7:  # from - # HasItem("DRemind","S863")
+label ds863_s7:  # from - # IF ~  False()
     teller 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump ds863_dispose
 
+
 # s8 # say64262
-label ds863_s8:  # from -
+label ds863_s8:  # from - # IF ~  HasItem("DRemind","S863")
     teller 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов.'
     teller 'Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек.'
     teller 'На лбу высечен номер 863… но сзади череп имеет открытую пустую полость.'

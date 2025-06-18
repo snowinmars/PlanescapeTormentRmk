@@ -176,7 +176,7 @@ label ds748_dispose:
 
 
 # s0 # say35383
-label ds748_s0:  # from - # IF ~  True()~ THEN BEGIN 0 // Manually checked EXTERN ~DMORTE~ : 384 Manually checked EXTERN ~DMORTE~ : 380 Manually checked EXTERN ~DMORTE~ : 378
+label ds748_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 384 Manually checked EXTERN ~DMORTE~ : 380 Manually checked EXTERN ~DMORTE~ : 378
     teller 'Этот скелет — 748, судя по номеру, выбитому над бровью, — выделяется только тем, что некоторые из его зубов вставные, и сделаны из красновато-коричневого камня.'
     teller 'Совершенно очевидно, что они не представляют никакой ценности, иначе их бы удалили те, кто за ним смотрит.'
 
