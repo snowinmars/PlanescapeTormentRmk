@@ -129,6 +129,11 @@ const transformPartyGold = transformByRegex(
     amount => `return gsm.get_gold() > ${amount}`
 );
 
+const transformGiveGoldForce = transformByRegex(
+    /GiveGoldForce\((.*)\)/g,
+    amount => `gsm.inc_gold(${amount})`
+);
+
 const transformNpcExp: StringTransformer = (body) =>
     body.replace(/GiveExperience\((.*),(.*)\)/g,
         (_, character, amountStr) => {
@@ -166,7 +171,11 @@ const transformVisitedLocation: StringTransformer = (body) =>
 
 const transformVisitedInternalLocation: StringTransformer = (body) =>
     // Global("Current_Area","GLOBAL",202)
-    body.replace(/(!?)Global\("(.*?)","(.*)",(\d*)\)/g,
+    body.replace(/SetGlobal\("(.*?)","(.*)",(\d*)\)/g,
+        (_, prop, env, value) => {
+            return `\n        glm.set_location('${padLocationIdLeft(value)}')`
+        }
+    ).replace(/(!?)Global\("(.*?)","(.*)",(\d*)\)/g,
         (_, notOperator, prop, env, value) => {
             const isVisited = !notOperator;
             return `return${isVisited ? ' ' : ' not '}glm.is_visited_internal_location('${padLocationIdLeft(value)}')`
@@ -183,6 +192,7 @@ const transformers: StringTransformer[] = [
     transformForceAttack,
     transformTakeGold,
     transformDestroyGold,
+    transformGiveGoldForce,
     transformPartyExp,
     transformPartyGold,
     transformNpcExp,
@@ -193,8 +203,9 @@ const transformers: StringTransformer[] = [
     transformVisitedInternalLocation,
 ];
 
-export const transformScript = (body: string): string => {
+export const transformScript = (body: string, targetNpc: string): string => {
     let transformedBody = body;
+    transformedBody = transformedBody.replaceAll('Kill(Myself)', `gsm.set_dead_${targetNpc}(True)`);
 
     // Apply well-known replacements
     for (const [pattern, replacement] of wellKnownReplacements) {

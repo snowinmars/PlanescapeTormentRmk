@@ -15,6 +15,10 @@ const setting = (from: string, to: string, env = 'GLOBAL', meetAndDead = false):
                 name: x,
                 type: "boolean",
             };
+            if (meetAndDead) knownSettingsName[`talked_to_${to}_times()`] = {
+                name: `talked_to_${to}_times()`,
+                type: 'integer',
+            };
             return [
                 // May I be wrong? I mart.
                 [`SetGlobal("${from}","${env}",0)`, `gsm.set_${x}(False)`],
@@ -416,6 +420,13 @@ export const wellKnownReplacements: string[][] = [
     ...playerItemSetting('doornote', 'mortuary_doornote'),
     ...playerItemSetting('drequest', 'dustman_request'),
     ...playerItemSetting('tasklist', 'mortuary_task_list'),
+    ...playerItemSetting('Spike', 'spike'),
+    ...playerItemSetting('Strap', 'strap'),
+    ...playerItemSetting('GSKnife', 'gs_knife'),
+    ...playerItemSetting('Rags', 'rags'),
+    ...playerItemSetting('Clotchrm', 'clotchrm'),
+    ...playerItemSetting('Strap', 'strap'),
+    ...playerItemSetting('DRemind', 'dremind'),
     ['ShowFirstTimeHelp()', ''],
     ['SetGlobal("0202_Dhall_Face_Player","AR0202",1)', 'gsm.set_meet_dhall(True)'],
     ['ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'gsm.set_in_party_morte(True)'],

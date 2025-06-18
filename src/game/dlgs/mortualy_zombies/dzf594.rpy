@@ -118,7 +118,7 @@ label dzf594_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 334 as dmorte_s3
 
 
 # s1 # say35020
-label dzf594_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 334
+label dzf594_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 334 as dmorte_s330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -155,7 +155,7 @@ label dzf594_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 334
 
 
 # s2 # say35039
-label dzf594_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 334
+label dzf594_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 334 as dmorte_s330
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:

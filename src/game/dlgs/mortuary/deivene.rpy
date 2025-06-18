@@ -369,7 +369,7 @@ label deivene_s12:  # from 11.0
 
 
 # s13 # say3451
-label deivene_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 60
+label deivene_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 60
     teller 'Эи-Вейн начинает зашивать твои шрамы; ощущения при этом на удивление безболезненны.  Закончив, она обнюхивает тебя, хмурится, затем окунает пальцы в бальзамирующую жидкость.'
     teller 'В течении нескольких минут она наносит жидкость на твое тело… довольно странно, но ты чувствуешь себя *лучше*.'
 
@@ -379,7 +379,7 @@ label deivene_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 60
             jump deivene_s14
         'Позволить ей работать.' if _r3453_condition(gsm):
             # r32 # reply3453
-            jump show_graphics_menu
+            jump dmorte_s60
 
 
 # s14 # say3454

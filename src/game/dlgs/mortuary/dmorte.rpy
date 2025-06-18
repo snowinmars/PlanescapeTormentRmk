@@ -1,4 +1,16 @@
 ﻿init python:
+    def _r3871_action(gsm):
+        gsm.set_warning(1)
+    def _r3874_action(gsm):
+        gsm.set_warning(2)
+    def _r3877_action(gsm):
+        gsm.set_warning(2)
+    def _r4339_action(gsm):
+        gsm.set_warning(1)
+    def _r4342_action(gsm):
+        gsm.set_warning(2)
+    def _r4345_action(gsm):
+        gsm.set_warning(2)
     def _r34991_action(gsm):
         gsm.set_morte_quip(True)
     def _r35001_action(gsm):
@@ -28,6 +40,10 @@
         gsm.dec_once_law(3)
     def _r4699_action(gsm):
         gsm.inc_once_law(3)
+    def _r35396_action(gsm):
+        gsm.dec_once_law()
+    def _r35435_action(gsm):
+        gsm.set_morte_skel_mort_quip(True)
     def _r64535_action(gsm):      #  FadeToColor([20.0],0) Wait(1)
         gsm.set_looks_like("zombie")# Wait(2) FadeFromColor([20.0],0)
         gsm.inc_exp_custom('party', 500)
@@ -35,6 +51,100 @@
         gsm.set_looks_like("zombie") #Wait(2) FadeFromColor([20.0],0)
     def _r3474_action(gsm):
         gsm.update_journal('38205')
+    def _r6658_action(gsm):
+        gsm.dec_good()
+    def _r6659_action(gsm):
+        gsm.inc_good()
+    def _r35319_action(gsm):
+        gsm.dec_once_law()
+    def _r35342_action(gsm):
+        gsm.dec_good()
+    def _r35360_action(gsm):
+        gsm.inc_good()
+    def _r35473_action(gsm):
+        gsm.dec_once_law()
+    def _r35496_action(gsm):
+        gsm.dec_good()
+    def _r35514_action(gsm):
+        gsm.inc_good()
+    def _r6664_condition(gsm):
+        return gsm.get_42_secret()
+    def _r35512_action(gsm):
+        gsm.set_morte_skel_mort_quip(True)
+    def _r35550_action(gsm):
+        gsm.dec_once_law()
+    def _r35573_action(gsm):
+        gsm.dec_good()
+    def _r35591_action(gsm):
+        gsm.inc_good()
+    def _r35589_action(gsm):
+        gsm.set_morte_skel_mort_quip(True)
+    def _r35358_action(gsm):
+        gsm.set_morte_skel_mort_quip(True)
+    def _r35419_action(gsm):
+        gsm.dec_good()
+    def _r35437_action(gsm):
+        gsm.inc_good()
+
+
+init python:
+    def _r6665_condition(gsm):
+        return gsm.check_char_prop_gt('protagonist',12,'wis') \
+                and not gsm.get_42_secret()
+    def _r35344_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_lt('protagonist',13,'str')
+    def _r35352_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_gt('protagonist',12,'str')
+    def _r35355_condition(gsm):
+        return gsm.get_has_prybar()
+    def _r35358_condition(gsm):
+        return not gsm.get_morte_skel_mort_quip()
+    def _r35359_condition(gsm):
+        return gsm.get_morte_skel_mort_quip()
+    def _r35421_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_lt('protagonist',13,'str')
+    def _r35429_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_gt('protagonist',12,'str')
+    def _r35432_condition(gsm):
+        return gsm.get_has_prybar()
+    def _r35435_condition(gsm):
+        return not gsm.get_morte_skel_mort_quip()
+    def _r35436_condition(gsm):
+        return gsm.get_morte_skel_mort_quip()
+    def _r35498_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_lt('protagonist',13,'str')
+    def _r35506_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_gt('protagonist',12,'str')
+    def _r35509_condition(gsm):
+        return gsm.get_has_prybar()
+    def _r35512_condition(gsm):
+        return not gsm.get_morte_skel_mort_quip()
+    def _r35513_condition(gsm):
+        return gsm.get_morte_skel_mort_quip()
+    def _r35575_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_lt('protagonist',13,'str')
+    def _r35583_condition(gsm):
+        return not gsm.get_has_prybar() \
+                and gsm.check_char_prop_gt('protagonist',12,'str')
+    def _r35586_condition(gsm):
+        return gsm.get_has_prybar()
+    def _r35589_condition(gsm):
+        return not gsm.get_morte_skel_mort_quip()
+    def _r35590_condition(gsm):
+        return gsm.get_morte_skel_mort_quip()
+    def _r4686_condition(gsm):
+        return gsm.check_char_prop_gt('protagonist',13,'int')
+    def _r64535_condition(gsm):
+        return not gsm.get_vaxis_global_xp()
+    def _r64534_condition(gsm):
+        return gsm.get_vaxis_global_xp()
 
 
 init 10 python:
@@ -53,6 +163,477 @@ label dmorte_s330_init:
 label dmorte_s330_dispose:
     hide morte_img
     jump show_graphics_menu
+
+
+# ### starts extern 61
+# ##
+# #
+# s61 # say3870
+label dmorte_s61:  # from -
+    morte 'Эй! Эй! Что ты делаешь?'
+
+    menu:
+        'Я *хотел* поговорить с этим парнем. Проблемы?':
+            # r178 # reply3871
+            $ _r3871_action(gsm)
+            jump dmorte_s62
+        'Ничего. Идем.':
+            # r179 # reply3872
+            jump show_graphics_menu
+
+
+# s62 # say3873
+label dmorte_s62:  # from 61.0
+    morte 'Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться.'
+    morte 'Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.'
+
+    menu:
+        'Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.':
+            # r180 # reply3874
+            $ _r3874_action(gsm)
+            jump dmorte_s64
+        'Согласен. Идем.':
+            # r181 # reply3875
+            jump show_graphics_menu
+
+
+# s63 # say3876
+label dmorte_s63:  # from -
+    morte 'Эй! Ты оглох, что ли? Ты что творишь?'
+
+    menu:
+        'Слушай, я хочу поговорить с этим парнем. Проблемы?':
+            # r182 # reply3877
+            $ _r3877_action(gsm)
+            jump dmorte_s64
+        'Ничего. Идем.':
+            # r183 # reply3878
+            jump show_graphics_menu
+
+
+# s64 # say3879
+label dmorte_s64:  # from 62.0 63.0 # Manually checked EXTERN ~DDUST~ : 3
+    morte 'Тогда *не слушай* меня больше — тебя похоронят.'
+
+    menu:
+        'Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.':
+            # r184 # reply3880
+            jump ddust_s3
+        'А, ты прав. Забудь об этом. Идем.':
+            # r185 # reply3881
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 61
+
+
+# ### starts extern 81
+# ##
+# #
+# s81 # say4338
+label dmorte_s81:  # from -
+    morte 'Эй! Эй! Что ты делаешь?'
+
+    menu:
+        'Я *хотел* поговорить с этой дамочкой. Проблемы?':
+            # r227 # reply4339
+            $ _r4339_action(gsm)
+            jump dmorte_s82
+        'Ничего. Идем.':
+            # r228 # reply4340
+            jump show_graphics_menu
+
+
+# s82 # say4341
+label dmorte_s82:  # from 81.0
+    morte 'Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.'
+
+    menu:
+        'Спасибо за совет, но *все еще* хочу поговорить с этой дамочкой.':
+            # r229 # reply4342
+            $ _r4342_action(gsm)
+            jump dmorte_s84
+        'Согласен. Идем.':
+            # r230 # reply4343
+            jump show_graphics_menu
+
+
+# s83 # say4344
+label dmorte_s83:  # from -
+    morte 'Эй! Ты оглох, что ли? Ты что творишь?'
+
+    menu:
+        'Слушай, я хочу поговорить с этой дамочкой. Проблемы?':
+            # r231 # reply4345
+            $ _r4345_action(gsm)
+            jump dmorte_s84
+        'Ничего. Идем.':
+            # r232 # reply4346
+            jump show_graphics_menu
+
+
+# s84 # say4347
+label dmorte_s84:  # from 82.0 83.0 # Manually checked EXTERN ~DDUSTFEM~ : 3
+    morte 'Тогда *не слушай* меня больше — тебя похоронят.'
+
+    menu:
+        'Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.':
+            # r233 # reply4348
+            jump ddustfem_s3
+        'А, ты прав. Забудь об этом. Идем.':
+            # r234 # reply4349
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 81
+
+
+# ### starts extern 110
+# ##
+# #
+# s110 # say6609
+label dmorte_s110:  # from - # Manually checked EXTERN ~DS42~ : 1
+    morte 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями.'
+    morte 'Знаешь, с такими приятелями некромантия чудес не творит.'
+
+    menu:
+        'И что?':
+            # r284 # reply6658
+            $ _r6658_action(gsm)
+            jump ds42_s1
+        'О… Я не хотел ему навредить.':
+            # r285 # reply6659
+            $ _r6659_action(gsm)
+            jump ds42_s1
+        'Ну, тогда ладно. Может, в другой раз.':
+            # r286 # reply6660
+            jump ds42_s1
+# #
+# ##
+# ### ends extern 110
+
+
+# ### starts extern 111
+# ##
+# #
+# s111 # say6610
+label dmorte_s111:  # from - # Manually checked EXTERN ~DS42~ : 1
+    morte 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
+
+    menu:
+        'Седобородый?':
+            # r287 # reply6661
+            jump ds42_s1
+        'Не думаю, что он имеет что-то против.':
+            # r288 # reply6662
+            jump ds42_s1
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r289 # reply6663
+            jump ds42_s1
+# #
+# ##
+# ### ends extern 111
+
+
+# ### starts extern 112
+# ##
+# #
+# s112 # say6611
+label dmorte_s112:  # from - # Manually checked EXTERN ~DS42~ : 4 Manually checked EXTERN ~DS42~ : 9 Manually checked EXTERN ~DS42~ : 10
+    morte 'Может, уже хватит? У него руки сейчас отвалятся.'
+
+    menu:
+        'Скрестить свои руки.' if _r6664_condition(gsm):
+            # r290 # reply6664
+            jump ds42_s4
+        'Подстроиться под движения скелета… посмотреть, что получится.' if _r6665_condition(gsm):
+            # r291 # reply6665
+            jump ds42_s9
+        'Э…':
+            # r292 # reply6666
+            jump ds42_s10
+        'Оставить скелета в покое.':
+            # r293 # reply6667
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 112
+
+
+# ### starts extern 370
+# ##
+# #
+# s370 # say35310
+label dmorte_s370:  # from 377.3
+    morte 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
+
+    menu:
+        'Седобородый?':
+            # r757 # reply35311
+            jump dmorte_s371
+        'Не думаю, что он имеет что-то против.':
+            # r758 # reply35326
+            jump dmorte_s372
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r759 # reply35327
+            jump dmorte_s373
+
+
+# s371 # say35312
+label dmorte_s371:  # from 370.0
+    morte 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
+
+    menu:
+        'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
+            # r760 # reply35313
+            jump dmorte_s372
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r761 # reply35325
+            jump dmorte_s373
+
+
+# s372 # say35314
+label dmorte_s372:  # from 370.1 371.0
+    teller 'Морт изучает скелет, но затем качает головой.'
+    morte 'Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
+
+    menu:
+        'А ты, значит, нет?':
+            # r762 # reply35315
+            jump dmorte_s373
+        'Ладно. Идем.':
+            # r763 # reply35324
+            jump show_graphics_menu
+
+
+# s373 # say35316
+label dmorte_s373:  # from 370.2 371.1 372.0
+    morte 'Ох, да ты просто кладезь хохм.'
+    teller 'Морт свирепо смотрит на тебя.'
+    morte 'Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
+
+    menu:
+        'Да? Зато у *меня* все при себе.':
+            # r764 # reply35317
+            jump dmorte_s374
+        'Идем.':
+            # r765 # reply35323
+            jump show_graphics_menu
+
+
+# s374 # say35318
+label dmorte_s374:  # from 373.0
+    morte 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
+
+    menu:
+        'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
+            # r766 # reply35319
+            $ _r35319_action(gsm)
+            jump dmorte_s375
+        'Идем.':
+            # r767 # reply35322
+            jump show_graphics_menu
+
+
+# s375 # say35320
+label dmorte_s375:  # from 374.0
+    morte 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений.'
+    teller 'Морт снова фыркает.'
+    morte 'Надо было оставить тебя там гнить… подольше, то есть.'
+
+    menu:
+        'Очень приятно это слышать. Идем.':
+            # r768 # reply35321
+            jump show_graphics_menu
+
+
+# s376 # say35341
+label dmorte_s376:  # from -
+    morte 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями.'
+    morte 'Знаешь, с такими приятелями некромантия чудес не творит.'
+
+    menu:
+        'И что?':
+            # r769 # reply35342
+            $ _r35342_action(gsm)
+            jump dmorte_s377
+        'О… Я не хотел ему навредить.':
+            # r770 # reply35360
+            $ _r35360_action(gsm)
+            jump dmorte_s377
+        'Ну, тогда ладно. Может, в другой раз.':
+            # r771 # reply35361
+            jump dmorte_s377
+
+
+# s377 # say35343
+label dmorte_s377:  # from 376.0 376.1 376.2 # Manually checked EXTERN ~DS1221~ : 4 Manually checked EXTERN ~DS1221~ : 5 Manually checked EXTERN ~DS1221~ : 6
+    morte 'Да нет, ничего.'
+    teller 'Морт делает странный жест. Тебе это кажется похожим на пожимание плечами.'
+    morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
+
+    menu:
+        'Попробовать вытащить скобы из суставов скелета.' if _r35344_condition(gsm):
+            # r772 # reply35344
+            jump ds1221_s4
+        'Попробовать вытащить скобы из суставов скелета.' if _r35352_condition(gsm):
+            # r773 # reply35352
+            jump ds1221_s5
+        'Попробовать вытащить скобы из суставов скелета.' if _r35355_condition(gsm):
+            # r774 # reply35355
+            jump ds1221_s6
+        'Неважно, может быть, в другой раз.' if _r35358_condition(gsm):
+            # r775 # reply35358
+            $ _r35358_action(gsm)
+            jump dmorte_s370
+        'Неважно, может быть, в другой раз.' if _r35359_condition(gsm):
+            # r776 # reply35359
+            jump show_graphics_menu
+
+
+# s378 # say35387
+label dmorte_s378:  # from 385.3
+    morte 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
+
+    menu:
+        'Седобородый?':
+            # r777 # reply35388
+            jump dmorte_s379
+        'Не думаю, что он имеет что-то против.':
+            # r778 # reply35403
+            jump dmorte_s380
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r779 # reply35404
+            jump dmorte_s381
+
+
+# s379 # say35389
+label dmorte_s379:  # from 378.0
+    morte 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
+
+    menu:
+        'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
+            # r780 # reply35390
+            jump dmorte_s380
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r781 # reply35402
+            jump dmorte_s381
+
+
+# s380 # say35391
+label dmorte_s380:  # from 378.1 379.0
+    teller 'Морт изучает скелет, но затем качает головой.'
+    morte 'Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
+
+    menu:
+        'А ты, значит, нет?':
+            # r782 # reply35392
+            jump dmorte_s381
+        'Ладно. Идем.':
+            # r783 # reply35401
+            jump show_graphics_menu
+
+
+# s381 # say35393
+label dmorte_s381:  # from 378.2 379.1 380.0
+    morte 'Ох, да ты просто кладезь хохм.'
+    teller 'Морт свирепо смотрит на тебя.'
+    morte 'Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
+
+    menu:
+        'Да? Зато у *меня* все при себе.':
+            # r784 # reply35394
+            jump dmorte_s382
+        'Идем.':
+            # r785 # reply35400
+            jump show_graphics_menu
+
+
+# s382 # say35395
+label dmorte_s382:  # from 381.0
+    teller 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
+
+    menu:
+        'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
+            # r786 # reply35396
+            $ _r35396_action(gsm)
+            jump dmorte_s383
+        'Идем.':
+            # r787 # reply35399
+            jump show_graphics_menu
+
+
+# s383 # say35397
+label dmorte_s383:  # from 382.0
+    morte 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений.'
+    teller 'Морт снова фыркает.'
+    morte 'Надо было оставить тебя там гнить… подольше, то есть.'
+
+    menu:
+        'Очень приятно это слышать. Идем.':
+            # r788 # reply35398
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 380
+
+
+# ### starts extern 384
+# ##
+# #
+# s384 # say35418
+label dmorte_s384:  # from -
+    morte 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями.'
+    morte 'Знаешь, с такими приятелями некромантия чудес не творит.'
+
+    menu:
+        'И что?':
+            # r789 # reply35419
+            $ _r35419_action(gsm)
+            jump dmorte_s385
+        'О… Я не хотел ему навредить.':
+            # r790 # reply35437
+            $ _r35437_action(gsm)
+            jump dmorte_s385
+        'Ну, тогда ладно. Может, в другой раз.':
+            # r791 # reply35438
+            jump dmorte_s385
+
+# s385 # say35420
+label dmorte_s385:  # from 384.0 384.1 384.2 # Manually checked EXTERN ~DS748~ : 4 Manually checked EXTERN ~DS748~ : 5 Manually checked EXTERN ~DS748~ : 6
+    morte 'Да нет, ничего.'
+    teller 'Морт делает странный жест. Тебе это кажется похожим на пожимание плечами.'
+    morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
+
+    menu:
+        'Попробовать вытащить скобы из суставов скелета.' if _r35421_condition(gsm):
+            # r792 # reply35421
+            jump ds748_s4
+        'Попробовать вытащить скобы из суставов скелета.' if _r35429_condition(gsm):
+            # r793 # reply35429
+            jump ds748_s5
+        'Попробовать вытащить скобы из суставов скелета.' if _r35432_condition(gsm):
+            # r794 # reply35432
+            jump ds748_s6
+        'Неважно, может быть, в другой раз.' if _r35435_condition(gsm):
+            # r795 # reply35435
+            $ _r35435_action(gsm)
+            jump dmorte_s378
+        'Неважно, может быть, в другой раз.' if _r35436_condition(gsm):
+            # r796 # reply35436
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 384
+
+
+# ### starts extern 386
+# ##
+# #
+
+# #
+# ##
+# ### ends extern 386
 
 
 # ### starts extern 330
@@ -96,7 +677,8 @@ label dmorte_s331:  # from 330.0 330.1
 
 # s332 # say34994
 label dmorte_s332:  # from 331.0
-    morte 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до @мускулатуры@, @у меня великолепное тело@ и @я весь в шрамах и круто выгляжу@. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
+    morte 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до «мускулатуры», «у меня великолепное тело» и «я весь в шрамах и круто выгляжу».'
+    morte 'Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
@@ -106,7 +688,9 @@ label dmorte_s332:  # from 331.0
 
 # s333 # say34997
 label dmorte_s333:  # from 331.1 331.2
-    morte 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
+    morte 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы.'
+    morte 'Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой.'
+    morte 'А ты будешь бегать вокруг с воплями «А? Чего здесь творится? Куда пропала моя па-па-память?»'
 
     menu:
         'Как знаешь, Морт. Идем.':
@@ -115,6 +699,274 @@ label dmorte_s333:  # from 331.1 331.2
 # #
 # ##
 # ### ends extern 330
+
+
+# ### starts extern 386
+# ##
+# #
+# s386 # say35464
+label dmorte_s386:  # from 393.3
+    morte 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
+
+    menu:
+        'Седобородый?':
+            # r797 # reply35465
+            jump dmorte_s387
+        'Не думаю, что он имеет что-то против.':
+            # r798 # reply35480
+            jump dmorte_s388
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r799 # reply35481
+            jump dmorte_s389
+
+
+# s387 # say35466
+label dmorte_s387:  # from 386.0
+    morte 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
+
+    menu:
+        'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
+            # r800 # reply35467
+            jump dmorte_s388
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r801 # reply35479
+            jump dmorte_s389
+
+
+# s388 # say35468
+label dmorte_s388:  # from 386.1 387.0
+    teller 'Морт изучает скелет, но затем качает головой.'
+    morte 'Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
+
+    menu:
+        'А ты, значит, нет?':
+            # r802 # reply35469
+            jump dmorte_s389
+        'Ладно. Идем.':
+            # r803 # reply35478
+            jump show_graphics_menu
+
+
+# s389 # say35470
+label dmorte_s389:  # from 386.2 387.1 388.0
+    morte 'Ох, да ты просто кладезь хохм.'
+    teller 'Морт свирепо смотрит на тебя.'
+    morte 'Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
+
+    menu:
+        'Да? Зато у *меня* все при себе.':
+            # r804 # reply35471
+            jump dmorte_s390
+        'Идем.':
+            # r805 # reply35477
+            jump show_graphics_menu
+
+
+# s390 # say35472
+label dmorte_s390:  # from 389.0
+    teller 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
+
+    menu:
+        'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
+            # r806 # reply35473
+            $ _r35473_action(gsm)
+            jump dmorte_s391
+        'Идем.':
+            # r807 # reply35476
+            jump show_graphics_menu
+
+
+# s391 # say35474
+label dmorte_s391:  # from 390.0
+    morte 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений.'
+    teller 'Морт снова фыркает.'
+    morte 'Надо было оставить тебя там гнить… подольше, то есть.'
+
+    menu:
+        'Очень приятно это слышать. Идем.':
+            # r808 # reply35475
+            jump show_graphics_menu
+
+
+# s392 # say35495
+label dmorte_s392:  # from -
+    morte 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями.'
+    morte 'Знаешь, с такими приятелями некромантия чудес не творит.'
+
+    menu:
+        'И что?':
+            # r809 # reply35496
+            $ _r35496_action(gsm)
+            jump dmorte_s393
+        'О… Я не хотел ему навредить.':
+            # r810 # reply35514
+            $ _r35514_action(gsm)
+            jump dmorte_s393
+        'Ну, тогда ладно. Может, в другой раз.':
+            # r811 # reply35515
+            jump dmorte_s393
+
+
+# s393 # say35497
+label dmorte_s393:  # from 392.0 392.1 392.2 # Manually checked EXTERN ~DS996~ : 4 Manually checked EXTERN ~DS996~ : 5 Manually checked EXTERN ~DS996~ : 6
+    morte 'Да нет, ничего.'
+    teller 'Морт делает странный жест. Тебе это кажется похожим на пожимание плечами.'
+    morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
+
+    menu:
+        'Попробовать вытащить скобы из суставов скелета.' if _r35498_condition(gsm):
+            # r812 # reply35498
+            jump ds996_s4
+        'Попробовать вытащить скобы из суставов скелета.' if _r35506_condition(gsm):
+            # r813 # reply35506
+            jump ds996_s5
+        'Попробовать вытащить скобы из суставов скелета.' if _r35509_condition(gsm):
+            # r814 # reply35509
+            jump ds996_s6
+        'Неважно, может быть, в другой раз.' if _r35512_condition(gsm):
+            # r815 # reply35512
+            $ _r35512_action(gsm)
+            jump dmorte_s386
+        'Неважно, может быть, в другой раз.' if _r35513_condition(gsm):
+            # r816 # reply35513
+            jump show_graphics_menu
+
+
+# s394 # say35541
+label dmorte_s394:  # from 401.3
+    morte 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
+
+    menu:
+        'Седобородый?':
+            # r817 # reply35542
+            jump dmorte_s395
+        'Не думаю, что он имеет что-то против.':
+            # r818 # reply35557
+            jump dmorte_s396
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r819 # reply35558
+            jump dmorte_s397
+
+
+# s395 # say35543
+label dmorte_s395:  # from 394.0
+    morte 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
+
+    menu:
+        'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
+            # r820 # reply35544
+            jump dmorte_s396
+        'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
+            # r821 # reply35556
+            jump dmorte_s397
+
+
+# s396 # say35545
+label dmorte_s396:  # from 394.1 395.0
+    teller 'Морт изучает скелет, но затем качает головой.'
+    morte 'Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
+
+    menu:
+        'А ты, значит, нет?':
+            # r822 # reply35546
+            jump dmorte_s397
+        'Ладно. Идем.':
+            # r823 # reply35555
+            jump show_graphics_menu
+
+
+# s397 # say35547
+label dmorte_s397:  # from 394.2 395.1 396.0
+    morte 'Ох, да ты просто кладезь хохм.'
+    teller 'Морт свирепо смотрит на тебя.'
+    morte 'Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
+
+    menu:
+        'Да? Зато у *меня* все при себе.':
+            # r824 # reply35548
+            jump dmorte_s398
+        'Идем.':
+            # r825 # reply35554
+            jump show_graphics_menu
+
+
+# s398 # say35549
+label dmorte_s398:  # from 397.0
+    teller 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
+
+    menu:
+        'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
+            # r826 # reply35550
+            $ _r35550_action(gsm)
+            jump dmorte_s399
+        'Идем.':
+            # r827 # reply35553
+            jump show_graphics_menu
+
+
+# s399 # say35551
+label dmorte_s399:  # from 398.0
+    morte 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений.'
+    teller 'Морт снова фыркает.'
+    morte 'Надо было оставить тебя там гнить… подольше, то есть.'
+
+    menu:
+        'Очень приятно это слышать. Идем.':
+            # r828 # reply35552
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 386
+
+
+# ### starts extern 400
+# ##
+# #
+# s400 # say35572
+label dmorte_s400:  # from -
+    morte 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями.'
+    morte 'Знаешь, с такими приятелями некромантия чудес не творит.'
+
+    menu:
+        'И что?':
+            # r829 # reply35573
+            $ _r35573_action(gsm)
+            jump dmorte_s401
+        'О… Я не хотел ему навредить.':
+            # r830 # reply35591
+            $ _r35591_action(gsm)
+            jump dmorte_s401
+        'Ну, тогда ладно. Может, в другой раз.':
+            # r831 # reply35592
+            jump dmorte_s401
+
+
+# s401 # say35574
+label dmorte_s401:  # from 400.0 400.1 400.2 # Manually checked EXTERN ~DS863~ : 4 Manually checked EXTERN ~DS863~ : 5 Manually checked EXTERN ~DS863~ : 6
+    morte 'Да нет, ничего.'
+    teller 'Морт делает странный жест. Тебе это кажется похожим на пожимание плечами.'
+    morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
+
+    menu:
+        'Попробовать вытащить скобы из суставов скелета.' if _r35575_condition(gsm):
+            # r832 # reply35575
+            jump ds863_s4
+        'Попробовать вытащить скобы из суставов скелета.' if _r35583_condition(gsm):
+            # r833 # reply35583
+            jump ds863_s5
+        'Попробовать вытащить скобы из суставов скелета.' if _r35586_condition(gsm):
+            # r834 # reply35586
+            jump ds863_s6
+        'Неважно, может быть, в другой раз.' if _r35589_condition(gsm):
+            # r835 # reply35589
+            $ _r35589_action(gsm)
+            jump dmorte_s394
+        'Неважно, может быть, в другой раз.' if _r35590_condition(gsm):
+            # r836 # reply35590
+            jump show_graphics_menu
+# #
+# ##
+# ### ends extern 400
 
 
 # ### starts extern 477
@@ -161,7 +1013,7 @@ label dmorte_s479:  # from 478.1 481.0
 
 
 # s480 # say45098
-label dmorte_s480:  # from 479.0 # Check EXTERN ~DZM965~ : 1
+label dmorte_s480:  # from 479.0 # Manually checked EXTERN ~DZM965~ : 1
     morte 'По мне, так все это фигня. Если ты возьмешь с потолка число, любое число, и попытаешься к нему приделать великий смысл, то ты всегда найдешь кучу каких-нибудь совпадений.'
 
     menu:
@@ -177,7 +1029,7 @@ label dmorte_s480:  # from 479.0 # Check EXTERN ~DZM965~ : 1
 
 
 # s481 # say45102
-label dmorte_s481:  # from 478.0 480.0 # Check EXTERN ~DZM965~ : 1
+label dmorte_s481:  # from 478.0 480.0 # Manually checked EXTERN ~DZM965~ : 1
     morte 'Их выписал из книги мертвых либо один из здешних смотрителей, либо какой-то некромант. Скорее всего, это один из смотрителей… в конце концов, это им нужна дешевая рабочая сила.'
 
     menu:
@@ -200,7 +1052,7 @@ label dmorte_s481:  # from 478.0 480.0 # Check EXTERN ~DZM965~ : 1
 # ##
 # #
 # s482 # say45540
-label dmorte_s482:  # from - # Check EXTERN ~DZM985~ : 3
+label dmorte_s482:  # from - # Manually checked EXTERN ~DZM985~ : 3
     morte 'Э… шеф… осторож…'
 
     jump dzm985_s3
@@ -353,7 +1205,7 @@ label dmorte_s90:  # from 89.0 # Manually checked EXTERN ~DVAXIS~ : 71
 # ##
 # #
 # s91 # say4700
-label dmorte_s91:  # from - # Check EXTERN ~DVAXIS~ : 43
+label dmorte_s91:  # from - # Manually checked EXTERN ~DVAXIS~ : 43
     morte 'Он говорит, что этот Фарод продал очень много жмуриков… трупов… тленным. Ну, сборщики занимаются этим — находят тела мертвых и продают их тленным.'
     morte 'Похоже, этот Фарод запродал так много жмуриков, что трухлявые начали подозревать, что он записывает жителей Улья в книгу мертвых раньше положенного срока… ну, ты понял, просто убивает их.'
 
@@ -373,7 +1225,7 @@ label dmorte_s91:  # from - # Check EXTERN ~DVAXIS~ : 43
 # ##
 # #
 # s92 # say4703
-label dmorte_s92:  # from - # Check EXTERN ~DVAXIS~ : 43
+label dmorte_s92:  # from - # Manually checked EXTERN ~DVAXIS~ : 43
     morte 'Он хочет знать, не обокрал ли кто тебя. Наверно, интересуется, что случилось.'
 
     menu:
@@ -397,7 +1249,7 @@ label dmorte_s92:  # from - # Check EXTERN ~DVAXIS~ : 43
 # ##
 # #
 # s94 # say4708
-label dmorte_s94:  # from - # Check EXTERN ~DVAXIS~ : 66
+label dmorte_s94:  # from - # Manually checked EXTERN ~DVAXIS~ : 66
     morte 'Не могу поверить, что ты делаешь это. Ты, что, СОВСЕМ спятил?'
 
     menu:
@@ -418,7 +1270,7 @@ label dmorte_s94:  # from - # Check EXTERN ~DVAXIS~ : 66
 # ##
 # #
 # s95 # say4710
-label dmorte_s95:  # from - # Check EXTERN ~DVAXIS~ : 67
+label dmorte_s95:  # from - # Manually checked EXTERN ~DVAXIS~ : 67
     morte 'А нельзя ли ему зашить рот потуже?'
 
     menu:
@@ -523,7 +1375,7 @@ label dmorte_s58:  # from 57.0
 
 
 # s59 # say3487
-label dmorte_s59:  # from - # Check EXTERN ~DEIVENE~ : 11 as deivene_s11 # Check EXTERN ~DEIVENE~ : 10 as deivene_s10
+label dmorte_s59:  # from - # Manually checked EXTERN ~DEIVENE~ 11 Manually checked EXTERN ~DEIVENE~ 10
     morte 'Похоже, у тебя новая подруга, шеф. Может, вас оставить наедине на часок, или?..'
 
     menu:
@@ -539,7 +1391,7 @@ label dmorte_s59:  # from - # Check EXTERN ~DEIVENE~ : 11 as deivene_s11 # Check
 
 
 # s60 # say3492
-label dmorte_s60:  # from - # Check EXTERN ~DEIVENE~ : 14 as deivene_s14
+label dmorte_s60:  # from - # Manually checked EXTERN ~DEIVENE~ 14
     morte 'Это второй случай в моей жизни, когда я счастлив, что у меня нет носа.'
 
     jump deivene_s14

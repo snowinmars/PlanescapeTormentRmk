@@ -20,10 +20,6 @@ export const parseDialogue = (inputText: string): State[] => {
     while (i < lines.length) {
         const line = lines[i];
 
-        if (!currentState) {
-            beforeStartBuffer += line;
-        }
-
         const stateBeginMatch = line.match(/THEN BEGIN (\d+)\s*\/\/ from:(.*)/);
         if (stateBeginMatch) {
             const stateId = parseInt(stateBeginMatch[1], 10);
@@ -50,6 +46,10 @@ export const parseDialogue = (inputText: string): State[] => {
             continue;
         }
 
+        if (!currentState) {
+            beforeStartBuffer += line;
+        }
+
         if (currentState) {
             const sayMatch = line.match(/SAY #(\d+)\s*\/\*\s*(.*?)\s*\*\//);
             if (sayMatch) {
@@ -65,7 +65,7 @@ export const parseDialogue = (inputText: string): State[] => {
                 const targetLine = externMatch[2].trim();
                 const freeValue = `Check EXTERN ${targetFile} : ${targetLine}`;
                 if (!currentState.free?.includes(freeValue)) {
-                    if (currentState.free) currentState.free += freeValue;
+                    if (currentState.free) currentState.free += ` ${freeValue}`;
                     else currentState.free = freeValue;
                 }
             }
@@ -77,7 +77,7 @@ export const parseDialogue = (inputText: string): State[] => {
                 else currentState.free = value;
             }
 
-            const justAction2Match = line.match(/IF ~ ([^~]*)$/)
+            const justAction2Match = line.match(/IF ~ ([^~]*?)$/)
             if (justAction2Match) {
                 const value = justAction2Match[1].trim();
                 if (currentState.free) currentState.free += ` # ${value}`;
@@ -114,6 +114,7 @@ export const parseDialogue = (inputText: string): State[] => {
 
             if (line === 'END') {
                 i++;
+                currentState = null;
                 continue;
             }
         }
