@@ -1,4 +1,10 @@
 ﻿init python:
+    def _kill_dhall(gsm):
+        gsm.set_dead_dhall(True)
+        gsm.set_has_dhall_feather(True)
+
+
+init python:
     def _r827_action(gsm):
         gsm.set_meet_dhall(True)
     def _r830_action(gsm):
@@ -151,7 +157,7 @@ label start_ddhall_talk_first:
 label start_ddhall_talk:
     call ddhall_init
     jump ddhall_s40
-label start_ddhall_kill_first:  # TODO [snow]: give gsm.set_has_dhall_feather(True)
+label start_ddhall_kill_first:
     call ddhall_init
     jump ddhall_kill_first
 label start_ddhall_kill:
@@ -170,7 +176,7 @@ label ddhall_dispose:
 
 
 # s0 # say822
-label ddhall_s0:  # from - # Check EXTERN ~DMORTE~ : 104
+label ddhall_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 104
     teller 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.'
     teller 'Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
@@ -258,7 +264,7 @@ label ddhall_s4:  # from 3.0 3.1
 
 
 # s5 # say838
-label ddhall_s5:  # from - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN ~DMORTE~ : 102 as dmorte_s102
+label ddhall_s5:  # from - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN ~DMORTE~ : 102
     teller 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
     teller 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
     teller 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
@@ -1271,3 +1277,46 @@ label ddhall_s53:  # from 34.0
         'Прощай, Дхолл.':
             # r201 # reply5745
             jump ddhall_s11
+
+
+label ddhall_kill:
+    teller 'Дхолл мельком смотрит на тебя.'
+    dhall 'Итак. Ты вернулся…'
+    teller 'Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает.'
+    dhall '…приветствую тебя снова, Неугомонный.'
+
+    menu:
+        '(Уйти.)':
+            jump ddhall_dispose
+        '(Убить зомби).':
+            jump ddhall_killed
+
+
+label ddhall_killed:
+    $ _kill_dhall(gsm)
+    teller 'Дхолл не успевает даже посмотреть на меня: он слишком стар и слишком слаб.'
+    teller 'И ему мешает кашель.'
+    teller 'Я скорее намечаю удары, нежели наношу их.'
+    teller 'Перо, которое он до этого держал в руке, падает в тень книги. Мне оно нужно больше, чем ему.'
+    jump ddhall_dispose
+
+
+label ddhall_kill_first:
+    teller 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
+    teller 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
+    teller 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
+
+    menu:
+        '(Уйти.)':
+            jump ddhall_dispose
+        '(Убить зомби).':
+            jump ddhall_killed_first
+
+
+label ddhall_killed_first:
+    $ _kill_dhall(gsm)
+    teller 'Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.'
+    teller 'И ему мешает кашель.'
+    teller 'Я скорее намечаю удары, нежели наношу их.'
+    teller 'Перо, которое он до этого держал в руке, падает в тень книги. Мне оно нужно больше, чем ему.'
+    jump ddhall_dispose

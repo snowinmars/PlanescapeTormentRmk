@@ -89,11 +89,13 @@ ${logicConditionsBuilder}`
 
     const targetNpc = area.startsWith('D') ? area.slice(1) : area;
     return [
-        toSingleBody(transformScript(logicActionsBuilder.trim(), targetNpc)),
-        toSingleReturn(transformScript(logicConditionsBuilder.trim(), targetNpc)),
-        result.trim(),
-    ].join('\n\n\n').trim();
+        rightTrimLines(toSingleBody(transformScript(logicActionsBuilder.trim(), targetNpc))),
+        rightTrimLines(toSingleReturn(transformScript(logicConditionsBuilder.trim(), targetNpc))),
+        rightTrimLines(result.trim()),
+    ].join('\n\n\n').trim() + '\n';
 }
+
+const rightTrimLines = (input: string): string => input.split('\n').map(line => line.replace(/\s+$/, '')).join('\n');
 
 const replaceNestedQuotes = (text: string): string => {
     if ((text.match(/'/g) || []).length < 2) return text;

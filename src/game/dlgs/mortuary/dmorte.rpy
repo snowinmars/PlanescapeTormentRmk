@@ -638,7 +638,7 @@ label dmorte_s385:  # from 384.0 384.1 384.2 # Manually checked EXTERN ~DS748~ :
 # ### starts extern 330
 # ##
 # #
-# s330 # say34990 # This state was a copypasted state in the original Ps:T as dmorte_s338 dmorte_s358
+# s330 # say34990 # This state was a copypasted state in the original Ps:T as dmorte_s338 dmorte_s358 etc
 label dmorte_s330:  # from -
     call dmorte_s330_init
     morte 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
@@ -1299,13 +1299,13 @@ label dmorte_s102:  # from -
 
 
 # s103 # say5052
-label dmorte_s103:  # from 102.0 # Manually checked EXTERN ~DDHALL~ : 0 as ddhall_s0
+label dmorte_s103:  # from 102.0 # Manually checked EXTERN ~DDHALL~ : 0
     morte 'Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…'
 
     jump ddhall_s0
 
 # s104 # say5053
-label dmorte_s104:  # from - # Manually checked EXTERN ~DDHALL~ : 1 as ddhall_s1
+label dmorte_s104:  # from - # Manually checked EXTERN ~DDHALL~ : 1
     morte 'И мы *тем более* не должны болтать с больными трухляками. Давай, пошли отсюда. Чем быстрее мы свалим отсюда, тем лучш…'
 
     jump ddhall_s1
@@ -1319,7 +1319,7 @@ label dmorte_s104:  # from - # Manually checked EXTERN ~DDHALL~ : 1 as ddhall_s1
 # ##
 # #
 # s55 # say3473
-label dmorte_s55:  # from - # Manually checked EXTERN ~DEIVENE~ : 4 as deivene_s4
+label dmorte_s55:  # from - # Manually checked EXTERN ~DEIVENE~ : 4
     morte 'Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?'
 
     menu:
@@ -1336,7 +1336,7 @@ label dmorte_s55:  # from - # Manually checked EXTERN ~DEIVENE~ : 4 as deivene_s
 
 
 # s56 # say3477
-label dmorte_s56:  # from 55.0 # Manually checked EXTERN ~DEIVENE~ : 4 as deivene_s4
+label dmorte_s56:  # from 55.0 # Manually checked EXTERN ~DEIVENE~ : 4
     morte 'Э… она из тифлингов, шеф. В их жилах течет лихая кровь нечисти. Кто-то из предков спутался с каким-то нечистым духом.'
     morte 'Из-за этого некоторые из них немного тронутые… и обычно выглядят они соответствующе.'
 

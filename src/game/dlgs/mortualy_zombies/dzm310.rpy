@@ -36,9 +36,15 @@ init 10 python:
 # ###
 
 
-label start_dzm310_talk:
+label start_dzm310_talk_first:
     call dzm310_init
     jump dzm310_s0
+label start_dzm310_talk:
+    call dzm310_init
+    jump dzm310_s18
+label start_dzm310_kill_first:
+    call dzm310_init
+    jump dzm310_kill_first
 label start_dzm310_kill:
     call dzm310_init
     jump dzm310_kill
@@ -401,3 +407,39 @@ label dzm310_s18:  # from - # IF ~  Global("Oinosian","GLOBAL",1)
         'Я просто проходил мимо. Прощай.':
             # r59 # reply20104
             jump dzm310_dispose
+
+
+label dzm310_kill_first:
+    teller 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'
+    teller 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm310_dispose
+        '(Убить зомби).':
+            jump dzm310_killed_first
+
+
+label dzm310_killed_first:
+    $ _kill_dzm310(gsm)
+    teller 'Удар за ударом я разбиваю его тело. Я чувствую, что я безвозвратно что-то разрушил.'
+    jump dzm310_dispose
+
+
+label dzm310_kill:
+    teller 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'
+    teller 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
+    if gsm.get_meet_oinosian():
+        teller 'Похоже, этот труп сгорбился под тяжестью страданий духа.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm310_dispose
+        '(Убить зомби).':
+            jump dzm310_killed
+
+
+label dzm310_killed:
+    $ _kill_dzm310(gsm)
+    teller 'Удар за ударом я разбиваю его тело. Я чувствую, что я безвозвратно что-то разрушил.'
+    jump dzm310_dispose

@@ -184,3 +184,19 @@ label dzf916_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 46 as dmorte_s
         'Оставить труп в покое.' if _r24749_condition(gsm):
             # r9 # reply24749
             jump dzf916_dispose
+
+
+label dzf916_kill:
+    teller 'Труп женщины смотрит на тебя пустым взглядом. На ее лбу вырезан номер «916»; ее губы крепко зашиты. От тела исходит легкий запах формальдегида.'
+
+    menu:
+        '(Уйти.)':
+            jump dzf916_dispose
+        '(Убить зомби).':
+            jump dzf916_killed
+
+
+label dzf916_killed:
+    $ _kill_dzf916(gsm)
+    teller 'Я бью в этот пустой взгляд, в запах формальдегида. Последний удар я наношу в губы.'
+    jump dzf916_dispose

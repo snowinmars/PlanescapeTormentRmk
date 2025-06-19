@@ -110,7 +110,7 @@ label dzf114_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 330
             jump dzf114_dispose
 
 # s1 # say34988
-label dzf114_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 330 as dmorte_s330
+label dzf114_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
@@ -181,3 +181,21 @@ label dzf114_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 330
         'Оставить труп в покое.' if _r35016_condition(gsm):
             # r9 # reply35016
             jump dzf114_dispose
+
+
+label dzf114_kill:
+    teller 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер «114», вырезанный у нее на лбу.'
+    teller 'Ее рот зашит, однако нитки начинают рваться, и из ее губ слышится слабый стон.'
+
+    menu:
+        '(Уйти.)':
+            jump dzf114_dispose
+        '(Убить зомби).':
+            jump dzf114_killed
+
+
+label dzf114_killed:
+    $ _kill_dzf114(gsm)
+    teller 'Она смотрит на меня пустыми глазами.'
+    teller 'В них нет ни жизни, ни разума. Труп падает, нитки на губах рвутся. Я не чувствую сожалений.'
+    jump dzf114_dispose

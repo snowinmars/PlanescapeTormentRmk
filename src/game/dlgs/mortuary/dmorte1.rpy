@@ -443,7 +443,7 @@ label dmorte1_s33:  # from 32.0
 
 
 # s34 # say42306
-label dmorte1_s34:  # from - # Manually checked EXTERN ~DZM782~ : 2 as dzm782_s2
+label dmorte1_s34:  # from - # Manually checked EXTERN ~DZM782~ : 2
     morte 'Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.'
 
     jump dzm782_s2
