@@ -63,10 +63,10 @@ label dzm1508_s0:  # from - # IF ~  True()
             jump dzm1508_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46754
-            jump dzm1508_img
+            jump dzm1508_dispose
         'Оставить труп в покое.':
             # r5 # reply46755
-            jump dzm1508_img
+            jump dzm1508_dispose
 
 
 # s1 # say46747
@@ -79,10 +79,10 @@ label dzm1508_s1:  # from 0.0 0.1 0.2
             jump dzm1508_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46754
-            jump dzm1508_img
+            jump dzm1508_dispose
         'Оставить труп в покое.':
             # r6 # reply46748
-            jump dzm1508_img
+            jump dzm1508_dispose
 
 
 # s2 # say46752
@@ -95,7 +95,24 @@ label dzm1508_s2:  # from 0.3
             jump dzm1508_s1
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46754
-            jump dzm1508_img
+            jump dzm1508_dispose
         'Оставить труп в покое.':
             # r7 # reply46753
-            jump dzm1508_img
+            jump dzm1508_dispose
+
+
+label dzm1508_kill:
+    teller 'На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.'
+    teller 'Номер «1508» вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1508_dispose
+        '(Убить зомби).':
+            jump dzm1508_killed
+
+
+label dzm1508_killed:
+    $ _kill_dzm1508(gsm)
+    teller 'Если бы он был воином, он бы жалел, что не может ответить на мои удары. Когда его тело падает на пол, я не чувствую сожалений.'
+    jump dzm1508_dispose

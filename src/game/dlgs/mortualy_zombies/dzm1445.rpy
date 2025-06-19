@@ -63,10 +63,10 @@ label dzm1445_s0:  # from - # IF ~  True()
             jump dzm1445_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46765
-            jump dzm1508_img
+            jump dzm1445_dispose
         'Оставить труп в покое.':
             # r5 # reply46766
-            jump dzm1508_img
+            jump dzm1445_dispose
 
 
 # s1 # say46758
@@ -79,10 +79,10 @@ label dzm1445_s1:  # from 0.0 0.1 0.2
             jump dzm1445_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46765
-            jump dzm1508_img
+            jump dzm1445_dispose
         'Оставить труп в покое.':
             # r6 # reply46759
-            jump dzm1508_img
+            jump dzm1445_dispose
 
 
 # s2 # say46763
@@ -95,7 +95,24 @@ label dzm1445_s2:  # from 0.3
             jump dzm1445_s1
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply46765
-            jump dzm1508_img
+            jump dzm1445_dispose
         'Оставить труп в покое.':
             # r7 # reply46764
-            jump dzm1508_img
+            jump dzm1445_dispose
+
+
+label dzm1445_kill:
+    teller 'Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни.'
+    teller 'На лбу у него вытатуирован номер «1445», а его губы крепко сшиты.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1445_dispose
+        '(Убить зомби).':
+            jump dzm1445_killed
+
+
+label dzm1445_killed:
+    $ _kill_dzm1445(gsm)
+    teller 'Его больная плоть разлетается под моими ударами. Я не чувствую сожалений.'
+    jump dzm1445_dispose

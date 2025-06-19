@@ -71,9 +71,15 @@ label start_dzm1094_talk_good:
 label start_dzm1094_talk_bad:
     call dzm1094_init
     jump dzm1094_s27
-label start_dzm1094_kill:
+label start_dzm1094_kill_first:
     call dzm1094_init
-    jump dzm1094_kill
+    jump dzm1094_kill_first
+label start_dzm1094_kill_good:
+    call dzm1094_init
+    jump dzm1094_kill_good
+label start_dzm1094_kill_bad:
+    call dzm1094_init
+    jump dzm1094_kill_bad
 label dzm1094_init:
     $ glm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm1094(True)
@@ -617,3 +623,56 @@ label dzm1094_s27:  # from - # Global("Asonje","GLOBAL",3)
         'Я просто проходил мимо. Прощай.':
             # r86 # reply20066
             jump dzm1094_dispose
+
+
+label dzm1094_kill_good:
+    $ x = get_know_asonje_name(gsm)
+    x 'Снова вернулся, а?'
+    teller 'Он широко улыбается.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1094_dispose
+        '(Убить зомби).':
+            jump dzm1094_killed_good
+
+
+label dzm1094_killed_good:
+    $ _kill_dzm1094(gsm)
+    teller 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
+    jump dzm1094_dispose
+
+
+label dzm1094_kill_bad:
+    $ x = get_know_asonje_name(gsm)
+    x 'А, это ты… снова. Он хмурится, глядя в сторону.'
+    teller 'Он хмурится, глядя в сторону.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1094_dispose
+        '(Убить зомби).':
+            jump dzm1094_killed_bad
+
+
+label dzm1094_killed_bad:
+    $ _kill_dzm1094(gsm)
+    teller 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
+    jump dzm1094_dispose
+
+
+label dzm1094_kill_first:
+    teller 'У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.'
+    teller 'Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1094_dispose
+        '(Убить зомби).':
+            jump dzm1094_killed_first
+
+
+label dzm1094_killed_first:
+    $ _kill_dzm1094(gsm)
+    teller 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
+    jump dzm1094_dispose

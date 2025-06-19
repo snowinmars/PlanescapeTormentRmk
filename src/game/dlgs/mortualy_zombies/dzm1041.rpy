@@ -76,6 +76,9 @@ label start_dzm1041_talk:
 label start_dzm1041_kill:
     call dzm1041_init
     jump dzm1041_kill
+label start_dzm1041_kill_first:
+    call dzm1041_init
+    jump dzm1041_kill_first
 label dzm1041_init:
     $ glm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm1041(True)
@@ -853,3 +856,39 @@ label dzm1041_s38:  # from 31.1
         'Понятно. Спасибо за разговор. Прощай.':
             # r129 # reply9721
             jump show_graphics_menu
+
+
+label dzm1041_kill:
+    $ x = get_know_bei_name(gsm)
+    x 'Я определенно не ожидал увидеть тебя снова.'
+    teller 'Дух учтиво кланяется, но его лицо остается непроницаемым.'
+    x 'Что тебе нужно от меня?'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1041_dispose
+        '(Убить зомби).':
+            jump dzm1041_killed
+
+
+label dzm1041_killed:
+    $ _kill_dzm1041(gsm)
+    teller 'Его жёсткая кожа лопается от моих ударов. Я чувствую, что я безвозвратно разрушил тело этого духа. Стал ли он свободнее?'
+    jump dzm1041_dispose
+
+
+label dzm1041_kill_first:
+    teller 'У этого поднятого трупа мужчины на лбу вырезан номер «1041». Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно экзотическую внешность.'
+    teller 'Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.'
+
+    menu:
+        '(Уйти.)':
+            jump dzm1041_dispose
+        '(Убить зомби).':
+            jump dzm1041_killed_first
+
+
+label dzm1041_killed_first:
+    $ _kill_dzm1041(gsm)
+    teller 'Его жёсткая кожа лопается от моих ударов. Я чувствую, что я безвозвратно что-то разрушил.'
+    jump dzm1041_dispose

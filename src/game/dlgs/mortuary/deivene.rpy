@@ -1,4 +1,9 @@
 init python:
+    def _kill_deivene(gsm):
+        gsm.set_dead_deivene(True)
+
+
+init python:
     def _r3422_action(gsm):
         gsm.set_meet_eivene(True)
     def _r3424_action(gsm):
@@ -212,7 +217,7 @@ label deivene_s2:  # from 1.0 1.2
 
 
 # s3 # say3420
-label deivene_s3:  # from 1.1 # Manually checked EXTERN ~DMORTE~ : 55 as dmorte_s55
+label deivene_s3:  # from 1.1 # Manually checked EXTERN ~DMORTE~ : 55
     teller 'Женщина не отвечает.'
 
     jump dmorte_s55
@@ -305,7 +310,7 @@ label deivene_s8:  # from 7.1
 
 
 # s9 # say3439
-label deivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59 as dmorte_s59
+label deivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59
     teller 'Спустя несколько минут она заканчивает. Щелкнув когтями, она поворачивается к тебе.'
     teller 'К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.'
 
@@ -473,13 +478,13 @@ label deivene_s18:  # from 14.0 17.1 22.0
 
 
 # s19 # say3472
-label deivene_s19:  # from 1.3 # Manually checked EXTERN ~DMORTE~ : 56 as dmorte_s56
+label deivene_s19:  # from 1.3 # Manually checked EXTERN ~DMORTE~ : 56
     teller 'Женщина не отвечает.'
 
     jump dmorte_s56
 
 # s20 # say3485
-label deivene_s20:  # from 5.2 5.4 # Manually checked EXTERN ~DMORTE~ : 57 as dmorte_s56
+label deivene_s20:  # from 5.2 5.4 # Manually checked EXTERN ~DMORTE~ : 57
     teller 'Она отворачивается… непохоже, чтобы она тебя услышала.'
 
     jump dmorte_s57
@@ -580,3 +585,46 @@ label deivene_s27:  # from 26.0 26.1
         'Уйти.':
             # r59 # reply63483
             jump show_graphics_menu
+
+
+label deivene_kill:
+    teller 'Перед тобой Эи-Вейн. Она все еще потрошит труп своими когтями. Ритм движений когтей что-то тебе напоминает, но ты не можешь вспомнить что.'
+
+    menu:
+        '(Уйти.)':
+            jump deivene_dispose
+        '(Убить зомби).':
+            jump deivene_killed
+
+
+label deivene_killed:
+    $ _kill_deivene(gsm)
+    teller 'Я знаю, что она не услышит, как я подойду. Я знаю, что её пальцы похожи на когти.'
+    teller 'Я проскальзываю за её спиной и ломаю её правую руку, а когда она с криком оборачивается, я ломаю левую.'
+    teller 'Но через несколько ударов она сдаётся и падает на пол.'
+    teller 'От последнего удара тело переваливается на спину. Что-то заставляет меня взглянуть в её глаза.'
+    teller 'Они светятся...'
+    teller '...нежностью?'
+    jump deivene_dispose
+
+
+label deivene_kill_first:
+    teller 'Перед тобой хрупкая девушка с бледным лицом. Из-за впалой кожи на щеках и шее кажется, будто она голодает.'
+    teller 'Судя по всему, она увлечена обследованием тела, лежащим перед ней, тыкая по телу пальцем.'
+
+    menu:
+        '(Уйти.)':
+            jump deivene_dispose
+        '(Убить зомби).':
+            jump deivene_killed_first
+
+
+label deivene_killed_first:
+    $ _kill_deivene(gsm)
+    teller 'Я знаю, что я быстрее. Я прикасаюсь к её плечу - и Эи-Вейн оборачивается в ту сторону, где меня уже нет.'
+    teller 'Девушка всё равно пытается сопротивляться, используя сломанные руки на манер плетей.'
+    teller 'Через несколько ударов она затихает. Я провёл пальцем по порезу, который она мне оставила и пнул дважды мёртвое тело.'
+    teller 'От пинка тело переваливается на спину. Что-то заставляет меня взглянуть в её глаза.'
+    teller 'Они светятся...'
+    teller '...нежностью?'
+    jump deivene_dispose

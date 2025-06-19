@@ -1,35 +1,35 @@
 init python:
-    def _r35384_action(gsm):        
-        gsm.dec_law() 
+    def _r35384_action(gsm):
+        gsm.dec_law()
         glm.set_location('AR0001')
-    def _r35408_action(gsm):        
-        gsm.dec_law() 
+    def _r35408_action(gsm):
+        gsm.dec_law()
         glm.set_location('AR0001')
-    def _r35415_action(gsm):        
+    def _r35415_action(gsm):
         glm.set_location('AR0001')
-    def _r35448_action(gsm):        
+    def _r35448_action(gsm):
         glm.set_location('AR0001')
-    def _r35456_action(gsm):        
+    def _r35456_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35386_action(gsm):        
+    def _r35386_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35412_action(gsm):        
+    def _r35412_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35417_action(gsm):        
+    def _r35417_action(gsm):
         glm.set_location('AR0001')
-    def _r35445_action(gsm):        
+    def _r35445_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35423_action(gsm):        
+    def _r35423_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35426_action(gsm):        
+    def _r35426_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
-    def _r35431_action(gsm):        
-        gsm.set_dead_ds748(True) 
-        gsm.set_has_spike(True) 
+    def _r35431_action(gsm):
+        gsm.set_dead_ds748(True)
+        gsm.set_has_spike(True)
         gsm.set_has_strap(True)
-    def _r35434_action(gsm):        
-        gsm.set_dead_ds748(True) 
-        gsm.set_has_spike(True) 
+    def _r35434_action(gsm):
+        gsm.set_dead_ds748(True)
+        gsm.set_has_spike(True)
         gsm.set_has_strap(True)
 
 
