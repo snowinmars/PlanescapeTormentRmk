@@ -45,7 +45,7 @@ label start_dzm257_kill:
 label dzm257_init:
     $ glm.set_location('mortuary_f2r5')
     $ gsm.set_meet_dzm257(True)
-    scene bg mortuary5
+    scene bg mortuary_f2r5
     show dzm257_img default at center_left_down
     return
 label dzm257_dispose:

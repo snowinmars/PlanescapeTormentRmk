@@ -50,7 +50,7 @@ label start_dzm1201_kill:
 label dzm1201_init:
     $ glm.set_location('mortuary_f2r3')
     $ gsm.set_meet_dzm1201(True)
-    scene bg mortuary3
+    scene bg mortuary_f2r3
     show dzm1201_img default at center_left_down
     return
 label dzm1201_dispose:

@@ -1,7 +1,7 @@
 from engine.menu import (MenuBuilder)
 from menus.morte_menu import (morte_menu)
 
-def build_mortuary6_menu(location_id, gsm):
+def build_mortuary_f2r6_menu(location_id, gsm, glm):
     builders = []
 
     builders.append(morte_menu(gsm, location_id, 1360, 220))
@@ -18,7 +18,8 @@ def build_mortuary6_menu(location_id, gsm):
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('kill') \
         .option(lambda: 'Поговорить c Ваксисом'
-                if gsm.get_meet_vaxis()
+                if gsm.get_know_vaxis_name()
+                else 'Поговорить с фальшивым зомби' if gsm.get_meet_vaxis()
                 else 'Поговорить с трупом') \
         .jump(lambda: 'start_dvaxis_talk'
               if gsm.get_meet_vaxis()
@@ -30,7 +31,7 @@ def build_mortuary6_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(1470, 1000)
         .option(lambda: 'Пройти в юго-восточную комнату'
-                if gsm.is_visited_location('mortuary_f2r7')
+                if glm.is_visited_location('mortuary_f2r7')
                 else "Открыть дверь") \
         .jump('mortuary_walking_7_visit') \
         .style('open')

@@ -60,19 +60,23 @@ init 3 python:
     from engine.settings import (SettingsManager)
     from engine.inventory import (InventoryManager)
     from engine.locations import (LocationBuilder, LocationManager)
+    from engine.character import (CharacterManager, Character)
 
     from menus.all_menus import (build_all_menus)
     from setting.all_settings import (build_all_settings)
     from setting.all_inventory import (build_all_inventory)
-    from locations.all_locations import (build_all_locations)
+    from location.all_locations import (build_all_locations)
+    from characters.all_characters import (build_all_characters)
     # Обычно тупорылые сыны собак пишут в node_modules
     # but for some reason if the 'setting' fodler name is 'settings', it fails to import
+    # also true for location(s)
 
     renpy.store.global_event_manager = EventManager()
     renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
+    renpy.store.global_character_manager = CharacterManager()
 
     devlog = logging.getLogger('log')
 
@@ -88,8 +92,13 @@ init 3 python:
 
     now = int(time.time())
     devlog.info('Building menu...')
-    build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
+    build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager, renpy.store.global_location_manager)
     devlog.info('Done building menu, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building characters...')
+    build_all_characters(renpy.store.global_character_manager)
+    devlog.info('Done building characters, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building locations mapping...')
@@ -127,21 +136,24 @@ label start:
         "dev":
             $ gsm = renpy.store.global_settings_manager
             $ glm = renpy.store.global_location_manager
-            $ glm.set_location('mortuary_f2r5')
+            $ glm.set_location('mortuary_f2r7')
             $ gsm.set_in_party_morte(True)
-            $ gsm.set_has_intro_key(True)
-            $ gsm.set_has_tome_ba(True)
-            $ gsm.set_has_copper_earring_closed(True)
-            $ gsm.set_has_scalpel(True)
-            $ gsm.set_has_needle(True)
-            $ gsm.set_has_1201_note(True)
-            $ gsm.set_has_dzm1664_page(True)
-            $ gsm.set_has_bandages(True)
-            $ gsm.set_has_embalm(True)
+            # $ gsm.set_has_intro_key(True)
+            # $ gsm.set_has_tome_ba(True)
+            # $ gsm.set_has_copper_earring_closed(True)
+            # $ gsm.set_has_scalpel(True)
+            # $ gsm.set_has_needle(True)
+            # $ gsm.set_has_1201_note(True)
+            # $ gsm.set_has_dzm1664_page(True)
+            # $ gsm.set_has_bandages(True)
+            # $ gsm.set_has_embalm(True)
             # $ gsm.set_has_keyem(True)
 
             jump show_graphics_menu
-        "start":
+        "Вступление для технодемки":
+            jump introduction
+        "Новая жизнь":
+            call quick_setup_as_mage
             jump dmorte1_s0
 
 

@@ -64,14 +64,18 @@ label start_dzm985_talk:
 label start_dzm985_kill:
     call dzm985_init
     jump dzm985_s3
+label dzm985_dmorte_extern:
+    show morte_img default at center_right_down
+    return
 label dzm985_init:
     $ glm.set_location('mortuary_f2r5')
     $ gsm.set_meet_dzm985(True)
-    scene bg mortuary5
+    scene bg mortuary_f2r5
     show dzm985_img default at center_left_down
     return
 label dzm985_dispose:
     hide dzm985_img
+    hide morte_img
     jump show_graphics_menu
 
 
@@ -84,6 +88,7 @@ label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0
         'Толкнуть труп.' if _r45516_condition(gsm):
             # r0 # reply45516
             $ _r45516_action(gsm)
+            call dzm985_dmorte_extern
             jump dmorte_s482
         'Толкнуть труп.' if _r45517_condition(gsm):
             # r1 # reply45517
@@ -119,6 +124,7 @@ label dzm985_s1:  # from 0.4 5.0 5.1 5.2
         'Толкнуть труп.' if _r45516_condition(gsm):
             # r0 # reply45516
             $ _r45516_action(gsm)
+            call dzm985_dmorte_extern
             jump dmorte_s482
         'Толкнуть труп.' if _r45517_condition(gsm):
             # r1 # reply45517
@@ -151,6 +157,7 @@ label dzm985_s2:  # from 0.5 5.3
         'Толкнуть труп.' if _r45516_condition(gsm):
             # r0 # reply45516
             $ _r45516_action(gsm)
+            call dzm985_dmorte_extern
             jump dmorte_s482
         'Толкнуть труп.' if _r45517_condition(gsm):
             # r1 # reply45517
@@ -189,6 +196,7 @@ label dzm985_s3:  # from 0.1 6.0 # PlaySoundNotRanged("SPE_11") SetAnimState(Mys
 label dzm985_s4:  # from 0.2 # Manually checked EXTERN ~DMORTE~ : 482 as dmorte1_s482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
     teller 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
 
+    call dzm985_dmorte_extern
     jump dmorte_s482
 
 # s5 # say45531

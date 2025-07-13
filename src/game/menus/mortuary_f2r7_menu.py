@@ -1,7 +1,7 @@
 from engine.menu import (MenuBuilder)
 from menus.morte_menu import (morte_menu)
 
-def build_mortuary7_menu(location_id, gsm):
+def build_mortuary_f2r7_menu(location_id, gsm, glm):
     builders = []
 
     builders.append(morte_menu(gsm, location_id, 1380, 500))
@@ -9,7 +9,7 @@ def build_mortuary7_menu(location_id, gsm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(740, 970)
         .option(lambda: 'Пройти в южную комнату'
-                if gsm.is_visited_location('mortuary_f2r8')
+                if glm.is_visited_location('mortuary_f2r8')
                 else "Открыть дверь") \
         .jump('mortuary_walking_8_visit') \
         .style('open')

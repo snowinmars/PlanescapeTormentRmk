@@ -70,7 +70,7 @@ label start_dzf594_kill:
 label dzf594_init:
     $ glm.set_location('mortuary_f2r2')
     $ gsm.set_meet_dzf594(True)
-    scene bg mortuary2
+    scene bg mortuary_f2r2
     show dzf594_img default at center_left_down
     return
 label dzf594_dispose:

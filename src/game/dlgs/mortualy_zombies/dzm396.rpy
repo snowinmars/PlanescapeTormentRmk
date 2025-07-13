@@ -68,7 +68,7 @@ label start_dzm396_kill:
 label dzm396_init:
     $ glm.set_location('mortuary_f2r3')
     $ gsm.set_meet_dzm396(True)
-    scene bg mortuary3
+    scene bg mortuary_f2r3
     show dzm396_img default at center_left_down
     return
 label dzm396_dispose:

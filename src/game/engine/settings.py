@@ -12,16 +12,16 @@ class SettingsManager:
         }
         self.event_manager = event_manager
 
+    def update_journal(self, note_id):
+        devlog.debug('Update journal with %s', note_id)
+        if note_id not in self._registry['journal_note_ids']:
+            self._registry['journal_note_ids'].append(note_id)
+
     def check_char_prop_gt(self, who, gtValue, prop):
         return True
 
     def check_char_prop_lt(self, who, gtValue, prop):
         return True
-
-    def update_journal(self, note_id):
-        devlog.debug('Update journal with %s', note_id)
-        if note_id not in self._registry['journal_note_ids']:
-            self._registry['journal_note_ids'].append(note_id)
 
     def get_setting_value(self, setting_id):
         return self._registry[setting_id]
