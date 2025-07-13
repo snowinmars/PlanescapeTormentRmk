@@ -49,3 +49,5 @@ define dzf916 = Character('Зомби 916', color="#c8ffc8")
 define dzf1072 = Character('Зомби 1072', color="#c8ffc8")
 define dzf1096 = Character('Зомби 1096', color="#c8ffc8")
 define dzf1148 = Character('Зомби 1148', color="#c8ffc8")
+
+define snowinmars = Character('dev',     color='#c8ffc8')

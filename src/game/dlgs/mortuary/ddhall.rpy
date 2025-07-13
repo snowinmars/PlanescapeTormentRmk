@@ -165,7 +165,7 @@ label start_ddhall_kill:
     jump ddhall_kill
 label ddhall_init:
     $ glm.set_location('mortuary_f2r3')
-    scene bg mortuary3
+    scene bg mortuary_f2r3
     show morte_img default at center_left_down
     show dhall_img default at center_right_down
     return

@@ -22,6 +22,10 @@ init python:
         return _no_key_has_morte(gsm)
     def _r24712_condition(gsm):
         return _no_key_no_morte(gsm)
+    def _r24713_condition(gsm):
+        return not gsm.get_has_intro_key()
+    def _r24714_condition(gsm):
+        return gsm.get_has_intro_key()
 
 
 init 10 python:
@@ -40,14 +44,18 @@ label start_dzm782_talk:
 label start_dzm782_kill:
     call dzm782_init
     jump dzm782_kill
+label dzm782_dmorte_extern:
+    show morte_img default at center_right_down
+    return
 label dzm782_init:
     $ glm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm782(True)
-    scene bg mortuary1
+    scene bg mortuary_f2r1
     show dzm782_img default at center_left_down
     return
 label dzm782_dispose:
     hide dzm782_img
+    hide morte_img
     jump show_graphics_menu
 
 
@@ -59,16 +67,20 @@ label dzm782_s0:  # from - # IF ~  True() # Manually checked EXTERN ~DMORTE1~ : 
     menu:
         'Я ищу ключ… быть может, он у тебя?' if _r24709_condition(gsm):
             # r0 # reply24709
+            call dzm782_dmorte_extern
             jump dmorte1_s34
         'Я ищу ключ… быть может, он у тебя?' if _r24712_condition(gsm):
             # r1 # reply24712
             jump dzm782_s1
-        'Осмотреть труп, проверить, есть ли у него ключ.':
+        'Осмотреть труп, проверить, есть ли у него ключ.' if _r24713_condition(gsm):
             # r2 # reply24713
             jump dzm782_s2
-        'Было приятно с тобой поболтать. Прощай.':
+        'Было приятно с тобой поболтать. Прощай.' if _r24713_condition(gsm):
             # r3 # reply24714
             jump dzm782_s2
+        'Было приятно с тобой поболтать. Прощай.' if _r24714_condition(gsm):
+            # r3 # reply24714
+            jump dzm782_dispose
         'Оставить труп в покое.':
             # r4 # reply24717
             jump dzm782_dispose
@@ -79,7 +91,7 @@ label dzm782_s1:  # from 0.1
     teller 'Труп не отвечает.'
 
     menu:
-        'Осмотреть труп, проверить, есть ли у него ключ.':
+        'Осмотреть труп, проверить, есть ли у него ключ.' if _r24713_condition(gsm):
             # r2 # reply24713
             jump dzm782_s2
         'Тогда неважно. Прощай.':
@@ -134,6 +146,7 @@ label dzm782_kill:
 
 
 label dzm782_killed:
+    $ _kill_dzm782(gsm)
     teller 'Некоторое время я смотрю в ненавидящие меня глаза, пока не понимаю, что эта эмоция обращена не ко мне. Это застывшая маска, которую труп не в состоянии изменить.'
     teller 'В его ненавидящих глазах поселилась пустота. В них нет ни жизни, ни разума. Я без сожалений расширяю дом для пустоты.'
 

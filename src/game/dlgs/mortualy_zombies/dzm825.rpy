@@ -42,24 +42,29 @@ label start_dzm825_talk:
 label start_dzm825_kill:
     call dzm825_init
     jump dzm825_kill
+label dzm825_dmorte_extern:
+    show morte_img default at center_right_down
+    return
 label dzm825_init:
     $ glm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm825(True)
-    scene bg mortuary1
+    scene bg mortuary_f2r1
     show dzm825_img default at center_left_down
     return
 label dzm825_dispose:
     hide dzm825_img
+    hide morte_img
     jump show_graphics_menu
 
 
 # s0 # say24564
-label dzm825_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1_s31
+label dzm825_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31
     teller 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.'
 
     menu:
         'Я ищу ключ… быть может, он у тебя?' if _r24565_condition(gsm):
             # r0 # reply24565
+            call dzm825_dmorte_extern
             jump dmorte1_s31
         'Я ищу ключ… быть может, он у тебя?' if _r24568_condition(gsm):
             # r1 # reply24568
@@ -132,6 +137,7 @@ label dzm825_s3:  # from 0.5 # IF ~  True() # Manually checked EXTERN ~DMORTE1~ 
     menu:
         'Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if _r42312_condition(gsm):
             # r11 # reply42312
+            call dzm825_dmorte_extern
             jump dmorte1_s31
         'Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if _r42313_condition(gsm):
             # r12 # reply42313

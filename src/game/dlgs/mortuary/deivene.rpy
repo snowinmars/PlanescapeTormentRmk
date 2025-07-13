@@ -157,7 +157,7 @@ label deivene_init:
     $ glm.set_location('mortuary_f2r5')
     $ gsm.set_in_party_morte(True)
     $ gsm.set_meet_eivene(True)
-    scene bg mortuary5
+    scene bg mortuary_f2r5
     show eivene_img default at center_left_down
     return
 label deivene_dispose:

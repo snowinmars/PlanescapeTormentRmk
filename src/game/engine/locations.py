@@ -5,15 +5,15 @@ devlog = logging.getLogger('log')
 
 class LocationBuilder:
     def __init__(self):
-        self.mappings: Dict[str, List[str]] = {}
+        self.mappings = {}
 
-    def register(self, internal_id: str, location_ids: List[str]) -> 'LocationBuilder':
+    def register(self, internal_id, location_ids) -> 'LocationBuilder':
         if internal_id in self.mappings:
             raise ValueError(f"Internal ID {internal_id} already exists")
         self.mappings[internal_id] = location_ids.copy()
         return self
 
-    def build_reverse_mappings(self) -> Dict[str, str]:
+    def build_reverse_mappings(self):
         return {
             location_id: internal_id
             for internal_id, location_ids in self.mappings.items()
@@ -29,11 +29,11 @@ class LocationManager:
         self.visited_internal_locations = []
         self.event_manager = event_manager
 
-    def register(self, mappings: Dict[str, List[str]], reverse_mappings: Dict[str, str], \):
+    def register(self, mappings, reverse_mappings):
         self._mappings = mappings
         self._reverse_mappings = reverse_mappings
 
-    def set_location(self, location_id: str):
+    def set_location(self, location_id):
         line = f'set location_id = {location_id}'
         devlog.debug(line)
         self.event_manager.write_event(line)
@@ -46,13 +46,13 @@ class LocationManager:
             self.event_manager.write_event(line)
             self.visited_locations.append(location_id)
 
-        if not self.visited_internal_locations(self.current_internal_location_id):
+        if not self.is_visited_internal_location(self.current_internal_location_id):
             self.visited_internal_locations.append(self.current_internal_location_id)
 
-    def get_location():
+    def get_location(self):
         return self.current_location_id
 
-    def get_internal_location():
+    def get_internal_location(self):
         return self.current_internal_location_id
 
     def is_visited_location(self, location_id):
@@ -66,7 +66,7 @@ class LocationManager:
     #         raise ValueError(f"Unknown internal ID: {internal_id}")
     #     return self._mappings[internal_id].copy()
 
-    def get_internal_id(self, location_id: str) -> str:
+    def get_internal_id(self, location_id):
         if location_id not in self._reverse_mappings:
             raise ValueError(f"Unknown location ID: {location_id}")
         return self._reverse_mappings[location_id]

@@ -67,14 +67,18 @@ label start_dzf626_talk:
 label start_dzf626_kill:
     call dzf626_init
     jump dzf626_kill
+label dzf626_dmorte_extern:
+    show morte_img default at center_right_down
+    return
 label dzf626_init:
     $ glm.set_location('mortuary_f2r2')
     $ gsm.set_meet_dzf626(True)
-    scene bg mortuary2
+    scene bg mortuary_f2r2
     show dzf626_img default at center_left_down
     return
 label dzf626_dispose:
     hide dzf626_img
+    hide morte_img
     jump show_graphics_menu
 
 
@@ -99,6 +103,7 @@ label dzf626_s0:  # from - # from - # IF ~  True() Manually checked EXTERN ~DMOR
             jump dzf626_s2
         'Было приятно поболтать с тобой. Прощай.' if _r35075_condition(gsm):
             # r4 # reply35075
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Было приятно поболтать с тобой. Прощай.' if _r35077_condition(gsm):
             # r6 # reply35077
@@ -108,6 +113,7 @@ label dzf626_s0:  # from - # from - # IF ~  True() Manually checked EXTERN ~DMOR
             jump dzf626_dispose
         'Оставить труп в покое.' if _r35076_condition(gsm):
             # r5 # reply35076
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Оставить труп в покое.' if _r35078_condition(gsm):
             # r7 # reply35078
@@ -127,6 +133,7 @@ label dzf626_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 338 as
             jump dzf626_s2
         'Было приятно поболтать с тобой. Прощай.' if _r35075_condition(gsm):
             # r4 # reply35075
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Было приятно поболтать с тобой. Прощай.' if _r35077_condition(gsm):
             # r6 # reply35077
@@ -136,6 +143,7 @@ label dzf626_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 338 as
             jump dzf626_dispose
         'Тогда прощай.' if _r35053_condition(gsm):
             # r10 # reply35053
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Тогда прощай.' if _r35066_condition(gsm):
             # r11 # reply35066
@@ -145,6 +153,7 @@ label dzf626_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 338 as
             jump dzf626_dispose
         'Оставить труп в покое.' if _r35076_condition(gsm):
             # r5 # reply35076
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Оставить труп в покое.' if _r35078_condition(gsm):
             # r7 # reply35078
@@ -163,6 +172,7 @@ label dzf626_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 338 as dmorte_
             jump dzf626_s1
         'Было приятно поболтать с тобой. Прощай.' if _r35075_condition(gsm):
             # r4 # reply35075
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Было приятно поболтать с тобой. Прощай.' if _r35077_condition(gsm):
             # r6 # reply35077
@@ -172,6 +182,7 @@ label dzf626_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 338 as dmorte_
             jump dzf626_dispose
         'Тогда прощай.' if _r35072_condition(gsm):
             # r13 # reply35072
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Тогда прощай.' if _r35073_condition(gsm):
             # r14 # reply35073
@@ -181,6 +192,7 @@ label dzf626_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 338 as dmorte_
             jump dzf626_dispose
         'Оставить труп в покое.' if _r35076_condition(gsm):
             # r5 # reply35076
+            call dzf626_dmorte_extern
             jump dmorte_s330
         'Оставить труп в покое.' if _r35078_condition(gsm):
             # r7 # reply35078

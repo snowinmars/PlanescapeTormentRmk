@@ -43,14 +43,18 @@ label start_dzm569_talk:
 label start_dzm569_kill:
     call dzm569_init
     jump dzm569_kill
+label dzm569_dmorte_extern:
+    show morte_img default at center_right_down
+    return
 label dzm569_init:
     $ glm.set_location('mortuary_f2r1')
     $ gsm.set_meet_dzm569(True)
-    scene bg mortuary1
+    scene bg mortuary_f2r1
     show dzm569_img default at center_left_down
     return
 label dzm569_dispose:
     hide dzm569_img
+    hide morte_img
     jump show_graphics_menu
 
 
@@ -61,6 +65,7 @@ label dzm569_s0:  # from - # IF ~  True() # Manually checked EXTERN ~DMORTE1~ : 
     menu:
         'Я ищу ключ… быть может, он у тебя?' if _r24576_condition(gsm):
             # r0 # reply24576
+            call dzm569_dmorte_extern
             jump dmorte1_s31
         'Я ищу ключ… быть может, он у тебя?' if _r24579_condition(gsm):
             # r1 # reply24579
@@ -124,12 +129,13 @@ label dzm569_s2:  # from 0.4
 
 
 # s3 # say42293
-label dzm569_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE1~ : 31 as dmorte1_s31
+label dzm569_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE1~ : 31
     teller 'Похоже, у этого трупа нет ключа… да и вряд ли он смог бы им воспользоваться. Его пальцы перебиты, как будто кто-то постучал по ним молотком. Ты замечаешь, что его левое плечо сильно перевязано.'
 
     menu:
         'Похоже, что нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if _r42294_condition(gsm):
             # r11 # reply42294
+            call dzm569_dmorte_extern
             jump dmorte1_s31
         'Похоже, что нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if _r42295_condition(gsm):
             # r12 # reply42295

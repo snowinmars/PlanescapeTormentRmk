@@ -38,14 +38,18 @@ label start_dzm965_talk:
 label start_dzm965_kill:
     call dzm965_init
     jump dzm965_kill
+label dzm965_dmorte_extern:
+    show morte_img default at center_right_down
+    return
 label dzm965_init:
     $ glm.set_location('mortuary_f2r2')
     $ gsm.set_meet_dzm965(True)
-    scene bg mortuary2
+    scene bg mortuary_f2r2
     show dzm965_img default at center_left_down
     return
 label dzm965_dispose:
     hide dzm965_img
+    hide morte_img
     jump show_graphics_menu
 
 
@@ -54,6 +58,7 @@ label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte") # Manually checked EXT
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
+    call dzm965_dmorte_extern
     jump dmorte_s477
 
 # s1 # say34922

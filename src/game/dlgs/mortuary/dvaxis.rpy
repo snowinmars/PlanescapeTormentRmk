@@ -554,8 +554,7 @@ label start_dvaxis_kill_first:
     jump dvaxis_kill_first
 label dvaxis_init:
     $ glm.set_location('mortuary_f2r6')
-    $ gsm.set_meet_vaxis(True)
-    scene bg mortuary6
+    scene bg mortuary_f2r6
     show vaxis_img default at center_left_down
     return
 label dvaxis_dispose:
@@ -605,6 +604,7 @@ label dvaxis_s1:  # from 0.3 # IF ~  False()
 
 # s2 # say463
 label dvaxis_s2:  # from 1.0
+    $ gsm.set_meet_vaxis(True)
     teller 'После твоего тычка в глаз труп, рефлекторно закрыв руками лицо, издает нечленораздельный вопль. Он начинает что-то невнятно бормотать, сыпля проклятиями в твой адрес.'
 
     menu:
@@ -677,6 +677,7 @@ label dvaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2
 
 # s5 # say479
 label dvaxis_s5:  # from 0.0 0.1 0.2 0.4
+    $ gsm.set_meet_vaxis(True)
     teller 'Зомби от неожиданности моргает при твоем обращении.'
     vaxis_unknown 'А? Фто?'
 

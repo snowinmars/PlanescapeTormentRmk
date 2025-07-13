@@ -15,7 +15,7 @@ screen decision_choices(available_options):
 
 
 label show_graphics_menu:
-    $ location_id = renpy.store.global_settings_manager.get_location()
+    $ location_id = renpy.store.global_location_manager.get_location()
     $ gmm = renpy.store.global_menu_manager
     $ available_options = gmm.get_available_graphic_options(location_id)
     $ available_static = gmm.get_available_static_graphic(location_id)

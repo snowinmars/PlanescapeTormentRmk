@@ -91,14 +91,14 @@ init 10 python:
 label dmorte2_init:
     $ glm.set_location('mortuary_f2r2')
     $ gsm.set_in_party_morte(True)
-    $ gsm.set_meet_morte(True)
-    scene bg mortuary2
+    scene bg mortuary_f2r2
     show morte_img default at center_left_down
     return
 
-label dmorte2_init3:
+
+label dmorte2_s31_init:
     $ glm.set_location('mortuary_f2r3')
-    scene bg mortuary3
+    scene bg mortuary_f2r3
     show morte_img default at center_left_down
     return
 
@@ -627,7 +627,7 @@ label dmorte2_s30:  # from 29.1
 
 # s31 # say41262
 label dmorte2_s31:  # from -
-    call dmorte2_init3
+    call dmorte2_s31_init
     morte 'Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.'
 
     menu:
