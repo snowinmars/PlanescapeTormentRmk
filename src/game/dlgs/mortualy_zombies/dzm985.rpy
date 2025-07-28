@@ -6,19 +6,21 @@ init python:
 
 init python:
     def _r45516_action(gsm):
-        gsm.dec_once_law('chaotic_zm985_1')
-        gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
+        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
     def _r45517_action(gsm):
-        gsm.dec_once_law('chaotic_zm985_1')
-        gsm.dec_once_good('evil_zm985_1') # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
+        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
     def _r45518_action(gsm):
-        gsm.inc_once_law('lawful_zm985_1')
-        gsm.inc_once_good('good_zm985_1')
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_zm985_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_zm985_1')
     def _r45519_action(gsm):
-        gsm.inc_once_law('lawful_zm985_1')
-        gsm.inc_once_good('good_zm985_1')
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_zm985_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_zm985_1')
     def _r45532_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r45539_action(gsm):
         # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)

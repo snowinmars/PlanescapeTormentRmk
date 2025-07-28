@@ -9,14 +9,14 @@ def build_mortuary_f2r3_menu(location_id, gsm, glm):
     builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/dhall.png', lambda: not gsm.get_dead_dhall(), 950, 920) \
         .auto_position(990, 920) \
-        # .option(lambda: 'Убить Дхалла' \
-        #         if gsm.get_meet_dhall() \
-        #         else 'Убить существо около большой книги') \
-        # .jump(lambda: 'start_ddhall_kill' \
-        #     if gsm.get_meet_dhall() \
-        #     else 'start_ddhall_kill_first') \
-        # .when(lambda: not gsm.get_dead_dhall()) \
-        # .style('kill') \
+        .option(lambda: 'Убить Дхалла' \
+                if gsm.get_meet_dhall() \
+                else 'Убить существо около большой книги') \
+        .jump(lambda: 'start_ddhall_kill' \
+            if gsm.get_meet_dhall() \
+            else 'start_ddhall_kill_first') \
+        .when(lambda: not gsm.get_dead_dhall()) \
+        .style('kill') \
         .option(lambda: 'Поговорить с Дхаллом' \
                 if gsm.get_meet_dhall() \
                 else 'Подойти к существу около большой книги') \

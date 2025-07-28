@@ -1,14 +1,14 @@
 init python:
     def _r35461_action(gsm):
-        gsm.dec_law()
-        glm.set_location('AR0001')
+        gsm.gcm.modify_property('protagonist', 'law', -1)
+        gsm.set_skeleton_chaotic(True)
     def _r35485_action(gsm):
-        gsm.dec_law()
-        glm.set_location('AR0001')
+        gsm.gcm.modify_property('protagonist', 'law', -1)
+        gsm.set_skeleton_chaotic(True)
     def _r35492_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_skeleton_examine(True)
     def _r35525_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_morte_skel_mort_quip2(True)
     def _r35533_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35463_action(gsm):
@@ -16,7 +16,7 @@ init python:
     def _r35489_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35494_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_morte_skel_mort_quip2(True)
     def _r35522_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35500_action(gsm):
@@ -35,41 +35,49 @@ init python:
 
 init python:
     def _r35461_condition(gsm):
-        return glm.is_visited_internal_location('AR0000')
+        return not gsm.get_skeleton_chaotic()
     def _r35484_condition(gsm):
-        return glm.is_visited_internal_location('AR0001')
+        return gsm.get_skeleton_chaotic()
     def _r35485_condition(gsm):
-        return glm.is_visited_internal_location('AR0000')
+        return not gsm.get_skeleton_chaotic()
     def _r35486_condition(gsm):
-        return glm.is_visited_internal_location('AR0001')
+        return gsm.get_skeleton_chaotic()
     def _r35487_condition(gsm):
         return gsm.get_can_speak_with_dead()
     def _r35525_condition(gsm):
-        return glm.is_visited_internal_location('AR0000')
+        return gsm.get_skeleton_examine() \
+               and gsm.get_in_party_morte() \
+               and not gsm.get_morte_skel_mort_quip2()
     def _r35526_condition(gsm):
-        return glm.is_visited_internal_location('AR0001') \
+        return gsm.get_skeleton_examine() \
+               and gsm.get_in_party_morte() \
+               and gsm.get_morte_skel_mort_quip2() \
                and not gsm.get_has_prybar() \
                and gsm.check_char_prop_lt('protagonist',13,'str')
     def _r35527_condition(gsm):
-        return glm.is_visited_internal_location('AR0001') \
+        return gsm.get_skeleton_examine() \
+               and gsm.get_in_party_morte() \
+               and gsm.get_morte_skel_mort_quip2() \
                and not gsm.get_has_prybar() \
                and gsm.check_char_prop_gt('protagonist',12,'str')
     def _r35528_condition(gsm):
-        return glm.is_visited_internal_location('AR0001') \
+        return gsm.get_skeleton_examine() \
+               and gsm.get_in_party_morte() \
+               and gsm.get_morte_skel_mort_quip2() \
                and gsm.get_has_prybar()
     def _r35529_condition(gsm):
         return not gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001') \
+               and gsm.get_skeleton_examine() \
                and not gsm.get_has_prybar() \
                and gsm.check_char_prop_lt('protagonist',13,'str')
     def _r35530_condition(gsm):
         return not gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001') \
+               and gsm.get_skeleton_examine() \
                and not gsm.get_has_prybar() \
                and gsm.check_char_prop_gt('protagonist',12,'str')
     def _r35531_condition(gsm):
         return not gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001') \
+               and gsm.get_skeleton_examine() \
                and gsm.get_has_prybar()
     def _r35532_condition(gsm):
         return gsm.get_in_party_morte() \
@@ -100,20 +108,20 @@ init python:
         return gsm.get_morte_skel_mort_quip()
     def _r35494_condition(gsm):
         return gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0000')
+               and not gsm.get_morte_skel_mort_quip2()
     def _r35516_condition(gsm):
         return gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001') \
+               and gsm.get_morte_skel_mort_quip2() \
                and not gsm.get_has_prybar() \
                and gsm.check_char_prop_lt('protagonist',13,'str')
     def _r35517_condition(gsm):
         return gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001') \
+               and gsm.get_morte_skel_mort_quip2() \
                and not gsm.get_has_prybar() \
                and gsm.check_char_prop_gt('protagonist',12,'str')
     def _r35518_condition(gsm):
         return gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001') \
+               and gsm.get_morte_skel_mort_quip2() \
                and gsm.get_has_prybar()
     def _r35519_condition(gsm):
         return not gsm.get_in_party_morte() \

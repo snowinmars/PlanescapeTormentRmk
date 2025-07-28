@@ -4,13 +4,14 @@ devlog = logging.getLogger('log')
 
 
 class SettingsManager:
-    def __init__(self, event_manager):
+    def __init__(self, event_manager, character_manager):
         self.tracked = []
         self._registry = {
             'journal_note_ids': [],
             'visited_locations': []
         }
         self.event_manager = event_manager
+        self.gcm = character_manager
 
     def update_journal(self, note_id):
         devlog.debug('Update journal with %s', note_id)
@@ -30,13 +31,28 @@ class SettingsManager:
         return
 
     def inc_exp_custom(self, who, amount):
-        return
+        if who == 'party':
+            self.gcm.modify_property('protagonist', 'experience', amount)
+
+            if self.get_in_party_morte():
+                self.gcm.modify_property('morte', 'experience', amount)
+        else:
+            self.gcm.modify_property(who, 'experience', amount)
 
     def dec_exp_custom(self, who, amount):
-        return
+        if who == 'party':
+            self.gcm.modify_property('protagonist', 'experience', -amount)
+
+            if self.get_in_party_morte():
+                self.gcm.modify_property('morte', 'experience', -amount)
+        else:
+            self.gcm.modify_property(who, 'experience', -amount)
+
 
     def full_heal(self, who):
-        return
+        props = self.gcm.get_all_properties(who)
+        self.gcm.set_property(who, 'current_health', props['maxHealth'])
+
 
     def register(self, setting_id, default_value):
         self._registry[setting_id] = default_value

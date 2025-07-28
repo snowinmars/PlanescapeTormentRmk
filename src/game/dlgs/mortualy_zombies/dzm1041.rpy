@@ -1,4 +1,10 @@
 init python:
+    def _kill_dzm1041(gsm):
+        gsm.set_dead_dzm1041(True)
+        gsm.inc_exp_custom('party', 65)
+
+
+init python:
     def _get_bei_name(gsm):
         return bei if gsm.get_know_bei_name() else dzm1041
     def _set_bei_name(gsm):
@@ -7,7 +13,7 @@ init python:
 
 init python:
     def _r6576_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r6583_action(gsm):
         gsm.set_meet_bei(True)
@@ -16,19 +22,19 @@ init python:
     def _r9097_action(gsm):
         gsm.set_meet_bei(True)
     def _r9161_action(gsm):
-        gsm.inc_once_good('good_bei_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_1')
     def _r9162_action(gsm):
-        gsm.dec_once_good('evil_bei_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_1')
     def _r9200_action(gsm):
-        gsm.inc_once_good('good_bei_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_2')
     def _r9201_action(gsm):
-        gsm.dec_once_law('chaotic_bei_1')
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_1')
     def _r9207_action(gsm):
-        gsm.inc_once_good('good_bei_3')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_3')
         gsm.set_know_xixi(True)
     def _r9208_action(gsm):
-        gsm.dec_once_good('evil_bei_2')
-        gsm.dec_once_law('chaotic_bei_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_2')
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_2')
         gsm.set_know_xixi(True)
     def _r9209_action(gsm):
         gsm.set_know_xixi(True)

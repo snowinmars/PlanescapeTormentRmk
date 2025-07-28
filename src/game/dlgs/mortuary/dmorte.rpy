@@ -16,7 +16,7 @@
     def _r35001_action(gsm):
         gsm.set_morte_quip(True)
     def _r34993_action(gsm):
-        gsm.dec_once_law('morte_zombie_1')
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r45093_action(gsm):
         gsm.update_journal('39477')
     def _r45103_action(gsm):
@@ -26,22 +26,22 @@
     def _r3483_action(gsm):
         gsm.update_journal('38205')
     def _r4678_action(gsm):
-        gsm.dec_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
     def _r4679_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_4')
     def _r4682_action(gsm):
-        gsm.inc_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
     def _r4687_action(gsm):
-        gsm.inc_once_law()
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
     def _r4693_action(gsm):
         gsm.update_journal('64512')
     def _r4695_action(gsm):
-        gsm.dec_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
     def _r4699_action(gsm):
-        gsm.inc_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
     def _r35396_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35435_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r64535_action(gsm):      #  FadeToColor([20.0],0) Wait(1)
@@ -52,39 +52,39 @@
     def _r3474_action(gsm):
         gsm.update_journal('38205')
     def _r6658_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r6659_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35319_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35342_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35360_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35473_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35496_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35514_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r6664_condition(gsm):
         return gsm.get_42_secret()
     def _r35512_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35550_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35573_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35591_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35589_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35358_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35419_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35437_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
 
 
 init python:

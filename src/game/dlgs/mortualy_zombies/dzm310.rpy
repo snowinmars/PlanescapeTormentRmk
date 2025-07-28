@@ -1,4 +1,7 @@
 init python:
+    def _kill_dzm310(gsm):
+        gsm.set_dead_dzm310(True)
+        gsm.inc_exp_custom('party', 65)
     def _get_arabhiem_name(gsm):
         return arabhiem if gsm.get_know_oinosian_name() else dzm310
     def _set_arabhiem_name(gsm):
@@ -7,7 +10,7 @@ init python:
 
 init python:
     def _r6499_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r6502_action(gsm):
         gsm.set_meet_oinosian(True)

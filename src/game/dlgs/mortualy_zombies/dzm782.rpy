@@ -13,6 +13,7 @@ init python:
                and not gsm.get_has_intro_key()
     def _kill_dzm782(gsm):
         gsm.set_dead_dzm782(True)
+        gsm.inc_exp_custom('party', 65)
     def _pick_key_up(gsm):
         gsm.set_has_intro_key(True)
 

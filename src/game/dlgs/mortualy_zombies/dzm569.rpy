@@ -1,6 +1,7 @@
 init python:
     def _kill_dzm569(gsm):
         gsm.set_dead_dzm569(True)
+        gsm.inc_exp_custom('party', 65)
 
 
 init python:

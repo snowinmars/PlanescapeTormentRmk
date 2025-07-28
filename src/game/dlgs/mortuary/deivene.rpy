@@ -1,11 +1,10 @@
 init python:
     def _kill_deivene(gsm):
         gsm.set_dead_deivene(True)
-
+    def _r3422_action_meet_eivene(gsm):
+        gsm.set_meet_eivene(True)
 
 init python:
-    def _r3422_action(gsm):
-        gsm.set_meet_eivene(True)
     def _r3424_action(gsm):
         gsm.set_has_embalm(False)
         gsm.set_has_needle(False)
@@ -25,8 +24,8 @@ init python:
         # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         gsm.set_mortualy_alarmed(True)
     def _r3449_action(gsm):
-        gsm.change_stat_permanent('Protagonist', 'MAXHITPOINTS', 'RAISE', 1)
-        gsm.full_heal('Protagonist')
+        gsm.change_stat_permanent('protagonist', 'MAXHITPOINTS', 'RAISE', 1)
+        gsm.full_heal('protagonist')
         gsm.set_ravel_eivene(True)
         gsm.update_journal('38199')
     def _r3456_action(gsm):
@@ -50,7 +49,7 @@ init python:
     def _r3501_action(gsm):
         gsm.inc_exp_custom('party', 250)
     def _r63478_action(gsm):
-        gsm.inc_exp_custom('Protagonist', 250)
+        gsm.inc_exp_custom('protagonist', 250)
         gsm.set_42_secret(True)
 
 
@@ -155,8 +154,6 @@ label start_deivene_kill:
     jump deivene_kill
 label deivene_init:
     $ glm.set_location('mortuary_f2r5')
-    $ gsm.set_in_party_morte(True)
-    $ gsm.set_meet_eivene(True)
     scene bg mortuary_f2r5
     show eivene_img default at center_left_down
     return
@@ -230,7 +227,6 @@ label deivene_s4:  # from 2.0
     menu:
         'Э… Приветствую.':
             # r9 # reply3422
-            $ _r3422_action(gsm)
             jump deivene_s5
 
 
@@ -240,6 +236,7 @@ label deivene_s5:  # from 4.0
     eivene_unknown 'Ты.'
     teller 'Она соединяет когти вместе, затем делает странное движение рукой.'
     eivene 'Найди НИТКУ и БАЛЬЗАМ, принеси СЮДА, к Эи-Вейн. Пшел — пшел — пшел.'
+    $ _r3422_action_meet_eivene(gsm)
 
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if _r3424_condition(gsm):
@@ -593,7 +590,7 @@ label deivene_kill:
     menu:
         '(Уйти.)':
             jump deivene_dispose
-        '(Убить зомби).':
+        '(Убить Эи-Вейн).':
             jump deivene_killed
 
 
@@ -603,8 +600,8 @@ label deivene_killed:
     teller 'Я проскальзываю за её спиной и ломаю её правую руку, а когда она с криком оборачивается, я ломаю левую.'
     teller 'Но через несколько ударов она сдаётся и падает на пол.'
     teller 'От последнего удара тело переваливается на спину. Что-то заставляет меня взглянуть в её глаза.'
-    teller 'Они светятся...'
-    teller '...нежностью?'
+    teller 'Они светятся…'
+    teller '…нежностью?'
     jump deivene_dispose
 
 
@@ -615,16 +612,16 @@ label deivene_kill_first:
     menu:
         '(Уйти.)':
             jump deivene_dispose
-        '(Убить зомби).':
+        '(Убить девушку).':
             jump deivene_killed_first
 
 
 label deivene_killed_first:
     $ _kill_deivene(gsm)
-    teller 'Я знаю, что я быстрее. Я прикасаюсь к её плечу - и Эи-Вейн оборачивается в ту сторону, где меня уже нет.'
-    teller 'Девушка всё равно пытается сопротивляться, используя сломанные руки на манер плетей.'
+    teller 'Я знаю, что я быстрее. Я прикасаюсь к её плечу - и девушка оборачивается в ту сторону, где меня уже нет.'
+    teller 'Она всё равно пытается сопротивляться, используя сломанные руки на манер плетей.'
     teller 'Через несколько ударов она затихает. Я провёл пальцем по порезу, который она мне оставила и пнул дважды мёртвое тело.'
     teller 'От пинка тело переваливается на спину. Что-то заставляет меня взглянуть в её глаза.'
-    teller 'Они светятся...'
-    teller '...нежностью?'
+    teller 'Они светятся…'
+    teller '…нежностью?'
     jump deivene_dispose

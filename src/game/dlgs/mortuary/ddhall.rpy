@@ -12,7 +12,7 @@ init python:
     def _r831_action(gsm):
         gsm.inc_exp_custom('party', 250)
     def _r843_action(gsm):
-        gsm.dec_once_good('evil_dhall_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_1')
     def _r5069_action(gsm):
         gsm.update_journal('39460')
     def _r886_action(gsm):
@@ -24,7 +24,7 @@ init python:
     def _r931_action(gsm):
         gsm.update_journal('39462')
     def _r936_action(gsm):
-        gsm.inc_once_good('good_dhall_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_1')
     def _r953_action(gsm):
         gsm.set_meet_dustmen(True)
     def _r958_action(gsm):
@@ -44,9 +44,9 @@ init python:
     def _r6033_action(gsm):
         gsm.set_meet_dustmen(True)
     def _r6051_action(gsm):
-        gsm.inc_once_good('good_dhall_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_2')
     def _r6053_action(gsm):
-        gsm.dec_once_good('evil_dhall_3')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_3')
 
 
 init python:
@@ -1288,7 +1288,7 @@ label ddhall_kill:
     menu:
         '(Уйти.)':
             jump ddhall_dispose
-        '(Убить зомби).':
+        '(Убить Дхолла).':
             jump ddhall_killed
 
 
@@ -1309,7 +1309,7 @@ label ddhall_kill_first:
     menu:
         '(Уйти.)':
             jump ddhall_dispose
-        '(Убить зомби).':
+        '(Убить писаря).':
             jump ddhall_killed_first
 
 
