@@ -17,29 +17,31 @@ const padLocationIdLeft = (input: string): string => {
 type StringTransformer = (body: string) => string;
 
 // Alignment transformation utilities
-const createAlignmentHandler = (prefix: string) => (id: string, amount: number) => {
-    if (amount === 1) return `gsm.inc_${prefix}()`;
-    if (amount === -1) return `gsm.dec_${prefix}()`;
-    if (amount > 0) return `gsm.inc_${prefix}(${amount})`;
-    if (amount < 0) return `gsm.dec_${prefix}(${-amount})`;
-    return `raise Exception("Cannot change setting by zero delta")`;
+const createAlignmentHandler = (prop: string, once: boolean) => (id: string, amount: number) => {
+    // gsm.gcm.modify_property_once('protagonist', 'law', 1, 'GLOBALLawful_Vaxis_2')
+    if (once) {
+        return `gsm.gcm.modify_property_once('protagonist', '${prop}', ${amount}, '${id}')`;
+    } else {
+        return `gsm.gcm.modify_property('protagonist', '${prop}', ${amount})`;
+    }
 };
 
 const handleSpecialCases = (prop: string) => {
     switch (prop) {
         case 'know_dustmen': return 'gsm.set_meet_dustmen(True)';
         case 'adahn':
-            return 'gsm.set_death_of_names_adahn(True)\n    gsm.inc_once_adahn(\'Adahn_Death_of_Names_1\')';
+            return 'gsm.set_death_of_names_adahn(True)    gsm.inc_once_adahn(\'Adahn_Death_of_Names_1\')';
         default: return null;
     }
 };
 
 // Individual transformation functions
 const transformOnceAlignment: StringTransformer = (body) => {
+    // IncrementGlobalOnceEx("GLOBALSkeleton_Chaotic","GLOBALLaw",-1)
     const regex = /IncrementGlobalOnceEx\("(.*?)","(.*?)",(.*?)\)/g;
 
     return body.replace(regex, (_, globalId, property, amountStr) => {
-        const id = globalId.replace('GLOBAL', '').toLowerCase();
+        const id = globalId.toLowerCase();
         const prop = property.replace('GLOBAL', '').toLowerCase();
         const amount = parseInt(amountStr);
 
@@ -49,10 +51,10 @@ const transformOnceAlignment: StringTransformer = (body) => {
         switch (prop) {
             case 'good':
             case 'evil':
-                return createAlignmentHandler('once_good')(id, amount);
+                return createAlignmentHandler('good', true)(id, amount);
             case 'law':
             case 'chaotic':
-                return createAlignmentHandler('once_law')(id, amount);
+                return createAlignmentHandler('law', true)(id, amount);
             default:
                 return _; // Return original match
         }
@@ -72,10 +74,10 @@ const transformAlignment: StringTransformer = (body) => {
         switch (prop) {
             case 'good':
             case 'evil':
-                return createAlignmentHandler('good')(prop, amount);
+                return createAlignmentHandler('good', false)(prop, amount);
             case 'law':
             case 'chaotic':
-                return createAlignmentHandler('law')(prop, amount);
+                return createAlignmentHandler('law', false)(prop, amount);
             default:
                 return _; // Return original match
         }
@@ -171,12 +173,12 @@ const transformVisitedLocation: StringTransformer = (body) =>
 
 const transformVisitedInternalLocation: StringTransformer = (body) =>
     // Global("Current_Area","GLOBAL",202)
-    body.replace(/SetGlobal\("(.*?)","(.*)",(\d*)\)/g,
-        (_, prop, env, value) => {
+    body.replace(/SetGlobal\("Current_Area","(.*)",(\d*)\)/g,
+        (_, env, value) => {
             return `\n        glm.set_location('${padLocationIdLeft(value)}')`
         }
-    ).replace(/(!?)Global\("(.*?)","(.*)",(\d*)\)/g,
-        (_, notOperator, prop, env, value) => {
+    ).replace(/(!?)Global\("Current_Area","(.*)",(\d*)\)/g,
+        (_, notOperator, env, value) => {
             const isVisited = !notOperator;
             return `return${isVisited ? ' ' : ' not '}glm.is_visited_internal_location('${padLocationIdLeft(value)}')`
         }

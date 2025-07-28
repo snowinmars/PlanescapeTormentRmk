@@ -4,10 +4,10 @@ init python:
         gsm.set_has_needle(True)
         gsm.inc_exp_custom('party', 100)
     def _r45484_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r45502_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
 
 

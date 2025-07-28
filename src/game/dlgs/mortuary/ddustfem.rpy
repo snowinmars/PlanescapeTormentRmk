@@ -11,26 +11,26 @@ init python:
     def _r33227_action(gsm):
         gsm.set_death_of_names_adahn(True)
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r1273_action(gsm):
         gsm.set_death_of_names_adahn(True)
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r1290_action(gsm):
         gsm.set_death_of_names_adahn(True)
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r1294_action(gsm):
         gsm.set_death_of_names_adahn(True)
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r4307_action(gsm):
         gsm.set_mortualy_alarmed(True)
         # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4308_action(gsm):
         gsm.set_mortualy_alarmed(True)
         # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r4309_action(gsm):
         gsm.set_mortualy_alarmed(True)
         # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
@@ -50,7 +50,7 @@ init python:
         gsm.inc_exp_custom('party', 15)
     def _r4320_action(gsm):
         gsm.set_dead_ddustfem(True)
-        gsm.inc_exp_custom('Protagonist', 250)
+        gsm.inc_exp_custom('protagonist', 250)
     def _r4321_action(gsm):
         gsm.set_mortualy_alarmed(True)
         # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)

@@ -1,13 +1,13 @@
 init python:
     def _r34932_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r34936_action(gsm):
         gsm.set_has_bandages(True)
     def _r34934_action(gsm):
         gsm.set_has_bandages(True)
     def _r45112_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
 
 

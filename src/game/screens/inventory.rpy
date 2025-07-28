@@ -29,6 +29,9 @@ screen inventory_screen():
     modal True
     zorder 101
 
+    key "i" action Hide("inventory_screen")
+    key "mouseup_3" action Hide("inventory_screen")
+
     frame:
         style_prefix "inventory"
         background Solid("#333")

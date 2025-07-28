@@ -1,6 +1,7 @@
 init python:
     def _kill_dzm506(gsm):
         gsm.set_dead_dzm506(True)
+        gsm.inc_exp_custom('party', 65)
     def _know_506_secret(gsm):
         return gsm.get_has_506_thread()
 
@@ -11,10 +12,10 @@ init python:
         gsm.set_has_needle(True)
         gsm.inc_exp_custom('party', 100)
     def _r45484_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r45502_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
 
 

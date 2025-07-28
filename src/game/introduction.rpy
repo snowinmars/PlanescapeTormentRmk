@@ -1,20 +1,19 @@
 init python:
     can_spoiler = False
-    def _setup_new_life_as_mage(gcm):
-        gcm.set_property('protagonist', 'intelligence', 16)
-        gcm.set_property('protagonist', 'wisdom', 17)
-        gcm.set_property('protagonist', 'charisma', 15)
+    def _setup_new_life_as_mage(gsm):
+        gsm.gcm.set_property('protagonist', 'intelligence', 16)
+        gsm.gcm.set_property('protagonist', 'wisdom', 17)
+        gsm.gcm.set_property('protagonist', 'charisma', 15)
     def _setup_as_highlvl(gsm):
         gsm.set_can_speak_with_dead(True)
 
 
 init 10 python:
     gsm = renpy.store.global_settings_manager
-    gcm = renpy.store.global_character_manager
 
 
 label quick_setup_as_mage:
-    $ _setup_new_life_as_mage(gcm)
+    $ _setup_new_life_as_mage(gsm)
     return
 
 label introduction:
@@ -43,7 +42,7 @@ label introduction_1:
         snowinmars 'Бои происходят внутри бесед, а стучать дубинкой и бросать кубики - это так, между делом.'
         snowinmars 'Я подумал: а, собсно, почему бы не заострить: я выброшу всё, кроме повествования. Оно будет работать?'
     else:
-        snowinmars 'Вторая...'
+        snowinmars 'Вторая…'
         snowinmars 'Страх спойлеров растёт из того, что произведению нечем тебя удивить, кроме внезапности.'
         snowinmars 'Искусство нельзя заспойлерить. Сюжет "Ромео и Джульетты" излагается на первой странице книги - потому что не в нём смысл.'
         snowinmars 'Тот сюжет был бородат ещё во времена Шекспира - но он пересказал его таким, что мы помним канву спустя половину тысячелетия. Поэтому и спойлерит его сразу.'
@@ -82,7 +81,7 @@ label introduction_1:
 
 
 label new_life:
-    snowinmars 'Да, тут такое дело...'
+    snowinmars 'Да, тут такое дело…'
     snowinmars 'Всё-таки я не могу полностью игнорировать билд: на нём завязаны диалоги, и завязаны сильно.'
     snowinmars 'Пользуясь правом технодемки, я делаю вжух -'
     $ _setup_new_life_as_mage(gcm)

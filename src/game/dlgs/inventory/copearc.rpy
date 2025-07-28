@@ -1,5 +1,6 @@
 ﻿init python:
     def _r46725_action(gsm):
+        gsm.gcm.modify_property('party', 'experience', 250)
         gsm.inc_exp_custom('party', 250)
     def _r46728_action(gsm):
         gsm.inc_exp_custom('party', 250)

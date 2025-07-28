@@ -1,11 +1,12 @@
 init python:
     def _kill_dzm626(gsm):
         gsm.set_dead_dzf626(True)
+        gsm.inc_exp_custom('party', 65)
 
 
 init python:
     def _r35051_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
 
 

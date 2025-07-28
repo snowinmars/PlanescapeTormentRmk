@@ -1,6 +1,7 @@
 init python:
     def _kill_dzm396(gsm):
         gsm.set_dead_dzm396(True)
+        gsm.inc_exp_custom('party', 65)
     def _get_took_dzm396_bandages(gsm):
         gsm.get_has_bandages_zm396()
     def _r34936_condition(gsm):
@@ -8,7 +9,7 @@ init python:
 
 init python:
     def _r34932_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r34936_action(gsm):
         gsm.set_has_bandages_zm396(True)
@@ -17,7 +18,7 @@ init python:
         gsm.set_has_bandages_zm396(True)
         gsm.set_has_bandages(True)
     def _r45112_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
 
 

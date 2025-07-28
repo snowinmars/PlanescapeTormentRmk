@@ -1,17 +1,17 @@
 init python:
     def _r6613_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalskeleton_chaotic')
     def _r6614_action(gsm):
-        gsm.dec_law()
-        glm.set_location('AR0001')
+        gsm.gcm.modify_property('protagonist', 'law', -1)
+        gsm.set_skeleton_chaotic(True)
     def _r6617_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_skeleton_examine(True)
     def _r6618_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_morte_skel_mort_quip2(True)
     def _r6629_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r6632_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_morte_skel_mort_quip2(True)
     def _r6635_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r6640_action(gsm):
@@ -23,7 +23,7 @@ init python:
     def _r6645_action(gsm):
         gsm.inc_exp_custom('party', 250)
     def _r6650_action(gsm):
-        glm.set_location('AR0001')
+        gsm.set_skeleton_examine(True)
     def _r6652_action(gsm):
         gsm.inc_exp_custom('party', 250)
     def _r58984_action(gsm):
@@ -38,18 +38,22 @@ init python:
     def _r6612_condition(gsm):
         return gsm.get_42_secret()
     def _r6614_condition(gsm):
-        return glm.is_visited_internal_location('AR0000')
+        return not gsm.get_skeleton_chaotic()
     def _r6615_condition(gsm):
-        return glm.is_visited_internal_location('AR0001')
+        return gsm.get_skeleton_chaotic()
     def _r6616_condition(gsm):
         return gsm.get_can_speak_with_dead()
     def _r6618_condition(gsm):
-        return glm.is_visited_internal_location('AR0000')
+        return gsm.get_skeleton_examine() \
+               and gsm.get_in_party_morte() \
+               and not gsm.get_morte_skel_mort_quip2()
     def _r6619_condition(gsm):
-        return glm.is_visited_internal_location('AR0001')
+        return gsm.get_skeleton_examine() \
+               and gsm.get_in_party_morte() \
+               and gsm.get_morte_skel_mort_quip2()
     def _r6620_condition(gsm):
         return not gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001')
+               and gsm.get_skeleton_examine()
     def _r6621_condition(gsm):
         return gsm.get_in_party_morte() \
                and gsm.get_morte_skel_mort_quip()
@@ -78,10 +82,10 @@ init python:
         return gsm.get_42_secret()
     def _r6632_condition(gsm):
         return gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0000')
+               and not gsm.get_morte_skel_mort_quip2()
     def _r6633_condition(gsm):
         return gsm.get_in_party_morte() \
-               and glm.is_visited_internal_location('AR0001')
+               and gsm.get_morte_skel_mort_quip2()
     def _r6634_condition(gsm):
         return not gsm.get_in_party_morte()
     def _r6635_condition(gsm):

@@ -73,10 +73,9 @@ init 3 python:
 
     renpy.store.global_event_manager = EventManager()
     renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
-    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager)
+    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, CharacterManager(renpy.store.global_event_manager))
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
-    renpy.store.global_character_manager = CharacterManager()
 
     devlog = logging.getLogger('log')
 
@@ -97,7 +96,7 @@ init 3 python:
 
     now = int(time.time())
     devlog.info('Building characters...')
-    build_all_characters(renpy.store.global_character_manager)
+    build_all_characters(renpy.store.global_settings_manager.gcm)
     devlog.info('Done building characters, took %s', int(time.time()) - now)
 
     now = int(time.time())
@@ -126,18 +125,27 @@ init 3 python:
             show_inventory = Show("inventory_screen")
         )
     )
+    config.keymap['character_screen'] = ['c']
+    config.underlay.append(
+        renpy.Keymap(
+            character_screen = Show("character_screen", character=renpy.store.global_settings_manager.gcm.get_character('protagonist'))
+        )
+    )
 
 
 label start:
     show screen event_manager_display
     show screen mouse_coordinates
     show screen inventory_button
+    show screen character_screen_button
     menu:
         "dev":
+            call quick_setup_as_mage
             $ gsm = renpy.store.global_settings_manager
             $ glm = renpy.store.global_location_manager
-            $ glm.set_location('mortuary_f2r7')
+            $ glm.set_location('mortuary_f2r5')
             $ gsm.set_in_party_morte(True)
+            $ gsm.gcm.set_property('protagonist', 'good', 10)
             # $ gsm.set_has_intro_key(True)
             # $ gsm.set_has_tome_ba(True)
             # $ gsm.set_has_copper_earring_closed(True)

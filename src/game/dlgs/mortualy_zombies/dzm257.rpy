@@ -1,6 +1,7 @@
 init python:
     def _kill_dzm257(gsm):
         gsm.set_dead_dzm257(True)
+        gsm.inc_exp_custom('party', 65)
     def _know_dzm257_spirit_action(gsm):
         gsm.set_know_dzm257_spirit(True)
     def _know_dzm257_spirit_condition(gsm):
@@ -9,10 +10,10 @@ init python:
 
 init python:
     def _r6510_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r9562_action(gsm):
-        gsm.dec_once_law('chaotic_zom257_1')
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zom257_1')
 
 
 init python:

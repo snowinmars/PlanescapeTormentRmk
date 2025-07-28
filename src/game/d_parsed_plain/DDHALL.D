@@ -6,7 +6,7 @@ init python:
     def _r831_action(gsm):
         gsm.inc_exp_custom('party', 250)    # '39469': ' ~Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса.~ '
     def _r843_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_1')
     def _r5069_action(gsm):
         gsm.update_journal('39460')    # '39460': ' ~Я спросил Дхолла, знает ли он меня, и он ответил, что знает обо мне очень мало, и еще меньше — о моих спутниках, сопровождавших меня в прошлом. Вероятно, их тела находятся здесь, в Морге... возможно, увидев их, я смогу что-нибудь вспомнить. ~ '
     def _r886_action(gsm):
@@ -18,7 +18,7 @@ init python:
     def _r931_action(gsm):
         gsm.update_journal('39462')    # '39462': ' ~Дхолл сказал мне, что это благодаря ему мои визиты в Морг остаются в тайне от остальных тленных. До тех пор, пока он остается писарем в приемной, он будет единственным, кто видит мое тело, прибывающее сюда. ~ '
     def _r936_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_1')
     def _r953_action(gsm):
         gsm.set_meet_dustmen(True)
     def _r958_action(gsm):
@@ -38,9 +38,9 @@ init python:
     def _r6033_action(gsm):
         gsm.set_meet_dustmen(True)
     def _r6051_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_2')
     def _r6053_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_3')
 
 
 init python:

@@ -4,7 +4,7 @@ init python:
         gsm.set_has_1201_note(True)
         gsm.inc_exp_custom('party', 250)
     def _r45129_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
 
 

@@ -1,6 +1,6 @@
 init python:
     def _r454_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r461_action(gsm):
         gsm.set_meet_vaxis(True)
@@ -11,15 +11,15 @@ init python:
     def _r466_action(gsm):
         gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
     def _r472_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r473_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r475_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r476_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_2')
     def _r477_action(gsm):
-        gsm.inc_once_law()
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_1')
     def _r480_action(gsm):
         gsm.set_meet_vaxis(True) ~
         gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
@@ -30,70 +30,70 @@ init python:
         gsm.set_meet_vaxis(True) ~
         gsm.update_journal('64513')    # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
     def _r487_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r488_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r493_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_2')
     def _r494_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_2')
     def _r1306_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r1348_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r1359_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r1360_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r1361_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r4364_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4365_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4370_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r4371_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_1')
     def _r4381_action(gsm):
-        gsm.inc_once_law()
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
     def _r4387_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4388_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4391_action(gsm):
-        gsm.inc_once_law()
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
     def _r4397_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4398_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4401_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4402_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4405_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4408_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4413_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4428_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4429_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4434_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_5')
     def _r4442_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4443_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4447_action(gsm):
         gsm.set_vaxis_orders(True)
     def _r4448_action(gsm):
         gsm.set_vaxis_orders(True)
     def _r4456_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4457_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4469_action(gsm):
         gsm.set_vaxis_leave(True)
         gsm.set_has_bandages(True)
@@ -103,21 +103,21 @@ init python:
         gsm.set_has_needle(True) GiveItemCreate("Knife",Protagonist,1,0,0)
         gsm.inc_exp_custom('party', 500)    # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
     def _r4474_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_3')
     def _r4477_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4478_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4484_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4485_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4672_action(gsm):
         gsm.set_strong_arm_vaxis(True)
     def _r4489_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4490_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4494_action(gsm):
         gsm.inc_exp_custom('party', 250)
     def _r4496_action(gsm):
@@ -125,10 +125,10 @@ init python:
     def _r4497_action(gsm):
         gsm.set_vaxis_orders(False)
     def _r4498_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
         gsm.set_vaxis_orders(False)
     def _r4499_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
         gsm.set_vaxis_orders(False)
     def _r4502_action(gsm):
         gsm.inc_exp_custom('party', 250)
@@ -137,7 +137,7 @@ init python:
     def _r4503_action(gsm):
         gsm.update_journal('64518')    # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
     def _r4504_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_6')
     def _r4506_action(gsm):
         gsm.update_journal('64519')    # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
     def _r66150_action(gsm):
@@ -198,7 +198,7 @@ init python:
         gsm.update_journal('64531')    # '64531': ' ~В обмен на иголку, нитку и бальзамирующую жидкость Ваксис замаскировал меня под зомби. Он предупредил меня, что бег может разрушить маскировку, и что я не должен ни с кем разговаривать, будучи замаскированным. Зомби ведь «не разговаривают». ~ '
     def _r4645_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4651_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
     def _r4661_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4666_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r4669_action(gsm):        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)

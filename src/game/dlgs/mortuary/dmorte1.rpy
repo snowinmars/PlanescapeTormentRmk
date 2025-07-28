@@ -1,6 +1,6 @@
 ﻿init python:
     def _r39824_action(gsm):
-        gsm.inc_once_good('good_morte_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_morte_1')
     def _r39829_action(gsm):
         gsm.set_has_scalpel(True)
     def _r39852_action(gsm):

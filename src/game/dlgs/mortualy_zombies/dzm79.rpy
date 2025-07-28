@@ -1,6 +1,12 @@
 init python:
+    def _kill_dzm79(gsm):
+        gsm.set_dead_dzm79(True)
+        gsm.inc_exp_custom('party', 65)
+
+
+init python:
     def _r34943_action(gsm):
-        gsm.dec_once_law('zombie_chaotic')
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalzombie_chaotic')
     def _r34946_action(gsm):
         gsm.set_know_copper_earring_secret(True)
     def _r64279_action(gsm):

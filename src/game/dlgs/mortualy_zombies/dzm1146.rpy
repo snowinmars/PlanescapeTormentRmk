@@ -1,14 +1,14 @@
 init python:
     def _r6521_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r6524_action(gsm):
         gsm.set_meet_crispy(True)
     def _r9415_action(gsm):
-        gsm.inc_once_good('good_crispy_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_crispy_1')
     def _r9426_action(gsm):
-        gsm.dec_once_good('evil_crispy_1')
-        gsm.dec_once_law('chaotic_crispy_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_crispy_1')
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_crispy_1')
 
 
 init python:

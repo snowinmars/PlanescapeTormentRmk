@@ -7,6 +7,6 @@ init 10 python:
 
 
 label start_dhall_feather:
-    $ gsm.inc_lore()
+    $ gsm.gcm.modify_property('protagonist', 'lore', 1)
     teller 'Разломив перо, ты на секунду вспоминаешь кашель странного существа из Морга. Ты начинаешь понимать больше.'
     jump show_graphics_menu

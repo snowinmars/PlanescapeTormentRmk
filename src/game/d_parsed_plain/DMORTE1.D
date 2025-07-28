@@ -2,7 +2,7 @@ init python:
     def _r39793_action(gsm):
         gsm.set_meet_morte(True)
     def _r39824_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_morte_1')
     def _r39831_action(gsm):
         gsm.set_in_party_morte(True)
     def _r39852_action(gsm):

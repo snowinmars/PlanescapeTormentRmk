@@ -1,11 +1,11 @@
 init python:
     def _r6565_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r6568_action(gsm):
         gsm.set_meet_asonje(True)
     def _r9247_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_asonje_1')
         gsm.set_asonje_quest_state(3)
     def _r9289_action(gsm):
         gsm.set_asonje_quest_state(2)
@@ -15,7 +15,6 @@ init python:
         gsm.set_asonje_quest_state(2)
     def _r9304_action(gsm):
         gsm.set_death_of_names_adahn(True)
-
         gsm.inc_once_adahn('Adahn_Death_of_Names_1')
 
 

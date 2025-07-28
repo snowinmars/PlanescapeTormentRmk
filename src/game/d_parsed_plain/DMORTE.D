@@ -25,7 +25,7 @@ init python:
     def _r2602_action(gsm):
         gsm.set_morte_quip(True)
     def _r2605_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r6952_action(gsm):
         gsm.set_know_lady(True)
     def _r3474_action(gsm):
@@ -39,15 +39,15 @@ init python:
     def _r3877_action(gsm):
         gsm.set_warning(2)
     def _r3965_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r3966_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r3972_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r3988_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r4029_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_giant_skel_mort_1')
     def _r4144_action(gsm):
         gsm.set_warning(1)
     def _r4145_action(gsm):
@@ -67,20 +67,20 @@ init python:
     def _r4676_action(gsm):
         gsm.update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
     def _r4678_action(gsm):
-        gsm.dec_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
     def _r4679_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_4')
     def _r4682_action(gsm):
-        gsm.inc_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
     def _r4687_action(gsm):
-        gsm.inc_once_law()
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
     def _r4693_action(gsm):
         gsm.update_journal('64512')    # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
     def _r4695_action(gsm):
-        gsm.dec_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
     def _r4699_action(gsm):
-        gsm.inc_once_law(3)
+        gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
     def _r64535_action(gsm):        FadeToColor([20.0],0) Wait(1)
         gsm.set_looks_like("zombie") Wait(2) FadeFromColor([20.0],0)
         gsm.inc_exp_custom('party', 500)
@@ -95,9 +95,9 @@ init python:
     def _r6075_action(gsm):
         gsm.set_morte_deionarra_quip_1(True)
     def _r6658_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r6659_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r6957_action(gsm):
         gsm.set_translate_dabus(False)
     def _r7056_action(gsm):
@@ -112,12 +112,12 @@ init python:
         gsm.inc_morte_taunt()
     def _r11977_action(gsm):
         gsm.set_ingress_teeth_installed(True)
-        gsm.dec_once_law()
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_ingress_teeth_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_ingress_teeth_1')
     def _r11980_action(gsm):
         gsm.set_ingress_teeth_installed(True)
-        gsm.dec_once_law()
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_ingress_teeth_2')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_ingress_teeth_1')
     def _r11982_action(gsm):
         gsm.dec_morale_morte()
     def _r11983_action(gsm):
@@ -190,9 +190,9 @@ init python:
     def _r18802_action(gsm):
         gsm.inc_bd_morte_morale()
     def _r18578_action(gsm):
-        gsm.inc_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_yellow_1')
     def _r18808_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_1')
     def _r18820_action(gsm):
         gsm.dec_gold(5)
     def _r18821_action(gsm):
@@ -219,18 +219,18 @@ init python:
     def _r24697_action(gsm):
         gsm.set_know_lady(True)
     def _r22850_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_cube_3')
     def _r22853_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_cube_4')
     def _r22856_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_cube_5')
     def _r24904_action(gsm):
         gsm.set_meet_morte(True)
     def _r24905_action(gsm):
         gsm.set_meet_morte(True)
         gsm.set_in_party_morte(True)
     def _r24925_action(gsm):
-        gsm.inc_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_morte_1')
     def _r24932_action(gsm):
         gsm.set_in_party_morte(True) ~
         gsm.update_journal('24933')    # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
@@ -301,91 +301,91 @@ init python:
     def _r35001_action(gsm):
         gsm.set_morte_quip(True)
     def _r34993_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35023_action(gsm):
         gsm.set_morte_quip(True)
     def _r35033_action(gsm):
         gsm.set_morte_quip(True)
     def _r35025_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35055_action(gsm):
         gsm.set_morte_quip(True)
     def _r35065_action(gsm):
         gsm.set_morte_quip(True)
     def _r35057_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35087_action(gsm):
         gsm.set_morte_quip(True)
     def _r35097_action(gsm):
         gsm.set_morte_quip(True)
     def _r35089_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35119_action(gsm):
         gsm.set_morte_quip(True)
     def _r35129_action(gsm):
         gsm.set_morte_quip(True)
     def _r35121_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35151_action(gsm):
         gsm.set_morte_quip(True)
     def _r35161_action(gsm):
         gsm.set_morte_quip(True)
     def _r35153_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35183_action(gsm):
         gsm.set_morte_quip(True)
     def _r35193_action(gsm):
         gsm.set_morte_quip(True)
     def _r35185_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35215_action(gsm):
         gsm.set_morte_quip(True)
     def _r35225_action(gsm):
         gsm.set_morte_quip(True)
     def _r35217_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35247_action(gsm):
         gsm.set_morte_quip(True)
     def _r35257_action(gsm):
         gsm.set_morte_quip(True)
     def _r35249_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35279_action(gsm):
         gsm.set_morte_quip(True)
     def _r35289_action(gsm):
         gsm.set_morte_quip(True)
     def _r35281_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
     def _r35319_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35342_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35360_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35358_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35396_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35419_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35437_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35435_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35473_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35496_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35514_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35512_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r35550_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
     def _r35573_action(gsm):
-        gsm.dec_good()
+        gsm.gcm.modify_property('protagonist', 'good', -1)
     def _r35591_action(gsm):
-        gsm.inc_good()
+        gsm.gcm.modify_property('protagonist', 'good', 1)
     def _r35589_action(gsm):
         gsm.set_morte_skel_mort_quip(True)
     def _r39716_action(gsm):
@@ -455,12 +455,12 @@ init python:
     def _r53841_action(gsm):
         gsm.set_pillar_question(False)
     def _r53843_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
         gsm.set_pillar(2) StartCutSceneMode() # ?.startCutScene('1001Cut1')
     def _r53867_action(gsm):
         gsm.set_pillar_question(False)
     def _r53850_action(gsm):
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
         gsm.set_pillar(2) StartCutSceneMode() # ?.startCutScene('1001Cut1')
     def _r53856_action(gsm):
         gsm.set_pillar_question(False)
@@ -492,13 +492,13 @@ init python:
     def _r54836_action(gsm):        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
     def _r54839_action(gsm):        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
     def _r55902_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_nordom_5')
     def _r55925_action(gsm):
         gsm.set_know_mechanus(True)
     def _r55931_action(gsm):
-        gsm.inc_once_law(2)
+        gsm.gcm.modify_property_once('protagonist', 'law', 2, 'globallawful_nordom_2')
     def _r55941_action(gsm):
-        gsm.dec_once_law(2)
+        gsm.gcm.modify_property_once('protagonist', 'law', -2, 'globalchaotic_nordom_4')
     def _r61414_action(gsm):        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
     def _r65569_action(gsm):
         gsm.set_morte_tattoo_xp(True)
@@ -521,10 +521,10 @@ init python:
     def _r65733_action(gsm):
         gsm.inc_exp_custom('party', 12000)
     def _r65750_action(gsm):
-        gsm.inc_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_morte_1')
     def _r65751_action(gsm):
-        gsm.dec_once_law()
-        gsm.dec_once_good()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_morte_1')
+        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_morte_1')
     def _r65753_action(gsm):
         gsm.update_journal('53633')    # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
     def _r65758_action(gsm):        # ?.play_sound('SPTR_01') FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)

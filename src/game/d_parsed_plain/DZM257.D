@@ -1,9 +1,9 @@
 init python:
     def _r6510_action(gsm):
-        gsm.dec_law()
+        gsm.gcm.modify_property('protagonist', 'law', -1)
         gsm.set_zombie_chaotic(True)
     def _r9562_action(gsm):
-        gsm.dec_once_law()
+        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zom257_1')
 
 
 init python:

@@ -1,6 +1,8 @@
 init python:
     def _kill_dzm825(gsm):
         gsm.set_dead_dzm825(True)
+        gsm.inc_exp_custom('party', 65)
+
 
 init python:
     def _r24565_condition(gsm):

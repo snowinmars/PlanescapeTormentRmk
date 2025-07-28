@@ -1,6 +1,7 @@
 init python:
     def _kill_dzm1664(gsm):
         gsm.set_dead_dzm1664(True)
+        gsm.inc_exp_custom('party', 65)
 
 
 init python:

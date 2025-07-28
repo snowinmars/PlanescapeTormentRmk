@@ -9,14 +9,14 @@ def build_mortuary_f2r5_menu(location_id, gsm, glm):
     builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/eivene.png', lambda: not gsm.get_dead_eivene(), 960, 530)
         .auto_position(1000, 530)
-        # .option(lambda: 'Атаковать Эи-Вейн'
-        #         if gsm.get_meet_eivene()
-        #         else 'Атаковать хрупкую девушку') \
-        # .jump(lambda: 'start_deivene_kill'
-        #       if gsm.get_meet_eivene()
-        #       else 'start_deivene_kill_first') \
-        # .when(lambda: not gsm.get_dead_eivene()) \
-        # .style('kill') \
+        .option(lambda: 'Атаковать Эи-Вейн'
+                if gsm.get_meet_eivene()
+                else 'Атаковать хрупкую девушку') \
+        .jump(lambda: 'start_deivene_kill'
+              if gsm.get_meet_eivene()
+              else 'start_deivene_kill_first') \
+        .when(lambda: not gsm.get_dead_eivene()) \
+        .style('kill') \
         .option(lambda: 'Поговорить с Эи-Вейн'
                 if gsm.get_meet_eivene()
                 else 'Поговорить с хрупкой девушкой') \
