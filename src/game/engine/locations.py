@@ -59,7 +59,7 @@ class LocationManager:
         return location_id in self.visited_locations
 
     def is_visited_internal_location(self, internal_location_id):
-        return internal_location_id in self.visited_locations
+        return internal_location_id in self.visited_internal_locations
 
     # def get_location_ids(self, internal_id: str) -> List[str]:
     #     if internal_id not in self._mappings:

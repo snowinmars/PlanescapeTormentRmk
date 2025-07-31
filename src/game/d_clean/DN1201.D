@@ -42,4 +42,4 @@ END
 IF ~~ THEN BEGIN 5 // from: 4.0
 SAY #45024 /* ~Ты отгибаешь стороны пирамидки, и бумага превращается в пыль. Внутри находится треугольная серьга. Она блестит и играет на свету. ~ */
 IF ~~ THEN REPLY #45025 /* ~Взять треугольную серьгу...~ */ DO ~GiveItemCreate("TEarring",Protagonist,3,0,0) DestroyPartyItem("N1201",TRUE) ~ EXIT
-END 
+END

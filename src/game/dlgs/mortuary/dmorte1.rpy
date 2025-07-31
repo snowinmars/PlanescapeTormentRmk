@@ -1,24 +1,6 @@
-﻿init python:
-    def _r39824_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_morte_1')
-    def _r39829_action(gsm):
-        gsm.set_has_scalpel(True)
-    def _r39852_action(gsm):
-        gsm.set_in_party_morte(True)
-    def _r39856_action(gsm):
-        gsm.set_in_party_morte(True)
-    def _r39859_action(gsm):
-        gsm.set_in_party_morte(True)
-    def _kill_morte(gsm):
-        gsm.set_dead_morte(True)
-    def _s24_action(gsm):
-        gsm.set_has_intro_key(True)
-
-
-init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
-
+﻿init 10 python:
+    from dlgs.mortuary.dmorte1_logic import Dmorte1Logic
+    dmorte1Logic = Dmorte1Logic(renpy.store.global_settings_manager)
 
 # ###
 # Original:  DLG/DMORTE1.DLG
@@ -26,16 +8,14 @@ init 10 python:
 # ###
 
 
-label start_dmorte1_talk:
-    call dmorte1_init
-    jump dmorte1_s0
+label new_life_dmorte1_s0:
+    scene
+    hide expression "*"
+    return
 label start_dmorte1_kill:
     call dmorte1_init
     jump dmorte1_kill
 label dmorte1_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_in_party_morte(True)
-    $ gsm.set_meet_morte(True)
     scene bg mortuary_f2r1
     show morte_img default at center_left_down
     return
@@ -46,6 +26,7 @@ label dmorte1_dispose:
 
 # s0 # say39792
 label dmorte1_s0:  # from -
+    call new_life_dmorte1_s0
     teller '............кккккккхххххххххх................'
     teller 'Этот хриплый присвист – мой первый вдох.'
     teller 'Я просыпаюсь в оцепенении: кожа ледяная и липкая, мышцы костенеют, как у давно остывшего трупа.'
@@ -62,6 +43,7 @@ label dmorte1_s0:  # from -
     teller 'Я застываю, превращаясь в камень, в пустоту. Только бы не заметили...'
 
     call dmorte1_init
+    $ dmorte1Logic.dmorte1_init()
     morte_unknown 'Эй, шеф. Ты в порядке?'
     morte_unknown 'Изображаешь из себя труп или пытаешься обмануть трухлявых?'
     morte_unknown 'Я уж думал, что ты дал дуба.'
@@ -233,7 +215,7 @@ label dmorte1_s14:  # from 13.0
     menu:
         'А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.':
             # r16 # reply39824
-            $ _r39824_action(gsm)
+            $ dmorte1Logic.r39824_action()
             jump dmorte1_s15
         'Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?':
             # r17 # reply39825
@@ -258,7 +240,7 @@ label dmorte1_s16:  # from 14.1 15.0
     menu:
         '(Взять скальпель)':
             # r19 # reply39829
-            $ _r39829_action(gsm) # TODO [snow]: добавь в графическое меню иконку "Взять скальпель", если игрок не взял его раньше
+            $ dmorte1Logic.r39829_action()
             jump dmorte1_s19_1
         '(Не брать скальпель)':
             # r19 # reply39829
@@ -344,7 +326,7 @@ label dmorte1_s24:  # from -
     call dmorte1_init
     morte 'Отлично, похоже, ты позаботился о правильном трупе.'
     teller 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
-    $ _s24_action(gsm)
+    $ dmorte1Logic.s24_action()
     morte 'Мы можем выбраться отсюда!'
 
     menu:
@@ -361,7 +343,7 @@ label dmorte1_s26:  # from -
     menu:
         'Да… идем.':
             # r32 # reply39852
-            $ _r39852_action(gsm)
+            $ dmorte1Logic.r39852_action()
             jump dmorte1_dispose
         'Не сейчас, Морт.':
             # r33 # reply39853
@@ -379,7 +361,7 @@ label dmorte1_s27:  # from 26.1
             jump dmorte1_s28
         'Ладно. Я передумал. Давай, идем.':
             # r35 # reply39856
-            $ _r39856_action(gsm)
+            $ dmorte1Logic.r39856_action()
             jump dmorte1_dispose
         'Не сейчас, Морт. Может быть потом.':
             # r36 # reply39857
@@ -395,7 +377,7 @@ label dmorte1_s28:  # from 27.0 27.2
     menu:
         'Ладно. Я передумал. Давай, идем.':
             # r37 # reply39859
-            $ _r39859_action(gsm)
+            $ dmorte1Logic.r39859_action()
             jump dmorte1_dispose
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r38 # reply39860
@@ -475,5 +457,5 @@ label dmorte1_killed:
     morte "Слушай шеф…"
     teller "Я хватаю черепушку и разбиваю её о землю."
 
-    $ _kill_morte(gsm)
+    $ dmorte1Logic.kill_morte()
     jump dmorte1_dispose

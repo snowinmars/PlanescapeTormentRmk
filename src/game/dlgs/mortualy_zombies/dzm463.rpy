@@ -1,29 +1,6 @@
-init python:
-    def _kill_dzm463(gsm):
-        gsm.set_dead_dzm463(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r6485_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-
-init python:
-    def _r6485_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6488_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6489_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6490_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm463_logic import Dzm463Logic
+    dzm463Logic = Dzm463Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -38,8 +15,7 @@ label start_dzm463_kill:
     call dzm463_init
     jump dzm463_kill
 label dzm463_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm463(True)
+    $ dzm463Logic.dzm463_init()
     scene bg mortuary1
     show dzm463_img default at center_left_down
     return
@@ -53,17 +29,17 @@ label dzm463_s0:  # from - # IF ~  True()
     teller 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6485_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm463Logic.r6485_condition():
             # r0 # reply6485
-            $ _r6485_action(gsm)
+            $ dzm463Logic.r6485_action()
             jump dzm463_s1
-        'Итак… что тут у нас интересного?' if _r6488_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm463Logic.r6488_condition():
             # r1 # reply6488
             jump dzm463_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6489_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm463Logic.r6489_condition():
             # r2 # reply6489
             jump dzm463_s1
-        'Использовать на трупе свою способность История костей.' if _r6490_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm463Logic.r6490_condition():
             # r3 # reply6490
             jump dzm463_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -79,7 +55,7 @@ label dzm463_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6490_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm463Logic.r6490_condition():
             # r3 # reply6490
             jump dzm463_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -95,7 +71,7 @@ label dzm463_s2:  # from 0.3
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6489_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm463Logic.r6489_condition():
             # r2 # reply6489
             jump dzm463_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -117,6 +93,6 @@ label dzm463_kill:
 
 
 label dzm463_killed:
-    $ _kill_dzm463(gsm)
+    $ dzm463Logic.kill_dzm463()
     teller 'От моего удара он спотыкается и падает. Глядя на его тело, я не чувствую сожалений.'
     jump dzm463_dispose

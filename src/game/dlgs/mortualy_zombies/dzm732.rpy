@@ -1,31 +1,6 @@
-init python:
-    def _kill_dzm732(gsm):
-        gsm.set_dead_dzm732(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r6533_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r64271_action(gsm):
-        gsm.set_has_tome_ba(True)
-
-
-init python:
-    def _r6533_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6532_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6534_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6535_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm732_logic import Dzm732Logic
+    dzm732Logic = Dzm732Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -43,8 +18,7 @@ label start_dzm732_kill:
     call dzm732_init
     jump dzm732_kill
 label dzm732_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm732(True)
+    $ dzm732Logic.dzm732_init()
     scene bg mortuary1
     show dzm732_img default at center_left_down
     return
@@ -59,17 +33,17 @@ label dzm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
     teller '…тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
 
     menu:
-        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if _r6533_condition(gsm):
+        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if dzm732Logic.r6533_condition():
             # r0 # reply6533
-            $ _r6533_action(gsm)
+            $ dzm732Logic.r6533_action()
             jump dzm732_s1
-        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if _r6532_condition(gsm):
+        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if dzm732Logic.r6532_condition():
             # r1 # reply6532
             jump dzm732_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6534_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm732Logic.r6534_condition():
             # r2 # reply6534
             jump dzm732_s1
-        'Использовать на трупе свою способность История костей.' if _r6535_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm732Logic.r6535_condition():
             # r3 # reply6535
             jump dzm732_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -85,7 +59,7 @@ label dzm732_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6535_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm732Logic.r6535_condition():
             # r3 # reply6535
             jump dzm732_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -101,7 +75,7 @@ label dzm732_s2:  # from 0.3
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6534_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm732Logic.r6534_condition():
             # r2 # reply6534
             jump dzm732_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -120,7 +94,7 @@ label dzm732_s3:  # from - # IF ~  HasItem("TomeBA","ZM732")
     menu:
         'Взять том из его рук… осторожно.':
             # r8 # reply64271
-            $ _r64271_action(gsm)
+            $ dzm732Logic.r64271_action()
             jump dzm732_s4
         'Оставить труп в покое.':
             # r9 # reply64272
@@ -154,6 +128,6 @@ label dzm732_kill:
 
 
 label dzm732_killed:
-    $ _kill_dzm732(gsm)
+    $ dzm732Logic.kill_dzm732()
     teller 'Труп не видит, как я заношу руку. Удары сыпятся на него с самых неожиданных направлений. Я не чувствую сожаления.'
     jump dzm732_dispose

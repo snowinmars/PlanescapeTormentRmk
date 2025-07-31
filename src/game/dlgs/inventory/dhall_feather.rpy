@@ -1,5 +1,6 @@
-init 10 python:
-    gsm = renpy.store.global_settings_manager
+init 10 python in dhall_feather:
+    from dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
+    dhallFeatherLogic = DhallFeatherLogic(renpy.store.global_settings_manager)
 
 # ###
 # Original:  ITM/QUILL.ITM
@@ -7,6 +8,6 @@ init 10 python:
 
 
 label start_dhall_feather:
-    $ gsm.gcm.modify_property('protagonist', 'lore', 1)
+    $ dhallFeatherLogic.break_feather()
     teller 'Разломив перо, ты на секунду вспоминаешь кашель странного существа из Морга. Ты начинаешь понимать больше.'
     jump show_graphics_menu

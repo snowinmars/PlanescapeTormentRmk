@@ -14,8 +14,7 @@ init python:
     def _r9291_action(gsm):
         gsm.set_asonje_quest_state(2)
     def _r9304_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+        gsm.inc_adahn()
 
 
 init python:

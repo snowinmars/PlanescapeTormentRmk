@@ -1,29 +1,6 @@
-init python:
-    def _kill_dzm965(gsm):
-        gsm.set_dead_dzm965(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r34923_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-
-init python:
-    def _r34923_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r45070_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r45071_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r45072_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm965_logic import Dzm965Logic
+    dzm965Logic = Dzm965Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -44,8 +21,7 @@ label dzm965_dmorte_extern:
     show morte_img default at center_right_down
     return
 label dzm965_init:
-    $ glm.set_location('mortuary_f2r2')
-    $ gsm.set_meet_dzm965(True)
+    $ dzm965Logic.dzm965_init()
     scene bg mortuary_f2r2
     show dzm965_img default at center_left_down
     return
@@ -69,17 +45,17 @@ label dzm965_s1:  # from - # IF ~  !NearbyDialog("Dmorte")
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
     menu:
-        'Итак… почему ты ходишь вдоль треугольника?' if _r34923_condition(gsm):
+        'Итак… почему ты ходишь вдоль треугольника?' if dzm965Logic.r34923_condition():
             # r0 # reply34923
-            $ _r34923_action(gsm)
+            $ dzm965Logic.r34923_action()
             jump dzm965_s2
-        'Итак… почему ты ходишь вдоль треугольника?' if _r45070_condition(gsm):
+        'Итак… почему ты ходишь вдоль треугольника?' if dzm965Logic.r45070_condition():
             # r1 # reply45070
             jump dzm965_s2
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45071_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm965Logic.r45071_condition():
             # r2 # reply45071
             jump dzm965_s2
-        'Использовать на трупе свою способность История костей.' if _r45072_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm965Logic.r45072_condition():
             # r3 # reply45072
             jump dzm965_s3
         'Было приятно с тобой поболтать. Прощай.':
@@ -95,7 +71,7 @@ label dzm965_s2:  # from 1.0 1.1 1.2
     teller 'Труп уставился на тебя невидящим взглядом.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r45072_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm965Logic.r45072_condition():
             # r3 # reply45072
             jump dzm965_s3
         'Было приятно с тобой поболтать. Прощай.':
@@ -111,7 +87,7 @@ label dzm965_s3:  # from 1.3
     teller 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45071_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm965Logic.r45071_condition():
             # r2 # reply45071
             jump dzm965_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -134,7 +110,7 @@ label dzm965_kill:
 
 
 label dzm965_killed:
-    $ _kill_dzm965(gsm)
+    $ dzm965Logic.kill_dzm965()
     teller 'Я поджидаю труп на одном из углов его маршрута. Он идёт прямо на меня, смотря на моё оружие пустыми глазами.'
     teller 'В них нет ни жизни, ни разума. Я прерываю его цикл.'
     jump dzm965_dispose

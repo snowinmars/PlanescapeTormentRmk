@@ -69,6 +69,7 @@ saves/
 *.so
 
 *.rpyc
+*.pyc
 *.rpyc.bak
 *.rpymc
 *.rpymc.bak

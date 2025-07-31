@@ -19,24 +19,19 @@ init python:
         gsm.update_journal('39462')    # '39462': ' ~Дхолл сказал мне, что это благодаря ему мои визиты в Морг остаются в тайне от остальных тленных. До тех пор, пока он остается писарем в приемной, он будет единственным, кто видит мое тело, прибывающее сюда. ~ '
     def _r936_action(gsm):
         gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_1')
-    def _r953_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r958_action(gsm):
-        gsm.set_meet_dustmen(True)
+    def _r953_action(gsm):        IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+    def _r958_action(gsm):        IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
     def _r1301_action(gsm):
         gsm.update_journal('39470')    # '39470': ' ~Дхолл предположил, что раны, полученные мною, незначительны по сравнению с теми, что нанесены моему разуму... Он также предположил, что эти раны стали причиной моей потери памяти, и что увечья разума не ограничились амнезией. Эта мысль мне неприятна: неплохо бы слышать побольше *хороших* новостей время от времени. ~ '
-    def _r974_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r985_action(gsm):
-        gsm.set_meet_dustmen(True)
+    def _r974_action(gsm):        IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+    def _r985_action(gsm):        IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
     def _r1327_action(gsm):
         gsm.set_meet_dhall(True)
     def _r5731_action(gsm):
         gsm.update_journal('39459')    # '39459': ' ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ '
     def _r5732_action(gsm):
         gsm.update_journal('39459')    # '39459': ' ~В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов. ~ '
-    def _r6033_action(gsm):
-        gsm.set_meet_dustmen(True)
+    def _r6033_action(gsm):        IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
     def _r6051_action(gsm):
         gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_2')
     def _r6053_action(gsm):

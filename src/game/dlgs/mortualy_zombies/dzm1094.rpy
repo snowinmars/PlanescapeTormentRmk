@@ -1,65 +1,9 @@
-init python:
-    def _kill_dzm1094(gsm):
-        gsm.set_dead_dzm1094(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _get_asonje_name(gsm):
-        return asonje if gsm.get_know_asonje_name() else dzm1041
-    def _set_asonje_name(gsm):
-        gsm.set_know_asonje_name(True)
-
-init python:
-    def _r6565_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r6568_action(gsm):
-        gsm.set_meet_asonje(True)
-    def _r9247_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_asonje_1')
-        gsm.set_asonje_quest_state(3)
-    def _r9289_action(gsm):
-        gsm.set_asonje_quest_state(2)
-    def _r9290_action(gsm):
-        gsm.set_asonje_quest_state(2)
-    def _r9291_action(gsm):
-        gsm.set_asonje_quest_state(2)
-    def _r9304_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-
-
-init python:
-    def _r6565_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6566_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6567_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6568_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r9256_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r9276_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r9282_condition(gsm):
-        return gsm.get_asonje_quest_state() != 2
-    def _r9286_condition(gsm):
-        return gsm.get_asonje_quest_state() == 2
-    def _r9319_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r9306_condition(gsm):
-        return gsm.get_asonje_quest_state() != 2
-    def _r9307_condition(gsm):
-        return gsm.get_asonje_quest_state() == 2
-    def _r9312_condition(gsm):
-        return not gsm.get_meet_pharod()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm1094_logic import Dzm1094Logic
+    dzm1094Logic = Dzm1094Logic(renpy.store.global_settings_manager)
+
+    def logic_get_know_asonje_name(self):
+        return asonje if dzm1094Logic.get_know_asonje_name() else dzm1041
 
 
 # ###
@@ -86,8 +30,7 @@ label start_dzm1094_kill_bad:
     call dzm1094_init
     jump dzm1094_kill_bad
 label dzm1094_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm1094(True)
+    $ dzm1094Logic.init_dzm1094()
     scene bg mortuary1
     show dzm1094_img default at center_left_down
     return
@@ -102,19 +45,19 @@ label dzm1094_s0:  # from - # IF ~  Global("Asonje","GLOBAL",0)
     teller 'Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6565_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1094Logic.r6565_condition():
             # r0 # reply6565
-            $ _r6565_action(gsm)
+            $ dzm1094Logic.r6565_action()
             jump dzm1094_s1
-        'Итак… что тут у нас интересного?' if _r6566_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1094Logic.r6566_condition():
             # r1 # reply6566
             jump dzm1094_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6567_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1094Logic.r6567_condition():
             # r2 # reply6567
             jump dzm1094_s1
-        'Использовать на трупе свою способность История костей.' if _r6568_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1094Logic.r6568_condition():
             # r3 # reply6568
-            $ _r6568_action(gsm)
+            $ dzm1094Logic.r6568_action()
             jump dzm1094_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6569
@@ -129,9 +72,9 @@ label dzm1094_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6568_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1094Logic.r6568_condition():
             # r3 # reply6568
-            $ _r6568_action(gsm)
+            $ dzm1094Logic.r6568_action()
             jump dzm1094_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6569
@@ -166,7 +109,7 @@ label dzm1094_s3:  # from 2.0
     menu:
         'Ты здесь, чтобы отвечать на *мои* вопросы, дух.':
             # r9 # reply9247
-            $ _r9247_action(gsm)
+            $ dzm1094Logic.r9247_action()
             jump dzm1094_s4
         'Ты… по крайней мере твои останки… находятся в морге.':
             # r10 # reply9248
@@ -201,7 +144,7 @@ label dzm1094_s4:  # from 3.0
         'Что ты знаешь об этом месте?':
             # r17 # reply9255
             jump dzm1094_s9
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9256_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1094Logic.r9256_condition():
             # r18 # reply9256
             jump dzm1094_s10
         'Ничего, неважно.':
@@ -212,7 +155,7 @@ label dzm1094_s4:  # from 3.0
 # s5 # say9226
 label dzm1094_s5:  # from 4.0 11.0
     asonje 'Меня зовут Асонж. Я могу уйти?'
-    $ _set_asonje_name(gsm)
+    $ dzm1094Logic.set_know_asonje_name()
 
     menu:
         'Нет, у меня есть другие вопросы…':
@@ -225,7 +168,7 @@ label dzm1094_s5:  # from 4.0 11.0
 
 # s6 # say9227
 label dzm1094_s6:  # from 4.1 11.1
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Не могу вспомнить. Что-нибудь еще?'
 
     menu:
@@ -239,7 +182,7 @@ label dzm1094_s6:  # from 4.1 11.1
 
 # s7 # say9228
 label dzm1094_s7:  # from 4.2 11.2
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Дух пожимает плечами и смотрит вверх.'
     x 'Точно не скажу. Да и какая вообще разница?'
     teller 'Он печально сжимает свои губы и бросает на тебя тяжелый взгляд; призрачные искорки в его глазах сверкают гневом.'
@@ -256,7 +199,7 @@ label dzm1094_s7:  # from 4.2 11.2
 
 # s8 # say9229
 label dzm1094_s8:  # from 4.3 11.3
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Мой дух на Арборее…'
     teller 'Он на минуту умолкает, теряясь в теплых воспоминаниях.'
     x 'В данный момент я жажду вернуться домой, подальше от твоего эгоистичного, самовольного и довольно скучного любопытства. Могу ли я вернуться?'
@@ -272,7 +215,7 @@ label dzm1094_s8:  # from 4.3 11.3
 
 # s9 # say9230
 label dzm1094_s9:  # from 4.4 11.4
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Дух окидывает тебя раздраженным взглядом.'
     x 'Нет, конечно же!'
     teller 'Он раздосадовано мотает головой, от этого движения разорванные швы качаются туда-сюда.'
@@ -291,7 +234,7 @@ label dzm1094_s9:  # from 4.4 11.4
 
 # s10 # say9231
 label dzm1094_s10:  # from 4.5 11.5
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Нет.'
     teller 'Похоже, ты мало его интересуешь.'
 
@@ -306,7 +249,7 @@ label dzm1094_s10:  # from 4.5 11.5
 
 # s11 # say9232
 label dzm1094_s11:  # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Дух шумно вздыхает, наполняя воздух запахом формальдегида из легких трупа.'
     x 'Да-да… спрашивай.'
 
@@ -326,7 +269,7 @@ label dzm1094_s11:  # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
         'Что ты знаешь об этом месте?':
             # r37 # reply9275
             jump dzm1094_s9
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9276_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1094Logic.r9276_condition():
             # r38 # reply9276
             jump dzm1094_s10
         'Ничего, неважно.':
@@ -336,7 +279,7 @@ label dzm1094_s11:  # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
 
 # s12 # say9233
 label dzm1094_s12:  # from 9.0
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Тебе, дорогой мой приятель, остается только предполагать, как и мне. Мне уже пора, если ты не против.'
 
     menu:
@@ -350,7 +293,7 @@ label dzm1094_s12:  # from 9.0
 
 # s13 # say9234
 label dzm1094_s13:  # from 3.1
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Он немного обдумывает это, затем начинает хохотать.'
     x 'Да! Это все объясняет, не так ли? Постой, я знаю тебя?'
     teller 'Он склоняет голову набок, внимательно смотря на тебя. Похоже, для него опознание твоей личности — своего рода увлекательная игра.'
@@ -366,16 +309,16 @@ label dzm1094_s13:  # from 3.1
 
 # s14 # say9235
 label dzm1094_s14:  # from 3.2 13.0
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Дух пожимает плечами и улыбается, слегка посмеиваясь.'
     x 'Возможно, ты прав! Что ты хочешь узнать от меня?'
     teller 'Он начинает рассеянно вытягивать остатки швов из своих губ и бросать их на пол, один за одним.'
 
     menu:
-        'Так кто ты?' if _r9282_condition(gsm):
+        'Так кто ты?' if dzm1094Logic.r9282_condition():
             # r44 # reply9282
             jump dzm1094_s15
-        'Так кто ты?' if _r9286_condition(gsm):
+        'Так кто ты?' if dzm1094Logic.r9286_condition():
             # r45 # reply9286
             jump dzm1094_s25
         'Откуда ты?':
@@ -390,7 +333,7 @@ label dzm1094_s14:  # from 3.2 13.0
         'Что ты знаешь об этом месте?':
             # r49 # reply9318
             jump dzm1094_s19
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9319_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1094Logic.r9319_condition():
             # r50 # reply9319
             jump dzm1094_s20
         'Ничего, неважно.':
@@ -401,26 +344,26 @@ label dzm1094_s14:  # from 3.2 13.0
 # s15 # say9236
 label dzm1094_s15:  # from 14.0 22.0
     asonje 'Меня зовут Асонж. А как тебя?'
-    $ _set_asonje_name(gsm)
+    $ dzm1094Logic.set_know_asonje_name()
 
     menu:
         'Я… не знаю.':
             # r52 # reply9289
-            $ _r9289_action(gsm)
+            $ dzm1094Logic.r9289_action()
             jump dzm1094_s21
         'Я скажу тебе в другой раз. У меня есть вопрос…':
             # r53 # reply9290
-            $ _r9290_action(gsm)
+            $ dzm1094Logic.r9290_action()
             jump dzm1094_s22
         'Может быть в другой раз. Прощай.':
             # r54 # reply9291
-            $ _r9291_action(gsm)
+            $ dzm1094Logic.r9291_action()
             jump dzm1094_dispose
 
 
 # s16 # say9237
 label dzm1094_s16:  # from 14.2 22.2
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Я отовсюду! По правде говоря, я не знаю, откуда я родом. В жизни я много путешествовал, и могу назвать своим домом многие места. Сейчас передо мной Арборея…'
     teller 'Дух выглядит довольным.'
 
@@ -435,7 +378,7 @@ label dzm1094_s16:  # from 14.2 22.2
 
 # s17 # say9238
 label dzm1094_s17:  # from 14.3 22.3
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Улыбка духа угасает, и он на мгновенье выглядит озадаченным.'
     x 'Странно… Я не знаю! Я точно не знаю, как умер, правда.'
     teller 'Он пожимает плечами.'
@@ -453,7 +396,7 @@ label dzm1094_s17:  # from 14.3 22.3
 
 # s18 # say9239
 label dzm1094_s18:  # from 14.4 22.4
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'В Арборее! О более удивительном месте я и не мечтал. Нигде в моей смертной жизни я встречал места, столь чувственного… столь величественного…'
     teller 'Он умолкает, теряясь в приятных воспоминаниях.'
     x 'Прекрасные земли, прекрасный народ. Если честно, я уже скучаю по ней!'
@@ -469,7 +412,7 @@ label dzm1094_s18:  # from 14.4 22.4
 
 # s19 # say9240
 label dzm1094_s19:  # from 14.5 22.5
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Не так уж и много. Я подписал контракт с тленной, подчинившись внезапному порыву… Она показала мне какое-то ужасное место, и сказала, что мое тело будет поднято и использовано в качестве работника.'
     x 'Я подумал: ведь оно мне не понадобится, когда я перейду в следующую жизнь, так почему бы и нет? Можно перехватить немного серебра и потратить его на женщин и вино!'
     teller 'Он тихонько смеется от этой мысли, в его глазах сверкают веселые призрачные искорки.'
@@ -488,7 +431,7 @@ label dzm1094_s19:  # from 14.5 22.5
 
 # s20 # say9241
 label dzm1094_s20:  # from 14.6 22.6
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Дух на минуту задумывается.'
     x 'Нет, боюсь, что не слышал об этом человеке. Он твой друг?'
 
@@ -503,7 +446,7 @@ label dzm1094_s20:  # from 14.6 22.6
 
 # s21 # say9242
 label dzm1094_s21:  # from 15.0
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Он выглядит удивленным.'
     x 'Как странно! Мне очень жаль. Я ведь должен тебя *как-то* называть, верно?'
     teller 'Дух выжидающе смотрит на тебя.'
@@ -514,7 +457,7 @@ label dzm1094_s21:  # from 15.0
             jump dzm1094_s22
         'Придумать имя: Ну, не знаю… «Адан»?':
             # r67 # reply9304
-            $ _r9304_action(gsm)
+            $ dzm1094Logic.r9304_action()
             jump dzm1094_s23
         'Нет, это неважно. Прощай.':
             # r68 # reply9305
@@ -523,15 +466,15 @@ label dzm1094_s21:  # from 15.0
 
 # s22 # say9243
 label dzm1094_s22:  # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Конечно. Спрашивай!'
     teller 'Он довольно улыбается, с интересом ожидая твоего вопроса. Последний шов был убран, и теперь его улыбка не такая зловещая.'
 
     menu:
-        'Так кто ты?' if _r9306_condition(gsm):
+        'Так кто ты?' if dzm1094Logic.r9306_condition():
             # r69 # reply9306
             jump dzm1094_s15
-        'Так кто ты?' if _r9307_condition(gsm):
+        'Так кто ты?' if dzm1094Logic.r9307_condition():
             # r70 # reply9307
             jump dzm1094_s25
         'Откуда ты?':
@@ -546,7 +489,7 @@ label dzm1094_s22:  # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.
         'Что ты знаешь об этом месте?':
             # r74 # reply9311
             jump dzm1094_s19
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9312_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1094Logic.r9312_condition():
             # r75 # reply9312
             jump dzm1094_s20
         'Ничего, неважно.':
@@ -556,7 +499,7 @@ label dzm1094_s22:  # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.
 
 # s23 # say9244
 label dzm1094_s23:  # from 21.1
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     teller 'Дух, чувствуя твои колебания, начинает хохотать.'
     x 'Вот ведь бедолага! Ну пусть будет Адан, приятель. Так какие у тебя вопросы?'
 
@@ -571,7 +514,7 @@ label dzm1094_s23:  # from 21.1
 
 # s24 # say9245
 label dzm1094_s24:  # from 19.0
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'О Сигиле, что ли?'
     teller 'Увидев твой кивок, труп растягивает улыбку до ушей.'
     x 'О, я не собираюсь портить тебе впечатление! Иди и разведай его сам! Затеряйся в его улочках, тавернах, среди людей… но будь внимателен!'
@@ -589,7 +532,7 @@ label dzm1094_s24:  # from 19.0
 # s25 # say9283
 label dzm1094_s25:  # from 14.1 22.1
     asonje 'Меня зовут Асонж.'
-    $ _set_asonje_name(gsm)
+    $ dzm1094Logic.set_know_asonje_name()
 
     menu:
         'У меня есть другие вопросы…':
@@ -602,7 +545,7 @@ label dzm1094_s25:  # from 14.1 22.1
 
 # s26 # say20061
 label dzm1094_s26:  # from - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Снова вернулся, а?'
     teller 'Он широко улыбается.'
 
@@ -617,7 +560,7 @@ label dzm1094_s26:  # from - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Aso
 
 # s27 # say20062
 label dzm1094_s27:  # from - # Global("Asonje","GLOBAL",3)
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'А, это ты… снова. Он хмурится, глядя в сторону.'
     teller 'Он хмурится, глядя в сторону.'
 
@@ -631,7 +574,7 @@ label dzm1094_s27:  # from - # Global("Asonje","GLOBAL",3)
 
 
 label dzm1094_kill_good:
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'Снова вернулся, а?'
     teller 'Он широко улыбается.'
 
@@ -643,13 +586,13 @@ label dzm1094_kill_good:
 
 
 label dzm1094_killed_good:
-    $ _kill_dzm1094(gsm)
+    $ dzm1094Logic.kill_dzm1094()
     teller 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
     jump dzm1094_dispose
 
 
 label dzm1094_kill_bad:
-    $ x = get_know_asonje_name(gsm)
+    $ x = logic_get_know_asonje_name()
     x 'А, это ты… снова. Он хмурится, глядя в сторону.'
     teller 'Он хмурится, глядя в сторону.'
 
@@ -661,7 +604,7 @@ label dzm1094_kill_bad:
 
 
 label dzm1094_killed_bad:
-    $ _kill_dzm1094(gsm)
+    $ dzm1094Logic.kill_dzm1094()
     teller 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
     jump dzm1094_dispose
 
@@ -678,6 +621,6 @@ label dzm1094_kill_first:
 
 
 label dzm1094_killed_first:
-    $ _kill_dzm1094(gsm)
+    $ dzm1094Logic.kill_dzm1094()
     teller 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
     jump dzm1094_dispose

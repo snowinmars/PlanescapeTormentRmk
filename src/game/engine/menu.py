@@ -1,4 +1,3 @@
-import renpy
 import logging
 
 class StaticGraphic:

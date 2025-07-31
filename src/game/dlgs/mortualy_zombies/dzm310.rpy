@@ -1,37 +1,9 @@
-init python:
-    def _kill_dzm310(gsm):
-        gsm.set_dead_dzm310(True)
-        gsm.inc_exp_custom('party', 65)
-    def _get_arabhiem_name(gsm):
-        return arabhiem if gsm.get_know_oinosian_name() else dzm310
-    def _set_arabhiem_name(gsm):
-        gsm.set_know_oinosian_name(True)
-
-
-init python:
-    def _r6499_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r6502_action(gsm):
-        gsm.set_meet_oinosian(True)
-
-
-init python:
-    def _r6499_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6500_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6501_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6502_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r9664_condition(gsm):
-        return not gsm.get_meet_pharod()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm310_logic import Dzm310Logic
+    dzm310Logic = Dzm310Logic(renpy.store.global_settings_manager)
+
+    def logic_get_know_oinosian_name():
+        return arabhiem if dzm310Logic.get_know_oinosian_name() else dzm310
 
 
 # ###
@@ -52,8 +24,7 @@ label start_dzm310_kill:
     call dzm310_init
     jump dzm310_kill
 label dzm310_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm310(True)
+    $ dzm310Logic.dzm310_init()
     scene bg mortuary1
     show dzm310_img default at center_left_down
     return
@@ -68,19 +39,19 @@ label dzm310_s0:  # from - # IF ~  Global("Oinosian","GLOBAL",0)
     teller 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6499_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm310Logic.r6499_condition():
             # r0 # reply6499
-            $ _r6499_action(gsm)
+            $ dzm310Logic.r6499_action()
             jump dzm310_s1
-        'Итак… что тут у нас интересного?' if _r6500_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm310Logic.r6500_condition():
             # r1 # reply6500
             jump dzm310_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6501_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm310Logic.r6501_condition():
             # r2 # reply6501
             jump dzm310_s1
-        'Использовать на трупе свою способность История костей.' if _r6502_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm310Logic.r6502_condition():
             # r3 # reply6502
-            $ _r6502_action(gsm)
+            $ dzm310Logic.r6502_action()
             jump dzm310_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6503
@@ -95,9 +66,9 @@ label dzm310_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6502_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm310Logic.r6502_condition():
             # r3 # reply6502
-            $ _r6502_action(gsm)
+            $ dzm310Logic.r6502_action()
             jump dzm310_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6503
@@ -148,7 +119,7 @@ label dzm310_s3:  # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15
         'Что ты знаешь об этом месте?':
             # r14 # reply9663
             jump dzm310_s9
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9664_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm310Logic.r9664_condition():
             # r15 # reply9664
             jump dzm310_s10
         'Ничего, неважно.':
@@ -158,7 +129,7 @@ label dzm310_s3:  # from 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15
 
 # s4 # say9643
 label dzm310_s4:  # from 3.0
-    $ _set_arabhiem_name()
+    $ dzm310Logic.set_know_oinosian_name()
     teller 'Дух говорит так тихо, что ты с трудом его слышишь: губы трупа едва двигаются при каждом слове.'
     arabhiem 'Я никто, милорд; бедное насекомое, отчаянно вцепившееся в Башню Утрат в Ойносе. Когда-то меня называли Арабеймом, милорд… давно, очень давно.'
 
@@ -179,7 +150,7 @@ label dzm310_s4:  # from 3.0
 
 # s5 # say9644
 label dzm310_s5:  # from 3.1
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Я жил в Сигиле, милорд. В Улье. Это было не самое ужасное место, как теперь мне кажется, по крайней мере, по сравнению с моим новым домом, где я теперь… Ойносом.'
     teller 'Труп моргает, так медленно, что на мгновенье тебе кажется, что он просто закрыл глаза.'
 
@@ -200,7 +171,7 @@ label dzm310_s5:  # from 3.1
 
 # s6 # say9645
 label dzm310_s6:  # from 3.2
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Я был убит разбойниками, милорд. Я напился и заблудился по улицам Улья. В конце концов, я стал добычей банды головорезов. Вот и все.'
     x 'Наверно, моя жизнь стоила даже меньше тех медяков, которые получил сборщик за мое тело.'
 
@@ -221,7 +192,7 @@ label dzm310_s6:  # from 3.2
 
 # s7 # say9646
 label dzm310_s7:  # from 3.3 4.1 5.1 8.0 12.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     teller 'На секунду дух закрывает глаза; труп слегка дрожит.'
     x 'Ужасный Ойнос, милорд. В Серой пустоши. Там, где пребывает моя душа, в тени Хин-Ойна, Башни Утрат.'
 
@@ -242,7 +213,7 @@ label dzm310_s7:  # from 3.3 4.1 5.1 8.0 12.0
 
 # s8 # say9647
 label dzm310_s8:  # from 3.4
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Для меня больше ничего нет, милорд. Я в вечной западне в чумной пустоши, в Ойносе. Для таких, как я, больше нет надежд.'
     teller 'Кажется, дух опустился в более чем патетичное состояние, плечи трупа поникли под весом его скорби.'
 
@@ -260,7 +231,7 @@ label dzm310_s8:  # from 3.4
 
 # s9 # say9648
 label dzm310_s9:  # from 3.5 15.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Очень мало, милорд. Только то, что сюда доставляют умерших для погребения или кремации… или в качестве дешевой рабочей силы, как это случилось с моим телом.'
 
     menu:
@@ -274,7 +245,7 @@ label dzm310_s9:  # from 3.5 15.0
 
 # s10 # say9649
 label dzm310_s10:  # from 3.6
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     teller 'Труп медленно качает головой из стороны в сторону.'
     x 'Нет, милорд. Я не знаю никого с таким именем. Прошу прощения, милорд.'
 
@@ -289,7 +260,7 @@ label dzm310_s10:  # from 3.6
 
 # s11 # say9650
 label dzm310_s11:  # from 7.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Мало что можно сказать, милорд. Это земля моего Повелителя, лорда Хин-Ойна… полная боли и страданий, разлагающихся тел и душ. Это место полной безнадеги.'
 
     menu:
@@ -309,7 +280,7 @@ label dzm310_s11:  # from 7.0
 
 # s12 # say9651
 label dzm310_s12:  # from 5.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Да, милорд. Плохое место, но там не так страшно, как в Ойносе.'
 
     menu:
@@ -326,7 +297,7 @@ label dzm310_s12:  # from 5.0
 
 # s13 # say9652
 label dzm310_s13:  # from 4.0 7.1 11.1 14.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Да, милорд. Это очень большая башня, намного выше любого здания в Сигиле. Она сделана из кости, милорд, она очень похоже на позвоночник огромного существа.'
     x 'Там я и тружусь, восстанавливая урон, нанесенный армиями мятежных принцев, врагов моего Повелителя.'
 
@@ -344,7 +315,7 @@ label dzm310_s13:  # from 4.0 7.1 11.1 14.0
 
 # s14 # say9653
 label dzm310_s14:  # from 11.0 13.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Я знаю его только как Повелителя, милорд. Он — лорд Хин-Ойна, принц нечисти, несказанно могущественный ультралот.'
     x 'Он тот, кому принадлежит моя душа, и будет принадлежать вечно, обреченная чахнуть под его ступней, пока вечность не будет перемолота в Забвение.'
 
@@ -362,7 +333,7 @@ label dzm310_s14:  # from 11.0 13.0
 
 # s15 # say9654
 label dzm310_s15:  # from 6.1
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Да, милорд, сборщик. Тот, кто собирает мертвецов Сигила и доставляет их в Морг — там, где мы находимся — за небольшую цену.'
     teller 'Дух оглядывает окружающую обстановку, затем тихо вздыхает.'
 
@@ -380,7 +351,7 @@ label dzm310_s15:  # from 6.1
 
 # s16 # say9655
 label dzm310_s16:  # from 6.0
-    $ x = _get_arabhiem_name(gsm)
+    $ x = logic_get_know_oinosian_name()
     x 'Я не хочу говорить об этом, милорд. Это не тема для разговоров.'
     teller 'Похоже, дух непоколебим в данном вопросе.'
 
@@ -424,7 +395,7 @@ label dzm310_kill_first:
 
 
 label dzm310_killed_first:
-    $ _kill_dzm310(gsm)
+    $ dzm310Logic.kill_dzm310()
     teller 'Удар за ударом я разбиваю его тело. Я чувствую, что я безвозвратно что-то разрушил.'
     jump dzm310_dispose
 
@@ -443,6 +414,6 @@ label dzm310_kill:
 
 
 label dzm310_killed:
-    $ _kill_dzm310(gsm)
+    $ dzm310Logic.kill_dzm310()
     teller 'Удар за ударом я разбиваю его тело. Я чувствую, что я безвозвратно что-то разрушил.'
     jump dzm310_dispose

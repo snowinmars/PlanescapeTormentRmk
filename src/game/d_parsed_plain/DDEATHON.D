@@ -2,18 +2,14 @@ init python:
     def _r7295_action(gsm):
         gsm.set_meet_death_of_names(True) ~
         gsm.update_journal('66659')    # '66659': ' ~Я встретил искалеченного тленного возле мемориала тленных. Его зовут «Смерть-Имен», и он занимается похоронами имен, нанося их на стены мемориала. От этого места мне становится не по себе. Мемориал — это огромное кладбище имен, и каждая из стен — как огромный черный могильный камень.~ '
-    def _r7304_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+    def _r7304_action(gsm):        IncrementGlobalOnceEx("GLOBALAdahn_Death_of_Names_1","GLOBALAdahn",1)
     def _r7312_action(gsm):
         gsm.dec_gold(3)
     def _r7317_action(gsm):
         gsm.dec_gold(3)
     def _r9769_action(gsm):
         gsm.dec_gold(3)    # '26108': ' ~Имя города Эс-Аннона было высечено в мемориале тленных у Морга. Теперь я должен вернуться и сообщить плакальщику Эс-Аннона, что он избавлен от бремени напоминания.~ '
-    def _r9772_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+    def _r9772_action(gsm):        IncrementGlobalOnceEx("GLOBALAdahn_Death_of_Names_1","GLOBALAdahn",1)
 
 
 init python:

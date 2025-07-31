@@ -1,12 +1,12 @@
 class InventoryItem:
-    def __init__(self, settings_id, orig_id, name, description, grid_image, detail_image=None, use_action=None):
+    def __init__(self, settings_id, orig_id, name, description, grid_image, detail_image=None, jump_on_use_to=None):
         self.settings_id = settings_id
         self.orig_id = orig_id
         self.name = name
         self.description = description
         self.grid_image = grid_image
         self.detail_image = detail_image or grid_image
-        self.use_action = use_action
+        self.jump_on_use_to = jump_on_use_to
 
 class InventoryManager:
     def __init__(self, has_item_callback):

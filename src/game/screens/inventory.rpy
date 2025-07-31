@@ -22,8 +22,8 @@ screen inventory_screen():
                 self.item = item
 
             def __call__(self):
-                if self.item.use_action:
-                    self.item.use_action()
+                if self.item.jump_on_use_to:
+                    renpy.exports.jump(jump_on_use_to)
                     # renpy.restart_interaction()
 
     modal True
@@ -82,7 +82,7 @@ screen inventory_screen():
                             text renpy.store.global_inventory_manager.selected_item.description:
                                 style "inventory_description"
 
-                            if renpy.store.global_inventory_manager.selected_item.use_action:
+                            if renpy.store.global_inventory_manager.selected_item.jump_on_use_to:
                                 textbutton "Использовать":
                                     action UseItemAction(renpy.store.global_inventory_manager.selected_item)
                                     xalign 0.5

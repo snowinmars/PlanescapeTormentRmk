@@ -6,20 +6,16 @@ init python:
     def _r1249_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
     def _r33227_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+        gsm.inc_adahn()
         gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r1273_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+        gsm.inc_adahn()
         gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r1290_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+        gsm.inc_adahn()
         gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r1294_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
+        gsm.inc_adahn()
         gsm.gcm.modify_property('protagonist', 'law', -1)
     def _r4307_action(gsm):
         gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)

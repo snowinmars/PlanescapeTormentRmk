@@ -1,22 +1,6 @@
-﻿init python:
-    def _r46725_action(gsm):
-        gsm.gcm.modify_property('party', 'experience', 250)
-        gsm.inc_exp_custom('party', 250)
-    def _r46728_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r46733_action(gsm):
-        gsm.set_has_copper_earring_closed(False)
-        gsm.set_has_copper_earring_opened(True)
-
-init python:
-    def _r46725_condition(gsm):
-        return gsm.get_know_copper_earring_secret()
-    def _r46728_condition(gsm):
-        return gsm.get_know_copper_earring_secret()
-
-
-init 10 python:
-    gsm = renpy.store.global_settings_manager
+﻿init 10 python in copearc:
+    from dlgs.inventory.copearc_logic import CopearcLogic
+    copearcLogic = CopearcLogic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -43,9 +27,9 @@ label copearc_s0:  # from - # IF ~  True()
         'Осмотреть выемки.':
             # r0 # reply46724
             jump copearc_s1
-        'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби «79».' if _r46725_condition(gsm):
+        'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби «79».' if copearcLogic.r46725_condition():
             # r1 # reply46725
-            $ _r46725_action(gsm)
+            $ copearcLogic.r46725_action()
             jump copearc_s2
         'Отложить серьгу.':
             # r2 # reply46726
@@ -57,9 +41,9 @@ label copearc_s1:  # from 0.0
     teller 'Выемки равномерно распределены по внутренней поверхности серьги; при более детальном изучении они начинают напоминать небольшие клыки. Они определенно кем-то сделаны, но для чего — непонятно.'
 
     menu:
-        'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби #79.' if _r46728_condition(gsm):
+        'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби #79.' if copearcLogic.r46728_condition():
             # r3 # reply46728
-            $ _r46728_action(gsm)
+            $ copearcLogic.r46728_action()
             jump copearc_s2
         'Отложить серьгу.':
             # r4 # reply46729
@@ -83,5 +67,5 @@ label copearc_s3:  # from 2.0
     menu:
         'Отложить серьгу.':
             # r6 # reply46733
-            $ _r46733_action(gsm)
+            $ copearcLogic.r46733_action()
             jump copearc_dispose

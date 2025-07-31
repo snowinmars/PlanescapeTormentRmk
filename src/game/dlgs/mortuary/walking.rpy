@@ -1,93 +1,89 @@
-init python:
-    def _take_embalm(gsm):
-        gsm.set_has_embalm(True)
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortuary.walking_logic import WalkingLogic
+    walkingLogic = WalkingLogic(renpy.store.global_settings_manager)
 
 
 label mortuary_walking_1_8_closed:
-    $ glm.set_location('mortuary_f2r1')
+    $ walkingLogic.mortuary_walking_1_8_closed()
     scene bg mortuary_f2r1
     teller "Дверь не поддаётся."
     jump show_graphics_menu
 
 label mortuary_walking_1_up_closed:
-    $ glm.set_location('mortuary_f2r1')
+    $ walkingLogic.mortuary_walking_1_up_closed()
     scene bg mortuary_f2r1
     teller "Дверь не поддаётся."
     jump show_graphics_menu
 
 label mortuary_walking_1_down_closed:
-    $ glm.set_location('mortuary_f2r1')
+    $ walkingLogic.mortuary_walking_1_down_closed()
     scene bg mortuary_f2r1
     teller "Дверь не поддаётся."
     jump show_graphics_menu
 
 label mortuary_walking_1_visit:
-    $ glm.set_location('mortuary_f2r1')
+    $ walkingLogic.mortuary_walking_1_visit()
     scene bg mortuary_f2r1
     jump show_graphics_menu
 
 label mortuary_walking_2_visit:
-    $ glm.set_location('mortuary_f2r2')
+    $ walkingLogic.mortuary_walking_2_visit()
     scene bg mortuary_f2r2
     jump show_graphics_menu
 
 label mortuary_walking_2_scene:
-    $ glm.set_location('mortuary_f2r2')
+    $ walkingLogic.mortuary_walking_2_scene()
     scene bg mortuary_f2r2
     jump dmorte2_s0
 
 label mortuary_walking_3_visit:
-    $ glm.set_location('mortuary_f2r3')
+    $ walkingLogic.mortuary_walking_3_visit()
     scene bg mortuary_f2r3
     jump show_graphics_menu
 
 label mortuary_walking_3_scene:
-    $ glm.set_location('mortuary_f2r3')
+    $ walkingLogic.mortuary_walking_3_scene()
     scene bg mortuary_f2r3
     jump dmorte2_s31
 
 label mortuary_walking_4_visit:
-    $ glm.set_location('mortuary_f2r4')
+    $ walkingLogic.mortuary_walking_4_visit()
     scene bg mortuary_f2r4
     jump show_graphics_menu
 
 label mortuary_walking_5_visit:
-    $ glm.set_location('mortuary_f2r5')
+    $ walkingLogic.mortuary_walking_5_visit()
     scene bg mortuary_f2r5
     jump show_graphics_menu
 
 label mortuary_walking_6_visit:
-    $ glm.set_location('mortuary_f2r6')
+    $ walkingLogic.mortuary_walking_6_visit()
     scene bg mortuary_f2r6
     jump show_graphics_menu
 
 label mortuary_walking_7_visit:
-    $ glm.set_location('mortuary_f2r7')
+    $ walkingLogic.mortuary_walking_7_visit()
     scene bg mortuary_f2r7
     jump show_graphics_menu
 
 label mortuary_walking_8_visit:
-    $ glm.set_location('mortuary_f2r8')
+    $ walkingLogic.mortuary_walking_8_visit()
     scene bg mortuary_f2r8
     jump show_graphics_menu
 
 label mortuary_walking_8_up_visit:
-    $ glm.set_location('mortuaryx')
+    $ walkingLogic.mortuary_walking_8_up_visit()
     scene bg mortuaryx
     jump show_graphics_menu
 
 label mortuary_walking_1_pick_scalpel:
-    $ gsm.set_has_scalpel(True)
+    $ walkingLogic.mortuary_walking_1_pick_scalpel()
     scene bg mortuary_f2r1
     teller "Ты подбираешь скальпель с одной из полок."
     jump show_graphics_menu
 
 label mortuary_walking_1_pick_embalm:
-    $ _take_embalm(gsm)
+    $ walkingLogic.mortuary_walking_1_pick_embalm()
     scene bg mortuary_f2r7
     teller "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Ты берёшь парочку."
     jump dvaxis_dispose

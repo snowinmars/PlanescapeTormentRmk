@@ -162,6 +162,11 @@ const tree = (): string[][] => {
 // Register zombies in runtime settings
 const zombies = (): string[][] => {
     return [
+        ...npcSetting(none, 'ds42'),
+        ...npcSetting(none, 'ds748'),
+        ...npcSetting(none, 'ds863'),
+        ...npcSetting(none, 'ds996'),
+        ...npcSetting(none, 'ds1221'),
         ...npcSetting(none, 'dzm79'),
         ...npcSetting(none, 'dzm199'),
         ...npcSetting(none, 'dzm257'),
@@ -398,6 +403,7 @@ export const wellKnownReplacements: string[][] = [
     ...integerSetting('Nenny', 'nenny', [0, 1, 2]),
     ...integerSetting('Adyzoel', 'adyzoel', [0, 1, 2], 'AR0400'),
     ...integerSetting('BariA', 'baria', [0, 1, 2], 'AR0400'),
+    ...integerSetting('Adahn', 'adahn', [0, 1, 2, 3, 4, 5]),
     ...playerItemSetting('KeyPR', 'intro_key'),
     ...playerItemSetting('KeyPr', 'intro_key'), // ?
     ...playerItemSetting('TomeBA', 'tome_ba'),

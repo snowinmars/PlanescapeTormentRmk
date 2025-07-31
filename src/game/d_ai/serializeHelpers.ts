@@ -26,15 +26,6 @@ const createAlignmentHandler = (prop: string, once: boolean) => (id: string, amo
     }
 };
 
-const handleSpecialCases = (prop: string) => {
-    switch (prop) {
-        case 'know_dustmen': return 'gsm.set_meet_dustmen(True)';
-        case 'adahn':
-            return 'gsm.set_death_of_names_adahn(True)    gsm.inc_once_adahn(\'Adahn_Death_of_Names_1\')';
-        default: return null;
-    }
-};
-
 // Individual transformation functions
 const transformOnceAlignment: StringTransformer = (body) => {
     // IncrementGlobalOnceEx("GLOBALSkeleton_Chaotic","GLOBALLaw",-1)
@@ -44,9 +35,6 @@ const transformOnceAlignment: StringTransformer = (body) => {
         const id = globalId.toLowerCase();
         const prop = property.replace('GLOBAL', '').toLowerCase();
         const amount = parseInt(amountStr);
-
-        const specialCase = handleSpecialCases(prop);
-        if (specialCase) return specialCase;
 
         switch (prop) {
             case 'good':
@@ -67,9 +55,6 @@ const transformAlignment: StringTransformer = (body) => {
     return body.replace(regex, (_, property, amountStr) => {
         const prop = property.toLowerCase();
         const amount = parseInt(amountStr);
-
-        const specialCase = handleSpecialCases(prop);
-        if (specialCase) return specialCase;
 
         switch (prop) {
             case 'good':

@@ -1,154 +1,6 @@
-﻿init python:
-    def _r3871_action(gsm):
-        gsm.set_warning(1)
-    def _r3874_action(gsm):
-        gsm.set_warning(2)
-    def _r3877_action(gsm):
-        gsm.set_warning(2)
-    def _r4339_action(gsm):
-        gsm.set_warning(1)
-    def _r4342_action(gsm):
-        gsm.set_warning(2)
-    def _r4345_action(gsm):
-        gsm.set_warning(2)
-    def _r34991_action(gsm):
-        gsm.set_morte_quip(True)
-    def _r35001_action(gsm):
-        gsm.set_morte_quip(True)
-    def _r34993_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalmorte_zombie_1')
-    def _r45093_action(gsm):
-        gsm.update_journal('39477')
-    def _r45103_action(gsm):
-        gsm.update_journal('39477')
-    def _r4676_action(gsm):
-        gsm.update_journal('64512')
-    def _r3483_action(gsm):
-        gsm.update_journal('38205')
-    def _r4678_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
-    def _r4679_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_4')
-    def _r4682_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
-    def _r4687_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_vaxis_2')
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_vaxis_2')
-    def _r4693_action(gsm):
-        gsm.update_journal('64512')
-    def _r4695_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
-    def _r4699_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
-    def _r35396_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
-    def _r35435_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r64535_action(gsm):      #  FadeToColor([20.0],0) Wait(1)
-        gsm.set_looks_like("zombie")# Wait(2) FadeFromColor([20.0],0)
-        gsm.inc_exp_custom('party', 500)
-    def _r64534_action(gsm):        #FadeToColor([20.0],0) Wait(1)
-        gsm.set_looks_like("zombie") #Wait(2) FadeFromColor([20.0],0)
-    def _r3474_action(gsm):
-        gsm.update_journal('38205')
-    def _r6658_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', -1)
-    def _r6659_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', 1)
-    def _r35319_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
-    def _r35342_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', -1)
-    def _r35360_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', 1)
-    def _r35473_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
-    def _r35496_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', -1)
-    def _r35514_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', 1)
-    def _r6664_condition(gsm):
-        return gsm.get_42_secret()
-    def _r35512_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35550_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_skeleton_mort_1')
-    def _r35573_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', -1)
-    def _r35591_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', 1)
-    def _r35589_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35358_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35419_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', -1)
-    def _r35437_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'good', 1)
-
-
-init python:
-    def _r6665_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'wis') \
-                and not gsm.get_42_secret()
-    def _r35344_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35352_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35355_condition(gsm):
-        return gsm.get_has_prybar()
-    def _r35358_condition(gsm):
-        return not gsm.get_morte_skel_mort_quip()
-    def _r35359_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35421_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35429_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35432_condition(gsm):
-        return gsm.get_has_prybar()
-    def _r35435_condition(gsm):
-        return not gsm.get_morte_skel_mort_quip()
-    def _r35436_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35498_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35506_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35509_condition(gsm):
-        return gsm.get_has_prybar()
-    def _r35512_condition(gsm):
-        return not gsm.get_morte_skel_mort_quip()
-    def _r35513_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35575_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35583_condition(gsm):
-        return not gsm.get_has_prybar() \
-                and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35586_condition(gsm):
-        return gsm.get_has_prybar()
-    def _r35589_condition(gsm):
-        return not gsm.get_morte_skel_mort_quip()
-    def _r35590_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r4686_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',13,'int')
-    def _r64535_condition(gsm):
-        return not gsm.get_vaxis_global_xp()
-    def _r64534_condition(gsm):
-        return gsm.get_vaxis_global_xp()
-
-
-init 10 python:
-    gsm = renpy.store.global_settings_manager
+﻿init 10 python:
+    from dlgs.mortuary.dmorte_logic import DmorteLogic
+    dmorteLogic = DmorteLogic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -174,7 +26,7 @@ label dmorte_s61:  # from -
     menu:
         'Я *хотел* поговорить с этим парнем. Проблемы?':
             # r178 # reply3871
-            $ _r3871_action(gsm)
+            $ dmorteLogic.r3871_action()
             jump dmorte_s62
         'Ничего. Идем.':
             # r179 # reply3872
@@ -189,7 +41,7 @@ label dmorte_s62:  # from 61.0
     menu:
         'Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.':
             # r180 # reply3874
-            $ _r3874_action(gsm)
+            $ dmorteLogic.r3874_action()
             jump dmorte_s64
         'Согласен. Идем.':
             # r181 # reply3875
@@ -203,7 +55,7 @@ label dmorte_s63:  # from -
     menu:
         'Слушай, я хочу поговорить с этим парнем. Проблемы?':
             # r182 # reply3877
-            $ _r3877_action(gsm)
+            $ dmorteLogic.r3877_action()
             jump dmorte_s64
         'Ничего. Идем.':
             # r183 # reply3878
@@ -236,7 +88,7 @@ label dmorte_s81:  # from -
     menu:
         'Я *хотел* поговорить с этой дамочкой. Проблемы?':
             # r227 # reply4339
-            $ _r4339_action(gsm)
+            $ dmorteLogic.r4339_action()
             jump dmorte_s82
         'Ничего. Идем.':
             # r228 # reply4340
@@ -250,7 +102,7 @@ label dmorte_s82:  # from 81.0
     menu:
         'Спасибо за совет, но *все еще* хочу поговорить с этой дамочкой.':
             # r229 # reply4342
-            $ _r4342_action(gsm)
+            $ dmorteLogic.r4342_action()
             jump dmorte_s84
         'Согласен. Идем.':
             # r230 # reply4343
@@ -264,7 +116,7 @@ label dmorte_s83:  # from -
     menu:
         'Слушай, я хочу поговорить с этой дамочкой. Проблемы?':
             # r231 # reply4345
-            $ _r4345_action(gsm)
+            $ dmorteLogic.r4345_action()
             jump dmorte_s84
         'Ничего. Идем.':
             # r232 # reply4346
@@ -298,11 +150,11 @@ label dmorte_s110:  # from - # Manually checked EXTERN ~DS42~ : 1
     menu:
         'И что?':
             # r284 # reply6658
-            $ _r6658_action(gsm)
+            $ dmorteLogic.r6658_action()
             jump ds42_s1
         'О… Я не хотел ему навредить.':
             # r285 # reply6659
-            $ _r6659_action(gsm)
+            $ dmorteLogic.r6659_action()
             jump ds42_s1
         'Ну, тогда ладно. Может, в другой раз.':
             # r286 # reply6660
@@ -342,10 +194,10 @@ label dmorte_s112:  # from - # Manually checked EXTERN ~DS42~ : 4 Manually check
     morte 'Может, уже хватит? У него руки сейчас отвалятся.'
 
     menu:
-        'Скрестить свои руки.' if _r6664_condition(gsm):
+        'Скрестить свои руки.' if dmorteLogic.r6664_condition():
             # r290 # reply6664
             jump ds42_s4
-        'Подстроиться под движения скелета… посмотреть, что получится.' if _r6665_condition(gsm):
+        'Подстроиться под движения скелета… посмотреть, что получится.' if _r6665_condition():
             # r291 # reply6665
             jump ds42_s9
         'Э…':
@@ -427,7 +279,7 @@ label dmorte_s374:  # from 373.0
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r766 # reply35319
-            $ _r35319_action(gsm)
+            $ dmorteLogic.r35319_action()
             jump dmorte_s375
         'Идем.':
             # r767 # reply35322
@@ -454,11 +306,11 @@ label dmorte_s376:  # from -
     menu:
         'И что?':
             # r769 # reply35342
-            $ _r35342_action(gsm)
+            $ dmorteLogic.r35342_action()
             jump dmorte_s377
         'О… Я не хотел ему навредить.':
             # r770 # reply35360
-            $ _r35360_action(gsm)
+            $ dmorteLogic.r35360_action()
             jump dmorte_s377
         'Ну, тогда ладно. Может, в другой раз.':
             # r771 # reply35361
@@ -472,20 +324,20 @@ label dmorte_s377:  # from 376.0 376.1 376.2 # Manually checked EXTERN ~DS1221~ 
     morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if _r35344_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35344_condition():
             # r772 # reply35344
             jump ds1221_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35352_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35352_condition():
             # r773 # reply35352
             jump ds1221_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35355_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35355_condition():
             # r774 # reply35355
             jump ds1221_s6
-        'Неважно, может быть, в другой раз.' if _r35358_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35358_condition():
             # r775 # reply35358
-            $ _r35358_action(gsm)
+            $ dmorteLogic.r35358_action()
             jump dmorte_s370
-        'Неважно, может быть, в другой раз.' if _r35359_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35359_condition():
             # r776 # reply35359
             jump show_graphics_menu
 
@@ -555,7 +407,7 @@ label dmorte_s382:  # from 381.0
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r786 # reply35396
-            $ _r35396_action(gsm)
+            $ dmorteLogic.r35396_action()
             jump dmorte_s383
         'Идем.':
             # r787 # reply35399
@@ -588,11 +440,11 @@ label dmorte_s384:  # from -
     menu:
         'И что?':
             # r789 # reply35419
-            $ _r35419_action(gsm)
+            $ dmorteLogic.r35419_action()
             jump dmorte_s385
         'О… Я не хотел ему навредить.':
             # r790 # reply35437
-            $ _r35437_action(gsm)
+            $ dmorteLogic.r35437_action()
             jump dmorte_s385
         'Ну, тогда ладно. Может, в другой раз.':
             # r791 # reply35438
@@ -605,34 +457,26 @@ label dmorte_s385:  # from 384.0 384.1 384.2 # Manually checked EXTERN ~DS748~ :
     morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if _r35421_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35421_condition():
             # r792 # reply35421
             jump ds748_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35429_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35429_condition():
             # r793 # reply35429
             jump ds748_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35432_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35432_condition():
             # r794 # reply35432
             jump ds748_s6
-        'Неважно, может быть, в другой раз.' if _r35435_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35435_condition():
             # r795 # reply35435
-            $ _r35435_action(gsm)
+            $ dmorteLogic.r35435_action()
             jump dmorte_s378
-        'Неважно, может быть, в другой раз.' if _r35436_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35436_condition():
             # r796 # reply35436
             jump show_graphics_menu
 # #
 # ##
 # ### ends extern 384
 
-
-# ### starts extern 386
-# ##
-# #
-
-# #
-# ##
-# ### ends extern 386
 
 
 # ### starts extern 330
@@ -646,11 +490,11 @@ label dmorte_s330:  # from -
     menu:
         'О чем это ты *толкуешь*?':
             # r677 # reply34991
-            $ _r34991_action(gsm)
+            $ dmorteLogic.r34991_action()
             jump dmorte_s331
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r678 # reply35001
-            $ _r35001_action(gsm)
+            $ dmorteLogic.r35001_action()
             jump dmorte_s331
 
 
@@ -661,7 +505,7 @@ label dmorte_s331:  # from 330.0 330.1
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r679 # reply34993
-            $ _r34993_action(gsm)
+            $ dmorteLogic.r34993_action()
             jump dmorte_s332
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r680 # reply34996
@@ -768,7 +612,7 @@ label dmorte_s390:  # from 389.0
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r806 # reply35473
-            $ _r35473_action(gsm)
+            $ dmorteLogic.r35473_action()
             jump dmorte_s391
         'Идем.':
             # r807 # reply35476
@@ -795,11 +639,11 @@ label dmorte_s392:  # from -
     menu:
         'И что?':
             # r809 # reply35496
-            $ _r35496_action(gsm)
+            $ dmorteLogic.r35496_action()
             jump dmorte_s393
         'О… Я не хотел ему навредить.':
             # r810 # reply35514
-            $ _r35514_action(gsm)
+            $ dmorteLogic.r35514_action()
             jump dmorte_s393
         'Ну, тогда ладно. Может, в другой раз.':
             # r811 # reply35515
@@ -813,20 +657,20 @@ label dmorte_s393:  # from 392.0 392.1 392.2 # Manually checked EXTERN ~DS996~ :
     morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if _r35498_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35498_condition():
             # r812 # reply35498
             jump ds996_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35506_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35506_condition():
             # r813 # reply35506
             jump ds996_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35509_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35509_condition():
             # r814 # reply35509
             jump ds996_s6
-        'Неважно, может быть, в другой раз.' if _r35512_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35512_condition():
             # r815 # reply35512
-            $ _r35512_action(gsm)
+            $ dmorteLogic.r35512_action()
             jump dmorte_s386
-        'Неважно, может быть, в другой раз.' if _r35513_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35513_condition():
             # r816 # reply35513
             jump show_graphics_menu
 
@@ -896,7 +740,7 @@ label dmorte_s398:  # from 397.0
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r826 # reply35550
-            $ _r35550_action(gsm)
+            $ dmorteLogic.r35550_action()
             jump dmorte_s399
         'Идем.':
             # r827 # reply35553
@@ -929,11 +773,11 @@ label dmorte_s400:  # from -
     menu:
         'И что?':
             # r829 # reply35573
-            $ _r35573_action(gsm)
+            $ dmorteLogic.r35573_action()
             jump dmorte_s401
         'О… Я не хотел ему навредить.':
             # r830 # reply35591
-            $ _r35591_action(gsm)
+            $ dmorteLogic.r35591_action()
             jump dmorte_s401
         'Ну, тогда ладно. Может, в другой раз.':
             # r831 # reply35592
@@ -947,20 +791,20 @@ label dmorte_s401:  # from 400.0 400.1 400.2 # Manually checked EXTERN ~DS863~ :
     morte 'Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if _r35575_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35575_condition():
             # r832 # reply35575
             jump ds863_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35583_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35583_condition():
             # r833 # reply35583
             jump ds863_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35586_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35586_condition():
             # r834 # reply35586
             jump ds863_s6
-        'Неважно, может быть, в другой раз.' if _r35589_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35589_condition():
             # r835 # reply35589
-            $ _r35589_action(gsm)
+            $ dmorteLogic.r35589_action()
             jump dmorte_s394
-        'Неважно, может быть, в другой раз.' if _r35590_condition(gsm):
+        'Неважно, может быть, в другой раз.' if dmorteLogic.r35590_condition():
             # r836 # reply35590
             jump show_graphics_menu
 # #
@@ -993,7 +837,7 @@ label dmorte_s478:  # from 477.0
             jump dmorte_s481
         'Ты что-то сказал про «правило трех». Что ты имел ввиду?':
             # r982 # reply45093
-            $ _r45093_action(gsm)
+            $ dmorteLogic.r45093_action()
             jump dmorte_s479
         'Ладно. Давай двигаться дальше.':
             # r983 # reply45094
@@ -1034,7 +878,7 @@ label dmorte_s481:  # from 478.0 480.0 # Manually checked EXTERN ~DZM965~ : 1
     menu:
         'Понятно. А что ты там говорил до этого… про «правило трех»?':
             # r988 # reply45103
-            $ _r45103_action(gsm)
+            $ dmorteLogic.r45103_action()
             jump dmorte_s479
         'Понятно. Я хочу еще намного осмотреть этого зомби…':
             # r989 # reply45104
@@ -1076,7 +920,7 @@ label dmorte_s85:  # from -
     menu:
         'Анархист?':
             # r235 # reply4676
-            $ _r4676_action(gsm)
+            $ dmorteLogic.r4676_action()
             jump dmorte_s86
 
 
@@ -1089,11 +933,11 @@ label dmorte_s86:  # from 85.0 # Manually checked EXTERN ~DVAXIS~ : 11 Manually 
     menu:
         'Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.':
             # r236 # reply4678
-            $ _r4678_action(gsm)
+            $ dmorteLogic.r4678_action()
             jump dvaxis_s11
         'Ложь: Похоже на благородное стремление. Любой анархист, посвятивший себя столь высокой цели, *определенно* является мне другом.':
             # r237 # reply4679
-            $ _r4679_action(gsm)
+            $ dmorteLogic.r4679_action()
             jump dvaxis_s11
         'Это все довольно… противоречиво.':
             # r238 # reply4680
@@ -1103,7 +947,7 @@ label dmorte_s86:  # from 85.0 # Manually checked EXTERN ~DVAXIS~ : 11 Manually 
             jump dvaxis_s10
         'Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.':
             # r240 # reply4682
-            $ _r4682_action(gsm)
+            $ dmorteLogic.r4682_action()
             jump dvaxis_s10
 # #
 # ##
@@ -1126,12 +970,12 @@ label dmorte_s87:  # from -
         'Я просто хотел узнать, о чем этот… труп… говорит. Ясно?':
             # r242 # reply4685
             jump dmorte_s88
-        'Не моя вина, что никто в этом сумасшедшем… «чокнутом»… месте не говорит нормально… или хотя бы не ВЫГЛЯДИТ так.' if _r4686_condition(gsm):
+        'Не моя вина, что никто в этом сумасшедшем… «чокнутом»… месте не говорит нормально… или хотя бы не ВЫГЛЯДИТ так.' if dmorteLogic.r4686_condition():
             # r243 # reply4686
             jump dmorte_s88
         'Слушай, я НЕ хочу лгать этому парню. Лучше говорить с ним напрямую.':
             # r244 # reply4687
-            $ _r4687_action(gsm)
+            $ dmorteLogic.r4687_action()
             jump dmorte_s88
 
 
@@ -1167,7 +1011,7 @@ label dmorte_s89:  # from -
     menu:
         'Анархист?':
             # r248 # reply4693
-            $ _r4693_action(gsm)
+            $ dmorteLogic.r4693_action()
             jump dmorte_s90
 
 
@@ -1181,7 +1025,7 @@ label dmorte_s90:  # from 89.0 # Manually checked EXTERN ~DVAXIS~ : 71
     menu:
         'Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.':
             # r249 # reply4695
-            $ _r4695_action(gsm)
+            $ dmorteLogic.r4695_action()
             jump dvaxis_s71
         'Это все довольно… противоречиво.':
             # r250 # reply4696
@@ -1194,7 +1038,7 @@ label dmorte_s90:  # from 89.0 # Manually checked EXTERN ~DVAXIS~ : 71
             jump dvaxis_s71
         'Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.':
             # r253 # reply4699
-            $ _r4699_action(gsm)
+            $ dmorteLogic.r4699_action()
             jump dvaxis_s71
 # #
 # ##
@@ -1252,13 +1096,13 @@ label dmorte_s94:  # from - # Manually checked EXTERN ~DVAXIS~ : 66
     morte 'Не могу поверить, что ты делаешь это. Ты, что, СОВСЕМ спятил?'
 
     menu:
-        'Бред, как по мне…' if _r64535_condition(gsm):
+        'Бред, как по мне…' if dmorteLogic.r64535_condition():
             # r258 # reply64535
-            $ _r64535_action(gsm)
+            $ dmorteLogic.r64535_action()
             jump dvaxis_s66
-        'Бред, как по мне…' if _r64534_condition(gsm):
+        'Бред, как по мне…' if dmorteLogic.r64534_condition():
             # r259 # reply64534
-            $ _r64534_action(gsm)
+            $ dmorteLogic.r64534_action()
             jump dmorte_s330_dispose
 # #
 # ##
@@ -1325,7 +1169,7 @@ label dmorte_s55:  # from - # Manually checked EXTERN ~DEIVENE~ : 4
     menu:
         'Что не так с ее руками?':
             # r167 # reply3474
-            $ _r3474_action(gsm)
+            $ dmorteLogic.r3474_action()
             jump dmorte_s56
         'Прикоснуться к женщине, привлечь ее внимание.':
             # r168 # reply3475
@@ -1356,7 +1200,7 @@ label dmorte_s57:  # from -
     menu:
         'Что не так с ее руками?':
             # r172 # reply3483
-            $ _r3483_action(gsm)
+            $ dmorteLogic.r3483_action()
             jump dmorte_s58
         'Уйти.':
             # r173 # reply3484

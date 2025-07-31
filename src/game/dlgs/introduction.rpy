@@ -1,30 +1,21 @@
-init python:
-    can_spoiler = False
-    def _setup_new_life_as_mage(gsm):
-        gsm.gcm.set_property('protagonist', 'intelligence', 16)
-        gsm.gcm.set_property('protagonist', 'wisdom', 17)
-        gsm.gcm.set_property('protagonist', 'charisma', 15)
-    def _setup_as_highlvl(gsm):
-        gsm.set_can_speak_with_dead(True)
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    from dlgs.introduction_logic import IntroductionLogic
+    introductionLogic = IntroductionLogic(renpy.store.global_settings_manager)
 
 
 label quick_setup_as_mage:
-    $ _setup_new_life_as_mage(gsm)
+    $ introductionLogic.setup_new_life_as_mage()
     return
+
 
 label introduction:
     snowinmars 'Привет. Сразу вопрос.'
 
     menu:
         'Я не боюсь спойлеров':
-            $ can_spoiler = True
+            $ introductionLogic.set_can_spoiler_true()
             jump introduction_1
         'Не надо мне спойлерить игру':
-            $ can_spoiler = False
             jump introduction_1
 
 
@@ -32,7 +23,7 @@ label introduction_1:
     snowinmars 'Я переношу игру на новый движок по нескольким причинам.'
     snowinmars 'Первая - я очень люблю эту игру.'
 
-    if can_spoiler:
+    if introductionLogic.can_spoiler:
         snowinmars 'Вторая - Planescape:Torment - деконструкция РПГ.'
         snowinmars 'Если кратко: деконструкция - когда разбираешь что-то на части, меняешь их и собираешь целое заново.'
         snowinmars 'Результат выглядит похожим на оригинал: те же элементы, можно даже не увидеть разницы.'
@@ -84,16 +75,16 @@ label new_life:
     snowinmars 'Да, тут такое дело…'
     snowinmars 'Всё-таки я не могу полностью игнорировать билд: на нём завязаны диалоги, и завязаны сильно.'
     snowinmars 'Пользуясь правом технодемки, я делаю вжух -'
-    $ _setup_new_life_as_mage(gcm)
+    $ introductionLogic.setup_new_life_as_mage()
     snowinmars '- и ты играешь магом. Если что - это база.'
 
-    if can_spoiler:
+    if introductionLogic.can_spoiler:
         snowinmars 'В технодемке есть только три этажа Морга. Но в эту локацию можно вернуться много раз по ходу игры, обладая дополнительными способностями.'
         snowinmars 'Так как я эти, хайлвл диалоги тоже перенёс сюда, было бы странно не предложить к ним доступа. Если хочешь - возьми.'
 
         menu:
             'Получить "История костей"':
-                $ _setup_as_highlvl(gsm)
+                $ introductionLogic.setup_as_highlvl()
                 snowinmars 'Вжух - ты умеешь разговаривать с духами.'
             'Не надо':
                 snowinmars 'Одобряю аутентичность.'

@@ -1,29 +1,6 @@
-init python:
-    def _kill_dzm1664(gsm):
-        gsm.set_dead_dzm1664(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r47014_action(gsm):
-        gsm.set_has_logpage(True)
-        gsm.set_has_dzm1664_page(True)
-
-
-init python:
-    def _r47003_condition(gsm):
-        return not gsm.get_has_dzm1664_page()
-    def _r47004_condition(gsm):
-        return gsm.get_has_dzm1664_page()
-    def _r47005_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r47006_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm1664_logic import Dzm1664Logic
+    dzm1664Logic = Dzm1664Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -38,8 +15,7 @@ label start_dzm1664_kill:
     call dzm1664_init
     jump dzm1664_kill
 label dzm1664_init:
-    $ glm.set_location('mortuary_f2r4')
-    $ gsm.set_meet_dzm1664(True)
+    $ dzm1664Logic.dzm1664_init()
     scene bg mortuary_f2r4
     show dzm1664_img default at center_left_down
     return
@@ -54,16 +30,16 @@ label dzm1664_s0:  # from 5.0 # IF ~  True()
     teller 'На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
 
     menu:
-        'Осмотреть книги.' if _r47003_condition(gsm):
+        'Осмотреть книги.' if dzm1664Logic.r47003_condition():
             # r0 # reply47003
             jump dzm1664_s3
-        'Снова осмотреть книги.' if _r47004_condition(gsm):
+        'Снова осмотреть книги.' if dzm1664Logic.r47004_condition():
             # r1 # reply47004
             jump dzm1664_s6
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r47005_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1664Logic.r47005_condition():
             # r2 # reply47005
             jump dzm1664_s1
-        'Использовать на трупе свою способность История костей.' if _r47006_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1664Logic.r47006_condition():
             # r3 # reply47006
             jump dzm1664_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -79,7 +55,7 @@ label dzm1664_s1:  # from 0.2 6.0
     teller 'Зомби безучастно пялится в стену.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r47006_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1664Logic.r47006_condition():
             # r3 # reply47006
             jump dzm1664_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -95,7 +71,7 @@ label dzm1664_s2:  # from 0.3
     teller 'Труп даже не шевелится. Несмотря на недавнюю смерть, похоже, что он не сможет ответить на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r47005_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1664Logic.r47005_condition():
             # r2 # reply47005
             jump dzm1664_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -114,7 +90,7 @@ label dzm1664_s3:  # from 0.0
     menu:
         'Взять страницу.':
             # r8 # reply47014
-            $ _r47014_action(gsm)
+            $ dzm1664Logic.r47014_action()
             jump dzm1664_s4
 
 
@@ -166,13 +142,13 @@ label dzm1664_kill:
 
 
 label dzm1664_killed:
-    $ _kill_dzm1664(gsm)
+    $ dzm1664Logic.kill_dzm1664()
     teller 'Я ставлю ему подножнку. Книги рассыпаются по всей комнате. Труп некоторое время смотрит на них, а потом переводит взгляд на меня.'
     teller 'Его взгляд пуст: он даже не делает попытку собрать книги. В нём нет ни жизни, ни разума.'
-    if _r47003_condition(gsm):
+    if dzm1664Logic.r47003_condition():
         teller 'Среди вохора книг ты замечаешь страницу не из бухгалтерских книг…'
         teller 'Похоже, она из какого-то регистрационного журнала. Корешок ровный, как будто страницу срезали ножом, и ты подозреваешь, что ее удалили специально.'
         teller 'Ты бегло осматриваешь страницу… это список тел, доставленных в Морг и зарегистрированных в Приемной комнате. Все записи принадлежат недавно прибывшим телам.'
-        $ _r47014_action(gsm)
+        $ dzm1664Logic.r47014_action()
     teller 'Ты оставляешь тело зомби рядом с книгами.'
     jump dzm1664_dispose

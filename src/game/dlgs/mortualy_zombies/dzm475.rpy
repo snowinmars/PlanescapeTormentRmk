@@ -1,29 +1,6 @@
-init python:
-    def _kill_dzm475(gsm):
-        gsm.set_dead_dzm475(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r6587_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-
-init python:
-    def _r6587_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6588_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6589_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6590_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm475_logic import Dzm475Logic
+    dzm475Logic = Dzm475Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -38,8 +15,7 @@ label start_dzm475_kill:
     call dzm475_init
     jump dzm475_kill
 label dzm475_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm475(True)
+    $ dzm475Logic.dzm475_init()
     scene bg mortuary1
     show dzm475_img default at center_left_down
     return
@@ -54,17 +30,17 @@ label dzm475_s0:  # from - # IF ~  True()
     teller 'На проржавевшей табличке над его левым глазом выбит номер «475». Его рот намертво закрыт; от него несет бальзамирующей жидкостью.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6587_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm475Logic.r6587_condition():
             # r0 # reply6587
-            $ _r6587_action(gsm)
+            $ dzm475Logic.r6587_action()
             jump dzm475_s1
-        'Итак… что тут у нас интересного?' if _r6588_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm475Logic.r6588_condition():
             # r1 # reply6588
             jump dzm475_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6589_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm475Logic.r6589_condition():
             # r2 # reply6589
             jump dzm475_s1
-        'Использовать на трупе свою способность История костей.' if _r6590_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm475Logic.r6590_condition():
             # r3 # reply6590
             jump dzm475_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -80,7 +56,7 @@ label dzm475_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6590_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm475Logic.r6590_condition():
             # r3 # reply6590
             jump dzm475_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -96,7 +72,7 @@ label dzm475_s2:  # from 0.3
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6589_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm475Logic.r6589_condition():
             # r2 # reply6589
             jump dzm475_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -119,6 +95,6 @@ label dzm475_kill:
 
 
 label dzm475_killed:
-    $ _kill_dzm475(gsm)
+    $ dzm475Logic.kill_dzm475()
     teller 'Я разгибаю металлические ленты на его черепе. Без них голова трупа сама разваливается по частям. Я не чувствую сожалений.'
     jump dzm475_dispose
