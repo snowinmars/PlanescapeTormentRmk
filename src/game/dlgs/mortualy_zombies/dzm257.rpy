@@ -1,35 +1,6 @@
-init python:
-    def _kill_dzm257(gsm):
-        gsm.set_dead_dzm257(True)
-        gsm.inc_exp_custom('party', 65)
-    def _know_dzm257_spirit_action(gsm):
-        gsm.set_know_dzm257_spirit(True)
-    def _know_dzm257_spirit_condition(gsm):
-        return gsm.get_know_dzm257_spirit()
-
-
-init python:
-    def _r6510_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r9562_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zom257_1')
-
-
-init python:
-    def _r6510_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6511_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6512_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6513_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm257_logic import Dzm257Logic
+    dzm257Logic = Dzm257Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -44,8 +15,7 @@ label start_dzm257_kill:
     call dzm257_init
     jump dzm257_kill
 label dzm257_init:
-    $ glm.set_location('mortuary_f2r5')
-    $ gsm.set_meet_dzm257(True)
+    $ dzm257Logic.dzm257_init()
     scene bg mortuary_f2r5
     show dzm257_img default at center_left_down
     return
@@ -60,17 +30,17 @@ label dzm257_s0:  # from - # IF ~  True()
     teller 'Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.'
 
     menu:
-        'У тебя голова не кружится из-за глаз?' if _r6510_condition(gsm):
+        'У тебя голова не кружится из-за глаз?' if dzm257Logic.r6510_condition():
             # r0 # reply6510
-            $ _r6510_action(gsm)
+            $ dzm257Logic.r6510_action()
             jump dzm257_s1
-        'У тебя голова не кружится из-за глаз?' if _r6511_condition(gsm):
+        'У тебя голова не кружится из-за глаз?' if dzm257Logic.r6511_condition():
             # r1 # reply6511
             jump dzm257_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6512_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm257Logic.r6512_condition():
             # r2 # reply6512
             jump dzm257_s1
-        'Использовать на трупе свою способность История костей.' if _r6513_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm257Logic.r6513_condition():
             # r3 # reply6513
             jump dzm257_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -86,7 +56,7 @@ label dzm257_s1:  # from 0.0 0.1 0.2
     teller 'В глазах трупа нет даже намека на понимание; они продолжают смотреть каждый в свою сторону.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6513_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm257Logic.r6513_condition():
             # r3 # reply6513
             jump dzm257_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -99,7 +69,7 @@ label dzm257_s1:  # from 0.0 0.1 0.2
 
 # s2 # say6509
 label dzm257_s2:  # from 0.3
-    $ _know_dzm257_spirit_action(gsm)
+    $ dzm257Logic.know_dzm257_spirit_action()
     teller 'Дух врывается назад в тело с такой силой, что труп, охваченный судорогой, отлетает назад!'
     teller 'Тело, извиваясь и мечась в безумном танце, тотчас поднимается на ноги, размахивая руками, разрывая швы и тряся отваливающимися кусками плоти.'
     teller 'Глаза трупа выпучиваются и вращаются, а сам он без конца хихикает как сумасшедший…'
@@ -139,7 +109,7 @@ label dzm257_s4:  # from 3.0 4.0 5.0
     menu:
         'Я не совсем уловил последнюю часть. Ты можешь повторить это еще раз?':
             # r12 # reply9562
-            $ _r9562_action(gsm)
+            $ dzm257Logic.r9562_action()
             jump dzm257_s4
         'Я не понимаю. Тем не менее, у меня есть вопрос…':
             # r13 # reply9563
@@ -194,7 +164,7 @@ label dzm257_s7:  # from 6.0
 label dzm257_kill:
     teller 'Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.'
     teller 'Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.'
-    if _know_dzm257_spirit_condition():
+    if dzm257Logic.know_dzm257_spirit_condition():
         teller 'Когда ты вернул в него дух, он кричал.'
 
     menu:
@@ -204,7 +174,7 @@ label dzm257_kill:
             jump dzm257_killed
 
 label dzm257_killed:
-    $ _kill_dzm257(gsm)
+    $ dzm257Logic.kill_dzm257()
     teller 'Я бью между глаз. Пустые глаза вращаются в разные стороны, но так ни не могут посмотреть на меня.'
     teller 'В них нет ни жизни, ни разума. Я бью его до тех пор, пока он не падает.'
     jump dzm257_dispose

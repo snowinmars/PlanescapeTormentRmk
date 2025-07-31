@@ -1,29 +1,6 @@
-init python:
-    def _kill_dzm613(gsm):
-        gsm.set_dead_dzm613(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r6543_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-
-init python:
-    def _r6543_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6544_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6545_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6546_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm613_logic import Dzm613Logic
+    dzm613Logic = Dzm613Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -38,8 +15,7 @@ label start_dzm613_kill:
     call dzm613_init
     jump dzm613_kill
 label dzm613_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm613(True)
+    $ dzm613Logic.dzm613_init()
     scene bg mortuary1
     show dzm613_img default at center_left_down
     return
@@ -54,17 +30,17 @@ label dzm613_s0:  # from - # IF ~  True()
     teller 'Приглядевшись, ты с трудом различаешь вырезанную «2».'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6543_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm613Logic.r6543_condition():
             # r0 # reply6543
-            $ _r6543_action(gsm)
+            $ dzm613Logic.r6543_action()
             jump dzm613_s1
-        'Итак… что тут у нас интересного?' if _r6544_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm613Logic.r6544_condition():
             # r1 # reply6544
             jump dzm613_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6545_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm613Logic.r6545_condition():
             # r2 # reply6545
             jump dzm613_s1
-        'Использовать на трупе свою способность История костей.' if _r6546_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm613Logic.r6546_condition():
             # r3 # reply6546
             jump dzm613_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -80,7 +56,7 @@ label dzm613_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6546_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm613Logic.r6546_condition():
             # r3 # reply6546
             jump dzm613_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -96,7 +72,7 @@ label dzm613_s2:  # from 0.3
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6545_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm613Logic.r6545_condition():
             # r2 # reply6545
             jump dzm613_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -119,7 +95,7 @@ label dzm613_kill:
 
 
 label dzm613_killed:
-    $ _kill_dzm613(gsm)
+    $ dzm613Logic.kill_dzm613()
     teller 'Я кладу руки на череп трупа и надавливаю пальцами на вырезанный номер. Он легко поддаётся, и мои руки окутывает что-то мягкое и липкое, как мёд.'
     teller 'Я вытираю руки и отворачиваюсь.'
     jump dzm613_dispose

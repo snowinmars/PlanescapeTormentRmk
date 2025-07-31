@@ -1,149 +1,6 @@
-﻿init python:
-    def _kill_dhall(gsm):
-        gsm.set_dead_dhall(True)
-        gsm.set_has_dhall_feather(True)
-
-
-init python:
-    def _r827_action(gsm):
-        gsm.set_meet_dhall(True)
-    def _r830_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r831_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r843_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_1')
-    def _r5069_action(gsm):
-        gsm.update_journal('39460')
-    def _r886_action(gsm):
-        gsm.update_journal('39463')
-    def _r906_action(gsm):
-        gsm.update_journal('39464')
-    def _r921_action(gsm):
-        gsm.update_journal('39461')
-    def _r931_action(gsm):
-        gsm.update_journal('39462')
-    def _r936_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_1')
-    def _r953_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r958_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r1301_action(gsm):
-        gsm.update_journal('39470')
-    def _r974_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r985_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r1327_action(gsm):
-        gsm.set_meet_dhall(True)
-    def _r5731_action(gsm):
-        gsm.update_journal('39459')
-    def _r5732_action(gsm):
-        gsm.update_journal('39459')
-    def _r6033_action(gsm):
-        gsm.set_meet_dustmen(True)
-    def _r6051_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_dhall_2')
-    def _r6053_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_3')
-
-
-init python:
-    def _r5070_condition(gsm):
-        return not gsm.get_meet_deionarra()
-    def _r5071_condition(gsm):
-        return not gsm.get_meet_deionarra()
-    def _r5072_condition(gsm):
-        return gsm.get_meet_deionarra()
-    def _r5073_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.check_char_prop_lt('protagonist',13,'wis')
-    def _r5074_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'wis')
-    def _r6064_condition(gsm):
-        return not gsm.get_meet_deionarra()
-    def _r13288_condition(gsm):
-        return gsm.get_meet_deionarra()
-    def _r830_condition(gsm):
-        return not gsm.get_vaxis_lawful()
-    def _r831_condition(gsm):
-        return gsm.get_vaxis_lawful()
-    def _r839_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r835_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_mortualy_alarmed()
-    def _r5058_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_mortualy_alarmed()
-    def _r842_condition(gsm):
-        return gsm.get_meet_dhall()
-    def _r843_condition(gsm):
-        return gsm.get_meet_dhall()
-    def _r5062_condition(gsm):
-        return not gsm.get_meet_dhall()
-    def _r854_condition(gsm):
-        return gsm.get_meet_vaxis() \
-               and not gsm.get_dead_vaxis() \
-               and not gsm.get_vaxis_leave() \
-               and gsm.get_vaxis_betrayed() == 0
-    def _r858_condition(gsm):
-        return not gsm.get_escape_mortuary() \
-               and not gsm.is_internal_location_visited('AR0200')
-    def _r870_condition(gsm):
-        return not gsm.get_meet_deionarra()
-    def _r891_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r892_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'wis')
-    def _r898_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'wis')
-    def _r910_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'wis')
-    def _r931_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'int')
-    def _r942_condition(gsm):
-        return not gsm.get_journal()
-    def _r943_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r6026_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r874_condition(gsm):
-        return gsm.get_meet_pharod()
-    def _r948_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r6027_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r6066_condition(gsm):
-        return gsm.get_meet_pharod()
-    def _r964_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r968_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r5076_condition(gsm):
-        return not gsm.get_meet_deionarra()
-    def _r5077_condition(gsm):
-        return gsm.get_meet_deionarra()
-    def _r5078_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.check_char_prop_lt('protagonist',13,'wis')
-    def _r5079_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'wis')
-    def _r5081_condition(gsm):
-        return not gsm.get_meet_deionarra()
-    def _r5082_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.check_char_prop_lt('protagonist',13,'wis')
-    def _r5083_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'wis')
-    def _r6032_condition(gsm):
-        return gsm.get_morte_mortuary_walkthrough_1()
-
-
-init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+﻿init 10 python:
+    from dlgs.mortuary.ddhall_logic import DdhallLogic
+    ddhallLogic = DdhallLogic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -164,7 +21,7 @@ label start_ddhall_kill:
     call ddhall_init
     jump ddhall_kill
 label ddhall_init:
-    $ glm.set_location('mortuary_f2r3')
+    $ ddhallLogic.ddhall_init()
     scene bg mortuary_f2r3
     show morte_img default at center_left_down
     show dhall_img default at center_right_down
@@ -192,7 +49,7 @@ label ddhall_s1:  # from -
     menu:
         'Неугомонный? Ты меня знаешь?':
             # r0 # reply827
-            $ _r827_action(gsm)
+            $ ddhallLogic.r827_action()
             jump ddhall_s44
 
 
@@ -203,28 +60,28 @@ label ddhall_s2:  # from 21.0
     dhall 'Я ошибаюсь?'
 
     menu:
-        'Где ее тело?' if _r5070_condition(gsm):
+        'Где ее тело?' if ddhallLogic.r5070_condition():
             # r1 # reply5070
             jump ddhall_s42
-        'Я ничего о ней не знаю.' if _r5071_condition(gsm):
+        'Я ничего о ней не знаю.' if ddhallLogic.r5071_condition():
             # r2 # reply5071
             jump ddhall_s43
-        'Она узнала меня, но я не смог ее вспомнить.' if _r5072_condition(gsm):
+        'Она узнала меня, но я не смог ее вспомнить.' if ddhallLogic.r5072_condition():
             # r3 # reply5072
             jump ddhall_s28
-        'Ты говорил, что здесь есть другие. Кто они?' if _r5073_condition(gsm):
+        'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5073_condition():
             # r4 # reply5073
             jump ddhall_s12
-        'Ты говорил, что здесь есть другие. Кто они?' if _r5074_condition(gsm):
+        'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5074_condition():
             # r5 # reply5074
             jump ddhall_s12
         'Возможно. У меня есть другие вопросы к тебе…':
             # r6 # reply6063
             jump ddhall_s9
-        'Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.' if _r6064_condition(gsm):
+        'Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.' if ddhallLogic.r6064_condition():
             # r7 # reply6064
             jump ddhall_s11
-        'Возможно, нет. Прощай.' if _r13288_condition(gsm):
+        'Возможно, нет. Прощай.' if ddhallLogic.r13288_condition():
             # r8 # reply13288
             jump ddhall_s11
 
@@ -235,13 +92,13 @@ label ddhall_s3:  # from 9.0
     dhall 'Ты уверен?'
 
     menu:
-        'Да. Он очень хорошо замаскировался.' if _r830_condition(gsm):
+        'Да. Он очень хорошо замаскировался.' if ddhallLogic.r830_condition():
             # r9 # reply830
-            $ _r830_action(gsm)
+            $ ddhallLogic.r830_action()
             jump ddhall_s4
-        'Да. Он очень хорошо замаскировался.' if _r831_condition(gsm):
+        'Да. Он очень хорошо замаскировался.' if ddhallLogic.r831_condition():
             # r10 # reply831
-            $ _r831_action(gsm)
+            $ ddhallLogic.r831_action()
             jump ddhall_s4
         'Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…':
             # r11 # reply834
@@ -270,13 +127,13 @@ label ddhall_s5:  # from - # IF ~  Global("Dhall","GLOBAL",0) Manually checked E
     teller 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
 
     menu:
-        'Приветствую.' if _r839_condition(gsm):
+        'Приветствую.' if ddhallLogic.r839_condition():
             # r14 # reply839
             jump dmorte_s102
-        'Приветствую.' if _r835_condition(gsm):
+        'Приветствую.' if ddhallLogic.r835_condition():
             # r15 # reply835
             jump ddhall_s7
-        'Приветствую.' if _r5058_condition(gsm):
+        'Приветствую.' if ddhallLogic.r5058_condition():
             # r16 # reply5058
             jump ddhall_s6
         'Оставить старого писаря в покое.':
@@ -292,14 +149,14 @@ label ddhall_s6:  # from 5.2
     dhall 'Это не позволит тебе обрести следующую жизнь.'
 
     menu:
-        'Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…' if _r842_condition(gsm):
+        'Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…' if ddhallLogic.r842_condition():
             # r18 # reply842
             jump ddhall_s9
-        'Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…' if _r843_condition(gsm):
+        'Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…' if ddhallLogic.r843_condition():
             # r19 # reply843
-            $ _r843_action(gsm)
+            $ ddhallLogic.r843_action()
             jump ddhall_s9
-        'Ты знаешь меня?' if _r5062_condition(gsm):
+        'Ты знаешь меня?' if ddhallLogic.r5062_condition():
             # r20 # reply5062
             jump ddhall_s44
         'Прощай.':
@@ -347,7 +204,7 @@ label ddhall_s9:  # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 1
     dhall 'Хорошо. Что ты хочешь узнать?'
 
     menu:
-        'Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?' if _r854_condition(gsm):
+        'Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?' if ddhallLogic.r854_condition():
             # r27 # reply854
             jump ddhall_s3
         'Что это за место?':
@@ -356,12 +213,12 @@ label ddhall_s9:  # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 1
         'Как я попал сюда?':
             # r29 # reply855
             jump ddhall_s15
-        'Не подскажешь, как мне выбраться отсюда?' if _r858_condition(gsm):
+        'Не подскажешь, как мне выбраться отсюда?' if ddhallLogic.r858_condition():
             # r30 # reply858
             jump ddhall_s13
         'Ты знаешь, кто я?':
             # r31 # reply5069
-            $ _r5069_action(gsm)
+            $ ddhallLogic.r5069_action()
             jump ddhall_s21
         'Чем ты здесь занимаешься?':
             # r32 # reply5748
@@ -425,7 +282,7 @@ label ddhall_s12:  # from 2.3 2.4 42.2 42.3 43.1 43.2
     dhall 'Все умершие прибывают сюда. Кое-кто из них, должно быть, путешествовал с тобой.'
 
     menu:
-        'Где та женщина, которую ты упомянул?' if _r870_condition(gsm):
+        'Где та женщина, которую ты упомянул?' if ddhallLogic.r870_condition():
             # r43 # reply870
             jump ddhall_s42
         'Я не вижу изъяна в твоих рассуждениях. У меня еще вопросы…':
@@ -486,7 +343,7 @@ label ddhall_s15:  # from 9.2 10.4 32.5
     menu:
         'Я приехал сюда на повозке?':
             # r54 # reply886
-            $ _r886_action(gsm)
+            $ ddhallLogic.r886_action()
             jump ddhall_s16
         'Расскажи мне побольше о Морге.':
             # r55 # reply887
@@ -506,10 +363,10 @@ label ddhall_s16:  # from 15.0
     dhall 'Твоим «сенешалем», как всегда, был Фарод, который был рад доставить твое тело к вратам Морга за несколько медяков.'
 
     menu:
-        'Кто этот Фарод?' if _r891_condition(gsm):
+        'Кто этот Фарод?' if ddhallLogic.r891_condition():
             # r58 # reply891
             jump ddhall_s17
-        'Похоже, тебе не очень-то нравится Фарод.' if _r892_condition(gsm):
+        'Похоже, тебе не очень-то нравится Фарод.' if ddhallLogic.r892_condition():
             # r59 # reply892
             jump ddhall_s35
         'Расскажи мне побольше о Морге.':
@@ -533,7 +390,7 @@ label ddhall_s17:  # from 16.0
         'Где я могу найти этого Фарода?':
             # r63 # reply897
             jump ddhall_s18
-        'Похоже, тебе не очень-то нравится Фарод.' if _r898_condition(gsm):
+        'Похоже, тебе не очень-то нравится Фарод.' if ddhallLogic.r898_condition():
             # r64 # reply898
             jump ddhall_s35
         'Расскажи мне побольше о Морге.':
@@ -575,7 +432,7 @@ label ddhall_s19:  # from 17.4 18.0 18.3 29.3 31.2
     menu:
         'Мне *нужно* найти его. Ты не знаешь, где он может быть?':
             # r72 # reply906
-            $ _r906_action(gsm)
+            $ ddhallLogic.r906_action()
             jump ddhall_s20
         'Расскажи мне побольше о Морге.':
             # r73 # reply905
@@ -595,7 +452,7 @@ label ddhall_s20:  # from 19.0
     dhall 'Возможно, кто-то из местных знает, где его найти.'
 
     menu:
-        'Похоже, тебе не очень-то нравится Фарод.' if _r910_condition(gsm):
+        'Похоже, тебе не очень-то нравится Фарод.' if ddhallLogic.r910_condition():
             # r76 # reply910
             jump ddhall_s35
         'Расскажи мне побольше о Морге.':
@@ -618,7 +475,7 @@ label ddhall_s21:  # from 9.4
     menu:
         'Меня кто-то сопровождал в пути? Они здесь?':
             # r80 # reply921
-            $ _r921_action(gsm)
+            $ ddhallLogic.r921_action()
             jump ddhall_s2
         'У меня есть другие вопросы…':
             # r81 # reply922
@@ -695,9 +552,9 @@ label ddhall_s25:  # from 9.5 23.0
     dhall 'И пока поток трупов идет через Морг, я буду при своей должности.'
 
     menu:
-        'Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?' if _r931_condition(gsm):
+        'Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?' if ddhallLogic.r931_condition():
             # r94 # reply931
-            $ _r931_action(gsm)
+            $ ddhallLogic.r931_action()
             jump ddhall_s24
         'Расскажи мне побольше о Морге.':
             # r95 # reply932
@@ -722,7 +579,7 @@ label ddhall_s26:  # from 9.6
             jump ddhall_s41
         'Ты уверен? Должен же быть способ помочь тебе.':
             # r99 # reply936
-            $ _r936_action(gsm)
+            $ ddhallLogic.r936_action()
             jump ddhall_s27
         'У меня есть другие вопросы…':
             # r100 # reply937
@@ -771,19 +628,19 @@ label ddhall_s29:  # from 36.0
     dhall 'Вряд ли Фарод будет делать исключения для чего либо, кроме вживленных в плоть вещей, но порой даже этого недостаточно, чтобы остановить его жадность.'
 
     menu:
-        'Я потерял дневник.' if _r942_condition(gsm):
+        'Я потерял дневник.' if ddhallLogic.r942_condition():
             # r107 # reply942
             jump ddhall_s31
-        'Хм-м. Ты не знаешь, где мне найти Фарода?' if _r943_condition(gsm):
+        'Хм-м. Ты не знаешь, где мне найти Фарода?' if ddhallLogic.r943_condition():
             # r108 # reply943
             jump ddhall_s18
         'У меня есть другие вопросы…':
             # r109 # reply944
             jump ddhall_s9
-        'Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.' if _r6026_condition(gsm):
+        'Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.' if ddhallLogic.r6026_condition():
             # r110 # reply6026
             jump ddhall_s19
-        'Понятно. Прощай, Дхолл.' if _r874_condition(gsm):
+        'Понятно. Прощай, Дхолл.' if ddhallLogic.r874_condition():
             # r111 # reply874
             jump ddhall_s11
 
@@ -807,16 +664,16 @@ label ddhall_s31:  # from 29.0
     dhall 'Дневник? Если он представляет хоть какую-то ценность, то он наверняка в руках Фарода.'
 
     menu:
-        'Где мне найти этого Фарода?' if _r948_condition(gsm):
+        'Где мне найти этого Фарода?' if ddhallLogic.r948_condition():
             # r114 # reply948
             jump ddhall_s18
         'Понятно. У меня еще вопросы…':
             # r115 # reply949
             jump ddhall_s9
-        'В таком случае, я должен разыскать его. Прощай, Дхолл.' if _r6027_condition(gsm):
+        'В таком случае, я должен разыскать его. Прощай, Дхолл.' if ddhallLogic.r6027_condition():
             # r116 # reply6027
             jump ddhall_s19
-        'Понятно. Прощай, Дхолл.' if _r6066_condition(gsm):
+        'Понятно. Прощай, Дхолл.' if ddhallLogic.r6066_condition():
             # r117 # reply6066
             jump ddhall_s11
 
@@ -833,7 +690,7 @@ label ddhall_s32:  # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 
             jump ddhall_s33
         'Истинной Смерти?':
             # r119 # reply953
-            $ _r953_action(gsm)
+            $ ddhallLogic.r953_action()
             jump ddhall_s48
         'Тленных?':
             # r120 # reply954
@@ -863,7 +720,7 @@ label ddhall_s33:  # from 10.2 14.2 32.0 41.0 47.2 49.0
     menu:
         'Истинной Смерти?':
             # r126 # reply958
-            $ _r958_action(gsm)
+            $ ddhallLogic.r958_action()
             jump ddhall_s48
         'Почему ты решил, что эта жизнь ненастоящая?':
             # r127 # reply959
@@ -888,7 +745,7 @@ label ddhall_s34:  # from 14.1 32.4
     menu:
         'Всего лишь поверхностные раны? Что ты имеешь в виду?':
             # r131 # reply1301
-            $ _r1301_action(gsm)
+            $ ddhallLogic.r1301_action()
             jump ddhall_s53
         'Расскажи мне побольше о Морге.':
             # r132 # reply1302
@@ -911,7 +768,7 @@ label ddhall_s35:  # from 16.1 17.1 20.0
         'Рыцарь легкой наживы?':
             # r135 # reply963
             jump ddhall_s36
-        'Ты не знаешь, где я могу найти Фарода?' if _r964_condition(gsm):
+        'Ты не знаешь, где я могу найти Фарода?' if ddhallLogic.r964_condition():
             # r136 # reply964
             jump ddhall_s18
         'Понятно. У меня еще вопросы…':
@@ -933,7 +790,7 @@ label ddhall_s36:  # from 35.0
         'Мог ли Фарод взять что-нибудь у *меня*?':
             # r139 # reply967
             jump ddhall_s29
-        'Ты не знаешь, где я могу найти Фарода?' if _r968_condition(gsm):
+        'Ты не знаешь, где я могу найти Фарода?' if ddhallLogic.r968_condition():
             # r140 # reply968
             jump ddhall_s18
         'Понятно. У меня еще вопросы…':
@@ -969,7 +826,7 @@ label ddhall_s38:  # from 10.1 14.0
     menu:
         'Истинной Смерти?':
             # r146 # reply974
-            $ _r974_action(gsm)
+            $ ddhallLogic.r974_action()
             jump ddhall_s48
         'Расскажи мне еще о Морге.':
             # r147 # reply975
@@ -1023,7 +880,7 @@ label ddhall_s41:  # from 26.0 52.0
             jump ddhall_s33
         'Истинной Смерти?':
             # r155 # reply985
-            $ _r985_action(gsm)
+            $ ddhallLogic.r985_action()
             jump ddhall_s48
         'Расскажи мне побольше о Морге.':
             # r156 # reply5739
@@ -1042,16 +899,16 @@ label ddhall_s42:  # from 2.0 12.0 43.0
     dhall 'Возможно, это оживит твои воспоминания.'
 
     menu:
-        'Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.' if _r5076_condition(gsm):
+        'Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.' if ddhallLogic.r5076_condition():
             # r159 # reply5076
             jump ddhall_s43
-        'Да, она утверждает, что знает меня, но я не могу ее вспомнить.' if _r5077_condition(gsm):
+        'Да, она утверждает, что знает меня, но я не могу ее вспомнить.' if ddhallLogic.r5077_condition():
             # r160 # reply5077
             jump ddhall_s28
-        'Ты говорил, что здесь есть другие. Кто они?' if _r5078_condition(gsm):
+        'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5078_condition():
             # r161 # reply5078
             jump ddhall_s12
-        'Ты говорил, что здесь есть другие. Кто они?' if _r5079_condition(gsm):
+        'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5079_condition():
             # r162 # reply5079
             jump ddhall_s12
         'Возможно, мне стоит найти ее. Перед уходом у меня есть к тебе другие вопросы…':
@@ -1067,13 +924,13 @@ label ddhall_s43:  # from 2.1 42.0
     teller 'Дхолл не отвечает. Он просто молчаливо смотрит на тебя.'
 
     menu:
-        'Где я могу найти ее?' if _r5081_condition(gsm):
+        'Где я могу найти ее?' if ddhallLogic.r5081_condition():
             # r165 # reply5081
             jump ddhall_s42
-        'Ты говорил, что здесь похоронены и другие мои спутники. Где они?' if _r5082_condition(gsm):
+        'Ты говорил, что здесь похоронены и другие мои спутники. Где они?' if ddhallLogic.r5082_condition():
             # r166 # reply5082
             jump ddhall_s12
-        'Ты говорил, что здесь похоронены и другие мои спутники. Где они?' if _r5083_condition(gsm):
+        'Ты говорил, что здесь похоронены и другие мои спутники. Где они?' if ddhallLogic.r5083_condition():
             # r167 # reply5083
             jump ddhall_s12
         'У меня есть другие вопросы к тебе…':
@@ -1095,7 +952,7 @@ label ddhall_s44:  # from 1.0 6.2 7.0
     menu:
         '*Кто* ты?':
             # r170 # reply1327
-            $ _r1327_action(gsm)
+            $ ddhallLogic.r1327_action()
             jump ddhall_s45
 
 
@@ -1110,11 +967,11 @@ label ddhall_s45:  # from 44.0
     menu:
         'Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…':
             # r171 # reply5731
-            $ _r5731_action(gsm)
+            $ ddhallLogic.r5731_action()
             jump ddhall_s9
         'У меня нет времени на это. Прощай.':
             # r172 # reply5732
-            $ _r5732_action(gsm)
+            $ ddhallLogic.r5732_action()
             jump ddhall_s46
 
 
@@ -1138,12 +995,12 @@ label ddhall_s47:  # from 32.2
     dhall 'Мы ждем следующей жизни и помогаем другим в их путешествии.'
 
     menu:
-        'Может, ты мне объяснишь, почему тленные хотят моей смерти?' if _r6032_condition(gsm):
+        'Может, ты мне объяснишь, почему тленные хотят моей смерти?' if ddhallLogic.r6032_condition():
             # r174 # reply6032
             jump ddhall_s22
         'Истинной Смерти?':
             # r175 # reply6033
-            $ _r6033_action(gsm)
+            $ ddhallLogic.r6033_action()
             jump ddhall_s48
         'Иллюзорность этой жизни?':
             # r176 # reply6034
@@ -1208,14 +1065,14 @@ label ddhall_s50:  # from 33.1
     menu:
         'Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них.':
             # r188 # reply6051
-            $ _r6051_action(gsm)
+            $ ddhallLogic.r6051_action()
             jump ddhall_s51
         'Заперты? Каким образом?':
             # r189 # reply6052
             jump ddhall_s51
         'Довольно этой философии. Как все это относится к тому, что я оказался здесь?':
             # r190 # reply6053
-            $ _r6053_action(gsm)
+            $ ddhallLogic.r6053_action()
             jump ddhall_s51
 
 
@@ -1293,7 +1150,7 @@ label ddhall_kill:
 
 
 label ddhall_killed:
-    $ _kill_dhall(gsm)
+    $ ddhallLogic.kill_dhall()
     teller 'Дхолл не успевает даже посмотреть на меня: он слишком стар и слишком слаб.'
     teller 'И ему мешает кашель.'
     teller 'Я скорее намечаю удары, нежели наношу их.'
@@ -1314,7 +1171,7 @@ label ddhall_kill_first:
 
 
 label ddhall_killed_first:
-    $ _kill_dhall(gsm)
+    $ ddhallLogic.kill_dhall()
     teller 'Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.'
     teller 'И ему мешает кашель.'
     teller 'Я скорее намечаю удары, нежели наношу их.'

@@ -1,71 +1,9 @@
-init python:
-    def _kill_dzm1041(gsm):
-        gsm.set_dead_dzm1041(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _get_bei_name(gsm):
-        return bei if gsm.get_know_bei_name() else dzm1041
-    def _set_bei_name(gsm):
-        gsm.set_know_bei_name(True)
-
-
-init python:
-    def _r6576_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r6583_action(gsm):
-        gsm.set_meet_bei(True)
-    def _r9096_action(gsm):
-        gsm.set_meet_bei(True)
-    def _r9097_action(gsm):
-        gsm.set_meet_bei(True)
-    def _r9161_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_1')
-    def _r9162_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_1')
-    def _r9200_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_2')
-    def _r9201_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_1')
-    def _r9207_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_3')
-        gsm.set_know_xixi(True)
-    def _r9208_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_2')
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_2')
-        gsm.set_know_xixi(True)
-    def _r9209_action(gsm):
-        gsm.set_know_xixi(True)
-    def _r9210_action(gsm):
-        gsm.set_know_xixi(True)
-
-
-init python:
-    def _r6576_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6577_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6578_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6579_condition(gsm):
-        return gsm.get_can_speak_with_dead() \
-               and not gsm.get_meet_bei()
-    def _r6580_condition(gsm):
-        return gsm.get_can_speak_with_dead() \
-               and gsm.get_meet_bei()
-    def _r9109_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r9145_condition(gsm):
-        return not gsm.get_meet_pharod()
-    def _r9187_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',13,'int')
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm1041_logic import Dzm1041Logic
+    dzm1041Logic = Dzm1041Logic(renpy.store.global_settings_manager)
+
+    def logic_get_know_bei_name(self):
+        return bei if dzm1041Logic.get_know_bei_name() else dzm1041
 
 
 # ###
@@ -86,8 +24,7 @@ label start_dzm1041_kill_first:
     call dzm1041_init
     jump dzm1041_kill_first
 label dzm1041_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm1041(True)
+    $ dzm1041Logic.dzm1041_init()
     scene bg mortuary1
     show dzm1041_img default at center_left_down
     return
@@ -102,20 +39,20 @@ label dzm1041_s0:  # from - # IF ~  Global("Bei","GLOBAL",0)
     teller 'Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6576_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1041Logic.r6576_condition():
             # r0 # reply6576
-            $ _r6576_action(gsm)
+            $ dzm1041Logic.r6576_action()
             jump dzm1041_s1
-        'Итак… что тут у нас интересного?' if _r6577_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1041Logic.r6577_condition():
             # r1 # reply6577
             jump dzm1041_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6578_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1041Logic.r6578_condition():
             # r2 # reply6578
             jump dzm1041_s1
-        'Использовать на трупе свою способность История костей.' if _r6579_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1041Logic.r6579_condition():
             # r3 # reply6579
             jump dzm1041_s2
-        'Использовать на трупе свою способность История костей.' if _r6580_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1041Logic.r6580_condition():
             # r4 # reply6580
             jump dzm1041_s37
         'Было приятно с тобой поболтать. Прощай.':
@@ -131,10 +68,10 @@ label dzm1041_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6579_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1041Logic.r6579_condition():
             # r3 # reply6579
             jump dzm1041_s2
-        'Использовать на трупе свою способность История костей.' if _r6580_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1041Logic.r6580_condition():
             # r4 # reply6580
             jump dzm1041_s37
         'Было приятно с тобой поболтать. Прощай.':
@@ -153,15 +90,15 @@ label dzm1041_s2:  # from 0.3
     menu:
         'Поклониться в ответ.':
             # r8 # reply6583
-            $ _r6583_action(gsm)
+            $ dzm1041Logic.r6583_action()
             jump dzm1041_s3
         'У меня есть вопросы…':
             # r9 # reply9096
-            $ _r9096_action(gsm)
+            $ dzm1041Logic.r9096_action()
             jump dzm1041_s4
         'Оставить духа.':
             # r10 # reply9097
-            $ _r9097_action(gsm)
+            $ dzm1041Logic.r9097_action()
             jump show_graphics_menu
 
 
@@ -212,7 +149,7 @@ label dzm1041_s5:  # from 3.0 3.1 4.0 4.1
     menu:
         'Так кто ты?':
             # r17 # reply9104
-            $ _set_bei_name(gsm)
+            $ dzm1041Logic.set_know_bei_name()
             jump dzm1041_s6
         'Откуда ты?':
             # r18 # reply9105
@@ -226,7 +163,7 @@ label dzm1041_s5:  # from 3.0 3.1 4.0 4.1
         'Что ты знаешь об этом месте?':
             # r21 # reply9108
             jump dzm1041_s9
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9109_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1041Logic.r9109_condition():
             # r22 # reply9109
             jump dzm1041_s10
         'Ничего, неважно.':
@@ -255,7 +192,7 @@ label dzm1041_s6:  # from 5.0 14.0
 
 # s7 # say9064
 label dzm1041_s7:  # from 5.1 14.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Я родом из места под названием Шоу Лунь… места, которое я когда-то считал центром вселенной…'
     teller 'Похоже, на него накатили теплые воспоминания.'
     x 'Столько мест, столько миров. Раньше я считал себя довольно образованным человеком, и все же перед смертью я знал слишком мало…'
@@ -274,7 +211,7 @@ label dzm1041_s7:  # from 5.1 14.1
 
 # s8 # say9065
 label dzm1041_s8:  # from 5.2 14.2
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Я был убит одним из тех, с кем я попал в этот мир. Я охотился за ним в этом городе многие недели — за это время я успел изучить ваш язык, — но он нашел меня первым.'
     x 'Он профессиональный убийца; он застигнул меня врасплох и убил меня во сне.'
 
@@ -301,7 +238,7 @@ label dzm1041_s8:  # from 5.2 14.2
 
 # s9 # say9066
 label dzm1041_s9:  # from 5.4 14.4
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Об этом здании? Совершенно ничего. Я слышал о нем, знаю, что мое тело работает здесь, но это все. Я довольно мало знаю об этом великом городе, «Сигиле»'
     x 'Недели, проведенные здесь, я потратил на поиски людей, с которыми попал в этот мир, и на изучение языка; хоть это и огорчало меня, но времени на другие вещи у меня не было.'
     x 'А ведь я мог познать мириады чудес этого места…'
@@ -326,7 +263,7 @@ label dzm1041_s9:  # from 5.4 14.4
 
 # s10 # say9067
 label dzm1041_s10:  # from 5.5 14.5
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Нет, это имя ничего для меня не значит. Я прошу прощения, но в данном вопросе я тебе не помощник.'
 
     menu:
@@ -340,7 +277,7 @@ label dzm1041_s10:  # from 5.5 14.5
 
 # s11 # say9068
 label dzm1041_s11:  # from 5.3 14.3
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     teller 'На миг тебе кажется, что дух огорчен.'
     x 'Я… Мой дух находится во владениях прославленного магистрата Яньвана, в Дворце Правосудия.'
 
@@ -358,7 +295,7 @@ label dzm1041_s11:  # from 5.3 14.3
 
 # s12 # say9069
 label dzm1041_s12:  # from 6.0 16.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Да. Там, откуда я родом, это встречается не так уж редко. Моей обязанностью было все время находиться рядом с госпожой Лю, и не только оберегать ее, но и обучать.'
     x 'Я был уважаемым учителем, а также фехтовальщиком. Возможно, я послужил бы ей лучше, будь я лучшим фехтовальщиком…'
 
@@ -376,7 +313,7 @@ label dzm1041_s12:  # from 6.0 16.1
 
 # s13 # say9070
 label dzm1041_s13:  # from 6.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Впечатляюще? Да, как для меня, то даже слишком. Я… я подвел госпожу Лю и Цензора в своей миссии.'
 
     menu:
@@ -393,7 +330,7 @@ label dzm1041_s13:  # from 6.1
 
 # s14 # say9071
 label dzm1041_s14:  # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19.0 20.1 21.1 22.0 23.1 24.0 25.0 26.0 27.1 28.0 29.0 30.0 31.2 32.1 33.2 34.0 35.2 36.0 37.0 38.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     teller 'Дух кивает с неожиданной грацией, как для иссохшего трупа.'
     x 'Пожалуйста, спрашивай все, что пожелаешь.'
 
@@ -413,7 +350,7 @@ label dzm1041_s14:  # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19
         'Что ты знаешь об этом месте?':
             # r57 # reply9144
             jump dzm1041_s9
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9145_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1041Logic.r9145_condition():
             # r58 # reply9145
             jump dzm1041_s10
         'Что ты сказал, когда впервые появился здесь?':
@@ -426,7 +363,7 @@ label dzm1041_s14:  # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19
 
 # s15 # say9072
 label dzm1041_s15:  # from 11.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Ну, видишь ли…'
     teller 'Дух на время умолкает в раздумьях, потирая иссохшие руки трупа.'
     x 'Прибыв туда, после недолгого ожидания меня должны были сопроводить в мое конечное, *истинное* место назначения.'
@@ -449,7 +386,7 @@ label dzm1041_s15:  # from 11.0
 
 # s16 # say9073
 label dzm1041_s16:  # from 7.0 8.0 8.1 9.1 12.0 13.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Я расскажу тебе всю историю. Как наставник и телохранитель Лю Сиси, я, конечно же, отвечал за ее безопасность и образование.'
     x 'Одним ясным вечером мы стояли на балконе, выходившем во внутренний двор, где я показывал ей различные созвездия.'
 
@@ -467,7 +404,7 @@ label dzm1041_s16:  # from 7.0 8.0 8.1 9.1 12.0 13.0
 
 # s17 # say9074
 label dzm1041_s17:  # from 8.2 9.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Ах, это. Однажды ночью я встретил на улице девушку. Она принадлежала к организации под названием Тленные, той самой, что присматривает за этим комплексом.'
     x 'Она сделала мне предложение, согласно которому в обмен за небольшую сумму мое тело может быть… использовано… здесь после моей кончины.'
 
@@ -485,7 +422,7 @@ label dzm1041_s17:  # from 8.2 9.0
 
 # s18 # say9075
 label dzm1041_s18:  # from 8.3 9.2
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     teller 'На самом деле, лингвистика всегда представляла для меня большой интерес. Будучи студентом, я обнаружил, что могу без особых проблем изучать новые наречия.'
 
     menu:
@@ -499,7 +436,7 @@ label dzm1041_s18:  # from 8.3 9.2
 
 # s19 # say9076
 label dzm1041_s19:  # from 15.0 20.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Видишь ли… за мной так никто и не вернулся. Я терпеливо ждал несколько дней, но безуспешно. В конце концов, я покинул комнату и стал бродить по дворцу в надежде на то, что кто-нибудь проведет меня…'
     teller 'Он тихо вздыхает, выдыхая легкое облачко бальзамирующей жидкости.'
     x 'Там - девять тысяч и одна комната, и в каждой из них меня направляли в другую. Я словно навеки попал в трясину.'
@@ -510,11 +447,11 @@ label dzm1041_s19:  # from 15.0 20.0
             jump dzm1041_s14
         'Я могу чем-нибудь помочь?':
             # r74 # reply9161
-            $ _r9161_action(gsm)
+            $ dzm1041Logic.r9161_action()
             jump dzm1041_s24
         'Несчастный глупец… Представляю, как долго тебе придется там бродить!':
             # r75 # reply9162
-            $ _r9162_action(gsm)
+            $ dzm1041Logic.r9162_action()
             jump dzm1041_s25
         'Желаю тебе удачи. Прощай.':
             # r76 # reply9163
@@ -523,7 +460,7 @@ label dzm1041_s19:  # from 15.0 20.0
 
 # s20 # say9077
 label dzm1041_s20:  # from 15.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Не могу сказать. Все это сильно огорчает меня!'
     teller 'Он умолкает, чтобы восстановить самообладание. При этом его закостеневшие суставы и сухожилия тихонько поскрипывают.'
 
@@ -541,7 +478,7 @@ label dzm1041_s20:  # from 15.1
 
 # s21 # say9078
 label dzm1041_s21:  # from 16.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Да-да, конечно. Пока мы стояли, с крыши над балконом внезапно спрыгнули двое убийц, скорее всего, чтобы убить или похитить госпожу Лю.'
     x 'Позвав стражу, я обнажил свой клинок и бросился на ее защиту. В разгар битвы перила балкона обломились, и мы вчетвером упали в Нефритовый Портал.'
 
@@ -559,7 +496,7 @@ label dzm1041_s21:  # from 16.0
 
 # s22 # say9079
 label dzm1041_s22:  # from 17.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Пожалуй, только сначала… В конце концов, эта идея немного жутковата. Но поговорив с ней немного, я понял, что они, тленные, разделяют со мной взгляды на смерть.'
     x 'Мое тело? Это всего лишь оболочка, не более.'
     x 'Я верю, что их «Истинная Смерть» будет тем достойным местом, которого лично я когда-нибудь достигну… полностью освободившись и отделившись от материального мира.'
@@ -577,7 +514,7 @@ label dzm1041_s22:  # from 17.0
 
 # s23 # say9080
 label dzm1041_s23:  # from 21.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'О! Прошу прощения за упущение… Нефритовый Портал — это круглый водоем во внутреннем дворе.'
     x 'Он выложен зелеными и белыми стеатитами и назван Порталом из-за того, что время от времени в отражении его мерцающих вод можно увидеть совершенно другое место.'
 
@@ -595,7 +532,7 @@ label dzm1041_s23:  # from 21.0
 
 # s24 # say9081
 label dzm1041_s24:  # from 19.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Твое предложение великодушно. Но я боюсь, что здесь ничего нельзя поделать… Я уверен, что со временем все-таки найду свой путь. Так или иначе, благодарю тебя.'
 
     menu:
@@ -622,7 +559,7 @@ label dzm1041_s25:  # from 19.2 33.1 35.1
 
 # s26 # say9083
 label dzm1041_s26:  # from 14.6
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Ах, это… э-э… это стихи. Трудно перевести. Может, есть другой вопрос?'
     teller 'Он неловко улыбается.'
 
@@ -640,7 +577,7 @@ label dzm1041_s26:  # from 14.6
 
 # s27 # say9084
 label dzm1041_s27:  # from 23.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Как я уже сказал, мы упали в Нефритовый Портал. Я даже и не предполагал, что он *на самом* деле был порталом, во всех смыслах этого слова, и все же это так!'
     x 'Неожиданно я очутился в незнакомом переулке, лежащий со сломанной ногой. Придя в себя, я успел увидеть, как убийцы убегают, унося на плечах Лю Сиси.'
 
@@ -658,7 +595,7 @@ label dzm1041_s27:  # from 23.0
 
 # s28 # say9085
 label dzm1041_s28:  # from 26.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Хорошо.'
     teller 'Он ненадолго задумывается, барабаня длинными костлявыми пальцами трупа. Затем он начинает декламировать в более твердом, выверенном ритме.'
     x 'Как встречаться нам тяжело, так тяжело расставаться.\nВетер жизни лишился сил, все цветы увядают.'
@@ -672,7 +609,7 @@ label dzm1041_s28:  # from 26.1
         'Интересно. А что это означает?':
             # r99 # reply9186
             jump dzm1041_s29
-        'Значит, говоришь, я должен оставить твой дух в покое? Я оскорбил тебя, вызвав сюда?' if _r9187_condition(gsm):
+        'Значит, говоришь, я должен оставить твой дух в покое? Я оскорбил тебя, вызвав сюда?' if dzm1041Logic.r9187_condition():
             # r100 # reply9187
             jump dzm1041_s30
         'О. Спасибо, что разъяснил мне это. Прощай.':
@@ -682,7 +619,7 @@ label dzm1041_s28:  # from 26.1
 
 # s29 # say9086
 label dzm1041_s29:  # from 28.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Ну, мне стыдно признаться, но это было деликатной попыткой сказать… сказать, что, наверно, лучше бы тебе оставить в покое души мертвых.'
     x 'У меня больше нет желания быть частью этого…'
     teller 'Дух делает широкий жест, охватывая все, что находится вокруг него, — мира.'
@@ -699,7 +636,7 @@ label dzm1041_s29:  # from 28.1
 
 # s30 # say9087
 label dzm1041_s30:  # from 28.2
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'А… э-э… нет. Я не хотел быть столь прямолинеен, чтобы избежать конфронтации. Это всего лишь означает, что у меня нет больше желания быть частью этого…'
     teller 'Дух делает широкий жест, охватывая все, что находится вокруг него.'
     x '…частью этого мира.'
@@ -715,7 +652,7 @@ label dzm1041_s30:  # from 28.2
 
 # s31 # say9088
 label dzm1041_s31:  # from 27.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Ну, это почти все. Мне пришлось хромать с болью в ноге, пока я не нашел того, кто вылечил мою ногу.'
     x 'Он взял в качестве платы все те небольшие накопления, что у меня были. У этого целителя и у других людей я научился здешнему языку, не переставая разыскивать двух убийц и свою подопечную.'
 
@@ -736,7 +673,7 @@ label dzm1041_s31:  # from 27.0
 
 # s32 # say9089
 label dzm1041_s32:  # from 31.0 38.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Я поймал одного из них, но он не пожелал говорить. Я казнил его и положил его голову в шелковый мешок, чтобы преподнести ее Цензору, когда я вернусь назад с его дочерью.'
     teller 'На миг он мрачнеет, потом продолжает.'
     x 'Другой убийца… ускользнул от меня. Даже больше: он убил меня, прежде чем я смог убить его и спасти свою подопечную. Мне жаль, но теперь для меня уже все кончено.'
@@ -755,17 +692,17 @@ label dzm1041_s32:  # from 31.0 38.0
 
 # s33 # say9090
 label dzm1041_s33:  # from 32.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Нет, но я был уверен, что смог бы найти способ. Хотя теперь это под сомнением.'
 
     menu:
         'Возможно, они все еще в городе. Может быть, я смогу найти и спасти эту девушку.':
             # r113 # reply9200
-            $ _r9200_action(gsm)
+            $ dzm1041Logic.r9200_action()
             jump dzm1041_s34
         'Похоже, тебе легко забыть о своем долге только лишь потому, что ты мертв. Не представляю, как бы я смог допустить подобное.':
             # r114 # reply9201
-            $ _r9201_action(gsm)
+            $ dzm1041Logic.r9201_action()
             jump dzm1041_s25
         'Интересно. Позволь мне спросить кое о чем еще…':
             # r115 # reply9202
@@ -777,7 +714,7 @@ label dzm1041_s33:  # from 32.0
 
 # s34 # say9091
 label dzm1041_s34:  # from 33.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Твое предложение отличает в тебе благородного человека… тем не менее, прошло не меньше семидесяти пяти лет с тех пор, как я был убит.'
     x 'Человек, убивший меня, давно уже мертв, и Сиси, скорее всего, тоже.'
 
@@ -792,7 +729,7 @@ label dzm1041_s34:  # from 33.0
 
 # s35 # say9092
 label dzm1041_s35:  # from -
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Убийца похож на меня внешне, над бровью у него татуировка лотоса.'
     teller 'Заметив твое смятение, он добавляет.'
     x 'Это такой цветок с семью лепестками. Лю Сиси — это молодая девушка, ей всего лишь четырнадцать лет.'
@@ -801,25 +738,25 @@ label dzm1041_s35:  # from -
     menu:
         'Если встречу ее — сделаю все, что в моих силах, чтобы помочь ей — в память о тебе.':
             # r119 # reply9207
-            $ _r9207_action(gsm)
+            $ dzm1041Logic.r9207_action()
             jump dzm1041_s36
         'Неважно. У меня нет времени на это.':
             # r120 # reply9208
-            $ _r9208_action(gsm)
+            $ dzm1041Logic.r9208_action()
             jump dzm1041_s25
         'Хорошо. У меня есть другой вопрос…':
             # r121 # reply9209
-            $ _r9209_action(gsm)
+            $ dzm1041Logic.r9209_action()
             jump dzm1041_s14
         'Это все, что мне нужно. Прощай.':
             # r122 # reply9210
-            $ _r9210_action(gsm)
+            $ dzm1041Logic.r9210_action()
             jump show_graphics_menu
 
 
 # s36 # say9093
 label dzm1041_s36:  # from 35.0
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Ты добрый и благородный человек. Однако не делай этого для меня… девушка и ее отец — вот кому нужна твоя помощь.'
 
     menu:
@@ -833,7 +770,7 @@ label dzm1041_s36:  # from 35.0
 
 # s37 # say9094
 label dzm1041_s37:  # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Я определенно не ожидал увидеть тебя снова.'
     teller 'Дух учтиво кланяется, но его лицо остается непроницаемым.'
     x 'Что тебе нужно от меня?'
@@ -849,7 +786,7 @@ label dzm1041_s37:  # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
 # s38 # say9718
 label dzm1041_s38:  # from 31.1
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'На самом деле, лингвистика всегда представляла для меня большой интерес. Будучи студентом, я обнаружил, что могу без особых проблем изучать новые наречия.'
 
     menu:
@@ -865,7 +802,7 @@ label dzm1041_s38:  # from 31.1
 
 
 label dzm1041_kill:
-    $ x = get_know_bei_name(gsm)
+    $ x = logic_get_know_bei_name()
     x 'Я определенно не ожидал увидеть тебя снова.'
     teller 'Дух учтиво кланяется, но его лицо остается непроницаемым.'
     x 'Что тебе нужно от меня?'
@@ -878,7 +815,7 @@ label dzm1041_kill:
 
 
 label dzm1041_killed:
-    $ _kill_dzm1041(gsm)
+    $ dzm1041Logic.kill_dzm1041()
     teller 'Его жёсткая кожа лопается от моих ударов. Я чувствую, что я безвозвратно разрушил тело этого духа. Стал ли он свободнее?'
     jump dzm1041_dispose
 
@@ -895,6 +832,6 @@ label dzm1041_kill_first:
 
 
 label dzm1041_killed_first:
-    $ _kill_dzm1041(gsm)
+    $ dzm1041Logic.kill_dzm1041()
     teller 'Его жёсткая кожа лопается от моих ударов. Я чувствую, что я безвозвратно что-то разрушил.'
     jump dzm1041_dispose

@@ -1,45 +1,6 @@
-init python:
-    def _kill_dzm1201(gsm):
-        gsm.set_dead_dzm1201(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r34956_action(gsm):
-        gsm.set_1201_note_retrieved(True)
-        gsm.set_has_1201_note(True)
-        gsm.inc_exp_custom('party', 250)
-    def _r45129_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _kill_dzm1201(gsm):
-        gsm.set_dead_dzm1201(True)
-
-
-init python:
-    def _r34954_condition(gsm):
-        return not gsm.get_1201_note_retrieved()
-    def _r34957_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r34958_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r34956_condition(gsm):
-        return gsm.get_has_scalpel()
-    def _r45122_condition(gsm):
-        return not gsm.get_has_scalpel()
-    def _r45129_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r45130_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r45131_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r45132_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm1201_logic import Dzm1201Logic
+    dzm1201Logic = Dzm1201Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -54,8 +15,7 @@ label start_dzm1201_kill:
     call dzm1201_init
     jump dzm1201_kill
 label dzm1201_init:
-    $ glm.set_location('mortuary_f2r3')
-    $ gsm.set_meet_dzm1201(True)
+    $ dzm1201Logic.dzm1201_init()
     scene bg mortuary_f2r3
     show dzm1201_img default at center_left_down
     return
@@ -70,13 +30,13 @@ label dzm1201_s0:  # from - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
     teller 'Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.'
 
     menu:
-        'Попробовать вытащить записку.' if _r34954_condition(gsm):
+        'Попробовать вытащить записку.' if dzm1201Logic.r34954_condition():
             # r0 # reply34954
             jump dzm1201_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r34957_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1201Logic.r34957_condition():
             # r1 # reply34957
             jump dzm1201_s3
-        'Использовать на трупе свою способность История костей.' if _r34958_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1201Logic.r34958_condition():
             # r2 # reply34958
             jump dzm1201_s4
         'Было приятно поболтать с тобой. Прощай.':
@@ -93,11 +53,11 @@ label dzm1201_s1:  # from 0.0
     teller 'Попытка вскрыть зомби уничтожит записку — тебе нужно найти деликатный способ удалить швы перед тем, как достать записку.'
 
     menu:
-        'Срезать швы скальпелем.' if _r34956_condition(gsm):
+        'Срезать швы скальпелем.' if dzm1201Logic.r34956_condition():
             # r5 # reply34956
-            $ _r34956_action(gsm)
+            $ dzm1201Logic.r34956_action()
             jump dzm1201_s2
-        'Хм-м. Если бы у меня было что-нибудь, чтобы разрезать эти швы…' if _r45122_condition(gsm):
+        'Хм-м. Если бы у меня было что-нибудь, чтобы разрезать эти швы…' if dzm1201Logic.r45122_condition():
             # r6 # reply45122
             jump dzm1201_dispose
 
@@ -121,7 +81,7 @@ label dzm1201_s3:  # from 0.1 5.0 5.1 5.2
     teller 'Молочно-белые глаза трупа смотрят на тебя без выражения.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r34958_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1201Logic.r34958_condition():
             # r2 # reply34958
             jump dzm1201_s4
         'Было приятно поболтать с тобой. Прощай.':
@@ -137,7 +97,7 @@ label dzm1201_s4:  # from 0.2 5.3
     teller 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r34957_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1201Logic.r34957_condition():
             # r1 # reply34957
             jump dzm1201_s3
         'Было приятно поболтать с тобой. Прощай.':
@@ -149,22 +109,22 @@ label dzm1201_s4:  # from 0.2 5.3
 
 
 # s5 # say45128
-label dzm1201_s5:  # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
+label dzm1201_s5:  # from 2.0 # IF ~  Global("dzm1201Logic.Retrieved","GLOBAL",1)
     teller 'На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти, создавая впечатление, что он плачет.'
     teller 'Его челюсть распахнута, из уголка рта течет струйка гноя.'
 
     menu:
-        'Извини, что срезал швы… Мне просто нужно было посмотреть, что у тебя во рту.' if _r45129_condition(gsm):
+        'Извини, что срезал швы… Мне просто нужно было посмотреть, что у тебя во рту.' if dzm1201Logic.r45129_condition():
             # r11 # reply45129
-            $ _r45129_action(gsm)
+            $ dzm1201Logic.r45129_action()
             jump dzm1201_s3
-        'Извини, что срезал швы… Мне просто нужно было посмотреть, что у тебя во рту.' if _r45130_condition(gsm):
+        'Извини, что срезал швы… Мне просто нужно было посмотреть, что у тебя во рту.' if dzm1201Logic.r45130_condition():
             # r12 # reply45130
             jump dzm1201_s3
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45131_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1201Logic.r45131_condition():
             # r13 # reply45131
             jump dzm1201_s3
-        'Использовать на трупе свою способность История костей.' if _r45132_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1201Logic.r45132_condition():
             # r14 # reply45132
             jump dzm1201_s4
         'Было приятно поболтать с тобой. Прощай.':
@@ -187,9 +147,9 @@ label dzm1201_kill:
 
 
 label dzm1201_killed:
-    $ _kill_dzm1201(gsm)
+    $ dzm1201Logic.kill_dzm1201()
     teller "Я не знаю, откуда взялись чернила. Труп не реагирует на мои удары: пустые слёзы пустых глаз."
     teller "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает."
-    if _r34954_condition(gsm):
+    if dzm1201Logic.r34954_condition():
         teller "Что-то отвратительное вытекает изо рта зомби. Записка очевидно уничтожена."
     jump dzm1201_dispose

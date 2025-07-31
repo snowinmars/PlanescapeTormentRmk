@@ -73,7 +73,8 @@ init 3 python:
 
     renpy.store.global_event_manager = EventManager()
     renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
-    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, CharacterManager(renpy.store.global_event_manager))
+    renpy.store.global_character_manager = CharacterManager(renpy.store.global_event_manager)
+    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, renpy.store.global_character_manager, renpy.store.global_location_manager)
     renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
@@ -106,25 +107,13 @@ init 3 python:
     renpy.store.global_location_manager.register(builder.mappings, builder.build_reverse_mappings())
     devlog.info('Done building locations mapping, took %s', int(time.time()) - now)
 
-#     config.keymap['show_custom_history'] = ['mousedown_4', 'K_UP']
-#     config.underlay.append(
-#         renpy.Keymap(
-#             show_custom_history = Show("custom_history")
-#         )
-#     )
-#     config.keymap['HIDE_custom_screens'] = ['K_ESCAPE', 'mouseup_3']
-#     config.keymap['hide_windows'].append('HIDE_custom_screens')
-#     config.underlay.append(
-#         renpy.Keymap(
-#             HIDE_custom_screens = [Hide("custom_history"), Hide("history"), Hide("inventory_screen"), Return(-1)]
-#         )
-#     )
     config.keymap['show_inventory'] = ['i']
     config.underlay.append(
         renpy.Keymap(
             show_inventory = Show("inventory_screen")
         )
     )
+
     config.keymap['character_screen'] = ['c']
     config.underlay.append(
         renpy.Keymap(
@@ -143,7 +132,7 @@ label start:
             call quick_setup_as_mage
             $ gsm = renpy.store.global_settings_manager
             $ glm = renpy.store.global_location_manager
-            $ glm.set_location('mortuary_f2r5')
+            $ glm.set_location('mortuary_f2r1')
             $ gsm.set_in_party_morte(True)
             $ gsm.gcm.set_property('protagonist', 'good', 10)
             # $ gsm.set_has_intro_key(True)

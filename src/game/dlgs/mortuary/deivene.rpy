@@ -1,138 +1,6 @@
-init python:
-    def _kill_deivene(gsm):
-        gsm.set_dead_deivene(True)
-    def _r3422_action_meet_eivene(gsm):
-        gsm.set_meet_eivene(True)
-
-init python:
-    def _r3424_action(gsm):
-        gsm.set_has_embalm(False)
-        gsm.set_has_needle(False)
-        gsm.set_eivene_delivery(True)
-        gsm.inc_exp_custom('party', 250)
-    def _r3425_action(gsm):
-        gsm.update_journal('37702')
-    def _r3426_action(gsm):
-        gsm.update_journal('37702')
-    def _r3427_action(gsm):
-        gsm.update_journal('37702')
-    def _r3428_action(gsm):
-        gsm.update_journal('37702')
-    def _r3429_action(gsm):
-        gsm.update_journal('37702')
-    def _r3491_action(gsm):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.set_mortualy_alarmed(True)
-    def _r3449_action(gsm):
-        gsm.change_stat_permanent('protagonist', 'MAXHITPOINTS', 'RAISE', 1)
-        gsm.full_heal('protagonist')
-        gsm.set_ravel_eivene(True)
-        gsm.update_journal('38199')
-    def _r3456_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r3459_action(gsm):
-        # ?.play_sound('SPTR_01')
-        gsm.update_journal('61612')
-    def _r3469_action(gsm):
-        gsm.set_has_embalm(False)
-        gsm.set_has_needle(False)
-        gsm.set_eivene_delivery(True)
-        gsm.inc_exp_custom('party', 250)
-    def _r3470_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r3494_action(gsm):
-        gsm.update_journal('38203')
-    def _r3495_action(gsm):
-        gsm.update_journal('38203')
-    def _r3496_action(gsm):
-        gsm.update_journal('38203')
-    def _r3501_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r63478_action(gsm):
-        gsm.inc_exp_custom('protagonist', 250)
-        gsm.set_42_secret(True)
-
-
-init python:
-    def _r3412_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3413_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3414_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3415_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3424_condition(gsm):
-        return gsm.get_has_embalm() \
-               and gsm.get_has_needle()
-    def _r3425_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3426_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3427_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3428_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3440_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3441_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3442_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3443_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3452_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3453_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3456_condition(gsm):
-        return gsm.get_embalm_key_quest() == 1 \
-               and gsm.get_has_keyem()
-    def _r3457_condition(gsm):
-        return gsm.get_embalm_key_quest() == 1 \
-               and not gsm.get_has_keyem()
-    def _r3459_condition(gsm):
-        return not gsm.get_42_secret()
-    def _r3463_condition(gsm):
-        return not gsm.get_eivene_delivery()
-    def _r4351_condition(gsm):
-        return gsm.get_eivene_delivery()
-    def _r3469_condition(gsm):
-        return gsm.get_has_embalm() \
-               and gsm.get_has_needle()
-    def _r3470_condition(gsm):
-        return gsm.get_embalm_key_quest() == 1 \
-               and gsm.get_has_keyem()
-    def _r3497_condition(gsm):
-        return gsm.get_embalm_key_quest() == 1 \
-               and not gsm.get_has_keyem()
-    def _r3494_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r3495_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r3501_condition(gsm):
-        return gsm.get_embalm_key_quest() == 1 \
-               and gsm.get_has_keyem()
-    def _r3502_condition(gsm):
-        return gsm.get_embalm_key_quest() == 1 \
-               and not gsm.get_has_keyem()
-    def _r4354_condition(gsm):
-        return not gsm.get_eivene_delivery()
-    def _r4355_condition(gsm):
-        return gsm.get_eivene_delivery()
-    def _r63478_condition(gsm):
-        return not gsm.get_42_secret()
-    def _r63479_condition(gsm):
-        return gsm.get_42_secret()
-    def _r63482_condition(gsm):
-        return not gsm.get_eivene_delivery()
-    def _r63481_condition(gsm):
-        return gsm.get_eivene_delivery()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortuary.deivene_logic import DeiveneLogic
+    deiveneLogic = DeiveneLogic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -153,7 +21,7 @@ label start_deivene_kill:
     call deivene_init
     jump deivene_kill
 label deivene_init:
-    $ glm.set_location('mortuary_f2r5')
+    $ deiveneLogic.eivene_init()
     scene bg mortuary_f2r5
     show eivene_img default at center_left_down
     return
@@ -183,16 +51,16 @@ label deivene_s1:  # from 0.0
     teller '…ее пальцы похожи на когти. Она с легкостью погружает их, словно ножи, в грудь трупа, доставая органы.'
 
     menu:
-        'Приветствую, говорю.' if _r3412_condition(gsm):
+        'Приветствую, говорю.' if deiveneLogic.r3412_condition():
             # r2 # reply3412
             jump deivene_s2
-        'Приветствую, говорю.' if _r3413_condition(gsm):
+        'Приветствую, говорю.' if deiveneLogic.r3413_condition():
             # r3 # reply3413
             jump deivene_s3
-        'Что с твоими руками?' if _r3414_condition(gsm):
+        'Что с твоими руками?' if deiveneLogic.r3414_condition():
             # r4 # reply3414
             jump deivene_s2
-        'Что с твоими руками?' if _r3415_condition(gsm):
+        'Что с твоими руками?' if deiveneLogic.r3415_condition():
             # r5 # reply3415
             jump deivene_s19
         'Оставить ее в покое.':
@@ -236,32 +104,32 @@ label deivene_s5:  # from 4.0
     eivene_unknown 'Ты.'
     teller 'Она соединяет когти вместе, затем делает странное движение рукой.'
     eivene 'Найди НИТКУ и БАЛЬЗАМ, принеси СЮДА, к Эи-Вейн. Пшел — пшел — пшел.'
-    $ _r3422_action_meet_eivene(gsm)
+    $ deiveneLogic.meet_eivene()
 
     menu:
-        'Дать ей нитку и банку с бальзамирующей жидкостью.' if _r3424_condition(gsm):
+        'Дать ей нитку и банку с бальзамирующей жидкостью.' if _r3424_condition():
             # r10 # reply3424
-            $ _r3424_action(gsm)
+            $ deiveneLogic.r3424_action()
             jump deivene_s7
-        'Сперва ответь на пару вопросов…' if _r3425_condition(gsm):
+        'Сперва ответь на пару вопросов…' if deiveneLogic.r3425_condition():
             # r11 # reply3425
-            $ _r3425_action(gsm)
+            $ deiveneLogic.r3425_action()
             jump deivene_s6
-        'Сперва ответь на пару вопросов…' if _r3426_condition(gsm):
+        'Сперва ответь на пару вопросов…' if deiveneLogic.r3426_condition():
             # r12 # reply3426
-            $ _r3426_action(gsm)
+            $ deiveneLogic.r3426_action()
             jump deivene_s20
-        'Что с твоими руками?' if _r3427_condition(gsm):
+        'Что с твоими руками?' if deiveneLogic.r3427_condition():
             # r13 # reply3427
-            $ _r3427_action(gsm)
+            $ deiveneLogic.r3427_action()
             jump deivene_s6
-        'Что с твоими руками?' if _r3428_condition(gsm):
+        'Что с твоими руками?' if deiveneLogic.r3428_condition():
             # r14 # reply3428
-            $ _r3428_action(gsm)
+            $ deiveneLogic.r3428_action()
             jump deivene_s20
         'Уйти.':
             # r15 # reply3429
-            $ _r3429_action(gsm)
+            $ deiveneLogic.r3429_action()
             jump show_graphics_menu
 
 
@@ -312,16 +180,16 @@ label deivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59
     teller 'К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.'
 
     menu:
-        'Э, не то, чтобы я не польщен, но…' if _r3440_condition(gsm):
+        'Э, не то, чтобы я не польщен, но…' if deiveneLogic.r3440_condition():
             # r22 # reply3440
             jump deivene_s11
-        'Э, не то, чтобы я не польщен, но…' if _r3441_condition(gsm):
+        'Э, не то, чтобы я не польщен, но…' if deiveneLogic.r3441_condition():
             # r23 # reply3441
             jump dmorte_s59
-        'Продолжать строить из себя зомби.' if _r3442_condition(gsm):
+        'Продолжать строить из себя зомби.' if deiveneLogic.r3442_condition():
             # r24 # reply3442
             jump deivene_s11
-        'Продолжать строить из себя зомби.' if _r3443_condition(gsm):
+        'Продолжать строить из себя зомби.' if deiveneLogic.r3443_condition():
             # r25 # reply3443
             jump dmorte_s59
         'Оттолкнуть ее, уйти.':
@@ -338,7 +206,7 @@ label deivene_s10:  # from 9.4 12.1
     menu:
         'Ну хорошо…':
             # r27 # reply3491
-            $ _r3491_action(gsm)
+            $ deiveneLogic.r3491_action()
             jump show_graphics_menu
 
 
@@ -363,7 +231,7 @@ label deivene_s12:  # from 11.0
     menu:
         'Позволить ей работать.':
             # r29 # reply3449
-            $ _r3449_action(gsm)
+            $ deiveneLogic.r3449_action()
             jump deivene_s13
         'Оттолкнуть ее, уйти.':
             # r30 # reply3450
@@ -376,10 +244,10 @@ label deivene_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 60
     teller 'В течении нескольких минут она наносит жидкость на твое тело… довольно странно, но ты чувствуешь себя *лучше*.'
 
     menu:
-        'Позволить ей работать.' if _r3452_condition(gsm):
+        'Позволить ей работать.' if deiveneLogic.r3452_condition():
             # r31 # reply3452
             jump deivene_s14
-        'Позволить ей работать.' if _r3453_condition(gsm):
+        'Позволить ей работать.' if deiveneLogic.r3453_condition():
             # r32 # reply3453
             jump dmorte_s60
 
@@ -390,11 +258,11 @@ label deivene_s14:  # from 13.0
     eivene 'Готово. Пшел-пшел.'
 
     menu:
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if _r3456_condition(gsm):
+        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3456_condition():
             # r33 # reply3456
-            $ _r3456_action(gsm)
+            $ deiveneLogic.r3456_action()
             jump deivene_s18
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if _r3457_condition(gsm):
+        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3457_condition():
             # r34 # reply3457
             jump deivene_s24
         'Уйти.':
@@ -408,14 +276,14 @@ label deivene_s15:  # from - # IF ~  Global("EiVene","GLOBAL",1)
     teller 'Перед тобой Эи-Вейн. Она все еще потрошит труп своими когтями. Ритм движений когтей что-то тебе напоминает, но ты не можешь вспомнить что.'
 
     menu:
-        'Наблюдать за ней, изучая движения ее рук.' if _r3459_condition(gsm):
+        'Наблюдать за ней, изучая движения ее рук.' if deiveneLogic.r3459_condition():
             # r36 # reply3459
-            $ _r3459_action(gsm)
+            $ deiveneLogic.r3459_action()
             jump deivene_s16
-        'Коснуться ее плеча, привлечь ее внимание.' if _r3463_condition(gsm):
+        'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r3463_condition():
             # r37 # reply3463
             jump deivene_s17
-        'Коснуться ее плеча, привлечь ее внимание.' if _r4351_condition(gsm):
+        'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r4351_condition():
             # r38 # reply4351
             jump deivene_s22
         'Уйти.':
@@ -437,15 +305,15 @@ label deivene_s17:  # from 6.0 15.1 25.0 27.0
     eivene 'Найди нитку и бальзам, принеси сюда, к Эи-Вейн. Пшел-пшел-пшел.'
 
     menu:
-        'Дать ей нитку и банку с бальзамирующей жидкостью.' if _r3469_condition(gsm):
+        'Дать ей нитку и банку с бальзамирующей жидкостью.' if _r3469_condition():
             # r40 # reply3469
-            $ _r3469_action(gsm)
+            $ deiveneLogic.r3469_action()
             jump deivene_s7
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if _r3470_condition(gsm):
+        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3470_condition():
             # r41 # reply3470
-            $ _r3470_action(gsm)
+            $ deiveneLogic.r3470_action()
             jump deivene_s18
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if _r3497_condition(gsm):
+        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3497_condition():
             # r42 # reply3497
             jump deivene_s24
         'Уйти.':
@@ -460,17 +328,17 @@ label deivene_s18:  # from 14.0 17.1 22.0
     eivene 'Принеси потом обратно. Пшел-пшел.'  # TODO [snow]: дописать, что ключ можно вернуть
 
     menu:
-        'Что с твоими руками?' if _r3494_condition(gsm):
+        'Что с твоими руками?' if deiveneLogic.r3494_condition():
             # r44 # reply3494
-            $ _r3494_action(gsm)
+            $ deiveneLogic.r3494_action()
             jump deivene_s23
-        'Что с твоими руками?' if _r3495_condition(gsm):
+        'Что с твоими руками?' if deiveneLogic.r3495_condition():
             # r45 # reply3495
-            $ _r3495_action(gsm)
+            $ deiveneLogic.r3495_action()
             jump deivene_s21
         'Уйти.':
             # r46 # reply3496
-            $ _r3496_action(gsm)
+            $ deiveneLogic.r3496_action()
             jump show_graphics_menu
 
 
@@ -500,11 +368,11 @@ label deivene_s22:  # from 15.2 25.1 27.1
     eivene 'Ты готов. Все зашито. Пшел-пшел-пшел.'
 
     menu:
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if _r3501_condition(gsm):
+        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3501_condition():
             # r47 # reply3501
-            $ _r3501_action(gsm)
+            $ deiveneLogic.r3501_action()
             jump deivene_s18
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if _r3502_condition(gsm):
+        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3502_condition():
             # r48 # reply3502
             jump deivene_s24
         'Уйти.':
@@ -540,10 +408,10 @@ label deivene_s25:  # from -
     teller 'В другом кто-то ворует чей-то кошелек… к твоему удивлению, это воспоминание внезапно толкает тебя на осмотр карманов Эи-Вейн.'
 
     menu:
-        'Коснуться ее плеча, привлечь ее внимание.' if _r4354_condition(gsm):
+        'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r4354_condition():
             # r52 # reply4354
             jump deivene_s17
-        'Коснуться ее плеча, привлечь ее внимание.' if _r4355_condition(gsm):
+        'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r4355_condition():
             # r53 # reply4355
             jump deivene_s22
         'Уйти.':
@@ -558,11 +426,11 @@ label deivene_s26:  # from 16.0
     teller 'Ты кое-что оставил внутри, что-то, что может пригодиться в случае, если ты снова вернешься сюда…'
 
     menu:
-        'Эхо: Храни это, пока я не вернусь.' if _r63478_condition(gsm):
+        'Эхо: Храни это, пока я не вернусь.' if deiveneLogic.r63478_condition():
             # r55 # reply63478
-            $ _r63478_action(gsm)
+            $ deiveneLogic.r63478_action()
             jump deivene_s27
-        'Эхо: Храни это, пока я не вернусь.' if _r63479_condition(gsm):
+        'Эхо: Храни это, пока я не вернусь.' if deiveneLogic.r63479_condition():
             # r56 # reply63479
             jump deivene_s27
 
@@ -573,10 +441,10 @@ label deivene_s27:  # from 26.0 26.1
     teller 'Секунду спустя его руки падают по швам и видение меркнет… ты снова наблюдаешь, как руки Эи-Вейн зашивают тело.'
 
     menu:
-        'Коснуться ее плеча, привлечь ее внимание.' if _r63482_condition(gsm):
+        'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r63482_condition():
             # r57 # reply63482
             jump deivene_s17
-        'Коснуться ее плеча, привлечь ее внимание.' if _r63481_condition(gsm):
+        'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r63481_condition():
             # r58 # reply63481
             jump deivene_s22
         'Уйти.':
@@ -595,7 +463,7 @@ label deivene_kill:
 
 
 label deivene_killed:
-    $ _kill_deivene(gsm)
+    $ deiveneLogic.kill_deivene()
     teller 'Я знаю, что она не услышит, как я подойду. Я знаю, что её пальцы похожи на когти.'
     teller 'Я проскальзываю за её спиной и ломаю её правую руку, а когда она с криком оборачивается, я ломаю левую.'
     teller 'Но через несколько ударов она сдаётся и падает на пол.'
@@ -617,7 +485,7 @@ label deivene_kill_first:
 
 
 label deivene_killed_first:
-    $ _kill_deivene(gsm)
+    $ deiveneLogic.kill_eivene()
     teller 'Я знаю, что я быстрее. Я прикасаюсь к её плечу - и девушка оборачивается в ту сторону, где меня уже нет.'
     teller 'Она всё равно пытается сопротивляться, используя сломанные руки на манер плетей.'
     teller 'Через несколько ударов она затихает. Я провёл пальцем по порезу, который она мне оставила и пнул дважды мёртвое тело.'

@@ -1,32 +1,6 @@
-init python:
-    def _r6521_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r6524_action(gsm):
-        gsm.set_meet_crispy(True)
-    def _r9415_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_crispy_1')
-    def _r9426_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_crispy_1')
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_crispy_1')
-
-
-init python:
-    def _r6521_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r6522_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r6523_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r6524_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r9434_condition(gsm):
-        return not gsm.get_meet_pharod()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm1146_logic import Dzm1146Logic
+    dzm1146Logic = Dzm1146Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -44,8 +18,7 @@ label start_dzm1146_kill:
     call dzm1146_init
     jump dzm1146_s3
 label dzm1146_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm1146(True)
+    $ dzm1146Logic.dzm1146_init()
     scene bg mortuary1
     show dzm1146_img default at center_left_down
     return
@@ -60,19 +33,19 @@ label dzm1146_s0:  # from - # IF ~  Global("Crispy","GLOBAL",0)
     teller 'У него нет носа, ушей и нескольких пальцев, вероятно, потерянных в давнем пожаре. Когда ты загораживаешь ему путь, чтобы привлечь его внимание, он останавливается и смотрит на тебя пустым взглядом.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r6521_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1146Logic.r6521_condition():
             # r0 # reply6521
-            $ _r6521_action(gsm)
+            $ dzm1146Logic.r6521_action()
             jump dzm1146_s1
-        'Итак… что тут у нас интересного?' if _r6522_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1146Logic.r6522_condition():
             # r1 # reply6522
             jump dzm1146_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r6523_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1146Logic.r6523_condition():
             # r2 # reply6523
             jump dzm1146_s1
-        'Использовать на трупе свою способность История костей.' if _r6524_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1146Logic.r6524_condition():
             # r3 # reply6524
-            $ _r6524_action(gsm)
+            $ dzm1146Logic.r6524_action()
             jump dzm1146_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6525
@@ -87,9 +60,9 @@ label dzm1146_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r6524_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1146Logic.r6524_condition():
             # r3 # reply6524
-            $ _r6524_action(gsm)
+            $ dzm1146Logic.r6524_action()
             jump dzm1146_s2
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6525
@@ -125,7 +98,7 @@ label dzm1146_s3:  # from 2.0
     menu:
         'Я могу тебе чем-нибудь помочь?':
             # r10 # reply9415
-            $ _r9415_action(gsm)
+            $ dzm1146Logic.r9415_action()
             jump dzm1146_s4
         'У меня вопрос…':
             # r11 # reply9416
@@ -182,7 +155,7 @@ label dzm1146_s6:  # from 3.2 17.0
             jump dzm1146_s7
         'Ударить его.':
             # r20 # reply9426
-            $ _r9426_action(gsm)
+            $ dzm1146Logic.r9426_action()
             jump dzm1146_s8
         'Не обращать внимания на бедолагу, отвернуться и уйти.':
             # r21 # reply9427
@@ -228,7 +201,7 @@ label dzm1146_s9:  # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.
         'Что ты знаешь об этом месте?':
             # r27 # reply9433
             jump dzm1146_s15
-        'Ты знаешь кого-нибудь по имени Фарод?' if _r9434_condition(gsm):
+        'Ты знаешь кого-нибудь по имени Фарод?' if dzm1146Logic.r9434_condition():
             # r28 # reply9434
             jump dzm1146_s16
         'Ничего, неважно.':

@@ -1,14 +1,5 @@
-import renpy
 from engine.inventory import (InventoryItem)
 
-def _has_copper_earring_closed_action():
-    renpy.exports.jump('start_copper_earring_closed_talk')
-
-def _has_1201_note_action():
-    renpy.exports.jump('start_n1201_note_talk')
-
-def _has_dhall_feather_action():
-    renpy.exports.jump('start_dhall_feather')
 
 def build_all_inventory(manager):
     manager.register(InventoryItem(
@@ -34,7 +25,7 @@ def build_all_inventory(manager):
         description="Эта медная серьга выглядит древней. Что довольно странно, у нее нет крючка или каких-либо других приспособлений для крепления на ухе. Однако, на внутренней поверхности серьги высечен ряд необычных вырезов, которые заслуживают более внимательного изучения.",
         grid_image="images/icons/copper_earring.png",
         detail_image="images/icons/copper_earring.png",
-        use_action=_has_copper_earring_closed_action
+        jump_on_use_to='start_copper_earring_closed_talk'
     ))
     manager.register(InventoryItem(
         settings_id="has_copper_earring_opened",
@@ -67,7 +58,7 @@ def build_all_inventory(manager):
         description="Эта вонючая записка была извлечена изо рта одного из зомби Морга; похоже, она случайно была вшита в рот. Несмотря на состояние, текст все еще различим:\n\n«Прошу любого тленного, кто прочтет это — умоляю вас. Я знаю мои обязанности согласно Контракту Смерти, но я готов предложить нечто *большее*, чем моя подпись под обязательствами в случае, если мое тело будет кремировано, а не пробуждено. Я позаботился о том, чтобы эта записка была рядом с моим телом во время моей смерти. Если вы читаете это — пожалуйста, используйте эту записку, как это описано ниже, и получите нечто в обмен на мои обязательства по Контракту. Номер моего Контракта послужит в качестве ключа.»\n\nКажется, уже поздно предотвращать поднятие этого трупа… ниже ты замечаешь нарисованную диаграмму. Похоже, это указания для сгибания этого пергамента на какой-то странный манер.",
         grid_image="images/icons/1201_note.png",
         detail_image="images/icons/1201_note.png",
-        use_action=_has_1201_note_action
+        jump_on_use_to='start_n1201_note_talk'
     ))
     manager.register(InventoryItem(
         settings_id="has_dzm1664_page",
@@ -132,7 +123,7 @@ def build_all_inventory(manager):
         description="Это перо для письма, похоже, принадлежало какой-то огромной птице. Оно слегка отдает пеплом. Изучение пера показывает, что оно принадлежало вроку, одной из многих рас танарри, которыми наполнена Бездна. Вроки напоминают огромных стервятников; они часто использовались как разведчики войск танарри в Кровавой войне.\n\nДхолл пользовался этим пером всю свою жизнь, и, таким образом, оно несет в себе его опыт и воспоминания. Разломив его, ты впитаешь часть его знаний, что даст тебе постоянную прибавку к Осведомленности.",
         grid_image="images/icons/tearring.png",
         detail_image="images/icons/tearring.png",
-        use_action=_has_dhall_feather_action
+        jump_on_use_to='start_dhall_feather'
     ))
     manager.register(InventoryItem(
         settings_id='has_finger_bone',

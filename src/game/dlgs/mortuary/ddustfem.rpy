@@ -1,204 +1,6 @@
-init python:
-    def _r1225_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r1246_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r1249_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r33227_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r1273_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r1290_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r1294_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r4307_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4308_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r4309_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4317_action(gsm):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-        return
-    def _r4318_action(gsm):
-        gsm.inc_choke()
-        gsm.set_choke_memory(True)
-        # ?.play_sound('SPTR_01')
-        gsm.inc_choke_dustman()
-        gsm.inc_exp_custom('party', 15)
-    def _r4319_action(gsm):
-        gsm.inc_choke_dustman()
-        gsm.inc_choke()
-        gsm.set_dead_ddustfem(True) # Deactivate(Myself)
-        gsm.inc_exp_custom('party', 15)
-    def _r4320_action(gsm):
-        gsm.set_dead_ddustfem(True)
-        gsm.inc_exp_custom('protagonist', 250)
-    def _r4321_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r4322_action(gsm):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-        return
-
-
-init python:
-    def _r1235_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r1236_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r1242_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'int')
-    def _r1244_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r1245_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r1247_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r1248_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r1253_condition(gsm):
-        return gsm.get_meet_dhall() \
-               and glm.is_visited_internal_location('AR0202')
-    def _r1255_condition(gsm):
-        return gsm.get_meet_dhall() \
-               and not glm.is_visited_internal_location('AR0202')
-    def _r1258_condition(gsm):
-        return gsm.get_meet_deionarra() \
-               and glm.is_visited_internal_location('AR0201')
-    def _r4336_condition(gsm):
-        return gsm.get_meet_deionarra() \
-               and not glm.is_visited_internal_location('AR0201')
-    def _r33224_condition(gsm):
-        return gsm.get_meet_soego() \
-               and glm.is_visited_internal_location('AR0201')
-    def _r33226_condition(gsm):
-        return gsm.get_meet_soego() \
-               and not glm.is_visited_internal_location('AR0201')
-    def _r33227_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.get_talked_to_dustfem_times() == 1
-    def _r33229_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.get_talked_to_dustfem_times() > 1
-    def _r1272_condition(gsm):
-        return gsm.get_meet_deionarra()
-    def _r1273_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() == 1
-    def _r1274_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() > 1
-    def _r1275_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r1276_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r1281_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'int')
-    def _r1290_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() == 1
-    def _r1291_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() > 1
-    def _r1292_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r1293_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r1294_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() == 1
-    def _r1295_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() > 1
-    def _r1296_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r1297_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r1396_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r1397_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r1398_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r1399_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r4281_condition(gsm):
-        return glm.is_visited_internal_location('AR0202')
-    def _r4282_condition(gsm):
-        return not glm.is_visited_internal_location('AR0202')
-    def _r4296_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r4297_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r4298_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r4300_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r4303_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r4304_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r4305_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r4306_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r4308_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() == 1
-    def _r4309_condition(gsm):
-        return gsm.get_talked_to_dustfem_times() > 1
-    def _r4312_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_warning() == 0
-    def _r4313_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_warning() == 1
-    def _r4314_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_warning() > 1
-    def _r4315_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r4318_condition(gsm):
-        return not gsm.get_choke_memory()
-    def _r4319_condition(gsm):
-        return gsm.get_choke_memory()
-    def _r4324_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r4325_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r4329_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r4331_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r4332_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r4333_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r66684_condition(gsm):
-        return gsm.get_join_dustmen()
-    def _r66685_condition(gsm):
-        return not gsm.get_join_dustmen()
-    def _r66686_condition(gsm):
-        return not gsm.get_join_dustmen()
-    def _r66687_condition(gsm):
-        return not gsm.get_join_dustmen()
-    def _r66688_condition(gsm):
-        return not gsm.get_join_dustmen()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    from dlgs.mortuary.ddustfem_logic import DdustfemLogic
+    ddustfemLogic = DdustfemLogic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -264,7 +66,7 @@ label ddustfem_s2:  # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
     menu:
         'Ну хорошо…':
             # r8 # reply1225
-            $ _r1225_action(gsm)
+            $ ddustfemLogic.r1225_action()
             jump ddustfem_dispose
 
 
@@ -315,10 +117,10 @@ label ddustfem_s5:  # from 4.0 16.2 51.1
     dustfem 'Я позову стражу, они тебя живо выведут. Погоди минутку.'
 
     menu:
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r1235_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1235_condition():
             # r18 # reply1235
             jump ddustfem_s44
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r1236_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1236_condition():
             # r19 # reply1236
             jump ddustfem_s41
         'Уйти. Быстро.':
@@ -343,7 +145,7 @@ label ddustfem_s6:  # from 4.1 4.2 51.2 51.3
         'Я хочу повидаться кое с кем.':
             # r24 # reply1241
             jump ddustfem_s9
-        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if _r1242_condition(gsm):
+        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if ddustfemLogic.r1242_condition():
             # r25 # reply1242
             jump ddustfem_s16
         'Уйти. Быстро.':
@@ -357,15 +159,15 @@ label ddustfem_s7:  # from 6.0 9.0 20.0
     teller 'Тленная делает шаг назад, кажется, она собирается позвать стражников.'
 
     menu:
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r1244_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1244_condition():
             # r27 # reply1244
             jump ddustfem_s44
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r1245_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1245_condition():
             # r28 # reply1245
             jump ddustfem_s41
         'Давай, зови их. Буду рад с ними встретиться.':
             # r29 # reply1246
-            $ _r1246_action(gsm)
+            $ ddustfemLogic.r1246_action()
             jump ddustfem_dispose
 
 
@@ -375,15 +177,15 @@ label ddustfem_s8:  # from 6.1 16.0 20.1
     teller 'Тленная отступает на шаг; кажется, она собирается позвать стражников.'
 
     menu:
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r1247_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1247_condition():
             # r30 # reply1247
             jump ddustfem_s44
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r1248_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1248_condition():
             # r31 # reply1248
             jump ddustfem_s41
         'Давай, зови их. Буду рад с ними встретиться.':
             # r32 # reply1249
-            $ _r1249_action(gsm)
+            $ ddustfemLogic.r1249_action()
             jump ddustfem_dispose
 
 
@@ -395,29 +197,29 @@ label ddustfem_s9:  # from 6.2 20.2
         'Это не твое дело.':
             # r33 # reply1251
             jump ddustfem_s7
-        'Я хочу повидаться с Дхоллом.' if _r1253_condition(gsm):
+        'Я хочу повидаться с Дхоллом.' if ddustfemLogic.r1253_condition():
             # r34 # reply1253
             jump ddustfem_s10
-        'Я хочу повидаться с Дхоллом.' if _r1255_condition(gsm):
+        'Я хочу повидаться с Дхоллом.' if ddustfemLogic.r1255_condition():
             # r35 # reply1255
             jump ddustfem_s11
-        'Я хочу повидаться с Дейонаррой.' if _r1258_condition(gsm):
+        'Я хочу повидаться с Дейонаррой.' if ddustfemLogic.r1258_condition():
             # r36 # reply1258
             jump ddustfem_s13
-        'Я хочу повидаться с Дейонаррой.' if _r4336_condition(gsm):
+        'Я хочу повидаться с Дейонаррой.' if ddustfemLogic.r4336_condition():
             # r37 # reply4336
             jump ddustfem_s12
-        'Я хочу повидаться с Соэго.' if _r33224_condition(gsm):
+        'Я хочу повидаться с Соэго.' if ddustfemLogic.r33224_condition():
             # r38 # reply33224
             jump ddustfem_s15
-        'Я хочу повидаться с Соэго.' if _r33226_condition(gsm):
+        'Я хочу повидаться с Соэго.' if ddustfemLogic.r33226_condition():
             # r39 # reply33226
             jump ddustfem_s14
-        'Ложь: Э-э… с Аданом. Он все еще работает здесь?..' if _r33227_condition(gsm):
+        'Ложь: Э-э… с Аданом. Он все еще работает здесь?..' if ddustfemLogic.r33227_condition():
             # r40 # reply33227
-            $ _r33227_action(gsm)
+            $ ddustfemLogic.r33227_action()
             jump ddustfem_s21
-        'Ложь: Э-э… с Аданом. Он все еще работает здесь?..' if _r33229_condition(gsm):
+        'Ложь: Э-э… с Аданом. Он все еще работает здесь?..' if ddustfemLogic.r33229_condition():
             # r41 # reply33229
             jump ddustfem_s21
         'Ой, нет. Я оговорился.':
@@ -534,20 +336,20 @@ label ddustfem_s19:  # from 17.1
         'Прошу прощения… Я оговорился. Мне неизвестно имя усопшего.':
             # r55 # reply1271
             jump ddustfem_s20
-        'Это имя — Дейонарра.' if _r1272_condition(gsm):
+        'Это имя — Дейонарра.' if ddustfemLogic.r1272_condition():
             # r56 # reply1272
             jump ddustfem_s12
-        'Ложь: Имя… э-э, Адан.' if _r1273_condition(gsm):
+        'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1273_condition():
             # r57 # reply1273
-            $ _r1273_action(gsm)
+            $ ddustfemLogic.r1273_action()
             jump ddustfem_s21
-        'Ложь: Имя… э-э, Адан.' if _r1274_condition(gsm):
+        'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1274_condition():
             # r58 # reply1274
             jump ddustfem_s21
-        'Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.' if _r1275_condition(gsm):
+        'Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.' if ddustfemLogic.r1275_condition():
             # r59 # reply1275
             jump ddustfem_s44
-        'Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.' if _r1276_condition(gsm):
+        'Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.' if ddustfemLogic.r1276_condition():
             # r60 # reply1276
             jump ddustfem_s45
         'Убежать от нее.':
@@ -569,7 +371,7 @@ label ddustfem_s20:  # from 9.9 19.0
         'Я хочу повидаться кое с кем.':
             # r64 # reply1280
             jump ddustfem_s9
-        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if _r1281_condition(gsm):
+        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if ddustfemLogic.r1281_condition():
             # r65 # reply1281
             jump ddustfem_s16
         'Убежать от нее.':
@@ -625,17 +427,17 @@ label ddustfem_s24:  # from 23.0
     dustfem 'У меня такой же вопрос. Твое лицо мне незнакомо. Как тебя зовут?'
 
     menu:
-        'Ложь: Имя… э-э, Адан.' if _r1290_condition(gsm):
+        'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1290_condition():
             # r74 # reply1290
-            $ _r1290_action(gsm)
+            $ ddustfemLogic.r1290_action()
             jump ddustfem_s49
-        'Ложь: Имя… э-э, Адан.' if _r1291_condition(gsm):
+        'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1291_condition():
             # r75 # reply1291
             jump ddustfem_s49
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r1292_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1292_condition():
             # r76 # reply1292
             jump ddustfem_s47
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r1293_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1293_condition():
             # r77 # reply1293
             jump ddustfem_s46
 
@@ -647,17 +449,17 @@ label ddustfem_s25:  # from 23.1
     dustfem 'Как, ты сказал, тебя зовут?'
 
     menu:
-        'Ложь: Имя… э-э, Адан.' if _r1294_condition(gsm):
+        'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1294_condition():
             # r78 # reply1294
-            $ _r1294_action(gsm)
+            $ ddustfemLogic.r1294_action()
             jump ddustfem_s49
-        'Ложь: Имя… э-э, Адан.' if _r1295_condition(gsm):
+        'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1295_condition():
             # r79 # reply1295
             jump ddustfem_s49
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r1296_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1296_condition():
             # r80 # reply1296
             jump ddustfem_s47
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r1297_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1297_condition():
             # r81 # reply1297
             jump ddustfem_s46
 
@@ -722,16 +524,16 @@ label ddustfem_s29:  # from 28.0
     dustfem 'Ты нездешний. Кто ты?'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r1396_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r1396_condition():
             # r92 # reply1396
             jump ddustfem_s50
-        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if _r1397_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustfemLogic.r1397_condition():
             # r93 # reply1397
             jump ddustfem_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященная.' if _r1398_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r1398_condition():
             # r94 # reply1398
             jump ddustfem_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r1399_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r1399_condition():
             # r95 # reply1399
             jump ddustfem_s46
 
@@ -746,10 +548,10 @@ label ddustfem_s30:  # from 28.1
         'Ему еще недолго жить в тени этого существования?':
             # r96 # reply4280
             jump ddustfem_s31
-        'Где я могу найти Дхолла?' if _r4281_condition(gsm):
+        'Где я могу найти Дхолла?' if ddustfemLogic.r4281_condition():
             # r97 # reply4281
             jump ddustfem_s32
-        'Где я могу найти Дхолла?' if _r4282_condition(gsm):
+        'Где я могу найти Дхолла?' if ddustfemLogic.r4282_condition():
             # r98 # reply4282
             jump ddustfem_s33
         'У меня есть другие вопросы…':
@@ -837,16 +639,16 @@ label ddustfem_s35:  # from 31.1 34.0
     dustfem 'Ты ведь нездешний. Кто ты?'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r4296_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4296_condition():
             # r114 # reply4296
             jump ddustfem_s50
-        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if _r4297_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustfemLogic.r4297_condition():
             # r115 # reply4297
             jump ddustfem_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященная.' if _r4298_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4298_condition():
             # r116 # reply4298
             jump ddustfem_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r4300_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4300_condition():
             # r117 # reply4300
             jump ddustfem_s46
 
@@ -875,16 +677,16 @@ label ddustfem_s37:  # from 36.0
     dustfem 'Ты нездешний. Кто ты?'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r4303_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4303_condition():
             # r121 # reply4303
             jump ddustfem_s50
-        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if _r4304_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustfemLogic.r4304_condition():
             # r122 # reply4304
             jump ddustfem_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященная.' if _r4305_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4305_condition():
             # r123 # reply4305
             jump ddustfem_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r4306_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4306_condition():
             # r124 # reply4306
             jump ddustfem_s46
 
@@ -899,15 +701,15 @@ label ddustfem_s38:  # from -
     menu:
         'Проклятье!':
             # r125 # reply4307
-            $ _r4307_action(gsm)
+            $ ddustfemLogic.r4307_action()
             jump ddustfem_dispose
-        'Тс-с-с! Я не смогу тебе ответить под такой крик!' if _r4308_condition(gsm):
+        'Тс-с-с! Я не смогу тебе ответить под такой крик!' if ddustfemLogic.r4308_condition():
             # r126 # reply4308
-            $ _r4308_action(gsm)
+            $ ddustfemLogic.r4308_action()
             jump ddustfem_dispose
-        'Тс-с-с! Я не смогу тебе ответить под такой крик!' if _r4309_condition(gsm):
+        'Тс-с-с! Я не смогу тебе ответить под такой крик!' if ddustfemLogic.r4309_condition():
             # r127 # reply4309
-            $ _r4309_action(gsm)
+            $ ddustfemLogic.r4309_action()
             jump ddustfem_dispose
 
 
@@ -929,16 +731,16 @@ label ddustfem_s40:  # from - # Manually checked EXTERN ~DMORTE~ : 81 Manually c
     teller 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
-        'Приветствую.' if _r4312_condition(gsm):
+        'Приветствую.' if ddustfemLogic.r4312_condition():
             # r130 # reply4312
             jump dmorte_s81
-        'Приветствую.' if _r4313_condition(gsm):
+        'Приветствую.' if ddustfemLogic.r4313_condition():
             # r131 # reply4313
             jump dmorte_s83
-        'Приветствую.' if _r4314_condition(gsm):
+        'Приветствую.' if ddustfemLogic.r4314_condition():
             # r132 # reply4314
             jump ddustfem_s4
-        'Приветствую.' if _r4315_condition(gsm):
+        'Приветствую.' if ddustfemLogic.r4315_condition():
             # r133 # reply4315
             jump ddustfem_s4
         'Оставить ее в покое.':
@@ -953,7 +755,7 @@ label ddustfem_s41:  # from 1.0 5.1 7.1 8.1 47.1
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
             # r135 # reply4317
-            $ _r4317_action(gsm)
+            $ ddustfemLogic.r4317_action()
             jump ddustfem_s42
 
 
@@ -962,13 +764,13 @@ label ddustfem_s42:  # from 41.0 45.0
     teller 'В шее раздается характерный хруст, и тело тленной безвольно падает в твои объятия.'
 
     menu:
-        'Лучше ты, чем я, трухлявка.' if _r4318_condition(gsm):
+        'Лучше ты, чем я, трухлявка.' if ddustfemLogic.r4318_condition():
             # r136 # reply4318
-            $ _r4318_action(gsm)
+            $ ddustfemLogic.r4318_action()
             jump ddustfem_s43
-        'Лучше ты, чем я, трухлявка.' if _r4319_condition(gsm):
+        'Лучше ты, чем я, трухлявка.' if ddustfemLogic.r4319_condition():
             # r137 # reply4319
-            $ _r4319_action(gsm)
+            $ ddustfemLogic.r4319_action()
             jump ddustfem_dispose
 
 
@@ -980,7 +782,7 @@ label ddustfem_s43:  # from 42.0
     menu:
         'Оставить тело, уйти.':
             # r138 # reply4320
-            $ _r4320_action(gsm)
+            $ ddustfemLogic.r4320_action()
             jump ddustfem_dispose
 
 
@@ -992,7 +794,7 @@ label ddustfem_s44:  # from 5.0 7.0 8.0 19.4 47.0
     menu:
         'Ну хорошо…':
             # r139 # reply4321
-            $ _r4321_action(gsm)
+            $ ddustfemLogic.r4321_action()
             jump ddustfem_dispose
 
 
@@ -1004,7 +806,7 @@ label ddustfem_s45:  # from 19.5
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
             # r140 # reply4322
-            $ _r4322_action(gsm)
+            $ ddustfemLogic.r4322_action()
             jump ddustfem_s42
 
 
@@ -1024,10 +826,10 @@ label ddustfem_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
     dustfem 'Ты не из наших. Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Кажется, здесь есть дело для стражников…'
 
     menu:
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r4324_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r4324_condition():
             # r142 # reply4324
             jump ddustfem_s44
-        'Свернуть ей шею до того, как она сможет позвать на помощь.' if _r4325_condition(gsm):
+        'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r4325_condition():
             # r143 # reply4325
             jump ddustfem_s41
         'Уйти. Быстро.':
@@ -1054,16 +856,16 @@ label ddustfem_s49:  # from 24.0 24.1 25.0 25.1
     dustfem 'Это имя мне незнакомо.'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r4329_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4329_condition():
             # r147 # reply4329
             jump ddustfem_s50
-        'Я… недавно здесь. Я… пытаюсь изучить порядки.' if _r4331_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить порядки.' if ddustfemLogic.r4331_condition():
             # r148 # reply4331
             jump ddustfem_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященная.' if _r4332_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4332_condition():
             # r149 # reply4332
             jump ddustfem_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r4333_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4333_condition():
             # r150 # reply4333
             jump ddustfem_s46
 
@@ -1088,19 +890,19 @@ label ddustfem_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
     dustfem 'Ты потерялся?'
 
     menu:
-        'Нет, я член фракции. Я просто осматриваю Морг.' if _r66684_condition(gsm):
+        'Нет, я член фракции. Я просто осматриваю Морг.' if ddustfemLogic.r66684_condition():
             # r153 # reply66684
             jump ddustfem_s52
-        'Да.' if _r66685_condition(gsm):
+        'Да.' if ddustfemLogic.r66685_condition():
             # r154 # reply66685
             jump ddustfem_s5
-        'Нет.' if _r66686_condition(gsm):
+        'Нет.' if ddustfemLogic.r66686_condition():
             # r155 # reply66686
             jump ddustfem_s6
-        'Нет, я не потерялся. У меня есть несколько вопросов…' if _r66687_condition(gsm):
+        'Нет, я не потерялся. У меня есть несколько вопросов…' if ddustfemLogic.r66687_condition():
             # r156 # reply66687
             jump ddustfem_s6
-        'Прощай.' if _r66688_condition(gsm):
+        'Прощай.' if ddustfemLogic.r66688_condition():
             # r157 # reply66688
             jump ddustfem_s2
 

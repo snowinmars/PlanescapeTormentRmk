@@ -1,60 +1,7 @@
-init python:
-    def _kill_dzf114(gsm):
-        gsm.set_dead_dzf114(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r34987_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-init python:
-    def _r34987_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r35004_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r35005_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r35006_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r35011_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r35012_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r35013_condition(gsm):
-        return gsm.get_morte_quip()
-    def _r35014_condition(gsm):
-        return gsm.get_morte_quip()
-    def _r35015_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r35016_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r34989_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r35002_condition(gsm):
-        return gsm.get_morte_quip()
-    def _r35003_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r35008_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-    def _r35009_condition(gsm):
-        return gsm.get_morte_quip()
-    def _r35010_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_quip()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzf114_logic import Dzf114Logic
+    dzf114Logic = Dzf114Logic(renpy.store.global_settings_manager)
+
 
 # ###
 # Original:  DLG/DZF114.DLG
@@ -67,8 +14,7 @@ label start_dzf114_kill:
     call dzf114_init
     jump dzf114_kill
 label dzf114_init:
-    $ glm.set_location('mortuary_f2r2')
-    $ gsm.set_meet_dzf114(True)
+    $ dzf114Logic.dzf114_init()
     scene bg mortuary2
     show dzf114_img default at center_left_down
     return
@@ -83,35 +29,35 @@ label dzf114_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 330
     teller 'Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
 
     menu:
-        'Итак… чем занимаешься вечером?' if _r34987_condition(gsm):
+        'Итак… чем занимаешься вечером?' if dzf114Logic.r34987_condition():
             # r0 # reply34987
-            $ _r34987_action(gsm)
+            $ dzf114Logic.r34987_action()
             jump dzf114_s1
-        'Итак… чем занимаешься вечером?' if _r35004_condition(gsm):
+        'Итак… чем занимаешься вечером?' if dzf114Logic.r35004_condition():
             # r1 # reply35004
             jump dzf114_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r35005_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzf114Logic.r35005_condition():
             # r2 # reply35005
             jump dzf114_s1
-        'Использовать на трупе свою способность История костей.' if _r35006_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzf114Logic.r35006_condition():
             # r3 # reply35006
             jump dzf114_s2
-        'Было приятно с тобой поболтать. Прощай.' if _r35011_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35011_condition():
             # r4 # reply35011
             jump dmorte_s330
-        'Было приятно с тобой поболтать. Прощай.' if _r35013_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35013_condition():
             # r6 # reply35013
             jump dzf114_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35015_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35015_condition():
             # r8 # reply35015
             jump dzf114_dispose
-        'Оставить труп в покое.' if _r35012_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35012_condition():
             # r5 # reply35012
             jump dmorte_s330
-        'Оставить труп в покое.' if _r35014_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35014_condition():
             # r7 # reply35014
             jump dzf114_dispose
-        'Оставить труп в покое.' if _r35016_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35016_condition():
             # r9 # reply35016
             jump dzf114_dispose
 
@@ -120,34 +66,34 @@ label dzf114_s1:  # from 0.0 0.1 0.2 # Manually checked EXTERN ~DMORTE~ : 330
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r35006_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzf114Logic.r35006_condition():
             # r3 # reply35006
             jump dzf114_s2
-        'Было приятно с тобой поболтать. Прощай.' if _r35011_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35011_condition():
             # r4 # reply35011
             jump dzf114_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35013_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35013_condition():
             # r6 # reply35013
             jump dzf114_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35015_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35015_condition():
             # r8 # reply35015
             jump dzf114_dispose
-        'Тогда прощай.' if _r34989_condition(gsm):
+        'Тогда прощай.' if dzf114Logic.r34989_condition():
             # r10 # reply34989
             jump dmorte_s330
-        'Тогда прощай.' if _r35002_condition(gsm):
+        'Тогда прощай.' if dzf114Logic.r35002_condition():
             # r11 # reply35002
             jump dzf114_dispose
-        'Тогда прощай.' if _r35003_condition(gsm):
+        'Тогда прощай.' if dzf114Logic.r35003_condition():
             # r12 # reply35003
             jump dzf114_dispose
-        'Оставить труп в покое.' if _r35012_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35012_condition():
             # r5 # reply35012
             jump dmorte_s330
-        'Оставить труп в покое.' if _r35014_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35014_condition():
             # r7 # reply35014
             jump dzf114_dispose
-        'Оставить труп в покое.' if _r35016_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35016_condition():
             # r9 # reply35016
             jump dzf114_dispose
 
@@ -157,34 +103,34 @@ label dzf114_s2:  # from 0.3 # Manually checked EXTERN ~DMORTE~ : 330
     teller 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r35005_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzf114Logic.r35005_condition():
             # r2 # reply35005
             jump dzf114_s1
-        'Было приятно с тобой поболтать. Прощай.' if _r35011_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35011_condition():
             # r4 # reply35011
             jump dzf114_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35013_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35013_condition():
             # r6 # reply35013
             jump dzf114_dispose
-        'Было приятно с тобой поболтать. Прощай.' if _r35015_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzf114Logic.r35015_condition():
             # r8 # reply35015
             jump dzf114_dispose
-        'Тогда прощай.' if _r35008_condition(gsm):
+        'Тогда прощай.' if dzf114Logic.r35008_condition():
             # r13 # reply35008
             jump dmorte_s330
-        'Тогда прощай.' if _r35009_condition(gsm):
+        'Тогда прощай.' if dzf114Logic.r35009_condition():
             # r14 # reply35009
             jump dzf114_dispose
-        'Тогда прощай.' if _r35010_condition(gsm):
+        'Тогда прощай.' if dzf114Logic.r35010_condition():
             # r15 # reply35010
             jump dzf114_dispose
-        'Оставить труп в покое.' if _r35012_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35012_condition():
             # r5 # reply35012
             jump dmorte_s330
-        'Оставить труп в покое.' if _r35014_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35014_condition():
             # r7 # reply35014
             jump dzf114_dispose
-        'Оставить труп в покое.' if _r35016_condition(gsm):
+        'Оставить труп в покое.' if dzf114Logic.r35016_condition():
             # r9 # reply35016
             jump dzf114_dispose
 
@@ -201,7 +147,7 @@ label dzf114_kill:
 
 
 label dzf114_killed:
-    $ _kill_dzf114(gsm)
+    $ dzf114Logic.kill_dzf114()
     teller 'Она смотрит на меня пустыми глазами.'
     teller 'В них нет ни жизни, ни разума. Труп падает, нитки на губах рвутся. Я не чувствую сожалений.'
     jump dzf114_dispose

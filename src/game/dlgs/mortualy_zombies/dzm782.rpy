@@ -1,37 +1,6 @@
-init python:
-    def _has_key_has_morte(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_has_intro_key()
-    def _no_key_has_morte(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_has_intro_key()
-    def _has_key_no_morte(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_has_intro_key()
-    def _no_key_no_morte(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_has_intro_key()
-    def _kill_dzm782(gsm):
-        gsm.set_dead_dzm782(True)
-        gsm.inc_exp_custom('party', 65)
-    def _pick_key_up(gsm):
-        gsm.set_has_intro_key(True)
-
-
-init python:
-    def _r24709_condition(gsm):
-        return _no_key_has_morte(gsm)
-    def _r24712_condition(gsm):
-        return _no_key_no_morte(gsm)
-    def _r24713_condition(gsm):
-        return not gsm.get_has_intro_key()
-    def _r24714_condition(gsm):
-        return gsm.get_has_intro_key()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm782_logic import Dzm782Logic
+    dzm782Logic = Dzm782Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -49,8 +18,7 @@ label dzm782_dmorte_extern:
     show morte_img default at center_right_down
     return
 label dzm782_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm782(True)
+    $ dzm782Logic.dzm782_init()
     scene bg mortuary_f2r1
     show dzm782_img default at center_left_down
     return
@@ -66,20 +34,20 @@ label dzm782_s0:  # from - # IF ~  True() # Manually checked EXTERN ~DMORTE1~ : 
     teller 'На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
-        'Я ищу ключ… быть может, он у тебя?' if _r24709_condition(gsm):
+        'Я ищу ключ… быть может, он у тебя?' if dzm782Logic.r24709_condition():
             # r0 # reply24709
             call dzm782_dmorte_extern
             jump dmorte1_s34
-        'Я ищу ключ… быть может, он у тебя?' if _r24712_condition(gsm):
+        'Я ищу ключ… быть может, он у тебя?' if dzm782Logic.r24712_condition():
             # r1 # reply24712
             jump dzm782_s1
-        'Осмотреть труп, проверить, есть ли у него ключ.' if _r24713_condition(gsm):
+        'Осмотреть труп, проверить, есть ли у него ключ.' if dzm782Logic.r24713_condition():
             # r2 # reply24713
             jump dzm782_s2
-        'Было приятно с тобой поболтать. Прощай.' if _r24713_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzm782Logic.r24713_condition():
             # r3 # reply24714
             jump dzm782_s2
-        'Было приятно с тобой поболтать. Прощай.' if _r24714_condition(gsm):
+        'Было приятно с тобой поболтать. Прощай.' if dzm782Logic.r24714_condition():
             # r3 # reply24714
             jump dzm782_dispose
         'Оставить труп в покое.':
@@ -92,7 +60,7 @@ label dzm782_s1:  # from 0.1
     teller 'Труп не отвечает.'
 
     menu:
-        'Осмотреть труп, проверить, есть ли у него ключ.' if _r24713_condition(gsm):
+        'Осмотреть труп, проверить, есть ли у него ключ.' if dzm782Logic.r24713_condition():
             # r2 # reply24713
             jump dzm782_s2
         'Тогда неважно. Прощай.':
@@ -131,7 +99,7 @@ label dzm782_take_key_1:
 
 label dzm782_take_key_2:
     teller 'С лёгким звуком ключ оказывается в моих руках.'
-    $ _pick_key_up(gsm)
+    $ dzm782Logic.pick_key_up()
     jump dzm782_dispose
 
 
@@ -147,17 +115,17 @@ label dzm782_kill:
 
 
 label dzm782_killed:
-    $ _kill_dzm782(gsm)
+    $ dzm782Logic.kill_dzm782()
     teller 'Некоторое время я смотрю в ненавидящие меня глаза, пока не понимаю, что эта эмоция обращена не ко мне. Это застывшая маска, которую труп не в состоянии изменить.'
     teller 'В его ненавидящих глазах поселилась пустота. В них нет ни жизни, ни разума. Я без сожалений расширяю дом для пустоты.'
 
-    if _has_key_has_morte(gsm):
+    if dzm782Logic.has_key_has_morte():
         jump dzm782_dispose
-    if _has_key_no_morte(gsm):
+    if dzm782Logic.has_key_no_morte():
         jump dzm782_dispose
-    if _no_key_has_morte(gsm):
+    if dzm782Logic.no_key_has_morte():
         jump dmorte1_s24
-    if _no_key_no_morte(gsm):
+    if dzm782Logic.no_key_no_morte():
         teller 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
-        $ _s24_action(gsm)
+        $ dzm782Logic.s24_action()
         jump dzm782_dispose

@@ -1,36 +1,6 @@
-init python:
-    def _kill_dzm79(gsm):
-        gsm.set_dead_dzm79(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r34943_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalzombie_chaotic')
-    def _r34946_action(gsm):
-        gsm.set_know_copper_earring_secret(True)
-    def _r64279_action(gsm):
-        gsm.update_journal('64536')
-    def _r64280_action(gsm):
-        gsm.update_journal('64537')
-
-
-init python:
-    def _r34946_condition(gsm):
-        return not gsm.get_know_copper_earring_secret()
-    def _r34947_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r34948_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r64279_condition(gsm):
-        return not gsm.get_has_copper_earring_closed()
-    def _r64280_condition(gsm):
-        return gsm.get_has_copper_earring_closed()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm79_logic import Dzm79Logic
+    dzm79Logic = Dzm79Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -45,8 +15,7 @@ label start_dzm79_kill:
     call dzm79_init
     jump dzm79_kill
 label dzm79_init:
-    $ glm.set_location('mortuary_f2r2')
-    $ gsm.set_meet_dzm79(True)
+    $ dzm79Logic.dzm79_init()
     scene bg mortuary2
     show dzm79_img default at center_left_down
     return
@@ -64,16 +33,16 @@ label dzm79_s0:  # from -
     menu:
         'Итак… что тут у нас интересного?':
             # r0 # reply34943
-            $ _r34943_action(gsm)
+            $ dzm79Logic.r34943_action()
             jump dzm79_s1
-        'Осмотреть зубчатый круг.' if _r34946_condition(gsm):
+        'Осмотреть зубчатый круг.' if dzm79Logic.r34946_condition():
             # r1 # reply34946
-            $ _r34946_action(gsm)
+            $ dzm79Logic.r34946_action()
             jump dzm79_s3
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r34947_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm79Logic.r34947_condition():
             # r2 # reply34947
             jump dzm79_s1
-        'Использовать на трупе свою способность История костей.' if _r34948_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm79Logic.r34948_condition():
             # r3 # reply34948
             jump dzm79_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -89,7 +58,7 @@ label dzm79_s1:  # from 0.0 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r34948_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm79Logic.r34948_condition():
             # r3 # reply34948
             jump dzm79_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -105,7 +74,7 @@ label dzm79_s2:  # from 0.3 3.0 3.1
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r34947_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm79Logic.r34947_condition():
             # r2 # reply34947
             jump dzm79_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -122,15 +91,15 @@ label dzm79_s3:  # from 0.1
     teller 'Ты замечаешь, что в одной из впадин между внутренними зубцами есть маленький треугольник, как будто у него есть какое-то особое назначение.'
 
     menu:
-        'Хм-м. Интересно… что здесь делает эта отметина, а, труп?' if _r64279_condition(gsm):
+        'Хм-м. Интересно… что здесь делает эта отметина, а, труп?' if dzm79Logic.r64279_condition():
             # r8 # reply64279
-            $ _r64279_action(gsm)
+            $ dzm79Logic.r64279_action()
             jump dzm79_s2
-        'Хм-м… Не удивлюсь, если зазор между зубцами совпадет с выемками на той медной сережке…' if _r64280_condition(gsm):
+        'Хм-м… Не удивлюсь, если зазор между зубцами совпадет с выемками на той медной сережке…' if dzm79Logic.r64280_condition():
             # r9 # reply64280
-            $ _r64280_action(gsm)
+            $ dzm79Logic.r64280_action()
             jump dzm79_s2
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r34947_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm79Logic.r34947_condition():
             # r2 # reply34947
             jump dzm79_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -154,6 +123,6 @@ label dzm79_kill:
 
 
 label dzm79_killed:
-    $ _kill_dzm79(gsm)
+    $ dzm79Logic.kill_dzm79()
     teller 'Я без сожаления отрываю ему голову. Труп привычно падает на колени и замирает. Я не чувствую сожалений.'
     jump dzm79_dispose

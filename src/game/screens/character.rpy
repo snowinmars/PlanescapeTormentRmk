@@ -58,7 +58,7 @@ screen character_screen(character):
 
                 text "STR: [character.strength]" size 25 color "#f88"
                 text "CON: [character.constitution]" size 25 color "#f8f"
-                text "Gold: [character.gold]" size 25 color "#ff0"
+                text "Gold: [renpy.store.global_settings_manager.get_gold()]" size 25 color "#ff0"
 
                 text "DEX: [character.dexterity]" size 25 color "#8f8"
                 text "WIS: [character.wisdom]" size 25 color "#ff8"

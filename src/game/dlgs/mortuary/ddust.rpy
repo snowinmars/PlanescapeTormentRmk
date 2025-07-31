@@ -1,202 +1,6 @@
-init python:
-    def _r313_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r3888_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r3886_action(gsm):
-        gsm.set_mortualy_alarmed(True) # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r33189_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r371_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r450_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r399_action(gsm):
-        gsm.set_death_of_names_adahn(True)
-        gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r448_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r449_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-    def _r1339_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-        gsm.set_mortualy_alarmed(True)
-    def _r1426_action(gsm):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-        return
-    def _r1428_action(gsm):
-        gsm.set_choke_memory(True) # ?.play_sound('SPTR_01')
-        gsm.inc_choke_dustman()
-        gsm.inc_choke()
-        gsm.set_dead_ddust(True) # Deactivate(Myself)
-        gsm.inc_exp_custom('party', 15)
-    def _r1429_action(gsm):
-        gsm.inc_choke_dustman()
-        gsm.inc_choke()
-        gsm.set_dead_ddust(True) # Deactivate(Myself)
-        gsm.inc_exp_custom('party', 15)
-    def _r3882_action(gsm):
-        gsm.set_dead_ddust(True)
-        gsm.inc_exp_custom('protagonist', 250)
-    def _r3884_action(gsm):
-        gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
-    def _r3890_action(gsm):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
-        return
-
-
-init python:
-    def _r327_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r328_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r334_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'int')
-    def _r344_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r3887_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r358_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r3885_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r342_condition(gsm):
-        return gsm.get_meet_dhall() \
-               and glm.is_visited_internal_location('AR0202')
-    def _r343_condition(gsm):
-        return gsm.get_meet_dhall() \
-               and not glm.is_visited_internal_location('AR0202')
-    def _r33183_condition(gsm):
-        return gsm.get_meet_deionarra() \
-               and glm.is_visited_internal_location('AR0201')
-    def _r33185_condition(gsm):
-        return gsm.get_meet_deionarra() \
-               and not glm.is_visited_internal_location('AR0201')
-    def _r33186_condition(gsm):
-        return gsm.get_meet_soego() \
-               and glm.is_visited_internal_location('AR0201')
-    def _r33187_condition(gsm):
-        return gsm.get_meet_soego() \
-               and not glm.is_visited_internal_location('AR0201')
-    def _r33189_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.get_talked_to_dust_times() == 1
-    def _r33190_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.get_talked_to_dust_times() > 1
-    def _r370_condition(gsm):
-        return gsm.get_meet_deionarra()
-    def _r371_condition(gsm):
-        return gsm.get_talked_to_dust_times() == 1
-    def _r372_condition(gsm):
-        return gsm.get_talked_to_dust_times() > 1
-    def _r373_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r1335_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r378_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',11,'int')
-    def _r450_condition(gsm):
-        return gsm.get_talked_to_dust_times() == 1
-    def _r1337_condition(gsm):
-        return gsm.get_talked_to_dust_times() > 1
-    def _r3904_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3905_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r399_condition(gsm):
-        return gsm.get_talked_to_dust_times() == 1
-    def _r3906_condition(gsm):
-        return gsm.get_talked_to_dust_times() > 1
-    def _r3907_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3908_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r413_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r3918_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3919_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3920_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r416_condition(gsm):
-        return glm.is_visited_internal_location('AR0202')
-    def _r417_condition(gsm):
-        return not glm.is_visited_internal_location('AR0202')
-    def _r436_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r3909_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3910_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3911_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r445_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r446_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3912_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3913_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r449_condition(gsm):
-        return gsm.get_talked_to_dust_times() == 1
-    def _r1339_condition(gsm):
-        return gsm.get_talked_to_dust_times() > 1
-    def _r1420_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_warning() == 0
-    def _r1421_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_warning() == 1
-    def _r1422_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_warning() > 1
-    def _r1423_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r1428_condition(gsm):
-        return not gsm.get_choke_memory()
-    def _r1429_condition(gsm):
-        return gsm.get_choke_memory()
-    def _r3914_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'dex')
-    def _r3915_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'dex')
-    def _r3898_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r3899_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3900_condition(gsm):
-        return gsm.check_char_prop_lt('protagonist',13,'chr')
-    def _r3901_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'chr')
-    def _r66675_condition(gsm):
-        return gsm.get_join_dustmen()
-    def _r66676_condition(gsm):
-        return not gsm.get_join_dustmen()
-    def _r66677_condition(gsm):
-        return not gsm.get_join_dustmen()
-    def _r66678_condition(gsm):
-        return not gsm.get_join_dustmen()
-    def _r66679_condition(gsm):
-        return not gsm.get_join_dustmen()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    from dlgs.mortuary.ddust_logic import DdustLogic
+    ddustLogic = DdustLogic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -265,7 +69,7 @@ label ddust_s2:  # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
     menu:
         'Ну хорошо…':
             # r8 # reply313
-            $ _r313_action(gsm)
+            $ ddustLogic.r313_action()
             jump show_graphics_menu
 
 
@@ -317,10 +121,10 @@ label ddust_s5:  # from 4.0 4.3 6.4 16.2 51.1
     dust 'Я позову стражу, они тебя живо выведут. Погоди минуточку.'
 
     menu:
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r327_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r327_condition():
             # r18 # reply327
             jump ddust_s44
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r328_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r328_condition():
             # r19 # reply328
             jump ddust_s41
         'Уйти. Быстро.':
@@ -345,7 +149,7 @@ label ddust_s6:  # from 4.1 4.2 51.2 51.3
         'Я хочу кое с кем повидаться.':
             # r24 # reply333
             jump ddust_s9
-        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if _r334_condition(gsm):
+        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if ddustLogic.r334_condition():
             # r25 # reply334
             jump ddust_s16
         'Уйти. Быстро.':
@@ -359,15 +163,15 @@ label ddust_s7:  # from 6.0 9.0 20.0
     teller 'Тленный отступает на шаг; кажется, он собирается позвать стражников.'
 
     menu:
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r344_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r344_condition():
             # r27 # reply344
             jump ddust_s44
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r3887_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r3887_condition():
             # r28 # reply3887
             jump ddust_s41
         'Давай, зови их. Буду рад с ними встретиться.':
             # r29 # reply3888
-            $ _r3888_action(gsm)
+            $ ddustLogic.r3888_action()
             jump show_graphics_menu
 
 
@@ -377,15 +181,15 @@ label ddust_s8:  # from 6.1 16.0 20.1
     teller 'Тленный отступает на шаг; кажется, он собирается позвать стражников.'
 
     menu:
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r358_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r358_condition():
             # r30 # reply358
             jump ddust_s44
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r3885_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r3885_condition():
             # r31 # reply3885
             jump ddust_s41
         'Давай, зови их. Буду рад с ними встретиться.':
             # r32 # reply3886
-            $ _r3886_action(gsm)
+            $ ddustLogic.r3886_action()
             jump show_graphics_menu
 
 
@@ -397,29 +201,29 @@ label ddust_s9:  # from 6.2 20.2
         'Это не твое дело.':
             # r33 # reply3922
             jump ddust_s7
-        'Я хочу повидаться с Дхоллом.' if _r342_condition(gsm):
+        'Я хочу повидаться с Дхоллом.' if ddustLogic.r342_condition():
             # r34 # reply342
             jump ddust_s10
-        'Я хочу повидаться с Дхоллом.' if _r343_condition(gsm):
+        'Я хочу повидаться с Дхоллом.' if ddustLogic.r343_condition():
             # r35 # reply343
             jump ddust_s11
-        'Я хочу повидаться с Дейонаррой.' if _r33183_condition(gsm):
+        'Я хочу повидаться с Дейонаррой.' if ddustLogic.r33183_condition():
             # r36 # reply33183
             jump ddust_s13
-        'Я хочу повидаться с Дейонаррой.' if _r33185_condition(gsm):
+        'Я хочу повидаться с Дейонаррой.' if ddustLogic.r33185_condition():
             # r37 # reply33185
             jump ddust_s12
-        'Я хочу повидаться с Соэго.' if _r33186_condition(gsm):
+        'Я хочу повидаться с Соэго.' if ddustLogic.r33186_condition():
             # r38 # reply33186
             jump ddust_s15
-        'Я хочу повидаться с Соэго.' if _r33187_condition(gsm):
+        'Я хочу повидаться с Соэго.' if ddustLogic.r33187_condition():
             # r39 # reply33187
             jump ddust_s14
-        'Ложь: Э-э… Адана. Он все еще работает здесь?..' if _r33189_condition(gsm):
+        'Ложь: Э-э… Адана. Он все еще работает здесь?..' if ddustLogic.r33189_condition():
             # r40 # reply33189
-            $ _r33189_action(gsm)
+            $ ddustLogic.r33189_action()
             jump ddust_s21
-        'Ложь: Э-э… Адана. Он все еще работает здесь?..' if _r33190_condition(gsm):
+        'Ложь: Э-э… Адана. Он все еще работает здесь?..' if ddustLogic.r33190_condition():
             # r41 # reply33190
             jump ddust_s21
         'Ой, нет. Я оговорился.':
@@ -537,20 +341,20 @@ label ddust_s19:  # from 17.1
         'Прошу прощения… Я оговорился. Мне неизвестно имя усопшего.':
             # r55 # reply369
             jump ddust_s20
-        'Это имя — Дейонарра.' if _r370_condition(gsm):
+        'Это имя — Дейонарра.' if ddustLogic.r370_condition():
             # r56 # reply370
             jump ddust_s12
-        'Ложь: Меня зовут… э-э, Адан.' if _r371_condition(gsm):
+        'Ложь: Меня зовут… э-э, Адан.' if ddustLogic.r371_condition():
             # r57 # reply371
-            $ _r371_action(gsm)
+            $ ddustLogic.r371_action()
             jump ddust_s21
-        'Ложь: Меня зовут… э-э, Адан.' if _r372_condition(gsm):
+        'Ложь: Меня зовут… э-э, Адан.' if ddustLogic.r372_condition():
             # r58 # reply372
             jump ddust_s21
-        'Наклониться вперед, будто собираясь прошептать ему что-то на ухо, а затем свернуть ему шею.' if _r373_condition(gsm):
+        'Наклониться вперед, будто собираясь прошептать ему что-то на ухо, а затем свернуть ему шею.' if ddustLogic.r373_condition():
             # r59 # reply373
             jump ddust_s44
-        'Наклониться вперед, будто собираясь прошептать ему что-то на ухо, а затем свернуть ему шею.' if _r1335_condition(gsm):
+        'Наклониться вперед, будто собираясь прошептать ему что-то на ухо, а затем свернуть ему шею.' if ddustLogic.r1335_condition():
             # r60 # reply1335
             jump ddust_s45
         'Убежать от него.':
@@ -572,7 +376,7 @@ label ddust_s20:  # from 9.9 19.0
         'Я хочу кое с кем повидаться.':
             # r64 # reply377
             jump ddust_s9
-        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if _r378_condition(gsm):
+        'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if ddustLogic.r378_condition():
             # r65 # reply378
             jump ddust_s16
         'Убежать от него.':
@@ -629,17 +433,17 @@ label ddust_s24:  # from 23.0
     dust 'У меня такой же вопрос. Твое лицо мне незнакомо. Как тебя зовут?'
 
     menu:
-        'Ложь: Меня зовут… э-э, Адан.' if _r450_condition(gsm):
+        'Ложь: Меня зовут… э-э, Адан.' if ddustLogic.r450_condition():
             # r74 # reply450
-            $ _r450_action(gsm)
+            $ ddustLogic.r450_action()
             jump ddust_s49
-        'Ложь: Меня зовут… э-э, Адан.' if _r1337_condition(gsm):
+        'Ложь: Меня зовут… э-э, Адан.' if ddustLogic.r1337_condition():
             # r75 # reply1337
             jump ddust_s49
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r3904_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustLogic.r3904_condition():
             # r76 # reply3904
             jump ddust_s47
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r3905_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustLogic.r3905_condition():
             # r77 # reply3905
             jump ddust_s46
 
@@ -651,17 +455,17 @@ label ddust_s25:  # from 23.1
     dust 'Как, ты сказал, тебя зовут?'
 
     menu:
-        'Ложь: Меня зовут… э-э, Адан.' if _r399_condition(gsm):
+        'Ложь: Меня зовут… э-э, Адан.' if ddustLogic.r399_condition():
             # r78 # reply399
-            $ _r399_action(gsm)
+            $ ddustLogic.r399_action()
             jump ddust_s49
-        'Ложь: Меня зовут… э-э, Адан.' if _r3906_condition(gsm):
+        'Ложь: Меня зовут… э-э, Адан.' if ddustLogic.r3906_condition():
             # r79 # reply3906
             jump ddust_s49
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r3907_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustLogic.r3907_condition():
             # r80 # reply3907
             jump ddust_s47
-        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if _r3908_condition(gsm):
+        'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustLogic.r3908_condition():
             # r81 # reply3908
             jump ddust_s46
 
@@ -726,16 +530,16 @@ label ddust_s29:  # from 28.0
     dust 'Ты нездешний. Кто ты?'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r413_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustLogic.r413_condition():
             # r92 # reply413
             jump ddust_s50
-        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if _r3918_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustLogic.r3918_condition():
             # r93 # reply3918
             jump ddust_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященный.' if _r3919_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященный.' if ddustLogic.r3919_condition():
             # r94 # reply3919
             jump ddust_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r3920_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustLogic.r3920_condition():
             # r95 # reply3920
             jump ddust_s46
 
@@ -750,10 +554,10 @@ label ddust_s30:  # from 28.1
         '*Ему осталось не так долго жить?*':
             # r96 # reply415
             jump ddust_s31
-        'Где я могу найти Дхолла?' if _r416_condition(gsm):
+        'Где я могу найти Дхолла?' if ddustLogic.r416_condition():
             # r97 # reply416
             jump ddust_s32
-        'Где я могу найти Дхолла?' if _r417_condition(gsm):
+        'Где я могу найти Дхолла?' if ddustLogic.r417_condition():
             # r98 # reply417
             jump ddust_s33
         'У меня есть другие вопросы…':
@@ -841,16 +645,16 @@ label ddust_s35:  # from 31.1 34.0
     dust 'Ты ведь нездешний. Кто ты?'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r436_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustLogic.r436_condition():
             # r114 # reply436
             jump ddust_s50
-        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if _r3909_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustLogic.r3909_condition():
             # r115 # reply3909
             jump ddust_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященный.' if _r3910_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященный.' if ddustLogic.r3910_condition():
             # r116 # reply3910
             jump ddust_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r3911_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustLogic.r3911_condition():
             # r117 # reply3911
             jump ddust_s46
 
@@ -879,16 +683,16 @@ label ddust_s37:  # from 36.0
     dust 'Ты ведь не здешний. Кто ты?'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r445_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustLogic.r445_condition():
             # r121 # reply445
             jump ddust_s50
-        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if _r446_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustLogic.r446_condition():
             # r122 # reply446
             jump ddust_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященный.' if _r3912_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященный.' if ddustLogic.r3912_condition():
             # r123 # reply3912
             jump ddust_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r3913_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustLogic.r3913_condition():
             # r124 # reply3913
             jump ddust_s46
 
@@ -900,15 +704,15 @@ label ddust_s38:  # from -
     menu:
         'Проклятье!':
             # r125 # reply448
-            $ _r448_action(gsm)
+            $ ddustLogic.r448_action()
             jump show_graphics_menu
-        'Тс-с! Я не смогу тебе ответить под такой крик!' if _r449_condition(gsm):
+        'Тс-с! Я не смогу тебе ответить под такой крик!' if ddustLogic.r449_condition():
             # r126 # reply449
-            $ _r449_action(gsm)
+            $ ddustLogic.r449_action()
             jump show_graphics_menu
-        'Тс-с! Я не смогу тебе ответить под такой крик!' if _r1339_condition(gsm):
+        'Тс-с! Я не смогу тебе ответить под такой крик!' if ddustLogic.r1339_condition():
             # r127 # reply1339
-            $ _r1339_action(gsm)
+            $ ddustLogic.r1339_action()
             jump show_graphics_menu
 
 
@@ -931,16 +735,16 @@ label ddust_s40:  # from - # Manually checked EXTERN ~DMORTE~ : 61 Manually chec
     teller 'Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
-        'Приветствую.' if _r1420_condition(gsm):
+        'Приветствую.' if ddustLogic.r1420_condition():
             # r130 # reply1420
             jump dmorte_s61
-        'Приветствую.' if _r1421_condition(gsm):
+        'Приветствую.' if ddustLogic.r1421_condition():
             # r131 # reply1421
             jump dmorte_s63
-        'Приветствую.' if _r1422_condition(gsm):
+        'Приветствую.' if ddustLogic.r1422_condition():
             # r132 # reply1422
             jump ddust_s4
-        'Приветствую.' if _r1423_condition(gsm):
+        'Приветствую.' if ddustLogic.r1423_condition():
             # r133 # reply1423
             jump ddust_s4
         'Оставить его в покое.':
@@ -955,7 +759,7 @@ label ddust_s41:  # from 1.0 5.1 7.1 8.1 47.1
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
             # r135 # reply1426
-            $ _r1426_action(gsm)
+            $ ddustLogic.r1426_action()
             jump ddust_s42
 
 
@@ -964,13 +768,13 @@ label ddust_s42:  # from 41.0 45.0
     teller 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.'
 
     menu:
-        'Лучше ты, чем я, трухлявый.' if _r1428_condition(gsm):
+        'Лучше ты, чем я, трухлявый.' if ddustLogic.r1428_condition():
             # r136 # reply1428
-            $ _r1428_action(gsm)
+            $ ddustLogic.r1428_action()
             jump ddust_s43
-        'Лучше ты, чем я, трухлявый.' if _r1429_condition(gsm):
+        'Лучше ты, чем я, трухлявый.' if ddustLogic.r1429_condition():
             # r137 # reply1429
-            $ _r1429_action(gsm)
+            $ ddustLogic.r1429_action()
             jump show_graphics_menu
 
 
@@ -982,7 +786,7 @@ label ddust_s43:  # from 42.0
     menu:
         'Оставить тело, уйти.':
             # r138 # reply3882
-            $ _r3882_action(gsm)
+            $ ddustLogic.r3882_action()
             jump show_graphics_menu
 
 
@@ -994,7 +798,7 @@ label ddust_s44:  # from 5.0 7.0 8.0 19.4 47.0
     menu:
         'Ну хорошо…':
             # r139 # reply3884
-            $ _r3884_action(gsm)
+            $ ddustLogic.r3884_action()
             jump show_graphics_menu
 
 
@@ -1006,7 +810,7 @@ label ddust_s45:  # from 19.5
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
             # r140 # reply3890
-            $ _r3890_action(gsm)
+            $ ddustLogic.r3890_action()
             jump ddust_s42
 
 
@@ -1026,10 +830,10 @@ label ddust_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
     dust 'Ты не из наших. Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Кажется, здесь есть дело для стражников…'
 
     menu:
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r3914_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r3914_condition():
             # r142 # reply3914
             jump ddust_s44
-        'Свернуть ему шею до того, как он сможет позвать на помощь.' if _r3915_condition(gsm):
+        'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r3915_condition():
             # r143 # reply3915
             jump ddust_s41
         'Нет-нет… не он… то есть, я хотел сказать, не шпион… понимаешь, я очнулся на одной из плит… и…':
@@ -1056,16 +860,16 @@ label ddust_s49:  # from 24.0 24.1 25.0 25.1
     dust 'Это имя мне незнакомо.'
 
     menu:
-        'Я недавно посвящен. Прости мое невежество.' if _r3898_condition(gsm):
+        'Я недавно посвящен. Прости мое невежество.' if ddustLogic.r3898_condition():
             # r147 # reply3898
             jump ddust_s50
-        'Я… недавно здесь. Я… пытаюсь изучить порядки.' if _r3899_condition(gsm):
+        'Я… недавно здесь. Я… пытаюсь изучить порядки.' if ddustLogic.r3899_condition():
             # r148 # reply3899
             jump ddust_s47
-        'Ну… к чему имена? Храни веру, э-э, посвященный.' if _r3900_condition(gsm):
+        'Ну… к чему имена? Храни веру, э-э, посвященный.' if ddustLogic.r3900_condition():
             # r149 # reply3900
             jump ddust_s47
-        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if _r3901_condition(gsm):
+        'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustLogic.r3901_condition():
             # r150 # reply3901
             jump ddust_s46
 
@@ -1090,19 +894,19 @@ label ddust_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
     dust 'Ты потерялся?'
 
     menu:
-        'Нет, я член фракции. Я просто осматриваю Морг.' if _r66675_condition(gsm):
+        'Нет, я член фракции. Я просто осматриваю Морг.' if ddustLogic.r66675_condition():
             # r153 # reply66675
             jump ddust_s52
-        'Да.' if _r66676_condition(gsm):
+        'Да.' if ddustLogic.r66676_condition():
             # r154 # reply66676
             jump ddust_s5
-        'Нет.' if _r66677_condition(gsm):
+        'Нет.' if ddustLogic.r66677_condition():
             # r155 # reply66677
             jump ddust_s6
-        'Нет, я не потерялся. У меня есть несколько вопросов…' if _r66678_condition(gsm):
+        'Нет, я не потерялся. У меня есть несколько вопросов…' if ddustLogic.r66678_condition():
             # r156 # reply66678
             jump ddust_s6
-        'Прощай.' if _r66679_condition(gsm):
+        'Прощай.' if ddustLogic.r66679_condition():
             # r157 # reply66679
             jump ddust_s2
 

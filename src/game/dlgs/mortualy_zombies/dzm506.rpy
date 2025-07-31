@@ -1,52 +1,6 @@
-init python:
-    def _kill_dzm506(gsm):
-        gsm.set_dead_dzm506(True)
-        gsm.inc_exp_custom('party', 65)
-    def _know_506_secret(gsm):
-        return gsm.get_has_506_thread()
-
-
-init python:
-    def _r45480_action(gsm):
-        gsm.set_has_506_thread(True)
-        gsm.set_has_needle(True)
-        gsm.inc_exp_custom('party', 100)
-    def _r45484_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-    def _r45502_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-
-init python:
-    def _r45420_condition(gsm):
-        return not gsm.get_has_506_thread()
-    def _r45421_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r45422_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r45480_condition(gsm):
-        return gsm.get_has_scalpel()
-    def _r45481_condition(gsm):
-        return not gsm.get_has_scalpel()
-    def _r45484_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r45496_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r45502_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r45508_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r45510_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r45512_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm506_logic import Dzm506Logic
+    dzm506Logic = Dzm506Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -64,8 +18,7 @@ label start_dzm506_kill:
     call dzm506_init
     jump dzm506_kill
 label dzm506_init:
-    $ glm.set_location('mortuary_f2r5')
-    $ gsm.set_meet_dzm506(True)
+    $ dzm506Logic.dzm506_init()
     scene bg mortuary_f2r5
     show dzm506_img default at center_left_down
     return
@@ -80,13 +33,13 @@ label dzm506_s0:  # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
     teller 'В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
 
     menu:
-        'Осмотреть швы.' if _r45420_condition(gsm):
+        'Осмотреть швы.' if dzm506Logic.r45420_condition():
             # r0 # reply45420
             jump dzm506_s3
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45421_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm506Logic.r45421_condition():
             # r1 # reply45421
             jump dzm506_s1
-        'Использовать на трупе свою способность История костей.' if _r45422_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm506Logic.r45422_condition():
             # r2 # reply45422
             jump dzm506_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -102,7 +55,7 @@ label dzm506_s1:  # from 0.1 4.0 4.1 5.0 5.1 5.2
     teller 'Труп самозабвенно смотрит вперед.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r45422_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm506Logic.r45422_condition():
             # r2 # reply45422
             jump dzm506_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -118,7 +71,7 @@ label dzm506_s2:  # from 0.2 5.3
     teller 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45421_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm506Logic.r45421_condition():
             # r1 # reply45421
             jump dzm506_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -135,11 +88,11 @@ label dzm506_s3:  # from 0.0
     teller '…в иглу вдета нить, которая выходит из шва на черепе. Ты мог бы вытащить ее, если бы у тебя было что-нибудь, чтобы разрезать нить.'
 
     menu:
-        'Разрезать швы скальпелем, затем вытащить иголку с ниткой.' if _r45480_condition(gsm):
+        'Разрезать швы скальпелем, затем вытащить иголку с ниткой.' if dzm506Logic.r45480_condition():
             # r7 # reply45480
-            $ _r45480_action(gsm)
+            $ dzm506Logic.r45480_action()
             jump dzm506_s4
-        'Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь.' if _r45481_condition(gsm):
+        'Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь.' if dzm506Logic.r45481_condition():
             # r8 # reply45481
             jump dzm506_dispose
         'Снова осмотреть труп.':
@@ -155,11 +108,11 @@ label dzm506_s4:  # from 3.0
     teller 'Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер «78».'
 
     menu:
-        'Похоже, у тебя два разных обозначения, труп.' if _r45484_condition(gsm):
+        'Похоже, у тебя два разных обозначения, труп.' if dzm506Logic.r45484_condition():
             # r11 # reply45484
-            $ _r45484_action(gsm)
+            $ dzm506Logic.r45484_action()
             jump dzm506_s1
-        'Похоже, у тебя два разных обозначения, труп.' if _r45496_condition(gsm):
+        'Похоже, у тебя два разных обозначения, труп.' if dzm506Logic.r45496_condition():
             # r12 # reply45496
             jump dzm506_s1
         'Снова осмотреть труп.':
@@ -175,17 +128,17 @@ label dzm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
     teller 'Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер «506», в месте, где кожа отвалилась ото лба, на кости выбит номер «78».'
 
     menu:
-        'Похоже, у тебя два разных обозначения, труп.' if _r45502_condition(gsm):
+        'Похоже, у тебя два разных обозначения, труп.' if dzm506Logic.r45502_condition():
             # r15 # reply45502
-            $ _r45502_action(gsm)
+            $ dzm506Logic.r45502_action()
             jump dzm506_s1
-        'Похоже, у тебя два разных обозначения, труп.' if _r45508_condition(gsm):
+        'Похоже, у тебя два разных обозначения, труп.' if dzm506Logic.r45508_condition():
             # r16 # reply45508
             jump dzm506_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r45510_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm506Logic.r45510_condition():
             # r17 # reply45510
             jump dzm506_s1
-        'Использовать на трупе свою способность История костей.' if _r45512_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm506Logic.r45512_condition():
             # r18 # reply45512
             jump dzm506_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -197,10 +150,10 @@ label dzm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
 
 
 label dzm506_kill:
-    if _know_506_secret(gsm):
+    if dzm506Logic.know_506_secret():
         teller 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…'
         teller 'В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
-    if not _know_506_secret(gsm):
+    if not dzm506Logic.know_506_secret():
         teller 'Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер «506», в месте, где кожа отвалилась ото лба, на кости выбит номер «78».'
 
     menu:
@@ -211,7 +164,7 @@ label dzm506_kill:
 
 
 label dzm506_killed:
-    $ _kill_dzm506(gsm)
+    $ dzm506Logic.kill_dzm506()
     teller 'Карта на этом трупе примитивна. Даже если я и сбился бы на ней с пути - заблудиться я бы не смог. Я рисую новые улицы, новые - с каждым ударом.'
     teller 'Труп осматривает себя пустыми глазами. В них нет ни жизни, ни разума. А потом падает.'
     jump dzm506_dispose

@@ -1,29 +1,6 @@
-init python:
-    def _kill_dzm1508(gsm):
-        gsm.set_dead_dzm1508(True)
-        gsm.inc_exp_custom('party', 65)
-
-
-init python:
-    def _r46746_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_zombie_chaotic(True)
-
-
-init python:
-    def _r46746_condition(gsm):
-        return not gsm.get_zombie_chaotic()
-    def _r46749_condition(gsm):
-        return gsm.get_zombie_chaotic()
-    def _r46750_condition(gsm):
-        return gsm.get_vaxis_exposed()
-    def _r46751_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    from dlgs.mortualy_zombies.dzm1508_logic import Dzm1508Logic
+    dzm1508Logic = Dzm1508Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -38,8 +15,7 @@ label start_dzm1508_kill:
     call dzm1508_init
     jump dzm1508_kill
 label dzm1508_init:
-    $ glm.set_location('mortuary_f2r1')
-    $ gsm.set_meet_dzm1508(True)
+    $ dzm1508Logic.dzm1508_init()
     scene bg mortuary1
     show dzm1508_img default at center_left_down
     return
@@ -54,17 +30,17 @@ label dzm1508_s0:  # from - # IF ~  True()
     teller 'Номер «1508» вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.'
 
     menu:
-        'Итак… что тут у нас интересного?' if _r46746_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1508Logic.r46746_condition():
             # r0 # reply46746
-            $ _r46746_action(gsm)
+            $ dzm1508Logic.r46746_action()
             jump dzm1508_s1
-        'Итак… что тут у нас интересного?' if _r46749_condition(gsm):
+        'Итак… что тут у нас интересного?' if dzm1508Logic.r46749_condition():
             # r1 # reply46749
             jump dzm1508_s1
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r46750_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1508Logic.r46750_condition():
             # r2 # reply46750
             jump dzm1508_s1
-        'Использовать на трупе свою способность История костей.' if _r46751_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1508Logic.r46751_condition():
             # r3 # reply46751
             jump dzm1508_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -80,7 +56,7 @@ label dzm1508_s1:  # from 0.0 0.1 0.2
     teller 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if _r46751_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if dzm1508Logic.r46751_condition():
             # r3 # reply46751
             jump dzm1508_s2
         'Было приятно с тобой поболтать. Прощай.':
@@ -96,7 +72,7 @@ label dzm1508_s2:  # from 0.3
     teller 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if _r46750_condition(gsm):
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1508Logic.r46750_condition():
             # r2 # reply46750
             jump dzm1508_s1
         'Было приятно с тобой поболтать. Прощай.':
@@ -119,6 +95,6 @@ label dzm1508_kill:
 
 
 label dzm1508_killed:
-    $ _kill_dzm1508(gsm)
+    $ dzm1508Logic.kill_dzm1508()
     teller 'Если бы он был воином, он бы жалел, что не может ответить на мои удары. Когда его тело падает на пол, я не чувствую сожалений.'
     jump dzm1508_dispose

@@ -1,170 +1,6 @@
-init python:
-    def _r35461_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_skeleton_chaotic(True)
-    def _r35485_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_skeleton_chaotic(True)
-    def _r35492_action(gsm):
-        gsm.set_skeleton_examine(True)
-    def _r35525_action(gsm):
-        gsm.set_morte_skel_mort_quip2(True)
-    def _r35533_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35463_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35489_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35494_action(gsm):
-        gsm.set_morte_skel_mort_quip2(True)
-    def _r35522_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35500_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35503_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r35508_action(gsm):
-        gsm.set_dead_ds996(True)
-        gsm.set_has_spike(True)
-        gsm.set_has_strap(True)
-    def _r35511_action(gsm):
-        gsm.set_dead_ds996(True)
-        gsm.set_has_spike(True)
-        gsm.set_has_strap(True)
-
-
-init python:
-    def _r35461_condition(gsm):
-        return not gsm.get_skeleton_chaotic()
-    def _r35484_condition(gsm):
-        return gsm.get_skeleton_chaotic()
-    def _r35485_condition(gsm):
-        return not gsm.get_skeleton_chaotic()
-    def _r35486_condition(gsm):
-        return gsm.get_skeleton_chaotic()
-    def _r35487_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r35525_condition(gsm):
-        return gsm.get_skeleton_examine() \
-               and gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip2()
-    def _r35526_condition(gsm):
-        return gsm.get_skeleton_examine() \
-               and gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35527_condition(gsm):
-        return gsm.get_skeleton_examine() \
-               and gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35528_condition(gsm):
-        return gsm.get_skeleton_examine() \
-               and gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2() \
-               and gsm.get_has_prybar()
-    def _r35529_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_skeleton_examine() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35530_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_skeleton_examine() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35531_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_skeleton_examine() \
-               and gsm.get_has_prybar()
-    def _r35532_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip()
-    def _r35533_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35534_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35535_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35463_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35482_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35483_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35489_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35490_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35491_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35494_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip2()
-    def _r35516_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35517_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35518_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2() \
-               and gsm.get_has_prybar()
-    def _r35519_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_lt('protagonist',13,'str')
-    def _r35520_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_has_prybar() \
-               and gsm.check_char_prop_gt('protagonist',12,'str')
-    def _r35521_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_has_prybar()
-    def _r35522_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35523_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35524_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r35500_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35501_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35502_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'int') \
-               and gsm.get_morte_skel_mort_quip()
-    def _r35503_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35504_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r35505_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    from dlgs.mortualy_zombies.ds996_logic import Ds996Logic
+    ds996Logic = Ds996Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -189,60 +25,60 @@ label ds996_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 3
     teller 'На лбу с особым искусством вырезано слово ПОКАЙСЯ; более грубая рука уже позднее высекла на обоих висках число 996.'
 
     menu:
-        'Прошу прощения, ты не видал поблизости других скелетов?' if _r35461_condition(gsm):
+        'Прошу прощения, ты не видал поблизости других скелетов?' if ds996Logic.r35461_condition():
             # r0 # reply35461
-            $ _r35461_action(gsm)
+            $ ds996Logic.r35461_action()
             jump ds996_s1
-        'Прошу прощения, ты не видал поблизости других скелетов?' if _r35484_condition(gsm):
+        'Прошу прощения, ты не видал поблизости других скелетов?' if ds996Logic.r35484_condition():
             # r1 # reply35484
             jump ds996_s1
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if _r35485_condition(gsm):
+        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if ds996Logic.r35485_condition():
             # r2 # reply35485
-            $ _r35485_action(gsm)
+            $ ds996Logic.r35485_action()
             jump ds996_s1
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if _r35486_condition(gsm):
+        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if ds996Logic.r35486_condition():
             # r3 # reply35486
             jump ds996_s1
-        'Использовать на скелете свою способность История костей.' if _r35487_condition(gsm):
+        'Использовать на скелете свою способность История костей.' if ds996Logic.r35487_condition():
             # r4 # reply35487
             jump ds996_s2
         'Внимательно осмотреть скелет.':
             # r5 # reply35492
-            $ _r35492_action(gsm)
+            $ ds996Logic.r35492_action()
             jump ds996_s3
-        'Попробовать вытащить скобы из суставов скелета.' if _r35525_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35525_condition():
             # r6 # reply35525
-            $ _r35525_action(gsm)
+            $ ds996Logic.r35525_action()
             jump dmorte_s392
-        'Попробовать вытащить скобы из суставов скелета.' if _r35526_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35526_condition():
             # r7 # reply35526
             jump ds996_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35527_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35527_condition():
             # r8 # reply35527
             jump ds996_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35528_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35528_condition():
             # r9 # reply35528
             jump ds996_s6
-        'Попробовать вытащить скобы из суставов скелета.' if _r35529_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35529_condition():
             # r10 # reply35529
             jump ds996_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35530_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35530_condition():
             # r11 # reply35530
             jump ds996_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35531_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35531_condition():
             # r12 # reply35531
             jump ds996_s6
-        'Как насчет этого скелета, Морт? Пойдет такое тело?' if _r35532_condition(gsm):
+        'Как насчет этого скелета, Морт? Пойдет такое тело?' if ds996Logic.r35532_condition():
             # r13 # reply35532
             jump dmorte_s388
-        'Оставить скелет в покое.' if _r35533_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35533_condition():
             # r14 # reply35533
-            $ _r35533_action(gsm)
+            $ ds996Logic.r35533_action()
             jump dmorte_s386
-        'Оставить скелет в покое.' if _r35534_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35534_condition():
             # r15 # reply35534
             jump ds996_dispose
-        'Оставить скелет в покое.' if _r35535_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35535_condition():
             # r16 # reply35535
             jump ds996_dispose
 
@@ -252,14 +88,14 @@ label ds996_s1:  # from 0.0 0.1 0.2 0.3 # Manually checked EXTERN ~DMORTE~ : 386
     teller 'Скелет не реагирует.'
 
     menu:
-        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if _r35463_condition(gsm):
+        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds996Logic.r35463_condition():
             # r17 # reply35463
-            $ _r35463_action(gsm)
+            $ ds996Logic.r35463_action()
             jump dmorte_s386
-        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if _r35482_condition(gsm):
+        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds996Logic.r35482_condition():
             # r18 # reply35482
             jump ds996_dispose
-        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if _r35483_condition(gsm):
+        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds996Logic.r35483_condition():
             # r19 # reply35483
             jump ds996_dispose
 
@@ -269,14 +105,14 @@ label ds996_s2:  # from 0.4 # Manually checked EXTERN ~DMORTE~ : 386
     teller 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Оставить скелет в покое.' if _r35489_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35489_condition():
             # r20 # reply35489
-            $ _r35489_action(gsm)
+            $ ds996Logic.r35489_action()
             jump dmorte_s386
-        'Оставить скелет в покое.' if _r35490_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35490_condition():
             # r21 # reply35490
             jump ds996_dispose
-        'Оставить скелет в покое.' if _r35491_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35491_condition():
             # r22 # reply35491
             jump ds996_dispose
 
@@ -286,36 +122,36 @@ label ds996_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE~ : 392 Manually ch
     teller 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия. Ремни привязаны к железными скобам, вбитым в суставы скелета. Кажется, этот скелет довольно долго служил: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if _r35494_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35494_condition():
             # r23 # reply35494
-            $ _r35494_action(gsm)
+            $ ds996Logic.r35494_action()
             jump dmorte_s392
-        'Попробовать вытащить скобы из суставов скелета.' if _r35516_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35516_condition():
             # r24 # reply35516
             jump ds996_s4
-        'Попробовать вытащить скобы из суставов скелета.' if _r35517_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35517_condition():
             # r25 # reply35517
             jump ds996_s5
-        'Попробовать вытащить скобы из суставов скелета.' if _r35518_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds996Logic.r35518_condition():
             # r26 # reply35518
             jump ds996_s6
-        'Не против, если я возьму немного ремешков и скоб?' if _r35519_condition(gsm):
+        'Не против, если я возьму немного ремешков и скоб?' if ds996Logic.r35519_condition():
             # r27 # reply35519
             jump ds996_s4
-        'Не против, если я возьму немного ремешков и скоб?' if _r35520_condition(gsm):
+        'Не против, если я возьму немного ремешков и скоб?' if ds996Logic.r35520_condition():
             # r28 # reply35520
             jump ds996_s5
-        'Не против, если я возьму немного ремешков и скоб?' if _r35521_condition(gsm):
+        'Не против, если я возьму немного ремешков и скоб?' if ds996Logic.r35521_condition():
             # r29 # reply35521
             jump ds996_s6
-        'Оставить скелет в покое.' if _r35522_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35522_condition():
             # r30 # reply35522
-            $ _r35522_action(gsm)
+            $ ds996Logic.r35522_action()
             jump dmorte_s386
-        'Оставить скелет в покое.' if _r35523_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35523_condition():
             # r31 # reply35523
             jump ds996_dispose
-        'Оставить скелет в покое.' if _r35524_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35524_condition():
             # r32 # reply35524
             jump ds996_dispose
 
@@ -325,24 +161,24 @@ label ds996_s4:  # from 0.7 0.10 3.1 3.4 # Manually checked EXTERN ~DMORTE~ : 38
     teller 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
 
     menu:
-        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хммм. Я еще вернусь, Костяшка.' if _r35500_condition(gsm):
+        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хммм. Я еще вернусь, Костяшка.' if ds996Logic.r35500_condition():
             # r33 # reply35500
-            $ _r35500_action(gsm)
+            $ ds996Logic.r35500_action()
             jump ds996_dispose
-        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хммм. Я еще вернусь, Костяшка.' if _r35501_condition(gsm):
+        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хммм. Я еще вернусь, Костяшка.' if ds996Logic.r35501_condition():
             # r34 # reply35501
             jump ds996_dispose
-        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хммм. Я еще вернусь, Костяшка.' if _r35502_condition(gsm):
+        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хммм. Я еще вернусь, Костяшка.' if ds996Logic.r35502_condition():
             # r35 # reply35502
             jump ds996_dispose
-        'Оставить скелет в покое.' if _r35503_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35503_condition():
             # r36 # reply35503
-            $ _r35503_action(gsm)
+            $ ds996Logic.r35503_action()
             jump dmorte_s386
-        'Оставить скелет в покое.' if _r35504_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35504_condition():
             # r37 # reply35504
             jump ds996_dispose
-        'Оставить скелет в покое.' if _r35505_condition(gsm):
+        'Оставить скелет в покое.' if ds996Logic.r35505_condition():
             # r38 # reply35505
             jump ds996_dispose
 
@@ -354,7 +190,7 @@ label ds996_s5:  # from 0.8 0.11 3.2 3.5
     menu:
         'Прости, Костяшка…':
             # r39 # reply35508
-            $ _r35508_action(gsm)
+            $ ds996Logic.r35508_action()
             jump ds996_dispose
 
 
@@ -365,7 +201,7 @@ label ds996_s6:  # from 0.9 0.12 3.3 3.6
     menu:
         'Прости, Костяшка…':
             # r40 # reply35511
-            $ _r35511_action(gsm)
+            $ ds996Logic.r35511_action()
             jump ds996_dispose
 
 

@@ -8,16 +8,15 @@ class Character:
                 name, \
                 maxHealth=20, current_health=20, \
                 good=0, law=0, \
-                gold=0, \
                 lore=0, experience=0, \
                 in_party=False, \
-                strength=3, dexterity=3, intelligence=3, constitution=3, wisdom=3, charisma=3):
+                strength=3, dexterity=3, intelligence=3, constitution=3, wisdom=3, charisma=3,
+                looks_like=''):
         self.name = name
         self.maxHealth = maxHealth
         self.current_health = current_health
         self.good = good
         self.law = law
-        self.gold = gold
         self.lore = lore
         self.experience = experience
         self.in_party = in_party
@@ -27,6 +26,7 @@ class Character:
         self.constitution = constitution
         self.wisdom = wisdom
         self.charisma = charisma
+        self.looks_like = looks_like
 
     def modify_property(self, prop, amount):
         if not hasattr(self, prop):
@@ -43,7 +43,6 @@ class Character:
             'name': self.name,
             'maxHealth': self.maxHealth,
             'current_health': self.current_health,
-            'gold': self.gold,
             'good': self.good,
             'law': self.law,
             'lore': self.lore,
@@ -54,7 +53,8 @@ class Character:
             'intelligence': self.intelligence,
             'constitution': self.constitution,
             'wisdom': self.wisdom,
-            'charisma': self.charisma
+            'charisma': self.charisma,
+            'looks_like': self.looks_like
         }
 
     def property_eq(self, prop, value):
@@ -74,6 +74,11 @@ class CharacterManager:
         if name not in self.characters:
             raise KeyError(f"Character '{name}' not found")
         return self.characters[name]
+
+    def get_character_property(self, name, prop):
+        if name not in self.characters:
+            raise KeyError(f"Character '{name}' not found")
+        return self.characters[name].get_all_properties()[prop]
 
     def add_character(self, character):
         if not isinstance(character, Character):

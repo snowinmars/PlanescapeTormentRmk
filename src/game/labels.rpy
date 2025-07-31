@@ -2,16 +2,16 @@
 #   These choses happens when a player jumps between different dialogs
 #   Available options for this sceen defines in 'labels/x_menu.py' files
 #   and pases here through 'engine/label.py' builder flow
-screen decision_choices(available_options):
-    vbox:
-        style_prefix "choice"
-        for item in available_options:
-            textbutton item.title:
-                action [
-                    SetVariable("renpy.store.global_dialog_key", item.label_id),
-                    Jump("dialog_dispatcher")
-                ]
-                style "choice_button"
+# screen decision_choices(available_options):
+#     vbox:
+#         style_prefix "choice"
+#         for item in available_options:
+#             textbutton item.title:
+#                 action [
+#                     SetVariable("renpy.store.global_dialog_key", item.label_id),
+#                     Jump("dialog_dispatcher")
+#                 ]
+#                 style "choice_button"
 
 
 label show_graphics_menu:

@@ -4,7 +4,7 @@ devlog = logging.getLogger('log')
 
 
 class SettingsManager:
-    def __init__(self, event_manager, character_manager):
+    def __init__(self, event_manager, character_manager, location_manager):
         self.tracked = []
         self._registry = {
             'journal_note_ids': [],
@@ -12,23 +12,18 @@ class SettingsManager:
         }
         self.event_manager = event_manager
         self.gcm = character_manager
+        self.glm = location_manager
 
     def update_journal(self, note_id):
         devlog.debug('Update journal with %s', note_id)
         if note_id not in self._registry['journal_note_ids']:
             self._registry['journal_note_ids'].append(note_id)
 
-    def check_char_prop_gt(self, who, gtValue, prop):
-        return True
-
-    def check_char_prop_lt(self, who, gtValue, prop):
-        return True
+    def has_journal_note(self, note_id):
+        return note_id in self._registry['journal_note_ids']
 
     def get_setting_value(self, setting_id):
         return self._registry[setting_id]
-
-    def change_stat_permanent(self, who, prop, action, amount):
-        return
 
     def inc_exp_custom(self, who, amount):
         if who == 'party':

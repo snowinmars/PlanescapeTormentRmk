@@ -1,118 +1,6 @@
-init python:
-    def _r6613_action(gsm):
-        gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalskeleton_chaotic')
-    def _r6614_action(gsm):
-        gsm.gcm.modify_property('protagonist', 'law', -1)
-        gsm.set_skeleton_chaotic(True)
-    def _r6617_action(gsm):
-        gsm.set_skeleton_examine(True)
-    def _r6618_action(gsm):
-        gsm.set_morte_skel_mort_quip2(True)
-    def _r6629_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r6632_action(gsm):
-        gsm.set_morte_skel_mort_quip2(True)
-    def _r6635_action(gsm):
-        gsm.set_morte_skel_mort_quip(True)
-    def _r6640_action(gsm):
-        gsm.set_dead_ds42(True)
-    def _r6642_action(gsm):
-        gsm.set_dead_ds42(True)
-        gsm.set_has_spike(True)
-        gsm.set_has_strap(True)
-    def _r6645_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r6650_action(gsm):
-        gsm.set_skeleton_examine(True)
-    def _r6652_action(gsm):
-        gsm.inc_exp_custom('party', 250)
-    def _r58984_action(gsm):
-        gsm.set_has_gs_knife(True)
-        gsm.set_has_rags(True)
-        gsm.set_has_clotchrm(True)
-        gsm.set_has_clotchrm(True)
-        gsm.inc_gold(99)
-
-
-init python:
-    def _r6612_condition(gsm):
-        return gsm.get_42_secret()
-    def _r6614_condition(gsm):
-        return not gsm.get_skeleton_chaotic()
-    def _r6615_condition(gsm):
-        return gsm.get_skeleton_chaotic()
-    def _r6616_condition(gsm):
-        return gsm.get_can_speak_with_dead()
-    def _r6618_condition(gsm):
-        return gsm.get_skeleton_examine() \
-               and gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip2()
-    def _r6619_condition(gsm):
-        return gsm.get_skeleton_examine() \
-               and gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2()
-    def _r6620_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and gsm.get_skeleton_examine()
-    def _r6621_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip()
-    def _r6622_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r6623_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r6624_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r6625_condition(gsm):
-        return gsm.get_42_secret()
-    def _r6626_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'wis') \
-               and not gsm.get_42_secret()
-    def _r6629_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r6630_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r6631_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r63495_condition(gsm):
-        return gsm.get_42_secret()
-    def _r6632_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip2()
-    def _r6633_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and gsm.get_morte_skel_mort_quip2()
-    def _r6634_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r6635_condition(gsm):
-        return gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r6636_condition(gsm):
-        return not gsm.get_in_party_morte() \
-               and not gsm.get_morte_skel_mort_quip()
-    def _r6637_condition(gsm):
-        return gsm.get_morte_skel_mort_quip()
-    def _r6643_condition(gsm):
-        return not gsm.get_42_secret()
-    def _r6644_condition(gsm):
-        return gsm.get_42_secret()
-    def _r6648_condition(gsm):
-        return not gsm.get_in_party_morte()
-    def _r6649_condition(gsm):
-        return gsm.get_in_party_morte()
-    def _r6653_condition(gsm):
-        return gsm.get_42_secret()
-    def _r6654_condition(gsm):
-        return gsm.check_char_prop_gt('protagonist',12,'wis') \
-               and not gsm.get_42_secret()
-
-
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    from dlgs.mortualy_zombies.ds42_logic import Ds42Logic
+    ds42Logic = Ds42Logic(renpy.store.global_settings_manager)
 
 
 # ###
@@ -137,47 +25,47 @@ label ds42_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 11
     teller 'Многие его кости, преимущественно челюсти и суставы, обмотаны кожаными ремешками. Его тело скрывает черный комбинезон.'
 
     menu:
-        '*Кажется*, именно этот мертвец был в моем воспоминании…' if _r6612_condition(gsm):
+        '*Кажется*, именно этот мертвец был в моем воспоминании…' if ds42Logic.r6612_condition():
             # r0 # reply6612
             jump ds42_s1
         'Прошу прощения, ты не видал поблизости других скелетов?':
             # r1 # reply6613
-            $ _r6613_action(gsm)
+            $ ds42Logic.r6613_action()
             jump ds42_s1
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if _r6614_condition(gsm):
+        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if ds42Logic.r6614_condition():
             # r2 # reply6614
-            $ _r6614_action(gsm)
+            $ ds42Logic.r6614_action()
             jump ds42_s1
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if _r6615_condition(gsm):
+        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if ds42Logic.r6615_condition():
             # r3 # reply6615
             jump ds42_s1
-        'Использовать на трупе свою способность История костей.' if _r6616_condition(gsm):
+        'Использовать на трупе свою способность История костей.' if ds42Logic.r6616_condition():
             # r4 # reply6616
             jump ds42_s2
         'Внимательно осмотреть скелет.':
             # r5 # reply6617
-            $ _r6617_action(gsm)
+            $ ds42Logic.r6617_action()
             jump ds42_s3
-        'Попробовать вытащить скобы из суставов скелета.' if _r6618_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6618_condition():
             # r6 # reply6618
-            $ _r6618_action(gsm)
+            $ ds42Logic.r6618_action()
             jump dmorte_s110
-        'Попробовать вытащить скобы из суставов скелета.' if _r6619_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6619_condition():
             # r7 # reply6619
             jump ds42_s6
-        'Попробовать вытащить скобы из суставов скелета.' if _r6620_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6620_condition():
             # r8 # reply6620
             jump ds42_s6
-        'Эй, а как насчет этого скелета, Морт? Пойдет такое тело?' if _r6621_condition(gsm):
+        'Эй, а как насчет этого скелета, Морт? Пойдет такое тело?' if ds42Logic.r6621_condition():
             # r9 # reply6621
             jump ds42_s1
-        'Оставить скелет в покое.' if _r6622_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6622_condition():
             # r10 # reply6622
             jump dmorte_s111
-        'Оставить скелет в покое.' if _r6623_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6623_condition():
             # r11 # reply6623
             jump ds42_dispose
-        'Оставить скелет в покое.' if _r6624_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6624_condition():
             # r12 # reply6624
             jump ds42_dispose
 
@@ -187,10 +75,10 @@ label ds42_s1:  # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
     teller 'Услышав твой голос, скелет внезапно распрямляется. Он скрещивает руки на груди, ухватившись пальцами за ребра.'
 
     menu:
-        'Скрестить свои руки на груди.' if _r6625_condition(gsm):
+        'Скрестить свои руки на груди.' if ds42Logic.r6625_condition():
             # r13 # reply6625
             jump ds42_s4
-        'Повторять движения скелета… посмотрим, что получится.' if _r6626_condition(gsm):
+        'Повторять движения скелета… посмотрим, что получится.' if ds42Logic.r6626_condition():
             # r14 # reply6626
             jump ds42_s9
         'Э-э…':
@@ -206,14 +94,14 @@ label ds42_s2:  # from 0.4 # Manually checked EXTERN ~DMORTE~ : 111
     teller 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Оставить скелет в покое.' if _r6629_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6629_condition():
             # r17 # reply6629
-            $ _r6629_action(gsm)
+            $ ds42Logic.r6629_action()
             jump dmorte_s111
-        'Оставить скелет в покое.' if _r6630_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6630_condition():
             # r18 # reply6630
             jump dmorte_s111
-        'Оставить скелет в покое.' if _r6631_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6631_condition():
             # r19 # reply6631
             jump dmorte_s111
 
@@ -225,27 +113,27 @@ label ds42_s3:  # from 0.5 10.2 # Manually checked EXTERN ~DMORTE~ : 110 Manuall
     teller 'Хотя кто-то позаботился о том, чтобы перемотать скелет кожаными ремешками и соединить его кости скобами в суставах, ремешки уже износились, а скобы вот-вот выпадут.'
 
     menu:
-        '*Кажется*, именно этот мертвец был в моем воспоминании…' if _r63495_condition(gsm):
+        '*Кажется*, именно этот мертвец был в моем воспоминании…' if ds42Logic.r63495_condition():
             # r20 # reply63495
             jump ds42_s1
-        'Попробовать вытащить скобы из суставов скелета.' if _r6632_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6632_condition():
             # r21 # reply6632
-            $ _r6632_action(gsm)
+            $ ds42Logic.r6632_action()
             jump dmorte_s110
-        'Попробовать вытащить скобы из суставов скелета.' if _r6633_condition(gsm):
+        'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6633_condition():
             # r22 # reply6633
             jump ds42_s6
-        'Не против, если я возьму немного ремешков и скоб?' if _r6634_condition(gsm):
+        'Не против, если я возьму немного ремешков и скоб?' if ds42Logic.r6634_condition():
             # r23 # reply6634
             jump ds42_s1
-        'Оставить скелет в покое.' if _r6635_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6635_condition():
             # r24 # reply6635
-            $ _r6635_action(gsm)
+            $ ds42Logic.r6635_action()
             jump dmorte_s111
-        'Оставить скелет в покое.' if _r6636_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6636_condition():
             # r25 # reply6636
             jump ds42_dispose
-        'Оставить скелет в покое.' if _r6637_condition(gsm):
+        'Оставить скелет в покое.' if ds42Logic.r6637_condition():
             # r26 # reply6637
             jump ds42_dispose
 
@@ -273,7 +161,7 @@ label ds42_s5:  # from 4.0 9.0
     menu:
         'Вытащить предмет.':
             # r29 # reply6640
-            $ _r6640_action(gsm)
+            $ ds42Logic.r6640_action()
             jump ds42_s7
         'Оставить скелет в покое.':
             # r30 # reply6641
@@ -287,7 +175,7 @@ label ds42_s6:  # from 0.7 0.8 3.2
     menu:
         'Прости, Костяшка…':
             # r31 # reply6642
-            $ _r6642_action(gsm)
+            $ ds42Logic.r6642_action()
             jump ds42_dispose
 
 
@@ -297,10 +185,10 @@ label ds42_s7:  # from 5.0
     teller 'Чем бы ни был этот предмет, похоже, один только он и удерживал кости вместе.'
 
     menu:
-        'Осмотреть предмет.' if _r6643_condition(gsm):
+        'Осмотреть предмет.' if ds42Logic.r6643_condition():
             # r32 # reply6643
             jump ds42_s8
-        'Осмотреть предмет.' if _r6644_condition(gsm):
+        'Осмотреть предмет.' if ds42Logic.r6644_condition():
             # r33 # reply6644
             jump ds42_s8
 
@@ -312,7 +200,7 @@ label ds42_s8:  # from 7.0 7.1
     menu:
         'Осмотреть кусок железа.':
             # r34 # reply6645
-            $ _r6645_action(gsm)
+            $ ds42Logic.r6645_action()
             jump ds42_s14
 
 
@@ -335,15 +223,15 @@ label ds42_s10:  # from 1.2 12.2
     teller 'Руки скелета опускаются по швам.'
 
     menu:
-        'Э… привет?' if _r6648_condition(gsm):
+        'Э… привет?' if ds42Logic.r6648_condition():
             # r37 # reply6648
             jump ds42_s12
-        'Э… привет?' if _r6649_condition(gsm):
+        'Э… привет?' if ds42Logic.r6649_condition():
             # r38 # reply6649
             jump ds42_s13
         'Внимательно осмотреть скелет.':
             # r39 # reply6650
-            $ _r6650_action(gsm)
+            $ ds42Logic.r6650_action()
             jump ds42_s3
         'Оставить скелет в покое.':
             # r40 # reply6651
@@ -357,7 +245,7 @@ label ds42_s11:  # from -
     menu:
         'Внимательно осмотреть кусок железа.':
             # r41 # reply6652
-            $ _r6652_action(gsm)
+            $ ds42Logic.r6652_action()
             jump ds42_s14
 
 
@@ -366,10 +254,10 @@ label ds42_s12:  # from 10.0
     teller 'Скелет снова скрещивает руки на груди.'
 
     menu:
-        'Скрестить свои руки на груди.' if _r6653_condition(gsm):
+        'Скрестить свои руки на груди.' if ds42Logic.r6653_condition():
             # r42 # reply6653
             jump ds42_s4
-        'Повторять движения скелета… посмотрим, что получится.' if _r6654_condition(gsm):
+        'Повторять движения скелета… посмотрим, что получится.' if ds42Logic.r6654_condition():
             # r43 # reply6654
             jump ds42_s9
         'Э-э…':
@@ -395,5 +283,5 @@ label ds42_s14:  # from 8.0 11.0
     menu:
         'Взять предметы и уйти.':
             # r46 # reply58984
-            $ _r58984_action(gsm)
+            $ ds42Logic.r58984_action()
             jump ds42_dispose
