@@ -33,11 +33,11 @@ class Ds42Logic:
 
 
     def r6640_action(self):
-        self.gsm.set_dead_ds42(True)
+        self.gsm.set_dead_s42(True)
 
 
     def r6642_action(self):
-        self.gsm.set_dead_ds42(True)
+        self.gsm.set_dead_s42(True)
         self.gsm.set_has_spike(True)
         self.gsm.set_has_strap(True)
 
@@ -79,35 +79,35 @@ class Ds42Logic:
 
 
     def r6618_condition(self):
-        return self.gsm.get_skeleton_examine() \
-               and self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip2()
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip2()
 
 
     def r6619_condition(self):
-        return self.gsm.get_skeleton_examine() \
-               and self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2()
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2()
 
 
     def r6620_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_skeleton_examine()
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_skeleton_examine()
 
 
     def r6621_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip()
 
 
     def r6622_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r6623_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r6624_condition(self):
@@ -119,18 +119,18 @@ class Ds42Logic:
 
 
     def r6626_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 \
-               and not self.gsm.get_42_secret()
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 and \
+               not self.gsm.get_42_secret()
 
 
     def r6629_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r6630_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r6631_condition(self):
@@ -142,13 +142,13 @@ class Ds42Logic:
 
 
     def r6632_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip2()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip2()
 
 
     def r6633_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2()
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2()
 
 
     def r6634_condition(self):
@@ -156,13 +156,13 @@ class Ds42Logic:
 
 
     def r6635_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r6636_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r6637_condition(self):
@@ -190,5 +190,5 @@ class Ds42Logic:
 
 
     def r6654_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 \
-               and not self.gsm.get_42_secret()
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 and \
+               not self.gsm.get_42_secret()

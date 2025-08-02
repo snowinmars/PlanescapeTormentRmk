@@ -30,55 +30,71 @@ label ds863_s0:  # from 10.0 # IF ~  !HasItem("DRemind","S863") Manually checked
             # r0 # reply35538
             $ ds863Logic.r35538_action()
             jump ds863_s1
+
         'Извини, что забрал пергамент. Все равно ты вряд ли доставил бы его в ближайшее время.' if ds863Logic.r35561_condition():
             # r1 # reply35561
             jump ds863_s1
+
         'Должен спросить: эти кости сломаны в битве или при падении?' if ds863Logic.r35562_condition():
             # r2 # reply35562
             $ ds863Logic.r35562_action()
             jump ds863_s1
+
         'Должен спросить: эти кости сломаны в битве или при падении?' if ds863Logic.r35563_condition():
             # r3 # reply35563
             jump ds863_s1
+
         'Использовать на скелете свою способность История костей.' if ds863Logic.r35564_condition():
             # r4 # reply35564
             jump ds863_s2
+
         'Внимательно осмотреть скелет.':
             # r5 # reply35569
             $ ds863Logic.r35569_action()
             jump ds863_s3
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35602_condition():
             # r6 # reply35602
             $ ds863Logic.r35602_action()
             jump dmorte_s400
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35603_condition():
             # r7 # reply35603
             jump ds863_s4
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35604_condition():
             # r8 # reply35604
             jump ds863_s5
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35605_condition():
             # r9 # reply35605
             jump ds863_s6
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35606_condition():
             # r10 # reply35606
             jump ds863_s4
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35607_condition():
             # r11 # reply35607
             jump ds863_s5
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35608_condition():
             # r12 # reply35608
             jump ds863_s6
+
         'Как насчет этого скелета, Морт? Пойдет такое тело?' if ds863Logic.r35609_condition():
             # r13 # reply35609
             jump dmorte_s396
+
         'Оставить скелет в покое.' if ds863Logic.r35610_condition():
             # r14 # reply35610
             $ ds863Logic.r35610_action()
             jump dmorte_s394
+
         'Оставить скелет в покое.' if ds863Logic.r35611_condition():
             # r15 # reply35611
             jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35612_condition():
             # r16 # reply35612
             jump ds863_dispose
@@ -93,9 +109,11 @@ label ds863_s1:  # from 0.0 0.1 0.2 0.3 # Manually checked EXTERN ~DMORTE~ : 394
             # r17 # reply35540
             $ ds863Logic.r35540_action()
             jump dmorte_s394
+
         'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds863Logic.r35559_condition():
             # r18 # reply35559
             jump ds863_dispose
+
         'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds863Logic.r35560_condition():
             # r19 # reply35560
             jump ds863_dispose
@@ -110,9 +128,11 @@ label ds863_s2:  # from 0.4 # Manually checked EXTERN ~DMORTE~ : 394
             # r20 # reply35566
             $ ds863Logic.r35566_action()
             jump dmorte_s394
+
         'Оставить скелет в покое.' if ds863Logic.r35567_condition():
             # r21 # reply35567
             jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35568_condition():
             # r22 # reply35568
             jump ds863_dispose
@@ -129,31 +149,40 @@ label ds863_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE~ : 400 Manually ch
             # r23 # reply35571
             $ ds863Logic.r35571_action()
             jump dmorte_s400
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35593_condition():
             # r24 # reply35593
             jump ds863_s4
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35594_condition():
             # r25 # reply35594
             jump ds863_s5
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35595_condition():
             # r26 # reply35595
             jump ds863_s6
+
         'Не против, если я возьму немного ремешков и скоб?' if ds863Logic.r35596_condition():
             # r27 # reply35596
             jump ds863_s4
+
         'Не против, если я возьму немного ремешков и скоб?' if ds863Logic.r35597_condition():
             # r28 # reply35597
             jump ds863_s5
+
         'Не против, если я возьму немного ремешков и скоб?' if ds863Logic.r35598_condition():
             # r29 # reply35598
             jump ds863_s6
+
         'Оставить скелет в покое.' if ds863Logic.r35599_condition():
             # r30 # reply35599
             $ ds863Logic.r35599_action()
             jump dmorte_s394
+
         'Оставить скелет в покое.' if ds863Logic.r35600_condition():
             # r31 # reply35600
             jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35601_condition():
             # r32 # reply35601
             jump ds863_dispose
@@ -168,19 +197,24 @@ label ds863_s4:  # from 0.7 0.10 3.1 3.4 # Manually checked EXTERN ~DMORTE~ : 39
             # r33 # reply35577
             $ ds863Logic.r35577_action()
             jump ds863_dispose
+
         'Если бы у меня был подходящий инструмент, я бы смог вытащить их… хм-м. Я еще вернусь, Костяшка.' if ds863Logic.r35578_condition():
             # r34 # reply35578
             jump ds863_dispose
+
         'Если бы у меня был подходящий инструмент, я бы смог вытащить их… хм-м. Я еще вернусь, Костяшка.' if ds863Logic.r35579_condition():
             # r35 # reply35579
             jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35580_condition():
             # r36 # reply35580
             $ ds863Logic.r35580_action()
             jump dmorte_s394
+
         'Оставить скелет в покое.' if ds863Logic.r35581_condition():
             # r37 # reply35581
             jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35582_condition():
             # r38 # reply35582
             jump ds863_dispose
@@ -210,14 +244,14 @@ label ds863_s6:  # from 0.9 0.12 3.3 3.6
 
 
 # s7 # say35613
-label ds863_s7:  # from - # IF ~  False()
+label ds863_s7:  # - # IF ~  False()
     teller 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump ds863_dispose
 
 
 # s8 # say64262
-label ds863_s8:  # from - # IF ~  HasItem("DRemind","S863")
+label ds863_s8:  # - # IF ~  HasItem("DRemind","S863")
     teller 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов.'
     teller 'Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек.'
     teller 'На лбу высечен номер 863… но сзади череп имеет открытую пустую полость.'
@@ -227,6 +261,7 @@ label ds863_s8:  # from - # IF ~  HasItem("DRemind","S863")
         'Вытащить пергамент из черепа скелета.':
             # r41 # reply64263
             jump ds863_s9
+
         'Оставить скелет в покое.':
             # r42 # reply64264
             jump ds863_dispose
@@ -255,6 +290,7 @@ label ds863_s10:  # from 9.0
         'Снова осмотреть скелет.':
             # r44 # reply64268
             jump ds863_s0
+
         'Оставить скелет в покое.':
             # r45 # reply64269
             jump ds863_dispose

@@ -50,13 +50,13 @@ class Ds996Logic:
 
 
     def r35508_action(self):
-        self.gsm.set_dead_ds996(True)
+        self.gsm.set_dead_s996(True)
         self.gsm.set_has_spike(True)
         self.gsm.set_has_strap(True)
 
 
     def r35511_action(self):
-        self.gsm.set_dead_ds996(True)
+        self.gsm.set_dead_s996(True)
         self.gsm.set_has_spike(True)
         self.gsm.set_has_strap(True)
 
@@ -82,67 +82,67 @@ class Ds996Logic:
 
 
     def r35525_condition(self):
-        return self.gsm.get_skeleton_examine() \
-               and self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip2()
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip2()
 
 
     def r35526_condition(self):
-        return self.gsm.get_skeleton_examine() \
-               and self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35527_condition(self):
-        return self.gsm.get_skeleton_examine() \
-               and self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35528_condition(self):
-        return self.gsm.get_skeleton_examine() \
-               and self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2() \
-               and self.gsm.get_has_prybar()
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2() and \
+               self.gsm.get_has_prybar()
 
 
     def r35529_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_skeleton_examine() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_skeleton_examine() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35530_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_skeleton_examine() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_skeleton_examine() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35531_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_skeleton_examine() \
-               and self.gsm.get_has_prybar()
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_skeleton_examine() and \
+               self.gsm.get_has_prybar()
 
 
     def r35532_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip()
 
 
     def r35533_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35534_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35535_condition(self):
@@ -150,13 +150,13 @@ class Ds996Logic:
 
 
     def r35463_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35482_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35483_condition(self):
@@ -164,13 +164,13 @@ class Ds996Logic:
 
 
     def r35489_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35490_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35491_condition(self):
@@ -178,55 +178,55 @@ class Ds996Logic:
 
 
     def r35494_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip2()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip2()
 
 
     def r35516_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35517_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35518_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_skel_mort_quip2() \
-               and self.gsm.get_has_prybar()
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip2() and \
+               self.gsm.get_has_prybar()
 
 
     def r35519_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35520_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_has_prybar() \
-               and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35521_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_has_prybar()
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_has_prybar()
 
 
     def r35522_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35523_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35524_condition(self):
@@ -234,30 +234,30 @@ class Ds996Logic:
 
 
     def r35500_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35501_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35502_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_morte_skel_mort_quip()
 
 
     def r35503_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35504_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_skel_mort_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35505_condition(self):

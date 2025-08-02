@@ -20,7 +20,7 @@ label ds42_dispose:
 
 
 # s0 # say6595
-label ds42_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 110 Manually checked EXTERN ~DMORTE~ : 111
+label ds42_s0:  # - # IF ~  True()  Manually checked EXTERN ~DMORTE~ : 110 Manually checked EXTERN ~DMORTE~ : 111
     teller 'Скелет поворачивается к тебе. На лбу у него высечено число 42.'
     teller 'Многие его кости, преимущественно челюсти и суставы, обмотаны кожаными ремешками. Его тело скрывает черный комбинезон.'
 
@@ -28,43 +28,55 @@ label ds42_s0:  # from - # IF ~  True() // Manually checked EXTERN ~DMORTE~ : 11
         '*Кажется*, именно этот мертвец был в моем воспоминании…' if ds42Logic.r6612_condition():
             # r0 # reply6612
             jump ds42_s1
+
         'Прошу прощения, ты не видал поблизости других скелетов?':
             # r1 # reply6613
             $ ds42Logic.r6613_action()
             jump ds42_s1
+
         'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if ds42Logic.r6614_condition():
             # r2 # reply6614
             $ ds42Logic.r6614_action()
             jump ds42_s1
+
         'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if ds42Logic.r6615_condition():
             # r3 # reply6615
             jump ds42_s1
+
         'Использовать на трупе свою способность История костей.' if ds42Logic.r6616_condition():
             # r4 # reply6616
             jump ds42_s2
+
         'Внимательно осмотреть скелет.':
             # r5 # reply6617
             $ ds42Logic.r6617_action()
             jump ds42_s3
+
         'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6618_condition():
             # r6 # reply6618
             $ ds42Logic.r6618_action()
             jump dmorte_s110
+
         'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6619_condition():
             # r7 # reply6619
             jump ds42_s6
+
         'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6620_condition():
             # r8 # reply6620
             jump ds42_s6
+
         'Эй, а как насчет этого скелета, Морт? Пойдет такое тело?' if ds42Logic.r6621_condition():
             # r9 # reply6621
             jump ds42_s1
+
         'Оставить скелет в покое.' if ds42Logic.r6622_condition():
             # r10 # reply6622
             jump dmorte_s111
+
         'Оставить скелет в покое.' if ds42Logic.r6623_condition():
             # r11 # reply6623
             jump ds42_dispose
+
         'Оставить скелет в покое.' if ds42Logic.r6624_condition():
             # r12 # reply6624
             jump ds42_dispose
@@ -78,12 +90,15 @@ label ds42_s1:  # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
         'Скрестить свои руки на груди.' if ds42Logic.r6625_condition():
             # r13 # reply6625
             jump ds42_s4
+
         'Повторять движения скелета… посмотрим, что получится.' if ds42Logic.r6626_condition():
             # r14 # reply6626
             jump ds42_s9
+
         'Э-э…':
             # r15 # reply6627
             jump ds42_s10
+
         'Оставить скелет в покое.':
             # r16 # reply6628
             jump ds42_dispose
@@ -98,9 +113,11 @@ label ds42_s2:  # from 0.4 # Manually checked EXTERN ~DMORTE~ : 111
             # r17 # reply6629
             $ ds42Logic.r6629_action()
             jump dmorte_s111
+
         'Оставить скелет в покое.' if ds42Logic.r6630_condition():
             # r18 # reply6630
             jump dmorte_s111
+
         'Оставить скелет в покое.' if ds42Logic.r6631_condition():
             # r19 # reply6631
             jump dmorte_s111
@@ -116,23 +133,29 @@ label ds42_s3:  # from 0.5 10.2 # Manually checked EXTERN ~DMORTE~ : 110 Manuall
         '*Кажется*, именно этот мертвец был в моем воспоминании…' if ds42Logic.r63495_condition():
             # r20 # reply63495
             jump ds42_s1
+
         'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6632_condition():
             # r21 # reply6632
             $ ds42Logic.r6632_action()
             jump dmorte_s110
+
         'Попробовать вытащить скобы из суставов скелета.' if ds42Logic.r6633_condition():
             # r22 # reply6633
             jump ds42_s6
+
         'Не против, если я возьму немного ремешков и скоб?' if ds42Logic.r6634_condition():
             # r23 # reply6634
             jump ds42_s1
+
         'Оставить скелет в покое.' if ds42Logic.r6635_condition():
             # r24 # reply6635
             $ ds42Logic.r6635_action()
             jump dmorte_s111
+
         'Оставить скелет в покое.' if ds42Logic.r6636_condition():
             # r25 # reply6636
             jump ds42_dispose
+
         'Оставить скелет в покое.' if ds42Logic.r6637_condition():
             # r26 # reply6637
             jump ds42_dispose
@@ -147,6 +170,7 @@ label ds42_s4:  # from 1.0 12.0
         'Засунуть руку в грудную клетку, пошарить внутри.':
             # r27 # reply6638
             jump ds42_s5
+
         'Оставить скелет в покое.':
             # r28 # reply6639
             jump ds42_dispose
@@ -163,6 +187,7 @@ label ds42_s5:  # from 4.0 9.0
             # r29 # reply6640
             $ ds42Logic.r6640_action()
             jump ds42_s7
+
         'Оставить скелет в покое.':
             # r30 # reply6641
             jump ds42_dispose
@@ -188,6 +213,7 @@ label ds42_s7:  # from 5.0
         'Осмотреть предмет.' if ds42Logic.r6643_condition():
             # r32 # reply6643
             jump ds42_s8
+
         'Осмотреть предмет.' if ds42Logic.r6644_condition():
             # r33 # reply6644
             jump ds42_s8
@@ -213,6 +239,7 @@ label ds42_s9:  # from 1.1 12.1
         'Засунуть руку в грудную клетку, пошарить внутри.':
             # r35 # reply6646
             jump ds42_s5
+
         'Оставить скелет в покое.':
             # r36 # reply6647
             jump ds42_dispose
@@ -226,20 +253,23 @@ label ds42_s10:  # from 1.2 12.2
         'Э… привет?' if ds42Logic.r6648_condition():
             # r37 # reply6648
             jump ds42_s12
+
         'Э… привет?' if ds42Logic.r6649_condition():
             # r38 # reply6649
             jump ds42_s13
+
         'Внимательно осмотреть скелет.':
             # r39 # reply6650
             $ ds42Logic.r6650_action()
             jump ds42_s3
+
         'Оставить скелет в покое.':
             # r40 # reply6651
             jump ds42_dispose
 
 
 # s11 # say6606
-label ds42_s11:  # from -
+label ds42_s11:  # -
     teller 'Похоже на ничем не примечательный кусок железа. Должно быть, у твоей предыдущей инкарнации были причины спрятать его здесь.'
 
     menu:
@@ -257,12 +287,15 @@ label ds42_s12:  # from 10.0
         'Скрестить свои руки на груди.' if ds42Logic.r6653_condition():
             # r42 # reply6653
             jump ds42_s4
+
         'Повторять движения скелета… посмотрим, что получится.' if ds42Logic.r6654_condition():
             # r43 # reply6654
             jump ds42_s9
+
         'Э-э…':
             # r44 # reply6655
             jump ds42_s10
+
         'Оставить скелет в покое.':
             # r45 # reply6656
             jump ds42_dispose
