@@ -42,24 +42,6 @@ class VaxisLogicTest(LogicTest):
         )
 
 
-    def test_meet_vaxis(self):
-        logic = VaxisLogic(self.settings_manager)
-
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_vaxis(x),
-            lambda: logic.meet_vaxis()
-        )
-
-
-    def test_not_meet_vaxis(self):
-        logic = VaxisLogic(self.settings_manager)
-
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_vaxis(x),
-            lambda: logic.not_meet_vaxis()
-        )
-
-
     def test_get_know_vaxis_name(self):
         logic = VaxisLogic(self.settings_manager)
 

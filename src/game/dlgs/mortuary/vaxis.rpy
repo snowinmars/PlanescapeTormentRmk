@@ -2,7 +2,7 @@
     from dlgs.mortuary.vaxis_logic import VaxisLogic
     vaxisLogic = VaxisLogic(renpy.store.global_settings_manager)
 
-    def _get_know_vaxis_name(self):
+    def logic_get_know_vaxis_name(self):
         return vaxis if vaxisLogic.get_know_vaxis_name() else vaxis_unknown
 
 
@@ -81,7 +81,7 @@ label vaxis_s1:  # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2:  # from 1.0
-    $ gsm.set_meet_vaxis(True)
+    $ vaxisLogic.set_meet_vaxis(True)
     nr 'После твоего тычка в глаз труп, рефлекторно закрыв руками лицо, издает нечленораздельный вопль. Он начинает что-то невнятно бормотать, сыпля проклятиями в твой адрес.'
 
     menu:
@@ -103,7 +103,7 @@ label vaxis_s2:  # from 1.0
 
 # s3 # say467
 label vaxis_s3:  # from 2.2 5.2
-    $ gsm.set_meet_vaxis(True)
+    $ vaxisLogic.set_meet_vaxis(True)
     nr 'Ты уже почти отвернулся, как зомби начинает что-то бормотать… кажется, он пытается что-то сказать, но с зашитым ртом это сделать трудно.'
     vaxis_unknown 'Фто ТЫ? Фто тее нао?'
 
@@ -137,7 +137,7 @@ label vaxis_s3:  # from 2.2 5.2
 
 # s4 # say471
 label vaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Ты уже почти отвернулся, как зомби начинает издавать низкое протяжное ворчание.'
     x 'Никоу ничео не говои пво МЕЯ. Моучи. Не говои НИФЕО твуфявым.'
     nr 'Он прикладывает палец к губам.'
@@ -166,7 +166,7 @@ label vaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 
 
 # s5 # say479
 label vaxis_s5:  # from 0.0 0.1 0.2 0.4
-    $ gsm.set_meet_vaxis(True)
+    $ vaxisLogic.set_meet_vaxis(True)
     nr 'Зомби от неожиданности моргает при твоем обращении.'
     vaxis_unknown 'А? Фто?'
 
@@ -189,7 +189,7 @@ label vaxis_s5:  # from 0.0 0.1 0.2 0.4
 
 # s6 # say483
 label vaxis_s6:  # from 2.0 2.1 5.0 5.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби пытается что-то сказать сквозь зашитые губы. На его лице странная смесь испуга и злобы.'
     x 'Фто ТЫ? Фего тее нао?'
 
@@ -223,7 +223,7 @@ label vaxis_s6:  # from 2.0 2.1 5.0 5.1
 
 # s7 # say490
 label vaxis_s7:  # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Кажется, зомби не расслышал тебя. Он осматривает тебя с ног до головы, затем хмурится.'
     x 'Фто ты фдефь делаефь?'
     nr 'Его глаза недоверчиво сужаются.'
@@ -273,7 +273,7 @@ label vaxis_s7:  # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
 
 # s8 # say1350
 label vaxis_s8:  # from 7.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он изучает тебя более пристально.'
     x 'Ты фпион? Ты иф яфейки?'
 
@@ -308,23 +308,23 @@ label vaxis_s8:  # from 7.2
 
 # s9 # say1363
 label vaxis_s9:  # from 7.3 # Manually checked EXTERN ~DMORTE~ : 85
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он изучает тебя более пристально.'
     x 'Ты фпион? Ты иф яфейки?'
 
     menu:
         'А?':
             # r45 # reply4359
-            jump dmorte_s85
+            jump morte_s85
 
         'Яфейки?':
             # r46 # reply4360
-            jump dmorte_s85
+            jump morte_s85
 
 
 # s10 # say4361
 label vaxis_s10:  # from 8.0 8.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Хмурясь, он шипит на тебя.'
     x 'Ты не фпион!'
     nr 'Он гонит тебя прочь.'
@@ -384,7 +384,7 @@ label vaxis_s11:  # -
 
 # s12 # say4373
 label vaxis_s12:  # from 7.0 11.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби выглядит заинтересованным.'
     x 'Пвоулемы? Фево ты натвовил?'
 
@@ -404,7 +404,7 @@ label vaxis_s12:  # from 7.0 11.0
 
 # s13 # say4377
 label vaxis_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 87
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби смотрит на тебя как на умалишенного.'
     x 'Ты фпятил?'
 
@@ -419,7 +419,7 @@ label vaxis_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 87
 
         'Фпятил? Что это значит?' if vaxisLogic.r4380_condition():
             # r62 # reply4380
-            jump dmorte_s87
+            jump morte_s87
 
         'Я знаю, в это трудно поверить, но я говорю правду: я очнулся из мертвых на одной из плит на верхнем этаже.':
             # r63 # reply4381
@@ -437,7 +437,7 @@ label vaxis_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 87
 
 # s14 # say4384
 label vaxis_s14:  # from 13.0 13.3 15.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя.'
     x 'Ты фпятил! Профь от мея!'
 
@@ -486,7 +486,7 @@ label vaxis_s15:  # -
 
 # s16 # say4394
 label vaxis_s16:  # from 13.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя.'
     x 'Пуфтогоовый! Приурок! Профь от мея, пей! Профь!'
 
@@ -516,7 +516,7 @@ label vaxis_s16:  # from 13.1
 
 # s17 # say4400
 label vaxis_s17:  # from 7.5 10.1 14.1 16.1 25.3 27.3
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
     x 'Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу.'
 
@@ -538,7 +538,7 @@ label vaxis_s17:  # from 7.5 10.1 14.1 16.1 25.3 27.3
 
 # s18 # say4404
 label vaxis_s18:  # from 17.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
     x 'Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят.'
 
@@ -555,7 +555,7 @@ label vaxis_s18:  # from 17.0
 
 # s19 # say4407
 label vaxis_s19:  # from 7.6 10.2 14.2 16.2 25.4 27.4
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
     x 'ТЫ пытаеффя фапифать МЕЯ ф кьигу мертфых? У мея фдефь пвячуффа двуфья, у тея фдефь *никоо*. Твонеф мея — они тея пвиконфят.'
 
@@ -580,7 +580,7 @@ label vaxis_s19:  # from 7.6 10.2 14.2 16.2 25.4 27.4
 
 # s20 # say4412
 label vaxis_s20:  # from 19.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
     x 'Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу.'
 
@@ -597,7 +597,7 @@ label vaxis_s20:  # from 19.2
 
 # s21 # say4415
 label vaxis_s21:  # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Недобрый блеск в твоих глазах не оставляет от его самонадеянности и следа.'
     x 'Не-не-не! Не наа фвать фтражу!'
     nr 'Он явно напуган.'
@@ -623,7 +623,7 @@ label vaxis_s21:  # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
 # s22 # say4420
 label vaxis_s22:  # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Не-не-не! Не твогаи мея!'
     nr 'Факт того, что ты явно превосходишь зомби в грубой силе, очевидно, повлиял на его решение, и от его самонадеянности не осталось и следа.'
     x 'Я-я-я фпионю за твуфьявыми, говою, фео увиву. Ни-нифео больфе.'
@@ -657,7 +657,7 @@ label vaxis_s23:  # from 21.0 22.0 # Manually checked EXTERN ~DMORTE~ : 89
 
         'Ну же, для кого ты следишь за этим местом?' if vaxisLogic.r4427_condition():
             # r99 # reply4427
-            jump dmorte_s89
+            jump morte_s89
 
         'Если ты скажешь мне прямо сейчас, для кого ты шпионишь, будет ГОРАЗДО меньше боли.' if vaxisLogic.r4428_condition():
             # r100 # reply4428
@@ -667,7 +667,7 @@ label vaxis_s23:  # from 21.0 22.0 # Manually checked EXTERN ~DMORTE~ : 89
         'Если ты скажешь мне прямо сейчас, для кого ты шпионишь, будет ГОРАЗДО меньше боли.' if vaxisLogic.r4429_condition():
             # r101 # reply4429
             $ vaxisLogic.r4429_action()
-            jump dmorte_s89
+            jump morte_s89
 
         'Тогда неважно. Так чем же, по твоим наблюдениям, занимаются тленные?':
             # r102 # reply4430
@@ -684,7 +684,7 @@ label vaxis_s23:  # from 21.0 22.0 # Manually checked EXTERN ~DMORTE~ : 89
 
 # s24 # say4433
 label vaxis_s24:  # from 3.3 6.3 8.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Иффефь мея? Вафем?'
     nr 'Он искоса смотрит на тебя.'
     x 'У тея соофение двя мея?'
@@ -706,7 +706,7 @@ label vaxis_s24:  # from 3.3 6.3 8.2
 
 # s25 # say4437
 label vaxis_s25:  # from 24.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Яростно шепчет.'
     x 'Тада фео тее *надо*, пей?!'
 
@@ -744,7 +744,7 @@ label vaxis_s25:  # from 24.2
 
 # s26 # say4445
 label vaxis_s26:  # from 24.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Какое фоофение?'
 
     menu:
@@ -773,7 +773,7 @@ label vaxis_s26:  # from 24.0
 
 # s27 # say4451
 label vaxis_s27:  # from 24.1 26.3 26.4
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Его глаза в ярости сужаются.'
     x 'Ты не фьяфной. Фто ты?'
 
@@ -811,7 +811,7 @@ label vaxis_s27:  # from 24.1 26.3 26.4
 
 # s28 # say4459
 label vaxis_s28:  # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Я фпионю фа твуфьявыми. Говою, чео вифу. Нифео больфе.'
 
     menu:
@@ -830,7 +830,7 @@ label vaxis_s28:  # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
 # s29 # say4463
 label vaxis_s29:  # from 21.1 22.1 23.4 28.0 70.1 71.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Нифео. Они нифео ни деают. Нифео не нафол. Твупы, твупы, пвофто твупы. Твуфьявые *нифео* ни деают.'
     nr 'Его глаза деловито сужаются.'
     x 'Буу дальфе фледить.'
@@ -847,7 +847,7 @@ label vaxis_s29:  # from 21.1 22.1 23.4 28.0 70.1 71.2
 
 # s30 # say4466
 label vaxis_s30:  # from 26.1 26.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он сужает глаза, будто пытаясь тебя вычислить.'
     x 'Какие вафповявения?'
 
@@ -876,7 +876,7 @@ label vaxis_s30:  # from 26.1 26.2
 
 # s31 # say4472
 label vaxis_s31:  # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он на секунду умолкает, затем медленно, будто бы понимающе кивает.'
     x 'Пофеу я доувен помоать тее?'
 
@@ -915,7 +915,7 @@ label vaxis_s31:  # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
 # s32 # say4480
 label vaxis_s32:  # from 31.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби едва усмехается.'
     x 'Фем *нао* фео-то, но нифто нифео *не дает*. *Дай* мне фео-нить, и, *мовет*, я помоу.'
 
@@ -949,7 +949,7 @@ label vaxis_s32:  # from 31.0
 
 # s33 # say4487
 label vaxis_s33:  # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он оглядывает тебя с ног до головы, как бы примериваясь, сможет ли он с тобой справиться, останавливается на шрамах и решает не делать этого.'
     x 'Хм-м. Ты мовефь убевать фееф поуталы.'
 
@@ -962,7 +962,7 @@ label vaxis_s33:  # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
 # s34 # say4491
 label vaxis_s34:  # from 31.3 32.2 35.3
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
     x 'Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу.'
 
@@ -984,7 +984,7 @@ label vaxis_s34:  # from 31.3 32.2 35.3
 
 # s35 # say4493
 label vaxis_s35:  # from 30.3 31.1 32.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Тее нуно найти *кьюч* дья мея. Нуен желефный кьюч к байвамовофной комуафе.'
 
     menu:
@@ -1024,7 +1024,7 @@ label vaxis_s35:  # from 30.3 31.1 32.0
 
 # s36 # say4501
 label vaxis_s36:  # from 35.1 58.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Он у твуфьявой.'
     nr 'Он показывает на свои глаза.'
     x 'У нее воутые глафифи…'
@@ -1071,7 +1071,7 @@ label vaxis_s37:  # from 36.3
 
 # s38 # say4507
 label vaxis_s38:  # from 36.1 36.2 37.0 37.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби косо на тебя смотрит.'
     x 'Ефи тея поимают, не говои никоу обо мне, или я добеусь до тея, когда ты буешь фпать.'
 
@@ -1097,7 +1097,7 @@ label vaxis_s38:  # from 36.1 36.2 37.0 37.1
 
 # s39 # say4512
 label vaxis_s39:  # from 43.12 # Manually checked EXTERN ~DMORTE~ : 93
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби.'
     nr 'Зомби хихикает через зашитые губы, потом стучит себя по голове.'
     x 'Твуфяки тууупые.'
@@ -1107,7 +1107,7 @@ label vaxis_s39:  # from 43.12 # Manually checked EXTERN ~DMORTE~ : 93
 
 # s40 # say4514
 label vaxis_s40:  # -
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Я фду тея фдефь. Найди кьюч.'
     nr 'Зомби улыбается мертвецким оскалом.'
     x 'Потом я помоу тее.'
@@ -1124,7 +1124,7 @@ label vaxis_s40:  # -
 
 # s41 # say4517
 label vaxis_s41:  # - # orphan
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Глаза зомби расширяются, он протягивает руку и прищелкивает пальцами.'
     x 'Дай его мие.'
 
@@ -1141,7 +1141,7 @@ label vaxis_s41:  # - # orphan
 
 # s42 # say4520
 label vaxis_s42:  # from 35.0 36.0 58.0 58.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Глаза зомби расширены, он выхватывает ключ из твоей руки. Затем он поворачивается, все время кивая.'
     x 'Хорофо… хорофо.'
 
@@ -1159,7 +1159,7 @@ label vaxis_s42:  # from 35.0 36.0 58.0 58.1
 
 # s43 # say4523
 label vaxis_s43:  # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Фто ты хофефь уфнать?'
 
     menu:
@@ -1222,7 +1222,7 @@ label vaxis_s43:  # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 
 
 # s44 # say4537
 label vaxis_s44:  # from 43.6
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Фа-ОД?'
     nr 'Нахмурившись, зомби напряженно думает.'
     x 'Я… фвыфал, фто он фиет де-то ф Уле.'
@@ -1252,7 +1252,7 @@ label vaxis_s44:  # from 43.6
 
 # s45 # say4542
 label vaxis_s45:  # from 44.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Твуффобы фнауви.'
 
     menu:
@@ -1272,7 +1272,7 @@ label vaxis_s45:  # from 44.0
 
 # s46 # say4546
 label vaxis_s46:  # from 44.1 45.0 # Manually checked EXTERN ~DMORTE~ : 91
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Он фбофик. Пвинофит твупы ф Моуг, пводает их твуфвым. Пвинофит МУОГО твупоф. Твуфявые ненают, откуда он их беет. Дуают, он пифет пьей в кьигу мертфых.'
 
     menu:
@@ -1282,7 +1282,7 @@ label vaxis_s46:  # from 44.1 45.0 # Manually checked EXTERN ~DMORTE~ : 91
 
         'Э-э… что?' if vaxisLogic.r4548_condition():
             # r199 # reply4548
-            jump dmorte_s91
+            jump morte_s91
 
         'А… Есть кое-что еще, о чем я хочу узнать…':
             # r200 # reply4549
@@ -1295,7 +1295,7 @@ label vaxis_s46:  # from 44.1 45.0 # Manually checked EXTERN ~DMORTE~ : 91
 
 # s47 # say4551
 label vaxis_s47:  # from 43.7 # Manually checked EXTERN ~DMORTE~ : 92
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Ненают. Какой-то пей обфифтил тея?'
 
     menu:
@@ -1305,7 +1305,7 @@ label vaxis_s47:  # from 43.7 # Manually checked EXTERN ~DMORTE~ : 92
 
         'Э-э… что?' if vaxisLogic.r4553_condition():
             # r203 # reply4553
-            jump dmorte_s92
+            jump morte_s92
 
         'А… Есть кое-что еще, о чем я хочу узнать…':
             # r204 # reply4554
@@ -1332,7 +1332,7 @@ label vaxis_s48:  # from 46.0 47.0
 
 # s49 # say4559
 label vaxis_s49:  # from 30.1 42.0 43.0 43.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби ворчит.'
     x 'Ты мовешь убевафь феев поуталы.'
     nr 'Он взмахивает руками.'
@@ -1346,7 +1346,7 @@ label vaxis_s49:  # from 30.1 42.0 43.0 43.1
 
 # s50 # say4563
 label vaxis_s50:  # from 33.0 49.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Поуталы…'
     nr 'Зомби окидывает широким жестом пространство вокруг себя.'
     x 'Поуталы вефде.'
@@ -1371,7 +1371,7 @@ label vaxis_s50:  # from 33.0 49.0
 
 # s51 # say4567
 label vaxis_s51:  # from 50.1 50.2 50.3 72.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби кивает.'
     x 'Тее надо выити, пойти ф арку на певом этаже, февео-фападный фал… Тее нувна кофть паица, фогнутоо в кьюк…'
     nr 'Он поднимает указательный палец и сгибает его в крюк.'
@@ -1398,7 +1398,7 @@ label vaxis_s51:  # from 50.1 50.2 50.3 72.0
 
 # s52 # say4570
 label vaxis_s52:  # from 43.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Фуфай! Фапомиай!'
     nr 'В голосе зомби слышна раздраженность.'
     x 'Арка, пеувый этаж, феверо-фападная коуната…'
@@ -1417,7 +1417,7 @@ label vaxis_s52:  # from 43.2
 
 # s53 # say4573
 label vaxis_s53:  # from 43.8
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Пифец.'
     nr 'Пожимает плечами.'
     x 'Фтарый. Вовтый.'
@@ -1434,7 +1434,7 @@ label vaxis_s53:  # from 43.8
 
 # s54 # say4576
 label vaxis_s54:  # from 43.9
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Э?'
     nr 'Хмурится.'
     x 'Фто она?'
@@ -1450,7 +1450,7 @@ label vaxis_s54:  # from 43.9
 
 # s55 # say4579
 label vaxis_s55:  # from 43.10
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Пвоводник. На пеувом этаже. Фто ты хофефь фнать о нем?'
 
     menu:
@@ -1466,7 +1466,7 @@ label vaxis_s55:  # from 43.10
 
 # s56 # say4582
 label vaxis_s56:  # from 55.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Фтвааный. Не твуфявый, не анавфифт. Гуава двугие…'
     nr 'Пожимает плечами.'
     x 'Как у квыфы. Фтванно.'
@@ -1509,7 +1509,7 @@ label vaxis_s57:  # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
 # s58 # say4591
 label vaxis_s58:  # from 57.0 57.1 57.3
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем поворачивается к тебе.'
     nr 'Фто?'
 
@@ -1539,7 +1539,7 @@ label vaxis_s58:  # from 57.0 57.1 57.3
 
 # s59 # say4597
 label vaxis_s59:  # from 57.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем шипит на тебя.'
     x 'Ухои! Вон!'
 
@@ -1559,7 +1559,7 @@ label vaxis_s59:  # from 57.2
 
 # s60 # say4601
 label vaxis_s60:  # from 43.11
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     x 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби.'
     nr 'Зомби хихикает через зашитые губы, потом стучит себя по голове.'
     x 'Твуфяки тууупые.'
@@ -1588,7 +1588,7 @@ label vaxis_s60:  # from 43.11
 
 # s61 # say4607
 label vaxis_s61:  # from 60.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби определенно не понял сарказма, энергично кивая словам.'
     x 'Тупие твуфявые. Ив мея ХОВОФЫЙ фомби.'
 
@@ -1620,7 +1620,7 @@ label vaxis_s61:  # from 60.0
 
 # s62 # say4614
 label vaxis_s62:  # from 60.1 61.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он смотрит на твои шрамы.'
     x 'А как ты думаефь? По мие, нет, не офень.'
     nr 'Бьет себя по груди.'
@@ -1650,7 +1650,7 @@ label vaxis_s62:  # from 60.1 61.0
 
 # s63 # say4619
 label vaxis_s63:  # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Что-то бормоча, он несколько раз оглядывает тебя с ног до головы, затем кивает.'
     x 'Уху. Мие нуна банка баифама.'
     nr 'Показывает на шрамы на твоей груди.'
@@ -1680,7 +1680,7 @@ label vaxis_s63:  # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
 # s64 # say4624
 label vaxis_s64:  # from 61.2 61.3 62.1 62.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Странным взглядом он осматривает тебя с ног до головы.'
     nr 'Ты будефь ХОВОФЫМ фомби. Мовно фделать из тея фомби? ХОВОФАЯ мафкиофка.'
 
@@ -1717,7 +1717,7 @@ label vaxis_s65:  # from 63.0 # Manually checked EXTERN ~DMORTE~ : 94
         'Попробовать не двигаться.' if vaxisLogic.r4631_condition():
             # r264 # reply4631
             $ vaxisLogic.r4631_action()
-            jump dmorte_s94
+            jump morte_s94
 
         'Попробовать не двигаться.' if vaxisLogic.r4632_condition():
             # r265 # reply4632
@@ -1743,7 +1743,7 @@ label vaxis_s66:  # from 65.0 65.2 65.3 # Manually checked EXTERN ~DMORTE~ : 95
         'Ммм-ммф-ммм… Фпафибо.' if vaxisLogic.r4635_condition():
             # r268 # reply4635
             $ vaxisLogic.r4635_action()
-            jump dmorte_s95
+            jump morte_s95
 
         'Ммм-ммф-ммм… Фпафибо.' if vaxisLogic.r4636_condition():
             # r269 # reply4636
@@ -1752,7 +1752,7 @@ label vaxis_s66:  # from 65.0 65.2 65.3 # Manually checked EXTERN ~DMORTE~ : 95
 
 # s67 # say4637
 label vaxis_s67:  # from 66.0 66.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби держит тебя за руку.'
     x 'Офтововно! Вафгоов вафофет фвы, науфив мафкивку. Фомби не говоят. Поняу? Говои медвенно, офтовоно.'
 
@@ -1765,7 +1765,7 @@ label vaxis_s67:  # from 66.0 66.2
 
 # s68 # say4639
 label vaxis_s68:  # from 67.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби хмурится.'
     x 'Мафкирофка не деужится доуго… бальфам выфыхает, фвы рвутфя.'
     nr 'Он жмет плечами.'
@@ -1779,7 +1779,7 @@ label vaxis_s68:  # from 67.0
 
 # s69 # say4641
 label vaxis_s69:  # - # orphan
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби хмурится.'
     x 'Фде-то я тея виел. Мы не виелифь раньфе?'
 
@@ -1845,7 +1845,7 @@ label vaxis_s71:  # -
 
 # s72 # say4655
 label vaxis_s72:  # from 30.2
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби выглядит сбитым с толку, но затем пожимает плечами, начиная копаться в своей заляпанной тунике.'
     x 'Вфе тихо, твувявыя не февелятся, нифего новоо с пофледнего отфета.'
     nr 'Спустя несколько секунд он протягивает тебе какие-то предметы, затем ворчит.'
@@ -1865,7 +1865,7 @@ label vaxis_s72:  # from 30.2
 
 # s73 # say4658
 label vaxis_s73:  # -
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Зомби ворчит.'
     x 'Поутал в арке — пеувый этав, феверо-фападная коумата, нувен кофтяной паиец дья откуывания.'
     nr 'Он кивает.'
@@ -1879,7 +1879,7 @@ label vaxis_s73:  # -
 
 # s74 # say4660
 label vaxis_s74:  # from 34.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
     x 'Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят.'
 
@@ -1896,7 +1896,7 @@ label vaxis_s74:  # from 34.0
 
 # s75 # say4663
 label vaxis_s75:  # from 31.4 32.3 35.4
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка.'
     x 'ТЫ пытаеффя фапифать МЕЯ ф кьигу мертфых? У мея фдефь пвячуффа двуфья, у тея фдефь *никоо*. Твонеф мея — они тея пвиконфят.'
 
@@ -1921,7 +1921,7 @@ label vaxis_s75:  # from 31.4 32.3 35.4
 
 # s76 # say4668
 label vaxis_s76:  # from 75.1
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Глаза зомби превращаются в щелочки, он шипит на тебя.'
     x 'Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу.'
 
@@ -1938,7 +1938,7 @@ label vaxis_s76:  # from 75.1
 
 # s77 # say64523
 label vaxis_s77:  # from 51.0
-    $ x = _get_know_vaxis_name()
+    $ x = logic_get_know_vaxis_name()
     nr 'Он пожимает плечами.'
     nr 'Доувен быть де-то фдефь… Ифи на фкладах навеуху. Мовет быть, там.'
 

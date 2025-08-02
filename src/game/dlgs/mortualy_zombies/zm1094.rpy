@@ -30,7 +30,7 @@ label start_zm1094_kill_bad:
     call zm1094_init
     jump zm1094_kill_bad
 label zm1094_init:
-    $ zm1094Logic.init_zm1094()
+    $ zm1094Logic.zm1094_init()
     scene bg mortuary1
     show zm1094_img default at center_left_down
     return

@@ -189,7 +189,7 @@ label eivene_s8:  # from 7.1
 
 
 # s9 # say3439
-label eivene_s9:  # from 7.0 8.0 # Check EXTERN ~DMORTE~ : 59
+label eivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59
     nr 'Спустя несколько минут она заканчивает. Щелкнув когтями, она поворачивается к тебе.'
     nr 'К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.'
 

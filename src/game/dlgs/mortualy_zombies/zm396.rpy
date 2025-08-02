@@ -128,7 +128,7 @@ label zm396_s3:  # from 0.2 1.0
 
 
 # s4 # say45111
-label zm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396") TODO [snow]: wtf is this if?
+label zm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
     if not zm396Logic.get_took_zm396_bandages():
         nr 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.'
     if zm396Logic.get_took_zm396_bandages():

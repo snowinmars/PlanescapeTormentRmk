@@ -15,14 +15,6 @@ class VaxisLogic:
         self.gsm.set_meet_vaxis(True)
 
 
-    def meet_vaxis(self):
-        return self.gsm.get_meet_vaxis()
-
-
-    def not_meet_vaxis(self):
-        return not self.gsm.get_meet_vaxis()
-
-
     def get_know_vaxis_name(self):
         return self.gsm.get_know_vaxis_name()
 

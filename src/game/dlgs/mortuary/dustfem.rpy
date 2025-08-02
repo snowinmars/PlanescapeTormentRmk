@@ -824,11 +824,11 @@ label dustfem_s40:  # - # Manually checked EXTERN ~DMORTE~ : 81 Manually checked
     menu:
         'Приветствую.' if dustfemLogic.r4312_condition():
             # r130 # reply4312
-            jump dmorte_s81
+            jump morte_s81
 
         'Приветствую.' if dustfemLogic.r4313_condition():
             # r131 # reply4313
-            jump dmorte_s83
+            jump morte_s83
 
         'Приветствую.' if dustfemLogic.r4314_condition():
             # r132 # reply4314

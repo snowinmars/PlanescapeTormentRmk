@@ -827,11 +827,11 @@ label dust_s40:  # - # Manually checked EXTERN ~DMORTE~ : 61 Manually checked EX
     menu:
         'Приветствую.' if dustLogic.r1420_condition():
             # r130 # reply1420
-            jump dmorte_s61
+            jump morte_s61
 
         'Приветствую.' if dustLogic.r1421_condition():
             # r131 # reply1421
-            jump dmorte_s63
+            jump morte_s63
 
         'Приветствую.' if dustLogic.r1422_condition():
             # r132 # reply1422
