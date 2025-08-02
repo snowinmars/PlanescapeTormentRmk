@@ -33,11 +33,11 @@ label dhall_dispose:
 
 
 # s0 # say822
-label dhall_s0:  # - # Manually checked EXTERN ~DMORTE~ : 104
+label dhall_s0:  # - # Manually checked EXTERN ~MORTE~ : 104
     nr 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.'
     nr 'Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
-    jump dmorte_s104
+    jump morte_s104
 
 # s1 # say826
 label dhall_s1:  # -
@@ -131,7 +131,7 @@ label dhall_s4:  # from 3.0 3.1
 
 
 # s5 # say838
-label dhall_s5:  # - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN ~DMORTE~ : 102
+label dhall_s5:  # - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN ~MORTE~ : 102
     nr 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
     nr 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
     nr 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
@@ -139,7 +139,7 @@ label dhall_s5:  # - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN 
     menu:
         'Приветствую.' if dhallLogic.r839_condition():
             # r14 # reply839
-            jump dmorte_s102
+            jump morte_s102
 
         'Приветствую.' if dhallLogic.r835_condition():
             # r15 # reply835

@@ -86,4 +86,4 @@ label mortuary_walking_1_pick_embalm:
     $ walkingLogic.mortuary_walking_1_pick_embalm()
     scene bg mortuary_f2r7
     nr "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Ты берёшь парочку."
-    jump dvaxis_dispose
+    jump show_graphics_menu

@@ -100,11 +100,6 @@ class Zm782LogicTest(LogicTest):
         self.assertTrue(logic.no_key_no_morte())
 
 
-    def test_r24716_action(self):
-        logic = Zm782Logic(self.settings_manager)
-        logic.r24716_action()
-
-
     def test_r24709_condition(self):
         logic = Zm782Logic(self.settings_manager)
 

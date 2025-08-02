@@ -135,5 +135,5 @@ label zm782_killed:
         jump morte1_s24
     if zm782Logic.no_key_no_morte():
         nr 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
-        $ zm782Logic.s24_action()
+        $ zm782Logic.pick_key_up()
         jump zm782_dispose

@@ -37,11 +37,6 @@ class Zm782Logic:
                and not self.gsm.get_has_intro_key()
 
 
-    def r24716_action(self):
-        # ?.attack("Protagonist").by("ZM782")
-        return
-
-
     def r24709_condition(self):
         return self.no_key_has_morte()
 

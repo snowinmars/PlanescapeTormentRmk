@@ -197,7 +197,7 @@ label morte_s112:  # from - # Manually checked EXTERN ~DS42~ : 4 Manually checke
         'Скрестить свои руки.' if morteLogic.r6664_condition():
             # r290 # reply6664
             jump s42_s4
-        'Подстроиться под движения скелета… посмотреть, что получится.' if _r6665_condition():
+        'Подстроиться под движения скелета… посмотреть, что получится.' if morteLogic.r6665_condition():
             # r291 # reply6665
             jump s42_s9
         'Э…':
@@ -1133,7 +1133,7 @@ label morte_s95:  # from - # Manually checked EXTERN ~DVAXIS~ : 67
 # #
 # s102 # say5049
 label morte_s102:  # from -
-    call ddhall_init
+    call dhall_init
     morte 'Эй, шеф! Ты что творишь?!'
 
     menu:
