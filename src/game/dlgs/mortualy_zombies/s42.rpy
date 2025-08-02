@@ -11,8 +11,13 @@ init 10 python:
 label start_s42_talk:
     call s42_init
     jump s42_s0
+label start_s42_kill:
+    call s42_init
+    jump todo
 label s42_init:
+    $ s42Logic.s42_init()
     show s42_img default at center_left_down
+    scene bg mortuary_f3r8
     return
 label s42_dispose:
     hide s42_img

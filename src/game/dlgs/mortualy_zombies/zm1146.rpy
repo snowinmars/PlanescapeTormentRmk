@@ -19,8 +19,8 @@ label start_zm1146_kill:
     jump zm1146_s3
 label zm1146_init:
     $ zm1146Logic.zm1146_init()
-    scene bg mortuary1
     show zm1146_img default at center_left_down
+    scene bg mortuary_f3r2
     return
 label zm1146_dispose:
     hide zm1146_img

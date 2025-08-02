@@ -14,6 +14,12 @@ label start_dust_talk_first:
 label start_dust_talk:
     call dust_init
     jump dust_s0
+label start_dust_kill_first:
+    call dust_init
+    jump todo
+label start_dust_kill:
+    call dust_init
+    jump todo
 label dust_init:
     show dust_img default at center_left_down
     return

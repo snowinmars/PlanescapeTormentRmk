@@ -3,6 +3,11 @@ class S42Logic:
         self.gsm = gsm
 
 
+    def s42_init(self):
+        self.gsm.glm.set_location('mortuary_f3r8')
+        self.gsm.set_meet_s42(True)
+
+
     def r6613_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalskeleton_chaotic')
 

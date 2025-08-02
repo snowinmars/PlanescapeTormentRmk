@@ -4,7 +4,7 @@ class Zm613Logic:
 
 
     def zm613_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
+        self.gsm.glm.set_location('mortuary_f3r8')
         self.gsm.set_meet_zm613(True)
 
 

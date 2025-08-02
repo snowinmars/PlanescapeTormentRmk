@@ -23,7 +23,7 @@ screen inventory_screen():
 
             def __call__(self):
                 if self.item.jump_on_use_to:
-                    renpy.exports.jump(jump_on_use_to)
+                    renpy.exports.jump(self.item.jump_on_use_to)
                     # renpy.restart_interaction()
 
     modal True

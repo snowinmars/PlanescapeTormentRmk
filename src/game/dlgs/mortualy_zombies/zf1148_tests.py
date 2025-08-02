@@ -16,7 +16,7 @@ class Zf1148LogicTest(LogicTest):
 
     def test_zf1148_init(self):
         logic = Zf1148Logic(self.settings_manager)
-        id = 'mortuary_f2r2'
+        id = 'mortuary_f3r2'
 
         self.assertNotEqual(self.settings_manager.glm.get_location(), id)
         self.assertFalse(self.settings_manager.get_meet_zf1148())

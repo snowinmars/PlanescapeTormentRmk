@@ -14,6 +14,19 @@ class S1221LogicTest(LogicTest):
         self._methods_are_bound()
 
 
+    def test_s1221_init(self):
+        logic = S1221Logic(self.settings_manager)
+        id = 'mortuary_f3r8'
+
+        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
+        self.assertFalse(self.settings_manager.get_meet_s1221())
+
+        logic.s1221_init()
+
+        self.assertEqual(self.settings_manager.glm.get_location(), id)
+        self.assertTrue(self.settings_manager.get_meet_s1221(), True)
+
+
     def test_r35307_action(self):
         logic = S1221Logic(self.settings_manager)
         who = 'protagonist'

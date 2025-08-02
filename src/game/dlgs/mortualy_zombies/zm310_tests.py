@@ -17,7 +17,7 @@ class Zm310LogicTest(LogicTest):
 
     def test_zm310_init(self):
         logic = Zm310Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
+        id = 'mortuary_f3r6'
 
         self.assertNotEqual(self.settings_manager.glm.get_location(), id)
         self.assertFalse(self.settings_manager.get_meet_zm310())

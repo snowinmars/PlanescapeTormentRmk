@@ -4,7 +4,7 @@ class Zm79Logic:
 
 
     def zm79_init(self):
-        self.gsm.glm.set_location('mortuary_f2r2')
+        self.gsm.glm.set_location('mortuary_f3r8')
         self.gsm.set_meet_zm79(True)
 
 

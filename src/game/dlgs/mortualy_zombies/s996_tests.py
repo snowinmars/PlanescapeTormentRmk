@@ -14,6 +14,19 @@ class S996LogicTest(LogicTest):
         self._methods_are_bound()
 
 
+    def test_s996_init(self):
+        logic = S996Logic(self.settings_manager)
+        id = 'mortuary_f3r6'
+
+        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
+        self.assertFalse(self.settings_manager.get_meet_s996())
+
+        logic.s996_init()
+
+        self.assertEqual(self.settings_manager.glm.get_location(), id)
+        self.assertTrue(self.settings_manager.get_meet_s996(), True)
+
+
     def test_r35461_action(self):
         logic = S996Logic(self.settings_manager)
         who = 'protagonist'

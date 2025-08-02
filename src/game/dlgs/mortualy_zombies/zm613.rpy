@@ -16,7 +16,7 @@ label start_zm613_kill:
     jump zm613_kill
 label zm613_init:
     $ zm613Logic.zm613_init()
-    scene bg mortuary1
+    scene bg mortuary_f3r8
     show zm613_img default at center_left_down
     return
 label zm613_dispose:

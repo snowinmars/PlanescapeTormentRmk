@@ -1,9 +1,9 @@
-init 4 python:
-    persistent.show_coordinates = getattr(persistent, "show_coordinates", True)
+# init 4 python:
+    # persistent.show_coordinates = getattr(persistent, "show_coordinates", True)
 
-    def toggle_coordinates():
-        persistent.show_coordinates = not persistent.show_coordinates
-        renpy.restart_interaction()
+    # def toggle_coordinates():
+    #     persistent.show_coordinates = not persistent.show_coordinates
+    #     renpy.restart_interaction()
 
 
 # screen preferences():
@@ -28,7 +28,8 @@ style coordinates_text:
 
 screen mouse_coordinates():
     zorder 101
-    if persistent.show_coordinates:
+    # if persistent.show_coordinates:
+    if True:
         $ x, y = renpy.get_mouse_pos()
 
         fixed:

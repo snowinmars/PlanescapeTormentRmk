@@ -25,17 +25,17 @@ def build_mortuary_f2r4_menu(location_id, gsm, glm):
 
     builders.append(MenuBuilder(location_id) \
         .auto_position(1590, 400)
-        .option(lambda: 'Пройти в северо-восточную комнату'
+        .option(lambda: 'Пройти в серево-восточную препараторскую'
                 if glm.is_visited_location('mortuary_f2r5')
                 else "Открыть дверь") \
-        .jump('mortuary_walking_5_visit') \
+        .jump('walk_to_mortuaryf2r5_visit') \
         .style('open')
     )
 
     builders.append(MenuBuilder(location_id) \
         .auto_position(140, 500) \
-        .option("Пройти в северо-западную комнату") \
-        .jump("mortuary_walking_3_visit") \
+        .option("Пройти в северо-западную приёмную") \
+        .jump("walk_to_mortuaryf2r3_visit") \
         .style('open')
     )
 

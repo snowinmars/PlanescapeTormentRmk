@@ -1146,7 +1146,7 @@ label morte_s478:  # from 477.0
 
         'Ладно. Давай двигаться дальше.':
             # r983 # reply45094
-            jump morte_s330_dispose
+            jump morte_dispose
 
 
 # s479 # say45095
@@ -1175,7 +1175,7 @@ label morte_s480:  # from 479.0 # Manually checked EXTERN ~DZM965~ : 1
 
         'Ладно. Давай двигаться дальше.':
             # r987 # reply45101
-            jump morte_s330_dispose
+            jump morte_dispose
 
 
 # s481 # say45102
@@ -1194,7 +1194,7 @@ label morte_s481:  # from 478.0 480.0 # Manually checked EXTERN ~DZM965~ : 1
 
         'Ладно. Давай двигаться дальше.':
             # r990 # reply45105
-            jump morte_s330_dispose
+            jump morte_dispose
 
 
 # s482 # say45540

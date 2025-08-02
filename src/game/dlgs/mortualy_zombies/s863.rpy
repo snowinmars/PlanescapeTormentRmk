@@ -8,11 +8,19 @@ init 10 python:
 # ###
 
 
+label start_s863_talk_first:
+    call s863_init
+    jump s863_s8
 label start_s863_talk:
     call s863_init
     jump s863_s0
+label start_s863_kill:
+    call s863_init
+    jump todo
 label s863_init:
+    $ s863Logic.s863_init()
     show s863_img default at center_left_down
+    scene bg mortuary_f3r2
     return
 label s863_dispose:
     hide s863_img

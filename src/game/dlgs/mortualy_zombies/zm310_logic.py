@@ -4,7 +4,7 @@ class Zm310Logic:
 
 
     def zm310_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
+        self.gsm.glm.set_location('mortuary_f3r6')
         self.gsm.set_meet_zm310(True)
 
 

@@ -11,8 +11,13 @@ init 10 python:
 label start_s1221_talk:
     call s1221_init
     jump s1221_s0
+label start_s1221_kill:
+    call s1221_init
+    jump todo
 label s1221_init:
+    $ s1221Logic.s1221_init()
     show s1221_img default at center_left_down
+    scene bg mortuary_f3r8
     return
 label s1221_dispose:
     hide s1221_img

@@ -11,6 +11,14 @@ def build_all_inventory(manager):
         detail_image="images/icons/intro_key.png"
     ))
     manager.register(InventoryItem(
+        settings_id="has_prybar",
+        orig_id='prybar.itm',
+        name="Железный ломик",
+        description="Этим железным ломиком можно вскрывать двери, сундуки и даже случайно подвернувшиеся грудные клетки. Его также можно использовать в качестве дубинки в случае острой необходимости.",
+        grid_image="images/icons/prybar.png",
+        detail_image="images/icons/prybar.png"
+    ))
+    manager.register(InventoryItem(
         settings_id="has_tome_ba",
         orig_id='tomeba.itm',
         name="Книга костей и праха",
@@ -97,14 +105,6 @@ def build_all_inventory(manager):
         orig_id='tearring.itm',
         name="Cерьга «Gравило трех»",
         description="Ты получил эту небольшую серьгу, сложив особым образом записку изо рта одного из ходячих трупов в Морге. Серьга эта очень красивая, но, несмотря на свою красоту, она напоминает тебе о том, насколько странен тот мир, в котором ты очнулся.\n\nНа серьгу наложено слабое благословение одного из богов богатства из какого-то захолустного первичного мира; если, держа ее в в руке, прошептать слово «медь», она даст владельцу 33 медяка. Это благословение можно использовать только три раза, после чего оно иссякнет.",
-        grid_image="images/icons/tearring.png",
-        detail_image="images/icons/tearring.png"
-    ))
-    manager.register(InventoryItem(
-        settings_id='has_mortuary_key',
-        orig_id='keymo2.itm',
-        name="Ключ внутренних покоев Морга",
-        description="Этот увесистый ключ — необычная композиция из кости и неопределенного кроваво-красного металла. Его зубчатая C-образная ручка выглядит так, будто готова подавить любого, кто держит ее. Данный ключ открывает внутренние ворота Морга.",
         grid_image="images/icons/tearring.png",
         detail_image="images/icons/tearring.png"
     ))

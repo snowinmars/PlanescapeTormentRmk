@@ -3,6 +3,11 @@ class S996Logic:
         self.gsm = gsm
 
 
+    def s996_init(self):
+        self.gsm.glm.set_location('mortuary_f3r6')
+        self.gsm.set_meet_s996(True)
+
+
     def r35461_action(self):
         self.gsm.gcm.modify_property('protagonist', 'law', -1)
         self.gsm.set_skeleton_chaotic(True)
