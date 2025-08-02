@@ -376,5 +376,5 @@ class Dmorte2LogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r41163_condition()
+            lambda: logic.r41239_condition()
         )
