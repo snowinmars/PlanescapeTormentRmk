@@ -25,7 +25,7 @@ label dzm613_dispose:
 
 
 # s0 # say6540
-label dzm613_s0:  # from - # IF ~  True()
+label dzm613_s0:  # - # IF ~  True()
     teller 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры 613, но на коже между «1» и «3» виден большой пробел шириной с палец.'
     teller 'Приглядевшись, ты с трудом различаешь вырезанную «2».'
 
@@ -34,18 +34,23 @@ label dzm613_s0:  # from - # IF ~  True()
             # r0 # reply6543
             $ dzm613Logic.r6543_action()
             jump dzm613_s1
+
         'Итак… что тут у нас интересного?' if dzm613Logic.r6544_condition():
             # r1 # reply6544
             jump dzm613_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm613Logic.r6545_condition():
             # r2 # reply6545
             jump dzm613_s1
+
         'Использовать на трупе свою способность История костей.' if dzm613Logic.r6546_condition():
             # r3 # reply6546
             jump dzm613_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6547
             jump dzm613_dispose
+
         'Оставить труп в покое.':
             # r5 # reply6548
             jump dzm613_dispose
@@ -59,9 +64,11 @@ label dzm613_s1:  # from 0.0 0.1 0.2
         'Использовать на трупе свою способность История костей.' if dzm613Logic.r6546_condition():
             # r3 # reply6546
             jump dzm613_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6547
             jump dzm613_dispose
+
         'Оставить труп в покое.':
             # r6 # reply6549
             jump dzm613_dispose
@@ -75,9 +82,11 @@ label dzm613_s2:  # from 0.3
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm613Logic.r6545_condition():
             # r2 # reply6545
             jump dzm613_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6547
             jump dzm613_dispose
+
         'Оставить труп в покое.':
             # r7 # reply6550
             jump dzm613_dispose

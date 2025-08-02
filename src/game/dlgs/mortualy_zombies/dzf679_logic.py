@@ -35,13 +35,13 @@ class Dzf679Logic:
 
 
     def r35203_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35204_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35205_condition(self):
@@ -53,18 +53,18 @@ class Dzf679Logic:
 
 
     def r35207_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35208_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35181_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35194_condition(self):
@@ -72,13 +72,13 @@ class Dzf679Logic:
 
 
     def r35195_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35200_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
 
 
     def r35201_condition(self):
@@ -86,5 +86,5 @@ class Dzf679Logic:
 
 
     def r35202_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_quip()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()

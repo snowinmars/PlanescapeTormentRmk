@@ -28,7 +28,7 @@ label dzm1146_dispose:
 
 
 # s0 # say6518
-label dzm1146_s0:  # from - # IF ~  Global("Crispy","GLOBAL",0)
+label dzm1146_s0:  # - # IF ~  Global("Crispy","GLOBAL",0)
     teller 'На лбу этого ходячего трупа вырезан номер «1146», губы зашиты грубой черной ниткой. Все тело покрыто ужасающими шрамами — даже хуже, чем у тебя самого. Кажется, хозяин тела сгорел заживо.'
     teller 'У него нет носа, ушей и нескольких пальцев, вероятно, потерянных в давнем пожаре. Когда ты загораживаешь ему путь, чтобы привлечь его внимание, он останавливается и смотрит на тебя пустым взглядом.'
 
@@ -37,22 +37,27 @@ label dzm1146_s0:  # from - # IF ~  Global("Crispy","GLOBAL",0)
             # r0 # reply6521
             $ dzm1146Logic.r6521_action()
             jump dzm1146_s1
+
         'Итак… что тут у нас интересного?' if dzm1146Logic.r6522_condition():
             # r1 # reply6522
             jump dzm1146_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1146Logic.r6523_condition():
             # r2 # reply6523
             jump dzm1146_s1
+
         'Использовать на трупе свою способность История костей.' if dzm1146Logic.r6524_condition():
             # r3 # reply6524
             $ dzm1146Logic.r6524_action()
             jump dzm1146_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6525
-            jump dzm1201_dispose
+            jump dzm1146_dispose
+
         'Оставить труп в покое.':
             # r5 # reply6526
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s1 # say6519
@@ -64,12 +69,14 @@ label dzm1146_s1:  # from 0.0 0.1 0.2
             # r3 # reply6524
             $ dzm1146Logic.r6524_action()
             jump dzm1146_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6525
             jump dzm1201_dispose
+
         'Оставить труп в покое.':
             # r6 # reply6527
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s2 # say6520
@@ -81,12 +88,14 @@ label dzm1146_s2:  # from 0.3
         'С тобой… все в порядке?':
             # r7 # reply6528
             jump dzm1146_s3
+
         'У меня есть вопросы к тебе…':
             # r8 # reply9413
             jump dzm1146_s9
+
         'Оставить горящего духа.':
             # r9 # reply9414
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s3 # say9398
@@ -100,15 +109,18 @@ label dzm1146_s3:  # from 2.0
             # r10 # reply9415
             $ dzm1146Logic.r9415_action()
             jump dzm1146_s4
+
         'У меня вопрос…':
             # r11 # reply9416
             jump dzm1146_s9
+
         'Поделом тебе, вонючий дымящийся кусок мяса. Скорее всего, ты заслужил такую участь. Прощай.':
             # r12 # reply9417
             jump dzm1146_s6
+
         'Оставить измученного духа.':
             # r13 # reply9418
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s4 # say9399
@@ -121,12 +133,14 @@ label dzm1146_s4:  # from 3.0
         'Терпеливо ждать окончания процесса.':
             # r14 # reply9419
             jump dzm1146_s5
+
         'У меня есть другие вопросы…':
             # r15 # reply9421
             jump dzm1146_s9
+
         'Оставить измученного духа его страданиям.':
             # r16 # reply9422
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s5 # say9400
@@ -139,9 +153,10 @@ label dzm1146_s5:  # from 4.0
         'Понятно. У меня есть другой вопрос…':
             # r17 # reply9423
             jump dzm1146_s9
+
         'Ладно. Прощай.':
             # r18 # reply9424
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s6 # say9401
@@ -153,13 +168,15 @@ label dzm1146_s6:  # from 3.2 17.0
         'Да пожалуйста. Я не из тех, кто боится таких как ты.':
             # r19 # reply9425
             jump dzm1146_s7
+
         'Ударить его.':
             # r20 # reply9426
             $ dzm1146Logic.r9426_action()
             jump dzm1146_s8
+
         'Не обращать внимания на бедолагу, отвернуться и уйти.':
             # r21 # reply9427
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s7 # say9402
@@ -167,7 +184,7 @@ label dzm1146_s7:  # from 6.0
     teller 'Духу издает утробное рычание и плюет в тебя. Мерзкая жидкость приземляется в нескольких дюймах от твоих ног.'
     teller 'Полностью обессилев, существо падает назад на пол: жизнь снова покинула тело.'
 
-    jump dzm1201_dispose
+    jump dzm1146_dispose
 
 # s8 # say9403
 label dzm1146_s8:  # from 6.1
@@ -175,7 +192,7 @@ label dzm1146_s8:  # from 6.1
     dzm1146 'Хе, хе-хе-хе…'
     teller 'Ехидно булькает существо, после чего, наконец, полностью покидает тело. Ты стоишь со смутным ощущением неудовлетворенности.'
 
-    jump dzm1201_dispose
+    jump dzm1146_dispose
 
 # s9 # say9404
 label dzm1146_s9:  # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
@@ -186,27 +203,34 @@ label dzm1146_s9:  # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.
         'Кто ты?':
             # r22 # reply9428
             jump dzm1146_s10
+
         'Откуда ты?':
             # r23 # reply9429
             jump dzm1146_s11
+
         'Как ты попал сюда? То есть, как стал зомби?':
             # r24 # reply9430
             jump dzm1146_s12
+
         'Где ты… где находится твой дух… сейчас?':
             # r25 # reply9431
             jump dzm1146_s13
+
         'Что же ты натворил, чтобы заслужить такие муки?':
             # r26 # reply9432
             jump dzm1146_s14
+
         'Что ты знаешь об этом месте?':
             # r27 # reply9433
             jump dzm1146_s15
+
         'Ты знаешь кого-нибудь по имени Фарод?' if dzm1146Logic.r9434_condition():
             # r28 # reply9434
             jump dzm1146_s16
+
         'Ничего, неважно.':
             # r29 # reply9435
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s10 # say9405
@@ -217,9 +241,10 @@ label dzm1146_s10:  # from 9.0
         'Нет. У меня другой вопрос…':
             # r30 # reply9436
             jump dzm1146_s9
+
         'Тогда прощай.':
             # r31 # reply9437
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s11 # say9406
@@ -230,9 +255,10 @@ label dzm1146_s11:  # from 9.1
         'У меня есть другие вопросы…':
             # r32 # reply9438
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r33 # reply9439
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s12 # say9407
@@ -246,12 +272,14 @@ label dzm1146_s12:  # from 9.2
         'Волшебник сжег Улей?':
             # r34 # reply9440
             jump dzm1146_s18
+
         'У меня есть другие вопросы…':
             # r35 # reply9441
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r36 # reply9465
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s13 # say9408
@@ -264,12 +292,14 @@ label dzm1146_s13:  # from 9.3
         'Почему ты хочешь навязать свою судьбу другим?':
             # r37 # reply9442
             jump dzm1146_s17
+
         'У меня есть другие вопросы…':
             # r38 # reply9443
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r39 # reply9444
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s14 # say9409
@@ -281,12 +311,14 @@ label dzm1146_s14:  # from 9.4
         'Маг… сжег… Улей?':
             # r40 # reply9445
             jump dzm1146_s18
+
         'Понятно. У меня есть другой вопрос…':
             # r41 # reply9446
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r42 # reply9745
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s15 # say9410
@@ -297,9 +329,10 @@ label dzm1146_s15:  # from 9.5
         'Хорошо. Тогда у меня другой вопрос…':
             # r43 # reply9447
             jump dzm1146_s9
+
         'Тогда прощай.':
             # r44 # reply9448
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s16 # say9411
@@ -310,9 +343,10 @@ label dzm1146_s16:  # from 9.6
         'Хорошо. У меня есть другие вопросы…':
             # r45 # reply9449
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r46 # reply9450
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s17 # say9412
@@ -324,12 +358,14 @@ label dzm1146_s17:  # from 13.0
         'Ты злобный ничтожный человек. Ты заслужил свою участь.':
             # r47 # reply9420
             jump dzm1146_s6
+
         'Понятно. У меня к тебе еще вопросы…':
             # r48 # reply9451
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r49 # reply9452
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s18 # say9458
@@ -342,16 +378,18 @@ label dzm1146_s18:  # from 12.0 14.0
         'Кем был тот волшебник?':
             # r50 # reply9459
             jump dzm1146_s19
+
         'Понятно. У меня к тебе еще вопросы…':
             # r51 # reply9464
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r52 # reply9746
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s19 # say9744
-label dzm1146_s19:  # from 18.0 # Global("Crispy","GLOBAL",1)
+label dzm1146_s19:  # from 18.0
     dzm1146 'Без понятия. Я был уже порядочно поджарен, прежде чем его остановили, если это кому и удалось. Кажется, припоминаю, как за ним в самом начале гнались люди, выкрикивали его имя… э-э…'
     dzm1146 'А! Игнис, кажется так. Игнис. Или типа того. Надеюсь, этому неудачнику досталось больше, чем мне!'
 
@@ -359,19 +397,21 @@ label dzm1146_s19:  # from 18.0 # Global("Crispy","GLOBAL",1)
         'Понятно. У меня к тебе еще вопросы…':
             # r53 # reply9747
             jump dzm1146_s9
+
         'Это все, что я хотел узнать. Прощай.':
             # r54 # reply9748
-            jump dzm1201_dispose
+            jump dzm1146_dispose
 
 
 # s20 # say20099
-label dzm1146_s20:  # from -
+label dzm1146_s20:  # - # IF ~  Global("Crispy","GLOBAL",1)
     dzm1146 'Опять?!'
 
     menu:
         'У меня есть вопросы…':
             # r55 # reply20100
             jump dzm1146_s9
+
         'Ничего, я просто проходил мимо. Прощай.':
             # r56 # reply20101
-            jump dzm1201_dispose
+            jump dzm1146_dispose

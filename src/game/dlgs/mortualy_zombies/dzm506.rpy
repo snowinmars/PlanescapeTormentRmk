@@ -36,15 +36,19 @@ label dzm506_s0:  # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
         'Осмотреть швы.' if dzm506Logic.r45420_condition():
             # r0 # reply45420
             jump dzm506_s3
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm506Logic.r45421_condition():
             # r1 # reply45421
             jump dzm506_s1
+
         'Использовать на трупе свою способность История костей.' if dzm506Logic.r45422_condition():
             # r2 # reply45422
             jump dzm506_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r3 # reply45423
             jump dzm506_dispose
+
         'Оставить зомби в покое.':
             # r4 # reply45424
             jump dzm506_dispose
@@ -58,9 +62,11 @@ label dzm506_s1:  # from 0.1 4.0 4.1 5.0 5.1 5.2
         'Использовать на трупе свою способность История костей.' if dzm506Logic.r45422_condition():
             # r2 # reply45422
             jump dzm506_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r3 # reply45423
             jump dzm506_dispose
+
         'Оставить зомби в покое.':
             # r5 # reply45478
             jump dzm506_dispose
@@ -74,9 +80,11 @@ label dzm506_s2:  # from 0.2 5.3
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm506Logic.r45421_condition():
             # r1 # reply45421
             jump dzm506_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r3 # reply45423
             jump dzm506_dispose
+
         'Оставить зомби в покое.':
             # r6 # reply45479
             jump dzm506_dispose
@@ -92,12 +100,15 @@ label dzm506_s3:  # from 0.0
             # r7 # reply45480
             $ dzm506Logic.r45480_action()
             jump dzm506_s4
+
         'Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь.' if dzm506Logic.r45481_condition():
             # r8 # reply45481
             jump dzm506_dispose
+
         'Снова осмотреть труп.':
             # r9 # reply45482
             jump dzm506_s0
+
         'Оставить труп в покое.':
             # r10 # reply45483
             jump dzm506_dispose
@@ -112,12 +123,15 @@ label dzm506_s4:  # from 3.0
             # r11 # reply45484
             $ dzm506Logic.r45484_action()
             jump dzm506_s1
+
         'Похоже, у тебя два разных обозначения, труп.' if dzm506Logic.r45496_condition():
             # r12 # reply45496
             jump dzm506_s1
+
         'Снова осмотреть труп.':
             # r13 # reply50097
             jump dzm506_s5
+
         'Оставить зомби в покое.':
             # r14 # reply66889
             jump dzm506_dispose
@@ -132,18 +146,23 @@ label dzm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
             # r15 # reply45502
             $ dzm506Logic.r45502_action()
             jump dzm506_s1
+
         'Похоже, у тебя два разных обозначения, труп.' if dzm506Logic.r45508_condition():
             # r16 # reply45508
             jump dzm506_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm506Logic.r45510_condition():
             # r17 # reply45510
             jump dzm506_s1
+
         'Использовать на трупе свою способность История костей.' if dzm506Logic.r45512_condition():
             # r18 # reply45512
             jump dzm506_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r19 # reply45513
             jump dzm506_dispose
+
         'Оставить зомби в покое.':
             # r20 # reply45514
             jump dzm506_dispose

@@ -14,15 +14,15 @@ class Dzm569Logic:
 
 
     def r24576_condition(self):
-        return not self.gsm.get_mortuary_walkthrough() \
-               and not self.gsm.get_has_intro_key() \
-               and self.gsm.get_in_party_morte()
+        return not self.gsm.get_mortuary_walkthrough() and \
+               not self.gsm.get_has_intro_key() and \
+               self.gsm.get_in_party_morte()
 
 
     def r24579_condition(self):
-        return not self.gsm.get_mortuary_walkthrough() \
-               and not self.gsm.get_has_intro_key() \
-               and not self.gsm.get_in_party_morte()
+        return not self.gsm.get_mortuary_walkthrough() and \
+               not self.gsm.get_has_intro_key() and \
+               not self.gsm.get_in_party_morte()
 
 
     def r24580_condition(self):
@@ -38,8 +38,8 @@ class Dzm569Logic:
 
 
     def r24585_condition(self):
-        return not self.gsm.get_mortuary_walkthrough() \
-               and not self.gsm.get_has_intro_key()
+        return not self.gsm.get_mortuary_walkthrough() and \
+               not self.gsm.get_has_intro_key()
 
 
     def r42294_condition(self):
