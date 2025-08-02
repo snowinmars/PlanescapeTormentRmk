@@ -6,19 +6,19 @@ init 10 python:
 label mortuary_walking_1_8_closed:
     $ walkingLogic.mortuary_walking_1_8_closed()
     scene bg mortuary_f2r1
-    teller "Дверь не поддаётся."
+    nr "Дверь не поддаётся."
     jump show_graphics_menu
 
 label mortuary_walking_1_up_closed:
     $ walkingLogic.mortuary_walking_1_up_closed()
     scene bg mortuary_f2r1
-    teller "Дверь не поддаётся."
+    nr "Дверь не поддаётся."
     jump show_graphics_menu
 
 label mortuary_walking_1_down_closed:
     $ walkingLogic.mortuary_walking_1_down_closed()
     scene bg mortuary_f2r1
-    teller "Дверь не поддаётся."
+    nr "Дверь не поддаётся."
     jump show_graphics_menu
 
 label mortuary_walking_1_visit:
@@ -79,11 +79,11 @@ label mortuary_walking_8_up_visit:
 label mortuary_walking_1_pick_scalpel:
     $ walkingLogic.mortuary_walking_1_pick_scalpel()
     scene bg mortuary_f2r1
-    teller "Ты подбираешь скальпель с одной из полок."
+    nr "Ты подбираешь скальпель с одной из полок."
     jump show_graphics_menu
 
 label mortuary_walking_1_pick_embalm:
     $ walkingLogic.mortuary_walking_1_pick_embalm()
     scene bg mortuary_f2r7
-    teller "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Ты берёшь парочку."
+    nr "На столе стоят несколько бутылок с мутно-зелёной жидкостью. Ты берёшь парочку."
     jump dvaxis_dispose

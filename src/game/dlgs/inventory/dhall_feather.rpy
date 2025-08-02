@@ -9,5 +9,5 @@ init 10 python in dhall_feather:
 
 label start_dhall_feather:
     $ dhallFeatherLogic.break_feather()
-    teller 'Разломив перо, ты на секунду вспоминаешь кашель странного существа из Морга. Ты начинаешь понимать больше.'
+    nr 'Разломив перо, ты на секунду вспоминаешь кашель странного существа из Морга. Ты начинаешь понимать больше.'
     jump show_graphics_menu
