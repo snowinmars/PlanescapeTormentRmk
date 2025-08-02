@@ -16,7 +16,10 @@ Each rpy should not contain any logic. Each rpy should inject a python class wit
 Run them with:
 
 - `cd /src/game`
-- `python -m unittest discover -s . -p '*_tests.py'`
+- `pip install coverage`
+- `coverage erase`
+- `coverage run -m unittest discover -s . -p '*_tests.py'`
+- `coverage html`
 
     The only exception is the `/src/game/script.rpy` - it is safe to fail it at runtime, because it's fast to check.
 

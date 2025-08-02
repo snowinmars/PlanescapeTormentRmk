@@ -34,7 +34,7 @@ label mortuary_walking_2_visit:
 label mortuary_walking_2_scene:
     $ walkingLogic.mortuary_walking_2_scene()
     scene bg mortuary_f2r2
-    jump dmorte2_s0
+    jump morte2_s0
 
 label mortuary_walking_3_visit:
     $ walkingLogic.mortuary_walking_3_visit()
@@ -44,7 +44,7 @@ label mortuary_walking_3_visit:
 label mortuary_walking_3_scene:
     $ walkingLogic.mortuary_walking_3_scene()
     scene bg mortuary_f2r3
-    jump dmorte2_s31
+    jump morte2_s31
 
 label mortuary_walking_4_visit:
     $ walkingLogic.mortuary_walking_4_visit()

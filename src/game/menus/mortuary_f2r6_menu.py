@@ -12,18 +12,18 @@ def build_mortuary_f2r6_menu(location_id, gsm, glm):
         .option(lambda: 'Атаковать Ваксиса'
                 if gsm.get_meet_vaxis()
                 else 'Атаковать труп') \
-        .jump(lambda: 'start_dvaxis_kill'
+        .jump(lambda: 'start_vaxis_kill'
               if gsm.get_meet_vaxis()
-              else 'start_dvaxis_kill_first') \
+              else 'start_vaxis_kill_first') \
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('kill') \
         .option(lambda: 'Поговорить c Ваксисом'
                 if gsm.get_know_vaxis_name()
                 else 'Поговорить с фальшивым зомби' if gsm.get_meet_vaxis()
                 else 'Поговорить с трупом') \
-        .jump(lambda: 'start_dvaxis_talk'
+        .jump(lambda: 'start_vaxis_talk'
               if gsm.get_meet_vaxis()
-              else 'start_dvaxis_talk_first') \
+              else 'start_vaxis_talk_first') \
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('talk')
     )

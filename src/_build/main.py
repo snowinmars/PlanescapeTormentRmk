@@ -5,6 +5,7 @@ from file.writeFile import writeFile
 from cleanRaw import cleanRaw
 from parseClean import parseClean
 from renpy.dialogueProcessor import DialogueProcessor
+from renpy.generateSettings import generateSettings
 
 
 cwd = os.getcwd()
@@ -12,6 +13,7 @@ cwd = os.getcwd()
 folderWithInfinityEngineDialogues = os.path.normpath(os.path.join(cwd, '../d_raw'))
 folderWithCleanedInfinityEngineDialogues = os.path.normpath(os.path.join(cwd, '../d_clean'))
 folderWithRenpyDialogues = os.path.normpath(os.path.join(cwd, '../d_renpy'))
+folderWithPythonSettings = os.path.normpath(os.path.join(cwd, '../game/setting'))
 
 
 def main():
@@ -31,6 +33,9 @@ def main():
         )
         writeFile(os.path.join(folderWithRenpyDialogues, f'{entityId}.rpy'), rpy)
         writeFile(os.path.join(folderWithRenpyDialogues, f'{entityId}_logic.py'), logic)
+
+        pythonSettings = generateSettings(processor.known_settings)
+        writeFile(os.path.join(folderWithPythonSettings, 'generated.py'), pythonSettings)
 
 
 if __name__ == '__main__':

@@ -95,4 +95,4 @@ label new_life:
 
     menu:
         'Вспомнить':
-            jump dmorte1_s0
+            jump morte1_s0

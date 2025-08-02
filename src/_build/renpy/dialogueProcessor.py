@@ -65,77 +65,77 @@ class DialogueProcessor:
         self._createNpcSetting('Dustfem', 'dustfem')
         self._createNpcSetting('Dust', 'dust')
 
-        self._createNpcSetting(None, 'ds42')
-        self._createNpcSetting(None, 'ds748')
-        self._createNpcSetting(None, 'ds863')
-        self._createNpcSetting(None, 'ds996')
-        self._createNpcSetting(None, 'ds1221')
-        self._createNpcSetting(None, 'dzm79')
-        self._createNpcSetting(None, 'dzm199')
-        self._createNpcSetting(None, 'dzm257')
-        self._createNpcSetting(None, 'dzm310')
-        self._createNpcSetting(None, 'dzm396')
-        self._createNpcSetting(None, 'dzm463')
-        self._createNpcSetting(None, 'dzm475')
-        self._createNpcSetting(None, 'dzm506')
-        self._createNpcSetting(None, 'dzm569')
-        self._createNpcSetting(None, 'dzm613')
-        self._createNpcSetting(None, 'dzm732')
-        self._createNpcSetting(None, 'dzm782')
-        self._createNpcSetting(None, 'dzm825')
-        self._createNpcSetting(None, 'dzm965')
-        self._createNpcSetting(None, 'dzm985')
-        self._createNpcSetting(None, 'dzm1041')
-        self._createNpcSetting(None, 'dzm1094')
-        self._createNpcSetting(None, 'dzm1146')
-        self._createNpcSetting(None, 'dzm1201')
-        self._createNpcSetting(None, 'dzm1445')
-        self._createNpcSetting(None, 'dzm1508')
-        self._createNpcSetting(None, 'dzm1664')
-        self._createNpcSetting(None, 'dzf114')
-        self._createNpcSetting(None, 'dzf444')
-        self._createNpcSetting(None, 'dzf594')
-        self._createNpcSetting(None, 'dzf626')
-        self._createNpcSetting(None, 'dzf679')
-        self._createNpcSetting(None, 'dzf832')
-        self._createNpcSetting(None, 'dzf891')
-        self._createNpcSetting(None, 'dzf916')
-        self._createNpcSetting(None, 'dzf1072')
-        self._createNpcSetting(None, 'dzf1096')
-        self._createNpcSetting(None, 'dzf1148')
-        self._createNpcSetting(None, 'dzm79')
-        self._createNpcSetting(None, 'dzm199')
-        self._createNpcSetting(None, 'dzm257')
-        self._createNpcSetting(None, 'dzm310')
-        self._createNpcSetting(None, 'dzm396')
-        self._createNpcSetting(None, 'dzm463')
-        self._createNpcSetting(None, 'dzm475')
-        self._createNpcSetting(None, 'dzm506')
-        self._createNpcSetting(None, 'dzm569')
-        self._createNpcSetting(None, 'dzm613')
-        self._createNpcSetting(None, 'dzm732')
-        self._createNpcSetting(None, 'dzm782')
-        self._createNpcSetting(None, 'dzm825')
-        self._createNpcSetting(None, 'dzm965')
-        self._createNpcSetting(None, 'dzm985')
-        self._createNpcSetting(None, 'dzm1041')
-        self._createNpcSetting(None, 'dzm1094')
-        self._createNpcSetting(None, 'dzm1146')
-        self._createNpcSetting(None, 'dzm1201')
-        self._createNpcSetting(None, 'dzm1445')
-        self._createNpcSetting(None, 'dzm1508')
-        self._createNpcSetting(None, 'dzm1664')
-        self._createNpcSetting(None, 'dzf114')
-        self._createNpcSetting(None, 'dzf444')
-        self._createNpcSetting(None, 'dzf594')
-        self._createNpcSetting(None, 'dzf626')
-        self._createNpcSetting(None, 'dzf679')
-        self._createNpcSetting(None, 'dzf832')
-        self._createNpcSetting(None, 'dzf891')
-        self._createNpcSetting(None, 'dzf916')
-        self._createNpcSetting(None, 'dzf1072')
-        self._createNpcSetting(None, 'dzf1096')
-        self._createNpcSetting(None, 'dzf1148')
+        self._createNpcSetting(None, 's42')
+        self._createNpcSetting(None, 's748')
+        self._createNpcSetting(None, 's863')
+        self._createNpcSetting(None, 's996')
+        self._createNpcSetting(None, 's1221')
+        self._createNpcSetting(None, 'zm79')
+        self._createNpcSetting(None, 'zm199')
+        self._createNpcSetting(None, 'zm257')
+        self._createNpcSetting(None, 'zm310')
+        self._createNpcSetting(None, 'zm396')
+        self._createNpcSetting(None, 'zm463')
+        self._createNpcSetting(None, 'zm475')
+        self._createNpcSetting(None, 'zm506')
+        self._createNpcSetting(None, 'zm569')
+        self._createNpcSetting(None, 'zm613')
+        self._createNpcSetting(None, 'zm732')
+        self._createNpcSetting(None, 'zm782')
+        self._createNpcSetting(None, 'zm825')
+        self._createNpcSetting(None, 'zm965')
+        self._createNpcSetting(None, 'zm985')
+        self._createNpcSetting(None, 'zm1041')
+        self._createNpcSetting(None, 'zm1094')
+        self._createNpcSetting(None, 'zm1146')
+        self._createNpcSetting(None, 'zm1201')
+        self._createNpcSetting(None, 'zm1445')
+        self._createNpcSetting(None, 'zm1508')
+        self._createNpcSetting(None, 'zm1664')
+        self._createNpcSetting(None, 'zf114')
+        self._createNpcSetting(None, 'zf444')
+        self._createNpcSetting(None, 'zf594')
+        self._createNpcSetting(None, 'zf626')
+        self._createNpcSetting(None, 'zf679')
+        self._createNpcSetting(None, 'zf832')
+        self._createNpcSetting(None, 'zf891')
+        self._createNpcSetting(None, 'zf916')
+        self._createNpcSetting(None, 'zf1072')
+        self._createNpcSetting(None, 'zf1096')
+        self._createNpcSetting(None, 'zf1148')
+        self._createNpcSetting(None, 'zm79')
+        self._createNpcSetting(None, 'zm199')
+        self._createNpcSetting(None, 'zm257')
+        self._createNpcSetting(None, 'zm310')
+        self._createNpcSetting(None, 'zm396')
+        self._createNpcSetting(None, 'zm463')
+        self._createNpcSetting(None, 'zm475')
+        self._createNpcSetting(None, 'zm506')
+        self._createNpcSetting(None, 'zm569')
+        self._createNpcSetting(None, 'zm613')
+        self._createNpcSetting(None, 'zm732')
+        self._createNpcSetting(None, 'zm782')
+        self._createNpcSetting(None, 'zm825')
+        self._createNpcSetting(None, 'zm965')
+        self._createNpcSetting(None, 'zm985')
+        self._createNpcSetting(None, 'zm1041')
+        self._createNpcSetting(None, 'zm1094')
+        self._createNpcSetting(None, 'zm1146')
+        self._createNpcSetting(None, 'zm1201')
+        self._createNpcSetting(None, 'zm1445')
+        self._createNpcSetting(None, 'zm1508')
+        self._createNpcSetting(None, 'zm1664')
+        self._createNpcSetting(None, 'zf114')
+        self._createNpcSetting(None, 'zf444')
+        self._createNpcSetting(None, 'zf594')
+        self._createNpcSetting(None, 'zf626')
+        self._createNpcSetting(None, 'zf679')
+        self._createNpcSetting(None, 'zf832')
+        self._createNpcSetting(None, 'zf891')
+        self._createNpcSetting(None, 'zf916')
+        self._createNpcSetting(None, 'zf1072')
+        self._createNpcSetting(None, 'zf1096')
+        self._createNpcSetting(None, 'zf1148')
 
         self._createFractionSetting('dustmen'),
 
@@ -172,12 +172,13 @@ class DialogueProcessor:
         self._createInventoryItemSetting('Strap', 'strap')
         self._createInventoryItemSetting('DRemind', 'dremind')
 
-        self._createBooleanSetting(None, 'know_dzm257_spirit')
+        self._createBooleanSetting(None, 'know_zm257_spirit')
         self._createBooleanSetting(None, 'know_oinosian_name')
         self._createBooleanSetting(None, 'know_bei_name')
         self._createBooleanSetting(None, 'know_asonje_name')
         self._createBooleanSetting(None, 'know_vaxis_name')
         self._createBooleanSetting(None, 'has_bandages_zm396')
+        self._createBooleanSetting(None, 'vaxis_has_keyem')
         self._createBooleanSetting('Evil_Ingress_Teeth_1', 'evil_ingress_teeth_1')
         self._createBooleanSetting('Good_Ingress_Teeth_1', 'good_ingress_teeth_1')
         self._createBooleanSetting('1201_Note_Retrieved', '1201_note_retrieved')
@@ -200,7 +201,7 @@ class DialogueProcessor:
         self._createBooleanSetting('Escape_Mortuary', 'escape_mortuary')
         self._createBooleanSetting('Know_Copper_Earring_Secret', 'know_copper_earring_secret')
         self._createBooleanSetting('Know_Xixi', 'know_xixi')
-        self._createBooleanSetting('Page_Taken', 'has_dzm1664_page')
+        self._createBooleanSetting('Page_Taken', 'has_zm1664_page')
         self._createBooleanSetting('Morte_Quip', 'morte_quip')
         self._createBooleanSetting('EiVene_Delivery', 'eivene_delivery')
         self._createBooleanSetting('Ravel_EiVene', 'ravel_eivene')
@@ -517,10 +518,7 @@ class DialogueProcessor:
     def _createTreeSettings(self):
         letters = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
         for letter in letters:
-            self.known_settings[f'tree_{letter.lower()}'] = {
-                'name': f'tree_{letter.lower()}',
-                'type': 'boolean'
-            }
+            # self._add_setting(f'tree_{letter.lower()}', 'boolean')
             self._createBooleanSetting(f'Tree_{letter}', f'tree_{letter.lower()}', 'AR0400')
 
 
@@ -743,7 +741,7 @@ class DialogueProcessor:
         def replace_visited(match):
             not_op, locationId, value = match.groups()
             isVisited = (not_op == '!') != (value == '1')
-            return f"return{' ' if isVisited else ' not '}self.gsm.is_visited_internal_location('{locationId}')"
+            return f"return{' ' if isVisited else ' not '}self.gsm.glm.is_visited_internal_location('{locationId}')"
 
         return self.GLOBAL_VISITED_REGEX.sub(replace_visited, script)
 
@@ -842,20 +840,20 @@ class DialogueProcessor:
         # Initialize dialog tree
         dialog_tree.extend([
             f'init 10 python:',
-            f'    from dlgs.{area}_logic import {area.capitalize()}Logic',
-            f'    {area}Logic = {area.capitalize()}Logic(renpy.store.global_settings_manager)',
+            f'    from dlgs.{target_npc}_logic import {target_npc.capitalize()}Logic',
+            f'    {target_npc}Logic = {target_npc.capitalize()}Logic(renpy.store.global_settings_manager)',
             f'',
             f'',
             f'# ###',
-            f'# Original:  DLG/{area.upper()}.DLG',
+            f'# Original:  DLG/{target_npc.upper()}.DLG',
             f'# ###',
             f'',
             f'',
-            f'label {area}_init:',
+            f'label {target_npc}_init:',
             f'    return',
             f'',
             f'',
-            f'label {area}_dispose:',
+            f'label {target_npc}_dispose:',
             f'    jump show_graphics_menu',
             f'',
         ])
@@ -871,7 +869,7 @@ class DialogueProcessor:
             free_comment = f' # {state.free}' if state.free else ''
             dialog_tree.append(
                 f'\n# s{state.state_id} # say{state.say_id}'
-                f'\nlabel {area}{state_prefix}{state.state_id}:  # {from_path}{free_comment}'
+                f'\nlabel {target_npc}{state_prefix}{state.state_id}:  # {from_path}{free_comment}'
             )
 
             # State body
@@ -879,7 +877,7 @@ class DialogueProcessor:
 
             # Handle states with no answers
             if not state.answers:
-                dialog_tree.append(f'    jump {area}_dispose')
+                dialog_tree.append(f'    jump {target_npc}_dispose')
                 continue
 
             # Menu with answers
@@ -888,9 +886,9 @@ class DialogueProcessor:
             for answer in state.answers:
                 # Determine target state
                 target_id = (
-                    f'{area}_dispose'
+                    f'{target_npc}_dispose'
                     if answer.target_state_id == 'EXIT'
-                    else f'{area}{state_prefix}{answer.target_state_id}'
+                    else f'{target_npc}{state_prefix}{answer.target_state_id}'
                 )
 
                 # Menu option
@@ -901,7 +899,7 @@ class DialogueProcessor:
                     logic_conditions.append(
                         f'    def r{answer.answer_id}_condition(self):\n        {answer.condition.strip()}\n'
                     )
-                    menu_option += f' if {area}Logic.r{answer.answer_id}_condition()'
+                    menu_option += f' if {target_npc}Logic.r{answer.answer_id}_condition()'
 
                 dialog_tree.append(menu_option + ':')
                 dialog_tree.append(f'            # r{global_response_counter} # reply{answer.answer_id}')
@@ -911,7 +909,7 @@ class DialogueProcessor:
                     logic_actions.append(
                         f'    def r{answer.answer_id}_action(self):\n        {answer.action.strip()}\n'
                     )
-                    dialog_tree.append(f'            $ {area}Logic.r{answer.answer_id}_action()')
+                    dialog_tree.append(f'            $ {target_npc}Logic.r{answer.answer_id}_action()')
 
                 # Exit handling
                 # if answer.target_state_id == 'EXIT':
@@ -935,7 +933,7 @@ class DialogueProcessor:
         )
 
         # Combine logic sections
-        logic_code = f'class {area.capitalize()}Logic:\n    def __init__(self, gsm):\n        self.gsm = gsm\n\n\n'
+        logic_code = f'class {target_npc.capitalize()}Logic:\n    def __init__(self, gsm):\n        self.gsm = gsm\n\n\n'
         if transformed_actions.strip():
             logic_code += f'{self.right_trim_lines(transformed_actions)}\n\n\n'
         if transformed_conditions.strip():
