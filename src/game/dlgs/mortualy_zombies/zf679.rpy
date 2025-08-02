@@ -16,7 +16,7 @@ label start_zf679_kill:
     jump zf679_kill
 label zf679_init:
     $ zf679Logic.zf679_init()
-    scene bg mortuary2
+    scene bg mortuary_f3r8
     show zf679_img default at center_left_down
     return
 label zf679_dispose:

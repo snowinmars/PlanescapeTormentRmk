@@ -102,14 +102,14 @@ def build_mortuary_f2r3_menu(location_id, gsm, glm):
         .option(lambda: 'Пройти в северную комнату'
                 if glm.is_visited_location('mortuary_f2r4')
                 else "Открыть дверь") \
-        .jump('mortuary_walking_4_visit') \
+        .jump('walk_to_mortuaryf2r4_visit') \
         .style('open')
     )
 
     builders.append(MenuBuilder(location_id) \
         .auto_position(160, 1000) \
         .option("Пройти в западную комнату") \
-        .jump("mortuary_walking_2_visit") \
+        .jump("walk_to_mortuaryf2r2_visit") \
         .style('open')
     )
 

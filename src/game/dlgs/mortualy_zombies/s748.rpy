@@ -11,8 +11,13 @@ init 10 python:
 label start_s748_talk:
     call s748_init
     jump s748_s0
+label start_s748_kill:
+    call s748_init
+    jump todo
 label s748_init:
+    $ s748Logic.s748_init()
     show s748_img default at center_left_down
+    scene bg mortuary_f3r6
     return
 label s748_dispose:
     hide s748_img

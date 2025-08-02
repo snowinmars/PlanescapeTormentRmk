@@ -16,7 +16,7 @@ label start_zm79_kill:
     jump zm79_kill
 label zm79_init:
     $ zm79Logic.zm79_init()
-    scene bg mortuary2
+    scene bg mortuary_f3r8
     show zm79_img default at center_left_down
     return
 label zm79_dispose:

@@ -3,6 +3,11 @@ class S1221Logic:
         self.gsm = gsm
 
 
+    def s1221_init(self):
+        self.gsm.glm.set_location('mortuary_f3r8')
+        self.gsm.set_meet_s1221(True)
+
+
     def r35307_action(self):
         self.gsm.gcm.modify_property('protagonist', 'law', -1)
         self.gsm.set_skeleton_chaotic(True)

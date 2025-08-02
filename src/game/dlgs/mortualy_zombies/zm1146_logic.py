@@ -4,7 +4,7 @@ class Zm1146Logic:
 
 
     def zm1146_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
+        self.gsm.glm.set_location('mortuary_f3r2')
         self.gsm.set_meet_zm1146(True)
 
 

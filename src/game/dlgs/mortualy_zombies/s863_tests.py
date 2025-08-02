@@ -14,6 +14,19 @@ class S863LogicTest(LogicTest):
         self._methods_are_bound()
 
 
+    def test_s863_init(self):
+        logic = S863Logic(self.settings_manager)
+        id = 'mortuary_f3r2'
+
+        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
+        self.assertFalse(self.settings_manager.get_meet_s863())
+
+        logic.s863_init()
+
+        self.assertEqual(self.settings_manager.glm.get_location(), id)
+        self.assertTrue(self.settings_manager.get_meet_s863(), True)
+
+
     def test_r35538_action(self):
         logic = S863Logic(self.settings_manager)
         who = 'protagonist'

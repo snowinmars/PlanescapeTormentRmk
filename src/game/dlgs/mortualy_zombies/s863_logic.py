@@ -3,6 +3,11 @@ class S863Logic:
         self.gsm = gsm
 
 
+    def s863_init(self):
+        self.gsm.glm.set_location('mortuary_f3r2')
+        self.gsm.set_meet_s863(True)
+
+
     def r35538_action(self):
         self.gsm.gcm.modify_property('protagonist', 'law', -1)
         self.gsm.set_skeleton_chaotic(True)

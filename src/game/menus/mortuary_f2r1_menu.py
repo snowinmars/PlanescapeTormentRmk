@@ -62,9 +62,9 @@ def build_mortuary_f2r1_menu(location_id, gsm, glm):
         .option(lambda: 'Открыть дверь в западную комнату'
                 if glm.is_visited_location('mortuary_f2r2')
                 else "Открыть дверь") \
-        .jump(lambda: 'mortuary_walking_2_visit'
+        .jump(lambda: 'walk_to_mortuaryf2r2_visit'
                 if glm.is_visited_location('mortuary_f2r2')
-                else 'mortuary_walking_2_scene') \
+                else 'walk_to_mortuaryf2r2_scene') \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )
@@ -72,7 +72,7 @@ def build_mortuary_f2r1_menu(location_id, gsm, glm):
     builders.append(MenuBuilder(location_id) \
         .auto_position(520, 440) \
         .option("Взять скальпель") \
-        .jump("mortuary_walking_1_pick_scalpel") \
+        .jump("walk_mortuaryf2r1_pick_scalpel") \
         .when(lambda: not gsm.get_has_scalpel()) \
         .style('open')
     )
@@ -82,25 +82,33 @@ def build_mortuary_f2r1_menu(location_id, gsm, glm):
         .option(lambda: 'Открыть дверь в южную комнату'
             if glm.is_visited_location('mortuary_f2r8')
             else "Открыть дверь") \
-        .jump(lambda: 'mortuary_walking_8_visit'
+        .jump(lambda: 'walk_to_mortuaryf2r8_visit'
             if glm.is_visited_location('mortuary_f2r8')
-            else "mortuary_walking_1_8_closed") \
+            else "walk_to_mortuaryf2r8_closed") \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )
 
     builders.append(MenuBuilder(location_id) \
         .auto_position(940, 220) \
-        .option("Открыть дверь") \
-        .jump("mortuary_walking_1_up_closed") \
+        .option(lambda: 'Подняться на третий этаж'
+            if glm.is_visited_location('mortuary_f3r6') or glm.is_visited_location('mortuary_f3r2')
+            else "Подняться по лестнице") \
+        .jump(lambda: 'walk_to_mortuaryf3r2_visit'
+            if gsm.get_has_mortuary_key()
+            else "walk_to_mortuaryf3r1_closed") \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )
 
     builders.append(MenuBuilder(location_id) \
         .auto_position(790, 280) \
-        .option("Открыть дверь") \
-        .jump("mortuary_walking_1_down_closed") \
+        .option(lambda: 'Спуститься на первый этаж'
+            if glm.is_visited_location('mortuary_f1r1') or glm.is_visited_location('mortuary_f1r7')
+            else "Спуститься по лестнице") \
+        .jump(lambda: 'walk_to_mortuaryf1r1_visit'
+            if gsm.get_has_mortuary_key()
+            else "walk_to_mortuaryf1r1_closed") \
         .when(lambda: gsm.get_has_intro_key()) \
         .style('open')
     )

@@ -14,6 +14,11 @@ class EventManager:
         if len(self.events) > self.max_entries:
             self.events.pop(0)
 
+
+    def ping(self):
+        self.write_event('===')
+
+
     def get_events(self, category_filter=None):
         if not category_filter:
             return self.events[::-1]  # Return newest first

@@ -16,7 +16,7 @@ class Zm613LogicTest(LogicTest):
 
     def test_zm613_init(self):
         logic = Zm613Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
+        id = 'mortuary_f3r8'
 
         self.assertNotEqual(self.settings_manager.glm.get_location(), id)
         self.assertFalse(self.settings_manager.get_meet_zm613())

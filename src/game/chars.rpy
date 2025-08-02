@@ -14,13 +14,14 @@ define eivene_unknown = Character('?',       color='#c8ffc8')
 define eivene         = Character('Эи-Вейн',       color='#c8ffc8')
 define vaxis_unknown  = Character('?',       color='#c8ffc8')
 define vaxis          = Character('Ваксис',       color='#c8ffc8')
+define dust           = Character('Тленный',       color='#c8ffc8')
+define dustfem        = Character('Тленная',       color='#c8ffc8')
 
 define s42     = Character('Скелет 42',   color='#c8ffc8')
 define s748    = Character('Скелет 748',   color='#c8ffc8')
 define s863    = Character('Скелет 863',   color='#c8ffc8')
 define s996    = Character('Скелет 996',   color='#c8ffc8')
 define s1221   = Character('Скелет 1221',   color='#c8ffc8')
-
 
 define zm79   = Character('Зомби 79',   color='#c8ffc8')
 define zm199  = Character('Зомби 199',  color='#c8ffc8')

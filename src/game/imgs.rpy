@@ -1,8 +1,16 @@
-# manually sync with script.rpy 'character_reactions' variable
-image morte_img default   = 'morte_default.png'
-image dhall_img default   = 'dhall_default.png'
-image eivene_img default  = 'eivene_default.png'
-image vaxis_img default   = 'vaxis_default.png'
+image morte_img default     = 'morte_default.png'
+image dhall_img default     = 'dhall_default.png'
+image eivene_img default    = 'eivene_default.png'
+image vaxis_img default     = 'vaxis_default.png'
+image dust_img default      = 'dust_default.png'
+image dustfem_img default   = 'dustfem_default.png'
+image deionarra_img default = 'deionarra_default.png'
+
+image s42_img default    = 's42_default.png'
+image s748_img default   = 's748_default.png'
+image s863_img default   = 's863_default.png'
+image s996_img default   = 's996_default.png'
+image s1221_img default  = 's1221_default.png'
 
 image zm79_img default   = 'dzm79_default.png'
 image zm199_img default  = 'dzm199_default.png'

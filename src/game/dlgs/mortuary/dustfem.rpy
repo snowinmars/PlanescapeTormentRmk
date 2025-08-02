@@ -15,10 +15,10 @@ label start_dustfem_talk:
     call dustfem_init
     jump dustfem_s0
 label dustfem_init:
-    show dustdem_img default at center_left_down
+    show dustfem_img default at center_left_down
     return
 label dustfem_dispose:
-    hide dustdem_img
+    hide dustfem_img
     jump show_graphics_menu
 
 
