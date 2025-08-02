@@ -71,3 +71,7 @@ class CopearcLogicTest(LogicTest):
             lambda x: self.settings_manager.set_know_copper_earring_secret(x),
             lambda: logic.r46728_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

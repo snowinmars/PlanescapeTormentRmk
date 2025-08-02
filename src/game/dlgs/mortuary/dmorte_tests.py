@@ -904,3 +904,7 @@ class DmorteLogicTest(LogicTest):
             lambda x: self.settings_manager.set_vaxis_global_xp(x),
             lambda: logic.r64534_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

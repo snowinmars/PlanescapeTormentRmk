@@ -1,21 +1,21 @@
 import unittest
 
 from engine.tests import (LogicTest)
-from dlgs.inventory.n1201_logic import N1201Logic
+from dlgs.inventory.dn1201_logic import Dn1201Logic
 
-class N1201LogicTest(LogicTest):
+class Dn1201LogicTest(LogicTest):
     def test_initialization(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
         self.assertIsNotNone(logic.gsm)
 
 
     def test_methods_are_bound(self):
-        self.target_class = N1201Logic
+        self.target_class = Dn1201Logic
         self._methods_are_bound()
 
 
     def test_r44994_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.assertFalse(self.settings_manager.get_ur_1201())
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 0)
@@ -27,7 +27,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r44995_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self._false_then_true_action(
             lambda: self.settings_manager.get_lr_1201(),
@@ -36,7 +36,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r44996_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self._false_then_true_action(
             lambda: self.settings_manager.get_ll_1201(),
@@ -44,7 +44,7 @@ class N1201LogicTest(LogicTest):
         )
 
     def test_r44997_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self._false_then_true_action(
             lambda: self.settings_manager.get_ul_1201(),
@@ -53,7 +53,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r44998_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_ur_1201(True)
         self.settings_manager.set_lr_1201(True)
@@ -77,7 +77,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45000_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self._false_then_true_action(
             lambda: self.settings_manager.get_ur_1201(),
@@ -86,7 +86,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45001_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.assertNotEqual(self.settings_manager.get_1201_note_quest(), 2)
         self.assertFalse(self.settings_manager.get_lr_1201())
@@ -98,7 +98,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45002_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_1201_note_quest(2)
         self.assertNotEqual(self.settings_manager.get_1201_note_quest(), 0)
@@ -111,7 +111,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45003_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_1201_note_quest(2)
         self.assertNotEqual(self.settings_manager.get_1201_note_quest(), 0)
@@ -124,7 +124,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45004_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_1201_note_quest(2)
         self.assertNotEqual(self.settings_manager.get_1201_note_quest(), 0)
@@ -137,7 +137,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45006_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_ur_1201(True)
         self.settings_manager.set_lr_1201(True)
@@ -161,7 +161,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45008_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_ur_1201(True)
         self.settings_manager.set_lr_1201(True)
@@ -184,7 +184,7 @@ class N1201LogicTest(LogicTest):
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 0)
 
     def test_r45017_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_ur_1201(True)
         self.settings_manager.set_lr_1201(True)
@@ -208,7 +208,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45018_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_ur_1201(True)
         self.settings_manager.set_lr_1201(True)
@@ -232,7 +232,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45023_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
@@ -245,7 +245,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45025_action(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.settings_manager.set_has_tearring(False)
         self.settings_manager.set_has_1201_note(True)
@@ -260,7 +260,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45000_condition(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_ur_1201(x),
@@ -269,7 +269,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45001_condition(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.assertFalse(logic.r45001_condition())
 
@@ -279,7 +279,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45002_condition(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.assertTrue(logic.r45002_condition())
 
@@ -289,7 +289,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45003_condition(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_ll_1201(x),
@@ -298,7 +298,7 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45004_condition(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.assertTrue(logic.r45004_condition())
 
@@ -308,10 +308,14 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45005_condition(self):
-        logic = N1201Logic(self.settings_manager)
+        logic = Dn1201Logic(self.settings_manager)
 
         self.assertFalse(logic.r45005_condition())
 
         self.settings_manager.set_1201_note_quest(2)
 
         self.assertTrue(logic.r45005_condition())
+
+
+if __name__ == '__main__':
+    unittest.main()

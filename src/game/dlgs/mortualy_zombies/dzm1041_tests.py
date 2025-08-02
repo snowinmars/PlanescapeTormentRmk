@@ -294,3 +294,7 @@ class Dzm1041LogicTest(LogicTest):
             value,
             lambda: logic.r9187_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

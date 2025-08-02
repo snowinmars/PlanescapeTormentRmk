@@ -232,3 +232,6 @@ class Dzf891LogicTest(LogicTest):
         self.settings_manager.set_morte_quip(False)
         self.assertTrue(logic.r35298_condition())
 
+
+if __name__ == '__main__':
+    unittest.main()

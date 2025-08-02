@@ -2911,3 +2911,7 @@ class DvaxisLogicTest(LogicTest):
             value,
             lambda: logic.r4665_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

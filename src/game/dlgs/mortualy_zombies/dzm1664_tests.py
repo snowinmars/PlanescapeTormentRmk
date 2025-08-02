@@ -88,3 +88,7 @@ class Dzm1664LogicTest(LogicTest):
             lambda x: self.settings_manager.set_can_speak_with_dead(x),
             lambda: logic.r47006_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

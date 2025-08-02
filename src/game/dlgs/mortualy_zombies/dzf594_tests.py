@@ -231,3 +231,7 @@ class Dzf594LogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
         self.assertTrue(logic.r35042_condition())
+
+
+if __name__ == '__main__':
+    unittest.main()
