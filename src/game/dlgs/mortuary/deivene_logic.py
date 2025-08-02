@@ -11,7 +11,12 @@ class DeiveneLogic:
         self.gsm.set_dead_eivene(True)
 
 
-    def meet_eivene(self):
+    def r3418_action(self):
+        # FaceObject(Protagonist)
+        return
+
+
+    def r3422_action(self):
         self.gsm.set_meet_eivene(True)
 
 
@@ -20,6 +25,7 @@ class DeiveneLogic:
         self.gsm.set_has_needle(False)
         self.gsm.set_eivene_delivery(True)
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.update_journal('37701')
 
 
     def r3425_action(self):
@@ -43,7 +49,7 @@ class DeiveneLogic:
 
 
     def r3491_action(self):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         self.gsm.set_mortualy_alarmed(True)
 
 
@@ -56,10 +62,12 @@ class DeiveneLogic:
 
     def r3456_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_embalm_key_quest(2)
+        self.gsm.set_has_keyem(True)
 
 
     def r3459_action(self):
-        # ?.play_sound('SPTR_01')
+        # ?.play_sound("SPTR_01")
         self.gsm.update_journal('61612')
 
 
@@ -68,10 +76,13 @@ class DeiveneLogic:
         self.gsm.set_has_needle(False)
         self.gsm.set_eivene_delivery(True)
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.update_journal('38202')
 
 
     def r3470_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_embalm_key_quest(2)
+        self.gsm.set_has_keyem(True)
 
 
     def r3494_action(self):
@@ -88,6 +99,8 @@ class DeiveneLogic:
 
     def r3501_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_embalm_key_quest(2)
+        self.gsm.set_has_keyem(True)
 
 
     def r63478_action(self):
@@ -112,8 +125,8 @@ class DeiveneLogic:
 
 
     def r3424_condition(self):
-        return self.gsm.get_has_embalm() \
-               and self.gsm.get_has_needle()
+        return self.gsm.get_has_embalm() and \
+               self.gsm.get_has_needle()
 
 
     def r3425_condition(self):
@@ -157,13 +170,13 @@ class DeiveneLogic:
 
 
     def r3456_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               self.gsm.get_has_keyem()
 
 
     def r3457_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and not self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               not self.gsm.get_has_keyem()
 
 
     def r3459_condition(self):
@@ -179,18 +192,18 @@ class DeiveneLogic:
 
 
     def r3469_condition(self):
-        return self.gsm.get_has_embalm() \
-               and self.gsm.get_has_needle()
+        return self.gsm.get_has_embalm() and \
+               self.gsm.get_has_needle()
 
 
     def r3470_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               self.gsm.get_has_keyem()
 
 
     def r3497_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and not self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               not self.gsm.get_has_keyem()
 
 
     def r3494_condition(self):
@@ -202,13 +215,13 @@ class DeiveneLogic:
 
 
     def r3501_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               self.gsm.get_has_keyem()
 
 
     def r3502_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and not self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               not self.gsm.get_has_keyem()
 
 
     def r4354_condition(self):

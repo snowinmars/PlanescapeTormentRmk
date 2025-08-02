@@ -6,6 +6,9 @@ class Dmorte1Logic:
     def dmorte1_init(self):
         self.gsm.glm.set_location('mortuary_f2r1')
         self.gsm.set_in_party_morte(True)
+
+
+    def r39793_action(self):
         self.gsm.set_meet_morte(True)
 
 

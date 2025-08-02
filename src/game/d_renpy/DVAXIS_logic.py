@@ -398,7 +398,7 @@ class DvaxisLogic:
 
 
     def r4630_action(self):
-        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        FadeToColor([20.0],0) Wait(1) self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
         Wait(2) FadeFromColor([20.0],0) self.gsm.inc_exp_custom('party', 500)
         self.gsm.set_vaxis_global_xp(True)
 
@@ -408,12 +408,12 @@ class DvaxisLogic:
 
 
     def r4632_action(self):
-        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        FadeToColor([20.0],0) Wait(1) self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
         Wait(2) FadeFromColor([20.0],0)
 
 
     def r64533_action(self):
-        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        FadeToColor([20.0],0) Wait(1) self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
         Wait(2) FadeFromColor([20.0],0)
 
 

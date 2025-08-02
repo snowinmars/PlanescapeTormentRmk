@@ -179,7 +179,7 @@ class DdhallLogic:
 
     def r858_condition(self):
         return not self.gsm.get_escape_mortuary() and \
-               not self.gsm.is_internal_location_visited('AR0200')
+               not self.gsm.is_visited_internal_location('AR0200')
 
 
     def r870_condition(self):

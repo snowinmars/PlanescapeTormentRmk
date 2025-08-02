@@ -2,6 +2,7 @@
     from dlgs.mortuary.dmorte1_logic import Dmorte1Logic
     dmorte1Logic = Dmorte1Logic(renpy.store.global_settings_manager)
 
+
 # ###
 # Original:  DLG/DMORTE1.DLG
 # Starts:    dmorte1_s0 dmorte1_s24 dmorte1_s26 dmorte1_s30 dmorte1_kill
@@ -51,6 +52,7 @@ label dmorte1_s0:  # from -
     menu:
         'Чт?.. Ты кто?':
             # r0 # reply39793
+            $ dmorte1Logic.r39793_action()
             jump dmorte1_s1
 
 
@@ -62,6 +64,7 @@ label dmorte1_s1:  # from 0.0
         'Я… не знаю. Не могу вспомнить.':
             # r1 # reply39796
             jump dmorte1_s2
+
         'Я *первый* спросил тебя, череп.':
             # r2 # reply39797
             jump dmorte1_s3
@@ -86,6 +89,7 @@ label dmorte1_s3:  # from 1.1
         'Я… не знаю. Не могу вспомнить.':
             # r4 # reply39801
             jump dmorte1_s2
+
         'Ты первый, череп. В последний раз спрашиваю.':
             # r5 # reply39802
             jump dmorte1_s4
@@ -113,7 +117,7 @@ label dmorte1_s5:  # from 2.0
 
 # s6 # say39807
 label dmorte1_s6:  # from 5.0
-    morte 'Оно называется @Моргом@… это такое большое черное здание с чарующей архитектурой беременной паучихи.'
+    morte 'Оно называется «Моргом»… это такое большое черное здание с чарующей архитектурой беременной паучихи.'
 
     menu:
         'Морг? Постой… я умер?':
@@ -217,6 +221,7 @@ label dmorte1_s14:  # from 13.0
             # r16 # reply39824
             $ dmorte1Logic.r39824_action()
             jump dmorte1_s15
+
         'Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?':
             # r17 # reply39825
             jump dmorte1_s16
@@ -283,6 +288,7 @@ label dmorte1_s20:  # from 19.0
         'Я имел ввиду помощь в нападении на *трупов*.':
             # r24 # reply39838
             jump dmorte1_s21
+
         'Ну хорошо тогда.':
             # r25 # reply39839
             jump dmorte1_s23
@@ -296,6 +302,7 @@ label dmorte1_s21:  # from 20.0
         'Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель.':
             # r26 # reply39841
             jump dmorte1_s22
+
         'Ну хорошо тогда.':
             # r27 # reply39842
             jump dmorte1_s23
@@ -336,7 +343,7 @@ label dmorte1_s24:  # from -
 
 
 # s26 # say39851
-label dmorte1_s26:  # from -
+label dmorte1_s26:  # -
     call dmorte1_init
     morte 'Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?'
 
@@ -345,6 +352,7 @@ label dmorte1_s26:  # from -
             # r32 # reply39852
             $ dmorte1Logic.r39852_action()
             jump dmorte1_dispose
+
         'Не сейчас, Морт.':
             # r33 # reply39853
             jump dmorte1_s27
@@ -359,10 +367,12 @@ label dmorte1_s27:  # from 26.1
         'Морт, у тебя НЕТ ни того, ни другого.':
             # r34 # reply39855
             jump dmorte1_s28
+
         'Ладно. Я передумал. Давай, идем.':
             # r35 # reply39856
             $ dmorte1Logic.r39856_action()
             jump dmorte1_dispose
+
         'Не сейчас, Морт. Может быть потом.':
             # r36 # reply39857
             jump dmorte1_s28
@@ -379,6 +389,7 @@ label dmorte1_s28:  # from 27.0 27.2
             # r37 # reply39859
             $ dmorte1Logic.r39859_action()
             jump dmorte1_dispose
+
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r38 # reply39860
             jump dmorte1_s29
@@ -395,7 +406,7 @@ label dmorte1_s29:  # from 28.1
 
 
 # s30 # say39863
-label dmorte1_s30:  # from -
+label dmorte1_s30:  # -
     call dmorte1_init
     morte 'Что тебя гложет, шеф?'
 
@@ -406,7 +417,7 @@ label dmorte1_s30:  # from -
 
 
 # s31 # say42298
-label dmorte1_s31:  # from -
+label dmorte1_s31:  # -
     morte 'Э, шеф… они не слышат тебя, понятно? Они мертвы.'
 
     menu:

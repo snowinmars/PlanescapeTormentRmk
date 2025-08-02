@@ -330,7 +330,7 @@ class DialogueProcessor:
         self._add_replacement('GiveItem("KeyEm","Vaxis")', 'self.gsm.set_has_keyem(False) self.gsm.set_vaxis_has_keyem(True)')
         self._add_replacement('Global("Appearance","GLOBAL",1)', 'return self.gsm.get_appearance()')
         self._add_replacement('!Global("Appearance","GLOBAL",1)', 'return not self.gsm.get_appearance()')
-        self._add_replacement('SetNamelessDisguise(ZOMBIE)', 'self.gsm.set_looks_like("zombie")')
+        self._add_replacement('SetNamelessDisguise(ZOMBIE)', "self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')")
         self._add_replacement('HPPercent(Protagonist,100)', 'return self.gsm.get_hp() == 100')
         self._add_replacement('HPPercentGT(Protagonist,49)', 'return self.gsm.get_hp() > 49')
         self._add_replacement('HPPercentLT(Protagonist,50)', 'return self.gsm.get_hp() < 50')
@@ -743,7 +743,7 @@ class DialogueProcessor:
         def replace_visited(match):
             not_op, locationId, value = match.groups()
             isVisited = (not_op == '!') != (value == '1')
-            return f"return{' ' if isVisited else ' not '}self.gsm.is_internal_location_visited('{locationId}')"
+            return f"return{' ' if isVisited else ' not '}self.gsm.is_visited_internal_location('{locationId}')"
 
         return self.GLOBAL_VISITED_REGEX.sub(replace_visited, script)
 

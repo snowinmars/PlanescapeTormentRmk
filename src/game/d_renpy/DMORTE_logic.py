@@ -166,13 +166,13 @@ class DmorteLogic:
 
 
     def r64535_action(self):
-        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        FadeToColor([20.0],0) Wait(1) self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
         Wait(2) FadeFromColor([20.0],0) self.gsm.inc_exp_custom('party', 500)
         self.gsm.set_vaxis_global_xp(True)
 
 
     def r64534_action(self):
-        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        FadeToColor([20.0],0) Wait(1) self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
         Wait(2) FadeFromColor([20.0],0)
 
 
@@ -2694,16 +2694,16 @@ class DmorteLogic:
 
     def r65641_condition(self):
         return self.gsm.get_pharod_quest() > 1 and \
-               not self.gsm.is_internal_location_visited('AR0401')
+               not self.gsm.is_visited_internal_location('AR0401')
 
 
     def r65642_condition(self):
-        return self.gsm.is_internal_location_visited('AR0401') and \
-               not self.gsm.is_internal_location_visited('AR0500')
+        return self.gsm.is_visited_internal_location('AR0401') and \
+               not self.gsm.is_visited_internal_location('AR0500')
 
 
     def r65643_condition(self):
-        return self.gsm.is_internal_location_visited('AR0500') and \
+        return self.gsm.is_visited_internal_location('AR0500') and \
                not self.gsm.get_know_ravel()
 
 
@@ -2715,20 +2715,20 @@ class DmorteLogic:
     def r65645_condition(self):
         return self.gsm.get_know_ravel() and \
                self.gsm.get_know_ravel_key() and \
-               not self.gsm.is_internal_location_visited('AR0610')
+               not self.gsm.is_visited_internal_location('AR0610')
 
 
     def r65646_condition(self):
-        return self.gsm.is_internal_location_visited('AR0610') and \
-               not self.gsm.is_internal_location_visited('AR0700')
+        return self.gsm.is_visited_internal_location('AR0610') and \
+               not self.gsm.is_visited_internal_location('AR0700')
 
 
     def r65647_condition(self):
-        return self.gsm.is_internal_location_visited('AR0700')
+        return self.gsm.is_visited_internal_location('AR0700')
 
 
     def r65666_condition(self):
-        return not self.gsm.is_internal_location_visited('AR0601')
+        return not self.gsm.is_visited_internal_location('AR0601')
 
 
     def r65674_condition(self):
@@ -2753,12 +2753,12 @@ class DmorteLogic:
 
     def r65718_condition(self):
         return self.gsm.get_grace_smell_mimir() and \
-               not self.gsm.is_internal_location_visited('AR1000')
+               not self.gsm.is_visited_internal_location('AR1000')
 
 
     def r65719_condition(self):
         return self.gsm.get_grace_smell_mimir() and \
-               self.gsm.is_internal_location_visited('AR1000')
+               self.gsm.is_visited_internal_location('AR1000')
 
 
     def r65738_condition(self):

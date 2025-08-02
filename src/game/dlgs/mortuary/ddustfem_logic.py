@@ -5,17 +5,17 @@ class DdustfemLogic:
 
     def r1225_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 
     def r1246_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 
     def r1249_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 
     def r33227_action(self):
@@ -40,29 +40,29 @@ class DdustfemLogic:
 
     def r4307_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 
     def r4308_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
         self.gsm.gcm.modify_property('protagonist', 'law', -1)
 
 
     def r4309_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 
     def r4317_action(self):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
         return
 
 
     def r4318_action(self):
         self.gsm.inc_choke()
         self.gsm.set_choke_memory(True)
-        # ?.play_sound('SPTR_01')
+        # ?.play_sound("SPTR_01")
         self.gsm.inc_choke_dustman()
         self.gsm.inc_exp_custom('party', 15)
 
@@ -70,22 +70,23 @@ class DdustfemLogic:
     def r4319_action(self):
         self.gsm.inc_choke_dustman()
         self.gsm.inc_choke()
-        # Kill(Myself) Deactivate(Myself) # TODO [snow]: how to kill npc without id? Add id?
+        self.gsm.set_dead_dustfem(True) # TODO [snow]: how to kill npc without id? Add id?
+        # Deactivate(Myself)
         self.gsm.inc_exp_custom('party', 15)
 
 
     def r4320_action(self):
-        # Kill(Myself) Deactivate(Myself) # TODO [snow]: how to kill npc without id? Add id?
+        self.gsm.set_dead_dustfem(True) # TODO [snow]: how to kill npc without id? Add id?
         self.gsm.inc_exp_custom('protagonist', 250)
 
 
     def r4321_action(self):
         self.gsm.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
 
 
     def r4322_action(self):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
         return
 
 
@@ -118,43 +119,43 @@ class DdustfemLogic:
 
 
     def r1253_condition(self):
-        return self.gsm.get_meet_dhall() \
-               and self.gsm.glm.is_visited_internal_location('AR0202')
+        return self.gsm.get_meet_dhall() and \
+               self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r1255_condition(self):
-        return self.gsm.get_meet_dhall() \
-               and not self.gsm.glm.is_visited_internal_location('AR0202')
+        return self.gsm.get_meet_dhall() and \
+               not self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r1258_condition(self):
-        return self.gsm.get_meet_deionarra() \
-               and self.gsm.glm.is_visited_internal_location('AR0201')
+        return self.gsm.get_meet_deionarra() and \
+               self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r4336_condition(self):
-        return self.gsm.get_meet_deionarra() \
-               and not self.gsm.glm.is_visited_internal_location('AR0201')
+        return self.gsm.get_meet_deionarra() and \
+               not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33224_condition(self):
-        return self.gsm.get_meet_soego() \
-               and self.gsm.glm.is_visited_internal_location('AR0201')
+        return self.gsm.get_meet_soego() and \
+               self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33226_condition(self):
-        return self.gsm.get_meet_soego() \
-               and not self.gsm.glm.is_visited_internal_location('AR0201')
+        return self.gsm.get_meet_soego() and \
+               not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33227_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.get_talked_to_dustfem_times() == 1
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_talked_to_dustfem_times() == 1
 
 
     def r33229_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.get_talked_to_dustfem_times() > 1
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_talked_to_dustfem_times() > 1
 
 
     def r1272_condition(self):
@@ -278,18 +279,18 @@ class DdustfemLogic:
 
 
     def r4312_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_warning() == 0
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_warning() == 0
 
 
     def r4313_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_warning() == 1
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_warning() == 1
 
 
     def r4314_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_warning() > 1
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_warning() > 1
 
 
     def r4315_condition(self):

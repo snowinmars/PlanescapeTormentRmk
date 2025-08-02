@@ -18,10 +18,15 @@ class DdhallLogic:
 
     def r830_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_vaxis_betrayed(2)
+        self.gsm.update_journal('39468')
 
 
     def r831_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_vaxis_betrayed(2)
+        self.gsm.gcm.modify_property_once('protagonist', 'good', -3, 'globalevil_dhall_2')
+        self.gsm.update_journal('39469')
 
 
     def r843_action(self):
@@ -54,10 +59,12 @@ class DdhallLogic:
 
     def r953_action(self):
         self.gsm.set_meet_dustmen(True)
+        self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r958_action(self):
         self.gsm.set_meet_dustmen(True)
+        self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r1301_action(self):
@@ -66,10 +73,12 @@ class DdhallLogic:
 
     def r974_action(self):
         self.gsm.set_meet_dustmen(True)
+        self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r985_action(self):
         self.gsm.set_meet_dustmen(True)
+        self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r1327_action(self):
@@ -86,6 +95,7 @@ class DdhallLogic:
 
     def r6033_action(self):
         self.gsm.set_meet_dustmen(True)
+        self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r6051_action(self):
@@ -109,8 +119,8 @@ class DdhallLogic:
 
 
     def r5073_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
 
 
     def r5074_condition(self):
@@ -138,13 +148,13 @@ class DdhallLogic:
 
 
     def r835_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_mortualy_alarmed()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_mortualy_alarmed()
 
 
     def r5058_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_mortualy_alarmed()
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_mortualy_alarmed()
 
 
     def r842_condition(self):
@@ -160,15 +170,15 @@ class DdhallLogic:
 
 
     def r854_condition(self):
-        return self.gsm.get_meet_vaxis() \
-               and not self.gsm.get_dead_vaxis() \
-               and not self.gsm.get_vaxis_leave() \
-               and self.gsm.get_vaxis_betrayed() == 0
+        return self.gsm.get_meet_vaxis() and \
+               not self.gsm.get_dead_vaxis() and \
+               not self.gsm.get_vaxis_leave() and \
+               self.gsm.get_vaxis_betrayed() == 0
 
 
     def r858_condition(self):
-        return not self.gsm.get_escape_mortuary() \
-               and not self.gsm.glm.is_visited_internal_location('AR0200')
+        return not self.gsm.get_escape_mortuary() and \
+               not self.gsm.is_visited_internal_location('AR0200')
 
 
     def r870_condition(self):
@@ -240,8 +250,8 @@ class DdhallLogic:
 
 
     def r5078_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
 
 
     def r5079_condition(self):
@@ -253,8 +263,8 @@ class DdhallLogic:
 
 
     def r5082_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
 
 
     def r5083_condition(self):

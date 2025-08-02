@@ -1,10 +1,10 @@
-﻿init 10 python in copearc:
+﻿init 10 python:
     from dlgs.inventory.copearc_logic import CopearcLogic
     copearcLogic = CopearcLogic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DCOPEARC.DLG
+# Original:  DLG/COPEARC.DLG
 # ###
 
 
@@ -19,7 +19,7 @@ label copearc_dispose:
 
 
 # s0 # say46723
-label copearc_s0:  # from - # IF ~  True()
+label copearc_s0:  # - # IF ~  True()
     call copearc_init
     teller 'Эта медная серьга на вид невероятно древняя. Похоже, она предназначена для ношения, но у нее нет ничего, что позволило бы прицепить ее к твоему уху. Тем не менее, на внутренней поверхности серьги есть несколько странных выемок.'
 
@@ -27,10 +27,12 @@ label copearc_s0:  # from - # IF ~  True()
         'Осмотреть выемки.':
             # r0 # reply46724
             jump copearc_s1
+
         'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби «79».' if copearcLogic.r46725_condition():
             # r1 # reply46725
             $ copearcLogic.r46725_action()
             jump copearc_s2
+
         'Отложить серьгу.':
             # r2 # reply46726
             jump copearc_dispose
@@ -41,10 +43,11 @@ label copearc_s1:  # from 0.0
     teller 'Выемки равномерно распределены по внутренней поверхности серьги; при более детальном изучении они начинают напоминать небольшие клыки. Они определенно кем-то сделаны, но для чего — непонятно.'
 
     menu:
-        'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби #79.' if copearcLogic.r46728_condition():
+        'Вставить ноготь в выемку, указанную треугольником в зубчатом круге, который ты видел на лбу у зомби «79».' if copearcLogic.r46728_condition():
             # r3 # reply46728
             $ copearcLogic.r46728_action()
             jump copearc_s2
+
         'Отложить серьгу.':
             # r4 # reply46729
             jump copearc_dispose

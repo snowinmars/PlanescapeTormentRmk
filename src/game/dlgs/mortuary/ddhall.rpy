@@ -33,14 +33,14 @@ label ddhall_dispose:
 
 
 # s0 # say822
-label ddhall_s0:  # from - # Manually checked EXTERN ~DMORTE~ : 104
+label ddhall_s0:  # - # Manually checked EXTERN ~DMORTE~ : 104
     teller 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.'
     teller 'Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
     jump dmorte_s104
 
 # s1 # say826
-label ddhall_s1:  # from -
+label ddhall_s1:  # -
     teller 'Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя.'
     dhall_unknown 'Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный.'
     teller 'Он откладывает перо.'
@@ -63,24 +63,31 @@ label ddhall_s2:  # from 21.0
         'Где ее тело?' if ddhallLogic.r5070_condition():
             # r1 # reply5070
             jump ddhall_s42
+
         'Я ничего о ней не знаю.' if ddhallLogic.r5071_condition():
             # r2 # reply5071
             jump ddhall_s43
+
         'Она узнала меня, но я не смог ее вспомнить.' if ddhallLogic.r5072_condition():
             # r3 # reply5072
             jump ddhall_s28
+
         'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5073_condition():
             # r4 # reply5073
             jump ddhall_s12
+
         'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5074_condition():
             # r5 # reply5074
             jump ddhall_s12
+
         'Возможно. У меня есть другие вопросы к тебе…':
             # r6 # reply6063
             jump ddhall_s9
+
         'Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.' if ddhallLogic.r6064_condition():
             # r7 # reply6064
             jump ddhall_s11
+
         'Возможно, нет. Прощай.' if ddhallLogic.r13288_condition():
             # r8 # reply13288
             jump ddhall_s11
@@ -96,10 +103,12 @@ label ddhall_s3:  # from 9.0
             # r9 # reply830
             $ ddhallLogic.r830_action()
             jump ddhall_s4
+
         'Да. Он очень хорошо замаскировался.' if ddhallLogic.r831_condition():
             # r10 # reply831
             $ ddhallLogic.r831_action()
             jump ddhall_s4
+
         'Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…':
             # r11 # reply834
             jump ddhall_s9
@@ -115,13 +124,14 @@ label ddhall_s4:  # from 3.0 3.1
         'Спасибо. У меня есть другие вопросы…':
             # r12 # reply836
             jump ddhall_s9
+
         'Отлично. Прощай.':
             # r13 # reply837
             jump ddhall_s11
 
 
 # s5 # say838
-label ddhall_s5:  # from - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN ~DMORTE~ : 102
+label ddhall_s5:  # - # IF ~  Global("Dhall","GLOBAL",0) Manually checked EXTERN ~DMORTE~ : 102
     teller 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
     teller 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
     teller 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
@@ -130,12 +140,15 @@ label ddhall_s5:  # from - # IF ~  Global("Dhall","GLOBAL",0) Manually checked E
         'Приветствую.' if ddhallLogic.r839_condition():
             # r14 # reply839
             jump dmorte_s102
+
         'Приветствую.' if ddhallLogic.r835_condition():
             # r15 # reply835
             jump ddhall_s7
+
         'Приветствую.' if ddhallLogic.r5058_condition():
             # r16 # reply5058
             jump ddhall_s6
+
         'Оставить старого писаря в покое.':
             # r17 # reply5060
             jump ddhall_dispose
@@ -152,13 +165,16 @@ label ddhall_s6:  # from 5.2
         'Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…' if ddhallLogic.r842_condition():
             # r18 # reply842
             jump ddhall_s9
+
         'Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…' if ddhallLogic.r843_condition():
             # r19 # reply843
             $ ddhallLogic.r843_action()
             jump ddhall_s9
+
         'Ты знаешь меня?' if ddhallLogic.r5062_condition():
             # r20 # reply5062
             jump ddhall_s44
+
         'Прощай.':
             # r21 # reply5063
             jump ddhall_dispose
@@ -188,12 +204,15 @@ label ddhall_s8:  # from 22.0
         'Ты — тленный, и все же не пытаешься убить меня. Почему?':
             # r23 # reply940
             jump ddhall_s23
+
         'Расскажи мне побольше о Морге.':
             # r24 # reply911
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r25 # reply913
             jump ddhall_s9
+
         'Я выслушал достаточно. Прощай, Дхолл.':
             # r26 # reply6038
             jump ddhall_s11
@@ -207,25 +226,32 @@ label ddhall_s9:  # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 1
         'Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?' if ddhallLogic.r854_condition():
             # r27 # reply854
             jump ddhall_s3
+
         'Что это за место?':
             # r28 # reply857
             jump ddhall_s10
+
         'Как я попал сюда?':
             # r29 # reply855
             jump ddhall_s15
+
         'Не подскажешь, как мне выбраться отсюда?' if ddhallLogic.r858_condition():
             # r30 # reply858
             jump ddhall_s13
+
         'Ты знаешь, кто я?':
             # r31 # reply5069
             $ ddhallLogic.r5069_action()
             jump ddhall_s21
+
         'Чем ты здесь занимаешься?':
             # r32 # reply5748
             jump ddhall_s25
+
         'Твой кашель ужасен. Ты хорошо себя чувствуешь?':
             # r33 # reply6065
             jump ddhall_s26
+
         'Ничего… прощай, Дхолл.':
             # r34 # reply41663
             jump ddhall_s11
@@ -241,21 +267,27 @@ label ddhall_s10:  # from 9.1
         'Расскажи мне о Морге.':
             # r35 # reply861
             jump ddhall_s32
+
         '*Неугомонный*?':
             # r36 # reply860
             jump ddhall_s38
+
         'Тень этой жизни?':
             # r37 # reply862
             jump ddhall_s33
+
         'Снова?.. Я был здесь раньше?':
             # r38 # reply863
             jump ddhall_s14
+
         'Как я попал сюда?':
             # r39 # reply864
             jump ddhall_s15
+
         'У меня есть другие вопросы…':
             # r40 # reply865
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r41 # reply866
             jump ddhall_s11
@@ -285,9 +317,11 @@ label ddhall_s12:  # from 2.3 2.4 42.2 42.3 43.1 43.2
         'Где та женщина, которую ты упомянул?' if ddhallLogic.r870_condition():
             # r43 # reply870
             jump ddhall_s42
+
         'Я не вижу изъяна в твоих рассуждениях. У меня еще вопросы…':
             # r44 # reply871
             jump ddhall_s9
+
         'Тогда я поищу их. Возможно, они смогут возродить мою память. Прощай.':
             # r45 # reply872
             jump ddhall_s11
@@ -303,6 +337,7 @@ label ddhall_s13:  # from 9.3
         'Понятно. У меня еще вопросы…':
             # r46 # reply876
             jump ddhall_s9
+
         'Тогда прощай, Дхолл.':
             # r47 # reply877
             jump ddhall_dispose
@@ -318,18 +353,23 @@ label ddhall_s14:  # from 10.3
         '*Неугомонный*?':
             # r48 # reply880
             jump ddhall_s38
+
         'Ранен?':
             # r49 # reply881
             jump ddhall_s34
+
         'Тень жизни?':
             # r50 # reply883
             jump ddhall_s33
+
         'Расскажи мне побольше о Морге.':
             # r51 # reply879
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r52 # reply5751
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r53 # reply5752
             jump ddhall_s11
@@ -345,12 +385,15 @@ label ddhall_s15:  # from 9.2 10.4 32.5
             # r54 # reply886
             $ ddhallLogic.r886_action()
             jump ddhall_s16
+
         'Расскажи мне побольше о Морге.':
             # r55 # reply887
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r56 # reply888
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r57 # reply889
             jump ddhall_s11
@@ -366,15 +409,19 @@ label ddhall_s16:  # from 15.0
         'Кто этот Фарод?' if ddhallLogic.r891_condition():
             # r58 # reply891
             jump ddhall_s17
+
         'Похоже, тебе не очень-то нравится Фарод.' if ddhallLogic.r892_condition():
             # r59 # reply892
             jump ddhall_s35
+
         'Расскажи мне побольше о Морге.':
             # r60 # reply893
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r61 # reply894
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r62 # reply5753
             jump ddhall_s11
@@ -390,15 +437,19 @@ label ddhall_s17:  # from 16.0
         'Где я могу найти этого Фарода?':
             # r63 # reply897
             jump ddhall_s18
+
         'Похоже, тебе не очень-то нравится Фарод.' if ddhallLogic.r898_condition():
             # r64 # reply898
             jump ddhall_s35
+
         'Расскажи мне побольше о Морге.':
             # r65 # reply899
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r66 # reply5754
             jump ddhall_s9
+
         'Тогда пойду и разыщу этого Фарода. Прощай, Дхолл.':
             # r67 # reply6031
             jump ddhall_s19
@@ -412,12 +463,15 @@ label ddhall_s18:  # from 17.0 29.1 31.0 35.1 36.1
         'Тем не менее, я должен его найти.':
             # r68 # reply902
             jump ddhall_s19
+
         'Расскажи мне побольше о Морге.':
             # r69 # reply903
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r70 # reply904
             jump ddhall_s9
+
         'У меня такое чувство, что наши пути еще пересекутся. Прощай, Дхолл.':
             # r71 # reply5755
             jump ddhall_s19
@@ -434,12 +488,15 @@ label ddhall_s19:  # from 17.4 18.0 18.3 29.3 31.2
             # r72 # reply906
             $ ddhallLogic.r906_action()
             jump ddhall_s20
+
         'Расскажи мне побольше о Морге.':
             # r73 # reply905
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r74 # reply907
             jump ddhall_s9
+
         'Я не могу больше с тобой говорить. Прощай, Дхолл.':
             # r75 # reply5756
             jump ddhall_s11
@@ -455,12 +512,15 @@ label ddhall_s20:  # from 19.0
         'Похоже, тебе не очень-то нравится Фарод.' if ddhallLogic.r910_condition():
             # r76 # reply910
             jump ddhall_s35
+
         'Расскажи мне побольше о Морге.':
             # r77 # reply909
             jump ddhall_s32
+
         'Спасибо. У меня есть другие вопросы…':
             # r78 # reply5757
             jump ddhall_s9
+
         'Тогда я пойду и поспрашиваю тамошних жителей. Прощай.':
             # r79 # reply6030
             jump ddhall_s11
@@ -477,9 +537,11 @@ label ddhall_s21:  # from 9.4
             # r80 # reply921
             $ ddhallLogic.r921_action()
             jump ddhall_s2
+
         'У меня есть другие вопросы…':
             # r81 # reply922
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r82 # reply923
             jump ddhall_s11
@@ -495,12 +557,15 @@ label ddhall_s22:  # from 47.0
         'Неприемлемо? Похоже, мое положение оставляет желать лучшего.':
             # r83 # reply917
             jump ddhall_s8
+
         'Ясно. Расскажи мне побольше о Морге.':
             # r84 # reply918
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r85 # reply919
             jump ddhall_s9
+
         'Думаю, я услышал достаточно. Прощай, Дхолл.':
             # r86 # reply920
             jump ddhall_s11
@@ -516,12 +581,15 @@ label ddhall_s23:  # from 8.0
         'Каковы твои обязанности?':
             # r87 # reply927
             jump ddhall_s25
+
         'Расскажи мне побольше о Морге.':
             # r88 # reply928
             jump ddhall_s32
+
         'Хорошо. У меня есть другие вопросы…':
             # r89 # reply925
             jump ddhall_s9
+
         'Я выслушал достаточно. Прощай, Дхолл.':
             # r90 # reply6039
             jump ddhall_s11
@@ -537,9 +605,11 @@ label ddhall_s24:  # from 25.0
         'Расскажи мне побольше о Морге.':
             # r91 # reply1305
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r92 # reply6041
             jump ddhall_s9
+
         'Кажется, я обязан тебе. Прощай, Дхолл.':
             # r93 # reply6042
             jump ddhall_s11
@@ -556,12 +626,15 @@ label ddhall_s25:  # from 9.5 23.0
             # r94 # reply931
             $ ddhallLogic.r931_action()
             jump ddhall_s24
+
         'Расскажи мне побольше о Морге.':
             # r95 # reply932
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r96 # reply933
             jump ddhall_s9
+
         'Отлично. Прощай, Дхолл.':
             # r97 # reply6040
             jump ddhall_s11
@@ -577,13 +650,16 @@ label ddhall_s26:  # from 9.6
         'Границу Вечности?':
             # r98 # reply935
             jump ddhall_s41
+
         'Ты уверен? Должен же быть способ помочь тебе.':
             # r99 # reply936
             $ ddhallLogic.r936_action()
             jump ddhall_s27
+
         'У меня есть другие вопросы…':
             # r100 # reply937
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r101 # reply960
             jump ddhall_s11
@@ -597,6 +673,7 @@ label ddhall_s27:  # from 26.1
         'Хорошо. У меня есть другие вопросы…':
             # r102 # reply1303
             jump ddhall_s9
+
         'Пусть будет так. Прощай, Дхолл.':
             # r103 # reply1304
             jump ddhall_s11
@@ -612,9 +689,11 @@ label ddhall_s28:  # from 2.2 42.1
         'Она разговаривала со мной, Дхолл. Ее душа находится здесь.':
             # r104 # reply981
             jump ddhall_s30
+
         'Возможно, я это выдумал. У меня есть другие вопросы…':
             # r105 # reply982
             jump ddhall_s9
+
         'Не уверен, что она достигла Истинной Смерти. Прощай, Дхолл.':
             # r106 # reply873
             jump ddhall_s11
@@ -631,15 +710,19 @@ label ddhall_s29:  # from 36.0
         'Я потерял дневник.' if ddhallLogic.r942_condition():
             # r107 # reply942
             jump ddhall_s31
+
         'Хм-м. Ты не знаешь, где мне найти Фарода?' if ddhallLogic.r943_condition():
             # r108 # reply943
             jump ddhall_s18
+
         'У меня есть другие вопросы…':
             # r109 # reply944
             jump ddhall_s9
+
         'Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл.' if ddhallLogic.r6026_condition():
             # r110 # reply6026
             jump ddhall_s19
+
         'Понятно. Прощай, Дхолл.' if ddhallLogic.r874_condition():
             # r111 # reply874
             jump ddhall_s11
@@ -654,6 +737,7 @@ label ddhall_s30:  # from 28.0
         'Возможно, мне показалось. У меня еще вопросы.':
             # r112 # reply946
             jump ddhall_s9
+
         'Возможно, мы поговорим об этом позже. Прощай, Дхолл.':
             # r113 # reply947
             jump ddhall_s11
@@ -667,12 +751,15 @@ label ddhall_s31:  # from 29.0
         'Где мне найти этого Фарода?' if ddhallLogic.r948_condition():
             # r114 # reply948
             jump ddhall_s18
+
         'Понятно. У меня еще вопросы…':
             # r115 # reply949
             jump ddhall_s9
+
         'В таком случае, я должен разыскать его. Прощай, Дхолл.' if ddhallLogic.r6027_condition():
             # r116 # reply6027
             jump ddhall_s19
+
         'Понятно. Прощай, Дхолл.' if ddhallLogic.r6066_condition():
             # r117 # reply6066
             jump ddhall_s11
@@ -688,25 +775,32 @@ label ddhall_s32:  # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 
         'Тень жизни?':
             # r118 # reply951
             jump ddhall_s33
+
         'Истинной Смерти?':
             # r119 # reply953
             $ ddhallLogic.r953_action()
             jump ddhall_s48
+
         'Тленных?':
             # r120 # reply954
             jump ddhall_s47
+
         'Сигил?':
             # r121 # reply955
             jump ddhall_s37
+
         'Ранен?':
             # r122 # reply956
             jump ddhall_s34
+
         'Как я попал сюда?':
             # r123 # reply846
             jump ddhall_s15
+
         'У меня есть другие вопросы…':
             # r124 # reply5735
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r125 # reply6062
             jump ddhall_s11
@@ -722,15 +816,19 @@ label ddhall_s33:  # from 10.2 14.2 32.0 41.0 47.2 49.0
             # r126 # reply958
             $ ddhallLogic.r958_action()
             jump ddhall_s48
+
         'Почему ты решил, что эта жизнь ненастоящая?':
             # r127 # reply959
             jump ddhall_s50
+
         'Расскажи мне еще о Морге.':
             # r128 # reply5736
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r129 # reply5737
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r130 # reply5738
             jump ddhall_s11
@@ -747,12 +845,15 @@ label ddhall_s34:  # from 14.1 32.4
             # r131 # reply1301
             $ ddhallLogic.r1301_action()
             jump ddhall_s53
+
         'Расскажи мне побольше о Морге.':
             # r132 # reply1302
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r133 # reply5746
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r134 # reply5747
             jump ddhall_s11
@@ -768,12 +869,15 @@ label ddhall_s35:  # from 16.1 17.1 20.0
         'Рыцарь легкой наживы?':
             # r135 # reply963
             jump ddhall_s36
+
         'Ты не знаешь, где я могу найти Фарода?' if ddhallLogic.r964_condition():
             # r136 # reply964
             jump ddhall_s18
+
         'Понятно. У меня еще вопросы…':
             # r137 # reply965
             jump ddhall_s9
+
         'Звучит ободряюще. Прощай, Дхолл.':
             # r138 # reply6028
             jump ddhall_s11
@@ -790,12 +894,15 @@ label ddhall_s36:  # from 35.0
         'Мог ли Фарод взять что-нибудь у *меня*?':
             # r139 # reply967
             jump ddhall_s29
+
         'Ты не знаешь, где я могу найти Фарода?' if ddhallLogic.r968_condition():
             # r140 # reply968
             jump ddhall_s18
+
         'Понятно. У меня еще вопросы…':
             # r141 # reply969
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r142 # reply6029
             jump ddhall_s11
@@ -809,9 +916,11 @@ label ddhall_s37:  # from 32.3
         'Расскажи мне еще о Морге.':
             # r143 # reply971
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r144 # reply972
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r145 # reply5758
             jump ddhall_s11
@@ -828,19 +937,22 @@ label ddhall_s38:  # from 10.1 14.0
             # r146 # reply974
             $ ddhallLogic.r974_action()
             jump ddhall_s48
+
         'Расскажи мне еще о Морге.':
             # r147 # reply975
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r148 # reply5749
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r149 # reply5750
             jump ddhall_s11
 
 
 # s39 # say884
-label ddhall_s39:
+label ddhall_s39:  # -
     dhall 'Ты будешь делать то же, что и раньше, Неугомонный. Разыщешь того любителя звенелок, того плешивого идиота, Червеволосого, и вернешь свое имущество.'
     dhall 'После продолжишь свои бессмысленные поиски, пытаясь выполнить бессмысленные задания, собирая бессмысленные предметы. Затем ты падешь и вернешься назад к нам.'
     dhall 'Сэкономь время и поговори с мной сейчас, чтобы нам не пришлось вновь заводить этот разговор, когда твои воспоминания снова покинут тебя.'
@@ -849,13 +961,14 @@ label ddhall_s39:
         'У меня есть другие вопросы…':
             # r150 # reply976
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r151 # reply977
             jump ddhall_dispose
 
 
 # s40 # say978
-label ddhall_s40:  # from - # from - # IF ~  Global("Dhall","GLOBAL",1)
+label ddhall_s40:  # - # IF ~  Global("Dhall","GLOBAL",1)
     teller 'Дхолл мельком смотрит на тебя.'
     dhall 'Итак. Ты вернулся…'
     teller 'Дхолл начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает.'
@@ -865,6 +978,7 @@ label ddhall_s40:  # from - # from - # IF ~  Global("Dhall","GLOBAL",1)
         'У меня к тебе другие вопросы, Дхолл.':
             # r152 # reply979
             jump ddhall_s9
+
         'Неважно. Прощай.':
             # r153 # reply980
             jump ddhall_dispose
@@ -878,16 +992,20 @@ label ddhall_s41:  # from 26.0 52.0
         'Тень этой жизни?':
             # r154 # reply984
             jump ddhall_s33
+
         'Истинной Смерти?':
             # r155 # reply985
             $ ddhallLogic.r985_action()
             jump ddhall_s48
+
         'Расскажи мне побольше о Морге.':
             # r156 # reply5739
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r157 # reply5740
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r158 # reply5741
             jump ddhall_s11
@@ -902,18 +1020,23 @@ label ddhall_s42:  # from 2.0 12.0 43.0
         'Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной.' if ddhallLogic.r5076_condition():
             # r159 # reply5076
             jump ddhall_s43
+
         'Да, она утверждает, что знает меня, но я не могу ее вспомнить.' if ddhallLogic.r5077_condition():
             # r160 # reply5077
             jump ddhall_s28
+
         'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5078_condition():
             # r161 # reply5078
             jump ddhall_s12
+
         'Ты говорил, что здесь есть другие. Кто они?' if ddhallLogic.r5079_condition():
             # r162 # reply5079
             jump ddhall_s12
+
         'Возможно, мне стоит найти ее. Перед уходом у меня есть к тебе другие вопросы…':
             # r163 # reply6067
             jump ddhall_s9
+
         'Пойду вниз, в мемориальный зал. Может быть, я найду ее тело.':
             # r164 # reply6068
             jump ddhall_s11
@@ -927,15 +1050,19 @@ label ddhall_s43:  # from 2.1 42.0
         'Где я могу найти ее?' if ddhallLogic.r5081_condition():
             # r165 # reply5081
             jump ddhall_s42
+
         'Ты говорил, что здесь похоронены и другие мои спутники. Где они?' if ddhallLogic.r5082_condition():
             # r166 # reply5082
             jump ddhall_s12
+
         'Ты говорил, что здесь похоронены и другие мои спутники. Где они?' if ddhallLogic.r5083_condition():
             # r167 # reply5083
             jump ddhall_s12
+
         'У меня есть другие вопросы к тебе…':
             # r168 # reply6069
             jump ddhall_s9
+
         'Тогда прощай.':
             # r169 # reply6070
             jump ddhall_s11
@@ -969,6 +1096,7 @@ label ddhall_s45:  # from 44.0
             # r171 # reply5731
             $ ddhallLogic.r5731_action()
             jump ddhall_s9
+
         'У меня нет времени на это. Прощай.':
             # r172 # reply5732
             $ ddhallLogic.r5732_action()
@@ -998,19 +1126,24 @@ label ddhall_s47:  # from 32.2
         'Может, ты мне объяснишь, почему тленные хотят моей смерти?' if ddhallLogic.r6032_condition():
             # r174 # reply6032
             jump ddhall_s22
+
         'Истинной Смерти?':
             # r175 # reply6033
             $ ddhallLogic.r6033_action()
             jump ddhall_s48
+
         'Иллюзорность этой жизни?':
             # r176 # reply6034
             jump ddhall_s33
+
         'Расскажи мне побольше о Морге.':
             # r177 # reply6035
             jump ddhall_s32
+
         'У меня есть другие вопросы к тебе…':
             # r178 # reply6036
             jump ddhall_s9
+
         'Тогда прощай.':
             # r179 # reply6037
             jump ddhall_s11
@@ -1026,12 +1159,15 @@ label ddhall_s48:  # from 32.1 33.0 38.0 41.1 47.1
         'Похоже на забвение. И зачем кому-то это нужно?':
             # r180 # reply6043
             jump ddhall_s49
+
         'Ого. Расскажи мне побольше о Морге.':
             # r181 # reply6044
             jump ddhall_s32
+
         'Понятно… У меня есть другие вопросы.':
             # r182 # reply6045
             jump ddhall_s9
+
         'Я должен идти. Прощай, Дхолл.':
             # r183 # reply6046
             jump ddhall_s11
@@ -1045,12 +1181,15 @@ label ddhall_s49:  # from 48.0
         'Тень жизни?':
             # r184 # reply6047
             jump ddhall_s33
+
         'Расскажи мне побольше о Морге.':
             # r185 # reply6048
             jump ddhall_s32
+
         'Понятно… У меня есть другие вопросы.':
             # r186 # reply6049
             jump ddhall_s9
+
         'Я должен идти. Прощай, Дхолл.':
             # r187 # reply6050
             jump ddhall_s11
@@ -1067,9 +1206,11 @@ label ddhall_s50:  # from 33.1
             # r188 # reply6051
             $ ddhallLogic.r6051_action()
             jump ddhall_s51
+
         'Заперты? Каким образом?':
             # r189 # reply6052
             jump ddhall_s51
+
         'Довольно этой философии. Как все это относится к тому, что я оказался здесь?':
             # r190 # reply6053
             $ ddhallLogic.r6053_action()
@@ -1086,12 +1227,15 @@ label ddhall_s51:  # from 50.0 50.1 50.2
         'Понимаю… Как же выбраться из этого кольца возрождений и достигнуть этой… Истинной Смерти?':
             # r191 # reply6054
             jump ddhall_s52
+
         'Расскажи мне побольше о Морге.':
             # r192 # reply6055
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r193 # reply6056
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r194 # reply6057
             jump ddhall_s11
@@ -1107,12 +1251,15 @@ label ddhall_s52:  # from 51.0
         'Границу Вечности?':
             # r195 # reply6058
             jump ddhall_s41
+
         'Расскажи мне побольше о Морге.':
             # r196 # reply6059
             jump ddhall_s32
+
         'У меня есть другие вопросы…':
             # r197 # reply6060
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r198 # reply6061
             jump ddhall_s11
@@ -1128,9 +1275,11 @@ label ddhall_s53:  # from 34.0
         'Расскажи мне побольше о Морге.':
             # r199 # reply5743
             jump ddhall_s32
+
         'Понятно. У меня еще вопросы…':
             # r200 # reply5744
             jump ddhall_s9
+
         'Прощай, Дхолл.':
             # r201 # reply5745
             jump ddhall_s11
