@@ -1,0 +1,60 @@
+class Dzf114Logic:
+    def __init__(self, gsm):
+        self.gsm = gsm
+
+
+    def r34987_action(self):
+        self.gsm.gcm.modify_property('protagonist', 'law', -1)
+        self.gsm.set_zombie_chaotic(True)
+
+
+    def r34987_condition(self):
+        return not self.gsm.get_zombie_chaotic()
+
+
+    def r35004_condition(self):
+        return self.gsm.get_zombie_chaotic()
+
+
+    def r35005_condition(self):
+        return self.gsm.get_vaxis_exposed()
+
+
+    def r35006_condition(self):
+        return self.gsm.get_can_speak_with_dead()
+
+
+    def r35013_condition(self):
+        return self.gsm.get_morte_quip()
+
+
+    def r35014_condition(self):
+        return self.gsm.get_morte_quip()
+
+
+    def r35015_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
+    def r35016_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
+    def r35002_condition(self):
+        return self.gsm.get_morte_quip()
+
+
+    def r35003_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
+    def r35009_condition(self):
+        return self.gsm.get_morte_quip()
+
+
+    def r35010_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
