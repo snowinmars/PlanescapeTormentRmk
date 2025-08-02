@@ -1,0 +1,35 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250303)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ396.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ru_RU\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ396~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #34931 /* ~Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов... похоже, они могут пригодиться.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #34932 /* ~«Ты не против, если я одолжу у тебя эти бинты?»~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #34935 /* ~«Ты не против, если я одолжу у тебя эти бинты?»~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #34936 /* ~Попробовать забрать бинты у зомби.~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #34937 /* ~«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».~ */ GOTO 2
+  IF ~~ THEN REPLY #34940 /* ~Использовать на трупе свою способность «История костей».~ */ EXIT
+  IF ~~ THEN REPLY #34941 /* ~«Было приятно с тобой поболтать. Прощай».~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #34933 /* ~Труп продолжает пялиться на тебя.~ */
+  IF ~~ THEN REPLY #34934 /* ~Попробовать забрать бинты у зомби.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #34938 /* ~Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.~ */
+  IF ~~ THEN REPLY #34939 /* ~Оставить труп в покое.~ */ EXIT
+END
