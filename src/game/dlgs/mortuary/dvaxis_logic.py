@@ -11,6 +11,10 @@ class DvaxisLogic:
         self.gsm.set_dead_vaxis(True)
 
 
+    def set_meet_vaxis(self):
+        self.gsm.set_meet_vaxis(True)
+
+
     def meet_vaxis(self):
         return self.gsm.get_meet_vaxis()
 
@@ -54,6 +58,11 @@ class DvaxisLogic:
 
     def r473_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+
+
+    def r475_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
 
 
     def r476_action(self):
@@ -166,6 +175,21 @@ class DvaxisLogic:
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
 
 
+    def r4405_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
+
+
+    def r4408_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
+
+
+    def r4413_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
+
+
     def r4428_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
 
@@ -208,8 +232,10 @@ class DvaxisLogic:
         self.gsm.set_has_bandages(True)
         self.gsm.set_has_bandages(True)
         self.gsm.set_has_embalm(True)
-        self.gsm.set_has_needle(True) # GiveItemCreate("Knife",Protagonist,1,0,0)
+        self.gsm.set_has_needle(True)
+        # GiveItemCreate("Knife",Protagonist,1,0,0)
         self.gsm.inc_exp_custom('party', 500)
+        self.gsm.update_journal('64517')
 
 
     def r4474_action(self):
@@ -246,6 +272,8 @@ class DvaxisLogic:
 
     def r4494_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_has_keyem(False)
+        self.gsm.set_vaxis_has_keyem(True)
 
 
     def r4496_action(self):
@@ -268,6 +296,8 @@ class DvaxisLogic:
 
     def r4502_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_has_keyem(False)
+        self.gsm.set_vaxis_has_keyem(True)
 
 
     def r64520_action(self):
@@ -300,6 +330,9 @@ class DvaxisLogic:
 
     def r4519_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_has_keyem(False)
+        self.gsm.set_vaxis_has_keyem(True)
+        self.gsm.set_embalm_key_quest(3)
 
 
     def r4521_action(self):
@@ -322,14 +355,20 @@ class DvaxisLogic:
 
     def r64527_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_vaxis_help(True)
+        self.gsm.update_journal('64528')
 
 
     def r4568_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_vaxis_help(True)
+        self.gsm.update_journal('64529')
 
 
     def r4569_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_vaxis_help(True)
+        self.gsm.update_journal('64529')
 
 
     def r4580_action(self):
@@ -339,10 +378,12 @@ class DvaxisLogic:
 
     def r4592_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_has_keyem(False)
 
 
     def r4593_action(self):
         self.gsm.inc_exp_custom('party', 250)
+        self.gsm.set_has_keyem(False)
 
 
     def r4620_action(self):
@@ -372,8 +413,11 @@ class DvaxisLogic:
 
 
     def r4630_action(self):
+        # FadeToColor([20.0],0) Wait(1)
         self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2) FadeFromColor([20.0],0)
         self.gsm.inc_exp_custom('party', 500)
+        self.gsm.set_vaxis_global_xp(True)
 
 
     def r4631_action(self):
@@ -381,11 +425,15 @@ class DvaxisLogic:
 
 
     def r4632_action(self):
+        # FadeToColor([20.0],0) Wait(1)
         self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2) FadeFromColor([20.0],0)
 
 
     def r64533_action(self):
+        # FadeToColor([20.0],0) Wait(1)
         self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2) FadeFromColor([20.0],0)
 
 
     def r4635_action(self):
@@ -396,8 +444,28 @@ class DvaxisLogic:
         self.gsm.update_journal('64531')
 
 
+    def r4645_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
+
+
     def r4651_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
+
+
+    def r4661_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
+
+
+    def r4666_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
+
+
+    def r4669_action(self):
+        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        return
 
 
     def r454_condition(self):
@@ -469,8 +537,8 @@ class DvaxisLogic:
 
 
     def r1360_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'charisma') > 11 \
-               and self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
+        return self.gsm.gcm.get_character_property('protagonist', 'charisma') > 11 and \
+               self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
 
 
     def r1361_condition(self):
@@ -498,8 +566,8 @@ class DvaxisLogic:
 
 
     def r4370_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'charisma') > 11 \
-               and self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
+        return self.gsm.gcm.get_character_property('protagonist', 'charisma') > 11 and \
+               self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
 
 
     def r4371_condition(self):
@@ -599,13 +667,13 @@ class DvaxisLogic:
 
 
     def r4446_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'charisma') < 12 \
-               and self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
+        return self.gsm.gcm.get_character_property('protagonist', 'charisma') < 12 and \
+               self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
 
 
     def r4447_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'charisma') > 11 \
-               and self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
+        return self.gsm.gcm.get_character_property('protagonist', 'charisma') > 11 and \
+               self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
 
 
     def r4448_condition(self):
@@ -745,17 +813,17 @@ class DvaxisLogic:
 
 
     def r64508_condition(self):
-        return not self.gsm.get_escape_mortuary() \
-               and not self.gsm.get_vaxis_help() \
-               and self.gsm.get_embalm_key_quest() == 0 \
-               and self.gsm.get_strong_arm_vaxis()
+        return not self.gsm.get_escape_mortuary() and \
+               not self.gsm.get_vaxis_help() and \
+               self.gsm.get_embalm_key_quest() == 0 and \
+               self.gsm.get_strong_arm_vaxis()
 
 
     def r4524_condition(self):
-        return not self.gsm.get_escape_mortuary() \
-               and not self.gsm.get_vaxis_help() \
-               and self.gsm.get_embalm_key_quest() == 0 \
-               and not self.gsm.get_strong_arm_vaxis()
+        return not self.gsm.get_escape_mortuary() and \
+               not self.gsm.get_vaxis_help() and \
+               self.gsm.get_embalm_key_quest() == 0 and \
+               not self.gsm.get_strong_arm_vaxis()
 
 
     def r4525_condition(self):
@@ -763,13 +831,13 @@ class DvaxisLogic:
 
 
     def r4526_condition(self):
-        return self.gsm.get_vaxis_zombie_disguise() == 1 \
-               and not self.gsm.get_appearance()
+        return self.gsm.get_vaxis_zombie_disguise() == 1 and \
+               not self.gsm.get_appearance()
 
 
     def r4527_condition(self):
-        return self.gsm.get_vaxis_zombie_disguise() == 2 \
-               and not self.gsm.get_appearance()
+        return self.gsm.get_vaxis_zombie_disguise() == 2 and \
+               not self.gsm.get_appearance()
 
 
     def r4528_condition(self):
@@ -821,20 +889,20 @@ class DvaxisLogic:
 
 
     def r4564_condition(self):
-        return not self.gsm.get_strong_arm_vaxis() \
-               and self.gsm.get_embalm_key_quest() == 0 \
-               and not self.gsm.get_vaxis_orders()
+        return not self.gsm.get_strong_arm_vaxis() and \
+               self.gsm.get_embalm_key_quest() == 0 and \
+               not self.gsm.get_vaxis_orders()
 
 
     def r64509_condition(self):
-        return not self.gsm.get_strong_arm_vaxis() \
-               and self.gsm.get_embalm_key_quest() > 2 \
-               and not self.gsm.get_vaxis_orders()
+        return not self.gsm.get_strong_arm_vaxis() and \
+               self.gsm.get_embalm_key_quest() > 2 and \
+               not self.gsm.get_vaxis_orders()
 
 
     def r64510_condition(self):
-        return self.gsm.get_strong_arm_vaxis() \
-               and not self.gsm.get_vaxis_orders()
+        return self.gsm.get_strong_arm_vaxis() and \
+               not self.gsm.get_vaxis_orders()
 
 
     def r64511_condition(self):
@@ -862,30 +930,30 @@ class DvaxisLogic:
 
 
     def r4588_condition(self):
-        return self.gsm.get_embalm_key_quest() != 1 \
-               and self.gsm.get_embalm_key_quest() != 2 \
-               and not self.gsm.get_vaxis_orders()
+        return self.gsm.get_embalm_key_quest() != 1 and \
+               self.gsm.get_embalm_key_quest() != 2 and \
+               not self.gsm.get_vaxis_orders()
 
 
     def r4589_condition(self):
-        return self.gsm.get_embalm_key_quest() != 1 \
-               and self.gsm.get_embalm_key_quest() != 2 \
-               and self.gsm.get_vaxis_orders()
+        return self.gsm.get_embalm_key_quest() != 1 and \
+               self.gsm.get_embalm_key_quest() != 2 and \
+               self.gsm.get_vaxis_orders()
 
 
     def r4592_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               self.gsm.get_has_keyem()
 
 
     def r4593_condition(self):
-        return self.gsm.get_embalm_key_quest() == 2 \
-               and self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 2 and \
+               self.gsm.get_has_keyem()
 
 
     def r4594_condition(self):
-        return self.gsm.get_embalm_key_quest() == 1 \
-               and not self.gsm.get_has_keyem()
+        return self.gsm.get_embalm_key_quest() == 1 and \
+               not self.gsm.get_has_keyem()
 
 
     def r4599_condition(self):
@@ -897,13 +965,13 @@ class DvaxisLogic:
 
 
     def r4604_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and not self.gsm.get_appearance()
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               not self.gsm.get_appearance()
 
 
     def r4609_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and not self.gsm.get_appearance()
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               not self.gsm.get_appearance()
 
 
     def r4610_condition(self):
@@ -923,8 +991,8 @@ class DvaxisLogic:
 
 
     def r4615_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 \
-               and not self.gsm.get_appearance()
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               not self.gsm.get_appearance()
 
 
     def r4616_condition(self):
@@ -944,28 +1012,28 @@ class DvaxisLogic:
 
 
     def r4620_condition(self):
-        return self.gsm.get_has_embalm() \
-               and self.gsm.get_has_needle()
+        return self.gsm.get_has_embalm() and \
+               self.gsm.get_has_needle()
 
 
     def r4630_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_vaxis_global_xp()
+        return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_vaxis_global_xp()
 
 
     def r4631_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_vaxis_quip_1()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_vaxis_quip_1()
 
 
     def r4632_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_vaxis_quip_1()
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_vaxis_quip_1()
 
 
     def r64533_condition(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_vaxis_global_xp()
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_vaxis_global_xp()
 
 
     def r4634_condition(self):
@@ -973,13 +1041,13 @@ class DvaxisLogic:
 
 
     def r4635_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_morte_vaxis_quip_2()
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_vaxis_quip_2()
 
 
     def r4636_condition(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_morte_vaxis_quip_2()
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_vaxis_quip_2()
 
 
     def r4656_condition(self):

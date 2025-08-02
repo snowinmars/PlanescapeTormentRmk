@@ -7,6 +7,7 @@ init 10 python:
 # Original:  DLG/DDUSTFEM.DLG
 # ###
 
+
 label start_ddustfem_talk_first:
     call ddustfem_init
     jump ddustfem_s3
@@ -22,22 +23,26 @@ label ddustfem_dispose:
 
 
 # s0 # say298
-label ddustfem_s0:  # from - # IF ~  Global("Appearance","GLOBAL",1)
+label ddustfem_s0:  # - # IF ~  Global("Appearance","GLOBAL",1)
     teller 'Тленная не обращает на тебя внимания. Должно быть, она спутала тебя с одним из мертвых рабочих.'
 
     menu:
         'Приветствую.':
             # r0 # reply299
             jump ddustfem_s1
+
         'Кто ты?':
             # r1 # reply318
             jump ddustfem_s1
+
         'Что это за место?':
             # r2 # reply1168
             jump ddustfem_s1
+
         'У меня есть пара вопросов…':
             # r3 # reply1169
             jump ddustfem_s1
+
         'Оставить ее в покое.':
             # r4 # reply1170
             jump ddustfem_dispose
@@ -51,9 +56,11 @@ label ddustfem_s1:  # from 0.0 0.1 0.2 0.3
         'Воспользоваться эффектом неожиданности и свернуть ей шею, пока она не позвала на помощь.':
             # r5 # reply1172
             jump ddustfem_s41
+
         'У меня есть несколько вопросов.':
             # r6 # reply1174
             jump ddustfem_s2
+
         'Уйти. Быстро.':
             # r7 # reply1175
             jump ddustfem_s2
@@ -71,22 +78,26 @@ label ddustfem_s2:  # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
 
 
 # s3 # say1177
-label ddustfem_s3:  # from -
+label ddustfem_s3:  # -
     teller 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
         'Приветствую.':
             # r9 # reply1226
             jump ddustfem_s4
+
         'Кто ты?':
             # r10 # reply1227
             jump ddustfem_s4
+
         'Что это за место?':
             # r11 # reply1228
             jump ddustfem_s4
+
         'У меня есть пара вопросов…':
             # r12 # reply1229
             jump ddustfem_s4
+
         'Оставить ее в покое.':
             # r13 # reply1230
             jump ddustfem_dispose
@@ -101,12 +112,15 @@ label ddustfem_s4:  # from 3.0 3.1 3.2 3.3 40.2 40.3
         'Да.':
             # r14 # reply1231
             jump ddustfem_s5
+
         'Нет.':
             # r15 # reply1232
             jump ddustfem_s6
+
         'Нет, я не потерялся. У меня есть несколько вопросов…':
             # r16 # reply1233
             jump ddustfem_s6
+
         'Прощай.':
             # r17 # reply1234
             jump ddustfem_s2
@@ -120,12 +134,15 @@ label ddustfem_s5:  # from 4.0 16.2 51.1
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1235_condition():
             # r18 # reply1235
             jump ddustfem_s44
+
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1236_condition():
             # r19 # reply1236
             jump ddustfem_s41
+
         'Уйти. Быстро.':
             # r20 # reply1237
             jump ddustfem_s2
+
         'Подождать.':
             # r21 # reply1238
             jump ddustfem_s2
@@ -139,15 +156,19 @@ label ddustfem_s6:  # from 4.1 4.2 51.2 51.3
         'Это тебя не касается.':
             # r22 # reply1239
             jump ddustfem_s7
+
         'Я очнулся на одной из плит в вашей препараторской.':
             # r23 # reply1240
             jump ddustfem_s8
+
         'Я хочу повидаться кое с кем.':
             # r24 # reply1241
             jump ddustfem_s9
+
         'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if ddustfemLogic.r1242_condition():
             # r25 # reply1242
             jump ddustfem_s16
+
         'Уйти. Быстро.':
             # r26 # reply1243
             jump ddustfem_s2
@@ -162,9 +183,11 @@ label ddustfem_s7:  # from 6.0 9.0 20.0
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1244_condition():
             # r27 # reply1244
             jump ddustfem_s44
+
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1245_condition():
             # r28 # reply1245
             jump ddustfem_s41
+
         'Давай, зови их. Буду рад с ними встретиться.':
             # r29 # reply1246
             $ ddustfemLogic.r1246_action()
@@ -180,9 +203,11 @@ label ddustfem_s8:  # from 6.1 16.0 20.1
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1247_condition():
             # r30 # reply1247
             jump ddustfem_s44
+
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r1248_condition():
             # r31 # reply1248
             jump ddustfem_s41
+
         'Давай, зови их. Буду рад с ними встретиться.':
             # r32 # reply1249
             $ ddustfemLogic.r1249_action()
@@ -197,31 +222,40 @@ label ddustfem_s9:  # from 6.2 20.2
         'Это не твое дело.':
             # r33 # reply1251
             jump ddustfem_s7
+
         'Я хочу повидаться с Дхоллом.' if ddustfemLogic.r1253_condition():
             # r34 # reply1253
             jump ddustfem_s10
+
         'Я хочу повидаться с Дхоллом.' if ddustfemLogic.r1255_condition():
             # r35 # reply1255
             jump ddustfem_s11
+
         'Я хочу повидаться с Дейонаррой.' if ddustfemLogic.r1258_condition():
             # r36 # reply1258
             jump ddustfem_s13
+
         'Я хочу повидаться с Дейонаррой.' if ddustfemLogic.r4336_condition():
             # r37 # reply4336
             jump ddustfem_s12
+
         'Я хочу повидаться с Соэго.' if ddustfemLogic.r33224_condition():
             # r38 # reply33224
             jump ddustfem_s15
+
         'Я хочу повидаться с Соэго.' if ddustfemLogic.r33226_condition():
             # r39 # reply33226
             jump ddustfem_s14
+
         'Ложь: Э-э… с Аданом. Он все еще работает здесь?..' if ddustfemLogic.r33227_condition():
             # r40 # reply33227
             $ ddustfemLogic.r33227_action()
             jump ddustfem_s21
+
         'Ложь: Э-э… с Аданом. Он все еще работает здесь?..' if ddustfemLogic.r33229_condition():
             # r41 # reply33229
             jump ddustfem_s21
+
         'Ой, нет. Я оговорился.':
             # r42 # reply33231
             jump ddustfem_s20
@@ -297,9 +331,11 @@ label ddustfem_s16:  # from 6.3 20.3
         'Ты не понимаешь… ошибка в том, что похоронить собирались МЕНЯ.':
             # r49 # reply1265
             jump ddustfem_s8
+
         'Может быть. Где еще проводят службу?':
             # r50 # reply1266
             jump ddustfem_s17
+
         'Ты можешь указать выход отсюда?':
             # r51 # reply1267
             jump ddustfem_s5
@@ -313,6 +349,7 @@ label ddustfem_s17:  # from 16.1
         'Нет.':
             # r52 # reply1268
             jump ddustfem_s18
+
         'Да.':
             # r53 # reply1269
             jump ddustfem_s19
@@ -336,22 +373,28 @@ label ddustfem_s19:  # from 17.1
         'Прошу прощения… Я оговорился. Мне неизвестно имя усопшего.':
             # r55 # reply1271
             jump ddustfem_s20
+
         'Это имя — Дейонарра.' if ddustfemLogic.r1272_condition():
             # r56 # reply1272
             jump ddustfem_s12
+
         'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1273_condition():
             # r57 # reply1273
             $ ddustfemLogic.r1273_action()
             jump ddustfem_s21
+
         'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1274_condition():
             # r58 # reply1274
             jump ddustfem_s21
+
         'Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.' if ddustfemLogic.r1275_condition():
             # r59 # reply1275
             jump ddustfem_s44
+
         'Наклониться вперед, будто собираясь прошептать ей что-то на ухо, а затем свернуть ей шею.' if ddustfemLogic.r1276_condition():
             # r60 # reply1276
             jump ddustfem_s45
+
         'Убежать от нее.':
             # r61 # reply1277
             jump ddustfem_s2
@@ -365,15 +408,19 @@ label ddustfem_s20:  # from 9.9 19.0
         'Это не твое дело.':
             # r62 # reply1278
             jump ddustfem_s7
+
         'Я очнулся на одной из плит в вашей препараторской.':
             # r63 # reply1279
             jump ddustfem_s8
+
         'Я хочу повидаться кое с кем.':
             # r64 # reply1280
             jump ddustfem_s9
+
         'Я пришел сюда на похороны, но, похоже, произошла ошибка.' if ddustfemLogic.r1281_condition():
             # r65 # reply1281
             jump ddustfem_s16
+
         'Убежать от нее.':
             # r66 # reply1282
             jump ddustfem_s2
@@ -390,13 +437,14 @@ label ddustfem_s21:  # from 9.7 9.8 19.2 19.3
 
 
 # s22 # say1196
-label ddustfem_s22:  # from - # IF ~  Global("Appearance","GLOBAL",2)
+label ddustfem_s22:  # - # IF ~  Global("Appearance","GLOBAL",2)
     teller 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
         'Приветствую.':
             # r68 # reply1284
             jump ddustfem_s23
+
         'Оставить ее в покое.':
             # r69 # reply1285
             jump ddustfem_dispose
@@ -411,12 +459,15 @@ label ddustfem_s23:  # from 22.0
         'Кто ты?':
             # r70 # reply1286
             jump ddustfem_s24
+
         'Что это за место?':
             # r71 # reply1287
             jump ddustfem_s25
+
         'У меня есть пара вопросов…':
             # r72 # reply1288
             jump ddustfem_s26
+
         'Оставить ее в покое.':
             # r73 # reply1289
             jump ddustfem_dispose
@@ -431,12 +482,15 @@ label ddustfem_s24:  # from 23.0
             # r74 # reply1290
             $ ddustfemLogic.r1290_action()
             jump ddustfem_s49
+
         'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1291_condition():
             # r75 # reply1291
             jump ddustfem_s49
+
         'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1292_condition():
             # r76 # reply1292
             jump ddustfem_s47
+
         'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1293_condition():
             # r77 # reply1293
             jump ddustfem_s46
@@ -453,12 +507,15 @@ label ddustfem_s25:  # from 23.1
             # r78 # reply1294
             $ ddustfemLogic.r1294_action()
             jump ddustfem_s49
+
         'Ложь: Имя… э-э, Адан.' if ddustfemLogic.r1295_condition():
             # r79 # reply1295
             jump ddustfem_s49
+
         'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1296_condition():
             # r80 # reply1296
             jump ddustfem_s47
+
         'Как меня зовут — не твое дело. Я должен идти. Прощай.' if ddustfemLogic.r1297_condition():
             # r81 # reply1297
             jump ddustfem_s46
@@ -472,12 +529,15 @@ label ddustfem_s26:  # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
         'Можешь показать мне, где выход?':
             # r82 # reply1298
             jump ddustfem_s27
+
         'Ты знаешь кого-нибудь по имени Фарод?':
             # r83 # reply1299
             jump ddustfem_s28
+
         'Я потерял дневник. Тебе ничего такого не попадалось?':
             # r84 # reply1300
             jump ddustfem_s39
+
         'Неважно. Извини за беспокойство.':
             # r85 # reply1328
             jump ddustfem_s48
@@ -491,6 +551,7 @@ label ddustfem_s27:  # from 26.0
         'У меня есть другие вопросы…':
             # r86 # reply1329
             jump ddustfem_s26
+
         'Спасибо. Прощай.':
             # r87 # reply1330
             jump ddustfem_s48
@@ -506,12 +567,15 @@ label ddustfem_s28:  # from 26.1
         'Сборщика?':
             # r88 # reply1331
             jump ddustfem_s29
+
         'Дхолл?':
             # r89 # reply1334
             jump ddustfem_s30
+
         'У меня есть другие вопросы…':
             # r90 # reply1338
             jump ddustfem_s26
+
         'Спасибо за уделенное время. Прощай.':
             # r91 # reply1395
             jump ddustfem_s48
@@ -527,12 +591,15 @@ label ddustfem_s29:  # from 28.0
         'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r1396_condition():
             # r92 # reply1396
             jump ddustfem_s50
+
         'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustfemLogic.r1397_condition():
             # r93 # reply1397
             jump ddustfem_s47
+
         'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r1398_condition():
             # r94 # reply1398
             jump ddustfem_s47
+
         'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r1399_condition():
             # r95 # reply1399
             jump ddustfem_s46
@@ -548,15 +615,19 @@ label ddustfem_s30:  # from 28.1
         'Ему еще недолго жить в тени этого существования?':
             # r96 # reply4280
             jump ddustfem_s31
+
         'Где я могу найти Дхолла?' if ddustfemLogic.r4281_condition():
             # r97 # reply4281
             jump ddustfem_s32
+
         'Где я могу найти Дхолла?' if ddustfemLogic.r4282_condition():
             # r98 # reply4282
             jump ddustfem_s33
+
         'У меня есть другие вопросы…':
             # r99 # reply4283
             jump ddustfem_s26
+
         'Спасибо за информацию. Я поговорю с ним.':
             # r100 # reply33245
             jump ddustfem_s48
@@ -571,15 +642,19 @@ label ddustfem_s31:  # from 30.0 32.0 33.0
         'По меркам гитцераев?':
             # r101 # reply4284
             jump ddustfem_s34
+
         'Что это еще за *гитцераи*?':
             # r102 # reply4285
             jump ddustfem_s35
+
         'Повезло?':
             # r103 # reply4286
             jump ddustfem_s36
+
         'Понятно. У меня есть другие вопросы…':
             # r104 # reply4287
             jump ddustfem_s26
+
         'Спасибо за уделенное время. Мне нужно идти.':
             # r105 # reply4337
             jump ddustfem_s48
@@ -594,6 +669,7 @@ label ddustfem_s32:  # from 30.1
         'Дхолл болен?':
             # r106 # reply4288
             jump ddustfem_s31
+
         'Спасибо за уделенное время. Мне нужно идти. Прощай.':
             # r107 # reply4289
             jump ddustfem_s48
@@ -608,6 +684,7 @@ label ddustfem_s33:  # from 30.2
         'Дхолл болен?':
             # r108 # reply4290
             jump ddustfem_s31
+
         'Спасибо за уделенное время. Мне нужно идти. Прощай.':
             # r109 # reply4291
             jump ddustfem_s48
@@ -621,12 +698,15 @@ label ddustfem_s34:  # from 31.0
         'Что это еще за *гитцераи*?':
             # r110 # reply4292
             jump ddustfem_s35
+
         'Как это Дхоллу повезло? От него хотят избавиться?':
             # r111 # reply4293
             jump ddustfem_s36
+
         'О, у меня есть другие вопросы…':
             # r112 # reply4294
             jump ddustfem_s26
+
         'Спасибо за уделенное время. Прощай.':
             # r113 # reply4295
             jump ddustfem_s48
@@ -642,12 +722,15 @@ label ddustfem_s35:  # from 31.1 34.0
         'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4296_condition():
             # r114 # reply4296
             jump ddustfem_s50
+
         'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustfemLogic.r4297_condition():
             # r115 # reply4297
             jump ddustfem_s47
+
         'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4298_condition():
             # r116 # reply4298
             jump ddustfem_s47
+
         'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4300_condition():
             # r117 # reply4300
             jump ddustfem_s46
@@ -661,9 +744,11 @@ label ddustfem_s36:  # from 31.2 34.1
         'И… это хорошо?':
             # r118 # reply4299
             jump ddustfem_s37
+
         'Понятно. И правда, очень повезло. У меня есть другие вопросы…':
             # r119 # reply4301
             jump ddustfem_s26
+
         'Понятно. Ну что ж, мне нужно идти. Прощай.':
             # r120 # reply4302
             jump ddustfem_s48
@@ -680,19 +765,22 @@ label ddustfem_s37:  # from 36.0
         'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4303_condition():
             # r121 # reply4303
             jump ddustfem_s50
+
         'Я… недавно здесь. Я… пытаюсь изучить обстановку.' if ddustfemLogic.r4304_condition():
             # r122 # reply4304
             jump ddustfem_s47
+
         'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4305_condition():
             # r123 # reply4305
             jump ddustfem_s47
+
         'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4306_condition():
             # r124 # reply4306
             jump ddustfem_s46
 
 
 # s38 # say1212
-label ddustfem_s38:  # from -
+label ddustfem_s38:  # -
     dustfem 'Ты не из наших. Кто ты? Что ты здесь делаешь?'
     dustfem 'Ты из анархистов? Или шпион другой фракции?'
     teller 'Тленная отступает на шаг.'
@@ -703,10 +791,12 @@ label ddustfem_s38:  # from -
             # r125 # reply4307
             $ ddustfemLogic.r4307_action()
             jump ddustfem_dispose
+
         'Тс-с-с! Я не смогу тебе ответить под такой крик!' if ddustfemLogic.r4308_condition():
             # r126 # reply4308
             $ ddustfemLogic.r4308_action()
             jump ddustfem_dispose
+
         'Тс-с-с! Я не смогу тебе ответить под такой крик!' if ddustfemLogic.r4309_condition():
             # r127 # reply4309
             $ ddustfemLogic.r4309_action()
@@ -721,28 +811,33 @@ label ddustfem_s39:  # from 26.2
         'У меня есть другие вопросы…':
             # r128 # reply4310
             jump ddustfem_s26
+
         'Я должен идти. Прощай.':
             # r129 # reply4311
             jump ddustfem_s48
 
 
 # s40 # say1214
-label ddustfem_s40:  # from - # Manually checked EXTERN ~DMORTE~ : 81 Manually checked EXTERN ~DMORTE~ : 83
+label ddustfem_s40:  # - # Manually checked EXTERN ~DMORTE~ : 81 Manually checked EXTERN ~DMORTE~ : 83
     teller 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
         'Приветствую.' if ddustfemLogic.r4312_condition():
             # r130 # reply4312
             jump dmorte_s81
+
         'Приветствую.' if ddustfemLogic.r4313_condition():
             # r131 # reply4313
             jump dmorte_s83
+
         'Приветствую.' if ddustfemLogic.r4314_condition():
             # r132 # reply4314
             jump ddustfem_s4
+
         'Приветствую.' if ddustfemLogic.r4315_condition():
             # r133 # reply4315
             jump ddustfem_s4
+
         'Оставить ее в покое.':
             # r134 # reply4316
             jump ddustfem_dispose
@@ -768,6 +863,7 @@ label ddustfem_s42:  # from 41.0 45.0
             # r136 # reply4318
             $ ddustfemLogic.r4318_action()
             jump ddustfem_s43
+
         'Лучше ты, чем я, трухлявка.' if ddustfemLogic.r4319_condition():
             # r137 # reply4319
             $ ddustfemLogic.r4319_action()
@@ -829,12 +925,15 @@ label ddustfem_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r4324_condition():
             # r142 # reply4324
             jump ddustfem_s44
+
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r4325_condition():
             # r143 # reply4325
             jump ddustfem_s41
+
         'Уйти. Быстро.':
             # r144 # reply4326
             jump ddustfem_s2
+
         'Нет-нет… не он, э-э… то есть, я хотел сказать, не шпион… понимаешь, я пробудился на одной из плит… и…':
             # r145 # reply4327
             jump ddustfem_s2
@@ -859,12 +958,15 @@ label ddustfem_s49:  # from 24.0 24.1 25.0 25.1
         'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4329_condition():
             # r147 # reply4329
             jump ddustfem_s50
+
         'Я… недавно здесь. Я… пытаюсь изучить порядки.' if ddustfemLogic.r4331_condition():
             # r148 # reply4331
             jump ddustfem_s47
+
         'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4332_condition():
             # r149 # reply4332
             jump ddustfem_s47
+
         'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4333_condition():
             # r150 # reply4333
             jump ddustfem_s46
@@ -879,13 +981,14 @@ label ddustfem_s50:  # from 29.0 35.0 37.0 49.0
         'У меня есть пара вопросов…':
             # r151 # reply4334
             jump ddustfem_s26
+
         'На этот раз — ничего. Прощай.':
             # r152 # reply4335
             jump ddustfem_s46
 
 
 # s51 # say66683
-label ddustfem_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
+label ddustfem_s51:  # - # IF ~  Global("Appearance","GLOBAL",0)
     teller 'Тленная бросает на тебя каменный взгляд.'
     dustfem 'Ты потерялся?'
 
@@ -893,15 +996,19 @@ label ddustfem_s51:  # from - # IF ~  Global("Appearance","GLOBAL",0)
         'Нет, я член фракции. Я просто осматриваю Морг.' if ddustfemLogic.r66684_condition():
             # r153 # reply66684
             jump ddustfem_s52
+
         'Да.' if ddustfemLogic.r66685_condition():
             # r154 # reply66685
             jump ddustfem_s5
+
         'Нет.' if ddustfemLogic.r66686_condition():
             # r155 # reply66686
             jump ddustfem_s6
+
         'Нет, я не потерялся. У меня есть несколько вопросов…' if ddustfemLogic.r66687_condition():
             # r156 # reply66687
             jump ddustfem_s6
+
         'Прощай.' if ddustfemLogic.r66688_condition():
             # r157 # reply66688
             jump ddustfem_s2

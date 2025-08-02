@@ -29,7 +29,7 @@ label dmorte2_dispose:
 
 
 # s0 # say41144
-label dmorte2_s0:  # from -
+label dmorte2_s0:  # -
     call dmorte2_init
     teller "Двери открываются с лёгким шорохом."
     morte 'Тсссс… Небольшой совет, шеф: с этого момента я бы вел себя потише.'
@@ -41,14 +41,17 @@ label dmorte2_s0:  # from -
             # r0 # reply41145
             $ dmorte2Logic.r41145_action()
             jump dmorte2_s1
+
         'Эти трупы… откуда они все берутся?':
             # r1 # reply41146
             $ dmorte2Logic.r41146_action()
             jump dmorte2_s3
+
         'Почему тебя так заботят женские тела?':
             # r2 # reply41147
             $ dmorte2Logic.r41147_action()
             jump dmorte2_s4
+
         'Ладно… Я… попробую это запомнить.':
             # r3 # reply41148
             $ dmorte2Logic.r41148_action()
@@ -75,9 +78,11 @@ label dmorte2_s2:  # from 1.0
         'Эти трупы, которых я видел здесь… откуда они все берутся?':
             # r5 # reply41152
             jump dmorte2_s3
+
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?':
             # r6 # reply41153
             jump dmorte2_s4
+
         'Ладно… Я… попробую это запомнить.':
             # r7 # reply41154
             jump dmorte2_s8
@@ -91,9 +96,11 @@ label dmorte2_s3:  # from 0.1 2.0 7.1
         'Просвяти меня… *кто* такие эти смотрители?':
             # r8 # reply41156
             jump dmorte2_s1
+
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?':
             # r9 # reply41157
             jump dmorte2_s4
+
         'Ладно… Я… попробую это запомнить.':
             # r10 # reply41158
             jump dmorte2_s8
@@ -118,6 +125,7 @@ label dmorte2_s5:  # from 4.0
         'Нет… не очень, если честно.':
             # r12 # reply41162
             jump dmorte2_s6
+
         'Ты это *несерьезно*.' if dmorte2Logic.r41163_condition():
             # r13 # reply41163
             jump dmorte2_s6
@@ -145,9 +153,11 @@ label dmorte2_s7:  # from 6.0
         'Еще раз, кто эти смотрители?':
             # r15 # reply41167
             jump dmorte2_s1
+
         'Но откуда берутся все эти трупы?':
             # r16 # reply41168
             jump dmorte2_s3
+
         'Ладно… Я попробую это запомнить.':
             # r17 # reply41169
             jump dmorte2_s8
@@ -205,27 +215,35 @@ label dmorte2_s12:  # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.
         'Можешь еще раз прочитать, что у меня вытатуировано на спине?':
             # r22 # reply41179
             jump dmorte2_s13
+
         'Еще раз, что это за место?':
             # r23 # reply41180
             jump dmorte2_s18
+
         'Это место такое огромное… Кто за ним присматривает?' if dmorte2Logic.r41181_condition():
             # r24 # reply41181
             jump dmorte2_s19
+
         'Еще раз, кто эти смотрители?' if dmorte2Logic.r41182_condition():
             # r25 # reply41182
             jump dmorte2_s19
+
         'Эти трупы… откуда они все берутся?':
             # r26 # reply41183
             jump dmorte2_s22
+
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?' if dmorte2Logic.r41184_condition():
             # r27 # reply41184
             jump dmorte2_s23
+
         'Как мне использовать эти бинты?' if dmorte2Logic.r41185_condition():
             # r28 # reply41185
             jump dmorte2_s21
+
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if dmorte2Logic.r41186_condition():
             # r29 # reply41186
             jump dmorte2_s8
+
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if dmorte2Logic.r41187_condition():
             # r30 # reply41187
             jump dmorte2_dispose
@@ -239,12 +257,15 @@ label dmorte2_s13:  # from 12.0
         'Мне просто нужно освежить свою память, вот и все.':
             # r31 # reply41189
             jump dmorte2_s14
+
         'Ладно, неважно. У меня есть другие вопросы…':
             # r32 # reply41190
             jump dmorte2_s12
+
         'Ладно, забудь. Идем.' if dmorte2Logic.r41191_condition():
             # r33 # reply41191
             jump dmorte2_s8
+
         'Ладно, забудь. Идем.' if dmorte2Logic.r41192_condition():
             # r34 # reply41192
             jump dmorte2_dispose
@@ -263,12 +284,15 @@ label dmorte2_s14:  # from 13.0
         'Фарод… хм-м. Продолжай.':
             # r35 # reply41194
             jump dmorte2_s15
+
         'Неважно. У меня есть другие вопросы…':
             # r36 # reply41195
             jump dmorte2_s12
+
         'Забудь. Я уже достаточно наслушался. Идем.' if dmorte2Logic.r41196_condition():
             # r37 # reply41196
             jump dmorte2_s8
+
         'Забудь. Я уже достаточно наслушался. Идем.' if dmorte2Logic.r41197_condition():
             # r38 # reply41197
             jump dmorte2_dispose
@@ -287,12 +311,15 @@ label dmorte2_s15:  # from 14.0
         'Когда я очнулся, рядом со мной не было дневника?':
             # r39 # reply41199
             jump dmorte2_s16
+
         'Неважно. У меня есть другие вопросы…':
             # r40 # reply41200
             jump dmorte2_s12
+
         'Забудь. Я уже достаточно наслушался. Идем.' if dmorte2Logic.r41201_condition():
             # r41 # reply41201
             jump dmorte2_s8
+
         'Забудь. Я уже достаточно наслушался. Идем.' if dmorte2Logic.r41203_condition():
             # r42 # reply41203
             jump dmorte2_dispose
@@ -306,12 +333,15 @@ label dmorte2_s16:  # from 15.0
         'Ты уверен, что не знаешь никого по имени Фарод?':
             # r43 # reply41204
             jump dmorte2_s17
+
         'И то правда. У меня есть другие вопросы…':
             # r44 # reply41205
             jump dmorte2_s12
+
         'Ладно. Идем.' if dmorte2Logic.r41206_condition():
             # r45 # reply41206
             jump dmorte2_s8
+
         'Ладно. Идем.' if dmorte2Logic.r41207_condition():
             # r46 # reply41207
             jump dmorte2_dispose
@@ -325,9 +355,11 @@ label dmorte2_s17:  # from 16.0
         'Перед тем как мы пойдем, у меня есть еще вопросы…':
             # r47 # reply41209
             jump dmorte2_s12
+
         'Ладно. Идем.' if dmorte2Logic.r41210_condition():
             # r48 # reply41210
             jump dmorte2_s8
+
         'Ладно. Идем.' if dmorte2Logic.r41211_condition():
             # r49 # reply41211
             jump dmorte2_dispose
@@ -341,9 +373,11 @@ label dmorte2_s18:  # from 12.1
         'Ясно. У меня есть другие вопросы к тебе…':
             # r50 # reply41213
             jump dmorte2_s12
+
         'Это все, что я хотел узнать. Спасибо.' if dmorte2Logic.r41214_condition():
             # r51 # reply41214
             jump dmorte2_s8
+
         'Это все, что я хотел узнать. Спасибо.' if dmorte2Logic.r41215_condition():
             # r52 # reply41215
             jump dmorte2_dispose
@@ -358,12 +392,15 @@ label dmorte2_s19:  # from 12.2 12.3
         'Я запутался… какое тленным дело, если я сбегу?':
             # r53 # reply41217
             jump dmorte2_s20
+
         'Ясно. У меня есть другие вопросы к тебе…':
             # r54 # reply41218
             jump dmorte2_s12
+
         'Понятно. Тогда я буду осторожен.' if dmorte2Logic.r41219_condition():
             # r55 # reply41219
             jump dmorte2_s8
+
         'Понятно. Тогда я буду осторожен.' if dmorte2Logic.r41220_condition():
             # r56 # reply41220
             jump dmorte2_dispose
@@ -378,9 +415,11 @@ label dmorte2_s20:  # from 19.0
         'Ясно. У меня есть другие вопросы к тебе…':
             # r57 # reply41222
             jump dmorte2_s12
+
         'Ладно… Я… попробую это запомнить.' if dmorte2Logic.r41223_condition():
             # r58 # reply41223
             jump dmorte2_s8
+
         'Ладно… Я… попробую это запомнить.' if dmorte2Logic.r41224_condition():
             # r59 # reply41224
             jump dmorte2_dispose
@@ -394,9 +433,11 @@ label dmorte2_s21:  # from 12.6
         'Ясно. У меня есть другие вопросы к тебе…':
             # r60 # reply41226
             jump dmorte2_s12
+
         'Спасибо. Думаю, я смогу с ними справиться.' if dmorte2Logic.r41227_condition():
             # r61 # reply41227
             jump dmorte2_s8
+
         'Спасибо. Думаю, я смогу с ними справиться.' if dmorte2Logic.r41228_condition():
             # r62 # reply41228
             jump dmorte2_dispose
@@ -410,9 +451,11 @@ label dmorte2_s22:  # from 12.4
         'Ясно. У меня есть другие вопросы к тебе…':
             # r63 # reply41230
             jump dmorte2_s12
+
         'Ладно… Я… попробую это запомнить.' if dmorte2Logic.r41231_condition():
             # r64 # reply41231
             jump dmorte2_s8
+
         'Ладно… Я… попробую это запомнить.' if dmorte2Logic.r41232_condition():
             # r65 # reply41232
             jump dmorte2_dispose
@@ -427,9 +470,11 @@ label dmorte2_s23:  # from 12.5
         'Последняя возможность? Погоди… о *чем* это ты толкуешь?':
             # r66 # reply41234
             jump dmorte2_s24
+
         'Неважно. У меня к тебе еще вопросы…':
             # r67 # reply41235
             jump dmorte2_s12
+
         'Ладно… Я… попробую это запомнить.':
             # r68 # reply41236
             jump dmorte2_dispose
@@ -443,12 +488,15 @@ label dmorte2_s24:  # from 23.0
         'Нет… не очень, если честно.':
             # r69 # reply41238
             jump dmorte2_s25
+
         'Ты это *несерьезно*.' if dmorte2Logic.r41239_condition():
             # r70 # reply41239
             jump dmorte2_s25
+
         'Неважно. У меня к тебе еще вопросы…':
             # r71 # reply41240
             jump dmorte2_s12
+
         'Я достаточно наслушался. Идем.':
             # r72 # reply41241
             jump dmorte2_dispose
@@ -463,9 +511,11 @@ label dmorte2_s25:  # from 24.0 24.1
         'Постой… разве ты не говорил до этого, что я *не мертвый*?':
             # r73 # reply41243
             jump dmorte2_s26
+
         'Неважно. У меня к тебе еще вопросы…':
             # r74 # reply41244
             jump dmorte2_s12
+
         'Я достаточно наслушался. Идем.':
             # r75 # reply41245
             jump dmorte2_dispose
@@ -482,13 +532,14 @@ label dmorte2_s26:  # from 25.0
         'У меня есть другие вопросы к тебе, Морт…':
             # r76 # reply41247
             jump dmorte2_s12
+
         'Я достаточно наслушался. Идем.':
             # r77 # reply41248
             jump dmorte2_dispose
 
 
 # s27 # say41250
-label dmorte2_s27:  # from -
+label dmorte2_s27:  # -
     morte 'Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?'
 
     menu:
@@ -496,6 +547,7 @@ label dmorte2_s27:  # from -
             # r78 # reply41251
             $ dmorte2Logic.r41251_action()
             jump dmorte2_dispose
+
         'Не сейчас, Морт.':
             # r79 # reply41252
             jump dmorte2_s28
@@ -510,10 +562,12 @@ label dmorte2_s28:  # from 27.1
         'Морт, у тебя НЕТ ни того, ни другого.':
             # r80 # reply41254
             jump dmorte2_s29
+
         'Ладно. Я передумал. Давай, идем.':
             # r81 # reply41255
             $ dmorte2Logic.r41255_action()
             jump dmorte2_dispose
+
         'Не сейчас, Морт. Может быть, потом.':
             # r82 # reply41256
             jump dmorte2_s29
@@ -530,6 +584,7 @@ label dmorte2_s29:  # from 28.0 28.2
             # r83 # reply41258
             $ dmorte2Logic.r41258_action()
             jump dmorte2_dispose
+
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r84 # reply41259
             jump dmorte2_s30
@@ -546,7 +601,7 @@ label dmorte2_s30:  # from 29.1
 
 
 # s31 # say41262
-label dmorte2_s31:  # from -
+label dmorte2_s31:  # -
     call dmorte2_s31_init
     morte 'Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.'
 
