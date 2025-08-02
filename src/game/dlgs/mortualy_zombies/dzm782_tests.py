@@ -140,3 +140,7 @@ class Dzm782LogicTest(LogicTest):
             lambda x: self.settings_manager.set_has_intro_key(x),
             lambda: logic.r24714_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

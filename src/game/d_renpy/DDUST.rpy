@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DDUST.DLG
+# Original:  DLG/DDUST.DLG
 # ###
 
 
@@ -39,7 +39,7 @@ label ddust_s0:  # - # IF ~  Global("Appearance","GLOBAL",1)
 
         'Оставить его в покое.':
             # r4 # reply306
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s1 # say307
@@ -68,7 +68,7 @@ label ddust_s2:  # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
         'Ну хорошо…':
             # r8 # reply313
             $ ddustLogic.r313_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s3 # say314
@@ -94,7 +94,7 @@ label ddust_s3:  # -
 
         'Оставить его в покое.':
             # r13 # reply382
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s4 # say321
@@ -183,7 +183,7 @@ label ddust_s7:  # from 6.0 9.0 20.0
         'Давай, зови их. Буду рад с ними встретиться.':
             # r29 # reply3888
             $ ddustLogic.r3888_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s8 # say336
@@ -202,7 +202,7 @@ label ddust_s8:  # from 6.1 16.0 20.1
         'Давай, зови их. Буду рад с ними встретиться.':
             # r32 # reply3886
             $ ddustLogic.r3886_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s9 # say338
@@ -351,7 +351,7 @@ label ddust_s18:  # from 17.0
     menu:
         'Отлично. Спасибо.':
             # r54 # reply366
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s19 # say367
@@ -436,7 +436,7 @@ label ddust_s22:  # - # IF ~  Global("Appearance","GLOBAL",2)
 
         'Оставить его в покое.':
             # r69 # reply297
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s23 # say381
@@ -458,7 +458,7 @@ label ddust_s23:  # from 22.0
 
         'Оставить его в покое.':
             # r73 # reply392
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s24 # say393
@@ -759,17 +759,17 @@ label ddust_s38:  # -
         'Проклятье!':
             # r125 # reply448
             $ ddustLogic.r448_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
         'Тс-с! Я не смогу тебе ответить под такой крик!' if ddustLogic.r449_condition():
             # r126 # reply449
             $ ddustLogic.r449_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
         'Тс-с! Я не смогу тебе ответить под такой крик!' if ddustLogic.r1339_condition():
             # r127 # reply1339
             $ ddustLogic.r1339_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s39 # say398
@@ -791,17 +791,25 @@ label ddust_s40:  # - # Check EXTERN ~DMORTE~ : 61 Check EXTERN ~DMORTE~ : 63
     SPEAKER 'Этот бледный мужчина одет в длинную темную мантию. От него слегка отдает плесенью. Его лицо ничего не выражает; кажется, он полностью поглощен своими обязанностями.'
 
     menu:
+        'Приветствую.' if ddustLogic.r1420_condition():
+            # r130 # reply1420
+            jump ddust_dispose
+
+        'Приветствую.' if ddustLogic.r1421_condition():
+            # r131 # reply1421
+            jump ddust_dispose
+
         'Приветствую.' if ddustLogic.r1422_condition():
-            # r130 # reply1422
+            # r132 # reply1422
             jump ddust_s4
 
         'Приветствую.' if ddustLogic.r1423_condition():
-            # r131 # reply1423
+            # r133 # reply1423
             jump ddust_s4
 
         'Оставить его в покое.':
-            # r132 # reply1424
-            jump show_graphics_menu
+            # r134 # reply1424
+            jump ddust_dispose
 
 
 # s41 # say1425
@@ -810,7 +818,7 @@ label ddust_s41:  # from 1.0 5.1 7.1 8.1 47.1
 
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
-            # r133 # reply1426
+            # r135 # reply1426
             $ ddustLogic.r1426_action()
             jump ddust_s42
 
@@ -821,14 +829,14 @@ label ddust_s42:  # from 41.0 45.0
 
     menu:
         'Лучше ты, чем я, трухлявый.' if ddustLogic.r1428_condition():
-            # r134 # reply1428
+            # r136 # reply1428
             $ ddustLogic.r1428_action()
             jump ddust_s43
 
         'Лучше ты, чем я, трухлявый.' if ddustLogic.r1429_condition():
-            # r135 # reply1429
+            # r137 # reply1429
             $ ddustLogic.r1429_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s43 # say1430
@@ -837,9 +845,9 @@ label ddust_s43:  # from 42.0
 
     menu:
         'Оставить тело, уйти.':
-            # r136 # reply3882
+            # r138 # reply3882
             $ ddustLogic.r3882_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s44 # say3883
@@ -848,9 +856,9 @@ label ddust_s44:  # from 5.0 7.0 8.0 19.4 47.0
 
     menu:
         'Ну хорошо…':
-            # r137 # reply3884
+            # r139 # reply3884
             $ ddustLogic.r3884_action()
-            jump show_graphics_menu
+            jump ddust_dispose
 
 
 # s45 # say3889
@@ -859,7 +867,7 @@ label ddust_s45:  # from 19.5
 
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
-            # r138 # reply3890
+            # r140 # reply3890
             $ ddustLogic.r3890_action()
             jump ddust_s42
 
@@ -870,8 +878,8 @@ label ddust_s46:  # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
     menu:
         'Уйти прочь.':
-            # r139 # reply3892
-            jump show_graphics_menu
+            # r141 # reply3892
+            jump ddust_dispose
 
 
 # s47 # say3893
@@ -880,19 +888,19 @@ label ddust_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
     menu:
         'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r3914_condition():
-            # r140 # reply3914
+            # r142 # reply3914
             jump ddust_s44
 
         'Свернуть ему шею до того, как он сможет позвать на помощь.' if ddustLogic.r3915_condition():
-            # r141 # reply3915
+            # r143 # reply3915
             jump ddust_s41
 
         'Нет-нет… не он… то есть, я хотел сказать, не шпион… понимаешь, я очнулся на одной из плит… и…':
-            # r142 # reply3916
+            # r144 # reply3916
             jump ddust_s2
 
         'Уйти. Быстро.':
-            # r143 # reply3917
+            # r145 # reply3917
             jump ddust_s2
 
 
@@ -902,8 +910,8 @@ label ddust_s48:  # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 
 
     menu:
         'Уйти прочь.':
-            # r144 # reply3895
-            jump show_graphics_menu
+            # r146 # reply3895
+            jump ddust_dispose
 
 
 # s49 # say3896
@@ -912,19 +920,19 @@ label ddust_s49:  # from 24.0 24.1 25.0 25.1
 
     menu:
         'Я недавно посвящен. Прости мое невежество.' if ddustLogic.r3898_condition():
-            # r145 # reply3898
+            # r147 # reply3898
             jump ddust_s50
 
         'Я… недавно здесь. Я… пытаюсь изучить порядки.' if ddustLogic.r3899_condition():
-            # r146 # reply3899
+            # r148 # reply3899
             jump ddust_s47
 
         'Ну… к чему имена? Храни веру, э-э, посвященный.' if ddustLogic.r3900_condition():
-            # r147 # reply3900
+            # r149 # reply3900
             jump ddust_s47
 
         'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustLogic.r3901_condition():
-            # r148 # reply3901
+            # r150 # reply3901
             jump ddust_s46
 
 
@@ -934,11 +942,11 @@ label ddust_s50:  # from 29.0 35.0 37.0 49.0
 
     menu:
         'У меня есть пара вопросов…':
-            # r149 # reply3902
+            # r151 # reply3902
             jump ddust_s26
 
         'На этот раз — ничего. Прощай.':
-            # r150 # reply3903
+            # r152 # reply3903
             jump ddust_s46
 
 
@@ -948,23 +956,23 @@ label ddust_s51:  # - # IF ~  Global("Appearance","GLOBAL",0)
 
     menu:
         'Нет, я член фракции. Я просто осматриваю Морг.' if ddustLogic.r66675_condition():
-            # r151 # reply66675
+            # r153 # reply66675
             jump ddust_s52
 
         'Да.' if ddustLogic.r66676_condition():
-            # r152 # reply66676
+            # r154 # reply66676
             jump ddust_s5
 
         'Нет.' if ddustLogic.r66677_condition():
-            # r153 # reply66677
+            # r155 # reply66677
             jump ddust_s6
 
         'Нет, я не потерялся. У меня есть несколько вопросов…' if ddustLogic.r66678_condition():
-            # r154 # reply66678
+            # r156 # reply66678
             jump ddust_s6
 
         'Прощай.' if ddustLogic.r66679_condition():
-            # r155 # reply66679
+            # r157 # reply66679
             jump ddust_s2
 
 
@@ -974,5 +982,5 @@ label ddust_s52:  # from 51.0
 
     menu:
         'Конечно. Прощай.':
-            # r156 # reply66682
-            jump show_graphics_menu
+            # r158 # reply66682
+            jump ddust_dispose

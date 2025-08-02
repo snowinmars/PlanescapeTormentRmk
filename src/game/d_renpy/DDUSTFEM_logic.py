@@ -67,12 +67,12 @@ class DdustfemLogic:
     def r4319_action(self):
         self.gsm.inc_choke_dustman()
         self.gsm.inc_choke()
-        self.gsm.set_dead_ddustfem(True)
+        self.gsm.set_dead_dustfem(True)
         Deactivate(Myself) self.gsm.inc_exp_custom('party', 15)
 
 
     def r4320_action(self):
-        self.gsm.set_dead_ddustfem(True)
+        self.gsm.set_dead_dustfem(True)
         self.gsm.inc_exp_custom('protagonist', 250)
 
 
@@ -114,35 +114,43 @@ class DdustfemLogic:
 
 
     def r1253_condition(self):
-        return self.gsm.get_meet_dhall() Global("Current_Area","GLOBAL",202)
+        return self.gsm.get_meet_dhall() and \
+               self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r1255_condition(self):
-        return self.gsm.get_meet_dhall() !Global("Current_Area","GLOBAL",202)
+        return self.gsm.get_meet_dhall() and \
+               not self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r1258_condition(self):
-        return self.gsm.get_meet_deionarra() Global("Current_Area","GLOBAL",201)
+        return self.gsm.get_meet_deionarra() and \
+               self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r4336_condition(self):
-        return self.gsm.get_meet_deionarra() !Global("Current_Area","GLOBAL",201)
+        return self.gsm.get_meet_deionarra() and \
+               not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33224_condition(self):
-        return self.gsm.get_meet_soego() Global("Current_Area","GLOBAL",201)
+        return self.gsm.get_meet_soego() and \
+               self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33226_condition(self):
-        return self.gsm.get_meet_soego() !Global("Current_Area","GLOBAL",201)
+        return self.gsm.get_meet_soego() and \
+               not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33227_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 NumTimesTalkedTo(1)
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_talked_to_dustfem_times() == 1
 
 
     def r33229_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 NumTimesTalkedToGT(1)
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_talked_to_dustfem_times() > 1
 
 
     def r1272_condition(self):
@@ -150,11 +158,11 @@ class DdustfemLogic:
 
 
     def r1273_condition(self):
-        return NumTimesTalkedTo(1)
+        return self.gsm.get_talked_to_dustfem_times() == 1
 
 
     def r1274_condition(self):
-        return NumTimesTalkedToGT(1)
+        return self.gsm.get_talked_to_dustfem_times() > 1
 
 
     def r1275_condition(self):
@@ -170,11 +178,11 @@ class DdustfemLogic:
 
 
     def r1290_condition(self):
-        return NumTimesTalkedTo(1)
+        return self.gsm.get_talked_to_dustfem_times() == 1
 
 
     def r1291_condition(self):
-        return NumTimesTalkedToGT(1)
+        return self.gsm.get_talked_to_dustfem_times() > 1
 
 
     def r1292_condition(self):
@@ -186,11 +194,11 @@ class DdustfemLogic:
 
 
     def r1294_condition(self):
-        return NumTimesTalkedTo(1)
+        return self.gsm.get_talked_to_dustfem_times() == 1
 
 
     def r1295_condition(self):
-        return NumTimesTalkedToGT(1)
+        return self.gsm.get_talked_to_dustfem_times() > 1
 
 
     def r1296_condition(self):
@@ -218,11 +226,11 @@ class DdustfemLogic:
 
 
     def r4281_condition(self):
-        return Global("Current_Area","GLOBAL",202)
+        return self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r4282_condition(self):
-        return !Global("Current_Area","GLOBAL",202)
+        return not self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r4296_condition(self):
@@ -258,11 +266,21 @@ class DdustfemLogic:
 
 
     def r4308_condition(self):
-        return NumTimesTalkedTo(1)
+        return self.gsm.get_talked_to_dustfem_times() == 1
 
 
     def r4309_condition(self):
-        return NumTimesTalkedToGT(1)
+        return self.gsm.get_talked_to_dustfem_times() > 1
+
+
+    def r4312_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_warning() == 0
+
+
+    def r4313_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_warning() == 1
 
 
     def r4314_condition(self):

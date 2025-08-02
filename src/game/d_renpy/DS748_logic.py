@@ -17,14 +17,46 @@ class Ds748Logic:
         self.gsm.set_skeleton_examine(True)
 
 
+    def r35448_action(self):
+        self.gsm.set_morte_skel_mort_quip2(True)
+
+
+    def r35456_action(self):
+        self.gsm.set_morte_skel_mort_quip(True)
+
+
+    def r35386_action(self):
+        self.gsm.set_morte_skel_mort_quip(True)
+
+
+    def r35412_action(self):
+        self.gsm.set_morte_skel_mort_quip(True)
+
+
+    def r35417_action(self):
+        self.gsm.set_morte_skel_mort_quip2(True)
+
+
+    def r35445_action(self):
+        self.gsm.set_morte_skel_mort_quip(True)
+
+
+    def r35423_action(self):
+        self.gsm.set_morte_skel_mort_quip(True)
+
+
+    def r35426_action(self):
+        self.gsm.set_morte_skel_mort_quip(True)
+
+
     def r35431_action(self):
-        self.gsm.set_dead_ds748(True)
+        self.gsm.set_dead_s748(True)
         self.gsm.set_has_spike(True)
         self.gsm.set_has_strap(True)
 
 
     def r35434_action(self):
-        self.gsm.set_dead_ds748(True)
+        self.gsm.set_dead_s748(True)
         self.gsm.set_has_spike(True)
         self.gsm.set_has_strap(True)
 
@@ -47,6 +79,12 @@ class Ds748Logic:
 
     def r35410_condition(self):
         return self.gsm.get_can_speak_with_dead()
+
+
+    def r35448_condition(self):
+        return self.gsm.get_skeleton_examine() and \
+               self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip2()
 
 
     def r35449_condition(self):
@@ -92,6 +130,16 @@ class Ds748Logic:
                self.gsm.get_has_prybar()
 
 
+    def r35455_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               self.gsm.get_morte_skel_mort_quip()
+
+
+    def r35456_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
+
+
     def r35457_condition(self):
         return not self.gsm.get_in_party_morte() and \
                not self.gsm.get_morte_skel_mort_quip()
@@ -99,6 +147,11 @@ class Ds748Logic:
 
     def r35458_condition(self):
         return self.gsm.get_morte_skel_mort_quip()
+
+
+    def r35386_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35405_condition(self):
@@ -110,6 +163,11 @@ class Ds748Logic:
         return self.gsm.get_morte_skel_mort_quip()
 
 
+    def r35412_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
+
+
     def r35413_condition(self):
         return not self.gsm.get_in_party_morte() and \
                not self.gsm.get_morte_skel_mort_quip()
@@ -117,6 +175,11 @@ class Ds748Logic:
 
     def r35414_condition(self):
         return self.gsm.get_morte_skel_mort_quip()
+
+
+    def r35417_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip2()
 
 
     def r35439_condition(self):
@@ -156,6 +219,11 @@ class Ds748Logic:
                self.gsm.get_has_prybar()
 
 
+    def r35445_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
+
+
     def r35446_condition(self):
         return not self.gsm.get_in_party_morte() and \
                not self.gsm.get_morte_skel_mort_quip()
@@ -163,6 +231,12 @@ class Ds748Logic:
 
     def r35447_condition(self):
         return self.gsm.get_morte_skel_mort_quip()
+
+
+    def r35423_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
+               self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35424_condition(self):
@@ -174,6 +248,11 @@ class Ds748Logic:
     def r35425_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
                self.gsm.get_morte_skel_mort_quip()
+
+
+    def r35426_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35427_condition(self):

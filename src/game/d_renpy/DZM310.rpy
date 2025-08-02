@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM310.DLG
+# Original:  DLG/DZM310.DLG
 # ###
 
 
@@ -41,11 +41,11 @@ label dzm310_s0:  # - # IF ~  Global("Oinosian","GLOBAL",0)
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6503
-            jump show_graphics_menu
+            jump dzm310_dispose
 
         'Оставить труп в покое.':
             # r5 # reply6504
-            jump show_graphics_menu
+            jump dzm310_dispose
 
 
 # s1 # say6496
@@ -55,7 +55,7 @@ label dzm310_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6505
-            jump show_graphics_menu
+            jump dzm310_dispose
 
 
 # s2 # say6498
@@ -356,7 +356,7 @@ label dzm310_s16:  # from 6.0
 label dzm310_s17:  # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
     SPEAKER 'Ты даже не замечаешь, как дух покинул тело, до тех пор, пока зомби, неуклюже шагая, не вернулся к своей работе.'
 
-    jump show_graphics_menu
+    jump dzm310_dispose
 
 # s18 # say20102
 label dzm310_s18:  # - # IF ~  Global("Oinosian","GLOBAL",1)
@@ -369,4 +369,4 @@ label dzm310_s18:  # - # IF ~  Global("Oinosian","GLOBAL",1)
 
         'Я просто проходил мимо. Прощай.':
             # r59 # reply20104
-            jump show_graphics_menu
+            jump dzm310_dispose

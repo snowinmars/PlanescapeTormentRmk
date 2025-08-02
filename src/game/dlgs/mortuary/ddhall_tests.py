@@ -704,3 +704,7 @@ class DdhallLogicTest(LogicTest):
             lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
             lambda: logic.r6032_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

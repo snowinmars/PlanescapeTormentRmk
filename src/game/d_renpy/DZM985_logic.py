@@ -3,6 +3,12 @@ class Dzm985Logic:
         self.gsm = gsm
 
 
+    def r45516_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
+        self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
+        # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
+
+
     def r45517_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
@@ -26,6 +32,10 @@ class Dzm985Logic:
 
     def r45539_action(self):
         # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
+
+
+    def r45516_condition(self):
+        return self.gsm.get_in_party_morte()
 
 
     def r45517_condition(self):

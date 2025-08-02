@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM965.DLG
+# Original:  DLG/DZM965.DLG
 # ###
 
 
@@ -20,7 +20,7 @@ label dzm965_dispose:
 label dzm965_s0:  # - # IF ~  NearbyDialog("Dmorte")  Check EXTERN ~DMORTE~ : 477
     SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.'
 
-    jump show_graphics_menu
+    jump dzm965_dispose
 
 # s1 # say34922
 label dzm965_s1:  # - # IF ~  !NearbyDialog("Dmorte")
@@ -46,11 +46,11 @@ label dzm965_s1:  # - # IF ~  !NearbyDialog("Dmorte")
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply45073
-            jump show_graphics_menu
+            jump dzm965_dispose
 
         'Оставить труп в покое.':
             # r5 # reply45074
-            jump show_graphics_menu
+            jump dzm965_dispose
 
 
 # s2 # say34927
@@ -60,7 +60,7 @@ label dzm965_s2:  # from 1.0 1.1 1.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply34928
-            jump show_graphics_menu
+            jump dzm965_dispose
 
 
 # s3 # say45069
@@ -70,4 +70,4 @@ label dzm965_s3:  # from 1.3
     menu:
         'Оставить труп в покое.':
             # r7 # reply45075
-            jump show_graphics_menu
+            jump dzm965_dispose

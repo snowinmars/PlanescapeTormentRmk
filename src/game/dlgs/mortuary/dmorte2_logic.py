@@ -157,4 +157,4 @@ class Dmorte2Logic:
 
 
     def r41239_condition(self):
-        return self.gsm.gcm.get_character('protagonist', 'intelligence') > 12
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12

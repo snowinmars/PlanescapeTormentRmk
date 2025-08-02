@@ -3,6 +3,12 @@ class Dzm825Logic:
         self.gsm = gsm
 
 
+    def r24565_condition(self):
+        return not self.gsm.get_mortuary_walkthrough() and \
+               not self.gsm.get_has_intro_key() and \
+               self.gsm.get_in_party_morte()
+
+
     def r24568_condition(self):
         return not self.gsm.get_mortuary_walkthrough() and \
                not self.gsm.get_has_intro_key() and \
@@ -24,6 +30,10 @@ class Dzm825Logic:
     def r24574_condition(self):
         return not self.gsm.get_mortuary_walkthrough() and \
                not self.gsm.get_has_intro_key()
+
+
+    def r42312_condition(self):
+        return self.gsm.get_in_party_morte()
 
 
     def r42313_condition(self):

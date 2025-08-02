@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM782.DLG
+# Original:  DLG/DZM782.DLG
 # ###
 
 
@@ -21,21 +21,25 @@ label dzm782_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE1~ : 34
     SPEAKER 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом. На его лбу вырезан номер 782, а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
+        'Я ищу ключ… быть может, он у тебя?' if dzm782Logic.r24709_condition():
+            # r0 # reply24709
+            jump dzm782_dispose
+
         'Я ищу ключ… быть может, он у тебя?' if dzm782Logic.r24712_condition():
-            # r0 # reply24712
+            # r1 # reply24712
             jump dzm782_s1
 
         'Осмотреть труп, проверить, есть ли у него ключ.':
-            # r1 # reply24713
+            # r2 # reply24713
             jump dzm782_s2
 
         'Было приятно с тобой поболтать. Прощай.':
-            # r2 # reply24714
+            # r3 # reply24714
             jump dzm782_s2
 
         'Оставить труп в покое.':
-            # r3 # reply24717
-            jump show_graphics_menu
+            # r4 # reply24717
+            jump dzm782_dispose
 
 
 # s1 # say24710
@@ -44,12 +48,12 @@ label dzm782_s1:  # from 0.1
 
     menu:
         'Тогда неважно. Прощай.':
-            # r4 # reply24711
-            jump show_graphics_menu
+            # r5 # reply24711
+            jump dzm782_dispose
 
         'Оставить труп в покое.':
-            # r5 # reply42304
-            jump show_graphics_menu
+            # r6 # reply42304
+            jump dzm782_dispose
 
 
 # s2 # say24715
@@ -58,10 +62,10 @@ label dzm782_s2:  # from 0.2 0.3
 
     menu:
         'Мне нужен этот ключ, труп… похоже, тебе уже недолго осталось прозябать в этом мире.':
-            # r6 # reply24716
+            # r7 # reply24716
             $ dzm782Logic.r24716_action()
-            jump show_graphics_menu
+            jump dzm782_dispose
 
         'Оставить труп в покое.':
-            # r7 # reply42305
-            jump show_graphics_menu
+            # r8 # reply42305
+            jump dzm782_dispose

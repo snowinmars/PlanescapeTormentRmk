@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM257.DLG
+# Original:  DLG/DZM257.DLG
 # ###
 
 
@@ -40,11 +40,11 @@ label dzm257_s0:  # - # IF ~  True()
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6514
-            jump show_graphics_menu
+            jump dzm257_dispose
 
         'Оставить труп в покое.':
             # r5 # reply6515
-            jump show_graphics_menu
+            jump dzm257_dispose
 
 
 # s1 # say6508
@@ -54,7 +54,7 @@ label dzm257_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6516
-            jump show_graphics_menu
+            jump dzm257_dispose
 
 
 # s2 # say6509
@@ -68,7 +68,7 @@ label dzm257_s2:  # from 0.3
 
         'Оставить духа в покое.':
             # r8 # reply9558
-            jump show_graphics_menu
+            jump dzm257_dispose
 
 
 # s3 # say9553
@@ -137,11 +137,11 @@ label dzm257_s6:  # from 3.2 4.2 5.2
 
         'Не обращать на него внимания, отвернуться.':
             # r19 # reply9569
-            jump show_graphics_menu
+            jump dzm257_dispose
 
 
 # s7 # say9557
 label dzm257_s7:  # from 6.0
     SPEAKER '…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.'
 
-    jump show_graphics_menu
+    jump dzm257_dispose

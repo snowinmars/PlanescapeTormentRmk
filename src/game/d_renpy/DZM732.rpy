@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM732.DLG
+# Original:  DLG/DZM732.DLG
 # ###
 
 
@@ -40,11 +40,11 @@ label dzm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6536
-            jump show_graphics_menu
+            jump dzm732_dispose
 
         'Оставить труп в покое.':
             # r5 # reply6537
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s1 # say6530
@@ -54,7 +54,7 @@ label dzm732_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6538
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s2 # say6531
@@ -64,7 +64,7 @@ label dzm732_s2:  # from 0.3
     menu:
         'Оставить труп в покое.':
             # r7 # reply6539
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s3 # say64270
@@ -79,7 +79,7 @@ label dzm732_s3:  # - # IF ~  HasItem("TomeBA","ZM732")
 
         'Оставить труп в покое.':
             # r9 # reply64272
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s4 # say64273
@@ -93,4 +93,4 @@ label dzm732_s4:  # from 3.0
 
         'Оставить труп в покое.':
             # r11 # reply64275
-            jump show_graphics_menu
+            jump dzm732_dispose

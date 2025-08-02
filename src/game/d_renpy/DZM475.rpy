@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM475.DLG
+# Original:  DLG/DZM475.DLG
 # ###
 
 
@@ -40,11 +40,11 @@ label dzm475_s0:  # - # IF ~  True()
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6591
-            jump show_graphics_menu
+            jump dzm475_dispose
 
         'Оставить труп в покое.':
             # r5 # reply6592
-            jump show_graphics_menu
+            jump dzm475_dispose
 
 
 # s1 # say6585
@@ -54,7 +54,7 @@ label dzm475_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6593
-            jump show_graphics_menu
+            jump dzm475_dispose
 
 
 # s2 # say6586
@@ -64,4 +64,4 @@ label dzm475_s2:  # from 0.3
     menu:
         'Оставить труп в покое.':
             # r7 # reply6594
-            jump show_graphics_menu
+            jump dzm475_dispose

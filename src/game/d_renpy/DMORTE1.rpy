@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DMORTE1.DLG
+# Original:  DLG/DMORTE1.DLG
 # ###
 
 
@@ -208,7 +208,7 @@ label dmorte1_s17:  # from 16.0
         'Хорошо. Спасибо за совет.':
             # r20 # reply39831
             $ dmorte1Logic.r39831_action()
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s18 # say39832
@@ -218,7 +218,7 @@ label dmorte1_s18:  # -
     menu:
         'Ладно… Я поищу.':
             # r21 # reply39833
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s19 # say39834
@@ -280,7 +280,7 @@ label dmorte1_s23:  # from 19.1 20.1 21.1 22.0
     menu:
         'Вперед.':
             # r29 # reply39846
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s24 # say39847
@@ -290,7 +290,7 @@ label dmorte1_s24:  # -
     menu:
         'Хорошо.':
             # r30 # reply39848
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s25 # say39849
@@ -300,7 +300,7 @@ label dmorte1_s25:  # -
     menu:
         'Тогда я перепробую все двери.':
             # r31 # reply39850
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s26 # say39851
@@ -311,7 +311,7 @@ label dmorte1_s26:  # -
         'Да… идем.':
             # r32 # reply39852
             $ dmorte1Logic.r39852_action()
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
         'Не сейчас, Морт.':
             # r33 # reply39853
@@ -330,7 +330,7 @@ label dmorte1_s27:  # from 26.1
         'Ладно. Я передумал. Давай, идем.':
             # r35 # reply39856
             $ dmorte1Logic.r39856_action()
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
         'Не сейчас, Морт. Может быть потом.':
             # r36 # reply39857
@@ -345,7 +345,7 @@ label dmorte1_s28:  # from 27.0 27.2
         'Ладно. Я передумал. Давай, идем.':
             # r37 # reply39859
             $ dmorte1Logic.r39859_action()
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r38 # reply39860
@@ -359,7 +359,7 @@ label dmorte1_s29:  # from 28.1
     menu:
         'Я так и сделаю. Прощай, Морт.':
             # r39 # reply39862
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s30 # say39863
@@ -369,7 +369,7 @@ label dmorte1_s30:  # -
     menu:
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.':
             # r40 # reply39864
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s31 # say42298
@@ -399,11 +399,11 @@ label dmorte1_s33:  # from 32.0
     menu:
         'Хорошо. Идем.':
             # r43 # reply42303
-            jump show_graphics_menu
+            jump dmorte1_dispose
 
 
 # s34 # say42306
 label dmorte1_s34:  # - # Check EXTERN ~DZM782~ : 2
     SPEAKER 'Кажется, просителю повезло, шеф. Смотри… у него в руке ключ.'
 
-    jump show_graphics_menu
+    jump dmorte1_dispose

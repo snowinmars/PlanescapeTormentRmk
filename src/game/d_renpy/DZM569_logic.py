@@ -3,6 +3,12 @@ class Dzm569Logic:
         self.gsm = gsm
 
 
+    def r24576_condition(self):
+        return not self.gsm.get_mortuary_walkthrough() and \
+               not self.gsm.get_has_intro_key() and \
+               self.gsm.get_in_party_morte()
+
+
     def r24579_condition(self):
         return not self.gsm.get_mortuary_walkthrough() and \
                not self.gsm.get_has_intro_key() and \
@@ -24,6 +30,10 @@ class Dzm569Logic:
     def r24585_condition(self):
         return not self.gsm.get_mortuary_walkthrough() and \
                not self.gsm.get_has_intro_key()
+
+
+    def r42294_condition(self):
+        return self.gsm.get_in_party_morte()
 
 
     def r42295_condition(self):

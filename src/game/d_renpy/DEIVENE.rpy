@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DEIVENE.DLG
+# Original:  DLG/DEIVENE.DLG
 # ###
 
 
@@ -27,7 +27,7 @@ label deivene_s0:  # - # IF ~  Global("EiVene","GLOBAL",0)
 
         'Оставить ее в покое.':
             # r1 # reply3407
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s1 # say3410
@@ -53,7 +53,7 @@ label deivene_s1:  # from 0.0
 
         'Оставить ее в покое.':
             # r6 # reply3416
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s2 # say3417
@@ -68,14 +68,14 @@ label deivene_s2:  # from 1.0 1.2
 
         'Оставить ее в покое.':
             # r8 # reply3419
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s3 # say3420
 label deivene_s3:  # from 1.1 # Check EXTERN ~DMORTE~ : 55
     SPEAKER 'Женщина не отвечает.'
 
-    jump show_graphics_menu
+    jump deivene_dispose
 
 # s4 # say3421
 label deivene_s4:  # from 2.0
@@ -121,7 +121,7 @@ label deivene_s5:  # from 4.0
         'Уйти.':
             # r15 # reply3429
             $ deiveneLogic.r3429_action()
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s6 # say3430
@@ -135,7 +135,7 @@ label deivene_s6:  # from 5.1 5.3
 
         'Уйти.':
             # r17 # reply3432
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s7 # say3433
@@ -163,7 +163,7 @@ label deivene_s8:  # from 7.1
 
         'Уйти. Быстро.':
             # r21 # reply3438
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s9 # say3439
@@ -175,12 +175,20 @@ label deivene_s9:  # from 7.0 8.0 # Check EXTERN ~DMORTE~ : 59
             # r22 # reply3440
             jump deivene_s11
 
+        'Э, не то, чтобы я не польщен, но…' if deiveneLogic.r3441_condition():
+            # r23 # reply3441
+            jump deivene_dispose
+
         'Продолжать строить из себя зомби.' if deiveneLogic.r3442_condition():
-            # r23 # reply3442
+            # r24 # reply3442
             jump deivene_s11
 
+        'Продолжать строить из себя зомби.' if deiveneLogic.r3443_condition():
+            # r25 # reply3443
+            jump deivene_dispose
+
         'Оттолкнуть ее, уйти.':
-            # r24 # reply3444
+            # r26 # reply3444
             jump deivene_s10
 
 
@@ -190,9 +198,9 @@ label deivene_s10:  # from 9.4 12.1
 
     menu:
         'Ну хорошо…':
-            # r25 # reply3491
+            # r27 # reply3491
             $ deiveneLogic.r3491_action()
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s11 # say3446
@@ -201,7 +209,7 @@ label deivene_s11:  # from 9.0 9.2
 
     menu:
         'Подождать.':
-            # r26 # reply3447
+            # r28 # reply3447
             jump deivene_s12
 
 
@@ -211,12 +219,12 @@ label deivene_s12:  # from 11.0
 
     menu:
         'Позволить ей работать.':
-            # r27 # reply3449
+            # r29 # reply3449
             $ deiveneLogic.r3449_action()
             jump deivene_s13
 
         'Оттолкнуть ее, уйти.':
-            # r28 # reply3450
+            # r30 # reply3450
             jump deivene_s10
 
 
@@ -226,8 +234,12 @@ label deivene_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 60
 
     menu:
         'Позволить ей работать.' if deiveneLogic.r3452_condition():
-            # r29 # reply3452
+            # r31 # reply3452
             jump deivene_s14
+
+        'Позволить ей работать.' if deiveneLogic.r3453_condition():
+            # r32 # reply3453
+            jump deivene_dispose
 
 
 # s14 # say3454
@@ -236,17 +248,17 @@ label deivene_s14:  # from 13.0
 
     menu:
         'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3456_condition():
-            # r30 # reply3456
+            # r33 # reply3456
             $ deiveneLogic.r3456_action()
             jump deivene_s18
 
         'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3457_condition():
-            # r31 # reply3457
+            # r34 # reply3457
             jump deivene_s24
 
         'Уйти.':
-            # r32 # reply4350
-            jump show_graphics_menu
+            # r35 # reply4350
+            jump deivene_dispose
 
 
 # s15 # say3458
@@ -255,28 +267,28 @@ label deivene_s15:  # - # IF ~  Global("EiVene","GLOBAL",1)
 
     menu:
         'Наблюдать за ней, изучая движения ее рук.' if deiveneLogic.r3459_condition():
-            # r33 # reply3459
+            # r36 # reply3459
             $ deiveneLogic.r3459_action()
             jump deivene_s16
 
         'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r3463_condition():
-            # r34 # reply3463
+            # r37 # reply3463
             jump deivene_s17
 
         'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r4351_condition():
-            # r35 # reply4351
+            # r38 # reply4351
             jump deivene_s22
 
         'Уйти.':
-            # r36 # reply4352
-            jump show_graphics_menu
+            # r39 # reply4352
+            jump deivene_dispose
 
 
 # s16 # say3464
 label deivene_s16:  # from 15.0 # ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) Wait(3) ~ GOTO 26
     SPEAKER 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
 
-    jump show_graphics_menu
+    jump deivene_dispose
 
 # s17 # say3468
 label deivene_s17:  # from 6.0 15.1 25.0 27.0
@@ -284,22 +296,22 @@ label deivene_s17:  # from 6.0 15.1 25.0 27.0
 
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if deiveneLogic.r3469_condition():
-            # r37 # reply3469
+            # r40 # reply3469
             $ deiveneLogic.r3469_action()
             jump deivene_s7
 
         'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3470_condition():
-            # r38 # reply3470
+            # r41 # reply3470
             $ deiveneLogic.r3470_action()
             jump deivene_s18
 
         'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3497_condition():
-            # r39 # reply3497
+            # r42 # reply3497
             jump deivene_s24
 
         'Уйти.':
-            # r40 # reply4357
-            jump show_graphics_menu
+            # r43 # reply4357
+            jump deivene_dispose
 
 
 # s18 # say3471
@@ -308,38 +320,38 @@ label deivene_s18:  # from 14.0 17.1 22.0
 
     menu:
         'Что с твоими руками?' if deiveneLogic.r3494_condition():
-            # r41 # reply3494
+            # r44 # reply3494
             $ deiveneLogic.r3494_action()
             jump deivene_s23
 
         'Что с твоими руками?' if deiveneLogic.r3495_condition():
-            # r42 # reply3495
+            # r45 # reply3495
             $ deiveneLogic.r3495_action()
             jump deivene_s21
 
         'Уйти.':
-            # r43 # reply3496
+            # r46 # reply3496
             $ deiveneLogic.r3496_action()
-            jump show_graphics_menu
+            jump deivene_dispose
 
 
 # s19 # say3472
 label deivene_s19:  # from 1.3 # Check EXTERN ~DMORTE~ : 56
     SPEAKER 'Женщина не отвечает.'
 
-    jump show_graphics_menu
+    jump deivene_dispose
 
 # s20 # say3485
 label deivene_s20:  # from 5.2 5.4 # Check EXTERN ~DMORTE~ : 57
     SPEAKER 'Она отворачивается… непохоже, чтобы она тебя услышала.'
 
-    jump show_graphics_menu
+    jump deivene_dispose
 
 # s21 # say3486
 label deivene_s21:  # from 18.1 # Check EXTERN ~DMORTE~ : 58
     SPEAKER 'Она отворачивается… непохоже, чтобы она тебя услышала. Должно быть, ее слух не лучше зрения.'
 
-    jump show_graphics_menu
+    jump deivene_dispose
 
 # s22 # say3493
 label deivene_s22:  # from 15.2 25.1 27.1
@@ -347,17 +359,17 @@ label deivene_s22:  # from 15.2 25.1 27.1
 
     menu:
         'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3501_condition():
-            # r44 # reply3501
+            # r47 # reply3501
             $ deiveneLogic.r3501_action()
             jump deivene_s18
 
         'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if deiveneLogic.r3502_condition():
-            # r45 # reply3502
+            # r48 # reply3502
             jump deivene_s24
 
         'Уйти.':
-            # r46 # reply4358
-            jump show_graphics_menu
+            # r49 # reply4358
+            jump deivene_dispose
 
 
 # s23 # say3498
@@ -366,8 +378,8 @@ label deivene_s23:  # from 18.0
 
     menu:
         'Уйти.':
-            # r47 # reply3499
-            jump show_graphics_menu
+            # r50 # reply3499
+            jump deivene_dispose
 
 
 # s24 # say4200
@@ -376,8 +388,8 @@ label deivene_s24:  # from 14.1 17.2 22.1
 
     menu:
         'Уйти.':
-            # r48 # reply4201
-            jump show_graphics_menu
+            # r51 # reply4201
+            jump deivene_dispose
 
 
 # s25 # say4353
@@ -386,16 +398,16 @@ label deivene_s25:  # -
 
     menu:
         'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r4354_condition():
-            # r49 # reply4354
+            # r52 # reply4354
             jump deivene_s17
 
         'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r4355_condition():
-            # r50 # reply4355
+            # r53 # reply4355
             jump deivene_s22
 
         'Уйти.':
-            # r51 # reply4356
-            jump show_graphics_menu
+            # r54 # reply4356
+            jump deivene_dispose
 
 
 # s26 # say63477
@@ -404,12 +416,12 @@ label deivene_s26:  # from 16.0
 
     menu:
         'Эхо: Храни это, пока я не вернусь.' if deiveneLogic.r63478_condition():
-            # r52 # reply63478
+            # r55 # reply63478
             $ deiveneLogic.r63478_action()
             jump deivene_s27
 
         'Эхо: Храни это, пока я не вернусь.' if deiveneLogic.r63479_condition():
-            # r53 # reply63479
+            # r56 # reply63479
             jump deivene_s27
 
 
@@ -419,13 +431,13 @@ label deivene_s27:  # from 26.0 26.1
 
     menu:
         'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r63482_condition():
-            # r54 # reply63482
+            # r57 # reply63482
             jump deivene_s17
 
         'Коснуться ее плеча, привлечь ее внимание.' if deiveneLogic.r63481_condition():
-            # r55 # reply63481
+            # r58 # reply63481
             jump deivene_s22
 
         'Уйти.':
-            # r56 # reply63483
-            jump show_graphics_menu
+            # r59 # reply63483
+            jump deivene_dispose

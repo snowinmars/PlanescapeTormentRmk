@@ -824,3 +824,7 @@ class Ds748LogicTest(LogicTest):
             lambda x: self.settings_manager.set_morte_skel_mort_quip(x),
             lambda: logic.r35428_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

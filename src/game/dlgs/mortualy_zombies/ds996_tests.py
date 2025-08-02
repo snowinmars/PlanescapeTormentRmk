@@ -824,3 +824,7 @@ class Ds996LogicTest(LogicTest):
             lambda x: self.settings_manager.set_morte_skel_mort_quip(x),
             lambda: logic.r35505_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

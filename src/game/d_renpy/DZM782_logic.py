@@ -7,5 +7,9 @@ class Dzm782Logic:
         # ?.attack("Protagonist").by("ZM782")
 
 
+    def r24709_condition(self):
+        return self.gsm.get_in_party_morte()
+
+
     def r24712_condition(self):
         return not self.gsm.get_in_party_morte()

@@ -24,6 +24,16 @@ class Dzf1072Logic:
         return self.gsm.get_can_speak_with_dead()
 
 
+    def r35139_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
+    def r35140_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
     def r35141_condition(self):
         return self.gsm.get_morte_quip()
 
@@ -42,12 +52,22 @@ class Dzf1072Logic:
                not self.gsm.get_morte_quip()
 
 
+    def r35117_condition(self):
+        return self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
     def r35130_condition(self):
         return self.gsm.get_morte_quip()
 
 
     def r35131_condition(self):
         return not self.gsm.get_in_party_morte() and \
+               not self.gsm.get_morte_quip()
+
+
+    def r35136_condition(self):
+        return self.gsm.get_in_party_morte() and \
                not self.gsm.get_morte_quip()
 
 

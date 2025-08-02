@@ -25,3 +25,7 @@ class DhallFeatherLogicTest(LogicTest):
             delta,
             lambda: logic.break_feather()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

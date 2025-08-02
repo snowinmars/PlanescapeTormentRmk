@@ -19,8 +19,21 @@ class DmorteLogic:
         self.gsm.set_in_party_morte(True)
 
 
+    def r1845_action(self):
+        self.gsm.set_morte_harlot_quip_1(True)
+
+
+    def r1846_action(self):
+        self.gsm.set_morte_harlot_quip_1(True)
+
+
     def r1847_action(self):
         self.gsm.set_morte_harlot_quip_1(True)
+
+
+    def r2080_action(self):
+        self.gsm.set_know_mimir(True)
+        self.gsm.set_morte_mimir(True)
 
 
     def r9029_action(self):
@@ -44,13 +57,13 @@ class DmorteLogic:
 
 
     def r3474_action(self):
-        self.gsm.update_journal("38205")
-        # "38205": " ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ "
+        self.gsm.update_journal('38205')
+        # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
 
 
     def r3483_action(self):
-        self.gsm.update_journal("38205")
-        # "38205": " ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ "
+        self.gsm.update_journal('38205')
+        # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
 
 
     def r3871_action(self):
@@ -118,8 +131,20 @@ class DmorteLogic:
 
 
     def r4676_action(self):
-        self.gsm.update_journal("64512")
-        # "64512": " ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ "
+        self.gsm.update_journal('64512')
+        # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+
+
+    def r4678_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
+
+
+    def r4679_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_vaxis_4')
+
+
+    def r4682_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
 
 
     def r4687_action(self):
@@ -128,8 +153,27 @@ class DmorteLogic:
 
 
     def r4693_action(self):
-        self.gsm.update_journal("64512")
-        # "64512": " ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ "
+        self.gsm.update_journal('64512')
+        # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+
+
+    def r4695_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', -3, 'globalchaotic_vaxis_3')
+
+
+    def r4699_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', 3, 'globallawful_vaxis_3')
+
+
+    def r64535_action(self):
+        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        Wait(2) FadeFromColor([20.0],0) self.gsm.inc_exp_custom('party', 500)
+        self.gsm.set_vaxis_global_xp(True)
+
+
+    def r64534_action(self):
+        FadeToColor([20.0],0) Wait(1) self.gsm.set_looks_like("zombie")
+        Wait(2) FadeFromColor([20.0],0)
 
 
     def r5030_action(self):
@@ -148,6 +192,18 @@ class DmorteLogic:
         self.gsm.set_morte_deionarra_quip_1(True)
 
 
+    def r6658_action(self):
+        self.gsm.gcm.modify_property('protagonist', 'good', -1)
+
+
+    def r6659_action(self):
+        self.gsm.gcm.modify_property('protagonist', 'good', 1)
+
+
+    def r6957_action(self):
+        self.gsm.set_translate_dabus(False)
+
+
     def r7056_action(self):
         self.gsm.set_morte_zombie_female_bar_quip(True)
 
@@ -158,6 +214,10 @@ class DmorteLogic:
 
     def r7058_action(self):
         self.gsm.set_morte_quip(True)
+
+
+    def r7483_action(self):
+        self.gsm.inc_bd_morte_morale()
 
 
     def r7485_action(self):
@@ -205,6 +265,14 @@ class DmorteLogic:
         self.gsm.set_know_mimir(True)
 
 
+    def r12860_action(self):
+        self.gsm.set_morte_mimir(True)
+
+
+    def r12861_action(self):
+        self.gsm.set_morte_mimir(True)
+
+
     def r13774_action(self):
         self.gsm.set_morte_sdthug_quip_1(True)
         self.gsm.set_know_chaosmen(True)
@@ -243,12 +311,127 @@ class DmorteLogic:
         self.gsm.inc_tree_helpers()
 
 
+    def r16884_action(self):
+        self.gsm.set_tree_a(True)
+
+
+    def r16885_action(self):
+        self.gsm.set_tree_i(True)
+
+
+    def r16886_action(self):
+        self.gsm.set_tree_g(True)
+
+
+    def r16887_action(self):
+        self.gsm.set_tree_d(True)
+
+
+    def r16888_action(self):
+        self.gsm.inc_bd_dakkon_morale()
+        self.gsm.set_tree_d(True)
+
+
+    def r16889_action(self):
+        self.gsm.set_tree_n(True)
+
+
+    def r16890_action(self):
+        self.gsm.set_tree_v(True)
+
+
     def r16893_action(self):
         self.gsm.set_tree_m(True)
 
 
+    def r16894_action(self):
+        self.gsm.set_tree_a(True)
+
+
+    def r16895_action(self):
+        self.gsm.set_tree_i(True)
+
+
+    def r16896_action(self):
+        self.gsm.set_tree_g(True)
+
+
+    def r16897_action(self):
+        self.gsm.set_tree_d(True)
+
+
+    def r16898_action(self):
+        self.gsm.inc_bd_dakkon_morale()
+        self.gsm.set_tree_d(True)
+
+
+    def r16899_action(self):
+        self.gsm.set_tree_v(True)
+
+
+    def r17584_action(self):
+        self.gsm.dec_gold(40)
+
+
+    def r18802_action(self):
+        self.gsm.inc_bd_morte_morale()
+
+
+    def r18578_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', 1, 'globallawful_yellow_1')
+
+
+    def r18808_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_1')
+
+
+    def r18820_action(self):
+        self.gsm.dec_gold(5)
+
+
+    def r18821_action(self):
+        self.gsm.dec_gold(50)
+
+
+    def r18822_action(self):
+        self.gsm.dec_gold(100)
+
+
+    def r18823_action(self):
+        self.gsm.dec_gold(500)
+
+
     def r18830_action(self):
         self.gsm.dec_gold(5)
+
+
+    def r18833_action(self):
+        self.gsm.dec_gold(5)
+
+
+    def r18834_action(self):
+        self.gsm.dec_gold(10)
+
+
+    def r18835_action(self):
+        self.gsm.dec_gold(50)
+        self.gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_2')
+
+
+    def r18836_action(self):
+        self.gsm.dec_gold(100)
+        self.gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_yellow_2')
+
+
+    def r20612_action(self):
+        self.gsm.set_know_marta_work(3)
+        self.gsm.update_journal('20538')
+        # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+
+
+    def r20613_action(self):
+        self.gsm.update_journal('20538')
+        # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
 
 
     def r24697_action(self):
@@ -282,8 +465,48 @@ class DmorteLogic:
 
     def r24932_action(self):
         self.gsm.set_in_party_morte(True)
-        self.gsm.update_journal("24933")
-        # "24933": " ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ "
+        self.gsm.update_journal('24933')
+        # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
+
+
+    def r28041_action(self):
+        self.gsm.dec_gold(10)
+
+
+    def r28042_action(self):
+        self.gsm.dec_gold(10)
+
+
+    def r28038_action(self):
+        self.gsm.dec_gold(30)
+
+
+    def r28039_action(self):
+        self.gsm.dec_gold(30)
+
+
+    def r28040_action(self):
+        self.gsm.dec_gold(50)
+
+
+    def r28044_action(self):
+        self.gsm.dec_gold(50)
+
+
+    def r28045_action(self):
+        self.gsm.dec_gold(50)
+
+
+    def r28046_action(self):
+        self.gsm.dec_gold(50)
+
+
+    def r28047_action(self):
+        self.gsm.dec_gold(80)
+
+
+    def r28048_action(self):
+        self.gsm.dec_gold(80)
 
 
     def r28743_action(self):
@@ -297,6 +520,26 @@ class DmorteLogic:
 
     def r28745_action(self):
         self.gsm.set_morte_stolen(3)
+
+
+    def r28968_action(self):
+        self.gsm.set_qui_sai(2)
+
+
+    def r28971_action(self):
+        self.gsm.set_qui_sai(2)
+
+
+    def r28975_action(self):
+        self.gsm.set_qui_sai(2)
+
+
+    def r28976_action(self):
+        self.gsm.set_qui_sai(2)
+
+
+    def r30826_action(self):
+        self.gsm.set_able(True)
 
 
     def r31567_action(self):
@@ -551,13 +794,45 @@ class DmorteLogic:
         self.gsm.set_yves_shared(True)
 
 
+    def r40848_action(self):
+        self.gsm.set_met_modrons(True)
+
+
+    def r40852_action(self):
+        self.gsm.set_met_modrons(True)
+
+
+    def r40856_action(self):
+        self.gsm.set_met_modrons(True)
+
+
     def r41837_action(self):
-        self.gsm.update_journal("39516")
-        # "39516": " ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ "
+        self.gsm.update_journal('39516')
+        # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
 
 
     def r41911_action(self):
         self.gsm.set_morte_mortuary_walkthrough_2(True)
+
+
+    def r41921_action(self):
+        self.gsm.set_jumble_reekwind(True)
+        self.gsm.update_journal('67862')
+        # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
+
+
+    def r43910_action(self):
+        self.gsm.set_nemelle(3)
+        self.gsm.set_aelwyn(4)
+        self.gsm.update_journal('39490')
+        # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+
+
+    def r43918_action(self):
+        self.gsm.set_nemelle(3)
+        self.gsm.set_aelwyn(4)
+        self.gsm.update_journal('39490')
+        # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 
 
     def r45029_action(self):
@@ -565,13 +840,17 @@ class DmorteLogic:
 
 
     def r45093_action(self):
-        self.gsm.update_journal("39477")
-        # "39477": " ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ "
+        self.gsm.update_journal('39477')
+        # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
 
 
     def r45103_action(self):
-        self.gsm.update_journal("39477")
-        # "39477": " ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ "
+        self.gsm.update_journal('39477')
+        # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+
+
+    def r50166_action(self):
+        self.gsm.set_translate_dabus(False)
 
 
     def r50325_action(self):
@@ -582,22 +861,54 @@ class DmorteLogic:
         self.gsm.dec_morale_morte()
 
 
+    def r52577_action(self):
+        self.gsm.set_ravel_grace(2)
+
+
+    def r52578_action(self):
+        self.gsm.set_ravel_annah(2)
+
+
+    def r53625_action(self):
+        self.gsm.dec_morale_morte()
+
+
     def r53629_action(self):
         self.gsm.set_morte_story(True)
-        self.gsm.update_journal("53633")
-        # "53633": " ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ "
+        self.gsm.update_journal('53633')
+        # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 
 
     def r53630_action(self):
         self.gsm.dec_morale_morte()
         self.gsm.set_morte_story(True)
-        self.gsm.update_journal("53661")
-        # "53661": " ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ "
+        self.gsm.update_journal('53661')
+        # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
+
+
+    def r53795_action(self):
+        self.gsm.dec_morale_morte()
+
+
+    def r53801_action(self):
+        self.gsm.dec_morale_morte()
 
 
     def r53807_action(self):
-        self.gsm.update_journal("53633")
-        # "53633": " ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ "
+        self.gsm.update_journal('53633')
+        # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+
+
+    def r53825_action(self):
+        self.gsm.set_pillar_musk(True)
+
+
+    def r53826_action(self):
+        self.gsm.set_pillar_musk(True)
+
+
+    def r53841_action(self):
+        self.gsm.set_pillar_question(False)
 
 
     def r53843_action(self):
@@ -606,10 +917,18 @@ class DmorteLogic:
         StartCutSceneMode() # ?.startCutScene("1001Cut1")
 
 
+    def r53867_action(self):
+        self.gsm.set_pillar_question(False)
+
+
     def r53850_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
         self.gsm.set_pillar(2)
         StartCutSceneMode() # ?.startCutScene("1001Cut1")
+
+
+    def r53856_action(self):
+        self.gsm.set_pillar_question(False)
 
 
     def r54160_action(self):
@@ -721,42 +1040,50 @@ class DmorteLogic:
         self.gsm.gcm.modify_property_once('protagonist', 'law', 2, 'globallawful_nordom_2')
 
 
+    def r55941_action(self):
+        self.gsm.gcm.modify_property_once('protagonist', 'law', -2, 'globalchaotic_nordom_4')
+
+
+    def r61414_action(self):
+        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+
+
     def r65569_action(self):
         self.gsm.set_morte_tattoo_xp(True)
         self.gsm.inc_exp_custom('party', 1000)
-        self.gsm.update_journal("65573")
-        # "65573": " ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ "
+        self.gsm.update_journal('65573')
+        # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
 
 
     def r65621_action(self):
         self.gsm.set_morte_talent(True)
-        self.gsm.update_journal("65625")
-        # "65625": " ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ "
+        self.gsm.update_journal('65625')
+        # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
 
 
     def r65631_action(self):
-        self.gsm.update_journal("65637")
-        # "65637": " ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ "
+        self.gsm.update_journal('65637')
+        # '65637': ' ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ '
 
 
     def r65666_action(self):
-        self.gsm.update_journal("65669")
-        # "65669": " ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ "
+        self.gsm.update_journal('65669')
+        # '65669': ' ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ '
 
 
     def r65674_action(self):
-        self.gsm.update_journal("65678")
-        # "65678": " ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ "
+        self.gsm.update_journal('65678')
+        # '65678': ' ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ '
 
 
     def r65710_action(self):
-        self.gsm.update_journal("65712")
-        # "65712": " ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ "
+        self.gsm.update_journal('65712')
+        # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
 
 
     def r65711_action(self):
-        self.gsm.update_journal("65712")
-        # "65712": " ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ "
+        self.gsm.update_journal('65712')
+        # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
 
 
     def r65731_action(self):
@@ -777,8 +1104,8 @@ class DmorteLogic:
 
 
     def r65753_action(self):
-        self.gsm.update_journal("53633")
-        # "53633": " ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ "
+        self.gsm.update_journal('53633')
+        # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
 
 
     def r65758_action(self):
@@ -822,10 +1149,10 @@ class DmorteLogic:
     def r65821_action(self):
         self.gsm.inc_exp_custom('party', 12000)
         self.gsm.inc_morale_morte(3)
-        self.gsm.gcm.modify_property("morte",str,raise,4)
-        permanentstatchange("morte",dex,raise,2) permanentstatchange("morte"", "constitution", 2) self.gsm.set_bd_morte_story(True)
-        self.gsm.update_journal("65825")
-        # "65825": " ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ "
+        self.gsm.gcm.modify_property('morte",str,raise,4)
+        permanentstatchange("morte",dex,raise,2) permanentstatchange("morte"', 'constitution', 2) self.gsm.set_bd_morte_story(True)
+        self.gsm.update_journal('65825')
+        # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
 
 
     def r68176_action(self):
@@ -997,6 +1324,24 @@ class DmorteLogic:
         return self.gsm.get_know_lady()
 
 
+    def r6954_condition(self):
+        return self.gsm.get_know_lady()
+
+
+    def r3969_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+
+
+    def r3970_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+
+
+    def r3971_condition(self):
+        return self.gsm.get_has_prybar()
+
+
     def r3972_condition(self):
         return not self.gsm.get_morte_skel_mort_quip()
 
@@ -1005,12 +1350,79 @@ class DmorteLogic:
         return self.gsm.get_morte_skel_mort_quip()
 
 
+    def r4023_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+
+
+    def r4024_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12
+
+
+    def r4027_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+
+
+    def r4028_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12
+
+
+    def r4031_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+
+
+    def r4032_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12
+
+
     def r4034_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
 
 
     def r4686_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 13
+
+
+    def r64535_condition(self):
+        return not self.gsm.get_vaxis_global_xp()
+
+
+    def r64534_condition(self):
+        return self.gsm.get_vaxis_global_xp()
+
+
+    def r6325_condition(self):
+        return HasItem("Cobble","Post")  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
+
+
+    def r6326_condition(self):
+        return !HasItem("Cobble","Post")  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
+
+
+    def r6327_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 11 and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 12
+
+
+    def r6328_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 11
+
+
+    def r6329_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12 and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 12
+
+
+    def r6330_condition(self):
+        return self.gsm.get_can_speak_with_dead()
+
+
+    def r6664_condition(self):
+        return self.gsm.get_42_secret()
+
+
+    def r6665_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 and \
+               not self.gsm.get_42_secret()
 
 
     def r7056_condition(self):
@@ -1085,8 +1497,72 @@ class DmorteLogic:
         return not self.gsm.get_join_chaosmen()
 
 
+    def r14275_condition(self):
+        return self.gsm.get_mortai_contract() and \
+               self.gsm.get_coppereyes_contract()
+
+
+    def r14276_condition(self):
+        return self.gsm.get_mortai_contract() and \
+               not self.gsm.get_coppereyes_contract()
+
+
+    def r14277_condition(self):
+        return not self.gsm.get_mortai_contract() and \
+               self.gsm.get_coppereyes_contract()
+
+
+    def r14278_condition(self):
+        return not self.gsm.get_mortai_contract() and \
+               not self.gsm.get_coppereyes_contract()
+
+
+    def r65537_condition(self):
+        return false  # GlobalGT("Morte_Mimir","GLOBAL",1)
+
+
+    def r16881_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') < 13
+
+
     def r16882_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12
+
+
+    def r16884_condition(self):
+        return self.gsm.get_in_party_annah() and \
+               not self.gsm.get_tree_a()
+
+
+    def r16885_condition(self):
+        return self.gsm.get_in_party_ignus() and \
+               not self.gsm.get_tree_i()
+
+
+    def r16886_condition(self):
+        return self.gsm.get_in_party_grace() and \
+               not self.gsm.get_tree_g()
+
+
+    def r16887_condition(self):
+        return self.gsm.get_in_party_dakkon() and \
+               not self.gsm.get_tree_d()
+
+
+    def r16888_condition(self):
+        return self.gsm.get_in_party_dakkon() and \
+               not self.gsm.get_tree_d() and \
+               self.gsm.get_dakkon_slave()
+
+
+    def r16889_condition(self):
+        return self.gsm.get_in_party_nordom() and \
+               not self.gsm.get_tree_n()
+
+
+    def r16890_condition(self):
+        return self.gsm.get_in_party_vhail() and \
+               not self.gsm.get_tree_v()
 
 
     def r16893_condition(self):
@@ -1094,16 +1570,127 @@ class DmorteLogic:
                not self.gsm.get_tree_m()
 
 
+    def r16894_condition(self):
+        return self.gsm.get_in_party_annah() and \
+               not self.gsm.get_tree_a()
+
+
+    def r16895_condition(self):
+        return self.gsm.get_in_party_ignus() and \
+               not self.gsm.get_tree_i()
+
+
+    def r16896_condition(self):
+        return self.gsm.get_in_party_grace() and \
+               not self.gsm.get_tree_g()
+
+
+    def r16897_condition(self):
+        return self.gsm.get_in_party_dakkon() and \
+               not self.gsm.get_tree_d()
+
+
+    def r16898_condition(self):
+        return self.gsm.get_in_party_dakkon() and \
+               not self.gsm.get_tree_d() and \
+               self.gsm.get_dakkon_slave()
+
+
+    def r16899_condition(self):
+        return self.gsm.get_in_party_vhail() and \
+               not self.gsm.get_tree_v()
+
+
+    def r17583_condition(self):
+        return self.gsm.get_in_party_annah()
+
+
+    def r17584_condition(self):
+        return self.gsm.get_gold() > 39
+
+
+    def r17585_condition(self):
+        return self.gsm.get_gold() > 39
+
+
     def r17586_condition(self):
         return self.gsm.get_gold() > 39
+
+
+    def r17587_condition(self):
+        return PartyGoldLT(40)
 
 
     def r17588_condition(self):
         return PartyGoldLT(40)
 
 
+    def r18820_condition(self):
+        return self.gsm.get_gold() > 4
+
+
+    def r18821_condition(self):
+        return self.gsm.get_gold() > 49
+
+
+    def r18822_condition(self):
+        return self.gsm.get_gold() > 99
+
+
+    def r18823_condition(self):
+        return self.gsm.get_gold() > 499
+
+
+    def r18824_condition(self):
+        return PartyGoldLT(5)
+
+
+    def r18829_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 11
+
+
     def r18830_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 12
+
+
+    def r18833_condition(self):
+        return self.gsm.get_gold() > 4
+
+
+    def r18834_condition(self):
+        return self.gsm.get_gold() > 9
+
+
+    def r18835_condition(self):
+        return self.gsm.get_gold() > 49
+
+
+    def r18836_condition(self):
+        return self.gsm.get_gold() > 99
+
+
+    def r19668_condition(self):
+        return not self.gsm.get_can_speak_with_dead()
+
+
+    def r19669_condition(self):
+        return self.gsm.get_can_speak_with_dead()
+
+
+    def r19670_condition(self):
+        return not self.gsm.get_can_speak_with_dead()
+
+
+    def r19671_condition(self):
+        return self.gsm.get_can_speak_with_dead()
+
+
+    def r20612_condition(self):
+        return self.gsm.get_know_marta_work() < 3
+
+
+    def r20613_condition(self):
+        return self.gsm.get_know_marta_work() > 2
 
 
     def r24697_condition(self):
@@ -1111,6 +1698,10 @@ class DmorteLogic:
 
 
     def r24698_condition(self):
+        return self.gsm.get_know_lady()
+
+
+    def r24699_condition(self):
         return self.gsm.get_know_lady()
 
 
@@ -1123,8 +1714,64 @@ class DmorteLogic:
         return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12
 
 
+    def r66902_condition(self):
+        return false  # GlobalGT("Morte_Mimir","GLOBAL",1)
+
+
+    def r25967_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 14
+
+
     def r27316_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12
+
+
+    def r65536_condition(self):
+        return false  # GlobalGT("Morte_Mimir","GLOBAL",1)
+
+
+    def r27916_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 14
+
+
+    def r28038_condition(self):
+        return self.gsm.get_malmaner() == 3 and \
+               self.gsm.get_chaotic_malmaner_1() != 1
+
+
+    def r28039_condition(self):
+        return self.gsm.get_malmaner() == 3 and \
+               self.gsm.get_chaotic_malmaner_1() != 1
+
+
+    def r28040_condition(self):
+        return self.gsm.get_malmaner() == 3 and \
+               self.gsm.get_chaotic_malmaner_1() == 1
+
+
+    def r28044_condition(self):
+        return self.gsm.get_malmaner() == 3 and \
+               self.gsm.get_chaotic_malmaner_1() == 1
+
+
+    def r28045_condition(self):
+        return self.gsm.get_malmaner() == 5 and \
+               self.gsm.get_chaotic_malmaner_1() != 3
+
+
+    def r28046_condition(self):
+        return self.gsm.get_malmaner() == 5 and \
+               self.gsm.get_chaotic_malmaner_1() != 3
+
+
+    def r28047_condition(self):
+        return self.gsm.get_malmaner() == 5 and \
+               self.gsm.get_chaotic_malmaner_1() == 3
+
+
+    def r28048_condition(self):
+        return self.gsm.get_malmaner() == 5 and \
+               self.gsm.get_chaotic_malmaner_1() == 3
 
 
     def r28744_condition(self):
@@ -1137,6 +1784,42 @@ class DmorteLogic:
 
     def r28967_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 14
+
+
+    def r28968_condition(self):
+        return self.gsm.get_cw_sal_hint()
+
+
+    def r28971_condition(self):
+        return self.gsm.get_cw_sal_hint()
+
+
+    def r28975_condition(self):
+        return self.gsm.get_cw_sal_hint()
+
+
+    def r28980_condition(self):
+        return self.gsm.get_know_ravel()
+
+
+    def r30822_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') < 9
+
+
+    def r30823_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 8
+
+
+    def r30824_condition(self):
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 8
+
+
+    def r30825_condition(self):
+        return self.gsm.get_able()
+
+
+    def r30826_condition(self):
+        return not self.gsm.get_able()
 
 
     def r65541_condition(self):
@@ -1173,12 +1856,40 @@ class DmorteLogic:
                not self.gsm.get_meet_ravel()
 
 
+    def r35344_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+
+
+    def r35352_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+
+
+    def r35355_condition(self):
+        return self.gsm.get_has_prybar()
+
+
     def r35358_condition(self):
         return not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35359_condition(self):
         return self.gsm.get_morte_skel_mort_quip()
+
+
+    def r35421_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+
+
+    def r35429_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+
+
+    def r35432_condition(self):
+        return self.gsm.get_has_prybar()
 
 
     def r35435_condition(self):
@@ -1189,6 +1900,20 @@ class DmorteLogic:
         return self.gsm.get_morte_skel_mort_quip()
 
 
+    def r35498_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+
+
+    def r35506_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+
+
+    def r35509_condition(self):
+        return self.gsm.get_has_prybar()
+
+
     def r35512_condition(self):
         return not self.gsm.get_morte_skel_mort_quip()
 
@@ -1197,12 +1922,57 @@ class DmorteLogic:
         return self.gsm.get_morte_skel_mort_quip()
 
 
+    def r35575_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+
+
+    def r35583_condition(self):
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+
+
+    def r35586_condition(self):
+        return self.gsm.get_has_prybar()
+
+
     def r35589_condition(self):
         return not self.gsm.get_morte_skel_mort_quip()
 
 
     def r35590_condition(self):
         return self.gsm.get_morte_skel_mort_quip()
+
+
+    def r40069_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_hp() == 100
+
+
+    def r40070_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_hp() > 49
+
+
+    def r40071_condition(self):
+        return not self.gsm.get_in_party_morte() and \
+               self.gsm.get_hp() < 50
+
+
+    def r40077_condition(self):
+        return self.gsm.get_nenny() == 2
+
+
+    def r40078_condition(self):
+        return self.gsm.get_nenny() == 2
+
+
+    def r40079_condition(self):
+        return self.gsm.get_nenny() == 1
+
+
+    def r40080_condition(self):
+        return self.gsm.get_nenny() == 1
 
 
     def r41842_condition(self):
@@ -1313,12 +2083,71 @@ class DmorteLogic:
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12
 
 
+    def r41921_condition(self):
+        return self.gsm.get_story_reekwind_curse() and \
+               not self.gsm.get_jumble_reekwind()
+
+
+    def r67864_condition(self):
+        return self.gsm.get_jumble_reekwind()
+
+
+    def r43909_condition(self):
+        return self.gsm.get_has_decant() and \
+               self.gsm.get_seek_word()
+
+
+    def r43910_condition(self):
+        return self.gsm.get_aelwyn() == 2 and \
+               not self.gsm.get_dead_aelwyn()
+
+
+    def r43911_condition(self):
+        return self.gsm.get_aelwyn() < 2
+
+
+    def r43917_condition(self):
+        return self.gsm.get_has_decant() and \
+               self.gsm.get_seek_word()
+
+
+    def r43918_condition(self):
+        return self.gsm.get_aelwyn() == 2 and \
+               not self.gsm.get_dead_aelwyn()
+
+
+    def r43919_condition(self):
+        return self.gsm.get_aelwyn() < 2
+
+
     def r50325_condition(self):
         return not self.gsm.get_know_lady()
 
 
     def r50328_condition(self):
         return self.gsm.get_know_lady()
+
+
+    def r50329_condition(self):
+        return self.gsm.get_know_lady()
+
+
+    def r52577_condition(self):
+        return self.gsm.get_in_party_grace()
+
+
+    def r52578_condition(self):
+        return not self.gsm.get_in_party_grace() and \
+               self.gsm.get_in_party_annah()
+
+
+    def r52579_condition(self):
+        return not self.gsm.get_in_party_grace() and \
+               not self.gsm.get_in_party_annah()
+
+
+    def r53625_condition(self):
+        return self.gsm.get_morte_story()
 
 
     def r53627_condition(self):
@@ -1335,6 +2164,20 @@ class DmorteLogic:
 
     def r54105_condition(self):
         return not self.gsm.get_in_party_dakkon()
+
+
+    def r53825_condition(self):
+        return self.gsm.get_in_party_grace()
+
+
+    def r53826_condition(self):
+        return self.gsm.get_in_party_annah() and \
+               not self.gsm.get_in_party_grace()
+
+
+    def r53827_condition(self):
+        return not self.gsm.get_in_party_grace() and \
+               not self.gsm.get_in_party_annah()
 
 
     def r53832_condition(self):
@@ -1355,8 +2198,100 @@ class DmorteLogic:
                self.gsm.get_specialist() != 6
 
 
+    def r53836_condition(self):
+        return not self.gsm.get_where_fhjull()
+
+
+    def r53837_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               self.gsm.get_has_cube()
+
+
+    def r53838_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               self.gsm.get_in_party_grace()
+
+
+    def r53839_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               not self.gsm.get_in_party_grace() and \
+               self.gsm.get_in_party_annah()
+
+
+    def r53840_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               not self.gsm.get_in_party_grace() and \
+               not self.gsm.get_in_party_annah()
+
+
+    def r53844_condition(self):
+        return not self.gsm.get_where_fhjull()
+
+
+    def r53863_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               self.gsm.get_has_cube()
+
+
+    def r53864_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               self.gsm.get_in_party_grace()
+
+
+    def r53865_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               not self.gsm.get_in_party_grace() and \
+               self.gsm.get_in_party_annah()
+
+
+    def r53866_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               not self.gsm.get_in_party_grace() and \
+               not self.gsm.get_in_party_annah()
+
+
+    def r53851_condition(self):
+        return not self.gsm.get_where_fhjull()
+
+
+    def r53852_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               self.gsm.get_has_cube()
+
+
+    def r53853_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               self.gsm.get_in_party_grace()
+
+
+    def r53854_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               not self.gsm.get_in_party_grace() and \
+               self.gsm.get_in_party_annah()
+
+
+    def r53855_condition(self):
+        return self.gsm.get_where_fhjull() and \
+               not self.gsm.get_has_cube() and \
+               not self.gsm.get_in_party_grace() and \
+               not self.gsm.get_in_party_annah()
+
+
     def r54165_condition(self):
         return not self.gsm.get_in_party_dakkon()
+
+
+    def r54166_condition(self):
+        return self.gsm.get_in_party_dakkon() and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 13
 
 
     def r54167_condition(self):
@@ -1366,6 +2301,11 @@ class DmorteLogic:
 
     def r54172_condition(self):
         return not self.gsm.get_in_party_dakkon()
+
+
+    def r54173_condition(self):
+        return self.gsm.get_in_party_dakkon() and \
+               self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 13
 
 
     def r54174_condition(self):
@@ -1629,6 +2569,20 @@ class DmorteLogic:
         return not self.gsm.get_in_party_morte()
 
 
+    def r54282_condition(self):
+        return self.gsm.get_ravel_grace() > 0 and \
+               self.gsm.get_ravel_morte() and \
+               self.gsm.get_torment_fell() < 2 and \
+               self.gsm.get_in_party_grace()
+
+
+    def r54283_condition(self):
+        return self.gsm.get_ravel_grace() > 0 and \
+               self.gsm.get_ravel_morte() and \
+               self.gsm.get_torment_fell() == 2 and \
+               self.gsm.get_in_party_grace()
+
+
     def r54284_condition(self):
         return self.gsm.get_ravel_morte() and \
                self.gsm.get_torment_fell() < 2 and \
@@ -1669,12 +2623,20 @@ class DmorteLogic:
         return not self.gsm.get_in_party_morte()
 
 
+    def r55849_condition(self):
+        return not self.gsm.get_in_party_grace()
+
+
     def r55850_condition(self):
         return not self.gsm.get_in_party_grace()
 
 
     def r55875_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 15
+
+
+    def r61411_condition(self):
+        return self.gsm.get_gold() > 499
 
 
     def r61412_condition(self):
@@ -2046,6 +3008,11 @@ class DmorteLogic:
                self.gsm.get_fortress_ignus_battle() and \
                self.gsm.get_fortress_vhailor() and \
                not self.gsm.get_fortress_vhailor_battle()
+
+
+    def r68503_condition(self):
+        return not self.gsm.get_trans_vanish() and \
+               self.gsm.get_fortress_party_roof()
 
 
     def r68175_condition(self):

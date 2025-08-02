@@ -128,3 +128,7 @@ class Dzm79LogicTest(LogicTest):
             lambda x: self.settings_manager.set_has_copper_earring_closed(x),
             lambda: logic.r64280_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

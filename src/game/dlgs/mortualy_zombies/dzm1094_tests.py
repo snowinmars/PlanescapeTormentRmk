@@ -262,3 +262,7 @@ class Dzm1094LogicTest(LogicTest):
             lambda x: self.settings_manager.set_meet_pharod(x),
             lambda: logic.r9312_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

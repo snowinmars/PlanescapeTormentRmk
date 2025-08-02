@@ -156,3 +156,7 @@ class WalkingLogicTest(LogicTest):
             lambda: self.settings_manager.get_has_embalm(),
             lambda: logic.mortuary_walking_1_pick_embalm()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -89,7 +89,8 @@ class Dn1201Logic:
 
 
     def r45025_action(self):
-        GiveItemCreate("TEarring",Protagonist,3,0,0) self.gsm.set_has_1201_note(False)
+        self.gsm.set_has_tearring(True)
+        self.gsm.set_has_1201_note(False)
 
 
     def r45000_condition(self):

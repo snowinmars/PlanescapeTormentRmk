@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM1201.DLG
+# Original:  DLG/DZM1201.DLG
 # ###
 
 
@@ -35,11 +35,11 @@ label dzm1201_s0:  # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
 
         'Было приятно поболтать с тобой. Прощай.':
             # r3 # reply34959
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
         'Оставить труп в покое.':
             # r4 # reply34962
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
 
 # s1 # say34955
@@ -54,7 +54,7 @@ label dzm1201_s1:  # from 0.0
 
         'Хм-м. Если бы у меня было что-нибудь, чтобы разрезать эти швы…' if dzm1201Logic.r45122_condition():
             # r6 # reply45122
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
 
 # s2 # say34960
@@ -68,7 +68,7 @@ label dzm1201_s2:  # from 1.0
 
         'Оставить труп в покое.':
             # r8 # reply45123
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
 
 # s3 # say45124
@@ -78,7 +78,7 @@ label dzm1201_s3:  # from 0.1 5.0 5.1 5.2
     menu:
         'Оставить труп в покое.':
             # r9 # reply45125
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
 
 # s4 # say45126
@@ -88,7 +88,7 @@ label dzm1201_s4:  # from 0.2 5.3
     menu:
         'Оставить труп в покое.':
             # r10 # reply45127
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
 
 # s5 # say45128
@@ -115,8 +115,8 @@ label dzm1201_s5:  # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
 
         'Было приятно поболтать с тобой. Прощай.':
             # r15 # reply45133
-            jump show_graphics_menu
+            jump dzm1201_dispose
 
         'Оставить труп в покое.':
             # r16 # reply45134
-            jump show_graphics_menu
+            jump dzm1201_dispose

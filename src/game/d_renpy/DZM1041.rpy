@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM1041.DLG
+# Original:  DLG/DZM1041.DLG
 # ###
 
 
@@ -44,11 +44,11 @@ label dzm1041_s0:  # - # IF ~  Global("Bei","GLOBAL",0)
 
         'Было приятно с тобой поболтать. Прощай.':
             # r5 # reply6581
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
         'Оставить труп в покое.':
             # r6 # reply9095
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s1 # say6574
@@ -58,7 +58,7 @@ label dzm1041_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r7 # reply6582
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s2 # say6575
@@ -79,7 +79,7 @@ label dzm1041_s2:  # from 0.3
         'Оставить духа.':
             # r10 # reply9097
             $ dzm1041Logic.r9097_action()
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s3 # say9060
@@ -97,7 +97,7 @@ label dzm1041_s3:  # from 2.0
 
         'Я не понимаю тебя. Прощай.':
             # r13 # reply9100
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s4 # say9061
@@ -115,7 +115,7 @@ label dzm1041_s4:  # from 2.1
 
         'Я не понимаю тебя. Прощай.':
             # r16 # reply9103
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s5 # say9062
@@ -149,7 +149,7 @@ label dzm1041_s5:  # from 3.0 3.1 4.0 4.1
 
         'Ничего, неважно.':
             # r23 # reply9110
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s6 # say9063
@@ -171,7 +171,7 @@ label dzm1041_s6:  # from 5.0 14.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r27 # reply9114
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s7 # say9064
@@ -189,7 +189,7 @@ label dzm1041_s7:  # from 5.1 14.1
 
         'Это все, что я хотел узнать. Прощай.':
             # r30 # reply9117
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s8 # say9065
@@ -219,7 +219,7 @@ label dzm1041_s8:  # from 5.2 14.2
 
         'Это все, что я хотел узнать. Прощай.':
             # r36 # reply9123
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s9 # say9066
@@ -245,7 +245,7 @@ label dzm1041_s9:  # from 5.4 14.4
 
         'Хорошо. Возможно, мы еще встретимся.':
             # r41 # reply9128
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s10 # say9067
@@ -259,7 +259,7 @@ label dzm1041_s10:  # from 5.5 14.5
 
         'Хорошо. Возможно, мы еще встретимся.':
             # r43 # reply9130
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s11 # say9068
@@ -277,7 +277,7 @@ label dzm1041_s11:  # from 5.3 14.3
 
         'Это все, что я хотел узнать. Прощай.':
             # r46 # reply9133
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s12 # say9069
@@ -295,7 +295,7 @@ label dzm1041_s12:  # from 6.0 16.1
 
         'Это все, что я хотел узнать. Прощай.':
             # r49 # reply9136
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s13 # say9070
@@ -313,7 +313,7 @@ label dzm1041_s13:  # from 6.1
 
         'Ясно. Возможно, мы еще встретимся.':
             # r52 # reply9139
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s14 # say9071
@@ -351,7 +351,7 @@ label dzm1041_s14:  # from 6.2 7.1 8.4 9.3 10.0 11.1 12.1 13.1 15.2 17.1 18.0 19
 
         'Неважно. Прощай.':
             # r60 # reply9147
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s15 # say9072
@@ -373,7 +373,7 @@ label dzm1041_s15:  # from 11.0
 
         'Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.':
             # r64 # reply9151
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s16 # say9073
@@ -391,7 +391,7 @@ label dzm1041_s16:  # from 7.0 8.0 8.1 9.1 12.0 13.0
 
         'Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.':
             # r67 # reply9154
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s17 # say9074
@@ -409,7 +409,7 @@ label dzm1041_s17:  # from 8.2 9.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r70 # reply9157
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s18 # say9075
@@ -423,7 +423,7 @@ label dzm1041_s18:  # from 8.3 9.2
 
         'Понятно. Спасибо за разговор. Прощай.':
             # r72 # reply9159
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s19 # say9076
@@ -447,7 +447,7 @@ label dzm1041_s19:  # from 15.0 20.0
 
         'Желаю тебе удачи. Прощай.':
             # r76 # reply9163
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s20 # say9077
@@ -465,7 +465,7 @@ label dzm1041_s20:  # from 15.1
 
         'Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.':
             # r79 # reply9166
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s21 # say9078
@@ -483,7 +483,7 @@ label dzm1041_s21:  # from 16.0
 
         'Возможно, я выслушаю оставшуюся часть в другой раз. Прощай.':
             # r82 # reply9169
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s22 # say9079
@@ -497,7 +497,7 @@ label dzm1041_s22:  # from 17.0
 
         'Интересно. Теперь мне лучше уйти. Прощай.':
             # r84 # reply9171
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s23 # say9080
@@ -515,7 +515,7 @@ label dzm1041_s23:  # from 21.0
 
         'Пока это все, что я хотел знать. Прощай.':
             # r87 # reply9174
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s24 # say9081
@@ -529,7 +529,7 @@ label dzm1041_s24:  # from 19.1
 
         'Не стоит беспокоиться. Теперь мне лучше уйти. Прощай.':
             # r89 # reply9176
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s25 # say9082
@@ -543,7 +543,7 @@ label dzm1041_s25:  # from 19.2 33.1 35.1
 
         'Отойти, оставить парящего духа.':
             # r91 # reply9178
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s26 # say9083
@@ -561,7 +561,7 @@ label dzm1041_s26:  # from 14.6
 
         'Нет. Собственно, пожалуй, мне уже пора идти. Прощай.':
             # r94 # reply9181
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s27 # say9084
@@ -579,7 +579,7 @@ label dzm1041_s27:  # from 23.0
 
         'Понятно. Спасибо тебе, но мне уже пора.':
             # r97 # reply9184
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s28 # say9085
@@ -601,7 +601,7 @@ label dzm1041_s28:  # from 26.1
 
         'О. Спасибо, что разъяснил мне это. Прощай.':
             # r101 # reply9188
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s29 # say9086
@@ -615,7 +615,7 @@ label dzm1041_s29:  # from 28.1
 
         'Я понимаю. В таком случае, прощай.':
             # r103 # reply9190
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s30 # say9087
@@ -629,7 +629,7 @@ label dzm1041_s30:  # from 28.2
 
         'Я понимаю. В таком случае, прощай.':
             # r105 # reply9192
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s31 # say9088
@@ -651,7 +651,7 @@ label dzm1041_s31:  # from 27.0
 
         'Я выслушаю оставшуюся часть истории в другой раз. Прощай.':
             # r109 # reply9196
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s32 # say9089
@@ -669,7 +669,7 @@ label dzm1041_s32:  # from 31.0 38.0
 
         'Восхитительно. Теперь мне следует оставить тебя. Прощай.':
             # r112 # reply9199
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s33 # say9090
@@ -693,7 +693,7 @@ label dzm1041_s33:  # from 32.0
 
         'Хм-м. Мне пора. Удачи тебе.':
             # r116 # reply9203
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s34 # say9091
@@ -707,7 +707,7 @@ label dzm1041_s34:  # from 33.0
 
         'Тогда неважно. Прощай.':
             # r118 # reply9206
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s35 # say9092
@@ -733,7 +733,7 @@ label dzm1041_s35:  # -
         'Это все, что мне нужно. Прощай.':
             # r122 # reply9210
             $ dzm1041Logic.r9210_action()
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s36 # say9093
@@ -747,7 +747,7 @@ label dzm1041_s36:  # from 35.0
 
         'Я понимаю. Прощай, дух.':
             # r124 # reply9212
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s37 # say9094
@@ -761,7 +761,7 @@ label dzm1041_s37:  # from 0.4 # IF ~  Global("Bei","GLOBAL",1)
 
         'Ничего, я оставляю тебя в покое.':
             # r126 # reply9214
-            jump show_graphics_menu
+            jump dzm1041_dispose
 
 
 # s38 # say9718
@@ -779,4 +779,4 @@ label dzm1041_s38:  # from 31.1
 
         'Понятно. Спасибо за разговор. Прощай.':
             # r129 # reply9721
-            jump show_graphics_menu
+            jump dzm1041_dispose

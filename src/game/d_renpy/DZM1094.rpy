@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM1094.DLG
+# Original:  DLG/DZM1094.DLG
 # ###
 
 
@@ -41,11 +41,11 @@ label dzm1094_s0:  # - # IF ~  Global("Asonje","GLOBAL",0)
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6569
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
         'Оставить труп в покое.':
             # r5 # reply6570
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s1 # say6563
@@ -55,7 +55,7 @@ label dzm1094_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6571
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s2 # say6564
@@ -69,7 +69,7 @@ label dzm1094_s2:  # from 0.3
 
         'Оставить духа.':
             # r8 # reply9246
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s3 # say9224
@@ -92,7 +92,7 @@ label dzm1094_s3:  # from 2.0
 
         'Вряд ли. Прощай.':
             # r12 # reply9250
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s4 # say9225
@@ -126,7 +126,7 @@ label dzm1094_s4:  # from 3.0
 
         'Ничего, неважно.':
             # r19 # reply9257
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s5 # say9226
@@ -140,7 +140,7 @@ label dzm1094_s5:  # from 4.0 11.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r21 # reply9259
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s6 # say9227
@@ -154,7 +154,7 @@ label dzm1094_s6:  # from 4.1 11.1
 
         'Это все, что я хотел узнать. Прощай.':
             # r23 # reply9261
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s7 # say9228
@@ -168,7 +168,7 @@ label dzm1094_s7:  # from 4.2 11.2
 
         'Это все, что я хотел узнать. Прощай.':
             # r25 # reply9263
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s8 # say9229
@@ -182,7 +182,7 @@ label dzm1094_s8:  # from 4.3 11.3
 
         'Да. Прощай.':
             # r27 # reply9265
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s9 # say9230
@@ -200,7 +200,7 @@ label dzm1094_s9:  # from 4.4 11.4
 
         'Это все, что я хотел узнать. Прощай.':
             # r30 # reply9268
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s10 # say9231
@@ -214,7 +214,7 @@ label dzm1094_s10:  # from 4.5 11.5
 
         'Это все, что я хотел узнать. Прощай.':
             # r32 # reply9270
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s11 # say9232
@@ -248,7 +248,7 @@ label dzm1094_s11:  # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
 
         'Ничего, неважно.':
             # r39 # reply9277
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s12 # say9233
@@ -262,7 +262,7 @@ label dzm1094_s12:  # from 9.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r41 # reply9279
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s13 # say9234
@@ -276,7 +276,7 @@ label dzm1094_s13:  # from 3.1
 
         'Вряд ли. Прощай.':
             # r43 # reply9281
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s14 # say9235
@@ -314,7 +314,7 @@ label dzm1094_s14:  # from 3.2 13.0
 
         'Ничего, неважно.':
             # r51 # reply9320
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s15 # say9236
@@ -335,7 +335,7 @@ label dzm1094_s15:  # from 14.0 22.0
         'Может быть в другой раз. Прощай.':
             # r54 # reply9291
             $ dzm1094Logic.r9291_action()
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s16 # say9237
@@ -349,7 +349,7 @@ label dzm1094_s16:  # from 14.2 22.2
 
         'Это все, что я хотел узнать. Прощай.':
             # r56 # reply9293
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s17 # say9238
@@ -363,7 +363,7 @@ label dzm1094_s17:  # from 14.3 22.3
 
         'Это все, что я хотел узнать. Прощай.':
             # r58 # reply9295
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s18 # say9239
@@ -377,7 +377,7 @@ label dzm1094_s18:  # from 14.4 22.4
 
         'Это все, что я хотел узнать. Прощай.':
             # r60 # reply9297
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s19 # say9240
@@ -395,7 +395,7 @@ label dzm1094_s19:  # from 14.5 22.5
 
         'Это все, что я хотел узнать. Прощай.':
             # r63 # reply9300
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s20 # say9241
@@ -409,7 +409,7 @@ label dzm1094_s20:  # from 14.6 22.6
 
         'Не знаю. Прощай.':
             # r65 # reply9302
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s21 # say9242
@@ -428,7 +428,7 @@ label dzm1094_s21:  # from 15.0
 
         'Нет, это неважно. Прощай.':
             # r68 # reply9305
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s22 # say9243
@@ -466,7 +466,7 @@ label dzm1094_s22:  # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.
 
         'Ничего, неважно.':
             # r76 # reply9321
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s23 # say9244
@@ -480,7 +480,7 @@ label dzm1094_s23:  # from 21.1
 
         'Нет, нету. Прощай.':
             # r78 # reply9314
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s24 # say9245
@@ -494,7 +494,7 @@ label dzm1094_s24:  # from 19.0
 
         'Возможно. Прощай.':
             # r80 # reply9316
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s25 # say9283
@@ -508,7 +508,7 @@ label dzm1094_s25:  # from 14.1 22.1
 
         'Это все, что я хотел узнать. Прощай.':
             # r82 # reply9285
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s26 # say20061
@@ -522,7 +522,7 @@ label dzm1094_s26:  # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje",
 
         'Я просто проходил мимо. Прощай.':
             # r84 # reply20064
-            jump show_graphics_menu
+            jump dzm1094_dispose
 
 
 # s27 # say20062
@@ -536,4 +536,4 @@ label dzm1094_s27:  # - # IF ~  Global("Asonje","GLOBAL",3)
 
         'Я просто проходил мимо. Прощай.':
             # r86 # reply20066
-            jump show_graphics_menu
+            jump dzm1094_dispose

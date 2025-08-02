@@ -4,7 +4,7 @@ class DvaxisLogic:
 
 
     def dvaxis_init(self):
-        glm.set_location('mortuary_f2r6')
+        self.gsm.glm.set_location('mortuary_f2r6')
 
 
     def kill_vaxis(self):

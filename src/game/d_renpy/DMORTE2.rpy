@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DMORTE2.DLG
+# Original:  DLG/DMORTE2.DLG
 # ###
 
 
@@ -178,7 +178,7 @@ label dmorte2_s11:  # from 10.0
         'Ладно… Уяснил. Идем.':
             # r21 # reply41177
             $ dmorte2Logic.r41177_action()
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s12 # say41178
@@ -220,7 +220,7 @@ label dmorte2_s12:  # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.
 
         'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if dmorte2Logic.r41187_condition():
             # r30 # reply41187
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s13 # say41188
@@ -242,7 +242,7 @@ label dmorte2_s13:  # from 12.0
 
         'Ладно, забудь. Идем.' if dmorte2Logic.r41192_condition():
             # r34 # reply41192
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s14 # say41193
@@ -264,7 +264,7 @@ label dmorte2_s14:  # from 13.0
 
         'Забудь. Я уже достаточно наслушался. Идем.' if dmorte2Logic.r41197_condition():
             # r38 # reply41197
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s15 # say41198
@@ -286,7 +286,7 @@ label dmorte2_s15:  # from 14.0
 
         'Забудь. Я уже достаточно наслушался. Идем.' if dmorte2Logic.r41203_condition():
             # r42 # reply41203
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s16 # say41202
@@ -308,7 +308,7 @@ label dmorte2_s16:  # from 15.0
 
         'Ладно. Идем.' if dmorte2Logic.r41207_condition():
             # r46 # reply41207
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s17 # say41208
@@ -326,7 +326,7 @@ label dmorte2_s17:  # from 16.0
 
         'Ладно. Идем.' if dmorte2Logic.r41211_condition():
             # r49 # reply41211
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s18 # say41212
@@ -344,7 +344,7 @@ label dmorte2_s18:  # from 12.1
 
         'Это все, что я хотел узнать. Спасибо.' if dmorte2Logic.r41215_condition():
             # r52 # reply41215
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s19 # say41216
@@ -366,7 +366,7 @@ label dmorte2_s19:  # from 12.2 12.3
 
         'Понятно. Тогда я буду осторожен.' if dmorte2Logic.r41220_condition():
             # r56 # reply41220
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s20 # say41221
@@ -384,7 +384,7 @@ label dmorte2_s20:  # from 19.0
 
         'Ладно… Я… попробую это запомнить.' if dmorte2Logic.r41224_condition():
             # r59 # reply41224
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s21 # say41225
@@ -402,7 +402,7 @@ label dmorte2_s21:  # from 12.6
 
         'Спасибо. Думаю, я смогу с ними справиться.' if dmorte2Logic.r41228_condition():
             # r62 # reply41228
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s22 # say41229
@@ -420,7 +420,7 @@ label dmorte2_s22:  # from 12.4
 
         'Ладно… Я… попробую это запомнить.' if dmorte2Logic.r41232_condition():
             # r65 # reply41232
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s23 # say41233
@@ -438,7 +438,7 @@ label dmorte2_s23:  # from 12.5
 
         'Ладно… Я… попробую это запомнить.':
             # r68 # reply41236
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s24 # say41237
@@ -460,7 +460,7 @@ label dmorte2_s24:  # from 23.0
 
         'Я достаточно наслушался. Идем.':
             # r72 # reply41241
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s25 # say41242
@@ -478,7 +478,7 @@ label dmorte2_s25:  # from 24.0 24.1
 
         'Я достаточно наслушался. Идем.':
             # r75 # reply41245
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s26 # say41246
@@ -492,7 +492,7 @@ label dmorte2_s26:  # from 25.0
 
         'Я достаточно наслушался. Идем.':
             # r77 # reply41248
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s27 # say41250
@@ -503,7 +503,7 @@ label dmorte2_s27:  # -
         'Да… идем.':
             # r78 # reply41251
             $ dmorte2Logic.r41251_action()
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
         'Не сейчас, Морт.':
             # r79 # reply41252
@@ -522,7 +522,7 @@ label dmorte2_s28:  # from 27.1
         'Ладно. Я передумал. Давай, идем.':
             # r81 # reply41255
             $ dmorte2Logic.r41255_action()
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
         'Не сейчас, Морт. Может быть, потом.':
             # r82 # reply41256
@@ -537,7 +537,7 @@ label dmorte2_s29:  # from 28.0 28.2
         'Ладно. Я передумал. Давай, идем.':
             # r83 # reply41258
             $ dmorte2Logic.r41258_action()
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r84 # reply41259
@@ -551,7 +551,7 @@ label dmorte2_s30:  # from 29.1
     menu:
         'Я так и сделаю. Прощай, Морт.':
             # r85 # reply41261
-            jump show_graphics_menu
+            jump dmorte2_dispose
 
 
 # s31 # say41262
@@ -582,4 +582,4 @@ label dmorte2_s33:  # from 32.0
     menu:
         'Мне нужны ответы. Я поговорю с ним.':
             # r88 # reply41267
-            jump show_graphics_menu
+            jump dmorte2_dispose

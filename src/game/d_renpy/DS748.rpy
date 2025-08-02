@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DS748.DLG
+# Original:  DLG/DS748.DLG
 # ###
 
 
@@ -48,37 +48,51 @@ label ds748_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 384 Check EXTERN ~D
             $ ds748Logic.r35415_action()
             jump ds748_s3
 
+        'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35448_condition():
+            # r6 # reply35448
+            $ ds748Logic.r35448_action()
+            jump ds748_dispose
+
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35449_condition():
-            # r6 # reply35449
+            # r7 # reply35449
             jump ds748_s4
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35450_condition():
-            # r7 # reply35450
+            # r8 # reply35450
             jump ds748_s5
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35451_condition():
-            # r8 # reply35451
+            # r9 # reply35451
             jump ds748_s6
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35452_condition():
-            # r9 # reply35452
+            # r10 # reply35452
             jump ds748_s4
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35453_condition():
-            # r10 # reply35453
+            # r11 # reply35453
             jump ds748_s5
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35454_condition():
-            # r11 # reply35454
+            # r12 # reply35454
             jump ds748_s6
 
+        'Как насчет этого скелета, Морт? Пойдет такое тело?' if ds748Logic.r35455_condition():
+            # r13 # reply35455
+            jump ds748_dispose
+
+        'Оставить скелет в покое.' if ds748Logic.r35456_condition():
+            # r14 # reply35456
+            $ ds748Logic.r35456_action()
+            jump ds748_dispose
+
         'Оставить скелет в покое.' if ds748Logic.r35457_condition():
-            # r12 # reply35457
-            jump show_graphics_menu
+            # r15 # reply35457
+            jump ds748_dispose
 
         'Оставить скелет в покое.' if ds748Logic.r35458_condition():
-            # r13 # reply35458
-            jump show_graphics_menu
+            # r16 # reply35458
+            jump ds748_dispose
 
 
 # s1 # say35385
@@ -86,13 +100,18 @@ label ds748_s1:  # from 0.0 0.1 0.2 0.3 # Check EXTERN ~DMORTE~ : 378
     SPEAKER 'Скелет не отвечает.'
 
     menu:
+        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds748Logic.r35386_condition():
+            # r17 # reply35386
+            $ ds748Logic.r35386_action()
+            jump ds748_dispose
+
         'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds748Logic.r35405_condition():
-            # r14 # reply35405
-            jump show_graphics_menu
+            # r18 # reply35405
+            jump ds748_dispose
 
         'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds748Logic.r35406_condition():
-            # r15 # reply35406
-            jump show_graphics_menu
+            # r19 # reply35406
+            jump ds748_dispose
 
 
 # s2 # say35411
@@ -100,13 +119,18 @@ label ds748_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 378
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
+        'Оставить скелет в покое.' if ds748Logic.r35412_condition():
+            # r20 # reply35412
+            $ ds748Logic.r35412_action()
+            jump ds748_dispose
+
         'Оставить скелет в покое.' if ds748Logic.r35413_condition():
-            # r16 # reply35413
-            jump show_graphics_menu
+            # r21 # reply35413
+            jump ds748_dispose
 
         'Оставить скелет в покое.' if ds748Logic.r35414_condition():
-            # r17 # reply35414
-            jump show_graphics_menu
+            # r22 # reply35414
+            jump ds748_dispose
 
 
 # s3 # say35416
@@ -114,37 +138,47 @@ label ds748_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 384 Check EXTERN ~DMORTE~ 
     SPEAKER 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия. Ремни привязаны к железными скобам, вбитым в суставы скелета. Кажется, этот скелет сослужил хорошую службу: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
 
     menu:
+        'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35417_condition():
+            # r23 # reply35417
+            $ ds748Logic.r35417_action()
+            jump ds748_dispose
+
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35439_condition():
-            # r18 # reply35439
+            # r24 # reply35439
             jump ds748_s4
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35440_condition():
-            # r19 # reply35440
+            # r25 # reply35440
             jump ds748_s5
 
         'Попробовать вытащить скобы из суставов скелета.' if ds748Logic.r35441_condition():
-            # r20 # reply35441
+            # r26 # reply35441
             jump ds748_s6
 
         'Не против, если я возьму немного ремешков и скоб?' if ds748Logic.r35442_condition():
-            # r21 # reply35442
+            # r27 # reply35442
             jump ds748_s4
 
         'Не против, если я возьму немного ремешков и скоб?' if ds748Logic.r35443_condition():
-            # r22 # reply35443
+            # r28 # reply35443
             jump ds748_s5
 
         'Не против, если я возьму немного ремешков и скоб?' if ds748Logic.r35444_condition():
-            # r23 # reply35444
+            # r29 # reply35444
             jump ds748_s6
 
+        'Оставить скелет в покое.' if ds748Logic.r35445_condition():
+            # r30 # reply35445
+            $ ds748Logic.r35445_action()
+            jump ds748_dispose
+
         'Оставить скелет в покое.' if ds748Logic.r35446_condition():
-            # r24 # reply35446
-            jump show_graphics_menu
+            # r31 # reply35446
+            jump ds748_dispose
 
         'Оставить скелет в покое.' if ds748Logic.r35447_condition():
-            # r25 # reply35447
-            jump show_graphics_menu
+            # r32 # reply35447
+            jump ds748_dispose
 
 
 # s4 # say35422
@@ -152,21 +186,31 @@ label ds748_s4:  # from 0.7 0.10 3.1 3.4 # Check EXTERN ~DMORTE~ : 378
     SPEAKER 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
 
     menu:
+        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка.' if ds748Logic.r35423_condition():
+            # r33 # reply35423
+            $ ds748Logic.r35423_action()
+            jump ds748_dispose
+
         'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка.' if ds748Logic.r35424_condition():
-            # r26 # reply35424
-            jump show_graphics_menu
+            # r34 # reply35424
+            jump ds748_dispose
 
         'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка.' if ds748Logic.r35425_condition():
-            # r27 # reply35425
-            jump show_graphics_menu
+            # r35 # reply35425
+            jump ds748_dispose
+
+        'Оставить скелет в покое.' if ds748Logic.r35426_condition():
+            # r36 # reply35426
+            $ ds748Logic.r35426_action()
+            jump ds748_dispose
 
         'Оставить скелет в покое.' if ds748Logic.r35427_condition():
-            # r28 # reply35427
-            jump show_graphics_menu
+            # r37 # reply35427
+            jump ds748_dispose
 
         'Оставить скелет в покое.' if ds748Logic.r35428_condition():
-            # r29 # reply35428
-            jump show_graphics_menu
+            # r38 # reply35428
+            jump ds748_dispose
 
 
 # s5 # say35430
@@ -175,9 +219,9 @@ label ds748_s5:  # from 0.8 0.11 3.2 3.5
 
     menu:
         'Извини, Костяшка…':
-            # r30 # reply35431
+            # r39 # reply35431
             $ ds748Logic.r35431_action()
-            jump show_graphics_menu
+            jump ds748_dispose
 
 
 # s6 # say35433
@@ -186,13 +230,13 @@ label ds748_s6:  # from 0.9 0.12 3.3 3.6
 
     menu:
         'Извини, Костяшка…':
-            # r31 # reply35434
+            # r40 # reply35434
             $ ds748Logic.r35434_action()
-            jump show_graphics_menu
+            jump ds748_dispose
 
 
 # s7 # say35459
 label ds748_s7:  # - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump show_graphics_menu
+    jump ds748_dispose

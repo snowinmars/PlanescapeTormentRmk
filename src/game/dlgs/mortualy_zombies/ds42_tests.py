@@ -522,3 +522,7 @@ class Ds42LogicTest(LogicTest):
 
         self.settings_manager.gcm.set_property(who, prop, value + 1)
         self.assertTrue(logic.r6654_condition())
+
+
+if __name__ == '__main__':
+    unittest.main()

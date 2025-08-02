@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZF679.DLG
+# Original:  DLG/DZF679.DLG
 # ###
 
 
@@ -38,21 +38,29 @@ label dzf679_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 354
             # r3 # reply35198
             jump dzf679_s2
 
+        'Было приятно с тобой поболтать. Прощай.' if dzf679Logic.r35203_condition():
+            # r4 # reply35203
+            jump dzf679_dispose
+
+        'Оставить труп в покое.' if dzf679Logic.r35204_condition():
+            # r5 # reply35204
+            jump dzf679_dispose
+
         'Было приятно с тобой поболтать. Прощай.' if dzf679Logic.r35205_condition():
-            # r4 # reply35205
-            jump show_graphics_menu
+            # r6 # reply35205
+            jump dzf679_dispose
 
         'Оставить труп в покое.' if dzf679Logic.r35206_condition():
-            # r5 # reply35206
-            jump show_graphics_menu
+            # r7 # reply35206
+            jump dzf679_dispose
 
         'Было приятно с тобой поболтать. Прощай.' if dzf679Logic.r35207_condition():
-            # r6 # reply35207
-            jump show_graphics_menu
+            # r8 # reply35207
+            jump dzf679_dispose
 
         'Оставить труп в покое.' if dzf679Logic.r35208_condition():
-            # r7 # reply35208
-            jump show_graphics_menu
+            # r9 # reply35208
+            jump dzf679_dispose
 
 
 # s1 # say35180
@@ -60,13 +68,17 @@ label dzf679_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 354
     SPEAKER 'Труп продолжает пялиться на тебя.'
 
     menu:
+        'Тогда прощай.' if dzf679Logic.r35181_condition():
+            # r10 # reply35181
+            jump dzf679_dispose
+
         'Тогда прощай.' if dzf679Logic.r35194_condition():
-            # r8 # reply35194
-            jump show_graphics_menu
+            # r11 # reply35194
+            jump dzf679_dispose
 
         'Тогда прощай.' if dzf679Logic.r35195_condition():
-            # r9 # reply35195
-            jump show_graphics_menu
+            # r12 # reply35195
+            jump dzf679_dispose
 
 
 # s2 # say35199
@@ -74,17 +86,21 @@ label dzf679_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 354
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
+        'Тогда прощай.' if dzf679Logic.r35200_condition():
+            # r13 # reply35200
+            jump dzf679_dispose
+
         'Тогда прощай.' if dzf679Logic.r35201_condition():
-            # r10 # reply35201
-            jump show_graphics_menu
+            # r14 # reply35201
+            jump dzf679_dispose
 
         'Тогда прощай.' if dzf679Logic.r35202_condition():
-            # r11 # reply35202
-            jump show_graphics_menu
+            # r15 # reply35202
+            jump dzf679_dispose
 
 
 # s3 # say35209
 label dzf679_s3:  # - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump show_graphics_menu
+    jump dzf679_dispose

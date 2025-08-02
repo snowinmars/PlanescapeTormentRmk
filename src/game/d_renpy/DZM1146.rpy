@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM1146.DLG
+# Original:  DLG/DZM1146.DLG
 # ###
 
 
@@ -41,11 +41,11 @@ label dzm1146_s0:  # - # IF ~  Global("Crispy","GLOBAL",0)
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6525
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
         'Оставить труп в покое.':
             # r5 # reply6526
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s1 # say6519
@@ -55,7 +55,7 @@ label dzm1146_s1:  # from 0.0 0.1 0.2
     menu:
         'Оставить труп в покое.':
             # r6 # reply6527
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s2 # say6520
@@ -73,7 +73,7 @@ label dzm1146_s2:  # from 0.3
 
         'Оставить горящего духа.':
             # r9 # reply9414
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s3 # say9398
@@ -96,7 +96,7 @@ label dzm1146_s3:  # from 2.0
 
         'Оставить измученного духа.':
             # r13 # reply9418
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s4 # say9399
@@ -114,7 +114,7 @@ label dzm1146_s4:  # from 3.0
 
         'Оставить измученного духа его страданиям.':
             # r16 # reply9422
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s5 # say9400
@@ -128,7 +128,7 @@ label dzm1146_s5:  # from 4.0
 
         'Ладно. Прощай.':
             # r18 # reply9424
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s6 # say9401
@@ -147,20 +147,20 @@ label dzm1146_s6:  # from 3.2 17.0
 
         'Не обращать внимания на бедолагу, отвернуться и уйти.':
             # r21 # reply9427
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s7 # say9402
 label dzm1146_s7:  # from 6.0
     SPEAKER 'Духу издает утробное рычание и плюет в тебя. Мерзкая жидкость приземляется в нескольких дюймах от твоих ног. Полностью обессилев, существо падает назад на пол: жизнь снова покинула тело.'
 
-    jump show_graphics_menu
+    jump dzm1146_dispose
 
 # s8 # say9403
 label dzm1146_s8:  # from 6.1
     SPEAKER 'Ты резко бьешь мертвеца по почкам, но безуспешно: духа ты не задел. Хе, хе-хе-хе, — ехидно булькает существо, после чего, наконец, полностью покидает тело. Ты стоишь со смутным ощущением неудовлетворенности.'
 
-    jump show_graphics_menu
+    jump dzm1146_dispose
 
 # s9 # say9404
 label dzm1146_s9:  # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
@@ -197,7 +197,7 @@ label dzm1146_s9:  # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.
 
         'Ничего, неважно.':
             # r29 # reply9435
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s10 # say9405
@@ -211,7 +211,7 @@ label dzm1146_s10:  # from 9.0
 
         'Тогда прощай.':
             # r31 # reply9437
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s11 # say9406
@@ -225,7 +225,7 @@ label dzm1146_s11:  # from 9.1
 
         'Это все, что я хотел узнать. Прощай.':
             # r33 # reply9439
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s12 # say9407
@@ -243,7 +243,7 @@ label dzm1146_s12:  # from 9.2
 
         'Это все, что я хотел узнать. Прощай.':
             # r36 # reply9465
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s13 # say9408
@@ -261,7 +261,7 @@ label dzm1146_s13:  # from 9.3
 
         'Это все, что я хотел узнать. Прощай.':
             # r39 # reply9444
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s14 # say9409
@@ -279,7 +279,7 @@ label dzm1146_s14:  # from 9.4
 
         'Это все, что я хотел узнать. Прощай.':
             # r42 # reply9745
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s15 # say9410
@@ -293,7 +293,7 @@ label dzm1146_s15:  # from 9.5
 
         'Тогда прощай.':
             # r44 # reply9448
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s16 # say9411
@@ -307,7 +307,7 @@ label dzm1146_s16:  # from 9.6
 
         'Это все, что я хотел узнать. Прощай.':
             # r46 # reply9450
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s17 # say9412
@@ -325,7 +325,7 @@ label dzm1146_s17:  # from 13.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r49 # reply9452
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s18 # say9458
@@ -343,7 +343,7 @@ label dzm1146_s18:  # from 12.0 14.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r52 # reply9746
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s19 # say9744
@@ -357,7 +357,7 @@ label dzm1146_s19:  # from 18.0
 
         'Это все, что я хотел узнать. Прощай.':
             # r54 # reply9748
-            jump show_graphics_menu
+            jump dzm1146_dispose
 
 
 # s20 # say20099
@@ -371,4 +371,4 @@ label dzm1146_s20:  # - # IF ~  Global("Crispy","GLOBAL",1)
 
         'Ничего, я просто проходил мимо. Прощай.':
             # r56 # reply20101
-            jump show_graphics_menu
+            jump dzm1146_dispose

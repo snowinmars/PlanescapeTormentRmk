@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM396.DLG
+# Original:  DLG/DZM396.DLG
 # ###
 
 
@@ -45,11 +45,11 @@ label dzm396_s0:  # - # IF ~  HasItem("Bandage","ZM396")
 
         'Было приятно с тобой поболтать. Прощай.':
             # r5 # reply34941
-            jump show_graphics_menu
+            jump dzm396_dispose
 
         'Оставить труп в покое.':
             # r6 # reply45106
-            jump show_graphics_menu
+            jump dzm396_dispose
 
 
 # s1 # say34933
@@ -64,7 +64,7 @@ label dzm396_s1:  # from 0.0 0.1 0.3 4.0 4.1 4.2
 
         'Оставить труп в покое.':
             # r8 # reply45107
-            jump show_graphics_menu
+            jump dzm396_dispose
 
 
 # s2 # say34938
@@ -74,7 +74,7 @@ label dzm396_s2:  # from 0.4 4.3
     menu:
         'Оставить труп в покое.':
             # r9 # reply34939
-            jump show_graphics_menu
+            jump dzm396_dispose
 
 
 # s3 # say45108
@@ -88,7 +88,7 @@ label dzm396_s3:  # from 0.2 1.0
 
         'Оставить труп в покое.':
             # r11 # reply45110
-            jump show_graphics_menu
+            jump dzm396_dispose
 
 
 # s4 # say45111
@@ -115,8 +115,8 @@ label dzm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
 
         'Было приятно с тобой поболтать. Прощай.':
             # r16 # reply45116
-            jump show_graphics_menu
+            jump dzm396_dispose
 
         'Оставить труп в покое.':
             # r17 # reply45117
-            jump show_graphics_menu
+            jump dzm396_dispose

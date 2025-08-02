@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/COPEARC.DLG
+# Original:  DLG/COPEARC.DLG
 # ###
 
 
@@ -32,7 +32,7 @@ label copearc_s0:  # - # IF ~  True()
 
         'Отложить серьгу.':
             # r2 # reply46726
-            jump show_graphics_menu
+            jump copearc_dispose
 
 
 # s1 # say46727
@@ -47,7 +47,7 @@ label copearc_s1:  # from 0.0
 
         'Отложить серьгу.':
             # r4 # reply46729
-            jump show_graphics_menu
+            jump copearc_dispose
 
 
 # s2 # say46730
@@ -68,4 +68,4 @@ label copearc_s3:  # from 2.0
         'Отложить серьгу.':
             # r6 # reply46733
             $ copearcLogic.r46733_action()
-            jump show_graphics_menu
+            jump copearc_dispose

@@ -1060,3 +1060,7 @@ class DdustfemLogicTest(LogicTest):
             lambda x: self.settings_manager.set_join_dustmen(x),
             lambda: logic.r66688_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

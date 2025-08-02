@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DZM506.DLG
+# Original:  DLG/DZM506.DLG
 # ###
 
 
@@ -35,11 +35,11 @@ label dzm506_s0:  # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
 
         'Было приятно с тобой поболтать. Прощай.':
             # r3 # reply45423
-            jump show_graphics_menu
+            jump dzm506_dispose
 
         'Оставить зомби в покое.':
             # r4 # reply45424
-            jump show_graphics_menu
+            jump dzm506_dispose
 
 
 # s1 # say45425
@@ -49,7 +49,7 @@ label dzm506_s1:  # from 0.1 4.0 4.1 5.0 5.1 5.2
     menu:
         'Оставить зомби в покое.':
             # r5 # reply45478
-            jump show_graphics_menu
+            jump dzm506_dispose
 
 
 # s2 # say45426
@@ -59,7 +59,7 @@ label dzm506_s2:  # from 0.2 5.3
     menu:
         'Оставить зомби в покое.':
             # r6 # reply45479
-            jump show_graphics_menu
+            jump dzm506_dispose
 
 
 # s3 # say45427
@@ -74,7 +74,7 @@ label dzm506_s3:  # from 0.0
 
         'Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь.' if dzm506Logic.r45481_condition():
             # r8 # reply45481
-            jump show_graphics_menu
+            jump dzm506_dispose
 
         'Снова осмотреть труп.':
             # r9 # reply45482
@@ -82,7 +82,7 @@ label dzm506_s3:  # from 0.0
 
         'Оставить труп в покое.':
             # r10 # reply45483
-            jump show_graphics_menu
+            jump dzm506_dispose
 
 
 # s4 # say45428
@@ -105,7 +105,7 @@ label dzm506_s4:  # from 3.0
 
         'Оставить зомби в покое.':
             # r14 # reply66889
-            jump show_graphics_menu
+            jump dzm506_dispose
 
 
 # s5 # say45429
@@ -132,8 +132,8 @@ label dzm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
 
         'Было приятно с тобой поболтать. Прощай.':
             # r19 # reply45513
-            jump show_graphics_menu
+            jump dzm506_dispose
 
         'Оставить зомби в покое.':
             # r20 # reply45514
-            jump show_graphics_menu
+            jump dzm506_dispose

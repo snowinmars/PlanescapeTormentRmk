@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DS863.DLG
+# Original:  DLG/DS863.DLG
 # ###
 
 
@@ -48,37 +48,51 @@ label ds863_s0:  # from 10.0 # IF ~  !HasItem("DRemind","S863")  Check EXTERN ~D
             $ ds863Logic.r35569_action()
             jump ds863_s3
 
+        'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35602_condition():
+            # r6 # reply35602
+            $ ds863Logic.r35602_action()
+            jump ds863_dispose
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35603_condition():
-            # r6 # reply35603
+            # r7 # reply35603
             jump ds863_s4
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35604_condition():
-            # r7 # reply35604
+            # r8 # reply35604
             jump ds863_s5
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35605_condition():
-            # r8 # reply35605
+            # r9 # reply35605
             jump ds863_s6
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35606_condition():
-            # r9 # reply35606
+            # r10 # reply35606
             jump ds863_s4
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35607_condition():
-            # r10 # reply35607
+            # r11 # reply35607
             jump ds863_s5
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35608_condition():
-            # r11 # reply35608
+            # r12 # reply35608
             jump ds863_s6
 
+        'Как насчет этого скелета, Морт? Пойдет такое тело?' if ds863Logic.r35609_condition():
+            # r13 # reply35609
+            jump ds863_dispose
+
+        'Оставить скелет в покое.' if ds863Logic.r35610_condition():
+            # r14 # reply35610
+            $ ds863Logic.r35610_action()
+            jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35611_condition():
-            # r12 # reply35611
-            jump show_graphics_menu
+            # r15 # reply35611
+            jump ds863_dispose
 
         'Оставить скелет в покое.' if ds863Logic.r35612_condition():
-            # r13 # reply35612
-            jump show_graphics_menu
+            # r16 # reply35612
+            jump ds863_dispose
 
 
 # s1 # say35539
@@ -86,13 +100,18 @@ label ds863_s1:  # from 0.0 0.1 0.2 0.3 # Check EXTERN ~DMORTE~ : 394
     SPEAKER 'Скелет не отвечает.'
 
     menu:
+        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds863Logic.r35540_condition():
+            # r17 # reply35540
+            $ ds863Logic.r35540_action()
+            jump ds863_dispose
+
         'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds863Logic.r35559_condition():
-            # r14 # reply35559
-            jump show_graphics_menu
+            # r18 # reply35559
+            jump ds863_dispose
 
         'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if ds863Logic.r35560_condition():
-            # r15 # reply35560
-            jump show_graphics_menu
+            # r19 # reply35560
+            jump ds863_dispose
 
 
 # s2 # say35565
@@ -100,13 +119,18 @@ label ds863_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 394
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
+        'Оставить скелет в покое.' if ds863Logic.r35566_condition():
+            # r20 # reply35566
+            $ ds863Logic.r35566_action()
+            jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35567_condition():
-            # r16 # reply35567
-            jump show_graphics_menu
+            # r21 # reply35567
+            jump ds863_dispose
 
         'Оставить скелет в покое.' if ds863Logic.r35568_condition():
-            # r17 # reply35568
-            jump show_graphics_menu
+            # r22 # reply35568
+            jump ds863_dispose
 
 
 # s3 # say35570
@@ -114,37 +138,47 @@ label ds863_s3:  # from 0.5 # Check EXTERN ~DMORTE~ : 400 Check EXTERN ~DMORTE~ 
     SPEAKER 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия. Ремни привязаны к железными скобам, вбитым в суставы скелета. Кажется, этот скелет сослужил хорошую службу: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
 
     menu:
+        'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35571_condition():
+            # r23 # reply35571
+            $ ds863Logic.r35571_action()
+            jump ds863_dispose
+
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35593_condition():
-            # r18 # reply35593
+            # r24 # reply35593
             jump ds863_s4
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35594_condition():
-            # r19 # reply35594
+            # r25 # reply35594
             jump ds863_s5
 
         'Попробовать вытащить скобы из суставов скелета.' if ds863Logic.r35595_condition():
-            # r20 # reply35595
+            # r26 # reply35595
             jump ds863_s6
 
         'Не против, если я возьму немного ремешков и скоб?' if ds863Logic.r35596_condition():
-            # r21 # reply35596
+            # r27 # reply35596
             jump ds863_s4
 
         'Не против, если я возьму немного ремешков и скоб?' if ds863Logic.r35597_condition():
-            # r22 # reply35597
+            # r28 # reply35597
             jump ds863_s5
 
         'Не против, если я возьму немного ремешков и скоб?' if ds863Logic.r35598_condition():
-            # r23 # reply35598
+            # r29 # reply35598
             jump ds863_s6
 
+        'Оставить скелет в покое.' if ds863Logic.r35599_condition():
+            # r30 # reply35599
+            $ ds863Logic.r35599_action()
+            jump ds863_dispose
+
         'Оставить скелет в покое.' if ds863Logic.r35600_condition():
-            # r24 # reply35600
-            jump show_graphics_menu
+            # r31 # reply35600
+            jump ds863_dispose
 
         'Оставить скелет в покое.' if ds863Logic.r35601_condition():
-            # r25 # reply35601
-            jump show_graphics_menu
+            # r32 # reply35601
+            jump ds863_dispose
 
 
 # s4 # say35576
@@ -152,21 +186,31 @@ label ds863_s4:  # from 0.7 0.10 3.1 3.4 # Check EXTERN ~DMORTE~ : 394
     SPEAKER 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
 
     menu:
+        'Если бы у меня был подходящий инструмент, я бы смог вытащить их… хм-м. Я еще вернусь, Костяшка.' if ds863Logic.r35577_condition():
+            # r33 # reply35577
+            $ ds863Logic.r35577_action()
+            jump ds863_dispose
+
         'Если бы у меня был подходящий инструмент, я бы смог вытащить их… хм-м. Я еще вернусь, Костяшка.' if ds863Logic.r35578_condition():
-            # r26 # reply35578
-            jump show_graphics_menu
+            # r34 # reply35578
+            jump ds863_dispose
 
         'Если бы у меня был подходящий инструмент, я бы смог вытащить их… хм-м. Я еще вернусь, Костяшка.' if ds863Logic.r35579_condition():
-            # r27 # reply35579
-            jump show_graphics_menu
+            # r35 # reply35579
+            jump ds863_dispose
+
+        'Оставить скелет в покое.' if ds863Logic.r35580_condition():
+            # r36 # reply35580
+            $ ds863Logic.r35580_action()
+            jump ds863_dispose
 
         'Оставить скелет в покое.' if ds863Logic.r35581_condition():
-            # r28 # reply35581
-            jump show_graphics_menu
+            # r37 # reply35581
+            jump ds863_dispose
 
         'Оставить скелет в покое.' if ds863Logic.r35582_condition():
-            # r29 # reply35582
-            jump show_graphics_menu
+            # r38 # reply35582
+            jump ds863_dispose
 
 
 # s5 # say35584
@@ -175,9 +219,9 @@ label ds863_s5:  # from 0.8 0.11 3.2 3.5
 
     menu:
         'Извини, Костяшка…':
-            # r30 # reply35585
+            # r39 # reply35585
             $ ds863Logic.r35585_action()
-            jump show_graphics_menu
+            jump ds863_dispose
 
 
 # s6 # say35587
@@ -186,16 +230,16 @@ label ds863_s6:  # from 0.9 0.12 3.3 3.6
 
     menu:
         'Извини, Костяшка…':
-            # r31 # reply35588
+            # r40 # reply35588
             $ ds863Logic.r35588_action()
-            jump show_graphics_menu
+            jump ds863_dispose
 
 
 # s7 # say35613
 label ds863_s7:  # - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump show_graphics_menu
+    jump ds863_dispose
 
 # s8 # say64262
 label ds863_s8:  # - # IF ~  HasItem("DRemind","S863")
@@ -203,12 +247,12 @@ label ds863_s8:  # - # IF ~  HasItem("DRemind","S863")
 
     menu:
         'Вытащить пергамент из черепа скелета.':
-            # r32 # reply64263
+            # r41 # reply64263
             jump ds863_s9
 
         'Оставить скелет в покое.':
-            # r33 # reply64264
-            jump show_graphics_menu
+            # r42 # reply64264
+            jump ds863_dispose
 
 
 # s9 # say64265
@@ -217,7 +261,7 @@ label ds863_s9:  # from 8.0
 
     menu:
         'Разорвать нитку, взять пергамент.':
-            # r34 # reply64266
+            # r43 # reply64266
             $ ds863Logic.r64266_action()
             jump ds863_s10
 
@@ -228,9 +272,9 @@ label ds863_s10:  # from 9.0
 
     menu:
         'Снова осмотреть скелет.':
-            # r35 # reply64268
+            # r44 # reply64268
             jump ds863_s0
 
         'Оставить скелет в покое.':
-            # r36 # reply64269
-            jump show_graphics_menu
+            # r45 # reply64269
+            jump ds863_dispose

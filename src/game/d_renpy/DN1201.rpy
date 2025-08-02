@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DN1201.DLG
+# Original:  DLG/DN1201.DLG
 # ###
 
 
@@ -44,7 +44,7 @@ label dn1201_s0:  # from 1.6 3.0 # IF ~  True()
         'Оставить записку в покое.':
             # r4 # reply44998
             $ dn1201Logic.r44998_action()
-            jump show_graphics_menu
+            jump dn1201_dispose
 
 
 # s1 # say44999
@@ -89,7 +89,7 @@ label dn1201_s1:  # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
         'Разложить записку, оставить ее в покое.':
             # r12 # reply45008
             $ dn1201Logic.r45008_action()
-            jump show_graphics_menu
+            jump dn1201_dispose
 
 
 # s2 # say45015
@@ -109,7 +109,7 @@ label dn1201_s2:  # from 1.5
         'Разложить записку, оставить ее в покое.':
             # r15 # reply45018
             $ dn1201Logic.r45018_action()
-            jump show_graphics_menu
+            jump dn1201_dispose
 
 
 # s3 # say45019
@@ -123,7 +123,7 @@ label dn1201_s3:  # from 2.1
 
         'Отложить записку.':
             # r17 # reply45021
-            jump show_graphics_menu
+            jump dn1201_dispose
 
 
 # s4 # say45022
@@ -145,4 +145,4 @@ label dn1201_s5:  # from 4.0
         'Взять треугольную серьгу…':
             # r19 # reply45025
             $ dn1201Logic.r45025_action()
-            jump show_graphics_menu
+            jump dn1201_dispose

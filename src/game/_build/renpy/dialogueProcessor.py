@@ -28,7 +28,10 @@ class DialogueProcessor:
         self.CUTSCENE_REGEX = re.compile(r'StartCutSceneEx\("(.*)".*')
         self.STAT_REGEX = re.compile(r'PermanentStatChange\("?(.*)"?,(.*),(.*),(\d+)\)')
         self.LOCATION_REGEX = re.compile(r'SetGlobal\("Current_Area","(.*)",(\d*)\)')
-        self.VISITED_REGEX = re.compile(r'(!)?Global\("(.*?)_Visited",.*?,(\d)\)')
+        self.SET_INTERNAL_VISITED_REGEX = re.compile(r'SetGlobal\("Current_Area","(.*)",(\d*)\)')
+        self.GLOBAL_INTERNAL_VISITED_REGEX = re.compile(r'(!?)Global\("Current_Area","(.*)",(\d*)\)')
+        self.GLOBAL_VISITED_REGEX = re.compile(r'(!)?Global\("(.*?)_Visited",.*?,(\d)\)')
+        self.TIMES_TALKED_TO_REGEX = re.compile(r'NumTimesTalkedTo(.+)?\((\d+)\)')
         self.INCREMENT_REGEX = re.compile(r'IncrementGlobal\("(.*?)",(".*?"),(.*?)\)')
         self.INCREMENT_REGEX_ONCE = re.compile(r'IncrementGlobalOnceEx\("(.*?)","(.*?)",(.*?)\)')
 
@@ -59,6 +62,8 @@ class DialogueProcessor:
         self._createNpcSetting('Soego', 'soego')
         self._createNpcSetting('Ravel', 'ravel')
         self._createNpcSetting('Aelwyn', 'aelwyn')
+        self._createNpcSetting('Dustfem', 'dustfem')
+        self._createNpcSetting('Dust', 'dust')
 
         self._createNpcSetting(None, 'ds42')
         self._createNpcSetting(None, 'ds748')
@@ -337,7 +342,7 @@ class DialogueProcessor:
     def transform_script(self, script, target_npc):
         script = self._replace_kill_myself(script, target_npc)
         script = self._apply_well_known_replacements(script)
-        script = self._apply_transformers(script)
+        script = self._apply_transformers(script, target_npc)
         return script
 
 
@@ -413,8 +418,10 @@ class DialogueProcessor:
         ):
         self._add_setting(f'has_{to_var}', 'boolean')
 
+        for i in range(1, 6):  # manually add new values
+            self._add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},0,0)', f'self.gsm.set_has_{to_var}(True)')
+
         self._add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.gsm.set_has_{to_var}(True)')
-        self._add_replacement(f'GiveItemCreate("{from_var}",Protagonist,1,0,0)', f'self.gsm.set_has_{to_var}(True)')
         self._add_replacement(f'TakeItem("{from_var}",Protagonist)', f'self.gsm.set_has_{to_var}(False)')
         self._add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.gsm.set_has_{to_var}(False)')
         self._add_replacement(f'TakePartyItemNum("{from_var}",1)', f'self.gsm.set_has_{to_var}(False)') #  always -1 is false
@@ -517,9 +524,6 @@ class DialogueProcessor:
             self._createBooleanSetting(f'Tree_{letter}', f'tree_{letter.lower()}', 'AR0400')
 
 
-
-
-
     def _replace_kill_myself(self, script, target_npc):
         return script.replace('Kill(Myself)', f'self.gsm.set_dead_{target_npc}(True)')
 
@@ -530,7 +534,7 @@ class DialogueProcessor:
         return script
 
 
-    def _apply_transformers(self, script):
+    def _apply_transformers(self, script, target_npc):
         transformers = [
             self._transform_journals,
             self._transform_conditionals,
@@ -545,22 +549,25 @@ class DialogueProcessor:
             self._transform_healing,
             self._transform_cutscenes,
             self._transform_locations,
-            self._transform_visited
+            self._transform_set_internal_visited,
+            self._transform_global_internal_visited,
+            self._transform_global_visited,
+            self._transform_times_talked_to
         ]
         for transformer in transformers:
-            script = transformer(script)
+            script = transformer(script, target_npc)
         return script
 
     # Individual transformer methods
 
-    def _transform_journals(self, script):
+    def _transform_journals(self, script, target_npc):
         return self.JOURNAL_REGEX.sub(
             r"self.gsm.update_journal('\1')    # '\1': '\2'",
             script
         )
 
 
-    def _transform_conditionals(self, script):
+    def _transform_conditionals(self, script, target_npc):
         def replace_conditional(match):
             operator, character, amount, prop = match.groups()
             op_type = '>' if operator == 'GT' else '<'
@@ -588,7 +595,7 @@ class DialogueProcessor:
         return self.CONDITIONAL_REGEX.sub(replace_conditional, script)
 
 
-    def _transform_alignments(self, script):
+    def _transform_alignments(self, script, target_npc):
         def replace_alignment(match):
             prop, env, amount, = match.groups()
             amount = int(amount)
@@ -603,7 +610,7 @@ class DialogueProcessor:
         return self.INCREMENT_REGEX.sub(replace_alignment, script)
 
 
-    def _transform_alignments_once(self, script):
+    def _transform_alignments_once(self, script, target_npc):
         def replace_alignment_once(match):
             global_id, prop, amount, = match.groups()
             prop = prop.replace('GLOBAL', '').lower()
@@ -621,15 +628,15 @@ class DialogueProcessor:
         return self.INCREMENT_REGEX_ONCE.sub(replace_alignment_once, script)
 
 
-    def _transform_sounds(self, script):
+    def _transform_sounds(self, script, target_npc):
         return self.SOUND_REGEX.sub(r'# ?.play_sound("\1")', script)
 
 
-    def _transform_attacks(self, script):
+    def _transform_attacks(self, script, target_npc):
         return self.ATTACK_REGEX.sub(r'# ?.attack("\1").by("\2")', script)
 
 
-    def _transform_gold(self, script):
+    def _transform_gold(self, script, target_npc):
         def replace_gold(match):
             action, amount, = match.groups()
             amount = int(amount)
@@ -647,7 +654,7 @@ class DialogueProcessor:
         return self.GOLD_REGEX.sub(replace_gold, script)
 
 
-    def _transform_target_exp(self, script):
+    def _transform_target_exp(self, script, target_npc):
         def replace_exp(match):
             character, amount, = match.groups()
             amount = int(amount)
@@ -656,7 +663,7 @@ class DialogueProcessor:
         return self.TARGET_EXP_REGEX.sub(replace_exp, script)
 
 
-    def _transform_party_exp(self, script):
+    def _transform_party_exp(self, script, target_npc):
         def replace_exp(match):
             amount, = match.groups()
             amount = int(amount)
@@ -665,7 +672,7 @@ class DialogueProcessor:
         return self.PARTY_EXP_REGEX.sub(replace_exp, script)
 
 
-    def _transform_stats(self, script):
+    def _transform_stats(self, script, target_npc):
         def replace_exp(match):
             character, prop, operator, amount, = match.groups()
             amount = int(amount)
@@ -695,18 +702,18 @@ class DialogueProcessor:
         return self.STAT_REGEX.sub(replace_exp, script)
 
 
-    def _transform_healing(self, script):
+    def _transform_healing(self, script, target_npc):
         def replace_exp(match):
             character, = match.groups()
             return f"self.gsm.full_heal('{character.lower()}')"
         return self.FULL_HEAL_REGEX.sub(replace_exp, script)
 
 
-    def _transform_cutscenes(self, script):
+    def _transform_cutscenes(self, script, target_npc):
         return self.CUTSCENE_REGEX.sub(r'# ?.startCutScene("\1")', script)
 
 
-    def _transform_locations(self, script):
+    def _transform_locations(self, script, target_npc):
         def replace_location(match):
             env, value = match.groups()
             return f"\n        self.gsm.glm.set_location('AR{value.zfill(4)}')"
@@ -714,13 +721,50 @@ class DialogueProcessor:
         return self.LOCATION_REGEX.sub(replace_location, script)
 
 
-    def _transform_visited(self, script):
+    def _transform_set_internal_visited(self, script, target_npc):
         def replace_visited(match):
-            not_op, location_id, value = match.groups()
+            env, value, = match.groups()
             is_visited = (not_op is None) == (value == '1')
-            return f"return{' ' if is_visited else ' not '}self.gsm.is_internal_location_visited('{location_id}')"
+            return f"\n        self.gsm.glm.set_location('AR{value.zfill(4)}')"
 
-        return self.VISITED_REGEX.sub(replace_visited, script)
+        return self.SET_INTERNAL_VISITED_REGEX.sub(replace_visited, script)
+
+
+    def _transform_global_internal_visited(self, script, target_npc):
+        def replace_visited(match):
+            not_op, env, value = match.groups()
+            isVisited = not not_op
+            return f"return{' ' if isVisited else ' not '}self.gsm.glm.is_visited_internal_location('AR{value.zfill(4)}')"
+
+        return self.GLOBAL_INTERNAL_VISITED_REGEX.sub(replace_visited, script)
+
+
+    def _transform_global_visited(self, script, target_npc):
+        def replace_visited(match):
+            not_op, locationId, value = match.groups()
+            isVisited = (not_op == '!') != (value == '1')
+            return f"return{' ' if isVisited else ' not '}self.gsm.is_internal_location_visited('{locationId}')"
+
+        return self.GLOBAL_VISITED_REGEX.sub(replace_visited, script)
+
+
+    def _transform_times_talked_to(self, script, target_npc):
+        def replace_visited(match):
+            operator, value = match.groups()
+            op_type = 'UNKNOWN'
+            match operator:
+                case 'GT':
+                    op_type = '>'
+                case 'LT':
+                    op_type = '<'
+                case None:
+                    op_type = '=='
+            if op_type == 'UNKNOWN':
+                print(f'Unknown op type {operator}')
+            return f'return self.gsm.get_talked_to_{target_npc}_times() {op_type} {value}'
+
+        return self.TIMES_TALKED_TO_REGEX.sub(replace_visited, script)
+
 
     # --------------------------
     # Formatting Utilities
@@ -789,7 +833,7 @@ class DialogueProcessor:
         area,
         state_prefix
     ):
-        target_npc = area[1:] if area.startswith('D') else area
+        target_npc = area[1:] if area.startswith('d') else area
         dialog_tree = []
         logic_actions = []
         logic_conditions = []
@@ -803,7 +847,7 @@ class DialogueProcessor:
             f'',
             f'',
             f'# ###',
-            f'# Original: DLG/{area.upper()}.DLG',
+            f'# Original:  DLG/{area.upper()}.DLG',
             f'# ###',
             f'',
             f'',
@@ -835,7 +879,7 @@ class DialogueProcessor:
 
             # Handle states with no answers
             if not state.answers:
-                dialog_tree.append('    jump show_graphics_menu')
+                dialog_tree.append(f'    jump {area}_dispose')
                 continue
 
             # Menu with answers
@@ -844,7 +888,7 @@ class DialogueProcessor:
             for answer in state.answers:
                 # Determine target state
                 target_id = (
-                    'show_graphics_menu'
+                    f'{area}_dispose'
                     if answer.target_state_id == 'EXIT'
                     else f'{area}{state_prefix}{answer.target_state_id}'
                 )

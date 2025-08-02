@@ -126,3 +126,7 @@ class Dzm569LogicTest(LogicTest):
             lambda x: self.settings_manager.set_in_party_morte(x),
             lambda: logic.r42295_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

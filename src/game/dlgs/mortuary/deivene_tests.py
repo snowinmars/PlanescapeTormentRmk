@@ -579,3 +579,7 @@ class DeiveneLogicTest(LogicTest):
             lambda x: self.settings_manager.set_eivene_delivery(x),
             lambda: logic.r63481_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

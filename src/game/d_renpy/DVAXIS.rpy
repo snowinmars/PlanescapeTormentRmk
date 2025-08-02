@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DVAXIS.DLG
+# Original:  DLG/DVAXIS.DLG
 # ###
 
 
@@ -44,7 +44,7 @@ label dvaxis_s0:  # - # IF ~  Global("Vaxis","GLOBAL",0)
 
         'Оставить труп в покое.':
             # r5 # reply459
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s1 # say460
@@ -59,7 +59,7 @@ label dvaxis_s1:  # from 0.3 # IF ~  False()
 
         'Оставить труп в покое.':
             # r7 # reply462
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s2 # say463
@@ -123,21 +123,21 @@ label dvaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2
         'Ты пытаешься меня ЗАПУГАТЬ? Ну все… готовься к смерти.':
             # r17 # reply475
             $ dvaxisLogic.r475_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Ложь: Я даже и *не думал* ничего говорить тленным о тебе.':
             # r18 # reply476
             $ dvaxisLogic.r476_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Правда: Обещаю, что я ничего не скажу о тебе тленным.':
             # r19 # reply477
             $ dvaxisLogic.r477_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Как хочешь. У тебя свои дела, у меня — свои.':
             # r20 # reply478
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s5 # say479
@@ -276,7 +276,15 @@ label dvaxis_s8:  # from 7.2
 label dvaxis_s9:  # from 7.3 # Check EXTERN ~DMORTE~ : 85
     SPEAKER 'Он изучает тебя более пристально. Ты фпион? Ты иф яфейки?'
 
-    jump show_graphics_menu
+    menu:
+        'А?':
+            # r45 # reply4359
+            jump dvaxis_dispose
+
+        'Яфейки?':
+            # r46 # reply4360
+            jump dvaxis_dispose
+
 
 # s10 # say4361
 label dvaxis_s10:  # from 8.0 8.1
@@ -284,25 +292,25 @@ label dvaxis_s10:  # from 8.0 8.1
 
     menu:
         'Сперва ты расскажешь мне, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4362_condition():
-            # r45 # reply4362
+            # r47 # reply4362
             jump dvaxis_s21
 
         'Сперва ты расскажешь мне, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4363_condition():
-            # r46 # reply4363
+            # r48 # reply4363
             jump dvaxis_s17
 
         'Отвечай на мои чертовы вопросы, или не успеешь пройти и трех шагов, как я сделаю эту маскировку настоящей.' if dvaxisLogic.r4364_condition():
-            # r47 # reply4364
+            # r49 # reply4364
             $ dvaxisLogic.r4364_action()
             jump dvaxis_s19
 
         'Отвечай на мои чертовы вопросы, или не успеешь пройти и трех шагов, как я сделаю эту маскировку настоящей.' if dvaxisLogic.r4365_condition():
-            # r48 # reply4365
+            # r50 # reply4365
             $ dvaxisLogic.r4365_action()
             jump dvaxis_s22
 
         'Ну хорошо, хорошо… Я ухожу.':
-            # r49 # reply4367
+            # r51 # reply4367
             jump dvaxis_s4
 
 
@@ -312,25 +320,25 @@ label dvaxis_s11:  # -
 
     menu:
         'Ты поможешь мне выбраться отсюда?' if dvaxisLogic.r4368_condition():
-            # r50 # reply4368
+            # r52 # reply4368
             jump dvaxis_s12
 
         'Так что же ты делаешь здесь?':
-            # r51 # reply4369
+            # r53 # reply4369
             jump dvaxis_s28
 
         'Ложь: Так ты шпионишь для анархистов? Я тоже шпионю за трухлявыми… Но сейчас я не могу об этом говорить, если ты понимаешь, о чем я. Какова *твоя* миссия здесь?' if dvaxisLogic.r4370_condition():
-            # r52 # reply4370
+            # r54 # reply4370
             $ dvaxisLogic.r4370_action()
             jump dvaxis_s28
 
         'Ложь: Так ты шпионишь для анархистов? Я тоже шпионю за трухлявыми… Но сейчас я не могу об этом говорить. Что ты здесь делаешь?' if dvaxisLogic.r4371_condition():
-            # r53 # reply4371
+            # r55 # reply4371
             $ dvaxisLogic.r4371_action()
             jump dvaxis_s28
 
         'Э-э, сейчас у меня нет времени на разговоры… может, как-нибудь в другой раз.':
-            # r54 # reply4372
+            # r56 # reply4372
             jump dvaxis_s4
 
 
@@ -340,15 +348,15 @@ label dvaxis_s12:  # from 7.0 11.0
 
     menu:
         'Я очнулся на одной из плит на верхнем этаже.':
-            # r55 # reply4374
+            # r57 # reply4374
             jump dvaxis_s13
 
         'Каким-то образом я… оказался здесь запертым. Ты поможешь мне выбраться?':
-            # r56 # reply4375
+            # r58 # reply4375
             jump dvaxis_s31
 
         'Поговорим об этом в другой раз.':
-            # r57 # reply4376
+            # r59 # reply4376
             jump dvaxis_s4
 
 
@@ -358,24 +366,28 @@ label dvaxis_s13:  # from 12.0 # Check EXTERN ~DMORTE~ : 87
 
     menu:
         'Да, я фпятил. Я окончательно фпятил.':
-            # r58 # reply4378
+            # r60 # reply4378
             jump dvaxis_s14
 
         'Фпятил? Что это значит?' if dvaxisLogic.r4379_condition():
-            # r59 # reply4379
+            # r61 # reply4379
             jump dvaxis_s16
 
+        'Фпятил? Что это значит?' if dvaxisLogic.r4380_condition():
+            # r62 # reply4380
+            jump dvaxis_dispose
+
         'Я знаю, в это трудно поверить, но я говорю правду: я очнулся из мертвых на одной из плит на верхнем этаже.':
-            # r60 # reply4381
+            # r63 # reply4381
             $ dvaxisLogic.r4381_action()
             jump dvaxis_s14
 
         'Э-э, нет… На самом деле, я каким-то образом оказался здесь заперт. Ты поможешь мне выбраться?':
-            # r61 # reply4382
+            # r64 # reply4382
             jump dvaxis_s31
 
         'Забудь о нашем разговоре. Мне нужно идти.':
-            # r62 # reply4383
+            # r65 # reply4383
             jump dvaxis_s4
 
 
@@ -385,25 +397,25 @@ label dvaxis_s14:  # from 13.0 13.3 15.0
 
     menu:
         'Я никуда не уйду. Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4385_condition():
-            # r63 # reply4385
+            # r66 # reply4385
             jump dvaxis_s21
 
         'Я никуда не уйду. Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4386_condition():
-            # r64 # reply4386
+            # r67 # reply4386
             jump dvaxis_s17
 
         'Сначала ты ответишь на мои чертовы вопросы, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4387_condition():
-            # r65 # reply4387
+            # r68 # reply4387
             $ dvaxisLogic.r4387_action()
             jump dvaxis_s19
 
         'Сначала ты ответишь на мои чертовы вопросы, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4388_condition():
-            # r66 # reply4388
+            # r69 # reply4388
             $ dvaxisLogic.r4388_action()
             jump dvaxis_s22
 
         'Ну ладно, ладно… прощай.':
-            # r67 # reply4389
+            # r70 # reply4389
             jump dvaxis_s4
 
 
@@ -413,16 +425,16 @@ label dvaxis_s15:  # -
 
     menu:
         'Это правда — я очнулся на одной из здешних плит.':
-            # r68 # reply4391
+            # r71 # reply4391
             $ dvaxisLogic.r4391_action()
             jump dvaxis_s14
 
         'Э-э, прошу прощения… На самом деле, я оказался здесь заперт. Ты поможешь мне выбраться?':
-            # r69 # reply4392
+            # r72 # reply4392
             jump dvaxis_s31
 
         'Неважно. Мне нужно идти.':
-            # r70 # reply4393
+            # r73 # reply4393
             jump dvaxis_s4
 
 
@@ -432,25 +444,25 @@ label dvaxis_s16:  # from 13.1
 
     menu:
         'Я никуда не уйду. Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4395_condition():
-            # r71 # reply4395
+            # r74 # reply4395
             jump dvaxis_s21
 
         'Я никуда не уйду. Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4396_condition():
-            # r72 # reply4396
+            # r75 # reply4396
             jump dvaxis_s17
 
         'Сначала ты ответишь на мои чертовы вопросы, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4397_condition():
-            # r73 # reply4397
+            # r76 # reply4397
             $ dvaxisLogic.r4397_action()
             jump dvaxis_s19
 
         'Сначала ты ответишь на мои чертовы вопросы, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4398_condition():
-            # r74 # reply4398
+            # r77 # reply4398
             $ dvaxisLogic.r4398_action()
             jump dvaxis_s22
 
         'Ну хорошо, хорошо… Я ухожу.':
-            # r75 # reply4399
+            # r78 # reply4399
             jump dvaxis_s4
 
 
@@ -460,17 +472,17 @@ label dvaxis_s17:  # from 7.5 10.1 14.1 16.1 25.3 27.3
 
     menu:
         'Ты не сможешь сбежать, если я УБЬЮ тебя. А теперь отвечай, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4401_condition():
-            # r76 # reply4401
+            # r79 # reply4401
             $ dvaxisLogic.r4401_action()
             jump dvaxis_s18
 
         'Ты не сможешь сбежать, если я УБЬЮ тебя. А теперь отвечай, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4402_condition():
-            # r77 # reply4402
+            # r80 # reply4402
             $ dvaxisLogic.r4402_action()
             jump dvaxis_s22
 
         'Тогда гори в аду. Я ухожу.':
-            # r78 # reply4403
+            # r81 # reply4403
             jump dvaxis_s4
 
 
@@ -480,12 +492,12 @@ label dvaxis_s18:  # from 17.0
 
     menu:
         'Я рискну. Готовься к смерти.':
-            # r79 # reply4405
+            # r82 # reply4405
             $ dvaxisLogic.r4405_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
-            # r80 # reply4406
+            # r83 # reply4406
             jump dvaxis_s4
 
 
@@ -495,20 +507,20 @@ label dvaxis_s19:  # from 7.6 10.2 14.2 16.2 25.4 27.4
 
     menu:
         'Я рискну. Готовься к смерти.':
-            # r81 # reply4408
+            # r84 # reply4408
             $ dvaxisLogic.r4408_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Что, если я раскрою твою маскировку перед стражей?' if dvaxisLogic.r4409_condition():
-            # r82 # reply4409
+            # r85 # reply4409
             jump dvaxis_s21
 
         'Что, если я раскрою твою маскировку перед стражей?' if dvaxisLogic.r4410_condition():
-            # r83 # reply4410
+            # r86 # reply4410
             jump dvaxis_s20
 
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
-            # r84 # reply4411
+            # r87 # reply4411
             jump dvaxis_s4
 
 
@@ -518,12 +530,12 @@ label dvaxis_s20:  # from 19.2
 
     menu:
         'Это был твой последний шанс, труп. Готовься к смерти.':
-            # r85 # reply4413
+            # r88 # reply4413
             $ dvaxisLogic.r4413_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже, *зомби*.':
-            # r86 # reply4414
+            # r89 # reply4414
             jump dvaxis_s4
 
 
@@ -533,20 +545,20 @@ label dvaxis_s21:  # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
 
     menu:
         'Шпионишь? Для кого?':
-            # r87 # reply4416
+            # r90 # reply4416
             jump dvaxis_s23
 
         'И чем же, по твоим наблюдениям, занимаются тленные?':
-            # r88 # reply4417
+            # r91 # reply4417
             jump dvaxis_s29
 
         'У меня есть другие вопросы…':
-            # r89 # reply4418
+            # r92 # reply4418
             jump dvaxis_s43
 
         'Это все, что я хотел узнать. Прощай, *зомби*.':
-            # r90 # reply4419
-            jump show_graphics_menu
+            # r93 # reply4419
+            jump dvaxis_dispose
 
 
 # s22 # say4420
@@ -555,20 +567,20 @@ label dvaxis_s22:  # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
 
     menu:
         'Шпионишь? Для кого?':
-            # r91 # reply4421
+            # r94 # reply4421
             jump dvaxis_s23
 
         'И чем же, по твоим наблюдениям, занимаются тленные?':
-            # r92 # reply4422
+            # r95 # reply4422
             jump dvaxis_s29
 
         'У меня есть другие вопросы…':
-            # r93 # reply4423
+            # r96 # reply4423
             jump dvaxis_s43
 
         'Это все, что я хотел знать. А теперь прочь с дороги, *зомби*.':
-            # r94 # reply4424
-            jump show_graphics_menu
+            # r97 # reply4424
+            jump dvaxis_dispose
 
 
 # s23 # say4425
@@ -577,25 +589,34 @@ label dvaxis_s23:  # from 21.0 22.0 # Check EXTERN ~DMORTE~ : 89
 
     menu:
         'Ну же, для кого ты следишь за этим местом?' if dvaxisLogic.r4426_condition():
-            # r95 # reply4426
+            # r98 # reply4426
             jump dvaxis_s70
 
+        'Ну же, для кого ты следишь за этим местом?' if dvaxisLogic.r4427_condition():
+            # r99 # reply4427
+            jump dvaxis_dispose
+
         'Если ты скажешь мне прямо сейчас, для кого ты шпионишь, будет ГОРАЗДО меньше боли.' if dvaxisLogic.r4428_condition():
-            # r96 # reply4428
+            # r100 # reply4428
             $ dvaxisLogic.r4428_action()
             jump dvaxis_s70
 
+        'Если ты скажешь мне прямо сейчас, для кого ты шпионишь, будет ГОРАЗДО меньше боли.' if dvaxisLogic.r4429_condition():
+            # r101 # reply4429
+            $ dvaxisLogic.r4429_action()
+            jump dvaxis_dispose
+
         'Тогда неважно. Так чем же, по твоим наблюдениям, занимаются тленные?':
-            # r97 # reply4430
+            # r102 # reply4430
             jump dvaxis_s29
 
         'Есть еще кое-что, что я хочу узнать…':
-            # r98 # reply4431
+            # r103 # reply4431
             jump dvaxis_s43
 
         'Тогда забудь об этом. Прощай, *зомби*.':
-            # r99 # reply4432
-            jump show_graphics_menu
+            # r104 # reply4432
+            jump dvaxis_dispose
 
 
 # s24 # say4433
@@ -604,16 +625,16 @@ label dvaxis_s24:  # from 3.3 6.3 8.2
 
     menu:
         'Ложь: Да, у меня есть сообщение для тебя.':
-            # r100 # reply4434
+            # r105 # reply4434
             $ dvaxisLogic.r4434_action()
             jump dvaxis_s26
 
         'Сообщение от кого?':
-            # r101 # reply4435
+            # r106 # reply4435
             jump dvaxis_s27
 
         'Нет, у меня нет сообщений.':
-            # r102 # reply4436
+            # r107 # reply4436
             jump dvaxis_s25
 
 
@@ -623,33 +644,33 @@ label dvaxis_s25:  # from 24.2
 
     menu:
         'Я ищу выход отсюда. Ты можешь мне помочь?' if dvaxisLogic.r4438_condition():
-            # r103 # reply4438
+            # r108 # reply4438
             jump dvaxis_s31
 
         'Мне нужны кое-какие сведения…':
-            # r104 # reply4439
+            # r109 # reply4439
             jump dvaxis_s43
 
         'Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4440_condition():
-            # r105 # reply4440
+            # r110 # reply4440
             jump dvaxis_s21
 
         'Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4441_condition():
-            # r106 # reply4441
+            # r111 # reply4441
             jump dvaxis_s17
 
         'Отвечай на мои чертовы вопросы, или не успеешь пройти и трех шагов, как я сделаю эту маскировку настоящей.' if dvaxisLogic.r4442_condition():
-            # r107 # reply4442
+            # r112 # reply4442
             $ dvaxisLogic.r4442_action()
             jump dvaxis_s19
 
         'Отвечай на мои чертовы вопросы, или не успеешь пройти и трех шагов, как я сделаю эту маскировку настоящей.' if dvaxisLogic.r4443_condition():
-            # r108 # reply4443
+            # r113 # reply4443
             $ dvaxisLogic.r4443_action()
             jump dvaxis_s22
 
         'Извини, что побеспокоил тебя… кем бы ты ни был. Прощай.':
-            # r109 # reply4444
+            # r114 # reply4444
             jump dvaxis_s4
 
 
@@ -659,25 +680,25 @@ label dvaxis_s26:  # from 24.0
 
     menu:
         'Ты должен сообщить мне свое задание.' if dvaxisLogic.r4446_condition():
-            # r110 # reply4446
+            # r115 # reply4446
             jump dvaxis_s28
 
         'Ложь: У меня к тебе новые распоряжения.' if dvaxisLogic.r4447_condition():
-            # r111 # reply4447
+            # r116 # reply4447
             $ dvaxisLogic.r4447_action()
             jump dvaxis_s30
 
         'Ложь: У меня… к тебе новые распоряжения.' if dvaxisLogic.r4448_condition():
-            # r112 # reply4448
+            # r117 # reply4448
             $ dvaxisLogic.r4448_action()
             jump dvaxis_s30
 
         'Извини, у меня нет сообщений.':
-            # r113 # reply4449
+            # r118 # reply4449
             jump dvaxis_s27
 
         'Неважно. Извини за беспокойство. Прощай.':
-            # r114 # reply4450
+            # r119 # reply4450
             jump dvaxis_s27
 
 
@@ -687,33 +708,33 @@ label dvaxis_s27:  # from 24.1 26.3 26.4
 
     menu:
         'Я ищу выход отсюда. Ты можешь мне помочь?' if dvaxisLogic.r4452_condition():
-            # r115 # reply4452
+            # r120 # reply4452
             jump dvaxis_s31
 
         'Мне нужны кое-какие сведения…':
-            # r116 # reply4453
+            # r121 # reply4453
             jump dvaxis_s43
 
         'Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4454_condition():
-            # r117 # reply4454
+            # r122 # reply4454
             jump dvaxis_s21
 
         'Рассказывай, что ты здесь делаешь, или я позову стражу.' if dvaxisLogic.r4455_condition():
-            # r118 # reply4455
+            # r123 # reply4455
             jump dvaxis_s17
 
         '*Зомби*, вопросы здесь задаю я. Рассказывай, что ты здесь делаешь, или я сделаю эту маскировку настоящей.' if dvaxisLogic.r4456_condition():
-            # r119 # reply4456
+            # r124 # reply4456
             $ dvaxisLogic.r4456_action()
             jump dvaxis_s19
 
         '*Зомби*, вопросы здесь задаю я. Рассказывай, что ты здесь делаешь, или я сделаю эту маскировку настоящей.' if dvaxisLogic.r4457_condition():
-            # r120 # reply4457
+            # r125 # reply4457
             $ dvaxisLogic.r4457_action()
             jump dvaxis_s22
 
         'Извини, что побеспокоил тебя… кем бы ты ни был. Прощай.':
-            # r121 # reply4458
+            # r126 # reply4458
             jump dvaxis_s4
 
 
@@ -723,16 +744,16 @@ label dvaxis_s28:  # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
 
     menu:
         'И чем же, по твоим наблюдениям, занимаются тленные?':
-            # r122 # reply4460
+            # r127 # reply4460
             jump dvaxis_s29
 
         'Понятно. Я хотел спросить у тебя еще кое-что…':
-            # r123 # reply4461
+            # r128 # reply4461
             jump dvaxis_s43
 
         'Это все, что я хотел узнать. Прощай.':
-            # r124 # reply4462
-            jump show_graphics_menu
+            # r129 # reply4462
+            jump dvaxis_dispose
 
 
 # s29 # say4463
@@ -741,12 +762,12 @@ label dvaxis_s29:  # from 21.1 22.1 23.4 28.0 70.1 71.2
 
     menu:
         'Понятно. Я хотел спросить у тебя еще кое-что…':
-            # r125 # reply4464
+            # r130 # reply4464
             jump dvaxis_s43
 
         'Это все, что я хотел узнать. Прощай.':
-            # r126 # reply4465
-            jump show_graphics_menu
+            # r131 # reply4465
+            jump dvaxis_dispose
 
 
 # s30 # say4466
@@ -755,25 +776,25 @@ label dvaxis_s30:  # from 26.1 26.2
 
     menu:
         'Доложи свою миссию.':
-            # r127 # reply4467
+            # r132 # reply4467
             jump dvaxis_s28
 
         'Мне нужно найти выход, через который можно уйти незамеченным.':
-            # r128 # reply4468
+            # r133 # reply4468
             jump dvaxis_s49
 
         'Я твой сменщик. Сообщи все, что тебе удалось узнать, отдай все вещи и покинь это место.' if dvaxisLogic.r4469_condition():
-            # r129 # reply4469
+            # r134 # reply4469
             $ dvaxisLogic.r4469_action()
             jump dvaxis_s72
 
         'Я здесь, чтобы помочь тебе во всем, в чем ты будешь нуждаться.':
-            # r130 # reply4470
+            # r135 # reply4470
             jump dvaxis_s35
 
         'Твои распоряжения будут переданы в свое время. Я вернусь.':
-            # r131 # reply4471
-            jump show_graphics_menu
+            # r136 # reply4471
+            jump dvaxis_dispose
 
 
 # s31 # say4472
@@ -782,34 +803,34 @@ label dvaxis_s31:  # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
 
     menu:
         'Потому что мне нужна твоя помощь.':
-            # r132 # reply4473
+            # r137 # reply4473
             jump dvaxis_s32
 
         'Мы можем помочь друг другу. Что ты хочешь взамен?' if dvaxisLogic.r4474_condition():
-            # r133 # reply4474
+            # r138 # reply4474
             $ dvaxisLogic.r4474_action()
             jump dvaxis_s35
 
         'Потому что я не хотел бы *раскрывать* твою маскировочку… если только ты не поможешь мне.' if dvaxisLogic.r4475_condition():
-            # r134 # reply4475
+            # r139 # reply4475
             jump dvaxis_s33
 
         'Потому что я не хотел бы *раскрывать* твою маскировочку… если только ты не поможешь мне.' if dvaxisLogic.r4476_condition():
-            # r135 # reply4476
+            # r140 # reply4476
             jump dvaxis_s34
 
         'Тебе, похоже, больше по душе маскироваться под труп, чем БЫТЬ им. Годится такая причина?' if dvaxisLogic.r4477_condition():
-            # r136 # reply4477
+            # r141 # reply4477
             $ dvaxisLogic.r4477_action()
             jump dvaxis_s75
 
         'Тебе, похоже, больше по душе маскироваться под труп, чем БЫТЬ им. Годится такая причина?' if dvaxisLogic.r4478_condition():
-            # r137 # reply4478
+            # r142 # reply4478
             $ dvaxisLogic.r4478_action()
             jump dvaxis_s33
 
         'Забудь о нашей встрече. Я должен идти. Прощай.':
-            # r138 # reply4479
+            # r143 # reply4479
             jump dvaxis_s4
 
 
@@ -819,29 +840,29 @@ label dvaxis_s32:  # from 31.0
 
     menu:
         'Что тебе надо?':
-            # r139 # reply4481
+            # r144 # reply4481
             jump dvaxis_s35
 
         'Как на счет того, чтобы ты мне помог, а я взамен не стал звать стражу?' if dvaxisLogic.r4482_condition():
-            # r140 # reply4482
+            # r145 # reply4482
             jump dvaxis_s33
 
         'Как на счет того, чтобы ты мне помог, а я взамен не стал звать стражу?' if dvaxisLogic.r4483_condition():
-            # r141 # reply4483
+            # r146 # reply4483
             jump dvaxis_s34
 
         'Ты похож на того, кто скорее выбрал бы остаться в живых, чем ответил мне 'нет'. Итак… в последний раз спрашиваю: как мне отсюда выбраться?' if dvaxisLogic.r4484_condition():
-            # r142 # reply4484
+            # r147 # reply4484
             $ dvaxisLogic.r4484_action()
             jump dvaxis_s75
 
         'Ты похож на того, кто скорее выбрал бы остаться в живых, чем ответил мне 'нет'. Итак… в последний раз спрашиваю: как мне отсюда выбраться?' if dvaxisLogic.r4485_condition():
-            # r143 # reply4485
+            # r148 # reply4485
             $ dvaxisLogic.r4485_action()
             jump dvaxis_s33
 
         'Неинтересно. Прощай.':
-            # r144 # reply4486
+            # r149 # reply4486
             jump dvaxis_s4
 
 
@@ -851,7 +872,7 @@ label dvaxis_s33:  # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
 
     menu:
         'Порталы?':
-            # r145 # reply4672
+            # r150 # reply4672
             $ dvaxisLogic.r4672_action()
             jump dvaxis_s50
 
@@ -862,17 +883,17 @@ label dvaxis_s34:  # from 31.3 32.2 35.3
 
     menu:
         'Ты не сможешь сбежать, если я УБЬЮ тебя. А теперь отвечай, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4489_condition():
-            # r146 # reply4489
+            # r151 # reply4489
             $ dvaxisLogic.r4489_action()
             jump dvaxis_s74
 
         'Ты не сможешь сбежать, если я УБЬЮ тебя. А теперь отвечай, или я сделаю твою маскировку настоящей.' if dvaxisLogic.r4490_condition():
-            # r147 # reply4490
+            # r152 # reply4490
             $ dvaxisLogic.r4490_action()
             jump dvaxis_s33
 
         'Тогда гори в аду. Я ухожу.':
-            # r148 # reply4492
+            # r153 # reply4492
             jump dvaxis_s4
 
 
@@ -882,36 +903,36 @@ label dvaxis_s35:  # from 30.3 31.1 32.0
 
     menu:
         'Ты имеешь в виду этот ключ?' if dvaxisLogic.r4494_condition():
-            # r149 # reply4494
+            # r154 # reply4494
             $ dvaxisLogic.r4494_action()
             jump dvaxis_s42
 
         'Хорошо. Где этот ключ?':
-            # r150 # reply4495
+            # r155 # reply4495
             jump dvaxis_s36
 
         'У меня нет времени на это. Помоги мне сбежать, или я позову стражу.' if dvaxisLogic.r4496_condition():
-            # r151 # reply4496
+            # r156 # reply4496
             $ dvaxisLogic.r4496_action()
             jump dvaxis_s33
 
         'У меня нет времени на это. Помоги мне сбежать, или я позову стражу.' if dvaxisLogic.r4497_condition():
-            # r152 # reply4497
+            # r157 # reply4497
             $ dvaxisLogic.r4497_action()
             jump dvaxis_s34
 
         'Я не собираюсь ничего тебе приносить. Помоги мне сбежать, или я прямо здесь и сейчас сверну тебе шею.' if dvaxisLogic.r4498_condition():
-            # r153 # reply4498
+            # r158 # reply4498
             $ dvaxisLogic.r4498_action()
             jump dvaxis_s75
 
         'Я не собираюсь ничего тебе приносить. Помоги мне сбежать, или я прямо здесь и сейчас сверну тебе шею.' if dvaxisLogic.r4499_condition():
-            # r154 # reply4499
+            # r159 # reply4499
             $ dvaxisLogic.r4499_action()
             jump dvaxis_s33
 
         'Нет, спасибо. Может быть, в другой раз.':
-            # r155 # reply4500
+            # r160 # reply4500
             jump dvaxis_s4
 
 
@@ -921,22 +942,22 @@ label dvaxis_s36:  # from 35.1 58.2
 
     menu:
         'Я уже с ней встречался. Вот ключ.' if dvaxisLogic.r4502_condition():
-            # r156 # reply4502
+            # r161 # reply4502
             $ dvaxisLogic.r4502_action()
             jump dvaxis_s42
 
         'Тленная… с желтыми глазами и лезвиями на пальцах? Я ее уже видел в бальзамационной. Погоди… я скоро вернусь с ключом.' if dvaxisLogic.r64520_condition():
-            # r157 # reply64520
+            # r162 # reply64520
             $ dvaxisLogic.r64520_action()
             jump dvaxis_s38
 
         'Тленная… с желтыми глазами и лезвиями на пальцах? Хорошо. Я вернусь с ключом.' if dvaxisLogic.r4503_condition():
-            # r158 # reply4503
+            # r163 # reply4503
             $ dvaxisLogic.r4503_action()
             jump dvaxis_s38
 
         'Судя по твоему описанию, эта тленная выглядит довольно привлекательно. Ты уверен, что не хочешь, чтобы я вас познакомил?':
-            # r159 # reply4504
+            # r164 # reply4504
             $ dvaxisLogic.r4504_action()
             jump dvaxis_s37
 
@@ -947,12 +968,12 @@ label dvaxis_s37:  # from 36.3
 
     menu:
         'Это была шутка, видишь ли, ты… а, забудь, найду я твой ключ.' if dvaxisLogic.r4506_condition():
-            # r160 # reply4506
+            # r165 # reply4506
             $ dvaxisLogic.r4506_action()
             jump dvaxis_s38
 
         'Это была шутка, видишь ли, ты… а, забудь, найду я твой ключ.' if dvaxisLogic.r66150_condition():
-            # r161 # reply66150
+            # r166 # reply66150
             $ dvaxisLogic.r66150_action()
             jump dvaxis_s38
 
@@ -963,29 +984,29 @@ label dvaxis_s38:  # from 36.1 36.2 37.0 37.1
 
     menu:
         'Я найду твой треклятый ключ… но лучше бы тебе быть поосторожнее со своими угрозами, слышишь меня?' if dvaxisLogic.r4508_condition():
-            # r162 # reply4508
+            # r167 # reply4508
             $ dvaxisLogic.r4508_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Я еще вернусь.' if dvaxisLogic.r4509_condition():
-            # r163 # reply4509
+            # r168 # reply4509
             $ dvaxisLogic.r4509_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Я найду твой треклятый ключ… но лучше бы тебе быть поосторожнее со своими угрозами, слышишь меня?' if dvaxisLogic.r4510_condition():
-            # r164 # reply4510
-            jump show_graphics_menu
+            # r169 # reply4510
+            jump dvaxis_dispose
 
         'Я еще вернусь.' if dvaxisLogic.r4511_condition():
-            # r165 # reply4511
-            jump show_graphics_menu
+            # r170 # reply4511
+            jump dvaxis_dispose
 
 
 # s39 # say4512
 label dvaxis_s39:  # from 43.12 # Check EXTERN ~DMORTE~ : 93
     SPEAKER 'Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби, — зомби хихикает через зашитые губы, потом стучит себя по голове. — Твуфяки тууупые.'
 
-    jump show_graphics_menu
+    jump dvaxis_dispose
 
 # s40 # say4514
 label dvaxis_s40:  # -
@@ -993,12 +1014,12 @@ label dvaxis_s40:  # -
 
     menu:
         'Если я найду его, то принесу.':
-            # r166 # reply4515
-            jump show_graphics_menu
+            # r171 # reply4515
+            jump dvaxis_dispose
 
         'Тогда забудь об этом.':
-            # r167 # reply4516
-            jump show_graphics_menu
+            # r172 # reply4516
+            jump dvaxis_dispose
 
 
 # s41 # say4517
@@ -1007,13 +1028,13 @@ label dvaxis_s41:  # -
 
     menu:
         'Секундочку. Я хочу кое-что взамен.':
-            # r168 # reply4518
-            jump show_graphics_menu
+            # r173 # reply4518
+            jump dvaxis_dispose
 
         'На, бери.':
-            # r169 # reply4519
+            # r174 # reply4519
             $ dvaxisLogic.r4519_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s42 # say4520
@@ -1022,12 +1043,12 @@ label dvaxis_s42:  # from 35.0 36.0 58.0 58.1
 
     menu:
         'А теперь… Как мне выбраться отсюда?' if dvaxisLogic.r4521_condition():
-            # r170 # reply4521
+            # r175 # reply4521
             $ dvaxisLogic.r4521_action()
             jump dvaxis_s49
 
         'А теперь… Есть кое-что, о чем я хочу узнать…' if dvaxisLogic.r4522_condition():
-            # r171 # reply4522
+            # r176 # reply4522
             $ dvaxisLogic.r4522_action()
             jump dvaxis_s43
 
@@ -1038,60 +1059,60 @@ label dvaxis_s43:  # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2
 
     menu:
         'Как мне выбраться отсюда?' if dvaxisLogic.r64508_condition():
-            # r172 # reply64508
+            # r177 # reply64508
             jump dvaxis_s49
 
         'Как мне выбраться отсюда?' if dvaxisLogic.r4524_condition():
-            # r173 # reply4524
+            # r178 # reply4524
             jump dvaxis_s49
 
         'Еще раз — где тот портал, о котором ты говорил?' if dvaxisLogic.r4525_condition():
-            # r174 # reply4525
+            # r179 # reply4525
             jump dvaxis_s52
 
         'Ты можешь замаскировать меня под зомби?' if dvaxisLogic.r4526_condition():
-            # r175 # reply4526
+            # r180 # reply4526
             jump dvaxis_s63
 
         'Ты можешь еще раз замаскировать меня под зомби?' if dvaxisLogic.r4527_condition():
-            # r176 # reply4527
+            # r181 # reply4527
             jump dvaxis_s63
 
         'Что ты здесь делаешь?' if dvaxisLogic.r4528_condition():
-            # r177 # reply4528
+            # r182 # reply4528
             jump dvaxis_s28
 
         'Ты знаешь кого-нибудь по имени Фарод?' if dvaxisLogic.r4673_condition():
-            # r178 # reply4673
+            # r183 # reply4673
             jump dvaxis_s44
 
         'Я потерял дневник. Тебе ничего такого не попадалось?' if dvaxisLogic.r4530_condition():
-            # r179 # reply4530
+            # r184 # reply4530
             jump dvaxis_s47
 
         'Что ты можешь сказать о Дхолле?' if dvaxisLogic.r4531_condition():
-            # r180 # reply4531
+            # r185 # reply4531
             jump dvaxis_s53
 
         'Что ты можешь сказать о Дейонарре?' if dvaxisLogic.r4532_condition():
-            # r181 # reply4532
+            # r186 # reply4532
             jump dvaxis_s54
 
         'Что ты можешь сказать о Соэго?' if dvaxisLogic.r4533_condition():
-            # r182 # reply4533
+            # r187 # reply4533
             jump dvaxis_s55
 
         'Как ты приобрел такой внешний вид?' if dvaxisLogic.r4534_condition():
-            # r183 # reply4534
+            # r188 # reply4534
             jump dvaxis_s60
 
         'Как ты приобрел такой внешний вид?' if dvaxisLogic.r4535_condition():
-            # r184 # reply4535
+            # r189 # reply4535
             jump dvaxis_s39
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r185 # reply4536
-            jump show_graphics_menu
+            # r190 # reply4536
+            jump dvaxis_dispose
 
 
 # s44 # say4537
@@ -1100,21 +1121,21 @@ label dvaxis_s44:  # from 43.6
 
     menu:
         'Улей?':
-            # r186 # reply4538
+            # r191 # reply4538
             jump dvaxis_s45
 
         'А почему тленные не любят Фарода?':
-            # r187 # reply4539
+            # r192 # reply4539
             $ dvaxisLogic.r4539_action()
             jump dvaxis_s46
 
         'Есть еще кое-что, что я хочу узнать…':
-            # r188 # reply4540
+            # r193 # reply4540
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r189 # reply4541
-            jump show_graphics_menu
+            # r194 # reply4541
+            jump dvaxis_dispose
 
 
 # s45 # say4542
@@ -1123,17 +1144,17 @@ label dvaxis_s45:  # from 44.0
 
     menu:
         'А почему тленные не любят Фарода?':
-            # r190 # reply4543
+            # r195 # reply4543
             $ dvaxisLogic.r4543_action()
             jump dvaxis_s46
 
         'Есть еще кое-что, что я хочу узнать…':
-            # r191 # reply4544
+            # r196 # reply4544
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r192 # reply4545
-            jump show_graphics_menu
+            # r197 # reply4545
+            jump dvaxis_dispose
 
 
 # s46 # say4546
@@ -1142,16 +1163,20 @@ label dvaxis_s46:  # from 44.1 45.0 # Check EXTERN ~DMORTE~ : 91
 
     menu:
         'Э-э… что?' if dvaxisLogic.r4547_condition():
-            # r193 # reply4547
+            # r198 # reply4547
             jump dvaxis_s48
 
+        'Э-э… что?' if dvaxisLogic.r4548_condition():
+            # r199 # reply4548
+            jump dvaxis_dispose
+
         'А… Есть кое-что еще, о чем я хочу узнать…':
-            # r194 # reply4549
+            # r200 # reply4549
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r195 # reply4550
-            jump show_graphics_menu
+            # r201 # reply4550
+            jump dvaxis_dispose
 
 
 # s47 # say4551
@@ -1160,16 +1185,20 @@ label dvaxis_s47:  # from 43.7 # Check EXTERN ~DMORTE~ : 92
 
     menu:
         'Э-э… что?' if dvaxisLogic.r4552_condition():
-            # r196 # reply4552
+            # r202 # reply4552
             jump dvaxis_s48
 
+        'Э-э… что?' if dvaxisLogic.r4553_condition():
+            # r203 # reply4553
+            jump dvaxis_dispose
+
         'А… Есть кое-что еще, о чем я хочу узнать…':
-            # r197 # reply4554
+            # r204 # reply4554
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r198 # reply4555
-            jump show_graphics_menu
+            # r205 # reply4555
+            jump dvaxis_dispose
 
 
 # s48 # say4556
@@ -1178,12 +1207,12 @@ label dvaxis_s48:  # from 46.0 47.0
 
     menu:
         'А… Есть кое-что еще, о чем я хочу узнать…':
-            # r199 # reply4557
+            # r206 # reply4557
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r200 # reply4558
-            jump show_graphics_menu
+            # r207 # reply4558
+            jump dvaxis_dispose
 
 
 # s49 # say4559
@@ -1192,7 +1221,7 @@ label dvaxis_s49:  # from 30.1 42.0 43.0 43.1
 
     menu:
         'Порталы? Что за порталы?':
-            # r201 # reply4560
+            # r208 # reply4560
             jump dvaxis_s50
 
 
@@ -1202,19 +1231,19 @@ label dvaxis_s50:  # from 33.0 49.0
 
     menu:
         'Ты можешь показать мне один из этих порталов?' if dvaxisLogic.r4564_condition():
-            # r202 # reply4564
+            # r209 # reply4564
             jump dvaxis_s31
 
         'Ты можешь показать мне один из этих порталов?' if dvaxisLogic.r64509_condition():
-            # r203 # reply64509
+            # r210 # reply64509
             jump dvaxis_s51
 
         'Ты можешь показать мне один из этих порталов?' if dvaxisLogic.r64510_condition():
-            # r204 # reply64510
+            # r211 # reply64510
             jump dvaxis_s51
 
         'Ты можешь показать мне один из этих порталов?' if dvaxisLogic.r64511_condition():
-            # r205 # reply64511
+            # r212 # reply64511
             jump dvaxis_s51
 
 
@@ -1224,19 +1253,19 @@ label dvaxis_s51:  # from 50.1 50.2 50.3 72.0
 
     menu:
         'Кость согнутого пальца? А где можно найти ее?' if dvaxisLogic.r64527_condition():
-            # r206 # reply64527
+            # r213 # reply64527
             $ dvaxisLogic.r64527_action()
             jump dvaxis_s77
 
         'У меня есть другие вопросы…' if dvaxisLogic.r4568_condition():
-            # r207 # reply4568
+            # r214 # reply4568
             $ dvaxisLogic.r4568_action()
             jump dvaxis_s43
 
         'Арка в северо-западной комнате, на первом этаже? Хорошо, я проверю.' if dvaxisLogic.r4569_condition():
-            # r208 # reply4569
+            # r215 # reply4569
             $ dvaxisLogic.r4569_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s52 # say4570
@@ -1245,12 +1274,12 @@ label dvaxis_s52:  # from 43.2
 
     menu:
         'Есть еще кое-что, что я хочу узнать…':
-            # r209 # reply4571
+            # r216 # reply4571
             jump dvaxis_s43
 
         'Арка в северо-западной комнате, на первом этаже, открывается костью изогнутого пальца? Хорошо, на этот раз запомнил.':
-            # r210 # reply4572
-            jump show_graphics_menu
+            # r217 # reply4572
+            jump dvaxis_dispose
 
 
 # s53 # say4573
@@ -1259,12 +1288,12 @@ label dvaxis_s53:  # from 43.8
 
     menu:
         'Полагаю, добавить больше нечего. Я хочу знать кое-что еще…':
-            # r211 # reply4574
+            # r218 # reply4574
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r212 # reply4575
-            jump show_graphics_menu
+            # r219 # reply4575
+            jump dvaxis_dispose
 
 
 # s54 # say4576
@@ -1273,12 +1302,12 @@ label dvaxis_s54:  # from 43.9
 
     menu:
         'Забудь. Я хочу знать кое-что еще…':
-            # r213 # reply4577
+            # r220 # reply4577
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r214 # reply4578
-            jump show_graphics_menu
+            # r221 # reply4578
+            jump dvaxis_dispose
 
 
 # s55 # say4579
@@ -1287,13 +1316,13 @@ label dvaxis_s55:  # from 43.10
 
     menu:
         'Что ты знаешь о нем?':
-            # r215 # reply4580
+            # r222 # reply4580
             $ dvaxisLogic.r4580_action()
             jump dvaxis_s56
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r216 # reply4581
-            jump show_graphics_menu
+            # r223 # reply4581
+            jump dvaxis_dispose
 
 
 # s56 # say4582
@@ -1302,12 +1331,12 @@ label dvaxis_s56:  # from 55.0
 
     menu:
         'Хорошо, что только он странный в этом месте. Я хочу знать кое-что еще…':
-            # r217 # reply4583
+            # r224 # reply4583
             jump dvaxis_s43
 
         'Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи.':
-            # r218 # reply4584
-            jump show_graphics_menu
+            # r225 # reply4584
+            jump dvaxis_dispose
 
 
 # s57 # say4585
@@ -1316,24 +1345,24 @@ label dvaxis_s57:  # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
 
     menu:
         'Приветствую.' if dvaxisLogic.r4586_condition():
-            # r219 # reply4586
+            # r226 # reply4586
             jump dvaxis_s58
 
         'Приветствую.' if dvaxisLogic.r4587_condition():
-            # r220 # reply4587
+            # r227 # reply4587
             jump dvaxis_s58
 
         'Приветствую.' if dvaxisLogic.r4588_condition():
-            # r221 # reply4588
+            # r228 # reply4588
             jump dvaxis_s59
 
         'Приветствую.' if dvaxisLogic.r4589_condition():
-            # r222 # reply4589
+            # r229 # reply4589
             jump dvaxis_s58
 
         'Оставить его в покое.':
-            # r223 # reply4590
-            jump show_graphics_menu
+            # r230 # reply4590
+            jump dvaxis_dispose
 
 
 # s58 # say4591
@@ -1342,26 +1371,26 @@ label dvaxis_s58:  # from 57.0 57.1 57.3
 
     menu:
         'Вот ключ к бальзамационной комнате, который ты хотел.' if dvaxisLogic.r4592_condition():
-            # r224 # reply4592
+            # r231 # reply4592
             $ dvaxisLogic.r4592_action()
             jump dvaxis_s42
 
         'Вот ключ к бальзамационной комнате, который ты хотел.' if dvaxisLogic.r4593_condition():
-            # r225 # reply4593
+            # r232 # reply4593
             $ dvaxisLogic.r4593_action()
             jump dvaxis_s42
 
         'Еще раз — где тот ключ, о котором ты говорил?' if dvaxisLogic.r4594_condition():
-            # r226 # reply4594
+            # r233 # reply4594
             jump dvaxis_s36
 
         'У меня есть несколько вопросов к тебе…':
-            # r227 # reply4595
+            # r234 # reply4595
             jump dvaxis_s43
 
         'Неважно.':
-            # r228 # reply4596
-            jump show_graphics_menu
+            # r235 # reply4596
+            jump dvaxis_dispose
 
 
 # s59 # say4597
@@ -1370,16 +1399,16 @@ label dvaxis_s59:  # from 57.2
 
     menu:
         'Нет. Сначала у меня несколько вопросов к тебе…':
-            # r229 # reply4598
+            # r236 # reply4598
             jump dvaxis_s43
 
         'Тогда неважно.' if dvaxisLogic.r4599_condition():
-            # r230 # reply4599
+            # r237 # reply4599
             jump dvaxis_s4
 
         'Тогда неважно.' if dvaxisLogic.r4600_condition():
-            # r231 # reply4600
-            jump show_graphics_menu
+            # r238 # reply4600
+            jump dvaxis_dispose
 
 
 # s60 # say4601
@@ -1388,24 +1417,24 @@ label dvaxis_s60:  # from 43.11
 
     menu:
         'Ага, уж кто тупой, так это они. Это точно.':
-            # r232 # reply4602
+            # r239 # reply4602
             jump dvaxis_s61
 
         'Это не больно?':
-            # r233 # reply4603
+            # r240 # reply4603
             jump dvaxis_s62
 
         'Довольно неплохая маскировка. Скажи… а ты можешь и меня замаскировать под зомби?' if dvaxisLogic.r4604_condition():
-            # r234 # reply4604
+            # r241 # reply4604
             jump dvaxis_s63
 
         'Есть еще кое-что, что я хочу узнать…':
-            # r235 # reply4605
+            # r242 # reply4605
             jump dvaxis_s43
 
         'Мне нужно идти. Прощай.':
-            # r236 # reply4606
-            jump show_graphics_menu
+            # r243 # reply4606
+            jump dvaxis_dispose
 
 
 # s61 # say4607
@@ -1414,28 +1443,28 @@ label dvaxis_s61:  # from 60.0
 
     menu:
         'Это не больно?':
-            # r237 # reply4608
+            # r244 # reply4608
             jump dvaxis_s62
 
         'Довольно неплохая маскировка. А ты можешь и меня замаскировать под зомби?' if dvaxisLogic.r4609_condition():
-            # r238 # reply4609
+            # r245 # reply4609
             jump dvaxis_s63
 
         'Есть еще кое-что, что я хочу узнать…' if dvaxisLogic.r4610_condition():
-            # r239 # reply4610
+            # r246 # reply4610
             jump dvaxis_s64
 
         'Мне нужно идти. Прощай.' if dvaxisLogic.r4611_condition():
-            # r240 # reply4611
+            # r247 # reply4611
             jump dvaxis_s64
 
         'Есть еще кое-что, что я хочу узнать…' if dvaxisLogic.r4612_condition():
-            # r241 # reply4612
+            # r248 # reply4612
             jump dvaxis_s43
 
         'Мне нужно идти. Прощай.' if dvaxisLogic.r4613_condition():
-            # r242 # reply4613
-            jump show_graphics_menu
+            # r249 # reply4613
+            jump dvaxis_dispose
 
 
 # s62 # say4614
@@ -1444,24 +1473,24 @@ label dvaxis_s62:  # from 60.1 61.0
 
     menu:
         'Довольно неплохая маскировка. А ты можешь и меня замаскировать под зомби?' if dvaxisLogic.r4615_condition():
-            # r243 # reply4615
+            # r250 # reply4615
             jump dvaxis_s63
 
         'Есть еще кое-что, что я хочу узнать…' if dvaxisLogic.r4616_condition():
-            # r244 # reply4616
+            # r251 # reply4616
             jump dvaxis_s64
 
         'Мне нужно идти. Прощай.' if dvaxisLogic.r4617_condition():
-            # r245 # reply4617
+            # r252 # reply4617
             jump dvaxis_s64
 
         'Есть еще кое-что, что я хочу узнать…' if dvaxisLogic.r4618_condition():
-            # r246 # reply4618
+            # r253 # reply4618
             jump dvaxis_s43
 
         'Мне нужно идти. Прощай.' if dvaxisLogic.r4674_condition():
-            # r247 # reply4674
-            jump show_graphics_menu
+            # r254 # reply4674
+            jump dvaxis_dispose
 
 
 # s63 # say4619
@@ -1470,24 +1499,24 @@ label dvaxis_s63:  # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
 
     menu:
         'На, бери.' if dvaxisLogic.r4620_condition():
-            # r248 # reply4620
+            # r255 # reply4620
             $ dvaxisLogic.r4620_action()
             jump dvaxis_s65
 
         'Я подумаю над этим. У меня есть еще несколько вопросов…':
-            # r249 # reply4621
+            # r256 # reply4621
             $ dvaxisLogic.r4621_action()
             jump dvaxis_s43
 
         'Может, быть в другой раз, спасибо… Прощай.':
-            # r250 # reply4622
+            # r257 # reply4622
             $ dvaxisLogic.r4622_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Бальзамирующая жидкость и нитка? Пойду, поищу их.':
-            # r251 # reply4623
+            # r258 # reply4623
             $ dvaxisLogic.r4623_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s64 # say4624
@@ -1496,22 +1525,22 @@ label dvaxis_s64:  # from 61.2 61.3 62.1 62.2
 
     menu:
         'Спасибо. У меня есть другие вопросы к тебе…':
-            # r252 # reply4625
+            # r259 # reply4625
             $ dvaxisLogic.r4625_action()
             jump dvaxis_s43
 
         'Конечно. Ты сможешь сделать это?':
-            # r253 # reply4626
+            # r260 # reply4626
             jump dvaxis_s63
 
         'Почему бы и нет? Я и так чувствую себя ходячим мертвецом.':
-            # r254 # reply4627
+            # r261 # reply4627
             jump dvaxis_s63
 
         'Нет… нет… так тоже неплохо. Прощай.':
-            # r255 # reply4628
+            # r262 # reply4628
             $ dvaxisLogic.r4628_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
 
 # s65 # say4629
@@ -1520,17 +1549,22 @@ label dvaxis_s65:  # from 63.0 # Check EXTERN ~DMORTE~ : 94
 
     menu:
         'Попробовать не двигаться.' if dvaxisLogic.r4630_condition():
-            # r256 # reply4630
+            # r263 # reply4630
             $ dvaxisLogic.r4630_action()
             jump dvaxis_s66
 
+        'Попробовать не двигаться.' if dvaxisLogic.r4631_condition():
+            # r264 # reply4631
+            $ dvaxisLogic.r4631_action()
+            jump dvaxis_dispose
+
         'Попробовать не двигаться.' if dvaxisLogic.r4632_condition():
-            # r257 # reply4632
+            # r265 # reply4632
             $ dvaxisLogic.r4632_action()
             jump dvaxis_s66
 
         'Попробовать не двигаться.' if dvaxisLogic.r64533_condition():
-            # r258 # reply64533
+            # r266 # reply64533
             $ dvaxisLogic.r64533_action()
             jump dvaxis_s66
 
@@ -1541,11 +1575,16 @@ label dvaxis_s66:  # from 65.0 65.2 65.3 # Check EXTERN ~DMORTE~ : 95
 
     menu:
         'Ммм-ммф-ммм… Фпафибо.' if dvaxisLogic.r4634_condition():
-            # r259 # reply4634
+            # r267 # reply4634
             jump dvaxis_s67
 
+        'Ммм-ммф-ммм… Фпафибо.' if dvaxisLogic.r4635_condition():
+            # r268 # reply4635
+            $ dvaxisLogic.r4635_action()
+            jump dvaxis_dispose
+
         'Ммм-ммф-ммм… Фпафибо.' if dvaxisLogic.r4636_condition():
-            # r260 # reply4636
+            # r269 # reply4636
             jump dvaxis_s67
 
 
@@ -1555,7 +1594,7 @@ label dvaxis_s67:  # from 66.0 66.2
 
     menu:
         'Ммф… ммм. Я… понимаю.':
-            # r261 # reply4638
+            # r270 # reply4638
             $ dvaxisLogic.r4638_action()
             jump dvaxis_s68
 
@@ -1566,8 +1605,8 @@ label dvaxis_s68:  # from 67.0
 
     menu:
         'Снова кивнуть, уйти.':
-            # r262 # reply4640
-            jump show_graphics_menu
+            # r271 # reply4640
+            jump dvaxis_dispose
 
 
 # s69 # say4641
@@ -1576,12 +1615,12 @@ label dvaxis_s69:  # -
 
     menu:
         'Может быть. Где ты меня видел?':
-            # r263 # reply4642
-            jump show_graphics_menu
+            # r272 # reply4642
+            jump dvaxis_dispose
 
         'X.':
-            # r264 # reply4643
-            jump show_graphics_menu
+            # r273 # reply4643
+            jump dvaxis_dispose
 
 
 # s70 # say4644
@@ -1590,21 +1629,21 @@ label dvaxis_s70:  # from 23.0 23.2 71.0 71.1
 
     menu:
         'Не хочешь говорить? Тогда приготовься кричать.':
-            # r265 # reply4645
+            # r274 # reply4645
             $ dvaxisLogic.r4645_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Тогда неважно. Так чем же, по твоим наблюдениям, занимаются тленные?':
-            # r266 # reply4646
+            # r275 # reply4646
             jump dvaxis_s29
 
         'Есть еще кое-что, что я хочу узнать…':
-            # r267 # reply4647
+            # r276 # reply4647
             jump dvaxis_s43
 
         'Тогда забудь об этом. Прощай, *зомби*.':
-            # r268 # reply4648
-            jump show_graphics_menu
+            # r277 # reply4648
+            jump dvaxis_dispose
 
 
 # s71 # say4649
@@ -1613,25 +1652,25 @@ label dvaxis_s71:  # -
 
     menu:
         'Значит, анархисты? Так за кем вы тут следите?':
-            # r269 # reply4650
+            # r278 # reply4650
             jump dvaxis_s70
 
         'Если ты скажешь мне прямо сейчас, почему анархисты следят за этим местом, боли будет ГОРАЗДО меньше.':
-            # r270 # reply4651
+            # r279 # reply4651
             $ dvaxisLogic.r4651_action()
             jump dvaxis_s70
 
         'Тогда неважно. Так чем же, по твоим наблюдениям, занимаются тленные?':
-            # r271 # reply4652
+            # r280 # reply4652
             jump dvaxis_s29
 
         'Есть еще кое-что, что я хочу узнать…':
-            # r272 # reply4653
+            # r281 # reply4653
             jump dvaxis_s43
 
         'Тогда забудь об этом. Прощай, *зомби*.':
-            # r273 # reply4654
-            jump show_graphics_menu
+            # r282 # reply4654
+            jump dvaxis_dispose
 
 
 # s72 # say4655
@@ -1640,12 +1679,12 @@ label dvaxis_s72:  # from 30.2
 
     menu:
         'Уйдешь? Как?' if dvaxisLogic.r4656_condition():
-            # r274 # reply4656
+            # r283 # reply4656
             jump dvaxis_s51
 
         'Отлично. Прощай, Ваксис.' if dvaxisLogic.r64532_condition():
-            # r275 # reply64532
-            jump show_graphics_menu
+            # r284 # reply64532
+            jump dvaxis_dispose
 
 
 # s73 # say4658
@@ -1654,8 +1693,8 @@ label dvaxis_s73:  # -
 
     menu:
         'Э-э… Ладно.':
-            # r276 # reply4659
-            jump show_graphics_menu
+            # r285 # reply4659
+            jump dvaxis_dispose
 
 
 # s74 # say4660
@@ -1664,12 +1703,12 @@ label dvaxis_s74:  # from 34.0
 
     menu:
         'Это был твой последний шанс. Готовься к смерти.':
-            # r277 # reply4661
+            # r286 # reply4661
             $ dvaxisLogic.r4661_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*!':
-            # r278 # reply4662
+            # r287 # reply4662
             jump dvaxis_s4
 
 
@@ -1679,20 +1718,20 @@ label dvaxis_s75:  # from 31.4 32.3 35.4
 
     menu:
         'А что, если я раскрою твою маскировку страже?' if dvaxisLogic.r4664_condition():
-            # r279 # reply4664
+            # r288 # reply4664
             jump dvaxis_s33
 
         'А что, если я раскрою твою маскировку страже?' if dvaxisLogic.r4665_condition():
-            # r280 # reply4665
+            # r289 # reply4665
             jump dvaxis_s76
 
         'Я рискну. Готовься к смерти.':
-            # r281 # reply4666
+            # r290 # reply4666
             $ dvaxisLogic.r4666_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
-            # r282 # reply4667
+            # r291 # reply4667
             jump dvaxis_s4
 
 
@@ -1702,12 +1741,12 @@ label dvaxis_s76:  # from 75.1
 
     menu:
         'Это был твой последний шанс, труп. Готовься к смерти.':
-            # r283 # reply4669
+            # r292 # reply4669
             $ dvaxisLogic.r4669_action()
-            jump show_graphics_menu
+            jump dvaxis_dispose
 
         'Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*.':
-            # r284 # reply4670
+            # r293 # reply4670
             jump dvaxis_s4
 
 
@@ -1717,9 +1756,9 @@ label dvaxis_s77:  # from 51.0
 
     menu:
         'Хорошо. У меня есть другие вопросы…':
-            # r285 # reply64524
+            # r294 # reply64524
             jump dvaxis_s43
 
         'Хорошо. Я проверю наверху, есть ли там изогнутая кость пальца, потом пойду на первый этаж, к одной из арок в северо-западной комнате. Все ясно.':
-            # r286 # reply64525
-            jump show_graphics_menu
+            # r295 # reply64525
+            jump dvaxis_dispose

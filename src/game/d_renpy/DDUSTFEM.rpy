@@ -4,7 +4,7 @@ init 10 python:
 
 
 # ###
-# Original: DLG/DDUSTFEM.DLG
+# Original:  DLG/DDUSTFEM.DLG
 # ###
 
 
@@ -39,7 +39,7 @@ label ddustfem_s0:  # - # IF ~  Global("Appearance","GLOBAL",1)
 
         'Оставить ее в покое.':
             # r4 # reply1170
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s1 # say1171
@@ -68,7 +68,7 @@ label ddustfem_s2:  # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
         'Ну хорошо…':
             # r8 # reply1225
             $ ddustfemLogic.r1225_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s3 # say1177
@@ -94,7 +94,7 @@ label ddustfem_s3:  # -
 
         'Оставить ее в покое.':
             # r13 # reply1230
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s4 # say1178
@@ -183,7 +183,7 @@ label ddustfem_s7:  # from 6.0 9.0 20.0
         'Давай, зови их. Буду рад с ними встретиться.':
             # r29 # reply1246
             $ ddustfemLogic.r1246_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s8 # say1182
@@ -202,7 +202,7 @@ label ddustfem_s8:  # from 6.1 16.0 20.1
         'Давай, зови их. Буду рад с ними встретиться.':
             # r32 # reply1249
             $ ddustfemLogic.r1249_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s9 # say1183
@@ -351,7 +351,7 @@ label ddustfem_s18:  # from 17.0
     menu:
         'Отлично. Спасибо.':
             # r54 # reply1270
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s19 # say1193
@@ -422,7 +422,7 @@ label ddustfem_s21:  # from 9.7 9.8 19.2 19.3
     menu:
         'Хорошо. Я так и сделаю. Прощай.':
             # r67 # reply1283
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s22 # say1196
@@ -436,7 +436,7 @@ label ddustfem_s22:  # - # IF ~  Global("Appearance","GLOBAL",2)
 
         'Оставить ее в покое.':
             # r69 # reply1285
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s23 # say1197
@@ -458,7 +458,7 @@ label ddustfem_s23:  # from 22.0
 
         'Оставить ее в покое.':
             # r73 # reply1289
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s24 # say1198
@@ -759,17 +759,17 @@ label ddustfem_s38:  # -
         'Проклятье!':
             # r125 # reply4307
             $ ddustfemLogic.r4307_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
         'Тс-с-с! Я не смогу тебе ответить под такой крик!' if ddustfemLogic.r4308_condition():
             # r126 # reply4308
             $ ddustfemLogic.r4308_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
         'Тс-с-с! Я не смогу тебе ответить под такой крик!' if ddustfemLogic.r4309_condition():
             # r127 # reply4309
             $ ddustfemLogic.r4309_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s39 # say1213
@@ -791,17 +791,25 @@ label ddustfem_s40:  # - # Check EXTERN ~DMORTE~ : 81 Check EXTERN ~DMORTE~ : 83
     SPEAKER 'Эта бледная женщина одета в длинную темную мантию. От нее слегка отдает плесенью. Ее лицо ничего не выражает; кажется, она поглощена своими обязанностями.'
 
     menu:
+        'Приветствую.' if ddustfemLogic.r4312_condition():
+            # r130 # reply4312
+            jump ddustfem_dispose
+
+        'Приветствую.' if ddustfemLogic.r4313_condition():
+            # r131 # reply4313
+            jump ddustfem_dispose
+
         'Приветствую.' if ddustfemLogic.r4314_condition():
-            # r130 # reply4314
+            # r132 # reply4314
             jump ddustfem_s4
 
         'Приветствую.' if ddustfemLogic.r4315_condition():
-            # r131 # reply4315
+            # r133 # reply4315
             jump ddustfem_s4
 
         'Оставить ее в покое.':
-            # r132 # reply4316
-            jump show_graphics_menu
+            # r134 # reply4316
+            jump ddustfem_dispose
 
 
 # s41 # say1215
@@ -810,7 +818,7 @@ label ddustfem_s41:  # from 1.0 5.1 7.1 8.1 47.1
 
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
-            # r133 # reply4317
+            # r135 # reply4317
             $ ddustfemLogic.r4317_action()
             jump ddustfem_s42
 
@@ -821,14 +829,14 @@ label ddustfem_s42:  # from 41.0 45.0
 
     menu:
         'Лучше ты, чем я, трухлявка.' if ddustfemLogic.r4318_condition():
-            # r134 # reply4318
+            # r136 # reply4318
             $ ddustfemLogic.r4318_action()
             jump ddustfem_s43
 
         'Лучше ты, чем я, трухлявка.' if ddustfemLogic.r4319_condition():
-            # r135 # reply4319
+            # r137 # reply4319
             $ ddustfemLogic.r4319_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s43 # say1217
@@ -837,9 +845,9 @@ label ddustfem_s43:  # from 42.0
 
     menu:
         'Оставить тело, уйти.':
-            # r136 # reply4320
+            # r138 # reply4320
             $ ddustfemLogic.r4320_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s44 # say1218
@@ -848,9 +856,9 @@ label ddustfem_s44:  # from 5.0 7.0 8.0 19.4 47.0
 
     menu:
         'Ну хорошо…':
-            # r137 # reply4321
+            # r139 # reply4321
             $ ddustfemLogic.r4321_action()
-            jump show_graphics_menu
+            jump ddustfem_dispose
 
 
 # s45 # say1219
@@ -859,7 +867,7 @@ label ddustfem_s45:  # from 19.5
 
     menu:
         'Нельзя дать тебе предупредить своих друзей…':
-            # r138 # reply4322
+            # r140 # reply4322
             $ ddustfemLogic.r4322_action()
             jump ddustfem_s42
 
@@ -870,8 +878,8 @@ label ddustfem_s46:  # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
 
     menu:
         'Уйти прочь.':
-            # r139 # reply4323
-            jump show_graphics_menu
+            # r141 # reply4323
+            jump ddustfem_dispose
 
 
 # s47 # say1221
@@ -880,19 +888,19 @@ label ddustfem_s47:  # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
 
     menu:
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r4324_condition():
-            # r140 # reply4324
+            # r142 # reply4324
             jump ddustfem_s44
 
         'Свернуть ей шею до того, как она сможет позвать на помощь.' if ddustfemLogic.r4325_condition():
-            # r141 # reply4325
+            # r143 # reply4325
             jump ddustfem_s41
 
         'Уйти. Быстро.':
-            # r142 # reply4326
+            # r144 # reply4326
             jump ddustfem_s2
 
         'Нет-нет… не он, э-э… то есть, я хотел сказать, не шпион… понимаешь, я пробудился на одной из плит… и…':
-            # r143 # reply4327
+            # r145 # reply4327
             jump ddustfem_s2
 
 
@@ -902,8 +910,8 @@ label ddustfem_s48:  # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31
 
     menu:
         'Уйти прочь.':
-            # r144 # reply4328
-            jump show_graphics_menu
+            # r146 # reply4328
+            jump ddustfem_dispose
 
 
 # s49 # say1223
@@ -912,19 +920,19 @@ label ddustfem_s49:  # from 24.0 24.1 25.0 25.1
 
     menu:
         'Я недавно посвящен. Прости мое невежество.' if ddustfemLogic.r4329_condition():
-            # r145 # reply4329
+            # r147 # reply4329
             jump ddustfem_s50
 
         'Я… недавно здесь. Я… пытаюсь изучить порядки.' if ddustfemLogic.r4331_condition():
-            # r146 # reply4331
+            # r148 # reply4331
             jump ddustfem_s47
 
         'Ну… к чему имена? Храни веру, э-э, посвященная.' if ddustfemLogic.r4332_condition():
-            # r147 # reply4332
+            # r149 # reply4332
             jump ddustfem_s47
 
         'Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай.' if ddustfemLogic.r4333_condition():
-            # r148 # reply4333
+            # r150 # reply4333
             jump ddustfem_s46
 
 
@@ -934,11 +942,11 @@ label ddustfem_s50:  # from 29.0 35.0 37.0 49.0
 
     menu:
         'У меня есть пара вопросов…':
-            # r149 # reply4334
+            # r151 # reply4334
             jump ddustfem_s26
 
         'На этот раз — ничего. Прощай.':
-            # r150 # reply4335
+            # r152 # reply4335
             jump ddustfem_s46
 
 
@@ -948,23 +956,23 @@ label ddustfem_s51:  # - # IF ~  Global("Appearance","GLOBAL",0)
 
     menu:
         'Нет, я член фракции. Я просто осматриваю Морг.' if ddustfemLogic.r66684_condition():
-            # r151 # reply66684
+            # r153 # reply66684
             jump ddustfem_s52
 
         'Да.' if ddustfemLogic.r66685_condition():
-            # r152 # reply66685
+            # r154 # reply66685
             jump ddustfem_s5
 
         'Нет.' if ddustfemLogic.r66686_condition():
-            # r153 # reply66686
+            # r155 # reply66686
             jump ddustfem_s6
 
         'Нет, я не потерялся. У меня есть несколько вопросов…' if ddustfemLogic.r66687_condition():
-            # r154 # reply66687
+            # r156 # reply66687
             jump ddustfem_s6
 
         'Прощай.' if ddustfemLogic.r66688_condition():
-            # r155 # reply66688
+            # r157 # reply66688
             jump ddustfem_s2
 
 
@@ -974,5 +982,5 @@ label ddustfem_s52:  # from 51.0
 
     menu:
         'Конечно. Прощай.':
-            # r156 # reply66690
-            jump show_graphics_menu
+            # r158 # reply66690
+            jump ddustfem_dispose

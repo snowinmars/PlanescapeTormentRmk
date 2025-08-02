@@ -378,3 +378,7 @@ class Dmorte2LogicTest(LogicTest):
             value,
             lambda: logic.r41239_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

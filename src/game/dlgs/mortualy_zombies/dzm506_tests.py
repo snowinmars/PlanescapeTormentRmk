@@ -208,3 +208,7 @@ class Dzm506LogicTest(LogicTest):
             lambda x: self.settings_manager.set_can_speak_with_dead(x),
             lambda: logic.r45512_condition()
         )
+
+
+if __name__ == '__main__':
+    unittest.main()
