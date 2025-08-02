@@ -44,8 +44,7 @@ class Dzm1094Logic:
 
 
     def r9304_action(self):
-        self.gsm.inc_once_adahn('Adahn_Death_of_Names_1')
-
+        self.gsm.inc_adahn()
 
     def get_know_asonje_name(self):
         return self.gsm.get_know_asonje_name()

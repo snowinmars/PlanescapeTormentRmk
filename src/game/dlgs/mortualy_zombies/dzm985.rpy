@@ -29,7 +29,7 @@ label dzm985_dispose:
 
 
 # s0 # say45515
-label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0 // from: Manually checked EXTERN ~DMORTE~ : 482
+label dzm985_s0:  # - # IF ~  Global("Topple_985","GLOBAL",0) Manually checked EXTERN ~DMORTE~ : 482
     teller 'Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.'
     teller 'Труп неуверенно качается вперед и назад, пытаясь сохранить равновесие.'
 
@@ -37,29 +37,35 @@ label dzm985_s0:  # from - # IF ~  Global("Topple_985","GLOBAL",0)~ THEN BEGIN 0
         'Толкнуть труп.' if dzm985Logic.r45516_condition():
             # r0 # reply45516
             $ dzm985Logic.r45516_action()
-            call dzm985_dmorte_extern
             jump dmorte_s482
+
         'Толкнуть труп.' if dzm985Logic.r45517_condition():
             # r1 # reply45517
             $ dzm985Logic.r45517_action()
             jump dzm985_s3
+
         'Помочь трупу остаться в равновесии.' if dzm985Logic.r45518_condition():
             # r2 # reply45518
             $ dzm985Logic.r45518_action()
             jump dzm985_s4
+
         'Помочь трупу остаться в равновесии.' if dzm985Logic.r45519_condition():
             # r3 # reply45519
             $ dzm985Logic.r45519_action()
             jump dzm985_s6
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm985Logic.r45520_condition():
             # r4 # reply45520
             jump dzm985_s1
+
         'Использовать на трупе свою способность История костей.' if dzm985Logic.r45521_condition():
             # r5 # reply45521
             jump dzm985_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r6 # reply45522
             jump dzm985_dispose
+
         'Оставить труп в покое.':
             # r7 # reply45523
             jump dzm985_dispose
@@ -73,26 +79,31 @@ label dzm985_s1:  # from 0.4 5.0 5.1 5.2
         'Толкнуть труп.' if dzm985Logic.r45516_condition():
             # r0 # reply45516
             $ dzm985Logic.r45516_action()
-            call dzm985_dmorte_extern
             jump dmorte_s482
+
         'Толкнуть труп.' if dzm985Logic.r45517_condition():
             # r1 # reply45517
             $ dzm985Logic.r45517_action()
             jump dzm985_s3
+
         'Помочь трупу остаться в равновесии.' if dzm985Logic.r45518_condition():
             # r2 # reply45518
             $ dzm985Logic.r45518_action()
             jump dzm985_s4
+
         'Помочь трупу остаться в равновесии.' if dzm985Logic.r45519_condition():
             # r3 # reply45519
             $ dzm985Logic.r45519_action()
             jump dzm985_s6
+
         'Использовать на трупе свою способность История костей.' if dzm985Logic.r45521_condition():
             # r5 # reply45521
             jump dzm985_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r6 # reply45522
             jump dzm985_dispose
+
         'Оставить труп в покое.':
             # r8 # reply45525
             jump dzm985_dispose
@@ -106,33 +117,38 @@ label dzm985_s2:  # from 0.5 5.3
         'Толкнуть труп.' if dzm985Logic.r45516_condition():
             # r0 # reply45516
             $ dzm985Logic.r45516_action()
-            call dzm985_dmorte_extern
             jump dmorte_s482
+
         'Толкнуть труп.' if dzm985Logic.r45517_condition():
             # r1 # reply45517
             $ dzm985Logic.r45517_action()
             jump dzm985_s3
+
         'Помочь трупу остаться в равновесии.' if dzm985Logic.r45518_condition():
             # r2 # reply45518
             $ dzm985Logic.r45518_action()
             jump dzm985_s4
+
         'Помочь трупу остаться в равновесии.' if dzm985Logic.r45519_condition():
             # r3 # reply45519
             $ dzm985Logic.r45519_action()
             jump dzm985_s6
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm985Logic.r45520_condition():
             # r4 # reply45520
             jump dzm985_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r6 # reply45522
             jump dzm985_dispose
+
         'Оставить труп в покое.':
             # r9 # reply45527
             jump dzm985_dispose
 
 
 # s3 # say45528
-label dzm985_s3:  # from 0.1 6.0 # PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) SetGlobal("Topple_985","GLOBAL",1) Kill(Myself) Deactivate(Myself)
+label dzm985_s3:  # from 0.1 6.0
     teller 'В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево.'
     teller 'Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин.'
     teller 'К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке смирно.'
@@ -142,14 +158,14 @@ label dzm985_s3:  # from 0.1 6.0 # PlaySoundNotRanged("SPE_11") SetAnimState(Mys
     jump dzm985_s7
 
 # s4 # say45530
-label dzm985_s4:  # from 0.2 # Manually checked EXTERN ~DMORTE~ : 482 as dmorte1_s482 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
+label dzm985_s4:  # from 0.2 # Manually checked EXTERN ~DMORTE~ : 482
     teller 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
+    $ dzm985Logic.s4_action()
 
-    call dzm985_dmorte_extern
     jump dmorte_s482
 
 # s5 # say45531
-label dzm985_s5:  # from - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
+label dzm985_s5:  # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
     teller 'Похоже, кто-то заменил этому трупу левую руку и ногу от другого тела. Левая нога короче, чем надо, но теперь, по крайней мере, труп может стоять.'
 
     menu:
@@ -157,18 +173,23 @@ label dzm985_s5:  # from - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
             # r10 # reply45532
             $ dzm985Logic.r45532_action()
             jump dzm985_s1
+
         'Извини, что сбил тебя с ног. Я случайно.' if dzm985Logic.r45533_condition():
             # r11 # reply45533
             jump dzm985_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm985Logic.r45534_condition():
             # r12 # reply45534
             jump dzm985_s1
+
         'Использовать на трупе свою способность История костей.' if dzm985Logic.r45535_condition():
             # r13 # reply45535
             jump dzm985_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r14 # reply45536
             jump dzm985_dispose
+
         'Оставить труп в покое.':
             # r15 # reply45537
             jump dzm985_dispose

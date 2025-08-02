@@ -25,7 +25,7 @@ label dzm199_dispose:
 
 
 # s0 # say34975
-label dzm199_s0:  # from - # IF ~  True()
+label dzm199_s0:  # - # IF ~  True()
     teller 'От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.'
     teller 'На его лбу выгравирован номер «199»; его губы сшиты.'
 
@@ -34,18 +34,23 @@ label dzm199_s0:  # from - # IF ~  True()
             # r0 # reply34976
             $ dzm199Logic.r34976_action()
             jump dzm199_s1
+
         'Итак… что тут у нас интересного?' if dzm199Logic.r34979_condition():
             # r1 # reply34979
             jump dzm199_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm199Logic.r34980_condition():
             # r2 # reply34980
             jump dzm199_s1
+
         'Использовать на трупе свою способность История костей.' if dzm199Logic.r34981_condition():
             # r3 # reply34981
             jump dzm199_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply34984
             jump dzm199_dispose
+
         'Оставить зомби в покое.':
             # r5 # reply34985
             jump dzm199_dispose
@@ -59,9 +64,11 @@ label dzm199_s1:  # from 0.0 0.1 0.2
         'Использовать на трупе свою способность История костей.' if dzm199Logic.r34981_condition():
             # r3 # reply34981
             jump dzm199_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply34984
             jump dzm199_dispose
+
         'Оставить зомби в покое.':
             # r6 # reply34978
             jump dzm199_dispose
@@ -75,9 +82,11 @@ label dzm199_s2:  # from 0.3
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm199Logic.r34980_condition():
             # r2 # reply34980
             jump dzm199_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply34984
             jump dzm199_dispose
+
         'Оставить зомби в покое.':
             # r7 # reply34983
             jump dzm199_dispose

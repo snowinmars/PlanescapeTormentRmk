@@ -25,7 +25,7 @@ label dzm475_dispose:
 
 
 # s0 # say6584
-label dzm475_s0:  # from - # IF ~  True()
+label dzm475_s0:  # - # IF ~  True()
     teller 'Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.'
     teller 'На проржавевшей табличке над его левым глазом выбит номер «475». Его рот намертво закрыт; от него несет бальзамирующей жидкостью.'
 
@@ -34,18 +34,23 @@ label dzm475_s0:  # from - # IF ~  True()
             # r0 # reply6587
             $ dzm475Logic.r6587_action()
             jump dzm475_s1
+
         'Итак… что тут у нас интересного?' if dzm475Logic.r6588_condition():
             # r1 # reply6588
             jump dzm475_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm475Logic.r6589_condition():
             # r2 # reply6589
             jump dzm475_s1
+
         'Использовать на трупе свою способность История костей.' if dzm475Logic.r6590_condition():
             # r3 # reply6590
             jump dzm475_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6591
             jump dzm475_dispose
+
         'Оставить труп в покое.':
             # r5 # reply6592
             jump dzm475_dispose
@@ -59,9 +64,11 @@ label dzm475_s1:  # from 0.0 0.1 0.2
         'Использовать на трупе свою способность История костей.' if dzm475Logic.r6590_condition():
             # r3 # reply6590
             jump dzm475_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6591
             jump dzm475_dispose
+
         'Оставить труп в покое.':
             # r6 # reply6593
             jump dzm475_dispose
@@ -75,9 +82,11 @@ label dzm475_s2:  # from 0.3
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm475Logic.r6589_condition():
             # r2 # reply6589
             jump dzm475_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6591
             jump dzm475_dispose
+
         'Оставить труп в покое.':
             # r7 # reply6594
             jump dzm475_dispose

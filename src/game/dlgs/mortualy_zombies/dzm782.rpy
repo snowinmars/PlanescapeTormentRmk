@@ -29,27 +29,31 @@ label dzm782_dispose:
 
 
 # s0 # say24708
-label dzm782_s0:  # from - # IF ~  True() # Manually checked EXTERN ~DMORTE1~ : 34
+label dzm782_s0:  # - # IF ~  True() Manually checked EXTERN ~DMORTE1~ : 34
     teller 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.'
     teller 'На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
 
     menu:
         'Я ищу ключ… быть может, он у тебя?' if dzm782Logic.r24709_condition():
             # r0 # reply24709
-            call dzm782_dmorte_extern
             jump dmorte1_s34
+
         'Я ищу ключ… быть может, он у тебя?' if dzm782Logic.r24712_condition():
             # r1 # reply24712
             jump dzm782_s1
+
         'Осмотреть труп, проверить, есть ли у него ключ.' if dzm782Logic.r24713_condition():
             # r2 # reply24713
             jump dzm782_s2
+
         'Было приятно с тобой поболтать. Прощай.' if dzm782Logic.r24713_condition():
             # r3 # reply24714
             jump dzm782_s2
+
         'Было приятно с тобой поболтать. Прощай.' if dzm782Logic.r24714_condition():
             # r3 # reply24714
             jump dzm782_dispose
+
         'Оставить труп в покое.':
             # r4 # reply24717
             jump dzm782_dispose
@@ -63,9 +67,11 @@ label dzm782_s1:  # from 0.1
         'Осмотреть труп, проверить, есть ли у него ключ.' if dzm782Logic.r24713_condition():
             # r2 # reply24713
             jump dzm782_s2
+
         'Тогда неважно. Прощай.':
             # r5 # reply24711
             jump dzm782_dispose
+
         'Оставить труп в покое.':
             # r6 # reply42304
             jump dzm782_dispose
@@ -79,6 +85,7 @@ label dzm782_s2:  # from 0.2 0.3
         'Мне нужен этот ключ, труп… похоже, тебе уже недолго осталось прозябать в этом мире.':
             # r7 # reply24716
             jump dzm782_take_key_1
+
         'Оставить труп в покое.':
             # r8 # reply42305
             jump dzm782_dispose
@@ -92,6 +99,7 @@ label dzm782_take_key_1:
         'Сломать руку трупа.':
             # r7 # reply24716
             jump dzm782_take_key_2
+
         'Оставить труп в покое.':
             # r8 # reply42305
             jump dzm782_dispose

@@ -29,32 +29,38 @@ label dzm825_dispose:
 
 
 # s0 # say24564
-label dzm825_s0:  # from - # Manually checked EXTERN ~DMORTE1~ : 31
+label dzm825_s0:  # - # IF ~  True() Manually checked EXTERN ~DMORTE1~ : 31
     teller 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер 825.'
 
     menu:
         'Я ищу ключ… быть может, он у тебя?' if dzm825Logic.r24565_condition():
             # r0 # reply24565
-            call dzm825_dmorte_extern
             jump dmorte1_s31
+
         'Я ищу ключ… быть может, он у тебя?' if dzm825Logic.r24568_condition():
             # r1 # reply24568
             jump dzm825_s1
+
         'Итак… что тут у нас интересного?' if dzm825Logic.r24569_condition():
             # r2 # reply24569
             jump dzm825_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm825Logic.r24570_condition():
             # r3 # reply24570
             jump dzm825_s1
+
         'Использовать на трупе свою способность История костей.' if dzm825Logic.r24573_condition():
             # r4 # reply24573
             jump dzm825_s2
+
         'Осмотреть труп, проверить, есть ли у него ключ.' if dzm825Logic.r24574_condition():
             # r5 # reply24574
             jump dzm825_s3
+
         'Было приятно с тобой поболтать. Прощай.':
             # r6 # reply42308
             jump dzm825_dispose
+
         'Оставить труп в покое.':
             # r7 # reply42309
             jump dzm825_dispose
@@ -68,12 +74,15 @@ label dzm825_s1:  # from 0.1 0.2 0.3 3.1
         'Использовать на трупе свою способность История костей.' if dzm825Logic.r24573_condition():
             # r4 # reply24573
             jump dzm825_s2
+
         'Осмотреть труп, проверить, есть ли у него ключ.' if dzm825Logic.r24574_condition():
             # r5 # reply24574
             jump dzm825_s3
+
         'Тогда неважно. Прощай.':
             # r8 # reply24567
             jump dzm825_dispose
+
         'Оставить труп в покое.':
             # r9 # reply42310
             jump dzm825_dispose
@@ -87,35 +96,41 @@ label dzm825_s2:  # from 0.4
         'Я ищу ключ… быть может, он у тебя?' if dzm825Logic.r24565_condition():
             # r0 # reply24565
             jump dmorte1_s31
+
         'Я ищу ключ… быть может, он у тебя?' if dzm825Logic.r24568_condition():
             # r1 # reply24568
             jump dzm825_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm825Logic.r24570_condition():
             # r3 # reply24570
             jump dzm825_s1
+
         'Осмотреть труп, проверить, есть ли у него ключ.' if dzm825Logic.r24574_condition():
             # r5 # reply24574
             jump dzm825_s3
+
         'Оставить труп в покое.':
             # r10 # reply24572
             jump dzm825_dispose
 
 
 # s3 # say42311
-label dzm825_s3:  # from 0.5 # IF ~  True() # Manually checked EXTERN ~DMORTE1~ : 31
+label dzm825_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE1~ : 31
     teller 'У этого трупа ничего нет… но ты замечаешь, что его руки сильно перевязаны. Бинты могут пригодиться, если снять их с трупа.'
 
     menu:
         'Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if dzm825Logic.r42312_condition():
             # r11 # reply42312
-            call dzm825_dmorte_extern
             jump dmorte1_s31
+
         'Похоже, ключа у тебя нет… Ты случайно не знаешь, у кого из твоих приятелей есть ключ от этого места?' if dzm825Logic.r42313_condition():
             # r12 # reply42313
             jump dzm825_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r13 # reply42314
             jump dzm825_dispose
+
         'Оставить труп в покое.':
             # r14 # reply42315
             jump dzm825_dispose

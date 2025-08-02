@@ -33,21 +33,26 @@ label dzm1664_s0:  # from 5.0 # IF ~  True()
         'Осмотреть книги.' if dzm1664Logic.r47003_condition():
             # r0 # reply47003
             jump dzm1664_s3
+
         'Снова осмотреть книги.' if dzm1664Logic.r47004_condition():
             # r1 # reply47004
             jump dzm1664_s6
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1664Logic.r47005_condition():
             # r2 # reply47005
             jump dzm1664_s1
+
         'Использовать на трупе свою способность История костей.' if dzm1664Logic.r47006_condition():
             # r3 # reply47006
             jump dzm1664_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply47007
-            jump show_graphics_menu
+            jump dzm1664_dispose
+
         'Оставить труп в покое.':
             # r5 # reply47008
-            jump show_graphics_menu
+            jump dzm1664_dispose
 
 
 # s1 # say47009
@@ -58,12 +63,14 @@ label dzm1664_s1:  # from 0.2 6.0
         'Использовать на трупе свою способность История костей.' if dzm1664Logic.r47006_condition():
             # r3 # reply47006
             jump dzm1664_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply47007
-            jump show_graphics_menu
+            jump dzm1664_dispose
+
         'Оставить труп в покое.':
             # r6 # reply47010
-            jump show_graphics_menu
+            jump dzm1664_dispose
 
 
 # s2 # say47011
@@ -74,12 +81,14 @@ label dzm1664_s2:  # from 0.3
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1664Logic.r47005_condition():
             # r2 # reply47005
             jump dzm1664_s1
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply47007
-            jump show_graphics_menu
+            jump dzm1664_dispose
+
         'Оставить труп в покое.':
             # r7 # reply47012
-            jump show_graphics_menu
+            jump dzm1664_dispose
 
 
 # s3 # say47013
@@ -112,9 +121,10 @@ label dzm1664_s5:  # from 4.0
         'Снова осмотреть зомби.':
             # r10 # reply47018
             jump dzm1664_s0
+
         'Взять страницу с собой и уйти.':
             # r11 # reply47019
-            jump show_graphics_menu
+            jump dzm1664_dispose
 
 
 # s6 # say47021
@@ -125,9 +135,10 @@ label dzm1664_s6:  # from 0.1
         'И как это тебя угораздило стать библиотекарем? Другие места были заняты?':
             # r12 # reply47022
             jump dzm1664_s1
+
         'Оставить зомби в покое.':
             # r13 # reply47023
-            jump show_graphics_menu
+            jump dzm1664_dispose
 
 
 label dzm1664_kill:

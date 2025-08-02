@@ -86,13 +86,13 @@ class Dzm1041Logic:
 
 
     def r6579_condition(self):
-        return self.gsm.get_can_speak_with_dead() \
-               and not self.gsm.get_meet_bei()
+        return self.gsm.get_can_speak_with_dead() and \
+               not self.gsm.get_meet_bei()
 
 
     def r6580_condition(self):
-        return self.gsm.get_can_speak_with_dead() \
-               and self.gsm.get_meet_bei()
+        return self.gsm.get_can_speak_with_dead() and \
+               self.gsm.get_meet_bei()
 
 
     def r9109_condition(self):
@@ -104,4 +104,4 @@ class Dzm1041Logic:
 
 
     def r9187_condition(self):
-        return self.self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 13
+        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 13

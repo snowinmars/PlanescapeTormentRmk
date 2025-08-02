@@ -37,21 +37,26 @@ label dzm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
             # r0 # reply6533
             $ dzm732Logic.r6533_action()
             jump dzm732_s1
+
         'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if dzm732Logic.r6532_condition():
             # r1 # reply6532
             jump dzm732_s1
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm732Logic.r6534_condition():
             # r2 # reply6534
             jump dzm732_s1
+
         'Использовать на трупе свою способность История костей.' if dzm732Logic.r6535_condition():
             # r3 # reply6535
             jump dzm732_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6536
-            jump show_graphics_menu
+            jump dzm732_dispose
+
         'Оставить труп в покое.':
             # r5 # reply6537
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s1 # say6530
@@ -62,12 +67,14 @@ label dzm732_s1:  # from 0.0 0.1 0.2
         'Использовать на трупе свою способность История костей.' if dzm732Logic.r6535_condition():
             # r3 # reply6535
             jump dzm732_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6536
-            jump show_graphics_menu
+            jump dzm732_dispose
+
         'Оставить труп в покое.':
             # r6 # reply6538
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s2 # say6531
@@ -80,14 +87,14 @@ label dzm732_s2:  # from 0.3
             jump dzm732_s1
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply6536
-            jump show_graphics_menu
+            jump dzm732_dispose
         'Оставить труп в покое.':
             # r7 # reply6539
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s3 # say64270
-label dzm732_s3:  # from - # IF ~  HasItem("TomeBA","ZM732")
+label dzm732_s3:  # - # IF ~  HasItem("TomeBA","ZM732")
     teller 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно…'
     teller '…тебе остается только гадать, когда потерял человек глаза — до смерти или после. Ты замечаешь, что в руках он несет тяжелую книгу, как будто он где-то ее забрал.'
 
@@ -96,9 +103,10 @@ label dzm732_s3:  # from - # IF ~  HasItem("TomeBA","ZM732")
             # r8 # reply64271
             $ dzm732Logic.r64271_action()
             jump dzm732_s4
+
         'Оставить труп в покое.':
             # r9 # reply64272
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 # s4 # say64273
@@ -111,9 +119,10 @@ label dzm732_s4:  # from 3.0
         'Снова осмотреть труп.':
             # r10 # reply64274
             jump dzm732_s0
+
         'Оставить труп в покое.':
             # r11 # reply64275
-            jump show_graphics_menu
+            jump dzm732_dispose
 
 
 label dzm732_kill:

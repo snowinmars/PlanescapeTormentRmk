@@ -9,20 +9,25 @@ class Dzm985Logic:
 
 
     def s3_action(self):
+        # PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) Deactivate(Myself)
         self.gsm.set_topple_985(True)
         self.gsm.set_dead_dzm985(True)
 
 
+    def s4_action(self):
+        # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
+        return
+
     def r45516_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
 
 
     def r45517_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
 
 
     def r45518_action(self):
@@ -41,7 +46,7 @@ class Dzm985Logic:
 
 
     def r45539_action(self):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        # ?.play_sound("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
         return
 
 

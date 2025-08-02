@@ -32,15 +32,14 @@ label dzm965_dispose:
 
 
 # s0 # say34920
-label dzm965_s0:  # from - # IF ~  NearbyDialog("Dmorte") # Manually checked EXTERN ~DMORTE~ : 477
+label dzm965_s0:  # - # IF ~  NearbyDialog("Dmorte") # Manually checked EXTERN ~DMORTE~ : 477
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
-    call dzm965_dmorte_extern
     jump dmorte_s477
 
 # s1 # say34922
-label dzm965_s1:  # from - # IF ~  !NearbyDialog("Dmorte")
+label dzm965_s1:  # - # IF ~  !NearbyDialog("Dmorte")
     teller 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     teller 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
@@ -49,18 +48,23 @@ label dzm965_s1:  # from - # IF ~  !NearbyDialog("Dmorte")
             # r0 # reply34923
             $ dzm965Logic.r34923_action()
             jump dzm965_s2
+
         'Итак… почему ты ходишь вдоль треугольника?' if dzm965Logic.r45070_condition():
             # r1 # reply45070
             jump dzm965_s2
+
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm965Logic.r45071_condition():
             # r2 # reply45071
             jump dzm965_s2
+
         'Использовать на трупе свою способность История костей.' if dzm965Logic.r45072_condition():
             # r3 # reply45072
             jump dzm965_s3
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply45073
             jump dzm965_dispose
+
         'Оставить труп в покое.':
             # r5 # reply45074
             jump dzm965_dispose
@@ -74,9 +78,11 @@ label dzm965_s2:  # from 1.0 1.1 1.2
         'Использовать на трупе свою способность История костей.' if dzm965Logic.r45072_condition():
             # r3 # reply45072
             jump dzm965_s3
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply45073
             jump dzm965_dispose
+
         'Оставить труп в покое.':
             # r6 # reply34928
             jump dzm965_dispose
@@ -90,9 +96,11 @@ label dzm965_s3:  # from 1.3
         'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm965Logic.r45071_condition():
             # r2 # reply45071
             jump dzm965_s2
+
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply45073
             jump dzm965_dispose
+
         'Оставить труп в покое.':
             # r7 # reply45075
             jump dzm965_dispose
