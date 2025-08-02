@@ -92,13 +92,18 @@ class MorteLogic:
         self.gsm.set_morte_skel_mort_quip(True)
 
 
-    def r64535_action(self):      #  FadeToColor([20.0],0) Wait(1)
-        self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie') # Wait(2) FadeFromColor([20.0],0)
+    def r64535_action(self):
+        # FadeToColor([20.0],0) Wait(1)
+        self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2) FadeFromColor([20.0],0)
         self.gsm.inc_exp_custom('party', 500)
+        self.gsm.set_vaxis_global_xp(True)
 
 
-    def r64534_action(self):        #FadeToColor([20.0],0) Wait(1)
-        self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie') # Wait(2) FadeFromColor([20.0],0)
+    def r64534_action(self):
+        # FadeToColor([20.0],0) Wait(1)
+        self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2) FadeFromColor([20.0],0)
 
 
     def r3474_action(self):
@@ -174,18 +179,18 @@ class MorteLogic:
 
 
     def r6665_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 \
-                and not self.gsm.get_42_secret()
+        return self.gsm.gcm.get_character_property('protagonist', 'wisdom') > 12 and \
+               not self.gsm.get_42_secret()
 
 
     def r35344_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35352_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35355_condition(self):
@@ -201,13 +206,13 @@ class MorteLogic:
 
 
     def r35421_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35429_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35432_condition(self):
@@ -223,13 +228,13 @@ class MorteLogic:
 
 
     def r35498_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35506_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35509_condition(self):
@@ -245,13 +250,13 @@ class MorteLogic:
 
 
     def r35575_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') < 13
 
 
     def r35583_condition(self):
-        return not self.gsm.get_has_prybar() \
-                and self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
+        return not self.gsm.get_has_prybar() and \
+               self.gsm.gcm.get_character_property('protagonist', 'strength') > 12
 
 
     def r35586_condition(self):
