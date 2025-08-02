@@ -1,10763 +1,10763 @@
 init 10 python:
-    from dlgs.dmorte_logic import DmorteLogic
-    dmorteLogic = DmorteLogic(renpy.store.global_settings_manager)
+    from dlgs.morte_logic import MorteLogic
+    morteLogic = MorteLogic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DMORTE.DLG
+# Original:  DLG/MORTE.DLG
 # ###
 
 
-label dmorte_init:
+label morte_init:
     return
 
 
-label dmorte_dispose:
+label morte_dispose:
     jump show_graphics_menu
 
 
 # s0 # say986
-label dmorte_s0:  # -
+label morte_s0:  # -
     SPEAKER 'Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба.'
 
     menu:
         'Кто ты?':
             # r0 # reply987
-            jump dmorte_s1
+            jump morte_s1
 
         'Не обращать внимания на говорящий череп и изучить комнату.':
             # r1 # reply989
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Вдохнуть поглубже, встряхнуть головой и не обращать внимания на говорящий с тобой череп.':
             # r2 # reply988
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся, закончил свои дела и присоединился ко мне НЕМЕДЛЕННО.':
             # r3 # reply17833
-            $ dmorteLogic.r17833_action()
-            jump dmorte_dispose
+            $ morteLogic.r17833_action()
+            jump morte_dispose
 
 
 # s1 # say990
-label dmorte_s1:  # from 0.0 29.0 31.0
+label morte_s1:  # from 0.0 29.0 31.0
     SPEAKER 'Я? — возмущается череп. — Может, *ты* начнешь, паршивец? Кто ты?'
 
     menu:
         'Я… не знаю.':
             # r4 # reply992
-            jump dmorte_s2
+            jump morte_s2
 
         'Я не знаю… Не могу вспомнить.':
             # r5 # reply995
-            jump dmorte_s3
+            jump morte_s3
 
         'Я первый спросил тебя, череп.':
             # r6 # reply993
-            jump dmorte_s4
+            jump morte_s4
 
         'Не обращать внимания на череп и изучить комнату.':
             # r7 # reply991
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s2 # say997
-label dmorte_s2:  # from 1.0 4.0 5.0
+label morte_s2:  # from 1.0 4.0 5.0
     SPEAKER 'Ты не знаешь, кто ты такой, а? *Мог* бы просто сказать: 'забей, пень'. Что ж, ладно… бестолочью притворяешься. Проверяешь, есть ли мне до этого дело. Я Морт. Приветствую, добро пожаловать и далее по списку.'
 
     menu:
         'Где я, Морт?':
             # r8 # reply998
-            jump dmorte_s6
+            jump morte_s6
 
-        'Ты знаешь, как мне отсюда выбраться?' if dmorteLogic.r1006_condition():
+        'Ты знаешь, как мне отсюда выбраться?' if morteLogic.r1006_condition():
             # r9 # reply1006
-            jump dmorte_s21
+            jump morte_s21
 
         'Как я попал сюда?':
             # r10 # reply1080
-            jump dmorte_s20
+            jump morte_s20
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r11 # reply1087
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s3 # say999
-label dmorte_s3:  # from 1.1 4.1 5.1
+label morte_s3:  # from 1.1 4.1 5.1
     SPEAKER 'Ты *не помнишь*? Нелегкая выдалась у тебя ночка. Надеюсь, никого не покалечил… Меня зовут Морт. Приветствую, добро пожаловать и далее по списку, — он делает паузу. — Слушай, я просто *обязан* спросить: ты случайно не один из тех чувствующих, которые занимаются членовредительством, или это кто-то другой подарил тебе эти шрамы?'
 
     menu:
         'Чувствующие?':
             # r12 # reply1000
-            jump dmorte_s12
+            jump morte_s12
 
         'Шрамы?':
             # r13 # reply1001
-            jump dmorte_s13
+            jump morte_s13
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r14 # reply1002
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s4 # say1003
-label dmorte_s4:  # from 1.2
+label morte_s4:  # from 1.2
     SPEAKER 'Ага, а я спросил тебя вторым. Как тебя звать?'
 
     menu:
         'Я… не знаю.':
             # r15 # reply1004
-            jump dmorte_s2
+            jump morte_s2
 
         'Я не знаю… Не могу вспомнить.':
             # r16 # reply1005
-            jump dmorte_s3
+            jump morte_s3
 
         'Ты первый, череп.':
             # r17 # reply1007
-            jump dmorte_s5
+            jump morte_s5
 
         'Не обращать внимания на череп и изучить комнату.':
             # r18 # reply994
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s5 # say1008
-label dmorte_s5:  # from 4.2
+label morte_s5:  # from 4.2
     SPEAKER 'Да ты натянут как струна. Ладно, ладно… Пускай *я* буде хорошим парнем… я, Морт. Морт Зубоскал. Итак, какому имени не посчастливилось иметь такого владельца как ты?'
 
     menu:
         'Я… не знаю.':
             # r19 # reply1009
-            jump dmorte_s2
+            jump morte_s2
 
         'Я не знаю… Я ничего не могу вспомнить.':
             # r20 # reply1010
-            jump dmorte_s3
+            jump morte_s3
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r21 # reply1011
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s6 # say1012
-label dmorte_s6:  # from 2.0 29.1 31.1
+label morte_s6:  # from 2.0 29.1 31.1
     SPEAKER 'Ты находишься в дыре под названием Морг… это такое большое черное здание с чарующей архитектурой беременной паучихи.'
 
     menu:
         'Морг? Я умер?':
             # r22 # reply1013
-            jump dmorte_s7
+            jump morte_s7
 
-        'Как мне выбраться отсюда?' if dmorteLogic.r1015_condition():
+        'Как мне выбраться отсюда?' if morteLogic.r1015_condition():
             # r23 # reply1015
-            jump dmorte_s21
+            jump morte_s21
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r24 # reply1085
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s7 # say1014
-label dmorte_s7:  # from 6.0 9.0
+label morte_s7:  # from 6.0 9.0
     SPEAKER 'Ну, насчет этого не знаю… Но Морг — самое подходящее место для покойников, которое только можно найти в этом городишке. Всякие пни тащат сюда мертвецов, хоронят их, сжигают, а если тебе *конкретно* повезло, тебя возвращают к жизни в качестве раба. Не лучшее место на планах. На твоем месте я бы разыскал ближайший выход и помахал этому месту ручкой.'
 
     menu:
         'Прошу прощения… Морг? Что это за место?':
             # r25 # reply1016
-            jump dmorte_s10
+            jump morte_s10
 
         'Возвращают к жизни в качестве раба?':
             # r26 # reply1017
-            jump dmorte_s9
+            jump morte_s9
 
         'Но почему я тогда могу ходить?':
             # r27 # reply1018
-            jump dmorte_s11
+            jump morte_s11
 
-        'Говоришь, люди тащат сюда мертвецов? Это так я сюда попал?' if dmorteLogic.r1019_condition():
+        'Говоришь, люди тащат сюда мертвецов? Это так я сюда попал?' if morteLogic.r1019_condition():
             # r28 # reply1019
-            jump dmorte_s8
+            jump morte_s8
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r29 # reply1020
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s8 # say1021
-label dmorte_s8:  # from 7.3
+label morte_s8:  # from 7.3
     SPEAKER 'Пауза. Ага, наверно. Может, какой-нибудь бездельник спутал тебя со жмуриком и подкинул тебя сюда. То, как ты строишь из себя трупака, и *меня* бы одурачило… может, тебе лучше найти того пня, который притащил тебя сюда, и его расспросить, а? — Морт кивает. — Неплохо соображаешь, как для недавнего мертвеца… рад видеть, что твоя черепушка все еще на месте.'
 
     menu:
         'Зачем кому-то понадобилось тащить меня сюда?':
             # r30 # reply1029
-            jump dmorte_s14
+            jump morte_s14
 
         'У меня есть другие вопросы…':
             # r31 # reply1030
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r32 # reply1137
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s9 # say1022
-label dmorte_s9:  # from 7.1
+label morte_s9:  # from 7.1
     SPEAKER 'Да, это очаровательная жизнь… если не учитывать, что тебя без конца натирают формальдегида и пришиваю тебе отвалившиеся конечности, это можно считать раем.'
 
     menu:
         'Разве я должен здесь быть? Я мертв?':
             # r33 # reply1113
-            jump dmorte_s7
+            jump morte_s7
 
         'Как я выгляжу? Насколько плохи мои шрамы?':
             # r34 # reply1114
-            jump dmorte_s13
+            jump morte_s13
 
         'Неважно. У меня есть другие вопросы…':
             # r35 # reply1115
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r36 # reply1116
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s10 # say1023
-label dmorte_s10:  # from 7.0
+label morte_s10:  # from 7.0
     SPEAKER 'Э-э-э… как я уже сказал, в Морге. С тобой все в порядке, шеф? Ты что-то неважно выглядишь.'
 
     menu:
         'Разве я должен здесь быть? Я мертв?':
             # r37 # reply1109
-            jump dmorte_s16
+            jump morte_s16
 
         '*Как* я выгляжу? Насколько плохи мои шрамы?':
             # r38 # reply1110
-            jump dmorte_s13
+            jump morte_s13
 
         'Неважно. У меня есть другие вопросы…':
             # r39 # reply1111
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r40 # reply1112
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s11 # say1024
-label dmorte_s11:  # from 7.2
+label morte_s11:  # from 7.2
     SPEAKER 'Шеф, зрелище того, как ты сползаешь с плиты, было жуть как странно. Ты выглядишь так, будто тебе уже пора просить счет за выпивку, если ты понял, о чем я.'
 
     menu:
         'Может, я умер? И поэтому я здесь?':
             # r41 # reply1133
-            jump dmorte_s16
+            jump morte_s16
 
         'Насколько плохо я выгляжу?':
             # r42 # reply1134
-            jump dmorte_s13
+            jump morte_s13
 
         'Неважно. У меня есть другие вопросы…':
             # r43 # reply1135
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r44 # reply1136
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s12 # say1025
-label dmorte_s12:  # from 3.0 33.0
+label morte_s12:  # from 3.0 33.0
     SPEAKER 'Не знаешь, кто такие чувствующие? О, да ты, похоже, рассчитываешь услышать что-то особенное! Ну, они — кучка рубак, которые хотят перепробовать все, что могут предоставить им планы, включая… ладно, пока о них забудем. Что насчет этих шрамов?'
 
     menu:
         'Шрамы?':
             # r45 # reply1027
-            jump dmorte_s13
+            jump morte_s13
 
         'Неважно. У меня есть другие вопросы…':
             # r46 # reply1028
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r47 # reply1143
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s13 # say1026
-label dmorte_s13:  # from 3.1 9.1 10.1 11.1 12.0 33.1
+label morte_s13:  # from 3.1 9.1 10.1 11.1 12.0 33.1
     SPEAKER 'Это как будто какой-нибудь рубака решил разрисовать тебя ножом. Ты весь в шрамах… даже на спине, не считая… — делает паузу. — Скажем так: пень, у тебя на спине целая галерея наколок. Тут что-то написано…'
 
     menu:
         'Что там написано?':
             # r48 # reply1088
-            $ dmorteLogic.r1088_action()
-            jump dmorte_s34
+            $ morteLogic.r1088_action()
+            jump morte_s34
 
         'Неважно. У меня есть другие вопросы…':
             # r49 # reply1089
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r50 # reply1090
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s14 # say1031
-label dmorte_s14:  # from 8.0 29.3
+label morte_s14:  # from 8.0 29.3
     SPEAKER 'Некоторые люди в этом городишке собирают жмуриков с улиц и продают их здесь за звенелки. Не очень-то хороший способ сводить концы с концами, но если ты живешь отстойнике всех планов, то выбор у тебя не так уж велик.'
 
     menu:
         'Звенелки? Какие еще 'звенелки'?':
             # r51 # reply1032
-            jump dmorte_s15
+            jump morte_s15
 
         'Неважно. У меня есть другие вопросы…':
             # r52 # reply1033
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r53 # reply1142
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s15 # say1034
-label dmorte_s15:  # from 14.0
+label morte_s15:  # from 14.0
     SPEAKER 'Э-э… деньги. Звенелки — это деньги. Разве там, откуда ты, их нету?'
 
     menu:
         'Я не могу вспомнить, откуда я.':
             # r54 # reply1035
-            jump dmorte_s19
+            jump morte_s19
 
         'Забудь об этом. У меня есть несколько вопросов…':
             # r55 # reply1036
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r56 # reply1138
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s16 # say1037
-label dmorte_s16:  # from 10.0 11.0
+label morte_s16:  # from 10.0 11.0
     SPEAKER 'Он умолкает. Не знаю. Ты *болтаешь* со мной… Здешние ходячие мертвецы обычно так не делают. Как мне кажется, трухлявые допустили ошибку и ты не был мертвым. Ты случайно не помнишь, чтобы подписывал какой-то контракт? То есть, обычно они заполняют кучу документов, прежде чем вытащить кого-нибудь из книги мертвых.'
 
     menu:
         'Э… контракт? Нет, не помню, чтобы подписывал контракт. Я… почти ничего не помню.':
             # r57 # reply1038
-            jump dmorte_s32
+            jump morte_s32
 
         'Книга мертвых?':
             # r58 # reply1039
-            jump dmorte_s17
+            jump morte_s17
 
         'Документов?':
             # r59 # reply1040
-            jump dmorte_s18
+            jump morte_s18
 
         'Забудь об этом. У меня есть несколько вопросов…':
             # r60 # reply1041
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r61 # reply1150
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s17 # say1042
-label dmorte_s17:  # from 16.1 18.0
+label morte_s17:  # from 16.1 18.0
     SPEAKER 'Ну да, 'книга мертвых«. Знаешь про такую? А может и не знаешь. Слушай, забудь про «книгу мертвых'. Ты живой, значит, тебя в ней нет.'
 
     menu:
         'Что это за документ… контракт… о котором ты говорил?':
             # r62 # reply1151
-            jump dmorte_s18
+            jump morte_s18
 
         'У меня есть другие вопросы…':
             # r63 # reply1152
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r64 # reply1153
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s18 # say1043
-label dmorte_s18:  # from 16.2 17.0
+label morte_s18:  # from 16.2 17.0
     SPEAKER 'Ага, от этого так и хочется ломать кирпичи? Сигил вращается благодаря законам, и нельзя даже облегчиться, не подписав пару контрактов.'
 
     menu:
         'Что ты там говорил насчет книги мертвых?':
             # r65 # reply1154
-            jump dmorte_s17
+            jump morte_s17
 
         'Неважно. У меня есть другие вопросы…':
             # r66 # reply1155
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r67 # reply1156
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s19 # say1044
-label dmorte_s19:  # from 15.0
+label morte_s19:  # from 15.0
     SPEAKER 'Во имя богов и их матерей, ты что, *вообще* не в курсе? Ты хоть представляешь, откуда ты? Наверно, у народа бестолочей пропал их царь. Ты что, показал какому-нибудь богу кукиш, или всегда был таким недалеким?'
 
     menu:
         'Я не знаю… Я ничего не могу вспомнить.':
             # r68 # reply1139
-            jump dmorte_s32
+            jump morte_s32
 
         'Неважно. У меня есть другие вопросы…':
             # r69 # reply1140
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r70 # reply1141
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s20 # say1045
-label dmorte_s20:  # from 2.2 31.2
+label morte_s20:  # from 2.2 31.2
     SPEAKER 'Шеф, я без зеленого понятия. А вот ты точно набил руку, изображая из себя мертвеца. Пока ты здесь лежал, я не заметил, чтобы ты моргал или дышал… ничего. Ты что, напился? Что произошло?'
 
     menu:
         'Я не знаю… Я ничего не могу вспомнить.':
             # r71 # reply1097
-            jump dmorte_s32
+            jump morte_s32
 
         'Неважно. У меня есть другие вопросы…':
             # r72 # reply1098
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r73 # reply1099
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s21 # say1046
-label dmorte_s21:  # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
+label morte_s21:  # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
     SPEAKER 'Что ж, вот *это* хороший вопрос. Для тебя, шеф, часы снова начали тикать. Тебя найдут тленные и попытаются исправить 'проблему' с твоим воскрешением, засунув тебя в крематорий. Если и дальше будешь изображать труп, ты так или иначе попадешь в крематорий. Значит, выбор, как у модрона? Что делать?'
 
     menu:
         'Тленные?':
             # r74 # reply1047
-            jump dmorte_s30
+            jump morte_s30
 
         'Я… сбегу.':
             # r75 # reply1048
-            jump dmorte_s22
+            jump morte_s22
 
         'Я все объясню этим… тленным.':
             # r76 # reply1049
-            jump dmorte_s25
+            jump morte_s25
 
-        'Что мне делать?' if dmorteLogic.r1050_condition():
+        'Что мне делать?' if morteLogic.r1050_condition():
             # r77 # reply1050
-            jump dmorte_s23
+            jump morte_s23
 
-        'Почему бы тебе не сказать? Похоже, у тебя уже заготовлен ответ.' if dmorteLogic.r1051_condition():
+        'Почему бы тебе не сказать? Похоже, у тебя уже заготовлен ответ.' if morteLogic.r1051_condition():
             # r78 # reply1051
-            jump dmorte_s23
+            jump morte_s23
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r79 # reply1081
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s22 # say1052
-label dmorte_s22:  # from 21.1
+label morte_s22:  # from 21.1
     SPEAKER 'О, *отличная* идея, шеф! Почему *я* до этого не додумался? И как же ты сбежишь? Даю подсказку: нужно небольшое сотрудничество.'
 
     menu:
         'Ты меня заинтересовал. Продолжай.':
             # r80 # reply1053
-            jump dmorte_s23
+            jump morte_s23
 
         'Забудь об этом. У меня есть несколько вопросов…':
             # r81 # reply1054
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r82 # reply1145
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s23 # say1055
-label dmorte_s23:  # from 21.3 21.4 22.0 26.0
+label morte_s23:  # from 21.3 21.4 22.0 26.0
     SPEAKER 'Как мне кажется, тебе явно нужно отсюда выбираться. Что до меня, то я могу позволить себе подождать. Единственное, то угрожает *мне*, — это смерть от скуки. Мы могли бы протянуть друг другу руку помощи.'
 
     menu:
         'Продолжай…':
             # r83 # reply1058
-            jump dmorte_s24
+            jump morte_s24
 
         'У тебя нет рук. Как *ты* можешь мне помочь?':
             # r84 # reply1059
-            jump dmorte_s24
+            jump morte_s24
 
         'Забудь об этом. У меня есть несколько вопросов…':
             # r85 # reply1060
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r86 # reply1146
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s24 # say1061
-label dmorte_s24:  # from 23.0 23.1
+label morte_s24:  # from 23.0 23.1
     SPEAKER 'Может, ты так и не считаешь, но я мог бы помочь выбраться тебе, а ты — мне. У меня нет рук, так что я в слегка затруднительном положении. У тебя недостача в черепушке, а вот у меня много опыта и знаний, как вывести тебя из этой хибары. Будем сотрудничать — оба выберемся *наружу*. По рукам, пень?'
 
     menu:
         'По рукам.':
             # r87 # reply1057
-            jump dmorte_s28
+            jump morte_s28
 
         'По рукам. У меня есть дурное предчувствие, что нам судьбой предрешено путешествовать вместе, Морт.':
             # r88 # reply1062
-            jump dmorte_s27
+            jump morte_s27
 
         'Забудь об этом. У меня есть несколько вопросов…':
             # r89 # reply1063
-            jump dmorte_s31
+            jump morte_s31
 
         'Нет уж, спасибо. От твоей трескотни голова раскалывается. Я сам найду выход.':
             # r90 # reply1147
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s25 # say1064
-label dmorte_s25:  # from 21.2
+label morte_s25:  # from 21.2
     SPEAKER 'О, *отличная* мысль, шеф! Почему *я* до этого не додумался? — его тон становится насмешливым. — 'Кстати, сэр Тленный, я тут умер и очнулся на плите в вашем маленьком Морге. Вы мне не поможете?« Они тебе «помогут', куда уж там. Поглядят на тебя пару секунд, потом позовут стражу и закинут тебя в персональную топку.'
 
     menu:
         'Звучит, как какие-то крайности… Зачем им это делать?':
             # r91 # reply1065
-            jump dmorte_s26
+            jump morte_s26
 
         'Что ж, стража у них должна быть чертовски крутой, чтобы взять меня.':
             # r92 # reply1066
-            jump dmorte_s26
+            jump morte_s26
 
         'Забудь об этом. У меня есть несколько вопросов…':
             # r93 # reply1067
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r94 # reply1149
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s26 # say1068
-label dmorte_s26:  # from 25.0 25.1
+label morte_s26:  # from 25.0 25.1
     SPEAKER 'Просто поверь мне… Неважно, насколько крутым ты себя считаешь и что ты им скажешь, — они тебя схватят. Ты не настолько силен, чтобы пробиться через стены гробницы или пережить жар стихийного плана огня. Пробуждение из мертвых — не лучшая затея, пока вокруг столько стражи. Не будь идиотом.'
 
     menu:
         'И каков твой план?..':
             # r95 # reply1069
-            jump dmorte_s23
+            jump morte_s23
 
         'Неважно. У меня есть другие вопросы…':
             # r96 # reply1070
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r97 # reply1148
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s27 # say1071
-label dmorte_s27:  # from 24.1
+label morte_s27:  # from 24.1
     SPEAKER 'Судьба может присесть на алебарду — мне-то какое дело. Слушай, шеф. Обрати внимание на то, как часто слова 'плохой« и «судьба' встречаются в одном и том же предложении, и тебе откроется одна из тайн жизни. Лучше всего сказать судьбе завернуться в остролистник: *всегда* есть другой вариант, который судьба не показывает.'
 
     menu:
         'Буду иметь в виду.':
             # r98 # reply1073
-            jump dmorte_s28
+            jump morte_s28
 
         'Хватит болтовни. Так какой у тебя план?':
             # r99 # reply1074
-            jump dmorte_s28
+            jump morte_s28
 
 
 # s28 # say1072
-label dmorte_s28:  # from 24.0 27.0 27.1
+label morte_s28:  # from 24.0 27.0 27.1
     SPEAKER 'Ну хорошо… а теперь вперед, сваливаем отсюда. Двери выхода заперты, так что нам понадобится ключ. Есть шанс, что он у одного из ходячих трупов в этой комнате.'
 
     menu:
         'Ходячих трупов?':
             # r100 # reply1079
-            $ dmorteLogic.r1079_action()
-            jump dmorte_s240
+            $ morteLogic.r1079_action()
+            jump morte_s240
 
 
 # s29 # say996
-label dmorte_s29:  # -
+label morte_s29:  # -
     SPEAKER 'О, значит, *теперь* тебе снова захотелось поговорить с Мортом, а?'
 
     menu:
         'Кто ты?':
             # r101 # reply1075
-            jump dmorte_s1
+            jump morte_s1
 
         'Где я?':
             # r102 # reply1076
-            jump dmorte_s6
+            jump morte_s6
 
-        'Ты знаешь, как мне отсюда выбраться?' if dmorteLogic.r1077_condition():
+        'Ты знаешь, как мне отсюда выбраться?' if morteLogic.r1077_condition():
             # r103 # reply1077
-            jump dmorte_s21
+            jump morte_s21
 
         'Как я попал сюда?':
             # r104 # reply1078
-            jump dmorte_s14
+            jump morte_s14
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r105 # reply1086
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s30 # say1082
-label dmorte_s30:  # from 21.0
+label morte_s30:  # from 21.0
     SPEAKER 'Трухлявые? Они смотрят за этим местом. Ты их не пропустишь… Они питают особую тягу к черному цвету и окоченевшему выражению лица. Они зовут себя 'тленными' и притворяются фракцией, но они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Держись от них подальше.'
 
     menu:
-        'И как мне выбраться отсюда?' if dmorteLogic.r1083_condition():
+        'И как мне выбраться отсюда?' if morteLogic.r1083_condition():
             # r106 # reply1083
-            jump dmorte_s21
+            jump morte_s21
 
         'Неважно. У меня есть другие вопросы…':
             # r107 # reply1084
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r108 # reply1144
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s31 # say1091
-label dmorte_s31:  # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
+label morte_s31:  # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
     SPEAKER 'Да? И *какие* же вопросы?'
 
     menu:
         'Кто ты?':
             # r109 # reply1092
-            jump dmorte_s1
+            jump morte_s1
 
         'Где я?':
             # r110 # reply1093
-            jump dmorte_s6
+            jump morte_s6
 
         'Как я попал сюда?':
             # r111 # reply1094
-            jump dmorte_s20
+            jump morte_s20
 
-        'Как мне выбраться отсюда?' if dmorteLogic.r1095_condition():
+        'Как мне выбраться отсюда?' if morteLogic.r1095_condition():
             # r112 # reply1095
-            jump dmorte_s21
+            jump morte_s21
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r113 # reply1096
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s32 # say1100
-label dmorte_s32:  # from 16.0 19.0 20.0
+label morte_s32:  # from 16.0 19.0 20.0
     SPEAKER 'Ты что *ничего* не помнишь? Брось, да это же куча танаррьего дерьма. Ты серьезно?'
 
     menu:
         'Да.':
             # r114 # reply1101
-            jump dmorte_s33
+            jump morte_s33
 
         'Неважно. У меня есть другие вопросы…':
             # r115 # reply1102
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r116 # reply1103
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s33 # say1104
-label dmorte_s33:  # from 32.0
+label morte_s33:  # from 32.0
     SPEAKER 'Во имя всех богов и их матерей… Э-э, шеф, скорее всего, твои воспоминания просто погрузились глубоко в твою черепушку. Если повезет, они скоро всплывут, поверь мне. Должно быть, нелегкая у тебя ночка выдалась. Надеюсь, ты никого не покалечил и не повздорил со стражей… Кстати говоря, ты случайно не один из тех чувствующих, которые занимаются членовредительством, или это кто-то другой подарил тебе эти шрамы?'
 
     menu:
         'Чувствующих?':
             # r117 # reply1105
-            jump dmorte_s12
+            jump morte_s12
 
         'Шрамы?':
             # r118 # reply1106
-            jump dmorte_s13
+            jump morte_s13
 
         'У меня есть другие вопросы…':
             # r119 # reply1107
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r120 # reply1108
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s34 # say1117
-label dmorte_s34:  # from 13.0
+label morte_s34:  # from 13.0
     SPEAKER 'Похоже на указания… — Морт прочищает горло. — Посмотрим… начинается с…  ЗАМЕТКА: Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо сосредоточиться. Среди твоих вещей должен быть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых.  Не потеряй этот клочок кожи ИЛИ дневник, иначе мы снова окажемся в Стиксе, понятно? И поверь мне, что бы ты не делал, НЕ ГОВОРИ никому, КТО ты, ЧТО случилось с тобой или ОТКУДА ты пришел, иначе ты окажешься на полпути в крематорий.'
 
     menu:
         'Неудивительно, что моя спина болит. Ты знаешь кого-нибудь с именем Фарод?':
             # r121 # reply1118
-            jump dmorte_s36
+            jump morte_s36
 
         'Ты не видел при мне дневника, когда я там лежал?':
             # r122 # reply1119
-            jump dmorte_s35
+            jump morte_s35
 
-        'Ты знаешь, как мне отсюда выбраться?' if dmorteLogic.r1120_condition():
+        'Ты знаешь, как мне отсюда выбраться?' if morteLogic.r1120_condition():
             # r123 # reply1120
-            jump dmorte_s21
+            jump morte_s21
 
         'У меня есть другие вопросы…':
             # r124 # reply1121
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r125 # reply1122
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s35 # say1123
-label dmorte_s35:  # from 34.1 36.0
+label morte_s35:  # from 34.1 36.0
     SPEAKER 'Нет… тебя обобрали догола, когда доставили сюда. Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле.'
 
     menu:
         'Ты знаешь кого-нибудь по имени Фарод?':
             # r126 # reply1124
-            jump dmorte_s36
+            jump morte_s36
 
-        'Как мне выбраться отсюда?' if dmorteLogic.r1125_condition():
+        'Как мне выбраться отсюда?' if morteLogic.r1125_condition():
             # r127 # reply1125
-            jump dmorte_s21
+            jump morte_s21
 
         'Неважно. У меня есть другие вопросы…':
             # r128 # reply1126
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r129 # reply1127
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s36 # say1128
-label dmorte_s36:  # from 34.0 35.0
+label morte_s36:  # from 34.0 35.0
     SPEAKER 'Нет, не знаю. С другой стороны, я вообще мало кого знаю. В общем, кто-нибудь да знает, как добраться до этого Фарода… то есть, как только мы выберемся отсюда.'
 
     menu:
         'При мне не было дневника, когда я там лежал?':
             # r130 # reply1129
-            jump dmorte_s35
+            jump morte_s35
 
-        'Как мне выбраться отсюда?' if dmorteLogic.r1130_condition():
+        'Как мне выбраться отсюда?' if morteLogic.r1130_condition():
             # r131 # reply1130
-            jump dmorte_s21
+            jump morte_s21
 
         'Неважно. У меня есть другие вопросы…':
             # r132 # reply1131
-            jump dmorte_s31
+            jump morte_s31
 
         'Не обращать внимания на Морта и изучить комнату.':
             # r133 # reply1132
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s37 # say1818
-label dmorte_s37:  # - # Check EXTERN ~DHARLOTN~ : 2 Check EXTERN ~DHARLOTN~ : 3 Check EXTERN ~DHARLOTN~ : 9 Check EXTERN ~DHARLOTN~ : 11
+label morte_s37:  # - # Check EXTERN ~DHARLOTN~ : 2 Check EXTERN ~DHARLOTN~ : 3 Check EXTERN ~DHARLOTN~ : 9 Check EXTERN ~DHARLOTN~ : 11
     SPEAKER 'Вот это удача! Кажется, то, что мы ищем, мы в твоем скромном убежище, красавица.'
 
     menu:
         'На самом деле, я потерял дневник.':
             # r134 # reply1820
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Может, ты поможешь мне найти то, что я потерял, красавица.':
             # r135 # reply1819
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я ничего не терял, но у меня есть несколько вопросов…':
             # r136 # reply1821
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я должен идти. Прощай.':
             # r137 # reply1822
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s38 # say1844
-label dmorte_s38:  # - # Check EXTERN ~DHARLOTN~ : 7
+label morte_s38:  # - # Check EXTERN ~DHARLOTN~ : 7
     SPEAKER 'Шеф, ты не можешь одолжить мне немного звенелок… э-э… у меня этого так давно не было.'
 
     menu:
         'Э… полагаю, это никому *не повредит*…':
             # r138 # reply1845
-            $ dmorteLogic.r1845_action()
-            jump dmorte_dispose
+            $ morteLogic.r1845_action()
+            jump morte_dispose
 
         'Я даже не хочу спрашивать, как ты намереваешься это совершить.':
             # r139 # reply1846
-            $ dmorteLogic.r1846_action()
-            jump dmorte_dispose
+            $ morteLogic.r1846_action()
+            jump morte_dispose
 
         'Послушай, Морт… вообще-то, нам нужно идти. Прощай, красавица.':
             # r140 # reply1847
-            $ dmorteLogic.r1847_action()
-            jump dmorte_dispose
+            $ morteLogic.r1847_action()
+            jump morte_dispose
 
 
 # s39 # say2000
-label dmorte_s39:  # - # Check EXTERN ~DANNAH~ : 5
+label morte_s39:  # - # Check EXTERN ~DANNAH~ : 5
     SPEAKER 'Она имеет в виду деньги.'
 
     menu:
         'О.':
             # r141 # reply2001
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s40 # say2048
-label dmorte_s40:  # - # Check EXTERN ~DANNAH~ : 13
+label morte_s40:  # - # Check EXTERN ~DANNAH~ : 13
     SPEAKER 'Это же очевидно, что ни ты, ни твой хвост не продаются. Ты бы все равно на них не прожила.'
 
     menu:
         'Э…':
             # r142 # reply2049
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s41 # say2067
-label dmorte_s41:  # - # Check EXTERN ~DANNAH~ : 17
+label morte_s41:  # - # Check EXTERN ~DANNAH~ : 17
     SPEAKER 'Она — тифлинг, шеф. В них есть немного демонической крови, из-за которой они становятся немного подозрительными и бдительными… симпатичный хвостик, кстати. Жаль только, что он приделан к такому уродливому телу.'
 
     menu:
         'Ого, а…':
             # r143 # reply2068
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Эй, неплохо сказано, Морт.':
             # r144 # reply2069
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s42 # say2074
-label dmorte_s42:  # - # Check EXTERN ~DANNAH~ : 18 Check EXTERN ~DANNAH~ : 14
+label morte_s42:  # - # Check EXTERN ~DANNAH~ : 18 Check EXTERN ~DANNAH~ : 14
     SPEAKER 'Что же ты не *пытаешься* расколоть мою челюсть? Только и дело, что слышу пустую болтовню от всяких отбросов Улья! Давай, попробуй! Я тебе ноги откушу!'
 
     menu:
         'Хватит!':
             # r145 # reply2076
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Хватит! Мы уходим.':
             # r146 # reply2075
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s43 # say2079
-label dmorte_s43:  # - # Check EXTERN ~DANNAH~ : 21
+label morte_s43:  # - # Check EXTERN ~DANNAH~ : 21
     SPEAKER 'Мимир — это говорящая энциклопедия. Это я, шеф.'
 
     menu:
         'Понятно.':
             # r147 # reply2080
-            $ dmorteLogic.r2080_action()
-            jump dmorte_dispose
+            $ morteLogic.r2080_action()
+            jump morte_dispose
 
 
 # s44 # say2348
-label dmorte_s44:  # - # Check EXTERN ~DGITH~ : 7
+label morte_s44:  # - # Check EXTERN ~DGITH~ : 7
     SPEAKER 'Бросай это дело, шеф. Говорить с гитом — все равно что из остролистника варенье делать. Пойдем.'
 
     menu:
-        'Это гит?' if dmorteLogic.r9029_condition():
+        'Это гит?' if morteLogic.r9029_condition():
             # r148 # reply9029
-            $ dmorteLogic.r9029_action()
-            jump dmorte_s135
+            $ morteLogic.r9029_action()
+            jump morte_s135
 
-        'Это гит?' if dmorteLogic.r9030_condition():
+        'Это гит?' if morteLogic.r9030_condition():
             # r149 # reply9030
-            jump dmorte_s135
+            jump morte_s135
 
         'Я пока еще не готов уйти. Сначала я задам ему пару вопросов…':
             # r150 # reply9031
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить гита в покое.':
             # r151 # reply9032
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s45 # say2354
-label dmorte_s45:  # - # Check EXTERN ~DGITH~ : 7
+label morte_s45:  # - # Check EXTERN ~DGITH~ : 7
     SPEAKER 'Не стоит утруждать себя пустыми разговорами со старым Незнание-это-Счастье. Пошли отсюда, шеф.'
 
     menu:
         'Я пока еще не готов уйти. Сначала я задам ему пару вопросов…':
             # r152 # reply9033
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить гита в покое.':
             # r153 # reply9034
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s46 # say2601
-label dmorte_s46:  # -
+label morte_s46:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r154 # reply2603
-            $ dmorteLogic.r2603_action()
-            jump dmorte_s47
+            $ morteLogic.r2603_action()
+            jump morte_s47
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r155 # reply2602
-            $ dmorteLogic.r2602_action()
-            jump dmorte_s47
+            $ morteLogic.r2602_action()
+            jump morte_s47
 
 
 # s47 # say2604
-label dmorte_s47:  # from 46.0 46.1 121.1 121.2
+label morte_s47:  # from 46.0 46.1 121.1 121.2
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r156 # reply2605
-            $ dmorteLogic.r2605_action()
-            jump dmorte_s49
+            $ morteLogic.r2605_action()
+            jump morte_s49
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r157 # reply2606
-            jump dmorte_s48
+            jump morte_s48
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r158 # reply2607
-            jump dmorte_s48
+            jump morte_s48
 
         'Как знаешь, Морт. Идем.':
             # r159 # reply2608
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s48 # say2609
-label dmorte_s48:  # from 47.1 47.2
+label morte_s48:  # from 47.1 47.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r160 # reply2610
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s49 # say2611
-label dmorte_s49:  # from 47.0
+label morte_s49:  # from 47.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r161 # reply2612
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s50 # say2709
-label dmorte_s50:  # - # Check EXTERN ~DTEST~ : 7
+label morte_s50:  # - # Check EXTERN ~DTEST~ : 7
     SPEAKER 'Что? Что такое? Это девчонка досаждает тебе?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s51 # say2711
-label dmorte_s51:  # - # Check EXTERN ~DTEST~ : 0
+label morte_s51:  # - # Check EXTERN ~DTEST~ : 0
     SPEAKER 'Верю. Наверное, будет лучше, если он вернется в основное меню и избавит меня от этого.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s52 # say2782
-label dmorte_s52:  # -
+label morte_s52:  # -
     SPEAKER 'Ох, силы небесные! Чертов дабус.'
 
     menu:
         'Что не так?':
             # r162 # reply2783
-            jump dmorte_s53
+            jump morte_s53
 
 
 # s53 # say2788
-label dmorte_s53:  # from 52.0
+label morte_s53:  # from 52.0
     SPEAKER 'Он — дабус. Они 'разговаривают' ребусами, этими тупыми словесными головоломками. Если *ты* не знаешь, что он говорит, то тогда нам лучше поискать кого-нибудь из местных или какой-нибудь другой способ общаться с ними… если нам это надо. Чертово племя. Знаешь что? Да они *умеют* разговаривать, просто они хотят вывести из себя того, кто пытается разгадать их головоломки.'
 
     menu:
         'Что за 'дабус'?':
             # r163 # reply2791
-            jump dmorte_s54
+            jump morte_s54
 
 
 # s54 # say2789
-label dmorte_s54:  # from 53.0 # Check EXTERN ~DDABUS~ : 3
+label morte_s54:  # from 53.0 # Check EXTERN ~DDABUS~ : 3
     SPEAKER 'Говорят, что они слуги Леди Боли. Они парят повсюду и ломают, чинят и латают Сигил по ее капризу. Они хуже трупных мух, — Морт вздыхает. — Не нужно их трогать, а не то Леди… рассердится.'
 
     menu:
-        ''Леди Боли'? Кто это?' if dmorteLogic.r6952_condition():
+        ''Леди Боли'? Кто это?' if morteLogic.r6952_condition():
             # r164 # reply6952
-            $ dmorteLogic.r6952_action()
-            jump dmorte_s113
+            $ morteLogic.r6952_action()
+            jump morte_s113
 
-        'Что ты можешь рассказать о Леди Боли?' if dmorteLogic.r6953_condition():
+        'Что ты можешь рассказать о Леди Боли?' if morteLogic.r6953_condition():
             # r165 # reply6953
-            jump dmorte_s113
+            jump morte_s113
 
-        'Понятно.' if dmorteLogic.r6954_condition():
+        'Понятно.' if morteLogic.r6954_condition():
             # r166 # reply6954
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s55 # say3473
-label dmorte_s55:  # - # Check EXTERN ~DEIVENE~ : 4
+label morte_s55:  # - # Check EXTERN ~DEIVENE~ : 4
     SPEAKER 'Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?'
 
     menu:
         'Что не так с ее руками?':
             # r167 # reply3474
-            $ dmorteLogic.r3474_action()
-            jump dmorte_s56
+            $ morteLogic.r3474_action()
+            jump morte_s56
 
         'Прикоснуться к женщине, привлечь ее внимание.':
             # r168 # reply3475
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить ее в покое.':
             # r169 # reply3476
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s56 # say3477
-label dmorte_s56:  # from 55.0 # Check EXTERN ~DEIVENE~ : 4
+label morte_s56:  # from 55.0 # Check EXTERN ~DEIVENE~ : 4
     SPEAKER 'Э… она из тифлингов, шеф. В их жилах течет лихая кровь нечисти. Кто-то из предков спутался с каким-то нечистым духом. Из-за этого некоторые из них немного тронутые… и обычно выглядят они соответствующе.'
 
     menu:
         'Прикоснуться к женщине, привлечь ее внимание.':
             # r170 # reply3478
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить ее в покое.':
             # r171 # reply3479
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s57 # say3480
-label dmorte_s57:  # -
+label morte_s57:  # -
     SPEAKER 'Думаю, эта трухлявая цыпочка немного тугая на ухо, шеф. Давай просто свалим отсюда, а?'
 
     menu:
         'Что не так с ее руками?':
             # r172 # reply3483
-            $ dmorteLogic.r3483_action()
-            jump dmorte_s58
+            $ morteLogic.r3483_action()
+            jump morte_s58
 
         'Уйти.':
             # r173 # reply3484
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s58 # say3481
-label dmorte_s58:  # from 57.0
+label morte_s58:  # from 57.0
     SPEAKER 'Э… она из тифлингов, шеф. В их жилах течет лихая кровь нечисти. Кто-то из предков спутался с каким-то нечистым духом. Из-за этого некоторые из них немного тронутые… и обычно выглядят они соответствующе.'
 
     menu:
         'Уйти.':
             # r174 # reply3482
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s59 # say3487
-label dmorte_s59:  # - # Check EXTERN ~DEIVENE~ : 11 Check EXTERN ~DEIVENE~ : 10
+label morte_s59:  # - # Check EXTERN ~DEIVENE~ : 11 Check EXTERN ~DEIVENE~ : 10
     SPEAKER 'Похоже, у тебя новая подруга, шеф. Может, вас оставить наедине на часок, или?..'
 
     menu:
         'Замолкни, Морт.':
             # r175 # reply3488
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Продолжать строить из себя зомби.':
             # r176 # reply3489
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оттолкнуть женщину.':
             # r177 # reply3490
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s60 # say3492
-label dmorte_s60:  # - # Check EXTERN ~DEIVENE~ : 14
+label morte_s60:  # - # Check EXTERN ~DEIVENE~ : 14
     SPEAKER 'Это второй случай в моей жизни, когда я счастлив, что у меня нет носа.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s61 # say3870
-label dmorte_s61:  # -
+label morte_s61:  # -
     SPEAKER 'Эй! Эй! Что ты делаешь?'
 
     menu:
         'Я *хотел* поговорить с этим парнем. Проблемы?':
             # r178 # reply3871
-            $ dmorteLogic.r3871_action()
-            jump dmorte_s62
+            $ morteLogic.r3871_action()
+            jump morte_s62
 
         'Ничего. Идем.':
             # r179 # reply3872
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s62 # say3873
-label dmorte_s62:  # from 61.0
+label morte_s62:  # from 61.0
     SPEAKER 'Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.'
 
     menu:
         'Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.':
             # r180 # reply3874
-            $ dmorteLogic.r3874_action()
-            jump dmorte_s64
+            $ morteLogic.r3874_action()
+            jump morte_s64
 
         'Согласен. Идем.':
             # r181 # reply3875
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s63 # say3876
-label dmorte_s63:  # -
+label morte_s63:  # -
     SPEAKER 'Эй! Ты оглох, что ли? Ты что творишь?'
 
     menu:
         'Слушай, я хочу поговорить с этим парнем. Проблемы?':
             # r182 # reply3877
-            $ dmorteLogic.r3877_action()
-            jump dmorte_s64
+            $ morteLogic.r3877_action()
+            jump morte_s64
 
         'Ничего. Идем.':
             # r183 # reply3878
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s64 # say3879
-label dmorte_s64:  # from 62.0 63.0 # Check EXTERN ~DDUST~ : 3
+label morte_s64:  # from 62.0 63.0 # Check EXTERN ~DDUST~ : 3
     SPEAKER 'Тогда *не слушай* меня больше — тебя похоронят.'
 
     menu:
         'Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.':
             # r184 # reply3880
-            jump dmorte_dispose
+            jump morte_dispose
 
         'А, ты прав. Забудь об этом. Идем.':
             # r185 # reply3881
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s65 # say3964
-label dmorte_s65:  # -
+label morte_s65:  # -
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
         'И что?':
             # r186 # reply3965
-            $ dmorteLogic.r3965_action()
-            jump dmorte_s66
+            $ morteLogic.r3965_action()
+            jump morte_s66
 
         'О… Я не хотел ему навредить.':
             # r187 # reply3966
-            $ dmorteLogic.r3966_action()
-            jump dmorte_s66
+            $ morteLogic.r3966_action()
+            jump morte_s66
 
         'Ну, тогда ладно. Может, в другой раз.':
             # r188 # reply3967
-            jump dmorte_s66
+            jump morte_s66
 
 
 # s66 # say3968
-label dmorte_s66:  # from 65.0 65.1 65.2 # Check EXTERN ~DSKELW~ : 4 Check EXTERN ~DSKELW~ : 5 Check EXTERN ~DSKELW~ : 6
+label morte_s66:  # from 65.0 65.1 65.2 # Check EXTERN ~DSKELW~ : 4 Check EXTERN ~DSKELW~ : 5 Check EXTERN ~DSKELW~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r3969_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r3969_condition():
             # r189 # reply3969
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r3970_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r3970_condition():
             # r190 # reply3970
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r3971_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r3971_condition():
             # r191 # reply3971
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r3972_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r3972_condition():
             # r192 # reply3972
-            $ dmorteLogic.r3972_action()
-            jump dmorte_s67
+            $ morteLogic.r3972_action()
+            jump morte_s67
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r3973_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r3973_condition():
             # r193 # reply3973
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s67 # say3974
-label dmorte_s67:  # from 66.3
+label morte_s67:  # from 66.3
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
         'Седобородый?':
             # r194 # reply3975
-            jump dmorte_s68
+            jump morte_s68
 
         'Не думаю, что он имеет что-то против.':
             # r195 # reply3976
-            jump dmorte_s69
+            jump morte_s69
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r196 # reply3977
-            jump dmorte_s70
+            jump morte_s70
 
 
 # s68 # say3978
-label dmorte_s68:  # from 67.0
+label morte_s68:  # from 67.0
     SPEAKER 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
 
     menu:
         'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
             # r197 # reply3979
-            jump dmorte_s69
+            jump morte_s69
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r198 # reply3980
-            jump dmorte_s70
+            jump morte_s70
 
 
 # s69 # say3981
-label dmorte_s69:  # from 67.1 68.0
+label morte_s69:  # from 67.1 68.0
     SPEAKER 'Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
 
     menu:
         'А ты, значит, нет?':
             # r199 # reply3982
-            jump dmorte_s70
+            jump morte_s70
 
         'Ладно. Идем.':
             # r200 # reply3983
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s70 # say3984
-label dmorte_s70:  # from 67.2 68.1 69.0 127.0
+label morte_s70:  # from 67.2 68.1 69.0 127.0
     SPEAKER 'Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
 
     menu:
         'Да? Зато у *меня* все при себе.':
             # r201 # reply3985
-            jump dmorte_s71
+            jump morte_s71
 
         'Идем.':
             # r202 # reply3986
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s71 # say3987
-label dmorte_s71:  # from 70.0
+label morte_s71:  # from 70.0
     SPEAKER 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
 
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r203 # reply3988
-            $ dmorteLogic.r3988_action()
-            jump dmorte_s72
+            $ morteLogic.r3988_action()
+            jump morte_s72
 
         'Идем.':
             # r204 # reply3989
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s72 # say3990
-label dmorte_s72:  # from 71.0
+label morte_s72:  # from 71.0
     SPEAKER 'Помощь тебе в побеге из препараторской только что теперь добавлена в мой растущий список сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.'
 
     menu:
         'Очень приятно это слышать. Идем.':
             # r205 # reply3991
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s73 # say4018
-label dmorte_s73:  # -
+label morte_s73:  # -
     SPEAKER 'Морт скалит зубы.'
 
     menu:
         'Ну, так да или?..':
             # r206 # reply4019
-            jump dmorte_s74
+            jump morte_s74
 
 
 # s74 # say4020
-label dmorte_s74:  # from 73.0 # Check EXTERN ~DGIANTSK~ : 2 Check EXTERN ~DGIANTSK~ : 3
+label morte_s74:  # from 73.0 # Check EXTERN ~DGIANTSK~ : 2 Check EXTERN ~DGIANTSK~ : 3
     SPEAKER 'Ой… извини. Морт подлетает к голове скелета, смотрит на нее, затем спускается вниз, попутно изучая доспехи и клинок. О да. Да, думаю, такое подойдет.'
 
     menu:
-        'Хорошо… секунду, я вытащу из него голову.' if dmorteLogic.r4023_condition():
+        'Хорошо… секунду, я вытащу из него голову.' if morteLogic.r4023_condition():
             # r207 # reply4023
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Хорошо… секунду, я вытащу из него голову.' if dmorteLogic.r4024_condition():
+        'Хорошо… секунду, я вытащу из него голову.' if morteLogic.r4024_condition():
             # r208 # reply4024
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ну не знаю. Оно такое здоровое, вряд ли ты сможешь с таким управиться.':
             # r209 # reply4025
-            jump dmorte_s75
+            jump morte_s75
 
         'Я думаю, лучше оставить его в покое.':
             # r210 # reply4026
-            jump dmorte_s75
+            jump morte_s75
 
 
 # s75 # say4021
-label dmorte_s75:  # from 74.2 74.3 # Check EXTERN ~DGIANTSK~ : 2 Check EXTERN ~DGIANTSK~ : 3
+label morte_s75:  # from 74.2 74.3 # Check EXTERN ~DGIANTSK~ : 2 Check EXTERN ~DGIANTSK~ : 3
     SPEAKER 'А какого тогда Баатора ты СПРАШИВАЕШЬ меня? Практикуешься в навыках жестокости? — Морт негодующе раскачивается. — И это после всего, что я сделал для тебя…'
 
     menu:
-        'Хорошо… секунду, я вытащу из него голову.' if dmorteLogic.r4027_condition():
+        'Хорошо… секунду, я вытащу из него голову.' if morteLogic.r4027_condition():
             # r211 # reply4027
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Хорошо… секунду, я вытащу из него голову.' if dmorteLogic.r4028_condition():
+        'Хорошо… секунду, я вытащу из него голову.' if morteLogic.r4028_condition():
             # r212 # reply4028
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я думаю о твоей безопасности, Морт. Я опасаюсь, что присоединив твою голову к этому, причиню какой-нибудь вред тебе.':
             # r213 # reply4029
-            $ dmorteLogic.r4029_action()
-            jump dmorte_s76
+            $ morteLogic.r4029_action()
+            jump morte_s76
 
         'Все же я думаю, что лучше оставить его в покое. Идем отсюда.':
             # r214 # reply4030
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s76 # say4022
-label dmorte_s76:  # from 75.2 # Check EXTERN ~DGIANTSK~ : 2 Check EXTERN ~DGIANTSK~ : 3
+label morte_s76:  # from 75.2 # Check EXTERN ~DGIANTSK~ : 2 Check EXTERN ~DGIANTSK~ : 3
     SPEAKER 'Морт уставился на тебя. Мы что теперь, ЖЕНАТЫ? Что это за бред — 'я не хочу причинить тебе вред'? — Морт выразительно на тебя смотрит. — Если ты ПО-НАСТОЯЩЕМУ обо мне заботишься, то найди способ закрепить мою голову на теле гигантского скелета.'
 
     menu:
-        'Хорошо… секунду, я вытащу из него голову.' if dmorteLogic.r4031_condition():
+        'Хорошо… секунду, я вытащу из него голову.' if morteLogic.r4031_condition():
             # r215 # reply4031
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Хорошо… секунду, я вытащу из него голову.' if dmorteLogic.r4032_condition():
+        'Хорошо… секунду, я вытащу из него голову.' if morteLogic.r4032_condition():
             # r216 # reply4032
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Извини, я не так сильно о тебе забочусь. Идем.':
             # r217 # reply4033
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Я говорю, оставь его в покое. А теперь идем отсюда.' if dmorteLogic.r4034_condition():
+        'Я говорю, оставь его в покое. А теперь идем отсюда.' if morteLogic.r4034_condition():
             # r218 # reply4034
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s77 # say4134
-label dmorte_s77:  # -
+label morte_s77:  # -
     SPEAKER 'Эй! Эй! Что ты делаешь?'
 
     menu:
         'Я *хотел* поговорить с этим парнем. Проблемы?':
             # r219 # reply4144
-            $ dmorteLogic.r4144_action()
-            jump dmorte_s78
+            $ morteLogic.r4144_action()
+            jump morte_s78
 
         'Ничего. Идем.':
             # r220 # reply4145
-            $ dmorteLogic.r4145_action()
-            jump dmorte_dispose
+            $ morteLogic.r4145_action()
+            jump morte_dispose
 
 
 # s78 # say4135
-label dmorte_s78:  # from 77.0
+label morte_s78:  # from 77.0
     SPEAKER 'Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.'
 
     menu:
         'Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.':
             # r221 # reply4142
-            $ dmorteLogic.r4142_action()
-            jump dmorte_s80
+            $ morteLogic.r4142_action()
+            jump morte_s80
 
         'Согласен. Идем.':
             # r222 # reply4143
-            $ dmorteLogic.r4143_action()
-            jump dmorte_dispose
+            $ morteLogic.r4143_action()
+            jump morte_dispose
 
 
 # s79 # say4136
-label dmorte_s79:  # -
+label morte_s79:  # -
     SPEAKER 'Эй! Ты оглох, что ли? Ты что творишь?'
 
     menu:
         'Слушай, я хочу поговорить с этим парнем. Проблемы?':
             # r223 # reply4140
-            $ dmorteLogic.r4140_action()
-            jump dmorte_s80
+            $ morteLogic.r4140_action()
+            jump morte_s80
 
         'Ничего. Идем.':
             # r224 # reply4141
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s80 # say4137
-label dmorte_s80:  # from 78.0 79.0 # Check EXTERN ~DDUSTGU~ : 12
+label morte_s80:  # from 78.0 79.0 # Check EXTERN ~DDUSTGU~ : 12
     SPEAKER 'Тогда *не слушай* меня больше — тебя похоронят.'
 
     menu:
         'Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.':
             # r225 # reply4138
-            jump dmorte_dispose
+            jump morte_dispose
 
         'А, ты прав. Забудь об этом. Идем.':
             # r226 # reply4139
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s81 # say4338
-label dmorte_s81:  # -
+label morte_s81:  # -
     SPEAKER 'Эй! Эй! Что ты делаешь?'
 
     menu:
         'Я *хотел* поговорить с этой дамочкой. Проблемы?':
             # r227 # reply4339
-            $ dmorteLogic.r4339_action()
-            jump dmorte_s82
+            $ morteLogic.r4339_action()
+            jump morte_s82
 
         'Ничего. Идем.':
             # r228 # reply4340
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s82 # say4341
-label dmorte_s82:  # from 81.0
+label morte_s82:  # from 81.0
     SPEAKER 'Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.'
 
     menu:
         'Спасибо за совет, но *все еще* хочу поговорить с этой дамочкой.':
             # r229 # reply4342
-            $ dmorteLogic.r4342_action()
-            jump dmorte_s84
+            $ morteLogic.r4342_action()
+            jump morte_s84
 
         'Согласен. Идем.':
             # r230 # reply4343
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s83 # say4344
-label dmorte_s83:  # -
+label morte_s83:  # -
     SPEAKER 'Эй! Ты оглох, что ли? Ты что творишь?'
 
     menu:
         'Слушай, я хочу поговорить с этой дамочкой. Проблемы?':
             # r231 # reply4345
-            $ dmorteLogic.r4345_action()
-            jump dmorte_s84
+            $ morteLogic.r4345_action()
+            jump morte_s84
 
         'Ничего. Идем.':
             # r232 # reply4346
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s84 # say4347
-label dmorte_s84:  # from 82.0 83.0 # Check EXTERN ~DDUSTFEM~ : 3
+label morte_s84:  # from 82.0 83.0 # Check EXTERN ~DDUSTFEM~ : 3
     SPEAKER 'Тогда *не слушай* меня больше — тебя похоронят.'
 
     menu:
         'Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.':
             # r233 # reply4348
-            jump dmorte_dispose
+            jump morte_dispose
 
         'А, ты прав. Забудь об этом. Идем.':
             # r234 # reply4349
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s85 # say4675
-label dmorte_s85:  # -
+label morte_s85:  # -
     SPEAKER 'Морт шепотом вклинивается в разговор. О силы… этот пень — *анархист*. Строить из себя зомби — это первое, что может взбрести в их пустые головы.'
 
     menu:
         'Анархист?':
             # r235 # reply4676
-            $ dmorteLogic.r4676_action()
-            jump dmorte_s86
+            $ morteLogic.r4676_action()
+            jump morte_s86
 
 
 # s86 # say4677
-label dmorte_s86:  # from 85.0 # Check EXTERN ~DVAXIS~ : 11 Check EXTERN ~DVAXIS~ : 10
+label morte_s86:  # from 85.0 # Check EXTERN ~DVAXIS~ : 11 Check EXTERN ~DVAXIS~ : 10
     SPEAKER 'Анархисты… это такая фракция… Похоже, Морт еле сдерживает поток оскорблений, но затем замечает, что зомби смотрит на вас обоих, внимательно слушая. …они, э, хотят *освободить* всех от оков правительства. Свергнуть старый порядок, чтобы установить новый — без никаких порядков.'
 
     menu:
         'Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.':
             # r236 # reply4678
-            $ dmorteLogic.r4678_action()
-            jump dmorte_dispose
+            $ morteLogic.r4678_action()
+            jump morte_dispose
 
         'Ложь: Похоже на благородное стремление. Любой анархист, посвятивший себя столь высокой цели, *определенно* является мне другом.':
             # r237 # reply4679
-            $ dmorteLogic.r4679_action()
-            jump dmorte_dispose
+            $ morteLogic.r4679_action()
+            jump morte_dispose
 
         'Это все довольно… противоречиво.':
             # r238 # reply4680
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это одна из самых идиотских вещей, которую я когда-либо слышал.':
             # r239 # reply4681
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.':
             # r240 # reply4682
-            $ dmorteLogic.r4682_action()
-            jump dmorte_dispose
+            $ morteLogic.r4682_action()
+            jump morte_dispose
 
 
 # s87 # say4683
-label dmorte_s87:  # -
+label morte_s87:  # -
     SPEAKER 'Шепотом: Он интересуется, не спятил ли ты, не слетел с катушек, не выжил из ума… и я, кстати, тоже. А теперь выкинь это 'Я очнулся из мертвых' из своего лексикона, хорошо?! Ты ставишь меня в глупое положение.'
 
     menu:
         'Я смущаю ТЕБЯ?':
             # r241 # reply4684
-            jump dmorte_s88
+            jump morte_s88
 
         'Я просто хотел узнать, о чем этот… труп… говорит. Ясно?':
             # r242 # reply4685
-            jump dmorte_s88
+            jump morte_s88
 
-        'Не моя вина, что никто в этом сумасшедшем… 'чокнутом'… месте не говорит нормально… или хотя бы не ВЫГЛЯДИТ так.' if dmorteLogic.r4686_condition():
+        'Не моя вина, что никто в этом сумасшедшем… 'чокнутом'… месте не говорит нормально… или хотя бы не ВЫГЛЯДИТ так.' if morteLogic.r4686_condition():
             # r243 # reply4686
-            jump dmorte_s88
+            jump morte_s88
 
         'Слушай, я НЕ хочу лгать этому парню. Лучше говорить с ним напрямую.':
             # r244 # reply4687
-            $ dmorteLogic.r4687_action()
-            jump dmorte_s88
+            $ morteLogic.r4687_action()
+            jump morte_s88
 
 
 # s88 # say4688
-label dmorte_s88:  # from 87.0 87.1 87.2 87.3 # Check EXTERN ~DVAXIS~ : 15
+label morte_s88:  # from 87.0 87.1 87.2 87.3 # Check EXTERN ~DVAXIS~ : 15
     SPEAKER 'Морт вздыхает. Слушай, шеф… ты должен понимать свою ситуацию. Ты не сможешь разгуливать, рассказывая всем одну только ПРАВДУ. Мы не должны делать себя целями ловца кроликов, ясно?'
 
     menu:
         'Ловец кроликов? Цели? Что это… а, неважно.':
             # r245 # reply4689
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Замолкни, Морт.':
             # r246 # reply4690
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я… я запомню это. Мне нужно поговорить с этим 'зомби'.':
             # r247 # reply4691
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s89 # say4692
-label dmorte_s89:  # -
+label morte_s89:  # -
     SPEAKER 'Погоди… — говорит Морт удивленно. — Да этот пень — *анархист*. Ха. Строить из себя зомби — это первое, что может взбрести в их пустые головы.'
 
     menu:
         'Анархист?':
             # r248 # reply4693
-            $ dmorteLogic.r4693_action()
-            jump dmorte_s90
+            $ morteLogic.r4693_action()
+            jump morte_s90
 
 
 # s90 # say4694
-label dmorte_s90:  # from 89.0 # Check EXTERN ~DVAXIS~ : 71
+label morte_s90:  # from 89.0 # Check EXTERN ~DVAXIS~ : 71
     SPEAKER 'Анархисты — это фракция, которая тратит свое время на слежку за представителями власти и на поиски способов низвергнуть все, от чего несет порядком или контролем, — Морт фыркает. — Анархисты считают, что каждый пень на планах должен быть свободен и счастлив искать свою собственную 'правду', как только правительство будет сожжено дотла. Они хотят основать новый порядок, в котором не будет никакого порядка.'
 
     menu:
         'Правда: Похоже на благородное стремление. Порядку время от времени не помешает хорошая встряска.':
             # r249 # reply4695
-            $ dmorteLogic.r4695_action()
-            jump dmorte_dispose
+            $ morteLogic.r4695_action()
+            jump morte_dispose
 
         'Это все довольно… противоречиво.':
             # r250 # reply4696
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это одна из самых идиотских вещей, которую я когда-либо слышал.':
             # r251 # reply4697
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Как хочешь.':
             # r252 # reply4698
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Правда: Вряд ли кому-то это покажется созиданием. Для прогресса всегда нужны какой-никакой порядок и закон.':
             # r253 # reply4699
-            $ dmorteLogic.r4699_action()
-            jump dmorte_dispose
+            $ morteLogic.r4699_action()
+            jump morte_dispose
 
 
 # s91 # say4700
-label dmorte_s91:  # - # Check EXTERN ~DVAXIS~ : 43
+label morte_s91:  # - # Check EXTERN ~DVAXIS~ : 43
     SPEAKER 'Он говорит, что этот Фарод продал очень много жмуриков… трупов… тленным. Ну, сборщики занимаются этим — находят тела мертвых и продают их тленным. Похоже, этот Фарод запродал так много жмуриков, что трухлявые начали подозревать, что он записывает жителей Улья в книгу мертвых раньше положенного срока… ну, ты понял, просто убивает их.'
 
     menu:
         'Понятно. Я хотел бы знать кое-что еще…':
             # r254 # reply4701
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Да этот Фарод просто святой. Возможно, позже у меня будут другие вопросы. Никуда не уходи.':
             # r255 # reply4702
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s92 # say4703
-label dmorte_s92:  # - # Check EXTERN ~DVAXIS~ : 43
+label morte_s92:  # - # Check EXTERN ~DVAXIS~ : 43
     SPEAKER 'Он хочет знать, не обокрал ли кто тебя. Наверно, интересуется, что случилось.'
 
     menu:
         'Понятно. Я хотел бы знать кое-что еще…':
             # r256 # reply4704
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Да, я жду не дождусь поймать этого вора. Слушай, возможно, позже у меня будут другие вопросы. Никуда не уходи.':
             # r257 # reply4705
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s93 # say4706
-label dmorte_s93:  # - # Check EXTERN ~DVAXIS~ : 61
+label morte_s93:  # - # Check EXTERN ~DVAXIS~ : 61
     SPEAKER 'Ага, уж кто тупые, так это *они*. Это точно.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s94 # say4708
-label dmorte_s94:  # - # Check EXTERN ~DVAXIS~ : 66
+label morte_s94:  # - # Check EXTERN ~DVAXIS~ : 66
     SPEAKER 'Не могу поверить, что ты делаешь это. Ты, что, СОВСЕМ спятил?'
 
     menu:
-        'Бред, как по мне…' if dmorteLogic.r64535_condition():
+        'Бред, как по мне…' if morteLogic.r64535_condition():
             # r258 # reply64535
-            $ dmorteLogic.r64535_action()
-            jump dmorte_dispose
+            $ morteLogic.r64535_action()
+            jump morte_dispose
 
-        'Бред, как по мне…' if dmorteLogic.r64534_condition():
+        'Бред, как по мне…' if morteLogic.r64534_condition():
             # r259 # reply64534
-            $ dmorteLogic.r64534_action()
-            jump dmorte_dispose
+            $ morteLogic.r64534_action()
+            jump morte_dispose
 
 
 # s95 # say4710
-label dmorte_s95:  # - # Check EXTERN ~DVAXIS~ : 67
+label morte_s95:  # - # Check EXTERN ~DVAXIS~ : 67
     SPEAKER 'А нельзя ли ему зашить рот потуже?'
 
     menu:
         'Замоокни, Моот…':
             # r260 # reply4711
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ммм-ХММФ!':
             # r261 # reply4712
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s96 # say5029
-label dmorte_s96:  # -
+label morte_s96:  # -
     SPEAKER 'Эй! Эй! Что ты делаешь?'
 
     menu:
         'Я *хотел* поговорить с этим парнем. Проблемы?':
             # r262 # reply5030
-            $ dmorteLogic.r5030_action()
-            jump dmorte_s97
+            $ morteLogic.r5030_action()
+            jump morte_s97
 
         'Ничего. Идем.':
             # r263 # reply5031
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s97 # say5032
-label dmorte_s97:  # from 96.0
+label morte_s97:  # from 96.0
     SPEAKER 'Если ты собираешься трясти черепушкой с трухлявыми, то, пожалуйста, без меня. Я с ними не в лучших отношениях… и тебе не стоит с ними родниться. Они скорее спалят тебя или заживо зароют, чем будут слушать. Не валяй дурака, давай выбираться отсюда.'
 
     menu:
         'Спасибо за совет, но я *все еще* хочу поговорить с этим парнем.':
             # r264 # reply5033
-            $ dmorteLogic.r5033_action()
-            jump dmorte_s99
+            $ morteLogic.r5033_action()
+            jump morte_s99
 
         'Согласен. Идем.':
             # r265 # reply5034
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s98 # say5035
-label dmorte_s98:  # -
+label morte_s98:  # -
     SPEAKER 'Эй! Ты оглох, что ли? Ты что творишь?'
 
     menu:
         'Слушай, я хочу поговорить с этим парнем. Проблемы?':
             # r266 # reply5036
-            $ dmorteLogic.r5036_action()
-            jump dmorte_s99
+            $ morteLogic.r5036_action()
+            jump morte_s99
 
         'Ничего. Идем.':
             # r267 # reply5037
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s99 # say5038
-label dmorte_s99:  # from 97.0 98.0 # Check EXTERN ~DSOEGO~ : 3
+label morte_s99:  # from 97.0 98.0 # Check EXTERN ~DSOEGO~ : 3
     SPEAKER 'Тогда *не слушай* меня больше — тебя похоронят.'
 
     menu:
         'Да-да, а ты сможешь поплакаться на панихиде. А пока — умолкни.':
             # r268 # reply5039
-            jump dmorte_dispose
+            jump morte_dispose
 
         'А, ты прав. Забудь об этом. Идем.':
             # r269 # reply5040
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s100 # say5041
-label dmorte_s100:  # - # Check EXTERN ~DSOEGO~ : 21
+label morte_s100:  # - # Check EXTERN ~DSOEGO~ : 21
     SPEAKER 'Что ты *наделал*? Если ты хочешь убить его, сделай это!'
 
     menu:
         'Я это и *хотел*! Я свернул ему шею! Он не должен теперь шевелиться!':
             # r270 # reply5042
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s101 # say5043
-label dmorte_s101:  # - # Check EXTERN ~DSOEGO~ : 11
+label morte_s101:  # - # Check EXTERN ~DSOEGO~ : 11
     SPEAKER 'По крайней мере он *ходить* умеет, — Морт фыркает. — Радость о полета пропадает в тот момент, когда мне хочется кого-то пнуть.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s102 # say5049
-label dmorte_s102:  # -
+label morte_s102:  # -
     SPEAKER 'Эй, шеф! Ты что творишь?!'
 
     menu:
         'Я хотел поговорить с этим писарем. Он может кое-что знать о том, как я попал сюда.':
             # r271 # reply5050
-            jump dmorte_s103
+            jump morte_s103
 
 
 # s103 # say5052
-label dmorte_s103:  # from 102.0 # Check EXTERN ~DDHALL~ : 0
+label morte_s103:  # from 102.0 # Check EXTERN ~DDHALL~ : 0
     SPEAKER 'Послушай, трясти черепушкой с трухлявыми — это ПОСЛЕДНЯЯ мысль, которая должна…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s104 # say5053
-label dmorte_s104:  # - # Check EXTERN ~DDHALL~ : 1
+label morte_s104:  # - # Check EXTERN ~DDHALL~ : 1
     SPEAKER 'И мы *тем более* не должны болтать с больными трухляками. Давай, пошли отсюда. Чем быстрее мы свалим отсюда, тем лучш…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s105 # say6071
-label dmorte_s105:  # -
+label morte_s105:  # -
     SPEAKER 'Шеф, ты как, вернулся? Ты вроде как завис.'
 
     menu:
         'Нет, я в порядке. Ты знаешь, что это был за дух?':
             # r272 # reply6075
-            $ dmorteLogic.r6075_action()
-            jump dmorte_s106
+            $ morteLogic.r6075_action()
+            jump morte_s106
 
         'Я в порядке. Идем.':
             # r273 # reply6076
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s106 # say6072
-label dmorte_s106:  # from 105.0
+label morte_s106:  # from 105.0
     SPEAKER 'Э? Дух?'
 
     menu:
         'Ну, призрак, с котором я разговаривал. Призрак женщины.':
             # r274 # reply6077
-            jump dmorte_s107
+            jump morte_s107
 
 
 # s107 # say6073
-label dmorte_s107:  # from 106.0
+label morte_s107:  # from 106.0
     SPEAKER 'Ты тряс своей черепушкой с какой-то женщиной? Где? — Морт недоуменно оглядывается. — А как она выглядела?'
 
     menu:
         'Она была прямо над могилой. Разве ты ее не видел?':
             # r275 # reply6078
-            jump dmorte_s108
+            jump morte_s108
 
 
 # s108 # say6074
-label dmorte_s108:  # from 107.0
+label morte_s108:  # from 107.0
     SPEAKER 'Э… нет, просто ты ненадолго завис и стоял как вкопанный. Я уж стал бояться, что ты снова свихнешься и набросишься на меня.'
 
     menu:
         'Нет, я в порядке… кажется. Идем.':
             # r276 # reply6079
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s109 # say6324
-label dmorte_s109:  # - # Check EXTERN ~DPOST~ : 3 Check EXTERN ~DPOST~ : 4 Check EXTERN ~DPOST~ : 5 Check EXTERN ~DPOST~ : 2
+label morte_s109:  # - # Check EXTERN ~DPOST~ : 3 Check EXTERN ~DPOST~ : 4 Check EXTERN ~DPOST~ : 5 Check EXTERN ~DPOST~ : 2
     SPEAKER 'Это напоминает мне одну мою работенку. Кажется, он смущен. Ну, только… без махания руками.'
 
     menu:
-        'Осмотреть труп.' if dmorteLogic.r6325_condition():
+        'Осмотреть труп.' if morteLogic.r6325_condition():
             # r277 # reply6325
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Осмотреть труп.' if dmorteLogic.r6326_condition():
+        'Осмотреть труп.' if morteLogic.r6326_condition():
             # r278 # reply6326
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Хм-м. Интересно, это сработает с другими записками?..' if dmorteLogic.r6327_condition():
+        'Хм-м. Интересно, это сработает с другими записками?..' if morteLogic.r6327_condition():
             # r279 # reply6327
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Хм-м. Интересно, это сработает с другими записками?..' if dmorteLogic.r6328_condition():
+        'Хм-м. Интересно, это сработает с другими записками?..' if morteLogic.r6328_condition():
             # r280 # reply6328
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Осмотреть другие записки.' if dmorteLogic.r6329_condition():
+        'Осмотреть другие записки.' if morteLogic.r6329_condition():
             # r281 # reply6329
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Использовать на трупе свою способность История костей.' if dmorteLogic.r6330_condition():
+        'Использовать на трупе свою способность История костей.' if morteLogic.r6330_condition():
             # r282 # reply6330
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить труп в покое.':
             # r283 # reply6331
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s110 # say6609
-label dmorte_s110:  # - # Check EXTERN ~DS42~ : 1
+label morte_s110:  # - # Check EXTERN ~DS42~ : 1
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
         'И что?':
             # r284 # reply6658
-            $ dmorteLogic.r6658_action()
-            jump dmorte_dispose
+            $ morteLogic.r6658_action()
+            jump morte_dispose
 
         'О… Я не хотел ему навредить.':
             # r285 # reply6659
-            $ dmorteLogic.r6659_action()
-            jump dmorte_dispose
+            $ morteLogic.r6659_action()
+            jump morte_dispose
 
         'Ну, тогда ладно. Может, в другой раз.':
             # r286 # reply6660
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s111 # say6610
-label dmorte_s111:  # - # Check EXTERN ~DS42~ : 1
+label morte_s111:  # - # Check EXTERN ~DS42~ : 1
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
         'Седобородый?':
             # r287 # reply6661
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не думаю, что он имеет что-то против.':
             # r288 # reply6662
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r289 # reply6663
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s112 # say6611
-label dmorte_s112:  # - # Check EXTERN ~DS42~ : 4 Check EXTERN ~DS42~ : 9 Check EXTERN ~DS42~ : 10
+label morte_s112:  # - # Check EXTERN ~DS42~ : 4 Check EXTERN ~DS42~ : 9 Check EXTERN ~DS42~ : 10
     SPEAKER 'Может, уже хватит? У него руки сейчас отвалятся.'
 
     menu:
-        'Скрестить свои руки.' if dmorteLogic.r6664_condition():
+        'Скрестить свои руки.' if morteLogic.r6664_condition():
             # r290 # reply6664
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Подстроиться под движения скелета… посмотреть, что получится.' if dmorteLogic.r6665_condition():
+        'Подстроиться под движения скелета… посмотреть, что получится.' if morteLogic.r6665_condition():
             # r291 # reply6665
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Э…':
             # r292 # reply6666
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить скелета в покое.':
             # r293 # reply6667
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s113 # say6771
-label dmorte_s113:  # from 54.0 54.1 # Check EXTERN ~DDABUS~ : 3
+label morte_s113:  # from 54.0 54.1 # Check EXTERN ~DDABUS~ : 3
     SPEAKER 'Она заправляет городом. Ты узнаешь ее, когда увидишь: у нее вокруг лица клинки, она ростом с гиганта и парит над землей, совсем как эти парни. Морт кивает на дабуса, смотрящего на вас обоих. Про нее никто почти ничего не знает… она не очень говорлива. Все, что тебе следует знать: не зли ее. Если увидишь ее, мой тебе совет — тикай.'
 
     menu:
         'Понятно.':
             # r294 # reply2784
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s114 # say6784
-label dmorte_s114:  # - # Check EXTERN ~DDABUS~ : 3
+label morte_s114:  # - # Check EXTERN ~DDABUS~ : 3
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти козлиные морды пытаются сказать. Нужен переводчик? Поищи коренного сигильца.'
 
     menu:
         'Понятно.':
             # r295 # reply6955
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s115 # say6786
-label dmorte_s115:  # - # Check EXTERN ~DANNAH~ : 43
+label morte_s115:  # - # Check EXTERN ~DANNAH~ : 43
     SPEAKER 'Ха, да *есть* у них имена. Я уверен в этом.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s116 # say6790
-label dmorte_s116:  # - # Check EXTERN ~DANNAH~ : 40 Check EXTERN ~DDABUS~ : 6
+label morte_s116:  # - # Check EXTERN ~DANNAH~ : 40 Check EXTERN ~DDABUS~ : 6
     SPEAKER 'Вот *ты* и скажи, бесовка.'
 
     menu:
         'Хватит, Морт. Анна, ты можешь задать ему другие вопросы?':
             # r296 # reply6956
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь. Уходим отсюда.':
             # r297 # reply6957
-            $ dmorteLogic.r6957_action()
-            jump dmorte_dispose
+            $ morteLogic.r6957_action()
+            jump morte_dispose
 
 
 # s117 # say6794
-label dmorte_s117:  # - # Check EXTERN ~DDABUS~ : 3
+label morte_s117:  # - # Check EXTERN ~DDABUS~ : 3
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси нашу маленькую бесовку, — он кивает на Анну. — Она из Улья.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r298 # reply6958
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s118 # say6797
-label dmorte_s118:  # - # Check EXTERN ~DDABUS~ : 3
+label morte_s118:  # - # Check EXTERN ~DDABUS~ : 3
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? — он кивает на Даккона. — Попроси нашего ханжу-молчуна перевести.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r299 # reply6959
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s119 # say6800
-label dmorte_s119:  # - # Check EXTERN ~DDABUS~ : 3
+label morte_s119:  # - # Check EXTERN ~DDABUS~ : 3
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси танарри, — он кивает на Падшую Грацию. — Наверное, она все время общалась с этими парнями.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r300 # reply6960
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s120 # say7040
-label dmorte_s120:  # -
+label morte_s120:  # -
     SPEAKER 'Отвернувшись, ты замечаешь, что Морт уставился на тебя. А? А?'
 
     menu:
         'Что такое?':
             # r301 # reply7055
-            jump dmorte_s121
+            jump morte_s121
 
 
 # s121 # say7041
-label dmorte_s121:  # from 120.0
+label morte_s121:  # from 120.0
     SPEAKER 'Ты *видел*, как эта мертвая красотка меня осматривала? — зубы Морта стучат в предвкушении. — Она ищет какого-то счастливчика-рубаку, который согреет ее уютненький гробик.'
 
     menu:
-        '*Пожалуйста*, только не начинай.' if dmorteLogic.r7056_condition():
+        '*Пожалуйста*, только не начинай.' if morteLogic.r7056_condition():
             # r302 # reply7056
-            $ dmorteLogic.r7056_action()
-            jump dmorte_s122
+            $ morteLogic.r7056_action()
+            jump morte_s122
 
-        'О чем это ты *толкуешь*?' if dmorteLogic.r7057_condition():
+        'О чем это ты *толкуешь*?' if morteLogic.r7057_condition():
             # r303 # reply7057
-            $ dmorteLogic.r7057_action()
-            jump dmorte_s47
+            $ morteLogic.r7057_action()
+            jump morte_s47
 
-        'Что, ты имеешь в виду этот бессмысленный пустой могильный взгляд?' if dmorteLogic.r7058_condition():
+        'Что, ты имеешь в виду этот бессмысленный пустой могильный взгляд?' if morteLogic.r7058_condition():
             # r304 # reply7058
-            $ dmorteLogic.r7058_action()
-            jump dmorte_s47
+            $ morteLogic.r7058_action()
+            jump morte_s47
 
 
 # s122 # say7042
-label dmorte_s122:  # from 121.0
+label morte_s122:  # from 121.0
     SPEAKER 'Морт игнорирует тебя, становясь задумчивым. Вообще-то я не возражаю против внимания к себе… просто мне больше нравится, когда за мной видят нечто большее, чем просто череп, понимаешь? У меня есть чувства, которые доминируют над моими животными инстинктами. Я хочу уважения, а не просто ночного летания по мавзолею.'
 
     menu:
         'Продолжай в том же духе, и *я* отправлю тебя куда-нибудь полетать.':
             # r305 # reply7059
-            jump dmorte_s123
+            jump morte_s123
 
         'Морт, *ты* — череп. Для всех ты только череп. Смирись с этим.':
             # r306 # reply7060
-            jump dmorte_s124
+            jump morte_s124
 
         'Понимаю. А теперь идем отсюда, хорошо?':
             # r307 # reply7061
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s123 # say7043
-label dmorte_s123:  # from 122.0
+label morte_s123:  # from 122.0
     SPEAKER 'Ого, шеф… Морт немного отлетает, чтобы ты не смог до него дотянуться. Женщинам больше нравятся любовники, а не бойцы.'
 
     menu:
         'Ты, наверное, *последний* из всех, от кого я хотел бы слушать советы по части романтики.':
             # r308 # reply7062
-            jump dmorte_s126
+            jump morte_s126
 
         'Как знаешь, Морт. Идем.':
             # r309 # reply7063
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s124 # say7044
-label dmorte_s124:  # from 122.1
+label morte_s124:  # from 122.1
     SPEAKER 'Да, я просто череп, но у меня большое сердце.'
 
     menu:
         'Вообще-то, у тебя его *тоже* нет.':
             # r310 # reply7064
-            jump dmorte_s125
+            jump morte_s125
 
         'Как знаешь, Морт. Идем.':
             # r311 # reply7065
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s125 # say7045
-label dmorte_s125:  # from 124.0
+label morte_s125:  # from 124.0
     SPEAKER 'Тебе наплевать на мою жизнь, мои мечты и чаяния?! Отлично, ну и пусть. У меня нет сердца, зато у меня есть *душа*.'
 
     menu:
         'Ну, вообще-то, я могу поспорить на что угодно, что… а, забудь. Идем.':
             # r312 # reply7066
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Как знаешь, Морт. Идем.':
             # r313 # reply7067
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s126 # say7046
-label dmorte_s126:  # from 123.0
+label morte_s126:  # from 123.0
     SPEAKER 'Будь у тебя хоть половина того здравого смысла, с которым ты умер, ты бы понял, — голос Морта становится жутко самодовольным. — Что касается летописей любви, отмечу, что все они были написаны мной.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r314 # reply7068
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s127 # say7071
-label dmorte_s127:  # -
+label morte_s127:  # -
     SPEAKER 'Морт изучает скелет, но затем качает головой. Не… Этот слишком чистый… на нем почти не осталось мяса. К тому же, я никогда не смогу очистить кости от этой побелки.'
 
     menu:
         'Не знаю, если он — 'слишком чистый'… то тебе стоит изучить значение слова чистота.':
             # r315 # reply7076
-            jump dmorte_s70
+            jump morte_s70
 
         'Ладно. Идем.':
             # r316 # reply7077
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s128 # say7130
-label dmorte_s128:  # - # Check EXTERN ~DHIVEF1~ : 8
+label morte_s128:  # - # Check EXTERN ~DHIVEF1~ : 8
     SPEAKER 'Точно!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s129 # say7187
-label dmorte_s129:  # - # Check EXTERN ~DHARLOTN~ : 8
+label morte_s129:  # - # Check EXTERN ~DHARLOTN~ : 8
     SPEAKER 'Мимир — это говорящая энциклопедия. Это я, шеф.'
 
     menu:
         'Понятно. Ладно, не парься насчет этого, Морт. Если поглядеть на нее, то я скорее спасаю тебя от второй смерти.':
             # r317 # reply7483
-            $ dmorteLogic.r7483_action()
-            jump dmorte_dispose
+            $ morteLogic.r7483_action()
+            jump morte_dispose
 
         'Просто уходим отсюда. Прощай, красавица.':
             # r318 # reply7484
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s130 # say7188
-label dmorte_s130:  # -
+label morte_s130:  # -
     SPEAKER 'Морт, словно загипнотизированный, очарованно слушает поток оскорблений, изливающийся изо рта проститутки. После этой словесной лавины Морт несколько мгновений молчит, затем поворачивается к тебе. Ого, шеф. Есть несколько новых ругательств в моем старом добром арсенале. Он поворачивается назад к переводящей дыхание проститутке. И я тебя тоже люблю. [MRT387]'
 
     menu:
         'Уйти.':
             # r319 # reply7485
-            $ dmorteLogic.r7485_action()
-            jump dmorte_dispose
+            $ morteLogic.r7485_action()
+            jump morte_dispose
 
 
 # s131 # say7775
-label dmorte_s131:  # -
+label morte_s131:  # -
     SPEAKER 'Ого, шеф. Морт встревает прежде, чем ты заговариваешь с существом. Лучше захлопнись. Тебе не следует трясти своей черепушкой с нечистью на улице. Пойдем.'
 
     menu:
         'Я хочу задать ему несколько вопросов…':
             # r320 # reply7776
-            jump dmorte_s132
+            jump morte_s132
 
         'Оставить существо в покое.':
             # r321 # reply7777
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s132 # say7778
-label dmorte_s132:  # from 131.0 # Check EXTERN ~ABISHAB~ : 11
+label morte_s132:  # from 131.0 # Check EXTERN ~ABISHAB~ : 11
     SPEAKER 'Нет, не хочешь. Морт украдкой смотрит на существо, затем поворачивается назад, понижая голос до шепота. Они очень обидчивы. Давай уйдем отсюда.'
 
     menu:
         'Я все же рискну.':
             # r322 # reply7779
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить существо в покое.':
             # r323 # reply7780
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s133 # say7805
-label dmorte_s133:  # -
+label morte_s133:  # -
     SPEAKER 'Видя, что ты собираешься заговорить с существом, Морт шумно вздыхает.'
 
     menu:
         'Да?':
             # r324 # reply7806
-            jump dmorte_s134
+            jump morte_s134
 
 
 # s134 # say7807
-label dmorte_s134:  # from 133.0 # Check EXTERN ~ABISHAB~ : 11
+label morte_s134:  # from 133.0 # Check EXTERN ~ABISHAB~ : 11
     SPEAKER 'А, нет, ничего… жизнь — лучший учитель, знаешь ли, — он кивает на существо. — Давай, продолжай.'
 
     menu:
         'Я так и сделаю.':
             # r325 # reply7808
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ладно, неважно. Идем.':
             # r326 # reply7809
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s135 # say2349
-label dmorte_s135:  # from 44.0 44.1 # Check EXTERN ~DGITH~ : 7
+label morte_s135:  # from 44.0 44.1 # Check EXTERN ~DGITH~ : 7
     SPEAKER 'Ага, 'гит'… Морт оглядывается на гита, который все еще смотрит на тебя. Поговорим об этом в другой раз.'
 
     menu:
         'Я пока еще не готов уйти. Сначала я задам ему пару вопросов…':
             # r327 # reply9035
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить гита в покое.':
             # r328 # reply9036
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s136 # say9860
-label dmorte_s136:  # -
+label morte_s136:  # -
     SPEAKER 'Брось, шеф… ты убьешь бедолагу, прежде чем тебе удастся его разбудить!'
 
     menu:
         'Ты прав, Морт. Идем.':
             # r329 # reply9882
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s137 # say11946
-label dmorte_s137:  # -
+label morte_s137:  # -
     SPEAKER 'Морт подлетает. О чем речь, шеф?'
 
     menu:
         'Видишь эти зубы?':
             # r330 # reply11974
-            jump dmorte_s138
+            jump morte_s138
 
         'Ничего, неважно.':
             # r331 # reply11975
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s138 # say11947
-label dmorte_s138:  # from 137.0
+label morte_s138:  # from 137.0
     SPEAKER 'Морт глядит на твою ладонь. Ух-х-х. Кажется, его покоробило. Вот уж мелкие уродцы, а?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s139 # say11948
-label dmorte_s139:  # -
+label morte_s139:  # -
     SPEAKER 'Задвинься, — Морт вздрагивает. — А ты бы хотел, чтобы они оказались в *тебе*?'
 
     menu:
         'Ладно тебе, Морт, кажется, ты им нравишься. Посмотри, как они на тебя смотрят.':
             # r332 # reply11976
-            jump dmorte_s140
+            jump morte_s140
 
         'Схватить Морта, сунуть зубы ему в рот.':
             # r333 # reply11977
-            $ dmorteLogic.r11977_action()
-            jump dmorte_s141
+            $ morteLogic.r11977_action()
+            jump morte_s141
 
         'Тогда неважно.':
             # r334 # reply11978
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s140 # say11949
-label dmorte_s140:  # from 139.0
+label morte_s140:  # from 139.0
     SPEAKER 'Лучше этим мелким засранцам не приближаться ко мне, иначе я… — Морт умолкает. — Знаешь, я понятия не имею, чем угрожать зубам.'
 
     menu:
         'Осмотреть зубы.':
             # r335 # reply11979
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Схватить Морта, сунуть зубы ему в рот.':
             # r336 # reply11980
-            $ dmorteLogic.r11980_action()
-            jump dmorte_s141
+            $ morteLogic.r11980_action()
+            jump morte_s141
 
         'Тогда неважно.':
             # r337 # reply11981
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s141 # say11950
-label dmorte_s141:  # from 139.1 140.1
+label morte_s141:  # from 139.1 140.1
     SPEAKER 'Схватка длится не долго. Ты ловишь Морта в захват — единственное движение, которое ты можешь сделать — и, пока он, кусаясь, пытается освободиться, зубы спрыгивают с твоей руки и налетают на его челюсть. Морт воет, а зубы Ингресс быстро выкорчевывают его старые зубы и прыгают в открывшиеся полости.'
 
     menu:
         'Ну вот, Морт. Ведь было не так плохо?':
             # r338 # reply11982
-            $ dmorteLogic.r11982_action()
-            jump dmorte_s143
+            $ morteLogic.r11982_action()
+            jump morte_s143
 
 
 # s142 # say11951
-label dmorte_s142:  # from 149.0
+label morte_s142:  # from 149.0
     SPEAKER 'Морт продолжает выть. Зубы начинают обустраиваться и пускать корни с жутким хрустом.'
 
     menu:
         'Морт? С тобой все в порядке?':
             # r339 # reply11983
-            $ dmorteLogic.r11983_action()
-            jump dmorte_s143
+            $ morteLogic.r11983_action()
+            jump morte_s143
 
 
 # s143 # say11952
-label dmorte_s143:  # from 141.0 142.0
+label morte_s143:  # from 141.0 142.0
     SPEAKER 'Кажется, Морт тебя не слышит… Он продолжает выть, затем вдруг начинает клацать зубами. Ему удается трижды сильно клацнуть, прежде чем верхние зубы сцепляются с нижними и не дают ему открыть рот.'
 
     menu:
         'Ух ты.':
             # r340 # reply11984
-            jump dmorte_s144
+            jump morte_s144
 
 
 # s144 # say11953
-label dmorte_s144:  # from 143.0
+label morte_s144:  # from 143.0
     SPEAKER 'Морт что-то тебе бормочет, его глаза широко раскрыты.'
 
     menu:
-        'Значит… они тебе нравятся?' if dmorteLogic.r11985_condition():
+        'Значит… они тебе нравятся?' if morteLogic.r11985_condition():
             # r341 # reply11985
-            jump dmorte_s145
+            jump morte_s145
 
-        'Морт, ты в порядке?' if dmorteLogic.r11986_condition():
+        'Морт, ты в порядке?' if morteLogic.r11986_condition():
             # r342 # reply11986
-            jump dmorte_s150
+            jump morte_s150
 
 
 # s145 # say11954
-label dmorte_s145:  # from 144.0
+label morte_s145:  # from 144.0
     SPEAKER 'Внезапно зубы расцепляются, и Морт делает глубокий вздох. Я *убью* тебя за это, — говорит он. — Это было нечестно.'
 
     menu:
         'Как они тебе?':
             # r343 # reply11987
-            jump dmorte_s146
+            jump morte_s146
 
 
 # s146 # say11955
-label dmorte_s146:  # from 145.0 150.0
+label morte_s146:  # from 145.0 150.0
     SPEAKER 'Морт пробует двигать челюстью. Странно. Но неплохо, — внезапно зубы превращаются в клыки. — О-о-о! Они меняются! Они превращаются в нормальные зубы, потом в клики, потом обратно… Думаю, они мне понравятся.'
 
     menu:
-        'Извини, Морт. Я не желал тебе зла.' if dmorteLogic.r11988_condition():
+        'Извини, Морт. Я не желал тебе зла.' if morteLogic.r11988_condition():
             # r344 # reply11988
-            jump dmorte_s147
+            jump morte_s147
 
-        'Вот видишь? Разве я не был прав?' if dmorteLogic.r11989_condition():
+        'Вот видишь? Разве я не был прав?' if morteLogic.r11989_condition():
             # r345 # reply11989
-            jump dmorte_s147
+            jump morte_s147
 
 
 # s147 # say11956
-label dmorte_s147:  # from 146.0 146.1
+label morte_s147:  # from 146.0 146.1
     SPEAKER 'О, я все еще зол на тебя, — отвечает Морт. Он ухмыляется, его зубы снова превращаются в клыки. Погоди мне.'
 
     menu:
-        'Э… месть еще никому не помогала, Морт… Э, пошли.' if dmorteLogic.r11990_condition():
+        'Э… месть еще никому не помогала, Морт… Э, пошли.' if morteLogic.r11990_condition():
             # r346 # reply11990
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Поблагодаришь меня позже. Вот увидишь.' if dmorteLogic.r11991_condition():
+        'Поблагодаришь меня позже. Вот увидишь.' if morteLogic.r11991_condition():
             # r347 # reply11991
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s148 # say11957
-label dmorte_s148:  # -
+label morte_s148:  # -
     SPEAKER 'Что там? Морт подлетает ближе и смотрит тебе на ладонь. Эй… Кажется, они что-то замышляют, так ведь?'
 
     menu:
         'Точно замышляют, так…':
             # r348 # reply11992
-            jump dmorte_s149
+            jump morte_s149
 
 
 # s149 # say11958
-label dmorte_s149:  # from 148.0
+label morte_s149:  # from 148.0
     SPEAKER 'То, что происходит дальше, трудно описать… и больно смотреть. Не успеваешь ты закрыть ладонь, как зубы спрыгивают с твоей руки и налетают на его челюсть. Морт воет, а зубы Ингресс быстро выкорчевывают его старые зубы и прыгают в открывшиеся полости.'
 
     menu:
         'Морт!':
             # r349 # reply11993
-            jump dmorte_s142
+            jump morte_s142
 
 
 # s150 # say11959
-label dmorte_s150:  # from 144.1
+label morte_s150:  # from 144.1
     SPEAKER 'Внезапно зубы расцепляются, и Морт делает глубокий вздох. Я *убью* тебя за это! Ты все спланировал! Я знаю!'
 
     menu:
         'Слушай, я этого не хотел… Я даже предупредил тебя. Э… как они тебе?':
             # r350 # reply11994
-            jump dmorte_s146
+            jump morte_s146
 
 
 # s151 # say12389
-label dmorte_s151:  # - # Check EXTERN ~DTEGARIN~ : 12
+label morte_s151:  # - # Check EXTERN ~DTEGARIN~ : 12
     SPEAKER 'Морт шепчет тебе: Босс, не нравится мне это. Они не должны здесь находиться. На Кровавой войне небожители так просто нечисти отпуска не дают. Им что-то *нужно*. Будь осторожен. Тем временем Тегарин продолжает отвечать своему спутнику…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s152 # say12449
-label dmorte_s152:  # - # Check EXTERN ~DAETHEL~ : 11
+label morte_s152:  # - # Check EXTERN ~DAETHEL~ : 11
     SPEAKER 'Шеф, я более чем уверен, что эти пни — не самые большие шишки. Мне кажется, что они сбежали и теперь ищут какой-нибудь способ повысить свой статус в Бааторе. Тебе не стоит разговаривать с ними, шеф… непонятно, в какую игру они играют, а тебя они могут поджарить… буквально.'
 
     menu:
         'Хорошо, Морт. Я задам еще парочку вопросов этим двум…':
             # r351 # reply12450
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Хорошо, Морт. С этими я закончил.':
             # r352 # reply12451
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s153 # say12466
-label dmorte_s153:  # - # Check EXTERN ~DBARIA~ : 4
+label morte_s153:  # - # Check EXTERN ~DBARIA~ : 4
     SPEAKER 'Морт подлетает поближе и шепчет тебе на ухо: Он *прав*, шеф… Не знаю, что вас так взбесило…'
 
     menu:
         'Хорошо… Я только хотел задать вопрос…':
             # r353 # reply12553
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Умолкни, ноющий череп! А ты, козлик, сдохни…':
             # r354 # reply12554
-            $ dmorteLogic.r12554_action()
-            jump dmorte_dispose
+            $ morteLogic.r12554_action()
+            jump morte_dispose
 
         'Э, нет… это все *ты*, и ты об этом пожалеешь…':
             # r355 # reply12555
-            $ dmorteLogic.r12555_action()
-            jump dmorte_dispose
+            $ morteLogic.r12555_action()
+            jump morte_dispose
 
         'Тогда забудь об этом. Прощай.':
             # r356 # reply12556
-            $ dmorteLogic.r12556_action()
-            jump dmorte_dispose
+            $ morteLogic.r12556_action()
+            jump morte_dispose
 
 
 # s154 # say12467
-label dmorte_s154:  # - # Check EXTERN ~DBARIA~ : 20
+label morte_s154:  # - # Check EXTERN ~DBARIA~ : 20
     SPEAKER 'Да, да! То что надо!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s155 # say12621
-label dmorte_s155:  # - # Check EXTERN ~DCREED~ : 30
+label morte_s155:  # - # Check EXTERN ~DCREED~ : 30
     SPEAKER 'Морт пытается отстраниться под общим взглядом. Что? Что? Тебе кажется, что будь у него губы, то он бы сейчас невинно посвистывал.'
 
     menu:
         'Ты можешь это объяснить, Морт?':
             # r357 # reply12854
-            jump dmorte_s156
+            jump morte_s156
 
-        'Что такое 'мимир'?' if dmorteLogic.r12855_condition():
+        'Что такое 'мимир'?' if morteLogic.r12855_condition():
             # r358 # reply12855
-            $ dmorteLogic.r12855_action()
-            jump dmorte_s157
+            $ morteLogic.r12855_action()
+            jump morte_s157
 
         'Не обращай на него внимания… Ты можешь ответить на мои вопросы?':
             # r359 # reply12856
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s156 # say12622
-label dmorte_s156:  # from 155.0 # Check EXTERN ~DCREED~ : 32
+label morte_s156:  # from 155.0 # Check EXTERN ~DCREED~ : 32
     SPEAKER 'Ну, я скажу, что мы должны выслушать этого мужчину. Правильно? Морт поворачивается к ловцу крыс и окидывает его тяжелым взглядом.'
 
     menu:
         'Нет… давай лучше выслушаем, что скажешь ты, Морт.':
             # r360 # reply12857
-            jump dmorte_s158
+            jump morte_s158
 
-        'Секунду… что такое 'мимир'?' if dmorteLogic.r12858_condition():
+        'Секунду… что такое 'мимир'?' if morteLogic.r12858_condition():
             # r361 # reply12858
-            $ dmorteLogic.r12858_action()
-            jump dmorte_s157
+            $ morteLogic.r12858_action()
+            jump morte_s157
 
         'Повернуться к ловцу крыс.':
             # r362 # reply12859
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s157 # say12623
-label dmorte_s157:  # from 155.1 156.1 # Check EXTERN ~DCREED~ : 32 Check EXTERN ~DCREED~ : 59
+label morte_s157:  # from 155.1 156.1 # Check EXTERN ~DCREED~ : 32 Check EXTERN ~DCREED~ : 59
     SPEAKER 'Морт смущенно закатывает глаза. Это… говорящая энциклопедия. Не то, чтобы я этим гордился. А теперь давай выслушаем этого приятеля, хорошо?'
 
     menu:
         'Хорошо.':
             # r363 # reply12860
-            $ dmorteLogic.r12860_action()
-            jump dmorte_dispose
+            $ morteLogic.r12860_action()
+            jump morte_dispose
 
         'Нет, я выслушал достаточно. Прощай, крысолов.':
             # r364 # reply12861
-            $ dmorteLogic.r12861_action()
-            jump dmorte_dispose
+            $ morteLogic.r12861_action()
+            jump morte_dispose
 
 
 # s158 # say12624
-label dmorte_s158:  # from 156.0 # Check EXTERN ~DCREED~ : 32 Check EXTERN ~DCREED~ : 59
+label morte_s158:  # from 156.0 # Check EXTERN ~DCREED~ : 32 Check EXTERN ~DCREED~ : 59
     SPEAKER 'Да ладно, шеф… зачем мне тебя отвлекать? Я сказал тебе все полезное, что знаю *сам*. Пусть лучше этот пень выскажется по этой теме.'
 
     menu:
         'Хорошо.':
             # r365 # reply12862
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Неважно. Пошли… Прощай, крысолов.':
             # r366 # reply12863
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s159 # say12625
-label dmorte_s159:  # - # Check EXTERN ~DCREED~ : 40
+label morte_s159:  # - # Check EXTERN ~DCREED~ : 40
     SPEAKER 'Точно, шеф! То, что надо!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s160 # say12626
-label dmorte_s160:  # - # Check EXTERN ~DCREED~ : 49 Check EXTERN ~DCREED~ : 15 Check EXTERN ~DCREED~ : 59
+label morte_s160:  # - # Check EXTERN ~DCREED~ : 49 Check EXTERN ~DCREED~ : 15 Check EXTERN ~DCREED~ : 59
     SPEAKER 'Умереть, шеф… умереть.'
 
     menu:
         'А вот ты достаточно дружелюбен, крысолов…':
             # r367 # reply12864
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Понятно. Еще вопрос…':
             # r368 # reply12865
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Спасибо за информацию. Прощай.':
             # r369 # reply12866
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s161 # say12627
-label dmorte_s161:  # - # Check EXTERN ~DCREED~ : 18 Check EXTERN ~DCREED~ : 15 Check EXTERN ~DCREED~ : 59
+label morte_s161:  # - # Check EXTERN ~DCREED~ : 18 Check EXTERN ~DCREED~ : 15 Check EXTERN ~DCREED~ : 59
     SPEAKER 'Умереть, шеф… умереть.'
 
     menu:
         'А… Что ты говорил о людях, которые платят за крыс?':
             # r370 # reply12867
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Понятно Я хотел бы узнать о кое-чем еще…':
             # r371 # reply12868
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Понятно. Прощай.':
             # r372 # reply12869
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s162 # say13748
-label dmorte_s162:  # -
+label morte_s162:  # -
     SPEAKER 'Да, вот уж у кого шарики за ролики заехали, — Морт закатывает глаза. — Бессмысленно общаться с хаоситеками, шеф. Они все из ума выжили.'
 
     menu:
-        'Хаоситеки?' if dmorteLogic.r13774_condition():
+        'Хаоситеки?' if morteLogic.r13774_condition():
             # r373 # reply13774
-            $ dmorteLogic.r13774_action()
-            jump dmorte_s163
+            $ morteLogic.r13774_action()
+            jump morte_s163
 
-        'Еще раз, кто такие хаоситеки?' if dmorteLogic.r13775_condition():
+        'Еще раз, кто такие хаоситеки?' if morteLogic.r13775_condition():
             # r374 # reply13775
-            $ dmorteLogic.r13775_action()
-            jump dmorte_s163
+            $ morteLogic.r13775_action()
+            jump morte_s163
 
-        'Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.' if dmorteLogic.r13776_condition():
+        'Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.' if morteLogic.r13776_condition():
             # r375 # reply13776
-            $ dmorteLogic.r13776_action()
-            jump dmorte_dispose
+            $ morteLogic.r13776_action()
+            jump morte_dispose
 
 
 # s163 # say13749
-label dmorte_s163:  # from 162.0 162.1
+label morte_s163:  # from 162.0 162.1
     SPEAKER 'Они типа 'фракция', у которой нет никаких правил… кроме того, чтобы не держать у себя в голове одну мысль слишком долго. Иногда их еще называют хаоситами. Полагаю, нет нужды объяснять почему.'
 
     menu:
         'А как тогда к ним приходят люди?':
             # r376 # reply13777
-            jump dmorte_s164
+            jump morte_s164
 
         'Понятно. Идем.':
             # r377 # reply13778
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s164 # say13750
-label dmorte_s164:  # from 163.0
+label morte_s164:  # from 163.0
     SPEAKER 'Они просто привлекают новых людей, словно мух… наверное, тех, кто и так уже достаточно спятил или хаотичен. Не думаю, что у них есть для этого вербовщики… хотя наверняка на их счет ничего нельзя сказать.'
 
     menu:
         'Понятно. Спасибо за информацию.':
             # r378 # reply13779
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s165 # say13828
-label dmorte_s165:  # -
+label morte_s165:  # -
     SPEAKER 'Да, вот уж у кого шарики за ролики заехали, — Морт закатывает глаза. — Бессмысленно общаться с хаоситеками, шеф. Они все из ума выжили.'
 
     menu:
-        'Хаоситеки?' if dmorteLogic.r13986_condition():
+        'Хаоситеки?' if morteLogic.r13986_condition():
             # r379 # reply13986
-            $ dmorteLogic.r13986_action()
-            jump dmorte_s166
+            $ morteLogic.r13986_action()
+            jump morte_s166
 
-        'Еще раз, кто такие хаоситеки?' if dmorteLogic.r13987_condition():
+        'Еще раз, кто такие хаоситеки?' if morteLogic.r13987_condition():
             # r380 # reply13987
-            $ dmorteLogic.r13987_action()
-            jump dmorte_s166
+            $ morteLogic.r13987_action()
+            jump morte_s166
 
-        'Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.' if dmorteLogic.r13988_condition():
+        'Я думал, что смогу что-нибудь у него узнать. Ладно, пойдем отсюда.' if morteLogic.r13988_condition():
             # r381 # reply13988
-            $ dmorteLogic.r13988_action()
-            jump dmorte_dispose
+            $ morteLogic.r13988_action()
+            jump morte_dispose
 
 
 # s166 # say13829
-label dmorte_s166:  # from 165.0 165.1
+label morte_s166:  # from 165.0 165.1
     SPEAKER 'Они типа 'фракция', у которой нет никаких правил… кроме того, чтобы не держать у себя в голове одну мысль слишком долго. Иногда их еще называют хаоситами. Полагаю, нет нужды объяснять почему.'
 
     menu:
-        'А как тогда к ним приходят люди?' if dmorteLogic.r13989_condition():
+        'А как тогда к ним приходят люди?' if morteLogic.r13989_condition():
             # r382 # reply13989
-            jump dmorte_s167
+            jump morte_s167
 
         'Понятно. Тогда пойдем.':
             # r383 # reply13990
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s167 # say13830
-label dmorte_s167:  # from 166.0
+label morte_s167:  # from 166.0
     SPEAKER 'Они просто привлекают новых людей, словно мух… наверное, тех, кто и так уже достаточно спятил или хаотичен. Не думаю, что у них есть для этого вербовщики… хотя наверняка на их счет ничего нельзя сказать.'
 
     menu:
         'Понятно. Спасибо за информацию.':
             # r384 # reply13991
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s168 # say14075
-label dmorte_s168:  # - # Check EXTERN ~DAWAIT~ : 6 Check EXTERN ~DAWAIT~ : 15
+label morte_s168:  # - # Check EXTERN ~DAWAIT~ : 6 Check EXTERN ~DAWAIT~ : 15
     SPEAKER 'Ладно, шеф… — шепчет тебе Морт. — Идем. Этот трухлявенький скоро станет удобрением.'
 
     menu:
-        'Похоже на то. Пойдем отсюда.' if dmorteLogic.r14275_condition():
+        'Похоже на то. Пойдем отсюда.' if morteLogic.r14275_condition():
             # r385 # reply14275
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Похоже на то. Пойдем отсюда.' if dmorteLogic.r14276_condition():
+        'Похоже на то. Пойдем отсюда.' if morteLogic.r14276_condition():
             # r386 # reply14276
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Похоже на то. Пойдем отсюда.' if dmorteLogic.r14277_condition():
+        'Похоже на то. Пойдем отсюда.' if morteLogic.r14277_condition():
             # r387 # reply14277
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Похоже на то. Пойдем отсюда.' if dmorteLogic.r14278_condition():
+        'Похоже на то. Пойдем отсюда.' if morteLogic.r14278_condition():
             # r388 # reply14278
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s169 # say15339
-label dmorte_s169:  # - # Check EXTERN ~DADYZOEL~ : 19
+label morte_s169:  # - # Check EXTERN ~DADYZOEL~ : 19
     SPEAKER 'Порви этого лощеного щеголя, босс! Покажи ему, как это делается!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s170 # say15340
-label dmorte_s170:  # - # Check EXTERN ~DADYZOEL~ : 13
+label morte_s170:  # - # Check EXTERN ~DADYZOEL~ : 13
     SPEAKER 'Да, отвечай на вопросы!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s171 # say15341
-label dmorte_s171:  # - # Check EXTERN ~DADYZOEL~ : 20
+label morte_s171:  # - # Check EXTERN ~DADYZOEL~ : 20
     SPEAKER 'Ставлю десять медяков на того здоровенного парня в шрамах! Морт подлетает поближе и шепчет: То есть, на тебя, шеф. Не подведи нас.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s172 # say15342
-label dmorte_s172:  # - # Check EXTERN ~DADYZOEL~ : 19
+label morte_s172:  # - # Check EXTERN ~DADYZOEL~ : 19
     SPEAKER 'Ладно, шеф, на этот раз ты его достал! Дерись грязно!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s173 # say15343
-label dmorte_s173:  # - # Check EXTERN ~DADYZOEL~ : 32
+label morte_s173:  # - # Check EXTERN ~DADYZOEL~ : 32
     SPEAKER 'Это уж точно, ты, высокомерный надушенный буржуй с сахарной задницей… ты его слышал!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s174 # say15344
-label dmorte_s174:  # -
+label morte_s174:  # -
     SPEAKER 'Кто *я* такой? Ха! Я мог бы стать твоим отцом, но какая-то обезьяна меня обошла!'
 
     menu:
         'Морт, помолчи.':
             # r389 # reply15490
-            jump dmorte_s175
+            jump morte_s175
 
         'Позволить Морту продолжить.':
             # r390 # reply15491
-            jump dmorte_s175
+            jump morte_s175
 
 
 # s175 # say15345
-label dmorte_s175:  # from 174.0 174.1
+label morte_s175:  # from 174.0 174.1
     SPEAKER 'Что-то не так, принцесса? Разучилась говорить? Лучше подбери свою упавшую челюсть, пока что-нибудь в горло не залетело! Все верно, ты меня слышала! Забирай свой лифчик с рюшечками и прячься под юбку к мамке! И передай ей от меня привет!'
 
     menu:
         'Морт, *сейчас же* заткнись.':
             # r391 # reply15492
-            $ dmorteLogic.r15492_action()
-            jump dmorte_s176
+            $ morteLogic.r15492_action()
+            jump morte_s176
 
         'Позволить Морту продолжить.':
             # r392 # reply15493
-            jump dmorte_s177
+            jump morte_s177
 
 
 # s176 # say15346
-label dmorte_s176:  # from 175.0 # Check EXTERN ~DADYZOEL~ : 33
+label morte_s176:  # from 175.0 # Check EXTERN ~DADYZOEL~ : 33
     SPEAKER 'А? О… прости, шеф. Просто такие, как он, выводят меня из себя…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s177 # say15347
-label dmorte_s177:  # from 175.1 # Check EXTERN ~DADYZOEL~ : 33
+label morte_s177:  # from 175.1 # Check EXTERN ~DADYZOEL~ : 33
     SPEAKER 'А что, если б я не знал, я бы сказал…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s178 # say15348
-label dmorte_s178:  # - # Check EXTERN ~DADYZOEL~ : 35 # ~SetGlobal("Know_Mimir","GLOBAL",1) ~ EXTERN ~DADYZOEL~ 35
+label morte_s178:  # - # Check EXTERN ~DADYZOEL~ : 35 # ~SetGlobal("Know_Mimir","GLOBAL",1) ~ EXTERN ~DADYZOEL~ 35
     SPEAKER 'Что? Шеф, я всего лишь мимир! Я не умею 'драться на дуэли'!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s179 # say15349
-label dmorte_s179:  # - # Check EXTERN ~DADYZOEL~ : 36
+label morte_s179:  # - # Check EXTERN ~DADYZOEL~ : 36
     SPEAKER 'Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда.'
 
     menu:
-        'Но ты ведь НЕ мимир, Морт…' if dmorteLogic.r65537_condition():
+        'Но ты ведь НЕ мимир, Морт…' if morteLogic.r65537_condition():
             # r393 # reply65537
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s180 # say15350
-label dmorte_s180:  # - # Check EXTERN ~DADYZOEL~ : 19
+label morte_s180:  # - # Check EXTERN ~DADYZOEL~ : 19
     SPEAKER 'Брось, шеф… ты же не собираешься спустить ему это с рук? Давай-ка выпорем этого жеманного шалопая! Я займусь его глазами, пока ты будешь выколачивать из него дурь!'
 
     menu:
         'Ты прав… давай с ним разберемся.':
             # r394 # reply15494
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не в этот раз, Морт. Пошли.':
             # r395 # reply15495
-            $ dmorteLogic.r15495_action()
-            jump dmorte_dispose
+            $ morteLogic.r15495_action()
+            jump morte_dispose
 
 
 # s181 # say16613
-label dmorte_s181:  # from 185.0 # Check EXTERN ~DMFTREE~ : 28
+label morte_s181:  # from 185.0 # Check EXTERN ~DMFTREE~ : 28
     SPEAKER 'А? А, да, шеф, конечно — как скажешь.'
 
     menu:
-        'Спасибо. У меня есть вопросы, Скорбящий…' if dmorteLogic.r16881_condition():
+        'Спасибо. У меня есть вопросы, Скорбящий…' if morteLogic.r16881_condition():
             # r396 # reply16881
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Я серьезно, Морт. Приложишь в этом усилия?' if dmorteLogic.r16882_condition():
+        'Я серьезно, Морт. Приложишь в этом усилия?' if morteLogic.r16882_condition():
             # r397 # reply16882
-            $ dmorteLogic.r16882_action()
-            jump dmorte_s182
+            $ morteLogic.r16882_action()
+            jump morte_s182
 
         'Спасибо, Морт. Прощай, Скорбящий-по-деревьям.':
             # r398 # reply16883
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s182 # say16614
-label dmorte_s182:  # from 181.1 # Check EXTERN ~DANNAH~ : 99 Check EXTERN ~DIGNUS~ : 11 Check EXTERN ~DGRACE~ : 14 Check EXTERN ~DDAKKON~ : 74 Check EXTERN ~DDAKKON~ : 75 Check EXTERN ~DNORDOM~ : 1 Check EXTERN ~DVHAIL~ : 1 Check EXTERN ~DMFTREE~ : 28
+label morte_s182:  # from 181.1 # Check EXTERN ~DANNAH~ : 99 Check EXTERN ~DIGNUS~ : 11 Check EXTERN ~DGRACE~ : 14 Check EXTERN ~DDAKKON~ : 74 Check EXTERN ~DDAKKON~ : 75 Check EXTERN ~DNORDOM~ : 1 Check EXTERN ~DVHAIL~ : 1 Check EXTERN ~DMFTREE~ : 28
     SPEAKER 'Морт некоторое время молча на тебя смотрит, а затем кивает. Да, я смогу. Если это настолько важно для тебя, я сделаю это.'
 
     menu:
-        'Спасибо. Анна? А ты?' if dmorteLogic.r16884_condition():
+        'Спасибо. Анна? А ты?' if morteLogic.r16884_condition():
             # r399 # reply16884
-            $ dmorteLogic.r16884_action()
-            jump dmorte_dispose
+            $ morteLogic.r16884_action()
+            jump morte_dispose
 
-        'Спасибо. Игнус?' if dmorteLogic.r16885_condition():
+        'Спасибо. Игнус?' if morteLogic.r16885_condition():
             # r400 # reply16885
-            $ dmorteLogic.r16885_action()
-            jump dmorte_dispose
+            $ morteLogic.r16885_action()
+            jump morte_dispose
 
-        'Спасибо. Грация, ты не могла бы в этом помочь?' if dmorteLogic.r16886_condition():
+        'Спасибо. Грация, ты не могла бы в этом помочь?' if morteLogic.r16886_condition():
             # r401 # reply16886
-            $ dmorteLogic.r16886_action()
-            jump dmorte_dispose
+            $ morteLogic.r16886_action()
+            jump morte_dispose
 
-        'Спасибо. Даккон, ты поможешь этому человеку?' if dmorteLogic.r16887_condition():
+        'Спасибо. Даккон, ты поможешь этому человеку?' if morteLogic.r16887_condition():
             # r402 # reply16887
-            $ dmorteLogic.r16887_action()
-            jump dmorte_dispose
+            $ morteLogic.r16887_action()
+            jump morte_dispose
 
-        'Спасибо. Даккон, помоги этому человеку.' if dmorteLogic.r16888_condition():
+        'Спасибо. Даккон, помоги этому человеку.' if morteLogic.r16888_condition():
             # r403 # reply16888
-            $ dmorteLogic.r16888_action()
-            jump dmorte_dispose
+            $ morteLogic.r16888_action()
+            jump morte_dispose
 
-        'Спасибо. Нордом, как ты думаешь, ты сможешь помочь?' if dmorteLogic.r16889_condition():
+        'Спасибо. Нордом, как ты думаешь, ты сможешь помочь?' if morteLogic.r16889_condition():
             # r404 # reply16889
-            $ dmorteLogic.r16889_action()
-            jump dmorte_dispose
+            $ morteLogic.r16889_action()
+            jump morte_dispose
 
-        'Спасибо. Вейлор, ты сможешь помочь?' if dmorteLogic.r16890_condition():
+        'Спасибо. Вейлор, ты сможешь помочь?' if morteLogic.r16890_condition():
             # r405 # reply16890
-            $ dmorteLogic.r16890_action()
-            jump dmorte_dispose
+            $ morteLogic.r16890_action()
+            jump morte_dispose
 
         'Спасибо. У меня есть вопросы, Скорбящий…':
             # r406 # reply16891
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Спасибо, Морт. Прощай, Скорбящий-по-деревьям.':
             # r407 # reply16892
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s183 # say16615
-label dmorte_s183:  # - # Check EXTERN ~DNORDOM~ : 2
+label morte_s183:  # - # Check EXTERN ~DNORDOM~ : 2
     SPEAKER 'Знаешь, я *вообще* не представляю, что из этого может получиться. Этот знаток сделан из камня, шеф. Эти малютки просто не справятся с ним.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s184 # say16616
-label dmorte_s184:  # - # Check EXTERN ~DNORDOM~ : 3
+label morte_s184:  # - # Check EXTERN ~DNORDOM~ : 3
     SPEAKER 'Ого, вот оно как оборачивается. Не могу *поверить*, что ты вообще тратишь на это время, босс!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s185 # say16617
-label dmorte_s185:  # - # Check EXTERN ~DANNAH~ : 99 Check EXTERN ~DIGNUS~ : 11 Check EXTERN ~DGRACE~ : 14 Check EXTERN ~DDAKKON~ : 74 Check EXTERN ~DDAKKON~ : 75 Check EXTERN ~DVHAIL~ : 1 Check EXTERN ~DMFTREE~ : 28
+label morte_s185:  # - # Check EXTERN ~DANNAH~ : 99 Check EXTERN ~DIGNUS~ : 11 Check EXTERN ~DGRACE~ : 14 Check EXTERN ~DDAKKON~ : 74 Check EXTERN ~DDAKKON~ : 75 Check EXTERN ~DVHAIL~ : 1 Check EXTERN ~DMFTREE~ : 28
     SPEAKER 'Знаешь, шеф, я повидал много причудливых штуковин… Но он поразил мой разум только тем, что это вообще *возможно*.'
 
     menu:
-        'Спасибо тебе, Нордом. Морт? Что думаешь насчет этого?' if dmorteLogic.r16893_condition():
+        'Спасибо тебе, Нордом. Морт? Что думаешь насчет этого?' if morteLogic.r16893_condition():
             # r408 # reply16893
-            $ dmorteLogic.r16893_action()
-            jump dmorte_s181
+            $ morteLogic.r16893_action()
+            jump morte_s181
 
-        'Спасибо тебе, Нордом. Анна? А ты?' if dmorteLogic.r16894_condition():
+        'Спасибо тебе, Нордом. Анна? А ты?' if morteLogic.r16894_condition():
             # r409 # reply16894
-            $ dmorteLogic.r16894_action()
-            jump dmorte_dispose
+            $ morteLogic.r16894_action()
+            jump morte_dispose
 
-        'Спасибо тебе, Нордом. Игнус?' if dmorteLogic.r16895_condition():
+        'Спасибо тебе, Нордом. Игнус?' if morteLogic.r16895_condition():
             # r410 # reply16895
-            $ dmorteLogic.r16895_action()
-            jump dmorte_dispose
+            $ morteLogic.r16895_action()
+            jump morte_dispose
 
-        'Спасибо тебе, Нордом. Грация, ты не могла бы в этом помочь?' if dmorteLogic.r16896_condition():
+        'Спасибо тебе, Нордом. Грация, ты не могла бы в этом помочь?' if morteLogic.r16896_condition():
             # r411 # reply16896
-            $ dmorteLogic.r16896_action()
-            jump dmorte_dispose
+            $ morteLogic.r16896_action()
+            jump morte_dispose
 
-        'Спасибо тебе, Нордом. Даккон, ты поможешь этому человеку?' if dmorteLogic.r16897_condition():
+        'Спасибо тебе, Нордом. Даккон, ты поможешь этому человеку?' if morteLogic.r16897_condition():
             # r412 # reply16897
-            $ dmorteLogic.r16897_action()
-            jump dmorte_dispose
+            $ morteLogic.r16897_action()
+            jump morte_dispose
 
-        'Спасибо тебе, Нордом. Даккон, помоги этому человеку.' if dmorteLogic.r16898_condition():
+        'Спасибо тебе, Нордом. Даккон, помоги этому человеку.' if morteLogic.r16898_condition():
             # r413 # reply16898
-            $ dmorteLogic.r16898_action()
-            jump dmorte_dispose
+            $ morteLogic.r16898_action()
+            jump morte_dispose
 
-        'Спасибо тебе, Нордом. Вейлор, ты сможешь помочь?' if dmorteLogic.r16899_condition():
+        'Спасибо тебе, Нордом. Вейлор, ты сможешь помочь?' if morteLogic.r16899_condition():
             # r414 # reply16899
-            $ dmorteLogic.r16899_action()
-            jump dmorte_dispose
+            $ morteLogic.r16899_action()
+            jump morte_dispose
 
         'Спасибо тебе, Нордом. У меня есть несколько вопросов, Скорбящий…':
             # r415 # reply16900
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я благодарен тебе, Нордом. Прощай, Скорбящий-по-деревьям.':
             # r416 # reply16901
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s186 # say16618
-label dmorte_s186:  # - # Check EXTERN ~DIGNUS~ : 13
+label morte_s186:  # - # Check EXTERN ~DIGNUS~ : 13
     SPEAKER 'О! Я не могу на это смотреть!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s187 # say17533
-label dmorte_s187:  # - # Check EXTERN ~DANNAH~ : 107 Check EXTERN ~D300MER5~ : 5 Check EXTERN ~D300MER5~ : 2
+label morte_s187:  # - # Check EXTERN ~DANNAH~ : 107 Check EXTERN ~D300MER5~ : 5 Check EXTERN ~D300MER5~ : 2
     SPEAKER 'Почему бы и нет, босс? Будет весело пнуть его, если будет поганое настроение, верно? Хм-м… Ладно, по крайней мере, я могу пнуть от твоего имени. А еще хочется взглянуть на пятидесятифутовый прыжок от уголька!'
 
     menu:
-        'Что думаешь, Анна?' if dmorteLogic.r17583_condition():
+        'Что думаешь, Анна?' if morteLogic.r17583_condition():
             # r417 # reply17583
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Я возьму одного, торговец.' if dmorteLogic.r17584_condition():
+        'Я возьму одного, торговец.' if morteLogic.r17584_condition():
             # r418 # reply17584
-            $ dmorteLogic.r17584_action()
-            jump dmorte_dispose
+            $ morteLogic.r17584_action()
+            jump morte_dispose
 
-        'Лучше не разбрасываться медяками. У меня есть несколько вопросов, торговец…' if dmorteLogic.r17585_condition():
+        'Лучше не разбрасываться медяками. У меня есть несколько вопросов, торговец…' if morteLogic.r17585_condition():
             # r419 # reply17585
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Лучше я поберегу свои медяки, торговец. Прощай.' if dmorteLogic.r17586_condition():
+        'Лучше я поберегу свои медяки, торговец. Прощай.' if morteLogic.r17586_condition():
             # r420 # reply17586
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'У меня не хватает денег, торговец, но у меня есть несколько вопросов…' if dmorteLogic.r17587_condition():
+        'У меня не хватает денег, торговец, но у меня есть несколько вопросов…' if morteLogic.r17587_condition():
             # r421 # reply17587
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, торговец, мне все равно не хватает монет. Прощай.' if dmorteLogic.r17588_condition():
+        'Неважно, торговец, мне все равно не хватает монет. Прощай.' if morteLogic.r17588_condition():
             # r422 # reply17588
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s188 # say18801
-label dmorte_s188:  # - # Check EXTERN ~DCOLYLFN~ : 5 Check EXTERN ~DCOLYLFN~ : 6 Check EXTERN ~DCOLYLFN~ : 9 Check EXTERN ~DCOLYLFN~ : 10 Check EXTERN ~DCOLYLFN~ : 12 Check EXTERN ~DCOLYLFN~ : 13 Check EXTERN ~DCOLYLFN~ : 14
+label morte_s188:  # - # Check EXTERN ~DCOLYLFN~ : 5 Check EXTERN ~DCOLYLFN~ : 6 Check EXTERN ~DCOLYLFN~ : 9 Check EXTERN ~DCOLYLFN~ : 10 Check EXTERN ~DCOLYLFN~ : 12 Check EXTERN ~DCOLYLFN~ : 13 Check EXTERN ~DCOLYLFN~ : 14
     SPEAKER 'Морт поворачивается к жителю Улья. Отвали.'
 
     menu:
         'Этот череп ты не получишь.':
             # r423 # reply18802
-            $ dmorteLogic.r18802_action()
-            jump dmorte_dispose
+            $ morteLogic.r18802_action()
+            jump morte_dispose
 
         'Это не твой череп.':
             # r424 # reply18803
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Правда: Вперед, забирай череп.':
             # r425 # reply18804
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Напасть на него, как только он потеряет бдительность: Вперед, забирай череп.':
             # r426 # reply18805
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Правда: Если тебе удастся доказать, что череп твой, я отдам его тебе. Так будет честно.':
             # r427 # reply18578
-            $ dmorteLogic.r18578_action()
-            jump dmorte_dispose
+            $ morteLogic.r18578_action()
+            jump morte_dispose
 
         'Кто ты?':
             # r428 # reply18807
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я куплю у тебя череп. Пойдет?':
             # r429 # reply18808
-            $ dmorteLogic.r18808_action()
-            jump dmorte_dispose
+            $ morteLogic.r18808_action()
+            jump morte_dispose
 
 
 # s189 # say18809
-label dmorte_s189:  # - # Check EXTERN ~DCOLYLFN~ : 11
+label morte_s189:  # - # Check EXTERN ~DCOLYLFN~ : 11
     SPEAKER 'Морт держит в зубах один из его пальцев, словно это какая-то жуткая сигара. Удерживая палец, он проговаривает: Еще раз тронешь — и твоя рука присоединится к пальцу, пень.'
 
     menu:
         'Морт! Верни ему палец.':
             # r430 # reply18810
-            jump dmorte_s190
+            jump morte_s190
 
         'Не повезло тебе. Сгинь, полукровка.':
             # r431 # reply18811
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это будет тебе хорошим уроком. Прощай.':
             # r432 # reply18812
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s190 # say18813
-label dmorte_s190:  # from 189.0 # Check EXTERN ~DCOLYLFN~ : 11
+label morte_s190:  # from 189.0 # Check EXTERN ~DCOLYLFN~ : 11
     SPEAKER 'Морт выплевывает в него палец. Тот отскакивает от его груди и падает на землю.'
 
     menu:
         'Не повезло тебе. Сгинь, полукровка.':
             # r433 # reply18814
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это будет тебе хорошим уроком. Прощай.':
             # r434 # reply18815
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s191 # say18816
-label dmorte_s191:  # - # Check EXTERN ~DCOLYLFN~ : 15
+label morte_s191:  # - # Check EXTERN ~DCOLYLFN~ : 15
     SPEAKER 'Морт подлетает и перехватывает тебя: Шеф, ничего не давай этому отребью.'
 
     menu:
         'Я…':
             # r435 # reply18817
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s192 # say18818
-label dmorte_s192:  # - # Check EXTERN ~DCOLYLFN~ : 16
+label morte_s192:  # - # Check EXTERN ~DCOLYLFN~ : 16
     SPEAKER 'Морт поворачивается к нему: Я не с тобой разговаривал, жопоголовый. Когда я к тебе обращусь, ты это поймешь: я буду хрюкать и фыркать, чтобы ты меня понял.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s193 # say18819
-label dmorte_s193:  # - # Check EXTERN ~DCOLYLFN~ : 18 Check EXTERN ~DCOLYLFN~ : 19 Check EXTERN ~DCOLYLFN~ : 6
+label morte_s193:  # - # Check EXTERN ~DCOLYLFN~ : 18 Check EXTERN ~DCOLYLFN~ : 19 Check EXTERN ~DCOLYLFN~ : 6
     SPEAKER 'Шеф, *не надо*.'
 
     menu:
-        'Дать ему пять медяков.' if dmorteLogic.r18820_condition():
+        'Дать ему пять медяков.' if morteLogic.r18820_condition():
             # r436 # reply18820
-            $ dmorteLogic.r18820_action()
-            jump dmorte_dispose
+            $ morteLogic.r18820_action()
+            jump morte_dispose
 
-        'Дать ему пятьдесят медяков.' if dmorteLogic.r18821_condition():
+        'Дать ему пятьдесят медяков.' if morteLogic.r18821_condition():
             # r437 # reply18821
-            $ dmorteLogic.r18821_action()
-            jump dmorte_dispose
+            $ morteLogic.r18821_action()
+            jump morte_dispose
 
-        'Дать ему сто медяков.' if dmorteLogic.r18822_condition():
+        'Дать ему сто медяков.' if morteLogic.r18822_condition():
             # r438 # reply18822
-            $ dmorteLogic.r18822_action()
-            jump dmorte_dispose
+            $ morteLogic.r18822_action()
+            jump morte_dispose
 
-        'Дать ему пятьсот медяков.' if dmorteLogic.r18823_condition():
+        'Дать ему пятьсот медяков.' if morteLogic.r18823_condition():
             # r439 # reply18823
-            $ dmorteLogic.r18823_action()
-            jump dmorte_dispose
+            $ morteLogic.r18823_action()
+            jump morte_dispose
 
-        'У меня нет ни одной монеты.' if dmorteLogic.r18824_condition():
+        'У меня нет ни одной монеты.' if morteLogic.r18824_condition():
             # r440 # reply18824
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь мое предложение. Это не твой череп, и ты его не получишь.':
             # r441 # reply18825
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s194 # say18826
-label dmorte_s194:  # - # Check EXTERN ~DCOLYLFN~ : 20 Check EXTERN ~DCOLYLFN~ : 23 Check EXTERN ~DCOLYLFN~ : 41
+label morte_s194:  # - # Check EXTERN ~DCOLYLFN~ : 20 Check EXTERN ~DCOLYLFN~ : 23 Check EXTERN ~DCOLYLFN~ : 41
     SPEAKER 'Я летаю с самым большим болваном во всей мультивселенной.'
 
     menu:
         '… и что, Желтопалый? Еще раз обчищу тебя — и *что*?':
             # r442 # reply18827
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Теперь, когда все утряслось, Желтопалый, у меня есть несколько вопросов…':
             # r443 # reply18828
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Прощай, Желтопалый.' if dmorteLogic.r18829_condition():
+        'Прощай, Желтопалый.' if morteLogic.r18829_condition():
             # r444 # reply18829
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Прощай, Желтопалый.' if dmorteLogic.r18830_condition():
+        'Прощай, Желтопалый.' if morteLogic.r18830_condition():
             # r445 # reply18830
-            $ dmorteLogic.r18830_action()
-            jump dmorte_dispose
+            $ morteLogic.r18830_action()
+            jump morte_dispose
 
 
 # s195 # say18831
-label dmorte_s195:  # - # Check EXTERN ~DCOLYLFN~ : 52
+label morte_s195:  # - # Check EXTERN ~DCOLYLFN~ : 52
     SPEAKER 'Шеф! Брось!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s196 # say18832
-label dmorte_s196:  # - # Check EXTERN ~DCOLYLFN~ : 53 Check EXTERN ~DCOLYLFN~ : 61
+label morte_s196:  # - # Check EXTERN ~DCOLYLFN~ : 53 Check EXTERN ~DCOLYLFN~ : 61
     SPEAKER 'Если смотреть с моей позиции, так она никого не балует.'
 
     menu:
-        'Дать ему пять медяков.' if dmorteLogic.r18833_condition():
+        'Дать ему пять медяков.' if morteLogic.r18833_condition():
             # r446 # reply18833
-            $ dmorteLogic.r18833_action()
-            jump dmorte_dispose
+            $ morteLogic.r18833_action()
+            jump morte_dispose
 
-        'Дать ему десять медяков.' if dmorteLogic.r18834_condition():
+        'Дать ему десять медяков.' if morteLogic.r18834_condition():
             # r447 # reply18834
-            $ dmorteLogic.r18834_action()
-            jump dmorte_dispose
+            $ morteLogic.r18834_action()
+            jump morte_dispose
 
-        'Дать ему пятьдесят медяков.' if dmorteLogic.r18835_condition():
+        'Дать ему пятьдесят медяков.' if morteLogic.r18835_condition():
             # r448 # reply18835
-            $ dmorteLogic.r18835_action()
-            jump dmorte_dispose
+            $ morteLogic.r18835_action()
+            jump morte_dispose
 
-        'Дать ему сто медяков.' if dmorteLogic.r18836_condition():
+        'Дать ему сто медяков.' if morteLogic.r18836_condition():
             # r449 # reply18836
-            $ dmorteLogic.r18836_action()
-            jump dmorte_dispose
+            $ morteLogic.r18836_action()
+            jump morte_dispose
 
         'Беру свои слова обратно. Уходи и больше мне не попадайся.':
             # r450 # reply18837
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s197 # say19031
-label dmorte_s197:  # - # Check EXTERN ~DOJO~ : 11
+label morte_s197:  # - # Check EXTERN ~DOJO~ : 11
     SPEAKER 'Привет, здоровячок! Как поживает твой дружок в стене?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s198 # say19032
-label dmorte_s198:  # - # Check EXTERN ~DOJO~ : 12
+label morte_s198:  # - # Check EXTERN ~DOJO~ : 12
     SPEAKER 'Морт склоняет голову. Как скажешь, босс.'
 
     menu:
         'Хорошо. Охо, у меня есть другие вопросы.':
             # r451 # reply19033
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Хорошо. Идем.':
             # r452 # reply19034
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s199 # say19551
-label dmorte_s199:  # -
+label morte_s199:  # -
     SPEAKER 'Ух ты, шеф… ну что за красотка? Мало где встретишь такую милашку, как эта, знаешь ли.'
 
     menu:
         'Гниющие трупы не выглядят для меня привлекательными, Морт. Даже женские трупы.':
             # r453 # reply19666
-            jump dmorte_s200
+            jump morte_s200
 
         'Ну, наверно, если не обращать внимания на 'вонючее разлагающееся мясо в трупных червях', то…':
             # r454 # reply19667
-            jump dmorte_s201
+            jump morte_s201
 
 
 # s200 # say19552
-label dmorte_s200:  # from 199.0 # Check EXTERN ~DZOMCITF~ : 1 Check EXTERN ~DZOMCITF~ : 3
+label morte_s200:  # from 199.0 # Check EXTERN ~DZOMCITF~ : 1 Check EXTERN ~DZOMCITF~ : 3
     SPEAKER 'Морт закатывает глаза. Ха! Однажды ты поймешь, о чем я говорю.'
 
     menu:
-        'Не обращать на него внимания, поздороваться с зомби.' if dmorteLogic.r19668_condition():
+        'Не обращать на него внимания, поздороваться с зомби.' if morteLogic.r19668_condition():
             # r455 # reply19668
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Не обращать на него внимания, поздороваться с зомби.' if dmorteLogic.r19669_condition():
+        'Не обращать на него внимания, поздороваться с зомби.' if morteLogic.r19669_condition():
             # r456 # reply19669
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s201 # say19553
-label dmorte_s201:  # from 199.1 # Check EXTERN ~DZOMCITF~ : 1 Check EXTERN ~DZOMCITF~ : 3
+label morte_s201:  # from 199.1 # Check EXTERN ~DZOMCITF~ : 1 Check EXTERN ~DZOMCITF~ : 3
     SPEAKER 'Ага, видишь ли, это я… эй! — Морт поворачивается к тебе. — Ты что, издеваешься надо мной?'
 
     menu:
-        'Не обращать на него внимания, поздороваться с зомби.' if dmorteLogic.r19670_condition():
+        'Не обращать на него внимания, поздороваться с зомби.' if morteLogic.r19670_condition():
             # r457 # reply19670
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Не обращать на него внимания, поздороваться с зомби.' if dmorteLogic.r19671_condition():
+        'Не обращать на него внимания, поздороваться с зомби.' if morteLogic.r19671_condition():
             # r458 # reply19671
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s202 # say19681
-label dmorte_s202:  # - # Check EXTERN ~DGHOCITM~ : 1
+label morte_s202:  # - # Check EXTERN ~DGHOCITM~ : 1
     SPEAKER 'Э… даже не знаю, захочешь ли ты говорить с этой… тварью.'
 
     menu:
         'Почему нет, Морт?':
             # r459 # reply19691
-            jump dmorte_s203
+            jump morte_s203
 
         'Ладно. Идем.':
             # r460 # reply19692
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, поздороваться с упырем.':
             # r461 # reply19693
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s203 # say19682
-label dmorte_s203:  # from 202.0 # Check EXTERN ~DGHOCITM~ : 1
+label morte_s203:  # from 202.0 # Check EXTERN ~DGHOCITM~ : 1
     SPEAKER 'Когда-то они были людьми… Они, или их предки, ели трупы, и вот во что они превратились. Довольно таки мерзкая вещь, шеф… На самом деле, они больше похожи на животных. *Опасных* животных.'
 
     menu:
         'Ладно. Идем.':
             # r462 # reply19694
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я все равно с ним поговорю.':
             # r463 # reply19695
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s204 # say19702
-label dmorte_s204:  # - # Check EXTERN ~DGHOCITF~ : 1
+label morte_s204:  # - # Check EXTERN ~DGHOCITF~ : 1
     SPEAKER 'Э… даже не знаю, захочешь ли ты говорить с этой… тварью.'
 
     menu:
         'Морт, ты меня удивляешь… Это нежить женского пола. Обычно этого для тебя достаточно.':
             # r464 # reply19713
-            jump dmorte_s206
+            jump morte_s206
 
         'Почему нет, Морт?':
             # r465 # reply19714
-            jump dmorte_s205
+            jump morte_s205
 
         'Ладно. Идем.':
             # r466 # reply19715
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, поздороваться с упырем.':
             # r467 # reply19716
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s205 # say19703
-label dmorte_s205:  # from 204.1 206.0 # Check EXTERN ~DGHOCITF~ : 1
+label morte_s205:  # from 204.1 206.0 # Check EXTERN ~DGHOCITF~ : 1
     SPEAKER 'Когда-то они были людьми… Они, или их предки, ели трупы, и вот во что они превратились. Довольно таки мерзкая вещь, шеф… На самом деле, они больше похожи на животных. *Опасных* животных.'
 
     menu:
         'Ладно. Идем.':
             # r468 # reply19717
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я все равно с ней поговорю.':
             # r469 # reply19718
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s206 # say19704
-label dmorte_s206:  # from 204.0
+label morte_s206:  # from 204.0
     SPEAKER 'Это не то же самое, шеф…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s207 # say20469
-label dmorte_s207:  # - # Check EXTERN ~DMARTA~ : 9
+label morte_s207:  # - # Check EXTERN ~DMARTA~ : 9
     SPEAKER 'Она же слепая и почти глухая.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s208 # say20470
-label dmorte_s208:  # - # Check EXTERN ~DMARTA~ : 15
+label morte_s208:  # - # Check EXTERN ~DMARTA~ : 15
     SPEAKER 'Мне кажется, она имеет в виду органы. Надеюсь, что она имеет в виду органы.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s209 # say20471
-label dmorte_s209:  # - # Check EXTERN ~DMARTA~ : 16
+label morte_s209:  # - # Check EXTERN ~DMARTA~ : 16
     SPEAKER 'Морт поворачивается к Марте. Да, 'штучки', — он поворачивается к тебе. — Все дело в смысле слов.'
 
     menu:
-        'Марта, зачем ты достаешь из трупов зубы и швы?' if dmorteLogic.r20612_condition():
+        'Марта, зачем ты достаешь из трупов зубы и швы?' if morteLogic.r20612_condition():
             # r470 # reply20612
-            $ dmorteLogic.r20612_action()
-            jump dmorte_dispose
+            $ morteLogic.r20612_action()
+            jump morte_dispose
 
-        'Марта, зачем ты достаешь из трупов зубы и швы?' if dmorteLogic.r20613_condition():
+        'Марта, зачем ты достаешь из трупов зубы и швы?' if morteLogic.r20613_condition():
             # r471 # reply20613
-            $ dmorteLogic.r20613_action()
-            jump dmorte_dispose
+            $ morteLogic.r20613_action()
+            jump morte_dispose
 
         'Э… ладно. Мне нужно идти, Марта. Прощай.':
             # r472 # reply20614
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s210 # say20472
-label dmorte_s210:  # - # Check EXTERN ~DMARTA~ : 24
+label morte_s210:  # - # Check EXTERN ~DMARTA~ : 24
     SPEAKER 'Я *не собираюсь* на это смотреть.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s211 # say21602
-label dmorte_s211:  # -
+label morte_s211:  # -
     SPEAKER 'Ох, силы небесные!.. Чертов дабус.'
 
     menu:
         'Что не так?':
             # r473 # reply24695
-            jump dmorte_s212
+            jump morte_s212
 
 
 # s212 # say21603
-label dmorte_s212:  # from 211.0
+label morte_s212:  # from 211.0
     SPEAKER 'Он — дабус. Они 'разговаривают' ребусами, этими тупыми словесными головоломками. Если *ты* не знаешь, что он говорит, то тогда нам лучше поискать кого-нибудь из местных или какой-нибудь другой способ общаться с ними… если нам это надо. Чертово племя. Знаешь что? Да они *умеют* разговаривать, просто они хотят вывести из себя того, кто пытается разгадать их головоломки.'
 
     menu:
         'Что за 'дабус'?':
             # r474 # reply24696
-            jump dmorte_s213
+            jump morte_s213
 
 
 # s213 # say21604
-label dmorte_s213:  # from 212.0 # Check EXTERN ~DFELL~ : 8
+label morte_s213:  # from 212.0 # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Говорят, что они слуги Леди Боли. Они парят повсюду и ломают, чинят и латают Сигил по ее капризу. Они хуже трупных мух, — Морт вздыхает. — Не нужно их трогать, а не то Леди… рассердится.'
 
     menu:
-        ''Леди Боли'? Кто это?' if dmorteLogic.r24697_condition():
+        ''Леди Боли'? Кто это?' if morteLogic.r24697_condition():
             # r475 # reply24697
-            $ dmorteLogic.r24697_action()
-            jump dmorte_s214
+            $ morteLogic.r24697_action()
+            jump morte_s214
 
-        'Что ты можешь рассказать о Леди Боли?' if dmorteLogic.r24698_condition():
+        'Что ты можешь рассказать о Леди Боли?' if morteLogic.r24698_condition():
             # r476 # reply24698
-            jump dmorte_s214
+            jump morte_s214
 
-        'Понятно.' if dmorteLogic.r24699_condition():
+        'Понятно.' if morteLogic.r24699_condition():
             # r477 # reply24699
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s214 # say21605
-label dmorte_s214:  # from 213.0 213.1 # Check EXTERN ~DFELL~ : 8
+label morte_s214:  # from 213.0 213.1 # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Она заправляет городом. Ты узнаешь ее, когда увидишь: у нее вокруг лица клинки, она ростом с гиганта и парит над землей, совсем как эти парни. Морт кивает на дабуса, смотрящего на вас обоих. Про нее никто почти ничего не знает… она не очень говорлива. Все, что тебе следует знать: не зли ее. Если увидишь ее, мой тебе совет — тикай.'
 
     menu:
-        'Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.' if dmorteLogic.r24700_condition():
+        'Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.' if morteLogic.r24700_condition():
             # r478 # reply24700
-            jump dmorte_s215
+            jump morte_s215
 
-        'Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.' if dmorteLogic.r24701_condition():
+        'Э-э… постой-ка. Ты сказал, что дабусы парят, верно? А этот ходит по земле.' if morteLogic.r24701_condition():
             # r479 # reply24701
-            jump dmorte_s215
+            jump morte_s215
 
         'Понятно.':
             # r480 # reply24702
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s215 # say21606
-label dmorte_s215:  # from 214.0 214.1 # Check EXTERN ~DFELL~ : 8
+label morte_s215:  # from 214.0 214.1 # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Морт, едва взглянув на дабуса, смотрит теперь во все глаза. Ага! Я знал, что вы, козлиные морды, умеете ходить! Я знал это! Морт ликующе возвращается к тебе. Ха! Должно быть, этот не такой уж отрешенный, чтобы парить над землей.'
 
     menu:
         'Может быть…':
             # r481 # reply24703
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s216 # say21607
-label dmorte_s216:  # - # Check EXTERN ~DFELL~ : 8
+label morte_s216:  # - # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти козлиные морды пытаются сказать. Нужен переводчик? Поищи коренного сигильца.'
 
     menu:
         'Понятно.':
             # r482 # reply24704
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s217 # say21608
-label dmorte_s217:  # - # Check EXTERN ~DFELL~ : 8
+label morte_s217:  # - # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси нашу маленькую бесовку, — он кивает на Анну. — Она из Улья.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r483 # reply24705
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s218 # say21609
-label dmorte_s218:  # - # Check EXTERN ~DFELL~ : 8
+label morte_s218:  # - # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? — он кивает на Даккона. — Попроси нашего ханжу-молчуна перевести.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r484 # reply24706
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s219 # say21610
-label dmorte_s219:  # - # Check EXTERN ~DFELL~ : 8
+label morte_s219:  # - # Check EXTERN ~DFELL~ : 8
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси танарри, — он кивает на Падшую Грацию. — Наверное, она все время общалась с этими парнями.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r485 # reply24707
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s220 # say22061
-label dmorte_s220:  # - # Check EXTERN ~DSOEGO~ : 83
+label morte_s220:  # - # Check EXTERN ~DSOEGO~ : 83
     SPEAKER 'Да вы просто хотите их убить. Для тленных чувства являются угрозой.'
 
     menu:
         'У меня есть другие вопросы…':
             # r486 # reply22062
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел узнать. Прощай.':
             # r487 # reply22063
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s221 # say22849
-label dmorte_s221:  # -
+label morte_s221:  # -
     SPEAKER 'Глядя на тебя, Морт качает головой.'
 
     menu:
         'Что такое, куб-герой? 'Морт — глупый череп'? Но как же, разве это не так, куб-герой?':
             # r488 # reply22850
-            $ dmorteLogic.r22850_action()
-            jump dmorte_s222
+            $ morteLogic.r22850_action()
+            jump morte_s222
 
         'Отложить куб.':
             # r489 # reply22851
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s222 # say22852
-label dmorte_s222:  # from 221.0
+label morte_s222:  # from 221.0
     SPEAKER 'Эй! Он не говорил этого!'
 
     menu:
         'Нет, говорил! Он только что это сказал!':
             # r490 # reply22853
-            $ dmorteLogic.r22853_action()
-            jump dmorte_s223
+            $ morteLogic.r22853_action()
+            jump morte_s223
 
         'Отложить куб.':
             # r491 # reply22854
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s223 # say22855
-label dmorte_s223:  # from 222.0
+label morte_s223:  # from 222.0
     SPEAKER 'Чт?!.. А ну дай его сюда!'
 
     menu:
         'Нет, он мой. Да и все равно он хочет играть только со мной. Разве не так, куб-герой? Да, именно так!':
             # r492 # reply22856
-            $ dmorteLogic.r22856_action()
-            jump dmorte_s224
+            $ morteLogic.r22856_action()
+            jump morte_s224
 
         'Отложить куб.':
             # r493 # reply22857
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s224 # say22858
-label dmorte_s224:  # from 223.0
+label morte_s224:  # from 223.0
     SPEAKER 'Я. Просто. Хочу. Подержать. Его. На. Секундочку.'
 
     menu:
         'Но у тебя все равно нет рук.':
             # r494 # reply22859
-            jump dmorte_s225
+            jump morte_s225
 
         'Отложить куб.':
             # r495 # reply22860
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s225 # say22861
-label dmorte_s225:  # from 224.0
+label morte_s225:  # from 224.0
     SPEAKER 'Я подержу его ЗУБАМИ.'
 
     menu:
         'Нет, наверное, я просто его отложу.':
             # r496 # reply22862
-            jump dmorte_s226
+            jump morte_s226
 
 
 # s226 # say22863
-label dmorte_s226:  # from 225.0
+label morte_s226:  # from 225.0
     SPEAKER 'Я разнесу этот мордонский куб на куски. [MRT251]'
 
     menu:
         'Ты что-то слышал, куб-герой? Нет? Я тоже!':
             # r497 # reply22864
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s227 # say22892
-label dmorte_s227:  # - # Check EXTERN ~DCRADDO~ : 15
+label morte_s227:  # - # Check EXTERN ~DCRADDO~ : 15
     SPEAKER 'Ооооох! Морт восхищенно щелкает зубами, выслушивая умопостроения Крэддока… кажется, ты даже слышишь, как внутри своего черепа он делает пометки. [MRT387]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s228 # say24174
-label dmorte_s228:  # -
+label morte_s228:  # -
     SPEAKER 'Знаешь, босс, меня уже начинало тошнить от его… постоянных… пауз… так что хорошо… что он… уже заткнулся.'
 
     menu:
         'Очень смешно, Морт. Пошли.':
             # r498 # reply24175
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s229 # say24176
-label dmorte_s229:  # -
+label morte_s229:  # -
     SPEAKER 'Босс, а что мы будем делать с бесконечным запасом воды? Где пожар, а?'
 
     menu:
         'Позже он может пригодиться, Морт. Пошли.':
             # r499 # reply24177
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Так будет правильно, Морт.':
             # r500 # reply24178
-            jump dmorte_s230
+            jump morte_s230
 
 
 # s230 # say24179
-label dmorte_s230:  # from 229.1
+label morte_s230:  # from 229.1
     SPEAKER 'Так будет правильно? Если ты не забыл, босс, у нас самих есть чем заняться! Хотя что бы ты там не решил — ты тут главный. Тьфу…'
 
     menu:
         'Спасибо за одобрение, Морт. Пошли.':
             # r501 # reply24180
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s231 # say24903
-label dmorte_s231:  # -
+label morte_s231:  # -
     SPEAKER 'Эй, шеф… Ты в порядке? Я думал, что ты дал дуба.'
 
     menu:
         'Чт?.. Ты кто?':
             # r502 # reply24904
-            $ dmorteLogic.r24904_action()
-            jump dmorte_s232
+            $ morteLogic.r24904_action()
+            jump morte_s232
 
         'Морт, я уверен, что у тебя найдется еще тысяча умных мыслей, но мне нужно, чтобы ты заткнулся и присоединился ко мне НЕМЕДЛЕННО.':
             # r503 # reply24905
-            $ dmorteLogic.r24905_action()
-            jump dmorte_dispose
+            $ morteLogic.r24905_action()
+            jump morte_dispose
 
 
 # s232 # say24906
-label dmorte_s232:  # from 231.0
+label morte_s232:  # from 231.0
     SPEAKER 'Э… кто я? А как насчет *тебя* для начала? Кто ты?'
 
     menu:
         'Я… не знаю. Не могу вспомнить.':
             # r504 # reply24907
-            jump dmorte_s233
+            jump morte_s233
 
         'Я *первый* спросил тебя, череп.':
             # r505 # reply24908
-            jump dmorte_s234
+            jump morte_s234
 
 
 # s233 # say24909
-label dmorte_s233:  # from 232.0 234.0 235.0
+label morte_s233:  # from 232.0 234.0 235.0
     SPEAKER 'Ты не можешь вспомнить свое *имя*? Хе. Что ж, в следующий раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт.'
 
     menu:
         'Заперт?':
             # r506 # reply24910
-            jump dmorte_s236
+            jump morte_s236
 
 
 # s234 # say24911
-label dmorte_s234:  # from 232.1
+label morte_s234:  # from 232.1
     SPEAKER 'Ага, а я спросил тебя *вторым*. Как твое имя?'
 
     menu:
         'Я… не знаю. Не могу вспомнить.':
             # r507 # reply24912
-            jump dmorte_s233
+            jump morte_s233
 
         'Ты первый, череп. В последний раз спрашиваю.':
             # r508 # reply24913
-            jump dmorte_s235
+            jump morte_s235
 
 
 # s235 # say24914
-label dmorte_s235:  # from 234.1
+label morte_s235:  # from 234.1
     SPEAKER 'Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Зовут Мортом. А кто ты?'
 
     menu:
         'Я… не знаю. Не могу вспомнить.':
             # r509 # reply24915
-            jump dmorte_s233
+            jump morte_s233
 
 
 # s236 # say24916
-label dmorte_s236:  # from 233.0
+label morte_s236:  # from 233.0
     SPEAKER 'Ага, и поскольку ты еще не успел размять ноги, вот тебе новость: я перепробовал все двери, и эта комната заперта крепче пояса целомудрия.'
 
     menu:
         'Мы заперты… где? Что это за место?':
             # r510 # reply24917
-            jump dmorte_s237
+            jump morte_s237
 
 
 # s237 # say24918
-label dmorte_s237:  # from 236.0
+label morte_s237:  # from 236.0
     SPEAKER 'Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи.'
 
     menu:
         'Морг? Постой… я умер?':
             # r511 # reply24919
-            jump dmorte_s238
+            jump morte_s238
 
 
 # s238 # say24920
-label dmorte_s238:  # from 237.0
+label morte_s238:  # from 237.0
     SPEAKER 'Не похоже. Хотя на тебе куча шрамов… выглядит так, словно какой-то пень изрисовал тебя всего ножом. Еще одна причина свалить отсюда побыстрее, пока тот, кто изрезал тебя, не вернулся назад и не завершил свою работу.'
 
     menu:
         'И как мы выберемся отсюда?':
             # r512 # reply24921
-            jump dmorte_s239
+            jump morte_s239
 
 
 # s239 # say24922
-label dmorte_s239:  # from 238.0
+label morte_s239:  # from 238.0
     SPEAKER 'Ну, если все двери заперты, значит, нам понадобится ключ. Есть шанс, что он есть у одного из ходячих трупов в этой комнате.'
 
     menu:
         'Ходячих трупов?':
             # r513 # reply24923
-            jump dmorte_s240
+            jump morte_s240
 
 
 # s240 # say24924
-label dmorte_s240:  # from 28.0 239.0
+label morte_s240:  # from 28.0 239.0
     SPEAKER 'Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым.'
 
     menu:
         'А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа.':
             # r514 # reply24925
-            $ dmorteLogic.r24925_action()
-            jump dmorte_s241
+            $ morteLogic.r24925_action()
+            jump morte_s241
 
         'Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?':
             # r515 # reply24926
-            jump dmorte_s242
+            jump morte_s242
 
 
 # s241 # say24927
-label dmorte_s241:  # from 240.0
+label morte_s241:  # from 240.0
     SPEAKER 'Погоди, ты что, думаешь, что причинишь им боль? Они уже МЕРТВЫ. Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу.'
 
     menu:
         'Ну хорошо… Я собью одного из них и заберу ключ.':
             # r516 # reply24928
-            jump dmorte_s242
+            jump morte_s242
 
 
 # s242 # say24929
-label dmorte_s242:  # from 240.1 241.0
+label morte_s242:  # from 240.1 241.0
     SPEAKER 'Хорошо, но перед этим неплохо бы вооружиться. Кажется, здесь где-то на полках есть скальпель.'
 
     menu:
         'Ладно, я поищу его.':
             # r517 # reply24930
-            jump dmorte_s243
+            jump morte_s243
 
 
 # s243 # say24931
-label dmorte_s243:  # from 242.0
+label morte_s243:  # from 242.0
     SPEAKER 'И последнее: эти трупы медлительны, но их удар — все равно что поцелуй тарана. Если они начнут доставать тебя, помни, что ты можешь БЕГАТЬ, а они — нет. Используй это, чтобы держаться на дистанции, если тебе нужно восстановиться.'
 
     menu:
         'Хорошо. Спасибо за совет.':
             # r518 # reply24932
-            $ dmorteLogic.r24932_action()
-            jump dmorte_dispose
+            $ morteLogic.r24932_action()
+            jump morte_dispose
 
 
 # s244 # say25962
-label dmorte_s244:  # - # Check EXTERN ~DCWRUSHF~ : 27
+label morte_s244:  # - # Check EXTERN ~DCWRUSHF~ : 27
     SPEAKER 'Это типа говорящей энциклопедии, шеф. На самом деле, мне не хочется об этом говорить.'
 
     menu:
-        'Но ты ведь НЕ мимир, Морт…' if dmorteLogic.r66902_condition():
+        'Но ты ведь НЕ мимир, Морт…' if morteLogic.r66902_condition():
             # r519 # reply66902
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s245 # say25964
-label dmorte_s245:  # -
+label morte_s245:  # -
     SPEAKER 'Морт, многозначительно водя бровями, направляется к женщине. А еще я могу…'
 
     menu:
         'Хватит, Морт.':
             # r520 # reply25965
-            jump dmorte_s246
+            jump morte_s246
 
 
 # s246 # say25966
-label dmorte_s246:  # from 245.0 # Check EXTERN ~DCWRUSHF~ : 28
+label morte_s246:  # from 245.0 # Check EXTERN ~DCWRUSHF~ : 28
     SPEAKER 'Да-да. Хорошо, — Морт закатывает глаза и начинает ворчать. — Тогда уж лучше быть *мертвым*…'
 
     menu:
-        'Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?' if dmorteLogic.r25967_condition():
+        'Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?' if morteLogic.r25967_condition():
             # r521 # reply25967
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть несколько вопросов к этой женщине…':
             # r522 # reply25968
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить женщину в покое.':
             # r523 # reply25969
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s247 # say25970
-label dmorte_s247:  # - # Check EXTERN ~DCWRUSHF~ : 29
+label morte_s247:  # - # Check EXTERN ~DCWRUSHF~ : 29
     SPEAKER 'Морт перебивает ее: Понимаешь, шеф, есть много признаков *качественного* мимира. Некоторые — например, я — намного лучше других. Более… э-э… 'самосознательные', говоря научным языком.'
 
     menu:
         'Хм-м.':
             # r524 # reply25971
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Понятно.':
             # r525 # reply25972
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s248 # say25973
-label dmorte_s248:  # - # Check EXTERN ~DCWRUSHF~ : 27
+label morte_s248:  # - # Check EXTERN ~DCWRUSHF~ : 27
     SPEAKER 'Эй! Я всего лишь пытаюсь немного развлечься, шеф!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s249 # say27285
-label dmorte_s249:  # -
+label morte_s249:  # -
     SPEAKER 'Небольшой совет, шеф: теперь я бы вел себя потише. Не нужно больше вписывать трупы в книгу мертвых без необходимости… особенно женские. К тому же, их убийство может заинтересовать здешних смотрителей.'
 
     menu:
         'Кажется, ты еще не говорил об этом… *кто* такие эти смотрители?':
             # r526 # reply27303
-            jump dmorte_s250
+            jump morte_s250
 
         'Эти трупы… откуда они все берутся?':
             # r527 # reply27304
-            jump dmorte_s252
+            jump morte_s252
 
         'Почему тебя так заботят женские тела?':
             # r528 # reply27305
-            jump dmorte_s253
+            jump morte_s253
 
         'Ладно… Я… попробую это запомнить.':
             # r529 # reply27306
-            jump dmorte_s257
+            jump morte_s257
 
 
 # s250 # say27286
-label dmorte_s250:  # from 249.0 252.0 256.0
+label morte_s250:  # from 249.0 252.0 256.0
     SPEAKER 'Они зовут себя 'тленными'. Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица. Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть… и лучше раньше, чем позже.'
 
     menu:
         'Я запутался… какое тленным дело, если я сбегу?':
             # r530 # reply27307
-            jump dmorte_s251
+            jump morte_s251
 
 
 # s251 # say27287
-label dmorte_s251:  # from 250.0
+label morte_s251:  # from 250.0
     SPEAKER 'Ты что, вообще ничего не слушал?! Я сказал, что трухлявые верят в то, что ВСЕ должны умереть, и лучше раньше, чем позже. Думаешь, что трупы, которых ты видел, счастливее в книге мертвых, чем вне ее?'
 
     menu:
         'Эти трупы, которых я видел здесь… откуда они все берутся?':
             # r531 # reply27308
-            jump dmorte_s252
+            jump morte_s252
 
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?':
             # r532 # reply27309
-            jump dmorte_s253
+            jump morte_s253
 
         'Ладно… Я… попробую это запомнить.':
             # r533 # reply27310
-            jump dmorte_s257
+            jump morte_s257
 
 
 # s252 # say27288
-label dmorte_s252:  # from 249.1 251.0 256.1
+label morte_s252:  # from 249.1 251.0 256.1
     SPEAKER 'Смерть посещает планы каждый день, шеф. Эти увальни — все, что осталось от тех бедолаг, кто продал свои тела смотрителям.'
 
     menu:
         'Просвети меня… *кто* такие эти смотрители?':
             # r534 # reply27311
-            jump dmorte_s250
+            jump morte_s250
 
         'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?':
             # r535 # reply27312
-            jump dmorte_s253
+            jump morte_s253
 
         'Ладно… Я… попробую это запомнить.':
             # r536 # reply27313
-            jump dmorte_s257
+            jump morte_s257
 
 
 # s253 # say27289
-label dmorte_s253:  # from 249.2 251.1 252.1
+label morte_s253:  # from 249.2 251.1 252.1
     SPEAKER 'Чт… ты *серьезно*? Послушай, шеф, у этих мертвых крошек есть последняя возможность познакомиться с такими крутыми громилами как мы. Нам следует быть более *деликатными*… не ломать их ради ключей, не отрывать им конечности, ничего такого.'
 
     menu:
         'Последний шанс? Погоди… о *чем* это ты толкуешь?':
             # r537 # reply27314
-            jump dmorte_s254
+            jump morte_s254
 
 
 # s254 # say27290
-label dmorte_s254:  # from 253.0
+label morte_s254:  # from 253.0
     SPEAKER 'Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?'
 
     menu:
         'Нет… не очень, если честно.':
             # r538 # reply27315
-            jump dmorte_s255
+            jump morte_s255
 
-        'Ты это не серьезно.' if dmorteLogic.r27316_condition():
+        'Ты это не серьезно.' if morteLogic.r27316_condition():
             # r539 # reply27316
-            jump dmorte_s255
+            jump morte_s255
 
 
 # s255 # say27291
-label dmorte_s255:  # from 254.0 254.1
+label morte_s255:  # from 254.0 254.1
     SPEAKER 'Шеф, для нас до этих ковыляющих цыпочек — открытая дорога. Мы *все* по крайней мере один раз умирали: у нас есть общая тема для разговоров. Они предрасположены к мужчинам с нашим опытом смерти.'
 
     menu:
         'Постой… разве ты не говорил до этого, что я *не мертвый*?':
             # r540 # reply27317
-            jump dmorte_s256
+            jump morte_s256
 
 
 # s256 # say27292
-label dmorte_s256:  # from 255.0
+label morte_s256:  # from 255.0
     SPEAKER 'Ну… хорошо, *ты*, может быть, и не мертвый, а вот *я* — да. И как я уже говорил, я не против разделить гроб с какой-нибудь из здешних красивеньких жилистых покойниц. Морт начинает в предвкушении щелкать зубами. Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится…'
 
     menu:
         'Еще раз, кто эти смотрители?':
             # r541 # reply27318
-            jump dmorte_s250
+            jump morte_s250
 
         'Но откуда берутся все эти трупы?':
             # r542 # reply27319
-            jump dmorte_s252
+            jump morte_s252
 
         'Ладно… Я попробую это запомнить.':
             # r543 # reply27320
-            jump dmorte_s257
+            jump morte_s257
 
 
 # s257 # say27293
-label dmorte_s257:  # from 249.3 251.2 252.2 256.2
+label morte_s257:  # from 249.3 251.2 252.2 256.2
     SPEAKER 'Послушай, шеф. Ты еще не отошел от свидания со смертью, поэтому у меня для тебя есть два небольших совета. Во-первых, если у тебя возникнет вопрос — *спроси* меня, хорошо?'
 
     menu:
         'Хорошо… если у меня возникнут вопросы, я спрошу у тебя.':
             # r544 # reply27321
-            jump dmorte_s258
+            jump morte_s258
 
 
 # s258 # say27294
-label dmorte_s258:  # from 257.0
+label morte_s258:  # from 257.0
     SPEAKER 'Во-вторых, если ты хоть *наполовину* такой забывчивый, каким кажешься, то начни записывать свои мысли: как только ты встретишь то, что *может* быть важным, запиши это, чтобы не забыть.'
 
     menu:
         'Как в дневнике?':
             # r545 # reply27322
-            jump dmorte_s259
+            jump morte_s259
 
 
 # s259 # say27295
-label dmorte_s259:  # from 258.0
+label morte_s259:  # from 258.0
     SPEAKER 'Да, как в дневнике. Если начнешь забывать важные вещи, вроде того, где ты находишься, открой его и освежи свою память. Понятно?'
 
     menu:
         'Ладно… Уяснил. Идем.':
             # r546 # reply27323
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s260 # say27296
-label dmorte_s260:  # -
+label morte_s260:  # -
     SPEAKER 'На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками.'
 
     menu:
         'Ладно… Я поищу.':
             # r547 # reply27324
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s261 # say27297
-label dmorte_s261:  # -
+label morte_s261:  # -
     SPEAKER 'Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы.'
 
     menu:
         'А, может, ты мне *поможешь*, Морт?':
             # r548 # reply27325
-            jump dmorte_s262
+            jump morte_s262
 
         'Хорошо.':
             # r549 # reply27326
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s262 # say27298
-label dmorte_s262:  # from 261.0
+label morte_s262:  # from 261.0
     SPEAKER 'Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту.'
 
     menu:
         'Я имел ввиду помощь в нападении на *трупов*.':
             # r550 # reply27327
-            jump dmorte_s263
+            jump morte_s263
 
         'Ну ладно.':
             # r551 # reply27328
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s263 # say27299
-label dmorte_s263:  # from 262.0
+label morte_s263:  # from 262.0
     SPEAKER 'Я? Я романтик, а не солдат. Я только под ногами буду путаться.'
 
     menu:
         'Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель.':
             # r552 # reply27329
-            jump dmorte_s264
+            jump morte_s264
 
         'Ну ладно.':
             # r553 # reply27330
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s264 # say27300
-label dmorte_s264:  # from 263.0
+label morte_s264:  # from 263.0
     SPEAKER 'Э… без проблем. Я помогу тебе.'
 
     menu:
         'Рад, что мы друг друга понимаем. За дело.':
             # r554 # reply27331
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s265 # say27301
-label dmorte_s265:  # -
+label morte_s265:  # -
     SPEAKER 'Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда.'
 
     menu:
         'Хорошо.':
             # r555 # reply27332
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s266 # say27302
-label dmorte_s266:  # -
+label morte_s266:  # -
     SPEAKER 'Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате.'
 
     menu:
         'Тогда я перепробую все двери.':
             # r556 # reply27333
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s267 # say27911
-label dmorte_s267:  # - # Check EXTERN ~DCWCAFEF~ : 15
+label morte_s267:  # - # Check EXTERN ~DCWCAFEF~ : 15
     SPEAKER 'Морт шипит в твое ухо: Законник-крючкотвор.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s268 # say27912
-label dmorte_s268:  # - # Check EXTERN ~DCWCAFEF~ : 50
+label morte_s268:  # - # Check EXTERN ~DCWCAFEF~ : 50
     SPEAKER 'Это типа говорящей энциклопедии, шеф. На самом деле, мне не хочется об этом говорить.'
 
     menu:
-        'Но ты ведь НЕ мимир, Морт…' if dmorteLogic.r65536_condition():
+        'Но ты ведь НЕ мимир, Морт…' if morteLogic.r65536_condition():
             # r557 # reply65536
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s269 # say27913
-label dmorte_s269:  # -
+label morte_s269:  # -
     SPEAKER 'Морт, многозначительно водя бровями, направляется к женщине. А еще я могу…'
 
     menu:
         'Хватит, Морт.':
             # r558 # reply27914
-            jump dmorte_s270
+            jump morte_s270
 
 
 # s270 # say27915
-label dmorte_s270:  # from 269.0 # Check EXTERN ~DCWCAFEF~ : 51 Check EXTERN ~DCWCAFEF~ : 4
+label morte_s270:  # from 269.0 # Check EXTERN ~DCWCAFEF~ : 51 Check EXTERN ~DCWCAFEF~ : 4
     SPEAKER 'Да-да. Хорошо, — Морт закатывает глаза и начинает ворчать. — Тогда уж лучше быть *мертвым*…'
 
     menu:
-        'Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?' if dmorteLogic.r27916_condition():
+        'Постой… ты сказала 'разговаривает сам'? А разве обычно они не разговаривают?' if morteLogic.r27916_condition():
             # r559 # reply27916
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть несколько вопросов к этой женщине…':
             # r560 # reply27917
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Оставить женщину в покое.':
             # r561 # reply27918
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s271 # say27919
-label dmorte_s271:  # - # Check EXTERN ~DCWCAFEF~ : 52
+label morte_s271:  # - # Check EXTERN ~DCWCAFEF~ : 52
     SPEAKER 'Морт перебивает ее: Понимаешь, шеф, есть много признаков *качественного* мимира. Некоторые — например, я — намного лучше других. Более… э-э… 'самосознательные', говоря научным языком.'
 
     menu:
         'Хм-м.':
             # r562 # reply27920
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Понятно.':
             # r563 # reply27921
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s272 # say27922
-label dmorte_s272:  # - # Check EXTERN ~DCWCAFEF~ : 50
+label morte_s272:  # - # Check EXTERN ~DCWCAFEF~ : 50
     SPEAKER 'Эй! Я всего лишь пытаюсь немного развлечься, шеф!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s273 # say28036
-label dmorte_s273:  # - # Check EXTERN ~DMALMANR~ : 13 Check EXTERN ~DMALMANR~ : 14 Check EXTERN ~DMALMANR~ : 15
+label morte_s273:  # - # Check EXTERN ~DMALMANR~ : 13 Check EXTERN ~DMALMANR~ : 14 Check EXTERN ~DMALMANR~ : 15
     SPEAKER 'Морт одобрительно кивает. Эй, а этот парень не так уж плох.'
 
     menu:
         'Ладно, вот… забирай свои деньги, Малманер.':
             # r564 # reply28041
-            $ dmorteLogic.r28041_action()
-            jump dmorte_dispose
+            $ morteLogic.r28041_action()
+            jump morte_dispose
 
         'Бросить Малманеру десять медных монет.':
             # r565 # reply28042
-            $ dmorteLogic.r28042_action()
-            jump dmorte_dispose
+            $ morteLogic.r28042_action()
+            jump morte_dispose
 
         'Правда? Будем считать, что я этого не слышал, Морт. Пошли.':
             # r566 # reply28043
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s274 # say28037
-label dmorte_s274:  # - # Check EXTERN ~DMALMANR~ : 13 Check EXTERN ~DMALMANR~ : 14 Check EXTERN ~DMALMANR~ : 15
+label morte_s274:  # - # Check EXTERN ~DMALMANR~ : 13 Check EXTERN ~DMALMANR~ : 14 Check EXTERN ~DMALMANR~ : 15
     SPEAKER 'Морт одобрительно кивает. Эй, а этот парень не так уж плох.'
 
     menu:
-        'Ладно, вот… забирай свои деньги, Малманер.' if dmorteLogic.r28038_condition():
+        'Ладно, вот… забирай свои деньги, Малманер.' if morteLogic.r28038_condition():
             # r567 # reply28038
-            $ dmorteLogic.r28038_action()
-            jump dmorte_dispose
+            $ morteLogic.r28038_action()
+            jump morte_dispose
 
-        'Бросить Малманеру тридцать медных монет.' if dmorteLogic.r28039_condition():
+        'Бросить Малманеру тридцать медных монет.' if morteLogic.r28039_condition():
             # r568 # reply28039
-            $ dmorteLogic.r28039_action()
-            jump dmorte_dispose
+            $ morteLogic.r28039_action()
+            jump morte_dispose
 
-        'Ладно, вот… забирай свои деньги, Малманер.' if dmorteLogic.r28040_condition():
+        'Ладно, вот… забирай свои деньги, Малманер.' if morteLogic.r28040_condition():
             # r569 # reply28040
-            $ dmorteLogic.r28040_action()
-            jump dmorte_dispose
+            $ morteLogic.r28040_action()
+            jump morte_dispose
 
-        'Бросить Малманеру пятьдесят медных монет.' if dmorteLogic.r28044_condition():
+        'Бросить Малманеру пятьдесят медных монет.' if morteLogic.r28044_condition():
             # r570 # reply28044
-            $ dmorteLogic.r28044_action()
-            jump dmorte_dispose
+            $ morteLogic.r28044_action()
+            jump morte_dispose
 
-        'Ладно, вот… забирай свои деньги, Малманер.' if dmorteLogic.r28045_condition():
+        'Ладно, вот… забирай свои деньги, Малманер.' if morteLogic.r28045_condition():
             # r571 # reply28045
-            $ dmorteLogic.r28045_action()
-            jump dmorte_dispose
+            $ morteLogic.r28045_action()
+            jump morte_dispose
 
-        'Бросить Малманеру пятьдесят медных монет.' if dmorteLogic.r28046_condition():
+        'Бросить Малманеру пятьдесят медных монет.' if morteLogic.r28046_condition():
             # r572 # reply28046
-            $ dmorteLogic.r28046_action()
-            jump dmorte_dispose
+            $ morteLogic.r28046_action()
+            jump morte_dispose
 
-        'Ладно, вот… забирай свои деньги, Малманер.' if dmorteLogic.r28047_condition():
+        'Ладно, вот… забирай свои деньги, Малманер.' if morteLogic.r28047_condition():
             # r573 # reply28047
-            $ dmorteLogic.r28047_action()
-            jump dmorte_dispose
+            $ morteLogic.r28047_action()
+            jump morte_dispose
 
-        'Бросить Малманеру восемьдесят медных монет.' if dmorteLogic.r28048_condition():
+        'Бросить Малманеру восемьдесят медных монет.' if morteLogic.r28048_condition():
             # r574 # reply28048
-            $ dmorteLogic.r28048_action()
-            jump dmorte_dispose
+            $ morteLogic.r28048_action()
+            jump morte_dispose
 
         'Правда? Будем считать, что я этого не слышал, Морт. Пошли.':
             # r575 # reply28049
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s275 # say28630
-label dmorte_s275:  # - # Check EXTERN ~DGRACE~ : 60
+label morte_s275:  # - # Check EXTERN ~DGRACE~ : 60
     SPEAKER 'Какая скукота.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s276 # say28631
-label dmorte_s276:  # - # Check EXTERN ~DGRACE~ : 72
+label morte_s276:  # - # Check EXTERN ~DGRACE~ : 72
     SPEAKER 'Шеф, она — танарри… суккуб.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s277 # say28632
-label dmorte_s277:  # - # Check EXTERN ~DANNAH~ : 166
+label morte_s277:  # - # Check EXTERN ~DANNAH~ : 166
     SPEAKER 'Задвинься, бесовка! — Морт клацает зубами. — Я ЗА то, чтобы суккубка пошла с нами… Видят силы, от *тебя* веселья, как от колючки в кишках.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s278 # say28633
-label dmorte_s278:  # -
+label morte_s278:  # -
     SPEAKER 'Эй, минутку! Это *я* лучше всех разбираюсь в планах! Это моя работа, шеф!'
 
     menu:
         'Двое сведущих в плана людей в нашей команде — довольно неплохо, как по мне. Кроме того, еще я сказал, что она мила, Морт.':
             # r576 # reply28634
-            jump dmorte_s279
+            jump morte_s279
 
 
 # s279 # say28635
-label dmorte_s279:  # from 278.0 # Check EXTERN ~DGRACE~ : 79
+label morte_s279:  # from 278.0 # Check EXTERN ~DGRACE~ : 79
     SPEAKER 'Пожалуй, только для глаз! Мне почему-то КАЖЕТСЯ, что стоит какой-нибудь цыпочке чуть-чуть оголиться, как ты уже принимаешь ее в команду! — Морт умолкает. — Не то чтобы я против. Просто подумал, что стоит об этом сказать.'
 
     menu:
         'Заметано, Морт. Госпожа Грация… Может, я слишком забегаю вперед, но ты не хотела бы отправиться с нами в путешествие?':
             # r577 # reply28636
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s280 # say28637
-label dmorte_s280:  # - # Check EXTERN ~DGRACE~ : 119
+label morte_s280:  # - # Check EXTERN ~DGRACE~ : 119
     SPEAKER 'Мой товарищ в шрамах хотел сказать: с нами ДВУМЯ… Кстати, я Морт. Прошу простить моего товарища за то, что он не соизволил представить нас друг другу… Мне кажется, ваше присоединение к нам — ОТЛИЧНАЯ идея. У нас много места для суккуба. МНОГО места.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s281 # say28738
-label dmorte_s281:  # -
+label morte_s281:  # -
     SPEAKER 'Спасибо, шеф. Не могу выразить свою радость тем, что я снова с тобой. Его голос истекает сарказмом. А еще я научился новому приемчику, пока был там.'
 
     menu:
         'Ага. Отлично. Я очень рад, что ты вернулся назад.':
             # r578 # reply28743
-            $ dmorteLogic.r28743_action()
-            jump dmorte_dispose
+            $ morteLogic.r28743_action()
+            jump morte_dispose
 
-        'Извини, приятель. Я хотел его обмануть.' if dmorteLogic.r28744_condition():
+        'Извини, приятель. Я хотел его обмануть.' if morteLogic.r28744_condition():
             # r579 # reply28744
-            $ dmorteLogic.r28744_action()
-            jump dmorte_s282
+            $ morteLogic.r28744_action()
+            jump morte_s282
 
-        'Извини, приятель. Я хотел его обмануть.' if dmorteLogic.r28745_condition():
+        'Извини, приятель. Я хотел его обмануть.' if morteLogic.r28745_condition():
             # r580 # reply28745
-            $ dmorteLogic.r28745_action()
-            jump dmorte_s283
+            $ morteLogic.r28745_action()
+            jump morte_s283
 
 
 # s282 # say28739
-label dmorte_s282:  # from 281.1
+label morte_s282:  # from 281.1
     SPEAKER 'Правда? В этом чувствуется твой стиль, босс. Хорошо придумано. Ты условно прощен. Просто не делай так больше.'
 
     menu:
         'Конечно, Морт. Идем.':
             # r581 # reply28746
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s283 # say28740
-label dmorte_s283:  # from 281.2
+label morte_s283:  # from 281.2
     SPEAKER 'Почему-то мне в это верится с трудом. Давай просто забудем о случившемся. Идем.'
 
     menu:
         'Отлично.':
             # r582 # reply28747
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, я блефовал. Вот увидишь.':
             # r583 # reply28748
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s284 # say28741
-label dmorte_s284:  # -
+label morte_s284:  # -
     SPEAKER 'Спасибо, босс. Давай убираться отсюда! — Морт делает паузу. — А, кстати, босс… Эти ребята действительно соображают. Я научился у них паре острот.'
 
     menu:
         'Идем.':
             # r584 # reply28749
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s285 # say28962
-label dmorte_s285:  # - # Check EXTERN ~DQUISAI~ : 5 Check EXTERN ~DQUISAI~ : 3
+label morte_s285:  # - # Check EXTERN ~DQUISAI~ : 5 Check EXTERN ~DQUISAI~ : 3
     SPEAKER 'Э… шеф? Ты ведь раньше видел статуи? Ты ведь знаешь, что они не разговаривают?'
 
     menu:
-        'Подумай, Морт: ты — летающий и говорящий череп, который отрицает существование живых статуй.' if dmorteLogic.r28967_condition():
+        'Подумай, Морт: ты — летающий и говорящий череп, который отрицает существование живых статуй.' if morteLogic.r28967_condition():
             # r585 # reply28967
-            jump dmorte_s286
+            jump morte_s286
 
-        'Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?' if dmorteLogic.r28968_condition():
+        'Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?' if morteLogic.r28968_condition():
             # r586 # reply28968
-            $ dmorteLogic.r28968_action()
-            jump dmorte_dispose
+            $ morteLogic.r28968_action()
+            jump morte_dispose
 
         'Может быть. Я просто к нему прикоснусь…':
             # r587 # reply28969
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Уйти.':
             # r588 # reply28970
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s286 # say28963
-label dmorte_s286:  # from 285.0 # Check EXTERN ~DQUISAI~ : 5 Check EXTERN ~DQUISAI~ : 3
+label morte_s286:  # from 285.0 # Check EXTERN ~DQUISAI~ : 5 Check EXTERN ~DQUISAI~ : 3
     SPEAKER 'Ну… э… м-м. Тут ты прав, босс.'
 
     menu:
-        'Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?' if dmorteLogic.r28971_condition():
+        'Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?' if morteLogic.r28971_condition():
             # r589 # reply28971
-            $ dmorteLogic.r28971_action()
-            jump dmorte_dispose
+            $ morteLogic.r28971_action()
+            jump morte_dispose
 
         'Конечно, Морт. Я просто к нему прикоснусь…':
             # r590 # reply28972
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Уйти.':
             # r591 # reply28973
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s287 # say28964
-label dmorte_s287:  # -
+label morte_s287:  # -
     SPEAKER 'Шеф, может, она слишком анатомически правильная?'
 
     menu:
         'Это был риторический вопрос, Морт':
             # r592 # reply28974
-            jump dmorte_s288
+            jump morte_s288
 
 
 # s288 # say28965
-label dmorte_s288:  # from 287.0 # Check EXTERN ~DQUISAI~ : 5 Check EXTERN ~DQUISAI~ : 23
+label morte_s288:  # from 287.0 # Check EXTERN ~DQUISAI~ : 5 Check EXTERN ~DQUISAI~ : 23
     SPEAKER 'Конечно, босс. Я это знал.'
 
     menu:
-        'Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?' if dmorteLogic.r28975_condition():
+        'Я встретил здесь мага по имени Салабеш, который говорил о каменном человеке. Это ты?' if morteLogic.r28975_condition():
             # r593 # reply28975
-            $ dmorteLogic.r28975_action()
-            jump dmorte_dispose
+            $ morteLogic.r28975_action()
+            jump morte_dispose
 
         'Ударить статую.':
             # r594 # reply28976
-            $ dmorteLogic.r28976_action()
-            jump dmorte_dispose
+            $ morteLogic.r28976_action()
+            jump morte_dispose
 
         'Уйти.':
             # r595 # reply28977
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s289 # say28966
-label dmorte_s289:  # - # Check EXTERN ~DQUISAI~ : 11 Check EXTERN ~DQUISAI~ : 30 Check EXTERN ~DQUISAI~ : 29
+label morte_s289:  # - # Check EXTERN ~DQUISAI~ : 11 Check EXTERN ~DQUISAI~ : 30 Check EXTERN ~DQUISAI~ : 29
     SPEAKER 'Морт закатывает глаза и издает бульканье. О силы, нет, только не еще один пень, говорящий… вот… так!'
 
     menu:
         'У меня есть вопросы о тебе…':
             # r596 # reply28978
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть вопросы об этом месте.':
             # r597 # reply28979
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Что ты знаешь о Равель Заморочке?' if dmorteLogic.r28980_condition():
+        'Что ты знаешь о Равель Заморочке?' if morteLogic.r28980_condition():
             # r598 # reply28980
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Я потом к тебе загляну. Прощай.':
             # r599 # reply28981
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s290 # say29677
-label dmorte_s290:  # - # Check EXTERN ~DQUELL~ : 21
+label morte_s290:  # - # Check EXTERN ~DQUELL~ : 21
     SPEAKER 'Эй, шеф, он скрестил пальцы!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s291 # say30527
-label dmorte_s291:  # - # Check EXTERN ~DIANNIS~ : 10
+label morte_s291:  # - # Check EXTERN ~DIANNIS~ : 10
     SPEAKER 'Морт вклинивается в разговор, шепча: Он говорит, что он юрист, консультант. Один из тех пней, которые трещат своими черепушками в судах.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s292 # say30816
-label dmorte_s292:  # - # Check EXTERN ~DABLE~ : 2
+label morte_s292:  # - # Check EXTERN ~DABLE~ : 2
     SPEAKER 'Морт озирается назад. Где?! Где?!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s293 # say30817
-label dmorte_s293:  # - # Check EXTERN ~DABLE~ : 10
+label morte_s293:  # - # Check EXTERN ~DABLE~ : 10
     SPEAKER 'Морт раскрывает рот. Гляди, за тобой — еще один летающий череп!'
 
     menu:
-        'Самому поискать череп.' if dmorteLogic.r30822_condition():
+        'Самому поискать череп.' if morteLogic.r30822_condition():
             # r600 # reply30822
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Дать Морту повеселиться.' if dmorteLogic.r30823_condition():
+        'Дать Морту повеселиться.' if morteLogic.r30823_condition():
             # r601 # reply30823
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Брось, Морт. У меня к нему вопросы…' if dmorteLogic.r30824_condition():
+        'Брось, Морт. У меня к нему вопросы…' if morteLogic.r30824_condition():
             # r602 # reply30824
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s294 # say30818
-label dmorte_s294:  # - # Check EXTERN ~DABLE~ : 11
+label morte_s294:  # - # Check EXTERN ~DABLE~ : 11
     SPEAKER 'Вон там, куда я показываю! Вон там!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s295 # say30819
-label dmorte_s295:  # - # Check EXTERN ~DABLE~ : 12
+label morte_s295:  # - # Check EXTERN ~DABLE~ : 12
     SPEAKER 'Морт насмешливо произносит: Ты все пропустил! Там был целый *парад* черепов! Такое случается, наверно, раз в миллион циклов Великого Кольца!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s296 # say30820
-label dmorte_s296:  # - # Check EXTERN ~DABLE~ : 16 Check EXTERN ~DABLE~ : 13
+label morte_s296:  # - # Check EXTERN ~DABLE~ : 16 Check EXTERN ~DABLE~ : 13
     SPEAKER 'Морт покачивается, как будто пожимает плечами. Предпочитаю называть это проницательностью по части человеческой природы.'
 
     menu:
-        'У меня есть несколько вопросов…' if dmorteLogic.r30825_condition():
+        'У меня есть несколько вопросов…' if morteLogic.r30825_condition():
             # r603 # reply30825
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Снова привлечь внимание человека.' if dmorteLogic.r30826_condition():
+        'Снова привлечь внимание человека.' if morteLogic.r30826_condition():
             # r604 # reply30826
-            $ dmorteLogic.r30826_action()
-            jump dmorte_dispose
+            $ morteLogic.r30826_action()
+            jump morte_dispose
 
 
 # s297 # say30821
-label dmorte_s297:  # - # Check EXTERN ~DABLE~ : 65
+label morte_s297:  # - # Check EXTERN ~DABLE~ : 65
     SPEAKER 'Знаешь, шеф, это НАСТОЛЬКО БЕЗУМНО, ЧТО МОЖЕТ СРАБОТАТЬ!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s298 # say31566
-label dmorte_s298:  # -
+label morte_s298:  # -
     SPEAKER 'Клянусь шипастыми сиськами Леди, вот это…  Внезапно все стихает. Остатки твоих чувств меркнут и покидают тебя.  [MRT387]'
 
     menu:
         'Пасть во тьму, став жертвой страшного проклятья Гангройгидона.':
             # r605 # reply31567
-            $ dmorteLogic.r31567_action()
-            jump dmorte_dispose
+            $ morteLogic.r31567_action()
+            jump morte_dispose
 
 
 # s299 # say32367
-label dmorte_s299:  # - # Check EXTERN ~DDEATHAD~ : 1
+label morte_s299:  # - # Check EXTERN ~DDEATHAD~ : 1
     SPEAKER ''Тайнах'?! Секундочку! Мы же не собираемся *слушать* этого пустомелю? Да ладно… пойдем лучше найдем парочку цыпочек-чувствующих, которые еще ни разу не пробовали пламенной страсти от прикосновения губ черепа. Он в предвкушении водит бровями.'
 
     menu:
         'Тише, Морт. Мы подождем… по крайней мере немного.':
             # r606 # reply32368
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r607 # reply32369
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ты прав, Морт, идем отсюда.':
             # r608 # reply32370
-            $ dmorteLogic.r32370_action()
-            jump dmorte_dispose
+            $ morteLogic.r32370_action()
+            jump morte_dispose
 
 
 # s300 # say32371
-label dmorte_s300:  # - # Check EXTERN ~DDEATHAD~ : 2
+label morte_s300:  # - # Check EXTERN ~DDEATHAD~ : 2
     SPEAKER 'Шепот Морта: Начало новых страданий.'
 
     menu:
         'Молча кивнуть Морту.':
             # r609 # reply32372
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, помолчи.':
             # r610 # reply32373
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r611 # reply32374
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Точно. Пошли отсюда, Морт.':
             # r612 # reply32375
-            $ dmorteLogic.r32375_action()
-            jump dmorte_dispose
+            $ morteLogic.r32375_action()
+            jump morte_dispose
 
 
 # s301 # say32376
-label dmorte_s301:  # - # Check EXTERN ~DDEATHAD~ : 3
+label morte_s301:  # - # Check EXTERN ~DDEATHAD~ : 3
     SPEAKER 'Шепот Морта: Ага, как же.'
 
     menu:
         'Молча кивнуть Морту.':
             # r613 # reply32377
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, тише.':
             # r614 # reply32378
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r615 # reply32379
-            jump dmorte_s303
+            jump morte_s303
 
         'Точно. Пошли отсюда, Морт.':
             # r616 # reply32380
-            $ dmorteLogic.r32380_action()
-            jump dmorte_dispose
+            $ morteLogic.r32380_action()
+            jump morte_dispose
 
 
 # s302 # say32381
-label dmorte_s302:  # - # Check EXTERN ~DDEATHAD~ : 5
+label morte_s302:  # - # Check EXTERN ~DDEATHAD~ : 5
     SPEAKER 'Шепот Морта: И бесконечной скуки.'
 
     menu:
         'Молча кивнуть Морту.':
             # r617 # reply32382
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, пожалуйста, тише.':
             # r618 # reply32383
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r619 # reply32384
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Точно. Пошли отсюда, Морт.':
             # r620 # reply32385
-            $ dmorteLogic.r32385_action()
-            jump dmorte_dispose
+            $ morteLogic.r32385_action()
+            jump morte_dispose
 
 
 # s303 # say32386
-label dmorte_s303:  # from 301.2 # Check EXTERN ~DDEATHAD~ : 6
+label morte_s303:  # from 301.2 # Check EXTERN ~DDEATHAD~ : 6
     SPEAKER 'Шепот Морта: Кажется, теперь мы оба знаем, куда отправимся после смерти.'
 
     menu:
         'Молча кивнуть Морту.':
             # r621 # reply32387
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, хватит болтать.':
             # r622 # reply32388
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r623 # reply32389
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Точно. Пошли отсюда, Морт.':
             # r624 # reply32390
-            $ dmorteLogic.r32390_action()
-            jump dmorte_dispose
+            $ morteLogic.r32390_action()
+            jump morte_dispose
 
 
 # s304 # say32391
-label dmorte_s304:  # - # Check EXTERN ~DDEATHAD~ : 8
+label morte_s304:  # - # Check EXTERN ~DDEATHAD~ : 8
     SPEAKER 'Шепот Морта: Это если только повезет.'
 
     menu:
         'Молча кивнуть Морту.':
             # r625 # reply32392
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Хватит, Морт.':
             # r626 # reply32393
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r627 # reply32394
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Точно. Пошли отсюда, Морт.':
             # r628 # reply32395
-            $ dmorteLogic.r32395_action()
-            jump dmorte_dispose
+            $ morteLogic.r32395_action()
+            jump morte_dispose
 
 
 # s305 # say32396
-label dmorte_s305:  # - # Check EXTERN ~DDEATHAD~ : 9
+label morte_s305:  # - # Check EXTERN ~DDEATHAD~ : 9
     SPEAKER 'Шепот Морта: И это типа стимул? Чтобы вляпаться в это *опять*? Ха, не могу дождаться, когда я снова стану летающим черепом. Ура! Забей на этого неудачника. Походу, он еще сам никогда не умирал, верно?'
 
     menu:
         'Молча кивнуть Морту.':
             # r629 # reply32397
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Хватит, Морт. Тише.':
             # r630 # reply32398
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r631 # reply32399
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Точно. Пошли отсюда, Морт.':
             # r632 # reply32400
-            $ dmorteLogic.r32400_action()
-            jump dmorte_dispose
+            $ morteLogic.r32400_action()
+            jump morte_dispose
 
 
 # s306 # say32401
-label dmorte_s306:  # - # Check EXTERN ~DDEATHAD~ : 11
+label morte_s306:  # - # Check EXTERN ~DDEATHAD~ : 11
     SPEAKER 'Шепот Морта: А, еще один дешевый лозунг.'
 
     menu:
         'Молча кивнуть Морту.':
             # r633 # reply32402
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, помолчи.':
             # r634 # reply32403
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r635 # reply32404
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Точно. Пошли отсюда, Морт.':
             # r636 # reply32405
-            $ dmorteLogic.r32405_action()
-            jump dmorte_dispose
+            $ morteLogic.r32405_action()
+            jump morte_dispose
 
 
 # s307 # say32406
-label dmorte_s307:  # - # Check EXTERN ~DDEATHAD~ : 15
+label morte_s307:  # - # Check EXTERN ~DDEATHAD~ : 15
     SPEAKER 'Морт громко кричит: Что за фигня!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s308 # say32407
-label dmorte_s308:  # - # Check EXTERN ~DDEATHAD~ : 17 Check EXTERN ~DDEATHAD~ : 16
+label morte_s308:  # - # Check EXTERN ~DDEATHAD~ : 17 Check EXTERN ~DDEATHAD~ : 16
     SPEAKER 'Морт, увильнув от взгляда докладчика, поворачивается к тебе и шепотом произносит: Давай, шеф. Задай ему жару по этому поводу.'
 
     menu:
         'Да, у меня есть вопрос…':
             # r637 # reply32408
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Вопросов нет. Мой приятель ошибся.':
             # r638 # reply32409
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s309 # say32410
-label dmorte_s309:  # - # Check EXTERN ~DDEATHAD~ : 26 Check EXTERN ~DDEATHAD~ : 17 Check EXTERN ~DDEATHAD~ : 18
+label morte_s309:  # - # Check EXTERN ~DDEATHAD~ : 26 Check EXTERN ~DDEATHAD~ : 17 Check EXTERN ~DDEATHAD~ : 18
     SPEAKER 'Отлично! Еще одна смерть! Подпишите меня! Среди слушателей раздается хохот. Докладчик выглядит сердитым.'
 
     menu:
         'Что происходит, когда они умирают?':
             # r639 # reply32411
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть другие вопросы…':
             # r640 # reply32412
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел узнать.':
             # r641 # reply32413
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s310 # say32651
-label dmorte_s310:  # - # Check EXTERN ~DSARHAVA~ : 3
+label morte_s310:  # - # Check EXTERN ~DSARHAVA~ : 3
     SPEAKER 'Хочешь, я отшлепаю эту пустоголовую цыпочку, шеф?'
 
     menu:
         'И никакого милосердия, Морт.':
             # r642 # reply32661
-            jump dmorte_s316
+            jump morte_s316
 
         'Нет, Морт… Я справлюсь с этим.':
             # r643 # reply32662
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s311 # say32652
-label dmorte_s311:  # - # Check EXTERN ~DSARHAVA~ : 4
+label morte_s311:  # - # Check EXTERN ~DSARHAVA~ : 4
     SPEAKER 'Обожаю твои пустоголовые приемчики, шеф.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s312 # say32653
-label dmorte_s312:  # - # Check EXTERN ~DSARHAVA~ : 14 Check EXTERN ~DSARHAVA~ : 13
+label morte_s312:  # - # Check EXTERN ~DSARHAVA~ : 14 Check EXTERN ~DSARHAVA~ : 13
     SPEAKER 'Когда ты становишься на колени перед женщиной, Морт кричит: Шеф! Ты шутишь надо мной! То есть, я хочу сказать, ты же не будешь *этого* делать…'
 
     menu:
         'Не обращать внимания на Морта, вылизать сапог девушки.':
             # r644 # reply32663
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Просто я не хочу никаких неприятностей, Морт. Если мы будем не осторожны, то я смогу позвать стражу.':
             # r645 # reply32664
-            jump dmorte_s313
+            jump morte_s313
 
         'Ты прав, Морт. Идем.':
             # r646 # reply32665
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s313 # say32654
-label dmorte_s313:  # from 312.1 # Check EXTERN ~DSARHAVA~ : 7 Check EXTERN ~DSARHAVA~ : 13
+label morte_s313:  # from 312.1 # Check EXTERN ~DSARHAVA~ : 7 Check EXTERN ~DSARHAVA~ : 13
     SPEAKER 'В этом есть что-то… но все же…'
 
     menu:
         'Забудь, Морт. Послушайте, мадам… Давайте прекратим это, пока я не позвал стражу.':
             # r647 # reply32666
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ты прав, Морт. Пошли отсюда.':
             # r648 # reply32667
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s314 # say32655
-label dmorte_s314:  # -
+label morte_s314:  # -
     SPEAKER 'Морт сдавленно смеется и щелкает зубами. Просто обычный дамский угодник, а, шеф?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s315 # say32656
-label dmorte_s315:  # -
+label morte_s315:  # -
     SPEAKER 'Ой-ой…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s316 # say32657
-label dmorte_s316:  # from 310.0 # Check EXTERN ~DSARHAVA~ : 39
+label morte_s316:  # from 310.0 # Check EXTERN ~DSARHAVA~ : 39
     SPEAKER 'Морт подмигивает тебе и кричит девушке: Эй, ты! Да-да, ты, маленькая дерзкая грубиянка… смотреть на меня, когда я с тобой разговариваю! Чего это ты такая кислая, а?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s317 # say32658
-label dmorte_s317:  # - # Check EXTERN ~DSARHAVA~ : 40
+label morte_s317:  # - # Check EXTERN ~DSARHAVA~ : 40
     SPEAKER 'Ааа, наверное, штаны у Пустынной принцессы от того, что султан хотел себе сыночка? Скажи-ка мне, 'принцесса Пустыни', ты так все ночи проводишь, за выпивкой и в драках, в окружении кучи хитрых подхалимов? Наверное, ты так пытаешься оправдать свое существование перед разочарованным отцом?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s318 # say32659
-label dmorte_s318:  # - # Check EXTERN ~DSARHAVA~ : 41
+label morte_s318:  # - # Check EXTERN ~DSARHAVA~ : 41
     SPEAKER 'Ты что, вправду думаешь, что от твоих мелких скандальчиков ты станешь о себе лучшего мнения? Думаешь, ты чего-то *стоишь*? А ВОТ И НЕТ! И если тебе, бедняжка, стало легче от того, кто ты *на самом деле*, то я посоветую тебе сдаться, вернуться домой, выйти замуж и податься в какой-нибудь придворный гарем!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s319 # say32660
-label dmorte_s319:  # - # Check EXTERN ~DSARHAVA~ : 42
+label morte_s319:  # - # Check EXTERN ~DSARHAVA~ : 42
     SPEAKER 'Морт поворачивается к тебе. Видишь, шеф, я *знаю*, как это все обычно случается. *Всем* известно, что Морт прав в данном вопросе. О нет, только не это, бедная маленькая Пустынная принцесса, оскорбленная, униженн…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s320 # say33073
-label dmorte_s320:  # - # Check EXTERN ~DGHYSIS~ : 1
+label morte_s320:  # - # Check EXTERN ~DGHYSIS~ : 1
     SPEAKER 'Кровавая война? Это еще скучней, чем слушать, как законники декламируют законы. Давай-ка найдем пару молоденьких чувствующих, нуждающихся в просвещении по части любовных страстей! В предвкушении он водит бровями.'
 
     menu:
         'Нет, Морт… Я хочу послушать это.':
             # r649 # reply33074
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r650 # reply33075
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ладно, Морт, пошли.':
             # r651 # reply33076
-            $ dmorteLogic.r33076_action()
-            jump dmorte_dispose
+            $ morteLogic.r33076_action()
+            jump morte_dispose
 
 
 # s321 # say33300
-label dmorte_s321:  # - # Check EXTERN ~DGHIVEM~ : 49
+label morte_s321:  # - # Check EXTERN ~DGHIVEM~ : 49
     SPEAKER 'Морт закатывает глаза и кричит. Ух ты! Смотри! Говорящая какашка!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s322 # say33301
-label dmorte_s322:  # - # Check EXTERN ~DGHIVEM~ : 51
+label morte_s322:  # - # Check EXTERN ~DGHIVEM~ : 51
     SPEAKER 'Морт качает в твою сторону, обращаясь к мужчине: Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?'
 
     menu:
         'Полегче, Морт…':
             # r652 # reply33302
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта.':
             # r653 # reply33303
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s323 # say33423
-label dmorte_s323:  # - # Check EXTERN ~DGHIVEF~ : 47
+label morte_s323:  # - # Check EXTERN ~DGHIVEF~ : 47
     SPEAKER 'Морт закатывает глаза и кричит. Ух ты! Смотри! Говорящая какашка!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s324 # say33429
-label dmorte_s324:  # - # Check EXTERN ~DGHIVEF~ : 49
+label morte_s324:  # - # Check EXTERN ~DGHIVEF~ : 49
     SPEAKER 'Морт качает в твою сторону, обращаясь к мужчине: Я показывал на этого огромного пня, знаток… не на тебя! Без обид, ага?'
 
     menu:
         'Полегче, Морт…':
             # r654 # reply33430
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта.':
             # r655 # reply33433
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s325 # say33958
-label dmorte_s325:  # -
+label morte_s325:  # -
     SPEAKER 'Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а? [MRT516]'
 
     menu:
         'Да… идем.':
             # r656 # reply33959
-            $ dmorteLogic.r33959_action()
-            jump dmorte_dispose
+            $ morteLogic.r33959_action()
+            jump morte_dispose
 
         'Не сейчас, Морт.':
             # r657 # reply33960
-            jump dmorte_s326
+            jump morte_s326
 
 
 # s326 # say33961
-label dmorte_s326:  # from 325.1
+label morte_s326:  # from 325.1
     SPEAKER 'Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?'
 
     menu:
         'Морт, у тебя НЕТ ни того, ни другого.':
             # r658 # reply33962
-            jump dmorte_s327
+            jump morte_s327
 
         'Ладно. Я передумал. Давай, идем.':
             # r659 # reply33963
-            $ dmorteLogic.r33963_action()
-            jump dmorte_dispose
+            $ morteLogic.r33963_action()
+            jump morte_dispose
 
         'Не сейчас, Морт. Может быть, потом.':
             # r660 # reply33964
-            jump dmorte_s327
+            jump morte_s327
 
 
 # s327 # say33965
-label dmorte_s327:  # from 326.0 326.2
+label morte_s327:  # from 326.0 326.2
     SPEAKER 'Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?'
 
     menu:
         'Ладно. Я передумал. Давай, идем.':
             # r661 # reply33966
-            $ dmorteLogic.r33966_action()
-            jump dmorte_dispose
+            $ morteLogic.r33966_action()
+            jump morte_dispose
 
         'Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт.':
             # r662 # reply33967
-            jump dmorte_s328
+            jump morte_s328
 
 
 # s328 # say33968
-label dmorte_s328:  # from 327.1
+label morte_s328:  # from 327.1
     SPEAKER 'Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь.'
 
     menu:
         'Я так и сделаю. Прощай, Морт.':
             # r663 # reply33969
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s329 # say33970
-label dmorte_s329:  # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
+label morte_s329:  # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
     SPEAKER 'Что тебя гложет, шеф?'
 
     menu:
         'Можешь еще раз прочитать, что у меня вытатуировано на спине?':
             # r664 # reply65539
-            jump dmorte_s649
+            jump morte_s649
 
         'Расскажи мне немного о Сигиле.':
             # r665 # reply65540
-            jump dmorte_s659
+            jump morte_s659
 
-        'Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?' if dmorteLogic.r65541_condition():
+        'Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?' if morteLogic.r65541_condition():
             # r666 # reply65541
-            jump dmorte_s663
+            jump morte_s663
 
-        'Морт… еще раз, какие у тебя есть способности?' if dmorteLogic.r65542_condition():
+        'Морт… еще раз, какие у тебя есть способности?' if morteLogic.r65542_condition():
             # r667 # reply65542
-            jump dmorte_s666
+            jump morte_s666
 
-        'Морт, почему ты не прочитал последнюю строку татуировки на моей спине?' if dmorteLogic.r65543_condition():
+        'Морт, почему ты не прочитал последнюю строку татуировки на моей спине?' if morteLogic.r65543_condition():
             # r668 # reply65543
-            jump dmorte_s654
+            jump morte_s654
 
         'Мне нужен совет. Что, по-твоему, нужно делать дальше?':
             # r669 # reply65544
-            jump dmorte_s669
+            jump morte_s669
 
-        'Ты говорил, что ты — мимир, верно, Морт?' if dmorteLogic.r65545_condition():
+        'Ты говорил, что ты — мимир, верно, Морт?' if morteLogic.r65545_condition():
             # r670 # reply65545
-            jump dmorte_s684
+            jump morte_s684
 
-        'Расскажи мне еще раз, как ты оказался в Колонне Черепов.' if dmorteLogic.r65546_condition():
+        'Расскажи мне еще раз, как ты оказался в Колонне Черепов.' if morteLogic.r65546_condition():
             # r671 # reply65546
-            jump dmorte_s693
+            jump morte_s693
 
-        'Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?' if dmorteLogic.r65547_condition():
+        'Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?' if morteLogic.r65547_condition():
             # r672 # reply65547
-            jump dmorte_s715
+            jump morte_s715
 
-        'Что ты знаешь о Кровавой войне?' if dmorteLogic.r65548_condition():
+        'Что ты знаешь о Кровавой войне?' if morteLogic.r65548_condition():
             # r673 # reply65548
-            jump dmorte_s723
+            jump morte_s723
 
-        'Что тебе известно про ночную ведьму Равель?' if dmorteLogic.r65549_condition():
+        'Что тебе известно про ночную ведьму Равель?' if morteLogic.r65549_condition():
             # r674 # reply65549
-            jump dmorte_s722
+            jump morte_s722
 
         'Как ты умер, Морт?':
             # r675 # reply65550
-            jump dmorte_s726
+            jump morte_s726
 
         'Ничего, Морт. Просто проверяю, что ты все еще со мной.':
             # r676 # reply65551
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s330 # say34990
-label dmorte_s330:  # -
+label morte_s330:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r677 # reply34991
-            $ dmorteLogic.r34991_action()
-            jump dmorte_s331
+            $ morteLogic.r34991_action()
+            jump morte_s331
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r678 # reply35001
-            $ dmorteLogic.r35001_action()
-            jump dmorte_s331
+            $ morteLogic.r35001_action()
+            jump morte_s331
 
 
 # s331 # say34992
-label dmorte_s331:  # from 330.0 330.1
+label morte_s331:  # from 330.0 330.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r679 # reply34993
-            $ dmorteLogic.r34993_action()
-            jump dmorte_s332
+            $ morteLogic.r34993_action()
+            jump morte_s332
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r680 # reply34996
-            jump dmorte_s333
+            jump morte_s333
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r681 # reply34999
-            jump dmorte_s333
+            jump morte_s333
 
         'Как знаешь, Морт. Идем.':
             # r682 # reply35000
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s332 # say34994
-label dmorte_s332:  # from 331.0
+label morte_s332:  # from 331.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r683 # reply34995
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s333 # say34997
-label dmorte_s333:  # from 331.1 331.2
+label morte_s333:  # from 331.1 331.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r684 # reply34998
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s334 # say35022
-label dmorte_s334:  # -
+label morte_s334:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r685 # reply35023
-            $ dmorteLogic.r35023_action()
-            jump dmorte_s335
+            $ morteLogic.r35023_action()
+            jump morte_s335
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r686 # reply35033
-            $ dmorteLogic.r35033_action()
-            jump dmorte_s335
+            $ morteLogic.r35033_action()
+            jump morte_s335
 
 
 # s335 # say35024
-label dmorte_s335:  # from 334.0 334.1
+label morte_s335:  # from 334.0 334.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r687 # reply35025
-            $ dmorteLogic.r35025_action()
-            jump dmorte_s336
+            $ morteLogic.r35025_action()
+            jump morte_s336
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r688 # reply35028
-            jump dmorte_s337
+            jump morte_s337
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r689 # reply35031
-            jump dmorte_s337
+            jump morte_s337
 
         'Как знаешь, Морт. Идем.':
             # r690 # reply35032
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s336 # say35026
-label dmorte_s336:  # from 335.0
+label morte_s336:  # from 335.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r691 # reply35027
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s337 # say35029
-label dmorte_s337:  # from 335.1 335.2
+label morte_s337:  # from 335.1 335.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r692 # reply35030
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s338 # say35054
-label dmorte_s338:  # -
+label morte_s338:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r693 # reply35055
-            $ dmorteLogic.r35055_action()
-            jump dmorte_s339
+            $ morteLogic.r35055_action()
+            jump morte_s339
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r694 # reply35065
-            $ dmorteLogic.r35065_action()
-            jump dmorte_s339
+            $ morteLogic.r35065_action()
+            jump morte_s339
 
 
 # s339 # say35056
-label dmorte_s339:  # from 338.0 338.1
+label morte_s339:  # from 338.0 338.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r695 # reply35057
-            $ dmorteLogic.r35057_action()
-            jump dmorte_s340
+            $ morteLogic.r35057_action()
+            jump morte_s340
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r696 # reply35060
-            jump dmorte_s341
+            jump morte_s341
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r697 # reply35063
-            jump dmorte_s341
+            jump morte_s341
 
         'Как знаешь, Морт. Идем.':
             # r698 # reply35064
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s340 # say35058
-label dmorte_s340:  # from 339.0
+label morte_s340:  # from 339.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r699 # reply35059
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s341 # say35061
-label dmorte_s341:  # from 339.1 339.2
+label morte_s341:  # from 339.1 339.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r700 # reply35062
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s342 # say35086
-label dmorte_s342:  # -
+label morte_s342:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r701 # reply35087
-            $ dmorteLogic.r35087_action()
-            jump dmorte_s343
+            $ morteLogic.r35087_action()
+            jump morte_s343
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r702 # reply35097
-            $ dmorteLogic.r35097_action()
-            jump dmorte_s343
+            $ morteLogic.r35097_action()
+            jump morte_s343
 
 
 # s343 # say35088
-label dmorte_s343:  # from 342.0 342.1
+label morte_s343:  # from 342.0 342.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r703 # reply35089
-            $ dmorteLogic.r35089_action()
-            jump dmorte_s344
+            $ morteLogic.r35089_action()
+            jump morte_s344
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r704 # reply35092
-            jump dmorte_s345
+            jump morte_s345
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r705 # reply35095
-            jump dmorte_s345
+            jump morte_s345
 
         'Как знаешь, Морт. Идем.':
             # r706 # reply35096
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s344 # say35090
-label dmorte_s344:  # from 343.0
+label morte_s344:  # from 343.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r707 # reply35091
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s345 # say35093
-label dmorte_s345:  # from 343.1 343.2
+label morte_s345:  # from 343.1 343.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r708 # reply35094
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s346 # say35118
-label dmorte_s346:  # -
+label morte_s346:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r709 # reply35119
-            $ dmorteLogic.r35119_action()
-            jump dmorte_s347
+            $ morteLogic.r35119_action()
+            jump morte_s347
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r710 # reply35129
-            $ dmorteLogic.r35129_action()
-            jump dmorte_s347
+            $ morteLogic.r35129_action()
+            jump morte_s347
 
 
 # s347 # say35120
-label dmorte_s347:  # from 346.0 346.1
+label morte_s347:  # from 346.0 346.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r711 # reply35121
-            $ dmorteLogic.r35121_action()
-            jump dmorte_s348
+            $ morteLogic.r35121_action()
+            jump morte_s348
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r712 # reply35124
-            jump dmorte_s349
+            jump morte_s349
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r713 # reply35127
-            jump dmorte_s349
+            jump morte_s349
 
         'Как знаешь, Морт. Идем.':
             # r714 # reply35128
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s348 # say35122
-label dmorte_s348:  # from 347.0
+label morte_s348:  # from 347.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r715 # reply35123
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s349 # say35125
-label dmorte_s349:  # from 347.1 347.2
+label morte_s349:  # from 347.1 347.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r716 # reply35126
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s350 # say35150
-label dmorte_s350:  # -
+label morte_s350:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r717 # reply35151
-            $ dmorteLogic.r35151_action()
-            jump dmorte_s351
+            $ morteLogic.r35151_action()
+            jump morte_s351
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r718 # reply35161
-            $ dmorteLogic.r35161_action()
-            jump dmorte_s351
+            $ morteLogic.r35161_action()
+            jump morte_s351
 
 
 # s351 # say35152
-label dmorte_s351:  # from 350.0 350.1
+label morte_s351:  # from 350.0 350.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r719 # reply35153
-            $ dmorteLogic.r35153_action()
-            jump dmorte_s352
+            $ morteLogic.r35153_action()
+            jump morte_s352
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r720 # reply35156
-            jump dmorte_s353
+            jump morte_s353
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r721 # reply35159
-            jump dmorte_s353
+            jump morte_s353
 
         'Как знаешь, Морт. Идем.':
             # r722 # reply35160
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s352 # say35154
-label dmorte_s352:  # from 351.0
+label morte_s352:  # from 351.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r723 # reply35155
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s353 # say35157
-label dmorte_s353:  # from 351.1 351.2
+label morte_s353:  # from 351.1 351.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r724 # reply35158
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s354 # say35182
-label dmorte_s354:  # -
+label morte_s354:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r725 # reply35183
-            $ dmorteLogic.r35183_action()
-            jump dmorte_s355
+            $ morteLogic.r35183_action()
+            jump morte_s355
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r726 # reply35193
-            $ dmorteLogic.r35193_action()
-            jump dmorte_s355
+            $ morteLogic.r35193_action()
+            jump morte_s355
 
 
 # s355 # say35184
-label dmorte_s355:  # from 354.0 354.1
+label morte_s355:  # from 354.0 354.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r727 # reply35185
-            $ dmorteLogic.r35185_action()
-            jump dmorte_s356
+            $ morteLogic.r35185_action()
+            jump morte_s356
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r728 # reply35188
-            jump dmorte_s357
+            jump morte_s357
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r729 # reply35191
-            jump dmorte_s357
+            jump morte_s357
 
         'Как знаешь, Морт. Идем.':
             # r730 # reply35192
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s356 # say35186
-label dmorte_s356:  # from 355.0
+label morte_s356:  # from 355.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r731 # reply35187
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s357 # say35189
-label dmorte_s357:  # from 355.1 355.2
+label morte_s357:  # from 355.1 355.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r732 # reply35190
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s358 # say35214
-label dmorte_s358:  # -
+label morte_s358:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r733 # reply35215
-            $ dmorteLogic.r35215_action()
-            jump dmorte_s359
+            $ morteLogic.r35215_action()
+            jump morte_s359
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r734 # reply35225
-            $ dmorteLogic.r35225_action()
-            jump dmorte_s359
+            $ morteLogic.r35225_action()
+            jump morte_s359
 
 
 # s359 # say35216
-label dmorte_s359:  # from 358.0 358.1
+label morte_s359:  # from 358.0 358.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r735 # reply35217
-            $ dmorteLogic.r35217_action()
-            jump dmorte_s360
+            $ morteLogic.r35217_action()
+            jump morte_s360
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r736 # reply35220
-            jump dmorte_s361
+            jump morte_s361
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r737 # reply35223
-            jump dmorte_s361
+            jump morte_s361
 
         'Как знаешь, Морт. Идем.':
             # r738 # reply35224
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s360 # say35218
-label dmorte_s360:  # from 359.0
+label morte_s360:  # from 359.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r739 # reply35219
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s361 # say35221
-label dmorte_s361:  # from 359.1 359.2
+label morte_s361:  # from 359.1 359.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r740 # reply35222
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s362 # say35246
-label dmorte_s362:  # -
+label morte_s362:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r741 # reply35247
-            $ dmorteLogic.r35247_action()
-            jump dmorte_s363
+            $ morteLogic.r35247_action()
+            jump morte_s363
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r742 # reply35257
-            $ dmorteLogic.r35257_action()
-            jump dmorte_s363
+            $ morteLogic.r35257_action()
+            jump morte_s363
 
 
 # s363 # say35248
-label dmorte_s363:  # from 362.0 362.1
+label morte_s363:  # from 362.0 362.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r743 # reply35249
-            $ dmorteLogic.r35249_action()
-            jump dmorte_s364
+            $ morteLogic.r35249_action()
+            jump morte_s364
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r744 # reply35252
-            jump dmorte_s365
+            jump morte_s365
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r745 # reply35255
-            jump dmorte_s365
+            jump morte_s365
 
         'Как знаешь, Морт. Идем.':
             # r746 # reply35256
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s364 # say35250
-label dmorte_s364:  # from 363.0
+label morte_s364:  # from 363.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r747 # reply35251
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s365 # say35253
-label dmorte_s365:  # from 363.1 363.2
+label morte_s365:  # from 363.1 363.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r748 # reply35254
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s366 # say35278
-label dmorte_s366:  # -
+label morte_s366:  # -
     SPEAKER 'Пссст. Видел, как она посмотрела на меня? А? Ты видел это? Как она огибала взглядом кривую моей затылочной кости?'
 
     menu:
         'О чем это ты *толкуешь*?':
             # r749 # reply35279
-            $ dmorteLogic.r35279_action()
-            jump dmorte_s367
+            $ morteLogic.r35279_action()
+            jump morte_s367
 
         'Ты имеешь в виду этот бессмысленный пустой могильный взгляд?':
             # r750 # reply35289
-            $ dmorteLogic.r35289_action()
-            jump dmorte_s367
+            $ morteLogic.r35289_action()
+            jump morte_s367
 
 
 # s367 # say35280
-label dmorte_s367:  # from 366.0 366.1
+label morte_s367:  # from 366.0 366.1
     SPEAKER 'Чт… да ты что, ОСЛЕП?! Она меня изучала! Она бесстыдно меня ХОТЕЛА!'
 
     menu:
         'Скорее хотела, чтобы ты *исчез*. Да она была слишком занята МНОЙ, чтобы отвлекаться на какую-то болтающуюся голову с большим ртом.':
             # r751 # reply35281
-            $ dmorteLogic.r35281_action()
-            jump dmorte_s368
+            $ morteLogic.r35281_action()
+            jump morte_s368
 
         'По-моему, у тебя слишком богатое воображение. Она зомби. Труп. Мертвая. Скорее всего, она тебя даже не заметила.':
             # r752 # reply35284
-            jump dmorte_s369
+            jump morte_s369
 
         'По-моему, тебе стоит время от времени отключать свое воображение.':
             # r753 # reply35287
-            jump dmorte_s369
+            jump morte_s369
 
         'Как знаешь, Морт. Идем.':
             # r754 # reply35288
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s368 # say35282
-label dmorte_s368:  # from 367.0
+label morte_s368:  # from 367.0
     SPEAKER 'Тобой? Ага, конечно! Уж поверь мне, крошкам из могил нет дела до 'мускулатуры«, «у меня великолепное тело« и «я весь в шрамах и круто выгляжу'. Им нужны парни с ДУШОЙ. Типа меня, шеф. А трупов вроде ТЕБЯ повсюду навалом, как грязи.'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r755 # reply35283
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s369 # say35285
-label dmorte_s369:  # from 367.1 367.2
+label morte_s369:  # from 367.1 367.2
     SPEAKER 'Да-да-да, как пожелаешь. Если бы ты был настолько долго мертв, как я, ты бы улавливал сигналы. Для тебя они, наверно, слишком ТОНКИЕ, чтобы их уловить, но именно поэтому я буду проводить ночи напролет с сочной свежеумершей крошкой, а ты будешь бегать вокруг с воплями А? Чего здесь творится? Куда пропала моя па-па-память?'
 
     menu:
         'Как знаешь, Морт. Идем.':
             # r756 # reply35286
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s370 # say35310
-label dmorte_s370:  # from 377.3
+label morte_s370:  # from 377.3
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
         'Седобородый?':
             # r757 # reply35311
-            jump dmorte_s371
+            jump morte_s371
 
         'Не думаю, что он имеет что-то против.':
             # r758 # reply35326
-            jump dmorte_s372
+            jump morte_s372
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r759 # reply35327
-            jump dmorte_s373
+            jump morte_s373
 
 
 # s371 # say35312
-label dmorte_s371:  # from 370.0
+label morte_s371:  # from 370.0
     SPEAKER 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
 
     menu:
         'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
             # r760 # reply35313
-            jump dmorte_s372
+            jump morte_s372
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r761 # reply35325
-            jump dmorte_s373
+            jump morte_s373
 
 
 # s372 # say35314
-label dmorte_s372:  # from 370.1 371.0
+label morte_s372:  # from 370.1 371.0
     SPEAKER 'Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
 
     menu:
         'А ты, значит, нет?':
             # r762 # reply35315
-            jump dmorte_s373
+            jump morte_s373
 
         'Ладно. Идем.':
             # r763 # reply35324
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s373 # say35316
-label dmorte_s373:  # from 370.2 371.1 372.0
+label morte_s373:  # from 370.2 371.1 372.0
     SPEAKER 'Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
 
     menu:
         'Да? Зато у *меня* все при себе.':
             # r764 # reply35317
-            jump dmorte_s374
+            jump morte_s374
 
         'Идем.':
             # r765 # reply35323
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s374 # say35318
-label dmorte_s374:  # from 373.0
+label morte_s374:  # from 373.0
     SPEAKER 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
 
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r766 # reply35319
-            $ dmorteLogic.r35319_action()
-            jump dmorte_s375
+            $ morteLogic.r35319_action()
+            jump morte_s375
 
         'Идем.':
             # r767 # reply35322
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s375 # say35320
-label dmorte_s375:  # from 374.0
+label morte_s375:  # from 374.0
     SPEAKER 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.'
 
     menu:
         'Очень приятно это слышать. Идем.':
             # r768 # reply35321
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s376 # say35341
-label dmorte_s376:  # -
+label morte_s376:  # -
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
         'И что?':
             # r769 # reply35342
-            $ dmorteLogic.r35342_action()
-            jump dmorte_s377
+            $ morteLogic.r35342_action()
+            jump morte_s377
 
         'О… Я не хотел ему навредить.':
             # r770 # reply35360
-            $ dmorteLogic.r35360_action()
-            jump dmorte_s377
+            $ morteLogic.r35360_action()
+            jump morte_s377
 
         'Ну, тогда ладно. Может, в другой раз.':
             # r771 # reply35361
-            jump dmorte_s377
+            jump morte_s377
 
 
 # s377 # say35343
-label dmorte_s377:  # from 376.0 376.1 376.2 # Check EXTERN ~DS1221~ : 4 Check EXTERN ~DS1221~ : 5 Check EXTERN ~DS1221~ : 6
+label morte_s377:  # from 376.0 376.1 376.2 # Check EXTERN ~DS1221~ : 4 Check EXTERN ~DS1221~ : 5 Check EXTERN ~DS1221~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35344_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35344_condition():
             # r772 # reply35344
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35352_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35352_condition():
             # r773 # reply35352
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35355_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35355_condition():
             # r774 # reply35355
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35358_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35358_condition():
             # r775 # reply35358
-            $ dmorteLogic.r35358_action()
-            jump dmorte_s370
+            $ morteLogic.r35358_action()
+            jump morte_s370
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35359_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35359_condition():
             # r776 # reply35359
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s378 # say35387
-label dmorte_s378:  # from 385.3
+label morte_s378:  # from 385.3
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
         'Седобородый?':
             # r777 # reply35388
-            jump dmorte_s379
+            jump morte_s379
 
         'Не думаю, что он имеет что-то против.':
             # r778 # reply35403
-            jump dmorte_s380
+            jump morte_s380
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r779 # reply35404
-            jump dmorte_s381
+            jump morte_s381
 
 
 # s379 # say35389
-label dmorte_s379:  # from 378.0
+label morte_s379:  # from 378.0
     SPEAKER 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
 
     menu:
         'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
             # r780 # reply35390
-            jump dmorte_s380
+            jump morte_s380
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r781 # reply35402
-            jump dmorte_s381
+            jump morte_s381
 
 
 # s380 # say35391
-label dmorte_s380:  # from 378.1 379.0
+label morte_s380:  # from 378.1 379.0
     SPEAKER 'Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
 
     menu:
         'А ты, значит, нет?':
             # r782 # reply35392
-            jump dmorte_s381
+            jump morte_s381
 
         'Ладно. Идем.':
             # r783 # reply35401
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s381 # say35393
-label dmorte_s381:  # from 378.2 379.1 380.0
+label morte_s381:  # from 378.2 379.1 380.0
     SPEAKER 'Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
 
     menu:
         'Да? Зато у *меня* все при себе.':
             # r784 # reply35394
-            jump dmorte_s382
+            jump morte_s382
 
         'Идем.':
             # r785 # reply35400
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s382 # say35395
-label dmorte_s382:  # from 381.0
+label morte_s382:  # from 381.0
     SPEAKER 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
 
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r786 # reply35396
-            $ dmorteLogic.r35396_action()
-            jump dmorte_s383
+            $ morteLogic.r35396_action()
+            jump morte_s383
 
         'Идем.':
             # r787 # reply35399
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s383 # say35397
-label dmorte_s383:  # from 382.0
+label morte_s383:  # from 382.0
     SPEAKER 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.'
 
     menu:
         'Очень приятно это слышать. Идем.':
             # r788 # reply35398
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s384 # say35418
-label dmorte_s384:  # -
+label morte_s384:  # -
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
         'И что?':
             # r789 # reply35419
-            $ dmorteLogic.r35419_action()
-            jump dmorte_s385
+            $ morteLogic.r35419_action()
+            jump morte_s385
 
         'О… Я не хотел ему навредить.':
             # r790 # reply35437
-            $ dmorteLogic.r35437_action()
-            jump dmorte_s385
+            $ morteLogic.r35437_action()
+            jump morte_s385
 
         'Ну, тогда ладно. Может, в другой раз.':
             # r791 # reply35438
-            jump dmorte_s385
+            jump morte_s385
 
 
 # s385 # say35420
-label dmorte_s385:  # from 384.0 384.1 384.2 # Check EXTERN ~DS748~ : 4 Check EXTERN ~DS748~ : 5 Check EXTERN ~DS748~ : 6
+label morte_s385:  # from 384.0 384.1 384.2 # Check EXTERN ~DS748~ : 4 Check EXTERN ~DS748~ : 5 Check EXTERN ~DS748~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35421_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35421_condition():
             # r792 # reply35421
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35429_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35429_condition():
             # r793 # reply35429
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35432_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35432_condition():
             # r794 # reply35432
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35435_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35435_condition():
             # r795 # reply35435
-            $ dmorteLogic.r35435_action()
-            jump dmorte_s378
+            $ morteLogic.r35435_action()
+            jump morte_s378
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35436_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35436_condition():
             # r796 # reply35436
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s386 # say35464
-label dmorte_s386:  # from 393.3
+label morte_s386:  # from 393.3
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
         'Седобородый?':
             # r797 # reply35465
-            jump dmorte_s387
+            jump morte_s387
 
         'Не думаю, что он имеет что-то против.':
             # r798 # reply35480
-            jump dmorte_s388
+            jump morte_s388
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r799 # reply35481
-            jump dmorte_s389
+            jump morte_s389
 
 
 # s387 # say35466
-label dmorte_s387:  # from 386.0
+label morte_s387:  # from 386.0
     SPEAKER 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
 
     menu:
         'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
             # r800 # reply35467
-            jump dmorte_s388
+            jump morte_s388
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r801 # reply35479
-            jump dmorte_s389
+            jump morte_s389
 
 
 # s388 # say35468
-label dmorte_s388:  # from 386.1 387.0
+label morte_s388:  # from 386.1 387.0
     SPEAKER 'Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
 
     menu:
         'А ты, значит, нет?':
             # r802 # reply35469
-            jump dmorte_s389
+            jump morte_s389
 
         'Ладно. Идем.':
             # r803 # reply35478
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s389 # say35470
-label dmorte_s389:  # from 386.2 387.1 388.0
+label morte_s389:  # from 386.2 387.1 388.0
     SPEAKER 'Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
 
     menu:
         'Да? Зато у *меня* все при себе.':
             # r804 # reply35471
-            jump dmorte_s390
+            jump morte_s390
 
         'Идем.':
             # r805 # reply35477
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s390 # say35472
-label dmorte_s390:  # from 389.0
+label morte_s390:  # from 389.0
     SPEAKER 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
 
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r806 # reply35473
-            $ dmorteLogic.r35473_action()
-            jump dmorte_s391
+            $ morteLogic.r35473_action()
+            jump morte_s391
 
         'Идем.':
             # r807 # reply35476
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s391 # say35474
-label dmorte_s391:  # from 390.0
+label morte_s391:  # from 390.0
     SPEAKER 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.'
 
     menu:
         'Очень приятно это слышать. Идем.':
             # r808 # reply35475
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s392 # say35495
-label dmorte_s392:  # -
+label morte_s392:  # -
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
         'И что?':
             # r809 # reply35496
-            $ dmorteLogic.r35496_action()
-            jump dmorte_s393
+            $ morteLogic.r35496_action()
+            jump morte_s393
 
         'О… Я не хотел ему навредить.':
             # r810 # reply35514
-            $ dmorteLogic.r35514_action()
-            jump dmorte_s393
+            $ morteLogic.r35514_action()
+            jump morte_s393
 
         'Ну, тогда ладно. Может, в другой раз.':
             # r811 # reply35515
-            jump dmorte_s393
+            jump morte_s393
 
 
 # s393 # say35497
-label dmorte_s393:  # from 392.0 392.1 392.2 # Check EXTERN ~DS996~ : 4 Check EXTERN ~DS996~ : 5 Check EXTERN ~DS996~ : 6
+label morte_s393:  # from 392.0 392.1 392.2 # Check EXTERN ~DS996~ : 4 Check EXTERN ~DS996~ : 5 Check EXTERN ~DS996~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35498_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35498_condition():
             # r812 # reply35498
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35506_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35506_condition():
             # r813 # reply35506
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35509_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35509_condition():
             # r814 # reply35509
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35512_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35512_condition():
             # r815 # reply35512
-            $ dmorteLogic.r35512_action()
-            jump dmorte_s386
+            $ morteLogic.r35512_action()
+            jump morte_s386
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35513_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35513_condition():
             # r816 # reply35513
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s394 # say35541
-label dmorte_s394:  # from 401.3
+label morte_s394:  # from 401.3
     SPEAKER 'Хм-м. Интересно, что подумает этот седобородый, если *я* возьму взаймы его тело…'
 
     menu:
         'Седобородый?':
             # r817 # reply35542
-            jump dmorte_s395
+            jump morte_s395
 
         'Не думаю, что он имеет что-то против.':
             # r818 # reply35557
-            jump dmorte_s396
+            jump morte_s396
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r819 # reply35558
-            jump dmorte_s397
+            jump morte_s397
 
 
 # s395 # say35543
-label dmorte_s395:  # from 394.0
+label morte_s395:  # from 394.0
     SPEAKER 'Седобородый… ну знаешь, старикашка, старичье, рухлядь… старый.'
 
     menu:
         'Ну, не думаю, что у него есть хоть один аргумент против. Почему бы и не взять его тело?':
             # r820 # reply35544
-            jump dmorte_s396
+            jump morte_s396
 
         'Что-то мне подсказывает, что будь у тебя руки, ты бы был в два раза назойливее. Идем.':
             # r821 # reply35556
-            jump dmorte_s397
+            jump morte_s397
 
 
 # s396 # say35545
-label dmorte_s396:  # from 394.1 395.0
+label morte_s396:  # from 394.1 395.0
     SPEAKER 'Морт изучает скелет, но затем качает головой. Не… Мне нужно что-нибудь посвежее. И что-нибудь чуть более величественней… а этот какой-то весь скрипучий и в трещинах.'
 
     menu:
         'А ты, значит, нет?':
             # r822 # reply35546
-            jump dmorte_s397
+            jump morte_s397
 
         'Ладно. Идем.':
             # r823 # reply35555
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s397 # say35547
-label dmorte_s397:  # from 394.2 395.1 396.0
+label morte_s397:  # from 394.2 395.1 396.0
     SPEAKER 'Ох, да ты просто кладезь хохм, — Морт свирепо смотрит на тебя. — Да и вообще. НА СЕБЯ посмотри. Зеркала молят о пощаде, когда ты проходишь мимо них.'
 
     menu:
         'Да? Зато у *меня* все при себе.':
             # r824 # reply35548
-            jump dmorte_s398
+            jump morte_s398
 
         'Идем.':
             # r825 # reply35554
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s398 # say35549
-label dmorte_s398:  # from 397.0
+label morte_s398:  # from 397.0
     SPEAKER 'Морт фыркает. Тебе совершенно непонятно, как это ему удалось без легких.'
 
     menu:
         'Позволь мне сказать, Морт. Нет ничего лучше, чем ходить, размахивать руками, вдыхать свежий воздух через полные легкие. Иметь тело — это ОЧЕНЬ приятно.':
             # r826 # reply35550
-            $ dmorteLogic.r35550_action()
-            jump dmorte_s399
+            $ morteLogic.r35550_action()
+            jump morte_s399
 
         'Идем.':
             # r827 # reply35553
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s399 # say35551
-label dmorte_s399:  # from 398.0
+label morte_s399:  # from 398.0
     SPEAKER 'Да будет тебе известно, что помощь тебе в побеге из препараторской только что добавлена в растущий список моих сожалений, — Морт снова фыркает. — Надо было оставить тебя там гнить… подольше, то есть.'
 
     menu:
         'Очень приятно это слышать. Идем.':
             # r828 # reply35552
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s400 # say35572
-label dmorte_s400:  # -
+label morte_s400:  # -
     SPEAKER 'Эй, шеф. Это уже вандализм. Эти скобы — возможно, единственное, что не дает рассыпаться этому мешку с костями. Знаешь, с такими приятелями некромантия чудес не творит.'
 
     menu:
         'И что?':
             # r829 # reply35573
-            $ dmorteLogic.r35573_action()
-            jump dmorte_s401
+            $ morteLogic.r35573_action()
+            jump morte_s401
 
         'О… Я не хотел ему навредить.':
             # r830 # reply35591
-            $ dmorteLogic.r35591_action()
-            jump dmorte_s401
+            $ morteLogic.r35591_action()
+            jump morte_s401
 
         'Ну, тогда ладно. Может, в другой раз.':
             # r831 # reply35592
-            jump dmorte_s401
+            jump morte_s401
 
 
 # s401 # say35574
-label dmorte_s401:  # from 400.0 400.1 400.2 # Check EXTERN ~DS863~ : 4 Check EXTERN ~DS863~ : 5 Check EXTERN ~DS863~ : 6
+label morte_s401:  # from 400.0 400.1 400.2 # Check EXTERN ~DS863~ : 4 Check EXTERN ~DS863~ : 5 Check EXTERN ~DS863~ : 6
     SPEAKER 'Да нет, ничего. Морт делает странный жест. Тебе это кажется похожим на пожимание плечами. Просто не был уверен, что ты это знаешь. Валяй, можешь попробовать.'
 
     menu:
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35575_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35575_condition():
             # r832 # reply35575
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35583_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35583_condition():
             # r833 # reply35583
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Попробовать вытащить скобы из суставов скелета.' if dmorteLogic.r35586_condition():
+        'Попробовать вытащить скобы из суставов скелета.' if morteLogic.r35586_condition():
             # r834 # reply35586
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35589_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35589_condition():
             # r835 # reply35589
-            $ dmorteLogic.r35589_action()
-            jump dmorte_s394
+            $ morteLogic.r35589_action()
+            jump morte_s394
 
-        'Неважно, может быть, в другой раз.' if dmorteLogic.r35590_condition():
+        'Неважно, может быть, в другой раз.' if morteLogic.r35590_condition():
             # r836 # reply35590
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s402 # say38265
-label dmorte_s402:  # - # Check EXTERN ~DECCO~ : 7
+label morte_s402:  # - # Check EXTERN ~DECCO~ : 7
     SPEAKER 'Я уже втрескался в эту крошку по уши!'
 
     menu:
         'А написать или показать жестами?':
             # r837 # reply38267
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s403 # say38266
-label dmorte_s403:  # - # Check EXTERN ~DECCO~ : 34
+label morte_s403:  # - # Check EXTERN ~DECCO~ : 34
     SPEAKER 'Ой!'
 
     menu:
         'А?':
             # r838 # reply38268
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s404 # say39000
-label dmorte_s404:  # - # Check EXTERN ~DMANYAS1~ : 5
+label morte_s404:  # - # Check EXTERN ~DMANYAS1~ : 5
     SPEAKER 'Морт шепчет: Не к добру все это, шеф. Будь осторожен, не то они начисто сотрут твои мозги… чем их больше, тем они сильнее: каждая крыса добавляет свой разум к остальным. Они *смертельно* опасны.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s405 # say39001
-label dmorte_s405:  # - # Check EXTERN ~DMANYAS1~ : 58
+label morte_s405:  # - # Check EXTERN ~DMANYAS1~ : 58
     SPEAKER 'Морт шепчет: Не к добру все это, шеф. Будь осторожен, не то они начисто сотрут твои мозги… чем их больше, тем они сильнее: каждая крыса добавляет свой разум к остальным. Они *смертельно* опасны.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s406 # say39002
-label dmorte_s406:  # - # Check EXTERN ~DMANYAS1~ : 78
+label morte_s406:  # - # Check EXTERN ~DMANYAS1~ : 78
     SPEAKER 'Морт шепчет: Не знаю, к чему они клонят, шеф, но лучше следи за тем, о чем думаешь. Они — коллективный разум, и каждая крыса добавляет свой разум к остальным, и они дерутся, как… прости за каламбур… как загнанные в угол крысы. Мы у них дома, босс, и им некуда деваться. Так что не наломай дров.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s407 # say39564
-label dmorte_s407:  # - # Check EXTERN ~DYVES~ : 2
+label morte_s407:  # - # Check EXTERN ~DYVES~ : 2
     SPEAKER 'Какое совпадение! Я тоже охочусь — только за цыпочками.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s408 # say39565
-label dmorte_s408:  # -
+label morte_s408:  # -
     SPEAKER 'Я? Почему это *я* должен травить байки?'
 
     menu:
         'Тогда забудь.':
             # r839 # reply39713
-            jump dmorte_s409
+            jump morte_s409
 
         'Морт, просто расскажи историю.':
             # r840 # reply39714
-            jump dmorte_s413
+            jump morte_s413
 
 
 # s409 # say39566
-label dmorte_s409:  # from 408.0
+label morte_s409:  # from 408.0
     SPEAKER 'Нет-нет, я расскажу… Просто я решил, что стоит немного поныть — согласно обычаю. К тому же, я люблю, когда мне уделяют внимание.'
 
     menu:
         'Нет уж, Морт. Я не желаю слышать ее.':
             # r841 # reply39715
-            jump dmorte_s410
+            jump morte_s410
 
         'Ладно… тогда давай.':
             # r842 # reply39716
-            $ dmorteLogic.r39716_action()
-            jump dmorte_s414
+            $ morteLogic.r39716_action()
+            jump morte_s414
 
 
 # s410 # say39567
-label dmorte_s410:  # from 409.0
+label morte_s410:  # from 409.0
     SPEAKER 'Пожалуйста! Ну? Пожааалуйста! Это отличная история! Много персонажей, много действия, много предзнаменований, и потрясающий *денуэман*!'
 
     menu:
         'Не может быть, чтобы все было настолько хорошо.':
             # r843 # reply39717
-            jump dmorte_s411
+            jump morte_s411
 
         'Что такое денуэман?':
             # r844 # reply39718
-            jump dmorte_s412
+            jump morte_s412
 
         'Ладно… валяй.':
             # r845 # reply39719
-            $ dmorteLogic.r39719_action()
-            jump dmorte_s414
+            $ morteLogic.r39719_action()
+            jump morte_s414
 
 
 # s411 # say39568
-label dmorte_s411:  # from 410.0
+label morte_s411:  # from 410.0
     SPEAKER 'Может! Может! *Давай*!'
 
     menu:
         'Постой… что такое денуэман?':
             # r846 # reply39720
-            jump dmorte_s412
+            jump morte_s412
 
         'Ладно, валяй.':
             # r847 # reply39721
-            $ dmorteLogic.r39721_action()
-            jump dmorte_s414
+            $ morteLogic.r39721_action()
+            jump morte_s414
 
 
 # s412 # say39569
-label dmorte_s412:  # from 410.1 411.0
+label morte_s412:  # from 410.1 411.0
     SPEAKER 'Понятия не имею! Но *звучит* впечатляюще!'
 
     menu:
         'Ладно, валяй.':
             # r848 # reply39722
-            $ dmorteLogic.r39722_action()
-            jump dmorte_s414
+            $ morteLogic.r39722_action()
+            jump morte_s414
 
 
 # s413 # say39570
-label dmorte_s413:  # from 408.1 # ~SetGlobal("Yves_Shared","AR0605",1) ~ GOTO 414
+label morte_s413:  # from 408.1 # ~SetGlobal("Yves_Shared","AR0605",1) ~ GOTO 414
     SPEAKER 'Ладно, ладно…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s414 # say39571
-label dmorte_s414:  # from 409.1 410.2 411.1 412.0 413.0 # Check EXTERN ~DYVES~ : 4
+label morte_s414:  # from 409.1 410.2 411.1 412.0 413.0 # Check EXTERN ~DYVES~ : 4
     SPEAKER 'Сидел себе старик на краю темной дороги, так? Он не был уверен, в какую сторону идти, и он не помнил, куда он направлялся и кем он был. Он присел ненадолго, чтобы дать отдых своим уставшим ногам, и вдруг видит перед собой старуху. Она беззубо улыбнулась и, хихикая, промолвила: 'А теперь твое третье желание. Каким оно будет?''
 
     menu:
         'Продолжай, Морт.':
             # r849 # reply39724
-            jump dmorte_s415
+            jump morte_s415
 
         'Погоди… У меня есть вопросы к Ив…':
             # r850 # reply39725
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, мы послушаем ее в другой раз. Счастливо, Ив.':
             # r851 # reply39726
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s415 # say39572
-label dmorte_s415:  # from 414.0 # Check EXTERN ~DYVES~ : 4
+label morte_s415:  # from 414.0 # Check EXTERN ~DYVES~ : 4
     SPEAKER ''Третье желание? — ответил старик в замешательстве. — Как оно может быть третьим, если второго и первого не было?''
 
     menu:
         'Продолжай, Морт.':
             # r852 # reply39727
-            jump dmorte_s416
+            jump morte_s416
 
         'Погоди… У меня есть вопросы к Ив…':
             # r853 # reply39728
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, мы послушаем ее в другой раз. Счастливо, Ив.':
             # r854 # reply39729
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s416 # say39573
-label dmorte_s416:  # from 415.0 # Check EXTERN ~DYVES~ : 4
+label morte_s416:  # from 415.0 # Check EXTERN ~DYVES~ : 4
     SPEAKER ''Ты уже загадал два желания — со смехом ответила старая карга, — но твоим вторым желанием было, чтобы все стало таким, каким оно было до того, как ты загадал первое желание. Потому ты ничего и не помнишь: ведь все так, как было до того, как ты начал загадывать желания. Так что у тебя осталось одно желание'.'
 
     menu:
         'Продолжай, Морт.':
             # r855 # reply39752
-            jump dmorte_s417
+            jump morte_s417
 
         'Погоди… У меня есть вопросы к Ив…':
             # r856 # reply39753
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, мы послушаем ее в другой раз. Счастливо, Ив.':
             # r857 # reply39754
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s417 # say39574
-label dmorte_s417:  # from 416.0 # Check EXTERN ~DYVES~ : 55
+label morte_s417:  # from 416.0 # Check EXTERN ~DYVES~ : 55
     SPEAKER ''Ладно, — сказал старик. — Я в это все не верю, но ведь нет ничего страшного, если я загадаю желание. Я хочу знать, кто я такой«.  «Забавно, — сказала старуха, выполнив его. — Таким было твое первое желание, — и исчезла навсегда'.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s418 # say39575
-label dmorte_s418:  # - # Check EXTERN ~DNORDOM~ : 11
+label morte_s418:  # - # Check EXTERN ~DNORDOM~ : 11
     SPEAKER 'Что это была за фигня, тупой полигон?! Это самая нудная история из тех, что я когда-либо слышал!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s419 # say39576
-label dmorte_s419:  # - # Check EXTERN ~DNORDOM~ : 12
+label morte_s419:  # - # Check EXTERN ~DNORDOM~ : 12
     SPEAKER 'Приукрашено?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s420 # say39577
-label dmorte_s420:  # - # Check EXTERN ~DANNAH~ : 196
+label morte_s420:  # - # Check EXTERN ~DANNAH~ : 196
     SPEAKER '*Давай* уже, чертовка. У тебя уже есть хвост, с которым ты не хочешь расставаться.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s421 # say40068
-label dmorte_s421:  # - # Check EXTERN ~DNENNY~ : 2 Check EXTERN ~DNENNY~ : 3
+label morte_s421:  # - # Check EXTERN ~DNENNY~ : 2 Check EXTERN ~DNENNY~ : 3
     SPEAKER 'Морт вертится вокруг тебя, подшучивая над очевидностью слов девушки. Силы небесные, шеф… а ведь она права! Как я раньше не заметил… ты же весь в *шрамах*!'
 
     menu:
-        'Это все старые шрамы. Я в порядке.' if dmorteLogic.r40069_condition():
+        'Это все старые шрамы. Я в порядке.' if morteLogic.r40069_condition():
             # r858 # reply40069
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Только немного. Я очень скоро поправлюсь.' if dmorteLogic.r40070_condition():
+        'Только немного. Я очень скоро поправлюсь.' if morteLogic.r40070_condition():
             # r859 # reply40070
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Да. И очень сильно.' if dmorteLogic.r40071_condition():
+        'Да. И очень сильно.' if morteLogic.r40071_condition():
             # r860 # reply40071
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не думай об этом. У меня еще вопросы…':
             # r861 # reply40072
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не волнуйся об этом. Счастливо.':
             # r862 # reply40073
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s422 # say40074
-label dmorte_s422:  # -
+label morte_s422:  # -
     SPEAKER 'Морт водит бровями. Да ты и впрямь слишком прямая… может, стоит что-нибудь сделать с этими обвисшими, болтающимися гр…'
 
     menu:
         'Хватит, Морт.':
             # r863 # reply40075
-            jump dmorte_s423
+            jump morte_s423
 
 
 # s423 # say40076
-label dmorte_s423:  # from 422.0 # Check EXTERN ~DNENNY~ : 9
+label morte_s423:  # from 422.0 # Check EXTERN ~DNENNY~ : 9
     SPEAKER 'Морт умолкает.'
 
     menu:
-        'Нет проблем, Ненни.' if dmorteLogic.r40077_condition():
+        'Нет проблем, Ненни.' if morteLogic.r40077_condition():
             # r864 # reply40077
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Следи, чтобы это больше не повторилось, Ненни.' if dmorteLogic.r40078_condition():
+        'Следи, чтобы это больше не повторилось, Ненни.' if morteLogic.r40078_condition():
             # r865 # reply40078
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Нет проблем, барышня.' if dmorteLogic.r40079_condition():
+        'Нет проблем, барышня.' if morteLogic.r40079_condition():
             # r866 # reply40079
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Следи, чтобы это больше не повторилось, девочка.' if dmorteLogic.r40080_condition():
+        'Следи, чтобы это больше не повторилось, девочка.' if morteLogic.r40080_condition():
             # r867 # reply40080
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s424 # say40081
-label dmorte_s424:  # - # Check EXTERN ~DNENNY~ : 27
+label morte_s424:  # - # Check EXTERN ~DNENNY~ : 27
     SPEAKER 'Эй!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s425 # say40082
-label dmorte_s425:  # - # Check EXTERN ~DNENNY~ : 3
+label morte_s425:  # - # Check EXTERN ~DNENNY~ : 3
     SPEAKER 'Морт бурчит себе под нос: Думаю, хорошо, что там *вообще* хоть что-нибудь есть.'
 
     menu:
         'У меня другой вопрос, Ненни…':
             # r868 # reply40083
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел узнать, Ненни. Прощай.':
             # r869 # reply40084
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s426 # say40222
-label dmorte_s426:  # - # Check EXTERN ~DBROCUS4~ : 4 Check EXTERN ~DBROCUS4~ : 2
+label morte_s426:  # - # Check EXTERN ~DBROCUS4~ : 4 Check EXTERN ~DBROCUS4~ : 2
     SPEAKER 'Ооо, нет… ты просто *обязан* нам сейчас же все рассказать.'
 
     menu:
         'Да… пожалуйста, расскажи нам.':
             # r870 # reply40223
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Брось это, Морт. У меня к нему другой вопрос…':
             # r871 # reply40224
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь об этом, Морт. Идем.':
             # r872 # reply40225
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s427 # say40275
-label dmorte_s427:  # - # Check EXTERN ~DSADJULI~ : 12 Check EXTERN ~DSADJULI~ : 13 Check EXTERN ~DSADJULI~ : 24
+label morte_s427:  # - # Check EXTERN ~DSADJULI~ : 12 Check EXTERN ~DSADJULI~ : 13 Check EXTERN ~DSADJULI~ : 24
     SPEAKER 'Морт подлетает поближе к тебе и шепчет: Мне жаль ее любовника. Он не представляет, как плохо обстоят дела. От таких девчонок, как эта, одни проблемы.'
 
     menu:
         'Это звучит не очень мудро, Джульетта. Довольствуйся тем, что имеешь.':
             # r873 # reply40276
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Что у тебя на уме, Джульетта?':
             # r874 # reply40277
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня еще вопросы, Джульетта…':
             # r875 # reply40278
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел узнать, Джульетта. Прощай.':
             # r876 # reply40279
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s428 # say40685
-label dmorte_s428:  # - # Check EXTERN ~DMARISSA~ : 2 Check EXTERN ~DMARISSA~ : 3
+label morte_s428:  # - # Check EXTERN ~DMARISSA~ : 2 Check EXTERN ~DMARISSA~ : 3
     SPEAKER 'Морт тихонько шепчет: Ух ты… жуткая девчонка.'
 
     menu:
         'Прошу прощения, миледи… Не думал, что тут кто-нибудь есть.':
             # r877 # reply40686
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть несколько вопросов, миледи…':
             # r878 # reply40687
-            jump dmorte_dispose
+            jump morte_dispose
 
         'В таком случае, прощайте, миледи.':
             # r879 # reply40688
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s429 # say40846
-label dmorte_s429:  # - # Check EXTERN ~DBROCUS6~ : 3
+label morte_s429:  # - # Check EXTERN ~DBROCUS6~ : 3
     SPEAKER 'Брось, шеф! Мы в доме, где полным-полно самых сексуальных цыпочек по эту сторону мультивселенной, а ты останавливаешься, чтобы поболтать с *модронами*?'
 
     menu:
         'Что ты можешь рассказать о них, Морт?':
             # r880 # reply40847
-            jump dmorte_s430
+            jump morte_s430
 
         'Не обращать внимания на Морта и поздороваться с модроном.':
             # r881 # reply40848
-            $ dmorteLogic.r40848_action()
-            jump dmorte_dispose
+            $ morteLogic.r40848_action()
+            jump morte_dispose
 
         'Прошу прощения, Морт, но я разговариваю с модроном.':
             # r882 # reply40849
-            jump dmorte_s431
+            jump morte_s431
 
         'Хорошо. Идем, Морт.':
             # r883 # reply40850
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s430 # say40851
-label dmorte_s430:  # from 429.0 # Check EXTERN ~DBROCUS6~ : 3
+label morte_s430:  # from 429.0 # Check EXTERN ~DBROCUS6~ : 3
     SPEAKER 'Морт издает звук крайнего отвращения. Что тут сказать? Мелкие назойливые механические жучки… без передыху трудятся над навязыванием закона и порядка в мультивселенной. Заметь, не *добра*… только порядка. Давай просто забудем о них и пойдем поболтаем с дамочками, а?'
 
     menu:
         'Не обращать внимания на Морта и поздороваться с модроном.':
             # r884 # reply40852
-            $ dmorteLogic.r40852_action()
-            jump dmorte_dispose
+            $ morteLogic.r40852_action()
+            jump morte_dispose
 
         'Прошу прощения, Морт, но я разговариваю с модроном.':
             # r885 # reply40853
-            jump dmorte_s431
+            jump morte_s431
 
         'Хорошо. Идем, Морт.':
             # r886 # reply40854
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s431 # say40855
-label dmorte_s431:  # from 429.2 430.1 # Check EXTERN ~DBROCUS6~ : 3
+label morte_s431:  # from 429.2 430.1 # Check EXTERN ~DBROCUS6~ : 3
     SPEAKER 'Морт громко вздыхает. Ладно, как знаешь… Только не говори, что я тебя не предупреждал. Хотя ты, наверное, многого от них не добьешься… у них довольно странная манера разговора.'
 
     menu:
         'Приветствую…':
             # r887 # reply40856
-            $ dmorteLogic.r40856_action()
-            jump dmorte_dispose
+            $ morteLogic.r40856_action()
+            jump morte_dispose
 
 
 # s432 # say41135
-label dmorte_s432:  # - # Check EXTERN ~DKESAI~ : 2
+label morte_s432:  # - # Check EXTERN ~DKESAI~ : 2
     SPEAKER 'Все что угодно! — кричит Морт. — Ты можешь сделать со мной все что захочешь!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s433 # say41136
-label dmorte_s433:  # - # Check EXTERN ~DKESAI~ : 11
+label morte_s433:  # - # Check EXTERN ~DKESAI~ : 11
     SPEAKER 'Я вот-вот разрыдаюсь… где же была эта крошка, когда у меня было *тело*?!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s434 # say41632
-label dmorte_s434:  # - # Check EXTERN ~DKIMASXI~ : 2
+label morte_s434:  # - # Check EXTERN ~DKIMASXI~ : 2
     SPEAKER 'Мой приятель подумал, что ты привлекательная, но *черт*! Так сильно он еще ни разу не ошибался!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s435 # say41633
-label dmorte_s435:  # from 436.0 # Check EXTERN ~DKIMASXI~ : 14 Check EXTERN ~DKIMASXI~ : 4
+label morte_s435:  # from 436.0 # Check EXTERN ~DKIMASXI~ : 14 Check EXTERN ~DKIMASXI~ : 4
     SPEAKER 'Конечно, шеф, как скажешь. Хороша, чертовка, а? — Морт фыркает, затем двигает бровями. — Это мне *нравится*!'
 
     menu:
         'Уверен, так оно и есть, Морт, но мне нужно с ней поговорить.':
             # r888 # reply41634
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ладно… Тогда идем, Морт.':
             # r889 # reply41635
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s436 # say41636
-label dmorte_s436:  # - # Check EXTERN ~DKIMASXI~ : 3
+label morte_s436:  # - # Check EXTERN ~DKIMASXI~ : 3
     SPEAKER 'Как будто бы я оставил его где-то рядом, если бы оно у меня было! Что, услышала слово бордель и решила, что сможешь срубить здесь немного звенелок, блохастая помойная шлюха? Ха! Поверить не могу, что они пустили тебя внутрь со всеми этими блохами, падающими с твоих лохматых ног!'
 
     menu:
         'Эй вы, двое. Прекратите.':
             # r890 # reply41637
-            jump dmorte_s435
+            jump morte_s435
 
         'Позволить им продолжать.':
             # r891 # reply41638
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s437 # say41639
-label dmorte_s437:  # - # Check EXTERN ~DKIMASXI~ : 18
+label morte_s437:  # - # Check EXTERN ~DKIMASXI~ : 18
     SPEAKER '*Он*! '*ОН*, кажется, и так достаточно грязно ругается', ты, Кимаскси Говноязыкая… грязная козлоногая шлюшка!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s438 # say41640
-label dmorte_s438:  # - # Check EXTERN ~DKIMASXI~ : 20
+label morte_s438:  # - # Check EXTERN ~DKIMASXI~ : 20
     SPEAKER 'Да уж получше тебя, да? — Морт двигает бровями. — А? А?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s439 # say41641
-label dmorte_s439:  # - # Check EXTERN ~DKIMASXI~ : 21
+label morte_s439:  # - # Check EXTERN ~DKIMASXI~ : 21
     SPEAKER 'Не буду, *тифлинг*. Хотя признаю, что узнал пару новых вещей… неплохо придумано, шеф! [MRT387]'
 
     menu:
         'Конечно, Морт.':
             # r892 # reply41642
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s440 # say41830
-label dmorte_s440:  # from 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
+label morte_s440:  # from 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
     SPEAKER 'Послушай, шеф. Очевидно, ты еще не отошел от свидания со смертью, поэтому у меня два небольших совета для тебя. Во-первых, если у тебя возникают вопросы, *спроси* меня, хорошо?'
 
     menu:
         'Хорошо… если у меня возникнут вопросы, я спрошу у тебя.':
             # r893 # reply41831
-            jump dmorte_s441
+            jump morte_s441
 
 
 # s441 # say41832
-label dmorte_s441:  # from 440.0
+label morte_s441:  # from 440.0
     SPEAKER 'Во-вторых, если ты хоть *наполовину* забывчив от того, каким кажешься, то начни записывать свои мысли: как только ты встретишь то, что *может* быть важным, запиши это, чтобы не забыть.'
 
     menu:
         'Если бы у меня был бы дневник, который *должен* был быть рядом со мной, я бы так и поступил.':
             # r894 # reply41833
-            jump dmorte_s442
+            jump morte_s442
 
 
 # s442 # say41834
-label dmorte_s442:  # from 441.0
+label morte_s442:  # from 441.0
     SPEAKER 'Тогда заведи себе новый, шеф. Без проблем. Вокруг для тебя полным-полно пергамента и чернил.'
 
     menu:
         'Хм-м. Ну хорошо. Хуже от этого не будет… Заведу себе новый.':
             # r895 # reply41835
-            jump dmorte_s443
+            jump morte_s443
 
 
 # s443 # say41836
-label dmorte_s443:  # from 442.0
+label morte_s443:  # from 442.0
     SPEAKER 'Записывай в него каждый свой шаг. Если начнешь забывать важные вещи… например, кто ты… или, что еще важнее, кто *я*… то воспользуйся им, чтобы освежить свою память.'
 
     menu:
         'Ладно… Уяснил. Идем.':
             # r896 # reply41837
-            $ dmorteLogic.r41837_action()
-            jump dmorte_dispose
+            $ morteLogic.r41837_action()
+            jump morte_dispose
 
 
 # s444 # say41838
-label dmorte_s444:  # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
+label morte_s444:  # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
     SPEAKER 'Что тебя гложет, шеф? [MRT515]'
 
     menu:
         'Можешь еще раз прочитать, что у меня вытатуировано на спине?':
             # r897 # reply41840
-            jump dmorte_s445
+            jump morte_s445
 
         'Еще раз, что это за место?':
             # r898 # reply41841
-            jump dmorte_s450
+            jump morte_s450
 
-        'Это место такое огромное… Кто за ним присматривает?' if dmorteLogic.r41842_condition():
+        'Это место такое огромное… Кто за ним присматривает?' if morteLogic.r41842_condition():
             # r899 # reply41842
-            jump dmorte_s451
+            jump morte_s451
 
-        'Еще раз, кто эти смотрители?' if dmorteLogic.r41843_condition():
+        'Еще раз, кто эти смотрители?' if morteLogic.r41843_condition():
             # r900 # reply41843
-            jump dmorte_s451
+            jump morte_s451
 
         'Эти трупы… откуда они все берутся?':
             # r901 # reply41844
-            jump dmorte_s454
+            jump morte_s454
 
-        'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?' if dmorteLogic.r41845_condition():
+        'До этого ты говорил, чтобы я не убивал *женские* трупы. Почему?' if morteLogic.r41845_condition():
             # r902 # reply41845
-            jump dmorte_s455
+            jump morte_s455
 
-        'Как мне использовать эти бинты?' if dmorteLogic.r41846_condition():
+        'Как мне использовать эти бинты?' if morteLogic.r41846_condition():
             # r903 # reply41846
-            jump dmorte_s453
+            jump morte_s453
 
-        'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if dmorteLogic.r41847_condition():
+        'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if morteLogic.r41847_condition():
             # r904 # reply41847
-            jump dmorte_s440
+            jump morte_s440
 
-        'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if dmorteLogic.r41848_condition():
+        'Пока ничего, Морт. Просто проверяю, что ты еще со мной.' if morteLogic.r41848_condition():
             # r905 # reply41848
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s445 # say41849
-label dmorte_s445:  # from 444.0
+label morte_s445:  # from 444.0
     SPEAKER 'Эй, шеф, *да ладно* тебе. Только не говори, что ты опять все забыл.'
 
     menu:
         'Мне просто нужно освежить свою память.':
             # r906 # reply41850
-            jump dmorte_s446
+            jump morte_s446
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r907 # reply41851
-            jump dmorte_s444
+            jump morte_s444
 
-        'Ладно, забудь. Идем.' if dmorteLogic.r41852_condition():
+        'Ладно, забудь. Идем.' if morteLogic.r41852_condition():
             # r908 # reply41852
-            jump dmorte_s440
+            jump morte_s440
 
-        'Ладно, забудь. Идем.' if dmorteLogic.r41853_condition():
+        'Ладно, забудь. Идем.' if morteLogic.r41853_condition():
             # r909 # reply41853
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s446 # say41854
-label dmorte_s446:  # from 445.0
+label morte_s446:  # from 445.0
     SPEAKER 'Готов поспорить, что услышу ЭТО много раз, — Морт прочищает горло. — Посмотрим…  'Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его уже не записали в книгу мертвых'.'
 
     menu:
         'Фарод… хм-м. Продолжай.':
             # r910 # reply41855
-            jump dmorte_s447
+            jump morte_s447
 
         'Неважно. У меня есть другие вопросы…':
             # r911 # reply41856
-            jump dmorte_s444
+            jump morte_s444
 
-        'Забудь. Я уже достаточно наслушался. Идем.' if dmorteLogic.r41857_condition():
+        'Забудь. Я уже достаточно наслушался. Идем.' if morteLogic.r41857_condition():
             # r912 # reply41857
-            jump dmorte_s440
+            jump morte_s440
 
-        'Забудь. Я уже достаточно наслушался. Идем.' if dmorteLogic.r41858_condition():
+        'Забудь. Я уже достаточно наслушался. Идем.' if morteLogic.r41858_condition():
             # r913 # reply41858
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s447 # say41859
-label dmorte_s447:  # from 446.0
+label morte_s447:  # from 446.0
     SPEAKER 'Сейчас, сейчас, погоди, — Морт на миг умолкает. — Хорошо, вот последний кусок…  'Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому, КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода'.'
 
     menu:
         'Когда я очнулся, рядом со мной не было дневника?':
             # r914 # reply41860
-            jump dmorte_s448
+            jump morte_s448
 
         'Тогда ладно. У меня есть другие вопросы…':
             # r915 # reply41861
-            jump dmorte_s444
+            jump morte_s444
 
-        'Забудь. Я уже достаточно наслушался. Идем.' if dmorteLogic.r41862_condition():
+        'Забудь. Я уже достаточно наслушался. Идем.' if morteLogic.r41862_condition():
             # r916 # reply41862
-            jump dmorte_s440
+            jump morte_s440
 
-        'Забудь. Я уже достаточно наслушался. Идем.' if dmorteLogic.r41863_condition():
+        'Забудь. Я уже достаточно наслушался. Идем.' if morteLogic.r41863_condition():
             # r917 # reply41863
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s448 # say41864
-label dmorte_s448:  # from 447.0
+label morte_s448:  # from 447.0
     SPEAKER 'Нет… ты был обобран догола. Как я уже говорил, похоже, что достаточно того дневника, что написан у тебя на теле.'
 
     menu:
         'Ты уверен, что не знаешь никого по имени Фарод?':
             # r918 # reply41865
-            jump dmorte_s449
+            jump morte_s449
 
         'И то правда. У меня есть другие вопросы…':
             # r919 # reply41866
-            jump dmorte_s444
+            jump morte_s444
 
-        'Ладно. Идем.' if dmorteLogic.r41867_condition():
+        'Ладно. Идем.' if morteLogic.r41867_condition():
             # r920 # reply41867
-            jump dmorte_s440
+            jump morte_s440
 
-        'Ладно. Идем.' if dmorteLogic.r41868_condition():
+        'Ладно. Идем.' if morteLogic.r41868_condition():
             # r921 # reply41868
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s449 # say41869
-label dmorte_s449:  # from 448.0
+label morte_s449:  # from 448.0
     SPEAKER 'Неа. В общем, какой-нибудь пень да знает, как добраться до него. Надо поспрашивать в округе… ПОСЛЕ того, как мы выберемся отсюда.'
 
     menu:
         'Перед тем как мы пойдем, у меня есть еще вопросы…':
             # r922 # reply41870
-            jump dmorte_s444
+            jump morte_s444
 
-        'Ладно. Идем.' if dmorteLogic.r41871_condition():
+        'Ладно. Идем.' if morteLogic.r41871_condition():
             # r923 # reply41871
-            jump dmorte_s440
+            jump morte_s440
 
-        'Ладно. Идем.' if dmorteLogic.r41872_condition():
+        'Ладно. Идем.' if morteLogic.r41872_condition():
             # r924 # reply41872
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s450 # say41873
-label dmorte_s450:  # from 444.1
+label morte_s450:  # from 444.1
     SPEAKER 'Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи.'
 
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r925 # reply41874
-            jump dmorte_s444
+            jump morte_s444
 
-        'Это все, что я хотел узнать. Спасибо.' if dmorteLogic.r41875_condition():
+        'Это все, что я хотел узнать. Спасибо.' if morteLogic.r41875_condition():
             # r926 # reply41875
-            jump dmorte_s440
+            jump morte_s440
 
-        'Это все, что я хотел узнать. Спасибо.' if dmorteLogic.r41876_condition():
+        'Это все, что я хотел узнать. Спасибо.' if morteLogic.r41876_condition():
             # r927 # reply41876
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s451 # say41877
-label dmorte_s451:  # from 444.2 444.3
+label morte_s451:  # from 444.2 444.3
     SPEAKER 'Они зовут себя 'тленными'. Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица. Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть… и лучше раньше, чем позже.'
 
     menu:
         'Я запутался… какое тленным дело, если я сбегу?':
             # r928 # reply41878
-            jump dmorte_s452
+            jump morte_s452
 
         'Ясно. У меня есть другие вопросы к тебе…':
             # r929 # reply41879
-            jump dmorte_s444
+            jump morte_s444
 
-        'Понятно. Тогда я буду осторожен.' if dmorteLogic.r41880_condition():
+        'Понятно. Тогда я буду осторожен.' if morteLogic.r41880_condition():
             # r930 # reply41880
-            jump dmorte_s440
+            jump morte_s440
 
-        'Понятно. Тогда я буду осторожен.' if dmorteLogic.r41881_condition():
+        'Понятно. Тогда я буду осторожен.' if morteLogic.r41881_condition():
             # r931 # reply41881
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s452 # say41882
-label dmorte_s452:  # from 451.0
+label morte_s452:  # from 451.0
     SPEAKER 'Ты что, вообще ничего не слушал?! Я сказал, что трухлявые верят в то, что ВСЕ должны умереть, и лучше раньше, чем позже. Думаешь, что трупы, которых ты видел, счастливее в книге мертвых, чем вне ее?'
 
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r932 # reply41883
-            jump dmorte_s444
+            jump morte_s444
 
-        'Ладно… Я… попробую это запомнить.' if dmorteLogic.r41884_condition():
+        'Ладно… Я… попробую это запомнить.' if morteLogic.r41884_condition():
             # r933 # reply41884
-            jump dmorte_s440
+            jump morte_s440
 
-        'Ладно… Я… попробую это запомнить.' if dmorteLogic.r41885_condition():
+        'Ладно… Я… попробую это запомнить.' if morteLogic.r41885_condition():
             # r934 # reply41885
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s453 # say41886
-label dmorte_s453:  # from 444.6
+label morte_s453:  # from 444.6
     SPEAKER 'Нууу… просто *используй* их. Останавливает кровотечение и все такое.'
 
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r935 # reply41887
-            jump dmorte_s444
+            jump morte_s444
 
-        'Спасибо. Думаю, я смогу с ними справиться.' if dmorteLogic.r41888_condition():
+        'Спасибо. Думаю, я смогу с ними справиться.' if morteLogic.r41888_condition():
             # r936 # reply41888
-            jump dmorte_s440
+            jump morte_s440
 
-        'Спасибо. Думаю, я смогу с ними справиться.' if dmorteLogic.r41889_condition():
+        'Спасибо. Думаю, я смогу с ними справиться.' if morteLogic.r41889_condition():
             # r937 # reply41889
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s454 # say41890
-label dmorte_s454:  # from 444.4
+label morte_s454:  # from 444.4
     SPEAKER 'Смерть посещает планы каждый день, шеф. Эти увальни — все, что осталось от тех бедолаг, кто продал свои тела смотрителям.'
 
     menu:
         'Ясно. У меня есть другие вопросы к тебе…':
             # r938 # reply41891
-            jump dmorte_s444
+            jump morte_s444
 
-        'Ладно… Я… попробую это запомнить.' if dmorteLogic.r41892_condition():
+        'Ладно… Я… попробую это запомнить.' if morteLogic.r41892_condition():
             # r939 # reply41892
-            jump dmorte_s440
+            jump morte_s440
 
-        'Ладно… Я… попробую это запомнить.' if dmorteLogic.r41893_condition():
+        'Ладно… Я… попробую это запомнить.' if morteLogic.r41893_condition():
             # r940 # reply41893
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s455 # say41894
-label dmorte_s455:  # from 444.5
+label morte_s455:  # from 444.5
     SPEAKER 'Чт… ты *серьезно*? Послушай, шеф, у этих мертвых крошек есть последняя возможность познакомиться с такими крутыми громилами как мы. Нам следует быть более *деликатными*… не ломать их ради ключей, не отрывать им конечности, ничего такого.'
 
     menu:
         'Последняя возможность? Погоди… о *чем* это ты толкуешь?':
             # r941 # reply41895
-            jump dmorte_s456
+            jump morte_s456
 
         'Неважно. У меня к тебе еще вопросы…':
             # r942 # reply41896
-            jump dmorte_s444
+            jump morte_s444
 
         'Ладно… Я… попробую это запомнить.':
             # r943 # reply41897
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s456 # say41898
-label dmorte_s456:  # from 455.0
+label morte_s456:  # from 455.0
     SPEAKER 'Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?'
 
     menu:
         'Нет… не очень, если честно.':
             # r944 # reply41899
-            jump dmorte_s457
+            jump morte_s457
 
-        'Ты это *несерьезно*.' if dmorteLogic.r41900_condition():
+        'Ты это *несерьезно*.' if morteLogic.r41900_condition():
             # r945 # reply41900
-            jump dmorte_s457
+            jump morte_s457
 
         'Неважно. У меня к тебе еще вопросы…':
             # r946 # reply41901
-            jump dmorte_s444
+            jump morte_s444
 
         'Я достаточно наслушался. Идем.':
             # r947 # reply41902
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s457 # say41903
-label dmorte_s457:  # from 456.0 456.1
+label morte_s457:  # from 456.0 456.1
     SPEAKER 'Шеф, для нас до этих ковыляющих цыпочек — открытая дорога. Мы *все* по крайней мере один раз умирали: у нас есть общая тема для разговоров. Они предрасположены к мужчинам с нашим опытом смерти.'
 
     menu:
         'Постой… разве ты не говорил до этого, что я *не мертвый*?':
             # r948 # reply41904
-            jump dmorte_s458
+            jump morte_s458
 
         'Неважно. У меня к тебе еще вопросы…':
             # r949 # reply41905
-            jump dmorte_s444
+            jump morte_s444
 
         'Я достаточно наслушался. Идем.':
             # r950 # reply41906
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s458 # say41907
-label dmorte_s458:  # from 457.0
+label morte_s458:  # from 457.0
     SPEAKER 'Ну… хорошо, *ты*, может быть, и не мертвый, а вот *я* — да. И как я уже говорил, я не против разделить гроб с какой-нибудь из здешних красивеньких жилистых покойниц. Морт начинает в предвкушении щелкать зубами. Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится…'
 
     menu:
         'У меня есть другие вопросы к тебе, Морт…':
             # r951 # reply41908
-            jump dmorte_s444
+            jump morte_s444
 
         'Я достаточно наслушался. Идем.':
             # r952 # reply41909
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s459 # say41910
-label dmorte_s459:  # -
+label morte_s459:  # -
     SPEAKER 'Силы небесные. Это одна из этих ЧЕРТОВЫХ книг.'
 
     menu:
         'Что такое?':
             # r953 # reply41911
-            $ dmorteLogic.r41911_action()
-            jump dmorte_s460
+            $ morteLogic.r41911_action()
+            jump morte_s460
 
 
 # s460 # say41913
-label dmorte_s460:  # from 459.0
+label morte_s460:  # from 459.0
     SPEAKER 'Если я прав, то это та книга, куда они записывают имена всех несчастных бедолаг, которым не повезло оказаться здесь.'
 
     menu:
         'А мое имя может быть там?':
             # r954 # reply41914
-            jump dmorte_s461
+            jump morte_s461
 
 
 # s461 # say41915
-label dmorte_s461:  # from 460.0
+label morte_s461:  # from 460.0
     SPEAKER 'Э… ну… *Возможно*. Чтобы определить это, нужно потрясти черепушкой вон с тем парящим трухлявиком. Вот только я не уверен, что это хорошая идея.'
 
     menu:
         'Мне нужны ответы. Я поговорю с ним.':
             # r955 # reply41916
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s462 # say41919
-label dmorte_s462:  # - # Check EXTERN ~DJUMBLE~ : 2 Check EXTERN ~DJUMBLE~ : 8 Check EXTERN ~DJUMBLE~ : 9
+label morte_s462:  # - # Check EXTERN ~DJUMBLE~ : 2 Check EXTERN ~DJUMBLE~ : 8 Check EXTERN ~DJUMBLE~ : 9
     SPEAKER 'Морт шепчет: В каком-то дурдоме недостает постояльца.'
 
     menu:
         'Джамбл, у меня несколько вопросов…':
             # r956 # reply41920
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ты тот, кто проклял Вонючку, не так ли?' if dmorteLogic.r41921_condition():
+        'Ты тот, кто проклял Вонючку, не так ли?' if morteLogic.r41921_condition():
             # r957 # reply41921
-            $ dmorteLogic.r41921_action()
-            jump dmorte_dispose
+            $ morteLogic.r41921_action()
+            jump morte_dispose
 
-        'Я хотел бы, чтобы ты снял проклятие с Вонючки.' if dmorteLogic.r67864_condition():
+        'Я хотел бы, чтобы ты снял проклятие с Вонючки.' if morteLogic.r67864_condition():
             # r958 # reply67864
-            jump dmorte_dispose
+            jump morte_dispose
 
         'А теперь я ухожу, Джамбл. Прощай.':
             # r959 # reply41922
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s463 # say41923
-label dmorte_s463:  # - # Check EXTERN ~DJUMBLE~ : 7
+label morte_s463:  # - # Check EXTERN ~DJUMBLE~ : 7
     SPEAKER 'Ого… шеф, похоже, что в тебя только что бросили проклятье…'
 
     menu:
         'Что ты со мной сделал Джамбл?':
             # r960 # reply41924
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Джамбл… пожалуйста, убери это, что бы ты там не натворил.':
             # r961 # reply41925
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Что бы ты там не сделал, Джамбл, убери это… или ты об этом горько пожалеешь.':
             # r962 # reply41926
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Пошли уже, Морт.':
             # r963 # reply41927
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s464 # say42929
-label dmorte_s464:  # - # Check EXTERN ~DMONTAGU~ : 29
+label morte_s464:  # - # Check EXTERN ~DMONTAGU~ : 29
     SPEAKER 'Я бы посоветовал проигнорировать эту цыпочку… веди себя отстраненно и невозмутимо. Вот это уж точно добавит остроты в ваши отношения!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s465 # say42930
-label dmorte_s465:  # - # Check EXTERN ~DMONTAGU~ : 30 Check EXTERN ~DMONTAGU~ : 31
+label morte_s465:  # - # Check EXTERN ~DMONTAGU~ : 30 Check EXTERN ~DMONTAGU~ : 31
     SPEAKER 'Доверься мне, малыш. Начни игнорировать ее, придумай какие-нибудь придирки, пусть гадает — и тогда она станет из кожи вон лезть, лишь бы понять, в чем дело. Верно, шеф?'
 
     menu:
         'Да… Она подумает, что что-то не так, и в кои-то веки он превратится из мишени в игрока.':
             # r964 # reply42931
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Нет… это плохая идея.':
             # r965 # reply42932
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s466 # say43543
-label dmorte_s466:  # - # Check EXTERN ~DKIINA~ : 35
+label morte_s466:  # - # Check EXTERN ~DKIINA~ : 35
     SPEAKER 'Именно поэтому гиты и не должны размножаться. Они без конца твердят о чем-то, или о вере во что-то, или там 'где бы найти мозгососа или там гитьянки и убить их' и так далее и тому подобное. Я даже не уверен, что им доставляет удовольствие тыкать друг друга. Они сходят с ума и теряют голову, или наоборот — все время остаются такими прямыми и сосредоточенными, что забывают о чувстве юмора. Они болтают про концентрацию, единый разум и взаимное доверие, и при этом упоминают, что их раса раскололась вскоре после того, как они покончили с мозгососами. Теперь не говори мне, что религия и идеология не разрушит планы.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s467 # say43908
-label dmorte_s467:  # - # Check EXTERN ~DNEML~ : 4 Check EXTERN ~DNEML~ : 6 Check EXTERN ~DNEML~ : 14 Check EXTERN ~DNEML~ : 11
+label morte_s467:  # - # Check EXTERN ~DNEML~ : 4 Check EXTERN ~DNEML~ : 6 Check EXTERN ~DNEML~ : 14 Check EXTERN ~DNEML~ : 11
     SPEAKER 'Ух ты.'
 
     menu:
-        'Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.' if dmorteLogic.r43909_condition():
+        'Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.' if morteLogic.r43909_condition():
             # r966 # reply43909
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Немель? Твоя подруга Эльвин ищет тебя.' if dmorteLogic.r43910_condition():
+        'Немель? Твоя подруга Эльвин ищет тебя.' if morteLogic.r43910_condition():
             # r967 # reply43910
-            $ dmorteLogic.r43910_action()
-            jump dmorte_dispose
+            $ morteLogic.r43910_action()
+            jump morte_dispose
 
-        'Ты кого-то ищешь?' if dmorteLogic.r43911_condition():
+        'Ты кого-то ищешь?' if morteLogic.r43911_condition():
             # r968 # reply43911
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть несколько вопросов…':
             # r969 # reply43912
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Мне ничего не нужно, Немель. Прощай.':
             # r970 # reply43913
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s468 # say43914
-label dmorte_s468:  # - # Check EXTERN ~DANNAH~ : 209
+label morte_s468:  # - # Check EXTERN ~DANNAH~ : 209
     SPEAKER 'Ух ты.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s469 # say43915
-label dmorte_s469:  # - # Check EXTERN ~DANNAH~ : 210
+label morte_s469:  # - # Check EXTERN ~DANNAH~ : 210
     SPEAKER 'Вай, что за горячая девчонка! Изголодалась по вниманию? Я мог бы и на тебя слюни попускать, раз уж ты ревнуешь… Морт начинает подлетать к Анне, причмокивая…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s470 # say43916
-label dmorte_s470:  # - # Check EXTERN ~DNEML~ : 4 Check EXTERN ~DNEML~ : 6 Check EXTERN ~DNEML~ : 14 Check EXTERN ~DNEML~ : 11
+label morte_s470:  # - # Check EXTERN ~DNEML~ : 4 Check EXTERN ~DNEML~ : 6 Check EXTERN ~DNEML~ : 14 Check EXTERN ~DNEML~ : 11
     SPEAKER 'Морт резко останавливается и отворачивается, что-то неразборчиво бормоча.'
 
     menu:
-        'Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.' if dmorteLogic.r43917_condition():
+        'Ты Немель? Мне сказали, что ты знаешь волшебное слово к этому графину.' if morteLogic.r43917_condition():
             # r971 # reply43917
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Немель? Твоя подруга Эльвин ищет тебя.' if dmorteLogic.r43918_condition():
+        'Немель? Твоя подруга Эльвин ищет тебя.' if morteLogic.r43918_condition():
             # r972 # reply43918
-            $ dmorteLogic.r43918_action()
-            jump dmorte_dispose
+            $ morteLogic.r43918_action()
+            jump morte_dispose
 
-        'Ты кого-то ищешь?' if dmorteLogic.r43919_condition():
+        'Ты кого-то ищешь?' if morteLogic.r43919_condition():
             # r973 # reply43919
-            jump dmorte_dispose
+            jump morte_dispose
 
         'У меня есть несколько вопросов…':
             # r974 # reply43920
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Мне ничего не нужно, Немель. Прощай.':
             # r975 # reply43921
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s471 # say43922
-label dmorte_s471:  # -
+label morte_s471:  # -
     SPEAKER 'Да ладно, шеф… Уверен, мы ведь сможем *что-нибудь* придумать. А? А?'
 
     menu:
         'Забудь об этом, Морт. Идем.':
             # r976 # reply43923
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s472 # say44244
-label dmorte_s472:  # - # Check EXTERN ~DGONCAL~ : 20
+label morte_s472:  # - # Check EXTERN ~DGONCAL~ : 20
     SPEAKER 'Морт подлетает поближе и шепчет: Только не мне. Я могу помочь. А, шеф? Подмигну, подтолкну…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s473 # say44245
-label dmorte_s473:  # - # Check EXTERN ~DANNAH~ : 214
+label morte_s473:  # - # Check EXTERN ~DANNAH~ : 214
     SPEAKER 'Повергнутый в ужас, Морт встревает в разговор. Нет! Мужик, ты *спятил*? Это же полный бред!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s474 # say44677
-label dmorte_s474:  # - # Check EXTERN ~DYI'MINN~ : 47
+label morte_s474:  # - # Check EXTERN ~DYI'MINN~ : 47
     SPEAKER 'Морт закатывает глаза. Нашествие дураков…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s475 # say44944
-label dmorte_s475:  # - # Check EXTERN ~DUDESIRE~ : 2
+label morte_s475:  # - # Check EXTERN ~DUDESIRE~ : 2
     SPEAKER 'Обожа-а-аю Фестхолл.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s476 # say45026
-label dmorte_s476:  # - # Check EXTERN ~D3PLANEA~ : 1
+label morte_s476:  # - # Check EXTERN ~D3PLANEA~ : 1
     SPEAKER 'Морт громко вздыхает. Брось, шеф, мы что, и впрямь останемся на это?'
 
     menu:
         'Морт, просто немного помолчи. Я хочу послушать.':
             # r977 # reply45027
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r978 # reply45028
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ты прав, Морт. Идем.':
             # r979 # reply45029
-            $ dmorteLogic.r45029_action()
-            jump dmorte_dispose
+            $ morteLogic.r45029_action()
+            jump morte_dispose
 
 
 # s477 # say45088
-label dmorte_s477:  # -
+label morte_s477:  # -
     SPEAKER 'Ха. Кажется, кто-то забыл приказать этому бедолаге прекратить следовать правилу трех.'
 
     menu:
         'О чем это ты?':
             # r980 # reply45089
-            jump dmorte_s478
+            jump morte_s478
 
 
 # s478 # say45091
-label dmorte_s478:  # from 477.0
+label morte_s478:  # from 477.0
     SPEAKER 'У этих трупов котелок уже почти не варит, так что они могут выполнять не больше одного задания одновременно… если приказать им делать что-то, то они будут это делать до тех пор, пока кто-нибудь их не остановит. Этот бедолага, наверное, закончил свою работу, но сообщить об этом ему забыли.'
 
     menu:
         'А кто отдает им приказы?':
             # r981 # reply45092
-            jump dmorte_s481
+            jump morte_s481
 
         'Ты что-то сказал про 'правило трех'. Что ты имел ввиду?':
             # r982 # reply45093
-            $ dmorteLogic.r45093_action()
-            jump dmorte_s479
+            $ morteLogic.r45093_action()
+            jump morte_s479
 
         'Ладно. Давай двигаться дальше.':
             # r983 # reply45094
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s479 # say45095
-label dmorte_s479:  # from 478.1 481.0
+label morte_s479:  # from 478.1 481.0
     SPEAKER 'А? Ну, правило трех — это один из пресловутых законов планов, согласно которому все на свете случается по трое… или состоит из трех частей… или что всегда есть выбор из трех вариантов, ну и так далее.'
 
     menu:
         'Ты так говоришь, как будто не очень веришь в это.':
             # r984 # reply45096
-            jump dmorte_s480
+            jump morte_s480
 
 
 # s480 # say45098
-label dmorte_s480:  # from 479.0 # Check EXTERN ~DZM965~ : 1
+label morte_s480:  # from 479.0 # Check EXTERN ~DZM965~ : 1
     SPEAKER 'По мне, так все это фигня. Если ты возьмешь с потолка число, любое число, и попытаешься к нему приделать великий смысл, то ты всегда найдешь кучу каких-нибудь совпадений.'
 
     menu:
         'Понятно. До этого ты говорил о том, что кто-то отдал этому трупу приказ, а потом забыл его остановить. А кто отдает трупам приказы?':
             # r985 # reply45099
-            jump dmorte_s481
+            jump morte_s481
 
         'Понятно. Я хочу еще намного осмотреть этого зомби…':
             # r986 # reply45100
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ладно. Давай двигаться дальше.':
             # r987 # reply45101
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s481 # say45102
-label dmorte_s481:  # from 478.0 480.0 # Check EXTERN ~DZM965~ : 1
+label morte_s481:  # from 478.0 480.0 # Check EXTERN ~DZM965~ : 1
     SPEAKER 'Их выписал из книги мертвых либо один из здешних смотрителей, либо какой-то некромант. Скорее всего, это один из смотрителей… в конце концов, это им нужна дешевая рабочая сила.'
 
     menu:
         'Понятно. А что ты там говорил до этого… про 'правило трех'?':
             # r988 # reply45103
-            $ dmorteLogic.r45103_action()
-            jump dmorte_s479
+            $ morteLogic.r45103_action()
+            jump morte_s479
 
         'Понятно. Я хочу еще намного осмотреть этого зомби…':
             # r989 # reply45104
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ладно. Давай двигаться дальше.':
             # r990 # reply45105
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s482 # say45540
-label dmorte_s482:  # - # Check EXTERN ~DZM985~ : 3
+label morte_s482:  # - # Check EXTERN ~DZM985~ : 3
     SPEAKER 'Э… шеф… осторож…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s483 # say45709
-label dmorte_s483:  # - # Check EXTERN ~DANNAH~ : 215
+label morte_s483:  # - # Check EXTERN ~DANNAH~ : 215
     SPEAKER 'О-о, аукцион! Может, продадим здесь Анну.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s484 # say45710
-label dmorte_s484:  # - # Check EXTERN ~DDAKKON~ : 163
+label morte_s484:  # - # Check EXTERN ~DDAKKON~ : 163
     SPEAKER 'О-о, аукцион! Может, продадим здесь Даккона.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s485 # say45711
-label dmorte_s485:  # - # Check EXTERN ~DGILTSP~ : 4
+label morte_s485:  # - # Check EXTERN ~DGILTSP~ : 4
     SPEAKER 'О-о, аукцион! Может, подыщем мне здесь тело.'
 
     menu:
         'Хорошо, Морт. Я не забуду об этом спросить.':
             # r991 # reply45712
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Тогда давай уходить отсюда.':
             # r992 # reply45713
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s486 # say45714
-label dmorte_s486:  # - # Check EXTERN ~DGILTSP~ : 4
+label morte_s486:  # - # Check EXTERN ~DGILTSP~ : 4
     SPEAKER 'Должно быть, это любовь. Это ведь любовь, да, босс?'
 
     menu:
         'Прекратите, вы оба. Мне нужно задать несколько вопросов.':
             # r993 # reply45715
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Как скажешь, Морт. Давай оставим в покое этого парня.':
             # r994 # reply45716
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s487 # say45996
-label dmorte_s487:  # - # Check EXTERN ~DVAULT9~ : 0
+label morte_s487:  # - # Check EXTERN ~DVAULT9~ : 0
     SPEAKER 'Эй, смотри! Еще одна летающая голова.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s488 # say47813
-label dmorte_s488:  # - # Check EXTERN ~DJUSTFER~ : 8
+label morte_s488:  # - # Check EXTERN ~DJUSTFER~ : 8
     SPEAKER 'Похоже, у этой дубинки что-то вроде зависти к чужой мудрости. Забей, палка.'
 
     menu:
         'Умолкни. У меня есть другие вопросы…':
             # r995 # reply47814
-            jump dmorte_dispose
+            jump morte_dispose
 
         'На этом разговор окончен.':
             # r996 # reply47815
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s489 # say49443
-label dmorte_s489:  # -
+label morte_s489:  # -
     SPEAKER 'Оо, гитьянки. Могу поспорить, Даккон будет *так* рад помочь.'
 
     menu:
         'Спасибо за ценное замечание, Морт. Идем.':
             # r997 # reply49444
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s490 # say50162
-label dmorte_s490:  # - # Check EXTERN ~DANNAH~ : 242
+label morte_s490:  # - # Check EXTERN ~DANNAH~ : 242
     SPEAKER 'Ха, да *есть* у них имена. Я уверен в этом.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s491 # say50164
-label dmorte_s491:  # - # Check EXTERN ~DANNAH~ : 240 Check EXTERN ~DADABUS~ : 6
+label morte_s491:  # - # Check EXTERN ~DANNAH~ : 240 Check EXTERN ~DADABUS~ : 6
     SPEAKER 'Вот *ты* и скажи, бесовка.'
 
     menu:
         'Хватит, Морт. Анна, ты можешь задать ему другие вопросы?':
             # r998 # reply50165
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь. Уходим отсюда.':
             # r999 # reply50166
-            $ dmorteLogic.r50166_action()
-            jump dmorte_dispose
+            $ morteLogic.r50166_action()
+            jump morte_dispose
 
 
 # s492 # say50263
-label dmorte_s492:  # - # Check EXTERN ~DADABUS~ : 2
+label morte_s492:  # - # Check EXTERN ~DADABUS~ : 2
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти козлиные морды пытаются сказать. Нужен переводчик? Поищи коренного сигильца.'
 
     menu:
         'Понятно.':
             # r1000 # reply50264
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s493 # say50266
-label dmorte_s493:  # - # Check EXTERN ~DADABUS~ : 2
+label morte_s493:  # - # Check EXTERN ~DADABUS~ : 2
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси нашу маленькую бесовку, — он кивает на Анну. — Она из Улья.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r1001 # reply50267
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s494 # say50269
-label dmorte_s494:  # - # Check EXTERN ~DADABUS~ : 2
+label morte_s494:  # - # Check EXTERN ~DADABUS~ : 2
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? — он кивает на Даккона. — Попроси нашего ханжу-молчуна перевести.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r1002 # reply50270
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s495 # say50272
-label dmorte_s495:  # - # Check EXTERN ~DADABUS~ : 2
+label morte_s495:  # - # Check EXTERN ~DADABUS~ : 2
     SPEAKER 'Морт усмехается. Да я скорее пройду через кишки танарри, чем разгадаю, что эти летающие козлиные морды пытаются сказать. Нужен переводчик? Попроси танарри, — он кивает на Падшую Грацию. — Наверное, она все время общалась с этими парнями.'
 
     menu:
         'Наверное, так и стоит поступить…':
             # r1003 # reply50273
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s496 # say50320
-label dmorte_s496:  # -
+label morte_s496:  # -
     SPEAKER 'Ох, силы небесные! Чертов дабус.'
 
     menu:
         'Что не так?':
             # r1004 # reply50321
-            jump dmorte_s497
+            jump morte_s497
 
 
 # s497 # say50322
-label dmorte_s497:  # from 496.0
+label morte_s497:  # from 496.0
     SPEAKER 'Он — дабус. Они 'разговаривают' ребусами, этими тупыми словесными головоломками. Если *ты* не знаешь, что он говорит, то тогда нам лучше поискать кого-нибудь из местных или какой-нибудь другой способ общаться с ними… если нам это надо. Чертово племя. Знаешь что? Да они *умеют* разговаривать, просто они хотят вывести из себя того, кто пытается разгадать их головоломки.'
 
     menu:
         'Что за 'дабус'?':
             # r1005 # reply50323
-            jump dmorte_s498
+            jump morte_s498
 
 
 # s498 # say50324
-label dmorte_s498:  # from 497.0 # Check EXTERN ~DADABUS~ : 2
+label morte_s498:  # from 497.0 # Check EXTERN ~DADABUS~ : 2
     SPEAKER 'Говорят, что они слуги Леди Боли. Они парят повсюду и ломают, чинят и латают Сигил по ее капризу. Они хуже трупных мух, — Морт вздыхает. — Не нужно их трогать, а не то Леди… рассердится.'
 
     menu:
-        ''Леди Боли'? Кто это?' if dmorteLogic.r50325_condition():
+        ''Леди Боли'? Кто это?' if morteLogic.r50325_condition():
             # r1006 # reply50325
-            $ dmorteLogic.r50325_action()
-            jump dmorte_s499
+            $ morteLogic.r50325_action()
+            jump morte_s499
 
-        'Что ты можешь рассказать о Леди Боли?' if dmorteLogic.r50328_condition():
+        'Что ты можешь рассказать о Леди Боли?' if morteLogic.r50328_condition():
             # r1007 # reply50328
-            jump dmorte_s499
+            jump morte_s499
 
-        'Понятно.' if dmorteLogic.r50329_condition():
+        'Понятно.' if morteLogic.r50329_condition():
             # r1008 # reply50329
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s499 # say50326
-label dmorte_s499:  # from 498.0 498.1 # Check EXTERN ~DADABUS~ : 2
+label morte_s499:  # from 498.0 498.1 # Check EXTERN ~DADABUS~ : 2
     SPEAKER 'Она заправляет городом. Ты узнаешь ее, когда увидишь: у нее вокруг лица клинки, она ростом с гиганта и парит над землей, совсем как эти парни. Морт кивает на дабуса, смотрящего на вас обоих. Про нее никто почти ничего не знает… она не очень говорлива. Все, что тебе следует знать: не зли ее. Если увидишь ее, мой тебе совет — тикай.'
 
     menu:
         'Понятно.':
             # r1009 # reply50327
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s500 # say50410
-label dmorte_s500:  # -
+label morte_s500:  # -
     SPEAKER 'Что? Что? Что в ней было, шеф?'
 
     menu:
         'Не знаю, что и сказать, Морт…':
             # r1010 # reply50411
-            jump dmorte_s501
+            jump morte_s501
 
         'Ничто из того, что тебя касается, Морт.':
             # r1011 # reply50412
-            jump dmorte_s501
+            jump morte_s501
 
         'Показать ему Кодекс.':
             # r1012 # reply50413
-            jump dmorte_s503
+            jump morte_s503
 
 
 # s501 # say50414
-label dmorte_s501:  # from 500.0 500.1
+label morte_s501:  # from 500.0 500.1
     SPEAKER 'ЧТО? Наверно, ты шутишь? Брось, дай посмотреть!'
 
     menu:
         'Показать ему Кодекс.':
             # r1013 # reply50415
-            jump dmorte_s503
+            jump morte_s503
 
         'Нет, Морт. Просто забудь, что ты его видел.':
             # r1014 # reply50416
-            $ dmorteLogic.r50416_action()
-            jump dmorte_s502
+            $ morteLogic.r50416_action()
+            jump morte_s502
 
 
 # s502 # say50417
-label dmorte_s502:  # from 501.1 # Check EXTERN ~DCODEXI~ : 2
+label morte_s502:  # from 501.1 # Check EXTERN ~DCODEXI~ : 2
     SPEAKER 'Морт что-то недовольно бормочет… но прекращает разговор.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s503 # say50418
-label dmorte_s503:  # from 500.2 501.0 # Check EXTERN ~DCODEXI~ : 2
+label morte_s503:  # from 500.2 501.0 # Check EXTERN ~DCODEXI~ : 2
     SPEAKER 'Морт взлетает над твоим плечом, чтобы ознакомиться с содержимым Кодекса. Его глаза чуть не вываливаются из глазниц, пробегая по его страницам. О-о-о. О-о-о-о. О, я… но… ого.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s504 # say50697
-label dmorte_s504:  # - # Check EXTERN ~DVRISCH~ : 45 Check EXTERN ~DVRISCH~ : 7
+label morte_s504:  # - # Check EXTERN ~DVRISCH~ : 45 Check EXTERN ~DVRISCH~ : 7
     SPEAKER 'Эй! Эй! Эй! Ты ведь *шутишь*, правда? Ты *не можешь* говорить это серьезно, шеф!'
 
     menu:
         'Я серьезно. Берешь его, Вришика?':
             # r1015 # reply50698
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Нет. У меня есть другой вопрос, Вришика…':
             # r1016 # reply50699
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ты прав, Морт: это была не лучшая идея. Пошли.':
             # r1017 # reply50700
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s505 # say50701
-label dmorte_s505:  # - # Check EXTERN ~DVRISCH~ : 46 # ~DropInventory() LeaveParty() ~ EXTERN ~DVRISCH~ 46
+label morte_s505:  # - # Check EXTERN ~DVRISCH~ : 46 # ~DropInventory() LeaveParty() ~ EXTERN ~DVRISCH~ 46
     SPEAKER 'Не могу в это поверить… ты и до этого довольно низко падал, шеф, но это уже слишком. Увидимся в Бааторе, ты, искалеченный мелкостручковый вероломный неблагодарный искромсанный говножующий жирноволосый кривозубый жалкий кусок забывчивого мусора! Помяни мои слова, чертов ублюдок, продолжай в том же духе — и уже скоро откинешься *навсегда*… и тогда уж ты свое получишь!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s506 # say52571
-label dmorte_s506:  # - # Check EXTERN ~DRAVEL~ : 126
+label morte_s506:  # - # Check EXTERN ~DRAVEL~ : 126
     SPEAKER 'Она-то его проглотила, но я не уверен, из *того* ли конца он вышел.'
 
     menu:
         'Довольно… Послушай, Равель. Ты забрала мою смертность, и зла это причинило больше, чем добра. Я хочу вернуть ее обратно: похоже, она у тебя залежалась.':
             # r1018 # reply52572
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s507 # say52573
-label dmorte_s507:  # - # Check EXTERN ~DRAVEL~ : 189
+label morte_s507:  # - # Check EXTERN ~DRAVEL~ : 189
     SPEAKER 'Мне кажется, я знаю, кому следует сидеть в клетке…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s508 # say52574
-label dmorte_s508:  # -
+label morte_s508:  # -
     SPEAKER 'Ну, я не нашел ничего ЛУЧШЕГО, чем согласиться идти в один из лабиринтов Леди и встретиться с одним из злейших созданий, когда-либо ступавших на землю Сигила, так что я сказал 'Конечно! Почему бы…'
 
     menu:
         'Морт, умолкни. Равель, я…':
             # r1019 # reply52575
-            jump dmorte_s509
+            jump morte_s509
 
 
 # s509 # say52576
-label dmorte_s509:  # from 508.0 # Check EXTERN ~DRAVEL~ : 66 Check EXTERN ~DRAVEL~ : 67 Check EXTERN ~DRAVEL~ : 68
+label morte_s509:  # from 508.0 # Check EXTERN ~DRAVEL~ : 66 Check EXTERN ~DRAVEL~ : 67 Check EXTERN ~DRAVEL~ : 68
     SPEAKER 'Умолкни?! — Морт клацает зубами. — Черта с два! Мне кажется, что мы уже достаточно наслушались, как эта старая карга трясет своей черепушкой, но теперь она уже перегибает палку, говоря, что у меня нет кожи! Ну и ЧТО?! Очевидно, тот факт, что у НЕЕ есть кожа, просто творит чудеса с ЕЕ видом! Она что, думает, мне *нравится* все время быть ГОЛЫМ? И *еще*…'
 
     menu:
-        'Морт! Хватит! Равель, послушай…' if dmorteLogic.r52577_condition():
+        'Морт! Хватит! Равель, послушай…' if morteLogic.r52577_condition():
             # r1020 # reply52577
-            $ dmorteLogic.r52577_action()
-            jump dmorte_dispose
+            $ morteLogic.r52577_action()
+            jump morte_dispose
 
-        'Морт! Хватит! Равель, послушай…' if dmorteLogic.r52578_condition():
+        'Морт! Хватит! Равель, послушай…' if morteLogic.r52578_condition():
             # r1021 # reply52578
-            $ dmorteLogic.r52578_action()
-            jump dmorte_dispose
+            $ morteLogic.r52578_action()
+            jump morte_dispose
 
-        'Морт! Хватит! Равель, послушай…' if dmorteLogic.r52579_condition():
+        'Морт! Хватит! Равель, послушай…' if morteLogic.r52579_condition():
             # r1022 # reply52579
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s510 # say52644
-label dmorte_s510:  # - # Check EXTERN ~DPREGAL~ : 10
+label morte_s510:  # - # Check EXTERN ~DPREGAL~ : 10
     SPEAKER 'Что за бред. Ну где мы тогда сейчас находимся, технически?'
 
     menu:
         'Я и правда не хочу об этом знать, Морт.':
             # r1023 # reply52771
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s511 # say53623
-label dmorte_s511:  # - # Check EXTERN ~DPILLAR~ : 5
+label morte_s511:  # - # Check EXTERN ~DPILLAR~ : 5
     SPEAKER 'О, это просто *здорово*.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s512 # say53624
-label dmorte_s512:  # from 522.0 523.0 524.0 # Check EXTERN ~DPILLAR~ : 9
+label morte_s512:  # from 522.0 523.0 524.0 # Check EXTERN ~DPILLAR~ : 9
     SPEAKER 'Только ты делаешь шаг к колонне, Морт шепчет тебе: Пссс! Шеф! Шеф… слушай, я не могу позволить этой штуковине увидеть себя. Тебе придется убрать меня отсюда… оставь меня где-нибудь, а потом подбери позже, или еще чего…'
 
     menu:
-        'Забудь об этом, Морт. Я поговорю с ней прямо сейчас…' if dmorteLogic.r53625_condition():
+        'Забудь об этом, Морт. Я поговорю с ней прямо сейчас…' if morteLogic.r53625_condition():
             # r1024 # reply53625
-            $ dmorteLogic.r53625_action()
-            jump dmorte_dispose
+            $ morteLogic.r53625_action()
+            jump morte_dispose
 
-        'Почему, Морт? Что происходит?' if dmorteLogic.r53627_condition():
+        'Почему, Морт? Что происходит?' if morteLogic.r53627_condition():
             # r1025 # reply53627
-            jump dmorte_s513
+            jump morte_s513
 
         'Хорошо. Тогда пошли.':
             # r1026 # reply53628
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s513 # say53626
-label dmorte_s513:  # from 512.1
+label morte_s513:  # from 512.1
     SPEAKER 'Э… Я, правда, не хочу об этом говорить. Пойдем-ка отсюда, а? Голос Морта дрожит от страха. Его глаза бегают, смотря то на тебя, то на огромную колонну из голов.'
 
     menu:
         'Я не могу позволить тебе держать так много секретов, Морт. Тебе придется рассказать мне, что здесь происходит.':
             # r1027 # reply53629
-            $ dmorteLogic.r53629_action()
-            jump dmorte_s514
+            $ morteLogic.r53629_action()
+            jump morte_s514
 
         'Хватит уклоняться от ответа, Морт. *Сейчас же* выкладывай, что здесь происходит, или ты *хочешь*, чтобы мы поболтали с головами?':
             # r1028 # reply53630
-            $ dmorteLogic.r53630_action()
-            jump dmorte_s514
+            $ morteLogic.r53630_action()
+            jump morte_s514
 
         'Хорошо. Тогда пошли.':
             # r1029 # reply53631
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s514 # say53632
-label dmorte_s514:  # from 513.0 513.1
+label morte_s514:  # from 513.0 513.1
     SPEAKER 'Морт вздыхает, не в силах встретиться с тобой взглядом. Наконец, он сдается. Ладно, ладно… Я тебе расскажу. На Авернусе, первом слое Баатора, есть колонна, сделанная из голов всех тех, кто своей ложью привел кого-нибудь к смерти. Ну… это и есть она. Видишь ли, когда-то я в ней был. Та еще история.'
 
     menu:
-        'Значит… ты был одной из тех голов?' if dmorteLogic.r53662_condition():
+        'Значит… ты был одной из тех голов?' if morteLogic.r53662_condition():
             # r1030 # reply53662
-            jump dmorte_s516
+            jump morte_s516
 
-        'Значит… ты был одной из тех голов?' if dmorteLogic.r53663_condition():
+        'Значит… ты был одной из тех голов?' if morteLogic.r53663_condition():
             # r1031 # reply53663
-            jump dmorte_s515
+            jump morte_s515
 
 
 # s515 # say53664
-label dmorte_s515:  # from 514.1
+label morte_s515:  # from 514.1
     SPEAKER 'Ага. Я преувеличил… пару раз. Просто один из моих советов привел к твоей смерти. Один из них. Может, и другие. Я правда не знаю. Я больше не помню этого.'
 
     menu:
         'Понятно…':
             # r1032 # reply53665
-            jump dmorte_s518
+            jump morte_s518
 
 
 # s516 # say53666
-label dmorte_s516:  # from 514.0 # Check EXTERN ~DANNAH~ : 269
+label morte_s516:  # from 514.0 # Check EXTERN ~DANNAH~ : 269
     SPEAKER 'Ага. Я преувеличил… пару раз. Просто один из моих советов…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s517 # say53667
-label dmorte_s517:  # -
+label morte_s517:  # -
     SPEAKER 'Морт невозмутимо продолжает: …один из моих *советов* привел к твоей смерти. Одной из них. Может, и к другим. Я правда не знаю. Я больше не помню этого.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s518 # say53668
-label dmorte_s518:  # from 515.0 517.0 # Check EXTERN ~DDAKKON~ : 183
+label morte_s518:  # from 515.0 517.0 # Check EXTERN ~DDAKKON~ : 183
     SPEAKER 'Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким. Те воспоминания, они… слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны…'
 
     menu:
-        'Продолжай…' if dmorteLogic.r54105_condition():
+        'Продолжай…' if morteLogic.r54105_condition():
             # r1033 # reply54105
-            jump dmorte_s520
+            jump morte_s520
 
 
 # s519 # say53794
-label dmorte_s519:  # - # Check EXTERN ~DPILLAR~ : 9
+label morte_s519:  # - # Check EXTERN ~DPILLAR~ : 9
     SPEAKER 'Морт смотрит на Даккона, потом на тебя. Думаю, да. Это именно то, что случается, когда ты умираешь. Ты… забываешь. Я, пожалуй, не был образцовым членом общества при жизни… но, черт, есть ли такие вообще? — Морт снова вздыхает. — Ну, с этим я ничего не могу поделать. Нет ничего хуже, чем все время быть честным. Ладно, слушай, шеф, если та куча голов меня увидит, она захочет меня вернуть, *еще как* захочет. Ты не должен этого допустить!'
 
     menu:
         'Забудь об этом, Морт. Я поговорю с ней прямо сейчас…':
             # r1034 # reply53795
-            $ dmorteLogic.r53795_action()
-            jump dmorte_dispose
+            $ morteLogic.r53795_action()
+            jump morte_dispose
 
         'Погоди… как ты освободился из Колонны?':
             # r1035 # reply53796
-            jump dmorte_s521
+            jump morte_s521
 
         'Постой… почему там, в Морге, ты не сказал, что знал меня?':
             # r1036 # reply53797
-            jump dmorte_s523
+            jump morte_s523
 
         'Минутку. И как давно ты меня знаешь, Морт?':
             # r1037 # reply53798
-            jump dmorte_s524
+            jump morte_s524
 
         'Ладно. Пошли, Морт.':
             # r1038 # reply53799
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s520 # say53800
-label dmorte_s520:  # from 518.1 # Check EXTERN ~DPILLAR~ : 9
+label morte_s520:  # from 518.1 # Check EXTERN ~DPILLAR~ : 9
     SPEAKER 'Как бы там ни было, я, пожалуй, не был образцовым членом общества при жизни… но, черт, есть ли такие вообще? — Морт снова вздыхает. — Ну, с этим я ничего не могу поделать. Нет ничего хуже, чем все время быть честным. Ладно, слушай, шеф, если та куча голов меня увидит, она захочет меня вернуть, *еще как* захочет. Ты не должен этого допустить!'
 
     menu:
         'Забудь об этом, Морт. Я поговорю с ней прямо сейчас…':
             # r1039 # reply53801
-            $ dmorteLogic.r53801_action()
-            jump dmorte_dispose
+            $ morteLogic.r53801_action()
+            jump morte_dispose
 
         'Погоди… как ты освободился из Колонны?':
             # r1040 # reply53802
-            jump dmorte_s521
+            jump morte_s521
 
         'Постой… почему там, в Морге, ты не сказал, что знал меня?':
             # r1041 # reply53803
-            jump dmorte_s523
+            jump morte_s523
 
         'Минутку. И как давно ты меня знаешь, Морт?':
             # r1042 # reply53804
-            jump dmorte_s524
+            jump morte_s524
 
         'Ладно. Пошли, Морт.':
             # r1043 # reply53805
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s521 # say53806
-label dmorte_s521:  # from 519.1 520.1 523.1 524.1
+label morte_s521:  # from 519.1 520.1 523.1 524.1
     SPEAKER 'Ну… ты меня вытащил, шеф. Я пробился на поверхность Колонны — ты ведь был уже здесь раньше — и вопил до тех пор, пока ты меня не заметил. Я умолял освободить себя, клялся, что пойду за тобой, буду делиться с тобой своими знаниями до конца твоих дней… Я просто не представлял, насколько это затянется, пока ты меня не выдернул.'
 
     menu:
         'А как насчет знаний Колонны?..':
             # r1044 # reply53807
-            $ dmorteLogic.r53807_action()
-            jump dmorte_s522
+            $ morteLogic.r53807_action()
+            jump morte_s522
 
 
 # s522 # say53808
-label dmorte_s522:  # from 521.0
+label morte_s522:  # from 521.0
     SPEAKER 'Ах, это… ну, еще я не осознавал, что потеряю большую часть накопленных Колонной знаний, как только освобожусь. Дьявольские силы, *это* не раз тебя выводило из себя! Но ты все равно держал меня рядом. Сперва я почувствовал 'связь' с тобой… может, это твое волшебство превратило меня в что-то типа приживалы. Но через пару сотен лет я понял, что это нечто *большее*… нечто более глубокое. Не просто чувство долга из благодарности, но, черт, и без него не обошлось, это уж точно. Я просто почувствовал себя *связанным* с тобой каким-то образом. Возможно, это все твои страдания, шеф… твои муки. Не знаю. Может, они напоминали мне мои собственные, когда я был в колонне.'
 
     menu:
         'А сейчас я поговорю с Колонной…':
             # r1045 # reply53809
-            jump dmorte_s512
+            jump morte_s512
 
         'Почему там, в Морге, ты не сказал, что знал меня?':
             # r1046 # reply53810
-            jump dmorte_s523
+            jump morte_s523
 
         'И как давно ты меня знаешь, Морт?':
             # r1047 # reply53811
-            jump dmorte_s524
+            jump morte_s524
 
         'Хорошо. Идем, Морт.':
             # r1048 # reply53812
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s523 # say53813
-label dmorte_s523:  # from 519.2 520.2 522.1 524.2
+label morte_s523:  # from 519.2 520.2 522.1 524.2
     SPEAKER 'Неожиданно Морт начинает защищаться. Потому что я никогда не *знал*, кем ты можешь стать! Некоторые твои воплощения были совершенно безумными! Однажды ты проснулся, одержимый идеей, что это *я* был твоим черепом, и преследовал меня вокруг Шпиля, пытаясь разбить и проглотить… к счастью, на улице ты попал под повозку. Другой ты, 'добрый и законопослушный«, пытался засунуть меня обратно в Колонну, потому что «там мне и место', — Морт ухмыляется. — *Вот* почему. Кроме того, твое незнание не принесло вреда…'
 
     menu:
         'А сейчас я поговорю с Колонной…':
             # r1049 # reply53814
-            jump dmorte_s512
+            jump morte_s512
 
         'Как ты освободился из Колонны?':
             # r1050 # reply53815
-            jump dmorte_s521
+            jump morte_s521
 
         'И как давно ты меня знаешь, Морт?':
             # r1051 # reply53816
-            jump dmorte_s524
+            jump morte_s524
 
         'Хорошо. Идем, Морт.':
             # r1052 # reply53817
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s524 # say53818
-label dmorte_s524:  # from 519.3 520.3 522.2 523.2
+label morte_s524:  # from 519.3 520.3 522.2 523.2
     SPEAKER 'Не знаю. Наверно, века. Я каждый раз делал все, что мог, чтобы помочь тебе найти свой путь, но… — Морт вздыхает и поднимает взгляд, встречаясь с твоим. — Ты редко добирался так далеко, шеф. Я серьезно. Кажется, всего четыре или пять раз. Должно быть, пришло время… *тебе*, проделавшему весь этот путь, выяснить, что к чему.'
 
     menu:
         'А сейчас я поговорю с Колонной…':
             # r1053 # reply53819
-            jump dmorte_s512
+            jump morte_s512
 
         'Как ты освободился из Колонны?':
             # r1054 # reply53820
-            jump dmorte_s521
+            jump morte_s521
 
         'Почему там, в Морге, ты не сказал, что знал меня?':
             # r1055 # reply53821
-            jump dmorte_s523
+            jump morte_s523
 
         'Хорошо. Идем, Морт.':
             # r1056 # reply53822
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s525 # say53823
-label dmorte_s525:  # - # Check EXTERN ~DPILLAR~ : 10
+label morte_s525:  # - # Check EXTERN ~DPILLAR~ : 10
     SPEAKER 'О, нет…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s526 # say53824
-label dmorte_s526:  # - # Check EXTERN ~DPILLAR~ : 2 Check EXTERN ~DPILLAR~ : 12 Check EXTERN ~DPILLAR~ : 50
+label morte_s526:  # - # Check EXTERN ~DPILLAR~ : 2 Check EXTERN ~DPILLAR~ : 12 Check EXTERN ~DPILLAR~ : 50
     SPEAKER 'Морт трясется от страха, его зубы стучат. Я не могу вернуться, шеф! Не могу! Не могу! Не могу!'
 
     menu:
-        'Он не вернется к вам. А у меня есть вопросы…' if dmorteLogic.r53825_condition():
+        'Он не вернется к вам. А у меня есть вопросы…' if morteLogic.r53825_condition():
             # r1057 # reply53825
-            $ dmorteLogic.r53825_action()
-            jump dmorte_dispose
+            $ morteLogic.r53825_action()
+            jump morte_dispose
 
-        'Он не вернется к вам. А у меня есть вопросы…' if dmorteLogic.r53826_condition():
+        'Он не вернется к вам. А у меня есть вопросы…' if morteLogic.r53826_condition():
             # r1058 # reply53826
-            $ dmorteLogic.r53826_action()
-            jump dmorte_dispose
+            $ morteLogic.r53826_action()
+            jump morte_dispose
 
-        'Он не вернется в Колонну Черепов. А у меня есть вопросы…' if dmorteLogic.r53827_condition():
+        'Он не вернется в Колонну Черепов. А у меня есть вопросы…' if morteLogic.r53827_condition():
             # r1059 # reply53827
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Уходим отсюда, Морт. Давай.':
             # r1060 # reply53828
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s527 # say53829
-label dmorte_s527:  # - # Check EXTERN ~DPILLAR~ : 14
+label morte_s527:  # - # Check EXTERN ~DPILLAR~ : 14
     SPEAKER '*Брось*, шеф. Разве я тебе *не рассказывал*, что это? Она состоит из голов лжецов, чьи 'советы' привели к смерти других. Она может ответить почти на любой вопрос — она знает очень многое, — но она ожидает непомерную плату за свои услуги. Не задавай ей такие вопросы!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s528 # say53830
-label dmorte_s528:  # - # Check EXTERN ~DPILLAR~ : 17
+label morte_s528:  # - # Check EXTERN ~DPILLAR~ : 17
     SPEAKER 'Не возвращай меня, шеф. Пожалуйста!'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s529 # say53831
-label dmorte_s529:  # - # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 20 Check EXTERN ~DPILLAR~ : 21 Check EXTERN ~DPILLAR~ : 22 Check EXTERN ~DPILLAR~ : 23 Check EXTERN ~DPILLAR~ : 50
+label morte_s529:  # - # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 20 Check EXTERN ~DPILLAR~ : 21 Check EXTERN ~DPILLAR~ : 22 Check EXTERN ~DPILLAR~ : 23 Check EXTERN ~DPILLAR~ : 50
     SPEAKER 'Шеф? Нет! Нет! Ты *не можешь*! Брось это!'
 
     menu:
-        'Не волнуйся, Морт: я заберу тебя позже.' if dmorteLogic.r53832_condition():
+        'Не волнуйся, Морт: я заберу тебя позже.' if morteLogic.r53832_condition():
             # r1061 # reply53832
-            jump dmorte_s530
+            jump morte_s530
 
-        'Не волнуйся, Морт: я заберу тебя позже.' if dmorteLogic.r53833_condition():
+        'Не волнуйся, Морт: я заберу тебя позже.' if morteLogic.r53833_condition():
             # r1062 # reply53833
-            jump dmorte_s530
+            jump morte_s530
 
-        'Не волнуйся, Морт: я заберу тебя позже.' if dmorteLogic.r53834_condition():
+        'Не волнуйся, Морт: я заберу тебя позже.' if morteLogic.r53834_condition():
             # r1063 # reply53834
-            jump dmorte_s530
+            jump morte_s530
 
-        'Не волнуйся, Морт: я заберу тебя позже.' if dmorteLogic.r53835_condition():
+        'Не волнуйся, Морт: я заберу тебя позже.' if morteLogic.r53835_condition():
             # r1064 # reply53835
-            jump dmorte_s531
+            jump morte_s531
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53836_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53836_condition():
             # r1065 # reply53836
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53837_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53837_condition():
             # r1066 # reply53837
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53838_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53838_condition():
             # r1067 # reply53838
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53839_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53839_condition():
             # r1068 # reply53839
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53840_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53840_condition():
             # r1069 # reply53840
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Уходим отсюда, Морт. Давай.':
             # r1070 # reply53841
-            $ dmorteLogic.r53841_action()
-            jump dmorte_dispose
+            $ morteLogic.r53841_action()
+            jump morte_dispose
 
 
 # s530 # say53842
-label dmorte_s530:  # from 529.0 529.1 529.2 # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 20 Check EXTERN ~DPILLAR~ : 21 Check EXTERN ~DPILLAR~ : 22 Check EXTERN ~DPILLAR~ : 23 Check EXTERN ~DPILLAR~ : 50
+label morte_s530:  # from 529.0 529.1 529.2 # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 20 Check EXTERN ~DPILLAR~ : 21 Check EXTERN ~DPILLAR~ : 22 Check EXTERN ~DPILLAR~ : 23 Check EXTERN ~DPILLAR~ : 50
     SPEAKER 'Морт смотрит на тебя скептически. Ты *уверен*? *Клянешься*? Эй, о чем это я?! Нет! Ни за что! Эй, ты ведь *не можешь* вернуть меня туда?!'
 
     menu:
         'Схватить Морта и швырнуть его в Колонну Черепов.':
             # r1071 # reply53843
-            $ dmorteLogic.r53843_action()
-            jump dmorte_dispose
+            $ morteLogic.r53843_action()
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53844_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53844_condition():
             # r1072 # reply53844
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53863_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53863_condition():
             # r1073 # reply53863
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53864_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53864_condition():
             # r1074 # reply53864
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53865_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53865_condition():
             # r1075 # reply53865
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53866_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53866_condition():
             # r1076 # reply53866
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Уходим отсюда, Морт. Давай.':
             # r1077 # reply53867
-            $ dmorteLogic.r53867_action()
-            jump dmorte_dispose
+            $ morteLogic.r53867_action()
+            jump morte_dispose
 
 
 # s531 # say53849
-label dmorte_s531:  # from 529.3 # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 20 Check EXTERN ~DPILLAR~ : 21 Check EXTERN ~DPILLAR~ : 22 Check EXTERN ~DPILLAR~ : 23 Check EXTERN ~DPILLAR~ : 50
+label morte_s531:  # from 529.3 # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 20 Check EXTERN ~DPILLAR~ : 21 Check EXTERN ~DPILLAR~ : 22 Check EXTERN ~DPILLAR~ : 23 Check EXTERN ~DPILLAR~ : 50
     SPEAKER 'Морт некоторое время смотрит на тебя, разинув рот. ЧЕГО? Ни за что! Ты уже не такой сильный, каким был, когда… слушай, забудь об этом; ты не сможешь этого сделать, не получится! Эй, ты же *не можешь* вернуть меня туда?!'
 
     menu:
         'Схватить Морта и швырнуть его в Колонну Черепов.':
             # r1078 # reply53850
-            $ dmorteLogic.r53850_action()
-            jump dmorte_dispose
+            $ morteLogic.r53850_action()
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53851_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53851_condition():
             # r1079 # reply53851
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53852_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53852_condition():
             # r1080 # reply53852
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53853_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53853_condition():
             # r1081 # reply53853
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53854_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53854_condition():
             # r1082 # reply53854
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if dmorteLogic.r53855_condition():
+        'Ладно, Морт. Колонна Черепов, какие еще подарки вы примете?' if morteLogic.r53855_condition():
             # r1083 # reply53855
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Уходим отсюда, Морт. Давай.':
             # r1084 # reply53856
-            $ dmorteLogic.r53856_action()
-            jump dmorte_dispose
+            $ morteLogic.r53856_action()
+            jump morte_dispose
 
 
 # s532 # say53857
-label dmorte_s532:  # - # Check EXTERN ~DPILLAR~ : 19
+label morte_s532:  # - # Check EXTERN ~DPILLAR~ : 19
     SPEAKER 'Эй… постой! Не так быстро! Колонна… Я мог бы рассказать вам, где находится Фьюл Раздвоенный Язык! Ну же, разве вы не это хотите знать? Что, если он расскажет это вместо меня? А? Что скажете?'
 
     menu:
         'Постой, Морт. Мы не будем выдавать Фьюла.':
             # r1085 # reply53858
-            jump dmorte_s533
+            jump morte_s533
 
         'Ждать ответа Колонны.':
             # r1086 # reply53859
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s533 # say53860
-label dmorte_s533:  # from 532.0 # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 18
+label morte_s533:  # from 532.0 # Check EXTERN ~DPILLAR~ : 19 Check EXTERN ~DPILLAR~ : 18
     SPEAKER 'Чего? Ты что, *спятил*? Ты продаешь *меня*, а не того *НЕЧИСТОГО*?! Он помог тебе только потому, что он проклят, принужден к этому! А как же *я*? Кто вытащил тебя из Морга, дружище? Кто будет стоять… э, парить… возле тебя, когда ты встретишь то, что ждет тебя в той Крепости Чего-то-там?! А? А? НЕ ФЬЮЛ ТОЛСТОЗАДЫЙ, ЭТО УЖ ТОЧНО!'
 
     menu:
         'Ладно, ладно. Колонна, что скажете?':
             # r1087 # reply53861
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Извини, Морт. Твой выход.':
             # r1088 # reply53862
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s534 # say54155
-label dmorte_s534:  # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
+label morte_s534:  # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
     SPEAKER 'Почему бы и нет, шеф? — качает головой Морт. — То есть, мы уже были во ВСЕХ ужасных планах мультивселенной, которые только можно вообразить. Так почему бы не сделать еще один шаг в сторону обрыва? — он шумно вздыхает. — ТЫ готов? Потому что если ты не готов…'
 
     menu:
         'Можешь рассказать еще раз, что ждет нас по ту сторону портала?':
             # r1089 # reply54156
-            jump dmorte_s544
+            jump morte_s544
 
         'Я готов, Морт. Лучше мне уже не подготовиться. Ты со мной?':
             # r1090 # reply54157
-            jump dmorte_s535
+            jump morte_s535
 
         'Возможно, ты прав… Дай мне подготовиться поосновательней.':
             # r1091 # reply54158
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s535 # say54159
-label dmorte_s535:  # from 534.1
+label morte_s535:  # from 534.1
     SPEAKER 'Ну… — Морт с тяжелым вздохом смотрит на мерцающий синий занавес. — Конечно. Пошли. Ведь лучше попадать в разные места, чем трясти черепушкой в Морге, верно?'
 
     menu:
         'Ну хорошо…':
             # r1092 # reply54160
-            $ dmorteLogic.r54160_action()
-            jump dmorte_dispose
+            $ morteLogic.r54160_action()
+            jump morte_dispose
 
 
 # s536 # say54161
-label dmorte_s536:  # -
+label morte_s536:  # -
     SPEAKER 'Э-э-э… Морт колеблется, переводя взгляд с портала на тебя и снова на портал. Он шумно вздыхает. Слушай, я не собираюсь говорить *очень* много, но, э-э-э… в общем, мне нужно кое-что сказать тебе…'
 
     menu:
         'В чем дело, Морт?':
             # r1093 # reply54162
-            jump dmorte_s537
+            jump morte_s537
 
         'Что? Давай быстрее, Морт, нам нужно идти…':
             # r1094 # reply54163
-            jump dmorte_s537
+            jump morte_s537
 
 
 # s537 # say54164
-label dmorte_s537:  # from 536.0 536.1 # Check EXTERN ~DDAKKON~ : 174
+label morte_s537:  # from 536.0 536.1 # Check EXTERN ~DDAKKON~ : 174
     SPEAKER 'Ну, это насчет того места, куда мы собираемся попасть… или, э-э-э, где… мы уже *были*.'
 
     menu:
-        ''Где МЫ уже были?' О чем это ты?' if dmorteLogic.r54165_condition():
+        ''Где МЫ уже были?' О чем это ты?' if morteLogic.r54165_condition():
             # r1095 # reply54165
-            jump dmorte_s540
+            jump morte_s540
 
-        ''Где МЫ уже были?' О чем это ты?' if dmorteLogic.r54166_condition():
+        ''Где МЫ уже были?' О чем это ты?' if morteLogic.r54166_condition():
             # r1096 # reply54166
-            jump dmorte_dispose
+            jump morte_dispose
 
-        ''Где МЫ уже были?' О чем это ты?' if dmorteLogic.r54167_condition():
+        ''Где МЫ уже были?' О чем это ты?' if morteLogic.r54167_condition():
             # r1097 # reply54167
-            jump dmorte_s540
+            jump morte_s540
 
 
 # s538 # say54168
-label dmorte_s538:  # -
+label morte_s538:  # -
     SPEAKER 'Э-э-э… шеф? Морт колеблется, переводя взгляд с портала на тебя и снова на портал. Он шумно вздыхает. Слушай, я не собираюсь говорить *очень* много, но, э-э-э… в общем, мне нужно кое-что сказать тебе…'
 
     menu:
         'В чем дело, Морт?':
             # r1098 # reply54169
-            jump dmorte_s539
+            jump morte_s539
 
         'Что? Давай быстрее, Морт, мне нужно идти…':
             # r1099 # reply54170
-            jump dmorte_s539
+            jump morte_s539
 
 
 # s539 # say54171
-label dmorte_s539:  # from 538.0 538.1 # Check EXTERN ~DDAKKON~ : 174
+label morte_s539:  # from 538.0 538.1 # Check EXTERN ~DDAKKON~ : 174
     SPEAKER 'Ну, это насчет того места, куда ты собираешься попасть или, э-э-э, где… ты уже *был*.'
 
     menu:
-        ''Где МЫ уже были?' О чем это ты?' if dmorteLogic.r54172_condition():
+        ''Где МЫ уже были?' О чем это ты?' if morteLogic.r54172_condition():
             # r1100 # reply54172
-            jump dmorte_s540
+            jump morte_s540
 
-        ''Где МЫ уже были?' О чем это ты?' if dmorteLogic.r54173_condition():
+        ''Где МЫ уже были?' О чем это ты?' if morteLogic.r54173_condition():
             # r1101 # reply54173
-            jump dmorte_dispose
+            jump morte_dispose
 
-        ''Где МЫ уже были?' О чем это ты?' if dmorteLogic.r54174_condition():
+        ''Где МЫ уже были?' О чем это ты?' if morteLogic.r54174_condition():
             # r1102 # reply54174
-            jump dmorte_s540
+            jump morte_s540
 
 
 # s540 # say54175
-label dmorte_s540:  # from 537.0 537.2 539.0 539.2
+label morte_s540:  # from 537.0 537.2 539.0 539.2
     SPEAKER 'Это… э-э-э, мы проходим это уже не в ПЕРВЫЙ раз… понимаешь, мы уже бывали в этой Крепости сожалений… хотя мы… я… не знал об этом.'
 
     menu:
         'Ты не *знал*? Как такое могло случиться?':
             # r1103 # reply54176
-            jump dmorte_s541
+            jump morte_s541
 
         'Так, значит, ты С САМОГО НАЧАЛА мог мне СКАЗАТЬ, где находится портал, ЧЕМ является портальный ключ, ПОЧЕМУ я бессмертен, ЧТО случилось с моей смертностью И что это связано с Крепостью?! Я тебя *УБЬЮ*, Морт!..':
             # r1104 # reply54177
-            jump dmorte_s542
+            jump morte_s542
 
         'Морт, я жду объяснений… только без лжи и жульничества, только не сейчас.':
             # r1105 # reply54178
-            jump dmorte_s541
+            jump morte_s541
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54179_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54179_condition():
             # r1106 # reply54179
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54180_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54180_condition():
             # r1107 # reply54180
-            $ dmorteLogic.r54180_action()
-            jump dmorte_dispose
+            $ morteLogic.r54180_action()
+            jump morte_dispose
 
 
 # s541 # say54181
-label dmorte_s541:  # from 540.0 540.2
+label morte_s541:  # from 540.0 540.2
     SPEAKER 'Это было очень трудно объяснить, пока ты здесь не *оказался*… Кроме того, ты не знал, э-э-э, *другого* тебя — он точно не был из тех вояк, кто ДЕЛИЛСЯ с нами своими мыслями. То есть, я знал, что он искал КАКОЕ-ТО место, но не знал, почему, где оно находится или ЧТО из себя представляет, так что я НИЧЕГО не мог сказать тебе, потому что НИЧЕГО не знал! Я… только знаю, что случилось, когда мы ПОПАЛИ туда…'
 
     menu:
-        'И… что случилось?' if dmorteLogic.r54189_condition():
+        'И… что случилось?' if morteLogic.r54189_condition():
             # r1108 # reply54189
-            jump dmorte_s544
+            jump morte_s544
 
-        'И… что случилось?' if dmorteLogic.r54190_condition():
+        'И… что случилось?' if morteLogic.r54190_condition():
             # r1109 # reply54190
-            jump dmorte_s543
+            jump morte_s543
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54191_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54191_condition():
             # r1110 # reply54191
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54192_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54192_condition():
             # r1111 # reply54192
-            $ dmorteLogic.r54192_action()
-            jump dmorte_dispose
+            $ morteLogic.r54192_action()
+            jump morte_dispose
 
 
 # s542 # say54193
-label dmorte_s542:  # from 540.1
+label morte_s542:  # from 540.1
     SPEAKER 'Морт явно встревожен. Нет! Нет! Мы… Я… никогда НЕ ЗНАЛ ничего из этого! А ты был не из самых общительных вояк на планах! Тот… тот *другой* ты хранил КУЧУ секретов при себе, и мы даже не знали, ЗАЧЕМ нам нужно попасть в это место или даже ЧТО из себя оно представляет! Я только знаю, что случилось, когда мы ПОПАЛИ туда…'
 
     menu:
-        'И… что случилось?' if dmorteLogic.r54194_condition():
+        'И… что случилось?' if morteLogic.r54194_condition():
             # r1112 # reply54194
-            jump dmorte_s544
+            jump morte_s544
 
-        'И… что случилось?' if dmorteLogic.r54195_condition():
+        'И… что случилось?' if morteLogic.r54195_condition():
             # r1113 # reply54195
-            jump dmorte_s543
+            jump morte_s543
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54196_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54196_condition():
             # r1114 # reply54196
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54197_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54197_condition():
             # r1115 # reply54197
-            $ dmorteLogic.r54197_action()
-            jump dmorte_dispose
+            $ morteLogic.r54197_action()
+            jump morte_dispose
 
 
 # s543 # say54198
-label dmorte_s543:  # from 541.1 542.1
+label morte_s543:  # from 541.1 542.1
     SPEAKER 'Ну, мы попали туда — в эту КРЕПОСТЬ, но мы даже не успели встать на ноги, как нас РАЗДЕЛИЛИ, и нам пришлось сражаться за собственные жизни… Так что *первая* вещь, которую я хочу сказать тебе: если ты решил пойти туда, есть большая вероятность, что всякий, кто вступит в этот портал, окажется *очень* далеко от других. Мысль в том, что тебе могут понадобиться твои спутники…'
 
     menu:
         'Почему ты об этом заговорил?':
             # r1116 # reply54199
-            jump dmorte_s545
+            jump morte_s545
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54200_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54200_condition():
             # r1117 # reply54200
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54201_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54201_condition():
             # r1118 # reply54201
-            $ dmorteLogic.r54201_action()
-            jump dmorte_dispose
+            $ morteLogic.r54201_action()
+            jump morte_dispose
 
 
 # s544 # say54202
-label dmorte_s544:  # from 534.0 541.0 542.0
+label morte_s544:  # from 534.0 541.0 542.0
     SPEAKER 'Ну, мы попали туда… в эту КРЕПОСТЬ, но мы даже не успели встать на ноги, как нас РАЗДЕЛИЛИ, и нам пришлось сражаться за собственные жизни… — он содрогается. — Так что *первая* вещь, которую я хочу сказать тебе — если ты решил пойти туда, есть большая вероятность, что всякий, кто вступит в этот портал, окажется *очень* далеко от других. Мысль в том, что даже разделенные, мы можем оказаться единственной твоей надеждой…'
 
     menu:
         'Почему ты об этом заговорил?':
             # r1119 # reply54203
-            jump dmorte_s545
+            jump morte_s545
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54204_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54204_condition():
             # r1120 # reply54204
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54205_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54205_condition():
             # r1121 # reply54205
-            $ dmorteLogic.r54205_action()
-            jump dmorte_dispose
+            $ morteLogic.r54205_action()
+            jump morte_dispose
 
 
 # s545 # say54206
-label dmorte_s545:  # from 543.0 544.0
+label morte_s545:  # from 543.0 544.0
     SPEAKER 'Что бы тебя не ждало там, в Крепости, шеф, оно уже побеждало тебя… не знаю, как тогда тебе удалось выжить, но если ты снова падешь, тебе понадобится кто-то, кто сможет вытащить тебя из этой Крепости…'
 
     menu:
-        'Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.' if dmorteLogic.r54207_condition():
+        'Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.' if morteLogic.r54207_condition():
             # r1122 # reply54207
-            jump dmorte_s547
+            jump morte_s547
 
-        'Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.' if dmorteLogic.r54208_condition():
+        'Морт, мне нужно, чтобы ты рассказал об этой Крепости все… Это очень важно.' if morteLogic.r54208_condition():
             # r1123 # reply54208
-            jump dmorte_s546
+            jump morte_s546
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54209_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54209_condition():
             # r1124 # reply54209
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54210_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54210_condition():
             # r1125 # reply54210
-            $ dmorteLogic.r54210_action()
-            jump dmorte_dispose
+            $ morteLogic.r54210_action()
+            jump morte_dispose
 
 
 # s546 # say54211
-label dmorte_s546:  # from 545.1
+label morte_s546:  # from 545.1
     SPEAKER 'Эта Крепость сожалений… она тянется на многие ЛИГИ, шеф. Она называется Крепостью, но она очень похожа на ПЛАН. Одни только камни, тьма и тени — тени повсюду. Если ты пойдешь туда… тебе лучше быть готовым.'
 
     menu:
         'Что произошло, когда мы впервые оказались там?':
             # r1126 # reply54212
-            jump dmorte_s548
+            jump morte_s548
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54213_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54213_condition():
             # r1127 # reply54213
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54214_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54214_condition():
             # r1128 # reply54214
-            $ dmorteLogic.r54214_action()
-            jump dmorte_dispose
+            $ morteLogic.r54214_action()
+            jump morte_dispose
 
 
 # s547 # say54215
-label dmorte_s547:  # from 545.0
+label morte_s547:  # from 545.0
     SPEAKER 'Эта Крепость сожалений… она тянется на многие ЛИГИ, шеф. Она называется Крепостью, но она очень похожа на ПЛАН. Одни только камни, тьма и тени — тени повсюду. Если мы пойдем туда… нам лучше быть готовыми.'
 
     menu:
         'Что произошло, когда мы впервые оказались там?':
             # r1129 # reply54216
-            jump dmorte_s548
+            jump morte_s548
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54217_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54217_condition():
             # r1130 # reply54217
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54218_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54218_condition():
             # r1131 # reply54218
-            $ dmorteLogic.r54218_action()
-            jump dmorte_dispose
+            $ morteLogic.r54218_action()
+            jump morte_dispose
 
 
 # s548 # say54219
-label dmorte_s548:  # from 546.0 547.0
+label morte_s548:  # from 546.0 547.0
     SPEAKER 'Не знаю, что случилось с ТОБОЙ, шеф, но я знаю, что произошло со МНОЙ… Я все время носился от одного укрытия к другому, эти тени ползли вслед за мной, пытаясь пригвоздить меня к земле… а потом я просто… внезапно мы оказались 'снаружи', как будто кто-то нас вытащил…'
 
     menu:
-        'Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.' if dmorteLogic.r54220_condition():
+        'Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.' if morteLogic.r54220_condition():
             # r1132 # reply54220
-            jump dmorte_s565
+            jump morte_s565
 
-        'Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.' if dmorteLogic.r54221_condition():
+        'Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.' if morteLogic.r54221_condition():
             # r1133 # reply54221
-            jump dmorte_s549
+            jump morte_s549
 
-        'Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.' if dmorteLogic.r54223_condition():
+        'Постой минуту. Когда ты говоришь 'нас', не похоже, что ты имеешь в виду меня и себя.' if morteLogic.r54223_condition():
             # r1134 # reply54223
-            jump dmorte_s550
+            jump morte_s550
 
         'Понятно. Что еще ты можешь сказать?':
             # r1135 # reply54225
-            jump dmorte_s552
+            jump morte_s552
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54226_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54226_condition():
             # r1136 # reply54226
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54227_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54227_condition():
             # r1137 # reply54227
-            $ dmorteLogic.r54227_action()
-            jump dmorte_dispose
+            $ morteLogic.r54227_action()
+            jump morte_dispose
 
 
 # s549 # say54229
-label dmorte_s549:  # from 548.1
+label morte_s549:  # from 548.1
     SPEAKER 'Морт умолкает на некоторое время. Нет… Там были и другие. Там были… Даккон, эта чувствующая цыпочка, Дейонарра, слепой лучник, который почти все время был пьян до беспамятства, ты и я… Было такое ощущение, что мы прыгнули в ад и тут же вернулись. Очевидно, тебе, мне и Даккону это удалось, а те двоим — нет. Даже не знаю, что случилось с ними.'
 
     menu:
-        'Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что Дейонарра и лучник не вернулись из Крепости?' if dmorteLogic.r54230_condition():
+        'Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что Дейонарра и лучник не вернулись из Крепости?' if morteLogic.r54230_condition():
             # r1138 # reply54230
-            jump dmorte_s551
+            jump morte_s551
 
-        'Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что те женщина и лучник не вернулись из Крепости?' if dmorteLogic.r54231_condition():
+        'Даккон? Но почему?.. Я спрошу его об этом. Ты сказал, что те женщина и лучник не вернулись из Крепости?' if morteLogic.r54231_condition():
             # r1139 # reply54231
-            jump dmorte_s551
+            jump morte_s551
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54232_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54232_condition():
             # r1140 # reply54232
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54233_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54233_condition():
             # r1141 # reply54233
-            $ dmorteLogic.r54233_action()
-            jump dmorte_dispose
+            $ morteLogic.r54233_action()
+            jump morte_dispose
 
 
 # s550 # say54234
-label dmorte_s550:  # from 548.2
+label morte_s550:  # from 548.2
     SPEAKER 'Морт умолкает на некоторое время. Нет… Там были и другие. Там были… старый гит, Даккон, эта чувствующая цыпочка, Дейонарра, слепой лучник, который почти все время был пьян до беспамятства, ты и я… Было такое ощущение, что мы прыгнули в ад и тут же вернулись. Очевидно, тебе, мне и Даккону это удалось, а те двоим — нет. Даже не знаю, что случилось с ними.'
 
     menu:
-        'Ты сказал, что Дейонарра и лучник не вернулись из Крепости?' if dmorteLogic.r54235_condition():
+        'Ты сказал, что Дейонарра и лучник не вернулись из Крепости?' if morteLogic.r54235_condition():
             # r1142 # reply54235
-            jump dmorte_s551
+            jump morte_s551
 
-        'Ты сказал, что эта женщина, Дейонарра, и лучник не вернулись из Крепости?' if dmorteLogic.r54236_condition():
+        'Ты сказал, что эта женщина, Дейонарра, и лучник не вернулись из Крепости?' if morteLogic.r54236_condition():
             # r1143 # reply54236
-            jump dmorte_s551
+            jump morte_s551
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54237_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54237_condition():
             # r1144 # reply54237
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54238_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54238_condition():
             # r1145 # reply54238
-            $ dmorteLogic.r54238_action()
-            jump dmorte_dispose
+            $ morteLogic.r54238_action()
+            jump morte_dispose
 
 
 # s551 # say54239
-label dmorte_s551:  # from 549.0 549.1 550.0 550.1
+label morte_s551:  # from 549.0 549.1 550.0 550.1
     SPEAKER 'Морт качает головой. По крайней мере, я об этом ничего не знаю.'
 
     menu:
         'Ты можешь мне еще что-нибудь рассказать об этой Крепости?':
             # r1146 # reply54240
-            jump dmorte_s552
+            jump morte_s552
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54241_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54241_condition():
             # r1147 # reply54241
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54242_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54242_condition():
             # r1148 # reply54242
-            $ dmorteLogic.r54242_action()
-            jump dmorte_dispose
+            $ morteLogic.r54242_action()
+            jump morte_dispose
 
 
 # s552 # say54243
-label dmorte_s552:  # from 548.3 551.0
+label morte_s552:  # from 548.3 551.0
     SPEAKER 'Больше ничего, шеф. Кроме того, что мы были вынуждены разделиться сразу после прибытия, что это место ОГРОМНО, что оно кишит тенями… и что где-то в Крепости есть нечто гораздо могущественнее *любого* из нас. Больше мне нечего сказать…'
 
     menu:
         'Ты *уверен*? Возможно, это будет наша последняя возможность поговорить друг с другом…':
             # r1149 # reply54244
-            $ dmorteLogic.r54244_action()
-            jump dmorte_s553
+            $ morteLogic.r54244_action()
+            jump morte_s553
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54245_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54245_condition():
             # r1150 # reply54245
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54246_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54246_condition():
             # r1151 # reply54246
-            $ dmorteLogic.r54246_action()
-            jump dmorte_dispose
+            $ morteLogic.r54246_action()
+            jump morte_dispose
 
 
 # s553 # say54249
-label dmorte_s553:  # from 552.0
+label morte_s553:  # from 552.0
     SPEAKER 'Ну… — Морт делает паузу. — Да, есть еще одна вещь, которую ты должен знать. ТЫ, которого я знал раньше, ТЫ, который привел нас сюда, отличается от тебя. Во всем.'
 
     menu:
-        'О чем это ты?' if dmorteLogic.r54250_condition():
+        'О чем это ты?' if morteLogic.r54250_condition():
             # r1152 # reply54250
-            jump dmorte_s554
+            jump morte_s554
 
-        'О чем это ты?' if dmorteLogic.r54252_condition():
+        'О чем это ты?' if morteLogic.r54252_condition():
             # r1153 # reply54252
-            jump dmorte_s555
+            jump morte_s555
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54255_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54255_condition():
             # r1154 # reply54255
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54262_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54262_condition():
             # r1155 # reply54262
-            $ dmorteLogic.r54262_action()
-            jump dmorte_dispose
+            $ morteLogic.r54262_action()
+            jump morte_dispose
 
 
 # s554 # say54263
-label dmorte_s554:  # from 553.0
+label morte_s554:  # from 553.0
     SPEAKER 'Другой ТЫ, он… он не особенно заботился о других. Ни о ком. Мы могли бы ВСЕ погибнуть в Крепости, а он бы и глазом не моргнул. Так что… я просто хочу, чтобы ты почувствовал разницу… *Ты* нравишься мне больше. ГОРАЗДО больше.'
 
     menu:
-        'Но это не все, что ты хочешь сказать, верно?' if dmorteLogic.r54264_condition():
+        'Но это не все, что ты хочешь сказать, верно?' if morteLogic.r54264_condition():
             # r1156 # reply54264
-            jump dmorte_s556
+            jump morte_s556
 
         'Это все?':
             # r1157 # reply54265
-            jump dmorte_s556
+            jump morte_s556
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54266_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54266_condition():
             # r1158 # reply54266
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54267_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54267_condition():
             # r1159 # reply54267
-            $ dmorteLogic.r54267_action()
-            jump dmorte_dispose
+            $ morteLogic.r54267_action()
+            jump morte_dispose
 
 
 # s555 # say54268
-label dmorte_s555:  # from 553.1
+label morte_s555:  # from 553.1
     SPEAKER 'Я только хотел сказать, что несмотря на твое упрямство, ТЫ сильнее духом, чем он когда либо был. Другой ТЫ, он… он был отделен от других. Так что… я просто хочу, чтобы ты об этом знал.'
 
     menu:
-        'Но это не все, что ты хочешь сказать, верно?' if dmorteLogic.r54269_condition():
+        'Но это не все, что ты хочешь сказать, верно?' if morteLogic.r54269_condition():
             # r1160 # reply54269
-            jump dmorte_s556
+            jump morte_s556
 
         'Это все?':
             # r1161 # reply54270
-            jump dmorte_s556
+            jump morte_s556
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54271_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54271_condition():
             # r1162 # reply54271
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54272_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54272_condition():
             # r1163 # reply54272
-            $ dmorteLogic.r54272_action()
-            jump dmorte_dispose
+            $ morteLogic.r54272_action()
+            jump morte_dispose
 
 
 # s556 # say54273
-label dmorte_s556:  # from 554.0 554.1 555.0 555.1
+label morte_s556:  # from 554.0 554.1 555.0 555.1
     SPEAKER 'Нет… — Морт делает паузу. — Еще одно — может быть, мне не очень нравился *другой* ты, но он был очень умным воякой, никого умнее я не встречал. У него на все случаи всегда был запасной план. И если он умер в Крепости, это значит… ну…'
 
     menu:
         'Ты не считаешь, что у меня может получиться?':
             # r1164 # reply54274
-            jump dmorte_s557
+            jump morte_s557
 
-        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if dmorteLogic.r54275_condition():
+        'Неважно, Морт. Я готов шагнуть в портал — ты со мной?' if morteLogic.r54275_condition():
             # r1165 # reply54275
-            jump dmorte_s534
+            jump morte_s534
 
-        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if dmorteLogic.r54276_condition():
+        'Неважно, Морт. Что было — то было. Я собираюсь шагнуть в портал.' if morteLogic.r54276_condition():
             # r1166 # reply54276
-            $ dmorteLogic.r54276_action()
-            jump dmorte_dispose
+            $ morteLogic.r54276_action()
+            jump morte_dispose
 
 
 # s557 # say54277
-label dmorte_s557:  # from 556.0
+label morte_s557:  # from 556.0
     SPEAKER 'Нет… — Морт качает головой. — Не в этом дело, шеф. Не всегда важно, кто умнее, или могущественнее, или сильнее… Иногда все сводится к тому, кто ты и чего ты хочешь *на самом деле*. То есть, когда-то ты хотел стать бессмертным, но чего ты хотел *на самом деле*? Просто на этот раз будь уверен в том, чего ты хочешь — вот что я хочу сказать.'
 
     menu:
-        'Ладно. Послушай, Морт… Мы ведь никогда об этом не говорили, но ты ведь не хочешь идти в этом место, верно? Я пойму, если ты не пойдешь.' if dmorteLogic.r54278_condition():
+        'Ладно. Послушай, Морт… Мы ведь никогда об этом не говорили, но ты ведь не хочешь идти в этом место, верно? Я пойму, если ты не пойдешь.' if morteLogic.r54278_condition():
             # r1167 # reply54278
-            $ dmorteLogic.r54278_action()
-            jump dmorte_s558
+            $ morteLogic.r54278_action()
+            jump morte_s558
 
-        'Понятно. Если ты высказался — пошли. Ты готов?' if dmorteLogic.r54279_condition():
+        'Понятно. Если ты высказался — пошли. Ты готов?' if morteLogic.r54279_condition():
             # r1168 # reply54279
-            jump dmorte_s534
+            jump morte_s534
 
-        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if dmorteLogic.r54280_condition():
+        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if morteLogic.r54280_condition():
             # r1169 # reply54280
-            $ dmorteLogic.r54280_action()
-            jump dmorte_dispose
+            $ morteLogic.r54280_action()
+            jump morte_dispose
 
 
 # s558 # say54281
-label dmorte_s558:  # from 557.0 # Check EXTERN ~DGRACE~ : 169 Check EXTERN ~DGRACE~ : 170
+label morte_s558:  # from 557.0 # Check EXTERN ~DGRACE~ : 169 Check EXTERN ~DGRACE~ : 170
     SPEAKER 'Да… Я знаю, шеф. Не буду лгать — я не хочу туда… но я пойду. Просто знай: как только мы войдем в портал, это больше не будет касаться только *тебя*. Наши жизни окажутся в твоих руках, и мы не сможем вернуться, если умрем.'
 
     menu:
-        'Тогда почему же ты…' if dmorteLogic.r54282_condition():
+        'Тогда почему же ты…' if morteLogic.r54282_condition():
             # r1170 # reply54282
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Тогда почему же ты…' if dmorteLogic.r54283_condition():
+        'Тогда почему же ты…' if morteLogic.r54283_condition():
             # r1171 # reply54283
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Тогда почему же ты…' if dmorteLogic.r54284_condition():
+        'Тогда почему же ты…' if morteLogic.r54284_condition():
             # r1172 # reply54284
-            jump dmorte_s562
+            jump morte_s562
 
-        'Тогда почему же ты…' if dmorteLogic.r54285_condition():
+        'Тогда почему же ты…' if morteLogic.r54285_condition():
             # r1173 # reply54285
-            jump dmorte_s563
+            jump morte_s563
 
-        'Тогда почему же ты…' if dmorteLogic.r54286_condition():
+        'Тогда почему же ты…' if morteLogic.r54286_condition():
             # r1174 # reply54286
-            jump dmorte_s564
+            jump morte_s564
 
 
 # s559 # say54762
-label dmorte_s559:  # - # Check EXTERN ~DGRACE~ : 176
+label morte_s559:  # - # Check EXTERN ~DGRACE~ : 176
     SPEAKER 'Морт делает выпад. Ты пахнешь не лучше. Когда в последний раз ванну-то принимал?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s560 # say54763
-label dmorte_s560:  # - # Check EXTERN ~DGRACE~ : 177
+label morte_s560:  # - # Check EXTERN ~DGRACE~ : 177
     SPEAKER 'Морт делает выпад. Ты пахнешь не лучше. Когда в последний раз ванну-то принимал?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s561 # say54764
-label dmorte_s561:  # - # Check EXTERN ~DTRIAS~ : 8
+label morte_s561:  # - # Check EXTERN ~DTRIAS~ : 8
     SPEAKER 'Морт делает выпад. Ты пахнешь не лучше. Когда в последний раз ванну-то принимал?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s562 # say54831
-label dmorte_s562:  # from 558.2
+label morte_s562:  # from 558.2
     SPEAKER 'То, что Равель сказала там, в лабиринте… она сказала, что ты притягиваешь страдающих людей как магнит, — Морт качает головой. — Может, это потому что *ты* страдал все это время. Возможно, когда ты со всем разберешься… может, тогда и *мы* обретем чуточку покоя. Возможно.'
 
     menu:
-        'Может быть. Значит… ты со мной, Морт?' if dmorteLogic.r54832_condition():
+        'Может быть. Значит… ты со мной, Морт?' if morteLogic.r54832_condition():
             # r1175 # reply54832
-            jump dmorte_s534
+            jump morte_s534
 
-        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if dmorteLogic.r54833_condition():
+        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if morteLogic.r54833_condition():
             # r1176 # reply54833
-            $ dmorteLogic.r54833_action()
-            jump dmorte_dispose
+            $ morteLogic.r54833_action()
+            jump morte_dispose
 
 
 # s563 # say54834
-label dmorte_s563:  # from 558.3
+label morte_s563:  # from 558.3
     SPEAKER 'То, что Равель сказала там, в лабиринте, и то, что Фелл сказал о том символе Мучения? Они сказали, что ты страдающих людей как магнит, — Морт качает головой. — Может, это потому что *ты* страдал все это время. Возможно, когда ты со всем разберешься… может, тогда и *мы* обретем чуточку покоя. Возможно.'
 
     menu:
-        'Может быть. Значит… ты со мной, Морт?' if dmorteLogic.r54835_condition():
+        'Может быть. Значит… ты со мной, Морт?' if morteLogic.r54835_condition():
             # r1177 # reply54835
-            jump dmorte_s534
+            jump morte_s534
 
-        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if dmorteLogic.r54836_condition():
+        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if morteLogic.r54836_condition():
             # r1178 # reply54836
-            $ dmorteLogic.r54836_action()
-            jump dmorte_dispose
+            $ morteLogic.r54836_action()
+            jump morte_dispose
 
 
 # s564 # say54837
-label dmorte_s564:  # from 558.4
+label morte_s564:  # from 558.4
     SPEAKER 'Я знал тебя, шеф, уже долгое время, и есть в тебе *кое-что*: ты притягиваешь страдающих людей как магнит, — Морт качает головой. — Может, это потому что *ты* страдал все это время. Возможно, когда ты со всем разберешься… может, тогда и *мы* обретем чуточку покоя. Возможно.'
 
     menu:
-        'Может быть. Значит… ты со мной, Морт?' if dmorteLogic.r54838_condition():
+        'Может быть. Значит… ты со мной, Морт?' if morteLogic.r54838_condition():
             # r1179 # reply54838
-            jump dmorte_s534
+            jump morte_s534
 
-        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if dmorteLogic.r54839_condition():
+        'Понятно. Спасибо за совет, Морт. Теперь я собираюсь пройти через портал.' if morteLogic.r54839_condition():
             # r1180 # reply54839
-            $ dmorteLogic.r54839_action()
-            jump dmorte_dispose
+            $ morteLogic.r54839_action()
+            jump morte_dispose
 
 
 # s565 # say54840
-label dmorte_s565:  # from 548.0 # Check EXTERN ~DDAKKON~ : 175
+label morte_s565:  # from 548.0 # Check EXTERN ~DDAKKON~ : 175
     SPEAKER 'Морт умолкает.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s566 # say54841
-label dmorte_s566:  # - # Check EXTERN ~DDAKKON~ : 177
+label morte_s566:  # - # Check EXTERN ~DDAKKON~ : 177
     SPEAKER 'Черепом был я, — тихо произносит Морт. — Женщиной была одна цыпочка по имени Дейонарра. Лучника я не знал…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s567 # say54842
-label dmorte_s567:  # - # Check EXTERN ~DDAKKON~ : 178
+label morte_s567:  # - # Check EXTERN ~DDAKKON~ : 178
     SPEAKER 'Ага… — Морт трясется, почти что трепещет. — Шеф, в этой крепости — там *повсюду* тени…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s568 # say54843
-label dmorte_s568:  # - # Check EXTERN ~DDAKKON~ : 179
+label morte_s568:  # - # Check EXTERN ~DDAKKON~ : 179
     SPEAKER 'Они говорили со мной, как Колонна Черепов… — Морт понижает тон. — Они *знали*…'
 
     menu:
         'Ладно. Слушайте, вы двое: мне нужно знать все, что вы можете рассказать мне об этой крепости…':
             # r1181 # reply54844
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s569 # say54845
-label dmorte_s569:  # - # Check EXTERN ~DDAKKON~ : 182
+label morte_s569:  # - # Check EXTERN ~DDAKKON~ : 182
     SPEAKER 'Больше ничего, шеф. Кроме того, что мы были вынуждены разделиться сразу после прибытия, что это место ОГРОМНО, что оно кишит тенями… и что где-то в крепости есть нечто гораздо могущественнее *любого* из нас.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s570 # say54846
-label dmorte_s570:  # - # Check EXTERN ~DDAKKON~ : 182
+label morte_s570:  # - # Check EXTERN ~DDAKKON~ : 182
     SPEAKER 'Больше ничего, шеф. Кроме того, что те, кто попадают туда, вынуждены разделиться сразу после прибытия, что это место ОГРОМНО, что оно кишит тенями… и что где-то в крепости есть нечто гораздо могущественнее *любого* из нас.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s571 # say55832
-label dmorte_s571:  # -
+label morte_s571:  # -
     SPEAKER 'Шеф, перед нами потенциальный источник неприятностей: этот модрон стал бродягой.'
 
     menu:
         'Бродягой?':
             # r1182 # reply55833
-            jump dmorte_s572
+            jump morte_s572
 
 
 # s572 # say55834
-label dmorte_s572:  # from 571.0 # Check EXTERN ~DNORDOM~ : 21
+label morte_s572:  # from 571.0 # Check EXTERN ~DNORDOM~ : 21
     SPEAKER 'Да, видишь ли, иногда модроны становятся немного хаотичными, и когда это случается… что ж, полагаю, *лучше* всего объяснить это так: модрон-бродяга — это что-то вроде… модрона наоборот.'
 
     menu:
         'Так значит, это… модрон наоборот?':
             # r1183 # reply55836
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s573 # say55837
-label dmorte_s573:  # -
+label morte_s573:  # -
     SPEAKER 'Шеф, может, это и кажется весельем, но выбивание барного стула из-под зада баатезу может оказаться куда более полезным занятием, по сравнению с трещанием черепушками с этим дурацким полигоном.'
 
     menu:
         'Морт, *ты* знаешь, что такое духи механизмов?':
             # r1184 # reply55839
-            jump dmorte_s574
+            jump morte_s574
 
 
 # s574 # say55841
-label dmorte_s574:  # from 573.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s574:  # from 573.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Шеф, я понятия не имею, о чем трещит этот куб.'
 
     menu:
         'А я-то думал, что ты — *эксперт* по планам.':
             # r1185 # reply55842
-            jump dmorte_s575
+            jump morte_s575
 
         'Ну хорошо. Нордом, у меня есть к тебе другие вопросы…':
             # r1186 # reply55843
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Тогда забудь об этом. Пошли дальше.':
             # r1187 # reply55844
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s575 # say55845
-label dmorte_s575:  # from 574.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s575:  # from 574.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Чт… Я знаю побольше *твоего*, шатающийся и ни черта не помнящий хрипун! Кстати, вот тебе еще три сведения, чтобы тарахтели в твоей пустой черепушке: во-первых, НЕ СУЩЕСТВУЕТ экспертов по планам; во-вторых, я — лучшее из того, что ты можешь найти; и, в-третьих, проявляй ко мне хоть немного уважения. Зачем? Смотри пункт второй.'
 
     menu:
         'Ну хорошо. Нордом, у меня есть к тебе другие вопросы…':
             # r1188 # reply55846
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Тогда забудь об этом. Пошли дальше.':
             # r1189 # reply55847
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s576 # say55848
-label dmorte_s576:  # - # Check EXTERN ~DGRACE~ : 184 Check EXTERN ~DNORDOM~ : 65
+label morte_s576:  # - # Check EXTERN ~DGRACE~ : 184 Check EXTERN ~DNORDOM~ : 65
     SPEAKER 'Механус? Скучный во всех смыслах этого слова, шеф. Представь себе план, наполненный модронами и большими вертящимися шестернями — вот и весь великий, огромный и СКУЧНЫЙ план Механус. Слишком много законов, слишком нудно. О таком месте ты даже и думать не захочешь, не то чтобы посетить.'
 
     menu:
-        'Что имел в виду под 'нулевым домом', Нордом?' if dmorteLogic.r55849_condition():
+        'Что имел в виду под 'нулевым домом', Нордом?' if morteLogic.r55849_condition():
             # r1190 # reply55849
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Неважно, Морт. Я достаточно наслушался. Идем.' if dmorteLogic.r55850_condition():
+        'Неважно, Морт. Я достаточно наслушался. Идем.' if morteLogic.r55850_condition():
             # r1191 # reply55850
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s577 # say55855
-label dmorte_s577:  # - # Check EXTERN ~DNORDOM~ : 65
+label morte_s577:  # - # Check EXTERN ~DNORDOM~ : 65
     SPEAKER 'Прошу ПРОЩЕНИЯ, мисс Жрица Благочестивости, но Механус — САМОЕ скучное место в мультивселенной… Единственное интересное событие, которое могло бы там произойти, — это если бы *ты* туда пришла… — Морт закатывает глаза. — Но у меня есть подозрение, что даже *это* утратило бы свое очарование через какое-то время.'
 
     menu:
         'Что имел в виду под 'нулевым домом', Нордом?':
             # r1192 # reply55857
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Неважно, Морт. Я достаточно наслушался. Идем.':
             # r1193 # reply55858
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s578 # say55860
-label dmorte_s578:  # - # Check EXTERN ~DGRACE~ : 186 Check EXTERN ~DNORDOM~ : 67 Check EXTERN ~DNORDOM~ : 74
+label morte_s578:  # - # Check EXTERN ~DGRACE~ : 186 Check EXTERN ~DNORDOM~ : 67 Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Все модроны — части этой 'совокупности', шеф, все равно что огромное хранилище энергии… Когда один из них умирает, энергия, затраченная для создания модрона, возвращается в хранилище, и создается новый модрон. Дело вот в чем… когда модроны съезжают с катушек, они типа обрывают эту связь, при этом оставляя у себя немного энергии.'
 
     menu:
         'Итак… Нордом, этот Механус — источник энергии?':
             # r1194 # reply55862
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ясно. Нордом, у меня есть к тебе другие вопросы…':
             # r1195 # reply55864
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел знать. Пошли.':
             # r1196 # reply55865
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s579 # say55867
-label dmorte_s579:  # - # Check EXTERN ~DGRACE~ : 187
+label morte_s579:  # - # Check EXTERN ~DGRACE~ : 187
     SPEAKER 'Морт уставился на Падшую Грацию. *Не возражаешь*? Спасибо, я уже раскрыл вопрос. Здесь *я* источник информации, НЕ ТЫ, понятно?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s580 # say55870
-label dmorte_s580:  # - # Check EXTERN ~DGRACE~ : 191
+label morte_s580:  # - # Check EXTERN ~DGRACE~ : 191
     SPEAKER 'О, *понятно*! Может, если бы я был суккубом, ты бы больше ко мне прислушивался, правда? Может, если бы я время от времени обнажал ножку, ты бы меня больше уважал, да? Это очень низко, шеф, очень низко! Да я вообще могу…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s581 # say55871
-label dmorte_s581:  # -
+label morte_s581:  # -
     SPEAKER 'NULL NODE'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s582 # say55873
-label dmorte_s582:  # - # Check EXTERN ~DNORDOM~ : 67 Check EXTERN ~DNORDOM~ : 74
+label morte_s582:  # - # Check EXTERN ~DNORDOM~ : 67 Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Вот как?! Я?! Ну… Да, ты совершенно… да-а, ты это слышал, шеф? То, что сказала суккубка? Она права. Меня легче понять, я 'умею подбирать слова', знаю, что говорю. Видишь, как я тебе нужен!'
 
     menu:
-        'Ладно, тогда у меня другой вопрос: вы оба говорите, что Нордом — часть этого Источника, но он от него отрезан. И что когда модрон умирает, он возвращается туда. С Нордомом будет так же?' if dmorteLogic.r55875_condition():
+        'Ладно, тогда у меня другой вопрос: вы оба говорите, что Нордом — часть этого Источника, но он от него отрезан. И что когда модрон умирает, он возвращается туда. С Нордомом будет так же?' if morteLogic.r55875_condition():
             # r1197 # reply55875
-            jump dmorte_s583
+            jump morte_s583
 
         'Я и не отрицаю, Морт. Итак… Нордом, этот источник энергии, о котором ты упоминал… он на Механусе?':
             # r1198 # reply55876
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Ну хорошо. Нордом, у меня есть другие вопросы к тебе…':
             # r1199 # reply55877
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел знать. Пошли.':
             # r1200 # reply55879
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s583 # say55882
-label dmorte_s583:  # from 582.0
+label morte_s583:  # from 582.0
     SPEAKER 'Морт кивает.'
 
     menu:
         'И если он умрет, создается еще один Нордом.':
             # r1201 # reply55884
-            jump dmorte_s584
+            jump morte_s584
 
 
 # s584 # say55886
-label dmorte_s584:  # from 583.0
+label morte_s584:  # from 583.0
     SPEAKER 'Э… нет.'
 
     menu:
         'Тогда что?':
             # r1202 # reply55887
-            jump dmorte_s585
+            jump morte_s585
 
 
 # s585 # say55890
-label dmorte_s585:  # from 584.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s585:  # from 584.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Ну, они заберут его энергию, шеф, и создадут еще одного модрона, но это будет уже не Нордом, потому что он теперь уже *не совсем* модрон, в нем слишком много от планов. Они сделают замену на не-Нордома.'
 
     menu:
         'Значит… став бродягой, он превратился… в смертного?':
             # r1203 # reply55892
-            jump dmorte_s586
+            jump morte_s586
 
         'Ну хорошо. Нордом, у меня есть другие вопросы к тебе…':
             # r1204 # reply55894
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел знать. Пошли.':
             # r1205 # reply55895
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s586 # say55897
-label dmorte_s586:  # from 585.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s586:  # from 585.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Морт на миг умолкает. Ну… да, можно и так сказать. То есть, если бы он не устроил свой маленький бродяжный бунт, с ним бы все было в порядке… Если бы он умер, появился бы еще один модрон — точная его копия. Но поскольку он 'обратился'… ну, когда он умрет, эта частичка потеряется.'
 
     menu:
         'Ну хорошо. Нордом, у меня есть другие вопросы к тебе…':
             # r1206 # reply55898
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Это все, что я хотел знать. Пошли.':
             # r1207 # reply55900
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s587 # say55901
-label dmorte_s587:  # - # Check EXTERN ~DNORDOM~ : 74
+label morte_s587:  # - # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Аййй! Во имя сил, пожалей мою голову и прекрати это! Если ты продолжишь спрашивать его об этом без конца, у него коленвал погнется!'
 
     menu:
         'А что, это *идея*, Морт.':
             # r1208 # reply55902
-            $ dmorteLogic.r55902_action()
-            jump dmorte_s588
+            $ morteLogic.r55902_action()
+            jump morte_s588
 
         'Ну, я хотел услышать от него ответ, и я добивался этого от него':
             # r1209 # reply55905
-            jump dmorte_s589
+            jump morte_s589
 
         'Неважно. У меня есть другие вопросы к Нордому…':
             # r1210 # reply55906
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь об этом. Идем.':
             # r1211 # reply55907
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s588 # say55909
-label dmorte_s588:  # from 587.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s588:  # from 587.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'О, — Морт 'ухмыляется'. — Мог бы хоть ЧТО-ТО сказать. Пожалуйста, продолжай. Я не против… — Морт щелкает зубами, изображая Нордома. — Если хочешь что-нибудь узнать о модронах — спроси МЕНЯ.'
 
     menu:
         'Ладно, Морт… Что ты можешь рассказать мне о модронах?':
             # r1212 # reply55910
-            jump dmorte_s590
+            jump morte_s590
 
         'Неважно. У меня есть другие вопросы к Нордому…':
             # r1213 # reply55912
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь об этом. Идем.':
             # r1214 # reply55913
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s589 # say55914
-label dmorte_s589:  # from 587.1 # Check EXTERN ~DNORDOM~ : 74
+label morte_s589:  # from 587.1 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Слушай, шеф, ОБЫЧНЫЕ модроны с трудом понимают что-либо, что не касается их базовых задач, и этот тупой полигон только что попал на планы. Не запутывай куб, хорошо? По крайней мере, пока он вооружен. Если хочешь узнать что-то про модронов, спрашивай меня, а не его.'
 
     menu:
         'Ладно, Морт… Что ты можешь рассказать мне о модронах?':
             # r1215 # reply55915
-            jump dmorte_s590
+            jump morte_s590
 
         'Неважно. У меня есть другие вопросы к Нордому…':
             # r1216 # reply55917
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь об этом. Идем.':
             # r1217 # reply55918
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s590 # say55921
-label dmorte_s590:  # from 588.0 589.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s590:  # from 588.0 589.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Шеф, все выглядит так: модроны — это дурацкие геометрические фигуры, которые бряцают по своему родному плану, Механусу. Они все такие аккуратные, упорядоченные, и хотят, чтобы и ОСТАЛЬНАЯ мультивселенная была такой же. Вот почему они такие надоедливые.'
 
     menu:
         'Что плохого в том, чтобы попытаться навести порядок в мультивселенной?':
             # r1218 # reply55923
-            jump dmorte_s592
+            jump morte_s592
 
         'Что еще за Механус?':
             # r1219 # reply55925
-            $ dmorteLogic.r55925_action()
-            jump dmorte_s591
+            $ morteLogic.r55925_action()
+            jump morte_s591
 
         'Неважно. У меня есть другие вопросы к Нордому…':
             # r1220 # reply55926
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь об этом. Идем.':
             # r1221 # reply55928
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s591 # say55930
-label dmorte_s591:  # from 590.1 # Check EXTERN ~DNORDOM~ : 74
+label morte_s591:  # from 590.1 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Это план, откуда происходят все эти механические дармоеды. Спроси его о нем, увидишь, что он скажет. Там они садятся в кружок и без конца все раскладывают по полочкам… Создать перечень, положить на место *то*, положить на место *это*, придумать закон, и так далее и тому подобное.'
 
     menu:
         'Правда: Похоже, это благородное стремление. Что плохого в том, чтобы попытаться навести порядок в мультивселенной?':
             # r1222 # reply55931
-            $ dmorteLogic.r55931_action()
-            jump dmorte_s592
+            $ morteLogic.r55931_action()
+            jump morte_s592
 
         'Кажется, тебе это не кажется захватывающим.':
             # r1223 # reply55935
-            jump dmorte_s592
+            jump morte_s592
 
         'У меня есть вопросы к Нордому…':
             # r1224 # reply55936
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь об этом. Идем.':
             # r1225 # reply55937
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s592 # say55938
-label dmorte_s592:  # from 590.0 591.0 591.1
+label morte_s592:  # from 590.0 591.0 591.1
     SPEAKER 'Морт глядит на Нордома, который держит свой левый арбалет у виска, словно слушая его.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s593 # say55940
-label dmorte_s593:  # from 592.0 # Check EXTERN ~DNORDOM~ : 74
+label morte_s593:  # from 592.0 # Check EXTERN ~DNORDOM~ : 74
     SPEAKER 'Потому что, шеф, хаос тоже должен иметь место. Если бы все было так, как это видят *модроны*, это не было бы похоже на жизнь.. по крайней мере, на жизнь, которой я хочу жить. Они только и хотят, чтобы все *структурировать*. Ух-х.'
 
     menu:
         'Правда: Согласен. Должно быть место и для хаоса… если будет чересчур много законов, получится застой. Слушай, у меня есть другие вопросы к Нордому…':
             # r1226 # reply55941
-            $ dmorteLogic.r55941_action()
-            jump dmorte_dispose
+            $ morteLogic.r55941_action()
+            jump morte_dispose
 
         'Понятно. Слушай, у меня есть другие вопросы к Нордому…':
             # r1227 # reply55942
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Тогда ладно. Давай двигаться дальше.':
             # r1228 # reply55944
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s594 # say56029
-label dmorte_s594:  # - # Check EXTERN ~DFHJULL~ : 27
+label morte_s594:  # - # Check EXTERN ~DFHJULL~ : 27
     SPEAKER 'А мне *нравится*, как она пахнет. Так мило.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s595 # say56030
-label dmorte_s595:  # - # Check EXTERN ~DFHJULL~ : 88
+label morte_s595:  # - # Check EXTERN ~DFHJULL~ : 88
     SPEAKER 'Погоди, шеф… Баатор — это ПЛОХОЕ место. Нечистый, вероятно, что-то утаил от нас… и даже если эта 'Колонна Черепов' и существует, возможно, мы могли бы найти кого-нибудь еще, кто знает, как добраться до Крепости, не побывав при этом на одном из самых опасных планов в мультивселенной.'
 
     menu:
         'Ты что-то утаил, Раздвоенный Язык?':
             # r1229 # reply56031
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Почему ты не хочешь туда идти, Морт?':
             # r1230 # reply56032
-            jump dmorte_s596
+            jump morte_s596
 
 
 # s596 # say56033
-label dmorte_s596:  # from 595.1 # Check EXTERN ~DFHJULL~ : 46
+label morte_s596:  # from 595.1 # Check EXTERN ~DFHJULL~ : 46
     SPEAKER 'Там опасно, шеф. Я бы лучше туда не ходил. Я бывал там — не лучшее место. Ясно?'
 
     menu:
         'Мы еще поговорим об этом позже. Раздвоенный Язык, у меня есть несколько вопросов…':
             # r1231 # reply56034
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s597 # say56936
-label dmorte_s597:  # -
+label morte_s597:  # -
     SPEAKER 'Этот мужик появляется *повсюду*!'
 
     menu:
         'Да, но он нам помог. Идем.':
             # r1232 # reply56937
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s598 # say59827
-label dmorte_s598:  # -
+label morte_s598:  # -
     SPEAKER '(NULL NODE)'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s599 # say60950
-label dmorte_s599:  # -
+label morte_s599:  # -
     SPEAKER 'Эй, быть мертвым не так уж плохо. Посмотри на это с другой стороны: по крайней мере, тебе больше не придется разговаривать с этими дурацкими закорючками.'
 
     menu:
         'Молчи, Морт. Я с этим разберусь. Ты не мог бы сказать, что случилось?':
             # r1233 # reply61111
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Забудь. Я оставлю тебя здесь.':
             # r1234 # reply61112
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s600 # say61408
-label dmorte_s600:  # - # Check EXTERN ~DUCHO~ : 9
+label morte_s600:  # - # Check EXTERN ~DUCHO~ : 9
     SPEAKER 'Э… шеф… что скажешь? Как насчет того, чтобы одолжить старому Морту немного звенелок? Знаешь, прошло уже много времени…'
 
     menu:
-        'Конечно, почему бы и нет. Мисс?' if dmorteLogic.r61411_condition():
+        'Конечно, почему бы и нет. Мисс?' if morteLogic.r61411_condition():
             # r1235 # reply61411
-            jump dmorte_dispose
+            jump morte_dispose
 
-        'Извини, Морт, наличность закончилась. Идем.' if dmorteLogic.r61412_condition():
+        'Извини, Морт, наличность закончилась. Идем.' if morteLogic.r61412_condition():
             # r1236 # reply61412
-            jump dmorte_dispose
+            jump morte_dispose
 
         'Морт, нам правда нужно идти. Прощай, красавица.':
             # r1237 # reply61413
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s601 # say61409
-label dmorte_s601:  # - # Check EXTERN ~DUCHO~ : 10
+label morte_s601:  # - # Check EXTERN ~DUCHO~ : 10
     SPEAKER 'Отлично! Спасибо, шеф! Морт поворачивается к уходящей женщине.'
 
     menu:
         'Подождать, пока он не вернется.':
             # r1238 # reply61414
-            $ dmorteLogic.r61414_action()
-            jump dmorte_dispose
+            $ morteLogic.r61414_action()
+            jump morte_dispose
 
 
 # s602 # say61410
-label dmorte_s602:  # -
+label morte_s602:  # -
     SPEAKER 'Похоже, Морт лишь смутно осознает твое присутствие: он то глупо хихикает, то томно вздыхает.'
 
     menu:
         'Хорошо… Думаю, что все прошло хорошо. Прощай, красавица.':
             # r1239 # reply61415
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s603 # say61481
-label dmorte_s603:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s603:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Моим? Я — голова Векны. [MRT562]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s604 # say61482
-label dmorte_s604:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s604:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Боги услышали мои молитвы! [MRT485]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s605 # say61483
-label dmorte_s605:  # - # Check EXTERN ~BGRACE~ : 3
+label morte_s605:  # - # Check EXTERN ~BGRACE~ : 3
     SPEAKER 'История головы Векны очень долгая. Я не хочу об этом говорить. [MRT559A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s606 # say61484
-label dmorte_s606:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s606:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER '*Пожалуйста*, мы можем сменить тему? [MRT559B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s607 # say61485
-label dmorte_s607:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s607:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Я? Я *ле пети Морт*. [MRT560]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s608 # say61486
-label dmorte_s608:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s608:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Что сказать? Я — *Мементо Морте*. [MRT561]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s609 # say61487
-label dmorte_s609:  # - # Check EXTERN ~BGRACE~ : 7
+label morte_s609:  # - # Check EXTERN ~BGRACE~ : 7
     SPEAKER 'Только если я отдохну на твоих буферах. [MRT486A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s610 # say61488
-label dmorte_s610:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s610:  # - # ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Ничего! Ничего такого. Важного. [MRT486B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s611 # say61489
-label dmorte_s611:  # - # ~SetGlobal("Grace_Talked_Morte","GLOBAL",0) ~ EXIT
+label morte_s611:  # - # ~SetGlobal("Grace_Talked_Morte","GLOBAL",0) ~ EXIT
     SPEAKER 'Гав! Гав! Хе-хе-хе! [MRT484]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s612 # say62890
-label dmorte_s612:  # - # Check EXTERN ~DGRACE~ : 213
+label morte_s612:  # - # Check EXTERN ~DGRACE~ : 213
     SPEAKER 'Шеф, она — танарри… суккуб.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s613 # say63454
-label dmorte_s613:  # - # Check EXTERN ~BANNAH~ : 1
+label morte_s613:  # - # Check EXTERN ~BANNAH~ : 1
     SPEAKER 'Я не могу нигде стоять. Видишь ли, это можно делать только ногами. [MRT482]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s614 # say63455
-label dmorte_s614:  # - # Check EXTERN ~BANNAH~ : 3
+label morte_s614:  # - # Check EXTERN ~BANNAH~ : 3
     SPEAKER 'Я думал, что ты хорошо выглядишь, но я ошибался. [MRT483]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s615 # say63456
-label dmorte_s615:  # - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",3) ~ EXIT
+label morte_s615:  # - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",3) ~ EXIT
     SPEAKER 'Я перестал дышать с тех пор, как увидел тебя, бесовка. [MRT524]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s616 # say63457
-label dmorte_s616:  # - # Check EXTERN ~BANNAH~ : 6
+label morte_s616:  # - # Check EXTERN ~BANNAH~ : 6
     SPEAKER 'Знаешь, у меня ведь есть ИМЯ. [MRT526]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s617 # say63458
-label dmorte_s617:  # - # Check EXTERN ~BANNAH~ : 8
+label morte_s617:  # - # Check EXTERN ~BANNAH~ : 8
     SPEAKER 'Интересно, надо попробовать… на следующий день я у них спрошу, сколько они отвалят за тебя. [MRT531]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s618 # say63459
-label dmorte_s618:  # - # Check EXTERN ~BANNAH~ : 10
+label morte_s618:  # - # Check EXTERN ~BANNAH~ : 10
     SPEAKER 'Знаешь, когда твой рот закрыт, ты выглядишь намного симпатичней. [MRT530]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s619 # say63460
-label dmorte_s619:  # - # Check EXTERN ~BANNAH~ : 12
+label morte_s619:  # - # Check EXTERN ~BANNAH~ : 12
     SPEAKER 'О, но у тебя ведь уже есть мое сердце, бесовка. [MRT532]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s620 # say63462
-label dmorte_s620:  # - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",8) ~ EXIT
+label morte_s620:  # - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",8) ~ EXIT
     SPEAKER 'Я могу придумать способы и похуже. [MRT525]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s621 # say63463
-label dmorte_s621:  # - # Check EXTERN ~BANNAH~ : 15
+label morte_s621:  # - # Check EXTERN ~BANNAH~ : 15
     SPEAKER 'Знаешь, а ведь ты *тоже* отчасти нечисть. [MRT533A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s622 # say63464
-label dmorte_s622:  # - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",0) ~ EXIT
+label morte_s622:  # - # ~SetGlobal("Annah_Talked_Morte","GLOBAL",0) ~ EXIT
     SPEAKER 'С той точки, где я парю, она выглядит хорошенькой. [MRT533B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s623 # say63666
-label dmorte_s623:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s623:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Я заметил. Почему бы тебе не поделиться своей проницательностью с шефом, а? [MRT563]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s624 # say63667
-label dmorte_s624:  # - # Check EXTERN ~BNORDOM~ : 2
+label morte_s624:  # - # Check EXTERN ~BNORDOM~ : 2
     SPEAKER 'Метеоризм, глупый полигон. [MRT468A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s625 # say63668
-label dmorte_s625:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",3) ~ EXIT
+label morte_s625:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",3) ~ EXIT
     SPEAKER 'Тогда почему бы тебе не стать чуточку 'эффективнее', пустомеля-полигон. [MRT469A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s626 # say63669
-label dmorte_s626:  # - # Check EXTERN ~DANNAH~ : 315
+label morte_s626:  # - # Check EXTERN ~DANNAH~ : 315
     SPEAKER 'Погоди, я-я-я н-ничего такого не говорил! [MRT470B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s627 # say63670
-label dmorte_s627:  # - # Check EXTERN ~BNORDOM~ : 6
+label morte_s627:  # - # Check EXTERN ~BNORDOM~ : 6
     SPEAKER 'Анна все еще в одежде? [MRT565A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s628 # say63671
-label dmorte_s628:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",5) ~ EXIT
+label morte_s628:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",5) ~ EXIT
     SPEAKER 'Тогда ответ — да. [MRT565B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s629 # say63672
-label dmorte_s629:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",6) ~ EXIT
+label morte_s629:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",6) ~ EXIT
     SPEAKER 'Я сейчас тебе приделаю девятнадцатую, если ты не заткнешь свою пасть. [MRT564]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s630 # say63673
-label dmorte_s630:  # - # Check EXTERN ~BNORDOM~ : 9
+label morte_s630:  # - # Check EXTERN ~BNORDOM~ : 9
     SPEAKER 'Если свобода воли заключается в беспрекословном исполнении моих приказов, то — да. [MRT569A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s631 # say63674
-label dmorte_s631:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",7) ~ EXIT
+label morte_s631:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",7) ~ EXIT
     SPEAKER 'Добро пожаловать на планы, сынок. [MRT569B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s632 # say63675
-label dmorte_s632:  # - # Check EXTERN ~BNORDOM~ : 11
+label morte_s632:  # - # Check EXTERN ~BNORDOM~ : 11
     SPEAKER 'Падшая Грация голая? [MRT568A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s633 # say63676
-label dmorte_s633:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",8) ~ EXIT
+label morte_s633:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",8) ~ EXIT
     SPEAKER 'Тогда ответ на твой вопрос — да. [MRT568B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s634 # say63677
-label dmorte_s634:  # - # Check EXTERN ~BNORDOM~ : 13
+label morte_s634:  # - # Check EXTERN ~BNORDOM~ : 13
     SPEAKER 'Купание Анны, Падшей Грации и тебя в киммерийской трясине. [MRT571A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s635 # say63678
-label dmorte_s635:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",9) ~ EXIT
+label morte_s635:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",9) ~ EXIT
     SPEAKER 'Эй. Некоторые читают словарь, а некоторые — его пишут. [MRT572B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s636 # say63679
-label dmorte_s636:  # - # Check EXTERN ~BNORDOM~ : 15
+label morte_s636:  # - # Check EXTERN ~BNORDOM~ : 15
     SPEAKER 'Анна, бутылка фуриондийского огненного янтарного и номер-люкс в Фестхолле. [MRT573]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s637 # say63680
-label dmorte_s637:  # - # Check EXTERN ~BNORDOM~ : 17
+label morte_s637:  # - # Check EXTERN ~BNORDOM~ : 17
     SPEAKER 'Ох, *заткнись*. [MRT471D]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s638 # say63681
-label dmorte_s638:  # - # Check EXTERN ~BNORDOM~ : 19
+label morte_s638:  # - # Check EXTERN ~BNORDOM~ : 19
     SPEAKER 'Ох, иди беспокой кого-нибудь еще, дурацкая счетная машинка. [MRT576A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s639 # say63682
-label dmorte_s639:  # - # Check EXTERN ~BNORDOM~ : 20
+label morte_s639:  # - # Check EXTERN ~BNORDOM~ : 20
     SPEAKER 'Я не знаю, ясно? Оно просто… оно… ну понимаешь… просто исчезло. [MRT576B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s640 # say63683
-label dmorte_s640:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1) ~ EXIT
+label morte_s640:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1) ~ EXIT
     SPEAKER 'Если ты не заткнешь свою пасть, я тебе сейчас это покажу. [MRT576C]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s641 # say63684
-label dmorte_s641:  # - # Check EXTERN ~DGRACE~ : 373
+label morte_s641:  # - # Check EXTERN ~DGRACE~ : 373
     SPEAKER 'Иди поцелуй медведя в задницу. [MRT575A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s642 # say63685
-label dmorte_s642:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",0) ~ EXIT
+label morte_s642:  # - # ~SetGlobal("Nordom_Talked_Morte","GLOBAL",0) ~ EXIT
     SPEAKER 'Поверь мне. Анна заслуживает поцелуя. [MRT575B]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s643 # say63686
-label dmorte_s643:  # - # ~SetGlobal("Nordom_Talked_Annah","GLOBAL",0) ~ EXIT
+label morte_s643:  # - # ~SetGlobal("Nordom_Talked_Annah","GLOBAL",0) ~ EXIT
     SPEAKER '::Невинно посвистывает:: [MRT472A]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s644 # say63688
-label dmorte_s644:  # - # ~SetGlobal("Nordom_Talked_Grace","GLOBAL",2) ~ EXIT
+label morte_s644:  # - # ~SetGlobal("Nordom_Talked_Grace","GLOBAL",2) ~ EXIT
     SPEAKER 'Никто! Никто ему этого не говорил! [MRT473D]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s645 # say63689
-label dmorte_s645:  # - # ~SetGlobal("Nordom_Talked_Grace","GLOBAL",3) ~ EXIT
+label morte_s645:  # - # ~SetGlobal("Nordom_Talked_Grace","GLOBAL",3) ~ EXIT
     SPEAKER 'Это чисто добровольное действие с их стороны, идиот. Э… или я не все знаю. [MRT577]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s646 # say63858
-label dmorte_s646:  # - # Check EXTERN ~BVHAILOR~ : 1
+label morte_s646:  # - # Check EXTERN ~BVHAILOR~ : 1
     SPEAKER 'Поверь мне, ты никогда не встречался с ним. [MRT475AA]'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s647 # say64990
-label dmorte_s647:  # -
+label morte_s647:  # -
     SPEAKER 'Погоди-ка, шеф… взгляни на это. Взглянув вниз, ты замечаешь множество грязных следов, ведущих в арку… и не поворачивающих обратно. Здесь, должно быть, портал или что-то вроде этого.'
 
     menu:
         'Портал? Как его открыть?':
             # r1240 # reply64991
-            jump dmorte_s648
+            jump morte_s648
 
         'Может, и так. Идем.':
             # r1241 # reply64993
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s648 # say64992
-label dmorte_s648:  # from 647.0
+label morte_s648:  # from 647.0
     SPEAKER 'Без понятия, шеф. Но это должен быть распространенный ключ: гляди, сколько народу через него ходит! Может, кто из местных бандюков подскажет…'
 
     menu:
         'Тогда я поспрашиваю в округе. Пошли.':
             # r1242 # reply64994
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s649 # say65552
-label dmorte_s649:  # from 329.0 729.0
+label morte_s649:  # from 329.0 729.0
     SPEAKER 'Эй, шеф, *да ладно* тебе. Только не говори, что ты снова все забыл.'
 
     menu:
         'Мне просто нужно освежить свою память.':
             # r1243 # reply65553
-            jump dmorte_s650
+            jump morte_s650
 
-        'Нет, просто на этот раз я хочу услышать *всю* историю — давай, освежи мою память.' if dmorteLogic.r65554_condition():
+        'Нет, просто на этот раз я хочу услышать *всю* историю — давай, освежи мою память.' if morteLogic.r65554_condition():
             # r1244 # reply65554
-            jump dmorte_s650
+            jump morte_s650
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1245 # reply65555
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно, забудь. Идем.':
             # r1246 # reply65556
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s650 # say65557
-label dmorte_s650:  # from 649.0 649.1
+label morte_s650:  # from 649.0 649.1
     SPEAKER 'Готов поспорить, что услышу ЭТО много раз, — Морт прочищает горло. — Посмотрим…  'Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его уже не записали в книгу мертвых'.'
 
     menu:
-        'Фарод… хм-м. Продолжай.' if dmorteLogic.r65558_condition():
+        'Фарод… хм-м. Продолжай.' if morteLogic.r65558_condition():
             # r1247 # reply65558
-            jump dmorte_s651
+            jump morte_s651
 
-        'Продолжай.' if dmorteLogic.r65559_condition():
+        'Продолжай.' if morteLogic.r65559_condition():
             # r1248 # reply65559
-            jump dmorte_s651
+            jump morte_s651
 
         'Неважно. У меня есть другие вопросы…':
             # r1249 # reply65560
-            jump dmorte_s329
+            jump morte_s329
 
         'Забудь. Я уже достаточно наслушался. Идем.':
             # r1250 # reply65561
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s651 # say65562
-label dmorte_s651:  # from 650.0 650.1
+label morte_s651:  # from 650.0 650.1
     SPEAKER 'Сейчас, сейчас, погоди, — Морт на миг умолкает. — Хорошо, вот последний кусок…  'Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому, КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода'.'
 
     menu:
-        'А дальше? Что там написано после этого?' if dmorteLogic.r65566_condition():
+        'А дальше? Что там написано после этого?' if morteLogic.r65566_condition():
             # r1251 # reply65566
-            jump dmorte_s652
+            jump morte_s652
 
-        'Когда я очнулся, рядом со мной не было дневника?' if dmorteLogic.r65565_condition():
+        'Когда я очнулся, рядом со мной не было дневника?' if morteLogic.r65565_condition():
             # r1252 # reply65565
-            jump dmorte_s682
+            jump morte_s682
 
         'Тогда ладно. У меня есть другие вопросы…':
             # r1253 # reply65567
-            jump dmorte_s329
+            jump morte_s329
 
         'Забудь. Я уже достаточно наслушался. Идем.':
             # r1254 # reply65568
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s652 # say65563
-label dmorte_s652:  # from 651.1
+label morte_s652:  # from 651.1
     SPEAKER 'О чем это ты, шеф? Здесь больше ничего нет.'
 
     menu:
-        'А как насчет 'Не верь черепу'?' if dmorteLogic.r65569_condition():
+        'А как насчет 'Не верь черепу'?' if morteLogic.r65569_condition():
             # r1255 # reply65569
-            $ dmorteLogic.r65569_action()
-            jump dmorte_s654
+            $ morteLogic.r65569_action()
+            jump morte_s654
 
-        'А как насчет 'Не верь черепу'?' if dmorteLogic.r65570_condition():
+        'А как насчет 'Не верь черепу'?' if morteLogic.r65570_condition():
             # r1256 # reply65570
-            jump dmorte_s654
+            jump morte_s654
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1257 # reply65571
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1258 # reply65572
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s653 # say65564
-label dmorte_s653:  # from 651.0
+label morte_s653:  # from 651.0
     SPEAKER 'И конечно же, в самом конце небольшая приписка: не верить черепам.'
 
     menu:
         'Как ты думаешь, что означает эта часть? Тебе не кажется, что здесь говорится о *тебе*?':
             # r1259 # reply65574
-            jump dmorte_s655
+            jump morte_s655
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1260 # reply65575
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1261 # reply65576
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s654 # say65577
-label dmorte_s654:  # from 329.4 652.0 652.1 729.4
+label morte_s654:  # from 329.4 652.0 652.1 729.4
     SPEAKER 'А… *этой* концовке? Я думал, это грязь какая-то пристала, поэтому не стал зачитывать эту строчку.'
 
     menu:
         'Правда? А как ты думаешь, что это означает? Тебе не кажется, что здесь говорится о *тебе*?':
             # r1262 # reply65578
-            jump dmorte_s655
+            jump morte_s655
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1263 # reply65579
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1264 # reply65580
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s655 # say65581
-label dmorte_s655:  # from 653.0 654.0
+label morte_s655:  # from 653.0 654.0
     SPEAKER 'Навряд ли. То есть, я хочу сказать, что ты можешь *доверять* мне. Ведь правда, шеф?'
 
     menu:
         'А ты не *лжешь* мне, Морт?':
             # r1265 # reply65582
-            jump dmorte_s656
+            jump morte_s656
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1266 # reply65583
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1267 # reply65584
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s656 # say65585
-label dmorte_s656:  # from 655.0
+label morte_s656:  # from 655.0
     SPEAKER 'Нет! Да хватит тебе, какие проблемы, шеф? Я же ни разу пока еще тебя не подводил.'
 
     menu:
         '*Пока*. Мне не нравится тот факт, что ты утаил эту строку от меня. Я хотел бы знать: может, ты *еще* чего-то недосказал с тех пор, как мы путешествуем вместе.':
             # r1268 # reply65587
-            jump dmorte_s657
+            jump morte_s657
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1269 # reply65586
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1270 # reply65588
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s657 # say65589
-label dmorte_s657:  # from 656.0
+label morte_s657:  # from 656.0
     SPEAKER 'Больше ничего! Я говорил тебе обо всем… ну, ПОЧТИ обо всем, кроме *опасного*, ну ты понимаешь.'
 
     menu:
         'Если есть ЧТО-ТО еще, то советую тебе побыстрее об этом рассказать.':
             # r1271 # reply65590
-            jump dmorte_s658
+            jump morte_s658
 
         'Ладно, неважно. У меня есть другие вопросы…':
             # r1272 # reply65591
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1273 # reply65592
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s658 # say65593
-label dmorte_s658:  # from 657.0
+label morte_s658:  # from 657.0
     SPEAKER 'Шеф, серьезно, больше сказать нечего. Я не хочу от тебя что-либо утаивать.'
 
     menu:
         'Ладно, Морт. У меня есть другие вопросы…':
             # r1274 # reply65594
-            jump dmorte_s329
+            jump morte_s329
 
         'Очень надеюсь на это. Идем.':
             # r1275 # reply65595
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s659 # say65596
-label dmorte_s659:  # from 329.1 729.1
+label morte_s659:  # from 329.1 729.1
     SPEAKER 'Сигил — это кольцеобразный город, который торчит на самой верхушке бесконечно высокого тонкого шпиля, который, как некоторые заявляют, находится в самом центре планов… Конечно, заявления о том, *как* он может быть на верхушке бесконечного тонкого шпиля, и каким образом город может *быть* в центре планов, порождают массу вопросов.'
 
     menu:
         'Что-нибудь еще?':
             # r1276 # reply65597
-            jump dmorte_s660
+            jump morte_s660
 
         'Неважно. У меня есть другие вопросы…':
             # r1277 # reply65598
-            jump dmorte_s329
+            jump morte_s329
 
         'Это все, что я хотел знать. Идем.':
             # r1278 # reply65599
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s660 # say65600
-label dmorte_s660:  # from 659.0
+label morte_s660:  # from 659.0
     SPEAKER 'Сигил называется 'Городом Дверей', главным образом из-за того, что здесь расположена КУЧА дверей, ведущих в него и из него — простая арка, дверной проем, обруч от бочки, книжная полка или открытое окно может стать порталом в определенных обстоятельствах. Все зависит от того, есть ли у тебя ключи, которые откроют его.'
 
     menu:
         'Ключи?':
             # r1279 # reply65601
-            jump dmorte_s661
+            jump morte_s661
 
         'Неважно. У меня есть другие вопросы…':
             # r1280 # reply65602
-            jump dmorte_s329
+            jump morte_s329
 
         'Это все, что я хотел знать. Идем.':
             # r1281 # reply65603
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s661 # say65604
-label dmorte_s661:  # from 660.0
+label morte_s661:  # from 660.0
     SPEAKER 'Смотри, попробую по-доходчивей объяснить. Большинство порталов 'дремлет«, понимаешь? Ты можешь ходить сквозь них, через них, по ним, и ничего не произойдет. Так вот, есть нечто, что заставляет портал «пробудиться'. Это может быть твое посвистывание, кусок хлеба недельной свежести из Байтопии, воспоминание о твоем первом поцелуе, а потом — БАМ — портал наполняется силой, и ты сможешь прыгнуть в него, при этом очутившись в самом неожиданном месте.'
 
     menu:
         'Где, например?':
             # r1282 # reply65605
-            jump dmorte_s662
+            jump morte_s662
 
         'Неважно. У меня есть другие вопросы…':
             # r1283 # reply65606
-            jump dmorte_s329
+            jump morte_s329
 
         'Это все, что я хотел знать. Идем.':
             # r1284 # reply65607
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s662 # say65608
-label dmorte_s662:  # from 661.0
+label morte_s662:  # from 661.0
     SPEAKER 'Да где угодно, шеф. Буквально. В любое место, которое ты можешь себе вообразить, есть портал. Вот почему Сигил так популярен на планах.'
 
     menu:
         'Понятно. У меня есть другие вопросы…':
             # r1285 # reply65609
-            jump dmorte_s329
+            jump morte_s329
 
         'Это все, что я хотел знать. Идем.':
             # r1286 # reply65610
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s663 # say65611
-label dmorte_s663:  # from 329.2 729.2
+label morte_s663:  # from 329.2 729.2
     SPEAKER 'Эй! Чесание языком — моя лучшая черта. Он постукивает зубами, а затем 'скалится'. А? А?'
 
     menu:
         'О-о, *очень* приятно это слышать.':
             # r1287 # reply65612
-            jump dmorte_s664
+            jump morte_s664
 
-        'Да-да, я уже знаю о Потоке Проклятий, Морт. Мне очень интересно, чем ты занимался, когда оказался у Лотара.' if dmorteLogic.r65613_condition():
+        'Да-да, я уже знаю о Потоке Проклятий, Морт. Мне очень интересно, чем ты занимался, когда оказался у Лотара.' if morteLogic.r65613_condition():
             # r1288 # reply65613
-            jump dmorte_s667
+            jump morte_s667
 
         'У меня есть другие вопросы…':
             # r1289 # reply65614
-            jump dmorte_s329
+            jump morte_s329
 
         'Неважно Идем.':
             # r1290 # reply65615
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s664 # say65616
-label dmorte_s664:  # from 663.0
+label morte_s664:  # from 663.0
     SPEAKER 'Нет, серьезно, шеф. Я очень хорошо навострился в словоблудии. Я вообще могу любому скрутить уши в трубочку, если ты хочешь знать. Я знаю выпады, дразнилки — все, что может ввернуть оба уха поглубже в голову любому слушателю.'
 
     menu:
         'Э… Чем *это* может быть полезно?':
             # r1291 # reply65617
-            jump dmorte_s665
+            jump morte_s665
 
         'У меня есть другие вопросы…':
             # r1292 # reply65618
-            jump dmorte_s329
+            jump morte_s329
 
         'Неважно Идем.':
             # r1293 # reply65619
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s665 # say65620
-label dmorte_s665:  # from 664.0
+label morte_s665:  # from 664.0
     SPEAKER 'Это один из моих талантов… Я называю его 'Потоком Проклятий'. Видишь ли, иногда я могу вогнать в краску кого-нибудь, просто пустив в его адрес какую-нибудь колкость. Конечно же, после этого обычно мне приходится долго бегать… но суть ты уловил.'
 
     menu:
         'А как это действует?':
             # r1294 # reply65621
-            $ dmorteLogic.r65621_action()
-            jump dmorte_s666
+            $ morteLogic.r65621_action()
+            jump morte_s666
 
-        'Что-нибудь еще?' if dmorteLogic.r65622_condition():
+        'Что-нибудь еще?' if morteLogic.r65622_condition():
             # r1295 # reply65622
-            jump dmorte_s667
+            jump morte_s667
 
         'У меня есть другие вопросы…':
             # r1296 # reply65623
-            jump dmorte_s329
+            jump morte_s329
 
         'Хм-м. Это может пригодиться. Идем.':
             # r1297 # reply65624
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s666 # say65626
-label dmorte_s666:  # from 329.3 665.0 729.3
+label morte_s666:  # from 329.3 665.0 729.3
     SPEAKER 'Ну, я могу извергать проклятия на любого до тех пор, пока они в припадке безумства не начнут гоняться за мной.'
 
     menu:
-        'А еще что-нибудь ты умеешь?' if dmorteLogic.r65627_condition():
+        'А еще что-нибудь ты умеешь?' if morteLogic.r65627_condition():
             # r1298 # reply65627
-            jump dmorte_s667
+            jump morte_s667
 
         'У меня есть другие вопросы…':
             # r1299 # reply65628
-            jump dmorte_s329
+            jump morte_s329
 
         'Хм-м. Это может пригодиться. Идем.':
             # r1300 # reply65629
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s667 # say65630
-label dmorte_s667:  # from 663.1 665.1 666.0
+label morte_s667:  # from 663.1 665.1 666.0
     SPEAKER 'Ну, пока я пылился на полке у Лотара в ожидании того, когда ты меня не выкупишь — спасибо за бесцельно проведенное там время, — я завел там несколько друзей, и они сказали, что если мне понадобится помощь, то я могу их позвать.'
 
     menu:
         'Друзей? О чем это ты?':
             # r1301 # reply65631
-            $ dmorteLogic.r65631_action()
-            jump dmorte_s668
+            $ morteLogic.r65631_action()
+            jump morte_s668
 
         'У меня есть другие вопросы…':
             # r1302 # reply65632
-            jump dmorte_s329
+            jump morte_s329
 
         'Приятно слышать это. Идем.':
             # r1303 # reply65633
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s668 # say65634
-label dmorte_s668:  # from 667.0
+label morte_s668:  # from 667.0
     SPEAKER 'Ну, по моему свисту они появляются просто из ниоткуда. Они — та еще кучка драчунов: кусаются как *змеи*.'
 
     menu:
         'Понятно. У меня есть другие вопросы…':
             # r1304 # reply65635
-            jump dmorte_s329
+            jump morte_s329
 
         'Приятно слышать это. Идем.':
             # r1305 # reply65636
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s669 # say65638
-label dmorte_s669:  # from 329.5 729.5
+label morte_s669:  # from 329.5 729.5
     SPEAKER 'Ну, вот как *я* все себе представляю…'
 
     menu:
-        'Продолжай…' if dmorteLogic.r65639_condition():
+        'Продолжай…' if morteLogic.r65639_condition():
             # r1306 # reply65639
-            jump dmorte_s671
+            jump morte_s671
 
-        'Продолжай…' if dmorteLogic.r65640_condition():
+        'Продолжай…' if morteLogic.r65640_condition():
             # r1307 # reply65640
-            jump dmorte_s672
+            jump morte_s672
 
-        'Продолжай…' if dmorteLogic.r65641_condition():
+        'Продолжай…' if morteLogic.r65641_condition():
             # r1308 # reply65641
-            jump dmorte_s673
+            jump morte_s673
 
-        'Продолжай…' if dmorteLogic.r65642_condition():
+        'Продолжай…' if morteLogic.r65642_condition():
             # r1309 # reply65642
-            jump dmorte_s670
+            jump morte_s670
 
-        'Продолжай…' if dmorteLogic.r65643_condition():
+        'Продолжай…' if morteLogic.r65643_condition():
             # r1310 # reply65643
-            jump dmorte_s674
+            jump morte_s674
 
-        'Продолжай…' if dmorteLogic.r65644_condition():
+        'Продолжай…' if morteLogic.r65644_condition():
             # r1311 # reply65644
-            jump dmorte_s675
+            jump morte_s675
 
-        'Продолжай…' if dmorteLogic.r65645_condition():
+        'Продолжай…' if morteLogic.r65645_condition():
             # r1312 # reply65645
-            jump dmorte_s677
+            jump morte_s677
 
-        'Продолжай…' if dmorteLogic.r65646_condition():
+        'Продолжай…' if morteLogic.r65646_condition():
             # r1313 # reply65646
-            jump dmorte_s680
+            jump morte_s680
 
-        'Продолжай…' if dmorteLogic.r65647_condition():
+        'Продолжай…' if morteLogic.r65647_condition():
             # r1314 # reply65647
-            jump dmorte_s681
+            jump morte_s681
 
         'Неважно. У меня есть другие вопросы…':
             # r1315 # reply65648
-            jump dmorte_s329
+            jump morte_s329
 
         'Если подумать, забудь об этом. Пошли.':
             # r1316 # reply65649
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s670 # say65650
-label dmorte_s670:  # from 669.3
+label morte_s670:  # from 669.3
     SPEAKER 'Как по мне, это твое шоу, шеф. Тут я мало что могу подсказать.'
 
     menu:
         'Это что-то *новое*. У меня есть другие вопросы…':
             # r1317 # reply65651
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1318 # reply65652
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s671 # say65653
-label dmorte_s671:  # from 669.0
+label morte_s671:  # from 669.0
     SPEAKER 'Я считаю, что ты должен попробовать отыскать этого 'Фарода', где бы ни находилась его берлога. У тебя бы не было этих указаний на спине, не будь у него хоть какое-то понятие о том, что с тобой стряслось. Кто-нибудь из местных ОБЯЗАТЕЛЬНО должен знать, где он находится.'
 
     menu:
         'Неплохой совет… У меня есть другие вопросы…':
             # r1319 # reply65654
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Давай тогда искать его.':
             # r1320 # reply65655
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s672 # say65656
-label dmorte_s672:  # from 669.1
+label morte_s672:  # from 669.1
     SPEAKER 'Скажем, мы могли бы попробовать найти поскорее этот 'бронзовый шар' и принести его старому костылю.'
 
     menu:
         'Неплохой совет… У меня есть другие вопросы…':
             # r1321 # reply65657
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1322 # reply65658
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s673 # say65659
-label dmorte_s673:  # from 669.2
+label morte_s673:  # from 669.2
     SPEAKER 'Скажем, мы могли бы выяснить, где нашли твой труп. Возможно, мы смогли бы узнать, кто записал тебя в книгу мертвых.'
 
     menu:
         'Неплохой совет… У меня есть другие вопросы…':
             # r1323 # reply65660
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1324 # reply65661
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s674 # say65662
-label dmorte_s674:  # from 669.4
+label morte_s674:  # from 669.4
     SPEAKER 'Скажем, мы могли бы разыскать тех, кто что-нибудь о тебе знает… и как ты стал таким. В районах должны найтись толковые рубаки, которым известно что-нибудь интересное о тебе.'
 
     menu:
         'Неплохой совет… У меня есть другие вопросы…':
             # r1325 # reply65663
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1326 # reply65664
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s675 # say65665
-label dmorte_s675:  # from 669.5
+label morte_s675:  # from 669.5
     SPEAKER 'Похоже, нам нужно выяснить больше про эту ночную ведьму, Равель. И должен тебе признаться, шеф: я *не горю* желанием это делать. Однако мудрецы Фестхолла или какие-нибудь камни переживаний могут нам что-то подсказать.'
 
     menu:
-        'Фестхолл? Камни переживаний?' if dmorteLogic.r65666_condition():
+        'Фестхолл? Камни переживаний?' if morteLogic.r65666_condition():
             # r1327 # reply65666
-            $ dmorteLogic.r65666_action()
-            jump dmorte_s676
+            $ morteLogic.r65666_action()
+            jump morte_s676
 
         'Неплохой совет… У меня есть другие вопросы…':
             # r1328 # reply65667
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1329 # reply65668
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s676 # say65670
-label dmorte_s676:  # from 675.0
+label morte_s676:  # from 675.0
     SPEAKER 'Извини, шеф, я все забываю, что у тебя знания, как у зеленого первичника. Слушай, Фестхолл — это главная берлога фракции чувствующих в Чиновничьем районе. Там есть библиотеки камней переживаний, а еще куча мудрецов, лекторов и наставников, которые могли бы пролить свет на то, что случилось с Равель.'
 
     menu:
         'Неплохой совет… У меня есть другие вопросы…':
             # r1330 # reply65671
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1331 # reply65672
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s677 # say65673
-label dmorte_s677:  # from 669.6
+label morte_s677:  # from 669.6
     SPEAKER 'Ну, Равель попала в лабиринт. И все же возможно есть КАКОЙ-НИБУДЬ ключ и КАКОЙ-НИБУДЬ портал, которые могли бы нас туда доставить, если ты все еще этого хочешь.'
 
     menu:
-        'Ты не знаешь, чем может быть ключ к ее лабиринту?' if dmorteLogic.r65674_condition():
+        'Ты не знаешь, чем может быть ключ к ее лабиринту?' if morteLogic.r65674_condition():
             # r1332 # reply65674
-            $ dmorteLogic.r65674_action()
-            jump dmorte_s678
+            $ morteLogic.r65674_action()
+            jump morte_s678
 
         'Ты не знаешь, где мне найти портал в ее лабиринт?':
             # r1333 # reply65675
-            jump dmorte_s679
+            jump morte_s679
 
         'У меня есть другие вопросы…':
             # r1334 # reply65676
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1335 # reply65677
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s678 # say65679
-label dmorte_s678:  # from 677.0
+label morte_s678:  # from 677.0
     SPEAKER 'Без понятия. Я имею в виду 'кусочек Равель'. Это может быть что угодно, начиная с одной из ее высушенных бородавок до слюней изо рта. Слишком туманно. Могу поспорить, что КТО-НИБУДЬ в Чиновничьем районе должен знать, где достать кусок этой чокнутой ведьмы. Если нет, мы можем проверить камни переживаний в Фестхолле: возможно, одна из этих глыб подскажет нам что-нибудь полезное.'
 
     menu:
         'Ты не знаешь, где мне найти портал в ее лабиринт?':
             # r1336 # reply65680
-            jump dmorte_s679
+            jump morte_s679
 
         'Неплохой совет… У меня есть другие вопросы…':
             # r1337 # reply65681
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Продолжим поиски.':
             # r1338 # reply65682
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s679 # say65683
-label dmorte_s679:  # from 677.1 678.0
+label morte_s679:  # from 677.1 678.0
     SPEAKER 'Хоть убей, не знаю, шеф. В Сигиле полно порталов. Я бы начал с Фестхолла — сомневаюсь, что он там, но тамошние камни переживаний могут кое-что рассказать об этом. А если не получится, можно все забыть про это и заставить кого-нибудь СДЕЛАТЬ нам портал.'
 
     menu:
         'Хорошо. У меня есть другие вопросы…':
             # r1339 # reply65684
-            jump dmorte_s329
+            jump morte_s329
 
         'Хорошо. Тогда идем.':
             # r1340 # reply65685
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s680 # say65686
-label dmorte_s680:  # from 669.7
+label morte_s680:  # from 669.7
     SPEAKER 'Скажем, мы могли бы найти то, что нам нужно, и к чертям сваливать отсюда, шеф. От этого места у меня мурашки, хоть у меня и нет кожи. Хорошо?'
 
     menu:
         'И то правда. У меня есть другие вопросы…':
             # r1341 # reply65687
-            jump dmorte_s329
+            jump morte_s329
 
         'Ну хорошо. Продолжим путь.':
             # r1342 # reply65688
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s681 # say65689
-label dmorte_s681:  # from 669.8
+label morte_s681:  # from 669.8
     SPEAKER 'Ты меня понял, шеф. Это целиком твое шоу, я просто буду рядом.'
 
     menu:
         'И то правда. У меня есть другие вопросы…':
             # r1343 # reply65690
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1344 # reply65691
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s682 # say65692
-label dmorte_s682:  # from 651.2
+label morte_s682:  # from 651.2
     SPEAKER 'Нет… ты был обобран догола. Как я уже говорил, похоже, что достаточно того дневника, что написан у тебя на теле.'
 
     menu:
-        'Ты уверен, что не знаешь никого по имени Фарод?' if dmorteLogic.r65693_condition():
+        'Ты уверен, что не знаешь никого по имени Фарод?' if morteLogic.r65693_condition():
             # r1345 # reply65693
-            jump dmorte_s683
+            jump morte_s683
 
         'И то правда. У меня есть другие вопросы…':
             # r1346 # reply65694
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1347 # reply65695
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s683 # say65696
-label dmorte_s683:  # from 682.0
+label morte_s683:  # from 682.0
     SPEAKER 'Не-а. В общем, какой-нибудь пень должен знать, как добраться до него. Надо поспрашивать местных.'
 
     menu:
         'Перед тем как мы пойдем, у меня есть еще вопросы…':
             # r1348 # reply65697
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1349 # reply65698
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s684 # say65699
-label dmorte_s684:  # from 329.6 729.6
+label morte_s684:  # from 329.6 729.6
     SPEAKER 'Ага… мимир — это летающая энциклопедия. Запихиваешь в него информацию и получаешь обратно.'
 
     menu:
-        'Но разве мимиры не сделаны из серебристого металла?' if dmorteLogic.r65700_condition():
+        'Но разве мимиры не сделаны из серебристого металла?' if morteLogic.r65700_condition():
             # r1350 # reply65700
-            jump dmorte_s685
+            jump morte_s685
 
         'Понятно. У меня есть другие вопросы…':
             # r1351 # reply65701
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1352 # reply65702
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s685 # say65703
-label dmorte_s685:  # from 684.0
+label morte_s685:  # from 684.0
     SPEAKER 'Ну и что? Может быть, некоторые — да, но *я* — нет. И это не самая странная штука на планах, шеф.'
 
     menu:
         'Не думаю, что ты — мимир, Морт. Что ты такое?':
             # r1353 # reply65704
-            jump dmorte_s686
+            jump morte_s686
 
         'Понятно. У меня есть другие вопросы…':
             # r1354 # reply65705
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1355 # reply65706
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s686 # say65707
-label dmorte_s686:  # from 685.0
+label morte_s686:  # from 685.0
     SPEAKER 'Это что, допрос? Да что *ты* вообще знаешь о мимирах?'
 
     menu:
-        'Я знаю достаточно, чтобы считать, что ты лжешь мне.' if dmorteLogic.r65708_condition():
+        'Я знаю достаточно, чтобы считать, что ты лжешь мне.' if morteLogic.r65708_condition():
             # r1356 # reply65708
-            jump dmorte_s687
+            jump morte_s687
 
-        'Я знаю достаточно, чтобы считать, что ты лжешь мне. Сначала та забытая строчка на моей спине, говорящая не верить тебе, теперь это. И что я должен думать?' if dmorteLogic.r65709_condition():
+        'Я знаю достаточно, чтобы считать, что ты лжешь мне. Сначала та забытая строчка на моей спине, говорящая не верить тебе, теперь это. И что я должен думать?' if morteLogic.r65709_condition():
             # r1357 # reply65709
-            jump dmorte_s687
+            jump morte_s687
 
         'Пожалуй, ничего. У меня есть другие вопросы…':
             # r1358 # reply65710
-            $ dmorteLogic.r65710_action()
-            jump dmorte_s329
+            $ morteLogic.r65710_action()
+            jump morte_s329
 
         'Тогда неважно. Идем.':
             # r1359 # reply65711
-            $ dmorteLogic.r65711_action()
-            jump dmorte_dispose
+            $ morteLogic.r65711_action()
+            jump morte_dispose
 
 
 # s687 # say65713
-label dmorte_s687:  # from 686.0 686.1
+label morte_s687:  # from 686.0 686.1
     SPEAKER 'Ну хорошо, я *не мимир*, но я знаю столько всего, что *вполне* мог бы им быть.'
 
     menu:
         'Чем же тогда ты *являешься*?':
             # r1360 # reply65714
-            jump dmorte_s688
+            jump morte_s688
 
         'Неважно. У меня есть другие вопросы…':
             # r1361 # reply65715
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1362 # reply65716
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s688 # say65717
-label dmorte_s688:  # from 687.0
+label morte_s688:  # from 687.0
     SPEAKER 'Я летающий череп, который много знает.'
 
     menu:
-        'А как насчет твоего бааторийского запаха?' if dmorteLogic.r65718_condition():
+        'А как насчет твоего бааторийского запаха?' if morteLogic.r65718_condition():
             # r1363 # reply65718
-            jump dmorte_s690
+            jump morte_s690
 
-        'А как насчет твоего бааторийского запаха?' if dmorteLogic.r65719_condition():
+        'А как насчет твоего бааторийского запаха?' if morteLogic.r65719_condition():
             # r1364 # reply65719
-            jump dmorte_s689
+            jump morte_s689
 
         'Неважно. У меня есть другие вопросы…':
             # r1365 # reply65720
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1366 # reply65721
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s689 # say65722
-label dmorte_s689:  # from 688.1
+label morte_s689:  # from 688.1
     SPEAKER 'А откуда ТЕБЕ знать, как пахнет Баатор?!'
 
     menu:
         'А я *был* там, Морт. Я бродил по Авернусу.':
             # r1367 # reply65723
-            jump dmorte_s691
+            jump morte_s691
 
         'Неважно. У меня есть другие вопросы…':
             # r1368 # reply65724
-            jump dmorte_s329
+            jump morte_s329
 
         'Забудь об этом. Идем.':
             # r1369 # reply65725
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s690 # say65726
-label dmorte_s690:  # from 688.0
+label morte_s690:  # from 688.0
     SPEAKER 'А откуда ТЕБЕ знать, как пахнет Баатор?! Если только… Эй, ты разговаривал обо мне с этой танарри, разве не так?! Что она-то знает?!'
 
     menu:
         'Она ведь определенно что-то почувствовала — это же бааторийский запах, верно?':
             # r1370 # reply65727
-            jump dmorte_s691
+            jump morte_s691
 
         'Неважно. У меня есть другие вопросы…':
             # r1371 # reply65728
-            jump dmorte_s329
+            jump morte_s329
 
         'Забудь об этом. Идем.':
             # r1372 # reply65729
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s691 # say65730
-label dmorte_s691:  # from 689.0 690.0
+label morte_s691:  # from 689.0 690.0
     SPEAKER 'Тогда… да, но… ну да. Да, я пахну немного. *Прошу прощения*.'
 
     menu:
         '*Почему* ты пахнешь как Баатор?':
             # r1373 # reply65731
-            $ dmorteLogic.r65731_action()
-            jump dmorte_s692
+            $ morteLogic.r65731_action()
+            jump morte_s692
 
 
 # s692 # say65732
-label dmorte_s692:  # from 691.0
+label morte_s692:  # from 691.0
     SPEAKER 'Я был в тамошних преисподних. Довольно долго был. А эта вонь въедается в тебя.'
 
     menu:
         'Ты был в тех преисподних? Что ты там ДЕЛАЛ?':
             # r1374 # reply65733
-            $ dmorteLogic.r65733_action()
-            jump dmorte_s693
+            $ morteLogic.r65733_action()
+            jump morte_s693
 
 
 # s693 # say65734
-label dmorte_s693:  # from 329.7 692.0 729.7
+label morte_s693:  # from 329.7 692.0 729.7
     SPEAKER 'Знаешь, на Авернусе, первом слое Баатор, есть *колонна*. Она называется Колонна Черепов, но лучше ее называть колонной голов.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s694 # say65735
-label dmorte_s694:  # from 693.0
+label morte_s694:  # from 693.0
     SPEAKER 'Если верить некоторым громилам, она *предположительно* была сделана из голов пней, по большей части мудрецов и ученых, которые использовали свои знания обо всяком, что они знали при жизни, чтобы немного приврать… настолько, что этим им удавалось причинить вред или даже, э, убить кого-нибудь. Так вот, когда я *умер*, я очутился там. Весело, правда?'
 
     menu:
         'Не очень-то.':
             # r1375 # reply65846
-            jump dmorte_s695
+            jump morte_s695
 
 
 # s695 # say65736
-label dmorte_s695:  # from 694.0
+label morte_s695:  # from 694.0
     SPEAKER 'Э… — Морт на секунду умолкает. — Да, ты прав, в этом нет ничего веселого. Понимаешь, я знал кучу вещей, пока был жив. И может быть, когда я знал что-то, то не всегда говорил об этом правду. Мне кажется, я, возможно, исказить правду пару раз и этим прописать кое-кого в книгу мертвых раньше срока.'
 
     menu:
         'Ты помнишь, кого?':
             # r1376 # reply65737
-            jump dmorte_s697
+            jump morte_s697
 
-        'И это был я, не так ли?' if dmorteLogic.r65738_condition():
+        'И это был я, не так ли?' if morteLogic.r65738_condition():
             # r1377 # reply65738
-            jump dmorte_s696
+            jump morte_s696
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65739_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65739_condition():
             # r1378 # reply65739
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65740_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65740_condition():
             # r1379 # reply65740
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s696 # say65741
-label dmorte_s696:  # from 695.1
+label morte_s696:  # from 695.1
     SPEAKER 'Морт задерживает на тебе взгляд. Да. Не знаю, *откуда* мне это известно, шеф, но мне так кажется. Я думаю, что это из-за тебя меня туда послали. Это стало последней каплей. Дело в том, что я не помню, что случилось: я даже не помню, каким был человеком, или какой была моя жизнь до того, как я очнулся в Колонне.'
 
     menu:
         'Почему ты забыл?':
             # r1380 # reply65742
-            jump dmorte_s698
+            jump morte_s698
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65743_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65743_condition():
             # r1381 # reply65743
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65744_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65744_condition():
             # r1382 # reply65744
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s697 # say65745
-label dmorte_s697:  # from 695.0
+label morte_s697:  # from 695.0
     SPEAKER 'Не знаю, *откуда* мне это известно, шеф, но мне так кажется, это был *ты*. По крайней мере однажды. Дело в том, что я не помню, что произошло. я даже не помню, каким был человеком, или какой была моя жизнь до того, как я очнулся в Колонне.'
 
     menu:
         'Почему ты забыл?':
             # r1383 # reply65746
-            jump dmorte_s698
+            jump morte_s698
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65747_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65747_condition():
             # r1384 # reply65747
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65748_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65748_condition():
             # r1385 # reply65748
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s698 # say65749
-label dmorte_s698:  # from 696.0 697.0
+label morte_s698:  # from 696.0 697.0
     SPEAKER 'Обычно так происходит, когда ты умираешь. Уверен, что тебе это знакомо. Ты просто… забываешь. Думаю, я был не самым уважаемым членом общества при жизни… но черт возьми, а кто был? — Морт вздыхает. — С этим я ничего не могу поделать. Нет ничего хуже, чем быть *честным* все время.'
 
     menu:
-        'Кроме как быть приговоренным к преисподней. Это гораздо хуже, чем говорить правду.' if dmorteLogic.r65750_condition():
+        'Кроме как быть приговоренным к преисподней. Это гораздо хуже, чем говорить правду.' if morteLogic.r65750_condition():
             # r1386 # reply65750
-            $ dmorteLogic.r65750_action()
-            jump dmorte_s699
+            $ morteLogic.r65750_action()
+            jump morte_s699
 
-        'Да, это так… Но тебе следует подбирать свою ложь поосторожней.' if dmorteLogic.r65751_condition():
+        'Да, это так… Но тебе следует подбирать свою ложь поосторожней.' if morteLogic.r65751_condition():
             # r1387 # reply65751
-            $ dmorteLogic.r65751_action()
-            jump dmorte_s699
+            $ morteLogic.r65751_action()
+            jump morte_s699
 
 
 # s699 # say65752
-label dmorte_s699:  # from 698.0 698.1
+label morte_s699:  # from 698.0 698.1
     SPEAKER 'Да… ты прав. *Снова*. Морт щелкает зубами. Это напоминает похрустывание пальцами. Думаю, все добро, зло, ложь и обман возвращается к нам. И когда меня прописали в книгу мертвых, настал мой черед платить перевозчику.'
 
     menu:
         'Так как же тебе удалось выбраться из Колонны?':
             # r1388 # reply65753
-            $ dmorteLogic.r65753_action()
-            jump dmorte_s700
+            $ morteLogic.r65753_action()
+            jump morte_s700
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65754_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65754_condition():
             # r1389 # reply65754
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65755_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65755_condition():
             # r1390 # reply65755
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s700 # say65757
-label dmorte_s700:  # from 699.0
+label morte_s700:  # from 699.0
     SPEAKER 'Ну… это ты помог мне, шеф. Когда ты объявился перед Колонной Черепов, я пробился наружу. Мои очевидные эрудиция и очарование привлекли твое внимание — ты знал, что именно *я* был головой, которая больше всех знала. Так что я подписался под твою сделку.'
 
     menu:
         'Сделку?..':
             # r1391 # reply65758
-            $ dmorteLogic.r65758_action()
-            jump dmorte_s701
+            $ morteLogic.r65758_action()
+            jump morte_s701
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65759_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65759_condition():
             # r1392 # reply65759
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65760_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65760_condition():
             # r1393 # reply65760
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s701 # say65761
-label dmorte_s701:  # from 700.0
+label morte_s701:  # from 700.0
     SPEAKER 'Пока Морт говорит, твое зрение заволакивает кроваво-красным, ты слышишь оглушительный рев, ужасный *пронзительный* гомон голосов, болтовни, визжания, криков. ВСЕ они молят, кричат об освобождении, а голос Морта… слабый, едва слышный в этой урагане. Он звучит отчаянно, напугано и… жалостно, трагически *потерянно*.'
 
     menu:
         'Эхо: Ты. Череп. Говори.':
             # r1394 # reply65762
-            jump dmorte_s702
+            jump morte_s702
 
         'Стряхнуть с себя воспоминание.':
             # r1395 # reply65763
-            $ dmorteLogic.r65763_action()
-            jump dmorte_s706
+            $ morteLogic.r65763_action()
+            jump morte_s706
 
 
 # s702 # say65764
-label dmorte_s702:  # from 701.0
+label morte_s702:  # from 701.0
     SPEAKER 'Ревущие голоса утихают, ты смотришь на маленький череп, на его трещины в адском свете. Он смотрит на тебя. По его лицу течет кровь и гной, его зубы стучат словно от холода. Я… я с-с-смогу п-п-помочь тебе. Я з-з-знаю, что т-т-тебе надо… все эти головы… их знания… п-п-прошу тебя, *умоляю*, освободи меня. Позволь мне *помочь* тебе. Я расскажу тебе о чем угодно, обо *всем*.'
 
     menu:
         'Эхо: *Так* ли это? ПОКЛЯНИСЬ в этом, череп. ПОКЛЯНИСЬ, что ты будешь служить мне до конца моих дней, иначе ты останешься здесь.':
             # r1396 # reply65765
-            jump dmorte_s703
+            jump morte_s703
 
         'Стряхнуть с себя воспоминание.':
             # r1397 # reply65766
-            $ dmorteLogic.r65766_action()
-            jump dmorte_s706
+            $ morteLogic.r65766_action()
+            jump morte_s706
 
 
 # s703 # say65767
-label dmorte_s703:  # from 702.0
+label morte_s703:  # from 702.0
     SPEAKER 'Клянусь. Клянусь… только, *пожалуйста*, освободи меня… Я… Ты видишь, как Морт тошнотворно глотает, его гордость становится осязаемой. Я… *умоляю* тебя. Позволь мне *помочь* тебе. Пожалуйста.'
 
     menu:
         'Эхо: Хорошо. Я освобожу тебя.':
             # r1398 # reply65768
-            jump dmorte_s704
+            jump morte_s704
 
         'Стряхнуть с себя воспоминание.':
             # r1399 # reply65769
-            $ dmorteLogic.r65769_action()
-            jump dmorte_s706
+            $ morteLogic.r65769_action()
+            jump morte_s706
 
 
 # s704 # say65770
-label dmorte_s704:  # from 703.0
+label morte_s704:  # from 703.0
     SPEAKER 'Твое зрение смещается, как будто ты движешься. Какофония криков и рева начинается снова, кошмарные вопли, рычание, выпады и оскорбления… ты чувствуешь, как твои руки погружаются в грязную трясину колонны, состоящую из кусающих клыков и челюстей. Твои руки хватают небольшой череп и вырывают его из колонны как гнилой зуб…'
 
     menu:
         'Эхо: ГОТОВО.':
             # r1400 # reply65771
-            jump dmorte_s705
+            jump morte_s705
 
         'Стряхнуть с себя воспоминание.':
             # r1401 # reply65772
-            $ dmorteLogic.r65772_action()
-            jump dmorte_s706
+            $ morteLogic.r65772_action()
+            jump morte_s706
 
 
 # s705 # say65773
-label dmorte_s705:  # from 704.0
+label morte_s705:  # from 704.0
     SPEAKER 'Ты смотришь вниз, на кровавый череп в своих израненных руках. Его глаза покрыты гноем колонны, зубы стучат, снова и снова. Он напоминает тебе визжащего новорожденного, беспомощного и — в глазах человека, которым ты когда-то был, — жалкого.'
 
     menu:
-        'Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.' if dmorteLogic.r65774_condition():
+        'Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.' if morteLogic.r65774_condition():
             # r1402 # reply65774
-            $ dmorteLogic.r65774_action()
-            jump dmorte_s706
+            $ morteLogic.r65774_action()
+            jump morte_s706
 
-        'Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.' if dmorteLogic.r65775_condition():
+        'Эхо: Я освободил тебя. Теперь твоя жизнь… и смерть — моя… Морт.' if morteLogic.r65775_condition():
             # r1403 # reply65775
-            $ dmorteLogic.r65775_action()
-            jump dmorte_s706
+            $ morteLogic.r65775_action()
+            jump morte_s706
 
 
 # s706 # say65776
-label dmorte_s706:  # from 701.1 702.1 703.1 704.1 705.0 705.1
+label morte_s706:  # from 701.1 702.1 703.1 704.1 705.0 705.1
     SPEAKER 'Видение расплывается, пелена уходит прочь, а Морт все еще продолжает без умолку болтать. Мы поговорили некоторое время, согласовывая обязательства сделки. Думаю, мы произвели друг на друга хорошее впечатление, так что ты предложил мне выйти из Колонны, и с тех пор я рад находится рядом с тобой.'
 
     menu:
         'Э… И что случилось потом?':
             # r1404 # reply65777
-            jump dmorte_s707
+            jump morte_s707
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65778_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65778_condition():
             # r1405 # reply65778
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65779_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65779_condition():
             # r1406 # reply65779
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s707 # say65780
-label dmorte_s707:  # from 706.0
+label morte_s707:  # from 706.0
     SPEAKER 'Я не знаю. Как только я выбрался, я потерял почти все знания Колонны. То есть, я хочу сказать, откуда мне было знать, я ведь ни разу не был вне этой чертовой штуки… но ты отнесся к этому с большим пониманием…'
 
     menu:
         'Ты потерял все знания, которые имел?..':
             # r1407 # reply65781
-            $ dmorteLogic.r65781_action()
-            jump dmorte_s708
+            $ morteLogic.r65781_action()
+            jump morte_s708
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65782_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65782_condition():
             # r1408 # reply65782
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65783_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65783_condition():
             # r1409 # reply65783
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s708 # say65784
-label dmorte_s708:  # from 707.0
+label morte_s708:  # from 707.0
     SPEAKER 'Твое зрение снова затуманивается, голова идет кругом, кишки завязывает в узел. Ты слышишь треск костей и крики Морта: он воет от боли, просит кого-то прекратить, прекратить *убивать* его… а твоя рука продолжает бить, снова и снова…'
 
     menu:
         'Эхо: Будь ты ПРОКЛЯТ, череп, ты ОБМАНУЛ меня. Я БРОШУ ТЕБЯ НАЗАД В ЭТУ ЧЕРТОВУ КОЛОННУ И ОСТАВЛЮ ТЕБЯ ТАМ *ПОДЫХАТЬ*.':
             # r1410 # reply65785
-            jump dmorte_s709
+            jump morte_s709
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65786_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65786_condition():
             # r1411 # reply65786
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65787_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65787_condition():
             # r1412 # reply65787
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s709 # say65788
-label dmorte_s709:  # from 708.0
+label morte_s709:  # from 708.0
     SPEAKER 'Слышится звук удара кости о что-то металлическое, пол или стену. Разлетаются выбитые зубы. Ты слышишь Морта, скулящего как побитый пес, молящего тебя…'
 
     menu:
         'Эхо: ЗНАЙ, ЧТО ТВОИ СТРАДАНИЯ В КОЛОННЕ БУДУТ *НИЧЕМ* ПО СРАВНЕНИЮ С ТЕМ МУЧЕНИЕМ, КОТОРЫЕ ТЫ *ИСПЫТАЕШЬ* У МЕНЯ.':
             # r1413 # reply65789
-            $ dmorteLogic.r65789_action()
-            jump dmorte_s710
+            $ morteLogic.r65789_action()
+            jump morte_s710
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65790_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65790_condition():
             # r1414 # reply65790
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65791_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65791_condition():
             # r1415 # reply65791
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s710 # say65792
-label dmorte_s710:  # from 709.0
+label morte_s710:  # from 709.0
     SPEAKER 'Видение снова отступает, превращая вопль Морта в размеренный ритм его болтовни. И ты понял, что я все еще полезен для тебя, поэтому я до сих пор следую за тобой по пятам.'
 
     menu:
         'Морт, а что я хотел от Колонны? И сколько прошло времени с тех пор, как я тебя освободил?':
             # r1416 # reply65793
-            jump dmorte_s711
+            jump morte_s711
 
-        'Э, забудь об этом, Морт… У меня есть другие вопросы…' if dmorteLogic.r65794_condition():
+        'Э, забудь об этом, Морт… У меня есть другие вопросы…' if morteLogic.r65794_condition():
             # r1417 # reply65794
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65795_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65795_condition():
             # r1418 # reply65795
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s711 # say65796
-label dmorte_s711:  # from 710.0
+label morte_s711:  # from 710.0
     SPEAKER 'Морт задумывается. Ну, достаточно давно, я не знаю точно, шеф. Несколько веков, наверное. Я всегда делал все, что мог, чтобы помочь тебе, но… — Морт вздыхает. — Это не так просто. Я не знаю, что тебе было нужно от Колонны: как только ты меня вырвал из нее, я все забыл.'
 
     menu:
         'Морт, почему ты ничего не СКАЗАЛ тогда, в Морге?':
             # r1419 # reply65797
-            jump dmorte_s712
+            jump morte_s712
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65798_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65798_condition():
             # r1420 # reply65798
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65799_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65799_condition():
             # r1421 # reply65799
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s712 # say65800
-label dmorte_s712:  # from 711.0
+label morte_s712:  # from 711.0
     SPEAKER 'Неожиданно Морт начинает защищаться. Потому что я никогда не *знал*, кем ты можешь стать! Некоторые твои воплощения были совершенно безумными! Однажды ты проснулся, одержимый идеей, что это *я* был твоим черепом, и преследовал меня вокруг Шпиля, пытаясь разбить и проглотить… к счастью, на улице ты попал под повозку. Другой ты, 'добрый и законопослушный«, пытался засунуть меня обратно в Колонну, потому что «там мне и место', — Морт ухмыляется. — *Вот* почему. Кроме того, твое незнание не принесло вреда…'
 
     menu:
-        'Так значит, ты был со мной все это время?' if dmorteLogic.r65801_condition():
+        'Так значит, ты был со мной все это время?' if morteLogic.r65801_condition():
             # r1422 # reply65801
-            jump dmorte_s713
+            jump morte_s713
 
-        'Забудь об этом, Морт. У меня есть несколько вопросов…' if dmorteLogic.r65802_condition():
+        'Забудь об этом, Морт. У меня есть несколько вопросов…' if morteLogic.r65802_condition():
             # r1423 # reply65802
-            jump dmorte_s329
+            jump morte_s329
 
-        'Неважно, Морт. Идем дальше.' if dmorteLogic.r65803_condition():
+        'Неважно, Морт. Идем дальше.' if morteLogic.r65803_condition():
             # r1424 # reply65803
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s713 # say65804
-label dmorte_s713:  # from 712.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",1) ~ GOTO 714
+label morte_s713:  # from 712.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",1) ~ GOTO 714
     SPEAKER 'Ну да, шеф. Я же обещал. Морт всегда держит свои обещания, — он делает паузу. — Ну, почти всегда. Хе-хе. Была одна крошка с Арбореи, которая…'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s714 # say65805
-label dmorte_s714:  # from 713.0
+label morte_s714:  # from 713.0
     SPEAKER 'Неожиданно ты понимаешь, что тон Морта изменился. После шутки тебе кажется, что он пытается что-то скрыть. Что-то о том, почему он по-прежнему с тобой.'
 
     menu:
         'А если серьезно, Морт, почему ты до сих пор путешествуешь со мной?':
             # r1425 # reply65806
-            jump dmorte_s715
+            jump morte_s715
 
         'Тогда ладно. У меня есть другие вопросы…':
             # r1426 # reply65807
-            jump dmorte_s329
+            jump morte_s329
 
         'Неважно, Морт. Идем дальше.':
             # r1427 # reply65808
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s715 # say65809
-label dmorte_s715:  # from 329.8 714.0 729.8
+label morte_s715:  # from 329.8 714.0 729.8
     SPEAKER 'Шеф, я же сказал: потому что я обещал, верно?- он выглядит раздраженным. — Что может быть еще?'
 
     menu:
         'Не знаю. Тебе ведь не обязательно кружить вокруг меня, раз я тебя освободил.':
             # r1428 # reply65810
-            jump dmorte_s716
+            jump morte_s716
 
         'Неважно. У меня есть другие вопросы…':
             # r1429 # reply65811
-            jump dmorte_s329
+            jump morte_s329
 
         'Забудь об этом, Морт. Пошли.':
             # r1430 # reply65812
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s716 # say65813
-label dmorte_s716:  # from 715.0
+label morte_s716:  # from 715.0
     SPEAKER 'Конечно нет, шеф, но я… Внезапно его голос струной режет тебя. Ты знаешь, *почему* он по-прежнему остается рядом с тобой, все это время.'
 
     menu:
         'Ты чувствуешь себя *виноватым*. Вот почему ты следуешь за мной до моей смерти, верно? И все это время ты страдал.':
             # r1431 # reply65814
-            jump dmorte_s717
+            jump morte_s717
 
 
 # s717 # say65815
-label dmorte_s717:  # from 716.0
+label morte_s717:  # from 716.0
     SPEAKER 'А, да ладно, шеф. Чтоб я чувствовал себя *виноватым*? Я — Морт.'
 
     menu:
         'Нет, все именно так. Когда я пришел, чтобы освободить тебя от твоей судьбы, ты не мог *помочь* мне, но ты попробовал. А после освобождения, когда ты мог просто уйти, ты остался. Потому что ты чувствовал себя в долгу.':
             # r1432 # reply65816
-            jump dmorte_s718
+            jump morte_s718
 
 
 # s718 # say65817
-label dmorte_s718:  # from 717.0
+label morte_s718:  # from 717.0
     SPEAKER 'Глядя на тебя, Морт на секунду умолкает. Может быть. И знаешь, что самое смешное? Сперва я не знал, что это было за чувство: это как будто тебя что-то медленно поглощает, понимаешь?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s719 # say65818
-label dmorte_s719:  # from 718.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",2) ~ GOTO 720
+label morte_s719:  # from 718.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",2) ~ GOTO 720
     SPEAKER 'Я имею в виду, сначала я думал, что это побочный эффект того, что 'связывает' меня с тобой… но спустя несколько сотен лет, я понял, что это нечто *большее*… более глубокое. Я просто почувствовал, что каким-то образом *связан* с тобой. Возможно, это все твои страдания, шеф… твои муки. Я не знаю. Возможно, я чувствую… ну, не знаю… что я *ответственный* за то, что я сделал. Что, если это из-за меня ты стал таким?'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s720 # say65820
-label dmorte_s720:  # from 719.0
+label morte_s720:  # from 719.0
     SPEAKER 'Дело в том, что я, кем бы я ни был прежде, не *видел* всех последствий своей лжи и обмана. А когда я в Колонне впервые увидел тебя, я почему-то *знал*, что я тебя однажды предал. Однажды… давным-давно, — Морт вздыхает. — И это все, что я знаю.'
 
     menu:
         'Понятно. Спасибо за разъяснения, Морт.':
             # r1433 # reply65821
-            $ dmorteLogic.r65821_action()
-            jump dmorte_s721
+            $ morteLogic.r65821_action()
+            jump morte_s721
 
 
 # s721 # say65822
-label dmorte_s721:  # from 720.0
+label morte_s721:  # from 720.0
     SPEAKER 'А, не благодари… Морт вздыхает. К твоему удивлению, его голос каким-то образом стал более твердым и уверенным. Некоторые трещины и сколы в его черепе исчезли, как после исцеления. Это мне нужно тебя благодарить. Я прямо чувствую, как сбросил Планы со своих плеч… образно выражаясь.'
 
     menu:
         'У меня есть другие вопросы…':
             # r1434 # reply65823
-            jump dmorte_s329
+            jump morte_s329
 
         'Отлично, Морт. Пошли.':
             # r1435 # reply65824
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s722 # say65826
-label dmorte_s722:  # from 329.10 729.10
+label morte_s722:  # from 329.10 729.10
     SPEAKER 'Ну, она — ночная ведьма. И она определенно чокнутая настолько, что из всех людей бессмертным сделала ТЕБЯ. То есть, она могла бы выбрать меня, — Морт закатывает глаза. — Тем не менее, вряд ли мы хотим найти того, кто настолько чокнутый, чтобы скрестить клинки с Леди Боли.'
 
     menu:
         'Понятно. У меня есть другие вопросы…':
             # r1436 # reply65827
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1437 # reply65828
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s723 # say65829
-label dmorte_s723:  # from 329.9 729.9
+label morte_s723:  # from 329.9 729.9
     SPEAKER 'Это война. Большая, кровавая, беспощадная война. Она повсюду, несмотря на то, что иногда ты ее не в состоянии заметить.'
 
     menu:
         'Продолжай…':
             # r1438 # reply65830
-            jump dmorte_s724
+            jump morte_s724
 
         'Неважно. У меня есть другие вопросы…':
             # r1439 # reply65831
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1440 # reply65832
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s724 # say65833
-label dmorte_s724:  # from 723.0
+label morte_s724:  # from 723.0
     SPEAKER 'Понимаешь, шеф, это война между двумя ужасными расами — демонами и дьяволами. Когда-то они не подозревали о существовании друг друга. Дьяволы злые, только это 'упорядоченный' вид зла. Демоны тоже злые, но в этом плане они более свободны: более импульсивные, хаотичные, неорганизованные. Дьяволов можно сравнить с политиками, а демонов — с убийцами.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s725 # say65834
-label dmorte_s725:  # from 724.0
+label morte_s725:  # from 724.0
     SPEAKER 'И вот однажды они встретились. Они посмотрели друг на друга, и каждой из рас не понравилось, как другая трактует зло. И с тех пор они воюют. Это один сплошной ночной кошмар. Но покуда обе эти расы заняты друг другом, они не разбегаются по всем планам.'
 
     menu:
         'Понятно. У меня есть другие вопросы…':
             # r1441 # reply65835
-            jump dmorte_s329
+            jump morte_s329
 
         'Это все, что я хотел знать. Идем.':
             # r1442 # reply65836
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s726 # say65837
-label dmorte_s726:  # from 329.11 729.11
+label morte_s726:  # from 329.11 729.11
     SPEAKER 'Без понятия, шеф. Я уже забыл, как я умер. Не могу сказать, что я сильно осуждаю себя за это. По крайней мере, меня хоть что-то ждало после моей смерти, даже если это оказалась жизнь в качестве летающего черепа. Ведь все могло оказаться гораздо хуже.'
 
     menu:
         'А что случилось с твоим телом?':
             # r1443 # reply65839
-            jump dmorte_s727
+            jump morte_s727
 
         'Понятно. У меня есть другие вопросы…':
             # r1444 # reply65840
-            jump dmorte_s329
+            jump morte_s329
 
         'Ладно. Идем.':
             # r1445 # reply65841
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s727 # say65838
-label dmorte_s727:  # from 726.0
+label morte_s727:  # from 726.0
     SPEAKER 'Эх… Я не знаю, ясно? Оно просто пропало — Морт выразительно смотрит на тебя. — Вот только не думай, что я СКУЧАЮ по нему, я рад тому, что я есть, и мне не нужны твои тупые подколки или фальшивые сочувствия, понятно?'
 
     menu:
         'Понятно. У меня есть другие вопросы…':
             # r1446 # reply65842
-            jump dmorte_s329
+            jump morte_s329
 
         'Как бы то ни было, идем. Давай, шевели ногами.':
             # r1447 # reply65843
-            jump dmorte_s728
+            jump morte_s728
 
 
 # s728 # say65844
-label dmorte_s728:  # from 727.1
+label morte_s728:  # from 727.1
     SPEAKER 'Морт сверкает на тебя гневным взглядом. Я уже почти верю, что ты — какое-то ходячее проклятие, обреченное следовать за мной по пятам.'
 
     menu:
         'Ой-ой, кто бы говорил. Идем.':
             # r1448 # reply65845
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s729 # say66344
-label dmorte_s729:  # -
+label morte_s729:  # -
     SPEAKER 'Что тебя гложет, шеф? [MRT515]'
 
     menu:
         'Можешь еще раз прочитать, что у меня вытатуировано на спине?':
             # r1449 # reply66345
-            jump dmorte_s649
+            jump morte_s649
 
         'Расскажи мне немного о Сигиле.':
             # r1450 # reply66346
-            jump dmorte_s659
+            jump morte_s659
 
-        'Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?' if dmorteLogic.r66347_condition():
+        'Морт… я не хочу навешивать ярлыки на тебя, но умеешь ли ты *еще* что-нибудь, кроме болтовни?' if morteLogic.r66347_condition():
             # r1451 # reply66347
-            jump dmorte_s663
+            jump morte_s663
 
-        'Морт… еще раз, какие у тебя есть способности?' if dmorteLogic.r66348_condition():
+        'Морт… еще раз, какие у тебя есть способности?' if morteLogic.r66348_condition():
             # r1452 # reply66348
-            jump dmorte_s666
+            jump morte_s666
 
-        'Морт, почему ты не прочитал последнюю строку татуировки на моей спине?' if dmorteLogic.r66349_condition():
+        'Морт, почему ты не прочитал последнюю строку татуировки на моей спине?' if morteLogic.r66349_condition():
             # r1453 # reply66349
-            jump dmorte_s654
+            jump morte_s654
 
         'Мне нужен совет. Что, по-твоему, нужно делать дальше?':
             # r1454 # reply66350
-            jump dmorte_s669
+            jump morte_s669
 
-        'Ты говорил, что ты — мимир, верно, Морт?' if dmorteLogic.r66351_condition():
+        'Ты говорил, что ты — мимир, верно, Морт?' if morteLogic.r66351_condition():
             # r1455 # reply66351
-            jump dmorte_s684
+            jump morte_s684
 
-        'Расскажи мне еще раз, как ты оказался в Колонне Черепов.' if dmorteLogic.r66352_condition():
+        'Расскажи мне еще раз, как ты оказался в Колонне Черепов.' if morteLogic.r66352_condition():
             # r1456 # reply66352
-            jump dmorte_s693
+            jump morte_s693
 
-        'Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?' if dmorteLogic.r66353_condition():
+        'Морт, почему с тех пор, как я вытащил тебя из Колонны, ты путешествуешь со мной?' if morteLogic.r66353_condition():
             # r1457 # reply66353
-            jump dmorte_s715
+            jump morte_s715
 
-        'Что ты знаешь о Кровавой войне?' if dmorteLogic.r66354_condition():
+        'Что ты знаешь о Кровавой войне?' if morteLogic.r66354_condition():
             # r1458 # reply66354
-            jump dmorte_s723
+            jump morte_s723
 
-        'Что тебе известно про ночную ведьму Равель?' if dmorteLogic.r66355_condition():
+        'Что тебе известно про ночную ведьму Равель?' if morteLogic.r66355_condition():
             # r1459 # reply66355
-            jump dmorte_s722
+            jump morte_s722
 
         'Как ты умер, Морт?':
             # r1460 # reply66356
-            jump dmorte_s726
+            jump morte_s726
 
         'Ничего, Морт. Просто проверяю, что ты все еще со мной.':
             # r1461 # reply66357
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s730 # say66816
-label dmorte_s730:  # -
+label morte_s730:  # -
     SPEAKER 'Эй, шеф, ты доверяешь этим двум? Они могли бы научить *меня* парочке вещей… [MRT387]'
 
     menu:
         'Я тоже так думаю, Морт. Пошли.':
             # r1462 # reply66817
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s731 # say67510
-label dmorte_s731:  # - # Check EXTERN ~DANNAH~ : 418
+label morte_s731:  # - # Check EXTERN ~DANNAH~ : 418
     SPEAKER 'Шеф, я хотел бы просто вставить свое замечание и заявить, что не собираюсь ничего говорить, дабы не испортить никому настроения. Просто полетаю тут и понаблюдаю. Не обращайте на меня внимания.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s732 # say67600
-label dmorte_s732:  # - # Check EXTERN ~DANNAH~ : 446
+label morte_s732:  # - # Check EXTERN ~DANNAH~ : 446
     SPEAKER 'Может быть, вы двое уже закончите с этим, а то мне придется позвать дабуса, что вас отцепить друг от дружки! — Морт *фыркает*. — Или хотя бы дайте поучаствовать.'
 
-    jump dmorte_dispose
+    jump morte_dispose
 
 # s733 # say68171
-label dmorte_s733:  # -
+label morte_s733:  # -
     SPEAKER 'Едва ты собираешься прикоснуться к Морту, как вдруг он произносит: Эй-эй-эй! Погоди, шеф. Э-э-э… мне тебе нужно кое-что тебе сказать. [MRT242]'
 
     menu:
         'Морт?!.. Ты не мертвый!':
             # r1463 # reply68176
-            $ dmorteLogic.r68176_action()
-            jump dmorte_s734
+            $ morteLogic.r68176_action()
+            jump morte_s734
 
 
 # s734 # say68172
-label dmorte_s734:  # from 733.0
+label morte_s734:  # from 733.0
     SPEAKER 'Ну да. Если бы ты был мертвым столько, сколько я, ты бы тоже хорошо симулировал смерть. Я типа подслушал твой разговор. Используй свою силу на ком-нибудь другом: мне она без надобности.'
 
     menu:
         'Ты что, собирался *валялся* тут без дела, пока мне надирают задницу?':
             # r1464 # reply68177
-            jump dmorte_s735
+            jump morte_s735
 
 
 # s735 # say68173
-label dmorte_s735:  # from 734.0 # Check EXTERN ~DTRANS~ : 142
+label morte_s735:  # from 734.0 # Check EXTERN ~DTRANS~ : 142
     SPEAKER 'Ну, *да*, шеф. Ведь ты бы все равно не умер. Я имею в виду, если бы ты пал, тебе бы понадобился кто-то, кто бы запомнил все. К тому же, ты ведь знаешь, какой я бесполезный в бою, если только не оскорбляю какого-нибудь мага или типа того…'
 
     menu:
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68178_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68178_condition():
             # r1465 # reply68178
-            jump dmorte_s736
+            jump morte_s736
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68189_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68189_condition():
             # r1466 # reply68189
-            $ dmorteLogic.r68189_action()
-            jump dmorte_dispose
+            $ morteLogic.r68189_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68190_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68190_condition():
             # r1467 # reply68190
-            $ dmorteLogic.r68190_action()
-            jump dmorte_dispose
+            $ morteLogic.r68190_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68191_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68191_condition():
             # r1468 # reply68191
-            $ dmorteLogic.r68191_action()
-            jump dmorte_dispose
+            $ morteLogic.r68191_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68192_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68192_condition():
             # r1469 # reply68192
-            $ dmorteLogic.r68192_action()
-            jump dmorte_dispose
+            $ morteLogic.r68192_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68193_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68193_condition():
             # r1470 # reply68193
-            $ dmorteLogic.r68193_action()
-            jump dmorte_dispose
+            $ morteLogic.r68193_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68194_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68194_condition():
             # r1471 # reply68194
-            $ dmorteLogic.r68194_action()
-            jump dmorte_dispose
+            $ morteLogic.r68194_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68239_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68239_condition():
             # r1472 # reply68239
-            $ dmorteLogic.r68239_action()
-            jump dmorte_dispose
+            $ morteLogic.r68239_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68438_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68438_condition():
             # r1473 # reply68438
-            $ dmorteLogic.r68438_action()
-            jump dmorte_dispose
+            $ morteLogic.r68438_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68439_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68439_condition():
             # r1474 # reply68439
-            $ dmorteLogic.r68439_action()
-            jump dmorte_dispose
+            $ morteLogic.r68439_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68446_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68446_condition():
             # r1475 # reply68446
-            $ dmorteLogic.r68446_action()
-            jump dmorte_dispose
+            $ morteLogic.r68446_action()
+            jump morte_dispose
 
-        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if dmorteLogic.r68503_condition():
+        'Тогда для тебя может найтись кое-какое дело. Поговорим об этом *позже*, Морт…' if morteLogic.r68503_condition():
             # r1476 # reply68503
-            jump dmorte_dispose
+            jump morte_dispose
 
 
 # s736 # say68174
-label dmorte_s736:  # from 735.0
+label morte_s736:  # from 735.0
     SPEAKER 'Ты снова используешь свою силу…'
 
     menu:
-        'Возродить Анну.' if dmorteLogic.r68175_condition():
+        'Возродить Анну.' if morteLogic.r68175_condition():
             # r1477 # reply68175
-            $ dmorteLogic.r68175_action()
-            jump dmorte_dispose
+            $ morteLogic.r68175_action()
+            jump morte_dispose
 
-        'Возродить Даккона.' if dmorteLogic.r68179_condition():
+        'Возродить Даккона.' if morteLogic.r68179_condition():
             # r1478 # reply68179
-            $ dmorteLogic.r68179_action()
-            jump dmorte_dispose
+            $ morteLogic.r68179_action()
+            jump morte_dispose
 
-        'Возродить Падшую Грацию.' if dmorteLogic.r68180_condition():
+        'Возродить Падшую Грацию.' if morteLogic.r68180_condition():
             # r1479 # reply68180
-            $ dmorteLogic.r68180_action()
-            jump dmorte_dispose
+            $ morteLogic.r68180_action()
+            jump morte_dispose
 
-        'Возродить Нордома.' if dmorteLogic.r68181_condition():
+        'Возродить Нордома.' if morteLogic.r68181_condition():
             # r1480 # reply68181
-            $ dmorteLogic.r68181_action()
-            jump dmorte_dispose
+            $ morteLogic.r68181_action()
+            jump morte_dispose
 
-        'Возродить Игнуса.' if dmorteLogic.r68182_condition():
+        'Возродить Игнуса.' if morteLogic.r68182_condition():
             # r1481 # reply68182
-            $ dmorteLogic.r68182_action()
-            jump dmorte_dispose
+            $ morteLogic.r68182_action()
+            jump morte_dispose
 
-        'Возродить Вейлора.' if dmorteLogic.r68183_condition():
+        'Возродить Вейлора.' if morteLogic.r68183_condition():
             # r1482 # reply68183
-            $ dmorteLogic.r68183_action()
-            jump dmorte_dispose
+            $ morteLogic.r68183_action()
+            jump morte_dispose
 
 
 # s737 # say68310
-label dmorte_s737:  # -
+label morte_s737:  # -
     SPEAKER 'Едва ты собираешься прикоснуться к Морту, как вдруг он взлетает в воздух. Э-э-э… Погоди, шеф. Тебе не нужно возрождать меня. Я, понимаешь, э-э-э, типа просто лежал тут, слушал вас двоих.'
 
     menu:
         'ТЫ ПРИТВОРЯЛСЯ МЕРТВЫМ.':
             # r1483 # reply68311
-            jump dmorte_s738
+            jump morte_s738
 
 
 # s738 # say68312
-label dmorte_s738:  # from 737.0
+label morte_s738:  # from 737.0
     SPEAKER 'Ну да, я ведь *уже* мертв и… Э-э-э, что случилось с твоим голосом, шеф?'
 
     menu:
         'Я… ТЕПЕРЬ ДРУГОЙ. ОСТАЛОСЬ МАЛО ВРЕМЕНИ, И СКОРО ВРЕМЯ И СУДЬБА МЕНЯ НАСТИГНУТ. ЕСЛИ ХОЧЕШЬ, Я ВЕРНУ ТЕБЯ В СИГИЛ, МОРТ.':
             # r1484 # reply68313
-            jump dmorte_s739
+            jump morte_s739
 
 
 # s739 # say68314
-label dmorte_s739:  # from 738.0
+label morte_s739:  # from 738.0
     SPEAKER 'Чт?.. Вернуть меня? А как же *ты*? Хватит, шеф, может я и *трус*, но я ни за что не брошу тебя в этом месте.'
 
     menu:
         'МНОГО ПРЕСТУПЛЕНИЙ БЫЛО СОВЕРШЕНО С ТЕХ ПОР, КАК МОЯ СМЕРТНОСТЬ И Я БЫЛИ РАЗДЕЛЕНЫ. ЗА ЭТИ ПРЕСТУПЛЕНИЯ ПРИДЕТСЯ… ЗАПЛАТИТЬ. НАВЕРНО, ТЫ НЕ ЗАХОЧЕШЬ ПОЙТИ ТУДА, ГДЕ Я СКОРО ОКАЖУСЬ.':
             # r1485 # reply68315
-            jump dmorte_s740
+            jump morte_s740
 
 
 # s740 # say68316
-label dmorte_s740:  # from 739.0
+label morte_s740:  # from 739.0
     SPEAKER 'Я *могу* пойти куда угодно, шеф, если ты этого захочешь. Мы ведь бывали в местах и похуж…'
 
     menu:
         'НЕ В ЭТОТ РАЗ. ВОЗМОЖНО, ОДНАЖДЫ МЫ СНОВА ВСТРЕТИМСЯ, НА ДРУГОМ ПЛАНЕ. НО НЕ В ЭТОТ РАЗ.':
             # r1486 # reply68317
-            jump dmorte_s741
+            jump morte_s741
 
 
 # s741 # say68318
-label dmorte_s741:  # from 740.0
+label morte_s741:  # from 740.0
     SPEAKER 'Морт молча смотрит на тебя, затем вздыхает. Не то чтобы я сильно растрогался, и все же мне, э-э, было приятно с тобой путешествовать, шеф. [MRT109]'
 
     menu:
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68319_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68319_condition():
             # r1487 # reply68319
-            $ dmorteLogic.r68319_action()
-            jump dmorte_dispose
+            $ morteLogic.r68319_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68320_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68320_condition():
             # r1488 # reply68320
-            $ dmorteLogic.r68320_action()
-            jump dmorte_dispose
+            $ morteLogic.r68320_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68321_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68321_condition():
             # r1489 # reply68321
-            $ dmorteLogic.r68321_action()
-            jump dmorte_dispose
+            $ morteLogic.r68321_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68322_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68322_condition():
             # r1490 # reply68322
-            $ dmorteLogic.r68322_action()
-            jump dmorte_dispose
+            $ morteLogic.r68322_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68323_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68323_condition():
             # r1491 # reply68323
-            $ dmorteLogic.r68323_action()
-            jump dmorte_dispose
+            $ morteLogic.r68323_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68324_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68324_condition():
             # r1492 # reply68324
-            $ dmorteLogic.r68324_action()
-            jump dmorte_dispose
+            $ morteLogic.r68324_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68325_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68325_condition():
             # r1493 # reply68325
-            $ dmorteLogic.r68325_action()
-            jump dmorte_dispose
+            $ morteLogic.r68325_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68490_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68490_condition():
             # r1494 # reply68490
-            $ dmorteLogic.r68490_action()
-            jump dmorte_dispose
+            $ morteLogic.r68490_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68491_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68491_condition():
             # r1495 # reply68491
-            $ dmorteLogic.r68491_action()
-            jump dmorte_dispose
+            $ morteLogic.r68491_action()
+            jump morte_dispose
 
-        'ПРОЩАЙ, МОРТ.' if dmorteLogic.r68492_condition():
+        'ПРОЩАЙ, МОРТ.' if morteLogic.r68492_condition():
             # r1496 # reply68492
-            $ dmorteLogic.r68492_action()
-            jump dmorte_dispose
+            $ morteLogic.r68492_action()
+            jump morte_dispose
 
 
 # s742 # say68408
-label dmorte_s742:  # -
+label morte_s742:  # -
     SPEAKER 'Морт молча смотрит на тебя, затем вздыхает. Не то чтобы я сильно растрогался, и все же мне, э-э, было приятно с тобой путешествовать, шеф. [MRT109]'
 
     menu:
         'Тогда возьмемся за дело…':
             # r1497 # reply68409
-            jump dmorte_dispose
+            jump morte_dispose

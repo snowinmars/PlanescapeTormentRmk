@@ -1,4 +1,4 @@
-class Ds863Logic:
+class S863Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 

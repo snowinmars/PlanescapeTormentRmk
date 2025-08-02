@@ -7,19 +7,19 @@ def build_mortuary_f2r4_menu(location_id, gsm, glm):
     builders.append(morte_menu(gsm, location_id, 500, 390))
 
     builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm1664(), 840, 700)
+        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zm1664(), 840, 700)
         .auto_position(880, 700)
         .option(lambda: 'Атаковать труп «1664»'
-                if gsm.get_meet_dzm1664()
+                if gsm.get_meet_zm1664()
                 else 'Атаковать труп с книгами') \
-        .jump("start_dzm1664_kill") \
-        .when(lambda: not gsm.get_dead_dzm1664()) \
+        .jump("start_zm1664_kill") \
+        .when(lambda: not gsm.get_dead_zm1664()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «1664»'
-                if gsm.get_meet_dzm1664()
+                if gsm.get_meet_zm1664()
                 else 'Поговорить с трупом с книгами') \
-        .jump("start_dzm1664_talk") \
-        .when(lambda: not gsm.get_dead_dzm1664()) \
+        .jump("start_zm1664_talk") \
+        .when(lambda: not gsm.get_dead_zm1664()) \
         .style('talk')
     )
 

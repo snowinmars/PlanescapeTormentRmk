@@ -1,4 +1,4 @@
-class DdhallLogic:
+class DhallLogic:
     def __init__(self, gsm):
         self.gsm = gsm
 
@@ -179,7 +179,7 @@ class DdhallLogic:
 
     def r858_condition(self):
         return not self.gsm.get_escape_mortuary() and \
-               not self.gsm.is_visited_internal_location('AR0200')
+               not self.gsm.glm.is_visited_internal_location('AR0200')
 
 
     def r870_condition(self):

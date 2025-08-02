@@ -1,4 +1,4 @@
-class Ds748Logic:
+class S748Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 

@@ -1,4 +1,4 @@
-class DdustLogic:
+class DustLogic:
     def __init__(self, gsm):
         self.gsm = gsm
 

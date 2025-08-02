@@ -1,4 +1,4 @@
-class Dzf444Logic:
+class Zf444Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 

@@ -1,4 +1,4 @@
-class DvaxisLogic:
+class VaxisLogic:
     def __init__(self, gsm):
         self.gsm = gsm
 

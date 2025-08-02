@@ -1,4 +1,4 @@
-class Ds996Logic:
+class S996Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 

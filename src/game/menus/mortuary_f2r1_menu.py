@@ -7,53 +7,53 @@ def build_mortuary_f2r1_menu(location_id, gsm, glm):
     builders.append(morte_menu(gsm, location_id, 1360, 400))
 
     builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm569(), 400, 720)
+        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zm569(), 400, 720)
         .auto_position(440, 720)
         .option(lambda: 'Атаковать труп «569»'
-                if gsm.get_meet_dzm569()
+                if gsm.get_meet_zm569()
                 else 'Атаковать плешивый ходячий труп') \
-        .jump("start_dzm569_kill") \
-        .when(lambda: not gsm.get_dead_dzm569()) \
+        .jump("start_zm569_kill") \
+        .when(lambda: not gsm.get_dead_zm569()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «569»'
-                if gsm.get_meet_dzm569()
+                if gsm.get_meet_zm569()
                 else 'Поговорить с ходячим плешивым трупом') \
-        .jump("start_dzm569_talk") \
-        .when(lambda: not gsm.get_dead_dzm569()) \
+        .jump("start_zm569_talk") \
+        .when(lambda: not gsm.get_dead_zm569()) \
         .style('talk')
     )
 
     builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm825(), 710, 880)
+        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zm825(), 710, 880)
         .auto_position(750, 880)
         .option(lambda: 'Атаковать труп «825»'
-                if gsm.get_meet_dzm825()
+                if gsm.get_meet_zm825()
                 else 'Атаковать ходячий труп повешенного') \
-        .jump("start_dzm825_kill") \
-        .when(lambda: not gsm.get_dead_dzm825()) \
+        .jump("start_zm825_kill") \
+        .when(lambda: not gsm.get_dead_zm825()) \
         .style('kill') \
         .option(lambda: 'Поговорить с трупом «825»'
-                if gsm.get_meet_dzm825()
+                if gsm.get_meet_zm825()
                 else 'Поговорить с ходячим трупом повешенного') \
-        .jump("start_dzm825_talk") \
-        .when(lambda: not gsm.get_dead_dzm825()) \
+        .jump("start_zm825_talk") \
+        .when(lambda: not gsm.get_dead_zm825()) \
         .style('talk')
     )
 
     builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_dzm782(), 1160, 860)
+        .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zm782(), 1160, 860)
         .auto_position(1200, 860)
         .option(lambda: 'Атаковать труп «782»'
-                if gsm.get_meet_dzm782()
+                if gsm.get_meet_zm782()
                 else 'Атаковать ходячий труп, полный ненависти') \
-        .jump("start_dzm782_kill") \
-        .when(lambda: not gsm.get_dead_dzm782()) \
+        .jump("start_zm782_kill") \
+        .when(lambda: not gsm.get_dead_zm782()) \
         .style('kill') \
         .option(lambda: 'Поговорить с трупом «782»'
-                if gsm.get_meet_dzm782()
+                if gsm.get_meet_zm782()
                 else 'Поговорить с ходячим трупом, полным ненависти') \
-        .jump("start_dzm782_talk") \
-        .when(lambda: not gsm.get_dead_dzm782()) \
+        .jump("start_zm782_talk") \
+        .when(lambda: not gsm.get_dead_zm782()) \
         .style('talk')
     )
 

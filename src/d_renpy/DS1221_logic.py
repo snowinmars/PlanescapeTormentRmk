@@ -1,4 +1,4 @@
-class Ds1221Logic:
+class S1221Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 

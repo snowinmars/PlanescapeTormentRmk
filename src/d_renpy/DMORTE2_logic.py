@@ -1,4 +1,4 @@
-class Dmorte2Logic:
+class Morte2Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 

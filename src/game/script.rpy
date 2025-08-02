@@ -141,7 +141,7 @@ label start:
             # $ gsm.set_has_scalpel(True)
             # $ gsm.set_has_needle(True)
             # $ gsm.set_has_1201_note(True)
-            # $ gsm.set_has_dzm1664_page(True)
+            # $ gsm.set_has_zm1664_page(True)
             # $ gsm.set_has_bandages(True)
             # $ gsm.set_has_embalm(True)
             # $ gsm.set_has_keyem(True)
@@ -151,7 +151,7 @@ label start:
             jump introduction
         "Новая жизнь":
             call quick_setup_as_mage
-            jump dmorte1_s0
+            jump morte1_s0
 
 
 label end:

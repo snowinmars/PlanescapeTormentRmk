@@ -1,115 +1,115 @@
 init 10 python:
-    from dlgs.dzm1664_logic import Dzm1664Logic
-    dzm1664Logic = Dzm1664Logic(renpy.store.global_settings_manager)
+    from dlgs.zm1664_logic import Zm1664Logic
+    zm1664Logic = Zm1664Logic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DZM1664.DLG
+# Original:  DLG/ZM1664.DLG
 # ###
 
 
-label dzm1664_init:
+label zm1664_init:
     return
 
 
-label dzm1664_dispose:
+label zm1664_dispose:
     jump show_graphics_menu
 
 
 # s0 # say47002
-label dzm1664_s0:  # from 5.0 # IF ~  True()
+label zm1664_s0:  # from 5.0 # IF ~  True()
     SPEAKER 'Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно. На лбу виден недавно вышитый номер 1664. Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
 
     menu:
-        'Осмотреть книги.' if dzm1664Logic.r47003_condition():
+        'Осмотреть книги.' if zm1664Logic.r47003_condition():
             # r0 # reply47003
-            jump dzm1664_s3
+            jump zm1664_s3
 
-        'Снова осмотреть книги.' if dzm1664Logic.r47004_condition():
+        'Снова осмотреть книги.' if zm1664Logic.r47004_condition():
             # r1 # reply47004
-            jump dzm1664_s6
+            jump zm1664_s6
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if dzm1664Logic.r47005_condition():
+        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm1664Logic.r47005_condition():
             # r2 # reply47005
-            jump dzm1664_s1
+            jump zm1664_s1
 
-        'Использовать на трупе свою способность История костей.' if dzm1664Logic.r47006_condition():
+        'Использовать на трупе свою способность История костей.' if zm1664Logic.r47006_condition():
             # r3 # reply47006
-            jump dzm1664_s2
+            jump zm1664_s2
 
         'Было приятно с тобой поболтать. Прощай.':
             # r4 # reply47007
-            jump dzm1664_dispose
+            jump zm1664_dispose
 
         'Оставить труп в покое.':
             # r5 # reply47008
-            jump dzm1664_dispose
+            jump zm1664_dispose
 
 
 # s1 # say47009
-label dzm1664_s1:  # from 0.2 6.0
+label zm1664_s1:  # from 0.2 6.0
     SPEAKER 'Зомби безучастно пялится в стену.'
 
     menu:
         'Оставить труп в покое.':
             # r6 # reply47010
-            jump dzm1664_dispose
+            jump zm1664_dispose
 
 
 # s2 # say47011
-label dzm1664_s2:  # from 0.3
+label zm1664_s2:  # from 0.3
     SPEAKER 'Труп даже не шевелится. Несмотря на недавнюю смерть, похоже, что он не сможет ответить на твои вопросы.'
 
     menu:
         'Оставить труп в покое.':
             # r7 # reply47012
-            jump dzm1664_dispose
+            jump zm1664_dispose
 
 
 # s3 # say47013
-label dzm1664_s3:  # from 0.0
+label zm1664_s3:  # from 0.0
     SPEAKER 'Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Тем не менее, просматривая их, ты обнаруживаешь вырванную страницу между двумя книгами. Неожиданно у тебя возникает ощущение, что кто-то поместил ее сюда, чтобы спрятать.'
 
     menu:
         'Взять страницу.':
             # r8 # reply47014
-            $ dzm1664Logic.r47014_action()
-            jump dzm1664_s4
+            $ zm1664Logic.r47014_action()
+            jump zm1664_s4
 
 
 # s4 # say47015
-label dzm1664_s4:  # from 3.0
+label zm1664_s4:  # from 3.0
     SPEAKER 'Кажется, эта страница не из бухгалтерских книг… похоже, она из какого-то регистрационного журнала. Корешок ровный, как будто страницу срезали ножом, и ты подозреваешь, что ее удалили специально.'
 
     menu:
         'Прочитать ее.':
             # r9 # reply47016
-            jump dzm1664_s5
+            jump zm1664_s5
 
 
 # s5 # say47017
-label dzm1664_s5:  # from 4.0
+label zm1664_s5:  # from 4.0
     SPEAKER 'Ты бегло осматриваешь страницу… это список тел, доставленных в Морг и зарегистрированных в Приемной комнате. Все записи принадлежат недавно прибывшим телам.'
 
     menu:
         'Снова осмотреть зомби.':
             # r10 # reply47018
-            jump dzm1664_s0
+            jump zm1664_s0
 
         'Взять страницу с собой и уйти.':
             # r11 # reply47019
-            jump dzm1664_dispose
+            jump zm1664_dispose
 
 
 # s6 # say47021
-label dzm1664_s6:  # from 0.1
+label zm1664_s6:  # from 0.1
     SPEAKER 'Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Ты снова просматриваешь тексты, но больше ничего не находишь.'
 
     menu:
         'И как это тебя угораздило стать библиотекарем? Другие места были заняты?':
             # r12 # reply47022
-            jump dzm1664_s1
+            jump zm1664_s1
 
         'Оставить зомби в покое.':
             # r13 # reply47023
-            jump dzm1664_dispose
+            jump zm1664_dispose

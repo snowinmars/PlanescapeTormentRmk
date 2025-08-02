@@ -24,13 +24,13 @@ class WalkingLogicTest(LogicTest):
         )
 
 
-    def test_mortuary_walking_1_8_closed(self):
+    def test_mortuary_walking_1_up_closed(self):
         logic = WalkingLogic(self.settings_manager)
         id = 'mortuary_f2r1'
 
         self._step_into_location_action(
             id,
-            lambda: logic.mortuary_walking_1_8_closed()
+            lambda: logic.mortuary_walking_1_up_closed()
         )
 
     def test_mortuary_walking_1_down_closed(self):

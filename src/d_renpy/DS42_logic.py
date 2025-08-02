@@ -1,4 +1,4 @@
-class Ds42Logic:
+class S42Logic:
     def __init__(self, gsm):
         self.gsm = gsm
 
