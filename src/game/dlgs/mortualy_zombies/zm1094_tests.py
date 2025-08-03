@@ -15,16 +15,11 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_zm1094_init(self):
-        logic = Zm1094Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm1094())
-
-        logic.zm1094_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm1094(), True)
+        self._init_(
+            'mortuary_f2r1',
+            Zm1094Logic(self.settings_manager).zm1094_init,
+            self.settings_manager.get_talked_to_zm1094_times
+        )
 
 
     def test_kill_zm1094(self):
@@ -76,8 +71,9 @@ class Zm1094LogicTest(LogicTest):
     def test_r6568_action(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_asonje(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_asonje_value(),
+            1,
             lambda: logic.r6568_action()
         )
 
@@ -88,18 +84,18 @@ class Zm1094LogicTest(LogicTest):
         prop = 'good'
         delta = -1
 
-        self.assertNotEqual(self.settings_manager.get_asonje_quest_state(), 3)
+        self.assertNotEqual(self.settings_manager.get_asonje_value(), 3)
         lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
 
         logic.r9247_action()
 
-        self.assertEqual(self.settings_manager.get_asonje_quest_state(), 3)
+        self.assertEqual(self.settings_manager.get_asonje_value(), 3)
         lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
         self.assertEqual(lawBefore + delta, lawAfter)
 
         logic.r9247_action()
 
-        self.assertEqual(self.settings_manager.get_asonje_quest_state(), 3)
+        self.assertEqual(self.settings_manager.get_asonje_value(), 3)
         lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
         self.assertEqual(lawAfter, lawAfterOnce)
 
@@ -107,31 +103,31 @@ class Zm1094LogicTest(LogicTest):
     def test_r9289_action(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self.assertNotEqual(self.settings_manager.get_asonje_quest_state(), 2)
+        self.assertNotEqual(self.settings_manager.get_asonje_value(), 2)
 
         logic.r9289_action()
 
-        self.assertEqual(self.settings_manager.get_asonje_quest_state(), 2)
+        self.assertEqual(self.settings_manager.get_asonje_value(), 2)
 
 
     def test_r9290_action(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self.assertNotEqual(self.settings_manager.get_asonje_quest_state(), 2)
+        self.assertNotEqual(self.settings_manager.get_asonje_value(), 2)
 
         logic.r9290_action()
 
-        self.assertEqual(self.settings_manager.get_asonje_quest_state(), 2)
+        self.assertEqual(self.settings_manager.get_asonje_value(), 2)
 
 
     def test_r9291_action(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self.assertNotEqual(self.settings_manager.get_asonje_quest_state(), 2)
+        self.assertNotEqual(self.settings_manager.get_asonje_value(), 2)
 
         logic.r9291_action()
 
-        self.assertEqual(self.settings_manager.get_asonje_quest_state(), 2)
+        self.assertEqual(self.settings_manager.get_asonje_value(), 2)
 
 
     def test_r9304_action(self):
@@ -195,8 +191,9 @@ class Zm1094LogicTest(LogicTest):
     def test_r9256_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9256_condition()
         )
 
@@ -204,8 +201,9 @@ class Zm1094LogicTest(LogicTest):
     def test_r9276_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9276_condition()
         )
 
@@ -213,26 +211,29 @@ class Zm1094LogicTest(LogicTest):
     def test_r9282_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self.assertTrue(logic.r9282_condition())
-
-        self.settings_manager.set_asonje_quest_state(2)
-        self.assertFalse(logic.r9282_condition())
+        self._integer_not_equal_condition(
+            lambda x: self.settings_manager.set_asonje_value(x),
+            2,
+            lambda: logic.r9282_condition()
+        )
 
 
     def test_r9286_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self.assertFalse(logic.r9286_condition())
-
-        self.settings_manager.set_asonje_quest_state(2)
-        self.assertTrue(logic.r9286_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_asonje_value(x),
+            2,
+            lambda: logic.r9286_condition()
+        )
 
 
     def test_r9319_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9319_condition()
         )
 
@@ -240,10 +241,11 @@ class Zm1094LogicTest(LogicTest):
     def test_r9306_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self.assertTrue(logic.r9306_condition())
-
-        self.settings_manager.set_asonje_quest_state(2)
-        self.assertFalse(logic.r9306_condition())
+        self._integer_not_equal_condition(
+            lambda x: self.settings_manager.set_asonje_value(x),
+            2,
+            lambda: logic.r9306_condition()
+        )
 
 
     def test_r9307_condition(self):
@@ -251,15 +253,16 @@ class Zm1094LogicTest(LogicTest):
 
         self.assertFalse(logic.r9307_condition())
 
-        self.settings_manager.set_asonje_quest_state(2)
+        self.settings_manager.set_asonje_value(2)
         self.assertTrue(logic.r9307_condition())
 
 
     def test_r9312_condition(self):
         logic = Zm1094Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9312_condition()
         )
 

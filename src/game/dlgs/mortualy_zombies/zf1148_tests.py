@@ -15,16 +15,11 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_zf1148_init(self):
-        logic = Zf1148Logic(self.settings_manager)
-        id = 'mortuary_f3r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf1148())
-
-        logic.zf1148_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf1148(), True)
+        self._init_(
+            'mortuary_f3r2',
+            Zf1148Logic(self.settings_manager).zf1148_init,
+            self.settings_manager.get_talked_to_zf1148_times
+        )
 
 
     def test_kill_zf1148(self):

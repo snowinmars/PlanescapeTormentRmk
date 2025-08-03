@@ -5,7 +5,7 @@ class Zf626Logic:
 
     def zf626_init(self):
         self.gsm.glm.set_location('mortuary_f2r2')
-        self.gsm.set_meet_zf626(True)
+        self.gsm.inc_talked_to_zf626_times()
 
 
     def kill_zf626(self):

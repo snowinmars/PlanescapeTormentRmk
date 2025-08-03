@@ -21,7 +21,7 @@ class ReplacementGenerator:
         suffixes = []
         if meet_and_dead:
             suffixes.extend([f"meet_{to_var}", f"dead_{to_var}"])
-            self.add_setting(f"talked_to_{to_var}_times()", 'integer')
+            self.add_setting(f"talked_to_{to_var}_times", 'integer')
         else:
             suffixes.append(to_var)
 

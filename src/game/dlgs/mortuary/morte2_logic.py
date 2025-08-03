@@ -6,10 +6,12 @@ class Morte2Logic:
     def morte2_init(self):
         self.gsm.glm.set_location('mortuary_f2r2')
         self.gsm.set_in_party_morte(True)
+        self.gsm.inc_talked_to_morte_times()
 
 
     def morte2_s31_init(self):
         self.gsm.glm.set_location('mortuary_f2r3')
+        self.gsm.inc_talked_to_morte_times()
 
 
     def r41145_action(self):

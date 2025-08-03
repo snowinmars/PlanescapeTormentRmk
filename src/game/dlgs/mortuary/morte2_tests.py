@@ -15,14 +15,12 @@ class Morte2LogicTest(LogicTest):
 
 
     def test_morte2_init(self):
-        logic = Morte2Logic(self.settings_manager)
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), 'mortuary_f2r2')
         self.assertEqual(self.settings_manager.get_in_party_morte(), False)
-
-        logic.morte2_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), 'mortuary_f2r2')
+        self._init_(
+            'mortuary_f2r2',
+            Morte2Logic(self.settings_manager).morte2_init,
+            self.settings_manager.get_talked_to_morte_times
+        )
         self.assertEqual(self.settings_manager.get_in_party_morte(), True)
 
 

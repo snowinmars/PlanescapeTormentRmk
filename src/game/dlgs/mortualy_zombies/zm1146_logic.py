@@ -5,7 +5,7 @@ class Zm1146Logic:
 
     def zm1146_init(self):
         self.gsm.glm.set_location('mortuary_f3r2')
-        self.gsm.set_meet_zm1146(True)
+        self.gsm.inc_talked_to_zm1146_times()
 
 
     def r6521_action(self):
@@ -14,7 +14,7 @@ class Zm1146Logic:
 
 
     def r6524_action(self):
-        self.gsm.set_meet_crispy(True)
+        self.gsm.set_crispy_value(1)
 
 
     def r9415_action(self):
@@ -43,4 +43,4 @@ class Zm1146Logic:
 
 
     def r9434_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0

@@ -10,16 +10,18 @@ def build_mortuary_f2r2_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zm965(), 450, 520)
         .auto_position(490, 520)
         .option(lambda: 'Атаковать труп «965»'
-                if gsm.get_meet_zm965()
+                if gsm.get_talked_to_zm965_times() > 0
                 else 'Атаковать бродящий труп') \
-        .jump("start_zm965_kill") \
+        .jump(lambda: 'start_zm965_kill'
+              if gsm.get_talked_to_zm965_times() > 0
+              else 'start_zm965_kill_first') \
         .when(lambda: not gsm.get_dead_zm965()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «965»'
-                if gsm.get_meet_zm965()
+                if gsm.get_talked_to_zm965_times() > 0
                 else 'Поговорить с бродящим трупом') \
         .jump(lambda: 'start_zm965_talk'
-              if gsm.get_meet_zm965()
+              if gsm.get_talked_to_zm965_times() > 0
               else 'start_zm965_talk_first') \
         .when(lambda: not gsm.get_dead_zm965()) \
         .style('talk')
@@ -29,13 +31,13 @@ def build_mortuary_f2r2_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zf594(), 490, 720)
         .auto_position(530, 720)
         .option(lambda: 'Атаковать труп «594»'
-                if gsm.get_meet_zf594()
+                if gsm.get_talked_to_zf594_times() > 0
                 else 'Атаковать неуклюжий труп') \
         .jump("start_zf594_kill") \
         .when(lambda: not gsm.get_dead_zf594()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «594»'
-                if gsm.get_meet_zf594()
+                if gsm.get_talked_to_zf594_times() > 0
                 else 'Поговорить с неуклюжим трупом') \
         .jump("start_zf594_talk") \
         .when(lambda: not gsm.get_dead_zf594()) \
@@ -46,13 +48,13 @@ def build_mortuary_f2r2_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zf626(), 840, 600)
         .auto_position(880, 600)
         .option(lambda: 'Атаковать труп «626»'
-                if gsm.get_meet_zf626()
+                if gsm.get_talked_to_zf626_times() > 0
                 else 'Атаковать разбитый труп') \
         .jump("start_zf626_kill") \
         .when(lambda: not gsm.get_dead_zf626()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «626»'
-                if gsm.get_meet_zf626()
+                if gsm.get_talked_to_zf626_times() > 0
                 else 'Поговорить с разбитым трупом') \
         .jump("start_zf626_talk") \
         .when(lambda: not gsm.get_dead_zf626()) \

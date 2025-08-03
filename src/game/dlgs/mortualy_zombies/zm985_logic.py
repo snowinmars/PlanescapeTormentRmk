@@ -5,7 +5,7 @@ class Zm985Logic:
 
     def zm985_init(self):
         self.gsm.glm.set_location('mortuary_f2r5')
-        self.gsm.set_meet_zm985(True)
+        self.gsm.inc_talked_to_zm985_times()
 
 
     def s3_action(self):

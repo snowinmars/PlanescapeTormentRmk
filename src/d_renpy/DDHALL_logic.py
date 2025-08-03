@@ -4,7 +4,7 @@ class DhallLogic:
 
 
     def r827_action(self):
-        self.gsm.set_meet_dhall(True)
+        # SetGlobal("0202_Dhall_Face_Player","AR0202",1)
 
 
     def r830_action(self):
@@ -56,12 +56,10 @@ class DhallLogic:
 
 
     def r953_action(self):
-        self.gsm.set_meet_dustmen(True)
         self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r958_action(self):
-        self.gsm.set_meet_dustmen(True)
         self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
@@ -71,17 +69,15 @@ class DhallLogic:
 
 
     def r974_action(self):
-        self.gsm.set_meet_dustmen(True)
         self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r985_action(self):
-        self.gsm.set_meet_dustmen(True)
         self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
     def r1327_action(self):
-        self.gsm.set_meet_dhall(True)
+        self.gsm.set_dhall_value(1)
 
 
     def r5731_action(self):
@@ -95,7 +91,6 @@ class DhallLogic:
 
 
     def r6033_action(self):
-        self.gsm.set_meet_dustmen(True)
         self.gsm.inc_once_know_dustmen('globalknow_dustmen')
 
 
@@ -108,15 +103,15 @@ class DhallLogic:
 
 
     def r5070_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r5071_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r5072_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r5073_condition(self):
@@ -129,11 +124,11 @@ class DhallLogic:
 
 
     def r6064_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r13288_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r830_condition(self):
@@ -159,19 +154,19 @@ class DhallLogic:
 
 
     def r842_condition(self):
-        return self.gsm.get_meet_dhall()
+        return self.gsm.get_dhall_value() > 0
 
 
     def r843_condition(self):
-        return self.gsm.get_meet_dhall()
+        return self.gsm.get_dhall_value() > 0
 
 
     def r5062_condition(self):
-        return not self.gsm.get_meet_dhall()
+        return self.gsm.get_dhall_value() == 0
 
 
     def r854_condition(self):
-        return self.gsm.get_meet_vaxis() and \
+        return self.gsm.get_vaxis_value() == 1 and \
                not self.gsm.get_dead_vaxis() and \
                not self.gsm.get_vaxis_leave() and \
                self.gsm.get_vaxis_betrayed() == 0
@@ -183,11 +178,11 @@ class DhallLogic:
 
 
     def r870_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r891_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r892_condition(self):
@@ -211,43 +206,43 @@ class DhallLogic:
 
 
     def r943_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r6026_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r874_condition(self):
-        return self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() > 0
 
 
     def r948_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r6027_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r6066_condition(self):
-        return self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() > 0
 
 
     def r964_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r968_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r5076_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r5077_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r5078_condition(self):
@@ -260,7 +255,7 @@ class DhallLogic:
 
 
     def r5081_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r5082_condition(self):

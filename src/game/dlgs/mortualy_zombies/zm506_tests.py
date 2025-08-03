@@ -15,16 +15,11 @@ class Zm506LogicTest(LogicTest):
 
 
     def test_zm506_init(self):
-        logic = Zm506Logic(self.settings_manager)
-        id = 'mortuary_f2r5'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm506())
-
-        logic.zm506_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm506(), True)
+        self._init_(
+            'mortuary_f2r5',
+            Zm506Logic(self.settings_manager).zm506_init,
+            self.settings_manager.get_talked_to_zm506_times
+        )
 
 
     def test_kill_zm506(self):

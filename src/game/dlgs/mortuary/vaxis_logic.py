@@ -5,14 +5,11 @@ class VaxisLogic:
 
     def vaxis_init(self):
         self.gsm.glm.set_location('mortuary_f2r6')
+        self.gsm.inc_talked_to_vaxis_times()
 
 
     def kill_vaxis(self):
         self.gsm.set_dead_vaxis(True)
-
-
-    def set_meet_vaxis(self):
-        self.gsm.set_meet_vaxis(True)
 
 
     def get_know_vaxis_name(self):
@@ -29,7 +26,7 @@ class VaxisLogic:
 
 
     def r461_action(self):
-        self.gsm.set_meet_vaxis(True)
+        self.gsm.set_vaxis_value(1)
 
 
     def r464_action(self):
@@ -67,17 +64,17 @@ class VaxisLogic:
 
 
     def r480_action(self):
-        self.gsm.set_meet_vaxis(True)
+        self.gsm.set_vaxis_value(1)
         self.gsm.update_journal('64513')
 
 
     def r481_action(self):
-        self.gsm.set_meet_vaxis(True)
+        self.gsm.set_vaxis_value(1)
         self.gsm.update_journal('64513')
 
 
     def r482_action(self):
-        self.gsm.set_meet_vaxis(True)
+        self.gsm.set_vaxis_value(1)
         self.gsm.update_journal('64513')
 
 
@@ -765,19 +762,19 @@ class VaxisLogic:
 
 
     def r64520_condition(self):
-        return self.gsm.get_meet_eivene()
+        return self.gsm.get_eivene_value() == 1
 
 
     def r4503_condition(self):
-        return not self.gsm.get_meet_eivene()
+        return self.gsm.get_eivene_value() == 0
 
 
     def r4506_condition(self):
-        return self.gsm.get_meet_eivene()
+        return self.gsm.get_eivene_value() == 1
 
 
     def r66150_condition(self):
-        return not self.gsm.get_meet_eivene()
+        return self.gsm.get_eivene_value() == 0
 
 
     def r4508_condition(self):
@@ -824,12 +821,12 @@ class VaxisLogic:
 
     def r4526_condition(self):
         return self.gsm.get_vaxis_zombie_disguise() == 1 and \
-               not self.gsm.get_appearance()
+               self.gsm.get_appearance() != 1
 
 
     def r4527_condition(self):
         return self.gsm.get_vaxis_zombie_disguise() == 2 and \
-               not self.gsm.get_appearance()
+               self.gsm.get_appearance() != 1
 
 
     def r4528_condition(self):
@@ -837,7 +834,7 @@ class VaxisLogic:
 
 
     def r4673_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() < 1
 
 
     def r4530_condition(self):
@@ -845,15 +842,15 @@ class VaxisLogic:
 
 
     def r4531_condition(self):
-        return self.gsm.get_meet_dhall()
+        return self.gsm.get_dhall_value() > 0
 
 
     def r4532_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r4533_condition(self):
-        return self.gsm.get_meet_soego()
+        return self.gsm.get_soego_value() > 0
 
 
     def r4534_condition(self):
@@ -958,12 +955,12 @@ class VaxisLogic:
 
     def r4604_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
-               not self.gsm.get_appearance()
+               self.gsm.get_appearance() != 1
 
 
     def r4609_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
-               not self.gsm.get_appearance()
+               self.gsm.get_appearance() != 1
 
 
     def r4610_condition(self):
@@ -984,7 +981,7 @@ class VaxisLogic:
 
     def r4615_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 12 and \
-               not self.gsm.get_appearance()
+               self.gsm.get_appearance() != 1
 
 
     def r4616_condition(self):

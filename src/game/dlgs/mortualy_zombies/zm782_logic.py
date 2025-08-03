@@ -5,7 +5,7 @@ class Zm782Logic:
 
     def zm782_init(self):
         self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.set_meet_zm782(True)
+        self.gsm.inc_talked_to_zm782_times()
 
 
     def kill_zm782(self):

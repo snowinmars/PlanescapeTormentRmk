@@ -5,7 +5,7 @@ class S748Logic:
 
     def s748_init(self):
         self.gsm.glm.set_location('mortuary_f3r6')
-        self.gsm.set_meet_s748(True)
+        self.gsm.inc_talked_to_s748_times()
 
 
     def r35384_action(self):

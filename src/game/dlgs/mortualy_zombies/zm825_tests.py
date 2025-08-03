@@ -15,16 +15,11 @@ class Zm825LogicTest(LogicTest):
 
 
     def test_zm825_init(self):
-        logic = Zm825Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm825())
-
-        logic.zm825_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm825(), True)
+        self._init_(
+            'mortuary_f2r1',
+            Zm825Logic(self.settings_manager).zm825_init,
+            self.settings_manager.get_talked_to_zm825_times
+        )
 
 
     def test_kill_zm825(self):

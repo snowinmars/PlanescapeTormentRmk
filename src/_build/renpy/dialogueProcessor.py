@@ -36,17 +36,33 @@ class DialogueProcessor:
         self.INCREMENT_REGEX_ONCE = re.compile(r'IncrementGlobalOnceEx\("(.*?)","(.*?)",(.*?)\)')
 
 
+    def _name_variations(self, npc): #  hello to devs)
+        return [
+            npc,
+            f'D{npc}',
+            f'D{self._first_lower(npc)}',
+            f'D{npc}1'
+        ]
+
+
     def _build_well_known_replacements(self):
         # Sort replacements by length (longest first) to prevent partial replacements
         self._createTreeSettings()
 
-        self._createPartyNpc('Morte', 'morte'),
-        self._createPartyNpc('Annah', 'annah')
-        self._createPartyNpc('Ignus', 'ignus')
-        self._createPartyNpc('Grace', 'grace')
-        self._createPartyNpc('Dakkon', 'dakkon')
-        self._createPartyNpc('Nordom', 'nordom')
-        self._createPartyNpc('Vhail', 'vhail')
+        for x in self._name_variations('Morte'):
+            self._createPartyNpc(x, 'morte')
+        for x in self._name_variations('Annah'):
+            self._createPartyNpc(x, 'annah')
+        for x in self._name_variations('Ignus'):
+            self._createPartyNpc(x, 'ignus')
+        for x in self._name_variations('Grace'):
+            self._createPartyNpc(x, 'grace')
+        for x in self._name_variations('Dakkon'):
+            self._createPartyNpc(x, 'dakkon')
+        for x in self._name_variations('Nordom'):
+            self._createPartyNpc(x, 'nordom')
+        for x in self._name_variations('Vhail'):
+            self._createPartyNpc(x, 'vhail')
 
         self._createNpcSetting('Pharod', 'pharod')
         self._createNpcSetting('Dhall', 'dhall')
@@ -64,6 +80,7 @@ class DialogueProcessor:
         self._createNpcSetting('Aelwyn', 'aelwyn')
         self._createNpcSetting('Dustfem', 'dustfem')
         self._createNpcSetting('Dust', 'dust')
+        self._createNpcSetting('Xach', 'xach')
 
         self._createNpcSetting(None, 's42')
         self._createNpcSetting(None, 's748')
@@ -136,9 +153,9 @@ class DialogueProcessor:
         self._createNpcSetting(None, 'zf1072')
         self._createNpcSetting(None, 'zf1096')
         self._createNpcSetting(None, 'zf1148')
+        self._createNpcSetting('DGIANTSK', 'giantsk')
 
-        self._createFractionSetting('dustmen'),
-
+        self._createInventoryItemSetting(None, 'garbage')
         self._createInventoryItemSetting('KeyPR', 'intro_key')
         self._createInventoryItemSetting('KeyPr', 'intro_key') #  ?
         self._createInventoryItemSetting('TomeBA', 'tome_ba')
@@ -169,7 +186,6 @@ class DialogueProcessor:
         self._createInventoryItemSetting('GSKnife', 'gs_knife')
         self._createInventoryItemSetting('Rags', 'rags')
         self._createInventoryItemSetting('Clotchrm', 'clotchrm')
-        self._createInventoryItemSetting('Strap', 'strap')
         self._createInventoryItemSetting('DRemind', 'dremind')
 
         self._createBooleanSetting(None, 'know_zm257_spirit')
@@ -277,7 +293,6 @@ class DialogueProcessor:
         self._createBooleanSetting('Skeleton_Examine', 'skeleton_examine')
         self._createBooleanSetting('Morte_Skel_Mort_Quip2', 'morte_skel_mort_quip2')
 
-
         self._create_integer_setting('Choke_Dustman', 'choke_dustman', [0, 1])
         self._create_integer_setting('Choke', 'choke', [0, 1])
         self._create_integer_setting('Tree_Helpers', 'tree_helpers', [0, 1], 'AR0400')
@@ -288,15 +303,12 @@ class DialogueProcessor:
         self._create_integer_setting('Malmaner', 'malmaner', [0, 1, 2, 3, 4, 5])
         self._create_integer_setting('Pillar ', 'pillar', [0, 1, 2]),  # with space, ye
         self._create_integer_setting('Nemelle', 'nemelle', [0, 1, 2, 3, 4])
-        self._create_integer_setting('Aelwyn', 'aelwyn', [0, 1, 2, 3, 4])
         self._create_integer_setting('Lecture_Death', 'lecture_death', [0, 1, 2])
         self._create_integer_setting('Lecture_Ghysis', 'lecture_ghysis', [0, 1, 2])
         self._create_integer_setting('Morte_Stolen', 'morte_stolen', [0, 1, 2, 3])
         self._create_integer_setting('Qui_Sai', 'qui_sai', [0, 1, 2])
         self._create_integer_setting('Warning', 'warning', [0, 1, 2])
         self._create_integer_setting('Betray_Vaxis', 'vaxis_betrayed', [0, 1, 2])
-        self._create_integer_setting('Asonje', 'asonje_quest_state', [0, 1, 2, 3])
-        self._create_integer_setting('Crier_Quest', 'crier_quest', [0, 1, 2, 3])
         self._create_integer_setting('Xixi_Back', 'xixi_back', [0, 1, 2, 3])
         self._create_integer_setting('Embalm_Key_Quest', 'embalm_key_quest', [0, 1, 2, 3])
         self._create_integer_setting('1201_Note', '1201_note_quest', [0, 1, 2])
@@ -314,30 +326,40 @@ class DialogueProcessor:
         self._create_integer_setting('Adyzoel', 'adyzoel', [0, 1, 2], 'AR0400')
         self._create_integer_setting('BariA', 'baria', [0, 1, 2], 'AR0400')
         self._create_integer_setting('Adahn', 'adahn', [0, 1, 2, 3, 4, 5])
+        self._create_integer_setting('Appearance', 'appearance', [0, 1])
         self._create_integer_setting('GLOBALKnow_Dustmen', 'know_dustmen', [0, 1])
 
-        self._add_replacement('ShowFirstTimeHelp()', '')
-        self._add_replacement('SetGlobal("0202_Dhall_Face_Player","AR0202",1)', 'self.gsm.set_meet_dhall(True)')
+        self._add_replacement('ShowFirstTimeHelp()', '# ShowFirstTimeHelp()')
+        self._add_replacement('SetGlobal("0202_Dhall_Face_Player","AR0202",1)', '# SetGlobal("0202_Dhall_Face_Player","AR0202",1)')
         self._add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.gsm.set_in_party_morte(True)')
         self._add_replacement('HasItem("Bandage","ZM396")', 'return self.gsm.get_has_bandages_zm396()')
-        self._add_replacement('NearbyDialog("DMorte1")', 'return self.gsm.get_in_party_morte()')
-        self._add_replacement('!NearbyDialog("DMorte1")', 'return not self.gsm.get_in_party_morte()')
-        self._add_replacement('NearbyDialog("DMorte")', 'return self.gsm.get_in_party_morte()')
-        self._add_replacement('!NearbyDialog("DMorte")', 'return not self.gsm.get_in_party_morte()')
-        self._add_replacement('SetGlobal("Betray_Vaxis","GLOBAL",2)', 'set_vaxis_betray(2)')
-        self._add_replacement('SetGlobal("Crispy","GLOBAL",1)', 'self.gsm.set_meet_crispy(True)')
         self._add_replacement('HasItem("KeyEm","EiVene")', 'return self.gsm.get_has_keyem()')
         self._add_replacement('!HasItem("KeyEm","EiVene")', 'return not self.gsm.get_has_keyem()')
         self._add_replacement('GiveItem("KeyEm","Vaxis")', 'self.gsm.set_has_keyem(False) self.gsm.set_vaxis_has_keyem(True)')
-        self._add_replacement('Global("Appearance","GLOBAL",1)', 'return self.gsm.get_appearance()')
-        self._add_replacement('!Global("Appearance","GLOBAL",1)', 'return not self.gsm.get_appearance()')
         self._add_replacement('SetNamelessDisguise(ZOMBIE)', "self.gsm.gcm.set_property('protagonist', 'looks_like', 'zombie')")
         self._add_replacement('HPPercent(Protagonist,100)', 'return self.gsm.get_hp() == 100')
         self._add_replacement('HPPercentGT(Protagonist,49)', 'return self.gsm.get_hp() > 49')
         self._add_replacement('HPPercentLT(Protagonist,50)', 'return self.gsm.get_hp() < 50')
         self._add_replacement('HasItem("Cobble","Post")', 'HasItem("Cobble","Post")  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).')
 
+        duplicates = self.findDuplicates_JohnLaRooy(map(lambda x: x[0], self.replacements))
+        if (len(duplicates) > 0):
+            raise Exception(f'Found {len(duplicates)} in the replacements, so the result is not determinated:\n{duplicates}')
+
         return sorted(self.replacements, key=lambda x: len(x[0]), reverse=True)
+
+
+    def findDuplicates_JohnLaRooy(self, L):
+        seen = set()
+        seen2 = set()
+        seen_add = seen.add
+        seen2_add = seen2.add
+        for item in L:
+            if item in seen:
+                seen2_add(item)
+            else:
+                seen_add(item)
+        return list(seen2)
 
 
     def transform_script(self, script, target_npc):
@@ -368,10 +390,6 @@ class DialogueProcessor:
         self._add_setting(f'morale_{to_var}', 'integer')
 
         self._createNpcSetting(from_var, to_var)
-        self._add_replacement(f'SetGlobal("{from_var}","GLOBAL",1)', f'self.gsm.set_in_party_{to_var}(True)')
-        self._add_replacement(f'SetGlobal("{from_var}","GLOBAL",0)', f'self.gsm.set_in_party_{to_var}(False)')
-        self._add_replacement(f'Global("{from_var}","GLOBAL",1)', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'Global("{from_var}","GLOBAL",0)', f'return not self.gsm.get_in_party_{to_var}()')
         self._add_replacement(f'NearbyDialog("{from_var}")', f'return self.gsm.get_in_party_{to_var}()')
         self._add_replacement(f'!NearbyDialog("{from_var}")', f'return not self.gsm.get_in_party_{to_var}()')
         self._add_replacement(f'InParty("{from_var}")', f'return self.gsm.get_in_party_{to_var}()')
@@ -382,34 +400,6 @@ class DialogueProcessor:
         self._add_replacement(f'MoraleInc("{from_var}",2)', f'self.gsm.inc_morale_{to_var}(2)')
         self._add_replacement(f'MoraleDec("{from_var}",3)', f'self.gsm.dec_morale_{to_var}(3)')
         self._add_replacement(f'MoraleInc("{from_var}",3)', f'self.gsm.inc_morale_{to_var}(3)')
-        self._add_replacement(f'SetGlobal("D{from_var}","GLOBAL",1)', f'self.gsm.set_in_party_{to_var}(True)')
-        self._add_replacement(f'SetGlobal("D{from_var}","GLOBAL",0)', f'self.gsm.set_in_party_{to_var}(False)')
-        self._add_replacement(f'Global("D{from_var}","GLOBAL",1)', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'Global("D{from_var}","GLOBAL",0)', f'return not self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'NearbyDialog("D{from_var}")', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'!NearbyDialog("D{from_var}")', f'return not self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'InParty("D{from_var}")', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'!InParty("D{from_var}")', f'return not self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'MoraleDec("D{from_var}",1)', f'self.gsm.dec_morale_{to_var}()')
-        self._add_replacement(f'MoraleInc("D{from_var}",1)', f'self.gsm.inc_morale_{to_var}()')
-        self._add_replacement(f'MoraleDec("D{from_var}",2)', f'self.gsm.dec_morale_{to_var}(2)')
-        self._add_replacement(f'MoraleInc("D{from_var}",2)', f'self.gsm.inc_morale_{to_var}(2)')
-        self._add_replacement(f'MoraleDec("D{from_var}",3)', f'self.gsm.dec_morale_{to_var}(3)')
-        self._add_replacement(f'MoraleInc("D{from_var}",3)', f'self.gsm.inc_morale_{to_var}(3)')
-        self._add_replacement(f'SetGlobal("D{self._first_lower(from_var)}","GLOBAL",1)', f'self.gsm.set_in_party_{to_var}(True)')
-        self._add_replacement(f'SetGlobal("D{self._first_lower(from_var)}","GLOBAL",0)', f'self.gsm.set_in_party_{to_var}(False)')
-        self._add_replacement(f'Global("D{self._first_lower(from_var)}","GLOBAL",1)', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'Global("D{self._first_lower(from_var)}","GLOBAL",0)', f'return not self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'NearbyDialog("D{self._first_lower(from_var)}")', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'!NearbyDialog("D{self._first_lower(from_var)}")', f'return not self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'InParty("D{self._first_lower(from_var)}")', f'return self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'!InParty("D{self._first_lower(from_var)}")', f'return not self.gsm.get_in_party_{to_var}()')
-        self._add_replacement(f'MoraleDec("D{self._first_lower(from_var)}",1)', f'self.gsm.dec_morale_{to_var}()')
-        self._add_replacement(f'MoraleInc("D{self._first_lower(from_var)}",1)', f'self.gsm.inc_morale_{to_var}()')
-        self._add_replacement(f'MoraleDec("D{self._first_lower(from_var)}",2)', f'self.gsm.dec_morale_{to_var}(2)')
-        self._add_replacement(f'MoraleInc("D{self._first_lower(from_var)}",2)', f'self.gsm.inc_morale_{to_var}(2)')
-        self._add_replacement(f'MoraleDec("D{self._first_lower(from_var)}",3)', f'self.gsm.dec_morale_{to_var}(3)')
-        self._add_replacement(f'MoraleInc("D{self._first_lower(from_var)}",3)', f'self.gsm.inc_morale_{to_var}(3)')
 
 
     def _createInventoryItemSetting(
@@ -432,6 +422,9 @@ class DialogueProcessor:
 
     def _create_integer_setting(self, from_var, to_var, values, env='GLOBAL'):
         self._add_setting(to_var, 'integer')
+
+        if from_var is None:
+                return
 
         for i in [-1, 1, 2]:  # manually add new values
             self._add_replacement(f'IncrementGlobal("{from_var}","{env}",{i})', f'self.gsm.inc_{to_var}()')
@@ -457,39 +450,30 @@ class DialogueProcessor:
             from_var,
             to_var,
             env = 'GLOBAL',
-            meet_and_dead = False
         ):
-            suffixes = []
-            if meet_and_dead:
-                suffixes.extend([f"meet_{to_var}", f"dead_{to_var}"])
-                self._add_setting(f"talked_to_{to_var}_times()", 'integer')
-            else:
-                suffixes.append(to_var)
+            self._add_setting(to_var, 'boolean')
 
-            for suffix in suffixes:
-                self._add_setting(suffix, 'boolean')
-                prefix = f'self.gsm.get_{suffix}()'
-                not_prefix = f'not {prefix}'
+            if from_var is None:
+                return
 
-                #  May I be wrong? I mart.
-                self._add_replacement(f'SetGlobal("{from_var}","{env}",0)', f'self.gsm.set_{suffix}(False)')
-                self._add_replacement(f'SetGlobal("{from_var}","{env}",1)', f'self.gsm.set_{suffix}(True)')
-                self._add_replacement(f'Global("{from_var}","{env}",0)', f'return {not_prefix}')
-                self._add_replacement(f'Global("{from_var}","{env}",1)', f'return {prefix}')
-                self._add_replacement(f'GlobalGT("{from_var}","{env}",1)', f'return false  # GlobalGT("{from_var}","{env}",1)')
-                self._add_replacement(f'GlobalLT("{from_var}","{env}",0)', f'return false  # GlobalLT("{from_var}","{env}",0)')
-                self._add_replacement(f'GlobalGT("{from_var}","{env}",0)', f'return {prefix}')
-                self._add_replacement(f'GlobalLT("{from_var}","{env}",1)', f'return {not_prefix}')
-                self._add_replacement(f'!Global("{from_var}","{env}",0)', f'return {prefix}')
-                self._add_replacement(f'!Global("{from_var}","{env}",1)', f'return {not_prefix}')
-                self._add_replacement(f'!GlobalGT("{from_var}","{env}",0)', f'return {not_prefix}')
-                self._add_replacement(f'!GlobalGT("{from_var}","{env}",1)', f'return true  # !GlobalGT("{from_var}","{env}",1)')
-                self._add_replacement(f'!GlobalLT("{from_var}","{env}",0)', f'return true  # !GlobalLT("{from_var}","{env}",0)')
-                self._add_replacement(f'!GlobalLT("{from_var}","{env}",1)', f'return {prefix}')
+            prefix = f'self.gsm.get_{to_var}()'
+            not_prefix = f'not {prefix}'
 
-            if meet_and_dead:
-                self._add_replacement(f'Dead("{from_var}")', f'return self.gsm.get_dead_{to_var}()')
-                self._add_replacement(f'!Dead("{from_var}")', f'return not self.gsm.get_dead_{to_var}()')
+            #  May I be wrong? I mart.
+            self._add_replacement(f'SetGlobal("{from_var}","{env}",0)', f'self.gsm.set_{to_var}(False)')
+            self._add_replacement(f'SetGlobal("{from_var}","{env}",1)', f'self.gsm.set_{to_var}(True)')
+            self._add_replacement(f'Global("{from_var}","{env}",0)',    f'return {not_prefix}')
+            self._add_replacement(f'Global("{from_var}","{env}",1)',    f'return {prefix}')
+            self._add_replacement(f'GlobalGT("{from_var}","{env}",1)',  f'return false  # GlobalGT("{from_var}","{env}",1)')
+            self._add_replacement(f'GlobalLT("{from_var}","{env}",0)',  f'return false  # GlobalLT("{from_var}","{env}",0)')
+            self._add_replacement(f'GlobalGT("{from_var}","{env}",0)',  f'return {prefix}')
+            self._add_replacement(f'GlobalLT("{from_var}","{env}",1)',  f'return {not_prefix}')
+            self._add_replacement(f'!Global("{from_var}","{env}",0)',   f'return {prefix}')
+            self._add_replacement(f'!Global("{from_var}","{env}",1)',   f'return {not_prefix}')
+            self._add_replacement(f'!GlobalGT("{from_var}","{env}",0)', f'return {not_prefix}')
+            self._add_replacement(f'!GlobalGT("{from_var}","{env}",1)', f'return true  # !GlobalGT("{from_var}","{env}",1)')
+            self._add_replacement(f'!GlobalLT("{from_var}","{env}",0)', f'return true  # !GlobalLT("{from_var}","{env}",0)')
+            self._add_replacement(f'!GlobalLT("{from_var}","{env}",1)', f'return {prefix}')
 
 
     def _createNpcSetting(
@@ -497,22 +481,26 @@ class DialogueProcessor:
             from_var,
             to_var,
             env = 'GLOBAL',
-            meet_and_dead = False
         ):
-        return self._createBooleanSetting(
-            from_var,
-            to_var,
-            env,
-            True
-        )
+            self._add_setting(f"talked_to_{to_var}_times", 'integer')
+            self._add_setting(f"dead_{to_var}", 'boolean')
+            self._add_setting(f"{to_var}_value", 'integer')
+            self._add_setting(f"{to_var}_value", 'integer')
 
+            if from_var is None:
+                return
 
-    def _createFractionSetting(
-        self,
-        to_var,
-        env = 'GLOBAL'
-    ):
-        self._add_setting(f'meet_{to_var}', 'boolean')
+            for x in range(0, 5):
+                self._add_replacement(f'SetGlobal("{from_var}","{env}",{x})', f'self.gsm.set_{to_var}_value({x})')
+                self._add_replacement(f'Global("{from_var}","{env}",{x})',    f'return self.gsm.get_{to_var}_value() == {x}')
+                self._add_replacement(f'GlobalGT("{from_var}","{env}",{x})',  f'return self.gsm.get_{to_var}_value() > {x}')
+                self._add_replacement(f'GlobalLT("{from_var}","{env}",{x})',  f'return self.gsm.get_{to_var}_value() < {x}')
+                self._add_replacement(f'!Global("{from_var}","{env}",{x})',   f'return self.gsm.get_{to_var}_value() != {x}')
+                self._add_replacement(f'!GlobalGT("{from_var}","{env}",{x})',  f'return self.gsm.get_{to_var}_value() <= {x}')
+                self._add_replacement(f'!GlobalLT("{from_var}","{env}",{x})',  f'return self.gsm.get_{to_var}_value() >= {x}')
+
+            self._add_replacement(f'Dead("{from_var}")', f'return self.gsm.get_dead_{to_var}()')
+            self._add_replacement(f'!Dead("{from_var}")', f'return not self.gsm.get_dead_{to_var}()')
 
 
     def _createTreeSettings(self):
@@ -619,7 +607,7 @@ class DialogueProcessor:
             elif prop in ('law', 'chaotic'):
                 return f"self.gsm.gcm.modify_property_once('protagonist', 'law', {amount}, '{global_id.lower()}')"
             elif prop == 'know_dustmen':
-                return f"self.gsm.set_meet_dustmen(True)\nself.gsm.inc_once_know_dustmen('{global_id.lower()}')"
+                return f"self.gsm.inc_once_know_dustmen('{global_id.lower()}')"
             print(f'Unknown match {match.groups()}')
             return match.group(0)
 

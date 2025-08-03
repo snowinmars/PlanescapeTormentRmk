@@ -15,16 +15,11 @@ class Zf626LogicTest(LogicTest):
 
 
     def test_zf626_init(self):
-        logic = Zf626Logic(self.settings_manager)
-        id = 'mortuary_f2r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf626())
-
-        logic.zf626_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf626(), True)
+        self._init_(
+            'mortuary_f2r2',
+            Zf626Logic(self.settings_manager).zf626_init,
+            self.settings_manager.get_talked_to_zf626_times
+        )
 
 
     def test_kill_zf626(self):

@@ -10,13 +10,13 @@ def build_mortuary_f1r7_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zm732(), 710, 880)
         .auto_position(750, 880)
         .option(lambda: 'Атаковать труп «732»'
-                if gsm.get_meet_zm732()
+                if gsm.get_talked_to_zm732_times() > 0
                 else 'Атаковать ходячий труп повешенного') \
         .jump("start_zm732_kill") \
         .when(lambda: not gsm.get_dead_zm732()) \
         .style('kill') \
         .option(lambda: 'Поговорить с трупом «732»'
-                if gsm.get_meet_zm732()
+                if gsm.get_talked_to_zm732_times() > 0
                 else 'Поговорить с ходячим трупом повешенного') \
         .jump("start_zm732_talk") \
         .when(lambda: not gsm.get_dead_zm732()) \

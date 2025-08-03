@@ -15,16 +15,11 @@ class Zf444LogicTest(LogicTest):
 
 
     def test_zf444_init(self):
-        logic = Zf444Logic(self.settings_manager)
-        id = 'mortuary_f2r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf444())
-
-        logic.zf444_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf444(), True)
+        self._init_(
+            'mortuary_f2r2',
+            Zf444Logic(self.settings_manager).zf444_init,
+            self.settings_manager.get_talked_to_zf444_times
+        )
 
 
     def test_kill_zf444(self):

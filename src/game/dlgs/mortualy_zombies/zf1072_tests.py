@@ -15,16 +15,11 @@ class Zf1072LogicTest(LogicTest):
 
 
     def test_zf1072_init(self):
-        logic = Zf1072Logic(self.settings_manager)
-        id = 'mortuary_f2r3'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf1072())
-
-        logic.zf1072_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf1072(), True)
+        self._init_(
+            'mortuary_f2r3',
+            Zf1072Logic(self.settings_manager).zf1072_init,
+            self.settings_manager.get_talked_to_zf1072_times
+        )
 
 
     def test_kill_zf1072(self):

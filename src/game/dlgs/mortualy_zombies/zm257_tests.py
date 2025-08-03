@@ -15,16 +15,11 @@ class Zm257LogicTest(LogicTest):
 
 
     def test_zm257_init(self):
-        logic = Zm257Logic(self.settings_manager)
-        id = 'mortuary_f2r5'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm257())
-
-        logic.zm257_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm257(), True)
+        self._init_(
+            'mortuary_f2r5',
+            Zm257Logic(self.settings_manager).zm257_init,
+            self.settings_manager.get_talked_to_zm257_times
+        )
 
 
     def test_kill_zm257(self):

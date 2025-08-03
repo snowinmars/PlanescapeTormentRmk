@@ -9,7 +9,7 @@ class Zm310Logic:
 
 
     def r6502_action(self):
-        self.gsm.set_meet_oinosian(True)
+        self.gsm.set_oinosian_value(1)
 
 
     def r6499_condition(self):
@@ -29,4 +29,4 @@ class Zm310Logic:
 
 
     def r9664_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0

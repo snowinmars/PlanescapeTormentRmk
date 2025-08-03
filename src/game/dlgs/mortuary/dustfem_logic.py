@@ -3,6 +3,11 @@ class DustfemLogic:
         self.gsm = gsm
 
 
+    def dustfem_init(self):
+        self.gsm.glm.set_location('mortuary_f3r6')
+        self.gsm.inc_talked_to_dustfem_times()
+
+
     def r1225_action(self):
         self.gsm.set_mortualy_alarmed(True)
         # ?.play_sound("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
@@ -119,32 +124,32 @@ class DustfemLogic:
 
 
     def r1253_condition(self):
-        return self.gsm.get_meet_dhall() and \
+        return self.gsm.get_dhall_value() > 0 and \
                self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r1255_condition(self):
-        return self.gsm.get_meet_dhall() and \
+        return self.gsm.get_dhall_value() > 0 and \
                not self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r1258_condition(self):
-        return self.gsm.get_meet_deionarra() and \
+        return self.gsm.get_deionarra_value() > 0 and \
                self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r4336_condition(self):
-        return self.gsm.get_meet_deionarra() and \
+        return self.gsm.get_deionarra_value() > 0 and \
                not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33224_condition(self):
-        return self.gsm.get_meet_soego() and \
+        return self.gsm.get_soego_value() > 0 and \
                self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33226_condition(self):
-        return self.gsm.get_meet_soego() and \
+        return self.gsm.get_soego_value() > 0 and \
                not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
@@ -159,7 +164,7 @@ class DustfemLogic:
 
 
     def r1272_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r1273_condition(self):

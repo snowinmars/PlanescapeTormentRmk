@@ -15,16 +15,11 @@ class S1221LogicTest(LogicTest):
 
 
     def test_s1221_init(self):
-        logic = S1221Logic(self.settings_manager)
-        id = 'mortuary_f3r8'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_s1221())
-
-        logic.s1221_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_s1221(), True)
+        self._init_(
+            'mortuary_f3r8',
+            S1221Logic(self.settings_manager).s1221_init,
+            self.settings_manager.get_talked_to_s1221_times
+        )
 
 
     def test_r35307_action(self):

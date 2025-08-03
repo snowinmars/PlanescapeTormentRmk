@@ -5,7 +5,7 @@ class Zm257Logic:
 
     def zm257_init(self):
         self.gsm.glm.set_location('mortuary_f2r5')
-        self.gsm.set_meet_zm257(True)
+        self.gsm.inc_talked_to_zm257_times()
 
 
     def kill_zm257(self):

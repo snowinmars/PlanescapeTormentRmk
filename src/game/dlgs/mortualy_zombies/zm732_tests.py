@@ -15,16 +15,11 @@ class Zm732LogicTest(LogicTest):
 
 
     def test_zm732_init(self):
-        logic = Zm732Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm732())
-
-        logic.zm732_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm732(), True)
+        self._init_(
+            'mortuary_f2r1',
+            Zm732Logic(self.settings_manager).zm732_init,
+            self.settings_manager.get_talked_to_zm732_times
+        )
 
 
     def test_kill_zm732(self):

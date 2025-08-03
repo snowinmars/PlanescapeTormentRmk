@@ -5,7 +5,7 @@ class MorteLogic:
 
     def r17833_action(self):
         self.gsm.set_has_intro_key(True)
-        self.gsm.set_meet_morte(True)
+        self.gsm.set_morte_value(1)
         self.gsm.set_read_scars(True)
         self.gsm.set_in_party_morte(True)
 
@@ -15,7 +15,7 @@ class MorteLogic:
 
 
     def r1079_action(self):
-        self.gsm.set_meet_morte(True)
+        self.gsm.set_morte_value(1)
         self.gsm.set_in_party_morte(True)
 
 
@@ -451,11 +451,11 @@ class MorteLogic:
 
 
     def r24904_action(self):
-        self.gsm.set_meet_morte(True)
+        self.gsm.set_morte_value(1)
 
 
     def r24905_action(self):
-        self.gsm.set_meet_morte(True)
+        self.gsm.set_morte_value(1)
         self.gsm.set_in_party_morte(True)
 
 
@@ -823,14 +823,14 @@ class MorteLogic:
 
     def r43910_action(self):
         self.gsm.set_nemelle(3)
-        self.gsm.set_aelwyn(4)
+        self.gsm.set_aelwyn_value(4)
         self.gsm.update_journal('39490')
         # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 
 
     def r43918_action(self):
         self.gsm.set_nemelle(3)
-        self.gsm.set_aelwyn(4)
+        self.gsm.set_aelwyn_value(4)
         self.gsm.update_journal('39490')
         # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
 
@@ -1853,7 +1853,7 @@ class MorteLogic:
 
     def r65549_condition(self):
         return self.gsm.get_know_ravel() and \
-               not self.gsm.get_meet_ravel()
+               self.gsm.get_ravel_value() == 0
 
 
     def r35344_condition(self):
@@ -2098,12 +2098,12 @@ class MorteLogic:
 
 
     def r43910_condition(self):
-        return self.gsm.get_aelwyn() == 2 and \
+        return self.gsm.get_aelwyn_value() == 2 and \
                not self.gsm.get_dead_aelwyn()
 
 
     def r43911_condition(self):
-        return self.gsm.get_aelwyn() < 2
+        return self.gsm.get_aelwyn_value() < 2
 
 
     def r43917_condition(self):
@@ -2112,12 +2112,12 @@ class MorteLogic:
 
 
     def r43918_condition(self):
-        return self.gsm.get_aelwyn() == 2 and \
+        return self.gsm.get_aelwyn_value() == 2 and \
                not self.gsm.get_dead_aelwyn()
 
 
     def r43919_condition(self):
-        return self.gsm.get_aelwyn() < 2
+        return self.gsm.get_aelwyn_value() < 2
 
 
     def r50325_condition(self):
@@ -2425,13 +2425,13 @@ class MorteLogic:
     def r54221_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 15 and \
                not self.gsm.get_in_party_dakkon() and \
-               self.gsm.get_meet_dakkon()
+               self.gsm.get_dakkon_value() > 0
 
 
     def r54223_condition(self):
         return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 15 and \
                not self.gsm.get_in_party_dakkon() and \
-               not self.gsm.get_meet_dakkon()
+               self.gsm.get_dakkon_value() == 0
 
 
     def r54226_condition(self):
@@ -2445,11 +2445,11 @@ class MorteLogic:
 
 
     def r54230_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r54231_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r54232_condition(self):
@@ -2463,11 +2463,11 @@ class MorteLogic:
 
 
     def r54235_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r54236_condition(self):
-        return not self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() == 0
 
 
     def r54237_condition(self):
@@ -2648,11 +2648,11 @@ class MorteLogic:
 
 
     def r65558_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r65559_condition(self):
-        return self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() > 0
 
 
     def r65566_condition(self):
@@ -2684,11 +2684,11 @@ class MorteLogic:
 
 
     def r65639_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r65640_condition(self):
-        return self.gsm.get_meet_pharod() and \
+        return self.gsm.get_pharod_value() == 1 and \
                self.gsm.get_pharod_quest() == 1
 
 
@@ -2736,7 +2736,7 @@ class MorteLogic:
 
 
     def r65693_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r65700_condition(self):
@@ -2912,7 +2912,7 @@ class MorteLogic:
 
     def r66355_condition(self):
         return self.gsm.get_know_ravel() and \
-               not self.gsm.get_meet_ravel()
+               self.gsm.get_ravel_value() == 0
 
 
     def r68178_condition(self):

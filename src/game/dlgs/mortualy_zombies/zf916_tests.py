@@ -15,16 +15,11 @@ class Zf916LogicTest(LogicTest):
 
 
     def test_zf916_init(self):
-        logic = Zf916Logic(self.settings_manager)
-        id = 'mortuary_f2r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf916())
-
-        logic.zf916_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf916(), True)
+        self._init_(
+            'mortuary_f2r2',
+            Zf916Logic(self.settings_manager).zf916_init,
+            self.settings_manager.get_talked_to_zf916_times
+        )
 
 
     def test_kill_zf916(self):

@@ -4,8 +4,8 @@ class Zf891Logic:
 
 
     def zf891_init(self):
-        self.gsm.glm.set_location('mortuary_f2r2')
-        self.gsm.set_meet_zf891(True)
+        self.gsm.glm.set_location('mortuary_f2r8')
+        self.gsm.inc_talked_to_zf891_times()
 
 
     def kill_zf891(self):

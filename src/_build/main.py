@@ -11,7 +11,7 @@ from renpy.generateSettings import generateSettings
 from c.matchFunctions import matchFunctions
 from c.matchLabels import matchLabels
 from c.searchSpeaker import searchSpeaker
-
+from c.formatPythonCalls import formatPythonCalls
 
 cwd = os.getcwd()
 
@@ -48,6 +48,7 @@ def main():
 
     searchSpeaker(rpy_files)
     matchLabels(rpy_files)
+    formatPythonCalls(rpy_files)
     matchFunctions(rpy_files, logic_files)
 
 

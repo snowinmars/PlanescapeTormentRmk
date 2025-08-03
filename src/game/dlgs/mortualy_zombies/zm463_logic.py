@@ -5,7 +5,7 @@ class Zm463Logic:
 
     def zm463_init(self):
         self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.set_meet_zm463(True)
+        self.gsm.inc_talked_to_zm463_times()
 
 
     def kill_zm463(self):

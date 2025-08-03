@@ -15,16 +15,11 @@ class Zm1146LogicTest(LogicTest):
 
 
     def test_zm1146_init(self):
-        logic = Zm1146Logic(self.settings_manager)
-        id = 'mortuary_f3r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm1146())
-
-        logic.zm1146_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm1146(), True)
+        self._init_(
+            'mortuary_f3r2',
+            Zm1146Logic(self.settings_manager).zm1146_init,
+            self.settings_manager.get_talked_to_zm1146_times
+        )
 
 
     def test_r6521_action(self):
@@ -52,8 +47,9 @@ class Zm1146LogicTest(LogicTest):
     def test_r6524_action(self):
         logic = Zm1146Logic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_crispy(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_crispy_value(),
+            1,
             lambda: logic.r6524_action()
         )
 
@@ -133,8 +129,9 @@ class Zm1146LogicTest(LogicTest):
     def test_r9434_condition(self):
         logic = Zm1146Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9434_condition()
         )
 

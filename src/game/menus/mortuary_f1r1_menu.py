@@ -17,18 +17,18 @@ def build_mortuary_f1r1_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/soego.png', lambda: not gsm.get_dead_soego(), 950, 920) \
         .auto_position(990, 920) \
         .option(lambda: 'Убить Соего' \
-                if gsm.get_meet_soego() \
+                if gsm.get_talked_to_soego_times() > 0 \
                 else 'Убить человека') \
         .jump(lambda: 'start_soego_kill' \
-            if gsm.get_meet_soego() \
+            if gsm.get_talked_to_soego_times() > 0 \
             else 'start_soego_kill_first') \
         .when(lambda: not gsm.get_dead_soego()) \
         .style('kill') \
         .option(lambda: 'Поговорить с Соего' \
-                if gsm.get_meet_soego() \
+                if gsm.get_talked_to_soego_times() > 0 \
                 else 'Подойти к человеку') \
         .jump(lambda: 'start_soego_talk' \
-              if gsm.get_meet_soego() \
+              if gsm.get_talked_to_soego_times() > 0 \
               else 'start_soego_talk_first') \
         .when(lambda: not gsm.get_dead_soego()) \
         .style('talk')

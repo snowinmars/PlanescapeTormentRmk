@@ -15,16 +15,11 @@ class S863LogicTest(LogicTest):
 
 
     def test_s863_init(self):
-        logic = S863Logic(self.settings_manager)
-        id = 'mortuary_f3r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_s863())
-
-        logic.s863_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_s863(), True)
+        self._init_(
+            'mortuary_f3r2',
+            S863Logic(self.settings_manager).s863_init,
+            self.settings_manager.get_talked_to_s863_times
+        )
 
 
     def test_r35538_action(self):

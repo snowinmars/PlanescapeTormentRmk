@@ -5,7 +5,7 @@ class Zm1664Logic:
 
     def zm1664_init(self):
         self.gsm.glm.set_location('mortuary_f2r4')
-        self.gsm.set_meet_zm1664(True)
+        self.gsm.inc_talked_to_zm1664_times()
 
 
     def kill_zm1664(self):

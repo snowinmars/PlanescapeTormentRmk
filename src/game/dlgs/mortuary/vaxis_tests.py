@@ -15,12 +15,10 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_vaxis_init(self):
-        logic = VaxisLogic(self.settings_manager)
-        id = 'mortuary_f2r6'
-
-        self._step_into_location_action(
-            id,
-            lambda: logic.vaxis_init()
+        self._init_(
+            'mortuary_f2r6',
+            VaxisLogic(self.settings_manager).vaxis_init,
+            self.settings_manager.get_talked_to_vaxis_times
         )
 
 
@@ -30,15 +28,6 @@ class VaxisLogicTest(LogicTest):
         self._false_then_true_action(
             lambda: self.settings_manager.get_dead_vaxis(),
             lambda: logic.kill_vaxis()
-        )
-
-
-    def test_set_meet_vaxis(self):
-        logic = VaxisLogic(self.settings_manager)
-
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_vaxis(),
-            lambda: logic.set_meet_vaxis()
         )
 
 
@@ -80,8 +69,9 @@ class VaxisLogicTest(LogicTest):
     def test_r461_action(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_vaxis(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_vaxis_value(),
+            1,
             lambda: logic.r461_action()
         )
 
@@ -182,12 +172,12 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
         id = '64513'
 
-        self.assertFalse(self.settings_manager.get_meet_vaxis())
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
         self.assertFalse(self.settings_manager.has_journal_note(id))
 
         logic.r480_action()
 
-        self.assertTrue(self.settings_manager.get_meet_vaxis())
+        self.assertTrue(self.settings_manager.get_vaxis_value(), 1)
         self.assertTrue(self.settings_manager.has_journal_note(id))
 
 
@@ -195,12 +185,12 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
         id = '64513'
 
-        self.assertFalse(self.settings_manager.get_meet_vaxis())
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
         self.assertFalse(self.settings_manager.has_journal_note(id))
 
         logic.r481_action()
 
-        self.assertTrue(self.settings_manager.get_meet_vaxis())
+        self.assertTrue(self.settings_manager.get_vaxis_value(), 1)
         self.assertTrue(self.settings_manager.has_journal_note(id))
 
 
@@ -208,12 +198,12 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
         id = '64513'
 
-        self.assertFalse(self.settings_manager.get_meet_vaxis())
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
         self.assertFalse(self.settings_manager.has_journal_note(id))
 
         logic.r482_action()
 
-        self.assertTrue(self.settings_manager.get_meet_vaxis())
+        self.assertTrue(self.settings_manager.get_vaxis_value(), 1)
         self.assertTrue(self.settings_manager.has_journal_note(id))
 
 
@@ -2181,8 +2171,9 @@ class VaxisLogicTest(LogicTest):
     def test_r64520_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_eivene(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_eivene_value(x),
+            1,
             lambda: logic.r64520_condition()
         )
 
@@ -2190,8 +2181,9 @@ class VaxisLogicTest(LogicTest):
     def test_r4503_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_eivene(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_eivene_value(x),
+            0,
             lambda: logic.r4503_condition()
         )
 
@@ -2199,8 +2191,9 @@ class VaxisLogicTest(LogicTest):
     def test_r4506_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_eivene(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_eivene_value(x),
+            1,
             lambda: logic.r4506_condition()
         )
 
@@ -2208,8 +2201,9 @@ class VaxisLogicTest(LogicTest):
     def test_r66150_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_eivene(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_eivene_value(x),
+            0,
             lambda: logic.r66150_condition()
         )
 
@@ -2217,37 +2211,41 @@ class VaxisLogicTest(LogicTest):
     def test_r4508_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self.assertTrue(logic.r4508_condition())
-
-        self.settings_manager.set_embalm_key_quest(1)
-        self.assertFalse(logic.r4508_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_embalm_key_quest(x),
+            0,
+            lambda: logic.r4508_condition()
+        )
 
 
     def test_r4509_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self.assertTrue(logic.r4509_condition())
-
-        self.settings_manager.set_embalm_key_quest(1)
-        self.assertFalse(logic.r4509_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_embalm_key_quest(x),
+            0,
+            lambda: logic.r4509_condition()
+        )
 
 
     def test_r4510_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self.assertFalse(logic.r4510_condition())
-
-        self.settings_manager.set_embalm_key_quest(1)
-        self.assertTrue(logic.r4510_condition())
+        self._integer_not_equal_condition(
+            lambda x: self.settings_manager.set_embalm_key_quest(x),
+            0,
+            lambda: logic.r4510_condition()
+        )
 
 
     def test_r4511_condition(self):
         logic = VaxisLogic(self.settings_manager)
 
-        self.assertFalse(logic.r4511_condition())
-
-        self.settings_manager.set_embalm_key_quest(1)
-        self.assertTrue(logic.r4511_condition())
+        self._integer_not_equal_condition(
+            lambda x: self.settings_manager.set_embalm_key_quest(x),
+            0,
+            lambda: logic.r4511_condition()
+        )
 
 
     def test_r4521_condition(self):
@@ -2353,7 +2351,7 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
 
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+            lambda x: self.settings_manager.set_pharod_value(x),
             lambda: logic.r4673_condition()
         )
 
@@ -2371,7 +2369,7 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
 
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_dhall(x),
+            lambda x: self.settings_manager.set_dhall_value(x),
             lambda: logic.r4531_condition()
         )
 
@@ -2380,7 +2378,7 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
 
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+            lambda x: self.settings_manager.set_deionarra_value(x),
             lambda: logic.r4532_condition()
         )
 
@@ -2389,7 +2387,7 @@ class VaxisLogicTest(LogicTest):
         logic = VaxisLogic(self.settings_manager)
 
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_soego(x),
+            lambda x: self.settings_manager.set_soego_value(x),
             lambda: logic.r4533_condition()
         )
 

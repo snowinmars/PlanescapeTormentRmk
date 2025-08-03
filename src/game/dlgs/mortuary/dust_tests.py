@@ -9,6 +9,14 @@ class DustLogicTest(LogicTest):
         self.assertIsNotNone(logic.gsm)
 
 
+    def test_dust_init(self):
+        self._init_(
+            'mortuary_f3r4',
+            DustLogic(self.settings_manager).dust_init,
+            self.settings_manager.get_talked_to_dust_times
+        )
+
+
     def test_methods_are_bound(self):
         self.target_class = DustLogic
         self._methods_are_bound()
@@ -341,11 +349,11 @@ class DustLogicTest(LogicTest):
         logic = DustLogic(self.settings_manager)
         id = 'mortuary_f2r1'
 
-        self.settings_manager.set_meet_dhall(False)
+        self.settings_manager.set_dhall_value(0)
 
         self.assertFalse(logic.r342_condition())
 
-        self.settings_manager.set_meet_dhall(True)
+        self.settings_manager.set_dhall_value(1)
         self.settings_manager.glm.set_location(id)
 
         self.assertTrue(logic.r342_condition())
@@ -355,11 +363,11 @@ class DustLogicTest(LogicTest):
         logic = DustLogic(self.settings_manager)
         id = 'mortuary_f2r1'
 
-        self.settings_manager.set_meet_dhall(False)
+        self.settings_manager.set_dhall_value(0)
 
         self.assertFalse(logic.r343_condition())
 
-        self.settings_manager.set_meet_dhall(True)
+        self.settings_manager.set_dhall_value(1)
 
         self.assertTrue(logic.r343_condition())
 
@@ -368,11 +376,11 @@ class DustLogicTest(LogicTest):
         logic = DustLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_deionarra(False)
+        self.settings_manager.set_deionarra_value(0)
 
         self.assertFalse(logic.r33183_condition())
 
-        self.settings_manager.set_meet_deionarra(True)
+        self.settings_manager.set_deionarra_value(1)
         self.settings_manager.glm.set_location(id)
 
         self.assertTrue(logic.r33183_condition())
@@ -382,11 +390,11 @@ class DustLogicTest(LogicTest):
         logic = DustLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_deionarra(False)
+        self.settings_manager.set_deionarra_value(0)
 
         self.assertFalse(logic.r33185_condition())
 
-        self.settings_manager.set_meet_deionarra(True)
+        self.settings_manager.set_deionarra_value(1)
 
         self.assertTrue(logic.r33185_condition())
 
@@ -395,11 +403,11 @@ class DustLogicTest(LogicTest):
         logic = DustLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_soego(False)
+        self.settings_manager.set_soego_value(0)
 
         self.assertFalse(logic.r33186_condition())
 
-        self.settings_manager.set_meet_soego(True)
+        self.settings_manager.set_soego_value(1)
         self.settings_manager.glm.set_location(id)
 
         self.assertTrue(logic.r33186_condition())
@@ -409,11 +417,11 @@ class DustLogicTest(LogicTest):
         logic = DustLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_soego(False)
+        self.settings_manager.set_soego_value(0)
 
         self.assertFalse(logic.r33187_condition())
 
-        self.settings_manager.set_meet_soego(True)
+        self.settings_manager.set_soego_value(1)
 
         self.assertTrue(logic.r33187_condition())
 
@@ -481,8 +489,9 @@ class DustLogicTest(LogicTest):
     def test_r370_condition(self):
         logic = DustLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r370_condition()
         )
 

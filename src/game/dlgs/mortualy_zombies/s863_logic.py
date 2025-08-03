@@ -5,7 +5,7 @@ class S863Logic:
 
     def s863_init(self):
         self.gsm.glm.set_location('mortuary_f3r2')
-        self.gsm.set_meet_s863(True)
+        self.gsm.inc_talked_to_s863_times()
 
 
     def r35538_action(self):

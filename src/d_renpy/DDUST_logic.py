@@ -115,32 +115,32 @@ class DustLogic:
 
 
     def r342_condition(self):
-        return self.gsm.get_meet_dhall() and \
+        return self.gsm.get_dhall_value() > 0 and \
                self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r343_condition(self):
-        return self.gsm.get_meet_dhall() and \
+        return self.gsm.get_dhall_value() > 0 and \
                not self.gsm.glm.is_visited_internal_location('AR0202')
 
 
     def r33183_condition(self):
-        return self.gsm.get_meet_deionarra() and \
+        return self.gsm.get_deionarra_value() > 0 and \
                self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33185_condition(self):
-        return self.gsm.get_meet_deionarra() and \
+        return self.gsm.get_deionarra_value() > 0 and \
                not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33186_condition(self):
-        return self.gsm.get_meet_soego() and \
+        return self.gsm.get_soego_value() > 0 and \
                self.gsm.glm.is_visited_internal_location('AR0201')
 
 
     def r33187_condition(self):
-        return self.gsm.get_meet_soego() and \
+        return self.gsm.get_soego_value() > 0 and \
                not self.gsm.glm.is_visited_internal_location('AR0201')
 
 
@@ -155,7 +155,7 @@ class DustLogic:
 
 
     def r370_condition(self):
-        return self.gsm.get_meet_deionarra()
+        return self.gsm.get_deionarra_value() > 0
 
 
     def r371_condition(self):

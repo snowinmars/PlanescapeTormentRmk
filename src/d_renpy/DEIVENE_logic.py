@@ -8,7 +8,7 @@ class EiveneLogic:
 
 
     def r3422_action(self):
-        self.gsm.set_meet_eivene(True)
+        self.gsm.set_eivene_value(1)
 
 
     def r3424_action(self):

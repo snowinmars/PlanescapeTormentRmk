@@ -24,18 +24,18 @@ def build_mortuary_f3r4_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/dust.png', lambda: not gsm.get_dead_dust(), 960, 900)
         .auto_position(1000, 900)
         .option(lambda: 'Атаковать тленного'
-                if gsm.get_meet_dust()
+                if gsm.get_talked_to_dust_times() > 0
                 else 'Атаковать человека') \
         .jump(lambda: 'start_dust_kill'
-              if gsm.get_meet_dust()
+              if gsm.get_talked_to_dust_times() > 0
               else 'start_dust_kill_first') \
         .when(lambda: not gsm.get_dead_dust()) \
         .style('kill') \
         .option(lambda: 'Поговорить с тленным'
-                if gsm.get_meet_dust()
+                if gsm.get_talked_to_dust_times() > 0
                 else 'Поговорить с человеком') \
         .jump(lambda: 'start_dust_talk'
-              if gsm.get_meet_dust()
+              if gsm.get_talked_to_dust_times() > 0
               else 'start_dust_talk_first') \
         .when(lambda: not gsm.get_dead_dust() and not gsm.get_mortualy_alarmed()) \
         .style('talk')

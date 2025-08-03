@@ -5,7 +5,7 @@ class Zm310Logic:
 
     def zm310_init(self):
         self.gsm.glm.set_location('mortuary_f3r6')
-        self.gsm.set_meet_zm310(True)
+        self.gsm.inc_talked_to_zm310_times()
 
 
     def kill_zm310(self):
@@ -23,7 +23,7 @@ class Zm310Logic:
 
 
     def r6502_action(self):
-        self.gsm.set_meet_oinosian(True)
+        self.gsm.set_oinosian_value(1)
 
 
     def get_know_oinosian_name(self):
@@ -47,4 +47,4 @@ class Zm310Logic:
 
 
     def r9664_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0

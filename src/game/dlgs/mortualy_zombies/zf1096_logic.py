@@ -5,7 +5,7 @@ class Zf1096Logic:
 
     def zf1096_init(self):
         self.gsm.glm.set_location('mortuary_f2r3')
-        self.gsm.set_meet_zf1096(True)
+        self.gsm.inc_talked_to_zf1096_times()
 
 
     def kill_zf1096(self):

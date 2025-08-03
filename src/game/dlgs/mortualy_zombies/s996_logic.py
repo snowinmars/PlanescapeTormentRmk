@@ -5,7 +5,7 @@ class S996Logic:
 
     def s996_init(self):
         self.gsm.glm.set_location('mortuary_f3r6')
-        self.gsm.set_meet_s996(True)
+        self.gsm.inc_talked_to_s996_times()
 
 
     def r35461_action(self):

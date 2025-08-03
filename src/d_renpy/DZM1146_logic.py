@@ -9,7 +9,7 @@ class Zm1146Logic:
 
 
     def r6524_action(self):
-        self.gsm.set_meet_crispy(True)
+        self.gsm.set_crispy_value(1)
 
 
     def r9415_action(self):
@@ -38,4 +38,4 @@ class Zm1146Logic:
 
 
     def r9434_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0

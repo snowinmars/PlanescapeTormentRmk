@@ -15,16 +15,11 @@ class Zm1041LogicTest(LogicTest):
 
 
     def test_zm1041_init(self):
-        logic = Zm1041Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm1041())
-
-        logic.zm1041_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm1041(), True)
+        self._init_(
+            'mortuary_f2r1',
+            Zm1041Logic(self.settings_manager).zm1041_init,
+            self.settings_manager.get_talked_to_zm1041_times
+        )
 
 
     def test_kill_zm1041(self):
@@ -77,8 +72,9 @@ class Zm1041LogicTest(LogicTest):
     def test_r6583_action(self):
         logic = Zm1041Logic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_bei(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_bei_value(),
+            1,
             lambda: logic.r6583_action()
         )
 
@@ -86,8 +82,9 @@ class Zm1041LogicTest(LogicTest):
     def test_r9096_action(self):
         logic = Zm1041Logic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_bei(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_bei_value(),
+            1,
             lambda: logic.r9096_action()
         )
 
@@ -95,8 +92,9 @@ class Zm1041LogicTest(LogicTest):
     def test_r9097_action(self):
         logic = Zm1041Logic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_bei(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_bei_value(),
+            1,
             lambda: logic.r9097_action()
         )
 
@@ -249,11 +247,11 @@ class Zm1041LogicTest(LogicTest):
         logic = Zm1041Logic(self.settings_manager)
 
         self.settings_manager.set_can_speak_with_dead(False)
-        self.settings_manager.set_meet_bei(True)
+        self.settings_manager.set_bei_value(1)
         self.assertFalse(logic.r6579_condition())
 
         self.settings_manager.set_can_speak_with_dead(True)
-        self.settings_manager.set_meet_bei(False)
+        self.settings_manager.set_bei_value(0)
         self.assertTrue(logic.r6579_condition())
 
 
@@ -261,19 +259,20 @@ class Zm1041LogicTest(LogicTest):
         logic = Zm1041Logic(self.settings_manager)
 
         self.settings_manager.set_can_speak_with_dead(False)
-        self.settings_manager.set_meet_bei(False)
+        self.settings_manager.set_bei_value(0)
         self.assertFalse(logic.r6580_condition())
 
         self.settings_manager.set_can_speak_with_dead(True)
-        self.settings_manager.set_meet_bei(True)
+        self.settings_manager.set_bei_value(1)
         self.assertTrue(logic.r6580_condition())
 
 
     def test_r9109_condition(self):
         logic = Zm1041Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9109_condition()
         )
 
@@ -281,8 +280,9 @@ class Zm1041LogicTest(LogicTest):
     def test_r9145_condition(self):
         logic = Zm1041Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9145_condition()
         )
 

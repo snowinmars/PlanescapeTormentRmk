@@ -4,7 +4,7 @@ class Morte1Logic:
 
 
     def r39793_action(self):
-        self.gsm.set_meet_morte(True)
+        self.gsm.set_morte_value(1)
 
 
     def r39824_action(self):
@@ -12,7 +12,7 @@ class Morte1Logic:
 
 
     def r39831_action(self):
-         self.gsm.set_in_party_morte(True)
+        # ShowFirstTimeHelp() self.gsm.set_in_party_morte(True)
 
 
     def r39852_action(self):
