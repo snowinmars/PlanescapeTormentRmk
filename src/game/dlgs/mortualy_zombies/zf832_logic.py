@@ -5,7 +5,7 @@ class Zf832Logic:
 
     def zf832_init(self):
         self.gsm.glm.set_location('mortuary_f3r8')
-        self.gsm.set_meet_zf832(True)
+        self.gsm.inc_talked_to_zf832_times()
 
 
     def kill_zf832(self):

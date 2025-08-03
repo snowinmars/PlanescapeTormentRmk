@@ -15,16 +15,11 @@ class S996LogicTest(LogicTest):
 
 
     def test_s996_init(self):
-        logic = S996Logic(self.settings_manager)
-        id = 'mortuary_f3r6'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_s996())
-
-        logic.s996_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_s996(), True)
+        self._init_(
+            'mortuary_f3r6',
+            S996Logic(self.settings_manager).s996_init,
+            self.settings_manager.get_talked_to_s996_times
+        )
 
 
     def test_r35461_action(self):

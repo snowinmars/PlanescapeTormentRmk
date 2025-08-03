@@ -81,7 +81,7 @@ label vaxis_s1:  # from 0.3 # IF ~  False()
 
 # s2 # say463
 label vaxis_s2:  # from 1.0
-    $ vaxisLogic.set_meet_vaxis(True)
+    $ vaxisLogic.r461_action()
     nr 'После твоего тычка в глаз труп, рефлекторно закрыв руками лицо, издает нечленораздельный вопль. Он начинает что-то невнятно бормотать, сыпля проклятиями в твой адрес.'
 
     menu:
@@ -103,7 +103,7 @@ label vaxis_s2:  # from 1.0
 
 # s3 # say467
 label vaxis_s3:  # from 2.2 5.2
-    $ vaxisLogic.set_meet_vaxis(True)
+    $ vaxisLogic.r461_action()
     nr 'Ты уже почти отвернулся, как зомби начинает что-то бормотать… кажется, он пытается что-то сказать, но с зашитым ртом это сделать трудно.'
     vaxis_unknown 'Фто ТЫ? Фто тее нао?'
 
@@ -166,7 +166,7 @@ label vaxis_s4:  # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 
 
 # s5 # say479
 label vaxis_s5:  # from 0.0 0.1 0.2 0.4
-    $ vaxisLogic.set_meet_vaxis(True)
+    $ vaxisLogic.r461_action()
     nr 'Зомби от неожиданности моргает при твоем обращении.'
     vaxis_unknown 'А? Фто?'
 

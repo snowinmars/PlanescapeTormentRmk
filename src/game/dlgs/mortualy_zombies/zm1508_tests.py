@@ -15,16 +15,11 @@ class Zm1508LogicTest(LogicTest):
 
 
     def test_zm1508_init(self):
-        logic = Zm1508Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm1508())
-
-        logic.zm1508_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm1508(), True)
+        self._init_(
+            'mortuary_f2r1',
+            Zm1508Logic(self.settings_manager).zm1508_init,
+            self.settings_manager.get_talked_to_zm1508_times
+        )
 
 
     def test_kill_zm1664(self):

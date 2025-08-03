@@ -16,16 +16,11 @@ class Zm310LogicTest(LogicTest):
 
 
     def test_zm310_init(self):
-        logic = Zm310Logic(self.settings_manager)
-        id = 'mortuary_f3r6'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm310())
-
-        logic.zm310_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm310(), True)
+        self._init_(
+            'mortuary_f3r6',
+            Zm310Logic(self.settings_manager).zm310_init,
+            self.settings_manager.get_talked_to_zm310_times
+        )
 
 
     def test_kill_zm310(self):
@@ -128,8 +123,9 @@ class Zm310LogicTest(LogicTest):
     def test_r9664_condition(self):
         logic = Zm310Logic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r9664_condition()
         )
 

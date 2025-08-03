@@ -9,6 +9,10 @@ entitiesIds = [
     'DVAXIS',
     'COPEARC',
     'DN1201',
+    'DXACH',
+    'DSOEGO',
+    'DGIANTSK',
+    'DDEIONS',
 #  mortuary ends
 #  mortuary_zombies starts
     'DS42',

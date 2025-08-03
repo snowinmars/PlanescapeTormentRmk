@@ -10,13 +10,13 @@ def build_mortuary_f1r6_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_xach(), 710, 880)
         .auto_position(750, 880)
         .option(lambda: 'Атаковать труп «331»'
-                if gsm.get_meet_xach()
+                if gsm.get_talked_to_xach_times() > 0
                 else 'Атаковать ходячий труп повешенного') \
         .jump("start_xach_kill") \
         .when(lambda: not gsm.get_dead_xach()) \
         .style('kill') \
         .option(lambda: 'Поговорить с трупом «331»'
-                if gsm.get_meet_xach()
+                if gsm.get_talked_to_xach_times() > 0
                 else 'Поговорить с ходячим трупом повешенного') \
         .jump("start_xach_talk") \
         .when(lambda: not gsm.get_dead_xach()) \

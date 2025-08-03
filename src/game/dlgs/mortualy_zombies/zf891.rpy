@@ -16,7 +16,7 @@ label start_zf891_kill:
     jump zf891_kill
 label zf891_init:
     $ zf891Logic.zf891_init()
-    scene bg mortuary2
+    scene bg mortuary_f2r8
     show zf891_img default at center_left_down
     return
 label zf891_dispose:

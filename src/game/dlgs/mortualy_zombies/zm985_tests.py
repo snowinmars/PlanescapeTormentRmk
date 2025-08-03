@@ -15,16 +15,11 @@ class Zm985LogicTest(LogicTest):
 
 
     def test_zm985_init(self):
-        logic = Zm985Logic(self.settings_manager)
-        id = 'mortuary_f2r5'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm985())
-
-        logic.zm985_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm985(), True)
+        self._init_(
+            'mortuary_f2r5',
+            Zm985Logic(self.settings_manager).zm985_init,
+            self.settings_manager.get_talked_to_zm985_times
+        )
 
 
     def test_s3_action(self):

@@ -15,16 +15,11 @@ class Zm613LogicTest(LogicTest):
 
 
     def test_zm613_init(self):
-        logic = Zm613Logic(self.settings_manager)
-        id = 'mortuary_f3r8'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm613())
-
-        logic.zm613_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm613(), True)
+        self._init_(
+            'mortuary_f3r8',
+            Zm613Logic(self.settings_manager).zm613_init,
+            self.settings_manager.get_talked_to_zm613_times
+        )
 
 
     def test_kill_zm613(self):

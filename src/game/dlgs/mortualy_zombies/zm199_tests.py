@@ -15,16 +15,11 @@ class Zm199LogicTest(LogicTest):
 
 
     def test_zm199_init(self):
-        logic = Zm199Logic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm199())
-
-        logic.zm199_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm199(), True)
+        self._init_(
+            'mortuary_f2r1',
+            Zm199Logic(self.settings_manager).zm199_init,
+            self.settings_manager.get_talked_to_zm199_times
+        )
 
 
     def test_kill_zm199(self):

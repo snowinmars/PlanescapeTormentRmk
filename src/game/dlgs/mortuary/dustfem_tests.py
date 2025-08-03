@@ -14,6 +14,14 @@ class DustfemLogicTest(LogicTest):
         self._methods_are_bound()
 
 
+    def test_dustfem_init(self):
+        self._init_(
+            'mortuary_f3r6',
+            DustfemLogic(self.settings_manager).dustfem_init,
+            self.settings_manager.get_talked_to_dustfem_times
+        )
+
+
     def test_r1225_action(self):
         logic = DustfemLogic(self.settings_manager)
 
@@ -343,11 +351,11 @@ class DustfemLogicTest(LogicTest):
         logic = DustfemLogic(self.settings_manager)
         id = 'mortuary_f2r1'
 
-        self.settings_manager.set_meet_dhall(False)
+        self.settings_manager.set_dhall_value(0)
 
         self.assertFalse(logic.r1253_condition())
 
-        self.settings_manager.set_meet_dhall(True)
+        self.settings_manager.set_dhall_value(1)
         self.settings_manager.glm.set_location(id)
 
         self.assertTrue(logic.r1253_condition())
@@ -357,11 +365,11 @@ class DustfemLogicTest(LogicTest):
         logic = DustfemLogic(self.settings_manager)
         id = 'mortuary_f2r1'
 
-        self.settings_manager.set_meet_dhall(False)
+        self.settings_manager.set_dhall_value(0)
 
         self.assertFalse(logic.r1255_condition())
 
-        self.settings_manager.set_meet_dhall(True)
+        self.settings_manager.set_dhall_value(1)
 
         self.assertTrue(logic.r1255_condition())
 
@@ -370,11 +378,11 @@ class DustfemLogicTest(LogicTest):
         logic = DustfemLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_deionarra(False)
+        self.settings_manager.set_deionarra_value(0)
 
         self.assertFalse(logic.r1258_condition())
 
-        self.settings_manager.set_meet_deionarra(True)
+        self.settings_manager.set_deionarra_value(1)
         self.settings_manager.glm.set_location(id)
 
         self.assertTrue(logic.r1258_condition())
@@ -384,11 +392,11 @@ class DustfemLogicTest(LogicTest):
         logic = DustfemLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_deionarra(False)
+        self.settings_manager.set_deionarra_value(0)
 
         self.assertFalse(logic.r4336_condition())
 
-        self.settings_manager.set_meet_deionarra(True)
+        self.settings_manager.set_deionarra_value(1)
 
         self.assertTrue(logic.r4336_condition())
 
@@ -397,11 +405,11 @@ class DustfemLogicTest(LogicTest):
         logic = DustfemLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_soego(False)
+        self.settings_manager.set_soego_value(0)
 
         self.assertFalse(logic.r33224_condition())
 
-        self.settings_manager.set_meet_soego(True)
+        self.settings_manager.set_soego_value(1)
         self.settings_manager.glm.set_location(id)
 
         self.assertTrue(logic.r33224_condition())
@@ -411,11 +419,11 @@ class DustfemLogicTest(LogicTest):
         logic = DustfemLogic(self.settings_manager)
         id = 'mortuary_f1r1'
 
-        self.settings_manager.set_meet_soego(False)
+        self.settings_manager.set_soego_value(0)
 
         self.assertFalse(logic.r33226_condition())
 
-        self.settings_manager.set_meet_soego(True)
+        self.settings_manager.set_soego_value(1)
 
         self.assertTrue(logic.r33226_condition())
 
@@ -483,8 +491,9 @@ class DustfemLogicTest(LogicTest):
     def test_r1272_condition(self):
         logic = DustfemLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r1272_condition()
         )
 

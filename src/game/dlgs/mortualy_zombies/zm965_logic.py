@@ -5,7 +5,7 @@ class Zm965Logic:
 
     def zm965_init(self):
         self.gsm.glm.set_location('mortuary_f2r2')
-        self.gsm.set_meet_zm965(True)
+        self.gsm.inc_talked_to_zm965_times()
 
 
     def kill_zm965(self):

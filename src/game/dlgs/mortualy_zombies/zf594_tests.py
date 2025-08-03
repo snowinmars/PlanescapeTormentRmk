@@ -15,16 +15,11 @@ class Zf594LogicTest(LogicTest):
 
 
     def test_zf594_init(self):
-        logic = Zf594Logic(self.settings_manager)
-        id = 'mortuary_f2r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf594())
-
-        logic.zf594_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf594(), True)
+        self._init_(
+            'mortuary_f2r2',
+            Zf594Logic(self.settings_manager).zf594_init,
+            self.settings_manager.get_talked_to_zf594_times
+        )
 
 
     def test_kill_zf594(self):

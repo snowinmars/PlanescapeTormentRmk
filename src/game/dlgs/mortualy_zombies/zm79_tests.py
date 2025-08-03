@@ -15,16 +15,11 @@ class Zm79LogicTest(LogicTest):
 
 
     def test_zm79_init(self):
-        logic = Zm79Logic(self.settings_manager)
-        id = 'mortuary_f3r8'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm79())
-
-        logic.zm79_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm79(), True)
+        self._init_(
+            'mortuary_f3r8',
+            Zm79Logic(self.settings_manager).zm79_init,
+            self.settings_manager.get_talked_to_zm79_times
+        )
 
 
     def test_kill_zm79(self):

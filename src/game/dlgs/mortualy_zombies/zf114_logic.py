@@ -5,7 +5,7 @@ class Zf114Logic:
 
     def zf114_init(self):
         self.gsm.glm.set_location('mortuary_f2r2')
-        self.gsm.set_meet_zf114(True)
+        self.gsm.inc_talked_to_zf114_times()
 
 
     def kill_zf114(self):

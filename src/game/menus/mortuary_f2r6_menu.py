@@ -10,19 +10,20 @@ def build_mortuary_f2r6_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_vaxis(), 1300, 700)
         .auto_position(1340, 700)
         .option(lambda: 'Атаковать Ваксиса'
-                if gsm.get_meet_vaxis()
+                if gsm.get_talked_to_vaxis_times() > 0
                 else 'Атаковать труп') \
         .jump(lambda: 'start_vaxis_kill'
-              if gsm.get_meet_vaxis()
+              if gsm.get_talked_to_vaxis_times() > 0
               else 'start_vaxis_kill_first') \
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('kill') \
         .option(lambda: 'Поговорить c Ваксисом'
                 if gsm.get_know_vaxis_name()
-                else 'Поговорить с фальшивым зомби' if gsm.get_meet_vaxis()
+                else 'Поговорить с фальшивым зомби'
+                if gsm.get_talked_to_vaxis_times() > 0
                 else 'Поговорить с трупом') \
         .jump(lambda: 'start_vaxis_talk'
-              if gsm.get_meet_vaxis()
+              if gsm.get_talked_to_vaxis_times() > 0
               else 'start_vaxis_talk_first') \
         .when(lambda: not gsm.get_dead_vaxis()) \
         .style('talk')

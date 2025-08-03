@@ -24,13 +24,13 @@ def build_mortuary_f2r8_menu(location_id, gsm, glm):
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not gsm.get_dead_zf891(), 960, 700)
         .auto_position(1000, 700)
         .option(lambda: 'Атаковать труп «891»'
-                if gsm.get_meet_zf891()
+                if gsm.get_talked_to_zf891_times() > 0
                 else 'Атаковать качающийся труп') \
         .jump("start_zf891_kill") \
         .when(lambda: not gsm.get_dead_zf891()) \
         .style('kill') \
         .option(lambda: 'Поговорить c трупом «891»'
-                if gsm.get_meet_zf891()
+                if gsm.get_talked_to_zf891_times() > 0
                 else 'Поговорить с качающимся трупом') \
         .jump("start_zf891_talk") \
         .when(lambda: not gsm.get_dead_zf891()) \

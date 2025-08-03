@@ -15,12 +15,10 @@ class EiveneLogicTest(LogicTest):
 
 
     def test_eivene_init(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = 'mortuary_f2r5'
-
-        self._step_into_location_action(
-            id,
-            lambda: logic.eivene_init()
+        self._init_(
+            'mortuary_f2r5',
+            EiveneLogic(self.settings_manager).eivene_init,
+            self.settings_manager.get_talked_to_eivene_times
         )
 
 
@@ -41,8 +39,9 @@ class EiveneLogicTest(LogicTest):
     def test_r3422_action(self):
         logic = EiveneLogic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_eivene(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_eivene_value(),
+            1,
             lambda: logic.r3422_action()
         )
 

@@ -5,7 +5,7 @@ class Zm1041Logic:
 
     def zm1041_init(self):
         self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.set_meet_zm1041(True)
+        self.gsm.inc_talked_to_zm1041_times()
 
 
     def kill_zm1041(self):
@@ -23,15 +23,15 @@ class Zm1041Logic:
 
 
     def r6583_action(self):
-        self.gsm.set_meet_bei(True)
+        self.gsm.set_bei_value(1)
 
 
     def r9096_action(self):
-        self.gsm.set_meet_bei(True)
+        self.gsm.set_bei_value(1)
 
 
     def r9097_action(self):
-        self.gsm.set_meet_bei(True)
+        self.gsm.set_bei_value(1)
 
 
     def r9161_action(self):
@@ -87,20 +87,20 @@ class Zm1041Logic:
 
     def r6579_condition(self):
         return self.gsm.get_can_speak_with_dead() and \
-               not self.gsm.get_meet_bei()
+               self.gsm.get_bei_value() == 0
 
 
     def r6580_condition(self):
         return self.gsm.get_can_speak_with_dead() and \
-               self.gsm.get_meet_bei()
+               self.gsm.get_bei_value() == 1
 
 
     def r9109_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r9145_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r9187_condition(self):

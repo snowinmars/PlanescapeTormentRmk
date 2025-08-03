@@ -15,16 +15,11 @@ class S748LogicTest(LogicTest):
 
 
     def test_s748_init(self):
-        logic = S748Logic(self.settings_manager)
-        id = 'mortuary_f3r6'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_s748())
-
-        logic.s748_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_s748(), True)
+        self._init_(
+            'mortuary_f3r6',
+            S748Logic(self.settings_manager).s748_init,
+            self.settings_manager.get_talked_to_s748_times
+        )
 
 
     def test_r35384_action(self):

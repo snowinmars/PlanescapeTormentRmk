@@ -15,16 +15,11 @@ class Zm1664LogicTest(LogicTest):
 
 
     def test_zm1664_init(self):
-        logic = Zm1664Logic(self.settings_manager)
-        id = 'mortuary_f2r4'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zm1664())
-
-        logic.zm1664_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zm1664(), True)
+        self._init_(
+            'mortuary_f2r4',
+            Zm1664Logic(self.settings_manager).zm1664_init,
+            self.settings_manager.get_talked_to_zm1664_times
+        )
 
 
     def test_kill_zm1664(self):

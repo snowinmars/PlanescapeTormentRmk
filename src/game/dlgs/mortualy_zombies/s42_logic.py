@@ -5,7 +5,7 @@ class S42Logic:
 
     def s42_init(self):
         self.gsm.glm.set_location('mortuary_f3r8')
-        self.gsm.set_meet_s42(True)
+        self.gsm.inc_talked_to_s42_times()
 
 
     def r6613_action(self):

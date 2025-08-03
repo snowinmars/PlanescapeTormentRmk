@@ -15,16 +15,11 @@ class Zf891LogicTest(LogicTest):
 
 
     def test_zf891_init(self):
-        logic = Zf891Logic(self.settings_manager)
-        id = 'mortuary_f2r2'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_zf891())
-
-        logic.zf891_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_zf891(), True)
+        self._init_(
+            'mortuary_f2r8',
+            Zf891Logic(self.settings_manager).zf891_init,
+            self.settings_manager.get_talked_to_zf891_times
+        )
 
 
     def test_kill_zf891(self):

@@ -5,7 +5,7 @@ class Zm1094Logic:
 
     def zm1094_init(self):
         self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.set_meet_zm1094(True)
+        self.gsm.inc_talked_to_zm1094_times()
 
 
     def kill_zm1094(self):
@@ -23,24 +23,24 @@ class Zm1094Logic:
 
 
     def r6568_action(self):
-        self.gsm.set_meet_asonje(True)
+        self.gsm.set_asonje_value(1)
 
 
     def r9247_action(self):
         self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_asonje_1')
-        self.gsm.set_asonje_quest_state(3)
+        self.gsm.set_asonje_value(3)
 
 
     def r9289_action(self):
-        self.gsm.set_asonje_quest_state(2)
+        self.gsm.set_asonje_value(2)
 
 
     def r9290_action(self):
-        self.gsm.set_asonje_quest_state(2)
+        self.gsm.set_asonje_value(2)
 
 
     def r9291_action(self):
-        self.gsm.set_asonje_quest_state(2)
+        self.gsm.set_asonje_value(2)
 
 
     def r9304_action(self):
@@ -67,32 +67,32 @@ class Zm1094Logic:
 
 
     def r9256_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r9276_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r9282_condition(self):
-        return self.gsm.get_asonje_quest_state() != 2
+        return self.gsm.get_asonje_value() != 2
 
 
     def r9286_condition(self):
-        return self.gsm.get_asonje_quest_state() == 2
+        return self.gsm.get_asonje_value() == 2
 
 
     def r9319_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0
 
 
     def r9306_condition(self):
-        return self.gsm.get_asonje_quest_state() != 2
+        return self.gsm.get_asonje_value() != 2
 
 
     def r9307_condition(self):
-        return self.gsm.get_asonje_quest_state() == 2
+        return self.gsm.get_asonje_value() == 2
 
 
     def r9312_condition(self):
-        return not self.gsm.get_meet_pharod()
+        return self.gsm.get_pharod_value() == 0

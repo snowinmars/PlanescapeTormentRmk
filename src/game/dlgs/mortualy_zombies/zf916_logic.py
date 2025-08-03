@@ -5,7 +5,7 @@ class Zf916Logic:
 
     def zf916_init(self):
         self.gsm.glm.set_location('mortuary_f2r2')
-        self.gsm.set_meet_zf916(True)
+        self.gsm.inc_talked_to_zf916_times()
 
 
     def kill_zf916(self):

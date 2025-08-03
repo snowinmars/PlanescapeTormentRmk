@@ -15,6 +15,8 @@ label start_dustfem_talk:
     call dustfem_init
     jump dustfem_s0
 label dustfem_init:
+    $ dustfemLogic.dustfem_init()
+    scene bg mortuary_f3r6
     show dustfem_img default at center_left_down
     return
 label dustfem_dispose:

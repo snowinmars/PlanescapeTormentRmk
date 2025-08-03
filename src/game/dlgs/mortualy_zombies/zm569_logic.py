@@ -5,7 +5,7 @@ class Zm569Logic:
 
     def zm569_init(self):
         self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.set_meet_zm569(True)
+        self.gsm.inc_talked_to_zm569_times()
 
 
     def kill_zm569(self):

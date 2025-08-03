@@ -57,11 +57,26 @@ class LogicTest(unittest.TestCase):
         action_lambda()
         self.assertFalse(prop_lambda())
 
+    def _integer_equals_action(self, prop_lambda, value, action_lambda):
+        self.assertNotEqual(prop_lambda(), value)
+        action_lambda()
+        self.assertEqual(prop_lambda(), value)
+
+
+    def _init_(self, location_id, action_lambda, talked_lambda):
+        talkedToBefore = talked_lambda()
+        self.assertNotEqual(self.settings_manager.glm.get_location(), location_id)
+        action_lambda()
+        talkedToAfter = talked_lambda()
+        self.assertEqual(self.settings_manager.glm.get_location(), location_id)
+        self.assertEqual(talkedToBefore + 1, talkedToAfter)
+
 
     def _step_into_location_action(self, location_id, action_lambda):
         self.assertNotEqual(self.settings_manager.glm.get_location(), location_id)
         action_lambda()
         self.assertEqual(self.settings_manager.glm.get_location(), location_id)
+
 
     def _pickup_journal_note_action(self, note_id, action_lambda):
         self.assertFalse(self.settings_manager.has_journal_note(note_id))
@@ -130,4 +145,36 @@ class LogicTest(unittest.TestCase):
         prop_lambda(True)
         self.assertTrue(action_lambda())
         prop_lambda(False)
+        self.assertFalse(action_lambda())
+
+
+    def _integer_not_equal_condition(self, prop_lambda, value, action_lambda):
+        prop_lambda(2 * value + 1)
+        self.assertTrue(action_lambda())
+        prop_lambda(value)
+        self.assertFalse(action_lambda())
+
+
+    def _integer_equal_condition(self, prop_lambda, value, action_lambda):
+        prop_lambda(2 * value + 1)
+        self.assertFalse(action_lambda())
+        prop_lambda(value)
+        self.assertTrue(action_lambda())
+
+
+    def _integer_gt_condition(self, prop_lambda, value, action_lambda):
+        prop_lambda(value - 1)
+        self.assertFalse(action_lambda())
+        prop_lambda(value)
+        self.assertFalse(action_lambda())
+        prop_lambda(value + 1)
+        self.assertTrue(action_lambda())
+
+
+    def _integer_lt_condition(self, prop_lambda, value, action_lambda):
+        prop_lambda(value - 1)
+        self.assertTrue(action_lambda())
+        prop_lambda(value)
+        self.assertFalse(action_lambda())
+        prop_lambda(value + 1)
         self.assertFalse(action_lambda())

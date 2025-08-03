@@ -15,12 +15,10 @@ class DhallLogicTest(LogicTest):
 
 
     def test_dhall_init(self):
-        logic = DhallLogic(self.settings_manager)
-        id = 'mortuary_f2r3'
-
-        self._step_into_location_action(
-            id,
-            lambda: logic.dhall_init()
+        self._init_(
+            'mortuary_f2r3',
+            DhallLogic(self.settings_manager).dhall_init,
+            self.settings_manager.get_talked_to_dhall_times
         )
 
 
@@ -38,11 +36,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r827_action(self):
         logic = DhallLogic(self.settings_manager)
-
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dhall(),
-            lambda: logic.r827_action()
-        )
+        logic.r827_action()
 
 
     def test_r830_action(self):
@@ -149,20 +143,28 @@ class DhallLogicTest(LogicTest):
 
     def test_r953_action(self):
         logic = DhallLogic(self.settings_manager)
+        delta = 1
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dustmen(),
-            lambda: logic.r953_action()
-        )
+        before = self.settings_manager.get_know_dustmen()
+        logic.r953_action()
+        after = self.settings_manager.get_know_dustmen()
+        self.assertEqual(before + delta, after)
+        logic.r953_action()
+        afterOnce = self.settings_manager.get_know_dustmen()
+        self.assertEqual(after, afterOnce)
 
 
     def test_r958_action(self):
         logic = DhallLogic(self.settings_manager)
+        delta = 1
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dustmen(),
-            lambda: logic.r958_action()
-        )
+        before = self.settings_manager.get_know_dustmen()
+        logic.r958_action()
+        after = self.settings_manager.get_know_dustmen()
+        self.assertEqual(before + delta, after)
+        logic.r958_action()
+        afterOnce = self.settings_manager.get_know_dustmen()
+        self.assertEqual(after, afterOnce)
 
 
     def test_r1301_action(self):
@@ -177,27 +179,36 @@ class DhallLogicTest(LogicTest):
 
     def test_r974_action(self):
         logic = DhallLogic(self.settings_manager)
+        delta = 1
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dustmen(),
-            lambda: logic.r974_action()
-        )
+        before = self.settings_manager.get_know_dustmen()
+        logic.r974_action()
+        after = self.settings_manager.get_know_dustmen()
+        self.assertEqual(before + delta, after)
+        logic.r974_action()
+        afterOnce = self.settings_manager.get_know_dustmen()
+        self.assertEqual(after, afterOnce)
 
 
     def test_r985_action(self):
         logic = DhallLogic(self.settings_manager)
+        delta = 1
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dustmen(),
-            lambda: logic.r985_action()
-        )
+        before = self.settings_manager.get_know_dustmen()
+        logic.r985_action()
+        after = self.settings_manager.get_know_dustmen()
+        self.assertEqual(before + delta, after)
+        logic.r985_action()
+        afterOnce = self.settings_manager.get_know_dustmen()
+        self.assertEqual(after, afterOnce)
 
 
     def test_r1327_action(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dhall(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_dhall_value(),
+            1,
             lambda: logic.r1327_action()
         )
 
@@ -224,11 +235,15 @@ class DhallLogicTest(LogicTest):
 
     def test_r6033_action(self):
         logic = DhallLogic(self.settings_manager)
+        delta = 1
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_dustmen(),
-            lambda: logic.r6033_action()
-        )
+        before = self.settings_manager.get_know_dustmen()
+        logic.r6033_action()
+        after = self.settings_manager.get_know_dustmen()
+        self.assertEqual(before + delta, after)
+        logic.r6033_action()
+        afterOnce = self.settings_manager.get_know_dustmen()
+        self.assertEqual(after, afterOnce)
 
 
     def test_r6051_action(self):
@@ -260,8 +275,9 @@ class DhallLogicTest(LogicTest):
     def test_r5070_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r5070_condition()
         )
 
@@ -269,8 +285,9 @@ class DhallLogicTest(LogicTest):
     def test_r5071_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r5071_condition()
         )
 
@@ -278,8 +295,9 @@ class DhallLogicTest(LogicTest):
     def test_r5072_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r5072_condition()
         )
 
@@ -322,8 +340,9 @@ class DhallLogicTest(LogicTest):
     def test_r6064_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r6064_condition()
         )
 
@@ -331,8 +350,9 @@ class DhallLogicTest(LogicTest):
     def test_r13288_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r13288_condition()
         )
 
@@ -391,8 +411,9 @@ class DhallLogicTest(LogicTest):
     def test_r842_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_dhall(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_dhall_value(x),
+            0,
             lambda: logic.r842_condition()
         )
 
@@ -400,8 +421,9 @@ class DhallLogicTest(LogicTest):
     def test_r843_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_dhall(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_dhall_value(x),
+            0,
             lambda: logic.r843_condition()
         )
 
@@ -409,8 +431,9 @@ class DhallLogicTest(LogicTest):
     def test_r5062_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_dhall(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_dhall_value(x),
+            0,
             lambda: logic.r5062_condition()
         )
 
@@ -418,13 +441,13 @@ class DhallLogicTest(LogicTest):
     def test_r854_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self.settings_manager.set_meet_vaxis(False)
+        self.settings_manager.set_vaxis_value(0)
         self.settings_manager.set_dead_vaxis(True)
         self.settings_manager.set_vaxis_leave(True)
         self.settings_manager.set_vaxis_betrayed(1)
         self.assertFalse(logic.r854_condition())
 
-        self.settings_manager.set_meet_vaxis(True)
+        self.settings_manager.set_vaxis_value(1)
         self.settings_manager.set_dead_vaxis(False)
         self.settings_manager.set_vaxis_leave(False)
         self.settings_manager.set_vaxis_betrayed(0)
@@ -445,8 +468,9 @@ class DhallLogicTest(LogicTest):
     def test_r870_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r870_condition()
         )
 
@@ -454,8 +478,9 @@ class DhallLogicTest(LogicTest):
     def test_r891_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r891_condition()
         )
 
@@ -528,8 +553,9 @@ class DhallLogicTest(LogicTest):
     def test_r943_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r943_condition()
         )
 
@@ -537,8 +563,9 @@ class DhallLogicTest(LogicTest):
     def test_r6026_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r6026_condition()
         )
 
@@ -546,8 +573,9 @@ class DhallLogicTest(LogicTest):
     def test_r874_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r874_condition()
         )
 
@@ -555,8 +583,9 @@ class DhallLogicTest(LogicTest):
     def test_r948_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r948_condition()
         )
 
@@ -564,8 +593,9 @@ class DhallLogicTest(LogicTest):
     def test_r6027_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r6027_condition()
         )
 
@@ -573,8 +603,9 @@ class DhallLogicTest(LogicTest):
     def test_r6066_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r6066_condition()
         )
 
@@ -582,8 +613,9 @@ class DhallLogicTest(LogicTest):
     def test_r964_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r964_condition()
         )
 
@@ -591,16 +623,18 @@ class DhallLogicTest(LogicTest):
     def test_r968_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_pharod(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_pharod_value(x),
+            0,
             lambda: logic.r968_condition()
         )
 
     def test_r5076_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r5076_condition()
         )
 
@@ -608,8 +642,9 @@ class DhallLogicTest(LogicTest):
     def test_r5077_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r5077_condition()
         )
 
@@ -652,8 +687,9 @@ class DhallLogicTest(LogicTest):
     def test_r5081_condition(self):
         logic = DhallLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_meet_deionarra(x),
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_deionarra_value(x),
+            0,
             lambda: logic.r5081_condition()
         )
 

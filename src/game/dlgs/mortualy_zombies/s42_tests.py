@@ -15,16 +15,11 @@ class S42LogicTest(LogicTest):
 
 
     def test_s42_init(self):
-        logic = S42Logic(self.settings_manager)
-        id = 'mortuary_f3r8'
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), id)
-        self.assertFalse(self.settings_manager.get_meet_s42())
-
-        logic.s42_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), id)
-        self.assertTrue(self.settings_manager.get_meet_s42(), True)
+        self._init_(
+            'mortuary_f3r8',
+            S42Logic(self.settings_manager).s42_init,
+            self.settings_manager.get_talked_to_s42_times
+        )
 
 
     def test_r6613_action(self):

@@ -15,22 +15,21 @@ class Morte1LogicTest(LogicTest):
 
 
     def test_morte1_init(self):
-        logic = Morte1Logic(self.settings_manager)
-
-        self.assertNotEqual(self.settings_manager.glm.get_location(), 'mortuary_f2r1')
         self.assertEqual(self.settings_manager.get_in_party_morte(), False)
-
-        logic.morte1_init()
-
-        self.assertEqual(self.settings_manager.glm.get_location(), 'mortuary_f2r1')
+        self._init_(
+            'mortuary_f2r1',
+            Morte1Logic(self.settings_manager).morte1_init,
+            self.settings_manager.get_talked_to_morte_times
+        )
         self.assertEqual(self.settings_manager.get_in_party_morte(), True)
 
 
     def test_r39793_action(self):
         logic = Morte1Logic(self.settings_manager)
 
-        self._false_then_true_action(
-            lambda: self.settings_manager.get_meet_morte(),
+        self._integer_equals_action(
+            lambda: self.settings_manager.get_morte_value(),
+            1,
             lambda: logic.r39793_action()
         )
 
