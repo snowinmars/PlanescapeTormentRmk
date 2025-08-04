@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.walking_f2_logic import WalkingF2Logic
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.walking_f2_logic import WalkingF2Logic
 
 class WalkingF2LogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = WalkingF2Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -20,7 +20,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r1_visit()
+            logic.walk_to_mortuaryf2r1_visit
         )
 
 
@@ -30,7 +30,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r2_visit()
+            logic.walk_to_mortuaryf2r2_visit
         )
 
     def test_walk_to_mortuaryf2r2_scene(self):
@@ -39,7 +39,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r2_scene()
+            logic.walk_to_mortuaryf2r2_scene
         )
 
 
@@ -49,7 +49,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r3_visit()
+            logic.walk_to_mortuaryf2r3_visit
         )
 
 
@@ -59,7 +59,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r3_scene()
+            logic.walk_to_mortuaryf2r3_scene
         )
 
     def test_walk_to_mortuaryf2r4_visit(self):
@@ -68,7 +68,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r4_visit()
+            logic.walk_to_mortuaryf2r4_visit
         )
 
 
@@ -78,7 +78,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r5_visit()
+            logic.walk_to_mortuaryf2r5_visit
         )
 
 
@@ -88,7 +88,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r6_visit()
+            logic.walk_to_mortuaryf2r6_visit
         )
 
     def test_walk_to_mortuaryf2r7_visit(self):
@@ -97,7 +97,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r7_visit()
+            logic.walk_to_mortuaryf2r7_visit
         )
 
 
@@ -107,7 +107,7 @@ class WalkingF2LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf2r8_visit()
+            logic.walk_to_mortuaryf2r8_visit
         )
 
 
@@ -115,8 +115,8 @@ class WalkingF2LogicTest(LogicTest):
         logic = WalkingF2Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_scalpel(),
-            lambda: logic.walk_mortuaryf2r1_pick_scalpel()
+            self.settings_manager.get_has_scalpel,
+            logic.walk_mortuaryf2r1_pick_scalpel
         )
 
 
@@ -124,8 +124,8 @@ class WalkingF2LogicTest(LogicTest):
         logic = WalkingF2Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_embalm(),
-            lambda: logic.walk_mortuaryf2r7_pick_embalm()
+            self.settings_manager.get_has_embalm,
+            logic.walk_mortuaryf2r7_pick_embalm
         )
 
 
@@ -133,10 +133,10 @@ class WalkingF2LogicTest(LogicTest):
         logic = WalkingF2Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_copper_earring_closed(),
-            lambda: logic.walk_mortuaryf2r7_pick_copper_earring_closed()
+            self.settings_manager.get_has_copper_earring_closed,
+            logic.walk_mortuaryf2r7_pick_copper_earring_closed
         )
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

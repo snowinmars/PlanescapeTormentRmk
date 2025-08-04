@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
+from game.engine.tests import (LogicTest)
+from game.dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
 
 class DhallFeatherLogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = DhallFeatherLogic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -21,11 +21,11 @@ class DhallFeatherLogicTest(LogicTest):
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
-            lambda: logic.break_feather()
+            logic.break_feather
         )
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

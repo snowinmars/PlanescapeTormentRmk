@@ -1,7 +1,7 @@
 class DhallFeatherLogic:
-    def __init__(self, gsm):
-        self.gsm = gsm
+    def __init__(self, settings_manager):
+        self.settings_manager = settings_manager
 
 
     def break_feather(self):
-        self.gsm.gcm.modify_property('protagonist', 'lore', 1)
+        self.settings_manager.character_manager.modify_property('protagonist', 'lore', 1)

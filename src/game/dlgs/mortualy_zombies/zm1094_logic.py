@@ -1,98 +1,98 @@
 class Zm1094Logic:
-    def __init__(self, gsm):
-        self.gsm = gsm
+    def __init__(self, settings_manager):
+        self.settings_manager = settings_manager
 
 
     def zm1094_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.inc_talked_to_zm1094_times()
+        self.settings_manager.location_manager.set_location('mortuary_f2r3')
+        self.settings_manager.inc_talked_to_zm1094_times()
 
 
     def kill_zm1094(self):
-        self.gsm.set_dead_zm1094(True)
-        self.gsm.inc_exp_custom('party', 65)
+        self.settings_manager.set_dead_zm1094(True)
+        self.settings_manager.gain_experience('party', 65)
 
 
     def set_know_asonje_name(self):
-        self.gsm.set_know_asonje_name(True)
+        self.settings_manager.set_know_asonje_name(True)
 
 
     def r6565_action(self):
-        self.gsm.gcm.modify_property('protagonist', 'law', -1)
-        self.gsm.set_zombie_chaotic(True)
+        self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
+        self.settings_manager.set_zombie_chaotic(True)
 
 
     def r6568_action(self):
-        self.gsm.set_asonje_value(1)
+        self.settings_manager.set_asonje_value(1)
 
 
     def r9247_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_asonje_1')
-        self.gsm.set_asonje_value(3)
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_asonje_1')
+        self.settings_manager.set_asonje_value(3)
 
 
     def r9289_action(self):
-        self.gsm.set_asonje_value(2)
+        self.settings_manager.set_asonje_value(2)
 
 
     def r9290_action(self):
-        self.gsm.set_asonje_value(2)
+        self.settings_manager.set_asonje_value(2)
 
 
     def r9291_action(self):
-        self.gsm.set_asonje_value(2)
+        self.settings_manager.set_asonje_value(2)
 
 
     def r9304_action(self):
-        self.gsm.inc_adahn()
+        self.settings_manager.inc_adahn()
 
     def get_know_asonje_name(self):
-        return self.gsm.get_know_asonje_name()
+        return self.settings_manager.get_know_asonje_name()
 
 
     def r6565_condition(self):
-        return not self.gsm.get_zombie_chaotic()
+        return not self.settings_manager.get_zombie_chaotic()
 
 
     def r6566_condition(self):
-        return self.gsm.get_zombie_chaotic()
+        return self.settings_manager.get_zombie_chaotic()
 
 
     def r6567_condition(self):
-        return self.gsm.get_vaxis_exposed()
+        return self.settings_manager.get_vaxis_exposed()
 
 
     def r6568_condition(self):
-        return self.gsm.get_can_speak_with_dead()
+        return self.settings_manager.get_can_speak_with_dead()
 
 
     def r9256_condition(self):
-        return self.gsm.get_pharod_value() == 0
+        return self.settings_manager.get_pharod_value() == 0
 
 
     def r9276_condition(self):
-        return self.gsm.get_pharod_value() == 0
+        return self.settings_manager.get_pharod_value() == 0
 
 
     def r9282_condition(self):
-        return self.gsm.get_asonje_value() != 2
+        return self.settings_manager.get_asonje_value() != 2
 
 
     def r9286_condition(self):
-        return self.gsm.get_asonje_value() == 2
+        return self.settings_manager.get_asonje_value() == 2
 
 
     def r9319_condition(self):
-        return self.gsm.get_pharod_value() == 0
+        return self.settings_manager.get_pharod_value() == 0
 
 
     def r9306_condition(self):
-        return self.gsm.get_asonje_value() != 2
+        return self.settings_manager.get_asonje_value() != 2
 
 
     def r9307_condition(self):
-        return self.gsm.get_asonje_value() == 2
+        return self.settings_manager.get_asonje_value() == 2
 
 
     def r9312_condition(self):
-        return self.gsm.get_pharod_value() == 0
+        return self.settings_manager.get_pharod_value() == 0

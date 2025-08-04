@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.copearc_logic import CopearcLogic
+    from game.dlgs.copearc_logic import CopearcLogic
     copearcLogic = CopearcLogic(renpy.store.global_settings_manager)
 
 
@@ -8,11 +8,25 @@ init 10 python:
 # ###
 
 
+label start_copearc_talk_first:
+    call copearc_init
+    jump todo
+label start_copearc_talk:
+    call copearc_init
+    jump todo
+label start_copearc_kill_first:
+    call copearc_init
+    jump copearc_kill_first
+label start_copearc_kill:
+    call copearc_init
+    jump copearc_kill
 label copearc_init:
+    $ copearcLogic.copearc_init()
+    scene bg LOCATION
+    show copearc_img default at center_left_down
     return
-
-
 label copearc_dispose:
+    hide copearc_img
     jump show_graphics_menu
 
 
@@ -69,3 +83,45 @@ label copearc_s3:  # from 2.0
             # r6 # reply46733
             $ copearcLogic.r46733_action()
             jump copearc_dispose
+
+
+label copearc_kill:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump copearc_dispose
+        'Убить.':
+            jump copearc_killed
+
+
+label copearc_killed:
+    $ copearcLogic.kill_copearc()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'copearcs.'
+    nr 'Who is copearc?'
+    nr 'copearc is dead, baby, copearc is dead.'
+    jump copearc_dispose
+
+
+label copearc_kill_first:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump copearc_dispose
+        'Убить.':
+            jump copearc_killed_first
+
+
+label copearc_killed_first:
+    $ copearcLogic.kill_copearc()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'copearcs.'
+    nr 'Who is copearc?'
+    nr 'copearc is dead, baby, copearc is dead.'
+    jump copearc_dispose

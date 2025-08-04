@@ -1,12 +1,18 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortualy_zombies.zf444_logic import Zf444Logic
+
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortualy_zombies.zf444_logic import Zf444Logic
+
 
 class Zf444LogicTest(LogicTest):
-    def test_initialization(self):
-        logic = Zf444Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+    def setUp(self):
+        super(Zf444LogicTest, self).setUp()
+        self.logic = Zf444Logic(self.settings_manager)
+
+
+    def test_ctor(self):
+        self.assertIsNotNone(self.logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -14,219 +20,186 @@ class Zf444LogicTest(LogicTest):
         self._methods_are_bound()
 
 
+    @unittest.skip('This zomlie is not located anywhere')
     def test_zf444_init(self):
-        self._init_(
-            'mortuary_f2r2',
-            Zf444Logic(self.settings_manager).zf444_init,
-            self.settings_manager.get_talked_to_zf444_times
-        )
+        self._init_with_location( # pragma: no cover
+            'DISABLED', # pragma: no cover
+            self.logic.zf444_init, # pragma: no cover
+            self.settings_manager.get_talked_to_zf444_times # pragma: no cover
+        ) # pragma: no cover
 
 
     def test_kill_zf444(self):
-        logic = Zf444Logic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 65
 
         self.assertFalse(self.settings_manager.get_dead_zf444())
-        expBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.kill_zf444()
+        self.logic.kill_zf444()
 
         self.assertTrue(self.settings_manager.get_dead_zf444())
-        expAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(expBefore + delta, expAfter)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r35211_action(self):
-        logic = Zf444Logic(self.settings_manager)
         who = 'protagonist'
         prop = 'law'
         delta = -1
 
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
-        lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r35211_action()
-
-        self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawBefore + delta, lawAfter)
-
-        logic.r35211_action()
+        self.logic.r35211_action()
 
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawAfter + delta, lawAfterOnce)
+        law_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_before + delta, law_after)
+
+        self.logic.r35211_action()
+
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r35211_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_zombie_chaotic(x),
-            lambda: logic.r35211_condition()
+            self.logic.r35211_condition
         )
 
 
     def test_r35228_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_zombie_chaotic(x),
-            lambda: logic.r35228_condition()
+            self.logic.r35228_condition
         )
 
 
     def test_r35229_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_vaxis_exposed(x),
-            lambda: logic.r35229_condition()
+            self.logic.r35229_condition
         )
 
 
     def test_r35230_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_can_speak_with_dead(x),
-            lambda: logic.r35230_condition()
+            self.logic.r35230_condition
         )
 
 
     def test_r35235_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35235_condition())
+        self.assertFalse(self.logic.r35235_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35235_condition())
+        self.assertTrue(self.logic.r35235_condition())
 
 
     def test_r35236_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35236_condition())
+        self.assertFalse(self.logic.r35236_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35236_condition())
+        self.assertTrue(self.logic.r35236_condition())
 
 
     def test_r35237_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_morte_quip(x),
-            lambda: logic.r35237_condition()
+            self.logic.r35237_condition
         )
 
 
     def test_r35238_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_morte_quip(x),
-            lambda: logic.r35238_condition()
+            self.logic.r35238_condition
         )
 
 
     def test_r35239_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35239_condition())
+        self.assertFalse(self.logic.r35239_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35239_condition())
+        self.assertTrue(self.logic.r35239_condition())
 
 
     def test_r35240_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35240_condition())
+        self.assertFalse(self.logic.r35240_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35240_condition())
+        self.assertTrue(self.logic.r35240_condition())
 
 
     def test_r35213_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35213_condition())
+        self.assertFalse(self.logic.r35213_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35213_condition())
+        self.assertTrue(self.logic.r35213_condition())
 
 
     def test_r35226_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_morte_quip(x),
-            lambda: logic.r35226_condition()
+            self.logic.r35226_condition
         )
 
 
     def test_r35227_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35227_condition())
+        self.assertFalse(self.logic.r35227_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35227_condition())
+        self.assertTrue(self.logic.r35227_condition())
 
 
     def test_r35232_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35232_condition())
+        self.assertFalse(self.logic.r35232_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35232_condition())
+        self.assertTrue(self.logic.r35232_condition())
 
 
     def test_r35233_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_morte_quip(x),
-            lambda: logic.r35233_condition()
+            self.logic.r35233_condition
         )
 
 
     def test_r35234_condition(self):
-        logic = Zf444Logic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
-        self.assertFalse(logic.r35234_condition())
+        self.assertFalse(self.logic.r35234_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
-        self.assertTrue(logic.r35234_condition())
+        self.assertTrue(self.logic.r35234_condition())
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

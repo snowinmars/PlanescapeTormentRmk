@@ -1,107 +1,107 @@
 class Zm1041Logic:
-    def __init__(self, gsm):
-        self.gsm = gsm
+    def __init__(self, settings_manager):
+        self.settings_manager = settings_manager
 
 
     def zm1041_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.inc_talked_to_zm1041_times()
+        self.settings_manager.location_manager.set_location('mortuary_f1r6')
+        self.settings_manager.inc_talked_to_zm1041_times()
 
 
     def kill_zm1041(self):
-        self.gsm.set_dead_zm1041(True)
-        self.gsm.inc_exp_custom('party', 65)
+        self.settings_manager.set_dead_zm1041(True)
+        self.settings_manager.gain_experience('party', 65)
 
 
     def set_know_bei_name(self):
-        self.gsm.set_know_bei_name(True)
+        self.settings_manager.set_know_bei_name(True)
 
 
     def r6576_action(self):
-        self.gsm.gcm.modify_property('protagonist', 'law', -1)
-        self.gsm.set_zombie_chaotic(True)
+        self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
+        self.settings_manager.set_zombie_chaotic(True)
 
 
     def r6583_action(self):
-        self.gsm.set_bei_value(1)
+        self.settings_manager.set_bei_value(1)
 
 
     def r9096_action(self):
-        self.gsm.set_bei_value(1)
+        self.settings_manager.set_bei_value(1)
 
 
     def r9097_action(self):
-        self.gsm.set_bei_value(1)
+        self.settings_manager.set_bei_value(1)
 
 
     def r9161_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_1')
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_1')
 
 
     def r9162_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_1')
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_1')
 
 
     def r9200_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_2')
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_2')
 
 
     def r9201_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_1')
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_1')
 
 
     def r9207_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_3')
-        self.gsm.set_know_xixi(True)
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_bei_3')
+        self.settings_manager.set_know_xixi(True)
 
 
     def r9208_action(self):
-        self.gsm.gcm.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_2')
-        self.gsm.gcm.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_2')
-        self.gsm.set_know_xixi(True)
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_bei_2')
+        self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_bei_2')
+        self.settings_manager.set_know_xixi(True)
 
 
     def r9209_action(self):
-        self.gsm.set_know_xixi(True)
+        self.settings_manager.set_know_xixi(True)
 
 
     def r9210_action(self):
-        self.gsm.set_know_xixi(True)
+        self.settings_manager.set_know_xixi(True)
 
 
     def get_know_bei_name(self):
-        return not self.gsm.get_know_bei_name()
+        return not self.settings_manager.get_know_bei_name()
 
 
     def r6576_condition(self):
-        return not self.gsm.get_zombie_chaotic()
+        return not self.settings_manager.get_zombie_chaotic()
 
 
     def r6577_condition(self):
-        return self.gsm.get_zombie_chaotic()
+        return self.settings_manager.get_zombie_chaotic()
 
 
     def r6578_condition(self):
-        return self.gsm.get_vaxis_exposed()
+        return self.settings_manager.get_vaxis_exposed()
 
 
     def r6579_condition(self):
-        return self.gsm.get_can_speak_with_dead() and \
-               self.gsm.get_bei_value() == 0
+        return self.settings_manager.get_can_speak_with_dead() and \
+               self.settings_manager.get_bei_value() == 0
 
 
     def r6580_condition(self):
-        return self.gsm.get_can_speak_with_dead() and \
-               self.gsm.get_bei_value() == 1
+        return self.settings_manager.get_can_speak_with_dead() and \
+               self.settings_manager.get_bei_value() == 1
 
 
     def r9109_condition(self):
-        return self.gsm.get_pharod_value() == 0
+        return self.settings_manager.get_pharod_value() == 0
 
 
     def r9145_condition(self):
-        return self.gsm.get_pharod_value() == 0
+        return self.settings_manager.get_pharod_value() == 0
 
 
     def r9187_condition(self):
-        return self.gsm.gcm.get_character_property('protagonist', 'intelligence') > 13
+        return self.settings_manager.character_manager.get_property('protagonist', 'intelligence') > 13

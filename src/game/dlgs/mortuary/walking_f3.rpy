@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.mortuary.walking_f3_logic import WalkingF3Logic
+    from game.dlgs.mortuary.walking_f3_logic import WalkingF3Logic
     walkingF3Logic = WalkingF3Logic(renpy.store.global_settings_manager)
 
 

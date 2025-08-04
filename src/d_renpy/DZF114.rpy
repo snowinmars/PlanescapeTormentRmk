@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zf114_logic import Zf114Logic
+    from game.dlgs.zf114_logic import Zf114Logic
     zf114Logic = Zf114Logic(renpy.store.global_settings_manager)
 
 
@@ -8,45 +8,59 @@ init 10 python:
 # ###
 
 
+label start_zf114_talk_first:
+    call zf114_init
+    jump todo
+label start_zf114_talk:
+    call zf114_init
+    jump todo
+label start_zf114_kill_first:
+    call zf114_init
+    jump zf114_kill_first
+label start_zf114_kill:
+    call zf114_init
+    jump zf114_kill
 label zf114_init:
+    $ zf114Logic.zf114_init()
+    scene bg LOCATION
+    show zf114_img default at center_left_down
     return
-
-
 label zf114_dispose:
+    hide zf114_img
     jump show_graphics_menu
 
 
 # s0 # say34986
-label zf114_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 330
-    SPEAKER 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер 114, вырезанный у нее на лбу. Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
+label zf114_s0:  # - # IF ~  True()
+    SPEAKER 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер «114», вырезанный у нее на лбу. Ее рот зашит, однако нитки начинают рваться и из ее губ слышится слабый стон.'
 
     menu:
-        'Итак… чем занимаешься вечером?' if zf114Logic.r34987_condition():
+        '«Итак… чем занимаешься вечером?»' if zf114Logic.r34987_condition():
             # r0 # reply34987
             $ zf114Logic.r34987_action()
             jump zf114_s1
 
-        'Итак… чем занимаешься вечером?' if zf114Logic.r35004_condition():
+        '«Итак… чем занимаешься вечером?»' if zf114Logic.r35004_condition():
             # r1 # reply35004
             jump zf114_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zf114Logic.r35005_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zf114Logic.r35005_condition():
             # r2 # reply35005
             jump zf114_s1
 
-        'Использовать на трупе свою способность История костей.' if zf114Logic.r35006_condition():
+        'Использовать на трупе свою способность «История костей».' if zf114Logic.r35006_condition():
             # r3 # reply35006
             jump zf114_s2
 
-        'Было приятно с тобой поболтать. Прощай.' if zf114Logic.r35011_condition():
+        '«Было приятно с тобой поболтать. Прощай».' if zf114Logic.r35011_condition():
             # r4 # reply35011
-            jump zf114_dispose
+            jump morte_s330  # EXTERN
 
         'Оставить труп в покое.' if zf114Logic.r35012_condition():
             # r5 # reply35012
-            jump zf114_dispose
+            jump morte_s330  # EXTERN
 
-        'Было приятно с тобой поболтать. Прощай.' if zf114Logic.r35013_condition():
+        '«Было приятно с тобой поболтать. Прощай».' if zf114Logic.r35013_condition():
             # r6 # reply35013
             jump zf114_dispose
 
@@ -54,7 +68,7 @@ label zf114_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 330
             # r7 # reply35014
             jump zf114_dispose
 
-        'Было приятно с тобой поболтать. Прощай.' if zf114Logic.r35015_condition():
+        '«Было приятно с тобой поболтать. Прощай».' if zf114Logic.r35015_condition():
             # r8 # reply35015
             jump zf114_dispose
 
@@ -64,37 +78,37 @@ label zf114_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 330
 
 
 # s1 # say34988
-label zf114_s1:  # from 0.0 0.1 0.2 # Check EXTERN ~DMORTE~ : 330
+label zf114_s1:  # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Тогда прощай.' if zf114Logic.r34989_condition():
+        '«Тогда прощай».' if zf114Logic.r34989_condition():
             # r10 # reply34989
-            jump zf114_dispose
+            jump morte_s330  # EXTERN
 
-        'Тогда прощай.' if zf114Logic.r35002_condition():
+        '«Тогда прощай».' if zf114Logic.r35002_condition():
             # r11 # reply35002
             jump zf114_dispose
 
-        'Тогда прощай.' if zf114Logic.r35003_condition():
+        '«Тогда прощай».' if zf114Logic.r35003_condition():
             # r12 # reply35003
             jump zf114_dispose
 
 
 # s2 # say35007
-label zf114_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 330
+label zf114_s2:  # from 0.3
     SPEAKER 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Тогда прощай.' if zf114Logic.r35008_condition():
+        '«Тогда прощай».' if zf114Logic.r35008_condition():
             # r13 # reply35008
-            jump zf114_dispose
+            jump morte_s330  # EXTERN
 
-        'Тогда прощай.' if zf114Logic.r35009_condition():
+        '«Тогда прощай».' if zf114Logic.r35009_condition():
             # r14 # reply35009
             jump zf114_dispose
 
-        'Тогда прощай.' if zf114Logic.r35010_condition():
+        '«Тогда прощай».' if zf114Logic.r35010_condition():
             # r15 # reply35010
             jump zf114_dispose
 
@@ -103,4 +117,45 @@ label zf114_s2:  # from 0.3 # Check EXTERN ~DMORTE~ : 330
 label zf114_s3:  # - # IF ~  False()
     SPEAKER 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
+    menu:
+
+label zf114_kill:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump zf114_dispose
+        'Убить.':
+            jump zf114_killed
+
+
+label zf114_killed:
+    $ zf114Logic.kill_zf114()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zf114s.'
+    nr 'Who is zf114?'
+    nr 'zf114 is dead, baby, zf114 is dead.'
+    jump zf114_dispose
+
+
+label zf114_kill_first:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump zf114_dispose
+        'Убить.':
+            jump zf114_killed_first
+
+
+label zf114_killed_first:
+    $ zf114Logic.kill_zf114()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zf114s.'
+    nr 'Who is zf114?'
+    nr 'zf114 is dead, baby, zf114 is dead.'
     jump zf114_dispose

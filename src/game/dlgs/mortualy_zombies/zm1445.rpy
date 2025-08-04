@@ -1,10 +1,10 @@
 init 10 python:
-    from dlgs.mortualy_zombies.zm1445_logic import Zm1445Logic
+    from game.dlgs.mortualy_zombies.zm1445_logic import Zm1445Logic
     zm1445Logic = Zm1445Logic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DZM1445.DLG
+# Original:  DLG/ZM1445.DLG
 # ###
 
 
@@ -16,7 +16,7 @@ label start_zm1445_kill:
     jump zm1445_kill
 label zm1445_init:
     $ zm1445Logic.zm1445_init()
-    scene bg mortuary1
+    scene bg DISABLED
     show zm1445_img default at center_left_down
     return
 label zm1445_dispose:
@@ -30,24 +30,24 @@ label zm1445_s0:  # - # IF ~  True()
     nr 'На лбу у него вытатуирован номер «1445», а его губы крепко сшиты.'
 
     menu:
-        'Итак… что тут у нас интересного?' if zm1445Logic.r46757_condition():
+        '«Итак… что тут у нас интересного?»' if zm1445Logic.r46757_condition():
             # r0 # reply46757
             $ zm1445Logic.r46757_action()
             jump zm1445_s1
 
-        'Итак… что тут у нас интересного?' if zm1445Logic.r46760_condition():
+        '«Итак… что тут у нас интересного?»' if zm1445Logic.r46760_condition():
             # r1 # reply46760
             jump zm1445_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm1445Logic.r46761_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm1445Logic.r46761_condition():
             # r2 # reply46761
             jump zm1445_s1
 
-        'Использовать на трупе свою способность История костей.' if zm1445Logic.r46762_condition():
+        'Использовать на трупе свою способность «История костей».' if zm1445Logic.r46762_condition():
             # r3 # reply46762
             jump zm1445_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply46765
             jump zm1445_dispose
 
@@ -61,14 +61,6 @@ label zm1445_s1:  # from 0.0 0.1 0.2
     nr 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if zm1445Logic.r46762_condition():
-            # r3 # reply46762
-            jump zm1445_s2
-
-        'Было приятно с тобой поболтать. Прощай.':
-            # r4 # reply46765
-            jump zm1445_dispose
-
         'Оставить труп в покое.':
             # r6 # reply46759
             jump zm1445_dispose
@@ -79,14 +71,6 @@ label zm1445_s2:  # from 0.3
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm1445Logic.r46761_condition():
-            # r2 # reply46761
-            jump zm1445_s1
-
-        'Было приятно с тобой поболтать. Прощай.':
-            # r4 # reply46765
-            jump zm1445_dispose
-
         'Оставить труп в покое.':
             # r7 # reply46764
             jump zm1445_dispose

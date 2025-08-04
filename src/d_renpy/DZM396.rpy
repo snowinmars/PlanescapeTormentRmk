@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zm396_logic import Zm396Logic
+    from game.dlgs.zm396_logic import Zm396Logic
     zm396Logic = Zm396Logic(renpy.store.global_settings_manager)
 
 
@@ -8,25 +8,39 @@ init 10 python:
 # ###
 
 
+label start_zm396_talk_first:
+    call zm396_init
+    jump todo
+label start_zm396_talk:
+    call zm396_init
+    jump todo
+label start_zm396_kill_first:
+    call zm396_init
+    jump zm396_kill_first
+label start_zm396_kill:
+    call zm396_init
+    jump zm396_kill
 label zm396_init:
+    $ zm396Logic.zm396_init()
+    scene bg LOCATION
+    show zm396_img default at center_left_down
     return
-
-
 label zm396_dispose:
+    hide zm396_img
     jump show_graphics_menu
 
 
 # s0 # say34931
 label zm396_s0:  # - # IF ~  HasItem("Bandage","ZM396")
-    SPEAKER 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер 396; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов… похоже, они могут пригодиться.'
+    SPEAKER 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов… похоже, они могут пригодиться.'
 
     menu:
-        'Ты не против, если я одолжу у тебя эти бинты?' if zm396Logic.r34932_condition():
+        '«Ты не против, если я одолжу у тебя эти бинты?»' if zm396Logic.r34932_condition():
             # r0 # reply34932
             $ zm396Logic.r34932_action()
             jump zm396_s1
 
-        'Ты не против, если я одолжу у тебя эти бинты?' if zm396Logic.r34935_condition():
+        '«Ты не против, если я одолжу у тебя эти бинты?»' if zm396Logic.r34935_condition():
             # r1 # reply34935
             jump zm396_s1
 
@@ -35,15 +49,15 @@ label zm396_s0:  # - # IF ~  HasItem("Bandage","ZM396")
             $ zm396Logic.r34936_action()
             jump zm396_s3
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm396Logic.r34937_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm396Logic.r34937_condition():
             # r3 # reply34937
             jump zm396_s1
 
-        'Использовать на трупе свою способность История костей.' if zm396Logic.r34940_condition():
+        'Использовать на трупе свою способность «История костей».' if zm396Logic.r34940_condition():
             # r4 # reply34940
             jump zm396_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r5 # reply34941
             jump zm396_dispose
 
@@ -93,30 +107,72 @@ label zm396_s3:  # from 0.2 1.0
 
 # s4 # say45111
 label zm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    SPEAKER 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов. На левом виске у него выбит номер 396, а его губы крепко зашиты.'
+    SPEAKER 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов. На левом виске у него выбит номер «396», а его губы крепко зашиты.'
 
     menu:
-        'Извини, что забрал те бинты. Просто мне они нужны больше, чем этим телам.' if zm396Logic.r45112_condition():
+        '«Извини, что забрал те бинты. Просто мне они нужны больше, чем этим телам».' if zm396Logic.r45112_condition():
             # r12 # reply45112
             $ zm396Logic.r45112_action()
             jump zm396_s1
 
-        'Извини, что забрал те бинты. Просто мне они нужны больше, чем этим телам.' if zm396Logic.r45113_condition():
+        '«Извини, что забрал те бинты. Просто мне они нужны больше, чем этим телам».' if zm396Logic.r45113_condition():
             # r13 # reply45113
             jump zm396_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm396Logic.r45114_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm396Logic.r45114_condition():
             # r14 # reply45114
             jump zm396_s1
 
-        'Использовать на трупе свою способность История костей.' if zm396Logic.r45115_condition():
+        'Использовать на трупе свою способность «История костей».' if zm396Logic.r45115_condition():
             # r15 # reply45115
             jump zm396_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r16 # reply45116
             jump zm396_dispose
 
         'Оставить труп в покое.':
             # r17 # reply45117
             jump zm396_dispose
+
+
+label zm396_kill:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump zm396_dispose
+        'Убить.':
+            jump zm396_killed
+
+
+label zm396_killed:
+    $ zm396Logic.kill_zm396()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm396s.'
+    nr 'Who is zm396?'
+    nr 'zm396 is dead, baby, zm396 is dead.'
+    jump zm396_dispose
+
+
+label zm396_kill_first:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump zm396_dispose
+        'Убить.':
+            jump zm396_killed_first
+
+
+label zm396_killed_first:
+    $ zm396Logic.kill_zm396()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm396s.'
+    nr 'Who is zm396?'
+    nr 'zm396 is dead, baby, zm396 is dead.'
+    jump zm396_dispose

@@ -1,10 +1,10 @@
 init 10 python:
-    from dlgs.mortualy_zombies.s748_logic import S748Logic
+    from game.dlgs.mortualy_zombies.s748_logic import S748Logic
     s748Logic = S748Logic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DS748.DLG
+# Original:  DLG/S748.DLG
 # ###
 
 
@@ -13,11 +13,11 @@ label start_s748_talk:
     jump s748_s0
 label start_s748_kill:
     call s748_init
-    jump todo
+    jump s748_kill
 label s748_init:
     $ s748Logic.s748_init()
-    show s748_img default at center_left_down
     scene bg mortuary_f3r6
+    show s748_img default at center_left_down
     return
 label s748_dispose:
     hide s748_img
@@ -25,30 +25,30 @@ label s748_dispose:
 
 
 # s0 # say35383
-label s748_s0:  # - # IF ~  True()  Manually checked EXTERN ~DMORTE~ : 384 Manually checked EXTERN ~DMORTE~ : 380 Manually checked EXTERN ~DMORTE~ : 378
-    nr 'Этот скелет — 748, судя по номеру, выбитому над бровью, — выделяется только тем, что некоторые из его зубов вставные, и сделаны из красновато-коричневого камня.'
+label s748_s0:  # - # IF ~  True()
+    nr 'Этот скелет — «748», судя по номеру, выбитому над бровью, — выделяется только тем, что некоторые из его зубов вставные, и сделаны из красновато-коричневого камня.'
     nr 'Совершенно очевидно, что они не представляют никакой ценности, иначе их бы удалили те, кто за ним смотрит.'
 
     menu:
-        'Прошу прощения, ты не видал поблизости других скелетов?' if s748Logic.r35384_condition():
+        '«Прошу прощения, ты не видал поблизости других скелетов?»' if s748Logic.r35384_condition():
             # r0 # reply35384
             $ s748Logic.r35384_action()
             jump s748_s1
 
-        'Прошу прощения, ты не видал поблизости других скелетов?' if s748Logic.r35407_condition():
+        '«Прошу прощения, ты не видал поблизости других скелетов?»' if s748Logic.r35407_condition():
             # r1 # reply35407
             jump s748_s1
 
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if s748Logic.r35408_condition():
+        '«Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать».' if s748Logic.r35408_condition():
             # r2 # reply35408
             $ s748Logic.r35408_action()
             jump s748_s1
 
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if s748Logic.r35409_condition():
+        '«Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать».' if s748Logic.r35409_condition():
             # r3 # reply35409
             jump s748_s1
 
-        'Использовать на скелете свою способность История костей.' if s748Logic.r35410_condition():
+        'Использовать на скелете свою способность «История костей».' if s748Logic.r35410_condition():
             # r4 # reply35410
             jump s748_s2
 
@@ -60,7 +60,7 @@ label s748_s0:  # - # IF ~  True()  Manually checked EXTERN ~DMORTE~ : 384 Manua
         'Попробовать вытащить скобы из суставов скелета.' if s748Logic.r35448_condition():
             # r6 # reply35448
             $ s748Logic.r35448_action()
-            jump morte_s384
+            jump morte_s384  # EXTERN
 
         'Попробовать вытащить скобы из суставов скелета.' if s748Logic.r35449_condition():
             # r7 # reply35449
@@ -86,14 +86,14 @@ label s748_s0:  # - # IF ~  True()  Manually checked EXTERN ~DMORTE~ : 384 Manua
             # r12 # reply35454
             jump s748_s6
 
-        'Как насчет этого скелета, Морт? Пойдет такое тело?' if s748Logic.r35455_condition():
+        '«Как насчет этого скелета, Морт? Пойдет такое тело?»' if s748Logic.r35455_condition():
             # r13 # reply35455
-            jump morte_s380
+            jump morte_s380  # EXTERN
 
         'Оставить скелет в покое.' if s748Logic.r35456_condition():
             # r14 # reply35456
             $ s748Logic.r35456_action()
-            jump morte_s378
+            jump morte_s378  # EXTERN
 
         'Оставить скелет в покое.' if s748Logic.r35457_condition():
             # r15 # reply35457
@@ -105,33 +105,33 @@ label s748_s0:  # - # IF ~  True()  Manually checked EXTERN ~DMORTE~ : 384 Manua
 
 
 # s1 # say35385
-label s748_s1:  # from 0.0 0.1 0.2 0.3 # Manually checked EXTERN ~DMORTE~ : 378
+label s748_s1:  # from 0.0 0.1 0.2 0.3
     nr 'Скелет не отвечает.'
 
     menu:
-        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if s748Logic.r35386_condition():
+        '«Приятно было поболтать с тобой, Костяшка. Будь здоров».' if s748Logic.r35386_condition():
             # r17 # reply35386
             $ s748Logic.r35386_action()
-            jump morte_s378
+            jump morte_s378  # EXTERN
 
-        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if s748Logic.r35405_condition():
+        '«Приятно было поболтать с тобой, Костяшка. Будь здоров».' if s748Logic.r35405_condition():
             # r18 # reply35405
             jump s748_dispose
 
-        'Приятно было поболтать с тобой, Костяшка. Будь здоров.' if s748Logic.r35406_condition():
+        '«Приятно было поболтать с тобой, Костяшка. Будь здоров».' if s748Logic.r35406_condition():
             # r19 # reply35406
             jump s748_dispose
 
 
 # s2 # say35411
-label s748_s2:  # from 0.4 # Manually checked EXTERN ~DMORTE~ : 378
+label s748_s2:  # from 0.4
     nr 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
         'Оставить скелет в покое.' if s748Logic.r35412_condition():
             # r20 # reply35412
             $ s748Logic.r35412_action()
-            jump morte_s378
+            jump morte_s378  # EXTERN
 
         'Оставить скелет в покое.' if s748Logic.r35413_condition():
             # r21 # reply35413
@@ -143,7 +143,7 @@ label s748_s2:  # from 0.4 # Manually checked EXTERN ~DMORTE~ : 378
 
 
 # s3 # say35416
-label s748_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE~ : 384 Manually checked EXTERN ~DMORTE~ : 378
+label s748_s3:  # from 0.5
     nr 'Кто-то позаботился о том, чтобы связать кости скелета кожаными ремнями, обвивающими тело на манер, напоминающий мускулы и сухожилия.'
     nr 'Ремни привязаны к железными скобам, вбитым в суставы скелета.'
     nr 'Кажется, этот скелет сослужил хорошую службу: кости растрескались, многочисленные трещины на них залиты вонючим клеем.'
@@ -152,7 +152,7 @@ label s748_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE~ : 384 Manually che
         'Попробовать вытащить скобы из суставов скелета.' if s748Logic.r35417_condition():
             # r23 # reply35417
             $ s748Logic.r35417_action()
-            jump morte_s384
+            jump morte_s384  # EXTERN
 
         'Попробовать вытащить скобы из суставов скелета.' if s748Logic.r35439_condition():
             # r24 # reply35439
@@ -166,22 +166,22 @@ label s748_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE~ : 384 Manually che
             # r26 # reply35441
             jump s748_s6
 
-        'Не против, если я возьму немного ремешков и скоб?' if s748Logic.r35442_condition():
+        '«Не против, если я возьму немного ремешков и скоб?»' if s748Logic.r35442_condition():
             # r27 # reply35442
             jump s748_s4
 
-        'Не против, если я возьму немного ремешков и скоб?' if s748Logic.r35443_condition():
+        '«Не против, если я возьму немного ремешков и скоб?»' if s748Logic.r35443_condition():
             # r28 # reply35443
             jump s748_s5
 
-        'Не против, если я возьму немного ремешков и скоб?' if s748Logic.r35444_condition():
+        '«Не против, если я возьму немного ремешков и скоб?»' if s748Logic.r35444_condition():
             # r29 # reply35444
             jump s748_s6
 
         'Оставить скелет в покое.' if s748Logic.r35445_condition():
             # r30 # reply35445
             $ s748Logic.r35445_action()
-            jump morte_s378
+            jump morte_s378  # EXTERN
 
         'Оставить скелет в покое.' if s748Logic.r35446_condition():
             # r31 # reply35446
@@ -193,27 +193,27 @@ label s748_s3:  # from 0.5 # Manually checked EXTERN ~DMORTE~ : 384 Manually che
 
 
 # s4 # say35422
-label s748_s4:  # from 0.7 0.10 3.1 3.4 # Manually checked EXTERN ~DMORTE~ : 378
+label s748_s4:  # from 0.7 0.10 3.1 3.4
     nr 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
 
     menu:
-        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка.' if s748Logic.r35423_condition():
+        '«Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка».' if s748Logic.r35423_condition():
             # r33 # reply35423
             $ s748Logic.r35423_action()
-            jump morte_s378
+            jump morte_s378  # EXTERN
 
-        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка.' if s748Logic.r35424_condition():
+        '«Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка».' if s748Logic.r35424_condition():
             # r34 # reply35424
             jump s748_dispose
 
-        'Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка.' if s748Logic.r35425_condition():
+        '«Если бы у меня был подходящий инструмент, я бы смог их вытащить… хм-м. Я еще вернусь, Костяшка».' if s748Logic.r35425_condition():
             # r35 # reply35425
             jump s748_dispose
 
         'Оставить скелет в покое.' if s748Logic.r35426_condition():
             # r36 # reply35426
             $ s748Logic.r35426_action()
-            jump morte_s378
+            jump morte_s378  # EXTERN
 
         'Оставить скелет в покое.' if s748Logic.r35427_condition():
             # r37 # reply35427
@@ -230,7 +230,7 @@ label s748_s5:  # from 0.8 0.11 3.2 3.5
     nr 'Скелет разваливается, некоторые из его костей продолжают шевелиться.'
 
     menu:
-        'Извини, Костяшка…':
+        '«Извини, Костяшка…»':
             # r39 # reply35431
             $ s748Logic.r35431_action()
             jump s748_dispose
@@ -241,14 +241,35 @@ label s748_s6:  # from 0.9 0.12 3.3 3.6
     nr 'С помощью ломика ты вырываешь скобы из суставов. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
 
     menu:
-        'Извини, Костяшка…':
+        '«Извини, Костяшка…»':
             # r40 # reply35434
             $ s748Logic.r35434_action()
             jump s748_dispose
 
 
 # s7 # say35459
-label s748_s7:  # - # IF ~  False()
+label s748_s7:  # - # IF ~  False() # orphan
     nr 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
+    jump s748_dispose
+
+
+label s748_kill:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump s748_dispose
+        'Убить.':
+            jump s748_killed
+
+
+label s748_killed:
+    $ s748Logic.kill_s748()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 's748s.'
+    nr 'Who is s748?'
+    nr 's748 is dead, baby, s748 is dead.'
     jump s748_dispose

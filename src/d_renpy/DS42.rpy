@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.s42_logic import S42Logic
+    from game.dlgs.s42_logic import S42Logic
     s42Logic = S42Logic(renpy.store.global_settings_manager)
 
 
@@ -8,38 +8,52 @@ init 10 python:
 # ###
 
 
+label start_s42_talk_first:
+    call s42_init
+    jump todo
+label start_s42_talk:
+    call s42_init
+    jump todo
+label start_s42_kill_first:
+    call s42_init
+    jump s42_kill_first
+label start_s42_kill:
+    call s42_init
+    jump s42_kill
 label s42_init:
+    $ s42Logic.s42_init()
+    scene bg LOCATION
+    show s42_img default at center_left_down
     return
-
-
 label s42_dispose:
+    hide s42_img
     jump show_graphics_menu
 
 
 # s0 # say6595
-label s42_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 110 Check EXTERN ~DMORTE~ : 111
-    SPEAKER 'Скелет поворачивается к тебе. На лбу у него высечено число 42; многие его кости, преимущественно челюсти и суставы, обмотаны кожаными ремешками. Его тело скрывает черный комбинезон.'
+label s42_s0:  # - # IF ~  True()
+    SPEAKER 'Скелет поворачивается к тебе. На лбу у него высечено число «42»; многие его кости, преимущественно челюсти и суставы, обмотаны кожаными ремешками. Его тело скрывает черный комбинезон.'
 
     menu:
-        '*Кажется*, именно этот мертвец был в моем воспоминании…' if s42Logic.r6612_condition():
+        '«*Кажется*, именно этот мертвец был в моем воспоминании…»' if s42Logic.r6612_condition():
             # r0 # reply6612
             jump s42_s1
 
-        'Прошу прощения, ты не видал поблизости других скелетов?':
+        '«Прошу прощения, ты не видал поблизости других скелетов?»':
             # r1 # reply6613
             $ s42Logic.r6613_action()
             jump s42_s1
 
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if s42Logic.r6614_condition():
+        '«Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать».' if s42Logic.r6614_condition():
             # r2 # reply6614
             $ s42Logic.r6614_action()
             jump s42_s1
 
-        'Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать.' if s42Logic.r6615_condition():
+        '«Один вопрос: зачем комбинезон? То есть, я хочу сказать: не похоже, что у тебя есть что скрывать».' if s42Logic.r6615_condition():
             # r3 # reply6615
             jump s42_s1
 
-        'Использовать на трупе свою способность История костей.' if s42Logic.r6616_condition():
+        'Использовать на трупе свою способность «История костей».' if s42Logic.r6616_condition():
             # r4 # reply6616
             jump s42_s2
 
@@ -51,7 +65,7 @@ label s42_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 110 Check EXTERN ~DMO
         'Попробовать вытащить скобы из суставов скелета.' if s42Logic.r6618_condition():
             # r6 # reply6618
             $ s42Logic.r6618_action()
-            jump s42_dispose
+            jump morte_s110  # EXTERN
 
         'Попробовать вытащить скобы из суставов скелета.' if s42Logic.r6619_condition():
             # r7 # reply6619
@@ -61,13 +75,13 @@ label s42_s0:  # - # IF ~  True()  Check EXTERN ~DMORTE~ : 110 Check EXTERN ~DMO
             # r8 # reply6620
             jump s42_s6
 
-        'Эй, а как насчет этого скелета, Морт? Пойдет такое тело?' if s42Logic.r6621_condition():
+        '«Эй, а как насчет этого скелета, Морт? Пойдет такое тело?»' if s42Logic.r6621_condition():
             # r9 # reply6621
             jump s42_s1
 
         'Оставить скелет в покое.' if s42Logic.r6622_condition():
             # r10 # reply6622
-            jump s42_dispose
+            jump morte_s111  # EXTERN
 
         'Оставить скелет в покое.' if s42Logic.r6623_condition():
             # r11 # reply6623
@@ -91,7 +105,7 @@ label s42_s1:  # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
             # r14 # reply6626
             jump s42_s9
 
-        'Э-э…':
+        '«Э-э…»':
             # r15 # reply6627
             jump s42_s10
 
@@ -101,14 +115,14 @@ label s42_s1:  # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
 
 
 # s2 # say6597
-label s42_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 111
+label s42_s2:  # from 0.4
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
         'Оставить скелет в покое.' if s42Logic.r6629_condition():
             # r17 # reply6629
             $ s42Logic.r6629_action()
-            jump s42_dispose
+            jump morte_s111  # EXTERN
 
         'Оставить скелет в покое.' if s42Logic.r6630_condition():
             # r18 # reply6630
@@ -120,31 +134,31 @@ label s42_s2:  # from 0.4 # Check EXTERN ~DMORTE~ : 111
 
 
 # s3 # say6598
-label s42_s3:  # from 0.5 10.2 # Check EXTERN ~DMORTE~ : 110 Check EXTERN ~DMORTE~ : 111
+label s42_s3:  # from 0.5 10.2
     SPEAKER 'Удивительно, как этот мешок костей еще не развалился. Его пожелтевшие кости покрыты гипсом и несколькими слоями вонючего клея… В просветах, где видны кости, ты различаешь сотни мелких трещин. Хотя кто-то позаботился о том, чтобы перемотать скелет кожаными ремешками и соединить его кости скобами в суставах, ремешки уже износились, а скобы вот-вот выпадут.'
 
     menu:
-        '*Кажется*, именно этот мертвец был в моем воспоминании…' if s42Logic.r63495_condition():
+        '«*Кажется*, именно этот мертвец был в моем воспоминании…»' if s42Logic.r63495_condition():
             # r20 # reply63495
             jump s42_s1
 
         'Попробовать вытащить скобы из суставов скелета.' if s42Logic.r6632_condition():
             # r21 # reply6632
             $ s42Logic.r6632_action()
-            jump s42_dispose
+            jump morte_s110  # EXTERN
 
         'Попробовать вытащить скобы из суставов скелета.' if s42Logic.r6633_condition():
             # r22 # reply6633
             jump s42_s6
 
-        'Не против, если я возьму немного ремешков и скоб?' if s42Logic.r6634_condition():
+        '«Не против, если я возьму немного ремешков и скоб?»' if s42Logic.r6634_condition():
             # r23 # reply6634
             jump s42_s1
 
         'Оставить скелет в покое.' if s42Logic.r6635_condition():
             # r24 # reply6635
             $ s42Logic.r6635_action()
-            jump s42_dispose
+            jump morte_s111  # EXTERN
 
         'Оставить скелет в покое.' if s42Logic.r6636_condition():
             # r25 # reply6636
@@ -189,7 +203,7 @@ label s42_s6:  # from 0.7 0.8 3.2
     SPEAKER 'Скобы свободно выскальзывают из суставов скелета. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
 
     menu:
-        'Прости, Костяшка…':
+        '«Прости, Костяшка…»':
             # r31 # reply6642
             $ s42Logic.r6642_action()
             jump s42_dispose
@@ -239,11 +253,11 @@ label s42_s10:  # from 1.2 12.2
     SPEAKER 'Руки скелета опускаются по швам.'
 
     menu:
-        'Э… привет?' if s42Logic.r6648_condition():
+        '«Э… привет?»' if s42Logic.r6648_condition():
             # r37 # reply6648
             jump s42_s12
 
-        'Э… привет?' if s42Logic.r6649_condition():
+        '«Э… привет?»' if s42Logic.r6649_condition():
             # r38 # reply6649
             jump s42_s13
 
@@ -281,7 +295,7 @@ label s42_s12:  # from 10.0
             # r43 # reply6654
             jump s42_s9
 
-        'Э-э…':
+        '«Э-э…»':
             # r44 # reply6655
             jump s42_s10
 
@@ -291,10 +305,10 @@ label s42_s12:  # from 10.0
 
 
 # s13 # say6608
-label s42_s13:  # from 10.1 # Check EXTERN ~DMORTE~ : 112
+label s42_s13:  # from 10.1
     SPEAKER 'Скелет снова скрещивает руки на груди.'
 
-    jump s42_dispose
+    jump morte_s112  # EXTERN
 
 # s14 # say58983
 label s42_s14:  # from 8.0 11.0
@@ -305,3 +319,45 @@ label s42_s14:  # from 8.0 11.0
             # r46 # reply58984
             $ s42Logic.r58984_action()
             jump s42_dispose
+
+
+label s42_kill:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump s42_dispose
+        'Убить.':
+            jump s42_killed
+
+
+label s42_killed:
+    $ s42Logic.kill_s42()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 's42s.'
+    nr 'Who is s42?'
+    nr 's42 is dead, baby, s42 is dead.'
+    jump s42_dispose
+
+
+label s42_kill_first:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump s42_dispose
+        'Убить.':
+            jump s42_killed_first
+
+
+label s42_killed_first:
+    $ s42Logic.kill_s42()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 's42s.'
+    nr 'Who is s42?'
+    nr 's42 is dead, baby, s42 is dead.'
+    jump s42_dispose

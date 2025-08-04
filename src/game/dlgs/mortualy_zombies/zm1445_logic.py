@@ -1,34 +1,34 @@
 class Zm1445Logic:
-    def __init__(self, gsm):
-        self.gsm = gsm
+    def __init__(self, settings_manager):
+        self.settings_manager = settings_manager
 
 
     def zm1445_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.inc_talked_to_zm1445_times()
+        self.settings_manager.location_manager.set_location('DISABLED') # pragma: no cover
+        self.settings_manager.inc_talked_to_zm1445_times() # pragma: no cover
 
 
     def kill_zm1445(self):
-        self.gsm.set_dead_zm1445(True)
-        self.gsm.inc_exp_custom('party', 65)
+        self.settings_manager.set_dead_zm1445(True)
+        self.settings_manager.gain_experience('party', 65)
 
 
     def r46757_action(self):
-        self.gsm.gcm.modify_property('protagonist', 'law', -1)
-        self.gsm.set_zombie_chaotic(True)
+        self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
+        self.settings_manager.set_zombie_chaotic(True)
 
 
     def r46757_condition(self):
-        return not self.gsm.get_zombie_chaotic()
+        return not self.settings_manager.get_zombie_chaotic()
 
 
     def r46760_condition(self):
-        return self.gsm.get_zombie_chaotic()
+        return self.settings_manager.get_zombie_chaotic()
 
 
     def r46761_condition(self):
-        return self.gsm.get_vaxis_exposed()
+        return self.settings_manager.get_vaxis_exposed()
 
 
     def r46762_condition(self):
-        return self.gsm.get_can_speak_with_dead()
+        return self.settings_manager.get_can_speak_with_dead()

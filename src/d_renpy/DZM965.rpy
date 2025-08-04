@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zm965_logic import Zm965Logic
+    from game.dlgs.zm965_logic import Zm965Logic
     zm965Logic = Zm965Logic(renpy.store.global_settings_manager)
 
 
@@ -8,43 +8,57 @@ init 10 python:
 # ###
 
 
+label start_zm965_talk_first:
+    call zm965_init
+    jump todo
+label start_zm965_talk:
+    call zm965_init
+    jump todo
+label start_zm965_kill_first:
+    call zm965_init
+    jump zm965_kill_first
+label start_zm965_kill:
+    call zm965_init
+    jump zm965_kill
 label zm965_init:
+    $ zm965Logic.zm965_init()
+    scene bg LOCATION
+    show zm965_img default at center_left_down
     return
-
-
 label zm965_dispose:
+    hide zm965_img
     jump show_graphics_menu
 
 
 # s0 # say34920
-label zm965_s0:  # - # IF ~  NearbyDialog("Dmorte")  Check EXTERN ~DMORTE~ : 477
-    SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.'
+label zm965_s0:  # - # IF ~  NearbyDialog("Dmorte")
+    SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
-    jump zm965_dispose
+    jump morte_s477  # EXTERN
 
 # s1 # say34922
 label zm965_s1:  # - # IF ~  !NearbyDialog("Dmorte")
-    SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер 965. При твоем приближении он останавливается и пялится на тебя.'
+    SPEAKER 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу. На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
     menu:
-        'Итак… почему ты ходишь вдоль треугольника?' if zm965Logic.r34923_condition():
+        '«Итак… почему ты ходишь вдоль треугольника?»' if zm965Logic.r34923_condition():
             # r0 # reply34923
             $ zm965Logic.r34923_action()
             jump zm965_s2
 
-        'Итак… почему ты ходишь вдоль треугольника?' if zm965Logic.r45070_condition():
+        '«Итак… почему ты ходишь вдоль треугольника?»' if zm965Logic.r45070_condition():
             # r1 # reply45070
             jump zm965_s2
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm965Logic.r45071_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm965Logic.r45071_condition():
             # r2 # reply45071
             jump zm965_s2
 
-        'Использовать на трупе свою способность История костей.' if zm965Logic.r45072_condition():
+        'Использовать на трупе свою способность «История костей».' if zm965Logic.r45072_condition():
             # r3 # reply45072
             jump zm965_s3
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply45073
             jump zm965_dispose
 
@@ -71,3 +85,45 @@ label zm965_s3:  # from 1.3
         'Оставить труп в покое.':
             # r7 # reply45075
             jump zm965_dispose
+
+
+label zm965_kill:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump zm965_dispose
+        'Убить.':
+            jump zm965_killed
+
+
+label zm965_killed:
+    $ zm965Logic.kill_zm965()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm965s.'
+    nr 'Who is zm965?'
+    nr 'zm965 is dead, baby, zm965 is dead.'
+    jump zm965_dispose
+
+
+label zm965_kill_first:
+    nr 'Todo.'
+
+    menu:
+        'Уйти.':
+            jump zm965_dispose
+        'Убить.':
+            jump zm965_killed_first
+
+
+label zm965_killed_first:
+    $ zm965Logic.kill_zm965()
+    nr 'Whose motorcycle is this?'
+    nr 'Its a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm965s.'
+    nr 'Who is zm965?'
+    nr 'zm965 is dead, baby, zm965 is dead.'
+    jump zm965_dispose

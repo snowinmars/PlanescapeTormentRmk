@@ -1,24 +1,28 @@
 class CopearcLogic:
-    def __init__(self, gsm):
-        self.gsm = gsm
+    def __init__(self, settings_manager):
+        self.settings_manager = settings_manager
+
+
+    def copearc_init(self):
+        self.settings_manager.inc_talked_to_copper_earring_closed_times()
 
 
     def r46725_action(self):
-        self.gsm.inc_exp_custom('party', 250)
+        self.settings_manager.gain_experience('party', 250)
 
 
     def r46728_action(self):
-        self.gsm.inc_exp_custom('party', 250)
+        self.settings_manager.gain_experience('party', 250)
 
 
     def r46733_action(self):
-        self.gsm.set_has_copper_earring_closed(False)
-        self.gsm.set_has_copper_earring_opened(True)
+        self.settings_manager.set_has_copper_earring_closed(False)
+        self.settings_manager.set_has_copper_earring_opened(True)
 
 
     def r46725_condition(self):
-        return self.gsm.get_know_copper_earring_secret()
+        return self.settings_manager.get_know_copper_earring_secret()
 
 
     def r46728_condition(self):
-        return self.gsm.get_know_copper_earring_secret()
+        return self.settings_manager.get_know_copper_earring_secret()

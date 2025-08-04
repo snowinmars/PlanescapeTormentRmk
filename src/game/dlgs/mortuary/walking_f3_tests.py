@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.walking_f3_logic import WalkingF3Logic
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.walking_f3_logic import WalkingF3Logic
 
 class WalkingF3LogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = WalkingF3Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -20,7 +20,7 @@ class WalkingF3LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf3r4_visit()
+            logic.walk_to_mortuaryf3r4_visit
         )
 
 
@@ -30,7 +30,7 @@ class WalkingF3LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf3r6_visit()
+            logic.walk_to_mortuaryf3r6_visit
         )
 
 
@@ -40,7 +40,7 @@ class WalkingF3LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf3r8_visit()
+            logic.walk_to_mortuaryf3r8_visit
         )
 
 
@@ -50,7 +50,7 @@ class WalkingF3LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf3r2_visit()
+            logic.walk_to_mortuaryf3r2_visit
         )
 
 
@@ -58,8 +58,8 @@ class WalkingF3LogicTest(LogicTest):
         logic = WalkingF3Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_prybar(),
-            lambda: logic.walk_mortuaryf3r8_pick_prybar()
+            self.settings_manager.get_has_prybar,
+            logic.walk_mortuaryf3r8_pick_prybar
         )
 
 
@@ -67,16 +67,16 @@ class WalkingF3LogicTest(LogicTest):
         logic = WalkingF3Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_dustman_request(),
-            lambda: logic.walk_mortuaryf3r8_pick_dustman_request()
+            self.settings_manager.get_has_dustman_request,
+            logic.walk_mortuaryf3r8_pick_dustman_request
         )
 
     def test_walk_mortuaryf3r8_pick_needle(self):
         logic = WalkingF3Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_needle(),
-            lambda: logic.walk_mortuaryf3r8_pick_needle()
+            self.settings_manager.get_has_needle,
+            logic.walk_mortuaryf3r8_pick_needle
         )
 
 
@@ -84,8 +84,8 @@ class WalkingF3LogicTest(LogicTest):
         logic = WalkingF3Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_mortuary_key(),
-            lambda: logic.walk_mortuaryf3r8_pick_mortuary_key()
+            self.settings_manager.get_has_mortuary_key,
+            logic.walk_mortuaryf3r8_pick_mortuary_key
         )
 
 
@@ -93,6 +93,6 @@ class WalkingF3LogicTest(LogicTest):
         logic = WalkingF3Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_has_mortuary_task_list(),
-            lambda: logic.walk_mortuaryf3r8_pick_mortuary_task_list()
+            self.settings_manager.get_has_mortuary_task_list,
+            logic.walk_mortuaryf3r8_pick_mortuary_task_list
         )
