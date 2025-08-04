@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zm506_logic import Zm506Logic
+    from game.dlgs.zm506_logic import Zm506Logic
     zm506Logic = Zm506Logic(renpy.store.global_settings_manager)
 
 
@@ -8,32 +8,46 @@ init 10 python:
 # ###
 
 
+label start_zm506_talk_first:
+    call zm506_init
+    jump todo
+label start_zm506_talk:
+    call zm506_init
+    jump todo
+label start_zm506_kill_first:
+    call zm506_init
+    jump zm506_kill_first
+label start_zm506_kill:
+    call zm506_init
+    jump zm506_kill
 label zm506_init:
+    $ zm506Logic.zm506_init()
+    scene bg LOCATION
+    show zm506_img default at center_left_down
     return
-
-
 label zm506_dispose:
+    hide zm506_img
     jump show_graphics_menu
 
 
 # s0 # say45419
 label zm506_s0:  # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
-    SPEAKER 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер 506 вышит у него на лбу… и на боку шеи… и на правой руке… В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
+    SPEAKER 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке… В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
 
     menu:
         'Осмотреть швы.' if zm506Logic.r45420_condition():
             # r0 # reply45420
             jump zm506_s3
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm506Logic.r45421_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm506Logic.r45421_condition():
             # r1 # reply45421
             jump zm506_s1
 
-        'Использовать на трупе свою способность История костей.' if zm506Logic.r45422_condition():
+        'Использовать на трупе свою способность «История костей».' if zm506Logic.r45422_condition():
             # r2 # reply45422
             jump zm506_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r3 # reply45423
             jump zm506_dispose
 
@@ -72,7 +86,7 @@ label zm506_s3:  # from 0.0
             $ zm506Logic.r45480_action()
             jump zm506_s4
 
-        'Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь.' if zm506Logic.r45481_condition():
+        '«Хм-м. Возможно, здесь есть что-нибудь, чем я смог бы срезать нитку… Я еще вернусь».' if zm506Logic.r45481_condition():
             # r8 # reply45481
             jump zm506_dispose
 
@@ -87,15 +101,15 @@ label zm506_s3:  # from 0.0
 
 # s4 # say45428
 label zm506_s4:  # from 3.0
-    SPEAKER 'Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер 78.'
+    SPEAKER 'Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер «78».'
 
     menu:
-        'Похоже, у тебя два разных обозначения, труп.' if zm506Logic.r45484_condition():
+        '«Похоже, у тебя два разных обозначения, труп».' if zm506Logic.r45484_condition():
             # r11 # reply45484
             $ zm506Logic.r45484_action()
             jump zm506_s1
 
-        'Похоже, у тебя два разных обозначения, труп.' if zm506Logic.r45496_condition():
+        '«Похоже, у тебя два разных обозначения, труп».' if zm506Logic.r45496_condition():
             # r12 # reply45496
             jump zm506_s1
 
@@ -110,30 +124,72 @@ label zm506_s4:  # from 3.0
 
 # s5 # say45429
 label zm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
-    SPEAKER 'Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер 506, в месте, где кожа отвалилась ото лба, на кости выбит номер 78.'
+    SPEAKER 'Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер «506», в месте, где кожа отвалилась ото лба, на кости выбит номер «78».'
 
     menu:
-        'Похоже, у тебя два разных обозначения, труп.' if zm506Logic.r45502_condition():
+        '«Похоже, у тебя два разных обозначения, труп».' if zm506Logic.r45502_condition():
             # r15 # reply45502
             $ zm506Logic.r45502_action()
             jump zm506_s1
 
-        'Похоже, у тебя два разных обозначения, труп.' if zm506Logic.r45508_condition():
+        '«Похоже, у тебя два разных обозначения, труп».' if zm506Logic.r45508_condition():
             # r16 # reply45508
             jump zm506_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm506Logic.r45510_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm506Logic.r45510_condition():
             # r17 # reply45510
             jump zm506_s1
 
-        'Использовать на трупе свою способность История костей.' if zm506Logic.r45512_condition():
+        'Использовать на трупе свою способность «История костей».' if zm506Logic.r45512_condition():
             # r18 # reply45512
             jump zm506_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r19 # reply45513
             jump zm506_dispose
 
         'Оставить зомби в покое.':
             # r20 # reply45514
             jump zm506_dispose
+
+
+label zm506_kill:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm506_dispose
+        'Убить.':
+            jump zm506_killed
+
+
+label zm506_killed:
+    $ zm506Logic.kill_zm506()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm506's.'
+    nr 'Who is zm506?'
+    nr 'zm506 is dead, baby, zm506 is dead.'
+    jump zm506_dispose
+
+
+label zm506_kill_first:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm506_dispose
+        'Убить.':
+            jump zm506_killed_first
+
+
+label zm506_killed_first:
+    $ zm506Logic.kill_zm506()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm506's.'
+    nr 'Who is zm506?'
+    nr 'zm506 is dead, baby, zm506 is dead.'
+    jump zm506_dispose

@@ -1,5 +1,5 @@
 ﻿init 10 python:
-    from dlgs.mortuary.morte_logic import MorteLogic
+    from game.dlgs.mortuary.morte_logic import MorteLogic
     morteLogic = MorteLogic(renpy.store.global_settings_manager)
 
 

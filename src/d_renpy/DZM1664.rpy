@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zm1664_logic import Zm1664Logic
+    from game.dlgs.zm1664_logic import Zm1664Logic
     zm1664Logic = Zm1664Logic(renpy.store.global_settings_manager)
 
 
@@ -8,17 +8,31 @@ init 10 python:
 # ###
 
 
+label start_zm1664_talk_first:
+    call zm1664_init
+    jump todo
+label start_zm1664_talk:
+    call zm1664_init
+    jump todo
+label start_zm1664_kill_first:
+    call zm1664_init
+    jump zm1664_kill_first
+label start_zm1664_kill:
+    call zm1664_init
+    jump zm1664_kill
 label zm1664_init:
+    $ zm1664Logic.zm1664_init()
+    scene bg LOCATION
+    show zm1664_img default at center_left_down
     return
-
-
 label zm1664_dispose:
+    hide zm1664_img
     jump show_graphics_menu
 
 
 # s0 # say47002
 label zm1664_s0:  # from 5.0 # IF ~  True()
-    SPEAKER 'Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно. На лбу виден недавно вышитый номер 1664. Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
+    SPEAKER 'Этот громадный труп тихо стоит в углу комнаты, лицом к стене. Похоже, раньше это был крупный мужчина в расцвете лет и, судя по состоянию тела, умер он совсем недавно. На лбу виден недавно вышитый номер «1664». Кажется, труп служит в качестве библиотекаря: в руках он несет огромную стопку книг.'
 
     menu:
         'Осмотреть книги.' if zm1664Logic.r47003_condition():
@@ -29,15 +43,15 @@ label zm1664_s0:  # from 5.0 # IF ~  True()
             # r1 # reply47004
             jump zm1664_s6
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm1664Logic.r47005_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm1664Logic.r47005_condition():
             # r2 # reply47005
             jump zm1664_s1
 
-        'Использовать на трупе свою способность История костей.' if zm1664Logic.r47006_condition():
+        'Использовать на трупе свою способность «История костей».' if zm1664Logic.r47006_condition():
             # r3 # reply47006
             jump zm1664_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply47007
             jump zm1664_dispose
 
@@ -106,10 +120,52 @@ label zm1664_s6:  # from 0.1
     SPEAKER 'Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Ты снова просматриваешь тексты, но больше ничего не находишь.'
 
     menu:
-        'И как это тебя угораздило стать библиотекарем? Другие места были заняты?':
+        '«И как это тебя угораздило стать библиотекарем? Другие места были заняты?»':
             # r12 # reply47022
             jump zm1664_s1
 
         'Оставить зомби в покое.':
             # r13 # reply47023
             jump zm1664_dispose
+
+
+label zm1664_kill:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm1664_dispose
+        'Убить.':
+            jump zm1664_killed
+
+
+label zm1664_killed:
+    $ zm1664Logic.kill_zm1664()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm1664's.'
+    nr 'Who is zm1664?'
+    nr 'zm1664 is dead, baby, zm1664 is dead.'
+    jump zm1664_dispose
+
+
+label zm1664_kill_first:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm1664_dispose
+        'Убить.':
+            jump zm1664_killed_first
+
+
+label zm1664_killed_first:
+    $ zm1664Logic.kill_zm1664()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm1664's.'
+    nr 'Who is zm1664?'
+    nr 'zm1664 is dead, baby, zm1664 is dead.'
+    jump zm1664_dispose

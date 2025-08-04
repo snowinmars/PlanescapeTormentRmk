@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.morte_logic import MorteLogic
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.morte_logic import MorteLogic
 
 class MorteLogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = MorteLogic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -87,7 +87,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r34993_action()
         )
@@ -140,7 +140,7 @@ class MorteLogicTest(LogicTest):
         delta = -3
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r4678_action()
         )
@@ -153,7 +153,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r4679_action()
         )
@@ -166,7 +166,7 @@ class MorteLogicTest(LogicTest):
         delta = 3
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r4682_action()
         )
@@ -175,25 +175,25 @@ class MorteLogicTest(LogicTest):
     def test_r4687_action(self):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
-        propLaw = 'law'
-        propGood = 'good'
-        deltaLaw = 1
-        deltaGood = 1
+        prop_law = 'law'
+        prop_good = 'good'
+        delta_law = 1
+        delta_good = 1
 
-        lawBefore = self.settings_manager.gcm.get_character_property(who, propLaw)
-        goodBefore = self.settings_manager.gcm.get_character_property(who, propGood)
-
-        logic.r4687_action()
-        lawAfter = self.settings_manager.gcm.get_character_property(who, propLaw)
-        goodAfter = self.settings_manager.gcm.get_character_property(who, propGood)
-        self.assertEqual(lawBefore + deltaLaw, lawAfter)
-        self.assertEqual(goodBefore + deltaGood, goodAfter)
+        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
 
         logic.r4687_action()
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, propLaw)
-        goodAfterOnce = self.settings_manager.gcm.get_character_property(who, propGood)
-        self.assertEqual(lawAfter, lawAfterOnce)
-        self.assertEqual(goodAfter, goodAfterOnce)
+        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        logic.r4687_action()
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        self.assertEqual(law_after, law_after_once)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r4693_action(self):
@@ -213,7 +213,7 @@ class MorteLogicTest(LogicTest):
         delta = -3
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r4695_action()
         )
@@ -226,7 +226,7 @@ class MorteLogicTest(LogicTest):
         delta = 3
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r4699_action()
         )
@@ -239,7 +239,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35396_action()
         )
@@ -257,21 +257,21 @@ class MorteLogicTest(LogicTest):
     def test_r64535_action(self):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
-        propExp = 'experience'
-        propLooks = 'looks_like'
+        prop_exp = 'experience'
+        prop_looks = 'looks_like'
         delta = 500
-        targetLooks = 'zombie'
+        target_looks = 'zombie'
 
-        expBefore = self.settings_manager.gcm.get_character_property(who, propExp)
-        looksBefore = self.settings_manager.gcm.get_character_property(who, propLooks)
-        self.assertNotEqual(looksBefore, targetLooks)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop_exp)
+        looks_before = self.settings_manager.character_manager.get_property(who, prop_looks)
+        self.assertNotEqual(looks_before, target_looks)
 
         logic.r64535_action()
 
-        expAfter = self.settings_manager.gcm.get_character_property(who, propExp)
-        looksAfter = self.settings_manager.gcm.get_character_property(who, propLooks)
-        self.assertEqual(looksAfter, targetLooks)
-        self.assertEqual(expBefore + delta, expAfter)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop_exp)
+        looks_after = self.settings_manager.character_manager.get_property(who, prop_looks)
+        self.assertEqual(looks_after, target_looks)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r64534_action(self):
@@ -279,15 +279,15 @@ class MorteLogicTest(LogicTest):
         who = 'protagonist'
         prop = 'looks_like'
         delta = 500
-        targetLooks = 'zombie'
+        target_looks = 'zombie'
 
-        looksBefore = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertNotEqual(looksBefore, targetLooks)
+        looks_before = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertNotEqual(looks_before, target_looks)
 
         logic.r64534_action()
 
-        looksAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(looksAfter, targetLooks)
+        looks_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(looks_after, target_looks)
 
 
     def test_r3474_action(self):
@@ -307,7 +307,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r6658_action()
         )
@@ -320,7 +320,7 @@ class MorteLogicTest(LogicTest):
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r6659_action()
         )
@@ -333,7 +333,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35319_action()
         )
@@ -346,7 +346,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35342_action()
         )
@@ -359,7 +359,7 @@ class MorteLogicTest(LogicTest):
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35360_action()
         )
@@ -372,7 +372,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35473_action()
         )
@@ -385,7 +385,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35496_action()
         )
@@ -398,7 +398,7 @@ class MorteLogicTest(LogicTest):
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35514_action()
         )
@@ -429,7 +429,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35550_action()
         )
@@ -442,7 +442,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35573_action()
         )
@@ -455,7 +455,7 @@ class MorteLogicTest(LogicTest):
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35591_action()
         )
@@ -486,7 +486,7 @@ class MorteLogicTest(LogicTest):
         delta = -1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35419_action()
         )
@@ -499,7 +499,7 @@ class MorteLogicTest(LogicTest):
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r35437_action()
         )
@@ -509,28 +509,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
-        targetValue = 12
+        target_value = 12
 
         self.settings_manager.set_42_secret(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r6665_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r6665_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r6665_condition())
 
         self.settings_manager.set_42_secret(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r6665_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r6665_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertTrue(logic.r6665_condition())
 
 
@@ -538,28 +538,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 13
+        target_value = 13
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35344_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35344_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35344_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertTrue(logic.r35344_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35344_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35344_condition())
 
 
@@ -567,28 +567,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 12
+        target_value = 12
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35352_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35352_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35352_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35352_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35352_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertTrue(logic.r35352_condition())
 
 
@@ -623,28 +623,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 13
+        target_value = 13
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35421_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35421_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35421_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertTrue(logic.r35421_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35421_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35421_condition())
 
 
@@ -652,28 +652,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 12
+        target_value = 12
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35429_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35429_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35429_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35429_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35429_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertTrue(logic.r35429_condition())
 
 
@@ -708,28 +708,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 13
+        target_value = 13
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35498_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35498_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35498_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertTrue(logic.r35498_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35498_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35498_condition())
 
 
@@ -737,28 +737,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 12
+        target_value = 12
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35506_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35506_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35506_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35506_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35506_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertTrue(logic.r35506_condition())
 
 
@@ -793,28 +793,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 13
+        target_value = 13
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35575_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35575_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35575_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertTrue(logic.r35575_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35575_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35575_condition())
 
 
@@ -822,28 +822,28 @@ class MorteLogicTest(LogicTest):
         logic = MorteLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'strength'
-        targetValue = 12
+        target_value = 12
 
         self.settings_manager.set_has_prybar(True)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35583_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35583_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertFalse(logic.r35583_condition())
 
         self.settings_manager.set_has_prybar(False)
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue - 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value - 1)
         self.assertFalse(logic.r35583_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue)
+        self.settings_manager.character_manager.set_property(who, prop, target_value)
         self.assertFalse(logic.r35583_condition())
 
-        self.settings_manager.gcm.set_property(who, prop, targetValue + 1)
+        self.settings_manager.character_manager.set_property(who, prop, target_value + 1)
         self.assertTrue(logic.r35583_condition())
 
 
@@ -907,4 +907,4 @@ class MorteLogicTest(LogicTest):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

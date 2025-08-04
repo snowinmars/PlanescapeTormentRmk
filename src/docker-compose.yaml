@@ -1,0 +1,14 @@
+services:
+  planescape-torment-rmk-tests:
+    image: planescape-torment-rmk-tests
+    hostname: planescape-torment-rmk-tests
+    container_name: planescape-torment-rmk-tests
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+      - ./htmlcov:/app/htmlcov
+    command: >
+      sh -c "coverage run -m unittest discover -s /app -p '*_tests.py'
+      && coverage html"

@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.n1201_logic import N1201Logic
+    from game.dlgs.n1201_logic import N1201Logic
     n1201Logic = N1201Logic(renpy.store.global_settings_manager)
 
 
@@ -8,11 +8,25 @@ init 10 python:
 # ###
 
 
+label start_n1201_talk_first:
+    call n1201_init
+    jump todo
+label start_n1201_talk:
+    call n1201_init
+    jump todo
+label start_n1201_kill_first:
+    call n1201_init
+    jump n1201_kill_first
+label start_n1201_kill:
+    call n1201_init
+    jump n1201_kill
 label n1201_init:
+    $ n1201Logic.n1201_init()
+    scene bg LOCATION
+    show n1201_img default at center_left_down
     return
-
-
 label n1201_dispose:
+    hide n1201_img
     jump show_graphics_menu
 
 
@@ -146,3 +160,45 @@ label n1201_s5:  # from 4.0
             # r19 # reply45025
             $ n1201Logic.r45025_action()
             jump n1201_dispose
+
+
+label n1201_kill:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump n1201_dispose
+        'Убить.':
+            jump n1201_killed
+
+
+label n1201_killed:
+    $ n1201Logic.kill_n1201()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'n1201's.'
+    nr 'Who is n1201?'
+    nr 'n1201 is dead, baby, n1201 is dead.'
+    jump n1201_dispose
+
+
+label n1201_kill_first:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump n1201_dispose
+        'Убить.':
+            jump n1201_killed_first
+
+
+label n1201_killed_first:
+    $ n1201Logic.kill_n1201()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'n1201's.'
+    nr 'Who is n1201?'
+    nr 'n1201 is dead, baby, n1201 is dead.'
+    jump n1201_dispose

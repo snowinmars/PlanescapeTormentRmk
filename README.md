@@ -1,32 +1,31 @@
 # PlanescapeTormentRmk
 Rewriting Planescape:Torment on Renpy. I love this game.
 
-Contact me via telegram @snowinmars
+Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`, but I almost do not read it.
+
+All the stuff is under GNU/GPLv3
+
 
 ## How to run
 
-Import as Renpy project. Run.
+Run as Renpy project.
 
-## Test
 
-Python is a runtime trash, so I need to handle it properly.
+## How to dev
 
-Each rpy should not contain any logic. Each rpy should inject a python class with logic. Each python logic class should be 100% covered with tests.
+Ensure that `.coveragerc` is working: you should not run tests from omitted paths.
 
-Run them with:
+- Add stuff you want
+- `cd /src`
+- `python ./build.py` - regenerate `src/game/engine_data/settings/generated.py` and `src/d_renpy/*`
+- `docker compose up` - test all the stuff you wrote, all tests should end succeessfully
+- Open the `src\htmlcov\index.html` in browser. Make sure that coverage is at least 99%. Python is a runtime trash
 
-- `cd /src/game`
-- `pip install coverage`
-- `coverage erase`
-- `coverage run -m unittest discover -s . -p '*_tests.py'`
-- `coverage html`
-
-    The only exception is the `/src/game/script.rpy` - it is safe to fail it at runtime, because it's fast to check.
 
 ### Test naming
 
 If the rpy filename is `T.rpy`, than:
-- logic class name must be `TLogic`
-- logic file name must be `T_logic.py`
-- the logic test class name must be `TLogicTest`
-- the logic test file name must be `T_tests.py`
+- for logic:
+  - file name `T_logic.py` with class name `TLogic`
+- for logic tests
+  - file name `T_tests.py` with class name `TLogicTest`

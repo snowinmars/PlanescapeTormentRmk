@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.walking_f3_logic import WalkingF3Logic
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.walking_f3_logic import WalkingF3Logic
 
 class WalkingF3LogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = WalkingF3Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):

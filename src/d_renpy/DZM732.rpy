@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zm732_logic import Zm732Logic
+    from game.dlgs.zm732_logic import Zm732Logic
     zm732Logic = Zm732Logic(renpy.store.global_settings_manager)
 
 
@@ -8,37 +8,51 @@ init 10 python:
 # ###
 
 
+label start_zm732_talk_first:
+    call zm732_init
+    jump todo
+label start_zm732_talk:
+    call zm732_init
+    jump todo
+label start_zm732_kill_first:
+    call zm732_init
+    jump zm732_kill_first
+label start_zm732_kill:
+    call zm732_init
+    jump zm732_kill
 label zm732_init:
+    $ zm732Logic.zm732_init()
+    scene bg LOCATION
+    show zm732_img default at center_left_down
     return
-
-
 label zm732_dispose:
+    hide zm732_img
     jump show_graphics_menu
 
 
 # s0 # say6529
 label zm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
-    SPEAKER 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер 732. Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
+    SPEAKER 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
 
     menu:
-        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if zm732Logic.r6533_condition():
+        '«Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо».' if zm732Logic.r6533_condition():
             # r0 # reply6533
             $ zm732Logic.r6533_action()
             jump zm732_s1
 
-        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if zm732Logic.r6532_condition():
+        '«Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо».' if zm732Logic.r6532_condition():
             # r1 # reply6532
             jump zm732_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm732Logic.r6534_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm732Logic.r6534_condition():
             # r2 # reply6534
             jump zm732_s1
 
-        'Использовать на трупе свою способность История костей.' if zm732Logic.r6535_condition():
+        'Использовать на трупе свою способность «История костей».' if zm732Logic.r6535_condition():
             # r3 # reply6535
             jump zm732_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply6536
             jump zm732_dispose
 
@@ -69,7 +83,7 @@ label zm732_s2:  # from 0.3
 
 # s3 # say64270
 label zm732_s3:  # - # IF ~  HasItem("TomeBA","ZM732")
-    SPEAKER 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер 732. Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после. Ты замечаешь, что в руках он несет тяжелую книгу, как будто он где-то ее забрал.'
+    SPEAKER 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно… тебе остается только гадать, когда потерял человек глаза — до смерти или после. Ты замечаешь, что в руках он несет тяжелую книгу, как будто он где-то ее забрал.'
 
     menu:
         'Взять том из его рук… осторожно.':
@@ -94,3 +108,45 @@ label zm732_s4:  # from 3.0
         'Оставить труп в покое.':
             # r11 # reply64275
             jump zm732_dispose
+
+
+label zm732_kill:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm732_dispose
+        'Убить.':
+            jump zm732_killed
+
+
+label zm732_killed:
+    $ zm732Logic.kill_zm732()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm732's.'
+    nr 'Who is zm732?'
+    nr 'zm732 is dead, baby, zm732 is dead.'
+    jump zm732_dispose
+
+
+label zm732_kill_first:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm732_dispose
+        'Убить.':
+            jump zm732_killed_first
+
+
+label zm732_killed_first:
+    $ zm732Logic.kill_zm732()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm732's.'
+    nr 'Who is zm732?'
+    nr 'zm732 is dead, baby, zm732 is dead.'
+    jump zm732_dispose

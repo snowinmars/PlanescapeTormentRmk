@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.inventory.n1201_logic import N1201Logic
+from game.engine.tests import (LogicTest)
+from game.dlgs.inventory.n1201_logic import N1201Logic
 
 class N1201LogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = N1201Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -238,7 +238,7 @@ class N1201LogicTest(LogicTest):
         delta = 250
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             lambda: logic.r45023_action()
         )
@@ -318,4 +318,4 @@ class N1201LogicTest(LogicTest):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

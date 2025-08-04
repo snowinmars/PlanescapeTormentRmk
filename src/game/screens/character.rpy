@@ -1,5 +1,5 @@
 screen character_screen_button():
-    textbutton "Character" action Show("character_screen", character=renpy.store.global_settings_manager.gcm.get_character('protagonist')):
+    textbutton "Character" action Show("character_screen", character=renpy.store.global_settings_manager.character_manager.get_character('protagonist')):
         align (1.0, 0.0)
         offset (-20, 20)
 
@@ -32,12 +32,12 @@ screen character_screen(character):
                 spacing 10
                 bar:
                     value character.current_health
-                    range character.maxHealth
+                    range character.max_health
                     xmaximum 300
                     left_bar "#f00"
                     right_bar "#400"
 
-                text "[character.current_health]/[character.maxHealth]":
+                text "[character.current_health]/[character.max_health]":
                     size 30
                     color "#FFF"
 

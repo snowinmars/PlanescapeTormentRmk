@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.zm613_logic import Zm613Logic
+    from game.dlgs.zm613_logic import Zm613Logic
     zm613Logic = Zm613Logic(renpy.store.global_settings_manager)
 
 
@@ -8,37 +8,51 @@ init 10 python:
 # ###
 
 
+label start_zm613_talk_first:
+    call zm613_init
+    jump todo
+label start_zm613_talk:
+    call zm613_init
+    jump todo
+label start_zm613_kill_first:
+    call zm613_init
+    jump zm613_kill_first
+label start_zm613_kill:
+    call zm613_init
+    jump zm613_kill
 label zm613_init:
+    $ zm613Logic.zm613_init()
+    scene bg LOCATION
+    show zm613_img default at center_left_down
     return
-
-
 label zm613_dispose:
+    hide zm613_img
     jump show_graphics_menu
 
 
 # s0 # say6540
 label zm613_s0:  # - # IF ~  True()
-    SPEAKER 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры 613, но на коже между 1 и 3 виден большой пробел шириной с палец. Приглядевшись, ты с трудом различаешь вырезанную 2.'
+    SPEAKER 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры «613», но на коже между «1» и «3» виден большой пробел шириной с палец. Приглядевшись, ты с трудом различаешь вырезанную «2».'
 
     menu:
-        'Итак… что тут у нас интересного?' if zm613Logic.r6543_condition():
+        '«Итак… что тут у нас интересного?»' if zm613Logic.r6543_condition():
             # r0 # reply6543
             $ zm613Logic.r6543_action()
             jump zm613_s1
 
-        'Итак… что тут у нас интересного?' if zm613Logic.r6544_condition():
+        '«Итак… что тут у нас интересного?»' if zm613Logic.r6544_condition():
             # r1 # reply6544
             jump zm613_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm613Logic.r6545_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm613Logic.r6545_condition():
             # r2 # reply6545
             jump zm613_s1
 
-        'Использовать на трупе свою способность История костей.' if zm613Logic.r6546_condition():
+        'Использовать на трупе свою способность «История костей».' if zm613Logic.r6546_condition():
             # r3 # reply6546
             jump zm613_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply6547
             jump zm613_dispose
 
@@ -65,3 +79,45 @@ label zm613_s2:  # from 0.3
         'Оставить труп в покое.':
             # r7 # reply6550
             jump zm613_dispose
+
+
+label zm613_kill:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm613_dispose
+        'Убить.':
+            jump zm613_killed
+
+
+label zm613_killed:
+    $ zm613Logic.kill_zm613()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm613's.'
+    nr 'Who is zm613?'
+    nr 'zm613 is dead, baby, zm613 is dead.'
+    jump zm613_dispose
+
+
+label zm613_kill_first:
+    nr 'todo'
+
+    menu:
+        'Уйти.':
+            jump zm613_dispose
+        'Убить.':
+            jump zm613_killed_first
+
+
+label zm613_killed_first:
+    $ zm613Logic.kill_zm613()
+    nr 'Whose motorcycle is this?'
+    nr 'It's a chopper, baby.'
+    nr 'Whose chopper is this?'
+    nr 'zm613's.'
+    nr 'Who is zm613?'
+    nr 'zm613 is dead, baby, zm613 is dead.'
+    jump zm613_dispose
