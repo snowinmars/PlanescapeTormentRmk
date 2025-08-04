@@ -1,10 +1,10 @@
 init 10 python:
-    from dlgs.mortuary.eivene_logic import EiveneLogic
+    from game.dlgs.mortuary.eivene_logic import EiveneLogic
     eiveneLogic = EiveneLogic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DEIVENE.DLG
+# Original:  DLG/EIVENE.DLG
 # ###
 
 
@@ -32,12 +32,11 @@ label eivene_dispose:
 
 # s0 # say3404
 label eivene_s0:  # - # IF ~  Global("EiVene","GLOBAL",0)
-    call eivene_init
     nr 'Перед тобой хрупкая девушка с бледным лицом. Из-за впалой кожи на щеках и шее кажется, будто она голодает.'
     nr 'Судя по всему, она увлечена обследованием тела, лежащим перед ней, тыкая по телу пальцем.'
 
     menu:
-        'Приветствую.':
+        '«Приветствую».':
             # r0 # reply3406
             jump eivene_s1
 
@@ -50,20 +49,21 @@ label eivene_s0:  # - # IF ~  Global("EiVene","GLOBAL",0)
 label eivene_s1:  # from 0.0
     nr 'Женщина не отвечает… похоже, она слишком увлечена трупом, лежащим перед ней. Следя за ее работой, ты случайно обращаешь внимание на ее руки…'
     nr '…ее пальцы похожи на когти. Она с легкостью погружает их, словно ножи, в грудь трупа, доставая органы.'
+
     menu:
-        'Приветствую, говорю.' if eiveneLogic.r3412_condition():
+        '«Приветствую, говорю».' if eiveneLogic.r3412_condition():
             # r2 # reply3412
             jump eivene_s2
 
-        'Приветствую, говорю.' if eiveneLogic.r3413_condition():
+        '«Приветствую, говорю».' if eiveneLogic.r3413_condition():
             # r3 # reply3413
             jump eivene_s3
 
-        'Что с твоими руками?' if eiveneLogic.r3414_condition():
+        '«Что с твоими руками?»' if eiveneLogic.r3414_condition():
             # r4 # reply3414
             jump eivene_s2
 
-        'Что с твоими руками?' if eiveneLogic.r3415_condition():
+        '«Что с твоими руками?»' if eiveneLogic.r3415_condition():
             # r5 # reply3415
             jump eivene_s19
 
@@ -88,10 +88,11 @@ label eivene_s2:  # from 1.0 1.2
 
 
 # s3 # say3420
-label eivene_s3:  # from 1.1 # Manually checked EXTERN ~DMORTE~ : 55
+label eivene_s3:  # from 1.1
     nr 'Женщина не отвечает.'
 
-    jump morte_s55
+    jump morte_s55  # EXTERN
+
 
 # s4 # say3421
 label eivene_s4:  # from 2.0
@@ -99,7 +100,7 @@ label eivene_s4:  # from 2.0
     nr 'При виде тебя ее удивление сменяется раздраженностью, она хмуро смотрит на тебя.'
 
     menu:
-        'Э… Приветствую.':
+        '«Э… Приветствую».':
             # r9 # reply3422
             $ eiveneLogic.r3422_action()
             jump eivene_s5
@@ -108,9 +109,9 @@ label eivene_s4:  # from 2.0
 # s5 # say3423
 label eivene_s5:  # from 4.0
     nr 'Кажется, она тебя даже не слышала. Щурясь, она наклоняется вперед, как будто не может разглядеть тебя… что бы ни случилось с ее глазами, но ее вид с близкого расстояния вселяет страх.'
-    eivene_unknown 'Ты.'
+    eivene_unknown '«Ты».'
     nr 'Она соединяет когти вместе, затем делает странное движение рукой.'
-    eivene 'Найди НИТКУ и БАЛЬЗАМ, принеси СЮДА, к Эи-Вейн. Пшел — пшел — пшел.'
+    eivene '«Найди НИТКУ и БАЛЬЗАМ, принеси СЮДА, к Эи-Вейн. Пшел — пшел — пшел».'
 
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if eiveneLogic.r3424_condition():
@@ -118,22 +119,22 @@ label eivene_s5:  # from 4.0
             $ eiveneLogic.r3424_action()
             jump eivene_s7
 
-        'Сперва ответь на пару вопросов…' if eiveneLogic.r3425_condition():
+        '«Сперва ответь на пару вопросов…»' if eiveneLogic.r3425_condition():
             # r11 # reply3425
             $ eiveneLogic.r3425_action()
             jump eivene_s6
 
-        'Сперва ответь на пару вопросов…' if eiveneLogic.r3426_condition():
+        '«Сперва ответь на пару вопросов…»' if eiveneLogic.r3426_condition():
             # r12 # reply3426
             $ eiveneLogic.r3426_action()
             jump eivene_s20
 
-        'Что с твоими руками?' if eiveneLogic.r3427_condition():
+        '«Что с твоими руками?»' if eiveneLogic.r3427_condition():
             # r13 # reply3427
             $ eiveneLogic.r3427_action()
             jump eivene_s6
 
-        'Что с твоими руками?' if eiveneLogic.r3428_condition():
+        '«Что с твоими руками?»' if eiveneLogic.r3428_condition():
             # r14 # reply3428
             $ eiveneLogic.r3428_action()
             jump eivene_s20
@@ -176,7 +177,7 @@ label eivene_s7:  # from 5.0 17.0
 # s8 # say3436
 label eivene_s8:  # from 7.1
     nr 'Едва ты собираешься уйти, Эи-Вейн говорит.'
-    eivene 'Стой. Ты следующий.'
+    eivene '«Стой. Ты следующий».'
 
     menu:
         'Подождать.':
@@ -189,18 +190,18 @@ label eivene_s8:  # from 7.1
 
 
 # s9 # say3439
-label eivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59
+label eivene_s9:  # from 7.0 8.0
     nr 'Спустя несколько минут она заканчивает. Щелкнув когтями, она поворачивается к тебе.'
     nr 'К твоему удивлению, она протягивает руку и проводит когтями по твоим рукам и груди.'
 
     menu:
-        'Э, не то, чтобы я не польщен, но…' if eiveneLogic.r3440_condition():
+        '«Э, не то, чтобы я не польщен, но…»' if eiveneLogic.r3440_condition():
             # r22 # reply3440
             jump eivene_s11
 
-        'Э, не то, чтобы я не польщен, но…' if eiveneLogic.r3441_condition():
+        '«Э, не то, чтобы я не польщен, но…»' if eiveneLogic.r3441_condition():
             # r23 # reply3441
-            jump morte_s59
+            jump morte_s59  # EXTERN
 
         'Продолжать строить из себя зомби.' if eiveneLogic.r3442_condition():
             # r24 # reply3442
@@ -208,7 +209,7 @@ label eivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59
 
         'Продолжать строить из себя зомби.' if eiveneLogic.r3443_condition():
             # r25 # reply3443
-            jump morte_s59
+            jump morte_s59  # EXTERN
 
         'Оттолкнуть ее, уйти.':
             # r26 # reply3444
@@ -218,11 +219,11 @@ label eivene_s9:  # from 7.0 8.0 # Manually checked EXTERN ~DMORTE~ : 59
 # s10 # say3445
 label eivene_s10:  # from 9.4 12.1
     nr 'Она потрясена тем, что ты ее оттолкнул.'
-    eivene 'Зомфи? Ты не зомфи!'
+    eivene '«Зомфи? Ты не зомфи!»'
     nr 'Она отступает на шаг, и ты не успеваешь среагировать, как она трижды хлопает в ладони. В ответ повсюду Морге раздается звон огромного колокола.'
 
     menu:
-        'Ну хорошо…':
+        '«Ну хорошо…»':
             # r27 # reply3491
             $ eiveneLogic.r3491_action()
             jump eivene_dispose
@@ -231,9 +232,9 @@ label eivene_s10:  # from 9.4 12.1
 # s11 # say3446
 label eivene_s11:  # from 9.0 9.2
     nr 'Когда она касается твоих рук и тела, ты вдруг понимаешь, что она изучает твои шрамы. Она отводит свои когти, дважды ими щелкает, затем наклоняется вперед и осматривает татуировки на теле.'
-    eivene 'Хм-м. Кто это так тебя изрисовал? Никакого уважения к зомфи. Зомфи — не картина.'
+    eivene '«Хм-м. Кто это так тебя изрисовал? Никакого уважения к зомфи. Зомфи — не картина».'
     nr 'Она принюхивается, затем похлопывает по твоим шрамам.'
-    eivene 'Этот в плохой форме, много шрамов, не законсервирован.'
+    eivene '«Этот в плохой форме, много шрамов, не законсервирован».'
 
     menu:
         'Подождать.':
@@ -258,7 +259,7 @@ label eivene_s12:  # from 11.0
 
 
 # s13 # say3451
-label eivene_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 60
+label eivene_s13:  # from 12.0
     nr 'Эи-Вейн начинает зашивать твои шрамы; ощущения при этом на удивление безболезненны.  Закончив, она обнюхивает тебя, хмурится, затем окунает пальцы в бальзамирующую жидкость.'
     nr 'В течении нескольких минут она наносит жидкость на твое тело… довольно странно, но ты чувствуешь себя *лучше*.'
 
@@ -269,21 +270,21 @@ label eivene_s13:  # from 12.0 # Manually checked EXTERN ~DMORTE~ : 60
 
         'Позволить ей работать.' if eiveneLogic.r3453_condition():
             # r32 # reply3453
-            jump morte_s60
+            jump morte_s60  # EXTERN
 
 
 # s14 # say3454
 label eivene_s14:  # from 13.0
     nr 'Эи-Вейн в последний раз прикасается к твоему телу, еще раз фыркает, кивает, а затем отмахивается своими когтями.'
-    eivene 'Готово. Пшел-пшел.'
+    eivene '«Готово. Пшел-пшел».'
 
     menu:
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if eiveneLogic.r3456_condition():
+        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if eiveneLogic.r3456_condition():
             # r33 # reply3456
             $ eiveneLogic.r3456_action()
             jump eivene_s18
 
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if eiveneLogic.r3457_condition():
+        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if eiveneLogic.r3457_condition():
             # r34 # reply3457
             jump eivene_s24
 
@@ -294,7 +295,6 @@ label eivene_s14:  # from 13.0
 
 # s15 # say3458
 label eivene_s15:  # - # IF ~  Global("EiVene","GLOBAL",1)
-    call eivene_init
     nr 'Перед тобой Эи-Вейн. Она все еще потрошит труп своими когтями. Ритм движений когтей что-то тебе напоминает, но ты не можешь вспомнить что.'
 
     menu:
@@ -322,12 +322,13 @@ label eivene_s16:  # from 15.0 # ~FadeToColor([20.0],0) Wait(3) FadeFromColor([2
 
     jump eivene_s26
 
+
 # s17 # say3468
 label eivene_s17:  # from 6.0 15.1 25.0 27.0
     nr 'Заметив тебя, она поворачивается, а затем хмурится.'
-    eivene 'Тупые зомфи.'
+    eivene '«Тупые зомфи».'
     nr 'Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает.'
-    eivene 'Найди нитку и бальзам, принеси сюда, к Эи-Вейн. Пшел-пшел-пшел.'
+    eivene '«Найди нитку и бальзам, принеси сюда, к Эи-Вейн. Пшел-пшел-пшел».'
 
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if eiveneLogic.r3469_condition():
@@ -335,12 +336,12 @@ label eivene_s17:  # from 6.0 15.1 25.0 27.0
             $ eiveneLogic.r3469_action()
             jump eivene_s7
 
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if eiveneLogic.r3470_condition():
+        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if eiveneLogic.r3470_condition():
             # r41 # reply3470
             $ eiveneLogic.r3470_action()
             jump eivene_s18
 
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if eiveneLogic.r3497_condition():
+        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if eiveneLogic.r3497_condition():
             # r42 # reply3497
             jump eivene_s24
 
@@ -353,15 +354,15 @@ label eivene_s17:  # from 6.0 15.1 25.0 27.0
 label eivene_s18:  # from 14.0 17.1 22.0
     nr 'Она наклоняется вперед, присматриваясь к твоему жесту, затем фыркает.'
     nr 'Ее рука скрывается в одежде, затем появляется вместе с ключом, висящим на ее угрожающе-остром когте. Она кладет его тебе на ладонь.'
-    eivene 'Принеси потом обратно. Пшел-пшел.'  # TODO [snow]: дописать, что ключ можно вернуть
+    eivene '«Принеси потом обратно. Пшел-пшел.'  # TODO [snow]: дописать, что ключ можно вернут»ь
 
     menu:
-        'Что с твоими руками?' if eiveneLogic.r3494_condition():
+        '«Что с твоими руками?»' if eiveneLogic.r3494_condition():
             # r44 # reply3494
             $ eiveneLogic.r3494_action()
             jump eivene_s23
 
-        'Что с твоими руками?' if eiveneLogic.r3495_condition():
+        '«Что с твоими руками?»' if eiveneLogic.r3495_condition():
             # r45 # reply3495
             $ eiveneLogic.r3495_action()
             jump eivene_s21
@@ -373,37 +374,40 @@ label eivene_s18:  # from 14.0 17.1 22.0
 
 
 # s19 # say3472
-label eivene_s19:  # from 1.3 # Manually checked EXTERN ~DMORTE~ : 56
+label eivene_s19:  # from 1.3
     nr 'Женщина не отвечает.'
 
-    jump morte_s56
+    jump morte_s56  # EXTERN
+
 
 # s20 # say3485
-label eivene_s20:  # from 5.2 5.4 # Manually checked EXTERN ~DMORTE~ : 57
+label eivene_s20:  # from 5.2 5.4
     nr 'Она отворачивается… непохоже, чтобы она тебя услышала.'
 
-    jump morte_s57
+    jump morte_s57  # EXTERN
+
 
 # s21 # say3486
-label eivene_s21:  # from 18.1 # Manually checked EXTERN ~DMORTE~ : 58
+label eivene_s21:  # from 18.1
     nr 'Она отворачивается… непохоже, чтобы она тебя услышала. Должно быть, ее слух не лучше зрения.'
 
-    jump morte_s58
+    jump morte_s58  # EXTERN
+
 
 # s22 # say3493
 label eivene_s22:  # from 15.2 25.1 27.1
     nr 'Заметив тебя, она поворачивается, а затем хмурится.'
-    eivene 'Тупые зомфи.'
+    eivene '«Тупые зомфи».'
     nr 'Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает.'
-    eivene 'Ты готов. Все зашито. Пшел-пшел-пшел.'
+    eivene '«Ты готов. Все зашито. Пшел-пшел-пшел».'
 
     menu:
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if eiveneLogic.r3501_condition():
+        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if eiveneLogic.r3501_condition():
             # r47 # reply3501
             $ eiveneLogic.r3501_action()
             jump eivene_s18
 
-        'Минуточку. Жестом ты показываешь, как открываешь что-то ключом. Мне нужен ключ от бальзамационной. У тебя он есть?' if eiveneLogic.r3502_condition():
+        '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if eiveneLogic.r3502_condition():
             # r48 # reply3502
             jump eivene_s24
 
@@ -426,7 +430,7 @@ label eivene_s23:  # from 18.0
 label eivene_s24:  # from 14.1 17.2 22.1
     nr 'Она наклоняется вперед, присматриваясь к твоему жесту, затем фыркает. Ее рука скрывается в одежде, что-то ищет, затем она пожимает плечами.'
     nr 'Ключа нет. Она делает отгоняющее движение.'
-    eivene 'Пшел-пшел-пшел.'
+    eivene '«Пшел-пшел-пшел».'
 
     menu:
         'Уйти.':
@@ -456,16 +460,16 @@ label eivene_s25:  # -
 # s26 # say63477
 label eivene_s26:  # from 16.0
     nr '…ты стоишь перед свежеубитым телом; предсмертная судорога оставила издевательскую улыбку на его лице.'
-    nr 'К черепу пришит номер 42. Ты только что зашил тело зомби, лежащего на плите.'
+    nr 'К черепу пришит номер «42». Ты только что зашил тело зомби, лежащего на плите.'
     nr 'Ты кое-что оставил внутри, что-то, что может пригодиться в случае, если ты снова вернешься сюда…'
 
     menu:
-        'Эхо: Храни это, пока я не вернусь.' if eiveneLogic.r63478_condition():
+        'Эхо: «Храни это, пока я не вернусь».' if eiveneLogic.r63478_condition():
             # r55 # reply63478
             $ eiveneLogic.r63478_action()
             jump eivene_s27
 
-        'Эхо: Храни это, пока я не вернусь.' if eiveneLogic.r63479_condition():
+        'Эхо: «Храни это, пока я не вернусь».' if eiveneLogic.r63479_condition():
             # r56 # reply63479
             jump eivene_s27
 

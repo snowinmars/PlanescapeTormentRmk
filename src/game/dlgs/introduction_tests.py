@@ -1,13 +1,13 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.introduction_logic import IntroductionLogic
+from game.engine.tests import (LogicTest)
+from game.dlgs.introduction_logic import IntroductionLogic
 
 class IntroductionLogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = IntroductionLogic(self.settings_manager)
         self.assertFalse(logic.can_spoiler)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -19,7 +19,7 @@ class IntroductionLogicTest(LogicTest):
         logic = IntroductionLogic(self.settings_manager)
         logic.setup_new_life_as_mage()
 
-        props = self.settings_manager.gcm.get_character('protagonist').get_all_properties()
+        props = self.settings_manager.character_manager.get_character('protagonist').get_all_properties()
         self.assertEqual(props['intelligence'], 16)
         self.assertEqual(props['wisdom'], 17)
         self.assertEqual(props['charisma'], 15)
@@ -36,9 +36,9 @@ class IntroductionLogicTest(LogicTest):
         logic = IntroductionLogic(self.settings_manager)
         self._false_then_true_action(
             lambda: logic.can_spoiler,
-            lambda: logic.set_can_spoiler_true()
+            logic.set_can_spoiler_true
         )
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

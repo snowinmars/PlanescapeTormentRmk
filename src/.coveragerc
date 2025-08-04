@@ -1,0 +1,16 @@
+[run]
+branch = True
+source = /app
+omit =
+    */d_renpy/*
+    */_build/*
+
+[report]
+show_missing = True
+skip_empty = True
+exclude_also =
+    unittest.main()
+
+[html]
+skip_empty = True
+directory = /app/htmlcov

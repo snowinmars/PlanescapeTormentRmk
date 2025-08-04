@@ -18,9 +18,9 @@ init 1 python:
     full_log_file_path = os.path.join(logs_folder, f"dev-{now}.log")
     max_log_files = 5
 
-    logList = glob.glob(os.path.join(logs_folder, 'dev*.log'))
-    if len(logList) > max_log_files: # Why +1 ?)
-        for l in sorted(logList, reverse=True)[max_log_files:]:
+    log_list = glob.glob(os.path.join(logs_folder, 'dev*.log'))
+    if len(log_list) > max_log_files: # Why +1 ?)
+        for l in sorted(log_list, reverse=True)[max_log_files:]:
             os.remove(l)
 
     config.version = config_version
@@ -55,57 +55,60 @@ init 2 python:
 
 init 3 python:
     # engine warm up
-    from engine.events import (EventManager)
-    from engine.menu import (MenuManager)
-    from engine.settings import (SettingsManager)
-    from engine.inventory import (InventoryManager)
-    from engine.locations import (LocationBuilder, LocationManager)
-    from engine.character import (CharacterManager, Character)
+    from game.engine.event_manager import (EventManager)
+    from game.engine.menu import (MenuManager)
+    from game.engine.settings_manager import (SettingsManager)
+    from game.engine.inventory_manager import (InventoryManager)
+    from game.engine.location_manager import (LocationManager)
+    from game.engine.character_manager import (CharacterManager)
+    from game.engine.journal_manager import (JournalManager)
 
-    from menus.all_menus import (build_all_menus)
-    from setting.all_settings import (build_all_settings)
-    from setting.all_inventory import (build_all_inventory)
-    from location.all_locations import (build_all_locations)
-    from characters.all_characters import (build_all_characters)
-    # Обычно тупорылые сыны собак пишут в node_modules
-    # but for some reason if the 'setting' fodler name is 'settings', it fails to import
-    # also true for location(s)
+    from game.engine_data.menus.all_menus import (build_all_menus)
+    from game.engine_data.settings.all_settings import (build_all_settings)
+    from game.engine_data.inventory.all_inventory import (build_all_inventory)
+    from game.engine_data.locations.all_locations import (build_all_locations)
+    from game.engine_data.characters.all_characters import (build_all_characters)
+    from game.engine_data.journal.all_notes import (build_all_notes)
 
     renpy.store.global_event_manager = EventManager()
     renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
     renpy.store.global_character_manager = CharacterManager(renpy.store.global_event_manager)
-    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, renpy.store.global_character_manager, renpy.store.global_location_manager)
+    renpy.store.global_journal_manager = JournalManager(renpy.store.global_event_manager)
+    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, renpy.store.global_character_manager, renpy.store.global_location_manager, renpy.store.global_journal_manager)
     renpy.store.global_menu_manager = MenuManager()
-    renpy.store.global_inventory_manager = InventoryManager(lambda x: renpy.store.global_settings_manager.get_setting_value(x))
+    renpy.store.global_inventory_manager = InventoryManager(renpy.store.global_event_manager, lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
     devlog = logging.getLogger('log')
 
     now = int(time.time())
-    devlog.info('Building settings manager...')
+    devlog.info('Building settings manager…')
     build_all_settings(renpy.store.global_settings_manager)
     devlog.info('Done building settings manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building inventory manager...')
+    devlog.info('Building inventory manager…')
     build_all_inventory(renpy.store.global_inventory_manager)
     devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building menu...')
-    build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager, renpy.store.global_location_manager)
+    devlog.info('Building menu…')
+    build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
     devlog.info('Done building menu, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building characters...')
-    build_all_characters(renpy.store.global_settings_manager.gcm)
+    devlog.info('Building characters…')
+    build_all_characters(renpy.store.global_character_manager)
     devlog.info('Done building characters, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building locations mapping...')
-    builder = LocationBuilder()
-    builder = build_all_locations(builder)
-    renpy.store.global_location_manager.register(builder.mappings, builder.build_reverse_mappings())
+    devlog.info('Building locations mapping…')
+    build_all_locations(renpy.store.global_location_manager)
     devlog.info('Done building locations mapping, took %s', int(time.time()) - now)
+
+    now = int(time.time())
+    devlog.info('Building journal notes…')
+    build_all_notes(renpy.store.global_journal_manager)
+    devlog.info('Done building journal notes, took %s', int(time.time()) - now)
 
     config.keymap['show_inventory'] = ['i']
     config.underlay.append(
@@ -117,7 +120,7 @@ init 3 python:
     config.keymap['character_screen'] = ['c']
     config.underlay.append(
         renpy.Keymap(
-            character_screen = Show("character_screen", character=renpy.store.global_settings_manager.gcm.get_character('protagonist'))
+            character_screen = Show("character_screen", character=renpy.store.global_settings_manager.character_manager.get_character('protagonist'))
         )
     )
 
@@ -132,10 +135,11 @@ label start:
         "dev":
             call quick_setup_as_mage
             $ gsm = renpy.store.global_settings_manager
+            $ gcm = renpy.store.global_character_manager
             $ glm = renpy.store.global_location_manager
             $ glm.set_location('mortuary_f2r7')
             $ gsm.set_in_party_morte(True)
-            $ gsm.gcm.set_property('protagonist', 'good', 10)
+            $ gcm.set_property('protagonist', 'good', 10)
             $ gsm.set_has_intro_key(True)
             # $ gsm.set_has_tome_ba(True)
             # $ gsm.set_has_copper_earring_closed(True)
@@ -152,7 +156,7 @@ label start:
             jump introduction
         "Новая жизнь":
             call quick_setup_as_mage
-            jump morte1_s0
+            jump start_morte1_talk_first
 
 
 label end:

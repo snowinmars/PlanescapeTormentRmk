@@ -1,12 +1,18 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.eivene_logic import EiveneLogic
+
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.eivene_logic import EiveneLogic
+
 
 class EiveneLogicTest(LogicTest):
-    def test_initialization(self):
-        logic = EiveneLogic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+    def setUp(self):
+        super(EiveneLogicTest, self).setUp()
+        self.logic = EiveneLogic(self.settings_manager)
+
+
+    def test_ctor(self):
+        self.assertIsNotNone(self.logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -15,39 +21,33 @@ class EiveneLogicTest(LogicTest):
 
 
     def test_eivene_init(self):
-        self._init_(
+        self._init_with_location(
             'mortuary_f2r5',
-            EiveneLogic(self.settings_manager).eivene_init,
+            self.logic.eivene_init,
             self.settings_manager.get_talked_to_eivene_times
         )
 
 
     def test_kill_eivene(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_dead_eivene(),
-            lambda: logic.kill_eivene()
+            self.settings_manager.get_dead_eivene,
+            self.logic.kill_eivene
         )
 
 
     def test_r3418_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        logic.r3418_action()
+        self.logic.r3418_action()
 
 
     def test_r3422_action(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._integer_equals_action(
-            lambda: self.settings_manager.get_eivene_value(),
+            self.settings_manager.get_eivene_value,
             1,
-            lambda: logic.r3422_action()
+            self.logic.r3422_action
         )
 
 
     def test_r3424_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
@@ -58,124 +58,118 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_embalm())
         self.assertTrue(self.settings_manager.get_has_needle())
         self.assertFalse(self.settings_manager.get_eivene_delivery())
-        expBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r3424_action()
+        self.logic.r3424_action()
 
-        expAfter = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
         self.assertFalse(self.settings_manager.get_has_embalm())
         self.assertFalse(self.settings_manager.get_has_needle())
         self.assertTrue(self.settings_manager.get_eivene_delivery())
-        self.assertEqual(expBefore + delta, expAfter)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r3425_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '37702'
+        note_id = '37702'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3425_action()
+            note_id,
+            self.logic.r3425_action
         )
 
 
     def test_r3426_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '37702'
+        note_id = '37702'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3426_action()
+            note_id,
+            self.logic.r3426_action
         )
 
 
     def test_r3427_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '37702'
+        note_id = '37702'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3427_action()
+            note_id,
+            self.logic.r3427_action
         )
 
 
     def test_r3428_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '37702'
+        note_id = '37702'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3428_action()
+            note_id,
+            self.logic.r3428_action
         )
 
 
     def test_r3429_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '37702'
+        note_id = '37702'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3429_action()
+            note_id,
+            self.logic.r3429_action
         )
 
 
     def test_r3491_action(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r3491_action()
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r3491_action
         )
 
 
     def test_r3449_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
-        propMaxHp = 'maxHealth'
-        propCurHp = 'current_health'
+        prop_max_hp = 'max_health'
+        prop_cur_hp = 'current_health'
         delta = 1
-        id = '38199'
+        note_id = '38199'
 
-        maxHpBefore = self.settings_manager.gcm.get_character_property(who, propMaxHp)
-        self.settings_manager.gcm.set_property(who, propCurHp, maxHpBefore - 5)
-        self.assertFalse(self.settings_manager.get_ravel_eivene())
-        self.assertFalse(self.settings_manager.has_journal_note(id))
+        maxHp_before = self.settings_manager.character_manager.get_property(who, prop_max_hp)
+        self.settings_manager.character_manager.set_property(who, prop_cur_hp, maxHp_before - 5)
+        self.assertEqual(self.settings_manager.get_ravel_eivene(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
-        logic.r3449_action()
+        self.logic.r3449_action()
 
-        maxHpAfter = self.settings_manager.gcm.get_character_property(who, propMaxHp)
-        curHpAfter = self.settings_manager.gcm.get_character_property(who, propCurHp)
-        self.assertEqual(maxHpBefore + delta, maxHpAfter)
-        self.assertEqual(maxHpAfter, curHpAfter)
-        self.assertTrue(self.settings_manager.get_ravel_eivene())
-        self.assertTrue(self.settings_manager.has_journal_note(id))
+        maxHp_after = self.settings_manager.character_manager.get_property(who, prop_max_hp)
+        curHp_after = self.settings_manager.character_manager.get_property(who, prop_cur_hp)
+        self.assertEqual(maxHp_before + delta, maxHp_after)
+        self.assertEqual(maxHp_after, curHp_after)
+        self.assertEqual(self.settings_manager.get_ravel_eivene(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r3456_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
 
-        self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
-            delta,
-            lambda: logic.r3456_action()
-        )
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 0)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        before = self.settings_manager.character_manager.get_property(who, prop)
+
+        self.logic.r3456_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 2)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+        after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(before + delta, after)
 
 
     def test_r3459_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '61612'
+        note_id = '61612'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3459_action()
+            note_id,
+            self.logic.r3459_action
         )
 
 
     def test_r3469_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
@@ -186,404 +180,348 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_embalm())
         self.assertTrue(self.settings_manager.get_has_needle())
         self.assertFalse(self.settings_manager.get_eivene_delivery())
-        expBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r3469_action()
+        self.logic.r3469_action()
 
         self.assertFalse(self.settings_manager.get_has_embalm())
         self.assertFalse(self.settings_manager.get_has_needle())
         self.assertTrue(self.settings_manager.get_eivene_delivery())
-        expAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(expBefore + delta, expAfter)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r3470_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
 
-        self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
-            delta,
-            lambda: logic.r3470_action()
-        )
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 0)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        before = self.settings_manager.character_manager.get_property(who, prop)
+
+        self.logic.r3470_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 2)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+        after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(before + delta, after)
 
 
     def test_r3494_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '38203'
+        note_id = '38203'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3494_action()
+            note_id,
+            self.logic.r3494_action
         )
 
 
     def test_r3495_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '38203'
+        note_id = '38203'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3495_action()
+            note_id,
+            self.logic.r3495_action
         )
 
 
     def test_r3496_action(self):
-        logic = EiveneLogic(self.settings_manager)
-        id = '38203'
+        note_id = '38203'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r3496_action()
+            note_id,
+            self.logic.r3496_action
         )
 
 
     def test_r3501_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 0)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        before = self.settings_manager.character_manager.get_property(who, prop)
 
-        self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
-            delta,
-            lambda: logic.r3501_action()
-        )
+        self.logic.r3501_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 2)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+        after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(before + delta, after)
 
 
     def test_r63478_action(self):
-        logic = EiveneLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
 
         self.assertFalse(self.settings_manager.get_42_secret())
-        expBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r63478_action()
+        self.logic.r63478_action()
 
         self.assertTrue(self.settings_manager.get_42_secret())
-        expAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(expBefore + delta, expAfter)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r3412_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3412_condition()
+            self.logic.r3412_condition
         )
 
 
     def test_r3413_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3413_condition()
+            self.logic.r3413_condition
         )
 
 
     def test_r3414_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3414_condition()
+            self.logic.r3414_condition
         )
 
 
     def test_r3415_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3415_condition()
+            self.logic.r3415_condition
         )
 
 
     def test_r3424_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self.settings_manager.set_has_embalm(False)
-        self.settings_manager.set_has_needle(True)
+        self.settings_manager.set_has_needle(False)
 
-        self.assertFalse(logic.r3424_condition())
+        self.assertFalse(self.logic.r3424_condition())
 
         self.settings_manager.set_has_embalm(True)
         self.settings_manager.set_has_needle(True)
 
-        self.assertTrue(logic.r3424_condition())
+        self.assertTrue(self.logic.r3424_condition())
 
 
     def test_r3425_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3425_condition()
+            self.logic.r3425_condition
         )
 
 
     def test_r3426_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3426_condition()
+            self.logic.r3426_condition
         )
 
 
     def test_r3427_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3427_condition()
+            self.logic.r3427_condition
         )
 
 
     def test_r3428_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3428_condition()
+            self.logic.r3428_condition
         )
 
 
     def test_r3440_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3440_condition()
+            self.logic.r3440_condition
         )
 
 
     def test_r3441_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3441_condition()
+            self.logic.r3441_condition
         )
 
 
     def test_r3442_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3442_condition()
+            self.logic.r3442_condition
         )
 
 
     def test_r3443_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3443_condition()
+            self.logic.r3443_condition
         )
 
 
     def test_r3452_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3452_condition()
+            self.logic.r3452_condition
         )
 
 
     def test_r3453_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3453_condition()
+            self.logic.r3453_condition
         )
 
 
     def test_r3456_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3456_condition())
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(False)
+        self.assertFalse(self.logic.r3456_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
-
-        self.assertTrue(logic.r3456_condition())
+        self.assertTrue(self.logic.r3456_condition())
 
 
     def test_r3457_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3457_condition())
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(True)
+        self.assertFalse(self.logic.r3457_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
-
-        self.assertTrue(logic.r3457_condition())
+        self.assertTrue(self.logic.r3457_condition())
 
 
     def test_r3459_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_42_secret(x),
-            lambda: logic.r3459_condition()
+            self.logic.r3459_condition
         )
 
 
     def test_r3463_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_eivene_delivery(x),
-            lambda: logic.r3463_condition()
+            self.logic.r3463_condition
         )
 
 
     def test_r4351_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_eivene_delivery(x),
-            lambda: logic.r4351_condition()
+            self.logic.r4351_condition
         )
 
 
     def test_r3469_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3469_condition())
+        self.settings_manager.set_has_embalm(False)
+        self.settings_manager.set_has_needle(False)
+        self.assertFalse(self.logic.r3469_condition())
 
         self.settings_manager.set_has_embalm(True)
         self.settings_manager.set_has_needle(True)
-
-        self.assertTrue(logic.r3469_condition())
+        self.assertTrue(self.logic.r3469_condition())
 
 
     def test_r3470_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3470_condition())
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(False)
+        self.assertFalse(self.logic.r3470_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
-
-        self.assertTrue(logic.r3470_condition())
+        self.assertTrue(self.logic.r3470_condition())
 
 
     def test_r3497_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3497_condition())
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(True)
+        self.assertFalse(self.logic.r3497_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
-
-        self.assertTrue(logic.r3497_condition())
+        self.assertTrue(self.logic.r3497_condition())
 
 
     def test_r3494_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3494_condition()
+            self.logic.r3494_condition
         )
 
 
     def test_r3495_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r3495_condition()
+            self.logic.r3495_condition
         )
 
 
     def test_r3501_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3501_condition())
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(False)
+        self.assertFalse(self.logic.r3501_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
-
-        self.assertTrue(logic.r3501_condition())
+        self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
-        self.assertFalse(logic.r3502_condition())
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(True)
+        self.assertFalse(self.logic.r3502_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
-
-        self.assertTrue(logic.r3502_condition())
+        self.assertTrue(self.logic.r3502_condition())
 
 
     def test_r4354_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_eivene_delivery(x),
-            lambda: logic.r4354_condition()
+            self.logic.r4354_condition
         )
 
 
     def test_r4355_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_eivene_delivery(x),
-            lambda: logic.r4355_condition()
+            self.logic.r4355_condition
         )
 
 
     def test_r63478_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_42_secret(x),
-            lambda: logic.r63478_condition()
+            self.logic.r63478_condition
         )
 
 
     def test_r63479_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_42_secret(x),
-            lambda: logic.r63479_condition()
+            self.logic.r63479_condition
         )
 
 
     def test_r63482_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_eivene_delivery(x),
-            lambda: logic.r63482_condition()
+            self.logic.r63482_condition
         )
 
 
     def test_r63481_condition(self):
-        logic = EiveneLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_eivene_delivery(x),
-            lambda: logic.r63481_condition()
+            self.logic.r63481_condition
         )
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

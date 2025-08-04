@@ -1,5 +1,5 @@
 init 10 python:
-    from dlgs.introduction_logic import IntroductionLogic
+    from game.dlgs.introduction_logic import IntroductionLogic
     introductionLogic = IntroductionLogic(renpy.store.global_settings_manager)
 
 
@@ -95,4 +95,4 @@ label new_life:
 
     menu:
         'Вспомнить':
-            jump morte1_s0
+            jump start_morte1_talk_first

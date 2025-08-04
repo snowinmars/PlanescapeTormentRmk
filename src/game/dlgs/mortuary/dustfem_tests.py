@@ -1,12 +1,18 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.dustfem_logic import DustfemLogic
+
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.dustfem_logic import DustfemLogic
+
 
 class DustfemLogicTest(LogicTest):
-    def test_initialization(self):
-        logic = DustfemLogic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+    def setUp(self):
+        super(DustfemLogicTest, self).setUp()
+        self.logic = DustfemLogic(self.settings_manager)
+
+
+    def test_ctor(self):
+        self.assertIsNotNone(self.logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -15,175 +21,164 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_dustfem_init(self):
-        self._init_(
+        self._init_with_location(
             'mortuary_f3r6',
-            DustfemLogic(self.settings_manager).dustfem_init,
+            self.logic.dustfem_init,
             self.settings_manager.get_talked_to_dustfem_times
         )
 
 
-    def test_r1225_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
+    def test_kill_dustfem(self):
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r1225_action()
+            self.settings_manager.get_dead_dustfem,
+            self.logic.kill_dustfem
+        )
+
+
+    def test_r1225_action(self):
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r1225_action
         )
 
 
     def test_r1246_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r1246_action()
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r1246_action
         )
 
 
     def test_r1249_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r1249_action()
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r1249_action
         )
 
 
     def test_r33227_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'law'
         delta = -1
 
         self.assertEqual(self.settings_manager.get_adahn(), 0)
-        lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r33227_action()
+        self.logic.r33227_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 1)
-        lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawBefore + delta, lawAfter)
+        law_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_before + delta, law_after)
 
-        logic.r33227_action()
+        self.logic.r33227_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 2)
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawAfter + delta, lawAfterOnce)
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r1273_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'law'
         delta = -1
 
         self.assertEqual(self.settings_manager.get_adahn(), 0)
-        lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r1273_action()
+        self.logic.r1273_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 1)
-        lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawBefore + delta, lawAfter)
+        law_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_before + delta, law_after)
 
-        logic.r1273_action()
+        self.logic.r1273_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 2)
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawAfter + delta, lawAfterOnce)
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r1290_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'law'
         delta = -1
 
         self.assertEqual(self.settings_manager.get_adahn(), 0)
-        lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r1290_action()
+        self.logic.r1290_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 1)
-        lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawBefore + delta, lawAfter)
+        law_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_before + delta, law_after)
 
-        logic.r1290_action()
+        self.logic.r1290_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 2)
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawAfter + delta, lawAfterOnce)
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r1294_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'law'
         delta = -1
 
         self.assertEqual(self.settings_manager.get_adahn(), 0)
-        lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r1294_action()
+        self.logic.r1294_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 1)
-        lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawBefore + delta, lawAfter)
+        law_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_before + delta, law_after)
 
-        logic.r1294_action()
+        self.logic.r1294_action()
 
         self.assertEqual(self.settings_manager.get_adahn(), 2)
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawAfter + delta, lawAfterOnce)
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r4307_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r4307_action()
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4307_action
         )
 
 
     def test_r4308_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'law'
         delta = -1
 
         self.assertFalse(self.settings_manager.get_mortualy_alarmed())
-        lawBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r4308_action()
+        self.logic.r4308_action()
 
         self.assertTrue(self.settings_manager.get_mortualy_alarmed())
-        lawAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawBefore + delta, lawAfter)
+        law_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_before + delta, law_after)
 
-        logic.r4308_action()
+        self.logic.r4308_action()
         self.assertTrue(self.settings_manager.get_mortualy_alarmed())
-        lawAfterOnce = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(lawAfter + delta, lawAfterOnce)
+        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r4309_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r4309_action()
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4309_action
         )
 
 
     def test_r4317_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        logic.r4317_action()
+        self.logic.r4317_action()
 
 
     def test_r4318_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 15
@@ -191,19 +186,18 @@ class DustfemLogicTest(LogicTest):
         self.assertEqual(self.settings_manager.get_choke(), 0)
         self.assertFalse(self.settings_manager.get_choke_memory())
         self.assertEqual(self.settings_manager.get_choke_dustman(), 0)
-        expBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r4318_action()
+        self.logic.r4318_action()
 
         self.assertEqual(self.settings_manager.get_choke(), 1)
         self.assertTrue(self.settings_manager.get_choke_memory())
         self.assertEqual(self.settings_manager.get_choke_dustman(), 1)
-        expAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(expBefore + delta, expAfter)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r4319_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 15
@@ -211,47 +205,44 @@ class DustfemLogicTest(LogicTest):
         self.assertEqual(self.settings_manager.get_choke(), 0)
         self.assertEqual(self.settings_manager.get_choke_dustman(), 0)
         self.assertFalse(self.settings_manager.get_dead_dustfem())
-        expBefore = self.settings_manager.gcm.get_character_property(who, prop)
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
-        logic.r4319_action()
+        self.logic.r4319_action()
 
         self.assertEqual(self.settings_manager.get_choke(), 1)
         self.assertEqual(self.settings_manager.get_choke_dustman(), 1)
         self.assertTrue(self.settings_manager.get_dead_dustfem())
-        expAfter = self.settings_manager.gcm.get_character_property(who, prop)
-        self.assertEqual(expBefore + delta, expAfter)
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r4320_action(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
 
-        self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
-            delta,
-            lambda: logic.r4320_action()
-        )
+        self.assertFalse(self.settings_manager.get_dead_dustfem())
+        exp_before = self.settings_manager.character_manager.get_property(who, prop)
+
+        self.logic.r4320_action()
+
+        self.assertTrue(self.settings_manager.get_dead_dustfem())
+        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r4321_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._false_then_true_action(
-            lambda: self.settings_manager.get_mortualy_alarmed(),
-            lambda: logic.r4321_action()
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4321_action
         )
 
 
     def test_r4322_action(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        logic.r4322_action()
+        self.logic.r4322_action()
 
 
     def test_r1235_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 13
@@ -260,12 +251,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1235_condition()
+            self.logic.r1235_condition
         )
 
 
     def test_r1236_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 12
@@ -274,12 +264,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1236_condition()
+            self.logic.r1236_condition
         )
 
 
     def test_r1242_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'intelligence'
         value = 11
@@ -288,12 +277,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1242_condition()
+            self.logic.r1242_condition
         )
 
 
     def test_r1244_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 13
@@ -302,12 +290,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1244_condition()
+            self.logic.r1244_condition
         )
 
 
     def test_r1245_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 12
@@ -316,11 +303,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1245_condition()
+            self.logic.r1245_condition
         )
 
+
     def test_r1247_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 13
@@ -329,12 +316,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1247_condition()
+            self.logic.r1247_condition
         )
 
 
     def test_r1248_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 12
@@ -343,188 +329,168 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1248_condition()
+            self.logic.r1248_condition
         )
 
 
     def test_r1253_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f2r1'
+        location = 'mortuary_f2r1'
 
         self.settings_manager.set_dhall_value(0)
-
-        self.assertFalse(logic.r1253_condition())
+        self.assertFalse(self.logic.r1253_condition())
 
         self.settings_manager.set_dhall_value(1)
-        self.settings_manager.glm.set_location(id)
-
-        self.assertTrue(logic.r1253_condition())
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.logic.r1253_condition())
 
 
     def test_r1255_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f2r1'
+        location = 'mortuary_f2r1'
 
         self.settings_manager.set_dhall_value(0)
-
-        self.assertFalse(logic.r1255_condition())
+        self.assertFalse(self.logic.r1255_condition())
 
         self.settings_manager.set_dhall_value(1)
+        self.assertTrue(self.logic.r1255_condition())
 
-        self.assertTrue(logic.r1255_condition())
+        self.settings_manager.set_dhall_value(1)
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.logic.r1255_condition())
 
 
     def test_r1258_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f1r1'
+        location = 'mortuary_f1r1'
 
         self.settings_manager.set_deionarra_value(0)
-
-        self.assertFalse(logic.r1258_condition())
+        self.assertFalse(self.logic.r1258_condition())
 
         self.settings_manager.set_deionarra_value(1)
-        self.settings_manager.glm.set_location(id)
-
-        self.assertTrue(logic.r1258_condition())
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.logic.r1258_condition())
 
 
     def test_r4336_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f1r1'
+        location = 'mortuary_f1r1'
 
         self.settings_manager.set_deionarra_value(0)
-
-        self.assertFalse(logic.r4336_condition())
+        self.assertFalse(self.logic.r4336_condition())
 
         self.settings_manager.set_deionarra_value(1)
+        self.assertTrue(self.logic.r4336_condition())
 
-        self.assertTrue(logic.r4336_condition())
+        self.settings_manager.set_dhall_value(1)
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.logic.r4336_condition())
 
 
     def test_r33224_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f1r1'
+        location = 'mortuary_f1r1'
 
         self.settings_manager.set_soego_value(0)
-
-        self.assertFalse(logic.r33224_condition())
+        self.assertFalse(self.logic.r33224_condition())
 
         self.settings_manager.set_soego_value(1)
-        self.settings_manager.glm.set_location(id)
-
-        self.assertTrue(logic.r33224_condition())
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.logic.r33224_condition())
 
 
     def test_r33226_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f1r1'
+        location = 'mortuary_f1r1'
 
         self.settings_manager.set_soego_value(0)
-
-        self.assertFalse(logic.r33226_condition())
+        self.assertFalse(self.logic.r33226_condition())
 
         self.settings_manager.set_soego_value(1)
+        self.assertTrue(self.logic.r33226_condition())
 
-        self.assertTrue(logic.r33226_condition())
+        self.settings_manager.set_soego_value(1)
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.logic.r33226_condition())
 
 
     def test_r33227_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'intelligence'
         value = 12
 
         self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.settings_manager.gcm.set_property(who, prop, value - 1)
-        self.assertFalse(logic.r33227_condition())
-        self.settings_manager.gcm.set_property(who, prop, value)
-        self.assertFalse(logic.r33227_condition())
-        self.settings_manager.gcm.set_property(who, prop, value + 1)
-        self.assertFalse(logic.r33227_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.assertFalse(self.logic.r33227_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.assertFalse(self.logic.r33227_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.assertFalse(self.logic.r33227_condition())
 
         self.settings_manager.set_talked_to_dustfem_times(1)
 
         self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 1)
-        self.settings_manager.gcm.set_property(who, prop, value - 1)
-        self.assertFalse(logic.r33227_condition())
-        self.settings_manager.gcm.set_property(who, prop, value)
-        self.assertFalse(logic.r33227_condition())
-        self.settings_manager.gcm.set_property(who, prop, value + 1)
-        self.assertTrue(logic.r33227_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.assertFalse(self.logic.r33227_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.assertFalse(self.logic.r33227_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.assertTrue(self.logic.r33227_condition())
 
 
     def test_r33229_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'intelligence'
         value = 12
 
         self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.settings_manager.gcm.set_property(who, prop, value - 1)
-        self.assertFalse(logic.r33229_condition())
-        self.settings_manager.gcm.set_property(who, prop, value)
-        self.assertFalse(logic.r33229_condition())
-        self.settings_manager.gcm.set_property(who, prop, value + 1)
-        self.assertFalse(logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.assertFalse(self.logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.assertFalse(self.logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.assertFalse(self.logic.r33229_condition())
 
         self.settings_manager.set_talked_to_dustfem_times(1)
 
         self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 1)
-        self.settings_manager.gcm.set_property(who, prop, value - 1)
-        self.assertFalse(logic.r33229_condition())
-        self.settings_manager.gcm.set_property(who, prop, value)
-        self.assertFalse(logic.r33229_condition())
-        self.settings_manager.gcm.set_property(who, prop, value + 1)
-        self.assertFalse(logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.assertFalse(self.logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.assertFalse(self.logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.assertFalse(self.logic.r33229_condition())
 
         self.settings_manager.set_talked_to_dustfem_times(2)
 
         self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 2)
-        self.settings_manager.gcm.set_property(who, prop, value - 1)
-        self.assertFalse(logic.r33229_condition())
-        self.settings_manager.gcm.set_property(who, prop, value)
-        self.assertFalse(logic.r33229_condition())
-        self.settings_manager.gcm.set_property(who, prop, value + 1)
-        self.assertTrue(logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.assertFalse(self.logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.assertFalse(self.logic.r33229_condition())
+        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.assertTrue(self.logic.r33229_condition())
 
 
     def test_r1272_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r1272_condition()
+            self.logic.r1272_condition
         )
 
+
     def test_r1273_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r1273_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertTrue(logic.r1273_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertFalse(logic.r1273_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r1273_condition
+        )
 
 
     def test_r1274_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r1274_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertFalse(logic.r1274_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertTrue(logic.r1274_condition())
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r1274_condition
+        )
 
 
     def test_r1275_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 13
@@ -533,12 +499,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1275_condition()
+            self.logic.r1275_condition
         )
 
 
     def test_r1276_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 12
@@ -547,12 +512,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1276_condition()
+            self.logic.r1276_condition
         )
 
 
     def test_r1281_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'intelligence'
         value = 11
@@ -561,38 +525,27 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1281_condition()
+            self.logic.r1281_condition
         )
 
 
     def test_r1290_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r1290_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertTrue(logic.r1290_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertFalse(logic.r1290_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r1290_condition
+        )
 
 
     def test_r1291_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r1291_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertFalse(logic.r1291_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertTrue(logic.r1291_condition())
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r1291_condition
+        )
 
 
     def test_r1292_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -601,12 +554,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1292_condition()
+            self.logic.r1292_condition
         )
 
 
     def test_r1293_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -615,38 +567,27 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1293_condition()
+            self.logic.r1293_condition
         )
 
 
     def test_r1294_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r1294_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertTrue(logic.r1294_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertFalse(logic.r1294_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r1294_condition
+        )
 
 
     def test_r1295_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r1295_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertFalse(logic.r1295_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertTrue(logic.r1295_condition())
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r1295_condition
+        )
 
 
     def test_r1296_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -655,12 +596,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1296_condition()
+            self.logic.r1296_condition
         )
 
 
     def test_r1297_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -669,12 +609,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1297_condition()
+            self.logic.r1297_condition
         )
 
 
     def test_r1396_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -683,12 +622,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1396_condition()
+            self.logic.r1396_condition
         )
 
 
     def test_r1397_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -697,12 +635,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1397_condition()
+            self.logic.r1397_condition
         )
 
 
     def test_r1398_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -711,12 +648,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1398_condition()
+            self.logic.r1398_condition
         )
 
 
     def test_r1399_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -725,34 +661,25 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r1399_condition()
+            self.logic.r1399_condition
         )
 
 
     def test_r4281_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertFalse(logic.r4281_condition())
-
-        self.settings_manager.glm.set_location(id)
-
-        self.assertTrue(logic.r4281_condition())
+        self._is_visited_external_location_condition(
+            'mortuary_f2r3',
+            self.logic.r4281_condition
+        )
 
 
     def test_r4282_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-        id = 'mortuary_f2r1'
-
-        self.assertTrue(logic.r4282_condition())
-
-        self.settings_manager.glm.set_location(id)
-
-        self.assertFalse(logic.r4282_condition())
+        self._not_is_visited_external_location_condition(
+            'mortuary_f2r3',
+            self.logic.r4282_condition
+        )
 
 
     def test_r4296_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -761,12 +688,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4296_condition()
+            self.logic.r4296_condition
         )
 
 
     def test_r4297_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -775,11 +701,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4297_condition()
+            self.logic.r4297_condition
         )
+
 
     def test_r4298_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -788,11 +714,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4298_condition()
+            self.logic.r4298_condition
         )
 
+
     def test_r4300_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -801,12 +727,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4300_condition()
+            self.logic.r4300_condition
         )
 
 
     def test_r4303_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -815,11 +740,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4303_condition()
+            self.logic.r4303_condition
         )
+
 
     def test_r4304_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -828,11 +753,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4304_condition()
+            self.logic.r4304_condition
         )
+
 
     def test_r4305_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -841,11 +766,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4305_condition()
+            self.logic.r4305_condition
         )
 
+
     def test_r4306_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -854,101 +779,81 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4306_condition()
+            self.logic.r4306_condition
         )
 
 
     def test_r4308_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r4308_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertTrue(logic.r4308_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertFalse(logic.r4308_condition())
+        self._integer_equal_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r4308_condition
+        )
 
 
     def test_r4309_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
-        self.assertFalse(logic.r4309_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(1)
-        self.assertFalse(logic.r4309_condition())
-
-        self.settings_manager.set_talked_to_dustfem_times(2)
-        self.assertTrue(logic.r4309_condition())
+        self._integer_gt_condition(
+            lambda x: self.settings_manager.set_talked_to_dustfem_times(x),
+            1,
+            self.logic.r4309_condition
+        )
 
 
     def test_r4312_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertFalse(logic.r4312_condition())
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_warning(1)
+        self.assertFalse(self.logic.r4312_condition())
 
         self.settings_manager.set_in_party_morte(True)
-
-        self.assertTrue(logic.r4312_condition())
+        self.settings_manager.set_warning(0)
+        self.assertTrue(self.logic.r4312_condition())
 
 
     def test_r4313_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertFalse(logic.r4313_condition())
-
-        self.settings_manager.set_in_party_morte(True)
-        self.assertFalse(logic.r4313_condition())
+        self.settings_manager.set_warning(0)
+        self.settings_manager.set_in_party_morte(False)
+        self.assertFalse(self.logic.r4313_condition())
 
         self.settings_manager.set_warning(1)
-        self.assertTrue(logic.r4313_condition())
+        self.settings_manager.set_in_party_morte(True)
+        self.assertTrue(self.logic.r4313_condition())
 
 
     def test_r4314_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self.assertFalse(logic.r4314_condition())
+        self.assertFalse(self.logic.r4314_condition())
 
         self.settings_manager.set_in_party_morte(True)
-        self.assertFalse(logic.r4314_condition())
+        self.assertFalse(self.logic.r4314_condition())
 
         self.settings_manager.set_warning(1)
-        self.assertFalse(logic.r4314_condition())
+        self.assertFalse(self.logic.r4314_condition())
 
         self.settings_manager.set_warning(2)
-        self.assertTrue(logic.r4314_condition())
+        self.assertTrue(self.logic.r4314_condition())
 
 
     def test_r4315_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r4315_condition()
+            self.logic.r4315_condition
         )
 
-    def test_r4318_condition(self):
-        logic = DustfemLogic(self.settings_manager)
 
+    def test_r4318_condition(self):
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_choke_memory(x),
-            lambda: logic.r4318_condition()
+            self.logic.r4318_condition
         )
 
 
     def test_r4319_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_choke_memory(x),
-            lambda: logic.r4319_condition()
+            self.logic.r4319_condition
         )
 
 
     def test_r4324_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 13
@@ -957,12 +862,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4324_condition()
+            self.logic.r4324_condition
         )
 
 
     def test_r4325_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'dexterity'
         value = 12
@@ -971,12 +875,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4325_condition()
+            self.logic.r4325_condition
         )
 
 
     def test_r4329_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -985,12 +888,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4329_condition()
+            self.logic.r4329_condition
         )
 
 
     def test_r4331_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -999,12 +901,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4331_condition()
+            self.logic.r4331_condition
         )
 
 
     def test_r4332_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 13
@@ -1013,12 +914,11 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4332_condition()
+            self.logic.r4332_condition
         )
 
 
     def test_r4333_condition(self):
-        logic = DustfemLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'charisma'
         value = 12
@@ -1027,51 +927,49 @@ class DustfemLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r4333_condition()
+            self.logic.r4333_condition
         )
 
 
     def test_r66684_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self._boolean_straight_condition(
+        self._integer_equal_condition(
             lambda x: self.settings_manager.set_join_dustmen(x),
-            lambda: logic.r66684_condition()
+            1,
+            self.logic.r66684_condition
         )
 
 
     def test_r66685_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self._boolean_invert_condition(
+        self._integer_not_equal_condition(
             lambda x: self.settings_manager.set_join_dustmen(x),
-            lambda: logic.r66685_condition()
+            1,
+            self.logic.r66685_condition
         )
+
 
     def test_r66686_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self._boolean_invert_condition(
+        self._integer_not_equal_condition(
             lambda x: self.settings_manager.set_join_dustmen(x),
-            lambda: logic.r66686_condition()
+            1,
+            self.logic.r66686_condition
         )
+
 
     def test_r66687_condition(self):
-        logic = DustfemLogic(self.settings_manager)
-
-        self._boolean_invert_condition(
+        self._integer_not_equal_condition(
             lambda x: self.settings_manager.set_join_dustmen(x),
-            lambda: logic.r66687_condition()
+            1,
+            self.logic.r66687_condition
         )
 
-    def test_r66688_condition(self):
-        logic = DustfemLogic(self.settings_manager)
 
-        self._boolean_invert_condition(
+    def test_r66688_condition(self):
+        self._integer_not_equal_condition(
             lambda x: self.settings_manager.set_join_dustmen(x),
-            lambda: logic.r66688_condition()
+            1,
+            self.logic.r66688_condition
         )
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

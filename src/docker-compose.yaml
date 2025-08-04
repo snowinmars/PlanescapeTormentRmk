@@ -1,0 +1,25 @@
+services:
+  planescape-torment-rmk-tests:
+    image: planescape-torment-rmk-tests
+    hostname: planescape-torment-rmk-tests
+    container_name: planescape-torment-rmk-tests
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+      - ./htmlcov:/app/htmlcov
+    command: >
+      sh -c " \
+       start_time=\$(date +%s) && \
+        test_start=\$(date +%s) && \
+         coverage run -m unittest discover -s /app -p '*_tests.py' && \
+          test_end=\$(date +%s) && \
+       report_start=\$(date +%s) && \
+        coverage html && \
+         report_end=\$(date +%s) && \
+       total_end=\$(date +%s) && \
+       echo '\nСтатистика времени выполнения:' && \
+       echo \"- Тесты: \$((test_end - test_start)) сек\" && \
+       echo \"- Генерация отчёта: \$((report_end - report_start)) сек\" && \
+       echo \"- Общее время: \$((total_end - start_time)) сек\""

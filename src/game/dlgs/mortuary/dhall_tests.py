@@ -1,12 +1,18 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.dhall_logic import DhallLogic
+
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.dhall_logic import DhallLogic
+
 
 class DhallLogicTest(LogicTest):
-    def test_initialization(self):
-        logic = DhallLogic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+    def setUp(self):
+        super(DhallLogicTest, self).setUp()
+        self.logic = DhallLogic(self.settings_manager)
+
+
+    def test_ctor(self):
+        self.assertIsNotNone(self.logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -15,316 +21,281 @@ class DhallLogicTest(LogicTest):
 
 
     def test_dhall_init(self):
-        self._init_(
+        self._init_with_location(
             'mortuary_f2r3',
-            DhallLogic(self.settings_manager).dhall_init,
+            self.logic.dhall_init,
             self.settings_manager.get_talked_to_dhall_times
         )
 
 
     def test_kill_dhall(self):
-        logic = DhallLogic(self.settings_manager)
-
         self.assertFalse(self.settings_manager.get_dead_dhall())
         self.assertFalse(self.settings_manager.get_has_dhall_feather())
 
-        logic.kill_dhall()
+        self.logic.kill_dhall()
 
         self.assertTrue(self.settings_manager.get_dead_dhall())
         self.assertTrue(self.settings_manager.get_has_dhall_feather())
 
 
     def test_r827_action(self):
-        logic = DhallLogic(self.settings_manager)
-        logic.r827_action()
+        self.logic.r827_action()
 
 
     def test_r830_action(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'experience'
         delta = 250
+        note_id = '39468'
 
-        self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
-            delta,
-            lambda: logic.r830_action()
-        )
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        before = self.settings_manager.character_manager.get_property(who, prop)
+
+        self.logic.r830_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        after = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(before + delta, after)
 
 
     def test_r831_action(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
-        prop = 'experience'
-        delta = 250
+        prop_exp = 'experience'
+        prop_good = 'good'
+        delta_exp = 250
+        delta_good = -3
+        note_id = '39469'
 
-        self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
-            delta,
-            lambda: logic.r831_action()
-        )
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        before_exp = self.settings_manager.character_manager.get_property(who, prop_exp)
+        before_good = self.settings_manager.character_manager.get_property(who, prop_good)
+
+        self.logic.r831_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        after_exp = self.settings_manager.character_manager.get_property(who, prop_exp)
+        after_good = self.settings_manager.character_manager.get_property(who, prop_good)
+        self.assertEqual(before_exp + delta_exp, after_exp)
+        self.assertEqual(before_good + delta_good, after_good)
 
 
     def test_r843_action(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'good'
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
-            lambda: logic.r843_action()
+            self.logic.r843_action
         )
 
 
     def test_r5069_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39460'
+        note_id = '39460'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r5069_action()
+            note_id,
+            self.logic.r5069_action
         )
 
 
     def test_r886_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39463'
+        note_id = '39463'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r886_action()
+            note_id,
+            self.logic.r886_action
         )
 
 
     def test_r906_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39464'
+        note_id = '39464'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r906_action()
+            note_id,
+            self.logic.r906_action
         )
 
 
     def test_r921_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39461'
+        note_id = '39461'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r921_action()
+            note_id,
+            self.logic.r921_action
         )
 
 
     def test_r931_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39462'
+        note_id = '39462'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r931_action()
+            note_id,
+            self.logic.r931_action
         )
 
 
     def test_r936_action(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'good'
         delta = 1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
-            lambda: logic.r936_action()
+            self.logic.r936_action
         )
 
 
     def test_r953_action(self):
-        logic = DhallLogic(self.settings_manager)
-        delta = 1
-
-        before = self.settings_manager.get_know_dustmen()
-        logic.r953_action()
-        after = self.settings_manager.get_know_dustmen()
-        self.assertEqual(before + delta, after)
-        logic.r953_action()
-        afterOnce = self.settings_manager.get_know_dustmen()
-        self.assertEqual(after, afterOnce)
+        self._integer_inc_once_action(
+            self.settings_manager.get_know_dustmen,
+            1,
+            self.logic.r953_action
+        )
 
 
     def test_r958_action(self):
-        logic = DhallLogic(self.settings_manager)
-        delta = 1
-
-        before = self.settings_manager.get_know_dustmen()
-        logic.r958_action()
-        after = self.settings_manager.get_know_dustmen()
-        self.assertEqual(before + delta, after)
-        logic.r958_action()
-        afterOnce = self.settings_manager.get_know_dustmen()
-        self.assertEqual(after, afterOnce)
+        self._integer_inc_once_action(
+            self.settings_manager.get_know_dustmen,
+            1,
+            self.logic.r958_action
+        )
 
 
     def test_r1301_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39470'
+        note_id = '39470'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r1301_action()
+            note_id,
+            self.logic.r1301_action
         )
 
 
     def test_r974_action(self):
-        logic = DhallLogic(self.settings_manager)
-        delta = 1
-
-        before = self.settings_manager.get_know_dustmen()
-        logic.r974_action()
-        after = self.settings_manager.get_know_dustmen()
-        self.assertEqual(before + delta, after)
-        logic.r974_action()
-        afterOnce = self.settings_manager.get_know_dustmen()
-        self.assertEqual(after, afterOnce)
+        self._integer_inc_once_action(
+            self.settings_manager.get_know_dustmen,
+            1,
+            self.logic.r974_action
+        )
 
 
     def test_r985_action(self):
-        logic = DhallLogic(self.settings_manager)
-        delta = 1
-
-        before = self.settings_manager.get_know_dustmen()
-        logic.r985_action()
-        after = self.settings_manager.get_know_dustmen()
-        self.assertEqual(before + delta, after)
-        logic.r985_action()
-        afterOnce = self.settings_manager.get_know_dustmen()
-        self.assertEqual(after, afterOnce)
+        self._integer_inc_once_action(
+            self.settings_manager.get_know_dustmen,
+            1,
+            self.logic.r985_action
+        )
 
 
     def test_r1327_action(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equals_action(
-            lambda: self.settings_manager.get_dhall_value(),
+            self.settings_manager.get_dhall_value,
             1,
-            lambda: logic.r1327_action()
+            self.logic.r1327_action
         )
 
 
     def test_r5731_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39459'
+        note_id = '39459'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r5731_action()
+            note_id,
+            self.logic.r5731_action
         )
 
 
     def test_r5732_action(self):
-        logic = DhallLogic(self.settings_manager)
-        id = '39459'
+        note_id = '39459'
 
         self._pickup_journal_note_action(
-            id,
-            lambda: logic.r5732_action()
+            note_id,
+            self.logic.r5732_action
         )
 
 
     def test_r6033_action(self):
-        logic = DhallLogic(self.settings_manager)
-        delta = 1
-
-        before = self.settings_manager.get_know_dustmen()
-        logic.r6033_action()
-        after = self.settings_manager.get_know_dustmen()
-        self.assertEqual(before + delta, after)
-        logic.r6033_action()
-        afterOnce = self.settings_manager.get_know_dustmen()
-        self.assertEqual(after, afterOnce)
+        self._integer_inc_once_action(
+            self.settings_manager.get_know_dustmen,
+            1,
+            self.logic.r6033_action
+        )
 
 
     def test_r6051_action(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'good'
         delta = 1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
-            lambda: logic.r6051_action()
+            self.logic.r6051_action
         )
 
 
     def test_r6053_action(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'good'
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
-            lambda: logic.r6053_action()
+            self.logic.r6053_action
         )
 
 
     def test_r5070_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r5070_condition()
+            self.logic.r5070_condition
         )
 
 
     def test_r5071_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r5071_condition()
+            self.logic.r5071_condition
         )
 
 
     def test_r5072_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r5072_condition()
+            self.logic.r5072_condition
         )
 
 
     def test_r5073_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
-        propInt = 'intelligence'
-        propWis = 'wisdom'
-        deltaInt = 12
-        deltaWis = 13
+        prop_int = 'intelligence'
+        prop_wis = 'wisdom'
+        delta_int = 12
+        delta_wis = 13
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt - 1)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis + 1)
-        self.assertFalse(logic.r5073_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis + 1)
+        self.assertFalse(self.logic.r5073_condition())
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis)
-        self.assertFalse(logic.r5073_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis)
+        self.assertFalse(self.logic.r5073_condition())
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt + 1)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis - 1)
-        self.assertTrue(logic.r5073_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis - 1)
+        self.assertTrue(self.logic.r5073_condition())
 
 
     def test_r5074_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
         value = 12
@@ -333,160 +304,135 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r5074_condition()
+            self.logic.r5074_condition
         )
 
 
     def test_r6064_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r6064_condition()
+            self.logic.r6064_condition
         )
 
 
     def test_r13288_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r13288_condition()
+            self.logic.r13288_condition
         )
 
 
     def test_r830_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_vaxis_lawful(x),
-            lambda: logic.r830_condition()
+            self.logic.r830_condition
         )
 
 
     def test_r831_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_vaxis_lawful(x),
-            lambda: logic.r831_condition()
+            self.logic.r831_condition
         )
 
 
     def test_r839_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_in_party_morte(x),
-            lambda: logic.r839_condition()
+            self.logic.r839_condition
         )
 
 
     def test_r835_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_mortualy_alarmed(True)
-        self.assertFalse(logic.r835_condition())
+        self.assertFalse(self.logic.r835_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_mortualy_alarmed(False)
-        self.assertTrue(logic.r835_condition())
+        self.assertTrue(self.logic.r835_condition())
 
 
     def test_r5058_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_mortualy_alarmed(False)
-        self.assertFalse(logic.r5058_condition())
+        self.assertFalse(self.logic.r5058_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_mortualy_alarmed(True)
-        self.assertTrue(logic.r5058_condition())
+        self.assertTrue(self.logic.r5058_condition())
 
 
     def test_r842_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_dhall_value(x),
             0,
-            lambda: logic.r842_condition()
+            self.logic.r842_condition
         )
 
 
     def test_r843_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_dhall_value(x),
             0,
-            lambda: logic.r843_condition()
+            self.logic.r843_condition
         )
 
 
     def test_r5062_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_dhall_value(x),
             0,
-            lambda: logic.r5062_condition()
+            self.logic.r5062_condition
         )
 
 
     def test_r854_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self.settings_manager.set_vaxis_value(0)
         self.settings_manager.set_dead_vaxis(True)
         self.settings_manager.set_vaxis_leave(True)
         self.settings_manager.set_vaxis_betrayed(1)
-        self.assertFalse(logic.r854_condition())
+        self.assertFalse(self.logic.r854_condition())
 
         self.settings_manager.set_vaxis_value(1)
         self.settings_manager.set_dead_vaxis(False)
         self.settings_manager.set_vaxis_leave(False)
         self.settings_manager.set_vaxis_betrayed(0)
-        self.assertTrue(logic.r854_condition())
+        self.assertTrue(self.logic.r854_condition())
 
 
     def test_r858_condition(self):
-        logic = DhallLogic(self.settings_manager)
+        self.settings_manager.set_escape_mortuary(False)
+        self.assertTrue(self.logic.r858_condition())
 
         self.settings_manager.set_escape_mortuary(True)
-        self.assertFalse(logic.r858_condition())
+        self.assertFalse(self.logic.r858_condition())
 
+        self.settings_manager.location_manager.set_location('hive_northeast')
         self.settings_manager.set_escape_mortuary(False)
+        self.assertFalse(self.logic.r858_condition())
 
-        self.assertTrue(logic.r858_condition())
 
 
     def test_r870_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r870_condition()
+            self.logic.r870_condition
         )
 
 
     def test_r891_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r891_condition()
+            self.logic.r891_condition
         )
 
 
     def test_r892_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
         value = 11
@@ -495,12 +441,11 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r892_condition()
+            self.logic.r892_condition
         )
 
 
     def test_r898_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
         value = 11
@@ -509,12 +454,11 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r898_condition()
+            self.logic.r898_condition
         )
 
 
     def test_r910_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
         value = 11
@@ -523,12 +467,11 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r910_condition()
+            self.logic.r910_condition
         )
 
 
     def test_r931_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'intelligence'
         value = 11
@@ -537,141 +480,118 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r931_condition()
+            self.logic.r931_condition
         )
 
 
     def test_r942_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_journal(x),
-            lambda: logic.r942_condition()
+            self.logic.r942_condition
         )
 
 
     def test_r943_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r943_condition()
+            self.logic.r943_condition
         )
 
 
     def test_r6026_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r6026_condition()
+            self.logic.r6026_condition
         )
 
 
     def test_r874_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r874_condition()
+            self.logic.r874_condition
         )
 
 
     def test_r948_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r948_condition()
+            self.logic.r948_condition
         )
 
 
     def test_r6027_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r6027_condition()
+            self.logic.r6027_condition
         )
 
 
     def test_r6066_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r6066_condition()
+            self.logic.r6066_condition
         )
 
 
     def test_r964_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r964_condition()
+            self.logic.r964_condition
         )
 
 
     def test_r968_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
-            lambda: logic.r968_condition()
+            self.logic.r968_condition
         )
 
-    def test_r5076_condition(self):
-        logic = DhallLogic(self.settings_manager)
 
+    def test_r5076_condition(self):
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r5076_condition()
+            self.logic.r5076_condition
         )
 
 
     def test_r5077_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r5077_condition()
+            self.logic.r5077_condition
         )
 
 
     def test_r5078_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
-        propInt = 'intelligence'
-        propWis = 'wisdom'
-        deltaInt = 12
-        deltaWis = 13
+        prop_int = 'intelligence'
+        prop_wis = 'wisdom'
+        delta_int = 12
+        delta_wis = 13
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt - 1)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis + 1)
-        self.assertFalse(logic.r5078_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis + 1)
+        self.assertFalse(self.logic.r5078_condition())
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis)
-        self.assertFalse(logic.r5078_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis)
+        self.assertFalse(self.logic.r5078_condition())
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt + 1)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis - 1)
-        self.assertTrue(logic.r5078_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis - 1)
+        self.assertTrue(self.logic.r5078_condition())
 
 
     def test_r5079_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
         value = 12
@@ -680,43 +600,39 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r5079_condition()
+            self.logic.r5079_condition
         )
 
 
     def test_r5081_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._integer_equal_condition(
             lambda x: self.settings_manager.set_deionarra_value(x),
             0,
-            lambda: logic.r5081_condition()
+            self.logic.r5081_condition
         )
 
 
     def test_r5082_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
-        propInt = 'intelligence'
-        propWis = 'wisdom'
-        deltaInt = 12
-        deltaWis = 13
+        prop_int = 'intelligence'
+        prop_wis = 'wisdom'
+        delta_int = 12
+        delta_wis = 13
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt - 1)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis + 1)
-        self.assertFalse(logic.r5082_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis + 1)
+        self.assertFalse(self.logic.r5082_condition())
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis)
-        self.assertFalse(logic.r5082_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis)
+        self.assertFalse(self.logic.r5082_condition())
 
-        self.settings_manager.gcm.set_property(who, propInt, deltaInt + 1)
-        self.settings_manager.gcm.set_property(who, propWis, deltaWis - 1)
-        self.assertTrue(logic.r5082_condition())
+        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
+        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis - 1)
+        self.assertTrue(self.logic.r5082_condition())
 
 
     def test_r5083_condition(self):
-        logic = DhallLogic(self.settings_manager)
         who = 'protagonist'
         prop = 'wisdom'
         value = 12
@@ -725,18 +641,16 @@ class DhallLogicTest(LogicTest):
             who,
             prop,
             value,
-            lambda: logic.r5083_condition()
+            self.logic.r5083_condition
         )
 
 
     def test_r6032_condition(self):
-        logic = DhallLogic(self.settings_manager)
-
         self._boolean_straight_condition(
             lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
-            lambda: logic.r6032_condition()
+            self.logic.r6032_condition
         )
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

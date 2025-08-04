@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.inventory.n1201_logic import N1201Logic
+from game.engine.tests import (LogicTest)
+from game.dlgs.inventory.n1201_logic import N1201Logic
 
 class N1201LogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = N1201Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -30,8 +30,8 @@ class N1201LogicTest(LogicTest):
         logic = N1201Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_lr_1201(),
-            lambda: logic.r44995_action()
+            self.settings_manager.get_lr_1201,
+            logic.r44995_action
         )
 
 
@@ -39,16 +39,16 @@ class N1201LogicTest(LogicTest):
         logic = N1201Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_ll_1201(),
-            lambda: logic.r44996_action()
+            self.settings_manager.get_ll_1201,
+            logic.r44996_action
         )
 
     def test_r44997_action(self):
         logic = N1201Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_ul_1201(),
-            lambda: logic.r44997_action()
+            self.settings_manager.get_ul_1201,
+            logic.r44997_action
         )
 
 
@@ -80,8 +80,8 @@ class N1201LogicTest(LogicTest):
         logic = N1201Logic(self.settings_manager)
 
         self._false_then_true_action(
-            lambda: self.settings_manager.get_ur_1201(),
-            lambda: logic.r45000_action()
+            self.settings_manager.get_ur_1201,
+            logic.r45000_action
         )
 
 
@@ -238,9 +238,9 @@ class N1201LogicTest(LogicTest):
         delta = 250
 
         self._change_prop(
-            lambda: self.settings_manager.gcm.get_character_property(who, prop),
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
-            lambda: logic.r45023_action()
+            logic.r45023_action
         )
 
 
@@ -264,7 +264,7 @@ class N1201LogicTest(LogicTest):
 
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_ur_1201(x),
-            lambda: logic.r45000_condition()
+            logic.r45000_condition
         )
 
 
@@ -293,7 +293,7 @@ class N1201LogicTest(LogicTest):
 
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_ll_1201(x),
-            lambda: logic.r45003_condition()
+            logic.r45003_condition
         )
 
 
@@ -318,4 +318,4 @@ class N1201LogicTest(LogicTest):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() # pragma: no cover

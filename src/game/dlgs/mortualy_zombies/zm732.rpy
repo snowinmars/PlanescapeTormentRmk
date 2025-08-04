@@ -1,10 +1,10 @@
 init 10 python:
-    from dlgs.mortualy_zombies.zm732_logic import Zm732Logic
+    from game.dlgs.mortualy_zombies.zm732_logic import Zm732Logic
     zm732Logic = Zm732Logic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DZM732.DLG
+# Original:  DLG/ZM732.DLG
 # ###
 
 
@@ -19,7 +19,7 @@ label start_zm732_kill:
     jump zm732_kill
 label zm732_init:
     $ zm732Logic.zm732_init()
-    scene bg mortuary1
+    scene bg mortuary_f1r7
     show zm732_img default at center_left_down
     return
 label zm732_dispose:
@@ -33,24 +33,24 @@ label zm732_s0:  # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
     nr '…тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
 
     menu:
-        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if zm732Logic.r6533_condition():
+        '«Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо».' if zm732Logic.r6533_condition():
             # r0 # reply6533
             $ zm732Logic.r6533_action()
             jump zm732_s1
 
-        'Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо.' if zm732Logic.r6532_condition():
+        '«Извини, что забрал ту книгу… она выглядела слишком интересной, что пропустить ее мимо».' if zm732Logic.r6532_condition():
             # r1 # reply6532
             jump zm732_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm732Logic.r6534_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm732Logic.r6534_condition():
             # r2 # reply6534
             jump zm732_s1
 
-        'Использовать на трупе свою способность История костей.' if zm732Logic.r6535_condition():
+        'Использовать на трупе свою способность «История костей».' if zm732Logic.r6535_condition():
             # r3 # reply6535
             jump zm732_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply6536
             jump zm732_dispose
 
@@ -64,14 +64,6 @@ label zm732_s1:  # from 0.0 0.1 0.2
     nr 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if zm732Logic.r6535_condition():
-            # r3 # reply6535
-            jump zm732_s2
-
-        'Было приятно с тобой поболтать. Прощай.':
-            # r4 # reply6536
-            jump zm732_dispose
-
         'Оставить труп в покое.':
             # r6 # reply6538
             jump zm732_dispose
@@ -82,12 +74,6 @@ label zm732_s2:  # from 0.3
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm732Logic.r6534_condition():
-            # r2 # reply6534
-            jump zm732_s1
-        'Было приятно с тобой поболтать. Прощай.':
-            # r4 # reply6536
-            jump zm732_dispose
         'Оставить труп в покое.':
             # r7 # reply6539
             jump zm732_dispose

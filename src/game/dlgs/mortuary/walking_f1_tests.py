@@ -1,12 +1,12 @@
 import unittest
 
-from engine.tests import (LogicTest)
-from dlgs.mortuary.walking_f1_logic import WalkingF1Logic
+from game.engine.tests import (LogicTest)
+from game.dlgs.mortuary.walking_f1_logic import WalkingF1Logic
 
 class WalkingF1LogicTest(LogicTest):
-    def test_initialization(self):
+    def test_ctor(self):
         logic = WalkingF1Logic(self.settings_manager)
-        self.assertIsNotNone(logic.gsm)
+        self.assertIsNotNone(logic.settings_manager)
 
 
     def test_methods_are_bound(self):
@@ -20,5 +20,5 @@ class WalkingF1LogicTest(LogicTest):
 
         self._step_into_location_action(
             id,
-            lambda: logic.walk_to_mortuaryf1r1_visit()
+            logic.walk_to_mortuaryf1r1_visit
         )

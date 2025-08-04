@@ -1,10 +1,10 @@
 init 10 python:
-    from dlgs.mortualy_zombies.zm199_logic import Zm199Logic
+    from game.dlgs.mortualy_zombies.zm199_logic import Zm199Logic
     zm199Logic = Zm199Logic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DZM199.DLG
+# Original:  DLG/ZM199.DLG
 # ###
 
 
@@ -16,7 +16,7 @@ label start_zm199_kill:
     jump zm199_kill
 label zm199_init:
     $ zm199Logic.zm199_init()
-    scene bg mortuary1
+    scene bg DISABLED
     show zm199_img default at center_left_down
     return
 label zm199_dispose:
@@ -30,24 +30,24 @@ label zm199_s0:  # - # IF ~  True()
     nr 'На его лбу выгравирован номер «199»; его губы сшиты.'
 
     menu:
-        'Итак… что тут у нас интересного?' if zm199Logic.r34976_condition():
+        '«Итак… что тут у нас интересного?»' if zm199Logic.r34976_condition():
             # r0 # reply34976
             $ zm199Logic.r34976_action()
             jump zm199_s1
 
-        'Итак… что тут у нас интересного?' if zm199Logic.r34979_condition():
+        '«Итак… что тут у нас интересного?»' if zm199Logic.r34979_condition():
             # r1 # reply34979
             jump zm199_s1
 
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm199Logic.r34980_condition():
+        '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zm199Logic.r34980_condition():
             # r2 # reply34980
             jump zm199_s1
 
-        'Использовать на трупе свою способность История костей.' if zm199Logic.r34981_condition():
+        'Использовать на трупе свою способность «История костей».' if zm199Logic.r34981_condition():
             # r3 # reply34981
             jump zm199_s2
 
-        'Было приятно с тобой поболтать. Прощай.':
+        '«Было приятно с тобой поболтать. Прощай».':
             # r4 # reply34984
             jump zm199_dispose
 
@@ -61,14 +61,6 @@ label zm199_s1:  # from 0.0 0.1 0.2
     nr 'Труп продолжает пялиться на тебя.'
 
     menu:
-        'Использовать на трупе свою способность История костей.' if zm199Logic.r34981_condition():
-            # r3 # reply34981
-            jump zm199_s2
-
-        'Было приятно с тобой поболтать. Прощай.':
-            # r4 # reply34984
-            jump zm199_dispose
-
         'Оставить зомби в покое.':
             # r6 # reply34978
             jump zm199_dispose
@@ -79,14 +71,6 @@ label zm199_s2:  # from 0.3
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-        'Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить.' if zm199Logic.r34980_condition():
-            # r2 # reply34980
-            jump zm199_s1
-
-        'Было приятно с тобой поболтать. Прощай.':
-            # r4 # reply34984
-            jump zm199_dispose
-
         'Оставить зомби в покое.':
             # r7 # reply34983
             jump zm199_dispose

@@ -1,4 +1,4 @@
-entitiesIds = [
+entities_ids = [
     # 'DDEATHON',
 #  mortuary starts
     'DDHALL',

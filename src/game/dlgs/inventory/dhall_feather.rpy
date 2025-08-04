@@ -1,5 +1,5 @@
 init 10 python in dhall_feather:
-    from dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
+    from game.dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
     dhallFeatherLogic = DhallFeatherLogic(renpy.store.global_settings_manager)
 
 # ###

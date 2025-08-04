@@ -1,40 +1,40 @@
 class Zm782Logic:
-    def __init__(self, gsm):
-        self.gsm = gsm
+    def __init__(self, settings_manager):
+        self.settings_manager = settings_manager
 
 
     def zm782_init(self):
-        self.gsm.glm.set_location('mortuary_f2r1')
-        self.gsm.inc_talked_to_zm782_times()
+        self.settings_manager.location_manager.set_location('mortuary_f2r1')
+        self.settings_manager.inc_talked_to_zm782_times()
 
 
     def kill_zm782(self):
-        self.gsm.set_dead_zm782(True)
-        self.gsm.inc_exp_custom('party', 65)
+        self.settings_manager.set_dead_zm782(True)
+        self.settings_manager.gain_experience('party', 65)
 
 
     def pick_key_up(self):
-        self.gsm.set_has_intro_key(True)
+        self.settings_manager.set_has_intro_key(True)
 
 
     def has_key_has_morte(self):
-        return self.gsm.get_in_party_morte() \
-               and self.gsm.get_has_intro_key()
+        return self.settings_manager.get_in_party_morte() \
+               and self.settings_manager.get_has_intro_key()
 
 
     def no_key_has_morte(self):
-        return self.gsm.get_in_party_morte() \
-               and not self.gsm.get_has_intro_key()
+        return self.settings_manager.get_in_party_morte() \
+               and not self.settings_manager.get_has_intro_key()
 
 
     def has_key_no_morte(self):
-        return not self.gsm.get_in_party_morte() \
-               and self.gsm.get_has_intro_key()
+        return not self.settings_manager.get_in_party_morte() \
+               and self.settings_manager.get_has_intro_key()
 
 
     def no_key_no_morte(self):
-        return not self.gsm.get_in_party_morte() \
-               and not self.gsm.get_has_intro_key()
+        return not self.settings_manager.get_in_party_morte() \
+               and not self.settings_manager.get_has_intro_key()
 
 
     def r24709_condition(self):
@@ -46,8 +46,8 @@ class Zm782Logic:
 
 
     def r24713_condition(self):
-        return not self.gsm.get_has_intro_key()
+        return not self.settings_manager.get_has_intro_key()
 
 
     def r24714_condition(self):
-        return self.gsm.get_has_intro_key()
+        return self.settings_manager.get_has_intro_key()

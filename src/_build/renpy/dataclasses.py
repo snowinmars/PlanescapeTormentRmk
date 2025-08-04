@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 
 @dataclass
-class Path
+class Path:
     from_state_id
     response_index
 
 @dataclass
-class Answer
+class Answer:
     condition
     action
     answer_id
@@ -16,7 +16,7 @@ class Answer
     target_state_id  # Can be int or 'EXIT'
 
 @dataclass
-class State
+class State:
     state_id
     paths
     say_id

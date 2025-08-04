@@ -1,5 +1,5 @@
 ﻿init 10 python:
-    from dlgs.inventory.n1201_logic import N1201Logic
+    from game.dlgs.inventory.n1201_logic import N1201Logic
     n1201Logic = N1201Logic(renpy.store.global_settings_manager)
 
 
