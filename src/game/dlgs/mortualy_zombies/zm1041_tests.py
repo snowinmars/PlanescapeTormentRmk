@@ -22,7 +22,7 @@ class Zm1041LogicTest(LogicTest):
 
     def test_zm1041_init(self):
         self._init_with_location(
-            'mortuary_f1r6',
+            'mortuary_f1r5',
             self.logic.zm1041_init,
             self.settings_manager.get_talked_to_zm1041_times
         )
