@@ -4,7 +4,7 @@ class Zm1041Logic:
 
 
     def zm1041_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r6')
+        self.settings_manager.location_manager.set_location('mortuary_f1r5')
         self.settings_manager.inc_talked_to_zm1041_times()
 
 

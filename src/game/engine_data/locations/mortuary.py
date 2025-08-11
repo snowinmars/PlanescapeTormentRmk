@@ -11,7 +11,7 @@ def build_mortuary_locations(manager):
         ]) \
         .register('AR0201', [
             'mortuary_f1r1', 'mortuary_f1r3', 'mortuary_f1r5',
-            'mortuary_f1r6', 'mortuary_f1r7', 'mortuary_f1rc'
+            'mortuary_f1r7', 'mortuary_f1rc'
         ]) \
         .register('AR0200', [
             'hive_northeast'
@@ -25,4 +25,3 @@ def build_mortuary_locations(manager):
         .register('AR0610', [
             'ravels_maze'
         ])
-
