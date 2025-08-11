@@ -7,6 +7,34 @@ def build_mortuary_f1r7_menu(location_id, settings_manager):
     builders.append(morte_menu(settings_manager, location_id, 1360, 400))
 
     builders.append(MenuBuilder(location_id) \
+        .auto_position(1500, 150) \
+        .option("Пройти в северную комнату") \
+        .jump("walk_to_mortuaryf1r5_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
+        .auto_position(400, 1000) \
+        .option("Пройти в главный зал") \
+        .jump("walk_to_mortuaryf1r1_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
+        .auto_position(500, 300) \
+        .option("Пройти в центральную комнату") \
+        .jump("walk_to_mortuaryf1rc_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
+        .auto_position(1100, 150) \
+        .option("Подняться на второй этаж") \
+        .jump("walk_to_mortuaryf2r7_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
         .with_main_texture('images/menu_sprites/zombie.png', lambda: not settings_manager.get_dead_zm732(), 710, 880)
         .auto_position(750, 880)
         .option(lambda: 'Атаковать труп «732»'

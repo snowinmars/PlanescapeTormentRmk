@@ -14,22 +14,39 @@ def build_mortuary_f1r1_menu(location_id, settings_manager):
     )
 
     builders.append(MenuBuilder(location_id) \
-        .with_main_texture('images/menu_sprites/soego.png', lambda: not settings_manager.get_dead_soego(), 950, 920) \
-        .auto_position(990, 920) \
+        .auto_position(450, 200) \
+        .option("Пройти в северо-восточную усыпальню") \
+        .jump("walk_to_mortuaryf1r3_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
+        .auto_position(1600, 900) \
+        .option("Пройти в юго-западную усыпальню") \
+        .jump("walk_to_mortuaryf1r7_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
+        .auto_position(1300, 300) \
+        .option("Пройти в центральную комнату") \
+        .jump("walk_to_mortuaryf1rc_visit") \
+        .style('open')
+    )
+
+    builders.append(MenuBuilder(location_id) \
+        .with_main_texture('images/menu_sprites/soego.png', lambda: not settings_manager.get_dead_soego(), 950, 600) \
+        .auto_position(990, 600) \
         .option(lambda: 'Убить Соего' \
                 if settings_manager.get_talked_to_soego_times() > 0 \
                 else 'Убить человека') \
-        .jump(lambda: 'start_soego_kill' \
-            if settings_manager.get_talked_to_soego_times() > 0 \
-            else 'start_soego_kill_first') \
+        .jump('start_soego_kill') \
         .when(lambda: not settings_manager.get_dead_soego()) \
         .style('kill') \
         .option(lambda: 'Поговорить с Соего' \
                 if settings_manager.get_talked_to_soego_times() > 0 \
                 else 'Подойти к человеку') \
-        .jump(lambda: 'start_soego_talk' \
-              if settings_manager.get_talked_to_soego_times() > 0 \
-              else 'start_soego_talk_first') \
+        .jump('start_soego_talk') \
         .when(lambda: not settings_manager.get_dead_soego()) \
         .style('talk')
     )

@@ -32,6 +32,8 @@ define xach_unknown       = Character('?',              color='#c8ffc8')
 define xach               = Character('Захария',        color='#c8ffc8')
 define deionarra_unknown  = Character('?',              color='#c8ffc8')
 define deionarra          = Character('Дейонарра',      color='#c8ffc8')
+define soego_unknown      = Character('?',              color='#c8ffc8')
+define soego              = Character('Соего',          color='#c8ffc8')
 define dust               = Character('Тленный',        color='#c8ffc8')
 define dustfem            = Character('Тленная',        color='#c8ffc8')
 
