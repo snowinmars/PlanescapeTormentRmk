@@ -7,8 +7,8 @@
 # Original:  DLG/MORTE1.DLG
 
 
-morte1_s24
-morte1_s26
+# morte1_s24
+# morte1_s26
 label start_morte1_talk_first:
     call new_life_morte1_s0
     jump morte1_s0

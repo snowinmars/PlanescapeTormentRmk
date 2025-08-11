@@ -33,7 +33,7 @@ label walk_to_mortuaryf2r2_visit:
 label walk_to_mortuaryf2r2_scene:
     $ walkingF2Logic.walk_to_mortuaryf2r2_scene()
     scene bg mortuary_f2r2
-    jump morte2_s0
+    jump start_morte2_talk_first
 
 
 label walk_to_mortuaryf2r3_visit:
@@ -45,7 +45,7 @@ label walk_to_mortuaryf2r3_visit:
 label walk_to_mortuaryf2r3_scene:
     $ walkingF2Logic.walk_to_mortuaryf2r3_scene()
     scene bg mortuary_f2r3
-    jump morte2_s31
+    jump start_morte2_talk_dhall
 
 
 label walk_to_mortuaryf2r4_visit:

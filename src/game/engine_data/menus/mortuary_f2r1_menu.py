@@ -60,10 +60,10 @@ def build_mortuary_f2r1_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(170, 460)
         .option(lambda: 'Открыть дверь в западную комнату'
-                if settings_manager.location_manager.is_visited_location('mortuary_f2r2')
+                if settings_manager.location_manager.is_visited('mortuary_f2r2')
                 else "Открыть дверь") \
         .jump(lambda: 'walk_to_mortuaryf2r2_visit'
-                if settings_manager.location_manager.is_visited_location('mortuary_f2r2')
+                if settings_manager.location_manager.is_visited('mortuary_f2r2')
                 else 'walk_to_mortuaryf2r2_scene') \
         .when(lambda: settings_manager.get_has_intro_key()) \
         .style('open')
@@ -80,10 +80,10 @@ def build_mortuary_f2r1_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(1240, 1000) \
         .option(lambda: 'Открыть дверь в южную комнату'
-            if settings_manager.location_manager.is_visited_location('mortuary_f2r8')
+            if settings_manager.location_manager.is_visited('mortuary_f2r8')
             else "Открыть дверь") \
         .jump(lambda: 'walk_to_mortuaryf2r8_visit'
-            if settings_manager.location_manager.is_visited_location('mortuary_f2r8')
+            if settings_manager.location_manager.is_visited('mortuary_f2r8')
             else "walk_to_mortuaryf2r8_closed") \
         .when(lambda: settings_manager.get_has_intro_key()) \
         .style('open')
@@ -92,7 +92,7 @@ def build_mortuary_f2r1_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(940, 220) \
         .option(lambda: 'Подняться на третий этаж'
-            if settings_manager.location_manager.is_visited_location('mortuary_f3r6') or settings_manager.location_manager.is_visited_location('mortuary_f3r2')
+            if settings_manager.location_manager.is_visited('mortuary_f3r6') or settings_manager.location_manager.is_visited('mortuary_f3r2')
             else "Подняться по лестнице") \
         .jump(lambda: 'walk_to_mortuaryf3r2_visit'
             if settings_manager.get_has_mortuary_key()
@@ -104,7 +104,7 @@ def build_mortuary_f2r1_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(790, 280) \
         .option(lambda: 'Спуститься на первый этаж'
-            if settings_manager.location_manager.is_visited_location('mortuary_f1r1') or settings_manager.location_manager.is_visited_location('mortuary_f1r7')
+            if settings_manager.location_manager.is_visited('mortuary_f1r1') or settings_manager.location_manager.is_visited('mortuary_f1r7')
             else "Спуститься по лестнице") \
         .jump(lambda: 'walk_to_mortuaryf1r1_visit'
             if settings_manager.get_has_mortuary_key()

@@ -54,3 +54,8 @@ label walk_mortuaryf3r8_pick_mortuary_task_list:
     $ walkingF3Logic.walk_mortuaryf3r8_pick_mortuary_task_list()
     nr "Ты подбираешь список заданий."
     jump show_graphics_menu
+
+label walk_mortuaryf3r8_pick_garbage:
+    $ walkingF3Logic.walk_mortuaryf3r8_pick_garbage()
+    nr "Ты подбираешь кусок мусора."
+    jump show_graphics_menu

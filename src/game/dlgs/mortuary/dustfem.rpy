@@ -7,7 +7,7 @@ init 10 python:
 # Original:  DLG/DUSTFEM.DLG
 # ###
 
-dustfem_s22
+# dustfem_s22
 label start_dustfem_talk_first:
     call dustfem_init
     jump dustfem_s3

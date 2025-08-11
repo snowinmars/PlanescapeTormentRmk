@@ -37,3 +37,6 @@ class WalkingF3Logic:
 
     def walk_mortuaryf3r8_pick_mortuary_task_list(self):
         self.settings_manager.set_has_mortuary_task_list(True)
+
+    def walk_mortuaryf3r8_pick_garbage(self):
+        self.settings_manager.set_has_garbage(True)

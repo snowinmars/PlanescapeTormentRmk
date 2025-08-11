@@ -26,7 +26,7 @@ def build_mortuary_f2r4_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(1590, 400)
         .option(lambda: 'Пройти в серево-восточную препараторскую'
-                if settings_manager.location_manager.is_visited_location('mortuary_f2r5')
+                if settings_manager.location_manager.is_visited('mortuary_f2r5')
                 else "Открыть дверь") \
         .jump('walk_to_mortuaryf2r5_visit') \
         .style('open')

@@ -1,5 +1,5 @@
 init 10 python:
-    from game.dlgs.mortualy_zombies.zm782Logic import Zm782Logic
+    from game.dlgs.mortualy_zombies.zm782_logic import Zm782Logic
     zm782Logic = Zm782Logic(renpy.store.global_settings_manager)
 
 

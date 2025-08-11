@@ -25,13 +25,12 @@ screen event_manager_display(position=(0, 0.22), width=0.2, height=0.2, categori
                 ysize viewport_height
 
                 vbox:
-                    for event in renpy.store.global_event_manager.get_events():
-                        $ timestamp, category, text = event
+                    for event in reversed(renpy.store.global_event_manager.get_events()):
                         if categories is None or category in categories:
                             hbox:
                                 # text timestamp style "event_manager_timestamp"
                                 # text category style "event_manager_category"
-                                text text style "event_manager_text"
+                                text event.text style "event_manager_text"
 
 screen event_manager_header():
     hbox:

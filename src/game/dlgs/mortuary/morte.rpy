@@ -2363,7 +2363,8 @@ label morte_s138:  # from 137.0
     nr 'Кажется, его покоробило.'
     morte '«Вот уж мелкие уродцы, а?»'
 
-    menu:
+    jump morte_dispose
+
 
 # s139 # say11948
 label morte_s139:  # -
@@ -7432,7 +7433,7 @@ label morte_s474:  # -
     nr 'Морт закатывает глаза.'
     morte '«Нашествие дураков…»'
 
-    jump yi'minn_s47  # EXTERN
+    jump yiminn_s47  # EXTERN
 
 # s475 # say44944
 label morte_s475:  # -
@@ -7448,11 +7449,11 @@ label morte_s476:  # -
     menu:
         '«Морт, просто немного помолчи. Я хочу послушать».':
             # r977 # reply45027
-            jump 3planea_s1  # EXTERN
+            jump d3planea_s1  # EXTERN
 
         'Не обращать внимания на Морта, продолжать слушать.':
             # r978 # reply45028
-            jump 3planea_s1  # EXTERN
+            jump d3planea_s1  # EXTERN
 
         '«Ты прав, Морт. Идем».':
             # r979 # reply45029
@@ -11003,12 +11004,13 @@ label morte_s712:  # from 711.0
 
 
 # s713 # say65804
-label morte_s713:  # from 712.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",1) ~ GOTO 714
+label morte_s713:  # from 712.0 # ~SetGlobal("Know_Morte_Pillar","GLOBAL",1)
     morte '«Ну да, шеф. Я же обещал. Морт всегда держит свои обещания»'
     nr 'Он делает паузу.'
     morte '«Ну, почти всегда. Хе-хе. Была одна крошка с Арбореи, которая…»'
 
-    menu:
+    jump morte_s714
+
 
 # s714 # say65805
 label morte_s714:  # from 713.0
@@ -11156,7 +11158,8 @@ label morte_s724:  # from 723.0
     morte '«Дьяволы злые, только это «упорядоченный» вид зла. Демоны тоже злые, но в этом плане они более свободны: более импульсивные, хаотичные, неорганизованные».'
     morte '«Дьяволов можно сравнить с политиками, а демонов — с убийцами».'
 
-    menu:
+    jump morte_s725
+
 
 # s725 # say65834
 label morte_s725:  # from 724.0
