@@ -9,7 +9,7 @@ def build_mortuary_f2r7_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(740, 970)
         .option(lambda: 'Пройти в южную комнату'
-                if settings_manager.location_manager.is_visited_location('mortuary_f2r8')
+                if settings_manager.location_manager.is_visited('mortuary_f2r8')
                 else "Открыть дверь") \
         .jump('walk_to_mortuaryf2r8_visit') \
         .style('open')
@@ -49,7 +49,7 @@ def build_mortuary_f2r7_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(930, 260) \
         .option(lambda: 'Подняться на третий этаж'
-                if settings_manager.location_manager.is_visited_location('mortuary_f3r6')
+                if settings_manager.location_manager.is_visited('mortuary_f3r6')
                 else "Подняться по лестнице") \
         .jump("walk_to_mortuaryf3r6_visit") \
         .style('open')

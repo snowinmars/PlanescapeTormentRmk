@@ -29,7 +29,7 @@ class EventManager:
 
     def get_events(self, event_category = None):
         if event_category:
-            return [e for e in self._events if e.category == event_category]
+            return list([e for e in self._events if e.category == event_category])
 
         return list(self._events)
 

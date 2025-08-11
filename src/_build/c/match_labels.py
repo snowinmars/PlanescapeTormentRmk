@@ -9,7 +9,7 @@ CALL_PATTERN = re.compile(r'call\s+(.*?)\n')
 IGNORE_LABELS = {
     'show_graphics_menu',
     'todo',
-    '3planea_s1',
+    'd3planea_s1',
     'able_s10',
     'able_s11',
     'able_s12',
@@ -285,7 +285,7 @@ IGNORE_LABELS = {
     'vrisch_s45',
     'vrisch_s46',
     'vrisch_s7',
-    'yi\'minn_s47',
+    'yiminn_s47',
     'yves_s2',
     'yves_s4',
     'yves_s55',

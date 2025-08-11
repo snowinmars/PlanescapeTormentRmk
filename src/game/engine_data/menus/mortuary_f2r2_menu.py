@@ -64,10 +64,10 @@ def build_mortuary_f2r2_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(500, 100)
         .option(lambda: 'Пройти в северо-западную приёмную'
-                if settings_manager.location_manager.is_visited_location('mortuary_f2r3')
+                if settings_manager.location_manager.is_visited('mortuary_f2r3')
                 else "Открыть дверь") \
         .jump(lambda: 'walk_to_mortuaryf2r3_visit'
-                if settings_manager.location_manager.is_visited_location('mortuary_f2r3')
+                if settings_manager.location_manager.is_visited('mortuary_f2r3')
                 else 'walk_to_mortuaryf2r3_scene') \
         .style('open')
     )

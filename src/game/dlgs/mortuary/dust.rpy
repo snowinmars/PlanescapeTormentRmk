@@ -7,8 +7,8 @@ init 10 python:
 # Original:  DLG/DUST.DLG
 # ###
 
-dust_s22
-dust_s40
+# dust_s22
+# dust_s40
 label start_dust_talk_first:
     call dust_init
     jump dust_s3

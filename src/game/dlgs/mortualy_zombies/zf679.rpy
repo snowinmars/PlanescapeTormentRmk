@@ -117,7 +117,8 @@ label zf679_s2:  # from 0.3
 label zf679_s3:  # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    menu:
+    jump zf679_dispose
+
 
 label zf679_kill:
     nr 'Todo.'
