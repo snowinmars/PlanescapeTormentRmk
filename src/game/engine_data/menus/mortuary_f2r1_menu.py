@@ -83,7 +83,7 @@ def build_mortuary_f2r1_menu(location_id, settings_manager):
             if settings_manager.location_manager.is_visited('mortuary_f2r8')
             else "Открыть дверь") \
         .jump(lambda: 'walk_to_mortuaryf2r8_visit'
-            if settings_manager.location_manager.is_visited('mortuary_f2r8')
+            if settings_manager.get_has_mortuary_key()
             else "walk_to_mortuaryf2r8_closed") \
         .when(lambda: settings_manager.get_has_intro_key()) \
         .style('open')

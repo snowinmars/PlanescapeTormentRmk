@@ -18,6 +18,11 @@ label walk_to_mortuaryf1r1_closed:
     jump show_graphics_menu
 
 
+label walk_to_mortuaryf1r7_closed:
+    nr "Эта дверь заперта. Тебе понадобится ключ."
+    jump show_graphics_menu
+
+
 label walk_to_mortuaryf2r1_visit:
     $ walkingF2Logic.walk_to_mortuaryf2r1_visit()
     scene bg mortuary_f2r1
