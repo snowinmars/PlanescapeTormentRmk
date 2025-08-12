@@ -8,9 +8,21 @@ class DhallLogic:
         self.settings_manager.inc_talked_to_dhall_times()
 
 
+    def dhall_dispose_no_talk(self):
+        self.settings_manager.dec_talked_to_dhall_times()
+
+
     def kill_dhall(self):
         self.settings_manager.set_dead_dhall(True)
         self.settings_manager.set_has_dhall_feather(True)
+
+
+    def set_know_dhall_name(self):
+        self.settings_manager.set_know_dhall_name(True)
+
+
+    def get_know_dhall_name(self):
+        return self.settings_manager.get_know_dhall_name()
 
 
     def r827_action(self):

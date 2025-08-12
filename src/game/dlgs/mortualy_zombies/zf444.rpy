@@ -21,7 +21,7 @@ label zf444_init:
     return
 label zf444_dispose:
     hide zf444_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35210

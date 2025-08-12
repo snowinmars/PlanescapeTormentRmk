@@ -21,7 +21,7 @@ label zm475_init:
     return
 label zm475_dispose:
     hide zm475_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6584

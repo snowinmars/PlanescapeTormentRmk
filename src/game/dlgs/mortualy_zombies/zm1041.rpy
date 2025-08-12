@@ -25,12 +25,12 @@ label start_zm1041_kill:
     jump zm1041_kill
 label zm1041_init:
     $ zm1041Logic.zm1041_init()
-    scene bg mortuary_f1r5
+    scene bg mortuary_f1r3
     show zm1041_img default at center_left_down
     return
 label zm1041_dispose:
     hide zm1041_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6573

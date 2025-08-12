@@ -111,30 +111,30 @@ class WalkingF2LogicTest(LogicTest):
         )
 
 
-    def test_walk_mortuaryf2r1_pick_scalpel(self):
+    def test_pick_scalpel(self):
         logic = WalkingF2Logic(self.settings_manager)
 
         self._false_then_true_action(
             self.settings_manager.get_has_scalpel,
-            logic.walk_mortuaryf2r1_pick_scalpel
+            logic.pick_scalpel
         )
 
 
-    def test_walk_mortuaryf2r7_pick_embalm(self):
+    def test_walk_mortuary_f2r7_pick_embalm(self):
         logic = WalkingF2Logic(self.settings_manager)
 
         self._false_then_true_action(
             self.settings_manager.get_has_embalm,
-            logic.walk_mortuaryf2r7_pick_embalm
+            logic.walk_mortuary_f2r7_pick_embalm
         )
 
 
-    def test_walk_mortuaryf2r7_pick_copper_earring_closed(self):
+    def test_walk_mortuary_f2r7_pick_copper_earring_closed(self):
         logic = WalkingF2Logic(self.settings_manager)
 
         self._false_then_true_action(
             self.settings_manager.get_has_copper_earring_closed,
-            logic.walk_mortuaryf2r7_pick_copper_earring_closed
+            logic.walk_mortuary_f2r7_pick_copper_earring_closed
         )
 
 

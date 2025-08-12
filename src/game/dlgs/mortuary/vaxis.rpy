@@ -2,7 +2,7 @@
     from game.dlgs.mortuary.vaxis_logic import VaxisLogic
     vaxisLogic = VaxisLogic(renpy.store.global_settings_manager)
 
-    def logic_get_know_vaxis_name(self):
+    def logic_get_know_vaxis_name():
         return vaxis if vaxisLogic.get_know_vaxis_name() else vaxis_unknown
 
 
@@ -30,7 +30,7 @@ label vaxis_init:
     return
 label vaxis_dispose:
     hide vaxis_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say453

@@ -21,7 +21,7 @@ label s996_init:
     return
 label s996_dispose:
     hide s996_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35460

@@ -21,7 +21,7 @@ label zf1096_init:
     return
 label zf1096_dispose:
     hide zf1096_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35082

@@ -28,7 +28,7 @@ label {npc}_init:
     return
 label {npc}_dispose:
     hide {npc}_img
-    jump show_graphics_menu
+    jump graphics_menu
 """
 
 rpy_footer_template = """

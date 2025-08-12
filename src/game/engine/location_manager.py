@@ -32,6 +32,7 @@ class LocationManager:
         self._i2e_mapping[internal] = externals.copy()
         for external in externals:
             self._e2i_mapping[external] = internal
+            self._log(f"Register external '{external}' to internal '{internal}'")
 
         return self
 

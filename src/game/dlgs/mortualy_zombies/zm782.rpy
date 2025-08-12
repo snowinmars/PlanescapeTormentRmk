@@ -21,7 +21,7 @@ label zm782_init:
     return
 label zm782_dispose:
     hide zm782_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say24708

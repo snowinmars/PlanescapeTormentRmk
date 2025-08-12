@@ -15,6 +15,9 @@ label start_morte1_talk_first:
 label start_morte1_talk:
     call morte1_init
     jump morte1_s30
+label start_morte1_invite:
+    call morte1_init
+    jump morte1_s26
 label start_morte1_kill:
     call morte1_init
     jump morte1_kill
@@ -29,7 +32,7 @@ label new_life_morte1_s0:
     return
 label morte1_dispose:
     hide morte_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say39792

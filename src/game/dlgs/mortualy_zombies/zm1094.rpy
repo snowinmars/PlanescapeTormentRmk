@@ -36,7 +36,7 @@ label zm1094_init:
     return
 label zm1094_dispose:
     hide zm1094_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6562

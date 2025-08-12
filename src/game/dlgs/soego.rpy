@@ -22,7 +22,7 @@ label soego_init:
     return
 label soego_dispose:
     hide soego_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say1431

@@ -24,7 +24,7 @@ label zm965_init:
     return
 label zm965_dispose:
     hide zm965_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say34920

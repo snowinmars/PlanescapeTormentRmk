@@ -1,7 +1,7 @@
 from game.engine.menu import (MenuBuilder)
 from game.engine_data.menus.morte_menu import (morte_menu)
 
-def build_mortuary_f3r2_menu(location_id, settings_manager):
+def build_mortuary_f3r1_menu(location_id, settings_manager):
     builders = []
 
     builders.append(morte_menu(settings_manager, location_id, 500, 800))

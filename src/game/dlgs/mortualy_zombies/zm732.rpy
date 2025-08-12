@@ -19,12 +19,12 @@ label start_zm732_kill:
     jump zm732_kill
 label zm732_init:
     $ zm732Logic.zm732_init()
-    scene bg mortuary_f1r7
+    scene bg mortuary_f1r4
     show zm732_img default at center_left_down
     return
 label zm732_dispose:
     hide zm732_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6529

@@ -21,7 +21,7 @@ label zf114_init:
     return
 label zf114_dispose:
     hide zf114_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say34986

@@ -21,7 +21,7 @@ label zf1072_init:
     return
 label zf1072_dispose:
     hide zf1072_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35114

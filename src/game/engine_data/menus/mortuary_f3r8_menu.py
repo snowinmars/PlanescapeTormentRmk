@@ -16,7 +16,7 @@ def build_mortuary_f3r8_menu(location_id, settings_manager):
     builders.append(MenuBuilder(location_id) \
         .auto_position(150, 600)
         .option('Пройти восточнее') \
-        .jump('walk_to_mortuaryf3r2_visit') \
+        .jump('walk_to_mortuaryf3r1_visit') \
         .style('open')
     )
 

@@ -21,7 +21,7 @@ label zm613_init:
     return
 label zm613_dispose:
     hide zm613_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6540

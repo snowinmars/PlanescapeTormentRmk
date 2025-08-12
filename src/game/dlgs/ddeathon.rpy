@@ -92,7 +92,7 @@ label ddeathon_init:
 
 label ddeathon_dispose:
     hide death_of_names_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say7288

@@ -12,6 +12,7 @@ image s748_img default   = 's748_default.png'
 image s863_img default   = 's863_default.png'
 image s996_img default   = 's996_default.png'
 image s1221_img default  = 's1221_default.png'
+image giantsk_img default  = 'giantsk_default.png'
 
 image zm79_img default   = 'dzm79_default.png'
 image zm199_img default  = 'dzm199_default.png'

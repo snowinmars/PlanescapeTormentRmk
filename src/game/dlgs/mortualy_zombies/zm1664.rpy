@@ -21,7 +21,7 @@ label zm1664_init:
     return
 label zm1664_dispose:
     hide zm1664_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say47002

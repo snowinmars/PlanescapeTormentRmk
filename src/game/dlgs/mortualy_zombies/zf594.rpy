@@ -21,7 +21,7 @@ label zf594_init:
     return
 label zf594_dispose:
     hide zf594_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35018

@@ -12,7 +12,7 @@ label start_n1201_note_talk:
 label n1201_init:
     return
 label n1201_dispose:
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say44993

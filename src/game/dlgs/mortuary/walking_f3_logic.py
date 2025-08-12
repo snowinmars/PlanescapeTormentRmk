@@ -15,8 +15,8 @@ class WalkingF3Logic:
         self.settings_manager.location_manager.set_location('mortuary_f3r8')
 
 
-    def walk_to_mortuaryf3r2_visit(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r2')
+    def walk_to_mortuaryf3r1_visit(self):
+        self.settings_manager.location_manager.set_location('mortuary_f3r1')
 
 
     def walk_mortuaryf3r8_pick_prybar(self):

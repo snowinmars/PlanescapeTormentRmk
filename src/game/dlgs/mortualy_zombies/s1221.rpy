@@ -21,7 +21,7 @@ label s1221_init:
     return
 label s1221_dispose:
     hide s1221_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35306

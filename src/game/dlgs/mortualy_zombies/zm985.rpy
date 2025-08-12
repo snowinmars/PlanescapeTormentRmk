@@ -21,7 +21,7 @@ label zm985_init:
     return
 label zm985_dispose:
     hide zm985_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say45515

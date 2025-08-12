@@ -21,7 +21,7 @@ label zm257_init:
     return
 label zm257_dispose:
     hide zm257_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6507

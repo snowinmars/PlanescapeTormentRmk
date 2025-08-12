@@ -21,7 +21,7 @@ label zf626_init:
     return
 label zf626_dispose:
     hide zf626_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35050

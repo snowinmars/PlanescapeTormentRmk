@@ -17,7 +17,7 @@ label copearc_init:
     return
 label copearc_dispose:
     hide copearc_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say46723

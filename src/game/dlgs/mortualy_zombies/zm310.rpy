@@ -30,7 +30,7 @@ label zm310_init:
     return
 label zm310_dispose:
     hide zm310_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6495
