@@ -12,6 +12,10 @@ class EiveneLogic:
         self.settings_manager.set_dead_eivene(True)
 
 
+    def set_know_eivene_name(self):
+        self.settings_manager.set_know_eivene_name(True)
+
+
     def r3418_action(self):
         # FaceObject(Protagonist)
         return

@@ -21,7 +21,7 @@ label s42_init:
     return
 label s42_dispose:
     hide s42_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6595

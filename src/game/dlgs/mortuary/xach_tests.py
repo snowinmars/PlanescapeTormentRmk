@@ -22,7 +22,7 @@ class XachLogicTest(LogicTest):
 
     def test_xach_init(self):
         self._init_with_location(
-            'mortuary_f1r5',
+            'mortuary_f1r3',
             self.logic.xach_init,
             self.settings_manager.get_talked_to_xach_times
         )

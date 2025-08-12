@@ -27,7 +27,7 @@ label morte1_init:
     return
 label morte1_dispose:
     hide morte1_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say39792

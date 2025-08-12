@@ -27,7 +27,7 @@ label deions_init:
     return
 label deions_dispose:
     hide deions_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say69459

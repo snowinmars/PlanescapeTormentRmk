@@ -27,7 +27,7 @@ label s863_init:
     return
 label s863_dispose:
     hide s863_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35537

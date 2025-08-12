@@ -21,7 +21,7 @@ label zm79_init:
     return
 label zm79_dispose:
     hide zm79_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say34942

@@ -24,7 +24,7 @@ label zm396_init:
     return
 label zm396_dispose:
     hide zm396_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say34931

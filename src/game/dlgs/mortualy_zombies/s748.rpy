@@ -21,7 +21,7 @@ label s748_init:
     return
 label s748_dispose:
     hide s748_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35383

@@ -21,7 +21,7 @@ label zm1508_init:
     return
 label zm1508_dispose:
     hide zm1508_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say46745

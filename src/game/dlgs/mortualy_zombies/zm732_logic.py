@@ -4,7 +4,7 @@ class Zm732Logic:
 
 
     def zm732_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r7')
+        self.settings_manager.location_manager.set_location('mortuary_f1r4')
         self.settings_manager.inc_talked_to_zm732_times()
 
 

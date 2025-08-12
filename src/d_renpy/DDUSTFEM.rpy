@@ -27,7 +27,7 @@ label dustfem_init:
     return
 label dustfem_dispose:
     hide dustfem_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say298

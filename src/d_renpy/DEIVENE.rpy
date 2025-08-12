@@ -27,7 +27,7 @@ label eivene_init:
     return
 label eivene_dispose:
     hide eivene_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say3404

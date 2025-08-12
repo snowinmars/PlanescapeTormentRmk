@@ -27,7 +27,7 @@ label zm732_init:
     return
 label zm732_dispose:
     hide zm732_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6529

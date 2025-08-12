@@ -21,7 +21,7 @@ label zm463_init:
     return
 label zm463_dispose:
     hide zm463_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6484

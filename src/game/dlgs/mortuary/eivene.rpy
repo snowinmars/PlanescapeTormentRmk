@@ -27,7 +27,7 @@ label eivene_init:
     return
 label eivene_dispose:
     hide eivene_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say3404
@@ -112,6 +112,7 @@ label eivene_s5:  # from 4.0
     eivene_unknown '«Ты».'
     nr 'Она соединяет когти вместе, затем делает странное движение рукой.'
     eivene '«Найди НИТКУ и БАЛЬЗАМ, принеси СЮДА, к Эи-Вейн. Пшел — пшел — пшел».'
+    $ eiveneLogic.set_know_eivene_name(True)
 
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if eiveneLogic.r3424_condition():

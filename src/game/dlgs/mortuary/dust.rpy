@@ -28,7 +28,7 @@ label dust_init:
     return
 label dust_dispose:
     hide dust_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say300

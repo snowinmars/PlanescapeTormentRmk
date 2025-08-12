@@ -27,7 +27,7 @@ label zm1041_init:
     return
 label zm1041_dispose:
     hide zm1041_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say6573

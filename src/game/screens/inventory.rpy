@@ -95,6 +95,6 @@ screen inventory_screen():
     textbutton "Закрыть":
         action [
             Hide("inventory_screen"),
-            Jump("show_graphics_menu")
+            Jump("graphics_menu")
         ]
         align (0.99, 0.02)

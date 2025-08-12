@@ -27,7 +27,7 @@ label dhall_init:
     return
 label dhall_dispose:
     hide dhall_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say822

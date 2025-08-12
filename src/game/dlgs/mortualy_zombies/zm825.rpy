@@ -21,7 +21,7 @@ label zm825_init:
     return
 label zm825_dispose:
     hide zm825_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say24564

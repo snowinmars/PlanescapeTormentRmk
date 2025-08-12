@@ -44,13 +44,13 @@ class WalkingF3LogicTest(LogicTest):
         )
 
 
-    def test_walk_to_mortuaryf3r2_visit(self):
+    def test_walk_to_mortuaryf3r1_visit(self):
         logic = WalkingF3Logic(self.settings_manager)
-        id = 'mortuary_f3r2'
+        id = 'mortuary_f3r1'
 
         self._step_into_location_action(
             id,
-            logic.walk_to_mortuaryf3r2_visit
+            logic.walk_to_mortuaryf3r1_visit
         )
 
 

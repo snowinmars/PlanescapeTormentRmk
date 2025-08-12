@@ -21,7 +21,7 @@ label zf891_init:
     return
 label zf891_dispose:
     hide zf891_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35274

@@ -27,7 +27,7 @@ label n1201_init:
     return
 label n1201_dispose:
     hide n1201_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say44993

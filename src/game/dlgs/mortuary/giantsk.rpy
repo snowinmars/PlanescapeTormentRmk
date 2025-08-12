@@ -21,7 +21,7 @@ label giantsk_init:
     return
 label giantsk_dispose:
     hide giantsk_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say292

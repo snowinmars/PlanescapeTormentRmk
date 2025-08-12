@@ -12,8 +12,8 @@ def morte_menu(settings_manager, location_id, main_texture_xpos, main_texture_yp
         .option(lambda: 'Поговорить с Мортом'
                 if settings_manager.get_in_party_morte()
                 else 'Пригласить Морта в группу') \
-        .jump(lambda: 'morte1_s30'
+        .jump(lambda: 'start_morte1_talk'
                 if settings_manager.get_in_party_morte()
-                else 'morte1_s26') \
+                else 'start_morte1_invite') \
         .when(lambda: not settings_manager.get_dead_morte()) \
         .style('talk')

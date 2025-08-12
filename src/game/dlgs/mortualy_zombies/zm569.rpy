@@ -21,7 +21,7 @@ label zm569_init:
     return
 label zm569_dispose:
     hide zm569_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say24575

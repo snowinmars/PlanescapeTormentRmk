@@ -43,13 +43,13 @@ class WalkingF2Logic:
         self.settings_manager.location_manager.set_location('mortuary_f2r8')
 
 
-    def walk_mortuaryf2r1_pick_scalpel(self):
+    def pick_scalpel(self):
         self.settings_manager.set_has_scalpel(True)
 
 
-    def walk_mortuaryf2r7_pick_embalm(self):
+    def walk_mortuary_f2r7_pick_embalm(self):
         self.settings_manager.set_has_embalm(True)
 
 
-    def walk_mortuaryf2r7_pick_copper_earring_closed(self):
+    def walk_mortuary_f2r7_pick_copper_earring_closed(self):
         self.settings_manager.set_has_copper_earring_closed(True)

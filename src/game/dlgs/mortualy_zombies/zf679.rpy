@@ -27,7 +27,7 @@ label zf679_init:
     return
 label zf679_dispose:
     hide zf679_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35178

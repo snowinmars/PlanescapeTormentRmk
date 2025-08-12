@@ -21,12 +21,11 @@ label start_morte2_kill:
     call morte2_init
     jump morte2_kill
 label morte2_talk_first:
-    scene bg mortuary_f2r3
+    scene bg mortuary_f2r2
     show morte_img default at center_left_down
     $ morte2Logic.morte_init_first()
     return
 label morte2_init:
-    scene bg mortuary_f2r2
     show morte_img default at center_left_down
     $ morte2Logic.morte_init()
     return
@@ -37,7 +36,7 @@ label morte2_talk_dhall:
     return
 label morte2_dispose:
     hide morte_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say41144

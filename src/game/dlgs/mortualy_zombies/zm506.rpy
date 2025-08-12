@@ -24,7 +24,7 @@ label zm506_init:
     return
 label zm506_dispose:
     hide zm506_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say45419

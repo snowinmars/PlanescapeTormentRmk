@@ -22,12 +22,12 @@ label start_deions_talk:
     jump deions_s5
 label deions_init:
     $ deionsLogic.deions_init()
-    scene bg mortuary_f1r3
+    scene bg mortuary_f1r2
     show deions_img default at center_left_down
     return
 label deions_dispose:
     hide deions_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say69459

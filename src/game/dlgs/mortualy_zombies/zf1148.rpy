@@ -16,12 +16,12 @@ label start_zf1148_kill:
     jump zf1148_kill
 label zf1148_init:
     $ zf1148Logic.zf1148_init()
-    scene bg mortuary_f3r2
+    scene bg mortuary_f3r1
     show zf1148_img default at center_left_down
     return
 label zf1148_dispose:
     hide zf1148_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35242

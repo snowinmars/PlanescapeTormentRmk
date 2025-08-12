@@ -7,7 +7,7 @@ JUMP_PATTERN = re.compile(r'jump\s+(.*?)\n')
 CALL_PATTERN = re.compile(r'call\s+(.*?)\n')
 
 IGNORE_LABELS = {
-    'show_graphics_menu',
+    'graphics_menu',
     'todo',
     'd3planea_s1',
     'able_s10',

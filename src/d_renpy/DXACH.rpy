@@ -27,7 +27,7 @@ label xach_init:
     return
 label xach_dispose:
     hide xach_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say500

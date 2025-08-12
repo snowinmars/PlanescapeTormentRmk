@@ -22,7 +22,7 @@ class DeionsLogicTest(LogicTest):
 
     def test_deions_init(self):
         self._init_with_location(
-            'mortuary_f1r3',
+            'mortuary_f1r2',
             self.logic.deions_init,
             self.settings_manager.get_talked_to_deionarra_times
         )

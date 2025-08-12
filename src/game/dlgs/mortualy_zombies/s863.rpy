@@ -22,12 +22,12 @@ label start_s863_kill:
     jump s863_kill
 label s863_init:
     $ s863Logic.s863_init()
-    scene bg mortuary_f3r2
+    scene bg mortuary_f3r1
     show s863_img default at center_left_down
     return
 label s863_dispose:
     hide s863_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35537

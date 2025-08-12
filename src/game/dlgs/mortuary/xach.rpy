@@ -22,12 +22,12 @@ label start_xach_kill:
     jump xach_kill
 label xach_init:
     $ xachLogic.xach_init()
-    scene bg mortuary_f1r5
+    scene bg mortuary_f1r3
     show xach_img default at center_left_down
     return
 label xach_dispose:
     hide xach_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say500

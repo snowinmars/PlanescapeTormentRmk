@@ -137,10 +137,11 @@ label start:
             $ gsm = renpy.store.global_settings_manager
             $ gcm = renpy.store.global_character_manager
             $ glm = renpy.store.global_location_manager
-            $ glm.set_location('mortuary_f1r1')
+            $ glm.set_location('mortuary_f2r7')
             $ gsm.set_in_party_morte(True)
             $ gcm.set_property('protagonist', 'good', 10)
             $ gsm.set_has_intro_key(True)
+            # $ gsm.set_mortualy_alarmed(True)
             $ gsm.set_has_mortuary_key(True)
             # $ gsm.set_has_tome_ba(True)
             # $ gsm.set_has_copper_earring_closed(True)
@@ -152,7 +153,7 @@ label start:
             # $ gsm.set_has_embalm(True)
             # $ gsm.set_has_keyem(True)
 
-            jump show_graphics_menu
+            jump graphics_menu
         "Вступление для технодемки":
             jump introduction
         "Новая жизнь":

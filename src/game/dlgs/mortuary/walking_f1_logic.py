@@ -7,16 +7,16 @@ class WalkingF1Logic:
         self.settings_manager.location_manager.set_location('mortuary_f1r1')
 
 
+    def walk_to_mortuaryf1r2_visit(self):
+        self.settings_manager.location_manager.set_location('mortuary_f1r2')
+
+
     def walk_to_mortuaryf1r3_visit(self):
         self.settings_manager.location_manager.set_location('mortuary_f1r3')
 
 
-    def walk_to_mortuaryf1r5_visit(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r5')
-
-
-    def walk_to_mortuaryf1r7_visit(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r7')
+    def walk_to_mortuaryf1r4_visit(self):
+        self.settings_manager.location_manager.set_location('mortuary_f1r4')
 
 
     def walk_to_mortuaryf1rc_visit(self):

@@ -22,7 +22,7 @@ class S863LogicTest(LogicTest):
 
     def test_s863_init(self):
         self._init_with_location(
-            'mortuary_f3r2',
+            'mortuary_f3r1',
             self.logic.s863_init,
             self.settings_manager.get_talked_to_s863_times
         )

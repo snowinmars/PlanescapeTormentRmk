@@ -27,7 +27,7 @@ label zf1148_init:
     return
 label zf1148_dispose:
     hide zf1148_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say35242

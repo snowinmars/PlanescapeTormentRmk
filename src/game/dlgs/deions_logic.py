@@ -4,7 +4,7 @@ class DeionsLogic:
 
 
     def deions_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r3')
+        self.settings_manager.location_manager.set_location('mortuary_f1r2')
         self.settings_manager.inc_talked_to_deionarra_times()
 
 

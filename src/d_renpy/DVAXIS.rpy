@@ -27,7 +27,7 @@ label vaxis_init:
     return
 label vaxis_dispose:
     hide vaxis_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say453

@@ -4,7 +4,7 @@ class Zf1148Logic:
 
 
     def zf1148_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r2')
+        self.settings_manager.location_manager.set_location('mortuary_f3r1')
         self.settings_manager.inc_talked_to_zf1148_times()
 
 

@@ -21,7 +21,7 @@ label zf916_init:
     return
 label zf916_dispose:
     hide zf916_img
-    jump show_graphics_menu
+    jump graphics_menu
 
 
 # s0 # say24719
