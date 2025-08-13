@@ -26,7 +26,7 @@ label soego_dispose:
 
 
 # s0 # say1431
-label soego_s0:  # -
+label soego_s0:  # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
     nr 'Перед тобой устало выглядящий мужчина в выцветших черных одеждах. Его худощавое лицо слишком бледное, как будто он давно не спал.'
     nr 'Его плечи осунулись, под налитыми кровью глазами видны мешки. Похоже, он не заметил тебя…'
     nr 'Должно быть, он спутал тебя с одним из мертвых рабочих.'
@@ -339,7 +339,7 @@ label soego_s11:  # from 10.1
 
 
 # s12 # say1491
-label soego_s12:  # from 11.0
+label soego_s12:  # from 11.0 # IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1) Global("Gate_Cut_Scene","AR0201",1)
     soego '«Вот и все. Главные ворота открыты».' # TODO [snow]: "но вернуться обратно ты не сможешь" - можешь в любое время.
 
     menu:
@@ -922,7 +922,7 @@ label soego_s37:  # from 26.7
 
 
 # s38 # say4898
-label soego_s38:  # -
+label soego_s38:  # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") !Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
     nr 'Перед тобой сильно уставший мужчина в черной одежде. Его худощавое лицо очень бледно, похоже, он не высыпается: плечи поникли, под красными глазами огромные мешки.'
     nr 'Он настолько погружен в раздумья, что даже не замечает тебя.'
 
@@ -1325,7 +1325,7 @@ label soego_s57:  # from 53.0
 
 
 # s58 # say4980
-label soego_s58:  # -
+label soego_s58:  # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
     nr 'При твоем приближении Соэго вынюхивает воздух и поднимает взгляд. Увидев тебя, он хмурится.'
     soego '«Я уже открыл для тебя ворота. Почему ты все еще здесь?»'
 
@@ -1340,7 +1340,7 @@ label soego_s58:  # -
 
 
 # s59 # say4983
-label soego_s59:  # -
+label soego_s59:  # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
     nr 'При твоем приближении Соэго вынюхивает воздух и поднимает взгляд. Увидев тебя, он слегка кивает.'
     soego '«Ты нашел то, что искал?»'
 
@@ -1420,7 +1420,7 @@ label soego_s62:  # from 44.2 45.1 46.0 47.1 48.0
 
 
 # s63 # say21653
-label soego_s63:  # -
+label soego_s63:  # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
     soego '«А, еще один из живущих. Большинство из тех, кто заходит так глубоко в катакомбы, убивают упыри. Тебе повезло».'
 
     menu:
@@ -1785,7 +1785,7 @@ label soego_s78:  # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 
 
 
 # s79 # say21851
-label soego_s79:  # -
+label soego_s79:  # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
     soego '«О, к нам подоспела подмога! Меня, как агента Многоединого, предупредили о твоем приходе»..'
     soego '«Нам нужно, чтобы ты попытался пробраться в тронный зал Безмолвного Короля и убил его»..'
     soego '«Сделай это, и Многоединый вознаградит тебя».'
@@ -1848,7 +1848,7 @@ label soego_s81:  # from 80.0
 
 
 # s82 # say21913
-label soego_s82:  # -
+label soego_s82:  # - # IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
     soego '«А, рад встрече».'
 
     menu:
@@ -2065,7 +2065,7 @@ label soego_s94:  # from 82.0 82.1
 
 
 # s95 # say21997
-label soego_s95:  # -
+label soego_s95:  # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
     soego '«Ах ты… сволочь!»'
 
     menu:
@@ -2255,7 +2255,7 @@ label soego_s107:  # from 106.0
 
 
 # s108 # say22050
-label soego_s108:  # -
+label soego_s108:  # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
     soego '«А, еще один из живущих. Большинство из тех, кто заходит так глубоко в катакомбы, убивают упыри. Тебе повезло».'
 
     menu:

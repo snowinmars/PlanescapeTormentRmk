@@ -16,7 +16,7 @@ label start_s996_kill:
     jump s996_kill
 label s996_init:
     $ s996Logic.s996_init()
-    scene bg mortuary_f3r6
+    scene bg mortuary_f3r3
     show s996_img default at center_left_down
     return
 label s996_dispose:

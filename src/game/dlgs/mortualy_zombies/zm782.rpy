@@ -104,7 +104,7 @@ label zm782_take_key_1:
 label zm782_take_key_2:
     nr 'С лёгким звуком ключ оказывается в моих руках.'
     $ zm782Logic.pick_key_up()
-    jump zm782_dispose
+    jump morte1_s24  # EXTERN
 
 
 label zm782_kill:

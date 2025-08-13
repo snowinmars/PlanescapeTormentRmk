@@ -52,25 +52,3 @@ class MortuaryF2R8GraphicsMenuLogic(GraphicsMenuLogic):
 
     def zf891_speak_action(self):
         return 'start_zf891_talk'
-
-
-    def morte_kill_tooltip(self):
-        return 'Убить Морта'
-
-
-    def morte_kill_action(self):
-        return 'start_morte2_kill'
-
-
-    def morte_speak_tooltip(self):
-        v1 = 'Поговорить с Мортом'
-        v2 = 'Пригласить Морта в группу'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2
-
-
-    def morte_speak_action(self):
-        v1 = 'start_morte1_talk'
-        v2 = 'start_morte1_invite'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2

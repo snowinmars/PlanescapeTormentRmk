@@ -16,7 +16,7 @@ label start_s748_kill:
     jump s748_kill
 label s748_init:
     $ s748Logic.s748_init()
-    scene bg mortuary_f3r6
+    scene bg mortuary_f3r3
     show s748_img default at center_left_down
     return
 label s748_dispose:

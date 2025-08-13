@@ -22,7 +22,7 @@ class S1221LogicTest(LogicTest):
 
     def test_s1221_init(self):
         self._init_with_location(
-            'mortuary_f3r8',
+            'mortuary_f3r4',
             self.logic.s1221_init,
             self.settings_manager.get_talked_to_s1221_times
         )

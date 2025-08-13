@@ -32,10 +32,10 @@ label graphics_menu:
         jump mortuary_f2r8_graphics_menu
     if current_location == 'mortuary_f3r1':
         jump mortuary_f3r1_graphics_menu
+    if current_location == 'mortuary_f3r2':
+        jump mortuary_f3r2_graphics_menu
+    if current_location == 'mortuary_f3r3':
+        jump mortuary_f3r3_graphics_menu
     if current_location == 'mortuary_f3r4':
         jump mortuary_f3r4_graphics_menu
-    if current_location == 'mortuary_f3r6':
-        jump mortuary_f3r6_graphics_menu
-    if current_location == 'mortuary_f3r8':
-        jump mortuary_f3r8_graphics_menu
     $ raise Exception(f"Unknown location '{current_location}'")

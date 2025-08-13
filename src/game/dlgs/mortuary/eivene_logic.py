@@ -176,12 +176,12 @@ class EiveneLogic:
 
     def r3456_condition(self):
         return self.settings_manager.get_embalm_key_quest() == 1 and \
-               self.settings_manager.get_has_keyem()
+               not self.settings_manager.get_has_keyem()
 
 
     def r3457_condition(self):
         return self.settings_manager.get_embalm_key_quest() == 1 and \
-               not self.settings_manager.get_has_keyem()
+               self.settings_manager.get_has_keyem()
 
 
     def r3459_condition(self):
@@ -203,12 +203,12 @@ class EiveneLogic:
 
     def r3470_condition(self):
         return self.settings_manager.get_embalm_key_quest() == 1 and \
-               self.settings_manager.get_has_keyem()
+               not self.settings_manager.get_has_keyem()
 
 
     def r3497_condition(self):
         return self.settings_manager.get_embalm_key_quest() == 1 and \
-               not self.settings_manager.get_has_keyem()
+               self.settings_manager.get_has_keyem()
 
 
     def r3494_condition(self):
@@ -221,12 +221,12 @@ class EiveneLogic:
 
     def r3501_condition(self):
         return self.settings_manager.get_embalm_key_quest() == 1 and \
-               self.settings_manager.get_has_keyem()
+               not self.settings_manager.get_has_keyem()
 
 
     def r3502_condition(self):
         return self.settings_manager.get_embalm_key_quest() == 1 and \
-               not self.settings_manager.get_has_keyem()
+               self.settings_manager.get_has_keyem()
 
 
     def r4354_condition(self):

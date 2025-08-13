@@ -11,8 +11,8 @@ init 10 python:
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 930,
         'ypos': 260,
-        'action': Function(lambda: renpy.jump(mortuaryF2R7GraphicsMenuLogic.to_mortuary_f3r6_action())),
-        'tooltip': mortuaryF2R7GraphicsMenuLogic.to_mortuary_f3r6_tooltip
+        'action': Function(lambda: renpy.jump(mortuaryF2R7GraphicsMenuLogic.to_mortuary_f3r3_action())),
+        'tooltip': mortuaryF2R7GraphicsMenuLogic.to_mortuary_f3r3_tooltip
     }, {
         'when': mortuaryF2R7GraphicsMenuLogic.always,
         'idle_img': 'images/icons/open_idle.png',

@@ -54,7 +54,7 @@ label deions_s0:  # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31
 
 
 # s1 # say5
-label deions_s1:  # -
+label deions_s1:  # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Ты видишь перед собой поразительно красивый призрачный силуэт девушки.'
     nr 'Ее руки скрещены, а глаза закрыты. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра.'
     nr 'Она слегка вздрагивает; ее глаза мерцают.'
@@ -139,7 +139,7 @@ label deions_s3:  # from 2.0 2.1 2.2 10.0
 
 
 # s4 # say715
-label deions_s4:  # -
+label deions_s4:  # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.'
     nr 'При твоем появлении отчаяние на ее лице сменяется яростью.'
     deionarra '«Ты снова пришел! Почему ты продолжаешь мучить меня?»'
@@ -155,7 +155,7 @@ label deions_s4:  # -
 
 
 # s5 # say716
-label deions_s5:  # -
+label deions_s5:  # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.'
     nr 'При твоем появлении отчаяние на ее лице сменяется надеждой.'
     deionarra '«Любовь моя… ты снова вернулся ко мне! Ты вспомнил меня?»'
@@ -1160,7 +1160,7 @@ label deions_s48:  # from 33.5 39.0 39.1
 
 
 # s49 # say63356
-label deions_s49:  # -
+label deions_s49:  # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
     nr 'Перед собой ты видишь поразительно красивый призрачный силуэт девушки.'
     nr 'У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра.'
     nr 'Ваши взгляды пересекаются, и тебя охватывает странное ощущение, как будто ты смотришь сразу в несколько пар глаз.'
@@ -1172,7 +1172,7 @@ label deions_s49:  # -
 
 
 # s50 # say63358
-label deions_s50:  # -
+label deions_s50:  # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
     nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра.'
     nr 'Ваши взгляды пересекаются, и тебя охватывает странное ощущение, как будто ты смотришь сразу в несколько пар глаз.'
 
@@ -1329,7 +1329,7 @@ label deions_s59:  # from 57.2
 
 
 # s60 # say63387
-label deions_s60:  # -
+label deions_s60:  # - # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
     nr 'Ты видишь поразительно красивый призрачный силуэт девушки. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра.'
     nr 'Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
 
@@ -1345,7 +1345,7 @@ label deions_s60:  # -
 
 
 # s61 # say63390
-label deions_s61:  # -
+label deions_s61:  # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
     nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра.'
     nr 'Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
 
@@ -1362,7 +1362,7 @@ label deions_s61:  # -
 
 
 # s62 # say63393
-label deions_s62:  # from 60.0 61.0
+label deions_s62:  # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
     deionarra '«Любовь моя!»'
     deionarra '«Ты *не должен* находиться здесь! Ты должен уйти!»'
 

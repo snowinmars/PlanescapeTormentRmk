@@ -22,7 +22,7 @@ class Zf832LogicTest(LogicTest):
 
     def test_zf832_init(self):
         self._init_with_location(
-            'mortuary_f3r8',
+            'mortuary_f3r4',
             self.logic.zf832_init,
             self.settings_manager.get_talked_to_zf832_times
         )

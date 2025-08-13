@@ -16,7 +16,7 @@ label start_zf832_kill:
     jump zf832_kill
 label zf832_init:
     $ zf832Logic.zf832_init()
-    scene bg mortuary_f3r8
+    scene bg mortuary_f3r4
     show zf832_img default at center_left_down
     return
 label zf832_dispose:

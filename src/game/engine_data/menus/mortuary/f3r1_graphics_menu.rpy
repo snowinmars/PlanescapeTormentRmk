@@ -19,16 +19,16 @@ init 10 python:
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 700,
         'ypos': 200,
-        'action': Function(lambda: renpy.jump(mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r4_action())),
-        'tooltip': mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r4_tooltip
+        'action': Function(lambda: renpy.jump(mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r2_action())),
+        'tooltip': mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r2_tooltip
     }, {
         'when': mortuaryF3R1GraphicsMenuLogic.always,
         'idle_img': 'images/icons/open_idle.png',
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 1200,
         'ypos': 1000,
-        'action': Function(lambda: renpy.jump(mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r8_action())),
-        'tooltip': mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r8_tooltip
+        'action': Function(lambda: renpy.jump(mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r4_action())),
+        'tooltip': mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r4_tooltip
     }, {
         'when': mortuaryF3R1GraphicsMenuLogic.always,
         'idle_img': 'images/icons/open_idle.png',
@@ -51,8 +51,8 @@ init 10 python:
         'speak_action': mortuaryF3R1GraphicsMenuLogic.morte_speak_action
     }, {
         'when': mortuaryF3R1GraphicsMenuLogic.when_s863,
-        'idle_img': 'images/menu_sprites/zombie.png',
-        'hover_img': 'images/menu_sprites/zombie.png',
+        'idle_img': 'images/menu_sprites/skelet.png',
+        'hover_img': 'images/menu_sprites/skelet.png',
         'xpos': 1060,
         'ypos': 300,
         'kill_tooltip': mortuaryF3R1GraphicsMenuLogic.s863_kill_tooltip,

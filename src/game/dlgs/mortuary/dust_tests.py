@@ -22,7 +22,7 @@ class DustLogicTest(LogicTest):
 
     def test_dust_init(self):
         self._init_with_location(
-            'mortuary_f3r4',
+            'mortuary_f3r2',
             self.logic.dust_init,
             self.settings_manager.get_talked_to_dust_times
         )

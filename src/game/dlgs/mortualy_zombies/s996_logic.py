@@ -4,7 +4,7 @@ class S996Logic:
 
 
     def s996_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r6')
+        self.settings_manager.location_manager.set_location('mortuary_f3r3')
         self.settings_manager.inc_talked_to_s996_times()
 
 

@@ -25,7 +25,7 @@ label start_zm310_kill:
     jump zm310_kill
 label zm310_init:
     $ zm310Logic.zm310_init()
-    scene bg mortuary_f3r6
+    scene bg mortuary_f3r3
     show zm310_img default at center_left_down
     return
 label zm310_dispose:

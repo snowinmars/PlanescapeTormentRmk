@@ -4,7 +4,7 @@ class Zf832Logic:
 
 
     def zf832_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r8')
+        self.settings_manager.location_manager.set_location('mortuary_f3r4')
         self.settings_manager.inc_talked_to_zf832_times()
 
 

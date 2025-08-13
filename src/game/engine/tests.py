@@ -2,14 +2,12 @@ import unittest
 import inspect
 
 from game.engine.event_manager import (EventManager)
-from game.engine.menu import (MenuManager)
 from game.engine.settings_manager import (SettingsManager)
 from game.engine.inventory_manager import (InventoryManager)
 from game.engine.location_manager import (LocationManager)
 from game.engine.character_manager import (CharacterManager)
 from game.engine.journal_manager import (JournalManager)
 
-from game.engine_data.menus.all_menus import (build_all_menus)
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
 from game.engine_data.locations.all_locations import (build_all_locations)
@@ -24,12 +22,10 @@ class LogicTest(unittest.TestCase):
         self.character_manager = CharacterManager(self.event_manager)
         self.journal_manager = JournalManager(self.event_manager)
         self.settings_manager = SettingsManager(self.event_manager, self.character_manager, self.location_manager, self.journal_manager)
-        self.menu_manager = MenuManager()
         self.inventory_manager = InventoryManager(self.event_manager, lambda x: self.settings_manager.get_setting_value(x))
 
         build_all_settings(self.settings_manager)
         build_all_inventory(self.inventory_manager)
-        build_all_menus(self.menu_manager, self.settings_manager)
         build_all_characters(self.character_manager)
         build_all_locations(self.location_manager)
         build_all_notes(self.journal_manager)

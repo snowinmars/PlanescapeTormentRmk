@@ -4137,7 +4137,7 @@ label morte_s260:  # -
 
 
 # s261 # say27297
-label morte_s261:  # -
+label morte_s261:  # - # IF WEIGHT #8 /* Triggers after states #: 729 444 325 281 742 737 733 487 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
     morte '«Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».'
 
     menu:
@@ -4407,7 +4407,7 @@ label morte_s280:  # -
     jump grace_s119  # EXTERN
 
 # s281 # say28738
-label morte_s281:  # -
+label morte_s281:  # - # IF WEIGHT #4 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  Global("Morte_Stolen","GLOBAL",2) !GlobalGT("Fortress_Morte","GLOBAL",2)
     morte '«Спасибо, шеф. Не могу выразить свою радость тем, что я снова с тобой».'
     nr 'Его голос истекает сарказмом.'
     morte '«А еще я научился новому приемчику, пока был там».'
@@ -5054,7 +5054,7 @@ label morte_s324:  # -
 
 
 # s325 # say33958
-label morte_s325:  # -
+label morte_s325:  # - # IF WEIGHT #5 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
     morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»'
 
     menu:
@@ -6898,7 +6898,7 @@ label morte_s443:  # from 442.0
 
 
 # s444 # say41838
-label morte_s444:  # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
+label morte_s444:  # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0 # IF WEIGHT #6 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) Global("AR0200_Visited","GLOBAL",0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
     morte '«Что тебя гложет, шеф?»'
 
     menu:
@@ -7590,7 +7590,7 @@ label morte_s486:  # -
 
 
 # s487 # say45996
-label morte_s487:  # -
+label morte_s487:  # - # IF WEIGHT #0 ~  NumTimesTalkedTo(0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
     morte '«Эй, смотри! Еще одна летающая голова».'
 
     jump vault9_s0  # EXTERN
@@ -11224,7 +11224,7 @@ label morte_s728:  # from 727.1
 
 
 # s729 # say66344
-label morte_s729:  # -
+label morte_s729:  # - # IF WEIGHT #7 /* Triggers after states #: 742 737 733 even though they appear after this state */ ~  Global("AR0200_Visited","GLOBAL",1) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
     morte '«Что тебя гложет, шеф?»'
 
     menu:
@@ -11309,7 +11309,7 @@ label morte_s732:  # -
 
 
 # s733 # say68171
-label morte_s733:  # -
+label morte_s733:  # - # IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3) Global("Absorb","GLOBAL",0)
     nr 'Едва ты собираешься прикоснуться к Морту, как вдруг он произносит.'
     morte '«Эй-эй-эй! Погоди, шеф. Э-э-э… мне тебе нужно кое-что тебе сказать».'
 
@@ -11433,7 +11433,7 @@ label morte_s736:  # from 735.0
 
 
 # s737 # say68310
-label morte_s737:  # -
+label morte_s737:  # - # IF WEIGHT #2 ~  Global("Fortress_Morte","GLOBAL",3) GlobalGT("Absorb","GLOBAL",0)
     nr 'Едва ты собираешься прикоснуться к Морту, как вдруг он взлетает в воздух.'
     morte '«Э-э-э… Погоди, шеф. Тебе не нужно возрождать меня. Я, понимаешь, э-э-э, типа просто лежал тут, слушал вас двоих».'
 
@@ -11531,7 +11531,7 @@ label morte_s741:  # from 740.0
 
 
 # s742 # say68408
-label morte_s742:  # -
+label morte_s742:  # - # IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
     nr 'Морт молча смотрит на тебя, затем вздыхает.'
     morte '«Не то чтобы я сильно растрогался, и все же мне, э-э, было приятно с тобой путешествовать, шеф».'
 

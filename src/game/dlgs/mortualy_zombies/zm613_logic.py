@@ -4,7 +4,7 @@ class Zm613Logic:
 
 
     def zm613_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r8')
+        self.settings_manager.location_manager.set_location('mortuary_f3r4')
         self.settings_manager.inc_talked_to_zm613_times()
 
 
