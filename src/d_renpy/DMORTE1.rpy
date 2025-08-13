@@ -31,7 +31,7 @@ label morte1_dispose:
 
 
 # s0 # say39792
-label morte1_s0:  # -
+label morte1_s0:  # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
     SPEAKER '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба». [MRT001]'
 
     menu:
@@ -226,7 +226,7 @@ label morte1_s17:  # from 16.0
 
 
 # s18 # say39832
-label morte1_s18:  # -
+label morte1_s18:  # - # IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
     SPEAKER '«На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками».'
 
     menu:
@@ -236,7 +236,7 @@ label morte1_s18:  # -
 
 
 # s19 # say39834
-label morte1_s19:  # -
+label morte1_s19:  # - # IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
     SPEAKER '«Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».'
 
     menu:
@@ -298,7 +298,7 @@ label morte1_s23:  # from 19.1 20.1 21.1 22.0
 
 
 # s24 # say39847
-label morte1_s24:  # -
+label morte1_s24:  # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
     SPEAKER '«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».'
 
     menu:
@@ -308,7 +308,7 @@ label morte1_s24:  # -
 
 
 # s25 # say39849
-label morte1_s25:  # -
+label morte1_s25:  # - # IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("KeyPr")
     SPEAKER '«Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате».'
 
     menu:
@@ -318,7 +318,7 @@ label morte1_s25:  # -
 
 
 # s26 # say39851
-label morte1_s26:  # -
+label morte1_s26:  # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
     SPEAKER '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?» [MRT516]'
 
     menu:
@@ -377,7 +377,7 @@ label morte1_s29:  # from 28.1
 
 
 # s30 # say39863
-label morte1_s30:  # -
+label morte1_s30:  # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
     SPEAKER '«Что тебя гложет, шеф?» [MRT515]'
 
     menu:

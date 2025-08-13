@@ -21,23 +21,21 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_dustfem_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.dustfem_init,
-            self.settings_manager.get_talked_to_dustfem_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_dustfem_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 0)
 
-    def test_kill_dustfem(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_dustfem,
-            self.logic.kill_dustfem
-        )
-
-
-    def test_dustfem_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.dustfem_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), delta_talked_to_dustfem_times)
+
+        self.logic.dustfem_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), 2 * delta_talked_to_dustfem_times)
 
 
     def test_kill_dustfem(self):
@@ -69,23 +67,91 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r33227_action(self):
-        # TODO [snowinmars]: write the test
+        delta_adahn = 1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
         self.logic.r33227_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r33227_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r1273_action(self):
-        # TODO [snowinmars]: write the test
+        delta_adahn = 1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
         self.logic.r1273_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r1273_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r1290_action(self):
-        # TODO [snowinmars]: write the test
+        delta_adahn = 1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
         self.logic.r1290_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r1290_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r1294_action(self):
-        # TODO [snowinmars]: write the test
+        delta_adahn = 1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
         self.logic.r1294_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r1294_action()
+
+        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r4307_action(self):
@@ -96,10 +162,24 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r4308_action(self):
-        self._false_then_true_action(
-            self.settings_manager.get_mortualy_alarmed,
-            self.logic.r4308_action
-        )
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertFalse(self.settings_manager.get_mortualy_alarmed())
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
+        self.logic.r4308_action()
+
+        self.assertTrue(self.settings_manager.get_mortualy_alarmed())
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r4308_action()
+
+        self.assertTrue(self.settings_manager.get_mortualy_alarmed())
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r4309_action(self):
@@ -110,23 +190,86 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r4317_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4317_action()
 
 
     def test_r4318_action(self):
-        # TODO [snowinmars]: write the test
+        delta_choke = 1
+        delta_choke_dustman = 1
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 15
+
+        self.assertEqual(self.settings_manager.get_choke(), 0)
+        self.assertFalse(self.settings_manager.get_choke_memory())
+        self.assertEqual(self.settings_manager.get_choke_dustman(), 0)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+
         self.logic.r4318_action()
+
+        self.assertEqual(self.settings_manager.get_choke(), delta_choke)
+        self.assertTrue(self.settings_manager.get_choke_memory())
+        self.assertEqual(self.settings_manager.get_choke_dustman(), delta_choke_dustman)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r4318_action()
+
+        self.assertEqual(self.settings_manager.get_choke(), 2 * delta_choke)
+        self.assertTrue(self.settings_manager.get_choke_memory())
+        self.assertEqual(self.settings_manager.get_choke_dustman(), 2 * delta_choke_dustman)
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r4319_action(self):
-        # TODO [snowinmars]: write the test
+        delta_choke_dustman = 1
+        delta_choke = 1
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 15
+
+        self.assertEqual(self.settings_manager.get_choke_dustman(), 0)
+        self.assertEqual(self.settings_manager.get_choke(), 0)
+        self.assertFalse(self.settings_manager.get_dead_dustfem())
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+
         self.logic.r4319_action()
+
+        self.assertEqual(self.settings_manager.get_choke_dustman(), delta_choke_dustman)
+        self.assertEqual(self.settings_manager.get_choke(), delta_choke)
+        self.assertTrue(self.settings_manager.get_dead_dustfem())
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r4319_action()
+
+        self.assertEqual(self.settings_manager.get_choke_dustman(), 2 * delta_choke_dustman)
+        self.assertEqual(self.settings_manager.get_choke(), 2 * delta_choke)
+        self.assertTrue(self.settings_manager.get_dead_dustfem())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r4320_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        self.assertFalse(self.settings_manager.get_dead_dustfem())
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+
         self.logic.r4320_action()
+
+        self.assertTrue(self.settings_manager.get_dead_dustfem())
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r4320_action()
+
+        self.assertTrue(self.settings_manager.get_dead_dustfem())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r4321_action(self):
@@ -137,7 +280,6 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r4322_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4322_action()
 
 
@@ -233,43 +375,97 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r1253_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1253_condition()
+        self.settings_manager.set_dhall_value(1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0202'))
+        self.assertFalse(self.logic.r1253_condition())
+
+        self.settings_manager.set_dhall_value(0)
+        self.settings_manager.location_manager.set_location('AR0202')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0202'))
+        self.assertTrue(self.logic.r1253_condition())
 
 
     def test_r1255_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1255_condition()
+        self.settings_manager.set_dhall_value(1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0202'))
+        self.assertFalse(self.logic.r1255_condition())
+
+        self.settings_manager.set_dhall_value(0)
+        self.settings_manager.location_manager.set_location('AR0202')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0202'))
+        self.assertTrue(self.logic.r1255_condition())
 
 
     def test_r1258_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1258_condition()
+        self.settings_manager.set_deionarra_value(1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertFalse(self.logic.r1258_condition())
+
+        self.settings_manager.set_deionarra_value(0)
+        self.settings_manager.location_manager.set_location('AR0201')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertTrue(self.logic.r1258_condition())
 
 
     def test_r4336_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4336_condition()
+        self.settings_manager.set_deionarra_value(1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertFalse(self.logic.r4336_condition())
+
+        self.settings_manager.set_deionarra_value(0)
+        self.settings_manager.location_manager.set_location('AR0201')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertTrue(self.logic.r4336_condition())
 
 
     def test_r33224_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r33224_condition()
+        self.settings_manager.set_soego_value(1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertFalse(self.logic.r33224_condition())
+
+        self.settings_manager.set_soego_value(0)
+        self.settings_manager.location_manager.set_location('AR0201')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertTrue(self.logic.r33224_condition())
 
 
     def test_r33226_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r33226_condition()
+        self.settings_manager.set_soego_value(1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertFalse(self.logic.r33226_condition())
+
+        self.settings_manager.set_soego_value(0)
+        self.settings_manager.location_manager.set_location('AR0201')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0201'))
+        self.assertTrue(self.logic.r33226_condition())
 
 
     def test_r33227_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r33227_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_talked_to_dustfem_times(0)
+        self.assertFalse(self.logic.r33227_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_talked_to_dustfem_times(1)
+        self.assertTrue(self.logic.r33227_condition())
 
 
     def test_r33229_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r33229_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_talked_to_dustfem_times(0)
+        self.assertFalse(self.logic.r33229_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_talked_to_dustfem_times(1)
+        self.assertTrue(self.logic.r33229_condition())
 
 
     def test_r1272_condition(self):
@@ -606,18 +802,33 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r4312_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4312_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_warning(1)
+        self.assertFalse(self.logic.r4312_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_warning(0)
+        self.assertTrue(self.logic.r4312_condition())
 
 
     def test_r4313_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4313_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_warning(0)
+        self.assertFalse(self.logic.r4313_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_warning(1)
+        self.assertTrue(self.logic.r4313_condition())
 
 
     def test_r4314_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4314_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_warning(0)
+        self.assertFalse(self.logic.r4314_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_warning(1)
+        self.assertTrue(self.logic.r4314_condition())
 
 
     def test_r4315_condition(self):

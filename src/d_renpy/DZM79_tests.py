@@ -21,23 +21,21 @@ class Zm79LogicTest(LogicTest):
 
 
     def test_zm79_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm79_init,
-            self.settings_manager.get_talked_to_zm79_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm79_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm79_times(), 0)
 
-    def test_kill_zm79(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm79,
-            self.logic.kill_zm79
-        )
-
-
-    def test_zm79_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm79_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm79_times(), delta_talked_to_zm79_times)
+
+        self.logic.zm79_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm79_times(), 2 * delta_talked_to_zm79_times)
 
 
     def test_kill_zm79(self):

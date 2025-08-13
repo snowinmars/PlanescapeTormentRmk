@@ -67,12 +67,12 @@ class MorteLogic:
 
     def r3474_action(self):
         self.settings_manager.journal_manager.update_journal('38205')
-        # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
+        # .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.')
 
 
     def r3483_action(self):
         self.settings_manager.journal_manager.update_journal('38205')
-        # '38205': ' ~Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.~ '
+        # .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.')
 
 
     def r3871_action(self):
@@ -141,7 +141,7 @@ class MorteLogic:
 
     def r4676_action(self):
         self.settings_manager.journal_manager.update_journal('64512')
-        # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+        # .register('64512', 'Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт».')
 
 
     def r4678_action(self):
@@ -163,7 +163,7 @@ class MorteLogic:
 
     def r4693_action(self):
         self.settings_manager.journal_manager.update_journal('64512')
-        # '64512': ' ~Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт». ~ '
+        # .register('64512', 'Недавно я повстречал замаскировавшегося под зомби мужчину из анархистов, фракции, которая отрицает авторитеты и низвергает все, что хоть издали напоминает «устоявшийся институт».')
 
 
     def r4695_action(self):
@@ -175,14 +175,21 @@ class MorteLogic:
 
 
     def r64535_action(self):
-        FadeToColor([20.0],0) Wait(1) self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
-        Wait(2) FadeFromColor([20.0],0) self.settings_manager.gain_experience('party', 500)
+        # FadeToColor([20.0],0)
+        # Wait(1)
+        self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2)
+        # FadeFromColor([20.0],0)
+        self.settings_manager.gain_experience('party', 500)
         self.settings_manager.set_vaxis_global_xp(True)
 
 
     def r64534_action(self):
-        FadeToColor([20.0],0) Wait(1) self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
-        Wait(2) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0)
+        # Wait(1)
+        self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2)
+        # FadeFromColor([20.0],0)
 
 
     def r5030_action(self):
@@ -255,11 +262,15 @@ class MorteLogic:
 
     def r12554_action(self):
         self.settings_manager.dec_morale_morte(2)
-        Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r12555_action(self):
-        Enemy() Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist) ChangeAIScript("MDKTNO",DEFAULT)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r12556_action(self):
@@ -435,12 +446,12 @@ class MorteLogic:
     def r20612_action(self):
         self.settings_manager.set_know_marta_work(3)
         self.settings_manager.journal_manager.update_journal('20538')
-        # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+        # .register('20538', 'Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.')
 
 
     def r20613_action(self):
         self.settings_manager.journal_manager.update_journal('20538')
-        # '20538': ' ~Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.~ '
+        # .register('20538', 'Похоже, что Марта-швея занимается тем, что обрабатывает трупы, которые ей дают: вырывает их зубы, распарывает швы, обыскивает их снаружи и внутри в поисках любых ценностей, а затем зашивает.')
 
 
     def r24697_action(self):
@@ -475,7 +486,7 @@ class MorteLogic:
     def r24932_action(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.journal_manager.update_journal('24933')
-        # '24933': ' ~Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».~ '
+        # .register('24933', 'Я начал записывать происходящее со мной, чтобы прочистить голову, в надежде на то, что я смогу разобраться в том, что происходит. Я очнулся в месте под названием «Морг»... действительно похоже на морг. Я не знаю, кто я, что я здесь делаю и как я сюда попал. Первый, на кого я наткнулся, очнувшись, был тараторящий череп по имени Морт. Он сказал, что мы заперты и что у одного из ковыляющих по комнате трупов должен быть ключ. Он предложил мне поискать на полках скальпель, а потом тыкать им в мертвецов, пока те не «умрут».')
 
 
     def r28041_action(self):
@@ -552,7 +563,8 @@ class MorteLogic:
 
 
     def r31567_action(self):
-        OpenDoor("Statue") Kill(Protagonist)
+        # OpenDoor("Statue")
+        # Kill(Protagonist)
 
 
     def r32370_action(self):
@@ -817,7 +829,7 @@ class MorteLogic:
 
     def r41837_action(self):
         self.settings_manager.journal_manager.update_journal('39516')
-        # '39516': ' ~Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.~ '
+        # .register('39516', 'Мой предыдущий дневник пропал, так что я завел новый. Я очнулся в месте под названием «Морг». Я не знаю, кто я, что я здесь делаю и даже как я сюда попал. Единственного, кого я здесь пока встретил, — говорящий без умолку череп по имени Морт... Когда он осматривал мои раны, он нашел «указания», вытатуированные на моей спине:  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей есть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».  «Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода».  Мог ли сам себе оставить это сообщение? Судя по всему, мне придется найти этого «Фарода» и свой дневник.')
 
 
     def r41911_action(self):
@@ -827,21 +839,21 @@ class MorteLogic:
     def r41921_action(self):
         self.settings_manager.set_jumble_reekwind(True)
         self.settings_manager.journal_manager.update_journal('67862')
-        # '67862': ' ~В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.~ '
+        # .register('67862', 'В Городском Фестхолле я встретил человека, который проклял Вонючку, — Джамбла Смыслогуба.')
 
 
     def r43910_action(self):
         self.settings_manager.set_nemelle(3)
         self.settings_manager.set_aelwyn_value(4)
         self.settings_manager.journal_manager.update_journal('39490')
-        # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+        # .register('39490', 'Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.')
 
 
     def r43918_action(self):
         self.settings_manager.set_nemelle(3)
         self.settings_manager.set_aelwyn_value(4)
         self.settings_manager.journal_manager.update_journal('39490')
-        # '39490': ' ~Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.~ '
+        # .register('39490', 'Я сказал подруге Немель, Эльвин, что она ее ищет. Она вознаградила меня волшебным поцелуем, который увеличил мой максимум очков жизни на три.')
 
 
     def r45029_action(self):
@@ -850,12 +862,12 @@ class MorteLogic:
 
     def r45093_action(self):
         self.settings_manager.journal_manager.update_journal('39477')
-        # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+        # .register('39477', 'Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.')
 
 
     def r45103_action(self):
         self.settings_manager.journal_manager.update_journal('39477')
-        # '39477': ' ~Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.~ '
+        # .register('39477', 'Морт что-то сказал про какое-то «правило трех». По-видимому, некоторые верят в то, что все на свете происходит по три, придавая глубокий смысл числам.')
 
 
     def r50166_action(self):
@@ -885,14 +897,14 @@ class MorteLogic:
     def r53629_action(self):
         self.settings_manager.set_morte_story(True)
         self.settings_manager.journal_manager.update_journal('53633')
-        # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+        # .register('53633', 'Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.')
 
 
     def r53630_action(self):
         self.settings_manager.dec_morale_morte()
         self.settings_manager.set_morte_story(True)
         self.settings_manager.journal_manager.update_journal('53661')
-        # '53661': ' ~Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.~ '
+        # .register('53661', 'Оказывается, Морт появился из такой себе Колонной Черепов, горы живых отрубленных голов, находящейся на Авернусе, первом слое Баатора. Она состоит из голов тех, чья ложь привела к смерти других.')
 
 
     def r53795_action(self):
@@ -905,7 +917,7 @@ class MorteLogic:
 
     def r53807_action(self):
         self.settings_manager.journal_manager.update_journal('53633')
-        # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+        # .register('53633', 'Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.')
 
 
     def r53825_action(self):
@@ -923,7 +935,8 @@ class MorteLogic:
     def r53843_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
         self.settings_manager.set_pillar(2)
-        # StartCutSceneMode() # ?.start_cut_scene('1001Cut1')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1001Cut1')
 
 
     def r53867_action(self):
@@ -933,7 +946,8 @@ class MorteLogic:
     def r53850_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_pillar_2')
         self.settings_manager.set_pillar(2)
-        # StartCutSceneMode() # ?.start_cut_scene('1001Cut1')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1001Cut1')
 
 
     def r53856_action(self):
@@ -941,55 +955,68 @@ class MorteLogic:
 
 
     def r54160_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54180_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54192_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54197_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54201_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54205_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54210_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54214_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54218_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54227_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54233_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54238_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54242_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54244_action(self):
@@ -997,23 +1024,28 @@ class MorteLogic:
 
 
     def r54246_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54262_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54267_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54272_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54276_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54278_action(self):
@@ -1022,19 +1054,23 @@ class MorteLogic:
 
 
     def r54280_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54833_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54836_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r54839_action(self):
-        SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE) SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+        # SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
 
 
     def r55902_action(self):
@@ -1054,45 +1090,46 @@ class MorteLogic:
 
 
     def r61414_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65569_action(self):
         self.settings_manager.set_morte_tattoo_xp(True)
         self.settings_manager.gain_experience('party', 1000)
         self.settings_manager.journal_manager.update_journal('65573')
-        # '65573': ' ~Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему. ~ '
+        # .register('65573', 'Я напрямую спросил Морта насчет дополнительной строки на моей спине, которую он «забыл» мне прочитать. Он заявил, что это не имеет никакого смысла, поэтому он и не прочел. Я уверен, что он лжет, но пока мне непонятно почему.')
 
 
     def r65621_action(self):
         self.settings_manager.set_morte_talent(True)
         self.settings_manager.journal_manager.update_journal('65625')
-        # '65625': ' ~Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность. ~ '
+        # .register('65625', 'Морт сказал мне, что у него есть особенный «талант» выводить из себя людей, который называется «Поток Проклятий». Очевидно, во время своей жизни и смерти он выучил столько оскорблений, что теперь знает, как провоцировать людей на нападение. В приступе злости их легко ударить, а им — труднее ударить тебя. Кроме того, они забывают обо всем, кроме того, чтобы догнать Морта и надавать ему тумаков. Похоже, это очень пригодится, если я повстречаю какого-нибудь чародея. Фактически этот талант не является магией, поэтому он может подействовать на любую тварь, которая зачитывает заклинания. Думаю, чем больше проклятий услышит Морт от людей, которых я встречу, тем лучше будет становиться эта возможность.')
 
 
     def r65631_action(self):
         self.settings_manager.journal_manager.update_journal('65637')
-        # '65637': ' ~Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.~ '
+        # .register('65637', 'Морт сказал мне, что пока они был на полке Лотара, у него появилась новая способность под названием «Толпа Черепов». Похоже, он может несколько раз в день призывать некоторых друзей, с которыми познакомился у Лотара. Они будут атаковать выбранного Мортом противника, кусая его, а затем убегая прочь. Наносимый ими урон зависит от уровня опытности Морта.')
 
 
     def r65666_action(self):
         self.settings_manager.journal_manager.update_journal('65669')
-        # '65669': ' ~Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.~ '
+        # .register('65669', 'Морт посоветовал мне заглянуть в Городской Фестхолл в Чиновничьем районе и попробовать разузнать побольше о ночной ведьме Равель.')
 
 
     def r65674_action(self):
         self.settings_manager.journal_manager.update_journal('65678')
-        # '65678': ' ~Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.~ '
+        # .register('65678', 'Морт подкинул мысль, что кто-нибудь в Чиновничьем районе может знать, где достать кусочек Равель. Если мы никого не найдем, можно проверить Фестхолл и тамошние камни переживаний. Если и *там* ничего не выйдет, всегда можно наведаться к проституткам... Вот уж предстоит набегаться и наговориться.')
 
 
     def r65710_action(self):
         self.settings_manager.journal_manager.update_journal('65712')
-        # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
+        # .register('65712', 'Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду.')
 
 
     def r65711_action(self):
         self.settings_manager.journal_manager.update_journal('65712')
-        # '65712': ' ~Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду. ~ '
+        # .register('65712', 'Я прямо спросил Морта о его заявлении, что он — мимир, но не сумел загнать его в угол. Думаю, мне нужно его подловить на лжи, чтобы вывести на чистую воду.')
 
 
     def r65731_action(self):
@@ -1114,45 +1151,56 @@ class MorteLogic:
 
     def r65753_action(self):
         self.settings_manager.journal_manager.update_journal('53633')
-        # '53633': ' ~Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.~ '
+        # .register('53633', 'Морт сказал, что это я вытащил его из Колонны много лет назад, хотя он точно не понимает, как. Также он объяснил, что когда он оказался вне Колонны, то потерял все собранные ею знания... Это может объяснять, почему он не *столь* полезен, как он заявил моему предыдущему воплощению.')
 
 
     def r65758_action(self):
-        # ?.play_sound('SPTR_01') FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # ?.play_sound('SPTR_01')
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65763_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65766_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65769_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65772_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65774_action(self):
         self.settings_manager.set_memory_morte_pillar(True)
         self.settings_manager.gain_experience('protagonist', 12000)
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65775_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65781_action(self):
-        # ?.play_sound('SPTR_01') FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # ?.play_sound('SPTR_01')
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65789_action(self):
-        FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0) Wait(3)
+        # FadeFromColor([20.0],0)
 
 
     def r65821_action(self):
@@ -1163,116 +1211,138 @@ class MorteLogic:
         self.settings_manager.character_manager.modify_property('morte', 'constitution', 2)
         self.settings_manager.set_bd_morte_story(True)
         self.settings_manager.journal_manager.update_journal('65825')
-        # '65825': ' ~Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.~ '
+        # .register('65825', 'Я выяснил, почему Морт оставался со мной все это время... Все из-за того, что он испытывал чувство вины за то, что убил меня однажды, когда был жив. Встретившись со своей виной лицом к лицу, он сбросил с себя весь этот груз и, в конце концов, стал сильнее.')
 
 
     def r68176_action(self):
-        self.settings_manager.set_fortress_morte(4)
-        JoinPartyEx(TRUE)
+        self.settings_manager.set_fortress_morte(4) JoinPartyEx(TRUE)
 
 
     def r68189_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204d0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204d0')
 
 
     def r68190_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204a0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204a0')
 
 
     def r68191_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204g0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204g0')
 
 
     def r68192_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204i0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204i0')
 
 
     def r68193_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204v0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204v0')
 
 
     def r68194_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204n0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204n0')
 
 
     def r68239_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204tr')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204tr')
 
 
     def r68438_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204tr')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204tr')
 
 
     def r68439_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204tr')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204tr')
 
 
     def r68446_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204v0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204v0')
 
 
     def r68175_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204a0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204a0')
 
 
     def r68179_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204d0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204d0')
 
 
     def r68180_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204g0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204g0')
 
 
     def r68181_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204n0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204n0')
 
 
     def r68182_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204i0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204i0')
 
 
     def r68183_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204v0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204v0')
 
 
     def r68319_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204a0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204a0')
 
 
     def r68320_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204d0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204d0')
 
 
     def r68321_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204g0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204g0')
 
 
     def r68322_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204n0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204n0')
 
 
     def r68323_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204i0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204i0')
 
 
     def r68324_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204v0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204v0')
 
 
     def r68325_action(self):
-        QuitGame(FINALE,0,0)
+        # QuitGame(FINALE,0,0)
 
 
     def r68490_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1204v0')
+        # StartCutSceneMode()
+        # ?.start_cut_scene('1204v0')
 
 
     def r68491_action(self):
-        QuitGame(FINALE,0,0)
+        # QuitGame(FINALE,0,0)
 
 
     def r68492_action(self):
-        QuitGame(FINALE,0,0)
+        # QuitGame(FINALE,0,0)
 
 
     def r1006_condition(self):
@@ -1402,11 +1472,13 @@ class MorteLogic:
 
 
     def r6325_condition(self):
-        return self.settings_manager.get_has_cobble()  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
+        return self.settings_manager.get_has_cobble()
+        return # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
 
 
     def r6326_condition(self):
-        return not self.settings_manager.get_has_cobble()  # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
+        return not self.settings_manager.get_has_cobble()
+        return # Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).
 
 
     def r6327_condition(self):

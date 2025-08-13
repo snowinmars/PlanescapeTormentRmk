@@ -21,23 +21,21 @@ class DhallLogicTest(LogicTest):
 
 
     def test_dhall_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.dhall_init,
-            self.settings_manager.get_talked_to_dhall_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_dhall_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), 0)
 
-    def test_kill_dhall(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_dhall,
-            self.logic.kill_dhall
-        )
-
-
-    def test_dhall_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.dhall_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), delta_talked_to_dhall_times)
+
+        self.logic.dhall_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), 2 * delta_talked_to_dhall_times)
 
 
     def test_kill_dhall(self):
@@ -48,18 +46,65 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r827_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r827_action()
 
 
     def test_r830_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        note_id = '39468'
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r830_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r830_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r831_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -3
+        note_id = '39469'
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r831_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r831_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r843_action(self):
@@ -255,8 +300,20 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5073_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r5073_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.assertFalse(self.logic.r5073_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.assertTrue(self.logic.r5073_condition())
 
 
     def test_r5074_condition(self):
@@ -310,13 +367,23 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r835_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r835_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_mortualy_alarmed(True)
+        self.assertFalse(self.logic.r835_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_mortualy_alarmed(False)
+        self.assertTrue(self.logic.r835_condition())
 
 
     def test_r5058_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r5058_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_mortualy_alarmed(False)
+        self.assertFalse(self.logic.r5058_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_mortualy_alarmed(True)
+        self.assertTrue(self.logic.r5058_condition())
 
 
     def test_r842_condition(self):
@@ -344,13 +411,28 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r854_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r854_condition()
+        self.settings_manager.set_vaxis_value(0)
+        self.settings_manager.set_dead_vaxis(True)
+        self.settings_manager.set_vaxis_leave(True)
+        self.settings_manager.set_vaxis_betrayed(1)
+        self.assertFalse(self.logic.r854_condition())
+
+        self.settings_manager.set_vaxis_value(1)
+        self.settings_manager.set_dead_vaxis(False)
+        self.settings_manager.set_vaxis_leave(False)
+        self.settings_manager.set_vaxis_betrayed(0)
+        self.assertTrue(self.logic.r854_condition())
 
 
     def test_r858_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r858_condition()
+        self.settings_manager.set_escape_mortuary(True)
+        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0200'))
+        self.assertFalse(self.logic.r858_condition())
+
+        self.settings_manager.set_escape_mortuary(False)
+        self.settings_manager.location_manager.set_location('AR0200')
+        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0200'))
+        self.assertTrue(self.logic.r858_condition())
 
 
     def test_r870_condition(self):
@@ -509,8 +591,20 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5078_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r5078_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.assertFalse(self.logic.r5078_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.assertTrue(self.logic.r5078_condition())
 
 
     def test_r5079_condition(self):
@@ -535,8 +629,20 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r5082_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r5082_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.assertFalse(self.logic.r5082_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.assertTrue(self.logic.r5082_condition())
 
 
     def test_r5083_condition(self):

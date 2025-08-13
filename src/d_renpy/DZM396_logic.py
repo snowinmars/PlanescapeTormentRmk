@@ -47,7 +47,7 @@ class Zm396Logic:
 
 
     def r34934_condition(self):
-        return not  self.settings_manager.get_has_bandages_zm396()
+        return not self.settings_manager.get_has_bandages_zm396()
 
 
     def r45112_condition(self):

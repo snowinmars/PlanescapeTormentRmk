@@ -24,11 +24,14 @@ def clean_raw(input_text):
             i += 1
             continue
 
-        # Skip block starting with 'IF WEIGHT' until '~ THEN BEGIN'
+        # Block starting with 'IF WEIGHT' until '~ THEN BEGIN' is a start condition block
         if line.startswith('IF WEIGHT'):
+            builder = ''
             while i < n and not lines[i].startswith('~ THEN BEGIN'):
+                builder += f' {lines[i]}'
                 i += 1
             if i < n:
+                result.append(builder.strip())
                 continue
             else:
                 break

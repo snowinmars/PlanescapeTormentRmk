@@ -21,23 +21,21 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_zf1148_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zf1148_init,
-            self.settings_manager.get_talked_to_zf1148_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zf1148_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zf1148_times(), 0)
 
-    def test_kill_zf1148(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zf1148,
-            self.logic.kill_zf1148
-        )
-
-
-    def test_zf1148_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zf1148_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zf1148_times(), delta_talked_to_zf1148_times)
+
+        self.logic.zf1148_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zf1148_times(), 2 * delta_talked_to_zf1148_times)
 
 
     def test_kill_zf1148(self):
@@ -48,8 +46,24 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_r35243_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r35243_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r35243_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r35243_condition(self):
@@ -81,13 +95,23 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_r35267_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35267_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35267_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35267_condition())
 
 
     def test_r35268_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35268_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35268_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35268_condition())
 
 
     def test_r35269_condition(self):
@@ -105,18 +129,33 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_r35271_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35271_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35271_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35271_condition())
 
 
     def test_r35272_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35272_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35272_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35272_condition())
 
 
     def test_r35245_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35245_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35245_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35245_condition())
 
 
     def test_r35258_condition(self):
@@ -127,13 +166,23 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_r35259_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35259_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35259_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35259_condition())
 
 
     def test_r35264_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35264_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35264_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35264_condition())
 
 
     def test_r35265_condition(self):
@@ -144,8 +193,13 @@ class Zf1148LogicTest(LogicTest):
 
 
     def test_r35266_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r35266_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_quip(True)
+        self.assertFalse(self.logic.r35266_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_quip(False)
+        self.assertTrue(self.logic.r35266_condition())
 
 
 if __name__ == '__main__':

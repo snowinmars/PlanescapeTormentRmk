@@ -21,23 +21,21 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_vaxis_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.vaxis_init,
-            self.settings_manager.get_talked_to_vaxis_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_vaxis_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), 0)
 
-    def test_kill_vaxis(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_vaxis,
-            self.logic.kill_vaxis
-        )
-
-
-    def test_vaxis_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.vaxis_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), delta_talked_to_vaxis_times)
+
+        self.logic.vaxis_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), 2 * delta_talked_to_vaxis_times)
 
 
     def test_kill_vaxis(self):
@@ -48,8 +46,24 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r454_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r454_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r454_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r461_action(self):
@@ -112,7 +126,6 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r475_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r475_action()
 
 
@@ -129,23 +142,80 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r477_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = 1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r477_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r477_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r480_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '64513'
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r480_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r480_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r481_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '64513'
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r481_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r481_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r482_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '64513'
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r482_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r482_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r487_action(self):
@@ -305,8 +375,29 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4381_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = 1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r4381_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r4381_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r4387_action(self):
@@ -334,8 +425,29 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4391_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = 1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r4391_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r4391_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r4397_action(self):
@@ -387,17 +499,14 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4405_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4405_action()
 
 
     def test_r4408_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4408_action()
 
 
     def test_r4413_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4413_action()
 
 
@@ -500,8 +609,43 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4469_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+        note_id = '64517'
+
+        self.assertFalse(self.settings_manager.get_vaxis_leave())
+        self.assertFalse(self.settings_manager.get_has_bandages())
+        self.assertFalse(self.settings_manager.get_has_bandages())
+        self.assertFalse(self.settings_manager.get_has_bandages())
+        self.assertFalse(self.settings_manager.get_has_embalm())
+        self.assertFalse(self.settings_manager.get_has_needle())
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r4469_action()
+
+        self.assertTrue(self.settings_manager.get_vaxis_leave())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_embalm())
+        self.assertTrue(self.settings_manager.get_has_needle())
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4469_action()
+
+        self.assertTrue(self.settings_manager.get_vaxis_leave())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_embalm())
+        self.assertTrue(self.settings_manager.get_has_needle())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4474_action(self):
@@ -596,8 +740,27 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4494_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+        self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
+
         self.logic.r4494_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
+
+        self.logic.r4494_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
 
 
     def test_r4496_action(self):
@@ -615,18 +778,69 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4498_action(self):
-        # TODO [snowinmars]: write the test
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
+
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertTrue(self.settings_manager.get_vaxis_orders())
+
         self.logic.r4498_action()
+
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+        self.assertFalse(self.settings_manager.get_vaxis_orders())
+
+        self.logic.r4498_action()
+
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
+        self.assertFalse(self.settings_manager.get_vaxis_orders())
 
 
     def test_r4499_action(self):
-        # TODO [snowinmars]: write the test
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
+
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertTrue(self.settings_manager.get_vaxis_orders())
+
         self.logic.r4499_action()
+
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+        self.assertFalse(self.settings_manager.get_vaxis_orders())
+
+        self.logic.r4499_action()
+
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
+        self.assertFalse(self.settings_manager.get_vaxis_orders())
 
 
     def test_r4502_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+        self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
+
         self.logic.r4502_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
+
+        self.logic.r4502_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
 
 
     def test_r64520_action(self):
@@ -694,18 +908,64 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4519_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+        self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 1)
+
         self.logic.r4519_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+
+        self.logic.r4519_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
 
 
     def test_r4521_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '64521'
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r4521_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4521_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4522_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '64521'
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r4522_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4522_action()
+
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4539_action(self):
@@ -727,38 +987,145 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r64527_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        note_id = '64528'
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_vaxis_help())
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r64527_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r64527_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4568_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        note_id = '64529'
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_vaxis_help())
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r4568_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4568_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4569_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        note_id = '64529'
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_vaxis_help())
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r4569_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4569_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4580_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '64530'
+
+        self.assertFalse(self.settings_manager.get_vaxis_exposes_soego())
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r4580_action()
+
+        self.assertTrue(self.settings_manager.get_vaxis_exposes_soego())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4580_action()
+
+        self.assertTrue(self.settings_manager.get_vaxis_exposes_soego())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4592_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+
         self.logic.r4592_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+
+        self.logic.r4592_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
 
 
     def test_r4593_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.settings_manager.get_has_keyem())
+
         self.logic.r4593_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+
+        self.logic.r4593_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
 
 
     def test_r4620_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4620_action()
+        self._integer_equals_action(
+            self.settings_manager.get_vaxis_zombie_disguise,
+            2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE,
+            self.logic.r4620_action
+        )
 
 
     def test_r4621_action(self):
@@ -802,8 +1169,32 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4630_action(self):
-        # TODO [snowinmars]: write the test
+        who_looks_like = 'protagonist'
+        prop_looks_like = 'looks_like'
+        delta_looks_like = zombie
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+
+        looks_like_before = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_vaxis_global_xp())
+
         self.logic.r4630_action()
+
+        looks_like_after = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
+        self.assertEqual(looks_like_before + delta_looks_like, looks_like_after)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_vaxis_global_xp())
+
+        self.logic.r4630_action()
+
+        looks_like_after_once = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
+        self.assertEqual(looks_like_after + delta_looks_like, looks_like_after_once)
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_global_xp())
 
 
     def test_r4631_action(self):
@@ -814,13 +1205,27 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4632_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4632_action()
+        who = 'protagonist'
+        prop = 'looks_like'
+        delta = 'zombie'
+
+        self._change_prop(
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            delta,
+            self.logic.r4632_action
+        )
 
 
     def test_r64533_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64533_action()
+        who = 'protagonist'
+        prop = 'looks_like'
+        delta = 'zombie'
+
+        self._change_prop(
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            delta,
+            self.logic.r64533_action
+        )
 
 
     def test_r4635_action(self):
@@ -840,7 +1245,6 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4645_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4645_action()
 
 
@@ -857,17 +1261,14 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4661_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4661_action()
 
 
     def test_r4666_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4666_action()
 
 
     def test_r4669_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r4669_action()
 
 
@@ -1033,8 +1434,20 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r1360_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1360_condition()
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.assertFalse(self.logic.r1360_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+        self.assertTrue(self.logic.r1360_condition())
 
 
     def test_r1361_condition(self):
@@ -1110,8 +1523,20 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4370_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4370_condition()
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.assertFalse(self.logic.r4370_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+        self.assertTrue(self.logic.r4370_condition())
 
 
     def test_r4371_condition(self):
@@ -1385,13 +1810,37 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4446_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4446_condition()
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 12
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.assertFalse(self.logic.r4446_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+        self.assertTrue(self.logic.r4446_condition())
 
 
     def test_r4447_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4447_condition()
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.assertFalse(self.logic.r4447_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+        self.assertTrue(self.logic.r4447_condition())
 
 
     def test_r4448_condition(self):
@@ -1761,13 +2210,31 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r64508_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64508_condition()
+        self.settings_manager.set_escape_mortuary(True)
+        self.settings_manager.set_vaxis_help(True)
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_strong_arm_vaxis(False)
+        self.assertFalse(self.logic.r64508_condition())
+
+        self.settings_manager.set_escape_mortuary(False)
+        self.settings_manager.set_vaxis_help(False)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_strong_arm_vaxis(True)
+        self.assertTrue(self.logic.r64508_condition())
 
 
     def test_r4524_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4524_condition()
+        self.settings_manager.set_escape_mortuary(True)
+        self.settings_manager.set_vaxis_help(True)
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_strong_arm_vaxis(True)
+        self.assertFalse(self.logic.r4524_condition())
+
+        self.settings_manager.set_escape_mortuary(False)
+        self.settings_manager.set_vaxis_help(False)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_strong_arm_vaxis(False)
+        self.assertTrue(self.logic.r4524_condition())
 
 
     def test_r4525_condition(self):
@@ -1778,13 +2245,23 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4526_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4526_condition()
+        self.settings_manager.set_vaxis_zombie_disguise(0)
+        self.settings_manager.set_appearance(1)
+        self.assertFalse(self.logic.r4526_condition())
+
+        self.settings_manager.set_vaxis_zombie_disguise(1)
+        self.settings_manager.set_appearance(0)
+        self.assertTrue(self.logic.r4526_condition())
 
 
     def test_r4527_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4527_condition()
+        self.settings_manager.set_vaxis_zombie_disguise(0)
+        self.settings_manager.set_appearance(1)
+        self.assertFalse(self.logic.r4527_condition())
+
+        self.settings_manager.set_vaxis_zombie_disguise(2)
+        self.settings_manager.set_appearance(0)
+        self.assertTrue(self.logic.r4527_condition())
 
 
     def test_r4528_condition(self):
@@ -1876,18 +2353,37 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4564_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4564_condition()
+        self.settings_manager.set_strong_arm_vaxis(True)
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_vaxis_orders(True)
+        self.assertFalse(self.logic.r4564_condition())
+
+        self.settings_manager.set_strong_arm_vaxis(False)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_vaxis_orders(False)
+        self.assertTrue(self.logic.r4564_condition())
 
 
     def test_r64509_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64509_condition()
+        self.settings_manager.set_strong_arm_vaxis(True)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_vaxis_orders(True)
+        self.assertFalse(self.logic.r64509_condition())
+
+        self.settings_manager.set_strong_arm_vaxis(False)
+        self.settings_manager.set_embalm_key_quest(2)
+        self.settings_manager.set_vaxis_orders(False)
+        self.assertTrue(self.logic.r64509_condition())
 
 
     def test_r64510_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64510_condition()
+        self.settings_manager.set_strong_arm_vaxis(False)
+        self.settings_manager.set_vaxis_orders(True)
+        self.assertFalse(self.logic.r64510_condition())
+
+        self.settings_manager.set_strong_arm_vaxis(True)
+        self.settings_manager.set_vaxis_orders(False)
+        self.assertTrue(self.logic.r64510_condition())
 
 
     def test_r64511_condition(self):
@@ -1935,28 +2431,57 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4588_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4588_condition()
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_embalm_key_quest(2)
+        self.settings_manager.set_vaxis_orders(True)
+        self.assertFalse(self.logic.r4588_condition())
+
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_vaxis_orders(False)
+        self.assertTrue(self.logic.r4588_condition())
 
 
     def test_r4589_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4589_condition()
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_embalm_key_quest(2)
+        self.settings_manager.set_vaxis_orders(False)
+        self.assertFalse(self.logic.r4589_condition())
+
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_vaxis_orders(True)
+        self.assertTrue(self.logic.r4589_condition())
 
 
     def test_r4592_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4592_condition()
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(False)
+        self.assertFalse(self.logic.r4592_condition())
+
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_has_keyem(True)
+        self.assertTrue(self.logic.r4592_condition())
 
 
     def test_r4593_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4593_condition()
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(False)
+        self.assertFalse(self.logic.r4593_condition())
+
+        self.settings_manager.set_embalm_key_quest(2)
+        self.settings_manager.set_has_keyem(True)
+        self.assertTrue(self.logic.r4593_condition())
 
 
     def test_r4594_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4594_condition()
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_has_keyem(True)
+        self.assertFalse(self.logic.r4594_condition())
+
+        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_has_keyem(False)
+        self.assertTrue(self.logic.r4594_condition())
 
 
     def test_r4599_condition(self):
@@ -1976,13 +2501,31 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4604_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4604_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_appearance(1)
+        self.assertFalse(self.logic.r4604_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_appearance(0)
+        self.assertTrue(self.logic.r4604_condition())
 
 
     def test_r4609_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4609_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_appearance(1)
+        self.assertFalse(self.logic.r4609_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_appearance(0)
+        self.assertTrue(self.logic.r4609_condition())
 
 
     def test_r4610_condition(self):
@@ -2038,8 +2581,17 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4615_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4615_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_appearance(1)
+        self.assertFalse(self.logic.r4615_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_appearance(0)
+        self.assertTrue(self.logic.r4615_condition())
 
 
     def test_r4616_condition(self):
@@ -2095,28 +2647,53 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4620_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4620_condition()
+        self.settings_manager.set_has_embalm(False)
+        self.settings_manager.set_has_needle(False)
+        self.assertFalse(self.logic.r4620_condition())
+
+        self.settings_manager.set_has_embalm(True)
+        self.settings_manager.set_has_needle(True)
+        self.assertTrue(self.logic.r4620_condition())
 
 
     def test_r4630_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4630_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_vaxis_global_xp(True)
+        self.assertFalse(self.logic.r4630_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_vaxis_global_xp(False)
+        self.assertTrue(self.logic.r4630_condition())
 
 
     def test_r4631_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4631_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_vaxis_quip_1(True)
+        self.assertFalse(self.logic.r4631_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_vaxis_quip_1(False)
+        self.assertTrue(self.logic.r4631_condition())
 
 
     def test_r4632_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4632_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_vaxis_quip_1(False)
+        self.assertFalse(self.logic.r4632_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_vaxis_quip_1(True)
+        self.assertTrue(self.logic.r4632_condition())
 
 
     def test_r64533_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64533_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_vaxis_global_xp(False)
+        self.assertFalse(self.logic.r64533_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_vaxis_global_xp(True)
+        self.assertTrue(self.logic.r64533_condition())
 
 
     def test_r4634_condition(self):
@@ -2127,13 +2704,23 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4635_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4635_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_vaxis_quip_2(True)
+        self.assertFalse(self.logic.r4635_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_vaxis_quip_2(False)
+        self.assertTrue(self.logic.r4635_condition())
 
 
     def test_r4636_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4636_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_vaxis_quip_2(False)
+        self.assertFalse(self.logic.r4636_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_vaxis_quip_2(True)
+        self.assertTrue(self.logic.r4636_condition())
 
 
     def test_r4656_condition(self):

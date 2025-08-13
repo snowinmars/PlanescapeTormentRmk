@@ -23,17 +23,17 @@ class VaxisLogic:
 
     def r464_action(self):
         self.settings_manager.journal_manager.update_journal('64513')
-        # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+        # .register('64513', 'Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно.')
 
 
     def r465_action(self):
         self.settings_manager.journal_manager.update_journal('64513')
-        # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+        # .register('64513', 'Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно.')
 
 
     def r466_action(self):
         self.settings_manager.journal_manager.update_journal('64513')
-        # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+        # .register('64513', 'Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно.')
 
 
     def r472_action(self):
@@ -45,7 +45,9 @@ class VaxisLogic:
 
 
     def r475_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r476_action(self):
@@ -60,19 +62,19 @@ class VaxisLogic:
     def r480_action(self):
         self.settings_manager.set_vaxis_value(1)
         self.settings_manager.journal_manager.update_journal('64513')
-        # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+        # .register('64513', 'Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно.')
 
 
     def r481_action(self):
         self.settings_manager.set_vaxis_value(1)
         self.settings_manager.journal_manager.update_journal('64513')
-        # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+        # .register('64513', 'Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно.')
 
 
     def r482_action(self):
         self.settings_manager.set_vaxis_value(1)
         self.settings_manager.journal_manager.update_journal('64513')
-        # '64513': ' ~Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно. ~ '
+        # .register('64513', 'Один из зомби на втором этаже Морга — на самом деле не зомби, а замаскированный человек. Зачем кому-то строить из себя зомби — мне не понятно.')
 
 
     def r487_action(self):
@@ -162,15 +164,21 @@ class VaxisLogic:
 
 
     def r4405_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r4408_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r4413_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r4428_action(self):
@@ -216,9 +224,10 @@ class VaxisLogic:
         self.settings_manager.set_has_bandages(True)
         self.settings_manager.set_has_embalm(True)
         self.settings_manager.set_has_needle(True)
-        GiveItemCreate("Knife",Protagonist,1,0,0) self.settings_manager.gain_experience('party', 500)
+        # GiveItemCreate("Knife",Protagonist,1,0,0)
+        self.settings_manager.gain_experience('party', 500)
         self.settings_manager.journal_manager.update_journal('64517')
-        # '64517': ' ~Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки. ~ '
+        # .register('64517', 'Я пообщался с замаскированным шпионом, которого я должен был «сменить». Он выложил все, что он сумел собрать — преимущественно бинты и исцеляющие предметы, необходимые для его маскировки.')
 
 
     def r4474_action(self):
@@ -285,12 +294,12 @@ class VaxisLogic:
 
     def r64520_action(self):
         self.settings_manager.journal_manager.update_journal('64519')
-        # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
+        # .register('64519', 'В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой.')
 
 
     def r4503_action(self):
         self.settings_manager.journal_manager.update_journal('64518')
-        # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
+        # .register('64518', 'В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами.')
 
 
     def r4504_action(self):
@@ -299,12 +308,12 @@ class VaxisLogic:
 
     def r4506_action(self):
         self.settings_manager.journal_manager.update_journal('64519')
-        # '64519': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой. ~ '
+        # .register('64519', 'В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у тленной-бальзамировщицы Эи-Вейн (кажется, так ее зовут), которую я уже видел в другой комнате. Как ей удается со своими лезвиями на руках открывать двери ключами — для меня остается загадкой.')
 
 
     def r66150_action(self):
         self.settings_manager.journal_manager.update_journal('64518')
-        # '64518': ' ~В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами. ~ '
+        # .register('64518', 'В обмен на помощь «зомби» я согласился достать ключ от бальзамационной, который находится у некой тленной с лезвиями на руках и желтыми глазами.')
 
 
     def r4508_action(self):
@@ -325,50 +334,50 @@ class VaxisLogic:
     def r4521_action(self):
         self.settings_manager.set_embalm_key_quest(3)
         self.settings_manager.journal_manager.update_journal('64521')
-        # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
+        # .register('64521', 'Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью.')
 
 
     def r4522_action(self):
         self.settings_manager.set_embalm_key_quest(3)
         self.settings_manager.journal_manager.update_journal('64521')
-        # '64521': ' ~Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью. ~ '
+        # .register('64521', 'Ваксис получил свой драгоценный ключ от бальзамационной. Должно быть, ему нужны припасы для того, чтобы поддерживать маскировку, раз от него несет во все стороны бальзамирующей жидкостью.')
 
 
     def r4539_action(self):
         self.settings_manager.journal_manager.update_journal('64522')
-        # '64522': ' ~Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока. ~ '
+        # .register('64522', 'Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока.')
 
 
     def r4543_action(self):
         self.settings_manager.journal_manager.update_journal('64522')
-        # '64522': ' ~Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока. ~ '
+        # .register('64522', 'Похоже, тленные и Фарод не в лучших отношениях... Ваксис сказал мне, что Фарод привез в Морг слишком много тел, и тленные подозревают, что он просто убивает их до положенного срока.')
 
 
     def r64527_action(self):
         self.settings_manager.gain_experience('party', 250)
         self.settings_manager.set_vaxis_help(True)
         self.settings_manager.journal_manager.update_journal('64528')
-        # '64528': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга. ~ '
+        # .register('64528', 'Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». Он не знает, где можно найти кость согнутого пальца, но, тем не менее, он посоветовал мне поискать на верхнем этаже Морга.')
 
 
     def r4568_action(self):
         self.settings_manager.gain_experience('party', 250)
         self.settings_manager.set_vaxis_help(True)
         self.settings_manager.journal_manager.update_journal('64529')
-        # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
+        # .register('64529', 'Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть».')
 
 
     def r4569_action(self):
         self.settings_manager.gain_experience('party', 250)
         self.settings_manager.set_vaxis_help(True)
         self.settings_manager.journal_manager.update_journal('64529')
-        # '64529': ' ~Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть». ~ '
+        # .register('64529', 'Ваксис сообщил мне о секретном портале в северо-западной комнате на первом этаже Морга. Если у меня с собой будет кость согнутого пальца, то она активирует его и перенесет меня в тайную гробницу, где я, по словам Ваксиса, смогу «отдохнуть».')
 
 
     def r4580_action(self):
         self.settings_manager.set_vaxis_exposes_soego(True)
         self.settings_manager.journal_manager.update_journal('64530')
-        # '64530': ' ~Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях.~ '
+        # .register('64530', 'Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях.')
 
 
     def r4592_action(self):
@@ -382,8 +391,7 @@ class VaxisLogic:
 
 
     def r4620_action(self):
-        self.settings_manager.set_vaxis_zombie_disguise(2)
-        DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE)
+        self.settings_manager.set_vaxis_zombie_disguise(2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE)
 
 
     def r4621_action(self):
@@ -407,8 +415,12 @@ class VaxisLogic:
 
 
     def r4630_action(self):
-        FadeToColor([20.0],0) Wait(1) self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
-        Wait(2) FadeFromColor([20.0],0) self.settings_manager.gain_experience('party', 500)
+        # FadeToColor([20.0],0)
+        # Wait(1)
+        self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2)
+        # FadeFromColor([20.0],0)
+        self.settings_manager.gain_experience('party', 500)
         self.settings_manager.set_vaxis_global_xp(True)
 
 
@@ -417,13 +429,19 @@ class VaxisLogic:
 
 
     def r4632_action(self):
-        FadeToColor([20.0],0) Wait(1) self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
-        Wait(2) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0)
+        # Wait(1)
+        self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2)
+        # FadeFromColor([20.0],0)
 
 
     def r64533_action(self):
-        FadeToColor([20.0],0) Wait(1) self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
-        Wait(2) FadeFromColor([20.0],0)
+        # FadeToColor([20.0],0)
+        # Wait(1)
+        self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')
+        # Wait(2)
+        # FadeFromColor([20.0],0)
 
 
     def r4635_action(self):
@@ -432,11 +450,13 @@ class VaxisLogic:
 
     def r4638_action(self):
         self.settings_manager.journal_manager.update_journal('64531')
-        # '64531': ' ~В обмен на иголку, нитку и бальзамирующую жидкость Ваксис замаскировал меня под зомби. Он предупредил меня, что бег может разрушить маскировку, и что я не должен ни с кем разговаривать, будучи замаскированным. Зомби ведь «не разговаривают». ~ '
+        # .register('64531', 'В обмен на иголку, нитку и бальзамирующую жидкость Ваксис замаскировал меня под зомби. Он предупредил меня, что бег может разрушить маскировку, и что я не должен ни с кем разговаривать, будучи замаскированным. Зомби ведь «не разговаривают».')
 
 
     def r4645_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r4651_action(self):
@@ -444,15 +464,21 @@ class VaxisLogic:
 
 
     def r4661_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r4666_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r4669_action(self):
-        Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r454_condition(self):

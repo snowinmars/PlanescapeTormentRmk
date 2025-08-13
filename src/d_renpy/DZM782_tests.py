@@ -21,23 +21,21 @@ class Zm782LogicTest(LogicTest):
 
 
     def test_zm782_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm782_init,
-            self.settings_manager.get_talked_to_zm782_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm782_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm782_times(), 0)
 
-    def test_kill_zm782(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm782,
-            self.logic.kill_zm782
-        )
-
-
-    def test_zm782_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm782_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm782_times(), delta_talked_to_zm782_times)
+
+        self.logic.zm782_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm782_times(), 2 * delta_talked_to_zm782_times)
 
 
     def test_kill_zm782(self):
@@ -48,7 +46,6 @@ class Zm782LogicTest(LogicTest):
 
 
     def test_r24716_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r24716_action()
 
 

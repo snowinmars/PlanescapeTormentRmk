@@ -21,23 +21,21 @@ class S42LogicTest(LogicTest):
 
 
     def test_s42_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.s42_init,
-            self.settings_manager.get_talked_to_s42_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_s42_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), 0)
 
-    def test_kill_s42(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_s42,
-            self.logic.kill_s42
-        )
-
-
-    def test_s42_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.s42_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), delta_talked_to_s42_times)
+
+        self.logic.s42_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), 2 * delta_talked_to_s42_times)
 
 
     def test_kill_s42(self):
@@ -60,8 +58,24 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6614_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_skeleton_chaotic())
+
         self.logic.r6614_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_skeleton_chaotic())
+
+        self.logic.r6614_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_skeleton_chaotic())
 
 
     def test_r6617_action(self):
@@ -107,8 +121,21 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6642_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_dead_s42())
+        self.assertFalse(self.settings_manager.get_has_spike())
+        self.assertFalse(self.settings_manager.get_has_strap())
+
         self.logic.r6642_action()
+
+        self.assertTrue(self.settings_manager.get_dead_s42())
+        self.assertTrue(self.settings_manager.get_has_spike())
+        self.assertTrue(self.settings_manager.get_has_strap())
+
+        self.logic.r6642_action()
+
+        self.assertTrue(self.settings_manager.get_dead_s42())
+        self.assertTrue(self.settings_manager.get_has_spike())
+        self.assertTrue(self.settings_manager.get_has_strap())
 
 
     def test_r6645_action(self):
@@ -143,8 +170,29 @@ class S42LogicTest(LogicTest):
 
 
     def test_r58984_action(self):
-        # TODO [snowinmars]: write the test
+        delta_gold = 99
+
+        self.assertFalse(self.settings_manager.get_has_gs_knife())
+        self.assertFalse(self.settings_manager.get_has_rags())
+        self.assertFalse(self.settings_manager.get_has_clotchrm())
+        self.assertFalse(self.settings_manager.get_has_clotchrm())
+        self.assertEqual(self.settings_manager.get_gold(), 0)
+
         self.logic.r58984_action()
+
+        self.assertTrue(self.settings_manager.get_has_gs_knife())
+        self.assertTrue(self.settings_manager.get_has_rags())
+        self.assertTrue(self.settings_manager.get_has_clotchrm())
+        self.assertTrue(self.settings_manager.get_has_clotchrm())
+        self.assertEqual(self.settings_manager.get_gold(), delta_gold)
+
+        self.logic.r58984_action()
+
+        self.assertTrue(self.settings_manager.get_has_gs_knife())
+        self.assertTrue(self.settings_manager.get_has_rags())
+        self.assertTrue(self.settings_manager.get_has_clotchrm())
+        self.assertTrue(self.settings_manager.get_has_clotchrm())
+        self.assertEqual(self.settings_manager.get_gold(), 2 * delta_gold)
 
 
     def test_r6612_condition(self):
@@ -176,33 +224,67 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6618_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6618_condition()
+        self.settings_manager.set_skeleton_examine(False)
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip2(True)
+        self.assertFalse(self.logic.r6618_condition())
+
+        self.settings_manager.set_skeleton_examine(True)
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip2(False)
+        self.assertTrue(self.logic.r6618_condition())
 
 
     def test_r6619_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6619_condition()
+        self.settings_manager.set_skeleton_examine(False)
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip2(False)
+        self.assertFalse(self.logic.r6619_condition())
+
+        self.settings_manager.set_skeleton_examine(True)
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip2(True)
+        self.assertTrue(self.logic.r6619_condition())
 
 
     def test_r6620_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6620_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_skeleton_examine(False)
+        self.assertFalse(self.logic.r6620_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_skeleton_examine(True)
+        self.assertTrue(self.logic.r6620_condition())
 
 
     def test_r6621_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6621_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r6621_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r6621_condition())
 
 
     def test_r6622_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6622_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertFalse(self.logic.r6622_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertTrue(self.logic.r6622_condition())
 
 
     def test_r6623_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6623_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertFalse(self.logic.r6623_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertTrue(self.logic.r6623_condition())
 
 
     def test_r6624_condition(self):
@@ -220,18 +302,37 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6626_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6626_condition()
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 12
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.set_42_secret(True)
+        self.assertFalse(self.logic.r6626_condition())
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+        self.settings_manager.set_42_secret(False)
+        self.assertTrue(self.logic.r6626_condition())
 
 
     def test_r6629_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6629_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertFalse(self.logic.r6629_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertTrue(self.logic.r6629_condition())
 
 
     def test_r6630_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6630_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertFalse(self.logic.r6630_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertTrue(self.logic.r6630_condition())
 
 
     def test_r6631_condition(self):
@@ -249,13 +350,23 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6632_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6632_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip2(True)
+        self.assertFalse(self.logic.r6632_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip2(False)
+        self.assertTrue(self.logic.r6632_condition())
 
 
     def test_r6633_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6633_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip2(False)
+        self.assertFalse(self.logic.r6633_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip2(True)
+        self.assertTrue(self.logic.r6633_condition())
 
 
     def test_r6634_condition(self):
@@ -266,13 +377,23 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6635_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6635_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertFalse(self.logic.r6635_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertTrue(self.logic.r6635_condition())
 
 
     def test_r6636_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6636_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertFalse(self.logic.r6636_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertTrue(self.logic.r6636_condition())
 
 
     def test_r6637_condition(self):
@@ -318,8 +439,17 @@ class S42LogicTest(LogicTest):
 
 
     def test_r6654_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r6654_condition()
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 12
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.set_42_secret(True)
+        self.assertFalse(self.logic.r6654_condition())
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+        self.settings_manager.set_42_secret(False)
+        self.assertTrue(self.logic.r6654_condition())
 
 
 if __name__ == '__main__':

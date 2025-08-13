@@ -21,23 +21,21 @@ class Zm396LogicTest(LogicTest):
 
 
     def test_zm396_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm396_init,
-            self.settings_manager.get_talked_to_zm396_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm396_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm396_times(), 0)
 
-    def test_kill_zm396(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm396,
-            self.logic.kill_zm396
-        )
-
-
-    def test_zm396_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm396_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm396_times(), delta_talked_to_zm396_times)
+
+        self.logic.zm396_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm396_times(), 2 * delta_talked_to_zm396_times)
 
 
     def test_kill_zm396(self):
@@ -48,8 +46,24 @@ class Zm396LogicTest(LogicTest):
 
 
     def test_r34932_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r34932_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r34932_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r34936_action(self):
@@ -67,8 +81,24 @@ class Zm396LogicTest(LogicTest):
 
 
     def test_r45112_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r45112_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r45112_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r34932_condition(self):
@@ -100,8 +130,10 @@ class Zm396LogicTest(LogicTest):
 
 
     def test_r34934_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r34934_condition()
+        self._boolean_invert_condition(
+            lambda x: self.settings_manager.set_has_bandages_zm396(x),
+            self.logic.r34934_condition
+        )
 
 
     def test_r45112_condition(self):

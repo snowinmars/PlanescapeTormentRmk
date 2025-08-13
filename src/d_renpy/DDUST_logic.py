@@ -14,17 +14,26 @@ class DustLogic:
 
     def r313_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r3888_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r3886_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r33189_action(self):
@@ -49,17 +58,28 @@ class DustLogic:
 
     def r448_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r449_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
+        self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
 
 
     def r1339_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) self.settings_manager.set_mortualy_alarmed(True)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
+        self.settings_manager.set_mortualy_alarmed(True)
 
 
     def r1426_action(self):
@@ -68,17 +88,20 @@ class DustLogic:
 
     def r1428_action(self):
         self.settings_manager.set_choke_memory(True)
-        # ?.play_sound('SPTR_01') self.settings_manager.inc_choke_dustman()
+        # ?.play_sound('SPTR_01')
+        self.settings_manager.inc_choke_dustman()
         self.settings_manager.inc_choke()
         self.settings_manager.set_dead_dust(True)
-        Deactivate(Myself) self.settings_manager.gain_experience('party', 15)
+        # Deactivate(Myself)
+        self.settings_manager.gain_experience('party', 15)
 
 
     def r1429_action(self):
         self.settings_manager.inc_choke_dustman()
         self.settings_manager.inc_choke()
         self.settings_manager.set_dead_dust(True)
-        Deactivate(Myself) self.settings_manager.gain_experience('party', 15)
+        # Deactivate(Myself)
+        self.settings_manager.gain_experience('party', 15)
 
 
     def r3882_action(self):
@@ -88,7 +111,10 @@ class DustLogic:
 
     def r3884_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        # ?.play_sound('AMB_M01')
+        # Enemy()
+        # Attack(Protagonist)
+        # ForceAttack(Protagonist,Myself)
 
 
     def r3890_action(self):

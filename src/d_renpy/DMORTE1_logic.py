@@ -21,7 +21,8 @@ class Morte1Logic:
 
 
     def r39831_action(self):
-        # ShowFirstTimeHelp() self.settings_manager.set_in_party_morte(True)
+        # ShowFirstTimeHelp()
+        self.settings_manager.set_in_party_morte(True)
 
 
     def r39852_action(self):

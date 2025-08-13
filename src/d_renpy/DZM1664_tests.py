@@ -21,23 +21,21 @@ class Zm1664LogicTest(LogicTest):
 
 
     def test_zm1664_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm1664_init,
-            self.settings_manager.get_talked_to_zm1664_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm1664_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1664_times(), 0)
 
-    def test_kill_zm1664(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm1664,
-            self.logic.kill_zm1664
-        )
-
-
-    def test_zm1664_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm1664_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1664_times(), delta_talked_to_zm1664_times)
+
+        self.logic.zm1664_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1664_times(), 2 * delta_talked_to_zm1664_times)
 
 
     def test_kill_zm1664(self):
@@ -48,8 +46,18 @@ class Zm1664LogicTest(LogicTest):
 
 
     def test_r47014_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_has_logpage())
+        self.assertFalse(self.settings_manager.get_has_zm1664_page())
+
         self.logic.r47014_action()
+
+        self.assertTrue(self.settings_manager.get_has_logpage())
+        self.assertTrue(self.settings_manager.get_has_zm1664_page())
+
+        self.logic.r47014_action()
+
+        self.assertTrue(self.settings_manager.get_has_logpage())
+        self.assertTrue(self.settings_manager.get_has_zm1664_page())
 
 
     def test_r47003_condition(self):

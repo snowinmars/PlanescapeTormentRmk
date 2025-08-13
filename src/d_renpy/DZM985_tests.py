@@ -21,23 +21,21 @@ class Zm985LogicTest(LogicTest):
 
 
     def test_zm985_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm985_init,
-            self.settings_manager.get_talked_to_zm985_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm985_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm985_times(), 0)
 
-    def test_kill_zm985(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm985,
-            self.logic.kill_zm985
-        )
-
-
-    def test_zm985_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm985_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm985_times(), delta_talked_to_zm985_times)
+
+        self.logic.zm985_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm985_times(), 2 * delta_talked_to_zm985_times)
 
 
     def test_kill_zm985(self):
@@ -48,32 +46,131 @@ class Zm985LogicTest(LogicTest):
 
 
     def test_r45516_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r45516_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r45516_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r45517_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r45517_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r45517_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r45518_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = 1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r45518_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r45518_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r45519_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = 1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r45519_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r45519_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r45532_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r45532_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r45532_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r45539_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r45539_action()
 
 

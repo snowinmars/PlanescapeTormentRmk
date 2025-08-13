@@ -21,23 +21,21 @@ class Zm506LogicTest(LogicTest):
 
 
     def test_zm506_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm506_init,
-            self.settings_manager.get_talked_to_zm506_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm506_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm506_times(), 0)
 
-    def test_kill_zm506(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm506,
-            self.logic.kill_zm506
-        )
-
-
-    def test_zm506_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm506_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm506_times(), delta_talked_to_zm506_times)
+
+        self.logic.zm506_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm506_times(), 2 * delta_talked_to_zm506_times)
 
 
     def test_kill_zm506(self):
@@ -48,18 +46,69 @@ class Zm506LogicTest(LogicTest):
 
 
     def test_r45480_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 100
+
+        self.assertFalse(self.settings_manager.get_has_506_thread())
+        self.assertFalse(self.settings_manager.get_has_needle())
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+
         self.logic.r45480_action()
+
+        self.assertTrue(self.settings_manager.get_has_506_thread())
+        self.assertTrue(self.settings_manager.get_has_needle())
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r45480_action()
+
+        self.assertTrue(self.settings_manager.get_has_506_thread())
+        self.assertTrue(self.settings_manager.get_has_needle())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r45484_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r45484_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r45484_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r45502_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r45502_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r45502_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r45420_condition(self):

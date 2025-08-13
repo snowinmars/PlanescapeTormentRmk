@@ -111,22 +111,7 @@ class {Npc}LogicTest(LogicTest):
 
     def test_methods_are_bound(self):
         self.target_class = {Npc}Logic
-        self._methods_are_bound()
-
-
-    def test_{npc}_init(self):
-        self._init_with_location(
-            \'LOCATION\',
-            self.logic.{npc}_init,
-            self.settings_manager.get_talked_to_{npc}_times
-        )
-
-
-    def test_kill_{npc}(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_{npc},
-            self.logic.kill_{npc}
-        )\n
+        self._methods_are_bound()\n
 """
 
 

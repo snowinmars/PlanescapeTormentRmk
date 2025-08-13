@@ -21,23 +21,21 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_giantsk_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.giantsk_init,
-            self.settings_manager.get_talked_to_giantsk_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_giantsk_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_giantsk_times(), 0)
 
-    def test_kill_giantsk(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_giantsk,
-            self.logic.kill_giantsk
-        )
-
-
-    def test_giantsk_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.giantsk_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_giantsk_times(), delta_talked_to_giantsk_times)
+
+        self.logic.giantsk_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_giantsk_times(), 2 * delta_talked_to_giantsk_times)
 
 
     def test_kill_giantsk(self):
@@ -72,28 +70,72 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4042_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4042_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4042_action
+        )
 
 
     def test_r4079_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 0)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+
         self.logic.r4079_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 1)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r4079_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 1)
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r4087_action(self):
-        # TODO [snowinmars]: write the test
+        delta_giant_skeleton_enchant = 1
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 0)
+        self.assertFalse(self.settings_manager.get_dead_giantsk())
+
         self.logic.r4087_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
+
+        self.logic.r4087_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 2 * delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r4088_action(self):
-        # TODO [snowinmars]: write the test
+        delta_giant_skeleton_enchant = 1
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 0)
+        self.assertFalse(self.settings_manager.get_dead_giantsk())
+
         self.logic.r4088_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
+
+        self.logic.r4088_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 2 * delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r4095_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4095_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4095_action
+        )
 
 
     def test_r4096_action(self):
@@ -142,18 +184,52 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4101_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_has_breast4())
+        self.assertFalse(self.settings_manager.get_dead_giantsk())
+
         self.logic.r4101_action()
+
+        self.assertTrue(self.settings_manager.get_has_breast4())
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
+
+        self.logic.r4101_action()
+
+        self.assertTrue(self.settings_manager.get_has_breast4())
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r64301_action(self):
-        # TODO [snowinmars]: write the test
+        delta_giant_skeleton_enchant = 1
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 0)
+        self.assertFalse(self.settings_manager.get_dead_giantsk())
+
         self.logic.r64301_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
+
+        self.logic.r64301_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 2 * delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r64302_action(self):
-        # TODO [snowinmars]: write the test
+        delta_giant_skeleton_enchant = 1
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 0)
+        self.assertFalse(self.settings_manager.get_dead_giantsk())
+
         self.logic.r64302_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
+
+        self.logic.r64302_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 2 * delta_giant_skeleton_enchant)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r3997_condition(self):
@@ -217,8 +293,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4002_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4002_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4002_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4002_condition())
 
 
     def test_r4003_condition(self):
@@ -289,8 +370,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4040_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4040_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4040_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4040_condition())
 
 
     def test_r4048_condition(self):
@@ -346,13 +432,30 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4052_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4052_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4052_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4052_condition())
 
 
     def test_r4054_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4054_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.assertFalse(self.logic.r4054_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.assertTrue(self.logic.r4054_condition())
 
 
     def test_r4055_condition(self):
@@ -369,8 +472,20 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r64293_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64293_condition()
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 13
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.assertFalse(self.logic.r64293_condition())
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+        self.assertTrue(self.logic.r64293_condition())
 
 
     def test_r4056_condition(self):
@@ -426,8 +541,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4060_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4060_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4060_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4060_condition())
 
 
     def test_r4062_condition(self):
@@ -509,8 +629,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4068_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4068_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4068_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4068_condition())
 
 
     def test_r64294_condition(self):
@@ -573,8 +698,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4076_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4076_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4076_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4076_condition())
 
 
     def test_r4079_condition(self):
@@ -646,8 +776,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4085_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4085_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4085_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4085_condition())
 
 
     def test_r64296_condition(self):
@@ -726,8 +861,13 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4093_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4093_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_morte_skel_mort_quip(False)
+        self.assertFalse(self.logic.r4093_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_morte_skel_mort_quip(True)
+        self.assertTrue(self.logic.r4093_condition())
 
 
     def test_r4099_condition(self):

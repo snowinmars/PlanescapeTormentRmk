@@ -21,23 +21,21 @@ class Morte1LogicTest(LogicTest):
 
 
     def test_morte1_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.morte1_init,
-            self.settings_manager.get_talked_to_morte1_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_morte1_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_morte1_times(), 0)
 
-    def test_kill_morte1(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_morte1,
-            self.logic.kill_morte1
-        )
-
-
-    def test_morte1_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.morte1_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_morte1_times(), delta_talked_to_morte1_times)
+
+        self.logic.morte1_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_morte1_times(), 2 * delta_talked_to_morte1_times)
 
 
     def test_kill_morte1(self):
@@ -68,8 +66,10 @@ class Morte1LogicTest(LogicTest):
 
 
     def test_r39831_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r39831_action()
+        self._false_then_true_action(
+            self.settings_manager.get_in_party_morte,
+            self.logic.r39831_action
+        )
 
 
     def test_r39852_action(self):

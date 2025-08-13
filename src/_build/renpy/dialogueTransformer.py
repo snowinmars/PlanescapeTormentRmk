@@ -13,7 +13,7 @@ INCREMENT_REGEX_ONCE = re.compile(r'IncrementGlobalOnceEx\("(.*?)","(.*?)",(.*?)
 JOURNAL_REGEX = re.compile(r'JOURNAL #(\d+) \/\*(.*)\*\/')
 LOCATION_REGEX = re.compile(r'SetGlobal\("Current_Area","(.*)",(\d*)\)')
 PARTY_EXP_REGEX = re.compile(r'AddexperienceParty\((.*?)\)')
-SOUND_REGEX = re.compile(r'PlaySoundNotRanged\("(.*)"\)')
+SOUND_REGEX = re.compile(r'(?:PlaySound|PlaySoundNotRanged)\("(.*)"\)')
 STAT_REGEX = re.compile(r'PermanentStatChange\("?(.*?)"?,(.*?),(.*?),(\d+)\)')
 TARGET_EXP_REGEX = re.compile(r'GiveExperience\((.*?),(.*?)\)')
 TIMES_TALKED_TO_REGEX = re.compile(r'NumTimesTalkedTo(.+)?\((\d+)\)')
@@ -262,7 +262,7 @@ class DialogueTransformer:
         def rule(match):
             note_id, note_text, = match.groups()
 
-            return f"self.settings_manager.journal_manager.update_journal('{note_id}')    # '{note_id}': '{note_text}'"
+            return f"self.settings_manager.journal_manager.update_journal('{note_id}')    # .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()}')"
 
         return JOURNAL_REGEX.sub(rule, script)
 

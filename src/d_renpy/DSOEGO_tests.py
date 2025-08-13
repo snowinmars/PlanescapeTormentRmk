@@ -21,23 +21,21 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_soego_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.soego_init,
-            self.settings_manager.get_talked_to_soego_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_soego_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), 0)
 
-    def test_kill_soego(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_soego,
-            self.logic.kill_soego
-        )
-
-
-    def test_soego_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.soego_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), delta_talked_to_soego_times)
+
+        self.logic.soego_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), 2 * delta_talked_to_soego_times)
 
 
     def test_kill_soego(self):
@@ -57,8 +55,25 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1439_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        note_id = '63982'
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r1439_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r1439_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r1448_action(self):
@@ -92,13 +107,37 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1456_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '63982'
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r1456_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r1456_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r1457_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '63982'
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r1457_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r1457_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r1466_action(self):
@@ -114,17 +153,56 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1478_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 0)
+
         self.logic.r1478_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+
+        self.logic.r1478_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
 
 
     def test_r1482_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r1482_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r1482_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r1490_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r1490_action()
 
 
@@ -157,12 +235,13 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1525_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1525_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r1525_action
+        )
 
 
     def test_r1528_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r1528_action()
 
 
@@ -181,13 +260,17 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1533_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1533_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r1533_action
+        )
 
 
     def test_r1535_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r1535_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r1535_action
+        )
 
 
     def test_r4809_action(self):
@@ -210,23 +293,67 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4836_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 0)
+
         self.logic.r4836_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+
+        self.logic.r4836_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
 
 
     def test_r4837_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -3
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 0)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r4837_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r4837_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r4861_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4861_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4861_action
+        )
 
 
     def test_r4862_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4862_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4862_action
+        )
 
 
     def test_r4864_action(self):
@@ -242,13 +369,37 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66706_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '63982'
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r66706_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r66706_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r66707_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '63982'
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r66707_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r66707_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4926_action(self):
@@ -264,53 +415,198 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4931_action(self):
-        # TODO [snowinmars]: write the test
+        delta_adahn = 1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertFalse(self.settings_manager.get_soego_adahn())
+        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
         self.logic.r4931_action()
+
+        self.assertTrue(self.settings_manager.get_soego_adahn())
+        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r4931_action()
+
+        self.assertTrue(self.settings_manager.get_soego_adahn())
+        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r4961_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4961_action()
+        self._false_then_true_action(
+            self.settings_manager.get_mortualy_alarmed,
+            self.logic.r4961_action
+        )
 
 
     def test_r4967_action(self):
-        # TODO [snowinmars]: write the test
+        delta_adahn = 1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        self.assertFalse(self.settings_manager.get_soego_adahn())
+        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+
         self.logic.r4967_action()
+
+        self.assertTrue(self.settings_manager.get_soego_adahn())
+        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r4967_action()
+
+        self.assertTrue(self.settings_manager.get_soego_adahn())
+        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
 
 
     def test_r4975_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 0)
+
         self.logic.r4975_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+
+        self.logic.r4975_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
 
 
     def test_r4988_action(self):
-        # TODO [snowinmars]: write the test
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 0)
+
         self.logic.r4988_action()
+
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+
+        self.logic.r4988_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_gate_open())
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
 
 
     def test_r21655_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r21655_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r21655_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21656_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r21656_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r21656_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21657_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r21657_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r21657_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21658_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r21658_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r21658_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21660_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r21660_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r21660_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21800_action(self):
@@ -341,62 +637,217 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66181_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r66181_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r66181_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21852_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '21856'
+
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r21852_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r21852_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r64623_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r64623_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r64623_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r64624_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r64624_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r64624_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r21853_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '21857'
+
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r21853_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r21853_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r21854_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r21854_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r21854_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r24206_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -3
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
+
+        self.assertFalse(self.settings_manager.get_soego_told())
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+
         self.logic.r24206_action()
+
+        self.assertTrue(self.settings_manager.get_soego_told())
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r24206_action()
+
+        self.assertTrue(self.settings_manager.get_soego_told())
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r21915_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '21926'
+
+        self.assertFalse(self.settings_manager.get_soego_told())
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r21915_action()
+
+        self.assertTrue(self.settings_manager.get_soego_told())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r21915_action()
+
+        self.assertTrue(self.settings_manager.get_soego_told())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r21914_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+
         self.logic.r21914_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+
+        self.logic.r21914_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
 
 
     def test_r21916_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '21926'
+
+        self.assertEqual(self.settings_manager.get_soego_fled(), 0)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r21916_action()
+
+        self.assertEqual(self.settings_manager.get_soego_fled(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r21916_action()
+
+        self.assertEqual(self.settings_manager.get_soego_fled(), 1)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r21917_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertEqual(self.settings_manager.get_doubtful_skel(), 1)
+        self.assertFalse(self.settings_manager.get_visit_doubtful())
+
         self.logic.r21917_action()
+
+        self.assertEqual(self.settings_manager.get_doubtful_skel(), 2)
+        self.assertTrue(self.settings_manager.get_visit_doubtful())
+
+        self.logic.r21917_action()
+
+        self.assertEqual(self.settings_manager.get_doubtful_skel(), 2)
+        self.assertTrue(self.settings_manager.get_visit_doubtful())
 
 
     def test_r21956_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r21956_action()
 
 
@@ -460,28 +911,72 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21998_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r21998_action()
 
 
     def test_r22012_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r22012_action()
 
 
     def test_r22024_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '21856'
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_fled(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r22024_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_fled(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r22024_action()
+
+        self.assertEqual(self.settings_manager.get_soego_value(), 4)
+        self.assertEqual(self.settings_manager.get_soego_fled(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r22051_action(self):
-        # TODO [snowinmars]: write the test
+        note_id = '22052'
+
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+
         self.logic.r22051_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r22051_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r66173_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+
         self.logic.r66173_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+
+        self.logic.r66173_action()
+
+        self.assertTrue(self.settings_manager.get_met_soego2())
+        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
 
 
     def test_r22058_action(self):
@@ -864,28 +1359,73 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4805_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4805_condition()
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 10
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.set_gate_open(True)
+        self.assertFalse(self.logic.r4805_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.set_gate_open(False)
+        self.assertTrue(self.logic.r4805_condition())
 
 
     def test_r4806_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4806_condition()
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.set_gate_open(True)
+        self.assertFalse(self.logic.r4806_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.set_gate_open(False)
+        self.assertTrue(self.logic.r4806_condition())
 
 
     def test_r4807_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4807_condition()
+        self.settings_manager.set_vaxis_value(0)
+        self.settings_manager.set_dead_vaxis(True)
+        self.settings_manager.set_vaxis_leave(True)
+        self.settings_manager.set_vaxis_betrayed(1)
+        self.assertFalse(self.logic.r4807_condition())
+
+        self.settings_manager.set_vaxis_value(1)
+        self.settings_manager.set_dead_vaxis(False)
+        self.settings_manager.set_vaxis_leave(False)
+        self.settings_manager.set_vaxis_betrayed(0)
+        self.assertTrue(self.logic.r4807_condition())
 
 
     def test_r4810_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4810_condition()
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.set_vaxis_exposes_soego(False)
+        self.assertFalse(self.logic.r4810_condition())
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.settings_manager.set_vaxis_exposes_soego(True)
+        self.assertTrue(self.logic.r4810_condition())
 
 
     def test_r4811_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4811_condition()
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 12
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.set_vaxis_exposes_soego(False)
+        self.assertFalse(self.logic.r4811_condition())
+
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+        self.settings_manager.set_vaxis_exposes_soego(True)
+        self.assertTrue(self.logic.r4811_condition())
 
 
     def test_r4832_condition(self):
@@ -1182,13 +1722,31 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4931_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4931_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_soego_adahn(True)
+        self.assertFalse(self.logic.r4931_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_soego_adahn(False)
+        self.assertTrue(self.logic.r4931_condition())
 
 
     def test_r4932_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r4932_condition()
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_soego_adahn(False)
+        self.assertFalse(self.logic.r4932_condition())
+
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_soego_adahn(True)
+        self.assertTrue(self.logic.r4932_condition())
 
 
     def test_r4951_condition(self):
@@ -1420,18 +1978,57 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21800_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21800_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(True)
+        self.assertFalse(self.logic.r21800_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(False)
+        self.assertTrue(self.logic.r21800_condition())
 
 
     def test_r64569_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64569_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(True)
+        self.assertFalse(self.logic.r64569_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(False)
+        self.assertTrue(self.logic.r64569_condition())
 
 
     def test_r64547_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64547_condition()
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertFalse(self.logic.r64547_condition())
+
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertTrue(self.logic.r64547_condition())
 
 
     def test_r21808_condition(self):
@@ -1473,48 +2070,105 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66181_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r66181_condition()
+        self.settings_manager.set_dustman_initiation(0)
+        self.settings_manager.set_soego_value(1)
+        self.settings_manager.set_soego_value(3)
+        self.assertFalse(self.logic.r66181_condition())
+
+        self.settings_manager.set_dustman_initiation(5)
+        self.settings_manager.set_soego_value(0)
+        self.settings_manager.set_soego_value(0)
+        self.assertTrue(self.logic.r66181_condition())
 
 
     def test_r21852_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21852_condition()
+        self.settings_manager.set_dustman_initiation(0)
+        self.settings_manager.set_soego_value(1)
+        self.assertFalse(self.logic.r21852_condition())
+
+        self.settings_manager.set_dustman_initiation(5)
+        self.settings_manager.set_soego_value(0)
+        self.assertTrue(self.logic.r21852_condition())
 
 
     def test_r64623_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64623_condition()
+        self.settings_manager.set_dustman_initiation(5)
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertFalse(self.logic.r64623_condition())
+
+        self.settings_manager.set_dustman_initiation(0)
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertTrue(self.logic.r64623_condition())
 
 
     def test_r64624_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64624_condition()
+        self.settings_manager.set_dustman_initiation(5)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertFalse(self.logic.r64624_condition())
+
+        self.settings_manager.set_dustman_initiation(0)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertTrue(self.logic.r64624_condition())
 
 
     def test_r21853_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21853_condition()
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.settings_manager.set_dustman_initiation(5)
+        self.assertFalse(self.logic.r21853_condition())
+
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.settings_manager.set_dustman_initiation(0)
+        self.assertTrue(self.logic.r21853_condition())
 
 
     def test_r21854_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21854_condition()
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.settings_manager.set_dustman_initiation(5)
+        self.assertFalse(self.logic.r21854_condition())
+
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.settings_manager.set_dustman_initiation(0)
+        self.assertTrue(self.logic.r21854_condition())
 
 
     def test_r24206_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r24206_condition()
+        self.settings_manager.set_silent_king(False)
+        self.settings_manager.set_soego_told(True)
+        self.settings_manager.set_lawful_hargrimm_1(False)
+        self.assertFalse(self.logic.r24206_condition())
+
+        self.settings_manager.set_silent_king(True)
+        self.settings_manager.set_soego_told(False)
+        self.settings_manager.set_lawful_hargrimm_1(True)
+        self.assertTrue(self.logic.r24206_condition())
 
 
     def test_r21915_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21915_condition()
+        self.settings_manager.set_silent_king(False)
+        self.settings_manager.set_soego_told(True)
+        self.settings_manager.set_lawful_hargrimm_1(True)
+        self.assertFalse(self.logic.r21915_condition())
+
+        self.settings_manager.set_silent_king(True)
+        self.settings_manager.set_soego_told(False)
+        self.settings_manager.set_lawful_hargrimm_1(False)
+        self.assertTrue(self.logic.r21915_condition())
 
 
     def test_r21914_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21914_condition()
+        self.settings_manager.set_dustman_initiation(0)
+        self.settings_manager.set_soego_value(3)
+        self.assertFalse(self.logic.r21914_condition())
+
+        self.settings_manager.set_dustman_initiation(5)
+        self.settings_manager.set_soego_value(0)
+        self.assertTrue(self.logic.r21914_condition())
 
 
     def test_r21916_condition(self):
@@ -1533,13 +2187,47 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21920_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21920_condition()
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(True)
+        self.assertFalse(self.logic.r21920_condition())
+
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(False)
+        self.assertTrue(self.logic.r21920_condition())
 
 
     def test_r21922_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r21922_condition()
+        self.settings_manager.set_in_party_morte(False)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(True)
+        self.assertFalse(self.logic.r21922_condition())
+
+        self.settings_manager.set_in_party_morte(True)
+        self.settings_manager.set_in_party_annah(False)
+        self.settings_manager.set_in_party_ignus(False)
+        self.settings_manager.set_in_party_grace(False)
+        self.settings_manager.set_in_party_dakkon(False)
+        self.settings_manager.set_in_party_nordom(False)
+        self.settings_manager.set_in_party_vhail(False)
+        self.settings_manager.set_visit_doubtful(False)
+        self.assertTrue(self.logic.r21922_condition())
 
 
     def test_r21944_condition(self):
@@ -1585,18 +2273,33 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r25248_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r25248_condition()
+        self.settings_manager.set_cr_vic(1)
+        self.settings_manager.set_know_many(True)
+        self.assertFalse(self.logic.r25248_condition())
+
+        self.settings_manager.set_cr_vic(0)
+        self.settings_manager.set_know_many(False)
+        self.assertTrue(self.logic.r25248_condition())
 
 
     def test_r25252_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r25252_condition()
+        self.settings_manager.set_cr_vic(1)
+        self.settings_manager.set_know_many(False)
+        self.assertFalse(self.logic.r25252_condition())
+
+        self.settings_manager.set_cr_vic(0)
+        self.settings_manager.set_know_many(True)
+        self.assertTrue(self.logic.r25252_condition())
 
 
     def test_r25253_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r25253_condition()
+        self.settings_manager.set_cr_vic(1)
+        self.settings_manager.set_know_many(False)
+        self.assertFalse(self.logic.r25253_condition())
+
+        self.settings_manager.set_cr_vic(0)
+        self.settings_manager.set_know_many(True)
+        self.assertTrue(self.logic.r25253_condition())
 
 
     def test_r21994_condition(self):
@@ -1662,8 +2365,13 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r64617_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64617_condition()
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertFalse(self.logic.r64617_condition())
+
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertTrue(self.logic.r64617_condition())
 
 
     def test_r64618_condition(self):
@@ -1674,8 +2382,13 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r64625_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r64625_condition()
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertFalse(self.logic.r64625_condition())
+
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertTrue(self.logic.r64625_condition())
 
 
     def test_r64626_condition(self):
@@ -1686,13 +2399,23 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r22058_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r22058_condition()
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertFalse(self.logic.r22058_condition())
+
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertTrue(self.logic.r22058_condition())
 
 
     def test_r22060_condition(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r22060_condition()
+        self.settings_manager.set_soego_strangle(True)
+        self.settings_manager.set_mortuary_soego_killed(True)
+        self.assertFalse(self.logic.r22060_condition())
+
+        self.settings_manager.set_soego_strangle(False)
+        self.settings_manager.set_mortuary_soego_killed(False)
+        self.assertTrue(self.logic.r22060_condition())
 
 
     def test_r66716_condition(self):

@@ -21,23 +21,21 @@ class Zm475LogicTest(LogicTest):
 
 
     def test_zm475_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.zm475_init,
-            self.settings_manager.get_talked_to_zm475_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_zm475_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm475_times(), 0)
 
-    def test_kill_zm475(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm475,
-            self.logic.kill_zm475
-        )
-
-
-    def test_zm475_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.zm475_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm475_times(), delta_talked_to_zm475_times)
+
+        self.logic.zm475_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_zm475_times(), 2 * delta_talked_to_zm475_times)
 
 
     def test_kill_zm475(self):
@@ -48,8 +46,24 @@ class Zm475LogicTest(LogicTest):
 
 
     def test_r6587_action(self):
-        # TODO [snowinmars]: write the test
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertFalse(self.settings_manager.get_zombie_chaotic())
+
         self.logic.r6587_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
+
+        self.logic.r6587_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r6587_condition(self):

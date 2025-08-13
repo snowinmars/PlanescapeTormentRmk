@@ -75,7 +75,7 @@ class DialogueProcessor:
 
                 if answer.action and answer.action.strip():
                     logic_actions.append(
-                        f'    def r{answer.answer_id}_action(self):\n        {answer.action.strip()}\n'
+                        f'    def r{answer.answer_id}_action(self):        {answer.action.strip()}\n'
                     )
                     dialog_tree.append(f'            $ {target_npc}Logic.r{answer.answer_id}_action()')
 
@@ -156,9 +156,9 @@ def to_single_return(script):
 
 def to_single_body(script):
     return re.sub(
-        r'(self\.settings_manager\.[a-zA-Z0-9_\.]+\([^)]*\))\s*',
-        r'\1\n        ',
-        script
+        r'(self\.settings_manager\.[a-zA-Z0-9_\.]+\([^)]*\))',
+        r'\n        \1',
+        script.replace('# ', '\n        # ')
     ).replace('        def', '\n\n    def').rstrip()
 
 

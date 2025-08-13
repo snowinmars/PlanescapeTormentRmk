@@ -21,23 +21,21 @@ class CopearcLogicTest(LogicTest):
 
 
     def test_copearc_init(self):
-        self._init_with_location(
-            'LOCATION',
-            self.logic.copearc_init,
-            self.settings_manager.get_talked_to_copearc_times
-        )
+        location = 'LOCATION'
+        delta_talked_to_copearc_times = 1
 
+        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_copearc_times(), 0)
 
-    def test_kill_copearc(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_copearc,
-            self.logic.kill_copearc
-        )
-
-
-    def test_copearc_init(self):
-        # TODO [snowinmars]: write the test
         self.logic.copearc_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_copearc_times(), delta_talked_to_copearc_times)
+
+        self.logic.copearc_init()
+
+        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+        self.assertEqual(self.settings_manager.get_talked_to_copearc_times(), 2 * delta_talked_to_copearc_times)
 
 
     def test_kill_copearc(self):
@@ -72,8 +70,18 @@ class CopearcLogicTest(LogicTest):
 
 
     def test_r46733_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertTrue(self.settings_manager.get_has_copper_earring_closed())
+        self.assertFalse(self.settings_manager.get_has_copper_earring_opened())
+
         self.logic.r46733_action()
+
+        self.assertFalse(self.settings_manager.get_has_copper_earring_closed())
+        self.assertTrue(self.settings_manager.get_has_copper_earring_opened())
+
+        self.logic.r46733_action()
+
+        self.assertFalse(self.settings_manager.get_has_copper_earring_closed())
+        self.assertTrue(self.settings_manager.get_has_copper_earring_opened())
 
 
     def test_r46725_condition(self):

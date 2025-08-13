@@ -21,7 +21,8 @@ class CopearcLogic:
 
 
     def r46733_action(self):
-        TransformPartyItem("CopEarC","CopEarO",1,0,0)
+        self.settings_manager.set_has_copper_earring_closed(False)
+        self.settings_manager.set_has_copper_earring_opened(True)
 
 
     def r46725_condition(self):
