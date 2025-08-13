@@ -77,7 +77,23 @@ action_modify_property_once_pattern = PatternConfig(
 
 
 action_modify_property_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.character_manager\.modify_property\('protagonist', (.*?), (.*?), .*?\)$"),
+    pattern=re.compile(r"self\.settings_manager\.character_manager\.modify_property\('protagonist', (.*?), (.*?)\)$"),
+    template="""
+    def test_{f}(self):
+        who = 'protagonist'
+        prop = {p}
+        delta = {v}
+
+        self._change_prop(
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            delta,
+            self.logic.{f}
+        )
+""", extractors={'p': lambda m: m.group(1), 'v': lambda m: m.group(2)})
+
+
+action_set_property_pattern = PatternConfig(
+    pattern=re.compile(r"self\.settings_manager\.character_manager\.set_property\('protagonist', (.*?), (.*?)\)$"),
     template="""
     def test_{f}(self):
         who = 'protagonist'
@@ -332,6 +348,7 @@ all_patterns = [
     action_gain_experience_pattern,
     action_modify_property_once_pattern,
     action_modify_property_pattern,
+    action_set_property_pattern,
     action_update_journal_pattern,
     action_set_x_pattern,
     action_inc_once_pattern,
