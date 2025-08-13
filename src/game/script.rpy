@@ -56,14 +56,12 @@ init 2 python:
 init 3 python:
     # engine warm up
     from game.engine.event_manager import (EventManager)
-    from game.engine.menu import (MenuManager)
     from game.engine.settings_manager import (SettingsManager)
     from game.engine.inventory_manager import (InventoryManager)
     from game.engine.location_manager import (LocationManager)
     from game.engine.character_manager import (CharacterManager)
     from game.engine.journal_manager import (JournalManager)
 
-    from game.engine_data.menus.all_menus import (build_all_menus)
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
     from game.engine_data.locations.all_locations import (build_all_locations)
@@ -75,7 +73,6 @@ init 3 python:
     renpy.store.global_character_manager = CharacterManager(renpy.store.global_event_manager)
     renpy.store.global_journal_manager = JournalManager(renpy.store.global_event_manager)
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, renpy.store.global_character_manager, renpy.store.global_location_manager, renpy.store.global_journal_manager)
-    renpy.store.global_menu_manager = MenuManager()
     renpy.store.global_inventory_manager = InventoryManager(renpy.store.global_event_manager, lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
     devlog = logging.getLogger('log')
@@ -89,11 +86,6 @@ init 3 python:
     devlog.info('Building inventory manager…')
     build_all_inventory(renpy.store.global_inventory_manager)
     devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
-
-    now = int(time.time())
-    devlog.info('Building menu…')
-    build_all_menus(renpy.store.global_menu_manager, renpy.store.global_settings_manager)
-    devlog.info('Done building menu, took %s', int(time.time()) - now)
 
     now = int(time.time())
     devlog.info('Building characters…')

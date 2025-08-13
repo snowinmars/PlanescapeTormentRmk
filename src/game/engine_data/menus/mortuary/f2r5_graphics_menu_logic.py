@@ -101,7 +101,10 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm506_speak_action(self):
-        return 'start_zm506_talk'
+        v1 = 'start_zm506_talk'
+        v2 = 'start_zm506_talk_first'
+        f1 = self.settings_manager.get_talked_to_zm506_times() > 0
+        return v1 if f1 else v2
 
 
     def zm985_kill_tooltip(self):
@@ -124,25 +127,3 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
 
     def zm985_speak_action(self):
         return 'start_zm985_talk'
-
-
-    def morte_kill_tooltip(self):
-        return 'Убить Морта'
-
-
-    def morte_kill_action(self):
-        return 'start_morte2_kill'
-
-
-    def morte_speak_tooltip(self):
-        v1 = 'Поговорить с Мортом'
-        v2 = 'Пригласить Морта в группу'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2
-
-
-    def morte_speak_action(self):
-        v1 = 'start_morte1_talk'
-        v2 = 'start_morte1_invite'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2

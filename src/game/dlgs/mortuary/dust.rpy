@@ -23,7 +23,7 @@ label start_dust_kill:
     jump dust_kill
 label dust_init:
     $ dustLogic.dust_init()
-    scene bg mortuary_f3r4
+    scene bg mortuary_f3r2
     show dust_img default at center_left_down
     return
 label dust_dispose:

@@ -22,7 +22,7 @@ label start_dustfem_kill:
     jump dustfem_kill
 label dustfem_init:
     $ dustfemLogic.dustfem_init()
-    scene bg mortuary_f3r6
+    scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
     return
 label dustfem_dispose:

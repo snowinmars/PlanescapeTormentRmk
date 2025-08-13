@@ -16,7 +16,7 @@ label start_s1221_kill:
     jump s1221_kill
 label s1221_init:
     $ s1221Logic.s1221_init()
-    scene bg mortuary_f3r8
+    scene bg mortuary_f3r4
     show s1221_img default at center_left_down
     return
 label s1221_dispose:

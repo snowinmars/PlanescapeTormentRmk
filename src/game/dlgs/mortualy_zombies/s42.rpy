@@ -16,7 +16,7 @@ label start_s42_kill:
     jump s42_kill
 label s42_init:
     $ s42Logic.s42_init()
-    scene bg mortuary_f3r8
+    scene bg mortuary_f3r4
     show s42_img default at center_left_down
     return
 label s42_dispose:

@@ -16,7 +16,7 @@ label start_zm475_kill:
     jump zm475_kill
 label zm475_init:
     $ zm475Logic.zm475_init()
-    scene bg mortuary_f3r6
+    scene bg mortuary_f3r3
     show zm475_img default at center_left_down
     return
 label zm475_dispose:

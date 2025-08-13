@@ -22,7 +22,7 @@ class Zm613LogicTest(LogicTest):
 
     def test_zm613_init(self):
         self._init_with_location(
-            'mortuary_f3r8',
+            'mortuary_f3r4',
             self.logic.zm613_init,
             self.settings_manager.get_talked_to_zm613_times
         )

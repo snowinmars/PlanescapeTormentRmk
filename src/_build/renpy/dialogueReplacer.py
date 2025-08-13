@@ -380,8 +380,8 @@ class DialogueReplacer:
 
         self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.settings_manager.set_has_copper_earring_closed(False) self.settings_manager.set_has_copper_earring_opened(True)')
 
-        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return not self.settings_manager.get_has_keyem()')
-        self.add_replacement('HasItem("KeyEm","EiVene")', 'return self.settings_manager.get_has_keyem()')
+        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.settings_manager.get_has_keyem()')
+        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.settings_manager.get_has_keyem()')
         self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.settings_manager.get_has_bandages_zm396()')
         self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.settings_manager.set_has_keyem(False) self.settings_manager.set_vaxis_has_keyem(True)')
 

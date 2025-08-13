@@ -22,7 +22,7 @@ class S748LogicTest(LogicTest):
 
     def test_s748_init(self):
         self._init_with_location(
-            'mortuary_f3r6',
+            'mortuary_f3r3',
             self.logic.s748_init,
             self.settings_manager.get_talked_to_s748_times
         )

@@ -67,7 +67,7 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
         l = 'mortuary_f3r1'
         v1 = 'graphics_menu'
         v2 = 'walk_to_mortuaryf3r1_closed'
-        f1 = self.location_manager.is_visited('mortuary_f3r6') or \
+        f1 = self.location_manager.is_visited('mortuary_f3r3') or \
              self.location_manager.is_visited(l) or \
              self.settings_manager.get_has_mortuary_key()
         if f1:
@@ -79,7 +79,7 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
     def to_mortuary_f3r1_tooltip(self):
         v1 = 'Подняться на третий этаж'
         v2 = 'Подняться по лестнице'
-        f1 = self.location_manager.is_visited('mortuary_f3r6') or \
+        f1 = self.location_manager.is_visited('mortuary_f3r3') or \
              self.location_manager.is_visited('mortuary_f3r1')
         return v1 if f1 else v2
 
@@ -169,25 +169,3 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
 
     def zm782_speak_action(self):
         return 'start_zm782_talk'
-
-
-    def morte_kill_tooltip(self):
-        return 'Убить Морта'
-
-
-    def morte_kill_action(self):
-        return 'start_morte2_kill'
-
-
-    def morte_speak_tooltip(self):
-        v1 = 'Поговорить с Мортом'
-        v2 = 'Пригласить Морта в группу'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2
-
-
-    def morte_speak_action(self):
-        v1 = 'start_morte1_talk'
-        v2 = 'start_morte1_invite'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2

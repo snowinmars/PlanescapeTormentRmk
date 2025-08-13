@@ -8,10 +8,10 @@ init 10 python:
 # ###
 
 
-label start_zm1146_talk_first:
+label start_zm1146_talk_zombie:
     call zm1146_init
     jump zm1146_s0
-label start_zm1146_talk:
+label start_zm1146_talk_crispy:
     call zm1146_init
     jump zm1146_s20
 label start_zm1146_kill:
