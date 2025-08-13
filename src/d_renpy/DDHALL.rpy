@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DHALL.DLG
+# Original:  DLG/DDHALL.DLG
 # ###
-
-
-label start_dhall_talk_first:
-    call dhall_init
-    jump todo
-label start_dhall_talk:
-    call dhall_init
-    jump todo
-label start_dhall_kill_first:
-    call dhall_init
-    jump dhall_kill_first
-label start_dhall_kill:
-    call dhall_init
-    jump dhall_kill
-label dhall_init:
-    $ dhallLogic.dhall_init()
-    scene bg LOCATION
-    show dhall_img default at center_left_down
-    return
-label dhall_dispose:
-    hide dhall_img
-    jump graphics_menu
 
 
 # s0 # say822
@@ -1183,7 +1161,7 @@ label dhall_s53:  # from 34.0
             jump dhall_s11
 
 
-label dhall_kill:
+label dhall_kill: # -
     nr 'Todo.'
 
     menu:
@@ -1193,7 +1171,7 @@ label dhall_kill:
             jump dhall_killed
 
 
-label dhall_killed:
+label dhall_killed:  # from dhall_kill
     $ dhallLogic.kill_dhall()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -1204,7 +1182,7 @@ label dhall_killed:
     jump dhall_dispose
 
 
-label dhall_kill_first:
+label dhall_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -1214,7 +1192,7 @@ label dhall_kill_first:
             jump dhall_killed_first
 
 
-label dhall_killed_first:
+label dhall_killed_first: # from dhall_kill_first
     $ dhallLogic.kill_dhall()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1508.DLG
+# Original:  DLG/DZM1508.DLG
 # ###
-
-
-label start_zm1508_talk_first:
-    call zm1508_init
-    jump todo
-label start_zm1508_talk:
-    call zm1508_init
-    jump todo
-label start_zm1508_kill_first:
-    call zm1508_init
-    jump zm1508_kill_first
-label start_zm1508_kill:
-    call zm1508_init
-    jump zm1508_kill
-label zm1508_init:
-    $ zm1508Logic.zm1508_init()
-    scene bg LOCATION
-    show zm1508_img default at center_left_down
-    return
-label zm1508_dispose:
-    hide zm1508_img
-    jump graphics_menu
 
 
 # s0 # say46745
@@ -81,7 +59,7 @@ label zm1508_s2:  # from 0.3
             jump zm1508_dispose
 
 
-label zm1508_kill:
+label zm1508_kill: # -
     nr 'Todo.'
 
     menu:
@@ -91,7 +69,7 @@ label zm1508_kill:
             jump zm1508_killed
 
 
-label zm1508_killed:
+label zm1508_killed:  # from zm1508_kill
     $ zm1508Logic.kill_zm1508()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -102,7 +80,7 @@ label zm1508_killed:
     jump zm1508_dispose
 
 
-label zm1508_kill_first:
+label zm1508_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -112,7 +90,7 @@ label zm1508_kill_first:
             jump zm1508_killed_first
 
 
-label zm1508_killed_first:
+label zm1508_killed_first: # from zm1508_kill_first
     $ zm1508Logic.kill_zm1508()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

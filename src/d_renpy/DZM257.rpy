@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM257.DLG
+# Original:  DLG/DZM257.DLG
 # ###
-
-
-label start_zm257_talk_first:
-    call zm257_init
-    jump todo
-label start_zm257_talk:
-    call zm257_init
-    jump todo
-label start_zm257_kill_first:
-    call zm257_init
-    jump zm257_kill_first
-label start_zm257_kill:
-    call zm257_init
-    jump zm257_kill
-label zm257_init:
-    $ zm257Logic.zm257_init()
-    scene bg LOCATION
-    show zm257_img default at center_left_down
-    return
-label zm257_dispose:
-    hide zm257_img
-    jump graphics_menu
 
 
 # s0 # say6507
@@ -160,7 +138,7 @@ label zm257_s7:  # from 6.0
 
     menu:
 
-label zm257_kill:
+label zm257_kill: # -
     nr 'Todo.'
 
     menu:
@@ -170,7 +148,7 @@ label zm257_kill:
             jump zm257_killed
 
 
-label zm257_killed:
+label zm257_killed:  # from zm257_kill
     $ zm257Logic.kill_zm257()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -181,7 +159,7 @@ label zm257_killed:
     jump zm257_dispose
 
 
-label zm257_kill_first:
+label zm257_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -191,7 +169,7 @@ label zm257_kill_first:
             jump zm257_killed_first
 
 
-label zm257_killed_first:
+label zm257_killed_first: # from zm257_kill_first
     $ zm257Logic.kill_zm257()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

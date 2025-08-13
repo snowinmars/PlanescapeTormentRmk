@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DEIONS.DLG
+# Original:  DLG/DDEIONS.DLG
 # ###
-
-
-label start_deions_talk_first:
-    call deions_init
-    jump todo
-label start_deions_talk:
-    call deions_init
-    jump todo
-label start_deions_kill_first:
-    call deions_init
-    jump deions_kill_first
-label start_deions_kill:
-    call deions_init
-    jump deions_kill
-label deions_init:
-    $ deionsLogic.deions_init()
-    scene bg LOCATION
-    show deions_img default at center_left_down
-    return
-label deions_dispose:
-    hide deions_img
-    jump graphics_menu
 
 
 # s0 # say69459
@@ -1419,7 +1397,7 @@ label deions_s75:  # from 68.2 69.0
 
     menu:
 
-label deions_kill:
+label deions_kill: # -
     nr 'Todo.'
 
     menu:
@@ -1429,7 +1407,7 @@ label deions_kill:
             jump deions_killed
 
 
-label deions_killed:
+label deions_killed:  # from deions_kill
     $ deionsLogic.kill_deions()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -1440,7 +1418,7 @@ label deions_killed:
     jump deions_dispose
 
 
-label deions_kill_first:
+label deions_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -1450,7 +1428,7 @@ label deions_kill_first:
             jump deions_killed_first
 
 
-label deions_killed_first:
+label deions_killed_first: # from deions_kill_first
     $ deionsLogic.kill_deions()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

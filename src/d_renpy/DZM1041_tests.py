@@ -22,20 +22,22 @@ class Zm1041LogicTest(LogicTest):
 
     def test_zm1041_init(self):
         location = 'LOCATION'
-        delta_talked_to_zm1041_times = 1
+        talked_to_zm1041_times_before = 0
+        talked_to_zm1041_times_after = 1
+        talked_to_zm1041_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), talked_to_zm1041_times_before)
 
         self.logic.zm1041_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), delta_talked_to_zm1041_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), talked_to_zm1041_times_after)
 
         self.logic.zm1041_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), 2 * delta_talked_to_zm1041_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), talked_to_zm1041_times_after_once)
 
 
     def test_kill_zm1041(self):

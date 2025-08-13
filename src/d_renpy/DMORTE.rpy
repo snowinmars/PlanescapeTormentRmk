@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/MORTE.DLG
+# Original:  DLG/DMORTE.DLG
 # ###
-
-
-label start_morte_talk_first:
-    call morte_init
-    jump todo
-label start_morte_talk:
-    call morte_init
-    jump todo
-label start_morte_kill_first:
-    call morte_init
-    jump morte_kill_first
-label start_morte_kill:
-    call morte_init
-    jump morte_kill
-label morte_init:
-    $ morteLogic.morte_init()
-    scene bg LOCATION
-    show morte_img default at center_left_down
-    return
-label morte_dispose:
-    hide morte_img
-    jump graphics_menu
 
 
 # s0 # say986
@@ -10777,7 +10755,7 @@ label morte_s742:  # - # IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
             jump morte_dispose
 
 
-label morte_kill:
+label morte_kill: # -
     nr 'Todo.'
 
     menu:
@@ -10787,7 +10765,7 @@ label morte_kill:
             jump morte_killed
 
 
-label morte_killed:
+label morte_killed:  # from morte_kill
     $ morteLogic.kill_morte()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -10798,7 +10776,7 @@ label morte_killed:
     jump morte_dispose
 
 
-label morte_kill_first:
+label morte_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -10808,7 +10786,7 @@ label morte_kill_first:
             jump morte_killed_first
 
 
-label morte_killed_first:
+label morte_killed_first: # from morte_kill_first
     $ morteLogic.kill_morte()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

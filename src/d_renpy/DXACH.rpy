@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/XACH.DLG
+# Original:  DLG/DXACH.DLG
 # ###
-
-
-label start_xach_talk_first:
-    call xach_init
-    jump todo
-label start_xach_talk:
-    call xach_init
-    jump todo
-label start_xach_kill_first:
-    call xach_init
-    jump xach_kill_first
-label start_xach_kill:
-    call xach_init
-    jump xach_kill
-label xach_init:
-    $ xachLogic.xach_init()
-    scene bg LOCATION
-    show xach_img default at center_left_down
-    return
-label xach_dispose:
-    hide xach_img
-    jump graphics_menu
 
 
 # s0 # say500
@@ -1084,7 +1062,7 @@ label xach_s49:  # from 23.3 27.3
             jump xach_dispose
 
 
-label xach_kill:
+label xach_kill: # -
     nr 'Todo.'
 
     menu:
@@ -1094,7 +1072,7 @@ label xach_kill:
             jump xach_killed
 
 
-label xach_killed:
+label xach_killed:  # from xach_kill
     $ xachLogic.kill_xach()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -1105,7 +1083,7 @@ label xach_killed:
     jump xach_dispose
 
 
-label xach_kill_first:
+label xach_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -1115,7 +1093,7 @@ label xach_kill_first:
             jump xach_killed_first
 
 
-label xach_killed_first:
+label xach_killed_first: # from xach_kill_first
     $ xachLogic.kill_xach()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

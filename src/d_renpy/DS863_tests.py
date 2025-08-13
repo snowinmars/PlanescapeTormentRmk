@@ -22,20 +22,22 @@ class S863LogicTest(LogicTest):
 
     def test_s863_init(self):
         location = 'LOCATION'
-        delta_talked_to_s863_times = 1
+        talked_to_s863_times_before = 0
+        talked_to_s863_times_after = 1
+        talked_to_s863_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), talked_to_s863_times_before)
 
         self.logic.s863_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), delta_talked_to_s863_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), talked_to_s863_times_after)
 
         self.logic.s863_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), 2 * delta_talked_to_s863_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), talked_to_s863_times_after_once)
 
 
     def test_kill_s863(self):

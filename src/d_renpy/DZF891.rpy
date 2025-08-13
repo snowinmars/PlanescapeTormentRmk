@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF891.DLG
+# Original:  DLG/DZF891.DLG
 # ###
-
-
-label start_zf891_talk_first:
-    call zf891_init
-    jump todo
-label start_zf891_talk:
-    call zf891_init
-    jump todo
-label start_zf891_kill_first:
-    call zf891_init
-    jump zf891_kill_first
-label start_zf891_kill:
-    call zf891_init
-    jump zf891_kill
-label zf891_init:
-    $ zf891Logic.zf891_init()
-    scene bg LOCATION
-    show zf891_img default at center_left_down
-    return
-label zf891_dispose:
-    hide zf891_img
-    jump graphics_menu
 
 
 # s0 # say35274
@@ -119,7 +97,7 @@ label zf891_s3:  # - # IF ~  False()
 
     menu:
 
-label zf891_kill:
+label zf891_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf891_kill:
             jump zf891_killed
 
 
-label zf891_killed:
+label zf891_killed:  # from zf891_kill
     $ zf891Logic.kill_zf891()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf891_killed:
     jump zf891_dispose
 
 
-label zf891_kill_first:
+label zf891_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf891_kill_first:
             jump zf891_killed_first
 
 
-label zf891_killed_first:
+label zf891_killed_first: # from zf891_kill_first
     $ zf891Logic.kill_zf891()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

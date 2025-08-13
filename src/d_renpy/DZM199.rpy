@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM199.DLG
+# Original:  DLG/DZM199.DLG
 # ###
-
-
-label start_zm199_talk_first:
-    call zm199_init
-    jump todo
-label start_zm199_talk:
-    call zm199_init
-    jump todo
-label start_zm199_kill_first:
-    call zm199_init
-    jump zm199_kill_first
-label start_zm199_kill:
-    call zm199_init
-    jump zm199_kill
-label zm199_init:
-    $ zm199Logic.zm199_init()
-    scene bg LOCATION
-    show zm199_img default at center_left_down
-    return
-label zm199_dispose:
-    hide zm199_img
-    jump graphics_menu
 
 
 # s0 # say34975
@@ -81,7 +59,7 @@ label zm199_s2:  # from 0.3
             jump zm199_dispose
 
 
-label zm199_kill:
+label zm199_kill: # -
     nr 'Todo.'
 
     menu:
@@ -91,7 +69,7 @@ label zm199_kill:
             jump zm199_killed
 
 
-label zm199_killed:
+label zm199_killed:  # from zm199_kill
     $ zm199Logic.kill_zm199()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -102,7 +80,7 @@ label zm199_killed:
     jump zm199_dispose
 
 
-label zm199_kill_first:
+label zm199_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -112,7 +90,7 @@ label zm199_kill_first:
             jump zm199_killed_first
 
 
-label zm199_killed_first:
+label zm199_killed_first: # from zm199_kill_first
     $ zm199Logic.kill_zm199()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

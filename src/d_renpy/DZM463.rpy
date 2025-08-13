@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM463.DLG
+# Original:  DLG/DZM463.DLG
 # ###
-
-
-label start_zm463_talk_first:
-    call zm463_init
-    jump todo
-label start_zm463_talk:
-    call zm463_init
-    jump todo
-label start_zm463_kill_first:
-    call zm463_init
-    jump zm463_kill_first
-label start_zm463_kill:
-    call zm463_init
-    jump zm463_kill
-label zm463_init:
-    $ zm463Logic.zm463_init()
-    scene bg LOCATION
-    show zm463_img default at center_left_down
-    return
-label zm463_dispose:
-    hide zm463_img
-    jump graphics_menu
 
 
 # s0 # say6484
@@ -81,7 +59,7 @@ label zm463_s2:  # from 0.3
             jump zm463_dispose
 
 
-label zm463_kill:
+label zm463_kill: # -
     nr 'Todo.'
 
     menu:
@@ -91,7 +69,7 @@ label zm463_kill:
             jump zm463_killed
 
 
-label zm463_killed:
+label zm463_killed:  # from zm463_kill
     $ zm463Logic.kill_zm463()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -102,7 +80,7 @@ label zm463_killed:
     jump zm463_dispose
 
 
-label zm463_kill_first:
+label zm463_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -112,7 +90,7 @@ label zm463_kill_first:
             jump zm463_killed_first
 
 
-label zm463_killed_first:
+label zm463_killed_first: # from zm463_kill_first
     $ zm463Logic.kill_zm463()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

@@ -8,28 +8,6 @@ init 10 python:
 # ###
 
 
-label start_copearc_talk_first:
-    call copearc_init
-    jump todo
-label start_copearc_talk:
-    call copearc_init
-    jump todo
-label start_copearc_kill_first:
-    call copearc_init
-    jump copearc_kill_first
-label start_copearc_kill:
-    call copearc_init
-    jump copearc_kill
-label copearc_init:
-    $ copearcLogic.copearc_init()
-    scene bg LOCATION
-    show copearc_img default at center_left_down
-    return
-label copearc_dispose:
-    hide copearc_img
-    jump graphics_menu
-
-
 # s0 # say46723
 label copearc_s0:  # - # IF ~  True()
     SPEAKER 'Эта медная серьга на вид невероятно древняя. Похоже, она предназначена для ношения, но у нее нет ничего, что позволило бы прицепить ее к твоему уху. Тем не менее, на внутренней поверхности серьги есть несколько странных выемок.'
@@ -85,7 +63,7 @@ label copearc_s3:  # from 2.0
             jump copearc_dispose
 
 
-label copearc_kill:
+label copearc_kill: # -
     nr 'Todo.'
 
     menu:
@@ -95,7 +73,7 @@ label copearc_kill:
             jump copearc_killed
 
 
-label copearc_killed:
+label copearc_killed:  # from copearc_kill
     $ copearcLogic.kill_copearc()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -106,7 +84,7 @@ label copearc_killed:
     jump copearc_dispose
 
 
-label copearc_kill_first:
+label copearc_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -116,7 +94,7 @@ label copearc_kill_first:
             jump copearc_killed_first
 
 
-label copearc_killed_first:
+label copearc_killed_first: # from copearc_kill_first
     $ copearcLogic.kill_copearc()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

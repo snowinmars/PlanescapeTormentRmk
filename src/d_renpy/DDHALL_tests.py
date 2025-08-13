@@ -22,20 +22,22 @@ class DhallLogicTest(LogicTest):
 
     def test_dhall_init(self):
         location = 'LOCATION'
-        delta_talked_to_dhall_times = 1
+        talked_to_dhall_times_before = 0
+        talked_to_dhall_times_after = 1
+        talked_to_dhall_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), talked_to_dhall_times_before)
 
         self.logic.dhall_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), delta_talked_to_dhall_times)
+        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), talked_to_dhall_times_after)
 
         self.logic.dhall_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), 2 * delta_talked_to_dhall_times)
+        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), talked_to_dhall_times_after_once)
 
 
     def test_kill_dhall(self):
@@ -53,24 +55,27 @@ class DhallLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        vaxis_betrayed_before = 1
+        vaxis_betrayed_after = 2
+        vaxis_betrayed_after_once = 2
         note_id = '39468'
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r830_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r830_action()
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -78,13 +83,16 @@ class DhallLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        vaxis_betrayed_before = 1
+        vaxis_betrayed_after = 2
+        vaxis_betrayed_after_once = 2
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -3
         note_id = '39469'
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
@@ -92,7 +100,7 @@ class DhallLogicTest(LogicTest):
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
@@ -101,7 +109,7 @@ class DhallLogicTest(LogicTest):
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 2)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
@@ -425,13 +433,15 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r858_condition(self):
+        location = AR0200
+
         self.settings_manager.set_escape_mortuary(True)
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0200'))
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r858_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.location_manager.set_location('AR0200')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0200'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r858_condition())
 
 

@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S996.DLG
+# Original:  DLG/DS996.DLG
 # ###
-
-
-label start_s996_talk_first:
-    call s996_init
-    jump todo
-label start_s996_talk:
-    call s996_init
-    jump todo
-label start_s996_kill_first:
-    call s996_init
-    jump s996_kill_first
-label start_s996_kill:
-    call s996_init
-    jump s996_kill
-label s996_init:
-    $ s996Logic.s996_init()
-    scene bg LOCATION
-    show s996_img default at center_left_down
-    return
-label s996_dispose:
-    hide s996_img
-    jump graphics_menu
 
 
 # s0 # say35460
@@ -255,7 +233,7 @@ label s996_s7:  # - # IF ~  False()
 
     menu:
 
-label s996_kill:
+label s996_kill: # -
     nr 'Todo.'
 
     menu:
@@ -265,7 +243,7 @@ label s996_kill:
             jump s996_killed
 
 
-label s996_killed:
+label s996_killed:  # from s996_kill
     $ s996Logic.kill_s996()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -276,7 +254,7 @@ label s996_killed:
     jump s996_dispose
 
 
-label s996_kill_first:
+label s996_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -286,7 +264,7 @@ label s996_kill_first:
             jump s996_killed_first
 
 
-label s996_killed_first:
+label s996_killed_first: # from s996_kill_first
     $ s996Logic.kill_s996()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

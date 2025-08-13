@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF1148.DLG
+# Original:  DLG/DZF1148.DLG
 # ###
-
-
-label start_zf1148_talk_first:
-    call zf1148_init
-    jump todo
-label start_zf1148_talk:
-    call zf1148_init
-    jump todo
-label start_zf1148_kill_first:
-    call zf1148_init
-    jump zf1148_kill_first
-label start_zf1148_kill:
-    call zf1148_init
-    jump zf1148_kill
-label zf1148_init:
-    $ zf1148Logic.zf1148_init()
-    scene bg LOCATION
-    show zf1148_img default at center_left_down
-    return
-label zf1148_dispose:
-    hide zf1148_img
-    jump graphics_menu
 
 
 # s0 # say35242
@@ -119,7 +97,7 @@ label zf1148_s3:  # - # IF ~  False()
 
     menu:
 
-label zf1148_kill:
+label zf1148_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf1148_kill:
             jump zf1148_killed
 
 
-label zf1148_killed:
+label zf1148_killed:  # from zf1148_kill
     $ zf1148Logic.kill_zf1148()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf1148_killed:
     jump zf1148_dispose
 
 
-label zf1148_kill_first:
+label zf1148_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf1148_kill_first:
             jump zf1148_killed_first
 
 
-label zf1148_killed_first:
+label zf1148_killed_first: # from zf1148_kill_first
     $ zf1148Logic.kill_zf1148()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

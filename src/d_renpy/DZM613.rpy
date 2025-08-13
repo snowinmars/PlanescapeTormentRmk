@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM613.DLG
+# Original:  DLG/DZM613.DLG
 # ###
-
-
-label start_zm613_talk_first:
-    call zm613_init
-    jump todo
-label start_zm613_talk:
-    call zm613_init
-    jump todo
-label start_zm613_kill_first:
-    call zm613_init
-    jump zm613_kill_first
-label start_zm613_kill:
-    call zm613_init
-    jump zm613_kill
-label zm613_init:
-    $ zm613Logic.zm613_init()
-    scene bg LOCATION
-    show zm613_img default at center_left_down
-    return
-label zm613_dispose:
-    hide zm613_img
-    jump graphics_menu
 
 
 # s0 # say6540
@@ -81,7 +59,7 @@ label zm613_s2:  # from 0.3
             jump zm613_dispose
 
 
-label zm613_kill:
+label zm613_kill: # -
     nr 'Todo.'
 
     menu:
@@ -91,7 +69,7 @@ label zm613_kill:
             jump zm613_killed
 
 
-label zm613_killed:
+label zm613_killed:  # from zm613_kill
     $ zm613Logic.kill_zm613()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -102,7 +80,7 @@ label zm613_killed:
     jump zm613_dispose
 
 
-label zm613_kill_first:
+label zm613_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -112,7 +90,7 @@ label zm613_kill_first:
             jump zm613_killed_first
 
 
-label zm613_killed_first:
+label zm613_killed_first: # from zm613_kill_first
     $ zm613Logic.kill_zm613()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

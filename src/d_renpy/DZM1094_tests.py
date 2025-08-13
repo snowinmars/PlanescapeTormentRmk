@@ -22,20 +22,22 @@ class Zm1094LogicTest(LogicTest):
 
     def test_zm1094_init(self):
         location = 'LOCATION'
-        delta_talked_to_zm1094_times = 1
+        talked_to_zm1094_times_before = 0
+        talked_to_zm1094_times_after = 1
+        talked_to_zm1094_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1094_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1094_times(), talked_to_zm1094_times_before)
 
         self.logic.zm1094_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1094_times(), delta_talked_to_zm1094_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1094_times(), talked_to_zm1094_times_after)
 
         self.logic.zm1094_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1094_times(), 2 * delta_talked_to_zm1094_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zm1094_times(), talked_to_zm1094_times_after_once)
 
 
     def test_kill_zm1094(self):
@@ -78,21 +80,24 @@ class Zm1094LogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
+        asonje_value_before = 1
+        asonje_value_after = 3
+        asonje_value_after_once = 3
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        self.assertEqual(self.settings_manager.get_asonje_value(), 1)
+        self.assertEqual(self.settings_manager.get_asonje_value(), asonje_value_before)
 
         self.logic.r9247_action()
 
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertEqual(self.settings_manager.get_asonje_value(), 3)
+        self.assertEqual(self.settings_manager.get_asonje_value(), asonje_value_after)
 
         self.logic.r9247_action()
 
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertEqual(self.settings_manager.get_asonje_value(), 3)
+        self.assertEqual(self.settings_manager.get_asonje_value(), asonje_value_after_once)
 
 
     def test_r9289_action(self):

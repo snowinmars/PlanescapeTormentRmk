@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM985.DLG
+# Original:  DLG/DZM985.DLG
 # ###
-
-
-label start_zm985_talk_first:
-    call zm985_init
-    jump todo
-label start_zm985_talk:
-    call zm985_init
-    jump todo
-label start_zm985_kill_first:
-    call zm985_init
-    jump zm985_kill_first
-label start_zm985_kill:
-    call zm985_init
-    jump zm985_kill
-label zm985_init:
-    $ zm985Logic.zm985_init()
-    scene bg LOCATION
-    show zm985_img default at center_left_down
-    return
-label zm985_dispose:
-    hide zm985_img
-    jump graphics_menu
 
 
 # s0 # say45515
@@ -156,7 +134,7 @@ label zm985_s7:  # from 3.0
             jump zm985_dispose
 
 
-label zm985_kill:
+label zm985_kill: # -
     nr 'Todo.'
 
     menu:
@@ -166,7 +144,7 @@ label zm985_kill:
             jump zm985_killed
 
 
-label zm985_killed:
+label zm985_killed:  # from zm985_kill
     $ zm985Logic.kill_zm985()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -177,7 +155,7 @@ label zm985_killed:
     jump zm985_dispose
 
 
-label zm985_kill_first:
+label zm985_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -187,7 +165,7 @@ label zm985_kill_first:
             jump zm985_killed_first
 
 
-label zm985_killed_first:
+label zm985_killed_first: # from zm985_kill_first
     $ zm985Logic.kill_zm985()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S42.DLG
+# Original:  DLG/DS42.DLG
 # ###
-
-
-label start_s42_talk_first:
-    call s42_init
-    jump todo
-label start_s42_talk:
-    call s42_init
-    jump todo
-label start_s42_kill_first:
-    call s42_init
-    jump s42_kill_first
-label start_s42_kill:
-    call s42_init
-    jump s42_kill
-label s42_init:
-    $ s42Logic.s42_init()
-    scene bg LOCATION
-    show s42_img default at center_left_down
-    return
-label s42_dispose:
-    hide s42_img
-    jump graphics_menu
 
 
 # s0 # say6595
@@ -321,7 +299,7 @@ label s42_s14:  # from 8.0 11.0
             jump s42_dispose
 
 
-label s42_kill:
+label s42_kill: # -
     nr 'Todo.'
 
     menu:
@@ -331,7 +309,7 @@ label s42_kill:
             jump s42_killed
 
 
-label s42_killed:
+label s42_killed:  # from s42_kill
     $ s42Logic.kill_s42()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -342,7 +320,7 @@ label s42_killed:
     jump s42_dispose
 
 
-label s42_kill_first:
+label s42_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -352,7 +330,7 @@ label s42_kill_first:
             jump s42_killed_first
 
 
-label s42_killed_first:
+label s42_killed_first: # from s42_kill_first
     $ s42Logic.kill_s42()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

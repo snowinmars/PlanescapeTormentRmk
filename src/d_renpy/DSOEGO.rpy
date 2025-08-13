@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/SOEGO.DLG
+# Original:  DLG/DSOEGO.DLG
 # ###
-
-
-label start_soego_talk_first:
-    call soego_init
-    jump todo
-label start_soego_talk:
-    call soego_init
-    jump todo
-label start_soego_kill_first:
-    call soego_init
-    jump soego_kill_first
-label start_soego_kill:
-    call soego_init
-    jump soego_kill
-label soego_init:
-    $ soegoLogic.soego_init()
-    scene bg LOCATION
-    show soego_img default at center_left_down
-    return
-label soego_dispose:
-    hide soego_img
-    jump graphics_menu
 
 
 # s0 # say1431
@@ -2310,7 +2288,7 @@ label soego_s115:  # from 114.0
             jump soego_s17
 
 
-label soego_kill:
+label soego_kill: # -
     nr 'Todo.'
 
     menu:
@@ -2320,7 +2298,7 @@ label soego_kill:
             jump soego_killed
 
 
-label soego_killed:
+label soego_killed:  # from soego_kill
     $ soegoLogic.kill_soego()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -2331,7 +2309,7 @@ label soego_killed:
     jump soego_dispose
 
 
-label soego_kill_first:
+label soego_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -2341,7 +2319,7 @@ label soego_kill_first:
             jump soego_killed_first
 
 
-label soego_killed_first:
+label soego_killed_first: # from soego_kill_first
     $ soegoLogic.kill_soego()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

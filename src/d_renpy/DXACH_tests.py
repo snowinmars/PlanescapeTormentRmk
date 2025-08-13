@@ -22,20 +22,22 @@ class XachLogicTest(LogicTest):
 
     def test_xach_init(self):
         location = 'LOCATION'
-        delta_talked_to_xach_times = 1
+        talked_to_xach_times_before = 0
+        talked_to_xach_times_after = 1
+        talked_to_xach_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), talked_to_xach_times_before)
 
         self.logic.xach_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), delta_talked_to_xach_times)
+        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), talked_to_xach_times_after)
 
         self.logic.xach_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), 2 * delta_talked_to_xach_times)
+        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), talked_to_xach_times_after_once)
 
 
     def test_kill_xach(self):
@@ -89,17 +91,21 @@ class XachLogicTest(LogicTest):
 
 
     def test_r666_action(self):
-        self.assertEqual(self.settings_manager.get_xachariah_ring(), 1)
+        xachariah_ring_before = 1
+        xachariah_ring_after = 2
+        xachariah_ring_after_once = 2
+
+        self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_before)
         self.assertFalse(self.settings_manager.get_has_xac_heart())
 
         self.logic.r666_action()
 
-        self.assertEqual(self.settings_manager.get_xachariah_ring(), 2)
+        self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_after)
         self.assertTrue(self.settings_manager.get_has_xac_heart())
 
         self.logic.r666_action()
 
-        self.assertEqual(self.settings_manager.get_xachariah_ring(), 2)
+        self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_after_once)
         self.assertTrue(self.settings_manager.get_has_xac_heart())
 
 

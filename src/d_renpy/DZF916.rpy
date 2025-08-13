@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF916.DLG
+# Original:  DLG/DZF916.DLG
 # ###
-
-
-label start_zf916_talk_first:
-    call zf916_init
-    jump todo
-label start_zf916_talk:
-    call zf916_init
-    jump todo
-label start_zf916_kill_first:
-    call zf916_init
-    jump zf916_kill_first
-label start_zf916_kill:
-    call zf916_init
-    jump zf916_kill
-label zf916_init:
-    $ zf916Logic.zf916_init()
-    scene bg LOCATION
-    show zf916_img default at center_left_down
-    return
-label zf916_dispose:
-    hide zf916_img
-    jump graphics_menu
 
 
 # s0 # say24719
@@ -119,7 +97,7 @@ label zf916_s3:  # - # IF ~  False()
 
     menu:
 
-label zf916_kill:
+label zf916_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf916_kill:
             jump zf916_killed
 
 
-label zf916_killed:
+label zf916_killed:  # from zf916_kill
     $ zf916Logic.kill_zf916()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf916_killed:
     jump zf916_dispose
 
 
-label zf916_kill_first:
+label zf916_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf916_kill_first:
             jump zf916_killed_first
 
 
-label zf916_killed_first:
+label zf916_killed_first: # from zf916_kill_first
     $ zf916Logic.kill_zf916()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

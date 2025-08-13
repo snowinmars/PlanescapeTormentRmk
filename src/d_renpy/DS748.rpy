@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S748.DLG
+# Original:  DLG/DS748.DLG
 # ###
-
-
-label start_s748_talk_first:
-    call s748_init
-    jump todo
-label start_s748_talk:
-    call s748_init
-    jump todo
-label start_s748_kill_first:
-    call s748_init
-    jump s748_kill_first
-label start_s748_kill:
-    call s748_init
-    jump s748_kill
-label s748_init:
-    $ s748Logic.s748_init()
-    scene bg LOCATION
-    show s748_img default at center_left_down
-    return
-label s748_dispose:
-    hide s748_img
-    jump graphics_menu
 
 
 # s0 # say35383
@@ -255,7 +233,7 @@ label s748_s7:  # - # IF ~  False()
 
     menu:
 
-label s748_kill:
+label s748_kill: # -
     nr 'Todo.'
 
     menu:
@@ -265,7 +243,7 @@ label s748_kill:
             jump s748_killed
 
 
-label s748_killed:
+label s748_killed:  # from s748_kill
     $ s748Logic.kill_s748()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -276,7 +254,7 @@ label s748_killed:
     jump s748_dispose
 
 
-label s748_kill_first:
+label s748_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -286,7 +264,7 @@ label s748_kill_first:
             jump s748_killed_first
 
 
-label s748_killed_first:
+label s748_killed_first: # from s748_kill_first
     $ s748Logic.kill_s748()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

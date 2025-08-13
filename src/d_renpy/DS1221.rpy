@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S1221.DLG
+# Original:  DLG/DS1221.DLG
 # ###
-
-
-label start_s1221_talk_first:
-    call s1221_init
-    jump todo
-label start_s1221_talk:
-    call s1221_init
-    jump todo
-label start_s1221_kill_first:
-    call s1221_init
-    jump s1221_kill_first
-label start_s1221_kill:
-    call s1221_init
-    jump s1221_kill
-label s1221_init:
-    $ s1221Logic.s1221_init()
-    scene bg LOCATION
-    show s1221_img default at center_left_down
-    return
-label s1221_dispose:
-    hide s1221_img
-    jump graphics_menu
 
 
 # s0 # say35306
@@ -255,7 +233,7 @@ label s1221_s7:  # - # IF ~  False()
 
     menu:
 
-label s1221_kill:
+label s1221_kill: # -
     nr 'Todo.'
 
     menu:
@@ -265,7 +243,7 @@ label s1221_kill:
             jump s1221_killed
 
 
-label s1221_killed:
+label s1221_killed:  # from s1221_kill
     $ s1221Logic.kill_s1221()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -276,7 +254,7 @@ label s1221_killed:
     jump s1221_dispose
 
 
-label s1221_kill_first:
+label s1221_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -286,7 +264,7 @@ label s1221_kill_first:
             jump s1221_killed_first
 
 
-label s1221_killed_first:
+label s1221_killed_first: # from s1221_kill_first
     $ s1221Logic.kill_s1221()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

@@ -22,20 +22,22 @@ class VaxisLogicTest(LogicTest):
 
     def test_vaxis_init(self):
         location = 'LOCATION'
-        delta_talked_to_vaxis_times = 1
+        talked_to_vaxis_times_before = 0
+        talked_to_vaxis_times_after = 1
+        talked_to_vaxis_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), talked_to_vaxis_times_before)
 
         self.logic.vaxis_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), delta_talked_to_vaxis_times)
+        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), talked_to_vaxis_times_after)
 
         self.logic.vaxis_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), 2 * delta_talked_to_vaxis_times)
+        self.assertEqual(self.settings_manager.get_talked_to_vaxis_times(), talked_to_vaxis_times_after_once)
 
 
     def test_kill_vaxis(self):
@@ -168,53 +170,62 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r480_action(self):
+        vaxis_value_before = 0
+        vaxis_value_after = 1
+        vaxis_value_after_once = 1
         note_id = '64513'
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r480_action()
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r480_action()
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r481_action(self):
+        vaxis_value_before = 0
+        vaxis_value_after = 1
+        vaxis_value_after_once = 1
         note_id = '64513'
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r481_action()
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r481_action()
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r482_action(self):
+        vaxis_value_before = 0
+        vaxis_value_after = 1
+        vaxis_value_after_once = 1
         note_id = '64513'
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r482_action()
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r482_action()
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_value(), vaxis_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -911,11 +922,14 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        embalm_key_quest_before = 1
+        embalm_key_quest_after = 3
+        embalm_key_quest_after_once = 3
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
         self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 1)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
 
         self.logic.r4519_action()
 
@@ -923,7 +937,7 @@ class VaxisLogicTest(LogicTest):
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertFalse(self.settings_manager.get_has_keyem())
         self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after)
 
         self.logic.r4519_action()
 
@@ -931,40 +945,46 @@ class VaxisLogicTest(LogicTest):
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertFalse(self.settings_manager.get_has_keyem())
         self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
 
 
     def test_r4521_action(self):
+        embalm_key_quest_before = 1
+        embalm_key_quest_after = 3
+        embalm_key_quest_after_once = 3
         note_id = '64521'
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 1)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4521_action()
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4521_action()
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4522_action(self):
+        embalm_key_quest_before = 1
+        embalm_key_quest_after = 3
+        embalm_key_quest_after_once = 3
         note_id = '64521'
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 1)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4522_action()
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4522_action()
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 

@@ -22,20 +22,22 @@ class Morte2LogicTest(LogicTest):
 
     def test_morte2_init(self):
         location = 'LOCATION'
-        delta_talked_to_morte2_times = 1
+        talked_to_morte2_times_before = 0
+        talked_to_morte2_times_after = 1
+        talked_to_morte2_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte2_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_morte2_times(), talked_to_morte2_times_before)
 
         self.logic.morte2_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte2_times(), delta_talked_to_morte2_times)
+        self.assertEqual(self.settings_manager.get_talked_to_morte2_times(), talked_to_morte2_times_after)
 
         self.logic.morte2_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte2_times(), 2 * delta_talked_to_morte2_times)
+        self.assertEqual(self.settings_manager.get_talked_to_morte2_times(), talked_to_morte2_times_after_once)
 
 
     def test_kill_morte2(self):

@@ -22,20 +22,22 @@ class SoegoLogicTest(LogicTest):
 
     def test_soego_init(self):
         location = 'LOCATION'
-        delta_talked_to_soego_times = 1
+        talked_to_soego_times_before = 0
+        talked_to_soego_times_after = 1
+        talked_to_soego_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), talked_to_soego_times_before)
 
         self.logic.soego_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), delta_talked_to_soego_times)
+        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), talked_to_soego_times_after)
 
         self.logic.soego_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), 2 * delta_talked_to_soego_times)
+        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), talked_to_soego_times_after_once)
 
 
     def test_kill_soego(self):
@@ -107,36 +109,42 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1456_action(self):
+        soego_value_before = 0
+        soego_value_after = 1
+        soego_value_after_once = 1
         note_id = '63982'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r1456_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r1456_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r1457_action(self):
+        soego_value_before = 0
+        soego_value_after = 1
+        soego_value_after_once = 1
         note_id = '63982'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r1457_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r1457_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -156,24 +164,27 @@ class SoegoLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        gate_cut_scene_before = 0
+        gate_cut_scene_after = 1
+        gate_cut_scene_after_once = 1
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 0)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_before)
 
         self.logic.r1478_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_after)
 
         self.logic.r1478_action()
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertTrue(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_after_once)
 
 
     def test_r1482_action(self):
@@ -296,40 +307,46 @@ class SoegoLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        vaxis_betrayed_before = 0
+        vaxis_betrayed_after = 1
+        vaxis_betrayed_after_once = 1
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 0)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
 
         self.logic.r4836_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
 
         self.logic.r4836_action()
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
 
 
     def test_r4837_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        vaxis_betrayed_before = 0
+        vaxis_betrayed_after = 1
+        vaxis_betrayed_after_once = 1
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -3
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 0)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r4837_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
@@ -337,7 +354,7 @@ class SoegoLogicTest(LogicTest):
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), 1)
+        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
@@ -369,36 +386,42 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66706_action(self):
+        soego_value_before = 0
+        soego_value_after = 1
+        soego_value_after_once = 1
         note_id = '63982'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r66706_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r66706_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r66707_action(self):
+        soego_value_before = 0
+        soego_value_after = 1
+        soego_value_after_once = 1
         note_id = '63982'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 0)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r66707_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r66707_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -415,26 +438,28 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4931_action(self):
-        delta_adahn = 1
+        adahn_before = 0
+        adahn_after = 1
+        adahn_after_once = 2 * 1
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
 
         self.assertFalse(self.settings_manager.get_soego_adahn())
-        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        self.assertEqual(self.settings_manager.get_adahn(), adahn_before)
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r4931_action()
 
         self.assertTrue(self.settings_manager.get_soego_adahn())
-        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        self.assertEqual(self.settings_manager.get_adahn(), adahn_after)
         law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r4931_action()
 
         self.assertTrue(self.settings_manager.get_soego_adahn())
-        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        self.assertEqual(self.settings_manager.get_adahn(), adahn_after_once)
         law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
 
@@ -447,26 +472,28 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4967_action(self):
-        delta_adahn = 1
+        adahn_before = 0
+        adahn_after = 1
+        adahn_after_once = 2 * 1
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
 
         self.assertFalse(self.settings_manager.get_soego_adahn())
-        self.assertEqual(self.settings_manager.get_adahn(), 0)
+        self.assertEqual(self.settings_manager.get_adahn(), adahn_before)
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r4967_action()
 
         self.assertTrue(self.settings_manager.get_soego_adahn())
-        self.assertEqual(self.settings_manager.get_adahn(), delta_adahn)
+        self.assertEqual(self.settings_manager.get_adahn(), adahn_after)
         law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r4967_action()
 
         self.assertTrue(self.settings_manager.get_soego_adahn())
-        self.assertEqual(self.settings_manager.get_adahn(), 2 * delta_adahn)
+        self.assertEqual(self.settings_manager.get_adahn(), adahn_after_once)
         law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
 
@@ -475,138 +502,179 @@ class SoegoLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        gate_cut_scene_before = 0
+        gate_cut_scene_after = 1
+        gate_cut_scene_after_once = 1
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 0)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_before)
 
         self.logic.r4975_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_after)
 
         self.logic.r4975_action()
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertTrue(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_after_once)
 
 
     def test_r4988_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        gate_cut_scene_before = 0
+        gate_cut_scene_after = 1
+        gate_cut_scene_after_once = 1
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 0)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_before)
 
         self.logic.r4988_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_after)
 
         self.logic.r4988_action()
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertTrue(self.settings_manager.get_gate_open())
-        self.assertEqual(self.settings_manager.get_gate_cut_scene(), 1)
+        self.assertEqual(self.settings_manager.get_gate_cut_scene(), gate_cut_scene_after_once)
 
 
     def test_r21655_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21655_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21655_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21656_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21656_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21656_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21657_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21657_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21657_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21658_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21658_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21658_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21660_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21660_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21660_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21800_action(self):
@@ -637,121 +705,161 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66181_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r66181_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r66181_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21852_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
         note_id = '21856'
 
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r21852_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r21852_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r64623_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r64623_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r64623_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r64624_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r64624_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r64624_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r21853_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
         note_id = '21857'
 
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r21853_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r21853_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r21854_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r21854_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r21854_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r24206_action(self):
@@ -801,49 +909,60 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21914_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
 
         self.logic.r21914_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
 
         self.logic.r21914_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
 
 
     def test_r21916_action(self):
+        soego_fled_before = 0
+        soego_fled_after = 1
+        soego_fled_after_once = 1
         note_id = '21926'
 
-        self.assertEqual(self.settings_manager.get_soego_fled(), 0)
+        self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r21916_action()
 
-        self.assertEqual(self.settings_manager.get_soego_fled(), 1)
+        self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r21916_action()
 
-        self.assertEqual(self.settings_manager.get_soego_fled(), 1)
+        self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r21917_action(self):
-        self.assertEqual(self.settings_manager.get_doubtful_skel(), 1)
+        doubtful_skel_before = 1
+        doubtful_skel_after = 2
+        doubtful_skel_after_once = 2
+
+        self.assertEqual(self.settings_manager.get_doubtful_skel(), doubtful_skel_before)
         self.assertFalse(self.settings_manager.get_visit_doubtful())
 
         self.logic.r21917_action()
 
-        self.assertEqual(self.settings_manager.get_doubtful_skel(), 2)
+        self.assertEqual(self.settings_manager.get_doubtful_skel(), doubtful_skel_after)
         self.assertTrue(self.settings_manager.get_visit_doubtful())
 
         self.logic.r21917_action()
 
-        self.assertEqual(self.settings_manager.get_doubtful_skel(), 2)
+        self.assertEqual(self.settings_manager.get_doubtful_skel(), doubtful_skel_after_once)
         self.assertTrue(self.settings_manager.get_visit_doubtful())
 
 
@@ -919,64 +1038,83 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r22024_action(self):
+        soego_value_before = 1
+        soego_value_after = 4
+        soego_value_after_once = 4
+        soego_fled_before = 1
+        soego_fled_after = 2
+        soego_fled_after_once = 2
         note_id = '21856'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_fled(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r22024_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_fled(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r22024_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), 4)
-        self.assertEqual(self.settings_manager.get_soego_fled(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r22051_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
         note_id = '22052'
 
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r22051_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r22051_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r66173_action(self):
+        soego_value_before = 1
+        soego_value_after = 3
+        soego_value_after_once = 3
+        soego_talk_before = 1
+        soego_talk_after = 2
+        soego_talk_after_once = 2
+
         self.assertFalse(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 1)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 1)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_before)
 
         self.logic.r66173_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after)
 
         self.logic.r66173_action()
 
         self.assertTrue(self.settings_manager.get_met_soego2())
-        self.assertEqual(self.settings_manager.get_soego_value(), 3)
-        self.assertEqual(self.settings_manager.get_soego_talk(), 2)
+        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
+        self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
     def test_r22058_action(self):

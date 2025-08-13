@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM569.DLG
+# Original:  DLG/DZM569.DLG
 # ###
-
-
-label start_zm569_talk_first:
-    call zm569_init
-    jump todo
-label start_zm569_talk:
-    call zm569_init
-    jump todo
-label start_zm569_kill_first:
-    call zm569_init
-    jump zm569_kill_first
-label start_zm569_kill:
-    call zm569_init
-    jump zm569_kill
-label zm569_init:
-    $ zm569Logic.zm569_init()
-    scene bg LOCATION
-    show zm569_img default at center_left_down
-    return
-label zm569_dispose:
-    hide zm569_img
-    jump graphics_menu
 
 
 # s0 # say24575
@@ -114,7 +92,7 @@ label zm569_s3:  # from 0.5
             jump zm569_dispose
 
 
-label zm569_kill:
+label zm569_kill: # -
     nr 'Todo.'
 
     menu:
@@ -124,7 +102,7 @@ label zm569_kill:
             jump zm569_killed
 
 
-label zm569_killed:
+label zm569_killed:  # from zm569_kill
     $ zm569Logic.kill_zm569()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -135,7 +113,7 @@ label zm569_killed:
     jump zm569_dispose
 
 
-label zm569_kill_first:
+label zm569_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -145,7 +123,7 @@ label zm569_kill_first:
             jump zm569_killed_first
 
 
-label zm569_killed_first:
+label zm569_killed_first: # from zm569_kill_first
     $ zm569Logic.kill_zm569()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

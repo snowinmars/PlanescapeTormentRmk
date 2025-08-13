@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/VAXIS.DLG
+# Original:  DLG/DVAXIS.DLG
 # ###
-
-
-label start_vaxis_talk_first:
-    call vaxis_init
-    jump todo
-label start_vaxis_talk:
-    call vaxis_init
-    jump todo
-label start_vaxis_kill_first:
-    call vaxis_init
-    jump vaxis_kill_first
-label start_vaxis_kill:
-    call vaxis_init
-    jump vaxis_kill
-label vaxis_init:
-    $ vaxisLogic.vaxis_init()
-    scene bg LOCATION
-    show vaxis_img default at center_left_down
-    return
-label vaxis_dispose:
-    hide vaxis_img
-    jump graphics_menu
 
 
 # s0 # say453
@@ -1778,7 +1756,7 @@ label vaxis_s77:  # from 51.0
             jump vaxis_dispose
 
 
-label vaxis_kill:
+label vaxis_kill: # -
     nr 'Todo.'
 
     menu:
@@ -1788,7 +1766,7 @@ label vaxis_kill:
             jump vaxis_killed
 
 
-label vaxis_killed:
+label vaxis_killed:  # from vaxis_kill
     $ vaxisLogic.kill_vaxis()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -1799,7 +1777,7 @@ label vaxis_killed:
     jump vaxis_dispose
 
 
-label vaxis_kill_first:
+label vaxis_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -1809,7 +1787,7 @@ label vaxis_kill_first:
             jump vaxis_killed_first
 
 
-label vaxis_killed_first:
+label vaxis_killed_first: # from vaxis_kill_first
     $ vaxisLogic.kill_vaxis()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

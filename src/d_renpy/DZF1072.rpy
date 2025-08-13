@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF1072.DLG
+# Original:  DLG/DZF1072.DLG
 # ###
-
-
-label start_zf1072_talk_first:
-    call zf1072_init
-    jump todo
-label start_zf1072_talk:
-    call zf1072_init
-    jump todo
-label start_zf1072_kill_first:
-    call zf1072_init
-    jump zf1072_kill_first
-label start_zf1072_kill:
-    call zf1072_init
-    jump zf1072_kill
-label zf1072_init:
-    $ zf1072Logic.zf1072_init()
-    scene bg LOCATION
-    show zf1072_img default at center_left_down
-    return
-label zf1072_dispose:
-    hide zf1072_img
-    jump graphics_menu
 
 
 # s0 # say35114
@@ -119,7 +97,7 @@ label zf1072_s3:  # - # IF ~  False()
 
     menu:
 
-label zf1072_kill:
+label zf1072_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf1072_kill:
             jump zf1072_killed
 
 
-label zf1072_killed:
+label zf1072_killed:  # from zf1072_kill
     $ zf1072Logic.kill_zf1072()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf1072_killed:
     jump zf1072_dispose
 
 
-label zf1072_kill_first:
+label zf1072_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf1072_kill_first:
             jump zf1072_killed_first
 
 
-label zf1072_killed_first:
+label zf1072_killed_first: # from zf1072_kill_first
     $ zf1072Logic.kill_zf1072()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

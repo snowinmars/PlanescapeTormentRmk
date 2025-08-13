@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/GIANTSK.DLG
+# Original:  DLG/DGIANTSK.DLG
 # ###
-
-
-label start_giantsk_talk_first:
-    call giantsk_init
-    jump todo
-label start_giantsk_talk:
-    call giantsk_init
-    jump todo
-label start_giantsk_kill_first:
-    call giantsk_init
-    jump giantsk_kill_first
-label start_giantsk_kill:
-    call giantsk_init
-    jump giantsk_kill
-label giantsk_init:
-    $ giantskLogic.giantsk_init()
-    scene bg LOCATION
-    show giantsk_img default at center_left_down
-    return
-label giantsk_dispose:
-    hide giantsk_img
-    jump graphics_menu
 
 
 # s0 # say292
@@ -495,7 +473,7 @@ label giantsk_s16:  # from 9.0 15.0
             jump giantsk_s4
 
 
-label giantsk_kill:
+label giantsk_kill: # -
     nr 'Todo.'
 
     menu:
@@ -505,7 +483,7 @@ label giantsk_kill:
             jump giantsk_killed
 
 
-label giantsk_killed:
+label giantsk_killed:  # from giantsk_kill
     $ giantskLogic.kill_giantsk()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -516,7 +494,7 @@ label giantsk_killed:
     jump giantsk_dispose
 
 
-label giantsk_kill_first:
+label giantsk_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -526,7 +504,7 @@ label giantsk_kill_first:
             jump giantsk_killed_first
 
 
-label giantsk_killed_first:
+label giantsk_killed_first: # from giantsk_kill_first
     $ giantskLogic.kill_giantsk()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

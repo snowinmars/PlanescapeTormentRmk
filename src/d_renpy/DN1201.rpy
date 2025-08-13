@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/N1201.DLG
+# Original:  DLG/DN1201.DLG
 # ###
-
-
-label start_n1201_talk_first:
-    call n1201_init
-    jump todo
-label start_n1201_talk:
-    call n1201_init
-    jump todo
-label start_n1201_kill_first:
-    call n1201_init
-    jump n1201_kill_first
-label start_n1201_kill:
-    call n1201_init
-    jump n1201_kill
-label n1201_init:
-    $ n1201Logic.n1201_init()
-    scene bg LOCATION
-    show n1201_img default at center_left_down
-    return
-label n1201_dispose:
-    hide n1201_img
-    jump graphics_menu
 
 
 # s0 # say44993
@@ -162,7 +140,7 @@ label n1201_s5:  # from 4.0
             jump n1201_dispose
 
 
-label n1201_kill:
+label n1201_kill: # -
     nr 'Todo.'
 
     menu:
@@ -172,7 +150,7 @@ label n1201_kill:
             jump n1201_killed
 
 
-label n1201_killed:
+label n1201_killed:  # from n1201_kill
     $ n1201Logic.kill_n1201()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -183,7 +161,7 @@ label n1201_killed:
     jump n1201_dispose
 
 
-label n1201_kill_first:
+label n1201_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -193,7 +171,7 @@ label n1201_kill_first:
             jump n1201_killed_first
 
 
-label n1201_killed_first:
+label n1201_killed_first: # from n1201_kill_first
     $ n1201Logic.kill_n1201()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

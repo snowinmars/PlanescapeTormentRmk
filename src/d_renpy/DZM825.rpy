@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM825.DLG
+# Original:  DLG/DZM825.DLG
 # ###
-
-
-label start_zm825_talk_first:
-    call zm825_init
-    jump todo
-label start_zm825_talk:
-    call zm825_init
-    jump todo
-label start_zm825_kill_first:
-    call zm825_init
-    jump zm825_kill_first
-label start_zm825_kill:
-    call zm825_init
-    jump zm825_kill
-label zm825_init:
-    $ zm825Logic.zm825_init()
-    scene bg LOCATION
-    show zm825_img default at center_left_down
-    return
-label zm825_dispose:
-    hide zm825_img
-    jump graphics_menu
 
 
 # s0 # say24564
@@ -114,7 +92,7 @@ label zm825_s3:  # from 0.5
             jump zm825_dispose
 
 
-label zm825_kill:
+label zm825_kill: # -
     nr 'Todo.'
 
     menu:
@@ -124,7 +102,7 @@ label zm825_kill:
             jump zm825_killed
 
 
-label zm825_killed:
+label zm825_killed:  # from zm825_kill
     $ zm825Logic.kill_zm825()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -135,7 +113,7 @@ label zm825_killed:
     jump zm825_dispose
 
 
-label zm825_kill_first:
+label zm825_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -145,7 +123,7 @@ label zm825_kill_first:
             jump zm825_killed_first
 
 
-label zm825_killed_first:
+label zm825_killed_first: # from zm825_kill_first
     $ zm825Logic.kill_zm825()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

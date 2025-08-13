@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1664.DLG
+# Original:  DLG/DZM1664.DLG
 # ###
-
-
-label start_zm1664_talk_first:
-    call zm1664_init
-    jump todo
-label start_zm1664_talk:
-    call zm1664_init
-    jump todo
-label start_zm1664_kill_first:
-    call zm1664_init
-    jump zm1664_kill_first
-label start_zm1664_kill:
-    call zm1664_init
-    jump zm1664_kill
-label zm1664_init:
-    $ zm1664Logic.zm1664_init()
-    scene bg LOCATION
-    show zm1664_img default at center_left_down
-    return
-label zm1664_dispose:
-    hide zm1664_img
-    jump graphics_menu
 
 
 # s0 # say47002
@@ -129,7 +107,7 @@ label zm1664_s6:  # from 0.1
             jump zm1664_dispose
 
 
-label zm1664_kill:
+label zm1664_kill: # -
     nr 'Todo.'
 
     menu:
@@ -139,7 +117,7 @@ label zm1664_kill:
             jump zm1664_killed
 
 
-label zm1664_killed:
+label zm1664_killed:  # from zm1664_kill
     $ zm1664Logic.kill_zm1664()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -150,7 +128,7 @@ label zm1664_killed:
     jump zm1664_dispose
 
 
-label zm1664_kill_first:
+label zm1664_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -160,7 +138,7 @@ label zm1664_kill_first:
             jump zm1664_killed_first
 
 
-label zm1664_killed_first:
+label zm1664_killed_first: # from zm1664_kill_first
     $ zm1664Logic.kill_zm1664()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

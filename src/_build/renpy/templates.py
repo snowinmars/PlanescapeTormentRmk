@@ -5,34 +5,12 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/{NPC}.DLG
+# Original:  DLG/{area}.DLG
 # ###
-
-
-label start_{npc}_talk_first:
-    call {npc}_init
-    jump todo
-label start_{npc}_talk:
-    call {npc}_init
-    jump todo
-label start_{npc}_kill_first:
-    call {npc}_init
-    jump {npc}_kill_first
-label start_{npc}_kill:
-    call {npc}_init
-    jump {npc}_kill
-label {npc}_init:
-    $ {npc}Logic.{npc}_init()
-    scene bg LOCATION
-    show {npc}_img default at center_left_down
-    return
-label {npc}_dispose:
-    hide {npc}_img
-    jump graphics_menu
 """
 
 rpy_footer_template = """
-label {npc}_kill:
+label {npc}_kill: # -
     nr 'Todo.'
 
     menu:
@@ -42,7 +20,7 @@ label {npc}_kill:
             jump {npc}_killed
 
 
-label {npc}_killed:
+label {npc}_killed:  # from {npc}_kill
     $ {npc}Logic.kill_{npc}()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -53,7 +31,7 @@ label {npc}_killed:
     jump {npc}_dispose
 
 
-label {npc}_kill_first:
+label {npc}_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -63,7 +41,7 @@ label {npc}_kill_first:
             jump {npc}_killed_first
 
 
-label {npc}_killed_first:
+label {npc}_killed_first: # from {npc}_kill_first
     $ {npc}Logic.kill_{npc}()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

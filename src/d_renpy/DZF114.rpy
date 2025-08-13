@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF114.DLG
+# Original:  DLG/DZF114.DLG
 # ###
-
-
-label start_zf114_talk_first:
-    call zf114_init
-    jump todo
-label start_zf114_talk:
-    call zf114_init
-    jump todo
-label start_zf114_kill_first:
-    call zf114_init
-    jump zf114_kill_first
-label start_zf114_kill:
-    call zf114_init
-    jump zf114_kill
-label zf114_init:
-    $ zf114Logic.zf114_init()
-    scene bg LOCATION
-    show zf114_img default at center_left_down
-    return
-label zf114_dispose:
-    hide zf114_img
-    jump graphics_menu
 
 
 # s0 # say34986
@@ -119,7 +97,7 @@ label zf114_s3:  # - # IF ~  False()
 
     menu:
 
-label zf114_kill:
+label zf114_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf114_kill:
             jump zf114_killed
 
 
-label zf114_killed:
+label zf114_killed:  # from zf114_kill
     $ zf114Logic.kill_zf114()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf114_killed:
     jump zf114_dispose
 
 
-label zf114_kill_first:
+label zf114_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf114_kill_first:
             jump zf114_killed_first
 
 
-label zf114_killed_first:
+label zf114_killed_first: # from zf114_kill_first
     $ zf114Logic.kill_zf114()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

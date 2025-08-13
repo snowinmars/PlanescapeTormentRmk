@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM396.DLG
+# Original:  DLG/DZM396.DLG
 # ###
-
-
-label start_zm396_talk_first:
-    call zm396_init
-    jump todo
-label start_zm396_talk:
-    call zm396_init
-    jump todo
-label start_zm396_kill_first:
-    call zm396_init
-    jump zm396_kill_first
-label start_zm396_kill:
-    call zm396_init
-    jump zm396_kill
-label zm396_init:
-    $ zm396Logic.zm396_init()
-    scene bg LOCATION
-    show zm396_img default at center_left_down
-    return
-label zm396_dispose:
-    hide zm396_img
-    jump graphics_menu
 
 
 # s0 # say34931
@@ -136,7 +114,7 @@ label zm396_s4:  # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
             jump zm396_dispose
 
 
-label zm396_kill:
+label zm396_kill: # -
     nr 'Todo.'
 
     menu:
@@ -146,7 +124,7 @@ label zm396_kill:
             jump zm396_killed
 
 
-label zm396_killed:
+label zm396_killed:  # from zm396_kill
     $ zm396Logic.kill_zm396()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -157,7 +135,7 @@ label zm396_killed:
     jump zm396_dispose
 
 
-label zm396_kill_first:
+label zm396_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -167,7 +145,7 @@ label zm396_kill_first:
             jump zm396_killed_first
 
 
-label zm396_killed_first:
+label zm396_killed_first: # from zm396_kill_first
     $ zm396Logic.kill_zm396()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

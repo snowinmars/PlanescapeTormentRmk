@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1146.DLG
+# Original:  DLG/DZM1146.DLG
 # ###
-
-
-label start_zm1146_talk_first:
-    call zm1146_init
-    jump todo
-label start_zm1146_talk:
-    call zm1146_init
-    jump todo
-label start_zm1146_kill_first:
-    call zm1146_init
-    jump zm1146_kill_first
-label start_zm1146_kill:
-    call zm1146_init
-    jump zm1146_kill
-label zm1146_init:
-    $ zm1146Logic.zm1146_init()
-    scene bg LOCATION
-    show zm1146_img default at center_left_down
-    return
-label zm1146_dispose:
-    hide zm1146_img
-    jump graphics_menu
 
 
 # s0 # say6518
@@ -388,7 +366,7 @@ label zm1146_s20:  # - # IF ~  Global("Crispy","GLOBAL",1)
             jump zm1146_dispose
 
 
-label zm1146_kill:
+label zm1146_kill: # -
     nr 'Todo.'
 
     menu:
@@ -398,7 +376,7 @@ label zm1146_kill:
             jump zm1146_killed
 
 
-label zm1146_killed:
+label zm1146_killed:  # from zm1146_kill
     $ zm1146Logic.kill_zm1146()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -409,7 +387,7 @@ label zm1146_killed:
     jump zm1146_dispose
 
 
-label zm1146_kill_first:
+label zm1146_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -419,7 +397,7 @@ label zm1146_kill_first:
             jump zm1146_killed_first
 
 
-label zm1146_killed_first:
+label zm1146_killed_first: # from zm1146_kill_first
     $ zm1146Logic.kill_zm1146()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

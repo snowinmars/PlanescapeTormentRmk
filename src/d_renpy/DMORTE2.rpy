@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/MORTE2.DLG
+# Original:  DLG/DMORTE2.DLG
 # ###
-
-
-label start_morte2_talk_first:
-    call morte2_init
-    jump todo
-label start_morte2_talk:
-    call morte2_init
-    jump todo
-label start_morte2_kill_first:
-    call morte2_init
-    jump morte2_kill_first
-label start_morte2_kill:
-    call morte2_init
-    jump morte2_kill
-label morte2_init:
-    $ morte2Logic.morte2_init()
-    scene bg LOCATION
-    show morte2_img default at center_left_down
-    return
-label morte2_dispose:
-    hide morte2_img
-    jump graphics_menu
 
 
 # s0 # say41144
@@ -599,7 +577,7 @@ label morte2_s33:  # from 32.0
             jump morte2_dispose
 
 
-label morte2_kill:
+label morte2_kill: # -
     nr 'Todo.'
 
     menu:
@@ -609,7 +587,7 @@ label morte2_kill:
             jump morte2_killed
 
 
-label morte2_killed:
+label morte2_killed:  # from morte2_kill
     $ morte2Logic.kill_morte2()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -620,7 +598,7 @@ label morte2_killed:
     jump morte2_dispose
 
 
-label morte2_kill_first:
+label morte2_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -630,7 +608,7 @@ label morte2_kill_first:
             jump morte2_killed_first
 
 
-label morte2_killed_first:
+label morte2_killed_first: # from morte2_kill_first
     $ morte2Logic.kill_morte2()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

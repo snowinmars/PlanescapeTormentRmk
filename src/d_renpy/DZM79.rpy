@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM79.DLG
+# Original:  DLG/DZM79.DLG
 # ###
-
-
-label start_zm79_talk_first:
-    call zm79_init
-    jump todo
-label start_zm79_talk:
-    call zm79_init
-    jump todo
-label start_zm79_kill_first:
-    call zm79_init
-    jump zm79_kill_first
-label start_zm79_kill:
-    call zm79_init
-    jump zm79_kill
-label zm79_init:
-    $ zm79Logic.zm79_init()
-    scene bg LOCATION
-    show zm79_img default at center_left_down
-    return
-label zm79_dispose:
-    hide zm79_img
-    jump graphics_menu
 
 
 # s0 # say34942
@@ -98,7 +76,7 @@ label zm79_s3:  # from 0.1
             jump zm79_s2
 
 
-label zm79_kill:
+label zm79_kill: # -
     nr 'Todo.'
 
     menu:
@@ -108,7 +86,7 @@ label zm79_kill:
             jump zm79_killed
 
 
-label zm79_killed:
+label zm79_killed:  # from zm79_kill
     $ zm79Logic.kill_zm79()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -119,7 +97,7 @@ label zm79_killed:
     jump zm79_dispose
 
 
-label zm79_kill_first:
+label zm79_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zm79_kill_first:
             jump zm79_killed_first
 
 
-label zm79_killed_first:
+label zm79_killed_first: # from zm79_kill_first
     $ zm79Logic.kill_zm79()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

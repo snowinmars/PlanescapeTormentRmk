@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF594.DLG
+# Original:  DLG/DZF594.DLG
 # ###
-
-
-label start_zf594_talk_first:
-    call zf594_init
-    jump todo
-label start_zf594_talk:
-    call zf594_init
-    jump todo
-label start_zf594_kill_first:
-    call zf594_init
-    jump zf594_kill_first
-label start_zf594_kill:
-    call zf594_init
-    jump zf594_kill
-label zf594_init:
-    $ zf594Logic.zf594_init()
-    scene bg LOCATION
-    show zf594_img default at center_left_down
-    return
-label zf594_dispose:
-    hide zf594_img
-    jump graphics_menu
 
 
 # s0 # say35018
@@ -119,7 +97,7 @@ label zf594_s3:  # - # IF ~  False()
 
     menu:
 
-label zf594_kill:
+label zf594_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf594_kill:
             jump zf594_killed
 
 
-label zf594_killed:
+label zf594_killed:  # from zf594_kill
     $ zf594Logic.kill_zf594()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf594_killed:
     jump zf594_dispose
 
 
-label zf594_kill_first:
+label zf594_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf594_kill_first:
             jump zf594_killed_first
 
 
-label zf594_killed_first:
+label zf594_killed_first: # from zf594_kill_first
     $ zf594Logic.kill_zf594()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

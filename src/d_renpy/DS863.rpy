@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S863.DLG
+# Original:  DLG/DS863.DLG
 # ###
-
-
-label start_s863_talk_first:
-    call s863_init
-    jump todo
-label start_s863_talk:
-    call s863_init
-    jump todo
-label start_s863_kill_first:
-    call s863_init
-    jump s863_kill_first
-label start_s863_kill:
-    call s863_init
-    jump s863_kill
-label s863_init:
-    $ s863Logic.s863_init()
-    scene bg LOCATION
-    show s863_img default at center_left_down
-    return
-label s863_dispose:
-    hide s863_img
-    jump graphics_menu
 
 
 # s0 # say35537
@@ -294,7 +272,7 @@ label s863_s10:  # from 9.0
             jump s863_dispose
 
 
-label s863_kill:
+label s863_kill: # -
     nr 'Todo.'
 
     menu:
@@ -304,7 +282,7 @@ label s863_kill:
             jump s863_killed
 
 
-label s863_killed:
+label s863_killed:  # from s863_kill
     $ s863Logic.kill_s863()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -315,7 +293,7 @@ label s863_killed:
     jump s863_dispose
 
 
-label s863_kill_first:
+label s863_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -325,7 +303,7 @@ label s863_kill_first:
             jump s863_killed_first
 
 
-label s863_killed_first:
+label s863_killed_first: # from s863_kill_first
     $ s863Logic.kill_s863()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

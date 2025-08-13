@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM965.DLG
+# Original:  DLG/DZM965.DLG
 # ###
-
-
-label start_zm965_talk_first:
-    call zm965_init
-    jump todo
-label start_zm965_talk:
-    call zm965_init
-    jump todo
-label start_zm965_kill_first:
-    call zm965_init
-    jump zm965_kill_first
-label start_zm965_kill:
-    call zm965_init
-    jump zm965_kill
-label zm965_init:
-    $ zm965Logic.zm965_init()
-    scene bg LOCATION
-    show zm965_img default at center_left_down
-    return
-label zm965_dispose:
-    hide zm965_img
-    jump graphics_menu
 
 
 # s0 # say34920
@@ -87,7 +65,7 @@ label zm965_s3:  # from 1.3
             jump zm965_dispose
 
 
-label zm965_kill:
+label zm965_kill: # -
     nr 'Todo.'
 
     menu:
@@ -97,7 +75,7 @@ label zm965_kill:
             jump zm965_killed
 
 
-label zm965_killed:
+label zm965_killed:  # from zm965_kill
     $ zm965Logic.kill_zm965()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -108,7 +86,7 @@ label zm965_killed:
     jump zm965_dispose
 
 
-label zm965_kill_first:
+label zm965_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -118,7 +96,7 @@ label zm965_kill_first:
             jump zm965_killed_first
 
 
-label zm965_killed_first:
+label zm965_killed_first: # from zm965_kill_first
     $ zm965Logic.kill_zm965()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

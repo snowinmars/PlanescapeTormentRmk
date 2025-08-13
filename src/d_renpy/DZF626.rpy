@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF626.DLG
+# Original:  DLG/DZF626.DLG
 # ###
-
-
-label start_zf626_talk_first:
-    call zf626_init
-    jump todo
-label start_zf626_talk:
-    call zf626_init
-    jump todo
-label start_zf626_kill_first:
-    call zf626_init
-    jump zf626_kill_first
-label start_zf626_kill:
-    call zf626_init
-    jump zf626_kill
-label zf626_init:
-    $ zf626Logic.zf626_init()
-    scene bg LOCATION
-    show zf626_img default at center_left_down
-    return
-label zf626_dispose:
-    hide zf626_img
-    jump graphics_menu
 
 
 # s0 # say35050
@@ -119,7 +97,7 @@ label zf626_s3:  # - # IF ~  False()
 
     menu:
 
-label zf626_kill:
+label zf626_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf626_kill:
             jump zf626_killed
 
 
-label zf626_killed:
+label zf626_killed:  # from zf626_kill
     $ zf626Logic.kill_zf626()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf626_killed:
     jump zf626_dispose
 
 
-label zf626_kill_first:
+label zf626_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf626_kill_first:
             jump zf626_killed_first
 
 
-label zf626_killed_first:
+label zf626_killed_first: # from zf626_kill_first
     $ zf626Logic.kill_zf626()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

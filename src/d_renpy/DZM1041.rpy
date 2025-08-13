@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1041.DLG
+# Original:  DLG/DZM1041.DLG
 # ###
-
-
-label start_zm1041_talk_first:
-    call zm1041_init
-    jump todo
-label start_zm1041_talk:
-    call zm1041_init
-    jump todo
-label start_zm1041_kill_first:
-    call zm1041_init
-    jump zm1041_kill_first
-label start_zm1041_kill:
-    call zm1041_init
-    jump zm1041_kill
-label zm1041_init:
-    $ zm1041Logic.zm1041_init()
-    scene bg LOCATION
-    show zm1041_img default at center_left_down
-    return
-label zm1041_dispose:
-    hide zm1041_img
-    jump graphics_menu
 
 
 # s0 # say6573
@@ -796,7 +774,7 @@ label zm1041_s38:  # from 31.1
             jump zm1041_dispose
 
 
-label zm1041_kill:
+label zm1041_kill: # -
     nr 'Todo.'
 
     menu:
@@ -806,7 +784,7 @@ label zm1041_kill:
             jump zm1041_killed
 
 
-label zm1041_killed:
+label zm1041_killed:  # from zm1041_kill
     $ zm1041Logic.kill_zm1041()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -817,7 +795,7 @@ label zm1041_killed:
     jump zm1041_dispose
 
 
-label zm1041_kill_first:
+label zm1041_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -827,7 +805,7 @@ label zm1041_kill_first:
             jump zm1041_killed_first
 
 
-label zm1041_killed_first:
+label zm1041_killed_first: # from zm1041_kill_first
     $ zm1041Logic.kill_zm1041()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

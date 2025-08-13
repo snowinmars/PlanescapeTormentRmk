@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF444.DLG
+# Original:  DLG/DZF444.DLG
 # ###
-
-
-label start_zf444_talk_first:
-    call zf444_init
-    jump todo
-label start_zf444_talk:
-    call zf444_init
-    jump todo
-label start_zf444_kill_first:
-    call zf444_init
-    jump zf444_kill_first
-label start_zf444_kill:
-    call zf444_init
-    jump zf444_kill
-label zf444_init:
-    $ zf444Logic.zf444_init()
-    scene bg LOCATION
-    show zf444_img default at center_left_down
-    return
-label zf444_dispose:
-    hide zf444_img
-    jump graphics_menu
 
 
 # s0 # say35210
@@ -119,7 +97,7 @@ label zf444_s3:  # - # IF ~  False()
 
     menu:
 
-label zf444_kill:
+label zf444_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf444_kill:
             jump zf444_killed
 
 
-label zf444_killed:
+label zf444_killed:  # from zf444_kill
     $ zf444Logic.kill_zf444()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf444_killed:
     jump zf444_dispose
 
 
-label zf444_kill_first:
+label zf444_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf444_kill_first:
             jump zf444_killed_first
 
 
-label zf444_killed_first:
+label zf444_killed_first: # from zf444_kill_first
     $ zf444Logic.kill_zf444()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

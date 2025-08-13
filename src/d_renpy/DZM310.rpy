@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM310.DLG
+# Original:  DLG/DZM310.DLG
 # ###
-
-
-label start_zm310_talk_first:
-    call zm310_init
-    jump todo
-label start_zm310_talk:
-    call zm310_init
-    jump todo
-label start_zm310_kill_first:
-    call zm310_init
-    jump zm310_kill_first
-label start_zm310_kill:
-    call zm310_init
-    jump zm310_kill
-label zm310_init:
-    $ zm310Logic.zm310_init()
-    scene bg LOCATION
-    show zm310_img default at center_left_down
-    return
-label zm310_dispose:
-    hide zm310_img
-    jump graphics_menu
 
 
 # s0 # say6495
@@ -386,7 +364,7 @@ label zm310_s18:  # - # IF ~  Global("Oinosian","GLOBAL",1)
             jump zm310_dispose
 
 
-label zm310_kill:
+label zm310_kill: # -
     nr 'Todo.'
 
     menu:
@@ -396,7 +374,7 @@ label zm310_kill:
             jump zm310_killed
 
 
-label zm310_killed:
+label zm310_killed:  # from zm310_kill
     $ zm310Logic.kill_zm310()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -407,7 +385,7 @@ label zm310_killed:
     jump zm310_dispose
 
 
-label zm310_kill_first:
+label zm310_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -417,7 +395,7 @@ label zm310_kill_first:
             jump zm310_killed_first
 
 
-label zm310_killed_first:
+label zm310_killed_first: # from zm310_kill_first
     $ zm310Logic.kill_zm310()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

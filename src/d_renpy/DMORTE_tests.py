@@ -22,20 +22,22 @@ class MorteLogicTest(LogicTest):
 
     def test_morte_init(self):
         location = 'LOCATION'
-        delta_talked_to_morte_times = 1
+        talked_to_morte_times_before = 0
+        talked_to_morte_times_after = 1
+        talked_to_morte_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), talked_to_morte_times_before)
 
         self.logic.morte_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), delta_talked_to_morte_times)
+        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), talked_to_morte_times_after)
 
         self.logic.morte_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), 2 * delta_talked_to_morte_times)
+        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), talked_to_morte_times_after_once)
 
 
     def test_kill_morte(self):
@@ -46,22 +48,26 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
+        morte_value_before = 0
+        morte_value_after = 1
+        morte_value_after_once = 1
+
         self.assertFalse(self.settings_manager.get_has_intro_key())
-        self.assertEqual(self.settings_manager.get_morte_value(), 0)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
         self.assertFalse(self.settings_manager.get_read_scars())
         self.assertFalse(self.settings_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
         self.assertTrue(self.settings_manager.get_has_intro_key())
-        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after)
         self.assertTrue(self.settings_manager.get_read_scars())
         self.assertTrue(self.settings_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
         self.assertTrue(self.settings_manager.get_has_intro_key())
-        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after_once)
         self.assertTrue(self.settings_manager.get_read_scars())
         self.assertTrue(self.settings_manager.get_in_party_morte())
 
@@ -74,17 +80,21 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r1079_action(self):
-        self.assertEqual(self.settings_manager.get_morte_value(), 0)
+        morte_value_before = 0
+        morte_value_after = 1
+        morte_value_after_once = 1
+
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
         self.assertFalse(self.settings_manager.get_in_party_morte())
 
         self.logic.r1079_action()
 
-        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after)
         self.assertTrue(self.settings_manager.get_in_party_morte())
 
         self.logic.r1079_action()
 
-        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after_once)
         self.assertTrue(self.settings_manager.get_in_party_morte())
 
 
@@ -110,18 +120,22 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r2080_action(self):
+        morte_mimir_before = 0
+        morte_mimir_after = 1
+        morte_mimir_after_once = 1
+
         self.assertFalse(self.settings_manager.get_know_mimir())
-        self.assertEqual(self.settings_manager.get_morte_mimir(), 0)
+        self.assertEqual(self.settings_manager.get_morte_mimir(), morte_mimir_before)
 
         self.logic.r2080_action()
 
         self.assertTrue(self.settings_manager.get_know_mimir())
-        self.assertEqual(self.settings_manager.get_morte_mimir(), 1)
+        self.assertEqual(self.settings_manager.get_morte_mimir(), morte_mimir_after)
 
         self.logic.r2080_action()
 
         self.assertTrue(self.settings_manager.get_know_mimir())
-        self.assertEqual(self.settings_manager.get_morte_mimir(), 1)
+        self.assertEqual(self.settings_manager.get_morte_mimir(), morte_mimir_after_once)
 
 
     def test_r9029_action(self):
@@ -804,19 +818,21 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r16888_action(self):
-        delta_bd_dakkon_morale = 1
+        bd_dakkon_morale_before = 0
+        bd_dakkon_morale_after = 1
+        bd_dakkon_morale_after_once = 2 * 1
 
-        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), 0)
+        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_before)
         self.assertFalse(self.settings_manager.get_tree_d())
 
         self.logic.r16888_action()
 
-        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), delta_bd_dakkon_morale)
+        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_after)
         self.assertTrue(self.settings_manager.get_tree_d())
 
         self.logic.r16888_action()
 
-        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), 2 * delta_bd_dakkon_morale)
+        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_after_once)
         self.assertTrue(self.settings_manager.get_tree_d())
 
 
@@ -870,19 +886,21 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r16898_action(self):
-        delta_bd_dakkon_morale = 1
+        bd_dakkon_morale_before = 0
+        bd_dakkon_morale_after = 1
+        bd_dakkon_morale_after_once = 2 * 1
 
-        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), 0)
+        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_before)
         self.assertFalse(self.settings_manager.get_tree_d())
 
         self.logic.r16898_action()
 
-        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), delta_bd_dakkon_morale)
+        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_after)
         self.assertTrue(self.settings_manager.get_tree_d())
 
         self.logic.r16898_action()
 
-        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), 2 * delta_bd_dakkon_morale)
+        self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_after_once)
         self.assertTrue(self.settings_manager.get_tree_d())
 
 
@@ -990,63 +1008,70 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r18835_action(self):
-        delta_gold = 50
+        gold_before = 0
+        gold_after = -50
+        gold_after_once = -2 * 50
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = 1
 
-        self.assertEqual(self.settings_manager.get_gold(), 0)
+        self.assertEqual(self.settings_manager.get_gold(), gold_before)
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r18835_action()
 
-        self.assertEqual(self.settings_manager.get_gold(), -delta_gold)
+        self.assertEqual(self.settings_manager.get_gold(), gold_after)
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r18835_action()
 
-        self.assertEqual(self.settings_manager.get_gold(), -2 * delta_gold)
+        self.assertEqual(self.settings_manager.get_gold(), gold_after_once)
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r18836_action(self):
-        delta_gold = 100
+        gold_before = 0
+        gold_after = -100
+        gold_after_once = -2 * 100
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = 1
 
-        self.assertEqual(self.settings_manager.get_gold(), 0)
+        self.assertEqual(self.settings_manager.get_gold(), gold_before)
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r18836_action()
 
-        self.assertEqual(self.settings_manager.get_gold(), -delta_gold)
+        self.assertEqual(self.settings_manager.get_gold(), gold_after)
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r18836_action()
 
-        self.assertEqual(self.settings_manager.get_gold(), -2 * delta_gold)
+        self.assertEqual(self.settings_manager.get_gold(), gold_after_once)
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r20612_action(self):
+        know_marta_work_before = 1
+        know_marta_work_after = 3
+        know_marta_work_after_once = 3
         note_id = '20538'
 
-        self.assertEqual(self.settings_manager.get_know_marta_work(), 1)
+        self.assertEqual(self.settings_manager.get_know_marta_work(), know_marta_work_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r20612_action()
 
-        self.assertEqual(self.settings_manager.get_know_marta_work(), 3)
+        self.assertEqual(self.settings_manager.get_know_marta_work(), know_marta_work_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r20612_action()
 
-        self.assertEqual(self.settings_manager.get_know_marta_work(), 3)
+        self.assertEqual(self.settings_manager.get_know_marta_work(), know_marta_work_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -1111,17 +1136,21 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r24905_action(self):
-        self.assertEqual(self.settings_manager.get_morte_value(), 0)
+        morte_value_before = 0
+        morte_value_after = 1
+        morte_value_after_once = 1
+
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
         self.assertFalse(self.settings_manager.get_in_party_morte())
 
         self.logic.r24905_action()
 
-        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after)
         self.assertTrue(self.settings_manager.get_in_party_morte())
 
         self.logic.r24905_action()
 
-        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after_once)
         self.assertTrue(self.settings_manager.get_in_party_morte())
 
 
@@ -1243,20 +1272,25 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r28744_action(self):
-        delta_bd_morte_morale = 1
+        bd_morte_morale_before = 0
+        bd_morte_morale_after = 1
+        bd_morte_morale_after_once = 2 * 1
+        morte_stolen_before = 1
+        morte_stolen_after = 3
+        morte_stolen_after_once = 3
 
-        self.assertEqual(self.settings_manager.get_bd_morte_morale(), 0)
-        self.assertEqual(self.settings_manager.get_morte_stolen(), 1)
+        self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_before)
+        self.assertEqual(self.settings_manager.get_morte_stolen(), morte_stolen_before)
 
         self.logic.r28744_action()
 
-        self.assertEqual(self.settings_manager.get_bd_morte_morale(), delta_bd_morte_morale)
-        self.assertEqual(self.settings_manager.get_morte_stolen(), 3)
+        self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_after)
+        self.assertEqual(self.settings_manager.get_morte_stolen(), morte_stolen_after)
 
         self.logic.r28744_action()
 
-        self.assertEqual(self.settings_manager.get_bd_morte_morale(), 2 * delta_bd_morte_morale)
-        self.assertEqual(self.settings_manager.get_morte_stolen(), 3)
+        self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_after_once)
+        self.assertEqual(self.settings_manager.get_morte_stolen(), morte_stolen_after_once)
 
 
     def test_r28745_action(self):
@@ -1918,42 +1952,54 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r43910_action(self):
+        nemelle_before = 1
+        nemelle_after = 3
+        nemelle_after_once = 3
+        aelwyn_value_before = 1
+        aelwyn_value_after = 4
+        aelwyn_value_after_once = 4
         note_id = '39490'
 
-        self.assertEqual(self.settings_manager.get_nemelle(), 1)
-        self.assertEqual(self.settings_manager.get_aelwyn_value(), 1)
+        self.assertEqual(self.settings_manager.get_nemelle(), nemelle_before)
+        self.assertEqual(self.settings_manager.get_aelwyn_value(), aelwyn_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r43910_action()
 
-        self.assertEqual(self.settings_manager.get_nemelle(), 3)
-        self.assertEqual(self.settings_manager.get_aelwyn_value(), 4)
+        self.assertEqual(self.settings_manager.get_nemelle(), nemelle_after)
+        self.assertEqual(self.settings_manager.get_aelwyn_value(), aelwyn_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r43910_action()
 
-        self.assertEqual(self.settings_manager.get_nemelle(), 3)
-        self.assertEqual(self.settings_manager.get_aelwyn_value(), 4)
+        self.assertEqual(self.settings_manager.get_nemelle(), nemelle_after_once)
+        self.assertEqual(self.settings_manager.get_aelwyn_value(), aelwyn_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r43918_action(self):
+        nemelle_before = 1
+        nemelle_after = 3
+        nemelle_after_once = 3
+        aelwyn_value_before = 1
+        aelwyn_value_after = 4
+        aelwyn_value_after_once = 4
         note_id = '39490'
 
-        self.assertEqual(self.settings_manager.get_nemelle(), 1)
-        self.assertEqual(self.settings_manager.get_aelwyn_value(), 1)
+        self.assertEqual(self.settings_manager.get_nemelle(), nemelle_before)
+        self.assertEqual(self.settings_manager.get_aelwyn_value(), aelwyn_value_before)
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r43918_action()
 
-        self.assertEqual(self.settings_manager.get_nemelle(), 3)
-        self.assertEqual(self.settings_manager.get_aelwyn_value(), 4)
+        self.assertEqual(self.settings_manager.get_nemelle(), nemelle_after)
+        self.assertEqual(self.settings_manager.get_aelwyn_value(), aelwyn_value_after)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r43918_action()
 
-        self.assertEqual(self.settings_manager.get_nemelle(), 3)
-        self.assertEqual(self.settings_manager.get_aelwyn_value(), 4)
+        self.assertEqual(self.settings_manager.get_nemelle(), nemelle_after_once)
+        self.assertEqual(self.settings_manager.get_aelwyn_value(), aelwyn_value_after_once)
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -2048,22 +2094,24 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r53630_action(self):
-        delta_morale_morte = 1
+        morale_morte_before = 0
+        morale_morte_after = -1
+        morale_morte_after_once = -2 * 1
         note_id = '53661'
 
-        self.assertEqual(self.settings_manager.get_morale_morte(), 0)
+        self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_before)
         self.assertFalse(self.settings_manager.get_morte_story())
         self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r53630_action()
 
-        self.assertEqual(self.settings_manager.get_morale_morte(), -delta_morale_morte)
+        self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_after)
         self.assertTrue(self.settings_manager.get_morte_story())
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r53630_action()
 
-        self.assertEqual(self.settings_manager.get_morale_morte(), -2 * delta_morale_morte)
+        self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_after_once)
         self.assertTrue(self.settings_manager.get_morte_story())
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
@@ -2119,21 +2167,24 @@ class MorteLogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
+        pillar_before = 1
+        pillar_after = 2
+        pillar_after_once = 2
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        self.assertEqual(self.settings_manager.get_pillar(), 1)
+        self.assertEqual(self.settings_manager.get_pillar(), pillar_before)
 
         self.logic.r53843_action()
 
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertEqual(self.settings_manager.get_pillar(), 2)
+        self.assertEqual(self.settings_manager.get_pillar(), pillar_after)
 
         self.logic.r53843_action()
 
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertEqual(self.settings_manager.get_pillar(), 2)
+        self.assertEqual(self.settings_manager.get_pillar(), pillar_after_once)
 
 
     def test_r53867_action(self):
@@ -2148,21 +2199,24 @@ class MorteLogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
+        pillar_before = 1
+        pillar_after = 2
+        pillar_after_once = 2
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        self.assertEqual(self.settings_manager.get_pillar(), 1)
+        self.assertEqual(self.settings_manager.get_pillar(), pillar_before)
 
         self.logic.r53850_action()
 
         good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertEqual(self.settings_manager.get_pillar(), 2)
+        self.assertEqual(self.settings_manager.get_pillar(), pillar_after)
 
         self.logic.r53850_action()
 
         good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertEqual(self.settings_manager.get_pillar(), 2)
+        self.assertEqual(self.settings_manager.get_pillar(), pillar_after_once)
 
 
     def test_r53856_action(self):
@@ -2254,19 +2308,21 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r54278_action(self):
-        delta_bd_morte_morale = 1
+        bd_morte_morale_before = 0
+        bd_morte_morale_after = 1
+        bd_morte_morale_after_once = 2 * 1
 
-        self.assertEqual(self.settings_manager.get_bd_morte_morale(), 0)
+        self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_before)
         self.assertFalse(self.settings_manager.get_morte_morale_fortress_portal())
 
         self.logic.r54278_action()
 
-        self.assertEqual(self.settings_manager.get_bd_morte_morale(), delta_bd_morte_morale)
+        self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_after)
         self.assertTrue(self.settings_manager.get_morte_morale_fortress_portal())
 
         self.logic.r54278_action()
 
-        self.assertEqual(self.settings_manager.get_bd_morte_morale(), 2 * delta_bd_morte_morale)
+        self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_after_once)
         self.assertTrue(self.settings_manager.get_morte_morale_fortress_portal())
 
 
@@ -2543,7 +2599,9 @@ class MorteLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 12000
-        delta_morale_morte = 3
+        morale_morte_before = 0
+        morale_morte_after = 3
+        morale_morte_after_once = 2 * 3
         who_strength = 'protagonist'
         prop_strength = 'strength'
         delta_strength = 4
@@ -2556,7 +2614,7 @@ class MorteLogicTest(LogicTest):
         note_id = '65825'
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_morale_morte(), 0)
+        self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_before)
         strength_before = self.settings_manager.character_manager.get_property(who_strength, prop_strength)
         dexterity_before = self.settings_manager.character_manager.get_property(who_dexterity, prop_dexterity)
         constitution_before = self.settings_manager.character_manager.get_property(who_constitution, prop_constitution)
@@ -2567,7 +2625,7 @@ class MorteLogicTest(LogicTest):
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_morale_morte(), delta_morale_morte)
+        self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_after)
         strength_after = self.settings_manager.character_manager.get_property(who_strength, prop_strength)
         self.assertEqual(strength_before + delta_strength, strength_after)
         dexterity_after = self.settings_manager.character_manager.get_property(who_dexterity, prop_dexterity)
@@ -2581,7 +2639,7 @@ class MorteLogicTest(LogicTest):
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_morale_morte(), 2 * delta_morale_morte)
+        self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_after_once)
         strength_after_once = self.settings_manager.character_manager.get_property(who_strength, prop_strength)
         self.assertEqual(strength_after + delta_strength, strength_after_once)
         dexterity_after_once = self.settings_manager.character_manager.get_property(who_dexterity, prop_dexterity)
@@ -4192,44 +4250,53 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r40069_condition(self):
-        value = 20
+        max_health_before = 24
+        current_health_before = 12
+        max_health_after = 24
+        current_health_after = 24
 
         self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.character_manager.set_property('protagonist', 'max_health', value)
-        self.settings_manager.character_manager.set_property('protagonist', 'current_health', value / 2)
+        self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_before)
+        self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_before)
         self.assertFalse(self.logic.r40069_condition())
 
         self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.character_manager.set_property('protagonist', 'max_health', value)
-        self.settings_manager.character_manager.set_property('protagonist', 'current_health', value)
+        self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_after)
+        self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_after)
         self.assertTrue(self.logic.r40069_condition())
 
 
     def test_r40070_condition(self):
-        value = 20
+        max_health_before = 24
+        current_health_before = 8
+        max_health_after = 24
+        current_health_after = 16
 
         self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.character_manager.set_property('protagonist', 'max_health', value)
-        self.settings_manager.character_manager.set_property('protagonist', 'current_health', value / 3)
+        self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_before)
+        self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_before)
         self.assertFalse(self.logic.r40070_condition())
 
         self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.character_manager.set_property('protagonist', 'max_health', value)
-        self.settings_manager.character_manager.set_property('protagonist', 'current_health', 2 * value / 3)
+        self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_after)
+        self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_after)
         self.assertTrue(self.logic.r40070_condition())
 
 
     def test_r40071_condition(self):
-        value = 20
+        max_health_before = 24
+        current_health_before = 16
+        max_health_after = 24
+        current_health_after = 8
 
         self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.character_manager.set_property('protagonist', 'max_health', value)
-        self.settings_manager.character_manager.set_property('protagonist', 'current_health', 2 * value / 3)
+        self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_before)
+        self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_before)
         self.assertFalse(self.logic.r40071_condition())
 
         self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.character_manager.set_property('protagonist', 'max_health', value)
-        self.settings_manager.character_manager.set_property('protagonist', 'current_health', value / 3)
+        self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_after)
+        self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_after)
         self.assertTrue(self.logic.r40071_condition())
 
 
@@ -5685,35 +5752,42 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r65641_condition(self):
+        location = AR0401
+
         self.settings_manager.set_pharod_quest(0)
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0401'))
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r65641_condition())
 
         self.settings_manager.set_pharod_quest(1)
-        self.settings_manager.location_manager.set_location('AR0401')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0401'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r65641_condition())
 
 
     def test_r65642_condition(self):
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0401'))
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0500'))
+        location = AR0401
+        location = AR0500
+
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r65642_condition())
 
-        self.settings_manager.location_manager.set_location('AR0401')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0401'))
-        self.settings_manager.location_manager.set_location('AR0500')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0500'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r65642_condition())
 
 
     def test_r65643_condition(self):
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0500'))
+        location = AR0500
+
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.settings_manager.set_know_ravel(True)
         self.assertFalse(self.logic.r65643_condition())
 
-        self.settings_manager.location_manager.set_location('AR0500')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0500'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.settings_manager.set_know_ravel(False)
         self.assertTrue(self.logic.r65643_condition())
 
@@ -5729,27 +5803,32 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r65645_condition(self):
+        location = AR0610
+
         self.settings_manager.set_know_ravel(False)
         self.settings_manager.set_know_ravel_key(1)
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0610'))
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r65645_condition())
 
         self.settings_manager.set_know_ravel(True)
         self.settings_manager.set_know_ravel_key(0)
-        self.settings_manager.location_manager.set_location('AR0610')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0610'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r65645_condition())
 
 
     def test_r65646_condition(self):
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0610'))
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR0700'))
+        location = AR0610
+        location = AR0700
+
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r65646_condition())
 
-        self.settings_manager.location_manager.set_location('AR0610')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0610'))
-        self.settings_manager.location_manager.set_location('AR0700')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR0700'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r65646_condition())
 
 
@@ -5805,24 +5884,28 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r65718_condition(self):
+        location = AR1000
+
         self.settings_manager.set_grace_smell_mimir(False)
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR1000'))
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r65718_condition())
 
         self.settings_manager.set_grace_smell_mimir(True)
-        self.settings_manager.location_manager.set_location('AR1000')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR1000'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r65718_condition())
 
 
     def test_r65719_condition(self):
+        location = AR1000
+
         self.settings_manager.set_grace_smell_mimir(False)
-        self.assertFalse(self.settings_manager.location_manager.is_visited('AR1000'))
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertFalse(self.logic.r65719_condition())
 
         self.settings_manager.set_grace_smell_mimir(True)
-        self.settings_manager.location_manager.set_location('AR1000')
-        self.assertTrue(self.settings_manager.location_manager.is_visited('AR1000'))
+        self.settings_manager.location_manager.set_location(location)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.logic.r65719_condition())
 
 

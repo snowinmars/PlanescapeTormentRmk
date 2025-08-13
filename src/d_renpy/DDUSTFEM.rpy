@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DUSTFEM.DLG
+# Original:  DLG/DDUSTFEM.DLG
 # ###
-
-
-label start_dustfem_talk_first:
-    call dustfem_init
-    jump todo
-label start_dustfem_talk:
-    call dustfem_init
-    jump todo
-label start_dustfem_kill_first:
-    call dustfem_init
-    jump dustfem_kill_first
-label start_dustfem_kill:
-    call dustfem_init
-    jump dustfem_kill
-label dustfem_init:
-    $ dustfemLogic.dustfem_init()
-    scene bg LOCATION
-    show dustfem_img default at center_left_down
-    return
-label dustfem_dispose:
-    hide dustfem_img
-    jump graphics_menu
 
 
 # s0 # say298
@@ -1000,7 +978,7 @@ label dustfem_s52:  # from 51.0
             jump dustfem_dispose
 
 
-label dustfem_kill:
+label dustfem_kill: # -
     nr 'Todo.'
 
     menu:
@@ -1010,7 +988,7 @@ label dustfem_kill:
             jump dustfem_killed
 
 
-label dustfem_killed:
+label dustfem_killed:  # from dustfem_kill
     $ dustfemLogic.kill_dustfem()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -1021,7 +999,7 @@ label dustfem_killed:
     jump dustfem_dispose
 
 
-label dustfem_kill_first:
+label dustfem_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -1031,7 +1009,7 @@ label dustfem_kill_first:
             jump dustfem_killed_first
 
 
-label dustfem_killed_first:
+label dustfem_killed_first: # from dustfem_kill_first
     $ dustfemLogic.kill_dustfem()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

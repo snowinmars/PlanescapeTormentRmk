@@ -22,20 +22,22 @@ class Zf1096LogicTest(LogicTest):
 
     def test_zf1096_init(self):
         location = 'LOCATION'
-        delta_talked_to_zf1096_times = 1
+        talked_to_zf1096_times_before = 0
+        talked_to_zf1096_times_after = 1
+        talked_to_zf1096_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), talked_to_zf1096_times_before)
 
         self.logic.zf1096_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), delta_talked_to_zf1096_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), talked_to_zf1096_times_after)
 
         self.logic.zf1096_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), 2 * delta_talked_to_zf1096_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), talked_to_zf1096_times_after_once)
 
 
     def test_kill_zf1096(self):

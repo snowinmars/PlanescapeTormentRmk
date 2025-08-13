@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF1096.DLG
+# Original:  DLG/DZF1096.DLG
 # ###
-
-
-label start_zf1096_talk_first:
-    call zf1096_init
-    jump todo
-label start_zf1096_talk:
-    call zf1096_init
-    jump todo
-label start_zf1096_kill_first:
-    call zf1096_init
-    jump zf1096_kill_first
-label start_zf1096_kill:
-    call zf1096_init
-    jump zf1096_kill
-label zf1096_init:
-    $ zf1096Logic.zf1096_init()
-    scene bg LOCATION
-    show zf1096_img default at center_left_down
-    return
-label zf1096_dispose:
-    hide zf1096_img
-    jump graphics_menu
 
 
 # s0 # say35082
@@ -119,7 +97,7 @@ label zf1096_s3:  # - # IF ~  False()
 
     menu:
 
-label zf1096_kill:
+label zf1096_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf1096_kill:
             jump zf1096_killed
 
 
-label zf1096_killed:
+label zf1096_killed:  # from zf1096_kill
     $ zf1096Logic.kill_zf1096()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf1096_killed:
     jump zf1096_dispose
 
 
-label zf1096_kill_first:
+label zf1096_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf1096_kill_first:
             jump zf1096_killed_first
 
 
-label zf1096_killed_first:
+label zf1096_killed_first: # from zf1096_kill_first
     $ zf1096Logic.kill_zf1096()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

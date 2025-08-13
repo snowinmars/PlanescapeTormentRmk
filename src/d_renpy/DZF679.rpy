@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF679.DLG
+# Original:  DLG/DZF679.DLG
 # ###
-
-
-label start_zf679_talk_first:
-    call zf679_init
-    jump todo
-label start_zf679_talk:
-    call zf679_init
-    jump todo
-label start_zf679_kill_first:
-    call zf679_init
-    jump zf679_kill_first
-label start_zf679_kill:
-    call zf679_init
-    jump zf679_kill
-label zf679_init:
-    $ zf679Logic.zf679_init()
-    scene bg LOCATION
-    show zf679_img default at center_left_down
-    return
-label zf679_dispose:
-    hide zf679_img
-    jump graphics_menu
 
 
 # s0 # say35178
@@ -119,7 +97,7 @@ label zf679_s3:  # - # IF ~  False()
 
     menu:
 
-label zf679_kill:
+label zf679_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf679_kill:
             jump zf679_killed
 
 
-label zf679_killed:
+label zf679_killed:  # from zf679_kill
     $ zf679Logic.kill_zf679()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf679_killed:
     jump zf679_dispose
 
 
-label zf679_kill_first:
+label zf679_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf679_kill_first:
             jump zf679_killed_first
 
 
-label zf679_killed_first:
+label zf679_killed_first: # from zf679_kill_first
     $ zf679Logic.kill_zf679()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

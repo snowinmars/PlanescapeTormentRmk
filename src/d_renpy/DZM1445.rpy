@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1445.DLG
+# Original:  DLG/DZM1445.DLG
 # ###
-
-
-label start_zm1445_talk_first:
-    call zm1445_init
-    jump todo
-label start_zm1445_talk:
-    call zm1445_init
-    jump todo
-label start_zm1445_kill_first:
-    call zm1445_init
-    jump zm1445_kill_first
-label start_zm1445_kill:
-    call zm1445_init
-    jump zm1445_kill
-label zm1445_init:
-    $ zm1445Logic.zm1445_init()
-    scene bg LOCATION
-    show zm1445_img default at center_left_down
-    return
-label zm1445_dispose:
-    hide zm1445_img
-    jump graphics_menu
 
 
 # s0 # say46756
@@ -81,7 +59,7 @@ label zm1445_s2:  # from 0.3
             jump zm1445_dispose
 
 
-label zm1445_kill:
+label zm1445_kill: # -
     nr 'Todo.'
 
     menu:
@@ -91,7 +69,7 @@ label zm1445_kill:
             jump zm1445_killed
 
 
-label zm1445_killed:
+label zm1445_killed:  # from zm1445_kill
     $ zm1445Logic.kill_zm1445()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -102,7 +80,7 @@ label zm1445_killed:
     jump zm1445_dispose
 
 
-label zm1445_kill_first:
+label zm1445_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -112,7 +90,7 @@ label zm1445_kill_first:
             jump zm1445_killed_first
 
 
-label zm1445_killed_first:
+label zm1445_killed_first: # from zm1445_kill_first
     $ zm1445Logic.kill_zm1445()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

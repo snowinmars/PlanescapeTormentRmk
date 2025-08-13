@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF832.DLG
+# Original:  DLG/DZF832.DLG
 # ###
-
-
-label start_zf832_talk_first:
-    call zf832_init
-    jump todo
-label start_zf832_talk:
-    call zf832_init
-    jump todo
-label start_zf832_kill_first:
-    call zf832_init
-    jump zf832_kill_first
-label start_zf832_kill:
-    call zf832_init
-    jump zf832_kill
-label zf832_init:
-    $ zf832Logic.zf832_init()
-    scene bg LOCATION
-    show zf832_img default at center_left_down
-    return
-label zf832_dispose:
-    hide zf832_img
-    jump graphics_menu
 
 
 # s0 # say35146
@@ -119,7 +97,7 @@ label zf832_s3:  # - # IF ~  False()
 
     menu:
 
-label zf832_kill:
+label zf832_kill: # -
     nr 'Todo.'
 
     menu:
@@ -129,7 +107,7 @@ label zf832_kill:
             jump zf832_killed
 
 
-label zf832_killed:
+label zf832_killed:  # from zf832_kill
     $ zf832Logic.kill_zf832()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -140,7 +118,7 @@ label zf832_killed:
     jump zf832_dispose
 
 
-label zf832_kill_first:
+label zf832_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -150,7 +128,7 @@ label zf832_kill_first:
             jump zf832_killed_first
 
 
-label zf832_killed_first:
+label zf832_killed_first: # from zf832_kill_first
     $ zf832Logic.kill_zf832()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

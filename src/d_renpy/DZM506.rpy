@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM506.DLG
+# Original:  DLG/DZM506.DLG
 # ###
-
-
-label start_zm506_talk_first:
-    call zm506_init
-    jump todo
-label start_zm506_talk:
-    call zm506_init
-    jump todo
-label start_zm506_kill_first:
-    call zm506_init
-    jump zm506_kill_first
-label start_zm506_kill:
-    call zm506_init
-    jump zm506_kill
-label zm506_init:
-    $ zm506Logic.zm506_init()
-    scene bg LOCATION
-    show zm506_img default at center_left_down
-    return
-label zm506_dispose:
-    hide zm506_img
-    jump graphics_menu
 
 
 # s0 # say45419
@@ -153,7 +131,7 @@ label zm506_s5:  # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
             jump zm506_dispose
 
 
-label zm506_kill:
+label zm506_kill: # -
     nr 'Todo.'
 
     menu:
@@ -163,7 +141,7 @@ label zm506_kill:
             jump zm506_killed
 
 
-label zm506_killed:
+label zm506_killed:  # from zm506_kill
     $ zm506Logic.kill_zm506()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -174,7 +152,7 @@ label zm506_killed:
     jump zm506_dispose
 
 
-label zm506_kill_first:
+label zm506_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -184,7 +162,7 @@ label zm506_kill_first:
             jump zm506_killed_first
 
 
-label zm506_killed_first:
+label zm506_killed_first: # from zm506_kill_first
     $ zm506Logic.kill_zm506()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

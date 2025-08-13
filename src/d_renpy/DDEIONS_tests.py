@@ -22,20 +22,22 @@ class DeionsLogicTest(LogicTest):
 
     def test_deions_init(self):
         location = 'LOCATION'
-        delta_talked_to_deions_times = 1
+        talked_to_deions_times_before = 0
+        talked_to_deions_times_after = 1
+        talked_to_deions_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), talked_to_deions_times_before)
 
         self.logic.deions_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), delta_talked_to_deions_times)
+        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), talked_to_deions_times_after)
 
         self.logic.deions_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), 2 * delta_talked_to_deions_times)
+        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), talked_to_deions_times_after_once)
 
 
     def test_kill_deions(self):
@@ -326,64 +328,73 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r6129_action(self):
+        deionarra_value_before = 0
+        deionarra_value_after = 1
+        deionarra_value_after_once = 1
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 0)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6129_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
         law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6129_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
         law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r6131_action(self):
+        deionarra_value_before = 0
+        deionarra_value_after = 1
+        deionarra_value_after_once = 1
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 0)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6131_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
         law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6131_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
         law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r6132_action(self):
+        deionarra_value_before = 0
+        deionarra_value_after = 1
+        deionarra_value_after_once = 1
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 0)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6132_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
         law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6132_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
         law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 

@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DUST.DLG
+# Original:  DLG/DDUST.DLG
 # ###
-
-
-label start_dust_talk_first:
-    call dust_init
-    jump todo
-label start_dust_talk:
-    call dust_init
-    jump todo
-label start_dust_kill_first:
-    call dust_init
-    jump dust_kill_first
-label start_dust_kill:
-    call dust_init
-    jump dust_kill
-label dust_init:
-    $ dustLogic.dust_init()
-    scene bg LOCATION
-    show dust_img default at center_left_down
-    return
-label dust_dispose:
-    hide dust_img
-    jump graphics_menu
 
 
 # s0 # say300
@@ -1000,7 +978,7 @@ label dust_s52:  # from 51.0
             jump dust_dispose
 
 
-label dust_kill:
+label dust_kill: # -
     nr 'Todo.'
 
     menu:
@@ -1010,7 +988,7 @@ label dust_kill:
             jump dust_killed
 
 
-label dust_killed:
+label dust_killed:  # from dust_kill
     $ dustLogic.kill_dust()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -1021,7 +999,7 @@ label dust_killed:
     jump dust_dispose
 
 
-label dust_kill_first:
+label dust_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -1031,7 +1009,7 @@ label dust_kill_first:
             jump dust_killed_first
 
 
-label dust_killed_first:
+label dust_killed_first: # from dust_kill_first
     $ dustLogic.kill_dust()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

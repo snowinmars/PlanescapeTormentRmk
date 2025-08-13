@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1201.DLG
+# Original:  DLG/DZM1201.DLG
 # ###
-
-
-label start_zm1201_talk_first:
-    call zm1201_init
-    jump todo
-label start_zm1201_talk:
-    call zm1201_init
-    jump todo
-label start_zm1201_kill_first:
-    call zm1201_init
-    jump zm1201_kill_first
-label start_zm1201_kill:
-    call zm1201_init
-    jump zm1201_kill
-label zm1201_init:
-    $ zm1201Logic.zm1201_init()
-    scene bg LOCATION
-    show zm1201_img default at center_left_down
-    return
-label zm1201_dispose:
-    hide zm1201_img
-    jump graphics_menu
 
 
 # s0 # say34953
@@ -136,7 +114,7 @@ label zm1201_s5:  # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
             jump zm1201_dispose
 
 
-label zm1201_kill:
+label zm1201_kill: # -
     nr 'Todo.'
 
     menu:
@@ -146,7 +124,7 @@ label zm1201_kill:
             jump zm1201_killed
 
 
-label zm1201_killed:
+label zm1201_killed:  # from zm1201_kill
     $ zm1201Logic.kill_zm1201()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -157,7 +135,7 @@ label zm1201_killed:
     jump zm1201_dispose
 
 
-label zm1201_kill_first:
+label zm1201_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -167,7 +145,7 @@ label zm1201_kill_first:
             jump zm1201_killed_first
 
 
-label zm1201_killed_first:
+label zm1201_killed_first: # from zm1201_kill_first
     $ zm1201Logic.kill_zm1201()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

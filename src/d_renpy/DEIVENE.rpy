@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/EIVENE.DLG
+# Original:  DLG/DEIVENE.DLG
 # ###
-
-
-label start_eivene_talk_first:
-    call eivene_init
-    jump todo
-label start_eivene_talk:
-    call eivene_init
-    jump todo
-label start_eivene_kill_first:
-    call eivene_init
-    jump eivene_kill_first
-label start_eivene_kill:
-    call eivene_init
-    jump eivene_kill
-label eivene_init:
-    $ eiveneLogic.eivene_init()
-    scene bg LOCATION
-    show eivene_img default at center_left_down
-    return
-label eivene_dispose:
-    hide eivene_img
-    jump graphics_menu
 
 
 # s0 # say3404
@@ -457,7 +435,7 @@ label eivene_s27:  # from 26.0 26.1
             jump eivene_dispose
 
 
-label eivene_kill:
+label eivene_kill: # -
     nr 'Todo.'
 
     menu:
@@ -467,7 +445,7 @@ label eivene_kill:
             jump eivene_killed
 
 
-label eivene_killed:
+label eivene_killed:  # from eivene_kill
     $ eiveneLogic.kill_eivene()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -478,7 +456,7 @@ label eivene_killed:
     jump eivene_dispose
 
 
-label eivene_kill_first:
+label eivene_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -488,7 +466,7 @@ label eivene_kill_first:
             jump eivene_killed_first
 
 
-label eivene_killed_first:
+label eivene_killed_first: # from eivene_kill_first
     $ eiveneLogic.kill_eivene()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

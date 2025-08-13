@@ -22,20 +22,22 @@ class Zf679LogicTest(LogicTest):
 
     def test_zf679_init(self):
         location = 'LOCATION'
-        delta_talked_to_zf679_times = 1
+        talked_to_zf679_times_before = 0
+        talked_to_zf679_times_after = 1
+        talked_to_zf679_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf679_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_zf679_times(), talked_to_zf679_times_before)
 
         self.logic.zf679_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf679_times(), delta_talked_to_zf679_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zf679_times(), talked_to_zf679_times_after)
 
         self.logic.zf679_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf679_times(), 2 * delta_talked_to_zf679_times)
+        self.assertEqual(self.settings_manager.get_talked_to_zf679_times(), talked_to_zf679_times_after_once)
 
 
     def test_kill_zf679(self):

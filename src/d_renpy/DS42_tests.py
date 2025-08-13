@@ -22,20 +22,22 @@ class S42LogicTest(LogicTest):
 
     def test_s42_init(self):
         location = 'LOCATION'
-        delta_talked_to_s42_times = 1
+        talked_to_s42_times_before = 0
+        talked_to_s42_times_after = 1
+        talked_to_s42_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), talked_to_s42_times_before)
 
         self.logic.s42_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), delta_talked_to_s42_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), talked_to_s42_times_after)
 
         self.logic.s42_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), 2 * delta_talked_to_s42_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s42_times(), talked_to_s42_times_after_once)
 
 
     def test_kill_s42(self):
@@ -170,13 +172,15 @@ class S42LogicTest(LogicTest):
 
 
     def test_r58984_action(self):
-        delta_gold = 99
+        gold_before = 0
+        gold_after = 99
+        gold_after_once = 2 * 99
 
         self.assertFalse(self.settings_manager.get_has_gs_knife())
         self.assertFalse(self.settings_manager.get_has_rags())
         self.assertFalse(self.settings_manager.get_has_clotchrm())
         self.assertFalse(self.settings_manager.get_has_clotchrm())
-        self.assertEqual(self.settings_manager.get_gold(), 0)
+        self.assertEqual(self.settings_manager.get_gold(), gold_before)
 
         self.logic.r58984_action()
 
@@ -184,7 +188,7 @@ class S42LogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_rags())
         self.assertTrue(self.settings_manager.get_has_clotchrm())
         self.assertTrue(self.settings_manager.get_has_clotchrm())
-        self.assertEqual(self.settings_manager.get_gold(), delta_gold)
+        self.assertEqual(self.settings_manager.get_gold(), gold_after)
 
         self.logic.r58984_action()
 
@@ -192,7 +196,7 @@ class S42LogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_rags())
         self.assertTrue(self.settings_manager.get_has_clotchrm())
         self.assertTrue(self.settings_manager.get_has_clotchrm())
-        self.assertEqual(self.settings_manager.get_gold(), 2 * delta_gold)
+        self.assertEqual(self.settings_manager.get_gold(), gold_after_once)
 
 
     def test_r6612_condition(self):

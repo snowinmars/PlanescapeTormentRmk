@@ -22,20 +22,22 @@ class S996LogicTest(LogicTest):
 
     def test_s996_init(self):
         location = 'LOCATION'
-        delta_talked_to_s996_times = 1
+        talked_to_s996_times_before = 0
+        talked_to_s996_times_after = 1
+        talked_to_s996_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s996_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_s996_times(), talked_to_s996_times_before)
 
         self.logic.s996_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s996_times(), delta_talked_to_s996_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s996_times(), talked_to_s996_times_after)
 
         self.logic.s996_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s996_times(), 2 * delta_talked_to_s996_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s996_times(), talked_to_s996_times_after_once)
 
 
     def test_kill_s996(self):

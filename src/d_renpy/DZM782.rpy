@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM782.DLG
+# Original:  DLG/DZM782.DLG
 # ###
-
-
-label start_zm782_talk_first:
-    call zm782_init
-    jump todo
-label start_zm782_talk:
-    call zm782_init
-    jump todo
-label start_zm782_kill_first:
-    call zm782_init
-    jump zm782_kill_first
-label start_zm782_kill:
-    call zm782_init
-    jump zm782_kill
-label zm782_init:
-    $ zm782Logic.zm782_init()
-    scene bg LOCATION
-    show zm782_img default at center_left_down
-    return
-label zm782_dispose:
-    hide zm782_img
-    jump graphics_menu
 
 
 # s0 # say24708
@@ -85,7 +63,7 @@ label zm782_s2:  # from 0.2 0.3
             jump zm782_dispose
 
 
-label zm782_kill:
+label zm782_kill: # -
     nr 'Todo.'
 
     menu:
@@ -95,7 +73,7 @@ label zm782_kill:
             jump zm782_killed
 
 
-label zm782_killed:
+label zm782_killed:  # from zm782_kill
     $ zm782Logic.kill_zm782()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -106,7 +84,7 @@ label zm782_killed:
     jump zm782_dispose
 
 
-label zm782_kill_first:
+label zm782_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -116,7 +94,7 @@ label zm782_kill_first:
             jump zm782_killed_first
 
 
-label zm782_killed_first:
+label zm782_killed_first: # from zm782_kill_first
     $ zm782Logic.kill_zm782()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

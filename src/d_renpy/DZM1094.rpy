@@ -4,30 +4,8 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1094.DLG
+# Original:  DLG/DZM1094.DLG
 # ###
-
-
-label start_zm1094_talk_first:
-    call zm1094_init
-    jump todo
-label start_zm1094_talk:
-    call zm1094_init
-    jump todo
-label start_zm1094_kill_first:
-    call zm1094_init
-    jump zm1094_kill_first
-label start_zm1094_kill:
-    call zm1094_init
-    jump zm1094_kill
-label zm1094_init:
-    $ zm1094Logic.zm1094_init()
-    scene bg LOCATION
-    show zm1094_img default at center_left_down
-    return
-label zm1094_dispose:
-    hide zm1094_img
-    jump graphics_menu
 
 
 # s0 # say6562
@@ -553,7 +531,7 @@ label zm1094_s27:  # - # IF ~  Global("Asonje","GLOBAL",3)
             jump zm1094_dispose
 
 
-label zm1094_kill:
+label zm1094_kill: # -
     nr 'Todo.'
 
     menu:
@@ -563,7 +541,7 @@ label zm1094_kill:
             jump zm1094_killed
 
 
-label zm1094_killed:
+label zm1094_killed:  # from zm1094_kill
     $ zm1094Logic.kill_zm1094()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -574,7 +552,7 @@ label zm1094_killed:
     jump zm1094_dispose
 
 
-label zm1094_kill_first:
+label zm1094_kill_first:  # -
     nr 'Todo.'
 
     menu:
@@ -584,7 +562,7 @@ label zm1094_kill_first:
             jump zm1094_killed_first
 
 
-label zm1094_killed_first:
+label zm1094_killed_first: # from zm1094_kill_first
     $ zm1094Logic.kill_zm1094()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'

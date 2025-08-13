@@ -22,20 +22,22 @@ class S748LogicTest(LogicTest):
 
     def test_s748_init(self):
         location = 'LOCATION'
-        delta_talked_to_s748_times = 1
+        talked_to_s748_times_before = 0
+        talked_to_s748_times_after = 1
+        talked_to_s748_times_after_once = 2 * 1
 
         self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s748_times(), 0)
+        self.assertEqual(self.settings_manager.get_talked_to_s748_times(), talked_to_s748_times_before)
 
         self.logic.s748_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s748_times(), delta_talked_to_s748_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s748_times(), talked_to_s748_times_after)
 
         self.logic.s748_init()
 
         self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s748_times(), 2 * delta_talked_to_s748_times)
+        self.assertEqual(self.settings_manager.get_talked_to_s748_times(), talked_to_s748_times_after_once)
 
 
     def test_kill_s748(self):

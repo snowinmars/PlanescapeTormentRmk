@@ -34,7 +34,7 @@ class DialogueProcessor:
         logic_conditions = []
         global_response_counter = 0
 
-        dialog_tree.extend([rpy_header_template.format(npc=target_npc, Npc=target_npc.capitalize(), NPC=target_npc.upper())])
+        dialog_tree.extend([rpy_header_template.format(area=area.upper(), npc=target_npc, Npc=target_npc.capitalize(), NPC=target_npc.upper())])
 
         for state in states:
             from_path = 'from ' + ' '.join(
