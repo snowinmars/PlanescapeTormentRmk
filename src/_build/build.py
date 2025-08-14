@@ -60,23 +60,58 @@ def build():
     label_bindings = []
     graph = {}
     for rpy_file in rpy_files:
-        graph = merge_renpy_graphs(graph, find_label_bindings(rpy_file.name, rpy_file.content))
+        graph = merge_renpy_graphs(graph, find_label_bindings(rpy_file))
 
     for label, data in sorted(graph.items(), key=lambda x: x[0]):
-        print(f"Label: {label} ({data['npc']}) [{data['file_name']}] - Comments: {data['comments']}")
-        print(f"  ")
+        label_npc = data['npc']
+        label_file = data['file']
+        label_comments = data['comments']
+
         for jump in data["jumps"]:
-            print(f"  Jump to: {jump['target']} ({jump['npc']}) [{jump['file_name']}] - Comments: {jump['comments']}")
-        print()
+            jump_target = jump['target']
+            jump_npc = jump['npc']
+            jump_file = jump['file']
+            jump_comments = jump['comments']
+
+            if label_npc == jump_npc:
+                continue
+
+            jump_file.content.replace(f'{jump_target}:', f'{jump_target}: # from {label}')
+
+            print(f'{label} -> {jump_target}')
 
     print(' done')
+
+
+def add_word_to_labels(lines, word='hi'):
+    processed_lines = []
+    for line in lines:
+        if line.strip().startswith('label'):
+            # Check if line has a 'from' section
+            if re.search(r'#\s*from\s', line):
+                # Find the next '#' after 'from' section
+                parts = re.split(r'(#\s*from\s[^#]*)(#|$)', line, 1)
+                if len(parts) >= 3:
+                    # Reconstruct with word added after from section
+                    line = f"{parts[1]} {word} {parts[2]}{''.join(parts[3:])}".strip()
+            else:
+                # Replace '# -' with '# from {word}' or add new section
+                if '# -' in line:
+                    line = line.replace('# -', f'# from {word}', 1)
+                else:
+                    # Insert new '# from {word}' section after label
+                    line = re.sub(r'(label\s+\w+:\s*)(#|$)',
+                                 r'\1# from ' + word + r' \2',
+                                 line, 1)
+        processed_lines.append(line)
+    return processed_lines
 
 
 label_pattern = re.compile(r'^\s*label\s+(\w+)\s*:(.*?)(#.*)?$')
 jump_pattern = re.compile(r'^\s*jump\s+(\w+)\s*(#.*)?$')
 comment_pattern = re.compile(r'#.*')
 
-def find_label_bindings(file_name, script):
+def find_label_bindings(file, script):
     graph = defaultdict(lambda: {"comments": [], "jumps": []})
     current_label = None
 
@@ -94,7 +129,7 @@ def find_label_bindings(file_name, script):
             current_label = label_name
             graph[label_name]  # Ensure entry exists
             graph[label_name]['npc'] = label_name.split('_')[0]
-            graph[label_name]['file_name'] = file_name
+            graph[label_name]['file'] = file
 
             if comment:
                 graph[label_name]["comments"].append(comment.strip())
@@ -111,7 +146,7 @@ def find_label_bindings(file_name, script):
                 target = jump_match.group(1)
                 comment = (jump_match.group(2) or "")
 
-                jump_entry = {"target": target, "npc": target.split('_')[0], 'file_name': file_name}
+                jump_entry = {"target": target, "npc": target.split('_')[0], 'file': file}
                 if comment:
                     jump_entry["comments"] = [comment.strip()]
                 else:
