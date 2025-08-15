@@ -6,7 +6,7 @@ init 10 python:
 
 # ###
 # Original:  DLG/{area}.DLG
-# ###
+# ###\n
 """
 
 rpy_footer_template = """
@@ -20,7 +20,7 @@ label {npc}_kill: # -
             jump {npc}_killed
 
 
-label {npc}_killed:  # from {npc}_kill
+label {npc}_killed: # from {npc}_kill
     $ {npc}Logic.kill_{npc}()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -31,7 +31,7 @@ label {npc}_killed:  # from {npc}_kill
     jump {npc}_dispose
 
 
-label {npc}_kill_first:  # -
+label {npc}_kill_first: # -
     nr 'Todo.'
 
     menu:

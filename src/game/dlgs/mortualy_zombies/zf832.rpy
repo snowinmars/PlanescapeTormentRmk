@@ -25,91 +25,91 @@ label zf832_dispose:
 
 
 # s0 # say35146
-label zf832_s0:  # - # IF ~  True()
+label zf832_s0: # - # IF ~  True()
     nr 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет.'
     nr 'Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер «832» элегантным шрифтом.'
 
     menu:
         '«Итак… чем занимаешься вечером?»' if zf832Logic.r35147_condition():
-            # r0 # reply35147
+            # a0 # r35147
             $ zf832Logic.r35147_action()
             jump zf832_s1
 
         '«Итак… чем занимаешься вечером?»' if zf832Logic.r35164_condition():
-            # r1 # reply35164
+            # a1 # r35164
             jump zf832_s1
 
         '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zf832Logic.r35165_condition():
-            # r2 # reply35165
+            # a2 # r35165
             jump zf832_s1
 
         'Использовать на трупе свою способность «История костей».' if zf832Logic.r35166_condition():
-            # r3 # reply35166
+            # a3 # r35166
             jump zf832_s2
 
         '«Было приятно с тобой поболтать. Прощай».' if zf832Logic.r35171_condition():
-            # r4 # reply35171
+            # a4 # r35171
             jump morte_s350  # EXTERN
 
         'Оставить труп в покое.' if zf832Logic.r35172_condition():
-            # r5 # reply35172
+            # a5 # r35172
             jump morte_s350  # EXTERN
 
         '«Было приятно с тобой поболтать. Прощай».' if zf832Logic.r35173_condition():
-            # r6 # reply35173
+            # a6 # r35173
             jump zf832_dispose
 
         'Оставить труп в покое.' if zf832Logic.r35174_condition():
-            # r7 # reply35174
+            # a7 # r35174
             jump zf832_dispose
 
         '«Было приятно с тобой поболтать. Прощай».' if zf832Logic.r35175_condition():
-            # r8 # reply35175
+            # a8 # r35175
             jump zf832_dispose
 
         'Оставить труп в покое.' if zf832Logic.r35176_condition():
-            # r9 # reply35176
+            # a9 # r35176
             jump zf832_dispose
 
 
 # s1 # say35148
-label zf832_s1:  # from 0.0 0.1 0.2
+label zf832_s1: # from 0.0 0.1 0.2
     nr 'Труп продолжает пялиться на тебя.'
 
     menu:
         '«Тогда прощай».' if zf832Logic.r35149_condition():
-            # r10 # reply35149
+            # a10 # r35149
             jump morte_s350  # EXTERN
 
         '«Тогда прощай».' if zf832Logic.r35162_condition():
-            # r11 # reply35162
+            # a11 # r35162
             jump zf832_dispose
 
         '«Тогда прощай».' if zf832Logic.r35163_condition():
-            # r12 # reply35163
+            # a12 # r35163
             jump zf832_dispose
 
 
 # s2 # say35167
-label zf832_s2:  # from 0.3
+label zf832_s2: # from 0.3
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
         '«Тогда прощай».' if zf832Logic.r35168_condition():
-            # r13 # reply35168
+            # a13 # r35168
             jump morte_s350  # EXTERN
 
         '«Тогда прощай».' if zf832Logic.r35169_condition():
-            # r14 # reply35169
+            # a14 # r35169
             jump zf832_dispose
 
         '«Тогда прощай».' if zf832Logic.r35170_condition():
-            # r15 # reply35170
+            # a15 # r35170
             jump zf832_dispose
 
 
 # s3 # say35177
-label zf832_s3:  # - # IF ~  False()
+label zf832_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump zf832_dispose

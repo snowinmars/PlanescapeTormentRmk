@@ -38,14 +38,14 @@ label dhall_dispose_no_talk:
 
 
 # s0 # say822
-label dhall_s0:  # -
+label dhall_s0: # externs morte_s103
     nr 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.'
     nr 'Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
     jump morte_s104  # EXTERN
 
 # s1 # say826
-label dhall_s1:  # -
+label dhall_s1: # externs morte_s104
     nr 'Прежде чем Морт успевает закончить, взгляд серых глаз писаря падает на тебя.'
     dhall_unknown '«Бремя прожитых лет лежит на мне тяжелым грузом, Неугомонный».'
     nr 'Он откладывает перо.'
@@ -53,13 +53,13 @@ label dhall_s1:  # -
 
     menu:
         '«Неугомонный? Ты меня знаешь?»':
-            # r0 # reply827
+            # a0 # r827
             $ dhallLogic.r827_action()
             jump dhall_s44
 
 
 # s2 # say829
-label dhall_s2:  # from 21.0
+label dhall_s2: # from 21.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Тебе знакома женщина, чьи останки погребены внизу, в мемориальном зале? Я думаю, что в прошлом она путешествовала вместе с тобой…»'
@@ -68,40 +68,40 @@ label dhall_s2:  # from 21.0
 
     menu:
         '«Где ее тело?»' if dhallLogic.r5070_condition():
-            # r1 # reply5070
+            # a1 # r5070
             jump dhall_s42
 
         '«Я ничего о ней не знаю».' if dhallLogic.r5071_condition():
-            # r2 # reply5071
+            # a2 # r5071
             jump dhall_s43
 
         '«Она узнала меня, но я не смог ее вспомнить».' if dhallLogic.r5072_condition():
-            # r3 # reply5072
+            # a3 # r5072
             jump dhall_s28
 
         '«Ты говорил, что здесь есть другие. Кто они?»' if dhallLogic.r5073_condition():
-            # r4 # reply5073
+            # a4 # r5073
             jump dhall_s12
 
         '«Ты говорил, что здесь есть другие. Кто они?»' if dhallLogic.r5074_condition():
-            # r5 # reply5074
+            # a5 # r5074
             jump dhall_s12
 
         '«Возможно. У меня есть другие вопросы к тебе…»':
-            # r6 # reply6063
+            # a6 # r6063
             jump dhall_s9
 
         '«Пойду вниз, в мемориальный зал. Может быть, я найду ее тело».' if dhallLogic.r6064_condition():
-            # r7 # reply6064
+            # a7 # r6064
             jump dhall_s11
 
         '«Возможно, нет. Прощай».' if dhallLogic.r13288_condition():
-            # r8 # reply13288
+            # a8 # r13288
             jump dhall_s11
 
 
 # s3 # say832
-label dhall_s3:  # from 9.0
+label dhall_s3: # from 9.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] пристально смотрит на тебя.'
@@ -109,22 +109,22 @@ label dhall_s3:  # from 9.0
 
     menu:
         '«Да. Он очень хорошо замаскировался».' if dhallLogic.r830_condition():
-            # r9 # reply830
+            # a9 # r830
             $ dhallLogic.r830_action()
             jump dhall_s4
 
         '«Да. Он очень хорошо замаскировался».' if dhallLogic.r831_condition():
-            # r10 # reply831
+            # a10 # r831
             $ dhallLogic.r831_action()
             jump dhall_s4
 
         '«Нет, пожалуй, мне просто показалось. У меня есть другие вопросы…»':
-            # r11 # reply834
+            # a11 # r834
             jump dhall_s9
 
 
 # s4 # say833
-label dhall_s4:  # from 3.0 3.1
+label dhall_s4: # from 3.0 3.1
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолла' if dhallLogic.get_know_dhall_name() else 'него'
     x '«Я…»'
@@ -133,40 +133,40 @@ label dhall_s4:  # from 3.0 3.1
 
     menu:
         '«Спасибо. У меня есть другие вопросы…»':
-            # r12 # reply836
+            # a12 # r836
             jump dhall_s9
 
         '«Отлично. Прощай».':
-            # r13 # reply837
+            # a13 # r837
             jump dhall_s11
 
 
 # s5 # say838
-label dhall_s5:  # - # IF ~  Global("Dhall","GLOBAL",0)
+label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
     nr 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
     nr 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
     nr 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
 
     menu:
         '«Приветствую».' if dhallLogic.r839_condition():
-            # r14 # reply839
+            # a14 # r839
             jump morte_s102  # EXTERN
 
         '«Приветствую».' if dhallLogic.r835_condition():
-            # r15 # reply835
+            # a15 # r835
             jump dhall_s7
 
         '«Приветствую».' if dhallLogic.r5058_condition():
-            # r16 # reply5058
+            # a16 # r5058
             jump dhall_s6
 
         'Оставить старого писаря в покое.':
-            # r17 # reply5060
+            # a17 # r5060
             jump dhall_dispose_no_talk
 
 
 # s6 # say841
-label dhall_s6:  # from 5.2
+label dhall_s6: # from 5.2
     $ x = logic_get_know_dhall_name()
     nr 'Его серые глаза сверкают, когда он отрывает свой взгляд от книги.'
     x '«Подозреваю, что это ты в ответе за нападения в Морге. Это…»'
@@ -175,25 +175,25 @@ label dhall_s6:  # from 5.2
 
     menu:
         '«Я всего лишь защищался. У меня есть несколько вопросов перед тем, как я удалюсь…»' if dhallLogic.r842_condition():
-            # r18 # reply842
+            # a18 # r842
             jump dhall_s9
 
         '«Как по мне, дарить смерть вам, трупопоклонникам, — не такое уж и не преступление. А теперь у меня есть вопросы к тебе…»' if dhallLogic.r843_condition():
-            # r19 # reply843
+            # a19 # r843
             $ dhallLogic.r843_action()
             jump dhall_s9
 
         '«Ты знаешь меня?»' if dhallLogic.r5062_condition():
-            # r20 # reply5062
+            # a20 # r5062
             jump dhall_s44
 
         '«Прощай».':
-            # r21 # reply5063
+            # a21 # r5063
             jump dhall_dispose
 
 
 # s7 # say844
-label dhall_s7:  # from 5.1
+label dhall_s7: # from 5.1
     $ x = logic_get_know_dhall_name()
     nr 'Писарь прекращает вести записи в стоящую перед ним книгу и оглядывается. Его глаза похожи на два гвоздя, забитые в его череп.'
     x '«Итак…»'
@@ -204,84 +204,84 @@ label dhall_s7:  # from 5.1
 
     menu:
         '«Неугомонный? Ты меня знаешь?»':
-            # r22 # reply845
+            # a22 # r845
             jump dhall_s44
 
 
 # s8 # say851
-label dhall_s8:  # from 22.0
+label dhall_s8: # from 22.0
     $ x = logic_get_know_dhall_name()
     x '«Ты должен понять. Твое существование для них — богохульство».'
     x '«Многие из нашей фракции распорядились бы тебя кремировать… если бы узнали о твоем несчастье».'
 
     menu:
         '«Ты — тленный, и все же не пытаешься убить меня. Почему?»':
-            # r23 # reply940
+            # a23 # r940
             jump dhall_s23
 
         '«Расскажи мне побольше о Морге».':
-            # r24 # reply911
+            # a24 # r911
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r25 # reply913
+            # a25 # r913
             jump dhall_s9
 
         '«Я выслушал достаточно. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r26 # reply6038
+            # a26 # r6038
             jump dhall_s11
 
         '«Я выслушал достаточно. Прощай.' if not dhallLogic.get_know_dhall_name():
-            # r26 # reply6038
+            # a26 # r6038
             jump dhall_s11
 
 
 # s9 # say852
-label dhall_s9:  # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
+label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
     $ x = logic_get_know_dhall_name()
     x '«Хорошо. Что ты хочешь узнать?»'
 
     menu:
         '«Ты знал, что в восточной комнате находится кто-то, замаскированный под зомби?»' if dhallLogic.r854_condition():
-            # r27 # reply854
+            # a27 # r854
             jump dhall_s3
 
         '«Что это за место?»':
-            # r28 # reply857
+            # a28 # r857
             jump dhall_s10
 
         '«Как я попал сюда?»':
-            # r29 # reply855
+            # a29 # r855
             jump dhall_s15
 
         '«Не подскажешь, как мне выбраться отсюда?»' if dhallLogic.r858_condition():
-            # r30 # reply858
+            # a30 # r858
             jump dhall_s13
 
         '«Ты знаешь, кто я?»':
-            # r31 # reply5069
+            # a31 # r5069
             $ dhallLogic.r5069_action()
             jump dhall_s21
 
         '«Чем ты здесь занимаешься?»':
-            # r32 # reply5748
+            # a32 # r5748
             jump dhall_s25
 
         '«Твой кашель ужасен. Ты хорошо себя чувствуешь?»':
-            # r33 # reply6065
+            # a33 # r6065
             jump dhall_s26
 
         '«Ничего… прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r34 # reply41663
+            # a34 # r41663
             jump dhall_s11
 
         '«Ничего… прощай».' if not dhallLogic.get_know_dhall_name():
-            # r34 # reply41663
+            # a34 # r41663
             jump dhall_s11
 
 
 # s10 # say859
-label dhall_s10:  # from 9.1
+label dhall_s10: # from 9.1
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'он'
     x '«Ты находишься в Морге, Неугомонный. Ты снова… пришел…»'
@@ -290,40 +290,40 @@ label dhall_s10:  # from 9.1
 
     menu:
         '«Расскажи мне о Морге».':
-            # r35 # reply861
+            # a35 # r861
             jump dhall_s32
 
         '«*Неугомонный*?»':
-            # r36 # reply860
+            # a36 # r860
             jump dhall_s38
 
         '«Тень этой жизни?»':
-            # r37 # reply862
+            # a37 # r862
             jump dhall_s33
 
         '«Снова?.. Я был здесь раньше?»':
-            # r38 # reply863
+            # a38 # r863
             jump dhall_s14
 
         '«Как я попал сюда?»':
-            # r39 # reply864
+            # a39 # r864
             jump dhall_s15
 
         '«У меня есть другие вопросы…»':
-            # r40 # reply865
+            # a40 # r865
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r41 # reply866
+            # a41 # r866
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r41 # reply866
+            # a41 # r866
             jump dhall_s11
 
 
 # s11 # say867
-label dhall_s11:  # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
+label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
     $ x = logic_get_know_dhall_name()
     $ y1 = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'он'
     $ y2 = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
@@ -335,12 +335,12 @@ label dhall_s11:  # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 
 
     menu:
         '«Тогда, возможно, мы еще встретимся, Дхолл».':
-            # r42 # reply41564
+            # a42 # r41564
             jump dhall_dispose
 
 
 # s12 # say868
-label dhall_s12:  # from 2.3 2.4 42.2 42.3 43.1 43.2
+label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Несомненно, они здесь, но я не знаю ни их имен, ни где они лежат. Ты прошел путь, по которому ходят многие, но немногие выживают».'
@@ -349,20 +349,20 @@ label dhall_s12:  # from 2.3 2.4 42.2 42.3 43.1 43.2
 
     menu:
         '«Где та женщина, которую ты упомянул?»' if dhallLogic.r870_condition():
-            # r43 # reply870
+            # a43 # r870
             jump dhall_s42
 
         '«Я не вижу изъяна в твоих рассуждениях. У меня еще вопросы…»':
-            # r44 # reply871
+            # a44 # r871
             jump dhall_s9
 
         '«Тогда я поищу их. Возможно, они смогут возродить мою память. Прощай».':
-            # r45 # reply872
+            # a45 # r872
             jump dhall_s11
 
 
 # s13 # say875
-label dhall_s13:  # from 9.3
+label dhall_s13: # from 9.3
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Хм-м… Главные ворота — самый очевидный выход, но они не выпустят никого, кроме тленных…»'
@@ -371,20 +371,20 @@ label dhall_s13:  # from 9.3
 
     menu:
         '«Понятно. У меня еще вопросы…»':
-            # r46 # reply876
+            # a46 # r876
             jump dhall_s9
 
         '«Тогда прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r47 # reply877
+            # a47 # r877
             jump dhall_dispose
 
         '«Тогда прощай».' if not dhallLogic.get_know_dhall_name():
-            # r47 # reply877
+            # a47 # r877
             jump dhall_dispose
 
 
 # s14 # say878
-label dhall_s14:  # from 10.3
+label dhall_s14: # from 10.3
     $ x = logic_get_know_dhall_name()
     x '«Да, *снова*. Ты попадал сюда много раз, Неугомонный. Я надеялся, что этот раз будет последним, учитывая полученные тобой раны».'
     nr 'Он вздыхает.'
@@ -392,32 +392,32 @@ label dhall_s14:  # from 10.3
 
     menu:
         '«*Неугомонный*?»':
-            # r48 # reply880
+            # a48 # r880
             jump dhall_s38
 
         '«Ранен?»':
-            # r49 # reply881
+            # a49 # r881
             jump dhall_s34
 
         '«Тень жизни?»':
-            # r50 # reply883
+            # a50 # r883
             jump dhall_s33
 
         '«Расскажи мне побольше о Морге».':
-            # r51 # reply879
+            # a51 # r879
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r52 # reply5751
+            # a52 # r5751
             jump dhall_s9
 
         '«Прощай, Дхолл».':
-            # r53 # reply5752
+            # a53 # r5752
             jump dhall_s11
 
 
 # s15 # say885
-label dhall_s15:  # from 9.2 10.4 32.5
+label dhall_s15: # from 9.2 10.4 32.5
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] презрительно фыркает, как будто его воротит от воспоминания об этом.'
@@ -425,29 +425,29 @@ label dhall_s15:  # from 9.2 10.4 32.5
 
     menu:
         '«Я приехал сюда на повозке?»':
-            # r54 # reply886
+            # a54 # r886
             $ dhallLogic.r886_action()
             jump dhall_s16
 
         '«Расскажи мне побольше о Морге».':
-            # r55 # reply887
+            # a55 # r887
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r56 # reply888
+            # a56 # r888
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r57 # reply889
+            # a57 # r889
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r57 # reply889
+            # a57 # r889
             jump dhall_s11
 
 
 # s16 # say890
-label dhall_s16:  # from 15.0
+label dhall_s16: # from 15.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Да… твое тело лежало где-то посреди горы трупов».'
@@ -456,28 +456,28 @@ label dhall_s16:  # from 15.0
 
     menu:
         '«Кто этот Фарод?»' if dhallLogic.r891_condition():
-            # r58 # reply891
+            # a58 # r891
             jump dhall_s17
 
         '«Похоже, тебе не очень-то нравится Фарод».' if dhallLogic.r892_condition():
-            # r59 # reply892
+            # a59 # r892
             jump dhall_s35
 
         '«Расскажи мне побольше о Морге».':
-            # r60 # reply893
+            # a60 # r893
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r61 # reply894
+            # a61 # r894
             jump dhall_s9
 
         '«Прощай, Дхолл».':
-            # r62 # reply5753
+            # a62 # r5753
             jump dhall_s11
 
 
 # s17 # say895
-label dhall_s17:  # from 16.0
+label dhall_s17: # from 16.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Он… сборщик мертвых».'
@@ -486,59 +486,59 @@ label dhall_s17:  # from 16.0
 
     menu:
         '«Где я могу найти этого Фарода?»':
-            # r63 # reply897
+            # a63 # r897
             jump dhall_s18
 
         '«Похоже, тебе не очень-то нравится Фарод».' if dhallLogic.r898_condition():
-            # r64 # reply898
+            # a64 # r898
             jump dhall_s35
 
         '«Расскажи мне побольше о Морге».':
-            # r65 # reply899
+            # a65 # r899
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r66 # reply5754
+            # a66 # r5754
             jump dhall_s9
 
         '«Тогда пойду и разыщу этого Фарода. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r67 # reply6031
+            # a67 # r6031
             jump dhall_s19
 
         '«Тогда пойду и разыщу этого Фарода. Прощай, Дхолл».' if not dhallLogic.get_know_dhall_name():
-            # r67 # reply6031
+            # a67 # r6031
             jump dhall_s19
 
 
 # s18 # say900
-label dhall_s18:  # from 17.0 29.1 31.0 35.1 36.1
+label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
     $ x = logic_get_know_dhall_name()
     x '«Если все пойдет своим чередом, Неугомонный, то скорее Фарод найдет тебя и притащит нам сюда, чем ты найдешь ту лужу грязи, в которой он барахтается».'
 
     menu:
         '«Тем не менее, я должен его найти».':
-            # r68 # reply902
+            # a68 # r902
             jump dhall_s19
 
         '«Расскажи мне побольше о Морге».':
-            # r69 # reply903
+            # a69 # r903
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r70 # reply904
+            # a70 # r904
             jump dhall_s9
 
         '«У меня такое чувство, что наши пути еще пересекутся. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r71 # reply5755
+            # a71 # r5755
             jump dhall_s19
 
         '«У меня такое чувство, что наши пути еще пересекутся. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r71 # reply5755
+            # a71 # r5755
             jump dhall_s19
 
 
 # s19 # say901
-label dhall_s19:  # from 17.4 18.0 18.3 29.3 31.2
+label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
     $ x = logic_get_know_dhall_name()
     $ y = 'Голос Дхолла' if dhallLogic.get_know_dhall_name() else 'Его голос'
     nr '[y] начинает звучать предостерегающе.'
@@ -547,25 +547,25 @@ label dhall_s19:  # from 17.4 18.0 18.3 29.3 31.2
 
     menu:
         '«Мне *нужно* найти его. Ты не знаешь, где он может быть?»':
-            # r72 # reply906
+            # a72 # r906
             $ dhallLogic.r906_action()
             jump dhall_s20
 
         '«Расскажи мне побольше о Морге».':
-            # r73 # reply905
+            # a73 # r905
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r74 # reply907
+            # a74 # r907
             jump dhall_s9
 
         '«Я не могу больше с тобой говорить. Прощай, Дхолл».':
-            # r75 # reply5756
+            # a75 # r5756
             jump dhall_s11
 
 
 # s20 # say908
-label dhall_s20:  # from 19.0
+label dhall_s20: # from 19.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] умолкает на минуту. Когда же он начинает говорить, то становится ясно, что он делает это с явной неохотой.'
@@ -574,24 +574,24 @@ label dhall_s20:  # from 19.0
 
     menu:
         '«Похоже, тебе не очень-то нравится Фарод».' if dhallLogic.r910_condition():
-            # r76 # reply910
+            # a76 # r910
             jump dhall_s35
 
         '«Расскажи мне побольше о Морге».':
-            # r77 # reply909
+            # a77 # r909
             jump dhall_s32
 
         '«Спасибо. У меня есть другие вопросы…»':
-            # r78 # reply5757
+            # a78 # r5757
             jump dhall_s9
 
         '«Тогда я пойду и поспрашиваю тамошних жителей. Прощай».':
-            # r79 # reply6030
+            # a79 # r6030
             jump dhall_s11
 
 
 # s21 # say914
-label dhall_s21:  # from 9.4
+label dhall_s21: # from 9.4
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«О тебе, Неугомонный, я знаю совсем немного. О твоих спутниках, лежащих теперь под нашим присмотром, я знаю ненамного больше».'
@@ -600,25 +600,25 @@ label dhall_s21:  # from 9.4
 
     menu:
         '«Меня кто-то сопровождал в пути? Они здесь?»':
-            # r80 # reply921
+            # a80 # r921
             $ dhallLogic.r921_action()
             jump dhall_s2
 
         '«У меня есть другие вопросы…»':
-            # r81 # reply922
+            # a81 # r922
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r82 # reply923
+            # a82 # r923
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r82 # reply923
+            # a82 # r923
             jump dhall_s11
 
 
 # s22 # say915
-label dhall_s22:  # from 47.0
+label dhall_s22: # from 47.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] вздыхает.'
@@ -627,28 +627,28 @@ label dhall_s22:  # from 47.0
 
     menu:
         '«Неприемлемо? Похоже, мое положение оставляет желать лучшего».':
-            # r83 # reply917
+            # a83 # r917
             jump dhall_s8
 
         '«Ясно. Расскажи мне побольше о Морге».':
-            # r84 # reply918
+            # a84 # r918
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r85 # reply919
+            # a85 # r919
             jump dhall_s9
 
         '«Думаю, я услышал достаточно. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r86 # reply920
+            # a86 # r920
             jump dhall_s11
 
         '«Думаю, я услышал достаточно. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r86 # reply920
+            # a86 # r920
             jump dhall_s11
 
 
 # s23 # say924
-label dhall_s23:  # from 8.0
+label dhall_s23: # from 8.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Потому что заставлять тебя принимать нашу веру несправедливо. Ты должен оставить тень этой жизни по своей воле, а не по нашей».'
@@ -657,28 +657,28 @@ label dhall_s23:  # from 8.0
 
     menu:
         '«Каковы твои обязанности?»':
-            # r87 # reply927
+            # a87 # r927
             jump dhall_s25
 
         '«Расскажи мне побольше о Морге».':
-            # r88 # reply928
+            # a88 # r928
             jump dhall_s32
 
         '«Хорошо. У меня есть другие вопросы…»':
-            # r89 # reply925
+            # a89 # r925
             jump dhall_s9
 
         '«Я выслушал достаточно. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r90 # reply6039
+            # a90 # r6039
             jump dhall_s11
 
         '«Я выслушал достаточно. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r90 # reply6039
+            # a90 # r6039
             jump dhall_s11
 
 
 # s24 # say929
-label dhall_s24:  # from 25.0
+label dhall_s24: # from 25.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Я — единственный, кто регистрирует тела, поступающие в наши залы, Неугомонный».'
@@ -687,24 +687,24 @@ label dhall_s24:  # from 25.0
 
     menu:
         '«Расскажи мне побольше о Морге».':
-            # r91 # reply1305
+            # a91 # r1305
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r92 # reply6041
+            # a92 # r6041
             jump dhall_s9
 
         '«Кажется, я обязан тебе. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r93 # reply6042
+            # a93 # r6042
             jump dhall_s11
 
         '«Кажется, я обязан тебе. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r93 # reply6042
+            # a93 # r6042
             jump dhall_s11
 
 
 # s25 # say930
-label dhall_s25:  # from 9.5 23.0
+label dhall_s25: # from 9.5 23.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Я — писарь. Я веду учет всех тел, которые поступают в Морг».'
@@ -713,29 +713,29 @@ label dhall_s25:  # from 9.5 23.0
 
     menu:
         '«Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?»' if dhallLogic.r931_condition():
-            # r94 # reply931
+            # a94 # r931
             $ dhallLogic.r931_action()
             jump dhall_s24
 
         '«Расскажи мне побольше о Морге».':
-            # r95 # reply932
+            # a95 # r932
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r96 # reply933
+            # a96 # r933
             jump dhall_s9
 
         '«Отлично. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r97 # reply6040
+            # a97 # r6040
             jump dhall_s11
 
         '«Отлично. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r97 # reply6040
+            # a97 # r6040
             jump dhall_s11
 
 
 # s26 # say934
-label dhall_s26:  # from 9.6
+label dhall_s26: # from 9.6
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Я уже близок к Истинной Смерти, Неугомонный. Уже скоро я пересеку Границу Вечности и обрету покой, который давно искал. Я устал от этой смертной сферы…»'
@@ -744,47 +744,47 @@ label dhall_s26:  # from 9.6
 
     menu:
         '«Границу Вечности?»':
-            # r98 # reply935
+            # a98 # r935
             jump dhall_s41
 
         '«Ты уверен? Должен же быть способ помочь тебе».':
-            # r99 # reply936
+            # a99 # r936
             $ dhallLogic.r936_action()
             jump dhall_s27
 
         '«У меня есть другие вопросы…»':
-            # r100 # reply937
+            # a100 # r937
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r101 # reply960
+            # a101 # r960
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r101 # reply960
+            # a101 # r960
             jump dhall_s11
 
 # s27 # say938
-label dhall_s27:  # from 26.1
+label dhall_s27: # from 26.1
     $ x = logic_get_know_dhall_name()
     x '«Я не желаю жить вечно или возрождаться, Неугомонный. Я не смогу этого вынести».'
 
     menu:
         '«Хорошо. У меня есть другие вопросы…»':
-            # r102 # reply1303
+            # a102 # r1303
             jump dhall_s9
 
         '«Пусть будет так. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r103 # reply1304
+            # a103 # r1304
             jump dhall_s11
 
         '«Пусть будет так. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r103 # reply1304
+            # a103 # r1304
             jump dhall_s11
 
 
 # s28 # say939
-label dhall_s28:  # from 2.2 42.1
+label dhall_s28: # from 2.2 42.1
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Она *разговаривала* с тобой?»'
@@ -793,28 +793,28 @@ label dhall_s28:  # from 2.2 42.1
 
     menu:
         '«Она разговаривала со мной, Дхолл. Ее душа находится здесь».' if dhallLogic.get_know_dhall_name():
-            # r104 # reply981
+            # a104 # r981
             jump dhall_s30
 
         '«Она разговаривала со мной. Ее душа находится здесь».' if not dhallLogic.get_know_dhall_name():
-            # r104 # reply981
+            # a104 # r981
             jump dhall_s30
 
         '«Возможно, я это выдумал. У меня есть другие вопросы…»':
-            # r105 # reply982
+            # a105 # r982
             jump dhall_s9
 
         '«Не уверен, что она достигла Истинной Смерти. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r106 # reply873
+            # a106 # r873
             jump dhall_s11
 
         '«Не уверен, что она достигла Истинной Смерти. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r106 # reply873
+            # a106 # r873
             jump dhall_s11
 
 
 # s29 # say941
-label dhall_s29:  # from 36.0
+label dhall_s29: # from 36.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] умолкает в раздумье.'
@@ -824,36 +824,36 @@ label dhall_s29:  # from 36.0
 
     menu:
         '«Я потерял дневник».' if dhallLogic.r942_condition():
-            # r107 # reply942
+            # a107 # r942
             jump dhall_s31
 
         '«Хм-м. Ты не знаешь, где мне найти Фарода?»' if dhallLogic.r943_condition():
-            # r108 # reply943
+            # a108 # r943
             jump dhall_s18
 
         '«У меня есть другие вопросы…»':
-            # r109 # reply944
+            # a109 # r944
             jump dhall_s9
 
         '«Возможно, мне стоит поговорить с Фародом. Прощай, Дхолл».' if dhallLogic.r6026_condition() and dhallLogic.get_know_dhall_name():
-            # r110 # reply6026
+            # a110 # r6026
             jump dhall_s19
 
         '«Возможно, мне стоит поговорить с Фародом. Прощай».' if dhallLogic.r6026_condition() and not dhallLogic.get_know_dhall_name():
-            # r110 # reply6026
+            # a110 # r6026
             jump dhall_s19
 
         '«Понятно. Прощай, Дхолл».' if dhallLogic.r874_condition() and dhallLogic.get_know_dhall_name():
-            # r111 # reply874
+            # a111 # r874
             jump dhall_s11
 
         '«Понятно. Прощай».' if dhallLogic.r874_condition() and not dhallLogic.get_know_dhall_name():
-            # r111 # reply874
+            # a111 # r874
             jump dhall_s11
 
 
 # s30 # say945
-label dhall_s30:  # from 28.0
+label dhall_s30: # from 28.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] описывает пальцем полукруг в воздухе перед собой.'
@@ -861,51 +861,51 @@ label dhall_s30:  # from 28.0
 
     menu:
         '«Возможно, мне показалось. У меня еще вопросы».':
-            # r112 # reply946
+            # a112 # r946
             jump dhall_s9
 
         '«Возможно, мы поговорим об этом позже. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r113 # reply947
+            # a113 # r947
             jump dhall_s11
 
         '«Возможно, мы поговорим об этом позже. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r113 # reply947
+            # a113 # r947
             jump dhall_s11
 
 
 # s31 # say850
-label dhall_s31:  # from 29.0
+label dhall_s31: # from 29.0
     $ x = logic_get_know_dhall_name()
     x '«Дневник? Если он представляет хоть какую-то ценность, то он наверняка в руках Фарода».'
 
     menu:
         '«Где мне найти этого Фарода?»' if dhallLogic.r948_condition():
-            # r114 # reply948
+            # a114 # r948
             jump dhall_s18
 
         '«Понятно. У меня еще вопросы…»':
-            # r115 # reply949
+            # a115 # r949
             jump dhall_s9
 
         '«В таком случае, я должен разыскать его. Прощай, Дхолл».' if dhallLogic.r6027_condition() and dhallLogic.get_know_dhall_name():
-            # r116 # reply6027
+            # a116 # r6027
             jump dhall_s19
 
         '«В таком случае, я должен разыскать его. Прощай».' if dhallLogic.r6027_condition() and not dhallLogic.get_know_dhall_name():
-            # r116 # reply6027
+            # a116 # r6027
             jump dhall_s19
 
         '«Понятно. Прощай, Дхолл».' if dhallLogic.r6066_condition() and dhallLogic.get_know_dhall_name():
-            # r117 # reply6066
+            # a117 # r6066
             jump dhall_s11
 
         '«Понятно. Прощай».' if dhallLogic.r6066_condition() and not dhallLogic.get_know_dhall_name():
-            # r117 # reply6066
+            # a117 # r6066
             jump dhall_s11
 
 
 # s32 # say950
-label dhall_s32:  # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
+label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Это место, куда мертвых доставляют для погребения или кремации. Забота об умерших, покинувших эту тень жизни и ступивших на путь Истинной Смерти, входит в обязанности тленных».'
@@ -914,78 +914,78 @@ label dhall_s32:  # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 2
 
     menu:
         '«Тень жизни?»':
-            # r118 # reply951
+            # a118 # r951
             jump dhall_s33
 
         '«Истинной Смерти?»':
-            # r119 # reply953
+            # a119 # r953
             $ dhallLogic.r953_action()
             jump dhall_s48
 
         '«Тленных?»':
-            # r120 # reply954
+            # a120 # r954
             jump dhall_s47
 
         '«Сигил?»':
-            # r121 # reply955
+            # a121 # r955
             jump dhall_s37
 
         '«Ранен?»':
-            # r122 # reply956
+            # a122 # r956
             jump dhall_s34
 
         '«Как я попал сюда?»':
-            # r123 # reply846
+            # a123 # r846
             jump dhall_s15
 
         '«У меня есть другие вопросы…»':
-            # r124 # reply5735
+            # a124 # r5735
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r125 # reply6062
+            # a125 # r6062
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r125 # reply6062
+            # a125 # r6062
             jump dhall_s11
 
 
 # s33 # say957
-label dhall_s33:  # from 10.2 14.2 32.0 41.0 47.2 49.0
+label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
     $ x = logic_get_know_dhall_name()
     x '«Да, тень. Видишь ли, Неугомонный, эта жизнь… она не настоящая. Наши с тобой жизни — всего лишь тени, жалкое подобие от того, что было однажды жизнью».'
     x '«Эта «жизнь» — то, куда мы попадаем *после* того, как умираем. А здесь мы… в западне. В клетке. До тех пор, пока не достигнем Истинной Смерти».'
 
     menu:
         '«Истинной Смерти?»':
-            # r126 # reply958
+            # a126 # r958
             $ dhallLogic.r958_action()
             jump dhall_s48
 
         '«Почему ты решил, что эта жизнь ненастоящая?»':
-            # r127 # reply959
+            # a127 # r959
             jump dhall_s50
 
         '«Расскажи мне еще о Морге».':
-            # r128 # reply5736
+            # a128 # r5736
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r129 # reply5737
+            # a129 # r5737
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r130 # reply5738
+            # a130 # r5738
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r130 # reply5738
+            # a130 # r5738
             jump dhall_s11
 
 
 # s34 # say961
-label dhall_s34:  # from 14.1 32.4
+label dhall_s34: # from 14.1 32.4
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Да, раны, украшающие твое тело… Получи их более слабый человек, он бы уже был на пути к Истинной Смерти, а у тебя некоторые из них уже зажили».'
@@ -994,29 +994,29 @@ label dhall_s34:  # from 14.1 32.4
 
     menu:
         '«Всего лишь поверхностные раны? Что ты имеешь в виду?»':
-            # r131 # reply1301
+            # a131 # r1301
             $ dhallLogic.r1301_action()
             jump dhall_s53
 
         '«Расскажи мне побольше о Морге».':
-            # r132 # reply1302
+            # a132 # r1302
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r133 # reply5746
+            # a133 # r5746
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r134 # reply5747
+            # a134 # r5747
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r134 # reply5747
+            # a134 # r5747
             jump dhall_s11
 
 
 # s35 # say962
-label dhall_s35:  # from 16.1 17.1 20.0
+label dhall_s35: # from 16.1 17.1 20.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Есть люди, которых я уважаю, Неугомонный».'
@@ -1025,28 +1025,28 @@ label dhall_s35:  # from 16.1 17.1 20.0
 
     menu:
         '«Рыцарь легкой наживы?»':
-            # r135 # reply963
+            # a135 # r963
             jump dhall_s36
 
         '«Ты не знаешь, где я могу найти Фарода?»' if dhallLogic.r964_condition():
-            # r136 # reply964
+            # a136 # r964
             jump dhall_s18
 
         '«Понятно. У меня еще вопросы…»':
-            # r137 # reply965
+            # a137 # r965
             jump dhall_s9
 
         '«Звучит ободряюще. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r138 # reply6028
+            # a138 # r6028
             jump dhall_s11
 
         '«Звучит ободряюще. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r138 # reply6028
+            # a138 # r6028
             jump dhall_s11
 
 
 # s36 # say966
-label dhall_s36:  # from 35.0
+label dhall_s36: # from 35.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Рыцарь легкой наживы —»'
@@ -1056,51 +1056,51 @@ label dhall_s36:  # from 35.0
 
     menu:
         '«Мог ли Фарод взять что-нибудь у *меня*?»':
-            # r139 # reply967
+            # a139 # r967
             jump dhall_s29
 
         '«Ты не знаешь, где я могу найти Фарода?»' if dhallLogic.r968_condition():
-            # r140 # reply968
+            # a140 # r968
             jump dhall_s18
 
         '«Понятно. У меня еще вопросы…»':
-            # r141 # reply969
+            # a141 # r969
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r142 # reply6029
+            # a142 # r6029
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r142 # reply6029
+            # a142 # r6029
             jump dhall_s11
 
 
 # s37 # say970
-label dhall_s37:  # from 32.3
+label dhall_s37: # from 32.3
     $ x = logic_get_know_dhall_name()
     x '«Сигил — это наш прекрасный город, Неугомонный».'
 
     menu:
         '«Расскажи мне еще о Морге».':
-            # r143 # reply971
+            # a143 # r971
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r144 # reply972
+            # a144 # r972
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r145 # reply5758
+            # a145 # r5758
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r145 # reply5758
+            # a145 # r5758
             jump dhall_s11
 
 
 # s38 # say973
-label dhall_s38:  # from 10.1 14.0
+label dhall_s38: # from 10.1 14.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Неугомонный — имя не хуже других…»'
@@ -1109,25 +1109,25 @@ label dhall_s38:  # from 10.1 14.0
 
     menu:
         '«Истинной Смерти?»':
-            # r146 # reply974
+            # a146 # r974
             $ dhallLogic.r974_action()
             jump dhall_s48
 
         '«Расскажи мне еще о Морге».':
-            # r147 # reply975
+            # a147 # r975
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r148 # reply5749
+            # a148 # r5749
             jump dhall_s9
 
         '«Прощай, Дхолл».':
-            # r149 # reply5750
+            # a149 # r5750
             jump dhall_s11
 
 
 # s39 # say884
-label dhall_s39:  # -
+label dhall_s39: # -
     $ x = logic_get_know_dhall_name()
     x '«Ты будешь делать то же, что и раньше, Неугомонный. Разыщешь того любителя звенелок, того плешивого идиота, Червеволосого, и вернешь свое имущество».'
     x '«После продолжишь свои бессмысленные поиски, пытаясь выполнить бессмысленные задания, собирая бессмысленные предметы. Затем ты падешь и вернешься назад к нам».'
@@ -1135,20 +1135,20 @@ label dhall_s39:  # -
 
     menu:
         '«У меня есть другие вопросы…»':
-            # r150 # reply976
+            # a150 # r976
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r151 # reply977
+            # a151 # r977
             jump dhall_dispose
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r151 # reply977
+            # a151 # r977
             jump dhall_dispose
 
 
 # s40 # say978
-label dhall_s40:  # - # IF ~  Global("Dhall","GLOBAL",1)
+label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] мельком смотрит на тебя.'
@@ -1158,111 +1158,111 @@ label dhall_s40:  # - # IF ~  Global("Dhall","GLOBAL",1)
 
     menu:
         '«У меня к тебе другие вопросы, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r152 # reply979
+            # a152 # r979
             jump dhall_s9
 
         '«У меня к тебе другие вопросы».' if not dhallLogic.get_know_dhall_name():
-            # r152 # reply979
+            # a152 # r979
             jump dhall_s9
 
         '«Неважно. Прощай».':
-            # r153 # reply980
+            # a153 # r980
             jump dhall_dispose
 
 
 # s41 # say983
-label dhall_s41:  # from 26.0 52.0
+label dhall_s41: # from 26.0 52.0
     $ x = logic_get_know_dhall_name()
     x '«Границу между владениями тени этой жизни и Истинной Смерти».'
 
     menu:
         '«Тень этой жизни?»':
-            # r154 # reply984
+            # a154 # r984
             jump dhall_s33
 
         '«Истинной Смерти?»':
-            # r155 # reply985
+            # a155 # r985
             $ dhallLogic.r985_action()
             jump dhall_s48
 
         '«Расскажи мне побольше о Морге».':
-            # r156 # reply5739
+            # a156 # r5739
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r157 # reply5740
+            # a157 # r5740
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r158 # reply5741
+            # a158 # r5741
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r158 # reply5741
+            # a158 # r5741
             jump dhall_s11
 
 
 # s42 # say5075
-label dhall_s42:  # from 2.0 12.0 43.0
+label dhall_s42: # from 2.0 12.0 43.0
     $ x = logic_get_know_dhall_name()
     x '«В северо-западном мемориальном зале, этажом ниже. Проверь гробы… ее имя должно быть на одной из мемориальных табличек».'
     x '«Возможно, это оживит твои воспоминания».'
 
     menu:
         '«Я не знаю. Не припомню, чтобы даже путешествовал вместе с женщиной».' if dhallLogic.r5076_condition():
-            # r159 # reply5076
+            # a159 # r5076
             jump dhall_s43
 
         '«Да, она утверждает, что знает меня, но я не могу ее вспомнить».' if dhallLogic.r5077_condition():
-            # r160 # reply5077
+            # a160 # r5077
             jump dhall_s28
 
         '«Ты говорил, что здесь есть другие. Кто они?»' if dhallLogic.r5078_condition():
-            # r161 # reply5078
+            # a161 # r5078
             jump dhall_s12
 
         '«Ты говорил, что здесь есть другие. Кто они?»' if dhallLogic.r5079_condition():
-            # r162 # reply5079
+            # a162 # r5079
             jump dhall_s12
 
         '«Возможно, мне стоит найти ее. Перед уходом у меня есть к тебе другие вопросы…»':
-            # r163 # reply6067
+            # a163 # r6067
             jump dhall_s9
 
         '«Пойду вниз, в мемориальный зал. Может быть, я найду ее тело».':
-            # r164 # reply6068
+            # a164 # r6068
             jump dhall_s11
 
 
 # s43 # say5080
-label dhall_s43:  # from 2.1 42.0
+label dhall_s43: # from 2.1 42.0
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] не отвечает. Он просто молчаливо смотрит на тебя.'
 
     menu:
         '«Где я могу найти ее?»' if dhallLogic.r5081_condition():
-            # r165 # reply5081
+            # a165 # r5081
             jump dhall_s42
 
         '«Ты говорил, что здесь похоронены и другие мои спутники. Где они?»' if dhallLogic.r5082_condition():
-            # r166 # reply5082
+            # a166 # r5082
             jump dhall_s12
 
         '«Ты говорил, что здесь похоронены и другие мои спутники. Где они?»' if dhallLogic.r5083_condition():
-            # r167 # reply5083
+            # a167 # r5083
             jump dhall_s12
 
         '«У меня есть другие вопросы к тебе…»':
-            # r168 # reply6069
+            # a168 # r6069
             jump dhall_s9
 
         '«Тогда прощай».':
-            # r169 # reply6070
+            # a169 # r6070
             jump dhall_s11
 
 
 # s44 # say840
-label dhall_s44:  # from 1.0 6.2 7.0
+label dhall_s44: # from 1.0 6.2 7.0
     dhall_unknown '«Знаю ли я тебя? Я…»'
     nr 'В голосе писца звучит горечь.'
     dhall_unknown '«Я *никогда* не знал тебя, Неугомонный. Не больше, чем ты знал о себе сам».'
@@ -1271,13 +1271,13 @@ label dhall_s44:  # from 1.0 6.2 7.0
 
     menu:
         '«*Кто* ты?»':
-            # r170 # reply1327
+            # a170 # r1327
             $ dhallLogic.r1327_action()
             jump dhall_s45
 
 
 # s45 # say5728
-label dhall_s45:  # from 44.0
+label dhall_s45: # from 44.0
     dhall_unknown '«Как всегда, вопрос. И как всегда, неправильный».'
     nr 'Он делает легкий поклон, но движение вызывает у него неожиданный приступ кашля.'
     dhall_unknown '«Я…»'
@@ -1287,18 +1287,18 @@ label dhall_s45:  # from 44.0
 
     menu:
         '«Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…»':
-            # r171 # reply5731
+            # a171 # r5731
             $ dhallLogic.r5731_action()
             jump dhall_s9
 
         '«У меня нет времени на это. Прощай».':
-            # r172 # reply5732
+            # a172 # r5732
             $ dhallLogic.r5732_action()
             jump dhall_s46
 
 
 # s46 # say5730
-label dhall_s46:  # from 45.1
+label dhall_s46: # from 45.1
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Хорошо, Неугомонный».'
@@ -1309,45 +1309,45 @@ label dhall_s46:  # from 45.1
 
     menu:
         '«Я еще вернусь. Прощай».':
-            # r173 # reply40005
+            # a173 # r40005
             jump dhall_dispose
 
 
 # s47 # say847
-label dhall_s47:  # from 32.2
+label dhall_s47: # from 32.2
     $ x = logic_get_know_dhall_name()
     x '«Мы — тленные, фракция, собравшая всех тех, кто понял иллюзорность этой жизни».'
     x '«Мы ждем следующей жизни и помогаем другим в их путешествии».'
 
     menu:
         '«Может, ты мне объяснишь, почему тленные хотят моей смерти?»' if dhallLogic.r6032_condition():
-            # r174 # reply6032
+            # a174 # r6032
             jump dhall_s22
 
         '«Истинной Смерти?»':
-            # r175 # reply6033
+            # a175 # r6033
             $ dhallLogic.r6033_action()
             jump dhall_s48
 
         '«Иллюзорность этой жизни?»':
-            # r176 # reply6034
+            # a176 # r6034
             jump dhall_s33
 
         '«Расскажи мне побольше о Морге».':
-            # r177 # reply6035
+            # a177 # r6035
             jump dhall_s32
 
         '«У меня есть другие вопросы к тебе…»':
-            # r178 # reply6036
+            # a178 # r6036
             jump dhall_s9
 
         '«Тогда прощай».':
-            # r179 # reply6037
+            # a179 # r6037
             jump dhall_s11
 
 
 # s48 # say848
-label dhall_s48:  # from 32.1 33.0 38.0 41.1 47.1
+label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Истинная Смерть — это небытие. Состояние, свободное от мыслей, чувств, страстей».'
@@ -1356,55 +1356,55 @@ label dhall_s48:  # from 32.1 33.0 38.0 41.1 47.1
 
     menu:
         '«Похоже на забвение. И зачем кому-то это нужно?»':
-            # r180 # reply6043
+            # a180 # r6043
             jump dhall_s49
 
         '«Ого. Расскажи мне побольше о Морге».':
-            # r181 # reply6044
+            # a181 # r6044
             jump dhall_s32
 
         '«Понятно… У меня есть другие вопросы».':
-            # r182 # reply6045
+            # a182 # r6045
             jump dhall_s9
 
         '«Я должен идти. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r183 # reply6046
+            # a183 # r6046
             jump dhall_s11
 
         '«Я должен идти. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r183 # reply6046
+            # a183 # r6046
             jump dhall_s11
 
 
 # s49 # say849
-label dhall_s49:  # from 48.0
+label dhall_s49: # from 48.0
     $ x = logic_get_know_dhall_name()
     x '«По-твоему, лучше оставаться в тени того, что раньше называлось жизнью? Я так не думаю».'
 
     menu:
         '«Тень жизни?»':
-            # r184 # reply6047
+            # a184 # r6047
             jump dhall_s33
 
         '«Расскажи мне побольше о Морге».':
-            # r185 # reply6048
+            # a185 # r6048
             jump dhall_s32
 
         '«Понятно… У меня есть другие вопросы».':
-            # r186 # reply6049
+            # a186 # r6049
             jump dhall_s9
 
         '«Я должен идти. Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r187 # reply6050
+            # a187 # r6050
             jump dhall_s11
 
         '«Я должен идти. Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r187 # reply6050
+            # a187 # r6050
             jump dhall_s11
 
 
 # s50 # say853
-label dhall_s50:  # from 33.1
+label dhall_s50: # from 33.1
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«А что заставляет тебя думать, что эта жизнь *настоящая*? Прислушайся к себе. Разве ты не чувствуешь какую-то опустошенность?»'
@@ -1413,22 +1413,22 @@ label dhall_s50:  # from 33.1
 
     menu:
         '«Мне кажется, твой фатализм превзошел тебя самого. Жизнь состоит из этих элементов, но не только из них».':
-            # r188 # reply6051
+            # a188 # r6051
             $ dhallLogic.r6051_action()
             jump dhall_s51
 
         '«Заперты? Каким образом?»':
-            # r189 # reply6052
+            # a189 # r6052
             jump dhall_s51
 
         '«Довольно этой философии. Как все это относится к тому, что я оказался здесь?»':
-            # r190 # reply6053
+            # a190 # r6053
             $ dhallLogic.r6053_action()
             jump dhall_s51
 
 
 # s51 # say5733
-label dhall_s51:  # from 50.0 50.1 50.2
+label dhall_s51: # from 50.0 50.1 50.2
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     nr '[y] качает головой.'
@@ -1437,28 +1437,28 @@ label dhall_s51:  # from 50.0 50.1 50.2
 
     menu:
         '«Понимаю… Как же выбраться из этого кольца возрождений и достигнуть этой… Истинной Смерти?»':
-            # r191 # reply6054
+            # a191 # r6054
             jump dhall_s52
 
         '«Расскажи мне побольше о Морге».':
-            # r192 # reply6055
+            # a192 # r6055
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r193 # reply6056
+            # a193 # r6056
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r194 # reply6057
+            # a194 # r6057
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r194 # reply6057
+            # a194 # r6057
             jump dhall_s11
 
 
 # s52 # say5734
-label dhall_s52:  # from 51.0
+label dhall_s52: # from 51.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Убей в себе страсти. Отбрось нужду в переживаниях. Когда ты будешь действительно очищен, кольцо возрождений прервется, и ты обретешь покой».'
@@ -1467,28 +1467,28 @@ label dhall_s52:  # from 51.0
 
     menu:
         '«Границу Вечности?»':
-            # r195 # reply6058
+            # a195 # r6058
             jump dhall_s41
 
         '«Расскажи мне побольше о Морге».':
-            # r196 # reply6059
+            # a196 # r6059
             jump dhall_s32
 
         '«У меня есть другие вопросы…»':
-            # r197 # reply6060
+            # a197 # r6060
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r198 # reply6061
+            # a198 # r6061
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r198 # reply6061
+            # a198 # r6061
             jump dhall_s11
 
 
 # s53 # say5742
-label dhall_s53:  # from 34.0
+label dhall_s53: # from 34.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
     x '«Я говорю о ранах разума. Ты ведь многое забыл, не так ли? Возможно, настоящие раны гораздо глубже, чем эти шрамы, украшающие твое тело».'
@@ -1497,19 +1497,19 @@ label dhall_s53:  # from 34.0
 
     menu:
         '«Расскажи мне побольше о Морге».':
-            # r199 # reply5743
+            # a199 # r5743
             jump dhall_s32
 
         '«Понятно. У меня еще вопросы…»':
-            # r200 # reply5744
+            # a200 # r5744
             jump dhall_s9
 
         '«Прощай, Дхолл».' if dhallLogic.get_know_dhall_name():
-            # r201 # reply5745
+            # a201 # r5745
             jump dhall_s11
 
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
-            # r201 # reply5745
+            # a201 # r5745
             jump dhall_s11
 
 

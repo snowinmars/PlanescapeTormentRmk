@@ -25,91 +25,91 @@ label zf1148_dispose:
 
 
 # s0 # say35242
-label zf1148_s0:  # - # IF ~  True()
+label zf1148_s0: # - # IF ~  True()
     nr 'Кожа этого женского трупа покрыто замысловатыми узорами татуировок.'
     nr 'Кожа на лбу отвалилась, так что номер «1148» вырезан прямо на черепе. Ее рот зашит крепкими грубыми стежками.'
 
     menu:
         '«Итак… чем занимаешься вечером?»' if zf1148Logic.r35243_condition():
-            # r0 # reply35243
+            # a0 # r35243
             $ zf1148Logic.r35243_action()
             jump zf1148_s1
 
         '«Итак… чем занимаешься вечером?»' if zf1148Logic.r35260_condition():
-            # r1 # reply35260
+            # a1 # r35260
             jump zf1148_s1
 
         '«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».' if zf1148Logic.r35261_condition():
-            # r2 # reply35261
+            # a2 # r35261
             jump zf1148_s1
 
         'Использовать на трупе свою способность «История костей».' if zf1148Logic.r35262_condition():
-            # r3 # reply35262
+            # a3 # r35262
             jump zf1148_s2
 
         '«Было приятно с тобой поболтать. Прощай».' if zf1148Logic.r35267_condition():
-            # r4 # reply35267
+            # a4 # r35267
             jump morte_s362  # EXTERN
 
         'Оставить труп в покое.' if zf1148Logic.r35268_condition():
-            # r5 # reply35268
+            # a5 # r35268
             jump morte_s362  # EXTERN
 
         '«Было приятно с тобой поболтать. Прощай».' if zf1148Logic.r35269_condition():
-            # r6 # reply35269
+            # a6 # r35269
             jump zf1148_dispose
 
         'Оставить труп в покое.' if zf1148Logic.r35270_condition():
-            # r7 # reply35270
+            # a7 # r35270
             jump zf1148_dispose
 
         '«Было приятно с тобой поболтать. Прощай».' if zf1148Logic.r35271_condition():
-            # r8 # reply35271
+            # a8 # r35271
             jump zf1148_dispose
 
         'Оставить труп в покое.' if zf1148Logic.r35272_condition():
-            # r9 # reply35272
+            # a9 # r35272
             jump zf1148_dispose
 
 
 # s1 # say35244
-label zf1148_s1:  # from 0.0 0.1 0.2
+label zf1148_s1: # from 0.0 0.1 0.2
     nr 'Труп продолжает пялиться на тебя.'
 
     menu:
         '«Тогда прощай».' if zf1148Logic.r35245_condition():
-            # r10 # reply35245
+            # a10 # r35245
             jump morte_s362  # EXTERN
 
         '«Тогда прощай».' if zf1148Logic.r35258_condition():
-            # r11 # reply35258
+            # a11 # r35258
             jump zf1148_dispose
 
         '«Тогда прощай».' if zf1148Logic.r35259_condition():
-            # r12 # reply35259
+            # a12 # r35259
             jump zf1148_dispose
 
 
 # s2 # say35263
-label zf1148_s2:  # from 0.3
+label zf1148_s2: # from 0.3
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
         '«Тогда прощай».' if zf1148Logic.r35264_condition():
-            # r13 # reply35264
+            # a13 # r35264
             jump morte_s362  # EXTERN
 
         '«Тогда прощай».' if zf1148Logic.r35265_condition():
-            # r14 # reply35265
+            # a14 # r35265
             jump zf1148_dispose
 
         '«Тогда прощай».' if zf1148Logic.r35266_condition():
-            # r15 # reply35266
+            # a15 # r35266
             jump zf1148_dispose
 
 
 # s3 # say35273
-label zf1148_s3:  # - # IF ~  False()
+label zf1148_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     jump zf1148_dispose

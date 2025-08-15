@@ -14,12 +14,15 @@ from _build.renpy.generate_tests import (generate_tests)
 
 
 def foo(answer, target_npc, state_prefix):
-    if answer.target_state['id'] == 'EXIT':
+    if answer['target_state']['id'] == 'EXIT':
         return f'{target_npc}_dispose'
-    if 'other_npc' in answer.target_state:
-        return f'{answer.target_state['other_npc']}{state_prefix}{answer.target_state['id']}  # EXTERN'
+    if 'other_npc' in answer['target_state']:
+        other_npc = answer['target_state']['other_npc']
+        target_state_id = answer['target_state']['id']
+        return f'{other_npc}{state_prefix}{target_state_id}  # EXTERN'
     else:
-        return f'{target_npc}{state_prefix}{answer.target_state['id']}'
+        target_state_id = answer['target_state']['id']
+        return f'{target_npc}{state_prefix}{target_state_id}'
 
 
 class DialogueProcessor:
@@ -37,47 +40,59 @@ class DialogueProcessor:
         dialog_tree.extend([rpy_header_template.format(area=area.upper(), npc=target_npc, Npc=target_npc.capitalize(), NPC=target_npc.upper())])
 
         for state in states:
-            from_path = 'from ' + ' '.join(
-                f'{p.from_state_id}.{p.response_index}'
-                for p in state.paths
-            ) if state.paths else '-'
+            from_path = 'from'
+            if state['paths']:
+                for p in state['paths']:
+                    p_from_state_id = p['from_state_id']
+                    p_response_index = p['response_index']
+                    r = f'{p_from_state_id}.{p_response_index}'
+                    from_path += f' {r}'
+            else:
+                from_path = '-'
 
-            free_comment = f' # {state.free}' if state.free else ''
-            dialog_tree.append(
-                f'\n# s{state.state_id} # say{state.say_id}'
-                f'\nlabel {target_npc}{state_prefix}{state.state_id}:  # {from_path}{free_comment}'
-            )
+            state_free = state['free']
+            state_id = state['state_id']
+            free_comment = f' # {state_free}' if state['free'] else ''
+            state_say_id = state['say_id']
+            dialog_tree.append(f'# s{state_id} # say{state_say_id}')
+            dialog_tree.append(f'label {target_npc}{state_prefix}{state_id}: # {from_path.strip()} {free_comment.strip()}')
 
-            dialog_tree.append(f"    SPEAKER '{trim_trash(state.state_body)}'\n")
+            state_body = state['state_body']
+            dialog_tree.append(f"    SPEAKER '{trim_trash(state_body)}'\n")
 
-            if len(state.answers) == 1 and state.answers[0].answer_id == 'synthetic':
-                if 'other_npc' in state.answers[0].target_state:
-                    dialog_tree.append(f'    jump {state.answers[0].target_state['other_npc']}_s{state.answers[0].target_state['id']}  # EXTERN')
+            if len(state['answers']) == 1 and state['answers'][0]['is_synthetic']:
+                if 'other_npc' in state['answers'][0]['target_state']:
+                    other_npc = state['answers'][0]['target_state']['other_npc']
+                    target_state_id = state['answers'][0]['target_state']['id']
+                    dialog_tree.append(f'    jump {other_npc}_s{target_state_id}  # EXTERN\n')
                 else:
                     dialog_tree.append(f'    jump {target_npc}_dispose')
                 continue
 
             dialog_tree.append('    menu:')
 
-            for answer in state.answers:
+            for answer in state['answers']:
+                answer_id = answer['answer_id']
                 target_id = foo(answer, target_npc, state_prefix)
 
-                menu_option = f"        '{trim_trash(answer.answer_body)}'"
+                menu_option = f"        '{trim_trash(answer['answer_body'])}'"
 
-                if answer.condition and answer.condition.strip():
+                if answer['condition'] and answer['condition'].strip():
+                    answer_condition = answer['condition']
                     logic_conditions.append(
-                        f'    def r{answer.answer_id}_condition(self):\n        {answer.condition.strip()}\n'
+                        f'    def r{answer_id}_condition(self):\n        {answer_condition.strip()}\n'
                     )
-                    menu_option += f' if {target_npc}Logic.r{answer.answer_id}_condition()'
+                    menu_option += f' if {target_npc}Logic.r{answer_id}_condition()'
 
                 dialog_tree.append(menu_option + ':')
-                dialog_tree.append(f'            # r{global_response_counter} # reply{answer.answer_id}')
+                dialog_tree.append(f'            # a{global_response_counter} # r{answer_id}')
 
-                if answer.action and answer.action.strip():
+                if answer['action'] and answer['action'].strip():
+                    action = answer['action']
                     logic_actions.append(
-                        f'    def r{answer.answer_id}_action(self):        {answer.action.strip()}\n'
+                        f'    def r{answer_id}_action(self):        {action.strip()}\n'
                     )
-                    dialog_tree.append(f'            $ {target_npc}Logic.r{answer.answer_id}_action()')
+                    dialog_tree.append(f'            $ {target_npc}Logic.r{answer_id}_action()')
 
                 # Exit handling
                 # if answer.target_state_id == 'EXIT':
