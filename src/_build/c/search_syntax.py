@@ -1,6 +1,6 @@
 import re
 
-NUMBER_QUOTE_PATTERN = re.compile('[^\d][\d]+»\.$')
+NUMBER_QUOTE_PATTERN = re.compile(r'[^\d][\d]+»\.$')
 known_npc = [
     'the_nameless_one',
     'morte_unknown',

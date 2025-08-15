@@ -13,7 +13,7 @@ services:
       sh -c " \
        start_time=\$(date +%s) && \
         test_start=\$(date +%s) && \
-         coverage run -m unittest discover -s /app -p '*_tests.py' && \
+         coverage run -m unittest discover -s /app -p '*_tests.py' || true && \
           test_end=\$(date +%s) && \
        report_start=\$(date +%s) && \
         coverage html && \

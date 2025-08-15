@@ -22,11 +22,10 @@ class MorteLogicTest(LogicTest):
 
     @unittest.skip('Morte may be located anywhere')
     def test_morte_init(self):
-        self._init_with_location( # pragma: no cover
-            'DISABLED', # pragma: no cover
-            self.logic.morte_init, # pragma: no cover
-            self.settings_manager.get_talked_to_morte_times # pragma: no cover
-        ) # pragma: no cover
+        self._init(
+            self.logic.morte_init,
+            self.settings_manager.get_talked_to_morte_times
+        )
 
 
     def test_kill_morte(self):
@@ -37,8 +36,17 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_has_intro_key())
+        self.assertEqual(self.settings_manager.get_morte_value(), 0)
+        self.assertFalse(self.settings_manager.get_read_scars())
+        self.assertFalse(self.settings_manager.get_in_party_morte())
+
         self.logic.r17833_action()
+
+        self.assertTrue(self.settings_manager.get_has_intro_key())
+        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertTrue(self.settings_manager.get_read_scars())
+        self.assertTrue(self.settings_manager.get_in_party_morte())
 
 
     def test_r1088_action(self):
@@ -49,8 +57,13 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r1079_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertEqual(self.settings_manager.get_morte_value(), 0)
+        self.assertFalse(self.settings_manager.get_in_party_morte())
+
         self.logic.r1079_action()
+
+        self.assertEqual(self.settings_manager.get_morte_value(), 1)
+        self.assertTrue(self.settings_manager.get_in_party_morte())
 
 
     def test_r1845_action(self):
@@ -75,8 +88,13 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r2080_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_know_mimir())
+        self.assertEqual(self.settings_manager.get_morte_mimir(), 0)
+
         self.logic.r2080_action()
+
+        self.assertTrue(self.settings_manager.get_know_mimir())
+        self.assertEqual(self.settings_manager.get_morte_mimir(), 1)
 
 
     def test_r9029_action(self):
@@ -312,8 +330,21 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r4687_action(self):
-        # TODO [snowinmars]: write the test
+        who = 'protagonist'
+        prop_law = 'law'
+        prop_good = 'good'
+        delta_law = 1
+        delta_good = 1
+
+        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+
         self.logic.r4687_action()
+
+        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertEqual(good_before + delta_good, good_after)
 
 
     def test_r4693_action(self):
@@ -447,13 +478,43 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r11977_action(self):
-        # TODO [snowinmars]: write the test
+        who = 'protagonist'
+        prop_law = 'law'
+        prop_good = 'good'
+        delta_law = -1
+        delta_good = -1
+
+        self.assertFalse(self.settings_manager.get_ingress_teeth_installed())
+        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+
         self.logic.r11977_action()
+
+        self.assertTrue(self.settings_manager.get_ingress_teeth_installed())
+        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertEqual(good_before + delta_good, good_after)
 
 
     def test_r11980_action(self):
-        # TODO [snowinmars]: write the test
+        who = 'protagonist'
+        prop_law = 'law'
+        prop_good = 'good'
+        delta_law = -1
+        delta_good = -1
+
+        self.assertFalse(self.settings_manager.get_ingress_teeth_installed())
+        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+
         self.logic.r11980_action()
+
+        self.assertTrue(self.settings_manager.get_ingress_teeth_installed())
+        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        self.assertEqual(law_before + delta_law, law_after)
+        self.assertEqual(good_before + delta_good, good_after)
 
 
     def test_r11982_action(self):
@@ -472,12 +533,14 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r12554_action(self):
-        # TODO [snowinmars]: write the test
-        self.logic.r12554_action()
+        self._integer_dec_action(
+            self.settings_manager.get_morale_morte,
+            1,
+            self.logic.r12554_action
+        )
 
 
     def test_r12555_action(self):
-        # TODO [snowinmars]: write the test
         self.logic.r12555_action()
 
 
@@ -520,8 +583,13 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r13774_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_morte_sdthug_quip_1())
+        self.assertFalse(self.settings_manager.get_know_chaosmen())
+
         self.logic.r13774_action()
+
+        self.assertTrue(self.settings_manager.get_morte_sdthug_quip_1())
+        self.assertTrue(self.settings_manager.get_know_chaosmen())
 
 
     def test_r13775_action(self):
@@ -539,8 +607,13 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r13986_action(self):
-        # TODO [snowinmars]: write the test
+        self.assertFalse(self.settings_manager.get_morte_sdthug_quip_1())
+        self.assertFalse(self.settings_manager.get_know_chaosmen())
+
         self.logic.r13986_action()
+
+        self.assertTrue(self.settings_manager.get_morte_sdthug_quip_1())
+        self.assertTrue(self.settings_manager.get_know_chaosmen())
 
 
     def test_r13987_action(self):
@@ -610,8 +683,17 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r16888_action(self):
-        # TODO [snowinmars]: write the test
+        delta = 1
+
+        self.assertFalse(self.settings_manager.get_tree_d())
+        before = self.settings_manager.get_bd_dakkon_morale()
+
         self.logic.r16888_action()
+
+        after = self.settings_manager.get_bd_dakkon_morale()
+        self.assertTrue(self.settings_manager.get_morte_sdthug_quip_1())
+        self.assertTrue(self.settings_manager.get_tree_d())
+        self.assertEqual(before + delta, after)
 
 
     def test_r16889_action(self):
@@ -664,8 +746,17 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r16898_action(self):
-        # TODO [snowinmars]: write the test
+        delta = 1
+
+        self.assertFalse(self.settings_manager.get_tree_d())
+        before = self.settings_manager.get_bd_dakkon_morale()
+
         self.logic.r16898_action()
+
+        after = self.settings_manager.get_bd_dakkon_morale()
+        self.assertTrue(self.settings_manager.get_morte_sdthug_quip_1())
+        self.assertTrue(self.settings_manager.get_tree_d())
+        self.assertEqual(before + delta, after)
 
 
     def test_r16899_action(self):
