@@ -51,8 +51,8 @@ class DialogueTransformer:
 
     def _apply_transformers(self, script, target_npc):
         transformers = [
-            self._transform_alignments_once,
-            self._transform_alignments,
+            self._transform_integer_once,
+            self._transform_integer,
             self._transform_attacks,
             self._transform_conditionals,
             self._transform_cutscenes,
@@ -73,7 +73,7 @@ class DialogueTransformer:
         return script
 
 
-    def _transform_alignments_once(self, script, target_npc):
+    def _transform_integer_once(self, script, target_npc):
         def rule(match):
             global_id, prop, amount, = match.groups()
             exmanded_global_id = _expand_global_id(global_id)
@@ -86,15 +86,19 @@ class DialogueTransformer:
                 return f"self.settings_manager.character_manager.modify_property_once('protagonist', 'law', {exanded_amount}, '{global_id.lower()}')"
             elif expanded_prop == 'know_dustmen':
                 return f"self.settings_manager.inc_once_know_dustmen('{global_id.lower()}')"
+            elif expanded_prop == 'morte_mimir':
+                return f"self.settings_manager.inc_once_morte_mimir('{global_id.lower()}')"
 
             raise Exception(f'Unknown match {INCREMENT_REGEX_ONCE}\n  {match.groups()}')
 
         return INCREMENT_REGEX_ONCE.sub(rule, script)
 
 
-    def _transform_alignments(self, script, target_npc):
+    def _transform_integer(self, script, target_npc):
         def rule(match):
             prop, env, amount, = match.groups()
+            if prop == 'Grace_Talked_Morte':
+                print(prop in self._replacements)
             expanded_prop = _expand_prop(prop)
             exanded_amount = _expand_amount(amount)
 
@@ -318,6 +322,8 @@ def _expand_prop(prop):
             return 'know_dustmen'
         case 'maxhitpoints':
             return 'max_health'
+        case 'globalmorte_mimir':
+            return 'morte_mimir'
 
     raise Exception(f'Cannot match prop {prop}')
 

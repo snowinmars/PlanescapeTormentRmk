@@ -4,7 +4,6 @@ class MorteLogic:
 
 
     def morte_init(self):
-        self.settings_manager.location_manager.set_location('DISABLED') # pragma: no cover
         self.settings_manager.inc_talked_to_morte_times() # pragma: no cover
 
 

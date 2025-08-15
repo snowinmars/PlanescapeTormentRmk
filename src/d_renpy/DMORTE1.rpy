@@ -9,396 +9,363 @@ init 10 python:
 
 
 # s0 # say39792
-label morte1_s0:  # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
+label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
     SPEAKER '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба». [MRT001]'
 
     menu:
         '«Чт?.. Ты кто?»':
-            # r0 # reply39793
+            # a0 # r39793
             $ morte1Logic.r39793_action()
             jump morte1_s1
 
-
 # s1 # say39795
-label morte1_s1:  # from 0.0
+label morte1_s1: # from 0.0
     SPEAKER '«Э… кто я? А как насчет *тебя* для начала? Кто ты?»'
 
     menu:
         '«Я… не знаю. Не могу вспомнить».':
-            # r1 # reply39796
+            # a1 # r39796
             jump morte1_s2
 
         '«Я *первый* спросил тебя, череп».':
-            # r2 # reply39797
+            # a2 # r39797
             jump morte1_s3
 
-
 # s2 # say39798
-label morte1_s2:  # from 1.0 3.0 4.0
+label morte1_s2: # from 1.0 3.0 4.0
     SPEAKER '«Ты не можешь вспомнить свое *имя*? Хе. Что ж, в СЛЕДУЮЩИЙ раз, когда будешь кутить ночью в городе, не налегай на выпивку. Зовут Мортом. Я тоже здесь заперт».'
 
     menu:
         '«Заперт?»':
-            # r3 # reply39799
+            # a3 # r39799
             jump morte1_s5
 
-
 # s3 # say39800
-label morte1_s3:  # from 1.1
+label morte1_s3: # from 1.1
     SPEAKER '«Ага, а я спросил тебя *вторым*. Как твое имя?»'
 
     menu:
         '«Я… не знаю. Не могу вспомнить».':
-            # r4 # reply39801
+            # a4 # r39801
             jump morte1_s2
 
         '«Ты первый, череп. В последний раз спрашиваю».':
-            # r5 # reply39802
+            # a5 # r39802
             jump morte1_s4
 
-
 # s4 # say39803
-label morte1_s4:  # from 3.1
+label morte1_s4: # from 3.1
     SPEAKER '«Пф-ф… да ты натянут как струна. Ну хорошо, пусть *я* буду хорошим парнем. Зовут Мортом. А кто ты?»'
 
     menu:
         '«Я… не знаю. Не могу вспомнить».':
-            # r6 # reply39804
+            # a6 # r39804
             jump morte1_s2
 
-
 # s5 # say39805
-label morte1_s5:  # from 2.0
+label morte1_s5: # from 2.0
     SPEAKER '«Ага, и поскольку ты еще не успел размять ноги, вот тебе новость: я перепробовал все двери, и эта комната заперта крепче пояса целомудрия».'
 
     menu:
         '«Мы заперты… где? Что это за место?»':
-            # r7 # reply39806
+            # a7 # r39806
             jump morte1_s6
 
-
 # s6 # say39807
-label morte1_s6:  # from 5.0
+label morte1_s6: # from 5.0
     SPEAKER '«Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи».'
 
     menu:
         '«Морг? Постой… я умер?»':
-            # r8 # reply39808
+            # a8 # r39808
             jump morte1_s7
 
-
 # s7 # say39809
-label morte1_s7:  # from 6.0
+label morte1_s7: # from 6.0
     SPEAKER '«Не похоже. Хотя на тебе куча шрамов… выглядит так, словно какой-то пень изрисовал тебя всего ножом. Еще одна причина свалить отсюда побыстрее, пока тот, кто изрезал тебя, не вернулся назад и не завершил свою работу».'
 
     menu:
         '«Шрамы? Они так плохи?»':
-            # r9 # reply39810
+            # a9 # r39810
             jump morte1_s8
 
-
 # s8 # say39811
-label morte1_s8:  # from 7.0
+label morte1_s8: # from 7.0
     SPEAKER '«Ну… художество на груди не ТАК уж плохо выглядит… но то, что на спине… — Морт делает паузу. — Скажем так, шеф, у тебя целая галерея татуировок на спине. Тут что-то написано…»'
 
     menu:
         '«Татуировки на моей спине? Что там написано?»':
-            # r10 # reply39812
+            # a10 # r39812
             jump morte1_s9
 
-
 # s9 # say39813
-label morte1_s9:  # from 8.0
+label morte1_s9: # from 8.0
     SPEAKER '«Ха! Похоже, тебя доставили с инструкцией… — Морт прочищает горло. — Посмотрим… начинается с…»  «Я знаю, что ты чувствуешь себя так, как будто ты выпил несколько бочонков помоев из Стикса, но тебе надо СОСРЕДОТОЧИТЬСЯ. Среди твоих вещей должен быть ДНЕВНИК, который прольет свет на это темное дело. ФАРОД сможет дополнить оставшуюся часть истории, если его еще не записали в книгу мертвых».'
 
     menu:
         '«Фарод?.. А там есть еще что-нибудь?»':
-            # r11 # reply39814
+            # a11 # r39814
             jump morte1_s10
 
-
 # s10 # say39815
-label morte1_s10:  # from 9.0
+label morte1_s10: # from 9.0
     SPEAKER '«Ага, здесь есть еще немного… — Морт умолкает. — Посмотрим… вот продолжение…»  'Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому, КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода'.'
 
     menu:
         '«Неудивительно, что спина так болит: да там целая чертова поэма. А дневник, который должен быть со мной… он был возле меня, пока я здесь валялся?»':
-            # r12 # reply39816
+            # a12 # r39816
             jump morte1_s11
 
-
 # s11 # say39817
-label morte1_s11:  # from 10.0
+label morte1_s11: # from 10.0
     SPEAKER '«Нет… тебя обобрали догола, когда доставили сюда. Хотя, с другой стороны, похоже, что достаточно того дневника, что выбит у тебя на теле».'
 
     menu:
         '«А как насчет Фарода? Ты его знаешь?»':
-            # r13 # reply39818
+            # a13 # r39818
             jump morte1_s12
 
-
 # s12 # say39819
-label morte1_s12:  # from 11.0
+label morte1_s12: # from 11.0
     SPEAKER '«Нет, не знаю… С другой стороны, я вообще мало кого знаю. В общем, КТО-НИБУДЬ да знает, как добраться до этого Фарода… э, то есть, как только мы выберемся отсюда».'
 
     menu:
         '«И *как* же мы выберемся отсюда?»':
-            # r14 # reply39820
+            # a14 # r39820
             jump morte1_s13
 
-
 # s13 # say39821
-label morte1_s13:  # from 12.0
+label morte1_s13: # from 12.0
     SPEAKER '«Ну, если все двери заперты, значит, нам понадобится ключ. Есть шанс, что он есть у одного из ходячих трупов в этой комнате».'
 
     menu:
         '«Ходячих трупов?»':
-            # r15 # reply39822
+            # a15 # r39822
             jump morte1_s14
 
-
 # s14 # say39823
-label morte1_s14:  # from 13.0
+label morte1_s14: # from 13.0
     SPEAKER '«Ага, хранители Морга используют мертвые тела в качестве дешевой рабочей силы. Трупы тупые как пробка, они безвредны и не будут атаковать до тех пор, пока ты не нападешь первым».'
 
     menu:
         '«А есть какой-нибудь другой способ? Я не хочу никого убивать из-за какого-то ключа».':
-            # r16 # reply39824
+            # a16 # r39824
             $ morte1Logic.r39824_action()
             jump morte1_s15
 
         '«Так значит, я должен напасть на одного из этих трупов и забрать у него ключ?»':
-            # r17 # reply39825
+            # a17 # r39825
             jump morte1_s16
 
-
 # s15 # say39826
-label morte1_s15:  # from 14.0
+label morte1_s15: # from 14.0
     SPEAKER '«Погоди, ты что, думаешь, что причинишь им боль? Они уже МЕРТВЫ. Но если тебе нужна мотивация, то пожалуйста: если ты убьешь их, то по крайней мере они отдохнут до того, как хранители поднимут их снова на работу».'
 
     menu:
         '«Ну хорошо… Я собью одного из них и заберу ключ».':
-            # r18 # reply39827
+            # a18 # r39827
             jump morte1_s16
 
-
 # s16 # say39828
-label morte1_s16:  # from 14.1 15.0
+label morte1_s16: # from 14.1 15.0
     SPEAKER '«Хорошо, но перед этим неплохо бы вооружиться. Кажется, здесь где-то на полках есть скальпель».'
 
     menu:
         '«Ладно, я поищу его».':
-            # r19 # reply39829
+            # a19 # r39829
             jump morte1_s17
 
-
 # s17 # say39830
-label morte1_s17:  # from 16.0
+label morte1_s17: # from 16.0
     SPEAKER '«И последнее: эти трупы медлительны, но их удар — все равно что поцелуй тарана. Если они начнут доставать тебя, помни, что ты можешь БЕГАТЬ, а они — нет. Используй это, чтобы держаться на дистанции, если тебе нужно восстановиться».'
 
     menu:
         '«Хорошо. Спасибо за совет».':
-            # r20 # reply39831
+            # a20 # r39831
             $ morte1Logic.r39831_action()
             jump morte1_dispose
 
-
 # s18 # say39832
-label morte1_s18:  # - # IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+label morte1_s18: # - # IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
     SPEAKER '«На одной из тех полок должен быть скальпель. Я бы на твоем месте нашел его до того, как начал бодаться с местными трупаками».'
 
     menu:
         '«Ладно… Я поищу».':
-            # r21 # reply39833
+            # a21 # r39833
             jump morte1_dispose
 
-
 # s19 # say39834
-label morte1_s19:  # - # IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+label morte1_s19: # - # IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
     SPEAKER '«Отлично, ты нашел скальпель! А теперь пора разделаться с этими трупами… и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».'
 
     menu:
         '«А, может, ты мне *поможешь*, Морт?»':
-            # r22 # reply39835
+            # a22 # r39835
             jump morte1_s20
 
         '«Хорошо».':
-            # r23 # reply39836
+            # a23 # r39836
             jump morte1_s23
 
-
 # s20 # say39837
-label morte1_s20:  # from 19.0
+label morte1_s20: # from 19.0
     SPEAKER '«Я ПОМОГУ тебе. Хороший совет всегда хорош в трудную минуту».'
 
     menu:
         '«Я имел ввиду помощь в нападении на *трупов*».':
-            # r24 # reply39838
+            # a24 # r39838
             jump morte1_s21
 
         '«Ну хорошо тогда».':
-            # r25 # reply39839
+            # a25 # r39839
             jump morte1_s23
 
-
 # s21 # say39840
-label morte1_s21:  # from 20.0
+label morte1_s21: # from 20.0
     SPEAKER '«Я? Я романтик, а не солдат. Я только под ногами буду путаться».'
 
     menu:
         '«Когда я буду нападать на труп, тебе лучше быть рядом со мной, иначе ты будешь следующим, в кого я воткну этот скальпель».':
-            # r26 # reply39841
+            # a26 # r39841
             jump morte1_s22
 
         '«Ну хорошо тогда».':
-            # r27 # reply39842
+            # a27 # r39842
             jump morte1_s23
 
-
 # s22 # say39843
-label morte1_s22:  # from 21.0
+label morte1_s22: # from 21.0
     SPEAKER '«Э… без проблем. Я помогу тебе».'
 
     menu:
         '«Я рад, что мы поняли друг друга».':
-            # r28 # reply39844
+            # a28 # r39844
             jump morte1_s23
 
-
 # s23 # say39845
-label morte1_s23:  # from 19.1 20.1 21.1 22.0
+label morte1_s23: # from 19.1 20.1 21.1 22.0
     SPEAKER '«Тогда настало время познакомить этих трупов с их второй смертью…»'
 
     menu:
         '«Вперед».':
-            # r29 # reply39846
+            # a29 # r39846
             jump morte1_dispose
 
-
 # s24 # say39847
-label morte1_s24:  # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
+label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
     SPEAKER '«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».'
 
     menu:
         '«Хорошо».':
-            # r30 # reply39848
+            # a30 # r39848
             jump morte1_dispose
 
-
 # s25 # say39849
-label morte1_s25:  # - # IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("KeyPr")
+label morte1_s25: # - # IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("KeyPr")
     SPEAKER '«Отлично, вот и ключ. Он должен подойти к одной из дверей в этой комнате».'
 
     menu:
         '«Тогда я перепробую все двери».':
-            # r31 # reply39850
+            # a31 # r39850
             jump morte1_dispose
 
-
 # s26 # say39851
-label morte1_s26:  # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
+label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
     SPEAKER '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?» [MRT516]'
 
     menu:
         '«Да… идем».':
-            # r32 # reply39852
+            # a32 # r39852
             $ morte1Logic.r39852_action()
             jump morte1_dispose
 
         '«Не сейчас, Морт».':
-            # r33 # reply39853
+            # a33 # r39853
             jump morte1_s27
 
-
 # s27 # say39854
-label morte1_s27:  # from 26.1
+label morte1_s27: # from 26.1
     SPEAKER '«Пф-ф. Ну хорошо, не знаю, как долго я смогу здесь быть, так что я даю тебе ПОСЛЕДНИЙ шанс. Ты уверен, что не хочешь моего мудрого совета и быстрой остроты?»'
 
     menu:
         '«Морт, у тебя НЕТ ни того, ни другого».':
-            # r34 # reply39855
+            # a34 # r39855
             jump morte1_s28
 
         '«Ладно. Я передумал. Давай, идем».':
-            # r35 # reply39856
+            # a35 # r39856
             $ morte1Logic.r39856_action()
             jump morte1_dispose
 
         '«Не сейчас, Морт. Может быть потом».':
-            # r36 # reply39857
+            # a36 # r39857
             jump morte1_s28
 
-
 # s28 # say39858
-label morte1_s28:  # from 27.0 27.2
+label morte1_s28: # from 27.0 27.2
     SPEAKER '«Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?»'
 
     menu:
         '«Ладно. Я передумал. Давай, идем».':
-            # r37 # reply39859
+            # a37 # r39859
             $ morte1Logic.r39859_action()
             jump morte1_dispose
 
         '«Ничего такого. Просто сейчас я не нуждаюсь в твоей компании. Прощай, Морт».':
-            # r38 # reply39860
+            # a38 # r39860
             jump morte1_s29
 
-
 # s29 # say39861
-label morte1_s29:  # from 28.1
+label morte1_s29: # from 28.1
     SPEAKER '«Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь».'
 
     menu:
         '«Я так и сделаю. Прощай, Морт».':
-            # r39 # reply39862
+            # a39 # r39862
             jump morte1_dispose
 
-
 # s30 # say39863
-label morte1_s30:  # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
+label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
     SPEAKER '«Что тебя гложет, шеф?» [MRT515]'
 
     menu:
         '«Пока ничего, Морт. Просто проверяю, что ты еще со мной».':
-            # r40 # reply39864
+            # a40 # r39864
             jump morte1_dispose
 
-
 # s31 # say42298
-label morte1_s31:  # -
+label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
     SPEAKER '«Э, шеф… они не слышат тебя, понятно? Они мертвы».'
 
     menu:
         '«Но ты ведь тоже мертв. И разговариваешь со мной».':
-            # r41 # reply42299
+            # a41 # r42299
             jump morte1_s32
 
-
 # s32 # say42300
-label morte1_s32:  # from 31.0
+label morte1_s32: # from 31.0
     SPEAKER '«Ага, но *я* особенный. Смерть не смогла убить мою жажду к жизни. А здешние трупы… — Морт обводит комнату взглядом. — Они и при жизни из себя ничего не представляли».'
 
     menu:
         '«Понятно…»':
-            # r42 # reply42301
+            # a42 # r42301
             jump morte1_s33
 
-
 # s33 # say42302
-label morte1_s33:  # from 32.0
+label morte1_s33: # from 32.0
     SPEAKER '«Слушай шеф… Наблюдение за тем, как ты пытаешься поболтать с этими трупами, не способствует укреплению моей морали. Давай оставим разговоры с мертвецами сумасшедшим, ладно?»'
 
     menu:
         '«Хорошо. Идем».':
-            # r43 # reply42303
+            # a43 # r42303
             jump morte1_dispose
 
-
 # s34 # say42306
-label morte1_s34:  # -
+label morte1_s34: # externs zm782_s0
     SPEAKER '«Кажется, просителю повезло, шеф. Смотри… у него в руке ключ».'
 
     jump zm782_s2  # EXTERN
+
 
 label morte1_kill: # -
     nr 'Todo.'
@@ -410,7 +377,7 @@ label morte1_kill: # -
             jump morte1_killed
 
 
-label morte1_killed:  # from morte1_kill
+label morte1_killed: # from morte1_kill
     $ morte1Logic.kill_morte1()
     nr 'Whose motorcycle is this?'
     nr 'Its a chopper, baby.'
@@ -421,7 +388,7 @@ label morte1_killed:  # from morte1_kill
     jump morte1_dispose
 
 
-label morte1_kill_first:  # -
+label morte1_kill_first: # -
     nr 'Todo.'
 
     menu:

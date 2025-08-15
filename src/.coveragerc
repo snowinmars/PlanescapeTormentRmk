@@ -3,7 +3,6 @@ branch = True
 source = /app
 omit =
     */d_renpy/*
-    */_build/*
 
 [report]
 show_missing = True

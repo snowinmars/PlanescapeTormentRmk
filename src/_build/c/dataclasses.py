@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 
-@dataclass(frozen=True)
+@dataclass
 class GameFile:
     path: str
     name: str
