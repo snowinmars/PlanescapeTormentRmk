@@ -26,6 +26,12 @@ def restore_dialogue_tree(root_dir):
             jump_npc = jump['npc']
             jump_files = list(filter(lambda x: file_name_to_npc(x.name) == jump_npc, rpy_files))
             if len(jump_files) == 0:
+                # is fails here - add jumps target to IGNORE_LABELS
+                # print(label)
+                # print(data['comments'])
+                # print(*data['jumps'])
+                # print(data['npc'])
+                # print(data['file'].name)
                 raise Exception(f"Cannot find file for '{jump_npc}'")
             if len(jump_files) > 1:
                 raise Exception(f"Expect 1 file for '{jump_npc}', but {len(jump_files)} was found")
@@ -86,9 +92,6 @@ def consolidate_from_blocks(line):
             native = part.replace('from ', '')
             if native not in natives:
                 natives.append(native)
-
-    if 'deions_s60' in line:
-        print(is_empty,is_extern,is_logic,is_weight,is_native)
 
     has_from = len(externs) != 0 or len(natives) != 0
     has_logic = len(logics) != 0
@@ -171,7 +174,6 @@ def find_label_bindings(file):
                 continue
 
             current_label = label_name
-            graph[label_name]  # Ensure entry exists
             graph[label_name]['npc'] = label_name.split('_')[0]
             graph[label_name]['file'] = file
 
@@ -434,6 +436,7 @@ IGNORE_LABELS = {
     'dakkon_s178',
     'dakkon_s179',
     'dakkon_s182',
+    'dakkon_s183',
     'dakkon_s74',
     'dakkon_s75',
     'deathad_s1',
@@ -472,6 +475,8 @@ IGNORE_LABELS = {
     'grace_s170',
     'grace_s176',
     'grace_s177',
+    'grace_s184',
+    'grace_s186',
     'grace_s187',
     'grace_s191',
     'grace_s213',

@@ -10,6 +10,7 @@ from _build.renpy.templates import (
     test_footer_template,
     label_template,
     logic_action_update_journal_template,
+    execute_state_update_journal_template,
     execute_state_logic_action_template,
     execute_state_logic_condition_template,
     logic_state_action_template,
@@ -49,7 +50,7 @@ def _generate_from_paths(state):
         return '-'
 
 
-def abstract2renpy(states, area, state_prefix, dialogue_transformer):
+def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
     target_npc = area[1:] if area.startswith('d') else area
     dialog_tree = []
     logic_actions = []
@@ -69,7 +70,6 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
 
     dialog_tree.append('\n')
     dialog_tree.append('\n')
-    dialog_tree.append('\n')
 
     for state in states:
         from_path = _generate_from_paths(state)
@@ -81,6 +81,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
         state_answers = state['answers']
 
         free_comment = f' # {state_free}' if state_free else ''
+        dialog_tree.append('\n')
         _render_with_shift(
             dialog_tree,
             label_template.format(
@@ -102,6 +103,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
         is_single_autockick_answer = len(state_answers) == 1 and state_answers[0]['is_autoclick']
         if is_single_autockick_answer:
             answer = state_answers[0]
+            answer_id = answer['answer_id']
             journal_id = answer['journal_id']
             journal_body = answer['journal_body']
             target_state = answer['target_state']
@@ -109,21 +111,24 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
 
             has_update_journal_action = journal_id is not None and journal_body is not None
             if has_update_journal_action:
+                update_journal_function_name = f'{journal_id}_s{state_id}'
+                if answer_id is not None:
+                    update_journal_function_name += f'_r{answer_id}'
                 _render_with_shift(
                     logic_actions,
                     logic_action_update_journal_template.format(
-                        sid=state_id,
+                        sid=update_journal_function_name,
                         jid=journal_id,
                         jb=journal_body,
                     ),
                     4
                 )
-                logic_actions.append('\n')
+                logic_actions.append('\n\n\n')
                 _render_with_shift(
                     dialog_tree,
-                    execute_state_logic_action_template.format(
+                    execute_state_update_journal_template.format(
                         tnpc=target_npc,
-                        sid=state_id,
+                        sid=update_journal_function_name,
                     ),
                     4
                 )
@@ -140,7 +145,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
                     ),
                     4
                 )
-                logic_actions.append('\n')
+                logic_actions.append('\n\n\n')
                 _render_with_shift(
                     dialog_tree,
                     execute_state_logic_action_template.format(
@@ -178,7 +183,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
                     ),
                     4
                 )
-            dialog_tree.append('\n')
+            dialog_tree.append('\n\n')
             continue
 
 
@@ -190,9 +195,37 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
         autockicked_answers = list(filter(lambda x: x['is_autoclick'], state_answers))
         for answer in autockicked_answers:
             action = answer['action']
+            answer_id = answer['answer_id']
             condition = answer['condition']
+            journal_id = answer['journal_id']
+            journal_body = answer['journal_body']
             target_state = answer['target_state']
             target_state_id = answer['target_state']['id']
+
+            has_update_journal_action = journal_id is not None and journal_body is not None
+            if has_update_journal_action:
+                update_journal_function_name = f'{journal_id}_s{state_id}'
+                if answer_id is not None:
+                    update_journal_function_name += f'_r{answer_id}'
+                _render_with_shift(
+                    logic_actions,
+                    logic_action_update_journal_template.format(
+                        sid=update_journal_function_name,
+                        jid=journal_id,
+                        jb=journal_body,
+                    ),
+                    4
+                )
+                logic_actions.append('\n\n\n')
+                _render_with_shift(
+                    dialog_tree,
+                    execute_state_update_journal_template.format(
+                        tnpc=target_npc,
+                        sid=update_journal_function_name,
+                    ),
+                    12
+                )
+                dialog_tree.append('\n')
 
             _render_with_shift(
                 logic_conditions,
@@ -221,7 +254,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
                     ),
                     4
                 )
-                logic_actions.append('\n')
+                logic_actions.append('\n\n\n')
                 _render_with_shift(
                     dialog_tree,
                     execute_state_logic_action_template.format(
@@ -272,6 +305,9 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
 
         for answer in not_autockicked_anwsers:
             answer_id = answer['answer_id']
+            journal_id = answer['journal_id']
+            journal_body = answer['journal_body']
+            action = answer['action']
             target_id = _form_jump(answer, target_npc, state_prefix)
 
             menu_option = _build_menu_option(target_npc, answer, logic_conditions, global_response_counter)
@@ -282,8 +318,33 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
             )
             dialog_tree.append('\n')
 
-            if answer['action']:
-                action = answer['action']
+            has_update_journal_action = journal_id is not None and journal_body is not None
+            if has_update_journal_action:
+                update_journal_function_name = f'{journal_id}_s{state_id}'
+                if answer_id is not None:
+                    update_journal_function_name += f'_r{answer_id}'
+
+                _render_with_shift(
+                    logic_actions,
+                    logic_action_update_journal_template.format(
+                        sid=update_journal_function_name,
+                        jid=journal_id,
+                        jb=journal_body,
+                    ),
+                    4
+                )
+                logic_actions.append('\n\n\n')
+                _render_with_shift(
+                    dialog_tree,
+                    execute_state_update_journal_template.format(
+                        tnpc=target_npc,
+                        sid=update_journal_function_name,
+                    ),
+                    12
+                )
+                dialog_tree.append('\n')
+
+            if action:
                 _render_with_shift(
                     logic_actions,
                     logic_response_action_template.format(
@@ -333,7 +394,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
 
     test_code = test_header_template.format(npc=target_npc, Npc=target_npc.capitalize())
     test_code += '\n\n\n'
-    generated_tests = generate_tests(logic_code, target_npc)
+    generated_tests = generate_tests(logic_code, target_npc, warnings)
     if len(generated_tests) > 0:
         test_code += f'    {generated_tests}'
         test_code += '\n\n\n'
@@ -343,7 +404,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer):
 
     dialog_tree_str += rpy_footer_template.format(npc=target_npc)
 
-    return _replace_stuff(dialog_tree_str.strip()), logic_code.strip(), test_code.strip()
+    return _replace_stuff(dialog_tree_str.strip()) + '\n', logic_code.strip() + '\n', test_code.strip() + '\n'
 
 
 def _replace_stuff(text):
@@ -391,46 +452,50 @@ def _to_single_body(script):
     output_lines = []
 
     for line in script.splitlines():
-        # Check if line contains self.settings_manager calls
-        if 'self.settings_manager' in line:
+        stripped_line = line.strip()
+
+        if 'self.settings_manager' in stripped_line: # current block is usefull
             # Preserve indentation
             indent = re.match(r'^\s*', line).group(0)
             new_lines = []
             current_line = []
             in_comment = False
 
-            tokens = re.split(r'(#|self\.settings_manager)', line)
-
+            tokens = re.split(r'(\#\$\%|self\.settings_manager)', stripped_line)
             for token in tokens:
-                if token == '#':
+                stripped_token = token.strip()
+                if stripped_token == '#$%':
                     in_comment = True
-                    current_line.append('#')
-                elif token == 'self.settings_manager':
+                    current_line.append(f'\n{indent}#$%')
+                elif stripped_token.endswith('%$#'):
+                    current_line.append(f' {stripped_token}')
+                elif stripped_token == 'self.settings_manager':
                     if in_comment:
-                        current_line.append('self.settings_manager')
+                        current_line.append(f'\n{indent}self.settings_manager')
                     else:
                         if current_line:
                             new_lines.append(''.join(current_line).rstrip())
-                        current_line = [indent, 'self.settings_manager']
+                        current_line = [indent, f'\n{indent}self.settings_manager']
+
                 else:
-                    if in_comment and token.strip() == '':
+                    if in_comment and stripped_token == '':
                         in_comment = False
                         if current_line:
                             new_lines.append(''.join(current_line).rstrip())
-                        current_line = [indent, token]
+                        current_line = [indent, stripped_token]
                     else:
-                        current_line.append(token)
+                        current_line.append(stripped_token)
 
             if current_line:
                 new_lines.append(''.join(current_line).rstrip())
 
-            new_lines = new_lines[1:]
-            output_lines.extend(new_lines)
-        elif line.strip().startswith('#'):
+            output_lines.append(f'{indent}{''.join(new_lines).strip()}')
+        elif stripped_line.startswith('#$%'): # current block is only comments
             indent = re.match(r'^\s*', line).group(0)
-            for x in line.split('#')[1:]:
-                output_lines.append(f'{indent}#{x}')
-        else:
+            for x in stripped_line.split('#$%')[1:]:
+                output_lines.append(f'{indent}#$%{x}')
+            output_lines.append(f'{indent}return')
+        else: # current block is other stuff
             output_lines.append(line)
 
     return '\n'.join(output_lines)
@@ -450,7 +515,6 @@ def _form_jump(answer, target_npc, state_prefix):
     else:
         target_state_id = answer['target_state']['id']
         return f'{target_npc}{state_prefix}{target_state_id}'
-
 
 
 def _build_menu_option(target_npc, answer, logic_conditions, global_response_counter):

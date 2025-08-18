@@ -1,4 +1,5 @@
 import re
+from _build.renpy.patterns import (all_patterns)
 from _build.renpy.templates import (
     rpy_header_template,
     logic_header_template,
@@ -107,7 +108,6 @@ from _build.renpy.templates import (
     count_in_party_gt_zero_condition_pattern_before,
     count_in_party_gt_zero_condition_pattern_after,
 )
-from _build.renpy.patterns import (all_patterns)
 
 
 get_boolean_condition_pattern = re.compile(r'^get_(.*?)\(\)$')
@@ -141,9 +141,10 @@ full_heal_action_pattern = re.compile(r'^character_manager\.full_heal\(\'(.*?)\'
 set_location_action_pattern = re.compile(r'^location_manager\.set_location\(\'(.*?)\'\)$')
 
 
-def generate_tests(logic, target_npc):
+def generate_tests(logic, target_npc, warnings):
     functions = _parse_function(logic)
-    tests = [_generate_tests_for_function(func_name, body, target_npc) for func_name, body in functions]
+    tests = [_generate_tests_for_function(func_name, body, target_npc, warnings) for func_name, body in functions]
+
     return '\n\n\n'.join(tests).strip()
 
 
@@ -173,7 +174,8 @@ def _parse_function(logic):
 
         empty = not stripped
         commented = stripped.startswith('#')
-        if empty or commented:
+        returned = stripped == 'return'
+        if empty or commented or returned:
             continue
 
         if stripped.startswith('def '):
@@ -214,8 +216,12 @@ def _parse_function(logic):
 
 
 def _is_one_liner_function(body):
-    lines = [line.strip() for line in body.split('\n')
-                if line.strip() and not line.strip().startswith('#')]
+    lines = [
+        line
+        for line in split_foo(body)
+        if not ignored_operation(line)
+    ]
+
     return len(lines) == 1
 
 
@@ -443,11 +449,23 @@ def _build_test_conditions_parts(operation):
     return 'unknown', '', ''
 
 
-def _guess_multiline_actions(func_name, body, target_npc):
+def split_foo(x):
+    r = []
+    for i in x.replace('#$%', '\n#$%').replace('%$#', '%$#\n').splitlines():
+        if len(i.strip()) > 0:
+            r.append(i.strip())
+    return r
+
+
+def ignored_operation(x):
+    return x.startswith('#$%') and x.endswith('%$#')
+
+
+def _guess_multiline_actions(func_name, body, target_npc, warnings):
     operations = [
         line.replace('self.settings_manager.', '').strip()
-        for line in body.splitlines()
-        if line and not line.strip().startswith('#')
+        for line in split_foo(body)
+        if line and not ignored_operation(line)
     ]
 
     preconf_builder = []
@@ -456,6 +474,9 @@ def _guess_multiline_actions(func_name, body, target_npc):
     after_once_builder = []
 
     for operation in operations:
+        if operation == 'inc_choke_dustman()inc_choke()set_dead_dust(True)':
+            print(body)
+
         preconf, before, after, after_once = _build_test_actions_parts(operation)
         if len(preconf) > 0:
             _render_with_shift(
@@ -484,18 +505,18 @@ def _guess_multiline_actions(func_name, body, target_npc):
         after_once_builder.append('\n')
 
         if preconf == 'unknown':
-            print(f"Failed to match action operation '{operation}'")
+            warnings.append(f"Failed to match action operation '{operation}'")
             context = {'f': func_name, 'l': target_npc.capitalize()}
             return multiline_test_case_template.format(**context)
 
     return _render_action_test(func_name, ''.join(preconf_builder).rstrip(), ''.join(before_builder).rstrip(), ''.join(after_builder).rstrip(), ''.join(after_once_builder).rstrip())
 
 
-def _guess_multiline_conditions(func_name, body, target_npc):
+def _guess_multiline_conditions(func_name, body, target_npc, warnings):
     operations = [
         line.replace('and \\', '').replace('self.settings_manager.', '').strip()
-        for line in body.replace('return ', '').splitlines()
-        if line and not line.strip().startswith('#')
+        for line in split_foo(body.replace('return ', ''))
+        if line and not ignored_operation(line)
     ]
 
     preconf_builder = []
@@ -526,7 +547,7 @@ def _guess_multiline_conditions(func_name, body, target_npc):
         after_builder.append('\n')
 
         if preconf == 'unknown':
-            print(f"Failed to match condition operation '{operation}'")
+            warnings.append(f"Failed to match condition operation '{operation}'")
             context = {'f': func_name, 'l': target_npc.capitalize()}
             return multiline_test_case_template.format(**context)
 
@@ -586,17 +607,17 @@ def _render_condition_test(func_name, preconf_builder, before_builder, after_bui
     return ''.join(builder)
 
 
-def _generate_tests_for_function(func_name, body, target_npc):
+def _generate_tests_for_function(func_name, body, target_npc, warnings):
     context = {'f': func_name, 'l': target_npc.capitalize()}
 
     if not _is_one_liner_function(body):
         is_action = func_name.endswith('_action') or func_name.endswith('_init')
         is_condition = func_name.endswith('_condition')
         if is_action:
-            return _guess_multiline_actions(func_name, body, target_npc)
+            return _guess_multiline_actions(func_name, body, target_npc, warnings)
         if is_condition:
-            return _guess_multiline_conditions(func_name, body, target_npc)
-        print(f"\nFailed to build multiline test for {target_npc} function:\n    '{func_name}():\n    {body}'")
+            return _guess_multiline_conditions(func_name, body, target_npc, warnings)
+        warnings.append(f"Failed to build multiline test for {target_npc} function:\n    '{func_name}'(): '{body}'")
         builder = []
         _render_with_shift(
             builder,
@@ -606,8 +627,11 @@ def _generate_tests_for_function(func_name, body, target_npc):
         return ''.join(builder)
 
     # Extract the actual code line (ignore comments)
-    code_line = next((line for line in body.split('\n')
-                    if line.strip() and not line.strip().startswith('#')), '')
+    code_line = next((
+        line
+        for line in split_foo(body)
+        if not ignored_operation(line)
+    ), '')
 
     # Try to match against templates
     for pattern in all_patterns:
@@ -625,7 +649,7 @@ def _generate_tests_for_function(func_name, body, target_npc):
             return ''.join(builder)
 
     # Fallback to multiline template if no match
-    print(f"\nFailed to build singleline test for {target_npc} function:\n'def {func_name}(self):\n    {body}'")
+    warnings.append(f"Failed to build singleline test for {target_npc} function:\n    def '{func_name}'(self): '{body}'")
     builder = []
     _render_with_shift(
         builder,
