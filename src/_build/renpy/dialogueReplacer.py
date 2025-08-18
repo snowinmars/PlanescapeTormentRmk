@@ -288,6 +288,7 @@ class DialogueReplacer:
         self.integer('1201_Note',                '1201_note_quest',          [0, 1, 2])
         self.integer('Adahn',                    'adahn',                    [0, 1, 2, 3, 4])
         self.integer('Adyzoel',                  'adyzoel',                  [0, 1, 2], 'AR0400')
+        self.integer('Annah_Talked_Morte',       'annah_talked_morte',       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.integer('Appearance',               'appearance',               [0, 1, 2])
         self.integer('BariA',                    'baria',                    [0, 1, 2], 'AR0400')
         self.integer('BD_DAKKON_MORALE',         'bd_dakkon_morale',         [0, 1, -1])
@@ -320,6 +321,7 @@ class DialogueReplacer:
         self.integer('Know_Marta_Work',          'know_marta_work',          [0, 1, 2, 3])
         self.integer('Know_Morte_Pillar',        'know_morte_pillar',        [0, 1, 2])
         self.integer('Know_Ravel_Key',           'know_ravel_key',           [0, 1, 2, 3])
+        self.integer('Know_Source',              'know_source',              [0, 1, 2, 3])
         self.integer('Lecture_Death',            'lecture_death',            [0, 1, 2])
         self.integer('Lecture_Ghysis',           'lecture_ghysis',           [0, 1, 2])
         self.integer('Malmaner',                 'malmaner',                 [0, 1, 2, 3, 4, 5])
@@ -330,6 +332,9 @@ class DialogueReplacer:
         self.integer('Mortuary_Walkthrough',     'mortuary_walkthrough',     [0, 1, 2, 3])
         self.integer('Nemelle',                  'nemelle',                  [0, 1, 2, 3, 4])
         self.integer('Nenny',                    'nenny',                    [0, 1, 2])
+        self.integer('Nordom_Talked_Morte',      'nordom_talked_morte',      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.integer('Nordom_Talked_Annah',      'nordom_talked_annah',      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.integer('Nordom_Talked_Grace',      'nordom_talked_grace',      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.integer('Pharod_Quest',             'pharod_quest',             [0, 1])
         self.integer('Pillar ',                  'pillar',                   [0, 1, 2]),  # with space, ye
         self.integer('Pillar_Question',          'pillar_question',          [0, 1, 2, 3, 4], 'AR1001')
@@ -350,44 +355,50 @@ class DialogueReplacer:
         self.integer('Xachariah_Ring',           'xachariah_ring',           [0, 1, 2])
         self.integer('Xixi_Back',                'xixi_back',                [0, 1, 2, 3])
 
+        self.ignore('Attack(Protagonist)')
+        self.ignore('ClearAllActions()')
+        self.ignore('Deactivate(Myself)')
+        self.ignore('DropInventory()')
+        self.ignore('EndCutSceneMode()')
+        self.ignore('Enemy()')
+        self.ignore('FaceObject(Protagonist)')
+        self.ignore('FadeFromColor([20.0],0)')
+        self.ignore('FadeToColor([20.0],0)')
+        self.ignore('ForceAttack(Protagonist,Myself)')
+        self.ignore('Kill(Protagonist)')
+        self.ignore('LeaveParty()')
+        self.ignore('OpenDoor("Statue")')
+        self.ignore('QuitGame(FINALE,0,0)')
+        self.ignore('SetAnimState(Myself,ANIM_MIMESTAND)')
+        self.ignore('SetAnimState(Myself,ANIM_MIMEDIE)')
         self.ignore('SetDoorLocked("fakedoor",FALSE)')
         self.ignore('SetGlobal("0202_Dhall_Face_Player","AR0202",1)')
         self.ignore('SetGlobal("Deio_Wake_Up","GLOBAL",0)')
+        self.ignore('SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)')
+        self.ignore('SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)')
         self.ignore('ShowFirstTimeHelp()')
         self.ignore('StartCutSceneMode()')
-        self.ignore('SetAnimState(Myself,ANIM_MIMESTAND)')
-        self.ignore('Deactivate(Myself)')
-        self.ignore('FaceObject(Protagonist)')
-        self.ignore('Enemy()')
-        self.ignore('Attack(Protagonist)')
-        self.ignore('ForceAttack(Protagonist,Myself)')
         self.ignore('Wait(1)')
         self.ignore('Wait(2)')
         self.ignore('Wait(3)')
-        self.ignore('FadeToColor([20.0],0)')
-        self.ignore('FadeFromColor([20.0],0)')
-        self.ignore('OpenDoor("Statue")')
-        self.ignore('Kill(Protagonist)')
-        self.ignore('SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)')
-        self.ignore('SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)')
-        self.ignore('QuitGame(FINALE,0,0)')
-        self.ignore('EndCutSceneMode()')
+        self.ignore('ChangeAIScript("MDKTNO",DEFAULT)')
+        self.ignore('GiveItemCreate("Knife",Protagonist,1,0,0)')
 
         self.add_setting('can_raise_dead', 'boolean')
         self.add_replacement('ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)', 'self.settings_manager.set_can_raise_dead(True)')
 
         self.add_setting('has_cobble', 'boolean')
-        self.add_replacement('!HasItem("Cobble","Post")', 'return not self.settings_manager.get_has_cobble()\n# Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).')
-        self.add_replacement('HasItem("Cobble","Post")', 'return self.settings_manager.get_has_cobble()\n# Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).')
+        self.add_replacement('!HasItem("Cobble","Post")', 'return not self.settings_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
+        self.add_replacement('HasItem("Cobble","Post")', 'return self.settings_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
 
         self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.settings_manager.set_has_copper_earring_closed(False) self.settings_manager.set_has_copper_earring_opened(True)')
+        self.add_replacement('TransformPartyItem("Dwedring","DsupRing",1,0,0)', 'self.settings_manager.set_has_wedding_ring(False) self.settings_manager.set_has_sup_ring(True)')
 
         self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.settings_manager.get_has_keyem()')
         self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.settings_manager.get_has_keyem()')
         self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.settings_manager.get_has_bandages_zm396()')
         self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.settings_manager.set_has_keyem(False) self.settings_manager.set_vaxis_has_keyem(True)')
 
-        self.add_replacement('GiveItemCreate("Knife",Protagonist,1,0,0)', '# GiveItemCreate("Knife",Protagonist,1,0,0)')
         self.add_replacement('HPPercent(Protagonist,100)', 'return self.settings_manager.character_manager.get_property(\'protagonist\', \'current_health\') == self.settings_manager.character_manager.get_property(\'protagonist\', \'max_health\')')
         self.add_replacement('HPPercentGT(Protagonist,49)', 'return self.settings_manager.character_manager.get_property(\'protagonist\', \'current_health\') > self.settings_manager.character_manager.get_property(\'protagonist\', \'max_health\') / 2')
         self.add_replacement('HPPercentLT(Protagonist,50)', 'return self.settings_manager.character_manager.get_property(\'protagonist\', \'current_health\') <= self.settings_manager.character_manager.get_property(\'protagonist\', \'max_health\') / 2')
@@ -395,8 +406,8 @@ class DialogueReplacer:
         self.add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.settings_manager.set_in_party_morte(True)')
         self.add_replacement('SetNamelessDisguise(ZOMBIE)', "self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')")
 
-        self.add_replacement('NumInParty(1)', 'self.settings_manager.count_in_party() == 0')
-        self.add_replacement('NumInPartyGT(1)', 'self.settings_manager.count_in_party() > 0')
+        self.add_replacement('NumInParty(1)', 'return self.settings_manager.count_in_party() == 0')
+        self.add_replacement('NumInPartyGT(1)', 'return self.settings_manager.count_in_party() > 0')
 
         return self._replacements
 
@@ -510,7 +521,7 @@ class DialogueReplacer:
 
 
     def ignore(self, line):
-        self.add_replacement(line, f'# {line}')
+        self.add_replacement(line, f'#$% {line} %$#')
 
 
     def add_setting(self, name, setting_type):

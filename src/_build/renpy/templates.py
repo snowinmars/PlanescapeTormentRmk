@@ -50,9 +50,12 @@ label {tnpc}{pfx}{sid}: # {fp}{fc}
 '''.strip()
 
 logic_action_update_journal_template = """
-def s{sid}_action(self):
-    self.settings_manager.journal_manager.update_journal('{jid}')
-    # .register('{jid}', '{jb}')
+def j{sid}_action(self):
+    self.settings_manager.journal_manager.update_journal('{jid}') #$% .register('{jid}', '{jb}') %$#
+""".strip()
+
+execute_state_update_journal_template = """
+$ {tnpc}Logic.j{sid}_action()
 """.strip()
 
 execute_state_logic_action_template = """
@@ -156,9 +159,11 @@ def test_{fn}(self):
 render_condition_test_preconf_template = """
 def test_{fn}(self):
 {pb}
+
 {bb}
 
     self.assertFalse(self.logic.{fn}())
+
 {ab}
 
     self.assertTrue(self.logic.{fn}())

@@ -9,7 +9,7 @@ values_without_d_start = [
 
 SAY_REGEX = re.compile(r'^SAY #(\d+) \/\* (.*?) \*\/$')
 BEGIN_STATE_REGEX = re.compile(r'^(?:IF ~~ |~ )THEN BEGIN (\d+) \/\/ from:(.*)$')
-GOD_REGEX = re.compile(r'^IF ~(.*?)~ THEN (GOTO \d+)?(?:BEGIN (\d+?) \/\/ from:(.*))?(?:JOURNAL #(\d+) (\/\*.*\*\/))?(?:(EXTERN ~[^~]+~ \d+))?(EXIT)?(?:REPLY #(\d+) \/\* (.*?) \*\/( EXIT)?(?: (EXTERN ~[^~]+~ \d+))?(?: (GOTO \d+))?)?(?: ?DO)?(?: ~(.*?)~ (?:(GOTO \d+))?)?(EXIT)?(?:\s?(EXTERN ~[^~]+~ \d+))?$')
+GOD_REGEX = re.compile(r'^IF ~(.*?)~ THEN (GOTO \d+)?(?:BEGIN (\d+?) \/\/ from:(.*))?(?:JOURNAL #(\d+) \/\* (.*?) \*\/)?(?:(EXTERN ~[^~]+~ \d+))?(EXIT)?(?:REPLY #(\d+) \/\* (.*?) \*\/(?: JOURNAL #(\d+) \/\* (.*?) \*\/)?( EXIT)?(?: (EXTERN ~[^~]+~ \d+))?(?: (GOTO \d+))?)?(?: ?DO)?(?: ~(.*?)(?: JOURNAL #(\d+) \/\* (.*?) ~ \*\/)? (?:(GOTO \d+))?)?(EXIT)?(?:\s?(EXTERN ~[^~]+~ \d+))?$')
 
 
 def ie2abstract(input_text):
@@ -22,7 +22,6 @@ def ie2abstract(input_text):
 
     while i < len(lines):
         line = lines[i]
-
 
         iteration_state = _begin_state_regex(line, before_start_buffer)
         if iteration_state is not None:
@@ -55,6 +54,9 @@ def ie2abstract(input_text):
 
             answer_id_string = _empty_string_to_none(god_state['answer_id'])
             journal_id_string = _empty_string_to_none(god_state['answer_journal_id'])
+            journal_body = _empty_string_to_none(god_state['answer_journal_body'])
+            if journal_body is not None:
+                journal_body = journal_body.replace('/* ~', '').replace('~ */', '')
             current_state['answers'].append({
                 'is_autoclick': god_state['is_autoclick'],
                 'condition'   : _empty_string_to_none(god_state['answer_condition']),
@@ -62,7 +64,7 @@ def ie2abstract(input_text):
                 'answer_id'   : None if answer_id_string is None else int(answer_id_string),
                 'answer_body' : _empty_string_to_none(god_state['answer_body']),
                 'journal_id'  : None if journal_id_string is None else int(journal_id_string),
-                'journal_body': _empty_string_to_none(god_state['answer_journal_body']),
+                'journal_body': journal_body,
                 'target_state': god_state['answer_target_state'],
             })
             i += 1
@@ -131,13 +133,17 @@ def _god_regex(line):
     g8 = match.group(8)   # answer_target_state
     g9 = match.group(9)   # answer_id
     g10 = match.group(10) # answer_body
-    g11 = match.group(11) # answer_target_state
-    g12 = match.group(12) # answer_target_state
+    g11 = match.group(11) # answer_journal_id
+    g12 = match.group(12) # answer_journal_body
     g13 = match.group(13) # answer_target_state
-    g14 = match.group(14) # answer_action / state_free
+    g14 = match.group(14) # answer_target_state
     g15 = match.group(15) # answer_target_state
-    g16 = match.group(16) # answer_target_state
-    g17 = match.group(17) # answer_target_state
+    g16 = match.group(16) # answer_action / state_free
+    g17 = match.group(17) # answer_journal_id
+    g18 = match.group(18) # answer_journal_body
+    g19 = match.group(19) # answer_target_state
+    g20 = match.group(20) # answer_target_state
+    g21 = match.group(21) # answer_target_state
 
     # 'state_id': _choose_single([g3])     # may be found
     # 'state_paths': _choose_single([g4])  # may be found
@@ -145,7 +151,7 @@ def _god_regex(line):
     # state_state_body  # from other regex
     # state_free        # from other regex
 
-    answer_target_state = _choose_single(map(_form_target_state, [g2, g7, g8, g11, g12, g13, g15, g16, g17]))
+    answer_target_state = _choose_single(map(_form_target_state, [g2, g7, g8, g13, g14, g15, g19, g20, g21]))
     no_answer_body = g10 is None
     # has_answer_target_state = answer_target_state is not None
     # has_other_npc = has_answer_target_state and 'other_npc' in answer_target_state and answer_target_state['other_npc'] is not None
@@ -169,18 +175,22 @@ def _god_regex(line):
     # print(f'g15 {str(g15)}')
     # print(f'g16 {str(g16)}')
     # print(f'g17 {str(g17)}')
+    # print(f'g18 {str(g18)}')
+    # print(f'g19 {str(g19)}')
+    # print(f'g20 {str(g20)}')
+    # print(f'g21 {str(g21)}')
     # print('===')
 
     return {
         'is_autoclick': is_autoclick,
-        # 'state_free': g14 if not is_autoclick else None,
+        # 'state_free': g16 if not is_autoclick else None,
         'state_free': '',
         'answer_condition': g1,
-        'answer_action': g14,
+        'answer_action': g16,
         'answer_id': g9,
         'answer_body': g10,
-        'answer_journal_id': g5,
-        'answer_journal_body': g6,
+        'answer_journal_id': _choose_single_or_none([g5, g11, g17]),
+        'answer_journal_body': _choose_single_or_none([g6, g12, g18]),
         'answer_target_state': answer_target_state,
     }
 
@@ -211,7 +221,10 @@ def _form_target_state(target_state):
 
 def _choose_single(args):
     return next(item for item in args if item is not None)
-
+def _choose_single_or_none(args):
+    if all(arg is None for arg in args):
+        return None
+    return _choose_single(args)
 
 def _begin_state_regex(line, before_start_buffer):
     state_begin_match = BEGIN_STATE_REGEX.search(line)

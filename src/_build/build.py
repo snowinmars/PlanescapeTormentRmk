@@ -6,8 +6,8 @@ from _build.entities import entities_ids
 from _build.file.read_file import read_file
 from _build.file.write_file import write_file
 from _build.clean_raw import clean_raw
-from _build.ie2abstract.ie2abstract import (ie2abstract)
-from _build.abstract2renpy.abstract2renpy import (abstract2renpy)
+from _build.ie2renpy.ie2abstract import (ie2abstract)
+from _build.ie2renpy.abstract2renpy import (abstract2renpy)
 from _build.renpy.dialogueReplacer import (DialogueReplacer)
 from _build.renpy.dialogueTransformer import (DialogueTransformer)
 from _build.renpy.generate_settings import generate_settings
@@ -30,6 +30,7 @@ def build():
     transformer.set_replacements(replacer.build_replacements())
 
     print(f'Processing {len(entities_ids)} files ', end='')
+    warnings = []
 
     for entityId in entities_ids:
         print('.', end='', flush=True)
@@ -44,7 +45,8 @@ def build():
             states=states,
             area=area,
             state_prefix="_s",
-            dialogue_transformer=transformer
+            dialogue_transformer=transformer,
+            warnings=warnings
         )
         write_file(os.path.join(folder_with_renpy_dialogues, f'{entityId}.rpy'), rpy)
         write_file(os.path.join(folder_with_renpy_dialogues, f'{entityId}_logic.py'), logic)
@@ -62,3 +64,10 @@ def build():
     for rpy_file in rpy_files:
         print('.', end='', flush=True)
         write_file(rpy_file.path, rpy_file.content)
+
+    if len(warnings) > 0:
+        print()
+        print()
+        print('===')
+        for warning in warnings:
+            print(warning)

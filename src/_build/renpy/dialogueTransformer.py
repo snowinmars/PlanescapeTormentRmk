@@ -97,8 +97,6 @@ class DialogueTransformer:
     def _transform_integer(self, script, target_npc):
         def rule(match):
             prop, env, amount, = match.groups()
-            if prop == 'Grace_Talked_Morte':
-                print(prop in self._replacements)
             expanded_prop = _expand_prop(prop)
             exanded_amount = _expand_amount(amount)
 
@@ -116,7 +114,7 @@ class DialogueTransformer:
         def rule(match):
             whom, who, = match.groups()
 
-            return f"# ?.attack('{whom}').by('{who}')"
+            return f"#$% ?.attack('{whom}').by('{who}') %$#"
         return ATTACK_REGEX.sub(rule, script)
 
 
@@ -137,7 +135,7 @@ class DialogueTransformer:
         def rule(match):
             id, = match.groups()
 
-            return f"# ?.start_cut_scene('{id}')"
+            return f"#$% ?.start_cut_scene('{id}') %$#"
 
         return CUTSCENE_REGEX.sub(rule, script)
 
@@ -247,7 +245,7 @@ class DialogueTransformer:
         def rule(match):
             id, = match.groups()
 
-            return f"# ?.play_sound('{id}')"
+            return f"#$% ?.play_sound('{id}') %$#"
         return SOUND_REGEX.sub(rule, script)
 
 
@@ -266,7 +264,7 @@ class DialogueTransformer:
         def rule(match):
             note_id, note_text, = match.groups()
 
-            return f"self.settings_manager.journal_manager.update_journal('{note_id}')    # .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()}')"
+            return f"self.settings_manager.journal_manager.update_journal('{note_id}')    #$% .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()} %$#')"
 
         return JOURNAL_REGEX.sub(rule, script)
 
