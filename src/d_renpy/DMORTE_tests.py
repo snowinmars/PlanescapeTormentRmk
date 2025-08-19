@@ -11,42 +11,6 @@ class MorteLogicTest(LogicTest):
         self.logic = MorteLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = MorteLogic
-        self._methods_are_bound()
-
-
-    def test_morte_init(self):
-        location = 'LOCATION'
-        talked_to_morte_times_before = 0
-        talked_to_morte_times_after = 1
-        talked_to_morte_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), talked_to_morte_times_before)
-
-        self.logic.morte_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), talked_to_morte_times_after)
-
-        self.logic.morte_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte_times(), talked_to_morte_times_after_once)
-
-
-    def test_kill_morte(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_morte,
-            self.logic.kill_morte
-        )
-
-
     def test_r17833_action(self):
         morte_value_before = 0
         morte_value_after = 1
@@ -178,21 +142,21 @@ class MorteLogicTest(LogicTest):
         )
 
 
-    def test_r3474_action(self):
+    def test_j38205_s55_r3474_action(self):
         note_id = '38205'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3474_action
+            self.logic.j38205_s55_r3474_action
         )
 
 
-    def test_r3483_action(self):
+    def test_j38205_s57_r3483_action(self):
         note_id = '38205'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3483_action
+            self.logic.j38205_s57_r3483_action
         )
 
 
@@ -339,12 +303,12 @@ class MorteLogicTest(LogicTest):
         )
 
 
-    def test_r4676_action(self):
+    def test_j64512_s85_r4676_action(self):
         note_id = '64512'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4676_action
+            self.logic.j64512_s85_r4676_action
         )
 
 
@@ -410,12 +374,12 @@ class MorteLogicTest(LogicTest):
         self.assertEqual(good_after, good_after_once)
 
 
-    def test_r4693_action(self):
+    def test_j64512_s89_r4693_action(self):
         note_id = '64512'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4693_action
+            self.logic.j64512_s89_r4693_action
         )
 
 
@@ -773,6 +737,21 @@ class MorteLogicTest(LogicTest):
         )
 
 
+    def test_s178_action(self):
+        self._false_then_true_action(
+            self.settings_manager.get_know_mimir,
+            self.logic.s178_action
+        )
+
+
+    def test_s179_action(self):
+        self._integer_inc_once_action(
+            self.settings_manager.get_morte_mimir,
+            1,
+            self.logic.s179_action
+        )
+
+
     def test_r15495_action(self):
         self._integer_equals_action(
             self.settings_manager.get_adyzoel,
@@ -1075,12 +1054,12 @@ class MorteLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
-    def test_r20613_action(self):
+    def test_j20538_s209_r20613_action(self):
         note_id = '20538'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r20613_action
+            self.logic.j20538_s209_r20613_action
         )
 
 
@@ -1181,6 +1160,22 @@ class MorteLogicTest(LogicTest):
 
         self.assertTrue(self.settings_manager.get_in_party_morte())
         self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+
+    def test_s244_action(self):
+        self._integer_inc_once_action(
+            self.settings_manager.get_morte_mimir,
+            1,
+            self.logic.s244_action
+        )
+
+
+    def test_s268_action(self):
+        self._integer_inc_once_action(
+            self.settings_manager.get_morte_mimir,
+            1,
+            self.logic.s268_action
+        )
 
 
     def test_r28041_action(self):
@@ -1897,6 +1892,13 @@ class MorteLogicTest(LogicTest):
         )
 
 
+    def test_s413_action(self):
+        self._false_then_true_action(
+            self.settings_manager.get_yves_shared,
+            self.logic.s413_action
+        )
+
+
     def test_r40848_action(self):
         self._false_then_true_action(
             self.settings_manager.get_met_modrons,
@@ -1918,12 +1920,12 @@ class MorteLogicTest(LogicTest):
         )
 
 
-    def test_r41837_action(self):
+    def test_j39516_s443_r41837_action(self):
         note_id = '39516'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r41837_action
+            self.logic.j39516_s443_r41837_action
         )
 
 
@@ -2011,21 +2013,21 @@ class MorteLogicTest(LogicTest):
         )
 
 
-    def test_r45093_action(self):
+    def test_j39477_s478_r45093_action(self):
         note_id = '39477'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r45093_action
+            self.logic.j39477_s478_r45093_action
         )
 
 
-    def test_r45103_action(self):
+    def test_j39477_s481_r45103_action(self):
         note_id = '39477'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r45103_action
+            self.logic.j39477_s481_r45103_action
         )
 
 
@@ -2050,6 +2052,10 @@ class MorteLogicTest(LogicTest):
             1,
             self.logic.r50416_action
         )
+
+
+    def test_s505_action(self):
+        self.logic.s505_action()
 
 
     def test_r52577_action(self):
@@ -2132,12 +2138,12 @@ class MorteLogicTest(LogicTest):
         )
 
 
-    def test_r53807_action(self):
+    def test_j53633_s521_r53807_action(self):
         note_id = '53633'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r53807_action
+            self.logic.j53633_s521_r53807_action
         )
 
 
@@ -2342,6 +2348,14 @@ class MorteLogicTest(LogicTest):
         self.logic.r54839_action()
 
 
+    def test_s576_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_know_source,
+            1,
+            self.logic.s576_action
+        )
+
+
     def test_r55902_action(self):
         who = 'protagonist'
         prop = 'law'
@@ -2389,90 +2403,270 @@ class MorteLogicTest(LogicTest):
         self.logic.r61414_action()
 
 
+    def test_s603_action(self):
+        self._integer_inc_action(
+            self.settings_manager.get_grace_talked_morte,
+            1,
+            self.logic.s603_action
+        )
+
+
+    def test_s604_action(self):
+        self._integer_inc_action(
+            self.settings_manager.get_grace_talked_morte,
+            1,
+            self.logic.s604_action
+        )
+
+
+    def test_s606_action(self):
+        self._integer_inc_action(
+            self.settings_manager.get_grace_talked_morte,
+            1,
+            self.logic.s606_action
+        )
+
+
+    def test_s607_action(self):
+        self._integer_inc_action(
+            self.settings_manager.get_grace_talked_morte,
+            1,
+            self.logic.s607_action
+        )
+
+
+    def test_s608_action(self):
+        self._integer_inc_action(
+            self.settings_manager.get_grace_talked_morte,
+            1,
+            self.logic.s608_action
+        )
+
+
+    def test_s610_action(self):
+        self._integer_inc_action(
+            self.settings_manager.get_grace_talked_morte,
+            1,
+            self.logic.s610_action
+        )
+
+
+    def test_s611_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_grace_talked_morte,
+            0,
+            self.logic.s611_action
+        )
+
+
+    def test_s615_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_annah_talked_morte,
+            3,
+            self.logic.s615_action
+        )
+
+
+    def test_s620_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_annah_talked_morte,
+            8,
+            self.logic.s620_action
+        )
+
+
+    def test_s622_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_annah_talked_morte,
+            0,
+            self.logic.s622_action
+        )
+
+
+    def test_s623_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            1,
+            self.logic.s623_action
+        )
+
+
+    def test_s625_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            3,
+            self.logic.s625_action
+        )
+
+
+    def test_s628_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            5,
+            self.logic.s628_action
+        )
+
+
+    def test_s629_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            6,
+            self.logic.s629_action
+        )
+
+
+    def test_s631_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            7,
+            self.logic.s631_action
+        )
+
+
+    def test_s633_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            8,
+            self.logic.s633_action
+        )
+
+
+    def test_s635_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            9,
+            self.logic.s635_action
+        )
+
+
+    def test_s640_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            1,
+            self.logic.s640_action
+        )
+
+
+    def test_s642_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_morte,
+            0,
+            self.logic.s642_action
+        )
+
+
+    def test_s643_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_annah,
+            0,
+            self.logic.s643_action
+        )
+
+
+    def test_s644_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_grace,
+            2,
+            self.logic.s644_action
+        )
+
+
+    def test_s645_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_nordom_talked_grace,
+            3,
+            self.logic.s645_action
+        )
+
+
+    def test_j65573_s652_r65569_action(self):
+        note_id = '65573'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j65573_s652_r65569_action
+        )
+
+
     def test_r65569_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
-        note_id = '65573'
 
         self.assertFalse(self.settings_manager.get_morte_tattoo_xp())
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r65569_action()
 
         self.assertTrue(self.settings_manager.get_morte_tattoo_xp())
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r65569_action()
 
         self.assertTrue(self.settings_manager.get_morte_tattoo_xp())
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+
+    def test_j65625_s665_r65621_action(self):
+        note_id = '65625'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j65625_s665_r65621_action
+        )
 
 
     def test_r65621_action(self):
-        note_id = '65625'
-
-        self.assertFalse(self.settings_manager.get_morte_talent())
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r65621_action()
-
-        self.assertTrue(self.settings_manager.get_morte_talent())
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r65621_action()
-
-        self.assertTrue(self.settings_manager.get_morte_talent())
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self._false_then_true_action(
+            self.settings_manager.get_morte_talent,
+            self.logic.r65621_action
+        )
 
 
-    def test_r65631_action(self):
+    def test_j65637_s667_r65631_action(self):
         note_id = '65637'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r65631_action
+            self.logic.j65637_s667_r65631_action
         )
 
 
-    def test_r65666_action(self):
+    def test_j65669_s675_r65666_action(self):
         note_id = '65669'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r65666_action
+            self.logic.j65669_s675_r65666_action
         )
 
 
-    def test_r65674_action(self):
+    def test_j65678_s677_r65674_action(self):
         note_id = '65678'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r65674_action
+            self.logic.j65678_s677_r65674_action
         )
 
 
-    def test_r65710_action(self):
+    def test_j65712_s686_r65710_action(self):
         note_id = '65712'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r65710_action
+            self.logic.j65712_s686_r65710_action
         )
 
 
-    def test_r65711_action(self):
+    def test_j65712_s686_r65711_action(self):
         note_id = '65712'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r65711_action
+            self.logic.j65712_s686_r65711_action
         )
 
 
@@ -2533,12 +2727,12 @@ class MorteLogicTest(LogicTest):
         self.assertEqual(good_after, good_after_once)
 
 
-    def test_r65753_action(self):
+    def test_j53633_s699_r65753_action(self):
         note_id = '53633'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r65753_action
+            self.logic.j53633_s699_r65753_action
         )
 
 
@@ -2595,6 +2789,22 @@ class MorteLogicTest(LogicTest):
         self.logic.r65789_action()
 
 
+    def test_s713_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_know_morte_pillar,
+            1,
+            self.logic.s713_action
+        )
+
+
+    def test_s719_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_know_morte_pillar,
+            2,
+            self.logic.s719_action
+        )
+
+
     def test_r65821_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
@@ -2602,13 +2812,13 @@ class MorteLogicTest(LogicTest):
         morale_morte_before = 0
         morale_morte_after = 3
         morale_morte_after_once = 2 * 3
-        who_strength = 'protagonist'
+        who_strength = 'morte'
         prop_strength = 'strength'
         delta_strength = 4
-        who_dexterity = 'protagonist'
+        who_dexterity = 'morte'
         prop_dexterity = 'dexterity'
         delta_dexterity = 2
-        who_constitution = 'protagonist'
+        who_constitution = 'morte'
         prop_constitution = 'constitution'
         delta_constitution = 2
         note_id = '65825'
@@ -2899,10 +3109,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r3969_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r3969_condition())
 
 
@@ -2913,10 +3125,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r3970_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r3970_condition())
 
 
@@ -3060,19 +3274,17 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r6325_condition(self):
-        self.settings_manager.set_has_cobble(False)
-        self.assertFalse(self.logic.r6325_condition())
-
-        self.settings_manager.set_has_cobble(True)
-        self.assertTrue(self.logic.r6325_condition())
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_has_cobble(x),
+            self.logic.r6325_condition
+        )
 
 
     def test_r6326_condition(self):
-        self.settings_manager.set_has_cobble(True)
-        self.assertFalse(self.logic.r6326_condition())
-
-        self.settings_manager.set_has_cobble(False)
-        self.assertTrue(self.logic.r6326_condition())
+        self._boolean_invert_condition(
+            lambda x: self.settings_manager.set_has_cobble(x),
+            self.logic.r6326_condition
+        )
 
 
     def test_r6327_condition(self):
@@ -3085,10 +3297,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r6327_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r6327_condition())
 
 
@@ -3115,10 +3329,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r6329_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r6329_condition())
 
 
@@ -3143,10 +3359,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
         self.settings_manager.set_42_secret(True)
+
         self.assertFalse(self.logic.r6665_condition())
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
         self.settings_manager.set_42_secret(False)
+
         self.assertTrue(self.logic.r6665_condition())
 
 
@@ -3280,41 +3498,57 @@ class MorteLogicTest(LogicTest):
     def test_r14275_condition(self):
         self.settings_manager.set_mortai_contract(False)
         self.settings_manager.set_coppereyes_contract(1)
+
         self.assertFalse(self.logic.r14275_condition())
 
         self.settings_manager.set_mortai_contract(True)
         self.settings_manager.set_coppereyes_contract(0)
+
         self.assertTrue(self.logic.r14275_condition())
 
 
     def test_r14276_condition(self):
         self.settings_manager.set_mortai_contract(False)
         self.settings_manager.set_coppereyes_contract(1)
+
         self.assertFalse(self.logic.r14276_condition())
 
         self.settings_manager.set_mortai_contract(True)
         self.settings_manager.set_coppereyes_contract(0)
+
         self.assertTrue(self.logic.r14276_condition())
 
 
     def test_r14277_condition(self):
         self.settings_manager.set_mortai_contract(True)
         self.settings_manager.set_coppereyes_contract(1)
+
         self.assertFalse(self.logic.r14277_condition())
 
         self.settings_manager.set_mortai_contract(False)
         self.settings_manager.set_coppereyes_contract(0)
+
         self.assertTrue(self.logic.r14277_condition())
 
 
     def test_r14278_condition(self):
         self.settings_manager.set_mortai_contract(True)
         self.settings_manager.set_coppereyes_contract(1)
+
         self.assertFalse(self.logic.r14278_condition())
 
         self.settings_manager.set_mortai_contract(False)
         self.settings_manager.set_coppereyes_contract(0)
+
         self.assertTrue(self.logic.r14278_condition())
+
+
+    def test_s179_condition(self):
+        self._integer_lt_condition(
+            lambda x: self.settings_manager.set_morte_mimir(x),
+            2,
+            self.logic.s179_condition
+        )
 
 
     def test_r65537_condition(self):
@@ -3354,40 +3588,48 @@ class MorteLogicTest(LogicTest):
     def test_r16884_condition(self):
         self.settings_manager.set_in_party_annah(False)
         self.settings_manager.set_tree_a(True)
+
         self.assertFalse(self.logic.r16884_condition())
 
         self.settings_manager.set_in_party_annah(True)
         self.settings_manager.set_tree_a(False)
+
         self.assertTrue(self.logic.r16884_condition())
 
 
     def test_r16885_condition(self):
         self.settings_manager.set_in_party_ignus(False)
         self.settings_manager.set_tree_i(True)
+
         self.assertFalse(self.logic.r16885_condition())
 
         self.settings_manager.set_in_party_ignus(True)
         self.settings_manager.set_tree_i(False)
+
         self.assertTrue(self.logic.r16885_condition())
 
 
     def test_r16886_condition(self):
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_tree_g(True)
+
         self.assertFalse(self.logic.r16886_condition())
 
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_tree_g(False)
+
         self.assertTrue(self.logic.r16886_condition())
 
 
     def test_r16887_condition(self):
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.set_tree_d(True)
+
         self.assertFalse(self.logic.r16887_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.set_tree_d(False)
+
         self.assertTrue(self.logic.r16887_condition())
 
 
@@ -3395,81 +3637,97 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.set_tree_d(True)
         self.settings_manager.set_dakkon_slave(False)
+
         self.assertFalse(self.logic.r16888_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.set_tree_d(False)
         self.settings_manager.set_dakkon_slave(True)
+
         self.assertTrue(self.logic.r16888_condition())
 
 
     def test_r16889_condition(self):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_tree_n(True)
+
         self.assertFalse(self.logic.r16889_condition())
 
         self.settings_manager.set_in_party_nordom(True)
         self.settings_manager.set_tree_n(False)
+
         self.assertTrue(self.logic.r16889_condition())
 
 
     def test_r16890_condition(self):
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_tree_v(True)
+
         self.assertFalse(self.logic.r16890_condition())
 
         self.settings_manager.set_in_party_vhail(True)
         self.settings_manager.set_tree_v(False)
+
         self.assertTrue(self.logic.r16890_condition())
 
 
     def test_r16893_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_tree_m(True)
+
         self.assertFalse(self.logic.r16893_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_tree_m(False)
+
         self.assertTrue(self.logic.r16893_condition())
 
 
     def test_r16894_condition(self):
         self.settings_manager.set_in_party_annah(False)
         self.settings_manager.set_tree_a(True)
+
         self.assertFalse(self.logic.r16894_condition())
 
         self.settings_manager.set_in_party_annah(True)
         self.settings_manager.set_tree_a(False)
+
         self.assertTrue(self.logic.r16894_condition())
 
 
     def test_r16895_condition(self):
         self.settings_manager.set_in_party_ignus(False)
         self.settings_manager.set_tree_i(True)
+
         self.assertFalse(self.logic.r16895_condition())
 
         self.settings_manager.set_in_party_ignus(True)
         self.settings_manager.set_tree_i(False)
+
         self.assertTrue(self.logic.r16895_condition())
 
 
     def test_r16896_condition(self):
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_tree_g(True)
+
         self.assertFalse(self.logic.r16896_condition())
 
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_tree_g(False)
+
         self.assertTrue(self.logic.r16896_condition())
 
 
     def test_r16897_condition(self):
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.set_tree_d(True)
+
         self.assertFalse(self.logic.r16897_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.set_tree_d(False)
+
         self.assertTrue(self.logic.r16897_condition())
 
 
@@ -3477,21 +3735,25 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.set_tree_d(True)
         self.settings_manager.set_dakkon_slave(False)
+
         self.assertFalse(self.logic.r16898_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.set_tree_d(False)
         self.settings_manager.set_dakkon_slave(True)
+
         self.assertTrue(self.logic.r16898_condition())
 
 
     def test_r16899_condition(self):
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_tree_v(True)
+
         self.assertFalse(self.logic.r16899_condition())
 
         self.settings_manager.set_in_party_vhail(True)
         self.settings_manager.set_tree_v(False)
+
         self.assertTrue(self.logic.r16899_condition())
 
 
@@ -3715,10 +3977,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
         self.assertFalse(self.logic.r24700_condition())
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+
         self.assertTrue(self.logic.r24700_condition())
 
 
@@ -3732,6 +3996,14 @@ class MorteLogicTest(LogicTest):
             prop,
             value,
             self.logic.r24701_condition
+        )
+
+
+    def test_s244_condition(self):
+        self._integer_lt_condition(
+            lambda x: self.settings_manager.set_morte_mimir(x),
+            2,
+            self.logic.s244_condition
         )
 
 
@@ -3769,6 +4041,14 @@ class MorteLogicTest(LogicTest):
         )
 
 
+    def test_s268_condition(self):
+        self._integer_lt_condition(
+            lambda x: self.settings_manager.set_morte_mimir(x),
+            2,
+            self.logic.s268_condition
+        )
+
+
     def test_r65536_condition(self):
         self._integer_gt_condition(
             lambda x: self.settings_manager.set_morte_mimir(x),
@@ -3793,80 +4073,96 @@ class MorteLogicTest(LogicTest):
     def test_r28038_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(1)
+
         self.assertFalse(self.logic.r28038_condition())
 
         self.settings_manager.set_malmaner(3)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertTrue(self.logic.r28038_condition())
 
 
     def test_r28039_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(1)
+
         self.assertFalse(self.logic.r28039_condition())
 
         self.settings_manager.set_malmaner(3)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertTrue(self.logic.r28039_condition())
 
 
     def test_r28040_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertFalse(self.logic.r28040_condition())
 
         self.settings_manager.set_malmaner(3)
         self.settings_manager.set_chaotic_malmaner_1(1)
+
         self.assertTrue(self.logic.r28040_condition())
 
 
     def test_r28044_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertFalse(self.logic.r28044_condition())
 
         self.settings_manager.set_malmaner(3)
         self.settings_manager.set_chaotic_malmaner_1(1)
+
         self.assertTrue(self.logic.r28044_condition())
 
 
     def test_r28045_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(3)
+
         self.assertFalse(self.logic.r28045_condition())
 
         self.settings_manager.set_malmaner(5)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertTrue(self.logic.r28045_condition())
 
 
     def test_r28046_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(3)
+
         self.assertFalse(self.logic.r28046_condition())
 
         self.settings_manager.set_malmaner(5)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertTrue(self.logic.r28046_condition())
 
 
     def test_r28047_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertFalse(self.logic.r28047_condition())
 
         self.settings_manager.set_malmaner(5)
         self.settings_manager.set_chaotic_malmaner_1(3)
+
         self.assertTrue(self.logic.r28047_condition())
 
 
     def test_r28048_condition(self):
         self.settings_manager.set_malmaner(0)
         self.settings_manager.set_chaotic_malmaner_1(0)
+
         self.assertFalse(self.logic.r28048_condition())
 
         self.settings_manager.set_malmaner(5)
         self.settings_manager.set_chaotic_malmaner_1(3)
+
         self.assertTrue(self.logic.r28048_condition())
 
 
@@ -4014,10 +4310,12 @@ class MorteLogicTest(LogicTest):
     def test_r65545_condition(self):
         self.settings_manager.set_know_mimir(False)
         self.settings_manager.set_morte_story(True)
+
         self.assertFalse(self.logic.r65545_condition())
 
         self.settings_manager.set_know_mimir(True)
         self.settings_manager.set_morte_story(False)
+
         self.assertTrue(self.logic.r65545_condition())
 
 
@@ -4046,10 +4344,12 @@ class MorteLogicTest(LogicTest):
     def test_r65549_condition(self):
         self.settings_manager.set_know_ravel(False)
         self.settings_manager.set_ravel_value(1)
+
         self.assertFalse(self.logic.r65549_condition())
 
         self.settings_manager.set_know_ravel(True)
         self.settings_manager.set_ravel_value(0)
+
         self.assertTrue(self.logic.r65549_condition())
 
 
@@ -4060,10 +4360,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35344_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35344_condition())
 
 
@@ -4074,10 +4376,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35352_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35352_condition())
 
 
@@ -4109,10 +4413,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35421_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35421_condition())
 
 
@@ -4123,10 +4429,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35429_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35429_condition())
 
 
@@ -4158,10 +4466,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35498_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35498_condition())
 
 
@@ -4172,10 +4482,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35506_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35506_condition())
 
 
@@ -4207,10 +4519,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35575_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35575_condition())
 
 
@@ -4221,10 +4535,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35583_condition())
 
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35583_condition())
 
 
@@ -4258,11 +4574,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_before)
         self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_before)
+
         self.assertFalse(self.logic.r40069_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_after)
         self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_after)
+
         self.assertTrue(self.logic.r40069_condition())
 
 
@@ -4275,11 +4593,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_before)
         self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_before)
+
         self.assertFalse(self.logic.r40070_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_after)
         self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_after)
+
         self.assertTrue(self.logic.r40070_condition())
 
 
@@ -4292,11 +4612,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_before)
         self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_before)
+
         self.assertFalse(self.logic.r40071_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.character_manager.set_property('protagonist', 'max_health', max_health_after)
         self.settings_manager.character_manager.set_property('protagonist', 'current_health', current_health_after)
+
         self.assertTrue(self.logic.r40071_condition())
 
 
@@ -4530,10 +4852,12 @@ class MorteLogicTest(LogicTest):
     def test_r41921_condition(self):
         self.settings_manager.set_story_reekwind_curse(False)
         self.settings_manager.set_jumble_reekwind(True)
+
         self.assertFalse(self.logic.r41921_condition())
 
         self.settings_manager.set_story_reekwind_curse(True)
         self.settings_manager.set_jumble_reekwind(False)
+
         self.assertTrue(self.logic.r41921_condition())
 
 
@@ -4547,20 +4871,24 @@ class MorteLogicTest(LogicTest):
     def test_r43909_condition(self):
         self.settings_manager.set_has_decant(False)
         self.settings_manager.set_seek_word(0)
+
         self.assertFalse(self.logic.r43909_condition())
 
         self.settings_manager.set_has_decant(True)
         self.settings_manager.set_seek_word(1)
+
         self.assertTrue(self.logic.r43909_condition())
 
 
     def test_r43910_condition(self):
         self.settings_manager.set_aelwyn_value(0)
         self.settings_manager.set_dead_aelwyn(True)
+
         self.assertFalse(self.logic.r43910_condition())
 
         self.settings_manager.set_aelwyn_value(2)
         self.settings_manager.set_dead_aelwyn(False)
+
         self.assertTrue(self.logic.r43910_condition())
 
 
@@ -4575,20 +4903,24 @@ class MorteLogicTest(LogicTest):
     def test_r43917_condition(self):
         self.settings_manager.set_has_decant(False)
         self.settings_manager.set_seek_word(0)
+
         self.assertFalse(self.logic.r43917_condition())
 
         self.settings_manager.set_has_decant(True)
         self.settings_manager.set_seek_word(1)
+
         self.assertTrue(self.logic.r43917_condition())
 
 
     def test_r43918_condition(self):
         self.settings_manager.set_aelwyn_value(0)
         self.settings_manager.set_dead_aelwyn(True)
+
         self.assertFalse(self.logic.r43918_condition())
 
         self.settings_manager.set_aelwyn_value(2)
         self.settings_manager.set_dead_aelwyn(False)
+
         self.assertTrue(self.logic.r43918_condition())
 
 
@@ -4631,20 +4963,24 @@ class MorteLogicTest(LogicTest):
     def test_r52578_condition(self):
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertFalse(self.logic.r52578_condition())
 
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertTrue(self.logic.r52578_condition())
 
 
     def test_r52579_condition(self):
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertFalse(self.logic.r52579_condition())
 
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertTrue(self.logic.r52579_condition())
 
 
@@ -4676,6 +5012,13 @@ class MorteLogicTest(LogicTest):
         )
 
 
+    def test_s518_condition(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_in_party_dakkon(x),
+            self.logic.s518_condition
+        )
+
+
     def test_r54105_condition(self):
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_dakkon(x),
@@ -4693,20 +5036,24 @@ class MorteLogicTest(LogicTest):
     def test_r53826_condition(self):
         self.settings_manager.set_in_party_annah(False)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertFalse(self.logic.r53826_condition())
 
         self.settings_manager.set_in_party_annah(True)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertTrue(self.logic.r53826_condition())
 
 
     def test_r53827_condition(self):
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertFalse(self.logic.r53827_condition())
 
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertTrue(self.logic.r53827_condition())
 
 
@@ -4738,11 +5085,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_specialist(4)
         self.settings_manager.set_specialist(5)
         self.settings_manager.set_specialist(6)
+
         self.assertFalse(self.logic.r53835_condition())
 
         self.settings_manager.set_specialist(0)
         self.settings_manager.set_specialist(0)
         self.settings_manager.set_specialist(0)
+
         self.assertTrue(self.logic.r53835_condition())
 
 
@@ -4756,10 +5105,12 @@ class MorteLogicTest(LogicTest):
     def test_r53837_condition(self):
         self.settings_manager.set_where_fhjull(False)
         self.settings_manager.set_has_cube(False)
+
         self.assertFalse(self.logic.r53837_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(True)
+
         self.assertTrue(self.logic.r53837_condition())
 
 
@@ -4767,11 +5118,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_where_fhjull(False)
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertFalse(self.logic.r53838_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertTrue(self.logic.r53838_condition())
 
 
@@ -4780,12 +5133,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertFalse(self.logic.r53839_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertTrue(self.logic.r53839_condition())
 
 
@@ -4794,12 +5149,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertFalse(self.logic.r53840_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertTrue(self.logic.r53840_condition())
 
 
@@ -4813,10 +5170,12 @@ class MorteLogicTest(LogicTest):
     def test_r53863_condition(self):
         self.settings_manager.set_where_fhjull(False)
         self.settings_manager.set_has_cube(False)
+
         self.assertFalse(self.logic.r53863_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(True)
+
         self.assertTrue(self.logic.r53863_condition())
 
 
@@ -4824,11 +5183,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_where_fhjull(False)
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertFalse(self.logic.r53864_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertTrue(self.logic.r53864_condition())
 
 
@@ -4837,12 +5198,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertFalse(self.logic.r53865_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertTrue(self.logic.r53865_condition())
 
 
@@ -4851,12 +5214,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertFalse(self.logic.r53866_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertTrue(self.logic.r53866_condition())
 
 
@@ -4870,10 +5235,12 @@ class MorteLogicTest(LogicTest):
     def test_r53852_condition(self):
         self.settings_manager.set_where_fhjull(False)
         self.settings_manager.set_has_cube(False)
+
         self.assertFalse(self.logic.r53852_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(True)
+
         self.assertTrue(self.logic.r53852_condition())
 
 
@@ -4881,11 +5248,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_where_fhjull(False)
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertFalse(self.logic.r53853_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertTrue(self.logic.r53853_condition())
 
 
@@ -4894,12 +5263,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertFalse(self.logic.r53854_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertTrue(self.logic.r53854_condition())
 
 
@@ -4908,12 +5279,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_has_cube(True)
         self.settings_manager.set_in_party_grace(True)
         self.settings_manager.set_in_party_annah(True)
+
         self.assertFalse(self.logic.r53855_condition())
 
         self.settings_manager.set_where_fhjull(True)
         self.settings_manager.set_has_cube(False)
         self.settings_manager.set_in_party_grace(False)
         self.settings_manager.set_in_party_annah(False)
+
         self.assertTrue(self.logic.r53855_condition())
 
 
@@ -4931,10 +5304,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r54166_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+
         self.assertTrue(self.logic.r54166_condition())
 
 
@@ -4945,10 +5320,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r54167_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r54167_condition())
 
 
@@ -4966,10 +5343,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r54173_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+
         self.assertTrue(self.logic.r54173_condition())
 
 
@@ -4980,30 +5359,36 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r54174_condition())
 
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r54174_condition())
 
 
     def test_r54179_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54179_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54179_condition())
 
 
     def test_r54180_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54180_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54180_condition())
 
 
@@ -5024,20 +5409,24 @@ class MorteLogicTest(LogicTest):
     def test_r54191_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54191_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54191_condition())
 
 
     def test_r54192_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54192_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54192_condition())
 
 
@@ -5058,60 +5447,72 @@ class MorteLogicTest(LogicTest):
     def test_r54196_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54196_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54196_condition())
 
 
     def test_r54197_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54197_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54197_condition())
 
 
     def test_r54200_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54200_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54200_condition())
 
 
     def test_r54201_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54201_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54201_condition())
 
 
     def test_r54204_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54204_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54204_condition())
 
 
     def test_r54205_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54205_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54205_condition())
 
 
@@ -5132,60 +5533,72 @@ class MorteLogicTest(LogicTest):
     def test_r54209_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54209_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54209_condition())
 
 
     def test_r54210_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54210_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54210_condition())
 
 
     def test_r54213_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54213_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54213_condition())
 
 
     def test_r54214_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54214_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54214_condition())
 
 
     def test_r54217_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54217_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54217_condition())
 
 
     def test_r54218_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54218_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54218_condition())
 
 
@@ -5196,10 +5609,12 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_in_party_dakkon(False)
+
         self.assertFalse(self.logic.r54220_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_in_party_dakkon(True)
+
         self.assertTrue(self.logic.r54220_condition())
 
 
@@ -5211,11 +5626,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.set_dakkon_value(1)
+
         self.assertFalse(self.logic.r54221_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.set_dakkon_value(0)
+
         self.assertTrue(self.logic.r54221_condition())
 
 
@@ -5227,31 +5644,37 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_in_party_dakkon(True)
         self.settings_manager.set_dakkon_value(1)
+
         self.assertFalse(self.logic.r54223_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_in_party_dakkon(False)
         self.settings_manager.set_dakkon_value(0)
+
         self.assertTrue(self.logic.r54223_condition())
 
 
     def test_r54226_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54226_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54226_condition())
 
 
     def test_r54227_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54227_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54227_condition())
 
 
@@ -5274,20 +5697,24 @@ class MorteLogicTest(LogicTest):
     def test_r54232_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54232_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54232_condition())
 
 
     def test_r54233_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54233_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54233_condition())
 
 
@@ -5310,60 +5737,72 @@ class MorteLogicTest(LogicTest):
     def test_r54237_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54237_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54237_condition())
 
 
     def test_r54238_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54238_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54238_condition())
 
 
     def test_r54241_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54241_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54241_condition())
 
 
     def test_r54242_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54242_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54242_condition())
 
 
     def test_r54245_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54245_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54245_condition())
 
 
     def test_r54246_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54246_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54246_condition())
 
 
@@ -5386,20 +5825,24 @@ class MorteLogicTest(LogicTest):
     def test_r54255_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54255_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54255_condition())
 
 
     def test_r54262_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54262_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54262_condition())
 
 
@@ -5419,20 +5862,24 @@ class MorteLogicTest(LogicTest):
     def test_r54266_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54266_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54266_condition())
 
 
     def test_r54267_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54267_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54267_condition())
 
 
@@ -5452,50 +5899,60 @@ class MorteLogicTest(LogicTest):
     def test_r54271_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54271_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54271_condition())
 
 
     def test_r54272_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54272_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54272_condition())
 
 
     def test_r54275_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r54275_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r54275_condition())
 
 
     def test_r54276_condition(self):
         self.settings_manager.set_morte_quip_regret_portal(0)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r54276_condition())
 
         self.settings_manager.set_morte_quip_regret_portal(1)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r54276_condition())
 
 
     def test_r54278_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_morale_fortress_portal(True)
+
         self.assertFalse(self.logic.r54278_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_morale_fortress_portal(False)
+
         self.assertTrue(self.logic.r54278_condition())
 
 
@@ -5518,12 +5975,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_ravel_morte(1)
         self.settings_manager.set_torment_fell(2)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertFalse(self.logic.r54282_condition())
 
         self.settings_manager.set_ravel_grace(0)
         self.settings_manager.set_ravel_morte(0)
         self.settings_manager.set_torment_fell(0)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertTrue(self.logic.r54282_condition())
 
 
@@ -5532,12 +5991,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_ravel_morte(1)
         self.settings_manager.set_torment_fell(0)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertFalse(self.logic.r54283_condition())
 
         self.settings_manager.set_ravel_grace(0)
         self.settings_manager.set_ravel_morte(0)
         self.settings_manager.set_torment_fell(2)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertTrue(self.logic.r54283_condition())
 
 
@@ -5545,11 +6006,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_ravel_morte(1)
         self.settings_manager.set_torment_fell(2)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertFalse(self.logic.r54284_condition())
 
         self.settings_manager.set_ravel_morte(0)
         self.settings_manager.set_torment_fell(0)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertTrue(self.logic.r54284_condition())
 
 
@@ -5557,11 +6020,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_ravel_morte(1)
         self.settings_manager.set_torment_fell(0)
         self.settings_manager.set_in_party_grace(True)
+
         self.assertFalse(self.logic.r54285_condition())
 
         self.settings_manager.set_ravel_morte(0)
         self.settings_manager.set_torment_fell(2)
         self.settings_manager.set_in_party_grace(False)
+
         self.assertTrue(self.logic.r54285_condition())
 
 
@@ -5615,6 +6080,13 @@ class MorteLogicTest(LogicTest):
         )
 
 
+    def test_s576_condition(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_in_party_grace(x),
+            self.logic.s576_condition
+        )
+
+
     def test_r55849_condition(self):
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_grace(x),
@@ -5626,6 +6098,13 @@ class MorteLogicTest(LogicTest):
         self._boolean_invert_condition(
             lambda x: self.settings_manager.set_in_party_grace(x),
             self.logic.r55850_condition
+        )
+
+
+    def test_s578_condition(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_in_party_grace(x),
+            self.logic.s578_condition
         )
 
 
@@ -5678,6 +6157,13 @@ class MorteLogicTest(LogicTest):
             lambda x: self.settings_manager.set_pharod_value(x),
             0,
             self.logic.r65559_condition
+        )
+
+
+    def test_s651_condition(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_morte_tattoo_xp(x),
+            self.logic.s651_condition
         )
 
 
@@ -5744,10 +6230,12 @@ class MorteLogicTest(LogicTest):
     def test_r65640_condition(self):
         self.settings_manager.set_pharod_value(0)
         self.settings_manager.set_pharod_quest(0)
+
         self.assertFalse(self.logic.r65640_condition())
 
         self.settings_manager.set_pharod_value(1)
         self.settings_manager.set_pharod_quest(1)
+
         self.assertTrue(self.logic.r65640_condition())
 
 
@@ -5756,11 +6244,13 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_pharod_quest(0)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r65641_condition())
 
         self.settings_manager.set_pharod_quest(1)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r65641_condition())
 
 
@@ -5770,12 +6260,14 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r65642_condition())
 
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r65642_condition())
 
 
@@ -5784,21 +6276,25 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.settings_manager.set_know_ravel(True)
+
         self.assertFalse(self.logic.r65643_condition())
 
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.settings_manager.set_know_ravel(False)
+
         self.assertTrue(self.logic.r65643_condition())
 
 
     def test_r65644_condition(self):
         self.settings_manager.set_know_ravel(False)
         self.settings_manager.set_know_ravel_key(1)
+
         self.assertFalse(self.logic.r65644_condition())
 
         self.settings_manager.set_know_ravel(True)
         self.settings_manager.set_know_ravel_key(0)
+
         self.assertTrue(self.logic.r65644_condition())
 
 
@@ -5808,12 +6304,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_know_ravel(False)
         self.settings_manager.set_know_ravel_key(1)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r65645_condition())
 
         self.settings_manager.set_know_ravel(True)
         self.settings_manager.set_know_ravel_key(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r65645_condition())
 
 
@@ -5823,12 +6321,14 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r65646_condition())
 
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r65646_condition())
 
 
@@ -5888,11 +6388,13 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_grace_smell_mimir(False)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r65718_condition())
 
         self.settings_manager.set_grace_smell_mimir(True)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r65718_condition())
 
 
@@ -5901,11 +6403,13 @@ class MorteLogicTest(LogicTest):
 
         self.settings_manager.set_grace_smell_mimir(False)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r65719_condition())
 
         self.settings_manager.set_grace_smell_mimir(True)
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r65719_condition())
 
 
@@ -6174,10 +6678,12 @@ class MorteLogicTest(LogicTest):
     def test_r66351_condition(self):
         self.settings_manager.set_know_mimir(False)
         self.settings_manager.set_morte_story(True)
+
         self.assertFalse(self.logic.r66351_condition())
 
         self.settings_manager.set_know_mimir(True)
         self.settings_manager.set_morte_story(False)
+
         self.assertTrue(self.logic.r66351_condition())
 
 
@@ -6206,30 +6712,36 @@ class MorteLogicTest(LogicTest):
     def test_r66355_condition(self):
         self.settings_manager.set_know_ravel(False)
         self.settings_manager.set_ravel_value(1)
+
         self.assertFalse(self.logic.r66355_condition())
 
         self.settings_manager.set_know_ravel(True)
         self.settings_manager.set_ravel_value(0)
+
         self.assertTrue(self.logic.r66355_condition())
 
 
     def test_r68178_condition(self):
         self.settings_manager.set_trans_vanish(True)
         self.settings_manager.set_fortress_party_roof(0)
+
         self.assertFalse(self.logic.r68178_condition())
 
         self.settings_manager.set_trans_vanish(False)
         self.settings_manager.set_fortress_party_roof(1)
+
         self.assertTrue(self.logic.r68178_condition())
 
 
     def test_r68189_condition(self):
         self.settings_manager.set_trans_vanish(False)
         self.settings_manager.set_fortress_dakkon(1)
+
         self.assertFalse(self.logic.r68189_condition())
 
         self.settings_manager.set_trans_vanish(True)
         self.settings_manager.set_fortress_dakkon(0)
+
         self.assertTrue(self.logic.r68189_condition())
 
 
@@ -6237,11 +6749,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_trans_vanish(False)
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68190_condition())
 
         self.settings_manager.set_trans_vanish(True)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68190_condition())
 
 
@@ -6250,12 +6764,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
         self.settings_manager.set_fortress_grace(1)
+
         self.assertFalse(self.logic.r68191_condition())
 
         self.settings_manager.set_trans_vanish(True)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
         self.settings_manager.set_fortress_grace(0)
+
         self.assertTrue(self.logic.r68191_condition())
 
 
@@ -6266,6 +6782,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(1)
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_ignus_battle(True)
+
         self.assertFalse(self.logic.r68192_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6274,6 +6791,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(0)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_ignus_battle(False)
+
         self.assertTrue(self.logic.r68192_condition())
 
 
@@ -6285,6 +6803,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_vhailor_battle(True)
+
         self.assertFalse(self.logic.r68193_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6294,6 +6813,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_vhailor_battle(False)
+
         self.assertTrue(self.logic.r68193_condition())
 
 
@@ -6305,6 +6825,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_nordom(1)
+
         self.assertFalse(self.logic.r68194_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6314,6 +6835,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_nordom(0)
+
         self.assertTrue(self.logic.r68194_condition())
 
 
@@ -6325,6 +6847,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_nordom(1)
+
         self.assertFalse(self.logic.r68239_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6334,6 +6857,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_nordom(0)
+
         self.assertTrue(self.logic.r68239_condition())
 
 
@@ -6346,6 +6870,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_vhailor_battle(False)
         self.settings_manager.set_fortress_nordom(1)
+
         self.assertFalse(self.logic.r68438_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6356,6 +6881,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_vhailor_battle(True)
         self.settings_manager.set_fortress_nordom(0)
+
         self.assertTrue(self.logic.r68438_condition())
 
 
@@ -6368,6 +6894,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus_battle(False)
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_nordom(1)
+
         self.assertFalse(self.logic.r68439_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6378,6 +6905,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus_battle(True)
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_nordom(0)
+
         self.assertTrue(self.logic.r68439_condition())
 
 
@@ -6390,6 +6918,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus_battle(False)
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_vhailor_battle(True)
+
         self.assertFalse(self.logic.r68446_condition())
 
         self.settings_manager.set_trans_vanish(True)
@@ -6400,16 +6929,19 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_ignus_battle(True)
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_vhailor_battle(False)
+
         self.assertTrue(self.logic.r68446_condition())
 
 
     def test_r68503_condition(self):
         self.settings_manager.set_trans_vanish(True)
         self.settings_manager.set_fortress_party_roof(0)
+
         self.assertFalse(self.logic.r68503_condition())
 
         self.settings_manager.set_trans_vanish(False)
         self.settings_manager.set_fortress_party_roof(1)
+
         self.assertTrue(self.logic.r68503_condition())
 
 
@@ -6448,20 +6980,24 @@ class MorteLogicTest(LogicTest):
     def test_r68182_condition(self):
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_ignus_battle(True)
+
         self.assertFalse(self.logic.r68182_condition())
 
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_ignus_battle(False)
+
         self.assertTrue(self.logic.r68182_condition())
 
 
     def test_r68183_condition(self):
         self.settings_manager.set_fortress_vhailor(1)
         self.settings_manager.set_fortress_vhailor_battle(True)
+
         self.assertFalse(self.logic.r68183_condition())
 
         self.settings_manager.set_fortress_vhailor(0)
         self.settings_manager.set_fortress_vhailor_battle(False)
+
         self.assertTrue(self.logic.r68183_condition())
 
 
@@ -6476,10 +7012,12 @@ class MorteLogicTest(LogicTest):
     def test_r68320_condition(self):
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68320_condition())
 
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68320_condition())
 
 
@@ -6487,11 +7025,13 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(1)
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68321_condition())
 
         self.settings_manager.set_fortress_grace(0)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68321_condition())
 
 
@@ -6500,12 +7040,14 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(1)
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68322_condition())
 
         self.settings_manager.set_fortress_nordom(0)
         self.settings_manager.set_fortress_grace(0)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68322_condition())
 
 
@@ -6516,6 +7058,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(1)
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68323_condition())
 
         self.settings_manager.set_fortress_ignus(0)
@@ -6524,6 +7067,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(0)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68323_condition())
 
 
@@ -6535,6 +7079,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(1)
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68324_condition())
 
         self.settings_manager.set_fortress_vhailor(0)
@@ -6544,6 +7089,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(0)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68324_condition())
 
 
@@ -6554,6 +7100,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(1)
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
+
         self.assertFalse(self.logic.r68325_condition())
 
         self.settings_manager.set_fortress_vhailor(0)
@@ -6562,6 +7109,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_grace(0)
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
+
         self.assertTrue(self.logic.r68325_condition())
 
 
@@ -6574,6 +7122,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
         self.settings_manager.set_fortress_ignus_battle(False)
+
         self.assertFalse(self.logic.r68490_condition())
 
         self.settings_manager.set_fortress_vhailor(0)
@@ -6584,6 +7133,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
         self.settings_manager.set_fortress_ignus_battle(True)
+
         self.assertTrue(self.logic.r68490_condition())
 
 
@@ -6595,6 +7145,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
         self.settings_manager.set_fortress_nordom(1)
+
         self.assertFalse(self.logic.r68491_condition())
 
         self.settings_manager.set_fortress_vhailor(0)
@@ -6604,6 +7155,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
         self.settings_manager.set_fortress_nordom(0)
+
         self.assertTrue(self.logic.r68491_condition())
 
 
@@ -6615,6 +7167,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(1)
         self.settings_manager.set_fortress_annah(1)
         self.settings_manager.set_fortress_nordom(1)
+
         self.assertFalse(self.logic.r68492_condition())
 
         self.settings_manager.set_fortress_ignus(0)
@@ -6624,6 +7177,7 @@ class MorteLogicTest(LogicTest):
         self.settings_manager.set_fortress_dakkon(0)
         self.settings_manager.set_fortress_annah(0)
         self.settings_manager.set_fortress_nordom(0)
+
         self.assertTrue(self.logic.r68492_condition())
 
 

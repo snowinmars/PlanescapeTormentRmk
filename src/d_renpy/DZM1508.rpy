@@ -38,6 +38,7 @@ label zm1508_s0: # - # IF ~  True()
             # a5 # r46755
             jump zm1508_dispose
 
+
 # s1 # say46747
 label zm1508_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -47,6 +48,7 @@ label zm1508_s1: # from 0.0 0.1 0.2
             # a6 # r46748
             jump zm1508_dispose
 
+
 # s2 # say46752
 label zm1508_s2: # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -55,45 +57,3 @@ label zm1508_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r46753
             jump zm1508_dispose
-
-
-label zm1508_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1508_dispose
-        'Убить.':
-            jump zm1508_killed
-
-
-label zm1508_killed: # from zm1508_kill
-    $ zm1508Logic.kill_zm1508()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1508s.'
-    nr 'Who is zm1508?'
-    nr 'zm1508 is dead, baby, zm1508 is dead.'
-    jump zm1508_dispose
-
-
-label zm1508_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1508_dispose
-        'Убить.':
-            jump zm1508_killed_first
-
-
-label zm1508_killed_first: # from zm1508_kill_first
-    $ zm1508Logic.kill_zm1508()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1508s.'
-    nr 'Who is zm1508?'
-    nr 'zm1508 is dead, baby, zm1508 is dead.'
-    jump zm1508_dispose

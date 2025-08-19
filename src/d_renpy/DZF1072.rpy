@@ -54,6 +54,7 @@ label zf1072_s0: # - # IF ~  True()
             # a9 # r35144
             jump zf1072_dispose
 
+
 # s1 # say35116
 label zf1072_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп не отвечает на твой голос. Возможно, это связано с отсутствием челюсти. Или ей просто нечего сказать.'
@@ -70,6 +71,7 @@ label zf1072_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf1072Logic.r35131_condition():
             # a12 # r35131
             jump zf1072_dispose
+
 
 # s2 # say35135
 label zf1072_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf1072_s2: # from 0.3
             # a15 # r35138
             jump zf1072_dispose
 
+
 # s3 # say35145
 label zf1072_s3: # - # IF ~  False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf1072_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf1072_dispose
-        'Убить.':
-            jump zf1072_killed
-
-
-label zf1072_killed: # from zf1072_kill
-    $ zf1072Logic.kill_zf1072()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf1072s.'
-    nr 'Who is zf1072?'
-    nr 'zf1072 is dead, baby, zf1072 is dead.'
-    jump zf1072_dispose
-
-
-label zf1072_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf1072_dispose
-        'Убить.':
-            jump zf1072_killed_first
-
-
-label zf1072_killed_first: # from zf1072_kill_first
-    $ zf1072Logic.kill_zf1072()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf1072s.'
-    nr 'Who is zf1072?'
-    nr 'zf1072 is dead, baby, zf1072 is dead.'
-    jump zf1072_dispose

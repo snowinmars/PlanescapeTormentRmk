@@ -37,6 +37,7 @@ label zm1664_s0: # from 5.0 # IF ~  True()
             # a5 # r47008
             jump zm1664_dispose
 
+
 # s1 # say47009
 label zm1664_s1: # from 0.2 6.0
     SPEAKER 'Зомби безучастно пялится в стену.'
@@ -46,6 +47,7 @@ label zm1664_s1: # from 0.2 6.0
             # a6 # r47010
             jump zm1664_dispose
 
+
 # s2 # say47011
 label zm1664_s2: # from 0.3
     SPEAKER 'Труп даже не шевелится. Несмотря на недавнюю смерть, похоже, что он не сможет ответить на твои вопросы.'
@@ -54,6 +56,7 @@ label zm1664_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r47012
             jump zm1664_dispose
+
 
 # s3 # say47013
 label zm1664_s3: # from 0.0
@@ -65,6 +68,7 @@ label zm1664_s3: # from 0.0
             $ zm1664Logic.r47014_action()
             jump zm1664_s4
 
+
 # s4 # say47015
 label zm1664_s4: # from 3.0
     SPEAKER 'Кажется, эта страница не из бухгалтерских книг… похоже, она из какого-то регистрационного журнала. Корешок ровный, как будто страницу срезали ножом, и ты подозреваешь, что ее удалили специально.'
@@ -73,6 +77,7 @@ label zm1664_s4: # from 3.0
         'Прочитать ее.':
             # a9 # r47016
             jump zm1664_s5
+
 
 # s5 # say47017
 label zm1664_s5: # from 4.0
@@ -87,6 +92,7 @@ label zm1664_s5: # from 4.0
             # a11 # r47019
             jump zm1664_dispose
 
+
 # s6 # say47021
 label zm1664_s6: # from 0.1
     SPEAKER 'Похоже, это старые бухгалтерские книги Морга, не представляющие никакого интереса. Ты снова просматриваешь тексты, но больше ничего не находишь.'
@@ -99,45 +105,3 @@ label zm1664_s6: # from 0.1
         'Оставить зомби в покое.':
             # a13 # r47023
             jump zm1664_dispose
-
-
-label zm1664_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1664_dispose
-        'Убить.':
-            jump zm1664_killed
-
-
-label zm1664_killed: # from zm1664_kill
-    $ zm1664Logic.kill_zm1664()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1664s.'
-    nr 'Who is zm1664?'
-    nr 'zm1664 is dead, baby, zm1664 is dead.'
-    jump zm1664_dispose
-
-
-label zm1664_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1664_dispose
-        'Убить.':
-            jump zm1664_killed_first
-
-
-label zm1664_killed_first: # from zm1664_kill_first
-    $ zm1664Logic.kill_zm1664()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1664s.'
-    nr 'Who is zm1664?'
-    nr 'zm1664 is dead, baby, zm1664 is dead.'
-    jump zm1664_dispose

@@ -49,6 +49,7 @@ label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
             # a7 # r45523
             jump zm985_dispose
 
+
 # s1 # say45524
 label zm985_s1: # from 0.4 5.0 5.1 5.2
     SPEAKER 'Труп самозабвенно смотрит вперед, не подавая никаких признаков того, что он тебя услышал.'
@@ -57,6 +58,7 @@ label zm985_s1: # from 0.4 5.0 5.1 5.2
         'Оставить труп в покое.':
             # a8 # r45525
             jump zm985_dispose
+
 
 # s2 # say45526
 label zm985_s2: # from 0.5 5.3
@@ -67,16 +69,22 @@ label zm985_s2: # from 0.5 5.3
             # a9 # r45527
             jump zm985_dispose
 
+
 # s3 # say45528
-label zm985_s3: # from 0.1 6.0 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) SetGlobal("Topple_985","GLOBAL",1) Kill(Myself) Deactivate(Myself)
+label zm985_s3: # from 0.1 6.0
     SPEAKER 'В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево. Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин. К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке «смирно». Спустя мгновенье, нога падает с сочным гулким ударом.'
 
-    jump zm985_dispose
+    $ zm985Logic.s3_action()
+    jump zm985_s7
+
+
 # s4 # say45530
-label zm985_s4: # from 0.2 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
+label zm985_s4: # from 0.2
     SPEAKER 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
 
+    $ zm985Logic.s4_action()
     jump morte_s482  # EXTERN
+
 
 # s5 # say45531
 label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
@@ -108,6 +116,7 @@ label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
             # a15 # r45537
             jump zm985_dispose
 
+
 # s6 # say45538
 label zm985_s6: # from 0.3
     SPEAKER 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
@@ -118,6 +127,7 @@ label zm985_s6: # from 0.3
             $ zm985Logic.r45539_action()
             jump zm985_s3
 
+
 # s7 # say64205
 label zm985_s7: # from 3.0
     SPEAKER 'Рассматривая гнилые остатки тела, ты замечаешь, левая рука совсем не тронута: она отвалилась от туловища во время падения, и совсем не похоже, чтобы она была поражена трупным гниением, как это случилось с остальной частью тела.'
@@ -126,45 +136,3 @@ label zm985_s7: # from 3.0
         '«Хм-м. Думаю, я смогу найти применение этой руке…»':
             # a17 # r64206
             jump zm985_dispose
-
-
-label zm985_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm985_dispose
-        'Убить.':
-            jump zm985_killed
-
-
-label zm985_killed: # from zm985_kill
-    $ zm985Logic.kill_zm985()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm985s.'
-    nr 'Who is zm985?'
-    nr 'zm985 is dead, baby, zm985 is dead.'
-    jump zm985_dispose
-
-
-label zm985_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm985_dispose
-        'Убить.':
-            jump zm985_killed_first
-
-
-label zm985_killed_first: # from zm985_kill_first
-    $ zm985Logic.kill_zm985()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm985s.'
-    nr 'Who is zm985?'
-    nr 'zm985 is dead, baby, zm985 is dead.'
-    jump zm985_dispose

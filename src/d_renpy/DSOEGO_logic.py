@@ -3,50 +3,50 @@ class SoegoLogic:
         self.settings_manager = settings_manager
 
 
-    def soego_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_soego_times()
-
-
-    def kill_soego(self):
-        self.settings_manager.set_dead_soego(True)
-
-
-    def r1438_action(self):
+    def j63982_s1_r1438_action(self):
         self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
+
+
+    def j63982_s1_r1439_action(self):
+        self.settings_manager.journal_manager.update_journal('63982')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
 
 
     def r1439_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_1')
-        self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
 
 
     def r1448_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_soego_2')
 
 
-    def r1450_action(self):
+    def j63982_s3_r1450_action(self):
         self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
 
 
-    def r1453_action(self):
+    def j63982_s3_r1453_action(self):
         self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
+
+
+    def j63982_s4_r1456_action(self):
+        self.settings_manager.journal_manager.update_journal('63982')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
 
 
     def r1456_action(self):
         self.settings_manager.set_soego_value(1)
+
+
+    def j63982_s4_r1457_action(self):
         self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
 
 
     def r1457_action(self):
         self.settings_manager.set_soego_value(1)
-        self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
 
 
     def r1466_action(self):
@@ -57,8 +57,8 @@ class SoegoLogic:
         self.settings_manager.gain_experience('party', 500)
         self.settings_manager.set_gate_open(True)
         self.settings_manager.set_gate_cut_scene(1)
-        # StartCutSceneMode()
-        # ?.start_cut_scene('0201cut1')
+        #$% StartCutSceneMode() %$#
+        #$% ?.start_cut_scene('0201cut1') %$#
 
 
     def r1482_action(self):
@@ -67,7 +67,8 @@ class SoegoLogic:
 
 
     def r1490_action(self):
-        # SetDoorLocked("fakedoor",FALSE)
+        #$% SetDoorLocked("fakedoor",FALSE) %$#
+        return
 
 
     def r1492_action(self):
@@ -83,15 +84,16 @@ class SoegoLogic:
 
 
     def r1525_action(self):
-        # ?.play_sound('AMB_M01')
-        # Enemy()
-        # ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
-        # Attack(Protagonist)
+        #$% Attack(Protagonist) %$#
 
 
     def r1528_action(self):
-        # ?.play_sound('SPE_11')
+        #$% ?.play_sound('SPE_11') %$#
+        return
 
 
     def r1530_action(self):
@@ -103,19 +105,19 @@ class SoegoLogic:
 
 
     def r1533_action(self):
-        # ?.play_sound('AMB_M01')
-        # Enemy()
-        # ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
-        # Attack(Protagonist)
+        #$% Attack(Protagonist) %$#
 
 
     def r1535_action(self):
-        # ?.play_sound('AMB_M01')
-        # Enemy()
-        # ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
-        # Attack(Protagonist)
+        #$% Attack(Protagonist) %$#
 
 
     def r4809_action(self):
@@ -138,35 +140,41 @@ class SoegoLogic:
 
 
     def r4861_action(self):
-        # ?.play_sound('AMB_M01')
-        # Enemy()
-        # ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
-        # Attack(Protagonist)
+        #$% Attack(Protagonist) %$#
 
 
     def r4862_action(self):
-        # ?.play_sound('AMB_M01')
-        # Enemy()
-        # ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
-        # Attack(Protagonist)
+        #$% Attack(Protagonist) %$#
 
 
     def r4864_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_soego_2')
 
 
+    def j63982_s38_r66706_action(self):
+        self.settings_manager.journal_manager.update_journal('63982')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
+
+
     def r66706_action(self):
         self.settings_manager.set_soego_value(1)
+
+
+    def j63982_s38_r66707_action(self):
         self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
+        #$% .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.') %$#
 
 
     def r66707_action(self):
         self.settings_manager.set_soego_value(1)
-        self.settings_manager.journal_manager.update_journal('63982')
-        # .register('63982', 'У главных ворот Морга я встретил тленного по имени Соэго... он выглядел уставшим, как будто он неделю не спал. Судя по его глазам и бледности кожи, он подхватил какую-то болезнь.')
 
 
     def r4926_action(self):
@@ -180,11 +188,11 @@ class SoegoLogic:
 
 
     def r4961_action(self):
-        # ?.play_sound('AMB_M01')
-        # Enemy()
-        # ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
-        # Attack(Protagonist)
+        #$% Attack(Protagonist) %$#
 
 
     def r4967_action(self):
@@ -197,112 +205,112 @@ class SoegoLogic:
         self.settings_manager.gain_experience('party', 500)
         self.settings_manager.set_gate_open(True)
         self.settings_manager.set_gate_cut_scene(1)
-        # StartCutSceneMode()
-        # ?.start_cut_scene('0201cut1')
+        #$% StartCutSceneMode() %$#
+        #$% ?.start_cut_scene('0201cut1') %$#
 
 
     def r4988_action(self):
         self.settings_manager.gain_experience('party', 500)
         self.settings_manager.set_gate_open(True)
         self.settings_manager.set_gate_cut_scene(1)
-        # StartCutSceneMode()
-        # ?.start_cut_scene('0201cut1')
+        #$% StartCutSceneMode() %$#
+        #$% ?.start_cut_scene('0201cut1') %$#
 
 
     def r21655_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r21656_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r21657_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r21658_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r21660_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
-    def r21800_action(self):
+    def j21805_s71_r21800_action(self):
         self.settings_manager.journal_manager.update_journal('21805')
-        # .register('21805', 'Соэго сказал, чтобы я не нападал на нежить в Мертвых Народах, поскольку они не станут причинять мне вред, пока я веду себя мирно.')
+        #$% .register('21805', 'Соэго сказал, чтобы я не нападал на нежить в Мертвых Народах, поскольку они не станут причинять мне вред, пока я веду себя мирно.') %$#
 
 
-    def r64569_action(self):
+    def j21805_s71_r64569_action(self):
         self.settings_manager.journal_manager.update_journal('21805')
-        # .register('21805', 'Соэго сказал, чтобы я не нападал на нежить в Мертвых Народах, поскольку они не станут причинять мне вред, пока я веду себя мирно.')
+        #$% .register('21805', 'Соэго сказал, чтобы я не нападал на нежить в Мертвых Народах, поскольку они не станут причинять мне вред, пока я веду себя мирно.') %$#
 
 
-    def r64570_action(self):
+    def j21805_s71_r64570_action(self):
         self.settings_manager.journal_manager.update_journal('21805')
-        # .register('21805', 'Соэго сказал, чтобы я не нападал на нежить в Мертвых Народах, поскольку они не станут причинять мне вред, пока я веду себя мирно.')
+        #$% .register('21805', 'Соэго сказал, чтобы я не нападал на нежить в Мертвых Народах, поскольку они не станут причинять мне вред, пока я веду себя мирно.') %$#
 
 
     def r66181_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r21852_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
         self.settings_manager.journal_manager.update_journal('21856')
-        # .register('21856', 'Я нашел Соэго. Он был заражен ликантропией, которая свела его в катакомбы. Его разум более не принадлежит ему, его вера в тленных утеряна.')
+        #$%.register('21856', 'Я нашел Соэго. Он был заражен ликантропией, которая свела его в катакомбы. Его разум более не принадлежит ему, его вера в тленных утеряна. %$#')
 
 
     def r64623_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r64624_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r21853_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
         self.settings_manager.journal_manager.update_journal('21857')
-        # .register('21857', 'Соэго сказал мне, что он не знает, как проникнуть в тронный зал Безмолвного Короля, и все же мне придется сделать это, если я собираюсь убить его.')
+        #$%.register('21857', 'Соэго сказал мне, что он не знает, как проникнуть в тронный зал Безмолвного Короля, и все же мне придется сделать это, если я собираюсь убить его. %$#')
 
 
     def r21854_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
     def r24206_action(self):
@@ -314,7 +322,7 @@ class SoegoLogic:
     def r21915_action(self):
         self.settings_manager.set_soego_told(True)
         self.settings_manager.journal_manager.update_journal('21926')
-        # .register('21926', 'Я рассказал Соэго про содержимое его дневника, а он превратился в крысооборотня и напал на меня.')
+        #$%.register('21926', 'Я рассказал Соэго про содержимое его дневника, а он превратился в крысооборотня и напал на меня. %$#')
 
 
     def r21914_action(self):
@@ -324,9 +332,9 @@ class SoegoLogic:
 
     def r21916_action(self):
         self.settings_manager.set_soego_fled(1)
-        # Enemy()
+        #$% Enemy() %$#
         self.settings_manager.journal_manager.update_journal('21926')
-        # .register('21926', 'Я рассказал Соэго про содержимое его дневника, а он превратился в крысооборотня и напал на меня.')
+        #$%.register('21926', 'Я рассказал Соэго про содержимое его дневника, а он превратился в крысооборотня и напал на меня. %$#')
 
 
     def r21917_action(self):
@@ -335,9 +343,10 @@ class SoegoLogic:
 
 
     def r21956_action(self):
-        # FadeToColor([20.0],0)
-        # Wait(1) RestPartyEx(0,10,FALSE)
-        # FadeFromColor([20.0],0)
+        #$% FadeToColor([20.0],0) %$#
+        #$% Wait(1) %$# RestPartyEx(0,10,FALSE)
+        #$% FadeFromColor([20.0],0) %$#
+        return
 
 
     def r21979_action(self):
@@ -348,65 +357,68 @@ class SoegoLogic:
         self.settings_manager.set_know_hargrimm(True)
 
 
-    def r25248_action(self):
+    def j25254_s94_r25248_action(self):
         self.settings_manager.journal_manager.update_journal('25254')
-        # .register('25254', 'Я сказал Соэго, что Безмолвный Король — не более чем высушенный труп. Он сказал, что мне нужно сообщить это Многоединому, и я буду вознагражден. Многоединый — это коллективный разум черепных крыс в Логове Мысли на востоке от Катакомб плачущих камней.')
+        #$% .register('25254', 'Я сказал Соэго, что Безмолвный Король — не более чем высушенный труп. Он сказал, что мне нужно сообщить это Многоединому, и я буду вознагражден. Многоединый — это коллективный разум черепных крыс в Логове Мысли на востоке от Катакомб плачущих камней.') %$#
 
 
-    def r25252_action(self):
+    def j25254_s94_r25252_action(self):
         self.settings_manager.journal_manager.update_journal('25254')
-        # .register('25254', 'Я сказал Соэго, что Безмолвный Король — не более чем высушенный труп. Он сказал, что мне нужно сообщить это Многоединому, и я буду вознагражден. Многоединый — это коллективный разум черепных крыс в Логове Мысли на востоке от Катакомб плачущих камней.')
+        #$% .register('25254', 'Я сказал Соэго, что Безмолвный Король — не более чем высушенный труп. Он сказал, что мне нужно сообщить это Многоединому, и я буду вознагражден. Многоединый — это коллективный разум черепных крыс в Логове Мысли на востоке от Катакомб плачущих камней.') %$#
 
 
-    def r25253_action(self):
+    def j25254_s94_r25253_action(self):
         self.settings_manager.journal_manager.update_journal('25254')
-        # .register('25254', 'Я сказал Соэго, что Безмолвный Король — не более чем высушенный труп. Он сказал, что мне нужно сообщить это Многоединому, и я буду вознагражден. Многоединый — это коллективный разум черепных крыс в Логове Мысли на востоке от Катакомб плачущих камней.')
+        #$% .register('25254', 'Я сказал Соэго, что Безмолвный Король — не более чем высушенный труп. Он сказал, что мне нужно сообщить это Многоединому, и я буду вознагражден. Многоединый — это коллективный разум черепных крыс в Логове Мысли на востоке от Катакомб плачущих камней.') %$#
 
 
-    def r21994_action(self):
+    def j21996_s94_r21994_action(self):
         self.settings_manager.journal_manager.update_journal('21996')
-        # .register('21996', 'Я сказал Соэго, что Безмолвный Король — не более чем высохший труп. Мне нужно сообщить это Многоединому, как только предоставится такая возможность.')
+        #$% .register('21996', 'Я сказал Соэго, что Безмолвный Король — не более чем высохший труп. Мне нужно сообщить это Многоединому, как только предоставится такая возможность.') %$#
 
 
-    def r21995_action(self):
+    def j21996_s94_r21995_action(self):
         self.settings_manager.journal_manager.update_journal('21996')
-        # .register('21996', 'Я сказал Соэго, что Безмолвный Король — не более чем высохший труп. Мне нужно сообщить это Многоединому, как только предоставится такая возможность.')
+        #$% .register('21996', 'Я сказал Соэго, что Безмолвный Король — не более чем высохший труп. Мне нужно сообщить это Многоединому, как только предоставится такая возможность.') %$#
 
 
     def r21998_action(self):
-        # Enemy()
+        #$% Enemy() %$#
+        return
 
 
-    def r22012_action(self):        ClearAllActions()
+    def r22012_action(self):
+        #$% ClearAllActions() %$#
+        return
 
 
     def r22024_action(self):
         self.settings_manager.set_soego_value(4)
         self.settings_manager.set_soego_fled(2)
-        # Enemy()
+        #$% Enemy() %$#
         self.settings_manager.journal_manager.update_journal('21856')
-        # .register('21856', 'Я нашел Соэго. Он был заражен ликантропией, которая свела его в катакомбы. Его разум более не принадлежит ему, его вера в тленных утеряна.')
+        #$%.register('21856', 'Я нашел Соэго. Он был заражен ликантропией, которая свела его в катакомбы. Его разум более не принадлежит ему, его вера в тленных утеряна. %$#')
 
 
     def r22051_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
         self.settings_manager.journal_manager.update_journal('22052')
-        # .register('22052', 'Я нашел Соэго. Он обнаружил группу мертвых стражей, защищавших катакомбы. Он пытается убедить их присоединиться к Истинной Смерти.')
+        #$%.register('22052', 'Я нашел Соэго. Он обнаружил группу мертвых стражей, защищавших катакомбы. Он пытается убедить их присоединиться к Истинной Смерти. %$#')
 
 
     def r66173_action(self):
         self.settings_manager.set_met_soego2(True)
         self.settings_manager.set_soego_value(3)
         self.settings_manager.set_soego_talk(2)
-        # EndCutSceneMode()
+        #$% EndCutSceneMode() %$#
 
 
-    def r22058_action(self):
+    def j21857_s110_r22058_action(self):
         self.settings_manager.journal_manager.update_journal('21857')
-        # .register('21857', 'Соэго сказал мне, что он не знает, как проникнуть в тронный зал Безмолвного Короля, и все же мне придется сделать это, если я собираюсь убить его.')
+        #$% .register('21857', 'Соэго сказал мне, что он не знает, как проникнуть в тронный зал Безмолвного Короля, и все же мне придется сделать это, если я собираюсь убить его.') %$#
 
 
     def r1440_condition(self):

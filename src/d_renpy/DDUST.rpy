@@ -33,6 +33,7 @@ label dust_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
             # a4 # r306
             jump dust_dispose
 
+
 # s1 # say307
 label dust_s1: # from 0.0 0.1 0.2 0.3
     SPEAKER 'Тленный подпрыгивает от неожиданности. Затем он поворачивает к тебе голову. Он выглядит потрясенным: должно быть, маскировка у тебя весьма неплохая.'
@@ -50,6 +51,7 @@ label dust_s1: # from 0.0 0.1 0.2 0.3
             # a7 # r1332
             jump dust_s2
 
+
 # s2 # say309
 label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
     SPEAKER 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
@@ -59,6 +61,7 @@ label dust_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
             # a8 # r313
             $ dustLogic.r313_action()
             jump dust_dispose
+
 
 # s3 # say314
 label dust_s3: # externs morte_s64
@@ -85,6 +88,7 @@ label dust_s3: # externs morte_s64
             # a13 # r382
             jump dust_dispose
 
+
 # s4 # say321
 label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
     SPEAKER 'Тленный медленно поднимает свою голову и оборачивается к тебе. «Ты потерялся?»'
@@ -106,6 +110,7 @@ label dust_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
             # a17 # r325
             jump dust_s5
 
+
 # s5 # say326
 label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
     SPEAKER '«Я позову стражу, они тебя живо выведут. Погоди минуточку».'
@@ -126,6 +131,7 @@ label dust_s5: # from 4.0 4.3 6.4 16.2 51.1
         'Подождать.':
             # a21 # r1333
             jump dust_s2
+
 
 # s6 # say330
 label dust_s6: # from 4.1 4.2 51.2 51.3
@@ -152,6 +158,7 @@ label dust_s6: # from 4.1 4.2 51.2 51.3
             # a26 # r337
             jump dust_s5
 
+
 # s7 # say335
 label dust_s7: # from 6.0 9.0 20.0
     SPEAKER '«Боюсь, что касается. Может, стражники развяжут твой язык». Тленный отступает на шаг; кажется, он собирается позвать стражников.'
@@ -170,6 +177,7 @@ label dust_s7: # from 6.0 9.0 20.0
             $ dustLogic.r3888_action()
             jump dust_dispose
 
+
 # s8 # say336
 label dust_s8: # from 6.1 16.0 20.1
     SPEAKER '«Любишь пошутить? Тогда, может, ты поделишься своими шутками со стражниками». Тленный отступает на шаг; кажется, он собирается позвать стражников.'
@@ -187,6 +195,7 @@ label dust_s8: # from 6.1 16.0 20.1
             # a32 # r3886
             $ dustLogic.r3886_action()
             jump dust_dispose
+
 
 # s9 # say338
 label dust_s9: # from 6.2 20.2
@@ -234,6 +243,7 @@ label dust_s9: # from 6.2 20.2
             # a42 # r33191
             jump dust_s20
 
+
 # s10 # say345
 label dust_s10: # from 9.1
     SPEAKER '«Дхолла можно найти в приемной комнате на этом этаже. Должен предупредить… Дхолл очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его».'
@@ -242,6 +252,7 @@ label dust_s10: # from 9.1
         '«Хорошо. Спасибо за информацию».':
             # a43 # r347
             jump dust_s48
+
 
 # s11 # say346
 label dust_s11: # from 9.2
@@ -252,6 +263,7 @@ label dust_s11: # from 9.2
             # a44 # r348
             jump dust_s48
 
+
 # s12 # say349
 label dust_s12: # from 9.4 19.1
     SPEAKER '«Дейонаррой? На первом этаже в мемориальном зале похоронена женщина. Может быть, это она?»'
@@ -260,6 +272,7 @@ label dust_s12: # from 9.4 19.1
         '«Скорее всего. Спасибо».':
             # a45 # r352
             jump dust_s48
+
 
 # s13 # say350
 label dust_s13: # from 9.3
@@ -270,6 +283,7 @@ label dust_s13: # from 9.3
             # a46 # r353
             jump dust_s48
 
+
 # s14 # say351
 label dust_s14: # from 9.6
     SPEAKER '«Скорее всего, Соэго находится у главных ворот на первом этаже. Он работает проводником в часы антипика».'
@@ -279,6 +293,7 @@ label dust_s14: # from 9.6
             # a47 # r354
             jump dust_s48
 
+
 # s15 # say355
 label dust_s15: # from 9.5
     SPEAKER '«Скорее всего, Соэго находится у главных ворот. Он работает проводником в часы антипика».'
@@ -287,6 +302,7 @@ label dust_s15: # from 9.5
         '«Отлично. Спасибо».':
             # a48 # r356
             jump dust_s48
+
 
 # s16 # say357
 label dust_s16: # from 6.3 20.3
@@ -305,6 +321,7 @@ label dust_s16: # from 6.3 20.3
             # a51 # r361
             jump dust_s5
 
+
 # s17 # say362
 label dust_s17: # from 16.1
     SPEAKER '«По всему периметру Морга расположены погребальные залы. Они расположены вдоль стены на первом и втором этажах. Тебе известно имя усопшего?»'
@@ -318,6 +335,7 @@ label dust_s17: # from 16.1
             # a53 # r364
             jump dust_s19
 
+
 # s18 # say365
 label dust_s18: # from 17.0
     SPEAKER '«Тогда тебе стоит поговорить с одним из проводников у главных ворот. Они тебе помогут».'
@@ -326,6 +344,7 @@ label dust_s18: # from 17.0
         '«Отлично. Спасибо».':
             # a54 # r366
             jump dust_dispose
+
 
 # s19 # say367
 label dust_s19: # from 17.1
@@ -361,6 +380,7 @@ label dust_s19: # from 17.1
             # a61 # r1336
             jump dust_s2
 
+
 # s20 # say374
 label dust_s20: # from 9.9 19.0
     SPEAKER '«Понятно. И что же ты здесь делаешь?»'
@@ -386,6 +406,7 @@ label dust_s20: # from 9.9 19.0
             # a66 # r379
             jump dust_s2
 
+
 # s21 # say368
 label dust_s21: # from 9.7 9.8 19.2 19.3
     SPEAKER '«Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я».'
@@ -394,6 +415,7 @@ label dust_s21: # from 9.7 9.8 19.2 19.3
         '«Хорошо. Я так и сделаю. Прощай».':
             # a67 # r380
             jump dust_s48
+
 
 # s22 # say294
 label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
@@ -407,6 +429,7 @@ label dust_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
         'Оставить его в покое.':
             # a69 # r297
             jump dust_dispose
+
 
 # s23 # say381
 label dust_s23: # from 22.0
@@ -428,6 +451,7 @@ label dust_s23: # from 22.0
         'Оставить его в покое.':
             # a73 # r392
             jump dust_dispose
+
 
 # s24 # say393
 label dust_s24: # from 23.0
@@ -451,6 +475,7 @@ label dust_s24: # from 23.0
             # a77 # r3905
             jump dust_s46
 
+
 # s25 # say394
 label dust_s25: # from 23.1
     SPEAKER '«Это Морг…» Тленная какое-то время смотрит на тебя, как бы оценивая только что тобою сказанное. «Как, ты сказал, тебя зовут?»'
@@ -473,6 +498,7 @@ label dust_s25: # from 23.1
             # a81 # r3908
             jump dust_s46
 
+
 # s26 # say400
 label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
     SPEAKER 'Тленный терпеливо ждет твоего продолжения.'
@@ -494,6 +520,7 @@ label dust_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
             # a85 # r404
             jump dust_s48
 
+
 # s27 # say405
 label dust_s27: # from 26.0
     SPEAKER '«Ты можешь просто выйти через главные ворота. Они на первом этаже».'
@@ -506,6 +533,7 @@ label dust_s27: # from 26.0
         '«Спасибо. Прощай».':
             # a87 # r407
             jump dust_s48
+
 
 # s28 # say408
 label dust_s28: # from 26.1
@@ -528,6 +556,7 @@ label dust_s28: # from 26.1
             # a91 # r425
             jump dust_s48
 
+
 # s29 # say412
 label dust_s29: # from 28.0
     SPEAKER '«Сборщики… они собирают тех, кто умер на улицах Сигила, и доставляют их в Морг… — тленный умолкает, хмуря брови. — Ты нездешний. Кто ты?»'
@@ -548,6 +577,7 @@ label dust_s29: # from 28.0
         '«Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай».' if dustLogic.r3920_condition():
             # a95 # r3920
             jump dust_s46
+
 
 # s30 # say414
 label dust_s30: # from 28.1
@@ -574,6 +604,7 @@ label dust_s30: # from 28.1
             # a100 # r33204
             jump dust_s48
 
+
 # s31 # say419
 label dust_s31: # from 30.0 32.0 33.0
     SPEAKER 'Кивок. «Дхолл болен. Он стар, даже по меркам гитцераев. Несомненно, смерть последует за болезнью, которую он подхватил. Ему повезло».'
@@ -599,6 +630,7 @@ label dust_s31: # from 30.0 32.0 33.0
             # a105 # r424
             jump dust_s48
 
+
 # s32 # say427
 label dust_s32: # from 30.1
     SPEAKER '«Дхолл находится в приемной комнате в северо-западной части этого этажа. Должен предупредить… Дхолл очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь».'
@@ -612,6 +644,7 @@ label dust_s32: # from 30.1
             # a107 # r429
             jump dust_s48
 
+
 # s33 # say426
 label dust_s33: # from 30.2
     SPEAKER '«Дхолл скорее всего находится в приемной комнате на втором этаже. Лучше не отвлекай его слишком сильно, он очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь».'
@@ -624,6 +657,7 @@ label dust_s33: # from 30.2
         '«Спасибо за уделенное время. Мне нужно идти. Прощай».':
             # a109 # r431
             jump dust_s48
+
 
 # s34 # say432
 label dust_s34: # from 31.0
@@ -646,6 +680,7 @@ label dust_s34: # from 31.0
             # a113 # r440
             jump dust_s48
 
+
 # s35 # say435
 label dust_s35: # from 31.1 34.0
     SPEAKER '«Гитцераи — это…» Тленный умолкает, затем хмурится, бросив на тебя пристальный взгляд. «Ты ведь нездешний. Кто ты?»'
@@ -667,6 +702,7 @@ label dust_s35: # from 31.1 34.0
             # a117 # r3911
             jump dust_s46
 
+
 # s36 # say439
 label dust_s36: # from 31.2 34.1
     SPEAKER '«Ему повезло в том, что он достигнет Истинной Смерти. Он больше не будет странствовать в тени этого существования».'
@@ -683,6 +719,7 @@ label dust_s36: # from 31.2 34.1
         '«Понятно. Ну что ж, мне нужно идти. Прощай».':
             # a120 # r443
             jump dust_s48
+
 
 # s37 # say444
 label dust_s37: # from 36.0
@@ -705,6 +742,7 @@ label dust_s37: # from 36.0
             # a124 # r3913
             jump dust_s46
 
+
 # s38 # say447
 label dust_s38: # -
     SPEAKER '«Ты не из наших. Кто ты? Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? Стража! Стража!»'
@@ -725,6 +763,7 @@ label dust_s38: # -
             $ dustLogic.r1339_action()
             jump dust_dispose
 
+
 # s39 # say398
 label dust_s39: # from 26.2
     SPEAKER '«Дневник? Не встречал такого».'
@@ -737,6 +776,7 @@ label dust_s39: # from 26.2
         '«Я должен идти. Прощай».':
             # a129 # r452
             jump dust_s48
+
 
 # s40 # say1419
 label dust_s40: # -
@@ -763,6 +803,7 @@ label dust_s40: # -
             # a134 # r1424
             jump dust_dispose
 
+
 # s41 # say1425
 label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
     SPEAKER 'Тленный не успевает и слова вымолвить, как твои руки хватают его голову за виски и резко сворачивают ее влево.'
@@ -772,6 +813,7 @@ label dust_s41: # from 1.0 5.1 7.1 8.1 47.1
             # a135 # r1426
             $ dustLogic.r1426_action()
             jump dust_s42
+
 
 # s42 # say1427
 label dust_s42: # from 41.0 45.0
@@ -788,6 +830,7 @@ label dust_s42: # from 41.0 45.0
             $ dustLogic.r1429_action()
             jump dust_dispose
 
+
 # s43 # say1430
 label dust_s43: # from 42.0
     SPEAKER 'К своему удивлению, это действие происходит практически инстинктивно, будто ты проделывал это уже много раз… с этой мыслью всплывает воспоминание, но оно недостаточно сильно для того, чтобы за него зацепиться.'
@@ -797,6 +840,7 @@ label dust_s43: # from 42.0
             # a138 # r3882
             $ dustLogic.r3882_action()
             jump dust_dispose
+
 
 # s44 # say3883
 label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
@@ -808,6 +852,7 @@ label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
             $ dustLogic.r3884_action()
             jump dust_dispose
 
+
 # s45 # say3889
 label dust_s45: # from 19.5
     SPEAKER 'Ты наклоняешься, чтобы «шепнуть» ему что-то на ухо, тленный тоже наклоняется. Как только он оказывается на расстоянии вытянутой руки, ты хватаешь его за виски и резко сворачиваешь голову влево.'
@@ -818,6 +863,7 @@ label dust_s45: # from 19.5
             $ dustLogic.r3890_action()
             jump dust_s42
 
+
 # s46 # say3891
 label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
     SPEAKER 'Тленный явно что-то подозревает. Похоже, он хочет что-то сказать, затем едва качает головой и возвращается к своим обязанностям.'
@@ -826,6 +872,7 @@ label dust_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
         'Уйти прочь.':
             # a141 # r3892
             jump dust_dispose
+
 
 # s47 # say3893
 label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
@@ -848,6 +895,7 @@ label dust_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
             # a145 # r3917
             jump dust_s2
 
+
 # s48 # say3894
 label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
     SPEAKER 'Тленный кивает, затем возвращается к своим обязанностям.'
@@ -856,6 +904,7 @@ label dust_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31
         'Уйти прочь.':
             # a146 # r3895
             jump dust_dispose
+
 
 # s49 # say3896
 label dust_s49: # from 24.0 24.1 25.0 25.1
@@ -878,6 +927,7 @@ label dust_s49: # from 24.0 24.1 25.0 25.1
             # a150 # r3901
             jump dust_s46
 
+
 # s50 # say3897
 label dust_s50: # from 29.0 35.0 37.0 49.0
     SPEAKER 'Тленный продолжает хмуриться, но затем слегка кивает. «Ну хорошо. Что я могу сделать для тебя, посвященный?»'
@@ -890,6 +940,7 @@ label dust_s50: # from 29.0 35.0 37.0 49.0
         '«На этот раз — ничего. Прощай».':
             # a152 # r3903
             jump dust_s46
+
 
 # s51 # say66674
 label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
@@ -916,6 +967,7 @@ label dust_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
             # a157 # r66679
             jump dust_s2
 
+
 # s52 # say66681
 label dust_s52: # from 51.0
     SPEAKER 'Тленный какое-то время пристально на тебя смотрит, затем кивает. «Хорошо. Если тебе нужна помощь, дай мне знать».'
@@ -924,45 +976,3 @@ label dust_s52: # from 51.0
         '«Конечно. Прощай».':
             # a158 # r66682
             jump dust_dispose
-
-
-label dust_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dust_dispose
-        'Убить.':
-            jump dust_killed
-
-
-label dust_killed: # from dust_kill
-    $ dustLogic.kill_dust()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dusts.'
-    nr 'Who is dust?'
-    nr 'dust is dead, baby, dust is dead.'
-    jump dust_dispose
-
-
-label dust_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dust_dispose
-        'Убить.':
-            jump dust_killed_first
-
-
-label dust_killed_first: # from dust_kill_first
-    $ dustLogic.kill_dust()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dusts.'
-    nr 'Who is dust?'
-    nr 'dust is dead, baby, dust is dead.'
-    jump dust_dispose

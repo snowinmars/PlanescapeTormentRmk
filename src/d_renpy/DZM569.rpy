@@ -45,6 +45,7 @@ label zm569_s0: # - # IF ~  True()
             # a7 # r42291
             jump zm569_dispose
 
+
 # s1 # say24577
 label zm569_s1: # from 0.1 0.2 0.3 3.1
     SPEAKER 'Труп молчаливо уставился на тебя.'
@@ -58,6 +59,7 @@ label zm569_s1: # from 0.1 0.2 0.3 3.1
             # a9 # r42292
             jump zm569_dispose
 
+
 # s2 # say24582
 label zm569_s2: # from 0.4
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -66,6 +68,7 @@ label zm569_s2: # from 0.4
         'Оставить зомби в покое.':
             # a10 # r24583
             jump zm569_dispose
+
 
 # s3 # say42293
 label zm569_s3: # from 0.5
@@ -87,45 +90,3 @@ label zm569_s3: # from 0.5
         'Оставить зомби в покое.':
             # a14 # r42297
             jump zm569_dispose
-
-
-label zm569_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm569_dispose
-        'Убить.':
-            jump zm569_killed
-
-
-label zm569_killed: # from zm569_kill
-    $ zm569Logic.kill_zm569()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm569s.'
-    nr 'Who is zm569?'
-    nr 'zm569 is dead, baby, zm569 is dead.'
-    jump zm569_dispose
-
-
-label zm569_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm569_dispose
-        'Убить.':
-            jump zm569_killed_first
-
-
-label zm569_killed_first: # from zm569_kill_first
-    $ zm569Logic.kill_zm569()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm569s.'
-    nr 'Who is zm569?'
-    nr 'zm569 is dead, baby, zm569 is dead.'
-    jump zm569_dispose

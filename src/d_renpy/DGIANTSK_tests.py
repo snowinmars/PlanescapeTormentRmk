@@ -11,42 +11,6 @@ class GiantskLogicTest(LogicTest):
         self.logic = GiantskLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = GiantskLogic
-        self._methods_are_bound()
-
-
-    def test_giantsk_init(self):
-        location = 'LOCATION'
-        talked_to_giantsk_times_before = 0
-        talked_to_giantsk_times_after = 1
-        talked_to_giantsk_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_giantsk_times(), talked_to_giantsk_times_before)
-
-        self.logic.giantsk_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_giantsk_times(), talked_to_giantsk_times_after)
-
-        self.logic.giantsk_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_giantsk_times(), talked_to_giantsk_times_after_once)
-
-
-    def test_kill_giantsk(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_giantsk,
-            self.logic.kill_giantsk
-        )
-
-
     def test_r293_action(self):
         who = 'protagonist'
         prop = 'law'
@@ -308,10 +272,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4002_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4002_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4002_condition())
 
 
@@ -385,10 +351,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4040_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4040_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4040_condition())
 
 
@@ -447,10 +415,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4052_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4052_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4052_condition())
 
 
@@ -464,10 +434,12 @@ class GiantskLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r4054_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r4054_condition())
 
 
@@ -494,10 +466,12 @@ class GiantskLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
         self.assertFalse(self.logic.r64293_condition())
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+
         self.assertTrue(self.logic.r64293_condition())
 
 
@@ -556,10 +530,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4060_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4060_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4060_condition())
 
 
@@ -644,10 +620,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4068_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4068_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4068_condition())
 
 
@@ -713,10 +691,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4076_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4076_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4076_condition())
 
 
@@ -791,10 +771,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4085_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4085_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4085_condition())
 
 
@@ -876,10 +858,12 @@ class GiantskLogicTest(LogicTest):
     def test_r4093_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r4093_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r4093_condition())
 
 

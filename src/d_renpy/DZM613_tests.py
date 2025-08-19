@@ -11,42 +11,6 @@ class Zm613LogicTest(LogicTest):
         self.logic = Zm613Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm613Logic
-        self._methods_are_bound()
-
-
-    def test_zm613_init(self):
-        location = 'LOCATION'
-        talked_to_zm613_times_before = 0
-        talked_to_zm613_times_after = 1
-        talked_to_zm613_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm613_times(), talked_to_zm613_times_before)
-
-        self.logic.zm613_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm613_times(), talked_to_zm613_times_after)
-
-        self.logic.zm613_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm613_times(), talked_to_zm613_times_after_once)
-
-
-    def test_kill_zm613(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm613,
-            self.logic.kill_zm613
-        )
-
-
     def test_r6543_action(self):
         who_law = 'protagonist'
         prop_law = 'law'

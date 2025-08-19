@@ -54,6 +54,7 @@ label zf832_s0: # - # IF ~  True()
             # a9 # r35176
             jump zf832_dispose
 
+
 # s1 # say35148
 label zf832_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -70,6 +71,7 @@ label zf832_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf832Logic.r35163_condition():
             # a12 # r35163
             jump zf832_dispose
+
 
 # s2 # say35167
 label zf832_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf832_s2: # from 0.3
             # a15 # r35170
             jump zf832_dispose
 
+
 # s3 # say35177
 label zf832_s3: # - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf832_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf832_dispose
-        'Убить.':
-            jump zf832_killed
-
-
-label zf832_killed: # from zf832_kill
-    $ zf832Logic.kill_zf832()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf832s.'
-    nr 'Who is zf832?'
-    nr 'zf832 is dead, baby, zf832 is dead.'
-    jump zf832_dispose
-
-
-label zf832_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf832_dispose
-        'Убить.':
-            jump zf832_killed_first
-
-
-label zf832_killed_first: # from zf832_kill_first
-    $ zf832Logic.kill_zf832()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf832s.'
-    nr 'Who is zf832?'
-    nr 'zf832 is dead, baby, zf832 is dead.'
-    jump zf832_dispose

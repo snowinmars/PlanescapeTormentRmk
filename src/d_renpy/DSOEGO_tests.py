@@ -11,71 +11,34 @@ class SoegoLogicTest(LogicTest):
         self.logic = SoegoLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = SoegoLogic
-        self._methods_are_bound()
-
-
-    def test_soego_init(self):
-        location = 'LOCATION'
-        talked_to_soego_times_before = 0
-        talked_to_soego_times_after = 1
-        talked_to_soego_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), talked_to_soego_times_before)
-
-        self.logic.soego_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), talked_to_soego_times_after)
-
-        self.logic.soego_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_soego_times(), talked_to_soego_times_after_once)
-
-
-    def test_kill_soego(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_soego,
-            self.logic.kill_soego
-        )
-
-
-    def test_r1438_action(self):
+    def test_j63982_s1_r1438_action(self):
         note_id = '63982'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r1438_action
+            self.logic.j63982_s1_r1438_action
+        )
+
+
+    def test_j63982_s1_r1439_action(self):
+        note_id = '63982'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j63982_s1_r1439_action
         )
 
 
     def test_r1439_action(self):
-        who_law = 'protagonist'
-        prop_law = 'law'
-        delta_law = -1
-        note_id = '63982'
+        who = 'protagonist'
+        prop = 'law'
+        delta = -1
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r1439_action()
-
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        self.assertEqual(law_before + delta_law, law_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r1439_action()
-
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        self.assertEqual(law_after, law_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self._change_prop_once(
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            delta,
+            self.logic.r1439_action
+        )
 
 
     def test_r1448_action(self):
@@ -90,62 +53,56 @@ class SoegoLogicTest(LogicTest):
         )
 
 
-    def test_r1450_action(self):
+    def test_j63982_s3_r1450_action(self):
         note_id = '63982'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r1450_action
+            self.logic.j63982_s3_r1450_action
         )
 
 
-    def test_r1453_action(self):
+    def test_j63982_s3_r1453_action(self):
         note_id = '63982'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r1453_action
+            self.logic.j63982_s3_r1453_action
+        )
+
+
+    def test_j63982_s4_r1456_action(self):
+        note_id = '63982'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j63982_s4_r1456_action
         )
 
 
     def test_r1456_action(self):
-        soego_value_before = 0
-        soego_value_after = 1
-        soego_value_after_once = 1
+        self._integer_equals_action(
+            self.settings_manager.get_soego_value,
+            1,
+            self.logic.r1456_action
+        )
+
+
+    def test_j63982_s4_r1457_action(self):
         note_id = '63982'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r1456_action()
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r1456_action()
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j63982_s4_r1457_action
+        )
 
 
     def test_r1457_action(self):
-        soego_value_before = 0
-        soego_value_after = 1
-        soego_value_after_once = 1
-        note_id = '63982'
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r1457_action()
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r1457_action()
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self._integer_equals_action(
+            self.settings_manager.get_soego_value,
+            1,
+            self.logic.r1457_action
+        )
 
 
     def test_r1466_action(self):
@@ -385,44 +342,38 @@ class SoegoLogicTest(LogicTest):
         )
 
 
-    def test_r66706_action(self):
-        soego_value_before = 0
-        soego_value_after = 1
-        soego_value_after_once = 1
+    def test_j63982_s38_r66706_action(self):
         note_id = '63982'
 
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j63982_s38_r66706_action
+        )
 
-        self.logic.r66706_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+    def test_r66706_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_soego_value,
+            1,
+            self.logic.r66706_action
+        )
 
-        self.logic.r66706_action()
 
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+    def test_j63982_s38_r66707_action(self):
+        note_id = '63982'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j63982_s38_r66707_action
+        )
 
 
     def test_r66707_action(self):
-        soego_value_before = 0
-        soego_value_after = 1
-        soego_value_after_once = 1
-        note_id = '63982'
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r66707_action()
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r66707_action()
-
-        self.assertEqual(self.settings_manager.get_soego_value(), soego_value_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self._integer_equals_action(
+            self.settings_manager.get_soego_value,
+            1,
+            self.logic.r66707_action
+        )
 
 
     def test_r4926_action(self):
@@ -677,30 +628,30 @@ class SoegoLogicTest(LogicTest):
         self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
-    def test_r21800_action(self):
+    def test_j21805_s71_r21800_action(self):
         note_id = '21805'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r21800_action
+            self.logic.j21805_s71_r21800_action
         )
 
 
-    def test_r64569_action(self):
+    def test_j21805_s71_r64569_action(self):
         note_id = '21805'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r64569_action
+            self.logic.j21805_s71_r64569_action
         )
 
 
-    def test_r64570_action(self):
+    def test_j21805_s71_r64570_action(self):
         note_id = '21805'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r64570_action
+            self.logic.j21805_s71_r64570_action
         )
 
 
@@ -984,48 +935,48 @@ class SoegoLogicTest(LogicTest):
         )
 
 
-    def test_r25248_action(self):
+    def test_j25254_s94_r25248_action(self):
         note_id = '25254'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r25248_action
+            self.logic.j25254_s94_r25248_action
         )
 
 
-    def test_r25252_action(self):
+    def test_j25254_s94_r25252_action(self):
         note_id = '25254'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r25252_action
+            self.logic.j25254_s94_r25252_action
         )
 
 
-    def test_r25253_action(self):
+    def test_j25254_s94_r25253_action(self):
         note_id = '25254'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r25253_action
+            self.logic.j25254_s94_r25253_action
         )
 
 
-    def test_r21994_action(self):
+    def test_j21996_s94_r21994_action(self):
         note_id = '21996'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r21994_action
+            self.logic.j21996_s94_r21994_action
         )
 
 
-    def test_r21995_action(self):
+    def test_j21996_s94_r21995_action(self):
         note_id = '21996'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r21995_action
+            self.logic.j21996_s94_r21995_action
         )
 
 
@@ -1117,12 +1068,12 @@ class SoegoLogicTest(LogicTest):
         self.assertEqual(self.settings_manager.get_soego_talk(), soego_talk_after_once)
 
 
-    def test_r22058_action(self):
+    def test_j21857_s110_r22058_action(self):
         note_id = '21857'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r22058_action
+            self.logic.j21857_s110_r22058_action
         )
 
 
@@ -1503,10 +1454,12 @@ class SoegoLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
         self.settings_manager.set_gate_open(True)
+
         self.assertFalse(self.logic.r4805_condition())
 
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
         self.settings_manager.set_gate_open(False)
+
         self.assertTrue(self.logic.r4805_condition())
 
 
@@ -1517,10 +1470,12 @@ class SoegoLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
         self.settings_manager.set_gate_open(True)
+
         self.assertFalse(self.logic.r4806_condition())
 
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
         self.settings_manager.set_gate_open(False)
+
         self.assertTrue(self.logic.r4806_condition())
 
 
@@ -1529,12 +1484,14 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_dead_vaxis(True)
         self.settings_manager.set_vaxis_leave(True)
         self.settings_manager.set_vaxis_betrayed(1)
+
         self.assertFalse(self.logic.r4807_condition())
 
         self.settings_manager.set_vaxis_value(1)
         self.settings_manager.set_dead_vaxis(False)
         self.settings_manager.set_vaxis_leave(False)
         self.settings_manager.set_vaxis_betrayed(0)
+
         self.assertTrue(self.logic.r4807_condition())
 
 
@@ -1545,10 +1502,12 @@ class SoegoLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
         self.settings_manager.set_vaxis_exposes_soego(False)
+
         self.assertFalse(self.logic.r4810_condition())
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
         self.settings_manager.set_vaxis_exposes_soego(True)
+
         self.assertTrue(self.logic.r4810_condition())
 
 
@@ -1559,10 +1518,12 @@ class SoegoLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
         self.settings_manager.set_vaxis_exposes_soego(False)
+
         self.assertFalse(self.logic.r4811_condition())
 
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
         self.settings_manager.set_vaxis_exposes_soego(True)
+
         self.assertTrue(self.logic.r4811_condition())
 
 
@@ -1866,10 +1827,12 @@ class SoegoLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_soego_adahn(True)
+
         self.assertFalse(self.logic.r4931_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_soego_adahn(False)
+
         self.assertTrue(self.logic.r4931_condition())
 
 
@@ -1880,10 +1843,12 @@ class SoegoLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_soego_adahn(False)
+
         self.assertFalse(self.logic.r4932_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_soego_adahn(True)
+
         self.assertTrue(self.logic.r4932_condition())
 
 
@@ -2124,6 +2089,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(True)
+
         self.assertFalse(self.logic.r21800_condition())
 
         self.settings_manager.set_in_party_morte(False)
@@ -2134,6 +2100,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(False)
+
         self.assertTrue(self.logic.r21800_condition())
 
 
@@ -2146,6 +2113,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(True)
+
         self.assertFalse(self.logic.r64569_condition())
 
         self.settings_manager.set_in_party_morte(True)
@@ -2156,16 +2124,19 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(False)
+
         self.assertTrue(self.logic.r64569_condition())
 
 
     def test_r64547_condition(self):
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertFalse(self.logic.r64547_condition())
 
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertTrue(self.logic.r64547_condition())
 
 
@@ -2211,21 +2182,25 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_dustman_initiation(0)
         self.settings_manager.set_soego_value(1)
         self.settings_manager.set_soego_value(3)
+
         self.assertFalse(self.logic.r66181_condition())
 
         self.settings_manager.set_dustman_initiation(5)
         self.settings_manager.set_soego_value(0)
         self.settings_manager.set_soego_value(0)
+
         self.assertTrue(self.logic.r66181_condition())
 
 
     def test_r21852_condition(self):
         self.settings_manager.set_dustman_initiation(0)
         self.settings_manager.set_soego_value(1)
+
         self.assertFalse(self.logic.r21852_condition())
 
         self.settings_manager.set_dustman_initiation(5)
         self.settings_manager.set_soego_value(0)
+
         self.assertTrue(self.logic.r21852_condition())
 
 
@@ -2233,21 +2208,25 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_dustman_initiation(5)
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertFalse(self.logic.r64623_condition())
 
         self.settings_manager.set_dustman_initiation(0)
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertTrue(self.logic.r64623_condition())
 
 
     def test_r64624_condition(self):
         self.settings_manager.set_dustman_initiation(5)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertFalse(self.logic.r64624_condition())
 
         self.settings_manager.set_dustman_initiation(0)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertTrue(self.logic.r64624_condition())
 
 
@@ -2255,11 +2234,13 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(True)
         self.settings_manager.set_dustman_initiation(5)
+
         self.assertFalse(self.logic.r21853_condition())
 
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(False)
         self.settings_manager.set_dustman_initiation(0)
+
         self.assertTrue(self.logic.r21853_condition())
 
 
@@ -2267,11 +2248,13 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(True)
         self.settings_manager.set_dustman_initiation(5)
+
         self.assertFalse(self.logic.r21854_condition())
 
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(False)
         self.settings_manager.set_dustman_initiation(0)
+
         self.assertTrue(self.logic.r21854_condition())
 
 
@@ -2279,11 +2262,13 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_silent_king(False)
         self.settings_manager.set_soego_told(True)
         self.settings_manager.set_lawful_hargrimm_1(False)
+
         self.assertFalse(self.logic.r24206_condition())
 
         self.settings_manager.set_silent_king(True)
         self.settings_manager.set_soego_told(False)
         self.settings_manager.set_lawful_hargrimm_1(True)
+
         self.assertTrue(self.logic.r24206_condition())
 
 
@@ -2291,21 +2276,25 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_silent_king(False)
         self.settings_manager.set_soego_told(True)
         self.settings_manager.set_lawful_hargrimm_1(True)
+
         self.assertFalse(self.logic.r21915_condition())
 
         self.settings_manager.set_silent_king(True)
         self.settings_manager.set_soego_told(False)
         self.settings_manager.set_lawful_hargrimm_1(False)
+
         self.assertTrue(self.logic.r21915_condition())
 
 
     def test_r21914_condition(self):
         self.settings_manager.set_dustman_initiation(0)
         self.settings_manager.set_soego_value(3)
+
         self.assertFalse(self.logic.r21914_condition())
 
         self.settings_manager.set_dustman_initiation(5)
         self.settings_manager.set_soego_value(0)
+
         self.assertTrue(self.logic.r21914_condition())
 
 
@@ -2333,6 +2322,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(True)
+
         self.assertFalse(self.logic.r21920_condition())
 
         self.settings_manager.set_in_party_morte(False)
@@ -2343,6 +2333,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(False)
+
         self.assertTrue(self.logic.r21920_condition())
 
 
@@ -2355,6 +2346,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(True)
+
         self.assertFalse(self.logic.r21922_condition())
 
         self.settings_manager.set_in_party_morte(True)
@@ -2365,6 +2357,7 @@ class SoegoLogicTest(LogicTest):
         self.settings_manager.set_in_party_nordom(False)
         self.settings_manager.set_in_party_vhail(False)
         self.settings_manager.set_visit_doubtful(False)
+
         self.assertTrue(self.logic.r21922_condition())
 
 
@@ -2413,30 +2406,36 @@ class SoegoLogicTest(LogicTest):
     def test_r25248_condition(self):
         self.settings_manager.set_cr_vic(1)
         self.settings_manager.set_know_many(True)
+
         self.assertFalse(self.logic.r25248_condition())
 
         self.settings_manager.set_cr_vic(0)
         self.settings_manager.set_know_many(False)
+
         self.assertTrue(self.logic.r25248_condition())
 
 
     def test_r25252_condition(self):
         self.settings_manager.set_cr_vic(1)
         self.settings_manager.set_know_many(False)
+
         self.assertFalse(self.logic.r25252_condition())
 
         self.settings_manager.set_cr_vic(0)
         self.settings_manager.set_know_many(True)
+
         self.assertTrue(self.logic.r25252_condition())
 
 
     def test_r25253_condition(self):
         self.settings_manager.set_cr_vic(1)
         self.settings_manager.set_know_many(False)
+
         self.assertFalse(self.logic.r25253_condition())
 
         self.settings_manager.set_cr_vic(0)
         self.settings_manager.set_know_many(True)
+
         self.assertTrue(self.logic.r25253_condition())
 
 
@@ -2505,10 +2504,12 @@ class SoegoLogicTest(LogicTest):
     def test_r64617_condition(self):
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertFalse(self.logic.r64617_condition())
 
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertTrue(self.logic.r64617_condition())
 
 
@@ -2522,10 +2523,12 @@ class SoegoLogicTest(LogicTest):
     def test_r64625_condition(self):
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertFalse(self.logic.r64625_condition())
 
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertTrue(self.logic.r64625_condition())
 
 
@@ -2539,20 +2542,24 @@ class SoegoLogicTest(LogicTest):
     def test_r22058_condition(self):
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertFalse(self.logic.r22058_condition())
 
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertTrue(self.logic.r22058_condition())
 
 
     def test_r22060_condition(self):
         self.settings_manager.set_soego_strangle(True)
         self.settings_manager.set_mortuary_soego_killed(True)
+
         self.assertFalse(self.logic.r22060_condition())
 
         self.settings_manager.set_soego_strangle(False)
         self.settings_manager.set_mortuary_soego_killed(False)
+
         self.assertTrue(self.logic.r22060_condition())
 
 

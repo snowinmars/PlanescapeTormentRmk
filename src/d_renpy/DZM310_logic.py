@@ -3,15 +3,6 @@ class Zm310Logic:
         self.settings_manager = settings_manager
 
 
-    def zm310_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zm310_times()
-
-
-    def kill_zm310(self):
-        self.settings_manager.set_dead_zm310(True)
-
-
     def r6499_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

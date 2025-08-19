@@ -86,6 +86,7 @@ label s748_s0: # - # IF ~  True()
             # a16 # r35458
             jump s748_dispose
 
+
 # s1 # say35385
 label s748_s1: # from 0.0 0.1 0.2 0.3
     SPEAKER 'Скелет не отвечает.'
@@ -104,6 +105,7 @@ label s748_s1: # from 0.0 0.1 0.2 0.3
             # a19 # r35406
             jump s748_dispose
 
+
 # s2 # say35411
 label s748_s2: # from 0.4
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -121,6 +123,7 @@ label s748_s2: # from 0.4
         'Оставить скелет в покое.' if s748Logic.r35414_condition():
             # a22 # r35414
             jump s748_dispose
+
 
 # s3 # say35416
 label s748_s3: # from 0.5
@@ -169,6 +172,7 @@ label s748_s3: # from 0.5
             # a32 # r35447
             jump s748_dispose
 
+
 # s4 # say35422
 label s748_s4: # from 0.7 0.10 3.1 3.4
     SPEAKER 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
@@ -200,6 +204,7 @@ label s748_s4: # from 0.7 0.10 3.1 3.4
             # a38 # r35428
             jump s748_dispose
 
+
 # s5 # say35430
 label s748_s5: # from 0.8 0.11 3.2 3.5
     SPEAKER 'Ты тянешь за железные скобы изо всех сил, и через несколько мгновений вырываешь их из суставов. Скелет разваливается, некоторые из его костей продолжают шевелиться.'
@@ -209,6 +214,7 @@ label s748_s5: # from 0.8 0.11 3.2 3.5
             # a39 # r35431
             $ s748Logic.r35431_action()
             jump s748_dispose
+
 
 # s6 # say35433
 label s748_s6: # from 0.9 0.12 3.3 3.6
@@ -220,49 +226,9 @@ label s748_s6: # from 0.9 0.12 3.3 3.6
             $ s748Logic.r35434_action()
             jump s748_dispose
 
+
 # s7 # say35459
 label s748_s7: # - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label s748_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s748_dispose
-        'Убить.':
-            jump s748_killed
-
-
-label s748_killed: # from s748_kill
-    $ s748Logic.kill_s748()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's748s.'
-    nr 'Who is s748?'
-    nr 's748 is dead, baby, s748 is dead.'
-    jump s748_dispose
-
-
-label s748_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s748_dispose
-        'Убить.':
-            jump s748_killed_first
-
-
-label s748_killed_first: # from s748_kill_first
-    $ s748Logic.kill_s748()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's748s.'
-    nr 'Who is s748?'
-    nr 's748 is dead, baby, s748 is dead.'
-    jump s748_dispose

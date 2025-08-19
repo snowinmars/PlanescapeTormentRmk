@@ -3,15 +3,6 @@ class CopearcLogic:
         self.settings_manager = settings_manager
 
 
-    def copearc_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_copearc_times()
-
-
-    def kill_copearc(self):
-        self.settings_manager.set_dead_copearc(True)
-
-
     def r46725_action(self):
         self.settings_manager.gain_experience('party', 250)
 

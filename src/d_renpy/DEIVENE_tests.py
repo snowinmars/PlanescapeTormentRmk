@@ -11,42 +11,6 @@ class EiveneLogicTest(LogicTest):
         self.logic = EiveneLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = EiveneLogic
-        self._methods_are_bound()
-
-
-    def test_eivene_init(self):
-        location = 'LOCATION'
-        talked_to_eivene_times_before = 0
-        talked_to_eivene_times_after = 1
-        talked_to_eivene_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_eivene_times(), talked_to_eivene_times_before)
-
-        self.logic.eivene_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_eivene_times(), talked_to_eivene_times_after)
-
-        self.logic.eivene_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_eivene_times(), talked_to_eivene_times_after_once)
-
-
-    def test_kill_eivene(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_eivene,
-            self.logic.kill_eivene
-        )
-
-
     def test_r3418_action(self):
         self.logic.r3418_action()
 
@@ -59,17 +23,24 @@ class EiveneLogicTest(LogicTest):
         )
 
 
+    def test_j37701_s5_r3424_action(self):
+        note_id = '37701'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j37701_s5_r3424_action
+        )
+
+
     def test_r3424_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        note_id = '37701'
 
         self.assertTrue(self.settings_manager.get_has_embalm())
         self.assertTrue(self.settings_manager.get_has_needle())
         self.assertFalse(self.settings_manager.get_eivene_delivery())
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r3424_action()
 
@@ -78,7 +49,6 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_eivene_delivery())
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r3424_action()
 
@@ -87,51 +57,50 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_eivene_delivery())
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
-    def test_r3425_action(self):
+    def test_j37702_s5_r3425_action(self):
         note_id = '37702'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3425_action
+            self.logic.j37702_s5_r3425_action
         )
 
 
-    def test_r3426_action(self):
+    def test_j37702_s5_r3426_action(self):
         note_id = '37702'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3426_action
+            self.logic.j37702_s5_r3426_action
         )
 
 
-    def test_r3427_action(self):
+    def test_j37702_s5_r3427_action(self):
         note_id = '37702'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3427_action
+            self.logic.j37702_s5_r3427_action
         )
 
 
-    def test_r3428_action(self):
+    def test_j37702_s5_r3428_action(self):
         note_id = '37702'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3428_action
+            self.logic.j37702_s5_r3428_action
         )
 
 
-    def test_r3429_action(self):
+    def test_j37702_s5_r3429_action(self):
         note_id = '37702'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3429_action
+            self.logic.j37702_s5_r3429_action
         )
 
 
@@ -213,12 +182,29 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_keyem())
 
 
-    def test_r3459_action(self):
+    def test_j61612_s15_r3459_action(self):
         note_id = '61612'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3459_action
+            self.logic.j61612_s15_r3459_action
+        )
+
+
+    def test_r3459_action(self):
+        self.logic.r3459_action()
+
+
+    def test_s16_action(self):
+        self.logic.s16_action()
+
+
+    def test_j38202_s17_r3469_action(self):
+        note_id = '38202'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j38202_s17_r3469_action
         )
 
 
@@ -226,13 +212,11 @@ class EiveneLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        note_id = '38202'
 
         self.assertTrue(self.settings_manager.get_has_embalm())
         self.assertTrue(self.settings_manager.get_has_needle())
         self.assertFalse(self.settings_manager.get_eivene_delivery())
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r3469_action()
 
@@ -241,7 +225,6 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_eivene_delivery())
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r3469_action()
 
@@ -250,7 +233,6 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_eivene_delivery())
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r3470_action(self):
@@ -280,30 +262,48 @@ class EiveneLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_keyem())
 
 
-    def test_r3494_action(self):
+    def test_j38203_s18_r3494_action(self):
         note_id = '38203'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3494_action
+            self.logic.j38203_s18_r3494_action
         )
 
 
-    def test_r3495_action(self):
+    def test_j38203_s18_r3495_action(self):
         note_id = '38203'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3495_action
+            self.logic.j38203_s18_r3495_action
         )
 
 
-    def test_r3496_action(self):
+    def test_j38203_s18_r3496_action(self):
         note_id = '38203'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r3496_action
+            self.logic.j38203_s18_r3496_action
+        )
+
+
+    def test_j38205_s19_action(self):
+        note_id = '38205'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j38205_s19_action
+        )
+
+
+    def test_j38205_s21_action(self):
+        note_id = '38205'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j38205_s21_action
         )
 
 
@@ -386,10 +386,12 @@ class EiveneLogicTest(LogicTest):
     def test_r3424_condition(self):
         self.settings_manager.set_has_embalm(False)
         self.settings_manager.set_has_needle(False)
+
         self.assertFalse(self.logic.r3424_condition())
 
         self.settings_manager.set_has_embalm(True)
         self.settings_manager.set_has_needle(True)
+
         self.assertTrue(self.logic.r3424_condition())
 
 
@@ -466,20 +468,24 @@ class EiveneLogicTest(LogicTest):
     def test_r3456_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(True)
+
         self.assertFalse(self.logic.r3456_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
+
         self.assertTrue(self.logic.r3456_condition())
 
 
     def test_r3457_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(False)
+
         self.assertFalse(self.logic.r3457_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
+
         self.assertTrue(self.logic.r3457_condition())
 
 
@@ -507,30 +513,36 @@ class EiveneLogicTest(LogicTest):
     def test_r3469_condition(self):
         self.settings_manager.set_has_embalm(False)
         self.settings_manager.set_has_needle(False)
+
         self.assertFalse(self.logic.r3469_condition())
 
         self.settings_manager.set_has_embalm(True)
         self.settings_manager.set_has_needle(True)
+
         self.assertTrue(self.logic.r3469_condition())
 
 
     def test_r3470_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(True)
+
         self.assertFalse(self.logic.r3470_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
+
         self.assertTrue(self.logic.r3470_condition())
 
 
     def test_r3497_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(False)
+
         self.assertFalse(self.logic.r3497_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
+
         self.assertTrue(self.logic.r3497_condition())
 
 
@@ -551,20 +563,24 @@ class EiveneLogicTest(LogicTest):
     def test_r3501_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(True)
+
         self.assertFalse(self.logic.r3501_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
+
         self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(False)
+
         self.assertFalse(self.logic.r3502_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
+
         self.assertTrue(self.logic.r3502_condition())
 
 

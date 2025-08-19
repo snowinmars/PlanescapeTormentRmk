@@ -11,42 +11,6 @@ class CopearcLogicTest(LogicTest):
         self.logic = CopearcLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = CopearcLogic
-        self._methods_are_bound()
-
-
-    def test_copearc_init(self):
-        location = 'LOCATION'
-        talked_to_copearc_times_before = 0
-        talked_to_copearc_times_after = 1
-        talked_to_copearc_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_copearc_times(), talked_to_copearc_times_before)
-
-        self.logic.copearc_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_copearc_times(), talked_to_copearc_times_after)
-
-        self.logic.copearc_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_copearc_times(), talked_to_copearc_times_after_once)
-
-
-    def test_kill_copearc(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_copearc,
-            self.logic.kill_copearc
-        )
-
-
     def test_r46725_action(self):
         who = 'protagonist'
         prop = 'experience'

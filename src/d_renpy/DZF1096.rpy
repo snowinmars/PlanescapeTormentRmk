@@ -54,6 +54,7 @@ label zf1096_s0: # - # IF ~  True()
             # a9 # r35112
             jump zf1096_dispose
 
+
 # s1 # say35084
 label zf1096_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп не отвечает. Ты сомневаешься, знает ли она вообще о твоем присутствии.'
@@ -70,6 +71,7 @@ label zf1096_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf1096Logic.r35099_condition():
             # a12 # r35099
             jump zf1096_dispose
+
 
 # s2 # say35103
 label zf1096_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf1096_s2: # from 0.3
             # a15 # r35106
             jump zf1096_dispose
 
+
 # s3 # say35113
 label zf1096_s3: # - # IF ~  False()
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf1096_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf1096_dispose
-        'Убить.':
-            jump zf1096_killed
-
-
-label zf1096_killed: # from zf1096_kill
-    $ zf1096Logic.kill_zf1096()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf1096s.'
-    nr 'Who is zf1096?'
-    nr 'zf1096 is dead, baby, zf1096 is dead.'
-    jump zf1096_dispose
-
-
-label zf1096_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf1096_dispose
-        'Убить.':
-            jump zf1096_killed_first
-
-
-label zf1096_killed_first: # from zf1096_kill_first
-    $ zf1096Logic.kill_zf1096()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf1096s.'
-    nr 'Who is zf1096?'
-    nr 'zf1096 is dead, baby, zf1096 is dead.'
-    jump zf1096_dispose

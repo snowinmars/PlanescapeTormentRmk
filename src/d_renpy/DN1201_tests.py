@@ -11,42 +11,6 @@ class N1201LogicTest(LogicTest):
         self.logic = N1201Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = N1201Logic
-        self._methods_are_bound()
-
-
-    def test_n1201_init(self):
-        location = 'LOCATION'
-        talked_to_n1201_times_before = 0
-        talked_to_n1201_times_after = 1
-        talked_to_n1201_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_n1201_times(), talked_to_n1201_times_before)
-
-        self.logic.n1201_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_n1201_times(), talked_to_n1201_times_after)
-
-        self.logic.n1201_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_n1201_times(), talked_to_n1201_times_after_once)
-
-
-    def test_kill_n1201(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_n1201,
-            self.logic.kill_n1201
-        )
-
-
     def test_r44994_action(self):
         1201_note_quest_before = 0
         1201_note_quest_after = 1
@@ -347,20 +311,24 @@ class N1201LogicTest(LogicTest):
     def test_r45001_condition(self):
         self.settings_manager.set_lr_1201(True)
         self.settings_manager.set_1201_note_quest(0)
+
         self.assertFalse(self.logic.r45001_condition())
 
         self.settings_manager.set_lr_1201(False)
         self.settings_manager.set_1201_note_quest(1)
+
         self.assertTrue(self.logic.r45001_condition())
 
 
     def test_r45002_condition(self):
         self.settings_manager.set_lr_1201(True)
         self.settings_manager.set_1201_note_quest(1)
+
         self.assertFalse(self.logic.r45002_condition())
 
         self.settings_manager.set_lr_1201(False)
         self.settings_manager.set_1201_note_quest(0)
+
         self.assertTrue(self.logic.r45002_condition())
 
 
@@ -374,20 +342,24 @@ class N1201LogicTest(LogicTest):
     def test_r45004_condition(self):
         self.settings_manager.set_ul_1201(True)
         self.settings_manager.set_1201_note_quest(2)
+
         self.assertFalse(self.logic.r45004_condition())
 
         self.settings_manager.set_ul_1201(False)
         self.settings_manager.set_1201_note_quest(0)
+
         self.assertTrue(self.logic.r45004_condition())
 
 
     def test_r45005_condition(self):
         self.settings_manager.set_ul_1201(True)
         self.settings_manager.set_1201_note_quest(0)
+
         self.assertFalse(self.logic.r45005_condition())
 
         self.settings_manager.set_ul_1201(False)
         self.settings_manager.set_1201_note_quest(2)
+
         self.assertTrue(self.logic.r45005_condition())
 
 

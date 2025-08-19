@@ -11,42 +11,6 @@ class Zm506LogicTest(LogicTest):
         self.logic = Zm506Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm506Logic
-        self._methods_are_bound()
-
-
-    def test_zm506_init(self):
-        location = 'LOCATION'
-        talked_to_zm506_times_before = 0
-        talked_to_zm506_times_after = 1
-        talked_to_zm506_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm506_times(), talked_to_zm506_times_before)
-
-        self.logic.zm506_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm506_times(), talked_to_zm506_times_after)
-
-        self.logic.zm506_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm506_times(), talked_to_zm506_times_after_once)
-
-
-    def test_kill_zm506(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm506,
-            self.logic.kill_zm506
-        )
-
-
     def test_r45480_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'

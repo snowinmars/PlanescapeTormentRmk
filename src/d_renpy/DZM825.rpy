@@ -45,6 +45,7 @@ label zm825_s0: # - # IF ~  True()
             # a7 # r42309
             jump zm825_dispose
 
+
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
     SPEAKER 'Труп уставился в землю и не отвечает.'
@@ -58,6 +59,7 @@ label zm825_s1: # from 0.1 0.2 0.3 3.1
             # a9 # r42310
             jump zm825_dispose
 
+
 # s2 # say24571
 label zm825_s2: # from 0.4
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -66,6 +68,7 @@ label zm825_s2: # from 0.4
         'Оставить труп в покое.':
             # a10 # r24572
             jump zm825_dispose
+
 
 # s3 # say42311
 label zm825_s3: # from 0.5
@@ -87,45 +90,3 @@ label zm825_s3: # from 0.5
         'Оставить труп в покое.':
             # a14 # r42315
             jump zm825_dispose
-
-
-label zm825_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm825_dispose
-        'Убить.':
-            jump zm825_killed
-
-
-label zm825_killed: # from zm825_kill
-    $ zm825Logic.kill_zm825()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm825s.'
-    nr 'Who is zm825?'
-    nr 'zm825 is dead, baby, zm825 is dead.'
-    jump zm825_dispose
-
-
-label zm825_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm825_dispose
-        'Убить.':
-            jump zm825_killed_first
-
-
-label zm825_killed_first: # from zm825_kill_first
-    $ zm825Logic.kill_zm825()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm825s.'
-    nr 'Who is zm825?'
-    nr 'zm825 is dead, baby, zm825 is dead.'
-    jump zm825_dispose

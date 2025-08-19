@@ -38,6 +38,7 @@ label zm199_s0: # - # IF ~  True()
             # a5 # r34985
             jump zm199_dispose
 
+
 # s1 # say34977
 label zm199_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -47,6 +48,7 @@ label zm199_s1: # from 0.0 0.1 0.2
             # a6 # r34978
             jump zm199_dispose
 
+
 # s2 # say34982
 label zm199_s2: # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -55,45 +57,3 @@ label zm199_s2: # from 0.3
         'Оставить зомби в покое.':
             # a7 # r34983
             jump zm199_dispose
-
-
-label zm199_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm199_dispose
-        'Убить.':
-            jump zm199_killed
-
-
-label zm199_killed: # from zm199_kill
-    $ zm199Logic.kill_zm199()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm199s.'
-    nr 'Who is zm199?'
-    nr 'zm199 is dead, baby, zm199 is dead.'
-    jump zm199_dispose
-
-
-label zm199_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm199_dispose
-        'Убить.':
-            jump zm199_killed_first
-
-
-label zm199_killed_first: # from zm199_kill_first
-    $ zm199Logic.kill_zm199()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm199s.'
-    nr 'Who is zm199?'
-    nr 'zm199 is dead, baby, zm199 is dead.'
-    jump zm199_dispose

@@ -33,6 +33,7 @@ label zm782_s0: # - # IF ~  True()
             # a4 # r24717
             jump zm782_dispose
 
+
 # s1 # say24710
 label zm782_s1: # from 0.1
     SPEAKER 'Труп не отвечает.'
@@ -45,6 +46,7 @@ label zm782_s1: # from 0.1
         'Оставить труп в покое.':
             # a6 # r42304
             jump zm782_dispose
+
 
 # s2 # say24715
 label zm782_s2: # from 0.2 0.3
@@ -59,45 +61,3 @@ label zm782_s2: # from 0.2 0.3
         'Оставить труп в покое.':
             # a8 # r42305
             jump zm782_dispose
-
-
-label zm782_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm782_dispose
-        'Убить.':
-            jump zm782_killed
-
-
-label zm782_killed: # from zm782_kill
-    $ zm782Logic.kill_zm782()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm782s.'
-    nr 'Who is zm782?'
-    nr 'zm782 is dead, baby, zm782 is dead.'
-    jump zm782_dispose
-
-
-label zm782_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm782_dispose
-        'Убить.':
-            jump zm782_killed_first
-
-
-label zm782_killed_first: # from zm782_kill_first
-    $ zm782Logic.kill_zm782()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm782s.'
-    nr 'Who is zm782?'
-    nr 'zm782 is dead, baby, zm782 is dead.'
-    jump zm782_dispose

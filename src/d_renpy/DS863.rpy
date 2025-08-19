@@ -86,6 +86,7 @@ label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
             # a16 # r35612
             jump s863_dispose
 
+
 # s1 # say35539
 label s863_s1: # from 0.0 0.1 0.2 0.3
     SPEAKER 'Скелет не отвечает.'
@@ -104,6 +105,7 @@ label s863_s1: # from 0.0 0.1 0.2 0.3
             # a19 # r35560
             jump s863_dispose
 
+
 # s2 # say35565
 label s863_s2: # from 0.4
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -121,6 +123,7 @@ label s863_s2: # from 0.4
         'Оставить скелет в покое.' if s863Logic.r35568_condition():
             # a22 # r35568
             jump s863_dispose
+
 
 # s3 # say35570
 label s863_s3: # from 0.5
@@ -169,6 +172,7 @@ label s863_s3: # from 0.5
             # a32 # r35601
             jump s863_dispose
 
+
 # s4 # say35576
 label s863_s4: # from 0.7 0.10 3.1 3.4
     SPEAKER 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
@@ -200,6 +204,7 @@ label s863_s4: # from 0.7 0.10 3.1 3.4
             # a38 # r35582
             jump s863_dispose
 
+
 # s5 # say35584
 label s863_s5: # from 0.8 0.11 3.2 3.5
     SPEAKER 'Ты тянешь за железные скобы изо всех сил, и через несколько мгновений вырываешь их из суставов. Скелет разваливается, некоторые из его костей продолжают шевелиться.'
@@ -209,6 +214,7 @@ label s863_s5: # from 0.8 0.11 3.2 3.5
             # a39 # r35585
             $ s863Logic.r35585_action()
             jump s863_dispose
+
 
 # s6 # say35587
 label s863_s6: # from 0.9 0.12 3.3 3.6
@@ -220,11 +226,13 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
             $ s863Logic.r35588_action()
             jump s863_dispose
 
+
 # s7 # say35613
 label s863_s7: # - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
+
 # s8 # say64262
 label s863_s8: # - # IF ~  HasItem("DRemind","S863")
     SPEAKER 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов. Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек. На лбу высечен номер «863»… но сзади череп имеет открытую пустую полость. Ты замечаешь, что кто-то воспользовался этим и поместил внутрь черепа пергаментный свиток.'
@@ -238,6 +246,7 @@ label s863_s8: # - # IF ~  HasItem("DRemind","S863")
             # a42 # r64264
             jump s863_dispose
 
+
 # s9 # say64265
 label s863_s9: # from 8.0
     SPEAKER 'Ты ловко вытягиваешь пергамент из черепа рабочего. Довольно странно, но пробоина в череп выглядит так, словно она *предназначена* для хранения сообщений: к пергаменту прикреплена тонкая нитка, которая привязана к черепу изнутри, предотвращая случайное выпадение пергамента.'
@@ -247,6 +256,7 @@ label s863_s9: # from 8.0
             # a43 # r64266
             $ s863Logic.r64266_action()
             jump s863_s10
+
 
 # s10 # say64267
 label s863_s10: # from 9.0
@@ -260,45 +270,3 @@ label s863_s10: # from 9.0
         'Оставить скелет в покое.':
             # a45 # r64269
             jump s863_dispose
-
-
-label s863_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s863_dispose
-        'Убить.':
-            jump s863_killed
-
-
-label s863_killed: # from s863_kill
-    $ s863Logic.kill_s863()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's863s.'
-    nr 'Who is s863?'
-    nr 's863 is dead, baby, s863 is dead.'
-    jump s863_dispose
-
-
-label s863_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s863_dispose
-        'Убить.':
-            jump s863_killed_first
-
-
-label s863_killed_first: # from s863_kill_first
-    $ s863Logic.kill_s863()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's863s.'
-    nr 'Who is s863?'
-    nr 's863 is dead, baby, s863 is dead.'
-    jump s863_dispose

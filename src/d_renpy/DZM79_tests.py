@@ -11,42 +11,6 @@ class Zm79LogicTest(LogicTest):
         self.logic = Zm79Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm79Logic
-        self._methods_are_bound()
-
-
-    def test_zm79_init(self):
-        location = 'LOCATION'
-        talked_to_zm79_times_before = 0
-        talked_to_zm79_times_after = 1
-        talked_to_zm79_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm79_times(), talked_to_zm79_times_before)
-
-        self.logic.zm79_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm79_times(), talked_to_zm79_times_after)
-
-        self.logic.zm79_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm79_times(), talked_to_zm79_times_after_once)
-
-
-    def test_kill_zm79(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm79,
-            self.logic.kill_zm79
-        )
-
-
     def test_r34943_action(self):
         who = 'protagonist'
         prop = 'law'
@@ -66,21 +30,21 @@ class Zm79LogicTest(LogicTest):
         )
 
 
-    def test_r64279_action(self):
+    def test_j64536_s3_r64279_action(self):
         note_id = '64536'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r64279_action
+            self.logic.j64536_s3_r64279_action
         )
 
 
-    def test_r64280_action(self):
+    def test_j64537_s3_r64280_action(self):
         note_id = '64537'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r64280_action
+            self.logic.j64537_s3_r64280_action
         )
 
 

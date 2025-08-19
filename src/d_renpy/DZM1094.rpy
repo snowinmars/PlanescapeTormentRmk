@@ -39,6 +39,7 @@ label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
             # a5 # r6570
             jump zm1094_dispose
 
+
 # s1 # say6563
 label zm1094_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -47,6 +48,7 @@ label zm1094_s1: # from 0.0 0.1 0.2
         'Оставить труп в покое.':
             # a6 # r6571
             jump zm1094_dispose
+
 
 # s2 # say6564
 label zm1094_s2: # from 0.3
@@ -60,6 +62,7 @@ label zm1094_s2: # from 0.3
         'Оставить духа.':
             # a8 # r9246
             jump zm1094_dispose
+
 
 # s3 # say9224
 label zm1094_s3: # from 2.0
@@ -82,6 +85,7 @@ label zm1094_s3: # from 2.0
         '«Вряд ли. Прощай».':
             # a12 # r9250
             jump zm1094_dispose
+
 
 # s4 # say9225
 label zm1094_s4: # from 3.0
@@ -116,6 +120,7 @@ label zm1094_s4: # from 3.0
             # a19 # r9257
             jump zm1094_dispose
 
+
 # s5 # say9226
 label zm1094_s5: # from 4.0 11.0
     SPEAKER '«Меня зовут Асонж. Я могу уйти?»'
@@ -128,6 +133,7 @@ label zm1094_s5: # from 4.0 11.0
         '«Это все, что я хотел узнать. Прощай».':
             # a21 # r9259
             jump zm1094_dispose
+
 
 # s6 # say9227
 label zm1094_s6: # from 4.1 11.1
@@ -142,6 +148,7 @@ label zm1094_s6: # from 4.1 11.1
             # a23 # r9261
             jump zm1094_dispose
 
+
 # s7 # say9228
 label zm1094_s7: # from 4.2 11.2
     SPEAKER 'Дух пожимает плечами и смотрит вверх. «Точно не скажу. Да и какая вообще разница?» Он печально сжимает свои губы и бросает на тебя тяжелый взгляд; призрачные искорки в его глазах сверкают гневом. «Что-нибудь еще?»'
@@ -155,6 +162,7 @@ label zm1094_s7: # from 4.2 11.2
             # a25 # r9263
             jump zm1094_dispose
 
+
 # s8 # say9229
 label zm1094_s8: # from 4.3 11.3
     SPEAKER '«Мой дух на Арборее… — он на минуту умолкает, теряясь в теплых воспоминаниях. — В данный момент я жажду вернуться домой, подальше от твоего эгоистичного, самовольного и довольно скучного любопытства. Могу ли я вернуться?»'
@@ -167,6 +175,7 @@ label zm1094_s8: # from 4.3 11.3
         '«Да. Прощай».':
             # a27 # r9265
             jump zm1094_dispose
+
 
 # s9 # say9230
 label zm1094_s9: # from 4.4 11.4
@@ -185,6 +194,7 @@ label zm1094_s9: # from 4.4 11.4
             # a30 # r9268
             jump zm1094_dispose
 
+
 # s10 # say9231
 label zm1094_s10: # from 4.5 11.5
     SPEAKER '«Нет». Похоже, ты мало его интересуешь.'
@@ -197,6 +207,7 @@ label zm1094_s10: # from 4.5 11.5
         '«Это все, что я хотел узнать. Прощай».':
             # a32 # r9270
             jump zm1094_dispose
+
 
 # s11 # say9232
 label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
@@ -231,6 +242,7 @@ label zm1094_s11: # from 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
             # a39 # r9277
             jump zm1094_dispose
 
+
 # s12 # say9233
 label zm1094_s12: # from 9.0
     SPEAKER '«Тебе, дорогой мой приятель, остается только предполагать, как и мне. Мне уже пора, если ты не против».'
@@ -244,6 +256,7 @@ label zm1094_s12: # from 9.0
             # a41 # r9279
             jump zm1094_dispose
 
+
 # s13 # say9234
 label zm1094_s13: # from 3.1
     SPEAKER 'Он немного обдумывает это, затем начинает хохотать. «Да! Это все объясняет, не так ли? Постой, я знаю тебя?» Он склоняет голову набок, внимательно смотря на тебя. Похоже, для него опознание твоей личности — своего рода увлекательная игра.'
@@ -256,6 +269,7 @@ label zm1094_s13: # from 3.1
         '«Вряд ли. Прощай».':
             # a43 # r9281
             jump zm1094_dispose
+
 
 # s14 # say9235
 label zm1094_s14: # from 3.2 13.0
@@ -294,6 +308,7 @@ label zm1094_s14: # from 3.2 13.0
             # a51 # r9320
             jump zm1094_dispose
 
+
 # s15 # say9236
 label zm1094_s15: # from 14.0 22.0
     SPEAKER '«Меня зовут Асонж. А как тебя?»'
@@ -314,6 +329,7 @@ label zm1094_s15: # from 14.0 22.0
             $ zm1094Logic.r9291_action()
             jump zm1094_dispose
 
+
 # s16 # say9237
 label zm1094_s16: # from 14.2 22.2
     SPEAKER '«Я отовсюду! По правде говоря, я не знаю, откуда я родом. В жизни я много путешествовал, и могу назвать своим домом многие места. Сейчас передо мной Арборея…» Дух выглядит довольным.'
@@ -326,6 +342,7 @@ label zm1094_s16: # from 14.2 22.2
         '«Это все, что я хотел узнать. Прощай».':
             # a56 # r9293
             jump zm1094_dispose
+
 
 # s17 # say9238
 label zm1094_s17: # from 14.3 22.3
@@ -340,6 +357,7 @@ label zm1094_s17: # from 14.3 22.3
             # a58 # r9295
             jump zm1094_dispose
 
+
 # s18 # say9239
 label zm1094_s18: # from 14.4 22.4
     SPEAKER '«В Арборее! О более удивительном месте я и не мечтал. Нигде в моей смертной жизни я встречал места, столь чувственного… столь величественного… — он умолкает, теряясь в приятных воспоминаниях. — Прекрасные земли, прекрасный народ. Если честно, я уже скучаю по ней!»'
@@ -352,6 +370,7 @@ label zm1094_s18: # from 14.4 22.4
         '«Это все, что я хотел узнать. Прощай».':
             # a60 # r9297
             jump zm1094_dispose
+
 
 # s19 # say9240
 label zm1094_s19: # from 14.5 22.5
@@ -370,6 +389,7 @@ label zm1094_s19: # from 14.5 22.5
             # a63 # r9300
             jump zm1094_dispose
 
+
 # s20 # say9241
 label zm1094_s20: # from 14.6 22.6
     SPEAKER 'Дух на минуту задумывается. «Нет, боюсь, что не слышал об этом человеке. Он твой друг?»'
@@ -382,6 +402,7 @@ label zm1094_s20: # from 14.6 22.6
         '«Не знаю. Прощай».':
             # a65 # r9302
             jump zm1094_dispose
+
 
 # s21 # say9242
 label zm1094_s21: # from 15.0
@@ -400,6 +421,7 @@ label zm1094_s21: # from 15.0
         '«Нет, это неважно. Прощай».':
             # a68 # r9305
             jump zm1094_dispose
+
 
 # s22 # say9243
 label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
@@ -438,6 +460,7 @@ label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
             # a76 # r9321
             jump zm1094_dispose
 
+
 # s23 # say9244
 label zm1094_s23: # from 21.1
     SPEAKER 'Дух, чувствуя твои колебания, начинает хохотать. «Вот ведь бедолага! Ну пусть будет Адан, приятель. Так какие у тебя вопросы?»'
@@ -450,6 +473,7 @@ label zm1094_s23: # from 21.1
         '«Нет, нету. Прощай».':
             # a78 # r9314
             jump zm1094_dispose
+
 
 # s24 # say9245
 label zm1094_s24: # from 19.0
@@ -464,6 +488,7 @@ label zm1094_s24: # from 19.0
             # a80 # r9316
             jump zm1094_dispose
 
+
 # s25 # say9283
 label zm1094_s25: # from 14.1 22.1
     SPEAKER '«Меня зовут Асонж».'
@@ -476,6 +501,7 @@ label zm1094_s25: # from 14.1 22.1
         '«Это все, что я хотел узнать. Прощай».':
             # a82 # r9285
             jump zm1094_dispose
+
 
 # s26 # say20061
 label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
@@ -490,6 +516,7 @@ label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","G
             # a84 # r20064
             jump zm1094_dispose
 
+
 # s27 # say20062
 label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
     SPEAKER '«А, это ты… снова». Он хмурится, глядя в сторону.'
@@ -502,45 +529,3 @@ label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
         '«Я просто проходил мимо. Прощай».':
             # a86 # r20066
             jump zm1094_dispose
-
-
-label zm1094_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1094_dispose
-        'Убить.':
-            jump zm1094_killed
-
-
-label zm1094_killed: # from zm1094_kill
-    $ zm1094Logic.kill_zm1094()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1094s.'
-    nr 'Who is zm1094?'
-    nr 'zm1094 is dead, baby, zm1094 is dead.'
-    jump zm1094_dispose
-
-
-label zm1094_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1094_dispose
-        'Убить.':
-            jump zm1094_killed_first
-
-
-label zm1094_killed_first: # from zm1094_kill_first
-    $ zm1094Logic.kill_zm1094()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1094s.'
-    nr 'Who is zm1094?'
-    nr 'zm1094 is dead, baby, zm1094 is dead.'
-    jump zm1094_dispose

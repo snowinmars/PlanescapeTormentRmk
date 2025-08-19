@@ -38,6 +38,7 @@ label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
             # a5 # r6537
             jump zm732_dispose
 
+
 # s1 # say6530
 label zm732_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -47,6 +48,7 @@ label zm732_s1: # from 0.0 0.1 0.2
             # a6 # r6538
             jump zm732_dispose
 
+
 # s2 # say6531
 label zm732_s2: # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -55,6 +57,7 @@ label zm732_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r6539
             jump zm732_dispose
+
 
 # s3 # say64270
 label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
@@ -70,6 +73,7 @@ label zm732_s3: # - # IF ~  HasItem("TomeBA","ZM732")
             # a9 # r64272
             jump zm732_dispose
 
+
 # s4 # say64273
 label zm732_s4: # from 3.0
     SPEAKER 'Ты осторожно берешь книгу из рук трупа — он даже не замечает этого. Похоже, это книга заклинаний и оберегов: она исписана схемами и таблицами, описывающими различные аспекты искусства некромантии. Сама по себе книга очень тяжелая. Каким бы неуклюжим не был зомби, он, должно быть, очень силен.'
@@ -82,45 +86,3 @@ label zm732_s4: # from 3.0
         'Оставить труп в покое.':
             # a11 # r64275
             jump zm732_dispose
-
-
-label zm732_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm732_dispose
-        'Убить.':
-            jump zm732_killed
-
-
-label zm732_killed: # from zm732_kill
-    $ zm732Logic.kill_zm732()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm732s.'
-    nr 'Who is zm732?'
-    nr 'zm732 is dead, baby, zm732 is dead.'
-    jump zm732_dispose
-
-
-label zm732_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm732_dispose
-        'Убить.':
-            jump zm732_killed_first
-
-
-label zm732_killed_first: # from zm732_kill_first
-    $ zm732Logic.kill_zm732()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm732s.'
-    nr 'Who is zm732?'
-    nr 'zm732 is dead, baby, zm732 is dead.'
-    jump zm732_dispose

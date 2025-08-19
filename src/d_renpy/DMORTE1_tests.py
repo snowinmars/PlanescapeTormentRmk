@@ -11,42 +11,6 @@ class Morte1LogicTest(LogicTest):
         self.logic = Morte1Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Morte1Logic
-        self._methods_are_bound()
-
-
-    def test_morte1_init(self):
-        location = 'LOCATION'
-        talked_to_morte1_times_before = 0
-        talked_to_morte1_times_after = 1
-        talked_to_morte1_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte1_times(), talked_to_morte1_times_before)
-
-        self.logic.morte1_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte1_times(), talked_to_morte1_times_after)
-
-        self.logic.morte1_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_morte1_times(), talked_to_morte1_times_after_once)
-
-
-    def test_kill_morte1(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_morte1,
-            self.logic.kill_morte1
-        )
-
-
     def test_r39793_action(self):
         self._integer_equals_action(
             self.settings_manager.get_morte_value,

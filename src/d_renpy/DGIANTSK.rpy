@@ -59,6 +59,7 @@ label giantsk_s0: # - # IF ~  True()
             # a10 # r4004
             jump giantsk_dispose
 
+
 # s1 # say1166
 label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
     SPEAKER 'Похоже, скелет мертв уже слишком давно, чтобы отвечать на твои вопросы. Либо это, либо его голова находится слишком высоко, чтобы услышать тебя.'
@@ -96,6 +97,7 @@ label giantsk_s1: # from 0.0 0.1 0.9 # IF ~  False()
             # a18 # r4041
             jump giantsk_dispose
 
+
 # s2 # say4005
 label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
     SPEAKER 'Как только ты касаешься скелета, по всему Моргу раздается звон железного колокола… а скелет моментально пробуждается, поднимая клинок для нападения!'
@@ -105,6 +107,7 @@ label giantsk_s2: # from 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2
             # a19 # r4042
             $ giantskLogic.r4042_action()
             jump giantsk_dispose
+
 
 # s3 # say4006
 label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
@@ -122,6 +125,7 @@ label giantsk_s3: # from 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5
         'Оставить скелета в покое.':
             # a22 # r4046
             jump giantsk_dispose
+
 
 # s4 # say4007
 label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
@@ -155,6 +159,7 @@ label giantsk_s4: # from 0.2 1.0 3.1 7.1 15.1 16.3
         'Оставить скелета в покое.':
             # a29 # r4053
             jump giantsk_dispose
+
 
 # s5 # say4008
 label giantsk_s5: # from 4.0
@@ -197,6 +202,7 @@ label giantsk_s5: # from 4.0
             # a38 # r4061
             jump giantsk_dispose
 
+
 # s6 # say4009
 label giantsk_s6: # from 5.0 5.1
     SPEAKER 'Почти неосознанно ты расслабляешь взгляд и оглядываешь символы. Спустя минуту символы перестают дрожать и превращаются в цепочку рун, бегущих вверх и вниз по нагруднику. Довольно странно, но цепляющиеся друг за друга руны напоминают тебе цепи… едва поняв это, неожиданно ты вспоминаешь, что эти руны являются какими-то охранными чарами.'
@@ -233,6 +239,7 @@ label giantsk_s6: # from 5.0 5.1
         'Оставить скелета в покое.':
             # a46 # r4069
             jump giantsk_dispose
+
 
 # s7 # say4010
 label giantsk_s7: # from 5.2 6.1 7.2
@@ -275,6 +282,7 @@ label giantsk_s7: # from 5.2 6.1 7.2
             # a55 # r4077
             jump giantsk_dispose
 
+
 # s8 # say4011
 label giantsk_s8: # from 6.0
     SPEAKER 'Ты изучаешь образец рун, пробегающий через нагрудник. По своей сути они являются слабым защитным заклинанием, но несколько черепоподобных и шарообразных следов, идущих по краям доспехов заставляют тебя думать о более сильных наложенных некромантских и охранных заклинаниях. Если дотронуться до скелета, то, скорее всего, он пробудится… и будет защищаться.'
@@ -312,6 +320,7 @@ label giantsk_s8: # from 6.0
         'Оставить скелета в покое.':
             # a63 # r4078
             jump giantsk_dispose
+
 
 # s9 # say4012
 label giantsk_s9: # from 0.3 1.1 8.0 8.1
@@ -360,6 +369,7 @@ label giantsk_s9: # from 0.3 1.1 8.0 8.1
             # a73 # r4094
             jump giantsk_dispose
 
+
 # s10 # say4013
 label giantsk_s10: # from 9.1 16.0
     SPEAKER 'Как только ты начинаешь работать с рунами, украшающими нагрудник, по всему Моргу раздается звон железного колокола… а скелет моментально пробуждается, поднимая клинок в атаку!'
@@ -369,6 +379,7 @@ label giantsk_s10: # from 9.1 16.0
             # a74 # r4095
             $ giantskLogic.r4095_action()
             jump giantsk_dispose
+
 
 # s11 # say4014
 label giantsk_s11: # from 9.2 16.1
@@ -380,6 +391,7 @@ label giantsk_s11: # from 9.2 16.1
             $ giantskLogic.r4096_action()
             jump giantsk_s12
 
+
 # s12 # say4015
 label giantsk_s12: # from 11.0
     SPEAKER 'На секунду ты замираешь, но никто не обращает внимания на шум. Ты осматриваешь предметы, оставшиеся от скелета на полу. Большинство из них слишком тяжелые или слишком древние, чтобы ими воспользоваться, но ты обнаруживаешь часть нагрудника скелета с большей частью разрушенного заклинания, написанного на нем. Ты чувствуешь, что эта вещь может пригодиться.'
@@ -390,6 +402,7 @@ label giantsk_s12: # from 11.0
             $ giantskLogic.r4097_action()
             jump giantsk_dispose
 
+
 # s13 # say4016
 label giantsk_s13: # from 9.3 16.2
     SPEAKER 'На этот раз снятие заклинаний заняло гораздо меньше времени, и руны быстро разрушаются под твоей атакой. Спустя несколько минут, ты избавляешь скелет от наложенных на него заклинаний. Помня о прошлом случае, ты подхватываешь скелет до того, как он упадет, и тяжело пыхтя, медленно кладешь его на пол.'
@@ -399,6 +412,7 @@ label giantsk_s13: # from 9.3 16.2
             # a77 # r4098
             $ giantskLogic.r4098_action()
             jump giantsk_s14
+
 
 # s14 # say4017
 label giantsk_s14: # from 13.0
@@ -420,6 +434,7 @@ label giantsk_s14: # from 13.0
             $ giantskLogic.r4101_action()
             jump giantsk_dispose
 
+
 # s15 # say64295
 label giantsk_s15: # from 7.0
     SPEAKER 'Ты сравниваешь диаграммы из книги с символами на нагруднике. Судя по всему, они являются слабым защитным заклинанием, но несколько сферических рисунков и рун в форме черепов, идущих по краям доспехов, наводят на мысль о более сильных некромантских и охранных заклинаниях. Если дотронуться до скелета, то, скорее всего, он пробудится… и будет защищаться.'
@@ -432,6 +447,7 @@ label giantsk_s15: # from 7.0
         'Оставить руны в покое и осмотреть гигантского скелета еще раз.':
             # a82 # r64299
             jump giantsk_s4
+
 
 # s16 # say64297
 label giantsk_s16: # from 9.0 15.0
@@ -455,45 +471,3 @@ label giantsk_s16: # from 9.0 15.0
         'Оставить руны в покое и осмотреть гигантского скелета еще раз.':
             # a86 # r64303
             jump giantsk_s4
-
-
-label giantsk_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump giantsk_dispose
-        'Убить.':
-            jump giantsk_killed
-
-
-label giantsk_killed: # from giantsk_kill
-    $ giantskLogic.kill_giantsk()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'giantsks.'
-    nr 'Who is giantsk?'
-    nr 'giantsk is dead, baby, giantsk is dead.'
-    jump giantsk_dispose
-
-
-label giantsk_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump giantsk_dispose
-        'Убить.':
-            jump giantsk_killed_first
-
-
-label giantsk_killed_first: # from giantsk_kill_first
-    $ giantskLogic.kill_giantsk()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'giantsks.'
-    nr 'Who is giantsk?'
-    nr 'giantsk is dead, baby, giantsk is dead.'
-    jump giantsk_dispose

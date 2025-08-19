@@ -3,15 +3,6 @@ class Zm1041Logic:
         self.settings_manager = settings_manager
 
 
-    def zm1041_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zm1041_times()
-
-
-    def kill_zm1041(self):
-        self.settings_manager.set_dead_zm1041(True)
-
-
     def r6576_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

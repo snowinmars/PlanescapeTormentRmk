@@ -11,42 +11,6 @@ class S863LogicTest(LogicTest):
         self.logic = S863Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = S863Logic
-        self._methods_are_bound()
-
-
-    def test_s863_init(self):
-        location = 'LOCATION'
-        talked_to_s863_times_before = 0
-        talked_to_s863_times_after = 1
-        talked_to_s863_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), talked_to_s863_times_before)
-
-        self.logic.s863_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), talked_to_s863_times_after)
-
-        self.logic.s863_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_s863_times(), talked_to_s863_times_after_once)
-
-
-    def test_kill_s863(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_s863,
-            self.logic.kill_s863
-        )
-
-
     def test_r35538_action(self):
         who_law = 'protagonist'
         prop_law = 'law'
@@ -234,11 +198,13 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_skeleton_examine(False)
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip2(True)
+
         self.assertFalse(self.logic.r35602_condition())
 
         self.settings_manager.set_skeleton_examine(True)
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip2(False)
+
         self.assertTrue(self.logic.r35602_condition())
 
 
@@ -252,6 +218,7 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_morte_skel_mort_quip2(False)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35603_condition())
 
         self.settings_manager.set_skeleton_examine(True)
@@ -259,6 +226,7 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_morte_skel_mort_quip2(True)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35603_condition())
 
 
@@ -272,6 +240,7 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_morte_skel_mort_quip2(False)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35604_condition())
 
         self.settings_manager.set_skeleton_examine(True)
@@ -279,6 +248,7 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_morte_skel_mort_quip2(True)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35604_condition())
 
 
@@ -287,12 +257,14 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip2(False)
         self.settings_manager.set_has_prybar(False)
+
         self.assertFalse(self.logic.r35605_condition())
 
         self.settings_manager.set_skeleton_examine(True)
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip2(True)
         self.settings_manager.set_has_prybar(True)
+
         self.assertTrue(self.logic.r35605_condition())
 
 
@@ -305,12 +277,14 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_skeleton_examine(False)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35606_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_skeleton_examine(True)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35606_condition())
 
 
@@ -323,12 +297,14 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_skeleton_examine(False)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35607_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_skeleton_examine(True)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35607_condition())
 
 
@@ -336,41 +312,49 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_skeleton_examine(False)
         self.settings_manager.set_has_prybar(False)
+
         self.assertFalse(self.logic.r35608_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_skeleton_examine(True)
         self.settings_manager.set_has_prybar(True)
+
         self.assertTrue(self.logic.r35608_condition())
 
 
     def test_r35609_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r35609_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r35609_condition())
 
 
     def test_r35610_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35610_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35610_condition())
 
 
     def test_r35611_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35611_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35611_condition())
 
 
@@ -384,20 +368,24 @@ class S863LogicTest(LogicTest):
     def test_r35540_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35540_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35540_condition())
 
 
     def test_r35559_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35559_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35559_condition())
 
 
@@ -411,20 +399,24 @@ class S863LogicTest(LogicTest):
     def test_r35566_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35566_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35566_condition())
 
 
     def test_r35567_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35567_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35567_condition())
 
 
@@ -438,10 +430,12 @@ class S863LogicTest(LogicTest):
     def test_r35571_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip2(True)
+
         self.assertFalse(self.logic.r35571_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip2(False)
+
         self.assertTrue(self.logic.r35571_condition())
 
 
@@ -454,12 +448,14 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_morte_skel_mort_quip2(False)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35593_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip2(True)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35593_condition())
 
 
@@ -472,12 +468,14 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_morte_skel_mort_quip2(False)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35594_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip2(True)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35594_condition())
 
 
@@ -485,11 +483,13 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip2(False)
         self.settings_manager.set_has_prybar(False)
+
         self.assertFalse(self.logic.r35595_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip2(True)
         self.settings_manager.set_has_prybar(True)
+
         self.assertTrue(self.logic.r35595_condition())
 
 
@@ -501,11 +501,13 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35596_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength - 1)
+
         self.assertTrue(self.logic.r35596_condition())
 
 
@@ -517,41 +519,49 @@ class S863LogicTest(LogicTest):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_has_prybar(True)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength)
+
         self.assertFalse(self.logic.r35597_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_has_prybar(False)
         self.settings_manager.character_manager.set_property(who_strength, prop_strength, delta_strength + 1)
+
         self.assertTrue(self.logic.r35597_condition())
 
 
     def test_r35598_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_has_prybar(False)
+
         self.assertFalse(self.logic.r35598_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_has_prybar(True)
+
         self.assertTrue(self.logic.r35598_condition())
 
 
     def test_r35599_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35599_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35599_condition())
 
 
     def test_r35600_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35600_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35600_condition())
 
 
@@ -570,11 +580,13 @@ class S863LogicTest(LogicTest):
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35577_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35577_condition())
 
 
@@ -586,11 +598,13 @@ class S863LogicTest(LogicTest):
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35578_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35578_condition())
 
 
@@ -601,30 +615,36 @@ class S863LogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertFalse(self.logic.r35579_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertTrue(self.logic.r35579_condition())
 
 
     def test_r35580_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35580_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35580_condition())
 
 
     def test_r35581_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_skel_mort_quip(True)
+
         self.assertFalse(self.logic.r35581_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_skel_mort_quip(False)
+
         self.assertTrue(self.logic.r35581_condition())
 
 

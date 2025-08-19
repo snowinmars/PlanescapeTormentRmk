@@ -38,6 +38,7 @@ label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
             # a5 # r459
             jump vaxis_dispose
 
+
 # s1 # say460
 label vaxis_s1: # from 0.3 # IF ~  False()
     SPEAKER 'Довольно странно, но твоя способность не работает с этим трупом.'
@@ -52,6 +53,7 @@ label vaxis_s1: # from 0.3 # IF ~  False()
             # a7 # r462
             jump vaxis_dispose
 
+
 # s2 # say463
 label vaxis_s2: # from 1.0
     SPEAKER 'После твоего тычка в глаз труп, рефлекторно закрыв руками лицо, издает нечленораздельный вопль. Он начинает что-то невнятно бормотать, сыпля проклятиями в твой адрес.'
@@ -59,18 +61,19 @@ label vaxis_s2: # from 1.0
     menu:
         '«Ты не зомби! Кто ты?»':
             # a8 # r464
-            $ vaxisLogic.r464_action()
+            $ vaxisLogic.j64513_s2_r464_action()
             jump vaxis_s6
 
         '«Зачем ты замаскировался под зомби?»':
             # a9 # r465
-            $ vaxisLogic.r465_action()
+            $ vaxisLogic.j64513_s2_r465_action()
             jump vaxis_s6
 
         'Уйти. Быстро.':
             # a10 # r466
-            $ vaxisLogic.r466_action()
+            $ vaxisLogic.j64513_s2_r466_action()
             jump vaxis_s3
+
 
 # s3 # say467
 label vaxis_s3: # from 2.2 5.2
@@ -103,6 +106,7 @@ label vaxis_s3: # from 2.2 5.2
             # a16 # r474
             jump vaxis_s4
 
+
 # s4 # say471
 label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
     SPEAKER 'Ты уже почти отвернулся, как зомби начинает издавать низкое протяжное ворчание: «Никоу ничео не говои пво МЕЯ. Моучи. Не говои НИФЕО твуфявым, — он прикладывает палец к губам. — Фффф». После этого он проводит пальцем по горлу. «Или ты уфнефь нафегда. ПОЯЛ мея?»'
@@ -127,6 +131,7 @@ label vaxis_s4: # from 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 1
             # a20 # r478
             jump vaxis_dispose
 
+
 # s5 # say479
 label vaxis_s5: # from 0.0 0.1 0.2 0.4
     SPEAKER 'Зомби от неожиданности моргает при твоем обращении. «А? Фто?»'
@@ -134,18 +139,22 @@ label vaxis_s5: # from 0.0 0.1 0.2 0.4
     menu:
         '«Ты не зомби! Кто ты?»':
             # a21 # r480
+            $ vaxisLogic.j64513_s5_r480_action()
             $ vaxisLogic.r480_action()
             jump vaxis_s6
 
         '«Зачем ты замаскировался под зомби?»':
             # a22 # r481
+            $ vaxisLogic.j64513_s5_r481_action()
             $ vaxisLogic.r481_action()
             jump vaxis_s6
 
         'Уйти. Быстро.':
             # a23 # r482
+            $ vaxisLogic.j64513_s5_r482_action()
             $ vaxisLogic.r482_action()
             jump vaxis_s3
+
 
 # s6 # say483
 label vaxis_s6: # from 2.0 2.1 5.0 5.1
@@ -177,6 +186,7 @@ label vaxis_s6: # from 2.0 2.1 5.0 5.1
         '«Извини, что побеспокоил тебя… кем бы ты ни был. Прощай».':
             # a29 # r489
             jump vaxis_s4
+
 
 # s7 # say490
 label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
@@ -223,6 +233,7 @@ label vaxis_s7: # from 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
             # a38 # r1349
             jump vaxis_s4
 
+
 # s8 # say1350
 label vaxis_s8: # from 7.2
     SPEAKER 'Он изучает тебя более пристально. «Ты фпион? Ты иф яфейки?»'
@@ -255,6 +266,7 @@ label vaxis_s8: # from 7.2
             # a44 # r1362
             jump vaxis_s4
 
+
 # s9 # say1363
 label vaxis_s9: # from 7.3
     SPEAKER 'Он изучает тебя более пристально. «Ты фпион? Ты иф яфейки?»'
@@ -267,6 +279,7 @@ label vaxis_s9: # from 7.3
         '«Яфейки?»':
             # a46 # r4360
             jump morte_s85  # EXTERN
+
 
 # s10 # say4361
 label vaxis_s10: # from 8.0 8.1
@@ -295,6 +308,7 @@ label vaxis_s10: # from 8.0 8.1
             # a51 # r4367
             jump vaxis_s4
 
+
 # s11 # say4366
 label vaxis_s11: # externs morte_s86
     SPEAKER 'Зомби согласно кивает. Кажется, ты замечаешь, что под слоем маскировки его распирает от гордости.'
@@ -322,6 +336,7 @@ label vaxis_s11: # externs morte_s86
             # a56 # r4372
             jump vaxis_s4
 
+
 # s12 # say4373
 label vaxis_s12: # from 7.0 11.0
     SPEAKER 'Зомби выглядит заинтересованным. «Пвоулемы? Фево ты натвовил?»'
@@ -338,6 +353,7 @@ label vaxis_s12: # from 7.0 11.0
         '«Поговорим об этом в другой раз».':
             # a59 # r4376
             jump vaxis_s4
+
 
 # s13 # say4377
 label vaxis_s13: # from 12.0
@@ -369,6 +385,7 @@ label vaxis_s13: # from 12.0
             # a65 # r4383
             jump vaxis_s4
 
+
 # s14 # say4384
 label vaxis_s14: # from 13.0 13.3 15.0
     SPEAKER 'Он смотрит на тебя, затем начинает шипеть и отмахиваться от тебя. «Ты фпятил! Профь от мея!»'
@@ -396,6 +413,7 @@ label vaxis_s14: # from 13.0 13.3 15.0
             # a70 # r4389
             jump vaxis_s4
 
+
 # s15 # say4390
 label vaxis_s15: # externs morte_s88
     SPEAKER 'Фальшивый зомби недоверчиво смотрит на вас обоих.'
@@ -413,6 +431,7 @@ label vaxis_s15: # externs morte_s88
         '«Неважно. Мне нужно идти».':
             # a73 # r4393
             jump vaxis_s4
+
 
 # s16 # say4394
 label vaxis_s16: # from 13.1
@@ -441,6 +460,7 @@ label vaxis_s16: # from 13.1
             # a78 # r4399
             jump vaxis_s4
 
+
 # s17 # say4400
 label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
     SPEAKER 'На миг он кажется испуганным, потом осматривает тебя, и по его лицу расползается ухмылка. «Ты подеиффя фо мной фвоим фекветом, я подеюфь фвоим ф *тоой*. Фдефь у мея пряфуффа друфья, у тея фдефь *никоо*. Тее фдефь не мефто. Твуфьявые тея уют. Я фбегу».'
@@ -460,6 +480,7 @@ label vaxis_s17: # from 7.5 10.1 14.1 16.1 25.3 27.3
             # a81 # r4403
             jump vaxis_s4
 
+
 # s18 # say4404
 label vaxis_s18: # from 17.0
     SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: «Ты ПЫТАЕФФЯ фапифать мея ф кьигу мертфых? У мея фдефь пвяфуффа двуфья, у тея фдефь *никоо*. Твониф мея — они тея пвиконфят».'
@@ -473,6 +494,7 @@ label vaxis_s18: # from 17.0
         '«Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*».':
             # a83 # r4406
             jump vaxis_s4
+
 
 # s19 # say4407
 label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
@@ -496,6 +518,7 @@ label vaxis_s19: # from 7.6 10.2 14.2 16.2 25.4 27.4
             # a87 # r4411
             jump vaxis_s4
 
+
 # s20 # say4412
 label vaxis_s20: # from 19.2
     SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: «Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу».'
@@ -509,6 +532,7 @@ label vaxis_s20: # from 19.2
         '«Тогда гори в аду. Я ухожу. Тебе лучше быть настороже, *зомби*».':
             # a89 # r4414
             jump vaxis_s4
+
 
 # s21 # say4415
 label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
@@ -531,6 +555,7 @@ label vaxis_s21: # from 7.4 10.0 14.0 16.0 19.1 25.2 27.2
             # a93 # r4419
             jump vaxis_dispose
 
+
 # s22 # say4420
 label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
     SPEAKER '«Не-не-не! Не твогаи мея!» Факт того, что ты явно превосходишь зомби в грубой силе, очевидно, повлиял на его решение, и от его самонадеянности не осталось и следа. «Я-я-я фпионю за твуфьявыми, говою, фео увиву. Ни-нифео больфе».'
@@ -551,6 +576,7 @@ label vaxis_s22: # from 7.7 10.3 14.3 16.3 17.1 25.5 27.5
         '«Это все, что я хотел знать. А теперь прочь с дороги, *зомби*».':
             # a97 # r4424
             jump vaxis_dispose
+
 
 # s23 # say4425
 label vaxis_s23: # from 21.0 22.0
@@ -587,6 +613,7 @@ label vaxis_s23: # from 21.0 22.0
             # a104 # r4432
             jump vaxis_dispose
 
+
 # s24 # say4433
 label vaxis_s24: # from 3.3 6.3 8.2
     SPEAKER '«Иффефь мея? Вафем? — он искоса смотрит на тебя. — У тея соофение двя мея?»'
@@ -604,6 +631,7 @@ label vaxis_s24: # from 3.3 6.3 8.2
         '«Нет, у меня нет сообщений».':
             # a107 # r4436
             jump vaxis_s25
+
 
 # s25 # say4437
 label vaxis_s25: # from 24.2
@@ -640,6 +668,7 @@ label vaxis_s25: # from 24.2
             # a114 # r4444
             jump vaxis_s4
 
+
 # s26 # say4445
 label vaxis_s26: # from 24.0
     SPEAKER '«Какое фоофение?»'
@@ -666,6 +695,7 @@ label vaxis_s26: # from 24.0
         '«Неважно. Извини за беспокойство. Прощай».':
             # a119 # r4450
             jump vaxis_s27
+
 
 # s27 # say4451
 label vaxis_s27: # from 24.1 26.3 26.4
@@ -702,6 +732,7 @@ label vaxis_s27: # from 24.1 26.3 26.4
             # a126 # r4458
             jump vaxis_s4
 
+
 # s28 # say4459
 label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
     SPEAKER '«Я фпионю фа твуфьявыми. Говою, чео вифу. Нифео больфе».'
@@ -719,6 +750,7 @@ label vaxis_s28: # from 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
             # a129 # r4462
             jump vaxis_dispose
 
+
 # s29 # say4463
 label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
     SPEAKER '«Нифео. Они нифео ни деают. Нифео не нафол. Твупы, твупы, пвофто твупы. Твуфьявые *нифео* ни деают, — его глаза деловито сужаются. — Буу дальфе фледить».'
@@ -731,6 +763,7 @@ label vaxis_s29: # from 21.1 22.1 23.4 28.0 70.1 71.2
         '«Это все, что я хотел узнать. Прощай».':
             # a131 # r4465
             jump vaxis_dispose
+
 
 # s30 # say4466
 label vaxis_s30: # from 26.1 26.2
@@ -747,6 +780,7 @@ label vaxis_s30: # from 26.1 26.2
 
         '«Я твой сменщик. Сообщи все, что тебе удалось узнать, отдай все вещи и покинь это место».' if vaxisLogic.r4469_condition():
             # a134 # r4469
+            $ vaxisLogic.j64517_s30_r4469_action()
             $ vaxisLogic.r4469_action()
             jump vaxis_s72
 
@@ -757,6 +791,7 @@ label vaxis_s30: # from 26.1 26.2
         '«Твои распоряжения будут переданы в свое время. Я вернусь».':
             # a136 # r4471
             jump vaxis_dispose
+
 
 # s31 # say4472
 label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
@@ -794,6 +829,7 @@ label vaxis_s31: # from 7.1 12.1 13.4 15.1 25.0 27.0 50.0
             # a143 # r4479
             jump vaxis_s4
 
+
 # s32 # say4480
 label vaxis_s32: # from 31.0
     SPEAKER 'Зомби едва усмехается. «Фем *нао* фео-то, но нифто нифео *не дает*. *Дай* мне фео-нить, и, *мовет*, я помоу».'
@@ -825,6 +861,7 @@ label vaxis_s32: # from 31.0
             # a149 # r4486
             jump vaxis_s4
 
+
 # s33 # say4487
 label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
     SPEAKER 'Он оглядывает тебя с ног до головы, как бы примериваясь, сможет ли он с тобой справиться, останавливается на шрамах и решает не делать этого. «Хм-м. Ты мовефь убевать фееф поуталы».'
@@ -834,6 +871,7 @@ label vaxis_s33: # from 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
             # a150 # r4672
             $ vaxisLogic.r4672_action()
             jump vaxis_s50
+
 
 # s34 # say4491
 label vaxis_s34: # from 31.3 32.2 35.3
@@ -853,6 +891,7 @@ label vaxis_s34: # from 31.3 32.2 35.3
         '«Тогда гори в аду. Я ухожу».':
             # a153 # r4492
             jump vaxis_s4
+
 
 # s35 # say4493
 label vaxis_s35: # from 30.3 31.1 32.0
@@ -892,6 +931,7 @@ label vaxis_s35: # from 30.3 31.1 32.0
             # a160 # r4500
             jump vaxis_s4
 
+
 # s36 # say4501
 label vaxis_s36: # from 35.1 58.2
     SPEAKER '«Он у твуфьявой, — он показывает на свои глаза. — У нее воутые глафифи…» Затем он делает движение руками, похожее на стрижку ножницами. «Лефвия на пайфах».'
@@ -904,18 +944,19 @@ label vaxis_s36: # from 35.1 58.2
 
         '«Тленная… с желтыми глазами и лезвиями на пальцах? Я ее уже видел в бальзамационной. Погоди… я скоро вернусь с ключом».' if vaxisLogic.r64520_condition():
             # a162 # r64520
-            $ vaxisLogic.r64520_action()
+            $ vaxisLogic.j64519_s36_r64520_action()
             jump vaxis_s38
 
         '«Тленная… с желтыми глазами и лезвиями на пальцах? Хорошо. Я вернусь с ключом».' if vaxisLogic.r4503_condition():
             # a163 # r4503
-            $ vaxisLogic.r4503_action()
+            $ vaxisLogic.j64518_s36_r4503_action()
             jump vaxis_s38
 
         '«Судя по твоему описанию, эта тленная выглядит довольно привлекательно. Ты уверен, что не хочешь, чтобы я вас познакомил?»':
             # a164 # r4504
             $ vaxisLogic.r4504_action()
             jump vaxis_s37
+
 
 # s37 # say4505
 label vaxis_s37: # from 36.3
@@ -924,13 +965,14 @@ label vaxis_s37: # from 36.3
     menu:
         '«Это была шутка, видишь ли, ты… а, забудь, найду я твой ключ».' if vaxisLogic.r4506_condition():
             # a165 # r4506
-            $ vaxisLogic.r4506_action()
+            $ vaxisLogic.j64519_s37_r4506_action()
             jump vaxis_s38
 
         '«Это была шутка, видишь ли, ты… а, забудь, найду я твой ключ».' if vaxisLogic.r66150_condition():
             # a166 # r66150
-            $ vaxisLogic.r66150_action()
+            $ vaxisLogic.j64518_s37_r66150_action()
             jump vaxis_s38
+
 
 # s38 # say4507
 label vaxis_s38: # from 36.1 36.2 37.0 37.1
@@ -955,11 +997,13 @@ label vaxis_s38: # from 36.1 36.2 37.0 37.1
             # a170 # r4511
             jump vaxis_dispose
 
+
 # s39 # say4512
 label vaxis_s39: # from 43.12
     SPEAKER '«Я ховоф ф мафкироуке. У мея ефть фрамы. Я наил на сея мноо байфамируфеи фидкофти. Иф мея поуфифя ХООФЫЙ фомби, — зомби хихикает через зашитые губы, потом стучит себя по голове. — Твуфяки тууупые».'
 
     jump morte_s93  # EXTERN
+
 
 # s40 # say4514
 label vaxis_s40: # -
@@ -973,6 +1017,7 @@ label vaxis_s40: # -
         '«Тогда забудь об этом».':
             # a172 # r4516
             jump vaxis_dispose
+
 
 # s41 # say4517
 label vaxis_s41: # -
@@ -988,6 +1033,7 @@ label vaxis_s41: # -
             $ vaxisLogic.r4519_action()
             jump vaxis_dispose
 
+
 # s42 # say4520
 label vaxis_s42: # from 35.0 36.0 58.0 58.1
     SPEAKER 'Глаза зомби расширены, он выхватывает ключ из твоей руки. Затем он поворачивается, все время кивая. «Хорофо… хорофо».'
@@ -995,13 +1041,16 @@ label vaxis_s42: # from 35.0 36.0 58.0 58.1
     menu:
         '«А теперь… Как мне выбраться отсюда?»' if vaxisLogic.r4521_condition():
             # a175 # r4521
+            $ vaxisLogic.j64521_s42_r4521_action()
             $ vaxisLogic.r4521_action()
             jump vaxis_s49
 
         '«А теперь… Есть кое-что, о чем я хочу узнать…»' if vaxisLogic.r4522_condition():
             # a176 # r4522
+            $ vaxisLogic.j64521_s42_r4522_action()
             $ vaxisLogic.r4522_action()
             jump vaxis_s43
+
 
 # s43 # say4523
 label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
@@ -1064,6 +1113,7 @@ label vaxis_s43: # from 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 4
             # a190 # r4536
             jump vaxis_dispose
 
+
 # s44 # say4537
 label vaxis_s44: # from 43.6
     SPEAKER '«Фа-ОД? — нахмурившись, зомби напряженно думает. — Я… фвыфал, фто он фиет де-то ф Уле, — он качает головой. — Нефнаю где, — он снова хмурится. — Твуфявые фодят ф ума, они не ЛЮЯТ Фа-ода».'
@@ -1075,7 +1125,7 @@ label vaxis_s44: # from 43.6
 
         '«А почему тленные не любят Фарода?»':
             # a192 # r4539
-            $ vaxisLogic.r4539_action()
+            $ vaxisLogic.j64522_s44_r4539_action()
             jump vaxis_s46
 
         '«Есть еще кое-что, что я хочу узнать…»':
@@ -1086,6 +1136,7 @@ label vaxis_s44: # from 43.6
             # a194 # r4541
             jump vaxis_dispose
 
+
 # s45 # say4542
 label vaxis_s45: # from 44.0
     SPEAKER '«Твуффобы фнауви».'
@@ -1093,7 +1144,7 @@ label vaxis_s45: # from 44.0
     menu:
         '«А почему тленные не любят Фарода?»':
             # a195 # r4543
-            $ vaxisLogic.r4543_action()
+            $ vaxisLogic.j64522_s45_r4543_action()
             jump vaxis_s46
 
         '«Есть еще кое-что, что я хочу узнать…»':
@@ -1103,6 +1154,7 @@ label vaxis_s45: # from 44.0
         '«Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи».':
             # a197 # r4545
             jump vaxis_dispose
+
 
 # s46 # say4546
 label vaxis_s46: # from 44.1 45.0
@@ -1125,6 +1177,7 @@ label vaxis_s46: # from 44.1 45.0
             # a201 # r4550
             jump vaxis_dispose
 
+
 # s47 # say4551
 label vaxis_s47: # from 43.7
     SPEAKER '«Ненают. Какой-то пей обфифтил тея?»'
@@ -1146,6 +1199,7 @@ label vaxis_s47: # from 43.7
             # a205 # r4555
             jump vaxis_dispose
 
+
 # s48 # say4556
 label vaxis_s48: # from 46.0 47.0
     SPEAKER 'Зомби пытается сказать, умолкает, пытается снова, затем вздыхает. Очевидно, что доходчивей он сказать не сможет.'
@@ -1159,6 +1213,7 @@ label vaxis_s48: # from 46.0 47.0
             # a207 # r4558
             jump vaxis_dispose
 
+
 # s49 # say4559
 label vaxis_s49: # from 30.1 42.0 43.0 43.1
     SPEAKER 'Зомби ворчит. «Ты мовешь убевафь феев поуталы, — он взмахивает руками. — Пуф».'
@@ -1167,6 +1222,7 @@ label vaxis_s49: # from 30.1 42.0 43.0 43.1
         '«Порталы? Что за порталы?»':
             # a208 # r4560
             jump vaxis_s50
+
 
 # s50 # say4563
 label vaxis_s50: # from 33.0 49.0
@@ -1189,6 +1245,7 @@ label vaxis_s50: # from 33.0 49.0
             # a212 # r64511
             jump vaxis_s51
 
+
 # s51 # say4567
 label vaxis_s51: # from 50.1 50.2 50.3 72.0
     SPEAKER 'Зомби кивает. «Тее надо выити, пойти ф арку на певом этаже, февео-фападный фал… Тее нувна кофть паица, фогнутоо в кьюк… — он поднимает указательный палец и сгибает его в крюк. — Ефли у тея кьюч, иди в авку и пуыгай ф тайную гуобицу. И ты выбралфя отфюда. Тайный выфод, — он энергично кивает. — Там ты мовефь ОДОФНУТЬ».'
@@ -1196,18 +1253,22 @@ label vaxis_s51: # from 50.1 50.2 50.3 72.0
     menu:
         '«Кость согнутого пальца? А где можно найти ее?»' if vaxisLogic.r64527_condition():
             # a213 # r64527
+            $ vaxisLogic.j64528_s51_r64527_action()
             $ vaxisLogic.r64527_action()
             jump vaxis_s77
 
         '«У меня есть другие вопросы…»' if vaxisLogic.r4568_condition():
             # a214 # r4568
+            $ vaxisLogic.j64529_s51_r4568_action()
             $ vaxisLogic.r4568_action()
             jump vaxis_s43
 
         '«Арка в северо-западной комнате, на первом этаже? Хорошо, я проверю».' if vaxisLogic.r4569_condition():
             # a215 # r4569
+            $ vaxisLogic.j64529_s51_r4569_action()
             $ vaxisLogic.r4569_action()
             jump vaxis_dispose
+
 
 # s52 # say4570
 label vaxis_s52: # from 43.2
@@ -1222,6 +1283,7 @@ label vaxis_s52: # from 43.2
             # a217 # r4572
             jump vaxis_dispose
 
+
 # s53 # say4573
 label vaxis_s53: # from 43.8
     SPEAKER '«Пифец, — пожимает плечами. — Фтарый. Вовтый».'
@@ -1235,6 +1297,7 @@ label vaxis_s53: # from 43.8
             # a219 # r4575
             jump vaxis_dispose
 
+
 # s54 # say4576
 label vaxis_s54: # from 43.9
     SPEAKER '«Э? — хмурится. — Фто она?»'
@@ -1247,6 +1310,7 @@ label vaxis_s54: # from 43.9
         '«Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи».':
             # a221 # r4578
             jump vaxis_dispose
+
 
 # s55 # say4579
 label vaxis_s55: # from 43.10
@@ -1262,6 +1326,7 @@ label vaxis_s55: # from 43.10
             # a223 # r4581
             jump vaxis_dispose
 
+
 # s56 # say4582
 label vaxis_s56: # from 55.0
     SPEAKER '«Фтвааный. Не твуфявый, не анавфифт. Гуава двугие… — пожимает плечами. — Как у квыфы. Фтванно».'
@@ -1274,6 +1339,7 @@ label vaxis_s56: # from 55.0
         '«Неважно. Позже у меня могут появиться другие вопросы. Никуда не уходи».':
             # a225 # r4584
             jump vaxis_dispose
+
 
 # s57 # say4585
 label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
@@ -1299,6 +1365,7 @@ label vaxis_s57: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
         'Оставить его в покое.':
             # a230 # r4590
             jump vaxis_dispose
+
 
 # s58 # say4591
 label vaxis_s58: # from 57.0 57.1 57.3
@@ -1327,6 +1394,7 @@ label vaxis_s58: # from 57.0 57.1 57.3
             # a235 # r4596
             jump vaxis_dispose
 
+
 # s59 # say4597
 label vaxis_s59: # from 57.2
     SPEAKER 'Зомби быстро оглядывается вокруг, высматривая соглядатая, затем шипит на тебя. «Ухои! Вон!»'
@@ -1343,6 +1411,7 @@ label vaxis_s59: # from 57.2
         '«Тогда неважно».' if vaxisLogic.r4600_condition():
             # a238 # r4600
             jump vaxis_dispose
+
 
 # s60 # say4601
 label vaxis_s60: # from 43.11
@@ -1368,6 +1437,7 @@ label vaxis_s60: # from 43.11
         '«Мне нужно идти. Прощай».':
             # a243 # r4606
             jump vaxis_dispose
+
 
 # s61 # say4607
 label vaxis_s61: # from 60.0
@@ -1398,6 +1468,7 @@ label vaxis_s61: # from 60.0
             # a249 # r4613
             jump vaxis_dispose
 
+
 # s62 # say4614
 label vaxis_s62: # from 60.1 61.0
     SPEAKER 'Он смотрит на твои шрамы. «А как ты думаефь? По мие, нет, не офень, — бьет себя по груди. — Я КИЕПКИЙ».'
@@ -1422,6 +1493,7 @@ label vaxis_s62: # from 60.1 61.0
         '«Мне нужно идти. Прощай».' if vaxisLogic.r4674_condition():
             # a254 # r4674
             jump vaxis_dispose
+
 
 # s63 # say4619
 label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
@@ -1448,6 +1520,7 @@ label vaxis_s63: # from 43.3 43.4 60.2 61.1 62.0 64.1 64.2
             $ vaxisLogic.r4623_action()
             jump vaxis_dispose
 
+
 # s64 # say4624
 label vaxis_s64: # from 61.2 61.3 62.1 62.2
     SPEAKER 'Странным взглядом он осматривает тебя с ног до головы. «Ты будефь ХОВОФЫМ фомби. Мовно фделать из тея фомби? ХОВОФАЯ мафкиофка».'
@@ -1470,6 +1543,7 @@ label vaxis_s64: # from 61.2 61.3 62.1 62.2
             # a262 # r4628
             $ vaxisLogic.r4628_action()
             jump vaxis_dispose
+
 
 # s65 # say4629
 label vaxis_s65: # from 63.0
@@ -1496,6 +1570,7 @@ label vaxis_s65: # from 63.0
             $ vaxisLogic.r64533_action()
             jump vaxis_s66
 
+
 # s66 # say4633
 label vaxis_s66: # from 65.0 65.2 65.3
     SPEAKER 'Зомби обильно натирает твое тело бальзамирующей жидкостью, затем широкими стежками зашивает несколько шрамов. Начав с ног, он медленно поднимается наверх, зашивая в конце концов твои губы.'
@@ -1514,6 +1589,7 @@ label vaxis_s66: # from 65.0 65.2 65.3
             # a269 # r4636
             jump vaxis_s67
 
+
 # s67 # say4637
 label vaxis_s67: # from 66.0 66.2
     SPEAKER 'Зомби держит тебя за руку. «Офтововно! Вафгоов вафофет фвы, науфив мафкивку. Фомби не говоят. Поняу? Говои медвенно, офтовоно».'
@@ -1521,8 +1597,9 @@ label vaxis_s67: # from 66.0 66.2
     menu:
         '«Ммф… ммм. Я… понимаю».':
             # a270 # r4638
-            $ vaxisLogic.r4638_action()
+            $ vaxisLogic.j64531_s67_r4638_action()
             jump vaxis_s68
+
 
 # s68 # say4639
 label vaxis_s68: # from 67.0
@@ -1532,6 +1609,7 @@ label vaxis_s68: # from 67.0
         'Снова кивнуть, уйти.':
             # a271 # r4640
             jump vaxis_dispose
+
 
 # s69 # say4641
 label vaxis_s69: # -
@@ -1545,6 +1623,7 @@ label vaxis_s69: # -
         'X.':
             # a273 # r4643
             jump vaxis_dispose
+
 
 # s70 # say4644
 label vaxis_s70: # from 23.0 23.2 71.0 71.1
@@ -1567,6 +1646,7 @@ label vaxis_s70: # from 23.0 23.2 71.0 71.1
         '«Тогда забудь об этом. Прощай, *зомби*».':
             # a277 # r4648
             jump vaxis_dispose
+
 
 # s71 # say4649
 label vaxis_s71: # externs morte_s90
@@ -1594,6 +1674,7 @@ label vaxis_s71: # externs morte_s90
             # a282 # r4654
             jump vaxis_dispose
 
+
 # s72 # say4655
 label vaxis_s72: # from 30.2
     SPEAKER 'Зомби выглядит сбитым с толку, но затем пожимает плечами, начиная копаться в своей заляпанной тунике. «Вфе тихо, твувявыя не февелятся, нифего новоо с пофледнего отфета». Спустя несколько секунд он протягивает тебе какие-то предметы, затем ворчит: «Вот» Судя по запаху, они прятались очень глубоко, чтобы их невозможно было найти в случае обыска. «Я фкоро уйду».'
@@ -1607,6 +1688,7 @@ label vaxis_s72: # from 30.2
             # a284 # r64532
             jump vaxis_dispose
 
+
 # s73 # say4658
 label vaxis_s73: # -
     SPEAKER 'Зомби ворчит: «Поутал в арке — пеувый этав, феверо-фападная коумата, нувен кофтяной паиец дья откуывания, — он кивает. — Удафи».'
@@ -1615,6 +1697,7 @@ label vaxis_s73: # -
         '«Э-э… Ладно».':
             # a285 # r4659
             jump vaxis_dispose
+
 
 # s74 # say4660
 label vaxis_s74: # from 34.0
@@ -1629,6 +1712,7 @@ label vaxis_s74: # from 34.0
         '«Тогда гори в аду. Я ухожу. Тебе лучше быть настороже… *зомби*!»':
             # a287 # r4662
             jump vaxis_s4
+
 
 # s75 # say4663
 label vaxis_s75: # from 31.4 32.3 35.4
@@ -1652,6 +1736,7 @@ label vaxis_s75: # from 31.4 32.3 35.4
             # a291 # r4667
             jump vaxis_s4
 
+
 # s76 # say4668
 label vaxis_s76: # from 75.1
     SPEAKER 'Глаза зомби превращаются в щелочки, он шипит на тебя: «Ты подеилфя фо мной фвоим фекретом, я подеюфь фоим ф *тоой*. Фдефь у мея прячуффа друфья, у тея фдефь *никоо*. Твуфьявые тея уют. Я фбегу».'
@@ -1666,6 +1751,7 @@ label vaxis_s76: # from 75.1
             # a293 # r4670
             jump vaxis_s4
 
+
 # s77 # say64523
 label vaxis_s77: # from 51.0
     SPEAKER 'Он пожимает плечами. «Доувен быть де-то фдефь… Ифи на фкладах навеуху. Мовет быть, там».'
@@ -1678,45 +1764,3 @@ label vaxis_s77: # from 51.0
         '«Хорошо. Я проверю наверху, есть ли там изогнутая кость пальца, потом пойду на первый этаж, к одной из арок в северо-западной комнате. Все ясно».':
             # a295 # r64525
             jump vaxis_dispose
-
-
-label vaxis_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump vaxis_dispose
-        'Убить.':
-            jump vaxis_killed
-
-
-label vaxis_killed: # from vaxis_kill
-    $ vaxisLogic.kill_vaxis()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'vaxiss.'
-    nr 'Who is vaxis?'
-    nr 'vaxis is dead, baby, vaxis is dead.'
-    jump vaxis_dispose
-
-
-label vaxis_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump vaxis_dispose
-        'Убить.':
-            jump vaxis_killed_first
-
-
-label vaxis_killed_first: # from vaxis_kill_first
-    $ vaxisLogic.kill_vaxis()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'vaxiss.'
-    nr 'Who is vaxis?'
-    nr 'vaxis is dead, baby, vaxis is dead.'
-    jump vaxis_dispose

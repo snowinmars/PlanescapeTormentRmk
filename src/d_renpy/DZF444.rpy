@@ -54,6 +54,7 @@ label zf444_s0: # - # IF ~  True()
             # a9 # r35240
             jump zf444_dispose
 
+
 # s1 # say35212
 label zf444_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -70,6 +71,7 @@ label zf444_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf444Logic.r35227_condition():
             # a12 # r35227
             jump zf444_dispose
+
 
 # s2 # say35231
 label zf444_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf444_s2: # from 0.3
             # a15 # r35234
             jump zf444_dispose
 
+
 # s3 # say35241
 label zf444_s3: # - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишкомдалек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf444_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf444_dispose
-        'Убить.':
-            jump zf444_killed
-
-
-label zf444_killed: # from zf444_kill
-    $ zf444Logic.kill_zf444()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf444s.'
-    nr 'Who is zf444?'
-    nr 'zf444 is dead, baby, zf444 is dead.'
-    jump zf444_dispose
-
-
-label zf444_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf444_dispose
-        'Убить.':
-            jump zf444_killed_first
-
-
-label zf444_killed_first: # from zf444_kill_first
-    $ zf444Logic.kill_zf444()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf444s.'
-    nr 'Who is zf444?'
-    nr 'zf444 is dead, baby, zf444 is dead.'
-    jump zf444_dispose

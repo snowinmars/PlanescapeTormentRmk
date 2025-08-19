@@ -33,6 +33,7 @@ label dustfem_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
             # a4 # r1170
             jump dustfem_dispose
 
+
 # s1 # say1171
 label dustfem_s1: # from 0.0 0.1 0.2 0.3
     SPEAKER 'Тленная подпрыгивает от неожиданности. Затем она поворачивает к тебе голову. Она выглядит потрясенной: должно быть, маскировка у тебя весьма неплохая.'
@@ -50,6 +51,7 @@ label dustfem_s1: # from 0.0 0.1 0.2 0.3
             # a7 # r1175
             jump dustfem_s2
 
+
 # s2 # say1176
 label dustfem_s2: # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
     SPEAKER 'Тленная отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
@@ -59,6 +61,7 @@ label dustfem_s2: # from 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
             # a8 # r1225
             $ dustfemLogic.r1225_action()
             jump dustfem_dispose
+
 
 # s3 # say1177
 label dustfem_s3: # externs morte_s84
@@ -85,6 +88,7 @@ label dustfem_s3: # externs morte_s84
             # a13 # r1230
             jump dustfem_dispose
 
+
 # s4 # say1178
 label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
     SPEAKER 'Тленная медленно поднимает свою голову и оборачивается к тебе. «Ты потерялся?»'
@@ -106,6 +110,7 @@ label dustfem_s4: # from 3.0 3.1 3.2 3.3 40.2 40.3
             # a17 # r1234
             jump dustfem_s2
 
+
 # s5 # say1179
 label dustfem_s5: # from 4.0 16.2 51.1
     SPEAKER '«Я позову стражу, они тебя живо выведут. Погоди минутку».'
@@ -126,6 +131,7 @@ label dustfem_s5: # from 4.0 16.2 51.1
         'Подождать.':
             # a21 # r1238
             jump dustfem_s2
+
 
 # s6 # say1180
 label dustfem_s6: # from 4.1 4.2 51.2 51.3
@@ -152,6 +158,7 @@ label dustfem_s6: # from 4.1 4.2 51.2 51.3
             # a26 # r1243
             jump dustfem_s2
 
+
 # s7 # say1181
 label dustfem_s7: # from 6.0 9.0 20.0
     SPEAKER '«Боюсь, что меня касается. Может, стражники развяжут твой язык». Тленная делает шаг назад, кажется, она собирается позвать стражников.'
@@ -170,6 +177,7 @@ label dustfem_s7: # from 6.0 9.0 20.0
             $ dustfemLogic.r1246_action()
             jump dustfem_dispose
 
+
 # s8 # say1182
 label dustfem_s8: # from 6.1 16.0 20.1
     SPEAKER '«Любишь пошутить? Тогда может поделишься своими шутками со стражниками». Тленная отступает на шаг; кажется, она собирается позвать стражников.'
@@ -187,6 +195,7 @@ label dustfem_s8: # from 6.1 16.0 20.1
             # a32 # r1249
             $ dustfemLogic.r1249_action()
             jump dustfem_dispose
+
 
 # s9 # say1183
 label dustfem_s9: # from 6.2 20.2
@@ -234,6 +243,7 @@ label dustfem_s9: # from 6.2 20.2
             # a42 # r33231
             jump dustfem_s20
 
+
 # s10 # say1184
 label dustfem_s10: # from 9.1
     SPEAKER '«Дхолла можно найти в приемной комнате на этом этаже. Должна предупредить… Дхолл очень занят, а здоровье у него подкошено. Если у тебя к нему несрочное дело, то лучше не беспокоить его».'
@@ -242,6 +252,7 @@ label dustfem_s10: # from 9.1
         '«Хорошо. Спасибо за информацию».':
             # a43 # r1259
             jump dustfem_s48
+
 
 # s11 # say1185
 label dustfem_s11: # from 9.2
@@ -252,6 +263,7 @@ label dustfem_s11: # from 9.2
             # a44 # r1260
             jump dustfem_s48
 
+
 # s12 # say1186
 label dustfem_s12: # from 9.4 19.1
     SPEAKER '«Дейонаррой? На первом этаже в мемориальном зале похоронена женщина. Может быть, это она?»'
@@ -260,6 +272,7 @@ label dustfem_s12: # from 9.4 19.1
         '«Скорее всего. Спасибо».':
             # a45 # r1261
             jump dustfem_s48
+
 
 # s13 # say1187
 label dustfem_s13: # from 9.3
@@ -270,6 +283,7 @@ label dustfem_s13: # from 9.3
             # a46 # r1262
             jump dustfem_s48
 
+
 # s14 # say1188
 label dustfem_s14: # from 9.6
     SPEAKER '«Скорее всего, Соэго находится у главных ворот на первом этаже. Он работает проводником в часы антипика».'
@@ -279,6 +293,7 @@ label dustfem_s14: # from 9.6
             # a47 # r1263
             jump dustfem_s48
 
+
 # s15 # say1189
 label dustfem_s15: # from 9.5
     SPEAKER '«Скорее всего, Соэго находится у главных ворот. Он работает проводником в часы антипика».'
@@ -287,6 +302,7 @@ label dustfem_s15: # from 9.5
         '«Отлично. Спасибо».':
             # a48 # r1264
             jump dustfem_s48
+
 
 # s16 # say1190
 label dustfem_s16: # from 6.3 20.3
@@ -305,6 +321,7 @@ label dustfem_s16: # from 6.3 20.3
             # a51 # r1267
             jump dustfem_s5
 
+
 # s17 # say1191
 label dustfem_s17: # from 16.1
     SPEAKER '«По всему периметру Морга расположены погребальные залы. Они расположены вдоль стены на первом и втором этажах. Тебе известно имя усопшего?»'
@@ -318,6 +335,7 @@ label dustfem_s17: # from 16.1
             # a53 # r1269
             jump dustfem_s19
 
+
 # s18 # say1192
 label dustfem_s18: # from 17.0
     SPEAKER '«Тогда тебе стоит поговорить с одним из проводников у главных ворот. Они тебе помогут».'
@@ -326,6 +344,7 @@ label dustfem_s18: # from 17.0
         '«Отлично. Спасибо».':
             # a54 # r1270
             jump dustfem_dispose
+
 
 # s19 # say1193
 label dustfem_s19: # from 17.1
@@ -361,6 +380,7 @@ label dustfem_s19: # from 17.1
             # a61 # r1277
             jump dustfem_s2
 
+
 # s20 # say1194
 label dustfem_s20: # from 9.9 19.0
     SPEAKER '«Понятно. И что же ты здесь делаешь?»'
@@ -386,6 +406,7 @@ label dustfem_s20: # from 9.9 19.0
             # a66 # r1282
             jump dustfem_s2
 
+
 # s21 # say1195
 label dustfem_s21: # from 9.7 9.8 19.2 19.3
     SPEAKER '«Это имя мне незнакомо. Справься у одного из проводников у главных ворот… они смогут сориентировать тебя лучше, чем я».'
@@ -394,6 +415,7 @@ label dustfem_s21: # from 9.7 9.8 19.2 19.3
         '«Хорошо. Я так и сделаю. Прощай».':
             # a67 # r1283
             jump dustfem_dispose
+
 
 # s22 # say1196
 label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
@@ -407,6 +429,7 @@ label dustfem_s22: # - # IF ~  Global("Appearance","GLOBAL",2)
         'Оставить ее в покое.':
             # a69 # r1285
             jump dustfem_dispose
+
 
 # s23 # say1197
 label dustfem_s23: # from 22.0
@@ -428,6 +451,7 @@ label dustfem_s23: # from 22.0
         'Оставить ее в покое.':
             # a73 # r1289
             jump dustfem_dispose
+
 
 # s24 # say1198
 label dustfem_s24: # from 23.0
@@ -451,6 +475,7 @@ label dustfem_s24: # from 23.0
             # a77 # r1293
             jump dustfem_s46
 
+
 # s25 # say1199
 label dustfem_s25: # from 23.1
     SPEAKER '«Это Морг…» Тленная какое-то время смотрит на тебя, как бы оценивая только что тобою сказанное. «Как, ты сказал, тебя зовут?»'
@@ -473,6 +498,7 @@ label dustfem_s25: # from 23.1
             # a81 # r1297
             jump dustfem_s46
 
+
 # s26 # say1200
 label dustfem_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
     SPEAKER 'Тленная терпеливо ждет твоего продолжения.'
@@ -494,6 +520,7 @@ label dustfem_s26: # from 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
             # a85 # r1328
             jump dustfem_s48
 
+
 # s27 # say1201
 label dustfem_s27: # from 26.0
     SPEAKER '«Ты можешь просто выйти через главные ворота. Они на первом этаже».'
@@ -506,6 +533,7 @@ label dustfem_s27: # from 26.0
         '«Спасибо. Прощай».':
             # a87 # r1330
             jump dustfem_s48
+
 
 # s28 # say1202
 label dustfem_s28: # from 26.1
@@ -528,6 +556,7 @@ label dustfem_s28: # from 26.1
             # a91 # r1395
             jump dustfem_s48
 
+
 # s29 # say1203
 label dustfem_s29: # from 28.0
     SPEAKER '«Сборщики… они собирают тех, кто умер на улицах Сигила, и доставляют их в Морг… — тленная умолкает, хмуря брови. — Ты нездешний. Кто ты?»'
@@ -548,6 +577,7 @@ label dustfem_s29: # from 28.0
         '«Если ты не можешь помочь мне, я поищу кого-нибудь, кто сможет. Прощай».' if dustfemLogic.r1399_condition():
             # a95 # r1399
             jump dustfem_s46
+
 
 # s30 # say1204
 label dustfem_s30: # from 28.1
@@ -574,6 +604,7 @@ label dustfem_s30: # from 28.1
             # a100 # r33245
             jump dustfem_s48
 
+
 # s31 # say1205
 label dustfem_s31: # from 30.0 32.0 33.0
     SPEAKER 'Кивок. «Дхолл болен. Он стар, даже по меркам гитцераев. Несомненно, смерть последует за болезнью, которую он подхватил. Ему повезло».'
@@ -599,6 +630,7 @@ label dustfem_s31: # from 30.0 32.0 33.0
             # a105 # r4337
             jump dustfem_s48
 
+
 # s32 # say1206
 label dustfem_s32: # from 30.1
     SPEAKER '«Дхолл находится в приемной комнате в северо-западной части этого этажа. Должна предупредить… Дхолл очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь».'
@@ -612,6 +644,7 @@ label dustfem_s32: # from 30.1
             # a107 # r4289
             jump dustfem_s48
 
+
 # s33 # say1207
 label dustfem_s33: # from 30.2
     SPEAKER '«Дхолл скорее всего в приемной комнате на втором этаже. Лучше не отвлекай его слишком сильно — он очень занят… то время, которое он не занят своими обязанностями, отбирает у него болезнь».'
@@ -624,6 +657,7 @@ label dustfem_s33: # from 30.2
         '«Спасибо за уделенное время. Мне нужно идти. Прощай».':
             # a109 # r4291
             jump dustfem_s48
+
 
 # s34 # say1208
 label dustfem_s34: # from 31.0
@@ -646,6 +680,7 @@ label dustfem_s34: # from 31.0
             # a113 # r4295
             jump dustfem_s48
 
+
 # s35 # say1209
 label dustfem_s35: # from 31.1 34.0
     SPEAKER '«Гитцерай — это… — тленная умолкает, пристально глядя на тебя. — Ты ведь нездешний. Кто ты?»'
@@ -667,6 +702,7 @@ label dustfem_s35: # from 31.1 34.0
             # a117 # r4300
             jump dustfem_s46
 
+
 # s36 # say1210
 label dustfem_s36: # from 31.2 34.1
     SPEAKER '«Ему повезло в том, что он достигнет Истинной Смерти. Он больше не будет странствовать в тени этого существования».'
@@ -683,6 +719,7 @@ label dustfem_s36: # from 31.2 34.1
         '«Понятно. Ну что ж, мне нужно идти. Прощай».':
             # a120 # r4302
             jump dustfem_s48
+
 
 # s37 # say1211
 label dustfem_s37: # from 36.0
@@ -705,6 +742,7 @@ label dustfem_s37: # from 36.0
             # a124 # r4306
             jump dustfem_s46
 
+
 # s38 # say1212
 label dustfem_s38: # -
     SPEAKER '«Ты не из наших. Кто ты? Что ты здесь делаешь? Ты из анархистов? Или шпион другой фракции? — Тленная отступает на шаг. — Стража! Стража!»'
@@ -725,6 +763,7 @@ label dustfem_s38: # -
             $ dustfemLogic.r4309_action()
             jump dustfem_dispose
 
+
 # s39 # say1213
 label dustfem_s39: # from 26.2
     SPEAKER '«Дневник? Не встречала такого».'
@@ -737,6 +776,7 @@ label dustfem_s39: # from 26.2
         '«Я должен идти. Прощай».':
             # a129 # r4311
             jump dustfem_s48
+
 
 # s40 # say1214
 label dustfem_s40: # -
@@ -763,6 +803,7 @@ label dustfem_s40: # -
             # a134 # r4316
             jump dustfem_dispose
 
+
 # s41 # say1215
 label dustfem_s41: # from 1.0 5.1 7.1 8.1 47.1
     SPEAKER 'Тленная не успевает и слова вымолвить, как твои руки хватают ее голову за виски и резко сворачивают ее влево.'
@@ -772,6 +813,7 @@ label dustfem_s41: # from 1.0 5.1 7.1 8.1 47.1
             # a135 # r4317
             $ dustfemLogic.r4317_action()
             jump dustfem_s42
+
 
 # s42 # say1216
 label dustfem_s42: # from 41.0 45.0
@@ -788,6 +830,7 @@ label dustfem_s42: # from 41.0 45.0
             $ dustfemLogic.r4319_action()
             jump dustfem_dispose
 
+
 # s43 # say1217
 label dustfem_s43: # from 42.0
     SPEAKER 'К своему удивлению, это действие происходит практически инстинктивно, будто ты проделывал это уже много раз… с этой мыслью всплывает воспоминание, но оно недостаточно сильно для того, чтобы за него зацепиться.'
@@ -797,6 +840,7 @@ label dustfem_s43: # from 42.0
             # a138 # r4320
             $ dustfemLogic.r4320_action()
             jump dustfem_dispose
+
 
 # s44 # say1218
 label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
@@ -808,6 +852,7 @@ label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
             $ dustfemLogic.r4321_action()
             jump dustfem_dispose
 
+
 # s45 # say1219
 label dustfem_s45: # from 19.5
     SPEAKER 'Ты наклоняешься, чтобы «шепнуть» ей что-то на ухо, тленная тоже наклоняется. Как только она оказывается на расстоянии вытянутой руки, ты хватаешь ее за виски и резко сворачиваешь голову влево.'
@@ -818,6 +863,7 @@ label dustfem_s45: # from 19.5
             $ dustfemLogic.r4322_action()
             jump dustfem_s42
 
+
 # s46 # say1220
 label dustfem_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
     SPEAKER 'Тленная явно что-то подозревает. Похоже, она хочет что-то сказать, затем едва заметно качает головой и возвращается к своим обязанностям.'
@@ -826,6 +872,7 @@ label dustfem_s46: # from 24.3 25.3 29.3 35.3 37.3 49.3 50.1
         'Уйти прочь.':
             # a141 # r4323
             jump dustfem_dispose
+
 
 # s47 # say1221
 label dustfem_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
@@ -848,6 +895,7 @@ label dustfem_s47: # from 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
             # a145 # r4327
             jump dustfem_s2
 
+
 # s48 # say1222
 label dustfem_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
     SPEAKER 'Тленная кивает и возвращается к своим делам.'
@@ -856,6 +904,7 @@ label dustfem_s48: # from 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4
         'Уйти прочь.':
             # a146 # r4328
             jump dustfem_dispose
+
 
 # s49 # say1223
 label dustfem_s49: # from 24.0 24.1 25.0 25.1
@@ -878,6 +927,7 @@ label dustfem_s49: # from 24.0 24.1 25.0 25.1
             # a150 # r4333
             jump dustfem_s46
 
+
 # s50 # say1224
 label dustfem_s50: # from 29.0 35.0 37.0 49.0
     SPEAKER 'Тленная продолжает хмуриться, но затем слегка кивает. «Ну хорошо. Что я могу сделать для тебя, посвященный?»'
@@ -890,6 +940,7 @@ label dustfem_s50: # from 29.0 35.0 37.0 49.0
         '«На этот раз — ничего. Прощай».':
             # a152 # r4335
             jump dustfem_s46
+
 
 # s51 # say66683
 label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
@@ -916,6 +967,7 @@ label dustfem_s51: # - # IF ~  Global("Appearance","GLOBAL",0)
             # a157 # r66688
             jump dustfem_s2
 
+
 # s52 # say66689
 label dustfem_s52: # from 51.0
     SPEAKER 'Тленная какое-то время пристально на тебя смотрит, затем кивает. «Хорошо. Если тебе нужна помощь, дай мне знать».'
@@ -924,45 +976,3 @@ label dustfem_s52: # from 51.0
         '«Конечно. Прощай».':
             # a158 # r66690
             jump dustfem_dispose
-
-
-label dustfem_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dustfem_dispose
-        'Убить.':
-            jump dustfem_killed
-
-
-label dustfem_killed: # from dustfem_kill
-    $ dustfemLogic.kill_dustfem()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dustfems.'
-    nr 'Who is dustfem?'
-    nr 'dustfem is dead, baby, dustfem is dead.'
-    jump dustfem_dispose
-
-
-label dustfem_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dustfem_dispose
-        'Убить.':
-            jump dustfem_killed_first
-
-
-label dustfem_killed_first: # from dustfem_kill_first
-    $ dustfemLogic.kill_dustfem()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dustfems.'
-    nr 'Who is dustfem?'
-    nr 'dustfem is dead, baby, dustfem is dead.'
-    jump dustfem_dispose

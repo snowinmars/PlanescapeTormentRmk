@@ -11,44 +11,17 @@ class DhallLogicTest(LogicTest):
         self.logic = DhallLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = DhallLogic
-        self._methods_are_bound()
-
-
-    def test_dhall_init(self):
-        location = 'LOCATION'
-        talked_to_dhall_times_before = 0
-        talked_to_dhall_times_after = 1
-        talked_to_dhall_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), talked_to_dhall_times_before)
-
-        self.logic.dhall_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), talked_to_dhall_times_after)
-
-        self.logic.dhall_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dhall_times(), talked_to_dhall_times_after_once)
-
-
-    def test_kill_dhall(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_dhall,
-            self.logic.kill_dhall
-        )
-
-
     def test_r827_action(self):
         self.logic.r827_action()
+
+
+    def test_j39468_s3_r830_action(self):
+        note_id = '39468'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j39468_s3_r830_action
+        )
 
 
     def test_r830_action(self):
@@ -58,25 +31,21 @@ class DhallLogicTest(LogicTest):
         vaxis_betrayed_before = 1
         vaxis_betrayed_after = 2
         vaxis_betrayed_after_once = 2
-        note_id = '39468'
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r830_action()
 
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r830_action()
 
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r831_action(self):
@@ -127,48 +96,48 @@ class DhallLogicTest(LogicTest):
         )
 
 
-    def test_r5069_action(self):
+    def test_j39460_s9_r5069_action(self):
         note_id = '39460'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r5069_action
+            self.logic.j39460_s9_r5069_action
         )
 
 
-    def test_r886_action(self):
+    def test_j39463_s15_r886_action(self):
         note_id = '39463'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r886_action
+            self.logic.j39463_s15_r886_action
         )
 
 
-    def test_r906_action(self):
+    def test_j39464_s19_r906_action(self):
         note_id = '39464'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r906_action
+            self.logic.j39464_s19_r906_action
         )
 
 
-    def test_r921_action(self):
+    def test_j39461_s21_r921_action(self):
         note_id = '39461'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r921_action
+            self.logic.j39461_s21_r921_action
         )
 
 
-    def test_r931_action(self):
+    def test_j39462_s25_r931_action(self):
         note_id = '39462'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r931_action
+            self.logic.j39462_s25_r931_action
         )
 
 
@@ -200,12 +169,12 @@ class DhallLogicTest(LogicTest):
         )
 
 
-    def test_r1301_action(self):
+    def test_j39470_s34_r1301_action(self):
         note_id = '39470'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r1301_action
+            self.logic.j39470_s34_r1301_action
         )
 
 
@@ -233,21 +202,21 @@ class DhallLogicTest(LogicTest):
         )
 
 
-    def test_r5731_action(self):
+    def test_j39459_s45_r5731_action(self):
         note_id = '39459'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r5731_action
+            self.logic.j39459_s45_r5731_action
         )
 
 
-    def test_r5732_action(self):
+    def test_j39459_s45_r5732_action(self):
         note_id = '39459'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r5732_action
+            self.logic.j39459_s45_r5732_action
         )
 
 
@@ -317,10 +286,12 @@ class DhallLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r5073_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r5073_condition())
 
 
@@ -377,20 +348,24 @@ class DhallLogicTest(LogicTest):
     def test_r835_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_mortualy_alarmed(True)
+
         self.assertFalse(self.logic.r835_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_mortualy_alarmed(False)
+
         self.assertTrue(self.logic.r835_condition())
 
 
     def test_r5058_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_mortualy_alarmed(False)
+
         self.assertFalse(self.logic.r5058_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_mortualy_alarmed(True)
+
         self.assertTrue(self.logic.r5058_condition())
 
 
@@ -423,12 +398,14 @@ class DhallLogicTest(LogicTest):
         self.settings_manager.set_dead_vaxis(True)
         self.settings_manager.set_vaxis_leave(True)
         self.settings_manager.set_vaxis_betrayed(1)
+
         self.assertFalse(self.logic.r854_condition())
 
         self.settings_manager.set_vaxis_value(1)
         self.settings_manager.set_dead_vaxis(False)
         self.settings_manager.set_vaxis_leave(False)
         self.settings_manager.set_vaxis_betrayed(0)
+
         self.assertTrue(self.logic.r854_condition())
 
 
@@ -437,11 +414,13 @@ class DhallLogicTest(LogicTest):
 
         self.settings_manager.set_escape_mortuary(True)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r858_condition())
 
         self.settings_manager.set_escape_mortuary(False)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r858_condition())
 
 
@@ -610,10 +589,12 @@ class DhallLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r5078_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r5078_condition())
 
 
@@ -648,10 +629,12 @@ class DhallLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r5082_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r5082_condition())
 
 

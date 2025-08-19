@@ -33,6 +33,7 @@ label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
             # a4 # r34962
             jump zm1201_dispose
 
+
 # s1 # say34955
 label zm1201_s1: # from 0.0
     SPEAKER 'Записка во рту зомби заляпана гноем. Если ты попытаешься вытащить бумагу сквозь стежки, она порвется на части. Попытка вскрыть зомби уничтожит записку — тебе нужно найти деликатный способ удалить швы перед тем, как достать записку.'
@@ -47,6 +48,7 @@ label zm1201_s1: # from 0.0
             # a6 # r45122
             jump zm1201_dispose
 
+
 # s2 # say34960
 label zm1201_s2: # from 1.0
     SPEAKER 'Ты ловко перерезаешь швы на рту зомби, и его челюсти раскрываются. Ты осторожно вынимаешь записку изо рта трупа… несмотря на состояние бумаги, записи все еще можно разобрать.'
@@ -60,6 +62,7 @@ label zm1201_s2: # from 1.0
             # a8 # r45123
             jump zm1201_dispose
 
+
 # s3 # say45124
 label zm1201_s3: # from 0.1 5.0 5.1 5.2
     SPEAKER 'Молочно-белые глаза трупа смотрят на тебя без выражения.'
@@ -69,6 +72,7 @@ label zm1201_s3: # from 0.1 5.0 5.1 5.2
             # a9 # r45125
             jump zm1201_dispose
 
+
 # s4 # say45126
 label zm1201_s4: # from 0.2 5.3
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -77,6 +81,7 @@ label zm1201_s4: # from 0.2 5.3
         'Оставить труп в покое.':
             # a10 # r45127
             jump zm1201_dispose
+
 
 # s5 # say45128
 label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
@@ -107,45 +112,3 @@ label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
         'Оставить труп в покое.':
             # a16 # r45134
             jump zm1201_dispose
-
-
-label zm1201_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1201_dispose
-        'Убить.':
-            jump zm1201_killed
-
-
-label zm1201_killed: # from zm1201_kill
-    $ zm1201Logic.kill_zm1201()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1201s.'
-    nr 'Who is zm1201?'
-    nr 'zm1201 is dead, baby, zm1201 is dead.'
-    jump zm1201_dispose
-
-
-label zm1201_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1201_dispose
-        'Убить.':
-            jump zm1201_killed_first
-
-
-label zm1201_killed_first: # from zm1201_kill_first
-    $ zm1201Logic.kill_zm1201()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1201s.'
-    nr 'Who is zm1201?'
-    nr 'zm1201 is dead, baby, zm1201 is dead.'
-    jump zm1201_dispose

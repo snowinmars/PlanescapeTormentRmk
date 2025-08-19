@@ -11,42 +11,6 @@ class Zf1096LogicTest(LogicTest):
         self.logic = Zf1096Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zf1096Logic
-        self._methods_are_bound()
-
-
-    def test_zf1096_init(self):
-        location = 'LOCATION'
-        talked_to_zf1096_times_before = 0
-        talked_to_zf1096_times_after = 1
-        talked_to_zf1096_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), talked_to_zf1096_times_before)
-
-        self.logic.zf1096_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), talked_to_zf1096_times_after)
-
-        self.logic.zf1096_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zf1096_times(), talked_to_zf1096_times_after_once)
-
-
-    def test_kill_zf1096(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zf1096,
-            self.logic.kill_zf1096
-        )
-
-
     def test_r35083_action(self):
         who_law = 'protagonist'
         prop_law = 'law'
@@ -99,20 +63,24 @@ class Zf1096LogicTest(LogicTest):
     def test_r35107_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35107_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35107_condition())
 
 
     def test_r35108_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35108_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35108_condition())
 
 
@@ -133,30 +101,36 @@ class Zf1096LogicTest(LogicTest):
     def test_r35111_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35111_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35111_condition())
 
 
     def test_r35112_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35112_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35112_condition())
 
 
     def test_r35085_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35085_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35085_condition())
 
 
@@ -170,20 +144,24 @@ class Zf1096LogicTest(LogicTest):
     def test_r35099_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35099_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35099_condition())
 
 
     def test_r35104_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35104_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35104_condition())
 
 
@@ -197,10 +175,12 @@ class Zf1096LogicTest(LogicTest):
     def test_r35106_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_quip(True)
+
         self.assertFalse(self.logic.r35106_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_quip(False)
+
         self.assertTrue(self.logic.r35106_condition())
 
 

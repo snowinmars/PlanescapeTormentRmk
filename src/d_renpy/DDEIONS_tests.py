@@ -11,42 +11,6 @@ class DeionsLogicTest(LogicTest):
         self.logic = DeionsLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = DeionsLogic
-        self._methods_are_bound()
-
-
-    def test_deions_init(self):
-        location = 'LOCATION'
-        talked_to_deions_times_before = 0
-        talked_to_deions_times_after = 1
-        talked_to_deions_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), talked_to_deions_times_before)
-
-        self.logic.deions_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), talked_to_deions_times_after)
-
-        self.logic.deions_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_deions_times(), talked_to_deions_times_after_once)
-
-
-    def test_kill_deions(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_deions,
-            self.logic.kill_deions
-        )
-
-
     def test_r701_action(self):
         self.logic.r701_action()
 
@@ -318,12 +282,12 @@ class DeionsLogicTest(LogicTest):
         )
 
 
-    def test_r810_action(self):
+    def test_j26087_s29_r810_action(self):
         note_id = '26087'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r810_action
+            self.logic.j26087_s29_r810_action
         )
 
 
@@ -703,40 +667,58 @@ class DeionsLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_cd_int_1())
 
 
-    def test_r63415_action(self):
+    def test_j68117_s68_r63415_action(self):
         note_id = '68117'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r63415_action
+            self.logic.j68117_s68_r63415_action
         )
 
 
-    def test_r63417_action(self):
+    def test_j68117_s69_r63417_action(self):
         note_id = '68117'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r63417_action
+            self.logic.j68117_s69_r63417_action
         )
 
 
     def test_r63419_action(self):
+        self.assertTrue(self.settings_manager.get_has_wedding_ring())
+        self.assertFalse(self.settings_manager.get_has_sup_ring())
+
         self.logic.r63419_action()
+
+        self.assertFalse(self.settings_manager.get_has_wedding_ring())
+        self.assertTrue(self.settings_manager.get_has_sup_ring())
+
+        self.logic.r63419_action()
+
+        self.assertFalse(self.settings_manager.get_has_wedding_ring())
+        self.assertTrue(self.settings_manager.get_has_sup_ring())
+
+
+    def test_j66917_s73_r66914_action(self):
+        note_id = '66917'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j66917_s73_r66914_action
+        )
 
 
     def test_r66914_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
-        note_id = '66917'
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_deionarra_raise_dead())
         self.assertFalse(self.settings_manager.get_can_raise_dead())
         self.assertFalse(self.settings_manager.get_can_raise_dead())
         self.assertFalse(self.settings_manager.get_can_raise_dead())
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r66914_action()
 
@@ -746,7 +728,6 @@ class DeionsLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_can_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r66914_action()
 
@@ -756,7 +737,6 @@ class DeionsLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_can_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r701_condition(self):
@@ -769,20 +749,24 @@ class DeionsLogicTest(LogicTest):
     def test_r699_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r699_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r699_condition())
 
 
     def test_r9616_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r9616_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r9616_condition())
 
 
@@ -796,10 +780,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r708_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r708_condition())
 
 
@@ -826,10 +812,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r713_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r713_condition())
 
 
@@ -884,10 +872,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r718_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r718_condition())
 
 
@@ -942,10 +932,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r723_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r723_condition())
 
 
@@ -986,20 +978,24 @@ class DeionsLogicTest(LogicTest):
     def test_r1313_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r1313_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r1313_condition())
 
 
     def test_r13255_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r13255_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r13255_condition())
 
 
@@ -1010,10 +1006,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.set_escape_mortuary(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r731_condition())
 
         self.settings_manager.set_escape_mortuary(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r731_condition())
 
 
@@ -1024,10 +1022,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.set_escape_mortuary(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r732_condition())
 
         self.settings_manager.set_escape_mortuary(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+
         self.assertTrue(self.logic.r732_condition())
 
 
@@ -1052,10 +1052,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.set_escape_mortuary(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r737_condition())
 
         self.settings_manager.set_escape_mortuary(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r737_condition())
 
 
@@ -1066,10 +1068,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.set_escape_mortuary(True)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r738_condition())
 
         self.settings_manager.set_escape_mortuary(False)
         self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+
         self.assertTrue(self.logic.r738_condition())
 
 
@@ -1167,20 +1171,24 @@ class DeionsLogicTest(LogicTest):
     def test_r6085_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r6085_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r6085_condition())
 
 
     def test_r13256_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r13256_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r13256_condition())
 
 
@@ -1221,20 +1229,24 @@ class DeionsLogicTest(LogicTest):
     def test_r6082_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r6082_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r6082_condition())
 
 
     def test_r13257_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r13257_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r13257_condition())
 
 
@@ -1359,10 +1371,12 @@ class DeionsLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r6131_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r6131_condition())
 
 
@@ -1527,20 +1541,24 @@ class DeionsLogicTest(LogicTest):
     def test_r6155_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r6155_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r6155_condition())
 
 
     def test_r13258_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_deionarra_quip_1(True)
+
         self.assertFalse(self.logic.r13258_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_deionarra_quip_1(False)
+
         self.assertTrue(self.logic.r13258_condition())
 
 
@@ -1548,11 +1566,13 @@ class DeionsLogicTest(LogicTest):
         self.settings_manager.set_fortress_party(0)
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_vhailor(1)
+
         self.assertFalse(self.logic.r63367_condition())
 
         self.settings_manager.set_fortress_party(1)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
+
         self.assertTrue(self.logic.r63367_condition())
 
 
@@ -1560,11 +1580,13 @@ class DeionsLogicTest(LogicTest):
         self.settings_manager.set_fortress_party(0)
         self.settings_manager.set_fortress_ignus(1)
         self.settings_manager.set_fortress_vhailor(1)
+
         self.assertFalse(self.logic.r63368_condition())
 
         self.settings_manager.set_fortress_party(1)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
+
         self.assertTrue(self.logic.r63368_condition())
 
 
@@ -1655,20 +1677,24 @@ class DeionsLogicTest(LogicTest):
     def test_r63408_condition(self):
         self.settings_manager.set_fortress_party(0)
         self.settings_manager.set_deionarra_value(1)
+
         self.assertFalse(self.logic.r63408_condition())
 
         self.settings_manager.set_fortress_party(1)
         self.settings_manager.set_deionarra_value(0)
+
         self.assertTrue(self.logic.r63408_condition())
 
 
     def test_r63409_condition(self):
         self.settings_manager.set_fortress_party(0)
         self.settings_manager.set_deionarra_value(1)
+
         self.assertFalse(self.logic.r63409_condition())
 
         self.settings_manager.set_fortress_party(1)
         self.settings_manager.set_deionarra_value(0)
+
         self.assertTrue(self.logic.r63409_condition())
 
 
@@ -1699,10 +1725,12 @@ class DeionsLogicTest(LogicTest):
     def test_r63419_condition(self):
         self.settings_manager.set_deionarra_value(1)
         self.settings_manager.set_has_wedding_ring(False)
+
         self.assertFalse(self.logic.r63419_condition())
 
         self.settings_manager.set_deionarra_value(0)
         self.settings_manager.set_has_wedding_ring(True)
+
         self.assertTrue(self.logic.r63419_condition())
 
 

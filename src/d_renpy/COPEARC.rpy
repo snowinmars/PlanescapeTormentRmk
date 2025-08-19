@@ -26,6 +26,7 @@ label copearc_s0: # - # IF ~  True()
             # a2 # r46726
             jump copearc_dispose
 
+
 # s1 # say46727
 label copearc_s1: # from 0.0
     SPEAKER 'Выемки равномерно распределены по внутренней поверхности серьги; при более детальном изучении они начинают напоминать небольшие клыки. Они определенно кем-то сделаны, но для чего — непонятно.'
@@ -40,6 +41,7 @@ label copearc_s1: # from 0.0
             # a4 # r46729
             jump copearc_dispose
 
+
 # s2 # say46730
 label copearc_s2: # from 0.1 1.0
     SPEAKER 'Ты помещаешь ноготь в третью выемку сверху. При этом раздается щелчок, и верхняя часть серьги раскрывается. Теперь ты можешь ее носить, но это еще не все: похоже, внутри у нее имеется тайник.'
@@ -48,6 +50,7 @@ label copearc_s2: # from 0.1 1.0
         'Потрясти серьгу: может, что-нибудь выпадет.':
             # a5 # r46731
             jump copearc_s3
+
 
 # s3 # say46732
 label copearc_s3: # from 2.0
@@ -58,45 +61,3 @@ label copearc_s3: # from 2.0
             # a6 # r46733
             $ copearcLogic.r46733_action()
             jump copearc_dispose
-
-
-label copearc_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump copearc_dispose
-        'Убить.':
-            jump copearc_killed
-
-
-label copearc_killed: # from copearc_kill
-    $ copearcLogic.kill_copearc()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'copearcs.'
-    nr 'Who is copearc?'
-    nr 'copearc is dead, baby, copearc is dead.'
-    jump copearc_dispose
-
-
-label copearc_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump copearc_dispose
-        'Убить.':
-            jump copearc_killed_first
-
-
-label copearc_killed_first: # from copearc_kill_first
-    $ copearcLogic.kill_copearc()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'copearcs.'
-    nr 'Who is copearc?'
-    nr 'copearc is dead, baby, copearc is dead.'
-    jump copearc_dispose

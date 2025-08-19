@@ -11,42 +11,6 @@ class Zm1041LogicTest(LogicTest):
         self.logic = Zm1041Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm1041Logic
-        self._methods_are_bound()
-
-
-    def test_zm1041_init(self):
-        location = 'LOCATION'
-        talked_to_zm1041_times_before = 0
-        talked_to_zm1041_times_after = 1
-        talked_to_zm1041_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), talked_to_zm1041_times_before)
-
-        self.logic.zm1041_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), talked_to_zm1041_times_after)
-
-        self.logic.zm1041_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm1041_times(), talked_to_zm1041_times_after_once)
-
-
-    def test_kill_zm1041(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm1041,
-            self.logic.kill_zm1041
-        )
-
-
     def test_r6576_action(self):
         who_law = 'protagonist'
         prop_law = 'law'
@@ -228,20 +192,24 @@ class Zm1041LogicTest(LogicTest):
     def test_r6579_condition(self):
         self.settings_manager.set_can_speak_with_dead(False)
         self.settings_manager.set_bei_value(1)
+
         self.assertFalse(self.logic.r6579_condition())
 
         self.settings_manager.set_can_speak_with_dead(True)
         self.settings_manager.set_bei_value(0)
+
         self.assertTrue(self.logic.r6579_condition())
 
 
     def test_r6580_condition(self):
         self.settings_manager.set_can_speak_with_dead(False)
         self.settings_manager.set_bei_value(0)
+
         self.assertFalse(self.logic.r6580_condition())
 
         self.settings_manager.set_can_speak_with_dead(True)
         self.settings_manager.set_bei_value(1)
+
         self.assertTrue(self.logic.r6580_condition())
 
 

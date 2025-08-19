@@ -3,15 +3,6 @@ class Zm396Logic:
         self.settings_manager = settings_manager
 
 
-    def zm396_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zm396_times()
-
-
-    def kill_zm396(self):
-        self.settings_manager.set_dead_zm396(True)
-
-
     def r34932_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

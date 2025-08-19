@@ -86,6 +86,7 @@ label s996_s0: # - # IF ~  True()
             # a16 # r35535
             jump s996_dispose
 
+
 # s1 # say35462
 label s996_s1: # from 0.0 0.1 0.2 0.3
     SPEAKER 'Скелет не реагирует.'
@@ -104,6 +105,7 @@ label s996_s1: # from 0.0 0.1 0.2 0.3
             # a19 # r35483
             jump s996_dispose
 
+
 # s2 # say35488
 label s996_s2: # from 0.4
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -121,6 +123,7 @@ label s996_s2: # from 0.4
         'Оставить скелет в покое.' if s996Logic.r35491_condition():
             # a22 # r35491
             jump s996_dispose
+
 
 # s3 # say35493
 label s996_s3: # from 0.5
@@ -169,6 +172,7 @@ label s996_s3: # from 0.5
             # a32 # r35524
             jump s996_dispose
 
+
 # s4 # say35499
 label s996_s4: # from 0.7 0.10 3.1 3.4
     SPEAKER 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
@@ -200,6 +204,7 @@ label s996_s4: # from 0.7 0.10 3.1 3.4
             # a38 # r35505
             jump s996_dispose
 
+
 # s5 # say35507
 label s996_s5: # from 0.8 0.11 3.2 3.5
     SPEAKER 'Ты тянешь за железные скобы изо всех сил, и через несколько мгновений вырываешь их из суставов. Скелет разваливается, некоторые из его костей продолжают шевелиться.'
@@ -209,6 +214,7 @@ label s996_s5: # from 0.8 0.11 3.2 3.5
             # a39 # r35508
             $ s996Logic.r35508_action()
             jump s996_dispose
+
 
 # s6 # say35510
 label s996_s6: # from 0.9 0.12 3.3 3.6
@@ -220,49 +226,9 @@ label s996_s6: # from 0.9 0.12 3.3 3.6
             $ s996Logic.r35511_action()
             jump s996_dispose
 
+
 # s7 # say35536
 label s996_s7: # - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label s996_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s996_dispose
-        'Убить.':
-            jump s996_killed
-
-
-label s996_killed: # from s996_kill
-    $ s996Logic.kill_s996()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's996s.'
-    nr 'Who is s996?'
-    nr 's996 is dead, baby, s996 is dead.'
-    jump s996_dispose
-
-
-label s996_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s996_dispose
-        'Убить.':
-            jump s996_killed_first
-
-
-label s996_killed_first: # from s996_kill_first
-    $ s996Logic.kill_s996()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's996s.'
-    nr 'Who is s996?'
-    nr 's996 is dead, baby, s996 is dead.'
-    jump s996_dispose

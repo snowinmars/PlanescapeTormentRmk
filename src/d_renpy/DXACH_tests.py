@@ -11,42 +11,6 @@ class XachLogicTest(LogicTest):
         self.logic = XachLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = XachLogic
-        self._methods_are_bound()
-
-
-    def test_xach_init(self):
-        location = 'LOCATION'
-        talked_to_xach_times_before = 0
-        talked_to_xach_times_after = 1
-        talked_to_xach_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), talked_to_xach_times_before)
-
-        self.logic.xach_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), talked_to_xach_times_after)
-
-        self.logic.xach_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_xach_times(), talked_to_xach_times_after_once)
-
-
-    def test_kill_xach(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_xach,
-            self.logic.kill_xach
-        )
-
-
     def test_r502_action(self):
         who_law = 'protagonist'
         prop_law = 'law'
@@ -182,10 +146,12 @@ class XachLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r508_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r508_condition())
 
 
@@ -219,10 +185,12 @@ class XachLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r510_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+
         self.assertTrue(self.logic.r510_condition())
 
 

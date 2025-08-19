@@ -33,6 +33,7 @@ label zm506_s0: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
             # a4 # r45424
             jump zm506_dispose
 
+
 # s1 # say45425
 label zm506_s1: # from 0.1 4.0 4.1 5.0 5.1 5.2
     SPEAKER 'Труп самозабвенно смотрит вперед.'
@@ -42,6 +43,7 @@ label zm506_s1: # from 0.1 4.0 4.1 5.0 5.1 5.2
             # a5 # r45478
             jump zm506_dispose
 
+
 # s2 # say45426
 label zm506_s2: # from 0.2 5.3
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -50,6 +52,7 @@ label zm506_s2: # from 0.2 5.3
         'Оставить зомби в покое.':
             # a6 # r45479
             jump zm506_dispose
+
 
 # s3 # say45427
 label zm506_s3: # from 0.0
@@ -73,6 +76,7 @@ label zm506_s3: # from 0.0
             # a10 # r45483
             jump zm506_dispose
 
+
 # s4 # say45428
 label zm506_s4: # from 3.0
     SPEAKER 'Ты аккуратно срезаешь нить с помощью скальпеля, а затем выдергиваешь иголку, распуская швы. Кожа на лбу отваливается, обнажая белый как мел череп. К твоему удивлению, на нем выбит номер «78».'
@@ -94,6 +98,7 @@ label zm506_s4: # from 3.0
         'Оставить зомби в покое.':
             # a14 # r66889
             jump zm506_dispose
+
 
 # s5 # say45429
 label zm506_s5: # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
@@ -124,45 +129,3 @@ label zm506_s5: # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
         'Оставить зомби в покое.':
             # a20 # r45514
             jump zm506_dispose
-
-
-label zm506_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm506_dispose
-        'Убить.':
-            jump zm506_killed
-
-
-label zm506_killed: # from zm506_kill
-    $ zm506Logic.kill_zm506()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm506s.'
-    nr 'Who is zm506?'
-    nr 'zm506 is dead, baby, zm506 is dead.'
-    jump zm506_dispose
-
-
-label zm506_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm506_dispose
-        'Убить.':
-            jump zm506_killed_first
-
-
-label zm506_killed_first: # from zm506_kill_first
-    $ zm506Logic.kill_zm506()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm506s.'
-    nr 'Who is zm506?'
-    nr 'zm506 is dead, baby, zm506 is dead.'
-    jump zm506_dispose

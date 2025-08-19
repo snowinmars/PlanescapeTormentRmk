@@ -38,6 +38,7 @@ label zm463_s0: # - # IF ~  True()
             # a5 # r6492
             jump zm463_dispose
 
+
 # s1 # say6486
 label zm463_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -47,6 +48,7 @@ label zm463_s1: # from 0.0 0.1 0.2
             # a6 # r6493
             jump zm463_dispose
 
+
 # s2 # say6487
 label zm463_s2: # from 0.3
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -55,45 +57,3 @@ label zm463_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r6494
             jump zm463_dispose
-
-
-label zm463_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm463_dispose
-        'Убить.':
-            jump zm463_killed
-
-
-label zm463_killed: # from zm463_kill
-    $ zm463Logic.kill_zm463()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm463s.'
-    nr 'Who is zm463?'
-    nr 'zm463 is dead, baby, zm463 is dead.'
-    jump zm463_dispose
-
-
-label zm463_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm463_dispose
-        'Убить.':
-            jump zm463_killed_first
-
-
-label zm463_killed_first: # from zm463_kill_first
-    $ zm463Logic.kill_zm463()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm463s.'
-    nr 'Who is zm463?'
-    nr 'zm463 is dead, baby, zm463 is dead.'
-    jump zm463_dispose

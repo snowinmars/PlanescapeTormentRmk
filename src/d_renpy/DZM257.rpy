@@ -38,6 +38,7 @@ label zm257_s0: # - # IF ~  True()
             # a5 # r6515
             jump zm257_dispose
 
+
 # s1 # say6508
 label zm257_s1: # from 0.0 0.1 0.2
     SPEAKER 'В глазах трупа нет даже намека на понимание; они продолжают смотреть каждый в свою сторону.'
@@ -46,6 +47,7 @@ label zm257_s1: # from 0.0 0.1 0.2
         'Оставить труп в покое.':
             # a6 # r6516
             jump zm257_dispose
+
 
 # s2 # say6509
 label zm257_s2: # from 0.3
@@ -59,6 +61,7 @@ label zm257_s2: # from 0.3
         'Оставить духа в покое.':
             # a8 # r9558
             jump zm257_dispose
+
 
 # s3 # say9553
 label zm257_s3: # from 2.0
@@ -76,6 +79,7 @@ label zm257_s3: # from 2.0
         'Оставить в покое беспокойного духа.':
             # a11 # r9561
             jump zm257_s6
+
 
 # s4 # say9554
 label zm257_s4: # from 3.0 4.0 5.0
@@ -95,6 +99,7 @@ label zm257_s4: # from 3.0 4.0 5.0
             # a14 # r9564
             jump zm257_s6
 
+
 # s5 # say9555
 label zm257_s5: # from 3.1 4.1 5.1
     SPEAKER 'Дух снова кричит нараспев: «На вопросы ЖИВЫХ МЕРТВЫЙ ответит. ТАК было, так ЕСТЬ и будет ТАК. На мои ОТВЕТЫ ты задашь вопросы!» Выражение твоего лица очень ему нравится; он пускается в такой дикий пляс, что ты уже начинаешь сомневаться, что труп вынесет такое обращение над собой. Пока он скачет, ты даже слышишь грохот и треск костей и звук лопающихся сухожилий.'
@@ -112,6 +117,7 @@ label zm257_s5: # from 3.1 4.1 5.1
             # a17 # r9567
             jump zm257_s6
 
+
 # s6 # say9556
 label zm257_s6: # from 3.2 4.2 5.2
     SPEAKER 'Покидая тело, дух растягивает губы в понимающей улыбке. Его дикие сверкающие глаза впиваются в тебя пронизывающим взглядом психопата. Он шепчет одно единственное слово, старательно произнося каждую букву, будто перебирает жемчужное ожерелье: «Лимбо…»'
@@ -125,49 +131,9 @@ label zm257_s6: # from 3.2 4.2 5.2
             # a19 # r9569
             jump zm257_dispose
 
+
 # s7 # say9557
 label zm257_s7: # from 6.0
     SPEAKER '…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.'
 
-    menu:
-
-label zm257_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm257_dispose
-        'Убить.':
-            jump zm257_killed
-
-
-label zm257_killed: # from zm257_kill
-    $ zm257Logic.kill_zm257()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm257s.'
-    nr 'Who is zm257?'
-    nr 'zm257 is dead, baby, zm257 is dead.'
-    jump zm257_dispose
-
-
-label zm257_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm257_dispose
-        'Убить.':
-            jump zm257_killed_first
-
-
-label zm257_killed_first: # from zm257_kill_first
-    $ zm257Logic.kill_zm257()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm257s.'
-    nr 'Who is zm257?'
-    nr 'zm257 is dead, baby, zm257 is dead.'
     jump zm257_dispose

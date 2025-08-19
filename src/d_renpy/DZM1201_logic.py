@@ -3,15 +3,6 @@ class Zm1201Logic:
         self.settings_manager = settings_manager
 
 
-    def zm1201_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zm1201_times()
-
-
-    def kill_zm1201(self):
-        self.settings_manager.set_dead_zm1201(True)
-
-
     def r34956_action(self):
         self.settings_manager.set_1201_note_retrieved(True)
         self.settings_manager.set_has_1201_note(True)

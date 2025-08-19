@@ -38,6 +38,7 @@ label n1201_s0: # from 1.6 3.0 # IF ~  True()
             $ n1201Logic.r44998_action()
             jump n1201_dispose
 
+
 # s1 # say44999
 label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
     SPEAKER 'Ты загибаешь уголок таким образом, чтобы он касался центра.'
@@ -82,6 +83,7 @@ label n1201_s1: # from 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
             $ n1201Logic.r45008_action()
             jump n1201_dispose
 
+
 # s2 # say45015
 label n1201_s2: # from 1.5
     SPEAKER 'Как только ты загибаешь верхний левый уголок, ты видишь, что верхний правый уголок разгибается сам по себе, возвращаясь в прежнее положение.'
@@ -101,6 +103,7 @@ label n1201_s2: # from 1.5
             $ n1201Logic.r45018_action()
             jump n1201_dispose
 
+
 # s3 # say45019
 label n1201_s3: # from 2.1
     SPEAKER 'Как только ты загибаешь нижний левый уголок, на мгновение он остается в таком положении, но затем другие уголки разгибаются. Ничего не происходит.'
@@ -114,6 +117,7 @@ label n1201_s3: # from 2.1
             # a17 # r45021
             jump n1201_dispose
 
+
 # s4 # say45022
 label n1201_s4: # from 2.0
     SPEAKER 'Как только ты снова загибаешь верхний правый уголок, нижний левый уголок повторяет то же действие. Теперь все уголки касаются центра. Какое-то время ты наблюдаешь за тем, как уголки бумаги поднимаются, превращая записку в небольшую четырехугольную бумажную пирамидку.'
@@ -124,6 +128,7 @@ label n1201_s4: # from 2.0
             $ n1201Logic.r45023_action()
             jump n1201_s5
 
+
 # s5 # say45024
 label n1201_s5: # from 4.0
     SPEAKER 'Ты отгибаешь стороны пирамидки, и бумага превращается в пыль. Внутри находится треугольная серьга. Она блестит и играет на свету.'
@@ -133,45 +138,3 @@ label n1201_s5: # from 4.0
             # a19 # r45025
             $ n1201Logic.r45025_action()
             jump n1201_dispose
-
-
-label n1201_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump n1201_dispose
-        'Убить.':
-            jump n1201_killed
-
-
-label n1201_killed: # from n1201_kill
-    $ n1201Logic.kill_n1201()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'n1201s.'
-    nr 'Who is n1201?'
-    nr 'n1201 is dead, baby, n1201 is dead.'
-    jump n1201_dispose
-
-
-label n1201_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump n1201_dispose
-        'Убить.':
-            jump n1201_killed_first
-
-
-label n1201_killed_first: # from n1201_kill_first
-    $ n1201Logic.kill_n1201()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'n1201s.'
-    nr 'Who is n1201?'
-    nr 'n1201 is dead, baby, n1201 is dead.'
-    jump n1201_dispose

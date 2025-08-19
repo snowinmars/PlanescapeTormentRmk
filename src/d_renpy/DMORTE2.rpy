@@ -33,6 +33,7 @@ label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
             $ morte2Logic.r41148_action()
             jump morte2_s8
 
+
 # s1 # say41149
 label morte2_s1: # from 0.0 3.0 7.0
     SPEAKER '«Они зовут себя 'тленными'. Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица. Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть… и лучше раньше, чем позже».'
@@ -41,6 +42,7 @@ label morte2_s1: # from 0.0 3.0 7.0
         '«Я запутался… какое тленным дело, если я сбегу?»':
             # a4 # r41150
             jump morte2_s2
+
 
 # s2 # say41151
 label morte2_s2: # from 1.0
@@ -59,6 +61,7 @@ label morte2_s2: # from 1.0
             # a7 # r41154
             jump morte2_s8
 
+
 # s3 # say41155
 label morte2_s3: # from 0.1 2.0 7.1
     SPEAKER '«Смерть посещает планы каждый день, шеф. Эти увальни — все, что осталось от тех бедолаг, кто продал свои тела смотрителям».'
@@ -76,6 +79,7 @@ label morte2_s3: # from 0.1 2.0 7.1
             # a10 # r41158
             jump morte2_s8
 
+
 # s4 # say41159
 label morte2_s4: # from 0.2 2.1 3.1
     SPEAKER '«Чт… ты *серьезно*? Послушай, шеф, у этих мертвых крошек есть последняя возможность познакомиться с такими крутыми громилами как мы. Нам следует быть более *деликатными*… не ломать их ради ключей, не отрывать им конечности, ничего такого».'
@@ -84,6 +88,7 @@ label morte2_s4: # from 0.2 2.1 3.1
         '«Последняя возможность? Погоди… о *чем* это ты толкуешь?»':
             # a11 # r41160
             jump morte2_s5
+
 
 # s5 # say41161
 label morte2_s5: # from 4.0
@@ -98,6 +103,7 @@ label morte2_s5: # from 4.0
             # a13 # r41163
             jump morte2_s6
 
+
 # s6 # say41164
 label morte2_s6: # from 5.0 5.1
     SPEAKER '«Шеф, для нас до этих ковыляющих цыпочек — открытая дорога. Мы *все* мертвы, по крайней мере один раз: у нас есть общая тема для разговоров. Они предрасположены к мужчинам с нашим опытом смерти».'
@@ -106,6 +112,7 @@ label morte2_s6: # from 5.0 5.1
         '«Постой… разве ты не говорил до этого, что я *не мертвый*?»':
             # a14 # r41165
             jump morte2_s7
+
 
 # s7 # say41166
 label morte2_s7: # from 6.0
@@ -124,6 +131,7 @@ label morte2_s7: # from 6.0
             # a17 # r41169
             jump morte2_s8
 
+
 # s8 # say41170
 label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 20.1 21.1 22.1
     SPEAKER '«Послушай, шеф. Очевидно, ты еще не отошел от свидания со смертью, поэтому у меня два небольших совета для тебя. Во-первых, если у тебя возникают вопросы, *спроси* меня, хорошо?»'
@@ -132,6 +140,7 @@ label morte2_s8: # from 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 
         '«Хорошо… если у меня возникнут вопросы, я спрошу у тебя».':
             # a18 # r41171
             jump morte2_s9
+
 
 # s9 # say41172
 label morte2_s9: # from 8.0
@@ -142,6 +151,7 @@ label morte2_s9: # from 8.0
             # a19 # r41173
             jump morte2_s10
 
+
 # s10 # say41174
 label morte2_s10: # from 9.0
     SPEAKER '«Тогда заведи себе новый, шеф. Без проблем. Вокруг для тебя полным-полно пергамента и чернил».'
@@ -151,6 +161,7 @@ label morte2_s10: # from 9.0
             # a20 # r41175
             jump morte2_s11
 
+
 # s11 # say41176
 label morte2_s11: # from 10.0
     SPEAKER '«Записывай в него каждый свой шаг. Если начнешь забывать важные вещи… например, кто ты… или, что еще важнее, кто *я*… то воспользуйся им, чтобы освежить свою память».'
@@ -158,8 +169,9 @@ label morte2_s11: # from 10.0
     menu:
         '«Ладно… Уяснил. Идем».':
             # a21 # r41177
-            $ morte2Logic.r41177_action()
+            $ morte2Logic.j39516_s11_r41177_action()
             jump morte2_dispose
+
 
 # s12 # say41178
 label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0 # IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) !Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
@@ -202,6 +214,7 @@ label morte2_s12: # from 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 
             # a30 # r41187
             jump morte2_dispose
 
+
 # s13 # say41188
 label morte2_s13: # from 12.0
     SPEAKER '«Эй, шеф, *да ладно* тебе. Только не говори, что ты опять все забыл».'
@@ -222,6 +235,7 @@ label morte2_s13: # from 12.0
         '«Ладно, забудь. Идем».' if morte2Logic.r41192_condition():
             # a34 # r41192
             jump morte2_dispose
+
 
 # s14 # say41193
 label morte2_s14: # from 13.0
@@ -244,6 +258,7 @@ label morte2_s14: # from 13.0
             # a38 # r41197
             jump morte2_dispose
 
+
 # s15 # say41198
 label morte2_s15: # from 14.0
     SPEAKER '«Сейчас, сейчас, погоди, — Морт на миг умолкает. — Хорошо, вот последний кусок…»  'Не потеряй дневник, иначе мы вновь окажемся в Стиксе. И что бы ты ни делал, НЕ ГОВОРИ никому КТО ты и ЧТО с тобой произошло, иначе тебя живо отправят в крематорий. Делай так, как я сказал: ПРОЧТИ дневник, а затем НАЙДИ Фарода'.'
@@ -264,6 +279,7 @@ label morte2_s15: # from 14.0
         '«Забудь. Я уже достаточно наслушался. Идем».' if morte2Logic.r41203_condition():
             # a42 # r41203
             jump morte2_dispose
+
 
 # s16 # say41202
 label morte2_s16: # from 15.0
@@ -286,6 +302,7 @@ label morte2_s16: # from 15.0
             # a46 # r41207
             jump morte2_dispose
 
+
 # s17 # say41208
 label morte2_s17: # from 16.0
     SPEAKER '«Неа. В общем, какой-нибудь пень да знает, как добраться до него. Надо поспрашивать в округе… ПОСЛЕ того, как мы выберемся отсюда».'
@@ -303,6 +320,7 @@ label morte2_s17: # from 16.0
             # a49 # r41211
             jump morte2_dispose
 
+
 # s18 # say41212
 label morte2_s18: # from 12.1
     SPEAKER '«Оно называется 'Моргом'… это такое большое черное здание с чарующей архитектурой беременной паучихи».'
@@ -319,6 +337,7 @@ label morte2_s18: # from 12.1
         '«Это все, что я хотел узнать. Спасибо».' if morte2Logic.r41215_condition():
             # a52 # r41215
             jump morte2_dispose
+
 
 # s19 # say41216
 label morte2_s19: # from 12.2 12.3
@@ -341,6 +360,7 @@ label morte2_s19: # from 12.2 12.3
             # a56 # r41220
             jump morte2_dispose
 
+
 # s20 # say41221
 label morte2_s20: # from 19.0
     SPEAKER '«Ты что, вообще ничего не слушал?! Я сказал, что трухлявые верят в то, что ВСЕ должны умереть, и лучше раньше, чем позже. Думаешь, что трупы, которых ты видел, счастливее в книге мертвых, чем вне ее?»'
@@ -357,6 +377,7 @@ label morte2_s20: # from 19.0
         '«Ладно… Я… попробую это запомнить».' if morte2Logic.r41224_condition():
             # a59 # r41224
             jump morte2_dispose
+
 
 # s21 # say41225
 label morte2_s21: # from 12.6
@@ -375,6 +396,7 @@ label morte2_s21: # from 12.6
             # a62 # r41228
             jump morte2_dispose
 
+
 # s22 # say41229
 label morte2_s22: # from 12.4
     SPEAKER '«Смерть посещает планы каждый день, шеф. Эти увальни — все, что осталось от тех бедолаг, кто продал свои тела смотрителям».'
@@ -392,6 +414,7 @@ label morte2_s22: # from 12.4
             # a65 # r41232
             jump morte2_dispose
 
+
 # s23 # say41233
 label morte2_s23: # from 12.5
     SPEAKER '«Чт… ты *серьезно*? Послушай, шеф, у этих мертвых крошек есть последняя возможность познакомиться с такими крутыми громилами как мы. Нам следует быть более *деликатными*… не ломать их ради ключей, не отрывать им конечности, ничего такого».'
@@ -408,6 +431,7 @@ label morte2_s23: # from 12.5
         '«Ладно… Я… попробую это запомнить».':
             # a68 # r41236
             jump morte2_dispose
+
 
 # s24 # say41237
 label morte2_s24: # from 23.0
@@ -430,6 +454,7 @@ label morte2_s24: # from 23.0
             # a72 # r41241
             jump morte2_dispose
 
+
 # s25 # say41242
 label morte2_s25: # from 24.0 24.1
     SPEAKER '«Шеф, для нас до этих ковыляющих цыпочек — открытая дорога. Мы *все* мертвы, по крайней мере один раз: у нас есть общая тема для разговоров. Они предрасположены к мужчинам с нашим опытом смерти».'
@@ -447,6 +472,7 @@ label morte2_s25: # from 24.0 24.1
             # a75 # r41245
             jump morte2_dispose
 
+
 # s26 # say41246
 label morte2_s26: # from 25.0
     SPEAKER '«Ну… хорошо, *ты*, может быть, и не мертвый, а вот *я* — да. И как я уже говорил, я не против разделить гроб с какой-нибудь из здешних красивеньких жилистых покойниц». Морт начинает в предвкушении щелкать зубами. «Конечно же, у здешних смотрителей есть приоритет, так что им это навряд ли понравится…»'
@@ -459,6 +485,7 @@ label morte2_s26: # from 25.0
         '«Я достаточно наслушался. Идем».':
             # a77 # r41248
             jump morte2_dispose
+
 
 # s27 # say41250
 label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
@@ -473,6 +500,7 @@ label morte2_s27: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though 
         '«Не сейчас, Морт».':
             # a79 # r41252
             jump morte2_s28
+
 
 # s28 # say41253
 label morte2_s28: # from 27.1
@@ -492,6 +520,7 @@ label morte2_s28: # from 27.1
             # a82 # r41256
             jump morte2_s29
 
+
 # s29 # say41257
 label morte2_s29: # from 28.0 28.2
     SPEAKER '«Ты пытаешься задеть мои чувства, шеф? Погоди, разве я что-то не так сказал? Или это из-за того, что у меня нет рук? Что?»'
@@ -506,6 +535,7 @@ label morte2_s29: # from 28.0 28.2
             # a84 # r41259
             jump morte2_s30
 
+
 # s30 # say41260
 label morte2_s30: # from 29.1
     SPEAKER '«Ну хорошо, я не собираюсь ждать тебя ВЕЧНО, так что тебе лучше вернуться, как только ты передумаешь».'
@@ -514,6 +544,7 @@ label morte2_s30: # from 29.1
         '«Я так и сделаю. Прощай, Морт».':
             # a85 # r41261
             jump morte2_dispose
+
 
 # s31 # say41262
 label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
@@ -525,6 +556,7 @@ label morte2_s31: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3
             $ morte2Logic.r41263_action()
             jump morte2_s32
 
+
 # s32 # say41264
 label morte2_s32: # from 31.0
     SPEAKER '«Если я прав, то это та книга, куда они записывают имена всех несчастных бедолаг, которым не повезло оказаться здесь».'
@@ -534,6 +566,7 @@ label morte2_s32: # from 31.0
             # a87 # r41265
             jump morte2_s33
 
+
 # s33 # say41266
 label morte2_s33: # from 32.0
     SPEAKER '«Э… ну… *Возможно*. Чтобы определить это, нужно потрясти черепушкой вон с тем парящим трухлявиком. Вот только я не уверен, что это хорошая идея».'
@@ -542,45 +575,3 @@ label morte2_s33: # from 32.0
         '«Мне нужны ответы. Я поговорю с ним».':
             # a88 # r41267
             jump morte2_dispose
-
-
-label morte2_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump morte2_dispose
-        'Убить.':
-            jump morte2_killed
-
-
-label morte2_killed: # from morte2_kill
-    $ morte2Logic.kill_morte2()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'morte2s.'
-    nr 'Who is morte2?'
-    nr 'morte2 is dead, baby, morte2 is dead.'
-    jump morte2_dispose
-
-
-label morte2_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump morte2_dispose
-        'Убить.':
-            jump morte2_killed_first
-
-
-label morte2_killed_first: # from morte2_kill_first
-    $ morte2Logic.kill_morte2()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'morte2s.'
-    nr 'Who is morte2?'
-    nr 'morte2 is dead, baby, morte2 is dead.'
-    jump morte2_dispose

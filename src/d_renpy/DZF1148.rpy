@@ -54,6 +54,7 @@ label zf1148_s0: # - # IF ~  True()
             # a9 # r35272
             jump zf1148_dispose
 
+
 # s1 # say35244
 label zf1148_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -70,6 +71,7 @@ label zf1148_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf1148Logic.r35259_condition():
             # a12 # r35259
             jump zf1148_dispose
+
 
 # s2 # say35263
 label zf1148_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf1148_s2: # from 0.3
             # a15 # r35266
             jump zf1148_dispose
 
+
 # s3 # say35273
 label zf1148_s3: # - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf1148_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf1148_dispose
-        'Убить.':
-            jump zf1148_killed
-
-
-label zf1148_killed: # from zf1148_kill
-    $ zf1148Logic.kill_zf1148()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf1148s.'
-    nr 'Who is zf1148?'
-    nr 'zf1148 is dead, baby, zf1148 is dead.'
-    jump zf1148_dispose
-
-
-label zf1148_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf1148_dispose
-        'Убить.':
-            jump zf1148_killed_first
-
-
-label zf1148_killed_first: # from zf1148_kill_first
-    $ zf1148Logic.kill_zf1148()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf1148s.'
-    nr 'Who is zf1148?'
-    nr 'zf1148 is dead, baby, zf1148 is dead.'
-    jump zf1148_dispose

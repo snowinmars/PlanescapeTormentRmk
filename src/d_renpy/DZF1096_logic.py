@@ -3,15 +3,6 @@ class Zf1096Logic:
         self.settings_manager = settings_manager
 
 
-    def zf1096_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zf1096_times()
-
-
-    def kill_zf1096(self):
-        self.settings_manager.set_dead_zf1096(True)
-
-
     def r35083_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

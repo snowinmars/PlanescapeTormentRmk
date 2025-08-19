@@ -43,6 +43,7 @@ label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
             # a6 # r45106
             jump zm396_dispose
 
+
 # s1 # say34933
 label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -57,6 +58,7 @@ label zm396_s1: # from 0.0 0.1 0.3 4.0 4.1 4.2
             # a8 # r45107
             jump zm396_dispose
 
+
 # s2 # say34938
 label zm396_s2: # from 0.4 4.3
     SPEAKER 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -65,6 +67,7 @@ label zm396_s2: # from 0.4 4.3
         'Оставить труп в покое.':
             # a9 # r34939
             jump zm396_dispose
+
 
 # s3 # say45108
 label zm396_s3: # from 0.2 1.0
@@ -78,6 +81,7 @@ label zm396_s3: # from 0.2 1.0
         'Оставить труп в покое.':
             # a11 # r45110
             jump zm396_dispose
+
 
 # s4 # say45111
 label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
@@ -108,45 +112,3 @@ label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
         'Оставить труп в покое.':
             # a17 # r45117
             jump zm396_dispose
-
-
-label zm396_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm396_dispose
-        'Убить.':
-            jump zm396_killed
-
-
-label zm396_killed: # from zm396_kill
-    $ zm396Logic.kill_zm396()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm396s.'
-    nr 'Who is zm396?'
-    nr 'zm396 is dead, baby, zm396 is dead.'
-    jump zm396_dispose
-
-
-label zm396_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm396_dispose
-        'Убить.':
-            jump zm396_killed_first
-
-
-label zm396_killed_first: # from zm396_kill_first
-    $ zm396Logic.kill_zm396()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm396s.'
-    nr 'Who is zm396?'
-    nr 'zm396 is dead, baby, zm396 is dead.'
-    jump zm396_dispose

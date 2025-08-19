@@ -3,15 +3,6 @@ class Zm1146Logic:
         self.settings_manager = settings_manager
 
 
-    def zm1146_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zm1146_times()
-
-
-    def kill_zm1146(self):
-        self.settings_manager.set_dead_zm1146(True)
-
-
     def r6521_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

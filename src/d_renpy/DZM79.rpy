@@ -39,6 +39,7 @@ label zm79_s0: # - # IF ~  True()
             # a5 # r34952
             jump zm79_dispose
 
+
 # s1 # say34944
 label zm79_s1: # from 0.0 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -47,6 +48,7 @@ label zm79_s1: # from 0.0 0.2
         'Оставить труп в покое.':
             # a6 # r34945
             jump zm79_dispose
+
 
 # s2 # say34949
 label zm79_s2: # from 0.3 3.0 3.1
@@ -57,6 +59,7 @@ label zm79_s2: # from 0.3 3.0 3.1
             # a7 # r34950
             jump zm79_dispose
 
+
 # s3 # say64278
 label zm79_s3: # from 0.1
     SPEAKER 'Похоже, зубчатый круг на лбу трупа был выжжен очень давно, возможно даже еще до того, как он умер. Возможно, это какой-то религиозный символ или ритуальный знак. Ты замечаешь, что в одной из впадин между внутренними «зубцами» есть маленький треугольник, как будто у него есть какое-то особое назначение.'
@@ -64,52 +67,10 @@ label zm79_s3: # from 0.1
     menu:
         '«Хм-м. Интересно… что здесь делает эта отметина, а, труп?»' if zm79Logic.r64279_condition():
             # a8 # r64279
-            $ zm79Logic.r64279_action()
+            $ zm79Logic.j64536_s3_r64279_action()
             jump zm79_s2
 
         '«Хм-м… Не удивлюсь, если зазор между зубцами совпадет с выемками на той медной сережке…»' if zm79Logic.r64280_condition():
             # a9 # r64280
-            $ zm79Logic.r64280_action()
+            $ zm79Logic.j64537_s3_r64280_action()
             jump zm79_s2
-
-
-label zm79_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm79_dispose
-        'Убить.':
-            jump zm79_killed
-
-
-label zm79_killed: # from zm79_kill
-    $ zm79Logic.kill_zm79()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm79s.'
-    nr 'Who is zm79?'
-    nr 'zm79 is dead, baby, zm79 is dead.'
-    jump zm79_dispose
-
-
-label zm79_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm79_dispose
-        'Убить.':
-            jump zm79_killed_first
-
-
-label zm79_killed_first: # from zm79_kill_first
-    $ zm79Logic.kill_zm79()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm79s.'
-    nr 'Who is zm79?'
-    nr 'zm79 is dead, baby, zm79 is dead.'
-    jump zm79_dispose

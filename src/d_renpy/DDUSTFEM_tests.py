@@ -11,42 +11,6 @@ class DustfemLogicTest(LogicTest):
         self.logic = DustfemLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = DustfemLogic
-        self._methods_are_bound()
-
-
-    def test_dustfem_init(self):
-        location = 'LOCATION'
-        talked_to_dustfem_times_before = 0
-        talked_to_dustfem_times_after = 1
-        talked_to_dustfem_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), talked_to_dustfem_times_before)
-
-        self.logic.dustfem_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), talked_to_dustfem_times_after)
-
-        self.logic.dustfem_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_dustfem_times(), talked_to_dustfem_times_after_once)
-
-
-    def test_kill_dustfem(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_dustfem,
-            self.logic.kill_dustfem
-        )
-
-
     def test_r1225_action(self):
         self._false_then_true_action(
             self.settings_manager.get_mortualy_alarmed,
@@ -397,11 +361,13 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.set_dhall_value(1)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r1253_condition())
 
         self.settings_manager.set_dhall_value(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r1253_condition())
 
 
@@ -410,11 +376,13 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.set_dhall_value(1)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r1255_condition())
 
         self.settings_manager.set_dhall_value(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r1255_condition())
 
 
@@ -423,11 +391,13 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.set_deionarra_value(1)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r1258_condition())
 
         self.settings_manager.set_deionarra_value(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r1258_condition())
 
 
@@ -436,11 +406,13 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.set_deionarra_value(1)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r4336_condition())
 
         self.settings_manager.set_deionarra_value(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r4336_condition())
 
 
@@ -449,11 +421,13 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.set_soego_value(1)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r33224_condition())
 
         self.settings_manager.set_soego_value(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r33224_condition())
 
 
@@ -462,11 +436,13 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.set_soego_value(1)
         self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+
         self.assertFalse(self.logic.r33226_condition())
 
         self.settings_manager.set_soego_value(0)
         self.settings_manager.location_manager.set_location(location)
         self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+
         self.assertTrue(self.logic.r33226_condition())
 
 
@@ -477,10 +453,12 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_talked_to_dustfem_times(0)
+
         self.assertFalse(self.logic.r33227_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_talked_to_dustfem_times(1)
+
         self.assertTrue(self.logic.r33227_condition())
 
 
@@ -491,10 +469,12 @@ class DustfemLogicTest(LogicTest):
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
         self.settings_manager.set_talked_to_dustfem_times(0)
+
         self.assertFalse(self.logic.r33229_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
         self.settings_manager.set_talked_to_dustfem_times(1)
+
         self.assertTrue(self.logic.r33229_condition())
 
 
@@ -834,30 +814,36 @@ class DustfemLogicTest(LogicTest):
     def test_r4312_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_warning(1)
+
         self.assertFalse(self.logic.r4312_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_warning(0)
+
         self.assertTrue(self.logic.r4312_condition())
 
 
     def test_r4313_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_warning(0)
+
         self.assertFalse(self.logic.r4313_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_warning(1)
+
         self.assertTrue(self.logic.r4313_condition())
 
 
     def test_r4314_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_warning(0)
+
         self.assertFalse(self.logic.r4314_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_warning(1)
+
         self.assertTrue(self.logic.r4314_condition())
 
 

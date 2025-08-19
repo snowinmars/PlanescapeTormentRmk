@@ -38,6 +38,7 @@ label xach_s0: # - # IF ~  True()
             # a5 # r1358
             jump xach_dispose
 
+
 # s1 # say501
 label xach_s1: # from 0.0 0.1 0.2 0.4
     SPEAKER 'Труп беззвучно смотрит вперед своими невидящими глазами.'
@@ -46,6 +47,7 @@ label xach_s1: # from 0.0 0.1 0.2 0.4
         '«Тогда прощай».':
             # a6 # r505
             jump xach_dispose
+
 
 # s2 # say504
 label xach_s2: # from 0.3
@@ -76,6 +78,7 @@ label xach_s2: # from 0.3
             # a12 # r520
             jump xach_dispose
 
+
 # s3 # say509
 label xach_s3: # from 2.0
     SPEAKER '«Я слеп, слеп в смерти, как был слеп при жизни… а теперь отвечай — кто ты?»'
@@ -100,6 +103,7 @@ label xach_s3: # from 2.0
         '«Сегодня ты не получишь ответов, труп. Прощай».':
             # a17 # r522
             jump xach_dispose
+
 
 # s4 # say512
 label xach_s4: # from 2.4 3.3 30.0 31.0
@@ -126,6 +130,7 @@ label xach_s4: # from 2.4 3.3 30.0 31.0
             # a22 # r1394
             jump xach_dispose
 
+
 # s5 # say514
 label xach_s5: # from 4.0
     SPEAKER '«Что, трудновато под этой вонючей шкурой узнать старого дурака Захарию? Это я, рубака. Слава силам, а я-то думал, что больше никогда тебя не встречу… но и ты тоже изменился, если уши меня не подводят… снова сделал неправильный выбор? — из дыры в горле Захарии со свистом выходит воздух. — Ты ведь тоже мертв?»'
@@ -150,6 +155,7 @@ label xach_s5: # from 4.0
         '«У меня больше нет времени на разговоры, Захария. Прощай».' if xachLogic.r1393_condition():
             # a27 # r1393
             jump xach_dispose
+
 
 # s6 # say513
 label xach_s6: # from 4.2 5.2
@@ -180,6 +186,7 @@ label xach_s6: # from 4.2 5.2
         '«Я должен идти. Прощай».' if xachLogic.r1392_condition():
             # a33 # r1392
             jump xach_dispose
+
 
 # s7 # say528
 label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 22.1 23.5 24.2 25.0 26.2 27.4 28.1 29.1 32.1 33.2 35.0 36.1 40.0 46.1 47.1 48.0 49.1
@@ -214,6 +221,7 @@ label xach_s7: # from 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 
             # a40 # r641
             jump xach_s41
 
+
 # s8 # say529
 label xach_s8: # from 6.0 7.1
     SPEAKER 'Он пристыженно умолкает. «Следуя за тобой нелегкой дорогой, рубака, я видел много ужасных вещей. Я начал пить и от выпивки стал полоумным. Однажды я, в стельку пьяный, продал свое тело трухлявым. Судьба решила дать мне пинка под зад, и вскоре после этого я умер».'
@@ -230,6 +238,7 @@ label xach_s8: # from 6.0 7.1
         '«Я выслушал достаточно. Прощай».' if xachLogic.r1390_condition():
             # a43 # r1390
             jump xach_dispose
+
 
 # s9 # say533
 label xach_s9: # from 6.1 7.2
@@ -251,6 +260,7 @@ label xach_s9: # from 6.1 7.2
         '«У меня больше нет времени на разговоры. Прощай».' if xachLogic.r1389_condition():
             # a47 # r1389
             jump xach_dispose
+
 
 # s10 # say535
 label xach_s10: # from 9.0
@@ -277,6 +287,7 @@ label xach_s10: # from 9.0
             # a52 # r1388
             jump xach_dispose
 
+
 # s11 # say541
 label xach_s11: # from 10.0 12.0
     SPEAKER '«Еще кое-что: тот старый гитцерай… который работает в препараторской… Дхолл. Он спасал тебя от кремации много-много раз. Тебе повезло, что у тебя есть такой друг».'
@@ -297,6 +308,7 @@ label xach_s11: # from 10.0 12.0
         '«У меня больше нет времени на разговоры. Прощай».' if xachLogic.r1387_condition():
             # a56 # r1387
             jump xach_dispose
+
 
 # s12 # say547
 label xach_s12: # from 10.1
@@ -319,6 +331,7 @@ label xach_s12: # from 10.1
             # a60 # r1386
             jump xach_dispose
 
+
 # s13 # say550
 label xach_s13: # from 11.0
     SPEAKER '«Он просто откладывал твою кремацию до тех пор, пока ты не очухивался и не слезал с плиты. Вот только непонятно, почему».'
@@ -335,6 +348,7 @@ label xach_s13: # from 11.0
         '«Мне нужно идти. Прощай».' if xachLogic.r1385_condition():
             # a63 # r1385
             jump xach_dispose
+
 
 # s14 # say555
 label xach_s14: # -
@@ -353,6 +367,7 @@ label xach_s14: # -
             # a66 # r1384
             jump xach_dispose
 
+
 # s15 # say558
 label xach_s15: # -
     SPEAKER 'Он пристыженно умолкает. «Когда мы разошлись путями, рубака, жить мне оставалось недолго. Следуя за тобой нелегкой дорогой, рубака, я видел много ужасных вещей. Я начал пить и стал от выпивки полоумным. Однажды я, в стельку пьяный, продал свое тело трухлявым. Судьба решила дать мне пинка под зад, и вскоре после этого я умер».'
@@ -369,6 +384,7 @@ label xach_s15: # -
         '«Мне нужно идти. Прощай».' if xachLogic.r1383_condition():
             # a69 # r1383
             jump xach_dispose
+
 
 # s16 # say561
 label xach_s16: # from 6.2 7.3
@@ -395,6 +411,7 @@ label xach_s16: # from 6.2 7.3
             # a74 # r1382
             jump xach_dispose
 
+
 # s17 # say566
 label xach_s17: # from 16.0 21.0 22.0
     SPEAKER '«Ну… ты всегда был странным типом, вечно подозрительным и следящим за чем-то… Наверное, у такого, как ты, при жизни было много врагов. И любой, кто переходил тебе дорогу, без исключений попадал в черные главы книги мертвых».'
@@ -416,6 +433,7 @@ label xach_s17: # from 16.0 21.0 22.0
             # a78 # r1381
             jump xach_dispose
 
+
 # s18 # say567
 label xach_s18: # from 17.0
     SPEAKER '«А еще ты мог быть чертовски жестоким… например, заставил меня подписать тот контракт, или оставил ту вечно хныкающую крошку на Авернусе. Временами ты был похуже балора. Никто даже и думать не мог от том, чтобы сбежать от тебя, сынок».'
@@ -436,6 +454,7 @@ label xach_s18: # from 17.0
         '«Я должен идти. Прощай».' if xachLogic.r1380_condition():
             # a82 # r1380
             jump xach_dispose
+
 
 # s19 # say568
 label xach_s19: # from 18.0
@@ -466,6 +485,7 @@ label xach_s19: # from 18.0
             # a88 # r1379
             jump xach_dispose
 
+
 # s20 # say580
 label xach_s20: # from 16.1
     SPEAKER '«Ну что я могу сказать, чтобы доказать свою правоту… не все можно вспомнить… Как насчет этого: помнишь, как мы проделывали путь сквозь Авернус и наткнулись на кучку абишаев в личиночной яме?»'
@@ -478,6 +498,7 @@ label xach_s20: # from 16.1
         '«Нет».':
             # a90 # r582
             jump xach_s22
+
 
 # s21 # say583
 label xach_s21: # from 20.0
@@ -500,6 +521,7 @@ label xach_s21: # from 20.0
             # a94 # r1378
             jump xach_dispose
 
+
 # s22 # say588
 label xach_s22: # from 20.1
     SPEAKER '«Хм-м-м. Что ж, такого события и я не припомню. А как насчет этого: помнишь, как Дейонарра прописала себя в книгу мертвых, пытаясь не пустить тебя в Проклятый?»'
@@ -520,6 +542,7 @@ label xach_s22: # from 20.1
         '«Я должен идти. Прощай, Захария».' if xachLogic.r1377_condition():
             # a98 # r1377
             jump xach_dispose
+
 
 # s23 # say589
 label xach_s23: # from 6.3 7.4
@@ -558,6 +581,7 @@ label xach_s23: # from 6.3 7.4
             # a106 # r1376
             jump xach_dispose
 
+
 # s24 # say600
 label xach_s24: # from 19.2 23.0 27.0
     SPEAKER '«Мрачноватый гит… молчаливый и недружелюбный, как все они. Никогда не доверял этим гитам. Понимаешь, рубака, эти тощие гиты думают только о двух вещах: как бы не попасть в рабство и как убить кальмароголовых иллитидов. Все остальное не имеет большого значения, и этот чертов ублюдок ни с кем, кроме тебя, не общался».'
@@ -583,6 +607,7 @@ label xach_s24: # from 19.2 23.0 27.0
             # a111 # r1375
             jump xach_dispose
 
+
 # s25 # say605
 label xach_s25: # from 24.0 26.0
     SPEAKER '«Это одна из тех тайн, прояснить которые мне никогда не удавалось. Может, ты мне скажешь?»'
@@ -599,6 +624,7 @@ label xach_s25: # from 24.0 26.0
         '«Возможно, мне это удастся. Прощай, Захария».' if xachLogic.r1374_condition():
             # a114 # r1374
             jump xach_dispose
+
 
 # s26 # say608
 label xach_s26: # from 19.1 23.1 27.1
@@ -624,6 +650,7 @@ label xach_s26: # from 19.1 23.1 27.1
         '«Я выслушал достаточно. Прощай, Захария».' if xachLogic.r1373_condition():
             # a119 # r1373
             jump xach_dispose
+
 
 # s27 # say612
 label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
@@ -658,6 +685,7 @@ label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
             # a126 # r1372
             jump xach_dispose
 
+
 # s28 # say620
 label xach_s28: # from 23.2 27.2
     SPEAKER '«Этот сквернослов просто напрашивался на тумаки, это уж точно! Вечно строил из себя умника и насмехался надо мной!»'
@@ -678,6 +706,7 @@ label xach_s28: # from 23.2 27.2
         '«Я выслушал достаточно. Прощай, Захария».' if xachLogic.r1371_condition():
             # a130 # r1371
             jump xach_dispose
+
 
 # s29 # say625
 label xach_s29: # from 23.4
@@ -700,6 +729,7 @@ label xach_s29: # from 23.4
             # a134 # r1370
             jump xach_dispose
 
+
 # s30 # say629
 label xach_s30: # from 2.1 2.2 3.0 3.1
     SPEAKER '«Звучит знакомо… но если ты тот, о ком я думаю, тогда… кто… — зомби на секунду умолкает. — Кто я?»'
@@ -712,6 +742,7 @@ label xach_s30: # from 2.1 2.2 3.0 3.1
         '«Твое имя мне не известно. Я вернусь, если узнаю его. Прощай».' if xachLogic.r632_condition():
             # a136 # r632
             jump xach_dispose
+
 
 # s31 # say630
 label xach_s31: # from 2.3 3.2
@@ -729,6 +760,7 @@ label xach_s31: # from 2.3 3.2
         '«Прощай».' if xachLogic.r636_condition():
             # a139 # r636
             jump xach_dispose
+
 
 # s32 # say642
 label xach_s32: # from 19.0
@@ -751,6 +783,7 @@ label xach_s32: # from 19.0
         '«Я должен идти. Прощай, Захария».' if xachLogic.r1369_condition():
             # a143 # r1369
             jump xach_dispose
+
 
 # s33 # say643
 label xach_s33: # from 32.0
@@ -777,6 +810,7 @@ label xach_s33: # from 32.0
             # a148 # r1368
             jump xach_dispose
 
+
 # s34 # say644
 label xach_s34: # from 7.0 33.0
     SPEAKER '«Оно надежно спрятано, но я представляю, где оно находится. Без скальпеля и кое-каких моих указаний ты не сможешь его достать. У тебя есть скальпель?»'
@@ -790,6 +824,7 @@ label xach_s34: # from 7.0 33.0
             # a150 # r653
             jump xach_s36
 
+
 # s35 # say654
 label xach_s35: # -
     SPEAKER '«Ну тогда возвращайся, как найдешь его, и тогда мы попробуем вытащить эту штуковину наружу».'
@@ -802,6 +837,7 @@ label xach_s35: # -
         '«Пойду-ка, поищу его. Прощай».':
             # a152 # r656
             jump xach_dispose
+
 
 # s36 # say657
 label xach_s36: # from 34.0 34.1
@@ -824,6 +860,7 @@ label xach_s36: # from 34.0 34.1
             # a156 # r1367
             jump xach_dispose
 
+
 # s37 # say661
 label xach_s37: # from 36.0
     SPEAKER '«Чуть левее… еще чуть-чуть…» Твоя рука на нащупывает предмет.'
@@ -834,6 +871,7 @@ label xach_s37: # from 36.0
             $ xachLogic.r663_action()
             jump xach_s38
 
+
 # s38 # say662
 label xach_s38: # from 37.0
     SPEAKER 'Ты вытаскиваешь печень зомби. «Взгляд Леди! Извини, рубака… Я думал, что тленные, перед тем как выписать нас из книги мертвых, вынимают все органы. Попробуй еще раз. Может быть, оно справа».'
@@ -842,6 +880,7 @@ label xach_s38: # from 37.0
         'Попробовать еще раз.':
             # a158 # r664
             jump xach_s39
+
 
 # s39 # say665
 label xach_s39: # from 38.0
@@ -852,6 +891,7 @@ label xach_s39: # from 38.0
             # a159 # r666
             $ xachLogic.r666_action()
             jump xach_s40
+
 
 # s40 # say667
 label xach_s40: # from 39.0
@@ -870,6 +910,7 @@ label xach_s40: # from 39.0
             # a162 # r1366
             jump xach_dispose
 
+
 # s41 # say670
 label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.3 17.2 18.2 19.4 21.2 22.2 23.6 24.3 25.1 26.3 27.5 28.2 29.2 32.2 33.3 36.2 40.1 46.2 47.2 48.1 49.2
     SPEAKER '«Перед тем как ты уйдешь, сделай для меня небольшое одолжение, рубака».'
@@ -885,6 +926,7 @@ label xach_s41: # from 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.
             $ xachLogic.r671_action()
             jump xach_s45
 
+
 # s42 # say673
 label xach_s42: # from 41.0
     SPEAKER 'Он пристыженно умолкает. «Я совершил много ошибок, ужасных ошибок, если начистоту. Но самая ужасная из них — я подписал с тленными контракт. Не будь я тогда мертвецки пьян, я бы никогда такого не сделал. Я очень сожалею о ней и надеюсь, что ты сможешь разрешить ее правильно».'
@@ -897,6 +939,7 @@ label xach_s42: # from 41.0
         '«В последнее время я сделал уже достаточно одолжений и услуг… Мне нужно идти, Захария. Прощай».':
             # a166 # r676
             jump xach_s45
+
 
 # s43 # say677
 label xach_s43: # from 42.0
@@ -912,6 +955,7 @@ label xach_s43: # from 42.0
             # a168 # r680
             jump xach_s45
 
+
 # s44 # say678
 label xach_s44: # from 43.0
     SPEAKER 'Ты вспарываешь ему кишки, и Захария тяжело падает на пол. Тело издает слабый выдох, грудная клетка в последний раз опадает, после чего от него не слышно ни звука.'
@@ -922,6 +966,7 @@ label xach_s44: # from 43.0
             $ xachLogic.r681_action()
             jump xach_dispose
 
+
 # s45 # say682
 label xach_s45: # from 41.1 42.1 43.1
     SPEAKER '«Ладно, тогда не бери в голову. Полагаю, теперь я для тебя бесполезен».'
@@ -930,6 +975,7 @@ label xach_s45: # from 41.1 42.1 43.1
         'Уйти.':
             # a170 # r684
             jump xach_dispose
+
 
 # s46 # say683
 label xach_s46: # from 5.0
@@ -952,6 +998,7 @@ label xach_s46: # from 5.0
             # a174 # r1365
             jump xach_dispose
 
+
 # s47 # say692
 label xach_s47: # from 4.1 5.1 46.0
     SPEAKER '«Я теперь уборщик в самом безжизненном месте на свете. Я бы мог пересечь Границу Вечности и найти свой родной план, но я промотал всю свою душу, так что теперь я нахожусь здесь».'
@@ -973,6 +1020,7 @@ label xach_s47: # from 4.1 5.1 46.0
             # a178 # r1364
             jump xach_dispose
 
+
 # s48 # say694
 label xach_s48: # from 47.0
     SPEAKER '«Это очень почетная обязанность… — стежки вокруг рта Захарии уже ослабли настолько, что он смог растянуться в улыбке. — Меня это мало волнует».'
@@ -990,6 +1038,7 @@ label xach_s48: # from 47.0
         '«Тогда прощай, Захария».' if xachLogic.r633_condition():
             # a181 # r633
             jump xach_dispose
+
 
 # s49 # say63625
 label xach_s49: # from 23.3 27.3
@@ -1011,45 +1060,3 @@ label xach_s49: # from 23.3 27.3
         '«Хм-м-м. Интересно. Спасибо, Захария».' if xachLogic.r63629_condition():
             # a185 # r63629
             jump xach_dispose
-
-
-label xach_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump xach_dispose
-        'Убить.':
-            jump xach_killed
-
-
-label xach_killed: # from xach_kill
-    $ xachLogic.kill_xach()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'xachs.'
-    nr 'Who is xach?'
-    nr 'xach is dead, baby, xach is dead.'
-    jump xach_dispose
-
-
-label xach_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump xach_dispose
-        'Убить.':
-            jump xach_killed_first
-
-
-label xach_killed_first: # from xach_kill_first
-    $ xachLogic.kill_xach()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'xachs.'
-    nr 'Who is xach?'
-    nr 'xach is dead, baby, xach is dead.'
-    jump xach_dispose

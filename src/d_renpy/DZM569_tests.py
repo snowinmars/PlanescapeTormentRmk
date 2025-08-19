@@ -11,51 +11,17 @@ class Zm569LogicTest(LogicTest):
         self.logic = Zm569Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm569Logic
-        self._methods_are_bound()
-
-
-    def test_zm569_init(self):
-        location = 'LOCATION'
-        talked_to_zm569_times_before = 0
-        talked_to_zm569_times_after = 1
-        talked_to_zm569_times_after_once = 2 * 1
-
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm569_times(), talked_to_zm569_times_before)
-
-        self.logic.zm569_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm569_times(), talked_to_zm569_times_after)
-
-        self.logic.zm569_init()
-
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        self.assertEqual(self.settings_manager.get_talked_to_zm569_times(), talked_to_zm569_times_after_once)
-
-
-    def test_kill_zm569(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_zm569,
-            self.logic.kill_zm569
-        )
-
-
     def test_r24576_condition(self):
         self.settings_manager.set_mortuary_walkthrough(1)
         self.settings_manager.set_has_intro_key(True)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r24576_condition())
 
         self.settings_manager.set_mortuary_walkthrough(0)
         self.settings_manager.set_has_intro_key(False)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r24576_condition())
 
 
@@ -63,11 +29,13 @@ class Zm569LogicTest(LogicTest):
         self.settings_manager.set_mortuary_walkthrough(1)
         self.settings_manager.set_has_intro_key(True)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r24579_condition())
 
         self.settings_manager.set_mortuary_walkthrough(0)
         self.settings_manager.set_has_intro_key(False)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r24579_condition())
 
 
@@ -96,10 +64,12 @@ class Zm569LogicTest(LogicTest):
     def test_r24585_condition(self):
         self.settings_manager.set_mortuary_walkthrough(1)
         self.settings_manager.set_has_intro_key(True)
+
         self.assertFalse(self.logic.r24585_condition())
 
         self.settings_manager.set_mortuary_walkthrough(0)
         self.settings_manager.set_has_intro_key(False)
+
         self.assertTrue(self.logic.r24585_condition())
 
 

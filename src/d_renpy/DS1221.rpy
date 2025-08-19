@@ -86,6 +86,7 @@ label s1221_s0: # - # IF ~  True()
             # a16 # r35381
             jump s1221_dispose
 
+
 # s1 # say35308
 label s1221_s1: # from 0.0 0.1 0.2 0.3
     SPEAKER 'Скелет не отвечает.'
@@ -104,6 +105,7 @@ label s1221_s1: # from 0.0 0.1 0.2 0.3
             # a19 # r35329
             jump s1221_dispose
 
+
 # s2 # say35334
 label s1221_s2: # from 0.4
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -121,6 +123,7 @@ label s1221_s2: # from 0.4
         'Оставить скелет в покое.' if s1221Logic.r35337_condition():
             # a22 # r35337
             jump s1221_dispose
+
 
 # s3 # say35339
 label s1221_s3: # from 0.5
@@ -169,6 +172,7 @@ label s1221_s3: # from 0.5
             # a32 # r35370
             jump s1221_dispose
 
+
 # s4 # say35345
 label s1221_s4: # from 0.7 0.10 3.1 3.4
     SPEAKER 'Ты тянешь за железные скобы, но тебе не хватает сил, чтобы вытащить их. Они накрепко забиты.'
@@ -200,6 +204,7 @@ label s1221_s4: # from 0.7 0.10 3.1 3.4
             # a38 # r35351
             jump s1221_dispose
 
+
 # s5 # say35353
 label s1221_s5: # from 0.8 0.11 3.2 3.5
     SPEAKER 'Ты тянешь за железные скобы изо всех сил, и через несколько мгновений вырываешь их из суставов. Скелет разваливается, некоторые из его костей продолжают шевелиться.'
@@ -209,6 +214,7 @@ label s1221_s5: # from 0.8 0.11 3.2 3.5
             # a39 # r35354
             $ s1221Logic.r35354_action()
             jump s1221_dispose
+
 
 # s6 # say35356
 label s1221_s6: # from 0.9 0.12 3.3 3.6
@@ -220,49 +226,9 @@ label s1221_s6: # from 0.9 0.12 3.3 3.6
             $ s1221Logic.r35357_action()
             jump s1221_dispose
 
+
 # s7 # say35382
 label s1221_s7: # - # IF ~  False()
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label s1221_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s1221_dispose
-        'Убить.':
-            jump s1221_killed
-
-
-label s1221_killed: # from s1221_kill
-    $ s1221Logic.kill_s1221()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's1221s.'
-    nr 'Who is s1221?'
-    nr 's1221 is dead, baby, s1221 is dead.'
-    jump s1221_dispose
-
-
-label s1221_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s1221_dispose
-        'Убить.':
-            jump s1221_killed_first
-
-
-label s1221_killed_first: # from s1221_kill_first
-    $ s1221Logic.kill_s1221()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's1221s.'
-    nr 'Who is s1221?'
-    nr 's1221 is dead, baby, s1221 is dead.'
-    jump s1221_dispose

@@ -69,6 +69,7 @@ label s42_s0: # - # IF ~  True()
             # a12 # r6624
             jump s42_dispose
 
+
 # s1 # say6596
 label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
     SPEAKER 'Услышав твой голос, скелет внезапно распрямляется. Он скрещивает руки на груди, ухватившись пальцами за ребра.'
@@ -90,6 +91,7 @@ label s42_s1: # from 0.0 0.1 0.2 0.3 0.9 3.0 3.3
             # a16 # r6628
             jump s42_dispose
 
+
 # s2 # say6597
 label s42_s2: # from 0.4
     SPEAKER 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
@@ -107,6 +109,7 @@ label s42_s2: # from 0.4
         'Оставить скелет в покое.' if s42Logic.r6631_condition():
             # a19 # r6631
             jump s42_dispose
+
 
 # s3 # say6598
 label s42_s3: # from 0.5 10.2
@@ -143,6 +146,7 @@ label s42_s3: # from 0.5 10.2
             # a26 # r6637
             jump s42_dispose
 
+
 # s4 # say6599
 label s42_s4: # from 1.0 12.0
     SPEAKER 'В ответ скелет опускает руки по швам. Кожаная веревка, связывающая торс скелета, лопается, и грудная клетка раскрывается, как двустворчатая дверь.'
@@ -155,6 +159,7 @@ label s42_s4: # from 1.0 12.0
         'Оставить скелет в покое.':
             # a28 # r6639
             jump s42_dispose
+
 
 # s5 # say6600
 label s42_s5: # from 4.0 9.0
@@ -170,6 +175,7 @@ label s42_s5: # from 4.0 9.0
             # a30 # r6641
             jump s42_dispose
 
+
 # s6 # say6601
 label s42_s6: # from 0.7 0.8 3.2
     SPEAKER 'Скобы свободно выскальзывают из суставов скелета. Скелет разваливается, хотя некоторые кости продолжают шевелиться.'
@@ -179,6 +185,7 @@ label s42_s6: # from 0.7 0.8 3.2
             # a31 # r6642
             $ s42Logic.r6642_action()
             jump s42_dispose
+
 
 # s7 # say6602
 label s42_s7: # from 5.0
@@ -193,6 +200,7 @@ label s42_s7: # from 5.0
             # a33 # r6644
             jump s42_s8
 
+
 # s8 # say6603
 label s42_s8: # from 7.0 7.1
     SPEAKER 'Похоже на ничем не примечательный кусок железа. Ты не можешь представить, зачем кому-то понадобилось прятать его в грудной клетке скелета.'
@@ -202,6 +210,7 @@ label s42_s8: # from 7.0 7.1
             # a34 # r6645
             $ s42Logic.r6645_action()
             jump s42_s14
+
 
 # s9 # say6604
 label s42_s9: # from 1.1 12.1
@@ -215,6 +224,7 @@ label s42_s9: # from 1.1 12.1
         'Оставить скелет в покое.':
             # a36 # r6647
             jump s42_dispose
+
 
 # s10 # say6605
 label s42_s10: # from 1.2 12.2
@@ -238,6 +248,7 @@ label s42_s10: # from 1.2 12.2
             # a40 # r6651
             jump s42_dispose
 
+
 # s11 # say6606
 label s42_s11: # -
     SPEAKER 'Похоже на ничем не примечательный кусок железа. Должно быть, у твоей предыдущей инкарнации были причины спрятать его здесь.'
@@ -247,6 +258,7 @@ label s42_s11: # -
             # a41 # r6652
             $ s42Logic.r6652_action()
             jump s42_s14
+
 
 # s12 # say6607
 label s42_s12: # from 10.0
@@ -269,11 +281,13 @@ label s42_s12: # from 10.0
             # a45 # r6656
             jump s42_dispose
 
+
 # s13 # say6608
 label s42_s13: # from 10.1
     SPEAKER 'Скелет снова скрещивает руки на груди.'
 
     jump morte_s112  # EXTERN
+
 
 # s14 # say58983
 label s42_s14: # from 8.0 11.0
@@ -284,45 +298,3 @@ label s42_s14: # from 8.0 11.0
             # a46 # r58984
             $ s42Logic.r58984_action()
             jump s42_dispose
-
-
-label s42_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s42_dispose
-        'Убить.':
-            jump s42_killed
-
-
-label s42_killed: # from s42_kill
-    $ s42Logic.kill_s42()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's42s.'
-    nr 'Who is s42?'
-    nr 's42 is dead, baby, s42 is dead.'
-    jump s42_dispose
-
-
-label s42_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s42_dispose
-        'Убить.':
-            jump s42_killed_first
-
-
-label s42_killed_first: # from s42_kill_first
-    $ s42Logic.kill_s42()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's42s.'
-    nr 'Who is s42?'
-    nr 's42 is dead, baby, s42 is dead.'
-    jump s42_dispose

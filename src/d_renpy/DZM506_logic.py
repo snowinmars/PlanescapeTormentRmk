@@ -3,15 +3,6 @@ class Zm506Logic:
         self.settings_manager = settings_manager
 
 
-    def zm506_init(self):
-        self.settings_manager.location_manager.set_location('LOCATION')
-        self.settings_manager.inc_talked_to_zm506_times()
-
-
-    def kill_zm506(self):
-        self.settings_manager.set_dead_zm506(True)
-
-
     def r45480_action(self):
         self.settings_manager.set_has_506_thread(True)
         self.settings_manager.set_has_needle(True)

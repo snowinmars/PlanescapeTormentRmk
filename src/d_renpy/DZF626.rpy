@@ -54,6 +54,7 @@ label zf626_s0: # - # IF ~  True()
             # a9 # r35080
             jump zf626_dispose
 
+
 # s1 # say35052
 label zf626_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает смотреть на тебя одним уцелевшим глазом.'
@@ -70,6 +71,7 @@ label zf626_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf626Logic.r35067_condition():
             # a12 # r35067
             jump zf626_dispose
+
 
 # s2 # say35071
 label zf626_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf626_s2: # from 0.3
             # a15 # r35074
             jump zf626_dispose
 
+
 # s3 # say35081
 label zf626_s3: # - # IF ~  False()
     SPEAKER 'Этот труп не шевелится. Кажется, он далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf626_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf626_dispose
-        'Убить.':
-            jump zf626_killed
-
-
-label zf626_killed: # from zf626_kill
-    $ zf626Logic.kill_zf626()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf626s.'
-    nr 'Who is zf626?'
-    nr 'zf626 is dead, baby, zf626 is dead.'
-    jump zf626_dispose
-
-
-label zf626_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf626_dispose
-        'Убить.':
-            jump zf626_killed_first
-
-
-label zf626_killed_first: # from zf626_kill_first
-    $ zf626Logic.kill_zf626()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf626s.'
-    nr 'Who is zf626?'
-    nr 'zf626 is dead, baby, zf626 is dead.'
-    jump zf626_dispose

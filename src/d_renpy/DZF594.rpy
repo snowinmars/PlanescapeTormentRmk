@@ -54,6 +54,7 @@ label zf594_s0: # - # IF ~  True()
             # a9 # r35048
             jump zf594_dispose
 
+
 # s1 # say35020
 label zf594_s1: # from 0.0 0.1 0.2
     SPEAKER 'Труп продолжает пялиться на тебя.'
@@ -70,6 +71,7 @@ label zf594_s1: # from 0.0 0.1 0.2
         '«Тогда прощай».' if zf594Logic.r35035_condition():
             # a12 # r35035
             jump zf594_dispose
+
 
 # s2 # say35039
 label zf594_s2: # from 0.3
@@ -88,49 +90,9 @@ label zf594_s2: # from 0.3
             # a15 # r35042
             jump zf594_dispose
 
+
 # s3 # say35049
 label zf594_s3: # - # IF ~  False()
     SPEAKER 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
     menu:
-
-label zf594_kill: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf594_dispose
-        'Убить.':
-            jump zf594_killed
-
-
-label zf594_killed: # from zf594_kill
-    $ zf594Logic.kill_zf594()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf594s.'
-    nr 'Who is zf594?'
-    nr 'zf594 is dead, baby, zf594 is dead.'
-    jump zf594_dispose
-
-
-label zf594_kill_first: # -
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zf594_dispose
-        'Убить.':
-            jump zf594_killed_first
-
-
-label zf594_killed_first: # from zf594_kill_first
-    $ zf594Logic.kill_zf594()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zf594s.'
-    nr 'Who is zf594?'
-    nr 'zf594 is dead, baby, zf594 is dead.'
-    jump zf594_dispose
