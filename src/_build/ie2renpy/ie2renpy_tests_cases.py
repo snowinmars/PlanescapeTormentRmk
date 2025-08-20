@@ -34,13 +34,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s19 # say3472
 label area_s19: # from 1.3
-    SPEAKER 'Женщина не отвечает.'
+    nr 'Женщина не отвечает.'
 
     $ areaLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
@@ -122,13 +122,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s20 # say3485
 label area_s20: # from 5.2 5.4
-    SPEAKER 'Она отворачивается… непохоже, чтобы она тебя услышала.'
+    nr 'Она отворачивается… непохоже, чтобы она тебя услышала.'
 
     jump morte_s57  # EXTERN
 '''.strip() + '\n'
@@ -220,13 +220,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s22 # say3493
 label area_s22: # from 15.2 25.1 27.1
-    SPEAKER 'Заметив тебя, она поворачивается, а затем хмурится. «Тупые зомфи». Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает. «Ты готов. Все зашито. Пшел-пшел-пшел».'
+    nr 'Заметив тебя, она поворачивается, а затем хмурится.'
+    area '«Тупые зомфи».'
+    nr 'Она нетерпеливо щелкает когтистыми пальцами, а затем делает движение рукой, как будто что-то зашивает.'
+    area '«Ты готов. Все зашито. Пшел-пшел-пшел».'
 
     menu:
         '«Минуточку». Жестом ты показываешь, как открываешь что-то ключом. «Мне нужен ключ от бальзамационной. У тебя он есть?»' if areaLogic.r3501_condition():
@@ -285,6 +288,8 @@ class AreaLogicTest(LogicTest):
         embalm_key_quest_before = 1
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
+        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.settings_manager.set_has_keyem(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
@@ -368,13 +373,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s16 # say3464
 label area_s16: # from 15.0
-    SPEAKER 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
+    nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
 
     $ areaLogic.s16_action()
     jump area_s26
@@ -447,13 +452,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s178 # say15348
 label area_s178: # -
-    SPEAKER '«Что? Шеф, я всего лишь мимир! Я не умею 'драться на дуэли'!»'
+    area '«Что? Шеф, я всего лишь мимир! Я не умею „драться на дуэли“!»'
 
     $ areaLogic.s178_action()
     jump adyzoel_s35  # EXTERN
@@ -528,13 +533,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s16 # say3464
 label area_s16: # from 15.0
-    SPEAKER 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
+    nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
 
     $ areaLogic.s16_action()
     jump morte_s57  # EXTERN
@@ -656,13 +661,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s0 # say300
 label area_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
-    SPEAKER 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.'
+    nr 'Тленный не обращает на тебя внимания. Должно быть, он спутал тебя с одним из мертвых рабочих.'
 
     menu:
         '«Приветствую».':
@@ -743,13 +748,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s138 # say11947
 label area_s138: # from 137.0
-    SPEAKER 'Морт глядит на твою ладонь. «Ух-х-х». Кажется, его покоробило. «Вот уж мелкие уродцы, а?»'
+    nr 'Морт глядит на твою ладонь.'
+    area '«Ух-х-х».'
+    nr 'Кажется, его покоробило.'
+    area '«Вот уж мелкие уродцы, а?»'
 
     jump area_dispose
 '''.strip() + '\n'
@@ -822,13 +830,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s179 # say15349
 label area_s179: # -
-    SPEAKER '«Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда».'
+    area '«Это, э… что-то вроде говорящей энциклопедии. Мне не нравится об этом говорить. Мне типа неловко, правда».'
 
     if areaLogic.s179_condition():
         $ areaLogic.s179_action()
@@ -930,13 +938,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s206 # say19704
 label area_s206: # from 204.0
-    SPEAKER '«Это не то же самое, шеф…»'
+    area '«Это не то же самое, шеф…»'
 
     jump area_s205
 '''.strip() + '\n'
@@ -1014,13 +1022,14 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s518 # say53668
 label area_s518: # from 515.0 517.0
-    SPEAKER 'Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким. «Те воспоминания, они… слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны…»'
+    nr 'Морт смотрит тебе под ноги — он еще никогда не выглядел таким жалким.'
+    area '«Те воспоминания, они… слушай, шеф, я даже не помню, *каково* это — быть человеком. Я не помню свою жизнь до Колонны…»'
 
     if areaLogic.s518_condition():
         jump dakkon_s183  # EXTERN
@@ -1142,13 +1151,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s0 # say986
 label area_s0: # -
-    SPEAKER '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».'
+    area '«Эй, шеф. Ты в порядке? Изображаешь из себя труп или пытаешься обмануть трухлявых? Я уж думал, что ты дал дуба».'
 
     menu:
         '«Кто ты?»':
@@ -1195,9 +1204,13 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
+        self.settings_manager.set_has_intro_key(False)
         morte_value_before = 0
         morte_value_after = 1
         morte_value_after_once = 1
+        self.settings_manager.set_morte_value(morte_value_before)
+        self.settings_manager.set_read_scars(False)
+        self.settings_manager.set_in_party_morte(False)
 
         self.assertFalse(self.settings_manager.get_has_intro_key())
         self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
@@ -1256,13 +1269,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s0 # say822
 label area_s0: # -
-    SPEAKER 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
+    nr 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
     jump morte_s104  # EXTERN
 '''.strip() + '\n'
@@ -1352,13 +1365,17 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s2 # say706
 label area_s2: # from 1.0 1.1
-    SPEAKER 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится. Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью. «Ты! Что привело сюда *тебя*?! Захотел лично полюбоваться на причиненные тобой страдания? Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?.. — ее голос превращается в шипение. — 'любовь моя'».~ [DEN001]'
+    nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится. Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.'
+    area '«Ты! Что привело сюда *тебя*?! Захотел лично полюбоваться на причиненные тобой страдания? Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?..»'
+    nr 'Ее голос превращается в шипение.'
+    area '«„Любовь моя“».'
+    nr '~ [DEN001]'
 
     menu:
         '«Кто ты?»':
@@ -1511,13 +1528,14 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s29 # say809
 label area_s29: # from 24.0
-    SPEAKER '«Я знаю, что ты должен умереть… пока еще можешь. Круг *должен* замкнуться, любовь моя. Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».~ [DEN023]'
+    area '«Я знаю, что ты должен умереть… пока еще можешь. Круг *должен* замкнуться, любовь моя. Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».'
+    nr '~ [DEN023]'
 
     menu:
         '«Пока я еще могу?»':
@@ -1655,13 +1673,15 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s26 # say793
 label area_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
-    SPEAKER 'Дейонарра выглядит разъяренной. «Тогда уходи, как уходил уже триста раз! Зачем ты приходишь сюда? Чтобы помучить меня?! Уходи и никогда больше не возвращайся!» Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.'
+    nr 'Дейонарра выглядит разъяренной.'
+    area '«Тогда уходи, как уходил уже триста раз! Зачем ты приходишь сюда? Чтобы помучить меня?! Уходи и никогда больше не возвращайся!»'
+    nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.'
 
     menu:
         'Уйти.' if areaLogic.r6081_condition():
@@ -1827,13 +1847,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s61 # say63390
 label area_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    SPEAKER 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра. Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
+    nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра. Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
 
     menu:
         '«Дейонарра?..»':
@@ -1872,6 +1892,9 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r63391_action(self):
+        self.settings_manager.set_1200_cut_scene_2(False)
+        self.settings_manager.set_cd_int_1(False)
+
         self.assertFalse(self.settings_manager.get_1200_cut_scene_2())
         self.assertFalse(self.settings_manager.get_cd_int_1())
 
@@ -1940,13 +1963,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s42 # say1427
 label area_s42: # from 41.0 45.0
-    SPEAKER 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.'
+    nr 'В шее раздается характерный хруст, и тело тленного безвольно падает в твои объятия.'
 
     menu:
         '«Лучше ты, чем я, трухлявый».' if areaLogic.r1428_condition():
@@ -2005,12 +2028,16 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r1428_action(self):
+        self.settings_manager.set_choke_memory(False)
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
+        self.settings_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
+        self.settings_manager.set_choke(choke_before)
+        self.settings_manager.set_dead_area(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
@@ -2044,9 +2071,12 @@ class AreaLogicTest(LogicTest):
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
+        self.settings_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
+        self.settings_manager.set_choke(choke_before)
+        self.settings_manager.set_dead_area(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
@@ -2126,13 +2156,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s73 # say66913
 label area_s73: # from 72.0
-    SPEAKER 'При этих словах Дейонарры твой череп пронзает внезапное озарение… неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку. Подняв ее и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям…'
+    nr 'При этих словах Дейонарры твой череп пронзает внезапное озарение… неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку. Подняв ее и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям…'
 
     menu:
         '«Чт…»':
@@ -2187,6 +2217,10 @@ class AreaLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
+        self.settings_manager.set_deionarra_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_deionarra_raise_dead())
@@ -2276,13 +2310,13 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/AREA.DLG
+# Original:  DLG/TEST.DLG
 # ###
 
 
 # s2 # say309
 label area_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
-    SPEAKER 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
+    nr 'Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.'
 
     menu:
         '«Ну хорошо…»':

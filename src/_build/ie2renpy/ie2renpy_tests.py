@@ -111,7 +111,7 @@ from _build.ie2renpy.ie2renpy_tests_cases import (
 class Ie2abstractTest(unittest.TestCase):
     def setUp(self):
         self.maxDiff = None
-        self.area = 'area'
+        self.area = 'test'
         self.state_prefix = '_s'
         self.replacer = DialogueReplacer()
         self.transformer = DialogueTransformer()
