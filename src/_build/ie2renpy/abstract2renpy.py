@@ -28,6 +28,9 @@ from _build.renpy.patterns import (all_patterns)
 from _build.renpy.generate_tests import (generate_tests)
 
 
+quote_pattern = re.compile(r'«.*»') # have to be greed
+starts_with_letter_regex = re.compile(r'^[a-zA-Zа-яА-ЯёЁ]')
+
 def _render_with_shift(buffer, value, shift):
     if not value:
         return buffer
@@ -50,8 +53,66 @@ def _generate_from_paths(state):
         return '-'
 
 
+npc_names = {
+    'test'    : 'area'     ,
+    'ddhall'  : 'dhall'    ,
+    'dmorte'  : 'morte'    ,
+    'dmorte1' : 'morte1'   ,
+    'dmorte2' : 'morte2'   ,
+    'deivene' : 'eivene'   ,
+    'dvaxis'  : 'vaxis'    ,
+    'copearc' : 'copearc'  ,
+    'dn1201'  : 'n1201'    ,
+    'dxach'   : 'xach'     ,
+    'dsoego'  : 'soego'    ,
+    'dgiantsk': 'giantsk'  ,
+    'ddeions' : 'deionarra',
+    'ds42'    : 's42'      ,
+    'ds748'   : 's748'     ,
+    'ds863'   : 's863'     ,
+    'ds996'   : 's996'     ,
+    'ds1221'  : 's1221'    ,
+    'ddust'   : 'dust'     ,
+    'ddustfem': 'dustfem'  ,
+    'dzm1041' : 'zm1041'   ,
+    'dzm1094' : 'zm1094'   ,
+    'dzm1146' : 'zm1146'   ,
+    'dzm1201' : 'zm1201'   ,
+    'dzm1445' : 'zm1445'   ,
+    'dzm1508' : 'zm1508'   ,
+    'dzm1664' : 'zm1664'   ,
+    'dzm199'  : 'zm199'    ,
+    'dzm257'  : 'zm257'    ,
+    'dzm310'  : 'zm310'    ,
+    'dzm396'  : 'zm396'    ,
+    'dzm463'  : 'zm463'    ,
+    'dzm475'  : 'zm475'    ,
+    'dzm506'  : 'zm506'    ,
+    'dzm569'  : 'zm569'    ,
+    'dzm613'  : 'zm613'    ,
+    'dzm732'  : 'zm732'    ,
+    'dzm782'  : 'zm782'    ,
+    'dzm782'  : 'zm782'    ,
+    'dzm79'   : 'zm79'     ,
+    'dzm825'  : 'zm825'    ,
+    'dzm965'  : 'zm965'    ,
+    'dzm985'  : 'zm985'    ,
+    'dzf114'  : 'zf114'    ,
+    'dzf444'  : 'zf444'    ,
+    'dzf594'  : 'zf594'    ,
+    'dzf626'  : 'zf626'    ,
+    'dzf679'  : 'zf679'    ,
+    'dzf832'  : 'zf832'    ,
+    'dzf891'  : 'zf891'    ,
+    'dzf916'  : 'zf916'    ,
+    'dzf1072' : 'zf1072'   ,
+    'dzf1096' : 'zf1096'   ,
+    'dzf1148' : 'zf1148'   ,
+}
+
+
 def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
-    target_npc = area[1:] if area.startswith('d') else area
+    npc_name = npc_names[area]
     dialog_tree = []
     logic_actions = []
     logic_conditions = []
@@ -61,9 +122,9 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
         dialog_tree,
         rpy_header_template.format(
             area=area.upper(),
-            npc=target_npc,
-            Npc=target_npc.capitalize(),
-            NPC=target_npc.upper()
+            npc=npc_name,
+            Npc=npc_name.capitalize(),
+            NPC=npc_name.upper()
         ),
         0
     )
@@ -89,13 +150,18 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 ssid=state_say_id,
                 fp=from_path,
                 fc=free_comment,
-                tnpc=target_npc,
-                pfx=state_prefix,
-                sb=state_body
+                tnpc=npc_name,
+                pfx=state_prefix
             ),
             0
         )
-
+        dialog_tree.append('\n')
+        cues = _format_cues(state_body, 'nr', npc_name)
+        _render_with_shift(
+            dialog_tree,
+            cues,
+            4
+        )
         dialog_tree.append('\n')
         dialog_tree.append('\n')
 
@@ -127,7 +193,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     execute_state_update_journal_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         sid=update_journal_function_name,
                     ),
                     4
@@ -149,7 +215,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     execute_state_logic_action_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         sid=state_id,
                     ),
                     4
@@ -170,7 +236,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     jump_dispose_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                     ),
                     4
                 )
@@ -178,7 +244,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     jump_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         tsid=target_state_id,
                     ),
                     4
@@ -220,7 +286,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     execute_state_update_journal_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         sid=update_journal_function_name,
                     ),
                     12
@@ -239,7 +305,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
             _render_with_shift(
                 dialog_tree,
                 execute_state_logic_condition_template.format(
-                    tnpc=target_npc,
+                    tnpc=npc_name,
                     sid=state_id,
                 ),
                 4
@@ -258,7 +324,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     execute_state_logic_action_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         sid=state_id,
                     ),
                     8
@@ -279,7 +345,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     jump_dispose_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                     ),
                     8
                 )
@@ -287,7 +353,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     jump_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         tsid=target_state_id,
                     ),
                     8
@@ -308,9 +374,9 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
             journal_id = answer['journal_id']
             journal_body = answer['journal_body']
             action = answer['action']
-            target_id = _form_jump(answer, target_npc, state_prefix)
+            target_id = _form_jump(answer, npc_name, state_prefix)
 
-            menu_option = _build_menu_option(target_npc, answer, logic_conditions, global_response_counter)
+            menu_option = _build_menu_option(npc_name, answer, logic_conditions, global_response_counter)
             _render_with_shift(
                 dialog_tree,
                 menu_option,
@@ -337,7 +403,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     execute_state_update_journal_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         sid=update_journal_function_name,
                     ),
                     12
@@ -357,7 +423,7 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
                 _render_with_shift(
                     dialog_tree,
                     execute_response_logic_action_template.format(
-                        tnpc=target_npc,
+                        tnpc=npc_name,
                         aid=answer_id,
                     ),
                     12
@@ -377,13 +443,13 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
     logic_conditions_str = ''.join(logic_conditions)
 
     transformed_actions = _to_single_body(
-        dialogue_transformer.transform_script(logic_actions_str, target_npc)
+        dialogue_transformer.transform_script(logic_actions_str, npc_name)
     )
     transformed_conditions = _to_single_return(
-        dialogue_transformer.transform_script(logic_conditions_str, target_npc)
+        dialogue_transformer.transform_script(logic_conditions_str, npc_name)
     )
 
-    logic_code = logic_header_template.format(npc=target_npc, Npc=target_npc.capitalize())
+    logic_code = logic_header_template.format(npc=npc_name, Npc=npc_name.capitalize())
     logic_code += '\n\n\n'
 
     if transformed_actions:
@@ -392,9 +458,9 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
     if transformed_conditions:
         logic_code += _right_trim_lines(transformed_conditions).rstrip()
 
-    test_code = test_header_template.format(npc=target_npc, Npc=target_npc.capitalize())
+    test_code = test_header_template.format(npc=npc_name, Npc=npc_name.capitalize())
     test_code += '\n\n\n'
-    generated_tests = generate_tests(logic_code, target_npc, warnings)
+    generated_tests = generate_tests(logic_code, npc_name, warnings)
     if len(generated_tests) > 0:
         test_code += f'    {generated_tests}'
         test_code += '\n\n\n'
@@ -402,13 +468,9 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
 
     dialog_tree_str = _right_trim_lines(''.join(dialog_tree))
 
-    dialog_tree_str += rpy_footer_template.format(npc=target_npc)
+    dialog_tree_str += rpy_footer_template.format(npc=npc_name)
 
-    return _replace_stuff(dialog_tree_str.strip()) + '\n', logic_code.strip() + '\n', test_code.strip() + '\n'
-
-
-def _replace_stuff(text):
-    return text.replace('...', '…')
+    return dialog_tree_str.strip().replace('...', '…') + '\n', logic_code.strip() + '\n', test_code.strip() + '\n'
 
 
 # def _replace_nested_quotes(text):
@@ -505,19 +567,19 @@ def _right_trim_lines(text):
     return '\n'.join(line.rstrip() for line in text.split('\n'))
 
 
-def _form_jump(answer, target_npc, state_prefix):
+def _form_jump(answer, npc_name, state_prefix):
     if answer['target_state']['id'] == 'EXIT':
-        return f'{target_npc}_dispose'
+        return f'{npc_name}_dispose'
     if 'other_npc' in answer['target_state']:
         other_npc = answer['target_state']['other_npc']
         target_state_id = answer['target_state']['id']
         return f'{other_npc}{state_prefix}{target_state_id}  # EXTERN'
     else:
         target_state_id = answer['target_state']['id']
-        return f'{target_npc}{state_prefix}{target_state_id}'
+        return f'{npc_name}{state_prefix}{target_state_id}'
 
 
-def _build_menu_option(target_npc, answer, logic_conditions, global_response_counter):
+def _build_menu_option(npc_name, answer, logic_conditions, global_response_counter):
     answer_condition = answer['condition']
     answer_id = answer['answer_id']
     answer_body = answer['answer_body']
@@ -528,6 +590,162 @@ def _build_menu_option(target_npc, answer, logic_conditions, global_response_cou
             4
         )
         logic_conditions.append('\n\n')
-        return menu_option_with_condition_template.format(ab=answer_body,tnpc=target_npc,aid=answer_id,grc=global_response_counter)
+        return menu_option_with_condition_template.format(ab=replace_single_quotes(answer_body),tnpc=npc_name,aid=answer_id,grc=global_response_counter)
     else:
-        return menu_option_template.format(ab=answer_body,aid=answer_id,grc=global_response_counter)
+        return menu_option_template.format(ab=replace_single_quotes(answer_body),aid=answer_id,grc=global_response_counter)
+
+
+def capitalize_first(s):
+    if not s or len(s) == 0:
+        return s
+    if starts_with_letter_regex.match(s):
+        return s[0].upper() + s[1:]
+    elif len(s) > 1: # starts with ''
+        return s[0] + s[1].upper() + s[2:]
+    return s
+
+
+def replace_single_quotes(s):
+    parts = []
+    start = 0
+    count = 0
+    for i, char in enumerate(s):
+        if char == "'":
+            count += 1
+            if count % 2 == 1:
+                parts.append(s[start:i])
+                parts.append('„')
+                start = i + 1
+            else:
+                parts.append(s[start:i])
+                parts.append('“')
+                start = i + 1
+    parts.append(s[start:])
+    return ''.join(parts)
+
+
+def process_inside_quote(text, nr, npc):
+    segments = []
+    start = 0
+    i = 0
+    n = len(text)
+    while i < n:
+        if text[i] == '—':
+            j = i + 1
+            while j < n and text[j] != '—':
+                j += 1
+            if j < n:
+                if i > start:
+                    d_text = text[start:i].strip()
+                    if d_text:
+                        d_text = d_text.replace('«', '„').replace('»', '“')
+                        d_text = replace_single_quotes(d_text)
+                        segments.append((npc, d_text))
+                nr_text = text[i+1:j].strip()
+                if nr_text:
+                    segments.append((nr, nr_text))
+                start = j + 1
+                i = j + 1
+            else:
+                i += 1
+        else:
+            i += 1
+    if start < n:
+        d_text = text[start:].strip()
+        if d_text:
+            d_text = d_text.replace('«', '„').replace('»', '“')
+            d_text = replace_single_quotes(d_text)
+            segments.append((npc, d_text))
+    return segments
+
+
+def _format_cue(line, nr, npc):
+    line = line.strip()
+    if not line:
+        return ''
+
+    if '«' not in line and '»' not in line:
+        return f'{nr} \'{replace_single_quotes(capitalize_first(line))}\''
+
+    parts = []
+    depth = 0
+    start = 0
+    n = len(line)
+    for i, char in enumerate(line):
+        if char == '«':
+            if depth == 0:
+                if start < i:
+                    outside_text = line[start:i].strip()
+                    if outside_text:
+                        parts.append(('outside', outside_text))
+                start = i
+            depth += 1
+        elif char == '»':
+            if depth > 0:
+                depth -= 1
+                if depth == 0:
+                    if i < len(line) - 1 and line[i + 1] == '.': # case '».'
+                        inside_text = line[start + 1:i] + '.'
+                        parts.append(('inside', inside_text))
+                        start = i + 2
+                    else:
+                        inside_text = line[start:i + 1]
+                        parts.append(('inside', inside_text))
+                        start = i + 1
+    if depth > 0:
+        inside_text = line[start:]
+        parts.append(('inside', inside_text))
+    else:
+        if start < n:
+            outside_text = line[start:].strip()
+            if outside_text:
+                parts.append(('outside', outside_text))
+
+    tokens = []
+    for part_type, text in parts:
+        if part_type == 'outside':
+            text = capitalize_first(text)
+            tokens.append((nr, text))
+        else:
+            if text.startswith('«') and text.endswith('»'):
+                inner_text = text[1:-1]
+            elif text.startswith('«'):
+                inner_text = text[1:]
+            elif text.endswith('»'):
+                inner_text = text[:-1]
+            else:
+                inner_text = text
+            # has_multiple_quotes = (inner_text.count('«') + inner_text.count('»')) > 2
+            segments = process_inside_quote(inner_text, nr, npc)
+            for seg_type, seg_text in segments:
+                seg_text = capitalize_first(seg_text)
+                if seg_type == npc:
+                    cue = f'«{seg_text}»' \
+                          .replace('.»', '».') \
+                          .replace(',»', '».') \
+                          .replace('?.».', '?..»') \
+                          .replace('!.».', '!..»') \
+                          .replace('..».', '…»')
+                    # if has_multiple_quotes:
+                    tokens.append((npc, cue))
+                    # else:
+                        # tokens.append((npc, f'«{seg_text}»'))
+                else:
+                    tokens.append((nr, seg_text))
+
+    output_str = ''
+    for tag, text in tokens:
+        output_str += f'{tag} \'{text}\'\n'
+    return output_str.strip()
+
+
+def _format_cues(text, nr, npc):
+    lines = text.strip().split('\n')
+    output_lines = []
+    for line in lines:
+        if line.strip() == '':
+            output_lines.append('')
+        else:
+            parsed_line = _format_cue(line, nr, npc)
+            output_lines.append(parsed_line)
+    return '\n'.join(output_lines)

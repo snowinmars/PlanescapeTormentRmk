@@ -462,6 +462,7 @@ class DialogueReplacer:
         self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return not self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'!PartyHasItem("{from_var}")', f'return not self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.settings_manager.set_has_{to_var}(False)')
+        self.add_replacement(f'DestroyPartyItem("{from_var}",FALSE)', f'self.settings_manager.set_has_{to_var}(False)')
         self.add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.settings_manager.set_has_{to_var}(True)')
         self.add_replacement(f'HasItem("{from_var}",Myself)', f'return self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'PartyHasItem("{from_var}")', f'return self.settings_manager.get_has_{to_var}()')

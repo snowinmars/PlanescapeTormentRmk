@@ -231,7 +231,7 @@ def _build_test_actions_parts(operation):
         setting = match.group(1)
         value = match.group(2)
         inverted_value = 'True' if value == 'False' else 'False'
-        return set_boolean_action_pattern_preconf, \
+        return set_boolean_action_pattern_preconf.format(iv=inverted_value, s=setting), \
                set_boolean_action_pattern_before.format(iv=inverted_value, s=setting), \
                set_boolean_action_pattern_after.format(v=value, s=setting), \
                set_boolean_action_pattern_after_once.format(v=value, s=setting)

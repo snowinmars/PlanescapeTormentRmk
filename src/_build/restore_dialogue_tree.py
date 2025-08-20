@@ -274,7 +274,7 @@ file_name_to_npc_map = {
     'dannah.rpy'      : 'annah',
     'ddakkon.rpy'     : 'dakkon',
     'ddeath_names.rpy': 'death_names',
-    'ddeions.rpy'     : 'deions',
+    'ddeions.rpy'     : 'deionarra',
     'ddhall.rpy'      : 'dhall',
     'ddust.rpy'       : 'dust',
     'ddustfem.rpy'    : 'dustfem',

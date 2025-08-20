@@ -46,7 +46,6 @@ multiline_test_case_template = """
 label_template = '''
 # s{sid} # say{ssid}
 label {tnpc}{pfx}{sid}: # {fp}{fc}
-    SPEAKER '{sb}'
 '''.strip()
 
 logic_action_update_journal_template = """
@@ -171,6 +170,7 @@ def test_{fn}(self):
 
 
 set_boolean_action_pattern_preconf = """
+self.settings_manager.set_{s}({iv})
 """.strip()
 set_boolean_action_pattern_before = """
 self.assert{iv}(self.settings_manager.get_{s}())
@@ -185,6 +185,7 @@ set_integer_action_pattern_preconf = """
 {s}_before = {ov}
 {s}_after = {v}
 {s}_after_once = {v}
+self.settings_manager.set_{s}({s}_before)
 """.strip()
 set_integer_action_pattern_before = """
 self.assertEqual(self.settings_manager.get_{s}(), {s}_before)
@@ -199,6 +200,7 @@ inc_once_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = {d}
 {s}_after_once = {d}
+self.settings_manager.set_{s}({s}_before)
 """.strip()
 inc_once_integer_action_pattern_before = """
 self.assertEqual(self.settings_manager.get_{s}(), {s}_before)
@@ -213,6 +215,7 @@ dec_once_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = -{d}
 {s}_after_once = -{d}
+self.settings_manager.set_{s}({s}_before)
 """.strip()
 dec_once_integer_action_pattern_before = """
 self.assertEqual(self.settings_manager.get_{s}(), {s}_before)
@@ -227,6 +230,7 @@ inc_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = {d}
 {s}_after_once = 2 * {d}
+self.settings_manager.set_{s}({s}_before)
 """.strip()
 inc_integer_action_pattern_before = """
 self.assertEqual(self.settings_manager.get_{s}(), {s}_before)
@@ -241,6 +245,7 @@ dec_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = -{d}
 {s}_after_once = -2 * {d}
+self.settings_manager.set_{s}({s}_before)
 """.strip()
 dec_integer_action_pattern_before = """
 self.assertEqual(self.settings_manager.get_{s}(), {s}_before)
