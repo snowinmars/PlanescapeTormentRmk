@@ -116,6 +116,9 @@ class Zm985LogicTest(LogicTest):
 
 
     def test_s3_action(self):
+        self.settings_manager.set_topple_985(False)
+        self.settings_manager.set_dead_zm985(False)
+
         self.assertFalse(self.settings_manager.get_topple_985())
         self.assertFalse(self.settings_manager.get_dead_zm985())
 
@@ -138,6 +141,7 @@ class Zm985LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())

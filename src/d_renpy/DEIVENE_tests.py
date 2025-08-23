@@ -33,6 +33,9 @@ class EiveneLogicTest(LogicTest):
 
 
     def test_r3424_action(self):
+        self.settings_manager.set_has_embalm(True)
+        self.settings_manager.set_has_needle(True)
+        self.settings_manager.set_eivene_delivery(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
@@ -122,6 +125,7 @@ class EiveneLogicTest(LogicTest):
         ravel_eivene_before = 0
         ravel_eivene_after = 1
         ravel_eivene_after_once = 1
+        self.settings_manager.set_ravel_eivene(ravel_eivene_before)
         note_id = '38199'
 
         max_health_before = self.settings_manager.character_manager.get_property(who_max_health, prop_max_health)
@@ -162,6 +166,8 @@ class EiveneLogicTest(LogicTest):
         embalm_key_quest_before = 1
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
+        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.settings_manager.set_has_keyem(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
@@ -209,6 +215,9 @@ class EiveneLogicTest(LogicTest):
 
 
     def test_r3469_action(self):
+        self.settings_manager.set_has_embalm(True)
+        self.settings_manager.set_has_needle(True)
+        self.settings_manager.set_eivene_delivery(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
@@ -242,6 +251,8 @@ class EiveneLogicTest(LogicTest):
         embalm_key_quest_before = 1
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
+        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.settings_manager.set_has_keyem(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
@@ -314,6 +325,8 @@ class EiveneLogicTest(LogicTest):
         embalm_key_quest_before = 1
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
+        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.settings_manager.set_has_keyem(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
@@ -338,6 +351,7 @@ class EiveneLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_42_secret(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_42_secret())

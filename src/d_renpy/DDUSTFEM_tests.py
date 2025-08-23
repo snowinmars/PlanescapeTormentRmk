@@ -36,6 +36,7 @@ class DustfemLogicTest(LogicTest):
         adahn_before = 0
         adahn_after = 1
         adahn_after_once = 2 * 1
+        self.settings_manager.set_adahn(adahn_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -60,6 +61,7 @@ class DustfemLogicTest(LogicTest):
         adahn_before = 0
         adahn_after = 1
         adahn_after_once = 2 * 1
+        self.settings_manager.set_adahn(adahn_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -84,6 +86,7 @@ class DustfemLogicTest(LogicTest):
         adahn_before = 0
         adahn_after = 1
         adahn_after_once = 2 * 1
+        self.settings_manager.set_adahn(adahn_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -108,6 +111,7 @@ class DustfemLogicTest(LogicTest):
         adahn_before = 0
         adahn_after = 1
         adahn_after_once = 2 * 1
+        self.settings_manager.set_adahn(adahn_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -136,6 +140,7 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r4308_action(self):
+        self.settings_manager.set_mortualy_alarmed(False)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -171,9 +176,12 @@ class DustfemLogicTest(LogicTest):
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
+        self.settings_manager.set_choke(choke_before)
+        self.settings_manager.set_choke_memory(False)
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
+        self.settings_manager.set_choke_dustman(choke_dustman_before)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
@@ -204,9 +212,12 @@ class DustfemLogicTest(LogicTest):
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
+        self.settings_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
+        self.settings_manager.set_choke(choke_before)
+        self.settings_manager.set_dead_dustfem(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
@@ -234,6 +245,7 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r4320_action(self):
+        self.settings_manager.set_dead_dustfem(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250

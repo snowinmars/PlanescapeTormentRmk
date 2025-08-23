@@ -15,6 +15,7 @@ class S1221LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_skeleton_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_skeleton_chaotic())
@@ -36,6 +37,7 @@ class S1221LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_skeleton_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_skeleton_chaotic())
@@ -117,6 +119,10 @@ class S1221LogicTest(LogicTest):
 
 
     def test_r35354_action(self):
+        self.settings_manager.set_dead_s1221(False)
+        self.settings_manager.set_has_spike(False)
+        self.settings_manager.set_has_strap(False)
+
         self.assertFalse(self.settings_manager.get_dead_s1221())
         self.assertFalse(self.settings_manager.get_has_spike())
         self.assertFalse(self.settings_manager.get_has_strap())
@@ -135,6 +141,10 @@ class S1221LogicTest(LogicTest):
 
 
     def test_r35357_action(self):
+        self.settings_manager.set_dead_s1221(False)
+        self.settings_manager.set_has_spike(False)
+        self.settings_manager.set_has_strap(False)
+
         self.assertFalse(self.settings_manager.get_dead_s1221())
         self.assertFalse(self.settings_manager.get_has_spike())
         self.assertFalse(self.settings_manager.get_has_strap())

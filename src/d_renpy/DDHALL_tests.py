@@ -31,6 +31,7 @@ class DhallLogicTest(LogicTest):
         vaxis_betrayed_before = 1
         vaxis_betrayed_after = 2
         vaxis_betrayed_after_once = 2
+        self.settings_manager.set_vaxis_betrayed(vaxis_betrayed_before)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
@@ -55,6 +56,7 @@ class DhallLogicTest(LogicTest):
         vaxis_betrayed_before = 1
         vaxis_betrayed_after = 2
         vaxis_betrayed_after_once = 2
+        self.settings_manager.set_vaxis_betrayed(vaxis_betrayed_before)
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -3

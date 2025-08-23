@@ -12,9 +12,13 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
+        self.settings_manager.set_has_intro_key(False)
         morte_value_before = 0
         morte_value_after = 1
         morte_value_after_once = 1
+        self.settings_manager.set_morte_value(morte_value_before)
+        self.settings_manager.set_read_scars(False)
+        self.settings_manager.set_in_party_morte(False)
 
         self.assertFalse(self.settings_manager.get_has_intro_key())
         self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
@@ -47,6 +51,8 @@ class MorteLogicTest(LogicTest):
         morte_value_before = 0
         morte_value_after = 1
         morte_value_after_once = 1
+        self.settings_manager.set_morte_value(morte_value_before)
+        self.settings_manager.set_in_party_morte(False)
 
         self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
         self.assertFalse(self.settings_manager.get_in_party_morte())
@@ -84,9 +90,11 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r2080_action(self):
+        self.settings_manager.set_know_mimir(False)
         morte_mimir_before = 0
         morte_mimir_after = 1
         morte_mimir_after_once = 1
+        self.settings_manager.set_morte_mimir(morte_mimir_before)
 
         self.assertFalse(self.settings_manager.get_know_mimir())
         self.assertEqual(self.settings_manager.get_morte_mimir(), morte_mimir_before)
@@ -414,6 +422,7 @@ class MorteLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        self.settings_manager.set_vaxis_global_xp(False)
 
         looks_like_before = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
@@ -549,6 +558,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r11977_action(self):
+        self.settings_manager.set_ingress_teeth_installed(False)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -578,6 +588,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r11980_action(self):
+        self.settings_manager.set_ingress_teeth_installed(False)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -672,6 +683,9 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r13774_action(self):
+        self.settings_manager.set_morte_sdthug_quip_1(False)
+        self.settings_manager.set_know_chaosmen(False)
+
         self.assertFalse(self.settings_manager.get_morte_sdthug_quip_1())
         self.assertFalse(self.settings_manager.get_know_chaosmen())
 
@@ -701,6 +715,9 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r13986_action(self):
+        self.settings_manager.set_morte_wilder_quip_1(False)
+        self.settings_manager.set_know_chaosmen(False)
+
         self.assertFalse(self.settings_manager.get_morte_wilder_quip_1())
         self.assertFalse(self.settings_manager.get_know_chaosmen())
 
@@ -800,6 +817,8 @@ class MorteLogicTest(LogicTest):
         bd_dakkon_morale_before = 0
         bd_dakkon_morale_after = 1
         bd_dakkon_morale_after_once = 2 * 1
+        self.settings_manager.set_bd_dakkon_morale(bd_dakkon_morale_before)
+        self.settings_manager.set_tree_d(False)
 
         self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_before)
         self.assertFalse(self.settings_manager.get_tree_d())
@@ -868,6 +887,8 @@ class MorteLogicTest(LogicTest):
         bd_dakkon_morale_before = 0
         bd_dakkon_morale_after = 1
         bd_dakkon_morale_after_once = 2 * 1
+        self.settings_manager.set_bd_dakkon_morale(bd_dakkon_morale_before)
+        self.settings_manager.set_tree_d(False)
 
         self.assertEqual(self.settings_manager.get_bd_dakkon_morale(), bd_dakkon_morale_before)
         self.assertFalse(self.settings_manager.get_tree_d())
@@ -990,6 +1011,7 @@ class MorteLogicTest(LogicTest):
         gold_before = 0
         gold_after = -50
         gold_after_once = -2 * 50
+        self.settings_manager.set_gold(gold_before)
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = 1
@@ -1014,6 +1036,7 @@ class MorteLogicTest(LogicTest):
         gold_before = 0
         gold_after = -100
         gold_after_once = -2 * 100
+        self.settings_manager.set_gold(gold_before)
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = 1
@@ -1038,6 +1061,7 @@ class MorteLogicTest(LogicTest):
         know_marta_work_before = 1
         know_marta_work_after = 3
         know_marta_work_after_once = 3
+        self.settings_manager.set_know_marta_work(know_marta_work_before)
         note_id = '20538'
 
         self.assertEqual(self.settings_manager.get_know_marta_work(), know_marta_work_before)
@@ -1118,6 +1142,8 @@ class MorteLogicTest(LogicTest):
         morte_value_before = 0
         morte_value_after = 1
         morte_value_after_once = 1
+        self.settings_manager.set_morte_value(morte_value_before)
+        self.settings_manager.set_in_party_morte(False)
 
         self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
         self.assertFalse(self.settings_manager.get_in_party_morte())
@@ -1146,6 +1172,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r24932_action(self):
+        self.settings_manager.set_in_party_morte(False)
         note_id = '24933'
 
         self.assertFalse(self.settings_manager.get_in_party_morte())
@@ -1270,9 +1297,11 @@ class MorteLogicTest(LogicTest):
         bd_morte_morale_before = 0
         bd_morte_morale_after = 1
         bd_morte_morale_after_once = 2 * 1
+        self.settings_manager.set_bd_morte_morale(bd_morte_morale_before)
         morte_stolen_before = 1
         morte_stolen_after = 3
         morte_stolen_after_once = 3
+        self.settings_manager.set_morte_stolen(morte_stolen_before)
 
         self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_before)
         self.assertEqual(self.settings_manager.get_morte_stolen(), morte_stolen_before)
@@ -1937,6 +1966,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r41921_action(self):
+        self.settings_manager.set_jumble_reekwind(False)
         note_id = '67862'
 
         self.assertFalse(self.settings_manager.get_jumble_reekwind())
@@ -1957,9 +1987,11 @@ class MorteLogicTest(LogicTest):
         nemelle_before = 1
         nemelle_after = 3
         nemelle_after_once = 3
+        self.settings_manager.set_nemelle(nemelle_before)
         aelwyn_value_before = 1
         aelwyn_value_after = 4
         aelwyn_value_after_once = 4
+        self.settings_manager.set_aelwyn_value(aelwyn_value_before)
         note_id = '39490'
 
         self.assertEqual(self.settings_manager.get_nemelle(), nemelle_before)
@@ -1983,9 +2015,11 @@ class MorteLogicTest(LogicTest):
         nemelle_before = 1
         nemelle_after = 3
         nemelle_after_once = 3
+        self.settings_manager.set_nemelle(nemelle_before)
         aelwyn_value_before = 1
         aelwyn_value_after = 4
         aelwyn_value_after_once = 4
+        self.settings_manager.set_aelwyn_value(aelwyn_value_before)
         note_id = '39490'
 
         self.assertEqual(self.settings_manager.get_nemelle(), nemelle_before)
@@ -2083,6 +2117,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r53629_action(self):
+        self.settings_manager.set_morte_story(False)
         note_id = '53633'
 
         self.assertFalse(self.settings_manager.get_morte_story())
@@ -2103,6 +2138,8 @@ class MorteLogicTest(LogicTest):
         morale_morte_before = 0
         morale_morte_after = -1
         morale_morte_after_once = -2 * 1
+        self.settings_manager.set_morale_morte(morale_morte_before)
+        self.settings_manager.set_morte_story(False)
         note_id = '53661'
 
         self.assertEqual(self.settings_manager.get_morale_morte(), morale_morte_before)
@@ -2176,6 +2213,7 @@ class MorteLogicTest(LogicTest):
         pillar_before = 1
         pillar_after = 2
         pillar_after_once = 2
+        self.settings_manager.set_pillar(pillar_before)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(self.settings_manager.get_pillar(), pillar_before)
@@ -2208,6 +2246,7 @@ class MorteLogicTest(LogicTest):
         pillar_before = 1
         pillar_after = 2
         pillar_after_once = 2
+        self.settings_manager.set_pillar(pillar_before)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(self.settings_manager.get_pillar(), pillar_before)
@@ -2317,6 +2356,8 @@ class MorteLogicTest(LogicTest):
         bd_morte_morale_before = 0
         bd_morte_morale_after = 1
         bd_morte_morale_after_once = 2 * 1
+        self.settings_manager.set_bd_morte_morale(bd_morte_morale_before)
+        self.settings_manager.set_morte_morale_fortress_portal(False)
 
         self.assertEqual(self.settings_manager.get_bd_morte_morale(), bd_morte_morale_before)
         self.assertFalse(self.settings_manager.get_morte_morale_fortress_portal())
@@ -2589,6 +2630,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r65569_action(self):
+        self.settings_manager.set_morte_tattoo_xp(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
@@ -2757,6 +2799,7 @@ class MorteLogicTest(LogicTest):
 
 
     def test_r65774_action(self):
+        self.settings_manager.set_memory_morte_pillar(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 12000
@@ -2812,6 +2855,7 @@ class MorteLogicTest(LogicTest):
         morale_morte_before = 0
         morale_morte_after = 3
         morale_morte_after_once = 2 * 3
+        self.settings_manager.set_morale_morte(morale_morte_before)
         who_strength = 'morte'
         prop_strength = 'strength'
         delta_strength = 4
@@ -2821,6 +2865,7 @@ class MorteLogicTest(LogicTest):
         who_constitution = 'morte'
         prop_constitution = 'constitution'
         delta_constitution = 2
+        self.settings_manager.set_bd_morte_story(False)
         note_id = '65825'
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)

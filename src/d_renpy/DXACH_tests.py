@@ -15,6 +15,7 @@ class XachLogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
@@ -58,6 +59,8 @@ class XachLogicTest(LogicTest):
         xachariah_ring_before = 1
         xachariah_ring_after = 2
         xachariah_ring_after_once = 2
+        self.settings_manager.set_xachariah_ring(xachariah_ring_before)
+        self.settings_manager.set_has_xac_heart(False)
 
         self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_before)
         self.assertFalse(self.settings_manager.get_has_xac_heart())

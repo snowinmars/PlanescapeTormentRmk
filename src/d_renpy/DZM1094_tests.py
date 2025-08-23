@@ -15,6 +15,7 @@ class Zm1094LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
@@ -47,6 +48,7 @@ class Zm1094LogicTest(LogicTest):
         asonje_value_before = 1
         asonje_value_after = 3
         asonje_value_after_once = 3
+        self.settings_manager.set_asonje_value(asonje_value_before)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(self.settings_manager.get_asonje_value(), asonje_value_before)

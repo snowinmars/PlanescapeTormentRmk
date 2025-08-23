@@ -15,6 +15,7 @@ class VaxisLogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
@@ -584,6 +585,12 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4469_action(self):
+        self.settings_manager.set_vaxis_leave(False)
+        self.settings_manager.set_has_bandages(False)
+        self.settings_manager.set_has_bandages(False)
+        self.settings_manager.set_has_bandages(False)
+        self.settings_manager.set_has_embalm(False)
+        self.settings_manager.set_has_needle(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
@@ -714,6 +721,8 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_has_keyem(True)
+        self.settings_manager.set_vaxis_has_keyem(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
@@ -752,6 +761,7 @@ class VaxisLogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
+        self.settings_manager.set_vaxis_orders(True)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertTrue(self.settings_manager.get_vaxis_orders())
@@ -773,6 +783,7 @@ class VaxisLogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
+        self.settings_manager.set_vaxis_orders(True)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertTrue(self.settings_manager.get_vaxis_orders())
@@ -794,6 +805,8 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_has_keyem(True)
+        self.settings_manager.set_vaxis_has_keyem(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
@@ -882,9 +895,12 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_has_keyem(True)
+        self.settings_manager.set_vaxis_has_keyem(False)
         embalm_key_quest_before = 1
         embalm_key_quest_after = 3
         embalm_key_quest_after_once = 3
+        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
@@ -973,6 +989,7 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_vaxis_help(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_vaxis_help())
@@ -1003,6 +1020,7 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_vaxis_help(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_vaxis_help())
@@ -1033,6 +1051,7 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_vaxis_help(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_vaxis_help())
@@ -1051,6 +1070,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4580_action(self):
+        self.settings_manager.set_vaxis_exposes_soego(False)
         note_id = '64530'
 
         self.assertFalse(self.settings_manager.get_vaxis_exposes_soego())
@@ -1071,6 +1091,7 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_has_keyem(True)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
@@ -1092,6 +1113,7 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
+        self.settings_manager.set_has_keyem(True)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
@@ -1110,11 +1132,28 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4620_action(self):
-        self._integer_equals_action(
-            self.settings_manager.get_vaxis_zombie_disguise,
-            2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE,
-            self.logic.r4620_action
-        )
+        vaxis_zombie_disguise_before = 1
+        vaxis_zombie_disguise_after = 2
+        vaxis_zombie_disguise_after_once = 2
+        self.settings_manager.set_vaxis_zombie_disguise(vaxis_zombie_disguise_before)
+        self.settings_manager.set_has_embalm(True)
+        self.settings_manager.set_has_needle(True)
+
+        self.assertEqual(self.settings_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_before)
+        self.assertTrue(self.settings_manager.get_has_embalm())
+        self.assertTrue(self.settings_manager.get_has_needle())
+
+        self.logic.r4620_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after)
+        self.assertFalse(self.settings_manager.get_has_embalm())
+        self.assertFalse(self.settings_manager.get_has_needle())
+
+        self.logic.r4620_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after_once)
+        self.assertFalse(self.settings_manager.get_has_embalm())
+        self.assertFalse(self.settings_manager.get_has_needle())
 
 
     def test_r4621_action(self):
@@ -1164,6 +1203,7 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        self.settings_manager.set_vaxis_global_xp(False)
 
         looks_like_before = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)

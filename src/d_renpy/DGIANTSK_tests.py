@@ -46,6 +46,7 @@ class GiantskLogicTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
@@ -70,6 +71,8 @@ class GiantskLogicTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
         self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
@@ -89,6 +92,8 @@ class GiantskLogicTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
         self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
@@ -157,6 +162,9 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4101_action(self):
+        self.settings_manager.set_has_breast4(False)
+        self.settings_manager.set_dead_giantsk(False)
+
         self.assertFalse(self.settings_manager.get_has_breast4())
         self.assertFalse(self.settings_manager.get_dead_giantsk())
 
@@ -175,6 +183,8 @@ class GiantskLogicTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
         self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
@@ -194,6 +204,8 @@ class GiantskLogicTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
         self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())

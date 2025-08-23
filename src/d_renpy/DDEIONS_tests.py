@@ -2,13 +2,13 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.deions_logic import DeionsLogic
+from game.dlgs.deionarra_logic import DeionarraLogic
 
 
-class DeionsLogicTest(LogicTest):
+class DeionarraLogicTest(LogicTest):
     def setUp(self):
-        super(DeionsLogicTest, self).setUp()
-        self.logic = DeionsLogic(self.settings_manager)
+        super(DeionarraLogicTest, self).setUp()
+        self.logic = DeionarraLogic(self.settings_manager)
 
 
     def test_r701_action(self):
@@ -295,6 +295,7 @@ class DeionsLogicTest(LogicTest):
         deionarra_value_before = 0
         deionarra_value_after = 1
         deionarra_value_after_once = 1
+        self.settings_manager.set_deionarra_value(deionarra_value_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -319,6 +320,7 @@ class DeionsLogicTest(LogicTest):
         deionarra_value_before = 0
         deionarra_value_after = 1
         deionarra_value_after_once = 1
+        self.settings_manager.set_deionarra_value(deionarra_value_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -343,6 +345,7 @@ class DeionsLogicTest(LogicTest):
         deionarra_value_before = 0
         deionarra_value_after = 1
         deionarra_value_after_once = 1
+        self.settings_manager.set_deionarra_value(deionarra_value_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -410,6 +413,7 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r6148_action(self):
+        self.settings_manager.set_deionarra_portal(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
@@ -638,6 +642,9 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r63388_action(self):
+        self.settings_manager.set_1200_cut_scene_2(False)
+        self.settings_manager.set_cd_int_1(False)
+
         self.assertFalse(self.settings_manager.get_1200_cut_scene_2())
         self.assertFalse(self.settings_manager.get_cd_int_1())
 
@@ -653,6 +660,9 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r63391_action(self):
+        self.settings_manager.set_1200_cut_scene_2(False)
+        self.settings_manager.set_cd_int_1(False)
+
         self.assertFalse(self.settings_manager.get_1200_cut_scene_2())
         self.assertFalse(self.settings_manager.get_cd_int_1())
 
@@ -686,6 +696,9 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r63419_action(self):
+        self.settings_manager.set_has_wedding_ring(True)
+        self.settings_manager.set_has_sup_ring(False)
+
         self.assertTrue(self.settings_manager.get_has_wedding_ring())
         self.assertFalse(self.settings_manager.get_has_sup_ring())
 
@@ -713,6 +726,10 @@ class DeionsLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
+        self.settings_manager.set_deionarra_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_deionarra_raise_dead())

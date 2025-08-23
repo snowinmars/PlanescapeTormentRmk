@@ -12,9 +12,11 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r44994_action(self):
+        self.settings_manager.set_ur_1201(False)
         1201_note_quest_before = 0
         1201_note_quest_after = 1
         1201_note_quest_after_once = 1
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertFalse(self.settings_manager.get_ur_1201())
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 1201_note_quest_before)
@@ -52,9 +54,14 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r44998_action(self):
+        self.settings_manager.set_ur_1201(True)
+        self.settings_manager.set_lr_1201(True)
+        self.settings_manager.set_ll_1201(True)
+        self.settings_manager.set_ul_1201(True)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertTrue(self.settings_manager.get_ur_1201())
         self.assertTrue(self.settings_manager.get_lr_1201())
@@ -90,6 +97,8 @@ class N1201LogicTest(LogicTest):
         1201_note_quest_before = 1
         1201_note_quest_after = 2
         1201_note_quest_after_once = 2
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
+        self.settings_manager.set_lr_1201(False)
 
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 1201_note_quest_before)
         self.assertFalse(self.settings_manager.get_lr_1201())
@@ -106,9 +115,11 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45002_action(self):
+        self.settings_manager.set_lr_1201(False)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertFalse(self.settings_manager.get_lr_1201())
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 1201_note_quest_before)
@@ -125,9 +136,11 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45003_action(self):
+        self.settings_manager.set_ll_1201(False)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertFalse(self.settings_manager.get_ll_1201())
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 1201_note_quest_before)
@@ -144,9 +157,11 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45004_action(self):
+        self.settings_manager.set_ul_1201(False)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertFalse(self.settings_manager.get_ul_1201())
         self.assertEqual(self.settings_manager.get_1201_note_quest(), 1201_note_quest_before)
@@ -163,9 +178,14 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45006_action(self):
+        self.settings_manager.set_ur_1201(True)
+        self.settings_manager.set_lr_1201(True)
+        self.settings_manager.set_ll_1201(True)
+        self.settings_manager.set_ul_1201(True)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertTrue(self.settings_manager.get_ur_1201())
         self.assertTrue(self.settings_manager.get_lr_1201())
@@ -191,9 +211,14 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45008_action(self):
+        self.settings_manager.set_ur_1201(True)
+        self.settings_manager.set_lr_1201(True)
+        self.settings_manager.set_ll_1201(True)
+        self.settings_manager.set_ul_1201(True)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertTrue(self.settings_manager.get_ur_1201())
         self.assertTrue(self.settings_manager.get_lr_1201())
@@ -219,9 +244,14 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45017_action(self):
+        self.settings_manager.set_ur_1201(True)
+        self.settings_manager.set_lr_1201(True)
+        self.settings_manager.set_ll_1201(True)
+        self.settings_manager.set_ul_1201(True)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertTrue(self.settings_manager.get_ur_1201())
         self.assertTrue(self.settings_manager.get_lr_1201())
@@ -247,9 +277,14 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45018_action(self):
+        self.settings_manager.set_ur_1201(True)
+        self.settings_manager.set_lr_1201(True)
+        self.settings_manager.set_ll_1201(True)
+        self.settings_manager.set_ul_1201(True)
         1201_note_quest_before = 1
         1201_note_quest_after = 0
         1201_note_quest_after_once = 0
+        self.settings_manager.set_1201_note_quest(1201_note_quest_before)
 
         self.assertTrue(self.settings_manager.get_ur_1201())
         self.assertTrue(self.settings_manager.get_lr_1201())
@@ -287,6 +322,9 @@ class N1201LogicTest(LogicTest):
 
 
     def test_r45025_action(self):
+        self.settings_manager.set_has_tearring(False)
+        self.settings_manager.set_has_1201_note(True)
+
         self.assertFalse(self.settings_manager.get_has_tearring())
         self.assertTrue(self.settings_manager.get_has_1201_note())
 

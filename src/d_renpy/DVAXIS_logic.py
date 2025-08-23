@@ -413,7 +413,9 @@ class VaxisLogic:
 
 
     def r4620_action(self):
-        self.settings_manager.set_vaxis_zombie_disguise(2) DestroyPartyItem("Embalm",FALSE) DestroyPartyItem("Needle",FALSE)
+        self.settings_manager.set_vaxis_zombie_disguise(2)
+        self.settings_manager.set_has_embalm(False)
+        self.settings_manager.set_has_needle(False)
 
 
     def r4621_action(self):

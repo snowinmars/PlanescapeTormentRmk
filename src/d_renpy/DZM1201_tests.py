@@ -12,6 +12,8 @@ class Zm1201LogicTest(LogicTest):
 
 
     def test_r34956_action(self):
+        self.settings_manager.set_1201_note_retrieved(False)
+        self.settings_manager.set_has_1201_note(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
@@ -39,6 +41,7 @@ class Zm1201LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())

@@ -15,6 +15,7 @@ class Zm1041LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
@@ -108,6 +109,7 @@ class Zm1041LogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = 1
+        self.settings_manager.set_know_xixi(False)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertFalse(self.settings_manager.get_know_xixi())
@@ -132,6 +134,7 @@ class Zm1041LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
+        self.settings_manager.set_know_xixi(False)
 
         good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)

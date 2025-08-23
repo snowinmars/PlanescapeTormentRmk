@@ -12,6 +12,9 @@ class Zm1664LogicTest(LogicTest):
 
 
     def test_r47014_action(self):
+        self.settings_manager.set_has_logpage(False)
+        self.settings_manager.set_has_zm1664_page(False)
+
         self.assertFalse(self.settings_manager.get_has_logpage())
         self.assertFalse(self.settings_manager.get_has_zm1664_page())
 

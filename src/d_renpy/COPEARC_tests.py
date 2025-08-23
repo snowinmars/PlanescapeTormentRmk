@@ -36,6 +36,9 @@ class CopearcLogicTest(LogicTest):
 
 
     def test_r46733_action(self):
+        self.settings_manager.set_has_copper_earring_closed(True)
+        self.settings_manager.set_has_copper_earring_opened(False)
+
         self.assertTrue(self.settings_manager.get_has_copper_earring_closed())
         self.assertFalse(self.settings_manager.get_has_copper_earring_opened())
 

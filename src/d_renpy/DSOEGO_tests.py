@@ -121,9 +121,11 @@ class SoegoLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        self.settings_manager.set_gate_open(False)
         gate_cut_scene_before = 0
         gate_cut_scene_after = 1
         gate_cut_scene_after_once = 1
+        self.settings_manager.set_gate_cut_scene(gate_cut_scene_before)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_gate_open())
@@ -267,6 +269,7 @@ class SoegoLogicTest(LogicTest):
         vaxis_betrayed_before = 0
         vaxis_betrayed_after = 1
         vaxis_betrayed_after_once = 1
+        self.settings_manager.set_vaxis_betrayed(vaxis_betrayed_before)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
@@ -291,6 +294,7 @@ class SoegoLogicTest(LogicTest):
         vaxis_betrayed_before = 0
         vaxis_betrayed_after = 1
         vaxis_betrayed_after_once = 1
+        self.settings_manager.set_vaxis_betrayed(vaxis_betrayed_before)
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -3
@@ -389,9 +393,11 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4931_action(self):
+        self.settings_manager.set_soego_adahn(False)
         adahn_before = 0
         adahn_after = 1
         adahn_after_once = 2 * 1
+        self.settings_manager.set_adahn(adahn_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -423,9 +429,11 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r4967_action(self):
+        self.settings_manager.set_soego_adahn(False)
         adahn_before = 0
         adahn_after = 1
         adahn_after_once = 2 * 1
+        self.settings_manager.set_adahn(adahn_before)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
@@ -453,9 +461,11 @@ class SoegoLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        self.settings_manager.set_gate_open(False)
         gate_cut_scene_before = 0
         gate_cut_scene_after = 1
         gate_cut_scene_after_once = 1
+        self.settings_manager.set_gate_cut_scene(gate_cut_scene_before)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_gate_open())
@@ -480,9 +490,11 @@ class SoegoLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
+        self.settings_manager.set_gate_open(False)
         gate_cut_scene_before = 0
         gate_cut_scene_after = 1
         gate_cut_scene_after_once = 1
+        self.settings_manager.set_gate_cut_scene(gate_cut_scene_before)
 
         experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_gate_open())
@@ -504,12 +516,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21655_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -529,12 +544,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21656_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -554,12 +572,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21657_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -579,12 +600,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21658_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -604,12 +628,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21660_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -656,12 +683,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66181_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -681,12 +711,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21852_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
         note_id = '21856'
 
         self.assertFalse(self.settings_manager.get_met_soego2())
@@ -710,12 +743,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r64623_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -735,12 +771,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r64624_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -760,12 +799,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21853_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
         note_id = '21857'
 
         self.assertFalse(self.settings_manager.get_met_soego2())
@@ -789,12 +831,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21854_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -814,6 +859,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r24206_action(self):
+        self.settings_manager.set_soego_told(False)
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -3
@@ -843,6 +889,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21915_action(self):
+        self.settings_manager.set_soego_told(False)
         note_id = '21926'
 
         self.assertFalse(self.settings_manager.get_soego_told())
@@ -860,9 +907,11 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r21914_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -882,6 +931,7 @@ class SoegoLogicTest(LogicTest):
         soego_fled_before = 0
         soego_fled_after = 1
         soego_fled_after_once = 1
+        self.settings_manager.set_soego_fled(soego_fled_before)
         note_id = '21926'
 
         self.assertEqual(self.settings_manager.get_soego_fled(), soego_fled_before)
@@ -902,6 +952,8 @@ class SoegoLogicTest(LogicTest):
         doubtful_skel_before = 1
         doubtful_skel_after = 2
         doubtful_skel_after_once = 2
+        self.settings_manager.set_doubtful_skel(doubtful_skel_before)
+        self.settings_manager.set_visit_doubtful(False)
 
         self.assertEqual(self.settings_manager.get_doubtful_skel(), doubtful_skel_before)
         self.assertFalse(self.settings_manager.get_visit_doubtful())
@@ -992,9 +1044,11 @@ class SoegoLogicTest(LogicTest):
         soego_value_before = 1
         soego_value_after = 4
         soego_value_after_once = 4
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_fled_before = 1
         soego_fled_after = 2
         soego_fled_after_once = 2
+        self.settings_manager.set_soego_fled(soego_fled_before)
         note_id = '21856'
 
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
@@ -1015,12 +1069,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r22051_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
         note_id = '22052'
 
         self.assertFalse(self.settings_manager.get_met_soego2())
@@ -1044,12 +1101,15 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66173_action(self):
+        self.settings_manager.set_met_soego2(False)
         soego_value_before = 1
         soego_value_after = 3
         soego_value_after_once = 3
+        self.settings_manager.set_soego_value(soego_value_before)
         soego_talk_before = 1
         soego_talk_after = 2
         soego_talk_after_once = 2
+        self.settings_manager.set_soego_talk(soego_talk_before)
 
         self.assertFalse(self.settings_manager.get_met_soego2())
         self.assertEqual(self.settings_manager.get_soego_value(), soego_value_before)
