@@ -3,16 +3,6 @@ class Zm1094Logic:
         self.settings_manager = settings_manager
 
 
-    def zm1094_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f2r3')
-        self.settings_manager.inc_talked_to_zm1094_times()
-
-
-    def kill_zm1094(self):
-        self.settings_manager.set_dead_zm1094(True)
-        self.settings_manager.gain_experience('party', 65)
-
-
     def set_know_asonje_name(self):
         self.settings_manager.set_know_asonje_name(True)
 
@@ -45,6 +35,7 @@ class Zm1094Logic:
 
     def r9304_action(self):
         self.settings_manager.inc_adahn()
+
 
     def get_know_asonje_name(self):
         return self.settings_manager.get_know_asonje_name()

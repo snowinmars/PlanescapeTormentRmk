@@ -3,15 +3,6 @@ class S748Logic:
         self.settings_manager = settings_manager
 
 
-    def s748_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r3')
-        self.settings_manager.inc_talked_to_s748_times()
-
-
-    def kill_s748(self):
-        self.settings_manager.set_dead_s748(True)
-
-
     def r35384_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_skeleton_chaotic(True)

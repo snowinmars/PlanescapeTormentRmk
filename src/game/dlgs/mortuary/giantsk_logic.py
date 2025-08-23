@@ -3,16 +3,6 @@ class GiantskLogic:
         self.settings_manager = settings_manager
 
 
-    def giantsk_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1rc')
-        self.settings_manager.inc_talked_to_giantsk_times()
-
-
-    def kill_giantsk(self):
-        self.settings_manager.set_dead_giantsk(True)
-        self.settings_manager.gain_experience('party', 500)
-
-
     def r293_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_giant_skel_mort_1')
 
@@ -22,7 +12,9 @@ class GiantskLogic:
 
 
     def r4042_action(self):
-        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
 
 
@@ -32,19 +24,21 @@ class GiantskLogic:
 
 
     def r4087_action(self):
-        # PlaySound("Armsk08")
+        #$% ?.play_sound('Armsk08') %$#
         self.settings_manager.inc_giant_skeleton_enchant()
         self.settings_manager.set_dead_giantsk(True)
 
 
     def r4088_action(self):
-        # PlaySound("Armsk08")
+        #$% ?.play_sound('Armsk08') %$#
         self.settings_manager.inc_giant_skeleton_enchant()
         self.settings_manager.set_dead_giantsk(True)
 
 
     def r4095_action(self):
-        # Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
 
 
@@ -74,13 +68,13 @@ class GiantskLogic:
 
 
     def r64301_action(self):
-        # PlaySound("Armsk08")
+        #$% ?.play_sound('Armsk08') %$#
         self.settings_manager.inc_giant_skeleton_enchant()
         self.settings_manager.set_dead_giantsk(True)
 
 
     def r64302_action(self):
-        # PlaySound("Armsk08")
+        #$% ?.play_sound('Armsk08') %$#
         self.settings_manager.inc_giant_skeleton_enchant()
         self.settings_manager.set_dead_giantsk(True)
 

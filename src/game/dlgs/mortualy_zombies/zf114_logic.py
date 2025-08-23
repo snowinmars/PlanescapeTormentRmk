@@ -3,16 +3,6 @@ class Zf114Logic:
         self.settings_manager = settings_manager
 
 
-    def zf114_init(self):
-        self.settings_manager.location_manager.set_location('DISABLED') # pragma: no cover
-        self.settings_manager.inc_talked_to_zf114_times() # pragma: no cover
-
-
-    def kill_zf114(self):
-        self.settings_manager.set_dead_zf114(True)
-        self.settings_manager.gain_experience('party', 65)
-
-
     def r34987_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

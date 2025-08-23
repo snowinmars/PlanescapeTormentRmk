@@ -4,28 +4,25 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM965.DLG
+# Original:  DLG/DZM965.DLG
 # ###
 
 
-label start_zm965_talk_first:
-    call zm965_init
-    jump zm965_s0
-label start_zm965_talk:
-    call zm965_init
-    jump zm965_s1
-label start_zm965_kill:
-    call zm965_init
-    jump zm965_kill
-label zm965_init:
-    $ zm965Logic.zm965_init()
+label zm965_s0_ctor: # - # IF ~  NearbyDialog("Dmorte")
     scene bg mortuary_f2r2
     show zm965_img default at center_left_down
-    return
+    jump zm965_s0
+
+
+label zm965_s1_ctor: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
+    scene bg mortuary_f2r2
+    show zm965_img default at center_left_down
+    jump zm965_s1
+
+
 label zm965_dispose:
     hide zm965_img
     jump graphics_menu
-
 
 # s0 # say34920
 label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
@@ -34,8 +31,9 @@ label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
 
     jump morte_s477  # EXTERN
 
+
 # s1 # say34922
-label zm965_s1: # - # IF ~  !NearbyDialog("Dmorte")
+label zm965_s1: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
     nr 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
     nr 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
 
@@ -84,21 +82,3 @@ label zm965_s3: # from 1.3
         'Оставить труп в покое.':
             # a7 # r45075
             jump zm965_dispose
-
-
-label zm965_kill:
-    nr 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
-    nr 'На боку его черепа вытатуирован номер «965». При твоем приближении он останавливается и пялится на тебя.'
-
-    menu:
-        '(Уйти.)':
-            jump zm965_dispose
-        '(Убить зомби).':
-            jump zm965_killed
-
-
-label zm965_killed:
-    $ zm965Logic.kill_zm965()
-    nr 'Я поджидаю труп на одном из углов его маршрута. Он идёт прямо на меня, смотря на моё оружие пустыми глазами.'
-    nr 'В них нет ни жизни, ни разума. Я прерываю его цикл.'
-    jump zm965_dispose

@@ -7,17 +7,18 @@
 # Original:  DLG/DN1201.DLG
 # ###
 
-label start_n1201_note_talk:
+
+label n1201_s0_ctor:
+    show n1201_img default at center_left_down
     jump n1201_s0
-label n1201_init:
-    return
+
+
 label n1201_dispose:
     jump graphics_menu
 
 
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
-    call n1201_init
     nr 'На этой вонючей записке под текстом изображена странная диаграмма. Кажется, она указывает, что тебе следует загнуть уголки записки к центру.'
     nr 'На каждом из уголков есть ряд странных отметок: одна отметка в верхнем правом, две — в нижнем правом, три — в нижнем левом и ни одной в верхнем левом.'
 

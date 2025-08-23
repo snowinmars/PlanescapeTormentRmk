@@ -11,74 +11,52 @@ class Zm1201LogicTest(LogicTest):
         self.logic = Zm1201Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm1201Logic
-        self._methods_are_bound()
-
-
-    def test_zm1201_init(self):
-        self._init_with_location(
-            'mortuary_f2r3',
-            self.logic.zm1201_init,
-            self.settings_manager.get_talked_to_zm1201_times
-        )
-
-
-    def test_kill_zm1201(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 65
-
-        self.assertFalse(self.settings_manager.get_dead_zm1201())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_zm1201()
-
-        self.assertTrue(self.settings_manager.get_dead_zm1201())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
-
-
     def test_r34956_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
+        self.settings_manager.set_1201_note_retrieved(False)
+        self.settings_manager.set_has_1201_note(False)
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
 
         self.assertFalse(self.settings_manager.get_1201_note_retrieved())
         self.assertFalse(self.settings_manager.get_has_1201_note())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
 
         self.logic.r34956_action()
 
         self.assertTrue(self.settings_manager.get_1201_note_retrieved())
         self.assertTrue(self.settings_manager.get_has_1201_note())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r34956_action()
+
+        self.assertTrue(self.settings_manager.get_1201_note_retrieved())
+        self.assertTrue(self.settings_manager.get_has_1201_note())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r45129_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
-        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r45129_action()
 
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_before + delta, law_after)
 
         self.logic.r45129_action()
 
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r34954_condition(self):

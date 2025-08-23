@@ -11,37 +11,6 @@ class Zm782LogicTest(LogicTest):
         self.logic = Zm782Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm782Logic
-        self._methods_are_bound()
-
-
-    def test_zm782_init(self):
-        self._init_with_location(
-            'mortuary_f2r1',
-            self.logic.zm782_init,
-            self.settings_manager.get_talked_to_zm782_times
-        )
-
-
-    def test_kill_zm782(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 65
-
-        self.assertFalse(self.settings_manager.get_dead_zm782())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_zm782()
-
-        self.assertTrue(self.settings_manager.get_dead_zm782())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
-
 
     def test_pick_key_up(self):
         self._false_then_true_action(

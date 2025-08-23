@@ -7,27 +7,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM310.DLG
+# Original:  DLG/DZM310.DLG
 # ###
 
 
-label start_zm310_talk_first:
-    call zm310_init
-    jump zm310_s0
-label start_zm310_talk:
-    call zm310_init
-    jump zm310_s18
-label start_zm310_kill_first:
-    call zm310_init
-    jump zm310_kill_first
-label start_zm310_kill:
-    call zm310_init
-    jump zm310_kill
-label zm310_init:
-    $ zm310Logic.zm310_init()
+label zm310_s0_ctor: # - # IF ~  Global("Oinosian","GLOBAL",0)
     scene bg mortuary_f3r3
     show zm310_img default at center_left_down
-    return
+    jump zm310_s0
+
+
+label zm310_s18_ctor: # - # IF ~  Global("Oinosian","GLOBAL",1)
+    scene bg mortuary_f3r3
+    show zm310_img default at center_left_down
+    jump zm310_s18
+
+
 label zm310_dispose:
     hide zm310_img
     jump graphics_menu
@@ -286,7 +281,7 @@ label zm310_s11: # from 7.0
     x '«Мало что можно сказать, милорд. Это земля моего Повелителя, лорда Хин-Ойна… полная боли и страданий, разлагающихся тел и душ. Это место полной безнадеги».'
 
     menu:
-        '«Кто такой этот… «Повелитель»?»':
+        '«Кто такой этот… „Повелитель“?»':
             # a40 # r9689
             jump zm310_s14
 
@@ -329,7 +324,7 @@ label zm310_s13: # from 4.0 7.1 11.1 14.0
     x '«Там я и тружусь, восстанавливая урон, нанесенный армиями мятежных принцев, врагов моего Повелителя».'
 
     menu:
-        '«Кто такой этот «Повелитель»?»':
+        '«Кто такой этот „Повелитель“?»':
             # a47 # r9696
             jump zm310_s14
 
@@ -349,7 +344,7 @@ label zm310_s14: # from 11.0 13.0
     x '«Он тот, кому принадлежит моя душа, и будет принадлежать вечно, обреченная чахнуть под его ступней, пока вечность не будет перемолота в Забвение».'
 
     menu:
-        '«Расскажи мне об этом «Хин-Ойне»».':
+        '«Расскажи мне об этом „Хин-Ойне“».':
             # a50 # r9699
             jump zm310_s13
 
@@ -404,6 +399,7 @@ label zm310_s17: # from 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2
 
     jump zm310_dispose
 
+
 # s18 # say20102
 label zm310_s18: # - # IF ~  Global("Oinosian","GLOBAL",1)
     nr 'Похоже, этот труп сгорбился под тяжестью страданий духа.'
@@ -416,39 +412,3 @@ label zm310_s18: # - # IF ~  Global("Oinosian","GLOBAL",1)
         '«Я просто проходил мимо. Прощай».':
             # a59 # r20104
             jump zm310_dispose
-
-
-label zm310_kill_first:
-    nr 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'
-    nr 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
-
-    menu:
-        '(Уйти.)':
-            jump zm310_dispose
-        '(Убить зомби).':
-            jump zm310_killed_first
-
-
-label zm310_killed_first:
-    $ zm310Logic.kill_zm310()
-    nr 'Удар за ударом я разбиваю его тело. Я чувствую, что я безвозвратно что-то разрушил.'
-    jump zm310_dispose
-
-
-label zm310_kill:
-    nr 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'
-    nr 'Как только ты встаешь на его пути, он поворачивает к тебе свой безжизненный взгляд.'
-    if gsm.get_meet_oinosian():
-        nr 'Похоже, этот труп сгорбился под тяжестью страданий духа.'
-
-    menu:
-        '(Уйти.)':
-            jump zm310_dispose
-        '(Убить зомби).':
-            jump zm310_killed
-
-
-label zm310_killed:
-    $ zm310Logic.kill_zm310()
-    nr 'Удар за ударом я разбиваю его тело. Я чувствую, что я безвозвратно что-то разрушил.'
-    jump zm310_dispose

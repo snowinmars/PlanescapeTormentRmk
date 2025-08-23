@@ -3,15 +3,6 @@ class XachLogic:
         self.settings_manager = settings_manager
 
 
-    def xach_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r3')
-        self.settings_manager.inc_talked_to_xach_times()
-
-
-    def kill_xach(self):
-        self.settings_manager.set_dead_xach(True)
-
-
     def r502_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

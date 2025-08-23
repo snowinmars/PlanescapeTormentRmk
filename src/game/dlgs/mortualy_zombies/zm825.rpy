@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM825.DLG
+# Original:  DLG/DZM825.DLG
 # ###
 
 
-label start_zm825_talk:
-    call zm825_init
-    jump zm825_s0
-label start_zm825_kill:
-    call zm825_init
-    jump zm825_kill
-label zm825_init:
-    $ zm825Logic.zm825_init()
+label zm825_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r1
     show zm825_img default at center_left_down
-    return
+    jump zm825_s0
+
+
 label zm825_dispose:
     hide zm825_img
     jump graphics_menu
@@ -107,20 +102,3 @@ label zm825_s3: # from 0.5
         'Оставить труп в покое.':
             # a14 # r42315
             jump zm825_dispose
-
-
-label zm825_kill:
-    nr 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».'
-
-    menu:
-        '(Уйти.)':
-            jump zm825_dispose
-        '(Убить зомби).':
-            jump zm825_killed
-
-
-label zm825_killed:
-    $ zm825Logic.kill_zm825()
-    nr 'Я беру голову трупа за волосы и поднимаю на уровень своего взгляда. Он смотрит на меня пустыми глазами.'
-    nr 'В них нет ни жизни, ни разума. Я изо всей силы сдёргиваю голову с его тела.'
-    jump zm825_dispose

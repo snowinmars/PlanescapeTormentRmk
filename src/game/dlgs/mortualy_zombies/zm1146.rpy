@@ -4,24 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1146.DLG
+# Original:  DLG/DZM1146.DLG
 # ###
 
 
-label start_zm1146_talk_zombie:
-    call zm1146_init
-    jump zm1146_s0
-label start_zm1146_talk_crispy:
-    call zm1146_init
-    jump zm1146_s20
-label start_zm1146_kill:
-    call zm1146_init
-    jump zm1146_kill
-label zm1146_init:
-    $ zm1146Logic.zm1146_init()
+label zm1146_s0_ctor: # - # IF ~  Global("Crispy","GLOBAL",0)
     scene bg mortuary_f3r1
     show zm1146_img default at center_left_down
-    return
+    jump zm1146_s0
+
+
+label zm1146_s20_ctor: # - # IF ~  Global("Crispy","GLOBAL",1)
+    scene bg mortuary_f3r1
+    show zm1146_img default at center_left_down
+    jump zm1146_s20
+
+
 label zm1146_dispose:
     hide zm1146_img
     jump graphics_menu
@@ -30,7 +28,7 @@ label zm1146_dispose:
 # s0 # say6518
 label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
     nr 'На лбу этого ходячего трупа вырезан номер «1146», губы зашиты грубой черной ниткой. Все тело покрыто ужасающими шрамами — даже хуже, чем у тебя самого. Кажется, хозяин тела сгорел заживо.'
-    nr 'У него нет носа, ушей и нескольких пальцев, вероятно, потерянных в давнем пожаре. Когда ты загораживаешь ему путь, чтобы привлечь его внимание, он останавливается и смотрит на тебя пустым взглядом.'
+    nr 'У него нет носа, ушей и нескольких пальцев, вероятно, потерянных в давнем пожаре. Когда ты загораживаешь ему путь, чтобы привлечь его „внимание“, он останавливается и смотрит на тебя пустым взглядом.'
 
     menu:
         '«Итак… что тут у нас интересного?»' if zm1146Logic.r6521_condition():
@@ -177,6 +175,7 @@ label zm1146_s7: # from 6.0
 
     jump zm1146_dispose
 
+
 # s8 # say9403
 label zm1146_s8: # from 6.1
     nr 'Ты резко бьешь мертвеца по почкам, но безуспешно: духа ты не задел.'
@@ -184,6 +183,7 @@ label zm1146_s8: # from 6.1
     nr 'Ехидно булькает существо, после чего, наконец, полностью покидает тело. Ты стоишь со смутным ощущением неудовлетворенности.'
 
     jump zm1146_dispose
+
 
 # s9 # say9404
 label zm1146_s9: # from 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
@@ -406,45 +406,3 @@ label zm1146_s20: # - # IF ~  Global("Crispy","GLOBAL",1)
         '«Ничего, я просто проходил мимо. Прощай».':
             # a56 # r20101
             jump zm1146_dispose
-
-
-label zm1146_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1146_dispose
-        'Убить.':
-            jump zm1146_killed
-
-
-label zm1146_killed:
-    $ zm1146Logic.kill_zm1146()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1146s.'
-    nr 'Who is zm1146?'
-    nr 'zm1146 is dead, baby, zm1146 is dead.'
-    jump zm1146_dispose
-
-
-label zm1146_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump zm1146_dispose
-        'Убить.':
-            jump zm1146_killed_first
-
-
-label zm1146_killed_first:
-    $ zm1146Logic.kill_zm1146()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'zm1146s.'
-    nr 'Who is zm1146?'
-    nr 'zm1146 is dead, baby, zm1146 is dead.'
-    jump zm1146_dispose

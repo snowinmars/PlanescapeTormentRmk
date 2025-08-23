@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM569.DLG
+# Original:  DLG/DZM569.DLG
 # ###
 
 
-label start_zm569_talk:
-    call zm569_init
-    jump zm569_s0
-label start_zm569_kill:
-    call zm569_init
-    jump zm569_kill
-label zm569_init:
-    $ zm569Logic.zm569_init()
+label zm569_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r1
     show zm569_img default at center_left_down
-    return
+    jump zm569_s0
+
+
 label zm569_dispose:
     hide zm569_img
     jump graphics_menu
@@ -106,20 +101,3 @@ label zm569_s3: # from 0.5
         'Оставить зомби в покое.':
             # a14 # r42297
             jump zm569_dispose
-
-
-label zm569_kill:
-    nr 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.'
-
-    menu:
-        '(Уйти.)':
-            jump zm569_dispose
-        '(Убить зомби).':
-            jump zm569_killed
-
-
-label zm569_killed:
-    $ zm569Logic.kill_zm569()
-    nr 'Я бью прямо в номер «569», выбитый на кости черепа. Он удивительно легко проламывается. Я бью снова и снова, пока труп не перестаёт на меня смотреть пустыми глазами.'
-    nr 'В них нет ни жизни, ни разума. Я порезался осколками его черепа.'
-    jump zm569_dispose

@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF594.DLG
+# Original:  DLG/DZF594.DLG
 # ###
 
 
-label start_zf594_talk:
-    call zf594_init
-    jump zf594_s0
-label start_zf594_kill:
-    call zf594_init
-    jump zf594_kill
-label zf594_init:
-    $ zf594Logic.zf594_init()
+label zf594_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r2
     show zf594_img default at center_left_down
-    return
+    jump zf594_s0
+
+
+label zf594_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f2r2
+    show zf594_img default at center_left_down
+    jump zf594_s3
+
+
 label zf594_dispose:
     hide zf594_img
     jump graphics_menu
@@ -112,23 +113,4 @@ label zf594_s2: # from 0.3
 label zf594_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf594_dispose
-
-
-label zf594_kill:
-    nr 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.'
-    nr 'На ее лбу угольным карандашом нацарапан номер «594».'
-    nr 'Ты думаешь о том, как разрезал бы её кожу.'
-
-    menu:
-        '(Уйти.)':
-            jump zf594_dispose
-        '(Убить зомби).':
-            jump zf594_killed
-
-
-label zf594_killed:
-    $ zf594Logic.kill_zf594()
-    nr 'Её кожа и правда тонкая - как летнее платье; удивительно приятная на ощупь. Она смотрит на меня пустыми глазами.'
-    nr 'В них нет ни жизни, ни разума. Я без сожалений снимаю с неё остатки жизни.'
     jump zf594_dispose

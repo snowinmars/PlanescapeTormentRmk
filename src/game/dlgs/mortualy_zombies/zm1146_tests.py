@@ -11,56 +11,26 @@ class Zm1146LogicTest(LogicTest):
         self.logic = Zm1146Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm1146Logic
-        self._methods_are_bound()
-
-
-    def test_zm1146_init(self):
-        self._init_with_location(
-            'mortuary_f3r1',
-            self.logic.zm1146_init,
-            self.settings_manager.get_talked_to_zm1146_times
-        )
-
-
-    def test_kill_zm1146(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 65
-
-        self.assertFalse(self.settings_manager.get_dead_zm1146())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_zm1146()
-
-        self.assertTrue(self.settings_manager.get_dead_zm1146())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
-
     def test_r6521_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
-        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r6521_action()
 
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_before + delta, law_after)
 
         self.logic.r6521_action()
 
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r6524_action(self):
@@ -84,28 +54,29 @@ class Zm1146LogicTest(LogicTest):
 
 
     def test_r9426_action(self):
-        who = 'protagonist'
-        prop_law = 'law'
+        who_good = 'protagonist'
         prop_good = 'good'
-        delta_law = -1
         delta_good = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r9426_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r9426_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
 
 
     def test_r6521_condition(self):

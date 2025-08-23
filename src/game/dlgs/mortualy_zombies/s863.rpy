@@ -4,27 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S863.DLG
+# Original:  DLG/DS863.DLG
 # ###
 
 
-label start_s863_talk_first:
-    call s863_init
-    jump s863_s8
-label start_s863_talk:
-    call s863_init
-    jump s863_s0
-label start_s863_kill_first:
-    call s863_init
-    jump s863_kill_first
-label start_s863_kill:
-    call s863_init
-    jump s863_kill
-label s863_init:
-    $ s863Logic.s863_init()
+label s863_s7_ctor: # - # IF ~  False()
     scene bg mortuary_f3r1
     show s863_img default at center_left_down
-    return
+    jump s863_s7
+
+
+label s863_s8_ctor: # - # IF ~  HasItem("DRemind","S863")
+    scene bg mortuary_f3r1
+    show s863_img default at center_left_down
+    jump s863_s8
+
+
 label s863_dispose:
     hide s863_img
     jump graphics_menu
@@ -255,9 +250,10 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
 
 
 # s7 # say35613
-label s863_s7: # - # IF ~  False() # orphan
+label s863_s7: # - # IF ~  False()
     nr 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
+    # menu: TODO [snow]: misgenerated
     jump s863_dispose
 
 
@@ -305,45 +301,3 @@ label s863_s10: # from 9.0
         'Оставить скелет в покое.':
             # a45 # r64269
             jump s863_dispose
-
-
-label s863_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s863_dispose
-        'Убить.':
-            jump s863_killed
-
-
-label s863_killed:
-    $ s863Logic.kill_s863()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's863s.'
-    nr 'Who is s863?'
-    nr 's863 is dead, baby, s863 is dead.'
-    jump s863_dispose
-
-
-label s863_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s863_dispose
-        'Убить.':
-            jump s863_killed_first
-
-
-label s863_killed_first:
-    $ s863Logic.kill_s863()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's863s.'
-    nr 'Who is s863?'
-    nr 's863 is dead, baby, s863 is dead.'
-    jump s863_dispose

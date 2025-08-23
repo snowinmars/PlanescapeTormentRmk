@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM463.DLG
+# Original:  DLG/DZM463.DLG
 # ###
 
 
-label start_zm463_talk:
-    call zm463_init
-    jump zm463_s0
-label start_zm463_kill:
-    call zm463_init
-    jump zm463_kill
-label zm463_init:
-    $ zm463Logic.zm463_init()
+label zm463_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zm463_img default at center_left_down
-    return
+    jump zm463_s0
+
+
 label zm463_dispose:
     hide zm463_img
     jump graphics_menu
@@ -73,19 +68,3 @@ label zm463_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r6494
             jump zm463_dispose
-
-
-label zm463_kill:
-    nr 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
-
-    menu:
-        '(Уйти.)':
-            jump zm463_dispose
-        '(Убить зомби).':
-            jump zm463_killed
-
-
-label zm463_killed:
-    $ zm463Logic.kill_zm463()
-    nr 'От моего удара он спотыкается и падает. Глядя на его тело, я не чувствую сожалений.'
-    jump zm463_dispose

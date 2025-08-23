@@ -4,27 +4,34 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/XACH.DLG
+# Original:  DLG/DXACH.DLG
 # ###
 
 
-label start_xach_talk_first:
-    call xach_init
-    jump todo
-label start_xach_talk:
-    call xach_init
-    jump todo
-label start_xach_kill_first:
-    call xach_init
-    jump xach_kill_first
-label start_xach_kill:
-    call xach_init
-    jump xach_kill
-label xach_init:
-    $ xachLogic.xach_init()
+label xach_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f1r3
     show xach_img default at center_left_down
-    return
+    jump xach_s0
+
+
+label xach_s14_ctor: # -
+    scene bg mortuary_f1r3
+    show xach_img default at center_left_down
+    jump xach_s14
+
+
+label xach_s15_ctor: # -
+    scene bg mortuary_f1r3
+    show xach_img default at center_left_down
+    jump xach_s15
+
+
+label xach_s35_ctor: # -
+    scene bg mortuary_f1r3
+    show xach_img default at center_left_down
+    jump xach_s35
+
+
 label xach_dispose:
     hide xach_img
     jump graphics_menu
@@ -513,7 +520,7 @@ label xach_s19: # from 18.0
             # a84 # r576
             jump xach_s26
 
-        '««Гит»? Кого ты имеешь в виду?»':
+        '«„Гит“? Кого ты имеешь в виду?»':
             # a85 # r577
             jump xach_s24
 
@@ -602,7 +609,7 @@ label xach_s23: # from 6.3 7.4
             # a99 # r593
             jump xach_s24
 
-        '««Причитающая дочка адвоката»?»':
+        '«„Причитающая дочка адвоката“?»':
             # a100 # r594
             jump xach_s26
 
@@ -715,7 +722,7 @@ label xach_s27: # from 24.1 26.1 28.0 29.0 33.1 49.0
             # a120 # r613
             jump xach_s24
 
-        '««Причитающая дочка адвоката»».':
+        '«„Причитающая дочка адвоката“».':
             # a121 # r615
             jump xach_s26
 
@@ -1144,45 +1151,3 @@ label xach_s49: # from 23.3 27.3
         '«Хм-м-м. Интересно. Спасибо, Захария».' if xachLogic.r63629_condition():
             # a185 # r63629
             jump xach_dispose
-
-
-label xach_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump xach_dispose
-        'Убить.':
-            jump xach_killed
-
-
-label xach_killed:
-    $ xachLogic.kill_xach()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'xachs.'
-    nr 'Who is xach?'
-    nr 'xach is dead, baby, xach is dead.'
-    jump xach_dispose
-
-
-label xach_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump xach_dispose
-        'Убить.':
-            jump xach_killed_first
-
-
-label xach_killed_first:
-    $ xachLogic.kill_xach()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'xachs.'
-    nr 'Who is xach?'
-    nr 'xach is dead, baby, xach is dead.'
-    jump xach_dispose

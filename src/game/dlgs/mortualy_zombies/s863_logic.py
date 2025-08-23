@@ -3,15 +3,6 @@ class S863Logic:
         self.settings_manager = settings_manager
 
 
-    def s863_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r1')
-        self.settings_manager.inc_talked_to_s863_times()
-
-
-    def kill_s863(self):
-        self.settings_manager.set_dead_s863(True)
-
-
     def r35538_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_skeleton_chaotic(True)

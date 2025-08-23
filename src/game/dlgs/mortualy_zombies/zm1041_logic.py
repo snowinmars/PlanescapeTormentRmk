@@ -3,16 +3,6 @@ class Zm1041Logic:
         self.settings_manager = settings_manager
 
 
-    def zm1041_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r3')
-        self.settings_manager.inc_talked_to_zm1041_times()
-
-
-    def kill_zm1041(self):
-        self.settings_manager.set_dead_zm1041(True)
-        self.settings_manager.gain_experience('party', 65)
-
-
     def set_know_bei_name(self):
         self.settings_manager.set_know_bei_name(True)
 

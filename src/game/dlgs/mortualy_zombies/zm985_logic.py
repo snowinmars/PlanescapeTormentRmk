@@ -3,34 +3,18 @@ class Zm985Logic:
         self.settings_manager = settings_manager
 
 
-    def zm985_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f2r5')
-        self.settings_manager.inc_talked_to_zm985_times()
-
-
-
-    def s3_action(self):
-        # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) SetGlobal("Topple_985","GLOBAL",1) Kill(Myself) Deactivate(Myself)
-        self.settings_manager.set_topple_985(True)
-        self.settings_manager.set_limb_985(True)
-        self.settings_manager.set_dead_zm985(True)
-
-
-    def s4_action(self):
-        # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE)
-        return
-
-
     def r45516_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        #$% ?.play_sound('SPE_11') %$#
+        #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
 
 
     def r45517_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_zm985_1')
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_zm985_1')
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        #$% ?.play_sound('SPE_11') %$#
+        #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
 
 
     def r45518_action(self):
@@ -43,13 +27,29 @@ class Zm985Logic:
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_zm985_1')
 
 
+    def s3_action(self):
+        #$% ?.play_sound('SPE_11') %$#
+        #$%SetAnimState(Myself,ANIM_MIMEDIE) %$# CreateItem("Limb985",1,0,0)
+        self.settings_manager.set_topple_985(True)
+        self.settings_manager.set_limb_985(True) # TODO [snow]: misgenerated
+        self.settings_manager.set_dead_zm985(True)
+        #$% Deactivate(Myself) %$#
+
+
+    def s4_action(self):
+        #$% ?.play_sound('SPE_11') %$#
+        #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
+        return
+
+
     def r45532_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)
 
 
     def r45539_action(self):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        #$% ?.play_sound('SPE_11') %$#
+        #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
         return
 
 

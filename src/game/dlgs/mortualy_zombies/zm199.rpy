@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM199.DLG
+# Original:  DLG/DZM199.DLG
 # ###
 
 
-label start_zm199_talk:
-    call zm199_init
-    jump zm199_s0
-label start_zm199_kill:
-    call zm199_init
-    jump zm199_kill
-label zm199_init:
-    $ zm199Logic.zm199_init()
+label zm199_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zm199_img default at center_left_down
-    return
+    jump zm199_s0
+
+
 label zm199_dispose:
     hide zm199_img
     jump graphics_menu
@@ -74,20 +69,3 @@ label zm199_s2: # from 0.3
         'Оставить зомби в покое.':
             # a7 # r34983
             jump zm199_dispose
-
-
-label zm199_kill:
-    nr 'От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.'
-    nr 'На его лбу выгравирован номер «199»; его губы сшиты.'
-
-    menu:
-        '(Уйти.)':
-            jump zm199_dispose
-        '(Убить зомби).':
-            jump zm199_killed
-
-
-label zm199_killed:
-    $ zm199Logic.kill_zm199()
-    nr 'В его глазах - в глазах без жизни и без разума - давно поселился огонь. Я сожалею только о том, что так и не смог его выбить.'
-    jump zm199_dispose

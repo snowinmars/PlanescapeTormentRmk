@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF1072.DLG
+# Original:  DLG/DZF1072.DLG
 # ###
 
 
-label start_zf1072_talk:
-    call zf1072_init
-    jump zf1072_s0
-label start_zf1072_kill:
-    call zf1072_init
-    jump zf1072_kill
-label zf1072_init:
-    $ zf1072Logic.zf1072_init()
+label zf1072_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r3
     show zf1072_img default at center_left_down
-    return
+    jump zf1072_s0
+
+
+label zf1072_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f2r3
+    show zf1072_img default at center_left_down
+    jump zf1072_s3
+
+
 label zf1072_dispose:
     hide zf1072_img
     jump graphics_menu
@@ -112,23 +113,4 @@ label zf1072_s2: # from 0.3
 label zf1072_s3: # - # IF ~  False()
     nr 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf1072_dispose
-
-
-label zf1072_kill:
-    nr 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения.'
-    nr 'У нее нет челюсти, часть мяса отвалилась от черепа, обнажая номер «1072», выбитый на кости.'
-
-    menu:
-        '(Уйти.)':
-            jump zf1072_dispose
-        '(Убить зомби).':
-            jump zf1072_killed
-
-
-label zf1072_killed:
-    $ zf1072Logic.kill_zf1072()
-    nr 'Её тело лопается под моими ударами. Отвратительно. Отвратительно пустые глаза.'
-    nr 'В них нет ни жизни, ни разума. Я с омерзением отбрасываю тело.'
-    nr 'Шлёп.'
     jump zf1072_dispose

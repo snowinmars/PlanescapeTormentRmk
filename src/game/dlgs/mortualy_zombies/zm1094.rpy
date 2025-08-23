@@ -7,33 +7,28 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1094.DLG
+# Original:  DLG/DZM1094.DLG
 # ###
 
 
-label start_zm1094_talk_first:
-    call zm1094_init
-    jump zm1094_s0
-label start_zm1094_talk_good:
-    call zm1094_init
-    jump zm1094_s26
-label start_zm1094_talk_bad:
-    call zm1094_init
-    jump zm1094_s27
-label start_zm1094_kill_first:
-    call zm1094_init
-    jump zm1094_kill_first
-label start_zm1094_kill_good:
-    call zm1094_init
-    jump zm1094_kill_good
-label start_zm1094_kill_bad:
-    call zm1094_init
-    jump zm1094_kill_bad
-label zm1094_init:
-    $ zm1094Logic.zm1094_init()
+label zm1094_s0_ctor: # - # IF ~  Global("Asonje","GLOBAL",0)
     scene bg mortuary_f2r3
     show zm1094_img default at center_left_down
-    return
+    jump zm1094_s0
+
+
+label zm1094_s26_ctor: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
+    scene bg mortuary_f2r3
+    show zm1094_img default at center_left_down
+    jump zm1094_s26
+
+
+label zm1094_s27_ctor: # - # IF ~  Global("Asonje","GLOBAL",3)
+    scene bg mortuary_f2r3
+    show zm1094_img default at center_left_down
+    jump zm1094_s27
+
+
 label zm1094_dispose:
     hide zm1094_img
     jump graphics_menu
@@ -494,7 +489,7 @@ label zm1094_s21: # from 15.0
             # a66 # r9303
             jump zm1094_s22
 
-        'Придумать имя: «Ну, не знаю… «Адан»?»':
+        'Придумать имя: «Ну, не знаю… „Адан“?»':
             # a67 # r9304
             $ zm1094Logic.r9304_action()
             jump zm1094_s23
@@ -546,7 +541,6 @@ label zm1094_s22: # from 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
 
 # s23 # say9244
 label zm1094_s23: # from 21.1
-    $ x = logic_get_know_asonje_name()
     nr 'Дух, чувствуя твои колебания, начинает хохотать.'
     x '«Вот ведь бедолага! Ну пусть будет Адан, приятель. Так какие у тебя вопросы?»'
 
@@ -612,7 +606,7 @@ label zm1094_s26: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","G
 # s27 # say20062
 label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
     $ x = logic_get_know_asonje_name()
-    x '«А, это ты… снова. Он хмурится, глядя в сторону».'
+    x '«А, это ты… снова».'
     nr 'Он хмурится, глядя в сторону.'
 
     menu:
@@ -623,56 +617,3 @@ label zm1094_s27: # - # IF ~  Global("Asonje","GLOBAL",3)
         '«Я просто проходил мимо. Прощай».':
             # a86 # r20066
             jump zm1094_dispose
-
-
-label zm1094_kill_good:
-    $ x = logic_get_know_asonje_name()
-    x '«Снова вернулся, а?»'
-    nr 'Он широко улыбается.'
-
-    menu:
-        '(Уйти.)':
-            jump zm1094_dispose
-        '(Убить зомби).':
-            jump zm1094_killed_good
-
-
-label zm1094_killed_good:
-    $ zm1094Logic.kill_zm1094()
-    nr 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
-    jump zm1094_dispose
-
-
-label zm1094_kill_bad:
-    $ x = logic_get_know_asonje_name()
-    x '«А, это ты… снова. Он хмурится, глядя в сторону».'
-    nr 'Он хмурится, глядя в сторону.'
-
-    menu:
-        '(Уйти.)':
-            jump zm1094_dispose
-        '(Убить зомби).':
-            jump zm1094_killed_bad
-
-
-label zm1094_killed_bad:
-    $ zm1094Logic.kill_zm1094()
-    nr 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
-    jump zm1094_dispose
-
-
-label zm1094_kill_first:
-    nr 'У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.'
-    nr 'Несмотря на мертвенно-бледное лицо и впалые безжизненные молочно-белые глаза, совершенно очевидно, что раньше это был красивый молодой человек.'
-
-    menu:
-        '(Уйти.)':
-            jump zm1094_dispose
-        '(Убить зомби).':
-            jump zm1094_killed_first
-
-
-label zm1094_killed_first:
-    $ zm1094Logic.kill_zm1094()
-    nr 'Я задерживаю дыхание. При каждом ударе его тело выдыхает облачко формальдегида. Я чувствую, что я безвозвратно что-то разрушил.'
-    jump zm1094_dispose

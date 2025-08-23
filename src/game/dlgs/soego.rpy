@@ -4,22 +4,124 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/SOEGO.DLG
+# Original:  DLG/DSOEGO.DLG
 # ###
 
 
-# soego_s38
-label start_soego_talk:
-    call soego_init
-    jump soego_s0
-label start_soego_kill:
-    call soego_init
-    jump soego_kill
-label soego_init:
-    $ soegoLogic.soego_init()
+label soego_s0_ctor: # - # IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
     scene bg mortuary_f1r1
     show soego_img default at center_left_down
-    return
+    jump soego_s0
+
+
+label soego_s10_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s10
+
+
+label soego_s38_ctor: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") !Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s38
+
+
+label soego_s58_ctor: # - # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s58
+
+
+label soego_s59_ctor: # - # IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s59
+
+
+label soego_s63_ctor: # - # IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s63
+
+
+label soego_s75_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s75
+
+
+label soego_s76_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s76
+
+
+label soego_s79_ctor: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s79
+
+
+label soego_s82_ctor: # - # IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s82
+
+
+label soego_s85_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s85
+
+
+label soego_s86_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s86
+
+
+label soego_s87_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s87
+
+
+label soego_s95_ctor: # - # IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s95
+
+
+label soego_s96_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s96
+
+
+label soego_s98_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s98
+
+
+label soego_s99_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s99
+
+
+label soego_s102_ctor: # -
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s102
+
+
+label soego_s108_ctor: # - # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
+    scene bg mortuary_f1r1
+    show soego_img default at center_left_down
+    jump soego_s108
+
+
 label soego_dispose:
     hide soego_img
     jump graphics_menu
@@ -61,11 +163,12 @@ label soego_s1: # from 0.0 0.1 0.2 0.3
     menu:
         '«Да. У меня есть несколько вопросов…»':
             # a5 # r1438
-            $ soegoLogic.r1438_action()
+            $ soegoLogic.j63982_s1_r1438_action()
             jump soego_s2
 
         '«Нет. Нет, это не я».':
             # a6 # r1439
+            $ soegoLogic.j63982_s1_r1439_action()
             $ soegoLogic.r1439_action()
             jump soego_s2
 
@@ -123,13 +226,13 @@ label soego_s2: # from 1.0 1.1 3.0 3.3 4.0 4.1
 label soego_s3: # from 1.2
     nr 'Тленный некоторое время изучает тебя, затем трясет головой.'
     soego '«Опять почудилось…»'
-    nr 'Он вздыхает и трет глаза.'
+    nr 'Вздыхает он и трет глаза.'
     soego '«Эти заклинания от лихорадки действуют слишком сильно…»'
 
     menu:
         '«Это не твое воображение. У меня есть другие вопросы…»':
             # a16 # r1450
-            $ soegoLogic.r1450_action()
+            $ soegoLogic.j63982_s3_r1450_action()
             jump soego_s2
 
         'Свернуть ему шею, пока он отвлекся.' if soegoLogic.r1451_condition():
@@ -142,7 +245,7 @@ label soego_s3: # from 1.2
 
         '«У меня есть несколько вопросов».':
             # a19 # r1453
-            $ soegoLogic.r1453_action()
+            $ soegoLogic.j63982_s3_r1453_action()
             jump soego_s2
 
         'Тихо уйти.':
@@ -158,11 +261,13 @@ label soego_s4: # from 1.3
     menu:
         '«Эй… какого черта ты меня обнюхиваешь?»':
             # a21 # r1456
+            $ soegoLogic.j63982_s4_r1456_action()
             $ soegoLogic.r1456_action()
             jump soego_s2
 
         '«Послушай, у меня есть вопросы к тебе…»':
             # a22 # r1457
+            $ soegoLogic.j63982_s4_r1457_action()
             $ soegoLogic.r1457_action()
             jump soego_s2
 
@@ -186,7 +291,7 @@ label soego_s5: # from 1.4
     nr 'Тленный отступает назад, его глаза широко раскрыты. Ты замечаешь, что его глаза не налиты кровью, а просто имеют красный оттенок.'
     soego_unknown '«Эй, ты заставляешь меня сделать нелестное признание: из тебя вышел убедительный зомби».'
     nr 'Он слегка кивает.'
-    soego '«Я Соэго. Могу ли я спросить, что ты здесь делаешь…в таком виде?»'
+    soego '«Я Соэго. Могу ли я спросить, что ты здесь делаешь… в таком виде?»'
 
     menu:
         '«Это не твое дело».':
@@ -406,7 +511,7 @@ label soego_s15: # from 4.4
     nr 'Тленный отступает назад, его глаза широко раскрыты. Ты замечаешь, что его глаза не налиты кровью, а просто имеют красный оттенок.'
     soego_unknown '«Эй, ты заставляешь меня сделать нелестное признание: из тебя вышел убедительный зомби».'
     nr 'Он слегка кивает.'
-    soego '«Я Соэго. Могу ли я спросить, что ты здесь делаешь…в таком виде?»'
+    soego '«Я Соэго. Могу ли я спросить, что ты здесь делаешь… в таком виде?»'
 
     menu:
         '«Это не твое дело».':
@@ -437,7 +542,7 @@ label soego_s15: # from 4.4
 
 # s16 # say1511
 label soego_s16: # from 2.4 5.4 15.4
-    soego '«Понятно…».'
+    soego '«Понятно…»'
     nr 'Глаза Соэго блестят красным, уголки его рта слегка подрагивают, словно в предвкушении.'
     soego '«Может…»'
     nr 'Он широко ухмыляется, показывая ряд острых грязных зубов.'
@@ -602,7 +707,7 @@ label soego_s25: # from 24.0 24.1
     soego '«К сожалению, они не способны выполнять более сложные инструкции».'
 
     menu:
-        '«Хорошо, «контрактник» я или нет, но как я попал сюда, если я не мертв?»':
+        '«Хорошо, „контрактник“ я или нет, но как я попал сюда, если я не мертв?»':
             # a86 # r4801
             jump soego_s54
 
@@ -929,11 +1034,13 @@ label soego_s38: # - # IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 
     menu:
         '«Приветствую…»' if soegoLogic.r66706_condition():
             # a141 # r66706
+            $ soegoLogic.j63982_s38_r66706_action()
             $ soegoLogic.r66706_action()
             jump soego_s39
 
         '«Приветствую…»' if soegoLogic.r66707_condition():
             # a142 # r66707
+            $ soegoLogic.j63982_s38_r66707_action()
             $ soegoLogic.r66707_action()
             jump soego_s113
 
@@ -970,7 +1077,7 @@ label soego_s39: # from 38.0
 
 # s40 # say4909
 label soego_s40: # from 39.0
-    soego '«Тогда ладно…».'
+    soego '«Тогда ладно…»'
     nr 'Уголки рта Соэго снова начинают подрагивать, словно в предвкушении.'
     soego '«Позволь мне позвать охрану, она выпроводит тебя. Подожди минуточку».'
     nr 'Кажется, вот-вот он позовет охрану.'
@@ -1377,7 +1484,7 @@ label soego_s60: # from 59.0
 # s61 # say4990
 label soego_s61: # from 13.2
     soego '«Очень странно».'
-    nr 'Очень странно В глазах Соэго вспыхивает красный огонек, уголки рта начинают подрагивать, будто в предвкушении.'
+    nr 'В глазах Соэго вспыхивает красный огонек, уголки рта начинают подрагивать, будто в предвкушении.'
     soego '«Может…»'
     nr 'Он широко ухмыляется, показывая ряд острых грязных зубов.'
     soego '«Может, мне стоит позвать охрану? Да… да, пожалуй, я так и сделаю».'
@@ -1583,7 +1690,7 @@ label soego_s69: # from 67.1 68.0 70.1
     soego '«Это место, которого должны достичь все эти мертвецы, чтобы стать свободными».'
 
     menu:
-        '«А что это за «ложная жизнь», про которую ты говорил?»':
+        '«А что это за „ложная жизнь“, про которую ты говорил?»':
             # a245 # r21779
             jump soego_s68
 
@@ -1609,11 +1716,11 @@ label soego_s70: # from 67.2 68.1 69.1
     soego '«Я хочу, чтобы они переступили пределы этого плана бытия и освободились от чувств. Это спасет их».'
 
     menu:
-        '«А что это за «ложная жизнь», про которую ты говорил?»':
+        '«А что это за „ложная жизнь“, про которую ты говорил?»':
             # a250 # r21788
             jump soego_s68
 
-        '«Ты что-то говорил об «Истинной Смерти»»?':
+        '«Ты что-то говорил об „Истинной Смерти“»?':
             # a251 # r21790
             jump soego_s69
 
@@ -1639,17 +1746,17 @@ label soego_s71: # from 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 7
     menu:
         '«Погоди… а сейчас можно отдохнуть?»' if soegoLogic.r21800_condition():
             # a255 # r21800
-            $ soegoLogic.r21800_action()
+            $ soegoLogic.j21805_s71_r21800_action()
             jump soego_s84
 
         '«Погоди… а сейчас можно отдохнуть?»' if soegoLogic.r64569_condition():
             # a256 # r64569
-            $ soegoLogic.r64569_action()
+            $ soegoLogic.j21805_s71_r64569_action()
             jump soego_s84
 
         'Уйти.':
             # a257 # r64570
-            $ soegoLogic.r64570_action()
+            $ soegoLogic.j21805_s71_r64570_action()
             jump soego_dispose
 
 
@@ -1748,6 +1855,20 @@ label soego_s74: # from 73.1 101.2 104.0
             jump soego_s71
 
 
+# s75 # say21716
+label soego_s75: # -
+    nr 'Null node.'
+
+    jump soego_dispose
+
+
+# s76 # say21832
+label soego_s76: # -
+    nr 'Null node.'
+
+    jump soego_dispose
+
+
 # s77 # say21837
 label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
     soego '«Ты в катакомбах Мертвых Народов. Сюда тебя привела стража».'
@@ -1768,7 +1889,7 @@ label soego_s77: # from 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 7
 
 # s78 # say21844
 label soego_s78: # from 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
-    soego '«Не знаю. Поспрашивай здешних «жителей»».'
+    soego '«Не знаю. Поспрашивай здешних „жителей“».'
 
     menu:
         '«А кто ты?»':
@@ -1824,7 +1945,7 @@ label soego_s79: # - # IF WEIGHT #2 /* Triggers after states #: 82 95 even thoug
 
 # s80 # say21858
 label soego_s80: # from 79.4 110.2 112.0
-    soego '«Не знаю… Я здесь уже много времени, но так и не смог найти способ попасть в его тронный зал»..'
+    soego '«Не знаю… Я здесь уже много времени, но так и не смог найти способ попасть в его тронный зал».'
     soego '«Может быть, тебе повезет больше, без той ненависти и фанатизма, которые направлены на меня».'
 
     menu:
@@ -1915,11 +2036,11 @@ label soego_s83: # from 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
             # a304 # r21947
             jump soego_s91
 
-        '«Что тебе известно об этой «цивилизации»?»' if soegoLogic.r21948_condition():
+        '«Что тебе известно об этой „цивилизации“?»' if soegoLogic.r21948_condition():
             # a305 # r21948
             jump soego_s92
 
-        '«Что тебе известно об этой «цивилизации»?»' if soegoLogic.r21949_condition():
+        '«Что тебе известно об этой „цивилизации“?»' if soegoLogic.r21949_condition():
             # a306 # r21949
             jump soego_s93
 
@@ -1937,6 +2058,27 @@ label soego_s84: # from 71.0 71.1 82.5 82.6
             # a308 # r21956
             $ soegoLogic.r21956_action()
             jump soego_dispose
+
+
+# s85 # say21958
+label soego_s85: # -
+    nr 'Null Node.'
+
+    jump soego_dispose
+
+
+# s86 # say21963
+label soego_s86: # -
+    nr 'Null Node.'
+
+    jump soego_dispose
+
+
+# s87 # say21969
+label soego_s87: # -
+    nr 'Null Node.'
+
+    jump soego_dispose
 
 
 # s88 # say21975
@@ -2032,6 +2174,7 @@ label soego_s93: # from 83.5
 
     jump morte_s220  # EXTERN
 
+
 # s94 # say21993
 label soego_s94: # from 82.0 82.1
     soego '«Что? Это правда?»'
@@ -2040,27 +2183,27 @@ label soego_s94: # from 82.0 82.1
     menu:
         '«Многоединый?»' if soegoLogic.r25248_condition():
             # a321 # r25248
-            $ soegoLogic.r25248_action()
+            $ soegoLogic.j25254_s94_r25248_action()
             jump soego_s111
 
         '«Интересно. У меня есть другие вопросы…»' if soegoLogic.r25252_condition():
             # a322 # r25252
-            $ soegoLogic.r25252_action()
+            $ soegoLogic.j25254_s94_r25252_action()
             jump soego_s83
 
         '«Возможно. Прощай».' if soegoLogic.r25253_condition():
             # a323 # r25253
-            $ soegoLogic.r25253_action()
+            $ soegoLogic.j25254_s94_r25253_action()
             jump soego_dispose
 
         '«Хорошо. У меня есть несколько вопросов…»' if soegoLogic.r21994_condition():
             # a324 # r21994
-            $ soegoLogic.r21994_action()
+            $ soegoLogic.j21996_s94_r21994_action()
             jump soego_s83
 
         '«Тогда я расскажу ему сам. Прощай».' if soegoLogic.r21995_condition():
             # a325 # r21995
-            $ soegoLogic.r21995_action()
+            $ soegoLogic.j21996_s94_r21995_action()
             jump soego_dispose
 
 
@@ -2315,7 +2458,7 @@ label soego_s110: # from 79.0 79.1
 
         '«Хорошо. Так как же мне добраться до Безмолвного Короля?»' if soegoLogic.r22058_condition():
             # a361 # r22058
-            $ soegoLogic.r22058_action()
+            $ soegoLogic.j21857_s110_r22058_action()
             jump soego_s80
 
         '«Хорошо. Прощай».' if soegoLogic.r22060_condition():
@@ -2420,45 +2563,3 @@ label soego_s115: # from 114.0
         '«Это неважно. Мне пора идти».':
             # a378 # r66723
             jump soego_s17
-
-
-label soego_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump soego_dispose
-        'Убить.':
-            jump soego_killed
-
-
-label soego_killed:
-    $ soegoLogic.kill_soego()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'soegos.'
-    nr 'Who is soego?'
-    nr 'soego is dead, baby, soego is dead.'
-    jump soego_dispose
-
-
-label soego_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump soego_dispose
-        'Убить.':
-            jump soego_killed_first
-
-
-label soego_killed_first:
-    $ soegoLogic.kill_soego()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'soegos.'
-    nr 'Who is soego?'
-    nr 'soego is dead, baby, soego is dead.'
-    jump soego_dispose

@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF1148.DLG
+# Original:  DLG/DZF1148.DLG
 # ###
 
 
-label start_zf1148_talk:
-    call zf1148_init
-    jump zf1148_s0
-label start_zf1148_kill:
-    call zf1148_init
-    jump zf1148_kill
-label zf1148_init:
-    $ zf1148Logic.zf1148_init()
+label zf1148_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r1
     show zf1148_img default at center_left_down
-    return
+    jump zf1148_s0
+
+
+label zf1148_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f3r1
+    show zf1148_img default at center_left_down
+    jump zf1148_s3
+
+
 label zf1148_dispose:
     hide zf1148_img
     jump graphics_menu
@@ -112,21 +113,4 @@ label zf1148_s2: # from 0.3
 label zf1148_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf1148_dispose
-
-
-label zf1148_kill:
-    nr 'Кожа этого женского трупа покрыто замысловатыми узорами татуировок.'
-    nr 'Кожа на лбу отвалилась, так что номер 1148 вырезан прямо на черепе. Ее рот зашит крепкими грубыми стежками.'
-
-    menu:
-        '(Уйти.)':
-            jump zf1148_dispose
-        '(Убить зомби).':
-            jump zf1148_killed
-
-
-label zf1148_killed:
-    $ zf1148Logic.kill_zf1148()
-    nr 'Покрытая татуировками кожа расслаивается под моими ударами. Её тело затихает на полу.'
     jump zf1148_dispose

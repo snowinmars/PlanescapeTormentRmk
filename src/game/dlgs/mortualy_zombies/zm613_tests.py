@@ -11,57 +11,26 @@ class Zm613LogicTest(LogicTest):
         self.logic = Zm613Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm613Logic
-        self._methods_are_bound()
-
-
-    def test_zm613_init(self):
-        self._init_with_location(
-            'mortuary_f3r4',
-            self.logic.zm613_init,
-            self.settings_manager.get_talked_to_zm613_times
-        )
-
-
-    def test_kill_zm613(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 65
-
-        self.assertFalse(self.settings_manager.get_dead_zm613())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_zm613()
-
-        self.assertTrue(self.settings_manager.get_dead_zm613())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
-
-
     def test_r6543_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
-        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r6543_action()
 
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_before + delta, law_after)
 
         self.logic.r6543_action()
 
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_after + delta, law_after_once)
 
 
     def test_r6543_condition(self):

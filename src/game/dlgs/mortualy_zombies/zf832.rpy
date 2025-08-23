@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF832.DLG
+# Original:  DLG/DZF832.DLG
 # ###
 
 
-label start_zf832_talk:
-    call zf832_init
-    jump zf832_s0
-label start_zf832_kill:
-    call zf832_init
-    jump zf832_kill
-label zf832_init:
-    $ zf832Logic.zf832_init()
+label zf832_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r4
     show zf832_img default at center_left_down
-    return
+    jump zf832_s0
+
+
+label zf832_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f3r4
+    show zf832_img default at center_left_down
+    jump zf832_s3
+
+
 label zf832_dispose:
     hide zf832_img
     jump graphics_menu
@@ -112,21 +113,4 @@ label zf832_s2: # from 0.3
 label zf832_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf832_dispose
-
-
-label zf832_kill:
-    nr 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет.'
-    nr 'Тот, кто препарировал труп, похоже, сжалился над ней: он зашил ей рот аккуратными мелкими стежками и наколол на лбу номер «832» элегантным шрифтом.'
-
-    menu:
-        '(Уйти.)':
-            jump zf832_dispose
-        '(Убить зомби).':
-            jump zf832_killed
-
-
-label zf832_killed:
-    $ zf832Logic.kill_zf832()
-    nr 'На секунду я замедляю удар, задерживая взгляд на красивых глазах - на глазах без жизни и без разума. А потом без сожалений разрушаю красоту.'
     jump zf832_dispose

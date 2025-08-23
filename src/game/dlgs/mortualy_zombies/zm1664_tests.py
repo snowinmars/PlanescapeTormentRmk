@@ -11,41 +11,17 @@ class Zm1664LogicTest(LogicTest):
         self.logic = Zm1664Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm1664Logic
-        self._methods_are_bound()
-
-
-    def test_zm1664_init(self):
-        self._init_with_location(
-            'mortuary_f2r4',
-            self.logic.zm1664_init,
-            self.settings_manager.get_talked_to_zm1664_times
-        )
-
-
-    def test_kill_zm1664(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 65
-
-        self.assertFalse(self.settings_manager.get_dead_zm1664())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_zm1664()
-
-        self.assertTrue(self.settings_manager.get_dead_zm1664())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
-
-
     def test_r47014_action(self):
+        self.settings_manager.set_has_logpage(False)
+        self.settings_manager.set_has_zm1664_page(False)
+
         self.assertFalse(self.settings_manager.get_has_logpage())
         self.assertFalse(self.settings_manager.get_has_zm1664_page())
+
+        self.logic.r47014_action()
+
+        self.assertTrue(self.settings_manager.get_has_logpage())
+        self.assertTrue(self.settings_manager.get_has_zm1664_page())
 
         self.logic.r47014_action()
 

@@ -4,24 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM396.DLG
+# Original:  DLG/DZM396.DLG
 # ###
 
 
-label start_zm396_talk_first:
-    call zm396_init
-    jump zm396_s0
-label start_zm396_talk:
-    call zm396_init
-    jump zm396_s4
-label start_zm396_kill:
-    call zm396_init
-    jump zm396_kill
-label zm396_init:
-    $ zm396Logic.zm396_init()
+label zm396_s0_ctor: # - # IF ~  HasItem("Bandage","ZM396")
     scene bg mortuary_f2r3
     show zm396_img default at center_left_down
-    return
+    jump zm396_s0
+
+
+label zm396_s4_ctor: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
+    scene bg mortuary_f2r3
+    show zm396_img default at center_left_down
+    jump zm396_s4
+
+
 label zm396_dispose:
     hide zm396_img
     jump graphics_menu
@@ -134,20 +132,3 @@ label zm396_s4: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
         'Оставить труп в покое.':
             # a17 # r45117
             jump zm396_dispose
-
-
-label zm396_kill:
-    nr 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. Он продолжает выполнять свои обязанности, даже без бинтов. На левом виске у него выбит номер «396», а его губы крепко зашиты.'
-
-    menu:
-        '(Уйти.)':
-            jump zm396_dispose
-        '(Убить зомби).':
-            jump zm396_killed
-
-
-label zm396_killed:
-    $ zm396Logic.kill_zm396()
-    nr 'Я швыряю труп на одного из пациентов - и бью ему в грудь, пока она не открывается гноящимися сгустками. Пустые глаза трупа устало смотрят в потолок.'
-    nr 'В них нет ни жизни, ни разума. Плодить ему подобных ближайшие часы больше некому.'
-    jump zm396_dispose

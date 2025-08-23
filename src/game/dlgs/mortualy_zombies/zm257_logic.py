@@ -3,16 +3,6 @@ class Zm257Logic:
         self.settings_manager = settings_manager
 
 
-    def zm257_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f2r5')
-        self.settings_manager.inc_talked_to_zm257_times()
-
-
-    def kill_zm257(self):
-        self.settings_manager.set_dead_zm257(True)
-        self.settings_manager.gain_experience('party', 65)
-
-
     def know_zm257_spirit_action(self):
         self.settings_manager.set_know_zm257_spirit(True)
 

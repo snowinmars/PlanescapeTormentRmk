@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.xach_logic import XachLogic
+from game.dlgs.xach_logic import XachLogic
 
 
 class XachLogicTest(LogicTest):
@@ -11,43 +11,26 @@ class XachLogicTest(LogicTest):
         self.logic = XachLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = XachLogic
-        self._methods_are_bound()
-
-
-    def test_xach_init(self):
-        self._init_with_location(
-            'mortuary_f1r3',
-            self.logic.xach_init,
-            self.settings_manager.get_talked_to_xach_times
-        )
-
-
-    def test_kill_xach(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_xach,
-            self.logic.kill_xach
-        )
-
-
     def test_r502_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
-        before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r502_action()
 
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(before + delta, after)
+
+        self.logic.r502_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r524_action(self):
@@ -73,12 +56,23 @@ class XachLogicTest(LogicTest):
 
 
     def test_r666_action(self):
-        self.assertEqual(self.settings_manager.get_xachariah_ring(), 0)
+        xachariah_ring_before = 1
+        xachariah_ring_after = 2
+        xachariah_ring_after_once = 2
+        self.settings_manager.set_xachariah_ring(xachariah_ring_before)
+        self.settings_manager.set_has_xac_heart(False)
+
+        self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_before)
         self.assertFalse(self.settings_manager.get_has_xac_heart())
 
         self.logic.r666_action()
 
-        self.assertEqual(self.settings_manager.get_xachariah_ring(), 2)
+        self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_after)
+        self.assertTrue(self.settings_manager.get_has_xac_heart())
+
+        self.logic.r666_action()
+
+        self.assertEqual(self.settings_manager.get_xachariah_ring(), xachariah_ring_after_once)
         self.assertTrue(self.settings_manager.get_has_xac_heart())
 
 
@@ -104,8 +98,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r681_action(self):
-       self.settings_manager.set_xachariah_gutted(True)
-       self._true_then_false_action(
+        self._true_then_false_action(
             self.settings_manager.get_xachariah_gutted,
             self.logic.r681_action
         )
@@ -147,22 +140,21 @@ class XachLogicTest(LogicTest):
 
 
     def test_r508_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 16
-        delta_cha = 17
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 16
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 17
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r508_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r508_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r508_condition())
 
 
@@ -187,23 +179,23 @@ class XachLogicTest(LogicTest):
 
 
     def test_r510_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 16
-        delta_cha = 17
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 16
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 17
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r510_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r510_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r510_condition())
+
 
     def test_r63308_condition(self):
         who = 'protagonist'

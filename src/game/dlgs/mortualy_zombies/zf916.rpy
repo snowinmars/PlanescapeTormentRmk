@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF916.DLG
+# Original:  DLG/DZF916.DLG
 # ###
 
 
-label start_zf916_talk:
-    call zf916_init
-    jump zf916_s0
-label start_zf916_kill:
-    call zf916_init
-    jump zf916_kill
-label zf916_init:
-    $ zf916Logic.zf916_init()
+label zf916_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zf916_img default at center_left_down
-    return
+    jump zf916_s0
+
+
+label zf916_s3_ctor: # - # IF ~  False()
+    scene bg DISABLED
+    show zf916_img default at center_left_down
+    jump zf916_s3
+
+
 label zf916_dispose:
     hide zf916_img
     jump graphics_menu
@@ -111,20 +112,4 @@ label zf916_s2: # from 0.3
 label zf916_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf916_dispose
-
-
-label zf916_kill:
-    nr 'Труп женщины смотрит на тебя пустым взглядом. На ее лбу вырезан номер «916»; ее губы крепко зашиты. От тела исходит легкий запах формальдегида.'
-
-    menu:
-        '(Уйти.)':
-            jump zf916_dispose
-        '(Убить зомби).':
-            jump zf916_killed
-
-
-label zf916_killed:
-    $ zf916Logic.kill_zf916()
-    nr 'Я бью в этот пустой взгляд, в запах формальдегида. Последний удар я наношу в губы.'
     jump zf916_dispose

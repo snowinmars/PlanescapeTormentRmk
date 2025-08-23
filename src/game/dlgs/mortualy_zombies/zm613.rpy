@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM613.DLG
+# Original:  DLG/DZM613.DLG
 # ###
 
 
-label start_zm613_talk:
-    call zm613_init
-    jump zm613_s0
-label start_zm613_kill:
-    call zm613_init
-    jump zm613_kill
-label zm613_init:
-    $ zm613Logic.zm613_init()
+label zm613_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r4
     show zm613_img default at center_left_down
-    return
+    jump zm613_s0
+
+
 label zm613_dispose:
     hide zm613_img
     jump graphics_menu
@@ -74,21 +69,3 @@ label zm613_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r6550
             jump zm613_dispose
-
-
-label zm613_kill:
-    nr 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры 613, но на коже между «1» и «3» виден большой пробел шириной с палец.'
-    nr 'Приглядевшись, ты с трудом различаешь вырезанную «2».'
-
-    menu:
-        '(Уйти.)':
-            jump zm613_dispose
-        '(Убить зомби).':
-            jump zm613_killed
-
-
-label zm613_killed:
-    $ zm613Logic.kill_zm613()
-    nr 'Я кладу руки на череп трупа и надавливаю пальцами на вырезанный номер. Он легко поддаётся, и мои руки окутывает что-то мягкое и липкое, как мёд.'
-    nr 'Я вытираю руки и отворачиваюсь.'
-    jump zm613_dispose

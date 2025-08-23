@@ -3,15 +3,6 @@ class S1221Logic:
         self.settings_manager = settings_manager
 
 
-    def s1221_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r4')
-        self.settings_manager.inc_talked_to_s1221_times()
-
-
-    def kill_s1221(self):
-        self.settings_manager.set_dead_s1221(True)
-
-
     def r35307_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_skeleton_chaotic(True)

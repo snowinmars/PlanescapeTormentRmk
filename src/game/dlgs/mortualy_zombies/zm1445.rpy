@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1445.DLG
+# Original:  DLG/DZM1445.DLG
 # ###
 
 
-label start_zm1445_talk:
-    call zm1445_init
-    jump zm1445_s0
-label start_zm1445_kill:
-    call zm1445_init
-    jump zm1445_kill
-label zm1445_init:
-    $ zm1445Logic.zm1445_init()
+label zm1445_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zm1445_img default at center_left_down
-    return
+    jump zm1445_s0
+
+
 label zm1445_dispose:
     hide zm1445_img
     jump graphics_menu
@@ -74,20 +69,3 @@ label zm1445_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r46764
             jump zm1445_dispose
-
-
-label zm1445_kill:
-    nr 'Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни.'
-    nr 'На лбу у него вытатуирован номер «1445», а его губы крепко сшиты.'
-
-    menu:
-        '(Уйти.)':
-            jump zm1445_dispose
-        '(Убить зомби).':
-            jump zm1445_killed
-
-
-label zm1445_killed:
-    $ zm1445Logic.kill_zm1445()
-    nr 'Его больная плоть разлетается под моими ударами. Я не чувствую сожалений.'
-    jump zm1445_dispose

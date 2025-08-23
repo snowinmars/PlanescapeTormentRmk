@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM985.DLG
+# Original:  DLG/DZM985.DLG
 # ###
 
 
-label start_zm985_talk:
-    call zm985_init
-    jump zm985_s0
-label start_zm985_kill:
-    call zm985_init
-    jump zm985_s3
-label zm985_init:
-    $ zm985Logic.zm985_init()
+label zm985_s0_ctor: # - # IF ~  Global("Topple_985","GLOBAL",0)
     scene bg mortuary_f2r5
     show zm985_img default at center_left_down
-    return
+    jump zm985_s0
+
+
+label zm985_s5_ctor: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
+    scene bg mortuary_f2r5
+    show zm985_img default at center_left_down
+    jump zm985_s5
+
+
 label zm985_dispose:
     hide zm985_img
     jump graphics_menu
@@ -88,21 +89,23 @@ label zm985_s2: # from 0.5 5.3
 
 
 # s3 # say45528
-label zm985_s3: # from 0.1 6.0 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) SetGlobal("Topple_985","GLOBAL",1) Kill(Myself) Deactivate(Myself) ~ GOTO 7
+label zm985_s3: # from 0.1 6.0
     nr 'В левой ноге трупа раздается хруст, и тело падает, как срубленное дерево.'
     nr 'Туловище ударяется о каменные плиты и раскалывается, как гнилая дыня; гной, булькая, вытекает из трещин.'
-    nr 'К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке смирно.'
+    nr 'К твоему удивлению, никто даже не заметил падения мертвеца… и что еще более странно, левая нога продолжает стоять там, где стояло тело, словно по стойке „смирно“.'
     nr 'Спустя мгновенье, нога падает с сочным гулким ударом.'
-    $ zm985Logic.s3_action()
 
+    $ zm985Logic.s3_action()
     jump zm985_s7
 
-# s4 # say45530
-label zm985_s4: # from 0.2 # ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482
-    nr 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
-    $ zm985Logic.s4_action()
 
-    jump morte_s482
+# s4 # say45530
+label zm985_s4: # from 0.2
+    nr 'Ты тянешься к левой руке трупа, желая помочь ему устоять. Но когда ты хватаешься за его руку, труп неожиданно кренится вправо, и ты скорее тянешь его, чем помогаешь удержаться…'
+
+    $ zm985Logic.s4_action()
+    jump morte_s482  # EXTERN
+
 
 # s5 # say45531
 label zm985_s5: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)

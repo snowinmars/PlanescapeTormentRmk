@@ -3,15 +3,6 @@ class S42Logic:
         self.settings_manager = settings_manager
 
 
-    def s42_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r4')
-        self.settings_manager.inc_talked_to_s42_times()
-
-
-    def kill_s42(self):
-        self.settings_manager.set_dead_s42(True)
-
-
     def r6613_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', -1, 'globalskeleton_chaotic')
 

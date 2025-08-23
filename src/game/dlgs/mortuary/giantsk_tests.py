@@ -2,45 +2,13 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.giantsk_logic import GiantskLogic
+from game.dlgs.giantsk_logic import GiantskLogic
 
 
 class GiantskLogicTest(LogicTest):
     def setUp(self):
         super(GiantskLogicTest, self).setUp()
         self.logic = GiantskLogic(self.settings_manager)
-
-
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = GiantskLogic
-        self._methods_are_bound()
-
-
-    def test_giantsk_init(self):
-        self._init_with_location(
-            'mortuary_f1rc',
-            self.logic.giantsk_init,
-            self.settings_manager.get_talked_to_giantsk_times
-        )
-
-
-    def test_kill_giantsk(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 500
-
-        self.assertFalse(self.settings_manager.get_dead_giantsk())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_giantsk()
-
-        self.assertTrue(self.settings_manager.get_dead_giantsk())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
 
 
     def test_r293_action(self):
@@ -75,44 +43,70 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4079_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 500
+        giant_skeleton_enchant_before = 0
+        giant_skeleton_enchant_after = 1
+        giant_skeleton_enchant_after_once = 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
 
-        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 0)
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
 
         self.logic.r4079_action()
 
-        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), 1)
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r4079_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r4087_action(self):
-        delta = 1
+        giant_skeleton_enchant_before = 0
+        giant_skeleton_enchant_after = 1
+        giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
-        before = self.settings_manager.get_giant_skeleton_enchant()
 
         self.logic.r4087_action()
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
         self.assertTrue(self.settings_manager.get_dead_giantsk())
-        after = self.settings_manager.get_giant_skeleton_enchant()
-        self.assertEqual(before + delta, after)
+
+        self.logic.r4087_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r4088_action(self):
-        delta = 1
+        giant_skeleton_enchant_before = 0
+        giant_skeleton_enchant_after = 1
+        giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
-        before = self.settings_manager.get_giant_skeleton_enchant()
 
         self.logic.r4088_action()
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
         self.assertTrue(self.settings_manager.get_dead_giantsk())
-        after = self.settings_manager.get_giant_skeleton_enchant()
-        self.assertEqual(before + delta, after)
+
+        self.logic.r4088_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r4095_action(self):
@@ -168,6 +162,9 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4101_action(self):
+        self.settings_manager.set_has_breast4(False)
+        self.settings_manager.set_dead_giantsk(False)
+
         self.assertFalse(self.settings_manager.get_has_breast4())
         self.assertFalse(self.settings_manager.get_dead_giantsk())
 
@@ -176,31 +173,52 @@ class GiantskLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_has_breast4())
         self.assertTrue(self.settings_manager.get_dead_giantsk())
 
+        self.logic.r4101_action()
+
+        self.assertTrue(self.settings_manager.get_has_breast4())
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
+
 
     def test_r64301_action(self):
-        delta = 1
+        giant_skeleton_enchant_before = 0
+        giant_skeleton_enchant_after = 1
+        giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
-        before = self.settings_manager.get_giant_skeleton_enchant()
 
         self.logic.r64301_action()
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
         self.assertTrue(self.settings_manager.get_dead_giantsk())
-        after = self.settings_manager.get_giant_skeleton_enchant()
-        self.assertEqual(before + delta, after)
+
+        self.logic.r64301_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r64302_action(self):
-        delta = 1
+        giant_skeleton_enchant_before = 0
+        giant_skeleton_enchant_after = 1
+        giant_skeleton_enchant_after_once = 2 * 1
+        self.settings_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.settings_manager.set_dead_giantsk(False)
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         self.assertFalse(self.settings_manager.get_dead_giantsk())
-        before = self.settings_manager.get_giant_skeleton_enchant()
 
         self.logic.r64302_action()
 
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
         self.assertTrue(self.settings_manager.get_dead_giantsk())
-        after = self.settings_manager.get_giant_skeleton_enchant()
-        self.assertEqual(before + delta, after)
+
+        self.logic.r64302_action()
+
+        self.assertEqual(self.settings_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.settings_manager.get_dead_giantsk())
 
 
     def test_r3997_condition(self):
@@ -419,22 +437,21 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r4054_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_wis = 'wisdom'
-        delta_int = 12
-        delta_wis = 13
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
         self.assertFalse(self.logic.r4054_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis)
-        self.assertFalse(self.logic.r4054_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis - 1)
         self.assertTrue(self.logic.r4054_condition())
 
 
@@ -452,22 +469,21 @@ class GiantskLogicTest(LogicTest):
 
 
     def test_r64293_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_wis = 'wisdom'
-        delta_int = 12
-        delta_wis = 13
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 13
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
         self.assertFalse(self.logic.r64293_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis)
-        self.assertFalse(self.logic.r64293_condition())
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_wis, delta_wis - 1)
         self.assertTrue(self.logic.r64293_condition())
 
 

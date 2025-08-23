@@ -1,24 +1,18 @@
 init 10 python:
-    from game.dlgs.mortuary.giantsk_logic import GiantskLogic
+    from game.dlgs.giantsk_logic import GiantskLogic
     giantskLogic = GiantskLogic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/GIANTSK.DLG
+# Original:  DLG/DGIANTSK.DLG
 # ###
 
-
-label start_giantsk_talk:
-    call giantsk_init
-    jump giantsk_s0
-label start_giantsk_kill:
-    call giantsk_init
-    jump giantsk_kill
-label giantsk_init:
-    $ giantskLogic.giantsk_init()
+label giantsk_s0_ctor: # -
     scene bg mortuary_f1rc
     show giantsk_img default at center_left_down
-    return
+    jump giantsk_s0
+
+
 label giantsk_dispose:
     hide giantsk_img
     jump graphics_menu
@@ -508,45 +502,3 @@ label giantsk_s16: # from 9.0 15.0
         'Оставить руны в покое и осмотреть гигантского скелета еще раз.':
             # a86 # r64303
             jump giantsk_s4
-
-
-label giantsk_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump giantsk_dispose
-        'Убить.':
-            jump giantsk_killed
-
-
-label giantsk_killed:
-    $ giantskLogic.kill_giantsk()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'giantsks.'
-    nr 'Who is giantsk?'
-    nr 'giantsk is dead, baby, giantsk is dead.'
-    jump giantsk_dispose
-
-
-label giantsk_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump giantsk_dispose
-        'Убить.':
-            jump giantsk_killed_first
-
-
-label giantsk_killed_first:
-    $ giantskLogic.kill_giantsk()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'giantsks.'
-    nr 'Who is giantsk?'
-    nr 'giantsk is dead, baby, giantsk is dead.'
-    jump giantsk_dispose

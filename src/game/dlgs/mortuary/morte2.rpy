@@ -4,36 +4,28 @@
 
 
 # ###
-# Original:  DLG/MORTE2.DLG
+# Original:  DLG/DMORTE2.DLG
 # ###
 
 
-label start_morte2_talk_first:
-    call morte2_talk_first
-    jump morte2_s0
-label start_morte2_talk_dhall:
-    call morte2_talk_dhall
-    jump morte2_s31
-label start_morte2_talk:
-    call morte2_init
-    jump morte2_s12
-label start_morte2_kill:
-    call morte2_init
-    jump morte2_kill
-label morte2_talk_first:
+label morte2_s0_ctor: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
     scene bg mortuary_f2r2
     show morte_img default at center_left_down
-    $ morte2Logic.morte_init_first()
-    return
-label morte2_init:
+    jump morte2_s0
+
+
+label morte2_s27_ctor: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
+    scene bg mortuary_f2r2
     show morte_img default at center_left_down
-    $ morte2Logic.morte_init()
-    return
-label morte2_talk_dhall:
-    scene bg mortuary_f2r3
+    jump morte2_s27
+
+
+label morte2_s31_ctor: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
+    scene bg mortuary_f2r2
     show morte_img default at center_left_down
-    $ morte2Logic.morte_talk_dhall()
-    return
+    jump morte2_s31
+
+
 label morte2_dispose:
     hide morte_img
     jump graphics_menu
@@ -70,7 +62,7 @@ label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
 
 # s1 # say41149
 label morte2_s1: # from 0.0 3.0 7.0
-    morte '«Они зовут себя «тленными». Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица».'
+    morte '«Они зовут себя „тленными“. Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица».'
     morte '«Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть… и лучше раньше, чем позже».'
 
     menu:
@@ -129,7 +121,7 @@ label morte2_s4: # from 0.2 2.1 3.1
 
 # s5 # say41161
 label morte2_s5: # from 4.0
-    morte '««Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?»»'
+    morte '«Шеф, ОНИ мертвы, МЫ тоже мертвы… улавливаешь, куда я клоню? А? А?»'
 
     menu:
         '«Нет… не очень, если честно».':
@@ -213,7 +205,7 @@ label morte2_s11: # from 10.0
     menu:
         '«Ладно… Уяснил. Идем».':
             # a21 # r41177
-            $ morte2Logic.r41177_action()
+            $ morte2Logic.j39516_s11_r41177_action()
             jump morte2_dispose
 
 
@@ -378,7 +370,7 @@ label morte2_s17: # from 16.0
 
 # s18 # say41212
 label morte2_s18: # from 12.1
-    morte '«Оно называется «Моргом»… это такое большое черное здание с чарующей архитектурой беременной паучихи».'
+    morte '«Оно называется „Моргом“… это такое большое черное здание с чарующей архитектурой беременной паучихи».'
 
     menu:
         '«Ясно. У меня есть другие вопросы к тебе…»':
@@ -396,7 +388,7 @@ label morte2_s18: # from 12.1
 
 # s19 # say41216
 label morte2_s19: # from 12.2 12.3
-    morte '«Они зовут себя «тленными». Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица».'
+    morte '«Они зовут себя „тленными“. Ты их не пропустишь: они питают особую тягу к черному цвету и окоченевшему выражению лица».'
     morte '«Они — всего лишь кучка свихнувшихся упырей, поклоняющихся смерти. Они верят в то, что все должны умереть… и лучше раньше, чем позже».'
 
     menu:
@@ -640,45 +632,3 @@ label morte2_s33: # from 32.0
         '«Мне нужны ответы. Я поговорю с ним».':
             # a88 # r41267
             jump morte2_dispose
-
-
-label morte2_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump morte2_dispose
-        'Убить.':
-            jump morte2_killed
-
-
-label morte2_killed:
-    $ morte2Logic.kill_morte()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'morte2s.'
-    nr 'Who is morte2?'
-    nr 'morte2 is dead, baby, morte2 is dead.'
-    jump morte2_dispose
-
-
-label morte2_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump morte2_dispose
-        'Убить.':
-            jump morte2_killed_first
-
-
-label morte2_killed_first:
-    $ morte2Logic.kill_morte()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'morte2s.'
-    nr 'Who is morte2?'
-    nr 'morte2 is dead, baby, morte2 is dead.'
-    jump morte2_dispose

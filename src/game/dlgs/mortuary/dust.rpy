@@ -4,28 +4,40 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DUST.DLG
+# Original:  DLG/DDUST.DLG
 # ###
 
-# dust_s22
-# dust_s40
-label start_dust_talk_first:
-    call dust_init
-    jump dust_s3
-label start_dust_talk:
-    call dust_init
-    jump dust_s0
-label start_dust_kill_first:
-    call dust_init
-    jump dust_kill_first
-label start_dust_kill:
-    call dust_init
-    jump dust_kill
-label dust_init:
-    $ dustLogic.dust_init()
+
+label dust_s0_ctor: # - # IF ~  Global("Appearance","GLOBAL",1)
     scene bg mortuary_f3r2
     show dust_img default at center_left_down
-    return
+    jump dust_s0
+
+
+label dust_s22_ctor: # - # IF ~  Global("Appearance","GLOBAL",2)
+    scene bg mortuary_f3r2
+    show dust_img default at center_left_down
+    jump dust_s22
+
+
+label dust_s38_ctor: # -
+    scene bg mortuary_f3r2
+    show dust_img default at center_left_down
+    jump dust_s38
+
+
+label dust_s40_ctor: # -
+    scene bg mortuary_f3r2
+    show dust_img default at center_left_down
+    jump dust_s40
+
+
+label dust_s51_ctor: # - # IF ~  Global("Appearance","GLOBAL",0)
+    scene bg mortuary_f3r2
+    show dust_img default at center_left_down
+    jump dust_s51
+
+
 label dust_dispose:
     hide dust_img
     jump graphics_menu
@@ -908,7 +920,7 @@ label dust_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say3889
 label dust_s45: # from 19.5
-    nr 'Ты наклоняешься, чтобы шепнуть ему что-то на ухо, тленный тоже наклоняется.'
+    nr 'Ты наклоняешься, чтобы „шепнуть“ ему что-то на ухо, тленный тоже наклоняется.'
     nr 'Как только он оказывается на расстоянии вытянутой руки, ты хватаешь его за виски и резко сворачиваешь голову влево.'
 
     menu:
@@ -1035,45 +1047,3 @@ label dust_s52: # from 51.0
         '«Конечно. Прощай».':
             # a158 # r66682
             jump dust_dispose
-
-
-label dust_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dust_dispose
-        'Убить.':
-            jump dust_killed
-
-
-label dust_killed:
-    $ dustLogic.kill_dust()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dusts.'
-    nr 'Who is dust?'
-    nr 'dust is dead, baby, dust is dead.'
-    jump dust_dispose
-
-
-label dust_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dust_dispose
-        'Убить.':
-            jump dust_killed_first
-
-
-label dust_killed_first:
-    $ dustLogic.kill_dust()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dusts.'
-    nr 'Who is dust?'
-    nr 'dust is dead, baby, dust is dead.'
-    jump dust_dispose

@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF444.DLG
+# Original:  DLG/DZF444.DLG
 # ###
 
 
-label start_zf444_talk:
-    call zf444_init
-    jump zf444_s0
-label start_zf444_kill:
-    call zf444_init
-    jump zf444_kill
-label zf444_init:
-    $ zf444Logic.zf444_init()
+label zf444_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zf444_img default at center_left_down
-    return
+    jump zf444_s0
+
+
+label zf444_s3_ctor: # - # IF ~  False()
+    scene bg DISABLED
+    show zf444_img default at center_left_down
+    jump zf444_s3
+
+
 label zf444_dispose:
     hide zf444_img
     jump graphics_menu
@@ -111,22 +112,4 @@ label zf444_s2: # from 0.3
 label zf444_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишкомдалек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf444_dispose
-
-
-label zf444_kill:
-    nr 'У этого трупа женщины ужасный вид. Ее грубая, обработанная бальзамом кожа покрыта сотнями небольших укусов, вероятно, крысиных.'
-    nr 'Судя по складкам вокруг ран, они, скорее всего, были нанесены еще до того, как труп препарировали. Ее губы зашиты, а на лице темно-синими чернилами выведен номер «444».'
-
-    menu:
-        '(Уйти.)':
-            jump zf444_dispose
-        '(Убить зомби).':
-            jump zf444_killed
-
-
-label zf444_killed:
-    $ zf444Logic.kill_zf444()
-    nr 'Она смотрит на меня пустыми глазами.'
-    nr 'В них нет ни жизни, ни разума. От падения трупа рвутся нитки на губах. Я не чувствую сожаления.'
     jump zf444_dispose
