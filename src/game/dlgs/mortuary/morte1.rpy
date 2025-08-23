@@ -1,35 +1,34 @@
 ﻿init 10 python:
-    from game.dlgs.mortuary.morte1_logic import Morte1Logic
+    from game.dlgs.morte1_logic import Morte1Logic
     morte1Logic = Morte1Logic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/MORTE1.DLG
+# Original:  DLG/DMORTE1.DLG
+# ###
 
 
-# morte1_s24
-# morte1_s26
-label start_morte1_talk_first:
-    call new_life_morte1_s0
-    jump morte1_s0
-label start_morte1_talk:
-    call morte1_init
-    jump morte1_s30
-label start_morte1_invite:
-    call morte1_init
-    jump morte1_s26
-label start_morte1_kill:
-    call morte1_init
-    jump morte1_kill
-label morte1_init:
-    $ morte1Logic.morte1_init()
+label morte1_s24_ctor:
     scene bg mortuary_f2r1
+    jump morte1_s24
+
+
+label morte1_s26_ctor:
+    scene bg mortuary_f2r1
+    jump morte1_s26
+
+
+label morte1_s30_ctor:
     show morte_img default at center_left_down
-    return
-label new_life_morte1_s0:
+    jump morte1_s30
+
+
+label morte1_s0_ctor:
     scene black
     hide expression "*"
-    return
+    jump morte1_s0
+
+
 label morte1_dispose:
     hide morte_img
     jump graphics_menu
@@ -52,7 +51,7 @@ label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though t
     nr 'Зомби. Ходячие мертвецы. Со всех сторон. Дыхание перехватывает, во рту – привкус тления.'
     nr 'Я застываю, превращаясь в камень, в пустоту. Только бы не заметили…'
 
-    call morte1_init
+    show morte_img default at center_left_down
     morte_unknown '«Эй, шеф. Ты в порядке?»'
     morte_unknown '«Изображаешь из себя труп или пытаешься обмануть трухлявых?»'
     morte_unknown '«Я уж думал, что ты дал дуба».'
@@ -125,7 +124,7 @@ label morte1_s5: # from 2.0
 
 # s6 # say39807
 label morte1_s6: # from 5.0
-    morte '«Оно называется «Моргом»… это такое большое черное здание с чарующей архитектурой беременной паучихи».'
+    morte '«Оно называется „Моргом“… это такое большое черное здание с чарующей архитектурой беременной паучихи».'
 
     menu:
         '«Морг? Постой… я умер?»':
@@ -249,19 +248,21 @@ label morte1_s15: # from 14.0
 # s16 # say39828
 label morte1_s16: # from 14.1 15.0
     morte '«Хорошо, но перед этим неплохо бы вооружиться. Кажется, здесь где-то на полках есть скальпель».'
+
     jump morte1_s19
 
 
 # s19 # say39834
-label morte1_s19: # from -
+label morte1_s19: # from 16.0
     morte '«А теперь пора разделаться с этими трупами…»'
     morte '«…и не бойся, я буду держаться у тебя за спиной и давать ценные тактические советы».'
 
     menu:
-        'А, может, ты мне *поможешь*, Морт?':
+        '«А, может, ты мне *поможешь*, Морт?»':
             # a22 # r39835
             jump morte1_s20
-        'Хорошо.':
+
+        '«Хорошо».':
             # a23 # r39836
             jump morte1_s23
 
@@ -315,21 +316,21 @@ label morte1_s23: # from 19.1 20.1 21.1 22.0
 
 
 # s24 # say39847
-label morte1_s24: # from - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
-    morte '«Отлично, похоже, ты позаботился о правильном трупе».'
+label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
+    morte '«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».'
     nr 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
     $ morte1Logic.s24_action()
     morte '«Мы можем выбраться отсюда!»'
 
     menu:
-        'Я перепробую все двери.':
+        '«Тогда я перепробую все двери».':
             # a31 # r39850
             jump morte1_dispose
 
 
 # s26 # say39851
 label morte1_s26: # - # IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
-    morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»'
+    morte '«Я знал, что ты вернешься, шеф! Все-таки понял, что я нужен тебе, а?»' # [MRT516]
 
     menu:
         '«Да… идем».':
@@ -391,7 +392,7 @@ label morte1_s29: # from 28.1
 
 # s30 # say39863
 label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
-    morte '«Что тебя гложет, шеф?»'
+    morte '«Что тебя гложет, шеф?»' # [MRT515]
 
     menu:
         '«Пока ничего, Морт. Просто проверяю, что ты еще со мной».':
@@ -400,7 +401,7 @@ label morte1_s30: # - # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1
 
 
 # s31 # say42298
-label morte1_s31: # -
+label morte1_s31: # externs zm825_s3 zm825_s0 zm569_s3 zm569_s0
     morte '«Э, шеф… они не слышат тебя, понятно? Они мертвы».'
 
     menu:
@@ -432,26 +433,7 @@ label morte1_s33: # from 32.0
 
 
 # s34 # say42306
-label morte1_s34: # - # Manually checked EXTERN ~DZM782~ : 2
+label morte1_s34: # externs zm782_s0
     morte '«Кажется, просителю повезло, шеф. Смотри… у него в руке ключ».'
 
-    jump zm782_s2
-
-
-label morte1_kill:
-    call morte1_init
-    nr "Я больше не хочу видеть этот череп."
-
-    menu:
-        'Уйти.':
-            jump morte1_dispose
-        'Убить Морта.':
-            jump morte1_killed
-
-
-label morte1_killed:
-    morte "Слушай шеф…"
-    nr "Я хватаю черепушку и разбиваю её о землю."
-
-    $ morte1Logic.kill_morte()
-    jump morte1_dispose
+    jump zm782_s2  # EXTERN

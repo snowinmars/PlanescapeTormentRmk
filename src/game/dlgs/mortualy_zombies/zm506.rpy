@@ -4,28 +4,25 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM506.DLG
+# Original:  DLG/DZM506.DLG
 # ###
 
 
-label start_zm506_talk_first:
-    call zm506_init
-    jump zm506_s0
-label start_zm506_talk:
-    call zm506_init
-    jump zm506_s5
-label start_zm506_kill:
-    call zm506_init
-    jump zm506_kill
-label zm506_init:
-    $ zm506Logic.zm506_init()
+label zm506_s0_ctor: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
     scene bg mortuary_f2r5
     show zm506_img default at center_left_down
-    return
+    jump zm506_s0
+
+
+label zm506_s5_ctor: # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
+    scene bg mortuary_f2r5
+    show zm506_img default at center_left_down
+    jump zm506_s5
+
+
 label zm506_dispose:
     hide zm506_img
     jump graphics_menu
-
 
 # s0 # say45419
 label zm506_s0: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
@@ -150,24 +147,3 @@ label zm506_s5: # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
         'Оставить зомби в покое.':
             # a20 # r45514
             jump zm506_dispose
-
-
-label zm506_kill:
-    if zm506Logic.know_506_secret():
-        nr 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…'
-        nr 'В сущности, у этого трупа так много швов, что его кожа выглядит как причудливая карта улиц.'
-    if not zm506Logic.know_506_secret():
-        nr 'Этот покрытый швами труп вяло передвигается между двумя плитами. Хотя по всему телу у него вышит номер «506», в месте, где кожа отвалилась ото лба, на кости выбит номер «78».'
-
-    menu:
-        '(Уйти.)':
-            jump zm506_dispose
-        '(Убить зомби).':
-            jump zm506_killed
-
-
-label zm506_killed:
-    $ zm506Logic.kill_zm506()
-    nr 'Карта на этом трупе примитивна. Даже если я и сбился бы на ней с пути - заблудиться я бы не смог. Я рисую новые улицы, новые - с каждым ударом.'
-    nr 'Труп осматривает себя пустыми глазами. В них нет ни жизни, ни разума. А потом падает.'
-    jump zm506_dispose

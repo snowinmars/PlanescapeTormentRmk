@@ -7,32 +7,29 @@
 
 
 # ###
-# Original:  DLG/DHALL.DLG
+# Original:  DLG/DDHALL.DLG
 # ###
 
 
-label start_dhall_talk_first:
-    call dhall_init
-    jump dhall_s5
-label start_dhall_talk:
-    call dhall_init
-    jump dhall_s40
-label start_dhall_kill_first:
-    call dhall_init
-    jump dhall_kill_first
-label start_dhall_kill:
-    call dhall_init
-    jump dhall_kill
-label dhall_init:
-    $ dhallLogic.dhall_init()
+label dhall_s5_ctor: # - # IF ~  Global("Dhall","GLOBAL",0)
     scene bg mortuary_f2r3
     show dhall_img default at center_left_down
-    return
+    jump dhall_s5
+
+
+label dhall_s39_ctor: # -
+    scene bg mortuary_f2r3
+    show dhall_img default at center_left_down
+    jump dhall_s39
+
+
+label dhall_s40_ctor: # - # IF ~  Global("Dhall","GLOBAL",1)
+    scene bg mortuary_f2r3
+    show dhall_img default at center_left_down
+    jump dhall_s40
+
+
 label dhall_dispose:
-    hide dhall_img
-    jump graphics_menu
-label dhall_dispose_no_talk:
-    $ dhallLogic.dhall_dispose_no_talk()
     hide dhall_img
     jump graphics_menu
 
@@ -43,6 +40,7 @@ label dhall_s0: # externs morte_s103
     nr 'Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.'
 
     jump morte_s104  # EXTERN
+
 
 # s1 # say826
 label dhall_s1: # externs morte_s104
@@ -110,6 +108,7 @@ label dhall_s3: # from 9.0
     menu:
         '«Да. Он очень хорошо замаскировался».' if dhallLogic.r830_condition():
             # a9 # r830
+            $ dhallLogic.j39468_s3_r830_action()
             $ dhallLogic.r830_action()
             jump dhall_s4
 
@@ -162,7 +161,7 @@ label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
 
         'Оставить старого писаря в покое.':
             # a17 # r5060
-            jump dhall_dispose_no_talk
+            jump dhall_dispose
 
 
 # s6 # say841
@@ -260,7 +259,7 @@ label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.
 
         '«Ты знаешь, кто я?»':
             # a31 # r5069
-            $ dhallLogic.r5069_action()
+            $ dhallLogic.j39460_s9_r5069_action()
             jump dhall_s21
 
         '«Чем ты здесь занимаешься?»':
@@ -426,7 +425,7 @@ label dhall_s15: # from 9.2 10.4 32.5
     menu:
         '«Я приехал сюда на повозке?»':
             # a54 # r886
-            $ dhallLogic.r886_action()
+            $ dhallLogic.j39463_s15_r886_action()
             jump dhall_s16
 
         '«Расскажи мне побольше о Морге».':
@@ -505,7 +504,7 @@ label dhall_s17: # from 16.0
             # a67 # r6031
             jump dhall_s19
 
-        '«Тогда пойду и разыщу этого Фарода. Прощай, Дхолл».' if not dhallLogic.get_know_dhall_name():
+        '«Тогда пойду и разыщу этого Фарода. Прощай».' if not dhallLogic.get_know_dhall_name():
             # a67 # r6031
             jump dhall_s19
 
@@ -548,7 +547,7 @@ label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
     menu:
         '«Мне *нужно* найти его. Ты не знаешь, где он может быть?»':
             # a72 # r906
-            $ dhallLogic.r906_action()
+            $ dhallLogic.j39464_s19_r906_action()
             jump dhall_s20
 
         '«Расскажи мне побольше о Морге».':
@@ -601,7 +600,7 @@ label dhall_s21: # from 9.4
     menu:
         '«Меня кто-то сопровождал в пути? Они здесь?»':
             # a80 # r921
-            $ dhallLogic.r921_action()
+            $ dhallLogic.j39461_s21_r921_action()
             jump dhall_s2
 
         '«У меня есть другие вопросы…»':
@@ -714,7 +713,7 @@ label dhall_s25: # from 9.5 23.0
     menu:
         '«Ты сказал, что я был здесь много раз. Почему же тленные не узнают меня?»' if dhallLogic.r931_condition():
             # a94 # r931
-            $ dhallLogic.r931_action()
+            $ dhallLogic.j39462_s25_r931_action()
             jump dhall_s24
 
         '«Расскажи мне побольше о Морге».':
@@ -763,6 +762,7 @@ label dhall_s26: # from 9.6
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
             # a101 # r960
             jump dhall_s11
+
 
 # s27 # say938
 label dhall_s27: # from 26.1
@@ -995,7 +995,7 @@ label dhall_s34: # from 14.1 32.4
     menu:
         '«Всего лишь поверхностные раны? Что ты имеешь в виду?»':
             # a131 # r1301
-            $ dhallLogic.r1301_action()
+            $ dhallLogic.j39470_s34_r1301_action()
             jump dhall_s53
 
         '«Расскажи мне побольше о Морге».':
@@ -1049,9 +1049,9 @@ label dhall_s35: # from 16.1 17.1 20.0
 label dhall_s36: # from 35.0
     $ x = logic_get_know_dhall_name()
     $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
-    x '«Рыцарь легкой наживы —»'
+    x '«Рыцарь легкой наживы…»'
     nr '[y] кашляет.'
-    x '«— вор. Все, кого Фарод приносит к нашим стенам, лишены всего имущества, которым они обладали при жизни».'
+    x '«…вор. Все, кого Фарод приносит к нашим стенам, лишены всего имущества, которым они обладали при жизни».'
     x '«Фарод присваивает себе все, что ему удается вырвать из их окоченевших пальцев».'
 
     menu:
@@ -1288,12 +1288,12 @@ label dhall_s45: # from 44.0
     menu:
         '«Возможно, ты ответишь на некоторые из моих вопросов, Дхолл…»':
             # a171 # r5731
-            $ dhallLogic.r5731_action()
+            $ dhallLogic.j39459_s45_r5731_action()
             jump dhall_s9
 
         '«У меня нет времени на это. Прощай».':
             # a172 # r5732
-            $ dhallLogic.r5732_action()
+            $ dhallLogic.j39459_s45_r5732_action()
             jump dhall_s46
 
 
@@ -1511,51 +1511,3 @@ label dhall_s53: # from 34.0
         '«Прощай».' if not dhallLogic.get_know_dhall_name():
             # a201 # r5745
             jump dhall_s11
-
-
-label dhall_kill:
-    $ x = logic_get_know_dhall_name()
-    $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
-    nr '[y] мельком смотрит на тебя.'
-    x '«Итак. Ты вернулся…»'
-    nr '[y] начинает хрипло дышать, затем у него начинается удушливый кашель. Спустя минуту кашель прекращается, и он, хрипло дыша, продолжает.'
-    x '«…приветствую тебя снова, Неугомонный».'
-
-    menu:
-        '(Уйти.)':
-            jump dhall_dispose
-        '(Убить Дхолла).' if dhallLogic.get_know_dhall_name():
-            jump dhall_killed
-        '(Убить его).' if not dhallLogic.get_know_dhall_name():
-            jump dhall_killed
-
-
-label dhall_killed:
-    $ dhallLogic.kill_dhall()
-    $ y = 'Дхолл' if dhallLogic.get_know_dhall_name() else 'Он'
-    nr '[y] не успевает даже посмотреть на меня: он слишком стар и слишком слаб.'
-    nr 'И ему мешает кашель.'
-    nr 'Я скорее намечаю удары, нежели наношу их.'
-    nr 'Перо, которое он до этого держал в руке, падает в тень книги. Мне оно нужно больше, чем ему.'
-    jump dhall_dispose
-
-
-label dhall_kill_first:
-    nr 'Этот писарь выглядит очень старым… его кожа морщиниста и имеет желтый оттенок, как у старого пергамента.'
-    nr 'Темно-серые глаза глубоко посажены на его угловатом лице, длинная белая борода ниспадает на его одежды, подобно водопаду.'
-    nr 'Его дыхание неровно и прерывисто, но даже периодический кашель не может замедлить движение его пера.'
-
-    menu:
-        '(Уйти.)':
-            jump dhall_dispose
-        '(Убить писаря).':
-            jump dhall_killed_first
-
-
-label dhall_killed_first:
-    $ dhallLogic.kill_dhall()
-    nr 'Он не успевает даже посмотреть на меня: он слишком стар и слишком слаб.'
-    nr 'И ему мешает кашель.'
-    nr 'Я скорее намечаю удары, нежели наношу их.'
-    nr 'Перо, которое он до этого держал в руке, падает в тень книги. Мне оно нужно больше, чем ему.'
-    jump dhall_dispose

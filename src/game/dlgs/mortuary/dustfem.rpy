@@ -4,27 +4,40 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/DUSTFEM.DLG
+# Original:  DLG/DDUSTFEM.DLG
 # ###
 
-# dustfem_s22
-label start_dustfem_talk_first:
-    call dustfem_init
-    jump dustfem_s3
-label start_dustfem_talk:
-    call dustfem_init
-    jump dustfem_s0
-label start_dustfem_kill_first:
-    call dustfem_init
-    jump dustfem_kill_first
-label start_dustfem_kill:
-    call dustfem_init
-    jump dustfem_kill
-label dustfem_init:
-    $ dustfemLogic.dustfem_init()
+
+label dustfem_s0_ctor: # - # IF ~  Global("Appearance","GLOBAL",1)
     scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
-    return
+    jump dustfem_s0
+
+
+label dustfem_s22_ctor: # - # IF ~  Global("Appearance","GLOBAL",2)
+    scene bg mortuary_f3r3
+    show dustfem_img default at center_left_down
+    jump dustfem_s22
+
+
+label dustfem_s38_ctor: # -
+    scene bg mortuary_f3r3
+    show dustfem_img default at center_left_down
+    jump dustfem_s38
+
+
+label dustfem_s40_ctor: # -
+    scene bg mortuary_f3r3
+    show dustfem_img default at center_left_down
+    jump dustfem_s40
+
+
+label dustfem_s51_ctor: # - # IF ~  Global("Appearance","GLOBAL",0)
+    scene bg mortuary_f3r3
+    show dustfem_img default at center_left_down
+    jump dustfem_s51
+
+
 label dustfem_dispose:
     hide dustfem_img
     jump graphics_menu
@@ -904,7 +917,7 @@ label dustfem_s44: # from 5.0 7.0 8.0 19.4 47.0
 
 # s45 # say1219
 label dustfem_s45: # from 19.5
-    nr 'Ты наклоняешься, чтобы шепнуть ей что-то на ухо, тленная тоже наклоняется.'
+    nr 'Ты наклоняешься, чтобы „шепнуть“ ей что-то на ухо, тленная тоже наклоняется.'
     nr 'Как только она оказывается на расстоянии вытянутой руки, ты хватаешь ее за виски и резко сворачиваешь голову влево.'
 
     menu:
@@ -1031,45 +1044,3 @@ label dustfem_s52: # from 51.0
         '«Конечно. Прощай».':
             # a158 # r66690
             jump dustfem_dispose
-
-
-label dustfem_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dustfem_dispose
-        'Убить.':
-            jump dustfem_killed
-
-
-label dustfem_killed:
-    $ dustfemLogic.kill_dustfem()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dustfems.'
-    nr 'Who is dustfem?'
-    nr 'dustfem is dead, baby, dustfem is dead.'
-    jump dustfem_dispose
-
-
-label dustfem_kill_first:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump dustfem_dispose
-        'Убить.':
-            jump dustfem_killed_first
-
-
-label dustfem_killed_first:
-    $ dustfemLogic.kill_dustfem()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 'dustfems.'
-    nr 'Who is dustfem?'
-    nr 'dustfem is dead, baby, dustfem is dead.'
-    jump dustfem_dispose

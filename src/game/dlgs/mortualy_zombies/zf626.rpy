@@ -4,25 +4,25 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF626.DLG
+# Original:  DLG/DZF626.DLG
 # ###
 
 
-label start_zf626_talk:
-    call zf626_init
-    jump zf626_s0
-label start_zf626_kill:
-    call zf626_init
-    jump zf626_kill
-label zf626_init:
-    $ zf626Logic.zf626_init()
+label zf626_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r2
     show zf626_img default at center_left_down
-    return
+    jump zf626_s0
+
+
+label zf626_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f2r2
+    show zf626_img default at center_left_down
+    jump zf626_s3
+
+
 label zf626_dispose:
     hide zf626_img
     jump graphics_menu
-
 
 # s0 # say35050
 label zf626_s0: # - # IF ~  True()
@@ -112,23 +112,4 @@ label zf626_s2: # from 0.3
 label zf626_s3: # - # IF ~  False()
     nr 'Этот труп не шевелится. Кажется, он далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf626_dispose
-
-
-label zf626_kill:
-    nr 'Левая сторона лица этой женщины выглядит так, словно ее разбили дубиной; плоть, вся во вмятинах и синяках, едва держится на проломленном черепе.'
-    nr 'Номер «626» вышит на правой щеке, прямо под глазом.'
-    nr 'Ты думаешь о том, как разрезал бы её кожу.'
-
-    menu:
-        '(Уйти.)':
-            jump zf626_dispose
-        '(Убить зомби).':
-            jump zf626_killed
-
-
-label zf626_killed:
-    $ zf626Logic.kill_zf626()
-    nr 'Я делаю её лицо симметричным. Будь у неё глаза, она бы смотрела на меня.'
-    nr 'Смотрела бы глазами без жизни и без разума. Есть ли работа для слепых трупов?'
     jump zf626_dispose

@@ -3,28 +3,28 @@ class DustfemLogic:
         self.settings_manager = settings_manager
 
 
-    def dustfem_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r3')
-        self.settings_manager.inc_talked_to_dustfem_times()
-
-
-    def kill_dustfem(self):
-        self.settings_manager.set_dead_dustfem(True)
-
-
     def r1225_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
 
 
     def r1246_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
 
 
     def r1249_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
 
 
     def r33227_action(self):
@@ -49,29 +49,39 @@ class DustfemLogic:
 
     def r4307_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
 
 
     def r4308_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
 
 
     def r4309_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
 
 
     def r4317_action(self):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        #$% ?.play_sound('SPE_11') %$#
+        #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
         return
 
 
     def r4318_action(self):
         self.settings_manager.inc_choke()
         self.settings_manager.set_choke_memory(True)
-        # ?.play_sound('SPTR_01')
+        #$% ?.play_sound('SPTR_01') %$#
         self.settings_manager.inc_choke_dustman()
         self.settings_manager.gain_experience('party', 15)
 
@@ -79,23 +89,27 @@ class DustfemLogic:
     def r4319_action(self):
         self.settings_manager.inc_choke_dustman()
         self.settings_manager.inc_choke()
-        self.settings_manager.set_dead_dustfem(True) # TODO [snow]: how to kill npc without id? Add id?
-        # Deactivate(Myself)
+        self.settings_manager.set_dead_dustfem(True)
+        #$% Deactivate(Myself) %$#
         self.settings_manager.gain_experience('party', 15)
 
 
     def r4320_action(self):
-        self.settings_manager.set_dead_dustfem(True) # TODO [snow]: how to kill npc without id? Add id?
+        self.settings_manager.set_dead_dustfem(True)
         self.settings_manager.gain_experience('protagonist', 250)
 
 
     def r4321_action(self):
         self.settings_manager.set_mortualy_alarmed(True)
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
 
 
     def r4322_action(self):
-        # ?.play_sound('SPE_11') SetAnimState(Myself,ANIM_MIMEDIE)
+        #$% ?.play_sound('SPE_11') %$#
+        #$% SetAnimState(Myself,ANIM_MIMEDIE) %$#
         return
 
 

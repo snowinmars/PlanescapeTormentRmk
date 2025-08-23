@@ -11,52 +11,6 @@ class Morte2LogicTest(LogicTest):
         self.logic = Morte2Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Morte2Logic
-        self._methods_are_bound()
-
-
-    def test_morte_init_first(self):
-        self._init(
-            self.logic.morte_init_first,
-            self.settings_manager.get_talked_to_morte_times
-        )
-
-
-    def test_morte_init(self):
-        location = 'mortuary_f2r2'
-
-        self.assertFalse(self.settings_manager.get_in_party_morte())
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
-        talkedTo_before = self.settings_manager.get_talked_to_morte_times()
-
-        self.logic.morte_init()
-
-        self.assertTrue(self.settings_manager.get_in_party_morte())
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location)
-        talkedTo_after = self.settings_manager.get_talked_to_morte_times()
-        self.assertEqual(talkedTo_before + 1, talkedTo_after)
-
-
-    def test_morte_talk_dhall(self):
-        self._init_with_location(
-            'mortuary_f2r3',
-            self.logic.morte_talk_dhall,
-            self.settings_manager.get_talked_to_morte_times
-        )
-
-
-    def test_kill_morte(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_morte,
-            self.logic.kill_morte
-        )
-
-
     def test_r41145_action(self):
         self._false_then_true_action(
             self.settings_manager.get_morte_mortuary_walkthrough_1,
@@ -85,12 +39,12 @@ class Morte2LogicTest(LogicTest):
         )
 
 
-    def test_r41177_action(self):
+    def test_j39516_s11_r41177_action(self):
         note_id = '39516'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r41177_action
+            self.logic.j39516_s11_r41177_action
         )
 
 

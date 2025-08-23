@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF114.DLG
+# Original:  DLG/DZF114.DLG
 # ###
 
 
-label start_zf114_talk:
-    call zf114_init
-    jump zf114_s0
-label start_zf114_kill:
-    call zf114_init
-    jump zf114_kill
-label zf114_init:
-    $ zf114Logic.zf114_init()
+label zf114_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zf114_img default at center_left_down
-    return
+    jump zf114_s0
+
+
+label zf114_s3_ctor: # - # IF ~  False()
+    scene bg DISABLED
+    show zf114_img default at center_left_down
+    jump zf114_s3
+
+
 label zf114_dispose:
     hide zf114_img
     jump graphics_menu
@@ -109,25 +110,7 @@ label zf114_s2: # from 0.3
 
 
 # s3 # say35017
-label zf114_s3: # - # IF ~  False() # orphan
+label zf114_s3: # - # IF ~  False()
     nr 'Этот труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf114_dispose
-
-
-label zf114_kill:
-    nr 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер «114», вырезанный у нее на лбу.'
-    nr 'Ее рот зашит, однако нитки начинают рваться, и из ее губ слышится слабый стон.'
-
-    menu:
-        '(Уйти.)':
-            jump zf114_dispose
-        '(Убить зомби).':
-            jump zf114_killed
-
-
-label zf114_killed:
-    $ zf114Logic.kill_zf114()
-    nr 'Она смотрит на меня пустыми глазами.'
-    nr 'В них нет ни жизни, ни разума. Труп падает, нитки на губах рвутся. Я не чувствую сожалений.'
     jump zf114_dispose

@@ -1,30 +1,25 @@
-class DeionsLogic:
+class DeionarraLogic:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
 
-    def deions_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f1r2')
-        self.settings_manager.inc_talked_to_deionarra_times()
-
-
     def r701_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
     def r699_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
     def r9616_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
     def r705_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
@@ -64,21 +59,21 @@ class DeionsLogic:
 
     def r13255_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r803_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
     def r6085_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
     def r13256_action(self):
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
         return
 
 
@@ -108,21 +103,22 @@ class DeionsLogic:
 
     def r6081_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6082_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r13257_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
-    def r810_action(self):
+    def j26087_s29_r810_action(self):
         self.settings_manager.journal_manager.update_journal('26087')
+        #$% .register('26087', 'Я встретил призрак женщины по имени Дейонарра, и она предсказала мне, что я столкнусь с тремя врагами, но «ни один из них не был бы мне ровней в период полного расцвета моих сил». Они — тени зла, добра и нейтральности, которых породили и извратили законы планов. Она сказала, что я попаду в тюрьму, построенную из «сожалений и скорби», где «даже тени теряют рассудок». Там меня попросят принести ужасную жертву... чтобы обрести покой, я должен «уничтожить то, что удерживает меня в живых, и отринуть свое бессмертие».') %$#
 
 
     def r6129_action(self):
@@ -167,33 +163,35 @@ class DeionsLogic:
 
     def r6154_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6155_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r13258_action(self):
         self.settings_manager.set_deionarra_value(2)
-        # SetGlobal("Deio_Wake_Up","GLOBAL",0)
+        #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r63371_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1203cd11')
+        #$% StartCutSceneMode() %$#
+        #$% ?.start_cut_scene('1203cd11') %$#
         return
 
 
     def r64594_action(self):
-        # StartCutSceneMode() # ?.start_cut_scene('1203cd21')
+        #$% StartCutSceneMode() %$#
+        #$% ?.start_cut_scene('1203cd21') %$#
         return
 
 
     def r63373_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'law', 3, 'globallawful_deionarra_2')
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', 1, 'globalgood_deionarra_2')
-        # SetAnimState(Myself,ANIM_MIMESTAND)
+        #$% SetAnimState(Myself,ANIM_MIMESTAND) %$#
 
 
     def r63374_action(self):
@@ -231,24 +229,26 @@ class DeionsLogic:
 
     def r63388_action(self):
         self.settings_manager.set_1200_cut_scene_2(True)
-        # StartCutSceneMode()
+        #$% StartCutSceneMode() %$#
         self.settings_manager.set_cd_int_1(True)
-        # ?.start_cut_scene('1200cut1')
+        #$% ?.start_cut_scene('1200cut1') %$#
 
 
     def r63391_action(self):
         self.settings_manager.set_1200_cut_scene_2(True)
-        # StartCutSceneMode()
+        #$% StartCutSceneMode() %$#
         self.settings_manager.set_cd_int_1(True)
-        # ?.start_cut_scene('1200cut1')
+        #$% ?.start_cut_scene('1200cut1') %$#
 
 
-    def r63415_action(self):
+    def j68117_s68_r63415_action(self):
         self.settings_manager.journal_manager.update_journal('68117')
+        #$% .register('68117', 'Дейонарра предупредила меня, что за входом в Крепость расположен огромный вестибюль теней. Она сказала, что внутри комнаты есть множество огромных часов, добавив, что прежде с их помощью я смог выбраться из вестибюля. Надо будет найти их и осмотреть при случае.') %$#
 
 
-    def r63417_action(self):
+    def j68117_s69_r63417_action(self):
         self.settings_manager.journal_manager.update_journal('68117')
+        #$% .register('68117', 'Дейонарра предупредила меня, что за входом в Крепость расположен огромный вестибюль теней. Она сказала, что внутри комнаты есть множество огромных часов, добавив, что прежде с их помощью я смог выбраться из вестибюля. Надо будет найти их и осмотреть при случае.') %$#
 
 
     def r63419_action(self):
@@ -256,11 +256,17 @@ class DeionsLogic:
         self.settings_manager.set_has_sup_ring(True)
 
 
+    def j66917_s73_r66914_action(self):
+        self.settings_manager.journal_manager.update_journal('66917')
+        #$% .register('66917', 'Я не знаю, ужасаться мне или удивляться... когда я пообщался с Дейонаррой в Морге, она сказала, что через свои бесконечные перерождения я обрел некоторую власть над жизнью и смертью. Если я вижу тело, то могу разглядеть слабые следы жизни в нем и воскресить его. По какой-то причине это действует только на тех, кто путешествовал вместе со мной, и только в том случае, если они умерли в моем присутствии... но почему? Быть может, в пути между нами появляется какая-то связь?') %$#
+
+
     def r66914_action(self):
         self.settings_manager.gain_experience('party', 1000)
         self.settings_manager.set_deionarra_raise_dead(True)
         self.settings_manager.set_can_raise_dead(True)
-        self.settings_manager.journal_manager.update_journal('66917')
+        self.settings_manager.set_can_raise_dead(True)
+        self.settings_manager.set_can_raise_dead(True)
 
 
     def r701_condition(self):

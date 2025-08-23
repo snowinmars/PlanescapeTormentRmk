@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM257.DLG
+# Original:  DLG/DZM257.DLG
 # ###
 
 
-label start_zm257_talk:
-    call zm257_init
-    jump zm257_s0
-label start_zm257_kill:
-    call zm257_init
-    jump zm257_kill
-label zm257_init:
-    $ zm257Logic.zm257_init()
+label zm257_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r5
     show zm257_img default at center_left_down
-    return
+    jump zm257_s0
+
+
 label zm257_dispose:
     hide zm257_img
     jump graphics_menu
@@ -164,24 +159,4 @@ label zm257_s6: # from 3.2 4.2 5.2
 label zm257_s7: # from 6.0
     nr '…и он уходит, оставляя тебя в нерешительности и некоторой запутанности. Зомби молча возвращается к своей работе.'
 
-    jump zm257_dispose
-
-
-
-label zm257_kill:
-    nr 'Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.'
-    nr 'Ты с трудом различаешь номер «257» на разбитом лбу: похоже, труп несколько раз получил по голове, из-за чего номер различается с трудом.'
-    if zm257Logic.know_zm257_spirit_condition():
-        nr 'Когда ты вернул в него дух, он кричал.'
-
-    menu:
-        '(Уйти.)':
-            jump zm257_dispose
-        '(Убить зомби).':
-            jump zm257_killed
-
-label zm257_killed:
-    $ zm257Logic.kill_zm257()
-    nr 'Я бью между глаз. Пустые глаза вращаются в разные стороны, но так ни не могут посмотреть на меня.'
-    nr 'В них нет ни жизни, ни разума. Я бью его до тех пор, пока он не падает.'
     jump zm257_dispose

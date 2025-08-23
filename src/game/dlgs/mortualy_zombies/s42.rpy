@@ -4,21 +4,23 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S42.DLG
+# Original:  DLG/DS42.DLG
 # ###
 
 
-label start_s42_talk:
-    call s42_init
-    jump s42_s0
-label start_s42_kill:
-    call s42_init
-    jump s42_kill
-label s42_init:
-    $ s42Logic.s42_init()
+label s42_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r4
     show s42_img default at center_left_down
-    return
+    jump s42_s0
+
+
+label s42_s11_ctor: # -
+
+    scene bg mortuary_f3r4
+    show s42_img default at center_left_down
+    jump s42_s11
+
+
 label s42_dispose:
     hide s42_img
     jump graphics_menu
@@ -312,6 +314,7 @@ label s42_s13: # from 10.1
 
     jump morte_s112  # EXTERN
 
+
 # s14 # say58983
 label s42_s14: # from 8.0 11.0
     nr 'Как только ты берешь кусок железа в обе руки, чтобы осмотреть, слышится шипение.'
@@ -323,24 +326,3 @@ label s42_s14: # from 8.0 11.0
             # a46 # r58984
             $ s42Logic.r58984_action()
             jump s42_dispose
-
-
-label s42_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s42_dispose
-        'Убить.':
-            jump s42_killed
-
-
-label s42_killed:
-    $ s42Logic.kill_s42()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's42s.'
-    nr 'Who is s42?'
-    nr 's42 is dead, baby, s42 is dead.'
-    jump s42_dispose

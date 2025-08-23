@@ -3,10 +3,6 @@ class CopearcLogic:
         self.settings_manager = settings_manager
 
 
-    def copearc_init(self):
-        self.settings_manager.inc_talked_to_copper_earring_closed_times()
-
-
     def r46725_action(self):
         self.settings_manager.gain_experience('party', 250)
 

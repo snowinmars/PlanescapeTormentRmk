@@ -1,60 +1,81 @@
 init 10 python:
-    from game.dlgs.deions_logic import DeionsLogic
-    deionsLogic = DeionsLogic(renpy.store.global_settings_manager)
+    from game.dlgs.deionarra_logic import DeionarraLogic
+    deionarraLogic = DeionarraLogic(renpy.store.global_settings_manager)
 
 
 # ###
-# Original:  DLG/DEIONS.DLG
+# Original:  DLG/DDEIONS.DLG
 # ###
 
 
-# deions_s4
-# deions_s5
-# deions_s49
-# deions_s50
-# deions_s60
-# deions_s61
-label start_deions_talk_first:
-    call deions_init
-    jump deions_s1
-label start_deions_talk:
-    call deions_init
-    jump deions_s5
-label deions_init:
-    $ deionsLogic.deions_init()
+label deionarra_s1_ctor: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     scene bg mortuary_f1r2
-    show deions_img default at center_left_down
-    return
-label deions_dispose:
-    hide deions_img
+    show deionarra_img default at center_left_down
+    jump deionarra_s1
+
+
+label deionarra_s4_ctor: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
+    scene bg mortuary_f1r2
+    show deionarra_img default at center_left_down
+    jump deionarra_s4
+
+
+label deionarra_s5_ctor: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
+    scene bg mortuary_f1r2
+    show deionarra_img default at center_left_down
+    jump deionarra_s5
+
+
+label deionarra_s49_ctor: # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
+    show deionarra_img default at center_left_down
+    jump deionarra_s49
+
+
+label deionarra_s50_ctor: # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
+    show deionarra_img default at center_left_down
+    jump deionarra_s50
+
+
+label deionarra_s60_ctor: # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
+    show deionarra_img default at center_left_down
+    jump deionarra_s60
+
+
+label deionarra_s61_ctor: # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
+    show deionarra_img default at center_left_down
+    jump deionarra_s61
+
+
+label deionarra_dispose:
+    hide deionarra_img
     jump graphics_menu
 
 
 # s0 # say69459
-label deions_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
+label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
     deionarra '«Я буду ждать тебя в залах смерти, любовь моя».'
     nr 'Дейонарра улыбается, но в улыбке нет ничего, кроме печали.'
-    nr 'Закрыв глаза, она исчезает с беззвучным вздохом.'
+    nr 'Закрыв глаза, она исчезает с беззвучным вздохом.' # [DEN008B]
 
     menu:
-        'Уйти.' if deionsLogic.r701_condition():
+        'Уйти.' if deionarraLogic.r701_condition():
             # a0 # r701
-            $ deionsLogic.r701_action()
-            jump deions_dispose
+            $ deionarraLogic.r701_action()
+            jump deionarra_dispose
 
-        'Уйти.' if deionsLogic.r699_condition():
+        'Уйти.' if deionarraLogic.r699_condition():
             # a1 # r699
-            $ deionsLogic.r699_action()
+            $ deionarraLogic.r699_action()
             jump morte_s105  # EXTERN
 
-        'Уйти.' if deionsLogic.r9616_condition():
+        'Уйти.' if deionarraLogic.r9616_condition():
             # a2 # r9616
-            $ deionsLogic.r9616_action()
-            jump deions_dispose
+            $ deionarraLogic.r9616_action()
+            jump deionarra_dispose
 
 
 # s1 # say5
-label deions_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
+label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Ты видишь перед собой поразительно красивый призрачный силуэт девушки.'
     nr 'Ее руки скрещены, а глаза закрыты. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра.'
     nr 'Она слегка вздрагивает; ее глаза мерцают.'
@@ -62,155 +83,155 @@ label deions_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("C
     menu:
         '«Приветствую…»':
             # a3 # r703
-            jump deions_s2
+            jump deionarra_s2
 
         'Подождать.':
             # a4 # r704
-            jump deions_s2
+            jump deionarra_s2
 
         'Уйти до того, как дух обратит на тебя внимание.':
             # a5 # r705
-            $ deionsLogic.r705_action()
-            jump deions_dispose
+            $ deionarraLogic.r705_action()
+            jump deionarra_dispose
 
 
 # s2 # say706
-label deions_s2: # from 1.0 1.1
+label deionarra_s2: # from 1.0 1.1
     nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится.'
     nr 'Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.'
     deionarra_unknown '«Ты!»'
     deionarra_unknown '«Что привело сюда *тебя*?!»'
     deionarra_unknown '«Захотел лично полюбоваться на причиненные тобой страдания?»'
     deionarra_unknown '«Или, быть может, даже после моей смерти ты надеешься получить от меня пользу?..»'
-    nr 'Её голос превращается в шипение.'
-    deionarra_unknown '«Любовь моя».'
+    nr 'Ее голос превращается в шипение.'
+    deionarra '«„Любовь моя“».' # [DEN001]
 
     menu:
         '«Кто ты?»':
             # a6 # r707
-            $ deionsLogic.r707_action()
-            jump deions_s3
+            $ deionarraLogic.r707_action()
+            jump deionarra_s3
 
-        '«Любовь моя? Я знаю тебя?»' if deionsLogic.r708_condition():
+        '«Любовь моя? Я знаю тебя?»' if deionarraLogic.r708_condition():
             # a7 # r708
-            $ deionsLogic.r708_action()
-            jump deions_s3
+            $ deionarraLogic.r708_action()
+            jump deionarra_s3
 
-        '«Любовь моя? Я знаю тебя?»' if deionsLogic.r709_condition():
+        '«Любовь моя? Я знаю тебя?»' if deionarraLogic.r709_condition():
             # a8 # r709
-            $ deionsLogic.r709_action()
-            jump deions_s3
+            $ deionarraLogic.r709_action()
+            jump deionarra_s3
 
 
 # s3 # say710
-label deions_s3: # from 2.0 2.1 2.2 10.0
+label deionarra_s3: # from 2.0 2.1 2.2 10.0
     nr 'Дух складывает руки в мольбе.'
     deionarra_unknown '«Ну почему же воры разума продолжают красть мое имя из твоей памяти? Неужели ты *не помнишь* меня, любовь моя?»'
     nr 'Дух протягивает руки.'
     deionarra_unknown '«Подумай…»'
-    nr 'Её голос снова наполняется отчаянием.'
+    nr 'Ее голос снова наполняется отчаянием.'
     deionarra '«Имя *Дейонарра* должно пробудить в тебе хоть немного воспоминаний».'
 
     menu:
         '«Прости. Моя память покинула меня».':
             # a9 # r711
-            jump deions_s6
+            jump deionarra_s6
 
         'Ложь: «Да… это имя мне *кажется* знакомым».':
             # a10 # r712
-            $ deionsLogic.r712_action()
-            jump deions_s7
+            $ deionarraLogic.r712_action()
+            jump deionarra_s7
 
-        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionsLogic.r713_condition():
+        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionarraLogic.r713_condition():
             # a11 # r713
-            jump deions_s9
+            jump deionarra_s9
 
-        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionsLogic.r714_condition():
+        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionarraLogic.r714_condition():
             # a12 # r714
-            jump deions_s9
+            jump deionarra_s9
 
-        '«Ничего не происходит. Прощай… Дейонарра».' if deionsLogic.r1308_condition():
+        '«Ничего не происходит. Прощай… Дейонарра».' if deionarraLogic.r1308_condition():
             # a13 # r1308
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Ничего не происходит. Прощай… Дейонарра».' if deionsLogic.r6080_condition():
+        '«Ничего не происходит. Прощай… Дейонарра».' if deionarraLogic.r6080_condition():
             # a14 # r6080
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s4 # say715
-label deions_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
+label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.'
     nr 'При твоем появлении отчаяние на ее лице сменяется яростью.'
-    deionarra '«Ты снова пришел! Почему ты продолжаешь мучить меня?»'
+    deionarra '«Ты снова пришел! Почему ты продолжаешь мучить меня?»' # [DEN002]
 
     menu:
         '«Мне нужно многое узнать. У меня есть вопросы к тебе…»':
             # a15 # r765
-            jump deions_s33
+            jump deionarra_s33
 
         '«Я больше не хочу мучить тебя. Прощай».':
             # a16 # r1307
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s5 # say716
-label deions_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
+label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.'
     nr 'При твоем появлении отчаяние на ее лице сменяется надеждой.'
-    deionarra '«Любовь моя… ты снова вернулся ко мне! Ты вспомнил меня?»'
+    deionarra '«Любовь моя… ты снова вернулся ко мне! Ты вспомнил меня?»' # [DEN003A]
 
     menu:
         '«У меня есть вопросы к тебе…»':
             # a17 # r766
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Пока нет. Прощай, Дейонарра».' if deionsLogic.r767_condition():
+        '«Пока нет. Прощай, Дейонарра».' if deionarraLogic.r767_condition():
             # a18 # r767
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Пока нет. Прощай, Дейонарра».' if deionsLogic.r1309_condition():
+        '«Пока нет. Прощай, Дейонарра».' if deionarraLogic.r1309_condition():
             # a19 # r1309
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s6 # say717
-label deions_s6: # from 3.0
+label deionarra_s6: # from 3.0
     deionarra '«Этого я и боялась. Я действительно потеряла тебя…»'
     deionarra '«…и то, что раньше приносило тебе неудобства, теперь стало оправданием для того, чтобы отказаться от меня так же, как ты отринул воспоминания обо мне!»'
 
     menu:
         '«Неудобства? Отказаться от тебя? Я не знаю тебя, дух… я ничего не помню. Скажи мне… кто ты? Что ты знаешь обо мне?»':
             # a20 # r720
-            jump deions_s11
+            jump deionarra_s11
 
-        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionsLogic.r718_condition():
+        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionarraLogic.r718_condition():
             # a21 # r718
-            jump deions_s9
+            jump deionarra_s9
 
-        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionsLogic.r719_condition():
+        '«*Кажется*, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionarraLogic.r719_condition():
             # a22 # r719
-            jump deions_s9
+            jump deionarra_s9
 
-        '«Если я отказывался от тебя раньше, то, похоже, что мне снова придется это сделать. Прощай, дух».' if deionsLogic.r721_condition():
+        '«Если я отказывался от тебя раньше, то, похоже, что мне снова придется это сделать. Прощай, дух».' if deionarraLogic.r721_condition():
             # a23 # r721
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти, Дейонарра. Прощай».' if deionsLogic.r1310_condition():
+        '«Я должен идти, Дейонарра. Прощай».' if deionarraLogic.r1310_condition():
             # a24 # r1310
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Если я отказывался от тебя раньше, то, похоже, что мне снова придется это сделать. Прощай, дух».' if deionsLogic.r1311_condition():
+        '«Если я отказывался от тебя раньше, то, похоже, что мне снова придется это сделать. Прощай, дух».' if deionarraLogic.r1311_condition():
             # a25 # r1311
-            jump deions_s26
+            jump deionarra_s26
 
-        '«Я должен идти, Дейонарра. Прощай».' if deionsLogic.r764_condition():
+        '«Я должен идти, Дейонарра. Прощай».' if deionarraLogic.r764_condition():
             # a26 # r764
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s7 # say722
-label deions_s7: # from 3.1
+label deionarra_s7: # from 3.1
     deionarra '«Да…»'
     nr 'Она выглядит обнадеженной.'
     deionarra '«Что пробудило мое имя в твоей памяти?»'
@@ -218,33 +239,33 @@ label deions_s7: # from 3.1
     menu:
         '«Ничего. Я солгал».':
             # a27 # r700
-            $ deionsLogic.r700_action()
-            jump deions_s8
+            $ deionarraLogic.r700_action()
+            jump deionarra_s8
 
         'Ложь: «Твое имя пробуждает во мне необузданные мысли, но их смысл мне неясен. Если только ты не расскажешь мне больше…»':
             # a28 # r702
-            $ deionsLogic.r702_action()
-            jump deions_s9
+            $ deionarraLogic.r702_action()
+            jump deionarra_s9
 
-        '«Я не уверен… но, кажется, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionsLogic.r723_condition():
+        '«Я не уверен… но, кажется, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionarraLogic.r723_condition():
             # a29 # r723
-            jump deions_s9
+            jump deionarra_s9
 
-        '«Я не уверен… но, кажется, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionsLogic.r724_condition():
+        '«Я не уверен… но, кажется, я чувствую касание памяти. Поговори со мной еще. Быть может, твои слова воскресят тени моей памяти, Дейонарра».' if deionarraLogic.r724_condition():
             # a30 # r724
-            jump deions_s9
+            jump deionarra_s9
 
-        '«Я должен идти, Дейонарра. Прощай».' if deionsLogic.r1312_condition():
+        '«Я должен идти, Дейонарра. Прощай».' if deionarraLogic.r1312_condition():
             # a31 # r1312
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти, Дейонарра. Прощай».' if deionsLogic.r6084_condition():
+        '«Я должен идти, Дейонарра. Прощай».' if deionarraLogic.r6084_condition():
             # a32 # r6084
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s8 # say725
-label deions_s8: # from 7.0 47.2
+label deionarra_s8: # from 7.0 47.2
     nr 'Лицо Дейонарры превращается яростную маску.'
     deionarra '«Ты прокаженный пес! Предатель моего сердца!»'
     deionarra '«Я бы прокляла тебя, но ты и без моих проклятий обречен на вечные страдания в своих воскрешениях!»'
@@ -252,24 +273,24 @@ label deions_s8: # from 7.0 47.2
     nr 'Она скрещивает свои руки и закрывает глаза.'
 
     menu:
-        '«Хорошо…»' if deionsLogic.r747_condition():
+        '«Хорошо…»' if deionarraLogic.r747_condition():
             # a33 # r747
-            $ deionsLogic.r747_action()
-            jump deions_dispose
+            $ deionarraLogic.r747_action()
+            jump deionarra_dispose
 
-        '«Хорошо…»' if deionsLogic.r1313_condition():
+        '«Хорошо…»' if deionarraLogic.r1313_condition():
             # a34 # r1313
-            $ deionsLogic.r1313_action()
+            $ deionarraLogic.r1313_action()
             jump morte_s105  # EXTERN
 
-        'Уйти.' if deionsLogic.r13255_condition():
+        'Уйти.' if deionarraLogic.r13255_condition():
             # a35 # r13255
-            $ deionsLogic.r13255_action()
-            jump deions_dispose
+            $ deionarraLogic.r13255_action()
+            jump deionarra_dispose
 
 
 # s9 # say726
-label deions_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
+label deionarra_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
     deionarra '«Ах, наконец-то судьба проявила милосердие!»'
     deionarra '«Даже смерть не может изгнать меня из твоего разума, любовь моя!»'
     deionarra '«Разве ты не понимаешь? Твои воспоминания возвращаются!»'
@@ -278,118 +299,118 @@ label deions_s9: # from 3.2 3.3 6.1 6.2 7.1 7.2 7.3
     menu:
         '«Ты знаешь, кто я?»':
             # a36 # r729
-            jump deions_s11
+            jump deionarra_s11
 
         '«Можешь сказать мне, где я нахожусь?»':
             # a37 # r730
-            jump deions_s12
+            jump deionarra_s12
 
-        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionsLogic.r731_condition():
+        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionarraLogic.r731_condition():
             # a38 # r731
-            jump deions_s43
+            jump deionarra_s43
 
-        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionsLogic.r732_condition():
+        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionarraLogic.r732_condition():
             # a39 # r732
-            jump deions_s44
+            jump deionarra_s44
 
-        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionsLogic.r1314_condition():
+        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionarraLogic.r1314_condition():
             # a40 # r1314
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionsLogic.r6127_condition():
+        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionarraLogic.r6127_condition():
             # a41 # r6127
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s10 # say733
-label deions_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
+label deionarra_s10: # from 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
     deionarra '«Что ты желаешь знать?»'
 
     menu:
         '«Кто ты?»':
             # a42 # r734
-            jump deions_s3
+            jump deionarra_s3
 
         '«Ты можешь сказать, кто я?»':
             # a43 # r735
-            jump deions_s11
+            jump deionarra_s11
 
         '«Можешь сказать мне, где я нахожусь?»':
             # a44 # r736
-            jump deions_s12
+            jump deionarra_s12
 
-        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionsLogic.r737_condition():
+        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionarraLogic.r737_condition():
             # a45 # r737
-            jump deions_s43
+            jump deionarra_s43
 
-        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionsLogic.r738_condition():
+        '«Мне нужно выбраться из этого места. Ты поможешь мне?»' if deionarraLogic.r738_condition():
             # a46 # r738
-            jump deions_s44
+            jump deionarra_s44
 
-        '«Что это было за видение, о котором ты говорила?»' if deionsLogic.r768_condition():
+        '«Что это было за видение, о котором ты говорила?»' if deionarraLogic.r768_condition():
             # a47 # r768
-            jump deions_s22
+            jump deionarra_s22
 
-        '«Можешь ли ты снять проклятие, которое ты наложила на меня?»' if deionsLogic.r1315_condition():
+        '«Можешь ли ты снять проклятие, которое ты наложила на меня?»' if deionarraLogic.r1315_condition():
             # a48 # r1315
-            jump deions_s41
+            jump deionarra_s41
 
-        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionsLogic.r6107_condition():
+        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionarraLogic.r6107_condition():
             # a49 # r6107
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionsLogic.r6128_condition():
+        '«Пока ничем, Дейонарра, но я обязательно вернусь. Прощай».' if deionarraLogic.r6128_condition():
             # a50 # r6128
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s11 # say739
-label deions_s11: # from 6.0 9.0 10.1
+label deionarra_s11: # from 6.0 9.0 10.1
     deionarra '«Ты тот, кто одновременно благословен и проклят, любовь моя. И тот, кто всегда пребывает в моих мыслях и в моем сердце».'
 
     menu:
         '«Благословен и проклят? Что ты имеешь в виду?»':
             # a51 # r740
-            jump deions_s13
+            jump deionarra_s13
 
         '«У меня есть другие вопросы к тебе…»':
             # a52 # r741
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r742_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r742_condition():
             # a53 # r742
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r1316_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r1316_condition():
             # a54 # r1316
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s12 # say743
-label deions_s12: # from 9.1 10.2
+label deionarra_s12: # from 9.1 10.2
     deionarra '«Где ты находишься? Ты здесь, рядом со мной, любовь моя…»'
     deionarra '«…как в те времена, когда мы оба были живы. Теперь меж нами пролегла Граница Вечности».'
 
     menu:
         '«Граница Вечности?»':
             # a55 # r744
-            jump deions_s14
+            jump deionarra_s14
 
         '«У меня есть другие вопросы к тебе…»':
             # a56 # r745
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r746_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r746_condition():
             # a57 # r746
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r792_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r792_condition():
             # a58 # r792
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s13 # say748
-label deions_s13: # from 11.0
+label deionarra_s13: # from 11.0
     deionarra '«Природа твоего проклятия должна быть очевидной для тебя, любовь моя. Взгляни на себя».'
     nr 'Она указывает на тебя пальцем.'
     deionarra '«Смерть не принимает тебя. Твои воспоминания покинули тебя. Как ты думаешь, почему?»'
@@ -397,46 +418,46 @@ label deions_s13: # from 11.0
     menu:
         '«На самом деле я все еще пытаюсь во всем разобраться. Что ты еще можешь рассказать обо мне?»':
             # a59 # r749
-            jump deions_s27
+            jump deionarra_s27
 
         '«У меня есть другие вопросы…»':
             # a60 # r750
-            jump deions_s10
+            jump deionarra_s10
 
         '«Потерянные воспоминания… смерть, не принимающая меня… но почему это проклятие?»':
             # a61 # r751
-            jump deions_s25
+            jump deionarra_s25
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r790_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r790_condition():
             # a62 # r790
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r1318_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r1318_condition():
             # a63 # r1318
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s14 # say752
-label deions_s14: # from 12.0
+label deionarra_s14: # from 12.0
     nr 'Голос Дейонарры полон печалью.'
     deionarra '«Это преграда, которую, боюсь, ты никогда не пересечешь, любовь моя. Она ограждает твою жизнь от того, что осталось от моей…»'
 
     menu:
         '«Я… понимаю. Может быть, ты сможешь ответить на несколько вопросов…»':
             # a64 # r753
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r755_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r755_condition():
             # a65 # r755
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r1319_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r1319_condition():
             # a66 # r1319
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s15 # say756
-label deions_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
+label deionarra_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
     deionarra '«Постой…»'
     deionarra '«Я многое узнала во время наших путешествий, любовь моя. И то, что ты потерял, я сберегла».'
     deionarra '«Я еще не сказала всего, что знаю о тебе. Мой взор чист… в то время как ты мечешься в темноте в поисках искры разума».'
@@ -444,23 +465,23 @@ label deions_s15: # from 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 2
     menu:
         '«Что бы ты там ни знала, может подождать. Прощай».':
             # a67 # r757
-            jump deions_s26
+            jump deionarra_s26
 
         '«И что ты можешь рассказать мне такого, что могло бы мне пригодиться?»':
             # a68 # r758
-            jump deions_s17
+            jump deionarra_s17
 
         '«И что же ты видишь, чего я не могу разглядеть?»':
             # a69 # r759
-            jump deions_s17
+            jump deionarra_s17
 
         '«Я должен идти. Прощай, Дейонарра».':
             # a70 # r761
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s16 # say762
-label deions_s16: # from 20.0 21.0
+label deionarra_s16: # from 20.0 21.0
     nr 'Дейонарра выглядит ошеломленной, затем ее тон меняется, голос почти умоляет.'
     deionarra '«Я… не хотела брать с тебя клятву, любовь моя».'
     deionarra '«Просто я так долго ждала, когда ты присоединишься ко мне за пределами…»'
@@ -468,11 +489,11 @@ label deions_s16: # from 20.0 21.0
     menu:
         '«Если тебе не нужна клятва от меня, Дейонарра, то и не надо ее требовать. А теперь расскажи о своем видении, без всех этих клятв и обещаний».':
             # a71 # r763
-            jump deions_s40
+            jump deionarra_s40
 
 
 # s17 # say769
-label deions_s17: # from 15.1 15.2
+label deionarra_s17: # from 15.1 15.2
     deionarra '«Время ослабляет свою хватку, а холод забвения медленно поглощает нас, любовь моя».'
     deionarra '«Еще не все видения приобрели четкие очертания. Я вижу тебя, любовь моя. Я вижу тебя таким, какой ты сейчас, и…»'
     nr 'Дейонарра умолкает.'
@@ -480,157 +501,157 @@ label deions_s17: # from 15.1 15.2
     menu:
         '«Почему ты замолчала? Твоя речь утомила тебя?»':
             # a72 # r770
-            jump deions_s18
+            jump deionarra_s18
 
         '«Что? Что ты видишь?»':
             # a73 # r771
-            jump deions_s18
+            jump deionarra_s18
 
         '«Мне неинтересны видения будущего. Прощай».':
             # a74 # r772
-            jump deions_s19
+            jump deionarra_s19
 
 
 # s18 # say773
-label deions_s18: # from 17.0 17.1
+label deionarra_s18: # from 17.0 17.1
     deionarra '«Я вижу путь, лежащий перед тобой. Он берет свое начало отсюда и проходит сквозь планы».'
     deionarra '«Должна ли я говорить о том, что я вижу?»'
 
     menu:
         '«Говори».':
             # a75 # r774
-            jump deions_s20
+            jump deionarra_s20
 
         '«Я не хочу знать. Будущее само себя раскроет… со временем».':
             # a76 # r775
-            jump deions_s19
+            jump deionarra_s19
 
 
 # s19 # say776
-label deions_s19: # from 17.2 18.1
+label deionarra_s19: # from 17.2 18.1
     deionarra '«Ты всегда был таким, любовь моя. Ты уже отверг призыв смерти. Что ты отвергнешь в следующий раз? Быть может, само время?»'
     nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.'
 
     menu:
-        'Уйти.' if deionsLogic.r803_condition():
+        'Уйти.' if deionarraLogic.r803_condition():
             # a77 # r803
-            $ deionsLogic.r803_action()
-            jump deions_dispose
+            $ deionarraLogic.r803_action()
+            jump deionarra_dispose
 
-        'Уйти.' if deionsLogic.r6085_condition():
+        'Уйти.' if deionarraLogic.r6085_condition():
             # a78 # r6085
-            $ deionsLogic.r6085_action()
+            $ deionarraLogic.r6085_action()
             jump morte_s105  # EXTERN
 
-        'Уйти.' if deionsLogic.r13256_condition():
+        'Уйти.' if deionarraLogic.r13256_condition():
             # a79 # r13256
-            $ deionsLogic.r13256_action()
-            jump deions_dispose
+            $ deionarraLogic.r13256_action()
+            jump deionarra_dispose
 
 
 # s20 # say777
-label deions_s20: # from 18.0
+label deionarra_s20: # from 18.0
     deionarra '«Сначала мне нужно обещание».'
     deionarra '«Обещание, что ты вернешься».'
     deionarra '«Что ты найдешь способ спасти меня или присоединиться ко мне».'
 
     menu:
-        '«Трудно поверить, что женщина, которую я когда-то любил, будет вымогать у меня обещания, суля предсказаниями. Ты не веришь мне, Дейонарра?»' if deionsLogic.r778_condition():
+        '«Трудно поверить, что женщина, которую я когда-то любил, будет вымогать у меня обещания, суля предсказаниями. Ты не веришь мне, Дейонарра?»' if deionarraLogic.r778_condition():
             # a80 # r778
-            jump deions_s16
+            jump deionarra_s16
 
         '«Цена такого обещания слишком высока».':
             # a81 # r779
-            jump deions_s21
+            jump deionarra_s21
 
         'Ложь: «Обещаю, я найду способ спасти тебя или присоединиться к тебе».':
             # a82 # r780
-            $ deionsLogic.r780_action()
-            jump deions_s22
+            $ deionarraLogic.r780_action()
+            jump deionarra_s22
 
         '«Я не буду давать никаких обещаний, призрак! Не дразни меня больше… говори или исчезни!»':
             # a83 # r781
-            jump deions_s26
+            jump deionarra_s26
 
         '«Я… я сделаю все, что в моих силах».':
             # a84 # r782
-            jump deions_s40
+            jump deionarra_s40
 
         'Клятва: «Обещаю: я найду способ спасти тебя или присоединиться к тебе».':
             # a85 # r6093
-            $ deionsLogic.r6093_action()
-            jump deions_s22
+            $ deionarraLogic.r6093_action()
+            jump deionarra_s22
 
 
 # s21 # say783
-label deions_s21: # from 20.1
+label deionarra_s21: # from 20.1
     nr 'Дейонарра скрещивает руки на груди.'
     deionarra '«Да, это так, любовь моя. А цена бессмертия, по всей видимости, была не так уж высока? Или честность — это слишком для тебя?»'
 
     menu:
         '«Трудно поверить, что женщина, которую я когда-то любил, будет вымогать у меня обещания, суля предсказаниями. Ты не веришь мне, Дейонарра?»':
             # a86 # r804
-            jump deions_s16
+            jump deionarra_s16
 
         'Ложь: «Обещаю, я найду способ спасти тебя или присоединиться к тебе».':
             # a87 # r805
-            $ deionsLogic.r805_action()
-            jump deions_s22
+            $ deionarraLogic.r805_action()
+            jump deionarra_s22
 
         '«Я не буду давать никаких обещаний, призрак! Не дразни меня больше… говори или исчезни!»':
             # a88 # r806
-            jump deions_s26
+            jump deionarra_s26
 
         '«Я… я сделаю все, что в моих силах».':
             # a89 # r807
-            jump deions_s40
+            jump deionarra_s40
 
         'Клятва: «Обещаю: я найду способ спасти тебя или присоединиться к тебе».':
             # a90 # r808
-            $ deionsLogic.r808_action()
-            jump deions_s22
+            $ deionarraLogic.r808_action()
+            jump deionarra_s22
 
         '«Ну и пусть. Прощай, Дейонарра».':
             # a91 # r6094
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s22 # say784
-label deions_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
-    deionarra '«Любовь моя, вот что видят мои глаза, освобожденные от оков времени…»'
+label deionarra_s22: # from 10.5 20.2 20.5 21.1 21.4 40.0
+    deionarra '«Любовь моя, вот что видят мои глаза, освобожденные от оков времени…»' # [DEN020]
 
     menu:
         'Подождать, пока она не продолжит.':
             # a92 # r786
-            $ deionsLogic.r786_action()
-            jump deions_s23
+            $ deionarraLogic.r786_action()
+            jump deionarra_s23
 
 
 # s23 # say785
-label deions_s23: # from 22.0
+label deionarra_s23: # from 22.0
     deionarra '«Ты встретишь трех врагов, но ни один из них не был бы тебе ровней в период полного расцвета твоих сил».'
-    deionarra '«Они — тени зла, добра и нейтральности, которых породили и извратили законы планов».'
+    deionarra '«Они — тени зла, добра и нейтральности, которых породили и извратили законы планов».' # [DEN021]
 
     menu:
         'Подождать, пока она не продолжит.':
             # a93 # r787
-            jump deions_s24
+            jump deionarra_s24
 
 
 # s24 # say788
-label deions_s24: # from 23.0
+label deionarra_s24: # from 23.0
     deionarra '«Ты попадешь в тюрьму, построенную из сожалений и скорби, где даже тени теряют рассудок».'
     deionarra '«Там тебя попросят принести ужасную жертву, любовь моя».'
-    deionarra '«Чтобы обрести покой, ты должен будешь уничтожить то, что удерживает тебя в живых, и отринуть свое бессмертие».'
+    deionarra '«Чтобы обрести покой, ты должен будешь уничтожить то, что удерживает тебя в живых, и отринуть свое бессмертие».' # [DEN022]
 
     menu:
         '«Уничтожить то, что удерживает меня в живых?»':
             # a94 # r789
-            jump deions_s29
+            jump deionarra_s29
 
 
 # s25 # say791
-label deions_s25: # from 13.2 29.0
+label deionarra_s25: # from 13.2 29.0
     deionarra '«Я не сомневаюсь в твоей способности восставать из мертвых. Но я уверена, что с каждым перерождением твои мысли и память слабеют».'
     deionarra '«Ты утверждаешь, что потерял память. Быть может, это следствие бесчисленных смертей? Если это так, то что ты потеряешь в следующих смертях?»'
     deionarra '«Если ты потеряешь свой рассудок, то даже не сможешь осознать собственное бессмертие. И тогда ты будешь по-настоящему обречен».'
@@ -638,23 +659,23 @@ label deions_s25: # from 13.2 29.0
     menu:
         '«Бесчисленных смертей? Как долго это продолжается?»':
             # a95 # r812
-            jump deions_s30
+            jump deionarra_s30
 
         '«У меня есть другие вопросы…»':
             # a96 # r811
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Прощай, Дейонарра».' if deionsLogic.r813_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r813_condition():
             # a97 # r813
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Прощай, Дейонарра».' if deionsLogic.r1320_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r1320_condition():
             # a98 # r1320
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s26 # say793
-label deions_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
+label deionarra_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
     nr 'Дейонарра выглядит разъяренной.'
     deionarra '«Тогда уходи, как уходил уже триста раз!»'
     deionarra '«Зачем ты приходишь сюда? Чтобы помучить меня?!»'
@@ -662,51 +683,51 @@ label deions_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
     nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.'
 
     menu:
-        'Уйти.' if deionsLogic.r6081_condition():
+        'Уйти.' if deionarraLogic.r6081_condition():
             # a99 # r6081
-            $ deionsLogic.r6081_action()
-            jump deions_dispose
+            $ deionarraLogic.r6081_action()
+            jump deionarra_dispose
 
-        'Уйти.' if deionsLogic.r6082_condition():
+        'Уйти.' if deionarraLogic.r6082_condition():
             # a100 # r6082
-            $ deionsLogic.r6082_action()
+            $ deionarraLogic.r6082_action()
             jump morte_s105  # EXTERN
 
-        'Уйти.' if deionsLogic.r13257_condition():
+        'Уйти.' if deionarraLogic.r13257_condition():
             # a101 # r13257
-            $ deionsLogic.r13257_action()
-            jump deions_dispose
+            $ deionarraLogic.r13257_action()
+            jump deionarra_dispose
 
 
 # s27 # say795
-label deions_s27: # from 13.0
+label deionarra_s27: # from 13.0
     deionarra '«Я знаю, что когда-то ты говорил, что любишь меня и что будешь любить до тех пор, пока смерть не заберет нас обоих».'
     deionarra '«Я верила тебе, не зная всей правды о том, кто ты и что ты на самом деле».'
 
     menu:
-        '«И кто же я такой?»' if deionsLogic.r797_condition():
+        '«И кто же я такой?»' if deionarraLogic.r797_condition():
             # a102 # r797
-            jump deions_s28
+            jump deionarra_s28
 
-        '«И кто же я такой?»' if deionsLogic.r66911_condition():
+        '«И кто же я такой?»' if deionarraLogic.r66911_condition():
             # a103 # r66911
-            jump deions_s72
+            jump deionarra_s72
 
         '«У меня есть другие вопросы…»':
             # a104 # r796
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Прощай, Дейонарра».' if deionsLogic.r798_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r798_condition():
             # a105 # r798
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Прощай, Дейонарра».' if deionsLogic.r1321_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r1321_condition():
             # a106 # r1321
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s28 # say799
-label deions_s28: # from 27.0
+label deionarra_s28: # from 27.0
     deionarra '«Мы уже говорили о твоей природе».'
     nr 'Взгляд Дейонарры холодеет.'
     deionarra '«И этот разговор больше не повторится».'
@@ -714,79 +735,79 @@ label deions_s28: # from 27.0
     menu:
         '«Хорошо… У меня есть другие вопросы…»':
             # a107 # r800
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Ты заявляла, что знаешь меня, хотя на самом деле знаешь обо мне очень мало. Прощай, Дейонарра».' if deionsLogic.r801_condition():
+        '«Ты заявляла, что знаешь меня, хотя на самом деле знаешь обо мне очень мало. Прощай, Дейонарра».' if deionarraLogic.r801_condition():
             # a108 # r801
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Ты заявляла, что знаешь меня, хотя на самом деле знаешь обо мне очень мало. Прощай, Дейонарра».' if deionsLogic.r802_condition():
+        '«Ты заявляла, что знаешь меня, хотя на самом деле знаешь обо мне очень мало. Прощай, Дейонарра».' if deionarraLogic.r802_condition():
             # a109 # r802
-            jump deions_s26
+            jump deionarra_s26
 
-        '«Тогда прощай, Дейонарра».' if deionsLogic.r1322_condition():
+        '«Тогда прощай, Дейонарра».' if deionarraLogic.r1322_condition():
             # a110 # r1322
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Тогда прощай, Дейонарра».' if deionsLogic.r1323_condition():
+        '«Тогда прощай, Дейонарра».' if deionarraLogic.r1323_condition():
             # a111 # r1323
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s29 # say809
-label deions_s29: # from 24.0
+label deionarra_s29: # from 24.0
     deionarra '«Я знаю, что ты должен умереть… пока еще можешь. Круг *должен* замкнуться, любовь моя».'
-    deionarra '«Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».'
+    deionarra '«Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».' # [DEN023]
 
     menu:
         '«Пока я еще могу?»':
             # a112 # r810
-            $ deionsLogic.r810_action()
-            jump deions_s25
+            $ deionarraLogic.j26087_s29_r810_action()
+            jump deionarra_s25
 
 
 # s30 # say814
-label deions_s30: # from 25.0
+label deionarra_s30: # from 25.0
     deionarra '«Я не знаю точно. Мне известно лишь, что это продолжается достаточно долго».'
 
     menu:
         '«У меня есть другие вопросы…»':
             # a113 # r815
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Прощай, Дейонарра».' if deionsLogic.r816_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r816_condition():
             # a114 # r816
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Прощай, Дейонарра».' if deionsLogic.r1324_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r1324_condition():
             # a115 # r1324
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s31 # say817
-label deions_s31: # from 45.0
+label deionarra_s31: # from 45.0
     deionarra '«Порталы — это дыры в реальности, ведущие в различные места на внутренних и внешних планах… если ты найдешь подходящий ключ, то сможешь сбежать через один из них».'
 
     menu:
         '«Ключ?»':
             # a116 # r819
-            jump deions_s32
+            jump deionarra_s32
 
         '«У меня есть другие вопросы…»':
             # a117 # r818
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Прощай, Дейонарра».' if deionsLogic.r820_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r820_condition():
             # a118 # r820
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Прощай, Дейонарра».' if deionsLogic.r1325_condition():
+        '«Прощай, Дейонарра».' if deionarraLogic.r1325_condition():
             # a119 # r1325
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s32 # say821
-label deions_s32: # from 31.0
+label deionarra_s32: # from 31.0
     nr 'Дейонарра умолкает, пытаясь что-то вспомнить.'
     deionarra '«Порталы раскрываются лишь только в том случае, если у тебя есть подходящий «ключ»».'
     deionarra '«К сожалению, ключом может быть все что угодно… эмоция, кусочек дерева, кинжал из посеребренного стекла, обрывок одежды, твое посвистывание…»'
@@ -795,75 +816,75 @@ label deions_s32: # from 31.0
     menu:
         '«Понятно. У меня есть другие вопросы…»':
             # a120 # r824
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Тогда я расспрошу одного из них. Прощай, Дейонарра».' if deionsLogic.r823_condition():
+        '«Тогда я расспрошу одного из них. Прощай, Дейонарра».' if deionarraLogic.r823_condition():
             # a121 # r823
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Тогда я расспрошу одного из них. Прощай, Дейонарра».' if deionsLogic.r1326_condition():
+        '«Тогда я расспрошу одного из них. Прощай, Дейонарра».' if deionarraLogic.r1326_condition():
             # a122 # r1326
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s33 # say6083
-label deions_s33: # from 4.0
+label deionarra_s33: # from 4.0
     deionarra '«У меня для тебя нет ответов!»'
     deionarra '«Твое лживое сердце привело тебя сюда, пусть оно ведет тебя и дальше!»'
     deionarra '«Уходи прочь!»'
 
     menu:
-        'Ложь: «Я не помню тебя такой. Та Дейонарра, что я любил, была чуткой, нежной… и она никогда бы не бросила нуждающегося в помощи. Неужели ты так низко пала?»' if deionsLogic.r6129_condition():
+        'Ложь: «Я не помню тебя такой. Та Дейонарра, что я любил, была чуткой, нежной… и она никогда бы не бросила нуждающегося в помощи. Неужели ты так низко пала?»' if deionarraLogic.r6129_condition():
             # a123 # r6129
-            $ deionsLogic.r6129_action()
-            jump deions_s35
+            $ deionarraLogic.r6129_action()
+            jump deionarra_s35
 
         '«Мне нужна твоя помощь, Дейонарра. Неужели ты отвергнешь меня в час нужды?»':
             # a124 # r6130
-            jump deions_s37
+            jump deionarra_s37
 
-        'Блеф: «Хорошо. Я уважаю твои желания, Дейонарра… Я уйду и больше никогда не вернусь».' if deionsLogic.r6131_condition():
+        'Блеф: «Хорошо. Я уважаю твои желания, Дейонарра… Я уйду и больше никогда не вернусь».' if deionarraLogic.r6131_condition():
             # a125 # r6131
-            $ deionsLogic.r6131_action()
-            jump deions_s34
+            $ deionarraLogic.r6131_action()
+            jump deionarra_s34
 
-        'Блеф: «Хорошо. Я уважаю твои желания, Дейонарра… Я уйду и больше никогда не вернусь».' if deionsLogic.r6132_condition():
+        'Блеф: «Хорошо. Я уважаю твои желания, Дейонарра… Я уйду и больше никогда не вернусь».' if deionarraLogic.r6132_condition():
             # a126 # r6132
-            $ deionsLogic.r6132_action()
-            jump deions_s34
+            $ deionarraLogic.r6132_action()
+            jump deionarra_s34
 
         '«Прости, что я обидел тебя, Дейонарра. Я уйду и не буду больше тебя мучить».':
             # a127 # r6133
-            $ deionsLogic.r6133_action()
-            jump deions_s34
+            $ deionarraLogic.r6133_action()
+            jump deionarra_s34
 
         'Тихо уйти.':
             # a128 # r6134
-            jump deions_s48
+            jump deionarra_s48
 
 
 # s34 # say6086
-label deions_s34: # from 33.2 33.3 33.4
+label deionarra_s34: # from 33.2 33.3 33.4
     nr 'Гневное выражение спадает с лица Дейонарры…'
     nr '…с пугающей скоростью оно сменяется выражением отчаяния.'
     deionarra '«Нет!»'
     deionarra '«Постой, любовь моя».'
-    nr 'Она говорит жалобно.'
+    nr 'Говорит она жалобно.'
     deionarra '«Пожалуйста, прости меня, умоляю! Не уходи!»'
 
     menu:
         '«Дейонарра, мое терпение по отношению к тебе истекает. *Держи* себя в руках, если хочешь со мной общаться, иначе мы никогда не заговорим снова. Я понятно излагаю?»':
             # a129 # r6095
-            $ deionsLogic.r6095_action()
-            jump deions_s36
+            $ deionarraLogic.r6095_action()
+            jump deionarra_s36
 
         '«Я прощаю тебя. А теперь мне нужна твоя помощь, Дейонарра».':
             # a130 # r6096
-            jump deions_s10
+            jump deionarra_s10
 
 
 # s35 # say6087
-label deions_s35: # from 33.0
+label deionarra_s35: # from 33.0
     nr 'Гневное выражение спадает с лица Дейонарры…'
     nr '…с пугающей скоростью оно сменяется выражением отчаянья.'
     deionarra '«Нет… нет… нет…»'
@@ -872,16 +893,16 @@ label deions_s35: # from 33.0
     menu:
         '«Дейонарра, мое терпение по отношению к тебе истекает. *Держи* себя в руках, если хочешь со мной общаться, иначе мы никогда не заговорим снова. Я понятно излагаю?»':
             # a131 # r6097
-            $ deionsLogic.r6097_action()
-            jump deions_s36
+            $ deionarraLogic.r6097_action()
+            jump deionarra_s36
 
         '«Я прощаю тебя. А теперь мне нужна твоя помощь, Дейонарра».':
             # a132 # r6098
-            jump deions_s10
+            jump deionarra_s10
 
 
 # s36 # say6088
-label deions_s36: # from 34.0 35.0
+label deionarra_s36: # from 34.0 35.0
     nr 'Ее голос становится едва различимым шепотом.'
     deionarra '«Да… да, пожалуйста. Не уходи».'
     nr 'Ее молящее выражение лица бросает тебя в дрожь… но не от страха, а от удовольствия.'
@@ -890,30 +911,30 @@ label deions_s36: # from 34.0 35.0
     menu:
         '«Послушай, Дейонарра. У меня есть несколько вопросов к тебе…»':
             # a133 # r6099
-            jump deions_s10
+            jump deionarra_s10
 
 
 # s37 # say6089
-label deions_s37: # from 33.1 47.0
+label deionarra_s37: # from 33.1 47.0
     deionarra '«Отвергну *тебя*?!»'
     deionarra '«Да как ты СМЕЕШЬ обвинять меня в том, что я отвергаю ТЕБЯ?!»'
     nr 'Дейонарра выбрасывает руки вверх, образуя полукруг, затем опускает их, пальцами указывая на тебя. Похоже, она произносит какое-то заклинание.'
-    deionarra '«Да как ты СМЕЕШЬ!»'
+    deionarra '«Да как ты СМЕЕШЬ!..»'
 
     menu:
         '«Молчи и слушай, дух! Я сыт по горло твоими играми…»':
             # a134 # r6100
-            $ deionsLogic.r6100_action()
-            jump deions_s38
+            $ deionarraLogic.r6100_action()
+            jump deionarra_s38
 
         'Приготовиться к защите.':
             # a135 # r6101
-            $ deionsLogic.r6101_action()
-            jump deions_s38
+            $ deionarraLogic.r6101_action()
+            jump deionarra_s38
 
 
 # s38 # say6090
-label deions_s38: # from 37.0 37.1
+label deionarra_s38: # from 37.0 37.1
     deionarra '«Гори!»'
     deionarra '«Гори, как если бы огонь Баатора пожирал тебя изнутри!»'
     deionarra '«Гори и знай, что это лишь *крупица* моей ненависти!»'
@@ -924,33 +945,33 @@ label deions_s38: # from 37.0 37.1
     menu:
         '«Поосторожнее с проклятиями, женщина! Я не стану терпеть…»':
             # a136 # r6102
-            jump deions_s39
+            jump deionarra_s39
 
         '«Дейонарра! Постой, прости меня…»':
             # a137 # r6103
-            jump deions_s39
+            jump deionarra_s39
 
 
 # s39 # say6091
-label deions_s39: # from 38.0 38.1
+label deionarra_s39: # from 38.0 38.1
     deionarra '«Будучи произнесенным, проклятие уже не может быть снято».'
     nr 'Голос Дейонарры превращается в шипение.'
-    deionarra '«Знай: у меня вечность в запасе, «любовь моя». Я буду ждать тебя в залах смерти».'
+    deionarra '«Знай: у меня вечность в запасе, „любовь моя“. Я буду ждать тебя в залах смерти».'
     nr 'Она улыбается, но в улыбке нет ничего, кроме печали.'
     deionarra '«Мы снова будем *вместе*».'
 
     menu:
         '«Постой! Я хочу поговорить с…»':
             # a138 # r6104
-            jump deions_s48
+            jump deionarra_s48
 
         '«Сними свое чертово проклятье! Иначе…»':
             # a139 # r6105
-            jump deions_s48
+            jump deionarra_s48
 
 
 # s40 # say6092
-label deions_s40: # from 16.0 20.4 21.3
+label deionarra_s40: # from 16.0 20.4 21.3
     nr 'Дейонарра застывает. Кажется, она хочет что-то сказать, но затем, вздохнув, сдается.'
     deionarra '«Хорошо, любовь моя… как и прежде, я поверю тебе».'
     nr 'Она закрывает глаза.'
@@ -958,11 +979,11 @@ label deions_s40: # from 16.0 20.4 21.3
     menu:
         'Подождать…':
             # a140 # r6106
-            jump deions_s22
+            jump deionarra_s22
 
 
 # s41 # say6108
-label deions_s41: # from 10.6
+label deionarra_s41: # from 10.6
     nr 'Дейонарра горестно качает головой.'
     deionarra '«Будучи произнесенным, проклятие уже не может быть снято».'
     deionarra '«Прости меня, любовь моя».'
@@ -970,31 +991,31 @@ label deions_s41: # from 10.6
     menu:
         '«И нет никого, кто смог бы его снять?»':
             # a141 # r6110
-            jump deions_s42
+            jump deionarra_s42
 
         '«Понятно… Я хотел бы спросить тебя кое о чем еще…»':
             # a142 # r6111
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionsLogic.r6112_condition():
+        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionarraLogic.r6112_condition():
             # a143 # r6112
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionsLogic.r6113_condition():
+        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionarraLogic.r6113_condition():
             # a144 # r6113
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionsLogic.r6114_condition():
+        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionarraLogic.r6114_condition():
             # a145 # r6114
-            jump deions_s0
+            jump deionarra_s0
 
-        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionsLogic.r6115_condition():
+        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionarraLogic.r6115_condition():
             # a146 # r6115
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s42 # say6109
-label deions_s42: # from 41.0
+label deionarra_s42: # from 41.0
     deionarra '«Если и есть, то он мне незнаком».'
     nr 'Дейонарра вдруг воодушевляется.'
     deionarra '«Но, возможно, кто-нибудь более могущественный, чем я, сможет снять проклятье».'
@@ -1003,27 +1024,27 @@ label deions_s42: # from 41.0
     menu:
         '«У меня есть еще несколько вопросов к тебе…»':
             # a147 # r6116
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionsLogic.r6117_condition():
+        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionarraLogic.r6117_condition():
             # a148 # r6117
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionsLogic.r6118_condition():
+        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionarraLogic.r6118_condition():
             # a149 # r6118
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionsLogic.r6119_condition():
+        '«Наверное, уже поздновато просить прощения. Прощай, Дейонарра».' if deionarraLogic.r6119_condition():
             # a150 # r6119
-            jump deions_s0
+            jump deionarra_s0
 
-        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionsLogic.r6120_condition():
+        '«Возможно, кто-нибудь сможет мне помочь. Прощай, Дейонарра».' if deionarraLogic.r6120_condition():
             # a151 # r6120
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s43 # say6121
-label deions_s43: # from 9.2 10.3 44.0
+label deionarra_s43: # from 9.2 10.3 44.0
     deionarra '«Выбраться?..»'
     nr 'Шепчет Дейонарра, затем снова повышает голос.'
     deionarra '«*Выбраться*?!»'
@@ -1032,27 +1053,27 @@ label deions_s43: # from 9.2 10.3 44.0
     menu:
         '«Да, мне нужно выбраться из этого места. Тебе известен какой-нибудь выход отсюда?»':
             # a152 # r6137
-            jump deions_s47
+            jump deionarra_s47
 
         '«Я прошу прощения за свою просьбу. Я не хотел тебя обидеть. Пожалуйста, ответь на вопрос…»':
             # a153 # r6138
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Дейонарра, я в опасности. Можешь вывести меня в безопасное место? Я вернусь к тебе, как только смогу».' if deionsLogic.r6139_condition():
+        '«Дейонарра, я в опасности. Можешь вывести меня в безопасное место? Я вернусь к тебе, как только смогу».' if deionarraLogic.r6139_condition():
             # a154 # r6139
-            jump deions_s46
+            jump deionarra_s46
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r6140_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r6140_condition():
             # a155 # r6140
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r6141_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r6141_condition():
             # a156 # r6141
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s44 # say6122
-label deions_s44: # from 9.3 10.4
+label deionarra_s44: # from 9.3 10.4
     nr 'Ты уже собираешься спросить Дейонарру, но слова застревают у тебя в горле.'
     nr 'Внезапно ты осознаешь, что, если ты скажешь ей, что ищешь выход отсюда, Дейонарра может решить, что ты бросаешь ее.'
     nr 'Если ты собираешься спросить ее о том, как отсюда выбраться, тебе нужно сделать это поделикатнее.'
@@ -1060,38 +1081,38 @@ label deions_s44: # from 9.3 10.4
     menu:
         '«Ты знаешь, как отсюда выбраться?»':
             # a157 # r6142
-            jump deions_s43
+            jump deionarra_s43
 
         '«Дейонарра, я в опасности. Можешь вывести меня в безопасное место? Я вернусь к тебе, как только смогу».':
             # a158 # r6143
-            jump deions_s46
+            jump deionarra_s46
 
         '«У меня есть другие вопросы к тебе…»':
             # a159 # r6144
-            jump deions_s10
+            jump deionarra_s10
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r6145_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r6145_condition():
             # a160 # r6145
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r6146_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r6146_condition():
             # a161 # r6146
-            jump deions_s0
+            jump deionarra_s0
 
 
 # s45 # say6123
-label deions_s45: # from 46.0 46.1
+label deionarra_s45: # from 46.0 46.1
     deionarra '«Я чувствую, что в этом месте есть много дверей, скрытых от глаз смертных».'
     deionarra '«Возможно, ты сможешь воспользоваться одним из этих порталов для побега».'
 
     menu:
         '«Порталы?»':
             # a162 # r6124
-            jump deions_s31
+            jump deionarra_s31
 
 
 # s46 # say6125
-label deions_s46: # from 43.2 44.1 47.1
+label deionarra_s46: # from 43.2 44.1 47.1
     deionarra '«В опасности?»'
     nr 'Дейонарра выглядит обеспокоенной.'
     deionarra '«Конечно же, любовь моя, я помогу тебе…»'
@@ -1100,67 +1121,67 @@ label deions_s46: # from 43.2 44.1 47.1
     deionarra '«Возможно, отсюда есть выход».'
 
     menu:
-        '«Да?»' if deionsLogic.r6147_condition():
+        '«Да?»' if deionarraLogic.r6147_condition():
             # a163 # r6147
-            jump deions_s45
+            jump deionarra_s45
 
-        '«Да?»' if deionsLogic.r6148_condition():
+        '«Да?»' if deionarraLogic.r6148_condition():
             # a164 # r6148
-            $ deionsLogic.r6148_action()
-            jump deions_s45
+            $ deionarraLogic.r6148_action()
+            jump deionarra_s45
 
 
 # s47 # say6135
-label deions_s47: # from 43.0
+label deionarra_s47: # from 43.0
     deionarra '«Ты пришел ко мне после моей смерти лишь для того, чтобы *снова* меня бросить, да еще и просишь помочь тебе в этом?»'
-    nr 'Её лицо искажается в гримасе ярости.'
+    nr 'Ее лицо искажается в гримасе ярости.'
     deionarra '«Я *умерла* ради тебя, любовь моя. И до сих пор от этого *страдаю*!»'
 
     menu:
         '«Дейонарра, пожалуйста… Мне нужна твоя помощь. Неужели ты отвергнешь меня в час нужды?»':
             # a165 # r6149
-            jump deions_s37
+            jump deionarra_s37
 
-        '«Дейонарра, я прошу тебя лишь потому, что я в опасности. Можешь вывести меня в безопасное место? Я вернусь к тебе, как только смогу».' if deionsLogic.r6150_condition():
+        '«Дейонарра, я прошу тебя лишь потому, что я в опасности. Можешь вывести меня в безопасное место? Я вернусь к тебе, как только смогу».' if deionarraLogic.r6150_condition():
             # a166 # r6150
-            jump deions_s46
+            jump deionarra_s46
 
         '«Неважно. Послушай, у меня есть другие вопросы…»':
             # a167 # r6151
-            jump deions_s8
+            jump deionarra_s8
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r6152_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r6152_condition():
             # a168 # r6152
-            jump deions_s15
+            jump deionarra_s15
 
-        '«Я должен идти. Прощай, Дейонарра».' if deionsLogic.r6153_condition():
+        '«Я должен идти. Прощай, Дейонарра».' if deionarraLogic.r6153_condition():
             # a169 # r6153
-            jump deions_s26
+            jump deionarra_s26
 
 
 # s48 # say6136
-label deions_s48: # from 33.5 39.0 39.1
+label deionarra_s48: # from 33.5 39.0 39.1
     nr 'Закрыв глаза, Дейонарра исчезает с беззвучным вздохом.'
 
     menu:
-        'Уйти.' if deionsLogic.r6154_condition():
+        'Уйти.' if deionarraLogic.r6154_condition():
             # a170 # r6154
-            $ deionsLogic.r6154_action()
-            jump deions_dispose
+            $ deionarraLogic.r6154_action()
+            jump deionarra_dispose
 
-        'Уйти.' if deionsLogic.r6155_condition():
+        'Уйти.' if deionarraLogic.r6155_condition():
             # a171 # r6155
-            $ deionsLogic.r6155_action()
+            $ deionarraLogic.r6155_action()
             jump morte_s105  # EXTERN
 
-        'Уйти.' if deionsLogic.r13258_condition():
+        'Уйти.' if deionarraLogic.r13258_condition():
             # a172 # r13258
-            $ deionsLogic.r13258_action()
-            jump deions_dispose
+            $ deionarraLogic.r13258_action()
+            jump deionarra_dispose
 
 
 # s49 # say63356
-label deions_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
+label deionarra_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
     nr 'Перед собой ты видишь поразительно красивый призрачный силуэт девушки.'
     nr 'У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра.'
     nr 'Ваши взгляды пересекаются, и тебя охватывает странное ощущение, как будто ты смотришь сразу в несколько пар глаз.'
@@ -1168,156 +1189,156 @@ label deions_s49: # - # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("C
     menu:
         '«Ты — Дейонарра?..»':
             # a173 # r63357
-            jump deions_s51
+            jump deionarra_s51
 
 
 # s50 # say63358
-label deions_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
+label deionarra_s50: # - # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
     nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра.'
     nr 'Ваши взгляды пересекаются, и тебя охватывает странное ощущение, как будто ты смотришь сразу в несколько пар глаз.'
 
     menu:
         '«Дейонарра?..»':
             # a174 # r63359
-            jump deions_s51
+            jump deionarra_s51
 
 
 # s51 # say63360
-label deions_s51: # from 49.0 50.0
+label deionarra_s51: # from 49.0 50.0
     deionarra '«Любовь моя, наконец-то я *нашла* тебя…»'
     deionarra '«Я искала тебя с тех пор, как ты был разделен кристаллом: эта Крепость простирается на сотни миль, и я боялась, что ты потерял меня».'
-    nr 'Её призрачные глаза осматривают тебя с ног до головы в поисках новых ран.'
+    nr 'Ее призрачные глаза осматривают тебя с ног до головы в поисках новых ран.'
     deionarra '«Ты в порядке?»'
 
     menu:
         '«Думаю, да — кристалл разделил меня, но теперь я единое целое. Хоть и заперт в ловушке».':
             # a175 # r63362
-            jump deions_s52
+            jump deionarra_s52
 
 
 # s52 # say63363
-label deions_s52: # from 51.0
+label deionarra_s52: # from 51.0
     deionarra '«Подозреваю, что истинное предназначение кристалла — твое заключение здесь. Но он — не преграда для таких как я».'
     nr 'Она закрывает глаза.'
     deionarra '«Мои глаза видят многое, и залы этой Крепости очень знакомы мне».'
 
-    jump deions_s53
+    jump deionarra_s53
 
 
 # s53 # say63364
-label deions_s53: # from 52.0 58.0 59.0
+label deionarra_s53: # from 52.0 58.0 59.0
     deionarra '«Если ты пленен здесь, любовь моя, я помогу тебе освободиться. Куда ты хочешь попасть?»'
 
     menu:
         '«Я хочу встретиться со своим врагом и победить его».':
             # a176 # r63365
-            jump deions_s54
+            jump deionarra_s54
 
         '«Я хочу попасть туда, где пребывает моя смертность, и вернуть ее себе».':
             # a177 # r63366
-            jump deions_s54
+            jump deionarra_s54
 
-        '«Я хочу воссоединиться с моими друзьями».' if deionsLogic.r63367_condition():
+        '«Я хочу воссоединиться с моими друзьями».' if deionarraLogic.r63367_condition():
             # a178 # r63367
-            jump deions_s54
+            jump deionarra_s54
 
-        '«Я хочу воссоединиться с моими спутниками. Мне кое-что от них нужно».' if deionsLogic.r63368_condition():
+        '«Я хочу воссоединиться с моими спутниками. Мне кое-что от них нужно».' if deionarraLogic.r63368_condition():
             # a179 # r63368
-            jump deions_s54
+            jump deionarra_s54
 
-        '«Я хочу немного поговорить с тобой и рассказать, как ты умерла… и почему».' if deionsLogic.r63369_condition():
+        '«Я хочу немного поговорить с тобой и рассказать, как ты умерла… и почему».' if deionarraLogic.r63369_condition():
             # a180 # r63369
-            jump deions_s55
+            jump deionarra_s55
 
 
 # s54 # say63370
-label deions_s54: # from 53.0 53.1 53.2 53.3
+label deionarra_s54: # from 53.0 53.1 53.2 53.3
     deionarra '«Как пожелаешь, любовь моя».'
     nr 'Она протягивает руку.'
     deionarra '«Прикоснись к моей руке, и стены этой Крепости больше не будут преградой».'
 
     menu:
-        'Прикоснуться к ее руке…' if deionsLogic.r63371_condition():
+        'Прикоснуться к ее руке…' if deionarraLogic.r63371_condition():
             # a181 # r63371
-            $ deionsLogic.r63371_action()
-            jump deions_dispose
+            $ deionarraLogic.r63371_action()
+            jump deionarra_dispose
 
-        'Прикоснуться к ее руке…' if deionsLogic.r64594_condition():
+        'Прикоснуться к ее руке…' if deionarraLogic.r64594_condition():
             # a182 # r64594
-            $ deionsLogic.r64594_action()
-            jump deions_dispose
+            $ deionarraLogic.r64594_action()
+            jump deionarra_dispose
 
 
 # s55 # say63372
-label deions_s55: # from 53.4
+label deionarra_s55: # from 53.4
     deionarra '«О чем ты говоришь?»'
 
     menu:
         'Правда: «Когда я привел тебя в эту Крепость, я хотел, чтобы ты здесь умерла. Мне нужен был кто-нибудь, кто мог бы остаться позади, чтобы он смог служить указателем в этом месте. Я знал, что ты меня очень сильно любишь, и эта любовь не позволит смерти забрать тебя, превратив тебя в призрака. Вот почему ты теперь страдаешь».':
             # a183 # r63373
-            $ deionsLogic.r63373_action()
-            jump deions_s56
+            $ deionarraLogic.r63373_action()
+            jump deionarra_s56
 
         'Ложь: «Ты умерла здесь, в Крепости, из-за того, что враг уже поджидал нас. Он хотел, чтобы ты умерла и мы разделились. Скоро я с ним встречусь, и он сполна насытится моей местью».':
             # a184 # r63374
-            $ deionsLogic.r63374_action()
-            jump deions_s58
+            $ deionarraLogic.r63374_action()
+            jump deionarra_s58
 
 
 # s56 # say63375
-label deions_s56: # from 55.0
+label deionarra_s56: # from 55.0
     nr 'Пока ты говоришь, лицо Дейонарры остается непроницаемым.'
 
     menu:
         'Ложь: «Мне очень жаль, Дейонарра».':
             # a185 # r63376
-            $ deionsLogic.r63376_action()
-            jump deions_s57
+            $ deionarraLogic.r63376_action()
+            jump deionarra_s57
 
         'Правда: «Мне очень жаль, Дейонарра».':
             # a186 # r63377
-            $ deionsLogic.r63377_action()
-            jump deions_s57
+            $ deionarraLogic.r63377_action()
+            jump deionarra_s57
 
         'Правда: «Так было надо, Дейонарра. Мне очень жаль, что ты страдала все это время».':
             # a187 # r63378
-            jump deions_s57
+            jump deionarra_s57
 
 
 # s57 # say63379
-label deions_s57: # from 56.0 56.1 56.2
+label deionarra_s57: # from 56.0 56.1 56.2
     deionarra '«Ты *любишь* меня? Если ты скажешь да, любовь моя, то все остальное будет неважно».'
 
     menu:
         'Ложь: «Конечно же, я люблю тебя. Даже смерть не сможет убить связь между нами».':
             # a188 # r63380
-            $ deionsLogic.r63380_action()
-            jump deions_s58
+            $ deionarraLogic.r63380_action()
+            jump deionarra_s58
 
         'Правда: «Хотя в начале я не знал тебя, но затем я полюбил тебя. Твои страдания стали моими, и я готов сделать все, чтобы помочь тебе».':
             # a189 # r63381
-            $ deionsLogic.r63381_action()
-            jump deions_s58
+            $ deionarraLogic.r63381_action()
+            jump deionarra_s58
 
         'Правда: «Прости, Дейонарра, но нет. Я никогда не знал тебя. Но если бы я тебя встретил при иных обстоятельствах…»':
             # a190 # r63382
-            $ deionsLogic.r63382_action()
-            jump deions_s59
+            $ deionarraLogic.r63382_action()
+            jump deionarra_s59
 
 
 # s58 # say63383
-label deions_s58: # from 55.1 57.0 57.1
+label deionarra_s58: # from 55.1 57.0 57.1
     deionarra '«Тогда я помогу тебе, любовь моя. Скажи мне, как я могу помочь тебе, и я это сделаю».'
 
     menu:
         '«Я заперт здесь. Ты можешь помочь выбраться отсюда?»':
             # a191 # r63384
-            $ deionsLogic.r63384_action()
-            jump deions_s53
+            $ deionarraLogic.r63384_action()
+            jump deionarra_s53
 
 
 # s59 # say63385
-label deions_s59: # from 57.2
+label deionarra_s59: # from 57.2
     deionarra '«Тогда… тогда это будет концом всего, что было между нами, любовь моя».'
     deionarra '«Я осталась здесь только ради тебя — и ничего больше».'
     deionarra '«Я помогу тебе в последний раз, а затем отправлюсь за Границу Вечности, как и намеревалась».'
@@ -1325,94 +1346,93 @@ label deions_s59: # from 57.2
     menu:
         '«Тогда, перед тем как ты уйдешь, я попрошу тебя о последнем. Я заперт здесь. Ты можешь мне помочь?»':
             # a192 # r63386
-            jump deions_s53
+            jump deionarra_s53
 
 
 # s60 # say63387
-label deions_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
+label deionarra_s60: # - # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
     nr 'Ты видишь поразительно красивый призрачный силуэт девушки. У нее длинные развевающиеся волосы, ее платье будто колышется от какого-то неземного ветра.'
     nr 'Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
 
     menu:
         '«Кто ты?»':
             # a193 # r63388
-            $ deionsLogic.r63388_action()
-            jump deions_s62
+            $ deionarraLogic.r63388_action()
+            jump deionarra_s62
 
         'Оставить призрачную фигуру в покое.':
             # a194 # r63389
-            jump deions_dispose
+            jump deionarra_dispose
 
 
 # s61 # say63390
-label deions_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
+label deionarra_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
     nr 'Перед тобой призрачный силуэт Дейонарры. Ее призрачное платье будто колышется от какого-то неземного ветра.'
     nr 'Она стоит на краю вымощенной черным камнем дороги, всматриваясь в пустоту плана.'
-
 
     menu:
         '«Дейонарра?..»':
             # a195 # r63391
-            $ deionsLogic.r63391_action()
-            jump deions_s62
+            $ deionarraLogic.r63391_action()
+            jump deionarra_s62
 
         'Оставить Дейонарру в покое.':
             # a196 # r63392
-            jump deions_dispose
+            jump deionarra_dispose
 
 
 # s62 # say63393
-label deions_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
+label deionarra_s62: # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
     deionarra '«Любовь моя!»'
     deionarra '«Ты *не должен* находиться здесь! Ты должен уйти!»'
 
     menu:
-        '«Почему? Кто ты, дух… что это за место?»' if deionsLogic.r63394_condition():
+        '«Почему? Кто ты, дух… что это за место?»' if deionarraLogic.r63394_condition():
             # a197 # r63394
-            jump deions_s63
+            jump deionarra_s63
 
-        '«Дейонарра, что это за место? Это Крепость?»' if deionsLogic.r63395_condition():
+        '«Дейонарра, что это за место? Это Крепость?»' if deionarraLogic.r63395_condition():
             # a198 # r63395
-            jump deions_s63
+            jump deionarra_s63
 
 
 # s63 # say63396
-label deions_s63: # from 62.0 62.1
+label deionarra_s63: # from 62.0 62.1
     deionarra '«Это Крепость сожалений. Это место, которое удерживает миг моей смерти в узниках, и я не могу далеко уходить от его залов».'
     deionarra '«Если тебе известен путь назад в Сигил, немедленно *возвращайся*. Если ты останешься здесь, любовь моя, ты умрешь».'
 
     menu:
-        '«Я бессмертен, дух. Спасибо за предупреждение, но смерть — меньшее, чего мне стоит бояться».' if deionsLogic.r63397_condition():
+        '«Я бессмертен, дух. Спасибо за предупреждение, но смерть — меньшее, чего мне стоит бояться».' if deionarraLogic.r63397_condition():
             # a199 # r63397
-            jump deions_s64
+            jump deionarra_s64
 
-        '«Я бессмертен, Дейонарра. Не думаю, что мне стоит об этом слишком беспокоиться, даже здесь».' if deionsLogic.r63398_condition():
+        '«Я бессмертен, Дейонарра. Не думаю, что мне стоит об этом слишком беспокоиться, даже здесь».' if deionarraLogic.r63398_condition():
             # a200 # r63398
-            jump deions_s64
+            jump deionarra_s64
 
         '«А как насчет моего бессмертия? Ведь я же все еще бессмертен, даже здесь?..»':
             # a201 # r63399
-            jump deions_s64
+            jump deionarra_s64
 
 
 # s64 # say63400
-label deions_s64: # from 63.0 63.1 63.2
+label deionarra_s64: # from 63.0 63.1 63.2
     nr 'Она качает головой.'
     deionarra '«Нет, любовь моя. Здесь, в Крепости, есть нечто — оболочка, которая окружает ее и ограждает от остальных планов».'
     deionarra '«И это оболочка является преградой для твоего бессмертия».'
 
     menu:
-        '«Оболочка? Колонна сказала мне, что когда я умираю, то вместо меня умирает другой. И если я не найду никого, кто умрет вместо меня…»' if deionsLogic.r63401_condition():
+        '«Оболочка? Колонна сказала мне, что когда я умираю, то вместо меня умирает другой. И если я не найду никого, кто умрет вместо меня…»' if deionarraLogic.r63401_condition():
             # a202 # r63401
-            jump deions_s66
+            jump deionarra_s66
 
-        '«Как оболочка может служить преградой? Это немыслимо».' if deionsLogic.r63402_condition():
+        '«Как оболочка может служить преградой? Это немыслимо».' if deionarraLogic.r63402_condition():
             # a203 # r63402
-            jump deions_s65
+            jump deionarra_s65
 
 
 # s65 # say63403
-label deions_s65: # from 64.1
+label deionarra_s65: # from 64.1
     deionarra '«Блуждая по этому месту, я познала природу твоего бессмертия, любовь моя. Оно жаждет жизней других».'
     deionarra '«В момент твоей смерти оно хватает вместо тебя другое живое существо, благодаря чему ты остаешься живым».'
     deionarra '«Душа, погибшая вместо тебя, попадает тенью сюда, в Крепость».'
@@ -1421,34 +1441,34 @@ label deions_s65: # from 64.1
     menu:
         '«Итак… когда я умираю, кто-то умирает вместо меня. И если оно не найдет никого живого, кто умрет *вместо* меня…»':
             # a204 # r63404
-            jump deions_s66
+            jump deionarra_s66
 
 
 # s66 # say63405
-label deions_s66: # from 64.0 65.0
+label deionarra_s66: # from 64.0 65.0
     deionarra '«То смерть твоя будет окончательной. Здесь нет ничего *живого*, так что будь осторожен».'
     deionarra '«Покинь это проклятое место и возвращайся назад в Сигил!»'
 
     menu:
-        '«Но здесь мои союзники. Это значит, что они внутри этой оболочки. Что произойдет с *ними*, если я умру?»' if deionsLogic.r63406_condition():
+        '«Но здесь мои союзники. Это значит, что они внутри этой оболочки. Что произойдет с *ними*, если я умру?»' if deionarraLogic.r63406_condition():
             # a205 # r63406
-            jump deions_s67
+            jump deionarra_s67
 
-        '«Но здесь один из моих союзников. Это значит, что он внутри этой оболочки. Что произойдет с ним, если я умру?»' if deionsLogic.r63407_condition():
+        '«Но здесь один из моих союзников. Это значит, что он внутри этой оболочки. Что произойдет с ним, если я умру?»' if deionarraLogic.r63407_condition():
             # a206 # r63407
-            jump deions_s67
+            jump deionarra_s67
 
-        '«Дейонарра, ты можешь сказать что-нибудь еще, что может быть полезным? Что меня ждет внутри?»' if deionsLogic.r63408_condition():
+        '«Дейонарра, ты можешь сказать что-нибудь еще, что может быть полезным? Что меня ждет внутри?»' if deionarraLogic.r63408_condition():
             # a207 # r63408
-            jump deions_s68
+            jump deionarra_s68
 
-        '«Дух, ты можешь сказать что-нибудь еще, что может быть полезным? Что меня ждет внутри?»' if deionsLogic.r63409_condition():
+        '«Дух, ты можешь сказать что-нибудь еще, что может быть полезным? Что меня ждет внутри?»' if deionarraLogic.r63409_condition():
             # a208 # r63409
-            jump deions_s68
+            jump deionarra_s68
 
 
 # s67 # say63410
-label deions_s67: # from 66.0 66.1
+label deionarra_s67: # from 66.0 66.1
     deionarra '«Любовь моя, если ты привел сюда *что-либо* живое, то ему угрожает великая опасность — и от теней, и от тебя».'
     deionarra '«Если ты умрешь здесь, твое бессмертие будет охотиться за первым попавшимся живым существом в Крепости, и *оно* умрет вместо тебя».'
     deionarra '«Теперь ты должен уходить отсюда!»'
@@ -1456,33 +1476,33 @@ label deions_s67: # from 66.0 66.1
     menu:
         '«Я не могу *вернуться*. Так ты можешь сказать *что-нибудь*, что может быть полезным? Что меня ждет внутри Крепости?»':
             # a209 # r63411
-            jump deions_s68
+            jump deionarra_s68
 
 
 # s68 # say63412
-label deions_s68: # from 66.2 66.3 67.0
+label deionarra_s68: # from 66.2 66.3 67.0
     deionarra '«Внутри Крепости нет настоящей темноты, любовь моя, лишь только тени тех, кто погиб вместо тебя».'
     deionarra '«Энергия этого плана питает их, и их ненависть к тебе выше всяких границ. Они не позволят тебе уйти».'
     nr 'Она бросает взгляд на стены Крепости.'
     deionarra '«Умоляю тебя, *не входи*!»'
 
     menu:
-        '«Но мои союзники здесь. Я не могу их бросить. Есть какие-нибудь мысли, где они могут быть?»' if deionsLogic.r63413_condition():
+        '«Но мои союзники здесь. Я не могу их бросить. Есть какие-нибудь мысли, где они могут быть?»' if deionarraLogic.r63413_condition():
             # a210 # r63413
-            jump deions_s69
+            jump deionarra_s69
 
-        '«Но один из моих союзников здесь. Я не могу уйти. Есть какие-нибудь мысли, может быть мой спутник?»' if deionsLogic.r63414_condition():
+        '«Но один из моих союзников здесь. Я не могу уйти. Есть какие-нибудь мысли, может быть мой спутник?»' if deionarraLogic.r63414_condition():
             # a211 # r63414
-            jump deions_s69
+            jump deionarra_s69
 
-        '«Мне придется войти в Крепость. Я не могу отступить».' if deionsLogic.r63415_condition():
+        '«Мне придется войти в Крепость. Я не могу отступить».' if deionarraLogic.r63415_condition():
             # a212 # r63415
-            $ deionsLogic.r63415_action()
-            jump deions_s75
+            $ deionarraLogic.j68117_s68_r63415_action()
+            jump deionarra_s75
 
 
 # s69 # say63416
-label deions_s69: # from 68.0 68.1
+label deionarra_s69: # from 68.0 68.1
     deionarra '«Всех, кого ты привел сюда, разбросало по разным местам: природа этого места такова, что оно разделяет живых существ… а затем убивает их».'
     nr 'Она выглядит обезумевшей.'
     deionarra '«Крепость простирается на много миль: найти твоих друзей будет очень трудно».'
@@ -1490,37 +1510,37 @@ label deions_s69: # from 68.0 68.1
     menu:
         '«Я найду их. У меня нет выбора».':
             # a213 # r63417
-            $ deionsLogic.r63417_action()
-            jump deions_s75
+            $ deionarraLogic.j68117_s69_r63417_action()
+            jump deionarra_s75
 
 
 # s70 # say63418
-label deions_s70: # from 75.0
+label deionarra_s70: # from 75.0
     deionarra '«И еще одно…»'
     nr 'Дейонарра умолкает, будто пытаясь поймать ускользающее воспоминание.'
     deionarra '«Внутри… внутри комнаты есть огромные часы…»'
-    nr 'Её голос становится более спокойным и уверенным.'
+    nr 'Ее голос становится более спокойным и уверенным.'
     deionarra '«Часы, о которых ты однажды говорил, что они помогли тебе выбраться из этой комнаты… когда ты был пойман здесь в предыдущий раз».'
     nr 'Она смотрит на тебя.'
     deionarra '«Я знаю, что не смогу уговорить тебя свернуть с этого пути, любовь моя… но я буду следить за тобой и помогу, если смогу».'
 
     menu:
-        '«Я принес твое кольцо, Дейонарра. Я нашел твое наследство, завещанное мне».' if deionsLogic.r63419_condition():
+        '«Я принес твое кольцо, Дейонарра. Я нашел твое наследство, завещанное мне».' if deionarraLogic.r63419_condition():
             # a214 # r63419
-            $ deionsLogic.r63419_action()
-            jump deions_s71
+            $ deionarraLogic.r63419_action()
+            jump deionarra_s71
 
-        '«Благодарю тебя, дух. Теперь я должен идти».' if deionsLogic.r63420_condition():
+        '«Благодарю тебя, дух. Теперь я должен идти».' if deionarraLogic.r63420_condition():
             # a215 # r63420
-            jump deions_dispose
+            jump deionarra_dispose
 
-        '«Благодарю тебя, Дейонарра. Теперь я должен идти».' if deionsLogic.r63421_condition():
+        '«Благодарю тебя, Дейонарра. Теперь я должен идти».' if deionarraLogic.r63421_condition():
             # a216 # r63421
-            jump deions_dispose
+            jump deionarra_dispose
 
 
 # s71 # say63422
-label deions_s71: # from 70.0
+label deionarra_s71: # from 70.0
     deionarra '«Кольцо все еще содержит частичку меня, любовь моя. Нося его, ты носишь с собой мое сердце».'
     nr 'На секунду она закрывает глаза, и ты неожиданно чувствуешь тепло, пронизывающее тебя.'
     nr 'Открыв глаза, Дейонарра улыбается.'
@@ -1528,46 +1548,48 @@ label deions_s71: # from 70.0
     deionarra '«Через него я буду защищать тебя».'
 
     menu:
-        '«Благодарю тебя, Дейонарра. Теперь я должен идти».' if deionsLogic.r63423_condition():
+        '«Благодарю тебя, Дейонарра. Теперь я должен идти».' if deionarraLogic.r63423_condition():
             # a217 # r63423
-            jump deions_dispose
+            jump deionarra_dispose
 
 
 # s72 # say66912
-label deions_s72: # from 27.1
+label deionarra_s72: # from 27.1
     deionarra '«Ты… я… не могу…»'
     nr 'Она неожиданно замирает, затем продолжает говорить, медленно и осторожно, будто боясь собственного голоса.'
     deionarra '«Вот в чем правда: ты тот, кто умирал тысячью смертей. И через это ты постиг саму сущность смертности, в твоих руках теперь находится искра жизни… и смерти».'
     deionarra '«Умирающий рядом с тобой оставляет след, по которому ты можешь его воскресить…»'
 
-    jump deions_s73
+    jump deionarra_s73
+
 
 # s73 # say66913
-label deions_s73: # from 72.0
+label deionarra_s73: # from 72.0
     nr 'При этих словах Дейонарры твой череп пронзает внезапное озарение… неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку.'
     nr 'Подняв её и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям…'
 
     menu:
         '«Чт…»':
             # a218 # r66914
-            $ deionsLogic.r66914_action()
-            jump deions_s74
+            $ deionarraLogic.j66917_s73_r66914_action()
+            $ deionarraLogic.r66914_action()
+            jump deionarra_s74
 
 
 # s74 # say66915
-label deions_s74: # from 73.0
+label deionarra_s74: # from 73.0
     nr 'И ты понимаешь, что Дейонарра *права*. Неожиданно ты вспоминаешь, как находить самую слабую искорку жизни в теле и оживлять его…'
     nr '…эта мысль одновременно пугает и интригует тебя.'
 
     menu:
         '«Я… я… У меня есть другие вопросы…»':
             # a219 # r66916
-            jump deions_s10
+            jump deionarra_s10
 
 
 # s75 # say68114
-label deions_s75: # from 68.2 69.0
+label deionarra_s75: # from 68.2 69.0
     deionarra '«Хорошо, любовь моя… если ты хочешь идти, то ты должен знать: за входом в Крепость расположен огромный вестибюль с бесчисленным множеством теней».'
     deionarra '«Ты должен идти без промедления и не позволить им обнаружить себя, иначе ты погибнешь!»'
 
-    jump deions_dispose
+    jump deionarra_s70

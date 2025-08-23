@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM782.DLG
+# Original:  DLG/DZM782.DLG
 # ###
 
 
-label start_zm782_talk:
-    call zm782_init
-    jump zm782_s0
-label start_zm782_kill:
-    call zm782_init
-    jump zm782_kill
-label zm782_init:
-    $ zm782Logic.zm782_init()
+label zm782_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r1
     show zm782_img default at center_left_down
-    return
+    jump zm782_s0
+
+
 label zm782_dispose:
     hide zm782_img
     jump graphics_menu
@@ -105,31 +100,3 @@ label zm782_take_key_2:
     nr 'С лёгким звуком ключ оказывается в моих руках.'
     $ zm782Logic.pick_key_up()
     jump morte1_s24  # EXTERN
-
-
-label zm782_kill:
-    nr 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.'
-    nr 'На его лбу вырезан номер «782», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
-
-    menu:
-        '(Уйти.)':
-            jump zm782_dispose
-        '(Убить зомби).':
-            jump zm782_killed
-
-
-label zm782_killed:
-    $ zm782Logic.kill_zm782()
-    nr 'Некоторое время я смотрю в ненавидящие меня глаза, пока не понимаю, что эта эмоция обращена не ко мне. Это застывшая маска, которую труп не в состоянии изменить.'
-    nr 'В его ненавидящих глазах поселилась пустота. В них нет ни жизни, ни разума. Я без сожалений расширяю дом для пустоты.'
-
-    if zm782Logic.has_key_has_morte():
-        jump zm782_dispose
-    if zm782Logic.has_key_no_morte():
-        jump zm782_dispose
-    if zm782Logic.no_key_has_morte():
-        jump morte1_s24
-    if zm782Logic.no_key_no_morte():
-        nr 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
-        $ zm782Logic.pick_key_up()
-        jump zm782_dispose

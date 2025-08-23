@@ -4,27 +4,28 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/EIVENE.DLG
+# Original:  DLG/DEIVENE.DLG
 # ###
 
 
-label start_eivene_talk_first:
-    call eivene_init
-    jump eivene_s0
-label start_eivene_talk:
-    call eivene_init
-    jump eivene_s15
-label start_eivene_kill_first:
-    call eivene_init
-    jump eivene_kill_first
-label start_eivene_kill:
-    call eivene_init
-    jump eivene_kill
-label eivene_init:
-    $ eiveneLogic.eivene_init()
+label eivene_s0_ctor: # - # IF ~  Global("EiVene","GLOBAL",0)
     scene bg mortuary_f2r5
     show eivene_img default at center_left_down
-    return
+    jump eivene_s0
+
+
+label eivene_s15_ctor: # - # IF ~  Global("EiVene","GLOBAL",1)
+    scene bg mortuary_f2r5
+    show eivene_img default at center_left_down
+    jump eivene_s15
+
+
+label eivene_s25_ctor: # -
+    scene bg mortuary_f2r5
+    show eivene_img default at center_left_down
+    jump eivene_s25
+
+
 label eivene_dispose:
     hide eivene_img
     jump graphics_menu
@@ -117,32 +118,33 @@ label eivene_s5: # from 4.0
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if eiveneLogic.r3424_condition():
             # a10 # r3424
+            $ eiveneLogic.j37701_s5_r3424_action()
             $ eiveneLogic.r3424_action()
             jump eivene_s7
 
         '«Сперва ответь на пару вопросов…»' if eiveneLogic.r3425_condition():
             # a11 # r3425
-            $ eiveneLogic.r3425_action()
+            $ eiveneLogic.j37702_s5_r3425_action()
             jump eivene_s6
 
         '«Сперва ответь на пару вопросов…»' if eiveneLogic.r3426_condition():
             # a12 # r3426
-            $ eiveneLogic.r3426_action()
+            $ eiveneLogic.j37702_s5_r3426_action()
             jump eivene_s20
 
         '«Что с твоими руками?»' if eiveneLogic.r3427_condition():
             # a13 # r3427
-            $ eiveneLogic.r3427_action()
+            $ eiveneLogic.j37702_s5_r3427_action()
             jump eivene_s6
 
         '«Что с твоими руками?»' if eiveneLogic.r3428_condition():
             # a14 # r3428
-            $ eiveneLogic.r3428_action()
+            $ eiveneLogic.j37702_s5_r3428_action()
             jump eivene_s20
 
         'Уйти.':
             # a15 # r3429
-            $ eiveneLogic.r3429_action()
+            $ eiveneLogic.j37702_s5_r3429_action()
             jump eivene_dispose
 
 
@@ -301,6 +303,7 @@ label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
     menu:
         'Наблюдать за ней, изучая движения ее рук.' if eiveneLogic.r3459_condition():
             # a36 # r3459
+            $ eiveneLogic.j61612_s15_r3459_action()
             $ eiveneLogic.r3459_action()
             jump eivene_s16
 
@@ -318,9 +321,10 @@ label eivene_s15: # - # IF ~  Global("EiVene","GLOBAL",1)
 
 
 # s16 # say3464
-label eivene_s16: # from 15.0 # ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) Wait(3) ~ GOTO 26
+label eivene_s16: # from 15.0
     nr 'Наблюдая за движением рук Эи-Вейн, ты чувствуешь покалывание в голове. Внезапно у тебя в глазах все начинает размываться и плыть…'
 
+    $ eiveneLogic.s16_action()
     jump eivene_s26
 
 
@@ -334,6 +338,7 @@ label eivene_s17: # from 6.0 15.1 25.0 27.0
     menu:
         'Дать ей нитку и банку с бальзамирующей жидкостью.' if eiveneLogic.r3469_condition():
             # a40 # r3469
+            $ eiveneLogic.j38202_s17_r3469_action()
             $ eiveneLogic.r3469_action()
             jump eivene_s7
 
@@ -353,24 +358,23 @@ label eivene_s17: # from 6.0 15.1 25.0 27.0
 
 # s18 # say3471
 label eivene_s18: # from 14.0 17.1 22.0
-    nr 'Она наклоняется вперед, присматриваясь к твоему жесту, затем фыркает.'
-    nr 'Ее рука скрывается в одежде, затем появляется вместе с ключом, висящим на ее угрожающе-остром когте. Она кладет его тебе на ладонь.'
-    eivene '«Принеси потом обратно. Пшел-пшел.'  # TODO [snow]: дописать, что ключ можно вернут»ь
+    nr 'Она наклоняется вперед, присматриваясь к твоему жесту, затем фыркает. Ее рука скрывается в одежде, затем появляется вместе с ключом, висящим на ее угрожающе-остром когте. Она кладет его тебе на ладонь.'
+    eivene '«Принеси потом обратно. Пшел-пшел».' # TODO [snow]: дописать, что ключ можно вернуть
 
     menu:
         '«Что с твоими руками?»' if eiveneLogic.r3494_condition():
             # a44 # r3494
-            $ eiveneLogic.r3494_action()
+            $ eiveneLogic.j38203_s18_r3494_action()
             jump eivene_s23
 
         '«Что с твоими руками?»' if eiveneLogic.r3495_condition():
             # a45 # r3495
-            $ eiveneLogic.r3495_action()
+            $ eiveneLogic.j38203_s18_r3495_action()
             jump eivene_s21
 
         'Уйти.':
             # a46 # r3496
-            $ eiveneLogic.r3496_action()
+            $ eiveneLogic.j38203_s18_r3496_action()
             jump eivene_dispose
 
 
@@ -378,6 +382,7 @@ label eivene_s18: # from 14.0 17.1 22.0
 label eivene_s19: # from 1.3
     nr 'Женщина не отвечает.'
 
+    $ eiveneLogic.j38205_s19_action()
     jump morte_s56  # EXTERN
 
 
@@ -392,6 +397,7 @@ label eivene_s20: # from 5.2 5.4
 label eivene_s21: # from 18.1
     nr 'Она отворачивается… непохоже, чтобы она тебя услышала. Должно быть, ее слух не лучше зрения.'
 
+    $ eiveneLogic.j38205_s21_action()
     jump morte_s58  # EXTERN
 
 
@@ -430,7 +436,8 @@ label eivene_s23: # from 18.0
 # s24 # say4200
 label eivene_s24: # from 14.1 17.2 22.1
     nr 'Она наклоняется вперед, присматриваясь к твоему жесту, затем фыркает. Ее рука скрывается в одежде, что-то ищет, затем она пожимает плечами.'
-    nr 'Ключа нет. Она делает отгоняющее движение.'
+    eivene '«Ключа нет».'
+    nr 'Она делает отгоняющее движение.'
     eivene '«Пшел-пшел-пшел».'
 
     menu:
@@ -492,46 +499,3 @@ label eivene_s27: # from 26.0 26.1
         'Уйти.':
             # a59 # r63483
             jump eivene_dispose
-
-
-label eivene_kill:
-    nr 'Перед тобой Эи-Вейн. Она все еще потрошит труп своими когтями. Ритм движений когтей что-то тебе напоминает, но ты не можешь вспомнить что.'
-
-    menu:
-        '(Уйти.)':
-            jump eivene_dispose
-        '(Убить Эи-Вейн).':
-            jump eivene_killed
-
-
-label eivene_killed:
-    $ eiveneLogic.kill_eivene()
-    nr 'Я знаю, что она не услышит, как я подойду. Я знаю, что её пальцы похожи на когти.'
-    nr 'Я проскальзываю за её спиной и ломаю её правую руку, а когда она с криком оборачивается, я ломаю левую.'
-    nr 'Но через несколько ударов она сдаётся и падает на пол.'
-    nr 'От последнего удара тело переваливается на спину. Что-то заставляет меня взглянуть в её глаза.'
-    nr 'Они светятся…'
-    nr '…нежностью?'
-    jump eivene_dispose
-
-
-label eivene_kill_first:
-    nr 'Перед тобой хрупкая девушка с бледным лицом. Из-за впалой кожи на щеках и шее кажется, будто она голодает.'
-    nr 'Судя по всему, она увлечена обследованием тела, лежащим перед ней, тыкая по телу пальцем.'
-
-    menu:
-        '(Уйти.)':
-            jump eivene_dispose
-        '(Убить девушку).':
-            jump eivene_killed_first
-
-
-label eivene_killed_first:
-    $ eiveneLogic.kill_eivene()
-    nr 'Я знаю, что я быстрее. Я прикасаюсь к её плечу - и девушка оборачивается в ту сторону, где меня уже нет.'
-    nr 'Она всё равно пытается сопротивляться, используя сломанные руки на манер плетей.'
-    nr 'Через несколько ударов она затихает. Я провёл пальцем по порезу, который она мне оставила и пнул дважды мёртвое тело.'
-    nr 'От пинка тело переваливается на спину. Что-то заставляет меня взглянуть в её глаза.'
-    nr 'Они светятся…'
-    nr '…нежностью?'
-    jump eivene_dispose

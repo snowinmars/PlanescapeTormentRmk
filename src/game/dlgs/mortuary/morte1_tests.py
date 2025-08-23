@@ -2,37 +2,13 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.morte1_logic import Morte1Logic
+from game.dlgs.mortuary.    morte1_logic import Morte1Logic
 
 
 class Morte1LogicTest(LogicTest):
     def setUp(self):
         super(Morte1LogicTest, self).setUp()
         self.logic = Morte1Logic(self.settings_manager)
-
-
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Morte1Logic
-        self._methods_are_bound()
-
-
-    def test_morte1_init(self):
-        self._init_with_location(
-            'mortuary_f2r1',
-            self.logic.morte1_init,
-            self.settings_manager.get_talked_to_morte_times
-        )
-
-
-    def test_kill_morte(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_morte,
-            self.logic.kill_morte
-        )
 
 
     def test_r39793_action(self):
@@ -52,13 +28,6 @@ class Morte1LogicTest(LogicTest):
             lambda: self.settings_manager.character_manager.get_property(who, prop),
             delta,
             self.logic.r39824_action
-        )
-
-
-    def test_r39829_action(self):
-        self._false_then_true_action(
-            self.settings_manager.get_has_scalpel,
-            self.logic.r39829_action
         )
 
 

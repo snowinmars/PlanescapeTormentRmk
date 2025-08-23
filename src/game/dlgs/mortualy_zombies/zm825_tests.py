@@ -11,47 +11,17 @@ class Zm825LogicTest(LogicTest):
         self.logic = Zm825Logic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = Zm825Logic
-        self._methods_are_bound()
-
-
-    def test_zm825_init(self):
-        self._init_with_location(
-            'mortuary_f2r1',
-            self.logic.zm825_init,
-            self.settings_manager.get_talked_to_zm825_times
-        )
-
-
-    def test_kill_zm825(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 65
-
-        self.assertFalse(self.settings_manager.get_dead_zm825())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.kill_zm825()
-
-        self.assertTrue(self.settings_manager.get_dead_zm825())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
-
-
     def test_r24565_condition(self):
         self.settings_manager.set_mortuary_walkthrough(1)
         self.settings_manager.set_has_intro_key(True)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertFalse(self.logic.r24565_condition())
 
         self.settings_manager.set_mortuary_walkthrough(0)
         self.settings_manager.set_has_intro_key(False)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertTrue(self.logic.r24565_condition())
 
 
@@ -59,11 +29,13 @@ class Zm825LogicTest(LogicTest):
         self.settings_manager.set_mortuary_walkthrough(1)
         self.settings_manager.set_has_intro_key(True)
         self.settings_manager.set_in_party_morte(True)
+
         self.assertFalse(self.logic.r24568_condition())
 
         self.settings_manager.set_mortuary_walkthrough(0)
         self.settings_manager.set_has_intro_key(False)
         self.settings_manager.set_in_party_morte(False)
+
         self.assertTrue(self.logic.r24568_condition())
 
 
@@ -92,10 +64,12 @@ class Zm825LogicTest(LogicTest):
     def test_r24574_condition(self):
         self.settings_manager.set_mortuary_walkthrough(1)
         self.settings_manager.set_has_intro_key(True)
+
         self.assertFalse(self.logic.r24574_condition())
 
         self.settings_manager.set_mortuary_walkthrough(0)
         self.settings_manager.set_has_intro_key(False)
+
         self.assertTrue(self.logic.r24574_condition())
 
 

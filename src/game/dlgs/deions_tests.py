@@ -2,30 +2,13 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.deions_logic import DeionsLogic
+from game.dlgs.deionarra_logic import DeionarraLogic
 
 
-class DeionsLogicTest(LogicTest):
+class DeionarraLogicTest(LogicTest):
     def setUp(self):
-        super(DeionsLogicTest, self).setUp()
-        self.logic = DeionsLogic(self.settings_manager)
-
-
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = DeionsLogic
-        self._methods_are_bound()
-
-
-    def test_deions_init(self):
-        self._init_with_location(
-            'mortuary_f1r2',
-            self.logic.deions_init,
-            self.settings_manager.get_talked_to_deionarra_times
-        )
+        super(DeionarraLogicTest, self).setUp()
+        self.logic = DeionarraLogic(self.settings_manager)
 
 
     def test_r701_action(self):
@@ -69,27 +52,28 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r712_action(self):
-        who = 'protagonist'
+        who_good = 'protagonist'
         prop_good = 'good'
-        prop_law = 'law'
         delta_good = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
         delta_law = -1
 
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r712_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r712_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -102,27 +86,28 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r702_action(self):
-        who = 'protagonist'
+        who_good = 'protagonist'
         prop_good = 'good'
-        prop_law = 'law'
         delta_good = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
         delta_law = -1
 
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r702_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r702_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -163,102 +148,106 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r780_action(self):
-        who = 'protagonist'
+        who_good = 'protagonist'
         prop_good = 'good'
-        prop_law = 'law'
         delta_good = -2
+        who_law = 'protagonist'
+        prop_law = 'law'
         delta_law = -2
 
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r780_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r780_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r6093_action(self):
-        who = 'protagonist'
+        who_good = 'protagonist'
         prop_good = 'good'
-        prop_law = 'law'
         delta_good = 2
+        who_law = 'protagonist'
+        prop_law = 'law'
         delta_law = 2
 
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6093_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6093_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r805_action(self):
-        who = 'protagonist'
+        who_good = 'protagonist'
         prop_good = 'good'
-        prop_law = 'law'
         delta_good = -2
+        who_law = 'protagonist'
+        prop_law = 'law'
         delta_law = -2
 
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r805_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r805_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
     def test_r808_action(self):
-        who = 'protagonist'
+        who_good = 'protagonist'
         prop_good = 'good'
-        prop_law = 'law'
         delta_good = 2
+        who_law = 'protagonist'
+        prop_law = 'law'
         delta_law = 2
 
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r808_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r808_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -293,76 +282,88 @@ class DeionsLogicTest(LogicTest):
         )
 
 
-    def test_r810_action(self):
+    def test_j26087_s29_r810_action(self):
         note_id = '26087'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r810_action
+            self.logic.j26087_s29_r810_action
         )
 
 
     def test_r6129_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        deionarra_value_before = 0
+        deionarra_value_after = 1
+        deionarra_value_after_once = 1
+        self.settings_manager.set_deionarra_value(deionarra_value_before)
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 0)
-        before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.r6129_action()
-
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
-        after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(before + delta, after)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6129_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
-        after_once = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(after, after_once)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r6129_action()
+
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
 
 
     def test_r6131_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        deionarra_value_before = 0
+        deionarra_value_after = 1
+        deionarra_value_after_once = 1
+        self.settings_manager.set_deionarra_value(deionarra_value_before)
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 0)
-        before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.r6131_action()
-
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
-        after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(before + delta, after)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6131_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
-        after_once = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(after, after_once)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r6131_action()
+
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
 
 
     def test_r6132_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        deionarra_value_before = 0
+        deionarra_value_after = 1
+        deionarra_value_after_once = 1
+        self.settings_manager.set_deionarra_value(deionarra_value_before)
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 0)
-        before = self.settings_manager.character_manager.get_property(who, prop)
-
-        self.logic.r6132_action()
-
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
-        after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(before + delta, after)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
 
         self.logic.r6132_action()
 
-        self.assertEqual(self.settings_manager.get_deionarra_value(), 1)
-        after_once = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(after, after_once)
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
+
+        self.logic.r6132_action()
+
+        self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
 
 
     def test_r6133_action(self):
@@ -412,18 +413,25 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r6148_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 500
+        self.settings_manager.set_deionarra_portal(False)
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
 
         self.assertFalse(self.settings_manager.get_deionarra_portal())
-        before = self.settings_manager.character_manager.get_property(who, prop)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
 
         self.logic.r6148_action()
 
         self.assertTrue(self.settings_manager.get_deionarra_portal())
-        after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(before + delta, after)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r6148_action()
+
+        self.assertTrue(self.settings_manager.get_deionarra_portal())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r6154_action(self):
@@ -459,152 +467,158 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r63373_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = 3
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r63373_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63373_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r63374_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = -3
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = -1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r63374_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63374_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r63376_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = -1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = -2
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r63376_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63376_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r63377_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r63377_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63377_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r63380_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = -1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = -1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r63380_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63380_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
     def test_r63381_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r63381_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63381_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after_once = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -628,6 +642,9 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r63388_action(self):
+        self.settings_manager.set_1200_cut_scene_2(False)
+        self.settings_manager.set_cd_int_1(False)
+
         self.assertFalse(self.settings_manager.get_1200_cut_scene_2())
         self.assertFalse(self.settings_manager.get_cd_int_1())
 
@@ -636,8 +653,16 @@ class DeionsLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_1200_cut_scene_2())
         self.assertTrue(self.settings_manager.get_cd_int_1())
 
+        self.logic.r63388_action()
+
+        self.assertTrue(self.settings_manager.get_1200_cut_scene_2())
+        self.assertTrue(self.settings_manager.get_cd_int_1())
+
 
     def test_r63391_action(self):
+        self.settings_manager.set_1200_cut_scene_2(False)
+        self.settings_manager.set_cd_int_1(False)
+
         self.assertFalse(self.settings_manager.get_1200_cut_scene_2())
         self.assertFalse(self.settings_manager.get_cd_int_1())
 
@@ -646,22 +671,27 @@ class DeionsLogicTest(LogicTest):
         self.assertTrue(self.settings_manager.get_1200_cut_scene_2())
         self.assertTrue(self.settings_manager.get_cd_int_1())
 
+        self.logic.r63391_action()
 
-    def test_r63415_action(self):
+        self.assertTrue(self.settings_manager.get_1200_cut_scene_2())
+        self.assertTrue(self.settings_manager.get_cd_int_1())
+
+
+    def test_j68117_s68_r63415_action(self):
         note_id = '68117'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r63415_action
+            self.logic.j68117_s68_r63415_action
         )
 
 
-    def test_r63417_action(self):
+    def test_j68117_s69_r63417_action(self):
         note_id = '68117'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r63417_action
+            self.logic.j68117_s69_r63417_action
         )
 
 
@@ -677,25 +707,53 @@ class DeionsLogicTest(LogicTest):
         self.assertFalse(self.settings_manager.get_has_wedding_ring())
         self.assertTrue(self.settings_manager.get_has_sup_ring())
 
+        self.logic.r63419_action()
 
-    def test_r66914_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 1000
+        self.assertFalse(self.settings_manager.get_has_wedding_ring())
+        self.assertTrue(self.settings_manager.get_has_sup_ring())
+
+
+    def test_j66917_s73_r66914_action(self):
         note_id = '66917'
 
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j66917_s73_r66914_action
+        )
+
+
+    def test_r66914_action(self):
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 1000
+        self.settings_manager.set_deionarra_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+        self.settings_manager.set_can_raise_dead(False)
+
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_deionarra_raise_dead())
         self.assertFalse(self.settings_manager.get_can_raise_dead())
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertFalse(self.settings_manager.get_can_raise_dead())
+        self.assertFalse(self.settings_manager.get_can_raise_dead())
 
         self.logic.r66914_action()
 
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_deionarra_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+        self.assertTrue(self.settings_manager.get_can_raise_dead())
+        self.assertTrue(self.settings_manager.get_can_raise_dead())
+
+        self.logic.r66914_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_deionarra_raise_dead())
+        self.assertTrue(self.settings_manager.get_can_raise_dead())
+        self.assertTrue(self.settings_manager.get_can_raise_dead())
+        self.assertTrue(self.settings_manager.get_can_raise_dead())
 
 
     def test_r701_condition(self):
@@ -730,22 +788,21 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r708_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 11
-        delta_cha = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 11
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r708_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r708_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r708_condition())
 
 
@@ -763,22 +820,21 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r713_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 11
-        delta_cha = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 11
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r713_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r713_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r713_condition())
 
 
@@ -824,22 +880,21 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r718_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 11
-        delta_cha = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 11
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r718_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r718_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r718_condition())
 
 
@@ -885,22 +940,21 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r723_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 11
-        delta_cha = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 11
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r723_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r723_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r723_condition())
 
 
@@ -963,39 +1017,35 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r731_condition(self):
-        who = 'protagonist'
-        prop = 'wisdom'
-        delta = 13
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
 
         self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta + 1)
-        self.assertFalse(self.logic.r731_condition())
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta)
         self.assertFalse(self.logic.r731_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who, prop, delta - 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r731_condition())
 
 
     def test_r732_condition(self):
-        who = 'protagonist'
-        prop = 'wisdom'
-        delta = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 12
+
+        self.settings_manager.set_escape_mortuary(True)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
+        self.assertFalse(self.logic.r732_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who, prop, delta + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+
         self.assertTrue(self.logic.r732_condition())
-
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta)
-        self.assertFalse(self.logic.r732_condition())
-
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta - 1)
-        self.assertFalse(self.logic.r732_condition())
 
 
     def test_r1314_condition(self):
@@ -1013,39 +1063,35 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r737_condition(self):
-        who = 'protagonist'
-        prop = 'wisdom'
-        delta = 13
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 13
 
         self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta + 1)
-        self.assertFalse(self.logic.r737_condition())
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta)
         self.assertFalse(self.logic.r737_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who, prop, delta - 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+
         self.assertTrue(self.logic.r737_condition())
 
 
     def test_r738_condition(self):
-        who = 'protagonist'
-        prop = 'wisdom'
-        delta = 12
+        who_wisdom = 'protagonist'
+        prop_wisdom = 'wisdom'
+        delta_wisdom = 12
+
+        self.settings_manager.set_escape_mortuary(True)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+
+        self.assertFalse(self.logic.r738_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who, prop, delta + 1)
+        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+
         self.assertTrue(self.logic.r738_condition())
-
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta)
-        self.assertFalse(self.logic.r738_condition())
-
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who, prop, delta - 1)
-        self.assertFalse(self.logic.r738_condition())
 
 
     def test_r768_condition(self):
@@ -1333,22 +1379,21 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r6131_condition(self):
-        who = 'protagonist'
-        prop_int = 'intelligence'
-        prop_cha = 'charisma'
-        delta_int = 11
-        delta_cha = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 11
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+
         self.assertFalse(self.logic.r6131_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.assertFalse(self.logic.r6131_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
         self.assertTrue(self.logic.r6131_condition())
 
 
@@ -1541,9 +1586,10 @@ class DeionsLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r63367_condition())
 
-        self.settings_manager.set_fortress_party(2)
+        self.settings_manager.set_fortress_party(1)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
+
         self.assertTrue(self.logic.r63367_condition())
 
 
@@ -1554,9 +1600,10 @@ class DeionsLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r63368_condition())
 
-        self.settings_manager.set_fortress_party(2)
+        self.settings_manager.set_fortress_party(1)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
+
         self.assertTrue(self.logic.r63368_condition())
 
 
@@ -1646,12 +1693,12 @@ class DeionsLogicTest(LogicTest):
 
     def test_r63408_condition(self):
         self.settings_manager.set_fortress_party(0)
-        self.settings_manager.set_deionarra_value(0)
+        self.settings_manager.set_deionarra_value(1)
 
         self.assertFalse(self.logic.r63408_condition())
 
         self.settings_manager.set_fortress_party(1)
-        self.settings_manager.set_deionarra_value(1)
+        self.settings_manager.set_deionarra_value(0)
 
         self.assertTrue(self.logic.r63408_condition())
 
@@ -1693,12 +1740,12 @@ class DeionsLogicTest(LogicTest):
 
 
     def test_r63419_condition(self):
-        self.settings_manager.set_deionarra_value(0)
+        self.settings_manager.set_deionarra_value(1)
         self.settings_manager.set_has_wedding_ring(False)
 
         self.assertFalse(self.logic.r63419_condition())
 
-        self.settings_manager.set_deionarra_value(1)
+        self.settings_manager.set_deionarra_value(0)
         self.settings_manager.set_has_wedding_ring(True)
 
         self.assertTrue(self.logic.r63419_condition())

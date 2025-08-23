@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF891.DLG
+# Original:  DLG/DZF891.DLG
 # ###
 
 
-label start_zf891_talk:
-    call zf891_init
-    jump zf891_s0
-label start_zf891_kill:
-    call zf891_init
-    jump zf891_kill
-label zf891_init:
-    $ zf891Logic.zf891_init()
+label zf891_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r8
     show zf891_img default at center_left_down
-    return
+    jump zf891_s0
+
+
+label zf891_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f2r8
+    show zf891_img default at center_left_down
+    jump zf891_s3
+
+
 label zf891_dispose:
     hide zf891_img
     jump graphics_menu
@@ -112,21 +113,4 @@ label zf891_s2: # from 0.3
 label zf891_s3: # - # IF ~  False()
     nr 'Труп не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf891_dispose
-
-
-label zf891_kill:
-    nr 'Этот труп женщины выглядит особенно отвратительно: он лишен ушей, носа и губ.'
-    nr 'Чтобы зашить рот, препарирующему пришлось стягивать кожу вокруг рта очень туго; через оставшуюся открытой щель все еще можно разглядеть ряд кривых желтых зубов. На лбу вырезан номер «891».'
-
-    menu:
-        '(Уйти.)':
-            jump zf891_dispose
-        '(Убить зомби).':
-            jump zf891_killed
-
-
-label zf891_killed:
-    $ zf891Logic.kill_zf891()
-    nr 'На секунду я замедляю удар, задерживая взгляд на чудовищно уродливом лице, на глазах без жизни и без разума. А потом без сожалений бью.'
     jump zf891_dispose

@@ -2,21 +2,6 @@ class DhallLogic:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
-
-    def dhall_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f2r3')
-        self.settings_manager.inc_talked_to_dhall_times()
-
-
-    def dhall_dispose_no_talk(self):
-        self.settings_manager.dec_talked_to_dhall_times()
-
-
-    def kill_dhall(self):
-        self.settings_manager.set_dead_dhall(True)
-        self.settings_manager.set_has_dhall_feather(True)
-
-
     def set_know_dhall_name(self):
         self.settings_manager.set_know_dhall_name(True)
 
@@ -26,14 +11,18 @@ class DhallLogic:
 
 
     def r827_action(self):
-        # SetGlobal("0202_Dhall_Face_Player","AR0202",1)
+        #$% SetGlobal("0202_Dhall_Face_Player","AR0202",1) %$#
         return
+
+
+    def j39468_s3_r830_action(self):
+        self.settings_manager.journal_manager.update_journal('39468')
+        #$% .register('39468', 'Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса.') %$#
 
 
     def r830_action(self):
         self.settings_manager.gain_experience('party', 250)
         self.settings_manager.set_vaxis_betrayed(2)
-        self.settings_manager.journal_manager.update_journal('39468')
 
 
     def r831_action(self):
@@ -41,30 +30,36 @@ class DhallLogic:
         self.settings_manager.set_vaxis_betrayed(2)
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -3, 'globalevil_dhall_2')
         self.settings_manager.journal_manager.update_journal('39469')
+        #$%.register('39469', 'Да, я обещал Ваксису, что не выдам его тленным, ну и что? Я рассказал писарю Дхоллу о Ваксисе и его маскировке. Дхолл должен послать других тленных схватить Ваксиса. %$#')
 
 
     def r843_action(self):
         self.settings_manager.character_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_dhall_1')
 
 
-    def r5069_action(self):
+    def j39460_s9_r5069_action(self):
         self.settings_manager.journal_manager.update_journal('39460')
+        #$% .register('39460', 'Я спросил Дхолла, знает ли он меня, и он ответил, что знает обо мне очень мало, и еще меньше — о моих спутниках, сопровождавших меня в прошлом. Вероятно, их тела находятся здесь, в Морге... возможно, увидев их, я смогу что-нибудь вспомнить.') %$#
 
 
-    def r886_action(self):
+    def j39463_s15_r886_action(self):
         self.settings_manager.journal_manager.update_journal('39463')
+        #$% .register('39463', 'По всей видимости, мое тело доставил сюда на повозке Фарод вместе с кучей других трупов. Был ли я действительно *мертв*, когда он это делал?') %$#
 
 
-    def r906_action(self):
+    def j39464_s19_r906_action(self):
         self.settings_manager.journal_manager.update_journal('39464')
+        #$% .register('39464', 'Дхолл сказал мне, что Фарода можно найти за пределами Морга, в месте под названием «Улей». Он не хочет, чтобы я охотился за Фародом, но ведь это не он потерял память и восстал из мертвых, так что он может оставить свое мнение при себе. Дхолл посоветовал мне узнать местонахождение Фарода у кого-нибудь в Улье.') %$#
 
 
-    def r921_action(self):
+    def j39461_s21_r921_action(self):
         self.settings_manager.journal_manager.update_journal('39461')
+        #$% .register('39461', 'Дхолл сказал мне, что в мемориальном зале на первом этаже Морга погребена женщина, которая сопровождала меня.') %$#
 
 
-    def r931_action(self):
+    def j39462_s25_r931_action(self):
         self.settings_manager.journal_manager.update_journal('39462')
+        #$% .register('39462', 'Дхолл сказал мне, что это благодаря ему мои визиты в Морг остаются в тайне от остальных тленных. До тех пор, пока он остается писарем в приемной, он будет единственным, кто видит мое тело, прибывающее сюда.') %$#
 
 
     def r936_action(self):
@@ -79,8 +74,9 @@ class DhallLogic:
         self.settings_manager.inc_once_know_dustmen('globalknow_dustmen')
 
 
-    def r1301_action(self):
+    def j39470_s34_r1301_action(self):
         self.settings_manager.journal_manager.update_journal('39470')
+        #$% .register('39470', 'Дхолл предположил, что раны, полученные мною, незначительны по сравнению с теми, что нанесены моему разуму... Он также предположил, что эти раны стали причиной моей потери памяти, и что увечья разума не ограничились амнезией. Эта мысль мне неприятна: неплохо бы слышать побольше *хороших* новостей время от времени.') %$#
 
 
     def r974_action(self):
@@ -95,12 +91,14 @@ class DhallLogic:
         self.settings_manager.set_dhall_value(1)
 
 
-    def r5731_action(self):
+    def j39459_s45_r5731_action(self):
         self.settings_manager.journal_manager.update_journal('39459')
+        #$% .register('39459', 'В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов.') %$#
 
 
-    def r5732_action(self):
+    def j39459_s45_r5732_action(self):
         self.settings_manager.journal_manager.update_journal('39459')
+        #$% .register('39459', 'В Морге я встретил больного писаря по имени Дхолл... он знал, что я потерял свою память, прежде чем я заговорил с ним. Были ли мы знакомы до того, как я потерял память? Я надеюсь получить несколько ответов, но это место порождает все больше и больше вопросов.') %$#
 
 
     def r6033_action(self):

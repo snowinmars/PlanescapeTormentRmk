@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1201.DLG
+# Original:  DLG/DZM1201.DLG
 # ###
 
 
-label start_zm1201_talk:
-    call zm1201_init
-    jump zm1201_s0
-label start_zm1201_kill:
-    call zm1201_init
-    jump zm1201_kill
-label zm1201_init:
-    $ zm1201Logic.zm1201_init()
+label zm1201_s0_ctor: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
     scene bg mortuary_f2r3
     show zm1201_img default at center_left_down
-    return
+    jump zm1201_s0
+
+
+label zm1201_s5_ctor: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
+    scene bg mortuary_f2r3
+    show zm1201_img default at center_left_down
+    jump zm1201_s5
+
+
 label zm1201_dispose:
     hide zm1201_img
     jump graphics_menu
@@ -132,23 +133,3 @@ label zm1201_s5: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
         'Оставить труп в покое.':
             # a16 # r45134
             jump zm1201_dispose
-
-
-label zm1201_kill:
-    nr 'На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.'
-    nr 'Чернильные капли падают с лица, ты замечаешь, что они попадают в зашитый рот, из которого торчит уголок какой-то записки.'
-
-    menu:
-        '(Уйти.)':
-            jump zm1201_dispose
-        '(Убить зомби).':
-            jump zm1201_killed
-
-
-label zm1201_killed:
-    $ zm1201Logic.kill_zm1201()
-    nr "Я не знаю, откуда взялись чернила. Труп не реагирует на мои удары: пустые слёзы пустых глаз."
-    nr "В них нет ни жизни, ни разума. Я без сожалений вбиваю скальпель между глаз до тех пор, пока ходячий труп не падает."
-    if zm1201Logic.r34954_condition():
-        nr "Что-то отвратительное вытекает изо рта зомби. Записка очевидно уничтожена."
-    jump zm1201_dispose

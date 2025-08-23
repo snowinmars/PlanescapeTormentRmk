@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM1508.DLG
+# Original:  DLG/DZM1508.DLG
 # ###
 
 
-label start_zm1508_talk:
-    call zm1508_init
-    jump zm1508_s0
-label start_zm1508_kill:
-    call zm1508_init
-    jump zm1508_kill
-label zm1508_init:
-    $ zm1508Logic.zm1508_init()
+label zm1508_s0_ctor: # - # IF ~  True()
     scene bg DISABLED
     show zm1508_img default at center_left_down
-    return
+    jump zm1508_s0
+
+
 label zm1508_dispose:
     hide zm1508_img
     jump graphics_menu
@@ -74,20 +69,3 @@ label zm1508_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r46753
             jump zm1508_dispose
-
-
-label zm1508_kill:
-    nr 'На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.'
-    nr 'Номер «1508» вышит на лбу красными нитками, рот зашит грубой черной ниткой. От него слегка отдает бальзамирующей жидкостью.'
-
-    menu:
-        '(Уйти.)':
-            jump zm1508_dispose
-        '(Убить зомби).':
-            jump zm1508_killed
-
-
-label zm1508_killed:
-    $ zm1508Logic.kill_zm1508()
-    nr 'Если бы он был воином, он бы жалел, что не может ответить на мои удары. Когда его тело падает на пол, я не чувствую сожалений.'
-    jump zm1508_dispose

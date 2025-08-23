@@ -8,13 +8,11 @@
 # ###
 
 
-label start_copearc_talk:
-    call copearc_init
-    jump copearc_s0
-label copearc_init:
-    $ copearcLogic.copearc_init()
+label copearc_s0_ctor:
     show copearc_img default at center_left_down
-    return
+    jump copearc_s0
+
+
 label copearc_dispose:
     hide copearc_img
     jump graphics_menu

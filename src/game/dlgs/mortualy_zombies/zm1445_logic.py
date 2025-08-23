@@ -3,16 +3,6 @@ class Zm1445Logic:
         self.settings_manager = settings_manager
 
 
-    def zm1445_init(self):
-        self.settings_manager.location_manager.set_location('DISABLED') # pragma: no cover
-        self.settings_manager.inc_talked_to_zm1445_times() # pragma: no cover
-
-
-    def kill_zm1445(self):
-        self.settings_manager.set_dead_zm1445(True)
-        self.settings_manager.gain_experience('party', 65)
-
-
     def r46757_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

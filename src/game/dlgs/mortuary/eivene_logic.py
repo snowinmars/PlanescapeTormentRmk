@@ -2,22 +2,12 @@ class EiveneLogic:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
-
-    def eivene_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f2r5')
-        self.settings_manager.inc_talked_to_eivene_times()
-
-
-    def kill_eivene(self):
-        self.settings_manager.set_dead_eivene(True)
-
-
     def set_know_eivene_name(self):
         self.settings_manager.set_know_eivene_name(True)
 
 
     def r3418_action(self):
-        # FaceObject(Protagonist)
+        #$% FaceObject(Protagonist) %$#
         return
 
 
@@ -25,36 +15,48 @@ class EiveneLogic:
         self.settings_manager.set_eivene_value(1)
 
 
+    def j37701_s5_r3424_action(self):
+        self.settings_manager.journal_manager.update_journal('37701')
+        #$% .register('37701', 'В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Оба предмета у меня уже были, так что я сразу же дал их ей.') %$#
+
+
     def r3424_action(self):
         self.settings_manager.set_has_embalm(False)
         self.settings_manager.set_has_needle(False)
         self.settings_manager.set_eivene_delivery(True)
         self.settings_manager.gain_experience('party', 250)
-        self.settings_manager.journal_manager.update_journal('37701')
 
 
-    def r3425_action(self):
+    def j37702_s5_r3425_action(self):
         self.settings_manager.journal_manager.update_journal('37702')
+        #$% .register('37702', 'В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Они должны быть где-то в Морге, возможно в одной из соседних комнат.') %$#
 
 
-    def r3426_action(self):
+    def j37702_s5_r3426_action(self):
         self.settings_manager.journal_manager.update_journal('37702')
+        #$% .register('37702', 'В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Они должны быть где-то в Морге, возможно в одной из соседних комнат.') %$#
 
 
-    def r3427_action(self):
+    def j37702_s5_r3427_action(self):
         self.settings_manager.journal_manager.update_journal('37702')
+        #$% .register('37702', 'В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Они должны быть где-то в Морге, возможно в одной из соседних комнат.') %$#
 
 
-    def r3428_action(self):
+    def j37702_s5_r3428_action(self):
         self.settings_manager.journal_manager.update_journal('37702')
+        #$% .register('37702', 'В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Они должны быть где-то в Морге, возможно в одной из соседних комнат.') %$#
 
 
-    def r3429_action(self):
+    def j37702_s5_r3429_action(self):
         self.settings_manager.journal_manager.update_journal('37702')
+        #$% .register('37702', 'В Морге я повстречался с тленной-бальзамировщицей по имени Эи-Вейн. Мало того, что она бледная как смерть и с когтями на руках, так она еще и близорукая и глухая, и спутала меня с зомби. Она приказала мне найти ей банку с бальзамирующей жидкостью и иголку с ниткой, предположительно для того, чтобы зашить тело, лежащее на столе перед ней. Они должны быть где-то в Морге, возможно в одной из соседних комнат.') %$#
 
 
     def r3491_action(self):
-        # ?.play_sound('AMB_M01') Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself)
+        #$% ?.play_sound('AMB_M01') %$#
+        #$% Enemy() %$#
+        #$% Attack(Protagonist) %$#
+        #$% ForceAttack(Protagonist,Myself) %$#
         self.settings_manager.set_mortualy_alarmed(True)
 
 
@@ -63,6 +65,7 @@ class EiveneLogic:
         self.settings_manager.character_manager.full_heal('protagonist')
         self.settings_manager.set_ravel_eivene(1)
         self.settings_manager.journal_manager.update_journal('38199')
+        #$%.register('38199', 'После того, как я принес Эи-Вейн бальзамирующую жидкость и нитку, она зашила мои шрамы и нанесла бальзамирующую жидкость на мое тело. Довольно странно, но я чувствую себя... здоровее. %$#')
 
 
     def r3456_action(self):
@@ -71,9 +74,27 @@ class EiveneLogic:
         self.settings_manager.set_has_keyem(True)
 
 
-    def r3459_action(self):
-        # ?.play_sound('SPTR_01')
+    def j61612_s15_r3459_action(self):
         self.settings_manager.journal_manager.update_journal('61612')
+        #$% .register('61612', 'Наблюдая за тем, как Эи-Вейн зашивает своими когтями тело умершего, я что-то вспомнил... Очень давно я делал точно такое же действие над телом, однако при этом я ничего не вынимал, а наоборот, что-то положил *внутрь* тела. Такое чувство, что я положил что-то, что смогу позже забрать. В воспоминании я скрестил свои руки на груди, и труп повторил мои движения... на его черепе был написан номер «42».') %$#
+
+
+    def r3459_action(self):
+        #$% ?.play_sound('SPTR_01') %$#
+        return
+
+
+    def s16_action(self):
+        #$% FadeToColor([20.0],0) %$#
+        #$% Wait(3) %$#
+        #$% FadeFromColor([20.0],0) %$#
+        #$% Wait(3) %$#
+        return
+
+
+    def j38202_s17_r3469_action(self):
+        self.settings_manager.journal_manager.update_journal('38202')
+        #$% .register('38202', 'Я принес Эи-Вейн бальзамирующую жидкость и нитку. Не могу сказать, что она ужасно обрадовалась этому.') %$#
 
 
     def r3469_action(self):
@@ -81,7 +102,6 @@ class EiveneLogic:
         self.settings_manager.set_has_needle(False)
         self.settings_manager.set_eivene_delivery(True)
         self.settings_manager.gain_experience('party', 250)
-        self.settings_manager.journal_manager.update_journal('38202')
 
 
     def r3470_action(self):
@@ -90,16 +110,29 @@ class EiveneLogic:
         self.settings_manager.set_has_keyem(True)
 
 
-    def r3494_action(self):
+    def j38203_s18_r3494_action(self):
         self.settings_manager.journal_manager.update_journal('38203')
+        #$% .register('38203', 'Я убедил Эи-Вейн дать мне ключ от бальзамационной.') %$#
 
 
-    def r3495_action(self):
+    def j38203_s18_r3495_action(self):
         self.settings_manager.journal_manager.update_journal('38203')
+        #$% .register('38203', 'Я убедил Эи-Вейн дать мне ключ от бальзамационной.') %$#
 
 
-    def r3496_action(self):
+    def j38203_s18_r3496_action(self):
         self.settings_manager.journal_manager.update_journal('38203')
+        #$% .register('38203', 'Я убедил Эи-Вейн дать мне ключ от бальзамационной.') %$#
+
+
+    def j38205_s19_action(self):
+        self.settings_manager.journal_manager.update_journal('38205')
+        #$% .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.') %$#
+
+
+    def j38205_s21_action(self):
+        self.settings_manager.journal_manager.update_journal('38205')
+        #$% .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.') %$#
 
 
     def r3501_action(self):

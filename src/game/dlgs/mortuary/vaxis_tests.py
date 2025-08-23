@@ -11,60 +11,26 @@ class VaxisLogicTest(LogicTest):
         self.logic = VaxisLogic(self.settings_manager)
 
 
-    def test_ctor(self):
-        self.assertIsNotNone(self.logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = VaxisLogic
-        self._methods_are_bound()
-
-
-    def test_vaxis_init(self):
-        self._init_with_location(
-            'mortuary_f2r6',
-            self.logic.vaxis_init,
-            self.settings_manager.get_talked_to_vaxis_times
-        )
-
-
-    def test_kill_vaxis(self):
-        self._false_then_true_action(
-            self.settings_manager.get_dead_vaxis,
-            self.logic.kill_vaxis
-        )
-
-
-    def test_get_know_vaxis_name(self):
-        logic = VaxisLogic(self.settings_manager)
-
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_know_vaxis_name(x),
-            logic.get_know_vaxis_name
-        )
-
-
-    def test_set_know_vaxis_name(self):
-        self._false_then_true_action(
-            self.settings_manager.get_know_vaxis_name,
-            self.logic.set_know_vaxis_name
-        )
-
-
-
     def test_r454_action(self):
-        who = 'protagonist'
-        prop = 'law'
-        delta = -1
+        who_law = 'protagonist'
+        prop_law = 'law'
+        delta_law = -1
+        self.settings_manager.set_zombie_chaotic(False)
 
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertFalse(self.settings_manager.get_zombie_chaotic())
-        law_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r454_action()
 
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_before + delta_law, law_after)
         self.assertTrue(self.settings_manager.get_zombie_chaotic())
-        law_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(law_before + delta, law_after)
+
+        self.logic.r454_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after + delta_law, law_after_once)
+        self.assertTrue(self.settings_manager.get_zombie_chaotic())
 
 
     def test_r461_action(self):
@@ -75,30 +41,30 @@ class VaxisLogicTest(LogicTest):
         )
 
 
-    def test_r464_action(self):
+    def test_j64513_s2_r464_action(self):
         note_id = '64513'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r464_action
+            self.logic.j64513_s2_r464_action
         )
 
 
-    def test_r465_action(self):
+    def test_j64513_s2_r465_action(self):
         note_id = '64513'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r465_action
+            self.logic.j64513_s2_r465_action
         )
 
 
-    def test_r466_action(self):
+    def test_j64513_s2_r466_action(self):
         note_id = '64513'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r466_action
+            self.logic.j64513_s2_r466_action
         )
 
 
@@ -143,57 +109,80 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r477_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r477_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r477_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
+
+
+    def test_j64513_s5_r480_action(self):
+        note_id = '64513'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64513_s5_r480_action
+        )
 
 
     def test_r480_action(self):
-        location = '64513'
+        self._integer_equals_action(
+            self.settings_manager.get_vaxis_value,
+            1,
+            self.logic.r480_action
+        )
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(location))
 
-        self.logic.r480_action()
+    def test_j64513_s5_r481_action(self):
+        note_id = '64513'
 
-        self.assertTrue(self.settings_manager.get_vaxis_value(), 1)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(location))
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64513_s5_r481_action
+        )
 
 
     def test_r481_action(self):
-        location = '64513'
+        self._integer_equals_action(
+            self.settings_manager.get_vaxis_value,
+            1,
+            self.logic.r481_action
+        )
 
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(location))
 
-        self.logic.r481_action()
+    def test_j64513_s5_r482_action(self):
+        note_id = '64513'
 
-        self.assertTrue(self.settings_manager.get_vaxis_value(), 1)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(location))
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64513_s5_r482_action
+        )
 
 
     def test_r482_action(self):
-        location = '64513'
-
-        self.assertEqual(self.settings_manager.get_vaxis_value(), 0)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(location))
-
-        self.logic.r482_action()
-
-        self.assertTrue(self.settings_manager.get_vaxis_value(), 1)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(location))
+        self._integer_equals_action(
+            self.settings_manager.get_vaxis_value,
+            1,
+            self.logic.r482_action
+        )
 
 
     def test_r487_action(self):
@@ -353,21 +342,29 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4381_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r4381_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r4381_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r4387_action(self):
@@ -395,21 +392,29 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4391_action(self):
-        who = 'protagonist'
+        who_law = 'protagonist'
         prop_law = 'law'
-        prop_good = 'good'
         delta_law = 1
+        who_good = 'protagonist'
+        prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
 
         self.logic.r4391_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who, prop_law)
-        good_after = self.settings_manager.character_manager.get_property(who, prop_good)
+        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
+
+        self.logic.r4391_action()
+
+        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        self.assertEqual(law_after, law_after_once)
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
 
 
     def test_r4397_action(self):
@@ -570,10 +575,25 @@ class VaxisLogicTest(LogicTest):
         )
 
 
+    def test_j64517_s30_r4469_action(self):
+        note_id = '64517'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64517_s30_r4469_action
+        )
+
+
     def test_r4469_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 500
+        self.settings_manager.set_vaxis_leave(False)
+        self.settings_manager.set_has_bandages(False)
+        self.settings_manager.set_has_bandages(False)
+        self.settings_manager.set_has_bandages(False)
+        self.settings_manager.set_has_embalm(False)
+        self.settings_manager.set_has_needle(False)
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
 
         self.assertFalse(self.settings_manager.get_vaxis_leave())
         self.assertFalse(self.settings_manager.get_has_bandages())
@@ -581,18 +601,29 @@ class VaxisLogicTest(LogicTest):
         self.assertFalse(self.settings_manager.get_has_bandages())
         self.assertFalse(self.settings_manager.get_has_embalm())
         self.assertFalse(self.settings_manager.get_has_needle())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
 
         self.logic.r4469_action()
 
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
         self.assertTrue(self.settings_manager.get_vaxis_leave())
         self.assertTrue(self.settings_manager.get_has_bandages())
         self.assertTrue(self.settings_manager.get_has_bandages())
         self.assertTrue(self.settings_manager.get_has_bandages())
         self.assertTrue(self.settings_manager.get_has_embalm())
         self.assertTrue(self.settings_manager.get_has_needle())
-        self.assertEqual(exp_before + delta, exp_after)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+
+        self.logic.r4469_action()
+
+        self.assertTrue(self.settings_manager.get_vaxis_leave())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_bandages())
+        self.assertTrue(self.settings_manager.get_has_embalm())
+        self.assertTrue(self.settings_manager.get_has_needle())
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r4474_action(self):
@@ -687,26 +718,32 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4494_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
         self.settings_manager.set_has_keyem(True)
+        self.settings_manager.set_vaxis_has_keyem(False)
 
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
         self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4494_action()
 
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertFalse(self.settings_manager.get_has_keyem())
         self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r4494_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
 
 
     def test_r4496_action(self):
-        self.settings_manager.set_vaxis_orders(True)
         self._true_then_false_action(
             self.settings_manager.get_vaxis_orders,
             self.logic.r4496_action
@@ -714,7 +751,6 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4497_action(self):
-        self.settings_manager.set_vaxis_orders(True)
         self._true_then_false_action(
             self.settings_manager.get_vaxis_orders,
             self.logic.r4497_action
@@ -722,73 +758,90 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4498_action(self):
-        who = 'protagonist'
-        prop = 'good'
-        delta = -1
-
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
         self.settings_manager.set_vaxis_orders(True)
 
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertTrue(self.settings_manager.get_vaxis_orders())
-        good_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4498_action()
 
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
         self.assertFalse(self.settings_manager.get_vaxis_orders())
-        good_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(good_before + delta, good_after)
+
+        self.logic.r4498_action()
+
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
+        self.assertFalse(self.settings_manager.get_vaxis_orders())
 
 
     def test_r4499_action(self):
-        who = 'protagonist'
-        prop = 'good'
-        delta = -1
-
+        who_good = 'protagonist'
+        prop_good = 'good'
+        delta_good = -1
         self.settings_manager.set_vaxis_orders(True)
 
+        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
         self.assertTrue(self.settings_manager.get_vaxis_orders())
-        good_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4499_action()
 
+        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_before + delta_good, good_after)
         self.assertFalse(self.settings_manager.get_vaxis_orders())
-        good_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(good_before + delta, good_after)
+
+        self.logic.r4499_action()
+
+        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(good_after, good_after_once)
+        self.assertFalse(self.settings_manager.get_vaxis_orders())
 
 
     def test_r4502_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
         self.settings_manager.set_has_keyem(True)
+        self.settings_manager.set_vaxis_has_keyem(False)
 
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
         self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4502_action()
 
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertFalse(self.settings_manager.get_has_keyem())
         self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r4502_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
 
 
-    def test_r64520_action(self):
+    def test_j64519_s36_r64520_action(self):
         note_id = '64519'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r64520_action
+            self.logic.j64519_s36_r64520_action
         )
 
 
-    def test_r4503_action(self):
+    def test_j64518_s36_r4503_action(self):
         note_id = '64518'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4503_action
+            self.logic.j64518_s36_r4503_action
         )
 
 
@@ -804,21 +857,21 @@ class VaxisLogicTest(LogicTest):
         )
 
 
-    def test_r4506_action(self):
+    def test_j64519_s37_r4506_action(self):
         note_id = '64519'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4506_action
+            self.logic.j64519_s37_r4506_action
         )
 
 
-    def test_r66150_action(self):
+    def test_j64518_s37_r66150_action(self):
         note_id = '64518'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r66150_action
+            self.logic.j64518_s37_r66150_action
         )
 
 
@@ -839,177 +892,268 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4519_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
         self.settings_manager.set_has_keyem(True)
+        self.settings_manager.set_vaxis_has_keyem(False)
+        embalm_key_quest_before = 1
+        embalm_key_quest_after = 3
+        embalm_key_quest_after_once = 3
+        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
 
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 0)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
         self.assertFalse(self.settings_manager.get_vaxis_has_keyem())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
 
         self.logic.r4519_action()
 
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertFalse(self.settings_manager.get_has_keyem())
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
         self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after)
+
+        self.logic.r4519_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
+        self.assertTrue(self.settings_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
 
 
-    def test_r4521_action(self):
+    def test_j64521_s42_r4521_action(self):
         note_id = '64521'
-
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-        self.assertNotEqual(self.settings_manager.get_embalm_key_quest(), 3)
-
-        self.logic.r4521_action()
-
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
-
-
-    def test_r4522_action(self):
-        note_id = '64521'
-
-        self.assertNotEqual(self.settings_manager.get_embalm_key_quest(), 3)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-        self.logic.r4522_action()
-
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), 3)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
-
-
-    def test_r4539_action(self):
-        note_id = '64522'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4539_action
+            self.logic.j64521_s42_r4521_action
         )
 
 
-    def test_r4543_action(self):
+    def test_r4521_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_embalm_key_quest,
+            3,
+            self.logic.r4521_action
+        )
+
+
+    def test_j64521_s42_r4522_action(self):
+        note_id = '64521'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64521_s42_r4522_action
+        )
+
+
+    def test_r4522_action(self):
+        self._integer_equals_action(
+            self.settings_manager.get_embalm_key_quest,
+            3,
+            self.logic.r4522_action
+        )
+
+
+    def test_j64522_s44_r4539_action(self):
         note_id = '64522'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4543_action
+            self.logic.j64522_s44_r4539_action
+        )
+
+
+    def test_j64522_s45_r4543_action(self):
+        note_id = '64522'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64522_s45_r4543_action
+        )
+
+
+    def test_j64528_s51_r64527_action(self):
+        note_id = '64528'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64528_s51_r64527_action
         )
 
 
     def test_r64527_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        self.settings_manager.set_vaxis_help(False)
 
-        self.settings_manager.set_has_keyem(True)
-
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_vaxis_help())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r64527_action()
 
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_vaxis_help())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r64527_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+
+
+    def test_j64529_s51_r4568_action(self):
+        note_id = '64529'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64529_s51_r4568_action
+        )
 
 
     def test_r4568_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-        note_id = '64529'
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        self.settings_manager.set_vaxis_help(False)
 
-        self.settings_manager.set_has_keyem(True)
-
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_vaxis_help())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4568_action()
 
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_vaxis_help())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r4568_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
+
+
+    def test_j64529_s51_r4569_action(self):
+        note_id = '64529'
+
+        self._pickup_journal_note_action(
+            note_id,
+            self.logic.j64529_s51_r4569_action
+        )
 
 
     def test_r4569_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-        note_id = '64529'
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
+        self.settings_manager.set_vaxis_help(False)
 
-        self.settings_manager.set_has_keyem(True)
-
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_vaxis_help())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4569_action()
 
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_vaxis_help())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r4569_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_help())
 
 
     def test_r4580_action(self):
+        self.settings_manager.set_vaxis_exposes_soego(False)
         note_id = '64530'
 
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
         self.assertFalse(self.settings_manager.get_vaxis_exposes_soego())
+        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4580_action()
 
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
         self.assertTrue(self.settings_manager.get_vaxis_exposes_soego())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+
+        self.logic.r4580_action()
+
+        self.assertTrue(self.settings_manager.get_vaxis_exposes_soego())
+        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r4592_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
         self.settings_manager.set_has_keyem(True)
 
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4592_action()
 
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertFalse(self.settings_manager.get_has_keyem())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r4592_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
 
 
     def test_r4593_action(self):
-        who = 'protagonist'
-        prop = 'experience'
-        delta = 250
-
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 250
         self.settings_manager.set_has_keyem(True)
 
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertTrue(self.settings_manager.get_has_keyem())
-        exp_before = self.settings_manager.character_manager.get_property(who, prop)
 
         self.logic.r4593_action()
 
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertFalse(self.settings_manager.get_has_keyem())
-        exp_after = self.settings_manager.character_manager.get_property(who, prop)
-        self.assertEqual(exp_before + delta, exp_after)
+
+        self.logic.r4593_action()
+
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertFalse(self.settings_manager.get_has_keyem())
 
 
     def test_r4620_action(self):
-        self._integer_equals_action(
-            self.settings_manager.get_vaxis_zombie_disguise,
-            2,
-            self.logic.r4620_action
-        )
+        vaxis_zombie_disguise_before = 1
+        vaxis_zombie_disguise_after = 2
+        vaxis_zombie_disguise_after_once = 2
+        self.settings_manager.set_vaxis_zombie_disguise(vaxis_zombie_disguise_before)
+        self.settings_manager.set_has_embalm(True)
+        self.settings_manager.set_has_needle(True)
+
+        self.assertEqual(self.settings_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_before)
+        self.assertTrue(self.settings_manager.get_has_embalm())
+        self.assertTrue(self.settings_manager.get_has_needle())
+
+        self.logic.r4620_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after)
+        self.assertFalse(self.settings_manager.get_has_embalm())
+        self.assertFalse(self.settings_manager.get_has_needle())
+
+        self.logic.r4620_action()
+
+        self.assertEqual(self.settings_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after_once)
+        self.assertFalse(self.settings_manager.get_has_embalm())
+        self.assertFalse(self.settings_manager.get_has_needle())
 
 
     def test_r4621_action(self):
@@ -1053,21 +1197,33 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4630_action(self):
-        who = 'protagonist'
-        prop_exp = 'experience'
-        prop_looks = 'looks_like'
-        delta = 500
+        who_looks_like = 'protagonist'
+        prop_looks_like = 'looks_like'
+        delta_looks_like = zombie
+        who_experience = 'protagonist'
+        prop_experience = 'experience'
+        delta_experience = 500
+        self.settings_manager.set_vaxis_global_xp(False)
 
-        exp_before = self.settings_manager.character_manager.get_property(who, prop_exp)
-        looks_before = self.settings_manager.character_manager.get_property(who, prop_looks)
-        self.assertNotEqual(looks_before, 'zombie')
+        looks_like_before = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
+        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.settings_manager.get_vaxis_global_xp())
 
         self.logic.r4630_action()
 
-        exp_after = self.settings_manager.character_manager.get_property(who, prop_exp)
-        looks_after = self.settings_manager.character_manager.get_property(who, prop_looks)
-        self.assertEqual(exp_before + delta, exp_after)
-        self.assertEqual(looks_after, 'zombie')
+        looks_like_after = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
+        self.assertEqual(looks_like_before + delta_looks_like, looks_like_after)
+        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_before + delta_experience, experience_after)
+        self.assertTrue(self.settings_manager.get_vaxis_global_xp())
+
+        self.logic.r4630_action()
+
+        looks_like_after_once = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
+        self.assertEqual(looks_like_after + delta_looks_like, looks_like_after_once)
+        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(experience_after + delta_experience, experience_after_once)
+        self.assertTrue(self.settings_manager.get_vaxis_global_xp())
 
 
     def test_r4631_action(self):
@@ -1079,28 +1235,26 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4632_action(self):
         who = 'protagonist'
-        prop_looks = 'looks_like'
+        prop = 'looks_like'
+        delta = 'zombie'
 
-        looks_before = self.settings_manager.character_manager.get_property(who, prop_looks)
-        self.assertNotEqual(looks_before, 'zombie')
-
-        self.logic.r4632_action()
-
-        looks_after = self.settings_manager.character_manager.get_property(who, prop_looks)
-        self.assertEqual(looks_after, 'zombie')
+        self._change_prop(
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            delta,
+            self.logic.r4632_action
+        )
 
 
     def test_r64533_action(self):
         who = 'protagonist'
-        prop_looks = 'looks_like'
+        prop = 'looks_like'
+        delta = 'zombie'
 
-        looks_before = self.settings_manager.character_manager.get_property(who, prop_looks)
-        self.assertNotEqual(looks_before, 'zombie')
-
-        self.logic.r64533_action()
-
-        looks_after = self.settings_manager.character_manager.get_property(who, prop_looks)
-        self.assertEqual(looks_after, 'zombie')
+        self._change_prop(
+            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            delta,
+            self.logic.r64533_action
+        )
 
 
     def test_r4635_action(self):
@@ -1110,12 +1264,12 @@ class VaxisLogicTest(LogicTest):
         )
 
 
-    def test_r4638_action(self):
+    def test_j64531_s67_r4638_action(self):
         note_id = '64531'
 
         self._pickup_journal_note_action(
             note_id,
-            self.logic.r4638_action
+            self.logic.j64531_s67_r4638_action
         )
 
 
@@ -1309,22 +1463,21 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r1360_condition(self):
-        who = 'protagonist'
-        prop_cha = 'charisma'
-        prop_int = 'intelligence'
-        delta_cha = 11
-        delta_int = 12
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
         self.assertFalse(self.logic.r1360_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.assertFalse(self.logic.r1360_condition())
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
         self.assertTrue(self.logic.r1360_condition())
 
 
@@ -1401,22 +1554,21 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4370_condition(self):
-        who = 'protagonist'
-        prop_cha = 'charisma'
-        prop_int = 'intelligence'
-        delta_cha = 11
-        delta_int = 12
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
         self.assertFalse(self.logic.r4370_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.assertFalse(self.logic.r4370_condition())
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
         self.assertTrue(self.logic.r4370_condition())
 
 
@@ -1691,42 +1843,40 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4446_condition(self):
-        who = 'protagonist'
-        prop_cha = 'charisma'
-        prop_int = 'intelligence'
-        delta_cha = 12
-        delta_int = 12
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 12
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
+        self.assertFalse(self.logic.r4446_condition())
+
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
+
         self.assertTrue(self.logic.r4446_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.assertFalse(self.logic.r4446_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
-        self.assertFalse(self.logic.r4446_condition())
 
 
     def test_r4447_condition(self):
-        who = 'protagonist'
-        prop_cha = 'charisma'
-        prop_int = 'intelligence'
-        delta_cha = 11
-        delta_int = 12
+        who_charisma = 'protagonist'
+        prop_charisma = 'charisma'
+        delta_charisma = 11
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha - 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int + 1)
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+
         self.assertFalse(self.logic.r4447_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int)
-        self.assertFalse(self.logic.r4447_condition())
+        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma + 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence - 1)
 
-        self.settings_manager.character_manager.set_property(who, prop_cha, delta_cha + 1)
-        self.settings_manager.character_manager.set_property(who, prop_int, delta_int - 1)
         self.assertTrue(self.logic.r4447_condition())
 
 
@@ -2137,24 +2287,24 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4526_condition(self):
         self.settings_manager.set_vaxis_zombie_disguise(0)
-        self.settings_manager.set_strong_arm_vaxis(True)
+        self.settings_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4526_condition())
 
         self.settings_manager.set_vaxis_zombie_disguise(1)
-        self.settings_manager.set_strong_arm_vaxis(False)
+        self.settings_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4526_condition())
 
 
     def test_r4527_condition(self):
         self.settings_manager.set_vaxis_zombie_disguise(0)
-        self.settings_manager.set_strong_arm_vaxis(True)
+        self.settings_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4527_condition())
 
         self.settings_manager.set_vaxis_zombie_disguise(2)
-        self.settings_manager.set_strong_arm_vaxis(False)
+        self.settings_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4527_condition())
 
@@ -2263,13 +2413,13 @@ class VaxisLogicTest(LogicTest):
 
     def test_r64509_condition(self):
         self.settings_manager.set_strong_arm_vaxis(True)
-        self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_vaxis_orders(True)
 
         self.assertFalse(self.logic.r64509_condition())
 
         self.settings_manager.set_strong_arm_vaxis(False)
-        self.settings_manager.set_embalm_key_quest(3)
+        self.settings_manager.set_embalm_key_quest(2)
         self.settings_manager.set_vaxis_orders(False)
 
         self.assertTrue(self.logic.r64509_condition())
@@ -2333,51 +2483,65 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4588_condition(self):
         self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_embalm_key_quest(2)
         self.settings_manager.set_vaxis_orders(True)
+
         self.assertFalse(self.logic.r4588_condition())
 
-        self.settings_manager.set_embalm_key_quest(3)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_vaxis_orders(False)
+
         self.assertTrue(self.logic.r4588_condition())
 
 
     def test_r4589_condition(self):
         self.settings_manager.set_embalm_key_quest(1)
+        self.settings_manager.set_embalm_key_quest(2)
         self.settings_manager.set_vaxis_orders(False)
+
         self.assertFalse(self.logic.r4589_condition())
 
-        self.settings_manager.set_embalm_key_quest(3)
+        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_vaxis_orders(True)
+
         self.assertTrue(self.logic.r4589_condition())
 
 
     def test_r4592_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(False)
+
         self.assertFalse(self.logic.r4592_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(True)
+
         self.assertTrue(self.logic.r4592_condition())
 
 
     def test_r4593_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(False)
+
         self.assertFalse(self.logic.r4593_condition())
 
         self.settings_manager.set_embalm_key_quest(2)
         self.settings_manager.set_has_keyem(True)
+
         self.assertTrue(self.logic.r4593_condition())
 
 
     def test_r4594_condition(self):
         self.settings_manager.set_embalm_key_quest(0)
         self.settings_manager.set_has_keyem(True)
+
         self.assertFalse(self.logic.r4594_condition())
 
         self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_has_keyem(False)
+
         self.assertTrue(self.logic.r4594_condition())
 
 
@@ -2398,54 +2562,34 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4604_condition(self):
-        who = 'protagonist'
-        prop = 'intelligence'
-        value = 12
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.set_appearance(True)
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_appearance(1)
+
         self.assertFalse(self.logic.r4604_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop, value)
-        self.assertFalse(self.logic.r4604_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_appearance(0)
 
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
-        self.assertFalse(self.logic.r4604_condition())
-
-        self.settings_manager.set_appearance(False)
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
-        self.assertFalse(self.logic.r4604_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop, value)
-        self.assertFalse(self.logic.r4604_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
         self.assertTrue(self.logic.r4604_condition())
 
 
     def test_r4609_condition(self):
-        who = 'protagonist'
-        prop = 'intelligence'
-        value = 12
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.set_appearance(True)
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_appearance(1)
+
         self.assertFalse(self.logic.r4609_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop, value)
-        self.assertFalse(self.logic.r4609_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_appearance(0)
 
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
-        self.assertFalse(self.logic.r4609_condition())
-
-        self.settings_manager.set_appearance(False)
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
-        self.assertFalse(self.logic.r4609_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop, value)
-        self.assertFalse(self.logic.r4609_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
         self.assertTrue(self.logic.r4609_condition())
 
 
@@ -2502,28 +2646,18 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4615_condition(self):
-        who = 'protagonist'
-        prop = 'intelligence'
-        value = 12
+        who_intelligence = 'protagonist'
+        prop_intelligence = 'intelligence'
+        delta_intelligence = 12
 
-        self.settings_manager.set_appearance(True)
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.set_appearance(1)
+
         self.assertFalse(self.logic.r4615_condition())
 
-        self.settings_manager.character_manager.set_property(who, prop, value)
-        self.assertFalse(self.logic.r4615_condition())
+        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.set_appearance(0)
 
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
-        self.assertFalse(self.logic.r4615_condition())
-
-        self.settings_manager.set_appearance(False)
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
-        self.assertFalse(self.logic.r4615_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop, value)
-        self.assertFalse(self.logic.r4615_condition())
-
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
         self.assertTrue(self.logic.r4615_condition())
 
 
@@ -2582,50 +2716,60 @@ class VaxisLogicTest(LogicTest):
     def test_r4620_condition(self):
         self.settings_manager.set_has_embalm(False)
         self.settings_manager.set_has_needle(False)
+
         self.assertFalse(self.logic.r4620_condition())
 
         self.settings_manager.set_has_embalm(True)
         self.settings_manager.set_has_needle(True)
+
         self.assertTrue(self.logic.r4620_condition())
 
 
     def test_r4630_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_vaxis_global_xp(True)
+
         self.assertFalse(self.logic.r4630_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_vaxis_global_xp(False)
+
         self.assertTrue(self.logic.r4630_condition())
 
 
     def test_r4631_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_vaxis_quip_1(True)
+
         self.assertFalse(self.logic.r4631_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_vaxis_quip_1(False)
+
         self.assertTrue(self.logic.r4631_condition())
 
 
     def test_r4632_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_vaxis_quip_1(False)
+
         self.assertFalse(self.logic.r4632_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_vaxis_quip_1(True)
+
         self.assertTrue(self.logic.r4632_condition())
 
 
     def test_r64533_condition(self):
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_vaxis_global_xp(False)
+
         self.assertFalse(self.logic.r64533_condition())
 
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_vaxis_global_xp(True)
+
         self.assertTrue(self.logic.r64533_condition())
 
 
@@ -2639,20 +2783,24 @@ class VaxisLogicTest(LogicTest):
     def test_r4635_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_vaxis_quip_2(True)
+
         self.assertFalse(self.logic.r4635_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_vaxis_quip_2(False)
+
         self.assertTrue(self.logic.r4635_condition())
 
 
     def test_r4636_condition(self):
         self.settings_manager.set_in_party_morte(False)
         self.settings_manager.set_morte_vaxis_quip_2(False)
+
         self.assertFalse(self.logic.r4636_condition())
 
         self.settings_manager.set_in_party_morte(True)
         self.settings_manager.set_morte_vaxis_quip_2(True)
+
         self.assertTrue(self.logic.r4636_condition())
 
 

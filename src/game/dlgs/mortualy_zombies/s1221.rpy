@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S1221.DLG
+# Original:  DLG/DS1221.DLG
 # ###
 
 
-label start_s1221_talk:
-    call s1221_init
-    jump s1221_s0
-label start_s1221_kill:
-    call s1221_init
-    jump s1221_kill
-label s1221_init:
-    $ s1221Logic.s1221_init()
+label s1221_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r4
     show s1221_img default at center_left_down
-    return
+    jump s1221_s0
+
+
+label s1221_s7_ctor: # - # IF ~  False()
+    scene bg mortuary_f3r4
+    show s1221_img default at center_left_down
+    jump s1221_s7
+
+
 label s1221_dispose:
     hide s1221_img
     jump graphics_menu
@@ -247,27 +248,8 @@ label s1221_s6: # from 0.9 0.12 3.3 3.6
 
 
 # s7 # say35382
-label s1221_s7: # - # IF ~  False() # orphan
+label s1221_s7: # - # IF ~  False()
     nr 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump s1221_dispose
-
-label s1221_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s1221_dispose
-        'Убить.':
-            jump s1221_killed
-
-
-label s1221_killed:
-    $ s1221Logic.kill_s1221()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's1221s.'
-    nr 'Who is s1221?'
-    nr 's1221 is dead, baby, s1221 is dead.'
+    # menu: TODO [snow]: misgenerated
     jump s1221_dispose

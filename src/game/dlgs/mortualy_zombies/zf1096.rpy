@@ -4,21 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZF1096.DLG
+# Original:  DLG/DZF1096.DLG
 # ###
 
 
-label start_zf1096_talk:
-    call zf1096_init
-    jump zf1096_s0
-label start_zf1096_kill:
-    call zf1096_init
-    jump zf1096_kill
-label zf1096_init:
-    $ zf1096Logic.zf1096_init()
+label zf1096_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f2r3
     show zf1096_img default at center_left_down
-    return
+    jump zf1096_s0
+
+
+label zf1096_s3_ctor: # - # IF ~  False()
+    scene bg mortuary_f2r3
+    show zf1096_img default at center_left_down
+    jump zf1096_s3
+
+
 label zf1096_dispose:
     hide zf1096_img
     jump graphics_menu
@@ -112,24 +113,4 @@ label zf1096_s2: # from 0.3
 label zf1096_s3: # - # IF ~  False()
     nr 'Труп не шевелится. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump zf1096_dispose
-
-
-label zf1096_kill:
-    nr 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли.'
-    nr 'Кто-то под трафарет написал номер «1096» у нее на лбу; ее губы крепко зашиты.'
-
-    menu:
-        '(Уйти.)':
-            jump zf1096_dispose
-        '(Убить зомби).':
-            jump zf1096_killed
-
-label zf1096_killed:
-    $ zf1096Logic.kill_zf1096()
-    nr 'Я затягиваю косу вокруг её шеи. Она поворачивается ко мне с смотрит на меня пустыми глазами.'
-    nr '…'
-    nr 'Она же и так не дышит.'
-    nr 'Я сжимаю косу изо всех сил - шея женщины ощутимо хрустит. Ещё немного - и она смотрит на меня снизу вверх.'
-    nr 'В её глазах нет ни жизни, ни разума.'
     jump zf1096_dispose

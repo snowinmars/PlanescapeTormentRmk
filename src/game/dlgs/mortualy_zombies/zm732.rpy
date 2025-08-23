@@ -4,24 +4,22 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM732.DLG
+# Original:  DLG/DZM732.DLG
 # ###
 
 
-label start_zm732_talk_first:
-    call zm732_init
-    jump zm732_s3
-label start_zm732_talk:
-    call zm732_init
-    jump zm732_s0
-label start_zm732_kill:
-    call zm732_init
-    jump zm732_kill
-label zm732_init:
-    $ zm732Logic.zm732_init()
+label zm732_s0_ctor: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
     scene bg mortuary_f1r4
     show zm732_img default at center_left_down
-    return
+    jump zm732_s0
+
+
+label zm732_s3_ctor: # - # IF ~  HasItem("TomeBA","ZM732")
+    scene bg mortuary_f1r4
+    show zm732_img default at center_left_down
+    jump zm732_s3
+
+
 label zm732_dispose:
     hide zm732_img
     jump graphics_menu
@@ -109,20 +107,3 @@ label zm732_s4: # from 3.0
         'Оставить труп в покое.':
             # a11 # r64275
             jump zm732_dispose
-
-
-label zm732_kill:
-    nr 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно…'
-    nr '…тебе остается только гадать, когда потерял человек глаза — до смерти или после.'
-
-    menu:
-        '(Уйти.)':
-            jump zm732_dispose
-        '(Убить зомби).':
-            jump zm732_killed
-
-
-label zm732_killed:
-    $ zm732Logic.kill_zm732()
-    nr 'Труп не видит, как я заношу руку. Удары сыпятся на него с самых неожиданных направлений. Я не чувствую сожаления.'
-    jump zm732_dispose

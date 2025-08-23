@@ -3,15 +3,6 @@ class S996Logic:
         self.settings_manager = settings_manager
 
 
-    def s996_init(self):
-        self.settings_manager.location_manager.set_location('mortuary_f3r3')
-        self.settings_manager.inc_talked_to_s996_times()
-
-
-    def kill_s996(self):
-        self.settings_manager.set_dead_s996(True)
-
-
     def r35461_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_skeleton_chaotic(True)

@@ -4,21 +4,16 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/ZM475.DLG
+# Original:  DLG/DZM475.DLG
 # ###
 
 
-label start_zm475_talk:
-    call zm475_init
-    jump zm475_s0
-label start_zm475_kill:
-    call zm475_init
-    jump zm475_kill
-label zm475_init:
-    $ zm475Logic.zm475_init()
+label zm475_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r3
     show zm475_img default at center_left_down
-    return
+    jump zm475_s0
+
+
 label zm475_dispose:
     hide zm475_img
     jump graphics_menu
@@ -74,20 +69,3 @@ label zm475_s2: # from 0.3
         'Оставить труп в покое.':
             # a7 # r6594
             jump zm475_dispose
-
-
-label zm475_kill:
-    nr 'Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.'
-    nr 'На проржавевшей табличке над его левым глазом выбит номер «475». Его рот намертво закрыт; от него несет бальзамирующей жидкостью.'
-
-    menu:
-        '(Уйти.)':
-            jump zm475_dispose
-        '(Убить зомби).':
-            jump zm475_killed
-
-
-label zm475_killed:
-    $ zm475Logic.kill_zm475()
-    nr 'Я разгибаю металлические ленты на его черепе. Без них голова трупа сама разваливается по частям. Я не чувствую сожалений.'
-    jump zm475_dispose

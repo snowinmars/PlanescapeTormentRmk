@@ -4,24 +4,20 @@ init 10 python:
 
 
 # ###
-# Original:  DLG/S748.DLG
+# Original:  DLG/DS748.DLG
 # ###
 
 
-label start_s748_talk:
-    call s748_init
-    jump s748_s0
-label start_s748_kill:
-    call s748_init
-    jump s748_kill
-label s748_init:
-    $ s748Logic.s748_init()
+label s748_s0_ctor: # - # IF ~  True()
     scene bg mortuary_f3r3
     show s748_img default at center_left_down
-    return
-label s748_dispose:
-    hide s748_img
-    jump graphics_menu
+    jump s748_s0
+
+
+label s748_s7_ctor: # - # IF ~  False()
+    scene bg mortuary_f3r3
+    show s748_img default at center_left_down
+    jump s748_s7
 
 
 # s0 # say35383
@@ -248,28 +244,8 @@ label s748_s6: # from 0.9 0.12 3.3 3.6
 
 
 # s7 # say35459
-label s748_s7: # - # IF ~  False() # orphan
+label s748_s7: # - # IF ~  False()
     nr 'Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.'
 
-    jump s748_dispose
-
-
-label s748_kill:
-    nr 'Todo.'
-
-    menu:
-        'Уйти.':
-            jump s748_dispose
-        'Убить.':
-            jump s748_killed
-
-
-label s748_killed:
-    $ s748Logic.kill_s748()
-    nr 'Whose motorcycle is this?'
-    nr 'Its a chopper, baby.'
-    nr 'Whose chopper is this?'
-    nr 's748s.'
-    nr 'Who is s748?'
-    nr 's748 is dead, baby, s748 is dead.'
+    # menu: # TODO [snow]: misgenerated
     jump s748_dispose
