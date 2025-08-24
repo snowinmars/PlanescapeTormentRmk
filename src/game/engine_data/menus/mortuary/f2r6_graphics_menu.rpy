@@ -29,8 +29,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF2R6GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF2R6GraphicsMenuLogic.calc_morte_ypos(),
-        'kill_tooltip': mortuaryF2R6GraphicsMenuLogic.morte_kill_tooltip,
-        'kill_action': mortuaryF2R6GraphicsMenuLogic.morte_kill_action,
         'speak_tooltip': mortuaryF2R6GraphicsMenuLogic.morte_speak_tooltip,
         'speak_action': mortuaryF2R6GraphicsMenuLogic.morte_speak_action
     }, {
@@ -39,8 +37,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/vaxis.png',
         'xpos': 1300,
         'ypos': 700,
-        'kill_tooltip': mortuaryF2R6GraphicsMenuLogic.vaxis_kill_tooltip,
-        'kill_action': mortuaryF2R6GraphicsMenuLogic.vaxis_kill_action,
         'speak_tooltip': mortuaryF2R6GraphicsMenuLogic.vaxis_speak_tooltip,
         'speak_action': mortuaryF2R6GraphicsMenuLogic.vaxis_speak_action
     }]

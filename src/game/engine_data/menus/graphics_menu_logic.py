@@ -7,10 +7,6 @@ class GraphicsMenuLogic:
         self.party_radius = 40
 
 
-    def morte_kill_tooltip(self):
-        return 'Убить Морта'
-    def morte_kill_action(self):
-        return 'start_morte2_kill'
     def morte_speak_tooltip(self):
         v1 = 'Поговорить с Мортом'
         v2 = 'Пригласить Морта в группу'

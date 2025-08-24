@@ -56,17 +56,9 @@ class MortuaryF1RcGraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def giantsk_kill_tooltip(self):
-        return 'Напасть на гиганский скелет'
-
-
-    def giantsk_kill_action(self):
-        return 'start_giantsk_kill'
-
-
     def giantsk_speak_tooltip(self):
         return 'Поговорить с гиганским скелетом'
 
 
     def giantsk_speak_action(self):
-        return 'start_giantsk_talk'
+        return 'giantsk_speak'

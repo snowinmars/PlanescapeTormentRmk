@@ -32,17 +32,6 @@ class MortuaryF2R4GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def zm1664_kill_tooltip(self):
-        v1 = 'Атаковать труп «1664»'
-        v2 = 'Атаковать труп без челюсти'
-        f1 = self.settings_manager.get_talked_to_zm1664_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm1664_kill_action(self):
-        return 'start_zm1664_kill'
-
-
     def zm1664_speak_tooltip(self):
         v1 = 'Поговорить c трупом «1664»'
         v2 = 'Поговорить с трупом без челюсти'
@@ -51,4 +40,4 @@ class MortuaryF2R4GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm1664_speak_action(self):
-        return 'start_zm1664_talk'
+        return 'zm1664_speak'

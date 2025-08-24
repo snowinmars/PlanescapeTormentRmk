@@ -32,17 +32,6 @@ class MortuaryF2R8GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def zf891_kill_tooltip(self):
-        v1 = 'Атаковать труп «891»'
-        v2 = 'Атаковать отвратительный труп'
-        f1 = self.settings_manager.get_talked_to_zf891_times() > 0
-        return v1 if f1 else v2
-
-
-    def zf891_kill_action(self):
-        return 'start_zf891_kill'
-
-
     def zf891_speak_tooltip(self):
         v1 = 'Поговорить c трупом «891»'
         v2 = 'Поговорить с отвратительным трупом'
@@ -51,4 +40,4 @@ class MortuaryF2R8GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zf891_speak_action(self):
-        return 'start_zf891_talk'
+        return 'zf891_speak'

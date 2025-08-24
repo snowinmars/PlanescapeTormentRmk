@@ -105,17 +105,6 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def zm569_kill_tooltip(self):
-        v1 = 'Атаковать труп «569»'
-        v2 = 'Атаковать плешивый ходячий труп'
-        f1 = self.settings_manager.get_talked_to_zm569_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm569_kill_action(self):
-        return 'start_zm569_kill'
-
-
     def zm569_speak_tooltip(self):
         v1 = 'Поговорить c трупом «569»'
         v2 = 'Поговорить с ходячим плешивым трупом'
@@ -124,18 +113,7 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm569_speak_action(self):
-        return 'start_zm569_talk'
-
-
-    def zm825_kill_tooltip(self):
-        v1 = 'Атаковать труп «825»'
-        v2 = 'Атаковать ходячий труп повешенного'
-        f1 = self.settings_manager.get_talked_to_zm825_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm825_kill_action(self):
-        return 'start_zm825_kill'
+        return 'zm569_speak'
 
 
     def zm825_speak_tooltip(self):
@@ -146,18 +124,7 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm825_speak_action(self):
-        return 'start_zm825_talk'
-
-
-    def zm782_kill_tooltip(self):
-        v1 = 'Атаковать труп «782»'
-        v2 = 'Атаковать ходячий труп, полный ненависти'
-        f1 = self.settings_manager.get_talked_to_zm782_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm782_kill_action(self):
-        return 'start_zm782_kill'
+        return 'zm825_speak'
 
 
     def zm782_speak_tooltip(self):
@@ -168,4 +135,4 @@ class MortuaryF2R1GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm782_speak_action(self):
-        return 'start_zm782_talk'
+        return 'zm782_speak'

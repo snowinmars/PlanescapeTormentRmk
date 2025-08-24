@@ -124,7 +124,7 @@ label start:
             jump introduction
         "Новая жизнь":
             call quick_setup_as_mage
-            jump start_morte1_talk_first
+            jump morte1_speak
 
 
 label end:

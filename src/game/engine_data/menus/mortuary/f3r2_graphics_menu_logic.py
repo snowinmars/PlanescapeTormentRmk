@@ -50,19 +50,6 @@ class MortuaryF3R2GraphicsMenuLogic(GraphicsMenuLogic):
         return 'Взять иголку'
 
 
-    def dust_kill_tooltip(self):
-        v1 = 'Атаковать тленного'
-        v2 = 'Атаковать человека'
-        f1 = self.settings_manager.get_talked_to_dust_times() > 0
-        return v1 if f1 else v2
-
-
-    def dust_kill_action(self):
-        v1 = 'start_dust_kill'
-        v2 = 'start_dust_kill_first'
-        f1 = self.settings_manager.get_talked_to_dust_times() > 0
-        return v1 if f1 else v2
-
     def dust_speak_tooltip(self):
         v1 = 'Поговорить с тленным'
         v2 = 'Поговорить с человеком'
@@ -71,7 +58,4 @@ class MortuaryF3R2GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def dust_speak_action(self):
-        v1 = 'start_dust_talk'
-        v2 = 'start_dust_talk_first'
-        f1 = self.settings_manager.get_talked_to_dust_times() > 0
-        return v1 if f1 else v2
+        return 'dust_speak'

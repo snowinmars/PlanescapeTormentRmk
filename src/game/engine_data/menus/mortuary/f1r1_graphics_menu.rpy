@@ -45,8 +45,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF1R1GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF1R1GraphicsMenuLogic.calc_morte_ypos(),
-        'kill_tooltip': mortuaryF1R1GraphicsMenuLogic.morte_kill_tooltip,
-        'kill_action': mortuaryF1R1GraphicsMenuLogic.morte_kill_action,
         'speak_tooltip': mortuaryF1R1GraphicsMenuLogic.morte_speak_tooltip,
         'speak_action': mortuaryF1R1GraphicsMenuLogic.morte_speak_action
     }, {
@@ -55,8 +53,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/soego.png',
         'xpos': 950,
         'ypos': 600,
-        'kill_tooltip': mortuaryF1R1GraphicsMenuLogic.soego_kill_tooltip,
-        'kill_action': mortuaryF1R1GraphicsMenuLogic.soego_kill_action,
         'speak_tooltip': mortuaryF1R1GraphicsMenuLogic.soego_speak_tooltip,
         'speak_action': mortuaryF1R1GraphicsMenuLogic.soego_speak_action
     }]

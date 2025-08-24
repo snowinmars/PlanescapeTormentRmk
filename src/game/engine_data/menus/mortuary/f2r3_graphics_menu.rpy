@@ -29,8 +29,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF2R3GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF2R3GraphicsMenuLogic.calc_morte_ypos(),
-        'kill_tooltip': mortuaryF2R3GraphicsMenuLogic.morte_kill_tooltip,
-        'kill_action': mortuaryF2R3GraphicsMenuLogic.morte_kill_action,
         'speak_tooltip': mortuaryF2R3GraphicsMenuLogic.morte_speak_tooltip,
         'speak_action': mortuaryF2R3GraphicsMenuLogic.morte_speak_action
     }, {
@@ -39,8 +37,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/dhall.png',
         'xpos': 950,
         'ypos': 920,
-        'kill_tooltip': mortuaryF2R3GraphicsMenuLogic.dhall_kill_tooltip,
-        'kill_action': mortuaryF2R3GraphicsMenuLogic.dhall_kill_action,
         'speak_tooltip': mortuaryF2R3GraphicsMenuLogic.dhall_speak_tooltip,
         'speak_action': mortuaryF2R3GraphicsMenuLogic.dhall_speak_action
     }, {
@@ -49,8 +45,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/zombie.png',
         'xpos': 560,
         'ypos': 550,
-        'kill_tooltip': mortuaryF2R3GraphicsMenuLogic.zm396_kill_tooltip,
-        'kill_action': mortuaryF2R3GraphicsMenuLogic.zm396_kill_action,
         'speak_tooltip': mortuaryF2R3GraphicsMenuLogic.zm396_speak_tooltip,
         'speak_action': mortuaryF2R3GraphicsMenuLogic.zm396_speak_action
     }, {
@@ -59,8 +53,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/zombie.png',
         'xpos': 660,
         'ypos': 930,
-        'kill_tooltip': mortuaryF2R3GraphicsMenuLogic.zm1201_kill_tooltip,
-        'kill_action': mortuaryF2R3GraphicsMenuLogic.zm1201_kill_action,
         'speak_tooltip': mortuaryF2R3GraphicsMenuLogic.zm1201_speak_tooltip,
         'speak_action': mortuaryF2R3GraphicsMenuLogic.zm1201_speak_action
     }, {
@@ -69,8 +61,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/zombie.png',
         'xpos': 1160,
         'ypos': 950,
-        'kill_tooltip': mortuaryF2R3GraphicsMenuLogic.zf1096_kill_tooltip,
-        'kill_action': mortuaryF2R3GraphicsMenuLogic.zf1096_kill_action,
         'speak_tooltip': mortuaryF2R3GraphicsMenuLogic.zf1096_speak_tooltip,
         'speak_action': mortuaryF2R3GraphicsMenuLogic.zf1096_speak_action
     }, {
@@ -79,8 +69,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/zombie.png',
         'xpos': 900,
         'ypos': 600,
-        'kill_tooltip': mortuaryF2R3GraphicsMenuLogic.zf1072_kill_tooltip,
-        'kill_action': mortuaryF2R3GraphicsMenuLogic.zf1072_kill_action,
         'speak_tooltip': mortuaryF2R3GraphicsMenuLogic.zf1072_speak_tooltip,
         'speak_action': mortuaryF2R3GraphicsMenuLogic.zf1072_speak_action
     }]
