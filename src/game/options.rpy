@@ -180,16 +180,32 @@ init python:
 
     ## Классифицируйте файлы как None, чтобы исключить их из дистрибутивов.
 
-    build.classify('**~', None)
-    build.classify('**.bak', None)
-    build.classify('**/.**', None)
-    build.classify('**/#**', None)
-    build.classify('**/thumbs.db', None)
+    build.classify('**.bak'                , None)
+    build.classify('**/__pycache__'        , None)
+    build.classify('**/_build'             , None)
+    build.classify('**/.**'                , None)
+    build.classify('**/#**'                , None)
+    build.classify('**/cache'              , None)
+    build.classify('**/d_clean'            , None)
+    build.classify('**/d_raw'              , None)
+    build.classify('**/d_renpy'            , None)
+    build.classify('**/docker-compose.yaml', None)
+    build.classify('**/Dockerfile'         , None)
+    build.classify('**/htmlcov'            , None)
+    build.classify('**/logs'               , None)
+    build.classify('**/saves'              , None)
+    build.classify('**/thumbs.db'          , None)
+    build.classify('**~'                   , None)
+
+    # Minimizing bundle size
+    build.classify('**.rpy', None)
+    build.classify('**.rpyc', 'all')
 
     ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.wav', 'archive')
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.include_update = False
 
     ## Файлы, соответствующие образцам документации, дублируются в приложениях
     ## Mac, чтобы они появлялись и в приложении, и в zip архиве.

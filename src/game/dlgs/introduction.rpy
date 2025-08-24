@@ -9,6 +9,8 @@ label quick_setup_as_mage:
 
 
 label introduction:
+    play music main
+    scene black
     snowinmars 'Привет. Сразу вопрос.'
 
     menu:
@@ -57,13 +59,21 @@ label introduction_1:
     snowinmars 'Ссылка на его форк: https://github.com/Argent77/NearInfinity'
     snowinmars 'Как оказалось, RenPy поддерживает виртуальные label - на них построены графические менюшки.'
     snowinmars 'Питоновский код сгенерен deepseek r1, за что ему большое спасибо. Несмотря на десять с хреном лет в разработке, я не могу понять красоту этого языка. И уже не хочу понимать.'
-    snowinmars 'Правда, именно кода нейронки тут не осталось: я всё несколько раз переписал руками, чтобы поселить мысли в её софизмы.'
-    snowinmars 'Спасибо также тексту "Planescape: Torment - Novelization" за авторством, вроде как, Chris Avellone and Colin McComb. Я с него беру описания.'
+    snowinmars 'Правда, именно кода нейронки тут почти не осталось: я всё несколько раз переписал руками, чтобы поселить мысли в её софизмы.'
+    snowinmars 'Спасибо также тексту "Planescape: Torment - Novelization" за авторством, вроде как, Chris Avellone and Colin McComb. Я с него иногда беру описания.'
 
+    snowinmars 'Немного технических деатлей.'
+    snowinmars 'У RenPy из коробки есть история реплик - если ты сейчас помотаешь колёсиком мыши, то прочитаешь предыдущие реплики.'
+    snowinmars 'Так вот: в этой версии прочтение предыдущих реплик может сломать игру)'
+    snowinmars 'Кстати, управление:\n    c - экран персонажа\n    i - инвентарь'
+    snowinmars 'Они нафиг не нужны, но они есть. Журнал тоже есть, но его просмотр не реализован.'
+
+    snowinmars 'Итого.'
     snowinmars 'По итогу, я ставлю простой вопрос: а вот всё это, что я описал - оно сработает?'
     snowinmars 'Я пока не знаю. Я пытаюсь это узнать. Если ты мне поможешь в этом - будет супер.'
     snowinmars 'Мои контакты:\n  telegram: @snowinmars\n  email:snowinmars@yandex.ru'
     snowinmars 'Ссылка на репу с этим проектом:\n  https://github.com/snowinmars/PlanescapeTormentRmk'
+    snowinmars 'Проект залицензирован под GNU/GPLv3'
     snowinmars 'Если хочешь играть в оригинал - ссылка на прохождение:\n  https://wiki.aerie.ru/wiki/Категория:Прохождение_(PsT)'
     snowinmars 'Спасибо. Приятного перерождения.'
 
@@ -100,8 +110,9 @@ label new_life:
 
 
 label intro:
+    play music mortuary
     scene black
-    hide expression "*"
+    # hide expression "*"
 
     nr '………кккккккхххххххххх………'
     nr 'Этот хриплый присвист – мой первый вдох.'

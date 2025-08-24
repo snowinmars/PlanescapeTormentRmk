@@ -58,5 +58,6 @@ screen mortuary_f1r2_graphics_menu_screen():
     use abstract_location_menu_screen(
         'bg mortuary_f1r2',
         mortuary_f1r2_walking,
-        mortuary_f1r2_talking
+        mortuary_f1r2_talking,
+        audio.deionarra,
     )

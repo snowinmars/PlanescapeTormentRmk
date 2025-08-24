@@ -56,6 +56,7 @@ label deionarra_s1: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global
 label deionarra_s2: # from 1.0 1.1
     nr 'Ее глаза медленно открываются, секунду она смущенно моргает, будто не понимая, где она находится.'
     nr 'Девушка медленно окидывает взглядом комнату. Увидев тебя, ее спокойное лицо искажается яростью.'
+    play sound deionarra_s1
     deionarra_unknown '«Ты!»'
     deionarra_unknown '«Что привело сюда *тебя*?!»'
     deionarra_unknown '«Захотел лично полюбоваться на причиненные тобой страдания?»'
@@ -120,6 +121,7 @@ label deionarra_s3: # from 2.0 2.1 2.2 10.0
 label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.'
     nr 'При твоем появлении отчаяние на ее лице сменяется яростью.'
+    play sound deionarra_s4
     deionarra '«Ты снова пришел! Почему ты продолжаешь мучить меня?»' # [DEN002]
 
     menu:
@@ -136,6 +138,7 @@ label deionarra_s4: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global
 label deionarra_s5: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     nr 'Дейонарра снова появляется… на этот раз ее лицо полно отчаяния, ее руки вытянуты, будто пытаются за что-то ухватиться.'
     nr 'При твоем появлении отчаяние на ее лице сменяется надеждой.'
+    play sound deionarra_s5
     deionarra '«Любовь моя… ты снова вернулся ко мне! Ты вспомнил меня?»' # [DEN003A]
 
     menu:

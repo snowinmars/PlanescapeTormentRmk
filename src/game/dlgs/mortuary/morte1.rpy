@@ -10,6 +10,7 @@
 
 # s0 # say39792
 label morte1_s0: # - # IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
+    play sound morte1_s0
     morte_unknown '«Эй, шеф. Ты в порядке?»'
     morte_unknown '«Изображаешь из себя труп или пытаешься обмануть трухлявых?»'
     morte_unknown '«Я уж думал, что ты дал дуба».'

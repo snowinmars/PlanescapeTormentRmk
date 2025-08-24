@@ -6,7 +6,7 @@ init 1 python:
 
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
-    config.version = "0.0"
+    config.version = "0.01"
     config.reject_backslash = False  # required to make the above work with with RenPy:
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     sys.setdefaultencoding('utf-8')
@@ -94,14 +94,17 @@ label start:
     show screen inventory_button
     show screen character_screen_button
     show screen hotkey_listener
+
+    $ enable_dev = False
+
     menu:
-        "dev":
-            jump end
-            call quick_setup_as_mage
+        "dev" if enable_dev:
+            play music mortuary
+            call quick_setup_as_mage from _call_quick_setup_as_mage
             $ gsm = renpy.store.global_settings_manager
             $ gcm = renpy.store.global_character_manager
             $ glm = renpy.store.global_location_manager
-            $ glm.set_location('mortuary_f1r3')
+            $ glm.set_location('mortuary_f2r1')
             scene bg mortuary_f2r1
             $ gsm.set_morte_value(1)
             $ gsm.set_in_party_morte(True)
@@ -124,7 +127,7 @@ label start:
         "Вступление для технодемки":
             jump introduction
         "Новая жизнь":
-            call quick_setup_as_mage
+            call quick_setup_as_mage from _call_quick_setup_as_mage_1
             jump intro
 
 
