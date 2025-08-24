@@ -470,11 +470,11 @@ class SoegoLogic:
 
 
     def r1478_condition(self):
-        return self.settings_manager.get_has_keymo()
+        return not self.settings_manager.get_has_keymo()
 
 
     def r1479_condition(self):
-        return not self.settings_manager.get_has_keymo()
+        return self.settings_manager.get_has_keymo()
 
 
     def r1483_condition(self):
@@ -759,11 +759,11 @@ class SoegoLogic:
 
 
     def r4975_condition(self):
-        return self.settings_manager.get_has_keymo()
+        return not self.settings_manager.get_has_keymo()
 
 
     def r4976_condition(self):
-        return not self.settings_manager.get_has_keymo()
+        return self.settings_manager.get_has_keymo()
 
 
     def r4984_condition(self):
@@ -775,11 +775,11 @@ class SoegoLogic:
 
 
     def r4988_condition(self):
-        return self.settings_manager.get_has_keymo()
+        return not self.settings_manager.get_has_keymo()
 
 
     def r4989_condition(self):
-        return not self.settings_manager.get_has_keymo()
+        return self.settings_manager.get_has_keymo()
 
 
     def r4991_condition(self):

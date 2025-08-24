@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm825_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r1
-    show zm825_img default at center_left_down
-    jump zm825_s0
-
-
-label zm825_dispose:
-    hide zm825_img
-    jump graphics_menu
-
-
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
     nr 'Голова этого трупа болтается на плечах… судя по вывернутой шее, этого человека повесили. На виске нарисован номер «825».'

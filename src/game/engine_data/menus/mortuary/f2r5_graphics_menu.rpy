@@ -29,8 +29,8 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF2R5GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF2R5GraphicsMenuLogic.calc_morte_ypos(),
-        'speak_tooltip': mortuaryF2R5GraphicsMenuLogic.morte_speak_tooltip,
-        'speak_action': mortuaryF2R5GraphicsMenuLogic.morte_speak_action
+        'speak_tooltip': mortuaryF2R5GraphicsMenuLogic.morte2_speak_tooltip,
+        'speak_action': mortuaryF2R5GraphicsMenuLogic.morte2_speak_action
     }, {
         'when': mortuaryF2R5GraphicsMenuLogic.when_eivene,
         'idle_img': 'images/menu_sprites/eivene.png',

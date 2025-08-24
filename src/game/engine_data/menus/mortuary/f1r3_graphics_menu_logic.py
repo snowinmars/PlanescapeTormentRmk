@@ -69,11 +69,11 @@ class MortuaryF1R3GraphicsMenuLogic(GraphicsMenuLogic):
     def xach_speak_tooltip(self):
         v1 = 'Поговорить с трупом «331»'
         v2 = 'Поговорить со слепым трупом'
-        v2 = 'Поговорить с Захарией'
+        v3 = 'Поговорить с Захарией'
         f1 = self.settings_manager.get_talked_to_xach_times() > 0
         f2 = self.settings_manager.get_know_xachariah_name()
         if f2:
-            return v2
+            return v3
         return v1 if f1 else v2
 
 

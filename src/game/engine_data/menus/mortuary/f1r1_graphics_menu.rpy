@@ -37,6 +37,14 @@ init 10 python:
         'ypos': 300,
         'action': Function(lambda: renpy.jump(mortuaryF1R1GraphicsMenuLogic.to_mortuary_f1rc_action())),
         'tooltip': mortuaryF1R1GraphicsMenuLogic.to_mortuary_f1rc_tooltip
+    }, {
+        'when': mortuaryF1R1GraphicsMenuLogic.see_mortuary_gate_open,
+        'idle_img': 'images/icons/open_idle.png',
+        'hover_img': 'images/icons/open_hover.png',
+        'xpos': 650,
+        'ypos': 850,
+        'action': Function(lambda: renpy.jump(mortuaryF1R1GraphicsMenuLogic.to_game_end_action())),
+        'tooltip': mortuaryF1R1GraphicsMenuLogic.to_game_end_tooltip
     }]
 
     mortuary_f1r1_talking = [{
@@ -45,8 +53,8 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF1R1GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF1R1GraphicsMenuLogic.calc_morte_ypos(),
-        'speak_tooltip': mortuaryF1R1GraphicsMenuLogic.morte_speak_tooltip,
-        'speak_action': mortuaryF1R1GraphicsMenuLogic.morte_speak_action
+        'speak_tooltip': mortuaryF1R1GraphicsMenuLogic.morte2_speak_tooltip,
+        'speak_action': mortuaryF1R1GraphicsMenuLogic.morte2_speak_action
     }, {
         'when': mortuaryF1R1GraphicsMenuLogic.when_soego,
         'idle_img': 'images/menu_sprites/soego.png',

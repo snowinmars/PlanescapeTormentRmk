@@ -23,13 +23,10 @@ class MortuaryF2R2GraphicsMenuLogic(GraphicsMenuLogic):
     def to_mortuary_f2r3_action(self):
         l = 'mortuary_f2r3'
         v1 = 'graphics_menu'
-        v2 = 'morte2_speak' # TODO [snow]: how is Mortuary_Walkthrough handles for this case?
+        v2 = 'morte2_speak'
         f1 = self.location_manager.is_visited(l)
-        if f1:
-            self.location_manager.set_location(l)
-            return v1
         self.location_manager.set_location(l)
-        return v2
+        return v1 if f1 else v2
 
 
     def to_mortuary_f2r3_tooltip(self):

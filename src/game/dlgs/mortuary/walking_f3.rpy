@@ -50,6 +50,7 @@ label walk_mortuary_f3r4_pick_mortuary_key:
     nr "Ты подбираешь ключ от внутренних покоев Морга."
     jump graphics_menu
 
+
 label walk_mortuary_f3r4_pick_mortuary_task_list:
     $ walkingF3Logic.walk_mortuary_f3r4_pick_mortuary_task_list()
     nr "Ты подбираешь список заданий."

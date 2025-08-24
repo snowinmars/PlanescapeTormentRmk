@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm475_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r3
-    show zm475_img default at center_left_down
-    jump zm475_s0
-
-
-label zm475_dispose:
-    hide zm475_img
-    jump graphics_menu
-
-
 # s0 # say6584
 label zm475_s0: # - # IF ~  True()
     nr 'Немного помятая голова этого мертвеца стянута многочисленными тонкими металлическими лентами, скрепленными прямо на черепе.'

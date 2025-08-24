@@ -3,6 +3,10 @@ class Morte1Logic:
         self.settings_manager = settings_manager
 
 
+    def s23_action(self):
+        self.settings_manager.set_mortuary_walkthrough(1) # TODO [snow]: I guess
+
+
     def r39793_action(self):
         self.settings_manager.set_morte_value(1)
 

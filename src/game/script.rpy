@@ -1,8 +1,8 @@
 init 1 python:
     import os
     import sys
-    from engine.logger import (setup_logger)
-
+    import time
+    from game.engine.setup_logger import (setup_logger)
 
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
@@ -13,11 +13,8 @@ init 1 python:
     # Game may bug out on saving, in such case, comment should be removed
     # config.use_cpickle = False
 
-    setup_logger(logs_folder)
-
+    devlog = setup_logger(logs_folder)
     devlog.info("Version: %s" % config.version)
-    devlog.info("Log level: %s" % log_level)
-    devlog.info("Game directory: %s" % gamedir)
 
 
 init 2 python:
@@ -99,16 +96,20 @@ label start:
     show screen hotkey_listener
     menu:
         "dev":
+            jump end
             call quick_setup_as_mage
             $ gsm = renpy.store.global_settings_manager
             $ gcm = renpy.store.global_character_manager
             $ glm = renpy.store.global_location_manager
-            $ glm.set_location('mortuary_f2r7')
+            $ glm.set_location('mortuary_f1r3')
+            scene bg mortuary_f2r1
+            $ gsm.set_morte_value(1)
             $ gsm.set_in_party_morte(True)
-            $ gcm.set_property('protagonist', 'good', 10)
             $ gsm.set_has_intro_key(True)
+            $ gsm.set_mortuary_walkthrough(1)
+            # $ gcm.set_property('protagonist', 'good', 10)
             # $ gsm.set_mortualy_alarmed(True)
-            $ gsm.set_has_mortuary_key(True)
+            # $ gsm.set_has_mortuary_key(True)
             # $ gsm.set_has_tome_ba(True)
             # $ gsm.set_has_copper_earring_closed(True)
             # $ gsm.set_has_scalpel(True)
@@ -124,9 +125,13 @@ label start:
             jump introduction
         "Новая жизнь":
             call quick_setup_as_mage
-            jump morte1_speak
+            jump intro
 
 
 label end:
+    snowinmars '…'
+    snowinmars '………'
+    snowinmars 'Спасибо.'
+    # do not modify the next line. It's one of the first line in the game)
     'The conversation ends.'
     return

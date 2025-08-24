@@ -11,6 +11,10 @@ class VaxisLogic:
         self.settings_manager.set_know_vaxis_name(True)
 
 
+    def kill_vaxis(self):
+        self.settings_manager.set_dead_vaxis(True)
+
+
     def r454_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

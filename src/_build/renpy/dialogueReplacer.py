@@ -460,12 +460,14 @@ class DialogueReplacer:
             self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},0,0)', f'self.settings_manager.set_has_{to_var}(True)')
             self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},1,0)', f'self.settings_manager.set_has_{to_var}(True)')
 
-        self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return not self.settings_manager.get_has_{to_var}()')
+        # in `HasItem(x,Myself)` the `Myself` is the `this` character of current dialogue,
+        # in other words, `Myself` is the npc, that protagonist is talking to.
+        self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'!PartyHasItem("{from_var}")', f'return not self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.settings_manager.set_has_{to_var}(False)')
         self.add_replacement(f'DestroyPartyItem("{from_var}",FALSE)', f'self.settings_manager.set_has_{to_var}(False)')
         self.add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.settings_manager.set_has_{to_var}(True)')
-        self.add_replacement(f'HasItem("{from_var}",Myself)', f'return self.settings_manager.get_has_{to_var}()')
+        self.add_replacement(f'HasItem("{from_var}",Myself)', f'return not self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'PartyHasItem("{from_var}")', f'return self.settings_manager.get_has_{to_var}()')
         self.add_replacement(f'TakeItem("{from_var}",Protagonist)', f'self.settings_manager.set_has_{to_var}(False)')
         self.add_replacement(f'TakePartyItemNum("{from_var}",1)', f'self.settings_manager.set_has_{to_var}(False)')

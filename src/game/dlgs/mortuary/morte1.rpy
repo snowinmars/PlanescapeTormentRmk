@@ -266,6 +266,7 @@ label morte1_s22: # from 21.0
 # s23 # say39845
 label morte1_s23: # from 19.1 20.1 21.1 22.0
     morte '«Тогда настало время познакомить этих трупов с их второй смертью…»'
+    $ morte1Logic.s23_action()
 
     menu:
         '«Вперед».':
@@ -274,7 +275,7 @@ label morte1_s23: # from 19.1 20.1 21.1 22.0
 
 
 # s24 # say39847
-label morte1_s24: # - # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
+label morte1_s24: # from zm782_take_key_2 # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
     morte '«Отлично, похоже, ты позаботился о правильном трупе. Теперь надо найти ключ. Он должен быть на его теле. Как только мы его получим, мы сможем выбраться отсюда».'
     nr 'Ты достаёшь из-под тела кусок железа, в котором с трудом можно опознать правильную форму.'
     $ morte1Logic.s24_action()

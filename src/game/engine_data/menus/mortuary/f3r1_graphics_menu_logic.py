@@ -9,9 +9,14 @@ class MortuaryF3R1GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def to_mortuary_f2r1_action(self):
-        self.location_manager.set_location('mortuary_f2r1')
-        return 'graphics_menu'
-
+        l = 'mortuary_f2r1'
+        v1 = 'graphics_menu'
+        v2 = 'walk_to_mortuaryf2r1_closed'
+        f1 = self.settings_manager.get_has_mortuary_key()
+        if f1:
+            self.location_manager.set_location(l)
+            return v1
+        return v2
 
     def to_mortuary_f2r1_tooltip(self):
         v1 = 'Спуститься на второй этаж'
@@ -36,6 +41,10 @@ class MortuaryF3R1GraphicsMenuLogic(GraphicsMenuLogic):
 
     def to_mortuary_f3r4_tooltip(self):
         return 'Пройти южнее'
+
+
+    def has_no_mortuary_key(self):
+        return not self.settings_manager.get_has_mortuary_key()
 
 
     def to_pick_mortuary_key_action(self):
