@@ -26,6 +26,10 @@ class MortuaryF3R2GraphicsMenuLogic(GraphicsMenuLogic):
         return 'Пройти восточнее'
 
 
+    def has_no_garbage(self):
+        return not self.settings_manager.get_has_garbage()
+
+
     def to_pick_garbage_action(self):
         return 'walk_mortuary_f3r4_pick_garbage'
 
@@ -34,12 +38,20 @@ class MortuaryF3R2GraphicsMenuLogic(GraphicsMenuLogic):
         return 'Взять мусор'
 
 
+    def has_no_mortuary_task_list(self):
+        return not self.settings_manager.get_has_mortuary_task_list()
+
+
     def to_pick_mortuary_task_list_action(self):
         return 'walk_mortuary_f3r4_pick_mortuary_task_list'
 
 
     def to_pick_mortuary_task_list_tooltip(self):
         return 'Взять бумагу'
+
+
+    def has_no_needle(self):
+        return not self.settings_manager.get_has_needle()
 
 
     def to_pick_needle_action(self):

@@ -52,4 +52,4 @@ class MortuaryF1R2GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def deionarra_speak_action(self):
-        return 'deions_speak'
+        return 'deionarra_speak'

@@ -26,12 +26,20 @@ class MortuaryF3R4GraphicsMenuLogic(GraphicsMenuLogic):
         return 'Пройти восточнее'
 
 
+    def has_no_prybar(self):
+        return not self.settings_manager.get_has_prybar()
+
+
     def to_prybar_action(self):
         return 'walk_mortuary_f3r4_pick_prybar'
 
 
     def to_prybar_tooltip(self):
         return 'Взять ломик'
+
+
+    def has_no_dustman_request(self):
+        return not self.settings_manager.get_has_dustman_request()
 
 
     def to_dustman_request_action(self):
@@ -42,12 +50,20 @@ class MortuaryF3R4GraphicsMenuLogic(GraphicsMenuLogic):
         return 'Взять бумагу'
 
 
+    def has_no_needle(self):
+        return not self.settings_manager.get_has_needle()
+
+
     def to_needle_action(self):
         return 'walk_mortuary_f3r4_pick_needle'
 
 
     def to_needle_tooltip(self):
         return 'Взять иголку'
+
+
+    def has_no_garbage(self):
+        return not self.settings_manager.get_has_garbage()
 
 
     def to_garbage_action(self):

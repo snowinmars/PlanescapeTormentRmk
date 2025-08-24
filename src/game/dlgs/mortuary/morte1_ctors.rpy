@@ -14,16 +14,21 @@ label morte1_speak:
         jump morte1_s0_ctor
 
     # IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
-    if  gsm.get_mortuary_walkthrough() == 0 and \
-        not gsm.set_has_intro_key():
-        jump morte1_s24_ctor
+    # Manually changed logic to extern
+    # if  gsm.get_mortuary_walkthrough() == 0 and \
+    #     not gsm.get_has_intro_key():
+    #     jump morte1_s24_ctor
 
     # IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
     if gsm.get_mortuary_walkthrough() == 1:
         jump morte1_s30_ctor
 
+    jump morte1_s30_ctor
+
 
 label morte1_s0_ctor:
+    $ gsm.location_manager.set_location('mortuary_f2r1')
+    $ gsm.set_in_party_morte(True)
     scene bg mortuary_f2r1
     show morte_img default at center_left_down
     jump morte1_s0

@@ -16,13 +16,17 @@ label morte2_speak:
         jump morte2_s12_ctor
 
     # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    if  gsm.get_mortuary_walkthrough() == 3 and \
+    # Manually changed logic
+    if  gsm.location_manager.get_location() == 'mortuary_f2r3' and \
+        gsm.get_mortuary_walkthrough() == 3 and \
         gsm.get_in_party_morte():
         jump morte2_s31_ctor
 
     # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
     if  not gsm.get_in_party_morte():
         jump morte2_s27_ctor
+
+    jump morte2_s12_ctor
 
 
 label morte2_s0_ctor:

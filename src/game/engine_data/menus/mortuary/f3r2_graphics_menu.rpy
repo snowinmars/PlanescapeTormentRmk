@@ -22,7 +22,7 @@ init 10 python:
         'action': Function(lambda: renpy.jump(mortuaryF3R2GraphicsMenuLogic.to_mortuary_f3r1_action())),
         'tooltip': mortuaryF3R2GraphicsMenuLogic.to_mortuary_f3r1_tooltip
     }, {
-        'when': mortuaryF3R2GraphicsMenuLogic.always,
+        'when': mortuaryF3R2GraphicsMenuLogic.has_no_garbage,
         'idle_img': 'images/icons/open_idle.png',
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 400,
@@ -30,7 +30,7 @@ init 10 python:
         'action': Function(lambda: renpy.jump(mortuaryF3R2GraphicsMenuLogic.to_pick_garbage_action())),
         'tooltip': mortuaryF3R2GraphicsMenuLogic.to_pick_garbage_tooltip
     }, {
-        'when': mortuaryF3R2GraphicsMenuLogic.always,
+        'when': mortuaryF3R2GraphicsMenuLogic.has_no_mortuary_task_list,
         'idle_img': 'images/icons/open_idle.png',
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 400,
@@ -38,7 +38,7 @@ init 10 python:
         'action': Function(lambda: renpy.jump(mortuaryF3R2GraphicsMenuLogic.to_pick_mortuary_task_list_action())),
         'tooltip': mortuaryF3R2GraphicsMenuLogic.to_pick_mortuary_task_list_tooltip
     }, {
-        'when': mortuaryF3R2GraphicsMenuLogic.always,
+        'when': mortuaryF3R2GraphicsMenuLogic.has_no_needle,
         'idle_img': 'images/icons/open_idle.png',
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 1200,
@@ -53,8 +53,8 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF3R2GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF3R2GraphicsMenuLogic.calc_morte_ypos(),
-        'speak_tooltip': mortuaryF3R2GraphicsMenuLogic.morte_speak_tooltip,
-        'speak_action': mortuaryF3R2GraphicsMenuLogic.morte_speak_action
+        'speak_tooltip': mortuaryF3R2GraphicsMenuLogic.morte2_speak_tooltip,
+        'speak_action': mortuaryF3R2GraphicsMenuLogic.morte2_speak_action
     }, {
         'when': mortuaryF3R2GraphicsMenuLogic.when_dust,
         'idle_img': 'images/menu_sprites/dust.png',

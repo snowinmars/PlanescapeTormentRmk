@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm782_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r1
-    show zm782_img default at center_left_down
-    jump zm782_s0
-
-
-label zm782_dispose:
-    hide zm782_img
-    jump graphics_menu
-
-
 # s0 # say24708
 label zm782_s0: # - # IF ~  True()
     nr 'Как только ты подходишь, труп останавливается и смотрит на тебя невидящим взглядом.'
@@ -99,4 +88,6 @@ label zm782_take_key_1:
 label zm782_take_key_2:
     nr 'С лёгким звуком ключ оказывается в моих руках.'
     $ zm782Logic.pick_key_up()
-    jump morte1_s24  # EXTERN
+    if zm782Logic.s24_condition():
+        jump morte1_s24  # EXTERN
+    jump zm782_dispose # TODO [snow]: is it ok that I may not dispose dialogue after extern?

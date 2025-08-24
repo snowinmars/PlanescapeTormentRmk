@@ -53,8 +53,8 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF2R1GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF2R1GraphicsMenuLogic.calc_morte_ypos(),
-        'speak_tooltip': mortuaryF2R1GraphicsMenuLogic.morte_speak_tooltip,
-        'speak_action': mortuaryF2R1GraphicsMenuLogic.morte_speak_action
+        'speak_tooltip': mortuaryF2R1GraphicsMenuLogic.morte1_speak_tooltip,
+        'speak_action': mortuaryF2R1GraphicsMenuLogic.morte1_speak_action
     }, {
         'when': mortuaryF2R1GraphicsMenuLogic.when_zm569,
         'idle_img': 'images/menu_sprites/zombie.png',

@@ -3,6 +3,14 @@ class Morte2Logic:
         self.settings_manager = settings_manager
 
 
+    def s0_action(self):
+        self.settings_manager.set_mortuary_walkthrough(2) # TODO [snow]: I guess
+
+
+    def s11_action(self):
+        self.settings_manager.set_mortuary_walkthrough(3) # TODO [snow]: I guess
+
+
     def r41145_action(self):
         self.settings_manager.set_morte_mortuary_walkthrough_1(True)
 

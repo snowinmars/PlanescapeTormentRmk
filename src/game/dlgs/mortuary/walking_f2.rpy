@@ -23,6 +23,11 @@ label walk_to_mortuaryf1r4_closed:
     jump graphics_menu
 
 
+label walk_to_mortuaryf2r1_closed:
+    nr "Эта дверь заперта. Тебе понадобится ключ."
+    jump graphics_menu
+
+
 label walk_to_mortuaryf2r1_visit:
     $ walkingF2Logic.walk_to_mortuaryf2r1_visit()
     scene bg mortuary_f2r1
@@ -38,7 +43,7 @@ label walk_to_mortuaryf2r2_visit:
 label walk_to_mortuaryf2r2_scene:
     $ walkingF2Logic.walk_to_mortuaryf2r2_scene()
     scene bg mortuary_f2r2
-    jump start_morte2_talk_first
+    jump morte2_speak
 
 
 label walk_to_mortuaryf2r3_visit:
@@ -50,7 +55,7 @@ label walk_to_mortuaryf2r3_visit:
 label walk_to_mortuaryf2r3_scene:
     $ walkingF2Logic.walk_to_mortuaryf2r3_scene()
     scene bg mortuary_f2r3
-    jump start_morte2_talk_dhall
+    jump morte2_speak
 
 
 label walk_to_mortuaryf2r4_visit:

@@ -56,6 +56,24 @@ class MortuaryF1R1GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
+    def see_mortuary_gate_open(self):
+        return self.settings_manager.get_gate_open()
+
+
+    def to_game_end_action(self):
+        return 'end'
+
+
+    def to_game_end_tooltip(self):
+        return 'Выйти из Морга'
+
+
+    def to_mortuary_f1rc_tooltip(self):
+        v1 = 'Пройти в центральную усыпальню'
+        v2 = 'Пройти в комнату'
+        f1 = self.location_manager.is_visited('mortuary_f1rc')
+        return v1 if f1 else v2
+
     def soego_speak_tooltip(self):
         v1 = 'Поговорить с Соего'
         v2 = 'Подойти к человеку'

@@ -39,3 +39,8 @@ def setup_logger(
     devlogfile.setFormatter(fm)
     print(f"Use '{full_log_file_path}' for logging")
     del fm
+
+    devlog.info("Log level: %s" % log_level)
+    devlog.info("Logs directory: %s" % logs_folder)
+
+    return devlog

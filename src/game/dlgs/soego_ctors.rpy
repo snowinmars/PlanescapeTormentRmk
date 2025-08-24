@@ -19,7 +19,7 @@ label soego_speak:
         jump soego_s79_ctor
 
     # IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
-    if  gsm.get_dustman_initiation_value() == 5 and \
+    if  gsm.get_dustman_initiation() == 5 and \
         gsm.get_soego_value() < 3 and \
         gsm.get_cr_vic_value() != 1:
         jump soego_s108_ctor
@@ -36,7 +36,7 @@ label soego_speak:
         jump soego_s12_ctor
 
     # IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
-    if  gsm.get_current_internal('AR0201') and \
+    if  gsm.location_manager.get_current_internal() == 'AR0201' and \
         gsm.get_gate_open():
         jump soego_s58_ctor
 

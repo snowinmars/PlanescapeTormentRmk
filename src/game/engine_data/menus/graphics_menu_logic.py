@@ -7,16 +7,27 @@ class GraphicsMenuLogic:
         self.party_radius = 40
 
 
+    def morte1_speak_tooltip(self):
+        v1 = 'Поговорить с Мортом'
+        f1 = self.settings_manager.get_in_party_morte()
+        v2 = 'Пригласить Морта в группу'
+        return v1 if f1 else v2
+    def morte1_speak_action(self):
+        return 'morte1_speak'
+    def morte2_speak_tooltip(self):
+        v1 = 'Поговорить с Мортом'
+        f1 = self.settings_manager.get_in_party_morte()
+        v2 = 'Пригласить Морта в группу'
+        return v1 if f1 else v2
+    def morte2_speak_action(self):
+        return 'morte2_speak'
     def morte_speak_tooltip(self):
         v1 = 'Поговорить с Мортом'
-        v2 = 'Пригласить Морта в группу'
         f1 = self.settings_manager.get_in_party_morte()
+        v2 = 'Пригласить Морта в группу'
         return v1 if f1 else v2
     def morte_speak_action(self):
-        v1 = 'start_morte1_talk'
-        v2 = 'start_morte1_invite'
-        f1 = self.settings_manager.get_in_party_morte()
-        return v1 if f1 else v2
+        return 'morte_speak'
     def calc_morte_xpos(self):
         return self.party_xpos
     def calc_morte_ypos(self):

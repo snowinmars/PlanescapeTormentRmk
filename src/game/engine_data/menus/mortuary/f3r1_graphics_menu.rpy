@@ -30,7 +30,7 @@ init 10 python:
         'action': Function(lambda: renpy.jump(mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r4_action())),
         'tooltip': mortuaryF3R1GraphicsMenuLogic.to_mortuary_f3r4_tooltip
     }, {
-        'when': mortuaryF3R1GraphicsMenuLogic.always,
+        'when': mortuaryF3R1GraphicsMenuLogic.has_no_mortuary_key,
         'idle_img': 'images/icons/open_idle.png',
         'hover_img': 'images/icons/open_hover.png',
         'xpos': 900,
@@ -45,8 +45,8 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF3R1GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF3R1GraphicsMenuLogic.calc_morte_ypos(),
-        'speak_tooltip': mortuaryF3R1GraphicsMenuLogic.morte_speak_tooltip,
-        'speak_action': mortuaryF3R1GraphicsMenuLogic.morte_speak_action
+        'speak_tooltip': mortuaryF3R1GraphicsMenuLogic.morte2_speak_tooltip,
+        'speak_action': mortuaryF3R1GraphicsMenuLogic.morte2_speak_action
     }, {
         'when': mortuaryF3R1GraphicsMenuLogic.when_s863,
         'idle_img': 'images/menu_sprites/skelet.png',
