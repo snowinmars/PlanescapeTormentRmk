@@ -305,7 +305,7 @@ def _build_test_actions_parts(operation):
         who = match.group(1)
         who = 'protagonist' if who == 'party' else who
         prop = match.group(2)
-        delta = match.group(3)
+        delta = str(match.group(3)) if match.group(3).isdigit() else f'\'{match.group(3)}\''
         return set_property_action_pattern_preconf.format(w=who, p=prop, d=delta), \
                set_property_action_pattern_before.format(p=prop), \
                set_property_action_pattern_after.format(p=prop), \
@@ -338,9 +338,9 @@ def _build_test_actions_parts(operation):
         match = set_location_action_pattern.search(operation)
         value = match.group(1)
         return set_location_action_pattern_preconf.format(v=value), \
-               set_location_action_pattern_before, \
-               set_location_action_pattern_after, \
-               set_location_action_pattern_after_once
+               set_location_action_pattern_before.format(v=value), \
+               set_location_action_pattern_after.format(v=value), \
+               set_location_action_pattern_after_once.format(v=value)
 
     return 'unknown', '', '', ''
 
@@ -376,32 +376,32 @@ def _build_test_conditions_parts(operation):
     if get_integer_eq_condition_pattern.match(operation):
         match = get_integer_eq_condition_pattern.search(operation)
         setting = match.group(1)
-        value = match.group(2)
-        not_value = '1' if value == '0' else '0'
+        value = int(match.group(2))
+        not_value = 1 if value == 0 else 0
         return get_integer_eq_condition_pattern_preconf, \
                get_integer_eq_condition_pattern_before.format(s=setting, nv=not_value), \
                get_integer_eq_condition_pattern_after.format(s=setting, v=value)
     if get_integer_neq_condition_pattern.match(operation):
         match = get_integer_neq_condition_pattern.search(operation)
         setting = match.group(1)
-        value = match.group(2)
-        not_value = '1' if value == '0' else '0'
+        value = int(match.group(2))
+        not_value = 1 if value == 0 else 0
         return get_integer_neq_condition_pattern_preconf, \
                get_integer_neq_condition_pattern_before.format(s=setting, v=value), \
                get_integer_neq_condition_pattern_after.format(s=setting, nv=not_value)
     if get_integer_gt_condition_pattern.match(operation):
         match = get_integer_gt_condition_pattern.search(operation)
         setting = match.group(1)
-        value = match.group(2)
-        not_value = '1' if value == '0' else '0'
+        value = int(match.group(2)) + 1
+        not_value = value - 2
         return get_integer_gt_condition_pattern_preconf, \
                get_integer_gt_condition_pattern_before.format(s=setting, nv=not_value), \
                get_integer_gt_condition_pattern_after.format(s=setting, v=value)
     if get_integer_lt_condition_pattern.match(operation):
         match = get_integer_lt_condition_pattern.search(operation)
         setting = match.group(1)
-        value = match.group(2)
-        not_value = '1' if value == '0' else '0'
+        value = int(match.group(2)) + 1
+        not_value = value - 2
         return get_integer_lt_condition_pattern_preconf, \
                get_integer_lt_condition_pattern_before.format(s=setting, v=value), \
                get_integer_lt_condition_pattern_after.format(s=setting, nv=not_value)
@@ -427,14 +427,14 @@ def _build_test_conditions_parts(operation):
         match = is_visited_internal_condition_pattern.search(operation)
         value = match.group(1)
         return is_visited_internal_condition_pattern_preconf.format(v=value), \
-               is_visited_internal_condition_pattern_before, \
-               is_visited_internal_condition_pattern_after
+               is_visited_internal_condition_pattern_before.format(v=value), \
+               is_visited_internal_condition_pattern_after.format(v=value)
     if not_is_visited_internal_condition_pattern.match(operation):
         match = not_is_visited_internal_condition_pattern.search(operation)
         value = match.group(1)
         return not_is_visited_internal_condition_pattern_preconf.format(v=value), \
-               not_is_visited_internal_condition_pattern_before, \
-               not_is_visited_internal_condition_pattern_after
+               not_is_visited_internal_condition_pattern_before.format(v=value), \
+               not_is_visited_internal_condition_pattern_after.format(v=value)
     if count_in_party_eq_zero_condition_pattern.match(operation):
         match = count_in_party_eq_zero_condition_pattern.search(operation)
         return count_in_party_eq_zero_condition_pattern_preconf, \

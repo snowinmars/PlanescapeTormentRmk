@@ -1434,6 +1434,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r707_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -1442,6 +1443,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r708_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -1450,6 +1452,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r709_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -1748,6 +1751,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r6081_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -1756,6 +1760,7 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r6082_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,

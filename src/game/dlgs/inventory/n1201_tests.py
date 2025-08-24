@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.n1201_logic import N1201Logic
+from game.dlgs.inventory.n1201_logic import N1201Logic
 
 
 class N1201LogicTest(LogicTest):

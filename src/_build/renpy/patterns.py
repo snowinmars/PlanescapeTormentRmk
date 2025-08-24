@@ -18,7 +18,7 @@ def test_{f}(self):
     self._step_into_location_action(
         location,
         self.logic.{f}
-)
+    )
 """.strip(), extractors={'v': lambda m: m.group(1)})
 
 
@@ -37,6 +37,7 @@ action_set_false_pattern = PatternConfig(
     pattern=re.compile(r"self\.settings_manager\.set_(.*?)\(False\)$"),
     template="""
 def test_{f}(self):
+    self.settings_manager.set_{s}(True)
     self._true_then_false_action(
         self.settings_manager.get_{s},
         self.logic.{f}
@@ -125,12 +126,13 @@ action_set_x_pattern = PatternConfig(
     pattern=re.compile(r"self.settings_manager.set_(.*?)\((.*?)\)$"),
     template="""
 def test_{f}(self):
+    self.settings_manager.set_{s}({nv})
     self._integer_equals_action(
         self.settings_manager.get_{s},
         {v},
         self.logic.{f}
     )
-""".strip(), extractors={'s': lambda m: m.group(1), 'v': lambda m: m.group(2)})
+""".strip(), extractors={'s': lambda m: m.group(1), 'v': lambda m: int(m.group(2)), 'nv': lambda m: int(m.group(2)) + 1})
 
 
 action_inc_pattern = PatternConfig(
@@ -158,15 +160,15 @@ def test_{f}(self):
 
 
 action_dec_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.dec_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.settings_manager\.dec_(.*?)\((.*)?\)$"),
     template="""
 def test_{f}(self):
     self._integer_dec_action(
         self.settings_manager.get_{s},
-        1,
+        {v},
         self.logic.{f}
     )
-""".strip(), extractors={'s': lambda m: m.group(1)})
+""".strip(), extractors={'s': lambda m: m.group(1), 'v': lambda m: int(m.group(2)) if m.group(2) else '1'})
 
 
 action_dec_once_pattern = PatternConfig(
@@ -175,10 +177,10 @@ action_dec_once_pattern = PatternConfig(
 def test_{f}(self):
     self._integer_dec_once_action(
         self.settings_manager.get_{s},
-        1,
+        {v},
         self.logic.{f}
     )
-""".strip(), extractors={'s': lambda m: m.group(1)})
+""".strip(), extractors={'s': lambda m: m.group(1), 'v': lambda m: int(m.group(2)) if m.group(2) else '1'})
 
 
 condition_get_x_pattern = PatternConfig(
@@ -324,7 +326,7 @@ condition_is_visited_external_location_condition_pattern = PatternConfig(
     template="""
 def test_{f}(self):
     self._is_visited_external_location_condition(
-        {v},
+        {v}, # {v}
         self.logic.{f}
     )
 """.strip(), extractors={'v': lambda m: m.group(1)})
@@ -335,7 +337,7 @@ condition_not_is_visited_external_location_condition_pattern = PatternConfig(
     template="""
 def test_{f}(self):
     self._not_is_visited_external_location_condition(
-        {v},
+        {v}, # {v}
         self.logic.{f}
     )
 """.strip(), extractors={'v': lambda m: m.group(1)})

@@ -136,12 +136,19 @@ class LogicTest(unittest.TestCase):
         action_lambda()
 
         after = prop_labmda()
-        self.assertEqual(before + delta, after)
+        if isinstance(delta, str):
+            self.assertNotEqual(delta, before)
+            self.assertEqual(delta, after)
+        else:
+            self.assertEqual(before + delta, after)
 
         action_lambda()
 
         after_once = prop_labmda()
-        self.assertEqual(after, after_once)
+        if isinstance(delta, str):
+            self.assertEqual(delta, after_once)
+        else:
+            self.assertEqual(after, after_once)
 
 
     def _change_prop(self, prop_labmda, delta, action_lambda):
@@ -150,12 +157,19 @@ class LogicTest(unittest.TestCase):
         action_lambda()
 
         after = prop_labmda()
-        self.assertEqual(before + delta, after)
+        if isinstance(delta, str):
+            self.assertNotEqual(delta, before)
+            self.assertEqual(delta, after)
+        else:
+            self.assertEqual(before + delta, after)
 
         action_lambda()
 
         after_once = prop_labmda()
-        self.assertEqual(after + delta, after_once)
+        if isinstance(delta, str):
+            self.assertEqual(delta, after_once)
+        else:
+            self.assertEqual(after + delta, after_once)
 
 
     def _prop_compare_gt_condition(self, who, prop, value, action_lambda):

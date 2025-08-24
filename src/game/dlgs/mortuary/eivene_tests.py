@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.eivene_logic import EiveneLogic
+from game.dlgs.mortuary.eivene_logic import EiveneLogic
 
 
 class EiveneLogicTest(LogicTest):
@@ -16,6 +16,7 @@ class EiveneLogicTest(LogicTest):
 
 
     def test_r3422_action(self):
+        self.settings_manager.set_eivene_value(2)
         self._integer_equals_action(
             self.settings_manager.get_eivene_value,
             1,

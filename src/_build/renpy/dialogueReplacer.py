@@ -210,6 +210,7 @@ class DialogueReplacer:
         self.boolean('Know_Ravel',                    'know_ravel')
         self.boolean('Know_Shadow_Player_Connection', 'know_shadow_player_connection')
         self.boolean('Know_Silent_King',              'know_silent_king')
+        self.boolean('Know_Source',                   'know_source')
         self.boolean('Know_Stale_Mary',               'know_stale_mary')
         self.boolean('Know_Xixi',                     'know_xixi')
         self.boolean('Lawful_Hargrimm_1',             'lawful_hargrimm_1')
@@ -321,7 +322,6 @@ class DialogueReplacer:
         self.integer('Know_Marta_Work',          'know_marta_work',          [0, 1, 2, 3])
         self.integer('Know_Morte_Pillar',        'know_morte_pillar',        [0, 1, 2])
         self.integer('Know_Ravel_Key',           'know_ravel_key',           [0, 1, 2, 3])
-        self.integer('Know_Source',              'know_source',              [0, 1, 2, 3])
         self.integer('Lecture_Death',            'lecture_death',            [0, 1, 2])
         self.integer('Lecture_Ghysis',           'lecture_ghysis',           [0, 1, 2])
         self.integer('Malmaner',                 'malmaner',                 [0, 1, 2, 3, 4, 5])
@@ -404,6 +404,7 @@ class DialogueReplacer:
         self.add_replacement('HPPercentLT(Protagonist,50)', 'return self.settings_manager.character_manager.get_property(\'protagonist\', \'current_health\') <= self.settings_manager.character_manager.get_property(\'protagonist\', \'max_health\') / 2')
 
         self.add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.settings_manager.set_in_party_morte(True)')
+        self.add_replacement('JoinPartyEx(TRUE)', 'self.settings_manager.set_in_party_morte(True)')
         self.add_replacement('SetNamelessDisguise(ZOMBIE)', "self.settings_manager.character_manager.set_property('protagonist', 'looks_like', 'zombie')")
 
         self.add_replacement('NumInParty(1)', 'return self.settings_manager.count_in_party() == 0')

@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.dhall_logic import DhallLogic
+from game.dlgs.mortuary.dhall_logic import DhallLogic
 
 
 class DhallLogicTest(LogicTest):
@@ -197,6 +197,7 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r1327_action(self):
+        self.settings_manager.set_dhall_value(2)
         self._integer_equals_action(
             self.settings_manager.get_dhall_value,
             1,
@@ -412,16 +413,20 @@ class DhallLogicTest(LogicTest):
 
 
     def test_r858_condition(self):
-        location = 'hive_northeast' # AR0200
+        location_AR0200 = 'hive_northeast' # AR0200
 
         self.settings_manager.set_escape_mortuary(True)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.location_manager.set_location(location_AR0200)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0200))
 
         self.assertFalse(self.logic.r858_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.location_manager._current_external = None
+        self.settings_manager.location_manager._current_internal = None
+        self.settings_manager.location_manager._visited_externals = set()
+        self.settings_manager.location_manager._visited_internals = set()
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0200))
 
         self.assertTrue(self.logic.r858_condition())
 

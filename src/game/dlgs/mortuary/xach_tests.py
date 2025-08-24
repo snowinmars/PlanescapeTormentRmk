@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.xach_logic import XachLogic
+from game.dlgs.mortuary.xach_logic import XachLogic
 
 
 class XachLogicTest(LogicTest):
@@ -98,6 +98,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r681_action(self):
+        self.settings_manager.set_xachariah_gutted(True)
         self._true_then_false_action(
             self.settings_manager.get_xachariah_gutted,
             self.logic.r681_action

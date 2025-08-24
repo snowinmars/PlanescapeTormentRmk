@@ -4,7 +4,7 @@ image eivene_img default    = 'eivene_default.png'
 image vaxis_img default     = 'vaxis_default.png'
 image dust_img default      = 'dust_default.png'
 image dustfem_img default   = 'dustfem_default.png'
-image deions_img default    = 'deionarra_default.png'
+image deionarra_img default    = 'deionarra_default.png'
 image soego_img default     = 'soego_default.png'
 
 image s42_img default    = 's42_default.png'

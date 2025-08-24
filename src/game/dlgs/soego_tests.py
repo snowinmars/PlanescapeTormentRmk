@@ -81,6 +81,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1456_action(self):
+        self.settings_manager.set_soego_value(2)
         self._integer_equals_action(
             self.settings_manager.get_soego_value,
             1,
@@ -98,6 +99,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1457_action(self):
+        self.settings_manager.set_soego_value(2)
         self._integer_equals_action(
             self.settings_manager.get_soego_value,
             1,
@@ -177,6 +179,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1492_action(self):
+        self.settings_manager.set_gate_cut_scene(3)
         self._integer_equals_action(
             self.settings_manager.get_gate_cut_scene,
             2,
@@ -185,6 +188,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r1493_action(self):
+        self.settings_manager.set_gate_cut_scene(3)
         self._integer_equals_action(
             self.settings_manager.get_gate_cut_scene,
             2,
@@ -356,6 +360,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66706_action(self):
+        self.settings_manager.set_soego_value(2)
         self._integer_equals_action(
             self.settings_manager.get_soego_value,
             1,
@@ -373,6 +378,7 @@ class SoegoLogicTest(LogicTest):
 
 
     def test_r66707_action(self):
+        self.settings_manager.set_soego_value(2)
         self._integer_equals_action(
             self.settings_manager.get_soego_value,
             1,
@@ -2240,14 +2246,14 @@ class SoegoLogicTest(LogicTest):
 
     def test_r66181_condition(self):
         self.settings_manager.set_dustman_initiation(0)
-        self.settings_manager.set_soego_value(1)
-        self.settings_manager.set_soego_value(3)
+        self.settings_manager.set_soego_value(-1)
+        self.settings_manager.set_soego_value(4)
 
         self.assertFalse(self.logic.r66181_condition())
 
         self.settings_manager.set_dustman_initiation(5)
-        self.settings_manager.set_soego_value(0)
-        self.settings_manager.set_soego_value(0)
+        self.settings_manager.set_soego_value(1)
+        self.settings_manager.set_soego_value(2)
 
         self.assertTrue(self.logic.r66181_condition())
 
@@ -2348,12 +2354,12 @@ class SoegoLogicTest(LogicTest):
 
     def test_r21914_condition(self):
         self.settings_manager.set_dustman_initiation(0)
-        self.settings_manager.set_soego_value(3)
+        self.settings_manager.set_soego_value(4)
 
         self.assertFalse(self.logic.r21914_condition())
 
         self.settings_manager.set_dustman_initiation(5)
-        self.settings_manager.set_soego_value(0)
+        self.settings_manager.set_soego_value(2)
 
         self.assertTrue(self.logic.r21914_condition())
 
