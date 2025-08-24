@@ -66,5 +66,6 @@ screen mortuary_f1rc_graphics_menu_screen():
     use abstract_location_menu_screen(
         'bg mortuary_f1rc',
         mortuary_f1rc_walking,
-        mortuary_f1rc_talking
+        mortuary_f1rc_talking,
+        audio.mortuary
     )

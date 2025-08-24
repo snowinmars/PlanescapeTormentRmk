@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import logging
+import renpy
 
 
 devlog = logging.getLogger('log')
@@ -45,6 +46,7 @@ class JournalManager:
     def update_journal(self, note_id):
         self._log(f"Updated my journal with note '{note_id}'")
         self.get(note_id).found = True
+        renpy.exports.sound.play(renpy.store.audio.update_journal)
 
 
     def build_journal(self):
