@@ -56,17 +56,6 @@ class MortuaryF1R4GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def zm732_kill_tooltip(self):
-        v1 = 'Атаковать труп «732»'
-        v2 = 'Атаковать ходячий труп повешенного'
-        f1 = self.settings_manager.get_talked_to_zm732_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm732_kill_action(self):
-        return 'start_zm732_kill'
-
-
     def zm732_speak_tooltip(self):
         v1 = 'Поговорить с трупом «732»'
         v2 = 'Поговорить с ходячим трупом повешенного'
@@ -75,4 +64,4 @@ class MortuaryF1R4GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm732_speak_action(self):
-        return 'start_zm732_talk'
+        return 'zm732_speak'

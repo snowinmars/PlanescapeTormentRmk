@@ -46,13 +46,10 @@ class MortuaryF1R2GraphicsMenuLogic(GraphicsMenuLogic):
 
     def deionarra_speak_tooltip(self):
         v1 = 'Поговорить с Дейонаррой'
-        v2 = 'Подойти к человеку'
+        v2 = 'Подойти к призраку'
         f1 = self.settings_manager.get_talked_to_deionarra_times() > 0
         return v1 if f1 else v2
 
 
     def deionarra_speak_action(self):
-        v1 = 'start_deions_talk'
-        v2 = 'start_deions_talk_first'
-        f1 = self.settings_manager.get_talked_to_deionarra_times() > 0
-        return v1 if f1 else v2
+        return 'deions_speak'

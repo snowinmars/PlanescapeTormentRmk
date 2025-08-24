@@ -56,17 +56,6 @@ class MortuaryF1R1GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def soego_kill_tooltip(self):
-        v1 = 'Убить Соего'
-        v2 = 'Убить человека'
-        f1 = self.settings_manager.get_talked_to_soego_times() > 0
-        return v1 if f1 else v2
-
-
-    def soego_kill_action(self):
-        return 'start_soego_kill'
-
-
     def soego_speak_tooltip(self):
         v1 = 'Поговорить с Соего'
         v2 = 'Подойти к человеку'
@@ -75,4 +64,4 @@ class MortuaryF1R1GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def soego_speak_action(self):
-        return 'start_soego_talk'
+        return 'soego_speak'

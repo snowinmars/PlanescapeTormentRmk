@@ -32,20 +32,6 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def eivene_kill_tooltip(self):
-        v1 = 'Атаковать Эи-Вейн'
-        v2 = 'Атаковать хрупкую девушку'
-        f1 = self.settings_manager.get_know_eivene_name()
-        return v1 if f1 else v2
-
-
-    def eivene_kill_action(self):
-        v1 = 'start_eivene_kill'
-        v2 = 'start_eivene_kill_first'
-        f1 = self.settings_manager.get_know_eivene_name()
-        return v1 if f1 else v2
-
-
     def eivene_speak_tooltip(self):
         v1 = 'Поговорить с Эи-Вейн'
         v2 = 'Поговорить с хрупкой девушкой'
@@ -54,21 +40,7 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def eivene_speak_action(self):
-        v1 = 'start_eivene_talk'
-        v2 = 'start_eivene_talk_first'
-        f1 = self.settings_manager.get_know_eivene_name()
-        return v1 if f1 else v2
-
-
-    def zm257_kill_tooltip(self):
-        v1 = 'Атаковать труп «1664»'
-        v2 = 'Атаковать труп без челюсти'
-        f1 = self.settings_manager.get_talked_to_zm257_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm257_kill_action(self):
-        return 'start_zm257_kill'
+        return 'eivene_speak'
 
 
     def zm257_speak_tooltip(self):
@@ -79,18 +51,7 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm257_speak_action(self):
-        return 'start_zm257_talk'
-
-
-    def zm506_kill_tooltip(self):
-        v1 = 'Атаковать труп «1664»'
-        v2 = 'Атаковать труп без челюсти'
-        f1 = self.settings_manager.get_talked_to_zm506_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm506_kill_action(self):
-        return 'start_zm506_kill'
+        return 'zm257_speak'
 
 
     def zm506_speak_tooltip(self):
@@ -101,21 +62,7 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm506_speak_action(self):
-        v1 = 'start_zm506_talk'
-        v2 = 'start_zm506_talk_first'
-        f1 = self.settings_manager.get_talked_to_zm506_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm985_kill_tooltip(self):
-        v1 = 'Атаковать труп «1664»'
-        v2 = 'Атаковать труп без челюсти'
-        f1 = self.settings_manager.get_talked_to_zm985_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm985_kill_action(self):
-        return 'start_zm985_kill'
+        return 'zm506_speak'
 
 
     def zm985_speak_tooltip(self):
@@ -126,4 +73,4 @@ class MortuaryF2R5GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm985_speak_action(self):
-        return 'start_zm985_talk'
+        return 'zm985_speak'

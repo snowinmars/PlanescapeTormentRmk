@@ -37,8 +37,6 @@ init 10 python:
         'hover_img': 'images/menu_sprites/morte.png',
         'xpos': mortuaryF1R2GraphicsMenuLogic.calc_morte_xpos(),
         'ypos': mortuaryF1R2GraphicsMenuLogic.calc_morte_ypos(),
-        'kill_tooltip': mortuaryF1R2GraphicsMenuLogic.morte_kill_tooltip,
-        'kill_action': mortuaryF1R2GraphicsMenuLogic.morte_kill_action,
         'speak_tooltip': mortuaryF1R2GraphicsMenuLogic.morte_speak_tooltip,
         'speak_action': mortuaryF1R2GraphicsMenuLogic.morte_speak_action
     }, {

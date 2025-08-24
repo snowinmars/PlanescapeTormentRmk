@@ -44,17 +44,6 @@ class MortuaryF1R3GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def zf114_kill_tooltip(self):
-        v1 = 'Атаковать труп «114»'
-        v2 = 'Атаковать ходячий труп повешенного'
-        f1 = self.settings_manager.get_talked_to_zf114_times() > 0
-        return v1 if f1 else v2
-
-
-    def zf114_kill_action(self):
-        return 'start_zf114_kill'
-
-
     def zf114_speak_tooltip(self):
         v1 = 'Поговорить с трупом «114»'
         v2 = 'Поговорить с ходячим трупом повешенного'
@@ -63,18 +52,7 @@ class MortuaryF1R3GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zf114_speak_action(self):
-        return 'start_zf114_talk'
-
-
-    def zm1041_kill_tooltip(self):
-        v1 = 'Атаковать труп «1041»'
-        v2 = 'Атаковать ходячий труп повешенного'
-        f1 = self.settings_manager.get_talked_to_zm1041_times() > 0
-        return v1 if f1 else v2
-
-
-    def zm1041_kill_action(self):
-        return 'start_zm1041_kill'
+        return 'zf114_speak'
 
 
     def zm1041_speak_tooltip(self):
@@ -85,18 +63,7 @@ class MortuaryF1R3GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def zm1041_speak_action(self):
-        return 'start_zm1041_talk'
-
-
-    def xach_kill_tooltip(self):
-        v1 = 'Атаковать труп «331»'
-        v2 = 'Атаковать слепой труп'
-        f1 = self.settings_manager.get_talked_to_xach_times() > 0
-        return v1 if f1 else v2
-
-
-    def xach_kill_action(self):
-        return 'start_xach_kill'
+        return 'zm1041_speak'
 
 
     def xach_speak_tooltip(self):
@@ -111,4 +78,4 @@ class MortuaryF1R3GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def xach_speak_action(self):
-        return 'start_xach_talk'
+        return 'xach_speak'

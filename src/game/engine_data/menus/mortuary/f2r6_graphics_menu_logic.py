@@ -32,24 +32,6 @@ class MortuaryF2R6GraphicsMenuLogic(GraphicsMenuLogic):
         return v1 if f1 else v2
 
 
-    def vaxis_kill_tooltip(self):
-        v1 = 'Атаковать Ваксиса'
-        v2 = 'Атаковать фальшивого зомби'
-        v3 = 'Атаковать труп'
-        f1 = self.settings_manager.get_know_vaxis_name()
-        f2 = self.settings_manager.get_talked_to_vaxis_times() > 0
-        if f1:
-            return v1
-        return v2 if f2 else v3
-
-
-    def vaxis_kill_action(self):
-        v1 = 'start_vaxis_kill'
-        v2 = 'start_vaxis_kill_first'
-        f1 = self.settings_manager.get_talked_to_vaxis_times() > 0
-        return v1 if f1 else v2
-
-
     def vaxis_speak_tooltip(self):
         v1 = 'Поговорить c Ваксисом'
         v2 = 'Поговорить с фальшивым зомби'
@@ -62,7 +44,4 @@ class MortuaryF2R6GraphicsMenuLogic(GraphicsMenuLogic):
 
 
     def vaxis_speak_action(self):
-        v1 = 'start_vaxis_talk'
-        v2 = 'start_vaxis_talk_first'
-        f1 = self.settings_manager.get_talked_to_vaxis_times() > 0
-        return v1 if f1 else v2
+        return 'vaxis_speak'
