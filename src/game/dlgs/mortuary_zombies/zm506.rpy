@@ -8,22 +8,6 @@ init 10 python:
 # ###
 
 
-label zm506_s0_ctor: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
-    scene bg mortuary_f2r5
-    show zm506_img default at center_left_down
-    jump zm506_s0
-
-
-label zm506_s5_ctor: # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
-    scene bg mortuary_f2r5
-    show zm506_img default at center_left_down
-    jump zm506_s5
-
-
-label zm506_dispose:
-    hide zm506_img
-    jump graphics_menu
-
 # s0 # say45419
 label zm506_s0: # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
     nr 'Этот покрытый швами труп вяло передвигается между двумя плитами. Номер «506» вышит у него на лбу… и на боку шеи… и на правой руке…'

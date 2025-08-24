@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf594_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r2
-    show zf594_img default at center_left_down
-    jump zf594_s0
-
-
-label zf594_s3_ctor: # - # IF ~  False()
-    scene bg mortuary_f2r2
-    show zf594_img default at center_left_down
-    jump zf594_s3
-
-
-label zf594_dispose:
-    hide zf594_img
-    jump graphics_menu
-
-
 # s0 # say35018
 label zf594_s0: # - # IF ~  True()
     nr 'Неуклюжий труп женщины уставился на тебя пустым взглядом. Ее кожа похожа на бумагу, совсем тонкая… как будто кто-то обернул ее тело в простыню из легкой ткани.'

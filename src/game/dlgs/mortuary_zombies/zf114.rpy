@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf114_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zf114_img default at center_left_down
-    jump zf114_s0
-
-
-label zf114_s3_ctor: # - # IF ~  False()
-    scene bg DISABLED
-    show zf114_img default at center_left_down
-    jump zf114_s3
-
-
-label zf114_dispose:
-    hide zf114_img
-    jump graphics_menu
-
-
 # s0 # say34986
 label zf114_s0: # - # IF ~  True()
     nr 'Труп женщины перестает ковылять, как только ты подходишь. Ты замечаешь номер «114», вырезанный у нее на лбу.'

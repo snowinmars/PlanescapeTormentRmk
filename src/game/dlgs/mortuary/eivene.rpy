@@ -8,29 +8,6 @@ init 10 python:
 # ###
 
 
-label eivene_s0_ctor: # - # IF ~  Global("EiVene","GLOBAL",0)
-    scene bg mortuary_f2r5
-    show eivene_img default at center_left_down
-    jump eivene_s0
-
-
-label eivene_s15_ctor: # - # IF ~  Global("EiVene","GLOBAL",1)
-    scene bg mortuary_f2r5
-    show eivene_img default at center_left_down
-    jump eivene_s15
-
-
-label eivene_s25_ctor: # -
-    scene bg mortuary_f2r5
-    show eivene_img default at center_left_down
-    jump eivene_s25
-
-
-label eivene_dispose:
-    hide eivene_img
-    jump graphics_menu
-
-
 # s0 # say3404
 label eivene_s0: # - # IF ~  Global("EiVene","GLOBAL",0)
     nr 'Перед тобой хрупкая девушка с бледным лицом. Из-за впалой кожи на щеках и шее кажется, будто она голодает.'

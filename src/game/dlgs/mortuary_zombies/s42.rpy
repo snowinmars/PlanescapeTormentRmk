@@ -8,24 +8,6 @@ init 10 python:
 # ###
 
 
-label s42_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r4
-    show s42_img default at center_left_down
-    jump s42_s0
-
-
-label s42_s11_ctor: # -
-
-    scene bg mortuary_f3r4
-    show s42_img default at center_left_down
-    jump s42_s11
-
-
-label s42_dispose:
-    hide s42_img
-    jump graphics_menu
-
-
 # s0 # say6595
 label s42_s0: # - # IF ~  True()
     nr 'Скелет поворачивается к тебе. На лбу у него высечено число 42.'

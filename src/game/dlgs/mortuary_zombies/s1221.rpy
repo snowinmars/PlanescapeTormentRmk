@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label s1221_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r4
-    show s1221_img default at center_left_down
-    jump s1221_s0
-
-
-label s1221_s7_ctor: # - # IF ~  False()
-    scene bg mortuary_f3r4
-    show s1221_img default at center_left_down
-    jump s1221_s7
-
-
-label s1221_dispose:
-    hide s1221_img
-    jump graphics_menu
-
-
 # s0 # say35306
 label s1221_s0: # - # IF ~  True()
     nr 'Этот оживленный скелет ужасно воняет, как будто бы его совсем недавно ободрали и препарировали.'

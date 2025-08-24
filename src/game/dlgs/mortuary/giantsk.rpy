@@ -7,16 +7,6 @@ init 10 python:
 # Original:  DLG/DGIANTSK.DLG
 # ###
 
-label giantsk_s0_ctor: # -
-    scene bg mortuary_f1rc
-    show giantsk_img default at center_left_down
-    jump giantsk_s0
-
-
-label giantsk_dispose:
-    hide giantsk_img
-    jump graphics_menu
-
 
 # s0 # say292
 label giantsk_s0: # - # IF ~  True()

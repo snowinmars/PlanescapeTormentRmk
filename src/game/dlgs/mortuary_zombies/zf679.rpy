@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf679_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r4
-    show zf679_img default at center_left_down
-    jump zf679_s0
-
-
-label zf679_s3_ctor: # - # IF ~  False()
-    scene bg mortuary_f3r4
-    show zf679_img default at center_left_down
-    jump zf679_s3
-
-
-label zf679_dispose:
-    hide zf679_img
-    jump graphics_menu
-
-
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
     nr 'Похоже, это труп довольно таки старой, даже древней женщины. Если не обращать внимание на зловоние бальзамирующей жидкости, швы на ее рту и номер «679», вышитый на правой щеке, то она выглядит почти так же, как и в последние годы своей жизни.'

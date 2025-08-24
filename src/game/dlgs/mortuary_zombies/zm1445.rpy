@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm1445_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zm1445_img default at center_left_down
-    jump zm1445_s0
-
-
-label zm1445_dispose:
-    hide zm1445_img
-    jump graphics_menu
-
-
 # s0 # say46756
 label zm1445_s0: # - # IF ~  True()
     nr 'Тело этого трупа сплошь покрыто пятнами, его уши, кончик носа и некоторые пальцы сгнили напрочь… скорее всего, мужчина стал жертвой какой-то ужасной болезни.'

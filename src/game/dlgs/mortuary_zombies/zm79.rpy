@@ -7,16 +7,6 @@ init 10 python:
 # Original:  DLG/DZM79.DLG
 # ###
 
-label zm79_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r4
-    show zm79_img default at center_left_down
-    jump zm79_s0
-
-
-label zm79_dispose:
-    hide zm79_img
-    jump graphics_menu
-
 
 # s0 # say34942
 label zm79_s0: # - # IF ~  True()

@@ -2,7 +2,7 @@ import re
 import sys
 
 # Regex patterns for matching function calls and definitions
-CALL_PATTERN = re.compile(r'(?:if|\$)(?: not)? (.*?)Logic\.(.*?)\(')
+CALL_PATTERN = re.compile(r'(?:if|\$)(?: not)? ([^\s]*?)Logic\.(.*?)\(')
 DEF_PATTERN = re.compile(r'def (.*?)\(self')
 
 

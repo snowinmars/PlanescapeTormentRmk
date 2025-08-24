@@ -8,49 +8,6 @@ init 10 python:
 # ###
 
 
-label deionarra_s1_ctor: # - # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    scene bg mortuary_f1r2
-    show deionarra_img default at center_left_down
-    jump deionarra_s1
-
-
-label deionarra_s4_ctor: # - # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    scene bg mortuary_f1r2
-    show deionarra_img default at center_left_down
-    jump deionarra_s4
-
-
-label deionarra_s5_ctor: # - # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
-    scene bg mortuary_f1r2
-    show deionarra_img default at center_left_down
-    jump deionarra_s5
-
-
-label deionarra_s49_ctor: # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    show deionarra_img default at center_left_down
-    jump deionarra_s49
-
-
-label deionarra_s50_ctor: # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
-    show deionarra_img default at center_left_down
-    jump deionarra_s50
-
-
-label deionarra_s60_ctor: # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    show deionarra_img default at center_left_down
-    jump deionarra_s60
-
-
-label deionarra_s61_ctor: # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
-    show deionarra_img default at center_left_down
-    jump deionarra_s61
-
-
-label deionarra_dispose:
-    hide deionarra_img
-    jump graphics_menu
-
-
 # s0 # say69459
 label deionarra_s0: # from 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
     deionarra '«Я буду ждать тебя в залах смерти, любовь моя».'

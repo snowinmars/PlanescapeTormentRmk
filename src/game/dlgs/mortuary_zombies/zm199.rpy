@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm199_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zm199_img default at center_left_down
-    jump zm199_s0
-
-
-label zm199_dispose:
-    hide zm199_img
-    jump graphics_menu
-
-
 # s0 # say34975
 label zm199_s0: # - # IF ~  True()
     nr 'От этого оживленного трупа несет обугленным мясом и горелой одеждой. По правому боку тянутся довольно свежие следы от ожогов. Возможно, он был слишком близко к огню, и начал тлеть.'

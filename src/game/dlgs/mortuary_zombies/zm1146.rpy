@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zm1146_s0_ctor: # - # IF ~  Global("Crispy","GLOBAL",0)
-    scene bg mortuary_f3r1
-    show zm1146_img default at center_left_down
-    jump zm1146_s0
-
-
-label zm1146_s20_ctor: # - # IF ~  Global("Crispy","GLOBAL",1)
-    scene bg mortuary_f3r1
-    show zm1146_img default at center_left_down
-    jump zm1146_s20
-
-
-label zm1146_dispose:
-    hide zm1146_img
-    jump graphics_menu
-
-
 # s0 # say6518
 label zm1146_s0: # - # IF ~  Global("Crispy","GLOBAL",0)
     nr 'На лбу этого ходячего трупа вырезан номер «1146», губы зашиты грубой черной ниткой. Все тело покрыто ужасающими шрамами — даже хуже, чем у тебя самого. Кажется, хозяин тела сгорел заживо.'

@@ -8,15 +8,6 @@
 # ###
 
 
-# ctors here do no make sense right now
-# because i ignore externs from other labels
-
-
-label morte_dispose:
-    hide morte_img
-    jump graphics_menu
-
-
 # s0 # say986
 label morte_s0: # -
     morte '«Эй, шеф. Ты в порядке?»'

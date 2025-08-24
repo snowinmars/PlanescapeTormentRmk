@@ -11,29 +11,6 @@
 # ###
 
 
-label dhall_s5_ctor: # - # IF ~  Global("Dhall","GLOBAL",0)
-    scene bg mortuary_f2r3
-    show dhall_img default at center_left_down
-    jump dhall_s5
-
-
-label dhall_s39_ctor: # -
-    scene bg mortuary_f2r3
-    show dhall_img default at center_left_down
-    jump dhall_s39
-
-
-label dhall_s40_ctor: # - # IF ~  Global("Dhall","GLOBAL",1)
-    scene bg mortuary_f2r3
-    show dhall_img default at center_left_down
-    jump dhall_s40
-
-
-label dhall_dispose:
-    hide dhall_img
-    jump graphics_menu
-
-
 # s0 # say822
 label dhall_s0: # externs morte_s103
     nr 'Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять.'

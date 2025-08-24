@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf916_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zf916_img default at center_left_down
-    jump zf916_s0
-
-
-label zf916_s3_ctor: # - # IF ~  False()
-    scene bg DISABLED
-    show zf916_img default at center_left_down
-    jump zf916_s3
-
-
-label zf916_dispose:
-    hide zf916_img
-    jump graphics_menu
-
-
 # s0 # say24719
 label zf916_s0: # - # IF ~  True()
     nr 'Труп женщины смотрит на тебя пустым взглядом. На ее лбу вырезан номер «916»; ее губы крепко зашиты. От тела исходит легкий запах формальдегида.'

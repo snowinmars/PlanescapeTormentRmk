@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zm396_s0_ctor: # - # IF ~  HasItem("Bandage","ZM396")
-    scene bg mortuary_f2r3
-    show zm396_img default at center_left_down
-    jump zm396_s0
-
-
-label zm396_s4_ctor: # from 3.0 # IF ~  !HasItem("Bandage","ZM396")
-    scene bg mortuary_f2r3
-    show zm396_img default at center_left_down
-    jump zm396_s4
-
-
-label zm396_dispose:
-    hide zm396_img
-    jump graphics_menu
-
-
 # s0 # say34931
 label zm396_s0: # - # IF ~  HasItem("Bandage","ZM396")
     nr 'Этот труп ходит от плиты к плите, перевязывая лежащих на них мертвецов. На левом виске у него выбит номер «396»; его губы крепко зашиты. Ты замечаешь, что труп несет в руках несколько бинтов.'

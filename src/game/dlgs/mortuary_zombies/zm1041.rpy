@@ -11,23 +11,6 @@ init 10 python:
 # ###
 
 
-label zm1041_s0_ctor: # - # IF ~  Global("Bei","GLOBAL",0)
-    scene bg mortuary_f1r3
-    show zm1041_img default at center_left_down
-    jump zm1041_s0
-
-
-label zm1041_s35_ctor: # -
-    scene bg mortuary_f1r3
-    show zm1041_img default at center_left_down
-    jump zm1041_s35
-
-
-label zm1041_dispose:
-    hide zm1041_img
-    jump graphics_menu
-
-
 # s0 # say6573
 label zm1041_s0: # - # IF ~  Global("Bei","GLOBAL",0)
     nr 'У этого поднятого трупа мужчины на лбу вырезан номер «1041». Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно „экзотическую“ внешность.'

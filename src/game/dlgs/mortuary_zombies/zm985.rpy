@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zm985_s0_ctor: # - # IF ~  Global("Topple_985","GLOBAL",0)
-    scene bg mortuary_f2r5
-    show zm985_img default at center_left_down
-    jump zm985_s0
-
-
-label zm985_s5_ctor: # - # IF ~  GlobalGT("Topple_985","GLOBAL",0)
-    scene bg mortuary_f2r5
-    show zm985_img default at center_left_down
-    jump zm985_s5
-
-
-label zm985_dispose:
-    hide zm985_img
-    jump graphics_menu
-
-
 # s0 # say45515
 label zm985_s0: # - # IF ~  Global("Topple_985","GLOBAL",0)
     nr 'Этот труп, номер «985», встал как вкопанный; судя по состоянию его левой ноги, похоже, что его колено сгнило либо изъедено трупной плесенью.'

@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm613_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r4
-    show zm613_img default at center_left_down
-    jump zm613_s0
-
-
-label zm613_dispose:
-    hide zm613_img
-    jump graphics_menu
-
-
 # s0 # say6540
 label zm613_s0: # - # IF ~  True()
     nr 'На лбу этого мертвого работяги при помощи глубоких порезов нанесены цифры «613», но на коже между «1» и «3» виден большой пробел шириной с палец.'

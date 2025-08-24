@@ -8,25 +8,8 @@ init 10 python:
 # ###
 
 
-label s863_s7_ctor: # - # IF ~  False()
-    scene bg mortuary_f3r1
-    show s863_img default at center_left_down
-    jump s863_s7
-
-
-label s863_s8_ctor: # - # IF ~  HasItem("DRemind","S863")
-    scene bg mortuary_f3r1
-    show s863_img default at center_left_down
-    jump s863_s8
-
-
-label s863_dispose:
-    hide s863_img
-    jump graphics_menu
-
-
 # s0 # say35537
-label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
+label s863_s0: # from 10.0  # IF ~  !HasItem("DRemind","S863")
     nr 'Похоже, этот скелет попал в какой-то серьезный переплет: либо он участвовал в битве, либо упал через несколько лестничных пролетов.'
     nr 'Обе руки и ноги переломаны и собраны вновь с помощью кожаных ремней и тонких железных реек.'
     nr 'На лбу высечен номер «863»… но сзади череп имеет открытую пустую полость.'

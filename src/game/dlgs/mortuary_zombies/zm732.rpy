@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zm732_s0_ctor: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
-    scene bg mortuary_f1r4
-    show zm732_img default at center_left_down
-    jump zm732_s0
-
-
-label zm732_s3_ctor: # - # IF ~  HasItem("TomeBA","ZM732")
-    scene bg mortuary_f1r4
-    show zm732_img default at center_left_down
-    jump zm732_s3
-
-
-label zm732_dispose:
-    hide zm732_img
-    jump graphics_menu
-
-
 # s0 # say6529
 label zm732_s0: # from 4.0 # IF ~  !HasItem("TomeBA","ZM732")
     nr 'У этого ковыляющего зашит не только рот, но и глаза, а на брови вырезан номер «732». Похоже, глазные полости были зашиты давным-давно…'

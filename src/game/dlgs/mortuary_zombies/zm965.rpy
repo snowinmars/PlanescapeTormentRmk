@@ -8,22 +8,6 @@ init 10 python:
 # ###
 
 
-label zm965_s0_ctor: # - # IF ~  NearbyDialog("Dmorte")
-    scene bg mortuary_f2r2
-    show zm965_img default at center_left_down
-    jump zm965_s0
-
-
-label zm965_s1_ctor: # externs morte_s481 morte_s480 # IF ~  !NearbyDialog("Dmorte")
-    scene bg mortuary_f2r2
-    show zm965_img default at center_left_down
-    jump zm965_s1
-
-
-label zm965_dispose:
-    hide zm965_img
-    jump graphics_menu
-
 # s0 # say34920
 label zm965_s0: # - # IF ~  NearbyDialog("Dmorte")
     nr 'Этот труп бродит по треугольной траектории. Достигнув одного из углов треугольника, он замирает, затем поворачивается и ковыляет к следующему углу.'
