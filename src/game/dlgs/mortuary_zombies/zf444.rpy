@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf444_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zf444_img default at center_left_down
-    jump zf444_s0
-
-
-label zf444_s3_ctor: # - # IF ~  False()
-    scene bg DISABLED
-    show zf444_img default at center_left_down
-    jump zf444_s3
-
-
-label zf444_dispose:
-    hide zf444_img
-    jump graphics_menu
-
-
 # s0 # say35210
 label zf444_s0: # - # IF ~  True()
     nr 'У этого трупа женщины ужасный вид. Ее грубая, обработанная бальзамом кожа покрыта сотнями небольших укусов, вероятно, крысиных. Судя по складкам вокруг ран, они, скорее всего, были нанесены еще до того, как труп препарировали. Ее губы зашиты, а на лице темно-синими чернилами выведен номер «444».'

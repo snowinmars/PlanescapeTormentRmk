@@ -11,23 +11,6 @@ init 10 python:
 # ###
 
 
-label zm310_s0_ctor: # - # IF ~  Global("Oinosian","GLOBAL",0)
-    scene bg mortuary_f3r3
-    show zm310_img default at center_left_down
-    jump zm310_s0
-
-
-label zm310_s18_ctor: # - # IF ~  Global("Oinosian","GLOBAL",1)
-    scene bg mortuary_f3r3
-    show zm310_img default at center_left_down
-    jump zm310_s18
-
-
-label zm310_dispose:
-    hide zm310_img
-    jump graphics_menu
-
-
 # s0 # say6495
 label zm310_s0: # - # IF ~  Global("Oinosian","GLOBAL",0)
     nr 'Губы этого ходячего трупа крепко сшиты, над бровью вырезан номер «310»; воздух вокруг него насыщен формальдегидом.'

@@ -8,16 +8,6 @@
 # ###
 
 
-label copearc_s0_ctor:
-    show copearc_img default at center_left_down
-    jump copearc_s0
-
-
-label copearc_dispose:
-    hide copearc_img
-    jump graphics_menu
-
-
 # s0 # say46723
 label copearc_s0: # - # IF ~  True()
     nr 'Эта медная серьга на вид невероятно древняя. Похоже, она предназначена для ношения, но у нее нет ничего, что позволило бы прицепить ее к твоему уху.'

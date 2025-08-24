@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf832_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r4
-    show zf832_img default at center_left_down
-    jump zf832_s0
-
-
-label zf832_s3_ctor: # - # IF ~  False()
-    scene bg mortuary_f3r4
-    show zf832_img default at center_left_down
-    jump zf832_s3
-
-
-label zf832_dispose:
-    hide zf832_img
-    jump graphics_menu
-
-
 # s0 # say35146
 label zf832_s0: # - # IF ~  True()
     nr 'Несмотря на жесткую иссохшую кожу, совершенно очевидно, что раньше это была красивая женщина средних лет.'

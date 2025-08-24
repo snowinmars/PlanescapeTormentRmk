@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf1096_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r3
-    show zf1096_img default at center_left_down
-    jump zf1096_s0
-
-
-label zf1096_s3_ctor: # - # IF ~  False()
-    scene bg mortuary_f2r3
-    show zf1096_img default at center_left_down
-    jump zf1096_s3
-
-
-label zf1096_dispose:
-    hide zf1096_img
-    jump graphics_menu
-
-
 # s0 # say35082
 label zf1096_s0: # - # IF ~  True()
     nr 'Этот труп женщины совершает круговой обход между плитами в комнате. Ее волосы заплетены в длинную косу, которая обернута вокруг шеи в виде петли.'

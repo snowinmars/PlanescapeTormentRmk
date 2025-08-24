@@ -11,29 +11,6 @@ init 10 python:
 # ###
 
 
-label zm1094_s0_ctor: # - # IF ~  Global("Asonje","GLOBAL",0)
-    scene bg mortuary_f2r3
-    show zm1094_img default at center_left_down
-    jump zm1094_s0
-
-
-label zm1094_s26_ctor: # - # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
-    scene bg mortuary_f2r3
-    show zm1094_img default at center_left_down
-    jump zm1094_s26
-
-
-label zm1094_s27_ctor: # - # IF ~  Global("Asonje","GLOBAL",3)
-    scene bg mortuary_f2r3
-    show zm1094_img default at center_left_down
-    jump zm1094_s27
-
-
-label zm1094_dispose:
-    hide zm1094_img
-    jump graphics_menu
-
-
 # s0 # say6562
 label zm1094_s0: # - # IF ~  Global("Asonje","GLOBAL",0)
     nr 'У этого ходячего трупа на лбу вырезан номер «1094». Его губы крепко сшиты, от него исходит сильный химический запах свежего формальдегида, окружающего его в виде облака.'

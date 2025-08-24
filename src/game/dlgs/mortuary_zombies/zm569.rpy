@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm569_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r1
-    show zm569_img default at center_left_down
-    jump zm569_s0
-
-
-label zm569_dispose:
-    hide zm569_img
-    jump graphics_menu
-
-
 # s0 # say24575
 label zm569_s0: # - # IF ~  True()
     nr 'Судя по виду, этот неуклюжий труп мертв уже несколько лет. Кожа на голове в некоторых местах отвалилась, открывая белый как мел череп. Кто-то выбил номер «569» на открывшейся кости.'

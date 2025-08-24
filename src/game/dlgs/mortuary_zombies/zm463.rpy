@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm463_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zm463_img default at center_left_down
-    jump zm463_s0
-
-
-label zm463_dispose:
-    hide zm463_img
-    jump graphics_menu
-
-
 # s0 # say6484
 label zm463_s0: # - # IF ~  True()
     nr 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «463», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'

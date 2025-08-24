@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf1072_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r3
-    show zf1072_img default at center_left_down
-    jump zf1072_s0
-
-
-label zf1072_s3_ctor: # - # IF ~  False()
-    scene bg mortuary_f2r3
-    show zf1072_img default at center_left_down
-    jump zf1072_s3
-
-
-label zf1072_dispose:
-    hide zf1072_img
-    jump graphics_menu
-
-
 # s0 # say35114
 label zf1072_s0: # - # IF ~  True()
     nr 'От этого трупа женщины истончается особенно сильный запах формальдегида… пахнет так, как будто ее обработали совсем недавно, и неспроста: труп находится на последней стадии разложения.'

@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm1508_s0_ctor: # - # IF ~  True()
-    scene bg DISABLED
-    show zm1508_img default at center_left_down
-    jump zm1508_s0
-
-
-label zm1508_dispose:
-    hide zm1508_img
-    jump graphics_menu
-
-
 # s0 # say46745
 label zm1508_s0: # - # IF ~  True()
     nr 'На лбу этого очень мускулистого трупа масса шрамов, как будто при жизни в бою он бил своих врагов головой, как дубиной.'

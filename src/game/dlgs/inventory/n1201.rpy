@@ -8,15 +8,6 @@
 # ###
 
 
-label n1201_s0_ctor:
-    show n1201_img default at center_left_down
-    jump n1201_s0
-
-
-label n1201_dispose:
-    jump graphics_menu
-
-
 # s0 # say44993
 label n1201_s0: # from 1.6 3.0 # IF ~  True()
     nr 'На этой вонючей записке под текстом изображена странная диаграмма. Кажется, она указывает, что тебе следует загнуть уголки записки к центру.'

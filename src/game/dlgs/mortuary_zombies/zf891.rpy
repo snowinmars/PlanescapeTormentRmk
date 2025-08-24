@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zf891_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r8
-    show zf891_img default at center_left_down
-    jump zf891_s0
-
-
-label zf891_s3_ctor: # - # IF ~  False()
-    scene bg mortuary_f2r8
-    show zf891_img default at center_left_down
-    jump zf891_s3
-
-
-label zf891_dispose:
-    hide zf891_img
-    jump graphics_menu
-
-
 # s0 # say35274
 label zf891_s0: # - # IF ~  True()
     nr 'Этот труп женщины выглядит особенно отвратительно: он лишен ушей, носа и губ.'

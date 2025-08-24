@@ -8,17 +8,6 @@ init 10 python:
 # ###
 
 
-label zm257_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f2r5
-    show zm257_img default at center_left_down
-    jump zm257_s0
-
-
-label zm257_dispose:
-    hide zm257_img
-    jump graphics_menu
-
-
 # s0 # say6507
 label zm257_s0: # - # IF ~  True()
     nr 'Глаза этого трупа близко посажены и слегка косят: один смотрит влево, а другой — вправо.'

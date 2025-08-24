@@ -7,22 +7,6 @@ init 10 python:
 # Original:  DLG/DS996.DLG
 # ###
 
-label s996_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r3
-    show s996_img default at center_left_down
-    jump s996_s0
-
-
-label s996_s7_ctor: # - # IF ~  False()
-    scene bg mortuary_f3r3
-    show s996_img default at center_left_down
-    jump s996_s7
-
-
-label s996_dispose:
-    hide s996_img
-    jump graphics_menu
-
 
 # s0 # say35460
 label s996_s0: # - # IF ~  True()

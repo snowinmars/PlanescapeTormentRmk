@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label s748_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f3r3
-    show s748_img default at center_left_down
-    jump s748_s0
-
-
-label s748_s7_ctor: # - # IF ~  False()
-    scene bg mortuary_f3r3
-    show s748_img default at center_left_down
-    jump s748_s7
-
-
-label s748_dispose:
-    hide s748_img
-    jump graphics_menu
-
-
 # s0 # say35383
 label s748_s0: # - # IF ~  True()
     nr 'Этот скелет — «748», судя по номеру, выбитому над бровью, — выделяется только тем, что некоторые из его зубов вставные, и сделаны из красновато-коричневого камня.'

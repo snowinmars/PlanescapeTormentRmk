@@ -8,35 +8,6 @@ init 10 python:
 # ###
 
 
-label xach_s0_ctor: # - # IF ~  True()
-    scene bg mortuary_f1r3
-    show xach_img default at center_left_down
-    jump xach_s0
-
-
-label xach_s14_ctor: # -
-    scene bg mortuary_f1r3
-    show xach_img default at center_left_down
-    jump xach_s14
-
-
-label xach_s15_ctor: # -
-    scene bg mortuary_f1r3
-    show xach_img default at center_left_down
-    jump xach_s15
-
-
-label xach_s35_ctor: # -
-    scene bg mortuary_f1r3
-    show xach_img default at center_left_down
-    jump xach_s35
-
-
-label xach_dispose:
-    hide xach_img
-    jump graphics_menu
-
-
 # s0 # say500
 label xach_s0: # - # IF ~  True()
     nr 'Перед тобой труп мужчины с выбитым на черепе номером «331».'

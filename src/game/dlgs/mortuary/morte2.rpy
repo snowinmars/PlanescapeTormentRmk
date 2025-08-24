@@ -8,29 +8,6 @@
 # ###
 
 
-label morte2_s0_ctor: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
-    scene bg mortuary_f2r2
-    show morte_img default at center_left_down
-    jump morte2_s0
-
-
-label morte2_s27_ctor: # - # IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
-    scene bg mortuary_f2r2
-    show morte_img default at center_left_down
-    jump morte2_s27
-
-
-label morte2_s31_ctor: # - # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
-    scene bg mortuary_f2r2
-    show morte_img default at center_left_down
-    jump morte2_s31
-
-
-label morte2_dispose:
-    hide morte_img
-    jump graphics_menu
-
-
 # s0 # say41144
 label morte2_s0: # - # IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
     nr "Двери открываются с лёгким шорохом."

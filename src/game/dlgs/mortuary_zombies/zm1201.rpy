@@ -8,23 +8,6 @@ init 10 python:
 # ###
 
 
-label zm1201_s0_ctor: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    scene bg mortuary_f2r3
-    show zm1201_img default at center_left_down
-    jump zm1201_s0
-
-
-label zm1201_s5_ctor: # from 2.0 # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    scene bg mortuary_f2r3
-    show zm1201_img default at center_left_down
-    jump zm1201_s5
-
-
-label zm1201_dispose:
-    hide zm1201_img
-    jump graphics_menu
-
-
 # s0 # say34953
 label zm1201_s0: # - # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
     nr 'На лбу этого трупа чернилами написан номер «1201», чернила стекли на глаза, щеки и челюсти.'

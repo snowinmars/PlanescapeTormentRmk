@@ -11,47 +11,6 @@
 # ###
 
 
-label vaxis_s0_ctor: # - # IF ~  Global("Vaxis","GLOBAL",0)
-    scene bg mortuary_f2r6
-    show vaxis_img default at center_left_down
-    jump vaxis_s0
-
-
-label vaxis_s40_ctor: # -
-    scene bg mortuary_f2r6
-    show vaxis_img default at center_left_down
-    jump vaxis_s40
-
-
-label vaxis_s41_ctor: # -
-    scene bg mortuary_f2r6
-    show vaxis_img default at center_left_down
-    jump vaxis_s41
-
-
-label vaxis_s57_ctor: # - # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    scene bg mortuary_f2r6
-    show vaxis_img default at center_left_down
-    jump vaxis_s57
-
-
-label vaxis_s69_ctor: # -
-    scene bg mortuary_f2r6
-    show vaxis_img default at center_left_down
-    jump vaxis_s69
-
-
-label vaxis_s73_ctor: # -
-    scene bg mortuary_f2r6
-    show vaxis_img default at center_left_down
-    jump vaxis_s73
-
-
-label vaxis_dispose:
-    hide vaxis_img
-    jump graphics_menu
-
-
 # s0 # say453
 label vaxis_s0: # - # IF ~  Global("Vaxis","GLOBAL",0)
     nr 'Неуклюжий труп смотрит на тебя пустым взглядом. На его лбу вырезан номер «821», а его губы крепко зашиты. От тела исходит легкий запах формальдегида.'
