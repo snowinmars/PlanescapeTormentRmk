@@ -34,6 +34,7 @@ class Zm1041LogicTest(LogicTest):
 
 
     def test_r6583_action(self):
+        self.settings_manager.set_bei_value(2)
         self._integer_equals_action(
             self.settings_manager.get_bei_value,
             1,
@@ -42,6 +43,7 @@ class Zm1041LogicTest(LogicTest):
 
 
     def test_r9096_action(self):
+        self.settings_manager.set_bei_value(2)
         self._integer_equals_action(
             self.settings_manager.get_bei_value,
             1,
@@ -50,6 +52,7 @@ class Zm1041LogicTest(LogicTest):
 
 
     def test_r9097_action(self):
+        self.settings_manager.set_bei_value(2)
         self._integer_equals_action(
             self.settings_manager.get_bei_value,
             1,

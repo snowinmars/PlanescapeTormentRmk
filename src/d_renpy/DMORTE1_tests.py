@@ -12,6 +12,7 @@ class Morte1LogicTest(LogicTest):
 
 
     def test_r39793_action(self):
+        self.settings_manager.set_morte_value(2)
         self._integer_equals_action(
             self.settings_manager.get_morte_value,
             1,

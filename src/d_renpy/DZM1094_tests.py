@@ -34,6 +34,7 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_r6568_action(self):
+        self.settings_manager.set_asonje_value(2)
         self._integer_equals_action(
             self.settings_manager.get_asonje_value,
             1,
@@ -67,6 +68,7 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_r9289_action(self):
+        self.settings_manager.set_asonje_value(3)
         self._integer_equals_action(
             self.settings_manager.get_asonje_value,
             2,
@@ -75,6 +77,7 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_r9290_action(self):
+        self.settings_manager.set_asonje_value(3)
         self._integer_equals_action(
             self.settings_manager.get_asonje_value,
             2,
@@ -83,6 +86,7 @@ class Zm1094LogicTest(LogicTest):
 
 
     def test_r9291_action(self):
+        self.settings_manager.set_asonje_value(3)
         self._integer_equals_action(
             self.settings_manager.get_asonje_value,
             2,

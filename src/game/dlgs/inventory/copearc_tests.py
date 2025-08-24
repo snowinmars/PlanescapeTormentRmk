@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.copearc_logic import CopearcLogic
+from game.dlgs.inventory.copearc_logic import CopearcLogic
 
 
 class CopearcLogicTest(LogicTest):

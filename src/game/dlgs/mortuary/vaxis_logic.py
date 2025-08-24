@@ -3,6 +3,14 @@ class VaxisLogic:
         self.settings_manager = settings_manager
 
 
+    def get_know_vaxis_name(self):
+        return self.settings_manager.get_know_vaxis_name()
+
+
+    def set_know_vaxis_name(self):
+        self.settings_manager.set_know_vaxis_name(True)
+
+
     def r454_action(self):
         self.settings_manager.character_manager.modify_property('protagonist', 'law', -1)
         self.settings_manager.set_zombie_chaotic(True)

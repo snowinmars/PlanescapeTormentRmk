@@ -34,6 +34,7 @@ class Zm310LogicTest(LogicTest):
 
 
     def test_r6502_action(self):
+        self.settings_manager.set_oinosian_value(2)
         self._integer_equals_action(
             self.settings_manager.get_oinosian_value,
             1,

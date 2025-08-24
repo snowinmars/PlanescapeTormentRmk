@@ -357,16 +357,16 @@ self.assertEqual(max_health_after + delta_max_health, max_health_after_once)
 self.assertEqual(max_health_after_once, current_health_after_once)
 """.strip()
 set_location_action_pattern_preconf = """
-location = '{v}'
+location_{v} = '{v}' # {v}
 """.strip()
 set_location_action_pattern_before = """
-self.assertNotEqual(self.settings_manager.location_manager.get_location(), location)
+self.assertNotEqual(self.settings_manager.location_manager.get_location(), location_{v})
 """.strip()
 set_location_action_pattern_after = """
-self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+self.assertEqual(self.settings_manager.location_manager.get_location(), location_{v})
 """.strip()
 set_location_action_pattern_after_once = """
-self.assertEqual(self.settings_manager.location_manager.get_location(), location)
+self.assertEqual(self.settings_manager.location_manager.get_location(), location_{v})
 """.strip()
 current_health_eq_max_health_condition_pattern_preconf = """
 max_health_before = 24
@@ -481,24 +481,28 @@ get_character_property_lt_condition_pattern_after = """
 self.settings_manager.character_manager.set_property(who_{s}, prop_{s}, delta_{s} - 1)
 """.strip()
 is_visited_internal_condition_pattern_preconf = """
-location = {v}
+location_{v} = '{v}' # {v}
 """.strip()
 is_visited_internal_condition_pattern_before = """
-self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+self.assertFalse(self.settings_manager.location_manager.is_visited(location_{v}))
 """.strip()
 is_visited_internal_condition_pattern_after = """
-self.settings_manager.location_manager.set_location(location)
-self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+self.settings_manager.location_manager.set_location(location_{v})
+self.assertTrue(self.settings_manager.location_manager.is_visited(location_{v}))
 """.strip()
 not_is_visited_internal_condition_pattern_preconf = """
-location = {v}
+location_{v} = '{v}' # {v}
 """.strip()
 not_is_visited_internal_condition_pattern_before = """
-self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+self.settings_manager.location_manager.set_location(location_{v})
+self.assertTrue(self.settings_manager.location_manager.is_visited(location_{v}))
 """.strip()
 not_is_visited_internal_condition_pattern_after = """
-self.settings_manager.location_manager.set_location(location)
-self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+self.settings_manager.location_manager._current_external = None
+self.settings_manager.location_manager._current_internal = None
+self.settings_manager.location_manager._visited_externals = set()
+self.settings_manager.location_manager._visited_internals = set()
+self.assertFalse(self.settings_manager.location_manager.is_visited(location_{v}))
 """.strip()
 count_in_party_eq_zero_condition_pattern_preconf = """
 """.strip()

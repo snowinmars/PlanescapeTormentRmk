@@ -1117,7 +1117,7 @@ class MorteLogic:
 
 
     def s576_action(self):
-        self.settings_manager.set_know_source(1)
+        self.settings_manager.set_know_source(True)
 
 
     def r55902_action(self):
@@ -1383,7 +1383,8 @@ class MorteLogic:
 
 
     def r68176_action(self):
-        self.settings_manager.set_fortress_morte(4) JoinPartyEx(TRUE)
+        self.settings_manager.set_fortress_morte(4)
+        self.settings_manager.set_in_party_morte(True)
 
 
     def r68189_action(self):

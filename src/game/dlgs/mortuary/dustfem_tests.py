@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.dustfem_logic import DustfemLogic
+from game.dlgs.mortuary.dustfem_logic import DustfemLogic
 
 
 class DustfemLogicTest(LogicTest):
@@ -369,91 +369,103 @@ class DustfemLogicTest(LogicTest):
 
 
     def test_r1253_condition(self):
-        location = 'mortuary_f2r1' # AR0202
+        location_AR0202 = 'mortuary_f2r1' # AR0202
 
-        self.settings_manager.set_dhall_value(1)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_dhall_value(-1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0202))
 
         self.assertFalse(self.logic.r1253_condition())
 
-        self.settings_manager.set_dhall_value(0)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_dhall_value(1)
+        self.settings_manager.location_manager.set_location(location_AR0202)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0202))
 
         self.assertTrue(self.logic.r1253_condition())
 
 
     def test_r1255_condition(self):
-        location = 'mortuary_f2r1' # AR0202
+        location_AR0202 = 'mortuary_f2r1' # AR0202
 
-        self.settings_manager.set_dhall_value(1)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_dhall_value(-1)
+        self.settings_manager.location_manager.set_location(location_AR0202)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0202))
 
         self.assertFalse(self.logic.r1255_condition())
 
-        self.settings_manager.set_dhall_value(0)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_dhall_value(1)
+        self.settings_manager.location_manager._current_external = None
+        self.settings_manager.location_manager._current_internal = None
+        self.settings_manager.location_manager._visited_externals = set()
+        self.settings_manager.location_manager._visited_internals = set()
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0202))
 
         self.assertTrue(self.logic.r1255_condition())
 
 
     def test_r1258_condition(self):
-        location = 'mortuary_f1r1' # AR0201
+        location_AR0201 = 'mortuary_f1r1' # AR0201
 
-        self.settings_manager.set_deionarra_value(1)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_deionarra_value(-1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r1258_condition())
 
-        self.settings_manager.set_deionarra_value(0)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_deionarra_value(1)
+        self.settings_manager.location_manager.set_location(location_AR0201)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r1258_condition())
 
 
     def test_r4336_condition(self):
-        location = 'mortuary_f1r1' # AR0201
+        location_AR0201 = 'mortuary_f1r1' # AR0201
 
-        self.settings_manager.set_deionarra_value(1)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_deionarra_value(-1)
+        self.settings_manager.location_manager.set_location(location_AR0201)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r4336_condition())
 
-        self.settings_manager.set_deionarra_value(0)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_deionarra_value(1)
+        self.settings_manager.location_manager._current_external = None
+        self.settings_manager.location_manager._current_internal = None
+        self.settings_manager.location_manager._visited_externals = set()
+        self.settings_manager.location_manager._visited_internals = set()
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r4336_condition())
 
 
     def test_r33224_condition(self):
-        location = 'mortuary_f1r1' # AR0201
+        location_AR0201 = 'mortuary_f1r1' # AR0201
 
-        self.settings_manager.set_soego_value(1)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_soego_value(-1)
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r33224_condition())
 
-        self.settings_manager.set_soego_value(0)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_soego_value(1)
+        self.settings_manager.location_manager.set_location(location_AR0201)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r33224_condition())
 
 
     def test_r33226_condition(self):
-        location = 'mortuary_f1r1' # AR0201
+        location_AR0201 = 'mortuary_f1r1' # AR0201
 
-        self.settings_manager.set_soego_value(1)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_soego_value(-1)
+        self.settings_manager.location_manager.set_location(location_AR0201)
+        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertFalse(self.logic.r33226_condition())
 
-        self.settings_manager.set_soego_value(0)
-        self.settings_manager.location_manager.set_location(location)
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location))
+        self.settings_manager.set_soego_value(1)
+        self.settings_manager.location_manager._current_external = None
+        self.settings_manager.location_manager._current_internal = None
+        self.settings_manager.location_manager._visited_externals = set()
+        self.settings_manager.location_manager._visited_internals = set()
+        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r33226_condition())
 
@@ -485,7 +497,7 @@ class DustfemLogicTest(LogicTest):
         self.assertFalse(self.logic.r33229_condition())
 
         self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.set_talked_to_dustfem_times(1)
+        self.settings_manager.set_talked_to_dustfem_times(2)
 
         self.assertTrue(self.logic.r33229_condition())
 
@@ -691,14 +703,14 @@ class DustfemLogicTest(LogicTest):
 
     def test_r4281_condition(self):
         self._is_visited_external_location_condition(
-            'mortuary_f2r3', # AR0202
+            'mortuary_f2r1', # AR0202
             self.logic.r4281_condition
         )
 
 
     def test_r4282_condition(self):
         self._not_is_visited_external_location_condition(
-            'mortuary_f2r3', # AR0202
+            'mortuary_f2r1', # AR0202
             self.logic.r4282_condition
         )
 
@@ -854,7 +866,7 @@ class DustfemLogicTest(LogicTest):
         self.assertFalse(self.logic.r4314_condition())
 
         self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_warning(1)
+        self.settings_manager.set_warning(2)
 
         self.assertTrue(self.logic.r4314_condition())
 

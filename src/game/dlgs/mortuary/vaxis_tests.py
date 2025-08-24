@@ -34,6 +34,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r461_action(self):
+        self.settings_manager.set_vaxis_value(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_value,
             1,
@@ -144,6 +145,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r480_action(self):
+        self.settings_manager.set_vaxis_value(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_value,
             1,
@@ -161,6 +163,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r481_action(self):
+        self.settings_manager.set_vaxis_value(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_value,
             1,
@@ -178,6 +181,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r482_action(self):
+        self.settings_manager.set_vaxis_value(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_value,
             1,
@@ -744,6 +748,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4496_action(self):
+        self.settings_manager.set_vaxis_orders(True)
         self._true_then_false_action(
             self.settings_manager.get_vaxis_orders,
             self.logic.r4496_action
@@ -751,6 +756,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4497_action(self):
+        self.settings_manager.set_vaxis_orders(True)
         self._true_then_false_action(
             self.settings_manager.get_vaxis_orders,
             self.logic.r4497_action
@@ -876,6 +882,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4508_action(self):
+        self.settings_manager.set_embalm_key_quest(2)
         self._integer_equals_action(
             self.settings_manager.get_embalm_key_quest,
             1,
@@ -884,6 +891,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4509_action(self):
+        self.settings_manager.set_embalm_key_quest(2)
         self._integer_equals_action(
             self.settings_manager.get_embalm_key_quest,
             1,
@@ -934,6 +942,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4521_action(self):
+        self.settings_manager.set_embalm_key_quest(4)
         self._integer_equals_action(
             self.settings_manager.get_embalm_key_quest,
             3,
@@ -951,6 +960,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4522_action(self):
+        self.settings_manager.set_embalm_key_quest(4)
         self._integer_equals_action(
             self.settings_manager.get_embalm_key_quest,
             3,
@@ -1157,6 +1167,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4621_action(self):
+        self.settings_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_zombie_disguise,
             1,
@@ -1165,6 +1176,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4622_action(self):
+        self.settings_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_zombie_disguise,
             1,
@@ -1173,6 +1185,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4623_action(self):
+        self.settings_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_zombie_disguise,
             1,
@@ -1181,6 +1194,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4625_action(self):
+        self.settings_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_zombie_disguise,
             1,
@@ -1189,6 +1203,7 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4628_action(self):
+        self.settings_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
             self.settings_manager.get_vaxis_zombie_disguise,
             1,
@@ -1199,7 +1214,7 @@ class VaxisLogicTest(LogicTest):
     def test_r4630_action(self):
         who_looks_like = 'protagonist'
         prop_looks_like = 'looks_like'
-        delta_looks_like = zombie
+        delta_looks_like = 'zombie'
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
@@ -1212,7 +1227,7 @@ class VaxisLogicTest(LogicTest):
         self.logic.r4630_action()
 
         looks_like_after = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
-        self.assertEqual(looks_like_before + delta_looks_like, looks_like_after)
+        self.assertEqual(delta_looks_like, looks_like_after)
         experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_vaxis_global_xp())
@@ -1220,7 +1235,7 @@ class VaxisLogicTest(LogicTest):
         self.logic.r4630_action()
 
         looks_like_after_once = self.settings_manager.character_manager.get_property(who_looks_like, prop_looks_like)
-        self.assertEqual(looks_like_after + delta_looks_like, looks_like_after_once)
+        self.assertEqual(looks_like_after, looks_like_after_once)
         experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertTrue(self.settings_manager.get_vaxis_global_xp())
@@ -2413,13 +2428,13 @@ class VaxisLogicTest(LogicTest):
 
     def test_r64509_condition(self):
         self.settings_manager.set_strong_arm_vaxis(True)
-        self.settings_manager.set_embalm_key_quest(0)
+        self.settings_manager.set_embalm_key_quest(1)
         self.settings_manager.set_vaxis_orders(True)
 
         self.assertFalse(self.logic.r64509_condition())
 
         self.settings_manager.set_strong_arm_vaxis(False)
-        self.settings_manager.set_embalm_key_quest(2)
+        self.settings_manager.set_embalm_key_quest(3)
         self.settings_manager.set_vaxis_orders(False)
 
         self.assertTrue(self.logic.r64509_condition())

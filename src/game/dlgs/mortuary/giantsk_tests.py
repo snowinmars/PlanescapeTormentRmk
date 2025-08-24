@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.giantsk_logic import GiantskLogic
+from game.dlgs.mortuary.giantsk_logic import GiantskLogic
 
 
 class GiantskLogicTest(LogicTest):

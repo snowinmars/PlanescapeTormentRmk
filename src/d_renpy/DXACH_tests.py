@@ -41,6 +41,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r645_action(self):
+        self.settings_manager.set_xachariah_ring(2)
         self._integer_equals_action(
             self.settings_manager.get_xachariah_ring,
             1,
@@ -98,6 +99,7 @@ class XachLogicTest(LogicTest):
 
 
     def test_r681_action(self):
+        self.settings_manager.set_xachariah_gutted(True)
         self._true_then_false_action(
             self.settings_manager.get_xachariah_gutted,
             self.logic.r681_action

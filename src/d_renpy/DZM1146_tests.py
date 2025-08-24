@@ -34,6 +34,7 @@ class Zm1146LogicTest(LogicTest):
 
 
     def test_r6524_action(self):
+        self.settings_manager.set_crispy_value(2)
         self._integer_equals_action(
             self.settings_manager.get_crispy_value,
             1,

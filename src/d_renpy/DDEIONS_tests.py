@@ -28,6 +28,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r707_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -36,6 +37,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r708_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -44,6 +46,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r709_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -78,6 +81,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r700_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -112,6 +116,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r747_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -120,6 +125,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r1313_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -128,6 +134,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r13255_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -259,6 +266,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6081_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -267,6 +275,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6082_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -275,6 +284,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r13257_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -367,6 +377,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6133_action(self):
+        self.settings_manager.set_deionarra_value(2)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             1,
@@ -435,6 +446,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6154_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -443,6 +455,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r6155_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -451,6 +464,7 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r13258_action(self):
+        self.settings_manager.set_deionarra_value(3)
         self._integer_equals_action(
             self.settings_manager.get_deionarra_value,
             2,
@@ -1586,7 +1600,7 @@ class DeionarraLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r63367_condition())
 
-        self.settings_manager.set_fortress_party(1)
+        self.settings_manager.set_fortress_party(2)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
 
@@ -1600,7 +1614,7 @@ class DeionarraLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r63368_condition())
 
-        self.settings_manager.set_fortress_party(1)
+        self.settings_manager.set_fortress_party(2)
         self.settings_manager.set_fortress_ignus(0)
         self.settings_manager.set_fortress_vhailor(0)
 
@@ -1693,12 +1707,12 @@ class DeionarraLogicTest(LogicTest):
 
     def test_r63408_condition(self):
         self.settings_manager.set_fortress_party(0)
-        self.settings_manager.set_deionarra_value(1)
+        self.settings_manager.set_deionarra_value(-1)
 
         self.assertFalse(self.logic.r63408_condition())
 
         self.settings_manager.set_fortress_party(1)
-        self.settings_manager.set_deionarra_value(0)
+        self.settings_manager.set_deionarra_value(1)
 
         self.assertTrue(self.logic.r63408_condition())
 
@@ -1740,12 +1754,12 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r63419_condition(self):
-        self.settings_manager.set_deionarra_value(1)
+        self.settings_manager.set_deionarra_value(-1)
         self.settings_manager.set_has_wedding_ring(False)
 
         self.assertFalse(self.logic.r63419_condition())
 
-        self.settings_manager.set_deionarra_value(0)
+        self.settings_manager.set_deionarra_value(1)
         self.settings_manager.set_has_wedding_ring(True)
 
         self.assertTrue(self.logic.r63419_condition())

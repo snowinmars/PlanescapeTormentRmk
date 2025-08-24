@@ -16,6 +16,7 @@ class EiveneLogicTest(LogicTest):
 
 
     def test_r3422_action(self):
+        self.settings_manager.set_eivene_value(2)
         self._integer_equals_action(
             self.settings_manager.get_eivene_value,
             1,
