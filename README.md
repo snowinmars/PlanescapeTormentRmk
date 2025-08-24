@@ -1,31 +1,34 @@
 # PlanescapeTormentRmk
-Rewriting Planescape:Torment on Renpy. I love this game.
 
-Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`, but I almost do not read it.
+## [English](README_en.md)
 
-All the stuff is under GNU/GPLv3
+Я переписываю Planescape:Torment на RenPy. Потому что я люблю эту игру, и потому что это нетривиально)
 
+Мне можно написать в телеге `@snowinmars` или на почту `snowinmars@yandex.ru`, но я её почти не читаю.
 
-## How to run
+Всё залицензировано под GNU/GPLv3.
 
-Run as Renpy project.
+## Как запустить
 
+1. Как проект в RenPy. Технодемку грузить в артифакты гитхаба я отказываюсь. Проект поддерживает сборку в web, linux, win режимах.
 
-## How to dev
+## Как модицифировать
 
-Ensure that `.coveragerc` is working: you should not run tests from omitted paths.
+Убедись, что `.coveragerc` работает: не надо запускать тесты из omit.
 
-- Add stuff you want
+- Добавь что хочешь
 - `cd /src`
-- `python ./build.py` - regenerate `src/game/engine_data/settings/generated.py` and `src/d_renpy/*`
-- `docker compose up` - test all the stuff you wrote, all tests should end succeessfully
-- Open the `src\htmlcov\index.html` in browser. Make sure that coverage is at least 99%. Python is a runtime trash
+- `python ./build.py` - перегенерирует `src/game/engine_data/settings/generated.py` и `src/d_renpy/*`
+- Скопируй `src/d_renpy/*` руками куда хочешь, проверяя корректность генерации
+- `docker compose up` - всё протестируй, все тесты должны выполняться
+- Открой `src\htmlcov\index.html` в браузере. Убедись, что покрытие составляет хотя бы 99%. Питон - сплошной косяк рантайма.
 
+### Именование файлов
 
-### Test naming
-
-If the rpy filename is `T.rpy`, than:
-- for logic:
-  - file name `T_logic.py` with class name `TLogic`
-- for logic tests
-  - file name `T_tests.py` with class name `TLogicTest`
+Если файл диалогов - `T.rpy`, то:
+- файл конструкторов:
+  - именуется `T_ctors.rpy`
+- файл логики:
+  - именуется `T_logic.py` с классом `TLogic`
+- файл тестов для логики
+  - именуется `T_tests.py` с классом `TLogicTest`
