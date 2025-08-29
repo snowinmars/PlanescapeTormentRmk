@@ -71,6 +71,9 @@ init 3 python:
     now = int(time.time())
     devlog.info('Building journal notes…')
     build_all_notes(renpy.store.global_journal_manager)
+    def on_update_journal():
+        renpy.exports.sound.play(renpy.store.audio.update_journal)
+    renpy.store.global_journal_manager.register_on_update_journal(on_update_journal)
     devlog.info('Done building journal notes, took %s', int(time.time()) - now)
 
     config.keymap['show_inventory'] = ['i']

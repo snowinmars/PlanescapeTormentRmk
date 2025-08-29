@@ -83,6 +83,11 @@ if __name__ == '__main__':
 '''.strip() + '\n'
 
 
+################
+################
+################
+
+
 test_case2 = f'''
 IF ~~ THEN BEGIN 20 // from: 5.2 5.4
 SAY #3485 /* ~Она отворачивается... непохоже, чтобы она тебя услышала. ~ */
@@ -154,6 +159,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case3 = f'''
 IF ~~ THEN BEGIN 22 // from: 15.2 25.1 27.1
@@ -266,7 +277,6 @@ class AreaLogic:
         return self.settings_manager.get_embalm_key_quest() == 1 and \\
                self.settings_manager.get_has_keyem()
 '''.strip() + '\n'
-test_result3_tests_ = ''
 test_result3_tests = f'''
 import unittest
 
@@ -337,6 +347,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case4 = f'''
 IF ~~ THEN BEGIN 16 // from: 15.0
@@ -419,6 +435,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case5 = f'''
 IF ~~ THEN BEGIN 178 // from:
 SAY #15348 /* ~«Что? Шеф, я всего лишь мимир! Я не умею 'драться на дуэли'!»~ */
@@ -496,6 +518,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case6 = f'''
 IF ~~ THEN BEGIN 16 // from: 15.0
@@ -578,6 +606,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case7 = f'''
 IF ~  Global("Appearance","GLOBAL",1)
@@ -713,6 +747,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case8 = f'''
 IF ~~ THEN BEGIN 138 // from: 137.0
 SAY #11947 /* ~Морт глядит на твою ладонь. «Ух-х-х». Кажется, его покоробило. «Вот уж мелкие уродцы, а?»~ */
@@ -783,6 +823,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case9 = f'''
 IF ~~ THEN BEGIN 179 // from:
@@ -905,6 +951,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case10 = f'''
 IF ~~ THEN BEGIN 206 // from: 204.0
   SAY #19704 /* ~«Это не то же самое, шеф...»~ */
@@ -970,6 +1022,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case11 = f'''
 IF ~~ THEN BEGIN 518 // from: 515.0 517.0
@@ -1082,6 +1140,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case12 = f'''
 IF ~~ THEN BEGIN 0 // from:
@@ -1236,6 +1300,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case13 = f'''
 IF ~~ THEN BEGIN 0 // from:
   SAY #822 /* ~Прежде чем Морт успевает завершить свои разглагольствования, писарь начинает безудержно кашлять. Спустя минуту или две кашель прекращается, и дыхание писаря вновь становится неровным хрипом.~ */
@@ -1301,6 +1371,11 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 '''.strip() + '\n'
+
+
+################
+################
+################
 
 
 test_case14 = """
@@ -1496,6 +1571,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 """.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case15 = """
 IF ~~ THEN BEGIN 29 // from: 24.0
 SAY #809 /* ~«Я знаю, что ты должен умереть... пока еще можешь. Круг *должен* замкнуться, любовь моя. Ты не предназначен для такой жизни. Ты должен найти то, что у тебя отнято, и уйти дальше, в земли мертвых».~ [DEN023] */
@@ -1582,6 +1663,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 """.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case16 = """
 IF ~~ THEN BEGIN 26 // from: 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
@@ -1807,6 +1894,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 """.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case17 = """
 IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
 ~ THEN BEGIN 61 // from:
@@ -1917,6 +2010,12 @@ class AreaLogicTest(LogicTest):
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
 """.strip() + '\n'
+
+
+################
+################
+################
+
 
 test_case18 = """
 IF ~~ THEN BEGIN 42 // from: 41.0 45.0
@@ -2126,6 +2225,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 """.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case19 = """
 IF ~~ THEN BEGIN 73 // from: 72.0
 SAY #66913 /* ~При этих словах Дейонарры твой череп пронзает внезапное озарение... неожиданно ты ощущаешь непреодолимое желание взглянуть на собственную руку. Подняв ее и *посмотрев* на нее, ты ВИДИШЬ кровь, текущую по запястью, омывающую твои мускулы, дающую силу твоим костям... ~ */
@@ -2256,6 +2361,12 @@ if __name__ == '__main__':
     unittest.main() # pragma: no cover
 """.strip() + '\n'
 
+
+################
+################
+################
+
+
 test_case20 = """
 IF ~~ THEN BEGIN 2 // from: 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
 SAY #309 /* ~Тленный отступает на шаг, затем быстро хлопает в ладони три раза. В ответ во всем Морге раздается звон огромного железного колокола.~ */
@@ -2365,4 +2476,297 @@ class AreaLogicTest(LogicTest):
 
 if __name__ == '__main__':
     unittest.main() # pragma: no cover
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case21 = """
+IF ~~ THEN BEGIN 45 // from: 19.5
+SAY #3889 /* ~Ты наклоняешься, чтобы «шепнуть» ему что-то на ухо, тленный тоже наклоняется. Как только он оказывается на расстоянии вытянутой руки, ты хватаешь его за виски и резко сворачиваешь голову влево. ~ */
+IF ~~ THEN REPLY #3890 /* ~«Нельзя дать тебе предупредить своих друзей...»~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+""".strip() + '\n'
+test_tree21 = {
+
+}
+test_result21_rpy = """
+""".strip() + '\n'
+test_result21_logic = """
+""".strip() + '\n'
+test_result21_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case22 = """
+IF ~~ THEN BEGIN 425 // from:
+SAY #40082 /* ~Морт бурчит себе под нос: «Думаю, хорошо, что там *вообще* хоть что-нибудь есть».~ */
+IF ~~ THEN REPLY #40083 /* ~«У меня другой вопрос, Ненни...»~ */ EXTERN ~DNENNY~ 3
+IF ~~ THEN REPLY #40084 /* ~«Это все, что я хотел узнать, Ненни. Прощай».~ */ EXIT
+END
+""".strip() + '\n'
+test_tree22 = {
+
+}
+test_result22_rpy = """
+""".strip() + '\n'
+test_result22_logic = """
+""".strip() + '\n'
+test_result22_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case23 = """
+IF ~~ THEN BEGIN 588 // from: 587.0
+SAY #55909 /* ~«О, — Морт 'ухмыляется'. — Мог бы хоть ЧТО-ТО сказать. Пожалуйста, продолжай. Я не против... — Морт щелкает зубами, изображая Нордома. — Если хочешь что-нибудь узнать о модронах — спроси МЕНЯ».~ */
+IF ~~ THEN REPLY #55910 /* ~«Ладно, Морт... Что ты можешь рассказать мне о модронах?»~ */ GOTO 590
+IF ~~ THEN REPLY #55912 /* ~«Неважно. У меня есть другие вопросы к Нордому...»~ */ EXTERN ~DNORDOM~ 74
+IF ~~ THEN REPLY #55913 /* ~«Забудь об этом. Идем».~ */ EXIT
+END
+""".strip() + '\n'
+test_tree23 = {
+
+}
+test_result23_rpy = """
+""".strip() + '\n'
+test_result23_logic = """
+""".strip() + '\n'
+test_result23_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case24 = """
+IF ~~ THEN BEGIN 663 // from: 329.2 729.2
+SAY #65611 /* ~«Эй! Чесание языком — моя лучшая черта». Он постукивает зубами, а затем 'скалится'. «А? А?»~ */
+IF ~~ THEN REPLY #65612 /* ~«О-о, *очень* приятно это слышать».~ */ GOTO 664
+IF ~  GlobalGT("Morte_Stolen","GLOBAL",2) ~ THEN REPLY #65613 /* ~«Да-да, я уже знаю о Потоке Проклятий, Морт. Мне очень интересно, чем ты занимался, когда оказался у Лотара».~ */ GOTO 667
+IF ~~ THEN REPLY #65614 /* ~«У меня есть другие вопросы...»~ */ GOTO 329
+IF ~~ THEN REPLY #65615 /* ~«Неважно Идем».~ */ EXIT
+END
+""".strip() + '\n'
+test_tree24 = {
+
+}
+test_result24_rpy = """
+""".strip() + '\n'
+test_result24_logic = """
+""".strip() + '\n'
+test_result24_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case25 = """
+IF ~~ THEN BEGIN 715 // from: 329.8 714.0 729.8
+SAY #65809 /* ~«Шеф, я же сказал: потому что я обещал, верно?- он выглядит раздраженным. — Что может быть еще?»~ */
+IF ~~ THEN REPLY #65810 /* ~«Не знаю. Тебе ведь не обязательно кружить вокруг меня, раз я тебя освободил».~ */ GOTO 716
+IF ~~ THEN REPLY #65811 /* ~«Неважно. У меня есть другие вопросы...»~ */ GOTO 329
+IF ~~ THEN REPLY #65812 /* ~«Забудь об этом, Морт. Пошли».~ */ EXIT
+END
+""".strip() + '\n'
+test_tree25 = {
+
+}
+test_result25_rpy = """
+""".strip() + '\n'
+test_result25_logic = """
+""".strip() + '\n'
+test_result25_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case26 = """
+IF ~~ THEN BEGIN 73 // from:
+SAY #4658 /* ~Зомби ворчит: «Поутал в арке — пеувый этав, феверо-фападная коумата, нувен кофтяной паиец дья откуывания, — он кивает. — Удафи».~ */
+IF ~~ THEN REPLY #4659 /* ~«Э-э... Ладно».~ */ EXIT
+END
+""".strip() + '\n'
+test_tree26 = {
+
+}
+test_result26_rpy = """
+""".strip() + '\n'
+test_result26_logic = """
+""".strip() + '\n'
+test_result26_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case27 = """
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 3.0 3.3 4.0 4.1
+SAY #1443 /* ~«О, силы!» Тленный подпрыгивает, затем внимательно смотрит на тебя. Ты замечаешь, что его глаза не налиты кровью, а просто имеют красный оттенок. «Эй, ты заставляешь меня сделать нелестное признание: из тебя вышел убедительный зомби, — он делает легкий поклон. — Я Соэго. Могу ли я спросить тебя, что ты делаешь здесь, — он косится на твои шрамы, — в таком виде?» ~ */
+IF ~~ THEN REPLY #1444 /* ~«Это не твое дело».~ */ GOTO 6
+IF ~~ THEN REPLY #1445 /* ~«Я не совсем понимаю, что я здесь делаю. Я очнулся на одной из плит наверху, и моя память... немного туманна».~ */ GOTO 7
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1446 /* ~«Я заблудился в этих залах и теперь не могу найти выход. Ты можешь мне помочь?»~ */ GOTO 8
+IF ~~ THEN REPLY #1447 /* ~«Я пытаюсь выбраться отсюда».~ */ GOTO 13
+IF ~~ THEN REPLY #1448 /* ~«Мне были нужны перемены в жизни».~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1) ~ GOTO 16
+IF ~~ THEN REPLY #4999 /* ~«У меня совершенно нет на это времени. Прощай».~ */ GOTO 17
+END
+""".strip() + '\n'
+test_tree27 = {
+
+}
+test_result27_rpy = """
+""".strip() + '\n'
+test_result27_logic = """
+""".strip() + '\n'
+test_result27_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case28 = """
+IF ~~ THEN BEGIN 64 // from: 63.1 77.0 78.0
+SAY #21661 /* ~«Я Соэго, фрактотум тленных. Я занимаюсь здесь миссионерской деятельностью», — он делает полупоклон.~ */
+IF ~~ THEN REPLY #21662 /* ~«Миссионерской?»~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21663 /* ~«Что здесь делают тленные?»~ */ GOTO 66
+IF ~~ THEN REPLY #64595 /* ~«Где я?»~ */ GOTO 77
+IF ~~ THEN REPLY #64596 /* ~«Почему из меня сделали заключенного?»~ */ GOTO 78
+IF ~~ THEN REPLY #21665 /* ~«Здравствуй и прощай».~ */ GOTO 71
+END
+""".strip() + '\n'
+test_tree28 = {
+
+}
+test_result28_rpy = """
+""".strip() + '\n'
+test_result28_logic = """
+""".strip() + '\n'
+test_result28_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case29 = """
+IF ~~ THEN BEGIN 2 // from: 0.4
+SAY #35565 /* ~Скелет не реагирует. Кажется, он слишком далек от того, чтобы отвечать на твои вопросы.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35566 /* ~Оставить скелет в покое.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35567 /* ~Оставить скелет в покое.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35568 /* ~Оставить скелет в покое.~ */ EXIT
+END
+""".strip() + '\n'
+test_tree29 = {
+
+}
+test_result29_rpy = """
+""".strip() + '\n'
+test_result29_logic = """
+""".strip() + '\n'
+test_result29_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case30 = """
+IF ~  Global("Bei","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #6573 /* ~У этого поднятого трупа мужчины на лбу вырезан номер «1041». Несмотря на жесткую высушенную плоть, совершенно очевидно, что его лицо когда-то придавало ему довольно «экзотическую» внешность. Губы зомби крепко зашиты — скорее всего, чтобы не стонал все время, — а сам он сильно пахнет формальдегидом.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #6576 /* ~«Итак... что тут у нас интересного?»~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #6577 /* ~«Итак... что тут у нас интересного?»~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #6578 /* ~«Знаешь, мне известно, что ты не зомби. Тебе никого не одурачить».~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) Global("Bei","GLOBAL",0) ~ THEN REPLY #6579 /* ~Использовать на трупе свою способность «История костей».~ */ GOTO 2
+IF ~  Global("Speak_with_Dead","GLOBAL",1) Global("Bei","GLOBAL",1) ~ THEN REPLY #6580 /* ~Использовать на трупе свою способность «История костей».~ */ GOTO 37
+IF ~~ THEN REPLY #6581 /* ~«Было приятно с тобой поболтать. Прощай».~ */ EXIT
+IF ~~ THEN REPLY #9095 /* ~Оставить труп в покое.~ */ EXIT
+END
+""".strip() + '\n'
+test_tree30 = {
+
+}
+test_result30_rpy = """
+""".strip() + '\n'
+test_result30_logic = """
+""".strip() + '\n'
+test_result30_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case31 = """
+IF ~~ THEN BEGIN 4 // from: 3.0
+SAY #9399 /* ~«Хе, хехе-ХУРХ!» — хохот духа резко прерывается тяжелыми спазмами, и он изрыгает поток бальзамирующей жидкости и черной гнили. Корчась от боли, дух начинает безудержно кашлять, периодически сплевывая желтоватую жидкость и оборванные швы с губ.~ */
+IF ~~ THEN REPLY #9419 /* ~Терпеливо ждать окончания процесса.~ */ GOTO 5
+IF ~~ THEN REPLY #9421 /* ~«У меня есть другие вопросы...»~ */ GOTO 9
+IF ~~ THEN REPLY #9422 /* ~Оставить измученного духа его страданиям.~ */ EXIT
+END
+""".strip() + '\n'
+test_tree31 = {
+
+}
+test_result31_rpy = """
+""".strip() + '\n'
+test_result31_logic = """
+""".strip() + '\n'
+test_result31_tests = """
+""".strip() + '\n'
+
+
+################
+################
+################
+
+
+test_case32 = """
+IF ~~ THEN BEGIN 5 // from: 4.0
+SAY #9400 /* ~Ужасный кашель духа наконец-то утихает. «Нет, пень... ты... не можешь. Если... если только не махнешь в Баатор и не спасешь меня, я попал... по полной. Настало время... покаяться», — дух закрывает глаз и откидывает голову на пол.~ */
+IF ~~ THEN REPLY #9423 /* ~«Понятно. У меня есть другой вопрос...»~ */ GOTO 9
+IF ~~ THEN REPLY #9424 /* ~«Ладно. Прощай».~ */ EXIT
+END
+""".strip() + '\n'
+test_tree32 = {
+
+}
+test_result32_rpy = """
+""".strip() + '\n'
+test_result32_logic = """
+""".strip() + '\n'
+test_result32_tests = """
 """.strip() + '\n'
