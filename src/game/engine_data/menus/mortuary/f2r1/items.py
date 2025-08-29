@@ -1,0 +1,125 @@
+from game.engine_data.menus.menu_items import (
+    MenuItem,
+    GoToLocationMenuItem,
+    ContainerMenuItem,
+    ZombieMenuItem,
+)
+
+
+class FromMortuaryF2R1ToMortuaryF2R2(GoToLocationMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return self.gsm.get_has_intro_key()
+    def tooltip(self):
+        if self.gsm.location_manager.is_visited('mortuary_f2r2'):
+            return 'Пройти в западную комнату'
+        return 'Пройти в комнату'
+    def jump(self):
+        self.gsm.location_manager.set_location('mortuary_f2r2')
+        return 'graphics_menu'
+
+
+class FromMortuaryF2R1ToMortuaryF2R8(GoToLocationMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return self.gsm.get_has_intro_key()
+    def tooltip(self):
+        if self.gsm.location_manager.is_visited('mortuary_f2r8'):
+            return 'Пройти в южную комнату'
+        return 'Пройти в комнату'
+    def jump(self):
+        if self.gsm.location_manager.is_visited('mortuary_f2r8') or \
+           self.gsm.get_has_mortuary_key():
+            self.gsm.location_manager.set_location('mortuary_f2r8')
+            return 'graphics_menu'
+        return 'walk_to_mortuaryf2r8_closed'
+
+
+class FromMortuaryF2R1ToMortuaryF3R1(GoToLocationMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return self.gsm.get_has_intro_key()
+    def tooltip(self):
+        if self.gsm.location_manager.is_visited('mortuary_f3r1') or \
+           self.gsm.location_manager.is_visited('mortuary_f3r3'):
+            return 'Подняться на третий этаж'
+        return 'Подняться по лестнице'
+    def jump(self):
+        if self.gsm.get_has_mortuary_key() or \
+           self.gsm.location_manager.is_visited('mortuary_f3r1') or \
+           self.gsm.location_manager.is_visited('mortuary_f3r3'):
+            self.gsm.location_manager.set_location('mortuary_f3r1')
+            return 'graphics_menu'
+        return 'walk_to_mortuaryf3r1_closed'
+
+
+class FromMortuaryF2R1ToMortuaryF1R1(GoToLocationMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return self.gsm.get_has_intro_key()
+    def tooltip(self):
+        if self.gsm.location_manager.is_visited('mortuary_f1r1') or \
+           self.gsm.location_manager.is_visited('mortuary_f1r4'):
+            return 'Спуститься на третий этаж'
+        return 'Спуститься по лестнице'
+    def jump(self):
+        if self.gsm.get_has_mortuary_key() or \
+           self.gsm.location_manager.is_visited('mortuary_f1r1') or \
+           self.gsm.location_manager.is_visited('mortuary_f1r4'):
+            self.gsm.location_manager.set_location('mortuary_f1r1')
+            return 'graphics_menu'
+        return 'walk_to_mortuaryf3r1_closed'
+
+
+class InMortuaryF2R1PickScalpel(ContainerMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return not self.gsm.get_has_scalpel()
+    def tooltip(self):
+        return 'Обыскать'
+    def jump(self):
+        return 'walk_mortuary_f2r1_pick_scalpel'
+
+
+class InMortuaryF2R1Zm569(ZombieMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return not self.gsm.get_dead_zm569()
+    def tooltip(self):
+        if self.gsm.get_talked_to_zm569_times() > 0:
+            return 'Поговорить с трупом «569»'
+        return 'Поговорить с ходячим плешивым трупом'
+    def jump(self):
+        return 'zm569_speak'
+
+
+class InMortuaryF2R1Zm825(ZombieMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return not self.gsm.get_dead_zm825()
+    def tooltip(self):
+        if self.gsm.get_talked_to_zm825_times() > 0:
+            return 'Поговорить с трупом «825»'
+        return 'Поговорить с ходячим трупом повешенного'
+    def jump(self):
+        return 'zm825_speak'
+
+
+class InMortuaryF2R1Zm782(ZombieMenuItem):
+    def __init__(self, gsm, x, y):
+        super().__init__(gsm, x, y)
+    def when(self):
+        return not self.gsm.get_dead_zm782()
+    def tooltip(self):
+        if self.gsm.get_talked_to_zm782_times() > 0:
+            return 'Поговорить с трупом «782»'
+        return 'Поговорить с ходячим трупом, полным ненависти'
+    def jump(self):
+        return 'zm782_speak'

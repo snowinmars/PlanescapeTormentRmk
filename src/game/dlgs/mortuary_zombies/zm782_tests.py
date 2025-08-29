@@ -11,52 +11,11 @@ class Zm782LogicTest(LogicTest):
         self.logic = Zm782Logic(self.settings_manager)
 
 
-
     def test_pick_key_up(self):
         self._false_then_true_action(
             self.settings_manager.get_has_intro_key,
             self.logic.pick_key_up
         )
-
-
-    def test_has_key_has_morte(self):
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_has_intro_key(False)
-        self.assertFalse(self.logic.has_key_has_morte())
-
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_has_intro_key(True)
-        self.assertTrue(self.logic.has_key_has_morte())
-
-
-    def test_no_key_has_morte(self):
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_has_intro_key(True)
-        self.assertFalse(self.logic.no_key_has_morte())
-
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_has_intro_key(False)
-        self.assertTrue(self.logic.no_key_has_morte())
-
-
-    def test_has_key_no_morte(self):
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_has_intro_key(False)
-        self.assertFalse(self.logic.has_key_no_morte())
-
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_has_intro_key(True)
-        self.assertTrue(self.logic.has_key_no_morte())
-
-
-    def test_no_key_no_morte(self):
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_has_intro_key(True)
-        self.assertFalse(self.logic.no_key_no_morte())
-
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_has_intro_key(False)
-        self.assertTrue(self.logic.no_key_no_morte())
 
 
     def test_r24709_condition(self):
