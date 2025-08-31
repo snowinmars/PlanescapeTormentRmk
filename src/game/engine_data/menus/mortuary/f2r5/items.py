@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
     ZombieMenuItem,
@@ -13,8 +14,10 @@ class FromMortuaryF2R5ToMortuaryF2R6(GoToLocationMenuItem):
             return 'Пройти в восточную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f2r6')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f2r6')
+        )
 
 
 class FromMortuaryF2R5ToMortuaryF2R4(GoToLocationMenuItem):
@@ -25,8 +28,10 @@ class FromMortuaryF2R5ToMortuaryF2R4(GoToLocationMenuItem):
             return 'Пройти в восточную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f2r4')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f2r4')
+        )
 
 
 class InMortuaryF2R5Eivene(MenuItem):
@@ -41,7 +46,9 @@ class InMortuaryF2R5Eivene(MenuItem):
             return 'Поговорить с Эи-Вейн'
         return 'Поговорить с хрупкой девушкой'
     def jump(self):
-        return 'eivene_speak'
+        return NavigationDirective(
+            'eivene_speak',
+        )
 
 
 class InMortuaryF2R5Zm257(ZombieMenuItem):
@@ -54,7 +61,9 @@ class InMortuaryF2R5Zm257(ZombieMenuItem):
             return 'Поговорить с трупом «257»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):
-        return 'zm257_speak'
+        return NavigationDirective(
+            'zm257_speak',
+        )
 
 
 class InMortuaryF2R5Zm506(ZombieMenuItem):
@@ -67,7 +76,9 @@ class InMortuaryF2R5Zm506(ZombieMenuItem):
             return 'Поговорить с трупом «506»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):
-        return 'zm506_speak'
+        return NavigationDirective(
+            'zm506_speak',
+        )
 
 
 class InMortuaryF2R5Zm985(ZombieMenuItem):
@@ -80,4 +91,6 @@ class InMortuaryF2R5Zm985(ZombieMenuItem):
             return 'Поговорить с трупом «985»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):
-        return 'zm985_speak'
+        return NavigationDirective(
+            'zm985_speak',
+        )

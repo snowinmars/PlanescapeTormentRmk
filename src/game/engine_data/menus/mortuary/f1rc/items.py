@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
 )
@@ -12,8 +13,10 @@ class FromMortuaryF1RcToMortuaryF1R1(GoToLocationMenuItem):
             return 'Пройти в главный зал'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r1')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r1')
+        )
 
 
 class FromMortuaryF1RcToMortuaryF1R2(GoToLocationMenuItem):
@@ -24,8 +27,10 @@ class FromMortuaryF1RcToMortuaryF1R2(GoToLocationMenuItem):
             return 'Пройти в северо-восточную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r2')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r2')
+        )
 
 
 class FromMortuaryF1RcToMortuaryF1R3(GoToLocationMenuItem):
@@ -36,8 +41,10 @@ class FromMortuaryF1RcToMortuaryF1R3(GoToLocationMenuItem):
             return 'Пройти в северную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r3')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r3')
+        )
 
 
 class FromMortuaryF1RcToMortuaryF1R4(GoToLocationMenuItem):
@@ -48,8 +55,10 @@ class FromMortuaryF1RcToMortuaryF1R4(GoToLocationMenuItem):
             return 'Пройти в юго-западную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r4')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r4')
+        )
 
 
 class InMortuaryF1RcGiantsk(MenuItem):
@@ -62,4 +71,6 @@ class InMortuaryF1RcGiantsk(MenuItem):
     def tooltip(self):
         return 'Поговорить с гиганским скелетом'
     def jump(self):
-        return 'giantsk_speak'
+        return NavigationDirective(
+            'giantsk_speak',
+        )

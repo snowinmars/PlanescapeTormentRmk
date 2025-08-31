@@ -1,3 +1,17 @@
+import math
+
+
+class NavigationDirective:
+    def __init__(self, target_label, before_jump=None):
+        self.target_label = target_label
+        self.before_jump = before_jump
+
+    def execute(self):
+        if self.before_jump:
+            self.before_jump()
+        return self.target_label
+
+
 class MenuItem:
     def __init__(self, gsm, x, y):
         self.gsm = gsm
@@ -11,7 +25,9 @@ class MenuItem:
     def tooltip(self):
         return 'Unknown'
     def jump(self):
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+        )
 
 
 class GoToLocationMenuItem(MenuItem):
@@ -43,13 +59,16 @@ class SkeletMenuItem(MenuItem):
 
 
 class NpcMenuItem(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm)
+    def __init__(self, gsm, x, y, npc):
+        super().__init__(gsm, x, y)
+        self._pos = self._calc_party_pos(x, y)[npc]
+    def pos(self):
+        return self._pos
     def _calc_party_pos(self, x, y):
         party_radius = 40
         hexagon = generate_hexagon_positions(x, y, party_radius)
         return {
-            'morte' : { x: x, y: y } ,
+            'morte' : { 'x': x, 'y': y } ,
             'annah' : hexagon[0]     ,
             'dakkon': hexagon[1]     ,
             'grace' : hexagon[2]     ,

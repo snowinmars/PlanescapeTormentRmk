@@ -14,17 +14,18 @@ label mortuary_f2r2_graphics_menu:
 
 
 screen mortuary_f2r2_graphics_menu_screen():
+    $ gsm = renpy.store.global_settings_manager
     use abstract_location_menu_screen(
         'bg mortuary_f2r2',
         [
-            FromMortuaryF2R2ToMortuaryF2R1(660, 980),
-            FromMortuaryF2R2ToMortuaryF2R3(500, 100),
+            FromMortuaryF2R2ToMortuaryF2R1(gsm, 660, 980),
+            FromMortuaryF2R2ToMortuaryF2R3(gsm, 500, 100),
         ],
         [
-            *get_party(510, 880),
-            InMortuaryF2R2Zm965(840, 600),
-            InMortuaryF2R2Zf594(450, 520),
-            InMortuaryF2R2Zf626(490, 720),
+            *get_party(gsm, 510, 880),
+            InMortuaryF2R2Zm965(gsm, 840, 600),
+            InMortuaryF2R2Zf594(gsm, 450, 520),
+            InMortuaryF2R2Zf626(gsm, 490, 720),
         ],
         audio.mortuary
     )
