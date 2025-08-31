@@ -1,5 +1,6 @@
 # PlanescapeTormentRmk
 
+
 ## [English](README_en.md)
 
 Я переписываю Planescape:Torment на RenPy. Потому что я люблю эту игру, и потому что это нетривиально)
@@ -8,9 +9,14 @@
 
 Всё залицензировано под GNU/GPLv3.
 
-## Как запустить
 
-1. Как проект в RenPy. Технодемку грузить в артифакты гитхаба я отказываюсь. Проект поддерживает сборку в web, linux, win режимах.
+## Скачать
+
+- web - [disk.yandex.ru](https://disk.yandex.ru/d/TTph3ogZGefF7A)
+- linux - [disk.yandex.ru](https://disk.yandex.ru/d/HJ8LRoIef_Qggg)
+- windows - [disk.yandex.ru](https://disk.yandex.ru/d/PlHSTvLyQIAUMQ)
+- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> импорт в RenPy
+
 
 ## Как модицифировать
 
@@ -22,6 +28,7 @@
 - Скопируй `src/d_renpy/*` руками куда хочешь, проверяя корректность генерации
 - `docker compose up` - всё протестируй, все тесты должны выполняться
 - Открой `src\htmlcov\index.html` в браузере. Убедись, что покрытие составляет хотя бы 99%. Питон - сплошной косяк рантайма.
+
 
 ### Именование файлов
 

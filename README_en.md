@@ -1,5 +1,8 @@
 # PlanescapeTormentRmk
 
+
+## [Russian](README.md)
+
 Rewriting Planescape:Torment on Renpy. I love this game.
 
 Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`, but I almost do not read it.
@@ -7,9 +10,12 @@ Contact me via telegram `@snowinmars` or email `snowinmars@yandex.ru`, but I alm
 All the stuff is under GNU/GPLv3
 
 
-## How to run
+## Download
 
-Run as Renpy project. I wont load a tech demo as a github artifact. The project may run as web, linux or win bundle.
+- web - [disk.yandex.ru](https://disk.yandex.ru/d/TTph3ogZGefF7A)
+- linux - [disk.yandex.ru](https://disk.yandex.ru/d/HJ8LRoIef_Qggg)
+- windows - [disk.yandex.ru](https://disk.yandex.ru/d/PlHSTvLyQIAUMQ)
+- git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> import in RenPy
 
 
 ## How to dev
