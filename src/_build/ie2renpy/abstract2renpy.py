@@ -551,7 +551,8 @@ def _to_single_body(script):
             if current_line:
                 new_lines.append(''.join(current_line).rstrip())
 
-            output_lines.append(f'{indent}{''.join(new_lines).strip()}')
+            all_new_lines = ''.join(new_lines).strip()
+            output_lines.append(f'{indent}{all_new_lines}')
         elif stripped_line.startswith('#$%'): # current block is only comments
             indent = re.match(r'^\s*', line).group(0)
             for x in stripped_line.split('#$%')[1:]:
