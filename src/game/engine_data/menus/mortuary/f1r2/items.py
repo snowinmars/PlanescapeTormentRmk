@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
 )
@@ -12,8 +13,10 @@ class FromMortuaryF1R2ToMortuaryF1Rc(GoToLocationMenuItem):
             return 'Пройти в центральную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1rc')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1rc')
+        )
 
 
 class FromMortuaryF1R2ToMortuaryF1R3(GoToLocationMenuItem):
@@ -24,8 +27,10 @@ class FromMortuaryF1R2ToMortuaryF1R3(GoToLocationMenuItem):
             return 'Пройти в северную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r3')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r3')
+        )
 
 
 class FromMortuaryF1R2ToMortuaryF1R1(GoToLocationMenuItem):
@@ -36,8 +41,10 @@ class FromMortuaryF1R2ToMortuaryF1R1(GoToLocationMenuItem):
             return 'Пройти в главный зал'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r1')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r1')
+        )
 
 
 class InMortuaryF1R2Deionarra(MenuItem):
@@ -52,4 +59,6 @@ class InMortuaryF1R2Deionarra(MenuItem):
             return 'Поговорить с Дейонаррой'
         return 'Подойти к призраку'
     def jump(self):
-        return 'deionarra_speak'
+        return NavigationDirective(
+            'deionarra_speak',
+        )

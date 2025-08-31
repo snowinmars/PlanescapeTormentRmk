@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
     ContainerMenuItem,
@@ -11,8 +12,10 @@ class FromMortuaryF3R2ToMortuaryF3R3(GoToLocationMenuItem):
     def tooltip(self):
         return 'Пройти западнее'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f3r3')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f3r3')
+        )
 
 
 class FromMortuaryF3R2ToMortuaryF3R1(GoToLocationMenuItem):
@@ -21,8 +24,10 @@ class FromMortuaryF3R2ToMortuaryF3R1(GoToLocationMenuItem):
     def tooltip(self):
         return 'Пройти восточнее'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f3r1')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f3r1')
+        )
 
 
 class InMortuaryF3R2PickGarbage(ContainerMenuItem):
@@ -33,7 +38,9 @@ class InMortuaryF3R2PickGarbage(ContainerMenuItem):
     def tooltip(self):
         return 'Взять мусор'
     def jump(self):
-        return 'walk_mortuary_f3r4_pick_garbage'
+        return NavigationDirective(
+            'walk_mortuary_f3r4_pick_garbage',
+        )
 
 
 class InMortuaryF3R2PickTaskList(ContainerMenuItem):
@@ -44,7 +51,9 @@ class InMortuaryF3R2PickTaskList(ContainerMenuItem):
     def tooltip(self):
         return 'Взять бумагу'
     def jump(self):
-        return 'walk_mortuary_f3r4_pick_mortuary_task_list'
+        return NavigationDirective(
+            'walk_mortuary_f3r4_pick_mortuary_task_list',
+        )
 
 
 class InMortuaryF3R2PickNeedle(ContainerMenuItem):
@@ -55,7 +64,9 @@ class InMortuaryF3R2PickNeedle(ContainerMenuItem):
     def tooltip(self):
         return 'Взять иголку'
     def jump(self):
-        return 'walk_mortuary_f3r4_pick_needle'
+        return NavigationDirective(
+            'walk_mortuary_f3r4_pick_needle',
+        )
 
 
 class InMortuaryF3R2Dust(MenuItem):
@@ -70,4 +81,6 @@ class InMortuaryF3R2Dust(MenuItem):
             return 'Поговорить с тленным'
         return 'Поговорить с человеком'
     def jump(self):
-        return 'dust_speak'
+        return NavigationDirective(
+            'dust_speak',
+        )

@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
     ContainerMenuItem,
@@ -16,9 +17,13 @@ class FromMortuaryF3R1ToMortuaryF2R1(GoToLocationMenuItem):
         return 'Спуститься по лестнице'
     def jump(self):
         if self.gsm.get_has_mortuary_key():
-            self.gsm.location_manager.set_location('mortuary_f2r1')
-            return 'graphics_menu'
-        return 'walk_to_mortuaryf2r1_closed'
+            return NavigationDirective(
+                'graphics_menu',
+                lambda: self.gsm.location_manager.set_location('mortuary_f2r1')
+            )
+        return NavigationDirective(
+            'walk_to_mortuaryf2r1_closed',
+        )
 
 
 class FromMortuaryF3R1ToMortuaryF3R2(GoToLocationMenuItem):
@@ -27,8 +32,10 @@ class FromMortuaryF3R1ToMortuaryF3R2(GoToLocationMenuItem):
     def tooltip(self):
         return 'Пройти севернее'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f3r2')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f3r2')
+        )
 
 
 class FromMortuaryF3R1ToMortuaryF3R4(GoToLocationMenuItem):
@@ -37,9 +44,10 @@ class FromMortuaryF3R1ToMortuaryF3R4(GoToLocationMenuItem):
     def tooltip(self):
         return 'Пройти южнее'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f3r4')
-        return 'graphics_menu'
-
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f3r4')
+        )
 
 class InMortuaryF3R1PickMortuaryKey(ContainerMenuItem):
     def __init__(self, gsm, x, y):
@@ -49,7 +57,9 @@ class InMortuaryF3R1PickMortuaryKey(ContainerMenuItem):
     def tooltip(self):
         return 'Взять ключ'
     def jump(self):
-        return 'walk_mortuary_f3r4_pick_mortuary_key'
+        return NavigationDirective(
+            'walk_mortuary_f3r4_pick_mortuary_key',
+        )
 
 
 class InMortuaryF3R1S863(SkeletMenuItem):
@@ -62,7 +72,9 @@ class InMortuaryF3R1S863(SkeletMenuItem):
             return 'Поговорить со скелетом «863»'
         return 'Поговорить со скелетом ветерана'
     def jump(self):
-        return 's863_speak'
+        return NavigationDirective(
+            's863_speak',
+        )
 
 
 class InMortuaryF3R1Zm1146(ZombieMenuItem):
@@ -75,7 +87,9 @@ class InMortuaryF3R1Zm1146(ZombieMenuItem):
             return 'Поговорить с трупом «1146»'
         return 'Поговорить с ходячим плешивым трупом'
     def jump(self):
-        return 'zm1146_speak'
+        return NavigationDirective(
+            'zm1146_speak',
+        )
 
 
 class InMortuaryF3R1Zf1148(ZombieMenuItem):
@@ -88,4 +102,6 @@ class InMortuaryF3R1Zf1148(ZombieMenuItem):
             return 'Поговорить с трупом «1148»'
         return 'Поговорить с татуированным трупом'
     def jump(self):
-        return 'zf1148_speak'
+        return NavigationDirective(
+            'zf1148_speak',
+        )

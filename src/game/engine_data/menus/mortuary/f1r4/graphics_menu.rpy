@@ -14,17 +14,18 @@ label mortuary_f1r4_graphics_menu:
 
 
 screen mortuary_f1r4_graphics_menu_screen():
+    $ gsm = renpy.store.global_settings_manager
     use abstract_location_menu_screen(
         'bg mortuary_f1r4',
         [
-            FromMortuaryF1R4ToMortuaryF1R3(1500, 500),
-            FromMortuaryF1R4ToMortuaryF1R1(400, 1000),
-            FromMortuaryF1R4ToMortuaryF1Rc(500, 300),
-            FromMortuaryF1R4ToMortuaryF2R7(1100, 150),
+            FromMortuaryF1R4ToMortuaryF1R3(gsm, 1500, 500),
+            FromMortuaryF1R4ToMortuaryF1R1(gsm, 400, 1000),
+            FromMortuaryF1R4ToMortuaryF1Rc(gsm, 500, 300),
+            FromMortuaryF1R4ToMortuaryF2R7(gsm, 1100, 150),
         ],
         [
-            *get_party(1360, 400),
-            InMortuaryF1R4Zm732(710, 880),
+            *get_party(gsm, 1360, 400),
+            InMortuaryF1R4Zm732(gsm, 710, 880),
         ],
         audio.mortuary
     )

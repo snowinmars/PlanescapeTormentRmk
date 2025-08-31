@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
     ZombieMenuItem,
@@ -13,8 +14,10 @@ class FromMortuaryF1R3ToMortuaryF1R2(GoToLocationMenuItem):
             return 'Пройти в северо-восточную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r2')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r2')
+        )
 
 
 class FromMortuaryF1R3ToMortuaryF1R4(GoToLocationMenuItem):
@@ -25,8 +28,10 @@ class FromMortuaryF1R3ToMortuaryF1R4(GoToLocationMenuItem):
             return 'Пройти в юго-западную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r4')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r4')
+        )
 
 
 class FromMortuaryF1R3ToMortuaryF1Rc(GoToLocationMenuItem):
@@ -37,8 +42,10 @@ class FromMortuaryF1R3ToMortuaryF1Rc(GoToLocationMenuItem):
             return 'Пройти в центральную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1rc')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1rc')
+        )
 
 
 class InMortuaryF1R3Zf114(ZombieMenuItem):
@@ -51,7 +58,9 @@ class InMortuaryF1R3Zf114(ZombieMenuItem):
             return 'Поговорить с трупом «114»'
         return 'Поговорить с ходячим трупом повешенного'
     def jump(self):
-        return 'zf114_speak'
+        return NavigationDirective(
+            'zf114_speak',
+        )
 
 
 class InMortuaryF1R3Zm1041(ZombieMenuItem):
@@ -64,7 +73,9 @@ class InMortuaryF1R3Zm1041(ZombieMenuItem):
             return 'Поговорить с трупом «1041»'
         return 'Поговорить с ходячим трупом повешенного'
     def jump(self):
-        return 'zm1041_speak'
+        return NavigationDirective(
+            'zm1041_speak',
+        )
 
 
 class InMortuaryF1R3Xach(ZombieMenuItem):
@@ -79,4 +90,6 @@ class InMortuaryF1R3Xach(ZombieMenuItem):
             return 'Поговорить с трупом «331»'
         return 'Поговорить со слепым трупом'
     def jump(self):
-        return 'xach_speak'
+        return NavigationDirective(
+            'xach_speak',
+        )

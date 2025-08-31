@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
     ZombieMenuItem,
@@ -13,8 +14,10 @@ class FromMortuaryF1R4ToMortuaryF1R3(GoToLocationMenuItem):
             return 'Пройти в северную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r3')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r3')
+        )
 
 
 class FromMortuaryF1R4ToMortuaryF1R1(GoToLocationMenuItem):
@@ -25,8 +28,10 @@ class FromMortuaryF1R4ToMortuaryF1R1(GoToLocationMenuItem):
             return 'Пройти в главный зал'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r1')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r1')
+        )
 
 
 class FromMortuaryF1R4ToMortuaryF1Rc(GoToLocationMenuItem):
@@ -37,8 +42,10 @@ class FromMortuaryF1R4ToMortuaryF1Rc(GoToLocationMenuItem):
             return 'Пройти в центральную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1rc')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1rc')
+        )
 
 
 class FromMortuaryF1R4ToMortuaryF2R7(GoToLocationMenuItem):
@@ -49,8 +56,10 @@ class FromMortuaryF1R4ToMortuaryF2R7(GoToLocationMenuItem):
             return 'Подняться на второй этаж'
         return 'Подняться по лестнице'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f2r7')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f2r7')
+        )
 
 
 class InMortuaryF1R4Zm732(ZombieMenuItem):
@@ -63,4 +72,6 @@ class InMortuaryF1R4Zm732(ZombieMenuItem):
             return 'Поговорить с трупом «732»'
         return 'Поговорить с ходячим трупом повешенного'
     def jump(self):
-        return 'zm732_speak'
+        return NavigationDirective(
+            'zm732_speak',
+        )

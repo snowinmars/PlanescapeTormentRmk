@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
 )
@@ -12,8 +13,10 @@ class FromMortuaryF1R1ToMortuaryF2R1(GoToLocationMenuItem):
             return 'Подняться на второй этаж'
         return 'Подняться по лестнице'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f2r1')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f2r1')
+        )
 
 
 class FromMortuaryF1R1ToMortuaryF1R2(GoToLocationMenuItem):
@@ -24,8 +27,10 @@ class FromMortuaryF1R1ToMortuaryF1R2(GoToLocationMenuItem):
             return 'Пройти в северо-восточную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r2')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r2')
+        )
 
 
 class FromMortuaryF1R1ToMortuaryF1R4(GoToLocationMenuItem):
@@ -36,8 +41,10 @@ class FromMortuaryF1R1ToMortuaryF1R4(GoToLocationMenuItem):
             return 'Пройти в юго-западную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1r4')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1r4')
+        )
 
 
 class FromMortuaryF1R1ToMortuaryF1Rc(GoToLocationMenuItem):
@@ -48,8 +55,10 @@ class FromMortuaryF1R1ToMortuaryF1Rc(GoToLocationMenuItem):
             return 'Пройти в центральную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f1rc')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f1rc')
+        )
 
 
 class FromMortuaryF1R1ToGameEnd(GoToLocationMenuItem):
@@ -60,7 +69,9 @@ class FromMortuaryF1R1ToGameEnd(GoToLocationMenuItem):
     def tooltip(self):
         return 'Выйти из Морга'
     def jump(self):
-        return 'end'
+        return NavigationDirective(
+            'end',
+        )
 
 
 class InMortuaryF1R1Soego(MenuItem):
@@ -75,4 +86,6 @@ class InMortuaryF1R1Soego(MenuItem):
             return 'Поговорить с Соего'
         return 'Подойти к человеку'
     def jump(self):
-        return 'soego_speak'
+        return NavigationDirective(
+            'soego_speak',
+        )

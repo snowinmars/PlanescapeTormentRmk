@@ -1,4 +1,5 @@
 from game.engine_data.menus.menu_items import (
+    NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
     ZombieMenuItem,
@@ -13,8 +14,10 @@ class FromMortuaryF2R6ToMortuaryF2R7(GoToLocationMenuItem):
             return 'Пройти в юго-восточную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f2r7')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f2r7')
+        )
 
 
 class FromMortuaryF2R6ToMortuaryF2R5(GoToLocationMenuItem):
@@ -25,8 +28,10 @@ class FromMortuaryF2R6ToMortuaryF2R5(GoToLocationMenuItem):
             return 'Пройти в серево-восточную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
-        self.gsm.location_manager.set_location('mortuary_f2r5')
-        return 'graphics_menu'
+        return NavigationDirective(
+            'graphics_menu',
+            lambda: self.gsm.location_manager.set_location('mortuary_f2r5')
+        )
 
 
 class InMortuaryF2R6Vaxis(MenuItem):
@@ -43,4 +48,6 @@ class InMortuaryF2R6Vaxis(MenuItem):
             return 'Поговорить с фальшивым зомби'
         return 'Поговорить с трупом'
     def jump(self):
-        return 'vaxis_speak'
+        return NavigationDirective(
+            'vaxis_speak',
+        )

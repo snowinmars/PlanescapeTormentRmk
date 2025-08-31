@@ -1,19 +1,16 @@
-from game.engine_data.menus.menu_item import (MenuItem)
+from game.engine_data.menus.menu_items import (NpcMenuItem)
 
 
-class Morte2MenuItem(MenuItem):
+class Morte2MenuItem(NpcMenuItem):
     def __init__(self, gsm, x, y):
-        super().__init__(gsm)
-        self.pos = self._calc_party_pos(self.gsm, self.x, self.y)['morte']
+        super().__init__(gsm, x, y, 'morte')
     def when(self):
-        return not self.settings_manager.get_dead_morte() and \
-               self.settings_manager.get_mortuary_walkthrough() > 1
+        return not self.gsm.get_dead_morte() and \
+               self.gsm.get_mortuary_walkthrough() > 1
     def texture(self):
         return 'images/menu_sprites/morte.png'
-    def pos(self):
-        return self.pos
     def tooltip(self):
-        if self.settings_manager.get_in_party_morte():
+        if self.gsm.get_in_party_morte():
             return 'Поговорить с Мортом'
         return 'Пригласить Морта в группу'
     def jump(self):

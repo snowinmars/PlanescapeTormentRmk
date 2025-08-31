@@ -22,25 +22,26 @@ label mortuary_f3r4_graphics_menu:
 
 
 screen mortuary_f3r4_graphics_menu_screen():
+    $ gsm = renpy.store.global_settings_manager
     use abstract_location_menu_screen(
         'bg mortuary_f3r4',
         [
-            FromMortuaryF3R4ToMortuaryF3R3(1500, 500),
-            FromMortuaryF3R4ToMortuaryF3R1(150, 600),
-            InMortuaryF3R4PickPrybar(950, 650),
-            InMortuaryF3R4PickDustmanRequest(820, 700),
-            InMortuaryF3R4PickNeedle(1670, 150),
-            InMortuaryF3R4PickGarbage(1800, 200),
+            FromMortuaryF3R4ToMortuaryF3R3(gsm, 1500, 500),
+            FromMortuaryF3R4ToMortuaryF3R1(gsm, 150, 600),
+            InMortuaryF3R4PickPrybar(gsm, 950, 650),
+            InMortuaryF3R4PickDustmanRequest(gsm, 820, 700),
+            InMortuaryF3R4PickNeedle(gsm, 1670, 150),
+            InMortuaryF3R4PickGarbage(gsm, 1800, 200),
         ],
         [
-            *get_party(800, 800),
-            InMortuaryF3R4Dustfem(960, 400),
-            InMortuaryF3R4S42(560, 300),
-            InMortuaryF3R4Zf832(1260, 400),
-            InMortuaryF3R4Zm613(360, 400),
-            InMortuaryF3R4Zm79(560, 750),
-            InMortuaryF3R4Zf679(485, 825),
-            InMortuaryF3R4S1221(410, 900),
+            *get_party(gsm, 800, 800),
+            InMortuaryF3R4Dustfem(gsm, 960, 400),
+            InMortuaryF3R4S42(gsm, 560, 300),
+            InMortuaryF3R4Zf832(gsm, 1260, 400),
+            InMortuaryF3R4Zm613(gsm, 360, 400),
+            InMortuaryF3R4Zm79(gsm, 560, 750),
+            InMortuaryF3R4Zf679(gsm, 485, 825),
+            InMortuaryF3R4S1221(gsm, 410, 900),
         ],
         audio.mortuary
     )
