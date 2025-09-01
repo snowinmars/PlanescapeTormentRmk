@@ -1,4 +1,4 @@
-class S863Logic:
+class S863LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -266,3 +266,8 @@ class S863Logic:
 
     def r35582_condition(self):
         return self.settings_manager.get_morte_skel_mort_quip()
+
+
+class S863Logic(S863LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

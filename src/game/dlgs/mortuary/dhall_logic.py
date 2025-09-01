@@ -1,13 +1,6 @@
-class DhallLogic:
+class DhallLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-    def set_know_dhall_name(self):
-        self.settings_manager.set_know_dhall_name(True)
-
-
-    def get_know_dhall_name(self):
-        return self.settings_manager.get_know_dhall_name()
 
 
     def r827_action(self):
@@ -280,3 +273,16 @@ class DhallLogic:
 
     def r6032_condition(self):
         return self.settings_manager.get_morte_mortuary_walkthrough_1()
+
+
+class DhallLogic(DhallLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def set_know_dhall_name(self):
+        self.settings_manager.set_know_dhall_name(True)
+
+
+    def get_know_dhall_name(self):
+        return self.settings_manager.get_know_dhall_name()

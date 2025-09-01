@@ -1,4 +1,4 @@
-class SoegoLogic:
+class SoegoLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -1039,3 +1039,8 @@ class SoegoLogic:
 
     def r66722_condition(self):
         return self.settings_manager.character_manager.get_property('protagonist', 'dexterity') > 12
+
+
+class SoegoLogic(SoegoLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

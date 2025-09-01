@@ -1,4 +1,4 @@
-class Zf1096Logic:
+class Zf1096LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -78,3 +78,8 @@ class Zf1096Logic:
     def r35106_condition(self):
         return not self.settings_manager.get_in_party_morte() and \
                not self.settings_manager.get_morte_quip()
+
+
+class Zf1096Logic(Zf1096LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

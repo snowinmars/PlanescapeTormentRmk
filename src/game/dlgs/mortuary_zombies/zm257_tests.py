@@ -2,14 +2,13 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.zm257_logic import Zm257Logic
+from game.dlgs.mortuary_zombies.zm257_logic import (Zm257LogicGenerated, Zm257Logic)
 
 
 class Zm257LogicTest(LogicTest):
     def setUp(self):
         super(Zm257LogicTest, self).setUp()
         self.logic = Zm257Logic(self.settings_manager)
-
 
 
     def test_know_zm257_spirit_action(self):
@@ -19,6 +18,12 @@ class Zm257LogicTest(LogicTest):
             self.settings_manager.get_know_zm257_spirit,
             logic.know_zm257_spirit_action
         )
+
+
+class Zm257LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Zm257LogicGeneratedTest, self).setUp()
+        self.logic = Zm257LogicGenerated(self.settings_manager)
 
 
     def test_r6510_action(self):

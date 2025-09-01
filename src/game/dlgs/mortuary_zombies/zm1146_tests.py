@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.zm1146_logic import Zm1146Logic
+from game.dlgs.mortuary_zombies.zm1146_logic import (Zm1146LogicGenerated, Zm1146Logic)
 
 
 class Zm1146LogicTest(LogicTest):
     def setUp(self):
         super(Zm1146LogicTest, self).setUp()
         self.logic = Zm1146Logic(self.settings_manager)
+
+
+class Zm1146LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Zm1146LogicGeneratedTest, self).setUp()
+        self.logic = Zm1146LogicGenerated(self.settings_manager)
 
 
     def test_r6521_action(self):

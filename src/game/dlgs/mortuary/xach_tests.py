@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.xach_logic import XachLogic
+from game.dlgs.mortuary.xach_logic import (XachLogicGenerated, XachLogic)
 
 
 class XachLogicTest(LogicTest):
     def setUp(self):
         super(XachLogicTest, self).setUp()
         self.logic = XachLogic(self.settings_manager)
+
+
+class XachLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(XachLogicGeneratedTest, self).setUp()
+        self.logic = XachLogicGenerated(self.settings_manager)
 
 
     def test_r502_action(self):

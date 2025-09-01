@@ -2,13 +2,40 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.vaxis_logic import VaxisLogic
+from game.dlgs.mortuary.vaxis_logic import (VaxisLogicGenerated, VaxisLogic)
 
 
 class VaxisLogicTest(LogicTest):
     def setUp(self):
         super(VaxisLogicTest, self).setUp()
         self.logic = VaxisLogic(self.settings_manager)
+
+
+    def test_set_know_vaxis_name(self):
+        self._false_then_true_action(
+            self.settings_manager.get_know_vaxis_name,
+            self.logic.set_know_vaxis_name
+        )
+
+
+    def test_kill_vaxis(self):
+        self._false_then_true_action(
+            self.settings_manager.get_dead_vaxis,
+            self.logic.kill_vaxis
+        )
+
+
+    def test_get_know_vaxis_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_know_vaxis_name(x),
+            self.logic.get_know_vaxis_name
+        )
+
+
+class VaxisLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(VaxisLogicGeneratedTest, self).setUp()
+        self.logic = VaxisLogicGenerated(self.settings_manager)
 
 
     def test_r454_action(self):

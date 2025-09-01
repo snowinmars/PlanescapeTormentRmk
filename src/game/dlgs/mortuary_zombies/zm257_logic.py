@@ -1,10 +1,6 @@
-class Zm257Logic:
+class Zm257LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def know_zm257_spirit_action(self):
-        self.settings_manager.set_know_zm257_spirit(True)
 
 
     def r6510_action(self):
@@ -30,3 +26,12 @@ class Zm257Logic:
 
     def r6513_condition(self):
         return self.settings_manager.get_can_speak_with_dead()
+
+
+class Zm257Logic(Zm257LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def know_zm257_spirit_action(self):
+        self.settings_manager.set_know_zm257_spirit(True)

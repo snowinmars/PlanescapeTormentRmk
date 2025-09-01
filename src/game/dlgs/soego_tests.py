@@ -3,12 +3,19 @@ import unittest
 
 from game.engine.tests import (LogicTest)
 from game.dlgs.soego_logic import SoegoLogic
+from game.dlgs.soego_logic import (SoegoLogicGenerated, SoegoLogic)
 
 
 class SoegoLogicTest(LogicTest):
     def setUp(self):
         super(SoegoLogicTest, self).setUp()
         self.logic = SoegoLogic(self.settings_manager)
+
+
+class SoegoLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(SoegoLogicGeneratedTest, self).setUp()
+        self.logic = SoegoLogicGenerated(self.settings_manager)
 
 
     def test_j63982_s1_r1438_action(self):

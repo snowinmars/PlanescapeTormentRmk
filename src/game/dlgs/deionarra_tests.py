@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.deionarra_logic import DeionarraLogic
+from game.dlgs.deionarra_logic import (DeionarraLogicGenerated, DeionarraLogic)
 
 
 class DeionarraLogicTest(LogicTest):
     def setUp(self):
         super(DeionarraLogicTest, self).setUp()
         self.logic = DeionarraLogic(self.settings_manager)
+
+
+class DeionarraLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(DeionarraLogicGeneratedTest, self).setUp()
+        self.logic = DeionarraLogicGenerated(self.settings_manager)
 
 
     def test_r701_action(self):

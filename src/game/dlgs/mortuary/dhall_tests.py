@@ -2,13 +2,33 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.dhall_logic import DhallLogic
+from game.dlgs.mortuary.dhall_logic import (DhallLogicGenerated, DhallLogic)
 
 
 class DhallLogicTest(LogicTest):
     def setUp(self):
         super(DhallLogicTest, self).setUp()
         self.logic = DhallLogic(self.settings_manager)
+
+
+    def test_set_know_dhall_name(self):
+        self._false_then_true_action(
+            self.settings_manager.get_know_dhall_name,
+            self.logic.set_know_dhall_name
+        )
+
+
+    def test_get_know_dhall_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_know_dhall_name(x),
+            self.logic.get_know_dhall_name
+        )
+
+
+class DhallLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(DhallLogicGeneratedTest, self).setUp()
+        self.logic = DhallLogicGenerated(self.settings_manager)
 
 
     def test_r827_action(self):

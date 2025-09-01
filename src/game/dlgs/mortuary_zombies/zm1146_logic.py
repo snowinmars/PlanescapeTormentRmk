@@ -1,4 +1,4 @@
-class Zm1146Logic:
+class Zm1146LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -39,3 +39,8 @@ class Zm1146Logic:
 
     def r9434_condition(self):
         return self.settings_manager.get_pharod_value() == 0
+
+
+class Zm1146Logic(Zm1146LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

@@ -1,4 +1,4 @@
-class DeionarraLogic:
+class DeionarraLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -737,3 +737,8 @@ class DeionarraLogic:
 
     def r63423_condition(self):
         return self.settings_manager.get_deionarra_value() > 0
+
+
+class DeionarraLogic(DeionarraLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

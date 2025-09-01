@@ -1,4 +1,4 @@
-class Zm825Logic:
+class Zm825LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -38,3 +38,8 @@ class Zm825Logic:
 
     def r42313_condition(self):
         return not self.settings_manager.get_in_party_morte()
+
+
+class Zm825Logic(Zm825LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

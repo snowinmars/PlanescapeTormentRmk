@@ -1,4 +1,4 @@
-class GiantskLogic:
+class GiantskLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -323,3 +323,8 @@ class GiantskLogic:
 
     def r64302_condition(self):
         return self.settings_manager.get_giant_skeleton_enchant() > 1
+
+
+class GiantskLogic(GiantskLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

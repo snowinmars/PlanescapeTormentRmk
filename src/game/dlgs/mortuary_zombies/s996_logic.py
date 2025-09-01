@@ -1,4 +1,4 @@
-class S996Logic:
+class S996LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -262,3 +262,8 @@ class S996Logic:
 
     def r35505_condition(self):
         return self.settings_manager.get_morte_skel_mort_quip()
+
+
+class S996Logic(S996LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.giantsk_logic import GiantskLogic
+from game.dlgs.mortuary.giantsk_logic import (GiantskLogicGenerated, GiantskLogic)
 
 
 class GiantskLogicTest(LogicTest):
     def setUp(self):
         super(GiantskLogicTest, self).setUp()
         self.logic = GiantskLogic(self.settings_manager)
+
+
+class GiantskLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(GiantskLogicGeneratedTest, self).setUp()
+        self.logic = GiantskLogicGenerated(self.settings_manager)
 
 
     def test_r293_action(self):

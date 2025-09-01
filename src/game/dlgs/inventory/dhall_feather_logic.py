@@ -1,6 +1,11 @@
-class DhallFeatherLogic:
+class DhallFeatherLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
+
+
+class DhallFeatherLogic(DhallFeatherLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
 
 
     def break_feather(self):

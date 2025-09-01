@@ -1,4 +1,4 @@
-class Zm199Logic:
+class Zm199LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -22,3 +22,8 @@ class Zm199Logic:
 
     def r34981_condition(self):
         return self.settings_manager.get_can_speak_with_dead()
+
+
+class Zm199Logic(Zm199LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

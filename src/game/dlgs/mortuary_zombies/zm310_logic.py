@@ -1,10 +1,6 @@
-class Zm310Logic:
+class Zm310LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def set_know_oinosian_name(self):
-        self.settings_manager.set_know_oinosian_name(True)
 
 
     def r6499_action(self):
@@ -14,10 +10,6 @@ class Zm310Logic:
 
     def r6502_action(self):
         self.settings_manager.set_oinosian_value(1)
-
-
-    def get_know_oinosian_name(self):
-        return self.settings_manager.get_know_oinosian_name()
 
 
     def r6499_condition(self):
@@ -38,3 +30,16 @@ class Zm310Logic:
 
     def r9664_condition(self):
         return self.settings_manager.get_pharod_value() == 0
+
+
+class Zm310Logic(Zm310LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def set_know_oinosian_name(self):
+        self.settings_manager.set_know_oinosian_name(True)
+
+
+    def get_know_oinosian_name(self):
+        return self.settings_manager.get_know_oinosian_name()

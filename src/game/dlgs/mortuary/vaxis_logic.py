@@ -1,18 +1,6 @@
-class VaxisLogic:
+class VaxisLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def get_know_vaxis_name(self):
-        return self.settings_manager.get_know_vaxis_name()
-
-
-    def set_know_vaxis_name(self):
-        self.settings_manager.set_know_vaxis_name(True)
-
-
-    def kill_vaxis(self):
-        self.settings_manager.set_dead_vaxis(True)
 
 
     def r454_action(self):
@@ -1117,3 +1105,20 @@ class VaxisLogic:
 
     def r4665_condition(self):
         return self.settings_manager.character_manager.get_property('protagonist', 'charisma') < 11
+
+
+class VaxisLogic(VaxisLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def set_know_vaxis_name(self):
+        self.settings_manager.set_know_vaxis_name(True)
+
+
+    def kill_vaxis(self):
+        self.settings_manager.set_dead_vaxis(True)
+
+
+    def get_know_vaxis_name(self):
+        return self.settings_manager.get_know_vaxis_name()

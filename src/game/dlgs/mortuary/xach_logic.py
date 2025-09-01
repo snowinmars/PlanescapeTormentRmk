@@ -1,4 +1,4 @@
-class XachLogic:
+class XachLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -409,3 +409,8 @@ class XachLogic:
 
     def r63629_condition(self):
         return self.settings_manager.get_xachariah_request()
+
+
+class XachLogic(XachLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

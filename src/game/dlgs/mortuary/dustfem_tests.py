@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.dustfem_logic import DustfemLogic
+from game.dlgs.mortuary.dustfem_logic import (DustfemLogicGenerated, DustfemLogic)
 
 
 class DustfemLogicTest(LogicTest):
     def setUp(self):
         super(DustfemLogicTest, self).setUp()
         self.logic = DustfemLogic(self.settings_manager)
+
+
+class DustfemLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(DustfemLogicGeneratedTest, self).setUp()
+        self.logic = DustfemLogicGenerated(self.settings_manager)
 
 
     def test_r1225_action(self):

@@ -1,10 +1,6 @@
-class Zm1094Logic:
+class Zm1094LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def set_know_asonje_name(self):
-        self.settings_manager.set_know_asonje_name(True)
 
 
     def r6565_action(self):
@@ -35,10 +31,6 @@ class Zm1094Logic:
 
     def r9304_action(self):
         self.settings_manager.inc_adahn()
-
-
-    def get_know_asonje_name(self):
-        return self.settings_manager.get_know_asonje_name()
 
 
     def r6565_condition(self):
@@ -87,3 +79,16 @@ class Zm1094Logic:
 
     def r9312_condition(self):
         return self.settings_manager.get_pharod_value() == 0
+
+
+class Zm1094Logic(Zm1094LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def set_know_asonje_name(self):
+        self.settings_manager.set_know_asonje_name(True)
+
+
+    def get_know_asonje_name(self):
+        return self.settings_manager.get_know_asonje_name()
