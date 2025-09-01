@@ -1,4 +1,4 @@
-class S42Logic:
+class S42LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -192,3 +192,8 @@ class S42Logic:
     def r6654_condition(self):
         return self.settings_manager.character_manager.get_property('protagonist', 'wisdom') > 12 and \
                not self.settings_manager.get_42_secret()
+
+
+class S42Logic(S42LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

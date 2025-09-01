@@ -1,4 +1,4 @@
-class DustLogic:
+class DustLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -373,3 +373,8 @@ class DustLogic:
 
     def r66679_condition(self):
         return self.settings_manager.get_join_dustmen() != 1
+
+
+class DustLogic(DustLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

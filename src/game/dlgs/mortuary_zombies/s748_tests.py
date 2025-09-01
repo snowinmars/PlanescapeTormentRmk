@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.s748_logic import S748Logic
+from game.dlgs.mortuary_zombies.s748_logic import (S748LogicGenerated, S748Logic)
 
 
 class S748LogicTest(LogicTest):
     def setUp(self):
         super(S748LogicTest, self).setUp()
         self.logic = S748Logic(self.settings_manager)
+
+
+class S748LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(S748LogicGeneratedTest, self).setUp()
+        self.logic = S748LogicGenerated(self.settings_manager)
 
 
     def test_r35384_action(self):

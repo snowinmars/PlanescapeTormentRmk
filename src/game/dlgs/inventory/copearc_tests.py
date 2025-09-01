@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.inventory.copearc_logic import CopearcLogic
+from game.dlgs.inventory.copearc_logic import (CopearcLogicGenerated, CopearcLogic)
 
 
 class CopearcLogicTest(LogicTest):
     def setUp(self):
         super(CopearcLogicTest, self).setUp()
         self.logic = CopearcLogic(self.settings_manager)
+
+
+class CopearcLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(CopearcLogicGeneratedTest, self).setUp()
+        self.logic = CopearcLogicGenerated(self.settings_manager)
 
 
     def test_r46725_action(self):

@@ -1,14 +1,6 @@
-class Zm782Logic:
+class Zm782LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def pick_key_up(self):
-        self.settings_manager.set_has_intro_key(True)
-
-
-    def s24_condition(self):
-        return self.settings_manager.get_in_party_morte()
 
 
     def r24709_condition(self):
@@ -27,3 +19,16 @@ class Zm782Logic:
 
     def r24714_condition(self):
         return self.settings_manager.get_has_intro_key()
+
+
+class Zm782Logic(Zm782LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def pick_key_up(self):
+        self.settings_manager.set_has_intro_key(True)
+
+
+    def s24_condition(self):
+        return self.settings_manager.get_in_party_morte()

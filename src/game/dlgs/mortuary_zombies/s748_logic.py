@@ -1,4 +1,4 @@
-class S748Logic:
+class S748LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -262,3 +262,8 @@ class S748Logic:
 
     def r35428_condition(self):
         return self.settings_manager.get_morte_skel_mort_quip()
+
+
+class S748Logic(S748LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

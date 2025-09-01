@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.zm1094_logic import Zm1094Logic
+from game.dlgs.mortuary_zombies.zm1094_logic import (Zm1094LogicGenerated, Zm1094Logic)
 
 
 class Zm1094LogicTest(LogicTest):
@@ -16,6 +16,19 @@ class Zm1094LogicTest(LogicTest):
             self.settings_manager.get_know_asonje_name,
             self.logic.set_know_asonje_name
         )
+
+
+    def test_get_know_asonje_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_know_asonje_name(x),
+            self.logic.get_know_asonje_name
+        )
+
+
+class Zm1094LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Zm1094LogicGeneratedTest, self).setUp()
+        self.logic = Zm1094LogicGenerated(self.settings_manager)
 
 
     def test_r6565_action(self):
@@ -106,13 +119,6 @@ class Zm1094LogicTest(LogicTest):
             self.settings_manager.get_adahn,
             1,
             self.logic.r9304_action
-        )
-
-
-    def test_get_know_asonje_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_know_asonje_name(x),
-            self.logic.get_know_asonje_name
         )
 
 

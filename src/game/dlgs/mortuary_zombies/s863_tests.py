@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.s863_logic import S863Logic
+from game.dlgs.mortuary_zombies.s863_logic import (S863LogicGenerated, S863Logic)
 
 
 class S863LogicTest(LogicTest):
     def setUp(self):
         super(S863LogicTest, self).setUp()
         self.logic = S863Logic(self.settings_manager)
+
+
+class S863LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(S863LogicGeneratedTest, self).setUp()
+        self.logic = S863LogicGenerated(self.settings_manager)
 
 
     def test_r35538_action(self):

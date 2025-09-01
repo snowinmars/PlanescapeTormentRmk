@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.inventory.n1201_logic import N1201Logic
+from game.dlgs.inventory.n1201_logic import (N1201LogicGenerated, N1201Logic)
 
 
 class N1201LogicTest(LogicTest):
     def setUp(self):
         super(N1201LogicTest, self).setUp()
         self.logic = N1201Logic(self.settings_manager)
+
+
+class N1201LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(N1201LogicGeneratedTest, self).setUp()
+        self.logic = N1201LogicGenerated(self.settings_manager)
 
 
     def test_r44994_action(self):

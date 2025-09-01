@@ -2,13 +2,37 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.morte2_logic import Morte2Logic
+from game.dlgs.mortuary.morte2_logic import (Morte2LogicGenerated, Morte2Logic)
 
 
 class Morte2LogicTest(LogicTest):
     def setUp(self):
         super(Morte2LogicTest, self).setUp()
         self.logic = Morte2Logic(self.settings_manager)
+
+
+    def test_s0_action(self):
+        self.settings_manager.set_warning(1)
+        self._integer_equals_action(
+            self.settings_manager.get_mortuary_walkthrough,
+            2,
+            self.logic.s0_action
+        )
+
+
+    def test_s11_action(self):
+        self.settings_manager.set_mortuary_walkthrough(1)
+        self._integer_equals_action(
+            self.settings_manager.get_mortuary_walkthrough,
+            3,
+            self.logic.s11_action
+        )
+
+
+class Morte2LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Morte2LogicGeneratedTest, self).setUp()
+        self.logic = Morte2LogicGenerated(self.settings_manager)
 
 
     def test_r41145_action(self):

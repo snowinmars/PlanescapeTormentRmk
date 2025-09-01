@@ -1,17 +1,13 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
+from game.dlgs.inventory.dhall_feather_logic import (DhallFeatherLogicGenerated, DhallFeatherLogic)
+
 
 class DhallFeatherLogicTest(LogicTest):
-    def test_ctor(self):
-        logic = DhallFeatherLogic(self.settings_manager)
-        self.assertIsNotNone(logic.settings_manager)
-
-
-    def test_methods_are_bound(self):
-        self.target_class = DhallFeatherLogic
-        self._methods_are_bound()
+    def setUp(self):
+        super(DhallFeatherLogicTest, self).setUp()
+        self.logic = DhallFeatherLogic(self.settings_manager)
 
 
     def test_break_feather(self):
@@ -25,6 +21,12 @@ class DhallFeatherLogicTest(LogicTest):
             delta,
             logic.break_feather
         )
+
+
+class DhallFeatherLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(DhallFeatherLogicGeneratedTest, self).setUp()
+        self.logic = DhallFeatherLogicGenerated(self.settings_manager)
 
 
 if __name__ == '__main__':

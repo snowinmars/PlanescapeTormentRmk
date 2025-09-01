@@ -1,4 +1,4 @@
-class N1201Logic:
+class N1201LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -119,3 +119,8 @@ class N1201Logic:
     def r45005_condition(self):
         return not self.settings_manager.get_ul_1201() and \
                self.settings_manager.get_1201_note_quest() == 2
+
+
+class N1201Logic(N1201LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

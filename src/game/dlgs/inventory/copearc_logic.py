@@ -1,4 +1,4 @@
-class CopearcLogic:
+class CopearcLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -22,3 +22,8 @@ class CopearcLogic:
 
     def r46728_condition(self):
         return self.settings_manager.get_know_copper_earring_secret()
+
+
+class CopearcLogic(CopearcLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

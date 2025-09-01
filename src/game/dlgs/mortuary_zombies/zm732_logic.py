@@ -1,4 +1,4 @@
-class Zm732Logic:
+class Zm732LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -26,3 +26,8 @@ class Zm732Logic:
 
     def r6535_condition(self):
         return self.settings_manager.get_can_speak_with_dead()
+
+
+class Zm732Logic(Zm732LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

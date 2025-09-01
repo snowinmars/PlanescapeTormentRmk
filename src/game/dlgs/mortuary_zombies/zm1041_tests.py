@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.zm1041_logic import Zm1041Logic
+from game.dlgs.mortuary_zombies.zm1041_logic import (Zm1041LogicGenerated, Zm1041Logic)
 
 
 class Zm1041LogicTest(LogicTest):
@@ -16,6 +16,21 @@ class Zm1041LogicTest(LogicTest):
             self.settings_manager.get_know_bei_name,
             self.logic.set_know_bei_name
         )
+
+
+    def test_get_know_bei_name(self):
+        logic = Zm1041Logic(self.settings_manager)
+
+        self._boolean_invert_condition(
+            lambda x: self.settings_manager.set_know_bei_name(x),
+            logic.get_know_bei_name
+        )
+
+
+class Zm1041LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Zm1041LogicGeneratedTest, self).setUp()
+        self.logic = Zm1041LogicGenerated(self.settings_manager)
 
 
     def test_r6576_action(self):
@@ -178,15 +193,6 @@ class Zm1041LogicTest(LogicTest):
         self._false_then_true_action(
             self.settings_manager.get_know_xixi,
             self.logic.r9210_action
-        )
-
-
-    def test_get_know_bei_name(self):
-        logic = Zm1041Logic(self.settings_manager)
-
-        self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_know_bei_name(x),
-            logic.get_know_bei_name
         )
 
 

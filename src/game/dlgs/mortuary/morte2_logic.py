@@ -1,14 +1,6 @@
-class Morte2Logic:
+class Morte2LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def s0_action(self):
-        self.settings_manager.set_mortuary_walkthrough(2) # TODO [snow]: I guess
-
-
-    def s11_action(self):
-        self.settings_manager.set_mortuary_walkthrough(3) # TODO [snow]: I guess
 
 
     def r41145_action(self):
@@ -158,3 +150,16 @@ class Morte2Logic:
 
     def r41239_condition(self):
         return self.settings_manager.character_manager.get_property('protagonist', 'intelligence') > 12
+
+
+class Morte2Logic(Morte2LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def s0_action(self):
+        self.settings_manager.set_mortuary_walkthrough(2) # TODO [snow]: I guess
+
+
+    def s11_action(self):
+        self.settings_manager.set_mortuary_walkthrough(3) # TODO [snow]: I guess

@@ -2,13 +2,26 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.eivene_logic import EiveneLogic
+from game.dlgs.mortuary.eivene_logic import (EiveneLogicGenerated, EiveneLogic)
 
 
 class EiveneLogicTest(LogicTest):
     def setUp(self):
         super(EiveneLogicTest, self).setUp()
         self.logic = EiveneLogic(self.settings_manager)
+
+
+    def test_set_know_eivene_name(self):
+        self._false_then_true_action(
+            self.settings_manager.get_know_eivene_name,
+            self.logic.set_know_eivene_name
+        )
+
+
+class EiveneLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(EiveneLogicGeneratedTest, self).setUp()
+        self.logic = EiveneLogicGenerated(self.settings_manager)
 
 
     def test_r3418_action(self):

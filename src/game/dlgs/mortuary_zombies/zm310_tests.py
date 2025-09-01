@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary_zombies.zm310_logic import Zm310Logic
+from game.dlgs.mortuary_zombies.zm310_logic import (Zm310LogicGenerated, Zm310Logic)
 
 
 class Zm310LogicTest(LogicTest):
@@ -16,6 +16,19 @@ class Zm310LogicTest(LogicTest):
             self.settings_manager.get_know_oinosian_name,
             self.logic.set_know_oinosian_name
         )
+
+
+    def test_get_know_oinosian_name(self):
+        self._boolean_straight_condition(
+            lambda x: self.settings_manager.set_know_oinosian_name(x),
+            self.logic.get_know_oinosian_name
+        )
+
+
+class Zm310LogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(Zm310LogicGeneratedTest, self).setUp()
+        self.logic = Zm310LogicGenerated(self.settings_manager)
 
 
     def test_r6499_action(self):
@@ -46,13 +59,6 @@ class Zm310LogicTest(LogicTest):
             self.settings_manager.get_oinosian_value,
             1,
             self.logic.r6502_action
-        )
-
-
-    def test_get_know_oinosian_name(self):
-        self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_know_oinosian_name(x),
-            self.logic.get_know_oinosian_name
         )
 
 

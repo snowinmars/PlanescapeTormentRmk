@@ -1,4 +1,4 @@
-class MorteLogic:
+class MorteLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -3424,3 +3424,8 @@ class MorteLogic:
                self.settings_manager.get_fortress_dakkon() == 0 and \
                self.settings_manager.get_fortress_annah() == 0 and \
                self.settings_manager.get_fortress_nordom() == 0
+
+
+class MorteLogic(MorteLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

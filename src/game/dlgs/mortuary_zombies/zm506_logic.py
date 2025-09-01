@@ -1,4 +1,4 @@
-class Zm506Logic:
+class Zm506LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -61,3 +61,8 @@ class Zm506Logic:
 
     def r45512_condition(self):
         return self.settings_manager.get_can_speak_with_dead()
+
+
+class Zm506Logic(Zm506LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)

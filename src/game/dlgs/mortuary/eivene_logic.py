@@ -1,9 +1,6 @@
-class EiveneLogic:
+class EiveneLogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-    def set_know_eivene_name(self):
-        self.settings_manager.set_know_eivene_name(True)
 
 
     def r3418_action(self):
@@ -284,3 +281,12 @@ class EiveneLogic:
 
     def r63481_condition(self):
         return self.settings_manager.get_eivene_delivery()
+
+
+class EiveneLogic(EiveneLogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def set_know_eivene_name(self):
+        self.settings_manager.set_know_eivene_name(True)

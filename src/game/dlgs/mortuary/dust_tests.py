@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.dust_logic import DustLogic
+from game.dlgs.mortuary.dust_logic import (DustLogicGenerated, DustLogic)
 
 
 class DustLogicTest(LogicTest):
     def setUp(self):
         super(DustLogicTest, self).setUp()
         self.logic = DustLogic(self.settings_manager)
+
+
+class DustLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(DustLogicGeneratedTest, self).setUp()
+        self.logic = DustLogicGenerated(self.settings_manager)
 
 
     def test_r313_action(self):

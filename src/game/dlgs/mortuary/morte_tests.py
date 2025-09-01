@@ -2,13 +2,19 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.dlgs.mortuary.morte_logic import MorteLogic
+from game.dlgs.mortuary.morte_logic import (MorteLogicGenerated, MorteLogic)
 
 
 class MorteLogicTest(LogicTest):
     def setUp(self):
         super(MorteLogicTest, self).setUp()
         self.logic = MorteLogic(self.settings_manager)
+
+
+class MorteLogicGeneratedTest(LogicTest):
+    def setUp(self):
+        super(MorteLogicGeneratedTest, self).setUp()
+        self.logic = MorteLogicGenerated(self.settings_manager)
 
 
     def test_r17833_action(self):

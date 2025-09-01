@@ -1,10 +1,6 @@
-class Zm1041Logic:
+class Zm1041LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
-
-
-    def set_know_bei_name(self):
-        self.settings_manager.set_know_bei_name(True)
 
 
     def r6576_action(self):
@@ -59,10 +55,6 @@ class Zm1041Logic:
         self.settings_manager.set_know_xixi(True)
 
 
-    def get_know_bei_name(self):
-        return not self.settings_manager.get_know_bei_name()
-
-
     def r6576_condition(self):
         return not self.settings_manager.get_zombie_chaotic()
 
@@ -95,3 +87,16 @@ class Zm1041Logic:
 
     def r9187_condition(self):
         return self.settings_manager.character_manager.get_property('protagonist', 'intelligence') > 13
+
+
+class Zm1041Logic(Zm1041LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
+
+
+    def set_know_bei_name(self):
+        self.settings_manager.set_know_bei_name(True)
+
+
+    def get_know_bei_name(self):
+        return not self.settings_manager.get_know_bei_name()

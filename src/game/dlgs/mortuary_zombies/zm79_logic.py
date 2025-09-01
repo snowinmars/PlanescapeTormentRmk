@@ -1,4 +1,4 @@
-class Zm79Logic:
+class Zm79LogicGenerated:
     def __init__(self, settings_manager):
         self.settings_manager = settings_manager
 
@@ -39,3 +39,8 @@ class Zm79Logic:
 
     def r64280_condition(self):
         return self.settings_manager.get_has_copper_earring_closed()
+
+
+class Zm79Logic(Zm79LogicGenerated):
+    def __init__(self, settings_manager):
+        super().__init__(settings_manager)
