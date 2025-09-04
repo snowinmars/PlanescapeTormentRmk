@@ -1,0 +1,29 @@
+import unittest
+
+
+from game.engine.tests import (LogicTest)
+from game.engine_data.menus.mortuary.f2r7.loot_logic import (MortuaryF2R7LootLogic)
+
+
+class MortuaryF2R7LootLogicTest(LogicTest):
+    def setUp(self):
+        super(MortuaryF2R7LootLogic, self).setUp()
+        self.logic = MortuaryF2R7LootLogic(self.settings_manager)
+
+
+    def test_embalm(self):
+        self._false_then_true_action(
+            self.settings_manager.get_has_embalm,
+            self.logic.embalm
+        )
+
+
+    def test_copper_earring_closed(self):
+        self._false_then_true_action(
+            self.settings_manager.get_has_copper_earring_closed,
+            self.logic.copper_earring_closed
+        )
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

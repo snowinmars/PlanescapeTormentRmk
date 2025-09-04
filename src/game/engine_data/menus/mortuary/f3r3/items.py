@@ -2,7 +2,6 @@ from game.engine_data.menus.menu_items import (
     NavigationDirective,
     MenuItem,
     GoToLocationMenuItem,
-    ContainerMenuItem,
     SkeletMenuItem,
     ZombieMenuItem,
 )

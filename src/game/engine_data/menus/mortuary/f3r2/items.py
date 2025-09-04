@@ -39,7 +39,7 @@ class InMortuaryF3R2PickGarbage(ContainerMenuItem):
         return 'Взять мусор'
     def jump(self):
         return NavigationDirective(
-            'walk_mortuary_f3r4_pick_garbage',
+            'mortuary_f3r2_loot_garbage',
         )
 
 
@@ -52,7 +52,7 @@ class InMortuaryF3R2PickTaskList(ContainerMenuItem):
         return 'Взять бумагу'
     def jump(self):
         return NavigationDirective(
-            'walk_mortuary_f3r4_pick_mortuary_task_list',
+            'mortuary_f3r2_loot_mortuary_task_list',
         )
 
 
@@ -65,7 +65,7 @@ class InMortuaryF3R2PickNeedle(ContainerMenuItem):
         return 'Взять иголку'
     def jump(self):
         return NavigationDirective(
-            'walk_mortuary_f3r4_pick_needle',
+            'mortuary_f3r2_loot_needle',
         )
 
 

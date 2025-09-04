@@ -45,7 +45,7 @@ class FromMortuaryF2R1ToMortuaryF2R8(GoToLocationMenuItem):
                 lambda: self.gsm.location_manager.set_location('mortuary_f2r8')
             )
         return NavigationDirective(
-            'walk_to_mortuaryf2r8_closed',
+            'from_mortuary_f2r1_to_mortuary_f2r8_closed',
         )
 
 
@@ -68,7 +68,7 @@ class FromMortuaryF2R1ToMortuaryF3R1(GoToLocationMenuItem):
                 lambda: self.gsm.location_manager.set_location('mortuary_f3r1')
             )
         return NavigationDirective(
-            'walk_to_mortuaryf3r1_closed',
+            'from_mortuary_f2r1_to_mortuary_f3r1_closed',
         )
 
 
@@ -91,7 +91,7 @@ class FromMortuaryF2R1ToMortuaryF1R1(GoToLocationMenuItem):
                 lambda: self.gsm.location_manager.set_location('mortuary_f1r1')
             )
         return NavigationDirective(
-            'walk_to_mortuaryf3r1_closed',
+            'from_mortuary_f2r1_to_mortuary_f2r1_closed',
         )
 
 
@@ -104,7 +104,7 @@ class InMortuaryF2R1PickScalpel(ContainerMenuItem):
         return 'Обыскать'
     def jump(self):
         return NavigationDirective(
-            'walk_mortuary_f2r1_pick_scalpel',
+            'mortuary_f2r1_loot_scalpel',
         )
 
 

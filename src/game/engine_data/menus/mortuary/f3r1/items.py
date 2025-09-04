@@ -22,7 +22,7 @@ class FromMortuaryF3R1ToMortuaryF2R1(GoToLocationMenuItem):
                 lambda: self.gsm.location_manager.set_location('mortuary_f2r1')
             )
         return NavigationDirective(
-            'walk_to_mortuaryf2r1_closed',
+            'from_mortuary_f3r1_to_mortuary_f2r1_closed',
         )
 
 
@@ -58,7 +58,7 @@ class InMortuaryF3R1PickMortuaryKey(ContainerMenuItem):
         return 'Взять ключ'
     def jump(self):
         return NavigationDirective(
-            'walk_mortuary_f3r4_pick_mortuary_key',
+            'mortuary_f3r4_loot_mortuary_key',
         )
 
 
