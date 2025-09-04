@@ -1,5 +1,5 @@
 init 10 python:
-    from game.engine_data.menus.mortuary.f3r2.items import (MortuaryF3R2LootLogic)
+    from game.engine_data.menus.mortuary.f3r2.loot_logic import (MortuaryF3R2LootLogic)
     mortuaryF3R2LootLogic = MortuaryF3R2LootLogic(renpy.store.global_settings_manager)
 
 
@@ -16,6 +16,6 @@ label mortuary_f3r2_loot_garbage:
 
 
 label mortuary_f3r2_loot_mortuary_task_list:
-    $ mortuaryF3R4LootLogic.mortuary_task_list()
+    $ mortuaryF3R2LootLogic.mortuary_task_list()
     nr "Ты подбираешь список заданий."
     jump graphics_menu
