@@ -1,5 +1,5 @@
 init 10 python:
-    from game.engine_data.menus.mortuary.f2r7.items import (MortuaryF2R7LootLogic)
+    from game.engine_data.menus.mortuary.f2r7.loot_logic import (MortuaryF2R7LootLogic)
     mortuaryF2R7LootLogic = MortuaryF2R7LootLogic(renpy.store.global_settings_manager)
 
 
