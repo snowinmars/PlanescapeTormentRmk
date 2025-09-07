@@ -91,12 +91,12 @@ init 3 python:
 
 label start:
     show screen event_manager_display
-    show screen mouse_coordinates
+    # show screen mouse_coordinates
     show screen inventory_button
     show screen character_screen_button
     show screen hotkey_listener
 
-    $ enable_dev = False
+    $ enable_dev = True
 
     menu:
         "dev" if enable_dev:
@@ -106,7 +106,6 @@ label start:
             $ gcm = renpy.store.global_character_manager
             $ glm = renpy.store.global_location_manager
             $ glm.set_location('mortuary_f2r1')
-            scene bg mortuary_f2r1
             $ gsm.set_morte_value(1)
             $ gsm.set_in_party_morte(True)
             $ gsm.set_has_intro_key(True)
@@ -124,7 +123,8 @@ label start:
             # $ gsm.set_has_embalm(True)
             # $ gsm.set_has_keyem(True)
 
-            jump graphics_menu
+            jump morte1_s23
+            # jump graphics_menu
         "Вступление для технодемки":
             jump introduction
         "Новая жизнь":

@@ -29,7 +29,7 @@ label morte1_speak:
 label morte1_s0_ctor:
     $ gsm.location_manager.set_location('mortuary_f2r1')
     $ gsm.set_in_party_morte(True)
-    scene bg mortuary_f2r1
+    # scene bg mortuary_f2r1
     show morte_img default at center_left_down
     jump morte1_s0
 
