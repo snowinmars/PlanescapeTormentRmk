@@ -1,7 +1,5 @@
 import logging
 
-devlog = logging.getLogger('log')
-
 
 class InventoryManager:
     def __init__(self, event_manager, player_has_item_callback):
@@ -49,5 +47,4 @@ class InventoryManager:
 
 
     def _log(self, line):
-        devlog.debug(line)
         self._event_manager.write_event(line)

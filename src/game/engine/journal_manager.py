@@ -2,9 +2,6 @@ from dataclasses import dataclass
 import logging
 
 
-devlog = logging.getLogger('log')
-
-
 @dataclass
 class Note:
     id: str
@@ -60,5 +57,4 @@ class JournalManager:
 
 
     def _log(self, line):
-        devlog.debug(line)
         self._event_manager.write_event(line)

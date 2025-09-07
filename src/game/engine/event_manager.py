@@ -11,8 +11,9 @@ class Event:
 
 
 class EventManager:
-    def __init__(self, max_entries = 100):
+    def __init__(self, logger, max_entries = 100):
         self._events = deque(maxlen=max_entries)
+        self.logger = logger
 
 
     def write_event(self, event_text, event_category = "general"):
@@ -21,6 +22,7 @@ class EventManager:
             category = event_category,
             text = event_text
         ))
+        self.logger.debug(event_text)
 
 
     def ping(self):

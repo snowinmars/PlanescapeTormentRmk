@@ -1,7 +1,5 @@
 import logging
 
-devlog = logging.getLogger('log')
-
 
 class SettingsManager:
     def __init__(self, event_manager, character_manager, location_manager, journal_manager):
@@ -101,5 +99,4 @@ class SettingsManager:
 
 
     def _log(self, line):
-        devlog.debug(line)
         self._event_manager.write_event(line)

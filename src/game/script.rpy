@@ -13,15 +13,13 @@ init 1 python:
     # Game may bug out on saving, in such case, comment should be removed
     # config.use_cpickle = False
 
-    devlog = setup_logger(logs_folder)
-    devlog.info("Version: %s" % config.version)
+    renpy.store.logger = setup_logger(renpy.emscripten, logs_folder)
+    renpy.store.logger.info("Version: %s" % config.version)
 
 
 init 2 python:
-    renpy.add_python_directory('menu')
     renpy.add_python_directory('engine')
-    renpy.add_python_directory('settings')
-    renpy.add_python_directory('locations')
+    renpy.add_python_directory('engine_data')
 
 
 init 3 python:
@@ -39,42 +37,42 @@ init 3 python:
     from game.engine_data.characters.all_characters import (build_all_characters)
     from game.engine_data.journal.all_notes import (build_all_notes)
 
-    renpy.store.global_event_manager = EventManager()
+    renpy.store.global_event_manager = EventManager(renpy.store.logger)
     renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
     renpy.store.global_character_manager = CharacterManager(renpy.store.global_event_manager)
     renpy.store.global_journal_manager = JournalManager(renpy.store.global_event_manager)
     renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, renpy.store.global_character_manager, renpy.store.global_location_manager, renpy.store.global_journal_manager)
     renpy.store.global_inventory_manager = InventoryManager(renpy.store.global_event_manager, lambda x: renpy.store.global_settings_manager.get_setting_value(x))
 
-    devlog = logging.getLogger('log')
+    logger = renpy.store.logger
 
     now = int(time.time())
-    devlog.info('Building settings manager…')
+    logger.info('Building settings manager…')
     build_all_settings(renpy.store.global_settings_manager)
-    devlog.info('Done building settings manager, took %s', int(time.time()) - now)
+    logger.info('Done building settings manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building inventory manager…')
+    logger.info('Building inventory manager…')
     build_all_inventory(renpy.store.global_inventory_manager)
-    devlog.info('Done building inventory manager, took %s', int(time.time()) - now)
+    logger.info('Done building inventory manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building characters…')
+    logger.info('Building characters…')
     build_all_characters(renpy.store.global_character_manager)
-    devlog.info('Done building characters, took %s', int(time.time()) - now)
+    logger.info('Done building characters, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building locations mapping…')
+    logger.info('Building locations mapping…')
     build_all_locations(renpy.store.global_location_manager)
-    devlog.info('Done building locations mapping, took %s', int(time.time()) - now)
+    logger.info('Done building locations mapping, took %s', int(time.time()) - now)
 
     now = int(time.time())
-    devlog.info('Building journal notes…')
+    logger.info('Building journal notes…')
     build_all_notes(renpy.store.global_journal_manager)
     def on_update_journal():
         renpy.exports.sound.play(renpy.store.audio.update_journal)
     renpy.store.global_journal_manager.register_on_update_journal(on_update_journal)
-    devlog.info('Done building journal notes, took %s', int(time.time()) - now)
+    logger.info('Done building journal notes, took %s', int(time.time()) - now)
 
     config.keymap['show_inventory'] = ['i']
     config.underlay.append(

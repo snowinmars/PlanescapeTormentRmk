@@ -1,9 +1,6 @@
 import logging
 
 
-devlog = logging.getLogger('log')
-
-
 # Internal is InfinityEngine: AR0202
 # External is Renpy: mortuary_f2r1
 class LocationManager:
@@ -74,5 +71,4 @@ class LocationManager:
 
 
     def _log(self, line):
-        devlog.debug(line)
         self._event_manager.write_event(line)
