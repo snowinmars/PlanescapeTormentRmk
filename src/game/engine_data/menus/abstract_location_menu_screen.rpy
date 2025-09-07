@@ -58,59 +58,91 @@ init python:
             renpy.jump(target_label)
 
 
-screen abstract_location_menu_screen(background, walking, talking, bg_music = None):
+
+
+screen abstract_location_menu_screen(background, walking, talking, bg_music):
     on "show" action SmartPlayMusic(bg_music)
 
     default tt = Tooltip('')
     zorder 100
-    add background
-    # $ renpy.store.global_event_manager.write_event("rendered")
+
+    default bg_displayable = renpy.displayable(background)
+    default bg_size = renpy.render(bg_displayable, 0, 0, 0, 0).get_size()
+    default xadj = ui.adjustment(value=1920)
+    default yadj = ui.adjustment(value=1080)
 
     if tt.value:
         text tt.value:
             xalign 0.5
             ypos 50
 
-    for walking_button in walking:
-        if not walking_button.when():
-            continue
+    viewport:
+        id "bg_viewport"
+        draggable True
+        mousewheel True
+        xsize config.screen_width
+        ysize config.screen_height
+        xadjustment xadj
+        yadjustment yadj
 
-        imagebutton:
-            idle walking_button.texture()
-            hover Transform(walking_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
-            xpos walking_button.pos()['x']
-            ypos walking_button.pos()['y']
-            # action Jump(walking_button.jump())
-            action ExecuteNavigationDirective(walking_button.jump())
-            hovered tt.Action(walking_button.tooltip())
-            unhovered tt.Action('')
+        # This area needs to be larger than the viewport to enable dragging
+        frame:
+            xsize 3 * 1920
+            ysize 3 * 1080
+            background None
 
-    for talking_button in talking:
-        if not talking_button.when():
-            continue
+            add background:
+                xalign 0.5
+                yalign 0.5
 
-        imagebutton:
-            idle talking_button.texture()
-            hover Transform(talking_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
-            xpos talking_button.pos()['x']
-            ypos talking_button.pos()['y']
+            for walking_button in walking:
+                if not walking_button.when():
+                    continue
 
-        # if 'kill_action' in talking_button and 'kill_tooltip' in talking_button:
-        #     $ tooltip = talking_button.kill_tooltip()
-        #     imagebutton:
-        #         idle 'images/icons/kill_idle.png'
-        #         hover Transform('images/icons/kill_hover.png', matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
-        #         xpos talking_button.xpos + 40
-        #         ypos talking_button.ypos
-        #         action Jump(talking_button.kill_action())
-        #         hovered tt.Action(tooltip)
-        #         unhovered tt.Action('')
+                imagebutton:
+                    idle walking_button.texture()
+                    hover Transform(walking_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
+                    xpos walking_button.pos()['x']
+                    ypos walking_button.pos()['y']
+                    action ExecuteNavigationDirective(walking_button.jump())
+                    hovered tt.Action(walking_button.tooltip())
+                    unhovered tt.Action('')
 
-        imagebutton:
-            idle 'images/icons/speak_idle.png'
-            hover Transform('images/icons/speak_hover.png', matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
-            xpos talking_button.pos()['x'] + 40
-            ypos talking_button.pos()['y'] + 20
-            action ExecuteNavigationDirective(talking_button.jump())
-            hovered tt.Action(talking_button.tooltip())
-            unhovered tt.Action('')
+            for talking_button in talking:
+                if not talking_button.when():
+                    continue
+
+                imagebutton:
+                    idle talking_button.texture()
+                    # hover Transform(talking_button.texture(), matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
+                    xpos talking_button.pos()['x']
+                    ypos talking_button.pos()['y']
+
+                # if 'kill_action' in talking_button and 'kill_tooltip' in talking_button:
+                #     $ tooltip = talking_button.kill_tooltip()
+                #     imagebutton:
+                #         idle 'images/icons/kill_idle.png'
+                #         hover Transform('images/icons/kill_hover.png', matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
+                #         xpos talking_button.xpos + 40
+                #         ypos talking_button.ypos
+                #         action Jump(talking_button.kill_action())
+                #         hovered tt.Action(tooltip)
+                #         unhovered tt.Action('')
+
+                imagebutton:
+                    idle 'images/icons/speak_idle.png'
+                    hover Transform('images/icons/speak_hover.png', matrixcolor=BrightnessMatrix(0.2)) at pulse_effect
+                    xpos talking_button.pos()['x'] + 40
+                    ypos talking_button.pos()['y'] + 20
+                    action ExecuteNavigationDirective(talking_button.jump())
+                    hovered tt.Action(talking_button.tooltip())
+                    unhovered tt.Action('')
+
+    vbox:
+        xpos 1200
+        ypos 0
+        $ x, y = renpy.get_mouse_pos()
+        $ offset_x = round(x + xadj.value)
+        $ offset_y = round(y + yadj.value)
+        text "X Offset: [offset_x]"
+        text "Y Offset: [offset_y]"

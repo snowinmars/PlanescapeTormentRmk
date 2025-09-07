@@ -48,7 +48,7 @@ class ZombieMenuItem(MenuItem):
     def __init__(self, gsm, x, y):
         super().__init__(gsm, x, y)
     def texture(self):
-        return 'images/menu_sprites/zombie.png'
+        return 'animation_zm782'
 
 
 class SkeletMenuItem(MenuItem):

@@ -21,17 +21,17 @@ screen mortuary_f2r1_graphics_menu_screen():
     use abstract_location_menu_screen(
         'bg mortuary_f2r1',
         [
-            InMortuaryF2R1PickScalpel(gsm, 520, 440),
-            FromMortuaryF2R1ToMortuaryF2R2(gsm, 170, 460),
-            FromMortuaryF2R1ToMortuaryF2R8(gsm, 1240, 1000),
-            FromMortuaryF2R1ToMortuaryF3R1(gsm, 940, 220),
-            FromMortuaryF2R1ToMortuaryF1R1(gsm, 790, 280),
+            InMortuaryF2R1PickScalpel(gsm, 2270, 1600),
+            FromMortuaryF2R1ToMortuaryF2R2(gsm, 2030, 1600),
+            FromMortuaryF2R1ToMortuaryF2R8(gsm, 2960, 2120),
+            FromMortuaryF2R1ToMortuaryF3R1(gsm, 2546, 1380),
+            FromMortuaryF2R1ToMortuaryF1R1(gsm, 2470, 1460),
         ],
         [
-            *get_party(gsm, 1360, 400),
-            InMortuaryF2R1Zm569(gsm, 400, 720),
-            InMortuaryF2R1Zm825(gsm, 710, 880),
-            InMortuaryF2R1Zm782(gsm, 1160, 860),
+            *get_party(gsm, 2950, 1610),
+            InMortuaryF2R1Zm569(gsm, 2500, 1940),
+            InMortuaryF2R1Zm782(gsm, 2830, 2000),
+            InMortuaryF2R1Zm825(gsm, 2530, 1700),
         ],
         audio.mortuary
     )

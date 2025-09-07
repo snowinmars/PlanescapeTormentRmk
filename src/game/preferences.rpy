@@ -19,26 +19,26 @@
 #                         selected persistent.show_coordinates
 
 
-style coordinates_text:
-    color "#fff"
-    size 24
-    outlines [(1, "#000", 0, 0)]
-    xalign 0.5
+# style coordinates_text:
+#     color "#fff"
+#     size 24
+#     outlines [(1, "#000", 0, 0)]
+#     xalign 0.5
 
 
-screen mouse_coordinates():
-    zorder 101
-    # if persistent.show_coordinates:
-    if True:
-        $ x, y = renpy.get_mouse_pos()
+# screen mouse_coordinates():
+#     zorder 101
+#     # if persistent.show_coordinates:
+#     if True:
+#         $ x, y = renpy.get_mouse_pos()
 
-        fixed:
-            pos (1200, 0)
-            frame:
-                background Solid("#0008")  # Semi-transparent black
-                xsize 200
-                ysize 60
+#         fixed:
+#             pos (1200, 0)
+#             frame:
+#                 background Solid("#0008")  # Semi-transparent black
+#                 xsize 200
+#                 ysize 60
 
-                vbox:
-                    text "Mouse Coordinates:" style "coordinates_text"
-                    text f"X: {x}, Y: {y}" style "coordinates_text"
+#                 vbox:
+#                     text "Mouse Coordinates:" style "coordinates_text"
+#                     text f"X: {x}, Y: {y}" style "coordinates_text"

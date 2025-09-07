@@ -20,7 +20,7 @@ label graphics_menu:
         scene bg mortuary_f1rc
         jump mortuary_f1rc_graphics_menu
     if current_location == 'mortuary_f2r1':
-        scene bg mortuary_f2r1
+        # scene bg mortuary_f2r1
         jump mortuary_f2r1_graphics_menu
     if current_location == 'mortuary_f2r2':
         scene bg mortuary_f2r2

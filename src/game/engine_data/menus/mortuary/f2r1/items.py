@@ -49,11 +49,13 @@ class FromMortuaryF2R1ToMortuaryF2R8(GoToLocationMenuItem):
         )
 
 
-class FromMortuaryF2R1ToMortuaryF3R1(GoToLocationMenuItem):
+class FromMortuaryF2R1ToMortuaryF3R1(MenuItem):
     def __init__(self, gsm, x, y):
         super().__init__(gsm, x, y)
     def when(self):
         return self.gsm.get_has_intro_key()
+    def texture(self):
+        return 'images/icons/mortuary_f2r1_door_f3r1.png'
     def tooltip(self):
         if self.gsm.location_manager.is_visited('mortuary_f3r1') or \
            self.gsm.location_manager.is_visited('mortuary_f3r3'):
