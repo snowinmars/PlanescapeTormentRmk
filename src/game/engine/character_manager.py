@@ -3,9 +3,6 @@ import logging
 from game.engine.character import (Character)
 
 
-devlog = logging.getLogger('log')
-
-
 class CharacterManager:
     def __init__(self, event_manager):
         self._characters = {}
@@ -127,5 +124,4 @@ class CharacterManager:
 
 
     def _log(self, line):
-        devlog.debug(line)
         self._event_manager.write_event(line)

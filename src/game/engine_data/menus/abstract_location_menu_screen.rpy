@@ -1,6 +1,6 @@
 init python:
     import logging
-    devlog = logging.getLogger('log')
+
 
     current_bg_music = None
 

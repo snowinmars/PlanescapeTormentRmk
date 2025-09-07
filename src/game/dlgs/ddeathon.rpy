@@ -97,7 +97,7 @@ label ddeathon_dispose:
 
 # s0 # say7288
 label ddeathon_s0: # from - # IF ~  Global("Death_of_Names","GLOBAL",0)
-    call ddeathon_init
+    call ddeathon_init from _call_ddeathon_init
     nr 'Перед тобой тленный с кривой улыбкой, застывшей на его лице. Несмотря на улыбку, его глаза безжизненны.'
     nr 'Правая рука короче левой, и он покачивает ее на перевязи, будто убаюкивая малое дитя.'
 
@@ -259,7 +259,7 @@ label ddeathon_s7: # from 6.0
 
 # s8 # say7356
 label ddeathon_s8: # from - # GlobalGT("Death_of_Names","GLOBAL",0)
-    call ddeathon_init
+    call ddeathon_init from _call_ddeathon_init_1
     nr 'Перед тобой Смерть-имен. Он стоит перед монументом с искривленной улыбкой, а его рука висит на перевязи.'
 
     menu:
