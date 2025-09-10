@@ -60,14 +60,16 @@ init python:
 
 
 
-screen abstract_location_menu_screen(background, walking, talking, bg_music):
+
+screen abstract_location_menu_screen(background_dark, background_light, walking, talking, bg_music):
+    $ lm = renpy.store.global_lightning_manager
+    timer 0.1 repeat True action Function(lm.update)
+
     on "show" action SmartPlayMusic(bg_music)
 
     default tt = Tooltip('')
     zorder 100
 
-    default bg_displayable = renpy.displayable(background)
-    default bg_size = renpy.render(bg_displayable, 0, 0, 0, 0).get_size()
     default xadj = ui.adjustment(value=1920)
     default yadj = ui.adjustment(value=1080)
 
@@ -91,9 +93,14 @@ screen abstract_location_menu_screen(background, walking, talking, bg_music):
             ysize 3 * 1080
             background None
 
-            add background:
+            add background_dark:
                 xalign 0.5
                 yalign 0.5
+
+            add AlphaMask(
+                background_light,
+                lm.get_current_maps()[0]
+            )
 
             for walking_button in walking:
                 if not walking_button.when():

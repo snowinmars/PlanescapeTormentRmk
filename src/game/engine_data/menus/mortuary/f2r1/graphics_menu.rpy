@@ -20,6 +20,7 @@ screen mortuary_f2r1_graphics_menu_screen():
     $ gsm = renpy.store.global_settings_manager
     use abstract_location_menu_screen(
         'bg mortuary_f2r1',
+        'bg mortuary_f2r1_dark',
         [
             InMortuaryF2R1PickScalpel(gsm, 2270, 1600),
             FromMortuaryF2R1ToMortuaryF2R2(gsm, 2030, 1600),
