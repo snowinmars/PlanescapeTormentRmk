@@ -1,4 +1,5 @@
 image bg mortuary_f2r1 = "bg/mortuary_f2r1.png"
+image bg mortuary_f2r1_dark = "bg/mortuary_f2r1_dark.png"
 image bg mortuary_f2r2 = "bg/mortuary_f2r2.png"
 image bg mortuary_f2r3 = "bg/mortuary_f2r3.png"
 image bg mortuary_f2r4 = "bg/mortuary_f2r4.png"

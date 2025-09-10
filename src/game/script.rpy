@@ -23,6 +23,8 @@ init 2 python:
 
 
 init 3 python:
+    import random
+
     # engine warm up
     from game.engine.event_manager import (EventManager)
     from game.engine.settings_manager import (SettingsManager)
@@ -36,6 +38,39 @@ init 3 python:
     from game.engine_data.locations.all_locations import (build_all_locations)
     from game.engine_data.characters.all_characters import (build_all_characters)
     from game.engine_data.journal.all_notes import (build_all_notes)
+
+
+    class LightningManager:
+        def __init__(self, map_paths, throttle_interval=0.1):
+            self.map_paths = map_paths
+            self.throttle_interval = throttle_interval
+            self.last_change = time.time()
+            self.current_maps = [self.get_random_map(), self.get_random_map()]
+
+        def get_random_map(self):
+            return random.choice(self.map_paths)
+
+        def update(self):
+            current_time = time.time()
+            if current_time - self.last_change >= self.throttle_interval:
+                self.last_change = current_time
+                if random.random() > 0.5:
+                    self.current_maps[0] = self.get_random_map()
+                else:
+                    self.current_maps[1] = self.get_random_map()
+
+        def get_current_maps(self):
+            return self.current_maps
+
+
+
+
+    renpy.store.global_lightning_manager = LightningManager([
+        "bg/lightning/1.png",
+        "bg/lightning/2.png",
+        "bg/lightning/3.png",
+        "bg/lightning/4.png",
+    ])
 
     renpy.store.global_event_manager = EventManager(renpy.store.logger)
     renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
