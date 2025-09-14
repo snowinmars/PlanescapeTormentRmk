@@ -29,8 +29,9 @@ test_tree1 = {
 }
 test_result1_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -122,8 +123,9 @@ test_tree2 = {
 }
 test_result2_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -226,8 +228,9 @@ test_tree3 = {
 }
 test_result3_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -384,8 +387,9 @@ test_tree4 = {
 }
 test_result4_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -469,8 +473,9 @@ test_tree5 = {
 }
 test_result5_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -556,8 +561,9 @@ test_tree6 = {
 }
 test_result6_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -690,8 +696,9 @@ test_tree7 = {
 }
 test_result7_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -783,8 +790,9 @@ test_tree8 = {
 }
 test_result8_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -871,8 +879,9 @@ test_tree9 = {
 }
 test_result9_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -985,8 +994,9 @@ test_tree10 = {
 }
 test_result10_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1075,8 +1085,9 @@ test_tree11 = {
 }
 test_result11_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1210,8 +1221,9 @@ test_tree12 = {
 }
 test_result12_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1334,8 +1346,9 @@ test_tree13 = {
 }
 test_result13_rpy = f'''
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1435,8 +1448,9 @@ test_tree14 = {
 }
 test_result14_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1607,8 +1621,9 @@ test_tree15 = {
 }
 test_result15_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1758,8 +1773,9 @@ test_tree16 = {
 }
 test_result16_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -1940,8 +1956,9 @@ test_tree17 = {
 }
 test_result17_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -2062,8 +2079,9 @@ test_tree18 = {
 }
 test_result18_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -2261,8 +2279,9 @@ test_tree19 = {
 }
 test_result19_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###
@@ -2421,8 +2440,9 @@ test_tree20 = {
 }
 test_result20_rpy = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_state_manager)
+    areaLogic = AreaLogic(runtime.global_state_manager)
 
 
 # ###

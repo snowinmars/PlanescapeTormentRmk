@@ -1,5 +1,9 @@
+init python:
+    from game.engine.runtime import (runtime)
+
+
 screen character_screen_button():
-    textbutton "Character" action Show("character_screen", character=renpy.store.global_state_manager.characters_manager.get_character('protagonist')):
+    textbutton "Character" action Show("character_screen", character=runtime.global_state_manager.characters_manager.get_character('protagonist')):
         align (1.0, 0.0)
         offset (-20, 20)
 
@@ -58,7 +62,7 @@ screen character_screen(character):
 
                 text "STR: [character.strength]" size 25 color "#f88"
                 text "CON: [character.constitution]" size 25 color "#f8f"
-                text "Gold: [renpy.store.global_state_manager.get_gold()]" size 25 color "#ff0"
+                text "Gold: [runtime.global_state_manager.get_gold()]" size 25 color "#ff0"
 
                 text "DEX: [character.dexterity]" size 25 color "#8f8"
                 text "WIS: [character.wisdom]" size 25 color "#ff8"

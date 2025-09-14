@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.mortuary_zombies.s42_logic import S42Logic
-    s42Logic = S42Logic(renpy.store.global_state_manager)
+    s42Logic = S42Logic(runtime.global_state_manager)
 
 
 # ###

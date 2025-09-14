@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.mortuary_zombies.zf594_logic import Zf594Logic
-    zf594Logic = Zf594Logic(renpy.store.global_state_manager)
+    zf594Logic = Zf594Logic(runtime.global_state_manager)
 
 
 # ###

@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.engine_data.menus.mortuary.f3r2.items import (
         FromMortuaryF3R2ToMortuaryF3R3,
         FromMortuaryF3R2ToMortuaryF3R1,
@@ -15,7 +16,7 @@ label mortuary_f3r2_graphics_menu:
 
 
 screen mortuary_f3r2_graphics_menu_screen():
-    $ gsm = renpy.store.global_state_manager
+    $ gsm = runtime.global_state_manager
     use abstract_location_menu_screen(
         'bg mortuary_f3r2',
         [

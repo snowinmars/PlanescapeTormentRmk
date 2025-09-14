@@ -1,6 +1,7 @@
 init 10 python in dhall_feather:
+    from game.engine.runtime import (runtime)
     from game.dlgs.inventory.dhall_feather_logic import DhallFeatherLogic
-    dhallFeatherLogic = DhallFeatherLogic(renpy.store.global_state_manager)
+    dhallFeatherLogic = DhallFeatherLogic(runtime.global_state_manager)
 
 
 # ###

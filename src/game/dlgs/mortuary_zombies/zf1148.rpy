@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.mortuary_zombies.zf1148_logic import Zf1148Logic
-    zf1148Logic = Zf1148Logic(renpy.store.global_state_manager)
+    zf1148Logic = Zf1148Logic(runtime.global_state_manager)
 
 
 # ###

@@ -1,7 +1,8 @@
 rpy_header_template = """
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.{npc}_logic import {Npc}Logic
-    {npc}Logic = {Npc}Logic(renpy.store.global_state_manager)
+    {npc}Logic = {Npc}Logic(runtime.global_state_manager)
 
 
 # ###
