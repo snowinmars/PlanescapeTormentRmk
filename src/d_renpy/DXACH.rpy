@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.xach_logic import XachLogic
-    xachLogic = XachLogic(renpy.store.global_state_manager)
+    xachLogic = XachLogic(runtime.global_state_manager)
 
 
 # ###

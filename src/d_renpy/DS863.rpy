@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.s863_logic import S863Logic
-    s863Logic = S863Logic(renpy.store.global_state_manager)
+    s863Logic = S863Logic(runtime.global_state_manager)
 
 
 # ###

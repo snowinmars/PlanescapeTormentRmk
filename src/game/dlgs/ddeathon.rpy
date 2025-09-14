@@ -72,8 +72,10 @@ init python:
 
 
 init 10 python:
-    gsm = renpy.store.global_state_manager
-    glm = renpy.store.global_locations_manager
+    from game.engine.runtime import (runtime)
+
+    gsm = runtime.global_state_manager
+    glm = runtime.global_locations_manager
 
 
 # ###

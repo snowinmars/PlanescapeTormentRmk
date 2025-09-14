@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.giantsk_logic import GiantskLogic
-    giantskLogic = GiantskLogic(renpy.store.global_state_manager)
+    giantskLogic = GiantskLogic(runtime.global_state_manager)
 
 
 # ###

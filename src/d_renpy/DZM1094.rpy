@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zm1094_logic import Zm1094Logic
-    zm1094Logic = Zm1094Logic(renpy.store.global_state_manager)
+    zm1094Logic = Zm1094Logic(runtime.global_state_manager)
 
 
 # ###

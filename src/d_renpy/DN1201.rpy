@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.n1201_logic import N1201Logic
-    n1201Logic = N1201Logic(renpy.store.global_state_manager)
+    n1201Logic = N1201Logic(runtime.global_state_manager)
 
 
 # ###

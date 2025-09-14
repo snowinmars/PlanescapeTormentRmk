@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zm732_logic import Zm732Logic
-    zm732Logic = Zm732Logic(renpy.store.global_state_manager)
+    zm732Logic = Zm732Logic(runtime.global_state_manager)
 
 
 # ###

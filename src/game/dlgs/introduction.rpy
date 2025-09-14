@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.introduction_logic import IntroductionLogic
-    introductionLogic = IntroductionLogic(renpy.store.global_state_manager)
+    introductionLogic = IntroductionLogic(runtime.global_state_manager)
 
 
 label quick_setup_as_mage:

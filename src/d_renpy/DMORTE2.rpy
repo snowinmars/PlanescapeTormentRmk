@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.morte2_logic import Morte2Logic
-    morte2Logic = Morte2Logic(renpy.store.global_state_manager)
+    morte2Logic = Morte2Logic(runtime.global_state_manager)
 
 
 # ###

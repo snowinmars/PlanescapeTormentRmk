@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zm506_logic import Zm506Logic
-    zm506Logic = Zm506Logic(renpy.store.global_state_manager)
+    zm506Logic = Zm506Logic(runtime.global_state_manager)
 
 
 # ###

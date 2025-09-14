@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zf679_logic import Zf679Logic
-    zf679Logic = Zf679Logic(renpy.store.global_state_manager)
+    zf679Logic = Zf679Logic(runtime.global_state_manager)
 
 
 # ###

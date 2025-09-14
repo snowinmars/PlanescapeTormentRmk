@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.mortuary_zombies.zm782_logic import Zm782Logic
-    zm782Logic = Zm782Logic(renpy.store.global_state_manager)
+    zm782Logic = Zm782Logic(runtime.global_state_manager)
 
 
 # ###

@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zm1664_logic import Zm1664Logic
-    zm1664Logic = Zm1664Logic(renpy.store.global_state_manager)
+    zm1664Logic = Zm1664Logic(runtime.global_state_manager)
 
 
 # ###

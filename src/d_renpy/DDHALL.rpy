@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.dhall_logic import DhallLogic
-    dhallLogic = DhallLogic(renpy.store.global_state_manager)
+    dhallLogic = DhallLogic(runtime.global_state_manager)
 
 
 # ###

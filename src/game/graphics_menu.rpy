@@ -1,5 +1,6 @@
 init 10 python:
-    glm = renpy.store.global_locations_manager
+    from game.engine.runtime import (runtime)
+    glm = runtime.global_locations_manager
 
 
 label graphics_menu:

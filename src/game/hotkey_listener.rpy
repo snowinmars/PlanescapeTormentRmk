@@ -1,7 +1,8 @@
 init 10 python:
     import logging
-    logger = renpy.store.logger
-    gsm = renpy.store.global_state_manager
+    from game.engine.runtime import (runtime)
+    logger = runtime.logger
+    gsm = runtime.global_state_manager
 
     def _dump_dict(d):
         return "\n".join(f"{k}\t{v}" for k, v in d.items())
@@ -27,14 +28,14 @@ init 10 python:
         logger.warn(str(gsm.locations_manager._visited_externals))
         logger.warn('\n\n== state_manager.locations_manager._visited_internals ==')
         logger.warn(str(gsm.locations_manager._visited_internals))
-        renpy.store.global_events_manager.write_event('Dumped settings to log')
+        runtime.global_events_manager.write_event('Dumped settings to log')
 
 
 screen hotkey_listener():
     layer "bottom"
 
     for x in ['z', 'Z', 'я', 'Я']:
-        key x action Function(renpy.store.global_events_manager.ping)
+        key x action Function(runtime.global_events_manager.ping)
 
     for x in ['x', 'X', 'ч', 'Ч']:
         key x action Function(_dump_settings)

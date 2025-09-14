@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.mortuary.dustfem_logic import DustfemLogic
-    dustfemLogic = DustfemLogic(renpy.store.global_state_manager)
+    dustfemLogic = DustfemLogic(runtime.global_state_manager)
 
 
 # ###

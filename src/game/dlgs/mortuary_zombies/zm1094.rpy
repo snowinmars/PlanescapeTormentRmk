@@ -1,6 +1,7 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.mortuary_zombies.zm1094_logic import Zm1094Logic
-    zm1094Logic = Zm1094Logic(renpy.store.global_state_manager)
+    zm1094Logic = Zm1094Logic(runtime.global_state_manager)
 
     def logic_get_know_asonje_name(self):
         return asonje if zm1094Logic.get_know_asonje_name() else zm1041

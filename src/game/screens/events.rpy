@@ -1,3 +1,7 @@
+init python:
+    from game.engine.runtime import (runtime)
+
+
 screen events_manager_display(position=(0, 0.22), width=0.2, height=0.2, categories=None):
     zorder 101
     style_prefix "events_manager"
@@ -25,7 +29,7 @@ screen events_manager_display(position=(0, 0.22), width=0.2, height=0.2, categor
                 ysize viewport_height
 
                 vbox:
-                    for event in reversed(renpy.store.global_events_manager.get_events()):
+                    for event in reversed(runtime.global_events_manager.get_events()):
                         if categories is None or category in categories:
                             hbox:
                                 # text timestamp style "events_manager_timestamp"
@@ -37,8 +41,8 @@ screen events_manager_header():
         spacing 10
         # text _("EVENT LOG") style "events_manager_title"
         # textbutton _("Clear"):
-        #     action renpy.store.global_events_manager.clear
-        #     sensitive len(renpy.store.global_events_manager.events) > 0
+        #     action runtime.global_events_manager.clear
+        #     sensitive len(runtime.global_events_manager.events) > 0
 
 style events_manager_frame:
     background "#000c"

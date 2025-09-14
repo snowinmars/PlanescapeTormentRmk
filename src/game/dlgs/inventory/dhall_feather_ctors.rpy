@@ -1,5 +1,6 @@
 init 10 python:
-    gsm = renpy.store.global_state_manager
+    from game.engine.runtime import (runtime)
+    gsm = runtime.global_state_manager
 
 
 label dhall_feather_speak:

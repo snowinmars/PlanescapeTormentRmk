@@ -1,3 +1,7 @@
+init python:
+    from game.engine.runtime import (runtime)
+
+
 screen inventory_button():
     imagebutton:
         align (0.95, 0.05)
@@ -53,18 +57,18 @@ screen inventory_screen():
                     mousewheel True
                     scrollbars "vertical"
 
-                    for item in renpy.store.global_inventory_manager.get_owned_items():
+                    for item in runtime.global_inventory_manager.get_owned_items():
                         imagebutton:
                             idle item.grid_image
                             hover Transform(item.grid_image, matrixcolor=BrightnessMatrix(0.1))
-                            action renpy.store.global_inventory_manager.set_selected_item(item)
+                            action runtime.global_inventory_manager.set_selected_item(item)
                             xsize 150
                             ysize 150
 
             vbox:
                 xsize 600
-                if renpy.store.global_inventory_manager.has_selected_item():
-                    label renpy.store.global_inventory_manager.get_selected_item().name:
+                if runtime.global_inventory_manager.has_selected_item():
+                    label runtime.global_inventory_manager.get_selected_item().name:
                         style "inventory_name"
 
                 viewport:
@@ -73,18 +77,18 @@ screen inventory_screen():
                     mousewheel True
                     scrollbars "vertical"
 
-                    if renpy.store.global_inventory_manager.has_selected_item():
+                    if runtime.global_inventory_manager.has_selected_item():
                         vbox:
                             # background Solid("#222")
                             # padding (20, 20)
                             spacing 30
-                            add renpy.store.global_inventory_manager.get_selected_item().detail_image xalign 0.5
-                            text renpy.store.global_inventory_manager.get_selected_item().description:
+                            add runtime.global_inventory_manager.get_selected_item().detail_image xalign 0.5
+                            text runtime.global_inventory_manager.get_selected_item().description:
                                 style "inventory_description"
 
-                            if renpy.store.global_inventory_manager.get_selected_item().jump_on_use_to:
+                            if runtime.global_inventory_manager.get_selected_item().jump_on_use_to:
                                 textbutton "Использовать":
-                                    action UseItemAction(renpy.store.global_inventory_manager.get_selected_item())
+                                    action UseItemAction(runtime.global_inventory_manager.get_selected_item())
                                     xalign 0.5
                                     ypadding 10
                                     xpadding 30
