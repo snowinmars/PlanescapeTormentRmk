@@ -12,9 +12,13 @@
 
 ## Скачать
 
-- web - [disk.yandex.ru](https://disk.yandex.ru/d/TTph3ogZGefF7A)
-- linux - [disk.yandex.ru](https://disk.yandex.ru/d/HJ8LRoIef_Qggg)
-- windows - [disk.yandex.ru](https://disk.yandex.ru/d/PlHSTvLyQIAUMQ)
+- билд - [disk.yandex.ru](https://disk.yandex.ru/d/1vqwCTMVOBEbgA)
+  - web - `PlanescapeTormentRmk-0.01-web.zip`
+  - linux - `PlanescapeTormentRmk-0.01-linux.tar.bz2`
+  - windows - `PlanescapeTormentRmk-0.01-win.zip`
+- запустить в браузере
+  - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
+  - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
 - git clone https://github.com/snowinmars/PlanescapeTormentRmk.git -> импорт в RenPy
 
 
@@ -39,3 +43,10 @@
   - именуется `T_logic.py` с классом `TLogic`
 - файл тестов для логики
   - именуется `T_tests.py` с классом `TLogicTest`
+
+
+### Linter statistics
+
+| version | dialogue blocks | words   | characters | average of words | characters per block | menus   | images | screens |
+|---------|-----------------|---------|------------|------------------|----------------------|---------|--------|---------|
+| 0.0.1   | 3386            | 40856   | 256536     | 12.1             | 76                   | 1451    | 65     | 51      |
