@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label eivene_speak:
@@ -13,19 +13,16 @@ label eivene_speak:
 
 
 label eivene_s0_ctor:
-    scene bg mortuary_f2r5
     show eivene_img default at center_left_down
     jump eivene_s0
 
 
 label eivene_s15_ctor:
-    scene bg mortuary_f2r5
     show eivene_img default at center_left_down
     jump eivene_s15
 
 
 label eivene_s25_ctor: # -
-    scene bg mortuary_f2r5
     show eivene_img default at center_left_down
     jump eivene_s25
 

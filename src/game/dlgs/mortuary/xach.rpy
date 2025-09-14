@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary.xach_logic import XachLogic
-    xachLogic = XachLogic(renpy.store.global_settings_manager)
+    xachLogic = XachLogic(renpy.store.global_state_manager)
 
 
 # ###

@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label dhall_feather_speak:

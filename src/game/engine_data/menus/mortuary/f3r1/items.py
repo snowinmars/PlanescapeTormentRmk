@@ -12,14 +12,14 @@ class FromMortuaryF3R1ToMortuaryF2R1(GoToLocationMenuItem):
     def __init__(self, gsm, x, y):
         super().__init__(gsm, x, y)
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r1'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r1'):
             return 'Спуститься на второй этаж'
         return 'Спуститься по лестнице'
     def jump(self):
         if self.gsm.get_has_mortuary_key():
             return NavigationDirective(
                 'graphics_menu',
-                lambda: self.gsm.location_manager.set_location('mortuary_f2r1')
+                lambda: self.gsm.locations_manager.set_location('mortuary_f2r1')
             )
         return NavigationDirective(
             'from_mortuary_f3r1_to_mortuary_f2r1_closed',
@@ -34,7 +34,7 @@ class FromMortuaryF3R1ToMortuaryF3R2(GoToLocationMenuItem):
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f3r2')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f3r2')
         )
 
 
@@ -46,7 +46,7 @@ class FromMortuaryF3R1ToMortuaryF3R4(GoToLocationMenuItem):
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f3r4')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f3r4')
         )
 
 class InMortuaryF3R1PickMortuaryKey(ContainerMenuItem):

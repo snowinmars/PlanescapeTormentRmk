@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label zm732_speak:
@@ -13,13 +13,11 @@ label zm732_speak:
 
 
 label zm732_s0_ctor:
-    scene bg mortuary_f1r4
     show zm732_img default at center_left_down
     jump zm732_s0
 
 
 label zm732_s3_ctor:
-    scene bg mortuary_f1r4
     show zm732_img default at center_left_down
     jump zm732_s3
 

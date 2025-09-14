@@ -16,7 +16,7 @@ class FromMortuaryF3R4ToMortuaryF3R3(GoToLocationMenuItem):
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f3r3')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f3r3')
         )
 
 
@@ -28,7 +28,7 @@ class FromMortuaryF3R4ToMortuaryF3R1(GoToLocationMenuItem):
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f3r1')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f3r1')
         )
 
 

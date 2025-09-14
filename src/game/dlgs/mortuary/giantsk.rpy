@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary.giantsk_logic import GiantskLogic
-    giantskLogic = GiantskLogic(renpy.store.global_settings_manager)
+    giantskLogic = GiantskLogic(renpy.store.global_state_manager)
 
 
 # ###

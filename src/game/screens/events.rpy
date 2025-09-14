@@ -1,6 +1,6 @@
-screen event_manager_display(position=(0, 0.22), width=0.2, height=0.2, categories=None):
+screen events_manager_display(position=(0, 0.22), width=0.2, height=0.2, categories=None):
     zorder 101
-    style_prefix "event_manager"
+    style_prefix "events_manager"
 
     # Calculate positions
     $ xpos, ypos = position
@@ -14,7 +14,7 @@ screen event_manager_display(position=(0, 0.22), width=0.2, height=0.2, categori
 
         vbox:
             # Header with title and clear button
-            use event_manager_header
+            use events_manager_header
 
             # Main content viewport
             viewport:
@@ -25,43 +25,43 @@ screen event_manager_display(position=(0, 0.22), width=0.2, height=0.2, categori
                 ysize viewport_height
 
                 vbox:
-                    for event in reversed(renpy.store.global_event_manager.get_events()):
+                    for event in reversed(renpy.store.global_events_manager.get_events()):
                         if categories is None or category in categories:
                             hbox:
-                                # text timestamp style "event_manager_timestamp"
-                                # text category style "event_manager_category"
-                                text event.text style "event_manager_text"
+                                # text timestamp style "events_manager_timestamp"
+                                # text category style "events_manager_category"
+                                text event.text style "events_manager_text"
 
-screen event_manager_header():
+screen events_manager_header():
     hbox:
         spacing 10
-        # text _("EVENT LOG") style "event_manager_title"
+        # text _("EVENT LOG") style "events_manager_title"
         # textbutton _("Clear"):
-        #     action renpy.store.global_event_manager.clear
-        #     sensitive len(renpy.store.global_event_manager.events) > 0
+        #     action renpy.store.global_events_manager.clear
+        #     sensitive len(renpy.store.global_events_manager.events) > 0
 
-style event_manager_frame:
+style events_manager_frame:
     background "#000c"
     padding (15, 15)
     xalign 0.0
     yalign 1.0
 
-style event_manager_title:
+style events_manager_title:
     size 18
     color "#FFA"
     bold True
 
-style event_manager_timestamp:
+style events_manager_timestamp:
     size 14
     color "#AAA"
     min_width 70
 
-style event_manager_category:
+style events_manager_category:
     size 14
     color "#8CF"
     min_width 80
 
-style event_manager_text:
+style events_manager_text:
     size 16
     color "#EEE"
     layout "subtitle"

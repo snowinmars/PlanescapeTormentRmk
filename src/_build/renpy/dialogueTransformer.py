@@ -37,7 +37,7 @@ class DialogueTransformer:
 
 
     def _replace_kill_myself(self, script, target_npc):
-        return script.replace('Kill(Myself)', f'self.settings_manager.set_dead_{target_npc}(True)')
+        return script.replace('Kill(Myself)', f'self.state_manager.set_dead_{target_npc}(True)')
 
 
     def _apply_replacements(self, script):
@@ -81,13 +81,13 @@ class DialogueTransformer:
             exanded_amount = _expand_amount(amount)
 
             if expanded_prop in ('good', 'evil'):
-                return f"self.settings_manager.character_manager.modify_property_once('protagonist', 'good', {exanded_amount}, '{global_id.lower()}')"
+                return f"self.state_manager.characters_manager.modify_property_once('protagonist', 'good', {exanded_amount}, '{global_id.lower()}')"
             elif expanded_prop in ('law', 'chaotic'):
-                return f"self.settings_manager.character_manager.modify_property_once('protagonist', 'law', {exanded_amount}, '{global_id.lower()}')"
+                return f"self.state_manager.characters_manager.modify_property_once('protagonist', 'law', {exanded_amount}, '{global_id.lower()}')"
             elif expanded_prop == 'know_dustmen':
-                return f"self.settings_manager.inc_once_know_dustmen('{global_id.lower()}')"
+                return f"self.state_manager.inc_once_know_dustmen('{global_id.lower()}')"
             elif expanded_prop == 'morte_mimir':
-                return f"self.settings_manager.inc_once_morte_mimir('{global_id.lower()}')"
+                return f"self.state_manager.inc_once_morte_mimir('{global_id.lower()}')"
 
             raise Exception(f'Unknown match {INCREMENT_REGEX_ONCE}\n  {match.groups()}')
 
@@ -101,9 +101,9 @@ class DialogueTransformer:
             exanded_amount = _expand_amount(amount)
 
             if expanded_prop in ('good', 'evil'):
-                return f"self.settings_manager.character_manager.modify_property('protagonist', 'good', {exanded_amount})"
+                return f"self.state_manager.characters_manager.modify_property('protagonist', 'good', {exanded_amount})"
             elif expanded_prop in ('law', 'chaotic'):
-                return f"self.settings_manager.character_manager.modify_property('protagonist', 'law', {exanded_amount})"
+                return f"self.state_manager.characters_manager.modify_property('protagonist', 'law', {exanded_amount})"
 
             raise Exception(f'Unknown match {INCREMENT_REGEX}\n  {match.groups()}')
 
@@ -126,7 +126,7 @@ class DialogueTransformer:
             expanded_prop = _expand_prop(prop)
             exanded_amount = _expand_amount(amount)
 
-            return f"return self.settings_manager.character_manager.get_property('{expanded_character}', '{expanded_prop}') {expanded_operator} {exanded_amount}"
+            return f"return self.state_manager.characters_manager.get_property('{expanded_character}', '{expanded_prop}') {expanded_operator} {exanded_amount}"
 
         return CONDITIONAL_REGEX.sub(rule, script)
 
@@ -145,7 +145,7 @@ class DialogueTransformer:
             character, = match.groups()
             expanded_character = _expand_character(character)
 
-            return f"self.settings_manager.character_manager.full_heal('{expanded_character}')"
+            return f"self.state_manager.characters_manager.full_heal('{expanded_character}')"
 
         return FULL_HEAL_REGEX.sub(rule, script)
 
@@ -157,7 +157,7 @@ class DialogueTransformer:
             exanded_amount = _expand_amount(amount)
 
             if exanded_amount > 0:
-                return f"self.settings_manager.gain_experience('{expanded_character}', {exanded_amount})"
+                return f"self.state_manager.gain_experience('{expanded_character}', {exanded_amount})"
 
             raise Exception(f'Unknown match {TARGET_EXP_REGEX}\n  {match.groups()}')
 
@@ -170,7 +170,7 @@ class DialogueTransformer:
             exanded_amount = _expand_amount(amount)
 
             if exanded_amount > 0:
-                return f"self.settings_manager.gain_experience('party', {exanded_amount})"
+                return f"self.state_manager.gain_experience('party', {exanded_amount})"
 
             raise Exception(f'Unknown match {PARTY_EXP_REGEX}\n  {match.groups()}')
 
@@ -182,7 +182,7 @@ class DialogueTransformer:
             no, env, location = match.groups()
             expanded_location = _expand_location(location)
 
-            return f"return{' not ' if no else ' '}self.settings_manager.location_manager.is_visited_internal('AR{expanded_location}')"
+            return f"return{' not ' if no else ' '}self.state_manager.locations_manager.is_visited_internal('AR{expanded_location}')"
 
         return GLOBAL_INTERNAL_VISITED_REGEX.sub(replace_visited, script)
 
@@ -192,7 +192,7 @@ class DialogueTransformer:
             not_op, location, value = match.groups()
             no = (not_op == '!') != (value == '0')
 
-            return f"return{' not ' if no else ' '}self.settings_manager.location_manager.is_visited_internal('{location}')"
+            return f"return{' not ' if no else ' '}self.state_manager.locations_manager.is_visited_internal('{location}')"
 
         return GLOBAL_VISITED_REGEX.sub(replace_visited, script)
 
@@ -204,15 +204,15 @@ class DialogueTransformer:
             expanded_amount = _expand_amount(amount)
 
             if expanded_action == 'takepartygold':
-                return f'self.settings_manager.dec_gold({expanded_amount})'
+                return f'self.state_manager.dec_gold({expanded_amount})'
             elif expanded_action == 'destroypartygold':
-                return f'self.settings_manager.dec_gold({expanded_amount})'
+                return f'self.state_manager.dec_gold({expanded_amount})'
             elif expanded_action == 'partygoldgt':
-                return f'return self.settings_manager.get_gold() > {expanded_amount}'
+                return f'return self.state_manager.get_gold() > {expanded_amount}'
             elif expanded_action == 'partygoldlt':
-                return f'return self.settings_manager.get_gold() < {expanded_amount}'
+                return f'return self.state_manager.get_gold() < {expanded_amount}'
             elif expanded_action == 'givegoldforce':
-                return f'self.settings_manager.inc_gold({expanded_amount})'
+                return f'self.state_manager.inc_gold({expanded_amount})'
 
             raise Exception(f'Unknown match {GOLD_REGEX}\n  {match.groups()}')
 
@@ -224,7 +224,7 @@ class DialogueTransformer:
             env, location, = match.groups()
             expanded_location = _expand_location(location)
 
-            return f"\n        self.settings_manager.location_manager.set_location('AR{expanded_location}')"
+            return f"\n        self.state_manager.locations_manager.set_location('AR{expanded_location}')"
 
         return LOCATION_REGEX.sub(replace_location, script)
 
@@ -236,7 +236,7 @@ class DialogueTransformer:
             expanded_prop = _expand_prop(prop)
             exanded_amount = _expand_amount(amount)
 
-            return f"self.settings_manager.character_manager.modify_property('{expanded_character}', '{expanded_prop}', {exanded_amount})"
+            return f"self.state_manager.characters_manager.modify_property('{expanded_character}', '{expanded_prop}', {exanded_amount})"
 
         return STAT_REGEX.sub(rule, script)
 
@@ -255,7 +255,7 @@ class DialogueTransformer:
             expanded_amount = _expand_amount(amount)
             expanded_operator = _expand_operator(operator)
 
-            return f'return self.settings_manager.get_talked_to_{target_npc}_times() {expanded_operator} {expanded_amount}'
+            return f'return self.state_manager.get_talked_to_{target_npc}_times() {expanded_operator} {expanded_amount}'
 
         return TIMES_TALKED_TO_REGEX.sub(replace_visited, script)
 
@@ -264,7 +264,7 @@ class DialogueTransformer:
         def rule(match):
             note_id, note_text, = match.groups()
 
-            return f"self.settings_manager.journal_manager.update_journal('{note_id}')    #$% .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()} %$#')"
+            return f"self.state_manager.journal_manager.update_journal('{note_id}')    #$% .register('{note_id}', '{note_text.replace(' ~', '').replace('~ ', '').strip()} %$#')"
 
         return JOURNAL_REGEX.sub(rule, script)
 

@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary_zombies.zm310_logic import Zm310Logic
-    zm310Logic = Zm310Logic(renpy.store.global_settings_manager)
+    zm310Logic = Zm310Logic(renpy.store.global_state_manager)
 
     def logic_get_know_oinosian_name():
         return arabhiem if zm310Logic.get_know_oinosian_name() else zm310

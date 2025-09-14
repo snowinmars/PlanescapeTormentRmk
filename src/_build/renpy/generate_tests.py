@@ -116,15 +116,15 @@ get_integer_eq_condition_pattern = re.compile(r'^get_(.*?)\(\) == (\d+)$')
 get_integer_neq_condition_pattern = re.compile(r'^get_(.*?)\(\) != (\d+)$')
 get_integer_gt_condition_pattern = re.compile(r'^get_(.*?)\(\) > (\d+)$')
 get_integer_lt_condition_pattern = re.compile(r'^get_(.*?)\(\) < (\d+)$')
-get_character_property_gt_condition_pattern = re.compile(r"^character_manager\.get_property\('(.*?)', '(.*?)'\) > (\d+)$")
-get_character_property_lt_condition_pattern = re.compile(r"^character_manager\.get_property\('(.*?)', '(.*?)'\) < (\d+)$")
-is_visited_internal_condition_pattern = re.compile(r"^location_manager\.is_visited_internal\('(.*?)'\)$")
-not_is_visited_internal_condition_pattern = re.compile(r"^not location_manager\.is_visited_internal\('(.*?)'\)$")
+get_character_property_gt_condition_pattern = re.compile(r"^characters_manager\.get_property\('(.*?)', '(.*?)'\) > (\d+)$")
+get_character_property_lt_condition_pattern = re.compile(r"^characters_manager\.get_property\('(.*?)', '(.*?)'\) < (\d+)$")
+is_visited_internal_condition_pattern = re.compile(r"^locations_manager\.is_visited_internal\('(.*?)'\)$")
+not_is_visited_internal_condition_pattern = re.compile(r"^not locations_manager\.is_visited_internal\('(.*?)'\)$")
 count_in_party_eq_zero_condition_pattern = re.compile(r"^count_in_party\(\) == 0$")
 count_in_party_gt_zero_condition_pattern = re.compile(r"^count_in_party\(\) > 0$")
-current_health_eq_max_health_condition_pattern = re.compile(r"^character_manager\.get_property\(\'protagonist\', \'current_health\'\) == character_manager.get_property\(\'protagonist\', \'max_health\'\)$")
-current_health_gt_max_health_condition_pattern = re.compile(r"^character_manager\.get_property\(\'protagonist\', \'current_health\'\) > character_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
-current_health_lt_max_health_condition_pattern = re.compile(r"^character_manager\.get_property\(\'protagonist\', \'current_health\'\) <= character_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
+current_health_eq_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) == characters_manager.get_property\(\'protagonist\', \'max_health\'\)$")
+current_health_gt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) > characters_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
+current_health_lt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) <= characters_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
 
 set_boolean_action_pattern = re.compile(r'^set_(.*?)\((True|False)\)$')
 set_integer_action_pattern = re.compile(r'^set_(.*?)\((\d+)\)$')
@@ -132,13 +132,13 @@ inc_once_integer_action_pattern = re.compile(r'^inc_once_(.*?)\((\d*)\)$')
 dec_once_integer_action_pattern = re.compile(r'^dec_once_(.*?)\((\d*)\)$')
 inc_integer_action_pattern = re.compile(r'^inc_(.*?)\((\d*)\)$')
 dec_integer_action_pattern = re.compile(r'^dec_(.*?)\((\d*)\)$')
-modify_property_once_action_pattern = re.compile(r'^character_manager\.modify_property_once\(\'(.*?)\', \'(.*?)\', ([-\d]+), \'(.*?)\'\)$')
-modify_property_action_pattern = re.compile(r'^character_manager\.modify_property\(\'(.*?)\', \'(.*?)\', ([-\d]+)\)$')
-set_property_action_pattern = re.compile(r'^character_manager\.set_property\(\'(.*?)\', \'(.*?)\', \'(.*?)\'\)$')
+modify_property_once_action_pattern = re.compile(r'^characters_manager\.modify_property_once\(\'(.*?)\', \'(.*?)\', ([-\d]+), \'(.*?)\'\)$')
+modify_property_action_pattern = re.compile(r'^characters_manager\.modify_property\(\'(.*?)\', \'(.*?)\', ([-\d]+)\)$')
+set_property_action_pattern = re.compile(r'^characters_manager\.set_property\(\'(.*?)\', \'(.*?)\', \'(.*?)\'\)$')
 gain_experience_action_pattern = re.compile(r'^gain_experience\(\'(.*?)\', (\d+)\)$')
 update_journal_action_pattern = re.compile(r'^journal_manager\.update_journal\(\'(\d+)\'\)$')
-full_heal_action_pattern = re.compile(r'^character_manager\.full_heal\(\'(.*?)\'\)$')
-set_location_action_pattern = re.compile(r'^location_manager\.set_location\(\'(.*?)\'\)$')
+full_heal_action_pattern = re.compile(r'^characters_manager\.full_heal\(\'(.*?)\'\)$')
+set_location_action_pattern = re.compile(r'^locations_manager\.set_location\(\'(.*?)\'\)$')
 
 
 def generate_tests(logic, target_npc, warnings):
@@ -463,7 +463,7 @@ def ignored_operation(x):
 
 def _guess_multiline_actions(func_name, body, target_npc, warnings):
     operations = [
-        line.replace('self.settings_manager.', '').strip()
+        line.replace('self.state_manager.', '').strip()
         for line in split_foo(body)
         if line and not ignored_operation(line)
     ]
@@ -514,7 +514,7 @@ def _guess_multiline_actions(func_name, body, target_npc, warnings):
 
 def _guess_multiline_conditions(func_name, body, target_npc, warnings):
     operations = [
-        line.replace('and \\', '').replace('self.settings_manager.', '').strip()
+        line.replace('and \\', '').replace('self.state_manager.', '').strip()
         for line in split_foo(body.replace('return ', ''))
         if line and not ignored_operation(line)
     ]

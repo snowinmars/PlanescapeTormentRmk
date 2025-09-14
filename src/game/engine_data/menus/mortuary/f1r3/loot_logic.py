@@ -1,3 +1,3 @@
 class MortuaryF1R3LootLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager

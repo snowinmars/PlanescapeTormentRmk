@@ -13,18 +13,18 @@ class FromMortuaryF2R1ToMortuaryF2R2(GoToLocationMenuItem):
     def when(self):
         return self.gsm.get_has_intro_key()
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r2'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r2'):
             return 'Пройти в западную комнату'
         return 'Пройти в комнату'
     def jump(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r2'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r2'):
            return NavigationDirective(
                 'graphics_menu',
-                lambda: self.gsm.location_manager.set_location('mortuary_f2r2')
+                lambda: self.gsm.locations_manager.set_location('mortuary_f2r2')
             )
         return NavigationDirective(
             'morte2_speak',
-            lambda: self.gsm.location_manager.set_location('mortuary_f2r2')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f2r2')
         )
 
 
@@ -34,15 +34,15 @@ class FromMortuaryF2R1ToMortuaryF2R8(GoToLocationMenuItem):
     def when(self):
         return self.gsm.get_has_intro_key()
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r8'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r8'):
             return 'Пройти в южную комнату'
         return 'Пройти в комнату'
     def jump(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r8') or \
+        if self.gsm.locations_manager.is_visited('mortuary_f2r8') or \
            self.gsm.get_has_mortuary_key():
             return NavigationDirective(
                 'graphics_menu',
-                lambda: self.gsm.location_manager.set_location('mortuary_f2r8')
+                lambda: self.gsm.locations_manager.set_location('mortuary_f2r8')
             )
         return NavigationDirective(
             'from_mortuary_f2r1_to_mortuary_f2r8_closed',
@@ -57,17 +57,17 @@ class FromMortuaryF2R1ToMortuaryF3R1(MenuItem):
     def texture(self):
         return 'images/icons/mortuary_f2r1_door_f3r1.png'
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f3r1') or \
-           self.gsm.location_manager.is_visited('mortuary_f3r3'):
+        if self.gsm.locations_manager.is_visited('mortuary_f3r1') or \
+           self.gsm.locations_manager.is_visited('mortuary_f3r3'):
             return 'Подняться на третий этаж'
         return 'Подняться по лестнице'
     def jump(self):
         if self.gsm.get_has_mortuary_key() or \
-           self.gsm.location_manager.is_visited('mortuary_f3r1') or \
-           self.gsm.location_manager.is_visited('mortuary_f3r3'):
+           self.gsm.locations_manager.is_visited('mortuary_f3r1') or \
+           self.gsm.locations_manager.is_visited('mortuary_f3r3'):
             return NavigationDirective(
                 'graphics_menu',
-                lambda: self.gsm.location_manager.set_location('mortuary_f3r1')
+                lambda: self.gsm.locations_manager.set_location('mortuary_f3r1')
             )
         return NavigationDirective(
             'from_mortuary_f2r1_to_mortuary_f3r1_closed',
@@ -80,17 +80,17 @@ class FromMortuaryF2R1ToMortuaryF1R1(GoToLocationMenuItem):
     def when(self):
         return self.gsm.get_has_intro_key()
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f1r1') or \
-           self.gsm.location_manager.is_visited('mortuary_f1r4'):
+        if self.gsm.locations_manager.is_visited('mortuary_f1r1') or \
+           self.gsm.locations_manager.is_visited('mortuary_f1r4'):
             return 'Спуститься на третий этаж'
         return 'Спуститься по лестнице'
     def jump(self):
         if self.gsm.get_has_mortuary_key() or \
-           self.gsm.location_manager.is_visited('mortuary_f1r1') or \
-           self.gsm.location_manager.is_visited('mortuary_f1r4'):
+           self.gsm.locations_manager.is_visited('mortuary_f1r1') or \
+           self.gsm.locations_manager.is_visited('mortuary_f1r4'):
             return NavigationDirective(
                 'graphics_menu',
-                lambda: self.gsm.location_manager.set_location('mortuary_f1r1')
+                lambda: self.gsm.locations_manager.set_location('mortuary_f1r1')
             )
         return NavigationDirective(
             'from_mortuary_f2r1_to_mortuary_f2r1_closed',

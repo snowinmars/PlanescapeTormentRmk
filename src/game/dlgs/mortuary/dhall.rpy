@@ -1,6 +1,6 @@
 ﻿init 10 python:
     from game.dlgs.mortuary.dhall_logic import DhallLogic
-    dhallLogic = DhallLogic(renpy.store.global_settings_manager)
+    dhallLogic = DhallLogic(renpy.store.global_state_manager)
 
     def logic_get_know_dhall_name():
         return dhall if dhallLogic.get_know_dhall_name() else dhall_unknown

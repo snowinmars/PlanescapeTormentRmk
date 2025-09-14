@@ -24,12 +24,12 @@ init 2 python:
 
 init 3 python:
     # engine warm up
-    from game.engine.event_manager import (EventManager)
-    from game.engine.settings_manager import (SettingsManager)
-    from game.engine.inventory_manager import (InventoryManager)
-    from game.engine.location_manager import (LocationManager)
-    from game.engine.character_manager import (CharacterManager)
-    from game.engine.journal_manager import (JournalManager)
+    from game.engine.events.events_manager import (EventsManager)
+    from game.engine.state.state_manager import (StateManager)
+    from game.engine.inventory.inventory_manager import (InventoryManager)
+    from game.engine.locations.locations_manager import (LocationsManager)
+    from game.engine.characters.characters_manager import (CharactersManager)
+    from game.engine.journal.journal_manager import (JournalManager)
 
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -37,18 +37,18 @@ init 3 python:
     from game.engine_data.characters.all_characters import (build_all_characters)
     from game.engine_data.journal.all_notes import (build_all_notes)
 
-    renpy.store.global_event_manager = EventManager(renpy.store.logger)
-    renpy.store.global_location_manager = LocationManager(renpy.store.global_event_manager)
-    renpy.store.global_character_manager = CharacterManager(renpy.store.global_event_manager)
-    renpy.store.global_journal_manager = JournalManager(renpy.store.global_event_manager)
-    renpy.store.global_settings_manager = SettingsManager(renpy.store.global_event_manager, renpy.store.global_character_manager, renpy.store.global_location_manager, renpy.store.global_journal_manager)
-    renpy.store.global_inventory_manager = InventoryManager(renpy.store.global_event_manager, lambda x: renpy.store.global_settings_manager.get_setting_value(x))
-
     logger = renpy.store.logger
+
+    renpy.store.global_events_manager = EventsManager(renpy.store.logger)
+    renpy.store.global_locations_manager = LocationsManager(renpy.store.global_events_manager)
+    renpy.store.global_characters_manager = CharactersManager(renpy.store.global_events_manager)
+    renpy.store.global_journal_manager = JournalManager(renpy.store.global_events_manager)
+    renpy.store.global_state_manager = StateManager(renpy.store.global_events_manager, renpy.store.global_characters_manager, renpy.store.global_locations_manager, renpy.store.global_journal_manager)
+    renpy.store.global_inventory_manager = InventoryManager(renpy.store.global_events_manager, lambda x: renpy.store.global_state_manager.get_setting_value(x))
 
     now = int(time.time())
     logger.info('Building settings manager…')
-    build_all_settings(renpy.store.global_settings_manager)
+    build_all_settings(renpy.store.global_state_manager)
     logger.info('Done building settings manager, took %s', int(time.time()) - now)
 
     now = int(time.time())
@@ -58,12 +58,12 @@ init 3 python:
 
     now = int(time.time())
     logger.info('Building characters…')
-    build_all_characters(renpy.store.global_character_manager)
+    build_all_characters(renpy.store.global_characters_manager)
     logger.info('Done building characters, took %s', int(time.time()) - now)
 
     now = int(time.time())
     logger.info('Building locations mapping…')
-    build_all_locations(renpy.store.global_location_manager)
+    build_all_locations(renpy.store.global_locations_manager)
     logger.info('Done building locations mapping, took %s', int(time.time()) - now)
 
     now = int(time.time())
@@ -84,13 +84,13 @@ init 3 python:
     config.keymap['character_screen'] = ['c']
     config.underlay.append(
         renpy.Keymap(
-            character_screen = Show("character_screen", character=renpy.store.global_settings_manager.character_manager.get_character('protagonist'))
+            character_screen = Show("character_screen", character=renpy.store.global_state_manager.characters_manager.get_character('protagonist'))
         )
     )
 
 
 label start:
-    show screen event_manager_display
+    show screen events_manager_display
     # show screen mouse_coordinates
     show screen inventory_button
     show screen character_screen_button
@@ -102,9 +102,9 @@ label start:
         "dev" if enable_dev:
             play music mortuary
             call quick_setup_as_mage from _call_quick_setup_as_mage
-            $ gsm = renpy.store.global_settings_manager
-            $ gcm = renpy.store.global_character_manager
-            $ glm = renpy.store.global_location_manager
+            $ gsm = renpy.store.global_state_manager
+            $ gcm = renpy.store.global_characters_manager
+            $ glm = renpy.store.global_locations_manager
             $ glm.set_location('mortuary_f2r1')
             $ gsm.set_morte_value(1)
             $ gsm.set_in_party_morte(True)

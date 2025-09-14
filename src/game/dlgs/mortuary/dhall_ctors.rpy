@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label dhall_speak:
@@ -13,19 +13,16 @@ label dhall_speak:
 
 
 label dhall_s5_ctor:
-    scene bg mortuary_f2r3
     show dhall_img default at center_left_down
     jump dhall_s5
 
 
 label dhall_s39_ctor: # -
-    scene bg mortuary_f2r3
     show dhall_img default at center_left_down
     jump dhall_s39
 
 
 label dhall_s40_ctor:
-    scene bg mortuary_f2r3
     show dhall_img default at center_left_down
     jump dhall_s40
 

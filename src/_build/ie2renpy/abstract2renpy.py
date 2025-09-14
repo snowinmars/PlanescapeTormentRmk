@@ -516,14 +516,14 @@ def _to_single_body(script):
     for line in script.splitlines():
         stripped_line = line.strip()
 
-        if 'self.settings_manager' in stripped_line: # current block is usefull
+        if 'self.state_manager' in stripped_line: # current block is usefull
             # Preserve indentation
             indent = re.match(r'^\s*', line).group(0)
             new_lines = []
             current_line = []
             in_comment = False
 
-            tokens = re.split(r'(\#\$\%|self\.settings_manager)', stripped_line)
+            tokens = re.split(r'(\#\$\%|self\.state_manager)', stripped_line)
             for token in tokens:
                 stripped_token = token.strip()
                 if stripped_token == '#$%':
@@ -531,13 +531,13 @@ def _to_single_body(script):
                     current_line.append(f'\n{indent}#$%')
                 elif stripped_token.endswith('%$#'):
                     current_line.append(f' {stripped_token}')
-                elif stripped_token == 'self.settings_manager':
+                elif stripped_token == 'self.state_manager':
                     if in_comment:
-                        current_line.append(f'\n{indent}self.settings_manager')
+                        current_line.append(f'\n{indent}self.state_manager')
                     else:
                         if current_line:
                             new_lines.append(''.join(current_line).rstrip())
-                        current_line = [indent, f'\n{indent}self.settings_manager']
+                        current_line = [indent, f'\n{indent}self.state_manager']
 
                 else:
                     if in_comment and stripped_token == '':

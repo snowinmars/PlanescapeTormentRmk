@@ -1,34 +1,34 @@
 class Zm782LogicGenerated:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r24709_condition(self):
-        return self.settings_manager.get_in_party_morte() \
-               and not self.settings_manager.get_has_intro_key()
+        return self.state_manager.get_in_party_morte() \
+               and not self.state_manager.get_has_intro_key()
 
 
     def r24712_condition(self):
-        return not self.settings_manager.get_in_party_morte() \
-               and not self.settings_manager.get_has_intro_key()
+        return not self.state_manager.get_in_party_morte() \
+               and not self.state_manager.get_has_intro_key()
 
 
     def r24713_condition(self):
-        return not self.settings_manager.get_has_intro_key()
+        return not self.state_manager.get_has_intro_key()
 
 
     def r24714_condition(self):
-        return self.settings_manager.get_has_intro_key()
+        return self.state_manager.get_has_intro_key()
 
 
 class Zm782Logic(Zm782LogicGenerated):
-    def __init__(self, settings_manager):
-        super().__init__(settings_manager)
+    def __init__(self, state_manager):
+        super().__init__(state_manager)
 
 
     def pick_key_up(self):
-        self.settings_manager.set_has_intro_key(True)
+        self.state_manager.set_has_intro_key(True)
 
 
     def s24_condition(self):
-        return self.settings_manager.get_in_party_morte()
+        return self.state_manager.get_in_party_morte()

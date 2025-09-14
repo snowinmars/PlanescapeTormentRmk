@@ -1,6 +1,6 @@
 ﻿init 10 python:
     from game.dlgs.inventory.copearc_logic import CopearcLogic
-    copearcLogic = CopearcLogic(renpy.store.global_settings_manager)
+    copearcLogic = CopearcLogic(renpy.store.global_state_manager)
 
 
 # ###

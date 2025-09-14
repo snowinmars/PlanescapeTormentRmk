@@ -72,8 +72,8 @@ init python:
 
 
 init 10 python:
-    gsm = renpy.store.global_settings_manager
-    glm = renpy.store.global_location_manager
+    gsm = renpy.store.global_state_manager
+    glm = renpy.store.global_locations_manager
 
 
 # ###
@@ -85,7 +85,6 @@ init 10 python:
 label ddeathon_init:
     $ glm.set_location('death_of_names')
     $ gsm.set_meet_death_of_names(True)
-    scene bg death_of_names
     show death_of_names_img default at center_left_down
     return
 

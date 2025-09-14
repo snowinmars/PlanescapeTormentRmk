@@ -1,6 +1,6 @@
 ﻿init 10 python:
     from game.dlgs.mortuary.vaxis_logic import VaxisLogic
-    vaxisLogic = VaxisLogic(renpy.store.global_settings_manager)
+    vaxisLogic = VaxisLogic(renpy.store.global_state_manager)
 
     def logic_get_know_vaxis_name():
         return vaxis if vaxisLogic.get_know_vaxis_name() else vaxis_unknown

@@ -1,12 +1,12 @@
 import unittest
 import inspect
 
-from game.engine.event_manager import (EventManager)
-from game.engine.settings_manager import (SettingsManager)
-from game.engine.inventory_manager import (InventoryManager)
-from game.engine.location_manager import (LocationManager)
-from game.engine.character_manager import (CharacterManager)
-from game.engine.journal_manager import (JournalManager)
+from game.engine.events.events_manager import (EventsManager)
+from game.engine.state.state_manager import (StateManager)
+from game.engine.inventory.inventory_manager import (InventoryManager)
+from game.engine.locations.locations_manager import (LocationsManager)
+from game.engine.characters.characters_manager import (CharactersManager)
+from game.engine.journal.journal_manager import (JournalManager)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -17,17 +17,18 @@ from game.engine_data.journal.all_notes import (build_all_notes)
 
 class LogicTest(unittest.TestCase):
     def setUp(self):
-        self.event_manager = EventManager()
-        self.location_manager = LocationManager(self.event_manager)
-        self.character_manager = CharacterManager(self.event_manager)
-        self.journal_manager = JournalManager(self.event_manager)
-        self.settings_manager = SettingsManager(self.event_manager, self.character_manager, self.location_manager, self.journal_manager)
-        self.inventory_manager = InventoryManager(self.event_manager, lambda x: self.settings_manager.get_setting_value(x))
+        self.logger = self.mock_logger(False, './logs')
+        self.events_manager = EventsManager(self.logger)
+        self.locations_manager = LocationsManager(self.events_manager)
+        self.characters_manager = CharactersManager(self.events_manager)
+        self.journal_manager = JournalManager(self.events_manager)
+        self.state_manager = StateManager(self.events_manager, self.characters_manager, self.locations_manager, self.journal_manager)
+        self.inventory_manager = InventoryManager(self.events_manager, lambda x: self.state_manager.get_setting_value(x))
 
-        build_all_settings(self.settings_manager)
+        build_all_settings(self.state_manager)
         build_all_inventory(self.inventory_manager)
-        build_all_characters(self.character_manager)
-        build_all_locations(self.location_manager)
+        build_all_characters(self.characters_manager)
+        build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
 
         self.target_class = None  # python is so meme
@@ -111,23 +112,23 @@ class LogicTest(unittest.TestCase):
 
     def _init_with_location(self, location_id, action_lambda, talked_lambda):
         talkedTo_before = talked_lambda()
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location_id)
+        self.assertNotEqual(self.state_manager.locations_manager.get_location(), location_id)
         action_lambda()
         talkedTo_after = talked_lambda()
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location_id)
+        self.assertEqual(self.state_manager.locations_manager.get_location(), location_id)
         self.assertEqual(talkedTo_before + 1, talkedTo_after)
 
 
     def _step_into_location_action(self, location_id, action_lambda):
-        self.assertNotEqual(self.settings_manager.location_manager.get_location(), location_id)
+        self.assertNotEqual(self.state_manager.locations_manager.get_location(), location_id)
         action_lambda()
-        self.assertEqual(self.settings_manager.location_manager.get_location(), location_id)
+        self.assertEqual(self.state_manager.locations_manager.get_location(), location_id)
 
 
     def _pickup_journal_note_action(self, note_id, action_lambda):
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
         action_lambda()
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
 
 
     def _change_prop_once(self, prop_labmda, delta, action_lambda):
@@ -173,24 +174,24 @@ class LogicTest(unittest.TestCase):
 
 
     def _prop_compare_gt_condition(self, who, prop, value, action_lambda):
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.state_manager.characters_manager.set_property(who, prop, value - 1)
         self.assertFalse(action_lambda())
 
-        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.state_manager.characters_manager.set_property(who, prop, value)
         self.assertFalse(action_lambda())
 
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.state_manager.characters_manager.set_property(who, prop, value + 1)
         self.assertTrue(action_lambda())
 
 
     def _prop_compare_lt_condition(self, who, prop, value, action_lambda):
-        self.settings_manager.character_manager.set_property(who, prop, value - 1)
+        self.state_manager.characters_manager.set_property(who, prop, value - 1)
         self.assertTrue(action_lambda())
 
-        self.settings_manager.character_manager.set_property(who, prop, value)
+        self.state_manager.characters_manager.set_property(who, prop, value)
         self.assertFalse(action_lambda())
 
-        self.settings_manager.character_manager.set_property(who, prop, value + 1)
+        self.state_manager.characters_manager.set_property(who, prop, value + 1)
         self.assertFalse(action_lambda())
 
 
@@ -241,12 +242,25 @@ class LogicTest(unittest.TestCase):
 
 
     def _is_visited_external_location_condition(self, external, action_lambda):
-        self.assertFalse(self.settings_manager.location_manager.is_visited(external))
+        self.assertFalse(self.state_manager.locations_manager.is_visited(external))
         self.assertFalse(action_lambda())
-        self.settings_manager.location_manager.set_location(external)
+        self.state_manager.locations_manager.set_location(external)
         self.assertTrue(action_lambda())
 
 
     def _not_is_visited_external_location_condition(self, external, action_lambda):
-        self.assertFalse(self.settings_manager.location_manager.is_visited(external))
+        self.assertFalse(self.state_manager.locations_manager.is_visited(external))
         self.assertTrue(action_lambda())
+
+
+    def mock_logger(self, emscripten, logs_folder):
+        return MockLogger()
+
+
+class MockLogger():
+    def debug(self, msg):
+        return
+    def info(self, msg):
+        return
+    def warn(self, msg):
+        return

@@ -1,15 +1,15 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.event_manager import (EventManager)
-from game.engine.inventory_item import (InventoryItem)
-from game.engine.inventory_manager import (InventoryManager)
+from game.engine.events.events_manager import (EventsManager)
+from game.engine.inventory.inventory_item import (InventoryItem)
+from game.engine.inventory.inventory_manager import (InventoryManager)
 
 
 class InventoryManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.inventory_manager)
-        self.assertIsNotNone(self.inventory_manager._event_manager)
+        self.assertIsNotNone(self.inventory_manager._events_manager)
         self.assertIsNotNone(self.inventory_manager._inventory_items)
         self.assertNotEqual(len(self.inventory_manager._inventory_items), 0)
         self.assertIsNotNone(self.inventory_manager._player_has_item_callback)
@@ -48,8 +48,8 @@ class InventoryManagerTest(LogicTest):
         inventory_item2 = _create_inventory_item('_2')
         delta = 2
 
-        event_manager = EventManager()
-        inventory_manager = InventoryManager(event_manager, lambda x: x == inventory_item2.settings_id)
+        events_manager = EventsManager(self.logger)
+        inventory_manager = InventoryManager(events_manager, lambda x: x == inventory_item2.settings_id)
 
         before = len(inventory_manager._inventory_items)
 
