@@ -8,12 +8,12 @@ from game.engine_data.menus.mortuary.f2r1.loot_logic import (MortuaryF2R1LootLog
 class MortuaryF2R1LootLogicTest(LogicTest):
     def setUp(self):
         super(MortuaryF2R1LootLogic, self).setUp()
-        self.logic = MortuaryF2R1LootLogic(self.settings_manager)
+        self.logic = MortuaryF2R1LootLogic(self.state_manager)
 
 
     def test_prybar(self):
         self._false_then_true_action(
-            self.settings_manager.get_has_scalpel,
+            self.state_manager.get_has_scalpel,
             self.logic.scalpel
         )
 

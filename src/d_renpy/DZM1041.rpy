@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zm1041_logic import Zm1041Logic
-    zm1041Logic = Zm1041Logic(renpy.store.global_settings_manager)
+    zm1041Logic = Zm1041Logic(renpy.store.global_state_manager)
 
 
 # ###

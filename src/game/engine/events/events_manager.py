@@ -10,7 +10,7 @@ class Event:
     text: str
 
 
-class EventManager:
+class EventsManager:
     def __init__(self, logger, max_entries = 100):
         self._events = deque(maxlen=max_entries)
         self.logger = logger

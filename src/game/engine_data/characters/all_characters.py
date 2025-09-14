@@ -1,4 +1,4 @@
-from game.engine.character import (Character)
+from game.engine.characters.character import (Character)
 
 def build_all_characters(gcm):
     protagonist = Character(

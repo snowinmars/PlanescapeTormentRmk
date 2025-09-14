@@ -1,13 +1,13 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.event_manager import (EventManager)
+from game.engine.events.events_manager import (EventsManager)
 
 
 class JournalManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.journal_manager)
-        self.assertIsNotNone(self.journal_manager._event_manager)
+        self.assertIsNotNone(self.journal_manager._events_manager)
         self.assertIsNotNone(self.journal_manager._notes)
         self.assertEqual(len(self.journal_manager._notes), 0)
 

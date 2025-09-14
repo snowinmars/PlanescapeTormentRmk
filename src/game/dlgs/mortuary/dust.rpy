@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary.dust_logic import DustLogic
-    dustLogic = DustLogic(renpy.store.global_settings_manager)
+    dustLogic = DustLogic(renpy.store.global_state_manager)
 
 
 # ###

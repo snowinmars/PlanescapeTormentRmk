@@ -1,68 +1,65 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label deionarra_speak:
     # IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     if  gsm.get_deionarra_value() == 0 and \
-        gsm.location_manager.get_current_internal() != 'AR1203' and \
-        gsm.location_manager.get_current_internal() != 'AR1200':
+        gsm.locations_manager.get_current_internal() != 'AR1203' and \
+        gsm.locations_manager.get_current_internal() != 'AR1200':
         jump deionarra_s1_ctor
 
     # IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     if  gsm.get_deionarra_value() == 2 and \
-        gsm.location_manager.get_current_internal() != 'AR1203' and \
-        gsm.location_manager.get_current_internal() != 'AR1200':
+        gsm.locations_manager.get_current_internal() != 'AR1203' and \
+        gsm.locations_manager.get_current_internal() != 'AR1200':
         jump deionarra_s4_ctor
 
     # IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1) !Global("Current_Area","GLOBAL",1203) !Global("Current_Area","GLOBAL",1200)
     if  gsm.get_deionarra_value() == 1 and \
-        gsm.location_manager.get_current_internal() != 'AR1203' and \
-        gsm.location_manager.get_current_internal() != 'AR1200':
+        gsm.locations_manager.get_current_internal() != 'AR1203' and \
+        gsm.locations_manager.get_current_internal() != 'AR1200':
         jump deionarra_s5_ctor
 
     # IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
     if  gsm.get_deionarra_value() == 0 and \
-        gsm.location_manager.get_current_internal() == 'AR1203':
+        gsm.locations_manager.get_current_internal() == 'AR1203':
         jump deionarra_s49_ctor
 
     # IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1203)
     if  gsm.get_deionarra_value() > 0 and \
-        gsm.location_manager.get_current_internal() == 'AR1203':
+        gsm.locations_manager.get_current_internal() == 'AR1203':
         jump deionarra_s50_ctor
 
     # from 60.0 61.0 # IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",1)
-    if  gsm.location_manager.get_current_internal() = 'AR1200' and \
+    if  gsm.locations_manager.get_current_internal() = 'AR1200' and \
         gsm.get_1200_cut_scene_2():
         jump deionarra_s62_ctor
 
     # IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */ ~  Global("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
     if  gsm.get_deionarra_value() == 0 and \
-        gsm.location_manager.get_current_internal() == 'AR1200' and \
+        gsm.locations_manager.get_current_internal() == 'AR1200' and \
         not gsm.get_1200_cut_scene_2():
         jump deionarra_s60_ctor
 
     # IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */ ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",1200) Global("1200_Cut_Scene_2","GLOBAL",0)
     if  gsm.get_deionarra_value() > 0 and \
-        gsm.location_manager.get_current_internal() == 'AR1200' and \
+        gsm.locations_manager.get_current_internal() == 'AR1200' and \
         not gsm.get_1200_cut_scene_2():
         jump deionarra_s61_ctor
 
 
 label deionarra_s1_ctor:
-    scene bg mortuary_f1r2
     show deionarra_img default at center_left_down
     jump deionarra_s1
 
 
 label deionarra_s4_ctor:
-    scene bg mortuary_f1r2
     show deionarra_img default at center_left_down
     jump deionarra_s4
 
 
 label deionarra_s5_ctor:
-    scene bg mortuary_f1r2
     show deionarra_img default at center_left_down
     jump deionarra_s5
 

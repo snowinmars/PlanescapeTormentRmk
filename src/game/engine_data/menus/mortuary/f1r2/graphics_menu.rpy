@@ -13,7 +13,7 @@ label mortuary_f1r2_graphics_menu:
 
 
 screen mortuary_f1r2_graphics_menu_screen():
-    $ gsm = renpy.store.global_settings_manager
+    $ gsm = renpy.store.global_state_manager
     use abstract_location_menu_screen(
         'bg mortuary_f1r2',
         [

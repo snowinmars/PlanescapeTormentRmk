@@ -8,22 +8,22 @@ from game.dlgs.mortuary.morte2_logic import (Morte2LogicGenerated, Morte2Logic)
 class Morte2LogicTest(LogicTest):
     def setUp(self):
         super(Morte2LogicTest, self).setUp()
-        self.logic = Morte2Logic(self.settings_manager)
+        self.logic = Morte2Logic(self.state_manager)
 
 
     def test_s0_action(self):
-        self.settings_manager.set_warning(1)
+        self.state_manager.set_warning(1)
         self._integer_equals_action(
-            self.settings_manager.get_mortuary_walkthrough,
+            self.state_manager.get_mortuary_walkthrough,
             2,
             self.logic.s0_action
         )
 
 
     def test_s11_action(self):
-        self.settings_manager.set_mortuary_walkthrough(1)
+        self.state_manager.set_mortuary_walkthrough(1)
         self._integer_equals_action(
-            self.settings_manager.get_mortuary_walkthrough,
+            self.state_manager.get_mortuary_walkthrough,
             3,
             self.logic.s11_action
         )
@@ -32,33 +32,33 @@ class Morte2LogicTest(LogicTest):
 class Morte2LogicGeneratedTest(LogicTest):
     def setUp(self):
         super(Morte2LogicGeneratedTest, self).setUp()
-        self.logic = Morte2LogicGenerated(self.settings_manager)
+        self.logic = Morte2LogicGenerated(self.state_manager)
 
 
     def test_r41145_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_morte_mortuary_walkthrough_1,
+            self.state_manager.get_morte_mortuary_walkthrough_1,
             self.logic.r41145_action
         )
 
 
     def test_r41146_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_morte_mortuary_walkthrough_1,
+            self.state_manager.get_morte_mortuary_walkthrough_1,
             self.logic.r41146_action
         )
 
 
     def test_r41147_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_morte_mortuary_walkthrough_1,
+            self.state_manager.get_morte_mortuary_walkthrough_1,
             self.logic.r41147_action
         )
 
 
     def test_r41148_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_morte_mortuary_walkthrough_1,
+            self.state_manager.get_morte_mortuary_walkthrough_1,
             self.logic.r41148_action
         )
 
@@ -74,28 +74,28 @@ class Morte2LogicGeneratedTest(LogicTest):
 
     def test_r41251_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_in_party_morte,
+            self.state_manager.get_in_party_morte,
             self.logic.r41251_action
         )
 
 
     def test_r41255_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_in_party_morte,
+            self.state_manager.get_in_party_morte,
             self.logic.r41255_action
         )
 
 
     def test_r41258_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_in_party_morte,
+            self.state_manager.get_in_party_morte,
             self.logic.r41258_action
         )
 
 
     def test_r41263_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_morte_mortuary_walkthrough_2,
+            self.state_manager.get_morte_mortuary_walkthrough_2,
             self.logic.r41263_action
         )
 
@@ -115,182 +115,182 @@ class Morte2LogicGeneratedTest(LogicTest):
 
     def test_r41181_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41181_condition
         )
 
 
     def test_r41182_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41182_condition
         )
 
 
     def test_r41184_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41184_condition
         )
 
 
     def test_r41185_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_has_bandages(x),
+            lambda x: self.state_manager.set_has_bandages(x),
             self.logic.r41185_condition
         )
 
 
     def test_r41186_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41186_condition
         )
 
 
     def test_r41187_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41187_condition
         )
 
 
     def test_r41191_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41191_condition
         )
 
 
     def test_r41192_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41192_condition
         )
 
 
     def test_r41196_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41196_condition
         )
 
 
     def test_r41197_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41197_condition
         )
 
 
     def test_r41201_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41201_condition
         )
 
 
     def test_r41203_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41203_condition
         )
 
 
     def test_r41206_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41206_condition
         )
 
 
     def test_r41207_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41207_condition
         )
 
 
     def test_r41210_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41210_condition
         )
 
 
     def test_r41211_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41211_condition
         )
 
 
     def test_r41214_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41214_condition
         )
 
 
     def test_r41215_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41215_condition
         )
 
 
     def test_r41219_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41219_condition
         )
 
 
     def test_r41220_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41220_condition
         )
 
 
     def test_r41223_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41223_condition
         )
 
 
     def test_r41224_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41224_condition
         )
 
 
     def test_r41227_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41227_condition
         )
 
 
     def test_r41228_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41228_condition
         )
 
 
     def test_r41231_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41231_condition
         )
 
 
     def test_r41232_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r41232_condition
         )
 

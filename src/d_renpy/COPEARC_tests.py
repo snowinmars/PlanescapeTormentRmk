@@ -17,7 +17,7 @@ class CopearcLogicTest(LogicTest):
         delta = 250
 
         self._change_prop(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.settings_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r46725_action
         )
@@ -29,7 +29,7 @@ class CopearcLogicTest(LogicTest):
         delta = 250
 
         self._change_prop(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.settings_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r46728_action
         )

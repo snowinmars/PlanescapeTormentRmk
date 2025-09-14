@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label zm1664_speak:
@@ -8,7 +8,6 @@ label zm1664_speak:
 
 
 label zm1664_s0_ctor:
-    scene bg mortuary_f2r4
     show zm1664_img default at center_left_down
     jump zm1664_s0
 

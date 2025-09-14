@@ -1,7 +1,7 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.character import (Character)
+from game.engine.characters.character import (Character)
 
 
 class CharacterTest(LogicTest):

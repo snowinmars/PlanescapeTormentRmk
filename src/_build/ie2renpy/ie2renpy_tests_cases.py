@@ -30,7 +30,7 @@ test_tree1 = {
 test_result1_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -47,12 +47,12 @@ label area_s19: # from 1.3
 '''.strip() + '\n'
 test_result1_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def j38205_s19_action(self):
-        self.settings_manager.journal_manager.update_journal('38205')
+        self.state_manager.journal_manager.update_journal('38205')
         #$% .register('38205', 'Недавно я встретил тленную-бальзамировщицу, которая оказалась «тифлингом», тем, у кого в жилах течет кровь нечисти. По всей видимости, кровь нечистых искажает их тела и, в некоторых случаях, также затрагивает и рассудок. Как сказал Морт, тифлингов в округе достаточно много... что может означать, что нечисти здесь тоже не меньше.') %$#
 '''.strip() + '\n'
 test_result1_tests = f'''
@@ -66,7 +66,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_j38205_s19_action(self):
@@ -123,7 +123,7 @@ test_tree2 = {
 test_result2_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -139,8 +139,8 @@ label area_s20: # from 5.2 5.4
 '''.strip() + '\n'
 test_result2_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 '''.strip() + '\n'
 test_result2_tests = f'''
 import unittest
@@ -153,7 +153,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
 if __name__ == '__main__':
@@ -227,7 +227,7 @@ test_tree3 = {
 test_result3_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -258,24 +258,24 @@ label area_s22: # from 15.2 25.1 27.1
 '''.strip() + '\n'
 test_result3_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r3501_action(self):
-        self.settings_manager.gain_experience('party', 250)
-        self.settings_manager.set_embalm_key_quest(2)
-        self.settings_manager.set_has_keyem(True)
+        self.state_manager.gain_experience('party', 250)
+        self.state_manager.set_embalm_key_quest(2)
+        self.state_manager.set_has_keyem(True)
 
 
     def r3501_condition(self):
-        return self.settings_manager.get_embalm_key_quest() == 1 and \\
-               not self.settings_manager.get_has_keyem()
+        return self.state_manager.get_embalm_key_quest() == 1 and \\
+               not self.state_manager.get_has_keyem()
 
 
     def r3502_condition(self):
-        return self.settings_manager.get_embalm_key_quest() == 1 and \\
-               self.settings_manager.get_has_keyem()
+        return self.state_manager.get_embalm_key_quest() == 1 and \\
+               self.state_manager.get_has_keyem()
 '''.strip() + '\n'
 test_result3_tests = f'''
 import unittest
@@ -288,7 +288,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r3501_action(self):
@@ -298,48 +298,48 @@ class AreaLogicTest(LogicTest):
         embalm_key_quest_before = 1
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
-        self.settings_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.settings_manager.set_has_keyem(False)
+        self.state_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.state_manager.set_has_keyem(False)
 
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.settings_manager.get_has_keyem())
+        experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_before)
+        self.assertFalse(self.state_manager.get_has_keyem())
 
         self.logic.r3501_action()
 
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.settings_manager.get_has_keyem())
+        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_after)
+        self.assertTrue(self.state_manager.get_has_keyem())
 
         self.logic.r3501_action()
 
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.settings_manager.get_has_keyem())
+        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
+        self.assertTrue(self.state_manager.get_has_keyem())
 
 
     def test_r3501_condition(self):
-        self.settings_manager.set_embalm_key_quest(0)
-        self.settings_manager.set_has_keyem(True)
+        self.state_manager.set_embalm_key_quest(0)
+        self.state_manager.set_has_keyem(True)
 
         self.assertFalse(self.logic.r3501_condition())
 
-        self.settings_manager.set_embalm_key_quest(1)
-        self.settings_manager.set_has_keyem(False)
+        self.state_manager.set_embalm_key_quest(1)
+        self.state_manager.set_has_keyem(False)
 
         self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
-        self.settings_manager.set_embalm_key_quest(0)
-        self.settings_manager.set_has_keyem(False)
+        self.state_manager.set_embalm_key_quest(0)
+        self.state_manager.set_has_keyem(False)
 
         self.assertFalse(self.logic.r3502_condition())
 
-        self.settings_manager.set_embalm_key_quest(1)
-        self.settings_manager.set_has_keyem(True)
+        self.state_manager.set_embalm_key_quest(1)
+        self.state_manager.set_has_keyem(True)
 
         self.assertTrue(self.logic.r3502_condition())
 
@@ -385,7 +385,7 @@ test_tree4 = {
 test_result4_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -402,8 +402,8 @@ label area_s16: # from 15.0
 '''.strip() + '\n'
 test_result4_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def s16_action(self):
@@ -424,7 +424,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_s16_action(self):
@@ -470,7 +470,7 @@ test_tree5 = {
 test_result5_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -487,12 +487,12 @@ label area_s178: # -
 '''.strip() + '\n'
 test_result5_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def s178_action(self):
-        self.settings_manager.set_know_mimir(True)
+        self.state_manager.set_know_mimir(True)
 '''.strip() + '\n'
 test_result5_tests = f'''
 import unittest
@@ -505,12 +505,12 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_s178_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_know_mimir,
+            self.state_manager.get_know_mimir,
             self.logic.s178_action
         )
 
@@ -557,7 +557,7 @@ test_tree6 = {
 test_result6_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -574,8 +574,8 @@ label area_s16: # from 15.0
 '''.strip() + '\n'
 test_result6_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def s16_action(self):
@@ -596,7 +596,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_s16_action(self):
@@ -691,7 +691,7 @@ test_tree7 = {
 test_result7_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -726,8 +726,8 @@ label area_s0: # - # IF ~  Global("Appearance","GLOBAL",1)
 '''.strip() + '\n'
 test_result7_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 '''.strip() + '\n'
 test_result7_tests = f'''
 import unittest
@@ -740,7 +740,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
 if __name__ == '__main__':
@@ -784,7 +784,7 @@ test_tree8 = {
 test_result8_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -803,8 +803,8 @@ label area_s138: # from 137.0
 '''.strip() + '\n'
 test_result8_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 '''.strip() + '\n'
 test_result8_tests = f'''
 import unittest
@@ -817,7 +817,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
 if __name__ == '__main__':
@@ -872,7 +872,7 @@ test_tree9 = {
 test_result9_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -894,20 +894,20 @@ label area_s179: # -
 '''.strip() + '\n'
 test_result9_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def s179_action(self):
-        self.settings_manager.inc_once_morte_mimir('globalmorte_mimir')
+        self.state_manager.inc_once_morte_mimir('globalmorte_mimir')
 
 
     def s179_condition(self):
-        return self.settings_manager.get_morte_mimir() < 2
+        return self.state_manager.get_morte_mimir() < 2
 
 
     def r65537_condition(self):
-        return self.settings_manager.get_morte_mimir() > 1
+        return self.state_manager.get_morte_mimir() > 1
 '''.strip() + '\n'
 test_result9_tests = f'''
 import unittest
@@ -920,12 +920,12 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_s179_action(self):
         self._integer_inc_once_action(
-            self.settings_manager.get_morte_mimir,
+            self.state_manager.get_morte_mimir,
             1,
             self.logic.s179_action
         )
@@ -933,7 +933,7 @@ class AreaLogicTest(LogicTest):
 
     def test_s179_condition(self):
         self._integer_lt_condition(
-            lambda x: self.settings_manager.set_morte_mimir(x),
+            lambda x: self.state_manager.set_morte_mimir(x),
             2,
             self.logic.s179_condition
         )
@@ -941,7 +941,7 @@ class AreaLogicTest(LogicTest):
 
     def test_r65537_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_morte_mimir(x),
+            lambda x: self.state_manager.set_morte_mimir(x),
             1,
             self.logic.r65537_condition
         )
@@ -986,7 +986,7 @@ test_tree10 = {
 test_result10_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1002,8 +1002,8 @@ label area_s206: # from 204.0
 '''.strip() + '\n'
 test_result10_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 '''.strip() + '\n'
 test_result10_tests = f'''
 import unittest
@@ -1016,7 +1016,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
 if __name__ == '__main__':
@@ -1076,7 +1076,7 @@ test_tree11 = {
 test_result11_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1098,16 +1098,16 @@ label area_s518: # from 515.0 517.0
 '''.strip() + '\n'
 test_result11_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def s518_condition(self):
-        return self.settings_manager.get_in_party_dakkon()
+        return self.state_manager.get_in_party_dakkon()
 
 
     def r54105_condition(self):
-        return not self.settings_manager.get_in_party_dakkon()
+        return not self.state_manager.get_in_party_dakkon()
 '''.strip() + '\n'
 test_result11_tests = f'''
 import unittest
@@ -1120,19 +1120,19 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_s518_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_in_party_dakkon(x),
+            lambda x: self.state_manager.set_in_party_dakkon(x),
             self.logic.s518_condition
         )
 
 
     def test_r54105_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_in_party_dakkon(x),
+            lambda x: self.state_manager.set_in_party_dakkon(x),
             self.logic.r54105_condition
         )
 
@@ -1211,7 +1211,7 @@ test_tree12 = {
 test_result12_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1243,15 +1243,15 @@ label area_s0: # -
 '''.strip() + '\n'
 test_result12_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r17833_action(self):
-        self.settings_manager.set_has_intro_key(True)
-        self.settings_manager.set_morte_value(1)
-        self.settings_manager.set_read_scars(True)
-        self.settings_manager.set_in_party_morte(True)
+        self.state_manager.set_has_intro_key(True)
+        self.state_manager.set_morte_value(1)
+        self.state_manager.set_read_scars(True)
+        self.state_manager.set_in_party_morte(True)
 '''.strip() + '\n'
 test_result12_tests = f'''
 import unittest
@@ -1264,36 +1264,36 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r17833_action(self):
-        self.settings_manager.set_has_intro_key(False)
+        self.state_manager.set_has_intro_key(False)
         morte_value_before = 0
         morte_value_after = 1
         morte_value_after_once = 1
-        self.settings_manager.set_morte_value(morte_value_before)
-        self.settings_manager.set_read_scars(False)
-        self.settings_manager.set_in_party_morte(False)
+        self.state_manager.set_morte_value(morte_value_before)
+        self.state_manager.set_read_scars(False)
+        self.state_manager.set_in_party_morte(False)
 
-        self.assertFalse(self.settings_manager.get_has_intro_key())
-        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_before)
-        self.assertFalse(self.settings_manager.get_read_scars())
-        self.assertFalse(self.settings_manager.get_in_party_morte())
-
-        self.logic.r17833_action()
-
-        self.assertTrue(self.settings_manager.get_has_intro_key())
-        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after)
-        self.assertTrue(self.settings_manager.get_read_scars())
-        self.assertTrue(self.settings_manager.get_in_party_morte())
+        self.assertFalse(self.state_manager.get_has_intro_key())
+        self.assertEqual(self.state_manager.get_morte_value(), morte_value_before)
+        self.assertFalse(self.state_manager.get_read_scars())
+        self.assertFalse(self.state_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.settings_manager.get_has_intro_key())
-        self.assertEqual(self.settings_manager.get_morte_value(), morte_value_after_once)
-        self.assertTrue(self.settings_manager.get_read_scars())
-        self.assertTrue(self.settings_manager.get_in_party_morte())
+        self.assertTrue(self.state_manager.get_has_intro_key())
+        self.assertEqual(self.state_manager.get_morte_value(), morte_value_after)
+        self.assertTrue(self.state_manager.get_read_scars())
+        self.assertTrue(self.state_manager.get_in_party_morte())
+
+        self.logic.r17833_action()
+
+        self.assertTrue(self.state_manager.get_has_intro_key())
+        self.assertEqual(self.state_manager.get_morte_value(), morte_value_after_once)
+        self.assertTrue(self.state_manager.get_read_scars())
+        self.assertTrue(self.state_manager.get_in_party_morte())
 
 
 if __name__ == '__main__':
@@ -1335,7 +1335,7 @@ test_tree13 = {
 test_result13_rpy = f'''
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1351,8 +1351,8 @@ label area_s0: # -
 '''.strip() + '\n'
 test_result13_logic = f'''
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 '''.strip() + '\n'
 test_result13_tests = f'''
 import unittest
@@ -1365,7 +1365,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
 if __name__ == '__main__':
@@ -1436,7 +1436,7 @@ test_tree14 = {
 test_result14_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1470,29 +1470,29 @@ label area_s2: # from 1.0 1.1
 """.strip() + '\n'
 test_result14_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r707_action(self):
-        self.settings_manager.set_deionarra_value(1)
+        self.state_manager.set_deionarra_value(1)
 
 
     def r708_action(self):
-        self.settings_manager.set_deionarra_value(1)
+        self.state_manager.set_deionarra_value(1)
 
 
     def r709_action(self):
-        self.settings_manager.set_deionarra_value(1)
+        self.state_manager.set_deionarra_value(1)
 
 
     def r708_condition(self):
-        return self.settings_manager.character_manager.get_property('protagonist', 'intelligence') > 11 and \\
-               self.settings_manager.character_manager.get_property('protagonist', 'charisma') < 11
+        return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 11 and \\
+               self.state_manager.characters_manager.get_property('protagonist', 'charisma') < 11
 
 
     def r709_condition(self):
-        return self.settings_manager.character_manager.get_property('protagonist', 'charisma') > 10
+        return self.state_manager.characters_manager.get_property('protagonist', 'charisma') > 10
 """.strip() + '\n'
 test_result14_tests = """
 import unittest
@@ -1505,31 +1505,31 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r707_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             1,
             self.logic.r707_action
         )
 
 
     def test_r708_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             1,
             self.logic.r708_action
         )
 
 
     def test_r709_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             1,
             self.logic.r709_action
         )
@@ -1543,13 +1543,13 @@ class AreaLogicTest(LogicTest):
         prop_charisma = 'charisma'
         delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.state_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma)
 
         self.assertFalse(self.logic.r708_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.state_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
         self.assertTrue(self.logic.r708_condition())
 
@@ -1608,7 +1608,7 @@ test_tree15 = {
 test_result15_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1629,12 +1629,12 @@ label area_s29: # from 24.0
 """.strip() + '\n'
 test_result15_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def j26087_s29_r810_action(self):
-        self.settings_manager.journal_manager.update_journal('26087')
+        self.state_manager.journal_manager.update_journal('26087')
         #$% .register('26087', 'Я встретил призрак женщины по имени Дейонарра, и она предсказала мне, что я столкнусь с тремя врагами, но «ни один из них не был бы мне ровней в период полного расцвета моих сил». Они — тени зла, добра и нейтральности, которых породили и извратили законы планов. Она сказала, что я попаду в тюрьму, построенную из «сожалений и скорби», где «даже тени теряют рассудок». Там меня попросят принести ужасную жертву... чтобы обрести покой, я должен «уничтожить то, что удерживает меня в живых, и отринуть свое бессмертие».') %$#
 """.strip() + '\n'
 test_result15_tests = """
@@ -1648,7 +1648,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_j26087_s29_r810_action(self):
@@ -1759,7 +1759,7 @@ test_tree16 = {
 test_result16_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1791,17 +1791,17 @@ label area_s26: # from 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
 """.strip() + '\n'
 test_result16_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r6081_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6082_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -1811,17 +1811,17 @@ class AreaLogic:
 
 
     def r6081_condition(self):
-        return self.settings_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.get_morte_deionarra_quip_1()
 
 
     def r6082_condition(self):
-        return self.settings_manager.get_in_party_morte() and \\
-               not self.settings_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.get_in_party_morte() and \\
+               not self.state_manager.get_morte_deionarra_quip_1()
 
 
     def r13257_condition(self):
-        return not self.settings_manager.get_in_party_morte() and \\
-               not self.settings_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.get_in_party_morte() and \\
+               not self.state_manager.get_morte_deionarra_quip_1()
 """.strip() + '\n'
 test_result16_tests = """
 import unittest
@@ -1834,22 +1834,22 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r6081_action(self):
-        self.settings_manager.set_deionarra_value(3)
+        self.state_manager.set_deionarra_value(3)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             2,
             self.logic.r6081_action
         )
 
 
     def test_r6082_action(self):
-        self.settings_manager.set_deionarra_value(3)
+        self.state_manager.set_deionarra_value(3)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             2,
             self.logic.r6082_action
         )
@@ -1861,31 +1861,31 @@ class AreaLogicTest(LogicTest):
 
     def test_r6081_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_deionarra_quip_1(x),
+            lambda x: self.state_manager.set_morte_deionarra_quip_1(x),
             self.logic.r6081_condition
         )
 
 
     def test_r6082_condition(self):
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_morte_deionarra_quip_1(True)
+        self.state_manager.set_in_party_morte(False)
+        self.state_manager.set_morte_deionarra_quip_1(True)
 
         self.assertFalse(self.logic.r6082_condition())
 
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_morte_deionarra_quip_1(False)
+        self.state_manager.set_in_party_morte(True)
+        self.state_manager.set_morte_deionarra_quip_1(False)
 
         self.assertTrue(self.logic.r6082_condition())
 
 
     def test_r13257_condition(self):
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_morte_deionarra_quip_1(True)
+        self.state_manager.set_in_party_morte(True)
+        self.state_manager.set_morte_deionarra_quip_1(True)
 
         self.assertFalse(self.logic.r13257_condition())
 
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_morte_deionarra_quip_1(False)
+        self.state_manager.set_in_party_morte(False)
+        self.state_manager.set_morte_deionarra_quip_1(False)
 
         self.assertTrue(self.logic.r13257_condition())
 
@@ -1941,7 +1941,7 @@ test_tree17 = {
 test_result17_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -1965,14 +1965,14 @@ label area_s61: # - # IF WEIGHT #7 /* Triggers after states #: 62 even though th
 """.strip() + '\n'
 test_result17_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r63391_action(self):
-        self.settings_manager.set_1200_cut_scene_2(True)
+        self.state_manager.set_1200_cut_scene_2(True)
         #$% StartCutSceneMode() %$#
-        self.settings_manager.set_cd_int_1(True)
+        self.state_manager.set_cd_int_1(True)
         #$% ?.start_cut_scene('1200cut1') %$#
 """.strip() + '\n'
 test_result17_tests = """
@@ -1986,25 +1986,25 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r63391_action(self):
-        self.settings_manager.set_1200_cut_scene_2(False)
-        self.settings_manager.set_cd_int_1(False)
+        self.state_manager.set_1200_cut_scene_2(False)
+        self.state_manager.set_cd_int_1(False)
 
-        self.assertFalse(self.settings_manager.get_1200_cut_scene_2())
-        self.assertFalse(self.settings_manager.get_cd_int_1())
-
-        self.logic.r63391_action()
-
-        self.assertTrue(self.settings_manager.get_1200_cut_scene_2())
-        self.assertTrue(self.settings_manager.get_cd_int_1())
+        self.assertFalse(self.state_manager.get_1200_cut_scene_2())
+        self.assertFalse(self.state_manager.get_cd_int_1())
 
         self.logic.r63391_action()
 
-        self.assertTrue(self.settings_manager.get_1200_cut_scene_2())
-        self.assertTrue(self.settings_manager.get_cd_int_1())
+        self.assertTrue(self.state_manager.get_1200_cut_scene_2())
+        self.assertTrue(self.state_manager.get_cd_int_1())
+
+        self.logic.r63391_action()
+
+        self.assertTrue(self.state_manager.get_1200_cut_scene_2())
+        self.assertTrue(self.state_manager.get_cd_int_1())
 
 
 if __name__ == '__main__':
@@ -2063,7 +2063,7 @@ test_tree18 = {
 test_result18_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -2088,34 +2088,34 @@ label area_s42: # from 41.0 45.0
 """.strip() + '\n'
 test_result18_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r1428_action(self):
-        self.settings_manager.set_choke_memory(True)
+        self.state_manager.set_choke_memory(True)
         #$% ?.play_sound('SPTR_01') %$#
-        self.settings_manager.inc_choke_dustman()
-        self.settings_manager.inc_choke()
-        self.settings_manager.set_dead_area(True)
+        self.state_manager.inc_choke_dustman()
+        self.state_manager.inc_choke()
+        self.state_manager.set_dead_area(True)
         #$% Deactivate(Myself) %$#
-        self.settings_manager.gain_experience('party', 15)
+        self.state_manager.gain_experience('party', 15)
 
 
     def r1429_action(self):
-        self.settings_manager.inc_choke_dustman()
-        self.settings_manager.inc_choke()
-        self.settings_manager.set_dead_area(True)
+        self.state_manager.inc_choke_dustman()
+        self.state_manager.inc_choke()
+        self.state_manager.set_dead_area(True)
         #$% Deactivate(Myself) %$#
-        self.settings_manager.gain_experience('party', 15)
+        self.state_manager.gain_experience('party', 15)
 
 
     def r1428_condition(self):
-        return not self.settings_manager.get_choke_memory()
+        return not self.state_manager.get_choke_memory()
 
 
     def r1429_condition(self):
-        return self.settings_manager.get_choke_memory()
+        return self.state_manager.get_choke_memory()
 """.strip() + '\n'
 test_result18_tests = """
 import unittest
@@ -2128,46 +2128,46 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r1428_action(self):
-        self.settings_manager.set_choke_memory(False)
+        self.state_manager.set_choke_memory(False)
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
-        self.settings_manager.set_choke_dustman(choke_dustman_before)
+        self.state_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
-        self.settings_manager.set_choke(choke_before)
-        self.settings_manager.set_dead_area(False)
+        self.state_manager.set_choke(choke_before)
+        self.state_manager.set_dead_area(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
 
-        self.assertFalse(self.settings_manager.get_choke_memory())
-        self.assertEqual(self.settings_manager.get_choke_dustman(), choke_dustman_before)
-        self.assertEqual(self.settings_manager.get_choke(), choke_before)
-        self.assertFalse(self.settings_manager.get_dead_area())
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.state_manager.get_choke_memory())
+        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_before)
+        self.assertEqual(self.state_manager.get_choke(), choke_before)
+        self.assertFalse(self.state_manager.get_dead_area())
+        experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r1428_action()
 
-        self.assertTrue(self.settings_manager.get_choke_memory())
-        self.assertEqual(self.settings_manager.get_choke_dustman(), choke_dustman_after)
-        self.assertEqual(self.settings_manager.get_choke(), choke_after)
-        self.assertTrue(self.settings_manager.get_dead_area())
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.state_manager.get_choke_memory())
+        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after)
+        self.assertEqual(self.state_manager.get_choke(), choke_after)
+        self.assertTrue(self.state_manager.get_dead_area())
+        experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r1428_action()
 
-        self.assertTrue(self.settings_manager.get_choke_memory())
-        self.assertEqual(self.settings_manager.get_choke_dustman(), choke_dustman_after_once)
-        self.assertEqual(self.settings_manager.get_choke(), choke_after_once)
-        self.assertTrue(self.settings_manager.get_dead_area())
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertTrue(self.state_manager.get_choke_memory())
+        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after_once)
+        self.assertEqual(self.state_manager.get_choke(), choke_after_once)
+        self.assertTrue(self.state_manager.get_dead_area())
+        experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
@@ -2175,48 +2175,48 @@ class AreaLogicTest(LogicTest):
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
-        self.settings_manager.set_choke_dustman(choke_dustman_before)
+        self.state_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
-        self.settings_manager.set_choke(choke_before)
-        self.settings_manager.set_dead_area(False)
+        self.state_manager.set_choke(choke_before)
+        self.state_manager.set_dead_area(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
 
-        self.assertEqual(self.settings_manager.get_choke_dustman(), choke_dustman_before)
-        self.assertEqual(self.settings_manager.get_choke(), choke_before)
-        self.assertFalse(self.settings_manager.get_dead_area())
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_before)
+        self.assertEqual(self.state_manager.get_choke(), choke_before)
+        self.assertFalse(self.state_manager.get_dead_area())
+        experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r1429_action()
 
-        self.assertEqual(self.settings_manager.get_choke_dustman(), choke_dustman_after)
-        self.assertEqual(self.settings_manager.get_choke(), choke_after)
-        self.assertTrue(self.settings_manager.get_dead_area())
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after)
+        self.assertEqual(self.state_manager.get_choke(), choke_after)
+        self.assertTrue(self.state_manager.get_dead_area())
+        experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r1429_action()
 
-        self.assertEqual(self.settings_manager.get_choke_dustman(), choke_dustman_after_once)
-        self.assertEqual(self.settings_manager.get_choke(), choke_after_once)
-        self.assertTrue(self.settings_manager.get_dead_area())
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after_once)
+        self.assertEqual(self.state_manager.get_choke(), choke_after_once)
+        self.assertTrue(self.state_manager.get_dead_area())
+        experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r1428_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_choke_memory(x),
+            lambda x: self.state_manager.set_choke_memory(x),
             self.logic.r1428_condition
         )
 
 
     def test_r1429_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_choke_memory(x),
+            lambda x: self.state_manager.set_choke_memory(x),
             self.logic.r1429_condition
         )
 
@@ -2262,7 +2262,7 @@ test_tree19 = {
 test_result19_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -2284,21 +2284,21 @@ label area_s73: # from 72.0
 # Лера решила, что и так норм
 test_result19_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def j66917_s73_r66914_action(self):
-        self.settings_manager.journal_manager.update_journal('66917')
+        self.state_manager.journal_manager.update_journal('66917')
         #$% .register('66917', 'Я не знаю, ужасаться мне или удивляться... когда я пообщался с Дейонаррой в Морге, она сказала, что через свои бесконечные перерождения я обрел некоторую власть над жизнью и смертью. Если я вижу тело, то могу разглядеть слабые следы жизни в нем и воскресить его. По какой-то причине это действует только на тех, кто путешествовал вместе со мной, и только в том случае, если они умерли в моем присутствии... но почему? Быть может, в пути между нами появляется какая-то связь?') %$#
 
 
     def r66914_action(self):
-        self.settings_manager.gain_experience('party', 1000)
-        self.settings_manager.set_deionarra_raise_dead(True)
-        self.settings_manager.set_can_raise_dead(True)
-        self.settings_manager.set_can_raise_dead(True)
-        self.settings_manager.set_can_raise_dead(True)
+        self.state_manager.gain_experience('party', 1000)
+        self.state_manager.set_deionarra_raise_dead(True)
+        self.state_manager.set_can_raise_dead(True)
+        self.state_manager.set_can_raise_dead(True)
+        self.state_manager.set_can_raise_dead(True)
 """.strip() + '\n'
 test_result19_tests = """
 import unittest
@@ -2311,7 +2311,7 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_j66917_s73_r66914_action(self):
@@ -2327,34 +2327,34 @@ class AreaLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
-        self.settings_manager.set_deionarra_raise_dead(False)
-        self.settings_manager.set_can_raise_dead(False)
-        self.settings_manager.set_can_raise_dead(False)
-        self.settings_manager.set_can_raise_dead(False)
+        self.state_manager.set_deionarra_raise_dead(False)
+        self.state_manager.set_can_raise_dead(False)
+        self.state_manager.set_can_raise_dead(False)
+        self.state_manager.set_can_raise_dead(False)
 
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.settings_manager.get_deionarra_raise_dead())
-        self.assertFalse(self.settings_manager.get_can_raise_dead())
-        self.assertFalse(self.settings_manager.get_can_raise_dead())
-        self.assertFalse(self.settings_manager.get_can_raise_dead())
+        experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
+        self.assertFalse(self.state_manager.get_deionarra_raise_dead())
+        self.assertFalse(self.state_manager.get_can_raise_dead())
+        self.assertFalse(self.state_manager.get_can_raise_dead())
+        self.assertFalse(self.state_manager.get_can_raise_dead())
 
         self.logic.r66914_action()
 
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.settings_manager.get_deionarra_raise_dead())
-        self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.get_deionarra_raise_dead())
+        self.assertTrue(self.state_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.get_can_raise_dead())
 
         self.logic.r66914_action()
 
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.settings_manager.get_deionarra_raise_dead())
-        self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.get_can_raise_dead())
-        self.assertTrue(self.settings_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.get_deionarra_raise_dead())
+        self.assertTrue(self.state_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.get_can_raise_dead())
 
 
 if __name__ == '__main__':
@@ -2422,7 +2422,7 @@ test_tree20 = {
 test_result20_rpy = """
 init 10 python:
     from game.dlgs.area_logic import AreaLogic
-    areaLogic = AreaLogic(renpy.store.global_settings_manager)
+    areaLogic = AreaLogic(renpy.store.global_state_manager)
 
 
 # ###
@@ -2442,8 +2442,8 @@ label area_s2: # from 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
 """.strip() + '\n'
 test_result20_logic = """
 class AreaLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r313_action(self):
@@ -2451,7 +2451,7 @@ class AreaLogic:
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.settings_manager.set_mortualy_alarmed(True)
+        self.state_manager.set_mortualy_alarmed(True)
 """.strip() + '\n'
 test_result20_tests = """
 import unittest
@@ -2464,12 +2464,12 @@ from game.dlgs.area_logic import AreaLogic
 class AreaLogicTest(LogicTest):
     def setUp(self):
         super(AreaLogicTest, self).setUp()
-        self.logic = AreaLogic(self.settings_manager)
+        self.logic = AreaLogic(self.state_manager)
 
 
     def test_r313_action(self):
         self._false_then_true_action(
-            self.settings_manager.get_mortualy_alarmed,
+            self.state_manager.get_mortualy_alarmed,
             self.logic.r313_action
         )
 

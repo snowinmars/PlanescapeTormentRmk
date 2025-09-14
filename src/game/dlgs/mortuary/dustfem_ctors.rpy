@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label dustfem_speak:
@@ -19,31 +19,26 @@ label dustfem_speak:
 
 
 label dustfem_s0_ctor:
-    scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
     jump dustfem_s0
 
 
 label dustfem_s22_ctor:
-    scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
     jump dustfem_s22
 
 
 label dustfem_s38_ctor: # -
-    scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
     jump dustfem_s38
 
 
 label dustfem_s40_ctor:
-    scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
     jump dustfem_s40
 
 
 label dustfem_s51_ctor:
-    scene bg mortuary_f3r3
     show dustfem_img default at center_left_down
     jump dustfem_s51
 

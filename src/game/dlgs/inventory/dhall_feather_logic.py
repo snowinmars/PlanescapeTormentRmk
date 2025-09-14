@@ -1,13 +1,13 @@
 class DhallFeatherLogicGenerated:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
 class DhallFeatherLogic(DhallFeatherLogicGenerated):
-    def __init__(self, settings_manager):
-        super().__init__(settings_manager)
+    def __init__(self, state_manager):
+        super().__init__(state_manager)
 
 
     def break_feather(self):
-        self.settings_manager.character_manager.modify_property('protagonist', 'lore', 1)
-        self.settings_manager.set_has_dhall_feather(False)
+        self.state_manager.characters_manager.modify_property('protagonist', 'lore', 1)
+        self.state_manager.set_has_dhall_feather(False)

@@ -1,36 +1,36 @@
 import logging
 
 
-class SettingsManager:
-    def __init__(self, event_manager, character_manager, location_manager, journal_manager):
+class StateManager:
+    def __init__(self, events_manager, characters_manager, locations_manager, journal_manager):
         self._once_keys = []
         self._registry = {}
-        self._event_manager = event_manager
-        self.character_manager = character_manager
-        self.location_manager = location_manager
+        self._events_manager = events_manager
+        self.characters_manager = characters_manager
+        self.locations_manager = locations_manager
         self.journal_manager = journal_manager
 
 
     def gain_experience(self, name, amount):
         if name == 'party':
-            self.character_manager.modify_property('protagonist', 'experience', amount)
+            self.characters_manager.modify_property('protagonist', 'experience', amount)
 
             if self.get_in_party_morte():
-                self.character_manager.modify_property('morte', 'experience', amount)
+                self.characters_manager.modify_property('morte', 'experience', amount)
             if self.get_in_party_annah():
-                self.character_manager.modify_property('annah', 'experience', amount)
+                self.characters_manager.modify_property('annah', 'experience', amount)
             if self.get_in_party_ignus():
-                self.character_manager.modify_property('ignus', 'experience', amount)
+                self.characters_manager.modify_property('ignus', 'experience', amount)
             if self.get_in_party_grace():
-                self.character_manager.modify_property('grace', 'experience', amount)
+                self.characters_manager.modify_property('grace', 'experience', amount)
             if self.get_in_party_dakkon():
-                self.character_manager.modify_property('dakkon', 'experience', amount)
+                self.characters_manager.modify_property('dakkon', 'experience', amount)
             if self.get_in_party_nordom():
-                self.character_manager.modify_property('nordom', 'experience', amount)
+                self.characters_manager.modify_property('nordom', 'experience', amount)
             if self.get_in_party_vhail():
-                self.character_manager.modify_property('vhail', 'experience', amount)
+                self.characters_manager.modify_property('vhail', 'experience', amount)
         else:
-            self.character_manager.modify_property(name, 'experience', amount)
+            self.characters_manager.modify_property(name, 'experience', amount)
 
 
     def register(self, setting_id, default_value):
@@ -99,4 +99,4 @@ class SettingsManager:
 
 
     def _log(self, line):
-        self._event_manager.write_event(line)
+        self._events_manager.write_event(line)

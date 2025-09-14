@@ -1,13 +1,13 @@
 import logging
 
-from game.engine.character import (Character)
+from game.engine.characters.character import (Character)
 
 
-class CharacterManager:
-    def __init__(self, event_manager):
+class CharactersManager:
+    def __init__(self, events_manager):
         self._characters = {}
         self._once_keys = {}
-        self._event_manager = event_manager
+        self._events_manager = events_manager
 
 
     def get_character(self, name):
@@ -124,4 +124,4 @@ class CharacterManager:
 
 
     def _log(self, line):
-        self._event_manager.write_event(line)
+        self._events_manager.write_event(line)

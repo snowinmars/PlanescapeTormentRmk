@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label morte2_speak:
@@ -17,7 +17,7 @@ label morte2_speak:
 
     # IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
     # Manually changed logic
-    if  gsm.location_manager.get_location() == 'mortuary_f2r3' and \
+    if  gsm.locations_manager.get_location() == 'mortuary_f2r3' and \
         gsm.get_mortuary_walkthrough() == 3 and \
         gsm.get_in_party_morte():
         jump morte2_s31_ctor
@@ -30,7 +30,6 @@ label morte2_speak:
 
 
 label morte2_s0_ctor:
-    scene bg mortuary_f2r2
     show morte_img default at center_left_down
     jump morte2_s0
 
@@ -46,7 +45,6 @@ label morte2_s27_ctor:
 
 
 label morte2_s31_ctor:
-    scene bg mortuary_f2r3
     show morte_img default at center_left_down
     jump morte2_s31
 

@@ -10,13 +10,13 @@ class FromMortuaryF2R2ToMortuaryF2R1(GoToLocationMenuItem):
     def __init__(self, gsm, x, y):
         super().__init__(gsm, x, y)
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r1'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r1'):
             return 'Пройти в юго-западную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f2r1')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f2r1')
         )
 
 
@@ -24,18 +24,18 @@ class FromMortuaryF2R2ToMortuaryF2R3(GoToLocationMenuItem):
     def __init__(self, gsm, x, y):
         super().__init__(gsm, x, y)
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r3'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r3'):
             return 'Пройти в северо-западную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r3'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r3'):
             return NavigationDirective(
                 'graphics_menu',
-                lambda: self.gsm.location_manager.set_location('mortuary_f2r3')
+                lambda: self.gsm.locations_manager.set_location('mortuary_f2r3')
             )
         return NavigationDirective(
             'morte2_speak',
-            lambda: self.gsm.location_manager.set_location('mortuary_f2r3')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f2r3')
         )
 
 

@@ -8,7 +8,7 @@ from game.dlgs.dhall_logic import DhallLogic
 class DhallLogicTest(LogicTest):
     def setUp(self):
         super(DhallLogicTest, self).setUp()
-        self.logic = DhallLogic(self.settings_manager)
+        self.logic = DhallLogic(self.state_manager)
 
 
     def test_r827_action(self):
@@ -31,22 +31,22 @@ class DhallLogicTest(LogicTest):
         vaxis_betrayed_before = 1
         vaxis_betrayed_after = 2
         vaxis_betrayed_after_once = 2
-        self.settings_manager.set_vaxis_betrayed(vaxis_betrayed_before)
+        self.state_manager.set_vaxis_betrayed(vaxis_betrayed_before)
 
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
+        experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.state_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
 
         self.logic.r830_action()
 
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
+        self.assertEqual(self.state_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
 
         self.logic.r830_action()
 
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
+        self.assertEqual(self.state_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
 
 
     def test_r831_action(self):
@@ -56,34 +56,34 @@ class DhallLogicTest(LogicTest):
         vaxis_betrayed_before = 1
         vaxis_betrayed_after = 2
         vaxis_betrayed_after_once = 2
-        self.settings_manager.set_vaxis_betrayed(vaxis_betrayed_before)
+        self.state_manager.set_vaxis_betrayed(vaxis_betrayed_before)
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -3
         note_id = '39469'
 
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        self.assertFalse(self.settings_manager.journal_manager.has_journal_note(note_id))
+        experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
+        self.assertEqual(self.state_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
+        good_before = self.state_manager.characters_manager.get_property(who_good, prop_good)
+        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r831_action()
 
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(self.state_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
+        good_after = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r831_action()
 
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.settings_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        self.assertEqual(self.state_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
+        good_after_once = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertTrue(self.settings_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
 
 
     def test_r843_action(self):
@@ -92,7 +92,7 @@ class DhallLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.state_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r843_action
         )
@@ -149,7 +149,7 @@ class DhallLogicTest(LogicTest):
         delta = 1
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.state_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r936_action
         )
@@ -157,7 +157,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r953_action(self):
         self._integer_inc_once_action(
-            self.settings_manager.get_know_dustmen,
+            self.state_manager.get_know_dustmen,
             1,
             self.logic.r953_action
         )
@@ -165,7 +165,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r958_action(self):
         self._integer_inc_once_action(
-            self.settings_manager.get_know_dustmen,
+            self.state_manager.get_know_dustmen,
             1,
             self.logic.r958_action
         )
@@ -182,7 +182,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r974_action(self):
         self._integer_inc_once_action(
-            self.settings_manager.get_know_dustmen,
+            self.state_manager.get_know_dustmen,
             1,
             self.logic.r974_action
         )
@@ -190,16 +190,16 @@ class DhallLogicTest(LogicTest):
 
     def test_r985_action(self):
         self._integer_inc_once_action(
-            self.settings_manager.get_know_dustmen,
+            self.state_manager.get_know_dustmen,
             1,
             self.logic.r985_action
         )
 
 
     def test_r1327_action(self):
-        self.settings_manager.set_dhall_value(2)
+        self.state_manager.set_dhall_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_dhall_value,
+            self.state_manager.get_dhall_value,
             1,
             self.logic.r1327_action
         )
@@ -225,7 +225,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r6033_action(self):
         self._integer_inc_once_action(
-            self.settings_manager.get_know_dustmen,
+            self.state_manager.get_know_dustmen,
             1,
             self.logic.r6033_action
         )
@@ -237,7 +237,7 @@ class DhallLogicTest(LogicTest):
         delta = 1
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.state_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r6051_action
         )
@@ -249,7 +249,7 @@ class DhallLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.state_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r6053_action
         )
@@ -257,7 +257,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r5070_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r5070_condition
         )
@@ -265,7 +265,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r5071_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r5071_condition
         )
@@ -273,7 +273,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r5072_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r5072_condition
         )
@@ -287,13 +287,13 @@ class DhallLogicTest(LogicTest):
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.state_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r5073_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.state_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
 
         self.assertTrue(self.logic.r5073_condition())
 
@@ -313,7 +313,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r6064_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r6064_condition
         )
@@ -321,7 +321,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r13288_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r13288_condition
         )
@@ -329,52 +329,52 @@ class DhallLogicTest(LogicTest):
 
     def test_r830_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_vaxis_lawful(x),
+            lambda x: self.state_manager.set_vaxis_lawful(x),
             self.logic.r830_condition
         )
 
 
     def test_r831_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_vaxis_lawful(x),
+            lambda x: self.state_manager.set_vaxis_lawful(x),
             self.logic.r831_condition
         )
 
 
     def test_r839_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.set_in_party_morte(x),
             self.logic.r839_condition
         )
 
 
     def test_r835_condition(self):
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_mortualy_alarmed(True)
+        self.state_manager.set_in_party_morte(True)
+        self.state_manager.set_mortualy_alarmed(True)
 
         self.assertFalse(self.logic.r835_condition())
 
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_mortualy_alarmed(False)
+        self.state_manager.set_in_party_morte(False)
+        self.state_manager.set_mortualy_alarmed(False)
 
         self.assertTrue(self.logic.r835_condition())
 
 
     def test_r5058_condition(self):
-        self.settings_manager.set_in_party_morte(True)
-        self.settings_manager.set_mortualy_alarmed(False)
+        self.state_manager.set_in_party_morte(True)
+        self.state_manager.set_mortualy_alarmed(False)
 
         self.assertFalse(self.logic.r5058_condition())
 
-        self.settings_manager.set_in_party_morte(False)
-        self.settings_manager.set_mortualy_alarmed(True)
+        self.state_manager.set_in_party_morte(False)
+        self.state_manager.set_mortualy_alarmed(True)
 
         self.assertTrue(self.logic.r5058_condition())
 
 
     def test_r842_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_dhall_value(x),
+            lambda x: self.state_manager.set_dhall_value(x),
             0,
             self.logic.r842_condition
         )
@@ -382,7 +382,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r843_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_dhall_value(x),
+            lambda x: self.state_manager.set_dhall_value(x),
             0,
             self.logic.r843_condition
         )
@@ -390,24 +390,24 @@ class DhallLogicTest(LogicTest):
 
     def test_r5062_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_dhall_value(x),
+            lambda x: self.state_manager.set_dhall_value(x),
             0,
             self.logic.r5062_condition
         )
 
 
     def test_r854_condition(self):
-        self.settings_manager.set_vaxis_value(0)
-        self.settings_manager.set_dead_vaxis(True)
-        self.settings_manager.set_vaxis_leave(True)
-        self.settings_manager.set_vaxis_betrayed(1)
+        self.state_manager.set_vaxis_value(0)
+        self.state_manager.set_dead_vaxis(True)
+        self.state_manager.set_vaxis_leave(True)
+        self.state_manager.set_vaxis_betrayed(1)
 
         self.assertFalse(self.logic.r854_condition())
 
-        self.settings_manager.set_vaxis_value(1)
-        self.settings_manager.set_dead_vaxis(False)
-        self.settings_manager.set_vaxis_leave(False)
-        self.settings_manager.set_vaxis_betrayed(0)
+        self.state_manager.set_vaxis_value(1)
+        self.state_manager.set_dead_vaxis(False)
+        self.state_manager.set_vaxis_leave(False)
+        self.state_manager.set_vaxis_betrayed(0)
 
         self.assertTrue(self.logic.r854_condition())
 
@@ -415,25 +415,25 @@ class DhallLogicTest(LogicTest):
     def test_r858_condition(self):
         location_AR0200 = 'AR0200' # AR0200
 
-        self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.location_manager.set_location(location_AR0200)
-        self.assertTrue(self.settings_manager.location_manager.is_visited(location_AR0200))
+        self.state_manager.set_escape_mortuary(True)
+        self.state_manager.locations_manager.set_location(location_AR0200)
+        self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0200))
 
         self.assertFalse(self.logic.r858_condition())
 
-        self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.location_manager._current_external = None
-        self.settings_manager.location_manager._current_internal = None
-        self.settings_manager.location_manager._visited_externals = set()
-        self.settings_manager.location_manager._visited_internals = set()
-        self.assertFalse(self.settings_manager.location_manager.is_visited(location_AR0200))
+        self.state_manager.set_escape_mortuary(False)
+        self.state_manager.locations_manager._current_external = None
+        self.state_manager.locations_manager._current_internal = None
+        self.state_manager.locations_manager._visited_externals = set()
+        self.state_manager.locations_manager._visited_internals = set()
+        self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0200))
 
         self.assertTrue(self.logic.r858_condition())
 
 
     def test_r870_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r870_condition
         )
@@ -441,7 +441,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r891_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r891_condition
         )
@@ -501,14 +501,14 @@ class DhallLogicTest(LogicTest):
 
     def test_r942_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.settings_manager.set_journal(x),
+            lambda x: self.state_manager.set_journal(x),
             self.logic.r942_condition
         )
 
 
     def test_r943_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r943_condition
         )
@@ -516,7 +516,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r6026_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r6026_condition
         )
@@ -524,7 +524,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r874_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r874_condition
         )
@@ -532,7 +532,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r948_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r948_condition
         )
@@ -540,7 +540,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r6027_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r6027_condition
         )
@@ -548,7 +548,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r6066_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r6066_condition
         )
@@ -556,7 +556,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r964_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r964_condition
         )
@@ -564,7 +564,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r968_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_pharod_value(x),
+            lambda x: self.state_manager.set_pharod_value(x),
             0,
             self.logic.r968_condition
         )
@@ -572,7 +572,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r5076_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r5076_condition
         )
@@ -580,7 +580,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r5077_condition(self):
         self._integer_gt_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r5077_condition
         )
@@ -594,13 +594,13 @@ class DhallLogicTest(LogicTest):
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.state_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r5078_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.state_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
 
         self.assertTrue(self.logic.r5078_condition())
 
@@ -620,7 +620,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r5081_condition(self):
         self._integer_equal_condition(
-            lambda x: self.settings_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.set_deionarra_value(x),
             0,
             self.logic.r5081_condition
         )
@@ -634,13 +634,13 @@ class DhallLogicTest(LogicTest):
         prop_wisdom = 'wisdom'
         delta_wisdom = 13
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.state_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r5082_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.state_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
 
         self.assertTrue(self.logic.r5082_condition())
 
@@ -660,7 +660,7 @@ class DhallLogicTest(LogicTest):
 
     def test_r6032_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.settings_manager.set_morte_mortuary_walkthrough_1(x),
+            lambda x: self.state_manager.set_morte_mortuary_walkthrough_1(x),
             self.logic.r6032_condition
         )
 

@@ -7,17 +7,17 @@ from game.dlgs.inventory.dhall_feather_logic import (DhallFeatherLogicGenerated,
 class DhallFeatherLogicTest(LogicTest):
     def setUp(self):
         super(DhallFeatherLogicTest, self).setUp()
-        self.logic = DhallFeatherLogic(self.settings_manager)
+        self.logic = DhallFeatherLogic(self.state_manager)
 
 
     def test_break_feather(self):
-        logic = DhallFeatherLogic(self.settings_manager)
+        logic = DhallFeatherLogic(self.state_manager)
         who = 'protagonist'
         prop = 'lore'
         delta = 1
 
         self._change_prop(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.state_manager.characters_manager.get_property(who, prop),
             delta,
             logic.break_feather
         )
@@ -26,7 +26,7 @@ class DhallFeatherLogicTest(LogicTest):
 class DhallFeatherLogicGeneratedTest(LogicTest):
     def setUp(self):
         super(DhallFeatherLogicGeneratedTest, self).setUp()
-        self.logic = DhallFeatherLogicGenerated(self.settings_manager)
+        self.logic = DhallFeatherLogicGenerated(self.state_manager)
 
 
 if __name__ == '__main__':

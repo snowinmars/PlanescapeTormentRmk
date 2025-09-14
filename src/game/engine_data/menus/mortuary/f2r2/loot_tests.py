@@ -8,7 +8,7 @@ from game.engine_data.menus.mortuary.f2r2.loot_logic import (MortuaryF2R2LootLog
 class MortuaryF2R2LootLogicTest(LogicTest):
     def setUp(self):
         super(MortuaryF2R2LootLogic, self).setUp()
-        self.logic = MortuaryF2R2LootLogic(self.settings_manager)
+        self.logic = MortuaryF2R2LootLogic(self.state_manager)
 
 
 if __name__ == '__main__':

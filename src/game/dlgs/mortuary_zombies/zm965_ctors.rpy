@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label zm965_speak:
@@ -13,13 +13,11 @@ label zm965_speak:
 
 
 label zm965_s0_ctor:
-    scene bg mortuary_f2r2
     show zm965_img default at center_left_down
     jump zm965_s0
 
 
 label zm965_s1_ctor:
-    scene bg mortuary_f2r2
     show zm965_img default at center_left_down
     jump zm965_s1
 

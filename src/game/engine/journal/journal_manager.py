@@ -10,8 +10,8 @@ class Note:
 
 
 class JournalManager:
-    def __init__(self, event_manager):
-        self._event_manager = event_manager
+    def __init__(self, events_manager):
+        self._events_manager = events_manager
         self._notes = {}
         self._on_update_journal = []
 
@@ -57,4 +57,4 @@ class JournalManager:
 
 
     def _log(self, line):
-        self._event_manager.write_event(line)
+        self._events_manager.write_event(line)

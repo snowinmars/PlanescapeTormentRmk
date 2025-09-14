@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary.eivene_logic import EiveneLogic
-    eiveneLogic = EiveneLogic(renpy.store.global_settings_manager)
+    eiveneLogic = EiveneLogic(renpy.store.global_state_manager)
 
 
 # ###

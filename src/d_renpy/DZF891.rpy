@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.zf891_logic import Zf891Logic
-    zf891Logic = Zf891Logic(renpy.store.global_settings_manager)
+    zf891Logic = Zf891Logic(renpy.store.global_state_manager)
 
 
 # ###

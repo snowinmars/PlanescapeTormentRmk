@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary_zombies.s1221_logic import S1221Logic
-    s1221Logic = S1221Logic(renpy.store.global_settings_manager)
+    s1221Logic = S1221Logic(renpy.store.global_state_manager)
 
 
 # ###

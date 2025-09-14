@@ -1,4 +1,7 @@
-from game.engine_data.menus.menu_items import (NpcMenuItem)
+from game.engine_data.menus.menu_items import (
+    NavigationDirective,
+    NpcMenuItem
+)
 
 
 class Morte1MenuItem(NpcMenuItem):
@@ -14,4 +17,6 @@ class Morte1MenuItem(NpcMenuItem):
             return 'Поговорить с Мортом'
         return 'Пригласить Морта в группу'
     def jump(self):
-        return 'morte1_speak'
+        return NavigationDirective(
+            'morte1_speak',
+        )

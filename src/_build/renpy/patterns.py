@@ -10,7 +10,7 @@ class PatternConfig:
 
 
 action_set_location_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.location_manager\.set_location\((.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.locations_manager\.set_location\((.*?)\)$"),
     template="""
 def test_{f}(self):
     location = '{v}'
@@ -23,30 +23,30 @@ def test_{f}(self):
 
 
 action_set_true_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.set_(.*?)\(True\)$"),
+    pattern=re.compile(r"self\.state_manager\.set_(.*?)\(True\)$"),
     template="""
 def test_{f}(self):
     self._false_then_true_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
 action_set_false_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.set_(.*?)\(False\)$"),
+    pattern=re.compile(r"self\.state_manager\.set_(.*?)\(False\)$"),
     template="""
 def test_{f}(self):
-    self.settings_manager.set_{s}(True)
+    self.state_manager.set_{s}(True)
     self._true_then_false_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
 action_gain_experience_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.gain_experience\('party', (.*?)\)"),
+    pattern=re.compile(r"self\.state_manager\.gain_experience\('party', (.*?)\)"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -54,7 +54,7 @@ def test_{f}(self):
     delta = {v}
 
     self._change_prop(
-        lambda: self.settings_manager.character_manager.get_property(who, prop),
+        lambda: self.state_manager.characters_manager.get_property(who, prop),
         delta,
         self.logic.{f}
     )
@@ -62,7 +62,7 @@ def test_{f}(self):
 
 
 action_modify_property_once_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.character_manager\.modify_property_once\('protagonist', (.*?), (.*?), .*?\)$"),
+    pattern=re.compile(r"self\.state_manager\.characters_manager\.modify_property_once\('protagonist', (.*?), (.*?), .*?\)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -70,7 +70,7 @@ def test_{f}(self):
     delta = {v}
 
     self._change_prop_once(
-        lambda: self.settings_manager.character_manager.get_property(who, prop),
+        lambda: self.state_manager.characters_manager.get_property(who, prop),
         delta,
         self.logic.{f}
     )
@@ -78,7 +78,7 @@ def test_{f}(self):
 
 
 action_modify_property_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.character_manager\.modify_property\('protagonist', (.*?), (.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.characters_manager\.modify_property\('protagonist', (.*?), (.*?)\)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -86,7 +86,7 @@ def test_{f}(self):
     delta = {v}
 
     self._change_prop(
-        lambda: self.settings_manager.character_manager.get_property(who, prop),
+        lambda: self.state_manager.characters_manager.get_property(who, prop),
         delta,
         self.logic.{f}
     )
@@ -94,7 +94,7 @@ def test_{f}(self):
 
 
 action_set_property_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.character_manager\.set_property\('protagonist', (.*?), (.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.characters_manager\.set_property\('protagonist', (.*?), (.*?)\)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -102,7 +102,7 @@ def test_{f}(self):
     delta = {v}
 
     self._change_prop(
-        lambda: self.settings_manager.character_manager.get_property(who, prop),
+        lambda: self.state_manager.characters_manager.get_property(who, prop),
         delta,
         self.logic.{f}
     )
@@ -110,7 +110,7 @@ def test_{f}(self):
 
 
 action_update_journal_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.journal_manager\.update_journal\((.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.journal_manager\.update_journal\((.*?)\)$"),
     template="""
 def test_{f}(self):
     note_id = {v}
@@ -123,12 +123,12 @@ def test_{f}(self):
 
 
 action_set_x_pattern = PatternConfig(
-    pattern=re.compile(r"self.settings_manager.set_(.*?)\((.*?)\)$"),
+    pattern=re.compile(r"self.state_manager.set_(.*?)\((.*?)\)$"),
     template="""
 def test_{f}(self):
-    self.settings_manager.set_{s}({nv})
+    self.state_manager.set_{s}({nv})
     self._integer_equals_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         {v},
         self.logic.{f}
     )
@@ -136,11 +136,11 @@ def test_{f}(self):
 
 
 action_inc_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.inc_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.state_manager\.inc_(.*?)\(.*\)$"),
     template="""
 def test_{f}(self):
     self._integer_inc_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         1,
         self.logic.{f}
     )
@@ -148,11 +148,11 @@ def test_{f}(self):
 
 
 action_inc_once_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.inc_once_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.state_manager\.inc_once_(.*?)\(.*\)$"),
     template="""
 def test_{f}(self):
     self._integer_inc_once_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         1,
         self.logic.{f}
     )
@@ -160,11 +160,11 @@ def test_{f}(self):
 
 
 action_dec_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.dec_(.*?)\((.*)?\)$"),
+    pattern=re.compile(r"self\.state_manager\.dec_(.*?)\((.*)?\)$"),
     template="""
 def test_{f}(self):
     self._integer_dec_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         {v},
         self.logic.{f}
     )
@@ -172,11 +172,11 @@ def test_{f}(self):
 
 
 action_dec_once_pattern = PatternConfig(
-    pattern=re.compile(r"self\.settings_manager\.dec_once_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.state_manager\.dec_once_(.*?)\(.*\)$"),
     template="""
 def test_{f}(self):
     self._integer_dec_once_action(
-        self.settings_manager.get_{s},
+        self.state_manager.get_{s},
         {v},
         self.logic.{f}
     )
@@ -184,29 +184,29 @@ def test_{f}(self):
 
 
 condition_get_x_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.get_(.*?)\(\)$"),
+    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\)$"),
     template="""
 def test_{f}(self):
     self._boolean_straight_condition(
-        lambda x: self.settings_manager.set_{s}(x),
+        lambda x: self.state_manager.set_{s}(x),
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
 condition_not_get_x_pattern = PatternConfig(
-    pattern=re.compile(r"return not self\.settings_manager\.get_(.*?)\(\)$"),
+    pattern=re.compile(r"return not self\.state_manager\.get_(.*?)\(\)$"),
     template="""
 def test_{f}(self):
     self._boolean_invert_condition(
-        lambda x: self.settings_manager.set_{s}(x),
+        lambda x: self.state_manager.set_{s}(x),
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
 condition_get_prop_lt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.character_manager\.get_property\('protagonist', (.*?)\) < (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) < (.*?)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -223,7 +223,7 @@ def test_{f}(self):
 
 
 condition_get_prop_gt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.character_manager\.get_property\('protagonist', (.*?)\) > (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) > (.*?)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -240,7 +240,7 @@ def test_{f}(self):
 
 
 condition_get_prop_eq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.character_manager\.get_property\('protagonist', (.*?)\) == (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) == (.*?)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -257,7 +257,7 @@ def test_{f}(self):
 
 
 condition_get_prop_neq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.character_manager\.get_property\('protagonist', (.*?)\) != (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.characters_manager\.get_property\('protagonist', (.*?)\) != (.*?)$"),
     template="""
 def test_{f}(self):
     who = 'protagonist'
@@ -274,11 +274,11 @@ def test_{f}(self):
 
 
 condition_get_x_gt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.get_(.*?)\(\) > (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) > (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_gt_condition(
-        lambda x: self.settings_manager.set_{s}(x),
+        lambda x: self.state_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -286,11 +286,11 @@ def test_{f}(self):
 
 
 condition_get_x_lt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.get_(.*?)\(\) < (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) < (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_lt_condition(
-        lambda x: self.settings_manager.set_{s}(x),
+        lambda x: self.state_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -298,11 +298,11 @@ def test_{f}(self):
 
 
 condition_get_x_eq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.get_(.*?)\(\) == (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) == (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_equal_condition(
-        lambda x: self.settings_manager.set_{s}(x),
+        lambda x: self.state_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -310,11 +310,11 @@ def test_{f}(self):
 
 
 condition_get_x_neq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.get_(.*?)\(\) != (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) != (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_not_equal_condition(
-        lambda x: self.settings_manager.set_{s}(x),
+        lambda x: self.state_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -322,7 +322,7 @@ def test_{f}(self):
 
 
 condition_is_visited_external_location_condition_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.settings_manager\.location_manager\.is_visited_internal\((.*?)\)$"),
+    pattern=re.compile(r"return self\.state_manager\.locations_manager\.is_visited_internal\((.*?)\)$"),
     template="""
 def test_{f}(self):
     self._is_visited_external_location_condition(
@@ -333,7 +333,7 @@ def test_{f}(self):
 
 
 condition_not_is_visited_external_location_condition_pattern = PatternConfig(
-    pattern=re.compile(r"return not self\.settings_manager\.location_manager\.is_visited_internal\((.*?)\)$"),
+    pattern=re.compile(r"return not self\.state_manager\.locations_manager\.is_visited_internal\((.*?)\)$"),
     template="""
 def test_{f}(self):
     self._not_is_visited_external_location_condition(

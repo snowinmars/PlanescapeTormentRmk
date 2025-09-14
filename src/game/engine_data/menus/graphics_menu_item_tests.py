@@ -1,12 +1,13 @@
 import unittest
 
 
-from game.engine.event_manager import (EventManager)
-from game.engine.settings_manager import (SettingsManager)
-from game.engine.inventory_manager import (InventoryManager)
-from game.engine.location_manager import (LocationManager)
-from game.engine.character_manager import (CharacterManager)
-from game.engine.journal_manager import (JournalManager)
+from game.engine.events.events_manager import (EventsManager)
+from game.engine.state.state_manager import (StateManager)
+from game.engine.inventory.inventory_manager import (InventoryManager)
+from game.engine.locations.locations_manager import (LocationsManager)
+from game.engine.characters.characters_manager import (CharactersManager)
+from game.engine.journal.journal_manager import (JournalManager)
+
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -20,15 +21,15 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.x = 11
         self.y = 13
 
-        self.event_manager = EventManager()
-        self.location_manager = LocationManager(self.event_manager)
-        self.character_manager = CharacterManager(self.event_manager)
-        self.journal_manager = JournalManager(self.event_manager)
-        self.gsm = SettingsManager(self.event_manager, self.character_manager, self.location_manager, self.journal_manager)
+        self.events_manager = EventsManager()
+        self.locations_manager = LocationsManager(self.events_manager)
+        self.characters_manager = CharactersManager(self.events_manager)
+        self.journal_manager = JournalManager(self.events_manager)
+        self.gsm = StateManager(self.events_manager, self.characters_manager, self.locations_manager, self.journal_manager)
 
         build_all_settings(self.gsm)
-        build_all_characters(self.character_manager)
-        build_all_locations(self.location_manager)
+        build_all_characters(self.characters_manager)
+        build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
 
 

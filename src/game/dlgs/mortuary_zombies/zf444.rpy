@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary_zombies.zf444_logic import Zf444Logic
-    zf444Logic = Zf444Logic(renpy.store.global_settings_manager)
+    zf444Logic = Zf444Logic(renpy.store.global_state_manager)
 
 
 # ###

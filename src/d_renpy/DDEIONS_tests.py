@@ -8,7 +8,7 @@ from game.dlgs.deionarra_logic import DeionarraLogic
 class DeionarraLogicTest(LogicTest):
     def setUp(self):
         super(DeionarraLogicTest, self).setUp()
-        self.logic = DeionarraLogic(self.settings_manager)
+        self.logic = DeionarraLogic(self.state_manager)
 
 
     def test_r701_action(self):
@@ -28,27 +28,27 @@ class DeionarraLogicTest(LogicTest):
 
 
     def test_r707_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             1,
             self.logic.r707_action
         )
 
 
     def test_r708_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             1,
             self.logic.r708_action
         )
 
 
     def test_r709_action(self):
-        self.settings_manager.set_deionarra_value(2)
+        self.state_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.settings_manager.get_deionarra_value,
+            self.state_manager.get_deionarra_value,
             1,
             self.logic.r709_action
         )
@@ -62,21 +62,21 @@ class DeionarraLogicTest(LogicTest):
         prop_law = 'law'
         delta_law = -1
 
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.state_manager.characters_manager.get_property(who_good, prop_good)
+        law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r712_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r712_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -97,21 +97,21 @@ class DeionarraLogicTest(LogicTest):
         prop_law = 'law'
         delta_law = -1
 
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r702_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r702_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -162,21 +162,21 @@ class DeionarraLogicTest(LogicTest):
         prop_law = 'law'
         delta_law = -2
 
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r780_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r780_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -188,21 +188,21 @@ class DeionarraLogicTest(LogicTest):
         prop_law = 'law'
         delta_law = 2
 
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6093_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6093_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -214,21 +214,21 @@ class DeionarraLogicTest(LogicTest):
         prop_law = 'law'
         delta_law = -2
 
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r805_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r805_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -240,21 +240,21 @@ class DeionarraLogicTest(LogicTest):
         prop_law = 'law'
         delta_law = 2
 
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r808_action()
 
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r808_action()
 
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -311,18 +311,18 @@ class DeionarraLogicTest(LogicTest):
         delta_law = -1
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6129_action()
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6129_action()
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -336,18 +336,18 @@ class DeionarraLogicTest(LogicTest):
         delta_law = -1
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6131_action()
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6131_action()
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -361,18 +361,18 @@ class DeionarraLogicTest(LogicTest):
         delta_law = -1
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_before)
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
 
         self.logic.r6132_action()
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after)
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
 
         self.logic.r6132_action()
 
         self.assertEqual(self.settings_manager.get_deionarra_value(), deionarra_value_after_once)
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
 
 
@@ -391,7 +391,7 @@ class DeionarraLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.settings_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r6095_action
         )
@@ -403,7 +403,7 @@ class DeionarraLogicTest(LogicTest):
         delta = -1
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.settings_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r6097_action
         )
@@ -430,18 +430,18 @@ class DeionarraLogicTest(LogicTest):
         delta_experience = 500
 
         self.assertFalse(self.settings_manager.get_deionarra_portal())
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_before = self.settings_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r6148_action()
 
         self.assertTrue(self.settings_manager.get_deionarra_portal())
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after = self.settings_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r6148_action()
 
         self.assertTrue(self.settings_manager.get_deionarra_portal())
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after_once = self.settings_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
@@ -488,21 +488,21 @@ class DeionarraLogicTest(LogicTest):
         prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
 
         self.logic.r63373_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63373_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -514,21 +514,21 @@ class DeionarraLogicTest(LogicTest):
         prop_good = 'good'
         delta_good = -1
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
 
         self.logic.r63374_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63374_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -540,21 +540,21 @@ class DeionarraLogicTest(LogicTest):
         prop_good = 'good'
         delta_good = -2
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
 
         self.logic.r63376_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63376_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -566,21 +566,21 @@ class DeionarraLogicTest(LogicTest):
         prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
 
         self.logic.r63377_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63377_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -592,21 +592,21 @@ class DeionarraLogicTest(LogicTest):
         prop_good = 'good'
         delta_good = -1
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
 
         self.logic.r63380_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63380_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -618,21 +618,21 @@ class DeionarraLogicTest(LogicTest):
         prop_good = 'good'
         delta_good = 1
 
-        law_before = self.settings_manager.character_manager.get_property(who_law, prop_law)
-        good_before = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        law_before = self.settings_manager.characters_manager.get_property(who_law, prop_law)
+        good_before = self.settings_manager.characters_manager.get_property(who_good, prop_good)
 
         self.logic.r63381_action()
 
-        law_after = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        good_after = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
 
         self.logic.r63381_action()
 
-        law_after_once = self.settings_manager.character_manager.get_property(who_law, prop_law)
+        law_after_once = self.settings_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after, law_after_once)
-        good_after_once = self.settings_manager.character_manager.get_property(who_good, prop_good)
+        good_after_once = self.settings_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
 
 
@@ -642,7 +642,7 @@ class DeionarraLogicTest(LogicTest):
         delta = 2
 
         self._change_prop_once(
-            lambda: self.settings_manager.character_manager.get_property(who, prop),
+            lambda: self.settings_manager.characters_manager.get_property(who, prop),
             delta,
             self.logic.r63382_action
         )
@@ -745,7 +745,7 @@ class DeionarraLogicTest(LogicTest):
         self.settings_manager.set_can_raise_dead(False)
         self.settings_manager.set_can_raise_dead(False)
 
-        experience_before = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_before = self.settings_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertFalse(self.settings_manager.get_deionarra_raise_dead())
         self.assertFalse(self.settings_manager.get_can_raise_dead())
         self.assertFalse(self.settings_manager.get_can_raise_dead())
@@ -753,7 +753,7 @@ class DeionarraLogicTest(LogicTest):
 
         self.logic.r66914_action()
 
-        experience_after = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after = self.settings_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
         self.assertTrue(self.settings_manager.get_deionarra_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
@@ -762,7 +762,7 @@ class DeionarraLogicTest(LogicTest):
 
         self.logic.r66914_action()
 
-        experience_after_once = self.settings_manager.character_manager.get_property(who_experience, prop_experience)
+        experience_after_once = self.settings_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
         self.assertTrue(self.settings_manager.get_deionarra_raise_dead())
         self.assertTrue(self.settings_manager.get_can_raise_dead())
@@ -809,13 +809,13 @@ class DeionarraLogicTest(LogicTest):
         prop_charisma = 'charisma'
         delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma)
 
         self.assertFalse(self.logic.r708_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
         self.assertTrue(self.logic.r708_condition())
 
@@ -841,13 +841,13 @@ class DeionarraLogicTest(LogicTest):
         prop_charisma = 'charisma'
         delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma)
 
         self.assertFalse(self.logic.r713_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
         self.assertTrue(self.logic.r713_condition())
 
@@ -901,13 +901,13 @@ class DeionarraLogicTest(LogicTest):
         prop_charisma = 'charisma'
         delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma)
 
         self.assertFalse(self.logic.r718_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
         self.assertTrue(self.logic.r718_condition())
 
@@ -961,13 +961,13 @@ class DeionarraLogicTest(LogicTest):
         prop_charisma = 'charisma'
         delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma)
 
         self.assertFalse(self.logic.r723_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
         self.assertTrue(self.logic.r723_condition())
 
@@ -1036,12 +1036,12 @@ class DeionarraLogicTest(LogicTest):
         delta_wisdom = 13
 
         self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r731_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
 
         self.assertTrue(self.logic.r731_condition())
 
@@ -1052,12 +1052,12 @@ class DeionarraLogicTest(LogicTest):
         delta_wisdom = 12
 
         self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r732_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
 
         self.assertTrue(self.logic.r732_condition())
 
@@ -1082,12 +1082,12 @@ class DeionarraLogicTest(LogicTest):
         delta_wisdom = 13
 
         self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r737_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom - 1)
 
         self.assertTrue(self.logic.r737_condition())
 
@@ -1098,12 +1098,12 @@ class DeionarraLogicTest(LogicTest):
         delta_wisdom = 12
 
         self.settings_manager.set_escape_mortuary(True)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom)
 
         self.assertFalse(self.logic.r738_condition())
 
         self.settings_manager.set_escape_mortuary(False)
-        self.settings_manager.character_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
+        self.settings_manager.characters_manager.set_property(who_wisdom, prop_wisdom, delta_wisdom + 1)
 
         self.assertTrue(self.logic.r738_condition())
 
@@ -1400,13 +1400,13 @@ class DeionarraLogicTest(LogicTest):
         prop_charisma = 'charisma'
         delta_charisma = 11
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma)
 
         self.assertFalse(self.logic.r6131_condition())
 
-        self.settings_manager.character_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.settings_manager.character_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
+        self.settings_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
+        self.settings_manager.characters_manager.set_property(who_charisma, prop_charisma, delta_charisma - 1)
 
         self.assertTrue(self.logic.r6131_condition())
 

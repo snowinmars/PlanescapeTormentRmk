@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.vaxis_logic import VaxisLogic
-    vaxisLogic = VaxisLogic(renpy.store.global_settings_manager)
+    vaxisLogic = VaxisLogic(renpy.store.global_state_manager)
 
 
 # ###

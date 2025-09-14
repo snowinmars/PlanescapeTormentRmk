@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.deionarra_logic import DeionarraLogic
-    deionarraLogic = DeionarraLogic(renpy.store.global_settings_manager)
+    deionarraLogic = DeionarraLogic(renpy.store.global_state_manager)
 
 
 # ###

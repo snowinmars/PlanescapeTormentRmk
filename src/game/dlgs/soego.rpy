@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.soego_logic import SoegoLogic
-    soegoLogic = SoegoLogic(renpy.store.global_settings_manager)
+    soegoLogic = SoegoLogic(renpy.store.global_state_manager)
 
 
 # ###

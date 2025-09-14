@@ -1,7 +1,7 @@
 class MortuaryF2R1LootLogic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def scalpel(self):
-        self.settings_manager.set_has_scalpel(True)
+        self.state_manager.set_has_scalpel(True)

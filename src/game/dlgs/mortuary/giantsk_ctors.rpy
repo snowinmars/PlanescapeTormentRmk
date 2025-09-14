@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label giantsk_speak:
@@ -8,7 +8,6 @@ label giantsk_speak:
 
 
 label giantsk_s0_ctor:
-    scene bg mortuary_f1rc
     show giantsk_img default at center_left_down
     jump giantsk_s0
 

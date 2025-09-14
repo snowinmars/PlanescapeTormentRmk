@@ -1,4 +1,4 @@
-from game.engine.inventory_item import (InventoryItem)
+from game.engine.inventory.inventory_item import (InventoryItem)
 
 
 def build_mortuary_locations(manager):

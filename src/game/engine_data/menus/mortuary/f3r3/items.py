@@ -11,13 +11,13 @@ class FromMortuaryF3R3ToMortuaryF2R7(GoToLocationMenuItem):
     def __init__(self, gsm, x, y):
         super().__init__(gsm, x, y)
     def tooltip(self):
-        if self.gsm.location_manager.is_visited('mortuary_f2r7'):
+        if self.gsm.locations_manager.is_visited('mortuary_f2r7'):
             return 'Спуститься на второй этаж'
         return 'Спуститься по лестнице'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f2r7')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f2r7')
         )
 
 
@@ -29,7 +29,7 @@ class FromMortuaryF3R3ToMortuaryF3R2(GoToLocationMenuItem):
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f3r2')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f3r2')
         )
 
 
@@ -41,7 +41,7 @@ class FromMortuaryF3R3ToMortuaryF3R4(GoToLocationMenuItem):
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.location_manager.set_location('mortuary_f3r4')
+            lambda: self.gsm.locations_manager.set_location('mortuary_f3r4')
         )
 
 

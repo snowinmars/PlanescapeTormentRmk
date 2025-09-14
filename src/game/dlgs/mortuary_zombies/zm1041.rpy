@@ -1,6 +1,6 @@
 init 10 python:
     from game.dlgs.mortuary_zombies.zm1041_logic import Zm1041Logic
-    zm1041Logic = Zm1041Logic(renpy.store.global_settings_manager)
+    zm1041Logic = Zm1041Logic(renpy.store.global_state_manager)
 
     def logic_get_know_bei_name(self):
         return bei if zm1041Logic.get_know_bei_name() else zm1041

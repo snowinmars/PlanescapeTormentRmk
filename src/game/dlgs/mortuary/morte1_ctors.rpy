@@ -1,5 +1,5 @@
 init 10 python:
-    gsm = renpy.store.global_settings_manager
+    gsm = renpy.store.global_state_manager
 
 
 label morte1_speak:
@@ -27,9 +27,8 @@ label morte1_speak:
 
 
 label morte1_s0_ctor:
-    $ gsm.location_manager.set_location('mortuary_f2r1')
+    $ gsm.locations_manager.set_location('mortuary_f2r1')
     $ gsm.set_in_party_morte(True)
-    # scene bg mortuary_f2r1
     show morte_img default at center_left_down
     jump morte1_s0
 

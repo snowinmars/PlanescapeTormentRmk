@@ -1,6 +1,6 @@
 class Zm782Logic:
-    def __init__(self, settings_manager):
-        self.settings_manager = settings_manager
+    def __init__(self, state_manager):
+        self.state_manager = state_manager
 
 
     def r24716_action(self):
@@ -9,8 +9,8 @@ class Zm782Logic:
 
 
     def r24709_condition(self):
-        return self.settings_manager.get_in_party_morte()
+        return self.state_manager.get_in_party_morte()
 
 
     def r24712_condition(self):
-        return not self.settings_manager.get_in_party_morte()
+        return not self.state_manager.get_in_party_morte()
