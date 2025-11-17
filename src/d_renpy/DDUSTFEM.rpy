@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.dustfem_logic import DustfemLogic
     dustfemLogic = DustfemLogic(runtime.global_state_manager)
 

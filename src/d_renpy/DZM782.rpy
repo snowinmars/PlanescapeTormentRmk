@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.zm782_logic import Zm782Logic
     zm782Logic = Zm782Logic(runtime.global_state_manager)
 

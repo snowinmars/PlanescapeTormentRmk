@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.zm1664_logic import Zm1664Logic
     zm1664Logic = Zm1664Logic(runtime.global_state_manager)
 

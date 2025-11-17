@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.eivene_logic import EiveneLogic
     eiveneLogic = EiveneLogic(runtime.global_state_manager)
 

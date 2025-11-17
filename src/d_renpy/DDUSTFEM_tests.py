@@ -393,10 +393,7 @@ class DustfemLogicTest(LogicTest):
         self.assertFalse(self.logic.r1255_condition())
 
         self.state_manager.set_dhall_value(1)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0202))
 
         self.assertTrue(self.logic.r1255_condition())
@@ -427,10 +424,7 @@ class DustfemLogicTest(LogicTest):
         self.assertFalse(self.logic.r4336_condition())
 
         self.state_manager.set_deionarra_value(1)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r4336_condition())
@@ -461,10 +455,7 @@ class DustfemLogicTest(LogicTest):
         self.assertFalse(self.logic.r33226_condition())
 
         self.state_manager.set_soego_value(1)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r33226_condition())

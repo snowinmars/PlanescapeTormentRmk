@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.zm1445_logic import Zm1445Logic
     zm1445Logic = Zm1445Logic(runtime.global_state_manager)
 

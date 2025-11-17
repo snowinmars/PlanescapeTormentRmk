@@ -19,32 +19,10 @@ init 1 python:
 
 
 init 2 python:
-    from game.engine.locations.locations_store import (LocationsStore)
     # import types, functools
 
     renpy.add_python_directory('engine')
     renpy.add_python_directory('engine_data')
-
-    # def wrap_manager_methods(manager, prefix=("set_", "add_", "visit_")):
-    #     for name in dir(manager):
-    #         if name.startswith(prefix):
-    #             orig = getattr(manager, name)
-    #             if not callable(orig):
-    #                 continue
-
-    #             @functools.wraps(orig)
-    #             def wrapper(*args, __orig=orig, **kwargs):
-    #                 result = __orig(*args, **kwargs)
-    #                 renpy.store._changed = True
-    #                 return result
-
-    #             # no MethodType, orig was already bound
-    #             setattr(manager, name, wrapper)
-
-    #     return manager
-
-
-default locations_store = LocationsStore()
 
 
 init 3 python:
@@ -58,11 +36,14 @@ init 3 python:
     from game.engine.characters.characters_manager import (CharactersManager)
     from game.engine.journal.journal_manager import (JournalManager)
 
+    from game.engine.locations.locations_store import (LocationsStore)
+
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
     from game.engine_data.locations.all_locations import (build_all_locations)
     from game.engine_data.characters.all_characters import (build_all_characters)
     from game.engine_data.journal.all_notes import (build_all_notes)
+
 
     runtime.global_events_manager = EventsManager(runtime.logger)
     runtime.global_locations_manager = LocationsManager(runtime.global_events_manager)
@@ -71,10 +52,12 @@ init 3 python:
     runtime.global_state_manager = StateManager(runtime.global_events_manager, runtime.global_characters_manager, runtime.global_locations_manager, runtime.global_journal_manager)
     runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_state_manager.get_setting_value(x))
 
+
     def apply_stores():
         runtime.global_events_manager.write_event('apply_stores')
+        locations_store = LocationsStore()
         runtime.global_locations_manager.set_store(locations_store)
-        wrap_manager_methods(runtime.global_locations_manager)
+
 
     def init_managers():
         runtime.global_events_manager.write_event('init_managers')

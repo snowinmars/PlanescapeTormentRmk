@@ -21,7 +21,7 @@ class LocationsManager:
         for external in externals:
             external_already_registrated = external in self._locations_store.e2i_mapping
             if external_already_registrated:
-                raise ValueError(f"External location id '{external}' already mapped to '{self._e2i_mapping[external]}'")
+                raise ValueError(f"External location id '{external}' already mapped to '{self._locations_store.e2i_mapping[external]}'")
 
         self._locations_store.i2e_mapping[internal] = externals.copy()
         for external in externals:

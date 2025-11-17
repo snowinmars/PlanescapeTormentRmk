@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.zf916_logic import Zf916Logic
     zf916Logic = Zf916Logic(runtime.global_state_manager)
 

@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.giantsk_logic import GiantskLogic
     giantskLogic = GiantskLogic(runtime.global_state_manager)
 

@@ -1,7 +1,7 @@
 init 10 python:
     from game.engine.runtime import (runtime)
     from game.dlgs.copearc_logic import CopearcLogic
-    copearcLogic = CopearcLogic(runtime.global_settings_manager)
+    copearcLogic = CopearcLogic(runtime.global_state_manager)
 
 
 # ###

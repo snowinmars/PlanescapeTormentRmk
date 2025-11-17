@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.xach_logic import XachLogic
     xachLogic = XachLogic(runtime.global_state_manager)
 

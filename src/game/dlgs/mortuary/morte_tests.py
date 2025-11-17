@@ -6373,10 +6373,7 @@ class MorteLogicGeneratedTest(LogicTest):
         self.assertFalse(self.logic.r65641_condition())
 
         self.state_manager.set_pharod_quest(2)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0401))
 
         self.assertTrue(self.logic.r65641_condition())
@@ -6392,10 +6389,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.assertFalse(self.logic.r65642_condition())
 
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.state_manager.locations_manager.set_location(location_AR0401)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0401))
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0500))
@@ -6442,10 +6436,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.state_manager.set_know_ravel(True)
         self.state_manager.set_know_ravel_key(1)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0610))
 
         self.assertTrue(self.logic.r65645_condition())
@@ -6461,10 +6452,7 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.assertFalse(self.logic.r65646_condition())
 
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.state_manager.locations_manager.set_location(location_AR0610)
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0700))
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0610))
@@ -6533,10 +6521,7 @@ class MorteLogicGeneratedTest(LogicTest):
         self.assertFalse(self.logic.r65718_condition())
 
         self.state_manager.set_grace_smell_mimir(True)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR1000))
 
         self.assertTrue(self.logic.r65718_condition())

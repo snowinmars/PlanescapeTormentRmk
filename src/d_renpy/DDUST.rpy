@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.dust_logic import DustLogic
     dustLogic = DustLogic(runtime.global_state_manager)
 

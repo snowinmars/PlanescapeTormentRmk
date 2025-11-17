@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.n1201_logic import N1201Logic
     n1201Logic = N1201Logic(runtime.global_state_manager)
 

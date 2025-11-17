@@ -1,4 +1,5 @@
 init 10 python:
+    from game.engine.runtime import (runtime)
     from game.dlgs.dhall_logic import DhallLogic
     dhallLogic = DhallLogic(runtime.global_state_manager)
 
