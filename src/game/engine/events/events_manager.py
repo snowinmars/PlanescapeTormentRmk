@@ -1,5 +1,4 @@
 import time
-from collections import deque
 from dataclasses import dataclass
 
 
@@ -11,13 +10,17 @@ class Event:
 
 
 class EventsManager:
-    def __init__(self, logger, max_entries = 100):
-        self._events = deque(maxlen=max_entries)
+    def __init__(self, logger):
         self.logger = logger
+        self._events_store = None
+
+
+    def set_store(self, events_store):
+        self._events_store = events_store
 
 
     def write_event(self, event_text, event_category = "general"):
-        self._events.append(Event(
+        self._events_store.events.append(Event(
             timestamp = time.strftime("[%H:%M]"),
             category = event_category,
             text = event_text
@@ -31,10 +34,10 @@ class EventsManager:
 
     def get_events(self, event_category = None):
         if event_category:
-            return list([e for e in self._events if e.category == event_category])
+            return list([e for e in self._events_store.events if e.category == event_category])
 
-        return list(self._events)
+        return list(self._events_store.events)
 
 
     def clear(self):
-        self._events.clear()
+        self._events_store.events.clear()

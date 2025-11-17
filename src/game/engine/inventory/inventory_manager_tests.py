@@ -1,7 +1,6 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.events.events_manager import (EventsManager)
 from game.engine.inventory.inventory_item import (InventoryItem)
 from game.engine.inventory.inventory_manager import (InventoryManager)
 
@@ -48,18 +47,17 @@ class InventoryManagerTest(LogicTest):
         inventory_item2 = _create_inventory_item('_2')
         delta = 2
 
-        events_manager = EventsManager(self.logger)
-        inventory_manager = InventoryManager(events_manager, lambda x: x == inventory_item2.settings_id)
+        custom_inventory_manager = InventoryManager(self.events_manager, lambda x: x == inventory_item2.settings_id)
 
-        before = len(inventory_manager._inventory_items)
+        before = len(custom_inventory_manager._inventory_items)
 
-        inventory_manager.register(inventory_item1)
-        inventory_manager.register(inventory_item2)
+        custom_inventory_manager.register(inventory_item1)
+        custom_inventory_manager.register(inventory_item2)
 
-        after = len(inventory_manager._inventory_items)
+        after = len(custom_inventory_manager._inventory_items)
         self.assertEqual(before + delta, after)
-        self.assertEqual(len(inventory_manager.get_owned_items()), 1)
-        self.assertEqual(inventory_manager.get_owned_items()[0], inventory_item2)
+        self.assertEqual(len(custom_inventory_manager.get_owned_items()), 1)
+        self.assertEqual(custom_inventory_manager.get_owned_items()[0], inventory_item2)
 
 
     def test_get_item_when_all_ok(self):

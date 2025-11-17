@@ -8,6 +8,7 @@ from game.engine.locations.locations_manager import (LocationsManager)
 from game.engine.characters.characters_manager import (CharactersManager)
 from game.engine.journal.journal_manager import (JournalManager)
 
+from game.engine.journal.journal_store import (JournalStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -31,6 +32,7 @@ class GraphicsMenuItemTest(unittest.TestCase):
         build_all_characters(self.characters_manager)
         build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
+        # TODO [snow]: this test was not discovered?
 
 
     def _test_graphics_menu_item(self, item):
