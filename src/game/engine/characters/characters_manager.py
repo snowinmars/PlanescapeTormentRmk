@@ -5,13 +5,16 @@ from game.engine.characters.character import (Character)
 
 class CharactersManager:
     def __init__(self, events_manager):
-        self._characters = {}
-        self._once_keys = {}
         self._events_manager = events_manager
+        self._characters_store = None
+
+
+    def set_store(self, characters_store):
+        self._characters_store = characters_store
 
 
     def get_character(self, name):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
 
@@ -19,7 +22,7 @@ class CharactersManager:
 
 
     def get_property(self, name, prop):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
         self._char_prop_exists_or_throw(char, prop)
@@ -30,10 +33,10 @@ class CharactersManager:
     def add_character(self, char):
         if not isinstance(char, Character):
             raise TypeError("Only Character instances can be added")
-        if char.name in self._characters:
+        if char.name in self._characters_store.characters:
             raise ValueError(f"Character '{char.name}' already exists")
 
-        self._characters[char.name] = char
+        self._characters_store.characters[char.name] = char
 
         self._log(f"add '{char.name}'")
 
@@ -41,11 +44,11 @@ class CharactersManager:
 
 
     def remove_character(self, name):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
 
-        del self._characters[name]
+        del self._characters_store.characters[name]
 
         self._log(f"remove '{name}'")
 
@@ -53,7 +56,7 @@ class CharactersManager:
 
 
     def modify_property(self, name, prop, amount):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
         self._char_prop_exists_or_throw(char, prop)
@@ -67,21 +70,21 @@ class CharactersManager:
 
 
     def modify_property_once(self, name, prop, amount, key):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
         self._char_prop_exists_or_throw(char, prop)
 
-        if key not in self._once_keys:
-            self._once_keys[key] = []
+        if key not in self._characters_store.once_keys:
+            self._characters_store.once_keys[key] = []
 
-        if prop in self._once_keys[key]:
+        if prop in self._characters_store.once_keys[key]:
             self._log(f"already modified '{name}'.'{prop}' with '{key}'")
             return getattr(char, prop)
 
         new_value = getattr(char, prop) + amount
         setattr(char, prop, new_value)
-        self._once_keys[key].append(prop)
+        self._characters_store.once_keys[key].append(prop)
 
         self._log(f"modify with '{key}' '{name}'.'{prop}' + '{amount}' = '{new_value}'")
 
@@ -89,7 +92,7 @@ class CharactersManager:
 
 
     def set_property(self, name, prop, value):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
         self._char_prop_exists_or_throw(char, prop)
@@ -102,7 +105,7 @@ class CharactersManager:
 
 
     def get_all_properties(self, name):
-        char = self._characters.get(name)
+        char = self._characters_store.characters.get(name)
 
         self._char_exists_or_throw(char, name)
 

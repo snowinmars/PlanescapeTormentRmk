@@ -37,6 +37,9 @@ init 3 python:
     from game.engine.journal.journal_manager import (JournalManager)
 
     from game.engine.locations.locations_store import (LocationsStore)
+    from game.engine.journal.journal_store import (JournalStore)
+    from game.engine.events.events_store import (EventsStore)
+    from game.engine.characters.characters_store import (CharactersStore)
 
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -55,8 +58,18 @@ init 3 python:
 
     def apply_stores():
         runtime.global_events_manager.write_event('apply_stores')
+
         locations_store = LocationsStore()
         runtime.global_locations_manager.set_store(locations_store)
+
+        journal_store = JournalStore()
+        runtime.global_journal_manager.set_store(journal_store)
+
+        events_store = EventsStore()
+        runtime.global_events_manager.set_store(events_store)
+
+        characters_store = CharactersStore()
+        runtime.global_characters_manager.set_store(characters_store)
 
 
     def init_managers():

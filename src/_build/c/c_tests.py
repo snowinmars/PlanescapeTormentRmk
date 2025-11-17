@@ -28,7 +28,7 @@ C report:
 -  {len(self.logic_files)} logics
 -  {len(self.raw_files)} raw
 -  {"1" if len(self.dialog_replacer.content) > 0 else "0"} dialog_replacer
--  CTests.setUpClass() took {time.time() - started_at} to warm up
+-  CTests.setUpClass() took {round(time.time() - started_at)} to warm up
         ''')
 
 

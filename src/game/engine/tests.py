@@ -9,6 +9,9 @@ from game.engine.characters.characters_manager import (CharactersManager)
 from game.engine.journal.journal_manager import (JournalManager)
 
 from game.engine.locations.locations_store import (LocationsStore)
+from game.engine.journal.journal_store import (JournalStore)
+from game.engine.events.events_store import (EventsStore)
+from game.engine.characters.characters_store import (CharactersStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -29,20 +32,29 @@ class LogicTest(unittest.TestCase):
         self.state_manager = StateManager(self.events_manager, self.characters_manager, self.locations_manager, self.journal_manager)
         self.inventory_manager = InventoryManager(self.events_manager, lambda x: self.state_manager.get_setting_value(x))
 
+        self.reset_stores()
+
         # TODO [snow]: move build_all_* into self.reset_stores after manager receive stores
         build_all_settings(self.state_manager)
         build_all_inventory(self.inventory_manager)
-        build_all_characters(self.characters_manager)
-        build_all_notes(self.journal_manager)
-
-        self.reset_stores()
 
 
     def reset_stores(self):
         self.locations_store = LocationsStore()
         self.locations_manager.set_store(self.locations_store)
 
+        self.journal_store = JournalStore()
+        self.journal_manager.set_store(self.journal_store)
+
+        self.events_store = EventsStore()
+        self.events_manager.set_store(self.events_store)
+
+        characters_store = CharactersStore()
+        self.characters_manager.set_store(characters_store)
+
         build_all_locations(self.locations_manager)
+        build_all_notes(self.journal_manager)
+        build_all_characters(self.characters_manager)
 
 
     def _methods_are_bound(self):

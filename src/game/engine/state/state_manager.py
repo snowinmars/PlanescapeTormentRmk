@@ -6,6 +6,7 @@ class StateManager:
         self._once_keys = []
         self._registry = {}
         self._events_manager = events_manager
+        # TODO [snow]: The following props are just useful, but not required: they can be imported as easy as StateManager itself. Should I remove them?
         self.characters_manager = characters_manager
         self.locations_manager = locations_manager
         self.journal_manager = journal_manager

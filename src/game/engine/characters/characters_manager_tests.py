@@ -1,19 +1,17 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.events.events_manager import (EventsManager)
 from game.engine.characters.character import (Character)
-from game.engine.characters.characters_manager import (CharactersManager)
 
 
 class CharactersManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.characters_manager)
-        self.assertIsNotNone(self.characters_manager._characters)
-        self.assertIsNotNone(self.characters_manager._once_keys)
+        self.assertIsNotNone(self.characters_manager._characters_store.characters)
+        self.assertIsNotNone(self.characters_manager._characters_store.once_keys)
         self.assertIsNotNone(self.characters_manager._events_manager)
-        self.assertNotEqual(len(self.characters_manager._characters), 0)
-        self.assertEqual(len(self.characters_manager._once_keys), 0)
+        self.assertNotEqual(len(self.characters_manager._characters_store.characters), 0)
+        self.assertEqual(len(self.characters_manager._characters_store.once_keys), 0)
 
 
     def test_get_character_when_all_ok(self):
@@ -212,21 +210,21 @@ class CharactersManagerTest(LogicTest):
         char = _create_char(name)
         self.characters_manager.add_character(char)
 
-        self.assertEqual(len(self.characters_manager._once_keys), 0)
+        self.assertEqual(len(self.characters_manager._characters_store.once_keys), 0)
 
         self.characters_manager.modify_property_once(name, prop, delta, key)
 
-        self.assertEqual(len(self.characters_manager._once_keys), 1)
-        self.assertTrue(key in self.characters_manager._once_keys.keys())
-        self.assertEqual(len(self.characters_manager._once_keys[key]), 1)
-        self.assertEqual(self.characters_manager._once_keys[key][0], prop)
+        self.assertEqual(len(self.characters_manager._characters_store.once_keys), 1)
+        self.assertTrue(key in self.characters_manager._characters_store.once_keys.keys())
+        self.assertEqual(len(self.characters_manager._characters_store.once_keys[key]), 1)
+        self.assertEqual(self.characters_manager._characters_store.once_keys[key][0], prop)
 
         self.characters_manager.modify_property_once(name, prop, delta, key)
 
-        self.assertEqual(len(self.characters_manager._once_keys), 1)
-        self.assertTrue(key in self.characters_manager._once_keys.keys())
-        self.assertEqual(len(self.characters_manager._once_keys[key]), 1)
-        self.assertEqual(self.characters_manager._once_keys[key][0], prop)
+        self.assertEqual(len(self.characters_manager._characters_store.once_keys), 1)
+        self.assertTrue(key in self.characters_manager._characters_store.once_keys.keys())
+        self.assertEqual(len(self.characters_manager._characters_store.once_keys[key]), 1)
+        self.assertEqual(self.characters_manager._characters_store.once_keys[key][0], prop)
 
 
     def test_modify_property_once_when_char_not_found(self):

@@ -1,7 +1,6 @@
 import unittest
 
 from game.engine.tests import (LogicTest)
-from game.engine.events.events_manager import (EventsManager)
 
 
 class JournalManagerTest(LogicTest):

@@ -7,6 +7,7 @@ class LocationsStore():
         self.visited_externals = set()
         self.visited_internals = set()
 
+
     def __getstate__(self):
         return {
             'i2e_mapping': self.i2e_mapping,
@@ -16,6 +17,7 @@ class LocationsStore():
             'visited_externals': self.visited_externals,
             'visited_internals': self.visited_internals,
         }
+
 
     def __setstate__(self, state):
         self.i2e_mapping = state['i2e_mapping']
