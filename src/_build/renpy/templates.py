@@ -499,10 +499,7 @@ self.state_manager.locations_manager.set_location(location_{v})
 self.assertTrue(self.state_manager.locations_manager.is_visited(location_{v}))
 """.strip()
 not_is_visited_internal_condition_pattern_after = """
-self.state_manager.locations_manager._current_external = None
-self.state_manager.locations_manager._current_internal = None
-self.state_manager.locations_manager._visited_externals = set()
-self.state_manager.locations_manager._visited_internals = set()
+self.reset_stores()
 self.assertFalse(self.state_manager.locations_manager.is_visited(location_{v}))
 """.strip()
 count_in_party_eq_zero_condition_pattern_preconf = """

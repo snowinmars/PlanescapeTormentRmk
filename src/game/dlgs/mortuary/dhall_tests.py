@@ -442,10 +442,7 @@ class DhallLogicGeneratedTest(LogicTest):
         self.assertFalse(self.logic.r858_condition())
 
         self.state_manager.set_escape_mortuary(False)
-        self.state_manager.locations_manager._current_external = None
-        self.state_manager.locations_manager._current_internal = None
-        self.state_manager.locations_manager._visited_externals = set()
-        self.state_manager.locations_manager._visited_internals = set()
+        self.reset_stores()
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0200))
 
         self.assertTrue(self.logic.r858_condition())
