@@ -7,12 +7,13 @@ from game.engine.state.state_manager import (StateManager)
 class StateManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.state_manager)
-        self.assertIsNotNone(self.state_manager._once_keys)
+        self.assertIsNotNone(self.state_manager.world_manager)
+        self.assertIsNotNone(self.state_manager.world_manager._world_store.once_keys)
+        self.assertIsNotNone(self.state_manager.world_manager._world_store.registry)
         self.assertIsNotNone(self.state_manager.journal_manager)
-        self.assertIsNotNone(self.state_manager._registry)
         self.assertIsNotNone(self.state_manager._events_manager)
-        self.assertEqual(len(self.state_manager._once_keys), 0)
-        self.assertNotEqual(len(self.state_manager._registry), 0)
+        self.assertEqual(len(self.state_manager.world_manager._world_store.once_keys), 0)
+        self.assertNotEqual(len(self.state_manager.world_manager._world_store.registry), 0)
         self.assertIsNotNone(self.state_manager.characters_manager)
         self.assertIsNotNone(self.state_manager.locations_manager)
 
@@ -60,13 +61,13 @@ class StateManagerTest(LogicTest):
         prop = 'experience'
         delta = 17
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_in_party_annah(True)
-        self.state_manager.set_in_party_ignus(True)
-        self.state_manager.set_in_party_grace(True)
-        self.state_manager.set_in_party_dakkon(True)
-        self.state_manager.set_in_party_nordom(True)
-        self.state_manager.set_in_party_vhail(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_in_party_annah(True)
+        self.state_manager.world_manager.set_in_party_ignus(True)
+        self.state_manager.world_manager.set_in_party_grace(True)
+        self.state_manager.world_manager.set_in_party_dakkon(True)
+        self.state_manager.world_manager.set_in_party_nordom(True)
+        self.state_manager.world_manager.set_in_party_vhail(True)
 
         protagonist_before = self.state_manager.characters_manager.get_property(protagonist.name, prop)
         morte_before = self.state_manager.characters_manager.get_property(morte.name, prop)
@@ -109,13 +110,13 @@ class StateManagerTest(LogicTest):
         prop = 'experience'
         delta = 17
 
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_in_party_annah(False)
-        self.state_manager.set_in_party_ignus(False)
-        self.state_manager.set_in_party_grace(False)
-        self.state_manager.set_in_party_dakkon(False)
-        self.state_manager.set_in_party_nordom(False)
-        self.state_manager.set_in_party_vhail(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_in_party_annah(False)
+        self.state_manager.world_manager.set_in_party_ignus(False)
+        self.state_manager.world_manager.set_in_party_grace(False)
+        self.state_manager.world_manager.set_in_party_dakkon(False)
+        self.state_manager.world_manager.set_in_party_nordom(False)
+        self.state_manager.world_manager.set_in_party_vhail(False)
 
         protagonist_before = self.state_manager.characters_manager.get_property(protagonist.name, prop)
         morte_before = self.state_manager.characters_manager.get_property(morte.name, prop)
@@ -232,25 +233,25 @@ class StateManagerTest(LogicTest):
         setting_id = 'setting_id'
         default_value = 3
 
-        self.assertFalse(setting_id in self.state_manager._registry)
+        self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
         self.state_manager.register(setting_id, default_value)
 
-        self.assertEqual(self.state_manager._registry[setting_id], default_value)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value)
+        self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
 
-        getattr(self.state_manager, f'set_{setting_id}')(default_value * 2)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value * 2)
+        getattr(self.state_manager.world_manager, f'set_{setting_id}')(default_value * 2)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value * 2)
 
-        getattr(self.state_manager, f'inc_{setting_id}')()
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value * 2 + 1)
-        getattr(self.state_manager, f'inc_{setting_id}')()
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value * 2 + 2)
+        getattr(self.state_manager.world_manager, f'inc_{setting_id}')()
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value * 2 + 1)
+        getattr(self.state_manager.world_manager, f'inc_{setting_id}')()
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value * 2 + 2)
 
-        getattr(self.state_manager, f'dec_{setting_id}')()
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value * 2 + 1)
-        getattr(self.state_manager, f'dec_{setting_id}')()
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value * 2)
+        getattr(self.state_manager.world_manager, f'dec_{setting_id}')()
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value * 2 + 1)
+        getattr(self.state_manager.world_manager, f'dec_{setting_id}')()
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value * 2)
 
 
     def test_register_when_inc_once(self):
@@ -260,27 +261,27 @@ class StateManagerTest(LogicTest):
         default_value = 3
         delta = 2
 
-        self.assertFalse(setting_id in self.state_manager._registry)
+        self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
         self.state_manager.register(setting_id, default_value)
 
-        self.assertEqual(self.state_manager._registry[setting_id], default_value)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value)
+        self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
 
-        getattr(self.state_manager, f'inc_once_{setting_id}')(key1)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value + 1)
+        getattr(self.state_manager.world_manager, f'inc_once_{setting_id}')(key1)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value + 1)
 
-        getattr(self.state_manager, f'inc_once_{setting_id}')(key1)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value + 1)
+        getattr(self.state_manager.world_manager, f'inc_once_{setting_id}')(key1)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value + 1)
 
-        getattr(self.state_manager, f'inc_once_{setting_id}')(key2, delta)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value + 1 + delta)
+        getattr(self.state_manager.world_manager, f'inc_once_{setting_id}')(key2, delta)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value + 1 + delta)
 
-        getattr(self.state_manager, f'inc_once_{setting_id}')(key1, delta)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value + 1 + delta)
+        getattr(self.state_manager.world_manager, f'inc_once_{setting_id}')(key1, delta)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value + 1 + delta)
 
-        getattr(self.state_manager, f'inc_once_{setting_id}')(key2, delta)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value + 1 + delta)
+        getattr(self.state_manager.world_manager, f'inc_once_{setting_id}')(key2, delta)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value + 1 + delta)
 
 
     def test_register_when_dec_once(self):
@@ -290,46 +291,46 @@ class StateManagerTest(LogicTest):
         default_value = 3
         delta = 2
 
-        self.assertFalse(setting_id in self.state_manager._registry)
+        self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
         self.state_manager.register(setting_id, default_value)
 
-        self.assertEqual(self.state_manager._registry[setting_id], default_value)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value)
+        self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
 
-        getattr(self.state_manager, f'dec_once_{setting_id}')(key1)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value - 1)
+        getattr(self.state_manager.world_manager, f'dec_once_{setting_id}')(key1)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value - 1)
 
-        getattr(self.state_manager, f'dec_once_{setting_id}')(key1)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value - 1)
+        getattr(self.state_manager.world_manager, f'dec_once_{setting_id}')(key1)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value - 1)
 
-        getattr(self.state_manager, f'dec_once_{setting_id}')(key2, delta)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value - 1 - delta)
+        getattr(self.state_manager.world_manager, f'dec_once_{setting_id}')(key2, delta)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value - 1 - delta)
 
-        getattr(self.state_manager, f'dec_once_{setting_id}')(key1, delta)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value - 1 - delta)
+        getattr(self.state_manager.world_manager, f'dec_once_{setting_id}')(key1, delta)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value - 1 - delta)
 
-        getattr(self.state_manager, f'dec_once_{setting_id}')(key2, delta)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value - 1 - delta)
+        getattr(self.state_manager.world_manager, f'dec_once_{setting_id}')(key2, delta)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value - 1 - delta)
 
 
     def test_get_setting_value_when_all_ok(self):
         setting_id = 'setting_id'
         default_value = 3
 
-        self.assertFalse(setting_id in self.state_manager._registry)
+        self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
         self.state_manager.register(setting_id, default_value)
 
-        self.assertEqual(self.state_manager._registry[setting_id], default_value)
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), self.state_manager.get_setting_value(setting_id))
-        self.assertEqual(getattr(self.state_manager, f'get_{setting_id}')(), default_value)
+        self.assertEqual(self.state_manager.world_manager._world_store.registry[setting_id], default_value)
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), self.state_manager.world_manager.get_setting_value(setting_id))
+        self.assertEqual(getattr(self.state_manager.world_manager, f'get_{setting_id}')(), default_value)
 
 
     def test_get_setting_value_when_setting_was_not_registrated(self):
         setting_id = 'non existing setting id'
 
-        self.assertFalse(setting_id in self.state_manager._registry)
+        self.assertFalse(setting_id in self.state_manager.world_manager._world_store.registry)
 
         with self.assertRaises(KeyError):
-            self.state_manager.get_setting_value(setting_id)
+            self.state_manager.world_manager.get_setting_value(setting_id)

@@ -10,4 +10,4 @@ class DhallFeatherLogic(DhallFeatherLogicGenerated):
 
     def break_feather(self):
         self.state_manager.characters_manager.modify_property('protagonist', 'lore', 1)
-        self.state_manager.set_has_dhall_feather(False)
+        self.state_manager.world_manager.set_has_dhall_feather(False)

@@ -23,23 +23,23 @@ def test_{f}(self):
 
 
 action_set_true_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.set_(.*?)\(True\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.set_(.*?)\(True\)$"),
     template="""
 def test_{f}(self):
     self._false_then_true_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
 action_set_false_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.set_(.*?)\(False\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.set_(.*?)\(False\)$"),
     template="""
 def test_{f}(self):
-    self.state_manager.set_{s}(True)
+    self.state_manager.world_manager.set_{s}(True)
     self._true_then_false_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
@@ -123,12 +123,12 @@ def test_{f}(self):
 
 
 action_set_x_pattern = PatternConfig(
-    pattern=re.compile(r"self.state_manager.set_(.*?)\((.*?)\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.set_(.*?)\((.*?)\)$"),
     template="""
 def test_{f}(self):
-    self.state_manager.set_{s}({nv})
+    self.state_manager.world_manager.set_{s}({nv})
     self._integer_equals_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         {v},
         self.logic.{f}
     )
@@ -136,11 +136,11 @@ def test_{f}(self):
 
 
 action_inc_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.inc_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.inc_(.*?)\(.*\)$"),
     template="""
 def test_{f}(self):
     self._integer_inc_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         1,
         self.logic.{f}
     )
@@ -148,11 +148,11 @@ def test_{f}(self):
 
 
 action_inc_once_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.inc_once_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.inc_once_(.*?)\(.*\)$"),
     template="""
 def test_{f}(self):
     self._integer_inc_once_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         1,
         self.logic.{f}
     )
@@ -160,11 +160,11 @@ def test_{f}(self):
 
 
 action_dec_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.dec_(.*?)\((.*)?\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.dec_(.*?)\((.*)?\)$"),
     template="""
 def test_{f}(self):
     self._integer_dec_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         {v},
         self.logic.{f}
     )
@@ -172,11 +172,11 @@ def test_{f}(self):
 
 
 action_dec_once_pattern = PatternConfig(
-    pattern=re.compile(r"self\.state_manager\.dec_once_(.*?)\(.*\)$"),
+    pattern=re.compile(r"self\.state_manager\.world_manager\.dec_once_(.*?)\(.*\)$"),
     template="""
 def test_{f}(self):
     self._integer_dec_once_action(
-        self.state_manager.get_{s},
+        self.state_manager.world_manager.get_{s},
         {v},
         self.logic.{f}
     )
@@ -184,22 +184,22 @@ def test_{f}(self):
 
 
 condition_get_x_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\)$"),
+    pattern=re.compile(r"return self\.state_manager\.world_manager\.get_(.*?)\(\)$"),
     template="""
 def test_{f}(self):
     self._boolean_straight_condition(
-        lambda x: self.state_manager.set_{s}(x),
+        lambda x: self.state_manager.world_manager.set_{s}(x),
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
 
 
 condition_not_get_x_pattern = PatternConfig(
-    pattern=re.compile(r"return not self\.state_manager\.get_(.*?)\(\)$"),
+    pattern=re.compile(r"return not self\.state_manager\.world_manager\.get_(.*?)\(\)$"),
     template="""
 def test_{f}(self):
     self._boolean_invert_condition(
-        lambda x: self.state_manager.set_{s}(x),
+        lambda x: self.state_manager.world_manager.set_{s}(x),
         self.logic.{f}
     )
 """.strip(), extractors={'s': lambda m: m.group(1)})
@@ -274,11 +274,11 @@ def test_{f}(self):
 
 
 condition_get_x_gt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) > (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.world_manager\.get_(.*?)\(\) > (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_gt_condition(
-        lambda x: self.state_manager.set_{s}(x),
+        lambda x: self.state_manager.world_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -286,11 +286,11 @@ def test_{f}(self):
 
 
 condition_get_x_lt_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) < (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.world_manager\.get_(.*?)\(\) < (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_lt_condition(
-        lambda x: self.state_manager.set_{s}(x),
+        lambda x: self.state_manager.world_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -298,11 +298,11 @@ def test_{f}(self):
 
 
 condition_get_x_eq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) == (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.world_manager\.get_(.*?)\(\) == (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_equal_condition(
-        lambda x: self.state_manager.set_{s}(x),
+        lambda x: self.state_manager.world_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )
@@ -310,11 +310,11 @@ def test_{f}(self):
 
 
 condition_get_x_neq_pattern = PatternConfig(
-    pattern=re.compile(r"return self\.state_manager\.get_(.*?)\(\) != (.*?)$"),
+    pattern=re.compile(r"return self\.state_manager\.world_manager\.get_(.*?)\(\) != (.*?)$"),
     template="""
 def test_{f}(self):
     self._integer_not_equal_condition(
-        lambda x: self.state_manager.set_{s}(x),
+        lambda x: self.state_manager.world_manager.set_{s}(x),
         {v},
         self.logic.{f}
     )

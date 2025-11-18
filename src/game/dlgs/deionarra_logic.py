@@ -24,15 +24,15 @@ class DeionarraLogicGenerated:
 
 
     def r707_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r708_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r709_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r712_action(self):
@@ -41,7 +41,7 @@ class DeionarraLogicGenerated:
 
 
     def r700_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
 
 
     def r702_action(self):
@@ -50,15 +50,15 @@ class DeionarraLogicGenerated:
 
 
     def r747_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
 
 
     def r1313_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
 
 
     def r13255_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -98,21 +98,21 @@ class DeionarraLogicGenerated:
 
 
     def r786_action(self):
-        self.state_manager.set_prophecy(True)
+        self.state_manager.world_manager.set_prophecy(True)
 
 
     def r6081_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6082_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r13257_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -122,22 +122,22 @@ class DeionarraLogicGenerated:
 
 
     def r6129_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
         self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6131_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
         self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6132_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
         self.state_manager.characters_manager.modify_property_once('protagonist', 'law', -1, 'globalchaotic_deionarra_4')
 
 
     def r6133_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r6095_action(self):
@@ -149,30 +149,30 @@ class DeionarraLogicGenerated:
 
 
     def r6100_action(self):
-        self.state_manager.set_deionarra_curse(True)
+        self.state_manager.world_manager.set_deionarra_curse(True)
 
 
     def r6101_action(self):
-        self.state_manager.set_deionarra_curse(True)
+        self.state_manager.world_manager.set_deionarra_curse(True)
 
 
     def r6148_action(self):
-        self.state_manager.set_deionarra_portal(True)
+        self.state_manager.world_manager.set_deionarra_portal(True)
         self.state_manager.gain_experience('party', 500)
 
 
     def r6154_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6155_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r13258_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -224,20 +224,20 @@ class DeionarraLogicGenerated:
 
 
     def r63384_action(self):
-        self.state_manager.set_deionarra_forgives(True)
+        self.state_manager.world_manager.set_deionarra_forgives(True)
 
 
     def r63388_action(self):
-        self.state_manager.set_1200_cut_scene_2(True)
+        self.state_manager.world_manager.set_1200_cut_scene_2(True)
         #$% StartCutSceneMode() %$#
-        self.state_manager.set_cd_int_1(True)
+        self.state_manager.world_manager.set_cd_int_1(True)
         #$% ?.start_cut_scene('1200cut1') %$#
 
 
     def r63391_action(self):
-        self.state_manager.set_1200_cut_scene_2(True)
+        self.state_manager.world_manager.set_1200_cut_scene_2(True)
         #$% StartCutSceneMode() %$#
-        self.state_manager.set_cd_int_1(True)
+        self.state_manager.world_manager.set_cd_int_1(True)
         #$% ?.start_cut_scene('1200cut1') %$#
 
 
@@ -252,8 +252,8 @@ class DeionarraLogicGenerated:
 
 
     def r63419_action(self):
-        self.state_manager.set_has_wedding_ring(False)
-        self.state_manager.set_has_sup_ring(True)
+        self.state_manager.world_manager.set_has_wedding_ring(False)
+        self.state_manager.world_manager.set_has_sup_ring(True)
 
 
     def j66917_s73_r66914_action(self):
@@ -263,24 +263,24 @@ class DeionarraLogicGenerated:
 
     def r66914_action(self):
         self.state_manager.gain_experience('party', 1000)
-        self.state_manager.set_deionarra_raise_dead(True)
-        self.state_manager.set_can_raise_dead(True)
-        self.state_manager.set_can_raise_dead(True)
-        self.state_manager.set_can_raise_dead(True)
+        self.state_manager.world_manager.set_deionarra_raise_dead(True)
+        self.state_manager.world_manager.set_can_raise_dead(True)
+        self.state_manager.world_manager.set_can_raise_dead(True)
+        self.state_manager.world_manager.set_can_raise_dead(True)
 
 
     def r701_condition(self):
-        return self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r699_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r9616_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r708_condition(self):
@@ -302,19 +302,19 @@ class DeionarraLogicGenerated:
 
 
     def r1308_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6080_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r767_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1309_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r718_condition(self):
@@ -327,19 +327,19 @@ class DeionarraLogicGenerated:
 
 
     def r721_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1310_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1311_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r764_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r723_condition(self):
@@ -352,115 +352,115 @@ class DeionarraLogicGenerated:
 
 
     def r1312_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6084_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r747_condition(self):
-        return self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r1313_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r13255_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r731_condition(self):
-        return not self.state_manager.get_escape_mortuary() and \
+        return not self.state_manager.world_manager.get_escape_mortuary() and \
                self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
 
 
     def r732_condition(self):
-        return not self.state_manager.get_escape_mortuary() and \
+        return not self.state_manager.world_manager.get_escape_mortuary() and \
                self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
 
 
     def r1314_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6127_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r737_condition(self):
-        return not self.state_manager.get_escape_mortuary() and \
+        return not self.state_manager.world_manager.get_escape_mortuary() and \
                self.state_manager.characters_manager.get_property('protagonist', 'wisdom') < 13
 
 
     def r738_condition(self):
-        return not self.state_manager.get_escape_mortuary() and \
+        return not self.state_manager.world_manager.get_escape_mortuary() and \
                self.state_manager.characters_manager.get_property('protagonist', 'wisdom') > 12
 
 
     def r768_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r1315_condition(self):
-        return self.state_manager.get_deionarra_curse()
+        return self.state_manager.world_manager.get_deionarra_curse()
 
 
     def r6107_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6128_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r742_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1316_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r746_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r792_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r790_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1318_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r755_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1319_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r803_condition(self):
-        return self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r6085_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r13256_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r778_condition(self):
@@ -468,81 +468,81 @@ class DeionarraLogicGenerated:
 
 
     def r813_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1320_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6081_condition(self):
-        return self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r6082_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r13257_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r797_condition(self):
-        return self.state_manager.get_deionarra_raise_dead()
+        return self.state_manager.world_manager.get_deionarra_raise_dead()
 
 
     def r66911_condition(self):
-        return not self.state_manager.get_deionarra_raise_dead()
+        return not self.state_manager.world_manager.get_deionarra_raise_dead()
 
 
     def r798_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1321_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r801_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r802_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r1322_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1323_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r816_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1324_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r820_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1325_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r823_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r1326_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6129_condition(self):
@@ -559,35 +559,35 @@ class DeionarraLogicGenerated:
 
 
     def r6112_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6113_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6114_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6115_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6117_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6118_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6119_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6120_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6139_condition(self):
@@ -595,27 +595,27 @@ class DeionarraLogicGenerated:
 
 
     def r6140_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6141_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6145_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6146_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6147_condition(self):
-        return self.state_manager.get_deionarra_portal()
+        return self.state_manager.world_manager.get_deionarra_portal()
 
 
     def r6148_condition(self):
-        return not self.state_manager.get_deionarra_portal()
+        return not self.state_manager.world_manager.get_deionarra_portal()
 
 
     def r6150_condition(self):
@@ -623,120 +623,120 @@ class DeionarraLogicGenerated:
 
 
     def r6152_condition(self):
-        return not self.state_manager.get_prophecy()
+        return not self.state_manager.world_manager.get_prophecy()
 
 
     def r6153_condition(self):
-        return self.state_manager.get_prophecy()
+        return self.state_manager.world_manager.get_prophecy()
 
 
     def r6154_condition(self):
-        return self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r6155_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r13258_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r63367_condition(self):
-        return self.state_manager.get_fortress_party() > 1 and \
-               self.state_manager.get_fortress_ignus() != 1 and \
-               self.state_manager.get_fortress_vhailor() != 1
+        return self.state_manager.world_manager.get_fortress_party() > 1 and \
+               self.state_manager.world_manager.get_fortress_ignus() != 1 and \
+               self.state_manager.world_manager.get_fortress_vhailor() != 1
 
 
     def r63368_condition(self):
-        return self.state_manager.get_fortress_party() > 1 and \
-               self.state_manager.get_fortress_ignus() != 1 and \
-               self.state_manager.get_fortress_vhailor() != 1
+        return self.state_manager.world_manager.get_fortress_party() > 1 and \
+               self.state_manager.world_manager.get_fortress_ignus() != 1 and \
+               self.state_manager.world_manager.get_fortress_vhailor() != 1
 
 
     def r63369_condition(self):
-        return self.state_manager.get_deionarra_death_truth() > 0
+        return self.state_manager.world_manager.get_deionarra_death_truth() > 0
 
 
     def r63371_condition(self):
-        return self.state_manager.get_deionarra_forgives()
+        return self.state_manager.world_manager.get_deionarra_forgives()
 
 
     def r64594_condition(self):
-        return not self.state_manager.get_deionarra_forgives()
+        return not self.state_manager.world_manager.get_deionarra_forgives()
 
 
     def r63394_condition(self):
-        return self.state_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_deionarra_value() == 0
 
 
     def r63395_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r63397_condition(self):
-        return self.state_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_deionarra_value() == 0
 
 
     def r63398_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r63401_condition(self):
-        return self.state_manager.get_know_shadow_player_connection()
+        return self.state_manager.world_manager.get_know_shadow_player_connection()
 
 
     def r63402_condition(self):
-        return not self.state_manager.get_know_shadow_player_connection()
+        return not self.state_manager.world_manager.get_know_shadow_player_connection()
 
 
     def r63406_condition(self):
-        return self.state_manager.get_fortress_party() > 2
+        return self.state_manager.world_manager.get_fortress_party() > 2
 
 
     def r63407_condition(self):
-        return self.state_manager.get_fortress_party() == 2
+        return self.state_manager.world_manager.get_fortress_party() == 2
 
 
     def r63408_condition(self):
-        return self.state_manager.get_fortress_party() == 1 and \
-               self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_fortress_party() == 1 and \
+               self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r63409_condition(self):
-        return self.state_manager.get_fortress_party() == 1 and \
-               self.state_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_fortress_party() == 1 and \
+               self.state_manager.world_manager.get_deionarra_value() == 0
 
 
     def r63413_condition(self):
-        return self.state_manager.get_fortress_party() > 2
+        return self.state_manager.world_manager.get_fortress_party() > 2
 
 
     def r63414_condition(self):
-        return self.state_manager.get_fortress_party() == 2
+        return self.state_manager.world_manager.get_fortress_party() == 2
 
 
     def r63415_condition(self):
-        return self.state_manager.get_fortress_party() == 1
+        return self.state_manager.world_manager.get_fortress_party() == 1
 
 
     def r63419_condition(self):
-        return self.state_manager.get_deionarra_value() > 0 and \
-               self.state_manager.get_has_wedding_ring()
+        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
+               self.state_manager.world_manager.get_has_wedding_ring()
 
 
     def r63420_condition(self):
-        return self.state_manager.get_deionarra_value() == 0
+        return self.state_manager.world_manager.get_deionarra_value() == 0
 
 
     def r63421_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r63423_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
 class DeionarraLogic(DeionarraLogicGenerated):

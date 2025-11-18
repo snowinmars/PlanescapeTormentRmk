@@ -385,26 +385,26 @@ class DialogueReplacer:
         self.ignore('GiveItemCreate("Knife",Protagonist,1,0,0)')
 
         self.add_setting('can_raise_dead', 'boolean')
-        self.add_replacement('ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)', 'self.state_manager.set_can_raise_dead(True)')
+        self.add_replacement('ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)', 'self.state_manager.world_manager.set_can_raise_dead(True)')
 
         self.add_setting('has_cobble', 'boolean')
-        self.add_replacement('!HasItem("Cobble","Post")', 'return not self.state_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
-        self.add_replacement('HasItem("Cobble","Post")', 'return self.state_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
+        self.add_replacement('!HasItem("Cobble","Post")', 'return not self.state_manager.world_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
+        self.add_replacement('HasItem("Cobble","Post")', 'return self.state_manager.world_manager.get_has_cobble() #$% Checks if "Cobble" is in Quick Item Slot 4 Other possible values include "Weapon1", "Weapon2", "Shield", "Armor", "Helmet", "RingLeft", "RingRight", "Cloak", "Amulet", "Belt", "Boots", "Gloves", "QuickItem1-3", or "Inventory" (general inventory).%$#')
 
-        self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.state_manager.set_has_copper_earring_closed(False) self.state_manager.set_has_copper_earring_opened(True)')
-        self.add_replacement('TransformPartyItem("Dwedring","DsupRing",1,0,0)', 'self.state_manager.set_has_wedding_ring(False) self.state_manager.set_has_sup_ring(True)')
+        self.add_replacement('TransformPartyItem("CopEarC","CopEarO",1,0,0)', 'self.state_manager.world_manager.set_has_copper_earring_closed(False) self.state_manager.world_manager.set_has_copper_earring_opened(True)')
+        self.add_replacement('TransformPartyItem("Dwedring","DsupRing",1,0,0)', 'self.state_manager.world_manager.set_has_wedding_ring(False) self.state_manager.world_manager.set_has_sup_ring(True)')
 
-        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.state_manager.get_has_keyem()')
-        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.state_manager.get_has_keyem()')
-        self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.state_manager.get_has_bandages_zm396()')
-        self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.set_has_keyem(False) self.state_manager.set_vaxis_has_keyem(True)')
+        self.add_replacement('!HasItem("KeyEm","EiVene")', 'return self.state_manager.world_manager.get_has_keyem()')
+        self.add_replacement('HasItem("KeyEm","EiVene")', 'return not self.state_manager.world_manager.get_has_keyem()')
+        self.add_replacement('HasItem("Bandage","ZM396")', 'return not self.state_manager.world_manager.get_has_bandages_zm396()')
+        self.add_replacement('GiveItem("KeyEm","Vaxis")', 'self.state_manager.world_manager.set_has_keyem(False) self.state_manager.world_manager.set_vaxis_has_keyem(True)')
 
         self.add_replacement('HPPercent(Protagonist,100)', 'return self.state_manager.characters_manager.get_property(\'protagonist\', \'current_health\') == self.state_manager.characters_manager.get_property(\'protagonist\', \'max_health\')')
         self.add_replacement('HPPercentGT(Protagonist,49)', 'return self.state_manager.characters_manager.get_property(\'protagonist\', \'current_health\') > self.state_manager.characters_manager.get_property(\'protagonist\', \'max_health\') / 2')
         self.add_replacement('HPPercentLT(Protagonist,50)', 'return self.state_manager.characters_manager.get_property(\'protagonist\', \'current_health\') <= self.state_manager.characters_manager.get_property(\'protagonist\', \'max_health\') / 2')
 
-        self.add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.state_manager.set_in_party_morte(True)')
-        self.add_replacement('JoinPartyEx(TRUE)', 'self.state_manager.set_in_party_morte(True)')
+        self.add_replacement('ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE)', 'self.state_manager.world_manager.set_in_party_morte(True)')
+        self.add_replacement('JoinPartyEx(TRUE)', 'self.state_manager.world_manager.set_in_party_morte(True)')
         self.add_replacement('SetNamelessDisguise(ZOMBIE)', "self.state_manager.characters_manager.set_property('protagonist', 'looks_like', 'zombie')")
 
         self.add_replacement('NumInParty(1)', 'return self.state_manager.count_in_party() == 0')
@@ -418,16 +418,16 @@ class DialogueReplacer:
         self.add_setting(f'morale_{to_var}', 'integer')
 
         self.npc(from_var, to_var, env)
-        self.add_replacement(f'!InParty("{from_var}")', f'return not self.state_manager.get_in_party_{to_var}()')
-        self.add_replacement(f'!NearbyDialog("{from_var}")', f'return not self.state_manager.get_in_party_{to_var}()')
-        self.add_replacement(f'InParty("{from_var}")', f'return self.state_manager.get_in_party_{to_var}()')
-        self.add_replacement(f'MoraleDec("{from_var}",1)', f'self.state_manager.dec_morale_{to_var}()')
-        self.add_replacement(f'MoraleDec("{from_var}",2)', f'self.state_manager.dec_morale_{to_var}(2)')
-        self.add_replacement(f'MoraleDec("{from_var}",3)', f'self.state_manager.dec_morale_{to_var}(3)')
-        self.add_replacement(f'MoraleInc("{from_var}",1)', f'self.state_manager.inc_morale_{to_var}()')
-        self.add_replacement(f'MoraleInc("{from_var}",2)', f'self.state_manager.inc_morale_{to_var}(2)')
-        self.add_replacement(f'MoraleInc("{from_var}",3)', f'self.state_manager.inc_morale_{to_var}(3)')
-        self.add_replacement(f'NearbyDialog("{from_var}")', f'return self.state_manager.get_in_party_{to_var}()')
+        self.add_replacement(f'!InParty("{from_var}")', f'return not self.state_manager.world_manager.get_in_party_{to_var}()')
+        self.add_replacement(f'!NearbyDialog("{from_var}")', f'return not self.state_manager.world_manager.get_in_party_{to_var}()')
+        self.add_replacement(f'InParty("{from_var}")', f'return self.state_manager.world_manager.get_in_party_{to_var}()')
+        self.add_replacement(f'MoraleDec("{from_var}",1)', f'self.state_manager.world_manager.dec_morale_{to_var}()')
+        self.add_replacement(f'MoraleDec("{from_var}",2)', f'self.state_manager.world_manager.dec_morale_{to_var}(2)')
+        self.add_replacement(f'MoraleDec("{from_var}",3)', f'self.state_manager.world_manager.dec_morale_{to_var}(3)')
+        self.add_replacement(f'MoraleInc("{from_var}",1)', f'self.state_manager.world_manager.inc_morale_{to_var}()')
+        self.add_replacement(f'MoraleInc("{from_var}",2)', f'self.state_manager.world_manager.inc_morale_{to_var}(2)')
+        self.add_replacement(f'MoraleInc("{from_var}",3)', f'self.state_manager.world_manager.inc_morale_{to_var}(3)')
+        self.add_replacement(f'NearbyDialog("{from_var}")', f'return self.state_manager.world_manager.get_in_party_{to_var}()')
 
 
     def npc(self, from_var, to_var, env = 'GLOBAL'):
@@ -440,16 +440,16 @@ class DialogueReplacer:
                 return
 
             for x in range(0, 5):
-                self.add_replacement(f'!Global("{from_var}","{env}",{x})',   f'return self.state_manager.get_{to_var}_value() != {x}')
-                self.add_replacement(f'!GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.get_{to_var}_value() <= {x}')
-                self.add_replacement(f'!GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.get_{to_var}_value() >= {x}')
-                self.add_replacement(f'Global("{from_var}","{env}",{x})',    f'return self.state_manager.get_{to_var}_value() == {x}')
-                self.add_replacement(f'GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.get_{to_var}_value() > {x}')
-                self.add_replacement(f'GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.get_{to_var}_value() < {x}')
-                self.add_replacement(f'SetGlobal("{from_var}","{env}",{x})', f'self.state_manager.set_{to_var}_value({x})')
+                self.add_replacement(f'!Global("{from_var}","{env}",{x})',   f'return self.state_manager.world_manager.get_{to_var}_value() != {x}')
+                self.add_replacement(f'!GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() <= {x}')
+                self.add_replacement(f'!GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() >= {x}')
+                self.add_replacement(f'Global("{from_var}","{env}",{x})',    f'return self.state_manager.world_manager.get_{to_var}_value() == {x}')
+                self.add_replacement(f'GlobalGT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() > {x}')
+                self.add_replacement(f'GlobalLT("{from_var}","{env}",{x})',  f'return self.state_manager.world_manager.get_{to_var}_value() < {x}')
+                self.add_replacement(f'SetGlobal("{from_var}","{env}",{x})', f'self.state_manager.world_manager.set_{to_var}_value({x})')
 
-            self.add_replacement(f'!Dead("{from_var}")', f'return not self.state_manager.get_dead_{to_var}()')
-            self.add_replacement(f'Dead("{from_var}")', f'return self.state_manager.get_dead_{to_var}()')
+            self.add_replacement(f'!Dead("{from_var}")', f'return not self.state_manager.world_manager.get_dead_{to_var}()')
+            self.add_replacement(f'Dead("{from_var}")', f'return self.state_manager.world_manager.get_dead_{to_var}()')
 
 
     def inventory_item(self, from_var, to_var):
@@ -457,20 +457,20 @@ class DialogueReplacer:
         self.add_setting(f"talked_to_{to_var}_times", 'integer')
 
         for i in range(0, 6):  # manually add new values
-            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},0,0)', f'self.state_manager.set_has_{to_var}(True)')
-            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},1,0)', f'self.state_manager.set_has_{to_var}(True)')
+            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},0,0)', f'self.state_manager.world_manager.set_has_{to_var}(True)')
+            self.add_replacement(f'GiveItemCreate("{from_var}",Protagonist,{i},1,0)', f'self.state_manager.world_manager.set_has_{to_var}(True)')
 
         # in `HasItem(x,Myself)` the `Myself` is the `this` character of current dialogue,
         # in other words, `Myself` is the npc, that protagonist is talking to.
-        self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return self.state_manager.get_has_{to_var}()')
-        self.add_replacement(f'!PartyHasItem("{from_var}")', f'return not self.state_manager.get_has_{to_var}()')
-        self.add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.state_manager.set_has_{to_var}(False)')
-        self.add_replacement(f'DestroyPartyItem("{from_var}",FALSE)', f'self.state_manager.set_has_{to_var}(False)')
-        self.add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.state_manager.set_has_{to_var}(True)')
-        self.add_replacement(f'HasItem("{from_var}",Myself)', f'return not self.state_manager.get_has_{to_var}()')
-        self.add_replacement(f'PartyHasItem("{from_var}")', f'return self.state_manager.get_has_{to_var}()')
-        self.add_replacement(f'TakeItem("{from_var}",Protagonist)', f'self.state_manager.set_has_{to_var}(False)')
-        self.add_replacement(f'TakePartyItemNum("{from_var}",1)', f'self.state_manager.set_has_{to_var}(False)')
+        self.add_replacement(f'!HasItem("{from_var}",Myself)', f'return self.state_manager.world_manager.get_has_{to_var}()')
+        self.add_replacement(f'!PartyHasItem("{from_var}")', f'return not self.state_manager.world_manager.get_has_{to_var}()')
+        self.add_replacement(f'DestroyPartyItem("{from_var}",TRUE)', f'self.state_manager.world_manager.set_has_{to_var}(False)')
+        self.add_replacement(f'DestroyPartyItem("{from_var}",FALSE)', f'self.state_manager.world_manager.set_has_{to_var}(False)')
+        self.add_replacement(f'GiveItem("{from_var}",Protagonist)', f'self.state_manager.world_manager.set_has_{to_var}(True)')
+        self.add_replacement(f'HasItem("{from_var}",Myself)', f'return not self.state_manager.world_manager.get_has_{to_var}()')
+        self.add_replacement(f'PartyHasItem("{from_var}")', f'return self.state_manager.world_manager.get_has_{to_var}()')
+        self.add_replacement(f'TakeItem("{from_var}",Protagonist)', f'self.state_manager.world_manager.set_has_{to_var}(False)')
+        self.add_replacement(f'TakePartyItemNum("{from_var}",1)', f'self.state_manager.world_manager.set_has_{to_var}(False)')
 
 
     def boolean(self, from_var, to_var, env = 'GLOBAL'):
@@ -479,7 +479,7 @@ class DialogueReplacer:
             if from_var is None:
                 return
 
-            prefix = f'self.state_manager.get_{to_var}()'
+            prefix = f'self.state_manager.world_manager.get_{to_var}()'
             not_prefix = f'not {prefix}'
 
             #  May I be wrong? I mart.
@@ -495,8 +495,8 @@ class DialogueReplacer:
             self.add_replacement(f'GlobalGT("{from_var}","{env}",1)',  f'return false  # GlobalGT("{from_var}","{env}",1)')
             self.add_replacement(f'GlobalLT("{from_var}","{env}",0)',  f'return false  # GlobalLT("{from_var}","{env}",0)')
             self.add_replacement(f'GlobalLT("{from_var}","{env}",1)',  f'return {not_prefix}')
-            self.add_replacement(f'SetGlobal("{from_var}","{env}",0)', f'self.state_manager.set_{to_var}(False)')
-            self.add_replacement(f'SetGlobal("{from_var}","{env}",1)', f'self.state_manager.set_{to_var}(True)')
+            self.add_replacement(f'SetGlobal("{from_var}","{env}",0)', f'self.state_manager.world_manager.set_{to_var}(False)')
+            self.add_replacement(f'SetGlobal("{from_var}","{env}",1)', f'self.state_manager.world_manager.set_{to_var}(True)')
 
 
     def integer(self, from_var, to_var, values, env='GLOBAL'):
@@ -506,22 +506,22 @@ class DialogueReplacer:
                 return
 
         for i in [-1, 1, 2]:  # manually add new values
-            self.add_replacement(f'IncrementGlobal("{from_var}","{env}",{i})', f'self.state_manager.inc_{to_var}()')
+            self.add_replacement(f'IncrementGlobal("{from_var}","{env}",{i})', f'self.state_manager.world_manager.inc_{to_var}()')
 
         for value in values:
-            self.add_replacement(f'SetGlobal("{from_var}","{env}",{value})', f'self.state_manager.set_{to_var}({value})')
+            self.add_replacement(f'SetGlobal("{from_var}","{env}",{value})', f'self.state_manager.world_manager.set_{to_var}({value})')
 
         for value in values:
-            self.add_replacement(f'Global("{from_var}","{env}",{value})', f'return self.state_manager.get_{to_var}() == {value}')
+            self.add_replacement(f'Global("{from_var}","{env}",{value})', f'return self.state_manager.world_manager.get_{to_var}() == {value}')
 
         for value in values:
-            self.add_replacement(f'!Global("{from_var}","{env}",{value})', f'return self.state_manager.get_{to_var}() != {value}')
+            self.add_replacement(f'!Global("{from_var}","{env}",{value})', f'return self.state_manager.world_manager.get_{to_var}() != {value}')
 
         for value in values:
-            self.add_replacement(f'GlobalLT("{from_var}","{env}",{value})', f'return self.state_manager.get_{to_var}() < {value}')
+            self.add_replacement(f'GlobalLT("{from_var}","{env}",{value})', f'return self.state_manager.world_manager.get_{to_var}() < {value}')
 
         for value in values:
-            self.add_replacement(f'GlobalGT("{from_var}","{env}",{value})', f'return self.state_manager.get_{to_var}() > {value}')
+            self.add_replacement(f'GlobalGT("{from_var}","{env}",{value})', f'return self.state_manager.world_manager.get_{to_var}() > {value}')
 
 
     def ignore(self, line):

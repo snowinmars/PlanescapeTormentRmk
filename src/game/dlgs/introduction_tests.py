@@ -29,7 +29,7 @@ class IntroductionLogicTest(LogicTest):
         logic = IntroductionLogic(self.state_manager)
         logic.setup_as_highlvl()
 
-        self.assertEqual(self.state_manager.get_can_speak_with_dead(), True)
+        self.assertEqual(self.state_manager.world_manager.get_can_speak_with_dead(), True)
 
 
     def test_set_can_spoiler_true(self):

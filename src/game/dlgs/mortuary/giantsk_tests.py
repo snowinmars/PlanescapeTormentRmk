@@ -43,7 +43,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4042_action(self):
         self._false_then_true_action(
-            self.state_manager.get_mortualy_alarmed,
+            self.state_manager.world_manager.get_mortualy_alarmed,
             self.logic.r4042_action
         )
 
@@ -52,23 +52,23 @@ class GiantskLogicGeneratedTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 1
-        self.state_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.state_manager.world_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r4079_action()
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r4079_action()
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
@@ -77,47 +77,47 @@ class GiantskLogicGeneratedTest(LogicTest):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
-        self.state_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
-        self.state_manager.set_dead_giantsk(False)
+        self.state_manager.world_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.state_manager.world_manager.set_dead_giantsk(False)
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
-        self.assertFalse(self.state_manager.get_dead_giantsk())
-
-        self.logic.r4087_action()
-
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
+        self.assertFalse(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r4087_action()
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
+
+        self.logic.r4087_action()
+
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
 
     def test_r4088_action(self):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
-        self.state_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
-        self.state_manager.set_dead_giantsk(False)
+        self.state_manager.world_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.state_manager.world_manager.set_dead_giantsk(False)
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
-        self.assertFalse(self.state_manager.get_dead_giantsk())
-
-        self.logic.r4088_action()
-
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
+        self.assertFalse(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r4088_action()
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
+
+        self.logic.r4088_action()
+
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
 
     def test_r4095_action(self):
         self._false_then_true_action(
-            self.state_manager.get_mortualy_alarmed,
+            self.state_manager.world_manager.get_mortualy_alarmed,
             self.logic.r4095_action
         )
 
@@ -136,7 +136,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4097_action(self):
         self._false_then_true_action(
-            self.state_manager.get_has_breast1,
+            self.state_manager.world_manager.get_has_breast1,
             self.logic.r4097_action
         )
 
@@ -155,81 +155,81 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4099_action(self):
         self._false_then_true_action(
-            self.state_manager.get_has_breast2,
+            self.state_manager.world_manager.get_has_breast2,
             self.logic.r4099_action
         )
 
 
     def test_r4100_action(self):
         self._false_then_true_action(
-            self.state_manager.get_has_breast3,
+            self.state_manager.world_manager.get_has_breast3,
             self.logic.r4100_action
         )
 
 
     def test_r4101_action(self):
-        self.state_manager.set_has_breast4(False)
-        self.state_manager.set_dead_giantsk(False)
+        self.state_manager.world_manager.set_has_breast4(False)
+        self.state_manager.world_manager.set_dead_giantsk(False)
 
-        self.assertFalse(self.state_manager.get_has_breast4())
-        self.assertFalse(self.state_manager.get_dead_giantsk())
-
-        self.logic.r4101_action()
-
-        self.assertTrue(self.state_manager.get_has_breast4())
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertFalse(self.state_manager.world_manager.get_has_breast4())
+        self.assertFalse(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r4101_action()
 
-        self.assertTrue(self.state_manager.get_has_breast4())
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertTrue(self.state_manager.world_manager.get_has_breast4())
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
+
+        self.logic.r4101_action()
+
+        self.assertTrue(self.state_manager.world_manager.get_has_breast4())
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
 
     def test_r64301_action(self):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
-        self.state_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
-        self.state_manager.set_dead_giantsk(False)
+        self.state_manager.world_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.state_manager.world_manager.set_dead_giantsk(False)
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
-        self.assertFalse(self.state_manager.get_dead_giantsk())
-
-        self.logic.r64301_action()
-
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
+        self.assertFalse(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r64301_action()
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
+
+        self.logic.r64301_action()
+
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
 
     def test_r64302_action(self):
         giant_skeleton_enchant_before = 0
         giant_skeleton_enchant_after = 1
         giant_skeleton_enchant_after_once = 2 * 1
-        self.state_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
-        self.state_manager.set_dead_giantsk(False)
+        self.state_manager.world_manager.set_giant_skeleton_enchant(giant_skeleton_enchant_before)
+        self.state_manager.world_manager.set_dead_giantsk(False)
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
-        self.assertFalse(self.state_manager.get_dead_giantsk())
-
-        self.logic.r64302_action()
-
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_before)
+        self.assertFalse(self.state_manager.world_manager.get_dead_giantsk())
 
         self.logic.r64302_action()
 
-        self.assertEqual(self.state_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
-        self.assertTrue(self.state_manager.get_dead_giantsk())
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
+
+        self.logic.r64302_action()
+
+        self.assertEqual(self.state_manager.world_manager.get_giant_skeleton_enchant(), giant_skeleton_enchant_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_dead_giantsk())
 
 
     def test_r3997_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             0,
             self.logic.r3997_condition
         )
@@ -288,27 +288,27 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4002_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4002_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4002_condition())
 
 
     def test_r4003_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r4003_condition
         )
 
 
     def test_r4035_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             0,
             self.logic.r4035_condition
         )
@@ -367,13 +367,13 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4040_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4040_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4040_condition())
 
@@ -431,13 +431,13 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4052_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4052_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4052_condition())
 
@@ -546,13 +546,13 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4060_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4060_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4060_condition())
 
@@ -636,20 +636,20 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4068_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4068_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4068_condition())
 
 
     def test_r64294_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_tome_ba(x),
+            lambda x: self.state_manager.world_manager.set_has_tome_ba(x),
             self.logic.r64294_condition
         )
 
@@ -707,20 +707,20 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4076_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4076_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4076_condition())
 
 
     def test_r4079_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             0,
             self.logic.r4079_condition
         )
@@ -728,7 +728,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4080_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             0,
             self.logic.r4080_condition
         )
@@ -787,27 +787,27 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4085_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4085_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4085_condition())
 
 
     def test_r64296_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_tome_ba(x),
+            lambda x: self.state_manager.world_manager.set_has_tome_ba(x),
             self.logic.r64296_condition
         )
 
 
     def test_r4087_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             2,
             self.logic.r4087_condition
         )
@@ -815,7 +815,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4088_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             1,
             self.logic.r4088_condition
         )
@@ -874,20 +874,20 @@ class GiantskLogicGeneratedTest(LogicTest):
 
 
     def test_r4093_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_skel_mort_quip(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(False)
 
         self.assertFalse(self.logic.r4093_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_skel_mort_quip(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_skel_mort_quip(True)
 
         self.assertTrue(self.logic.r4093_condition())
 
 
     def test_r4099_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             3,
             self.logic.r4099_condition
         )
@@ -895,7 +895,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4100_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             4,
             self.logic.r4100_condition
         )
@@ -903,7 +903,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r4101_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             5,
             self.logic.r4101_condition
         )
@@ -911,7 +911,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r64301_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             2,
             self.logic.r64301_condition
         )
@@ -919,7 +919,7 @@ class GiantskLogicGeneratedTest(LogicTest):
 
     def test_r64302_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_giant_skeleton_enchant(x),
+            lambda x: self.state_manager.world_manager.set_giant_skeleton_enchant(x),
             1,
             self.logic.r64302_condition
         )

@@ -12,9 +12,9 @@ class Morte1LogicTest(LogicTest):
 
 
     def test_s23_action(self):
-        self.state_manager.set_mortuary_walkthrough(2)
+        self.state_manager.world_manager.set_mortuary_walkthrough(2)
         self._integer_equals_action(
-            self.state_manager.get_mortuary_walkthrough,
+            self.state_manager.world_manager.get_mortuary_walkthrough,
             1,
             self.logic.s23_action
         )
@@ -22,7 +22,7 @@ class Morte1LogicTest(LogicTest):
 
     def test_s24_action(self):
         self._false_then_true_action(
-            self.state_manager.get_has_intro_key,
+            self.state_manager.world_manager.get_has_intro_key,
             self.logic.s24_action
         )
 
@@ -34,9 +34,9 @@ class Morte1LogicGeneratedTest(LogicTest):
 
 
     def test_r39793_action(self):
-        self.state_manager.set_morte_value(2)
+        self.state_manager.world_manager.set_morte_value(2)
         self._integer_equals_action(
-            self.state_manager.get_morte_value,
+            self.state_manager.world_manager.get_morte_value,
             1,
             self.logic.r39793_action
         )
@@ -54,23 +54,30 @@ class Morte1LogicGeneratedTest(LogicTest):
         )
 
 
+#     def test_r39831_action(self):  # unused
+#         self._false_then_true_action(
+#             self.state_manager.world_manager.get_in_party_morte,
+#             self.logic.r39831_action
+#         )
+
+
     def test_r39852_action(self):
         self._false_then_true_action(
-            self.state_manager.get_in_party_morte,
+            self.state_manager.world_manager.get_in_party_morte,
             self.logic.r39852_action
         )
 
 
     def test_r39856_action(self):
         self._false_then_true_action(
-            self.state_manager.get_in_party_morte,
+            self.state_manager.world_manager.get_in_party_morte,
             self.logic.r39856_action
         )
 
 
     def test_r39859_action(self):
         self._false_then_true_action(
-            self.state_manager.get_in_party_morte,
+            self.state_manager.world_manager.get_in_party_morte,
             self.logic.r39859_action
         )
 

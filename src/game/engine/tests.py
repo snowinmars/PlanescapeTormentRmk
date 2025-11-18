@@ -7,11 +7,14 @@ from game.engine.inventory.inventory_manager import (InventoryManager)
 from game.engine.locations.locations_manager import (LocationsManager)
 from game.engine.characters.characters_manager import (CharactersManager)
 from game.engine.journal.journal_manager import (JournalManager)
+from game.engine.world.world_manager import (WorldManager)
 
 from game.engine.locations.locations_store import (LocationsStore)
 from game.engine.journal.journal_store import (JournalStore)
 from game.engine.events.events_store import (EventsStore)
 from game.engine.characters.characters_store import (CharactersStore)
+from game.engine.inventory.inventory_store import (InventoryStore)
+from game.engine.world.world_store import (WorldStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -29,14 +32,11 @@ class LogicTest(unittest.TestCase):
         self.locations_manager = LocationsManager(self.events_manager)
         self.characters_manager = CharactersManager(self.events_manager)
         self.journal_manager = JournalManager(self.events_manager)
-        self.state_manager = StateManager(self.events_manager, self.characters_manager, self.locations_manager, self.journal_manager)
+        self.world_manager = WorldManager(self.events_manager)
+        self.state_manager = StateManager(self.events_manager, self.world_manager, self.characters_manager, self.locations_manager, self.journal_manager)
         self.inventory_manager = InventoryManager(self.events_manager, lambda x: self.state_manager.get_setting_value(x))
 
         self.reset_stores()
-
-        # TODO [snow]: move build_all_* into self.reset_stores after manager receive stores
-        build_all_settings(self.state_manager)
-        build_all_inventory(self.inventory_manager)
 
 
     def reset_stores(self):
@@ -49,12 +49,20 @@ class LogicTest(unittest.TestCase):
         self.events_store = EventsStore()
         self.events_manager.set_store(self.events_store)
 
-        characters_store = CharactersStore()
-        self.characters_manager.set_store(characters_store)
+        self.characters_store = CharactersStore()
+        self.characters_manager.set_store(self.characters_store)
+
+        self.inventory_store = InventoryStore()
+        self.inventory_manager.set_store(self.inventory_store)
+
+        self.world_store = WorldStore()
+        self.world_manager.set_store(self.world_store)
 
         build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
         build_all_characters(self.characters_manager)
+        build_all_inventory(self.inventory_manager)
+        build_all_settings(self.state_manager)
 
 
     def _methods_are_bound(self):

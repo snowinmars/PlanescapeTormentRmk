@@ -9,7 +9,7 @@ class EiveneLogicGenerated:
 
 
     def r3422_action(self):
-        self.state_manager.set_eivene_value(1)
+        self.state_manager.world_manager.set_eivene_value(1)
 
 
     def j37701_s5_r3424_action(self):
@@ -18,9 +18,9 @@ class EiveneLogicGenerated:
 
 
     def r3424_action(self):
-        self.state_manager.set_has_embalm(False)
-        self.state_manager.set_has_needle(False)
-        self.state_manager.set_eivene_delivery(True)
+        self.state_manager.world_manager.set_has_embalm(False)
+        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.world_manager.set_eivene_delivery(True)
         self.state_manager.gain_experience('party', 250)
 
 
@@ -54,21 +54,21 @@ class EiveneLogicGenerated:
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
 
 
     def r3449_action(self):
         self.state_manager.characters_manager.modify_property('protagonist', 'max_health', 1)
         self.state_manager.characters_manager.full_heal('protagonist')
-        self.state_manager.set_ravel_eivene(1)
+        self.state_manager.world_manager.set_ravel_eivene(1)
         self.state_manager.journal_manager.update_journal('38199')
         #$%.register('38199', 'После того, как я принес Эи-Вейн бальзамирующую жидкость и нитку, она зашила мои шрамы и нанесла бальзамирующую жидкость на мое тело. Довольно странно, но я чувствую себя... здоровее. %$#')
 
 
     def r3456_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_has_keyem(True)
 
 
     def j61612_s15_r3459_action(self):
@@ -95,16 +95,16 @@ class EiveneLogicGenerated:
 
 
     def r3469_action(self):
-        self.state_manager.set_has_embalm(False)
-        self.state_manager.set_has_needle(False)
-        self.state_manager.set_eivene_delivery(True)
+        self.state_manager.world_manager.set_has_embalm(False)
+        self.state_manager.world_manager.set_has_needle(False)
+        self.state_manager.world_manager.set_eivene_delivery(True)
         self.state_manager.gain_experience('party', 250)
 
 
     def r3470_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_has_keyem(True)
 
 
     def j38203_s18_r3494_action(self):
@@ -134,153 +134,153 @@ class EiveneLogicGenerated:
 
     def r3501_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_has_keyem(True)
 
 
     def r63478_action(self):
         self.state_manager.gain_experience('protagonist', 250)
-        self.state_manager.set_42_secret(True)
+        self.state_manager.world_manager.set_42_secret(True)
 
 
     def r3412_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3413_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3414_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3415_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3424_condition(self):
-        return self.state_manager.get_has_embalm() and \
-               self.state_manager.get_has_needle()
+        return self.state_manager.world_manager.get_has_embalm() and \
+               self.state_manager.world_manager.get_has_needle()
 
 
     def r3425_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3426_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3427_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3428_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3440_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3441_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3442_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3443_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3452_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3453_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3456_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               not self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               not self.state_manager.world_manager.get_has_keyem()
 
 
     def r3457_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               self.state_manager.world_manager.get_has_keyem()
 
 
     def r3459_condition(self):
-        return not self.state_manager.get_42_secret()
+        return not self.state_manager.world_manager.get_42_secret()
 
 
     def r3463_condition(self):
-        return not self.state_manager.get_eivene_delivery()
+        return not self.state_manager.world_manager.get_eivene_delivery()
 
 
     def r4351_condition(self):
-        return self.state_manager.get_eivene_delivery()
+        return self.state_manager.world_manager.get_eivene_delivery()
 
 
     def r3469_condition(self):
-        return self.state_manager.get_has_embalm() and \
-               self.state_manager.get_has_needle()
+        return self.state_manager.world_manager.get_has_embalm() and \
+               self.state_manager.world_manager.get_has_needle()
 
 
     def r3470_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               not self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               not self.state_manager.world_manager.get_has_keyem()
 
 
     def r3497_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               self.state_manager.world_manager.get_has_keyem()
 
 
     def r3494_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3495_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r3501_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               not self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               not self.state_manager.world_manager.get_has_keyem()
 
 
     def r3502_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               self.state_manager.world_manager.get_has_keyem()
 
 
     def r4354_condition(self):
-        return not self.state_manager.get_eivene_delivery()
+        return not self.state_manager.world_manager.get_eivene_delivery()
 
 
     def r4355_condition(self):
-        return self.state_manager.get_eivene_delivery()
+        return self.state_manager.world_manager.get_eivene_delivery()
 
 
     def r63478_condition(self):
-        return not self.state_manager.get_42_secret()
+        return not self.state_manager.world_manager.get_42_secret()
 
 
     def r63479_condition(self):
-        return self.state_manager.get_42_secret()
+        return self.state_manager.world_manager.get_42_secret()
 
 
     def r63482_condition(self):
-        return not self.state_manager.get_eivene_delivery()
+        return not self.state_manager.world_manager.get_eivene_delivery()
 
 
     def r63481_condition(self):
-        return self.state_manager.get_eivene_delivery()
+        return self.state_manager.world_manager.get_eivene_delivery()
 
 
 class EiveneLogic(EiveneLogicGenerated):
@@ -289,4 +289,4 @@ class EiveneLogic(EiveneLogicGenerated):
 
 
     def set_know_eivene_name(self):
-        self.state_manager.set_know_eivene_name(True)
+        self.state_manager.world_manager.set_know_eivene_name(True)
