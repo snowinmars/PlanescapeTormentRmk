@@ -8,7 +8,7 @@ class Zm79LogicGenerated:
 
 
     def r34946_action(self):
-        self.state_manager.set_know_copper_earring_secret(True)
+        self.state_manager.world_manager.set_know_copper_earring_secret(True)
 
 
     def j64536_s3_r64279_action(self):
@@ -22,23 +22,23 @@ class Zm79LogicGenerated:
 
 
     def r34946_condition(self):
-        return not self.state_manager.get_know_copper_earring_secret()
+        return not self.state_manager.world_manager.get_know_copper_earring_secret()
 
 
     def r34947_condition(self):
-        return self.state_manager.get_vaxis_exposed()
+        return self.state_manager.world_manager.get_vaxis_exposed()
 
 
     def r34948_condition(self):
-        return self.state_manager.get_can_speak_with_dead()
+        return self.state_manager.world_manager.get_can_speak_with_dead()
 
 
     def r64279_condition(self):
-        return not self.state_manager.get_has_copper_earring_closed()
+        return not self.state_manager.world_manager.get_has_copper_earring_closed()
 
 
     def r64280_condition(self):
-        return self.state_manager.get_has_copper_earring_closed()
+        return self.state_manager.world_manager.get_has_copper_earring_closed()
 
 
 class Zm79Logic(Zm79LogicGenerated):

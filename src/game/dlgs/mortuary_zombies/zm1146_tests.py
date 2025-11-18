@@ -21,28 +21,28 @@ class Zm1146LogicGeneratedTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
-        self.state_manager.set_zombie_chaotic(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
 
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
-        self.assertFalse(self.state_manager.get_zombie_chaotic())
+        self.assertFalse(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r6521_action()
 
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r6521_action()
 
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
 
     def test_r6524_action(self):
-        self.state_manager.set_crispy_value(2)
+        self.state_manager.world_manager.set_crispy_value(2)
         self._integer_equals_action(
-            self.state_manager.get_crispy_value,
+            self.state_manager.world_manager.get_crispy_value,
             1,
             self.logic.r6524_action
         )
@@ -88,35 +88,35 @@ class Zm1146LogicGeneratedTest(LogicTest):
 
     def test_r6521_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r6521_condition
         )
 
 
     def test_r6522_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r6522_condition
         )
 
 
     def test_r6523_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_exposed(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_exposed(x),
             self.logic.r6523_condition
         )
 
 
     def test_r6524_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r6524_condition
         )
 
 
     def test_r9434_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod_value(x),
             0,
             self.logic.r9434_condition
         )

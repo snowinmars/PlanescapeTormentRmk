@@ -15,28 +15,28 @@ class VaxisLogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
-        self.state_manager.set_zombie_chaotic(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
 
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
-        self.assertFalse(self.state_manager.get_zombie_chaotic())
+        self.assertFalse(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r454_action()
 
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r454_action()
 
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
 
     def test_r461_action(self):
-        self.state_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis_value(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis_value,
             1,
             self.logic.r461_action
         )
@@ -145,9 +145,9 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r480_action(self):
-        self.state_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis_value(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis_value,
             1,
             self.logic.r480_action
         )
@@ -163,9 +163,9 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r481_action(self):
-        self.state_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis_value(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis_value,
             1,
             self.logic.r481_action
         )
@@ -181,9 +181,9 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r482_action(self):
-        self.state_manager.set_vaxis_value(2)
+        self.state_manager.world_manager.set_vaxis_value(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_value,
+            self.state_manager.world_manager.get_vaxis_value,
             1,
             self.logic.r482_action
         )
@@ -543,14 +543,14 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4447_action(self):
         self._false_then_true_action(
-            self.state_manager.get_vaxis_orders,
+            self.state_manager.world_manager.get_vaxis_orders,
             self.logic.r4447_action
         )
 
 
     def test_r4448_action(self):
         self._false_then_true_action(
-            self.state_manager.get_vaxis_orders,
+            self.state_manager.world_manager.get_vaxis_orders,
             self.logic.r4448_action
         )
 
@@ -589,43 +589,43 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4469_action(self):
-        self.state_manager.set_vaxis_leave(False)
-        self.state_manager.set_has_bandages(False)
-        self.state_manager.set_has_bandages(False)
-        self.state_manager.set_has_bandages(False)
-        self.state_manager.set_has_embalm(False)
-        self.state_manager.set_has_needle(False)
+        self.state_manager.world_manager.set_vaxis_leave(False)
+        self.state_manager.world_manager.set_has_bandages(False)
+        self.state_manager.world_manager.set_has_bandages(False)
+        self.state_manager.world_manager.set_has_bandages(False)
+        self.state_manager.world_manager.set_has_embalm(False)
+        self.state_manager.world_manager.set_has_needle(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
 
-        self.assertFalse(self.state_manager.get_vaxis_leave())
-        self.assertFalse(self.state_manager.get_has_bandages())
-        self.assertFalse(self.state_manager.get_has_bandages())
-        self.assertFalse(self.state_manager.get_has_bandages())
-        self.assertFalse(self.state_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.get_has_needle())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_leave())
+        self.assertFalse(self.state_manager.world_manager.get_has_bandages())
+        self.assertFalse(self.state_manager.world_manager.get_has_bandages())
+        self.assertFalse(self.state_manager.world_manager.get_has_bandages())
+        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
+        self.assertFalse(self.state_manager.world_manager.get_has_needle())
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r4469_action()
 
-        self.assertTrue(self.state_manager.get_vaxis_leave())
-        self.assertTrue(self.state_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.get_has_needle())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_leave())
+        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
+        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
+        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
+        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
+        self.assertTrue(self.state_manager.world_manager.get_has_needle())
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r4469_action()
 
-        self.assertTrue(self.state_manager.get_vaxis_leave())
-        self.assertTrue(self.state_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.get_has_bandages())
-        self.assertTrue(self.state_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.get_has_needle())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_leave())
+        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
+        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
+        self.assertTrue(self.state_manager.world_manager.get_has_bandages())
+        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
+        self.assertTrue(self.state_manager.world_manager.get_has_needle())
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
@@ -692,7 +692,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4672_action(self):
         self._false_then_true_action(
-            self.state_manager.get_strong_arm_vaxis,
+            self.state_manager.world_manager.get_strong_arm_vaxis,
             self.logic.r4672_action
         )
 
@@ -725,40 +725,40 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_has_keyem(True)
-        self.state_manager.set_vaxis_has_keyem(False)
+        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_vaxis_has_keyem(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.get_has_keyem())
-        self.assertFalse(self.state_manager.get_vaxis_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4494_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.get_has_keyem())
-        self.assertTrue(self.state_manager.get_vaxis_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4494_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.get_has_keyem())
-        self.assertTrue(self.state_manager.get_vaxis_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
 
     def test_r4496_action(self):
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_vaxis_orders(True)
         self._true_then_false_action(
-            self.state_manager.get_vaxis_orders,
+            self.state_manager.world_manager.get_vaxis_orders,
             self.logic.r4496_action
         )
 
 
     def test_r4497_action(self):
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_vaxis_orders(True)
         self._true_then_false_action(
-            self.state_manager.get_vaxis_orders,
+            self.state_manager.world_manager.get_vaxis_orders,
             self.logic.r4497_action
         )
 
@@ -767,70 +767,70 @@ class VaxisLogicTest(LogicTest):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         good_before = self.state_manager.characters_manager.get_property(who_good, prop_good)
-        self.assertTrue(self.state_manager.get_vaxis_orders())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_orders())
 
         self.logic.r4498_action()
 
         good_after = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertFalse(self.state_manager.get_vaxis_orders())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_orders())
 
         self.logic.r4498_action()
 
         good_after_once = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertFalse(self.state_manager.get_vaxis_orders())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_orders())
 
 
     def test_r4499_action(self):
         who_good = 'protagonist'
         prop_good = 'good'
         delta_good = -1
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         good_before = self.state_manager.characters_manager.get_property(who_good, prop_good)
-        self.assertTrue(self.state_manager.get_vaxis_orders())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_orders())
 
         self.logic.r4499_action()
 
         good_after = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertFalse(self.state_manager.get_vaxis_orders())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_orders())
 
         self.logic.r4499_action()
 
         good_after_once = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertFalse(self.state_manager.get_vaxis_orders())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_orders())
 
 
     def test_r4502_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_has_keyem(True)
-        self.state_manager.set_vaxis_has_keyem(False)
+        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_vaxis_has_keyem(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.get_has_keyem())
-        self.assertFalse(self.state_manager.get_vaxis_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4502_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.get_has_keyem())
-        self.assertTrue(self.state_manager.get_vaxis_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
         self.logic.r4502_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.get_has_keyem())
-        self.assertTrue(self.state_manager.get_vaxis_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
 
 
     def test_j64519_s36_r64520_action(self):
@@ -882,18 +882,18 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4508_action(self):
-        self.state_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
         self._integer_equals_action(
-            self.state_manager.get_embalm_key_quest,
+            self.state_manager.world_manager.get_embalm_key_quest,
             1,
             self.logic.r4508_action
         )
 
 
     def test_r4509_action(self):
-        self.state_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
         self._integer_equals_action(
-            self.state_manager.get_embalm_key_quest,
+            self.state_manager.world_manager.get_embalm_key_quest,
             1,
             self.logic.r4509_action
         )
@@ -903,33 +903,33 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_has_keyem(True)
-        self.state_manager.set_vaxis_has_keyem(False)
+        self.state_manager.world_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_vaxis_has_keyem(False)
         embalm_key_quest_before = 1
         embalm_key_quest_after = 3
         embalm_key_quest_after_once = 3
-        self.state_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.get_has_keyem())
-        self.assertFalse(self.state_manager.get_vaxis_has_keyem())
-        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_before)
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
 
         self.logic.r4519_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.get_has_keyem())
-        self.assertTrue(self.state_manager.get_vaxis_has_keyem())
-        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_after)
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
 
         self.logic.r4519_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.get_has_keyem())
-        self.assertTrue(self.state_manager.get_vaxis_has_keyem())
-        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_has_keyem())
+        self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
 
 
     def test_j64521_s42_r4521_action(self):
@@ -942,9 +942,9 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4521_action(self):
-        self.state_manager.set_embalm_key_quest(4)
+        self.state_manager.world_manager.set_embalm_key_quest(4)
         self._integer_equals_action(
-            self.state_manager.get_embalm_key_quest,
+            self.state_manager.world_manager.get_embalm_key_quest,
             3,
             self.logic.r4521_action
         )
@@ -960,9 +960,9 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4522_action(self):
-        self.state_manager.set_embalm_key_quest(4)
+        self.state_manager.world_manager.set_embalm_key_quest(4)
         self._integer_equals_action(
-            self.state_manager.get_embalm_key_quest,
+            self.state_manager.world_manager.get_embalm_key_quest,
             3,
             self.logic.r4522_action
         )
@@ -999,22 +999,22 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_vaxis_help(False)
+        self.state_manager.world_manager.set_vaxis_help(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.state_manager.get_vaxis_help())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_help())
 
         self.logic.r64527_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.state_manager.get_vaxis_help())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_help())
 
         self.logic.r64527_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.state_manager.get_vaxis_help())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_help())
 
 
     def test_j64529_s51_r4568_action(self):
@@ -1030,22 +1030,22 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_vaxis_help(False)
+        self.state_manager.world_manager.set_vaxis_help(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.state_manager.get_vaxis_help())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_help())
 
         self.logic.r4568_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.state_manager.get_vaxis_help())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_help())
 
         self.logic.r4568_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.state_manager.get_vaxis_help())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_help())
 
 
     def test_j64529_s51_r4569_action(self):
@@ -1061,39 +1061,39 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_vaxis_help(False)
+        self.state_manager.world_manager.set_vaxis_help(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.state_manager.get_vaxis_help())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_help())
 
         self.logic.r4569_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.state_manager.get_vaxis_help())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_help())
 
         self.logic.r4569_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.state_manager.get_vaxis_help())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_help())
 
 
     def test_r4580_action(self):
-        self.state_manager.set_vaxis_exposes_soego(False)
+        self.state_manager.world_manager.set_vaxis_exposes_soego(False)
         note_id = '64530'
 
-        self.assertFalse(self.state_manager.get_vaxis_exposes_soego())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_exposes_soego())
         self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4580_action()
 
-        self.assertTrue(self.state_manager.get_vaxis_exposes_soego())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_exposes_soego())
         self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
 
         self.logic.r4580_action()
 
-        self.assertTrue(self.state_manager.get_vaxis_exposes_soego())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_exposes_soego())
         self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
 
 
@@ -1101,111 +1101,111 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
 
         self.logic.r4592_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
 
         self.logic.r4592_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
 
 
     def test_r4593_action(self):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 250
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertTrue(self.state_manager.get_has_keyem())
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
 
         self.logic.r4593_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertFalse(self.state_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
 
         self.logic.r4593_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertFalse(self.state_manager.get_has_keyem())
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
 
 
     def test_r4620_action(self):
         vaxis_zombie_disguise_before = 1
         vaxis_zombie_disguise_after = 2
         vaxis_zombie_disguise_after_once = 2
-        self.state_manager.set_vaxis_zombie_disguise(vaxis_zombie_disguise_before)
-        self.state_manager.set_has_embalm(True)
-        self.state_manager.set_has_needle(True)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(vaxis_zombie_disguise_before)
+        self.state_manager.world_manager.set_has_embalm(True)
+        self.state_manager.world_manager.set_has_needle(True)
 
-        self.assertEqual(self.state_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_before)
-        self.assertTrue(self.state_manager.get_has_embalm())
-        self.assertTrue(self.state_manager.get_has_needle())
-
-        self.logic.r4620_action()
-
-        self.assertEqual(self.state_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after)
-        self.assertFalse(self.state_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.get_has_needle())
+        self.assertEqual(self.state_manager.world_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_before)
+        self.assertTrue(self.state_manager.world_manager.get_has_embalm())
+        self.assertTrue(self.state_manager.world_manager.get_has_needle())
 
         self.logic.r4620_action()
 
-        self.assertEqual(self.state_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after_once)
-        self.assertFalse(self.state_manager.get_has_embalm())
-        self.assertFalse(self.state_manager.get_has_needle())
+        self.assertEqual(self.state_manager.world_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after)
+        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
+        self.assertFalse(self.state_manager.world_manager.get_has_needle())
+
+        self.logic.r4620_action()
+
+        self.assertEqual(self.state_manager.world_manager.get_vaxis_zombie_disguise(), vaxis_zombie_disguise_after_once)
+        self.assertFalse(self.state_manager.world_manager.get_has_embalm())
+        self.assertFalse(self.state_manager.world_manager.get_has_needle())
 
 
     def test_r4621_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_zombie_disguise,
+            self.state_manager.world_manager.get_vaxis_zombie_disguise,
             1,
             self.logic.r4621_action
         )
 
 
     def test_r4622_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_zombie_disguise,
+            self.state_manager.world_manager.get_vaxis_zombie_disguise,
             1,
             self.logic.r4622_action
         )
 
 
     def test_r4623_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_zombie_disguise,
+            self.state_manager.world_manager.get_vaxis_zombie_disguise,
             1,
             self.logic.r4623_action
         )
 
 
     def test_r4625_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_zombie_disguise,
+            self.state_manager.world_manager.get_vaxis_zombie_disguise,
             1,
             self.logic.r4625_action
         )
 
 
     def test_r4628_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
         self._integer_equals_action(
-            self.state_manager.get_vaxis_zombie_disguise,
+            self.state_manager.world_manager.get_vaxis_zombie_disguise,
             1,
             self.logic.r4628_action
         )
@@ -1218,11 +1218,11 @@ class VaxisLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 500
-        self.state_manager.set_vaxis_global_xp(False)
+        self.state_manager.world_manager.set_vaxis_global_xp(False)
 
         looks_like_before = self.state_manager.characters_manager.get_property(who_looks_like, prop_looks_like)
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.state_manager.get_vaxis_global_xp())
+        self.assertFalse(self.state_manager.world_manager.get_vaxis_global_xp())
 
         self.logic.r4630_action()
 
@@ -1230,7 +1230,7 @@ class VaxisLogicTest(LogicTest):
         self.assertEqual(looks_like_before + delta_looks_like, looks_like_after)
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.state_manager.get_vaxis_global_xp())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_global_xp())
 
         self.logic.r4630_action()
 
@@ -1238,12 +1238,12 @@ class VaxisLogicTest(LogicTest):
         self.assertEqual(looks_like_after + delta_looks_like, looks_like_after_once)
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.state_manager.get_vaxis_global_xp())
+        self.assertTrue(self.state_manager.world_manager.get_vaxis_global_xp())
 
 
     def test_r4631_action(self):
         self._false_then_true_action(
-            self.state_manager.get_morte_vaxis_quip_1,
+            self.state_manager.world_manager.get_morte_vaxis_quip_1,
             self.logic.r4631_action
         )
 
@@ -1274,7 +1274,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4635_action(self):
         self._false_then_true_action(
-            self.state_manager.get_morte_vaxis_quip_2,
+            self.state_manager.world_manager.get_morte_vaxis_quip_2,
             self.logic.r4635_action
         )
 
@@ -1318,35 +1318,35 @@ class VaxisLogicTest(LogicTest):
 
     def test_r454_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r454_condition
         )
 
 
     def test_r455_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r455_condition
         )
 
 
     def test_r456_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_exposed(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_exposed(x),
             self.logic.r456_condition
         )
 
 
     def test_r457_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r457_condition
         )
 
 
     def test_r468_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r468_condition
         )
 
@@ -1366,7 +1366,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r484_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r484_condition
         )
 
@@ -1386,28 +1386,28 @@ class VaxisLogicTest(LogicTest):
 
     def test_r491_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r491_condition
         )
 
 
     def test_r492_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r492_condition
         )
 
 
     def test_r493_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r493_condition
         )
 
 
     def test_r494_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r494_condition
         )
 
@@ -1563,7 +1563,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4368_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r4368_condition
         )
 
@@ -1602,14 +1602,14 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4379_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4379_condition
         )
 
 
     def test_r4380_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4380_condition
         )
 
@@ -1772,35 +1772,35 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4426_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4426_condition
         )
 
 
     def test_r4427_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4427_condition
         )
 
 
     def test_r4428_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4428_condition
         )
 
 
     def test_r4429_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4429_condition
         )
 
 
     def test_r4438_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r4438_condition
         )
 
@@ -1910,7 +1910,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4452_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r4452_condition
         )
 
@@ -1969,7 +1969,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4469_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_vaxis_leave(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_leave(x),
             self.logic.r4469_condition
         )
 
@@ -2119,7 +2119,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4494_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_keyem(x),
+            lambda x: self.state_manager.world_manager.set_has_keyem(x),
             self.logic.r4494_condition
         )
 
@@ -2178,14 +2178,14 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4502_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_keyem(x),
+            lambda x: self.state_manager.world_manager.set_has_keyem(x),
             self.logic.r4502_condition
         )
 
 
     def test_r64520_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene_value(x),
             1,
             self.logic.r64520_condition
         )
@@ -2193,7 +2193,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4503_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene_value(x),
             0,
             self.logic.r4503_condition
         )
@@ -2201,7 +2201,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4506_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene_value(x),
             1,
             self.logic.r4506_condition
         )
@@ -2209,7 +2209,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r66150_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_eivene_value(x),
+            lambda x: self.state_manager.world_manager.set_eivene_value(x),
             0,
             self.logic.r66150_condition
         )
@@ -2217,7 +2217,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4508_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             0,
             self.logic.r4508_condition
         )
@@ -2225,7 +2225,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4509_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             0,
             self.logic.r4509_condition
         )
@@ -2233,7 +2233,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4510_condition(self):
         self._integer_not_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             0,
             self.logic.r4510_condition
         )
@@ -2241,7 +2241,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4511_condition(self):
         self._integer_not_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             0,
             self.logic.r4511_condition
         )
@@ -2249,91 +2249,91 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4521_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r4521_condition
         )
 
 
     def test_r4522_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_escape_mortuary(x),
+            lambda x: self.state_manager.world_manager.set_escape_mortuary(x),
             self.logic.r4522_condition
         )
 
 
     def test_r64508_condition(self):
-        self.state_manager.set_escape_mortuary(True)
-        self.state_manager.set_vaxis_help(True)
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_strong_arm_vaxis(False)
+        self.state_manager.world_manager.set_escape_mortuary(True)
+        self.state_manager.world_manager.set_vaxis_help(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_strong_arm_vaxis(False)
 
         self.assertFalse(self.logic.r64508_condition())
 
-        self.state_manager.set_escape_mortuary(False)
-        self.state_manager.set_vaxis_help(False)
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_strong_arm_vaxis(True)
+        self.state_manager.world_manager.set_escape_mortuary(False)
+        self.state_manager.world_manager.set_vaxis_help(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_strong_arm_vaxis(True)
 
         self.assertTrue(self.logic.r64508_condition())
 
 
     def test_r4524_condition(self):
-        self.state_manager.set_escape_mortuary(True)
-        self.state_manager.set_vaxis_help(True)
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_strong_arm_vaxis(True)
+        self.state_manager.world_manager.set_escape_mortuary(True)
+        self.state_manager.world_manager.set_vaxis_help(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_strong_arm_vaxis(True)
 
         self.assertFalse(self.logic.r4524_condition())
 
-        self.state_manager.set_escape_mortuary(False)
-        self.state_manager.set_vaxis_help(False)
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_strong_arm_vaxis(False)
+        self.state_manager.world_manager.set_escape_mortuary(False)
+        self.state_manager.world_manager.set_vaxis_help(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_strong_arm_vaxis(False)
 
         self.assertTrue(self.logic.r4524_condition())
 
 
     def test_r4525_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_help(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_help(x),
             self.logic.r4525_condition
         )
 
 
     def test_r4526_condition(self):
-        self.state_manager.set_vaxis_zombie_disguise(0)
-        self.state_manager.set_appearance(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(0)
+        self.state_manager.world_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4526_condition())
 
-        self.state_manager.set_vaxis_zombie_disguise(1)
-        self.state_manager.set_appearance(0)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(1)
+        self.state_manager.world_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4526_condition())
 
 
     def test_r4527_condition(self):
-        self.state_manager.set_vaxis_zombie_disguise(0)
-        self.state_manager.set_appearance(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(0)
+        self.state_manager.world_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4527_condition())
 
-        self.state_manager.set_vaxis_zombie_disguise(2)
-        self.state_manager.set_appearance(0)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4527_condition())
 
 
     def test_r4528_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_orders(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_orders(x),
             self.logic.r4528_condition
         )
 
 
     def test_r4673_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.set_pharod_value(x),
+            lambda x: self.state_manager.world_manager.set_pharod_value(x),
             1,
             self.logic.r4673_condition
         )
@@ -2341,14 +2341,14 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4530_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_journal(x),
+            lambda x: self.state_manager.world_manager.set_journal(x),
             self.logic.r4530_condition
         )
 
 
     def test_r4531_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_dhall_value(x),
+            lambda x: self.state_manager.world_manager.set_dhall_value(x),
             0,
             self.logic.r4531_condition
         )
@@ -2356,7 +2356,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4532_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_deionarra_value(x),
+            lambda x: self.state_manager.world_manager.set_deionarra_value(x),
             0,
             self.logic.r4532_condition
         )
@@ -2364,7 +2364,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4533_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_soego_value(x),
+            lambda x: self.state_manager.world_manager.set_soego_value(x),
             0,
             self.logic.r4533_condition
         )
@@ -2372,117 +2372,117 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4534_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4534_condition
         )
 
 
     def test_r4535_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4535_condition
         )
 
 
     def test_r4547_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4547_condition
         )
 
 
     def test_r4548_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4548_condition
         )
 
 
     def test_r4552_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4552_condition
         )
 
 
     def test_r4553_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4553_condition
         )
 
 
     def test_r4564_condition(self):
-        self.state_manager.set_strong_arm_vaxis(True)
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_strong_arm_vaxis(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         self.assertFalse(self.logic.r4564_condition())
 
-        self.state_manager.set_strong_arm_vaxis(False)
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_strong_arm_vaxis(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
         self.assertTrue(self.logic.r4564_condition())
 
 
     def test_r64509_condition(self):
-        self.state_manager.set_strong_arm_vaxis(True)
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_strong_arm_vaxis(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         self.assertFalse(self.logic.r64509_condition())
 
-        self.state_manager.set_strong_arm_vaxis(False)
-        self.state_manager.set_embalm_key_quest(3)
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_strong_arm_vaxis(False)
+        self.state_manager.world_manager.set_embalm_key_quest(3)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
         self.assertTrue(self.logic.r64509_condition())
 
 
     def test_r64510_condition(self):
-        self.state_manager.set_strong_arm_vaxis(False)
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_strong_arm_vaxis(False)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         self.assertFalse(self.logic.r64510_condition())
 
-        self.state_manager.set_strong_arm_vaxis(True)
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_strong_arm_vaxis(True)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
         self.assertTrue(self.logic.r64510_condition())
 
 
     def test_r64511_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_orders(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_orders(x),
             self.logic.r64511_condition
         )
 
 
     def test_r64527_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_has_bone_chrm(x),
+            lambda x: self.state_manager.world_manager.set_has_bone_chrm(x),
             self.logic.r64527_condition
         )
 
 
     def test_r4568_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_bone_chrm(x),
+            lambda x: self.state_manager.world_manager.set_has_bone_chrm(x),
             self.logic.r4568_condition
         )
 
 
     def test_r4569_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_bone_chrm(x),
+            lambda x: self.state_manager.world_manager.set_has_bone_chrm(x),
             self.logic.r4569_condition
         )
 
 
     def test_r4586_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             1,
             self.logic.r4586_condition
         )
@@ -2490,79 +2490,79 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4587_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             2,
             self.logic.r4587_condition
         )
 
 
     def test_r4588_condition(self):
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         self.assertFalse(self.logic.r4588_condition())
 
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
         self.assertTrue(self.logic.r4588_condition())
 
 
     def test_r4589_condition(self):
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
         self.assertFalse(self.logic.r4589_condition())
 
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
         self.assertTrue(self.logic.r4589_condition())
 
 
     def test_r4592_condition(self):
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_has_keyem(False)
 
         self.assertFalse(self.logic.r4592_condition())
 
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         self.assertTrue(self.logic.r4592_condition())
 
 
     def test_r4593_condition(self):
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_has_keyem(False)
 
         self.assertFalse(self.logic.r4593_condition())
 
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         self.assertTrue(self.logic.r4593_condition())
 
 
     def test_r4594_condition(self):
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         self.assertFalse(self.logic.r4594_condition())
 
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_has_keyem(False)
 
         self.assertTrue(self.logic.r4594_condition())
 
 
     def test_r4599_condition(self):
         self._integer_equal_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             0,
             self.logic.r4599_condition
         )
@@ -2570,7 +2570,7 @@ class VaxisLogicTest(LogicTest):
 
     def test_r4600_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_embalm_key_quest(x),
+            lambda x: self.state_manager.world_manager.set_embalm_key_quest(x),
             0,
             self.logic.r4600_condition
         )
@@ -2582,12 +2582,12 @@ class VaxisLogicTest(LogicTest):
         delta_intelligence = 12
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.state_manager.set_appearance(1)
+        self.state_manager.world_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4604_condition())
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.state_manager.set_appearance(0)
+        self.state_manager.world_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4604_condition())
 
@@ -2598,12 +2598,12 @@ class VaxisLogicTest(LogicTest):
         delta_intelligence = 12
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.state_manager.set_appearance(1)
+        self.state_manager.world_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4609_condition())
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.state_manager.set_appearance(0)
+        self.state_manager.world_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4609_condition())
 
@@ -2666,12 +2666,12 @@ class VaxisLogicTest(LogicTest):
         delta_intelligence = 12
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence)
-        self.state_manager.set_appearance(1)
+        self.state_manager.world_manager.set_appearance(1)
 
         self.assertFalse(self.logic.r4615_condition())
 
         self.state_manager.characters_manager.set_property(who_intelligence, prop_intelligence, delta_intelligence + 1)
-        self.state_manager.set_appearance(0)
+        self.state_manager.world_manager.set_appearance(0)
 
         self.assertTrue(self.logic.r4615_condition())
 
@@ -2729,106 +2729,106 @@ class VaxisLogicTest(LogicTest):
 
 
     def test_r4620_condition(self):
-        self.state_manager.set_has_embalm(False)
-        self.state_manager.set_has_needle(False)
+        self.state_manager.world_manager.set_has_embalm(False)
+        self.state_manager.world_manager.set_has_needle(False)
 
         self.assertFalse(self.logic.r4620_condition())
 
-        self.state_manager.set_has_embalm(True)
-        self.state_manager.set_has_needle(True)
+        self.state_manager.world_manager.set_has_embalm(True)
+        self.state_manager.world_manager.set_has_needle(True)
 
         self.assertTrue(self.logic.r4620_condition())
 
 
     def test_r4630_condition(self):
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_vaxis_global_xp(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_vaxis_global_xp(True)
 
         self.assertFalse(self.logic.r4630_condition())
 
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_vaxis_global_xp(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_vaxis_global_xp(False)
 
         self.assertTrue(self.logic.r4630_condition())
 
 
     def test_r4631_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_vaxis_quip_1(True)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_vaxis_quip_1(True)
 
         self.assertFalse(self.logic.r4631_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_vaxis_quip_1(False)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_vaxis_quip_1(False)
 
         self.assertTrue(self.logic.r4631_condition())
 
 
     def test_r4632_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_vaxis_quip_1(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_vaxis_quip_1(False)
 
         self.assertFalse(self.logic.r4632_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_vaxis_quip_1(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_vaxis_quip_1(True)
 
         self.assertTrue(self.logic.r4632_condition())
 
 
     def test_r64533_condition(self):
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_vaxis_global_xp(False)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_vaxis_global_xp(False)
 
         self.assertFalse(self.logic.r64533_condition())
 
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_vaxis_global_xp(True)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_vaxis_global_xp(True)
 
         self.assertTrue(self.logic.r64533_condition())
 
 
     def test_r4634_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r4634_condition
         )
 
 
     def test_r4635_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_vaxis_quip_2(True)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_vaxis_quip_2(True)
 
         self.assertFalse(self.logic.r4635_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_vaxis_quip_2(False)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_vaxis_quip_2(False)
 
         self.assertTrue(self.logic.r4635_condition())
 
 
     def test_r4636_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_vaxis_quip_2(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_vaxis_quip_2(False)
 
         self.assertFalse(self.logic.r4636_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_vaxis_quip_2(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_vaxis_quip_2(True)
 
         self.assertTrue(self.logic.r4636_condition())
 
 
     def test_r4656_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_vaxis_help(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_help(x),
             self.logic.r4656_condition
         )
 
 
     def test_r64532_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_help(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_help(x),
             self.logic.r64532_condition
         )
 

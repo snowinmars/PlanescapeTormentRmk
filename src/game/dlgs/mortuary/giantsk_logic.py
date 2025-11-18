@@ -15,31 +15,31 @@ class GiantskLogicGenerated:
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
 
 
     def r4079_action(self):
-        self.state_manager.set_giant_skeleton_enchant(1)
+        self.state_manager.world_manager.set_giant_skeleton_enchant(1)
         self.state_manager.gain_experience('party', 500)
 
 
     def r4087_action(self):
         #$% ?.play_sound('Armsk08') %$#
-        self.state_manager.inc_giant_skeleton_enchant()
-        self.state_manager.set_dead_giantsk(True)
+        self.state_manager.world_manager.inc_giant_skeleton_enchant()
+        self.state_manager.world_manager.set_dead_giantsk(True)
 
 
     def r4088_action(self):
         #$% ?.play_sound('Armsk08') %$#
-        self.state_manager.inc_giant_skeleton_enchant()
-        self.state_manager.set_dead_giantsk(True)
+        self.state_manager.world_manager.inc_giant_skeleton_enchant()
+        self.state_manager.world_manager.set_dead_giantsk(True)
 
 
     def r4095_action(self):
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
 
 
     def r4096_action(self):
@@ -47,7 +47,7 @@ class GiantskLogicGenerated:
 
 
     def r4097_action(self):
-        self.state_manager.set_has_breast1(True)
+        self.state_manager.world_manager.set_has_breast1(True)
 
 
     def r4098_action(self):
@@ -55,32 +55,32 @@ class GiantskLogicGenerated:
 
 
     def r4099_action(self):
-        self.state_manager.set_has_breast2(True)
+        self.state_manager.world_manager.set_has_breast2(True)
 
 
     def r4100_action(self):
-        self.state_manager.set_has_breast3(True)
+        self.state_manager.world_manager.set_has_breast3(True)
 
 
     def r4101_action(self):
-        self.state_manager.set_has_breast4(True)
-        self.state_manager.set_dead_giantsk(True)
+        self.state_manager.world_manager.set_has_breast4(True)
+        self.state_manager.world_manager.set_dead_giantsk(True)
 
 
     def r64301_action(self):
         #$% ?.play_sound('Armsk08') %$#
-        self.state_manager.inc_giant_skeleton_enchant()
-        self.state_manager.set_dead_giantsk(True)
+        self.state_manager.world_manager.inc_giant_skeleton_enchant()
+        self.state_manager.world_manager.set_dead_giantsk(True)
 
 
     def r64302_action(self):
         #$% ?.play_sound('Armsk08') %$#
-        self.state_manager.inc_giant_skeleton_enchant()
-        self.state_manager.set_dead_giantsk(True)
+        self.state_manager.world_manager.inc_giant_skeleton_enchant()
+        self.state_manager.world_manager.set_dead_giantsk(True)
 
 
     def r3997_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() > 0
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() > 0
 
 
     def r3998_condition(self):
@@ -100,16 +100,16 @@ class GiantskLogicGenerated:
 
 
     def r4002_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r4003_condition(self):
-        return self.state_manager.get_can_speak_with_dead()
+        return self.state_manager.world_manager.get_can_speak_with_dead()
 
 
     def r4035_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() > 0
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() > 0
 
 
     def r4036_condition(self):
@@ -129,8 +129,8 @@ class GiantskLogicGenerated:
 
 
     def r4040_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r4048_condition(self):
@@ -150,8 +150,8 @@ class GiantskLogicGenerated:
 
 
     def r4052_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r4054_condition(self):
@@ -185,8 +185,8 @@ class GiantskLogicGenerated:
 
 
     def r4060_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r4062_condition(self):
@@ -214,12 +214,12 @@ class GiantskLogicGenerated:
 
 
     def r4068_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r64294_condition(self):
-        return self.state_manager.get_has_tome_ba()
+        return self.state_manager.world_manager.get_has_tome_ba()
 
 
     def r4072_condition(self):
@@ -239,16 +239,16 @@ class GiantskLogicGenerated:
 
 
     def r4076_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r4079_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() == 0
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() == 0
 
 
     def r4080_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() > 0
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() > 0
 
 
     def r4081_condition(self):
@@ -268,20 +268,20 @@ class GiantskLogicGenerated:
 
 
     def r4085_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r64296_condition(self):
-        return self.state_manager.get_has_tome_ba()
+        return self.state_manager.world_manager.get_has_tome_ba()
 
 
     def r4087_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() < 2
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() < 2
 
 
     def r4088_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() > 1
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() > 1
 
 
     def r4089_condition(self):
@@ -301,28 +301,28 @@ class GiantskLogicGenerated:
 
 
     def r4093_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_skel_mort_quip()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_skel_mort_quip()
 
 
     def r4099_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() == 3
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() == 3
 
 
     def r4100_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() == 4
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() == 4
 
 
     def r4101_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() == 5
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() == 5
 
 
     def r64301_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() < 2
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() < 2
 
 
     def r64302_condition(self):
-        return self.state_manager.get_giant_skeleton_enchant() > 1
+        return self.state_manager.world_manager.get_giant_skeleton_enchant() > 1
 
 
 class GiantskLogic(GiantskLogicGenerated):

@@ -4,7 +4,7 @@ class DustLogicGenerated:
 
 
     def r313_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -12,7 +12,7 @@ class DustLogicGenerated:
 
 
     def r3888_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -20,7 +20,7 @@ class DustLogicGenerated:
 
 
     def r3886_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -28,27 +28,27 @@ class DustLogicGenerated:
 
 
     def r33189_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r371_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r450_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r399_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r448_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -56,7 +56,7 @@ class DustLogicGenerated:
 
 
     def r449_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -65,12 +65,12 @@ class DustLogicGenerated:
 
 
     def r1339_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
 
 
     def r1426_action(self):
@@ -80,30 +80,30 @@ class DustLogicGenerated:
 
 
     def r1428_action(self):
-        self.state_manager.set_choke_memory(True)
+        self.state_manager.world_manager.set_choke_memory(True)
         #$% ?.play_sound('SPTR_01') %$#
-        self.state_manager.inc_choke_dustman()
-        self.state_manager.inc_choke()
-        self.state_manager.set_dead_dust(True)
+        self.state_manager.world_manager.inc_choke_dustman()
+        self.state_manager.world_manager.inc_choke()
+        self.state_manager.world_manager.set_dead_dust(True)
         #$% Deactivate(Myself) %$#
         self.state_manager.gain_experience('party', 15)
 
 
     def r1429_action(self):
-        self.state_manager.inc_choke_dustman()
-        self.state_manager.inc_choke()
-        self.state_manager.set_dead_dust(True) # TODO [snow]: how to kill npc without id?
+        self.state_manager.world_manager.inc_choke_dustman()
+        self.state_manager.world_manager.inc_choke()
+        self.state_manager.world_manager.set_dead_dust(True)
         #$% Deactivate(Myself) %$#
         self.state_manager.gain_experience('party', 15)
 
 
     def r3882_action(self):
-        self.state_manager.set_dead_dust(True)
+        self.state_manager.world_manager.set_dead_dust(True)
         self.state_manager.gain_experience('protagonist', 250)
 
 
     def r3884_action(self):
-        self.state_manager.set_mortualy_alarmed(True) # TODO [snow]: how to kill npc without id?
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -145,55 +145,55 @@ class DustLogicGenerated:
 
 
     def r342_condition(self):
-        return self.state_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall_value() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r343_condition(self):
-        return self.state_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall_value() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r33183_condition(self):
-        return self.state_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33185_condition(self):
-        return self.state_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33186_condition(self):
-        return self.state_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego_value() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33187_condition(self):
-        return self.state_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego_value() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33189_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_talked_to_dust_times() == 1
+               self.state_manager.world_manager.get_talked_to_dust_times() == 1
 
 
     def r33190_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_talked_to_dust_times() > 1
+               self.state_manager.world_manager.get_talked_to_dust_times() > 1
 
 
     def r370_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r371_condition(self):
-        return self.state_manager.get_talked_to_dust_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() == 1
 
 
     def r372_condition(self):
-        return self.state_manager.get_talked_to_dust_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() > 1
 
 
     def r373_condition(self):
@@ -209,11 +209,11 @@ class DustLogicGenerated:
 
 
     def r450_condition(self):
-        return self.state_manager.get_talked_to_dust_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() == 1
 
 
     def r1337_condition(self):
-        return self.state_manager.get_talked_to_dust_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() > 1
 
 
     def r3904_condition(self):
@@ -225,11 +225,11 @@ class DustLogicGenerated:
 
 
     def r399_condition(self):
-        return self.state_manager.get_talked_to_dust_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() == 1
 
 
     def r3906_condition(self):
-        return self.state_manager.get_talked_to_dust_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() > 1
 
 
     def r3907_condition(self):
@@ -297,38 +297,38 @@ class DustLogicGenerated:
 
 
     def r449_condition(self):
-        return self.state_manager.get_talked_to_dust_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() == 1
 
 
     def r1339_condition(self):
-        return self.state_manager.get_talked_to_dust_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dust_times() > 1
 
 
     def r1420_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_warning() == 0
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_warning() == 0
 
 
     def r1421_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_warning() == 1
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_warning() == 1
 
 
     def r1422_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_warning() > 1
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_warning() > 1
 
 
     def r1423_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r1428_condition(self):
-        return not self.state_manager.get_choke_memory()
+        return not self.state_manager.world_manager.get_choke_memory()
 
 
     def r1429_condition(self):
-        return self.state_manager.get_choke_memory()
+        return self.state_manager.world_manager.get_choke_memory()
 
 
     def r3914_condition(self):
@@ -356,23 +356,23 @@ class DustLogicGenerated:
 
 
     def r66675_condition(self):
-        return self.state_manager.get_join_dustmen() == 1
+        return self.state_manager.world_manager.get_join_dustmen() == 1
 
 
     def r66676_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
     def r66677_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
     def r66678_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
     def r66679_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
 class DustLogic(DustLogicGenerated):

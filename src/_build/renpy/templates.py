@@ -171,91 +171,91 @@ def test_{fn}(self):
 
 
 set_boolean_action_pattern_preconf = """
-self.state_manager.set_{s}({iv})
+self.state_manager.world_manager.set_{s}({iv})
 """.strip()
 set_boolean_action_pattern_before = """
-self.assert{iv}(self.state_manager.get_{s}())
+self.assert{iv}(self.state_manager.world_manager.get_{s}())
 """.strip()
 set_boolean_action_pattern_after = """
-self.assert{v}(self.state_manager.get_{s}())
+self.assert{v}(self.state_manager.world_manager.get_{s}())
 """.strip()
 set_boolean_action_pattern_after_once = """
-self.assert{v}(self.state_manager.get_{s}())
+self.assert{v}(self.state_manager.world_manager.get_{s}())
 """.strip()
 set_integer_action_pattern_preconf = """
 {s}_before = {ov}
 {s}_after = {v}
 {s}_after_once = {v}
-self.state_manager.set_{s}({s}_before)
+self.state_manager.world_manager.set_{s}({s}_before)
 """.strip()
 set_integer_action_pattern_before = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_before)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_before)
 """.strip()
 set_integer_action_pattern_after = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after)
 """.strip()
 set_integer_action_pattern_after_once = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after_once)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after_once)
 """.strip()
 inc_once_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = {d}
 {s}_after_once = {d}
-self.state_manager.set_{s}({s}_before)
+self.state_manager.world_manager.set_{s}({s}_before)
 """.strip()
 inc_once_integer_action_pattern_before = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_before)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_before)
 """.strip()
 inc_once_integer_action_pattern_after = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after)
 """.strip()
 inc_once_integer_action_pattern_after_once = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after_once)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after_once)
 """.strip()
 dec_once_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = -{d}
 {s}_after_once = -{d}
-self.state_manager.set_{s}({s}_before)
+self.state_manager.world_manager.set_{s}({s}_before)
 """.strip()
 dec_once_integer_action_pattern_before = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_before)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_before)
 """.strip()
 dec_once_integer_action_pattern_after = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after)
 """.strip()
 dec_once_integer_action_pattern_after_once = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after_once)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after_once)
 """.strip()
 inc_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = {d}
 {s}_after_once = 2 * {d}
-self.state_manager.set_{s}({s}_before)
+self.state_manager.world_manager.set_{s}({s}_before)
 """.strip()
 inc_integer_action_pattern_before = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_before)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_before)
 """.strip()
 inc_integer_action_pattern_after = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after)
 """.strip()
 inc_integer_action_pattern_after_once = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after_once)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after_once)
 """.strip()
 dec_integer_action_pattern_preconf = """
 {s}_before = 0
 {s}_after = -{d}
 {s}_after_once = -2 * {d}
-self.state_manager.set_{s}({s}_before)
+self.state_manager.world_manager.set_{s}({s}_before)
 """.strip()
 dec_integer_action_pattern_before = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_before)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_before)
 """.strip()
 dec_integer_action_pattern_after = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after)
 """.strip()
 dec_integer_action_pattern_after_once = """
-self.assertEqual(self.state_manager.get_{s}(), {s}_after_once)
+self.assertEqual(self.state_manager.world_manager.get_{s}(), {s}_after_once)
 """.strip()
 modify_property_once_action_pattern_preconf = """
 who_{p} = '{w}'
@@ -414,50 +414,50 @@ self.state_manager.characters_manager.set_property('protagonist', 'current_healt
 get_boolean_condition_pattern_preconf = """
 """.strip()
 get_boolean_condition_pattern_before = """
-self.state_manager.set_{s}(False)
+self.state_manager.world_manager.set_{s}(False)
 """.strip()
 get_boolean_condition_pattern_after = """
-self.state_manager.set_{s}(True)
+self.state_manager.world_manager.set_{s}(True)
 """.strip()
 not_get_boolean_condition_pattern_preconf = """
 """.strip()
 not_get_boolean_condition_pattern_before = """
-self.state_manager.set_{s}(True)
+self.state_manager.world_manager.set_{s}(True)
 """.strip()
 not_get_boolean_condition_pattern_after = """
-self.state_manager.set_{s}(False)
+self.state_manager.world_manager.set_{s}(False)
 """.strip()
 get_integer_eq_condition_pattern_preconf = """
 """.strip()
 get_integer_eq_condition_pattern_before = """
-self.state_manager.set_{s}({nv})
+self.state_manager.world_manager.set_{s}({nv})
 """.strip()
 get_integer_eq_condition_pattern_after = """
-self.state_manager.set_{s}({v})
+self.state_manager.world_manager.set_{s}({v})
 """.strip()
 get_integer_neq_condition_pattern_preconf = """
 """.strip()
 get_integer_neq_condition_pattern_before = """
-self.state_manager.set_{s}({v})
+self.state_manager.world_manager.set_{s}({v})
 """.strip()
 get_integer_neq_condition_pattern_after = """
-self.state_manager.set_{s}({nv})
+self.state_manager.world_manager.set_{s}({nv})
 """.strip()
 get_integer_gt_condition_pattern_preconf = """
 """.strip()
 get_integer_gt_condition_pattern_before = """
-self.state_manager.set_{s}({nv})
+self.state_manager.world_manager.set_{s}({nv})
 """.strip()
 get_integer_gt_condition_pattern_after = """
-self.state_manager.set_{s}({v})
+self.state_manager.world_manager.set_{s}({v})
 """.strip()
 get_integer_lt_condition_pattern_preconf = """
 """.strip()
 get_integer_lt_condition_pattern_before = """
-self.state_manager.set_{s}({v})
+self.state_manager.world_manager.set_{s}({v})
 """.strip()
 get_integer_lt_condition_pattern_after = """
-self.state_manager.set_{s}({nv})
+self.state_manager.world_manager.set_{s}({nv})
 """.strip()
 get_character_property_gt_condition_pattern_preconf = """
 who_{s} = '{w}'
@@ -499,46 +499,46 @@ self.state_manager.locations_manager.set_location(location_{v})
 self.assertTrue(self.state_manager.locations_manager.is_visited(location_{v}))
 """.strip()
 not_is_visited_internal_condition_pattern_after = """
-self.reset_stores()
+self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
 self.assertFalse(self.state_manager.locations_manager.is_visited(location_{v}))
 """.strip()
 count_in_party_eq_zero_condition_pattern_preconf = """
 """.strip()
 count_in_party_eq_zero_condition_pattern_before = """
-self.state_manager.set_in_party_morte(True)
-self.state_manager.set_in_party_annah(False)
-self.state_manager.set_in_party_ignus(False)
-self.state_manager.set_in_party_grace(False)
-self.state_manager.set_in_party_dakkon(False)
-self.state_manager.set_in_party_nordom(False)
-self.state_manager.set_in_party_vhail(False)
+self.state_manager.world_manager.set_in_party_morte(True)
+self.state_manager.world_manager.set_in_party_annah(False)
+self.state_manager.world_manager.set_in_party_ignus(False)
+self.state_manager.world_manager.set_in_party_grace(False)
+self.state_manager.world_manager.set_in_party_dakkon(False)
+self.state_manager.world_manager.set_in_party_nordom(False)
+self.state_manager.world_manager.set_in_party_vhail(False)
 """.strip()
 count_in_party_eq_zero_condition_pattern_after = """
-self.state_manager.set_in_party_morte(False)
-self.state_manager.set_in_party_annah(False)
-self.state_manager.set_in_party_ignus(False)
-self.state_manager.set_in_party_grace(False)
-self.state_manager.set_in_party_dakkon(False)
-self.state_manager.set_in_party_nordom(False)
-self.state_manager.set_in_party_vhail(False)
+self.state_manager.world_manager.set_in_party_morte(False)
+self.state_manager.world_manager.set_in_party_annah(False)
+self.state_manager.world_manager.set_in_party_ignus(False)
+self.state_manager.world_manager.set_in_party_grace(False)
+self.state_manager.world_manager.set_in_party_dakkon(False)
+self.state_manager.world_manager.set_in_party_nordom(False)
+self.state_manager.world_manager.set_in_party_vhail(False)
 """.strip()
 count_in_party_gt_zero_condition_pattern_preconf = """
 """.strip()
 count_in_party_gt_zero_condition_pattern_before = """
-self.state_manager.set_in_party_morte(False)
-self.state_manager.set_in_party_annah(False)
-self.state_manager.set_in_party_ignus(False)
-self.state_manager.set_in_party_grace(False)
-self.state_manager.set_in_party_dakkon(False)
-self.state_manager.set_in_party_nordom(False)
-self.state_manager.set_in_party_vhail(False)
+self.state_manager.world_manager.set_in_party_morte(False)
+self.state_manager.world_manager.set_in_party_annah(False)
+self.state_manager.world_manager.set_in_party_ignus(False)
+self.state_manager.world_manager.set_in_party_grace(False)
+self.state_manager.world_manager.set_in_party_dakkon(False)
+self.state_manager.world_manager.set_in_party_nordom(False)
+self.state_manager.world_manager.set_in_party_vhail(False)
 """.strip()
 count_in_party_gt_zero_condition_pattern_after = """
-self.state_manager.set_in_party_morte(True)
-self.state_manager.set_in_party_annah(False)
-self.state_manager.set_in_party_ignus(False)
-self.state_manager.set_in_party_grace(False)
-self.state_manager.set_in_party_dakkon(False)
-self.state_manager.set_in_party_nordom(False)
-self.state_manager.set_in_party_vhail(False)
+self.state_manager.world_manager.set_in_party_morte(True)
+self.state_manager.world_manager.set_in_party_annah(False)
+self.state_manager.world_manager.set_in_party_ignus(False)
+self.state_manager.world_manager.set_in_party_grace(False)
+self.state_manager.world_manager.set_in_party_dakkon(False)
+self.state_manager.world_manager.set_in_party_nordom(False)
+self.state_manager.world_manager.set_in_party_vhail(False)
 """.strip()

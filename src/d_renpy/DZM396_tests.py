@@ -15,34 +15,34 @@ class Zm396LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
-        self.state_manager.set_zombie_chaotic(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
 
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
-        self.assertFalse(self.state_manager.get_zombie_chaotic())
+        self.assertFalse(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r34932_action()
 
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r34932_action()
 
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
 
     def test_r34936_action(self):
         self._false_then_true_action(
-            self.state_manager.get_has_bandages,
+            self.state_manager.world_manager.get_has_bandages,
             self.logic.r34936_action
         )
 
 
     def test_r34934_action(self):
         self._false_then_true_action(
-            self.state_manager.get_has_bandages,
+            self.state_manager.world_manager.get_has_bandages,
             self.logic.r34934_action
         )
 
@@ -51,83 +51,83 @@ class Zm396LogicTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
-        self.state_manager.set_zombie_chaotic(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
 
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
-        self.assertFalse(self.state_manager.get_zombie_chaotic())
+        self.assertFalse(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r45112_action()
 
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r45112_action()
 
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
 
     def test_r34932_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r34932_condition
         )
 
 
     def test_r34935_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r34935_condition
         )
 
 
     def test_r34937_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_exposed(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_exposed(x),
             self.logic.r34937_condition
         )
 
 
     def test_r34940_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r34940_condition
         )
 
 
     def test_r34934_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_has_bandages_zm396(x),
+            lambda x: self.state_manager.world_manager.set_has_bandages_zm396(x),
             self.logic.r34934_condition
         )
 
 
     def test_r45112_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r45112_condition
         )
 
 
     def test_r45113_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r45113_condition
         )
 
 
     def test_r45114_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_exposed(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_exposed(x),
             self.logic.r45114_condition
         )
 
 
     def test_r45115_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r45115_condition
         )
 

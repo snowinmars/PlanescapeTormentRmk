@@ -11,9 +11,8 @@ class IntroductionLogic:
 
 
     def setup_as_highlvl(self):
-        self.state_manager.set_can_speak_with_dead(True)
+        self.state_manager.world_manager.set_can_speak_with_dead(True)
 
 
     def set_can_spoiler_true(self):
         self.can_spoiler = True
-

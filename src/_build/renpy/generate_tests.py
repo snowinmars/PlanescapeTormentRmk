@@ -110,12 +110,12 @@ from _build.renpy.templates import (
 )
 
 
-get_boolean_condition_pattern = re.compile(r'^get_(.*?)\(\)$')
-not_get_boolean_condition_pattern = re.compile(r'^not get_(.*?)\(\)$')
-get_integer_eq_condition_pattern = re.compile(r'^get_(.*?)\(\) == (\d+)$')
-get_integer_neq_condition_pattern = re.compile(r'^get_(.*?)\(\) != (\d+)$')
-get_integer_gt_condition_pattern = re.compile(r'^get_(.*?)\(\) > (\d+)$')
-get_integer_lt_condition_pattern = re.compile(r'^get_(.*?)\(\) < (\d+)$')
+get_boolean_condition_pattern = re.compile(r'^world_manager\.get_(.*?)\(\)$')
+not_get_boolean_condition_pattern = re.compile(r'^not world_manager\.get_(.*?)\(\)$')
+get_integer_eq_condition_pattern = re.compile(r'^world_manager\.get_(.*?)\(\) == (\d+)$')
+get_integer_neq_condition_pattern = re.compile(r'^world_manager\.get_(.*?)\(\) != (\d+)$')
+get_integer_gt_condition_pattern = re.compile(r'^world_manager\.get_(.*?)\(\) > (\d+)$')
+get_integer_lt_condition_pattern = re.compile(r'^world_manager\.get_(.*?)\(\) < (\d+)$')
 get_character_property_gt_condition_pattern = re.compile(r"^characters_manager\.get_property\('(.*?)', '(.*?)'\) > (\d+)$")
 get_character_property_lt_condition_pattern = re.compile(r"^characters_manager\.get_property\('(.*?)', '(.*?)'\) < (\d+)$")
 is_visited_internal_condition_pattern = re.compile(r"^locations_manager\.is_visited_internal\('(.*?)'\)$")
@@ -126,12 +126,12 @@ current_health_eq_max_health_condition_pattern = re.compile(r"^characters_manage
 current_health_gt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) > characters_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
 current_health_lt_max_health_condition_pattern = re.compile(r"^characters_manager\.get_property\(\'protagonist\', \'current_health\'\) <= characters_manager.get_property\(\'protagonist\', \'max_health\'\) / 2$")
 
-set_boolean_action_pattern = re.compile(r'^set_(.*?)\((True|False)\)$')
-set_integer_action_pattern = re.compile(r'^set_(.*?)\((\d+)\)$')
-inc_once_integer_action_pattern = re.compile(r'^inc_once_(.*?)\((\d*)\)$')
-dec_once_integer_action_pattern = re.compile(r'^dec_once_(.*?)\((\d*)\)$')
-inc_integer_action_pattern = re.compile(r'^inc_(.*?)\((\d*)\)$')
-dec_integer_action_pattern = re.compile(r'^dec_(.*?)\((\d*)\)$')
+set_boolean_action_pattern = re.compile(r'^world_manager\.set_(.*?)\((True|False)\)$')
+set_integer_action_pattern = re.compile(r'^world_manager\.set_(.*?)\((\d+)\)$')
+inc_once_integer_action_pattern = re.compile(r'^world_manager\.inc_once_(.*?)\((\d*)\)$')
+dec_once_integer_action_pattern = re.compile(r'^world_manager\.dec_once_(.*?)\((\d*)\)$')
+inc_integer_action_pattern = re.compile(r'^world_manager\.inc_(.*?)\((\d*)\)$')
+dec_integer_action_pattern = re.compile(r'^world_manager\.dec_(.*?)\((\d*)\)$')
 modify_property_once_action_pattern = re.compile(r'^characters_manager\.modify_property_once\(\'(.*?)\', \'(.*?)\', ([-\d]+), \'(.*?)\'\)$')
 modify_property_action_pattern = re.compile(r'^characters_manager\.modify_property\(\'(.*?)\', \'(.*?)\', ([-\d]+)\)$')
 set_property_action_pattern = re.compile(r'^characters_manager\.set_property\(\'(.*?)\', \'(.*?)\', \'(.*?)\'\)$')
@@ -474,9 +474,6 @@ def _guess_multiline_actions(func_name, body, target_npc, warnings):
     after_once_builder = []
 
     for operation in operations:
-        if operation == 'inc_choke_dustman()inc_choke()set_dead_dust(True)':
-            print(body)
-
         preconf, before, after, after_once = _build_test_actions_parts(operation)
         if len(preconf) > 0:
             _render_with_shift(

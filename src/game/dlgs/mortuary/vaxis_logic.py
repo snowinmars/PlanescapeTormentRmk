@@ -5,11 +5,11 @@ class VaxisLogicGenerated:
 
     def r454_action(self):
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
-        self.state_manager.set_zombie_chaotic(True)
+        self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
     def r461_action(self):
-        self.state_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis_value(1)
 
 
     def j64513_s2_r464_action(self):
@@ -57,7 +57,7 @@ class VaxisLogicGenerated:
 
 
     def r480_action(self):
-        self.state_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis_value(1)
 
 
     def j64513_s5_r481_action(self):
@@ -66,7 +66,7 @@ class VaxisLogicGenerated:
 
 
     def r481_action(self):
-        self.state_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis_value(1)
 
 
     def j64513_s5_r482_action(self):
@@ -75,7 +75,7 @@ class VaxisLogicGenerated:
 
 
     def r482_action(self):
-        self.state_manager.set_vaxis_value(1)
+        self.state_manager.world_manager.set_vaxis_value(1)
 
 
     def r487_action(self):
@@ -206,11 +206,11 @@ class VaxisLogicGenerated:
 
 
     def r4447_action(self):
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
 
     def r4448_action(self):
-        self.state_manager.set_vaxis_orders(True)
+        self.state_manager.world_manager.set_vaxis_orders(True)
 
 
     def r4456_action(self):
@@ -227,12 +227,12 @@ class VaxisLogicGenerated:
 
 
     def r4469_action(self):
-        self.state_manager.set_vaxis_leave(True)
-        self.state_manager.set_has_bandages(True)
-        self.state_manager.set_has_bandages(True)
-        self.state_manager.set_has_bandages(True)
-        self.state_manager.set_has_embalm(True)
-        self.state_manager.set_has_needle(True)
+        self.state_manager.world_manager.set_vaxis_leave(True)
+        self.state_manager.world_manager.set_has_bandages(True)
+        self.state_manager.world_manager.set_has_bandages(True)
+        self.state_manager.world_manager.set_has_bandages(True)
+        self.state_manager.world_manager.set_has_embalm(True)
+        self.state_manager.world_manager.set_has_needle(True)
         #$% GiveItemCreate("Knife",Protagonist,1,0,0) %$#
         self.state_manager.gain_experience('party', 500)
 
@@ -258,7 +258,7 @@ class VaxisLogicGenerated:
 
 
     def r4672_action(self):
-        self.state_manager.set_strong_arm_vaxis(True)
+        self.state_manager.world_manager.set_strong_arm_vaxis(True)
 
 
     def r4489_action(self):
@@ -271,32 +271,32 @@ class VaxisLogicGenerated:
 
     def r4494_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_has_keyem(False)
-        self.state_manager.set_vaxis_has_keyem(True)
+        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_vaxis_has_keyem(True)
 
 
     def r4496_action(self):
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
 
     def r4497_action(self):
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
 
     def r4498_action(self):
         self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
 
     def r4499_action(self):
         self.state_manager.characters_manager.modify_property_once('protagonist', 'good', -1, 'globalevil_vaxis_1')
-        self.state_manager.set_vaxis_orders(False)
+        self.state_manager.world_manager.set_vaxis_orders(False)
 
 
     def r4502_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_has_keyem(False)
-        self.state_manager.set_vaxis_has_keyem(True)
+        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_vaxis_has_keyem(True)
 
 
     def j64519_s36_r64520_action(self):
@@ -324,18 +324,18 @@ class VaxisLogicGenerated:
 
 
     def r4508_action(self):
-        self.state_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
 
 
     def r4509_action(self):
-        self.state_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
 
 
     def r4519_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_has_keyem(False)
-        self.state_manager.set_vaxis_has_keyem(True)
-        self.state_manager.set_embalm_key_quest(3)
+        self.state_manager.world_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_vaxis_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(3)
 
 
     def j64521_s42_r4521_action(self):
@@ -344,7 +344,7 @@ class VaxisLogicGenerated:
 
 
     def r4521_action(self):
-        self.state_manager.set_embalm_key_quest(3)
+        self.state_manager.world_manager.set_embalm_key_quest(3)
 
 
     def j64521_s42_r4522_action(self):
@@ -353,7 +353,7 @@ class VaxisLogicGenerated:
 
 
     def r4522_action(self):
-        self.state_manager.set_embalm_key_quest(3)
+        self.state_manager.world_manager.set_embalm_key_quest(3)
 
 
     def j64522_s44_r4539_action(self):
@@ -373,7 +373,7 @@ class VaxisLogicGenerated:
 
     def r64527_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_vaxis_help(True)
+        self.state_manager.world_manager.set_vaxis_help(True)
 
 
     def j64529_s51_r4568_action(self):
@@ -383,7 +383,7 @@ class VaxisLogicGenerated:
 
     def r4568_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_vaxis_help(True)
+        self.state_manager.world_manager.set_vaxis_help(True)
 
 
     def j64529_s51_r4569_action(self):
@@ -393,49 +393,49 @@ class VaxisLogicGenerated:
 
     def r4569_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_vaxis_help(True)
+        self.state_manager.world_manager.set_vaxis_help(True)
 
 
     def r4580_action(self):
-        self.state_manager.set_vaxis_exposes_soego(True)
+        self.state_manager.world_manager.set_vaxis_exposes_soego(True)
         self.state_manager.journal_manager.update_journal('64530')
         #$%.register('64530', 'Ваксис как-то странно отозвался о Соэго — сказал, что тот похож на «крысу», что бы ЭТО ни значило. Довольно иронично, что Ваксис обвиняет кого-то в странностях. %$#')
 
 
     def r4592_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_has_keyem(False)
 
 
     def r4593_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_has_keyem(False)
 
 
     def r4620_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(2)
-        self.state_manager.set_has_embalm(False)
-        self.state_manager.set_has_needle(False)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(2)
+        self.state_manager.world_manager.set_has_embalm(False)
+        self.state_manager.world_manager.set_has_needle(False)
 
 
     def r4621_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(1)
 
 
     def r4622_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(1)
 
 
     def r4623_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(1)
 
 
     def r4625_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(1)
 
 
     def r4628_action(self):
-        self.state_manager.set_vaxis_zombie_disguise(1)
+        self.state_manager.world_manager.set_vaxis_zombie_disguise(1)
 
 
     def r4630_action(self):
@@ -445,11 +445,11 @@ class VaxisLogicGenerated:
         #$% Wait(2) %$#
         #$% FadeFromColor([20.0],0) %$#
         self.state_manager.gain_experience('party', 500)
-        self.state_manager.set_vaxis_global_xp(True)
+        self.state_manager.world_manager.set_vaxis_global_xp(True)
 
 
     def r4631_action(self):
-        self.state_manager.set_morte_vaxis_quip_1(True)
+        self.state_manager.world_manager.set_morte_vaxis_quip_1(True)
 
 
     def r4632_action(self):
@@ -469,7 +469,7 @@ class VaxisLogicGenerated:
 
 
     def r4635_action(self):
-        self.state_manager.set_morte_vaxis_quip_2(True)
+        self.state_manager.world_manager.set_morte_vaxis_quip_2(True)
 
 
     def j64531_s67_r4638_action(self):
@@ -510,23 +510,23 @@ class VaxisLogicGenerated:
 
 
     def r454_condition(self):
-        return not self.state_manager.get_zombie_chaotic()
+        return not self.state_manager.world_manager.get_zombie_chaotic()
 
 
     def r455_condition(self):
-        return self.state_manager.get_zombie_chaotic()
+        return self.state_manager.world_manager.get_zombie_chaotic()
 
 
     def r456_condition(self):
-        return self.state_manager.get_vaxis_exposed()
+        return self.state_manager.world_manager.get_vaxis_exposed()
 
 
     def r457_condition(self):
-        return self.state_manager.get_can_speak_with_dead()
+        return self.state_manager.world_manager.get_can_speak_with_dead()
 
 
     def r468_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r472_condition(self):
@@ -534,7 +534,7 @@ class VaxisLogicGenerated:
 
 
     def r484_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r487_condition(self):
@@ -542,19 +542,19 @@ class VaxisLogicGenerated:
 
 
     def r491_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r492_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r493_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r494_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r495_condition(self):
@@ -603,7 +603,7 @@ class VaxisLogicGenerated:
 
 
     def r4368_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r4370_condition(self):
@@ -616,11 +616,11 @@ class VaxisLogicGenerated:
 
 
     def r4379_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4380_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4385_condition(self):
@@ -672,23 +672,23 @@ class VaxisLogicGenerated:
 
 
     def r4426_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4427_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4428_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4429_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4438_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r4440_condition(self):
@@ -722,7 +722,7 @@ class VaxisLogicGenerated:
 
 
     def r4452_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r4454_condition(self):
@@ -742,7 +742,7 @@ class VaxisLogicGenerated:
 
 
     def r4469_condition(self):
-        return not self.state_manager.get_vaxis_leave()
+        return not self.state_manager.world_manager.get_vaxis_leave()
 
 
     def r4474_condition(self):
@@ -790,7 +790,7 @@ class VaxisLogicGenerated:
 
 
     def r4494_condition(self):
-        return self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_has_keyem()
 
 
     def r4496_condition(self):
@@ -810,209 +810,209 @@ class VaxisLogicGenerated:
 
 
     def r4502_condition(self):
-        return self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_has_keyem()
 
 
     def r64520_condition(self):
-        return self.state_manager.get_eivene_value() == 1
+        return self.state_manager.world_manager.get_eivene_value() == 1
 
 
     def r4503_condition(self):
-        return self.state_manager.get_eivene_value() == 0
+        return self.state_manager.world_manager.get_eivene_value() == 0
 
 
     def r4506_condition(self):
-        return self.state_manager.get_eivene_value() == 1
+        return self.state_manager.world_manager.get_eivene_value() == 1
 
 
     def r66150_condition(self):
-        return self.state_manager.get_eivene_value() == 0
+        return self.state_manager.world_manager.get_eivene_value() == 0
 
 
     def r4508_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 0
+        return self.state_manager.world_manager.get_embalm_key_quest() == 0
 
 
     def r4509_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 0
+        return self.state_manager.world_manager.get_embalm_key_quest() == 0
 
 
     def r4510_condition(self):
-        return self.state_manager.get_embalm_key_quest() != 0
+        return self.state_manager.world_manager.get_embalm_key_quest() != 0
 
 
     def r4511_condition(self):
-        return self.state_manager.get_embalm_key_quest() != 0
+        return self.state_manager.world_manager.get_embalm_key_quest() != 0
 
 
     def r4521_condition(self):
-        return not self.state_manager.get_escape_mortuary()
+        return not self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r4522_condition(self):
-        return self.state_manager.get_escape_mortuary()
+        return self.state_manager.world_manager.get_escape_mortuary()
 
 
     def r64508_condition(self):
-        return not self.state_manager.get_escape_mortuary() and \
-               not self.state_manager.get_vaxis_help() and \
-               self.state_manager.get_embalm_key_quest() == 0 and \
-               self.state_manager.get_strong_arm_vaxis()
+        return not self.state_manager.world_manager.get_escape_mortuary() and \
+               not self.state_manager.world_manager.get_vaxis_help() and \
+               self.state_manager.world_manager.get_embalm_key_quest() == 0 and \
+               self.state_manager.world_manager.get_strong_arm_vaxis()
 
 
     def r4524_condition(self):
-        return not self.state_manager.get_escape_mortuary() and \
-               not self.state_manager.get_vaxis_help() and \
-               self.state_manager.get_embalm_key_quest() == 0 and \
-               not self.state_manager.get_strong_arm_vaxis()
+        return not self.state_manager.world_manager.get_escape_mortuary() and \
+               not self.state_manager.world_manager.get_vaxis_help() and \
+               self.state_manager.world_manager.get_embalm_key_quest() == 0 and \
+               not self.state_manager.world_manager.get_strong_arm_vaxis()
 
 
     def r4525_condition(self):
-        return self.state_manager.get_vaxis_help()
+        return self.state_manager.world_manager.get_vaxis_help()
 
 
     def r4526_condition(self):
-        return self.state_manager.get_vaxis_zombie_disguise() == 1 and \
-               self.state_manager.get_appearance() != 1
+        return self.state_manager.world_manager.get_vaxis_zombie_disguise() == 1 and \
+               self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4527_condition(self):
-        return self.state_manager.get_vaxis_zombie_disguise() == 2 and \
-               self.state_manager.get_appearance() != 1
+        return self.state_manager.world_manager.get_vaxis_zombie_disguise() == 2 and \
+               self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4528_condition(self):
-        return self.state_manager.get_vaxis_orders()
+        return self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r4673_condition(self):
-        return self.state_manager.get_pharod_value() < 1
+        return self.state_manager.world_manager.get_pharod_value() < 1
 
 
     def r4530_condition(self):
-        return not self.state_manager.get_journal()
+        return not self.state_manager.world_manager.get_journal()
 
 
     def r4531_condition(self):
-        return self.state_manager.get_dhall_value() > 0
+        return self.state_manager.world_manager.get_dhall_value() > 0
 
 
     def r4532_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r4533_condition(self):
-        return self.state_manager.get_soego_value() > 0
+        return self.state_manager.world_manager.get_soego_value() > 0
 
 
     def r4534_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4535_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4547_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4548_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4552_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4553_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4564_condition(self):
-        return not self.state_manager.get_strong_arm_vaxis() and \
-               self.state_manager.get_embalm_key_quest() == 0 and \
-               not self.state_manager.get_vaxis_orders()
+        return not self.state_manager.world_manager.get_strong_arm_vaxis() and \
+               self.state_manager.world_manager.get_embalm_key_quest() == 0 and \
+               not self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r64509_condition(self):
-        return not self.state_manager.get_strong_arm_vaxis() and \
-               self.state_manager.get_embalm_key_quest() > 2 and \
-               not self.state_manager.get_vaxis_orders()
+        return not self.state_manager.world_manager.get_strong_arm_vaxis() and \
+               self.state_manager.world_manager.get_embalm_key_quest() > 2 and \
+               not self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r64510_condition(self):
-        return self.state_manager.get_strong_arm_vaxis() and \
-               not self.state_manager.get_vaxis_orders()
+        return self.state_manager.world_manager.get_strong_arm_vaxis() and \
+               not self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r64511_condition(self):
-        return self.state_manager.get_vaxis_orders()
+        return self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r64527_condition(self):
-        return not self.state_manager.get_has_bone_chrm()
+        return not self.state_manager.world_manager.get_has_bone_chrm()
 
 
     def r4568_condition(self):
-        return self.state_manager.get_has_bone_chrm()
+        return self.state_manager.world_manager.get_has_bone_chrm()
 
 
     def r4569_condition(self):
-        return self.state_manager.get_has_bone_chrm()
+        return self.state_manager.world_manager.get_has_bone_chrm()
 
 
     def r4586_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1
 
 
     def r4587_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 2
+        return self.state_manager.world_manager.get_embalm_key_quest() == 2
 
 
     def r4588_condition(self):
-        return self.state_manager.get_embalm_key_quest() != 1 and \
-               self.state_manager.get_embalm_key_quest() != 2 and \
-               not self.state_manager.get_vaxis_orders()
+        return self.state_manager.world_manager.get_embalm_key_quest() != 1 and \
+               self.state_manager.world_manager.get_embalm_key_quest() != 2 and \
+               not self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r4589_condition(self):
-        return self.state_manager.get_embalm_key_quest() != 1 and \
-               self.state_manager.get_embalm_key_quest() != 2 and \
-               self.state_manager.get_vaxis_orders()
+        return self.state_manager.world_manager.get_embalm_key_quest() != 1 and \
+               self.state_manager.world_manager.get_embalm_key_quest() != 2 and \
+               self.state_manager.world_manager.get_vaxis_orders()
 
 
     def r4592_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               self.state_manager.world_manager.get_has_keyem()
 
 
     def r4593_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 2 and \
-               self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 2 and \
+               self.state_manager.world_manager.get_has_keyem()
 
 
     def r4594_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \
-               not self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \
+               not self.state_manager.world_manager.get_has_keyem()
 
 
     def r4599_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 0
+        return self.state_manager.world_manager.get_embalm_key_quest() == 0
 
 
     def r4600_condition(self):
-        return self.state_manager.get_embalm_key_quest() > 0
+        return self.state_manager.world_manager.get_embalm_key_quest() > 0
 
 
     def r4604_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_appearance() != 1
+               self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4609_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_appearance() != 1
+               self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4610_condition(self):
@@ -1033,7 +1033,7 @@ class VaxisLogicGenerated:
 
     def r4615_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_appearance() != 1
+               self.state_manager.world_manager.get_appearance() != 1
 
 
     def r4616_condition(self):
@@ -1053,50 +1053,50 @@ class VaxisLogicGenerated:
 
 
     def r4620_condition(self):
-        return self.state_manager.get_has_embalm() and \
-               self.state_manager.get_has_needle()
+        return self.state_manager.world_manager.get_has_embalm() and \
+               self.state_manager.world_manager.get_has_needle()
 
 
     def r4630_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_vaxis_global_xp()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_vaxis_global_xp()
 
 
     def r4631_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_vaxis_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_vaxis_quip_1()
 
 
     def r4632_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_vaxis_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_vaxis_quip_1()
 
 
     def r64533_condition(self):
-        return not self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_vaxis_global_xp()
+        return not self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_vaxis_global_xp()
 
 
     def r4634_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4635_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               not self.state_manager.get_morte_vaxis_quip_2()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               not self.state_manager.world_manager.get_morte_vaxis_quip_2()
 
 
     def r4636_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_morte_vaxis_quip_2()
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_morte_vaxis_quip_2()
 
 
     def r4656_condition(self):
-        return not self.state_manager.get_vaxis_help()
+        return not self.state_manager.world_manager.get_vaxis_help()
 
 
     def r64532_condition(self):
-        return self.state_manager.get_vaxis_help()
+        return self.state_manager.world_manager.get_vaxis_help()
 
 
     def r4664_condition(self):
@@ -1113,12 +1113,12 @@ class VaxisLogic(VaxisLogicGenerated):
 
 
     def set_know_vaxis_name(self):
-        self.state_manager.set_know_vaxis_name(True)
+        self.state_manager.world_manager.set_know_vaxis_name(True)
 
 
     def kill_vaxis(self):
-        self.state_manager.set_dead_vaxis(True)
+        self.state_manager.world_manager.set_dead_vaxis(True)
 
 
     def get_know_vaxis_name(self):
-        return self.state_manager.get_know_vaxis_name()
+        return self.state_manager.world_manager.get_know_vaxis_name()

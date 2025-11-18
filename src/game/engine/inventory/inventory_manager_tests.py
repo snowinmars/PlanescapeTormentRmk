@@ -3,14 +3,15 @@ import unittest
 from game.engine.tests import (LogicTest)
 from game.engine.inventory.inventory_item import (InventoryItem)
 from game.engine.inventory.inventory_manager import (InventoryManager)
+from game.engine.inventory.inventory_store import (InventoryStore)
 
 
 class InventoryManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.inventory_manager)
         self.assertIsNotNone(self.inventory_manager._events_manager)
-        self.assertIsNotNone(self.inventory_manager._inventory_items)
-        self.assertNotEqual(len(self.inventory_manager._inventory_items), 0)
+        self.assertIsNotNone(self.inventory_manager._inventory_store.inventory_items)
+        self.assertNotEqual(len(self.inventory_manager._inventory_store.inventory_items), 0)
         self.assertIsNotNone(self.inventory_manager._player_has_item_callback)
         self.assertIsNone(self.inventory_manager._selected_item)
 
@@ -19,11 +20,11 @@ class InventoryManagerTest(LogicTest):
         inventory_item = _create_inventory_item()
         delta = 1
 
-        before = len(self.inventory_manager._inventory_items)
+        before = len(self.inventory_manager._inventory_store.inventory_items)
 
         self.inventory_manager.register(inventory_item)
 
-        after = len(self.inventory_manager._inventory_items)
+        after = len(self.inventory_manager._inventory_store.inventory_items)
         self.assertEqual(before + delta, after)
 
 
@@ -31,11 +32,11 @@ class InventoryManagerTest(LogicTest):
         inventory_item = _create_inventory_item()
         delta = 1
 
-        before = len(self.inventory_manager._inventory_items)
+        before = len(self.inventory_manager._inventory_store.inventory_items)
 
         self.inventory_manager.register(inventory_item)
 
-        after = len(self.inventory_manager._inventory_items)
+        after = len(self.inventory_manager._inventory_store.inventory_items)
         self.assertEqual(before + delta, after)
 
         with self.assertRaises(KeyError):
@@ -48,13 +49,14 @@ class InventoryManagerTest(LogicTest):
         delta = 2
 
         custom_inventory_manager = InventoryManager(self.events_manager, lambda x: x == inventory_item2.settings_id)
+        custom_inventory_manager.set_store(InventoryStore())
 
-        before = len(custom_inventory_manager._inventory_items)
+        before = len(custom_inventory_manager._inventory_store.inventory_items)
 
         custom_inventory_manager.register(inventory_item1)
         custom_inventory_manager.register(inventory_item2)
 
-        after = len(custom_inventory_manager._inventory_items)
+        after = len(custom_inventory_manager._inventory_store.inventory_items)
         self.assertEqual(before + delta, after)
         self.assertEqual(len(custom_inventory_manager.get_owned_items()), 1)
         self.assertEqual(custom_inventory_manager.get_owned_items()[0], inventory_item2)
@@ -65,12 +67,12 @@ class InventoryManagerTest(LogicTest):
         inventory_item2 = _create_inventory_item('_2')
         delta = 2
 
-        before = len(self.inventory_manager._inventory_items)
+        before = len(self.inventory_manager._inventory_store.inventory_items)
 
         self.inventory_manager.register(inventory_item1)
         self.inventory_manager.register(inventory_item2)
 
-        after = len(self.inventory_manager._inventory_items)
+        after = len(self.inventory_manager._inventory_store.inventory_items)
         self.assertEqual(before + delta, after)
         self.assertEqual(self.inventory_manager.get_item(inventory_item1.settings_id), inventory_item1)
         self.assertEqual(self.inventory_manager.get_item(inventory_item2.settings_id), inventory_item2)

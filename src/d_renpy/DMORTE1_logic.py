@@ -4,7 +4,7 @@ class Morte1Logic:
 
 
     def r39793_action(self):
-        self.state_manager.set_morte_value(1)
+        self.state_manager.world_manager.set_morte_value(1)
 
 
     def r39824_action(self):
@@ -13,16 +13,16 @@ class Morte1Logic:
 
     def r39831_action(self):
         #$% ShowFirstTimeHelp() %$#
-        self.state_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
 
 
     def r39852_action(self):
-        self.state_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
 
 
     def r39856_action(self):
-        self.state_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
 
 
     def r39859_action(self):
-        self.state_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_in_party_morte(True)

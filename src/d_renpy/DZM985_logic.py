@@ -30,8 +30,8 @@ class Zm985Logic:
     def s3_action(self):
         #$% ?.play_sound('SPE_11') %$#
         #$%SetAnimState(Myself,ANIM_MIMEDIE) %$# CreateItem("Limb985",1,0,0)
-        self.state_manager.set_topple_985(True)
-        self.state_manager.set_dead_zm985(True)
+        self.state_manager.world_manager.set_topple_985(True)
+        self.state_manager.world_manager.set_dead_zm985(True)
         #$% Deactivate(Myself) %$#
 
 
@@ -43,7 +43,7 @@ class Zm985Logic:
 
     def r45532_action(self):
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
-        self.state_manager.set_zombie_chaotic(True)
+        self.state_manager.world_manager.set_zombie_chaotic(True)
 
 
     def r45539_action(self):
@@ -53,40 +53,40 @@ class Zm985Logic:
 
 
     def r45516_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r45517_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r45518_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r45519_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r45520_condition(self):
-        return self.state_manager.get_vaxis_exposed()
+        return self.state_manager.world_manager.get_vaxis_exposed()
 
 
     def r45521_condition(self):
-        return self.state_manager.get_can_speak_with_dead()
+        return self.state_manager.world_manager.get_can_speak_with_dead()
 
 
     def r45532_condition(self):
-        return not self.state_manager.get_zombie_chaotic()
+        return not self.state_manager.world_manager.get_zombie_chaotic()
 
 
     def r45533_condition(self):
-        return self.state_manager.get_zombie_chaotic()
+        return self.state_manager.world_manager.get_zombie_chaotic()
 
 
     def r45534_condition(self):
-        return self.state_manager.get_vaxis_exposed()
+        return self.state_manager.world_manager.get_vaxis_exposed()
 
 
     def r45535_condition(self):
-        return self.state_manager.get_can_speak_with_dead()
+        return self.state_manager.world_manager.get_can_speak_with_dead()

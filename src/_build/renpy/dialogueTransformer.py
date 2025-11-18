@@ -37,7 +37,7 @@ class DialogueTransformer:
 
 
     def _replace_kill_myself(self, script, target_npc):
-        return script.replace('Kill(Myself)', f'self.state_manager.set_dead_{target_npc}(True)')
+        return script.replace('Kill(Myself)', f'self.state_manager.world_manager.set_dead_{target_npc}(True)')
 
 
     def _apply_replacements(self, script):
@@ -85,9 +85,9 @@ class DialogueTransformer:
             elif expanded_prop in ('law', 'chaotic'):
                 return f"self.state_manager.characters_manager.modify_property_once('protagonist', 'law', {exanded_amount}, '{global_id.lower()}')"
             elif expanded_prop == 'know_dustmen':
-                return f"self.state_manager.inc_once_know_dustmen('{global_id.lower()}')"
+                return f"self.state_manager.world_manager.inc_once_know_dustmen('{global_id.lower()}')"
             elif expanded_prop == 'morte_mimir':
-                return f"self.state_manager.inc_once_morte_mimir('{global_id.lower()}')"
+                return f"self.state_manager.world_manager.inc_once_morte_mimir('{global_id.lower()}')"
 
             raise Exception(f'Unknown match {INCREMENT_REGEX_ONCE}\n  {match.groups()}')
 
@@ -204,15 +204,15 @@ class DialogueTransformer:
             expanded_amount = _expand_amount(amount)
 
             if expanded_action == 'takepartygold':
-                return f'self.state_manager.dec_gold({expanded_amount})'
+                return f'self.state_manager.world_manager.dec_gold({expanded_amount})'
             elif expanded_action == 'destroypartygold':
-                return f'self.state_manager.dec_gold({expanded_amount})'
+                return f'self.state_manager.world_manager.dec_gold({expanded_amount})'
             elif expanded_action == 'partygoldgt':
-                return f'return self.state_manager.get_gold() > {expanded_amount}'
+                return f'return self.state_manager.world_manager.get_gold() > {expanded_amount}'
             elif expanded_action == 'partygoldlt':
-                return f'return self.state_manager.get_gold() < {expanded_amount}'
+                return f'return self.state_manager.world_manager.get_gold() < {expanded_amount}'
             elif expanded_action == 'givegoldforce':
-                return f'self.state_manager.inc_gold({expanded_amount})'
+                return f'self.state_manager.world_manager.inc_gold({expanded_amount})'
 
             raise Exception(f'Unknown match {GOLD_REGEX}\n  {match.groups()}')
 
@@ -255,7 +255,7 @@ class DialogueTransformer:
             expanded_amount = _expand_amount(amount)
             expanded_operator = _expand_operator(operator)
 
-            return f'return self.state_manager.get_talked_to_{target_npc}_times() {expanded_operator} {expanded_amount}'
+            return f'return self.state_manager.world_manager.get_talked_to_{target_npc}_times() {expanded_operator} {expanded_amount}'
 
         return TIMES_TALKED_TO_REGEX.sub(replace_visited, script)
 

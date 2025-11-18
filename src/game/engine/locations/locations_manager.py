@@ -59,7 +59,11 @@ class LocationsManager:
         return self._locations_store.current_internal
 
 
-    def is_visited(self, external):  # is_visited_external
+    def is_visited(self, location_id):
+        return self.is_visited_external(location_id) or self.is_visited_internal(location_id)
+
+
+    def is_visited_external(self, external):
         return external in self._locations_store.visited_externals
 
 

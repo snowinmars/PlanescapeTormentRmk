@@ -9,8 +9,8 @@ class Zm782Logic:
 
 
     def r24709_condition(self):
-        return self.state_manager.get_in_party_morte()
+        return self.state_manager.world_manager.get_in_party_morte()
 
 
     def r24712_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()

@@ -4,7 +4,7 @@ class DustfemLogicGenerated:
 
 
     def r1225_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -12,7 +12,7 @@ class DustfemLogicGenerated:
 
 
     def r1246_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -20,7 +20,7 @@ class DustfemLogicGenerated:
 
 
     def r1249_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -28,27 +28,27 @@ class DustfemLogicGenerated:
 
 
     def r33227_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r1273_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r1290_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r1294_action(self):
-        self.state_manager.inc_adahn()
+        self.state_manager.world_manager.inc_adahn()
         self.state_manager.characters_manager.modify_property('protagonist', 'law', -1)
 
 
     def r4307_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -56,7 +56,7 @@ class DustfemLogicGenerated:
 
 
     def r4308_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -65,7 +65,7 @@ class DustfemLogicGenerated:
 
 
     def r4309_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -79,28 +79,28 @@ class DustfemLogicGenerated:
 
 
     def r4318_action(self):
-        self.state_manager.inc_choke()
-        self.state_manager.set_choke_memory(True)
+        self.state_manager.world_manager.inc_choke()
+        self.state_manager.world_manager.set_choke_memory(True)
         #$% ?.play_sound('SPTR_01') %$#
-        self.state_manager.inc_choke_dustman()
+        self.state_manager.world_manager.inc_choke_dustman()
         self.state_manager.gain_experience('party', 15)
 
 
     def r4319_action(self):
-        self.state_manager.inc_choke_dustman()
-        self.state_manager.inc_choke()
-        self.state_manager.set_dead_dustfem(True)
+        self.state_manager.world_manager.inc_choke_dustman()
+        self.state_manager.world_manager.inc_choke()
+        self.state_manager.world_manager.set_dead_dustfem(True)
         #$% Deactivate(Myself) %$#
         self.state_manager.gain_experience('party', 15)
 
 
     def r4320_action(self):
-        self.state_manager.set_dead_dustfem(True)
+        self.state_manager.world_manager.set_dead_dustfem(True)
         self.state_manager.gain_experience('protagonist', 250)
 
 
     def r4321_action(self):
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
         #$% ?.play_sound('AMB_M01') %$#
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
@@ -142,55 +142,55 @@ class DustfemLogicGenerated:
 
 
     def r1253_condition(self):
-        return self.state_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall_value() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r1255_condition(self):
-        return self.state_manager.get_dhall_value() > 0 and \
+        return self.state_manager.world_manager.get_dhall_value() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0202')
 
 
     def r1258_condition(self):
-        return self.state_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r4336_condition(self):
-        return self.state_manager.get_deionarra_value() > 0 and \
+        return self.state_manager.world_manager.get_deionarra_value() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33224_condition(self):
-        return self.state_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego_value() > 0 and \
                self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33226_condition(self):
-        return self.state_manager.get_soego_value() > 0 and \
+        return self.state_manager.world_manager.get_soego_value() > 0 and \
                not self.state_manager.locations_manager.is_visited_internal('AR0201')
 
 
     def r33227_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_talked_to_dustfem_times() == 1
+               self.state_manager.world_manager.get_talked_to_dustfem_times() == 1
 
 
     def r33229_condition(self):
         return self.state_manager.characters_manager.get_property('protagonist', 'intelligence') > 12 and \
-               self.state_manager.get_talked_to_dustfem_times() > 1
+               self.state_manager.world_manager.get_talked_to_dustfem_times() > 1
 
 
     def r1272_condition(self):
-        return self.state_manager.get_deionarra_value() > 0
+        return self.state_manager.world_manager.get_deionarra_value() > 0
 
 
     def r1273_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() == 1
 
 
     def r1274_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() > 1
 
 
     def r1275_condition(self):
@@ -206,11 +206,11 @@ class DustfemLogicGenerated:
 
 
     def r1290_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() == 1
 
 
     def r1291_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() > 1
 
 
     def r1292_condition(self):
@@ -222,11 +222,11 @@ class DustfemLogicGenerated:
 
 
     def r1294_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() == 1
 
 
     def r1295_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() > 1
 
 
     def r1296_condition(self):
@@ -294,38 +294,38 @@ class DustfemLogicGenerated:
 
 
     def r4308_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() == 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() == 1
 
 
     def r4309_condition(self):
-        return self.state_manager.get_talked_to_dustfem_times() > 1
+        return self.state_manager.world_manager.get_talked_to_dustfem_times() > 1
 
 
     def r4312_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_warning() == 0
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_warning() == 0
 
 
     def r4313_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_warning() == 1
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_warning() == 1
 
 
     def r4314_condition(self):
-        return self.state_manager.get_in_party_morte() and \
-               self.state_manager.get_warning() > 1
+        return self.state_manager.world_manager.get_in_party_morte() and \
+               self.state_manager.world_manager.get_warning() > 1
 
 
     def r4315_condition(self):
-        return not self.state_manager.get_in_party_morte()
+        return not self.state_manager.world_manager.get_in_party_morte()
 
 
     def r4318_condition(self):
-        return not self.state_manager.get_choke_memory()
+        return not self.state_manager.world_manager.get_choke_memory()
 
 
     def r4319_condition(self):
-        return self.state_manager.get_choke_memory()
+        return self.state_manager.world_manager.get_choke_memory()
 
 
     def r4324_condition(self):
@@ -353,23 +353,23 @@ class DustfemLogicGenerated:
 
 
     def r66684_condition(self):
-        return self.state_manager.get_join_dustmen() == 1
+        return self.state_manager.world_manager.get_join_dustmen() == 1
 
 
     def r66685_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
     def r66686_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
     def r66687_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
     def r66688_condition(self):
-        return self.state_manager.get_join_dustmen() != 1
+        return self.state_manager.world_manager.get_join_dustmen() != 1
 
 
 class DustfemLogic(DustfemLogicGenerated):

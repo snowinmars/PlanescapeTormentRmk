@@ -21,48 +21,48 @@ class Zm199LogicGeneratedTest(LogicTest):
         who_law = 'protagonist'
         prop_law = 'law'
         delta_law = -1
-        self.state_manager.set_zombie_chaotic(False)
+        self.state_manager.world_manager.set_zombie_chaotic(False)
 
         law_before = self.state_manager.characters_manager.get_property(who_law, prop_law)
-        self.assertFalse(self.state_manager.get_zombie_chaotic())
+        self.assertFalse(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r34976_action()
 
         law_after = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_before + delta_law, law_after)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
         self.logic.r34976_action()
 
         law_after_once = self.state_manager.characters_manager.get_property(who_law, prop_law)
         self.assertEqual(law_after + delta_law, law_after_once)
-        self.assertTrue(self.state_manager.get_zombie_chaotic())
+        self.assertTrue(self.state_manager.world_manager.get_zombie_chaotic())
 
 
     def test_r34976_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r34976_condition
         )
 
 
     def test_r34979_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_zombie_chaotic(x),
+            lambda x: self.state_manager.world_manager.set_zombie_chaotic(x),
             self.logic.r34979_condition
         )
 
 
     def test_r34980_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_exposed(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_exposed(x),
             self.logic.r34980_condition
         )
 
 
     def test_r34981_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r34981_condition
         )
 

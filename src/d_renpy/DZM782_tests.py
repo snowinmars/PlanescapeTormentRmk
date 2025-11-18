@@ -17,14 +17,14 @@ class Zm782LogicTest(LogicTest):
 
     def test_r24709_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r24709_condition
         )
 
 
     def test_r24712_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_morte(x),
+            lambda x: self.state_manager.world_manager.set_in_party_morte(x),
             self.logic.r24712_condition
         )
 

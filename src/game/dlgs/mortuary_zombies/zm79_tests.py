@@ -31,7 +31,7 @@ class Zm79LogicGeneratedTest(LogicTest):
 
     def test_r34946_action(self):
         self._false_then_true_action(
-            self.state_manager.get_know_copper_earring_secret,
+            self.state_manager.world_manager.get_know_copper_earring_secret,
             self.logic.r34946_action
         )
 
@@ -56,35 +56,35 @@ class Zm79LogicGeneratedTest(LogicTest):
 
     def test_r34946_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_know_copper_earring_secret(x),
+            lambda x: self.state_manager.world_manager.set_know_copper_earring_secret(x),
             self.logic.r34946_condition
         )
 
 
     def test_r34947_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_vaxis_exposed(x),
+            lambda x: self.state_manager.world_manager.set_vaxis_exposed(x),
             self.logic.r34947_condition
         )
 
 
     def test_r34948_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_can_speak_with_dead(x),
+            lambda x: self.state_manager.world_manager.set_can_speak_with_dead(x),
             self.logic.r34948_condition
         )
 
 
     def test_r64279_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_has_copper_earring_closed(x),
+            lambda x: self.state_manager.world_manager.set_has_copper_earring_closed(x),
             self.logic.r64279_condition
         )
 
 
     def test_r64280_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_has_copper_earring_closed(x),
+            lambda x: self.state_manager.world_manager.set_has_copper_earring_closed(x),
             self.logic.r64280_condition
         )
 

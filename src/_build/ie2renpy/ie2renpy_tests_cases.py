@@ -267,18 +267,18 @@ class AreaLogic:
 
     def r3501_action(self):
         self.state_manager.gain_experience('party', 250)
-        self.state_manager.set_embalm_key_quest(2)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(2)
+        self.state_manager.world_manager.set_has_keyem(True)
 
 
     def r3501_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \\
-               not self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
+               not self.state_manager.world_manager.get_has_keyem()
 
 
     def r3502_condition(self):
-        return self.state_manager.get_embalm_key_quest() == 1 and \\
-               self.state_manager.get_has_keyem()
+        return self.state_manager.world_manager.get_embalm_key_quest() == 1 and \\
+               self.state_manager.world_manager.get_has_keyem()
 '''.strip() + '\n'
 test_result3_tests = f'''
 import unittest
@@ -301,48 +301,48 @@ class AreaLogicTest(LogicTest):
         embalm_key_quest_before = 1
         embalm_key_quest_after = 2
         embalm_key_quest_after_once = 2
-        self.state_manager.set_embalm_key_quest(embalm_key_quest_before)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_embalm_key_quest(embalm_key_quest_before)
+        self.state_manager.world_manager.set_has_keyem(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_before)
-        self.assertFalse(self.state_manager.get_has_keyem())
+        self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_before)
+        self.assertFalse(self.state_manager.world_manager.get_has_keyem())
 
         self.logic.r3501_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_after)
-        self.assertTrue(self.state_manager.get_has_keyem())
+        self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after)
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
 
         self.logic.r3501_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertEqual(self.state_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
-        self.assertTrue(self.state_manager.get_has_keyem())
+        self.assertEqual(self.state_manager.world_manager.get_embalm_key_quest(), embalm_key_quest_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_has_keyem())
 
 
     def test_r3501_condition(self):
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         self.assertFalse(self.logic.r3501_condition())
 
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_has_keyem(False)
 
         self.assertTrue(self.logic.r3501_condition())
 
 
     def test_r3502_condition(self):
-        self.state_manager.set_embalm_key_quest(0)
-        self.state_manager.set_has_keyem(False)
+        self.state_manager.world_manager.set_embalm_key_quest(0)
+        self.state_manager.world_manager.set_has_keyem(False)
 
         self.assertFalse(self.logic.r3502_condition())
 
-        self.state_manager.set_embalm_key_quest(1)
-        self.state_manager.set_has_keyem(True)
+        self.state_manager.world_manager.set_embalm_key_quest(1)
+        self.state_manager.world_manager.set_has_keyem(True)
 
         self.assertTrue(self.logic.r3502_condition())
 
@@ -497,7 +497,7 @@ class AreaLogic:
 
 
     def s178_action(self):
-        self.state_manager.set_know_mimir(True)
+        self.state_manager.world_manager.set_know_mimir(True)
 '''.strip() + '\n'
 test_result5_tests = f'''
 import unittest
@@ -515,7 +515,7 @@ class AreaLogicTest(LogicTest):
 
     def test_s178_action(self):
         self._false_then_true_action(
-            self.state_manager.get_know_mimir,
+            self.state_manager.world_manager.get_know_mimir,
             self.logic.s178_action
         )
 
@@ -908,15 +908,15 @@ class AreaLogic:
 
 
     def s179_action(self):
-        self.state_manager.inc_once_morte_mimir('globalmorte_mimir')
+        self.state_manager.world_manager.inc_once_morte_mimir('globalmorte_mimir')
 
 
     def s179_condition(self):
-        return self.state_manager.get_morte_mimir() < 2
+        return self.state_manager.world_manager.get_morte_mimir() < 2
 
 
     def r65537_condition(self):
-        return self.state_manager.get_morte_mimir() > 1
+        return self.state_manager.world_manager.get_morte_mimir() > 1
 '''.strip() + '\n'
 test_result9_tests = f'''
 import unittest
@@ -934,7 +934,7 @@ class AreaLogicTest(LogicTest):
 
     def test_s179_action(self):
         self._integer_inc_once_action(
-            self.state_manager.get_morte_mimir,
+            self.state_manager.world_manager.get_morte_mimir,
             1,
             self.logic.s179_action
         )
@@ -942,7 +942,7 @@ class AreaLogicTest(LogicTest):
 
     def test_s179_condition(self):
         self._integer_lt_condition(
-            lambda x: self.state_manager.set_morte_mimir(x),
+            lambda x: self.state_manager.world_manager.set_morte_mimir(x),
             2,
             self.logic.s179_condition
         )
@@ -950,7 +950,7 @@ class AreaLogicTest(LogicTest):
 
     def test_r65537_condition(self):
         self._integer_gt_condition(
-            lambda x: self.state_manager.set_morte_mimir(x),
+            lambda x: self.state_manager.world_manager.set_morte_mimir(x),
             1,
             self.logic.r65537_condition
         )
@@ -1114,11 +1114,11 @@ class AreaLogic:
 
 
     def s518_condition(self):
-        return self.state_manager.get_in_party_dakkon()
+        return self.state_manager.world_manager.get_in_party_dakkon()
 
 
     def r54105_condition(self):
-        return not self.state_manager.get_in_party_dakkon()
+        return not self.state_manager.world_manager.get_in_party_dakkon()
 '''.strip() + '\n'
 test_result11_tests = f'''
 import unittest
@@ -1136,14 +1136,14 @@ class AreaLogicTest(LogicTest):
 
     def test_s518_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_in_party_dakkon(x),
+            lambda x: self.state_manager.world_manager.set_in_party_dakkon(x),
             self.logic.s518_condition
         )
 
 
     def test_r54105_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_in_party_dakkon(x),
+            lambda x: self.state_manager.world_manager.set_in_party_dakkon(x),
             self.logic.r54105_condition
         )
 
@@ -1260,10 +1260,10 @@ class AreaLogic:
 
 
     def r17833_action(self):
-        self.state_manager.set_has_intro_key(True)
-        self.state_manager.set_morte_value(1)
-        self.state_manager.set_read_scars(True)
-        self.state_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_has_intro_key(True)
+        self.state_manager.world_manager.set_morte_value(1)
+        self.state_manager.world_manager.set_read_scars(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
 '''.strip() + '\n'
 test_result12_tests = f'''
 import unittest
@@ -1280,32 +1280,32 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r17833_action(self):
-        self.state_manager.set_has_intro_key(False)
+        self.state_manager.world_manager.set_has_intro_key(False)
         morte_value_before = 0
         morte_value_after = 1
         morte_value_after_once = 1
-        self.state_manager.set_morte_value(morte_value_before)
-        self.state_manager.set_read_scars(False)
-        self.state_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_value(morte_value_before)
+        self.state_manager.world_manager.set_read_scars(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
 
-        self.assertFalse(self.state_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.get_morte_value(), morte_value_before)
-        self.assertFalse(self.state_manager.get_read_scars())
-        self.assertFalse(self.state_manager.get_in_party_morte())
-
-        self.logic.r17833_action()
-
-        self.assertTrue(self.state_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.get_morte_value(), morte_value_after)
-        self.assertTrue(self.state_manager.get_read_scars())
-        self.assertTrue(self.state_manager.get_in_party_morte())
+        self.assertFalse(self.state_manager.world_manager.get_has_intro_key())
+        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_before)
+        self.assertFalse(self.state_manager.world_manager.get_read_scars())
+        self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
 
         self.logic.r17833_action()
 
-        self.assertTrue(self.state_manager.get_has_intro_key())
-        self.assertEqual(self.state_manager.get_morte_value(), morte_value_after_once)
-        self.assertTrue(self.state_manager.get_read_scars())
-        self.assertTrue(self.state_manager.get_in_party_morte())
+        self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
+        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after)
+        self.assertTrue(self.state_manager.world_manager.get_read_scars())
+        self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
+
+        self.logic.r17833_action()
+
+        self.assertTrue(self.state_manager.world_manager.get_has_intro_key())
+        self.assertEqual(self.state_manager.world_manager.get_morte_value(), morte_value_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_read_scars())
+        self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
 
 
 if __name__ == '__main__':
@@ -1489,15 +1489,15 @@ class AreaLogic:
 
 
     def r707_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r708_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r709_action(self):
-        self.state_manager.set_deionarra_value(1)
+        self.state_manager.world_manager.set_deionarra_value(1)
 
 
     def r708_condition(self):
@@ -1523,27 +1523,27 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r707_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.state_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra_value,
             1,
             self.logic.r707_action
         )
 
 
     def test_r708_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.state_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra_value,
             1,
             self.logic.r708_action
         )
 
 
     def test_r709_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         self._integer_equals_action(
-            self.state_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra_value,
             1,
             self.logic.r709_action
         )
@@ -1812,12 +1812,12 @@ class AreaLogic:
 
 
     def r6081_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
     def r6082_action(self):
-        self.state_manager.set_deionarra_value(2)
+        self.state_manager.world_manager.set_deionarra_value(2)
         #$% SetGlobal("Deio_Wake_Up","GLOBAL",0) %$#
 
 
@@ -1827,17 +1827,17 @@ class AreaLogic:
 
 
     def r6081_condition(self):
-        return self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r6082_condition(self):
-        return self.state_manager.get_in_party_morte() and \\
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return self.state_manager.world_manager.get_in_party_morte() and \\
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 
 
     def r13257_condition(self):
-        return not self.state_manager.get_in_party_morte() and \\
-               not self.state_manager.get_morte_deionarra_quip_1()
+        return not self.state_manager.world_manager.get_in_party_morte() and \\
+               not self.state_manager.world_manager.get_morte_deionarra_quip_1()
 """.strip() + '\n'
 test_result16_tests = """
 import unittest
@@ -1854,18 +1854,18 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r6081_action(self):
-        self.state_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra_value(3)
         self._integer_equals_action(
-            self.state_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra_value,
             2,
             self.logic.r6081_action
         )
 
 
     def test_r6082_action(self):
-        self.state_manager.set_deionarra_value(3)
+        self.state_manager.world_manager.set_deionarra_value(3)
         self._integer_equals_action(
-            self.state_manager.get_deionarra_value,
+            self.state_manager.world_manager.get_deionarra_value,
             2,
             self.logic.r6082_action
         )
@@ -1877,31 +1877,31 @@ class AreaLogicTest(LogicTest):
 
     def test_r6081_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_morte_deionarra_quip_1(x),
+            lambda x: self.state_manager.world_manager.set_morte_deionarra_quip_1(x),
             self.logic.r6081_condition
         )
 
 
     def test_r6082_condition(self):
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_deionarra_quip_1(True)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_deionarra_quip_1(True)
 
         self.assertFalse(self.logic.r6082_condition())
 
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_deionarra_quip_1(False)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_deionarra_quip_1(False)
 
         self.assertTrue(self.logic.r6082_condition())
 
 
     def test_r13257_condition(self):
-        self.state_manager.set_in_party_morte(True)
-        self.state_manager.set_morte_deionarra_quip_1(True)
+        self.state_manager.world_manager.set_in_party_morte(True)
+        self.state_manager.world_manager.set_morte_deionarra_quip_1(True)
 
         self.assertFalse(self.logic.r13257_condition())
 
-        self.state_manager.set_in_party_morte(False)
-        self.state_manager.set_morte_deionarra_quip_1(False)
+        self.state_manager.world_manager.set_in_party_morte(False)
+        self.state_manager.world_manager.set_morte_deionarra_quip_1(False)
 
         self.assertTrue(self.logic.r13257_condition())
 
@@ -1987,9 +1987,9 @@ class AreaLogic:
 
 
     def r63391_action(self):
-        self.state_manager.set_1200_cut_scene_2(True)
+        self.state_manager.world_manager.set_1200_cut_scene_2(True)
         #$% StartCutSceneMode() %$#
-        self.state_manager.set_cd_int_1(True)
+        self.state_manager.world_manager.set_cd_int_1(True)
         #$% ?.start_cut_scene('1200cut1') %$#
 """.strip() + '\n'
 test_result17_tests = """
@@ -2007,21 +2007,21 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r63391_action(self):
-        self.state_manager.set_1200_cut_scene_2(False)
-        self.state_manager.set_cd_int_1(False)
+        self.state_manager.world_manager.set_1200_cut_scene_2(False)
+        self.state_manager.world_manager.set_cd_int_1(False)
 
-        self.assertFalse(self.state_manager.get_1200_cut_scene_2())
-        self.assertFalse(self.state_manager.get_cd_int_1())
-
-        self.logic.r63391_action()
-
-        self.assertTrue(self.state_manager.get_1200_cut_scene_2())
-        self.assertTrue(self.state_manager.get_cd_int_1())
+        self.assertFalse(self.state_manager.world_manager.get_1200_cut_scene_2())
+        self.assertFalse(self.state_manager.world_manager.get_cd_int_1())
 
         self.logic.r63391_action()
 
-        self.assertTrue(self.state_manager.get_1200_cut_scene_2())
-        self.assertTrue(self.state_manager.get_cd_int_1())
+        self.assertTrue(self.state_manager.world_manager.get_1200_cut_scene_2())
+        self.assertTrue(self.state_manager.world_manager.get_cd_int_1())
+
+        self.logic.r63391_action()
+
+        self.assertTrue(self.state_manager.world_manager.get_1200_cut_scene_2())
+        self.assertTrue(self.state_manager.world_manager.get_cd_int_1())
 
 
 if __name__ == '__main__':
@@ -2111,29 +2111,29 @@ class AreaLogic:
 
 
     def r1428_action(self):
-        self.state_manager.set_choke_memory(True)
+        self.state_manager.world_manager.set_choke_memory(True)
         #$% ?.play_sound('SPTR_01') %$#
-        self.state_manager.inc_choke_dustman()
-        self.state_manager.inc_choke()
-        self.state_manager.set_dead_area(True)
+        self.state_manager.world_manager.inc_choke_dustman()
+        self.state_manager.world_manager.inc_choke()
+        self.state_manager.world_manager.set_dead_area(True)
         #$% Deactivate(Myself) %$#
         self.state_manager.gain_experience('party', 15)
 
 
     def r1429_action(self):
-        self.state_manager.inc_choke_dustman()
-        self.state_manager.inc_choke()
-        self.state_manager.set_dead_area(True)
+        self.state_manager.world_manager.inc_choke_dustman()
+        self.state_manager.world_manager.inc_choke()
+        self.state_manager.world_manager.set_dead_area(True)
         #$% Deactivate(Myself) %$#
         self.state_manager.gain_experience('party', 15)
 
 
     def r1428_condition(self):
-        return not self.state_manager.get_choke_memory()
+        return not self.state_manager.world_manager.get_choke_memory()
 
 
     def r1429_condition(self):
-        return self.state_manager.get_choke_memory()
+        return self.state_manager.world_manager.get_choke_memory()
 """.strip() + '\n'
 test_result18_tests = """
 import unittest
@@ -2150,41 +2150,41 @@ class AreaLogicTest(LogicTest):
 
 
     def test_r1428_action(self):
-        self.state_manager.set_choke_memory(False)
+        self.state_manager.world_manager.set_choke_memory(False)
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
-        self.state_manager.set_choke_dustman(choke_dustman_before)
+        self.state_manager.world_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
-        self.state_manager.set_choke(choke_before)
-        self.state_manager.set_dead_area(False)
+        self.state_manager.world_manager.set_choke(choke_before)
+        self.state_manager.world_manager.set_dead_area(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
 
-        self.assertFalse(self.state_manager.get_choke_memory())
-        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_before)
-        self.assertEqual(self.state_manager.get_choke(), choke_before)
-        self.assertFalse(self.state_manager.get_dead_area())
+        self.assertFalse(self.state_manager.world_manager.get_choke_memory())
+        self.assertEqual(self.state_manager.world_manager.get_choke_dustman(), choke_dustman_before)
+        self.assertEqual(self.state_manager.world_manager.get_choke(), choke_before)
+        self.assertFalse(self.state_manager.world_manager.get_dead_area())
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r1428_action()
 
-        self.assertTrue(self.state_manager.get_choke_memory())
-        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after)
-        self.assertEqual(self.state_manager.get_choke(), choke_after)
-        self.assertTrue(self.state_manager.get_dead_area())
+        self.assertTrue(self.state_manager.world_manager.get_choke_memory())
+        self.assertEqual(self.state_manager.world_manager.get_choke_dustman(), choke_dustman_after)
+        self.assertEqual(self.state_manager.world_manager.get_choke(), choke_after)
+        self.assertTrue(self.state_manager.world_manager.get_dead_area())
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r1428_action()
 
-        self.assertTrue(self.state_manager.get_choke_memory())
-        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after_once)
-        self.assertEqual(self.state_manager.get_choke(), choke_after_once)
-        self.assertTrue(self.state_manager.get_dead_area())
+        self.assertTrue(self.state_manager.world_manager.get_choke_memory())
+        self.assertEqual(self.state_manager.world_manager.get_choke_dustman(), choke_dustman_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_choke(), choke_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_dead_area())
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
@@ -2193,48 +2193,48 @@ class AreaLogicTest(LogicTest):
         choke_dustman_before = 0
         choke_dustman_after = 1
         choke_dustman_after_once = 2 * 1
-        self.state_manager.set_choke_dustman(choke_dustman_before)
+        self.state_manager.world_manager.set_choke_dustman(choke_dustman_before)
         choke_before = 0
         choke_after = 1
         choke_after_once = 2 * 1
-        self.state_manager.set_choke(choke_before)
-        self.state_manager.set_dead_area(False)
+        self.state_manager.world_manager.set_choke(choke_before)
+        self.state_manager.world_manager.set_dead_area(False)
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 15
 
-        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_before)
-        self.assertEqual(self.state_manager.get_choke(), choke_before)
-        self.assertFalse(self.state_manager.get_dead_area())
+        self.assertEqual(self.state_manager.world_manager.get_choke_dustman(), choke_dustman_before)
+        self.assertEqual(self.state_manager.world_manager.get_choke(), choke_before)
+        self.assertFalse(self.state_manager.world_manager.get_dead_area())
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
 
         self.logic.r1429_action()
 
-        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after)
-        self.assertEqual(self.state_manager.get_choke(), choke_after)
-        self.assertTrue(self.state_manager.get_dead_area())
+        self.assertEqual(self.state_manager.world_manager.get_choke_dustman(), choke_dustman_after)
+        self.assertEqual(self.state_manager.world_manager.get_choke(), choke_after)
+        self.assertTrue(self.state_manager.world_manager.get_dead_area())
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
 
         self.logic.r1429_action()
 
-        self.assertEqual(self.state_manager.get_choke_dustman(), choke_dustman_after_once)
-        self.assertEqual(self.state_manager.get_choke(), choke_after_once)
-        self.assertTrue(self.state_manager.get_dead_area())
+        self.assertEqual(self.state_manager.world_manager.get_choke_dustman(), choke_dustman_after_once)
+        self.assertEqual(self.state_manager.world_manager.get_choke(), choke_after_once)
+        self.assertTrue(self.state_manager.world_manager.get_dead_area())
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
 
 
     def test_r1428_condition(self):
         self._boolean_invert_condition(
-            lambda x: self.state_manager.set_choke_memory(x),
+            lambda x: self.state_manager.world_manager.set_choke_memory(x),
             self.logic.r1428_condition
         )
 
 
     def test_r1429_condition(self):
         self._boolean_straight_condition(
-            lambda x: self.state_manager.set_choke_memory(x),
+            lambda x: self.state_manager.world_manager.set_choke_memory(x),
             self.logic.r1429_condition
         )
 
@@ -2314,10 +2314,10 @@ class AreaLogic:
 
     def r66914_action(self):
         self.state_manager.gain_experience('party', 1000)
-        self.state_manager.set_deionarra_raise_dead(True)
-        self.state_manager.set_can_raise_dead(True)
-        self.state_manager.set_can_raise_dead(True)
-        self.state_manager.set_can_raise_dead(True)
+        self.state_manager.world_manager.set_deionarra_raise_dead(True)
+        self.state_manager.world_manager.set_can_raise_dead(True)
+        self.state_manager.world_manager.set_can_raise_dead(True)
+        self.state_manager.world_manager.set_can_raise_dead(True)
 """.strip() + '\n'
 test_result19_tests = """
 import unittest
@@ -2346,34 +2346,34 @@ class AreaLogicTest(LogicTest):
         who_experience = 'protagonist'
         prop_experience = 'experience'
         delta_experience = 1000
-        self.state_manager.set_deionarra_raise_dead(False)
-        self.state_manager.set_can_raise_dead(False)
-        self.state_manager.set_can_raise_dead(False)
-        self.state_manager.set_can_raise_dead(False)
+        self.state_manager.world_manager.set_deionarra_raise_dead(False)
+        self.state_manager.world_manager.set_can_raise_dead(False)
+        self.state_manager.world_manager.set_can_raise_dead(False)
+        self.state_manager.world_manager.set_can_raise_dead(False)
 
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
-        self.assertFalse(self.state_manager.get_deionarra_raise_dead())
-        self.assertFalse(self.state_manager.get_can_raise_dead())
-        self.assertFalse(self.state_manager.get_can_raise_dead())
-        self.assertFalse(self.state_manager.get_can_raise_dead())
+        self.assertFalse(self.state_manager.world_manager.get_deionarra_raise_dead())
+        self.assertFalse(self.state_manager.world_manager.get_can_raise_dead())
+        self.assertFalse(self.state_manager.world_manager.get_can_raise_dead())
+        self.assertFalse(self.state_manager.world_manager.get_can_raise_dead())
 
         self.logic.r66914_action()
 
         experience_after = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_before + delta_experience, experience_after)
-        self.assertTrue(self.state_manager.get_deionarra_raise_dead())
-        self.assertTrue(self.state_manager.get_can_raise_dead())
-        self.assertTrue(self.state_manager.get_can_raise_dead())
-        self.assertTrue(self.state_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_deionarra_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_can_raise_dead())
 
         self.logic.r66914_action()
 
         experience_after_once = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(experience_after + delta_experience, experience_after_once)
-        self.assertTrue(self.state_manager.get_deionarra_raise_dead())
-        self.assertTrue(self.state_manager.get_can_raise_dead())
-        self.assertTrue(self.state_manager.get_can_raise_dead())
-        self.assertTrue(self.state_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_deionarra_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_can_raise_dead())
+        self.assertTrue(self.state_manager.world_manager.get_can_raise_dead())
 
 
 if __name__ == '__main__':
@@ -2471,7 +2471,7 @@ class AreaLogic:
         #$% Enemy() %$#
         #$% Attack(Protagonist) %$#
         #$% ForceAttack(Protagonist,Myself) %$#
-        self.state_manager.set_mortualy_alarmed(True)
+        self.state_manager.world_manager.set_mortualy_alarmed(True)
 """.strip() + '\n'
 test_result20_tests = """
 import unittest
@@ -2489,7 +2489,7 @@ class AreaLogicTest(LogicTest):
 
     def test_r313_action(self):
         self._false_then_true_action(
-            self.state_manager.get_mortualy_alarmed,
+            self.state_manager.world_manager.get_mortualy_alarmed,
             self.logic.r313_action
         )
 

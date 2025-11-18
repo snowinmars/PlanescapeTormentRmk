@@ -12,13 +12,13 @@ class CopearcLogic:
 
 
     def r46733_action(self):
-        self.state_manager.set_has_copper_earring_closed(False)
-        self.state_manager.set_has_copper_earring_opened(True)
+        self.state_manager.world_manager.set_has_copper_earring_closed(False)
+        self.state_manager.world_manager.set_has_copper_earring_opened(True)
 
 
     def r46725_condition(self):
-        return self.state_manager.get_know_copper_earring_secret()
+        return self.state_manager.world_manager.get_know_copper_earring_secret()
 
 
     def r46728_condition(self):
-        return self.state_manager.get_know_copper_earring_secret()
+        return self.state_manager.world_manager.get_know_copper_earring_secret()

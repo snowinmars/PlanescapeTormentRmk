@@ -35,11 +35,14 @@ init 3 python:
     from game.engine.locations.locations_manager import (LocationsManager)
     from game.engine.characters.characters_manager import (CharactersManager)
     from game.engine.journal.journal_manager import (JournalManager)
+    from game.engine.world.world_manager import (WorldManager)
 
     from game.engine.locations.locations_store import (LocationsStore)
     from game.engine.journal.journal_store import (JournalStore)
     from game.engine.events.events_store import (EventsStore)
     from game.engine.characters.characters_store import (CharactersStore)
+    from game.engine.inventory.inventory_store import (InventoryStore)
+    from game.engine.world.world_store import (WorldStore)
 
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -52,7 +55,8 @@ init 3 python:
     runtime.global_locations_manager = LocationsManager(runtime.global_events_manager)
     runtime.global_characters_manager = CharactersManager(runtime.global_events_manager)
     runtime.global_journal_manager = JournalManager(runtime.global_events_manager)
-    runtime.global_state_manager = StateManager(runtime.global_events_manager, runtime.global_characters_manager, runtime.global_locations_manager, runtime.global_journal_manager)
+    runtime.global_world_manager = WorldManager(runtime.global_events_manager)
+    runtime.global_state_manager = StateManager(runtime.global_events_manager, runtime.global_world_manager, runtime.global_characters_manager, runtime.global_locations_manager, runtime.global_journal_manager)
     runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_state_manager.get_setting_value(x))
 
 
@@ -70,6 +74,12 @@ init 3 python:
 
         characters_store = CharactersStore()
         runtime.global_characters_manager.set_store(characters_store)
+
+        inventory_store = InventoryStore()
+        runtime.global_inventory_manager.set_store(inventory_store)
+
+        world_store = WorldStore()
+        runtime.global_world_manager.set_store(world_store)
 
 
     def init_managers():

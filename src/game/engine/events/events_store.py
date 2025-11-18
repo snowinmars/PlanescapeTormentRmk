@@ -13,4 +13,6 @@ class EventsStore():
 
 
     def __setstate__(self, state):
-        self.events = state['events']
+        self.events = deque(maxlen=max_entries)
+        for event in state['events']:
+            self.events.append(event)
