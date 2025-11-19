@@ -1111,17 +1111,17 @@ class VaxisLogicGeneratedTest(LogicTest):
         note_id = '64530'
 
         self.assertFalse(self.state_manager.world_manager.get_vaxis_exposes_soego())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r4580_action()
 
         self.assertTrue(self.state_manager.world_manager.get_vaxis_exposes_soego())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r4580_action()
 
         self.assertTrue(self.state_manager.world_manager.get_vaxis_exposes_soego())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r4592_action(self):

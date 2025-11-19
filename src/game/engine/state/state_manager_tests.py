@@ -30,23 +30,23 @@ class StateManagerTest(LogicTest):
     #     self.assertEqual(len(self.state_manager._open_journal_note_ids), 1)
 
 
-    # def test_has_journal_note_when_all_ok(self):
+    # def test_found_journal_note_when_all_ok(self):
     #     note_id_1 = 'note_id_1'
     #     note_id_2 = 'note_id_2'
 
     #     self.assertEqual(len(self.state_manager._open_journal_note_ids), 0)
-    #     self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id_1))
-    #     self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id_2))
+    #     self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id_1))
+    #     self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id_2))
 
     #     self.state_manager.journal_manager.update_journal(note_id_1)
     #     self.assertEqual(len(self.state_manager._open_journal_note_ids), 1)
-    #     self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id_1))
-    #     self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id_2))
+    #     self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id_1))
+    #     self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id_2))
 
     #     self.state_manager.journal_manager.update_journal(note_id_2)
     #     self.assertEqual(len(self.state_manager._open_journal_note_ids), 2)
-    #     self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id_1))
-    #     self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id_2))
+    #     self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id_1))
+    #     self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id_2))
 
 
     def test_gain_experience_when_full_party(self):

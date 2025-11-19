@@ -85,7 +85,7 @@ class DhallLogicGeneratedTest(LogicTest):
         experience_before = self.state_manager.characters_manager.get_property(who_experience, prop_experience)
         self.assertEqual(self.state_manager.world_manager.get_vaxis_betrayed(), vaxis_betrayed_before)
         good_before = self.state_manager.characters_manager.get_property(who_good, prop_good)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r831_action()
 
@@ -94,7 +94,7 @@ class DhallLogicGeneratedTest(LogicTest):
         self.assertEqual(self.state_manager.world_manager.get_vaxis_betrayed(), vaxis_betrayed_after)
         good_after = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_before + delta_good, good_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r831_action()
 
@@ -103,7 +103,7 @@ class DhallLogicGeneratedTest(LogicTest):
         self.assertEqual(self.state_manager.world_manager.get_vaxis_betrayed(), vaxis_betrayed_after_once)
         good_after_once = self.state_manager.characters_manager.get_property(who_good, prop_good)
         self.assertEqual(good_after, good_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r843_action(self):

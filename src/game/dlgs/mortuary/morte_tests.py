@@ -1090,17 +1090,17 @@ class MorteLogicGeneratedTest(LogicTest):
         note_id = '20538'
 
         self.assertEqual(self.state_manager.world_manager.get_know_marta_work(), know_marta_work_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r20612_action()
 
         self.assertEqual(self.state_manager.world_manager.get_know_marta_work(), know_marta_work_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r20612_action()
 
         self.assertEqual(self.state_manager.world_manager.get_know_marta_work(), know_marta_work_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_j20538_s209_r20613_action(self):
@@ -1202,17 +1202,17 @@ class MorteLogicGeneratedTest(LogicTest):
         note_id = '24933'
 
         self.assertFalse(self.state_manager.world_manager.get_in_party_morte())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r24932_action()
 
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r24932_action()
 
         self.assertTrue(self.state_manager.world_manager.get_in_party_morte())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_s244_action(self):
@@ -2011,17 +2011,17 @@ class MorteLogicGeneratedTest(LogicTest):
         note_id = '67862'
 
         self.assertFalse(self.state_manager.world_manager.get_jumble_reekwind())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r41921_action()
 
         self.assertTrue(self.state_manager.world_manager.get_jumble_reekwind())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r41921_action()
 
         self.assertTrue(self.state_manager.world_manager.get_jumble_reekwind())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r43910_action(self):
@@ -2037,19 +2037,19 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_before)
         self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43910_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after)
         self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43910_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after_once)
         self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r43918_action(self):
@@ -2065,19 +2065,19 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_before)
         self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43918_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after)
         self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r43918_action()
 
         self.assertEqual(self.state_manager.world_manager.get_nemelle(), nemelle_after_once)
         self.assertEqual(self.state_manager.world_manager.get_aelwyn_value(), aelwyn_value_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r45029_action(self):
@@ -2166,17 +2166,17 @@ class MorteLogicGeneratedTest(LogicTest):
         note_id = '53633'
 
         self.assertFalse(self.state_manager.world_manager.get_morte_story())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r53629_action()
 
         self.assertTrue(self.state_manager.world_manager.get_morte_story())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r53629_action()
 
         self.assertTrue(self.state_manager.world_manager.get_morte_story())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r53630_action(self):
@@ -2189,19 +2189,19 @@ class MorteLogicGeneratedTest(LogicTest):
 
         self.assertEqual(self.state_manager.world_manager.get_morale_morte(), morale_morte_before)
         self.assertFalse(self.state_manager.world_manager.get_morte_story())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r53630_action()
 
         self.assertEqual(self.state_manager.world_manager.get_morale_morte(), morale_morte_after)
         self.assertTrue(self.state_manager.world_manager.get_morte_story())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r53630_action()
 
         self.assertEqual(self.state_manager.world_manager.get_morale_morte(), morale_morte_after_once)
         self.assertTrue(self.state_manager.world_manager.get_morte_story())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r53795_action(self):
@@ -2940,7 +2940,7 @@ class MorteLogicGeneratedTest(LogicTest):
         dexterity_before = self.state_manager.characters_manager.get_property(who_dexterity, prop_dexterity)
         constitution_before = self.state_manager.characters_manager.get_property(who_constitution, prop_constitution)
         self.assertFalse(self.state_manager.world_manager.get_bd_morte_story())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r65821_action()
 
@@ -2954,7 +2954,7 @@ class MorteLogicGeneratedTest(LogicTest):
         constitution_after = self.state_manager.characters_manager.get_property(who_constitution, prop_constitution)
         self.assertEqual(constitution_before + delta_constitution, constitution_after)
         self.assertTrue(self.state_manager.world_manager.get_bd_morte_story())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r65821_action()
 
@@ -2968,7 +2968,7 @@ class MorteLogicGeneratedTest(LogicTest):
         constitution_after_once = self.state_manager.characters_manager.get_property(who_constitution, prop_constitution)
         self.assertEqual(constitution_after + delta_constitution, constitution_after_once)
         self.assertTrue(self.state_manager.world_manager.get_bd_morte_story())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r68176_action(self):
