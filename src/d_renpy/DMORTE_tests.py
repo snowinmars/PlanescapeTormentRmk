@@ -6366,8 +6366,8 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r65641_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_pharod_quest(2)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0401))
 
         self.assertTrue(self.logic.r65641_condition())
@@ -6383,9 +6383,9 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r65642_condition())
 
-        self.reset_stores()
         self.state_manager.locations_manager.set_location(location_AR0401)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0401))
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0500))
 
         self.assertTrue(self.logic.r65642_condition())
@@ -6428,9 +6428,9 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r65645_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_know_ravel(True)
         self.state_manager.world_manager.set_know_ravel_key(1)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0610))
 
         self.assertTrue(self.logic.r65645_condition())
@@ -6446,9 +6446,9 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r65646_condition())
 
-        self.reset_stores()
         self.state_manager.locations_manager.set_location(location_AR0610)
         self.assertTrue(self.state_manager.locations_manager.is_visited(location_AR0610))
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0700))
 
         self.assertTrue(self.logic.r65646_condition())
@@ -6514,8 +6514,8 @@ class MorteLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r65718_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_grace_smell_mimir(True)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR1000))
 
         self.assertTrue(self.logic.r65718_condition())

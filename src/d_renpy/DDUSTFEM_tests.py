@@ -392,8 +392,8 @@ class DustfemLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r1255_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_dhall_value(1)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0202))
 
         self.assertTrue(self.logic.r1255_condition())
@@ -423,8 +423,8 @@ class DustfemLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r4336_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_deionarra_value(1)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r4336_condition())
@@ -454,8 +454,8 @@ class DustfemLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r33226_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_soego_value(1)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0201))
 
         self.assertTrue(self.logic.r33226_condition())

@@ -421,8 +421,8 @@ class DhallLogicTest(LogicTest):
 
         self.assertFalse(self.logic.r858_condition())
 
-        self.reset_stores()
         self.state_manager.world_manager.set_escape_mortuary(False)
+        self.reset_stores() # TODO [dev]: be carefull to call it in the right place. If you sure - remove this comment
         self.assertFalse(self.state_manager.locations_manager.is_visited(location_AR0200))
 
         self.assertTrue(self.logic.r858_condition())
