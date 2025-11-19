@@ -7,3 +7,25 @@ class InventoryItem:
         self.grid_image = grid_image
         self.detail_image = detail_image or grid_image
         self.jump_on_use_to = jump_on_use_to
+
+
+    def __getstate__(self):
+        return {
+            'settings_id': self.settings_id,
+            'orig_id': self.orig_id,
+            'name': self.name,
+            'description': self.description,
+            'grid_image': self.grid_image,
+            'detail_image': self.detail_image,
+            'jump_on_use_to': self.jump_on_use_to
+        }
+
+
+    def __setstate__(self, state):
+        self.settings_id = state['settings_id']
+        self.orig_id = state['orig_id']
+        self.name = state['name']
+        self.description = state['description']
+        self.grid_image = state['grid_image']
+        self.detail_image = state['detail_image']
+        self.jump_on_use_to = state['jump_on_use_to']

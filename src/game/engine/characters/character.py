@@ -41,3 +41,37 @@ class Character:
         }
 
 
+    def __getstate__(self):
+        return {
+            'name': self.name,
+            'max_health': self.max_health,
+            'current_health': self.current_health,
+            'good': self.good,
+            'law': self.law,
+            'lore': self.lore,
+            'experience': self.experience,
+            'strength': self.strength,
+            'dexterity': self.dexterity,
+            'intelligence': self.intelligence,
+            'constitution': self.constitution,
+            'wisdom': self.wisdom,
+            'charisma': self.charisma,
+            'looks_like': self.looks_like
+        }
+
+
+    def __setstate__(self, state):
+        self.name = state['name']
+        self.max_health = state['max_health']
+        self.current_health = state['current_health']
+        self.good = state['good']
+        self.law = state['law']
+        self.lore = state['lore']
+        self.experience = state['experience']
+        self.strength = state['strength']
+        self.dexterity = state['dexterity']
+        self.intelligence = state['intelligence']
+        self.constitution = state['constitution']
+        self.wisdom = state['wisdom']
+        self.charisma = state['charisma']
+        self.looks_like = state['looks_like']

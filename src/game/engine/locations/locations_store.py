@@ -24,5 +24,5 @@ class LocationsStore():
         self.e2i_mapping = state['e2i_mapping']
         self.current_external = state['current_external']
         self.current_internal = state['current_internal']
-        self.visited_externals = state['visited_externals']
-        self.visited_internals = state['visited_internals']
+        self.visited_externals = set(state['visited_externals'])
+        self.visited_internals = set(state['visited_internals'])

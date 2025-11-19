@@ -7,8 +7,8 @@ class JournalManagerTest(LogicTest):
     def test_ctor(self):
         self.assertIsNotNone(self.journal_manager)
         self.assertIsNotNone(self.journal_manager._events_manager)
-        self.assertIsNotNone(self.journal_manager._notes)
-        self.assertEqual(len(self.journal_manager._notes), 0)
+        self.assertIsNotNone(self.journal_manager._journal_store.notes)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 0)
 
 
     def test_register_when_all_ok(self):
@@ -16,13 +16,13 @@ class JournalManagerTest(LogicTest):
         note_content = 'note_content'
         note_found = True
 
-        self.assertEqual(len(self.journal_manager._notes), 0)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 0)
 
         self.journal_manager.register(note_id, note_content, note_found)
-        self.assertEqual(len(self.journal_manager._notes), 1)
-        self.assertEqual(self.journal_manager._notes[0].id, note_id)
-        self.assertEqual(self.journal_manager._notes[0].content, note_content)
-        self.assertEqual(self.journal_manager._notes[0].found, note_found)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 1)
+        self.assertEqual(self.journal_manager._journal_store.notes[0].id, note_id)
+        self.assertEqual(self.journal_manager._journal_store.notes[0].content, note_content)
+        self.assertEqual(self.journal_manager._journal_store.notes[0].found, note_found)
 
 
     def test_register_when_already_registrated(self):
@@ -30,10 +30,10 @@ class JournalManagerTest(LogicTest):
         note_content = 'note_content'
         note_found = True
 
-        self.assertEqual(len(self.journal_manager._notes), 0)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 0)
 
         self.journal_manager.register(note_id, note_content, note_found)
-        self.assertEqual(len(self.journal_manager._notes), 1)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 1)
 
         with self.assertRaises(KeyError):
             self.journal_manager.register(note_id, note_content, note_found)
@@ -44,10 +44,10 @@ class JournalManagerTest(LogicTest):
         note_content = 'note_content'
         note_found = True
 
-        self.assertEqual(len(self.journal_manager._notes), 0)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 0)
 
         self.journal_manager.register(note_id, note_content, note_found)
-        self.assertEqual(len(self.journal_manager._notes), 1)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 1)
 
         note = self.journal_manager.get(note_id)
         self.assertEqual(note.id, note_id)
@@ -85,7 +85,7 @@ class JournalManagerTest(LogicTest):
         note_content = 'note_content'
         note_found = False
 
-        self.assertEqual(len(self.journal_manager._notes), 0)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 0)
 
         self.journal_manager.register(note_id, note_content, note_found)
         note = self.journal_manager.get(note_id)
@@ -114,7 +114,7 @@ class JournalManagerTest(LogicTest):
         note_content3 = 'note_content'
         note_found3 = False
 
-        self.assertEqual(len(self.journal_manager._notes), 0)
+        self.assertEqual(len(self.journal_manager._journal_store.notes), 0)
 
         self.journal_manager.register(note_id1, note_content1, note_found1)
         self.journal_manager.register(note_id2, note_content2, note_found2)
