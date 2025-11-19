@@ -135,7 +135,7 @@ class EiveneLogicTest(LogicTest):
         current_health_before = self.state_manager.characters_manager.get_property(who, prop_current_health)
         self.assertNotEqual(max_health_before, current_health_before)
         self.assertEqual(self.state_manager.world_manager.get_ravel_eivene(), ravel_eivene_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r3449_action()
 
@@ -146,7 +146,7 @@ class EiveneLogicTest(LogicTest):
         self.assertEqual(max_health_before + delta_max_health, max_health_after)
         self.assertEqual(max_health_after, current_health_after)
         self.assertEqual(self.state_manager.world_manager.get_ravel_eivene(), ravel_eivene_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r3449_action()
 
@@ -157,7 +157,7 @@ class EiveneLogicTest(LogicTest):
         self.assertEqual(max_health_after + delta_max_health, max_health_after_once)
         self.assertEqual(max_health_after_once, current_health_after_once)
         self.assertEqual(self.state_manager.world_manager.get_ravel_eivene(), ravel_eivene_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r3456_action(self):

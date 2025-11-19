@@ -737,21 +737,21 @@ class SoegoLogicGeneratedTest(LogicTest):
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21852_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21852_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r64623_action(self):
@@ -825,21 +825,21 @@ class SoegoLogicGeneratedTest(LogicTest):
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21853_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21853_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r21854_action(self):
@@ -905,17 +905,17 @@ class SoegoLogicGeneratedTest(LogicTest):
         note_id = '21926'
 
         self.assertFalse(self.state_manager.world_manager.get_soego_told())
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21915_action()
 
         self.assertTrue(self.state_manager.world_manager.get_soego_told())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21915_action()
 
         self.assertTrue(self.state_manager.world_manager.get_soego_told())
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r21914_action(self):
@@ -947,17 +947,17 @@ class SoegoLogicGeneratedTest(LogicTest):
         note_id = '21926'
 
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21916_action()
 
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r21916_action()
 
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r21917_action(self):
@@ -1065,19 +1065,19 @@ class SoegoLogicGeneratedTest(LogicTest):
 
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22024_action()
 
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22024_action()
 
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_fled(), soego_fled_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r22051_action(self):
@@ -1095,21 +1095,21 @@ class SoegoLogicGeneratedTest(LogicTest):
         self.assertFalse(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_before)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_before)
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22051_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
         self.logic.r22051_action()
 
         self.assertTrue(self.state_manager.world_manager.get_met_soego2())
         self.assertEqual(self.state_manager.world_manager.get_soego_value(), soego_value_after_once)
         self.assertEqual(self.state_manager.world_manager.get_soego_talk(), soego_talk_after_once)
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def test_r66173_action(self):

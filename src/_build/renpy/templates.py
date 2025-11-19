@@ -325,13 +325,13 @@ update_journal_action_pattern_preconf = """
 note_id = '{v}'
 """.strip()
 update_journal_action_pattern_before = """
-self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
 """.strip()
 update_journal_action_pattern_after = """
-self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 """.strip()
 update_journal_action_pattern_after_once = """
-self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 """.strip()
 full_heal_action_pattern_preconf = """
 who = '{w}'

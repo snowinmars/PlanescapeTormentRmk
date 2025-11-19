@@ -157,9 +157,9 @@ class LogicTest(unittest.TestCase):
 
 
     def _pickup_journal_note_action(self, note_id, action_lambda):
-        self.assertFalse(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertFalse(self.state_manager.journal_manager.found_journal_note(note_id))
         action_lambda()
-        self.assertTrue(self.state_manager.journal_manager.has_journal_note(note_id))
+        self.assertTrue(self.state_manager.journal_manager.found_journal_note(note_id))
 
 
     def _change_prop_once(self, prop_labmda, delta, action_lambda):

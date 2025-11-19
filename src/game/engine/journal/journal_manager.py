@@ -22,11 +22,7 @@ class JournalManager:
         if note_id in self._journal_store.notes:
             raise KeyError(f"Note '{note_id}' already registrated")
 
-        self._journal_store.notes[note_id] = JournalNote(
-            note_id,
-            content,
-            found
-        )
+        self._journal_store.notes[note_id] = JournalNote(note_id, content, found)
 
         return self
 
@@ -38,7 +34,7 @@ class JournalManager:
         return self._journal_store.notes.get(note_id)
 
 
-    def has_journal_note(self, note_id):
+    def found_journal_note(self, note_id):
         return self.get(note_id).found
 
 
@@ -51,7 +47,7 @@ class JournalManager:
 
 
     def build_journal(self):
-        return filter(lambda x: x.found, self._journal_store.notes.items())
+        return map(lambda x: x[1], filter(lambda x: x[1].found, self._journal_store.notes.items()))
 
 
     def _log(self, line):
