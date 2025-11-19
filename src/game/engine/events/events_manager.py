@@ -1,12 +1,6 @@
 import time
-from dataclasses import dataclass
 
-
-@dataclass(frozen=True)
-class Event:
-    timestamp: str
-    category: str
-    text: str
+from game.engine.events.event import (Event)
 
 
 class EventsManager:
@@ -21,9 +15,9 @@ class EventsManager:
 
     def write_event(self, event_text, event_category = "general"):
         self._events_store.events.append(Event(
-            timestamp = time.strftime("[%H:%M]"),
-            category = event_category,
-            text = event_text
+            time.strftime("[%H:%M]"),
+            event_category,
+            event_text
         ))
         self.logger.debug(event_text)
 

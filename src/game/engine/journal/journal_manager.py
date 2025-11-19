@@ -1,18 +1,13 @@
-from dataclasses import dataclass
 import logging
 
-
-@dataclass
-class Note:
-    id: str
-    content: str
-    found: bool
+from game.engine.journal.journal_note import (JournalNote)
 
 
 class JournalManager:
     def __init__(self, events_manager):
         self._events_manager = events_manager
         self._journal_store = None
+        self._on_update_journal = []
 
 
     def set_store(self, journal_store):
@@ -20,17 +15,17 @@ class JournalManager:
 
 
     def register_on_update_journal(self, callback):
-        self._journal_store.on_update_journal.append(callback)
+        self._on_update_journal.append(callback)
 
 
     def register(self, note_id, content, found=False):
         if note_id in self._journal_store.notes:
             raise KeyError(f"Note '{note_id}' already registrated")
 
-        self._journal_store.notes[note_id] = Note(
-            id=note_id,
-            content=content,
-            found=found
+        self._journal_store.notes[note_id] = JournalNote(
+            note_id,
+            content,
+            found
         )
 
         return self
@@ -51,7 +46,7 @@ class JournalManager:
         self._log(f"Updated my journal with note '{note_id}'")
         self.get(note_id).found = True
 
-        for callback in self._journal_store.on_update_journal:
+        for callback in self._on_update_journal:
             callback()
 
 
