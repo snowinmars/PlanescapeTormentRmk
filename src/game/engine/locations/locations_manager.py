@@ -45,8 +45,10 @@ class LocationsManager:
         self._locations_store.current_external = external
         self._locations_store.current_internal = internal
 
-        self._locations_store.visited_externals.add(external)
-        self._locations_store.visited_internals.add(internal)
+        if external not in self._locations_store.visited_externals:
+            self._locations_store.visited_externals.append(external)
+        if internal not in self._locations_store.visited_internals:
+            self._locations_store.visited_internals.append(internal)
 
         self._log(f"Set location '{external}' as part of '{internal}'")
 
