@@ -3,30 +3,19 @@ init 10 python:
     from game.engine.runtime import (runtime)
     gsm = runtime.global_state_manager
 
-    def _dump_dict(d):
-        return "\n".join(f"{k}\t{v}" for k, v in d.items())
-
     def _dump_settings():
-        runtime.logger.warn('\n\n== state_manager._once_keys ==')
-        runtime.logger.warn(str(gsm._once_keys))
-        runtime.logger.warn('\n\n== state_manager._registry ==')
-        runtime.logger.warn(_dump_dict(gsm._registry))
-        runtime.logger.warn('\n\n== state_manager.characters_manager._characters ==')
-        runtime.logger.warn(_dump_dict(gsm.characters_manager._characters))
-        runtime.logger.warn('\n\n== state_manager.characters_manager._once_keys ==')
-        runtime.logger.warn(_dump_dict(gsm.characters_manager._once_keys))
-        runtime.logger.warn('\n\n== state_manager.locations_manager._i2e_mapping ==')
-        runtime.logger.warn(_dump_dict(gsm.locations_manager._i2e_mapping))
-        runtime.logger.warn('\n\n== state_manager.locations_manager._e2i_mapping ==')
-        runtime.logger.warn(_dump_dict(gsm.locations_manager._e2i_mapping))
-        runtime.logger.warn('\n\n== state_manager.locations_manager._current_external ==')
-        runtime.logger.warn(gsm.locations_manager._current_external)
-        runtime.logger.warn('\n\n== state_manager.locations_manager._current_internal ==')
-        runtime.logger.warn(gsm.locations_manager._current_internal)
-        runtime.logger.warn('\n\n== state_manager.locations_manager._visited_externals ==')
-        runtime.logger.warn(str(gsm.locations_manager._visited_externals))
-        runtime.logger.warn('\n\n== state_manager.locations_manager._visited_internals ==')
-        runtime.logger.warn(str(gsm.locations_manager._visited_internals))
+        runtime.logger.warn('\n\n== state_manager.characters_manager._characters_store ==')
+        runtime.logger.warn(gsm.characters_manager._characters_store.toJson())
+        runtime.logger.warn('\n\n== state_manager._events_manager._events_store ==')
+        runtime.logger.warn(gsm._events_manager._events_store.toJson())
+        runtime.logger.warn('\n\n== state_manager.inventory_manager._inventory_store ==')
+        runtime.logger.warn(gsm.inventory_manager._inventory_store.toJson())
+        runtime.logger.warn('\n\n== state_manager.journal_manager._journal_store ==')
+        runtime.logger.warn(gsm.journal_manager._journal_store.toJson())
+        runtime.logger.warn('\n\n== state_manager.locations_manager._locations_store ==')
+        runtime.logger.warn(gsm.locations_manager._locations_store.toJson())
+        runtime.logger.warn('\n\n== state_manager.world_manager._world_store ==')
+        runtime.logger.warn(gsm.world_manager._world_store.toJson())
         runtime.global_events_manager.write_event('Dumped settings to log')
 
 

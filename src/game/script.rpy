@@ -56,13 +56,11 @@ init 3 python:
     runtime.global_characters_manager = CharactersManager(runtime.global_events_manager)
     runtime.global_journal_manager = JournalManager(runtime.global_events_manager)
     runtime.global_world_manager = WorldManager(runtime.global_events_manager)
-    runtime.global_state_manager = StateManager(runtime.global_events_manager, runtime.global_world_manager, runtime.global_characters_manager, runtime.global_locations_manager, runtime.global_journal_manager)
     runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_state_manager.get_setting_value(x))
+    runtime.global_state_manager = StateManager(runtime.global_events_manager, runtime.global_world_manager, runtime.global_characters_manager, runtime.global_locations_manager, runtime.global_journal_manager, runtime.global_inventory_manager)
 
 
     def apply_stores():
-        runtime.global_events_manager.write_event('apply_stores')
-
         locations_store = LocationsStore()
         runtime.global_locations_manager.set_store(locations_store)
 
@@ -83,36 +81,36 @@ init 3 python:
 
 
     def init_managers():
-        runtime.global_events_manager.write_event('init_managers')
         apply_stores()
+        runtime.global_events_manager.write_event('init_managers')
 
         now = int(time.time())
-        logger.info('Building settings manager…')
+        runtime.logger.info('Building settings manager…')
         build_all_settings(runtime.global_state_manager)
-        logger.info('Done building settings manager, took %s', int(time.time()) - now)
+        runtime.logger.info('Done building settings manager, took %s', int(time.time()) - now)
 
         now = int(time.time())
-        logger.info('Building inventory manager…')
+        runtime.logger.info('Building inventory manager…')
         build_all_inventory(runtime.global_inventory_manager)
-        logger.info('Done building inventory manager, took %s', int(time.time()) - now)
+        runtime.logger.info('Done building inventory manager, took %s', int(time.time()) - now)
 
         now = int(time.time())
-        logger.info('Building characters…')
+        runtime.logger.info('Building characters…')
         build_all_characters(runtime.global_characters_manager)
-        logger.info('Done building characters, took %s', int(time.time()) - now)
+        runtime.logger.info('Done building characters, took %s', int(time.time()) - now)
 
         now = int(time.time())
-        logger.info('Building locations mapping…')
+        runtime.logger.info('Building locations mapping…')
         build_all_locations(runtime.global_locations_manager)
-        logger.info('Done building locations mapping, took %s', int(time.time()) - now)
+        runtime.logger.info('Done building locations mapping, took %s', int(time.time()) - now)
 
         now = int(time.time())
-        logger.info('Building journal notes…')
+        runtime.logger.info('Building journal notes…')
         build_all_notes(runtime.global_journal_manager)
         def on_update_journal():
             renpy.exports.sound.play(runtime.audio.update_journal)
         runtime.global_journal_manager.register_on_update_journal(on_update_journal)
-        logger.info('Done building journal notes, took %s', int(time.time()) - now)
+        runtime.logger.info('Done building journal notes, took %s', int(time.time()) - now)
 
         config.keymap['show_inventory'] = ['i']
         config.underlay.append(
