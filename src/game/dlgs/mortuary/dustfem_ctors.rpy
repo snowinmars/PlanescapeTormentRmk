@@ -5,15 +5,15 @@ init 10 python:
 
 label dustfem_speak:
     # IF ~  Global("Appearance","GLOBAL",1)
-    if gsm.get_appearance() == 1:
+    if gsm.world_manager.get_appearance() == 1:
         jump dustfem_s0_ctor
 
     # IF ~  Global("Appearance","GLOBAL",2)
-    if gsm.get_appearance() == 2:
+    if gsm.world_manager.get_appearance() == 2:
         jump dustfem_s22_ctor
 
     # IF ~  Global("Appearance","GLOBAL",0)
-    if gsm.get_appearance() == 0:
+    if gsm.world_manager.get_appearance() == 0:
         jump dustfem_s51_ctor
 
     jump dustfem_s40_ctor

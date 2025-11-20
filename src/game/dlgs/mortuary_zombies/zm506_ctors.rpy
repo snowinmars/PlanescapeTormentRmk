@@ -5,11 +5,11 @@ init 10 python:
 
 label zm506_speak:
     # from 3.2 # IF ~  Global("506_Thread","GLOBAL",0)
-    if not gsm.get_has_506_thread():
+    if not gsm.world_manager.get_has_506_thread():
         jump zm506_s0_ctor
 
     # from 4.2 # IF ~  Global("506_Thread","GLOBAL",1)
-    if gsm.get_has_506_thread():
+    if gsm.world_manager.get_has_506_thread():
         jump zm506_s5_ctor
 
 

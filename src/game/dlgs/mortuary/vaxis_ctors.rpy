@@ -5,11 +5,11 @@ init 10 python:
 
 label vaxis_speak:
     # IF ~  Global("Vaxis","GLOBAL",0)
-    if gsm.get_vaxis_value() == 0:
+    if gsm.world_manager.get_vaxis_value() == 0:
         jump vaxis_s0_ctor
 
     # IF ~  GlobalGT("Vaxis","GLOBAL",0)
-    if gsm.get_vaxis_value() > 0:
+    if gsm.world_manager.get_vaxis_value() > 0:
         jump vaxis_s57_ctor
 
 

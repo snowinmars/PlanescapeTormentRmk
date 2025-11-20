@@ -5,11 +5,11 @@ init 10 python:
 
 label dhall_speak:
     # IF ~  Global("Dhall","GLOBAL",0)
-    if gsm.get_dhall_value() == 0:
+    if gsm.world_manager.get_dhall_value() == 0:
         jump dhall_s5_ctor
 
     # IF ~  Global("Dhall","GLOBAL",1)
-    if gsm.get_dhall_value() == 1:
+    if gsm.world_manager.get_dhall_value() == 1:
         jump dhall_s40_ctor
 
 

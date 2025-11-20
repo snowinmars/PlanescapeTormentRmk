@@ -5,11 +5,11 @@ init 10 python:
 
 label s863_speak:
     # IF ~  !HasItem("DRemind","S863")
-    if gsm.get_has_dremind():
+    if gsm.world_manager.get_has_dremind():
         jump s863_s0_ctor
 
     # IF ~  HasItem("DRemind","S863")
-    if not gsm.get_has_dremind():
+    if not gsm.world_manager.get_has_dremind():
         jump s863_s8_ctor
 
 

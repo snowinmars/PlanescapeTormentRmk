@@ -19,10 +19,25 @@ init 1 python:
 
 
 init 2 python:
+    from game.engine.locations.locations_store import (LocationsStore)
+    from game.engine.journal.journal_store import (JournalStore)
+    from game.engine.events.events_store import (EventsStore)
+    from game.engine.characters.characters_store import (CharactersStore)
+    from game.engine.inventory.inventory_store import (InventoryStore)
+    from game.engine.world.world_store import (WorldStore)
+
     # import types, functools
 
     renpy.add_python_directory('engine')
     renpy.add_python_directory('engine_data')
+
+
+default locations_store = LocationsStore()
+default journal_store = JournalStore()
+default events_store = EventsStore()
+default characters_store = CharactersStore()
+default inventory_store = InventoryStore()
+default world_store = WorldStore()
 
 
 init 3 python:
@@ -36,13 +51,6 @@ init 3 python:
     from game.engine.characters.characters_manager import (CharactersManager)
     from game.engine.journal.journal_manager import (JournalManager)
     from game.engine.world.world_manager import (WorldManager)
-
-    from game.engine.locations.locations_store import (LocationsStore)
-    from game.engine.journal.journal_store import (JournalStore)
-    from game.engine.events.events_store import (EventsStore)
-    from game.engine.characters.characters_store import (CharactersStore)
-    from game.engine.inventory.inventory_store import (InventoryStore)
-    from game.engine.world.world_store import (WorldStore)
 
     from game.engine_data.settings.all_settings import (build_all_settings)
     from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -61,22 +69,16 @@ init 3 python:
 
 
     def apply_stores():
-        locations_store = LocationsStore()
         runtime.global_locations_manager.set_store(locations_store)
 
-        journal_store = JournalStore()
         runtime.global_journal_manager.set_store(journal_store)
 
-        events_store = EventsStore()
         runtime.global_events_manager.set_store(events_store)
 
-        characters_store = CharactersStore()
         runtime.global_characters_manager.set_store(characters_store)
 
-        inventory_store = InventoryStore()
         runtime.global_inventory_manager.set_store(inventory_store)
 
-        world_store = WorldStore()
         runtime.global_world_manager.set_store(world_store)
 
 

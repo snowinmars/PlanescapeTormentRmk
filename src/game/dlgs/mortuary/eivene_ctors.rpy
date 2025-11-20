@@ -5,11 +5,11 @@ init 10 python:
 
 label eivene_speak:
     # IF ~  Global("EiVene","GLOBAL",0)
-    if gsm.get_eivene_value() == 0:
+    if gsm.world_manager.get_eivene_value() == 0:
         jump eivene_s0_ctor
 
     # IF ~  Global("EiVene","GLOBAL",1)
-    if gsm.get_eivene_value() == 1:
+    if gsm.world_manager.get_eivene_value() == 1:
         jump eivene_s15_ctor
 
 

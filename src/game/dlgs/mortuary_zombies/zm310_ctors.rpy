@@ -5,11 +5,11 @@ init 10 python:
 
 label zm310_speak:
     # IF ~  Global("Oinosian","GLOBAL",0)
-    if gsm.get_oinosian_value() == 0:
+    if gsm.world_manager.get_oinosian_value() == 0:
         jump zm310_s0_ctor
 
     # IF ~  Global("Oinosian","GLOBAL",1)
-    if gsm.get_oinosian_value() == 1:
+    if gsm.world_manager.get_oinosian_value() == 1:
         jump zm310_s18_ctor
 
 
