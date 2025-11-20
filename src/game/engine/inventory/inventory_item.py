@@ -1,3 +1,6 @@
+import json
+
+
 class InventoryItem:
     def __init__(self, settings_id, orig_id, name, description, grid_image, detail_image=None, jump_on_use_to=None):
         self.settings_id = settings_id
@@ -29,3 +32,18 @@ class InventoryItem:
         self.grid_image = state['grid_image']
         self.detail_image = state['detail_image']
         self.jump_on_use_to = state['jump_on_use_to']
+
+
+    def toJson(self):
+        return json.dumps(
+            self.__getstate__(),
+            ensure_ascii=False
+        )
+
+
+    @classmethod
+    def fromJson(cls, json_str):
+        data = json.loads(json_str)
+        obj = cls()
+        obj.__setstate__(data)
+        return obj

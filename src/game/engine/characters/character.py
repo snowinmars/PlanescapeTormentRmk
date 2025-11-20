@@ -1,3 +1,6 @@
+import json
+
+
 class Character:
     def __init__(self, \
                 name, \
@@ -75,3 +78,18 @@ class Character:
         self.wisdom = state['wisdom']
         self.charisma = state['charisma']
         self.looks_like = state['looks_like']
+
+
+    def toJson(self):
+        return json.dumps(
+            self.__getstate__(),
+            ensure_ascii=False
+        )
+
+
+    @classmethod
+    def fromJson(cls, json_str):
+        data = json.loads(json_str)
+        obj = cls()
+        obj.__setstate__(data)
+        return obj

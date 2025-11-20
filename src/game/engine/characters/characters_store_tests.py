@@ -26,13 +26,13 @@ class CharacterStoreTest(unittest.TestCase):
         )
 
 
-    def test_serialize_empty(self):
+    def test_serialize_empty_pickle(self):
         dump = pickle.dumps(self.store)
         expected = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
         self.assertEqual(dump, expected)
 
 
-    def test_deserialize_empty(self):
+    def test_deserialize_empty_pickle(self):
         dump = b"\x80\x05\x95d\x00\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94\x8c\tonce_keys\x94}\x94ub."
         store = pickle.loads(dump)
         self.assertIsNotNone(store.characters)
@@ -41,7 +41,23 @@ class CharacterStoreTest(unittest.TestCase):
         self.assertEqual(len(store.once_keys), 0)
 
 
-    def test_serialize_filled(self):
+    def test_serialize_empty_json(self):
+        dump = self.store.toJson()
+        expected = '{"characters": {}, "once_keys": {}}'
+        self.assertEqual(dump, expected)
+
+
+    def test_deserialize_empty_json(self):
+        dump = '{"characters": {}, "once_keys": {}}'
+        store = CharactersStore.fromJson(dump)
+
+        self.assertIsNotNone(store.characters)
+        self.assertIsNotNone(store.once_keys)
+        self.assertEqual(len(store.characters), 0)
+        self.assertEqual(len(store.once_keys), 0)
+
+
+    def test_serialize_filled_pickle(self):
         self.store.characters[self.morte.name] = self.morte
         self.store.characters[self.annah.name] = self.annah
         self.store.once_keys[self.morte.name] = []
@@ -54,9 +70,40 @@ class CharacterStoreTest(unittest.TestCase):
         self.assertEqual(dump, expected)
 
 
-    def test_deserialize_filled(self):
+    def test_deserialize_filled_pickle(self):
         dump = b"\x80\x05\x95\xdd\x01\x00\x00\x00\x00\x00\x00\x8c'game.engine.characters.characters_store\x94\x8c\x0fCharactersStore\x94\x93\x94)\x81\x94}\x94(\x8c\ncharacters\x94}\x94(\x8c\x05morte\x94\x8c game.engine.characters.character\x94\x8c\tCharacter\x94\x93\x94)\x81\x94}\x94(\x8c\x04name\x94h\x07\x8c\nmax_health\x94K\x14\x8c\x0ecurrent_health\x94K\x14\x8c\x04good\x94K<\x8c\x03law\x94J\xc4\xff\xff\xff\x8c\x04lore\x94K\x00\x8c\nexperience\x94M\xd0\x07\x8c\x08strength\x94K\x0c\x8c\tdexterity\x94K\x10\x8c\x0cintelligence\x94K\r\x8c\x0cconstitution\x94K\x10\x8c\x06wisdom\x94K\t\x8c\x08charisma\x94K\x06\x8c\nlooks_like\x94\x8c\x00\x94ub\x8c\x05annah\x94h\n)\x81\x94}\x94(h\rh\x1ch\x0eK&h\x0fK&h\x10K\x00h\x11J\xc4\xff\xff\xffh\x12K\x00h\x13K\x00h\x14K\x0eh\x15K\x12h\x16K\x0ch\x17K\x10h\x18K\nh\x19K\rh\x1ah\x1bubu\x8c\tonce_keys\x94}\x94(h\x07]\x94\x8c\rselfmortename\x94ah\x1c]\x94\x8c\rselfannahname\x94auub."
         store = pickle.loads(dump)
+
+        self.assertIsNotNone(store.characters)
+        self.assertIsNotNone(store.once_keys)
+        self.assertEqual(len(store.characters), 2)
+        self.assertEqual(len(store.once_keys), 2)
+        self._assert_equal_characters(store.characters[self.morte.name], self.morte)
+        self._assert_equal_characters(store.characters[self.annah.name], self.annah)
+        self.assertTrue(self.morte.name in store.once_keys)
+        self.assertTrue(self.annah.name in store.once_keys)
+        self.assertEqual(len(store.once_keys[self.morte.name]), 1)
+        self.assertEqual(len(store.once_keys[self.annah.name]), 1)
+        self.assertEqual(store.once_keys[self.morte.name][0], 'selfmortename')
+        self.assertEqual(store.once_keys[self.annah.name][0], 'selfannahname')
+
+
+    def test_serialize_filled_json(self):
+        self.store.characters[self.morte.name] = self.morte
+        self.store.characters[self.annah.name] = self.annah
+        self.store.once_keys[self.morte.name] = []
+        self.store.once_keys[self.annah.name] = []
+        self.store.once_keys[self.morte.name].append('selfmortename')
+        self.store.once_keys[self.annah.name].append('selfannahname')
+
+        dump = self.store.toJson()
+        expected = '{"characters": {"morte": {"name": "morte", "max_health": 20, "current_health": 20, "good": 60, "law": -60, "lore": 0, "experience": 2000, "strength": 12, "dexterity": 16, "intelligence": 13, "constitution": 16, "wisdom": 9, "charisma": 6, "looks_like": ""}, "annah": {"name": "annah", "max_health": 38, "current_health": 38, "good": 0, "law": -60, "lore": 0, "experience": 0, "strength": 14, "dexterity": 18, "intelligence": 12, "constitution": 16, "wisdom": 10, "charisma": 13, "looks_like": ""}}, "once_keys": {"morte": ["selfmortename"], "annah": ["selfannahname"]}}'
+        self.assertEqual(dump, expected)
+
+
+    def test_deserialize_filled_json(self):
+        dump = '{"characters": {"morte": {"name": "morte", "max_health": 20, "current_health": 20, "good": 60, "law": -60, "lore": 0, "experience": 2000, "strength": 12, "dexterity": 16, "intelligence": 13, "constitution": 16, "wisdom": 9, "charisma": 6, "looks_like": ""}, "annah": {"name": "annah", "max_health": 38, "current_health": 38, "good": 0, "law": -60, "lore": 0, "experience": 0, "strength": 14, "dexterity": 18, "intelligence": 12, "constitution": 16, "wisdom": 10, "charisma": 13, "looks_like": ""}}, "once_keys": {"morte": ["selfmortename"], "annah": ["selfannahname"]}}'
+        store = CharactersStore.fromJson(dump)
 
         self.assertIsNotNone(store.characters)
         self.assertIsNotNone(store.once_keys)

@@ -1,3 +1,6 @@
+import json
+
+
 class WorldStore():
     def __init__(self):
         self.once_keys = []
@@ -14,3 +17,18 @@ class WorldStore():
     def __setstate__(self, state):
         self.once_keys = state['once_keys']
         self.registry = state['registry']
+
+
+    def toJson(self):
+        return json.dumps(
+            self.__getstate__(),
+            ensure_ascii=False
+        )
+
+
+    @classmethod
+    def fromJson(cls, json_str):
+        data = json.loads(json_str)
+        obj = cls()
+        obj.__setstate__(data)
+        return obj

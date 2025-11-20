@@ -1,11 +1,14 @@
+import json
+
+
 class LocationsStore():
     def __init__(self):
         self.i2e_mapping = {}
         self.e2i_mapping = {}
         self.current_external = None
         self.current_internal = None
-        self.visited_externals = set()
-        self.visited_internals = set()
+        self.visited_externals = []
+        self.visited_internals = []
 
 
     def __getstate__(self):
@@ -24,5 +27,20 @@ class LocationsStore():
         self.e2i_mapping = state['e2i_mapping']
         self.current_external = state['current_external']
         self.current_internal = state['current_internal']
-        self.visited_externals = set(state['visited_externals'])
-        self.visited_internals = set(state['visited_internals'])
+        self.visited_externals = state['visited_externals']
+        self.visited_internals = state['visited_internals']
+
+
+    def toJson(self):
+        return json.dumps(
+            self.__getstate__(),
+            ensure_ascii=False
+        )
+
+
+    @classmethod
+    def fromJson(cls, json_str):
+        data = json.loads(json_str)
+        obj = cls()
+        obj.__setstate__(data)
+        return obj
