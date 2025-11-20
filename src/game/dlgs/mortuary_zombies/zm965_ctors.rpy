@@ -5,11 +5,11 @@ init 10 python:
 
 label zm965_speak:
     # IF ~  NearbyDialog("Dmorte")
-    if gsm.get_in_party_morte():
+    if gsm.world_manager.get_in_party_morte():
         jump zm965_s0_ctor
 
     # IF ~  !NearbyDialog("Dmorte")
-    if not gsm.get_in_party_morte():
+    if not gsm.world_manager.get_in_party_morte():
         jump zm965_s1_ctor
 
 

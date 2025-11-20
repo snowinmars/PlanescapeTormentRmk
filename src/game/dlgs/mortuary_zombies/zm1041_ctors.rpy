@@ -5,11 +5,11 @@ init 10 python:
 
 label zm1041_speak:
     # IF ~  Global("Bei","GLOBAL",0)
-    if gsm.get_bei_value() == 0:
+    if gsm.world_manager.get_bei_value() == 0:
         jump zm1041_s0_ctor
 
     # IF ~  Global("Bei","GLOBAL",1)
-    if gsm.get_bei_value() == 1:
+    if gsm.world_manager.get_bei_value() == 1:
         jump zm1041_s37_ctor
 
 

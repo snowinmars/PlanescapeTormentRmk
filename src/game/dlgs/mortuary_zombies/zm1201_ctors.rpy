@@ -5,11 +5,11 @@ init 10 python:
 
 label zm1201_speak:
     # IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
-    if not gsm.get_1201_note_retrieved():
+    if not gsm.world_manager.get_1201_note_retrieved():
         jump zm1201_s0_ctor
 
     # IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
-    if gsm.get_1201_note_retrieved():
+    if gsm.world_manager.get_1201_note_retrieved():
         jump zm1201_s5_ctor
 
 

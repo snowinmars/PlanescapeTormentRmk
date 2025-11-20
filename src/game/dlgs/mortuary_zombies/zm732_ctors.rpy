@@ -5,11 +5,11 @@ init 10 python:
 
 label zm732_speak:
     # IF ~  !HasItem("TomeBA","ZM732")
-    if gsm.get_has_tome_ba():
+    if gsm.world_manager.get_has_tome_ba():
         jump zm732_s0_ctor
 
     # IF ~  HasItem("TomeBA","ZM732")
-    if not gsm.get_has_tome_ba():
+    if not gsm.world_manager.get_has_tome_ba():
         jump zm732_s3_ctor
 
 

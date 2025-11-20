@@ -5,16 +5,16 @@ init 10 python:
 
 label zm1094_speak:
     # IF ~  Global("Asonje","GLOBAL",0)
-    if gsm.get_asonje_value() == 0:
+    if gsm.world_manager.get_asonje_value() == 0:
         jump zm1094_s0_ctor
 
     # IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
-    if  gsm.get_asonje_value() > 0 and \
-        gsm.get_asonje_value() < 3:
+    if  gsm.world_manager.get_asonje_value() > 0 and \
+        gsm.world_manager.get_asonje_value() < 3:
         jump zm1094_s26_ctor
 
     # IF ~  Global("Asonje","GLOBAL",3)
-    if gsm.get_asonje_value() == 3:
+    if gsm.world_manager.get_asonje_value() == 3:
         jump zm1094_s27_ctor
 
 

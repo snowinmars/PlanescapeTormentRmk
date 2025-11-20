@@ -5,11 +5,11 @@ init 10 python:
 
 label zm396_speak:
     # IF ~  HasItem("Bandage","ZM396")
-    if not gsm.get_has_bandages_zm396():
+    if not gsm.world_manager.get_has_bandages_zm396():
         jump zm396_s0_ctor
 
     # IF ~  !HasItem("Bandage","ZM396")
-    if gsm.get_has_bandages_zm396():
+    if gsm.world_manager.get_has_bandages_zm396():
         jump zm396_s4_ctor
 
 
