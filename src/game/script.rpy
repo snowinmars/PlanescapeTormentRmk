@@ -70,15 +70,10 @@ init 3 python:
 
     def apply_stores():
         runtime.global_locations_manager.set_store(locations_store)
-
         runtime.global_journal_manager.set_store(journal_store)
-
         runtime.global_events_manager.set_store(events_store)
-
         runtime.global_characters_manager.set_store(characters_store)
-
         runtime.global_inventory_manager.set_store(inventory_store)
-
         runtime.global_world_manager.set_store(world_store)
 
 

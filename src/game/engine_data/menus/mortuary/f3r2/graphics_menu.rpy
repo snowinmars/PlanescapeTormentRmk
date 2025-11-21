@@ -16,19 +16,19 @@ label mortuary_f3r2_graphics_menu:
 
 
 screen mortuary_f3r2_graphics_menu_screen():
-    $ gsm = runtime.global_state_manager
+    $ state_manager = runtime.global_state_manager
     use abstract_location_menu_screen(
         'bg mortuary_f3r2',
         [
-            FromMortuaryF3R2ToMortuaryF3R3(gsm, 1500, 800),
-            FromMortuaryF3R2ToMortuaryF3R1(gsm, 150, 500),
-            InMortuaryF3R2PickGarbage(gsm, 400, 700),
-            InMortuaryF3R2PickTaskList(gsm, 400, 300),
-            InMortuaryF3R2PickNeedle(gsm, 1200, 600),
+            FromMortuaryF3R2ToMortuaryF3R3(state_manager, 1500, 800),
+            FromMortuaryF3R2ToMortuaryF3R1(state_manager, 150, 500),
+            InMortuaryF3R2PickGarbage(state_manager, 400, 700),
+            InMortuaryF3R2PickTaskList(state_manager, 400, 300),
+            InMortuaryF3R2PickNeedle(state_manager, 1200, 600),
         ],
         [
-            *get_party(gsm, 800, 400),
-            InMortuaryF3R2Dust(gsm, 960, 900),
+            *get_party(state_manager, 800, 400),
+            InMortuaryF3R2Dust(state_manager, 960, 900),
         ],
         audio.mortuary
     )

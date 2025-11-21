@@ -4,4 +4,4 @@ class MortuaryF3R1LootLogic:
 
 
     def mortuary_key(self):
-        self.state_manager.set_has_mortuary_key(True)
+        self.state_manager.world_manager.set_has_mortuary_key(True)

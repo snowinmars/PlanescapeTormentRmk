@@ -13,8 +13,8 @@ class NavigationDirective:
 
 
 class MenuItem:
-    def __init__(self, gsm, x, y):
-        self.gsm = gsm
+    def __init__(self, state_manager, x, y):
+        self.state_manager = state_manager
         self._pos = { 'x': x, 'y': y }
     def when(self):
         return True
@@ -31,36 +31,36 @@ class MenuItem:
 
 
 class GoToLocationMenuItem(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def texture(self):
         return 'images/icons/open_idle.png'
 
 
 class ContainerMenuItem(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def texture(self):
         return 'images/icons/open_idle.png'
 
 
 class ZombieMenuItem(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def texture(self):
         return 'animation_zm782'
 
 
 class SkeletMenuItem(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def texture(self):
         return 'images/menu_sprites/skelet.png'
 
 
 class NpcMenuItem(MenuItem):
-    def __init__(self, gsm, x, y, npc):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y, npc):
+        super().__init__(state_manager, x, y)
         self._pos = self._calc_party_pos(x, y)[npc]
     def pos(self):
         return self._pos

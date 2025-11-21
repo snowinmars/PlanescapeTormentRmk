@@ -23,26 +23,26 @@ label mortuary_f3r4_graphics_menu:
 
 
 screen mortuary_f3r4_graphics_menu_screen():
-    $ gsm = runtime.global_state_manager
+    $ state_manager = runtime.global_state_manager
     use abstract_location_menu_screen(
         'bg mortuary_f3r4',
         [
-            FromMortuaryF3R4ToMortuaryF3R3(gsm, 1500, 500),
-            FromMortuaryF3R4ToMortuaryF3R1(gsm, 150, 600),
-            InMortuaryF3R4PickPrybar(gsm, 950, 650),
-            InMortuaryF3R4PickDustmanRequest(gsm, 820, 700),
-            InMortuaryF3R4PickNeedle(gsm, 1670, 150),
-            InMortuaryF3R4PickGarbage(gsm, 1800, 200),
+            FromMortuaryF3R4ToMortuaryF3R3(state_manager, 1500, 500),
+            FromMortuaryF3R4ToMortuaryF3R1(state_manager, 150, 600),
+            InMortuaryF3R4PickPrybar(state_manager, 950, 650),
+            InMortuaryF3R4PickDustmanRequest(state_manager, 820, 700),
+            InMortuaryF3R4PickNeedle(state_manager, 1670, 150),
+            InMortuaryF3R4PickGarbage(state_manager, 1800, 200),
         ],
         [
-            *get_party(gsm, 800, 800),
-            InMortuaryF3R4Dustfem(gsm, 960, 400),
-            InMortuaryF3R4S42(gsm, 560, 300),
-            InMortuaryF3R4Zf832(gsm, 1260, 400),
-            InMortuaryF3R4Zm613(gsm, 360, 400),
-            InMortuaryF3R4Zm79(gsm, 560, 750),
-            InMortuaryF3R4Zf679(gsm, 485, 825),
-            InMortuaryF3R4S1221(gsm, 410, 900),
+            *get_party(state_manager, 800, 800),
+            InMortuaryF3R4Dustfem(state_manager, 960, 400),
+            InMortuaryF3R4S42(state_manager, 560, 300),
+            InMortuaryF3R4Zf832(state_manager, 1260, 400),
+            InMortuaryF3R4Zm613(state_manager, 360, 400),
+            InMortuaryF3R4Zm79(state_manager, 560, 750),
+            InMortuaryF3R4Zf679(state_manager, 485, 825),
+            InMortuaryF3R4S1221(state_manager, 410, 900),
         ],
         audio.mortuary
     )
