@@ -7,42 +7,42 @@ from game.engine_data.menus.menu_items import (
 
 
 class FromMortuaryF2R5ToMortuaryF2R6(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f2r6'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r6'):
             return 'Пройти в восточную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f2r6')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r6')
         )
 
 
 class FromMortuaryF2R5ToMortuaryF2R4(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f2r4'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r4'):
             return 'Пройти в восточную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f2r4')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r4')
         )
 
 
 class InMortuaryF2R5Eivene(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_eivene()
+        return not self.state_manager.world_manager.get_dead_eivene()
     def texture(self):
         return 'images/menu_sprites/eivene.png'
     def tooltip(self):
-        if self.gsm.get_know_eivene_name():
+        if self.state_manager.world_manager.get_know_eivene_name():
             return 'Поговорить с Эи-Вейн'
         return 'Поговорить с хрупкой девушкой'
     def jump(self):
@@ -52,12 +52,12 @@ class InMortuaryF2R5Eivene(MenuItem):
 
 
 class InMortuaryF2R5Zm257(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zm257()
+        return not self.state_manager.world_manager.get_dead_zm257()
     def tooltip(self):
-        if self.gsm.get_talked_to_zm257_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm257_times() > 0:
             return 'Поговорить с трупом «257»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):
@@ -67,12 +67,12 @@ class InMortuaryF2R5Zm257(ZombieMenuItem):
 
 
 class InMortuaryF2R5Zm506(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zm506()
+        return not self.state_manager.world_manager.get_dead_zm506()
     def tooltip(self):
-        if self.gsm.get_talked_to_zm506_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm506_times() > 0:
             return 'Поговорить с трупом «506»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):
@@ -82,12 +82,12 @@ class InMortuaryF2R5Zm506(ZombieMenuItem):
 
 
 class InMortuaryF2R5Zm985(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zm985()
+        return not self.state_manager.world_manager.get_dead_zm985()
     def tooltip(self):
-        if self.gsm.get_talked_to_zm985_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm985_times() > 0:
             return 'Поговорить с трупом «985»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):

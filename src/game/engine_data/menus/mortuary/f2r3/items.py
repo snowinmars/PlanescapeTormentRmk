@@ -7,44 +7,44 @@ from game.engine_data.menus.menu_items import (
 
 
 class FromMortuaryF2R3ToMortuaryF2R4(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f2r4'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r4'):
             return 'Пройти в северную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f2r4')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r4')
         )
 
 
 class FromMortuaryF2R3ToMortuaryF2R2(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f2r2'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f2r2'):
             return 'Пройти в западную препараторскую'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f2r2')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f2r2')
         )
 
 
 class InMortuaryF2R3Dhall(MenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_dhall()
+        return not self.state_manager.world_manager.get_dead_dhall()
     def texture(self):
         return 'images/menu_sprites/dhall.png'
     def tooltip(self):
-        if self.gsm.get_know_dhall_name():
+        if self.state_manager.world_manager.get_know_dhall_name():
             return 'Поговорить с Дхаллом'
-        if self.gsm.get_talked_to_dhall_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_dhall_times() > 0:
             return 'Поговорить с существом около большой книги'
         return 'Подойти к существу около большой книги'
     def jump(self):
@@ -54,12 +54,12 @@ class InMortuaryF2R3Dhall(MenuItem):
 
 
 class InMortuaryF2R3Zm396(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zm396()
+        return not self.state_manager.world_manager.get_dead_zm396()
     def tooltip(self):
-        if self.gsm.get_talked_to_zm396_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm396_times() > 0:
             return 'Поговорить с трупом «396»'
         return 'Поговорить с трупом медбрата'
     def jump(self):
@@ -69,12 +69,12 @@ class InMortuaryF2R3Zm396(ZombieMenuItem):
 
 
 class InMortuaryF2R3Zm1201(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zm1201()
+        return not self.state_manager.world_manager.get_dead_zm1201()
     def tooltip(self):
-        if self.gsm.get_talked_to_zm1201_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm1201_times() > 0:
             return 'Поговорить с трупом «1201»'
         return 'Поговорить с трупом с чернильницей'
     def jump(self):
@@ -84,12 +84,12 @@ class InMortuaryF2R3Zm1201(ZombieMenuItem):
 
 
 class InMortuaryF2R3Zf1096(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zf1096()
+        return not self.state_manager.world_manager.get_dead_zf1096()
     def tooltip(self):
-        if self.gsm.get_talked_to_zf1096_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zf1096_times() > 0:
             return 'Поговорить с трупом «1096»'
         return 'Поговорить с трупом с косой на шее'
     def jump(self):
@@ -99,12 +99,12 @@ class InMortuaryF2R3Zf1096(ZombieMenuItem):
 
 
 class InMortuaryF2R3Zf1072(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zf1072()
+        return not self.state_manager.world_manager.get_dead_zf1072()
     def tooltip(self):
-        if self.gsm.get_talked_to_zf1072_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zf1072_times() > 0:
             return 'Поговорить с трупом «1072»'
         return 'Поговорить с трупом без челюсти'
     def jump(self):

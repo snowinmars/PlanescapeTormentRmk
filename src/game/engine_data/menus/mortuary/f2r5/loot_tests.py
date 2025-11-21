@@ -7,7 +7,7 @@ from game.engine_data.menus.mortuary.f2r5.loot_logic import (MortuaryF2R5LootLog
 
 class MortuaryF2R5LootLogicTest(LogicTest):
     def setUp(self):
-        super(MortuaryF2R5LootLogic, self).setUp()
+        super(MortuaryF2R5LootLogicTest, self).setUp()
         self.logic = MortuaryF2R5LootLogic(self.state_manager)
 
 

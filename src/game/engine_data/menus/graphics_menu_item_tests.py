@@ -7,8 +7,14 @@ from game.engine.inventory.inventory_manager import (InventoryManager)
 from game.engine.locations.locations_manager import (LocationsManager)
 from game.engine.characters.characters_manager import (CharactersManager)
 from game.engine.journal.journal_manager import (JournalManager)
+from game.engine.world.world_manager import (WorldManager)
 
+from game.engine.locations.locations_store import (LocationsStore)
 from game.engine.journal.journal_store import (JournalStore)
+from game.engine.events.events_store import (EventsStore)
+from game.engine.characters.characters_store import (CharactersStore)
+from game.engine.inventory.inventory_store import (InventoryStore)
+from game.engine.world.world_store import (WorldStore)
 
 from game.engine_data.settings.all_settings import (build_all_settings)
 from game.engine_data.inventory.all_inventory import (build_all_inventory)
@@ -22,17 +28,42 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.x = 11
         self.y = 13
 
-        self.events_manager = EventsManager()
+        self.logger = self.mock_logger(False, './logs')
+        self.events_manager = EventsManager(self.logger)
         self.locations_manager = LocationsManager(self.events_manager)
         self.characters_manager = CharactersManager(self.events_manager)
         self.journal_manager = JournalManager(self.events_manager)
-        self.gsm = StateManager(self.events_manager, self.characters_manager, self.locations_manager, self.journal_manager)
+        self.world_manager = WorldManager(self.events_manager)
+        self.inventory_manager = InventoryManager(self.events_manager, lambda x: self.state_manager.get_setting_value(x))
+        self.state_manager = StateManager(self.events_manager, self.world_manager, self.characters_manager, self.locations_manager, self.journal_manager, self.inventory_manager)
 
-        build_all_settings(self.gsm)
-        build_all_characters(self.characters_manager)
+        self.reset_stores()
+
+
+    def reset_stores(self):
+        self.locations_store = LocationsStore()
+        self.locations_manager.set_store(self.locations_store)
+
+        self.journal_store = JournalStore()
+        self.journal_manager.set_store(self.journal_store)
+
+        self.events_store = EventsStore()
+        self.events_manager.set_store(self.events_store)
+
+        self.characters_store = CharactersStore()
+        self.characters_manager.set_store(self.characters_store)
+
+        self.inventory_store = InventoryStore()
+        self.inventory_manager.set_store(self.inventory_store)
+
+        self.world_store = WorldStore()
+        self.world_manager.set_store(self.world_store)
+
         build_all_locations(self.locations_manager)
         build_all_notes(self.journal_manager)
-        # TODO [snow]: this test was not discovered?
+        build_all_characters(self.characters_manager)
+        build_all_inventory(self.inventory_manager)
+        build_all_settings(self.state_manager)
 
 
     def _test_graphics_menu_item(self, item):
@@ -41,4 +72,17 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.assertEqual(item.pos()['x'], self.x)
         self.assertEqual(item.pos()['y'], self.y)
         self.assertTrue(len(item.tooltip()) > 0)
-        self.assertTrue(len(item.jump()) > 0)
+        self.assertIsNotNone(item.jump())
+
+
+    def mock_logger(self, emscripten, logs_folder):
+        return MockLogger()
+
+
+class MockLogger():
+    def debug(self, msg):
+        return
+    def info(self, msg):
+        return
+    def warn(self, msg):
+        return

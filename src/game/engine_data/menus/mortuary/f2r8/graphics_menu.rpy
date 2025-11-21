@@ -13,16 +13,16 @@ label mortuary_f2r8_graphics_menu:
 
 
 screen mortuary_f2r8_graphics_menu_screen():
-    $ gsm = runtime.global_state_manager
+    $ state_manager = runtime.global_state_manager
     use abstract_location_menu_screen(
         'bg mortuary_f2r8',
         [
-            FromMortuaryF2R8ToMortuaryF2R1(gsm, 80, 800),
-            FromMortuaryF2R8ToMortuaryF2R7(gsm, 1500, 750),
+            FromMortuaryF2R8ToMortuaryF2R1(state_manager, 80, 800),
+            FromMortuaryF2R8ToMortuaryF2R7(state_manager, 1500, 750),
         ],
         [
-            *get_party(gsm, 1360, 220),
-            InMortuaryF2R8Zf891(gsm, 960, 700),
+            *get_party(state_manager, 1360, 220),
+            InMortuaryF2R8Zf891(state_manager, 960, 700),
         ],
         audio.mortuary
     )

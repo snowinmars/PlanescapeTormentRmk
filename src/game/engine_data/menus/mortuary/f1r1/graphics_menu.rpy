@@ -16,19 +16,19 @@ label mortuary_f1r1_graphics_menu:
 
 
 screen mortuary_f1r1_graphics_menu_screen():
-    $ gsm = runtime.global_state_manager
+    $ state_manager = runtime.global_state_manager
     use abstract_location_menu_screen(
         'bg mortuary_f1r1',
         [
-            FromMortuaryF1R1ToMortuaryF2R1(gsm, 800, 125),
-            FromMortuaryF1R1ToMortuaryF1R2(gsm, 450, 200),
-            FromMortuaryF1R1ToMortuaryF1R4(gsm, 1600, 900),
-            FromMortuaryF1R1ToMortuaryF1Rc(gsm, 1300, 300),
-            FromMortuaryF1R1ToGameEnd(gsm, 650, 850),
+            FromMortuaryF1R1ToMortuaryF2R1(state_manager, 800, 125),
+            FromMortuaryF1R1ToMortuaryF1R2(state_manager, 450, 200),
+            FromMortuaryF1R1ToMortuaryF1R4(state_manager, 1600, 900),
+            FromMortuaryF1R1ToMortuaryF1Rc(state_manager, 1300, 300),
+            FromMortuaryF1R1ToGameEnd(state_manager, 650, 850),
         ],
         [
-            *get_party(gsm, 900, 300),
-            InMortuaryF1R1Soego(gsm, 950, 600),
+            *get_party(state_manager, 900, 300),
+            InMortuaryF1R1Soego(state_manager, 950, 600),
         ],
         audio.mortuary
     )

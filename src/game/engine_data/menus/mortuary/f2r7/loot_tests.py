@@ -7,20 +7,20 @@ from game.engine_data.menus.mortuary.f2r7.loot_logic import (MortuaryF2R7LootLog
 
 class MortuaryF2R7LootLogicTest(LogicTest):
     def setUp(self):
-        super(MortuaryF2R7LootLogic, self).setUp()
+        super(MortuaryF2R7LootLogicTest, self).setUp()
         self.logic = MortuaryF2R7LootLogic(self.state_manager)
 
 
     def test_embalm(self):
         self._false_then_true_action(
-            self.state_manager.get_has_embalm,
+            self.state_manager.world_manager.get_has_embalm,
             self.logic.embalm
         )
 
 
     def test_copper_earring_closed(self):
         self._false_then_true_action(
-            self.state_manager.get_has_copper_earring_closed,
+            self.state_manager.world_manager.get_has_copper_earring_closed,
             self.logic.copper_earring_closed
         )
 

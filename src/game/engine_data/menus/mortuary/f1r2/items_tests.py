@@ -12,10 +12,10 @@ from game.engine_data.menus.mortuary.f1r2.items import (
 
 class F1R1ItemsTest(GraphicsMenuItemTest):
     def test_FromMortuaryF1R2ToMortuaryF1Rc(self):
-        self._test_graphics_menu_item(FromMortuaryF1R2ToMortuaryF1Rc(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R2ToMortuaryF1Rc(self.state_manager, self.x, self.y))
     def test_FromMortuaryF1R2ToMortuaryF1R3(self):
-        self._test_graphics_menu_item(FromMortuaryF1R2ToMortuaryF1R3(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R2ToMortuaryF1R3(self.state_manager, self.x, self.y))
     def test_FromMortuaryF1R2ToMortuaryF1R1(self):
-        self._test_graphics_menu_item(FromMortuaryF1R2ToMortuaryF1R1(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R2ToMortuaryF1R1(self.state_manager, self.x, self.y))
     def test_InMortuaryF1R2Deionarra(self):
-        self._test_graphics_menu_item(InMortuaryF1R2Deionarra(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF1R2Deionarra(self.state_manager, self.x, self.y))

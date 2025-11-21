@@ -4,12 +4,12 @@ class MortuaryF3R2LootLogic:
 
 
     def needle(self):
-        self.state_manager.set_has_needle(True)
+        self.state_manager.world_manager.set_has_needle(True)
 
 
     def garbage(self):
-        self.state_manager.set_has_garbage(True)
+        self.state_manager.world_manager.set_has_garbage(True)
 
 
     def mortuary_task_list(self):
-        self.state_manager.set_has_mortuary_task_list(True)
+        self.state_manager.world_manager.set_has_mortuary_task_list(True)

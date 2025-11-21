@@ -4,4 +4,4 @@ class MortuaryF2R1LootLogic:
 
 
     def scalpel(self):
-        self.state_manager.set_has_scalpel(True)
+        self.state_manager.world_manager.set_has_scalpel(True)

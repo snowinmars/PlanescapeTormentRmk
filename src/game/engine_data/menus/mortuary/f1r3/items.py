@@ -7,54 +7,54 @@ from game.engine_data.menus.menu_items import (
 
 
 class FromMortuaryF1R3ToMortuaryF1R2(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f1r2'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f1r2'):
             return 'Пройти в северо-восточную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f1r2')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r2')
         )
 
 
 class FromMortuaryF1R3ToMortuaryF1R4(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f1r4'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f1r4'):
             return 'Пройти в юго-западную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f1r4')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f1r4')
         )
 
 
 class FromMortuaryF1R3ToMortuaryF1Rc(GoToLocationMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def tooltip(self):
-        if self.gsm.locations_manager.is_visited('mortuary_f1rc'):
+        if self.state_manager.locations_manager.is_visited('mortuary_f1rc'):
             return 'Пройти в центральную усыпальню'
         return 'Пройти в комнату'
     def jump(self):
         return NavigationDirective(
             'graphics_menu',
-            lambda: self.gsm.locations_manager.set_location('mortuary_f1rc')
+            lambda: self.state_manager.locations_manager.set_location('mortuary_f1rc')
         )
 
 
 class InMortuaryF1R3Zf114(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zf114()
+        return not self.state_manager.world_manager.get_dead_zf114()
     def tooltip(self):
-        if self.gsm.get_talked_to_zf114_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zf114_times() > 0:
             return 'Поговорить с трупом «114»'
         return 'Поговорить с ходячим трупом повешенного'
     def jump(self):
@@ -64,12 +64,12 @@ class InMortuaryF1R3Zf114(ZombieMenuItem):
 
 
 class InMortuaryF1R3Zm1041(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_zm1041()
+        return not self.state_manager.world_manager.get_dead_zm1041()
     def tooltip(self):
-        if self.gsm.get_talked_to_zm1041_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_zm1041_times() > 0:
             return 'Поговорить с трупом «1041»'
         return 'Поговорить с ходячим трупом повешенного'
     def jump(self):
@@ -79,14 +79,14 @@ class InMortuaryF1R3Zm1041(ZombieMenuItem):
 
 
 class InMortuaryF1R3Xach(ZombieMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y)
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y)
     def when(self):
-        return not self.gsm.get_dead_xach()
+        return not self.state_manager.world_manager.get_dead_xach()
     def tooltip(self):
-        if self.gsm.get_know_xachariah_name():
+        if self.state_manager.world_manager.get_know_xachariah_name():
             return 'Поговорить с Захарией'
-        if self.gsm.get_talked_to_xach_times() > 0:
+        if self.state_manager.world_manager.get_talked_to_xach_times() > 0:
             return 'Поговорить с трупом «331»'
         return 'Поговорить со слепым трупом'
     def jump(self):

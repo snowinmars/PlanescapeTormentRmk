@@ -14,15 +14,15 @@ from game.engine_data.menus.mortuary.f1r1.items import (
 
 class F1R1ItemsTest(GraphicsMenuItemTest):
     def test_FromMortuaryF1R1ToMortuaryF2R1(self):
-        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF2R1(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF2R1(self.state_manager, self.x, self.y))
     def test_FromMortuaryF1R1ToMortuaryF1R2(self):
-        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF1R2(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF1R2(self.state_manager, self.x, self.y))
     def test_FromMortuaryF1R1ToMortuaryF1R4(self):
-        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF1R4(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF1R4(self.state_manager, self.x, self.y))
     def test_FromMortuaryF1R1ToMortuaryF1Rc(self):
-        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF1Rc(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF1R1ToMortuaryF1Rc(self.state_manager, self.x, self.y))
     def test_FromMortuaryF1R1ToGameEnd(self):
-        self.gsm.set_gate_open(True)
-        self._test_graphics_menu_item(FromMortuaryF1R1ToGameEnd(self.gsm, self.x, self.y))
+        self.state_manager.world_manager.set_gate_open(True)
+        self._test_graphics_menu_item(FromMortuaryF1R1ToGameEnd(self.state_manager, self.x, self.y))
     def test_InMortuaryF1R1Soego(self):
-        self._test_graphics_menu_item(InMortuaryF1R1Soego(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF1R1Soego(self.state_manager, self.x, self.y))

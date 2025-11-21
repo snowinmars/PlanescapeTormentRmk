@@ -5,15 +5,15 @@ from game.engine_data.menus.menu_items import (
 
 
 class Morte2MenuItem(NpcMenuItem):
-    def __init__(self, gsm, x, y):
-        super().__init__(gsm, x, y, 'morte')
+    def __init__(self, state_manager, x, y):
+        super().__init__(state_manager, x, y, 'morte')
     def when(self):
-        return not self.gsm.get_dead_morte() and \
-               self.gsm.get_mortuary_walkthrough() > 1
+        return not self.state_manager.world_manager.get_dead_morte() and \
+               self.state_manager.world_manager.get_mortuary_walkthrough() > 1
     def texture(self):
         return 'images/menu_sprites/morte.png'
     def tooltip(self):
-        if self.gsm.get_in_party_morte():
+        if self.state_manager.world_manager.get_in_party_morte():
             return 'Поговорить с Мортом'
         return 'Пригласить Морта в группу'
     def jump(self):

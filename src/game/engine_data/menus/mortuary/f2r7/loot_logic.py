@@ -4,8 +4,8 @@ class MortuaryF2R7LootLogic:
 
 
     def embalm(self):
-        self.state_manager.set_has_embalm(True)
+        self.state_manager.world_manager.set_has_embalm(True)
 
 
     def copper_earring_closed(self):
-        self.state_manager.set_has_copper_earring_closed(True)
+        self.state_manager.world_manager.set_has_copper_earring_closed(True)

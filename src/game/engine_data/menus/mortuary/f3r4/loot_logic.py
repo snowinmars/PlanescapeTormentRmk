@@ -4,16 +4,16 @@ class MortuaryF3R4LootLogic:
 
 
     def prybar(self):
-        self.state_manager.set_has_prybar(True)
+        self.state_manager.world_manager.set_has_prybar(True)
 
 
     def dustman_request(self):
-        self.state_manager.set_has_dustman_request(True)
+        self.state_manager.world_manager.set_has_dustman_request(True)
 
 
     def needle(self):
-        self.state_manager.set_has_needle(True)
+        self.state_manager.world_manager.set_has_needle(True)
 
 
     def garbage(self):
-        self.state_manager.set_has_garbage(True)
+        self.state_manager.world_manager.set_has_garbage(True)

@@ -21,28 +21,28 @@ from game.engine_data.menus.mortuary.f3r4.items import (
 
 class F1R1ItemsTest(GraphicsMenuItemTest):
     def test_FromMortuaryF3R4ToMortuaryF3R3(self):
-        self._test_graphics_menu_item(FromMortuaryF3R4ToMortuaryF3R3(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF3R4ToMortuaryF3R3(self.state_manager, self.x, self.y))
     def test_FromMortuaryF3R4ToMortuaryF3R1(self):
-        self._test_graphics_menu_item(FromMortuaryF3R4ToMortuaryF3R1(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(FromMortuaryF3R4ToMortuaryF3R1(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4PickPrybar(self):
-        self._test_graphics_menu_item(InMortuaryF3R4PickPrybar(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4PickPrybar(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4PickDustmanRequest(self):
-        self._test_graphics_menu_item(InMortuaryF3R4PickDustmanRequest(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4PickDustmanRequest(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4PickNeedle(self):
-        self._test_graphics_menu_item(InMortuaryF3R4PickNeedle(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4PickNeedle(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4PickGarbage(self):
-        self._test_graphics_menu_item(InMortuaryF3R4PickGarbage(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4PickGarbage(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Dustfem(self):
-        self._test_graphics_menu_item(InMortuaryF3R4Dustfem(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4Dustfem(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4S42(self):
-        self._test_graphics_menu_item(InMortuaryF3R4S42(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4S42(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zf832(self):
-        self._test_graphics_menu_item(InMortuaryF3R4Zf832(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4Zf832(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zm613(self):
-        self._test_graphics_menu_item(InMortuaryF3R4Zm613(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4Zm613(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zm79(self):
-        self._test_graphics_menu_item(InMortuaryF3R4Zm79(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4Zm79(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zf679(self):
-        self._test_graphics_menu_item(InMortuaryF3R4Zf679(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4Zf679(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4S1221(self):
-        self._test_graphics_menu_item(InMortuaryF3R4S1221(self.gsm, self.x, self.y))
+        self._test_graphics_menu_item(InMortuaryF3R4S1221(self.state_manager, self.x, self.y))
