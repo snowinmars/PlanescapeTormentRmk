@@ -73,6 +73,7 @@ class GraphicsMenuItemTest(unittest.TestCase):
         self.assertEqual(item.pos()['y'], self.y)
         self.assertTrue(len(item.tooltip()) > 0)
         self.assertIsNotNone(item.jump())
+        self.assertIsNotNone(item.jump().execute())
 
 
     def mock_logger(self, emscripten, logs_folder):
