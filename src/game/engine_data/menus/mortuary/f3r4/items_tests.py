@@ -34,15 +34,29 @@ class F1R1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF3R4PickGarbage(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Dustfem(self):
         self._test_graphics_menu_item(InMortuaryF3R4Dustfem(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_dustfem_times(1)
+        self._test_graphics_menu_item(InMortuaryF3R4Dustfem(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4S42(self):
+        self._test_graphics_menu_item(InMortuaryF3R4S42(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_s42_times(1)
         self._test_graphics_menu_item(InMortuaryF3R4S42(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zf832(self):
         self._test_graphics_menu_item(InMortuaryF3R4Zf832(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_zf832_times(1)
+        self._test_graphics_menu_item(InMortuaryF3R4Zf832(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zm613(self):
+        self._test_graphics_menu_item(InMortuaryF3R4Zm613(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_zm613_times(1)
         self._test_graphics_menu_item(InMortuaryF3R4Zm613(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zm79(self):
         self._test_graphics_menu_item(InMortuaryF3R4Zm79(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_zm79_times(1)
+        self._test_graphics_menu_item(InMortuaryF3R4Zm79(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4Zf679(self):
         self._test_graphics_menu_item(InMortuaryF3R4Zf679(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_zf679_times(1)
+        self._test_graphics_menu_item(InMortuaryF3R4Zf679(self.state_manager, self.x, self.y))
     def test_InMortuaryF3R4S1221(self):
+        self._test_graphics_menu_item(InMortuaryF3R4S1221(self.state_manager, self.x, self.y))
+        self.state_manager.world_manager.set_talked_to_s1221_times(1)
         self._test_graphics_menu_item(InMortuaryF3R4S1221(self.state_manager, self.x, self.y))
