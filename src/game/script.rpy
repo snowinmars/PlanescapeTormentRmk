@@ -7,7 +7,7 @@ init 1 python:
 
     gamedir = os.path.normpath(config.gamedir)
     logs_folder = os.path.join(gamedir, 'logs')
-    config.version = "0.01"
+    config.version = "0.02"
     config.reject_backslash = False  # required to make the above work with with RenPy:
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     sys.setdefaultencoding('utf-8')
@@ -39,6 +39,7 @@ default characters_store = CharactersStore()
 default inventory_store = InventoryStore()
 default world_store = WorldStore()
 
+# define config.rollback_enabled = False
 
 init 3 python:
     # engine warm up
@@ -112,7 +113,7 @@ init 3 python:
         runtime.logger.info('Building journal notes…')
         build_all_notes(runtime.global_journal_manager)
         def on_update_journal():
-            renpy.exports.sound.play(runtime.audio.update_journal)
+            renpy.exports.sound.play(renpy.store.audio.update_journal)
         runtime.global_journal_manager.register_on_update_journal(on_update_journal)
         runtime.logger.info('Done building journal notes, took %s', int(time.time()) - now)
 

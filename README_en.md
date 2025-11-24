@@ -13,9 +13,9 @@ All the stuff is under GNU/GPLv3
 ## Download
 
 - prebuild - [disk.yandex.ru](https://disk.yandex.ru/d/1vqwCTMVOBEbgA)
-  - web - `PlanescapeTormentRmk-0.01-web.zip`
-  - linux - `PlanescapeTormentRmk-0.01-linux.tar.bz2`
-  - windows - `PlanescapeTormentRmk-0.01-win.zip`
+  - web - `PlanescapeTormentRmk-0.02-web.zip`
+  - linux - `PlanescapeTormentRmk-0.02-linux.tar.bz2`
+  - windows - `PlanescapeTormentRmk-0.02-win.zip`
 - run in browser
   - [itch.io](https://snowinmars.itch.io/planescapetormentrmk)
   - [gamejolt.com](https://gamejolt.com/games/planescapetormentrmk/1018976)
