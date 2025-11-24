@@ -25,3 +25,7 @@ class F1R1ItemsTest(GraphicsMenuItemTest):
         self.state_manager.world_manager.set_know_vaxis_name(False)
         self.state_manager.world_manager.set_talked_to_vaxis_times(1)
         self._test_graphics_menu_item(InMortuaryF2R6Vaxis(self.state_manager, self.x, self.y))
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

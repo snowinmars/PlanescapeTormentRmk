@@ -40,3 +40,7 @@ class F1R1ItemsTest(GraphicsMenuItemTest):
         self.state_manager.world_manager.set_know_xachariah_name(False)
         self.state_manager.world_manager.set_talked_to_xach_times(1)
         self._test_graphics_menu_item(InMortuaryF1R3Xach(self.state_manager, self.x, self.y))
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

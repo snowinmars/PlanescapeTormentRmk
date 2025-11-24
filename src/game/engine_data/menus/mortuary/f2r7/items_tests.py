@@ -33,3 +33,7 @@ class F1R1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF2R7PickEmbalm(self.state_manager, self.x, self.y))
     def test_InMortuaryF2R7PickCopperEarringClosed(self):
         self._test_graphics_menu_item(InMortuaryF2R7PickCopperEarringClosed(self.state_manager, self.x, self.y))
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

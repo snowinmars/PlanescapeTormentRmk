@@ -30,3 +30,7 @@ class F1R1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(FromMortuaryF1RcToMortuaryF1R4(self.state_manager, self.x, self.y))
     def test_InMortuaryF1RcGiantsk(self):
         self._test_graphics_menu_item(InMortuaryF1RcGiantsk(self.state_manager, self.x, self.y))
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover

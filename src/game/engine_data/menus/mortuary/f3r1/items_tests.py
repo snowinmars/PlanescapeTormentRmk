@@ -38,3 +38,7 @@ class F1R1ItemsTest(GraphicsMenuItemTest):
         self._test_graphics_menu_item(InMortuaryF3R1Zf1148(self.state_manager, self.x, self.y))
         self.state_manager.world_manager.set_talked_to_zf1148_times(1)
         self._test_graphics_menu_item(InMortuaryF3R1Zf1148(self.state_manager, self.x, self.y))
+
+
+if __name__ == '__main__':
+    unittest.main() # pragma: no cover
