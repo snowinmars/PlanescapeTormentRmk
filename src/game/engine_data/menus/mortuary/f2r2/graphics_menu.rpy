@@ -19,14 +19,14 @@ screen mortuary_f2r2_graphics_menu_screen():
     use abstract_location_menu_screen(
         'bg mortuary_f2r2',
         [
-            FromMortuaryF2R2ToMortuaryF2R1(state_manager, 660, 980),
-            FromMortuaryF2R2ToMortuaryF2R3(state_manager, 500, 100),
+            FromMortuaryF2R2ToMortuaryF2R1(state_manager, 1350, 1970),
+            FromMortuaryF2R2ToMortuaryF2R3(state_manager, 1200, 940),
         ],
         [
-            *get_party(state_manager, 510, 880),
-            InMortuaryF2R2Zm965(state_manager, 840, 600),
-            InMortuaryF2R2Zf594(state_manager, 450, 520),
-            InMortuaryF2R2Zf626(state_manager, 490, 720),
+            *get_party(state_manager, 1300, 1700),
+            InMortuaryF2R2Zm965(state_manager, 1200, 1600),
+            InMortuaryF2R2Zf594(state_manager, 1600, 1450),
+            InMortuaryF2R2Zf626(state_manager, 1200, 1300),
         ],
         audio.mortuary
     )
