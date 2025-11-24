@@ -34,7 +34,14 @@ class LogicTest(unittest.TestCase):
         self.journal_manager = JournalManager(self.events_manager)
         self.world_manager = WorldManager(self.events_manager)
         self.inventory_manager = InventoryManager(self.events_manager, lambda x: self.state_manager.get_setting_value(x))
-        self.state_manager = StateManager(self.events_manager, self.world_manager, self.characters_manager, self.locations_manager, self.journal_manager, self.inventory_manager)
+        self.state_manager = StateManager(
+            self.events_manager,
+            self.world_manager,
+            self.characters_manager,
+            self.locations_manager,
+            self.journal_manager,
+            self.inventory_manager
+        )
 
         self.reset_stores()
 
@@ -290,8 +297,8 @@ class LogicTest(unittest.TestCase):
 
 class MockLogger():
     def debug(self, msg):
-        return
+        return # pragma: no cover
     def info(self, msg):
-        return
+        return # pragma: no cover
     def warn(self, msg):
-        return
+        return # pragma: no cover

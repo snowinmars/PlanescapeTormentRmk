@@ -82,8 +82,8 @@ class GraphicsMenuItemTest(unittest.TestCase):
 
 class MockLogger():
     def debug(self, msg):
-        return
+        return # pragma: no cover
     def info(self, msg):
-        return
+        return # pragma: no cover
     def warn(self, msg):
-        return
+        return # pragma: no cover

@@ -65,7 +65,14 @@ init 3 python:
     runtime.global_journal_manager = JournalManager(runtime.global_events_manager)
     runtime.global_world_manager = WorldManager(runtime.global_events_manager)
     runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_state_manager.get_setting_value(x))
-    runtime.global_state_manager = StateManager(runtime.global_events_manager, runtime.global_world_manager, runtime.global_characters_manager, runtime.global_locations_manager, runtime.global_journal_manager, runtime.global_inventory_manager)
+    runtime.global_state_manager = StateManager(
+        runtime.global_events_manager,
+        runtime.global_world_manager,
+        runtime.global_characters_manager,
+        runtime.global_locations_manager,
+        runtime.global_journal_manager,
+        runtime.global_inventory_manager
+    )
 
 
     def apply_stores():
@@ -138,36 +145,40 @@ label start:
 
     menu:
         "dev" if enable_dev:
-            play music mortuary
-            call quick_setup_as_mage from _call_quick_setup_as_mage
-            $ gsm = runtime.global_state_manager
-            $ gcm = runtime.global_characters_manager
-            $ glm = runtime.global_locations_manager
-            $ glm.set_location('mortuary_f2r1')
-            $ gsm.set_morte_value(1)
-            $ gsm.set_in_party_morte(True)
-            $ gsm.set_has_intro_key(True)
-            $ gsm.set_mortuary_walkthrough(1)
-            # $ gcm.set_property('protagonist', 'good', 10)
-            # $ gsm.set_mortualy_alarmed(True)
-            # $ gsm.set_has_mortuary_key(True)
-            # $ gsm.set_has_tome_ba(True)
-            # $ gsm.set_has_copper_earring_closed(True)
-            # $ gsm.set_has_scalpel(True)
-            # $ gsm.set_has_needle(True)
-            # $ gsm.set_has_1201_note(True)
-            # $ gsm.set_has_zm1664_page(True)
-            # $ gsm.set_has_bandages(True)
-            # $ gsm.set_has_embalm(True)
-            # $ gsm.set_has_keyem(True)
-
-            jump morte1_s23
-            # jump graphics_menu
+            jump dev
         "Вступление для технодемки":
             jump introduction
         "Новая жизнь":
             call quick_setup_as_mage from _call_quick_setup_as_mage_1
             jump intro
+
+
+label dev:
+    play music mortuary
+    call quick_setup_as_mage from _call_quick_setup_as_mage
+    $ gsm = runtime.global_state_manager
+    $ gcm = runtime.global_characters_manager
+    $ glm = runtime.global_locations_manager
+    $ glm.set_location('mortuary_f2r1')
+    $ gsm.world_manager.set_morte_value(1)
+    $ gsm.world_manager.set_in_party_morte(True)
+    $ gsm.world_manager.set_has_intro_key(True)
+    $ gsm.world_manager.set_mortuary_walkthrough(1)
+    # $ gcm.set_property('protagonist', 'good', 10)
+    # $ gsm.world_manager.set_mortualy_alarmed(True)
+    # $ gsm.world_manager.set_has_mortuary_key(True)
+    # $ gsm.world_manager.set_has_tome_ba(True)
+    # $ gsm.world_manager.set_has_copper_earring_closed(True)
+    # $ gsm.world_manager.set_has_scalpel(True)
+    # $ gsm.world_manager.set_has_needle(True)
+    # $ gsm.world_manager.set_has_1201_note(True)
+    # $ gsm.world_manager.set_has_zm1664_page(True)
+    # $ gsm.world_manager.set_has_bandages(True)
+    # $ gsm.world_manager.set_has_embalm(True)
+    # $ gsm.world_manager.set_has_keyem(True)
+
+    jump morte1_s23
+    # jump graphics_menu
 
 
 label end:
