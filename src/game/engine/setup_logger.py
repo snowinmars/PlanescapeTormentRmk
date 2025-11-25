@@ -65,6 +65,8 @@ def _setup_web_logger(
     logger.info("Log level: %s" % log_level)
     logger.info("Logs directory: %s" % logs_folder)
 
+    return logger
+
 
 # PC build: use file logging
 def _setup_file_logger(

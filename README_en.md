@@ -49,3 +49,4 @@ If the rpy filename is `T.rpy`, than:
 | version | dialogue blocks | words   | characters | average of words | characters per block | menus   | images | screens |
 |---------|-----------------|---------|------------|------------------|----------------------|---------|--------|---------|
 | 0.0.1   | 3386            | 40856   | 256536     | 12.1             | 76                   | 1451    | 65     | 51      |
+| 0.0.2   | 3386            | 40856   | 256536     | 12.1             | 76                   | 1451    | 6      | 50      |
