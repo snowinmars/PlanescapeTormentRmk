@@ -47,14 +47,12 @@ init python:
     # This wrapper prevents it
     class ExecuteNavigationDirective(Action):
         def __init__(self, directive):
-            # directive is expected to have an .execute() method
-            # that returns a label string.
+            # directive is expected to have an .execute() method that returns a label string.
             self.directive = directive
 
         def __call__(self):
             # This is called when the button is clicked.
             target_label = self.directive.execute()
-            # Now, tell Ren'Py to jump to that label.
             renpy.jump(target_label)
 
 

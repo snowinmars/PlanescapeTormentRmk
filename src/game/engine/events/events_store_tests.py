@@ -27,7 +27,7 @@ class CharacterStoreTest(unittest.TestCase):
         self.assertEqual(dump, expected)
 
         store = pickle.loads(dump)
-        self._assert_epmty_json(store)
+        self._assert_empty_store(store)
 
 
     def test_reserialize_empty_json(self):
@@ -36,7 +36,7 @@ class CharacterStoreTest(unittest.TestCase):
         self.assertEqual(dump, expected)
 
         store = EventsStore.fromJson(dump)
-        self._assert_epmty_json(store)
+        self._assert_empty_store(store)
 
 
     def test_reserialize_filled_pickle(self):
@@ -61,7 +61,7 @@ class CharacterStoreTest(unittest.TestCase):
         self._assert_filled_store(self.store)
 
 
-    def _assert_epmty_json(self, store):
+    def _assert_empty_store(self, store):
         self.assertIsNotNone(store.events)
         self.assertEqual(len(store.events), 0)
         self.assertEqual(store.max_entries, 100)

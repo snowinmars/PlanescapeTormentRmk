@@ -7,8 +7,10 @@ JUMP_PATTERN = re.compile(r'jump\s+(.*?)\n')
 CALL_PATTERN = re.compile(r'call\s+(.*?)\n')
 
 IGNORE_LABELS = {
-    'graphics_menu',
-    'todo',
+    'graphics_menu', # known
+    'todo', # known
+    'screen', # known
+    # below are labels from the next chapters of the game, ignore them
     'able_s10',
     'able_s11',
     'able_s12',
