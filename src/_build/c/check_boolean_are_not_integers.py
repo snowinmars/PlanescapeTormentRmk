@@ -61,6 +61,7 @@ def parse_dialog_replacer(dialog_replacer):
 
 
 pattern = re.compile(r'!?\s*(?:SetGlobal|Global(?:GT|LT)?|IncrementGlobalOnceEx|IncrementGlobalOnce|IncrementGlobalEx|IncrementGlobal)\("(.*?)",".*?",(-?\d+)\)')
+pattern2 = re.compile(r'\s*CreateItem\("(.*?)",\d+,\d+,\d+\)')
 
 
 def parse_raw_files(raw_files):
@@ -79,3 +80,6 @@ def parse_raw_files(raw_files):
                     value = 5
 
                 yield var_name, value
+            if match := pattern2.search(line):
+                var_name = match.group(1)
+                yield var_name, 1
