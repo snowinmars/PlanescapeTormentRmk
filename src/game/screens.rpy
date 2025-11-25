@@ -4,6 +4,15 @@
 
 init offset = -1
 
+init python:
+    def get_available_translations():
+        tl_path = os.path.join(renpy.config.gamedir, "tl")
+        available_translations = []
+        if os.path.isdir(tl_path):
+            for folder_name in os.listdir(tl_path):
+                if folder_name != "None" and not folder_name.startswith('.'): # Exclude "None" folder and any hidden files
+                    available_translations.append(folder_name)
+        return available_translations
 
 ################################################################################
 ## Стили
@@ -756,6 +765,14 @@ screen preferences():
                 ## Дополнительные vbox'ы типа "radio_pref" или "check_pref"
                 ## могут быть добавлены сюда для добавления новых настроек.
 
+                vbox:
+                    style_prefix "radio"
+                    label ("🌐 Aあ")
+                    textbutton ("Русский") action Language(None)
+                    for lang in get_available_translations():
+                        textbutton (f"{lang.capitalize()}") action Language(lang)
+
+
             null height (4 * gui.pref_spacing)
 
             hbox:
@@ -1034,11 +1051,11 @@ screen keyboard_help():
         text _("Включает режим пропуска.")
 
     hbox:
-        label _("Page Up")
+        label _("Page up")
         text _("Откат назад по сюжету игры.")
 
     hbox:
-        label _("Page Down")
+        label _("Page down")
         text _("Откатывает предыдущее действие вперёд.")
 
     hbox:
