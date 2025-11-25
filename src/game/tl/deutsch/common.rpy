@@ -460,7 +460,7 @@ translate deutsch strings:
 
     # renpy/common/00director.rpy:1823
     old "Customize director.transitions to add more transitions."
-    new "Direktor anpassen.übergänge, um weitere Übergänge hinzuzufügen."
+    new "Direktor director.transitions, um weitere Übergänge hinzuzufügen."
 
     # renpy/common/00director.rpy:1835
     old "Channel:"
@@ -468,7 +468,7 @@ translate deutsch strings:
 
     # renpy/common/00director.rpy:1846
     old "Customize director.audio_channels to add more channels."
-    new "Direktor anpassen.audio_channels, um weitere Kanäle hinzuzufügen."
+    new "Direktor director.audio_channels, um weitere Kanäle hinzuzufügen."
 
     # renpy/common/00director.rpy:1858
     old "Audio Filename:"
