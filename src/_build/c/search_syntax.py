@@ -79,6 +79,10 @@ def search_syntax(rpy_files):
     warnings = []
 
     for rpy_file in rpy_files:
+        is_tl_file = '/tl/' in str(rpy_file.path)
+        if is_tl_file:
+            continue # TODO [snow]: create custom rules per language
+
         if 'SPEAKER' in rpy_file.content:
             errors.append(f'Rpy file has "SPEAKER" in {rpy_file.path}')
 

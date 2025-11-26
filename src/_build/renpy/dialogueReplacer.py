@@ -535,8 +535,8 @@ class DialogueReplacer:
 
     def add_replacement(self, pattern, replacement):
         new_replacement = pattern not in self._replacements
-        not_conflict_replacement = pattern in self._replacements and self._replacements[pattern] == replacement
-        conflict_replacement = pattern in self._replacements and self._replacements[pattern] != replacement
+        not_conflict_replacement = not new_replacement and self._replacements[pattern] == replacement
+        conflict_replacement = not new_replacement and self._replacements[pattern] != replacement
 
         if new_replacement:
             self._replacements[pattern] = replacement
