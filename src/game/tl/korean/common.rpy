@@ -572,7 +572,7 @@ translate korean strings:
 
     # renpy/common/00preferences.rpy:347
     old "joystick..."
-    new "조이스틱.."
+    new "조이스틱…"
 
     # renpy/common/00preferences.rpy:354
     old "skip"
@@ -892,7 +892,7 @@ translate korean strings:
 
     # renpy/common/00iap.rpy:231
     old "Contacting App Store\nPlease Wait..."
-    new "앱 스토어에 문의\기다려주십시오..."
+    new "앱 스토어에 문의\기다려주십시오…"
 
     # renpy/common/00updater.rpy:505
     old "No update methods found."

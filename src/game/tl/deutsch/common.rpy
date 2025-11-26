@@ -572,7 +572,7 @@ translate deutsch strings:
 
     # renpy/common/00preferences.rpy:347
     old "joystick..."
-    new "steuerknüppel..."
+    new "steuerknüppel…"
 
     # renpy/common/00preferences.rpy:354
     old "skip"
@@ -892,7 +892,7 @@ translate deutsch strings:
 
     # renpy/common/00iap.rpy:231
     old "Contacting App Store\nPlease Wait..."
-    new "Kontaktaufnahme mit dem App Store\nBitte warten..."
+    new "Kontaktaufnahme mit dem App Store\nBitte warten…"
 
     # renpy/common/00updater.rpy:505
     old "No update methods found."

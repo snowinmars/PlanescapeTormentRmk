@@ -1,6 +1,6 @@
 init 10 python:
     from game.engine.runtime import (runtime)
-    from game.engine_data.menus.mortuary.f2r7.loot_logic import (MortuaryF2R7LootLogic)
+    from game.engine_data.menus.mortuary.f2r7.mortuary_f2r7_loot_logic import (MortuaryF2R7LootLogic)
     mortuaryF2R7LootLogic = MortuaryF2R7LootLogic(runtime.global_state_manager)
 
 

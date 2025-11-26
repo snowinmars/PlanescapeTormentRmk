@@ -571,7 +571,7 @@ translate None strings:
 
     # renpy/common/00preferences.rpy:347
     old "joystick..."
-    new "джойстик..."
+    new "джойстик…"
 
     # renpy/common/00preferences.rpy:354
     old "skip"
@@ -891,7 +891,7 @@ translate None strings:
 
     # renpy/common/00iap.rpy:231
     old "Contacting App Store\nPlease Wait..."
-    new "Связываюсь с App Store\nПожалуйста, ждите..."
+    new "Связываюсь с App Store\nПожалуйста, ждите…"
 
     # renpy/common/00updater.rpy:505
     old "No update methods found."

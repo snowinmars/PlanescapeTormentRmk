@@ -572,7 +572,7 @@ translate polski strings:
 
     # renpy/common/00preferences.rpy:347
     old "joystick..."
-    new "joystick..."
+    new "joystick…"
 
     # renpy/common/00preferences.rpy:354
     old "skip"
@@ -892,7 +892,7 @@ translate polski strings:
 
     # renpy/common/00iap.rpy:231
     old "Contacting App Store\nPlease Wait..."
-    new "Kontakt z App Store\nProszę czekać..."
+    new "Kontakt z App Store\nProszę czekać…"
 
     # renpy/common/00updater.rpy:505
     old "No update methods found."

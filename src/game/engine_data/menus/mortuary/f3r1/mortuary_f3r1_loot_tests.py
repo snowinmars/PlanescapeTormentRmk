@@ -2,7 +2,7 @@ import unittest
 
 
 from game.engine.tests import (LogicTest)
-from game.engine_data.menus.mortuary.f3r1.loot_logic import (MortuaryF3R1LootLogic)
+from game.engine_data.menus.mortuary.f3r1.mortuary_f3r1_loot_logic import (MortuaryF3R1LootLogic)
 
 
 class MortuaryF3R1LootLogicTest(LogicTest):

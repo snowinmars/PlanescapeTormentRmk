@@ -573,7 +573,7 @@ translate czech strings:
 
     # renpy/common/00preferences.rpy:347
     old "joystick..."
-    new "ovladač..."
+    new "ovladač…"
 
     # renpy/common/00preferences.rpy:354
     old "skip"
@@ -893,7 +893,7 @@ translate czech strings:
 
     # renpy/common/00iap.rpy:231
     old "Contacting App Store\nPlease Wait..."
-    new "Kontaktuji App Store\nProsím Čekejte..."
+    new "Kontaktuji App Store\nProsím Čekejte…"
 
     # renpy/common/00updater.rpy:505
     old "No update methods found."
