@@ -1,0 +1,35 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1508.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1508~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #46745 /* ~Le front de ce cadavre musclé n'est qu'un tissu de cicatrices, comme s'il avait pour habitude d'affronter ses adversaires à coups de tête. Le numéro '1508' a été tissé sur son front au fil rouge et ses lèvres ont été cousues à l'aide d'un épais fil noir. Il sent légèrement la lotion d'embaumement.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #46746 /* ~"Alors… as-tu vu quelque chose d'intéressant ?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #46749 /* ~"Alors… as-tu vu quelque chose d'intéressant ?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #46750 /* ~"Je sais que tu n'es pas un zombi. Personne n'est dupe."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #46751 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+  IF ~~ THEN REPLY #46754 /* ~"Je suis ravis de t'avoir parlé. Au revoir."~ */ EXIT
+  IF ~~ THEN REPLY #46755 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #46747 /* ~Le cadavre continue à te regarder.~ */
+  IF ~~ THEN REPLY #46748 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #46752 /* ~Le cadavre ne répond pas. Il semble qu'il soit incapable de répondre à tes questions.~ */
+  IF ~~ THEN REPLY #46753 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END

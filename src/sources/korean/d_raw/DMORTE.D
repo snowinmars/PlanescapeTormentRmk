@@ -1,0 +1,5819 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DMORTE.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ko_KR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DMORTE~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF ~~ THEN BEGIN 0 // from:
+  SAY #986 /* ~"이봐, 대장. 괜찮아? 시체흉내를 내고 있는 거야, 아니면 더스티들을 속이려는 거야? 난 대장이 정말로 죽은 줄 알았다고."~ */
+  IF ~~ THEN REPLY #987 /* ~"자네는 누군가?"~ */ GOTO 1
+  IF ~~ THEN REPLY #989 /* ~말하는 해골을 무시하고 방을 둘러본다.~ */ EXIT
+  IF ~~ THEN REPLY #988 /* ~심호흡하고 머리를 흔든 후 당신에게 말을 걸고 있는 해골을 무시한다.~ */ EXIT
+  IF ~~ THEN REPLY #17833 /* ~"자네가 하고 싶은 말들이 무수히 많다는 건 나도 아네, 모트, 하지만 입을 좀 닥치고 날 그냥 따르게."~ */ DO ~GiveItem("KeyPR",Protagonist)
+SetGlobal("Morte","GLOBAL",1)
+SetGlobal("Scars","GLOBAL",1)
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 29.0 31.0
+  SAY #990 /* ~"나?" 해골은 화가 난 듯하다. "*당신*부터 먼저 대답하는 게 어때, 이 상처딱지 덩어리야? 당신은 누구지?"~ */
+  IF ~~ THEN REPLY #992 /* ~"모르... 겠네."~ */ GOTO 2
+  IF ~~ THEN REPLY #995 /* ~"모르겠네... 기억을 할 수가 없어."~ */ GOTO 3
+  IF ~~ THEN REPLY #993 /* ~"네가 자네에게 먼저 물었네, 해골."~ */ GOTO 4
+  IF ~~ THEN REPLY #991 /* ~해골을 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 4.0 5.0
+  SAY #997 /* ~"당신은 자기가 누군지도 모르는 거야? 그냥 '엿먹고 늘어져, 얼간아'라고 했을 수도 있잖아. 그건 괜찮아... 당신 머리는 텅 비었다고 치자고. 아무려면 어때. 나는 모트라고. 뭐 일단 인사는 해 두도록 하지. ~ */
+  IF ~~ THEN REPLY #998 /* ~"여기가 어딘가, 모트?"~ */ GOTO 6
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1006 /* ~"어떻게 하면 여기서 빠져나갈 수 있는지 아나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1080 /* ~"난 어떻게 이 곳에 오게 되었나?"~ */ GOTO 20
+  IF ~~ THEN REPLY #1087 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.1 4.1 5.1
+  SAY #999 /* ~"당신은 *기억*을 못해? 유별난 밤이었던 모양이군. 당신이 자신이 아무도 해치지 않았기를 바라는 게 좋을 걸... 내 이름은 모트라고. 일단 인사는 해 두도록 하지." 그는 잠시 말을 멈춘다." 이건 꼭 물어봐야겠는데, 당신은 자학증세가 있는 센세이트들 중 하나야, 아니면 누가 당신 몸에 그런 상처들을 낸 거야?"~ */
+  IF ~~ THEN REPLY #1000 /* ~"센세이트?"~ */ GOTO 12
+  IF ~~ THEN REPLY #1001 /* ~"흉터?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1002 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.2
+  SAY #1003 /* ~"그래, 내가 나중에 물었어. 당신 이름은 뭐지?"~ */
+  IF ~~ THEN REPLY #1004 /* ~"모르겠소..."~ */ GOTO 2
+  IF ~~ THEN REPLY #1005 /* ~"모르겠네... 기억을 할 수가 없어."~ */ GOTO 3
+  IF ~~ THEN REPLY #1007 /* ~"자네가 먼저 말하게, 해골."~ */ GOTO 5
+  IF ~~ THEN REPLY #994 /* ~해골을 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.2
+  SAY #1008 /* ~"정말 당신은 젖은 로프만큼이나 빡빡하군. 좋아, 좋아... 여기선 내가 참지... 나는 모트, 모트 릭터스그린이라고. 자 이제 내게 어떤 불행한 이름이 당신이라는 소유주를 가지고 있는지 말해주겠어?"~ */
+  IF ~~ THEN REPLY #1009 /* ~"모르... 겠네."~ */ GOTO 2
+  IF ~~ THEN REPLY #1010 /* ~"모르겠네... 아무 것도 기억을 할 수가 없어."~ */ GOTO 3
+  IF ~~ THEN REPLY #1011 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 29.1 31.1
+  SAY #1012 /* ~"우린 시체안치소라고 불리는 쓰레기 더미 속에 있지... 그건 임신한 거미만큼이나 매력적인 모양새의 커다란 검은 건물이라고."~ */
+  IF ~~ THEN REPLY #1013 /* ~"시체안치소?' 난 죽었나?"~ */ GOTO 7
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1015 /* ~"어떻게 하면 여기서 나갈 수가 있나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1085 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0
+  SAY #1014 /* ~"글쎄, 그건 나도 모르겠어... 하지만 시체안치소는 이 도시의 시체들을 처리하는 곳이지. 시체들은 운이 좋으면 매장되거나 화장되고, 운이 나쁘면 부활되어 노에로 일하게 되지. 별로 있고 싶은 곳이 아니야. 만약 내가 당신이라면 가장 가까운 출구를 찾아 당장 도망치겠어."~ */
+  IF ~~ THEN REPLY #1016 /* ~"미안하네... '시체안치소?' 여긴 뭐 하는 곳인가?"~ */ GOTO 10
+  IF ~~ THEN REPLY #1017 /* ~"죽음으로부터 노예로서 부활?"~ */ GOTO 9
+  IF ~~ THEN REPLY #1018 /* ~"내가 아직 걸을 수 있을 때?"~ */ GOTO 11
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1019 /* ~"사람들이 시체를 이 곳으로 운반해 온다는 건가? 나도 그렇게 해서 여기 오게 된 건가?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1020 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.3
+  SAY #1021 /* ~그는 잠시 말을 멈춘다. "그래, 그런 모양이야. 아마 어떤 불한당이 당신을 죽은 걸로 생각하고 이 곳에 가져온 거겠지. 당신의 시체 흉내에는 나도 속을 뻔했다고... 당신을 이 곳으로 끌고 온 자를 찾아 놈에게 물어보는 건 어때?" 모트는 고개를 끄덕인다. "최근에 죽은 사람치고는 괜찮은 생각이군... 아직 당신 뇌가 멀쩡하다니 다행한 일이야."~ */
+  IF ~~ THEN REPLY #1029 /* ~"무엇 때문에 날 이 곳에 데려온 건가?"~ */ GOTO 14
+  IF ~~ THEN REPLY #1030 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1137 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 7.1
+  SAY #1022 /* ~"그래, 참 멋진 삶이지... 포름알데히드의 지속적인 사용과 떨어진 사지를 꿰매는 일만 제외한다면 천국이라고."~ */
+  IF ~~ THEN REPLY #1113 /* ~"나는 이 곳에 있어야 하는 건가? 난 죽었나?"~ */ GOTO 7
+  IF ~~ THEN REPLY #1114 /* ~"내 모습이 어떤가? 흉터가 심한가?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1115 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1116 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 7.0
+  SAY #1023 /* ~"어... 내가 말했듯이 시체안치소라고. 괜찮아, 대장? 별로 좋아 보이지 않는데."~ */
+  IF ~~ THEN REPLY #1109 /* ~"나는 이 곳에 있어야 하는 건가? 난 죽었나?"~ */ GOTO 16
+  IF ~~ THEN REPLY #1110 /* ~"내 모습이 어떤가? 얼마나 흉터가 심한가?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1111 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1112 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 7.2
+  SAY #1024 /* ~"대장, 내가 보기에 대장이 그 철판에서 깨어날 확률은 희박했어. 난 대장이 마침내 가는 줄 알았다고 무슨 말인지 알겠어?"~ */
+  IF ~~ THEN REPLY #1133 /* ~"혹시 난 죽었고 그래서 여기 있는 건가?"~ */ GOTO 16
+  IF ~~ THEN REPLY #1134 /* ~"내 모습이 얼마나 흉칙한가?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1135 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1136 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 3.0 33.0
+  SAY #1025 /* ~"대장은 센세이트가 뭔지도 모른단 말이야? 오, 내가 멋들어지게 강의를 해주지! 그들은 다원 우주에서 오감으로 느낄 수 있는 건 모두 체험하겠다는 작자들로, 그 체험 중에는 물론... 아니, 지금은 일단 접어 두자고. 어쨌든 그 흉터들은 어떻게 된 거야?"~ */
+  IF ~~ THEN REPLY #1027 /* ~"흉터?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1028 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1143 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 3.1 9.1 10.1 11.1 12.0 33.1
+  SAY #1026 /* ~"마치 누가 몸에 칼로 그림을 그리려고 했던 것 같아. 온몸에 흉터투성이야... 심지어는 등에까지..." 잠시 멈춘다. "대장 등에는 아예 문신 갤러리가 있군. 무슨 글이 적혀 있는 것 같은데..."~ */
+  IF ~~ THEN REPLY #1088 /* ~"뭐라고 적혀 있나?"~ */ DO ~SetGlobal("Scars","GLOBAL",1)
+~ GOTO 34
+  IF ~~ THEN REPLY #1089 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1090 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 8.0 29.3
+  SAY #1031 /* ~"이 도시에 사는 사람들의 일부는 거리에서 시체를 수거한 후 이 곳에 가지고 와서 돈을 받고 팔지. 별로 좋은 직업은 아니지만 다원 우주의 변기와도 같은 이 도시에서 사는 사람들에게는 선택의 폭이 별로 넓지 않거든."~ */
+  IF ~~ THEN REPLY #1032 /* ~"징크(돈)? '징크(돈)'가 무엇인가?"~ */ GOTO 15
+  IF ~~ THEN REPLY #1033 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1142 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0
+  SAY #1034 /* ~"에... 돈. 징크는 돈의 속칭이야. 대장이 온 곳에는 돈도 없어?"~ */
+  IF ~~ THEN REPLY #1035 /* ~"난 내가 어디서 왔는지 기억하지 못하네."~ */ GOTO 19
+  IF ~~ THEN REPLY #1036 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1138 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 10.0 11.0
+  SAY #1037 /* ~그는 잠시 멈춘다. "모르겠어. 하지만 대장은 내게 말을 하고 있어... 이 근처에서 걸어다니는 시체들은 그러질 않거든. 내가 보기에 대장은 죽지도 않았는데 더스트들이 실수를 한건 같아. 무슨 계약서에 서명을 한 기억은 없어? 누군가를 언데드로 부활시키기 전에 녀석들은 각종 공문서들을 작성해야 하거든. ~ */
+  IF ~~ THEN REPLY #1038 /* ~"어... 계약서? 아니, 그런 것에 서명한 기억은 없네. ~ */ GOTO 32
+  IF ~~ THEN REPLY #1039 /* ~"죽음의 책(사망자 명단)?"~ */ GOTO 17
+  IF ~~ THEN REPLY #1040 /* ~"합법적?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1041 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1150 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1 18.0
+  SAY #1042 /* ~"그래, '사망자 명단.' 몰라? 어, 그럴 수도 있겠지. '사망자 명단'에 대해서는 잊어버리자고. 대장은 살아 있으니까, 거기에는 없어."~ */
+  IF ~~ THEN REPLY #1151 /* ~"자네가 말한 그 합법적... 계약서란 뭔가?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1152 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1153 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 16.2 17.0
+  SAY #1043 /* ~"그래, 벽돌이라도 깨트리고 싶겠지. 법이 시길을 움직이고 있고, 무슨 계약에 서명하지 않고는 오줌도 눌 수가 없다니까."~ */
+  IF ~~ THEN REPLY #1154 /* ~"자네가 말한 '죽음의 책(사망자 명단)'이란 뭔가?"~ */ GOTO 17
+  IF ~~ THEN REPLY #1155 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1156 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 15.0
+  SAY #1044 /* ~"원 세상에 당신은 완전히 맛이 갔군. 자기가 어디서 왔는지 기억이나 하슈? 어딘가에 있는 백치들의 왕국에서 왕이 실종된 것이 틀림없군. 대장은 신을 모독하기라도 한 거야, 아니면 늘 이토록 무식했어?"~ */
+  IF ~~ THEN REPLY #1139 /* ~"모르겠네... 아무 것도 기억을 할 수가 없어."~ */ GOTO 32
+  IF ~~ THEN REPLY #1140 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1141 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 2.2 31.2
+  SAY #1045 /* ~"대장, 나도 몰라. 하지만 대장의 죽은 척하는 재주 하나만은 끝내주더군. 대장이 저기 누워 있었을 때 가슴도, 눈도, 그리고 다른 부위도 미동도 하지 않았어. 술이라도 마셨었어? 그게 사건의 진상이야?"~ */
+  IF ~~ THEN REPLY #1097 /* ~"모르겠네... 아무 것도 기억을 할 수가 없어."~ */ GOTO 32
+  IF ~~ THEN REPLY #1098 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1099 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 21 // from: 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
+  SAY #1046 /* ~"그래 그건 좋은 질문이군. 대장은 시간에 쫓기고 있어. 마약 더스트맨이 대장을 발견하면 대장의 소생 '문제'를 화장터에 대장을 던져 버림으로서 해결해줄 거라고. 계속 죽은 척을 해도 화장터로 가기는 마찬가지고. 모드론의 선택? 어떻게 할 거지?"~ */
+  IF ~~ THEN REPLY #1047 /* ~"더스트맨?"~ */ GOTO 30
+  IF ~~ THEN REPLY #1048 /* ~"탈출하겠네."~ */ GOTO 22
+  IF ~~ THEN REPLY #1049 /* ~"나는 이... 더스트맨이란 사람들에게 내 상황을 설명하겠네."~ */ GOTO 25
+  IF ~  CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #1050 /* ~"내가 어떻게 해야겠나?"~ */ GOTO 23
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1051 /* ~"왜 자네가 내게 말해주지 않나? 자네는 이미 대답을 알고 있는 것 같은데."~ */ GOTO 23
+  IF ~~ THEN REPLY #1081 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 21.1
+  SAY #1052 /* ~"아, *좋은* 생각이군, 대장! 왜 *내*가 그 생각을 못했을까? 그런데 어떻게 탈출을 할 거야? 내가 대장한테 히트를 하나 주지. 헌데 약간의 협조가 필요해."~ */
+  IF ~~ THEN REPLY #1053 /* ~"관심이 있네. 계속 말하게."~ */ GOTO 23
+  IF ~~ THEN REPLY #1054 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1145 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 21.3 21.4 22.0 26.0
+  SAY #1055 /* ~"내가 보기에 대장은 이 곳에서 나가야 할 절실한 이유가 있어. 나는 기다려도 상관이 없지. 내가 직면하고 있는 위험은 지루해서 죽는 것 뿐이니까. 상부상조하자고."~ */
+  IF ~~ THEN REPLY #1058 /* ~"계속 말하게..."~ */ GOTO 24
+  IF ~~ THEN REPLY #1059 /* ~"자넨 손도 없네. 그런데 날 어떻게 도와주겠다는 건가?"~ */ GOTO 24
+  IF ~~ THEN REPLY #1060 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1146 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0 23.1
+  SAY #1061 /* ~"그렇게 보이지 않을지도 모르지만 난 대장이 여기서 나가는 걸 도울 수 있고 대장은 내가 여기서 나가는 걸 도울 수 있다고. 난 손이 없어 약간 불편한 처지지. 대장은 골이 빈 반면, 나는 이 토굴에서 빠져나가기에 충분한 경험과 노하우를 지니고 있거든. 우리가 서로 협력하면 둘 다 무사히 나갈 수 있지. 어때, 친구?"~ */
+  IF ~~ THEN REPLY #1057 /* ~"좋네."~ */ GOTO 28
+  IF ~~ THEN REPLY #1062 /* ~"좋네. 어째 자네와 나는 함께 여행할 운명이라는 불길한 예감이 드는군, 모트."~ */ GOTO 27
+  IF ~~ THEN REPLY #1063 /* ~"관두시오. 다른 질문을 하겠소..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1147 /* ~"사양하겠네. 자네와 얘기하는 것만도 충분히 고통스럽네. 나갈 길은 내 스스로 찾겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 21.2
+  SAY #1064 /* ~"아, *좋은* 생각이군, 대장! 왜 *내*가 그 생각을 못했을까?" 그는 조롱하는 어조로 말한다. "그런데 더스트맨 나으리, 나는 죽었고 당신네 시체안치소에 있는 철판 위에서 깨어났습니다. 날 도와주실 수 있겠습니까?" "그래, 그들이 참 잘도 도와주겠다. 아마 몇 초 정도 쳐다본 다음에는 경비병들을 불러서 대장을 전용 화로에 쳐 넣을 걸."~ */
+  IF ~~ THEN REPLY #1065 /* ~"그건 좀 극단적인 것 같군... 왜 그들이 그런 짓을 하겠나?"~ */ GOTO 26
+  IF ~~ THEN REPLY #1066 /* ~"글쎄, 날 쓰러트리려면 그들의 경비병들은 상당히 강해야 할 걸세."~ */ GOTO 26
+  IF ~~ THEN REPLY #1067 /* ~"관두시오. 다른 질문을 하겠소..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1149 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 25.0 25.1
+  SAY #1068 /* ~"날 그냥 믿으라고... 대장이 스스로를 얼마나 강하다고 생각하든, 아니면 그들에게 무슨 말을 하든 그건 아무런 상관이 없어. 결국에는 그들이 대장을 잡아서 처리할 테니까. 대장이 아무리 강하다고 해도 밀폐된 무덤을 부수고 탈출하거나 불의 원소계에서 살아남을 정도로 강하지는 않아. 죽음으로부터 깨어나는 일 하나만 가지고도 여기 있는 친구들을 우려하게 만들고도 남는다고. 바보짓은 하지 말라고."~ */
+  IF ~~ THEN REPLY #1069 /* ~"그래 자네 계획은...?~ */ GOTO 23
+  IF ~~ THEN REPLY #1070 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1148 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 27 // from: 24.1
+  SAY #1071 /* ~"운명 따위는 엿이나 먹고 늘어지라고 해. 잘 들어, 대장. '운명'과 '나쁜' '비참한' 등의 부정적인 의미를 지닌 단어들이 한 문장에 동시에 나타나는 빈도가 얼마나 높은지 한 번 생각해 봐, 그럼 인생의 수수께끼들 중 하나가 풀릴 걸. 가장 좋은 선택은 운명보고 나가 뒈지라고 하는 거야, 늘 운명이 결코 허락하려고 하지 않는 선택지가 있는 법이니까.~ */
+  IF ~~ THEN REPLY #1073 /* ~"염두에 두도록 하겠네."~ */ GOTO 28
+  IF ~~ THEN REPLY #1074 /* ~"얘기는 그만 됐네. 그래 자네의 거창한 계획은?"~ */ GOTO 28
+END
+
+IF ~~ THEN BEGIN 28 // from: 24.0 27.0 27.1
+  SAY #1072 /* ~"좋아... 그럼 이 곳을 어서 뜨자고. 여기서 나가는 문은 잠겨 있으니까 우린 열쇠를 찾아야 해. 아마 이 방에 있는 걸어다니는 시체들 중 하나가 가지고 있을 거야."~ */
+  IF ~~ THEN REPLY #1079 /* ~"걸어다니는 시체들?"~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ GOTO 240
+END
+
+IF ~~ THEN BEGIN 29 // from:
+  SAY #996 /* ~"아, 그래 대장은 이 모트와 또 얘기가 하고 싶은 거야?"~ */
+  IF ~~ THEN REPLY #1075 /* ~"자넨 누군가?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1076 /* ~"여기는 어딘가?"~ */ GOTO 6
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1077 /* ~"어떻게 하면 여기서 빠져나갈 수 있는지 아나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1078 /* ~"난 어떻게 이 곳에 오게 되었나?"~ */ GOTO 14
+  IF ~~ THEN REPLY #1086 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 30 // from: 21.0
+  SAY #1082 /* ~"더스티들? 그들은 이 곳을 관리하고 있지. 그들을 알아보는 건 쉽지. 예외없이 검은 법복을 입고 있는데다가 꼭 사후경직을 일으킨 것 같은 얼굴들을 하고 있으니까. 그들은 스스로를 더스트맨이라고 부르며 당파 행세를 하고 있지만 실제로는 악귀같은 죽음 숭배자에 불과하다고. 그들은 피하는 게 좋아."~ */
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1083 /* ~"그래, 어떻게 하면 여기서 빠져나갈 수가 있나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1084 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1144 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
+  SAY #1091 /* ~"그래? *어떤* 질문 말이지?"~ */
+  IF ~~ THEN REPLY #1092 /* ~"자넨 누군가?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1093 /* ~"여기는 어딘가?"~ */ GOTO 6
+  IF ~~ THEN REPLY #1094 /* ~"난 어떻게 이 곳에 오게 되었나?"~ */ GOTO 20
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1095 /* ~"어떻게 하면 여기서 빠져나갈 수가 있나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1096 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 32 // from: 16.0 19.0 20.0
+  SAY #1100 /* ~"*아무 것도* 기억을 못한다고? 그거 타나리 똥같은 헛소리군. 정말이야?"~ */
+  IF ~~ THEN REPLY #1101 /* ~"그렇다네."~ */ GOTO 33
+  IF ~~ THEN REPLY #1102 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1103 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+  SAY #1104 /* ~"원 세상에... 어쨌든, 대장, 아마 대장 기억은 뇌 깊숙한 곳으로 가라앉은 것뿐일거라고. 운만 좋으면 다시 떠오를 거야, 날 믿으라고. 정말 요란한 밤이었던 모양이군. 누굴 해치거나 법을 어기는 일은 하지 안 했다면 좋으련만... 그래서 말인데, 당신은 자학증세가 있는 센세이트들 중 하나야, 아니면 누가 당신 몸에 그런 상처들을 낸 거야?"~ */
+  IF ~~ THEN REPLY #1105 /* ~"센세이트?"~ */ GOTO 12
+  IF ~~ THEN REPLY #1106 /* ~"흉터?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1107 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1108 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 34 // from: 13.0
+  SAY #1117 /* ~"무슨 지시 사항인 것 같군..." 모트는 헛기침을 한다. "어디 볼까. 그 내용은..."
+
+주: "네가 스틱스 강물을 몇 통이나 마신 듯한 기분인 것은 알지만, 정신을 차리고 집중해야 한다. 네 소지품들 중에는 이 중대사에 대해서 일부나마 밝혀 줄 일지가 한 권 있을 것이다. 만약 파로드가 이미 죽지 않았다면 그가 나머지 부분에 대해 설명해줄 수 있을 것이다,
+
+절대로 이 피부조각이나 일지를 잃어서는 안 된다, 아니면 우린 다시 스틱스에 빠지는 신세가 될 테니까. 알겠나? 그리고 내 말을 믿게 - 뭘 하든 간에 네가 누구이며, 어떤 일이 네게 일어나고 있으며, 어디서 왔는지에 대해 말해서는 안돼. 그렇지 않으면 화장터로 직행하게 될 테니."~ */
+  IF ~~ THEN REPLY #1118 /* ~"등이 아픈 것도 무리가 아니군. 자네 혹시 파로드란 자를 아나?"~ */ GOTO 36
+  IF ~~ THEN REPLY #1119 /* ~"내가 여기서 누워 있었을 때 혹시 내 곁에서 어떤 일지 하나를 보지 못했나?"~ */ GOTO 35
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1120 /* ~"어떻게 하면 여기서 빠져나갈 수 있는지 아나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1121 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1122 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 35 // from: 34.1 36.0
+  SAY #1123 /* ~"아니... 여기 왔을 때 대장은 깨끗하게 털린 상태였어. 게다가 대장 몸에는 충분하고도 남을 정도의 일지가 적혀 있는 것 같군."~ */
+  IF ~~ THEN REPLY #1124 /* ~"혹시 파로드란 자를 아나?"~ */ GOTO 36
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1125 /* ~"어떻게 하면 여기서 빠져나갈 수가 있나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1126 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1127 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 36 // from: 34.0 35.0
+  SAY #1128 /* ~"내가 아는 사람은 아냐. 하지만 난 별로 아는 사람이 없으니까. 그래도 이 파로드란 자가 어디 있는지 아는 사람은 있을 거야... 물론 그건 우리가 이 곳에서 탈출한 후의 얘기지만."~ */
+  IF ~~ THEN REPLY #1129 /* ~"내가 여기서 누워 있었을 때 혹시 내 곁에 어떤 일지가 하나 있지 않았었나?"~ */ GOTO 35
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1130 /* ~"어떻게 하면 여기서 빠져나갈 수가 있나?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1131 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 31
+  IF ~~ THEN REPLY #1132 /* ~모트를 무시하고 방을 둘러본다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 37 // from:
+  SAY #1818 /* ~"정말 좋은 향수 냄새군! 우린 우리가 찾고 있는 걸 아가씨 집에 놓고 온 모양이야."~ */
+  IF ~~ THEN REPLY #1820 /* ~"실은 난 일지를 잃어버렸소."~ */ EXTERN ~DHARLOTN~ 2
+  IF ~~ THEN REPLY #1819 /* ~"아마 당신이 내가 잃어버린 걸 찾는 데 도움을 줄 수 있을지도 모르겠소, 아가씨."~ */ EXTERN ~DHARLOTN~ 3
+  IF ~~ THEN REPLY #1821 /* ~"잃어버린 건 없소, 하지만 물어볼 건 있소..."~ */ EXTERN ~DHARLOTN~ 9
+  IF ~~ THEN REPLY #1822 /* ~"실례해야겠소. 안녕히 계시오."~ */ EXTERN ~DHARLOTN~ 11
+END
+
+IF ~~ THEN BEGIN 38 // from:
+  SAY #1844 /* ~"대장, 내게 돈 좀 줄 수 있겠어? 내가... 을 한지는... 정말 오래 됐거든."~ */
+  IF ~~ THEN REPLY #1845 /* ~"어... 글쎄, 나쁠 것도 없겠지..."~ */ DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1)
+~ EXTERN ~DHARLOTN~ 7
+  IF ~~ THEN REPLY #1846 /* ~"난 자네가 어떻게 그 일을 해낼지 물어볼 생각도 없네."~ */ DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1)
+~ EXTERN ~DHARLOTN~ 7
+  IF ~~ THEN REPLY #1847 /* ~"이봐... 우린 갈 길이 바쁘네, 모트. 잘 있으시오, 아가씨."~ */ DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from:
+  SAY #2000 /* ~"돈을 달라는 얘기야."~ */
+  IF ~~ THEN REPLY #2001 /* ~"오."~ */ EXTERN ~DANNAH~ 5
+END
+
+IF ~~ THEN BEGIN 40 // from:
+  SAY #2048 /* ~"네 꼬리나 몸이 판매용이 아니라는 건 참 다행한 일이군. 그 따위로는 입에 풀칠도 못할 테니."~ */
+  IF ~~ THEN REPLY #2049 /* ~"어..."~ */ EXTERN ~DANNAH~ 13
+END
+
+IF ~~ THEN BEGIN 41 // from:
+  SAY #2067 /* ~"그년은 티플링이라고, 대장. 그것들은 마족의 피가 섞인 탓에 편집적이고 화를 잘 내지... 하지만 귀여운 꼬리로군. 그런 못생긴 년에게 달려 있다는 게 애석하지만."~ */
+  IF ~~ THEN REPLY #2068 /* ~"와우, 자..."~ */ EXTERN ~DANNAH~ 17
+  IF ~~ THEN REPLY #2069 /* ~"야, 말 잘했네, 모트. ~ */ EXTERN ~DANNAH~ 17
+END
+
+IF ~~ THEN BEGIN 42 // from:
+  SAY #2074 /* ~"내 턱을 아예 통째로 떼어내는 건 어때, 이년아? 내 귀에 들리는 건 벌통 쓰레기가 재잘거리는 소리뿐이군! 어디 한 번 덤벼 봐! 네년 다리를 물어서 뜯어내 버릴 테니."~ */
+  IF ~~ THEN REPLY #2076 /* ~"그만하게!"~ */ EXTERN ~DANNAH~ 18
+  IF ~~ THEN REPLY #2075 /* ~"그만하게! 우린 떠나네."~ */ EXTERN ~DANNAH~ 14
+END
+
+IF ~~ THEN BEGIN 43 // from:
+  SAY #2079 /* ~"미미르란 말하는 백과사전이지. 그건 바로 나라고, 대장."~ */
+  IF ~~ THEN REPLY #2080 /* ~"알았소."~ */ DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+SetGlobal("Morte_Mimir","GLOBAL",1)
+~ EXTERN ~DANNAH~ 21
+END
+
+IF ~~ THEN BEGIN 44 // from:
+  SAY #2348 /* ~"포기해, 대장. 기스와 얘기하려는 건 레이저바인과 사귀려는 것과 마찬가지라고."~ */
+  IF ~  Global("Know_Gith","GLOBAL",0)
+~ THEN REPLY #9029 /* ~"기스?"~ */ DO ~SetGlobal("Know_Gith","GLOBAL",1)
+~ GOTO 135
+  IF ~  Global("Know_Gith","GLOBAL",1)
+~ THEN REPLY #9030 /* ~"기스?"~ */ GOTO 135
+  IF ~~ THEN REPLY #9031 /* ~"나는 아직 떠날 생각이 없네. 나는 먼저 그에게 질문을 좀 해야겠네..."~ */ EXTERN ~DGITH~ 7
+  IF ~~ THEN REPLY #9032 /* ~기스를 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from:
+  SAY #2354 /* ~"나라면 여기 있는 '모르는 게 약이다'라고 말하고 있는 것 같은 늙은이와 얘기하려는 데 시간을 낭비하지 않겠어. 여길 떠나자고, 대장."~ */
+  IF ~~ THEN REPLY #9033 /* ~"나는 아직 떠날 생각이 없네. 나는 먼저 그에게 질문을 좀 해야겠네..."~ */ EXTERN ~DGITH~ 7
+  IF ~~ THEN REPLY #9034 /* ~기스를 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 46 // from:
+  SAY #2601 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #2603 /* ~"자넨 대체 무슨 얘기를 하고 있는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+  IF ~~ THEN REPLY #2602 /* ~"저 '무덤 저편의 공허한 눈빛'을 얘기하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+END
+
+IF ~~ THEN BEGIN 47 // from: 46.0 46.1 121.1 121.2
+  SAY #2604 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #2605 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 49
+  IF ~~ THEN REPLY #2606 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 48
+  IF ~~ THEN REPLY #2607 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 48
+  IF ~~ THEN REPLY #2608 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.1 47.2
+  SAY #2609 /* ~"그래, 그래, 뭐든 간에. 나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #2610 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 47.0
+  SAY #2611 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #2612 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 50 // from:
+  SAY #2709 /* ~"뭐? 뭐야? 이 계집이 대장을 귀찮게 하는 거야?"~ */
+  IF ~~ THEN EXTERN ~DTEST~ 7
+END
+
+IF ~~ THEN BEGIN 51 // from:
+  SAY #2711 /* ~"난 그걸 믿어. 그가 당신을 메인 메뉴로 돌려보내고 난 그냥 빼 주는 게 좋을 것 같군."~ */
+  IF ~~ THEN EXTERN ~DTEST~ 0
+END
+
+IF ~~ THEN BEGIN 52 // from:
+  SAY #2782 /* ~"이런 염병할! 다버스로군!"~ */
+  IF ~~ THEN REPLY #2783 /* ~"뭐가 잘못됐나?"~ */ GOTO 53
+END
+
+IF ~~ THEN BEGIN 53 // from: 52.0
+  SAY #2788 /* ~"그는 다버스야. 그들은 퍼즐과 같은 기호로 '말하지.' 만약 그가 무슨 말을 하는지 모르겠다면 번역해 줄 토박이를 찾거나 그와 의사소통을 할 방법을 찾는 게 좋을 걸. 정말 짜증나는 놈들이지. 내 생각에 놈들은 말을 할 수 있으면서도 일부로 퍼즐을 내서 다른 사람들을 골탕먹이려는 것 같아."~ */
+  IF ~~ THEN REPLY #2791 /* ~"'다버스'가 뭔가?"~ */ GOTO 54
+END
+
+IF ~~ THEN BEGIN 54 // from: 53.0
+  SAY #2789 /* ~"들리는 얘기로는 그들은 레이디 오브 페인의 청소부라는군. 그들은 레이디의 기분에 따라 시길을 부수거나 수리하지. 그들은 시체 파리보다도 징그럽다고." 모트는 한숨을 쉰다. "하지만 다버스는 때려죽일 수도 없어, 그러면 레이디가... 화를 낼 테니."~ */
+  IF ~  Global("Know_Lady","GLOBAL",0)
+~ THEN REPLY #6952 /* ~"'레이디 오브 페인?' 그게 누군가?"~ */ DO ~SetGlobal("Know_Lady","GLOBAL",1)
+~ GOTO 113
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #6953 /* ~"레이디 오브 페인에 대해 내게 어떤 얘기를 해줄 수가 있나?"~ */ GOTO 113
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #6954 /* ~"알겠네."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 55 // from:
+  SAY #3473 /* ~"내 생각에 그녀는 귀에 이상이 있는 것 같아, 대장. 관두고 그냥 가자고."~ */
+  IF ~~ THEN REPLY #3474 /* ~"그녀의 손은 왜 저런 건가?"~ */ JOURNAL #38205 /* ~내가 만난 여자 더스트맨은 "티플링"이라는 종족으로 그들의 혈관에는 마족의 피가 흐르고 있다고 한다. 마족의 피는 그들을 몸을, 그리고 때로는 정신까지 변질시키는 듯하다. 모트에 의하면 적지 않은 수의 티플링들이 있는 모양이며... 그건 상당한 수의 마족이 존재한다는 것을 의미한다. ~ */ GOTO 56
+  IF ~~ THEN REPLY #3475 /* ~그녀를 가볍게 두드려 관심을 끈다.~ */ EXTERN ~DEIVENE~ 4
+  IF ~~ THEN REPLY #3476 /* ~그녀를 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0
+  SAY #3477 /* ~"에... 그녀는 *티플링*이야, 대장. 조상이 옛날에 마족과 관계를 가진 탓에 몸에 마족의 피가 흐르고 있지. 그들 중 일부는 약간 미쳤고... 외관 역시 괴이하지."~ */
+  IF ~~ THEN REPLY #3478 /* ~그녀를 가볍게 두드려 관심을 끈다.~ */ EXTERN ~DEIVENE~ 4
+  IF ~~ THEN REPLY #3479 /* ~그녀를 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 57 // from:
+  SAY #3480 /* ~"내 생각에 그녀는 귀에 이상이 있는 것 같아, 대장. 관두고 그냥 가자고."~ */
+  IF ~~ THEN REPLY #3483 /* ~"그녀의 손은 왜 저런 건가?"~ */ JOURNAL #38205 /* ~내가 만난 여자 더스트맨은 "티플링"이라는 종족으로 그들의 혈관에는 마족의 피가 흐르고 있다고 한다. 마족의 피는 그들을 몸을, 그리고 때로는 정신까지 변질시키는 듯하다. 모트에 의하면 적지 않은 수의 티플링들이 있는 모양이며... 그건 상당한 수의 마족이 존재한다는 것을 의미한다. ~ */ GOTO 58
+  IF ~~ THEN REPLY #3484 /* ~떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 58 // from: 57.0
+  SAY #3481 /* ~"에... 그녀는 *티플링*이야, 대장. 조상이 옛날에 마족과 관계를 가진 탓에 몸에 마족의 피가 다소 흐르고 있지. 그들 중 일부는 약간 미쳤고... 대개 외관 역시 괴이하지."~ */
+  IF ~~ THEN REPLY #3482 /* ~떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 59 // from:
+  SAY #3487 /* ~"대장에게 새로운 친구가 생긴 것 같군. 두 사람이 함께 시간을 보내거나, 또는...? ~ */
+  IF ~~ THEN REPLY #3488 /* ~"그만둬, 모트."~ */ EXTERN ~DEIVENE~ 11
+  IF ~~ THEN REPLY #3489 /* ~계속 좀비 흉내를 낸다. ~ */ EXTERN ~DEIVENE~ 11
+  IF ~~ THEN REPLY #3490 /* ~그녀를 밀어 제친다.~ */ EXTERN ~DEIVENE~ 10
+END
+
+IF ~~ THEN BEGIN 60 // from:
+  SAY #3492 /* ~"내게 코가 없다는 걸 감사하게 된 건 이번으로 태어나서 두 번째인 것 같군."~ */
+  IF ~~ THEN EXTERN ~DEIVENE~ 14
+END
+
+IF ~~ THEN BEGIN 61 // from:
+  SAY #3870 /* ~"이봐! 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #3871 /* ~"나는 이 사람과 얘기를 하려던 중이었네. 무슨 문제라도?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 62
+  IF ~~ THEN REPLY #3872 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 62 // from: 61.0
+  SAY #3873 /* ~"만약 대장이 더스트맨과 주둥아리를 놀릴 생각이라면 난 좀 빼줘. 나하고 그들은 상성이 별로 좋지 않으니까... 그리고 대장도 그들과 가까이 하지 않는 게 좋아. 대장 말에 귀를기울이기 보다는 대장을 매장하거나 화장할 가능성이 더 크니까. 미친 짓 하지 말고 그냥 여기서 나가자고."~ */
+  IF ~~ THEN REPLY #3874 /* ~"충고는 고맙네, 하지만 *그래도* 난 이 사람과 얘기를 하겠네."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 64
+  IF ~~ THEN REPLY #3875 /* ~"좋네, 가던 길이나 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 63 // from:
+  SAY #3876 /* ~"이봐! 귀가 먹었어? 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #3877 /* ~"이봐, 난 이 사람과 얘기를 할 거네. 무슨 문제라도 있나?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 64
+  IF ~~ THEN REPLY #3878 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 64 // from: 62.0 63.0
+  SAY #3879 /* ~"그럼 내 말을 듣지 말라고. 대장 장례식을 치르게 될 테니."~ */
+  IF ~~ THEN REPLY #3880 /* ~"그래, 장송가를 부르고 싶으면 부르게, 하지만 지금은 조용히 하게."~ */ EXTERN ~DDUST~ 3
+  IF ~~ THEN REPLY #3881 /* ~"자네 말이 맞네. 그 일은 관두고 그냥 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 65 // from:
+  SAY #3964 /* ~"와우, 대장. 그건 파괴 행위야. 그 볼트들은 그 뼈들을 고정시키는 유일한 것들이라고. 이런 오래된 친구들에게는 이미 사령술도 별 효과가 없다고."~ */
+  IF ~~ THEN REPLY #3965 /* ~"그래서?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 66
+  IF ~~ THEN REPLY #3966 /* ~"아... 영구적인 대미지는 입히고 싶지 않았는데."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 66
+  IF ~~ THEN REPLY #3967 /* ~"그럼 좋네, 관두게. 아마 다른 기회에."~ */ GOTO 66
+END
+
+IF ~~ THEN BEGIN 66 // from: 65.0 65.1 65.2
+  SAY #3968 /* ~"오, 문제가 된다는 얘긴 아니야." 모트는 기묘한 스타일로 아래 위로 움직이는 데 그건 어깨를 으쓱한다는 표현인 듯하다. "난 대장이 그걸 아는가 확인해 보려고 했을 뿐이야, 마음대로 하라고."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #3969 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DSKELW~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #3970 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DSKELW~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #3971 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DSKELW~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #3972 /* ~관두게. 아마 다른 기회에.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 67
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #3973 /* ~관두게. 아마 다른 기회에.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.3
+  SAY #3974 /* ~"흠... 이 회색 수염이 내가 자기 몸을 빌려도 뭐라고 하지 않을지 모르겠군..."~ */
+  IF ~~ THEN REPLY #3975 /* ~"회색 수염?"~ */ GOTO 68
+  IF ~~ THEN REPLY #3976 /* ~"난 그가 이의를 제기할 입장이라고는 생각지 않네."~ */ GOTO 69
+  IF ~~ THEN REPLY #3977 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 70
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0
+  SAY #3978 /* ~"회색 수염... 대장도 알다시피 늙다리, 늙은이, 노인 등을 가리키는 말이야."~ */
+  IF ~~ THEN REPLY #3979 /* ~"난 그가 이의를 제기할 입장이라고는 생각지 않네. 왜 그의 몸을 차지하지 않나?"~ */ GOTO 69
+  IF ~~ THEN REPLY #3980 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 70
+END
+
+IF ~~ THEN BEGIN 69 // from: 67.1 68.0
+  SAY #3981 /* ~모트는 잠시 그 스켈레톤을 살펴보더니 고개를 젓는다. "아니... 내겐 이것보다 신선한 놈이 필요해. 그리고 좀 더 품위가 있는 몸이... 이건 사방에 금하고 깨진 곳 투성이야 "~ */
+  IF ~~ THEN REPLY #3982 /* ~"그럼 자넨 그렇지 않단 말인가?"~ */ GOTO 70
+  IF ~~ THEN REPLY #3983 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 70 // from: 67.2 68.1 69.0 127.0
+  SAY #3984 /* ~"아, 대장은 정말 웃기는군." 모트는 당신을 노려본다. "그리고 대장은 그런 말을 할 입장이 아니지. 대장이 근처에 있으면 거울들이 자비를 구한다고."~ */
+  IF ~~ THEN REPLY #3985 /* ~"그래? 적어도 내겐 신체의 모든 부위가 다 있네."~ */ GOTO 71
+  IF ~~ THEN REPLY #3986 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 71 // from: 70.0
+  SAY #3987 /* ~모트는 코방귀를 뀐다. 허파도 없이 어떻게 그런 일을 할 수가 있는지 당신으로서는 알 수가 없다. ~ */
+  IF ~~ THEN REPLY #3988 /* ~"자네에게 말해주겠는데, 모트, 팔을 흔들며 걸으면서 신선한 공기를 들이마시는 것보다 만족스러운 건 없다네. 몸이 있다는 건 멋진 일이네."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 72
+  IF ~~ THEN REPLY #3989 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 71.0
+  SAY #3990 /* ~"대장이 준비실을 탈출하도록 도와준 건 점점 더 커져만 가는 내 후회하는 일 목록에 방금 추가되었어." 모트는 다시 코방귀를 뀐다. "난 그냥 당신이 썩도록... 아니, 더 썩도록 내버려 두었어야 했어."~ */
+  IF ~~ THEN REPLY #3991 /* ~"자네가 그렇게 느낀다니 반갑군. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 73 // from:
+  SAY #4018 /* ~모트는 히죽 웃는다.~ */
+  IF ~~ THEN REPLY #4019 /* ~"어, 그건 예스인가, 아니면..."~ */ GOTO 74
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.0
+  SAY #4020 /* ~"아... 미안." 모트는 스켈레톤의 머리 쪽으로 이동하여 그것을 쳐다본 후, 아래쪽으로 내려오면서 갑옷과 칼을 살펴본다. "오, 예스! 그래, 좋았어! 이거면 될 것 같아."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4023 /* ~"그럼 좋네... 내가 이 놈으로부터 머리를 비틀어 빼내도록 잠깐만 기다리게."~ */ EXTERN ~DGIANTSK~ 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4024 /* ~"그럼 좋네... 내가 이 놈으로부터 머리를 비틀어 빼내도록 잠깐만 기다리게."~ */ EXTERN ~DGIANTSK~ 3
+  IF ~~ THEN REPLY #4025 /* ~"모르겠네. 이 놈은 자네가 감당하기 어려울 것 같네."~ */ GOTO 75
+  IF ~~ THEN REPLY #4026 /* ~"그것을 그냥 내버려두는 것이 좋을 것 같네."~ */ GOTO 75
+END
+
+IF ~~ THEN BEGIN 75 // from: 74.2 74.3
+  SAY #4021 /* ~"그럼 대체 왜 내게 그걸 원하느냐고 물어본 거야? 자신의 잔인성을 배양하기 위한 연습이라도 한 거야?" 모트는 분노한 듯 아래위로 움직인다. "내가 대장을 위해 그토록 헌신했는데..."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4027 /* ~"그럼 좋네... 내가 이 놈으로부터 머리를 비틀어 빼내도록 잠깐만 기다리게."~ */ EXTERN ~DGIANTSK~ 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4028 /* ~"그럼 좋네... 내가 이 놈으로부터 머리를 비틀어 빼내도록 잠깐만 기다리게."~ */ EXTERN ~DGIANTSK~ 3
+  IF ~~ THEN REPLY #4029 /* ~"나는 자네 안전을 생각했네, 모트. 나는 자네 머리를 이것에 달면 자네에게 해가 가지는 않을까 걱정했네."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Giant_Skel_Mort_1","GLOBALGood",1)
+~ GOTO 76
+  IF ~~ THEN REPLY #4030 /* ~"아무리 생각해도 그것을 그냥 내버려두는 것이 좋을 것 같네. 여기서 나가세"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 76 // from: 75.2
+  SAY #4022 /* ~모트는 당신을 잠시 응시한다. "뭐야, 우리가 예전에 결혼한 적이라도 있는 거야? '나는 자네가 다치는 걸 원하지 않아'하는 따위의 헛소리는 대체 뭐야?" 모트는 당신을 노려본다. 만약 대장이 정말 나에 대해 신경을 썼다면 내 머리를 저 자이언트 스켈레톤의 몸통에 부착할 방법을 찾으려고 했을 거라고."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4031 /* ~"그럼 좋네... 내가 이 놈으로부터 머리를 비틀어 빼내도록 잠깐만 기다리게."~ */ EXTERN ~DGIANTSK~ 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4032 /* ~"그럼 좋네... 내가 이 놈으로부터 머리를 비틀어 빼내도록 잠깐만 기다리게."~ */ EXTERN ~DGIANTSK~ 3
+  IF ~~ THEN REPLY #4033 /* ~"미안하지만 난 자네에 대해 별 관심이 없네. 가세."~ */ EXIT
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4034 /* ~"난 그걸 그냥 내버려두라고 했네. 이제 여기서 나가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 77 // from:
+  SAY #4134 /* ~"이봐! 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #4144 /* ~"나는 이 사람과 얘기를 하려던 중이었네. 무슨 문제라도?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 78
+  IF ~~ THEN REPLY #4145 /* ~"아무 것도 아니네. 가세."~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 78 // from: 77.0
+  SAY #4135 /* ~"만약 대장이 더스트맨과 주둥아리를 놀릴 생각이라면 난 좀 빼줘. 나하고 그들은 상성이 별로 좋지 않으니까... 그리고 대장도 그들과 가까이 하지 않는 게 좋아. 대장 말에 귀를기울이기 보다는 대장을 매장하거나 화장할 가능성이 더 크니까. 미친 짓 하지 말고 그냥 여기서 나가자고."~ */
+  IF ~~ THEN REPLY #4142 /* ~"충고는 고맙네, 하지만 *그래도* 난 이 사람과 얘기를 하겠네."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 80
+  IF ~~ THEN REPLY #4143 /* ~"좋네, 가던 길이나 가세."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 79 // from:
+  SAY #4136 /* ~"이봐! 귀가 먹었어? 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #4140 /* ~"이봐, 난 이 사람과 얘기를 할 거네. 무슨 문제라도 있나?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 80
+  IF ~~ THEN REPLY #4141 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 80 // from: 78.0 79.0
+  SAY #4137 /* ~"그럼 내 말을 듣지 말라고. 대장 장례식을 치르게 될 테니."~ */
+  IF ~~ THEN REPLY #4138 /* ~"그래, 장송가를 부르고 싶으면 부르게, 하지만 지금은 조용히 하게."~ */ EXTERN ~DDUSTGU~ 12
+  IF ~~ THEN REPLY #4139 /* ~"자네 말이 맞네. 그 일은 관두고 그냥 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 81 // from:
+  SAY #4338 /* ~"이봐! 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #4339 /* ~"나는 이 여자와 얘기를 하려던 중이었네. 무슨 문제라도?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 82
+  IF ~~ THEN REPLY #4340 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 82 // from: 81.0
+  SAY #4341 /* ~"만약 대장이 더스트맨과 주둥아리를 놀릴 생각이라면 난 좀 빼줘. 나하고 그들은 상성이 별로 좋지 않으니까... 그리고 대장도 그들과 가까이 하지 않는 게 좋아. 대장 말에 귀를기울이기 보다는 대장을 매장하거나 화장할 가능성이 더 크니까. 미친 짓 하지 말고 그냥 여기서 나가자고."~ */
+  IF ~~ THEN REPLY #4342 /* ~"충고는 고맙네, 하지만 *그래도* 난 이 여자와 얘기를 하겠네."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 84
+  IF ~~ THEN REPLY #4343 /* ~"좋네, 가던 길이나 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 83 // from:
+  SAY #4344 /* ~"이봐! 귀가 먹었어? 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #4345 /* ~"이봐, 난 이 여자와 얘기를 할 거네. 무슨 문제라도 있나?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 84
+  IF ~~ THEN REPLY #4346 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 84 // from: 82.0 83.0
+  SAY #4347 /* ~"그럼 내 말을 듣지 말라고. 대장 장례식을 치르게 될 테니."~ */
+  IF ~~ THEN REPLY #4348 /* ~"그래, 장송가를 부르고 싶으면 부르게, 하지만 지금은 조용히 하게."~ */ EXTERN ~DDUSTFEM~ 3
+  IF ~~ THEN REPLY #4349 /* ~"자네 말이 맞네. 그 일은 관두고 그냥 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 85 // from:
+  SAY #4675 /* ~모트는 대회에 끼어 들어 당신에게 속삭인다. "세상에... 얼간이는 *아나키스트*야. 아마 좀비로 변장하는 건 그 미치광이들로서도 처음일 걸."~ */
+  IF ~~ THEN REPLY #4676 /* ~"아나키스트?"~ */ JOURNAL #64512 /* ~좀비로 변장한 사내는 아나키스트의 일원인 듯하다. 아나키스트는 권력자를 타도하고 '조직'의 냄새가 조금이라도 나는 것은 뭐든지 파괴하려는 당파이다. ~ */ GOTO 86
+END
+
+IF ~~ THEN BEGIN 86 // from: 85.0
+  SAY #4677 /* ~"아나키스트...그들은 당파들 중 하나지..." 모트는 욕설을 퍼부으려고 하는 것 같다, 하지만 그는 곧 좀비가 당신들 둘을 바라보며 귀를 바짝 기울이고 있다는 사실을 눈치챈다. "...그들은, 어, 모든 사람들을 정부의 사슬로부터 *해방*시키려고 하지. 구체제를 붕괴시키고 아무런 질서도 없는 새로운 질서를 수립하려고 해."~ */
+  IF ~~ THEN REPLY #4678 /* ~진실: "그것은 고귀한 일인 것 같네. 어떤 체제에도 파괴를 통한 쇄신이 때때로 필요하네." ~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_3","GLOBALLaw",-3)
+~ EXTERN ~DVAXIS~ 11
+  IF ~~ THEN REPLY #4679 /* ~거짓말: "그것은 고귀한 일인 것 같네. 그러한 고상한 목적을 위해 헌신하는 아나키스트는 틀림없이 내 친구네." ~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_4","GLOBALLaw",-1)
+~ EXTERN ~DVAXIS~ 11
+  IF ~~ THEN REPLY #4680 /* ~"그건 모순투성이인 것 같네."~ */ EXTERN ~DVAXIS~ 10
+  IF ~~ THEN REPLY #4681 /* ~"그건 내가 들어본 것들 중 가장 한심한 사상이네."~ */ EXTERN ~DVAXIS~ 10
+  IF ~~ THEN REPLY #4682 /* ~진실: "그건 누가 보기에도 건설적이지 않네. 진보를 위해서는 어느 정도의 체제와 법이 필요하네."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_3","GLOBALLaw",3)
+~ EXTERN ~DVAXIS~ 10
+END
+
+IF ~~ THEN BEGIN 87 // from:
+  SAY #4683 /* ~속삭인다: "그는 대장이 미친 건 아닌가 생각하고 있는 거야... 뭐 그건 나도 마찬가지지만. 이제 그만 '난 죽음에서 깨어났소'하는 잡소리는 집어치워. 대장은 날 정말 창피하게 만들고 있다고.~ */
+  IF ~~ THEN REPLY #4684 /* ~"나 때문에 무안하나?"~ */ GOTO 88
+  IF ~~ THEN REPLY #4685 /* ~"나는 이 시체가 무슨 얘기를 하는지 알고 싶었을 뿐이네. 알았나?"~ */ GOTO 88
+  IF ~  CheckStatGT(Protagonist,13,INT)
+~ THEN REPLY #4686 /* ~"이 미친 장소에 정상적으로 말하거나 생긴 사람이 없다는 건 내 잘못이 아니네."~ */ GOTO 88
+  IF ~~ THEN REPLY #4687 /* ~"이봐, 난 이 사내에게 거짓말을 하지 않을 것이네. 정작하게 말해주는 편이 낫네."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1)
+~ GOTO 88
+END
+
+IF ~~ THEN BEGIN 88 // from: 87.0 87.1 87.2 87.3
+  SAY #4688 /* ~모트는 한숨을 쉰다. "이봐, 대장... 정신 좀 차리라고. 모든 사람들에게 항상 진실만 얘기할 수는 없어. 우리가 만나는 모든 사기꾼들에게 봉이 되어줄 순 없잖아?"~ */
+  IF ~~ THEN REPLY #4689 /* ~"도끼 사냥꾼?" "마크?" "대체 무슨- 관두게."~ */ EXTERN ~DVAXIS~ 15
+  IF ~~ THEN REPLY #4690 /* ~"그만둬, 모트."~ */ EXTERN ~DVAXIS~ 15
+  IF ~~ THEN REPLY #4691 /* ~"염두에 두도록 하겠네, 이 '좀비'와 얘기를 조금 더 하고 싶네."~ */ EXTERN ~DVAXIS~ 15
+END
+
+IF ~~ THEN BEGIN 89 // from:
+  SAY #4692 /* ~"잠깐..." 모트는 놀란 듯하다. "이 얼간이는 *아나키스트*가 틀림없어. 헤, 아마 좀비로 변장하는 건 그 미치광이들로서도 처음일 걸."~ */
+  IF ~~ THEN REPLY #4693 /* ~"아나키스트?"~ */ JOURNAL #64512 /* ~좀비로 변장한 사내는 아나키스트의 일원인 듯하다. 아나키스트는 권력자를 타도하고 '조직'의 냄새가 조금이라도 나는 것은 뭐든지 파괴하려는 당파이다. ~ */ GOTO 90
+END
+
+IF ~~ THEN BEGIN 90 // from: 89.0
+  SAY #4694 /* ~"아나키스트... 그들은 권력자들을 염탐하고 약간이라도 질서나 통제의 냄새가 나는 것은 무엇이든 무너트리려는 데 시간을 낭비하는 당파지." 모트는 코방귀를 뀐다. "아나키스트는 일단 모든 조직과 체제가 붕괴되면 다원 우주의 모든 자들은 즐겁게 자유롭게 각기 자신만의 '진실'을 찾을 수 있을 거라고 믿지. 그들은 새로운 질서를 수립하기를 원해 -- 아무런 질서도 없는 질서를."~ */
+  IF ~~ THEN REPLY #4695 /* ~진실: "그것은 고귀한 일인 것 같네. 어떤 체제에도 파괴를 통한 쇄신이 때때로 필요하네." ~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_3","GLOBALLaw",-3)
+~ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4696 /* ~"그건 모순투성이인 것 같네."~ */ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4697 /* ~"그건 내가 들어본 것들 중 가장 한심한 사상이네."~ */ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4698 /* ~"뭐든 간에."~ */ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4699 /* ~진실: "그건 누가 보기에도 건설적이지 않네. 진보를 위해서는 어느 정도의 체제와 법이 필요하네."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_3","GLOBALLaw",3)
+~ EXTERN ~DVAXIS~ 71
+END
+
+IF ~~ THEN BEGIN 91 // from:
+  SAY #4700 /* ~"그의 말로는 이 파로드란 작자가 더스트맨에게 많은 사자를... 시체를 팔고 있는 모양이야. 그게 수집자들이 하는 일이지. 그들은 시체를 모아서 더스트맨에게 팔지. 이 파로드란 자가 얼마나 많은 시체를 팔았는지, 더스트맨은 파로드가 벌통의 주민들을 미처 때가 되기도 전여 죽여서 가져오는 것은 아닌가 의심하는 것 같아."~ */
+  IF ~~ THEN REPLY #4701 /* ~"알겠소. 그 밖에도 알고 싶은 것이 있소..."~ */ EXTERN ~DVAXIS~ 43
+  IF ~~ THEN REPLY #4702 /* ~"이 파로드란 사람은 상인이군. 나중에 질문할 것이 생길지도 모르니 아무데도 가지 마시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 92 // from:
+  SAY #4703 /* ~"그는 누가 당신 물건을 강탈했는지 알고 싶어해. 그런 일이 있기는 있었을 거야."~ */
+  IF ~~ THEN REPLY #4704 /* ~"알겠소. 그 밖에도 알고 싶은 것이 있소..."~ */ EXTERN ~DVAXIS~ 43
+  IF ~~ THEN REPLY #4705 /* ~"그래, 이 도둑을 정말 만나고 싶군. 나중에 질문할 것이 생길지도 모르니 아무데도 가지 마시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 93 // from:
+  SAY #4706 /* ~"그래, *그들*은 정말 얼간이야."~ */
+  IF ~~ THEN EXTERN ~DVAXIS~ 61
+END
+
+IF ~~ THEN BEGIN 94 // from:
+  SAY #4708 /* ~"이런 짓거리를 계속하고 있다니 믿을 수가 없군. 대장은 얼마나 더럽게 미친 거야?"~ */
+  IF ~  Global("Vaxis_Zombie_XP","GLOBAL",0)
+~ THEN REPLY #64535 /* ~"상당히 미친 것 같군..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+AddexperienceParty(500)
+SetGlobal("Vaxis_Zombie_XP","GLOBAL",1)
+~ EXTERN ~DVAXIS~ 66
+  IF ~  Global("Vaxis_Zombie_XP","GLOBAL",1)
+~ THEN REPLY #64534 /* ~"상당히 미친 것 같군..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+~ EXTERN ~DVAXIS~ 66
+END
+
+IF ~~ THEN BEGIN 95 // from:
+  SAY #4710 /* ~"그의 입을 더 단단히 꿰매 버릴 순 없겠어?"~ */
+  IF ~~ THEN REPLY #4711 /* ~"크만둬, 머트 --"~ */ EXTERN ~DVAXIS~ 67
+  IF ~~ THEN REPLY #4712 /* ~"음-음!"~ */ EXTERN ~DVAXIS~ 67
+END
+
+IF ~~ THEN BEGIN 96 // from:
+  SAY #5029 /* ~"이봐! 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #5030 /* ~"나는 이 사람과 얘기를 하려던 중이었네. 무슨 문제라도?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 97
+  IF ~~ THEN REPLY #5031 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 97 // from: 96.0
+  SAY #5032 /* ~"만약 대장이 더스트맨과 주둥아리를 놀릴 생각이라면 난 좀 빼줘. 나하고 그들은 상성이 별로 좋지 않으니까... 그리고 대장도 그들과 가까이 하지 않는 게 좋아. 대장 말에 귀를기울이기 보다는 대장을 매장하거나 화장할 가능성이 더 크니까. 미친 짓 하지 말고 그냥 여기서 나가자고."~ */
+  IF ~~ THEN REPLY #5033 /* ~"충고는 고맙네, 하지만 *그래도* 난 이 사람과 얘기를 하겠네."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 99
+  IF ~~ THEN REPLY #5034 /* ~"좋네, 가던 길이나 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 98 // from:
+  SAY #5035 /* ~"이봐! 귀가 먹었어? 대체 뭘 하는 거야?"~ */
+  IF ~~ THEN REPLY #5036 /* ~"이봐, 난 이 사람과 얘기를 할 거네. 무슨 문제라도 있나?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 99
+  IF ~~ THEN REPLY #5037 /* ~"아무 것도 아니네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 99 // from: 97.0 98.0
+  SAY #5038 /* ~"그럼 내 말을 듣지 말라고. 대장 장례식을 치르게 될 테니."~ */
+  IF ~~ THEN REPLY #5039 /* ~"그래, 장송가를 부르고 싶으면 부르게, 하지만 지금은 조용히 하게."~ */ EXTERN ~DSOEGO~ 3
+  IF ~~ THEN REPLY #5040 /* ~"자네 말이 맞네. 그 일은 관두고 그냥 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 100 // from:
+  SAY #5041 /* ~"뭘 하는 거야?! 만약 그를 죽일 거라면 빨리 해치우라고!~ */
+  IF ~~ THEN REPLY #5042 /* ~"난 분명히 처치했네! 그의 목을 부러트렸다고! 그는 꼼짝할 수조차 없어!"~ */ EXTERN ~DSOEGO~ 21
+END
+
+IF ~~ THEN BEGIN 101 // from:
+  SAY #5043 /* ~"적어도 그는 걸을 수가 있잖아. 모트는 코방귀를 뀐다. "떠다니는 것도 좋지만 누굴 걷어찰 수가 없잖아."~ */
+  IF ~~ THEN EXTERN ~DSOEGO~ 11
+END
+
+IF ~~ THEN BEGIN 102 // from:
+  SAY #5049 /* ~"와우, 대장! 무슨 짓을 하는 거야?"~ */
+  IF ~~ THEN REPLY #5050 /* ~"나는 이 서기와 얘기를 하려던 참이었네. 그라면 내가 어떻게 이 곳에 오게 되었는지 알지도 모르네."~ */ GOTO 103
+END
+
+IF ~~ THEN BEGIN 103 // from: 102.0
+  SAY #5052 /* ~"이봐, 더스티랑 얘기를 하는 건 자살..."~ */
+  IF ~~ THEN EXTERN ~DDHALL~ 0
+END
+
+IF ~~ THEN BEGIN 104 // from:
+  SAY #5053 /* ~"*특히* 아픈 더스티하고는 얘기를 하지 않는 게 좋아. 자, 어서 떠나자고. "여기서 빨리 떠날수록 우리에게 좋--"~ */
+  IF ~~ THEN EXTERN ~DDHALL~ 1
+END
+
+IF ~~ THEN BEGIN 105 // from:
+  SAY #6071 /* ~"다시 돌아왔어, 대장? 날 버리다니 너무 하잖아."~ */
+  IF ~~ THEN REPLY #6075 /* ~"난 괜찮네. 자넨 그 혼령이 누구였는지 아는가?"~ */ DO ~SetGlobal("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ GOTO 106
+  IF ~~ THEN REPLY #6076 /* ~"난 괜찮네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 106 // from: 105.0
+  SAY #6072 /* ~"허? 혼령?"~ */
+  IF ~~ THEN REPLY #6077 /* ~"나와 얘기한 유령 말일세. 그 여자."~ */ GOTO 107
+END
+
+IF ~~ THEN BEGIN 107 // from: 106.0
+  SAY #6073 /* ~"대장이 어떤 여자와 얘기를 하고 있었다고? 어디?" 모트는 흥분한 듯 주위를 둘러본다. "그녀는 어떻게 생겼지?"~ */
+  IF ~~ THEN REPLY #6078 /* ~"그녀는 관대의 바로 위에 있었네. 자넨 그녀를 보지 못했나?"~ */ GOTO 108
+END
+
+IF ~~ THEN BEGIN 108 // from: 107.0
+  SAY #6074 /* ~"에... 아니, 대장은 거기서 그냥 두리번거리다가 마치 석상처럼 서 있었다고.. 나는 대장이 또 미친 건 아닌가 걱정을 했었디고."~ */
+  IF ~~ THEN REPLY #6079 /* ~"난... 괜찮은 것 같네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 109 // from:
+  SAY #6324 /* ~"내가 전에 했던 일이 생각나는군." 그는 좀 창피한 듯하다. "그래, 팔은 없었지만..."~ */
+  IF ~  HasItem("Cobble","Post")
+~ THEN REPLY #6325 /* ~시체를 조사한다.~ */ EXTERN ~DPOST~ 3
+  IF ~  !HasItem("Cobble","Post")
+~ THEN REPLY #6326 /* ~시체를 조사한다.~ */ EXTERN ~DPOST~ 4
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,12,WIS)
+~ THEN REPLY #6327 /* ~"흠... 다른 게시물에도 효과가 있을지 궁금하군..."~ */ EXTERN ~DPOST~ 5
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #6328 /* ~"흠... 다른 게시물에도 효과가 있을지 궁금하군..."~ */ EXTERN ~DPOST~ 5
+  IF ~  CheckStatLT(Protagonist,12,INT)
+CheckStatLT(Protagonist,12,WIS)
+~ THEN REPLY #6329 /* ~다른 게시물을 살펴본다.~ */ EXTERN ~DPOST~ 5
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6330 /* ~시체에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ EXTERN ~DPOST~ 2
+  IF ~~ THEN REPLY #6331 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 110 // from:
+  SAY #6609 /* ~"와우, 대장. 그건 파괴 행위야. 그 볼트들은 그 뼈들을 고정시키는 유일한 것들이라고. 이런 오래된 친구들에게는 이미 사령술도 별 효과가 없다고."~ */
+  IF ~~ THEN REPLY #6658 /* ~"그래서?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6659 /* ~"아... 영구적인 대미지는 입히고 싶지 않았는데."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6660 /* ~"그럼 좋네, 관두게. 아마 다른 기회에..."~ */ EXTERN ~DS42~ 1
+END
+
+IF ~~ THEN BEGIN 111 // from:
+  SAY #6610 /* ~"흠... 이 회색 수염이 내가 자기 몸을 빌려도 뭐라고 하지 않을지 모르겠군..."~ */
+  IF ~~ THEN REPLY #6661 /* ~"'회색 수염?'"~ */ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6662 /* ~"나는 그가 이의를 제기할 입장이라고는 생각하지 않네."~ */ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6663 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ EXTERN ~DS42~ 1
+END
+
+IF ~~ THEN BEGIN 112 // from:
+  SAY #6611 /* ~"그만두라고. 그의 팔은 곧 떨어질 거라고."~ */
+  IF ~  Global("42_Secret","GLOBAL",1)
+~ THEN REPLY #6664 /* ~양팔을 당신 가슴 위에서 교차시킨다.~ */ EXTERN ~DS42~ 4
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+Global("42_Secret","GLOBAL",0)
+~ THEN REPLY #6665 /* ~스켈레톤의 몸짓을 흉내낸다... 어떤 일이 일어나는지 지켜본다. ~ */ EXTERN ~DS42~ 9
+  IF ~~ THEN REPLY #6666 /* ~"어..."~ */ EXTERN ~DS42~ 10
+  IF ~~ THEN REPLY #6667 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 113 // from: 54.0 54.1
+  SAY #6771 /* ~"그녀는 이 도시의 지배자야. 대장도 그녀를 보면 알 거야. 그녀의 얼굴 주변에는 칼날들이 달렸고, 그녀는 거인만큼이나 거대하며, 저 친구들처럼 공중에 떠다니지." 모트는 당신들 둘을 바라보고 있는 다버스를 가리킨다. "아무도 그녀에 대해서 자세히 알지는 못해... 그녀는 거의 말을 하지 않아. 대장이 알아야 할 건 그녀를 화나게 해서는 안 된다는 것 뿐이야. 이건 내 충고인데, 만약 그녀를 보게 되면 도망치라고."~ */
+  IF ~~ THEN REPLY #2784 /* ~"알겠소."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 114 // from:
+  SAY #6784 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 낫지. 통역을 원해? 시길 토박이를 찾아보라고."~ */
+  IF ~~ THEN REPLY #6955 /* ~"알겠소."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 115 // from:
+  SAY #6786 /* ~"아, 물론 그들에게도 이름이 있겠지."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 43
+END
+
+IF ~~ THEN BEGIN 116 // from:
+  SAY #6790 /* ~"웃기는군, 휜들링."~ */
+  IF ~~ THEN REPLY #6956 /* ~"관두게, 모트 - 그에게 다른 질문을 좀 해줄 수 있겠소, 안나?"~ */ EXTERN ~DANNAH~ 40
+  IF ~~ THEN REPLY #6957 /* ~"관두게. 가세."~ */ DO ~SetGlobal("Translate_Dabus","GLOBAL",0)
+~ EXTERN ~DDABUS~ 6
+END
+
+IF ~~ THEN BEGIN 117 // from:
+  SAY #6794 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 여기 있는 휜들링 계집에게 부탁하라고." 그는 안나를 가리킨다. "그녀는 벌통 토박이니까."~ */
+  IF ~~ THEN REPLY #6958 /* ~"아마 그럴지도..."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 118 // from:
+  SAY #6797 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해?" 그는 다콘을 가리킨다. "여기 있는 '나는 잘났으니 너희들 따위와는 얘기를 안 해'하는 양반에게 부탁하라고."~ */
+  IF ~~ THEN REPLY #6959 /* ~"아마 그럴지도..."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 119 // from:
+  SAY #6800 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 타나리에게 부탁하라고." 그는 훨-후럼-그레이스를 가리킨다. "아마 그녀는 이 친구들하고 늘 대화를 나누고 있을 거라고." ~ */
+  IF ~~ THEN REPLY #6960 /* ~"아마 그럴지도..."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 120 // from:
+  SAY #7040 /* ~당신이 돌아서자 모트가 당신을 쳐다보고 있다. "에? 에?"~ */
+  IF ~~ THEN REPLY #7055 /* ~"뭔가?"~ */ GOTO 121
+END
+
+IF ~~ THEN BEGIN 121 // from: 120.0
+  SAY #7041 /* ~"저 죽은 미인이 날 어떻게 쳐다보는지 봤어?" 모트는 잔뜩 기대라도 하듯 이빨을 딱딱거린다. "그녀는 자신의 관을 따뜻하게 해줄 행운아를 찾고 있었다고."~ */
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #7056 /* ~"제발 다시 시작하지 말게."~ */ DO ~SetGlobal("Morte_Zombie_Female_Bar_Quip","GLOBAL",1)
+~ GOTO 122
+  IF ~  Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #7057 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+  IF ~  Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #7058 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+END
+
+IF ~~ THEN BEGIN 122 // from: 121.0
+  SAY #7042 /* ~모트는 당신을 무시하고 사색에 잠긴다. "나는 주목을 받는 게 싫지는 않아... 하지만 난 남들이 날 해골 이상의 존재로 봐주기를 원해, 이해하지? 내게는 동물적 본능 이상의 감정이 있어. 나는 사랑을 원한다고."~ */
+  IF ~~ THEN REPLY #7059 /* ~"계속 그런 식으로 나오면 자네를 어디다 던져버리겠네."~ */ GOTO 123
+  IF ~~ THEN REPLY #7060 /* ~"모트, 자네는 해골이네. 누가 봐도 자네는 해골이네. 현실을 받아들이게."~ */ GOTO 124
+  IF ~~ THEN REPLY #7061 /* ~"이해하네. 이제 여기서 나가세, 알겠나?"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 123 // from: 122.0
+  SAY #7043 /* ~"와우, 대장..." 모트는 팔이 미치는 범위 밖으로 약각 물러난다. "여자들은 애인을 원하지 전사를 원하지 않는다고."~ */
+  IF ~~ THEN REPLY #7062 /* ~"아마 자네는 이 우주에서 내가 로맨스에 내해 조언을 구할 *마지막* 사람일 걸세."~ */ GOTO 126
+  IF ~~ THEN REPLY #7063 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 124 // from: 122.1
+  SAY #7044 /* ~"그래, 난 해골에 불과할지도 모르지만 마음만은 따뜻하다고."~ */
+  IF ~~ THEN REPLY #7064 /* ~"자네에겐 그게 없지 않나."~ */ GOTO 125
+  IF ~~ THEN REPLY #7065 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 125 // from: 124.0
+  SAY #7045 /* ~"뭐, 대장은 내 꿈과 포부에 침을 뱉으려고 내 삶에 껴든 거야?! 좋아, 그럼 그렇게 하라고. 내게 심장은 없을지 모르지만 영혼은 있다고."~ */
+  IF ~~ THEN REPLY #7066 /* ~"실은 난 자네가... 관두게. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #7067 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 126 // from: 123.0
+  SAY #7046 /* ~"만약 대장에게 죽을 때 잃어버린 감각이 반만이라도 남아있었다면 그런 소린 안 할 걸." 모트는 지금까지보다 한층 더 찰난 체 하는 목소리로 말한다. "사랑에 대해서 나보다 잘 아는 사람이 있으면 나오라고 해."~ */
+  IF ~~ THEN REPLY #7068 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 127 // from:
+  SAY #7071 /* ~모트는 스켈레톤을 잠시 살펴본 후 고개를 젓는다. "아니... 이 놈은 너무 깨끗해... 살이 거의 남아있지 않잖아. 게다가 뼈에서 그 백색 도료를 다 제거하긴 힘들 것 같아."~ */
+  IF ~~ THEN REPLY #7076 /* ~"그것이 '너무 깨끗한'지는 모르겠으나... 자네는 청결함에 대해 좀 배우는 것이 좋을 것 같네."~ */ GOTO 70
+  IF ~~ THEN REPLY #7077 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 128 // from:
+  SAY #7130 /* ~"그래!"~ */
+  IF ~~ THEN EXTERN ~DHIVEF1~ 8
+END
+
+IF ~~ THEN BEGIN 129 // from:
+  SAY #7187 /* ~"미미르는 말하는 백과사전이지. 그건 바로 나야, 대장."~ */
+  IF ~~ THEN REPLY #7483 /* ~"알겠소. 너무 그렇게 고민하지 말게, 모트. 그녀 꼴을 보니 난 자네를 두 번째 죽음로부터 구하는 셈일세."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
+~ EXTERN ~DHARLOTN~ 8
+  IF ~~ THEN REPLY #7484 /* ~"어서 여길 떠나세. 잘 있으시오, 아가씨."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 130 // from:
+  SAY #7188 /* ~모트는 창녀가 음탕한 욕설을 유수처럼 쏟아 내는 걸 최면이라도 걸린 듯 쳐다본다. 말사태가 끝난 후 모트는 잠시 조용히 있다가 당신 쪽으로 고개를 돌린다. "와우, 대장. 내 역설의 레퍼토리가 늘었어." 모트는 숨을 헐떡이는 정녀에게로 다시 고개를 돌린다. "난 사랑에 빠진 것 같아."~ [MRT387] */
+  IF ~~ THEN REPLY #7485 /* ~떠난다.~ */ DO ~IncrementGlobal("Morte_Taunt","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 131 // from:
+  SAY #7775 /* ~"와우, 대장." 모트는 당신이 그 생물과 미쳐 얘기하기도 전에 말을 가로막는다. "관둬. 거리에서 아무 마족이나 붙잡고 말을 걸지 마. 놈을 그냥 내버려 두라고."~ */
+  IF ~~ THEN REPLY #7776 /* ~"나는 그에게 뭘 좀 물어보고 싶네..."~ */ GOTO 132
+  IF ~~ THEN REPLY #7777 /* ~그 생물을 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 132 // from: 131.0
+  SAY #7778 /* ~"아니, 안돼." 모트는 그 생물을 흘긋 보더니 다시 당신 쪽으로 고개를 돌리고 속삭이는 듯한 목소리로 말한다. "그들은 성질이 까다로워. 그냥 가자고."~ */
+  IF ~~ THEN REPLY #7779 /* ~"난 위험을 감수하겠네."~ */ EXTERN ~ABISHAB~ 11
+  IF ~~ THEN REPLY #7780 /* ~그 생물을 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 133 // from:
+  SAY #7805 /* ~당신이 그 생물과 얘기하려고 하자 모트는 한숨을 쉰다.~ */
+  IF ~~ THEN REPLY #7806 /* ~"뭔가?"~ */ GOTO 134
+END
+
+IF ~~ THEN BEGIN 134 // from: 133.0
+  SAY #7807 /* ~"아, 아무 것도 아냐. 체험이 가장 좋은 선생이지." 모트는 고개를 끄덕여 그 생물을 가리킨다. "어서 하라고."~ */
+  IF ~~ THEN REPLY #7808 /* ~"그러겠네."~ */ EXTERN ~ABISHAB~ 11
+  IF ~~ THEN REPLY #7809 /* ~"좋아, 관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 135 // from: 44.0 44.1
+  SAY #2349 /* ~"그래, '기스'야..." 모트는 아직도 당신을 응시하고 있는 기스를 흘긋 본다. "다른 때 다시 얘기하자고."~ */
+  IF ~~ THEN REPLY #9035 /* ~"나는 아직 떠날 생각이 없네. 나는 먼저 그에게 질문을 좀 해야겠네..."~ */ EXTERN ~DGITH~ 7
+  IF ~~ THEN REPLY #9036 /* ~기스를 그냥 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 136 // from:
+  SAY #9860 /* ~"이봐, 대장... 대장은 그를 깨우기도 전에 먼저 죽일 거라고!"~ */
+  IF ~~ THEN REPLY #9882 /* ~"자네가 옳네, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 137 // from:
+  SAY #11946 /* ~모트가 다가온다. "뭐야, 대장?"~ */
+  IF ~~ THEN REPLY #11974 /* ~"이 이빨들이 보이나?"~ */ GOTO 138
+  IF ~~ THEN REPLY #11975 /* ~"아무 것도 아니네. 신경 쓰지말게."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 138 // from: 137.0
+  SAY #11947 /* ~모트는 당신 손바닥을 쳐다본다. "왝!" 그는 역겨워 하는 것 같다. "정말 추악하게 생겼군, 안 그래?"~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 139 // from:
+  SAY #11948 /* ~"말도 안돼." 모트는 몸서리친다. "대장이라면 그런 걸 몸 안에 넣고 싶겠어?"~ */
+  IF ~~ THEN REPLY #11976 /* ~"자, 모트, 그들을 좋아하는 것 같네. 그들이 자네를 쳐다보는 모습 좀 보게."~ */ GOTO 140
+  IF ~~ THEN REPLY #11977 /* ~모트를 잡아 그의 입에 그 이빨들을 밀어 넣는다.~ */ DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Ingress_Teeth_2","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Ingress_Teeth_1","GLOBALGood",-1)
+~ GOTO 141
+  IF ~~ THEN REPLY #11978 /* ~"그럼 관두게."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 140 // from: 139.0
+  SAY #11949 /* ~"그 작은 요물들이 내 가까이에 오기만 하면..." 모트는 잠시 멈춘다. "이빨을 어떻게 협박해야 하는지는 나도 모르겠는데..."~ */
+  IF ~~ THEN REPLY #11979 /* ~이빨을 살펴본다.~ */ EXIT
+  IF ~~ THEN REPLY #11980 /* ~모트를 잡아 그의 입에 그 이빨들을 밀어 넣는다.~ */ DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Ingress_Teeth_2","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Ingress_Teeth_1","GLOBALGood",-1)
+~ GOTO 141
+  IF ~~ THEN REPLY #11981 /* ~"그럼 관두게."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 141 // from: 139.1 140.1
+  SAY #11950 /* ~몸부림은 오래가지 않는다. 당신은 모트의 머리를 팔에 끼우고 누른다(달리 잡을 부위가 없으니까). 모트는 당신을 물어뜯어 당신으로부터 벗어나려고 하나, 이빨들은 당신 손에서 뛰쳐나와 모트의 입안으로 벌떼처럼 몰려 들어간다. 모트는 잉그레스의 이빨들이 그의 이빨들을 뽑아 내고 그 빈자리를 대신 채우는 동안 마구 악을 쓴다. ~ */
+  IF ~~ THEN REPLY #11982 /* ~"보라고, 모트. 그건 그리 나쁘지 않았지?"~ */ DO ~MoraleDec("Morte",1)
+~ GOTO 143
+END
+
+IF ~~ THEN BEGIN 142 // from: 149.0
+  SAY #11951 /* ~모트는 계속 악을 쓴다. 이빨들은 자리를 잡고 구멍을 뚫는 끔찍한 소리를 내면서 잇몸에 뿌리를 내리기 시작한다.~ */
+  IF ~~ THEN REPLY #11983 /* ~"모트, 괜찮은가?"~ */ DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1)
+~ GOTO 143
+END
+
+IF ~~ THEN BEGIN 143 // from: 141.0 142.0
+  SAY #11952 /* ~모트에게는 당신 소리가 들리지 않는 듯하다... 그는 계속해서 악을 쓴다. 그러더니 갑자기 이빨들을 서로 부딪히게 만든다. 그러나 그가 세 번 이빨을 으드득한 직후, 아랫니와 윗니가 서로 잠겨 그가 입을 열지 못하게 만든다. ~ */
+  IF ~~ THEN REPLY #11984 /* ~"와우!"~ */ GOTO 144
+END
+
+IF ~~ THEN BEGIN 144 // from: 143.0
+  SAY #11953 /* ~모트는 눈을 크게 뜨고 당신에게 뭐라고 중얼거린다. ~ */
+  IF ~  Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11985 /* ~"그럼... 자넨 그들이 마음에 드나?"~ */ GOTO 145
+  IF ~  Global("Good_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11986 /* ~"모트, 자네 괜찮나?"~ */ GOTO 150
+END
+
+IF ~~ THEN BEGIN 145 // from: 144.0
+  SAY #11954 /* ~이빨들은 갑자기 풀리고 모트는 심호흡을 한다. "난 대장에게 꼭 복수를 할 거야." 그가 말한다. "그건 정말 추잡한 짓이었어." ~ */
+  IF ~~ THEN REPLY #11987 /* ~"그들의 감촉은 어떤가?"~ */ GOTO 146
+END
+
+IF ~~ THEN BEGIN 146 // from: 145.0 150.0
+  SAY #11955 /* ~모트는 실험 삼아 턱을 움직여 본다. "기묘하군. 하지만 과히 나쁘진 않은데." 갑자기 이빨은 길게 늘어나 송곳니가 된다. "오오! 그들은 변화할 수 있군!" 그것들은 보통 크기로 줄었다가, 다시 송곳니가 되었다가, 다시 보통 크기로 돌아온다... "내 마음에 들 것 같군..."~ */
+  IF ~  Global("Good_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11988 /* ~"미안하네, 모트. 자네를 해칠 생각은 없었네."~ */ GOTO 147
+  IF ~  Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11989 /* ~"보게, 내가 옳았지?"~ */ GOTO 147
+END
+
+IF ~~ THEN BEGIN 147 // from: 146.0 146.1
+  SAY #11956 /* ~"아, 하지만 복수는 할 거야." 모트는 대답한다. 그가 히죽 웃자 이빨은 다시 송곳니가 된다. "기다리시라고."~ */
+  IF ~  Global("Good_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11990 /* ~"어... 복수는 아무에게도 도움이 되지 않네, 모트. 어... 가세.~ */ EXIT
+  IF ~  Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11991 /* ~"나중에 내게 감사할 걸세. 두고 보라고."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 148 // from:
+  SAY #11957 /* ~"뭐야?" 모트는 가까이 와서 당신 손바닥을 들여다 본다. "이봐... 그것들은 무슨 계획을 하는 것 같군, 안 그래?"~ */
+  IF ~~ THEN REPLY #11992 /* ~"그렇지, 그렇지 않--"~ */ GOTO 149
+END
+
+IF ~~ THEN BEGIN 149 // from: 148.0
+  SAY #11958 /* ~그 다음에 일어난 일은 형용하기 어렵고... 보기에 정말 고통스럽다. 당신이 미처 손바닥을 접기 전에 이빨들은 당신 손에서 뛰쳐나와 모트의 입안으로 벌떼처럼 몰려 들어간다. 모트는 잉그레스의 이빨들이 그의 이빨들을 뽑아 내고 그 빈자리를 대신 채우는 동안 마구 악을 쓴다. ~ */
+  IF ~~ THEN REPLY #11993 /* ~"모트!"~ */ GOTO 142
+END
+
+IF ~~ THEN BEGIN 150 // from: 144.1
+  SAY #11959 /* ~이빨들은 갑자기 풀리고 모트는 심호흡을 한다. "난 대장에게 꼭 복수를 할 거야! 모두 대장이 꾸민 일이지! 난 알아!"~ */
+  IF ~~ THEN REPLY #11994 /* ~"보게, 그런 일이 일어나갈 바란 건 아니네... 난 자네에게 경고도 했네... 어... 그들의 감촉은 어떤가?"~ */ GOTO 146
+END
+
+IF ~~ THEN BEGIN 151 // from:
+  SAY #12389 /* ~모트는 당신에게 속삭인다. "보스, 뭔가 낌새가 이상해. 아무 마족이나 휴가를 갈 정도로 블러드 워의 상황은 급변하지 않았다고. 그들은 뭔가를 *원하는* 게 틀림없어. 조심하라고." 그 동안에도 테가린은 계속 동료와 얘기를 하고 있다.~ */
+  IF ~~ THEN EXTERN ~DTEGARIN~ 12
+END
+
+IF ~~ THEN BEGIN 152 // from:
+  SAY #12449 /* ~"보스, 저 자식들이 무슨 음모를 꾸미고 있다는 건 그 어느 때보다도 명백해. 내가 듣기에 그들은 탈영을 했고, 베이터에서의 자신들의 지위를 향상시킬 방법을 모색하고 있는 것 같아. 놈들하고는 얘기하지 않는 게 좋아, 보스... 대장은 어떤 게임을 하는지 모르고, 잘못하면 문자 그대로 불타버릴 수도 있다고."~ */
+  IF ~~ THEN REPLY #12450 /* ~"알았네, 모트. 이들 둘에게 몇 가지만 더 물어보겠네..."~ */ EXTERN ~DAETHEL~ 11
+  IF ~~ THEN REPLY #12451 /* ~"좋네, 모트. 그들과의 용건은 끝났네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 153 // from:
+  SAY #12466 /* ~모트는 가까이 다가와 당신 귀에 대고 속삭인다. "그가 옳아, 대장... 왜 대장이 그렇게 화가 난 건지 모르겠군..."~ */
+  IF ~~ THEN REPLY #12553 /* ~"좋소... 나는 질문을 하나만 하고 싶었을 뿐이오..."~ */ EXTERN ~DBARIA~ 4
+  IF ~~ THEN REPLY #12554 /* ~"닥쳐, 이 투덜거리는 햐골아! 그리고 너, 염소 괴물 -넌 죽어야겠다."~ */ DO ~MoraleDec("Morte",2)
+Enemy()
+Attack(Protagonist)
+ChangeAIScript("MDKTNO",DEFAULT)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #12555 /* ~"아니야... 그건 당신이었소, 그리고 당신은 그걸 후회하게 될 거요."~ */ DO ~Enemy()
+Attack(Protagonist)
+ChangeAIScript("MDKTNO",DEFAULT)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #12556 /* ~"그럼 관두시오. 안녕히 계시오."~ */ DO ~SetGlobal("BariA","AR0400",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 154 // from:
+  SAY #12467 /* ~"그래, 그래! 좋아!"~ */
+  IF ~~ THEN EXTERN ~DBARIA~ 20
+END
+
+IF ~~ THEN BEGIN 155 // from:
+  SAY #12621 /* ~모트는 모든 관심이 자신에게 쏠리자 놀란 듯하다. "뭐야? 뭐야?" 만약 그에게 입술이 있었다면 그가 천진난만하게 휘파람을 불었을 것이라는 생각이 든다. ~ */
+  IF ~~ THEN REPLY #12854 /* ~"설명할 것이라도 있나, 모트?~ */ GOTO 156
+  IF ~  Global("Know_Mimir","GLOBAL",0)
+~ THEN REPLY #12855 /* ~"'미미르'가 뭔가?"~ */ DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+~ GOTO 157
+  IF ~~ THEN REPLY #12856 /* ~"그는 신경 쓰지 말게... 대답을 해줄 수가 있겠나?"~ */ EXTERN ~DCREED~ 30
+END
+
+IF ~~ THEN BEGIN 156 // from: 155.0
+  SAY #12622 /* ~"이 사람 얘기를 듣자고, 어때?" 모트는 고개를 돌려 쥐 사냥꾼을 냉엄하게 바라본다.~ */
+  IF ~~ THEN REPLY #12857 /* ~"아니, 어디 자네가 할 말을 들어보세, 모트."~ */ GOTO 158
+  IF ~  Global("Know_Mimir","GLOBAL",0)
+~ THEN REPLY #12858 /* ~"잠깐만 기다리시오... '미미르'가 뭔가?"~ */ DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+~ GOTO 157
+  IF ~~ THEN REPLY #12859 /* ~쥐 사냥꾼 쪽으로 돌아선다.~ */ EXTERN ~DCREED~ 32
+END
+
+IF ~~ THEN BEGIN 157 // from: 155.1 156.1
+  SAY #12623 /* ~모트는 부끄러운 듯 눈알을 희번덕거린다. "그건... 말하는 백과사전이야. 별로 자랑스러운 건 아니야. 자, 이 친구가 하는 얘기를 듣자고, 좋아?"~ */
+  IF ~~ THEN REPLY #12860 /* ~"알겠네."~ */ DO ~SetGlobal("Morte_Mimir","GLOBAL",1)
+~ EXTERN ~DCREED~ 32
+  IF ~~ THEN REPLY #12861 /* ~"아니, 충분히 들었소. 안녕히 계시오, 쥐 사냥꾼."~ */ DO ~SetGlobal("Morte_Mimir","GLOBAL",1)
+~ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 158 // from: 156.0
+  SAY #12624 /* ~"이봐, 대장... 내가 왜 대장에게 뭘 숨기겠어? 나는 대장에게 필요한 건 모두 말했다고. 그냥 이 친구가 하는 얘기나 듣자고."~ */
+  IF ~~ THEN REPLY #12862 /* ~"알겠네."~ */ EXTERN ~DCREED~ 32
+  IF ~~ THEN REPLY #12863 /* ~"그럼 관두게. 가세. 안녕히 계시오, 쥐 사냥꾼."~ */ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 159 // from:
+  SAY #12625 /* ~"그래, 대장! 좋아!"~ */
+  IF ~~ THEN EXTERN ~DCREED~ 40
+END
+
+IF ~~ THEN BEGIN 160 // from:
+  SAY #12626 /* ~"죽었어, 대장... 죽었단 말이야."~ */
+  IF ~~ THEN REPLY #12864 /* ~"하지만 당신은 상당히 친절한 것 같소, 쥐 사냥꾼..."~ */ EXTERN ~DCREED~ 49
+  IF ~~ THEN REPLY #12865 /* ~"이해하오. 다른 질문이 있소..."~ */ EXTERN ~DCREED~ 15
+  IF ~~ THEN REPLY #12866 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 161 // from:
+  SAY #12627 /* ~"죽었어, 대장... 죽었단 말이야."~ */
+  IF ~~ THEN REPLY #12867 /* ~"아... 당신이 전에 한 죽은 쥐에 대해 돈을 지불하는 사람들에 관한 얘기는 정확히 어떤 것이었소?"~ */ EXTERN ~DCREED~ 18
+  IF ~~ THEN REPLY #12868 /* ~"알겠소. 다른 질문이 있소..."~ */ EXTERN ~DCREED~ 15
+  IF ~~ THEN REPLY #12869 /* ~"알겠소. 안녕히 계시오."~ */ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 162 // from:
+  SAY #13748 /* ~"가지가 너무 많이 꺾인 나무로군." 모트는 눈알을 희번덕거린다. "카오시텍츠와 얘기를 하는 건 무의미해, 대장. 놈들은 미치광이야."~ */
+  IF ~  Global("Know_Chaosmen","GLOBAL",0)
+~ THEN REPLY #13774 /* ~"카오시텍트?"~ */ DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1)
+SetGlobal("Know_Chaosmen","GLOBAL",1)
+~ GOTO 163
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13775 /* ~"카오시텍트가 어떤 자들인지 다시 말해주겠나?"~ */ DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1)
+~ GOTO 163
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13776 /* ~"그로부터 뭔가를 배울 수 있으리라 생각했는데. 관두세. 가세."~ */ DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 163 // from: 162.0 162.1
+  SAY #13749 /* ~"그들은 우두머리가 오래 가지 못한다는 것 말고는... 아무런 규칙도 없는 '당파'야. 그들은 '카오스맨'이라고도 불려. 그 이유는 설명할 필요도 없겠지."~ */
+  IF ~~ THEN REPLY #13777 /* ~"그들은 어떻게 새 멤버를 얻나?"~ */ GOTO 164
+  IF ~~ THEN REPLY #13778 /* ~"알겠네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 164 // from: 163.0
+  SAY #13750 /* ~"마치 파리가 꼬이는 것처럼 새로운 멤버들이 모여들어... 충분히 미쳤거나 혼돈스러운 놈들이 말이야. 아마 신규 멤버를 모집하는 자도 없을 거야... 하지만 녀석들에 대해 확실히 말할 수 있는 건 아무 것도 없으니까."~ */
+  IF ~~ THEN REPLY #13779 /* ~"알겠네. 정보를 주어 고맙네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 165 // from:
+  SAY #13828 /* ~"가지가 너무 많이 꺾인 나무로군." 모트는 눈알을 희번덕거린다. "카오시텍츠와 얘기를 하는 건 무의미해, 대장. 놈들은 미치광이야."~ */
+  IF ~  Global("Know_Chaosmen","GLOBAL",0)
+~ THEN REPLY #13986 /* ~"카오시텍트?"~ */ DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1)
+SetGlobal("Know_Chaosmen","GLOBAL",1)
+~ GOTO 166
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13987 /* ~"카오시텍트가 어떤 자들인지 다시 말해주겠나?"~ */ DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1)
+~ GOTO 166
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13988 /* ~"그로부터 뭔가를 배울 수 있으리라 생각했는데. 관두세. 가세."~ */ DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 166 // from: 165.0 165.1
+  SAY #13829 /* ~"그들은 우두머리가 오래 가지 못한다는 것 말고는... 아무런 규칙도 없는 '당파'야. 그들은 '카오스맨'이라고도 불려. 그 이유는 설명할 필요도 없겠지."~ */
+  IF ~  Global("Join_Chaosmen","GLOBAL",0)
+~ THEN REPLY #13989 /* ~"그들은 어떻게 새 멤버를 얻나?"~ */ GOTO 167
+  IF ~~ THEN REPLY #13990 /* ~"알겠네. 그럼 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 167 // from: 166.0
+  SAY #13830 /* ~"마치 파리가 꼬이는 것처럼 새로운 멤버들이 모여들어... 충분히 미쳤거나 혼돈스러운 놈들이 말이야. 아마 신규 멤버를 모집하는 자도 없을 거야... 하지만 녀석들에 대해 확실히 말할 수 있는 건 아무 것도 없으니까."~ */
+  IF ~~ THEN REPLY #13991 /* ~"알겠소. 정보를 주어 고맙소."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 168 // from:
+  SAY #14075 /* ~"좋아 그럼..." 모트는 당신에게 조용히 말한다. "가자고, 대장. 이 더스티는 비료나 되라고 하고."~ */
+  IF ~  Global("Mortai_Contract","GLOBAL",1)
+GlobalGT("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14275 /* ~"좋네. 여기서 나가세."~ */ EXTERN ~DAWAIT~ 6
+  IF ~  Global("Mortai_Contract","GLOBAL",1)
+Global("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14276 /* ~"좋네, 여기서 나가세."~ */ EXTERN ~DAWAIT~ 6
+  IF ~  Global("Mortai_Contract","GLOBAL",0)
+GlobalGT("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14277 /* ~"좋네, 여기서 나가세."~ */ EXTERN ~DAWAIT~ 6
+  IF ~  Global("Mortai_Contract","GLOBAL",0)
+Global("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14278 /* ~"좋네, 여기서 나가세."~ */ EXTERN ~DAWAIT~ 15
+END
+
+IF ~~ THEN BEGIN 169 // from:
+  SAY #15339 /* ~"저 잘난 체하는 놈을 주 동강 내라고, 보스! 본때를 보여주라고!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 19
+END
+
+IF ~~ THEN BEGIN 170 // from:
+  SAY #15340 /* ~"그래, 대답을 해!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 13
+END
+
+IF ~~ THEN BEGIN 171 // from:
+  SAY #15341 /* ~"난 덩치가 큰 흉터투성이 사내에게 동전 열 닢을 걸겠어!" 모트는 가까이 다가와 속삭인다. "그건 대장이야. 우릴 실망시키지 말라고."~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 20
+END
+
+IF ~~ THEN BEGIN 172 // from:
+  SAY #15342 /* ~"좋아, 대장. 이번에는 놈을 혼내 주라고. 비겁하게 싸워도 좋아!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 19
+END
+
+IF ~~ THEN BEGIN 173 // from:
+  SAY #15343 /* ~"그래, 이 건방지고 잘난 체하는 엘리트주의자야... 그가 하는 말은 들었지!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 32
+END
+
+IF ~~ THEN BEGIN 174 // from:
+  SAY #15344 /* ~"*내*가 누구냐고? 흥! 난 네 아버지였을 수도 있지만 그 원숭이가 날 위층에서 때렸 거든."~ */
+  IF ~~ THEN REPLY #15490 /* ~"모트, 조용하게."~ */ GOTO 175
+  IF ~~ THEN REPLY #15491 /* ~모트가 계속하도록 내버려 둔다.~ */ GOTO 175
+END
+
+IF ~~ THEN BEGIN 175 // from: 174.0 174.1
+  SAY #15345 /* ~"뭐가 문제지, 공주님? 할 말이 없나? 파리가 네 목구멍으로 들어가기 전에 그 내려간 턱이나 들어 올리라고! 그래, 무슨 말인지 알겠지? 네 야한 브래지어를 챙겨 가지고 네가 있어야 할 곳인 네 어머니의 역겨운 스커트 속으로 기어 들어가라고! 그리고 그년에게 내 안부를 전하는 걸 잊지 말도록!"~ */
+  IF ~~ THEN REPLY #15492 /* ~"모트, 닥쳐. *당장.*"~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",-1)
+~ GOTO 176
+  IF ~~ THEN REPLY #15493 /* ~모트가 계속하도록 내버려 둔다.~ */ GOTO 177
+END
+
+IF ~~ THEN BEGIN 176 // from: 175.0
+  SAY #15346 /* ~"허? 미안해, 대장. 난 저런 자식을 보면 참을 수가 없어."~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 33
+END
+
+IF ~~ THEN BEGIN 177 // from: 175.1
+  SAY #15347 /* ~"내가 아는 게 그 정도라면 나는-"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 33
+END
+
+IF ~~ THEN BEGIN 178 // from:
+  SAY #15348 /* ~"뭐? 난 미미르에 불과하다고, 대장! 난 '결투'를 할 수가 없어!"~ */
+  IF ~~ THEN DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+~ EXTERN ~DADYZOEL~ 35
+END
+
+IF ~~ THEN BEGIN 179 // from:
+  SAY #15349 /* ~"그건... 일종의 말하는 백과사전이야. 그 일에 대해선 말하고 싶지가 않아. 좀 부끄럽거든, 정말이야."~ */
+  IF ~  GlobalLT("Morte_Mimir","GLOBAL",2)
+~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0)
+~ EXTERN ~DADYZOEL~ 36
+  IF ~  GlobalGT("Morte_Mimir","GLOBAL",1)
+~ THEN REPLY #65537 /* ~"하지만 자네는 미미르가 아니네, 모트."~ */ EXTERN ~DADYZOEL~ 36
+END
+
+IF ~~ THEN BEGIN 180 // from:
+  SAY #15350 /* ~"이봐, 대장... 놈을 그렇게 그냥 보내 줄 거여? 가서 그 좀스러운 방탕자를 혼내주자고! 대장이 놈을 잡으면 난 그의 눈을 공격할게!"~ */
+  IF ~~ THEN REPLY #15494 /* ~"자네가 옳네, 놈을 해치우세."~ */ EXTERN ~DADYZOEL~ 19
+  IF ~~ THEN REPLY #15495 /* ~"지금은 그럴 때가 아니네, 모트. 가세."~ */ DO ~SetGlobal("Adyzoel","AR0400",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 181 // from: 185.0
+  SAY #16613 /* ~"허? 그래, 대장. 하라는 대로 하지."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #16881 /* ~"고맙소. 질문할 것들이 좀 있소, 통곡자..."~ */ EXTERN ~DMFTREE~ 28
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #16882 /* ~"난 진지하네, 모트, 노력을 해볼 수 있겠나?"~ */ DO ~IncrementGlobal("Tree_Helpers","AR0400",1)
+~ GOTO 182
+  IF ~~ THEN REPLY #16883 /* ~"고맙네, 모트. 안녕히 계시오, 나무를-위해-통곡하는-자여."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 182 // from: 181.1
+  SAY #16614 /* ~모트는 조용히 당신을 바라보더니 고개를 끄덕인다. "그래, 할 수도 있겠지. 만약 그게 대장한테 중요하다면 하겠어."~ */
+  IF ~  NearbyDialog("DAnnah")
+Global("Tree_A","AR0400",0)
+~ THEN REPLY #16884 /* ~"고맙소. 안나? 도울 수 있겠소?"~ */ DO ~SetGlobal("Tree_A","AR0400",1)
+~ EXTERN ~DANNAH~ 99
+  IF ~  NearbyDialog("DIgnus")
+Global("Tree_I","AR0400",0)
+~ THEN REPLY #16885 /* ~"고맙네. 이그너스?"~ */ DO ~SetGlobal("Tree_I","AR0400",1)
+~ EXTERN ~DIGNUS~ 11
+  IF ~  NearbyDialog("DGrace")
+Global("Tree_G","AR0400",0)
+~ THEN REPLY #16886 /* ~"고맙네. 그레이스, 고려해 보겠소?"~ */ DO ~SetGlobal("Tree_G","AR0400",1)
+~ EXTERN ~DGRACE~ 14
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+~ THEN REPLY #16887 /* ~"고맙네. 다콘, 이 사람을 도울 수가 있겠소?"~ */ DO ~SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 74
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+Global("Dakkon_Slave","Global",1)
+~ THEN REPLY #16888 /* ~"고맙네. 다콘: 이 사람을 도우시오."~ */ DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1)
+SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 75
+  IF ~  NearbyDialog("DNordom")
+Global("Tree_N","AR0400",0)
+~ THEN REPLY #16889 /* ~"고맙네. 노돔, 도울 수 있겠소?"~ */ DO ~SetGlobal("Tree_N","AR0400",1)
+~ EXTERN ~DNORDOM~ 1
+  IF ~  NearbyDialog("DVhail")
+Global("Tree_V","AR0400",0)
+~ THEN REPLY #16890 /* ~"고맙네. 베일로, 도와줄 수 있겠소?"~ */ DO ~SetGlobal("Tree_V","AR0400",1)
+~ EXTERN ~DVHAIL~ 1
+  IF ~~ THEN REPLY #16891 /* ~"고맙네. 질문할 것들이 좀 있소, 통곡자..."~ */ EXTERN ~DMFTREE~ 28
+  IF ~~ THEN REPLY #16892 /* ~"고맙네, 모트. 안녕히 계시오, 나무를-위해-통곡하는-자여."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 183 // from:
+  SAY #16615 /* ~"글쎄, 이런 짓이 무슨 소용이 있는지 *정말* 모르겠군. 그런다고 해서 이 나무들이 살아날 건 아니라고, 대장."~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 2
+END
+
+IF ~~ THEN BEGIN 184 // from:
+  SAY #16616 /* ~"이런 젠장. 이런 식으로 시간을 낭비한다니 믿을 수가 없군!"~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 3
+END
+
+IF ~~ THEN BEGIN 185 // from:
+  SAY #16617 /* ~"이봐, 대장. 난 별난 것들을 많이 봤어... 하지만 그런 일이 정말 *가능*하다니 정말 믿을 수가 없어."~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Tree_M","AR0400",0)
+~ THEN REPLY #16893 /* ~"고맙소, 노돔. 모트? 어떻게 생각하나?"~ */ DO ~SetGlobal("Tree_M","AR0400",1)
+~ GOTO 181
+  IF ~  NearbyDialog("DAnnah")
+Global("Tree_A","AR0400",0)
+~ THEN REPLY #16894 /* ~"고맙소, 노돔. 안나? 도울 수 있겠소?"~ */ DO ~SetGlobal("Tree_A","AR0400",1)
+~ EXTERN ~DANNAH~ 99
+  IF ~  NearbyDialog("DIgnus")
+Global("Tree_I","AR0400",0)
+~ THEN REPLY #16895 /* ~"고맙소, 노돔. 이그너스?"~ */ DO ~SetGlobal("Tree_I","AR0400",1)
+~ EXTERN ~DIGNUS~ 11
+  IF ~  NearbyDialog("DGrace")
+Global("Tree_G","AR0400",0)
+~ THEN REPLY #16896 /* ~"고맙소, 노돔. 그레이스, 고려해 보겠소?"~ */ DO ~SetGlobal("Tree_G","AR0400",1)
+~ EXTERN ~DGRACE~ 14
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+~ THEN REPLY #16897 /* ~"고맙소, 노돔. 다콘, 이 사람을 도울 수가 있겠소?"~ */ DO ~SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 74
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+Global("Dakkon_Slave","Global",1)
+~ THEN REPLY #16898 /* ~"고맙소, 노돔. 다콘: 이 사람을 도우시오."~ */ DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1)
+SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 75
+  IF ~  NearbyDialog("DVhail")
+Global("Tree_V","AR0400",0)
+~ THEN REPLY #16899 /* ~"고맙소, 노돔. 베일로, 도와줄 수 있겠소?"~ */ DO ~SetGlobal("Tree_V","AR0400",1)
+~ EXTERN ~DVHAIL~ 1
+  IF ~~ THEN REPLY #16900 /* ~"고맙소, 노돔. 질문할 것들이 좀 있소, 통곡자..."~ */ EXTERN ~DMFTREE~ 28
+  IF ~~ THEN REPLY #16901 /* ~"정말 고맙소, 노돔. 안녕히 계시오, 나무를-위해-통곡하는-자여."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 186 // from:
+  SAY #16618 /* ~"오! 도저히 지켜볼 수가 없군!"~ */
+  IF ~~ THEN EXTERN ~DIGNUS~ 13
+END
+
+IF ~~ THEN BEGIN 187 // from:
+  SAY #17533 /* ~"나쁠 것 없지. 우리가 기분이 나쁠 때 놈을 걷어차면 참 재미있겠지, 안 그래?" 흠... 뭐 적어도 대장이 나 대신 걷어차 줄 수는 있겠지. 나도 그 뜨거운 석탄으로 쑤시면 4.5 미터를 뛴다는 걸 보고 싶어!"~ */
+  IF ~  NearbyDialog("DAnnah")
+~ THEN REPLY #17583 /* ~"어떻게 생각하오, 안나?"~ */ EXTERN ~DANNAH~ 107
+  IF ~  PartyGoldGT(39)
+~ THEN REPLY #17584 /* ~"한 마리 사겠소, 상인."~ */ DO ~TakePartyGold(40)
+~ EXTERN ~D300MER5~ 5
+  IF ~  PartyGoldGT(39)
+~ THEN REPLY #17585 /* ~"돈을 낭비하지 않는 것이 좋을 것 같소. 질문할 것들이 좀 있소, 상인..."~ */ EXTERN ~D300MER5~ 2
+  IF ~  PartyGoldGT(39)
+~ THEN REPLY #17586 /* ~"사지 않겠소, 상인. 안녕히 계시오."~ */ EXIT
+  IF ~  PartyGoldLT(40)
+~ THEN REPLY #17587 /* ~"내겐 그만한 돈이 없소, 상인, 하지만 물어볼 것들이 좀 있소..."~ */ EXTERN ~D300MER5~ 2
+  IF ~  PartyGoldLT(40)
+~ THEN REPLY #17588 /* ~"관두시오, 상인. 내겐 그만한 돈이 없소. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 188 // from:
+  SAY #18801 /* ~모트는 시선을 그에게로 돌린다. "꺼져."~ */
+  IF ~~ THEN REPLY #18802 /* ~"당신은 이 해골을 가질 수가 없소."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
+~ EXTERN ~DCOLYLFN~ 5
+  IF ~~ THEN REPLY #18803 /* ~"이건 당신 해골이 아니오."~ */ EXTERN ~DCOLYLFN~ 6
+  IF ~~ THEN REPLY #18804 /* ~진실: "그래, 해골을 가져가시오."~ */ EXTERN ~DCOLYLFN~ 9
+  IF ~~ THEN REPLY #18805 /* ~그가 방심하면 즉시 공격한다: "그래, 해골을 가져가시오."~ */ EXTERN ~DCOLYLFN~ 10
+  IF ~~ THEN REPLY #18578 /* ~진실: "만약 당신이 그 해골이 당신 것이라는 걸 입증할 수 있다면, 그것을 당신에게 주겠소. 그게 당연하니까."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Yellow_1","GLOBALLaw",1)
+~ EXTERN ~DCOLYLFN~ 12
+  IF ~~ THEN REPLY #18807 /* ~"당신은 누구요?"~ */ EXTERN ~DCOLYLFN~ 13
+  IF ~~ THEN REPLY #18808 /* ~"내가 당신에게서 그 해골을 돈주고 사겠소. 좋소?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Yellow_1","GLOBALGood",1)
+~ EXTERN ~DCOLYLFN~ 14
+END
+
+IF ~~ THEN BEGIN 189 // from:
+  SAY #18809 /* ~모트는 사내의 손가락을 엽기적인 담배처럼 이빨로 물고 있다. 그는 손가락을 문 채로 말한다. "또 날 건드리면 네놈 손도 무사하지 못할 걸."~ */
+  IF ~~ THEN REPLY #18810 /* ~"모트! 이 자에게 그의 손가락을 돌려주게."~ */ GOTO 190
+  IF ~~ THEN REPLY #18811 /* ~"운도 나쁘군. 꺼져, 이 잡종아."~ */ EXTERN ~DCOLYLFN~ 11
+  IF ~~ THEN REPLY #18812 /* ~"그건 좋은 교훈이 될 거요. 안녕히 계시오."~ */ EXTERN ~DCOLYLFN~ 11
+END
+
+IF ~~ THEN BEGIN 190 // from: 189.0
+  SAY #18813 /* ~모트는 손가락을 사내를 향해 내뱉는다. 그것은 사내의 가슴에 맞고 땅바닥에 떨어진다. ~ */
+  IF ~~ THEN REPLY #18814 /* ~"운도 나쁘군. 꺼져, 이 잡종아."~ */ EXTERN ~DCOLYLFN~ 11
+  IF ~~ THEN REPLY #18815 /* ~"그건 좋은 교훈이 될 거요. 안녕히 계시오."~ */ EXTERN ~DCOLYLFN~ 11
+END
+
+IF ~~ THEN BEGIN 191 // from:
+  SAY #18816 /* ~모트는 돌아서 당신을 향한다. "대장, 이 쓰레기에겐 아무 것도 주지 마."~ */
+  IF ~~ THEN REPLY #18817 /* ~"나..."~ */ EXTERN ~DCOLYLFN~ 15
+END
+
+IF ~~ THEN BEGIN 192 // from:
+  SAY #18818 /* ~모트는 사내 쪽으로 시선을 돌린다. "너한테 얘기한 게 아니야, 이 머저리야. 너한테 얘기할 때는 너같은 놈도 이해할 수 있도록 꿀꿀거려 줄 테니까 안심하라고."~ */
+  IF ~~ THEN EXTERN ~DCOLYLFN~ 16
+END
+
+IF ~~ THEN BEGIN 193 // from:
+  SAY #18819 /* ~"대장, 그러지 마."~ */
+  IF ~  PartyGoldGT(4)
+~ THEN REPLY #18820 /* ~그에게 동전 다섯 닢을 준다.~ */ DO ~TakePartyGold(5)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldGT(49)
+~ THEN REPLY #18821 /* ~그에게 동전 쉰 닢을 준다.~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldGT(99)
+~ THEN REPLY #18822 /* ~그에게 동전 백 닢을 준다.~ */ DO ~TakePartyGold(100)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldGT(499)
+~ THEN REPLY #18823 /* ~그에게 동전 오백 닢을 준다.~ */ DO ~TakePartyGold(500)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldLT(5)
+~ THEN REPLY #18824 /* ~"난 당신에게 줄만한 돈이 없소."~ */ EXTERN ~DCOLYLFN~ 19
+  IF ~~ THEN REPLY #18825 /* ~"내 제의는 없던 걸로 하겠소. 이건 당신 해골이 아니오, 그리고 당신에게 줄 생각도 없소."~ */ EXTERN ~DCOLYLFN~ 6
+END
+
+IF ~~ THEN BEGIN 194 // from:
+  SAY #18826 /* ~"난 다원 우주에서 제일 멍청한 자와 떠다니고 있군."~ */
+  IF ~~ THEN REPLY #18827 /* ~"... 그리고 뭐라고, 노란 손가락? 당신으로 부터 훔치면 *뭘* 어떻게 하겠다고?"~ */ EXTERN ~DCOLYLFN~ 20
+  IF ~~ THEN REPLY #18828 /* ~"이제 그 문제는 해결됐으니 내 질문에나 대답해주시오, 노란 손가락." ~ */ EXTERN ~DCOLYLFN~ 23
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #18829 /* ~"안녕히 계시오, 노란 손가락."~ */ EXTERN ~DCOLYLFN~ 41
+  IF ~  CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #18830 /* ~"안녕히 계시오, 노란 손가락."~ */ DO ~DestroyPartyGold(5)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 195 // from:
+  SAY #18831 /* ~"이봐, 대장!"~ */
+  IF ~~ THEN EXTERN ~DCOLYLFN~ 52
+END
+
+IF ~~ THEN BEGIN 196 // from:
+  SAY #18832 /* ~"내가 떠 있는 곳에서도 별로 보기가 좋지 않군."~ */
+  IF ~  PartyGoldGT(4)
+~ THEN REPLY #18833 /* ~그에게 동전 다섯 닢을 준다.~ */ DO ~TakePartyGold(5)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~  PartyGoldGT(9)
+~ THEN REPLY #18834 /* ~그에게 동전 열 닢을 준다.~ */ DO ~TakePartyGold(10)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~  PartyGoldGT(49)
+~ THEN REPLY #18835 /* ~그에게 동전 쉰 닢을 준다.~ */ DO ~TakePartyGold(50)
+IncrementGlobalOnceEx("GLOBALGood_Yellow_2","GLOBALGood",1)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~  PartyGoldGT(99)
+~ THEN REPLY #18836 /* ~그에게 동전 백 닢을 준다.~ */ DO ~TakePartyGold(100)
+IncrementGlobalOnceEx("GLOBALGood_Yellow_2","GLOBALGood",1)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~~ THEN REPLY #18837 /* ~"내가 했던 말을 취소하겠소. 떠나시오, 그리고 다시는 내 앞에 얼씬거리지 마시오."~ */ EXTERN ~DCOLYLFN~ 61
+END
+
+IF ~~ THEN BEGIN 197 // from:
+  SAY #19031 /* ~"이봐, 덩치 큰 친구. 벽 속의 당신 친구는 잘 지내고 있어?"~ */
+  IF ~~ THEN EXTERN ~DOJO~ 11
+END
+
+IF ~~ THEN BEGIN 198 // from:
+  SAY #19032 /* ~모트는 고개를 숙인다. "대장 마음대로 하라고."~ */
+  IF ~~ THEN REPLY #19033 /* ~"좋소. 오조, 질문할 것이 있소."~ */ EXTERN ~DOJO~ 12
+  IF ~~ THEN REPLY #19034 /* ~"괜찮네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 199 // from:
+  SAY #19551 /* ~"와우, 대장... 정말 예쁘군, 안 그래? 아무 데서나 저런 미인을 만날 수 있는 건 아니라고."~ */
+  IF ~~ THEN REPLY #19666 /* ~"여자든 아니든 간에 난 썩어가는 시체에게는 별 매력을 느끼지 못하네, 모트."~ */ GOTO 200
+  IF ~~ THEN REPLY #19667 /* ~"글쎄, 만약 그 '역겹고, 구더기투성이이며, 그리고 썩어 가는' 시체만 어떻게 할 수 있다면..."~ */ GOTO 201
+END
+
+IF ~~ THEN BEGIN 200 // from: 199.0
+  SAY #19552 /* ~모트는 해골 안에서 눈알을 굴린다. "허! 언젠가는 대장도 내 말을 이해하게 될 거라고."~ */
+  IF ~  Global("Speak_With_Dead","GLOBAL",0)
+~ THEN REPLY #19668 /* ~그를 무시하고 좀비에게 인사한다.~ */ EXTERN ~DZOMCITF~ 1
+  IF ~  Global("Speak_With_Dead","GLOBAL",1)
+~ THEN REPLY #19669 /* ~그를 무시하고 좀비에게 인사한다.~ */ EXTERN ~DZOMCITF~ 3
+END
+
+IF ~~ THEN BEGIN 201 // from: 199.1
+  SAY #19553 /* ~"그래, 보라고, 내가 얘기했... 이봐!" 모트는 돌아서 당신을 마주본다. "나한테 빈정대는 거야?"~ */
+  IF ~  Global("Speak_With_Dead","GLOBAL",0)
+~ THEN REPLY #19670 /* ~그를 무시하고 좀비에게 인사한다.~ */ EXTERN ~DZOMCITF~ 1
+  IF ~  Global("Speak_With_Dead","GLOBAL",1)
+~ THEN REPLY #19671 /* ~그를 무시하고 좀비에게 인사한다.~ */ EXTERN ~DZOMCITF~ 3
+END
+
+IF ~~ THEN BEGIN 202 // from:
+  SAY #19681 /* ~" 에... 그... 것하고는 얘기하지 않는 게 좋을 걸."~ */
+  IF ~~ THEN REPLY #19691 /* ~"왜지, 모트?"~ */ GOTO 203
+  IF ~~ THEN REPLY #19692 /* ~"그럼 좋네. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #19693 /* ~모트를 무시하고 굴에게 인사한다.~ */ EXTERN ~DGHOCITM~ 1
+END
+
+IF ~~ THEN BEGIN 203 // from: 202.0
+  SAY #19682 /* ~"그들도 한때는 인간이었어... 하지만 그들, 또는 그들의 선조가 시체를 먹었고 그 결과로 저 꼴이 된 거지. 정말 역겨운 얘기야, 대장... 그들은 동물과 별로 다를 것이 없어. 놈들은 *워험한* 동물이야."~ */
+  IF ~~ THEN REPLY #19694 /* ~"그럼 좋네. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #19695 /* ~"그래도 난 그와 얘기를 해야겠네."~ */ EXTERN ~DGHOCITM~ 1
+END
+
+IF ~~ THEN BEGIN 204 // from:
+  SAY #19702 /* ~" 에... 그... 것하고는 얘기하지 않는 게 좋을 걸."~ */
+  IF ~~ THEN REPLY #19713 /* ~"난 놀랐네, 모트... 그것은 언데드에 여자일세. 대개 그거면 자네에겐 충분하지 않나?"~ */ GOTO 206
+  IF ~~ THEN REPLY #19714 /* ~"왜지, 모트?~ */ GOTO 205
+  IF ~~ THEN REPLY #19715 /* ~"그럼 좋네. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #19716 /* ~모트를 무시하고 굴에게 인사한다.~ */ EXTERN ~DGHOCITF~ 1
+END
+
+IF ~~ THEN BEGIN 205 // from: 204.1 206.0
+  SAY #19703 /* ~"그들도 한때는 인간이었어... 하지만 그들, 또는 그들의 선조가 시체를 먹었고 그 결과로 저 꼴이 된 거지. 정말 역겨운 얘기야, 대장... 그들은 동물과 별로 다를 것이 없어. 놈들은 *워험한* 동물이야."~ */
+  IF ~~ THEN REPLY #19717 /* ~"그럼 좋네. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #19718 /* ~"그래도 난 그녀와 얘기를 해야겠네."~ */ EXTERN ~DGHOCITF~ 1
+END
+
+IF ~~ THEN BEGIN 206 // from: 204.0
+  SAY #19704 /* ~"그건 같은 게 아니라고, 대장..."~ */
+  IF ~~ THEN GOTO 205
+END
+
+IF ~~ THEN BEGIN 207 // from:
+  SAY #20469 /* ~"이 늙은이는 장님에다가 귀도 거의 먹었다고."~ */
+  IF ~~ THEN EXTERN ~DMARTA~ 9
+END
+
+IF ~~ THEN BEGIN 208 // from:
+  SAY #20470 /* ~"내장이라는 의미인 것 같아. 그 의미였기를 바래."~ */
+  IF ~~ THEN EXTERN ~DMARTA~ 15
+END
+
+IF ~~ THEN BEGIN 209 // from:
+  SAY #20471 /* ~모트는 마타 쪽으로 돌아선다. "그래, '물건들.'" 그는 다시 당신 쪽으로 돌아선다. "다 의미론의 문제지."~ */
+  IF ~  GlobalLT("Know_Marta_Work","GLOBAL",3)
+~ THEN REPLY #20612 /* ~"마타, 왜 당신은 시체로부터 이빨과 꿰맨 실을 빼내는 거요?"~ */ DO ~SetGlobal("Know_Marta_Work","GLOBAL",3)
+~ JOURNAL #20538 /* ~여자 재봉사 마타의 일은 그녀에게 주어진 시체로부터 이빨을 뽑아내고 꿰맨 곳을 뜯어 값나가는 물건이 없는 지 살핀 후 다시 꿰매는 일이다. ~ */ EXTERN ~DMARTA~ 16
+  IF ~  GlobalGT("Know_Marta_Work","GLOBAL",2)
+~ THEN REPLY #20613 /* ~"마타, 왜 당신은 시체로부터 이빨과 꿰맨 실을 빼내는 거요?"~ */ JOURNAL #20538 /* ~여자 재봉사 마타의 일은 그녀에게 주어진 시체로부터 이빨을 뽑아내고 꿰맨 곳을 뜯어 값나가는 물건이 없는 지 살핀 후 다시 꿰매는 일이다. ~ */ EXTERN ~DMARTA~ 16
+  IF ~~ THEN REPLY #20614 /* ~"어... 좋소. 이만 떠나야겠소, 마타. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 210 // from:
+  SAY #20472 /* ~"난 이 짓거리를 보지 *않을* 거야."~ */
+  IF ~~ THEN EXTERN ~DMARTA~ 24
+END
+
+IF ~~ THEN BEGIN 211 // from:
+  SAY #21602 /* ~"이런 염병할! 다버스로군!"~ */
+  IF ~~ THEN REPLY #24695 /* ~"무슨 일인가?"~ */ GOTO 212
+END
+
+IF ~~ THEN BEGIN 212 // from: 211.0
+  SAY #21603 /* ~"그는 다버스야. 그들은 퍼즐과 같은 기호로 '말하지.' 만약 그가 무슨 말을 하는지 모르겠다면 번역해 줄 토박이를 찾거나 그와 의사소통을 할 방법을 찾는 게 좋을 걸. 정말 짜증나는 놈들이지. 내 생각에 놈들은 말을 할 수 있으면서도 일부로 퍼즐을 내서 다른 사람들을 골탕먹이려는 것 같아."~ */
+  IF ~~ THEN REPLY #24696 /* ~"'다버스'란 무엇안가?"~ */ GOTO 213
+END
+
+IF ~~ THEN BEGIN 213 // from: 212.0
+  SAY #21604 /* ~"들리는 얘기로는 그들은 레이디 오브 페인의 청소부라는군. 그들은 레이디의 기분에 따라 시길을 부수거나 수리하지. 그들은 시체 파리보다도 징그럽다고." 모트는 한숨을 쉰다. "하지만 다버스는 때려죽일 수도 없어, 그러면 레이디가... 화를 낼 테니."~ */
+  IF ~  Global("Know_Lady","GLOBAL",0)
+~ THEN REPLY #24697 /* ~"'레이디 오브 페인?' 그게 누군가?"~ */ DO ~SetGlobal("Know_Lady","GLOBAL",1)
+~ GOTO 214
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #24698 /* ~"내게 레이디 오브 페인에 대해 어떤 얘기를 해줄 수 있겠소?"~ */ GOTO 214
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #24699 /* ~"알겠소."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 214 // from: 213.0 213.1
+  SAY #21605 /* ~"그녀는 이 도시의 지배자야. 대장도 그녀를 보면 알 거야. 그녀의 얼굴 주변에는 칼날들이 달렸고, 그녀는 거인만큼이나 거대하며, 저 친구들처럼 공중에 떠다니지." 모트는 당신들 둘을 바라보고 있는 다버스를 가리킨다. "아무도 그녀에 대해서 자세히 알지는 못해... 그녀는 거의 말을 하지 않아. 대장이 알아야 할 건 그녀를 화나게 해서는 안 된다는 것 뿐이야. 이건 내 충고인데, 만약 그녀를 보게 되면 도망치라고."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #24700 /* ~"어... 잠깐 기다리게. 자넨 다버스들은 떠다닌다고 했네. 그런데 이 자는 땅 위를 걷고 있지 않은가?"~ */ GOTO 215
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #24701 /* ~"어... 잠깐 기다리게. 자넨 다버스들은 떠다닌다고 했네. 그런데 이 자는 땅 위를 걷고 있지 않은가?"~ */ GOTO 215
+  IF ~~ THEN REPLY #24702 /* ~"알겠소."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 215 // from: 214.0 214.1
+  SAY #21606 /* ~모트는 다버스를 흘긋 보더니 눈을 크게 뜬다. "아하! 난 너희들 염소 대가리들도 걸을 수 있는 줄 진작부터 알고 있었지!" 모트는 즐거워하며 당신 쪽으로 고개를 돌린다. "하! 이 녀석은 땅 위로 떠다닐 정도로 고상하지 않은 모양이야." ~ */
+  IF ~~ THEN REPLY #24703 /* ~"그럴지도..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 216 // from:
+  SAY #21607 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 시길 토박이를 찾아보라고."~ */
+  IF ~~ THEN REPLY #24704 /* ~"알겠네."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 217 // from:
+  SAY #21608 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 여기 있는 휜들링 계집에게 부탁하라고." 그는 안나를 가리킨다. "그녀는 벌통 토박이니까."~ */
+  IF ~~ THEN REPLY #24705 /* ~"그렇게 하도록 하지..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 218 // from:
+  SAY #21609 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해?" 그는 다콘을 가리킨다. "여기 있는 '나는 잘났으니 너희들 따위와는 얘기를 안 해'하는 양반에게 부탁하라고."~ */
+  IF ~~ THEN REPLY #24706 /* ~"그렇게 하도록 하지..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 219 // from:
+  SAY #21610 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 타나리에게 부탁하라고." 그는 훨-후럼-그레이스를 가리킨다. "아마 그녀는 이 친구들하고 늘 대화를 나누고 있을 거라고." ~ */
+  IF ~~ THEN REPLY #24707 /* ~"그렇게 하도록 하지..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 220 // from:
+  SAY #22061 /* ~"당신은 그들을 죽이고 싶은 거겠지. 유정은 더스트맨을 위협하니까."~ */
+  IF ~~ THEN REPLY #22062 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ EXTERN ~DSOEGO~ 83
+  IF ~~ THEN REPLY #22063 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 221 // from:
+  SAY #22849 /* ~모트는 당신을 쳐다보고 고개를 젓는다 ~ */
+  IF ~~ THEN REPLY #22850 /* ~"그건 뭔가, 입방체 영웅? 모트의 바보 같은 해골? 그는 바보야, 그렇지 않나, 입방체 영웅?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_3","GLOBALLaw",-1)
+~ GOTO 222
+  IF ~~ THEN REPLY #22851 /* ~입방체를 치운다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 222 // from: 221.0
+  SAY #22852 /* ~"이봐! 녀석은 그런 말을 하지 않았어!"~ */
+  IF ~~ THEN REPLY #22853 /* ~"아니, 그랬다고! 방금 그렇게 얘기를 했어!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_4","GLOBALLaw",-1)
+~ GOTO 223
+  IF ~~ THEN REPLY #22854 /* ~입방체를 치운다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 223 // from: 222.0
+  SAY #22855 /* ~"뭐?! 내게 그걸 줘!"~ */
+  IF ~~ THEN REPLY #22856 /* ~"아니, 그는 내 것이네, 그는 나하고만 놀 거야. 아닌가, 입방체 영웅? 그래, 그렇다고!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_5","GLOBALLaw",-1)
+~ GOTO 224
+  IF ~~ THEN REPLY #22857 /* ~입방체를 치운다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 224 // from: 223.0
+  SAY #22858 /* ~"나는. 그걸. 잠시. 손에. 쥐고. 싶을. 뿐이야."~ */
+  IF ~~ THEN REPLY #22859 /* ~"하지만 자네에겐 손이 없네."~ */ GOTO 225
+  IF ~~ THEN REPLY #22860 /* ~입방체를 치운다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 225 // from: 224.0
+  SAY #22861 /* ~"이빨로 물고 있으면 돼."~ */
+  IF ~~ THEN REPLY #22862 /* ~"아니, 지금은 치우는 것이 좋을 것 같네."~ */ GOTO 226
+END
+
+IF ~~ THEN BEGIN 226 // from: 225.0
+  SAY #22863 /* ~"나는 그 모드론 입방체를 박살낼 거야."~ [MRT251] */
+  IF ~~ THEN REPLY #22864 /* ~"뭔가 들었나, 입방체 영웅? 나도 못 들었어!"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 227 // from:
+  SAY #22892 /* ~"오오!" 크래독이 화내는 욕설을 퍼붓는 것을 들으며 모트는 이빨을 딱딱거린다... 모트는 크래독이 하는 욕을 머릿속에 암기하려는 듯하다.~ [MRT387] */
+  IF ~~ THEN EXTERN ~DCRADDO~ 15
+END
+
+IF ~~ THEN BEGIN 228 // from:
+  SAY #24174 /* ~"이봐, 보스 난 정말 그가 말을 하다가... 잠시... 멈추는... 데는... 정말... 질렸어... 이제... 그가 입을... 다문 건... 정말 다행이야." ~ */
+  IF ~~ THEN REPLY #24175 /* ~"정말 웃기는군, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 229 // from:
+  SAY #24176 /* ~"보스, 무한한 물을 가지고 대체 우리에게 무슨 필요가 있지? 어디 불이라도 났어?" ~ */
+  IF ~~ THEN REPLY #24177 /* ~"나중에 쓸모가 있을지도 모르네, 모트. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #24178 /* ~"그건 당연히 해야 할 일이네, 모트."~ */ GOTO 230
+END
+
+IF ~~ THEN BEGIN 230 // from: 229.1
+  SAY #24179 /* ~"해야 할 옳은 일? 혹시 잊어먹었다면 상기시켜주겠는데, 대장에게는 스스로 해결해야 할 문제가 있다고! 하지만 결정권을 쥐고 있는 건 대장이니까 하고 싶은 대로 하라고."~ */
+  IF ~~ THEN REPLY #24180 /* ~"승인을 해주어 고맙군, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 231 // from:
+  SAY #24903 /* ~"이봐... 괜찮아? 난 대장이 정말로 죽은 줄 알았다고."~ */
+  IF ~~ THEN REPLY #24904 /* ~"Qu...? 당신은 누구요?"~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+~ GOTO 232
+  IF ~~ THEN REPLY #24905 /* ~"자네가 하고 싶은 말들이 무수히 많다는 건 나도 아네, 모트, 하지만 입을 좀 닥치고 날 그냥 따르게."~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 232 // from: 231.0
+  SAY #24906 /* ~"어... 내가 누구냐고?. "*당신*부터 먼저 대답하는 게 어때? 당신은 누구지?"~ */
+  IF ~~ THEN REPLY #24907 /* ~"모르겠네... 기억을 할 수가 없어."~ */ GOTO 233
+  IF ~~ THEN REPLY #24908 /* ~"내가 먼저 질문했네, 해골."~ */ GOTO 234
+END
+
+IF ~~ THEN BEGIN 233 // from: 232.0 234.0 235.0
+  SAY #24909 /* ~"자기 *이름*도 기억을 못해? 헤, 다음 번에 거리에 나가 밤을 보낼 때는 술 좀 작작 마시라고. 내 이름은 모트야. 나도 여기 갇혔어. ~ */
+  IF ~~ THEN REPLY #24910 /* ~"갇혀?"~ */ GOTO 236
+END
+
+IF ~~ THEN BEGIN 234 // from: 232.1
+  SAY #24911 /* ~"그래, 내가 *나중에* 물었어. 당신 이름은 뭐지?"~ */
+  IF ~~ THEN REPLY #24912 /* ~"모르겠네... 기억을 할 수가 없어."~ */ GOTO 233
+  IF ~~ THEN REPLY #24913 /* ~"자네부터 말하게, 해골. 이건 내가 자네에게 주는 마지막 기회네."~ */ GOTO 235
+END
+
+IF ~~ THEN BEGIN 235 // from: 234.1
+  SAY #24914 /* ~"정말 당신은 젖은 로프만큼이나 빡빡하군. 좋아, 좋아... 여기선 내가 참지... 나는 모트야. 당신은 누구지?"~ */
+  IF ~~ THEN REPLY #24915 /* ~"모르겠네... 기억을 할 수가 없어."~ */ GOTO 233
+END
+
+IF ~~ THEN BEGIN 236 // from: 233.0
+  SAY #24916 /* ~"그래, 당신은 일어나 여길 돌아다닐 시간이 없었으니 내가 말해주지. 모든 문을 다 시험해봤지만 소용이 없었어. 이 방은 정조대만큼이나 단단히 잠겨 있어." ~ */
+  IF ~~ THEN REPLY #24917 /* ~"우린 어디에... 갇힌 건가? 이 곳은 대체 어딘가?"~ */ GOTO 237
+END
+
+IF ~~ THEN BEGIN 237 // from: 236.0
+  SAY #24918 /* ~"그것은 '시체안치소'라고 불리지... 임신한 거미만큼이나 매력적인 모양새의 커다란 검은 건물이라고."~ */
+  IF ~~ THEN REPLY #24919 /* ~"'시체안치소?" 난... 죽었나?"~ */ GOTO 238
+END
+
+IF ~~ THEN BEGIN 238 // from: 237.0
+  SAY #24920 /* ~"내 입장에서는 아니야. 하지만 당신 몸은 흉터투성이로군. 어떤 얼간이가 당신 몸에 나이프로 그림이라도 그린 모양이야. 놈이 당신을 끝장내려고 다시 올지도 모르니 그만큼 여기서 도망쳐야 할 이유가 는 셈이지."~ */
+  IF ~~ THEN REPLY #24921 /* ~"어떻게 하면 여기서 나갈 수가 있겠나?"~ */ GOTO 239
+END
+
+IF ~~ THEN BEGIN 239 // from: 238.0
+  SAY #24922 /* ~"모든 문이 다 잠겼으니 열쇠를 찾아야 해. 이 방 안을 활보하고 있는 시체들 중 하나가 가지고 있을 가능성이 높아."~ */
+  IF ~~ THEN REPLY #24923 /* ~"걸어다니는 시체들?"~ */ GOTO 240
+END
+
+IF ~~ THEN BEGIN 240 // from: 28.0 239.0
+  SAY #24924 /* ~"그래, 시체안치소의 관리인들은 시체들을 싸구려 노동력으로 활용하고 있어. 이 시체들은 돌처럼 멍청하지만 별로 위험하지는 않아. 그리고 먼저 공격하지 않는 한 공격을 하진 않아."~ */
+  IF ~~ THEN REPLY #24925 /* ~"다른 방법은 없나? 단지 열쇠 하나 때문에 그들을 죽이고 싶지는 않네."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Morte_1","GLOBALGood",1)
+~ GOTO 241
+  IF ~~ THEN REPLY #24926 /* ~"그럼 나는 이러한 시체들 중 하나를 공격해서 열쇠를 빼앗아야 하나?"~ */ GOTO 242
+END
+
+IF ~~ THEN BEGIN 241 // from: 240.0
+  SAY #24927 /* ~"그러면 그들의 기분이 상할 거라고 생각하는 거야? 그들은 이미 죽었어. 만약 당신이 긍정적인 측면에서 생각하고 싶다면 이렇게 생각하라고. 만약 당신이 그들을 죽이면 그들은 관리인들이 소생시킬 때까지는 휴식을 취할 수 있다고 말이야."~ */
+  IF ~~ THEN REPLY #24928 /* ~"좋네... 그들 중 하나를 쓰러트려 열쇠를 빼앗도록 하겠네."~ */ GOTO 242
+END
+
+IF ~~ THEN BEGIN 242 // from: 240.1 241.0
+  SAY #24929 /* ~"그러기 전에 먼저 무장부터 하라고. 이 근처의 선반에 메스가 하나 있을 거야.
+
+주: 방안을 뒤져 좀비를 공격할 무기를 찾으시오. ~ */
+  IF ~~ THEN REPLY #24930 /* ~"알았네. 찾아보도록 하지."~ */ GOTO 243
+END
+
+IF ~~ THEN BEGIN 243 // from: 242.0
+  SAY #24931 /* ~"마지막으로 한가지 더: 이 시체들은 거북이처럼 느리지만 놈들에게 한 대 맞으면 마치 공성용 망치와 키스하는 기분이 들거야. 불리해지면 튀라고. 당신은 달릴 수 있지만 놈들은 그럴 수가 없으니까. 회복할 동안 놈들과는 일정 거리를 유지하라고."
+
+^NNOTE: <도주> 만약 죽을 위험에 처하게 되면 달리기를 이용해 회복할 동안 좀비들로부터 일정 거리를 유지하라.^-~ */
+  IF ~~ THEN REPLY #24932 /* ~"알았네. 충고를 해주어 고맙네."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ JOURNAL #24933 /* ~나는 내 머리를 명료하게 유지시키고 무슨 일이 일어나고 있는지를 파악하기 위하여 내 경험을 글로 쓰기 시작했다. 나는 시체 공시소의 일종인  "시체안치소"란 곳에서 깨어났다. 나는 내가 누구인지, 내가 여기서 뭘 하고 있는지, 그리고 내가 어떻게 여기에 오게 되었는지도 모른다. 내가 깨어나서 처음 발견한 것은 모트란 말하는 해골이었다. 그는 우리는 이 곳에 갇혔으며 방에 있는 느릿느릿한 시체들 중 하나가 열쇠를 가지고 있을 거라고 말했다. 그는 내게 방의 선반들을 뒤져 메스를 찾아낸 후 시체들 중 하나를 '죽을' 때까지 찌르라고 권하였다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 244 // from:
+  SAY #25962 /* ~"일종의 말하는 백과사전이야, 대장. 난 그 일에 대해선 말하고 싶지가 않아."~ */
+  IF ~  GlobalLT("Morte_Mimir","GLOBAL",2)
+~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0)
+~ EXTERN ~DCWRUSHF~ 27
+  IF ~  GlobalGT("Morte_Mimir","GLOBAL",1)
+~ THEN REPLY #66902 /* ~"하지만 자네는 미미르가 아니네, 모트."~ */ EXTERN ~DCWRUSHF~ 27
+END
+
+IF ~~ THEN BEGIN 245 // from:
+  SAY #25964 /* ~모트는 눈썹(?)을 흔들어 대며 여인 쪽으로 날아간다. "그게 전부가-"~ */
+  IF ~~ THEN REPLY #25965 /* ~"그만둬, 모트."~ */ GOTO 246
+END
+
+IF ~~ THEN BEGIN 246 // from: 245.0
+  SAY #25966 /* ~"그래, 그래. 좋다고." 모트는 눈알을 굴리며 중얼거리기 시작한다. "젠장, 차라리 죽는 게..."~ */
+  IF ~  CheckStatGT(Protagonist,14,INT)
+~ THEN REPLY #25967 /* ~"이봐... 자네 지금 '스스로'라고 했나? 그럼 그들은 보통 그렇지 않단 얘기인가?"~ */ EXTERN ~DCWRUSHF~ 28
+  IF ~~ THEN REPLY #25968 /* ~"나는 이 여자에게 질문할 것이 있네..."~ */ EXTERN ~DCWRUSHF~ 2
+  IF ~~ THEN REPLY #25969 /* ~그녀를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 247 // from:
+  SAY #25970 /* ~모트는 그녀의 말을 끊는다: "말인데, 대장, 그건 모두 미미르의 *품질*에 달렸어. 일부는 나처럼 다른 미미르보다 더 많은 마력이 부여되어 있어. 단지 그뿐이야. 그래... '자의식'이... 더 강하다는 게 옳은 표현이지."~ */
+  IF ~~ THEN REPLY #25971 /* ~"흠..."~ */ EXTERN ~DCWRUSHF~ 29
+  IF ~~ THEN REPLY #25972 /* ~"알겠네."~ */ EXTERN ~DCWRUSHF~ 29
+END
+
+IF ~~ THEN BEGIN 248 // from:
+  SAY #25973 /* ~"이봐! 난 그냥 재미 좀 보려는 거라고, 대장!"~ */
+  IF ~~ THEN EXTERN ~DCWRUSHF~ 27
+END
+
+IF ~~ THEN BEGIN 249 // from:
+  SAY #27285 /* ~"충고를 하겠어, 대장. 여기서부터는 조용히 움직이자고. 필요 이상으로 시체들을 훼손할 필요는 없어... 특히 여자 시체들은. 또한 그들을 '죽이면' 관리자들을 여기로 불러오는 결과를 야기할 수도 있어."~ */
+  IF ~~ THEN REPLY #27303 /* ~"자네가 전에 얘기한 것 같지는 않네... 이 관리자들은 누군가?"~ */ GOTO 250
+  IF ~~ THEN REPLY #27304 /* ~"이 곳에 있는 시체들... 그것들은 다 어디서 왔나?"~ */ GOTO 252
+  IF ~~ THEN REPLY #27305 /* ~"왜 자네는 여자 시체들에 대해서는 신경을 쓰나?"~ */ GOTO 253
+  IF ~~ THEN REPLY #27306 /* ~"알았네... 기억하도록 노력하겠네."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 250 // from: 249.0 252.0 256.0
+  SAY #27286 /* ~"그들은 자신들을 '더스트맨'이라고 부르고 있어. 그들을 알아보는 건 쉽지. 예외없이 검은 법복을 입고 있는데다가 꼭 사후경직을 일으킨 것 같은 얼굴들을 하고 있으니까. 그들은 악귀같은 죽음 숭배자들이야. 그들은 모두 다 죽어야 한다고 믿고 있어... 그것도 빠르면 빠를수록 좋다고."~ */
+  IF ~~ THEN REPLY #27307 /* ~"난 헷갈리네... 내가 탈출하는 것에 대해 더스트맨들이 왜 신경을 쓰지?"~ */ GOTO 251
+END
+
+IF ~~ THEN BEGIN 251 // from: 250.0
+  SAY #27287 /* ~"내가 말할 때 뭘 하고 있었어?! 더스트맨은 모두가 다 죽어야 하며, 그것도 빠르면 빠를수록 좋다고 믿고 있다고 내가 이미 말했잖아. 대장이 보기엔 지금까지 우리가 본 시체들이 죽어서 더 행복해진 것 같아?"~ */
+  IF ~~ THEN REPLY #27308 /* ~"내가 이 곳에서 본 시체들... 그것들은 다 어디서 온 건가?"~ */ GOTO 252
+  IF ~~ THEN REPLY #27309 /* ~"전에 자네는 내게 *여자*시체는 죽이지 말라고 했었네. 그 이유는 뭔가?"~ */ GOTO 253
+  IF ~~ THEN REPLY #27310 /* ~"알았네... 기억하도록 노력하겠네."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 252 // from: 249.1 251.0 256.1
+  SAY #27288 /* ~"다원 우주에서는 매일 누군가 반드시 죽어, 대장. 이 얼간이들은 이 곳의 관리자들에게 사후의 시체에 대한 권리를 판 한심한 작자들의 잔해라고."~ */
+  IF ~~ THEN REPLY #27311 /* ~"가르쳐 주게... 이 관리자들이란 *누구*인가?"~ */ GOTO 250
+  IF ~~ THEN REPLY #27312 /* ~"전에 자네는 내게 *여자*시체는 죽이지 말라고 했었네. 그 이유는 뭔가?"~ */ GOTO 253
+  IF ~~ THEN REPLY #27313 /* ~"알았네... 기억하도록 노력하겠네."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 253 // from: 249.2 251.1 252.1
+  SAY #27289 /* ~"뭐- *진담*이야? 이봐, 대장, 이 죽은 아가씨들은 우리들처럼 산전수전 다 겪은 친구들에게 주어진 마지막 기회라고. 우리는 *기사도* 정신을 발휘해야 해... 열쇠를 찾으려고 그녀들을 칼로 베거나 사지를 절단하는 짓 따위는 해서는 안돼."~ */
+  IF ~~ THEN REPLY #27314 /* ~"마지막 기회? 대체... 무슨 얘긴가?"~ */ GOTO 254
+END
+
+IF ~~ THEN BEGIN 254 // from: 253.0
+  SAY #27290 /* ~"대장, 그들은 죽었어, 그리고 우리들도 죽었어... 내가 무슨 말을 하려는지 알겠어? 그래?"~ */
+  IF ~~ THEN REPLY #27315 /* ~"아니... 그렇지 않네..."~ */ GOTO 255
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #27316 /* ~"진담은 아니겠지."~ */ GOTO 255
+END
+
+IF ~~ THEN BEGIN 255 // from: 254.0 254.1
+  SAY #27291 /* ~"대장, 우린 이미 이 절뚝거리는 아가씨들과 대화를 시작할 화제거리도 가지고 있다고. 우리들은 *모두* 적어도 한 번씩은 죽어 봤어. 그러니 우린 공통의 화제가 있는 셈이지. 그들은 우리처럼 죽은 경험이 있는 사내들을 환영할 거라고."~ */
+  IF ~~ THEN REPLY #27317 /* ~"하지만... 기다리게... 전에 자네는 내가 죽지 않았다고 하지 않았었나?"~ */ GOTO 256
+END
+
+IF ~~ THEN BEGIN 256 // from: 255.0
+  SAY #27292 /* ~"그래... 좋아. *대장*은 죽지 않았을지도 모르지만 *난* 죽었어. 그리고 나라면 여기 있는 체격 좋은 멋진 시체 아가씨들과 기꺼이 관을 함께 쓰겠어." 모트는 기대에 부푼 듯 이빨을 딱딱거리기 시작한다. "물론 그러기 위해서는 우선 관리인들이 그들을 포기해야 하는데 그럴 가능성은 희박하지..."~ */
+  IF ~~ THEN REPLY #27318 /* ~"이 관리자들이 누군지 다시 얘기해주겠나?"~ */ GOTO 250
+  IF ~~ THEN REPLY #27319 /* ~"하지만 이 시체들은 다 어디서 왔나?"~ */ GOTO 252
+  IF ~~ THEN REPLY #27320 /* ~"알았네... 기억하도록 노력하겠네."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 257 // from: 249.3 251.2 252.2 256.2
+  SAY #27293 /* ~"이봐, 대장. 대장은 죽음과 키스를 한 탓에 아직도 정신이 좀 오락가락한 것 같아. 그러니 내가 두 가지 충고를 하겠어. 첫째, 질문할 게 있으면 내게 *물어.* 알겠어?"
+
+^NNOTE: <SPEAKTO>^-~ */
+  IF ~~ THEN REPLY #27321 /* ~"알겠네... 질문할 것이 있으면 자네에게 물어보겠네."~ */ GOTO 258
+END
+
+IF ~~ THEN BEGIN 258 // from: 257.0
+  SAY #27294 /* ~"둘째, 대장이 겉보기의 *반*만큼이라도 건망증이 심하다면, 뭐든지 기록을 하는 습관을 기르라고. 조금이라도 중요할 것 같은 얘기를 듣게 되면 잊지 않도록 즉각 기록을 해."~ */
+  IF ~~ THEN REPLY #27322 /* ~"일지에서처럼?"~ */ GOTO 259
+END
+
+IF ~~ THEN BEGIN 259 // from: 258.0
+  SAY #27295 /* ~"그래, 일지같은 것에 말이야. 만약 대장이 현재의 위치와 같은 중요한 사안들에 대해 가물가물하게 되면 일지를 읽어 기억을 상기시키라고. 알겠어?"
+
+^NNOTE: 일지를 보려면 퀵 메뉴에 있는 일지 버튼을 누른다. 일지는 게임 진행 동안 자동으로 갱신된다.^-~ */
+  IF ~~ THEN REPLY #27323 /* ~"알았네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 260 // from:
+  SAY #27296 /* ~"이 근처의 선반에 메스가 하나 있을 거야. 나라면 이 주변의 시체들과 싸우기 전에 우선 그것부터 찾겠어."~ */
+  IF ~~ THEN REPLY #27324 /* ~"알았네... 계속 찾아보도록 하겠네."~ */ EXIT
+END
+
+IF WEIGHT #8 /* Triggers after states #: 729 444 325 281 742 737 733 487 even though they appear after this state */
+~  Global("Mortuary_Walkthrough","GLOBAL",0)
+PartyHasItem("Scalpel")
+Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+~ THEN BEGIN 261 // from:
+  SAY #27297 /* ~"좋아, 메스를 찾았군! 그럼 이제 가서 저 시체들을 처치하라고... 그리고 걱정하지마. 난 뒤에서 귀중한 전술적 조언을 해줄 테니까."~ */
+  IF ~~ THEN REPLY #27325 /* ~"자네 *도움*이 필요하네, 모트."~ */ GOTO 262
+  IF ~~ THEN REPLY #27326 /* ~"알았네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 262 // from: 261.0
+  SAY #27298 /* ~"나는 물론 대장을 *도울* 거야. 좋은 충고는 얻기 힘든 거라고."~ */
+  IF ~~ THEN REPLY #27327 /* ~"내 말뜻은 시체를 공격하는 걸 도와 달라는 거였네." ~ */ GOTO 263
+  IF ~~ THEN REPLY #27328 /* ~"그럼 좋네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 263 // from: 262.0
+  SAY #27299 /* ~"나? 나는 낭만주의자지 군인이 아니야. 난 방해만 될 거야."~ */
+  IF ~~ THEN REPLY #27329 /* ~"내가 이 시체를 공격할 때 옆에서 도와주지 않으면, 자네는 이 메스의 그 다음 목표물이 될 걸세."~ */ GOTO 264
+  IF ~~ THEN REPLY #27330 /* ~"그럼 좋네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 264 // from: 263.0
+  SAY #27300 /* ~"에... 좋아. 대장을 돕겠어."
+
+주: 만약 당신이 모트가 당신의 공격에 협조하기를 바란다면, 시체를 공격할 때 두 사람 모두를 선택하면 된다. 그러면 모트도 공격에 참가할 것이다.
+~ */
+  IF ~~ THEN REPLY #27331 /* ~"서로 이해를 하게 되어 기쁘군. 자, 해치우세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 265 // from:
+  SAY #27301 /* ~"좋아, 방금 대장이 처치한 놈이 바로 우리가 찾고 있던 시체인 것 같군. 이제 열쇠를 찾아야 해. 그건 틀림없이 그의 몸 어딘가에 있을 거야. 일단 그걸 찾기만 하면 우린 이 곳과 작별이라고."~ */
+  IF ~~ THEN REPLY #27332 /* ~"알겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 266 // from:
+  SAY #27302 /* ~"좋아, 그게 바로 우리가 원하는 열쇠야. 그건 이 방의 문들 중 하나를 열 수 있을 거야."~ */
+  IF ~~ THEN REPLY #27333 /* ~"그럼 열쇠를 가지고 문을 열어 보겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 267 // from:
+  SAY #27911 /* ~모트는 당신 귀에다 대고 속삭인다: "변호사."~ */
+  IF ~~ THEN EXTERN ~DCWCAFEF~ 15
+END
+
+IF ~~ THEN BEGIN 268 // from:
+  SAY #27912 /* ~"일종의 말하는 백과사전이야, 대장. 난 그 일에 대해선 말하고 싶지가 않아."~ */
+  IF ~  GlobalLT("Morte_Mimir","GLOBAL",2)
+~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0)
+~ EXTERN ~DCWCAFEF~ 50
+  IF ~  GlobalGT("Morte_Mimir","GLOBAL",1)
+~ THEN REPLY #65536 /* ~"하지만 자네는 미미르가 아니네, 모트."~ */ EXTERN ~DCWCAFEF~ 50
+END
+
+IF ~~ THEN BEGIN 269 // from:
+  SAY #27913 /* ~모트는 눈썹(?)을 흔들어 대며 여인 쪽으로 날아간다. "그게 전부가-"~ */
+  IF ~~ THEN REPLY #27914 /* ~"그만둬, 모트."~ */ GOTO 270
+END
+
+IF ~~ THEN BEGIN 270 // from: 269.0
+  SAY #27915 /* ~"그래, 그래. 좋다고." 모트는 눈알을 희번덕거리며 중얼거리기 시작한다. "젠장, 차라리 죽는 게..."~ */
+  IF ~  CheckStatGT(Protagonist,14,INT)
+~ THEN REPLY #27916 /* ~"이봐... 자네 지금 '스스로'라고 했나? 그럼 그들은 보통 그렇지 않단 얘기인가?"~ */ EXTERN ~DCWCAFEF~ 51
+  IF ~~ THEN REPLY #27917 /* ~"나는 이 여자에게 질문할 것이 있네..."~ */ EXTERN ~DCWCAFEF~ 4
+  IF ~~ THEN REPLY #27918 /* ~그녀를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 271 // from:
+  SAY #27919 /* ~모트는 그녀의 말을 끊는다: "말인데, 대장, 그건 모두 미미르의 *품질*에 달렸어. 일부는 나처럼 다른 미미르보다 더 많은 마력이 부여되어 있어. 단지 그뿐이야. 그래... '자의식'이... 더 강하다는 게 옳은 표현이지."~ */
+  IF ~~ THEN REPLY #27920 /* ~"흠..."~ */ EXTERN ~DCWCAFEF~ 52
+  IF ~~ THEN REPLY #27921 /* ~"알겠네."~ */ EXTERN ~DCWCAFEF~ 52
+END
+
+IF ~~ THEN BEGIN 272 // from:
+  SAY #27922 /* ~"이봐! 난 그냥 재미 좀 보려는 거라고, 대장!"~ */
+  IF ~~ THEN EXTERN ~DCWCAFEF~ 50
+END
+
+IF ~~ THEN BEGIN 273 // from:
+  SAY #28036 /* ~모트는 만족스러운 듯 고개를 끄덕인다. "이봐, 이 친구 꽤 하는데."~ */
+  IF ~~ THEN REPLY #28041 /* ~"좋소... 당신 돈을 도로 가져가시오, 맬매너."~ */ DO ~TakePartyGold(10)
+~ EXTERN ~DMALMANR~ 13
+  IF ~~ THEN REPLY #28042 /* ~동전 열 닢을 맬매너에게 던진다.~ */ DO ~TakePartyGold(10)
+~ EXTERN ~DMALMANR~ 14
+  IF ~~ THEN REPLY #28043 /* ~"정말? 난 아무 소리도 듣지 못했는데, 모트. 가세."~ */ EXTERN ~DMALMANR~ 15
+END
+
+IF ~~ THEN BEGIN 274 // from:
+  SAY #28037 /* ~모트는 만족스러운 듯 고개를 끄덕인다. "이봐, 이 친구 꽤 하는데."~ */
+  IF ~  Global("Malmaner","GLOBAL",3)
+!Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28038 /* ~"좋소... 당신 돈을 도로 가져가시오, 맬매너."~ */ DO ~TakePartyGold(30)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",3)
+!Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28039 /* ~동전 서른 닢을 맬매너에게 던진다.~ */ DO ~TakePartyGold(30)
+~ EXTERN ~DMALMANR~ 14
+  IF ~  Global("Malmaner","GLOBAL",3)
+Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28040 /* ~"좋소... 당신 돈을 도로 가져가시오, 맬매너."~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",3)
+Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28044 /* ~동전 쉰 닢을 맬매너에게 던진다.~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 14
+  IF ~  Global("Malmaner","GLOBAL",5)
+!Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28045 /* ~"좋소... 당신 돈을 도로 가져가시오, 맬매너."~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",5)
+!Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28046 /* ~동전 쉰 닢을 맬매너에게 던진다.~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 14
+  IF ~  Global("Malmaner","GLOBAL",5)
+Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28047 /* ~"좋소... 당신 돈을 도로 가져가시오, 맬매너."~ */ DO ~TakePartyGold(80)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",5)
+Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28048 /* ~동전 여든 닢을 맬매너에게 던진다.~ */ DO ~TakePartyGold(80)
+~ EXTERN ~DMALMANR~ 14
+  IF ~~ THEN REPLY #28049 /* ~"정말? 난 아무 소리도 듣지 못했는데, 모트. 가세."~ */ EXTERN ~DMALMANR~ 15
+END
+
+IF ~~ THEN BEGIN 275 // from:
+  SAY #28630 /* ~"지루할 것 같군."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 60
+END
+
+IF ~~ THEN BEGIN 276 // from:
+  SAY #28631 /* ~"그녀는 타나리의 일종인 서큐버스라고, 대장."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 72
+END
+
+IF ~~ THEN BEGIN 277 // from:
+  SAY #28632 /* ~"닥쳐, 휜들링!" 모트는 이빨을 딱딱거린다. "나는 서큐버스가 우리와 함께 여행하겠다면 대환영이야... 니가 창자에 마름쇠를 쑤셔 넣는 것만큼이나 재미가 없는 년이라는 건 세상이 다 아는 사실이야."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 166
+END
+
+IF ~~ THEN BEGIN 278 // from:
+  SAY #28633 /* ~"이봐, 잠깐! 차원에 대해 해박한 지식을 가지고 있는 사람은 바로 *나*라고! 그건 내 담당이야, 대장!"~ */
+  IF ~~ THEN REPLY #28634 /* ~"다원 우주에 대해 해박한 지식을 가지고 있는 사람이 우리 파티에 두 사람이나 있다는 건 좋은 일이지. 뿐만 아니라 그녀는 상냥하기까지 하네, 모트." ~ */ GOTO 279
+END
+
+IF ~~ THEN BEGIN 279 // from: 278.0
+  SAY #28635 /* ~"눈에 보약이지! 우리가 아는 어떤 아가씨도 피부를 좀 화끈하게 드러내면 봐줄만 할 텐데!" 모트는 갑자기 조용해진다. "뭐, 내가 별 신경을 쓴다는 얘기는 아니지만, 얘기를 해두는 게 좋을 것 같아서 말한 거야." ~ */
+  IF ~~ THEN REPLY #28636 /* ~"기억해 두겠네, 모트. 이것 보시오, 그레이스 여사, 내가 너무 뻔뻔스럽다면 용서를 하시오, 하지만 우리와 함께 여행을 하겠소?"~ */ EXTERN ~DGRACE~ 79
+END
+
+IF ~~ THEN BEGIN 280 // from:
+  SAY #28637 /* ~"내 흉터투성이 "~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 119
+END
+
+IF WEIGHT #4 /* Triggers after states #: 742 737 733 487 even though they appear after this state */
+~  Global("Morte_Stolen","GLOBAL",2)
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 281 // from:
+  SAY #28738 /* ~"고마워, 대장. 내가 다시 대장과 함께 여행을 하게 돼 얼마나 기쁜지는 말로 표현할 수도 없어." 그의 목소리는 비꼬는 기색이 역력하다. "그리고 나는 그 곳에 있는 동안 새로운 특기를 배웠다고." ~ */
+  IF ~~ THEN REPLY #28743 /* ~"그래, 자네가 돌아와 정말 반갑네."~ */ DO ~SetGlobal("Morte_Stolen","GLOBAL",3)
+~ EXIT
+  IF ~  CheckStatGT(Protagonist,14,CHR)
+~ THEN REPLY #28744 /* ~"미안, 친구. 나는 그에게 엄포를 놓고 싶네."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",2)
+SetGlobal("Morte_Stolen","GLOBAL",3)
+~ GOTO 282
+  IF ~  CheckStatLT(Protagonist,15,CHR)
+~ THEN REPLY #28745 /* ~"미안, 친구. 나는 그에게 엄포를 놓고 싶네."~ */ DO ~SetGlobal("Morte_Stolen","GLOBAL",3)
+~ GOTO 283
+END
+
+IF ~~ THEN BEGIN 282 // from: 281.1
+  SAY #28739 /* ~"정말? 참으로 자상도 하군, 보스는. 좋은 생각이야. 대장을 조건부로 용서를 해주지. 다시 그러지만 말라고." ~ */
+  IF ~~ THEN REPLY #28746 /* ~"물론이지, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 283 // from: 281.2
+  SAY #28740 /* ~"왠지 대장 말을 조금도 믿을 수가 없군. 그냥 이 일이 있었다는 사실을 잊자고. 가자."~ */
+  IF ~~ THEN REPLY #28747 /* ~"알았네."~ */ EXIT
+  IF ~~ THEN REPLY #28748 /* ~"모트, 난 그에게 엄포를 놓고 있었네. 어디 두고 보게."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 284 // from:
+  SAY #28741 /* ~"고마워, 대장. 당장 여기서 나가자고!" 모트는 잠시 멈춘다. "보스, 그런데... 그런데 그 친구들은 정말 뭘 알더군. 그들은 내게 멋진 걸 가르쳐 주었어."~ */
+  IF ~~ THEN REPLY #28749 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 285 // from:
+  SAY #28962 /* ~"어... 대장? 전에 석상을 본 적은 있지? 그것이 말을 하지 않는다는 건 대장도 알지?"~ */
+  IF ~  CheckStatGT(Protagonist,14,INT)
+~ THEN REPLY #28967 /* ~"이걸 생각하게, 모트: 자네는 떠나니며 말하는 해골이네, 그런데 자네가 살아 있는 석상의 가능성을 부정하나?"~ */ GOTO 286
+  IF ~  Global("CW_Sal_Hint","GLOBAL",1)
+~ THEN REPLY #28968 /* ~"내가 만난 살라베쉬라는 메이지가 이 곳에 있다는 돌 인간에 대하여 얘기해주었소. 그가 바로 당신이오?"~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 5
+  IF ~~ THEN REPLY #28969 /* ~"모트, 난 그냥 그를 한 번 만져보겠네..."~ */ EXTERN ~DQUISAI~ 3
+  IF ~~ THEN REPLY #28970 /* ~떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 286 // from: 285.0
+  SAY #28963 /* ~"글쎄... 어...흠. 그건 대장 말이 옳군."~ */
+  IF ~  Global("CW_Sal_Hint","GLOBAL",1)
+~ THEN REPLY #28971 /* ~"내가 만난 살라베쉬라는 메이지가 이 곳에 있다는 돌 인간에 대하여 얘기해주었소. 그가 바로 당신이오?"~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 5
+  IF ~~ THEN REPLY #28972 /* ~"그렇게 하지, 모트. 난 그냥 그를 한 번 만져보겠네..."~ */ EXTERN ~DQUISAI~ 3
+  IF ~~ THEN REPLY #28973 /* ~떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 287 // from:
+  SAY #28964 /* ~"해부학적으로 너무 정확해서 그런 건 아냐, 대장?~ */
+  IF ~~ THEN REPLY #28974 /* ~"그건 수사학적인 질문이었네, 모트."~ */ GOTO 288
+END
+
+IF ~~ THEN BEGIN 288 // from: 287.0
+  SAY #28965 /* ~"물론이야, 대장. 나도 그건 알고 있었어."~ */
+  IF ~  Global("CW_Sal_Hint","GLOBAL",1)
+~ THEN REPLY #28975 /* ~"내가 만난 살라베쉬라는 메이지가 이 곳에 있다는 돌 인간에 대하여 얘기해주었소. 그가 바로 당신이오?"~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 5
+  IF ~~ THEN REPLY #28976 /* ~석상을 내려친다.~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 23
+  IF ~~ THEN REPLY #28977 /* ~떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 289 // from:
+  SAY #28966 /* ~모트는 눈알을 부라리며 시끄럽게 떠든다. "세상에, 이렇게... 말하는... 얼간이가 다시는 없기를!"~ */
+  IF ~~ THEN REPLY #28978 /* ~"나는 당신에 대해 질문할 것이 있소..."~ */ EXTERN ~DQUISAI~ 11
+  IF ~~ THEN REPLY #28979 /* ~"이 곳에 대해 물어볼 것들이 있소."~ */ EXTERN ~DQUISAI~ 30
+  IF ~  Global("Know_Ravel","GLOBAL",1)
+~ THEN REPLY #28980 /* ~"당신은 래벌 퍼즐웰에 대해 무엇을 아시오?"~ */ EXTERN ~DQUISAI~ 29
+  IF ~~ THEN REPLY #28981 /* ~"그 일에 대해선 나중에 얘기하도록 하겠소. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 290 // from:
+  SAY #29677 /* ~"이봐, 대장. 그는 손가락을 포개고 있어!~ */
+  IF ~~ THEN EXTERN ~DQUELL~ 21
+END
+
+IF ~~ THEN BEGIN 291 // from:
+  SAY #30527 /* ~모트가 작은 목소리로 말참견을 한다. "그는 자기가 변호사라는거야. 법적 자문가지. 법정에서 수다를 떠는 작자들 중 하나라고."~ */
+  IF ~~ THEN EXTERN ~DIANNIS~ 10
+END
+
+IF ~~ THEN BEGIN 292 // from:
+  SAY #30816 /* ~모트는 뒤를 돌아본다. "어디?! 어디?!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 2
+END
+
+IF ~~ THEN BEGIN 293 // from:
+  SAY #30817 /* ~모트는 헐떡거린다. "뒤를 보라고, 떠다니는 해골이 또 있어!"~ */
+  IF ~  CheckStatLT(Protagonist,9,INT)
+~ THEN REPLY #30822 /* ~당신이 직접 그를 찾는다.~ */ EXTERN ~DABLE~ 10
+  IF ~  CheckStatGT(Protagonist,8,INT)
+~ THEN REPLY #30823 /* ~모트가 즐기도록 내버려 둔다.~ */ EXTERN ~DABLE~ 10
+  IF ~  CheckStatGT(Protagonist,8,INT)
+~ THEN REPLY #30824 /* ~"자, 모트. 난 그에게 질문을 해야 하네..."~ */ EXTERN ~DABLE~ 10
+END
+
+IF ~~ THEN BEGIN 294 // from:
+  SAY #30818 /* ~"바로 내가 가리키고 있는 곳에! 저기!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 11
+END
+
+IF ~~ THEN BEGIN 295 // from:
+  SAY #30819 /* ~모트는 일부러 화난 시늉을 한다: "아까운 걸 놓쳤어! 아예 *행렬*로 지나갔는데! 아마 위대한 고리가 다시 백만 번 회전할 때까지는 못 볼 걸!" ~ */
+  IF ~~ THEN EXTERN ~DABLE~ 12
+END
+
+IF ~~ THEN BEGIN 296 // from:
+  SAY #30820 /* ~모트는 어깨를 으쓱하려는 시늉을 하려는 듯 아래위로 약간 움직인다. "나는 그걸 인간의 본질에 대한 예리한 통찰력이라고 부르지."~ */
+  IF ~  GlobalGT("Able","GLOBAL",0)
+~ THEN REPLY #30825 /* ~"질문할 것들이 좀 있소..."~ */ EXTERN ~DABLE~ 16
+  IF ~  Global("Able","GLOBAL",0)
+~ THEN REPLY #30826 /* ~그의 주목을 다시 끈다.~ */ DO ~SetGlobal("Able","GLOBAL",1)
+~ EXTERN ~DABLE~ 13
+END
+
+IF ~~ THEN BEGIN 297 // from:
+  SAY #30821 /* ~"이보, 대장, 그 정도 지랄이라면 통할지도 모르겠는데!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 65
+END
+
+IF ~~ THEN BEGIN 298 // from:
+  SAY #31566 /* ~"레이디의 칼날 달린 젖꼭지여! 세상에..."
+
+당신의 마지막 남은 감각조차 사라짐에 따라 정적이 사방을 지배한다. 
+~ [MRT387] */
+  IF ~~ THEN REPLY #31567 /* ~갱그로이그하이드론의 끔찍스런 저주의 희생자가 되어 처참하게 죽는다.~ */ DO ~OpenDoor("Statue")
+Kill(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 299 // from:
+  SAY #32367 /* ~"'비밀?!' 제발 봐줘! 이런 쓰레기 같은 지랄을 정말 *들을* 건 아니지, 그렇지? 자... 가서 해골의 입술의 불타는 정열을 아직 체험하지 못한 센세이트 계집들이나 찾아보자고." 그는 기대에 가득 차 눈썹을 아래위로 움직인다. ~ */
+  IF ~~ THEN REPLY #32368 /* ~"조용하게, 모트. 우린 머무를 거네, 적어도 한동안은."~ */ EXTERN ~DDEATHAD~ 1
+  IF ~~ THEN REPLY #32369 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 1
+  IF ~~ THEN REPLY #32370 /* ~"자네가 옳으이, 모트. 떠나세."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 300 // from:
+  SAY #32371 /* ~모트는 속삭인다: "새로운 고통의 시작일 뿐이지."~ */
+  IF ~~ THEN REPLY #32372 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 2
+  IF ~~ THEN REPLY #32373 /* ~"모트, 조용하게."~ */ EXTERN ~DDEATHAD~ 2
+  IF ~~ THEN REPLY #32374 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 2
+  IF ~~ THEN REPLY #32375 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 301 // from:
+  SAY #32376 /* ~모트는 속삭인다: "그건 그렇지."~ */
+  IF ~~ THEN REPLY #32377 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 3
+  IF ~~ THEN REPLY #32378 /* ~"모트, 조용하게."~ */ EXTERN ~DDEATHAD~ 3
+  IF ~~ THEN REPLY #32379 /* ~모트를 무시하고 계속 듣는다.~ */ GOTO 303
+  IF ~~ THEN REPLY #32380 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 302 // from:
+  SAY #32381 /* ~모트는 속삭인다: "영원한 지루함."~ */
+  IF ~~ THEN REPLY #32382 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 5
+  IF ~~ THEN REPLY #32383 /* ~"제발 조용하게, 모트."~ */ EXTERN ~DDEATHAD~ 5
+  IF ~~ THEN REPLY #32384 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 5
+  IF ~~ THEN REPLY #32385 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 303 // from: 301.2
+  SAY #32386 /* ~모트는 속삭인다: "이제야 우리 둘이 죽은 뒤 어디로 갈지 알 것 같군."~ */
+  IF ~~ THEN REPLY #32387 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 6
+  IF ~~ THEN REPLY #32388 /* ~"모트, 말 좀 그만하게."~ */ EXTERN ~DDEATHAD~ 6
+  IF ~~ THEN REPLY #32389 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 6
+  IF ~~ THEN REPLY #32390 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 304 // from:
+  SAY #32391 /* ~모트는 속삭인다: "그건 운이 좋을 경우 얘기지."~ */
+  IF ~~ THEN REPLY #32392 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 8
+  IF ~~ THEN REPLY #32393 /* ~"그만둬, 모트."~ */ EXTERN ~DDEATHAD~ 8
+  IF ~~ THEN REPLY #32394 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 8
+  IF ~~ THEN REPLY #32395 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 305 // from:
+  SAY #32396 /* ~모트는 속삭인다: "그게 무슨 상이라도 된다는 거야? 같은 일을 *반복*하는 게? 이런, 난 정말 다시 태어나도 떠다니는 해골이 되고 싶은 걸. 와! 놈보고 엿이나 먹으라고 해. 놈은 정말 얼간이야. 정말 죽어본 적이 없는 사람처럼 말하는군. 그렇지?"~ */
+  IF ~~ THEN REPLY #32397 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 9
+  IF ~~ THEN REPLY #32398 /* ~"자, 모트, 조용히 하게."~ */ EXTERN ~DDEATHAD~ 9
+  IF ~~ THEN REPLY #32399 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 9
+  IF ~~ THEN REPLY #32400 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 306 // from:
+  SAY #32401 /* ~모트는 속삭인다: "오, 이건 정말 지나가는 개도 웃을 소리군."~ */
+  IF ~~ THEN REPLY #32402 /* ~모트에게 조용히 고개를 끄덕인다.~ */ EXTERN ~DDEATHAD~ 11
+  IF ~~ THEN REPLY #32403 /* ~"모트, 소리를 낮추게."~ */ EXTERN ~DDEATHAD~ 11
+  IF ~~ THEN REPLY #32404 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DDEATHAD~ 11
+  IF ~~ THEN REPLY #32405 /* ~"정말이네. 떠나세, 모트."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 307 // from:
+  SAY #32406 /* ~모트는 크게 고함을 지른다: "개지랄 같은 소리군!"~ */
+  IF ~~ THEN EXTERN ~DDEATHAD~ 15
+END
+
+IF ~~ THEN BEGIN 308 // from:
+  SAY #32407 /* ~모트는 강사의 시야 아래로 내려간 다음 당신 쪽으로 고개를 돌려 속삭인다. "대장, 가서 놈에게 진짜 비밀이 뭔질 보여주라고."~ */
+  IF ~~ THEN REPLY #32408 /* ~"그렇소, 질문할 것이 하나 있소."~ */ EXTERN ~DDEATHAD~ 17
+  IF ~~ THEN REPLY #32409 /* ~"질문할 것이 없소. 내 친구가 말을 잘못 했소."~ */ EXTERN ~DDEATHAD~ 16
+END
+
+IF ~~ THEN BEGIN 309 // from:
+  SAY #32410 /* ~"멋지군! 또 다른 죽음이라! 나도 끼워 달라고!" 청중석에서 웃음이 터진다. 연사는 화가 난 듯하다. ~ */
+  IF ~~ THEN REPLY #32411 /* ~"그들이 죽으면 어떻게 되오?"~ */ EXTERN ~DDEATHAD~ 26
+  IF ~~ THEN REPLY #32412 /* ~"다른 질문이 있소..."~ */ EXTERN ~DDEATHAD~ 17
+  IF ~~ THEN REPLY #32413 /* ~"내가 알고자 했던 건 그게 전부요."~ */ EXTERN ~DDEATHAD~ 18
+END
+
+IF ~~ THEN BEGIN 310 // from:
+  SAY #32651 /* ~"내가 이 미친년의 따귀라도 한 대 갈겨 줄까, 대장?"~ */
+  IF ~~ THEN REPLY #32661 /* ~"자비는 일절 필요없네, 모트."~ */ GOTO 316
+  IF ~~ THEN REPLY #32662 /* ~"아니, 모트... 내가 처리하겠네."~ */ EXTERN ~DSARHAVA~ 3
+END
+
+IF ~~ THEN BEGIN 311 // from:
+  SAY #32652 /* ~"난 대장의 해괴망칙한 방법이 너무 마음에 들어."~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 4
+END
+
+IF ~~ THEN BEGIN 312 // from:
+  SAY #32653 /* ~당신이 그녀 앞에 무릎을 꿇으려 하자 모트가 소리를 지른다: "대장! 정말 그러려는 건 아니겠지? 대장이 그런 쪽에 관심이 있다면 모를까..."~ */
+  IF ~~ THEN REPLY #32663 /* ~모트를 무시하고 부츠를 핥는다.~ */ EXTERN ~DSARHAVA~ 14
+  IF ~~ THEN REPLY #32664 /* ~"나는 말썽을 일으키고 싶지 않네, 모트. 내가 조심하지 않으면 경비병들이 올 수도 있네."~ */ GOTO 313
+  IF ~~ THEN REPLY #32665 /* ~"자네가 옳네, 모트. 가세."~ */ EXTERN ~DSARHAVA~ 13
+END
+
+IF ~~ THEN BEGIN 313 // from: 312.1
+  SAY #32654 /* ~"그래, 일리는 있어... 하지만 그래도..."~ */
+  IF ~~ THEN REPLY #32666 /* ~"관두게, 모트. 이것 보시오, 내가 직접 경비병들을 부르기 전에 그만 끝냅시다."~ */ EXTERN ~DSARHAVA~ 7
+  IF ~~ THEN REPLY #32667 /* ~"자네가 옳네, 모트. 가세."~ */ EXTERN ~DSARHAVA~ 13
+END
+
+IF ~~ THEN BEGIN 314 // from:
+  SAY #32655 /* ~모트는 킬킬 웃으며 이빨을 딱딱거린다. "그냥 보통 바람둥이라는 거지, 대장?"~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 315 // from:
+  SAY #32656 /* ~"어-오.."~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 316 // from: 310.0
+  SAY #32657 /* ~모트는 당신에게 눈짓을 하면서 그녀를 부른다. "이봐, 너! 그래, 거기 너, 이 뻔뻔한 창녀야... 내가 말을 할 때는 날 봐야지! 대체 왜 그렇게 신랄하게 나오는 거야?"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 39
+END
+
+IF ~~ THEN BEGIN 317 // from:
+  SAY #32658 /* ~"아, 술탄은 아들을 원했는데 딸이 나온 탓에 어린 사막의 공주님은 반바지만 입고 다니나? 말해봐, '사막의 공주님,' 넌 널 인정하지 않으려는 아버지에 대한 반발로 밤마다 몇 명의 곁눈질하는 아부꾼들을 거느리고 그런 몰골로 나와서는 술을 처먹고 사람들에게 시비나 거는 거야?"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 40
+END
+
+IF ~~ THEN BEGIN 318 // from:
+  SAY #32659 /* ~"싸움질을 해댄다고 해서 스스로에 대해 조금이라도 만족할 수 있게 될 것 같아? 자신이 가치가 있는 존재라고 느끼게 될 거라고 생각해? 어림없어! 만약 이게 자긍심을 찾으려고 네가 쓰는 방법이라면 내가 충고 한 마디 하지. 집어치우고 집에나 가, 그리고 어떤 놈팡이의 하렘에나 들어가라고!"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 41
+END
+
+IF ~~ THEN BEGIN 319 // from:
+  SAY #32660 /* ~모트는 당신 쪽으로 고개를 돌린다. "보라고, 대장, 난 어떻게 될지 진작부터 알고 있었어. 우린 모두 이 건에 관해서 모트가 옳다는 걸 알지. 하지만 딱하군, 어리고 자존심 강한 사막의 공주님, 사람들 앞에서 쓰러져 망신-"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 42
+END
+
+IF ~~ THEN BEGIN 320 // from:
+  SAY #33073 /* ~"블러드 워? 거버너가 법에 대해 강의하는 것보다 지루해. 정열에 대해 가르침을 필요로 하는 젊은 센세이트나 찾아보자고!" 그는 기대에 가득 차 눈썹을 아래위로 움직인다. ~ */
+  IF ~~ THEN REPLY #33074 /* ~"아니, 모트. 난 이 이야기를 듣고 싶네."~ */ EXTERN ~DGHYSIS~ 1
+  IF ~~ THEN REPLY #33075 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~DGHYSIS~ 1
+  IF ~~ THEN REPLY #33076 /* ~"좋네, 모트. 떠나세."~ */ DO ~SetGlobal("Lecture_Ghysis","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 321 // from:
+  SAY #33300 /* ~모트는 눈알을 희번덕거리며 외친다 "와! 저것 좀 봐! 말하는 똥이야!"~ */
+  IF ~~ THEN EXTERN ~DGHIVEM~ 49
+END
+
+IF ~~ THEN BEGIN 322 // from:
+  SAY #33301 /* ~모트는 당신 쪽으로 재빨리 움직이며 사내에게 얘기를 한다. "이 덩치 큰 흉터투성이 친구한테 한 말이라고... 당신이 아니야! 화나진 않은 거지?~ */
+  IF ~~ THEN REPLY #33302 /* ~"조심하게, 모트..."~ */ EXTERN ~DGHIVEM~ 51
+  IF ~~ THEN REPLY #33303 /* ~모트를 무시한다.~ */ EXTERN ~DGHIVEM~ 51
+END
+
+IF ~~ THEN BEGIN 323 // from:
+  SAY #33423 /* ~모트는 눈알을 희번덕거리며 외친다 "와! 저것 좀 봐! 말하는 똥이야!"~ */
+  IF ~~ THEN EXTERN ~DGHIVEF~ 47
+END
+
+IF ~~ THEN BEGIN 324 // from:
+  SAY #33429 /* ~모트는 당신 쪽으로 재빨리 움직이며 사내에게 얘기를 한다. "이 덩치 큰 흉터투성이 친구한테 한 말이라고... 당신이 아니야! 화나진 않은 거지?~ */
+  IF ~~ THEN REPLY #33430 /* ~"조심하게, 모트..."~ */ EXTERN ~DGHIVEF~ 49
+  IF ~~ THEN REPLY #33433 /* ~모트를 무시한다.~ */ EXTERN ~DGHIVEF~ 49
+END
+
+IF WEIGHT #5 /* Triggers after states #: 742 737 733 487 even though they appear after this state */
+~  !InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 325 // from:
+  SAY #33958 /* ~"난 대장이 돌아올 줄 알고 있었어! 드디어 대장에겐 내가 필요하다는 사실을 깨달은 거야?"~ [MRT516] */
+  IF ~~ THEN REPLY #33959 /* ~"그래... 가세."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #33960 /* ~"지금 당장은 안 되네, 모트."~ */ GOTO 326
+END
+
+IF ~~ THEN BEGIN 326 // from: 325.1
+  SAY #33961 /* ~"흠. 글쎄, 내가 여기서 얼마나 더 기다릴 수 있을 지는 나도 모르겠어. 그러니 난 대장에게 마지막으로 단 한 번의 기회를 주겠어. 정말 내 현명한 충고와 기민한 재치를 필요로 하지 않는 거야?"~ */
+  IF ~~ THEN REPLY #33962 /* ~"모트, 자네에게 그 둘 다 없네."~ */ GOTO 327
+  IF ~~ THEN REPLY #33963 /* ~"좋아, 난 마음을 바꿨네. 자, 가세."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #33964 /* ~"지금 당장은 곤란하네, 모트. 아마 나중에."~ */ GOTO 327
+END
+
+IF ~~ THEN BEGIN 327 // from: 326.0 326.2
+  SAY #33965 /* ~"일부러 내 감정을 상하게 하려는 거야, 대장? 내가 무슨 말이라도 잘못했어? 아니면 내게 팔이 없어서야? 뭐야?" ~ */
+  IF ~~ THEN REPLY #33966 /* ~"좋아, 난 마음을 바꿨네. 자, 가세."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #33967 /* ~"그건 아니네. 하지만 지금 당장은 자네가 파티에 필요없네. 잘 있게, 모트."~ */ GOTO 328
+END
+
+IF ~~ THEN BEGIN 328 // from: 327.1
+  SAY #33968 /* ~"좋아, 하지만 난 여기서 영원히 기다리진 않을 거니까 생각이 바뀌면 당장 돌아오라고."~ */
+  IF ~~ THEN REPLY #33969 /* ~"그러겠네. 잘 있게, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 329 // from: 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
+  SAY #33970 /* ~"뭘 그렇게 골똘하게 생각하는 거야?"~ */
+  IF ~~ THEN REPLY #65539 /* ~"내 등에 새겨진 문신의 내용을 다시 들려줄 수 있겠나?"~ */ GOTO 649
+  IF ~~ THEN REPLY #65540 /* ~"내게 시길에 대해 좀 얘기해줄 수 있겠나?"~ */ GOTO 659
+  IF ~  Global("Morte_Talent","GLOBAL",0)
+~ THEN REPLY #65541 /* ~"모트... 자네가 날 따라오는 건 개의치 않네, 하지만 수다떠는 것 말고 자네가 할 수 있은 없나?"~ */ GOTO 663
+  IF ~  Global("Morte_Talent","GLOBAL",1)
+~ THEN REPLY #65542 /* ~"모트... 자네의 특수한 재능이 어떤 것들인지 다시 얘기해주겠나?"~ */ GOTO 666
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #65543 /* ~"모트, 내 등에 새겨진 문신의 나머지 한 줄에 대해서 왜 내게 얘기하지 않았나?"~ */ GOTO 654
+  IF ~~ THEN REPLY #65544 /* ~"조언이 좀 필요하네. 우리가 다음에 무엇을 해야 한다고 생각하나?"~ */ GOTO 669
+  IF ~  Global("Know_Mimir","GLOBAL",1)
+Global("Morte_Story","GLOBAL",0)
+~ THEN REPLY #65545 /* ~"자네는 자신이 미미르라고 했네, 맞나, 모트?"~ */ GOTO 684
+  IF ~  Global("Morte_Story","GLOBAL",1)
+~ THEN REPLY #65546 /* ~"자네가 왜 해골들의 기둥에 떨어지게 되었는지 다시 말해주게."~ */ GOTO 693
+  IF ~  Global("Know_Morte_Pillar","GLOBAL",1)
+~ THEN REPLY #65547 /* ~"모트. 내가 기둥으로부터 자네를 빼낸 후에 왜 나와 함께 여행을 계속한 건가?"~ */ GOTO 715
+  IF ~  GlobalGT("Know_Blood_War","GLOBAL",0)
+~ THEN REPLY #65548 /* ~"자네는 블러드 워에 대해 무엇을 아나?"~ */ GOTO 723
+  IF ~  GlobalGT("Know_Ravel","GLOBAL",0)
+Global("Ravel","GLOBAL",0)
+~ THEN REPLY #65549 /* ~"자네는 나이트 해그 래벌에 대해 무엇을 아나?"~ */ GOTO 722
+  IF ~~ THEN REPLY #65550 /* ~"자네는 어떻게 죽었나, 모트?"~ */ GOTO 726
+  IF ~~ THEN REPLY #65551 /* ~"아무 것도 아니네, 모트. 자네가 아직 나와 함께하고 있는 확인했을 뿐이네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 330 // from:
+  SAY #34990 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #34991 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 331
+  IF ~~ THEN REPLY #35001 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 331
+END
+
+IF ~~ THEN BEGIN 331 // from: 330.0 330.1
+  SAY #34992 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #34993 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 332
+  IF ~~ THEN REPLY #34996 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 333
+  IF ~~ THEN REPLY #34999 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 333
+  IF ~~ THEN REPLY #35000 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 332 // from: 331.0
+  SAY #34994 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #34995 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 333 // from: 331.1 331.2
+  SAY #34997 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #34998 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 334 // from:
+  SAY #35022 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35023 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 335
+  IF ~~ THEN REPLY #35033 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 335
+END
+
+IF ~~ THEN BEGIN 335 // from: 334.0 334.1
+  SAY #35024 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35025 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 336
+  IF ~~ THEN REPLY #35028 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 337
+  IF ~~ THEN REPLY #35031 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 337
+  IF ~~ THEN REPLY #35032 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 336 // from: 335.0
+  SAY #35026 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35027 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 337 // from: 335.1 335.2
+  SAY #35029 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35030 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 338 // from:
+  SAY #35054 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35055 /* ~"대체 무슨 얘기를 하는 거요?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 339
+  IF ~~ THEN REPLY #35065 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 339
+END
+
+IF ~~ THEN BEGIN 339 // from: 338.0 338.1
+  SAY #35056 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35057 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 340
+  IF ~~ THEN REPLY #35060 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 341
+  IF ~~ THEN REPLY #35063 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 341
+  IF ~~ THEN REPLY #35064 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 340 // from: 339.0
+  SAY #35058 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35059 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 341 // from: 339.1 339.2
+  SAY #35061 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35062 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 342 // from:
+  SAY #35086 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35087 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 343
+  IF ~~ THEN REPLY #35097 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 343
+END
+
+IF ~~ THEN BEGIN 343 // from: 342.0 342.1
+  SAY #35088 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35089 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 344
+  IF ~~ THEN REPLY #35092 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 345
+  IF ~~ THEN REPLY #35095 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 345
+  IF ~~ THEN REPLY #35096 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 344 // from: 343.0
+  SAY #35090 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35091 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 345 // from: 343.1 343.2
+  SAY #35093 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35094 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 346 // from:
+  SAY #35118 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35119 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 347
+  IF ~~ THEN REPLY #35129 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 347
+END
+
+IF ~~ THEN BEGIN 347 // from: 346.0 346.1
+  SAY #35120 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35121 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 348
+  IF ~~ THEN REPLY #35124 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 349
+  IF ~~ THEN REPLY #35127 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 349
+  IF ~~ THEN REPLY #35128 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 348 // from: 347.0
+  SAY #35122 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35123 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 349 // from: 347.1 347.2
+  SAY #35125 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35126 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 350 // from:
+  SAY #35150 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35151 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 351
+  IF ~~ THEN REPLY #35161 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 351
+END
+
+IF ~~ THEN BEGIN 351 // from: 350.0 350.1
+  SAY #35152 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35153 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 352
+  IF ~~ THEN REPLY #35156 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 353
+  IF ~~ THEN REPLY #35159 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 353
+  IF ~~ THEN REPLY #35160 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 352 // from: 351.0
+  SAY #35154 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35155 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 353 // from: 351.1 351.2
+  SAY #35157 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35158 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 354 // from:
+  SAY #35182 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35183 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 355
+  IF ~~ THEN REPLY #35193 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 355
+END
+
+IF ~~ THEN BEGIN 355 // from: 354.0 354.1
+  SAY #35184 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35185 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 356
+  IF ~~ THEN REPLY #35188 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 357
+  IF ~~ THEN REPLY #35191 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 357
+  IF ~~ THEN REPLY #35192 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 356 // from: 355.0
+  SAY #35186 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35187 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 357 // from: 355.1 355.2
+  SAY #35189 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35190 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 358 // from:
+  SAY #35214 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35215 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 359
+  IF ~~ THEN REPLY #35225 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 359
+END
+
+IF ~~ THEN BEGIN 359 // from: 358.0 358.1
+  SAY #35216 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35217 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 360
+  IF ~~ THEN REPLY #35220 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 361
+  IF ~~ THEN REPLY #35223 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 361
+  IF ~~ THEN REPLY #35224 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 360 // from: 359.0
+  SAY #35218 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35219 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 361 // from: 359.1 359.2
+  SAY #35221 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35222 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 362 // from:
+  SAY #35246 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35247 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 363
+  IF ~~ THEN REPLY #35257 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 363
+END
+
+IF ~~ THEN BEGIN 363 // from: 362.0 362.1
+  SAY #35248 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35249 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 364
+  IF ~~ THEN REPLY #35252 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 365
+  IF ~~ THEN REPLY #35255 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 365
+  IF ~~ THEN REPLY #35256 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 364 // from: 363.0
+  SAY #35250 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35251 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 365 // from: 363.1 363.2
+  SAY #35253 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35254 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 366 // from:
+  SAY #35278 /* ~"잠깐. 대장은 그녀가 날 어떤 눈으로 쳐다보는지 봤어? 허? 보이지? 내 후두부를 바라보는 그녀의 시선이?"~ */
+  IF ~~ THEN REPLY #35279 /* ~"대체 무슨 얘기를 하는 건가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 367
+  IF ~~ THEN REPLY #35289 /* ~"무덤-저편의-공허한-눈빛 말인가?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 367
+END
+
+IF ~~ THEN BEGIN 367 // from: 366.0 366.1
+  SAY #35280 /* ~"뭐... 눈이라도 먼 거야?! 그녀는 날 유혹하고 있었다고! 그녀는 정말 노골적으로 날 원했다고!"~ */
+  IF ~~ THEN REPLY #35281 /* ~"아마 자네가 다른 곳으로 가기를 바랬던 거겠지. 그녀는 내게 너무 정신이 팔려 수다만 떠는 건방진 얼간이의 해골 따위에는 관심을 가질 틈조차 없었을 걸세."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 368
+  IF ~~ THEN REPLY #35284 /* ~"자넨 터무니 없는 공상을 하고 있군. 그녀는 좀비야. 시체, 즉 죽은 사람이란 말일세. 아마 그녀는 자네를 인식조차 할 수가 없을 걸세."~ */ GOTO 369
+  IF ~~ THEN REPLY #35287 /* ~"자네와 자네 상상력은 좀 떨어져 지내야 할 것 같네."~ */ GOTO 369
+  IF ~~ THEN REPLY #35288 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 368 // from: 367.0
+  SAY #35282 /* ~"당신? 말도 안돼. 저 세상으로 간 계집들은 육체적인 매력이나 몸통이 있는지 여부는 신경도 쓰지 않는다고. 그녀들은 기백이 있는 남자를 원한다고. 그건 바로 나야, 대장. 당신? 대장같은 시체는 동전만큼이나 흔하다고."~ */
+  IF ~~ THEN REPLY #35283 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 369 // from: 367.1 367.2
+  SAY #35285 /* ~"나처럼 죽은 지 오래되면 신호를 감지할 수가 있다고. 대장이 느끼기에는 너무 미묘할지도 모르지만. 그러니 내가 죽은 지 얼마되지 않은 섹시한 계집들과 뜨거운 밤을 보낼 동안 대장은 '어?' '뭐가 어떻게 돌아가고 있는 거지?' '내 기-기억이 어디로 갔지'하며 멍하니 서 있을 수밖에."~ */
+  IF ~~ THEN REPLY #35286 /* ~"뭐든 간에, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 370 // from: 377.3
+  SAY #35310 /* ~"흠... 이 회색 수염이 내가 자기 몸을 빌려도 뭐라고 하지 않을지 모르겠군..."~ */
+  IF ~~ THEN REPLY #35311 /* ~"회색 수염?"~ */ GOTO 371
+  IF ~~ THEN REPLY #35326 /* ~"나는 그가 이의를 제기할 입장이라고는 생각하지 않네."~ */ GOTO 372
+  IF ~~ THEN REPLY #35327 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 373
+END
+
+IF ~~ THEN BEGIN 371 // from: 370.0
+  SAY #35312 /* ~"회색 수염... 대장도 알다시피 늙다리, 늙은이, 노인 등을 가리키는 말이야."~ */
+  IF ~~ THEN REPLY #35313 /* ~"난 그가 이의를 제기할 입장이라고는 생각지 않네. 왜 그의 몸을 차지하지 않나?"~ */ GOTO 372
+  IF ~~ THEN REPLY #35325 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 373
+END
+
+IF ~~ THEN BEGIN 372 // from: 370.1 371.0
+  SAY #35314 /* ~모트는 잠시 그 스켈레톤을 살펴보더니 고개를 젓는다. "아니... 내겐 이것보다 신선한 놈이 필요해. 그리고 좀 더 품위가 있는 몸이... 이건 사방에 금하고 깨진 곳 투성이야 "~ */
+  IF ~~ THEN REPLY #35315 /* ~"그럼 자넨 그렇지 않단 말인가?"~ */ GOTO 373
+  IF ~~ THEN REPLY #35324 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 373 // from: 370.2 371.1 372.0
+  SAY #35316 /* ~"아, 대장은 정말 웃기는군." 모트는 당신을 노려본다. "그리고 대장은 그런 말을 할 입장이 아니지. 대장이 근처에 있으면 거울들이 자비를 구한다고."~ */
+  IF ~~ THEN REPLY #35317 /* ~"그래? 적어도 내겐 신체의 모든 부위가 다 있네."~ */ GOTO 374
+  IF ~~ THEN REPLY #35323 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 374 // from: 373.0
+  SAY #35318 /* ~모트는 코방귀를 뀐다. 허파도 없이 어떻게 그런 일을 할 수가 있는지 당신으로서는 알 수가 없다. ~ */
+  IF ~~ THEN REPLY #35319 /* ~"자네에게 말해주겠는데, 모트, 팔을 흔들며 걸으면서 신선한 공기를 들이마시는 것보다 만족스러운 건 없다네. 몸이 있다는 건 멋진 일이네."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 375
+  IF ~~ THEN REPLY #35322 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 375 // from: 374.0
+  SAY #35320 /* ~"대장이 준비실을 빠져나오도록 도와준 건 점점 늘어나는 후회할 것들 목록에 추가되었어." 모트는 다시 코를 씨근거린다. "대장이 그냥 썩도록 내버려 두었어야 했어..."~ */
+  IF ~~ THEN REPLY #35321 /* ~"자네가 그렇게 생각한다니 기쁘네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 376 // from:
+  SAY #35341 /* ~"와우, 대장. 그건 파괴 행위야. 그 볼트들은 그 뼈들을 고정시키는 유일한 것들이라고. 이런 오래된 친구들에게는 이미 사령술도 별 효과가 없다고."~ */
+  IF ~~ THEN REPLY #35342 /* ~"그래서?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 377
+  IF ~~ THEN REPLY #35360 /* ~"아... 영구적인 대미지는 입히고 싶지 않았는데."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 377
+  IF ~~ THEN REPLY #35361 /* ~"그럼 좋네. 관두게. 나중에 하세."~ */ GOTO 377
+END
+
+IF ~~ THEN BEGIN 377 // from: 376.0 376.1 376.2
+  SAY #35343 /* ~"오, 문제가 된다는 얘긴 아니야." 모트는 기묘한 스타일로 아래 위로 움직이는 데 그건 어깨를 으쓱한다는 표현인 듯하다. "난 대장이 그걸 아는가 확인해 보려고 했을 뿐이야, 마음대로 하라고."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35344 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS1221~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35352 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS1221~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35355 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS1221~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35358 /* ~"관두게. 나중에 하세."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 370
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35359 /* ~"관두게. 나중에 하세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 378 // from: 385.3
+  SAY #35387 /* ~"흠... 이 회색 수염이 내가 자기 몸을 빌려도 뭐라고 하지 않을지 모르겠군..."~ */
+  IF ~~ THEN REPLY #35388 /* ~"회색 수염?"~ */ GOTO 379
+  IF ~~ THEN REPLY #35403 /* ~"나는 그가 이의를 제기할 입장이라고는 생각하지 않네."~ */ GOTO 380
+  IF ~~ THEN REPLY #35404 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 381
+END
+
+IF ~~ THEN BEGIN 379 // from: 378.0
+  SAY #35389 /* ~"회색 수염... 대장도 알다시피 늙다리, 늙은이, 노인 등을 가리키는 말이야."~ */
+  IF ~~ THEN REPLY #35390 /* ~"난 그가 이의를 제기할 입장이라고는 생각지 않네. 왜 그의 몸을 차지하지 않나?"~ */ GOTO 380
+  IF ~~ THEN REPLY #35402 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 381
+END
+
+IF ~~ THEN BEGIN 380 // from: 378.1 379.0
+  SAY #35391 /* ~모트는 잠시 그 스켈레톤을 살펴보더니 고개를 젓는다. "아니... 내겐 이것보다 신선한 놈이 필요해. 그리고 좀 더 품위가 있는 몸이... 이건 사방에 금하고 깨진 곳 투성이야 "~ */
+  IF ~~ THEN REPLY #35392 /* ~"그럼 자넨 그렇지 않단 말인가?"~ */ GOTO 381
+  IF ~~ THEN REPLY #35401 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 381 // from: 378.2 379.1 380.0
+  SAY #35393 /* ~"아, 대장은 정말 웃기는군." 모트는 당신을 노려본다. "그리고 대장은 그런 말을 할 입장이 아니지. 대장이 근처에 있으면 거울들이 자비를 구한다고."~ */
+  IF ~~ THEN REPLY #35394 /* ~"그래? 적어도 내겐 신체의 모든 부위가 다 있네."~ */ GOTO 382
+  IF ~~ THEN REPLY #35400 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 382 // from: 381.0
+  SAY #35395 /* ~모트는 코방귀를 뀐다. 허파도 없이 어떻게 그런 일을 할 수가 있는지 당신으로서는 알 수가 없다. ~ */
+  IF ~~ THEN REPLY #35396 /* ~"자네에게 말해주겠는데, 모트, 팔을 흔들며 걸으면서 신선한 공기를 들이마시는 것보다 만족스러운 건 없다네. 몸이 있다는 건 멋진 일이네."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 383
+  IF ~~ THEN REPLY #35399 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 383 // from: 382.0
+  SAY #35397 /* ~"대장이 준비실을 빠져나오도록 도와준 건 점점 늘어나는 후회할 것들 목록에 추가되었어." 모트는 다시 코를 씨근거린다. "대장이 그냥 썩도록 내버려 두었어야 했어..."~ */
+  IF ~~ THEN REPLY #35398 /* ~"자네가 그렇게 생각한다니 기쁘네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 384 // from:
+  SAY #35418 /* ~"와우, 대장. 그건 파괴 행위야. 그 볼트들은 그 뼈들을 고정시키는 유일한 것들이라고. 이런 오래된 친구들에게는 이미 사령술도 별 효과가 없다고."~ */
+  IF ~~ THEN REPLY #35419 /* ~"그래서?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 385
+  IF ~~ THEN REPLY #35437 /* ~"아... 영구적인 대미지는 입히고 싶지 않았는데."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 385
+  IF ~~ THEN REPLY #35438 /* ~"그럼 좋네. 관두게. 나중에 하세."~ */ GOTO 385
+END
+
+IF ~~ THEN BEGIN 385 // from: 384.0 384.1 384.2
+  SAY #35420 /* ~"오, 문제가 된다는 얘긴 아니야." 모트는 기묘한 스타일로 아래 위로 움직이는 데 그건 어깨를 으쓱한다는 표현인 듯하다. "난 대장이 그걸 아는가 확인해 보려고 했을 뿐이야, 마음대로 하라고."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35421 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS748~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35429 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS748~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35432 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS748~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35435 /* ~"관두게. 나중에 하세."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 378
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35436 /* ~"관두게. 나중에 하세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 386 // from: 393.3
+  SAY #35464 /* ~"흠... 이 회색 수염이 내가 자기 몸을 빌려도 뭐라고 하지 않을지 모르겠군..."~ */
+  IF ~~ THEN REPLY #35465 /* ~"회색 수염?"~ */ GOTO 387
+  IF ~~ THEN REPLY #35480 /* ~"나는 그가 이의를 제기할 입장이라고는 생각하지 않네."~ */ GOTO 388
+  IF ~~ THEN REPLY #35481 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 389
+END
+
+IF ~~ THEN BEGIN 387 // from: 386.0
+  SAY #35466 /* ~"회색 수염... 대장도 알다시피 늙다리, 늙은이, 노인 등을 가리키는 말이야."~ */
+  IF ~~ THEN REPLY #35467 /* ~"난 그가 이의를 제기할 입장이라고는 생각지 않네. 왜 그의 몸을 차지하지 않나?"~ */ GOTO 388
+  IF ~~ THEN REPLY #35479 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 389
+END
+
+IF ~~ THEN BEGIN 388 // from: 386.1 387.0
+  SAY #35468 /* ~모트는 잠시 그 스켈레톤을 살펴보더니 고개를 젓는다. "아니... 내겐 이것보다 신선한 놈이 필요해. 그리고 좀 더 품위가 있는 몸이... 이건 사방에 금하고 깨진 곳 투성이야 "~ */
+  IF ~~ THEN REPLY #35469 /* ~"그럼 자넨 그렇지 않단 말인가?"~ */ GOTO 389
+  IF ~~ THEN REPLY #35478 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 389 // from: 386.2 387.1 388.0
+  SAY #35470 /* ~"아, 대장은 정말 웃기는군." 모트는 당신을 노려본다. "그리고 대장은 그런 말을 할 입장이 아니지. 대장이 근처에 있으면 거울들이 자비를 구한다고."~ */
+  IF ~~ THEN REPLY #35471 /* ~"그래? 적어도 내겐 신체의 모든 부위가 다 있네."~ */ GOTO 390
+  IF ~~ THEN REPLY #35477 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 390 // from: 389.0
+  SAY #35472 /* ~모트는 코방귀를 뀐다. 허파도 없이 어떻게 그런 일을 할 수가 있는지 당신으로서는 알 수가 없다. ~ */
+  IF ~~ THEN REPLY #35473 /* ~"자네에게 말해주겠는데, 모트, 팔을 흔들며 걸으면서 신선한 공기를 들이마시는 것보다 만족스러운 건 없다네. 몸이 있다는 건 멋진 일이네."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 391
+  IF ~~ THEN REPLY #35476 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 391 // from: 390.0
+  SAY #35474 /* ~"대장이 준비실을 빠져나오도록 도와준 건 점점 늘어나는 후회할 것들 목록에 추가되었어." 모트는 다시 코를 씨근거린다. "대장이 그냥 썩도록 내버려 두었어야 했어..."~ */
+  IF ~~ THEN REPLY #35475 /* ~"자네가 그렇게 생각한다니 기쁘네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 392 // from:
+  SAY #35495 /* ~"와우, 대장. 그건 파괴 행위야. 그 볼트들은 그 뼈들을 고정시키는 유일한 것들이라고. 이런 오래된 친구들에게는 이미 사령술도 별 효과가 없다고."~ */
+  IF ~~ THEN REPLY #35496 /* ~"그래서?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 393
+  IF ~~ THEN REPLY #35514 /* ~"아... 영구적인 대미지는 입히고 싶지 않았는데."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 393
+  IF ~~ THEN REPLY #35515 /* ~"그럼 좋네. 관두게. 나중에 하세."~ */ GOTO 393
+END
+
+IF ~~ THEN BEGIN 393 // from: 392.0 392.1 392.2
+  SAY #35497 /* ~"오, 문제가 된다는 얘긴 아니야." 모트는 기묘한 스타일로 아래 위로 움직이는 데 그건 어깨를 으쓱한다는 표현인 듯하다. "난 대장이 그걸 아는가 확인해 보려고 했을 뿐이야, 마음대로 하라고."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35498 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS996~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35506 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS996~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35509 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS996~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35512 /* ~"관두게. 나중에 하세."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 386
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35513 /* ~"관두게. 나중에 하세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 394 // from: 401.3
+  SAY #35541 /* ~"흠... 이 회색 수염이 내가 자기 몸을 빌려도 뭐라고 하지 않을지 모르겠군..."~ */
+  IF ~~ THEN REPLY #35542 /* ~"회색 수염?"~ */ GOTO 395
+  IF ~~ THEN REPLY #35557 /* ~"나는 그가 이의를 제기할 입장이라고는 생각하지 않네."~ */ GOTO 396
+  IF ~~ THEN REPLY #35558 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 397
+END
+
+IF ~~ THEN BEGIN 395 // from: 394.0
+  SAY #35543 /* ~"회색 수염... 대장도 알다시피 늙다리, 늙은이, 노인 등을 가리키는 말이야."~ */
+  IF ~~ THEN REPLY #35544 /* ~"난 그가 이의를 제기할 입장이라고는 생각지 않네. 왜 그의 몸을 차지하지 않나?"~ */ GOTO 396
+  IF ~~ THEN REPLY #35556 /* ~"자네에게 팔이 있었으면 지금의 두 배는 더 짜증스러웠을 거라는 생각이 드는군. 가세."~ */ GOTO 397
+END
+
+IF ~~ THEN BEGIN 396 // from: 394.1 395.0
+  SAY #35545 /* ~모트는 잠시 그 스켈레톤을 살펴보더니 고개를 젓는다. "아니... 내겐 이것보다 신선한 놈이 필요해. 그리고 좀 더 품위가 있는 몸이... 이건 사방에 금하고 깨진 곳 투성이야 "~ */
+  IF ~~ THEN REPLY #35546 /* ~"그럼 자넨 그렇지 않단 말인가?"~ */ GOTO 397
+  IF ~~ THEN REPLY #35555 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 397 // from: 394.2 395.1 396.0
+  SAY #35547 /* ~"아, 대장은 정말 웃기는군." 모트는 당신을 노려본다. "그리고 대장은 그런 말을 할 입장이 아니지. 대장이 근처에 있으면 거울들이 자비를 구한다고."~ */
+  IF ~~ THEN REPLY #35548 /* ~"그래? 적어도 내겐 신체의 모든 부위가 다 있네."~ */ GOTO 398
+  IF ~~ THEN REPLY #35554 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 398 // from: 397.0
+  SAY #35549 /* ~모트는 코방귀를 뀐다. 허파도 없이 어떻게 그런 일을 할 수가 있는지 당신으로서는 알 수가 없다. ~ */
+  IF ~~ THEN REPLY #35550 /* ~"자네에게 말해주겠는데, 모트, 팔을 흔들며 걸으면서 신선한 공기를 들이마시는 것보다 만족스러운 건 없다네. 몸이 있다는 건 멋진 일이네."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 399
+  IF ~~ THEN REPLY #35553 /* ~"가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 399 // from: 398.0
+  SAY #35551 /* ~"대장이 준비실을 빠져나오도록 도와준 건 점점 늘어나는 후회할 것들 목록에 추가되었어." 모트는 다시 코를 씨근거린다. "대장이 그냥 썩도록 내버려 두었어야 했어..."~ */
+  IF ~~ THEN REPLY #35552 /* ~"자네가 그렇게 생각한다니 기쁘네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 400 // from:
+  SAY #35572 /* ~"와우, 대장. 그건 파괴 행위야. 그 볼트들은 그 뼈들을 고정시키는 유일한 것들이라고. 이런 오래된 친구들에게는 이미 사령술도 별 효과가 없다고."~ */
+  IF ~~ THEN REPLY #35573 /* ~"그래서?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 401
+  IF ~~ THEN REPLY #35591 /* ~"아... 영구적인 대미지는 입히고 싶지 않았는데."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 401
+  IF ~~ THEN REPLY #35592 /* ~"그럼 좋네. 관두게. 나중에 하세."~ */ GOTO 401
+END
+
+IF ~~ THEN BEGIN 401 // from: 400.0 400.1 400.2
+  SAY #35574 /* ~"오, 문제가 된다는 얘긴 아니야." 모트는 기묘한 스타일로 아래 위로 움직이는 데 그건 어깨를 으쓱한다는 표현인 듯하다. "난 대장이 그걸 아는가 확인해 보려고 했을 뿐이야, 마음대로 하라고."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35575 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS863~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35583 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS863~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35586 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ EXTERN ~DS863~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35589 /* ~"관두게. 나중에 하세."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 394
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35590 /* ~"관두게. 나중에 하세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 402 // from:
+  SAY #38265 /* ~"난 벌써 이 아가씨와 사랑에 빠졌다고!"~ */
+  IF ~~ THEN REPLY #38267 /* ~"그러면 글로 쓰거나 팬터마임을 할 수는 없소?"~ */ EXTERN ~DECCO~ 7
+END
+
+IF ~~ THEN BEGIN 403 // from:
+  SAY #38266 /* ~"역!"~ */
+  IF ~~ THEN REPLY #38268 /* ~"허?"~ */ EXTERN ~DECCO~ 34
+END
+
+IF ~~ THEN BEGIN 404 // from:
+  SAY #39000 /* ~모트가 속삭인다. 이건 좋지가 않아, 대장. 조심하라고, 그렇지 않으면 놈들이 대장 정신을 흔적도 없이 날려버릴 테니... 그들은 수가 많을 수록 강해져. 각 개체가 집합적인 뇌의 일부가 돼. 놈들은 정말 위험해."~ */
+  IF ~~ THEN EXTERN ~DMANYAS1~ 5
+END
+
+IF ~~ THEN BEGIN 405 // from:
+  SAY #39001 /* ~모트가 속삭인다. 이건 좋지가 않아, 대장. 조심하라고, 그렇지 않으면 놈들이 대장 정신을 흔적도 없이 날려버릴 테니... 그들은 수가 많을 수록 강해져. 각 개체가 집합적인 뇌의 일부가 돼. 놈들은 정말 위험해."~ */
+  IF ~~ THEN EXTERN ~DMANYAS1~ 58
+END
+
+IF ~~ THEN BEGIN 406 // from:
+  SAY #39002 /* ~모트가 속삭인다. "나는 그들이 무슨 생각을 하고 있는지 모르겠어, 하지만 생각을 읽히지 않도록 조심해. 그들은 정신적 집합체고, 쥐의 수가 들어날 수록 그 능력도 늘어나. 썰렁한 표현일지도 모르겠지만 그들은 궁지에 몰린 쥐들처럼 싸워. 우린 지금 놈들의 소굴에 있어, 보스, 그러니 놈들은 배수의 진을 친 셈이지. 각별히 조심하라고."~ */
+  IF ~~ THEN EXTERN ~DMANYAS1~ 78
+END
+
+IF ~~ THEN BEGIN 407 // from:
+  SAY #39564 /* ~"놀라운 우연이야! 나도 사냥을 한다고." ~ */
+  IF ~~ THEN EXTERN ~DYVES~ 2
+END
+
+IF ~~ THEN BEGIN 408 // from:
+  SAY #39565 /* ~"나? 왜 *내가* 얘기를 해야 하지?"~ */
+  IF ~~ THEN REPLY #39713 /* ~"그럼 관두시오."~ */ GOTO 409
+  IF ~~ THEN REPLY #39714 /* ~"그냥 이야기를 하나 하게, 모트."~ */ GOTO 413
+END
+
+IF ~~ THEN BEGIN 409 // from: 408.0
+  SAY #39566 /* ~"아니, 아니, 하겠어... 판에 박은 것에서 벗어나 좀 불평을 하면 어떨까 생각해본 것 뿐이야. 그리고 난 주목을 받는 걸 좋아하거든."~ */
+  IF ~~ THEN REPLY #39715 /* ~"어림없네, 모트. 난 듣고 싶지 않아."~ */ GOTO 410
+  IF ~~ THEN REPLY #39716 /* ~"좋네... 그럼 얘기하게."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 410 // from: 409.0
+  SAY #39567 /* ~"제발! 응? 제-발? 끝내주는 얘기라고! 캐릭터들도 많이 등장하고 액션으로 넘치는 데다가, 전조를 바친 후 충격적인 대단원을 맞이하는 스릴 넘치는 스토리야!"~ */
+  IF ~~ THEN REPLY #39717 /* ~"별로 대수롭지 않을 것 같네."~ */ GOTO 411
+  IF ~~ THEN REPLY #39718 /* ~"대단원이 뭔가?"~ */ GOTO 412
+  IF ~~ THEN REPLY #39719 /* ~"좋네... 얘기하게."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 411 // from: 410.0
+  SAY #39568 /* ~"그래, 그렇다고! 자!"~ */
+  IF ~~ THEN REPLY #39720 /* ~"기다리게... 대단원이 뭔가?"~ */ GOTO 412
+  IF ~~ THEN REPLY #39721 /* ~"좋네... 얘기하게."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 412 // from: 410.1 411.0
+  SAY #39569 /* ~"모르겠어! 하지만 대단한 것처럼 들려!"~ */
+  IF ~~ THEN REPLY #39722 /* ~"좋네, 어디 해보게."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 413 // from: 408.1
+  SAY #39570 /* ~"좋아, 좋아..."~ */
+  IF ~~ THEN DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 414 // from: 409.1 410.2 411.1 412.0 413.0
+  SAY #39571 /* ~"한 노인이 어두운 길에 홀로 앉아 있었어. 그는 어느 방향으로 가야할지 몰랐고, 그는 행선지와 자신이 누구인가를 망각하고 있었어. 그는 피곤한 다리를 쉬게 하기 위하여 잠시 앉았지, 그리고 올려다 보니 갑자기 눈 앞에 어떤 노파가 있는 거야. 그녀는 이빨도 없이 싱긋 웃었지, 그리고 깔깔거리면서 말했어. "'이제 당신의 *세 번째* 소원을 말할 차례요. 무엇을 원하시오?"~ */
+  IF ~~ THEN REPLY #39724 /* ~"모트, 계속하게..."~ */ GOTO 415
+  IF ~~ THEN REPLY #39725 /* ~"기다리게... 이브즈에게 물어볼 것이 하나 있네..."~ */ EXTERN ~DYVES~ 4
+  IF ~~ THEN REPLY #39726 /* ~"그 이야기는 나중에 듣도록 하겠네, 모트. 안녕히 계시오, 이브즈."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 415 // from: 414.0
+  SAY #39572 /* ~"'세 번째 소원?' 남자는 당황했어. '첫 번째와 두 번째 소원도 말한 적이 없는데 어떻게 세 번째 소원을 말하라는 거요?'"~ */
+  IF ~~ THEN REPLY #39727 /* ~"모트, 계속하게..."~ */ GOTO 416
+  IF ~~ THEN REPLY #39728 /* ~"기다리게.. 이브즈에게 물어볼 것이 하나 있네..."~ */ EXTERN ~DYVES~ 4
+  IF ~~ THEN REPLY #39729 /* ~"그 이야기는 나중에 듣도록 하겠네, 모트. 안녕히 계시오, 이브즈."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 416 // from: 415.0
+  SAY #39573 /* ~"'당신의 두 소원은 이미 성취되었소,' 노파가 말했지, '하지만 당신의 두 번째 소원은 모든 걸 첫 번째 .소원을 말하기 전 상태로 되돌려 달라는 것이었소. 그래서 당신은 아무 것도 기억하지 못하는 거요. 왜냐하면 모든 것이 *정확히* 당신이 어떤 소원도 말하기 전 상태로 되돌아갔기 때문이오.' 그녀는 불쌍한 노인을 보며 깔깔 웃었지. '그래서 하나의 소원만 남은 거요.'" ~ */
+  IF ~~ THEN REPLY #39752 /* ~"모트, 계속하게..."~ */ GOTO 417
+  IF ~~ THEN REPLY #39753 /* ~"기다리게... 이브즈에게 물어볼 것이 하나 있네..."~ */ EXTERN ~DYVES~ 4
+  IF ~~ THEN REPLY #39754 /* ~"그 이야기는 나중에 듣도록 하겠네, 모트. 안녕히 계시오, 이브즈."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 417 // from: 416.0
+  SAY #39574 /* ~"'좋소,' 노인이 말했어, "나는 이 얘기를 믿지 않소, 하지만 소원을 말해서 손해 볼 건 없으니까. 나는 내가 누군지 알고 싶소.'"
+
+"'재미있군,' 노파는 소원을 들어주고 영원히 사라지면서 말했어. '그게 바로 당신의 첫 번째 소원이었소.'"
+~ */
+  IF ~~ THEN EXTERN ~DYVES~ 55
+END
+
+IF ~~ THEN BEGIN 418 // from:
+  SAY #39575 /* ~"빌어먹을, 대체 그게 뭐야, 이 바보 같은 폴리곤아?! 그건 내가 들어본 것들 중 가장 지루한 쓰레기야!"~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 11
+END
+
+IF ~~ THEN BEGIN 419 // from:
+  SAY #39576 /* ~"윤색?"~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 12
+END
+
+IF ~~ THEN BEGIN 420 // from:
+  SAY #39577 /* ~"*자,* 흰들링. 네게는 이미 절대로 내놓지 않으려 할 꼬리가 하나 있다고."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 196
+END
+
+IF ~~ THEN BEGIN 421 // from:
+  SAY #40068 /* ~모트는 여자의 빤한 태도를 흉내내며 당신 주위를 돈다. "천상의 신들이여, 대장... 그녀가 옳아! 지금까진 몰랐는데... 대장은 *흉터*로 뒤덮여 있어!"~ */
+  IF ~  !NearbyDialog("DMorte")
+HPPercent(Protagonist,100)
+~ THEN REPLY #40069 /* ~"그것들은 모두 오래된 흉터들이오. 난 괜찮소."~ */ EXTERN ~DNENNY~ 2
+  IF ~  !NearbyDialog("DMorte")
+HPPercentGT(Protagonist,49)
+~ THEN REPLY #40070 /* ~"대수로운 것이 아니오. 난 괜찮을 거요."~ */ EXTERN ~DNENNY~ 2
+  IF ~  !NearbyDialog("DMorte")
+HPPercentLT(Protagonist,50)
+~ THEN REPLY #40071 /* ~"그렇소. 그것도 아주 심하오."~ */ EXTERN ~DNENNY~ 2
+  IF ~~ THEN REPLY #40072 /* ~"신경 쓸 것 없소. 물어볼 것들이 좀 있소..."~ */ EXTERN ~DNENNY~ 3
+  IF ~~ THEN REPLY #40073 /* ~"그 일에 대해서는 걱정하지 마시오. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 422 // from:
+  SAY #40074 /* ~모트는 눈썹을 움직인다. "그래, 당신은 너무 '뻔뻔해'... 그건 아마 당신의 흔들리는 유-"~ */
+  IF ~~ THEN REPLY #40075 /* ~"모트., 그만 됐네."~ */ GOTO 423
+END
+
+IF ~~ THEN BEGIN 423 // from: 422.0
+  SAY #40076 /* ~모트는 입을 다문다.~ */
+  IF ~  Global("Nenny","GLOBAL",2)
+~ THEN REPLY #40077 /* ~"괜찮소, 네니."~ */ EXTERN ~DNENNY~ 9
+  IF ~  Global("Nenny","GLOBAL",2)
+~ THEN REPLY #40078 /* ~"다시는 그러지 마시오, 네니."~ */ EXTERN ~DNENNY~ 9
+  IF ~  Global("Nenny","GLOBAL",1)
+~ THEN REPLY #40079 /* ~"괜찮소, 아가씨."~ */ EXTERN ~DNENNY~ 9
+  IF ~  Global("Nenny","GLOBAL",1)
+~ THEN REPLY #40080 /* ~"다시는 그러지 말도록 하시오, 아가씨."~ */ EXTERN ~DNENNY~ 9
+END
+
+IF ~~ THEN BEGIN 424 // from:
+  SAY #40081 /* ~"이봐!"~ */
+  IF ~~ THEN EXTERN ~DNENNY~ 27
+END
+
+IF ~~ THEN BEGIN 425 // from:
+  SAY #40082 /* ~모트는 혼자서 중얼거린다. "그 안에 뭔가가 있다는 건 좋은 일인 것 깉군."~ */
+  IF ~~ THEN REPLY #40083 /* ~"다른 질문이 있소, 네니..."~ */ EXTERN ~DNENNY~ 3
+  IF ~~ THEN REPLY #40084 /* ~"내가 원했던 건 그게 전부요. 네니. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 426 // from:
+  SAY #40222 /* ~"오, 안돼... 우리에게 당장 말해줘야 해."~ */
+  IF ~~ THEN REPLY #40223 /* ~"그래... 제발, 나으리. 얘기해 주시오."~ */ EXTERN ~DBROCUS4~ 4
+  IF ~~ THEN REPLY #40224 /* ~"관두세, 모트. 그에게 하고 싶은 질문이 또 있네..."~ */ EXTERN ~DBROCUS4~ 2
+  IF ~~ THEN REPLY #40225 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 427 // from:
+  SAY #40275 /* ~모트는 당신 가까이로 날아와 속삭인다. "그녀의 애인이 불쌍하군. 그는 자기 애인의 본색을 모르고 있을 거야. 저런 계집은 골칫거리일 뿐이야.~ */
+  IF ~~ THEN REPLY #40276 /* ~"그건 현명한 생각이 아니오, 줄리엣. 자신이 가진 것을 아끼고 즐길 줄을 아시오."~ */ EXTERN ~DSADJULI~ 12
+  IF ~~ THEN REPLY #40277 /* ~"무슨 생각을 하고 있었소, 줄리엣?"~ */ EXTERN ~DSADJULI~ 13
+  IF ~~ THEN REPLY #40278 /* ~"물어볼 것들이 좀 있소. 줄리엣..."~ */ EXTERN ~DSADJULI~ 24
+  IF ~~ THEN REPLY #40279 /* ~"내가 원했던 건 그게 전부요, 줄리엣. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 428 // from:
+  SAY #40685 /* ~모트는 조용히 속삭인다: "와... 정말 무시무시한 계집이야."~ */
+  IF ~~ THEN REPLY #40686 /* ~"미안하오, 부인... 이 곳에 누가 있으리라고는 생각하지 않았소."~ */ EXTERN ~DMARISSA~ 2
+  IF ~~ THEN REPLY #40687 /* ~"질문할 것들이 있소, 부인,"~ */ EXTERN ~DMARISSA~ 3
+  IF ~~ THEN REPLY #40688 /* ~"그럼 안녕히 계시오, 부인."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 429 // from:
+  SAY #40846 /* ~"이봐, 대장! 지금 우리는 다원 우주에서 가장 섹시한 계집들이 모인 곳에 와 있다고, 그런데 대장은 *모드론*과 얘기를 하는 거야?"~ */
+  IF ~~ THEN REPLY #40847 /* ~"그들에 대해 내게 어떤 얘기를 해줄 수 있겠나, 모트?"~ */ GOTO 430
+  IF ~~ THEN REPLY #40848 /* ~모트를 무시하고 모드론과 인사한다.~ */ DO ~SetGlobal("Met_Modrons","GLOBAL",1)
+~ EXTERN ~DBROCUS6~ 3
+  IF ~~ THEN REPLY #40849 /* ~"미안하네, 모트, 하지만 난 모드론과 얘기를 해야겠네."~ */ GOTO 431
+  IF ~~ THEN REPLY #40850 /* ~"알았네. 가세, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 430 // from: 429.0
+  SAY #40851 /* ~모트는 역겨워 못 견디겠다는 듯 말한다. "대체 무슨 얘기를 하겠다는 거야? 짜증나는 태엽 벌레를... 놈들은 늘 다원 우주에 법과 질서를 강제하려고 날뛰고 있다고. *선*에는 관심도 없고 *질서*만. 놈들에겐 신경 끄고서 아가씨들하고 얘기나 하지고."~ */
+  IF ~~ THEN REPLY #40852 /* ~모트를 무시하고 모드론과 인사한다.~ */ DO ~SetGlobal("Met_Modrons","GLOBAL",1)
+~ EXTERN ~DBROCUS6~ 3
+  IF ~~ THEN REPLY #40853 /* ~"미안하네, 모트, 하지만 난 모드론과 얘기를 해야겠네."~ */ GOTO 431
+  IF ~~ THEN REPLY #40854 /* ~"알았네. 가세, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 431 // from: 429.2 430.1
+  SAY #40855 /* ~모트는 크게 한숨을 쉰다. "좋아. 마음대로 해. 하지만 나중에 나보고 뭐라지는 마. 하지만 놈들로부터 뭘 알아내긴 힘들 거야, 대장... 얘기 상대로는 묘한 것들이니까."~ */
+  IF ~~ THEN REPLY #40856 /* ~"안녕하시오..."~ */ DO ~SetGlobal("Met_Modrons","GLOBAL",1)
+~ EXTERN ~DBROCUS6~ 3
+END
+
+IF ~~ THEN BEGIN 432 // from:
+  SAY #41135 /* ~"뭐든지!" 모트가 외친다. "뭐든지 하고 싶은 대로 하라고!"~ */
+  IF ~~ THEN EXTERN ~DKESAI~ 2
+END
+
+IF ~~ THEN BEGIN 433 // from:
+  SAY #41136 /* ~"정말 눈물이 나오려고 하는군... 왜 *몸*이 있었을 때는 이런 아가씨를 만나지 못했던 거지?!"~ */
+  IF ~~ THEN EXTERN ~DKESAI~ 11
+END
+
+IF ~~ THEN BEGIN 434 // from:
+  SAY #41632 /* ~"내 친구는 네년이 매력적이라고 생각했었지, 하지만 으악! 그는 정말 끔찍한 착각을 한 거지!"~ */
+  IF ~~ THEN EXTERN ~DKIMASXI~ 2
+END
+
+IF ~~ THEN BEGIN 435 // from: 436.0
+  SAY #41633 /* ~"좋소, 대장, 알았다고. 지독한 년이야, 안 그래?" 모트는 *흥* 소리를 내고 눈썹을 움직인다. "그것 참 마음에 드는데!"~ */
+  IF ~~ THEN REPLY #41634 /* ~"물론 그렇겠지, 모트, 하지만 난 그녀와 얘기해야겠네"~ */ EXTERN ~DKIMASXI~ 14
+  IF ~~ THEN REPLY #41635 /* ~"알았네... 그냥 가세, 모트."~ */ EXTERN ~DKIMASXI~ 4
+END
+
+IF ~~ THEN BEGIN 436 // from:
+  SAY #41636 /* ~"내게 거시기가 있었더라도 네년 근처에 갖다 대기라도 했을 것 같아? 매음굴에 대해 어디서 주워듣고는 여기 와서 돈이라도 벌 생각이라도 했던 거야, 이 벼룩에게 물린 시궁창에서 나온 창녀야! 흥! 네 털복숭이 다리에서 진드기들이 서 말은 튀어나오는 데도 불구하고 그들이 널 들여보내 주었다는 사실이 믿기지 않는군!"~ */
+  IF ~~ THEN REPLY #41637 /* ~"두 사람 다 그만하시오."~ */ GOTO 435
+  IF ~~ THEN REPLY #41638 /* ~그들이 계속 옥신각신하도록 내버려 둔다.~ */ EXTERN ~DKIMASXI~ 3
+END
+
+IF ~~ THEN BEGIN 437 // from:
+  SAY #41639 /* ~"*그*라고 해! '*그*는 지금도 입이 꽤 더러운 것 같은데'라고 하라고, 똥주머니 키마스사이... 이 더러운 염소다리 창녀야!"~ */
+  IF ~~ THEN EXTERN ~DKIMASXI~ 18
+END
+
+IF ~~ THEN BEGIN 438 // from:
+  SAY #41640 /* ~"아마 너보단 낫겠지?" 모트는 눈썹을 움직인다. "에? 에?"~ */
+  IF ~~ THEN EXTERN ~DKIMASXI~ 20
+END
+
+IF ~~ THEN BEGIN 439 // from:
+  SAY #41641 /* ~"좋아, *티플링.* 하지만 네게서 한두 가지 정도 배운 건 인정하지. 좋은 생각이었어, 대장!"~ [MRT387] */
+  IF ~~ THEN REPLY #41642 /* ~"물론이지, 모트."~ */ EXTERN ~DKIMASXI~ 21
+END
+
+IF ~~ THEN BEGIN 440 // from: 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
+  SAY #41830 /* ~"이봐, 대장. 대장은 죽음과 키스를 한 탓에 아직도 정신이 좀 오락가락한 것 같아. 그러니 내가 두 가지 충고를 하겠어. 첫째, 질문할 게 있으면 내게 *물어.* 알겠어?"
+
+^NNOTE: <SPEAKTO>^-~ */
+  IF ~~ THEN REPLY #41831 /* ~"알겠네... 질문할 것이 있으면 자네에게 물어보겠네."~ */ GOTO 441
+END
+
+IF ~~ THEN BEGIN 441 // from: 440.0
+  SAY #41832 /* ~"둘째, 대장이 겉보기의 *반*만큼이라도 건망증이 심하다면, 뭐든지 기록을 하는 습관을 기르라고. 조금이라도 중요할 것 같은 얘기를 듣게 되면 잊지 않도록 즉각 기록을 해."~ */
+  IF ~~ THEN REPLY #41833 /* ~"만약 내가 지니고 있어야 할 일지를 가지고 있다면 그렇게 하겠네."~ */ GOTO 442
+END
+
+IF ~~ THEN BEGIN 442 // from: 441.0
+  SAY #41834 /* ~"그럼 새 일지를 쓰기 시작하라고. 그 따윈 별 문제도 아냐. 여긴 대장이 평생 쓰고 남을 정도의 양피지와 잉크가 있으니까."~ */
+  IF ~~ THEN REPLY #41835 /* ~"흠... 좋네. 손해볼 건 없겠지... 그럼 새 일지를 만들도록 하지."~ */ GOTO 443
+END
+
+IF ~~ THEN BEGIN 443 // from: 442.0
+  SAY #41836 /* ~"그것을 써서 대장의 여정을 파악하라고. 만약 대장이 중요한 사안들, 예들 들어 대장이 누구인가.,.. 또는 더 중요하게 *내*가 누구인가에 대해 가물가물하게 되면 일지를 읽어 기억을 상기시키라고. 알겠어?"
+
+^NNOTE: 일지를 보려면 퀵 메뉴에 있는 일지 버튼을 누른다. 일지는 게임 진행 동안 자동으로 갱신된다.^-~ */
+  IF ~~ THEN REPLY #41837 /* ~"좋아, 알았네. 가세."~ */ JOURNAL #39516 /* ~내 원래 일지를 잃어버렸기 때문에 난 새로운 일지를 쓰기 시작했다. 나는 "시체안치소"란 곳에서 깨어났다. 난 내가 누구인지, 내가 이 곳에서 무엇을 하고 있는 것인지, 그리고 어떻게 이 곳에 오게 되었는지도 모른다. 내가 만난 건 모트라는 이름의 말하는 해골뿐이다... 내 상처를 살피다 그는 내 등에 문신으로 새겨진 '지시 사항'을 발견했다. 
+
+"네가 스틱스 강물을 몇 통이나 마신 듯한 기분인 것은 알지만, 정신을 차리고 집중해야 한다. 네 소지품들 중에는 이 중대사에 대해서 일부나마 밝혀줄 일지가 한 권 있을 것이다. 만약 파로드가 이미 죽지 않았다면 그가 나머지 부분에 대해 설명해줄 수 있을 것이다,
+
+절대로 일지를 잃어서는 안 된다, 아니면 우린 다시 스틱스에 빠지는 신세가 될 테니까. 알겠나? 그리고 내 말을 믿게 - 뭘 하든 간에 네가 누구이며, 어떤 일이 네게 일어나고 있으며, 어디서 왔는지에 대해 말해서는 안돼. 그렇지 않으면 화장터로 직행하게 될 테니. 내가 말하는 대로 해: 일지를 읽은 후 파로드를 찾도록 해.
+
+내가 나에게 이 메시지를 남겼을까? 보아하니 난 이 '파로드'란 자와 내 일지를 찾아야만 할 것 같다. ~ */ EXIT
+END
+
+IF WEIGHT #6 /* Triggers after states #: 742 737 733 487 even though they appear after this state */
+~  !Global("Mortuary_Walkthrough","GLOBAL",0)
+!Global("Mortuary_Walkthrough","GLOBAL",1)
+Global("AR0200_Visited","GLOBAL",0)
+InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 444 // from: 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
+  SAY #41838 /* ~"대체 뭘 그렇게 골똘히 생각하는 거야, 대장?"~ [MRT515] */
+  IF ~~ THEN REPLY #41840 /* ~"내 등에 새겨진 글을 다시 읽어 주겠나?"~ */ GOTO 445
+  IF ~~ THEN REPLY #41841 /* ~"여기가 어떤 곳인지 다시 얘기해주겠나?"~ */ GOTO 450
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41842 /* ~"이 곳은 거대하군... 누가 관리하지?"~ */ GOTO 451
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41843 /* ~"이 곳의 관리인이 누군지 다시 말해주겠나?"~ */ GOTO 451
+  IF ~~ THEN REPLY #41844 /* ~"이 곳에 있는 시체들... 그것들은 다 어디서 왔나?"~ */ GOTO 454
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41845 /* ~"전에 자네는 내게 *여자*시체는 죽이지 말라고 했었네. 그 이유는 뭔가?"~ */ GOTO 455
+  IF ~  PartyHasItem("Bandage")
+~ THEN REPLY #41846 /* ~"이 붕대들은 어떻게 사용하나?"~ */ GOTO 453
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41847 /* ~"지금은 아무런 용건도 없네, 모트. 난 자네가 아직도 나와 있는지 확인했을 뿐이네."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41848 /* ~"지금은 아무런 용건도 없네, 모트. 난 자네가 아직도 나와 있는지 확인했을 뿐이네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 445 // from: 444.0
+  SAY #41849 /* ~"이봐, 대장. 설마 벌써 까먹은 건 아니겠지?"~ */
+  IF ~~ THEN REPLY #41850 /* ~"내 기억을 되살리고자 할 뿐이네."~ */ GOTO 446
+  IF ~~ THEN REPLY #41851 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41852 /* ~"그럼 관두게. 가세."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41853 /* ~"그럼 관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 446 // from: 445.0
+  SAY #41854 /* ~"그 소리를 많이 듣게 될 것 같군." 모트는 헛기침을 한다. "어디 보자..."
+
+'네가 스틱스 강물을 몇 통이나 마신 듯한 기분인 것은 알지만, 정신을 차리고 집중해야 한다. 네 소지품들 중에는 이 중대사에 대해서 일부나마 밝혀 줄 일지가 한 권 있을 것이다. 만약 파로드가 이미 죽지 않았다면 그가 나머지 부분에 대해 설명해줄 수 있을 것이다.'~ */
+  IF ~~ THEN REPLY #41855 /* ~"파로드... 흠... 계속하게."~ */ GOTO 447
+  IF ~~ THEN REPLY #41856 /* ~"관두게. 다른 질문이 있네.."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41857 /* ~"관두게. 이미 충분히 들었네. 그만 가세."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41858 /* ~"관두게. 이미 충분히 들었네. 그만 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 447 // from: 446.0
+  SAY #41859 /* ~"그래, 그래, 기다리라고." 모트는 잠시 멈춘다. "좋아, 이게 마지막이야..."
+
+'절대로 일지를 잃어서는 안 된다, 아니면 우린 다시 스틱스에 빠지는 신세가 될 테니까. 알겠나? 그리고 내 말을 믿어라 - 뭘 하든 간에 네가 누구이며, 어떤 일이 네게 일어나고 있으며, 어디서 왔는지에 대해 말해서는 안 된다. 그렇지 않으면 화장터로 직행하게 될 테니. 내가 말하는 대로 해라: 일지를 읽은 후 파로드를 찾아라.'~ */
+  IF ~~ THEN REPLY #41860 /* ~"그리고 내가 깨어났을 때 내게 일지가 없었는가?"~ */ GOTO 448
+  IF ~~ THEN REPLY #41861 /* ~"관두게. 다른 질문이 있네..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41862 /* ~"관두게. 이미 충분히 들었네. 그만 가세."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41863 /* ~"관두게. 이미 충분히 들었네. 그만 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 448 // from: 447.0
+  SAY #41864 /* ~"아니... 여기 왔을 때 대장은 깨끗하게 털린 상태였어. 이미 말했듯이 대장 몸에는 충분하고도 남을 정도의 일지가 적혀 있다고."~ */
+  IF ~~ THEN REPLY #41865 /* ~"파로드란 사람을 정말 모르나?"~ */ GOTO 449
+  IF ~~ THEN REPLY #41866 /* ~"옳은 말이네. 그 밖에도 물어보고 싶은 것들이 있네..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41867 /* ~"그럼 좋네. 가세."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41868 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 449 // from: 448.0
+  SAY #41869 /* ~"아니. 그래도 이 파로드란 자가 어디 있는지 아는 사람은 있을 거야... 물론 그건 우리가 이 곳에서 탈출한 후의 얘기지만."~ */
+  IF ~~ THEN REPLY #41870 /* ~"우리가 가기 전에 다른 질문들을 좀 하고 싶네..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41871 /* ~"그럼 좋네. 가세."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41872 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 450 // from: 444.1
+  SAY #41873 /* ~"그것은 '시체안치소'라고 불리지... 임신한 거미만큼이나 매력적인 모양새의 커다란 검은 건물이라고."~ */
+  IF ~~ THEN REPLY #41874 /* ~"알았네. 자네에게 물어볼 것들이 더 있네."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41875 /* ~"내가 알고 싶었던 건 그게 전부네. 고맙네."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41876 /* ~"내가 알고 싶었던 건 그게 전부네. 고맙네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 451 // from: 444.2 444.3
+  SAY #41877 /* ~"그들은 자신들을 '더스트맨'이라고 부르고 있어. 그들을 알아보는 건 쉽지. 예외없이 검은 법복을 입고 있는데다가 꼭 사후경직을 일으킨 것 같은 얼굴들을 하고 있으니까. 그들은 악귀같은 죽음 숭배자들이야. 그들은 모두 다 죽어야 한다고 믿고 있어... 그것도 빠르면 빠를수록 좋다고."~ */
+  IF ~~ THEN REPLY #41878 /* ~"난 헷갈리네... 내가 탈출하는 것에 대해 더스트맨들이 왜 신경을 쓰지?"~ */ GOTO 452
+  IF ~~ THEN REPLY #41879 /* ~"알았네. 자네에게 물어볼 것들이 더 있네."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41880 /* ~"알았네. 그렇다면 조심하겠네."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41881 /* ~"알았네. 그렇다면 조심하겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 452 // from: 451.0
+  SAY #41882 /* ~"내가 말할 때 뭘 하고 있었어?! 더스트맨은 모두가 다 죽어야 하며, 그것도 빠르면 빠를수록 좋다고 믿고 있다고 내가 이미 말했잖아. 대장이 보기엔 지금까지 우리가 본 시체들이 죽어서 더 행복해진 것 같아?"~ */
+  IF ~~ THEN REPLY #41883 /* ~"알았네. 자네에게 물어볼 것들이 더 있네."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41884 /* ~"알았네... 기억하도록 노력하겠네."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41885 /* ~"알았네... 기억하도록 노력하겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 453 // from: 444.6
+  SAY #41886 /* ~"어... 그것들을 쓰라고. 지혈 등의 용도로 말이야."
+
+^NNOTE: <BANDAGES2>^-~ */
+  IF ~~ THEN REPLY #41887 /* ~"알았네. 자네에게 물어볼 것들이 더 있네."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41888 /* ~"고맙네. 내가 할 수 있을 것 같네."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41889 /* ~"고맙네. 내가 할 수 있을 것 같네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 454 // from: 444.4
+  SAY #41890 /* ~"다원 우주에서는 매일 누군가 반드시 죽어, 대장. 이 비틀거리는 얼간이들은 이 곳의 관리자들에게 사후의 시체에 대한 권리를 판 한심한 작자들의 잔해라고."~ */
+  IF ~~ THEN REPLY #41891 /* ~"알았네. 자네에게 물어볼 것들이 더 있네."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41892 /* ~"알았네... 기억하도록 노력하겠네."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41893 /* ~"알았네... 기억하도록 노력하겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 455 // from: 444.5
+  SAY #41894 /* ~"뭐- *진담*이야? 이봐, 대장, 이 죽은 아가씨들은 우리들처럼 산전수전 다 겪은 친구들에게 주어진 마지막 기회라고. 우리는 *기사도* 정신을 발휘해야 해... 열쇠를 찾으려고 그녀들을 칼로 베거나 사지를 절단하는 짓 따위는 해서는 안돼."~ */
+  IF ~~ THEN REPLY #41895 /* ~"마지막 기회? 대체 무슨 얘긴가?"~ */ GOTO 456
+  IF ~~ THEN REPLY #41896 /* ~"관두게. 자네에게 할 다른 질문들이 있네..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41897 /* ~"알았네... 기억하도록 노력하겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 456 // from: 455.0
+  SAY #41898 /* ~"대장, 그들은 죽었어, 그리고 우리들도 죽었어... 내가 무슨 말을 하려는지 알겠어? 그래?"~ */
+  IF ~~ THEN REPLY #41899 /* ~"아니... 그렇지 않네..."~ */ GOTO 457
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #41900 /* ~"진담은 아니겠지."~ */ GOTO 457
+  IF ~~ THEN REPLY #41901 /* ~"관두게. 자네에게 할 다른 질문들이 있네..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41902 /* ~"자네 얘기는 이미 충분히 들었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 457 // from: 456.0 456.1
+  SAY #41903 /* ~"대장, 우린 이미 이 절뚝거리는 아가씨들과 대화를 시작할 화제거리도 가지고 있다고. 우리들은 *모두* 적어도 한 번씩은 죽어 봤어. 그러니 우린 공통의 화제가 있는 셈이지. 그들은 우리처럼 죽은 경험이 있는 사내들을 환영할 거라고."~ */
+  IF ~~ THEN REPLY #41904 /* ~"기다리게... 전에 자네는 내가 죽지 않았다고 하지 않았었나?"~ */ GOTO 458
+  IF ~~ THEN REPLY #41905 /* ~"관두게. 자네에게 할 다른 질문들이 있네..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41906 /* ~"자네 얘기는 이미 충분히 들었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 458 // from: 457.0
+  SAY #41907 /* ~"그래... 좋아. *대장*은 죽지 않았을지도 모르지만 *난* 죽었어. 그리고 나라면 여기 있는 체격 좋은 멋진 시체 아가씨들과 기꺼이 관을 함께 쓰겠어." 모트는 기대에 부푼 듯 이빨을 딱딱거리기 시작한다. "물론 그러기 위해서는 우선 관리인들이 그들을 포기해야 하는데 그럴 가능성은 희박하지..."~ */
+  IF ~~ THEN REPLY #41908 /* ~"자네에게 할 다른 질문들이 있네, 모트..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41909 /* ~"자네 얘기는 이미 충분히 들었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 459 // from:
+  SAY #41910 /* ~"신들이시여! 그건 정말 골때리는 책이군!"~ */
+  IF ~~ THEN REPLY #41911 /* ~"뭔가?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1)
+~ GOTO 460
+END
+
+IF ~~ THEN BEGIN 460 // from: 459.0
+  SAY #41913 /* ~"추측을 하자면 그 책은 이 곳에 실려오는 모든 불행한 작자들의 이름을 기록하는 책인 것 같아."~ */
+  IF ~~ THEN REPLY #41914 /* ~"내 이름이 저곳에 있을 수도 있겠나?"~ */ GOTO 461
+END
+
+IF ~~ THEN BEGIN 461 // from: 460.0
+  SAY #41915 /* ~"어... 그럴 수도 있겠지. 알아보려면 저기 있는 저 떠다니는 더스티와 얘기를 해야 할 거야. 그게 좋은 생각인지는 모르겠지만."~ */
+  IF ~~ THEN REPLY #41916 /* ~"내겐 답이 필요하네. 난 가서 그와 얘기를 하겠네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 462 // from:
+  SAY #41919 /* ~모트는 속삭인다: "어느 정신병원에서 환자가 한 명 부족하다고 난리가 났겠군."~ */
+  IF ~~ THEN REPLY #41920 /* ~"당신에게 물어볼 것들이 있소, 점블..."~ */ EXTERN ~DJUMBLE~ 2
+  IF ~  Global("Story_Reekwind_Curse","GLOBAL",1)
+Global("Jumble_Reekwind","GLOBAL",0)
+~ THEN REPLY #41921 /* ~"당신이 리크윈드를 저주한 사람이군, 그렇지 않소?"~ */ DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1)
+~ JOURNAL #67862 /* ~나는 리크윈드를 저주한 자를 시 공회당에서 만났다. 그의 이름은 점블 머더센스이다. ~ */ EXTERN ~DJUMBLE~ 8
+  IF ~  Global("Jumble_Reekwind","GLOBAL",1)
+~ THEN REPLY #67864 /* ~"난 당신이 리크윈드에게 건 저주를 풀어주었으면 하오."~ */ EXTERN ~DJUMBLE~ 9
+  IF ~~ THEN REPLY #41922 /* ~"이만 실례하겠소, 점블. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 463 // from:
+  SAY #41923 /* ~"이런... 대장은 저주에 걸린 모양이야..."~ */
+  IF ~~ THEN REPLY #41924 /* ~"내게 무슨 짓을 한 거요, 점블?"~ */ EXTERN ~DJUMBLE~ 7
+  IF ~~ THEN REPLY #41925 /* ~"점블... 제발, 당신이 한 일을 원상태로 돌려놓으시오."~ */ EXTERN ~DJUMBLE~ 7
+  IF ~~ THEN REPLY #41926 /* ~"점블, 당신이 무슨 짓을 했던 어서 원상태로 돌려놓으시오, 아니면 뼈저리게 후회할 테니."~ */ EXTERN ~DJUMBLE~ 7
+  IF ~~ THEN REPLY #41927 /* ~"그냥 가세, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 464 // from:
+  SAY #42929 /* ~"그 계집을 무시하라고... 마치 아무런 관심도 없는 것처럼 행동해. 그러면 효과가 있을 거라고!"~ */
+  IF ~~ THEN EXTERN ~DMONTAGU~ 29
+END
+
+IF ~~ THEN BEGIN 465 // from:
+  SAY #42930 /* ~"날 믿으라고. 그녀를 무시하기 시작해서 마찰을 일으킨 후 그들이 궁금해 하도록 그냥 내버려 두라고, 그럼 대체 무슨 일인지 알려고 법석을 떨 테니. 그렇지, 대장?" ~ */
+  IF ~~ THEN REPLY #42931 /* ~"그렇네... 그녀는 뭔가 잘못되었다고 생각할 것이고, 그는 처음이자 마지막으로 게임의 목표물이 아닌 게임을 하는 주체가 될 것이네."~ */ EXTERN ~DMONTAGU~ 30
+  IF ~~ THEN REPLY #42932 /* ~"아니... 그건 좋은 생각이 아니네."~ */ EXTERN ~DMONTAGU~ 31
+END
+
+IF ~~ THEN BEGIN 466 // from:
+  SAY #43543 /* ~"그게 기스는 번식을 하면 안 되는 이유야. 맨날 믿음이 어쩌고저쩌고 횡설수설 하지 않으면 '죽일 마인드 훌레이어와 기스양키는 어디 있지' 하면서 주접을 떨지. 난 그들이 성교를 즐기기나 하는지 모르겠어. 그들은 도중에 미쳐버리거나 늘 너무 한 곳에 집중만 해 유머 감각이 마비된 모양이야. 그들은 노상 집중, 하나의 정신, 공동체 내의 신뢰 등에 대해 지껄이지만, 그들이 뇌 빠는 놈들로부터 해방되자 마자 자기네들끼리 원수가 된 꼴 좀 보라고. 어디 내게 종교와 이데올로기가 다원 우주를 파멸로 이끌지 않을 거라고 말해보시지."~ */
+  IF ~~ THEN EXTERN ~DKIINA~ 35
+END
+
+IF ~~ THEN BEGIN 467 // from:
+  SAY #43908 /* ~"와우!"~ */
+  IF ~  PartyHasItem("Decant")
+Global("Seek_Word","GLOBAL",1)
+~ THEN REPLY #43909 /* ~"당신이 네멜이오? 난 당신이 이 유리병의 명령어를 알고 있다는 얘기를 들었소." ~ */ EXTERN ~DNEML~ 4
+  IF ~  Global("Aelwyn","GLOBAL",2)
+!Dead("Aelwyn")
+~ THEN REPLY #43910 /* ~"네멜? 당신 친구 앨윈이 당신을 찾고 있소."~ */ DO ~SetGlobal("Nemelle","GLOBAL",3)
+SetGlobal("Aelwyn","GLOBAL",4)
+~ JOURNAL #39490 /* ~나는 네멜에게 그녀의 친구 앨윈이 그녀를 찾고 있다고 전해주었다. 그녀는 상으로 내게 마법의 키스를 해주었으며, 덕분에 내 최대 HP는 3 포인트 증가하였다. ~ */ EXTERN ~DNEML~ 6
+  IF ~  GlobalLT("Aelwyn","GLOBAL",2)
+~ THEN REPLY #43911 /* ~"누군가를 찾고 있소?"~ */ EXTERN ~DNEML~ 14
+  IF ~~ THEN REPLY #43912 /* ~"질문할 것들이 좀 있소..."~ */ EXTERN ~DNEML~ 11
+  IF ~~ THEN REPLY #43913 /* ~"나는 아무 일도 하지 않았소, 네멜. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 468 // from:
+  SAY #43914 /* ~"와우!"~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 209
+END
+
+IF ~~ THEN BEGIN 469 // from:
+  SAY #43915 /* ~"이런, 정말 성깔 한 번 화끈한 계집이군! 관심에 굶주렸나? 만약 네가 그냥 질투를 하는 것뿐이라면 내가 네게 침을 흘려 줄 수도 있지..." 모트는 안나를 향해 날아가며 군침을 삼킨다.~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 210
+END
+
+IF ~~ THEN BEGIN 470 // from:
+  SAY #43916 /* ~모트는 갑자기 멈춘다, 그리고 알아들을 수 없는 말로 중얼거리며 고개를 돌린다.~ */
+  IF ~  PartyHasItem("Decant")
+Global("Seek_Word","GLOBAL",1)
+~ THEN REPLY #43917 /* ~"당신이 네멜이오? 난 당신이 이 유리병의 명령어를 알고 있다는 얘기를 들었소." ~ */ EXTERN ~DNEML~ 4
+  IF ~  Global("Aelwyn","GLOBAL",2)
+!Dead("Aelwyn")
+~ THEN REPLY #43918 /* ~"네멜? 당신 친구 앨윈이 당신을 찾고 있소."~ */ DO ~SetGlobal("Nemelle","GLOBAL",3)
+SetGlobal("Aelwyn","GLOBAL",4)
+~ JOURNAL #39490 /* ~나는 네멜에게 그녀의 친구 앨윈이 그녀를 찾고 있다고 전해주었다. 그녀는 상으로 내게 마법의 키스를 해주었으며, 덕분에 내 최대 HP는 3 포인트 증가하였다. ~ */ EXTERN ~DNEML~ 6
+  IF ~  GlobalLT("Aelwyn","GLOBAL",2)
+~ THEN REPLY #43919 /* ~"누군가를 찾고 있소?"~ */ EXTERN ~DNEML~ 14
+  IF ~~ THEN REPLY #43920 /* ~"질문할 것들이 좀 있소..."~ */ EXTERN ~DNEML~ 11
+  IF ~~ THEN REPLY #43921 /* ~"나는 아무 일도 하지 않았소, 네멜. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 471 // from:
+  SAY #43922 /* ~"이보, 대장... 틀림없이 뭔가를 생각해낼 수 있을 거야. 그렇지?~ */
+  IF ~~ THEN REPLY #43923 /* ~"관두게, 모트. 갑시다."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 472 // from:
+  SAY #44244 /* ~모트는 가까이 다기와 속삭인다: "난 아냐. 난 괜찮다고. 에, 대장? 윙크-윙크, 슬쩍-슬쩍..."~ */
+  IF ~~ THEN EXTERN ~DGONCAL~ 20
+END
+
+IF ~~ THEN BEGIN 473 // from:
+  SAY #44245 /* ~모트는 공포에 질려 공황 상태에 빠진다. "안돼!!! 이봐, 미쳤어?! 그건 말도 안 되는 소리야!"~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 214
+END
+
+IF ~~ THEN BEGIN 474 // from:
+  SAY #44677 /* ~모트는 눈알을 부라린다. "얼간이들이 돌격하는군..."~ */
+  IF ~~ THEN EXTERN ~DYI'MINN~ 47
+END
+
+IF ~~ THEN BEGIN 475 // from:
+  SAY #44944 /* ~"난 시 공회당이 너무 좋아."~ */
+  IF ~~ THEN EXTERN ~DUDESIRE~ 2
+END
+
+IF ~~ THEN BEGIN 476 // from:
+  SAY #45026 /* ~모트는 크게 한숨을 쉰다. "이봐, 대장! 정말 여기 남아 있을 거야?"~ */
+  IF ~~ THEN REPLY #45027 /* ~"잠시 동안 조용히 하게, 모트. 지금 나는 강의를 듣고 싶으니까."~ */ EXTERN ~D3PLANEA~ 1
+  IF ~~ THEN REPLY #45028 /* ~모트를 무시하고 계속 듣는다.~ */ EXTERN ~D3PLANEA~ 1
+  IF ~~ THEN REPLY #45029 /* ~"자네가 옳네, 모트. 가세."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 477 // from:
+  SAY #45088 /* ~"헤. 누가 이 녀석한테 삼의 법칙으로 걷는 걸 멈추라고 하는 걸 까먹은 모양이야."~ */
+  IF ~~ THEN REPLY #45089 /* ~"무슨 뜻인가?"~ */ GOTO 478
+END
+
+IF ~~ THEN BEGIN 478 // from: 477.0
+  SAY #45091 /* ~"이 시체들에게는 지능이라고는 거의 남아 있지를 않아, 그래서 한 번에 한 가지 이상의 일은 할 수가 없지... 일단 그들에게 뭘 시키면, 누가 멈추라고 할 때까지 계속 한다고. 아마 이 불쌍한 녀석은 무슨 일을 끝낸 후에 아무도 그만 하라고 명령하지 않아 저러고 있을 거야."~ */
+  IF ~~ THEN REPLY #45092 /* ~"누가 그들에게 명령을 내리나?"~ */ GOTO 481
+  IF ~~ THEN REPLY #45093 /* ~"자네는 전에 '삼의 법칙'에 대해 언급했었지. 그 말의 뜻은 뭔가?"~ */ JOURNAL #39477 /* ~모트는 '삼의 법칙'에 대해 얘기를 했다. 어떤 사람들은 모든 것이 삼의 단위로 발생한다고 믿으며, 그 숫자에 큰 의미를 부여하는 모양이다. ~ */ GOTO 479
+  IF ~~ THEN REPLY #45094 /* ~"좋네. 자, 계속 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 479 // from: 478.1 481.0
+  SAY #45095 /* ~"에? 삼의 법칙은 다원 우주의 '법칙들' 중 하나로 모든 건 삼의 단위로 발생하는 경향이 있다는 얘기지... 아니면 세 부분으로 구성되어 있던지... 또는 늘 선택지는 셋이라든지... 등등."~ */
+  IF ~~ THEN REPLY #45096 /* ~"자네는 그걸 별로 믿지 않는 것 같군."~ */ GOTO 480
+END
+
+IF ~~ THEN BEGIN 480 // from: 479.0
+  SAY #45098 /* ~"내 생각으로는 말도 안 되는 쓰레기야. 어떤 숫자든 간에 하나를 골라 그것에 큰 의미를 부여하려고 하면, 괜히 모든 게 다 그렇게 보이는 거라고."~ */
+  IF ~~ THEN REPLY #45099 /* ~"알겠네. 전에 자네는 이 시체에게 임무를 부여한 사람이 그 다음에 그들에게 멈추라고 하는 것을 깜빡 잊었다고 했었네. 누가 이러한 시체들에게 임무를 부여하나?"~ */ GOTO 481
+  IF ~~ THEN REPLY #45100 /* ~"알겠네. 이 시체를 조금만 더 살펴보도록 하겠네."~ */ EXTERN ~DZM965~ 1
+  IF ~~ THEN REPLY #45101 /* ~"좋네. 자, 계속 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 481 // from: 478.0 480.0
+  SAY #45102 /* ~"이 곳의 관리인들이나 어떤 사령술사가 그들을 되살려냈겠지. 아마 이 곳의 관리인들일 거야, 싸구려 노동력을 필요로 하는 건 그들이니까."~ */
+  IF ~~ THEN REPLY #45103 /* ~"알겠네. 자네가 전에 얘기했던 '삼의 법칙' 말인데, 그게 대체 무슨 얘기였지?"~ */ JOURNAL #39477 /* ~모트는 '삼의 법칙'에 대해 얘기를 했다. 어떤 사람들은 모든 것이 삼의 단위로 발생한다고 믿으며, 그 숫자에 큰 의미를 부여하는 모양이다. ~ */ GOTO 479
+  IF ~~ THEN REPLY #45104 /* ~"알겠네. 이 시체를 조금만 더 살펴보도록 하겠네."~ */ EXTERN ~DZM965~ 1
+  IF ~~ THEN REPLY #45105 /* ~"좋네. 자, 계속 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 482 // from:
+  SAY #45540 /* ~"어, 대장... 안 그러는-"~ */
+  IF ~~ THEN EXTERN ~DZM985~ 3
+END
+
+IF ~~ THEN BEGIN 483 // from:
+  SAY #45709 /* ~"오! 경매! 여기서 안나를 팔 수도 있겠군."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 215
+END
+
+IF ~~ THEN BEGIN 484 // from:
+  SAY #45710 /* ~"오! 경매! 여기서 다콘을 팔 수도 있겠군."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 163
+END
+
+IF ~~ THEN BEGIN 485 // from:
+  SAY #45711 /* ~"오! 경매! 여기서 내 몸을 살 수도 있겠군."~ */
+  IF ~~ THEN REPLY #45712 /* ~"그래, 모트. 내가 꼭 물어봐 주지."~ */ EXTERN ~DGILTSP~ 4
+  IF ~~ THEN REPLY #45713 /* ~"그럼 그냥 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 486 // from:
+  SAY #45714 /* ~"사랑이 틀림없어. 사랑이라고, 그렇지, 보스?"~ */
+  IF ~~ THEN REPLY #45715 /* ~"둘 다 그만두시오. 나는 여기서 질문을 좀 해야 하니까."~ */ EXTERN ~DGILTSP~ 4
+  IF ~~ THEN REPLY #45716 /* ~"자네가 뭐라든 간에, 모트, 여기 이 친구는 그냥 내버려 두세."~ */ EXIT
+END
+
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 487 // from:
+  SAY #45996 /* ~"이봐, 보라고! 떠다니는 머리가 또 있어."~ */
+  IF ~~ THEN EXTERN ~DVAULT9~ 0
+END
+
+IF ~~ THEN BEGIN 488 // from:
+  SAY #47813 /* ~"이 메이스는 꽤나 인간이 되고 싶은 모양이군. 입 닥쳐, 무기."~ */
+  IF ~~ THEN REPLY #47814 /* ~"조용하게. 그 밖에도 물어볼 것들이 있네..."~ */ EXTERN ~DJUSTFER~ 8
+  IF ~~ THEN REPLY #47815 /* ~물어보고 싶은 것들이 좀 있네..."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 489 // from:
+  SAY #49443 /* ~"오오, 기스양키군. 틀림없이 다콘은 *기꺼이* 그를 도울 거야."~ */
+  IF ~~ THEN REPLY #49444 /* ~"귀중한 의견을 개진해 주어 황송하네, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 490 // from:
+  SAY #50162 /* ~"아, 물론 그들에게도 이름이 있겠지."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 242
+END
+
+IF ~~ THEN BEGIN 491 // from:
+  SAY #50164 /* ~"웃기는군, 휜들링."~ */
+  IF ~~ THEN REPLY #50165 /* ~"관두게, 모트 - 그에게 다른 질문을 좀 해줄 수 있겠소, 안나?"~ */ EXTERN ~DANNAH~ 240
+  IF ~~ THEN REPLY #50166 /* ~"관두게, 가세."~ */ DO ~SetGlobal("Translate_Dabus","GLOBAL",0)
+~ EXTERN ~DADABUS~ 6
+END
+
+IF ~~ THEN BEGIN 492 // from:
+  SAY #50263 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 시길 토박이를 찾아보라고."~ */
+  IF ~~ THEN REPLY #50264 /* ~"알겠소."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 493 // from:
+  SAY #50266 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 여기 있는 휜들링 계집에게 부탁하라고." 그는 안나를 가리킨다. "그녀는 벌통 토박이니까."~ */
+  IF ~~ THEN REPLY #50267 /* ~"아마 그럴지도..."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 494 // from:
+  SAY #50269 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해?" 그는 다콘을 가리킨다. "여기 있는 '나는 잘났으니 너희들 따위와는 얘기를 안 해'하는 양반에게 부탁하라고."~ */
+  IF ~~ THEN REPLY #50270 /* ~"아마 그럴지도..."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 495 // from:
+  SAY #50272 /* ~모트는 조롱한다. "이 떠다니는 염소 대가리들이 하는 말을 해석하느니 차라리 타나리 창자를 걸러내는 게 났지. 통역을 원해? 타나리에게 부탁하라고." 그는 훨-후럼-그레이스를 가리킨다. "아마 그녀는 이 친구들하고 늘 대화를 나누고 있을 거라고." ~ */
+  IF ~~ THEN REPLY #50273 /* ~"아마 그럴지도..."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 496 // from:
+  SAY #50320 /* ~"이런 염병할! 다버스로군!"~ */
+  IF ~~ THEN REPLY #50321 /* ~"뭐가 잘못되었나?"~ */ GOTO 497
+END
+
+IF ~~ THEN BEGIN 497 // from: 496.0
+  SAY #50322 /* ~"그는 다버스야. 그들은 퍼즐과 같은 기호로 '말하지.' 만약 그가 무슨 말을 하는지 모르겠다면 번역해 줄 토박이를 찾거나 그와 의사소통을 할 방법을 찾는 게 좋을 걸. 정말 짜증나는 놈들이지. 내 생각에 놈들은 말을 할 수 있으면서도 일부로 퍼즐을 내서 다른 사람들을 골탕먹이려는 것 같아."~ */
+  IF ~~ THEN REPLY #50323 /* ~"'다버스'란 뭔가?"~ */ GOTO 498
+END
+
+IF ~~ THEN BEGIN 498 // from: 497.0
+  SAY #50324 /* ~"들리는 얘기로는 그들은 레이디 오브 페인의 청소부라는군. 그들은 레이디의 기분에 따라 시길을 부수거나 수리하지. 그들은 시체 파리보다도 징그럽다고." 모트는 한숨을 쉰다. "하지만 다버스는 때려죽일 수도 없어, 그러면 레이디가... 화를 낼 테니."~ */
+  IF ~  Global("Know_Lady","GLOBAL",0)
+~ THEN REPLY #50325 /* ~"'레이디 오브 페인?' 그게 누군가?"~ */ DO ~SetGlobal("Know_Lady","GLOBAL",1)
+~ GOTO 499
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #50328 /* ~"내게 레이디 오브 페인에 대해 어떤 얘기를 해줄 수 있겠나?"~ */ GOTO 499
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #50329 /* ~"알겠네."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 499 // from: 498.0 498.1
+  SAY #50326 /* ~"그녀는 이 도시의 지배자야. 대장도 그녀를 보면 알 거야. 그녀의 얼굴 주변에는 칼날들이 달렸고, 그녀는 거인만큼이나 거대하며, 저 친구들처럼 공중에 떠다니지." 모트는 당신들 둘을 바라보고 있는 다버스를 가리킨다. "아무도 그녀에 대해서 자세히 알지는 못해... 그녀는 거의 말을 하지 않아. 대장이 알아야 할 건 그녀를 화나게 해서는 안 된다는 것 뿐이야. 이건 내 충고인데, 만약 그녀를 보게 되면 도망치라고."~ */
+  IF ~~ THEN REPLY #50327 /* ~"알겠네."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 500 // from:
+  SAY #50410 /* ~"뭐? 뭐야? 그 안에 어떤 내용이 들어 있는 거야, 대장?"~ */
+  IF ~~ THEN REPLY #50411 /* ~"뭐라고 해야 할지 모르겠네. 모트."~ */ GOTO 501
+  IF ~~ THEN REPLY #50412 /* ~"자네하고는 상관없는 일이네, 모트."~ */ GOTO 501
+  IF ~~ THEN REPLY #50413 /* ~그에게 사본을 보여준다.~ */ GOTO 503
+END
+
+IF ~~ THEN BEGIN 501 // from: 500.0 500.1
+  SAY #50414 /* ~"뭐?! 날 놀리는 거지? 그렇지? 자, 나도 좀 보자고!"~ */
+  IF ~~ THEN REPLY #50415 /* ~그에게 사본을 보여준다.~ */ GOTO 503
+  IF ~~ THEN REPLY #50416 /* ~"아니, 모트, 자네가 방금 본 건 잊게."~ */ DO ~MoraleDec("Morte",1)
+~ GOTO 502
+END
+
+IF ~~ THEN BEGIN 502 // from: 501.1
+  SAY #50417 /* ~모트는 뭐라고 비꼬려고 하다가... 그만둔다.~ */
+  IF ~~ THEN EXTERN ~DCODEXI~ 2
+END
+
+IF ~~ THEN BEGIN 503 // from: 500.2 501.0
+  SAY #50418 /* ~모트는 날아와서 당신 어깨 너머로 사본의 내용을 살펴본다. 페이지를 훑어보자마자 그의 두 눈이 눈구멍에서 빠질 정도로 튀어나온다. "오오. 오오오오오. 오, 나는... 하지만... 와우."~ */
+  IF ~~ THEN EXTERN ~DCODEXI~ 2
+END
+
+IF ~~ THEN BEGIN 504 // from:
+  SAY #50697 /* ~"워! 워! 워! 농담이지, 그렇지? 진심은 아니겠지, 대장!~ */
+  IF ~~ THEN REPLY #50698 /* ~"진심이야. 그를 사겠소, 브리스치카?"~ */ EXTERN ~DVRISCH~ 45
+  IF ~~ THEN REPLY #50699 /* ~"그래, 물론 아니지. 다른 질문이 있소, 브리스치카."~ */ EXTERN ~DVRISCH~ 7
+  IF ~~ THEN REPLY #50700 /* ~"자네 말이 맞아, 모트. 그건 별로 좋은 생각이 아니었어. 가자."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 505 // from:
+  SAY #50701 /* ~"믿을 수가 없군... 대장, 당신은 전에도 정말 갈 때까지 간 적이 있지만, 이번만큼은 정말 차원이 다르군. 어디 베이터에서 보자고, 이 두들겨 터져 몰골은 말이 아니고, X은 좁쌀만하고, 배신이나 때리고, 은혜라고는 모르고, 두창 자국 투성이고, 똥이나 먹고, 머리는 기름투성이고, 이빨은 뻐드렁니인 쓰레기 같은 기억상실증 환자야! 내 말을 명심해, 이 X같은 새끼야! 계속 이런 식으로 놀면 넌 곧 아주 *영원히* 죽게 될 거야... 어디 그 꼴이 어떨지 기대하고 있겠어!"~ */
+  IF ~~ THEN DO ~DropInventory()
+LeaveParty()
+~ EXTERN ~DVRISCH~ 46
+END
+
+IF ~~ THEN BEGIN 506 // from:
+  SAY #52571 /* ~"그것이 그를 삼켰지만 그가 그 쪽에서 튀어나왔는지는 모르겠군."~ */
+  IF ~~ THEN REPLY #52572 /* ~그만 집어치우시오, 보시오, 래벌. 당신이 나로부터 죽음을 빼앗았고, 그 일은 득보다 해가 더 컸소. 나는 그것을 당장 돌려받고 싶소. 내 생각으론 당신이 그것을 너무 오랫동안 지니고 있었던 것 같소."~ */ EXTERN ~DRAVEL~ 126
+END
+
+IF ~~ THEN BEGIN 507 // from:
+  SAY #52573 /* ~"누가 새장 속에 있어야 할지 알 것 같군..."~ */
+  IF ~~ THEN EXTERN ~DRAVEL~ 189
+END
+
+IF ~~ THEN BEGIN 508 // from:
+  SAY #52574 /* ~"글쎄, 내겐 레이디의 미로들 중 한 곳으로 가서 시길의 역사상 가장 사악한 괴물을 만나는 것 말고는 할 일이 없었어, 그래서 나는 '물론이지'라고-"~ */
+  IF ~~ THEN REPLY #52575 /* ~"모트, 조용히 해. 래벌, 나..."~ */ GOTO 509
+END
+
+IF ~~ THEN BEGIN 509 // from: 508.0
+  SAY #52576 /* ~"'조용하라고?!'" 모트는 이빨을 딱딱거린다. "웃기고 자빠졌네! 마귀할멈이 골통을 딸랑거리는 걸 듣는 것만도 지겨워 죽겠는데, 이제는 내게 피부가 없다고 뭐라고 해? 그게 어떻다는 거야? 피부가 있다고 해서 저 할망구 꼴이 조금이라도 나아 보여? 내가 좋아서 이 꼴로 있는 줄 아나? 그리고 또-"~ */
+  IF ~  NearbyDialog("Dgrace")
+~ THEN REPLY #52577 /* ~"모트! 닥쳐! 래벌, 보시오--"~ */ DO ~SetGlobal("Ravel_Grace","GLOBAL",2)
+~ EXTERN ~DRAVEL~ 66
+  IF ~  !NearbyDialog("DGrace")
+NearbyDialog("DAnnah")
+~ THEN REPLY #52578 /* ~"모트! 닥쳐! 래벌, 보시오--"~ */ DO ~SetGlobal("Ravel_Annah","GLOBAL",2)
+~ EXTERN ~DRAVEL~ 67
+  IF ~  !NearbyDialog("DGrace")
+!NearbyDialog("DAnnah")
+~ THEN REPLY #52579 /* ~"모트! 닥쳐! 래벌, 보시오--"~ */ EXTERN ~DRAVEL~ 68
+END
+
+IF ~~ THEN BEGIN 510 // from:
+  SAY #52644 /* ~"엽기적이군. 우리는 지금 정확히 어디 서 있는 거지?"~ */
+  IF ~~ THEN REPLY #52771 /* ~"그것에 대한 답은 별로 알고 싶지가 않군, 모트."~ */ EXTERN ~DPREGAL~ 10
+END
+
+IF ~~ THEN BEGIN 511 // from:
+  SAY #53623 /* ~"오, 그것 참 *멋지군.*"~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 5
+END
+
+IF ~~ THEN BEGIN 512 // from: 522.0 523.0 524.0
+  SAY #53624 /* ~당신이 기둥에 가까이 다가가자 모트가 쉿 소리를 내 당신을 제지한다: "쉿! 대장! 대장... 내 말을 들어봐, 난 저것이 날 보게 할 수는 없어. 대장은 여기서 날 데리고 나가야 해... 날 다른 곳에 떨구었다가 나중에 다시 줍든지 하라고..."~ */
+  IF ~  Global("Morte_Story","GLOBAL",1)
+~ THEN REPLY #53625 /* ~"그만해, 모트. 난 이제 그것과 얘기를 할 거니까..."~ */ DO ~MoraleDec("Morte",1)
+~ EXTERN ~DPILLAR~ 9
+  IF ~  Global("Morte_Story","GLOBAL",0)
+~ THEN REPLY #53627 /* ~"왜, 모트? 무슨 일이지?~ */ GOTO 513
+  IF ~~ THEN REPLY #53628 /* ~"좋아. 그럼 떠나도록 하자."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 513 // from: 512.1
+  SAY #53626 /* ~"어... 난 그것에 대해 별로 얘기하고 싶지 않아. 빨리 가자고, 좋지 ?" 모트의 목소리가 두려움으로 떨리고 있다. 그의 시선은 당신과 머리들로 만들어진 거대한 기둥 사이를 쉴 새 없이 오가고 있다. ~ */
+  IF ~~ THEN REPLY #53629 /* ~"모트, 난 자네가 계속 그토록 많은 비밀을 감추고 있게 할 수는 없어. 자넨 내게 여기서 무슨 일어나고 있는지 말해야만 해."~ */ DO ~SetGlobal("Morte_Story","GLOBAL",1)
+~ JOURNAL #53633 /* ~모트는 오래 전에 해골들의 기둥으로부터 그를 끄집어낸 것은 바로 나였다고 한다. 하지만 그는 내가 어떤 방법을 썼는지에 대해서는 잘 알지 못했다. 또한 그는 기둥을 떠났을 때 기둥에 축적된 지식들을 모두 잃었다고 한다... 그것은 왜 그가 내 전신에게 주장했던 만큼 유용하지 않았는가를 설명해줄 것 같다.~ */ GOTO 514
+  IF ~~ THEN REPLY #53630 /* ~"더 이상 피할 생각은 마, 모트. 내게 당장 전후사정을 털어놓지 않으면 차라리 그 해골들과 얘기하는 편이 나았을 거라고 생각하게 될 걸."~ */ DO ~MoraleDec("Morte",1)
+SetGlobal("Morte_Story","GLOBAL",1)
+~ JOURNAL #53661 /* ~모트는 원래 베이터의 첫 번째 층인 아버누스에 있는, 몸을 잃은 머리들의 집합체인 해골들의 기둥에 속해 있었다. 그것은 거짓말로 다른 사람들을 죽음으로 몰아넣은 자들의 머리로 만들어졌다.~ */ GOTO 514
+  IF ~~ THEN REPLY #53631 /* ~"좋아. 그럼 떠나도록 하자."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 514 // from: 513.0 513.1
+  SAY #53632 /* ~모트는 당신을 제대로 쳐다보지도 못하고 한숨만 쉰다. 마침내 그가 항복한다. "좋아, 좋아... 얘기할께. 베이터의 제1층인 아버누스에는 거짓말로 남을 죽음에 이르게 한 자들의 골통들로 만들어진 기둥이 있어. 바로 저기 있는 게 그거야. 내가 죽은 후에 간 곳이 바로 저기였어. 나머지는 대장 머리로 생각해보라고."~ */
+  IF ~  NearbyDialog("Dannah")
+~ THEN REPLY #53662 /* ~"그래... 자네도 저 해골들의 일원이었나?"~ */ GOTO 516
+  IF ~  !NearbyDialog("Dannah")
+~ THEN REPLY #53663 /* ~"그래... 자네도 저 해골들의 일원이었나?"~ */ GOTO 515
+END
+
+IF ~~ THEN BEGIN 515 // from: 514.1
+  SAY #53664 /* ~"그래. 나는... 과장된 얘기를 한두 가지 했지. 내 제안들 중 하나가 대장을 죽음으로 이끌었어. 그것들 중 하나가. 아니면 다른 것들이었는지도 모르고. 난 정말 몰라. 이제 그런 기억들은 다 잃어버렸어."~ */
+  IF ~~ THEN REPLY #53665 /* ~"알겠어..."~ */ GOTO 518
+END
+
+IF ~~ THEN BEGIN 516 // from: 514.0
+  SAY #53666 /* ~"그래. 나는... 과장된 얘기를 한두 가지 했지. 내 제안들 중 하나-"~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 269
+END
+
+IF ~~ THEN BEGIN 517 // from:
+  SAY #53667 /* ~모트는 침착하게 얘기를 계속한다. "... 내 *제안들* 중 하나가 대장을 죽음으로 이끌었어. 그것들 중 하나가. 아니면 다른 것들이었는지도 모르고. 이제 그런 기억들은 다 잃어버렸어."~ */
+  IF ~~ THEN GOTO 518
+END
+
+IF ~~ THEN BEGIN 518 // from: 515.0 517.0
+  SAY #53668 /* ~모트는 당신 발을 쳐다본다 - 그가 그토록 비참한 모습을 하고 있는 것은 일찍이 본 적이 없다. "그 기억들, 그것들.. 이봐, 대장, 난 내가 인간이었을 때 일도 기억이 나지 않아. 나는 기둥의 일원이 되기 전에 내가 어떤 삶을 살았는지를 기억할 수가 없어..."~ */
+  IF ~  NearbyDialog("DDakkon")
+~ THEN EXTERN ~DDAKKON~ 183
+  IF ~  !NearbyDialog("DDakkon")
+~ THEN REPLY #54105 /* ~"계속하게..."~ */ GOTO 520
+END
+
+IF ~~ THEN BEGIN 519 // from:
+  SAY #53794 /* ~모트는 다콘을 흘긋 본 후 당신을 쳐다본다. "그래, 그럴지도 모르지. 죽으면 다 그렇게 되는 거니까. 기억을 잃지... 생전에 나는 사회의 신뢰할 수 있는 구성원은 아니었던 것 같아... 하지만 정말로 그런 사람이 어디 있어?" 모트는 다시 한숨을 쉰다. "하지만 어쩔 수가 없어. 늘 정직한 것만큼 괴로운 것도 또 없다고. 하지만 이봐, 대장, 그 대가리들이 날 보면 날 되찾으려고 할거야, 그것도 아주 맹렬히. 그렇게 되도록 내버려 둘 순 없어!"~ */
+  IF ~~ THEN REPLY #53795 /* ~"그만해, 모트. 난 이제 그것과 얘기를 할 거니까..."~ */ DO ~MoraleDec("Morte",1)
+~ EXTERN ~DPILLAR~ 9
+  IF ~~ THEN REPLY #53796 /* ~"기다려... 넌 어떻게 해서 기둥에서 빠져나왔지?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53797 /* ~"기다려봐... 왜 시체안치소에서는 네가 날 안다는 사실을 말하지 않았지?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53798 /* ~"잠깐. 넌 도대체 얼마나 오랫동안 날 알아온 거지, 모트?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53799 /* ~"좋아. 가자, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 520 // from: 518.1
+  SAY #53800 /* ~"어쨌든, 생전에 나는 사회의 신뢰할 수 있는 구성원은 아니었던 것 같아... 하지만 정말로 그런 사람이 어디 있어?" 모트는 다시 한숨을 쉰다. "하지만 어쩔 수가 없어. 늘 정직한 것만큼 괴로운 것도 또 없다고. 하지만 이봐, 대장, 그 대가리들이 날 보면 날 되찾으려고 할거야, 그것도 아주 맹렬히. 그렇게 되도록 내버려 둘 순 없어!"~ */
+  IF ~~ THEN REPLY #53801 /* ~"그만해, 모트. 난 이제 그것과 얘기를 할 거니까..."~ */ DO ~MoraleDec("Morte",1)
+~ EXTERN ~DPILLAR~ 9
+  IF ~~ THEN REPLY #53802 /* ~"기다려... 넌 어떻게 해서 기둥에서 빠져나왔지?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53803 /* ~"기다려봐... 왜 시체안치소에서는 네가 날 안다는 사실을 말하지 않았지?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53804 /* ~"잠깐. 넌 도대체 얼마나 오랫동안 날 알아온 거지, 모트?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53805 /* ~"좋아. 가자, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 521 // from: 519.1 520.1 523.1 524.1
+  SAY #53806 /* ~"대장이 날 꺼냈어. 난 안간힘을 써서 기둥의 정면까지 올라온 다음 대장이 날 발견할 때까지 미친 듯이 울고 소리를 질러댔어. 벌써 알지도 모르겠지만, 대장이 여기 온 건 이번이 처음이 아냐. 어쨌든 난 여기서 해방시켜 달라고 대장한테 애원을 했고, 구해주기만 하면 대장이 죽는 날까지 대장을 따르면서 내가 지닌 지식을 공유하겠다고 맹세했어... 대장이 날 기둥에서 빼내기 전에 난 그게 얼마나 오랜 세월이 될지 알지 못했어."~ */
+  IF ~~ THEN REPLY #53807 /* ~"그리고 기둥의 모든 지식들...?"~ */ JOURNAL #53633 /* ~모트는 오래 전에 해골들의 기둥으로부터 그를 끄집어낸 것은 바로 나였다고 한다. 하지만 그는 내가 어떤 방법을 썼는지에 대해서는 잘 알지 못했다. 또한 그는 기둥을 떠났을 때 기둥에 축적된 지식들을 모두 잃었다고 한다... 그것은 왜 그가 내 전신에게 주장했던 만큼 유용하지 않았는가를 설명해줄 것 같다.~ */ GOTO 522
+END
+
+IF ~~ THEN BEGIN 522 // from: 521.0
+  SAY #53808 /* ~"오, 그리고 나는 일단 기둥 밖으로 나가면 기둥에 축적된 지식을 잃게 된다는 사실도 알지 못했어. 대장은 그 사실을 나중에야 알고는 정말 천지가 뒤집힐 정도로 화를 냈지. 처음에 나는 내가 대장한테 '묶여' 있다고 생각했었어... 그리고 대장의 마법이 날 일종의 마법사의 종복으로 만들었다고. 하지만 이백 년 정도가 지나고 나서 나는 우리의 관계가 더 깊은 것이라는 걸 깨달았어. 단순히 신세를 졌기 때문만은 아니였어, 물론 그것도 중요한 요소이긴 했지만. 나는 왠지 대장에게 끌렸어. 아마 대장의 고통 때문일지도 몰라. 잘은 모르겠지만 내가 기둥 속에서 받은 고통과 대장의 고통을 서로 연관해 생각했기 때문인지도 몰라."~ */
+  IF ~~ THEN REPLY #53809 /* ~"이제 나는 기둥과 이야기를 하겠어..."~ */ GOTO 512
+  IF ~~ THEN REPLY #53810 /* ~"왜 시체안치소에서는 네가 날 안다는 사실을 말하지 않았지?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53811 /* ~"넌 도대체 얼마나 오랫동안 날 알아온 거지, 모트?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53812 /* ~"좋아. 떠나자, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 523 // from: 519.2 520.2 522.1 524.2
+  SAY #53813 /* ~모트는 갑자기 변명을 늘어놓기 시작한다. "왜냐하면 난 대장이 어떤 사람이 될지 몰랐기 때문이야! 대장의 화신들 중 일부는 완전히 발광한 자들이었다고! 언젠가는 깨어나더니 내가 대장 해골이라는 생각에 사로잡혀 날 부셔서 먹겠다고 날 쫓아서 온 시길을 돌아다니기도 했지... 다행히도 그 때 대장이 거리에서 마차에 치어서 죽는 바람에 무사할 수 있었지. 그리고 '질서와 선'을 존중하는 또 다른 화신은 기둥이 내가 있어야 할 곳이라고 하면서 날 거기 다시 처박으려고 했어." 모트는 억지로 웃는다. "그게 이유야. 게다가 그걸 모른다고 해서 대장이 해를 입은 것도 아니잖아..."~ */
+  IF ~~ THEN REPLY #53814 /* ~"이제 나는 기둥과 이야기를 하겠어..."~ */ GOTO 512
+  IF ~~ THEN REPLY #53815 /* ~"넌 어떻게 해서 기둥에서 빠져나왔지?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53816 /* ~"넌 도대체 얼마나 오랫동안 날 알아온 거지, 모트?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53817 /* ~"좋아. 떠나자, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 524 // from: 519.3 520.3 522.2 523.2
+  SAY #53818 /* ~"잘 몰라. 아마 수백 년은 넘겠지. 나는 내 능력껏 대장이 길을 찾도록 도왔지만..." 모트는 한숨을 쉰다, 그리고 고개를 들어 당신을 마주본다. "여기까지 올 수 있었던 적도 드물었어. 아마 내 기억으로는 네댓 번이 고작일 거야. 아마 이번이야말로... 대장이 성공해서 대체 대장에게 무슨 일이 일어난 건지 알아낼 수 있을지도 몰라."~ */
+  IF ~~ THEN REPLY #53819 /* ~"이제 나는 기둥과 이야기를 하겠어..."~ */ GOTO 512
+  IF ~~ THEN REPLY #53820 /* ~"넌 어떻게 해서 기둥에서 빠져나왔지?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53821 /* ~"왜 시체안치소에서는 네가 날 안다는 사실을 말하지 않았지?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53822 /* ~"좋아. 떠나자, 모트."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 525 // from:
+  SAY #53823 /* ~"오, 안돼..."~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 10
+END
+
+IF ~~ THEN BEGIN 526 // from:
+  SAY #53824 /* ~모트는 이빨을 덜거덕거리며 공포로 떤다. "난 돌아갈 수 없어, 대장! 그럴 수 없어! 그럴 수 없어! 그럴 수 없어!"~ */
+  IF ~  NearbyDialog("Dgrace")
+~ THEN REPLY #53825 /* ~"그는 당신에게로 돌아온 것이 아니오. 하지만 내겐 당신에게 질문할 것들이 좀 있소, 해골들의 기둥."~ */ DO ~SetGlobal("Pillar_Musk","AR1001",1)
+~ EXTERN ~DPILLAR~ 2
+  IF ~  NearbyDialog("Dannah")
+!NearbyDialog("Dgrace")
+~ THEN REPLY #53826 /* ~"그는 당신에게로 돌아온 것이 아니오. 하지만 내겐 당신에게 질문할 것들이 좀 있소, 해골들의 기둥."~ */ DO ~SetGlobal("Pillar_Musk","AR1001",1)
+~ EXTERN ~DPILLAR~ 2
+  IF ~  !NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53827 /* ~"그는 당신에게로 돌아온 것이 아니오, 해골들의 기둥. 하지만 내겐 당신에게 질문할 것들이 좀 있소."~ */ EXTERN ~DPILLAR~ 12
+  IF ~~ THEN REPLY #53828 /* ~"그냥 가자, 모트. 자."~ */ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 527 // from:
+  SAY #53829 /* ~"이봐, 대장, 내가 방금 전에 저게 뭔지 말했잖아?! 그것은 다른 사람들을 죽음으로 몬 '조언'을 한 거짓말쟁이들의 머리들로 만들어졌다고. 그것은 엄청난 양의 지식을 가지고 있어 거의 어떤 질문에도 대답을 해줄 수가 있지만, 그 대가로 엄청난 요구를 한다고. 그런 질문은 하지마!"~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 14
+END
+
+IF ~~ THEN BEGIN 528 // from:
+  SAY #53830 /* ~"재발 날 거기 다시 넣지 말아줘, 대장. 제발 !"~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 17
+END
+
+IF ~~ THEN BEGIN 529 // from:
+  SAY #53831 /* ~"대장?! 안돼! 안돼! 그럴 수 없어! 제발!"~ */
+  IF ~  Global("Specialist","GLOBAL",4)
+~ THEN REPLY #53832 /* ~"걱정 마, 모트. 나중에 널 다시 빼내 줄 테니까."~ */ GOTO 530
+  IF ~  Global("Specialist","GLOBAL",5)
+~ THEN REPLY #53833 /* ~"걱정 마, 모트. 나중에 널 다시 빼내줄 테니까."~ */ GOTO 530
+  IF ~  Global("Specialist","GLOBAL",6)
+~ THEN REPLY #53834 /* ~"걱정 마, 모트. 나중에 널 다시 빼내줄 테니까."~ */ GOTO 530
+  IF ~  !Global("Specialist","GLOBAL",4)
+!Global("Specialist","GLOBAL",5)
+!Global("Specialist","GLOBAL",6)
+~ THEN REPLY #53835 /* ~"걱정 마, 모트. 나중에 널 다시 빼내줄 테니까."~ */ GOTO 531
+  IF ~  Global("Where_Fhjull","AR1001",0)
+~ THEN REPLY #53836 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~  Global("Where_Fhjull","AR1001",1)
+PartyHasItem("Cube")
+~ THEN REPLY #53837 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 20
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+NearbyDialog("Dgrace")
+~ THEN REPLY #53838 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 21
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+NearbyDialog("Dannah")
+~ THEN REPLY #53839 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 22
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53840 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 23
+  IF ~~ THEN REPLY #53841 /* ~"그냥 가자, 모트. 자."~ */ DO ~SetGlobal("Pillar_Question","AR1001",0)
+~ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 530 // from: 529.0 529.1 529.2
+  SAY #53842 /* ~모트는 회의적인 눈초리로 당신을 쳐다본다. "정말이야? 맹세할 수 있어? 이봐, 내가 무슨 말을 하고 있는 거지?! 안돼! 어림없어! 날 다시 거기에 넣을 순 없어!"~ */
+  IF ~~ THEN REPLY #53843 /* ~모트를 잡아서 해골들의 기둥에 쑤셔넣는다. ~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Pillar_2","GLOBALGood",-1)
+SetGlobal("Pillar ","GLOBAL",2)
+StartCutSceneMode()
+StartCutSceneEx("1001Cut1",FALSE)
+~ EXIT
+  IF ~  Global("Where_Fhjull","AR1001",0)
+~ THEN REPLY #53844 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~  Global("Where_Fhjull","AR1001",1)
+PartyHasItem("Cube")
+~ THEN REPLY #53863 /* ~"좋아, 모트. 해골들의 기둥이여, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 20
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+NearbyDialog("Dgrace")
+~ THEN REPLY #53864 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 21
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+NearbyDialog("Dannah")
+~ THEN REPLY #53865 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 22
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53866 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 23
+  IF ~~ THEN REPLY #53867 /* ~"그냥 가자, 모트. 자."~ */ DO ~SetGlobal("Pillar_Question","AR1001",0)
+~ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 531 // from: 529.3
+  SAY #53849 /* ~모트는 한동안 당신을 조용히 쳐다본다, 그리고 어이가 없다는 듯 입을 크게 벌린다. "뭐?! 어림없어! 대장은 그 때만큼 강하질 않아... 이봐, 잊어버리자고. 대장은 할 수가 없어, 그러니 그런 얘기는 집어치워! 날 다시 거기에 넣을 순 없어!"~ */
+  IF ~~ THEN REPLY #53850 /* ~모트를 잡아서 해골들의 기둥에 쑤셔넣는다. ~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Pillar_2","GLOBALGood",-1)
+SetGlobal("Pillar ","GLOBAL",2)
+StartCutSceneMode()
+StartCutSceneEx("1001Cut1",FALSE)
+~ EXIT
+  IF ~  Global("Where_Fhjull","AR1001",0)
+~ THEN REPLY #53851 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~  Global("Where_Fhjull","AR1001",1)
+PartyHasItem("Cube")
+~ THEN REPLY #53852 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 20
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+NearbyDialog("Dgrace")
+~ THEN REPLY #53853 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 21
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+NearbyDialog("Dannah")
+~ THEN REPLY #53854 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 22
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53855 /* ~"좋아, 모트. 해골들의 기둥이어, 다른 어떤 공물이라면 받겠소?"~ */ EXTERN ~DPILLAR~ 23
+  IF ~~ THEN REPLY #53856 /* ~"그냥 가자, 모트. 자."~ */ DO ~SetGlobal("Pillar_Question","AR1001",0)
+~ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 532 // from:
+  SAY #53857 /* ~"워, 이것 보라고... 기다려! 그렇게 서두르지 말라고! 기둥... 난 갈라진-혀의 흐줄이 어디 있는지 말해줄 수 있어! 자, 알고 싶지 않아? 만약 그가 나 대신 그 정보를 준다면? 어떻게 생각해?"~ */
+  IF ~~ THEN REPLY #53858 /* ~"기다려, 모트. 흐줄을 팔아 넘길 순 없어."~ */ GOTO 533
+  IF ~~ THEN REPLY #53859 /* ~기둥의 답을 기다린다.~ */ EXTERN ~DPILLAR~ 19
+END
+
+IF ~~ THEN BEGIN 533 // from: 532.0
+  SAY #53860 /* ~"뭐?" 대장 미쳤어?! *난* 배신할 수 있고, 그 *마족*은 배신하지 못하겠다고?! 놈이 대장을 도운 건 저주에 의해 그렇게 강제당하기 때문이라고! 나는 어떻고? 대장을 시체안치소에서 꺼내준 게 누구지? 대장이 그 요새인지 뭔지 하는 데서 기다리고 놈과 맞설 때 대장 옆에 서 있을... 아니, 떠 있을 사람이 누구지?! 허?! 허?! 그 후줄이라는 똥궁둥이는 절대 아니라고!~ */
+  IF ~~ THEN REPLY #53861 /* ~"좋아, 좋아. 어떻게 생각하시오, 기둥?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~~ THEN REPLY #53862 /* ~"미안해, 모트. 네가 가줘야겠어."~ */ EXTERN ~DPILLAR~ 18
+END
+
+IF ~~ THEN BEGIN 534 // from: 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
+  SAY #54155 /* ~"안 갈 이유가 없지, 대장." 모트는 고개를 젓는다. "내 말은 이미 우리는 다원 우주에서 온갖 끔찍한 차원이란 차원은 다 가봤다는 거야. 지금 와서 절벽 아래로 한 걸음 더 내딛지 못할 이유는 없지." 모트는 이빨을 덜거덕거리며 한숨을 쉰다. "준비는 다 됐어? 만약 아직 덜 됐다면..."~ */
+  IF ~~ THEN REPLY #54156 /* ~"전이문 저편에서 무엇이 기다리고 있는지에 대해 자네가 아는 것을 다시 말해주겠나?"~ */ GOTO 544
+  IF ~~ THEN REPLY #54157 /* ~"난 준비가 됐네, 모트. 내 자신을 위해 더 이상 준비할 것이라곤 없어. 함께 가겠나?"~ */ GOTO 535
+  IF ~~ THEN REPLY #54158 /* ~"자네 말이 옳아, 모트... 우선 준비를 더 하도록 하겠어."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 535 // from: 534.1
+  SAY #54159 /* ~"그래, 나..." 모트는 빛나는 청색 커튼을 흘긋 보더니 다시 한숨을 쉰다. "좋아. 가자고. 어딜 가더라도 시체안치소에서 골통을 딸랑거리는 것보다는 낫겠지."~ */
+  IF ~~ THEN REPLY #54160 /* ~"그럼 좋아..."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 536 // from:
+  SAY #54161 /* ~"어..." 모트는 머뭇거린다. 그는 전이문과 당신을 번갈아 보더니 한숨을 쉰다. "이봐, 난 여기서 별로 얘기를 하고 싶지는 않지만... 어... 그래, 대장에게 꼭 해야 할 얘기가 있어..."~ */
+  IF ~~ THEN REPLY #54162 /* ~"무슨 일인가, 모트?"~ */ GOTO 537
+  IF ~~ THEN REPLY #54163 /* ~"뭐? 자, 모트, 우린 가야만..."~ */ GOTO 537
+END
+
+IF ~~ THEN BEGIN 537 // from: 536.0 536.1
+  SAY #54164 /* ~"그건 우리가 갈 곳... 아니, 실은 *가본* 적이 있는 곳에 대해서야..."~ */
+  IF ~  !NearbyDialog("DDakkon")
+~ THEN REPLY #54165 /* ~"'우리가 가본 적이 있는 곳'? 무슨 얘기를 하는 거지?"~ */ GOTO 540
+  IF ~  NearbyDialog("DDakkon")
+CheckStatGT(Protagonist,13,WIS)
+~ THEN REPLY #54166 /* ~"'우리가 간 적이 있는 곳'? 무슨 얘기를 하는 거지?"~ */ EXTERN ~DDAKKON~ 174
+  IF ~  NearbyDialog("DDakkon")
+CheckStatLT(Protagonist,14,WIS)
+~ THEN REPLY #54167 /* ~"'우리가 간 적이 있는 곳'? 무슨 얘기를 하는 거지?"~ */ GOTO 540
+END
+
+IF ~~ THEN BEGIN 538 // from:
+  SAY #54168 /* ~"어... 대장?" 모트는 머뭇거린다. 그는 전이문과 당신을 번갈아 보더니 한숨을 쉰다. "이봐, 난 여기서 별로 얘기를 하고 싶지는 않지만... 어... 그래, 대장에게 꼭 해야 할 얘기가 있어..."~ */
+  IF ~~ THEN REPLY #54169 /* ~"무슨 일인가, 모트?"~ */ GOTO 539
+  IF ~~ THEN REPLY #54170 /* ~"뭐? 자, 모트, 난 가야만..."~ */ GOTO 539
+END
+
+IF ~~ THEN BEGIN 539 // from: 538.0 538.1
+  SAY #54171 /* ~"그건 우리가 갈 곳... 아니, 실은 *가본* 적이 있는 곳에 대해서야..."~ */
+  IF ~  !NearbyDialog("DDakkon")
+~ THEN REPLY #54172 /* ~"'우리가 간 적이 있는 곳'? 무슨 얘기를 하는 거지?"~ */ GOTO 540
+  IF ~  NearbyDialog("DDakkon")
+CheckStatGT(Protagonist,13,WIS)
+~ THEN REPLY #54173 /* ~"'우리가 간 적이 있는 곳'? 무슨 얘기를 하는 거지?"~ */ EXTERN ~DDAKKON~ 174
+  IF ~  NearbyDialog("DDakkon")
+CheckStatLT(Protagonist,14,WIS)
+~ THEN REPLY #54174 /* ~"'우리가 간 적이 있는 곳'? 무슨 얘기를 하는 거지?"~ */ GOTO 540
+END
+
+IF ~~ THEN BEGIN 540 // from: 537.0 537.2 539.0 539.2
+  SAY #54175 /* ~"실은 우리가 이 과정을 거치는 건 이번이 처음이 아니야... 우리는 이 '후회의 요새'란 곳에 가본 적이 있어... 하지만... 우리... 난 그 때는 알지 못했지."~ */
+  IF ~~ THEN REPLY #54176 /* ~"알지 못했었다고? 그게 어떻게 가능하지?"~ */ GOTO 541
+  IF ~~ THEN REPLY #54177 /* ~"그래, 넌 애초부터 내게... 전이문이 어디 있으며, 전이문 열쇠는 무엇이고, 왜 내가 불사신이며, 내 죽음이 어떻게 되었고, 그리고 그것이 요새에 있다는 사실을 내게 말해줄 수도 있었다는 건가?! 모트, 난 네 숨통을 끊어 놓아야겠어...!~ */ GOTO 542
+  IF ~~ THEN REPLY #54178 /* ~"모트, 난 설명을 들어야겠어... 이번에는 거짓말이나 기만따위는 통하지 않아." ~ */ GOTO 541
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54179 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54180 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 541 // from: 540.0 540.2
+  SAY #54181 /* ~"직접 가보지 않으면 설명하기가 힘들어... 게다가 대장은 *다른* 대장을 몰라 -- 그는 우리들에게 비밀을 말해줄 그런 부류의 사람이 아니었어. 나는 그가 어떤 장소를 찾고 있다는 건 알았지만, 그 이유나 위치, 그리고 그 곳이 어떤 곳인지도 몰랐어, 그러니 대장한테 아무런 얘기도 못 해주었던 거지... 나는 그 곳에 우리가 도착했을 때 일어났던 일밖에 몰라..."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54189 /* ~"그리고... 무슨 일이 일어났지?"~ */ GOTO 544
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54190 /* ~"그리고... 무슨 일이 일어났지?"~ */ GOTO 543
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54191 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54192 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 542 // from: 540.1
+  SAY #54193 /* ~모트는 불안해 하는 듯하다. "아냐! 아냐! 우리... 나는... 그런 것들에 대해 전혀 알지 못했어! 대장은 비밀을 남과 공유하는 그런 스타일이 아니었잖아! 그...그 *다른* 대장은 비밀은 대부분은 혼자서만 간직하고 있었고, 그래서 우린 사전에 우리가 왜 가야하며, 또 어떤 곳으로 가는지조차 알지 못했어! 나는 그 곳에 우리가 도착했을 때 일어났던 일밖에 몰라..."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54194 /* ~"그리고... 무슨 일이 일어났지?"~ */ GOTO 544
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54195 /* ~"그리고... 무슨 일이 일어났지?"~ */ GOTO 543
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54196 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54197 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 543 // from: 541.1 542.1
+  SAY #54198 /* ~"그래, 우리는 이 - 이 요새로 갔지, 하지만 우리가 그 곳에 한 발짝도 디디기 전에 우린 뿔뿔이 흩어져 자신들의 목숨을 구하기 위해 싸워야만 했지... 만약 대장이 그 곳으로 갈 결심이라면, 내가 맨 먼저 해주고 싶은 말은 이거야. 저 전이문으로 들어가는 사람은 누구든지 다른 사람들로부터 *한참* 떨어진 곳에 도착하게 될 가능성이 높아. 그리고 중요한 건, 그렇다 하더라도 대장은 그 곳에 도와줄 사람들을 데리고 가야한다는 거야..."~ */
+  IF ~~ THEN REPLY #54199 /* ~"왜 그런 말을 하는 거지?"~ */ GOTO 545
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54200 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54201 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 544 // from: 534.0 541.0 542.0
+  SAY #54202 /* ~"그래, 우리는 이 - 이 요새로 갔지, 하지만 우리가 그 곳에 한 발짝도 디디기 전에 우린 뿔뿔이 흩어져 자신들의 목숨을 구하기 위해 싸워야만 했지..." 그는 몸서리친다. "만약 대장이 그 곳으로 갈 결심이라면, 내가 맨 먼저 해주고 싶은 말은 이거야. 저 전이문으로 들어가는 사람은 누구든지 다른 사람들로부터 *한참* 떨어진 곳에 도착하게 될 가능성이 높아. 그리고 중요한 건, 설령 우리가 흩어진다고 하더라도 우리가 대장의 마지막 희망이 될 수도 있다는 사실이야..."~ */
+  IF ~~ THEN REPLY #54203 /* ~"왜 그런 말을 하는 거지?"~ */ GOTO 545
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54204 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54205 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 545 // from: 543.0 544.0
+  SAY #54206 /* ~"왜냐하면 이 요새에서 대장를 기다리고 있는 것이 무엇이든 간에, 대장, 놈은 이미 대장을 한 번 격퇴했어... 그리고 난 오늘까지도 대장이 그 때 어떻게 살아남았는지 모르겠어, 하지만 만약 대장이 또 지면, 대장을 그 요새에서 끌고 나올 사람이 필요해..."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54207 /* ~"모트, 요새에 대해 자네가 아는 모든 것을 말해주어야겠네... 그건 매우 중요해."~ */ GOTO 547
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54208 /* ~"모트, 요새에 대해 자네가 아는 모든 것을 말해주어야겠네... 그건 매우 중요해."~ */ GOTO 546
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54209 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54210 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 546 // from: 545.1
+  SAY #54211 /* ~"이 '후회의 요새'... 그 곳은 수십 킬로미터가 넘게 펼쳐지고 있어, 대장. 그 곳은 요새지만, 하나의 독립된 차원처럼 느껴져 - 돌과 어둠과 그림자들로 구성된. 그 곳에는 사방이 그림자들로 득실거려. 대장이 그 곳에 갈 거면, 준비를 단단히 해야 할 거야..."~ */
+  IF ~~ THEN REPLY #54212 /* ~"우리가 처음 그 곳에 갔을 때 무슨 일이 있었지?"~ */ GOTO 548
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54213 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54214 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 547 // from: 545.0
+  SAY #54215 /* ~"이 '후회의 요새'... 그 곳은 수십 킬로미터가 넘게 펼쳐지고 있어, 대장. 그 곳은 요새지만, 하나의 독립된 차원처럼 느껴져 - 돌과 어둠과 그림자들로 구성된. 그 곳에는 사방이 그림자들로 득실거려. 우리가 그 곳에 갈 거면, 준비를 단단히 해야 할 거야..."~ */
+  IF ~~ THEN REPLY #54216 /* ~"우리가 처음 그 곳에 갔을 때 무슨 일이 있었지?"~ */ GOTO 548
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54217 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54218 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 548 // from: 546.0 547.0
+  SAY #54219 /* ~"대장, 난 대장에게 무슨 일이 일어났는지 몰라, 하지만 내게 무슨 일이 일어났는지는 알아... 나는 날 죽이려고 쫓아오는 그림자들을 피해 방에서 방으로 도망쳐 다녔어... 그러다가... 갑자기 우리는 마치 누군가가 우리를 끌어당긴 것처럼 시길로 돌아오게 되었어..."~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+NearbyDialog("Ddakkon")
+~ THEN REPLY #54220 /* ~"잠깐 기다려. 자네가 '우리'라고 할 때 그건 자네와 나만을 가리키는 것 같지는 않군."~ */ GOTO 565
+  IF ~  CheckStatGT(Protagonist,15,INT)
+!NearbyDialog("Ddakkon")
+GlobalGT("Dakkon","GLOBAL",0)
+~ THEN REPLY #54221 /* ~"잠깐 기다려. 자네가 '우리'라고 할 때 그건 자네와 나만을 가리키는 것 같지는 않군."~ */ GOTO 549
+  IF ~  CheckStatGT(Protagonist,15,INT)
+!NearbyDialog("Ddakkon")
+Global("Dakkon","GLOBAL",0)
+~ THEN REPLY #54223 /* ~"잠깐 기다려. 자네가 '우리'라고 할 때 그건 자네와 나만을 가리키는 것 같지는 않군."~ */ GOTO 550
+  IF ~~ THEN REPLY #54225 /* ~"알겠네. 달리 얘기해줄 건 없나?"~ */ GOTO 552
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54226 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54227 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 549 // from: 548.1
+  SAY #54229 /* ~모트는 잠시 침묵한다. "아니... 다른 사람들도 있었어. 다콘... 데이오나라란 센세이트 계집, 늘 술에 취해 있던 눈먼 궁수, 그리고 대장과 나... 그리고 완전히 아수라장이 되었지. 대장, 나, 그리고 다콘이 살아 돌아온 건 분명하지만, 다른 둘은 생환하지 못했어. 그들에게 무슨 일이 일어났는지는 나도 몰라."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #54230 /* ~"다콘? 하지만 왜... 이 일에 대해선 그에게 따로 물어봐야겠군. 하지만 자네는 데이오나라와 궁수는 요새로부터 돌아오지 못했다고 했지?"~ */ GOTO 551
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #54231 /* ~"다콘? 하지만 왜... 이 일에 대해선 그에게 따로 물어봐야겠군. 하지만 자네는 이 데이오나라라는 여자와 궁수는 요새로부터 돌아오지 못했다고 했지?"~ */ GOTO 551
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54232 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54233 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 550 // from: 548.2
+  SAY #54234 /* ~모트는 잠시 침묵한다. "아니... 다른 사람들도 있었어. 늙은 기스 다콘... 데이오나라란 센세이트 계집, 늘 술에 취해 있던 눈먼 궁수, 그리고 대장과 나... 그리고 완전히 아수라장이 되었지. 대장, 나, 그리고 다콘이 살아 돌아온 건 분명하지만, 다른 둘은 생환하지 못했어. 그들에게 무슨 일이 일어났는지는 나도 몰라."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #54235 /* ~"데이오나라와 궁수는 요새로부터 돌아오지 못했다는 건가?"~ */ GOTO 551
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #54236 /* ~"이 데이오나라라는 여자와 궁수는 요새로부터 돌아오지 못했다는 건가?"~ */ GOTO 551
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54237 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54238 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 551 // from: 549.0 549.1 550.0 550.1
+  SAY #54239 /* ~모트는 고개를 젓는다. "내가 아는 한은 아냐."~ */
+  IF ~~ THEN REPLY #54240 /* ~"내게 요새에 대해 더 애기해줄 건 없나?"~ */ GOTO 552
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54241 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54242 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 552 // from: 548.3 551.0
+  SAY #54243 /* ~"대장, 내가 말해줄 건 - 우리는 도착하자마자 흩어지게 되고, 그 곳은 거대한 장소이며, 그림자들로 득실거리고... 그 곳 어딘가에는 우리들 중 그 누구보다도 강대한 존재가 기다리고 있다는 것밖에 없어. 그 이상은 더 할 말이 없어..."~ */
+  IF ~~ THEN REPLY #54244 /* ~"틀림없나? 지금이 우리가 서로 얘기를 나눌 수 있는 마지막 기회가 될지도 모르겠군..."~ */ DO ~SetGlobal("Morte_Quip_Regret_Portal","GLOBAL",2)
+~ GOTO 553
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54245 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54246 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 553 // from: 552.0
+  SAY #54249 /* ~"글쎄..." 모트는 잠시 멈춘다. "그래, 대장이 알아야 할 것이 하나 더 있어 - 내가 전에 알았던 대장, 우릴 이 곳으로 이끌었던 대장은 지금의 대장과는 전혀 달라." ~ */
+  IF ~  GlobalGT("BD_MORTE_MORALE","GLOBAL",5)
+~ THEN REPLY #54250 /* ~"무슨 뜻이지?"~ */ GOTO 554
+  IF ~  GlobalLT("BD_MORTE_MORALE","GLOBAL",6)
+~ THEN REPLY #54252 /* ~"무슨 뜻이지?"~ */ GOTO 555
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54255 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54262 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 554 // from: 553.0
+  SAY #54263 /* ~"다른 대장, 그는... 누구에게도 관심을 두지 않았어. 그 누구에게도. 우리들 모두가 요새에서 죽었더라도 그는 눈 하나 깜짝하지 않았을 거야. 그러니... 나는 대장이 그와는 다른 사람으로 계속 있어 주었으면 해, 왜냐하면 난 지금의 대장이 더 좋거든. 훨씬 더."~ */
+  IF ~  CheckStatGT(Protagonist,15,WIS)
+~ THEN REPLY #54264 /* ~"자네가 얘기하고 싶은 건 그게 전부가 아니야, 그렇지 않나?"~ */ GOTO 556
+  IF ~~ THEN REPLY #54265 /* ~"그뿐인가?"~ */ GOTO 556
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54266 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54267 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 555 // from: 553.1
+  SAY #54268 /* ~내가 말하려는 건 대장이 지금까지 한 완고하고 아둔한 짓거리에도 불구하고, 대장이 그보다는 인간미가 더 있다는 거야. 다른 당신... 그는 이 세상에 자기 혼자만 존재한다고 생각하는 사람이었어. 그러니... 그것만 기억해 두라고."~ */
+  IF ~  CheckStatGT(Protagonist,15,WIS)
+~ THEN REPLY #54269 /* ~"자네가 얘기하고 싶은 건 그게 전부가 아니야, 그렇지 않나?"~ */ GOTO 556
+  IF ~~ THEN REPLY #54270 /* ~"그뿐인가?"~ */ GOTO 556
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54271 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54272 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 556 // from: 554.0 554.1 555.0 555.1
+  SAY #54273 /* ~"아니..." 모트는 잠시 멈춘다. "한 가지가 더 있어. 난 *다른* 대장을 좋아하지 않았지만, 그는 무섭게 영리한 사람이었어 - 난 그보다 더 똑똑한 사람은 여태껏 본 적이 없어. 그는 늘 모든 가능성을 염두에 두고 있었지. 만약 그조차도 요새에서 죽었다면, 그건... 젠장."~ */
+  IF ~~ THEN REPLY #54274 /* ~"자네는 내가 성공할 수 있으리라고 생각하지 않는군, 안 그런가?"~ */ GOTO 557
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54275 /* ~"관둬, 모트. 난 전이문으로 뛰어들 준비가 됐어. 나와 함께 가겠나?~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54276 /* ~"관둬, 모트. 무슨 일이 생기게 되더라도 뭐 할 수 없지. 난 지금 전이문 속으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 557 // from: 556.0
+  SAY #54277 /* ~"아니..." 모트는 고개를 젓는다. "그런 얘기가 아냐, 대장. 왜냐하면 늘 누가 가장 똑똑하거나 강한가만 중요한 건 아니기 때문이야... 때로는 당신이 누구인가, 당신이 진정으로 원하는 것은 무엇인가가 더 중요해. 내 말은 이거야, 대장은 한때 불사신이 되기를 원했었어, 하지만 그게 정말 대장이 원했던 거였어? 내가 말하려는 건 이번에는 대장이 정말로 뭘 원하는지를 확실히 해 두라는 거야."~ */
+  IF ~  InParty("Morte")
+Global("Morte_Morale_Fortress_Portal","AR0202",0)
+~ THEN REPLY #54278 /* ~"알겠네. 이보게, 모트... 우린 이 일에 대해 별로 얘기하지는 못했지만, 자네가 나와 함께 여기까지 올 필요가 없었다는 건 자네도 알고 있었겠지, 안 그런가? 만약 자네가 가기 싫다고 하더라도 난 이해하겠네."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
+SetGlobal("Morte_Morale_Fortress_Portal","AR0202",1)
+~ GOTO 558
+  IF ~  InParty("Morte")
+~ THEN REPLY #54279 /* ~"알겠네. 자네 의견을 다 말했으면 그만 가세. 준비됐나?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54280 /* ~"알겠네. 충고해 주어 고맙네, 모트. 이제 나는 전이문으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 558 // from: 557.0
+  SAY #54281 /* ~"그래... 알아, 대장. 그리고 난 대장에게는 거짓말을 할 수가 없어... 난 가고 싶지 않아... 하지만 가겠어. 일단 저 전이문으로 들어가면 대장 혼자의 문제가 아니라는 것만 알라고. 대장에게 우리들 모두의 목숨이 걸려 있으니까. 그리고 우리는 대장과는 달리 한 번 죽으면 다시 일어나지 못해."~ */
+  IF ~  GlobalGT("Ravel_Grace","GLOBAL",0)
+GlobalGT("Ravel_Morte","GLOBAL",0)
+GlobalLT("Torment_Fell","GLOBAL",2)
+NearbyDialog("Dgrace")
+~ THEN REPLY #54282 /* ~"그렇다면 왜 자네는..."~ */ EXTERN ~DGRACE~ 169
+  IF ~  GlobalGT("Ravel_Grace","GLOBAL",0)
+GlobalGT("Ravel_Morte","GLOBAL",0)
+Global("Torment_Fell","GLOBAL",2)
+NearbyDialog("Dgrace")
+~ THEN REPLY #54283 /* ~"그렇다면 왜 자네는..."~ */ EXTERN ~DGRACE~ 170
+  IF ~  GlobalGT("Ravel_Morte","GLOBAL",0)
+GlobalLT("Torment_Fell","GLOBAL",2)
+!NearbyDialog("Dgrace")
+~ THEN REPLY #54284 /* ~"그렇다면 왜 자네는..."~ */ GOTO 562
+  IF ~  GlobalGT("Ravel_Morte","GLOBAL",0)
+Global("Torment_Fell","GLOBAL",2)
+!NearbyDialog("Dgrace")
+~ THEN REPLY #54285 /* ~"그렇다면 왜 자네는..."~ */ GOTO 563
+  IF ~  Global("Ravel_Morte","GLOBAL",0)
+~ THEN REPLY #54286 /* ~"그렇다면 왜 자네는..."~ */ GOTO 564
+END
+
+IF ~~ THEN BEGIN 559 // from:
+  SAY #54762 /* ~모트가 반격한다: "당신 냄새도 만만치 않군. 마지막으로 목욕을 한 게 언제지?"~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 176
+END
+
+IF ~~ THEN BEGIN 560 // from:
+  SAY #54763 /* ~모트가 반격한다: "당신 냄새도 만만치 않군. 마지막으로 목욕을 한 게 언제지?"~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 177
+END
+
+IF ~~ THEN BEGIN 561 // from:
+  SAY #54764 /* ~모트가 반격한다: "당신 냄새도 만만치 않군. 마지막으로 목욕을 한 게 언제지?"~ */
+  IF ~~ THEN EXTERN ~DTRIAS~ 8
+END
+
+IF ~~ THEN BEGIN 562 // from: 558.2
+  SAY #54831 /* ~"래벌이 미로에서 한 말 있잖아... 대장이 자석처럼 고통받는 사람들을 자신에게 끌어당긴다는." 모트는 고개를 젓는다. "아나 그건 대장이 지금까지 쭉 고통을 받아 왔기 때문인 것 같아... 아마 대장 문제가 해결되면... 우리도 약간의 안식이나마 얻을 수 있게 될지도 모르지. 아마도."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54832 /* ~"그럴지도 모르지. 그럼... 나와 함께 가겠나, 모트?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54833 /* ~"알겠네. 충고해 주어 고맙네, 모트. 이제 나는 전이문으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 563 // from: 558.3
+  SAY #54834 /* ~"래벌이 미로에서 한 말... 그리고 휄이 토먼트의 심벌에 대해서 한 말 기억하지? 대장이 자석처럼 고통받는 사람들을 자신에게 끌어당긴다는." 모트는 고개를 젓는다. "아나 그건 대장이 지금까지 쭉 고통을 받아 왔기 때문인 것 같아... 아마 대장 문제가 해결되면... 우리도 약간의 안식이나마 얻을 수 있게 될지도 모르지. 아마도."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54835 /* ~"그럴지도 모르지. 그럼... 나와 함께 가겠나, 모트?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54836 /* ~"알겠네. 충고해 주어 고맙네, 모트. 이제 나는 전이문으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 564 // from: 558.4
+  SAY #54837 /* ~"난 대장을 오랫동안 알아 왔어, 대장. 그래서 하는 말인데, 대장에게는 뭔가가 있어... 대장이 자석처럼 고통받는 사람들을 자신에게 끌어당겨." 모트는 고개를 젓는다. "아나 그건 대장이 지금까지 쭉 고통을 받아 왔기 때문인 것 같아... 아마 대장 문제가 해결되면... 우리도 약간의 안식이나마 얻을 수 있게 될지도 모르지. 아마도."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54838 /* ~"그럴지도 모르지. 그럼... 나와 함께 가겠나, 모트?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54839 /* ~"알겠네. 충고해 주어 고맙네, 모트. 이제 나는 전이문으로 향하겠네."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 565 // from: 548.0
+  SAY #54840 /* ~모트는 침묵한다.~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 175
+END
+
+IF ~~ THEN BEGIN 566 // from:
+  SAY #54841 /* ~"그 해골은 나였어." 모트가 조용히 말한다: "여자는 데이오나라란 계집이었고, 궁수에 대해서는 아는 게 없어..."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 177
+END
+
+IF ~~ THEN BEGIN 567 // from:
+  SAY #54842 /* ~"그래..." 모트는 이빨을 덜거덕거린다. 몸을 떠는 동작인 것 같다. "대장, 이 요새는... 사방에 그림자들투성이야..."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 178
+END
+
+IF ~~ THEN BEGIN 568 // from:
+  SAY #54843 /* ~"그들은 해골들의 기둥처럼 내게 말을 했어..." 모트는 목소리를 낮춘다. "그들 *알고* 있었어..."~ */
+  IF ~~ THEN REPLY #54844 /* ~"좋소. 보시오, 당신들 두 사람, 나는 이 요새에 대해 당신들이 내게 말해줄 수 있는 것들을 모두 알아야만 하겠소."~ */ EXTERN ~DDAKKON~ 179
+END
+
+IF ~~ THEN BEGIN 569 // from:
+  SAY #54845 /* ~"대장, 내가 말해줄 건 - 우리는 도착하자마자 흩어지게 되고, 그 곳은 거대한 장소이며, 그림자들로 득실거리고... 그 곳 어딘가에는 우리들 중 그 누구보다도 강대한 존재가 기다리고 있다는 것밖에 없어."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 182
+END
+
+IF ~~ THEN BEGIN 570 // from:
+  SAY #54846 /* ~"대장, 내가 말해줄 건 - 어떤 그룹이든 그 곳에 도착하면 흩어지게 되어 있고, 그 곳은 거대한 장소이며, 그림자들로 득실거리고... 그 요새 어딘가에는 대장이 지금까지 만난 그 어떤 존재보다도 강대한 존재가 기다리고 있다는 것밖에 없어. ~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 182
+END
+
+IF ~~ THEN BEGIN 571 // from:
+  SAY #55832 /* ~"대장, 이 녀석은 말썽거리야... 이 모드론은 불량이야."~ */
+  IF ~~ THEN REPLY #55833 /* ~"불량?"~ */ GOTO 572
+END
+
+IF ~~ THEN BEGIN 572 // from: 571.0
+  SAY #55834 /* ~"그래, 모드론들도 때로는 혼돈의 영향을 좀 받게 되지, 그리고 그런 일이 일어나면... 글쎄, 내가 생각할 수 있는 가장 좋은 설명은 불량 모드론은... 일종의 거꾸로 된 모드론이라는 거야. ~ */
+  IF ~~ THEN REPLY #55836 /* ~"그래 이건... 거꾸로 된 모드론이란 건가?"~ */ EXTERN ~DNORDOM~ 21
+END
+
+IF ~~ THEN BEGIN 573 // from:
+  SAY #55837 /* ~"대장, 재미있긴 한데, 이 얼간이 폴리곤하고 우리 골통들을 딸랑거리느니, 차라리 바테주 궁덩이 밑에서 의자를 빼내는 게 더 보람이 있을 거야."~ */
+  IF ~~ THEN REPLY #55839 /* ~"톱니바퀴 혼령이 무엇인지 *자네*는 아나, 모트?~ */ GOTO 574
+END
+
+IF ~~ THEN BEGIN 574 // from: 573.0
+  SAY #55841 /* ~"대장, 난 이 주사위가 뭐라고 딸랑거리는지 모르겠어."~ */
+  IF ~~ THEN REPLY #55842 /* ~"난 자네가 차원들에 대한 *전문가*라고 생각했었는데."~ */ GOTO 575
+  IF ~~ THEN REPLY #55843 /* ~"그럼 좋소. 노돔, 난 당신에게 할 다른 질문들이 있소..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55844 /* ~"그럼 관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 575 // from: 574.0
+  SAY #55845 /* ~"뭐... 난 대장보다는 더 안다고, 이 비틀거리는 목쉰 기억상실증 환자야! 그리고 대장의 그 빈 골통에 넣고 딸랑거릴 게 세 가지 있으니까 잘 들어 두라고: 1. 진정한 차원 전문가 따위는 없다. 2. 그나마 대장 주변에 있는 사람들 중 전문가 비슷하기라도 한 건 나밖에 없다. 3. 내게 경의를 좀 표해라. 왜냐고? 2를 참조해."~ */
+  IF ~~ THEN REPLY #55846 /* ~"그럼 좋소. 노돔, 난 당신에게 할 다른 질문들이 있소..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55847 /* ~"그럼 관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 576 // from:
+  SAY #55848 /* ~"미캐너스? 지루하다는 말이 그 곳보다 더 잘 어울리는 곳도 없을 걸, 대장. 모드론과 커다란 톱니바퀴 밖에 없는 차원을 한 번 상상해 보라고. 바로 그 곳이 특대급으로 지루한 차원 미캐너스야. 방문하기는커녕 생각하고 싶지도 않은 곳이지."~ */
+  IF ~  NearbyDialog("DGrace")
+~ THEN DO ~SetGlobal("Know_Source","GLOBAL",1)
+~ EXTERN ~DGRACE~ 184
+  IF ~  !NearbyDialog("DGrace")
+~ THEN REPLY #55849 /* ~"노돔, 전에 '무 고향'이라고 한 건 무슨 뜻이오?"~ */ EXTERN ~DNORDOM~ 65
+  IF ~  !NearbyDialog("DGrace")
+~ THEN REPLY #55850 /* ~"관두게, 모트. 들을 만큼 들었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 577 // from:
+  SAY #55855 /* ~"경건한 여신관 아가씨, 미안하지만 미캐너스는 전우주에서 제일 지루한 차원이야... 만약 당신이 그 곳에 간다면 얘기가 좀 달라질지도 모르지만..." 모트는 눈을 부라린다. "하지만 내 생각에는 그것도 오래가지는 못할 거야."~ */
+  IF ~~ THEN REPLY #55857 /* ~"노돔, 전에 무 고향이라고 한 건 무슨 뜻이오?"~ */ EXTERN ~DNORDOM~ 65
+  IF ~~ THEN REPLY #55858 /* ~"관두게, 모트. 들을 만큼 들었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 578 // from:
+  SAY #55860 /* ~"모든 모드론은 이 '풀'의 일원이야, 대장, 일종의 거대한 에너지 은행이라고나 할까... 어떤 모드론이 죽으면 그것을 만드는 데 사용되었던 에너지는 다시 그 곳으로 흡수되어 새로운 모드론이 나오게 되지. 그런데 문제는... 만약 모드론이 약간 돌아버릴 경우, 그러한 연결은 끊어지지만 에너지는 여전히 가지고 있게 된다는 점이지."~ */
+  IF ~  NearbyDialog("Dgrace")
+~ THEN EXTERN ~DGRACE~ 186
+  IF ~~ THEN REPLY #55862 /* ~"그래서... 노돔, 이 미캐너스란 차원은 에너지의 근원이오?"~ */ EXTERN ~DNORDOM~ 67
+  IF ~~ THEN REPLY #55864 /* ~"알겠소. 노돔, 그 밖에도 당신에게 질문할 것들이 있소..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55865 /* ~"내가 알고 싶었던 건 그게 전부요. 갑시다."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 579 // from:
+  SAY #55867 /* ~모트는 훨-후럼-그레이스를 노려본다. "그래, 댁은 괜찮소? 내가 이미 대답을 했소다, 그러니 댁은 나서지 말라고. 여기선 내가 정보 공급책이지 댁이 아니니까. 알겠느냐고?"~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 187
+END
+
+IF ~~ THEN BEGIN 580 // from:
+  SAY #55870 /* ~"오, 알겠군! 만약 내가 서큐버스였다면, 대장도 내 말에 더 귀를 기울이겠지, 그거야? 내가 가끔씩 살결을 드러내 보이면 나도 존중을 받게 되는 건가, 허? 그건 너무 천박하고 피상적이야, 대장! 젠장, 나는..."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 191
+END
+
+IF ~~ THEN BEGIN 581 // from:
+  SAY #55871 /* ~NULL NODE~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 582 // from:
+  SAY #55873 /* ~"오, 그래?! 내가...?! 좋아...! 그래... 대장도 들었지?! 서큐버스가 한 말 말이야? 그녀가 옳아. 내 설명이 더 이해하기가 쉬워, 내가 더 잘 알고 있다고. 내 말이 무슨 뜻인지 알겠어? 이제 내가 왜 필요한지 알겠어?"~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+~ THEN REPLY #55875 /* ~"옳네, 그래서 난 또 한 가지 질문을 해야겠네. 자네들 두 사람 모두 노돔은 모두 근원의 일부이나 그는 그것으로부터 차단된 상태라고 했네. 그리고 모드론이 죽으면 그들은 다시 근원으로 흡수되고. 노돔도 그렇게 되나?"~ */ GOTO 583
+  IF ~~ THEN REPLY #55876 /* ~"난 그렇지 않다고 말한 적이 없네, 모트. 그래... 노돔, 당신이 말한 에너지의 근원은... 미캐너스로부터 오는 거요?"~ */ EXTERN ~DNORDOM~ 67
+  IF ~~ THEN REPLY #55877 /* ~"좋소. 노돔, 당신에게 할 다른 질문들이 있소..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55879 /* ~"내가 알고 싶었던 건 그게 전부네. 가세"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 583 // from: 582.0
+  SAY #55882 /* ~모트는 고개를 끄덕인다.~ */
+  IF ~~ THEN REPLY #55884 /* ~"그리고 그가 죽으면... 또 다른 노돔이 태어난다."~ */ GOTO 584
+END
+
+IF ~~ THEN BEGIN 584 // from: 583.0
+  SAY #55886 /* ~"어... 아니."~ */
+  IF ~~ THEN REPLY #55887 /* ~"무슨 일이 일어나나?"~ */ GOTO 585
+END
+
+IF ~~ THEN BEGIN 585 // from: 584.0
+  SAY #55890 /* ~"그들은 그의 에너지를 가져갈 거야, 대장, 그리고 새로운 모드론을 만들어 내겠지만, 그건 노돔은 아니야. 왜냐하면 그가 실제로 더 이상 모드론이 아니기 때문야. 그는 차원들의 영향을 너무 많이 받았어. 그들은 그를 대체할 비-노돔을 만들 거야."~ */
+  IF ~~ THEN REPLY #55892 /* ~"그래서... 불량 모드론이 됨으로서 그도 죽어야하는 존재가 되었다는 건가?"~ */ GOTO 586
+  IF ~~ THEN REPLY #55894 /* ~"알았네. 노돔, 당신에게 할 다른 질문들이 있소..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55895 /* ~"내가 알고 싶었던 건 그게 전부요. 갑시다."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 586 // from: 585.0
+  SAY #55897 /* ~모트는 잠시 얘기를 멈춘다. "글쎄... 그래, 그렇게 말할 수도 있겠지. 내 말은 그가 불량품이 되지 않았다면 상관이 없었을 거라는 거야... 그가 죽더라도 그와 똑같은 새 모드론이 탄생할 테니까... 하지만 그는 '거꾸로 된' 상태이기 때문에, 그가 죽으면 그의 그러한 특성은 사라지게 될 거야."~ */
+  IF ~~ THEN REPLY #55898 /* ~"알았네. 노돔, 당신에게 할 다른 질문들이 있소..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55900 /* ~"내가 알고 싶었던 건 그게 전부네. 가세."~ */ EXTERN ~DNORDOM~ 74
+END
+
+IF ~~ THEN BEGIN 587 // from:
+  SAY #55901 /* ~"아아악! 신들과 내 정신 건강을 위해 부탁하겠는데, 제발 집어치워! 그에게 그런 식으로 계속 그걸 물어보다가는 그가 고장이 나버릴 거라고!"~ */
+  IF ~~ THEN REPLY #55902 /* ~"그것 참 멋진 *아이디어*로군, 모트."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Nordom_5","GLOBALLaw",-1)
+~ GOTO 588
+  IF ~~ THEN REPLY #55905 /* ~"나는 답을 알기를 원했고 노돔으로부터 그것을 얻으려던 참이었네."~ */ GOTO 589
+  IF ~~ THEN REPLY #55906 /* ~"관두게. 난 노돔에게 물어볼 다른 질문들이 있네..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55907 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 588 // from: 587.0
+  SAY #55909 /* ~"오." 모트는 싱긋 웃는다. "뭔가를 말했을 수도 있었겠지. 암, 계속하시라고. 물론이지..." 모트는 노돔을 흉내내 이빨을 *찰깍*거린다. "만약 대장이 모드론에 대해 알고 싶다면 내게 물어보라고."~ */
+  IF ~~ THEN REPLY #55910 /* ~"알았네, 모트... 내게 모드론에 대해 어떤 얘기를 해줄 수가 있겠나?~ */ GOTO 590
+  IF ~~ THEN REPLY #55912 /* ~"관두게. 난 노돔에게 물어볼 다른 질문들이 있네..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55913 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 589 // from: 587.1
+  SAY #55914 /* ~"이봐, 대장, 보통 모드론은 자신들에게 주어진 기본적인 임무 이외의 것들의 거의 이해하지 못해, 그리고 이 얼간이는 다원 우주에 대해서는 완전한 새내기라고. 그 입방체를 헷갈리게 하지 말라고, 알겠어? 적어도 그가 무장을 하고 있을 동안에는 말이야. 모드론에 대해 알고 싶다면 그가 아니라 내게 물어보라고."~ */
+  IF ~~ THEN REPLY #55915 /* ~"알았네, 모트... 내게 모드론에 대해 어떤 얘기를 해줄 수가 있겠나?~ */ GOTO 590
+  IF ~~ THEN REPLY #55917 /* ~"관두게. 난 노돔에게 물어볼 다른 질문들이 있네..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55918 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 590 // from: 588.0 589.0
+  SAY #55921 /* ~"설명하자면 이래, 대장: 모드론이란 그들의 고향 차원인 미캐너스에서 철꺽거리고 다니는 멍청한 기하학적 도형들이라고... 그들은 깔끔하고 질서 정연하지, 그리고 다원 우주의 다른 곳들도 그렇게 되기를 원해. 그래서 그들은 귀찮은 해충들인 거라고."~ */
+  IF ~~ THEN REPLY #55923 /* ~"다원 우주를 질서있게 만들려는 것이 뭐가 나쁜가?"~ */ GOTO 592
+  IF ~~ THEN REPLY #55925 /* ~"미캐너스가 대체 뭔가?"~ */ DO ~SetGlobal("Know_Mechanus","GLOBAL",1)
+~ GOTO 591
+  IF ~~ THEN REPLY #55926 /* ~"관두게. 난 노돔에게 물어볼 다른 질문들이 있네..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55928 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 591 // from: 590.1
+  SAY #55930 /* ~"그 곳은 이러한 태엽장치로 돌아가는 일벌들의 발상지지. 그에게 그 곳에 대해 물어보고 어떤 대답을 하는지 한 번 들어보라고. 그 곳은 그들이 빈둥거리면서 늘 모든 것들을 정리하는 곳이지... 이걸 목록화 해라, 이걸 정돈해라, 저걸 정돈해라, 그걸 법문화해라, 등등."~ */
+  IF ~~ THEN REPLY #55931 /* ~진실: "그건 숭고한 목표 같군. 다원 우주를 질서있게 만들려는 것이 뭐가 나쁜가?"~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Nordom_2","GLOBALLaw",2)
+~ GOTO 592
+  IF ~~ THEN REPLY #55935 /* ~"자넨 그게 별로 마음에 들지 않는 것 같군."~ */ GOTO 592
+  IF ~~ THEN REPLY #55936 /* ~"노돔에게 물어볼 다른 질문들이 있네..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55937 /* ~관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 592 // from: 590.0 591.0 591.1
+  SAY #55938 /* ~모트는 노돔을 흘긋 본다. 그는 마치 왼쪽 석궁의 얘기를 듣고 있는 듯 그것을 머리 옆쪽에 갖다 대고 있다.~ */
+  IF ~~ THEN GOTO 593
+END
+
+IF ~~ THEN BEGIN 593 // from: 592.0
+  SAY #55940 /* ~"왜냐하면 말이야, 대장, 혼돈 역시 우주에서 나름대로의 역할을 지니고 있어. 만약 모든 것이 *모드론*의 관점 대로 되어버린다면, 아마 삶이란 것이 거의 존재할 수 없을 거야... 적어도 내가 살고 싶은 종류의 삶은. 그들은 모든 것을 질서 정연하게 만들려고 해. 왝!" ~ */
+  IF ~~ THEN REPLY #55941 /* ~진실: "동의하네. 혼돈에게도 나름대로의 역활이 있어. 질서가 지나치면 우린 모두 정체 상태에 빠지지. 그런데 난 노돔에게 질문할 것들이 좀 있네..."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Nordom_4","GLOBALLaw",-2)
+~ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55942 /* ~"알겠네. 그런데 난 노돔에게 질문할 것들이 좀 있네..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55944 /* ~"그럼 좋네. 가세.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 594 // from:
+  SAY #56029 /* ~"나는 그녀 냄새가 좋아."~ */
+  IF ~~ THEN EXTERN ~DFHJULL~ 27
+END
+
+IF ~~ THEN BEGIN 595 // from:
+  SAY #56030 /* ~"기다려, 대장... 배이터는 안돼. 이 마족은 뭔가를 숨기고 있는 거라고... 그리고 설령 '해골들의 기둥'이란 것이 실제로 존재하더라도, 다원 우주에서 가장 위험한 곳들 중 한 곳에 가는 일 없이 이 요새란 곳에 갈 방법을 알고 있는 자를 찾을 수 있을 거라고."~ */
+  IF ~~ THEN REPLY #56031 /* ~"뭔가 숨기고 있는 거요, 갈라진-혀?~ */ EXTERN ~DFHJULL~ 88
+  IF ~~ THEN REPLY #56032 /* ~"왜 그 곳에 가기를 싫어하나, 모트?"~ */ GOTO 596
+END
+
+IF ~~ THEN BEGIN 596 // from: 595.1
+  SAY #56033 /* ~"그 곳은 위험한 곳이야, 대장. 난 가기 싫어. 난 그 곳에 간 적이 있고 그 곳은 결코 쾌적한 곳이 아냐. 알겠어?"~ */
+  IF ~~ THEN REPLY #56034 /* ~"그 일에 대해서는 나중에 얘기하세. 갈라진-혀, 질문할 것들이 좀 있소..."~ */ EXTERN ~DFHJULL~ 46
+END
+
+IF ~~ THEN BEGIN 597 // from:
+  SAY #56936 /* ~"이 영감은 안 나타나는 곳이 없군!"~ */
+  IF ~~ THEN REPLY #56937 /* ~"그래, 하지만 그는 우리에게 도움이 되었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 598 // from:
+  SAY #59827 /* ~(NULL NODE)~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 599 // from:
+  SAY #60950 /* ~"이봐, 죽는 게 꼭 나쁜 건 아니라고. 낙관적으로 보라고... 적어도 저런 얼토당토 않은 것들하고 얘기할 필요도 없잖아."~ */
+  IF ~~ THEN REPLY #61111 /* ~"조용하게, 모트. 이 일은 내가 처리하겠네. 무슨 일이 일아났는지 얘기해줄 수 있겠소?"~ */ EXIT
+  IF ~~ THEN REPLY #61112 /* ~"관두시오. 나는 조용히 이 곳을 떠나도록 하겠소."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 600 // from:
+  SAY #61408 /* ~"이봐, 대장... 어떻게 생각해? 이 모트에게 적선 좀 하라고. 알다시피 꽤 됐잖아..."~ */
+  IF ~  PartyGoldGT(499)
+~ THEN REPLY #61411 /* ~"나쁠 것 없겠지. 어떻게 생각하시오, 아가씨?"~ */ EXTERN ~DUCHO~ 9
+  IF ~  PartyGoldLT(500)
+~ THEN REPLY #61412 /* ~"미안, 모트. 하지만 우리에겐 그만한 돈이 없네. 가세."~ */ EXIT
+  IF ~~ THEN REPLY #61413 /* ~"우린 가야만 하네, 모트. 안녕히 계시오, 아가씨."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 601 // from:
+  SAY #61409 /* ~"만세! 고마워, 대장!" 모트는 돌아서서 여자를 따라간다.~ */
+  IF ~~ THEN REPLY #61414 /* ~그가 돌아오기를 기다린다.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ EXTERN ~DUCHO~ 10
+END
+
+IF ~~ THEN BEGIN 602 // from:
+  SAY #61410 /* ~모트는 당신이 있다는 것조차 거의 깨닫지 못하고 있는 것 같다, 그리고 그는 낄낄거림과 즐거운 탄식을 번갈아 가며 하고 있다. ~ */
+  IF ~~ THEN REPLY #61415 /* ~"좋네... 그럼 모든 게 잘된 모양이군. 안녕히 계시오, 아가씨."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 603 // from:
+  SAY #61481 /* ~"나? 난 벡크너의 머리라고."~ [MRT562] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 604 // from:
+  SAY #61482 /* ~"신들은 정말로 자비롭도다!!"~ [MRT485] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 605 // from:
+  SAY #61483 /* ~"그것은 벡크너의 머리와 관련된 긴 이야기야. 난 얘기하고 싶지 않아."~ [MRT559A] */
+  IF ~~ THEN EXTERN ~BGRACE~ 3
+END
+
+IF ~~ THEN BEGIN 606 // from:
+  SAY #61484 /* ~"제발 화제를 바꿀 순 없겠어?"~ [MRT559B] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 607 // from:
+  SAY #61485 /* ~"나? 귀여운 모트지."~ [MRT560] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 608 // from:
+  SAY #61486 /* ~"나? 추억의 모트지."~ [MRT561] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 609 // from:
+  SAY #61487 /* ~"당신 베개에 눕게 해준다면."~ [MRT486A] */
+  IF ~~ THEN EXTERN ~BGRACE~ 7
+END
+
+IF ~~ THEN BEGIN 610 // from:
+  SAY #61488 /* ~"아무 것도 아니야, 아니리고.~ [MRT486B] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 611 // from:
+  SAY #61489 /* ~"멍멍! 멍멍! 헤! 헤! 헤!"~ [MRT484] */
+  IF ~~ THEN DO ~SetGlobal("Grace_Talked_Morte","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 612 // from:
+  SAY #62890 /* ~"그녀는 타나리의 일종인 서큐버스라고, 대장."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 213
+END
+
+IF ~~ THEN BEGIN 613 // from:
+  SAY #63454 /* ~"난 설 수가 없어. 알다시피 다리가 없잖아."~ [MRT482] */
+  IF ~~ THEN EXTERN ~BANNAH~ 1
+END
+
+IF ~~ THEN BEGIN 614 // from:
+  SAY #63455 /* ~"난 네가 예쁘게 생겼다고 생각했는데, 착각이었군."~ [MRT483] */
+  IF ~~ THEN EXTERN ~BANNAH~ 3
+END
+
+IF ~~ THEN BEGIN 615 // from:
+  SAY #63456 /* ~"난 널 첨 봤을 때 숨쉬는 걸 멈췄어, 흰들링."~ [MRT524] */
+  IF ~~ THEN DO ~SetGlobal("Annah_Talked_Morte","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 616 // from:
+  SAY #63457 /* ~"내게도 이름이 있다고."~ [MRT526] */
+  IF ~~ THEN EXTERN ~BANNAH~ 6
+END
+
+IF ~~ THEN BEGIN 617 // from:
+  SAY #63458 /* ~"네가 그 얘기를 꺼내다니 재밌군... 왜냐하면 일전에 녀석들에게 네 값을 물어봤거든."~ [MRT531] */
+  IF ~~ THEN EXTERN ~BANNAH~ 8
+END
+
+IF ~~ THEN BEGIN 618 // from:
+  SAY #63459 /* ~"입만 닥치면 너도 과히 나쁘진 않은데."~ [MRT530] */
+  IF ~~ THEN EXTERN ~BANNAH~ 10
+END
+
+IF ~~ THEN BEGIN 619 // from:
+  SAY #63460 /* ~"하지만 넌 이미 내 마음을 가지고 있는걸, 흰들링."~ [MRT532] */
+  IF ~~ THEN EXTERN ~BANNAH~ 12
+END
+
+IF ~~ THEN BEGIN 620 // from:
+  SAY #63462 /* ~"더 나쁜 것도 얼마든지 있어."~ [MRT525] */
+  IF ~~ THEN DO ~SetGlobal("Annah_Talked_Morte","GLOBAL",8)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 621 // from:
+  SAY #63463 /* ~"그런데 말이지, *너는* 부분적으로나마 마족이라고."~ [MRT533A] */
+  IF ~~ THEN EXTERN ~BANNAH~ 15
+END
+
+IF ~~ THEN BEGIN 622 // from:
+  SAY #63464 /* ~"내가 떠 있는 곳에서 보면 경치 좋은데."~ [MRT533B] */
+  IF ~~ THEN DO ~SetGlobal("Annah_Talked_Morte","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 623 // from:
+  SAY #63666 /* ~"나도 눈치챘어. 가서 대장과 네 식견을 나누지 그래?"~ [MRT563] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 624 // from:
+  SAY #63667 /* ~"허영이다, 이 얼간이 폴리곤아."~ [MRT468A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 2
+END
+
+IF ~~ THEN BEGIN 625 // from:
+  SAY #63668 /* ~"그럼 너부터 좀 '효율적'이 되라고, 이 딸랑거리는 폴리곤 녀석아."~ [MRT469A] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 626 // from:
+  SAY #63669 /* ~"기다려, 난 그런 말 하지 않았어!"~ [MRT470B] */
+  IF ~~ THEN EXTERN ~DANNAH~ 315
+END
+
+IF ~~ THEN BEGIN 627 // from:
+  SAY #63670 /* ~"아직도 안나는 옷을 입고 있어?"~ [MRT565A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 6
+END
+
+IF ~~ THEN BEGIN 628 // from:
+  SAY #63671 /* ~"그럼 답은 예스지."~ [MRT565B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",5)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 629 // from:
+  SAY #63672 /* ~"아가리 닥치지 않으면 내가 열 아홉을 세겠어."~ [MRT564] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",6)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 630 // from:
+  SAY #63673 /* ~"자유 의지가 내 명령에 절대복종한다는 뜻이라면 답은 예스야."~ [MRT569A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 9
+END
+
+IF ~~ THEN BEGIN 631 // from:
+  SAY #63674 /* ~"다원 우주에 온 걸 환영하네, 친구."~ [MRT569B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",7)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 632 // from:
+  SAY #63675 /* ~"훨-후럼-그레이스는 누드야?"~ [MRT568A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 11
+END
+
+IF ~~ THEN BEGIN 633 // from:
+  SAY #63676 /* ~"그럼 네 질문에 대한 답은 예스야."~ [MRT568B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",8)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 634 // from:
+  SAY #63677 /* ~"안나, 훨-후럼-그레이스와 내가 키메르족의 개펄에서 목욕을 하고 있어."~ [MRT571A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 13
+END
+
+IF ~~ THEN BEGIN 635 // from:
+  SAY #63678 /* ~"어떤 사람들은 사전을 쓰고, 다른 사람들은 그것을 읽지."~ [MRT572B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",9)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 636 // from:
+  SAY #63679 /* ~"안나, 한 병의 후리욘디안 호박색 와인과 시 공회당의 호화 객실."~ [MRT573] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 15
+END
+
+IF ~~ THEN BEGIN 637 // from:
+  SAY #63680 /* ~"오, 닥쳐."~ [MRT471D] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 17
+END
+
+IF ~~ THEN BEGIN 638 // from:
+  SAY #63681 /* ~"오, 가서 다른 사람이나 귀찮게 해, 이 멍청이 계산기야."~ [MRT576A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 19
+END
+
+IF ~~ THEN BEGIN 639 // from:
+  SAY #63682 /* ~"몰라. 그건 그냥... 그건... 알잖아... 그건 사라졌어."~ [MRT576B] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 20
+END
+
+IF ~~ THEN BEGIN 640 // from:
+  SAY #63683 /* ~"아가리 닥치지 않으면 내가 보여주지."~ [MRT576C] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 641 // from:
+  SAY #63684 /* ~"가서 곰용 덫하고나 키스해."~ [MRT575A] */
+  IF ~~ THEN EXTERN ~DGRACE~ 373
+END
+
+IF ~~ THEN BEGIN 642 // from:
+  SAY #63685 /* ~"날 믿으라고. 안나에게는 키스가 필요해."~ [MRT575B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 643 // from:
+  SAY #63686 /* ~::천진 난만하게 휘파람을 분다::~ [MRT472A] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Annah","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 644 // from:
+  SAY #63688 /* ~"아무도 그에게 얘길 해주진 않았어!"~ [MRT473D] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Grace","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 645 // from:
+  SAY #63689 /* ~"그건 순수하게 자발적인 거야, 멍청아. 어... 내가 안다는 얘기가 아니라..."~ [MRT577] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Grace","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 646 // from:
+  SAY #63858 /* ~"날 믿으라고, 당신은 그를 만난 적이 없어."~ [MRT475AA] */
+  IF ~~ THEN EXTERN ~BVHAILOR~ 1
+END
+
+IF ~~ THEN BEGIN 647 // from:
+  SAY #64990 /* ~"기다려, 대장... 이걸 봐." 내려다보니 아치로 향하고는... 돌아오지 않는 몇 개의 더러운 발자국이 있다. "이 부근에 전이문이 있는 것이 틀림없어."~ */
+  IF ~~ THEN REPLY #64991 /* ~"전이문? 어떻게 하면 그것을 열 수가 있나?"~ */ GOTO 648
+  IF ~~ THEN REPLY #64993 /* ~"아마 그럴지도. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 648 // from: 647.0
+  SAY #64992 /* ~"모르겠어, 대장. 통행량을 감안할 때 흔한 열쇠가 틀림없어. 아마 이 근처에 서는 인간 쓰레기들이라면 알지도 몰라..."~ */
+  IF ~~ THEN REPLY #64994 /* ~"그럼 사람들에게 물어보겠네. 그만 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 649 // from: 329.0 729.0
+  SAY #65552 /* ~"오, 이봐, 대장. 또 까먹었다고는 제발 얘기하지 말라고."~ */
+  IF ~~ THEN REPLY #65553 /* ~"내 기억을 되살리고자 할 뿐이네."~ */ GOTO 650
+  IF ~  Global("Morte_Warning","GLOBAL",1)
+~ THEN REPLY #65554 /* ~"아니, 이번에는 *전부* 다 듣고 싶네. 어서 시작하게. 내 기억을 되살려 주게."~ */ GOTO 650
+  IF ~~ THEN REPLY #65555 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65556 /* ~"그럼 관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 650 // from: 649.0 649.1
+  SAY #65557 /* ~"그 소리를 많이 듣게 될 것 같군." 모트는 헛기침을 한다. "어디 보자..."
+
+'네가 스틱스 강물을 몇 통이나 마신 듯한 기분인 것은 알지만, 정신을 차리고 집중해야 한다. 네 소지품들 중에는 이 중대사에 대해서 일부나마 밝혀 줄 일지가 한 권 있을 것이다. 만약 파로드가 이미 죽지 않았다면 그가 나머지 부분에 대해 설명해줄 수 있을 것이다.'~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #65558 /* ~"파로드... 흠... 계속하게."~ */ GOTO 651
+  IF ~  GlobalGT("Pharod","GLOBAL",0)
+~ THEN REPLY #65559 /* ~"계속하게."~ */ GOTO 651
+  IF ~~ THEN REPLY #65560 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65561 /* ~"관두게. 충분히 들었네. 그만 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 651 // from: 650.0 650.1
+  SAY #65562 /* ~"그래, 그래, 기다리라고." 모트는 잠시 멈춘다. "좋아, 이게 마지막이야..."
+
+'절대로 일지를 잃어서는 안 된다, 아니면 우린 다시 스틱스에 빠지는 신세가 될 테니까. 알겠나? 그리고 내 말을 믿어라 - 뭘 하든 간에 네가 누구이며, 어떤 일이 네게 일어나고 있으며, 어디서 왔는지에 대해 말해서는 안 된다. 그렇지 않으면 화장터로 직행하게 될 테니. 내가 말하는 대로 해라: 일지를 읽은 후 파로드를 찾아라.'~ */
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN GOTO 653
+  IF ~  Global("Morte_Warning","GLOBAL",1)
+~ THEN REPLY #65566 /* ~"계속하게. 그 다음에는 뭐라고 하고 있나?"~ */ GOTO 652
+  IF ~  Global("Journal","GLOBAL",0)
+~ THEN REPLY #65565 /* ~"그리고 내가 깨어났을 때 내게 일지가 없었는가?"~ */ GOTO 682
+  IF ~~ THEN REPLY #65567 /* ~"좋네. 그럼 몇 가지만 더 물어보세..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65568 /* ~"관두게. 충분히 들었네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 652 // from: 651.1
+  SAY #65563 /* ~"무슨 소리야, 대장? 그것뿐이라고."~ */
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",0)
+~ THEN REPLY #65569 /* ~"'해골을 믿지 마시오'라는 말은 뭔가?"~ */ DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1)
+AddexperienceParty(1000)
+~ JOURNAL #65573 /* ~나는 모트에게 그가 깜빡 "잊고" 읽어주지 않은 가외의 문장 한 줄에 대해 따졌다. 그는 그것이 별로 중요한 것이 아니었기 때문에 읽어주지 않았다고 했다. 그가 거짓말을 하고 있는 건 분명하나 그 이유는 아직 모르겠다. ~ */ GOTO 654
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #65570 /* ~"'해골을 믿지 마시오'라는 말은 뭔가?"~ */ GOTO 654
+  IF ~~ THEN REPLY #65571 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65572 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 653 // from: 651.0
+  SAY #65564 /* ~"물론 끝에 해골을 믿지 말라는 헛소리가 있기는 하지만."~ */
+  IF ~~ THEN REPLY #65574 /* ~"그 말의 뜻은 뭐라고 생각하나? 난 그것이 *자네*를 가리킨다고 생각하는데?"~ */ GOTO 655
+  IF ~~ THEN REPLY #65575 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65576 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 654 // from: 329.4 652.0 652.1 729.4
+  SAY #65577 /* ~"오... 맨끝에 있는 거 말이야? 쓰레기인 것 같아서 소리내어 읽지 않았어."~ */
+  IF ~~ THEN REPLY #65578 /* ~"정말? 그럼 그 말의 뜻은 뭐라고 생각하나? 난 그것이 *자네*를 가리킨다고 생각하는데?"~ */ GOTO 655
+  IF ~~ THEN REPLY #65579 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65580 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 655 // from: 653.0 654.0
+  SAY #65581 /* ~"그건 내용이 의심스러워. 내 말은 말이야, 대장은 날 믿잖아. 그렇지, 대장?"~ */
+  IF ~~ THEN REPLY #65582 /* ~"내게 *거짓말*을 하고 있는 건가, 모트?" ~ */ GOTO 656
+  IF ~~ THEN REPLY #65583 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65584 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 656 // from: 655.0
+  SAY #65585 /* ~"아냐! 대체 뭐가 문제야, 대장? 나 아직 대장을 잘못 인도한 적이 없다고."~ */
+  IF ~~ THEN REPLY #65587 /* ~*아직 끝나지 않았네. 나는 자네가 내게 그 문장을 읽어 주지 않았다는 사실이 마음에 들지 않네, 그리고 나는 우리가 함께 여행하기 시작한 이래 자네가 빼먹고 얘기해주지 않은 것들을 알고 싶네."~ */ GOTO 657
+  IF ~~ THEN REPLY #65586 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65588 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 657 // from: 656.0
+  SAY #65589 /* ~"아무 것도 없어! 난 대장에 모든 걸... 거의 모든 걸 말해주었어, 위험한 건 빼고 말이야."~ */
+  IF ~~ THEN REPLY #65590 /* ~"만약에 그 밖에도 더 있다면 지금 당장 내게 말하는 것이 좋을 걸세."~ */ GOTO 658
+  IF ~~ THEN REPLY #65591 /* ~"그럼 관두게. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65592 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 658 // from: 657.0
+  SAY #65593 /* ~"대장, 정말 그 이외에는 아무 것도 없어. 난 대장에게 절대 숨기지 않는다고."~ */
+  IF ~~ THEN REPLY #65594 /* ~"그럼 좋네, 모트. 그 밖에도 다른 질문들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65595 /* ~"그러지 않기를 바라네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 659 // from: 329.1 729.1
+  SAY #65596 /* ~"시길은 무한히 높은 첨탑 위에 위치한 고리 모양의 도시로, 어떤 사람들은 이 곳을 다원 우주의 중심이라고 하지... 물론 '어떻게' 그것이 무한히 높은 첨탑 위에 존재할 수 있으며, 대체 무슨 근거로 시길이 '다원 우주의 중심'이라고 하는가에 대해서는 이론의 여지가 많지..."~ */
+  IF ~~ THEN REPLY #65597 /* ~"그 밖에 다른 건?"~ */ GOTO 660
+  IF ~~ THEN REPLY #65598 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65599 /* ~"내가 알고 싶었던 건 그것이 전부네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 660 // from: 659.0
+  SAY #65600 /* ~"시길은 '문들의 도시'라고 불려. 여기저기로 통하는 보이지 않는 문들이 많기 때문이지. 어떤 아치, 문틀, 술통의 테, 책장 또는 유리창도 조건만 맞으면 전이문이 될 수 있어. 모든 건 그걸 열 수 있는 열쇠가 있느냐에 달렸지"~ */
+  IF ~~ THEN REPLY #65601 /* ~"열쇠?"~ */ GOTO 661
+  IF ~~ THEN REPLY #65602 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65603 /* ~"내가 알고 싶었던 건 그것이 전부네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 661 // from: 660.0
+  SAY #65604 /* ~"가장 좋은 설명은 대부분의 전이문들은 '자고' 있다는 거야. 자고 있는 상태에서는 옆을 지나거나, 그 안으로 들어가거나, 그 위로 지나도 아무 일도 일어나지 않아. 하지만 작 전이문에게는 그것을 '깨울' 수 있는 뭔가가 존재해. 그건 혼자서 부르는 콧노래일 수도 있고, 일주일 동안 묵은 바이토피아산 빵 한 덩어리이거나 첫사랑의 추억을 기억하는 것일 수도 있어. 어쨌든 조건이 맞으면 문은 열리고 그 반대편에 있는 곳으로 이동할 수가 있어."~ */
+  IF ~~ THEN REPLY #65605 /* ~"예를 들어 어디 말인가?"~ */ GOTO 662
+  IF ~~ THEN REPLY #65606 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65607 /* ~"내가 알고 싶었던 건 그것이 전부네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 662 // from: 661.0
+  SAY #65608 /* ~"어디든지, 대장. 어떤 곳이든지 시길에는 그 곳으로 통하는 전이문이 있어. 그게 시길이 다원 우주 전역에서 각광받는 이유지."~ */
+  IF ~~ THEN REPLY #65609 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65610 /* ~"내가 알고 싶었던 건 그것이 전부네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 663 // from: 329.2 729.2
+  SAY #65611 /* ~"이봐! 수다는 내 최대의 장기라고." 그는 이빨을 잠시 딱딱거린 후 싱긋 웃는다. "에? 에?"~ */
+  IF ~~ THEN REPLY #65612 /* ~"오, 그건 반가운 소리군."~ */ GOTO 664
+  IF ~  GlobalGT("Morte_Stolen","GLOBAL",2)
+~ THEN REPLY #65613 /* ~"그래, 저주의 연도에 대해서는 알고 있네, 모트. 난 자네가 로타의 집에 있는 동안 체득한 능력이 궁금하네."~ */ GOTO 667
+  IF ~~ THEN REPLY #65614 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있sp..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65615 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 664 // from: 663.0
+  SAY #65616 /* ~"하지만 말이야, 대장. 나는 수다를 제대로 떠는 데는 재능이 있어. 나는 말로 다른 사람들의 뚜껑이 열리게 만들 수가 있어. 나는 사람들을 정말 열받게 만들 수 있는 각종 욕설을 무수히 알고 있다고, 알아?"~ */
+  IF ~~ THEN REPLY #65617 /* ~"어... 그게 어떻게 쓸모가 있는 건가?"~ */ GOTO 665
+  IF ~~ THEN REPLY #65618 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65619 /* ~"관두게. 갑시다."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 665 // from: 664.0
+  SAY #65620 /* ~"그건 내가 지닌 여러 재능들 중 하나야… 난 그걸 '저주의 연도'라고 부르지. 아시다시피 난 *적절한* 코멘트를 함으로서 사람 머리뚜껑이 열리게 만들 수가 있어. 물론 그 후에는 열나게 도망을 쳐야 하지만... 내 말이 무슨 뜻인지 대장도 아마 알 거야~ */
+  IF ~~ THEN REPLY #65621 /* ~"어떻게 작용하나?"~ */ DO ~SetGlobal("Morte_Talent","GLOBAL",1)
+~ JOURNAL #65625 /* ~모트는 내게 자신에게는 다른 생명체를 화나게 만들 수 있는 "저주의 연도"라는 특수 능력이 있다고 말했다. 그는 생전과 죽은 후 지금까지 무수한 종류의 욕을 배운 덕에 어떻게 하면 사람들을 화나게 하여 그들로 하여금 그를 공격하게 할 수 있는지를 정확히 알고 있다. 모트가 그들을 화나게 만들면, 그들은 적의 공격을 회피하거나 적을 공격할 때 페널티를 안게 되며, 모트를 쫓아가서 백병전용 무기로  공격하는 것 이외의 다른 일은 일체 하지않게 된다. 주문을 사용하는 적을 만났을 경우 매우 유용한 능력인 것 같다. 이 능력은 마법과는 무관하기 때문에 마법에 내성이 있는 적에게도 효과가 있다. 모트가 다른 사람으로 더 많은 욕을 들을수록 이 능력은 향상되는 듯하다.~ */ GOTO 666
+  IF ~  GlobalGT("Morte_Stolen","GLOBAL",2)
+~ THEN REPLY #65622 /* ~"다른 건 없나?"~ */ GOTO 667
+  IF ~~ THEN REPLY #65623 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65624 /* ~"흠... 그건 쓸모가 있을지도 모르겠군. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 666 // from: 329.3 665.0 729.3
+  SAY #65626 /* ~"나는 사람들이 화가 나 날 쫓아오게 될 때까지 욕설을 퍼부어 댈 수가 있어."
+
+주: 모트에게는 '저주의 연도'라는 능력이 있다. 그것은 마법과는 무관한 일종의 도발로, 회피 판정에 실패할 경우 대상은 아머 클래스와 명중률에 페널티를 받는다, 그리고 모트를 직접 공격하는 일 이외의 행동은 하지 않게 된다. 주목할 점은 모트가 다른 사람들이 욕하는 것을 많이 들으면 들을 수록 저주의 연도의 효과 역시 향상된다는 점이다. 저주의 연도는 메이지를 상대할 때 특히 효과가 크다.~ */
+  IF ~  GlobalGT("Morte_Stolen","GLOBAL",2)
+~ THEN REPLY #65627 /* ~"그 밖에 다른 할 수 있는 일은 있나?"~ */ GOTO 667
+  IF ~~ THEN REPLY #65628 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65629 /* ~"흠... 그건 쓸모가 있을지도 모르겠군. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 667 // from: 663.1 665.1 666.0
+  SAY #65630 /* ~"난 로타의 응접실에서 대장이 날 빼내 주기를 기다렸어, 그런데 대장이 죽도록 시간을 끄는 덕분에 그 동안 친구들을 사귈 수가 있었지. 그리고 그들은 도움이 필요하면 자기들을 부르라고 했어.~ */
+  IF ~~ THEN REPLY #65631 /* ~"친구들? 그게 무슨 뜻인가?"~ */ JOURNAL #65637 /* ~모트는 그가 로타의 선반에 앉아 있는 동안 "해골 폭도"라는 새로운 능력을 배웠다고 내게 말했다. 모트는 하루에 정해진 회수만큼 로타의 선반에서 만난 친구들을 소환할 수 있으며, 그들은 모트가 지정한 대상을 물어뜯은 후 도망친다. 그들이 입히는 대미지는 모트의 레벨에 비례한다. ~ */ GOTO 668
+  IF ~~ THEN REPLY #65632 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65633 /* ~"그건 환영할만한 일이군. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 668 // from: 667.0
+  SAY #65634 /* ~"내가 휘파람을 불면 그들이 나타나. 꽤 쓸만한 친구들이야, 그리고 뱀처럼 따끔하게 물지."
+
+주: 이제 모트는 "해골 폭도"라고 불리는 특수 능력을 가지게 되었다. 이 능력을 사용하면 화면 밖에서 해골들이 몰려와 하나의 적을 여러 차례 물어뜯는다. 해골들의 위력과 그 대미지는 모트의 레벨에 비례하며, 이 능력은 하루에 일정 회수밖에 사용할 수 없다. ~ */
+  IF ~~ THEN REPLY #65635 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65636 /* ~"그건 환영할만한 일이군. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 669 // from: 329.5 729.5
+  SAY #65638 /* ~"글쎄, 내가 보기에는..."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #65639 /* ~"계속하게..."~ */ GOTO 671
+  IF ~  Global("Pharod","GLOBAL",1)
+Global("Pharod_Quest","GLOBAL",1)
+~ THEN REPLY #65640 /* ~"계속하게..."~ */ GOTO 672
+  IF ~  GlobalGT("Pharod_Quest","GLOBAL",1)
+!Global("AR0401_Visited","GLOBAL",1)
+~ THEN REPLY #65641 /* ~"계속하게..."~ */ GOTO 673
+  IF ~  Global("AR0401_Visited","GLOBAL",1)
+Global("AR0500_Visited","GLOBAL",0)
+~ THEN REPLY #65642 /* ~"계속하게..."~ */ GOTO 670
+  IF ~  Global("AR0500_Visited","GLOBAL",1)
+Global("Know_Ravel","GLOBAL",0)
+~ THEN REPLY #65643 /* ~"계속하게..."~ */ GOTO 674
+  IF ~  Global("Know_Ravel","GLOBAL",1)
+Global("Know_Ravel_Key","GLOBAL",0)
+~ THEN REPLY #65644 /* ~"계속하게..."~ */ GOTO 675
+  IF ~  Global("Know_Ravel","GLOBAL",1)
+GlobalGT("Know_Ravel_Key","GLOBAL",0)
+Global("AR0610_Visited","GLOBAL",0)
+~ THEN REPLY #65645 /* ~"계속하게..."~ */ GOTO 677
+  IF ~  Global("AR0610_Visited","GLOBAL",1)
+Global("AR0700_Visited","GLOBAL",0)
+~ THEN REPLY #65646 /* ~"계속하게..."~ */ GOTO 680
+  IF ~  Global("AR0700_Visited","GLOBAL",1)
+~ THEN REPLY #65647 /* ~"계속하게..."~ */ GOTO 681
+  IF ~~ THEN REPLY #65648 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65649 /* ~"다시 생각해 보니 그만하는 게 좋겠네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 670 // from: 669.3
+  SAY #65650 /* ~"내가 보기에 모든 건 대장에게 달렸어. 지금은 대장에게 해줄 쓸모 있는 얘기가 없어."~ */
+  IF ~~ THEN REPLY #65651 /* ~"*그건* 큰 변화군. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65652 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 671 // from: 669.0
+  SAY #65653 /* ~"이 '파로드'란 작자가 있는 곳부터 찾아야 할 것 같아. 만약 그가 대장에 대한 정보를 가지고 있지 않다면 그러한 지시 사항이 대장 등에 적혀 있을 이유가 없잖아. 아마 이 곳 토박이들 중에는 아는 사람이 틀림없이 있을 거야."~ */
+  IF ~~ THEN REPLY #65654 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65655 /* ~"알았네. 그럼 계속 그를 찾도록 하세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 672 // from: 669.1
+  SAY #65656 /* ~"이 '청동 구체'란 걸 빨리 찾아서 늙은 지팡이에게 가져가자고."~ */
+  IF ~~ THEN REPLY #65657 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65658 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 673 // from: 669.2
+  SAY #65659 /* ~"대장 시체가 발견된 곳으로 가자고. 대장이 어떻게 죽었는지를 알아낼 수 있을지도 모르니까."~ */
+  IF ~~ THEN REPLY #65660 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65661 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 674 // from: 669.4
+  SAY #65662 /* ~"가서 대장에 대해 더 아는 - 대장이 왜 이렇게 됐는지 아는 자를 찾자고. 시길의 어딘가에 대장에 대해 대장보다 더 이는 사람이 분명히 있을 거야."~ */
+  IF ~~ THEN REPLY #65663 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65664 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 675 // from: 669.5
+  SAY #65665 /* ~"그 이 나이트 해그 래벌에 대한 정보를 더 알아내야 할 것 같아, 대장 - 그리고 솔직히 말해서 그건 별로 내키는 일이 아니야. 하지만 시 공회당에 있는 학자들과 감각석이 우리에게 도움을 줄 수 있을지도 몰라."~ */
+  IF ~  Global("AR0601_Visited","GLOBAL",0)
+~ THEN REPLY #65666 /* ~"공회당? 감각석?"~ */ JOURNAL #65669 /* ~모트는 내게 사무구에 있는 시 공회당에 가서 나이트 해그 래벌에 대해 더 자세히 알아보라고 권했다. .~ */ GOTO 676
+  IF ~~ THEN REPLY #65667 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65668 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 676 // from: 675.0
+  SAY #65670 /* ~"미안, 대장 - 나는 지금 대장의 상식 수준이 물질계에서 방금 온 사람과 차이가 없다는 걸 계속 까먹고 어. 시 공회당은 사무구에 있는 센세이트의 본거지야. 그 곳에는 체험을 기록한 감각석들과, 우리들에게 래벌에 대한 정보를 제공할 수 있을지도 모를 많은 수의 학자, 연사, 그리고 강사들이 있어."~ */
+  IF ~~ THEN REPLY #65671 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65672 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 677 // from: 669.6
+  SAY #65673 /* ~"래벌은 미로에 갇혔어. 하지만 대장이 그래도 가기를 원한다면, 그 곳으로 갈 수 전이문과 열쇠는 분명히 존재하고 있을 거야."~ */
+  IF ~  Global("Know_Ravel_Key","GLOBAL",1)
+~ THEN REPLY #65674 /* ~"그녀의 미로로 통하는 전이문이 무엇인지 혹시 아나?"~ */ JOURNAL #65678 /* ~모트는 사무구에는 래벌의 일부를 어디에서 얻어야 할지를 아는 사람이 있을지도 모으며,  만약 그것이 여의치 않으면 공회당으로 가서 감각석을 이용할 수도 있다고 얘기했다. 그것조차 별 성과가 없으면 창녀들에게 가볼 수도 있다... 적어도 온 천지를 돌아다니면서 사람들에게 일일이 물어보는 것보다는 나을 것이다. ~ */ GOTO 678
+  IF ~~ THEN REPLY #65675 /* ~"그녀의 미로로 통하는 전이문이 어디 있는지 혹시 아나?"~ */ GOTO 679
+  IF ~~ THEN REPLY #65676 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65677 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 678 // from: 677.0
+  SAY #65679 /* ~"모르겠어. '래벌의 일부?' 그건 그녀의 말라서 떨어진 사마귀에서 그녀의 침을 거쳐 그녀의 작품에 이르기까지 그 어떤 것에도 해당이 될 수 있는 말이야. 너무 애매해. 하지만 아마 사무구에는 그 미친 마녀의 일부를 어떻게 얻을 수 있는지 아는 사람이 분명히 있기는 있을 거야. 만약 그것이 여의치 못하면, 시 공회당에 있는 감각석을 체크해 볼 수밖에. 그것들 중 하나에 우리에게 유용한 체험이 담겨 있을지도 모르잖아."~ */
+  IF ~~ THEN REPLY #65680 /* ~"그녀의 미로로 통하는 전이문이 어디 있는지 혹시 아나?"~ */ GOTO 679
+  IF ~~ THEN REPLY #65681 /* ~"좋은 지적이네. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65682 /* ~"좋네. 그럼 계속 찾아보세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 679 // from: 677.1 678.0
+  SAY #65683 /* ~"모르겠어, 대장. 시길에는 전이문들이 무수히 많아. 우선 시 공회당에 가보자고. 그 곳의 감각석들 중 하나에 우리에게 유용한 체험이 담겨 있을지도 모르니까. 그것도 실패로 돌아가면 이렇게 뜬 구름 잡듯이 돌아다니는 건 그만두고 차리리 누구에게 전이문을 만들어 달라고 하자고."~ */
+  IF ~~ THEN REPLY #65684 /* ~"알았네. 그 밖에도 질문할 것이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65685 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 680 // from: 669.7
+  SAY #65686 /* ~"우리가 필요한 것만 찾아서 당장 줄행랑치자고, 대장. 이 곳은 나처럼 피부도 없는 사람도 부시시 떨게 만든다고."~ */
+  IF ~~ THEN REPLY #65687 /* ~"옳은 말이네. 그 밖에도 물어보고 싶은 것들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65688 /* ~"알았네. 그럼 움직이세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 681 // from: 669.8
+  SAY #65689 /* ~"몰라, 대장. 이 게임의 주인공은 대장이라고 - 난 그냥 따라다닐 뿐이야."~ */
+  IF ~~ THEN REPLY #65690 /* ~"옳은 말이네. 그 밖에도 물어보고 싶은 것들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65691 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 682 // from: 651.2
+  SAY #65692 /* ~"아니... 여기 왔을 때 대장은 깨끗하게 털린 상태였어. 이미 말했듯이 대장 몸에는 충분하고도 남을 정도의 일지가 적혀 있다고."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #65693 /* ~"파로드란 사람을 정말 모르나?"~ */ GOTO 683
+  IF ~~ THEN REPLY #65694 /* ~"옳은 말이네. 그 밖에도 물어보고 싶은 것들이 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65695 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 683 // from: 682.0
+  SAY #65696 /* ~"아니. 그래도 그가 어디 있는지 아는 사람은 분명히 있을 거야. 이 근처에 사는 사람들에게 물어보자고."~ */
+  IF ~~ THEN REPLY #65697 /* ~"우리가 가기 전에 다른 질문들을 좀 하고 싶네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65698 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 684 // from: 329.6 729.6
+  SAY #65699 /* ~"그래, 미미르는 떠다니는 백과사전이야. 정보를 보관했다가 필요할 때 꺼낼 수가 있지."~ */
+  IF ~  Global("Grace_Silver_Mimir","GLOBAL",1)
+~ THEN REPLY #65700 /* ~"하지만 미미르들은 은색 금속으로 만들어지지 않았나?"~ */ GOTO 685
+  IF ~~ THEN REPLY #65701 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65702 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 685 // from: 684.0
+  SAY #65703 /* ~"그래서? 그런 종류도 있겠지만, *나는* 달라. 그리고 다원 우주에는 더 이상한 일들도 얼마든지 있다고, 대장."~ */
+  IF ~~ THEN REPLY #65704 /* ~"나는 자네가 미미르라고 생각하지 않네, 모트. 자네 정체는 뭔가?"~ */ GOTO 686
+  IF ~~ THEN REPLY #65705 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65706 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 686 // from: 685.0
+  SAY #65707 /* ~"왜 심문하는 거야? 그리고 대장이 미미르에 대해 대체 뭘 알아?"~ */
+  IF ~  Global("Grace_Smell_Mimir","GLOBAL",1)
+~ THEN REPLY #65708 /* ~"나도 자네가 내게 거짓말을 하고 있다는 걸 눈치챌 만큼은 아네."~ */ GOTO 687
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #65709 /* ~"나도 자네가 내게 거짓말을 하고 있다는 걸 눈치챌 만큼은 아네. 우선 자네가 빼먹은 내 등에 새겨진 자네를 믿지 말라는 문장, 그러고 이 건. 내가 무슨 생각을 하기를 바라는 건가?"~ */ GOTO 687
+  IF ~~ THEN REPLY #65710 /* ~"아무 것도 아니네. 그밖에도 물어볼 것들이 좀 있네..."~ */ JOURNAL #65712 /* ~나는 모트가 자신을 미미르(북구 신화에서 전지한 존재인 거인)라고 하는 데 대해 따졌으나, 내게는 그를 몰아세울만한 논리적 근거가 없었다. 그로부터 진실을 얻어내려면 그보다 거짓말 솜씨가 더 능숙해져야 할 것 같다. ~ */ GOTO 329
+  IF ~~ THEN REPLY #65711 /* ~"그럼 관두게, 가세."~ */ JOURNAL #65712 /* ~나는 모트가 자신을 미미르(북구 신화에서 전지한 존재인 거인)라고 하는 데 대해 따졌으나, 내게는 그를 몰아세울만한 논리적 근거가 없었다. 그로부터 진실을 얻어내려면 그보다 거짓말 솜씨가 더 능숙해져야 할 것 같다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 687 // from: 686.0 686.1
+  SAY #65713 /* ~"그래, 난 미미르가 아냐, 하지만 난 많은 걸 알아, 그러니까 그렇게 불러서 나쁠 것 없잖아."~ */
+  IF ~~ THEN REPLY #65714 /* ~"그럼 자네는 대체 뭔가?"~ */ GOTO 688
+  IF ~~ THEN REPLY #65715 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65716 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 688 // from: 687.0
+  SAY #65717 /* ~"나는 많은 것을 아는 떠다니는 해골이야."~ */
+  IF ~  Global("Grace_Smell_Mimir","GLOBAL",1)
+Global("AR1000_Visited","GLOBAL",0)
+~ THEN REPLY #65718 /* ~"자네에게서 난다는 베이터의 냄새는 뭔가?"~ */ GOTO 690
+  IF ~  Global("Grace_Smell_Mimir","GLOBAL",1)
+Global("AR1000_Visited","GLOBAL",1)
+~ THEN REPLY #65719 /* ~"자네에게서 난다는 베이터의 냄새는 뭔가?"~ */ GOTO 689
+  IF ~~ THEN REPLY #65720 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65721 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 689 // from: 688.1
+  SAY #65722 /* ~"대장이 베이터의 냄새에 대해 뭘 알아?!"~ */
+  IF ~~ THEN REPLY #65723 /* ~"그건 내가 그 곳에 가본 적이 있기 때문이네. 나는 아버누스의 대지를 활보했네."~ */ GOTO 691
+  IF ~~ THEN REPLY #65724 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65725 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 690 // from: 688.0
+  SAY #65726 /* ~"대장이 베이터의 냄새에 대해 뭘 알겠어? 저 타나리와 나에 대해서 얘기를 하지 않았다면...?! 이봐, 그녀는 뭘 알고 있는 거지?!"~ */
+  IF ~~ THEN REPLY #65727 /* ~"그녀가 정곡을 찌른 모양이군. 그건 베이터의 냄새에 대한 것이겠지, 아닌가?~ */ GOTO 691
+  IF ~~ THEN REPLY #65728 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네... "~ */ GOTO 329
+  IF ~~ THEN REPLY #65729 /* ~"관두게. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 691 // from: 689.0 690.0
+  SAY #65730 /* ~"그래, 하지만... 그래. 그래 난 냄새가 좀 난다고. 냄새나서 미안하다고."~ */
+  IF ~~ THEN REPLY #65731 /* ~"*왜* 자네에게서 베이터의 냄새가 나는 건가?"~ */ DO ~SetGlobal("Morte_Story","GLOBAL",1)
+~ GOTO 692
+END
+
+IF ~~ THEN BEGIN 692 // from: 691.0
+  SAY #65732 /* ~"나는 지옥에 잠시 있었어. 오래 전 얘기지. 그런데도 악취는 한 번 배면 떨어지질 않아."~ */
+  IF ~~ THEN REPLY #65733 /* ~"자네가 지옥에 있었다고? 거기서 대체 뭘 했었나?"~ */ DO ~AddexperienceParty(12000)
+~ GOTO 693
+END
+
+IF ~~ THEN BEGIN 693 // from: 329.7 692.0 729.7
+  SAY #65734 /* ~"베이터의 첫 번째 층인 아버누스에는 해골들의 기둥이란 기둥이 있어, 하지만 보다 정확히 말하자면 머리들의 기둥이지."~ */
+  IF ~~ THEN GOTO 694
+END
+
+IF ~~ THEN BEGIN 694 // from: 693.0
+  SAY #65735 /* ~"사람들 얘기로 그 곳은 살아 있을 때 자신들이 지닌 지식을 악용하여 진실을 왜곡한 사람들 - 주로 학자나 현자들의 머리로 만들어졌다고 해... 그것도 다른 사람들을 죽게 하거나 큰 해를 입힐 정도로 중대한 거짓말을 한. 난 죽은 후 그것의 일부가 되었어. 웃기지?"~ */
+  IF ~~ THEN REPLY #65846 /* ~"별로."~ */ GOTO 695
+END
+
+IF ~~ THEN BEGIN 695 // from: 694.0
+  SAY #65736 /* ~"어..." 모트는 잠시 침묵한다. "그래, 대장 말이 옳아. 하나도 웃기지 않아. 아마 난 살았을 때 많은 것들을 알고 있었던 모양이야, 그리고 알고 있으면서도 늘 진실을 말하지는 않았던 모양이야. 그리고 내가 진실을 한두 번 왜곡했을 때, 그로 인해 다른 사람이 제 명을 다하지 못하고 죽었던 것 같아."~ */
+  IF ~~ THEN REPLY #65737 /* ~"누구였는지 기억할 수 있나?"~ */ GOTO 697
+  IF ~  CheckStatGT(Protagonist,13,WIS)
+~ THEN REPLY #65738 /* ~"그건 나였네, 그렇지 않나?~ */ GOTO 696
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65739 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65740 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 696 // from: 695.1
+  SAY #65741 /* ~모트는 잠시 당신을 쳐다본다. "그래. 어떻게 내가 아는지는 나도 몰라, 대장, 하지만 그렇게 생각해. 내 생각에 나는 바로 대장 때문에 그 곳에 가게 된 것 같아. 내장을 속인 일이 결정타가 된 것 같아. 나도 정확히 어떤 일이 일어났었는지는 기억을 할 수가 없어. 나는 내가 인간이었을 때의 기억도 없고, 기둥에서 깨어나기 전에 어떤 삶을 살았는지도 기억이 나지 않아.~ */
+  IF ~~ THEN REPLY #65742 /* ~"자네는 왜 잊어버렸나?"~ */ GOTO 698
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65743 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65744 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 697 // from: 695.0
+  SAY #65745 /* ~"어떻게 내가 아는지는 나도 몰라, 하지만 대장이었다고 생각해. 적어도 한 번은. 나도 정확히 어떤 일이 일어났었는지는 기억을 할 수가 없어. 나는 내가 인간이었을 때의 기억도 없고, 기둥에서 깨어나기 전에 어떤 삶을 살았는지도 기억이 나지 않아.~ */
+  IF ~~ THEN REPLY #65746 /* ~"자네는 왜 잊어버렸나?"~ */ GOTO 698
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65747 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65748 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 698 // from: 696.0 697.0
+  SAY #65749 /* ~"대장도 잘 알다시피 죽으면 기억을 잃는 것이 세상 이치인 모양이야... 전에 나는 사회의 신뢰할 수 있는 구성원은 아니었던 것 같아... 하지만 정말로 그런 사람이 어디 있어?" 모트는 다시 한숨을 쉰다. "하지만 어쩔 수가 없어. 늘 정직한 것만큼 괴로운 것도 또 없다고."~ */
+  IF ~  Global("Chaotic_Morte_1","GLOBAL",0)
+~ THEN REPLY #65750 /* ~"지옥에 떨어지는 것 말고는. 그건 진실을 말하는 것보다 훨씬 더 나쁠 것 같네."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Morte_1","GLOBALLaw",1)
+~ GOTO 699
+  IF ~  Global("Lawful_Morte_1","GLOBAL",0)
+~ THEN REPLY #65751 /* ~"그건 사실이네... 하지만 거짓말을 할 때는 신중하게 선택해야 하지."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Morte_1","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Morte_1","GLOBALGood",-1)
+~ GOTO 699
+END
+
+IF ~~ THEN BEGIN 699 // from: 698.0 698.1
+  SAY #65752 /* ~"그래. *이번에도* 대장 말이 옳아." 모트는 이빨을 찰칵거리는데, 그것은 왠지 사람이 손가락을 두드리는 소리처럼 들린다. "생전에 한 거짓말과 악행에 대한 대가는 언젠가는 치르게 되어 있지, 그리고 내가 죽었을 때, 이제는 내가 저승의 뱃사공에게 돈을 낼 차례가 되었어."~ */
+  IF ~~ THEN REPLY #65753 /* ~"그래 어떻게 기둥에서 탈출했나?"~ */ JOURNAL #53633 /* ~모트는 오래 전에 해골들의 기둥으로부터 그를 끄집어낸 것은 바로 나였다고 한다. 하지만 그는 내가 어떤 방법을 썼는지에 대해서는 잘 알지 못했다. 또한 그는 기둥을 떠났을 때 기둥에 축적된 지식들을 모두 잃었다고 한다... 그것은 왜 그가 내 전신에게 주장했던 만큼 유용하지 않았는가를 설명해줄 것 같다.~ */ GOTO 700
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65754 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65755 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 700 // from: 699.0
+  SAY #65757 /* ~"대장이 날 도왔어. 대장이 해골들의 기둥 앞에 나타났을 때, 나는 기를 쓰고 표면으로 나왔지, 그리고 내 노하우와 매력을 총동원해 대장의 이목을 끌었어 - 대장은 *내*가 가장 많은 것을 아는 머리라는 걸 알고 있엇어. 그리고 난 대장과 거래를 했지"~ */
+  IF ~~ THEN REPLY #65758 /* ~"거래...?"~ */ DO ~PlaySoundNotRanged("SPTR_01")
+FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 701
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65759 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65760 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 701 // from: 700.0
+  SAY #65761 /* ~모트가 얘기를 하자 당신의 시야가 시뻘겋게 변한다, 그리고 온갖 끔찍스런 목소리들이 당신 귀에 들려 온다. 그들은 모두 당신에게 구해 달라고 애원하면서 비명을 지르고 있다, 그리고 모트의 목소리는 거기에 파묻혀 거의 들리지 않는다. 그의 목소리는 절박감과 공포로 가득 차 있다... 그리고 그는 가련할 정도로 스스로를 잃고 어찌할 줄을 모르고 있다.~ */
+  IF ~~ THEN REPLY #65762 /* ~메아리: "너, 해골. 말하라."~ */ GOTO 702
+  IF ~~ THEN REPLY #65763 /* ~기억을 떨쳐버린다.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 702 // from: 701.0
+  SAY #65764 /* ~울부짖는 목소리들이 침묵한다, 그리고 업화의 불빛을 받아 벌겋게 빛나고 있는 작은 해골이 당신에게로 시선을 돌린다. 그의 안면은 피와 점액으로 얼룩져 있으며, 마치 추위에 또는 듯 이빨을 딱딱거리고 있다. "난... 난 당-당신을 도울 수 있어. 난 당-당신이 찾는 걸 알고 있어... 이 머리들... 그들의 모든 지식... 제발, 애원할게, 내가 당신을 돕게 해줘. *뭐든지* 다 말하겠어."~ */
+  IF ~~ THEN REPLY #65765 /* ~메아리: "그렇게 할 것인가? 맹세하라, 해골. 내가 죽는 날까지 날 섬기겠다고 맹세하라, 아니면 넌 이 곳에 남게 될 것이다."~ */ GOTO 703
+  IF ~~ THEN REPLY #65766 /* ~기억을 떨쳐버린다.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 703 // from: 702.0
+  SAY #65767 /* ~"맹세해, 맹세해. 그러니.. 제발 날 여기서 구해줘... 나..." 당신은 모트가 자존심도 내팽개치고 보기 역겨울 정도로 애걸하는 것을 지켜본다. "애원할게. 내가 당신을 돕게 해줘. 제발..."~ */
+  IF ~~ THEN REPLY #65768 /* ~메아리: "좋다. 내가 널 해방시켜 주겠다."~ */ GOTO 704
+  IF ~~ THEN REPLY #65769 /* ~기억을 떨쳐버린다.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 704 // from: 703.0
+  SAY #65770 /* ~당신이 움직임에 따라 시야 역시 움직인다, 그리고 울부짖음과 비명의 불협화음이 재개된다. 마치 악몽과도 같은 울부짖음, 도발, 욕설, 야유가 쇄도한다... 당신은 손을 기둥의 진창 속에 넣는다, 그리고 머리들이 마구 물어뜯는 것을 견디면서 작은 해골을 움켜 쥔다, 그리고 그것을 마치 오래된 상처딱지를 벗기듯 기둥에서 꺼낸다...~ */
+  IF ~~ THEN REPLY #65771 /* ~메아리: "됐다."~ */ GOTO 705
+  IF ~~ THEN REPLY #65772 /* ~기억을 떨쳐버린다.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 705 // from: 704.0
+  SAY #65773 /* ~당신은 자신의 흉터투성이 손 안에 있는 피로 범벅이 된 해골을 내려다본다. 그의 눈은 기둥에서 나온 점액으로 덮여 있으며, 그는 이빨을 한 번, 두 번 딱딱거린다. 그것은 무력한 간난아기가 우는 소리를 연상시키며, 과거의 당신 눈으로 볼 때 너무 한심하다. ~ */
+  IF ~  Global("Memory_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65774 /* ~메아리: "나는 너를 해방시켜 주었다. 이제 너의 삶과... 죽음은 내 것이다... 모트."~ */ DO ~SetGlobal("Memory_Morte_Pillar","GLOBAL",1)
+GiveExperience(Protagonist,12000)
+FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+  IF ~  Global("Memory_Morte_Pillar","GLOBAL",1)
+~ THEN REPLY #65775 /* ~메아리: "나는 너를 해방시켜 주었다. 이제 너의 삶과... 죽음은 내 것이다... 모트."~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 706 // from: 701.1 702.1 703.1 704.1 705.0 705.1
+  SAY #65776 /* ~당신의 시야가 소용돌이친다, 그리고 과거의 안개는 바람에 날리듯 사라진다. 모트는 아직도 수다를 떨고 있다. "우리는 상호 협의가 제대로 이루어질 수 있을지 여부에 대해 한동안 얘기를 했지, 그리고 내 생각에 우리는 서로에게 깊은 인상을 받았던 것 같아. 그래서 대장은 날 기둥에서 빼냈고, 그 이후로는 늘 함께 있었어."~ */
+  IF ~~ THEN REPLY #65777 /* ~"어... 그 다음에는 어떻게 되었나?"~ */ GOTO 707
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65778 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65779 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 707 // from: 706.0
+  SAY #65780 /* ~"나는 일단 기둥 밖으로 나가면 기둥에 축적된 지식을 잃게 된다는 사실을 알지 못했어... 솔직히 나가 본 적이 없는데 어떻게 알겠어... 하지만 대장은 이해해 주었지 "~ */
+  IF ~~ THEN REPLY #65781 /* ~"자네는 자네가 가지고 있다고 했던 모든 지식을 잃어버렸나...?~ */ DO ~PlaySoundNotRanged("SPTR_01")
+FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 708
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65782 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65783 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 708 // from: 707.0
+  SAY #65784 /* ~당신의 시야가 다시 소용돌이치자 머리가 어지러워지고 속이 울렁거린다. 당신 귀에 뼈가 부서지는 것 같은 소리와 모트의 울부짖음이 들려 온다 - 고통에 신음하며 제발 자길 죽이지 말아 달라고 애걸하는 모트의 울부짖음이... 그리고 당신은 계속해서 손을 내밀고 또 내민다...~ */
+  IF ~~ THEN REPLY #65785 /* ~메아리: "염병할 해골 같으니. 넌 날 속였군. 나는 널 저 빌어먹을 기둥에 다시 쑤셔 넣어 그 곳에서 *죽도록* 만들겠다."~ */ GOTO 709
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65786 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65787 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 709 // from: 708.0
+  SAY #65788 /* ~뼈가 금속 성의 물질 - 벽이나 바닥과 부딪치는 소리와 이빨이 부러져 나가는 소리가 들린다. 모트가 두들겨 맞은 개새끼처럼 훌쩍이며 애걸하는 소리가-~ */
+  IF ~~ THEN REPLY #65789 /* ~메아리: "내가 너에게 줄 *고통*에 비하면 기둥에서 네가 받은 고통은 새 발의 피에 불과할 것이다."~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 710
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65790 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65791 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 710 // from: 709.0
+  SAY #65792 /* ~당신의 시야는 다시 소용돌이치고 모트의 울음소리는 그의 수다떠는 소리에 묻혀 사라진다. "대장은 내게 아직도 쓸모가 있다는 걸 깨달았고, 그래서 난 함께 가기로 했지. 그 이후로는 늘 함께 있었어."~ */
+  IF ~~ THEN REPLY #65793 /* ~"모트, 난 기둥으로부터 뭘 원했었나? 그리고 내가 자네를 해방시킨 건 얼마나 오래 전의 일인가?"~ */ GOTO 711
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65794 /* ~"어... 관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65795 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 711 // from: 710.0
+  SAY #65796 /* ~모트는 잠시 생각한다. "얼마나 오래됐는지는 정확히 몰라, 대장. 아마 수백 년은 되었겠지.나는 매번 내 능력껏 대장을 도왔어, 하지만..." 모트는 한숨을 쉰다. "하지만 쉽지는 않았어. 그리고 대장이 기둥에서 뭘 원했는지는 나도 몰라, 대장이 날 기둥에서 꺼내자마자 잊어버렸어." ~ */
+  IF ~~ THEN REPLY #65797 /* ~"모트, 왜 우리가 시체안치소에 있었을 때 얘기를 하지 않았나?"~ */ GOTO 712
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65798 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65799 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 712 // from: 711.0
+  SAY #65800 /* ~모트는 갑자기 변명을 늘어놓기 시작한다. "왜냐하면 난 대장이 어떤 사람이 될지 몰랐기 때문이야! 대장의 화신들 중 일부는 완전히 발광한 자들이었다고! 언젠가는 깨어나더니 내가 대장 해골이라는 생각에 사로잡혀 날 부셔서 먹겠다고 날 쫓아서 온 시길을 돌아다니기도 했지... 다행히도 그 때 대장이 거리에서 마차에 치어서 죽는 바람에 무사할 수 있었지. 그리고 '질서와 선'을 존중하는 또 다른 화신은 기둥이 내가 있어야 할 곳이라고 하면서 날 거기 다시 처박으려고 했어." 모트는 억지로 웃는다. "그게 이유야. 게다가 그걸 모른다고 해서 대장이 해를 입은 것도 아니잖아..."~ */
+  IF ~  Global("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65801 /* ~"그럼 자네는 그 오랜 세월동안 나와 계속 함께 있었나?"~ */ GOTO 713
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65802 /* ~"관두게, 모트. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65803 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 713 // from: 712.0
+  SAY #65804 /* ~"그래, 대장, 내가 그럴 거라고 말했잖아. 모트는 늘 약속을 지킨다고." 그는 잠시 멈춘다. "대부분의 경우엔. 헤-헤. 아버리어에 어떤 계집이..."~ */
+  IF ~~ THEN DO ~SetGlobal("Know_Morte_Pillar","GLOBAL",1)
+~ GOTO 714
+END
+
+IF ~~ THEN BEGIN 714 // from: 713.0
+  SAY #65805 /* ~갑자기 당신은 모트의 어조가 변했다는 것을 깨닫는다. 당신은 그가 뭔가를 농담으로 적당히 감추려고 한다는 것을 한다. 당신과 함께 행동하게 된 이유에 대한 뭔가를.~ */
+  IF ~~ THEN REPLY #65806 /* ~"모트, 진지하게 묻겠네, 왜 자네는 아직도 나와 함께 여행을 하는 건가?"~ */ GOTO 715
+  IF ~~ THEN REPLY #65807 /* ~"좋소. 그럼 몇 가지만 더 물어봅시다..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65808 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 715 // from: 329.8 714.0 729.8
+  SAY #65809 /* ~"대장, 그건 내가 약속을 했기 때문이라고 했잖아. 알겠어?" 그는 짜증스러워 하는 것 같다. "그 이외에 다른 어떤 이유가 있겠어?"~ */
+  IF ~~ THEN REPLY #65810 /* ~"모르겠네. 내가 자네를 해방시킨 후 줄곧 내 곁에 붙어 있을 필요는 없었네."~ */ GOTO 716
+  IF ~~ THEN REPLY #65811 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65812 /* ~"관두게, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 716 // from: 715.0
+  SAY #65813 /* ~"물론 아니야, 대장, 하지만 난-" 그리고 그의 목소리는 당신 안에서 뭔가를 갑자기 상기시킨다, 그리고 당신은 *왜* 그가 지금까지 당신 곁에 있었는지를 깨닫는다.~ */
+  IF ~~ THEN REPLY #65814 /* ~"자네는 죄책감을 느끼고 있군. 오래 전에 자네가 날 죽음으로 몰아 넣었기 때문이겠지, 아닌가? 그리고 그 후로 자네는 줄곧 고통을 받았네."~ */ GOTO 717
+END
+
+IF ~~ THEN BEGIN 717 // from: 716.0
+  SAY #65815 /* ~"이봐, 대장. 내가 *죄책감*을 느껴? 나는 모트라고."~ */
+  IF ~~ THEN REPLY #65816 /* ~"아니, 내 말이 맞네. 내가 자네를 당연히 감수해야 할 운명으로부터 구했을 때 자네는 날 도우려고 최선을 다 할 수밖에 없었네. 그리고 내가 자네를 해방시킨 후에 자네는 내 곁을 떠날 수도 있었음에도 불구하고 남았네. 그건 자네가 내게 빚을 졌다고 생각했기 때문이었겠지."~ */ GOTO 718
+END
+
+IF ~~ THEN BEGIN 718 // from: 717.0
+  SAY #65817 /* ~모트는 당신을 바라보며 잠시 침묵한다. "아마 그럴지도. 정말 웃긴게 뭔지 알아? 처음에는 나는 그걸 느끼지 못했어 - 하지만 그건 사람 피를 서서히 말린다고, 알아?"~ */
+  IF ~~ THEN GOTO 719
+END
+
+IF ~~ THEN BEGIN 719 // from: 718.0
+  SAY #65818 /* ~"처음에 나는 내가 대장한테 '묶여' 있다고 생각했었어... 그리고 대장의 마법이 날 일종의 마법사의 종복으로 만들었다고. 하지만 이백 년 정도가 지나고 나서 나는 우리의 관계가 더 깊은 것이라는 걸 깨달았어. 나는 왠지 대장에게 끌렸어. 아마 대장의 고통 때문일지도 몰라. 모르겠어. 아마 난... 모르겠어... 내가 한 일에 대해 책임감을 느꼈어. 만약 대장이 이렇게 된 게 다 내 탓이었다면?"~ */
+  IF ~~ THEN DO ~SetGlobal("Know_Morte_Pillar","GLOBAL",2)
+~ GOTO 720
+END
+
+IF ~~ THEN BEGIN 720 // from: 719.0
+  SAY #65820 /* ~"나는 내가 - 생전의 내가 했던 거짓말과 사기가 초래한 결과를 본 적이 없어, 그럼에도 난 내가 기둥 속에서 대장을 보았을 대, 즉석에서 내가 오래 전에 한 번... 배신한 사람이 바로 대장이라는 걸 즉각 깨달았어." 모트는 한숨을 쉰다. "그게 내가 아는 전부야."~ */
+  IF ~~ THEN REPLY #65821 /* ~"알겠네. 모든 사실을 다 말해주어 고맙네, 모트."~ */ DO ~AddexperienceParty(12000)
+MoraleInc("Morte",3)
+PermanentStatChange("Morte",STR,RAISE,4)
+PermanentStatChange("Morte",DEX,RAISE,2)
+PermanentStatChange("Morte",CON,RAISE,2)
+SetGlobal("BD_MorteStory","GLOBAL",1)
+~ JOURNAL #65825 /* ~나는 왜 모트가 나와 항상 함께 있었는지를 알았다. 그것은 그가  생전에 나를 한번 죽인 일에 대해 죄책감을 느끼고 있기 때문이었다. 그의 죄책감에 대해 직접 추궁한 일이 오히려 그의 심리적 중압감을 덜어준 듯하며, 그 결과로 그는 훨씬 강해진 것 같다. ~ */ GOTO 721
+END
+
+IF ~~ THEN BEGIN 721 // from: 720.0
+  SAY #65822 /* ~"아니, 내게 감사할 필요 없어..." 모트는 한숨을 쉰다, 그리고 놀랍게도 그의 목소리는 전보다 훨씬 강하고 자신에 넘치는 것 같다. 그리고 그의 해골에 나 있던 금과 부서진 부분들도 깨끗이 나았다. "정말 감사해야 할 건 나야. 날 지금껏 누르고 있던 차원 하나가 사라진 느낌이야... 비유해서 말하자면."~ */
+  IF ~~ THEN REPLY #65823 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65824 /* ~"좋네, 모트. 움직이세"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 722 // from: 329.10 729.10
+  SAY #65826 /* ~"그녀는 나이트 해그야 - 그리고 그녀는 대장을 불사신으로 만들 정도로 미쳤다고, 날 선택할 수도 있었는데." 모트는 눈을 부라린다. "하지만 레이디 오브 페인에게 싸움을 걸 정도로 돈 자는 별로 찾고 싶지가 않은 걸."~ */
+  IF ~~ THEN REPLY #65827 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65828 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 723 // from: 329.9 729.9
+  SAY #65829 /* ~"그건 엄청난 규모의 참혹한 전쟁이야. 모든 곳에서 벌어지고는 있으나 늘 눈에 보이는 건 아니야."~ */
+  IF ~~ THEN REPLY #65830 /* ~"계속하게..."~ */ GOTO 724
+  IF ~~ THEN REPLY #65831 /* ~"관두게. 그 밖에도 질문할 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65832 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 724 // from: 723.0
+  SAY #65833 /* ~"대장, 그건 두 악랄한 종족들 - 타나리와 바테주 사이의 전쟁이야. 옛날옛적에는 둘이 서로를 모르고 지냈지. 바테주는 사악했지만, '질서 정연'한 악이었고, 반대로 타나리는 사악한 건 마찬가지이지만 느슨했어, 즉 보다 충동적이고 혼돈스러웠지. 바테주는 정치가, 타나리는 도살자였어."~ */
+  IF ~~ THEN GOTO 725
+END
+
+IF ~~ THEN BEGIN 725 // from: 724.0
+  SAY #65834 /* ~"그러다가 어느 날 두 종족이 만난 거지. 그들은 서로를 쳐다보자마자 상대방이 악에 접근하는 방식이 마음에 둘지 않았어. 그리고 그 이래로 그들은 계속 싸우고 있어. 그건 악몽이지, 하지만 두 종족들을 바쁘게 만들어 그들이 다원 우주에 입히는 피해를 최소화하지."~ */
+  IF ~~ THEN REPLY #65835 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65836 /* ~"내가 알고 싶었던 건 그것이 전부네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 726 // from: 329.11 729.11
+  SAY #65837 /* ~"몰라, 대장. 죽었을 때 잊어버렸어. 스스로를 탓하진 않아 - 적어도 죽은 뒤에 날 기다리고 있는 운명이 있었으니까, 설령 그것이 떠다니는 해골로서의 삶일지라도. 내 말은 그것보다 훨씬 심한 꼴을 당했을 수도 있었다는 거야."~ */
+  IF ~~ THEN REPLY #65839 /* ~"자네 몸은 어떻게 됐는가?"~ */ GOTO 727
+  IF ~~ THEN REPLY #65840 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65841 /* ~"그럼 좋네. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 727 // from: 726.0
+  SAY #65838 /* ~"어... 몰라. 그냥 사라졌어." 모트는 당신을 노려본다. "하지만 별로 그립지는 않아. 난 지금의 내가 마음에 드니까. 그러니까 대장 편견으로 날 판단하거나 헐뜯지는 말라고."~ */
+  IF ~~ THEN REPLY #65842 /* ~"알겠네. 그 밖에도 물어보고 싶은 것들이 좀 있네..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65843 /* ~"어쨌든 가세. 자, 서두르게."~ */ GOTO 728
+END
+
+IF ~~ THEN BEGIN 728 // from: 727.1
+  SAY #65844 /* ~모트는 당신을 노려본다. "대장이 날 따라다니도록 운명지워진 살아 있는 저주가 아니라는 걸 나로서는 확신을 할 수가 없군."~ */
+  IF ~~ THEN REPLY #65845 /* ~"누가 할 말을. 가세."~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 742 737 733 even though they appear after this state */
+~  Global("AR0200_Visited","GLOBAL",1)
+InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 729 // from:
+  SAY #66344 /* ~"뭘 그렇게 골똘하게 생각하는 거야, ?"~ [MRT515] */
+  IF ~~ THEN REPLY #66345 /* ~"내 등에 새겨진 문신의 내용을 다시 들려줄 수 있겠나?"~ */ GOTO 649
+  IF ~~ THEN REPLY #66346 /* ~"내게 시길에 대해 좀 얘기해줄 수 있겠나?"~ */ GOTO 659
+  IF ~  Global("Morte_Talent","GLOBAL",0)
+~ THEN REPLY #66347 /* ~"모트... 자네가 날 따라오는 건 개의치 않네, 하지만 수다떠는 것 말고 자네가 할 수 있은 없나?"~ */ GOTO 663
+  IF ~  Global("Morte_Talent","GLOBAL",1)
+~ THEN REPLY #66348 /* ~"모트... 자네의 특수한 재능이 어떤 것들인지 다시 얘기해주겠나?"~ */ GOTO 666
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #66349 /* ~"모트, 내 등에 새겨진 문신의 나머지 한 줄에 대해서 왜 내게 얘기하지 않았나?"~ */ GOTO 654
+  IF ~~ THEN REPLY #66350 /* ~"조언이 좀 필요하네. 우리가 다음에 무엇을 해야 한다고 생각하나?"~ */ GOTO 669
+  IF ~  Global("Know_Mimir","GLOBAL",1)
+Global("Morte_Story","GLOBAL",0)
+~ THEN REPLY #66351 /* ~"자네는 자신이 미미르라고 했네, 맞나, 모트?"~ */ GOTO 684
+  IF ~  Global("Morte_Story","GLOBAL",1)
+~ THEN REPLY #66352 /* ~"자네가 왜 해골들의 기둥에 떨어지게 되었는지 다시 말해주게."~ */ GOTO 693
+  IF ~  Global("Know_Morte_Pillar","GLOBAL",1)
+~ THEN REPLY #66353 /* ~"모트. 내가 기둥으로부터 자네를 빼낸 후에 왜 나와 함께 여행을 계속한 건가?"~ */ GOTO 715
+  IF ~  GlobalGT("Know_Blood_War","GLOBAL",0)
+~ THEN REPLY #66354 /* ~"자네는 블러드 워에 대해 무엇을 아나?"~ */ GOTO 723
+  IF ~  GlobalGT("Know_Ravel","GLOBAL",0)
+Global("Ravel","GLOBAL",0)
+~ THEN REPLY #66355 /* ~"자네는 나이트 해그 래벌에 대해 무엇을 아나?"~ */ GOTO 722
+  IF ~~ THEN REPLY #66356 /* ~"자네는 어떻게 죽었나, 모트?"~ */ GOTO 726
+  IF ~~ THEN REPLY #66357 /* ~"아무 것도 아니네, 모트. 자네가 아직 나와 함께하고 있는 확인했을 뿐이네."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 730 // from:
+  SAY #66816 /* ~"이봐, 대장, 저 두 사람 정말 대단하군. 나도 그들로부터 한두 가지 정도는 배울 수 있겠는데..."~ [MRT387] */
+  IF ~~ THEN REPLY #66817 /* ~"난 믿네, 모트. 가세."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 731 // from:
+  SAY #67510 /* ~"나는 그냥 무드를 깰 생각이 없다고 불쑥 말하고 싶었을 뿐이야, 대장. 난 그냥 여기 떠서 구경을 할 테니까 신경 쓰지 말라고."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 418
+END
+
+IF ~~ THEN BEGIN 732 // from:
+  SAY #67600 /* ~"내가 다버스를 불러다가 두 사람을 분리시키기 전에 어서 떨어지라고!" 모트가 투덜거린다. "아니면 적어도 내가 끼어들 여지를 달라고."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 446
+END
+
+IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3)
+Global("Absorb","GLOBAL",0)
+~ THEN BEGIN 733 // from:
+  SAY #68171 /* ~당신이 손을 내밀자 갑자기 모트가 입을 연다. "워, 워, 워! 기다려, 대장! 내가 대장에게 말해야 할 게 몇 가지 있어."~ [MRT242] */
+  IF ~~ THEN REPLY #68176 /* ~"모트... ?! 자넨 죽지 않았군!" ~ */ DO ~SetGlobal("Fortress_Morte","GLOBAL",4)
+JoinPartyEx(TRUE)
+~ GOTO 734
+END
+
+IF ~~ THEN BEGIN 734 // from: 733.0
+  SAY #68172 /* ~"그래 - 나처럼 죽은지 오래되면, 죽음을 위장하는 데 익숙해지게 된다고. 나는 대장과 그 녀석이 하는 대화를 처음부터 다 들었어. 그 힘은 다른 사람에게 쓰라고 - 나는 필요없어.~ */
+  IF ~~ THEN REPLY #68177 /* ~"그럼 자네는 내가 아주 요절이 나고 있을 동안 그냥 거기서 누워 있을 생각이었나?"~ */ GOTO 735
+END
+
+IF ~~ THEN BEGIN 735 // from: 734.0
+  SAY #68173 /* ~"그래, 대장. 대장이 죽을 건 아니잖아. 내 말은 대장이 실패했을 경우 대장을 위해 기억해줄 사람이 필요하다는 거야. 게다가 대장도 내가 전투에서 얼마나 쓸모가 없는지는 잘 알잖아 - 마법사들을 도발할 때만 빼놓고..."~ */
+  IF ~  Global("Trans_Vanish","GLOBAL",0)
+GlobalGT("Fortress_Party_Roof","GLOBAL",1)
+~ THEN REPLY #68178 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ GOTO 736
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+GlobalGT("Fortress_Dakkon","GLOBAL",0)
+~ THEN REPLY #68189 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204d0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+GlobalGT("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68190 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204a0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+GlobalGT("Fortress_Grace","GLOBAL",0)
+~ THEN REPLY #68191 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204g0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",0)
+~ THEN REPLY #68192 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204i0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+~ THEN REPLY #68193 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Vhailor","GLOBAL",0)
+GlobalGT("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68194 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204n0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68239 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204tr",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",1)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68438 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204tr",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68439 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204tr",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+~ THEN REPLY #68446 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",0)
+Global("Fortress_Party_Roof","GLOBAL",1)
+~ THEN REPLY #68503 /* ~"그럼 그것이 자네가 날 위해 해줘야 할 일지지도 모르겠네. 이 일에 대해서는 *나중에* 얘기하세, 모트."~ */ EXTERN ~DTRANS~ 142
+END
+
+IF ~~ THEN BEGIN 736 // from: 735.0
+  SAY #68174 /* ~당신은 다시 힘을 가지고 손을 내민다...~ */
+  IF ~  GlobalGT("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68175 /* ~안나를 소생시킨다.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204a0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Dakkon","GLOBAL",0)
+~ THEN REPLY #68179 /* ~다콘을 소생시킨다.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204d0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Grace","GLOBAL",0)
+~ THEN REPLY #68180 /* ~훨-후럼-그레이스를 소생시킨다.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204g0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68181 /* ~노돔을 소생시킨다.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204n0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",0)
+~ THEN REPLY #68182 /* ~이그너스를 소생시킨다.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204i0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+~ THEN REPLY #68183 /* ~베일로를 소생시킨다.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+END
+
+IF WEIGHT #2 ~  Global("Fortress_Morte","GLOBAL",3)
+GlobalGT("Absorb","GLOBAL",0)
+~ THEN BEGIN 737 // from:
+  SAY #68310 /* ~당신이 힘을 가지고 손을 내밀자. 모트가 갑자기 공중으로 떠오른다. 에... 기다려, 대장. 날 부활시킬 필요는 없어. 난 그냥 누워서 두 사람 얘기를 듣고 있었을 뿐이라고."~ */
+  IF ~~ THEN REPLY #68311 /* ~자네는 죽은 척 하고 있었군.~ */ GOTO 738
+END
+
+IF ~~ THEN BEGIN 738 // from: 737.0
+  SAY #68312 /* ~"그래, 내 말은 난 이미 죽었다는 거야... 어, 대장, *목소리*가 어떻게 된 거야?"~ */
+  IF ~~ THEN REPLY #68313 /* ~나는... 이제 다른 존재네. 남은 시간이 별로 없네, 곧 운명과 시간이 날 따라잡을 테니. 모트, 원한다면 자네를 시길로 돌려보내 주겠네.~ */ GOTO 739
+END
+
+IF ~~ THEN BEGIN 739 // from: 738.0
+  SAY #68314 /* ~"뭐... 날 돌려보내? 대장은 어떡하고? 이봐, 대장, 나는 *겁쟁이*일지는 모르지만, 그래도 대장을 여기 두고 떠날 순 없어."~ */
+  IF ~~ THEN REPLY #68315 /* ~나와 내 죽음이 분리되어 있는 동안 헤아릴 수조차 없는 범죄가 저질러졌네. 이러한 범죄들에는... 대가가 따르네. 자네는 내가 곧 가게 될 곳에 갈 수가 없네.~ */ GOTO 740
+END
+
+IF ~~ THEN BEGIN 740 // from: 739.0
+  SAY #68316 /* ~"그래도 난 대장과 함께 갈 수 있어, 대장이 원한다면 - 내 말은 우린 이보다 더 지독 -~ */
+  IF ~~ THEN REPLY #68317 /* ~이번은 아니네. 아마 언젠가 자네와 내가 다른 차원에서 다시 만날지도 모르네. 하지만 지금은 안 되네. ~ */ GOTO 741
+END
+
+IF ~~ THEN BEGIN 741 // from: 740.0
+  SAY #68318 /* ~모트는 당신을 쳐다본다, 그리고 한숨을 쉰다. "신파조로 나가긴 싫지만, 그 동안 즐거웠어, 대장."~ [MRT109] */
+  IF ~  GlobalGT("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68319 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204a0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68320 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204d0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68321 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204g0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68322 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204n0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68323 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204i0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68324 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68325 /* ~잘 가게, 모트.~ */ DO ~QuitGame(FINALE,0,0)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+~ THEN REPLY #68490 /* ~잘 가게, 모트.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",1)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68491 /* ~잘 가게, 모트.~ */ DO ~QuitGame(FINALE,0,0)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68492 /* ~잘 가게, 모트.~ */ DO ~QuitGame(FINALE,0,0)
+~ EXIT
+END
+
+IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
+~ THEN BEGIN 742 // from:
+  SAY #68408 /* ~모트는 당신을 쳐다본다, 그리고 한숨을 쉰다. "신파조로 나가긴 싫지만, 그 동안 즐거웠어, 대장."~ [MRT109] */
+  IF ~~ THEN REPLY #68409 /* ~"그럼 해치우세..."~ */ EXIT
+END

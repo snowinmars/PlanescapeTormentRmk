@@ -1,0 +1,155 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM310.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM310~
+
+IF ~  Global("Oinosian","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #6495 /* ~Ten ponownie ożywiony truposz ma zszyte wargi i numer "310" wyryty na czole; odór formaliny wypełnia wszystko wokół niego. Podnosi swe pozbawione życia oczy na ciebie, kiedy blokujesz mu drogę.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6499 /* ~"Więc jak... widziałeś, aby działo się tu coś interesującego?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6500 /* ~"Więc jak... widziałeś, aby działo się tu coś interesującego?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6501 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6502 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ DO ~SetGlobal("Oinosian","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #6503 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~~ THEN REPLY #6504 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6496 /* ~Trup wciąż się w ciebie wpatruje.~ */
+  IF ~~ THEN REPLY #6505 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6498 /* ~Przez chwilę sądzisz, że truposz jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania... ale nagle dostrzegasz prawdziwe cierpienie wyryte na jego twarzy i czujesz jednocześnie jego rozpacz tak przejmującą, że domyślasz się, iż dusza z pewnością wróciła do swej dawnej powłoki.~ */
+  IF ~~ THEN REPLY #6506 /* ~"Chcę zadać pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9657 /* ~Zostaw truposza w spokoju.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
+  SAY #9642 /* ~Mówi wolno, monotonnie, załamanym i pozbawionym nadziei głosem. Nawet teraz nie da się go prawie odróżnić od pozbawionego duszy zombiaka. "Czego pragniesz się dowiedzieć, mój panie?"~ */
+  IF ~~ THEN REPLY #9658 /* ~"Kim jesteś?"~ */ GOTO 4
+  IF ~~ THEN REPLY #9659 /* ~"Skąd pochodzisz?"~ */ GOTO 5
+  IF ~~ THEN REPLY #9660 /* ~"W jaki sposób się tutaj znalazłeś? To znaczy, jako zombie?"~ */ GOTO 6
+  IF ~~ THEN REPLY #9661 /* ~"Gdzie ty... gdzie zamieszkuje twoja dusza... teraz?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9662 /* ~"Skąd u ciebie taka rozpacz?"~ */ GOTO 8
+  IF ~~ THEN REPLY #9663 /* ~"Co wiesz o tym miejscu?"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9664 /* ~"Czy znasz kogoś o imieniu Farod?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9665 /* ~"Nic to, nieważne."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #9643 /* ~Duch przemawia tak cichutko, że musisz wytężyć słuch, aby go usłyszeć; usta truposza prawie się nie ruszają wymawiając poszczególne słowa. "Jestem nikt, mój panie; nędzny robak, który rozpaczliwie uczepił się Wieży Przemijania w Oinos. Chociaż niegdyś zwałem się Arabhiem, mój panie... bardzo, bardzo dawno."~ */
+  IF ~~ THEN REPLY #9666 /* ~"Wieża Przemijania?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9667 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9668 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9669 /* ~"Nic więcej nie chcę wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 5 // from: 3.1
+  SAY #9644 /* ~"Mieszkałem w Sigil, mój panie. W Ulu. Nie było to takie straszne miejsce, jak niegdyś sądziłem, zwłaszcza, że teraz mój dom jest... w Oinos." Trup mruga oczami, tak wolno, że przez chwilę wydawało ci się, że zamknął oczy.~ */
+  IF ~~ THEN REPLY #9670 /* ~"Ul?"~ */ GOTO 12
+  IF ~~ THEN REPLY #9671 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9672 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9673 /* ~"To wszystko, co chciałem wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2
+  SAY #9645 /* ~"Zostałem zamordowany, mój panie, przez bandytów. Upiłem się i szedłem zaułkami Ula, zataczając się i potykając. Zgubiłem drogę i w końcu padłem ofiarą bandy rzezimieszków. No i dobrze; moje życie było prawdopodobnie mniej warte niż te kilka miedziaków, które jakiś Zbieracz mógł dostać za moje zwłoki."~ */
+  IF ~~ THEN REPLY #9674 /* ~"Skądże tak marne zdanie o własnym życiu?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9675 /* ~"Zbieracz?"~ */ GOTO 15
+  IF ~~ THEN REPLY #9676 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9677 /* ~"To wszystko, co chciałem wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.3 4.1 5.1 8.0 12.0
+  SAY #9646 /* ~Duch na chwilę zamyka oczy, a jego ciałem wstrząsają dreszcze. "Straszliwy Oinos, mój panie. Na Szarym Pustkowiu. To właśnie tam zamknięto moją duszę, w cieniu Khin-Oin, Wieży Przemijania."~ */
+  IF ~~ THEN REPLY #9678 /* ~"Opowiedz mi więcej o tym... Oinos."~ */ GOTO 11
+  IF ~~ THEN REPLY #9679 /* ~"Khin-Oin?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9680 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9681 /* ~"Nic więcej nie chcę wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 3.4
+  SAY #9647 /* ~"Nic innego mi nie pozostało, mój panie. Uwięziony na wieczność w przeklętej pustce Oinos, oto czym jestem. Dla takich jak ja nie ma nadziei." Duch wydaje się uderzać w jeszcze bardziej patetyczne tony, a jego ramiona zwisają pod ciężarem jego niedoli.~ */
+  IF ~~ THEN REPLY #9682 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9683 /* ~"Rozumiem. Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9684 /* ~"To wszystko, co chciałem wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 9 // from: 3.5 15.0
+  SAY #9648 /* ~"Bardzo mało, mój panie; tyle że przywozi się tutaj zmarłych na pochówek lub do kremacji... albo jako pracowników, jak było z moim ciałem."~ */
+  IF ~~ THEN REPLY #9685 /* ~"Teraz rozumiem. Następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9686 /* ~"Nic więcej nie chcę wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 10 // from: 3.6
+  SAY #9649 /* ~Duch powoli kręci przecząco głową z boku na bok. "Nie, mój panie. Nie znałem nikogo o tym imieniu. Przykro mi, mój panie."~ */
+  IF ~~ THEN REPLY #9687 /* ~"Nie ma takiej potrzeby. Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9688 /* ~"A zatem żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 11 // from: 7.0
+  SAY #9650 /* ~"Niewiele można o tym powiedzieć. Jest to ziemia mojego Pana, Lorda Khin-Oin... pełna udręki i chorób, robactwa, które toczy zarówno ciało jak i duszę. Jest to miejsce całkowitej beznadziei."~ */
+  IF ~~ THEN REPLY #9689 /* ~"Kim jest ten... 'Pan'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9690 /* ~"Khin-Oin?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9691 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9692 /* ~"Tak to z pewnością brzmi. Żegnaj, duszo."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 12 // from: 5.0
+  SAY #9651 /* ~"Tak, mój panie. Nędzne to miejsce, ale nie tak straszne jak Oinos."~ */
+  IF ~~ THEN REPLY #9693 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9694 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9695 /* ~"To wszystko, co chciałem wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 13 // from: 4.0 7.1 11.1 14.0
+  SAY #9652 /* ~"Tak, panie. Jest to potężna wieża, o wiele wyższa niż najwyższa wieża w Sigil. Ma wygląd kości, podobna do kręgosłupa jakiegoś gigantycznego stwora. To właśnie w niej haruję, naprawiając szkody wyrządzone przez armie nieprzyjaciół mojego Pana, rywalizujących z nim książąt."~ */
+  IF ~~ THEN REPLY #9696 /* ~"Kim jest ten... 'Pan'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9697 /* ~"Rozumiem. Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9698 /* ~"Rozumiem. Odchodzę już, duszo; żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 11.0 13.0
+  SAY #9653 /* ~"Znam go tylko jako Pana, Lorda Khin-Oin. Jest to szatański książę - nienawistnik o przeraźliwej mocy. To on właśnie ma moją duszę, i na zawsze ją będzie miał, moją duszyczkę skazaną na śmierć pod jego stopami aż do chwili, gdy wieczność skaże ją na Zapomnienie."~ */
+  IF ~~ THEN REPLY #9699 /* ~"Opowiedz mi o tym 'Khin-Oin'."~ */ GOTO 13
+  IF ~~ THEN REPLY #9700 /* ~"Mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9701 /* ~"Nic więcej nie chcę wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 6.1
+  SAY #9654 /* ~"Tak, mój panie, Zbieracz. To ci, którzy zbierają zmarłych w Sigil i odwożą ich do Kostnicy - w której to właśnie stoimy teraz - za niewielką opłatą." Przez chwilę duch spoziera na otoczenie, potem cichutko wzdycha.~ */
+  IF ~~ THEN REPLY #9702 /* ~"Co wiesz o tej Kostnicy?"~ */ GOTO 9
+  IF ~~ THEN REPLY #9703 /* ~"Rozumiem. Mam do ciebie następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9704 /* ~"To wszystko, co chciałem wiedzieć. Żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.0
+  SAY #9655 /* ~"Nie chciałbym o tym mówić, mój panie. Nie warto." Duch wydaje się nieugięty w tej kwestii.~ */
+  IF ~~ THEN REPLY #9705 /* ~"Doskonale. W takim razie mam następne pytanie..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9706 /* ~"A zatem żegnaj."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
+  SAY #9656 /* ~Nie zdajesz sobie sprawy z tego, że duch opuścił już ciało aż do momentu gdy zombie, powłócząc nogami, wraca do swoich obowiązków.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~  Global("Oinosian","GLOBAL",1)
+~ THEN BEGIN 18 // from:
+  SAY #20102 /* ~Wydaje się, że truposz zapada się w sobie, garbiąc się pod ciężarem rozpaczy własnej duszy.~ */
+  IF ~~ THEN REPLY #20103 /* ~"Mam kilka pytań..."~ */ GOTO 3
+  IF ~~ THEN REPLY #20104 /* ~"Tylko tędy przechodziłem. Żegnaj."~ */ EXIT
+END

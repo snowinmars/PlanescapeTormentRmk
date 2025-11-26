@@ -1,0 +1,35 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM199.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ko_KR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM199~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #34975 /* ~이 걸어다니는 시체로부터는 탄 고기와 섬유의 냄새가 난다. 시체의 측면 전체에 걸쳐 비교적 새로운 화상이 나 있다. 아마 불 너무 가까이 서 있었던 탓에 타버린 것 같다. 이마에는 "199"란 번호가 새겨져 있으며, 입술은 꿰매어져 있다.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #34976 /* ~"그래... 뭐 재미있는 일은 없소?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #34979 /* ~"그래... 뭐 재미있는 일은 없소?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #34980 /* ~"난 당신이 좀비가 아니라는 것을 아오. 당신은 아무도 속이지 못할 거요."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #34981 /* ~시체에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 2
+  IF ~~ THEN REPLY #34984 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXIT
+  IF ~~ THEN REPLY #34985 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #34977 /* ~시체는 계속 당신을 쳐다본다.~ */
+  IF ~~ THEN REPLY #34978 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #34982 /* ~시체는 아무런 응답을 하지 않는다. 당신의 질문에 대답할 수 있을 정도의 정신은 이미 그것에게는 남아있지 않는 듯하다.~ */
+  IF ~~ THEN REPLY #34983 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END

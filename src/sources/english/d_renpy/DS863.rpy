@@ -1,0 +1,273 @@
+init 10 python:
+    from game.engine.runtime import (runtime)
+    from game.dlgs.s863_logic import S863Logic
+    s863Logic = S863Logic(runtime.global_state_manager)
+
+
+# ###
+# Original:  DLG/DS863.DLG
+# ###
+
+
+# s0 # say35537
+label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
+    nr 'This skeleton looks like it has seen a great deal of action, either because of combat or by falling down one too many staircases; both its arms and legs have been broken and rebuilt with the aid of leather straps and thin iron rods. The front of its skull bears the number "863"… but the back of the skull has caved in, forming an empty cavity.'
+
+    menu:
+        '"Sorry about taking that parchment, but I doubt you would have delivered it any time soon."' if s863Logic.r35538_condition():
+            # a0 # r35538
+            $ s863Logic.r35538_action()
+            jump s863_s1
+
+        '"Sorry about taking that parchment, but I doubt you would have delivered it any time soon."' if s863Logic.r35561_condition():
+            # a1 # r35561
+            jump s863_s1
+
+        '"I have to ask: Are those broken bones from combat or from falling down?"' if s863Logic.r35562_condition():
+            # a2 # r35562
+            $ s863Logic.r35562_action()
+            jump s863_s1
+
+        '"I have to ask: Are those broken bones from combat or from falling down?"' if s863Logic.r35563_condition():
+            # a3 # r35563
+            jump s863_s1
+
+        'Use your Stories-Bones-Tell power on the skeleton.' if s863Logic.r35564_condition():
+            # a4 # r35564
+            jump s863_s2
+
+        'Examine the skeleton carefully.':
+            # a5 # r35569
+            $ s863Logic.r35569_action()
+            jump s863_s3
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35602_condition():
+            # a6 # r35602
+            $ s863Logic.r35602_action()
+            jump morte_s400  # EXTERN
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35603_condition():
+            # a7 # r35603
+            jump s863_s4
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35604_condition():
+            # a8 # r35604
+            jump s863_s5
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35605_condition():
+            # a9 # r35605
+            jump s863_s6
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35606_condition():
+            # a10 # r35606
+            jump s863_s4
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35607_condition():
+            # a11 # r35607
+            jump s863_s5
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35608_condition():
+            # a12 # r35608
+            jump s863_s6
+
+        '"How about this skeleton, Morte? Will it do as a body?"' if s863Logic.r35609_condition():
+            # a13 # r35609
+            jump morte_s396  # EXTERN
+
+        'Leave the skeleton in peace.' if s863Logic.r35610_condition():
+            # a14 # r35610
+            $ s863Logic.r35610_action()
+            jump morte_s394  # EXTERN
+
+        'Leave the skeleton in peace.' if s863Logic.r35611_condition():
+            # a15 # r35611
+            jump s863_dispose
+
+        'Leave the skeleton in peace.' if s863Logic.r35612_condition():
+            # a16 # r35612
+            jump s863_dispose
+
+
+# s1 # say35539
+label s863_s1: # from 0.0 0.1 0.2 0.3
+    nr 'The skeleton makes no reply.'
+
+    menu:
+        '"Great talking to you, Bones. Stay healthy."' if s863Logic.r35540_condition():
+            # a17 # r35540
+            $ s863Logic.r35540_action()
+            jump morte_s394  # EXTERN
+
+        '"Great talking to you, Bones. Stay healthy."' if s863Logic.r35559_condition():
+            # a18 # r35559
+            jump s863_dispose
+
+        '"Great talking to you, Bones. Stay healthy."' if s863Logic.r35560_condition():
+            # a19 # r35560
+            jump s863_dispose
+
+
+# s2 # say35565
+label s863_s2: # from 0.4
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.'
+
+    menu:
+        'Leave the skeleton in peace.' if s863Logic.r35566_condition():
+            # a20 # r35566
+            $ s863Logic.r35566_action()
+            jump morte_s394  # EXTERN
+
+        'Leave the skeleton in peace.' if s863Logic.r35567_condition():
+            # a21 # r35567
+            jump s863_dispose
+
+        'Leave the skeleton in peace.' if s863Logic.r35568_condition():
+            # a22 # r35568
+            jump s863_dispose
+
+
+# s3 # say35570
+label s863_s3: # from 0.5
+    nr 'Someone has taken care to bind the bones of this skeleton with leather straps, woven around the body in such a pattern that they resemble muscles and tendons. The straps are secured to metal bolts punched into the skeleton„s joints. This skeleton looks like it has seen a great deal of service: many of its bones are chipped and its numerous fractures are bound with sealant and foul-smelling glues.'
+
+    menu:
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35571_condition():
+            # a23 # r35571
+            $ s863Logic.r35571_action()
+            jump morte_s400  # EXTERN
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35593_condition():
+            # a24 # r35593
+            jump s863_s4
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35594_condition():
+            # a25 # r35594
+            jump s863_s5
+
+        'Try and pry out the skeleton„s joint bolts.' if s863Logic.r35595_condition():
+            # a26 # r35595
+            jump s863_s6
+
+        '"Mind if I borrow some of those straps and bolts?"' if s863Logic.r35596_condition():
+            # a27 # r35596
+            jump s863_s4
+
+        '"Mind if I borrow some of those straps and bolts?"' if s863Logic.r35597_condition():
+            # a28 # r35597
+            jump s863_s5
+
+        '"Mind if I borrow some of those straps and bolts?"' if s863Logic.r35598_condition():
+            # a29 # r35598
+            jump s863_s6
+
+        'Leave the skeleton in peace.' if s863Logic.r35599_condition():
+            # a30 # r35599
+            $ s863Logic.r35599_action()
+            jump morte_s394  # EXTERN
+
+        'Leave the skeleton in peace.' if s863Logic.r35600_condition():
+            # a31 # r35600
+            jump s863_dispose
+
+        'Leave the skeleton in peace.' if s863Logic.r35601_condition():
+            # a32 # r35601
+            jump s863_dispose
+
+
+# s4 # say35576
+label s863_s4: # from 0.7 0.10 3.1 3.4
+    nr 'You pull at the iron bolts, but you„re not strong enough to pull them out. They“ve been hammered in pretty tight.'
+
+    menu:
+        '"Maybe if I had the right tool, I could get them out… hmmmm. I may be back, Bones."' if s863Logic.r35577_condition():
+            # a33 # r35577
+            $ s863Logic.r35577_action()
+            jump morte_s394  # EXTERN
+
+        '"Maybe if I had the right tool, I could get them out… hmmmm. I may be back, Bones."' if s863Logic.r35578_condition():
+            # a34 # r35578
+            jump s863_dispose
+
+        '"Maybe if I had the right tool, I could get them out… hmmmm. I may be back, Bones."' if s863Logic.r35579_condition():
+            # a35 # r35579
+            jump s863_dispose
+
+        'Leave the skeleton in peace.' if s863Logic.r35580_condition():
+            # a36 # r35580
+            $ s863Logic.r35580_action()
+            jump morte_s394  # EXTERN
+
+        'Leave the skeleton in peace.' if s863Logic.r35581_condition():
+            # a37 # r35581
+            jump s863_dispose
+
+        'Leave the skeleton in peace.' if s863Logic.r35582_condition():
+            # a38 # r35582
+            jump s863_dispose
+
+
+# s5 # say35584
+label s863_s5: # from 0.8 0.11 3.2 3.5
+    nr 'You pull at the iron bolts with all your strength, and after a few moments of tugging, you rip the bolts from the joints. The skeleton collapses, some of its bones still twitching.'
+
+    menu:
+        '"Sorry about that, Bones…"':
+            # a39 # r35585
+            $ s863Logic.r35585_action()
+            jump s863_dispose
+
+
+# s6 # say35587
+label s863_s6: # from 0.9 0.12 3.3 3.6
+    nr 'Using your prybar, you rip the bolts from the skeleton„s joints. The skeleton collapses, some of its bones still twitching.'
+
+    menu:
+        '"Sorry about that, Bones…"':
+            # a40 # r35588
+            $ s863Logic.r35588_action()
+            jump s863_dispose
+
+
+# s7 # say35613
+label s863_s7: # - # IF ~  False()
+    nr 'This skeleton makes no reply. It looks like it is too far gone to answer any of your questions.'
+
+    menu:
+
+# s8 # say64262
+label s863_s8: # - # IF ~  HasItem("DRemind","S863")
+    nr 'This skeleton has either seen a great deal of combat or has fallen down one too many staircases; both its arms and legs have been broken and rebuilt with the aid of leather straps and thin iron rods. The front of its skull bears the number "863"… but the back of the skull has caved in, forming an empty cavity. You notice that someone has taken advantage of this and tucked a rolled up piece of parchment inside the skull.'
+
+    menu:
+        'Take the parchment out of the skeleton„s skull.':
+            # a41 # r64263
+            jump s863_s9
+
+        'Leave the skeleton in peace.':
+            # a42 # r64264
+            jump s863_dispose
+
+
+# s9 # say64265
+label s863_s9: # from 8.0
+    nr 'You slip the parchment out of the worker„s skull - oddly enough, it looks as if the skull cavity is *intended* to store messages; a tiny string is attached to the parchment from a hook bolted inside the skull, as if to keep the parchment from accidentally falling out.'
+
+    menu:
+        'Unhook the string, take the parchment.':
+            # a43 # r64266
+            $ s863Logic.r64266_action()
+            jump s863_s10
+
+
+# s10 # say64267
+label s863_s10: # from 9.0
+    nr 'You unhook the string and glance over the parchment - it looks like a reminder from one of the Mortuary custodians. Judging from the note, this skeleton seems to be a walking messenger of sorts. As you take a second glance at the skeleton, you realize it has stopped in front of the slab because it can„t figure out how to move past it.  ^NNOTE: <READSTUFF>^-'
+
+    menu:
+        'Examine the skeleton again.':
+            # a44 # r64268
+            jump s863_s0
+
+        'Leave the skeleton in peace.':
+            # a45 # r64269
+            jump s863_dispose

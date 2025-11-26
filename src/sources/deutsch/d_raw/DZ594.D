@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ594.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ594~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35018 /* ~Die trottende Leiche starrt dich mit leerem Blick an. Ihre Haut ist dünn wie Papier, beinahe brüchig... Sie sieht aus, als hätte jemand ein Laken aus Spinnweben über ihre Figur drapiert. Die Zahl "594" ist mit einem Kohlestift auf ihre Stirn geritzt worden. ~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #35019 /* ~"Sag mal... hast du nachher schon was vor?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #35036 /* ~"Sag mal... hast du nachher schon was vor?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #35037 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35038 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ GOTO 2
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35043 /* ~"Es war nett, sich mit dir zu unterhalten. Leb wohl."~ */ EXTERN ~DMORTE~ 334
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35044 /* ~Laß die Leiche in Ruhe.~ */ EXTERN ~DMORTE~ 334
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35045 /* ~Danke für die anregende Unterhaltung. Leb wohl.~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35046 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35047 /* ~Es war nett, sich mit dir zu unterhalten. Leb wohl.~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35048 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #35020 /* ~Die Leiche starrt dich weiter an.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35021 /* ~"Dann leb wohl."~ */ EXTERN ~DMORTE~ 334
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35034 /* ~"Na dann leb wohl."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35035 /* ~"Na dann leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #35039 /* ~Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35040 /* ~"Dann leb wohl."~ */ EXTERN ~DMORTE~ 334
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35041 /* ~"Dann leb wohl."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35042 /* ~"Dann leb wohl."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #35049 /* ~Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.~ */
+END

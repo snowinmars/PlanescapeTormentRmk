@@ -1,0 +1,849 @@
+IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #1431 /* ~당신 시야에 퇴색된 흑색 법복을 입은 피곤한 듯한 사내가 들어온다. 그의 가는 얼굴은 극도로 창백하며, 그는 거의 잠을 자지 못한 것처럼 보인다. 그의 어깨는 축 늘어졌으며, 그의 충혈된 눈 아래에는 살이 처져 있다. 그는 당신의 존재를 알아차리지 못하고 있는 듯하다. 아마 그는 당신을 언데드 노동자들 중 하나로 착각한 모양이다. ~ */
+IF ~~ THEN REPLY #1432 /* ~"안녕하시오."~ */ GOTO 1
+IF ~~ THEN REPLY #1433 /* ~"당신은 누구요?"~ */ GOTO 1
+IF ~~ THEN REPLY #1434 /* ~"이 곳은 어떤 곳이오?"~ */ GOTO 1
+IF ~~ THEN REPLY #1435 /* ~"질문할 것들이 좀 있소..."~ */ GOTO 1
+IF ~~ THEN REPLY #1436 /* ~그를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+SAY #1437 /* ~당신이 그에게 인사하자 그는 고개를 재빨리 쳐든다. "뭐라고... 했소? 방금 전에 당신이 내게 말을 했소?'~ */
+IF ~~ THEN REPLY #1438 /* ~"그래, 내가 말했소. 질문할 것들이 좀 있소.~ */ JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 2
+IF ~~ THEN REPLY #1439 /* ~"아니, 그런 적 없소.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_1","GLOBALLaw",-1) JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 2
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1440 /* ~죽은듯이 조용히 한다.~ */ GOTO 3
+IF ~  CheckStatLT(Protagonist,11,CHR) ~ THEN REPLY #1441 /* ~죽은듯이 조용히 한다.~ */ GOTO 4
+IF ~~ THEN REPLY #1442 /* ~재빨리 떠난다. ~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 3.0 3.3 4.0 4.1
+SAY #1443 /* ~"신들이여!" 더스트맨은 팔짝 뛴 다음, 당신을 골똘히 바라본다. 당신은 그의 눈이 충혈된 것이라기보다는 약간의 붉은 색조를 띠고 있는 것이라는 사실을 깨닫는다. "이보시오, 당신 귀에는 거슬리겠지만 이 얘긴 꼭 해야겠소. 당신은 정말 좀비처럼 생겼소." 그는 가볍게 인사를 한다. "나는 소에고요." 그는 당신 흉터들을 쳐다보면서 말한다. "그런 모습을 하고 이 곳에는 무슨 용건이오?"~ */
+IF ~~ THEN REPLY #1444 /* ~"당신과는 상관없는 일이오."~ */ GOTO 6
+IF ~~ THEN REPLY #1445 /* ~"나도 내가 여기서 뭘 하고 있는지 모르겠소. 나는 위층의 철판에서 깨어났고... 내 기억은 흐릿하오."~ */ GOTO 7
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1446 /* ~"나는 이 곳의 홀을 돌아다니다가 길을 잃었는데 출구를 찾을 수가 없소. 날 도와주겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #1447 /* ~"나는 이 곳에서 나가려 하고 있소."~ */ GOTO 13
+IF ~~ THEN REPLY #1448 /* ~"내겐 변화가 필요하오."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1) ~ GOTO 16
+IF ~~ THEN REPLY #4999 /* ~내겐 정말 이럴 시간이 없소. 안녕히 계시오.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.2
+SAY #1449 /* ~더스트맨은 잠시 당신을 살펴본 후, 고개를 젓는다. "또 허깨비를 본 모양이야..." 그는 한숨을 쉬고 두 눈을 비빈다. "이 열병은 갈수록 심해지는 것 같군..."~ */
+IF ~~ THEN REPLY #1450 /* ~"그건 당신 상상이 아니오. 질문할 것이 좀 있소..."~ */ JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 2
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1451 /* ~그가 주의를 딴데로 돌리고 있을 때 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1452 /* ~그가 주의를 딴데로 돌리고 있을 때 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #1453 /* ~"질문할 것이 좀 있소."~ */ JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 2
+IF ~~ THEN REPLY #1454 /* ~조용히 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.3
+SAY #1455 /* ~더스트맨은 당신을 조심스럽게 바라본 다음, 몸을 구부린다. 그가 입을 열자 더럽고 날카로운 이빨들이 보인다. 그리고 그는 마치 쥐처럼 당신 냄새를 맡기 시작한다.~ */
+IF ~~ THEN REPLY #1456 /* ~"어... 대체 왜 내 냄새를 맡는 거요?"~ */ DO ~SetGlobal("Soego","Global",1) JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 2
+IF ~~ THEN REPLY #1457 /* ~"이것 보시오, 당신에게 질문할 것이 좀 있소..."~ */ DO ~SetGlobal("Soego","Global",1) JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 2
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1458 /* ~그가 몸을 구부릴 때 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1459 /* ~그가 몸을 구부릴 때 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #1460 /* ~재빨리 떠난다. ~ */ GOTO 15
+END
+
+IF ~~ THEN BEGIN 5 // from: 1.4
+SAY #1461 /* ~당신이 떠나려고 돌아서자, 더스트맨은 약간의 쉿 소리를 낸 후 몸을 구부려 당신 냄새를 맡는다. "신들이여!" 더스트맨은 한 발짝 물러선 후 눈을 크게 뜬다. 당신은 그의 눈이 충혈된 것이라기보다는 약간의 붉은 색조를 띠고 있는 것이라는 사실을 깨닫는다. "이보시오, 당신 귀에는 거슬리겠지만 이 얘긴 꼭 해야겠소. 당신은 정말 좀비처럼 생겼소." 그는 가볍게 인사를 한다. "나는 소에고요. 그런 모습을 하고 이 곳에는 무슨 용건이오?"~ */
+IF ~~ THEN REPLY #1462 /* ~"당신과는 상관없는 일이오."~ */ GOTO 6
+IF ~~ THEN REPLY #1463 /* ~"나도 내가 여기서 뭘 하고 있는지 모르겠소. 나는 위층의 철판에서 깨어났고... 내 기억은 흐릿하오."~ */ GOTO 7
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1464 /* ~"나는 길을 잃어 출구를 찾고 있소. 날 도와줄 수 있겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #1465 /* ~"나는 이 곳에서 나가려 하고 있소."~ */ GOTO 13
+IF ~~ THEN REPLY #1466 /* ~"내겐 변화가 필요했소."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1) ~ GOTO 16
+IF ~~ THEN REPLY #1467 /* ~"내겐 이런 일에 허비할 시간이 없소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 5.0 15.0 41.1 43.0 50.1 115.1
+SAY #1468 /* ~"아, 미안하지만 그건 내가 상관할 바요." 소에고의 눈은 붉은 색으로 번뜩이고, 무슨 기대라도 하는 듯 입의 한쪽 구석을 씰룩거린다. "아마..." 그는 날카롭고 더러운 이빨을 드러내며 조소한다. "경비병을 부른 것이 좋을 것 같소. 그래, 그게 좋겠군."~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1469 /* ~"잠깐! 나는 길을 잃었소... 나는 이 곳의 홀을 돌아다니다가 길을 잃었는데 출구를 찾을 수가 없소. 날 도와주겠소?"~ */ GOTO 8
+IF ~  CheckStatLT(Protagonist,11,CHR) ~ THEN REPLY #1470 /* ~"멈추시오! 경비병들을 부르지 마시오! 나는 이 곳에서 나가고 싶을 뿐이오... 날 도와줄 수 있겠소?"~ */ GOTO 13
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1471 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1472 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #1473 /* ~"그럼 그들을 부르시오. 난 그들을 만나고 싶소."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 7 // from: 2.1 5.1 13.3 15.1 42.1 57.0
+SAY #1474 /* ~"정말로?" 더스트맨은 당신을 세심히 조사한다. "당신은 *실제로* 준비 과정을 거친 것 같소. 당신의 어떻게 그런 고통을 견뎠는지 모르겠소... 당신은 고통을 받고 있소? 그런 것처럼 보이오."~ */
+IF ~~ THEN REPLY #1475 /* ~"애초에 어떻게 해서 내가 여기에 오게 된 것이오?"~ */ GOTO 54
+IF ~~ THEN REPLY #1476 /* ~"내겐 이런 일에 허비할 시간이 없소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
+SAY #1477 /* ~소에고는 입의 한쪽 구석을 씰룩거리며 고개를 끄덕인다. "물론이오. 이 건물은 방문자들에게는 헷갈릴 수가 있소. 별 큰 문제는 아니오, 하지만 방문자는 종이 아홉 번 울린 후에는 시체안치소에서 머무를 수가 없소. 당신을 위해 내가 정문을 열어 주리다."~ */
+IF ~  HasItem("KeyMo",Myself) ~ THEN REPLY #1478 /* ~"고맙소."~ */ DO ~AddexperienceParty(500) SetGlobal("Gate_Open","GLOBAL",1) SetGlobal("Gate_Cut_Scene","AR0201",1) StartCutSceneMode() StartCutSceneEx("0201cut1",FALSE) ~ EXIT
+IF ~  !HasItem("KeyMo",Myself) ~ THEN REPLY #1479 /* ~"고맙소."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.1 56.1 60.1
+SAY #1480 /* ~소에게는 벨트에 손을 뻗쳐 잠시 더듬더니 쉿 소리를 낸다. "열쇠!" 그의 눈은 밝은 빨간색으로 빛나고, 그는 분노하며 입술을 뒤로 만다. 그의 표정은 마치 동물과도 같다. "누가 내 열쇠를 훔쳤어!" 그는 당신을 향해 으르렁거린다. "당신이지! 당신이 이런 짓을 했지!"~ */
+IF ~~ THEN REPLY #1481 /* ~그에게 허풍을 떤다: "어... 기다리시오! 만약 내가 그것을 훔쳤다면 왜 당신에게 달라고 하겠소?"~ */ GOTO 18
+IF ~~ THEN REPLY #1482 /* ~거짓말: "무슨 얘기를 하는 거요? 나는 그 일과는 아무런 관련도 없소!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_3","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_Soego_1","GLOBALGood",-1) ~ GOTO 18
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1483 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1484 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #1485 /* ~"만약 내가 그랬다면 어쩔 거요? 그 일에 대해 어떻게 할 생각이오?"~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 10 // from:
+SAY #1486 /* ~소에고는 벨트에서 큰 열쇠를 빼낸 후 정문으로 걸어간다. 당신은 그의 기묘한 걸음걸이를 주목하지 않을 수가 없다... 그는 마치 균형을 잡으려는 듯 몸을 앞으로 구부라며 걷고 있다. ~ */
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #1487 /* ~"참 별나게도 걷는군."~ */ EXTERN ~DMORTE~ 101
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #1488 /* ~그가 문을 열기를 기다린다.~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.1
+SAY #1489 /* ~일단 정문에 도달하자 그는 열쇠를 자물쇠에 넣고 돌린다. 잠시 후 자물쇠로부터 삐걱거리는 소리가 난다... 그 소리는 대리석 바닥에 반사되어 메인 홀 전체에 울려 퍼진다.~ */
+IF ~~ THEN REPLY #1490 /* ~그가 돌아오기를 기다린다.~ */ DO ~SetDoorLocked("fakedoor",FALSE) ~ GOTO 12
+END 
+IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1) Global("Gate_Cut_Scene","AR0201",1)
+~ THEN BEGIN 12 // from: 11.0
+SAY #1491 /* ~"좋소. 이제 정문은 열렸소, 하지만 당신은 다시 들어올 수 없소."~ */
+IF ~~ THEN REPLY #1492 /* ~"떠나기 전에 당신에게 질문을 좀 해도 괜찮겠소?"~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2) ~ GOTO 26
+IF ~~ THEN REPLY #1493 /* ~"고맙소, 소에고. 이제 떠나도록 하겠소."~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
+SAY #1494 /* ~"나가?" 소에고는 눈살을 찌푸린다. "당신은 어떻게 들어왔소?"~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1495 /* ~"나는 장례식에 참석해 고인에게 추모의 뜻을 표하러 이 곳에 왔었소. 그런데 떠나려고 보니... 길을 잃어버렸지 않았겠소. 내가 출구를 찾도록 도와줄 수 있겠소?"~ */ GOTO 8
+IF ~  Global("Appearance","GLOBAL",2) ~ THEN REPLY #1496 /* ~"난 정말 모르오."~ */ GOTO 14
+IF ~  !Global("Appearance","GLOBAL",2) ~ THEN REPLY #1497 /* ~"난 정말 모르오."~ */ GOTO 61
+IF ~~ THEN REPLY #1498 /* ~"나는 위층의 철판에서 깨어났고... 내 기억은 흐릿하오."~ */ GOTO 7
+IF ~~ THEN REPLY #1499 /* ~"내겐 이럴 시간이 없소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.1
+SAY #1500 /* ~고에고는 혀를 찬다. "정말 흥미롭군." 그는 다시 당신을 살펴본다. "당신은 계약자들 중 하나가 아니오?"~ */
+IF ~~ THEN REPLY #1501 /* ~"어, '계약된?'"~ */ GOTO 23
+IF ~~ THEN REPLY #1502 /* ~"내겐 이런 일에 허비할 시간이 없소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 4.4
+SAY #1503 /* ~당신이 떠나려고 돌아서자, 더스트맨은 냄새를 맡는 것를 멈추고 약간의 쉿 소리를 낸다. "신들이여!" 더스트맨은 한 발짝 물러선 후 눈을 크게 뜬다. 당신은 그의 눈이 충혈된 것이라기보다는 약간의 붉은 색조를 띠고 있는 것이라는 사실을 깨닫는다. "이보시오, 당신 귀에는 거슬리겠지만 이 얘긴 꼭 해야겠소. 당신은 정말 좀비처럼 생겼소." 그는 가볍게 인사를 한다. "나는 소에고요. 그런 모습을 하고 이 곳에는 무슨 용건이오?"~ */
+IF ~~ THEN REPLY #1504 /* ~"당신과는 상관없는 일이오."~ */ GOTO 6
+IF ~~ THEN REPLY #1505 /* ~"나도 내가 여기서 뭘 하고 있는지 모르겠소. 나는 위층의 철판에서 깨어났고... 내 기억은 흐릿하오."~ */ GOTO 7
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1506 /* ~"나는 길을 잃어 출구를 찾고 있소. 날 도와줄 수 있겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #1508 /* ~"나는 이 곳에서 나가려 하고 있소."~ */ GOTO 13
+IF ~~ THEN REPLY #1509 /* ~"내겐 변화가 필요했소."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1) ~ GOTO 16
+IF ~~ THEN REPLY #1510 /* ~"내겐 이런 일에 허비할 시간이 없소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 2.4 5.4 15.4
+SAY #1511 /* ~"알겠소..." 소에고의 눈은 붉은 색으로 번뜩이고, 무슨 기대라도 하는 듯 입의 한쪽 구석을 씰룩거린다. "아마..." 그는 날카롭고 더러운 이빨을 드러내며 조소한다. "경비병을 부르는 것이 좋을 것 같소. 그래, 그게 좋겠군."~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1512 /* ~"잠깐! 나는 길을 잃었소... 나는 이 곳의 홀을 돌아다니다가 길을 잃었는데 출구를 찾을 수가 없소. 날 도와주겠소?"~ */ GOTO 8
+IF ~  CheckStatLT(Protagonist,11,CHR) ~ THEN REPLY #1513 /* ~"멈추시오! 경비병들을 부르지 마시오! 나는 이 곳에서 나가고 싶을 뿐이오... 날 도와줄 수 있겠소?"~ */ GOTO 13
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1514 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1515 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #1516 /* ~"그럼 그들을 부르시오. 난 그들을 만나고 싶소."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
+SAY #1517 /* ~당신이 떠나려고 돌아서자, 그는 화난 듯 쉿 소리를 낸다. 그러다 갑자기 그는 냉정을 되찾고 손을 들어 올린다. "아니, 미안하지만 당신은 여기를 떠날 수가 없소. 틀림없이 뭔가 잘못되었소. 이 건을 명확하게 해결하는 것이 좋을 것 같소." 그의 입술 한쪽이 약간 씰룩거리며 그의 두 눈이 번뜩인다. "...아마 경비병들이 도울 수 있을 거요. 그래... 그들을 불러야겠소."~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #1518 /* ~"잠깐! 나는 길을 잃었소... 나는 이 곳의 홀을 돌아다니다가 길을 잃었는데 출구를 찾을 수가 없소. 날 도와주겠소?"~ */ GOTO 8
+IF ~  CheckStatLT(Protagonist,11,CHR) ~ THEN REPLY #1520 /* ~"멈추시오! 경비병들을 부르지 마시오! 나는 이 곳에서 나가고 싶을 뿐이오... 날 도와줄 수 있겠소?"~ */ GOTO 13
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1521 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1522 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #1523 /* ~"그럼 그들을 부르시오. 난 그들을 만나고 싶소."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 18 // from: 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
+SAY #1524 /* ~소에고는 한 걸음 물러선 후, 손뼉을 세게 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #1525 /* ~"그럼 좋소..."~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) Attack(Protagonist) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
+SAY #1526 /* ~그가 입도 뻥끗하기 전에 당신은 양손으로 그의 관자놀이를 꽉 조인다, 그리고 그의 목을 왼쪽으로 세게 비튼다.~ */
+IF ~~ THEN REPLY #1528 /* ~"당신 동료들에게 알리도록 내버려둘 수는 없지..."~ */ DO ~PlaySoundNotRanged("SPE_11") ~ GOTO 20
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+SAY #1529 /* ~그의 목이 부러지면서 *우지직* 소리가 난다... 하지만 그는 힘없이 늘어지는 대신 비명을 지르며 당신 손아귀에서 벗어난다!~ */
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #1530 /* ~"뭐...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1) ~ EXTERN ~DMORTE~ 100
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #1531 /* ~"뭐...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1) ~ GOTO 21
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.1
+SAY #1532 /* ~더스트맨도 당신만큼이나 충격을 받은 모양이다. 그는 정신이 나간 듯한 눈을 하고 있으며, 그의 목구멍에서는 꼴꼴 소리가 나고 있다... 그의 목이 부자연스러운 각도로 휜 것을 볼 때 당신이 그의 목을 부러트린 건 틀림없다, 하지만 그는 여전히 살아 있다! 당신이 놀란 채로 바라보는 동안 그는 힘없이 손뼉을 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #1533 /* ~"그럼 좋소..."~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) Attack(Protagonist) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
+SAY #1534 /* ~*무언가가* 그에게 위험을 알린 듯하다. 당신이 미처 돌격하기도 전에 그는 한 걸음 물러선다. 그는 이빨을 드러내고 있으며 눈은 빨갛게 빛나고 있다. 그는 쉿 소리를 내며 손뼉을 세게 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #1535 /* ~"그럼 좋소..."~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) Attack(Protagonist) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 14.0
+SAY #4792 /* ~"더스트맨이 사후에 계약자의 사체를 사용하는 것을 허용하는 계약서에 서명한 사람들이 있소. 당신은 기이한 사고에 말려들어 그렇게 되었을 가능성이 높소. 당신은 우리가 소유하고 있는 보통 좀비들보다 훨씬 똑똑한 것 같소."~ */
+IF ~~ THEN REPLY #4793 /* ~"사람들이 죽은 후에 자신들의 시체를 당신들에게 판단 말이오?"~ */ GOTO 24
+IF ~~ THEN REPLY #4794 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #4795 /* ~"내겐 이런 일에 허비할 시간이 없소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+SAY #4796 /* ~"그렇소. 많은 사람들은 소액의 돈을 받고 진정한 죽음에 도달하면 필요없게 될 육체를 기꺼이 팔고 있소."~ */
+IF ~~ THEN REPLY #4797 /* ~"당신들은 이러한 시체들을 어디에 쓰는 거요?"~ */ GOTO 25
+IF ~~ THEN REPLY #4798 /* ~"알겠소... 당신에게 다른 질문을 좀 해도 괜찮겠소?"~ */ GOTO 25
+IF ~~ THEN REPLY #4799 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 24.1
+SAY #4800 /* ~"좀비들은 시체안치소에서 허드렛일을 하오. 그들은 시체를 나르고, 바닥을 청소하며, 매장을 위해 시체를 준비하는 등 상대적으로 간단한 일들을 담당하오. 불행히도 그들은 조금이라도 복잡한 지시는 이해하고 실행할 수가 없소."~ */
+IF ~~ THEN REPLY #4801 /* ~"그래, "계약되었던' 아니던 간에 만약 내가 죽지 않았었다면 어떻게 해서 이 곳에 오게 된 거요?"~ */ GOTO 54
+IF ~~ THEN REPLY #4802 /* ~"알겠소... 당신에게 다른 질문을 좀 해도 괜찮겠소?"~ */ GOTO 26
+IF ~~ THEN REPLY #4803 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 26 // from: 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
+SAY #4804 /* ~소에고는 고개를 끄덕인다. "질문을 해도 좋소."~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4805 /* ~"난 여길 떠나고 싶소. 나를 출구까지 안내해줄 수 있겠소?"~ */ GOTO 8
+IF ~  CheckStatLT(Protagonist,11,CHR) Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4806 /* ~"날 여기서 나가게 해줄 수 있소?"~ */ GOTO 13
+IF ~  Global("Vaxis","GLOBAL",1) !Dead("Vaxis") Global("Vaxis_Leave","GLOBAL",0) Global("Betray_Vaxis","GLOBAL",0) ~ THEN REPLY #4807 /* ~"2층에 좀비로 변장한 인간이 있다는 사실을 아시오?"~ */ GOTO 27
+IF ~~ THEN REPLY #4809 /* ~"실례가 아니라면 묻겠는데... 괜찮소? 당신은 피곤해 보이오."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_1","GLOBALGood",1) ~ GOTO 31
+IF ~  CheckStatLT(Protagonist,13,WIS) Global("Vaxis_Exposes_Soego","GLOBAL",1) ~ THEN REPLY #4810 /* ~"당신이 소에고군, 그렇소? 나는 당신이 더스트맨치고는 좀 이상하다고 들었소. 사람들이 당신은 쥐를 좋아한다고 하더군."~ */ DO ~SetGlobal("Soego_exposed","GLOBAL",1) ~ GOTO 30
+IF ~  CheckStatGT(Protagonist,12,WIS) Global("Vaxis_Exposes_Soego","GLOBAL",1) ~ THEN REPLY #4811 /* ~"당신이 소에고군, 그렇소? 나는 당신이 더스트맨치고는 좀 이상하다고 들었소. 사람들이 당신은 쥐를 좋아한다고 하더군."~ */ GOTO 29
+IF ~  GlobalLT("Pharod","GLOBAL",1) ~ THEN REPLY #4832 /* ~"파로드란 이름의 사람을 아시오?"~ */ GOTO 33
+IF ~  GlobalLT("Journal","GLOBAL",1) ~ THEN REPLY #4833 /* ~"나는 일지를 잃어버렸소. 혹시 본 적이 있소?"~ */ GOTO 37
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4834 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4835 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.2
+SAY #4808 /* ~"뭐라고 했소?"~ */
+IF ~  Global("Lawful_Vaxis_1","GLOBAL",0) ~ THEN REPLY #4836 /* ~"좀비로 변장한 사람이 위층에 있소. 내 생각으로 그는 더스트맨을 염탐하고 있는 것 같소."~ */ DO ~AddexperienceParty(250) SetGlobal("Betray_Vaxis","GLOBAL",1) ~ GOTO 28
+IF ~  Global("Lawful_Vaxis_1","GLOBAL",1) ~ THEN REPLY #4837 /* ~"좀비로 변장한 사람이 위층에 있소. 내 생각으로 그는 더스트맨을 염탐하고 있는 것 같소."~ */ DO ~AddexperienceParty(250) SetGlobal("Betray_Vaxis","GLOBAL",1) IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3) ~ GOTO 28
+IF ~~ THEN REPLY #4838 /* ~"관두시오. 다른 질문을 하겠소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4839 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #916 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0 27.1
+SAY #4840 /* ~"뭐라고? 누가 왜 그런...?" 그의 목소리는 듣기 어려울 정도로 낮아진다, 그리고 그가 입술을 뒤로 말자 마치 톱니와도 같은 이빨들이 드러난다. "*아나키스트.*" 그의 눈을 붉게 번뜩인다. "아나키스트가 *이 곳에* 침투하나니." 그는 갑자기 당신이 여기 있다는 사실을 기억한 듯 냉정을 되찾는다. "내게 이 사실을 알려 주어 고맙소. 경비병들에게 이 사태에 대해 조치를 취하도록 알리겠소."~ */
+IF ~~ THEN REPLY #4852 /* ~"괜찮소. 그 밖에도 질문할 것들이 좀 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4853 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4854 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 29 // from: 26.5
+SAY #4855 /* ~당신은 얘기를 하려다가 갑자기 멈춘다. 소에고를 바라보고 있자니 이상한 느낌이 온다...이유는 알 수 없으나 그에게 아무 말도 해서는 안된다는 생각이 든다.~ */
+IF ~~ THEN REPLY #4856 /* ~"나는 당신이 좀 이상하다고 들었소. 사람들이 당신은 쥐를 좋아한다고 하더군."~ */ GOTO 30
+IF ~~ THEN REPLY #4857 /* ~"어... 당신에게 물어볼 것이 있소."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4858 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4859 /* ~"관두시오. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 30 // from: 26.4 29.0
+SAY #4860 /* ~그는 잠시 입을 다물고 당신을 관찰한다. 그의 눈은 붉은 색으로 번뜩이고 있으며, 그는 작은 쉿 소리를 내고 있다. "당신은 여기 너무 오래 머무른 것 같소." 갑작스럽게 그는 한 걸음 물러선 후, 손뼉을 세게 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #4861 /* ~"뭐...? 대체 뭘 하고 있는 거요?"~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) Attack(Protagonist) ~ EXIT
+IF ~~ THEN REPLY #4862 /* ~"그럼 좋소. 죽을 준비를 하시오, 소에고."~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) Attack(Protagonist) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 26.3
+SAY #4863 /* ~소에고는 힘없이 웃는다, 그리고 그의 입 한쪽 구석은 약하게 씰룩거린다. "나는 최근 몸이 좋지 않소... 가벼운 열병에 걸렸소, 그뿐이오. 그 때문에 때때로 잠을 잘 수가 없소."~ */
+IF ~~ THEN REPLY #4864 /* ~"내가 할 수 있는 일은 없겠소?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_2","GLOBALGood",1) ~ GOTO 32
+IF ~~ THEN REPLY #4865 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4866 /* ~"알겠소. 이만 실례해야겠소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4867 /* ~"알겠소. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+SAY #4868 /* ~소에고는 고개를 젓는다. "괜찮소. 걱정을 해주어 고맙소... 난 견딜 수 있소." 그는 얼굴을 약간 찌푸린다. "그 밖에 내게 원하는 건 있소?"~ */
+IF ~~ THEN REPLY #4869 /* ~"그렇소. 그 밖에도 질문할 것들이 좀 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4870 /* ~"아니오, 당신을 더 이상 귀찮게 하지 않겠소. 정보를 주어 고맙소."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4871 /* ~"아니오, 당신을 더 이상 귀찮게 하지 않겠소. 정보를 주어 고맙소."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 33 // from: 26.6
+SAY #4872 /* ~"파로드? 물론 나는 그를 아오." 그는 눈살을 찌푸린다, 그리고 그의 눈은 붉게 빛난다. "악귀같은 자요. 죽은 자를 존중할 주 모르는 위인이오, 산 자에 대해서는 말할 필요도 없고. 그는 수집자로 하이에나와 마찬가지요."~ */
+IF ~~ THEN REPLY #4873 /* ~"수집자?"~ */ GOTO 34
+IF ~~ THEN REPLY #4874 /* ~"그가 어디에 있는지 혹시 아시오?"~ */ GOTO 36
+IF ~~ THEN REPLY #4875 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4876 /* ~"알겠소. 나는 이만 실례하는 것이 좋을 듯하오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4877 /* ~"알겠소. 나는 이만 실례하는 것이 좋을 듯하오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 34 // from: 33.0 36.0
+SAY #4878 /* ~"수집자는 시체를 모아 시체안치소로 가져옴으로서 생계를 유지하오. 우리는 그러한 사체들이 제대로 매장되도록 만전을 기하오."~ */
+IF ~  CheckStatGT(Protagonist,12,INT) ~ THEN REPLY #4879 /* ~"그래, 만약 어떤 수집자가 시체를... 예를 들어 내 시체를... 발견했다면, 이 곳으로 가져와 당신들에게 팔았겠군."~ */ GOTO 35
+IF ~~ THEN REPLY #4880 /* ~"그래 이 파로드란 수집자... 당신은 혹시 그가 어디 있는지 아시오?"~ */ GOTO 36
+IF ~~ THEN REPLY #4881 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4882 /* ~"알겠소. 이만 실례해야겠소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4883 /* ~"알겠소. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 35 // from: 34.0
+SAY #4884 /* ~"그렇소."~ */
+IF ~~ THEN REPLY #4885 /* ~"흠... 갑자기 이 파로드란 사람을 찾는 일이 극히 중요하게 느껴지는군. 당신은 혹시 그가 어디 있는지 아시오?"~ */ GOTO 36
+IF ~~ THEN REPLY #4886 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4887 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4888 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 36 // from: 33.1 34.1 35.0
+SAY #4889 /* ~"나는 그가 시체안치소 밖의 빈민굴인 벌통에 산다는 걸 아나, 정확히 어디에 사는지는 모르오. 수집자들 중에 아는 사람들이 있을지도 모르오, 하지만 그들이 당신에게 털어놓을지 모르겠소."~ */
+IF ~~ THEN REPLY #4890 /* ~"수집자들이 어떤 일을 하는지 다시 얘기해주겠소?"~ */ GOTO 34
+IF ~~ THEN REPLY #4891 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4892 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4893 /* ~"정보를 주어 고맙소. 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 37 // from: 26.7
+SAY #4894 /* ~"일지?" 소에고는 혼란스러운 듯하다. "아니, 본 적이 없소."~ */
+IF ~~ THEN REPLY #4895 /* ~"그럼 관두시오. 그 밖에도 질문할 것들이 좀 있소..."~ */ GOTO 26
+IF ~  Global("Gate_Open","GLOBAL",1) ~ THEN REPLY #4896 /* ~"어쨌든 고맙소. 안녕히 계시오."~ */ EXIT
+IF ~  Global("Gate_Open","GLOBAL",0) ~ THEN REPLY #4897 /* ~"어쨌든 고맙소. 안녕히 계시오."~ */ GOTO 17
+END 
+IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") !Global("Appearance","GLOBAL",1) Global("Gate_Open","GLOBAL",0) Global("Soego","GLOBAL",0)
+~ THEN BEGIN 38 // from:
+SAY #4898 /* ~당신 시야에 흑색 법복을 입은 피곤한 듯한 사내가 들어온다. 그의 가는 얼굴은 극도로 창백하며, 그는 거의 잠을 자지 못한 것처럼 보인다. 그의 어깨는 축 늘어졌으며, 그의 충혈된 눈 아래에는 살이 처져 있다. 그는 얼마나 생각에 몰두하고 있는지 당신의 존재를 알아차리지 못하고 있는 듯하다. ~ */
+IF ~  GlobalLT("Appearance","GLOBAL",2) ~ THEN REPLY #66706 /* ~"안녕하시오..."~ */ DO ~SetGlobal("Soego","Global",1) JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 39
+IF ~  Global("Appearance","GLOBAL",2) ~ THEN REPLY #66707 /* ~"안녕하시오..."~ */ DO ~SetGlobal("Soego","Global",1) JOURNAL #63982 /* ~나는 시체안치소 정문에서 소에고란 더스트맨을 만났다. 그는 마치 몇 주동안 잠을 자지 못한 듯 무척 피곤해 보였다. 그의 눈과 창백한 피부색으로 미루어볼 때 그는 무슨 병에 걸린 것 같다.~ */ GOTO 113
+IF ~~ THEN REPLY #66708 /* ~그가 생각을 하도록 내버려 둔다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0
+SAY #4904 /* ~"안녕하시오..." 사내는 당신을 향해 몸을 돌린 후 가볍게 인사한다. 당신은 그의 눈이 충혈된 것이라기보다는 약간의 붉은 색조를 띠고 있는 것이라는 사실을 갑자기 깨닫는다. "나는 소에고요. 내가 어떻게..." 그는 갑자기 당신의 흉터를 눈치챈 것 같다, 그리고 입 한쪽 구석을 씰룩거린다. "미안하오, 하지만 당신은 길을 잃었소?"~ */
+IF ~~ THEN REPLY #4905 /* ~"그렇소."~ */ GOTO 40
+IF ~~ THEN REPLY #4906 /* ~"아니오."~ */ GOTO 41
+IF ~~ THEN REPLY #4907 /* ~"아니오, 나는 길을 잃지 않았소. 물어볼 것이 좀 있소..."~ */ GOTO 41
+IF ~~ THEN REPLY #4908 /* ~"아니오. 난 출구를 찾고 있었을 뿐이오. 안녕히 계시오."~ */ GOTO 41
+END
+
+IF ~~ THEN BEGIN 40 // from: 39.0
+SAY #4909 /* ~"그럼..." 소에고의 입은 무슨 기대라도 하듯 다시 씰룩거린다. "그럼 당신을 밖으로 안내할 경비병을 부르도록 하겠소. 잠깐만 서 계시오." 그는 곧 경비병들을 부를 것 같다.~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #4910 /* ~"잠깐! 제발... 경비병들을 부를 필요는 없소. 나는 장례식에 참석하러 왔다가 길을 잃었소... 내게 나가는 길을 안내해 줄 수 있겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #4911 /* ~"아니오! 나는 길을 잃지 않았소. 내가 말을 잘못했소."~ */ GOTO 50
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #4912 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #4913 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #4914 /* ~재빨리 떠난다. ~ */ GOTO 18
+IF ~~ THEN REPLY #4915 /* ~기다린다.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 41 // from: 39.1 39.2 39.3
+SAY #4916 /* ~"나는 당신을 들여보낸 기억이 없소." 소에고는 의심스러운 눈으로 당신을 바라본다. 그리고 그의 눈은 횃불의 빛을 받아 붉게 빛난다. "당신이 여기서 뭘 하고 있는지 물어도 괜찮겠소?"~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #4917 /* ~"나는 장례식에 참석해 고인에게 추모의 뜻을 표하러 이 곳에 왔었소. 그런데 떠나려고 보니... 길을 잃어버렸지 않았겠소. 내가 출구를 찾도록 도와줄 수 있겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #4918 /* ~"당신과는 상관없는 일이오."~ */ GOTO 6
+IF ~~ THEN REPLY #4919 /* ~"나는 당신네 준비실에 있는 철판 위에서 깨어났소."~ */ GOTO 42
+IF ~~ THEN REPLY #4920 /* ~"누굴 좀 만나러 왔소."~ */ GOTO 43
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #4921 /* ~"나는 이 곳에 장례식 때문에 왔소, 하지만 뭔가 착오가 있었던 듯하오."~ */ GOTO 53
+IF ~~ THEN REPLY #4922 /* ~그에게 뭔가 속삭이려는 것처럼 몸을 기울인 후, 그가 몸을 구부리면 그의 목을 부러트린다.~ */ GOTO 51
+IF ~~ THEN REPLY #4923 /* ~재빨리 떠난다. ~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.2 50.2 115.0
+SAY #4924 /* ~그는 놀란 듯하다. "당신은... 위층의 철판 위에서 일어났단 말이오?"~ */
+IF ~~ THEN REPLY #4925 /* ~"어, 아니오. 말을 잘못했소."~ */ GOTO 50
+IF ~~ THEN REPLY #4926 /* ~"그렇소. 믿기 어려우리라는 건 알지만 사실이오. 난 위층에 있는 철판들 중 한 곳에서 깨어났소."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Soego_1","GLOBALLaw",1) ~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 43 // from: 41.3 50.3
+SAY #4927 /* ~소에고는 고개를 끄덕인다. "당신은 누구를 만나러 왔소? 내가 기꺼이 안내해 드리리다."~ */
+IF ~~ THEN REPLY #4928 /* ~"당신과는 상관없는 일이오."~ */ GOTO 6
+IF ~  GlobalGT("Dhall","GLOBAL",0) ~ THEN REPLY #4929 /* ~"나는 달을 만나러 왔소."~ */ GOTO 44
+IF ~  GlobalGT("Deionarra","GLOBAL",0) ~ THEN REPLY #4930 /* ~"나는 데이오나라를 만나러 왔소."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,INT) Global("Soego_Adahn","AR0201",0) ~ THEN REPLY #4931 /* ~거짓말: "어... 아단. 그는 아직도 여기서 일하오, 아니면...?"~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1) IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  CheckStatGT(Protagonist,12,INT) Global("Soego_Adahn","AR0201",1) ~ THEN REPLY #4932 /* ~거짓말: "어... 아단. 그는 아직도 여기서 일하오, 아니면...?"~ */ GOTO 49
+IF ~~ THEN REPLY #4933 /* ~"어, 아무도 아니오. 말을 잘못했소."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.1
+SAY #4934 /* ~"달? 서기인 달이라면 위층의 접수실에 있소." 소에고의 입 한쪽 구석이 잠시 씰룩거린다. "그는 상당히 바쁘며, 그의 건강 역시 악화되고 있소. 중요한 용건이 아니라면 그를 방해하지 않는 것이 좋을 거요."~ */
+IF ~~ THEN REPLY #4935 /* ~"달에게 무슨 문제라도 있소?"~ */ GOTO 46
+IF ~~ THEN REPLY #4936 /* ~"접수실?"~ */ GOTO 45
+IF ~~ THEN REPLY #4937 /* ~"알겠소. 그와의 만남은 가능한 한 짧게 갖도록 하겠소. 안녕히 계시오."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.1
+SAY #4938 /* ~"그렇소. 접수실은 이 도시의 시체가 이 곳으로 온 후 가는 장소요. 거기서 시체들은 장부에 기록되고 매장을 위한 준비를 받게 되오."~ */
+IF ~~ THEN REPLY #4939 /* ~"달에게 무슨 문제라도 있소?"~ */ GOTO 46
+IF ~~ THEN REPLY #4940 /* ~"안내를 해주어 고맙소. 달과의 만남은 가능한 한 짧게 갖도록 하겠소. 안녕히 계시오."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 46 // from: 44.0 45.0
+SAY #4941 /* ~"달에게 특별히 잘못된 곳은 없소. 달은..." 소에고는 이빨을 딸깍거린다. "...늙었을 뿐이오. 죽은 자들을 기록하는 그의 오랜 헌신도 이제 종점에 도착하려 하고 있소. 그가 걸린 소모성의 질병 때문에 그는 조만간 사망할 거요."~ */
+IF ~~ THEN REPLY #4942 /* ~"알겠소. 그와의 만남은 가능한 한 짧게 갖도록 하겠소. 안녕히 계시오."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.2 53.2
+SAY #4943 /* ~"데이오나라? 북서쪽의 기념 홀에 그런 이름을 가진 여인이 안장되었소. 달신이 찾는 여자가 그녀요?"~ */
+IF ~~ THEN REPLY #4944 /* ~"그렇소... 그녀에게 어떤 일이 일어났는지 말해줄 수 있겠소?"~ */ GOTO 48
+IF ~~ THEN REPLY #4945 /* ~"그렇소 이제 가서 애도의 뜻을 표하도록 하겠소."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.0
+SAY #4946 /* ~"모르겠소, 하지만 그녀는 이 곳에 상당히 오래 전부터 있었소. 그녀의 아버지라면 그녀에게 어떤 일이 일어났었는지 알지 모르오... 그는 상부 구역에 있는 사무실로부터 이 곳을 자주 방문하오. 그녀가 이 곳의 기념 홀에 안장된 것은 그의 희망에 의한 것이었소."~ */
+IF ~~ THEN REPLY #4947 /* ~"안내를 해주어 고맙소. 가서 애도의 뜻을 표하도록 하겠소."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 49 // from: 43.3 43.4 53.3 53.4
+SAY #4948 /* ~"아단..." 소에고는 눈을 가늘게 뜬다, 그러자 당신이 아까 본 그의 눈의 붉은 색조는 한층 더 강조된다. "산 자든 죽은 자든 간에 그런 이름을 가진 사람은 시체안치소에는 없소."~ */
+IF ~~ THEN REPLY #4949 /* ~"어... 그럼 내가 말을 잘못한 모양이오."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 50 // from: 40.1 42.0 43.5 49.0 53.1 57.1
+SAY #4950 /* ~소에고의 입 한 구석은 다시 씰룩거리고, 그의 눈은 번뜩인다. "그럼 당신이 여기 온 용건은 무엇이오?"~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #4951 /* ~"나는 장례식에 참석해 고인에게 추모의 뜻을 표하러 이 곳에 왔었소. 그런데 떠나려고 보니... 길을 잃어버렸지 않았겠소. 내가 출구를 찾도록 도와줄 수 있겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #4952 /* ~"당신과는 상관없는 일이오."~ */ GOTO 6
+IF ~~ THEN REPLY #4953 /* ~"나는 당신네 준비실에 있는 철판 위에서 깨어났소."~ */ GOTO 42
+IF ~~ THEN REPLY #4954 /* ~"누굴 좀 만나러 왔소."~ */ GOTO 43
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #4955 /* ~"나는 장례식 때문에 이 곳에 왔소."~ */ GOTO 53
+IF ~~ THEN REPLY #4956 /* ~그에게 뭔가 속삭이려는 것처럼 몸을 기울인 후, 그가 몸을 구부리면 그의 목을 부러트린다.~ */ GOTO 51
+IF ~~ THEN REPLY #5028 /* ~도망친다.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 51 // from: 41.5 50.5 53.5
+SAY #4957 /* ~당신이 몸을 구부리자 소에고는 눈살을 찌푸린다, 그리고 당신은 그가 무슨 시험이라도 하듯 공기 냄새를 맡고 있다는 것을 알아챈다. 그는 마치 당장이라도 경비병들을 부를 것처럼 눈을 가늘게 뜬다.~ */
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #4958 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #4959 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 52
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.1
+SAY #4960 /* ~당신이 돌격하자 그는 한 걸음 물러선다. 그는 이빨을 드러내고 있으며 눈은 빨갛게 빛나고 있다. 그는 쉿 소리를 내며 손뼉을 세게 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #4961 /* ~"그럼 좋소..."~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) Attack(Protagonist) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 53 // from: 41.4 50.4
+SAY #4962 /* ~"누구의 장례식이라고 했소? 아마 당신이 참석하려는 장례식은 시체안치소의 다른 곳에서 거행되고 있을지도 모르오."~ */
+IF ~~ THEN REPLY #4963 /* ~"당신은 내 말을 이해하지 못한 것 같군... 내 말은 당신들 착오 때문에 내가 장례식을 당하게 될 뻔했다는 얘기요."~ */ GOTO 57
+IF ~~ THEN REPLY #4964 /* ~"미안하오... 내가 말을 잘못했소. 난 고인의 이름을 모르오."~ */ GOTO 50
+IF ~  GlobalGT("Deionarra","GLOBAL",0) ~ THEN REPLY #4965 /* ~"고인의 이름은 데이오나라요."~ */ GOTO 47
+IF ~  Global("Soego_Adahn","AR0201",0) ~ THEN REPLY #4967 /* ~거짓말: "이름은... 어, 아단이오."~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1) IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  Global("Soego_Adahn","AR0201",1) ~ THEN REPLY #4968 /* ~거짓말: "이름은... 어, 아단이오."~ */ GOTO 49
+IF ~~ THEN REPLY #4969 /* ~마치 그에게 뭔가 속삭이려는 것처럼 몸을 기울인 후 그의 목을 부러트린다.~ */ GOTO 51
+IF ~~ THEN REPLY #4970 /* ~도망친다.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 54 // from: 7.0 25.0
+SAY #4966 /* ~"글쎄..." 소에고는 당신을 흘긋 본다. 그는 혼란스러운 듯하다. "분명히 착오가 있었던 모양이오. 당신은 이 곳에 데려온 건 당신의 육친, 다른 더스트맨, 또는..." 소에고는 불쾌한 생각이 갑자기 든 것처럼 쉿 소리를 낸다. "또는 수집자들 중 하나일 것이오."~ */
+IF ~~ THEN REPLY #4971 /* ~"수집자들?"~ */ GOTO 55
+END
+
+IF ~~ THEN BEGIN 55 // from: 54.0
+SAY #4972 /* ~"그렇소, 수집자들... 죽은 자의 유해를 우리에게 가져오는 하이에나 같은 자들의 무리요. 그들은 당신이 죽었다고 생각했을지도 모르오..." 그는 쉿 소리를 낸 후 눈을 번뜩인다. "...그리고 그들은 돈에 눈이 먼 자들이라 당신을 데려오기 전에 확인하려고 하지도 않았을 거요." 소에고는 당신을 살펴본다. "당신이 깨어난 것은 불행한 일이오... 아니면 진정한 죽음에 때가 되기도 전에 도달했을 텐데."~ */
+IF ~~ THEN REPLY #4973 /* ~"그럼 무슨 착오가 있었던 모양이오... 그리고 난 여길 떠나고 싶소. 지금 당장."~ */ GOTO 56
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0 59.1
+SAY #4974 /* ~소에고는 고개를 끄덕인다, 그리고 그의 입 한쪽 구석은 씰룩거린다. "물론이오. 당신을 위해 정문을 열어 주리다."~ */
+IF ~  HasItem("KeyMo",Myself) ~ THEN REPLY #4975 /* ~"좋소."~ */ DO ~AddexperienceParty(500) SetGlobal("Gate_Open","GLOBAL",1) SetGlobal("Gate_Cut_Scene","AR0201",1) StartCutSceneMode() StartCutSceneEx("0201cut1",FALSE) ~ EXIT
+IF ~  !HasItem("KeyMo",Myself) ~ THEN REPLY #4976 /* ~"좋소."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 57 // from: 53.0
+SAY #4977 /* ~"당신?"~ */
+IF ~~ THEN REPLY #4978 /* ~"그래, *나* 말이오. 나는 위층에 있는 철판들 중 한 곳에서 깨어났소." ~ */ GOTO 7
+IF ~~ THEN REPLY #4979 /* ~"미안하오... 내가 말을 잘못했소."~ */ GOTO 50
+END 
+IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Gate_Open","GLOBAL",1)
+~ THEN BEGIN 58 // from:
+SAY #4980 /* ~당신이 다가가자 그는 공기 냄새를 맡은 후 당신을 올려다 본다. 당신을 보자 그는 눈살을 찌푸린다. "난 당신을 위해 정문을 열어 주었소. 왜 아직도 여기 있는 거요?"~ */
+IF ~~ THEN REPLY #4981 /* ~"내가 떠나기 전에 당신에게 물어보고 싶은 것들이 좀 있소."~ */ GOTO 26
+IF ~~ THEN REPLY #4982 /* ~"나는 이제 정문으로 향하도록 하겠소. 안녕히 계시오."~ */ EXIT
+END 
+IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR0201") Global("Soego","GLOBAL",1) Global("Gate_Open","GLOBAL",0)
+~ THEN BEGIN 59 // from:
+SAY #4983 /* ~당신이 다가가자 그는 공기 냄새를 맡은 후 당신을 올려다 본다. 당신을 보자 그는 가볍게 인사한다. "찾던 것을 찾았소?"~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #4984 /* ~"그래, 고맙소. 미안하지만 나는 이 곳에서 길을 잃었소... 내가 출구를 찾도록 도와줄 수 있겠소?"~ */ GOTO 60
+IF ~  CheckStatLT(Protagonist,11,CHR) ~ THEN REPLY #4985 /* ~"그렇소. 지금 곧 떠나고 싶소. 날 출구까지 안내해 줄 수 있겠소?"~ */ GOTO 56
+IF ~~ THEN REPLY #4986 /* ~"그렇소, 그리고 지금 난 정문으로 향하고 있소. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 60 // from: 59.0
+SAY #4987 /* ~소에고는 고개를 끄덕인다, 그리고 그의 입 한쪽 구석은 씰룩거린다. "물론이오. 당신을 위해 정문을 열어 주리다."~ */
+IF ~  HasItem("KeyMo",Myself) ~ THEN REPLY #4988 /* ~"고맙소."~ */ DO ~AddexperienceParty(500) SetGlobal("Gate_Open","GLOBAL",1) SetGlobal("Gate_Cut_Scene","AR0201",1) StartCutSceneMode() StartCutSceneEx("0201cut1",FALSE) ~ EXIT
+IF ~  !HasItem("KeyMo",Myself) ~ THEN REPLY #4989 /* ~"고맙소."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 61 // from: 13.2
+SAY #4990 /* ~"이건 정말 이상하군." 소에고의 눈은 붉은 색으로 번뜩이고, 무슨 기대라도 하는 듯 입의 한쪽 구석을 씰룩거린다. "아마..." 그는 날카롭고 더러운 이빨을 드러내며 조소한다. "경비병을 부르는 것이 좋을 것 같소. 그래, 그게 좋겠군."~ */
+IF ~  CheckStatGT(Protagonist,10,CHR) ~ THEN REPLY #4991 /* ~"잠깐! 나는 길을 잃었소... 나는 이 곳의 홀을 돌아다니다가 길을 잃었는데 출구를 찾을 수가 없소. 날 도와주겠소?"~ */ GOTO 8
+IF ~  CheckStatLT(Protagonist,11,CHR) ~ THEN REPLY #4992 /* ~"멈추시오! 경비병들을 부르지 마시오! 나는 이 곳에서 나가고 싶을 뿐이오... 날 도와줄 수 있겠소?"~ */ GOTO 13
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #4993 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 19
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #4994 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 22
+IF ~~ THEN REPLY #4995 /* ~"그럼 그들을 부르시오. 난 그들을 만나고 싶소."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 62 // from: 44.2 45.1 46.0 47.1 48.0
+SAY #4996 /* ~소에고는 고개를 끄덕인다... 그리고 그의 입 한쪽 구석은 다시 씰룩거린다. 그는 자신의 그런 습관을 모르는 듯하다. "고인에게 애도의 뜻을 표하고 나면 돌아오시오, 그러면 당신을 위해 정문을 열어 주겠소. 종이 아홉 번 울린 후니 서둘러 용무를 끝내시오."~ */
+IF ~~ THEN REPLY #4997 /* ~"생각해 보니 다른 기회에 하는 것이 좋을 것 같소. 지금 당장 날 내보내 줄 수 있겠소?"~ */ GOTO 8
+IF ~~ THEN REPLY #4998 /* ~"고맙소. 돌아오도록 하겠소."~ */ EXIT
+END 
+IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") !Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 63 // from:
+SAY #21653 /* ~"아, 또 다른 산 자로군. 지하 묘지의 이토록 깊숙한 곳까지 내려오는 자는 대부분 굴들에게 죽임을 당하는데 당신은 운이 좋소."~ */
+IF ~  GlobalGT("Soego","GLOBAL",0) ~ THEN REPLY #21655 /* ~"당신은 시체안치소의 소에고가 아니오? 여기서 뭘 하고 있는 거요?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 72
+IF ~  Global("Soego","GLOBAL",0) ~ THEN REPLY #21656 /* ~"당신은 누구요?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 64
+IF ~  Global("Soego","GLOBAL",0) ~ THEN REPLY #21657 /* ~"여기는 어디요?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 77
+IF ~  Global("Soego","GLOBAL",0) ~ THEN REPLY #21658 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 78
+IF ~  Global("Soego","GLOBAL",0) ~ THEN REPLY #21660 /* ~"아마 그럴지도. 안녕히 계시오."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 64 // from: 63.1 77.0 78.0
+SAY #21661 /* ~"나는 더스트맨의 당원인 소에고요. 나는 이 곳에 선교사로서 왔소." 그는 고개를 반쯤 숙여 인사한다. ~ */
+IF ~~ THEN REPLY #21662 /* ~"선교사?"~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21663 /* ~"더스트맨이 이런 곳에서 뭘 하는 거요?"~ */ GOTO 66
+IF ~~ THEN REPLY #64595 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64596 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21665 /* ~"안녕하시오, 그리고 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 65 // from: 64.0 72.2 73.2 74.0 101.3 104.1
+SAY #21666 /* ~"그렇소, 나는 자아를 지닌 언데드들이 이 곳에 있다는 소문을 듣고 이 지하 묘지로 왔소. 나는 그들을 구원하고자 하오."~ */
+IF ~~ THEN REPLY #21667 /* ~"그들을 구원한다?"~ */ GOTO 67
+IF ~~ THEN REPLY #64597 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64599 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21669 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 66 // from: 64.1 72.3 73.3 74.1 101.4 104.2 109.2
+SAY #21670 /* ~"나밖에 없소. 나는 자아를 지닌 언데드들이 이 곳에 있다는 소문을 듣고 이 지하 묘지로 왔소. 나는 그들을 구원하고자 하오."~ */
+IF ~~ THEN REPLY #21671 /* ~"그들을 구원한다?"~ */ GOTO 67
+IF ~~ THEN REPLY #64600 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64601 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21673 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 67 // from: 65.0 66.0
+SAY #21674 /* ~"그렇소, 열정은 그들을 거짓된 현생에 묶어두고 있소. 내가 그들이 이러한 열정을 포기하고 거짓된 현생을 떠나 진정한 죽음에 도달하도록 가르칠 수 있다면 좋겠소."~ */
+IF ~~ THEN REPLY #21675 /* ~"거짓된 삶?"~ */ GOTO 68
+IF ~~ THEN REPLY #21676 /* ~"진정한 죽음?"~ */ GOTO 69
+IF ~~ THEN REPLY #21767 /* ~"당신은 그들이 죽기를 바라오?"~ */ GOTO 70
+IF ~~ THEN REPLY #64602 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64603 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21770 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0 69.0 70.0
+SAY #21771 /* ~"이 죽은 자들은... 진정한 죽음으로부터 너무나도 가까운 곳에 있소... 그럼에도 그들은 아직도 현생에 매달리고 있소. 이 그릇된 삶은 이 차원에 묶어두려는 허위로 가득한 환상에 불과하오."~ */
+IF ~~ THEN REPLY #21772 /* ~"진정한 죽음?"~ */ GOTO 69
+IF ~~ THEN REPLY #21774 /* ~"당신은 그들이 죽기를 바라오?"~ */ GOTO 70
+IF ~~ THEN REPLY #64604 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64605 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21776 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 69 // from: 67.1 68.0 70.1
+SAY #21777 /* ~"진정한 죽음은 일체의 열정이 없는 상태로, 이 존재의 그림자의 피안에 존재하는 진정한 삶이오. 그 곳은 죽은 자들이 스스로를 해방시키기 위해 도달해야만 하는 곳이오."~ */
+IF ~~ THEN REPLY #21779 /* ~"당신이 얘기한 '거짓된 삶'이란 무엇이오?"~ */ GOTO 68
+IF ~~ THEN REPLY #21780 /* ~"당신은 그들이 죽기를 바라오?"~ */ GOTO 70
+IF ~~ THEN REPLY #64606 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64607 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21784 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 70 // from: 67.2 68.1 69.1
+SAY #21786 /* ~"나는 그들이 열정을 버리고 이 존재의 차원을 초월하기를 바라오. 그것만이 그들을 구원할 수 있소." ~ */
+IF ~~ THEN REPLY #21788 /* ~"당신이 얘기한 '거짓된 삶'이란 무엇이오?"~ */ GOTO 68
+IF ~~ THEN REPLY #21790 /* ~"당신은 '진정한 죽음'에 대해 얘기를 했소?~ */ GOTO 69
+IF ~~ THEN REPLY #64608 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64609 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21794 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 71 // from: 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
+SAY #21799 /* ~"가기 전에 잠시 내 말에 귀를 기울이시오. 이 지하 묘지 안에서는 언데드를 결코 공격하지 마시오. 당신이 평화적으로 나오는 한 그들은 당신을 해치지 않을 것이오. 만약 당신이 적대적으로 나온다면 그들도 자신들을 방어할 것이오... 그리고 그들의 수는 매우 많소. 마지막으로 만약 휴식할 곳이 필요하다면 이 곳으로 돌아와도 좋소."~ */
+IF ~  NumInParty(1) !Global("Visit_Doubtful","AR1500",1) ~ THEN REPLY #21800 /* ~"기다리시오... 지금 휴식을 취해도 괜찮겠소?"~ */ JOURNAL #21805 /* ~소에고는 내게 죽은 자의 왕국에서는 어떤 언데드도 공격하지 말라고 말해주었는데, 이는 내가 평화적으로 나오는 한 그들도 나를 해치지 않을 것이기 때문이다.~ */ GOTO 84
+IF ~  NumInPartyGT(1) !Global("Visit_Doubtful","AR1500",1) ~ THEN REPLY #64569 /* ~"기다리시오... 지금 휴식을 취해도 괜찮겠소?"~ */ JOURNAL #21805 /* ~소에고는 내게 죽은 자의 왕국에서는 어떤 언데드도 공격하지 말라고 말해주었는데, 이는 내가 평화적으로 나오는 한 그들도 나를 해치지 않을 것이기 때문이다.~ */ GOTO 84
+IF ~~ THEN REPLY #64570 /* ~떠난다.~ */ JOURNAL #21805 /* ~소에고는 내게 죽은 자의 왕국에서는 어떤 언데드도 공격하지 말라고 말해주었는데, 이는 내가 평화적으로 나오는 한 그들도 나를 해치지 않을 것이기 때문이다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 63.0
+SAY #21806 /* ~"당신은 기억력이 좋은 것 같소. 나는 더 이상 시체안치소에서 근무하지 않소... 대신 나는 이 지역에 선교사로 파견되었소."~ */
+IF ~  Global("Soego_Strangle","GLOBAL",1) Global("Mortuary_Soego_Killed","GLOBAL",0) ~ THEN REPLY #64547 /* ~"하지만 난 분명히 당신 목을 부러트렸는데..." ~ */ GOTO 73
+IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1) ~ THEN REPLY #21808 /* ~"하지만 난 내가 당신을 *죽였다고* 생각했는데..."~ */ GOTO 73
+IF ~~ THEN REPLY #21809 /* ~"전도사?"~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21811 /* ~"더스트맨이 이런 곳에서 뭘 하는 거요?"~ */ GOTO 66
+IF ~~ THEN REPLY #64610 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64611 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21813 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 73 // from: 72.0 72.1 109.0 109.1
+SAY #21814 /* ~"당신이 내게 입힌 상처는 치명상이 아니었소. 나는 금새 회복했고... 시체안치소에서 떨어져 있고 싶다는 생각이 들었소."~ */
+IF ~  Global("Soego_Strangle","GLOBAL",1) ~ THEN REPLY #21815 /* ~"소에고, 난 당신 목을 부러트렸소... 그건 치명상이 아니오?"~ */ GOTO 101
+IF ~~ THEN REPLY #21816 /* ~"당신은 화가 나지 않소?"~ */ GOTO 74
+IF ~~ THEN REPLY #21817 /* ~"흠... 그래, 당신은 자신이 전도사라고 했소?"~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21818 /* ~"그럼 좋소. 더스트맨이 이런 곳에서 뭘 하는 거요?"~ */ GOTO 66
+IF ~~ THEN REPLY #64612 /* ~"좋소... 그래 여긴 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64613 /* ~"알겠소... 왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21820 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.1 101.2 104.0
+SAY #21821 /* ~"아니... 그래야만 하오? 나는 아직 내가 이 세상을 떠날 때가 되지 않았다는 사실에 다소 실망했소. 그렇지만 당신은 시체안치소로는 돌아가지 않는 것이 좋을 거요, 내 동료 당원들은 당신을 별로 반기지 않을 테니까.~ */
+IF ~~ THEN REPLY #64614 /* ~"당신은 자신이 전도사라고 했소?"~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21823 /* ~"더스트맨이 이런 곳에서 뭘 하는 거요?"~ */ GOTO 66
+IF ~~ THEN REPLY #64615 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #64616 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21825 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 75 // from:
+SAY #21716 /* ~Null node.~ */
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 76 // from:
+SAY #21832 /* ~Null node.~ */
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 77 // from: 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
+SAY #21837 /* ~"당신은 죽은 자의 왕국의 지하 묘지에 있소. 위병들이 당신을 이 곳으로 데려왔소."~ */
+IF ~~ THEN REPLY #21840 /* ~"그리고 당신은 누구였더라?"~ */ GOTO 64
+IF ~~ THEN REPLY #21841 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #21843 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 78 // from: 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
+SAY #21844 /* ~"모르겠소. 이 곳의 '시민들'에게 물어보시오."~ */
+IF ~~ THEN REPLY #21847 /* ~"그리고 당신은 누구였더라?"~ */ GOTO 64
+IF ~~ THEN REPLY #21848 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #21850 /* ~"아마 그럴지도. 안녕히 계시오."~ */ GOTO 71
+END 
+IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 79 // from:
+SAY #21851 /* ~"아, 우리의 대의에 협조할 사람이 오셨군! 여럿이-모여-하나의 첩자인 나는 당신이 온다는 소식을 이미 들어 알고 있었소. 당신은 우리를 위해 침묵의 왕의 알현실로 들어갈 방법을 찾아내 그를 죽여야만 하오. 이 일을 해내면 여럿이-모여-하나가 당신에게 상을 내릴 거요."~ */
+IF ~  Global("Dustman_Initiation","GLOBAL",5) GlobalGT("Soego","GLOBAL",0) GlobalLT("Soego","GLOBAL",3) ~ THEN REPLY #66181 /* ~"소에고... 에모릭이 당신이 어디 있는지를 알고 싶어하고 있소."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 110
+IF ~  Global("Dustman_Initiation","GLOBAL",5) Global("Soego","GLOBAL",0) ~ THEN REPLY #21852 /* ~"기다리시오, 당신이 소에고요? 에모릭이 당신의 소재를 알고 싶어하고 있소."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() JOURNAL #21856 /* ~나는 소에고를 찾았다. 그는 수인화의 저주에 감염되었으며 그 때문에 지하 묘지로 도망쳤다. 그의 정신은 더 이상 그의 것이 아니며, 그는 더스트맨으로서의 신념을 잃어버렸다. ~ */ GOTO 110
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) Global("Soego_Strangle","GLOBAL",1) Global("Mortuary_Soego_Killed","GLOBAL",0) ~ THEN REPLY #64623 /* ~"잠깐만 기다리시오... 내가 시체안치소에서 당신 목을 부러트리지 않았었소?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 112
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) Global("Mortuary_Soego_Killed","GLOBAL",1) ~ THEN REPLY #64624 /* ~"잠깐만 기다리시오... 난 내가 시체안치소에 당신을 죽였다고 생각했는데..."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 112
+IF ~  Global("Soego_Strangle","GLOBAL",0) Global("Mortuary_Soego_Killed","GLOBAL",0) !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21853 /* ~"어떻게 하면 침묵의 왕이 있는 곳으로 갈 수가 있소?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() JOURNAL #21857 /* ~소에고는 침묵의 왕의 알현실로 들어가는 방법을 모른다고 한다, 하지만 침묵의 왕을 죽이기 위해선 그 곳에 들어가야만 한다 .~ */ GOTO 80
+IF ~  Global("Soego_Strangle","GLOBAL",0) Global("Mortuary_Soego_Killed","GLOBAL",0) !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #21854 /* ~"알겠소. 그럼 안녕히 계시오."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 80 // from: 79.4 110.2 112.0
+SAY #21858 /* ~"모르겠소... 내가 이 곳에 온지도 꽤 되었지만 아직도 그의 알현실로 들어갈 방법은 찾아내지 못했소. 당신은 나처럼 편견과 증오의 대상이 아니니 아마 해낼 수 있을지도 모르오."~ */
+IF ~~ THEN REPLY #21860 /* ~"증오와 편견?"~ */ GOTO 81
+IF ~~ THEN REPLY #21862 /* ~"알겠소. 그럼 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 81 // from: 80.0
+SAY #21864 /* ~"내 당파의 사상을 모든 사람들이 다 좋아하는 건 아니오. 특히 이 곳의 우두머리들은 내 사상을 달갑게 여기지 않소."~ */
+IF ~~ THEN REPLY #21870 /* ~"알겠소. 그럼 안녕히 계시오."~ */ GOTO 71
+END 
+IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */ ~  CreatureInArea("AR1500") Global("Met_Soego2","GLOBAL",1)
+~ THEN BEGIN 82 // from:
+SAY #21913 /* ~"아, 다시 만나 반갑소."~ */
+IF ~  Global("Silent_King","GLOBAL",1) Global("Soego_Told","GLOBAL",0) Global("Lawful_Hargrimm_1","GLOBAL",1) ~ THEN REPLY #24206 /* ~"침묵의 왕은 죽었소, 그것도 아주 오래 전에. 침묵의 왕은 존재하지 않소."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1) IncrementGlobalOnceEx("GLOBALChaotic_Hargrimm_7","GLOBALLaw",-3) IncrementGlobalOnceEx("GLOBALEvil_Hargrimm_3","GLOBALGood",-1) ~ GOTO 94
+IF ~  Global("Silent_King","GLOBAL",1) Global("Soego_Told","GLOBAL",0) !Global("Lawful_Hargrimm_1","GLOBAL",1) ~ THEN REPLY #21915 /* ~"침묵의 왕은 죽었소, 그것도 아주 오래 전에. 침묵의 왕은 존재하지 않소."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1) JOURNAL #21926 /* ~일지의 내용을 가지고 소에고를 추궁하자 그는 위어랫으로 변해 나를 공격했다. ~ */ GOTO 94
+IF ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) ~ THEN REPLY #21914 /* ~"당신이 소에고요? 에모릭이 당신의 소재를 알고 싶어하고 있소."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) ~ GOTO 109
+IF ~  Global("Soego_Journal","GLOBAL",1) ~ THEN REPLY #21916 /* ~"나는 당신 방에서 당신의 일지를 보았소."~ */ DO ~SetGlobal("Soego_Fled","GLOBAL",1) Enemy() JOURNAL #21926 /* ~일지의 내용을 가지고 소에고를 추궁하자 그는 위어랫으로 변해 나를 공격했다. ~ */ GOTO 100
+IF ~  Global("Doubtful_Skel","GLOBAL",1) ~ THEN REPLY #21917 /* ~"나는 이 곳의 복도들 중 한 곳에서 진정한 죽음을 추구하려고 하기 일보직전인 스켈레톤을 만났소."~ */ DO ~SetGlobal("Doubtful_Skel","GLOBAL",2) SetGlobal("Visit_Doubtful","AR1500",1) ~ GOTO 97
+IF ~  NumInParty(1) !Global("Visit_Doubtful","AR1500",1) ~ THEN REPLY #21920 /* ~"나는 휴식을 취해야겠소."~ */ GOTO 84
+IF ~  NumInPartyGT(1) !Global("Visit_Doubtful","AR1500",1) ~ THEN REPLY #21922 /* ~"우리는 휴식을 취해야겠소."~ */ GOTO 84
+IF ~~ THEN REPLY #21924 /* ~"질문하고 싶은 것이 좀 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #21925 /* ~"그냥 지나다가 들렸을 뿐이오. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 83 // from: 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
+SAY #21943 /* ~"내가 대답할 수 있는 거라면 대답하리다."~ */
+IF ~  Global("Know_Hargrimm","GLOBAL",1) ~ THEN REPLY #21944 /* ~"하그림에 대해 얘기해주시오."~ */ GOTO 88
+IF ~  Global("Know_Acaste","GLOBAL",1) ~ THEN REPLY #21945 /* ~"아카스트에 대해 얘기해주시오."~ */ GOTO 89
+IF ~  Global("Know_Stale_Mary","GLOBAL",1) ~ THEN REPLY #21946 /* ~"썩은 메리에 대해 얘기해주시오."~ */ GOTO 90
+IF ~  Global("Know_Silent_King","GLOBAL",1) ~ THEN REPLY #21947 /* ~"침묵의 왕에 대해 얘기해주시오."~ */ GOTO 91
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #21948 /* ~"당신은 이 '문명'에 대해 어떤 것을 아시오?"~ */ GOTO 92
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #21949 /* ~"당신은 이 '문명'에 대해 어떤 것을 아시오?"~ */ GOTO 93
+IF ~~ THEN REPLY #21951 /* ~"관두시오. 그럼 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 84 // from: 71.0 71.1 82.5 82.6
+SAY #21954 /* ~"물론이오. 이 방에서는 안전하게 휴식을 취할 수가 있소."~ */
+IF ~~ THEN REPLY #21956 /* ~"고맙소..."~ */ DO ~FadeToColor([20.0],0) Wait(1) RestPartyEx(0,10,FALSE) FadeFromColor([20.0],0) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 85 // from:
+SAY #21958 /* ~Null Node.~ */
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 86 // from:
+SAY #21963 /* ~Null Node.~ */
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 87 // from:
+SAY #21969 /* ~Null Node.~ */
+IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 88 // from: 83.0 91.0
+SAY #21975 /* ~"고집불통이오, 하지만 그의 경건함과 책무에 대한 헌신은 존경할만 하오. 그는 이 곳에서의 내 최대의 라이벌이오, 그리고 그는 이 문명을 오랜 세월 동안 유지시켜 왔소. 그의 열정은 그의 경건함과 책무에 대한 헌신으로부터 나온다오... 존경할만하기는 하나 그 대상이 잘못되었소."~ */
+IF ~~ THEN REPLY #21976 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #21977 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 89 // from: 83.1
+SAY #21978 /* ~"아키스트는 야수만도 못한 자요. 오직 침묵의 왕의 권위만이 그녀가 날뛰는 것을 막고 있쏘. 만약 그가 사라진다면 굴들이 이 지하 묘지 전체를 유린할 것이오."~ */
+IF ~~ THEN REPLY #21979 /* ~"침묵의 왕에 대해 얘기해주시오."~ */ DO ~SetGlobal("Know_Silent_King","GLOBAL",1) ~ GOTO 91
+IF ~~ THEN REPLY #21980 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #21981 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 90 // from: 83.2
+SAY #21982 /* ~"썩은 메리는 느리기는 하지만 마음씨가 고운 사람이오. 나는 그녀가 하는 말을 거의 이해하지 못하오, 하지만 그녀나 그녀의 좀비들은 폭력적이지 않소."~ */
+IF ~~ THEN REPLY #21983 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #21984 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 91 // from: 83.3 89.0
+SAY #21985 /* ~"나는 침묵의 왕을 본 적이 없소. 그에 대해 당신에게 얘기해줄 수 있었으면 좋겠으나 나 자신도 그를 본 적이 없소. 그의 알현실은 진홍색 문 뒤에 있으리라고 생각되나, 나는 그 곳에 들어갈 허가를 받지 못했소... 스켈레톤 사제인 하그림이 그걸 허락하지 않소."~ */
+IF ~~ THEN REPLY #21986 /* ~"하그림에 대해 얘기해주시오."~ */ DO ~SetGlobal("Know_Hargrimm","GLOBAL",1) ~ GOTO 88
+IF ~~ THEN REPLY #21987 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #21988 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 92 // from: 83.4
+SAY #21989 /* ~"내 생각에 그들은 이 곳에서 여러 세기 동안 있었던 것 같소, 그들의 왕국에서 죽어간 자들을 보살피며 말이오. 책무에 대한 그러한 헌신은 더 이상 필요하지 않소... 아니, 그건 오히려 범죄적인 행위요."~ */
+IF ~~ THEN REPLY #21990 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #21991 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 93 // from: 83.5
+SAY #21992 /* ~"내 생각에 그들은 이 곳에서 여러 세기 동안 있었던 것 같소, 그들의 왕국에서 죽어간 자들을 보살피며 말이오. 책무에 대한 그러한 헌신은 더 이상 필요하지 않소... 아니, 그건 오히려 범죄적인 행위요."~ */
+IF ~~ THEN EXTERN ~DMORTE~ 220
+END
+
+IF ~~ THEN BEGIN 94 // from: 82.0 82.1
+SAY #21993 /* ~"뭐라고? 그게 사실이오? 아, 그 정보를 가져가면 여럿이-모여-하나가 그대에게 상을 내릴 것이오..."~ */
+IF ~  !Global("CR_Vic","GLOBAL",1) Global("Know_Many","GLOBAL",0) ~ THEN REPLY #25248 /* ~"여럿이-모여-하나?"~ */ JOURNAL #25254 /* ~나는 소에고에게 침묵의 왕이 쭈글쭈글한 시체에 불과하다고 얘기해주었다. 그는 내게 이 사실을 여럿이 모여 하나에게 알려야 하며 그러면 상을 받을 수 있을 것이라고 말했다. 여럿이 모여 하나는 눈물을 흘리는 돌 지하묘지 동쪽에 있는 사고의 굴에 사는 크래니움 랫들의 정신 집합체이다. ~ */ GOTO 111
+IF ~  !Global("CR_Vic","GLOBAL",1) Global("Know_Many","GLOBAL",1) ~ THEN REPLY #25252 /* ~"흥미롭군. 그 밖에도 물어볼 것들이 있소..."~ */ JOURNAL #25254 /* ~나는 소에고에게 침묵의 왕이 쭈글쭈글한 시체에 불과하다고 얘기해주었다. 그는 내게 이 사실을 여럿이 모여 하나에게 알려야 하며 그러면 상을 받을 수 있을 것이라고 말했다. 여럿이 모여 하나는 눈물을 흘리는 돌 지하묘지 동쪽에 있는 사고의 굴에 사는 크래니움 랫들의 정신 집합체이다. ~ */ GOTO 83
+IF ~  !Global("CR_Vic","GLOBAL",1) Global("Know_Many","GLOBAL",1) ~ THEN REPLY #25253 /* ~"아마 그럴지도. 안녕히 계시오."~ */ JOURNAL #25254 /* ~나는 소에고에게 침묵의 왕이 쭈글쭈글한 시체에 불과하다고 얘기해주었다. 그는 내게 이 사실을 여럿이 모여 하나에게 알려야 하며 그러면 상을 받을 수 있을 것이라고 말했다. 여럿이 모여 하나는 눈물을 흘리는 돌 지하묘지 동쪽에 있는 사고의 굴에 사는 크래니움 랫들의 정신 집합체이다. ~ */ EXIT
+IF ~  Global("CR_Vic","GLOBAL",1) ~ THEN REPLY #21994 /* ~"좋소. 질문할 것들이 좀 있소."~ */ JOURNAL #21996 /* ~나는 소에고에게 침묵의 왕이 쭈글쭈글한 시체에 불과하다고 얘기해주었다. 나는 기회가 생기는 대로 여럿이 모여 하나에게 이 사실을 알려야겠다. ~ */ GOTO 83
+IF ~  Global("CR_Vic","GLOBAL",1) ~ THEN REPLY #21995 /* ~"그럼 내가 그에게 직접 얘기하겠소. 안녕히 계시오."~ */ JOURNAL #21996 /* ~나는 소에고에게 침묵의 왕이 쭈글쭈글한 시체에 불과하다고 얘기해주었다. 나는 기회가 생기는 대로 여럿이 모여 하나에게 이 사실을 알려야겠다. ~ */ EXIT
+END 
+IF WEIGHT #0 ~  CreatureInArea("AR1500") GlobalGT("Soego_Exposed","GLOBAL",0)
+~ THEN BEGIN 95 // from:
+SAY #21997 /* ~"이 개자식!"~ */
+IF ~~ THEN REPLY #21998 /* ~"뭐-"~ */ DO ~Enemy() ~ EXIT
+END
+
+IF ~~ THEN BEGIN 96 // from:
+SAY #22003 /* ~"에... 그 문은 내 개인 방으로 통하는 문이오. 그 방에는 들어가지 마시오."~ */
+IF ~~ THEN REPLY #22004 /* ~떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 97 // from: 82.4
+SAY #22005 /* ~"오! 당장 가서 그와 얘기하겠소!"~ */
+IF ~~ THEN REPLY #22006 /* ~"안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 98 // from:
+SAY #22007 /* ~"아니, 가는 중이오.~ */
+IF ~~ THEN REPLY #22008 /* ~"안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 99 // from:
+SAY #22009 /* ~"불행히도 아니오. 하지만 그렇게 될 가능성은 있소."~ */
+IF ~~ THEN REPLY #22010 /* ~"알겠소. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 100 // from: 82.3
+SAY #22011 /* ~소에고는 잠시 멈춘다. "알겠소." 그는 갑자기 놀라운 변신을 시작한다...~ */
+IF ~~ THEN REPLY #22012 /* ~"대체 무슨...?"~ */ DO ~ClearAllActions() ~ EXIT
+END
+
+IF ~~ THEN BEGIN 101 // from: 73.0
+SAY #22014 /* ~"어... 당신은 기억력이 나쁜 모양이오. 물론 나는 목을 다쳤소. 하지만 삐었을 뿐 부러진 건 아니오."~ */
+IF ~  !Global("Lawful_Soego_1","GLOBAL",1) ~ THEN REPLY #22015 /* ~"내 생각은 다르오. 당신은 대체 뭐요, 소에고?"~ */ GOTO 106
+IF ~  Global("Lawful_Soego_1","GLOBAL",1) ~ THEN REPLY #22016 /* ~"내 생각은 다르오. 당신은 대체 뭐요, 소에고?"~ */ GOTO 103
+IF ~~ THEN REPLY #22018 /* ~"당신은 화가 나지 않소?"~ */ GOTO 74
+IF ~~ THEN REPLY #22019 /* ~"흠... 그래, 당신은 자신이 전도사라고 했소?"~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #22020 /* ~"더스트맨이 이런 곳에서 뭘 하는 거요?"~ */ GOTO 66
+IF ~~ THEN REPLY #22022 /* ~"내가 알고 싶었던 건 그것이 전부요. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 102 // from:
+SAY #22023 /* ~그는 초자연적인 속도로 당신 손아귀로부터 벗어난다. 그는 침을 뱉으며 냉소한다 "감히 크래니움 랫 정신 집합체의 대리인을 공격하다니 어리석군!" 그는 갑자기 놀라운 변신을 시작한다...~ */
+IF ~~ THEN REPLY #22024 /* ~"대체 무슨...?"~ */ DO ~SetGlobal("Soego","GLOBAL",4) SetGlobal("Soego_Fled","GLOBAL",2) Enemy() JOURNAL #21856 /* ~나는 소에고를 찾았다. 그는 수인화의 저주에 감염되었으며 그 때문에 지하 묘지로 도망쳤다. 그의 정신은 더 이상 그의 것이 아니며, 그는 더스트맨으로서의 신념을 잃어버렸다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 103 // from: 101.1
+SAY #22026 /* ~"말도 안 되는 질문이오! 당신은 시체안치소의 철판 위에서 깨어났소... 그건 당신 스스로 내게 해준 얘기요. 내 상처도 수집자가 당신을 시체라고 착각하게 만든 상처들보다는 심하지 않았을 것이오, 아니 그렇소?"~ */
+IF ~~ THEN REPLY #22027 /* ~"틀린 얘기는 아니오, 하지만... 관둡시다."~ */ GOTO 104
+IF ~~ THEN REPLY #22028 /* ~"내 상태는... 특이하오."~ */ GOTO 105
+IF ~~ THEN REPLY #22029 /* ~"아니오. 뭔가가 분명히 잘못되었소, 그리고 난 그것이 무엇인지 곧 알아낼 거요."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 104 // from: 103.0 103.2 105.0 105.1 106.1 107.0
+SAY #22032 /* ~그는 어깨를 으쓱한다. "좋소."~ */
+IF ~~ THEN REPLY #22033 /* ~"당신은 그 일에 대해 화가 나지도 않소?"~ */ GOTO 74
+IF ~~ THEN REPLY #22034 /* ~"흠... 그래, 당신은 자신이 전도사라고 했소?"~ */ GOTO 65
+IF ~  !Global("Dustman_Initiation","GLOBAL",5) ~ THEN REPLY #22035 /* ~"그래 더스트맨이 이런 곳에서 뭘 하는 거요?"~ */ GOTO 66
+IF ~~ THEN REPLY #22038 /* ~"이만 실례하도록 하겠소. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 105 // from: 103.1
+SAY #22039 /* ~그는 미소짓는다. "모든 사람에게는 제각기 특이한 점이 있기 마련이오. 설마 그걸 부정하겠소?"~ */
+IF ~~ THEN REPLY #22040 /* ~"틀린 얘기는 아니오, 하지만... 관둡시다."~ */ GOTO 104
+IF ~~ THEN REPLY #22041 /* ~"아니오. 뭔가가 분명히 잘못되었소, 그리고 난 그것이 무엇인지 곧 알아낼 거요."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 106 // from: 101.0
+SAY #22043 /* ~"내가 무엇이냐고? 그건 대체 어떤 종류의 질문이오?"~ */
+IF ~~ THEN REPLY #22044 /* ~"당신은 내 말뜻이 뭔지 알 거요. 당신은 평범한 더스트맨이 아니오. 당신 *정체*는 무엇이오, 소에고?"~ */ GOTO 107
+IF ~~ THEN REPLY #22045 /* ~"관두시오. 관두시오."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 107 // from: 106.0
+SAY #22047 /* ~소에고는 당신을 노려본다. "나는 당신이 *무슨* 말을 하는지 모르겠소."~ */
+IF ~~ THEN REPLY #22048 /* ~"뭔가가 분명히 잘못되었소, 그리고 난 그것이 무엇인지 곧 알아낼 거요."~ */ GOTO 104
+END 
+IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5) GlobalLT("Soego","GLOBAL",3) !Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 108 // from:
+SAY #22050 /* ~"아, 또 다른 산 자로군. 지하 묘지의 이토록 깊숙한 곳까지 내려오는 자는 대부분 굴들에게 죽임을 당하는데 당신은 운이 좋소."~ */
+IF ~  Global("Soego","GLOBAL",0) ~ THEN REPLY #22051 /* ~"당신이 소에고요? 에모릭이 당신의 소재를 알고 싶어하고 있소."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() JOURNAL #22052 /* ~나는 소에고를 찾았다. 그는 지하 묘지를 수호하는 언데드의 집단을 발견하였다. 그는 그들이 진정한 죽음을 받아들이도록 설득하고 있다. ~ */ GOTO 109
+IF ~  GlobalGT("Soego","GLOBAL",0) ~ THEN REPLY #66173 /* ~"소에고... 에모릭이 당신이 어디 있는지를 알고 싶어하고 있소."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1) SetGlobal("Soego","GLOBAL",3) SetGlobal("Soego_Talk","AR1500",2) EndCutSceneMode() ~ GOTO 109
+END
+
+IF ~~ THEN BEGIN 109 // from: 82.2 108.0 108.1
+SAY #22053 /* ~"그렇소, 내가 그 사람이오. 나는 더스트맨의 선교사로서 이 곳에 왔소."~ */
+IF ~  Global("Soego_Strangle","GLOBAL",1) Global("Mortuary_Soego_Killed","GLOBAL",0) ~ THEN REPLY #64617 /* ~"좋소. 하지만... 난 내가 당신 목을 부러트렸다고 생각했는데..."~ */ GOTO 73
+IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1) ~ THEN REPLY #64618 /* ~"좋소. 하지만... 난 내가 당신을 죽였다고 생각했는데..."~ */ GOTO 73
+IF ~~ THEN REPLY #22054 /* ~"이 곳에 당신말고 다른 더스트맨도 있소?"~ */ GOTO 66
+IF ~~ THEN REPLY #50792 /* ~"여기는 어디요?"~ */ GOTO 77
+IF ~~ THEN REPLY #50793 /* ~"왜 내가 이 곳에 감금된 거요?"~ */ GOTO 78
+IF ~~ THEN REPLY #22056 /* ~"이만 실례하도록 하겠소. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 110 // from: 79.0 79.1
+SAY #22057 /* ~"그렇소, 내가 그 사람이오."~ */
+IF ~  Global("Soego_Strangle","GLOBAL",1) Global("Mortuary_Soego_Killed","GLOBAL",0) ~ THEN REPLY #64625 /* ~"잠깐만 기다리시오... 내가 시체안치소에서 당신 목을 부러트리지 않았었소?"~ */ GOTO 112
+IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1) ~ THEN REPLY #64626 /* ~"잠깐만 기다리시오... 난 내가 시체안치소에 당신을 죽였다고 생각했는데..."~ */ GOTO 112
+IF ~  Global("Soego_Strangle","GLOBAL",0) Global("Mortuary_Soego_Killed","GLOBAL",0) ~ THEN REPLY #22058 /* ~"좋소. 자, 어떻게 하면 침묵의 왕이 있는 곳으로 갈 수가 있소?"~ */ JOURNAL #21857 /* ~소에고는 침묵의 왕의 알현실로 들어가는 방법을 모른다고 한다, 하지만 침묵의 왕을 죽이기 위해선 그 곳에 들어가야만 한다 .~ */ GOTO 80
+IF ~  Global("Soego_Strangle","GLOBAL",0) Global("Mortuary_Soego_Killed","GLOBAL",0) ~ THEN REPLY #22060 /* ~"좋소. 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 111 // from: 94.0
+SAY #25249 /* ~"그렇소, 크래니움 랫의 정신 집합체요. 눈물을 흘리는 돌의 서쪽에 있는 지하 묘지로 가시오. 그 곳에 가면 길을 찾을 수 있을 것이오."~ */
+IF ~~ THEN REPLY #25250 /* ~"흥미롭군. 그 밖에도 물어볼 것들이 있소..."~ */ GOTO 83
+IF ~~ THEN REPLY #25251 /* ~"아마 그럴지도. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 112 // from: 79.2 79.3 110.0 110.1
+SAY #64620 /* ~그는 손을 저어 당신 말을 가로막는다. "아무 것도 아니었소. 나는 이미 수인화의 축복을 받았기 때문에 그런 상처는 금방 나았소."~ */
+IF ~~ THEN REPLY #64621 /* ~"알겠소... 그래, 어떻게 하면 침묵의 왕이 있는 곳에 갈 수가 있소?"~ */ GOTO 80
+IF ~~ THEN REPLY #64622 /* ~"좋소... 그럼 안녕히 계시오."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 113 // from: 38.1
+SAY #66709 /* ~"안녕하시오..." 사내는 당신을 향해 몸을 돌린 후 가볍게 인사한다. 당신은 그의 눈이 충혈된 것이라기보다는 약간의 붉은 색조를 띠고 있는 것이라는 사실을 갑자기 깨닫는다. "나는 소에고요. 내가 어떻게 도와드리면 되겠소?"~ */
+IF ~~ THEN REPLY #66712 /* ~"나는 시체안치소에서 나가고 싶소. 날 도와줄 수 있겠소?"~ */ GOTO 114
+IF ~~ THEN REPLY #66713 /* ~"질문할 것들이 좀 있소..."~ */ GOTO 114
+IF ~~ THEN REPLY #66714 /* ~"그냥 지나가고 있었을 뿐이오. 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 114 // from: 113.0 113.1
+SAY #66710 /* ~당신이 말을 반쯤 끝냈을 때, 소에고가 갑자기 입을 연다, 그러자 더럽고 날카로운 이빨들이 드러난다. 그는 당신에게 다가와 킁킁거리며 냄새를 맡는다. ~ */
+IF ~~ THEN REPLY #66715 /* ~"어... 내 냄새를 맡는 이유가 대체 뭐요?"~ */ GOTO 115
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #66716 /* ~그가 몸을 구부릴 때 목을 부러트린다.~ */ GOTO 22
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #66717 /* ~그가 몸을 구부릴 때 목을 부러트린다.~ */ GOTO 19
+IF ~~ THEN REPLY #66718 /* ~"관두시오... 안녕히 계시오."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 115 // from: 114.0
+SAY #66711 /* ~"당신 옷... 이 법복... 냄새가 다르오. 그건 당신 것이 아니오." 소에고는 입가에 기묘한 미소를 띄운다, 그리고 그의 눈은 야수와 같은 눈빛으로 번득인다. "당신은 대체 누구요."~ */
+IF ~~ THEN REPLY #66719 /* ~"나는 평화롭게 이 곳을 떠나기 위해 이 법복을 훔쳤을 뿐이오. 나는 위층의 준비실들 중 하나에서 눈을 떴소."~ */ GOTO 42
+IF ~~ THEN REPLY #66720 /* ~"당신 말이 맞소. 이 법복은 내 것이 아니오, 하지만 그것이 원래 누구 것이었는지 당신이 알 바가 아니오."~ */ GOTO 6
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #66721 /* ~그가 도와달라고 외치기 전에 그의 목을 부러트린다. ~ */ GOTO 22
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #66722 /* ~그가 도와달라고 외치기 전에 그의 목을 부러트린다. ~ */ GOTO 19
+IF ~~ THEN REPLY #66723 /* ~"상관없는 일이오. 이만 떠나도록 하겠소."~ */ GOTO 17
+END

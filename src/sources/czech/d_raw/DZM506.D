@@ -1,0 +1,73 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM506.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM506~
+
+IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN BEGIN 0 // from: 3.2
+  SAY #45419 /* ~Tato těžce rozpíchaná mrtvola se líně přesouvá tam a zpět mezi dvěma deskami. Číslo "506" má přišito na čele... a straně krku... a pravé paži... dá se říci, že kůže na této loupající se mrtvole byla sešita tolika stehy, že vypadá jako bizarní mapa ulic.~ */
+  IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN REPLY #45420 /* ~Prozkoumej steh.~ */ GOTO 3
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45421 /* ~"Já vím, že nejsi zombie. Nikoho tady nepřevezeš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45422 /* ~Použij na mrtvolu svou schopnost Historky-kosti-povídejte.~ */ GOTO 2
+  IF ~~ THEN REPLY #45423 /* ~"Bylo ohromné mluvit s tebou. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #45424 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 4.0 4.1 5.0 5.1 5.2
+  SAY #45425 /* ~Mrtvola tupě zírá přímo dopředu.~ */
+  IF ~~ THEN REPLY #45478 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.2 5.3
+  SAY #45426 /* ~Mrtvola se nehýbá. Vypadá, že je příliš daleko na to, aby ti odpověděla na otázky.~ */
+  IF ~~ THEN REPLY #45479 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+  SAY #45427 /* ~Vpichy obkružují celou mrtvolu, jdou z jejích paží, přes hrudník a krk až nahoru do vlhkého chomáče bílých vlasů. Jak sleduješ křižovatky vpichů, všimneš si, že do čela mrtvoly někdo zapíchl jehlu... jehla je připevněna k vláknu našitému ke straně lebky. Mohl bys to pravděpodobně uvolnit, kdybys měl něco, s čím bys mohl přeříznout vlákno.~ */
+  IF ~  PartyHasItem("Scalpel")
+~ THEN REPLY #45480 /* ~Přeřízni stehy skalpelem a pak vytáhni jehlu i s nití.~ */ DO ~SetGlobal("506_Thread","GLOBAL",1)
+GiveItemCreate("Needle",Protagonist,1,0,0)
+AddexperienceParty(100)
+~ GOTO 4
+  IF ~  !PartyHasItem("Scalpel")
+~ THEN REPLY #45481 /* ~"Hmmm. Možná by tu někde mohlo být něco, čím bych mohl přeříznout tu nit... ještě se vrátím."~ */ EXIT
+  IF ~~ THEN REPLY #45482 /* ~Prozkoumej mrtvolu ještě jednou.~ */ GOTO 0
+  IF ~~ THEN REPLY #45483 /* ~Nechej tělo být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #45428 /* ~Opatrně jsi přeřízl skalpelem nit, vytrhl jsi jehlu a vytáhl stehy. Jakmile jsi to udělal, kůže pokrývající čelo se odchlípla a odhalila křídově bílou lebku mrtvoly - a tam je, k tvému údivu, vyryto číslo "78".~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45484 /* ~"Mrtvolo, zdá se, že máš dvě rozdílná označení."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45496 /* ~"Mrtvolo, zdá se, že máš dvě rozdílná označení." ~ */ GOTO 1
+  IF ~~ THEN REPLY #50097 /* ~Prohledej tělo znovu.~ */ GOTO 5
+  IF ~~ THEN REPLY #66889 /* ~Nechej tělo na pokoji.~ */ EXIT
+END
+
+IF ~  Global("506_Thread","GLOBAL",1)
+~ THEN BEGIN 5 // from: 4.2
+  SAY #45429 /* ~Tato hustě sestehovaná mrtvola se lenivě belhá sem a tam mezi dvěma deskami. Ačkoliv jsou téměř po celém jejím těle vyšita čísla "506", od lebky se jí na čele odloupla kůže a odkryla tak číslo "78", vyryté do kosti.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45502 /* ~"Mrtvolo, zdá se, že máš dvě rozdílná označení." ~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45508 /* ~"Mrtvolo, zdá se, že máš dvě rozdílná označení." ~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45510 /* ~"Ty nejsi zombie, vždyť víš. Tady nikoho neošálíš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45512 /* ~Použij na mrtvolu svoji schopnost Historky-kosti-povídejte.~ */ GOTO 2
+  IF ~~ THEN REPLY #45513 /* ~"Pěkně jsem si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #45514 /* ~Nechej mrtvolu být.~ */ EXIT
+END

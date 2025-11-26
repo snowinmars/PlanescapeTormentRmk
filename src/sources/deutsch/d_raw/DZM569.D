@@ -1,0 +1,53 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM569.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM569~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #24575 /* ~Diese trottende Leiche sieht so aus, als sei sie bereits seit mehreren Jahren tot. Die Haut auf ihrer Stirn ist zurückgepellt und legt den kalkweißen Schädel frei. Jemand hat die Zahl "569" in den freigelegten Knochen gemeißelt. ~ */
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+NearbyDialog("DMorte1")
+~ THEN REPLY #24576 /* ~"Ich suche nach einem Schlüssel... Hast du zufällig einen?"~ */ EXTERN ~DMORTE1~ 31
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+!NearbyDialog("DMorte1")
+~ THEN REPLY #24579 /* ~"Ich suche nach einem Schlüssel... Hast du zufällig einen?"~ */ GOTO 1
+  IF ~  GlobalGT("Mortuary_Walkthrough","GLOBAL",0)
+~ THEN REPLY #24580 /* ~"Na... gibt's hier irgendwas Interessantes zu berichten?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #24581 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #24584 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ GOTO 2
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+~ THEN REPLY #24585 /* ~Untersuche die Leiche und sieh nach, ob sie einen Schlüssel bei sich hat.~ */ GOTO 3
+  IF ~~ THEN REPLY #42290 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #42291 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 0.2 0.3 3.1
+  SAY #24577 /* ~Die Leiche starrt dich stumm an.~ */
+  IF ~~ THEN REPLY #24578 /* ~"Ach, vergiß es. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #42292 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+  SAY #24582 /* ~Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.~ */
+  IF ~~ THEN REPLY #24583 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+  SAY #42293 /* ~Diese Leiche scheint keinen Schlüssel bei sich zu haben... Und selbst wenn sie einen hätte, würde sie ihn wahrscheinlich gar nicht verwenden können. Ihre Finger sind gebrochen, als hätte sie jemand mit einem Hammer zertrümmert. Zufällig bemerkst du, daß ihre linke Schulter dick bandagiert ist... Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.~ */
+  IF ~  NearbyDialog("DMorte1")
+~ THEN REPLY #42294 /* ~"Ich vermute, du hast ihn nicht... Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"~ */ EXTERN ~DMORTE1~ 31
+  IF ~  !NearbyDialog("DMorte1")
+~ THEN REPLY #42295 /* ~"Ich vermute, du hast ihn nicht... Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"~ */ GOTO 1
+  IF ~~ THEN REPLY #42296 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #42297 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END

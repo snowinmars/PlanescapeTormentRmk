@@ -1,0 +1,53 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM825.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM825~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #24564 /* ~This corpse's head lolls back and forth on its shoulders... judging from the angle of the neck, it looks like this man may have been hanged. The number "825" has been painted on the side of his head. ~ */
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+NearbyDialog("DMorte1")
+~ THEN REPLY #24565 /* ~"I'm looking for a key... do you happen to have one?"~ */ EXTERN ~DMORTE1~ 31
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+!NearbyDialog("DMorte1")
+~ THEN REPLY #24568 /* ~"I'm looking for a key... do you happen to have one?"~ */ GOTO 1
+  IF ~  GlobalGT("Mortuary_Walkthrough","GLOBAL",0)
+~ THEN REPLY #24569 /* ~"So... seen anything interesting going on?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #24570 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #24573 /* ~Use Stories-Bones-Tell on the corpse.~ */ GOTO 2
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+~ THEN REPLY #24574 /* ~Examine the corpse, see if it's carrying a key.~ */ GOTO 3
+  IF ~~ THEN REPLY #42308 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #42309 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 0.2 0.3 3.1
+  SAY #24566 /* ~The corpse stares at the ground and does not answer.~ */
+  IF ~~ THEN REPLY #24567 /* ~"Never mind, then. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #42310 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+  SAY #24571 /* ~The corpse does not stir. It looks like it is too far gone to answer any of your questions.~ */
+  IF ~~ THEN REPLY #24572 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+  SAY #42311 /* ~This corpse is carrying nothing... but you happen to notice its hands are heavily bandaged. The bandages might be usable if the corpse was disposed of first.~ */
+  IF ~  NearbyDialog("DMorte1")
+~ THEN REPLY #42312 /* ~"Guess you don't have the key... you don't happen to know which of your other corpse friends has the key out of this place?"~ */ EXTERN ~DMORTE1~ 31
+  IF ~  !NearbyDialog("DMorte1")
+~ THEN REPLY #42313 /* ~"Guess you don't have the key... you don't happen to know which of your other corpse friends has the key out of this place?"~ */ GOTO 1
+  IF ~~ THEN REPLY #42314 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #42315 /* ~Leave the corpse in peace.~ */ EXIT
+END

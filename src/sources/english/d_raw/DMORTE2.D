@@ -1,0 +1,301 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DMORTE2.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DMORTE2~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
+InParty("Morte")
+~ THEN BEGIN 0 // from:
+  SAY #41144 /* ~"Pssst... Some advice, chief: I'd keep it quiet from here on - no need to put any more corpses in the dead-book than necessary... especially the femmes. Plus, killing them might draw the caretakers here."~ */
+  IF ~~ THEN REPLY #41145 /* ~"I don't think you mentioned it before... *who* are these caretakers?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ GOTO 1
+  IF ~~ THEN REPLY #41146 /* ~"The corpses here... where did they all come from?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ GOTO 3
+  IF ~~ THEN REPLY #41147 /* ~"Why do you care about the female corpses?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ GOTO 4
+  IF ~~ THEN REPLY #41148 /* ~"All right... I'll... try to remember that."~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ GOTO 8
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 3.0 7.0
+  SAY #41149 /* ~"They call themselves the 'Dustmen.' You can't miss 'em: They have an obsession with black and rigor mortis of the face. They're an addled bunch of ghoulish death-worshippers; they believe everybody should die... sooner better than later."~ */
+  IF ~~ THEN REPLY #41150 /* ~"I'm confused... why do these Dustmen care if I escape?"~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY #41151 /* ~"Weren't you listening?! I said the Dusties believe EVERYBODY'S got to die, sooner better than later. You think the corpses you've seen are happier in the dead-book than out of it?"~ */
+  IF ~~ THEN REPLY #41152 /* ~"The corpses I've seen here... where did they all come from?"~ */ GOTO 3
+  IF ~~ THEN REPLY #41153 /* ~"Before you said something about making sure I didn't kill any *female* corpses. Why?"~ */ GOTO 4
+  IF ~~ THEN REPLY #41154 /* ~"All right... I'll... try to remember that."~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 2.0 7.1
+  SAY #41155 /* ~"Death visits the planes every day, chief. These shamblers are all that's left of the poor sods who sold their bodies to the caretakers after death."~ */
+  IF ~~ THEN REPLY #41156 /* ~"Enlighten me... *who* are these caretakers?"~ */ GOTO 1
+  IF ~~ THEN REPLY #41157 /* ~"Before you said something about making sure I didn't kill any *female* corpses. Why?"~ */ GOTO 4
+  IF ~~ THEN REPLY #41158 /* ~"All right... I'll... try to remember that."~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 2.1 3.1
+  SAY #41159 /* ~"Wh- are you *serious?* Look, chief, these dead chits are the last chance for a couple of hardy bashers like us. We need to be *chivalrous*... no hacking them up for keys, no lopping their limbs off, things like that."~ */
+  IF ~~ THEN REPLY #41160 /* ~"Last chance? What are you *talking* about?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #41161 /* ~"Chief, THEY'RE dead, WE'RE dead... see where I'm going? Eh? Eh?"~ */
+  IF ~~ THEN REPLY #41162 /* ~"No... no, I don't, actually."~ */ GOTO 6
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #41163 /* ~"You *can't* be serious."~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0 5.1
+  SAY #41164 /* ~"Chief, we already got an opening line with these limping ladies. We've *all* died at least once: we'll have something to talk about. They'll appreciate men with our kind of death experience."~ */
+  IF ~~ THEN REPLY #41165 /* ~"Wait... didn't you say before that I'm *not* dead?"~ */ GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+  SAY #41166 /* ~"Well... all right, *you* might not be dead, but *I* am. And from where I'm standing, I wouldn't mind sharing a coffin with some of these fine, sinewy cadavers I see here." Morte starts clacking his teeth, as if in anticipation. "'Course, the caretakers would have to part with them first, and that's not likely..."~ */
+  IF ~~ THEN REPLY #41167 /* ~"Who are these caretakers again?"~ */ GOTO 1
+  IF ~~ THEN REPLY #41168 /* ~"But where did all these corpses come from?"~ */ GOTO 3
+  IF ~~ THEN REPLY #41169 /* ~"All right... I'll try and remember that."~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 8 // from: 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 20.1 21.1 22.1
+  SAY #41170 /* ~"Look, chief. It's obvious you're still a little addled after your kiss with death, so I got two bits of advice for you: one, if you got questions, *ask* me, all right?"
+
+^NNOTE: <SPEAKTO>^-~ */
+  IF ~~ THEN REPLY #41171 /* ~"All right... if I have any questions, I'll ask you."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+  SAY #41172 /* ~"Second, if you're *half* as forgetful as you seem to be, start writing stuff down - whenever you come across something that *might* be important, jot it down so you don't forget."~ */
+  IF ~~ THEN REPLY #41173 /* ~"If I had that journal I was *supposed* to have with me, I'd do that."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+  SAY #41174 /* ~"Start a new one, then, chief. No loss. There's plenty of parchment and ink around here to last you."~ */
+  IF ~~ THEN REPLY #41175 /* ~"Hmmmm. All right. It couldn't hurt... I'll make a new one, then."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0
+  SAY #41176 /* ~"Use it to keep track of your movements. If you ever start to get cloudy on important things, like who you are... or more importantly, who *I* am... use it to refresh your memory."
+
+^NNOTE: To access your journal, select the journal button on the quick menu. Your journal will automatically be updated throughout the game.^-~ */
+  IF ~~ THEN REPLY #41177 /* ~"All right... I got it. Let's go."~ */ JOURNAL #39516 /* ~My original journal's gone missing, so I've started a new one. I woke up in a place called the "Mortuary." I don't know who I am, what I'm doing here, or even how I got here. The only person I encountered was a chattering skull called Morte... while he was checking my wounds, he discovered a set of 'directions' tattooed on my back:
+
+"I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself. Among your possessions is a JOURNAL that'll shed some light on the dark of the matter. PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already."
+
+"Don't lose the journal or we'll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod."
+
+Did I leave this message for myself? Looks like I'll need to find this 'Pharod' AND my journal. ~ */ EXIT
+END
+
+IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0)
+!Global("Mortuary_Walkthrough","GLOBAL",1)
+!Global("Mortuary_Walkthrough","GLOBAL",3)
+InParty("Morte")
+~ THEN BEGIN 12 // from: 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0
+  SAY #41178 /* ~"What's eating you, chief?"~ */
+  IF ~~ THEN REPLY #41179 /* ~"Can you read to me what's tattooed on my back again?"~ */ GOTO 13
+  IF ~~ THEN REPLY #41180 /* ~"What is this place again?"~ */ GOTO 18
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41181 /* ~"This place is huge... who takes care of it?"~ */ GOTO 19
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41182 /* ~"Who are the caretakers of this place again?"~ */ GOTO 19
+  IF ~~ THEN REPLY #41183 /* ~"The corpses here... where did they all come from?"~ */ GOTO 22
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41184 /* ~"Before you said something about making sure I didn't kill any *female* corpses. Why?"~ */ GOTO 23
+  IF ~  PartyHasItem("Bandage")
+~ THEN REPLY #41185 /* ~"How do I use these bandages?"~ */ GOTO 21
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41186 /* ~"Nothing at the moment, Morte. Just checking to see if you were still with me."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41187 /* ~"Nothing at the moment, Morte. Just checking to see if you were still with me."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+  SAY #41188 /* ~"Aw, *c'mon,* chief. Don't tell me you forgot already."~ */
+  IF ~~ THEN REPLY #41189 /* ~"I just need to refresh my memory, is all."~ */ GOTO 14
+  IF ~~ THEN REPLY #41190 /* ~"Never mind, then. I had some other questions..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41191 /* ~"Forget it, then. Let's go."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41192 /* ~"Forget it, then. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY #41193 /* ~"Bet I'm going to be hearing THAT a lot." Morte clears his throat. "Let's see..."
+
+'I know you feel like you've been drinking a few kegs of Styx wash, but you need to CENTER yourself. Among your possessions is a JOURNAL that'll shed some light on the dark of the matter. PHAROD can fill you in on the rest of the chant, if he's not in the dead-book already.'~ */
+  IF ~~ THEN REPLY #41194 /* ~"Pharod... hmmm. Keep going."~ */ GOTO 15
+  IF ~~ THEN REPLY #41195 /* ~"Never mind. I had some other questions..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41196 /* ~"Forget it. I've heard enough. Let's go."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41197 /* ~"Forget it. I've heard enough. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0
+  SAY #41198 /* ~"I will, I will, hold on." Morte pauses for a moment. "All right, here's the last bit..."
+
+'Don't lose the journal or we'll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod.'~ */
+  IF ~~ THEN REPLY #41199 /* ~"And there wasn't a journal with me when I woke up?"~ */ GOTO 16
+  IF ~~ THEN REPLY #41200 /* ~"Never mind. I had some other questions..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41201 /* ~"Forget it. I've heard enough. Let's go."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41203 /* ~"Forget it. I've heard enough. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 15.0
+  SAY #41202 /* ~"No... you were stripped to the skins. Like I said before, looks like you got enough of a journal penned on your body."~ */
+  IF ~~ THEN REPLY #41204 /* ~"And you're sure you don't know anyone named Pharod?"~ */ GOTO 17
+  IF ~~ THEN REPLY #41205 /* ~"True enough. I had some other questions..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41206 /* ~"All right, then. Let's go."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41207 /* ~"All right, then. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0
+  SAY #41208 /* ~"Nope. Still, some berk's got to know where to find him. Let's ask around... AFTER we get out of here."~ */
+  IF ~~ THEN REPLY #41209 /* ~"Before we go, I had some other questions..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41210 /* ~"All right, then. Let's go."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41211 /* ~"All right, then. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 12.1
+  SAY #41212 /* ~"It's called the 'Mortuary'... it's a big black structure with all the architectural charm of a pregnant spider."~ */
+  IF ~~ THEN REPLY #41213 /* ~"Got it. I had some other questions for you..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41214 /* ~"That's all I wanted to know. Thanks."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41215 /* ~"That's all I wanted to know. Thanks."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 12.2 12.3
+  SAY #41216 /* ~"They call themselves the 'Dustmen.' You can't miss 'em: They have an obsession with black and rigor mortis of the face. They're an addled bunch of ghoulish death-worshippers; they believe everybody should die... sooner better than later."~ */
+  IF ~~ THEN REPLY #41217 /* ~"I'm confused... why do these Dustmen care if I escape?"~ */ GOTO 20
+  IF ~~ THEN REPLY #41218 /* ~"Got it. I had some other questions for you..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41219 /* ~"Understood. I'll be careful, then."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41220 /* ~"Understood. I'll be careful, then."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #41221 /* ~"Weren't you listening?! I said the Dusties believe EVERYBODY'S got to die, sooner better than later. You think the corpses you've seen are happier in the dead-book than out of it?"~ */
+  IF ~~ THEN REPLY #41222 /* ~"Got it. I had some other questions for you..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41223 /* ~"All right... I'll... try to remember that."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41224 /* ~"All right... I'll... try to remember that."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 21 // from: 12.6
+  SAY #41225 /* ~"You, well... you *use* them. Staunch bleeding, and all that."
+
+^NNOTE: <BANDAGES2>^-~ */
+  IF ~~ THEN REPLY #41226 /* ~"Got it. I had some other questions for you..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41227 /* ~"Thanks. I think I can handle it."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41228 /* ~"Thanks. I think I can handle it."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 12.4
+  SAY #41229 /* ~"Death visits the planes every day, chief. These shamblers are all that's left of the poor sods who sold their bodies to the caretakers after death."~ */
+  IF ~~ THEN REPLY #41230 /* ~"Got it. I had some other questions for you..."~ */ GOTO 12
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41231 /* ~"All right... I'll... try to remember that."~ */ GOTO 8
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41232 /* ~"All right... I'll... try to remember that."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 12.5
+  SAY #41233 /* ~"Wh- are you *serious?* Look, chief, these dead chits are the last chance for a couple of hardy bashers like us. We need to be *chivalrous*... no hacking them up for keys, no lopping their limbs off, things like that."~ */
+  IF ~~ THEN REPLY #41234 /* ~"Last chance? What are you *talking* about?"~ */ GOTO 24
+  IF ~~ THEN REPLY #41235 /* ~"Never mind. I had some other questions for you..."~ */ GOTO 12
+  IF ~~ THEN REPLY #41236 /* ~"All right... I'll... try to remember that."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #41237 /* ~"Chief, THEY'RE dead, WE'RE dead... see where I'm going? Eh? Eh?"~ */
+  IF ~~ THEN REPLY #41238 /* ~"No... no, I don't, actually."~ */ GOTO 25
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #41239 /* ~"You *can't* be serious."~ */ GOTO 25
+  IF ~~ THEN REPLY #41240 /* ~"Never mind. I had some other questions for you..."~ */ GOTO 12
+  IF ~~ THEN REPLY #41241 /* ~"I've heard enough. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 24.1
+  SAY #41242 /* ~"Chief, we already got an opening line with these limping ladies. We've *all* died at least once: we'll have something to talk about. They'll appreciate men with our kind of death experience."~ */
+  IF ~~ THEN REPLY #41243 /* ~"Wait... didn't you say before that I'm *not* dead?"~ */ GOTO 26
+  IF ~~ THEN REPLY #41244 /* ~"Never mind. I had some other questions for you..."~ */ GOTO 12
+  IF ~~ THEN REPLY #41245 /* ~"I've heard enough. Let's go."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 25.0
+  SAY #41246 /* ~"Well... all right, *you* might not be dead, but *I* am. And from where I'm standing, I wouldn't mind sharing a coffin with some of these fine, sinewy cadavers I see here." Morte starts clacking his teeth, as if in anticipation. "'Course, the caretakers would have to part with them first, and that's not likely..."~ */
+  IF ~~ THEN REPLY #41247 /* ~"I had some other questions for you, Morte..."~ */ GOTO 12
+  IF ~~ THEN REPLY #41248 /* ~"I've heard enough. Let's go."~ */ EXIT
+END
+
+IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */
+~  !InParty("Morte")
+~ THEN BEGIN 27 // from:
+  SAY #41250 /* ~"I knew you'd be back, chief! Finally realized you needed me, huh?"~ */
+  IF ~~ THEN REPLY #41251 /* ~"Yeah... let's go."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #41252 /* ~"Not right now, Morte."~ */ GOTO 28
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.1
+  SAY #41253 /* ~"Hmmmph. Well, I don't know how long I'm going to wait here, so I'm going to give you one LAST chance. You sure you don't want my sage advice and quick wit?"~ */
+  IF ~~ THEN REPLY #41254 /* ~"Morte, you don't have EITHER of those things."~ */ GOTO 29
+  IF ~~ THEN REPLY #41255 /* ~"All right, I changed my mind. Come on, let's go."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #41256 /* ~"Not at the moment, Morte. Maybe later."~ */ GOTO 29
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0 28.2
+  SAY #41257 /* ~"Are you trying to hurt my feelings, chief? What, was it something I said? The fact I don't have arms? What?"~ */
+  IF ~~ THEN REPLY #41258 /* ~"All right, I changed my mind. Come on, let's go."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #41259 /* ~"Nothing like that. It's just I don't need your company right now. Farewell, Morte."~ */ GOTO 30
+END
+
+IF ~~ THEN BEGIN 30 // from: 29.1
+  SAY #41260 /* ~"Well, I'm not going to wait FOREVER, so you better come back as soon as you change your mind."~ */
+  IF ~~ THEN REPLY #41261 /* ~"I will. Farewell, Morte."~ */ EXIT
+END
+
+IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3)
+InParty("Morte")
+~ THEN BEGIN 31 // from:
+  SAY #41262 /* ~"Powers above. That's one HELL of a book."~ */
+  IF ~~ THEN REPLY #41263 /* ~"What is it?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1)
+~ GOTO 32
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #41264 /* ~"If I were to guess, I'd say that's the book where they scratch the name of every poor sod that's unfortunate enough to get dumped off here."~ */
+  IF ~~ THEN REPLY #41265 /* ~"Could my name be in there?"~ */ GOTO 33
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+  SAY #41266 /* ~"Eh... well... I *guess.* To find out, you'd need to rattle your bone-box with that floating Dustie over there. I'm not sure that's a good idea."~ */
+  IF ~~ THEN REPLY #41267 /* ~"Well, I need answers. I'm going to go speak with him." ~ */ EXIT
+END

@@ -1,0 +1,20 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #46756 /* ~Tělo této mrtvoly je hrozivě poničené, špička nosu a několik prstů už definitivně uhnilo... muž zřejmě zemřel na nějakou hrozivou chorobu. Na jeho čele je vytetováno číslo "1445", rty jsou pevně sešity dohromady.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #46757 /* ~"Takže... dělo se tady v poslední době něco zajímavého?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #46760 /* ~"Takže... dělo se tady v poslední době něco zajímavého?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #46761 /* ~"Vím, že nejsi zombie. Nikoho neoblbneš."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #46762 /* ~Použij na těle svou schopnost Kosti-Vyprávějte~ */ GOTO 2
+IF ~~ THEN REPLY #46765 /* ~"Skvěle jsme si pokecali. Sbohem."~ */ EXIT
+IF ~~ THEN REPLY #46766 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #46758 /* ~Mrtvola na tebe dál zírá.~ */
+IF ~~ THEN REPLY #46759 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #46763 /* ~Mrtvola neodpovídá. Asi už shnila příliš.~ */
+IF ~~ THEN REPLY #46764 /* ~Nechej mrtvolu být.~ */ EXIT
+END

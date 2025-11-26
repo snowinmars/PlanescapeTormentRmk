@@ -1,0 +1,155 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ310.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ310~
+
+IF ~  Global("Oinosian","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #6495 /* ~Ce cadavre réanimé a les lèvres cousues et le numéro '310' est gravé dans son front ; une odeur de formol se répand dans l'atmosphère. Ses yeux sans vie se tournent vers toi tandis que tu t'approches pour lui barrer le passage.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6499 /* ~"Alors… Tu as vu quelque chose d'intéressant ?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6500 /* ~"Alors… t'as vu quelque chose d'intéressant ?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6501 /* ~"Je sais que tu n'es pas un zombi. Tu ne trompes personne."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6502 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ DO ~SetGlobal("Oinosian","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #6503 /* ~"Je suis heureux de t'avoir parlé. Au revoir."~ */ EXIT
+  IF ~~ THEN REPLY #6504 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6496 /* ~Le cadavre continue à te fixer.~ */
+  IF ~~ THEN REPLY #6505 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6498 /* ~L'espace d'un instant, tu penses que ce cadavre n'est pas capable de répondre à tes questions… mais tu réalises soudain toute la misère qui s'est emparée de lui et que l'esprit a dû la ressentir si profondément qu'il s'est retranché dans sa carapace d'origine.~ */
+  IF ~~ THEN REPLY #6506 /* ~"Je voudrais te poser une question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9657 /* ~Laisse l'esprit en paix.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
+  SAY #9642 /* ~Il s'exprime d'une voix atone, la voix d'un individu désespéré, brisé. En cet instant, rien ne le distingue d'un zombi sans âme. "Que veux-tu savoir, messire ?"~ */
+  IF ~~ THEN REPLY #9658 /* ~"Qui es-tu ?"~ */ GOTO 4
+  IF ~~ THEN REPLY #9659 /* ~"D'où viens-tu ?"~ */ GOTO 5
+  IF ~~ THEN REPLY #9660 /* ~"Comment es-tu arrivé ici ? En tant que zombi, je veux dire ?"~ */ GOTO 6
+  IF ~~ THEN REPLY #9661 /* ~"Où es-tu… Où réside ton esprit… en ce moment ?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9662 /* ~"Pourquoi un tel désespoir ?"~ */ GOTO 8
+  IF ~~ THEN REPLY #9663 /* ~"Que sais-tu sur cet endroit ?"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9664 /* ~"Connais-tu un certain Pharod ?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9665 /* ~"Rien, peu importe."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #9643 /* ~L'esprit parle si doucement que tu dois tendre l'oreille. C'est à peine s'il articule les mots. "Je ne suis personne, messire ; un pauvre insecte cramponné à la Tour Gâchée, sur Oïnos. Jadis, certes, on m'appelait Arabhiem, messire… mais c'était il y a si longtemps…"~ */
+  IF ~~ THEN REPLY #9666 /* ~"La Tour Gâchée ?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9667 /* ~"Oïnos ?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9668 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9669 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 5 // from: 3.1
+  SAY #9644 /* ~"Je vivais à Sigil, messire. Dans la Ruche. Au fond, la vie n'était pas si terrible, quand je le compare à mon nouveau… foyer, Oïnos." Le cadavre cille lentement ; si lentement que tu crois d'abord qu'il se borne à fermer les yeux.~ */
+  IF ~~ THEN REPLY #9670 /* ~"La Ruche ?"~ */ GOTO 12
+  IF ~~ THEN REPLY #9671 /* ~"Oïnos ?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9672 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9673 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2
+  SAY #9645 /* ~"Des voleurs m'ont tué, messire. J'étais ivre, égaré, je titubais par les ruelles de la Ruche… et je suis tombé sous les coups d'une bande de brigands. C'est peut-être mieux. Ma vie ne devait pas valoir les pièces de cuivre que le Récupérateur qui a ramassé mon cadavre en aura tiré."~ */
+  IF ~~ THEN REPLY #9674 /* ~"Pourquoi portes-tu un jugement si sévère sur ta propre vie ?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9675 /* ~"Un Récupérateur ?"~ */ GOTO 15
+  IF ~~ THEN REPLY #9676 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9677 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.3 4.1 5.1 8.0 12.0
+  SAY #9646 /* ~L'esprit ferme les yeux, le corps qu'il occupe frissonne. "Oïnos, messire, un lieu horrible. Dans la Gaste Grise. C'est là que mon âme est confinée, à l'ombre de Khin-Oïn, la Tour Gâchée."~ */
+  IF ~~ THEN REPLY #9678 /* ~"Dis-m'en plus sur ce… Oïnos."~ */ GOTO 11
+  IF ~~ THEN REPLY #9679 /* ~"Khin-Oïn ?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9680 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9681 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 3.4
+  SAY #9647 /* ~"Je n'attends rien, messire. Piégé à jamais dans l'étendue pestilente d'Oïnos, voilà mon lot. Il n'y a aucun espoir pour quelqu'un de ma sorte." L'esprit prend un air plus pathétique encore ; les épaules du cadavre se courbent sous le fardeau de son chagrin.~ */
+  IF ~~ THEN REPLY #9682 /* ~"Oïnos ?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9683 /* ~"Je vois. J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9684 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 9 // from: 3.5 15.0
+  SAY #9648 /* ~"Très peu, messire ; juste qu'on apporte les morts ici pour y être enterrés, incinérés… ou utilisés comme main-d'œuvre, ainsi que mon corps l'a été."~ */
+  IF ~~ THEN REPLY #9685 /* ~"Je vois, maintenant. Une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9686 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 10 // from: 3.6
+  SAY #9649 /* ~Il secoue lentement la tête de gauche et de droite. "Non, je ne connais personne de ce nom. Je suis navré, messire."~ */
+  IF ~~ THEN REPLY #9687 /* ~"Ça ne fait rien. J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9688 /* ~"Alors, au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 11 // from: 7.0
+  SAY #9650 /* ~"Il n'y a rien à en dire, messire. Au pays du seigneur de Khin-Oïn, mon Maître, la peur et la maladie sont souveraines, la pourriture atteint et le corps et l'esprit, le désespoir règne."~ */
+  IF ~~ THEN REPLY #9689 /* ~"Qui est ce… 'Maître' ?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9690 /* ~"Khin-Oïn ?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9691 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9692 /* ~"On dirait bien. Au revoir, esprit."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 12 // from: 5.0
+  SAY #9651 /* ~"Oui, messire. Un méchant lieu, mais moins terrible qu'Oïnos."~ */
+  IF ~~ THEN REPLY #9693 /* ~"Oïnos ?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9694 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9695 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 13 // from: 4.0 7.1 11.1 14.0
+  SAY #9652 /* ~"Oui, messire. C'est une tour immense, plus haute que la plus haute tour de Sigil. Elle paraît en os, messire - telle la colonne vertébrale d'un géant. C'est là que j'effectue mon labeur, qui est de réparer les dégâts commis par les armées des ennemis de mon Maître, les autres princes."~ */
+  IF ~~ THEN REPLY #9696 /* ~"Qui est ce 'Maître' ?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9697 /* ~"Je vois. J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9698 /* ~"Je vois. Je dois te quitter maintenant, esprit. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 11.0 13.0
+  SAY #9653 /* ~"Le seul nom que je connais au Seigneur de Khin-Oïn est celui de Maître. C'est un prince fiélon, un ultroloth aux pouvoirs formidables. Il détient mon âme pour toujours et à jamais, petite chose condamnée à languir sous sa botte jusqu'à ce que l'éternité devienne l'Oubli."~ */
+  IF ~~ THEN REPLY #9699 /* ~"Parle-moi de ce 'Khin-Oïn'."~ */ GOTO 13
+  IF ~~ THEN REPLY #9700 /* ~"J'ai une autre question…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9701 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 6.1
+  SAY #9654 /* ~"Oui, messire, un Récupérateur, de ceux qui recueillent les morts de Sigil et les amènent à la Morgue - ici - pour quelques piécettes." L'esprit observe les alentours, et pousse un soupir.~ */
+  IF ~~ THEN REPLY #9702 /* ~"Que sais-tu sur cette Morgue ?"~ */ GOTO 9
+  IF ~~ THEN REPLY #9703 /* ~"Je vois. J'ai une autre question à te poser…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9704 /* ~"C'est tout ce que je voulais savoir. Au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.0
+  SAY #9655 /* ~"Je n'en parlerai pas, messire. Il n'y a rien à en dire." L'opinion de l'esprit semble bien arrêtée.~ */
+  IF ~~ THEN REPLY #9705 /* ~"Très bien. Alors, j'aurais d'autres questions…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9706 /* ~"Alors, au revoir."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
+  SAY #9656 /* ~Tu ne comprends que l'esprit a quitté le cadavre qu'au moment où celui-ci reprend son labeur à pas traînants.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~  Global("Oinosian","GLOBAL",1)
+~ THEN BEGIN 18 // from:
+  SAY #20102 /* ~Le cadavre semble rétrécir, ployant sous le poids du désespoir de son esprit.~ */
+  IF ~~ THEN REPLY #20103 /* ~"J'ai des questions…"~ */ GOTO 3
+  IF ~~ THEN REPLY #20104 /* ~"Je ne faisais que passer. Au revoir."~ */ EXIT
+END

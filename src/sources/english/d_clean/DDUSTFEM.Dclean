@@ -1,0 +1,373 @@
+IF ~  Global("Appearance","GLOBAL",1)
+~ THEN BEGIN 0 // from:
+SAY #298 /* ~The Dustman does not appear to notice you. She must mistake you for one of the cadaverous workers.~ */
+IF ~~ THEN REPLY #299 /* ~"Greetings."~ */ GOTO 1
+IF ~~ THEN REPLY #318 /* ~"Who are you?"~ */ GOTO 1
+IF ~~ THEN REPLY #1168 /* ~"What is this place?"~ */ GOTO 1
+IF ~~ THEN REPLY #1169 /* ~"I had some questions..."~ */ GOTO 1
+IF ~~ THEN REPLY #1170 /* ~Leave her in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+SAY #1171 /* ~The Dustman jumps, then snaps her head around to stare at you. She looks shocked - your disguise must be quite good.~ */
+IF ~~ THEN REPLY #1172 /* ~Take advantage of her surprise and snap her neck before she can call out.~ */ GOTO 41
+IF ~~ THEN REPLY #1174 /* ~"I had some questions."~ */ GOTO 2
+IF ~~ THEN REPLY #1175 /* ~Leave. Quickly.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.1 1.2 4.3 5.2 5.3 6.4 19.6 20.4 47.2 47.3 51.4
+SAY #1176 /* ~The Dustman takes a step back, then claps her hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+IF ~~ THEN REPLY #1225 /* ~"All right then..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+SAY #1177 /* ~This pale-faced woman is dressed in long dark robes. She has a slight musty smell about her. Her expression is blank, and she seems absorbed in her duties.~ */
+IF ~~ THEN REPLY #1226 /* ~"Greetings."~ */ GOTO 4
+IF ~~ THEN REPLY #1227 /* ~"Who are you?"~ */ GOTO 4
+IF ~~ THEN REPLY #1228 /* ~"What is this place?"~ */ GOTO 4
+IF ~~ THEN REPLY #1229 /* ~"I had some questions..."~ */ GOTO 4
+IF ~~ THEN REPLY #1230 /* ~Leave her in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1 3.2 3.3 40.2 40.3
+SAY #1178 /* ~The Dustman slowly lifts her head and turns toward you. "Are you lost?"~ */
+IF ~~ THEN REPLY #1231 /* ~"Yes."~ */ GOTO 5
+IF ~~ THEN REPLY #1232 /* ~"No."~ */ GOTO 6
+IF ~~ THEN REPLY #1233 /* ~"No, I'm not lost. I had some questions..."~ */ GOTO 6
+IF ~~ THEN REPLY #1234 /* ~"Farewell."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 16.2 51.1
+SAY #1179 /* ~"I will summon a guard to direct you out. Hold a moment."~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1235 /* ~Snap her neck before she can call out.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1236 /* ~Snap her neck before she can call out.~ */ GOTO 41
+IF ~~ THEN REPLY #1237 /* ~Leave. Quickly.~ */ GOTO 2
+IF ~~ THEN REPLY #1238 /* ~Wait.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 4.2 51.2 51.3
+SAY #1180 /* ~"If you are not lost, what is your business here?"~ */
+IF ~~ THEN REPLY #1239 /* ~"That is none of your concern."~ */ GOTO 7
+IF ~~ THEN REPLY #1240 /* ~"I awoke on one of the slabs in your preparation room."~ */ GOTO 8
+IF ~~ THEN REPLY #1241 /* ~"I'm here to see someone."~ */ GOTO 9
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #1242 /* ~"I was here for an interment, but there seems to have been a mistake."~ */ GOTO 16
+IF ~~ THEN REPLY #1243 /* ~Leave. Quickly.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0 20.0
+SAY #1181 /* ~"I'm afraid that it is my concern. Mayhap the guards can loosen your tongue." The Dustman takes a step back; she looks like she is about to summon the guards.~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1244 /* ~Snap her neck before she can call out.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1245 /* ~Snap her neck before she can call out.~ */ GOTO 41
+IF ~~ THEN REPLY #1246 /* ~"Summon them, then. I'd like to meet them."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.1 16.0 20.1
+SAY #1182 /* ~"Do you speak in jest? Perhaps you would like to share it with the guards." The Dustman takes a step back; she looks like she is about to summon the guards.~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1247 /* ~Snap her neck before she can call out.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1248 /* ~Snap her neck before she can call out.~ */ GOTO 41
+IF ~~ THEN REPLY #1249 /* ~"Summon them, then. I'd like to meet them."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.2 20.2
+SAY #1183 /* ~"Who are you here to see?"~ */
+IF ~~ THEN REPLY #1251 /* ~"It is none of your concern."~ */ GOTO 7
+IF ~  GlobalGT("Dhall","GLOBAL",0) Global("Current_Area","GLOBAL",202) ~ THEN REPLY #1253 /* ~"I am here to see Dhall."~ */ GOTO 10
+IF ~  GlobalGT("Dhall","GLOBAL",0) !Global("Current_Area","GLOBAL",202) ~ THEN REPLY #1255 /* ~"I am here to see Dhall."~ */ GOTO 11
+IF ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",201) ~ THEN REPLY #1258 /* ~"I am here to see Deionarra."~ */ GOTO 13
+IF ~  GlobalGT("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",201) ~ THEN REPLY #4336 /* ~"I am here to see Deionarra."~ */ GOTO 12
+IF ~  GlobalGT("Soego","GLOBAL",0) Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33224 /* ~"I am here to see Soego."~ */ GOTO 15
+IF ~  GlobalGT("Soego","GLOBAL",0) !Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33226 /* ~"I am here to see Soego."~ */ GOTO 14
+IF ~  CheckStatGT(Protagonist,12,INT) NumTimesTalkedTo(1) ~ THEN REPLY #33227 /* ~Lie: "Uh... Adahn. Does he still work here, or...?"~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 21
+IF ~  CheckStatGT(Protagonist,12,INT) NumTimesTalkedToGT(1) ~ THEN REPLY #33229 /* ~Lie: "Uh... Adahn. Does he still work here, or...?"~ */ GOTO 21
+IF ~~ THEN REPLY #33231 /* ~"Uh, no one. I misspoke."~ */ GOTO 20
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+SAY #1184 /* ~"Dhall is in the receiving room on this floor. I must warn you... Dhall is quite busy with his duties and is not in the best of health. Unless you have pressing business, I would not disturb him."~ */
+IF ~~ THEN REPLY #1259 /* ~"Very well. Thanks for the information."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2
+SAY #1185 /* ~"Dhall is most likely in the receiving room on the second floor. He is quite busy and not in the best of health. Unless you have pressing business, I would not disturb him."~ */
+IF ~~ THEN REPLY #1260 /* ~"Very well. Thanks for the information."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.4 19.1
+SAY #1186 /* ~"Deionarra? I know there is a woman interred in the memorial hall on the first floor. Could that be she?"~ */
+IF ~~ THEN REPLY #1261 /* ~"Most likely. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+SAY #1187 /* ~"Deionarra? I know there is a woman interred in the northwest memorial hall. Could that be she?"~ */
+IF ~~ THEN REPLY #1262 /* ~"Most likely. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 14 // from: 9.6
+SAY #1188 /* ~"I believe Soego is by the front gate on the first floor. He is acting as a guide during the anti-peak hours."~ */
+IF ~~ THEN REPLY #1263 /* ~"Very well. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.5
+SAY #1189 /* ~"I believe Soego is by the front gate. He is acting as a guide during the anti-peak hours."~ */
+IF ~~ THEN REPLY #1264 /* ~"Very well. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.3 20.3
+SAY #1190 /* ~"Who was being interred? Perhaps the services are taking place somewhere else in the Mortuary."~ */
+IF ~~ THEN REPLY #1265 /* ~"You misunderstand... the mistaken interment was ME."~ */ GOTO 8
+IF ~~ THEN REPLY #1266 /* ~"That could be. Where are these other services taking place?"~ */ GOTO 17
+IF ~~ THEN REPLY #1267 /* ~"Can you show me the way out?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1
+SAY #1191 /* ~"Several interment chambers line the perimeter of the Mortuary. They follow the curve of the wall on the first and second floors. Do you know the name of the deceased?"~ */
+IF ~~ THEN REPLY #1268 /* ~"No."~ */ GOTO 18
+IF ~~ THEN REPLY #1269 /* ~"Yes."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+SAY #1192 /* ~"Then you should check with one of the guides at the front gate. They can assist you."~ */
+IF ~~ THEN REPLY #1270 /* ~"Very well. Thank you."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.1
+SAY #1193 /* ~The Dustman waits.~ */
+IF ~~ THEN REPLY #1271 /* ~"Pardon... I misspoke. I don't know the name of the deceased."~ */ GOTO 20
+IF ~  GlobalGT("Deionarra","GLOBAL",0) ~ THEN REPLY #1272 /* ~"The name is Deionarra."~ */ GOTO 12
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #1273 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 21
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1274 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 21
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #1275 /* ~Lean in as if to whisper something to her, then snap her neck.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1276 /* ~Lean in as if to whisper something to her, then snap her neck.~ */ GOTO 45
+IF ~~ THEN REPLY #1277 /* ~Run for it.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 20 // from: 9.9 19.0
+SAY #1194 /* ~"I see. Now, what is your business here?"~ */
+IF ~~ THEN REPLY #1278 /* ~"None of your concern."~ */ GOTO 7
+IF ~~ THEN REPLY #1279 /* ~"I woke up on one of the slabs in your preparation room."~ */ GOTO 8
+IF ~~ THEN REPLY #1280 /* ~"I'm here to see someone."~ */ GOTO 9
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #1281 /* ~"I was here for an interment, but there seems to have been a mistake."~ */ GOTO 16
+IF ~~ THEN REPLY #1282 /* ~Run for it.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.7 9.8 19.2 19.3
+SAY #1195 /* ~"That name is not familiar to me. Check with one of the guides at the front gate... they may be able to direct you better than I."~ */
+IF ~~ THEN REPLY #1283 /* ~"Very well. I will do that. Farewell."~ */ EXIT
+END
+
+IF ~  Global("Appearance","GLOBAL",2)
+~ THEN BEGIN 22 // from:
+SAY #1196 /* ~This pale-faced woman is dressed in long dark robes. She has a slight musty smell about her. Her expression is blank, and she seems absorbed in her duties.~ */
+IF ~~ THEN REPLY #1284 /* ~"Greetings."~ */ GOTO 23
+IF ~~ THEN REPLY #1285 /* ~Leave her in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+SAY #1197 /* ~She slowly turns, and her eyes flicker to your robes. "Greetings, fellow initiate."~ */
+IF ~~ THEN REPLY #1286 /* ~"Who are you?"~ */ GOTO 24
+IF ~~ THEN REPLY #1287 /* ~"What is this place?"~ */ GOTO 25
+IF ~~ THEN REPLY #1288 /* ~"I had some questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #1289 /* ~Leave her in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+SAY #1198 /* ~"That is as much my question as yours. Your face is unknown to me. Who are you?"~ */
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #1290 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1291 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 49
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #1292 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #1293 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 25 // from: 23.1
+SAY #1199 /* ~"This is the Mortuary..." The Dustman looks at you for a moment, as if digesting what you've just said. "What did you say your name was again?"~ */
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #1294 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1295 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 49
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #1296 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #1297 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 26 // from: 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
+SAY #1200 /* ~The Dustman waits patiently for you to continue.~ */
+IF ~~ THEN REPLY #1298 /* ~"Can you direct me out of here?"~ */ GOTO 27
+IF ~~ THEN REPLY #1299 /* ~"Do you know someone named Pharod?"~ */ GOTO 28
+IF ~~ THEN REPLY #1300 /* ~"I'm missing a journal. Have you seen it?"~ */ GOTO 39
+IF ~~ THEN REPLY #1328 /* ~"Never mind. Sorry to trouble you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.0
+SAY #1201 /* ~"You may simply leave by the front gate. It is on the first floor."~ */
+IF ~~ THEN REPLY #1329 /* ~"I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #1330 /* ~"Thank you. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 28 // from: 26.1
+SAY #1202 /* ~"That name..." The Dustman pauses for a moment. "That name *sounds* familiar... I seem to recall a Collector by that name. Dhall the Scrivener might know of him."~ */
+IF ~~ THEN REPLY #1331 /* ~"Collector?"~ */ GOTO 29
+IF ~~ THEN REPLY #1334 /* ~"Dhall?"~ */ GOTO 30
+IF ~~ THEN REPLY #1338 /* ~"I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #1395 /* ~"Thank you for your time. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0
+SAY #1203 /* ~"Collectors... they gather those who have died on the streets of Sigil and bring them to the Mortuary..." The Dustman pauses, then frowns. "You are not from around here. Who are you?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #1396 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #1397 /* ~"I'm... new here. I'm... trying to get my bearings."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #1398 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #1399 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.1
+SAY #1204 /* ~"Dhall is one of the most revered of our faction. I can think of none who have meditated more on the nature of the True Death nor one more deserving of it than he. He has much wisdom to impart. If you do not know him, I suggest you speak to him at your earliest opportunity. He will not linger much longer in the shadow of this existence."~ */
+IF ~~ THEN REPLY #4280 /* ~"He will not linger long in the shadow of this existence?"~ */ GOTO 31
+IF ~  Global("Current_Area","GLOBAL",202) ~ THEN REPLY #4281 /* ~"Where can I find Dhall?"~ */ GOTO 32
+IF ~  !Global("Current_Area","GLOBAL",202) ~ THEN REPLY #4282 /* ~"Where can I find Dhall?"~ */ GOTO 33
+IF ~~ THEN REPLY #4283 /* ~"I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #33245 /* ~"Thank you for the information. I will speak to him."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 31 // from: 30.0 32.0 33.0
+SAY #1205 /* ~The Dustman nods. "Dhall is ill. He is old, even by githzerai standards. Death will no doubt follow the wasting sickness he has contracted. He is fortunate, indeed."~ */
+IF ~~ THEN REPLY #4284 /* ~"Githzerai standards?"~ */ GOTO 34
+IF ~~ THEN REPLY #4285 /* ~"What is a *githzerai?*"~ */ GOTO 35
+IF ~~ THEN REPLY #4286 /* ~"Fortunate?"~ */ GOTO 36
+IF ~~ THEN REPLY #4287 /* ~"I see. I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #4337 /* ~"Thank you for your time. I must take my leave."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 32 // from: 30.1
+SAY #1206 /* ~"Dhall is in the receiving room in the northwest corner of this floor. I must warn you... Dhall is quite busy... the time that is not consumed by his duties is taken in large measure by his wasting sickness."~ */
+IF ~~ THEN REPLY #4288 /* ~"Is Dhall ill?"~ */ GOTO 31
+IF ~~ THEN REPLY #4289 /* ~"Thank you for your time. I must take my leave. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 33 // from: 30.2
+SAY #1207 /* ~"Dhall is most likely in the receiving room on the second floor. I would not take too much of his time, as he is quite busy... the time that is not consumed by his duties is taken in large measure by his wasting sickness."~ */
+IF ~~ THEN REPLY #4290 /* ~"Is Dhall ill?"~ */ GOTO 31
+IF ~~ THEN REPLY #4291 /* ~"Thank you for your time. I must take my leave. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.0
+SAY #1208 /* ~"Yes, the githzerai have a much longer lifespan than humans."~ */
+IF ~~ THEN REPLY #4292 /* ~"What is a *githzerai?*"~ */ GOTO 35
+IF ~~ THEN REPLY #4293 /* ~"How is Dhall's death fortunate? Is he not well-liked?"~ */ GOTO 36
+IF ~~ THEN REPLY #4294 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #4295 /* ~"Thank you for your time. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 35 // from: 31.1 34.0
+SAY #1209 /* ~"The githzerai are..." The Dustman pauses, then stares at you intently. "You are not from around here. Who are you?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #4296 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #4297 /* ~"I'm... new here. I'm... trying to get my bearings."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #4298 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #4300 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 36 // from: 31.2 34.1
+SAY #1210 /* ~"He is fortunate in that he will achieve the True Death. No longer must he dwell within the shadow of this existence."~ */
+IF ~~ THEN REPLY #4299 /* ~"And... that's a good thing?"~ */ GOTO 37
+IF ~~ THEN REPLY #4301 /* ~"I see. Very fortunate, indeed. I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #4302 /* ~"I see. Well, I must take my leave of you. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+SAY #1211 /* ~The Dustman nods. "Yes." She frowns, then studies you intently. "You are not from around here. Who are you?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #4303 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #4304 /* ~"I'm... new here. I'm... trying to get my bearings."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #4305 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #4306 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 38 // from:
+SAY #1212 /* ~"You are not one of us, are you? What are you doing here? Are you a member of the Anarchists? Or a spy of another faction?" The Dustman takes a step back. "Guards! Guards!"~ */
+IF ~~ THEN REPLY #4307 /* ~"Dammit!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #4308 /* ~"Shhhh! I can't answer you over all that shouting!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) IncrementGlobal("Law","GLOBAL",-1) ~ EXIT
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #4309 /* ~"Shhhh! I can't answer you over all that shouting!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 26.2
+SAY #1213 /* ~"A journal? I have not seen one."~ */
+IF ~~ THEN REPLY #4310 /* ~"I had some other questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #4311 /* ~"I must take my leave. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from:
+SAY #1214 /* ~This pale-faced woman is dressed in long dark robes. She has a slight musty smell about her. Her expression is blank, and she seems absorbed in her duties.~ */
+IF ~  NearbyDialog("DMorte") Global("Warning","GLOBAL",0) ~ THEN REPLY #4312 /* ~"Greetings."~ */ EXTERN ~DMORTE~ 81
+IF ~  NearbyDialog("DMorte") Global("Warning","GLOBAL",1) ~ THEN REPLY #4313 /* ~"Greetings."~ */ EXTERN ~DMORTE~ 83
+IF ~  NearbyDialog("DMorte") GlobalGT("Warning","GLOBAL",1) ~ THEN REPLY #4314 /* ~"Greetings."~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #4315 /* ~"Greetings."~ */ GOTO 4
+IF ~~ THEN REPLY #4316 /* ~Leave her in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 1.0 5.1 7.1 8.1 47.1
+SAY #1215 /* ~Before the Dustman can utter a word, your hands clamp onto her temples, and you twist her head sharply to the left. ~ */
+IF ~~ THEN REPLY #4317 /* ~"Can't have you alerting your friends..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0 45.0
+SAY #1216 /* ~There is a *crack,* and the Dustman falls limp in your arms. ~ */
+IF ~  Global("Choke_Memory","GLOBAL",0) ~ THEN REPLY #4318 /* ~"Better you than me, Dustie."~ */ DO ~IncrementGlobal("Choke","GLOBAL",1) SetGlobal("Choke_Memory","GLOBAL",1) PlaySoundNotRanged("SPTR_01") IncrementGlobal("Choke_Dustman","GLOBAL",1) AddexperienceParty(15) ~ GOTO 43
+IF ~  GlobalGT("Choke_Memory","GLOBAL",0) ~ THEN REPLY #4319 /* ~"Better you than me, Dustie."~ */ DO ~IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself) AddexperienceParty(15) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+SAY #1217 /* ~To your surprise, the act seemed instinctual, as if you had done it many times before... with this thought comes the stirring of a memory, but it is not strong enough to surface.~ */
+IF ~~ THEN REPLY #4320 /* ~Leave the body, continue on.~ */ DO ~Kill(Myself) GiveExperience(Protagonist,250) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 5.0 7.0 8.0 19.4 47.0
+SAY #1218 /* ~You are not fast enough, and the Dustman dodges as you lunge for her. Taking a step back, she claps her hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+IF ~~ THEN REPLY #4321 /* ~"All right then..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 19.5
+SAY #1219 /* ~As you lean in to 'whisper' to her, the Dustman leans in as well. As she comes within arm's reach, your hands clamp onto her temples, and you twist her head sharply to the left. ~ */
+IF ~~ THEN REPLY #4322 /* ~"Can't have you alerting your friends..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 46 // from: 24.3 25.3 29.3 35.3 37.3 49.3 50.1
+SAY #1220 /* ~The Dustman seems suspicious. She looks like she's about to say something, then shakes her head slightly and returns to her duties.~ */
+IF ~~ THEN REPLY #4323 /* ~Walk away.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
+SAY #1221 /* ~The Dustman studies you carefully. "You are not one of us. What are you doing here? Are you a member of the Anarchists? Or a spy of another faction? This seems to be a matter for the guards..."~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #4324 /* ~Snap her neck before she can call out.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #4325 /* ~Snap her neck before she can call out.~ */ GOTO 41
+IF ~~ THEN REPLY #4326 /* ~Leave. Quickly.~ */ GOTO 2
+IF ~~ THEN REPLY #4327 /* ~"No, no... it's not, uh... I mean, I'm not a spy... you see, I woke up on one of the slabs... and..."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 48 // from: 10.0 11.0 12.0 13.0 14.0 15.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
+SAY #1222 /* ~The Dustman nods, then returns to her duties.~ */
+IF ~~ THEN REPLY #4328 /* ~Walk away.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 24.0 24.1 25.0 25.1
+SAY #1223 /* ~The Dustman frowns. "That name is unfamiliar to me."~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #4329 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #4331 /* ~"I'm... new here. I'm... trying to learn the routine."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #4332 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #4333 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 50 // from: 29.0 35.0 37.0 49.0
+SAY #1224 /* ~The Dustman's frown remains, but she nods slightly. "Very well. How may I be of service to you, initiate?"~ */
+IF ~~ THEN REPLY #4334 /* ~"I had some questions..."~ */ GOTO 26
+IF ~~ THEN REPLY #4335 /* ~"Nothing this day. Farewell."~ */ GOTO 46
+END
+
+IF ~  Global("Appearance","GLOBAL",0)
+~ THEN BEGIN 51 // from:
+SAY #66683 /* ~The Dustman regards you with a stony gaze. "Are you lost?"~ */
+IF ~  Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66684 /* ~"No, I am a member of the faction. I am just touring the Mortuary."~ */ GOTO 52
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66685 /* ~"Yes."~ */ GOTO 5
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66686 /* ~"No."~ */ GOTO 6
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66687 /* ~"No, I'm not lost. I had some questions..."~ */ GOTO 6
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66688 /* ~"Farewell."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+SAY #66689 /* ~The Dustman stares at you for a moment, then nods. "Very well. If you need assistance, let me know."~ */
+IF ~~ THEN REPLY #66690 /* ~"I will do so. Farewell."~ */ EXIT
+END

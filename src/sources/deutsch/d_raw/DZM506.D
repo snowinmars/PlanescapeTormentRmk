@@ -1,0 +1,73 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM506.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM506~
+
+IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN BEGIN 0 // from: 3.2
+  SAY #45419 /* ~Diese an allen Enden zusammengeflickte Leiche schlurft träge hin und her. Auf ihrer Stirn... und seitlich am Hals... und auf dem rechten Arm... ist die Zahl "506" eingenäht. Die Haut dieser zerfallenden Leiche ist mit so vielen Stichen bedeckt, daß sie wie eine bizarre Landkarte aussieht.~ */
+  IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN REPLY #45420 /* ~Schau dir die Stiche genauer an.~ */ GOTO 3
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45421 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45422 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ GOTO 2
+  IF ~~ THEN REPLY #45423 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #45424 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 4.0 4.1 5.0 5.1 5.2
+  SAY #45425 /* ~Die Leiche starrt mit leerem Blick geradeaus.~ */
+  IF ~~ THEN REPLY #45478 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.2 5.3
+  SAY #45426 /* ~Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.~ */
+  IF ~~ THEN REPLY #45479 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+  SAY #45427 /* ~Die Stiche laufen über die gesamte Leiche: von den Armen über die Brust und den Hals hoch in die feuchte Masse weißen Haares. Als du dem Liniengewirr folgst, bemerkst du, daß jemand der Leiche eine Nadel in die Stirn gebohrt hat... Daran hängt ein Faden, mit dem der Schädel seitlich zusammengenäht wurde. Du könntest die Nähte aufziehen, wenn du es schaffen würdest, den Faden abzuschneiden. ~ */
+  IF ~  PartyHasItem("Scalpel")
+~ THEN REPLY #45480 /* ~Durchtrenne die Nähte mit deinem Skalpell, zieh die Nadel heraus und trenn die Naht auf.~ */ DO ~SetGlobal("506_Thread","GLOBAL",1)
+GiveItemCreate("Needle",Protagonist,1,0,0)
+AddexperienceParty(100)
+~ GOTO 4
+  IF ~  !PartyHasItem("Scalpel")
+~ THEN REPLY #45481 /* ~"Hmmm. Hier muß es doch irgendwas geben, womit ich den Faden durchtrennen kann... Bin gleich wieder da."~ */ EXIT
+  IF ~~ THEN REPLY #45482 /* ~Untersuche die Leiche noch einmal.~ */ GOTO 0
+  IF ~~ THEN REPLY #45483 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #45428 /* ~Du durchtrennst den Faden sauber mit dem Skalpell. Dann ziehst du die Nadel heraus und ziehst die Stiche auf. Die Haut löst sich von der Stirn ab und gibt den Blick auf den kreideweißen Schädel der Leiche frei. Darauf ist zu deinem Erstaunen die Zahl "78" eingemeißelt.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45484 /* ~"Sieht ganz so aus, als hättest du da zwei unterschiedliche Nummern, Leiche."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45496 /* ~"Sieht ganz so aus, als hättest du da zwei unterschiedliche Nummern, Leiche."~ */ GOTO 1
+  IF ~~ THEN REPLY #50097 /* ~Untersuche die Leiche nochmal. ~ */ GOTO 5
+  IF ~~ THEN REPLY #66889 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~  Global("506_Thread","GLOBAL",1)
+~ THEN BEGIN 5 // from: 4.2
+  SAY #45429 /* ~Diese an allen Ende zusammengeflickte Leiche schlurft träge zwischen zwei Totenbänken hin und her. Obwohl fast über den ganzen Körper verteilt die Zahl "506" aufgenäht wurde, ist die Haut der Stirn abgeblättert und gibt den Blick auf die - direkt in den Knochen eingemeißelte - Zahl "78" frei. ~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45502 /* ~"Sieht ganz so aus, als hättest du da zwei unterschiedliche Nummern, Leiche."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45508 /* ~"Sieht ganz so aus, als hättest du da zwei unterschiedliche Nummern, Leiche."~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45510 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45512 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ GOTO 2
+  IF ~~ THEN REPLY #45513 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #45514 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END

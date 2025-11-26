@@ -1,0 +1,46 @@
+IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN BEGIN 0 // from: 3.2
+SAY #45419 /* ~This heavily stitched corpse is shuffling lazily back and forth between two slabs. The number "506" has been stitched on its forehead... and the side of its neck... and its right arm... in fact, the skin of this peeling corpse has been sewn up with so many stitches its skin looks like a bizarre street map.~ */
+IF ~  Global("506_Thread","GLOBAL",0) ~ THEN REPLY #45420 /* ~Examine the stitches.~ */ GOTO 3
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45421 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45422 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 2
+IF ~~ THEN REPLY #45423 /* ~"It was great talking to you. Farewell."~ */ EXIT
+IF ~~ THEN REPLY #45424 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 4.0 4.1 5.0 5.1 5.2
+SAY #45425 /* ~The corpse stares straight ahead, oblivious.~ */
+IF ~~ THEN REPLY #45478 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.2 5.3
+SAY #45426 /* ~The corpse does not stir. It looks like it is too far gone to answer any of your questions.~ */
+IF ~~ THEN REPLY #45479 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+SAY #45427 /* ~The stitches encircle the corpse, running from its arms, across its chest, up its neck, and into the damp mass of white hair. As you follow the crossroads of stitches, you notice someone has jammed a needle into the corpse's forehead... the needle is attached to a thread stitching up the side of the skull. You could probably unravel it if you had something to cut the thread. ~ */
+IF ~  PartyHasItem("Scalpel") ~ THEN REPLY #45480 /* ~Cut the stitches with your scalpel, then pull out the needle and thread. ~ */ DO ~SetGlobal("506_Thread","GLOBAL",1) GiveItemCreate("Needle",Protagonist,1,0,0) AddexperienceParty(100) ~ GOTO 4
+IF ~  !PartyHasItem("Scalpel") ~ THEN REPLY #45481 /* ~"Hmmm. Maybe there's something around here I can use to cut the thread... I'll be back."~ */ EXIT
+IF ~~ THEN REPLY #45482 /* ~Examine the corpse again.~ */ GOTO 0
+IF ~~ THEN REPLY #45483 /* ~Leave the corpse alone.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+SAY #45428 /* ~You slice the thread neatly with the scalpel, then pluck out the needle and pull the stitches out. As you do, the skin covering the forehead peels back to reveal the corpse's chalk-white skull - where, to your surprise, the number "78" has been chiseled.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #45484 /* ~"Seems you got two different designations there, corpse."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45496 /* ~"Seems you got two different designations there, corpse."~ */ GOTO 1
+IF ~~ THEN REPLY #50097 /* ~Examine the corpse again. ~ */ GOTO 5
+IF ~~ THEN REPLY #66889 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~  Global("506_Thread","GLOBAL",1)
+~ THEN BEGIN 5 // from: 4.2
+SAY #45429 /* ~This heavily stitched corpse is shuffling lazily back and forth between two slabs. Although the number "506" has been stitched almost all over its body, the skin on its forehead has peeled back from the skull, revealing the number "78" chiseled into the bone. ~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #45502 /* ~"Seems you got two different designations there, corpse."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45508 /* ~"Seems you got two different designations there, corpse."~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45510 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45512 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 2
+IF ~~ THEN REPLY #45513 /* ~"It was great talking to you. Farewell."~ */ EXIT
+IF ~~ THEN REPLY #45514 /* ~Leave the corpse in peace.~ */ EXIT
+END

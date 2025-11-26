@@ -1,0 +1,1163 @@
+init 10 python:
+    from game.engine.runtime import (runtime)
+    from game.dlgs.dhall_logic import DhallLogic
+    dhallLogic = DhallLogic(runtime.global_state_manager)
+
+
+# ###
+# Original:  DLG/DDHALL.DLG
+# ###
+
+
+# s0 # say822
+label dhall_s0: # externs morte_s103
+    nr 'Předtím, než Morte dokončí své řečnění, písař začne mohutně kašlat. Po chvíli se kašel uklidní a písařovo dýchání začne znovu provázet ošklivé sípání.'
+
+    jump morte_s104  # EXTERN
+
+
+# s1 # say826
+label dhall_s1: # externs morte_s104
+    nr 'Ještě předtím, než Morte skončí svou řeč, tě přejedou písařovy šedé oči. "Už léta mě tíží toto břemeno, Neklidný." Odložil psací brk. "…a to teď nepočítám hluchotu jako jednu ze svých nemocí."'
+
+    menu:
+        '"„Neklidný?“ Ty mě snad znáš?"':
+            # a0 # r827
+            $ dhallLogic.r827_action()
+            jump dhall_s44
+
+
+# s2 # say829
+label dhall_s2: # from 21.0
+    nr '"Neznáš tu ženu, která byla pohřbena dole v pamětní síni? Myslel jsem, že v minulosti cestovala s tebou…" Dhall vypadá, jako by ho chytal další záchvat kašle, ale pak znovu popadne dech. "Nebo se mýlím?"'
+
+    menu:
+        '"Kde je její tělo?"' if dhallLogic.r5070_condition():
+            # a1 # r5070
+            jump dhall_s42
+
+        '"Nic o ní nevím."' if dhallLogic.r5071_condition():
+            # a2 # r5071
+            jump dhall_s43
+
+        '"Tvrdí, že ji znám, ale já si na ni nepamatuju."' if dhallLogic.r5072_condition():
+            # a3 # r5072
+            jump dhall_s28
+
+        '"Říkal jsi, že byli i další. Kdo další je tady?"' if dhallLogic.r5073_condition():
+            # a4 # r5073
+            jump dhall_s12
+
+        '"Říkal jsi, že byli i další. Kdo další je tady?"' if dhallLogic.r5074_condition():
+            # a5 # r5074
+            jump dhall_s12
+
+        '"Možná. Mám pro tebe další otázky…"':
+            # a6 # r6063
+            jump dhall_s9
+
+        '"Půjdu do haly dolů a zkusím najít její tělo."' if dhallLogic.r6064_condition():
+            # a7 # r6064
+            jump dhall_s11
+
+        '"Možná ne. Sbohem."' if dhallLogic.r13288_condition():
+            # a8 # r13288
+            jump dhall_s11
+
+
+# s3 # say832
+label dhall_s3: # from 9.0
+    nr 'Dhall na tebe kouká. "Víš to jistě?"'
+
+    menu:
+        '"Ano. To je dobrý převlek."' if dhallLogic.r830_condition():
+            # a9 # r830
+            $ dhallLogic.r830_action()
+            jump dhall_s4
+
+        '"Ano. To je dobrý převlek."' if dhallLogic.r831_condition():
+            # a10 # r831
+            $ dhallLogic.r831_action()
+            jump dhall_s4
+
+        '"Ne, po zralém uvážení, snad jsem si to dostatečně představil. Podívej, měl bych nějaké další otázky…"':
+            # a11 # r834
+            jump dhall_s9
+
+
+# s4 # say833
+label dhall_s4: # from 3.0 3.1
+    nr '"Já…" Dhalla popadl úporný kašel. Po minutě nebo dvou, zase chytil dech a povídá. "Já… bych měl hned informovat stráže."'
+
+    menu:
+        '"Díky. Měl bych nějaké další otázky…"':
+            # a12 # r836
+            jump dhall_s9
+
+        '"Skvělé. Sbohem."':
+            # a13 # r837
+            jump dhall_s11
+
+
+# s5 # say838
+label dhall_s5: # - # IF ~  Global("Dhall","GLOBAL",0)
+    nr 'Písař vypadá velice staře… jeho kůže je vrásčitá a má barvu starého pergamenu. Šedé oči jsou vsazeny do hranatého obličeje a velká bílá bradka mu splývá po šatech jako vodopád. Jeho dech je trhaný a nepravidelný, ale ani tak občasné záchvaty kašle nezpomalují pohyb jeho psacího brku.'
+
+    menu:
+        '"Zdravím."' if dhallLogic.r839_condition():
+            # a14 # r839
+            jump morte_s102  # EXTERN
+
+        '"Zdravím."' if dhallLogic.r835_condition():
+            # a15 # r835
+            jump dhall_s7
+
+        '"Zdravím."' if dhallLogic.r5058_condition():
+            # a16 # r5058
+            jump dhall_s6
+
+        'Nechej starého písaře být.':
+            # a17 # r5060
+            jump dhall_dispose
+
+
+# s6 # say841
+label dhall_s6: # from 5.2
+    nr 'Jeho šedé oči tě přejely, když zvedl hlavu od své knihy. "Obával jsem se, že to budeš ty, kdo je zodpovědný za útoky tady v Márnici. Tohle…" lehce zakašlal, pak se mu podařilo nadechnout se. "Tohle není pro tebe cesta, jak vstoupit do dalšího života."'
+
+    menu:
+        '"Jenom sem se bránil. Mám pro tebe nějaké otázky než se ze mne stane vzácnost…"' if dhallLogic.r842_condition():
+            # a18 # r842
+            jump dhall_s9
+
+        '"Sdílet trochu smrti s vámi zbožňovateli-mrtvol není takový zločin, co se mne týče. A teď mám na tebe nějaké otázky…"' if dhallLogic.r843_condition():
+            # a19 # r843
+            $ dhallLogic.r843_action()
+            jump dhall_s9
+
+        '"Znáš mě?"' if dhallLogic.r5062_condition():
+            # a20 # r5062
+            jump dhall_s44
+
+        '"Sbohem."':
+            # a21 # r5063
+            jump dhall_dispose
+
+
+# s7 # say844
+label dhall_s7: # from 5.1
+    nr 'Písař přestal psát do knihy před ním a pak se na tebe podíval. Jeho oči jsou jako dva hřebíky zaražené do lebky. "Tak…" Jeho hlas zní unaveně, jako kdyby tu samou věc opakoval již mnohokrát předtím. "Probudil ses ze svého spánku a vrátil ses do svého snu." Pokračuje uctivě dál. "Vítej… znovu, Neklidný."'
+
+    menu:
+        '"„Neklidný?“ Ty mne snad znáš?"':
+            # a22 # r845
+            jump dhall_s44
+
+
+# s8 # say851
+label dhall_s8: # from 22.0
+    nr '"Musíš pochopit. Tvá existence je pro nás rouháním. Mnoho členů z našeho společenství by nejraděj poručilo tě zpopelnit… kdyby věděli o tvém strádání."'
+
+    menu:
+        '"Jsi Spalovač. Ale nevypadá to, že bys mi udělal tu laskavost a zabil mne. Proč ne?"':
+            # a23 # r940
+            jump dhall_s23
+
+        '"Řekni mi něco více o Márnici."':
+            # a24 # r911
+            jump dhall_s32
+
+        '"Měl bych nějaké další otázky…"':
+            # a25 # r913
+            jump dhall_s9
+
+        '"Slyšel jsem dost. Sbohem, Dhalle."':
+            # a26 # r6038
+            jump dhall_s11
+
+
+# s9 # say852
+label dhall_s9: # from 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
+    nr '"Dobře. Co si tedy přeješ vědět?"'
+
+    menu:
+        '"Věděl si, ze ve východních komnatách se pohybuje někdo, kdo se svým převlekem maskuje jako zombie?"' if dhallLogic.r854_condition():
+            # a27 # r854
+            jump dhall_s3
+
+        '"Co je tohle za místo?"':
+            # a28 # r857
+            jump dhall_s10
+
+        '"Jak jsem se sem dostal?"':
+            # a29 # r855
+            jump dhall_s15
+
+        '"Můžeš mi říct, jak se odsud dostanu?"' if dhallLogic.r858_condition():
+            # a30 # r858
+            jump dhall_s13
+
+        '"Víš, kdo jsem?"':
+            # a31 # r5069
+            $ dhallLogic.j39460_s9_r5069_action()
+            jump dhall_s21
+
+        '"Co tady děláš?"':
+            # a32 # r5748
+            jump dhall_s25
+
+        '"Připadáš mi nemocný. Není ti dobře?"':
+            # a33 # r6065
+            jump dhall_s26
+
+        '"Nic… Sbohem, Dhalle."':
+            # a34 # r41663
+            jump dhall_s11
+
+
+# s10 # say859
+label dhall_s10: # from 9.1
+    nr '"Jsi v Márnici, Neklidný. Znovu jsi… přišel…" Předtím, než dokončí větu, dá se Dhall do úporného kašle. Po chvilce se zklidní a začne znovu při dýchání sípat. "…toto je vyčkávací místnost pro ty, kteří odejdou ze stínu tohoto života."'
+
+    menu:
+        '"Řekni mi o Márnici."':
+            # a35 # r861
+            jump dhall_s32
+
+        '"*Neklidný?*"':
+            # a36 # r860
+            jump dhall_s38
+
+        '"Stíny tohoto života?"':
+            # a37 # r862
+            jump dhall_s33
+
+        '"Znovu…? Já už jsem tu byl víckrát než jednou?"':
+            # a38 # r863
+            jump dhall_s14
+
+        '"Jak jsem se sem dostal?"':
+            # a39 # r864
+            jump dhall_s15
+
+        '"Měl bych nějaké další otázky…"':
+            # a40 # r865
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a41 # r866
+            jump dhall_s11
+
+
+# s11 # say867
+label dhall_s11: # from 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
+    nr 'Když už se chystáš k odchodu, Dhall ti říká. "Věz toto: Nezávidím ti, Neklidný. Kdybych byl znovuzrozený jako ty, tak bych to považoval za kletbu, kterou bych nemohl nést. Musíš se s tím vyrovnat. Za nějakou dobu se sem zase vrátíš…" Dhall kašle a z jeho hrdla vychází chraptivý zvuk. "Je to úděl všech věcí složených z masa a kostí."'
+
+    menu:
+        '"Snad se ještě setkáme, Dhalle."':
+            # a42 # r41564
+            jump dhall_dispose
+
+
+# s12 # say868
+label dhall_s12: # from 2.3 2.4 42.2 42.3 43.1 43.2
+    nr '"Nepochybně jsou, ale já neznám jejich jména a ani nevím, kde leží. Mnoho takových, jako jsi ty, sem přišlo způsobem, kterým se sem dostává většina těl. Pár jich přežilo. " Dhall ukazuje na tebe. "Všichni mrtví přicházejí sem. Někteří museli jednou přijít s tebou."'
+
+    menu:
+        '"Kde je ta žena, o které ses zmínil?"' if dhallLogic.r870_condition():
+            # a43 # r870
+            jump dhall_s42
+
+        '"Nevidím nic špatného v tvých důvodech. Měl bych nějaké další otázky…"':
+            # a44 # r871
+            jump dhall_s9
+
+        '"Podívám se po nich. Možná mi můžou pomoct zažehnout jiskřičku v paměti. Sbohem."':
+            # a45 # r872
+            jump dhall_s11
+
+
+# s13 # say875
+label dhall_s13: # from 9.3
+    nr '"Hmmm… vstupní brána je zcela jistě východ, ale tam zase nedovolí projít nikomu jinému než Spalovači…" Dhall se pustil do úporného kašle a po chvilce pokračuje. "…jeden ze strážných u vstupní brány má k bráně i klíč, ale určitě ti ji neotevře, pokud nebudeš hodně přesvědčivý."'
+
+    menu:
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a46 # r876
+            jump dhall_s9
+
+        '"Pak tedy sbohem, Dhalle."':
+            # a47 # r877
+            jump dhall_dispose
+
+
+# s14 # say878
+label dhall_s14: # from 10.3
+    nr '"Ano, *znovu.* Už jsi sem byl přinesen mnohokrát, Neklidný. Doufal jsem, že tentokrát to bylo naposledy, když jsem uvážil ta hrozná poranění na tvém těle." Nadechne se. "Kdy se konečně vzdáš svého vzteku a odejdeš ze stínů tohoto života?"'
+
+    menu:
+        '"*Neklidný?*"':
+            # a48 # r880
+            jump dhall_s38
+
+        '"Zranění?"':
+            # a49 # r881
+            jump dhall_s34
+
+        '"Stíny života?"':
+            # a50 # r883
+            jump dhall_s33
+
+        '"Řekni mi něco víc o Márnici."':
+            # a51 # r879
+            jump dhall_s32
+
+        '"Mám ještě jiné otázky…"':
+            # a52 # r5751
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a53 # r5752
+            jump dhall_s11
+
+
+# s15 # say885
+label dhall_s15: # from 9.2 10.4 32.5
+    nr 'Dhall si pohrdavě odfrkne, jako kdyby se to protivilo jeho mysli. "Tvoje rezavá kára tě dopravila do Márnice, Neklidný. Měl bys pomyslit na to, že v tom voze, co tě sem dovezl, jsi ležel jako král na povrchu na to, kolik lidí uvnitř smrdělo a hnilo."'
+
+    menu:
+        '"Přijel jsem sem vozem?"':
+            # a54 # r886
+            $ dhallLogic.j39463_s15_r886_action()
+            jump dhall_s16
+
+        '"Řekni mi něco více o Márnici."':
+            # a55 # r887
+            jump dhall_s32
+
+        '"Měl bych nějaké další otázky…"':
+            # a56 # r888
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a57 # r889
+            jump dhall_s11
+
+
+# s16 # say890
+label dhall_s16: # from 15.0
+    nr '"Ano… tvé tělo bylo někde mezi hromadou zbytků mrtvých těl." Dhalla přepadl ostrý nával kašle, po minutě konečně znovu chytil dech. "Tvůj „nosič“ Pharod byl, ostatně jako vždy, potěšen, že dostal zase pár měďáků za odvezení hromady z vás před brány Márnice."'
+
+    menu:
+        '"Kdo je tenhle Pharod?"' if dhallLogic.r891_condition():
+            # a58 # r891
+            jump dhall_s17
+
+        '"To zní, jako bys Pharoda neměl moc v lásce."' if dhallLogic.r892_condition():
+            # a59 # r892
+            jump dhall_s35
+
+        '"Řekni mi něco více o Márnici."':
+            # a60 # r893
+            jump dhall_s32
+
+        '"Měl bych nějaké další otázky…"':
+            # a61 # r894
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a62 # r5753
+            jump dhall_s11
+
+
+# s17 # say895
+label dhall_s17: # from 16.0
+    nr '"On je… sběrač mrtvých." Dhall se zhluboka nadechne a pak pokračuje. "Máme v našem městě takové lidi, kteří odklízejí mrtvá těla těch, kdož prošli cestou Pravé smrti, a přináší je k nám, aby jejich ostatky mohly být důstojně pohřbeny."'
+
+    menu:
+        '"Kde můžu najít tohohle „Pharoda?“"':
+            # a63 # r897
+            jump dhall_s18
+
+        '"To zní jako bys Pharoda neměl moc v lásce."' if dhallLogic.r898_condition():
+            # a64 # r898
+            jump dhall_s35
+
+        '"Řekni mi něco více o Márnici."':
+            # a65 # r899
+            jump dhall_s32
+
+        '"Aha. Mám ještě jiné otázky…"':
+            # a66 # r5754
+            jump dhall_s9
+
+        '"Tak to půjdu najít toho Pharoda. Sbohem, Dhalle."':
+            # a67 # r6031
+            jump dhall_s19
+
+
+# s18 # say900
+label dhall_s18: # from 17.0 29.1 31.0 35.1 36.1
+    nr '"Jestli události půjdou tak jak mají, Neklidný, je tu mnohem větší šance, že tě Pharod najde a znovu přinese ještě předtím, než ty zjistíš, v které stoce momentálně Pharod žije."'
+
+    menu:
+        '"Nicméně musím ho najít."':
+            # a68 # r902
+            jump dhall_s19
+
+        '"Řekni mi něco více o Márnici."':
+            # a69 # r903
+            jump dhall_s32
+
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a70 # r904
+            jump dhall_s9
+
+        '"Mám pocit, že se naše cesty ještě zkříží. Sbohem, Dhalle."':
+            # a71 # r5755
+            jump dhall_s19
+
+
+# s19 # say901
+label dhall_s19: # from 17.4 18.0 18.3 29.3 31.2
+    nr 'Do Dhallova tónu se vkradlo lehké varování. "Nehledej Pharoda, Neklidný. Jsem si jistý, že kruh by se opět uzavřel, s tebou bez žádných zkušeností a Pharodem o pár měďáků bohatším. Přijmi smrt, Neklidný. Nezachovávej na věky svůj kruh utrpení."'
+
+    menu:
+        '"*Musím* ho najít. Víš, kde ho najdu?"':
+            # a72 # r906
+            $ dhallLogic.j39464_s19_r906_action()
+            jump dhall_s20
+
+        '"Řekni mi něco více o Márnici."':
+            # a73 # r905
+            jump dhall_s32
+
+        '"Měl bych nějaké další otázky…"':
+            # a74 # r907
+            jump dhall_s9
+
+        '"Už se s tebou nemůžu dál bavit. Sbohem, Dhalle."':
+            # a75 # r5756
+            jump dhall_s11
+
+
+# s20 # say908
+label dhall_s20: # from 19.0
+    nr 'Dhall se na chvíli odmlčí. Když konečně začne mluvit, vypadá to, že tak činí neochotně. "Nevím, v jakém kanálu teď zrovna Pharod bydlí, ale měl bys ho najít někde za branami Márnice, v Úlu. Snad tam někdo bude vědět, kde ho najdeš."'
+
+    menu:
+        '"To zní, jako bys neměl Pharoda moc v lásce."' if dhallLogic.r910_condition():
+            # a76 # r910
+            jump dhall_s35
+
+        '"Můžeš mi říct něco více o Márnici?"':
+            # a77 # r909
+            jump dhall_s32
+
+        '"Děkuju ti. Mám ještě jiné otázky…"':
+            # a78 # r5757
+            jump dhall_s9
+
+        '"Půjdu tam a poptám se. Sbohem."':
+            # a79 # r6030
+            jump dhall_s11
+
+
+# s21 # say914
+label dhall_s21: # from 9.4
+    nr '"Já o tobě vím opravdu málo, Neklidný. O něco více vím o těch, kdož putovali s tebou, a kteří jsou nyní v našem držení." Dhall se nadechne. "Žádám tě, aby se k tobě už nikdo do party nepřipojoval, Neklidný -- kam půjdeš ty, půjde i neštěstí. Nes si své břímě úplně sám."'
+
+    menu:
+        '"Jsou tu i ostatní, kteří se mnou putovali? Jsou tady?"':
+            # a80 # r921
+            $ dhallLogic.j39461_s21_r921_action()
+            jump dhall_s2
+
+        '"Měl bych nějaké další otázky…"':
+            # a81 # r922
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a82 # r923
+            jump dhall_s11
+
+
+# s22 # say915
+label dhall_s22: # from 47.0
+    nr 'Dhall si povzdychne. "Říká se, že existují duše, které nikdy nedocílí Pravé smrti. Smrt je opustila a jejich jména nikdy nebudou zapsána do Knihy mrtvých. Probudit se ze smrti, jako se to stalo tobě… naznačuje, že jsi jednou z těchto duší. Tvá existence není v našem společenství vítána."'
+
+    menu:
+        '"„Není vítána?“ To nezní, jako bych se zrovna nacházel v dobré situaci."':
+            # a83 # r917
+            jump dhall_s8
+
+        '"Aha. Řekni mi něco více o Márnici."':
+            # a84 # r918
+            jump dhall_s32
+
+        '"Měl bych nějaké další otázky…"':
+            # a85 # r919
+            jump dhall_s9
+
+        '"Myslím, že jsem slyšel dost. Sbohem, Dhalle."':
+            # a86 # r920
+            jump dhall_s11
+
+
+# s23 # say924
+label dhall_s23: # from 8.0
+    nr '"Protože vnutit ti naši pravdu není správné. Musíš se vzdát těchto stínů života sám, a to ne proto, že jsme tě donutili." Dhall vypadá, jako by měl propadnout dalšímu návalu kašle, ale dokázal jej s vypětím sil zadržet. "Dokud budu zastávat tento post, budu chránit tvé právo najít skutečnou pravdu."'
+
+    menu:
+        '"Jaké je tvoje místo tady?"':
+            # a87 # r927
+            jump dhall_s25
+
+        '"Řekni mi něco více o Márnici."':
+            # a88 # r928
+            jump dhall_s32
+
+        '"Dobře. Měl bych nějaké další otázky…"':
+            # a89 # r925
+            jump dhall_s9
+
+        '"Slyšel jsem dost. Sbohem, Dhalle."':
+            # a90 # r6039
+            jump dhall_s11
+
+
+# s24 # say929
+label dhall_s24: # from 25.0
+    nr '"Jsem písař, co dělá seznamy schránek, které přicházejí do našich hal, Neklidný." Dhall se dal do úporného kašle a pak se uklidnil. "Znám pouze obličeje těch, kteří leží na našich kamenných deskách. Tajemství tvé existence je bezpečně uloženo u mne."'
+
+    menu:
+        '"Řekni mi více o Márnici."':
+            # a91 # r1305
+            jump dhall_s32
+
+        '"Mám ještě jiné otázky…"':
+            # a92 # r6041
+            jump dhall_s9
+
+        '"Vypadá to, že ti něco dlužím. Sbohem, Dhalle."':
+            # a93 # r6042
+            jump dhall_s11
+
+
+# s25 # say930
+label dhall_s25: # from 9.5 23.0
+    nr '"Jsem písař, co dělá seznamy všech schránek, které přicházejí do Márnice." Dhall si znovu odkašlal, pak se zhluboka nadýchl. "Dokud Márnicí poteče proud mrtvých těl, budu zastávat toto místo."'
+
+    menu:
+        '"Říkal jsi, že jsem tu byl víckrát než jednou. Jak to, že mne tedy Spalovači nepoznali?"' if dhallLogic.r931_condition():
+            # a94 # r931
+            $ dhallLogic.j39462_s25_r931_action()
+            jump dhall_s24
+
+        '"Řekni mi něco více o Márnici."':
+            # a95 # r932
+            jump dhall_s32
+
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a96 # r933
+            jump dhall_s9
+
+        '"Dobrá tedy. Sbohem, Dhalle."':
+            # a97 # r6040
+            jump dhall_s11
+
+
+# s26 # say934
+label dhall_s26: # from 9.6
+    nr '"Nyní jsem blízko Pravé smrti, Neklidný. Nebude to dlouho trvat a já se dostanu za Nekonečnou hranici, kde konečně najdu klid, který hledám. Už jsem moc unavený…" Dhall se hluboce nadechl. "Sféry už nebude zajímat někdo takový, jako jsem já."'
+
+    menu:
+        '"Nekonečná hranice?"':
+            # a98 # r935
+            jump dhall_s41
+
+        '"Víš to jistě? Možná bych ti mohl nějakým způsobem pomoct."':
+            # a99 # r936
+            $ dhallLogic.r936_action()
+            jump dhall_s27
+
+        '"Měl bych nějaké další otázky…"':
+            # a100 # r937
+            jump dhall_s9
+
+        '"Sbohem, Dhalle. "':
+            # a101 # r960
+            jump dhall_s11
+
+
+# s27 # say938
+label dhall_s27: # from 26.1
+    nr '"Nepřeji si žít věčně nebo žít znovu, Neklidný. Nesnesl bych to."'
+
+    menu:
+        '"Dobře. Měl bych nějaké další otázky…"':
+            # a102 # r1303
+            jump dhall_s9
+
+        '"Tak to bude vše. Sbohem, Dhalle."':
+            # a103 # r1304
+            jump dhall_s11
+
+
+# s28 # say939
+label dhall_s28: # from 2.2 42.1
+    nr '"Ona s tebou *mluvila*?" Dhallův hlas zašeptá. "Máš snad *horečku*, Neklidný? Ona dosáhla Pravé smrti a přešla hranici ještě před tebou."'
+
+    menu:
+        '"Mluvila se mnou, Dhalle. Její duše tu přebývá."':
+            # a104 # r981
+            jump dhall_s30
+
+        '"Snad bych si to vybavil. Měl bych nějaké další otázky…"':
+            # a105 # r982
+            jump dhall_s9
+
+        '"Nejsem si jist, zdali dosáhla Pravé smrti. Sbohem, Dhalle."':
+            # a106 # r873
+            jump dhall_s11
+
+
+# s29 # say941
+label dhall_s29: # from 36.0
+    nr 'Dhall se pozastavil. "Nejspíše. Postrádáš něco… zvláště cenného?" Jeho hlas poklesl a zamračil se. "Pharod nedělá výjimky, vezme si od tebe všechno, co není pevně spojeno k tvému tělu a někdy ani dokonce tohle nestačí k uspokojení jeho nenasytné duše."'
+
+    menu:
+        '"Postrádám deník."' if dhallLogic.r942_condition():
+            # a107 # r942
+            jump dhall_s31
+
+        '"Hmmm. Víš, kde bych mohl najít Pharoda?"' if dhallLogic.r943_condition():
+            # a108 # r943
+            jump dhall_s18
+
+        '"Měl bych nějaké další otázky…"':
+            # a109 # r944
+            jump dhall_s9
+
+        '"Možná bych si měl promluvit s Pharodem. Sbohem, Dhalle."' if dhallLogic.r6026_condition():
+            # a110 # r6026
+            jump dhall_s19
+
+        '"Aha. Sbohem, Dhalle."' if dhallLogic.r874_condition():
+            # a111 # r874
+            jump dhall_s11
+
+
+# s30 # say945
+label dhall_s30: # from 28.0
+    nr 'Dhall nakreslil před sebou prstem půlkruh. "To je nemocná duše, Neklidný. Modlím se, aby se ti ten rozhovor zdál… ale teď se obávám, že se ti nezdál."'
+
+    menu:
+        '"Snad jsem si to vybavil. Měl bych nějaké další otázky."':
+            # a112 # r946
+            jump dhall_s9
+
+        '"Snad si o tom více promluvíme později. Sbohem, Dhalle."':
+            # a113 # r947
+            jump dhall_s11
+
+
+# s31 # say850
+label dhall_s31: # from 29.0
+    nr '"Deník? Jestli to mělo nějakou cenu, pak to zcela určitě uvízlo v rukou Pharoda."'
+
+    menu:
+        '"Kde bych mohl najít toho Pharoda?"' if dhallLogic.r948_condition():
+            # a114 # r948
+            jump dhall_s18
+
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a115 # r949
+            jump dhall_s9
+
+        '"Tak to ho vyhledám. Sbohem, Dhalle."' if dhallLogic.r6027_condition():
+            # a116 # r6027
+            jump dhall_s19
+
+        '"Aha. Sbohem, Dhalle."' if dhallLogic.r6066_condition():
+            # a117 # r6066
+            jump dhall_s11
+
+
+# s32 # say950
+label dhall_s32: # from 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
+    nr '"Je to místo, kam jsou přinášeni mrtví, aby byli pohřbeni nebo zpopelněni. Je to naše zodpovědnost coby Spalovačů, postarat se o mrtvé, o ty, kteří opustili tento stín života a došli cestou k Pravé smrti." Dhallův hlas poklesl. "Tvá zranění jsou asi mnohem horší, když nepoznáváš tohle místo. Vždyť je tohle skoro tvůj domov."'
+
+    menu:
+        '"Stín života?"':
+            # a118 # r951
+            jump dhall_s33
+
+        '"Pravé smrti?"':
+            # a119 # r953
+            $ dhallLogic.r953_action()
+            jump dhall_s48
+
+        '"Spalovači?"':
+            # a120 # r954
+            jump dhall_s47
+
+        '"Sigil?"':
+            # a121 # r955
+            jump dhall_s37
+
+        '"Zranění?"':
+            # a122 # r956
+            jump dhall_s34
+
+        '"Jak jsem se sem dostal?"':
+            # a123 # r846
+            jump dhall_s15
+
+        '"Mám ještě jiné otázky…"':
+            # a124 # r5735
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a125 # r6062
+            jump dhall_s11
+
+
+# s33 # say957
+label dhall_s33: # from 10.2 14.2 32.0 41.0 47.2 49.0
+    nr '"Ano, stín. Víš, Neklidný, tento život… není skutečný. Tvůj život, můj život, to jsou stíny, jiskry toho, čím kdysi život býval. Tento „život“ je tam, kde skončíme *potom*, co zemřeme. A tady zůstaneme… uvězněni. V pasti. Dokud nedosáhneme Pravé smrti."'
+
+    menu:
+        '"Pravé smrti?"':
+            # a126 # r958
+            $ dhallLogic.r958_action()
+            jump dhall_s48
+
+        '"Proč si myslíš, že tenhle život není skutečný?"':
+            # a127 # r959
+            jump dhall_s50
+
+        '"Řekni mi víc o Márnici."':
+            # a128 # r5736
+            jump dhall_s32
+
+        '"Aha. Mám ještě jiné otázky…"':
+            # a129 # r5737
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a130 # r5738
+            jump dhall_s11
+
+
+# s34 # say961
+label dhall_s34: # from 14.1 32.4
+    nr '"Ano, ta zranění, která zdobí tvé tělo… vypadají, jako by už poslala nějakého muže cestou Pravé smrti. Teď se zdá, že mnohé z těchto ran se již uzdravily." Dhall se nahlas na chvíli rozkašlal a pak se uklidnil. "Ale toto jsou pouze povrchová zranění."'
+
+    menu:
+        '"Pouze povrchová zranění? Co tím máš na mysli?"':
+            # a131 # r1301
+            $ dhallLogic.j39470_s34_r1301_action()
+            jump dhall_s53
+
+        '"Řekni mi více o Márnici."':
+            # a132 # r1302
+            jump dhall_s32
+
+        '"Mám ještě jiné otázky…"':
+            # a133 # r5746
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a134 # r5747
+            jump dhall_s11
+
+
+# s35 # say962
+label dhall_s35: # from 16.1 17.1 20.0
+    nr '"Je tu několik lidí, kterých si vážím, Neklidný." Dhall se úporně rozkašle a pak se zklidní. "Pharod není jedním z nich. Nosí svůj zkažený věhlas jako jakýsi odznak čestnosti a přitom volně okrádá mrtvé. Je to vrchní přemísťovač, křižující darebák toho nejnižšího řádu."'
+
+    menu:
+        '"„Vrchní přemísťovač?“"':
+            # a135 # r963
+            jump dhall_s36
+
+        '"Víš, kde bych mohl najít Pharoda?"' if dhallLogic.r964_condition():
+            # a136 # r964
+            jump dhall_s18
+
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a137 # r965
+            jump dhall_s9
+
+        '"Povzbudivé. Sbohem, Dhalle."':
+            # a138 # r6028
+            jump dhall_s11
+
+
+# s36 # say966
+label dhall_s36: # from 35.0
+    nr '"Vrchní přemísťovač…" Dhall se rozkašle. "…no, zloděj. Všichni mrtví, které Pharod přinese k našim zdím, už přijdou oloupeni o tu trochu, co měli u sebe, což je připraví i o důstojnost, kterou měli za svého skutečného života. Pharod si vezme cokoliv, co může vydolovat z jejich ztuhlých prstů."'
+
+    menu:
+        '"Vzal si ten Pharod taky něco ode *mne?*"':
+            # a139 # r967
+            jump dhall_s29
+
+        '"Víš, kde bych mohl najít Pharoda?"' if dhallLogic.r968_condition():
+            # a140 # r968
+            jump dhall_s18
+
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a141 # r969
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a142 # r6029
+            jump dhall_s11
+
+
+# s37 # say970
+label dhall_s37: # from 32.3
+    nr '"Sigil je naše krásné město, Neklidný."'
+
+    menu:
+        '"Řekni mi něco více o Márnici."':
+            # a143 # r971
+            jump dhall_s32
+
+        '"Aha. Měl bych nějaké další otázky…"':
+            # a144 # r972
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a145 # r5758
+            jump dhall_s11
+
+
+# s38 # say973
+label dhall_s38: # from 10.1 14.0
+    nr '"Neklidný je jméno jako každé jiné…" Dhall zakašle. "Něco tě drží tady, že ano? Něco, co musí být vysvětleno, nějaký chtíč, který musí být potlačen předtím než budeš moci dosáhnout Pravé smrti?"'
+
+    menu:
+        '"Pravé smrti?"':
+            # a146 # r974
+            $ dhallLogic.r974_action()
+            jump dhall_s48
+
+        '"Řekni mi něco více o Márnici."':
+            # a147 # r975
+            jump dhall_s32
+
+        '"Mám ještě jiné otázky…':
+            # a148 # r5749
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a149 # r5750
+            jump dhall_s11
+
+
+# s39 # say884
+label dhall_s39: # -
+    nr '"Uděláš to, co jsi udělal vždycky, Neklidný. Najdeš toho popudlivého srabáckého blbce, Pharoda Červovlasa, a požádáš ho o to, co ti vzal. A pak znovu začneš marně pátrat, budeš se pokoušet plnit nesmyslné úkoly, sbírat ty zbytečné věci a nakonec tě někdo zase sejme a ty se ocitneš tady. Ušetři si čas a promluv si teď se mnou, aspoň nebudeme muset tuhle konverzaci muset opakovat, až se ti zase ztratí paměť."'
+
+    menu:
+        '"Měl bych nějaké další otázky…"':
+            # a150 # r976
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a151 # r977
+            jump dhall_dispose
+
+
+# s40 # say978
+label dhall_s40: # - # IF ~  Global("Dhall","GLOBAL",1)
+    nr 'Dhall na tebe prohlédl, když ses přiblížil." Tak ses vrátil…" Dhall se těžce nadýchne, najednou se hlasitě rozkašle. Po chvíli se uklidní a začne znovu těžce oddychovat. "… znovu tě vítám, Neklidný."'
+
+    menu:
+        '"Měl bych na tebe nějaké další otázky, Dhalle."':
+            # a152 # r979
+            jump dhall_s9
+
+        '"Nevadí. Sbohem."':
+            # a153 # r980
+            jump dhall_dispose
+
+
+# s41 # say983
+label dhall_s41: # from 26.0 52.0
+    nr '"Hranice mezi stínem života a Pravou smrtí."'
+
+    menu:
+        '"Stín života?"':
+            # a154 # r984
+            jump dhall_s33
+
+        '"Pravé smrti?"':
+            # a155 # r985
+            $ dhallLogic.r985_action()
+            jump dhall_s48
+
+        '"Řekni mi víc o Márnici."':
+            # a156 # r5739
+            jump dhall_s32
+
+        '"Aha. Mám ještě jiné otázky…"':
+            # a157 # r5740
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a158 # r5741
+            jump dhall_s11
+
+
+# s42 # say5075
+label dhall_s42: # from 2.0 12.0 43.0
+    nr '"V severovýchodní pamětní hale o patro níž. Podívej se na tamní katafalky… na některé desce by mělo být její jméno. Možná že to ti osvěží paměť."'
+
+    menu:
+        '"Nevím. Ani si nepamatuju, že bych cestoval s nějakou ženou."' if dhallLogic.r5076_condition():
+            # a159 # r5076
+            jump dhall_s43
+
+        '"No, ona tvrdí, že mě zná, ale já si na ni nepamatuju."' if dhallLogic.r5077_condition():
+            # a160 # r5077
+            jump dhall_s28
+
+        '"Říkal jsi, že byli i další. Kdo další je tady?"' if dhallLogic.r5078_condition():
+            # a161 # r5078
+            jump dhall_s12
+
+        '"Říkal jsi, že byli i další. Kdo další je tady?"' if dhallLogic.r5079_condition():
+            # a162 # r5079
+            jump dhall_s12
+
+        '"Možná se po ní podívám. Než půjdu, chtěl bych se tě ještě na pár věcí zeptat…"':
+            # a163 # r6067
+            jump dhall_s9
+
+        '"Půjdu do haly dolů a zkusím najít její tělo."':
+            # a164 # r6068
+            jump dhall_s11
+
+
+# s43 # say5080
+label dhall_s43: # from 2.1 42.0
+    nr 'Dhall na to neodpověděl. Jenom na tebe tiše zírá.'
+
+    menu:
+        '"Kde ji můžu najít?"' if dhallLogic.r5081_condition():
+            # a165 # r5081
+            jump dhall_s42
+
+        '"Předtím jsi říkal, že tady byli se mnou pohřbení další, kteří cestovali se mnou. Kde jsou?"' if dhallLogic.r5082_condition():
+            # a166 # r5082
+            jump dhall_s12
+
+        '"Předtím jsi říkal, že tady byli se mnou pohřbení další, kteří cestovali se mnou. Kde jsou?"' if dhallLogic.r5083_condition():
+            # a167 # r5083
+            jump dhall_s12
+
+        '"Mám pro tebe další otázky…"':
+            # a168 # r6069
+            jump dhall_s9
+
+        '"Sbohem tedy."':
+            # a169 # r6070
+            jump dhall_s11
+
+
+# s44 # say840
+label dhall_s44: # from 1.0 6.2 7.0
+    nr '"Znát tě? Já…" v písařově hlase je znát trochu zahořklosti, když mluví. "*Nikdy* jsem tě neznal, Neklidný. Ne víc než jak jsi ty znal sám sebe." Na chvíli se odmlčí. "Co se tebe týče, tys zapomněl, že ano?"'
+
+    menu:
+        '"*Kdo* jsi?"':
+            # a170 # r1327
+            $ dhallLogic.r1327_action()
+            jump dhall_s45
+
+
+# s45 # say5728
+label dhall_s45: # from 44.0
+    nr '"Jako vždy, otázka. A špatná otázka, jako vždy." Lehce se uklonil, ale pohyb v něm vyvolal záchvat kašle. "Já…" Na chvíli se odmlčel a snaží se dýchat pravidelně. "Já… jsem Dhall."'
+
+    menu:
+        '"Možná bys mi mohl odpovědět na pár otázek, Dhalle…"':
+            # a171 # r5731
+            $ dhallLogic.j39459_s45_r5731_action()
+            jump dhall_s9
+
+        '"Na tohle nemám čas. Sbohem."':
+            # a172 # r5732
+            $ dhallLogic.j39459_s45_r5732_action()
+            jump dhall_s46
+
+
+# s46 # say5730
+label dhall_s46: # from 45.1
+    nr '"Dobrá tedy, Neklidný." Dhall přikývl. "Ale myslím si, že v tomto případě není čas tvým nepřítelem." Zvedl své pero. "Až si budeš chtít znovu promluvit, budu zde."'
+
+    menu:
+        '"Snad se ještě uvidíme. Sbohem."':
+            # a173 # r40005
+            jump dhall_dispose
+
+
+# s47 # say847
+label dhall_s47: # from 32.2
+    nr '"My Spalovači jsme společenstvím, které sdružuje ty z lidí, kteří jsou schopni rozpoznat klam tohoto života. Očekáváme další život a pomáháme ostatním na jejich cestě."'
+
+    menu:
+        '"Možná bys mi mohl vysvětlit, proč mě chtějí Spalovači zabít."' if dhallLogic.r6032_condition():
+            # a174 # r6032
+            jump dhall_s22
+
+        '"Pravá smrt?"':
+            # a175 # r6033
+            $ dhallLogic.r6033_action()
+            jump dhall_s48
+
+        '"Stín, který je tento život?"':
+            # a176 # r6034
+            jump dhall_s33
+
+        '"Řekni  mi víc o Márnici."':
+            # a177 # r6035
+            jump dhall_s32
+
+        '"Mám pro tebe další otázky…"':
+            # a178 # r6036
+            jump dhall_s9
+
+        '"Sbohem tedy."':
+            # a179 # r6037
+            jump dhall_s11
+
+
+# s48 # say848
+label dhall_s48: # from 32.1 33.0 38.0 41.1 47.1
+    nr '"Pravá smrt je nebytí. Je to stav postrádající smysl, city, hněv." Dhall si odkašlal, pak se nadechl. "Stav nevinnosti."'
+
+    menu:
+        '"To zní jako konec, zapomnění, nicota. Proč by to někdo chtěl?"':
+            # a180 # r6043
+            jump dhall_s49
+
+        '"Oh. Můžeš mi říct víc o Márnici?"':
+            # a181 # r6044
+            jump dhall_s32
+
+        '"Já… Aha. Mám další otázky."':
+            # a182 # r6045
+            jump dhall_s9
+
+        '"Už musím jít. Sbohem, Dhalle."':
+            # a183 # r6046
+            jump dhall_s11
+
+
+# s49 # say849
+label dhall_s49: # from 48.0
+    nr '"Je to horší než zůstat ve stínu toho života, který už jsem jednou zažil? To si nemyslím."'
+
+    menu:
+        '"Stín života?"':
+            # a184 # r6047
+            jump dhall_s33
+
+        '"Řekni mi víc o Márnici."':
+            # a185 # r6048
+            jump dhall_s32
+
+        '"Já… Aha. Mám další otázky."':
+            # a186 # r6049
+            jump dhall_s9
+
+        '"Už musím jít. Sbohem, Dhalle."':
+            # a187 # r6050
+            jump dhall_s11
+
+
+# s50 # say853
+label dhall_s50: # from 33.1
+    nr '"Co tě přivádí k myšlence, že *je* tento život skutečný? Podívej se do sebe. Necítíš, že tam něco chybí?" Dhall potřásl hlavou. "Toto je očistec. Zde je jenom žal. Neštěstí. Trápení. To nejsou prvky, které tvoří „život.“ Jsou to části klece, která nás zadržuje v tomto stínu."'
+
+    menu:
+        '"Myslím, že tě dostal tvůj fatalismus. Ty elementy jsou částí života, ale ne celkem."':
+            # a188 # r6051
+            $ dhallLogic.r6051_action()
+            jump dhall_s51
+
+        '"Vězní nás? Jak?"':
+            # a189 # r6052
+            jump dhall_s51
+
+        '"Dost filozofování. Co mají všechny ty řeči společné s mým probuzením tady?"':
+            # a190 # r6053
+            $ dhallLogic.r6053_action()
+            jump dhall_s51
+
+
+# s51 # say5733
+label dhall_s51: # from 50.0 50.1 50.2
+    nr 'Dhall zavrtěl hlavou. "Vášně mají váhu, moc. Mnozí jsou jimi připoutáni k tomuto stínu života. Dokud se někdo drží emocí, bude se neustále znovuoživovat v tomto „životě,“ stále trpět, nikdy nepoznaje čistotu Pravé Smrti."'
+
+    menu:
+        '"Já… Aha. A jak se dá uniknout tomu cyklu ožívání a dosáhnout té… Pravé Smrti?"':
+            # a191 # r6054
+            jump dhall_s52
+
+        '"Řekni mi víc o Márnici."':
+            # a192 # r6055
+            jump dhall_s32
+
+        '"Mám ještě jiné otázky…"':
+            # a193 # r6056
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a194 # r6057
+            jump dhall_s11
+
+
+# s52 # say5734
+label dhall_s52: # from 51.0
+    nr '"Zruš své vášně. Zbav se touhy po citech. Až budeš doopravdy očištěn, pak cyklus ožívání skončí a dosáhneš míru." Dhall si povzdychl… zní to, jako by v jeho hrdle rachotila sama smrt. "Za těmito našimi skořápkami, za Věčnou Hranicí, leží mír, který každá duše hledá."'
+
+    menu:
+        '"Věčná Hranice?"':
+            # a195 # r6058
+            jump dhall_s41
+
+        '"Řekni mi víc o Márnici."':
+            # a196 # r6059
+            jump dhall_s32
+
+        '"Mám ještě jiné otázky…"':
+            # a197 # r6060
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a198 # r6061
+            jump dhall_s11
+
+
+# s53 # say5742
+label dhall_s53: # from 34.0
+    nr '"Mluvím o zraněních mysli. Zapomněl jsi mnoho, že? Možná pravá zranění zasahují mnohem hlouběji než jizvy, co zdobí tvůj povrch." Dhall znovu zakašlal. "Ale to je něco, co můžeš jistě vědět jenom ty."'
+
+    menu:
+        '"Řekni mi víc o Márnici."':
+            # a199 # r5743
+            jump dhall_s32
+
+        '"Aha. Mám ještě jiné otázky…"':
+            # a200 # r5744
+            jump dhall_s9
+
+        '"Sbohem, Dhalle."':
+            # a201 # r5745
+            jump dhall_s11

@@ -1,0 +1,53 @@
+IF ~  Global("Topple_985","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #45515 /* ~Le cadavre '985' s'est arrêté. S'il faut en juger par l'état de sa jambe gauche, la putréfaction ou une sorte de moisissure lui a rongé la rotule. Il tangue d'avant en arrière et fait de son mieux pour conserver son équilibre.~ */
+IF ~  NearbyDialog("Dmorte") ~ THEN REPLY #45516 /* ~Pousse le cadavre.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_ZM985_1","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_ZM985_1","GLOBALGood",-1) PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482
+IF ~  !NearbyDialog("Dmorte") ~ THEN REPLY #45517 /* ~Pousse le cadavre.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_ZM985_1","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_ZM985_1","GLOBALGood",-1) PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 3
+IF ~  NearbyDialog("Dmorte") ~ THEN REPLY #45518 /* ~Essaie d'aider le cadavre à garder l'équilibre.~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_ZM985_1","GLOBALLaw",1) IncrementGlobalOnceEx("GLOBALGood_ZM985_1","GLOBALGood",1) ~ GOTO 4
+IF ~  !NearbyDialog("Dmorte") ~ THEN REPLY #45519 /* ~Essaie d'aider le cadavre à garder l'équilibre.~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_ZM985_1","GLOBALLaw",1) IncrementGlobalOnceEx("GLOBALGood_ZM985_1","GLOBALGood",1) ~ GOTO 6
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45520 /* ~"Je sais que tu n'es pas un zombi, tu sais. Personne n'est dupe."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45521 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+IF ~~ THEN REPLY #45522 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXIT
+IF ~~ THEN REPLY #45523 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.4 5.0 5.1 5.2
+SAY #45524 /* ~Le cadavre regarde droit devant, sans se rendre compte de quoi que ce soit. Rien n'indique qu'il t'a aperçu.~ */
+IF ~~ THEN REPLY #45525 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.5 5.3
+SAY #45526 /* ~Le cadavre ne bouge pas. Il a l'air trop absent pour répondre à tes questions.~ */
+IF ~~ THEN REPLY #45527 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 6.0
+SAY #45528 /* ~La jambe gauche du cadavre craque soudainement et il s'effondre comme un arbre mort. Son torse explose comme un melon trop mûr en heurtant les dalles de pierre et une substance écœurante s'en échappe. À ta grande surprise, personne ne semble s'être aperçu de la chute du zombi. Plus étrange encore, le bas de sa jambe gauche est toujours là, bien droit. Au bout de quelques instants, le mollet tombe à son tour dans un bruit sourd.~ */
+IF ~~ THEN DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) SetGlobal("Topple_985","GLOBAL",1) Kill(Myself) Deactivate(Myself) ~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2
+SAY #45530 /* ~Tu saisis le bras gauche du cadavre pour l'aider à tenir debout. À ce moment, il bascule vers la droite, et tu te retrouves à essayer de l'empêcher de tomber.~ */
+IF ~~ THEN DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482
+END
+
+IF ~  GlobalGT("Topple_985","GLOBAL",0)
+~ THEN BEGIN 5 // from:
+SAY #45531 /* ~On dirait que quelqu'un a remplacé le bras gauche et la jambe gauche de ce zombi par des membres prélevés sur un autre cadavre. La nouvelle jambe gauche est plus petite que l'ancienne mais, au moins, le mort-vivant peut désormais se tenir debout.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #45532 /* ~"Désolé de t'avoir fait tomber. C'était un accident."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45533 /* ~"Désolé de t'avoir fait tomber. C'était un accident."~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45534 /* ~"Je sais que tu n'es pas un zombi, tu sais. Personne n'est dupe."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45535 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+IF ~~ THEN REPLY #45536 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXIT
+IF ~~ THEN REPLY #45537 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.3
+SAY #45538 /* ~Tu saisis le bras gauche du cadavre pour l'aider à tenir debout. À ce moment, il bascule vers la droite, et tu te retrouves à essayer de l'empêcher de tomber.~ */
+IF ~~ THEN REPLY #45539 /* ~"Oh-oh…"~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 3
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.0
+SAY #64205 /* ~Tandis que tu regardes fixement les restes putréfiés du cadavre, tu remarques que son bras gauche a l'air intact - il s'est séparé du torse pendant la chute et il ne semble pas atteint par la pourriture, comme le reste du corps.~ */
+IF ~~ THEN REPLY #64206 /* ~"Hmmm. Je me demande si ce bras peut m'être utile…"~ */ EXIT
+END

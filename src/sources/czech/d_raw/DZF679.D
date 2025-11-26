@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZF679.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZF679~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35178 /* ~Toto je tělo staré, možná dokonce prastaré ženy. Kromě zápachu balzamovací tekutiny, stehů, držících ústa a čísla "679" vyšitého na její pravé tváři, vypadá nejspíš skoro stejně, jako vypadala během svých posledních dnů.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #35179 /* ~"Takže... cos dělala poslední dobou?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #35196 /* ~"Takže... cos dělala poslední dobou?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #35197 /* ~"Vím, že nejsi zombie. Takhle nikoho neoblbneš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35198 /* ~Použij na mrtvole tvou dovednost Kosti-vyprávějte.~ */ GOTO 2
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35203 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXTERN ~DMORTE~ 354
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35204 /* ~Nechej mrtvolu být.~ */ EXTERN ~DMORTE~ 354
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35205 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35206 /* ~Nechej mrtvolu být.~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35207 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35208 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #35180 /* ~Mrtvola na tebe dál zírá.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35181 /* ~"Sbohem tedy."~ */ EXTERN ~DMORTE~ 354
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35194 /* ~"Sbohem tedy."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35195 /* ~"Sbohem tedy."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #35199 /* ~Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35200 /* ~"Sbohem tedy."~ */ EXTERN ~DMORTE~ 354
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35201 /* ~"Sbohem tedy."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35202 /* ~"Sbohem tedy."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #35209 /* ~Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.~ */
+END

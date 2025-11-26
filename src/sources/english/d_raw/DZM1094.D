@@ -1,0 +1,232 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1094.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1094~
+
+IF ~  Global("Asonje","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #6562 /* ~This walking corpse has the numbers "1094" carved into its forehead. Its mouth has been sewn tightly shut, and the chemical reek of fresh formaldehyde hangs in an overpowering cloud around it. Despite the pallid, sunken features and lifeless, milky eyes, it is clear this was once a handsome young man.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6565 /* ~"So... seen anything interesting going on?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6566 /* ~"So... seen anything interesting going on?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6567 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6568 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ DO ~SetGlobal("Asonje","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #6569 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #6570 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6563 /* ~The corpse continues to stare at you.~ */
+  IF ~~ THEN REPLY #6571 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6564 /* ~The corpse shudders for a moment, then stills, the spirit flowing into its abandoned mortal shell once more. Within seconds, a semblance of life seems to spring into the zombie's eyes, and it begins to gaze about with a look of curious puzzlement upon its face. The entire body now seems surrounded by a soft, golden aura.~ */
+  IF ~~ THEN REPLY #6572 /* ~"I would ask you a question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9246 /* ~Leave the spirit.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #9224 /* ~The spirit suddenly seems to take notice of you. He flashes a disarmingly friendly grin, popping all the stitches around its mouth loose with the sudden movement. Momentarily surprised, he touches his hand to his lips, shrugs, and nods an informal greeting. "Where... where am I? Such an odd place. Do I know you?" He coughs gently, rubbing at his stiffened throat.~ */
+  IF ~~ THEN REPLY #9247 /* ~"You are here to answer *my* questions, spirit."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Asonje_1","GLOBALGood",-1)
+SetGlobal("Asonje","GLOBAL",3)
+~ GOTO 4
+  IF ~~ THEN REPLY #9248 /* ~"You... your remains, at least... are in a mortuary."~ */ GOTO 13
+  IF ~~ THEN REPLY #9249 /* ~"No, I doubt you know me. Now, I had a question for you..."~ */ GOTO 14
+  IF ~~ THEN REPLY #9250 /* ~"It is doubtful. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #9225 /* ~The spirit's friendly demeanor vanishes in an instant. He frowns at you for a moment, the broken stitches hanging in tatters from his gray and withered lips. "Very well, ask what you will." He looks away, apparently bored.~ */
+  IF ~~ THEN REPLY #9251 /* ~"Who are you?"~ */ GOTO 5
+  IF ~~ THEN REPLY #9252 /* ~"Where are you from?"~ */ GOTO 6
+  IF ~~ THEN REPLY #9253 /* ~"How did you end up here? As a zombie, I mean?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9254 /* ~"Where are you... where your spirit resides... now?"~ */ GOTO 8
+  IF ~~ THEN REPLY #9255 /* ~"What do you know of this place?"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9256 /* ~"Do you know someone named Pharod?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9257 /* ~"Nothing, never mind."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 11.0
+  SAY #9226 /* ~"My name was Asonje. May I leave?"~ */
+  IF ~~ THEN REPLY #9258 /* ~"No, I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9259 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 11.1
+  SAY #9227 /* ~"I cannot remember. Anything else?"~ */
+  IF ~~ THEN REPLY #9260 /* ~"Yes, I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9261 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 4.2 11.2
+  SAY #9228 /* ~The spirit shrugs and looks skyward. "I couldn't say. What does it matter, in any case?" He purses his lips unhappily and gives you a hard look, the ghost-light in his eyes flashing angrily. "Do you need anything more from me?"~ */
+  IF ~~ THEN REPLY #9262 /* ~"Yes, I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9263 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 4.3 11.3
+  SAY #9229 /* ~"My spirit exists in Arborea..." He pauses for a moment, lost in fond recollection. "Even now I long to return to my home there, away from your selfish, inconsiderate, and rather boring prying. Am I free to return?"~ */
+  IF ~~ THEN REPLY #9264 /* ~"No, I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9265 /* ~"Yes, go. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 4.4 11.4
+  SAY #9230 /* ~The spirit gives you an exasperated look. "Nothing, of course!" He shakes his head, annoyed, the broken stitches swaying with his movement.~ */
+  IF ~~ THEN REPLY #9266 /* ~"Then how did your corpse come to be here, working these bleak halls?"~ */ GOTO 12
+  IF ~~ THEN REPLY #9267 /* ~"I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9268 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 4.5 11.5
+  SAY #9231 /* ~"No." The spirit seems to be paying little attention to you.~ */
+  IF ~~ THEN REPLY #9269 /* ~"Then I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9270 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
+  SAY #9232 /* ~The spirit sighs loudly, filling the air with smell of formaldehyde from the corpse's lungs. "Yes, yes... ask away."~ */
+  IF ~~ THEN REPLY #9271 /* ~"Who are you?"~ */ GOTO 5
+  IF ~~ THEN REPLY #9272 /* ~"Where are you from?"~ */ GOTO 6
+  IF ~~ THEN REPLY #9273 /* ~"How did you end up here? As a zombie, I mean?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9274 /* ~"Where are you... where your spirit resides... now?"~ */ GOTO 8
+  IF ~~ THEN REPLY #9275 /* ~"What do you know of this place?"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9276 /* ~"Do you know someone named Pharod?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9277 /* ~"Nothing, never mind."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.0
+  SAY #9233 /* ~"Your guess is as good as mine, Homely One. I would take my leave now, should you permit."~ */
+  IF ~~ THEN REPLY #9278 /* ~"No, I had another question..."~ */ GOTO 11
+  IF ~~ THEN REPLY #9279 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 3.1
+  SAY #9234 /* ~He mulls it over for a moment, then laughs. "Yes! That would make sense, wouldn't it? Now, do I know you?" He cocks his head to one side, peering at you intently. He seems to regard discerning your identity as some sort of amusing game.~ */
+  IF ~~ THEN REPLY #9280 /* ~"No, I doubt you know me. Now, I had a question for you..."~ */ GOTO 14
+  IF ~~ THEN REPLY #9281 /* ~"It is doubtful. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 3.2 13.0
+  SAY #9235 /* ~The spirit shrugs and smiles, chuckling softly. "Perhaps you're right! What is it you wished to ask me?" He begins absent-mindedly pulling the remaining stitches from his lips and dropping them to the floor, one by one.~ */
+  IF ~  !Global("Asonje","GLOBAL",2)
+~ THEN REPLY #9282 /* ~"Who are you?"~ */ GOTO 15
+  IF ~  Global("Asonje","GLOBAL",2)
+~ THEN REPLY #9286 /* ~"Who are you?"~ */ GOTO 25
+  IF ~~ THEN REPLY #9287 /* ~"Where are you from?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9288 /* ~"How did you end up here? As a zombie, I mean?"~ */ GOTO 17
+  IF ~~ THEN REPLY #9317 /* ~"Where are you... where your spirit resides... now?"~ */ GOTO 18
+  IF ~~ THEN REPLY #9318 /* ~"What do you know of this place?"~ */ GOTO 19
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9319 /* ~"Do you know someone named Pharod?"~ */ GOTO 20
+  IF ~~ THEN REPLY #9320 /* ~"Nothing, never mind."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0 22.0
+  SAY #9236 /* ~"My name was Asonje. Might I know yours?"~ */
+  IF ~~ THEN REPLY #9289 /* ~"I... I do not know."~ */ DO ~SetGlobal("Asonje","GLOBAL",2)
+~ GOTO 21
+  IF ~~ THEN REPLY #9290 /* ~"I shall tell you another time. I had a question..."~ */ DO ~SetGlobal("Asonje","GLOBAL",2)
+~ GOTO 22
+  IF ~~ THEN REPLY #9291 /* ~"Another time, perhaps. Farewell."~ */ DO ~SetGlobal("Asonje","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 14.2 22.2
+  SAY #9237 /* ~"I am from many places! In truth, my birthplace is unknown to me. I did a good deal of travelling in my life, and called many places home. Now all Arborea is mine to explore..." The spirit seems well pleased.~ */
+  IF ~~ THEN REPLY #9292 /* ~"I see. I had another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9293 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 14.3 22.3
+  SAY #9238 /* ~The spirit's smile fades away and he looks troubled for a moment. "Strange... I don't know! I'm not sure how I died, really." He shrugs. "No matter!" His cheery grin returns, somehow bright despite being plastered across a corpse's withered face.~ */
+  IF ~~ THEN REPLY #9294 /* ~"I had another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9295 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 14.4 22.4
+  SAY #9239 /* ~"Arborea! A more wondrous place I could not ask for. Nowhere in my mortal life did I find a place of such great passion... such splendour..." He pauses for a while, lost in pleasant recollection. "The beauty of the land, the people - magnificent. I tell you truly, I miss it even now!"~ */
+  IF ~~ THEN REPLY #9296 /* ~"I see. I had another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9297 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 14.5 22.5
+  SAY #9240 /* ~"Not so much. I signed a contract with a Dustman on a whim... she had pointed out the dreadful place to me, once, told me my corpse would be raised and used as a laborer. I thought: I'll have no need for it when I've passed into the next life - why not? Might as well take the silver and go spend it on some women and wine!" He chuckles at the idea, the ghost-lights in his eyes flashing merrily.~ */
+  IF ~~ THEN REPLY #9298 /* ~"Do you know anything of the city around the Mortuary?"~ */ GOTO 24
+  IF ~~ THEN REPLY #9299 /* ~"I see. I had another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9300 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 14.6 22.6
+  SAY #9241 /* ~The spirit thinks for a moment. "No, I am afraid I have not heard of this man. A friend of yours?"~ */
+  IF ~~ THEN REPLY #9301 /* ~"Perhaps. I had another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9302 /* ~"I do not know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 21 // from: 15.0
+  SAY #9242 /* ~He looks surprised. "How odd! A shame, truly. I must have *something* to call you, no?" The spirit looks at you expectantly.~ */
+  IF ~~ THEN REPLY #9303 /* ~"I am sure you can come up with something. I had a question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9304 /* ~Make a name up: "I do not know... 'Adahn'?"~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+~ GOTO 23
+  IF ~~ THEN REPLY #9305 /* ~"No, it is not important. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
+  SAY #9243 /* ~"Certainly. Ask away!" He smiles pleasantly, awaiting your query with interest. The last of the stitches now gone, his grin is not quite so eerie to look upon.~ */
+  IF ~  !Global("Asonje","GLOBAL",2)
+~ THEN REPLY #9306 /* ~"Who are you?"~ */ GOTO 15
+  IF ~  Global("Asonje","GLOBAL",2)
+~ THEN REPLY #9307 /* ~"Who are you?"~ */ GOTO 25
+  IF ~~ THEN REPLY #9308 /* ~"Where are you from?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9309 /* ~"How did you end up here? As a zombie, I mean?"~ */ GOTO 17
+  IF ~~ THEN REPLY #9310 /* ~"Where are you... where your spirit resides... now?"~ */ GOTO 18
+  IF ~~ THEN REPLY #9311 /* ~"What do you know of this place?"~ */ GOTO 19
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9312 /* ~"Do you know someone named Pharod?"~ */ GOTO 20
+  IF ~~ THEN REPLY #9321 /* ~"Nothing, never mind."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 21.1
+  SAY #9244 /* ~The spirit, sensing your frustration, laughs goodheartedly. "Poor sod! Then Adahn it is, friend. Now, did you have a question for me?"~ */
+  IF ~~ THEN REPLY #9313 /* ~"Yes, I did..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9314 /* ~"No, I did not. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 19.0
+  SAY #9245 /* ~"What, Sigil?" Seeing your nod, the corpse's smile stretches into a wide, wicked grin. "Oh, I'll not spoil that for you! Go and explore the place for yourself! Get lost in its streets, its taverns, its people... but take care! It can be a dangerous as well as wondrous place. But that's what makes it all so exciting, no?"~ */
+  IF ~~ THEN REPLY #9315 /* ~"I... suppose so. I have another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9316 /* ~"Perhaps. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 14.1 22.1
+  SAY #9283 /* ~"My name was Asonje."~ */
+  IF ~~ THEN REPLY #9284 /* ~"I had another question..."~ */ GOTO 22
+  IF ~~ THEN REPLY #9285 /* ~"That is all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~  GlobalGT("Asonje","GLOBAL",0)
+GlobalLT("Asonje","GLOBAL",3)
+~ THEN BEGIN 26 // from:
+  SAY #20061 /* ~"Back again, hmm?" He smiles broadly.~ */
+  IF ~~ THEN REPLY #20063 /* ~"I had some questions..."~ */ GOTO 22
+  IF ~~ THEN REPLY #20064 /* ~"I was only passing by. Farewell."~ */ EXIT
+END
+
+IF ~  Global("Asonje","GLOBAL",3)
+~ THEN BEGIN 27 // from:
+  SAY #20062 /* ~"Oh, you... again." He frowns, looking away.~ */
+  IF ~~ THEN REPLY #20065 /* ~"I had some questions..."~ */ GOTO 11
+  IF ~~ THEN REPLY #20066 /* ~"I was only passing by. Farewell."~ */ EXIT
+END

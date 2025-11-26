@@ -1,0 +1,31 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #24564 /* ~Głowa tego truposza kołysze się w przód i w tył na ramionach... sądząc po kącie pochylenia karku, człowiek ten najprawdopodobniej został powieszony. Z boku głowy ktoś wymalował mu numer "825".~ */
+IF ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") NearbyDialog("DMorte1") ~ THEN REPLY #24565 /* ~"Poszukuję klucza... czy przypadkiem to nie ty go masz?"~ */ EXTERN ~DMORTE1~ 31
+IF ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") !NearbyDialog("DMorte1") ~ THEN REPLY #24568 /* ~"Poszukuję klucza... czy przypadkiem to nie ty go masz?"~ */ GOTO 1
+IF ~  GlobalGT("Mortuary_Walkthrough","GLOBAL",0) ~ THEN REPLY #24569 /* ~"Więc jak... widziałeś, aby działo się tu coś interesującego?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #24570 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #24573 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+IF ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") ~ THEN REPLY #24574 /* ~Przyjrzyj się truposzowi, sprawdź, czy ma klucz.~ */ GOTO 3
+IF ~~ THEN REPLY #42308 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #42309 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 0.2 0.3 3.1
+SAY #24566 /* ~Trup spogląda na ziemię i nie odpowiada.~ */
+IF ~~ THEN REPLY #24567 /* ~"W takim razie trudno. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #42310 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+SAY #24571 /* ~Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+IF ~~ THEN REPLY #24572 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+SAY #42311 /* ~Truposz nie ma przy sobie niczego... ale przypadkiem zauważasz, że jego ręce są mocno zabandażowane. Bandaże mogłyby się przydać, gdyby udało ci się pozbyć truposza.~ */
+IF ~  NearbyDialog("DMorte1") ~ THEN REPLY #42312 /* ~"Chyba go nie masz... nie wiesz przypadkiem, który to z twoich kościstych przyjaciół ma klucz do wyjścia stąd?"~ */ EXTERN ~DMORTE1~ 31
+IF ~  !NearbyDialog("DMorte1") ~ THEN REPLY #42313 /* ~"Chyba go nie masz... nie wiesz przypadkiem, który to z twoich kościstych przyjaciół ma klucz do wyjścia stąd?"~ */ GOTO 1
+IF ~~ THEN REPLY #42314 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #42315 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END

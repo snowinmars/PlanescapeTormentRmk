@@ -1,0 +1,495 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DDHALL.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DDHALL~
+
+IF ~~ THEN BEGIN 0 // from:
+  SAY #822 /* ~Nim Morte ma szanse skończyć swoją tyradę, skryba zaczyna kaszleć gwałtownie. Po paru chwilach napad kaszlu mija i oddech skryby na powrót przybiera postać nieregularnego charczenia.~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 104
+END
+
+IF ~~ THEN BEGIN 1 // from:
+  SAY #826 /* ~Nim Morte ma szansę skończyć, szare oczy skryby kierują się ku tobie. "Balast czasu wywarł na mnie swe piętno, Duchu Niespokojny." Odkłada na bok gęsie pióro. "...jednakże głuchota nie wlicza się jeszcze w poczet mych dolegliwości."~ */
+  IF ~~ THEN REPLY #827 /* ~"'Duchu Niespokojny'? Znasz mnie?"~ */ DO ~SetGlobal("0202_Dhall_Face_Player","AR0202",1)
+~ GOTO 44
+END
+
+IF ~~ THEN BEGIN 2 // from: 21.0
+  SAY #829 /* ~"Nie znasz kobiety, której ciało pochowano w położonej poniżej sali pamięci? Sądziłem, że podróżowaliście kiedyś wspólnie..." Zdaje się, iż Dhall zacznie ponownie kaszleć. Łapie jednakże oddech. "Czyżbym się mylił?"~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5070 /* ~"Gdzie spoczywa jej ciało?"~ */ GOTO 42
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5071 /* ~"Nic o nie niej nie wiem."~ */ GOTO 43
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #5072 /* ~"Twierdzi, że mnie zna, ale ja jej nie pamiętam."~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #5073 /* ~"Powiedziałeś, że byli też inni. Kto jeszcze tu jest?"~ */ GOTO 12
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #5074 /* ~"Powiedziałeś, że byli też inni. Kto jeszcze tu jest?"~ */ GOTO 12
+  IF ~~ THEN REPLY #6063 /* ~"Możliwe. Mam do ciebie parę innych pytań..."~ */ GOTO 9
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #6064 /* ~"Udam się do położonej poniżej sali pamięci i przekonam się, czy będę mógł odnaleźć jej ciało."~ */ GOTO 11
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #13288 /* ~"Może nie. Żegnaj."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 3 // from: 9.0
+  SAY #832 /* ~Dhall wbija w ciebie wzrok. "Jesteś pewien?"~ */
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",0)
+~ THEN REPLY #830 /* ~"Tak. To dobre przebranie."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",2)
+~ JOURNAL #39468 /* ~Powiedziałem skrybie Dhallowi o Vaxisie i jego przebraniu. Dhall wkrótce powinien wysłać pozostałych Grabarzy by go osaczyli.~ */ GOTO 4
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",1)
+~ THEN REPLY #831 /* ~"Tak. To dobre przebranie."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",2)
+IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3)
+~ JOURNAL #39469 /* ~Obiecałem Vaxisowi, że nie wydam go Grabarzom, ale co z tego? Powiedziałem skrybie Dhallowi o nim i o jego przebraniu. Dhall wkrótce powinien wysłać pozostałych Grabarzy by go osaczyli.~ */ GOTO 4
+  IF ~~ THEN REPLY #834 /* ~"Nie, po namyśle sądzę, że to jedynie wytwór mojej wyobraźni. Słuchaj, mam parę innych pytań..."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1
+  SAY #833 /* ~"Ja..." Przerywa mu kolejny atak kaszlu. Po chwili łapie on oddech na tyle, by mógł mówić. "Ja... natychmiast powiadomię straże."~ */
+  IF ~~ THEN REPLY #836 /* ~"Dziękuję. Mam parę innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #837 /* ~"Świetnie. Żegnaj."~ */ GOTO 11
+END
+
+IF ~  Global("Dhall","GLOBAL",0)
+~ THEN BEGIN 5 // from:
+  SAY #838 /* ~Skryba wygląda bardzo staro... Skóra jego jest pomarszczona i ma lekko żółtawy odcień, niczym stary pergamin. Z jego kanciastej twarzy patrzą szare niczym węgiel oczy, zaś z przodu szaty spływa, na podobieństwo wodospadu, jego biała broda. Oddycha chrapliwie i nieregularnie, ale nawet pojawiający się sporadycznie kaszel nie spowalnia ruchów jego gęsiego pióra.~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #839 /* ~"Witaj."~ */ EXTERN ~DMORTE~ 102
+  IF ~  !NearbyDialog("DMorte")
+Global("Mortuary_Alert","GLOBAL",0)
+~ THEN REPLY #835 /* ~"Witaj."~ */ GOTO 7
+  IF ~  !NearbyDialog("DMorte")
+Global("Mortuary_Alert","GLOBAL",1)
+~ THEN REPLY #5058 /* ~"Witaj."~ */ GOTO 6
+  IF ~~ THEN REPLY #5060 /* ~Zostaw starego skrybę w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.2
+  SAY #841 /* ~W jego szarych oczach pojawia się błysk, gdy podnosi on wzrok znad swojej księgi. "Podejrzewałem, że to ty możesz być odpowiedzialny za napady w Kostnicy. To..." Pokasłuje lekko, po czym bierze chrapliwy oddech. "To nie najlepszy sposób, byś mógł wkroczyć w kolejne życie."~ */
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #842 /* ~"Jedynie się broniłem. Zanim odejdę, chcę ci zadać kilka pytań..."~ */ GOTO 9
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #843 /* ~"Podzielenie się odrobiną śmierci z twoimi wyznawcami trupów nie jest w mym mniemaniu zbyt wielką zbrodnią. Teraz zaś mam kilka pytań do ciebie..."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_1","GLOBALGood",-1)
+~ GOTO 9
+  IF ~  Global("Dhall","GLOBAL",0)
+~ THEN REPLY #5062 /* ~"Znasz mnie?"~ */ GOTO 44
+  IF ~~ THEN REPLY #5063 /* ~"Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.1
+  SAY #844 /* ~Skryba przestaje notować w leżącej przed nim księdze i podnosi wzrok. Oczy jego wyglądają niczym dwa gwoździe wbite w czaszkę. "A więc..." W jego głosie słychać zmęczenie - tak, jakby powtarzał tę samą kwestię już wiele razy. "Obudziłeś się ze swego snu i powróciłeś do swoich marzeń." Dodaje z większą dozą szacunku. "Miło cię spotkać... ponownie, Duchu Niespokojny."~ */
+  IF ~~ THEN REPLY #845 /* ~"'Duchu Niespokojny'? Znasz mnie?"~ */ GOTO 44
+END
+
+IF ~~ THEN BEGIN 8 // from: 22.0
+  SAY #851 /* ~"Zrozum... Twe istnienie to dla nich bluźnierstwo. Wielu spośród mojej frakcji poddałoby cię kremacji... Gdyby tylko świadomi byli twojej przypadłości."~ */
+  IF ~~ THEN REPLY #940 /* ~"Jesteś grabarzem, a mimo to wydaje się, iż nie pragniesz mojej śmierci. Dlaczego?"~ */ GOTO 23
+  IF ~~ THEN REPLY #911 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #913 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6038 /* ~"Usłyszałem już wystarczająco dużo. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 9 // from: 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
+  SAY #852 /* ~"Dobrze. Co chcesz wiedzieć?"~ */
+  IF ~  Global("Vaxis","GLOBAL",1)
+!Dead("Vaxis")
+Global("Vaxis_Leave","GLOBAL",0)
+Global("Betray_Vaxis","GLOBAL",0)
+~ THEN REPLY #854 /* ~"Czy wiesz, że we wschodnich komnatach znajduje się ktoś przebrany za zombie?"~ */ GOTO 3
+  IF ~~ THEN REPLY #857 /* ~"Co to za miejsce?"~ */ GOTO 10
+  IF ~~ THEN REPLY #855 /* ~"Jak się tu znalazłem?"~ */ GOTO 15
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+Global("AR0200_Visited","GLOBAL",0)
+~ THEN REPLY #858 /* ~"Możesz mi powiedzieć, jak się stąd wydostać?"~ */ GOTO 13
+  IF ~~ THEN REPLY #5069 /* ~"Czy wiesz, kim jestem?"~ */ JOURNAL #39460 /* ~Zapytałem Dhalla czy mnie zna. Odpowiedział, że niewiele wie na mój temat, a jeszcze mniej o kompanach, którzy podróżowali ze mną w przeszłości. Najwyraźniej ich ciała spoczywają w Kostnicy... może wspomnienia powrócą gdy je zobaczę.~ */ GOTO 21
+  IF ~~ THEN REPLY #5748 /* ~"Czym się tu zajmujesz?"~ */ GOTO 25
+  IF ~~ THEN REPLY #6065 /* ~"Wydajesz się być chorym. Nie czujesz się dobrze?"~ */ GOTO 26
+  IF ~~ THEN REPLY #41663 /* ~"Nic... Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+  SAY #859 /* ~"Jesteś w Kostnicy, Duchu Niespokojny. Ponownie... przybyłeś..." Zanim ma szansę skończyć, dostaje napadu kaszlu. Po chwili uspokaja się i na powrót oddycha chrapliwie. "...to poczekalnie dla tych, którzy mają porzucić cienie tego życia."~ */
+  IF ~~ THEN REPLY #861 /* ~"Opowiedz mi o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #860 /* ~"*Duchu Niespokojny*?"~ */ GOTO 38
+  IF ~~ THEN REPLY #862 /* ~"Cienie tego życia?"~ */ GOTO 33
+  IF ~~ THEN REPLY #863 /* ~"Ponownie...? Byłem już tu wcześniej?"~ */ GOTO 14
+  IF ~~ THEN REPLY #864 /* ~"Jak się tu znalazłem?"~ */ GOTO 15
+  IF ~~ THEN REPLY #865 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #866 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
+  SAY #867 /* ~Kiedy odwracasz się, by odejść, Dhall rzecze. "Wiedz jedno: Nie zazdroszczę ci, Duchu Niespokojny. Ponowne odradzanie się jest klątwą, której ja nie zdołałbym udźwignąć. Musisz stawić jej czoło. W końcu twa droga cię tu zawiedzie..." Dhall pokasłuje, głos chrobocze mu w gardle. "To czeka wszystkich, którzy z prochu powstali."~ */
+  IF ~~ THEN REPLY #41564 /* ~"W takim razie być może się jeszcze spotkamy, Dhall."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 2.3 2.4 42.2 42.3 43.1 43.2
+  SAY #868 /* ~"Są niewątpliwie, jednakże nie znam ich imion, nie wiem też, gdzie leżą. Tacy jak ty zostawiają za sobą ścieżkę, którą kroczyło wielu, przetrwali nieliczni."
+Dhall wskazuje wokół ciebie. "Przybywają tu wszyscy umarli. Niektórzy z nich bez wątpienia kiedyś z tobą podróżowali."~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #870 /* ~"Gdzie się znajduje ta kobieta, o której wspomniałeś?"~ */ GOTO 42
+  IF ~~ THEN REPLY #871 /* ~"Uważam, iż twe rozumowanie jest słuszne. Mam kilka innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #872 /* ~"W takim razie poszukam ich. Być może pobudzą mą pamięć. Żegnaj."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+  SAY #875 /* ~"Hmmm... Najbardziej oczywistym wyjściem wydaje się brama frontowa, jednak nikogo poza Grabarzami tamtędy nie przepuszczą." Znowu dostaje napadu chrapliwego kaszlu, po czym ciągnie dalej. "...jeden z pilnujących tej bramy ma do niej klucz, jednakże nie otworzy jej dla ciebie, jeśli nie będziesz nadzwyczaj przekonywujący."~ */
+  IF ~~ THEN REPLY #876 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #877 /* ~"W takim razie żegnaj, Dhall."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 10.3
+  SAY #878 /* ~"Tak, *ponownie*. Przynoszono cię już tu wiele razy, Duchu Niespokojny. Biorąc pod uwagę rany, jakie odniosłeś, miałem nadzieję, że to już będzie ostatni raz." Wzdycha. "Kiedy wyzbędziesz się swych uczuć i opuścisz cień tego życia?"~ */
+  IF ~~ THEN REPLY #880 /* ~"*Duchu Niespokojny*?"~ */ GOTO 38
+  IF ~~ THEN REPLY #881 /* ~"Rany?"~ */ GOTO 34
+  IF ~~ THEN REPLY #883 /* ~"Cień tego życia?"~ */ GOTO 33
+  IF ~~ THEN REPLY #879 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5751 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5752 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.2 10.4 32.5
+  SAY #885 /* ~Dhall prycha pogardliwie, jakby wspomnienie budziło w nim odrazę. "Twój zatęchły rydwan przywiózł cię do Kostnicy, Duchu Niespokojny. Pomyśl sobie, że przyjechałeś tu na wozie, ułożony po królewsku, na śmierdzącej i ropiejącej kupie równych tobie obywateli."~ */
+  IF ~~ THEN REPLY #886 /* ~"Przybyłem tu na wozie?"~ */ JOURNAL #39463 /* ~Najwidoczniej Farod przywiózł moje ciało na wozie, razem ze stertą innych zwłok. Czy naprawdę byłem *martwy* gdy to zrobił?~ */ GOTO 16
+  IF ~~ THEN REPLY #887 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #888 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #889 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 16 // from: 15.0
+  SAY #890 /* ~"Tak... Twoje ciało znajdowało się gdzieś pośrodku sterty, wymieniając płyny z resztą osobników tworzących górę ciał." Przerywa mu kolejny nagły atak kaszlu; po kilku chwilach łapie on jednak oddech. "Twój 'włodarz' Farod był jak zawsze bardzo zadowolony mogąc przyjąć kilka zaśniedziałych miedziaków w zamian za dostarczenie cię pod bramę Kostnicy."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #891 /* ~"Kim jest ten Farod?"~ */ GOTO 17
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #892 /* ~"Zdaje się, że nie darzysz Faroda zbytnią sympatią."~ */ GOTO 35
+  IF ~~ THEN REPLY #893 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #894 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5753 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0
+  SAY #895 /* ~"Jest... zbieraczem trupów." Dhall wciąga chrapliwie powietrze, po czym kontynuuje. "Istnieją w naszym mieście ludzie zbierający z ulic trupy tych, którzy wkroczyli na drogę Prawdziwej Śmierci. Przynoszą je do nas, by można je było stosownie pochować."~ */
+  IF ~~ THEN REPLY #897 /* ~"Gdzie mogę znaleźć tego 'Faroda'?"~ */ GOTO 18
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #898 /* ~"Zdaje się, że nie darzysz Faroda zbytnią sympatią."~ */ GOTO 35
+  IF ~~ THEN REPLY #899 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5754 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6031 /* ~"W takim razie pójdę poszukać tego Faroda. Żegnaj, Dhall."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0 29.1 31.0 35.1 36.1
+  SAY #900 /* ~"Jeśli wypadki potoczą się tak jak do tej pory, Duchu Niespokojny, istnieje znacznie większa szansa, że to Farod ciebie odnajdzie i ponownie do nas przywiezie, zanim ty odkryjesz, w czym tym razem macza on palce."~ */
+  IF ~~ THEN REPLY #902 /* ~"Mimo to muszę go znaleźć."~ */ GOTO 19
+  IF ~~ THEN REPLY #903 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #904 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5755 /* ~"Mam przeczucie, że nasze ścieżki się skrzyżują. Żegnaj, Dhall."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.4 18.0 18.3 29.3 31.2
+  SAY #901 /* ~W ton jego głosu wkrada się ostrzeżenie. "Nie szukaj Faroda, Duchu Niespokojny. Jestem przekonany, że doprowadzi to jedynie do końca kolejne koło. Tobie to mądrości nie przysporzy, a Farod stanie się bogatszy o kilka miedziaków. Przyjmij śmierć, Duchu Niespokojny. Nie tocz już swego koła nieszczęść."~ */
+  IF ~~ THEN REPLY #906 /* ~"*Muszę* go znaleźć. Wiesz, gdzie jest?"~ */ JOURNAL #39464 /* ~Dhall powiedział mi, że Faroda można znaleźć poza Kostnicą, w miejscu zwanym "Ulem". Chyba nie chce, abym wyruszył na poszukiwanie Faroda, ale to nie on stracił wspomnienia i obudził się z martwych, więc może zatrzymać swoją opinię dla siebie. Dhall zasugerował, abym popytał mieszkańców Ula gdzie mogę znaleźć Faroda.~ */ GOTO 20
+  IF ~~ THEN REPLY #905 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #907 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5756 /* ~"Nie mogę dłużej z tobą rozmawiać. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #908 /* ~Dhall milczy przez chwilę. Gdy w końcu przemawia ponownie, zdaje się czynić to niechętnie. "Nie wiem, w którym rynsztoku zaszył się on obecnie, sądzę jednak, że można znaleźć go gdzieś poza bramą Kostnicy, w Ulu. Być może tam znajdziesz kogoś, kto ci powie, gdzie możesz go szukać."~ */
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #910 /* ~"Zdaje się, że nie darzysz Faroda zbytnią sympatią."~ */ GOTO 35
+  IF ~~ THEN REPLY #909 /* ~"Czy mógłbyś po powiedzieć o Kostnicy nieco więcej?"~ */ GOTO 32
+  IF ~~ THEN REPLY #5757 /* ~"Dziękuję. Mam parę innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6030 /* ~"Pójdę tam I popytam o niego. Żegnaj."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.4
+  SAY #914 /* ~"Wiem o tobie wyjątkowo niewiele, Duchu Niespokojny. Wiem znacznie więcej o tych, którzy z tobą podróżowali, i którzy znajdują się obecnie pod naszą opieką." Wzdycha. "Proszę, byś więcej nie nakłaniał innych do przyłączenia się do ciebie, Duchu Niespokojny... Gdzie ty kroczysz, kroczy nieszczęście. Pozwól, by twe brzemię ciążyło jedynie na tobie."~ */
+  IF ~~ THEN REPLY #921 /* ~"Istnieją inni, którzy ze mną podróżowali? Gdzież oni są?~ */ JOURNAL #39461 /* ~Dhall powiedział mi, że jedna z kobiet z którymi podróżowałem, została złożona w sali pamięci, na parterze Kostnicy.~ */ GOTO 2
+  IF ~~ THEN REPLY #922 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #923 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 22 // from: 47.0
+  SAY #915 /* ~Dhall wzdycha. "Powiadają, że istnieją dusze, które nigdy nie osiągną Prawdziwej Śmierci. Śmierć się ich wyrzekła, ich imiona nigdy nie zostaną wpisane do Księgi Umarłych. Twe budzenie się ze śmierci... wskazuje, że jesteś jedną z takich dusz. Nasza frakcja nie może się pogodzić z twoim istnieniem."~ */
+  IF ~~ THEN REPLY #917 /* ~"'Nie może się pogodzić'? Nie stawia to mnie w zbyt dobrej sytuacji."~ */ GOTO 8
+  IF ~~ THEN REPLY #918 /* ~"Rozumiem. Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #919 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #920 /* ~"Sądzę, że dane mi było usłyszeć wystarczająco dużo. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 23 // from: 8.0
+  SAY #924 /* ~"Ponieważ narzucenie ci naszych przekonań nie byłoby właściwe. Musisz porzucić cień twego życia sam z siebie, a nie dlatego, że cię do tego zmuszamy." Wygląda na to, iż grozi mu kolejny atak kaszlu, udaje mu się jednak powstrzymać. "Dopóki zajmować będę moje stanowisko, będę chronił twe prawo do poszukiwania przynależnej ci prawdy."~ */
+  IF ~~ THEN REPLY #927 /* ~"Jakie masz stanowisko?"~ */ GOTO 25
+  IF ~~ THEN REPLY #928 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #925 /* ~"Dobrze. Mam kilka innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6039 /* ~"Usłyszałem już wystarczająco dużo. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 24 // from: 25.0
+  SAY #929 /* ~"Jestem tym, który kataloguje dostarczane nam zwłoki, Duchu Niespokojny." Przerywa mu nagły atak kaszlu, po chwili jednak uspakaja się. "Widzę jedynie twarze tych, którzy leżą na naszych stołach. Sprawy związane z twą egzystencją pozostają mi odległe."~ */
+  IF ~~ THEN REPLY #1305 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #6041 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6042 /* ~"Zdaje się, że mam wobec ciebie dług wdzięczności. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 25 // from: 9.5 23.0
+  SAY #930 /* ~"Jestem skrybą katalogującym wszystkie dostarczane do Kostnicy zwłoki." Dhall kaszle ponownie, po czym bierze głęboki oddech. "Póki strumień umarłych przepływał będzie przez Kostnicę, dopóty pozostanę na mym stanowisku."~ */
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #931 /* ~"Powiedziałeś, że byłem tu już więcej niż raz. Czemuż więc Grabarze mnie nie rozpoznają?"~ */ JOURNAL #39462 /* ~Dhall powiedział mi, że to on jest odpowiedzialny za utrzymywanie w tajemnicy przed resztą Grabarzy moich kolejnych wizyt w Kostnicy. Jako, że jest skrybą w sali przyjęć, jest jedną z niewielu osób, które widzą me ciało kiedy się tam pojawi.~ */ GOTO 24
+  IF ~~ THEN REPLY #932 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #933 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6040 /* ~"Dobrze. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 26 // from: 9.6
+  SAY #934 /* ~"Blisko mi już do Prawdziwej Śmierci, Duchu Niespokojny. Niedługo przekroczę Ostateczną Granicę, by odnaleźć spokój, którego poszukiwałem. Zmęczony jestem tą śmiertelną sferą..." Wzdycha chrapliwie. "Kogoś takiego jak ja Sfery nie są w stanie już niczym zadziwić."~ */
+  IF ~~ THEN REPLY #935 /* ~"Ostateczną Granicę?"~ */ GOTO 41
+  IF ~~ THEN REPLY #936 /* ~"Jesteś pewien? Być może mogę ci w jakiś sposób pomóc."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Dhall_1","GLOBALGood",1)
+~ GOTO 27
+  IF ~~ THEN REPLY #937 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #960 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.1
+  SAY #938 /* ~"Nie chcę żyć wiecznie, bądź żyć ponownie, Duchu Niespokojny. Nie zniósłbym tego."~ */
+  IF ~~ THEN REPLY #1303 /* ~"Dobrze. Mam kilka innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #1304 /* ~"Niech będzie. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 28 // from: 2.2 42.1
+  SAY #939 /* ~"*Rozmawiała* z tobą?" Głos Dhalla zniża się do szeptu. "Czyżbyś miał *omamy*. Duchu Niespokojny? Ona osiągnęła Prawdziwą Śmierć i odeszła tam, gdzie nie masz dostępu."~ */
+  IF ~~ THEN REPLY #981 /* ~"Przemówiła do mnie, Dhall. Jej duch tu rezyduje."~ */ GOTO 30
+  IF ~~ THEN REPLY #982 /* ~"W takim razie może to jedynie wytwór mojej wyobraźni. Mam kilka innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #873 /* ~"Nie mam pewności, czy osiągnęła ona Prawdziwą Śmierć. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 29 // from: 36.0
+  SAY #941 /* ~Przerwawszy, zaczyna się zastanawiać. "Najprawdopodobniej. Czy straciłeś coś... szczególnie cennego?" Marszczy brwi i zniża głos. "Farod nie przepuści niczemu, co nie jest częścią twego ciała, a czasami nawet i to nie jest wystarczające, by zaspokoić jego chciwy umysł."~ */
+  IF ~  Global("Journal","GLOBAL",0)
+~ THEN REPLY #942 /* ~"Brakuje mi dziennika."~ */ GOTO 31
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #943 /* ~"Hmmm. Wiesz, gdzie mogę znaleźć Faroda?"~ */ GOTO 18
+  IF ~~ THEN REPLY #944 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #6026 /* ~"Może powinienem porozmawiać z Farodem. Żegnaj, Dhall."~ */ GOTO 19
+  IF ~  GlobalGT("Pharod","GLOBAL",0)
+~ THEN REPLY #874 /* ~"Rozumiem. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.0
+  SAY #945 /* ~Dhall nakreśla palcem półkole w powietrzu przed sobą. "To zły znak, Duchu Niespokojny. Pragnąłbym, by ta rozmowa z nią była snem... Obawiam się jednak, że nie była."~ */
+  IF ~~ THEN REPLY #946 /* ~"Być może to jedynie wytwór mojej wyobraźni. Mam kilka innych pytań."~ */ GOTO 9
+  IF ~~ THEN REPLY #947 /* ~"Później być może później porozmawiamy o tym nieco więcej. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 31 // from: 29.0
+  SAY #850 /* ~"Dziennik? Jeśli miał jakąś wartość, to najprawdopodobniej znajduje się w rękach Faroda."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #948 /* ~"Gdzie mogę znaleźć tego Faroda?"~ */ GOTO 18
+  IF ~~ THEN REPLY #949 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #6027 /* ~"W takim razie poszukam go. Żegnaj, Dhall."~ */ GOTO 19
+  IF ~  GlobalGT("Pharod","GLOBAL",0)
+~ THEN REPLY #6066 /* ~"Rozumiem. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 32 // from: 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
+  SAY #950 /* ~"To miejsce, do którego dostarcza się zmarłych, by mogli zostać pochowani lub poddani kremacji. Jesteśmy Grabarzami i naszą powinnością jest zaopiekowanie się tymi, którzy opuścili cień tego życia i kroczą ścieżką Prawdziwej Śmierci." Dhall zniża głos, rozważając. "Twe rany musiały dać ci się bardzo we znaki, skoro nie poznajesz tego miejsca. To prawie twój dom w Sigil."~ */
+  IF ~~ THEN REPLY #951 /* ~"Cień tego życia?"~ */ GOTO 33
+  IF ~~ THEN REPLY #953 /* ~"Prawdziwej Śmierci?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #954 /* ~"Grabarzami?"~ */ GOTO 47
+  IF ~~ THEN REPLY #955 /* ~"Sigil?"~ */ GOTO 37
+  IF ~~ THEN REPLY #956 /* ~"Rany?"~ */ GOTO 34
+  IF ~~ THEN REPLY #846 /* ~"Jak się tu znalazłem?"~ */ GOTO 15
+  IF ~~ THEN REPLY #5735 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6062 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 33 // from: 10.2 14.2 32.0 41.0 47.2 49.0
+  SAY #957 /* ~"Tak, cień. Widzisz, Duchu Niespokojny - to życie... nie jest prawdziwe. Twoje życie, moje życie - to cienie, przebłyski tego, czym kiedyś było życie. Obecne 'życie' jest tym, które przypada nam *po* naszej śmierci. Jesteśmy tu... uwięzieni. Zamknięci w klatce. Dopóki nie osiągniemy Prawdziwej Śmierci."~ */
+  IF ~~ THEN REPLY #958 /* ~"Prawdziwej Śmierci?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #959 /* ~"Co sprawia, iż uważasz, że to życie nie jest prawdziwe?"~ */ GOTO 50
+  IF ~~ THEN REPLY #5736 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5737 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5738 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 34 // from: 14.1 32.4
+  SAY #961 /* ~"Tak. Rany, które zdobią twe ciało... Wyglądają na takie, które słabszego mężczyznę wysłałyby na ścieżkę Prawdziwej Śmierci... Mimo to zdaje się, iż większość z nich się już zagoiła." Przez chwilę kaszle gwałtownie, po czym się uspokaja. "Ale to tylko powierzchowne rany."~ */
+  IF ~~ THEN REPLY #1301 /* ~"Tylko powierzchowne rany? Co przez to rozumiesz?"~ */ JOURNAL #39470 /* ~Dhall dał mi do zrozumienia, że rany na moim ciele są niewielkie w porównaniu do ran mego umysłu... posunął się nawet do tego, by zasugerować, że odniesione obrażenia mogą być odpowiedzialne za utratę pamięci, a uszkodzenie umysłu to coś znacznie poważniejszego niż zwykła amnezja. Ta myśl mnie niepokoi - wolałbym od czasu do czasu słyszeć nieco *dobrych* wieści.~ */ GOTO 53
+  IF ~~ THEN REPLY #1302 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5746 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5747 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 35 // from: 16.1 17.1 20.0
+  SAY #962 /* ~"Są tacy, których darzę respektem, Duchu Niespokojny." Bierze chrapliwy oddech i uspokaja się. "Farod się do nich jednak nie zalicza. Obnosi się ze swą spaczoną reputacją niczym z jakąś odznaką honoru i pozwala sobie zabierać zmarłym ich dobytek. Jest macherem, obrzydliwym kanciarzem najgorszego rodzaju."~ */
+  IF ~~ THEN REPLY #963 /* ~"Macherem?"~ */ GOTO 36
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #964 /* ~"Wiesz, gdzie mogę znaleźć tego Faroda?"~ */ GOTO 18
+  IF ~~ THEN REPLY #965 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6028 /* ~"Dodaje to otuchy. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 36 // from: 35.0
+  SAY #966 /* ~"Macherem..." Dhall kaszle. "...złodziejem. Wszyscy, których tu Farod dostarcza, przybywają pozbawieni części godności, jaką mieli za życia. Farod zagarnia wszystko, co tylko może im wyszarpnąć z ich zesztywniałych palców."~ */
+  IF ~~ THEN REPLY #967 /* ~"Czy ten Farod zabrał *mi* coś?"~ */ GOTO 29
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #968 /* ~"Wiesz, gdzie mogę znaleźć tego Faroda?"~ */ GOTO 18
+  IF ~~ THEN REPLY #969 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6029 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 37 // from: 32.3
+  SAY #970 /* ~"Sigil to nasze wspaniałe miasto, Duchu Niespokojny."~ */
+  IF ~~ THEN REPLY #971 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #972 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5758 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 38 // from: 10.1 14.0
+  SAY #973 /* ~"Duch Niespokojny jest tak samo dobrym określeniem, jak inne..." Wciąga chrapliwie powietrze. "Coś cię tu zatrzymuje, czyż nie? Coś, co trzeba odrzucić - pewne uczucia, które musisz stłumić, nim będziesz mógł osiągnąć Prawdziwą Śmierć..."~ */
+  IF ~~ THEN REPLY #974 /* ~"Prawdziwą Śmierć?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #975 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5749 /* ~"Mam kilka innych pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5750 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 39 // from:
+  SAY #884 /* ~"Zrobisz to, co zawsze robiłeś, Duchu Niespokojny. Poszukasz naszego łasego na pieniądze głupca, Glistokudłego i poprosisz go o zwrot twojej własności. Następnie zaczniesz kontynuować swą bezsensowną wędrówkę, starając się rozwiązywać bezsensowne zadania, gromadzić bezsensowne przedmioty, a w końcu zostaniesz uziemiony i zwrócony nam. Zaoszczędź sobie czasu i porozmawiaj ze mną teraz, byśmy nie musieli wznawiać tej rozmowy ponownie, gdy po raz kolejny utracisz wspomnienia."~ */
+  IF ~~ THEN REPLY #976 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #977 /* ~"Żegnaj, Dhall."~ */ EXIT
+END
+
+IF ~  Global("Dhall","GLOBAL",1)
+~ THEN BEGIN 40 // from:
+  SAY #978 /* ~Dhall przypatruje się tobie, gdy się zbliżasz. "Cóż. A jednak powróciłeś..." Dhall bierze chrapliwy oddech, po czym dostaje gwałtownego napadu kaszlu. Po chwili stan ten ustępuje i na powrót zaczyna on oddychać zgrzytliwie. "...Witaj po raz kolejny, Duchu Niespokojny."~ */
+  IF ~~ THEN REPLY #979 /* ~"Mam do ciebie kilka innych pytań, Dhall."~ */ GOTO 9
+  IF ~~ THEN REPLY #980 /* ~"Mniejsza z tym. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 26.0 52.0
+  SAY #983 /* ~"To granica pomiędzy cieniem tego życia i Prawdziwą Śmiercią."~ */
+  IF ~~ THEN REPLY #984 /* ~"Cieniem tego życia?"~ */ GOTO 33
+  IF ~~ THEN REPLY #985 /* ~"Prawdziwą Śmiercią?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #5739 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5740 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5741 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 42 // from: 2.0 12.0 43.0
+  SAY #5075 /* ~"Północno-zachodnia sala pamięci na piętrze poniżej. Przyjrzyj się tamtejszym katafalkom... Jej imię powinno widnieć na jednej z pamiątkowych tabliczek. Być może odświeży to twoją pamięć."~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5076 /* ~"Nie wiem. Nie pamiętam nawet, że podróżowałem z kobietą."~ */ GOTO 43
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #5077 /* ~"Cóż, ona twierdzi, że mnie zna, ale ja jej nie pamiętam."~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #5078 /* ~"Powiedziałeś, że byli też inni. Kto jeszcze tu jest?"~ */ GOTO 12
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #5079 /* ~"Powiedziałeś, że byli też inni. Kto jeszcze tu jest?"~ */ GOTO 12
+  IF ~~ THEN REPLY #6067 /* ~"Może udam się, by jej poszukać. Zanim odejdę, mam parę innych pytań do ciebie..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6068 /* ~"Udam się do położonej poniżej sali pamięci i przekonam się, czy będę mógł odnaleźć jej ciało."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 43 // from: 2.1 42.0
+  SAY #5080 /* ~Dhall nie udziela na nie odpowiedzi. Jedynie przypatruje się tobie w milczeniu.~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5081 /* ~"Gdzie mogę ją znaleźć?"~ */ GOTO 42
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #5082 /* ~"Wspomniałeś wcześniej, że pochowani są tu również inni, którzy ze mną podróżowali. Gdzie oni są?"~ */ GOTO 12
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #5083 /* ~"Wspomniałeś wcześniej, że pochowani są tu również inni, którzy ze mną podróżowali. Gdzie oni są?"~ */ GOTO 12
+  IF ~~ THEN REPLY #6069 /* ~"Mam do ciebie jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6070 /* ~"Żegnaj więc."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 44 // from: 1.0 6.2 7.0
+  SAY #840 /* ~"Czy znam ciebie? Ja..." Gdy mówi, w głosie skryby wyczuć można pewną gorycz. "*Nigdy* cię nie znałem, Duchu Niespokojny. Nie bardziej, niż ty znasz samego siebie." Milknie na moment. "Ponieważ zapomniałeś, czyż nie?"~ */
+  IF ~~ THEN REPLY #1327 /* ~"Kim *ty* jesteś?"~ */ DO ~SetGlobal("Dhall","GLOBAL",1)
+~ GOTO 45
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.0
+  SAY #5728 /* ~"Jak zwykle - pytanie. I złe pytanie - jak zwykle." Dhall skłania się lekko, jednak poruszenie to powoduje u niego napad kaszlu. "Jestem..." Przerywa na moment, by złapać oddech. "Jestem... Dhall."~ */
+  IF ~~ THEN REPLY #5731 /* ~"Być może odpowiesz mi na parę pytań, Dhall..."~ */ JOURNAL #39459 /* ~W Kostnicy spotkałem chorowitego skrybę o imieniu Dhall... wiedział, że zapomniałem sam siebie, zanim się jeszcze do niego odezwałem. Czy znałem go zanim straciłem wspomnienia? Miałem nadzieję na uzyskanie paru odpowiedzi, ale to miejsce zdaje się rodzić coraz więcej i więcej pytań.~ */ GOTO 9
+  IF ~~ THEN REPLY #5732 /* ~"Nie mam na to czasu. Żegnaj."~ */ JOURNAL #39459 /* ~W Kostnicy spotkałem chorowitego skrybę o imieniu Dhall... wiedział, że zapomniałem sam siebie, zanim się jeszcze do niego odezwałem. Czy znałem go zanim straciłem wspomnienia? Miałem nadzieję na uzyskanie paru odpowiedzi, ale to miejsce zdaje się rodzić coraz więcej i więcej pytań.~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 46 // from: 45.1
+  SAY #5730 /* ~"Dobrze, Duchu Niespokojny." Przytakuje. "Obawiam się jednak, że w tym przypadku czas jest twoim wrogiem." Chwyta ponownie gęsie pióro. "Gdybyś zechciał jeszcze kiedyś ze mną porozmawiać, będę tutaj."~ */
+  IF ~~ THEN REPLY #40005 /* ~"Być może wrócę. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 32.2
+  SAY #847 /* ~"My, Grabarze, jesteśmy frakcją, zgromadzeniem tych, którzy dostrzegają, że to życie to jedynie cień, iluzja. Czekamy na następne życie, pomagamy też innym w ich podróży. Czekamy na Prawdziwą Śmierć."~ */
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #6032 /* ~"Może mi wyjaśnisz, dlaczego Grabarze chcą, bym był martwy?"~ */ GOTO 22
+  IF ~~ THEN REPLY #6033 /* ~"Prawdziwą Śmierć?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #6034 /* ~"To życie to jedynie cień?"~ */ GOTO 33
+  IF ~~ THEN REPLY #6035 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #6036 /* ~"Mam do ciebie jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6037 /* ~"Żegnaj więc."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 48 // from: 32.1 33.0 38.0 41.1 47.1
+  SAY #848 /* ~"Prawdziwa Śmierć to niebyt. Stan pozbawienia myśli, zmysłów, uczuć." Dhall kaszle, po czym bierze chrapliwy oddech. "Stan czystości."~ */
+  IF ~~ THEN REPLY #6043 /* ~"Wygląda to na kompletne unicestwienie. Dlaczego ktoś miałby tego pragnąć?"~ */ GOTO 49
+  IF ~~ THEN REPLY #6044 /* ~"Och. Możesz mi powiedzieć coś więcej o Kostnicy?"~ */ GOTO 32
+  IF ~~ THEN REPLY #6045 /* ~"Ro... zumiem. Mam parę innych pytań."~ */ GOTO 9
+  IF ~~ THEN REPLY #6046 /* ~"Muszę już iść. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 49 // from: 48.0
+  SAY #849 /* ~"Czy to gorsze niż pozostawanie w cieniu tego, czym było niegdyś życie? Sądzę, że nie."~ */
+  IF ~~ THEN REPLY #6047 /* ~"Cieniu?"~ */ GOTO 33
+  IF ~~ THEN REPLY #6048 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #6049 /* ~"Ro... zumiem. Mam parę innych pytań."~ */ GOTO 9
+  IF ~~ THEN REPLY #6050 /* ~"Muszę już iść. Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 50 // from: 33.1
+  SAY #853 /* ~"Co sprawia, że uważasz, iż to życie *jest* prawdziwe? Wejrzyj w swoje wnętrze. Nie czujesz, że czegoś ci brakuje?" Dhall potrząsa głową. "To czyściec. Jest tu jedynie żal. Smutek. Udręka. To nie są składniki, które kreują *życie*. Są one częścią klatki, która więzi nas w tym cieniu."~ */
+  IF ~~ THEN REPLY #6051 /* ~"Sądzę, że twój fatalizm przejął nad tobą górę. Te składniki są częścią życia, ale nie stanowią jego całości."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Dhall_2","GLOBALGood",1)
+~ GOTO 51
+  IF ~~ THEN REPLY #6052 /* ~"Więzi nas? Jak?"~ */ GOTO 51
+  IF ~~ THEN REPLY #6053 /* ~"Starczy już twego filozofowania. Co to wszystko ma wspólnego z mym budzeniem się tutaj?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_3","GLOBALGood",-1)
+~ GOTO 51
+END
+
+IF ~~ THEN BEGIN 51 // from: 50.0 50.1 50.2
+  SAY #5733 /* ~Dhall potrząsa głową. "Uczucia niosą z sobą ciężar. Zakotwiczają się licznie w cieniu tego życia. Jak długo będzie ktoś się trzymał emocji, tak długo będzie się nieustannie odradzać w cieniu tego 'życia', nie zaznając oczyszczenia Prawdziwej Śmierci."~ */
+  IF ~~ THEN REPLY #6054 /* ~"Ro... zumiem. W jaki sposób można się wyswobodzić z tego kręgu odradzania i osiągnąć tę... Prawdziwą Śmierć?"~ */ GOTO 52
+  IF ~~ THEN REPLY #6055 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #6056 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6057 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+  SAY #5734 /* ~"Zabij swoje uczucia. Wyzbądź się potrzeby doznawania. Gdy się już w pełni oczyścisz, wtedy cykl odradzania dobiegnie końca i osiągniesz spokój." Dhall wzdycha... Brzmi to, jakby śmierć chrobotała mu w gardle. "Poza naszymi skorupami, poza Ostateczną Granicą znajduje się spokój, którego poszukują wszystkie dusze."~ */
+  IF ~~ THEN REPLY #6058 /* ~"Ostateczną Granicą?"~ */ GOTO 41
+  IF ~~ THEN REPLY #6059 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #6060 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #6061 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 53 // from: 34.0
+  SAY #5742 /* ~"Mówię o ranach umysłu. Sporo zapomniałeś, czyż nie? Być może rany twe znajdują się znacznie głębiej niż blizny, które zdobią twą cielesną powłokę..." Dhall kaszle ponownie. "...Jest to jednakże coś, co tylko ty możesz wiedzieć..."~ */
+  IF ~~ THEN REPLY #5743 /* ~"Powiedz mi coś więcej o Kostnicy."~ */ GOTO 32
+  IF ~~ THEN REPLY #5744 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 9
+  IF ~~ THEN REPLY #5745 /* ~"Żegnaj, Dhall."~ */ GOTO 11
+END

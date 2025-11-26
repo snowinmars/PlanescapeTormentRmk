@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZF916.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZF916~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #24719 /* ~Le cadavre féminin te jette un regard vide. Le numéro '916' est gravé sur son front et ses lèvres ont été cousues. Une légère odeur de formol se dégage du corps.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #24720 /* ~"Alors… Tu fais quelque chose plus tard ?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #24737 /* ~"Alors… Tu fais quelque chose plus tard ?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #24738 /* ~"Je sais que tu n'es pas un zombi, tu sais. Personne n'est dupe."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #24739 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24744 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXTERN ~DMORTE~ 46
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24745 /* ~Laisse le cadavre tranquille.~ */ EXTERN ~DMORTE~ 46
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24746 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24747 /* ~Laisse le cadavre tranquille.~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24748 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24749 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #24721 /* ~Le cadavre continue à te fixer.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24722 /* ~"Alors, au revoir."~ */ EXTERN ~DMORTE~ 46
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24735 /* ~"Alors, au revoir."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24736 /* ~"Alors, au revoir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #24740 /* ~Ce cadavre ne répond pas. Il semble qu'il soit trop absent pour répondre à tes questions.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24741 /* ~"Alors, au revoir."~ */ EXTERN ~DMORTE~ 46
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24742 /* ~"Alors, au revoir."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24743 /* ~"Alors, au revoir."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #24750 /* ~Ce cadavre ne répond pas. Il semble qu'il soit trop absent pour répondre à tes questions.~ */
+END

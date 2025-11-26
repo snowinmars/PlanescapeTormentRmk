@@ -1,0 +1,155 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ310.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ310~
+
+IF ~  Global("Oinosian","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #6495 /* ~This reanimated corpse has had its lips sewn together and the numbers "310" carved into its brow; the smell of formaldehyde permeates the area around it. It turns its lifeless eyes upon you as you move to bar its path.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6499 /* ~"So... seen anything interesting going on?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6500 /* ~"So... seen anything interesting going on?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6501 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6502 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ DO ~SetGlobal("Oinosian","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #6503 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #6504 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6496 /* ~The corpse continues to stare at you.~ */
+  IF ~~ THEN REPLY #6505 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6498 /* ~For a moment you think this corpse is simply too far gone to reply... but suddenly you recognize true misery etched into its features, and feel behind it a sense of despair so profound that the spirit must have returned to its shell of old.~ */
+  IF ~~ THEN REPLY #6506 /* ~"I would ask you a question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9657 /* ~Leave the spirit in peace.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
+  SAY #9642 /* ~It speaks in a slow monotone, the voice of one broken and without hope. Even now it is nearly indistinguishable from a soulless zombie. "What would ye know, m'lord?"~ */
+  IF ~~ THEN REPLY #9658 /* ~"Who are you?"~ */ GOTO 4
+  IF ~~ THEN REPLY #9659 /* ~"Where are you from?"~ */ GOTO 5
+  IF ~~ THEN REPLY #9660 /* ~"How did you end up here? As a zombie, I mean?"~ */ GOTO 6
+  IF ~~ THEN REPLY #9661 /* ~"Where are you... where your spirit resides... now?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9662 /* ~"Why are you wrought with such despair?"~ */ GOTO 8
+  IF ~~ THEN REPLY #9663 /* ~"What do you know of this place?"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9664 /* ~"Do you know someone named Pharod?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9665 /* ~"Nothing, never mind."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #9643 /* ~The spirit speaks so softly you must strain to hear it; the corpse's mouth barely moves to form each word. "I am no one, m'lord; a wretched insect clinging desperately to the Wasting Tower in Oinos. I was once called Arabhiem, though, m'lord... so long, so very long ago."~ */
+  IF ~~ THEN REPLY #9666 /* ~"The Wasting Tower?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9667 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9668 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9669 /* ~"There is nothing more I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 5 // from: 3.1
+  SAY #9644 /* ~"I lived in Sigil, m'lord. In the Hive. T'was not so awful a place as I once thought, now that my home is... Oinos." The corpse blinks, so slowly that for a moment you thought it had simply shut its eyes.~ */
+  IF ~~ THEN REPLY #9670 /* ~"The Hive?"~ */ GOTO 12
+  IF ~~ THEN REPLY #9671 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9672 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9673 /* ~"That is all I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2
+  SAY #9645 /* ~"I was murdered, m'lord, by robbers. Filled with drink and stumbling through the alleyways of the Hive, I became lost and eventually fell prey to a band of thugs. 'Tis just as well; my life was probably worth less than the few coppers a Collector may have gotten for my corpse."~ */
+  IF ~~ THEN REPLY #9674 /* ~"Why such a base opinion of your own life?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9675 /* ~"A Collector?"~ */ GOTO 15
+  IF ~~ THEN REPLY #9676 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9677 /* ~"That is all I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.3 4.1 5.1 8.0 12.0
+  SAY #9646 /* ~The spirit closes his eyes for a moment, the corpse shuddering slightly. "The horrid Oinos, m'lord. In the Grey Waste. It is there that my soul has been confined, in the shadow of Khin-Oin, the Wasting Tower."~ */
+  IF ~~ THEN REPLY #9678 /* ~"Tell me more of this... Oinos."~ */ GOTO 11
+  IF ~~ THEN REPLY #9679 /* ~"Khin-Oin?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9680 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9681 /* ~"There is nothing more I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 3.4
+  SAY #9647 /* ~"There is nothing else for me, m'lord. Trapped for eternity in the pestilent waste of Oinos, I am. There is no hope for one such as I." The spirit seems to descend into an even more pathetic state, the corpse's shoulders sagging beneath the weight of its sorrow.~ */
+  IF ~~ THEN REPLY #9682 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9683 /* ~"I see. I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9684 /* ~"That is all I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 9 // from: 3.5 15.0
+  SAY #9648 /* ~"Very little, m'lord; only that the dead are brought here to be interred or cremated... or used as laborers, as my corpse has been."~ */
+  IF ~~ THEN REPLY #9685 /* ~"I see, now. Another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9686 /* ~"There is nothing more I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 10 // from: 3.6
+  SAY #9649 /* ~The corpse shakes its head slowly, side to side. "No, m'lord. I knew no one by that name. I am sorry, m'lord."~ */
+  IF ~~ THEN REPLY #9687 /* ~"No need to be. I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9688 /* ~"Farewell, then."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 11 // from: 7.0
+  SAY #9650 /* ~"There is little to say, m'lord. 'Tis the land of my Master, the Lord of Khin-Oin... full of anguish and disease, a rot which decays both body and spirit. It is a place of utter hopelessness."~ */
+  IF ~~ THEN REPLY #9689 /* ~"Who is this... 'Master'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9690 /* ~"Khin-Oin?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9691 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9692 /* ~"It certainly sounds so. Farewell, spirit."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 12 // from: 5.0
+  SAY #9651 /* ~"Yes, m'lord. A wretched place, but not so dreadful as Oinos."~ */
+  IF ~~ THEN REPLY #9693 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9694 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9695 /* ~"That is all I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 13 // from: 4.0 7.1 11.1 14.0
+  SAY #9652 /* ~"Yes, m'lord. 'Tis a mighty tower, far greater than the highest of Sigil's. It has the appearance of bone, m'lord - like the spinal column of some gargantuan creature. It is there that I toil, repairing the damage done to it by the armies of my Master's foes, his rival princes."~ */
+  IF ~~ THEN REPLY #9696 /* ~"Who is this 'Master'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9697 /* ~"I see. I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9698 /* ~"I see. I shall leave you now, spirit; farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 11.0 13.0
+  SAY #9653 /* ~"I know him only as the Master, m'lord; the Lord of Khin-Oin. He is a fiendish prince - an ultraloth of awesome power. It is he who owns my soul, and so shall forever own it, a petty thing doomed to languish beneath his foot until eternity grinds its way into Oblivion."~ */
+  IF ~~ THEN REPLY #9699 /* ~"Tell me of this 'Khin-Oin.'"~ */ GOTO 13
+  IF ~~ THEN REPLY #9700 /* ~"I had another question..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9701 /* ~"There is nothing more I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 6.1
+  SAY #9654 /* ~"Yes, m'lord, a Collector. Those who gather the dead of Sigil and haul them to the Mortuary - where we stand now - for a petty fee." The spirit takes a moment to look at his surroundings, then sighs softly.~ */
+  IF ~~ THEN REPLY #9702 /* ~"What do you know of this Mortuary?"~ */ GOTO 9
+  IF ~~ THEN REPLY #9703 /* ~"I see. I had another question for you..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9704 /* ~"That is all I wished to know. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.0
+  SAY #9655 /* ~"I would not speak of it, m'lord. 'Tis not worth discussing." The spirit seems immovable in this matter.~ */
+  IF ~~ THEN REPLY #9705 /* ~"Very well. I had other questions, then..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9706 /* ~"Farewell, then."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
+  SAY #9656 /* ~You do not realize the spirit has left the corpse until, with shuffling steps, the zombie returns to its labors.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~  Global("Oinosian","GLOBAL",1)
+~ THEN BEGIN 18 // from:
+  SAY #20102 /* ~The corpse seems to shrink in size, hunching over beneath the weight of the spirit's despair. ~ */
+  IF ~~ THEN REPLY #20103 /* ~"I had some questions..."~ */ GOTO 3
+  IF ~~ THEN REPLY #20104 /* ~"Just passing by. Farewell."~ */ EXIT
+END

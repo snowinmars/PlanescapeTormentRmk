@@ -1,0 +1,386 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #500 /* ~Widzisz ciało mężczyzny z numerem "331" wyciętym na czole. Jego powieki i wargi są skrupulatnie zaszyte, natomiast w jego szyi tkwi pokaźna wyrwa. Fetor, jaki od niego bije, mógłby zapewne zabić kogoś o delikatniejszych nozdrzach.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #502 /* ~"Więc, cóż? Jakieś ciekawe wrażenia z podróży po okolicy?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #503 /* ~"Więc, cóż? Jakieś ciekawe wrażenia z podróży po okolicy?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #1354 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #1355 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+IF ~~ THEN REPLY #1357 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ GOTO 1
+IF ~~ THEN REPLY #1358 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.4
+SAY #501 /* ~Truposz w milczeniu spogląda przed siebie przez zasznurowane powieki.~ */
+IF ~~ THEN REPLY #505 /* ~"Zatem żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #504 /* ~"Kk-kk..." Zombie niezdarnie odzyskuje głos i sprawia wrażenia silnie wystraszonego. "Kto tam? Odpowiadaj!"~ */
+IF ~~ THEN REPLY #507 /* ~"Nie widzisz mnie?"~ */ GOTO 3
+IF ~  CheckStatGT(Player1,16,INT) CheckStatLT(Player1,17,CHR) ~ THEN REPLY #508 /* ~Spróbuj improwizacji: "To ja. Nie poznajesz mojego głosu?"~ */ GOTO 30
+IF ~  CheckStatGT(Player1,16,CHR) ~ THEN REPLY #63307 /* ~Spróbuj improwizacji: "To ja. Nie poznajesz mojego głosu?"~ */ GOTO 30
+IF ~~ THEN REPLY #519 /* ~"Kim jesteś?"~ */ GOTO 31
+IF ~  Global("Xachariah_Name","GLOBAL",1) ~ THEN REPLY #506 /* ~"Zachariasz?"~ */ GOTO 4
+IF ~~ THEN REPLY #520 /* ~"Dzisiaj sobie chyba nie pogadamy, truposzu. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+SAY #509 /* ~"Ślepy jestem, tak samo po śmierci, jak i za życia... A teraz odpowiadaj, kim jesteś?"~ */
+IF ~  CheckStatGT(Player1,16,INT) CheckStatLT(Player1,17,CHR) ~ THEN REPLY #510 /* ~Spróbuj improwizacji: "To ja. Nie poznajesz mojego głosu?"~ */ GOTO 30
+IF ~  CheckStatGT(Player1,16,CHR) ~ THEN REPLY #63308 /* ~Spróbuj improwizacji: "To ja. Nie poznajesz mojego głosu?"~ */ GOTO 30
+IF ~~ THEN REPLY #511 /* ~"Kim jesteś?"~ */ GOTO 31
+IF ~  Global("Xachariah_Name","GLOBAL",1) ~ THEN REPLY #521 /* ~"Zachariasz?"~ */ GOTO 4
+IF ~~ THEN REPLY #522 /* ~"Dzisiaj sobie chyba nie pogadamy, truposzu. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 2.4 3.3 30.0 31.0
+SAY #512 /* ~"Co...?" Zombie wygląda na wstrząśniętego, ale jego przerażenie szybko ustępuje miejsca radosnemu zdumieniu. "Na Wzrok Pani..." Truposz sprawia wrażenie, jakby na jego niewidzących oczach rozgrywał się prawdziwy cud. "Nie jesteś *martwy*, śmiałku?"~ */
+IF ~~ THEN REPLY #515 /* ~"Kim jesteś?"~ */ GOTO 5
+IF ~~ THEN REPLY #516 /* ~"Co tutaj robisz?"~ */ GOTO 47
+IF ~~ THEN REPLY #517 /* ~"Co to za miejsce?"~ */ GOTO 6
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #518 /* ~"Nie mogę zbyt długo rozmawiać. Czas już na mnie. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1394 /* ~"Nie mogę zbyt długo rozmawiać. Czas już na mnie. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+SAY #514 /* ~"Czy naprawdę tak trudno przebić się wzrokiem przez tę plugawą skorupę i ujrzeć pod nią starego Głupca Zachariasza? To przecież ja, śmiałku. Błogosławione niechaj będą Wszelkie Moce, nie sądziłem, że przyjdzie mi jeszcze kiedykolwiek cię obaczyć... Ale ty się też znacznie zmieniłeś, przynajmniej tak mówi mi mój słuch... Powiedz, czy dalej swoim zwyczajem obierasz błędne i zwodnicze szlaki?" Zachariasz świszczy przez otwór w szyi. "A może też jesteś martwy?"~ */
+IF ~~ THEN REPLY #685 /* ~"To długa historia... Ale nie... Nie jestem martwy."~ */ GOTO 46
+IF ~~ THEN REPLY #686 /* ~"Co tutaj robisz?"~ */ GOTO 47
+IF ~~ THEN REPLY #687 /* ~"Co to za miejsce?"~ */ GOTO 6
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #688 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1393 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.2 5.2
+SAY #513 /* ~"Kostnica, śmiałku. Czy to trudno zauważyć?"~ */
+IF ~~ THEN REPLY #523 /* ~"Co doprowadziło cię do takiego stanu?"~ */ GOTO 8
+IF ~  CheckStatGT(Player1,12,INT) ~ THEN REPLY #524 /* ~"Opowiedz mi o Kostnicy."~ */ DO ~SetGlobal("Vaxis_Exposed","GLOBAL",1) ~ GOTO 9
+IF ~~ THEN REPLY #525 /* ~"Opowiedz mi o moim poprzednim życiu."~ */ GOTO 16
+IF ~~ THEN REPLY #526 /* ~"Opowiedz mi o którymś z moich dawnych towarzyszy."~ */ GOTO 23
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #527 /* ~"Czas już na mnie. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1392 /* ~"Muszę już iść. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 22.1 23.5 24.2 25.0 26.2 27.4 28.1 29.1 32.1 33.2 35.0 36.1 40.0 46.1 47.1 48.0 49.1
+SAY #528 /* ~"Tak?"~ */
+IF ~  Global("Xachariah_Ring","GLOBAL",1) ~ THEN REPLY #63484 /* ~"Chciałby teraz wydobyć ten przedmiot, Zachariaszu..."~ */ GOTO 34
+IF ~~ THEN REPLY #637 /* ~"Co doprowadziło cię do takiego stanu?"~ */ GOTO 8
+IF ~~ THEN REPLY #638 /* ~"Opowiedz mi o Kostnicy."~ */ GOTO 9
+IF ~~ THEN REPLY #639 /* ~"Opowiedz mi o moim poprzednim życiu."~ */ GOTO 16
+IF ~~ THEN REPLY #640 /* ~"Opowiedz mi o którymś z moich dawnych towarzyszy."~ */ GOTO 23
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1391 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #641 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.0 7.1
+SAY #529 /* ~Jego głos załamuje się, jakby zombie wstydził się czegoś. "Ciężko było podążać za tobą, śmiałku, widziałem też wiele okropieństw. Po tym wszystkim zacząłem pić i stoczyłem się. A któregoś dnia, po pijanemu, zapisałem swoje ciało Grabom. Wkrótce potem Moce odwróciły się ode mnie i zmarłem."~ */
+IF ~~ THEN REPLY #531 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #545 /* ~"Dość już usłyszałem. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1390 /* ~"Dość już usłyszałem. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.1 7.2
+SAY #533 /* ~"Miejsce dla martwych prowadzone przez Martwych... Ale są tu pewne rzeczy, które toczą się podejrzanym torem..."~ */
+IF ~~ THEN REPLY #534 /* ~"Na przykład co?"~ */ GOTO 10
+IF ~~ THEN REPLY #536 /* ~"Mam do ciebie jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #537 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1389 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+SAY #535 /* ~"Zdradzę ci ten cień. Jest tutaj zombie, który udaje, że jest zombie, ale nie jest nim w istocie. Nie ciekawi mnie przyczyna pojawienia się tu takiej postaci, ale rzecz ta sama w sobie jest bardzo dziwna."~ */
+IF ~  CheckStatGT(Player1,15,INT) ~ THEN REPLY #538 /* ~"Coś jeszcze?"~ */ GOTO 11
+IF ~~ THEN REPLY #539 /* ~"Który to zombie?"~ */ GOTO 12
+IF ~~ THEN REPLY #540 /* ~"Interesujące. Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #546 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1388 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0 12.0
+SAY #541 /* ~"I jeszcze jedna rzecz. Ten stary githzerai, ten, który zajmuje salę przygotowań... Dhall. On wielokrotnie uratował cię przed piecem krematoryjnym. Twoje szczęście, że masz takiego sprzymierzeńca."~ */
+IF ~  CheckStatGT(Player1,17,INT) ~ THEN REPLY #542 /* ~"Co takiego Dhall zrobił, aby mnie ocalić?"~ */ GOTO 13
+IF ~~ THEN REPLY #543 /* ~"Wiem. Mam jeszcze kilka innych pytań."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #544 /* ~"Nie mam już czasu na dalsze rozmowę. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1387 /* ~"Nie mam już czasu na dalszą rozmowę. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 10.1
+SAY #547 /* ~"Nawet gdyby moje oczy pozwoliłyby mi go zobaczyć, trudno byłoby mi podać liczbę na jego czole. Mogę ci tylko rzec, jak można go odróżnić od innych, śmiałku: jego głos nie jest głosem zombie... reaguje inaczej, niż inne zombie."~ */
+IF ~  CheckStatGT(Player1,15,INT) ~ THEN REPLY #548 /* ~"Zauważyłeś jeszcze jakieś inne osobliwe rzeczy w Kostnicy?"~ */ GOTO 11
+IF ~~ THEN REPLY #554 /* ~"Hm... Interesujące. Mam jeszcze kilka innych pytań."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #549 /* ~"Poszukam tego zombie. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1386 /* ~"Poszukam tego zombie. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 11.0
+SAY #550 /* ~"On dbał o to, aby odwlec kremację na tyle, abyś zdążył się wcześniej obudzić. Ale nie wiem, dlaczego to czynił."~ */
+IF ~~ THEN REPLY #552 /* ~"Interesujące. Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #553 /* ~"Muszę już iść. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1385 /* ~"Muszę już iść. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from:
+SAY #555 /* ~"Uznał, że to konieczne dla tego, aby zapobiec... aby zapobiec... No właśnie nie pamiętam za bardzo o co to chodziło, ale wiem, że uznał to za konieczne."~ */
+IF ~~ THEN REPLY #557 /* ~"Hm... To brzmi podejrzanie. Mam jeszcze kilka innych pytań."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #556 /* ~"Ach tak. Zastanawiam się właśnie, czy to *było* konieczne. Przedyskutuję to z Dhallem... Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1384 /* ~"Ach tak. Zastanawiam się właśnie, czy to *było* konieczne. Przedyskutuję to z Dhallem... Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from:
+SAY #558 /* ~Jego głos załamuje się, jakby zombie wstydził się czegoś. "Ciężko było podążać za tobą, śmiałku, widziałem też wiele okropieństw. Po tym wszystkim zacząłem pić i stoczyłem się. A któregoś dnia, po pijanemu, zapisałem swoje ciało Grabom. Wkrótce potem Moce odwróciły się ode mnie i zmarłem."~ */
+IF ~~ THEN REPLY #559 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #560 /* ~"Muszę już iść. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1383 /* ~"Muszę już iść. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.2 7.3
+SAY #561 /* ~"Dlaczego? Zapomniałeś o swojej przeszłości?"~ */
+IF ~~ THEN REPLY #562 /* ~"Tak, można to tak ująć."~ */ GOTO 17
+IF ~~ THEN REPLY #563 /* ~"Nie... Chciałem tylko sprawdzić, czy jesteś tym, za kogo się podajesz."~ */ GOTO 20
+IF ~~ THEN REPLY #564 /* ~"Nieważne. Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #565 /* ~"Muszę już iść. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1382 /* ~"Muszę już iść. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0 21.0 22.0
+SAY #566 /* ~"Cóż, byłeś dziwakiem, zawsze pełnym podejrzeń i zawsze spodziewającym się czegoś... czyjegoś przybycia. Inna sprawa, że we wszystkich swoich żywotach musiałeś namnożyć sobie wrogów. A nie było przesady w twierdzeniu, że kto z tobą zadzierał, szybko lądował w księdze umarłych."~ */
+IF ~~ THEN REPLY #569 /* ~"Co jeszcze? Jakieś inne ciekawostki..."~ */ GOTO 18
+IF ~~ THEN REPLY #570 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #571 /* ~"Czas już na mnie. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1381 /* ~"Muszę już iść. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+SAY #567 /* ~"Potrafiłeś być także diabelsko okrutny... Takim byłeś, kiedy skłoniłeś mnie do podpisania kontraktu i takim byłeś, kiedy porzuciłeś tę dzierlatkę na Avernusie. Spędziliśmy razem szmat czasu. Nikt z nas nie mógł się pochwalić tym, że ci się w czymś sprzeciwił, synu."~ */
+IF ~~ THEN REPLY #572 /* ~"Ach tak... Opowiedz jeszcze coś. Nawet drobiazg z twoich wspomnień może mi pomóc."~ */ GOTO 19
+IF ~~ THEN REPLY #573 /* ~"Nieważne. Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #574 /* ~"Czas już na mnie. Żegnaj."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1380 /* ~"Muszę już iść. Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 18.0
+SAY #568 /* ~"Całe swoje życie traktowałeś jak jedną wielką wojnę. Wszystko było dla ciebie bitwą, którą musiałeś wygrać. A byłeś przy tym najbardziej bezlitosnym łotrem, jakiego za moich czasów świat nosił. Jeśliś na coś zawziął, żadna siła nie mogła cię zawrócić z drogi. I nikt nic dla ciebie nie znaczył. Ani Deionarra ze swoimi szlochem i narzekaniami, ani gith zawsze pełen mądrych wojennych rad, ani biedny Zachariasz, który robił co mógł, aby utrzymać się u twojego boku. Byłeś twardy i niełatwo było cię zabić, ale byliśmy wszyscy tylko ludźmi. Teraz zaś wszyscy jesteśmy stronami księgi umarłych. Niektórzy można nawet rzec stronicami wydartymi."~ */
+IF ~  GlobalLT("Xachariah_Ring","GLOBAL",2) ~ THEN REPLY #63234 /* ~"Coś jeszcze?"~ */ GOTO 32
+IF ~~ THEN REPLY #576 /* ~"Deionarra?"~ */ GOTO 26
+IF ~~ THEN REPLY #577 /* ~"'Gith' Kogo masz na myśli?"~ */ GOTO 24
+IF ~~ THEN REPLY #578 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #579 /* ~"Rozumiem... Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1379 /* ~"Rozumiem... Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 16.1
+SAY #580 /* ~"Hm, cóż takiego mogę ci opowiedzieć? Też nie pamiętam wszystkiego. Pamiętasz, jak ruszyliśmy w tę tułaczkę po Avernusie i wpadliśmy na stado abiszai w tej dolinie pełnej muszych larw?"~ */
+IF ~~ THEN REPLY #581 /* ~Kłamstwo: "Tak."~ */ GOTO 21
+IF ~~ THEN REPLY #582 /* ~"Nie."~ */ GOTO 22
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.0
+SAY #583 /* ~"No cóż cieszę się, że przynajmniej jeden z nas pamięta to wszystko. Bo ja, jak mi Balor miły, niczego takiego nie pamiętam. Kim jesteś, śmiałku, i co sobie obiecujesz po wspomnieniach umarlaka?"~ */
+IF ~~ THEN REPLY #584 /* ~"Pragnę poznać samego siebie. Naprawdę zapomniałem o tym, kim jestem, Zachariaszu, a wierzę, że ty mnie znałeś. Co możesz mi opowiedzieć o moim poprzednim życiu?"~ */ GOTO 17
+IF ~~ THEN REPLY #586 /* ~"Zapomnijmy o tym. Mam kilka pytań."~ */ EXIT
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #587 /* ~"Niczego... Czas już na mnie. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1378 /* ~"Niczego... Czas już na mnie. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 20.1
+SAY #588 /* ~"Hmmm. Może to całe wydarzenie potoczyło się w inny sposób? A może spróbujemy tego: Pamiętasz, jak Deionarra niemal sama wpakowała się do księgi umarłych, próbując powstrzymać cię przed wstąpieniem w mury Klątwy?"~ */
+IF ~~ THEN REPLY #590 /* ~"Nie, naprawdę, ale to nic nie szkodzi. Wierzę ci, że mnie znałeś. Zatem, co możesz mi powiedzieć o moim poprzednim życiu?"~ */ GOTO 17
+IF ~~ THEN REPLY #591 /* ~"Mniejsza o to... Mam jeszcze kilka innych pytań."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #592 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1377 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 6.3 7.4
+SAY #589 /* ~"Barwną stanowiliśmy paczkę, nie ma co... Pół-umarły człek, którym zawsze wzgardzała księga umarłych, choćby się starał ze wszelkich sił - tak brzydki, że odwracały się od niego wszelkie Moce Śmierci - płaczliwa córka adwokata, gith wyrzutek, skoczna czaszka o niewyparzonym języku i na poły skurlały ślepy łucznik."~ */
+IF ~~ THEN REPLY #593 /* ~"Gith?"~ */ GOTO 24
+IF ~~ THEN REPLY #594 /* ~"Płaczliwa córka adwokata?"~ */ GOTO 26
+IF ~~ THEN REPLY #595 /* ~"Latająca czaszka?"~ */ GOTO 28
+IF ~~ THEN REPLY #596 /* ~"Byłeś ślepym łucznikiem?"~ */ GOTO 49
+IF ~~ THEN REPLY #597 /* ~"Czy wiesz, co się stało z moim dziennikiem?"~ */ GOTO 29
+IF ~~ THEN REPLY #598 /* ~"Nieważne. Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #599 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1376 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 19.2 23.0 27.0
+SAY #600 /* ~"Gith o ponurym wyglądzie... Mroczny i cichy, jak wszyscy z jego gatunku. Nic a nic nie ufałem temu githowi, jak mi bogowie mili. Widzisz, śmiałku, te wrzecionowate githy myślą tylko o dwóch rzeczach: jak uniknąć niewoli i jak zabić jak najwięcej Illithidów o łbach kałamarnic. Wszystko inne dla nich nie ma najmniejszego znaczenia, więc i ten, choć za tobą poszedłby w ogień, nie dałby za resztę z nas złamanego grosza."~ */
+IF ~  Global("Dakkon_Slave","GLOBAL",1) ~ THEN REPLY #601 /* ~"Co było tego przyczyną?"~ */ GOTO 25
+IF ~~ THEN REPLY #602 /* ~"Chciałbym usłyszeć coś o moich towarzyszach..."~ */ GOTO 27
+IF ~~ THEN REPLY #603 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #604 /* ~"Hmm... Interesujące. Dziękuję, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1375 /* ~"Hmm... Interesujące. Dziękuję, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 26.0
+SAY #605 /* ~"To jeden z cieni, którego nigdy nie rozgryzłem. Może ty mi powiesz, śmiałku?"~ */
+IF ~~ THEN REPLY #606 /* ~"Sam tego nie wiem. Mam jeszcze kilka innych pytań."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #607 /* ~"Może będzie lepiej, jeśli to sprawdzę. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1374 /* ~"Może będzie lepiej, jeśli to sprawdzę. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 19.1 23.1 27.1
+SAY #608 /* ~"Ta ognista dzierlatka-która-chciała-być-żołnierzem przysięgała, że pójdzie za tobą do Baator i z powrotem, i klnę się na Wszelkie Moce, zrobiła to! Za nic miała mnie, czy githa. Szalała za tobą. Po mojemu, musiała być pomylona. Nie wiem, co dziewki dostrzegały w twojej poznaczonej bliznami facjacie, ale było w tobie coś takiego, że wszystka krew gotowała im się w żyłach. Pochodziła z bogatej rodziny z Dzielnicy Urzędników, a ty potrzebowałeś czegoś od niej i ostatecznie stanęło na tym, że ruszyła z tobą."~ */
+IF ~  Global("Deionarra_Death_Truth","GLOBAL",0) ~ THEN REPLY #609 /* ~"Czego takiego potrzebowałem od niej?"~ */ GOTO 25
+IF ~~ THEN REPLY #610 /* ~"Chciałbym usłyszeć coś o moich towarzyszach..."~ */ GOTO 27
+IF ~~ THEN REPLY #614 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #611 /* ~"Powiedziałeś mi już dość. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1373 /* ~"Powiedziałeś mi już dość. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 27 // from: 24.1 26.1 28.0 29.0 33.1 49.0
+SAY #612 /* ~"Dobra, o kim?"~ */
+IF ~~ THEN REPLY #613 /* ~"O tym githcie."~ */ GOTO 24
+IF ~~ THEN REPLY #615 /* ~"O 'płaczliwej córce adwokata'."~ */ GOTO 26
+IF ~~ THEN REPLY #616 /* ~"O latającej czaszce."~ */ GOTO 28
+IF ~~ THEN REPLY #617 /* ~"Ty... Ty byłeś ślepym łucznikiem?"~ */ GOTO 49
+IF ~~ THEN REPLY #618 /* ~"Nieważne. Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #619 /* ~"Powiedziałeś mi już dość. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1372 /* ~"Powiedziałeś mi już dość. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 28 // from: 23.2 27.2
+SAY #620 /* ~"Ta czaszka o plugawym języku zawsze szukała porządnego guza! Zawsze rezonowała i zawsze natrząsała się z mojego położenia!"~ */
+IF ~~ THEN REPLY #622 /* ~"Chciałbym usłyszeć coś o moich towarzyszach..."~ */ GOTO 27
+IF ~~ THEN REPLY #623 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #624 /* ~"Powiedziałeś mi już dość. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  GlobalGT("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #1371 /* ~"Powiedziałeś mi już dość. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 29 // from: 23.4
+SAY #625 /* ~"Chodzi ci o tę ohydną księgę o stronnicach z twojej własnej skóry, których było więcej niż lat w moim przeklętym życiu? Jeśliś ją naprawdę zgubił, moje powinszowania! Zawsze w niej coś zapisywałeś, pamiętam. Cuchnęło od jak od zarazy. Wydawało się, że ciągle obawiałeś się, że ktoś przyjdzie i ci ją weźmie. Pisywałeś w mnie tak długo, aż ci palce mdlały i nieraz zastanawiałem się, cóż to za dzieło swojego życia spisujesz. Czasem siadałeś do pisania i nie wstawałeś przez kilka dni. Nienawidziłem tej piekielnej książki. Byłeś od niej uzależniony, ale nie był to miły nałóg. Ostatnim razem, kiedy ją widziałem, była w twoich rękach, śmiałku. Jeżeli nie masz jej przy sobie, nie mam zielonego pojęcia, gdzie może się znajdować w wieloświecie."~ */
+IF ~~ THEN REPLY #626 /* ~"Chciałbym usłyszeć coś o moich towarzyszach..."~ */ GOTO 27
+IF ~~ THEN REPLY #627 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #628 /* ~"Dzięki za wszystko, co mi powiedziałeś. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1370 /* ~"Dzięki za wszystko, co mi powiedziałeś. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 30 // from: 2.1 2.2 3.0 3.1
+SAY #629 /* ~"Głos brzmi zaiste znajomo... Ale jeżeli jesteś tym, o kim teraz myślę, powiedz..." Zombie milknie na pewną chwilę. "Powiedz, kim jestem?"~ */
+IF ~  Global("Xachariah_Name","GLOBAL",1) ~ THEN REPLY #631 /* ~"Zachariasz?"~ */ GOTO 4
+IF ~  Global("Xachariah_Name","GLOBAL",0) ~ THEN REPLY #632 /* ~"Nie znam twojego imienia. Mogę powrócić tutaj, kiedy je poznam. Póki co, żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 2.3 3.2
+SAY #630 /* ~"Ja..." Zombie milknie na chwilę. "Moje imię. Opuściło mnie. Nie mogę sobie przypomnieć, kim jestem."~ */
+IF ~  Global("Xachariah_Name","GLOBAL",1) ~ THEN REPLY #634 /* ~"Zachariasz?"~ */ GOTO 4
+IF ~  Global("Xachariah_Name","GLOBAL",0) ~ THEN REPLY #635 /* ~"Nie znam twojego imienia. Może powrócę tutaj, kiedy je poznam. Póki co, żegnaj."~ */ EXIT
+IF ~  Global("Xachariah_Name","GLOBAL",1) ~ THEN REPLY #636 /* ~"Żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 32 // from: 19.0
+SAY #642 /* ~"Nam wszystkim coś zostawiłeś, kiedy odszedłeś, śmiałku... Zostawiłeś Deionarrze płacz po stracie kochanka, Dak'konowi żal po utracie mistrza, a czaszce rozpacz po rozstaniu z przyjacielem. A mnie? Wbiłeś coś we mnie, bardzo głęboko, tak, że nigdy nie wyszło na wierzch za mojego życia. Ta rzecz, ciśnięta w głąb moich trzewi jak kawał zimnego ołowiu, utoczyła wiele mojej krwi."~ */
+IF ~~ THEN REPLY #645 /* ~"Co to takiego?"~ */ DO ~SetGlobal("Xachariah_Ring","GLOBAL",1) ~ GOTO 33
+IF ~~ THEN REPLY #646 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #648 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1369 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+SAY #643 /* ~"Och... Tego nie wiem. Ale to zmieniło mnie na pewien sposób. Zmieniło moje wnętrze. Chociaż, kiedy mi to zrobiłeś, i tak byłem już bliski śmierci, dlatego niespecjalnie mnie to zainteresowało."~ */
+IF ~~ THEN REPLY #649 /* ~"Czy mogę to odzyskać?"~ */ GOTO 34
+IF ~~ THEN REPLY #650 /* ~"Chciałbym usłyszeć coś o moich towarzyszach..."~ */ GOTO 27
+IF ~~ THEN REPLY #651 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #652 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1368 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 34 // from: 7.0 33.0
+SAY #644 /* ~"Tkwi bardzo głęboko, ale nie mam pojęcia gdzie. Bez pomocy skalpela albo noża i moich wskazówek, nigdy go nie wydobędziesz. Masz skalpel albo nóż?"~ */
+IF ~  PartyHasItem("Scalpel") ~ THEN REPLY #647 /* ~"Tak."~ */ GOTO 36
+IF ~  !PartyHasItem("Scalpel") ~ THEN REPLY #653 /* ~"Nie. Ale powinienem móc przynajmniej rozedrzeć szwy."~ */ GOTO 36
+END
+
+IF ~~ THEN BEGIN 35 // from:
+SAY #654 /* ~"Wobec tego powróć tutaj, kiedy będziesz miał czym mnie rozpruć i wtedy pomyślimy o wydostaniu z mojego wnętrza tego drobiazgu."~ */
+IF ~~ THEN REPLY #655 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~~ THEN REPLY #656 /* ~"Poszukam jakiegoś noża. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 36 // from: 34.0 34.1
+SAY #657 /* ~"Zatem otwórz mnie na trzy cale od mostka i ostrożnie pomacaj, tak, aby to wyczuć."~ */
+IF ~~ THEN REPLY #658 /* ~Zrób to.~ */ GOTO 37
+IF ~~ THEN REPLY #659 /* ~"Mniejsza o to, Zachariaszu... Chciałbym za to zadać ci kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #660 /* ~"Teraz nie mogę. Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1367 /* ~"Teraz nie mogę. Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+SAY #661 /* ~"Trochę bardziej na lewo... trochę na lewo..." Natrafiasz na jakiś obiekt.~ */
+IF ~~ THEN REPLY #663 /* ~Wyciągnij to.~ */ DO ~GiveItemCreate("XacLiver",Protagonist,0,0,0) ~ GOTO 38
+END
+
+IF ~~ THEN BEGIN 38 // from: 37.0
+SAY #662 /* ~Wyciągasz na wierzch wątrobę zombie. "Na oczy Pani Bólu! Wybacz, śmiałku... Wydawało mi się, że Grabarze wywlekli ze mnie wszystkie narządy. Spróbuj jeszcze raz. Może tym razem trochę bardziej na prawo."~ */
+IF ~~ THEN REPLY #664 /* ~Spróbuj jeszcze raz.~ */ GOTO 39
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0
+SAY #665 /* ~"Dobra... Teraz troszeczkę na prawo i z powrotem... bardzo niedużo." Znowu na coś natrafiasz. "Wydaje mi się, że to jest to. Wyciągaj."~ */
+IF ~~ THEN REPLY #666 /* ~Wyciągnij to.~ */ DO ~SetGlobal("Xachariah_Ring","GLOBAL",2) GiveItemCreate("XacHeart",Protagonist,1,0,0) ~ GOTO 40
+END
+
+IF ~~ THEN BEGIN 40 // from: 39.0
+SAY #667 /* ~Trzymasz w ręku pociemniały obiekt wielkości pięści, który sprawia wrażenie znacznie cięższego niż być powinien. "Tak to właśnie to. W porządku. Och. Większe niż przypuszczałem. Czy to jest... Co to właściwie jest? Wygląda jak... serce."~ */
+IF ~~ THEN REPLY #668 /* ~"Tak. Tak mi się wydaje. Dzięki, Zachariaszu. Mam jeszcze kilka innych pytań."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #669 /* ~"Na to wygląda. Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1366 /* ~"Na to wygląda. Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.3 17.2 18.2 19.4 21.2 22.2 23.6 24.3 25.1 26.3 27.5 28.2 29.2 32.2 33.3 36.2 40.1 46.2 47.2 48.1 49.2
+SAY #670 /* ~"Zanim odejdziesz, chciałbym, abyś oddał mi niewielką przysługę, śmiałku."~ */
+IF ~~ THEN REPLY #672 /* ~"Co to takiego?"~ */ DO ~SetGlobal("Xachariah_Request","GLOBAL",1) ~ GOTO 42
+IF ~~ THEN REPLY #671 /* ~"Mam dość rozmaitych sprawunków i przysług... Muszę już iść. Żegnaj, Zachariaszu."~ */ DO ~SetGlobal("Xachariah_Request","GLOBAL",1) ~ GOTO 45
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0
+SAY #673 /* ~Jego głos schodzi do szeptu, jakby zombie wstydził się czegoś. "Zrobiłem w życiu parę błędów, zaś pośród najgorszych z nich było zapisanie mojego ciała Grabarzom. Gdybym nie był wtedy tak bliski dna, nigdy bym tego nie uczynił. Żałuję tego gorąco, i mam nadzieję, że jesteś w stanie na to poradzić."~ */
+IF ~~ THEN REPLY #675 /* ~"Jak?"~ */ GOTO 43
+IF ~~ THEN REPLY #676 /* ~"Mam dość rozmaitych sprawunków i przysług... Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 45
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+SAY #677 /* ~"Z tego, co mi się wydaje, moje ciało będzie trwało jeszcze długo, a każdy taki dzień jest dla nie do zniesienia. Nie mógłbyś śmiałku wypruć mi bebechów jeszcze raz? W imię dawnej komitywy? Perspektywa spędzenia długich lat w tej zatęchłej Kostnicy pośród tych trupich pysków naprawdę nie jest dla mnie miła. Nie dałbyś rady wsadzić mnie z powrotem do księgi umarłych? Tam przecież moje miejsce."~ */
+IF ~~ THEN REPLY #679 /* ~"Jeżeli taka twoja wola..."~ */ DO ~Kill(Myself) ~ GOTO 44
+IF ~~ THEN REPLY #680 /* ~"Nie mogę cię zabić, Zachariaszu. Ponownie. Żegnaj."~ */ GOTO 45
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.0
+SAY #678 /* ~Przebijasz go, a Zachariasz przewraca się na posadzkę z ciężkim stukotem. Z wnętrza ciała daje się słyszeć słaby świst, kiedy jego pierś unosi się jeszcze w ostatnim skurczu, a potem, w akompaniamencie ostatnich szmerów, zombie cichnie raz na zawsze.~ */
+IF ~~ THEN REPLY #681 /* ~"Spoczywaj w pokoju, Zachariaszu."~ */ DO ~SetGlobal("Xachariah_Gutted","GLOBAL",0) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 41.1 42.1 43.1
+SAY #682 /* ~"Jeśli tak, mniejsza o to. Podejrzewam, że już ci się na wiele nie przydam."~ */
+IF ~~ THEN REPLY #684 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 46 // from: 5.0
+SAY #683 /* ~"Cóż, śmiałku. Trudno poddawać twoją kondycję w wątpliwość. Ale jak to się dzieje, że możesz ze mną rozmawiać? Twój głos jest ostry i jasny, jak nóż..."~ */
+IF ~~ THEN REPLY #689 /* ~"Co tutaj robisz?"~ */ GOTO 47
+IF ~~ THEN REPLY #690 /* ~"Mam kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #691 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1365 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 4.1 5.1 46.0
+SAY #692 /* ~"Utkwiłem w najbardziej ponurym z miejsc na Sferach. Wiele dałbym, żeby przebyć Granicę Wieczności i znaleźć dla swojej duszy gniazdko na którejś ze Sfer, ale duża część mojej duszy została rozproszona. A teraz znalazłem się tutaj."~ */
+IF ~~ THEN REPLY #693 /* ~"Jak to jest być zombie?"~ */ GOTO 48
+IF ~~ THEN REPLY #695 /* ~"Mam kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #696 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #1364 /* ~"Muszę już iść. Żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.0
+SAY #694 /* ~"To uczciwa robota… Szwy na ustach Zachariasza puszczają, a jego wargi wykrzywiają się w grymasie, który mógłby uchodzić za uśmiech. "Mało mnie to obchodzi.""~ */
+IF ~~ THEN REPLY #697 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #698 /* ~"Zatem żegnaj, Zachariaszu."~ */ DO ~SetGlobal("Xachariah_Request","GLOBAL",1) ~ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #633 /* ~"Zatem żegnaj, Zachariaszu."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 23.3 27.3
+SAY #63625 /* ~"To byłem ja. Naprawdę zapomniałeś? Ludzie potrafią widzieć nie tylko dzięki oczom, śmiałku... Jednym wychodzi to lepiej, innym gorzej. Ja zaś potrafiłem usłyszeć serca moich wrogów. *Twoich* wrogów. I moje strzały uciszały je niechybnie. Ech, to były czasy..."~ */
+IF ~~ THEN REPLY #63626 /* ~"Chciałbym usłyszeć coś o moich towarzyszach..."~ */ GOTO 27
+IF ~~ THEN REPLY #63627 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 7
+IF ~  Global("Xachariah_Request","GLOBAL",0) ~ THEN REPLY #63628 /* ~"Hmm... Interesujące. Dziękuję, Zachariaszu."~ */ GOTO 41
+IF ~  Global("Xachariah_Request","GLOBAL",1) ~ THEN REPLY #63629 /* ~"Hmm... Interesujące. Dziękuję, Zachariaszu."~ */ EXIT
+END

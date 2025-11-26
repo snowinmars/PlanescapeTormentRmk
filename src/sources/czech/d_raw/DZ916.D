@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ916.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ916~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #24719 /* ~Mrtvola ženy upřela na tebe oči s prázdným pohledem. Na jejím čele je vyřezáno číslo "916" a její ústa jsou pevně sešita. Kolem ní se šíří slabý zápach formaldehydu.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #24720 /* ~"Tak... bude něco?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #24737 /* ~"Tak... bude něco?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #24738 /* ~"Vím, že nejsi zombie. Nikoho tím neoklameš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #24739 /* ~Použij schopnost Kosti vyprávějte na mrtvolu.~ */ GOTO 2
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24744 /* ~"Skvěle jsem si s tebou pohovořil. Sbohem."~ */ EXTERN ~DMORTE~ 46
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24745 /* ~Nechej mrtvolu být.~ */ EXTERN ~DMORTE~ 46
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24746 /* ~"Skvěle jsem si s tebou pohovořil. Sbohem."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24747 /* ~Nechej mrtvolu být.~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24748 /* ~"Skvěle jsem si s tebou pohovořil. Sbohem."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24749 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #24721 /* ~Mrtvola stále na tebe zírá.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24722 /* ~"Tedy, sbohem."~ */ EXTERN ~DMORTE~ 46
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24735 /* ~"Tedy sbohem."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24736 /* ~"Tedy sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #24740 /* ~Tato mrtvola nereaguje. Vypadá, že je příliš mimo na to, aby ti odpověděla na nějaké otázky.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24741 /* ~"Tedy sbohem."~ */ EXTERN ~DMORTE~ 46
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #24742 /* ~"Tedy sbohem."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #24743 /* ~"Tedy sbohem."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #24750 /* ~Tato mrtvola nereaguje. Vypadá, že je příliš mimo na to, aby ti odpověděla na nějaké otázky.~ */
+END

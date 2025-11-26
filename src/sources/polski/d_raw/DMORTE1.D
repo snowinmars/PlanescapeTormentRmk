@@ -1,0 +1,244 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DMORTE1.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DMORTE1~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */
+~  !InParty("Morte")
+Global("Morte","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #39792 /* ~"Hej, szefie. Dobrze się czujesz? Udajesz martwego, czy chcesz wpędzić Grabarzy w ślepaki? Myślałem, że jesteś stuprocentowym truposzem."~ [MRT001] */
+  IF ~~ THEN REPLY #39793 /* ~"Ki...? Kim jesteś?"~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+~ GOTO 1
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY #39795 /* ~"Co... kim *ja* jestem? A może byś *ty* zaczął. Ktoś ty?"~ */
+  IF ~~ THEN REPLY #39796 /* ~"N... nie wiem. Nie pamiętam."~ */ GOTO 2
+  IF ~~ THEN REPLY #39797 /* ~"Ja zapytałem *cię* pierwszy, czaszko."~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 3.0 4.0
+  SAY #39798 /* ~"Nie pamiętasz swojego *imienia*, co? NASTĘPNYM razem, jak będziesz chciał spędzić noc w tej dziurze, to nie przeginaj z bełtem. Nazywam się Morte. Ja też tu jestem uwięziony."~ */
+  IF ~~ THEN REPLY #39799 /* ~"Uwięziony?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.1
+  SAY #39800 /* ~"Dobra, a ja pytałem *drugi*. Jak masz na imię?"~ */
+  IF ~~ THEN REPLY #39801 /* ~"N... nie wiem. Nie pamiętam."~ */ GOTO 2
+  IF ~~ THEN REPLY #39802 /* ~"Ty pierwszy, czaszko. Mówię to po raz ostatni."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.1
+  SAY #39803 /* ~"Ech... jesteś spięty, jakby ci coś w tyłek włożyli. Niech ci będzie. W takim razie to *ja* będę nawijał. Moje imię brzmi Morte. Jak się nazywasz?"~ */
+  IF ~~ THEN REPLY #39804 /* ~"N... nie wiem. Nie pamiętam."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 5 // from: 2.0
+  SAY #39805 /* ~"No dobra, widzę, że jeszcze się nie pozbierałeś, więc śpiewka jest taka: Spróbowałem wszystkich drzwi i wygląda na to, że ten pokój jest zamknięty lepiej niż pas cnoty."~ */
+  IF ~~ THEN REPLY #39806 /* ~"Gdzie jesteśmy zamknięci? Co to za miejsce?"~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0
+  SAY #39807 /* ~"Nazywają to 'Kostnicą'... To wielka, czarna budowla o uroku ciężarnej pajęczycy."~ */
+  IF ~~ THEN REPLY #39808 /* ~"Kostnica? Czy to oznacza, że jestem... martwy?"~ */ GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+  SAY #39809 /* ~"Z tego co widzę, to nie. Masz blizn od groma... wygląda na to, że jakiś trep podmalował cię kosą. To jeszcze jeden powód, żebyśmy się stąd odśmiali zanim ten ktoś wróci, żeby dokończyć roboty."~ */
+  IF ~~ THEN REPLY #39810 /* ~"Blizny? Jak to wygląda?"~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.0
+  SAY #39811 /* ~"No tak... rany na klatce nie są AŻ TAK tragiczne... ale te na plecach..." Morte waha się. "Powiedzmy, że wygląda to tak, jakby ktoś zamienił cię w galerię tatuażu, szefie. Coś mi to przypomina..."~ */
+  IF ~~ THEN REPLY #39812 /* ~"Tatuaże na plecach? Co na nich jest?"~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+  SAY #39813 /* ~"Ha! Wygląda na to, że to jakiej rady..." Morte chrząka zaciekawiony. "Zobaczmy co to jest... zaczyna się od..."
+
+'Wiem że czujesz się, jakbyś władował w siebie kilka baryłek wody ze Styksu, ale musisz się wziąć w GARŚĆ. Masz przy sobie DZIENNIK, który powinien trochę rozjaśnić sprawę. Resztę śpiewki usłyszysz od FARODA, chyba że już go wpisali do księgi umarłych.'~ */
+  IF ~~ THEN REPLY #39814 /* ~"Faroda...? Jest tam coś jeszcze?"~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+  SAY #39815 /* ~"Jeszcze coś tu jest..." Morte zastanawia się. "Zobaczmy... to chyba ciąg dalszy..."
+
+'Nie zgub dziennika, bo znowu popłyniemy w górę Styksu. I cokolwiek robisz, NIE MÓW nikomu KIM jesteś, ani CO się z tobą dzieje, bo inaczej wylądujesz w krematorium. Rób co ci każę: PRZECZYTAJ dziennik, a potem ODSZUKAJ Faroda.'~ */
+  IF ~~ THEN REPLY #39816 /* ~"Nic dziwnego, że strasznie mnie bolą plecy; jakiś kretyn wypisał na nich całą książkę. A co do tego dziennika, który to niby mam mieć przy sobie... widziałeś gdzieś coś takiego, jak tu leżałem?"~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0
+  SAY #39817 /* ~"Nie... jak tu przybyłeś, nie miałeś na sobie żadnego ubrania. A poza tym, wygląda na to, że ktoś wypisał ci ten dziennik na skórze."~ */
+  IF ~~ THEN REPLY #39818 /* ~"A co to za Farod? Znasz go?"~ */ GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY #39819 /* ~"Nikogo takiego nie znam... Choć, prawdę mówiąc, nie mam zbyt wielu znajomych. Może jakiś trep będzie wiedział, gdzie szukać tego Faroda... oczywiście, jeśli uda się nam stąd wydostać."~ */
+  IF ~~ THEN REPLY #39820 /* ~"Niby *JAK* mamy się stąd wydostać?"~ */ GOTO 13
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+  SAY #39821 /* ~"Wszystkie drzwi są pozamykane, więc będziemy potrzebowali klucza. Może jakiś zombie ma go przy sobie."~ */
+  IF ~~ THEN REPLY #39822 /* ~"Zombie?"~ */ GOTO 14
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY #39823 /* ~"Właściciele Kostnicy używają ich jako taniej siły roboczej. To kompletni kretyni, ale nie są groźni. Nic ci nie zrobią, jeśli ty ich pierwszy nie zaatakujesz."~ */
+  IF ~~ THEN REPLY #39824 /* ~"Może jest jakiś inny sposób? Nie chcę zabijać ich tylko dlatego, żeby dostać klucz."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Morte_1","GLOBALGood",1)
+~ GOTO 15
+  IF ~~ THEN REPLY #39825 /* ~"Więc mam zaatakować jednego z tych zombie i zakosić mu klucz?"~ */ GOTO 16
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0
+  SAY #39826 /* ~"A co, uważasz, że to urazi ich uczucia? Przecież są MARTWI. Ale ma to też swoje plusy - jak ich zabijesz, to przynajmniej odpoczną sobie przez chwilę zanim ich pracodawcy znowu ich nie zapędzą do pracy."~ */
+  IF ~~ THEN REPLY #39827 /* ~"No dobra... Zabiję jednego i zabiorę mu klucz."~ */ GOTO 16
+END
+
+IF ~~ THEN BEGIN 16 // from: 14.1 15.0
+  SAY #39828 /* ~"Zanim to zrobisz, znajdź sobie jakąś broń. Na jednej z tych półek widziałem chyba skalpel."
+
+^NNOTE: Przeszukaj półki w pokoju, aby znaleźć broń przeciw zombie. <SEARCH_WEAPON>^-~ */
+  IF ~~ THEN REPLY #39829 /* ~"Dobra, poszukam."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0
+  SAY #39830 /* ~"Jeszcze jedno: Te trupy są powolne jak muchy w smole, ale uderzają z siłą bojowego tarana. Jeśli zaczną ci sprawiać kłopoty, pamiętaj, że w przeciwieństwie do ciebie nie potrafią BIEGAĆ. Odsuń się od nich, jeśli będziesz potrzebować chwili, by opatrzyć rany."
+
+^NNOTE: <RUNAWAY> W sytuacji zagrożenia życia odbiegnij od zombie na bezpieczną odległość i opatrz swoje rany.^-~ */
+  IF ~~ THEN REPLY #39831 /* ~"Jasne. Dzięki za radę."~ */ DO ~ShowFirstTimeHelp()
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+END
+
+IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */
+~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("Scalpel")
+Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+~ THEN BEGIN 18 // from:
+  SAY #39832 /* ~"Na jednej z półek powinien być skalpel." Na twoim miejscu poszukałbym go, zanim się zmierzę z ożywionymi trupami."
+
+^NNOTE: Przeszukaj półki w pokoju, aby znaleźć broń przeciw zombie. <SEARCH_WEAPON>^-~ */
+  IF ~~ THEN REPLY #39833 /* ~"Dobra... poszukam jeszcze."~ */ EXIT
+END
+
+IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */
+~  Global("Mortuary_Walkthrough","GLOBAL",0)
+PartyHasItem("Scalpel")
+Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+~ THEN BEGIN 19 // from:
+  SAY #39834 /* ~"Świetnie, masz już skalpel! Teraz zabierz się za zombie... nie martw się, w razie czego udzielę ci potrzebnych wskazówek taktycznych."~ */
+  IF ~~ THEN REPLY #39835 /* ~"Może jednak mógłbyś mi *pomóc*?"~ */ GOTO 20
+  IF ~~ THEN REPLY #39836 /* ~"W porządku."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #39837 /* ~"Przecież BĘDĘ ci pomagał. Ciężko teraz o dobre rady."~ */
+  IF ~~ THEN REPLY #39838 /* ~"Chodziło mi o pomoc w walce z *zombie*."~ */ GOTO 21
+  IF ~~ THEN REPLY #39839 /* ~"Rozumiem."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.0
+  SAY #39840 /* ~"Ja? Jestem romantykiem, a nie żołnierzem. Ruszaj już lepiej."~ */
+  IF ~~ THEN REPLY #39841 /* ~"Jak będę walczył z tym truposzem, lepiej mnie nie zostawiaj, bo będziesz następnym delikwentem, którego poszlachtuję."~ */ GOTO 22
+  IF ~~ THEN REPLY #39842 /* ~"Rozumiem."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 22 // from: 21.0
+  SAY #39843 /* ~"No dobra... Pomogę ci."
+
+UWAGA: Jeśli chcesz, aby Morte pomógł ci w walce, nie zapomnij wybrać was obu, kiedy będziesz atakował zombie. Wtedy twój towarzysz także przyłączy się do ataku.~ */
+  IF ~~ THEN REPLY #39844 /* ~"Cieszę się, że się rozumiemy."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 23 // from: 19.1 20.1 21.1 22.0
+  SAY #39845 /* ~"Czas zabić te trupy drugi raz…"
+
+^NNOTE: <ATTACKNOTE>^-~ */
+  IF ~~ THEN REPLY #39846 /* ~"Ruszajmy."~ */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */
+~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
+~ THEN BEGIN 24 // from:
+  SAY #39847 /* ~"Widzę, że udało ci się załatwić właściwego trupa. Teraz musisz tylko znaleźć klucz. Powinien mieć go przy sobie. On pozwoli nam się stąd wydostać."
+
+^NNOTE: <DEADPILE>^-~ */
+  IF ~~ THEN REPLY #39848 /* ~"W porządku."~ */ EXIT
+END
+
+IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */
+~  Global("Mortuary_Walkthrough","GLOBAL",0)
+PartyHasItem("KeyPr")
+~ THEN BEGIN 25 // from:
+  SAY #39849 /* ~"Dobra robota; masz już klucz. Na pewno pasuje do któregoś z zamków w tym pomieszczeniu."~ */
+  IF ~~ THEN REPLY #39850 /* ~"W takim razie spróbuję wszystkich drzwi."~ */ EXIT
+END
+
+IF WEIGHT #0 ~  !InParty("Morte")
+GlobalGT("Morte","GLOBAL",0)
+~ THEN BEGIN 26 // from:
+  SAY #39851 /* ~"Wiedziałem, że wrócisz, szefie! W końcu zorientowałeś się, że mnie potrzebujesz, co?"~ [MRT516] */
+  IF ~~ THEN REPLY #39852 /* ~"Aha... do dzieła."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #39853 /* ~"Jeszcze nie teraz."~ */ GOTO 27
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.1
+  SAY #39854 /* ~"Hmmmm. Nie wiem, czy mnie tu jeszcze zastaniesz, ale dam ci jeszcze OSTATNIĄ szansę. Jesteś pewien, że nie potrzebujesz moich wskazówek i mojego sprytu?"~ */
+  IF ~~ THEN REPLY #39855 /* ~"Przecież nie masz ŻADNEJ z tych rzeczy."~ */ GOTO 28
+  IF ~~ THEN REPLY #39856 /* ~"No dobra, zmieniłem zdanie. No dalej, ruszajmy."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #39857 /* ~"Nie teraz, może później."~ */ GOTO 28
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0 27.2
+  SAY #39858 /* ~"Chcesz obrazić moje uczucia, szefie? Czyżbym coś powiedział nie tak? A może przeszkadza ci, że nie mam rąk? Co?"~ */
+  IF ~~ THEN REPLY #39859 /* ~"No dobra, zmieniłem zdanie. No dalej, ruszajmy."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #39860 /* ~"Nic z tych rzeczy. Po prostu w tej chwili nie potrzebuję towarzystwa. Żegnaj, Morte."~ */ GOTO 29
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.1
+  SAY #39861 /* ~"No cóż, nie będę czekał w NIESKOŃCZONOŚĆ, więc lepiej wróć, jak tylko zmienisz zdanie."~ */
+  IF ~~ THEN REPLY #39862 /* ~"Masz to jak w banku. Żegnaj, Morte."~ */ EXIT
+END
+
+IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
+~ THEN BEGIN 30 // from:
+  SAY #39863 /* ~"Co cię gryzie, szefie?"~ [MRT515] */
+  IF ~~ THEN REPLY #39864 /* ~"Nic takiego, Morte. Po prostu sprawdzam, czy wciąż ze mną jesteś."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from:
+  SAY #42298 /* ~"Szefie... one cię nie słyszą. Przecież są martwe."~ */
+  IF ~~ THEN REPLY #42299 /* ~"Ale przecież ty też nie żyjesz, a ze mną rozmawiasz."~ */ GOTO 32
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #42300 /* ~"Tak, ale ja *jestem* inny. Śmierć nie zabiła we mnie chęci życia. A te tu..." Morte wskazuje na żywe trupy. "Pewnie nie miały wystarczająco dużo charakteru."~ */
+  IF ~~ THEN REPLY #42301 /* ~"Ro... rozumiem."~ */ GOTO 33
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+  SAY #42302 /* ~"Wiesz, szefie... coś mnie trafia, jak próbujesz wymienić śpiewkę z tymi truposzami. Zostawmy to świrom, dobra?"~ */
+  IF ~~ THEN REPLY #42303 /* ~"W takim razie ruszajmy."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 34 // from:
+  SAY #42306 /* ~"Wygląda na to, że mamy drania, szefie. Patrz... ma w ręce klucz."~ */
+  IF ~~ THEN EXTERN ~DZM782~ 2
+END

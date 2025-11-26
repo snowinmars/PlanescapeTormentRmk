@@ -1,0 +1,191 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DS996.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DS996~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35460 /* ~Kostlivec vypadá obzvláště staře, kožené pásy, které ho drží pohromadě jsou popraskané. Do jeho čela někdo pečlivě vyryl slovo "POKÁNÍ". Mnohem horší rytec později přidal na oba spánky číslo "996".~ */
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",0)
+~ THEN REPLY #35461 /* ~"Promiň, neviděl jsi tady někde chodit nějaké kostlivce?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Skeleton_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",1)
+~ THEN REPLY #35484 /* ~"Promiň, neviděl jsi tady někde chodit nějaké kostlivce?"~ */ GOTO 1
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",0)
+~ THEN REPLY #35485 /* ~"Musím se tě zeptat: Proč ty šaty? Víš, myslím, že nemáš nic, za co by ses musel stydět."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Skeleton_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",1)
+~ THEN REPLY #35486 /* ~"Musím se tě zeptat: Proč ty šaty? Víš, myslím, že nemáš nic, za co by ses musel stydět."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35487 /* ~Použij na kostlivce svou schopnost Kosti-vyprávějte.~ */ GOTO 2
+  IF ~~ THEN REPLY #35492 /* ~Pozorně prozkoumej kostlivce.~ */ DO ~SetGlobal("Skeleton_Examine","GLOBAL",1)
+~ GOTO 3
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",0)
+~ THEN REPLY #35525 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1)
+~ EXTERN ~DMORTE~ 392
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35526 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 4
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35527 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 5
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+PartyHasItem("Prybar")
+~ THEN REPLY #35528 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 6
+  IF ~  !NearbyDialog("DMorte")
+Global("Skeleton_Examine","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35529 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 4
+  IF ~  !NearbyDialog("DMorte")
+Global("Skeleton_Examine","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35530 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 5
+  IF ~  !NearbyDialog("DMorte")
+Global("Skeleton_Examine","GLOBAL",1)
+PartyHasItem("Prybar")
+~ THEN REPLY #35531 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 6
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35532 /* ~"Co tahle kostra, Morte? Bude stačit jako tělo?"~ */ EXTERN ~DMORTE~ 388
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35533 /* ~Nechej kostlivce být.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 386
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35534 /* ~Nechej kostlivce být.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35535 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #35462 /* ~Kostlivec neodpovídá.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35463 /* ~"Rád jsem si s tebou pokecal, Kostro. Buď zdráv."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 386
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35482 /* ~"Rád jsem si s tebou pokecal, Kostro. Buď zdráv."~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35483 /* ~"Rád jsem si s tebou pokecal, Kostro. Buď zdráv."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+  SAY #35488 /* ~Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35489 /* ~Nechej kostlivce být.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 386
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35490 /* ~Nechej kostlivce být.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35491 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+  SAY #35493 /* ~Někdo si dal práci a spojil kosti tohoto kostlivce koženými pásky, omotanými kolem těla tak, že připomínají svaly a šlachy. Pásky jsou připevněné na kovových svorkách, vražených do kloubů kostlivce. Kostlivec vypadá, že už si svoje odsloužil: Mnoho kostí je oštípáno a početné fraktury jsou slepeny zapáchajícím lepidlem.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",0)
+~ THEN REPLY #35494 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1)
+~ EXTERN ~DMORTE~ 392
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35516 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 4
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35517 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 5
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+PartyHasItem("Prybar")
+~ THEN REPLY #35518 /* ~Zkus kostlivci vytáhnout svorky z kloubů.~ */ GOTO 6
+  IF ~  !NearbyDialog("DMorte")
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35519 /* ~"Vadilo by ti, kdybych si půjčil pár těch řemenů a svorek?"~ */ GOTO 4
+  IF ~  !NearbyDialog("DMorte")
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35520 /* ~"Vadilo by ti, kdybych si půjčil pár těch řemenů a svorek?"~ */ GOTO 5
+  IF ~  !NearbyDialog("DMorte")
+PartyHasItem("Prybar")
+~ THEN REPLY #35521 /* ~"Vadilo by ti, kdybych si půjčil pár těch řemenů a svorek?"~ */ GOTO 6
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35522 /* ~Nechej kostlivce být.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 386
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35523 /* ~Nechej kostlivce být.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35524 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.7 0.10 3.1 3.4
+  SAY #35499 /* ~Zaškubal jsi železnými svorkami, ale nemáš dost síly na to, abys je vyrval. Jsou pořádně upevněné.~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35500 /* ~"Kdybych měl správný nástroj, dokázal bych je vytáhnout... hmmm. Vrátím se, Kostro."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 386
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35501 /* ~"Kdybych měl správný nástroj, dokázal bych je vytáhnout... hmmm. Vrátím se, Kostro."~ */ EXIT
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35502 /* ~"Kdybych měl správný nástroj, dokázal bych je vytáhnout... hmmm. Vrátím se, Kostro."~ */ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35503 /* ~Nechej kostlivce být.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 386
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35504 /* ~Nechej kostlivce být.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35505 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.8 0.11 3.2 3.5
+  SAY #35507 /* ~Zarval jsi veškerou svou silou. Po chvíli námahy jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.~ */
+  IF ~~ THEN REPLY #35508 /* ~"Promiň, Kostro..."~ */ DO ~Kill(Myself)
+GiveItemCreate("Spike",Protagonist,1,0,0)
+GiveItemCreate("Strap",Protagonist,1,0,0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.9 0.12 3.3 3.6
+  SAY #35510 /* ~Pomocí svého páčidla jsi vyrval svorky z kostlivcových kloubů. Kostlivec se rozpadl, některé z kostí sebou stále škubají.~ */
+  IF ~~ THEN REPLY #35511 /* ~"Promiň, Kostro..."~ */ DO ~Kill(Myself)
+GiveItemCreate("Spike",Protagonist,1,0,0)
+GiveItemCreate("Strap",Protagonist,1,0,0)
+~ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 7 // from:
+  SAY #35536 /* ~Kostlivec neodpovídá. Asi už se dostal příliš daleko, aby byl ještě schopný odpovídat na tvé otázky.~ */
+END

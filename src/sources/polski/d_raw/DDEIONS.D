@@ -1,0 +1,786 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DDEIONS.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DDEIONS~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF ~~ THEN BEGIN 0 // from: 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
+  SAY #69459 /* ~"Będę na ciebie czekać w komnatach śmierci, Najdroższy..." Uśmiecha się smutno, zamyka oczy, i z cichym westchnieniem, znika.~ [DEN008B] */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #701 /* ~Odejdź.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #699 /* ~Odejdź.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #9616 /* ~Odejdź.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0)
+!Global("Current_Area","GLOBAL",1203)
+!Global("Current_Area","GLOBAL",1200)
+~ THEN BEGIN 1 // from:
+  SAY #5 /* ~Widzisz przed sobą uderzająco piękną zjawę. Ma skrzyżowane ramiona i zamknięte oczy. Posiada długie, opadające włosy, suknia jej zaś zdaje się być poruszana przez eteryczne podmuchy. Gdy na nią patrzysz, dostrzegasz, iż porusza się nieznacznie i mruga oczami.~ */
+  IF ~~ THEN REPLY #703 /* ~"Witaj...?"~ */ GOTO 2
+  IF ~~ THEN REPLY #704 /* ~Poczekaj.~ */ GOTO 2
+  IF ~~ THEN REPLY #705 /* ~Odejdź, zanim zjawa zyska pełną świadomość.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1
+  SAY #706 /* ~Otwiera powoli oczy i, jakby niepewna, gdzie się znajduje, zaczyna nimi mrugać zaskoczona. Rozgląda się powoli wokół i dostrzega ciebie. Spokój na jej twarzy przeistacza się momentalnie w gniew. "Ty! Cóż *cię* tutaj sprowadza?! Zjawiłeś się, by na własne oczy ujrzeć rozpacz, której sam byłeś sprawcą? Nawet będąc w otchłani śmierci, wciąż mam w zanadrzu kilka cierni przeznaczonych dla ciebie..." Głos jej przechodzi w syk. "...'Najdroższy'."~ [DEN001] */
+  IF ~~ THEN REPLY #707 /* ~"Kim jesteś?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 3
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #708 /* ~"'Najdroższy'? Czy ja cię znam?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 3
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #709 /* ~"'Najdroższy'? Czy ja cię znam?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 2.1 2.2 10.0
+  SAY #710 /* ~Zjawa wykonuje rękami błagalny gest. "Jak to możliwe, że złodzieje umysłu nieustannie wykradają imię me spośród twoich wspomnień? Nie *przypominasz* mnie sobie, Najdroższy?" Zjawa wyciąga ręce. "Pomyśl..." Jej głos ponownie przybiera ton pełen desperacji. "...imię *Deionarra* musi budzić w tobie jakieś wspomnienia."~ */
+  IF ~~ THEN REPLY #711 /* ~"Nie, przykro mi. Utraciłem wspomnienia."~ */ GOTO 6
+  IF ~~ THEN REPLY #712 /* ~Kłamstwo: "Tak... Tak, imię to brzmi *naprawdę* znajomo."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_1","GLOBALGood",-1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_1","GLOBALLaw",-1)
+~ GOTO 7
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #713 /* ~"*Sądzę*, że wyczuwam jakieś przebłyski w mej pamięci... Powiedz mi więcej. Być może twe słowa usuną zasłonę z mego umysłu, Deionarro."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #714 /* ~"*Sądzę*, że wyczuwam jakieś przebłyski w mej pamięci... Powiedz mi więcej. Być może twe słowa usuną zasłonę z mego umysłu, Deionarro."~ */ GOTO 9
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1308 /* ~"Nie budzi. Żegnaj... Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6080 /* ~"Nie budzi. Żegnaj... Deionarro."~ */ GOTO 26
+END
+
+IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2)
+!Global("Current_Area","GLOBAL",1203)
+!Global("Current_Area","GLOBAL",1200)
+~ THEN BEGIN 4 // from:
+  SAY #715 /* ~Deionarra materializuje się ponownie... Tym razem jej twarz przepełnia desperacja, ramiona zaś trzyma ona wyciągnięte tak, jakby chciała czegoś dosięgnąć. Gdy już pojawia się w pełni, wyraz desperacji na jej twarzy przemienia się w gniew. "Znowu się pojawiłeś! Cóż to sprawia, że nie przestajesz mnie dręczyć?"~ [DEN002] */
+  IF ~~ THEN REPLY #765 /* ~"Wiele jest rzeczy, o których bym się chciał dowiedzieć. Mam kilka pytań do ciebie..."~ */ GOTO 33
+  IF ~~ THEN REPLY #1307 /* ~"Nie będę cię już więcej dręczył. Żegnaj."~ */ GOTO 26
+END
+
+IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1)
+!Global("Current_Area","GLOBAL",1203)
+!Global("Current_Area","GLOBAL",1200)
+~ THEN BEGIN 5 // from:
+  SAY #716 /* ~Deionarra materializuje się ponownie... Tym razem twarz jej przepełnia desperacja, zaś ramiona trzyma ona wyciągnięte tak, jakby chciała czegoś dosięgnąć. Gdy już pojawia się w pełni, wyraz desperacji na jej twarzy przemienia się w ulgę. "Najdroższy... Wróciłeś do mnie! Czy to możliwe, że odzyskałeś wspomnienia?"~ [DEN003A] */
+  IF ~~ THEN REPLY #766 /* ~"Mam do ciebie kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #767 /* ~"Jeszcze nie. Żegnaj, Deionorro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1309 /* ~"Jeszcze nie. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.0
+  SAY #717 /* ~"A więc jest tak, jak się obawiałam. Przestałam dla ciebie istnieć... i to, co kiedyś było dla ciebie źródłem kłopotów, teraz stało się wymówką, by odrzucić mnie tak, jak odrzuciłeś pamięć o mnie!"~ */
+  IF ~~ THEN REPLY #720 /* ~"'Źródło kłopotów?', 'Odrzucić cię?' Nie znam cię, zjawo... Me wspomnienia odeszły. Powiedz mi... kim jesteś? Co o mnie wiesz?"~ */ GOTO 11
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #718 /* ~"*Sądzę*, że wyczuwam jakieś przebłyski w mej pamięci... Powiedz mi więcej. Być może twe słowa usuną zasłonę z mego umysłu, Deionarro."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #719 /* ~"*Sądzę*, że wyczuwam jakieś przebłyski w mej pamięci... Powiedz mi więcej. Być może twe słowa usuną zasłonę z mego umysłu, Deionarro."~ */ GOTO 9
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #721 /* ~"Skoro cię już wcześniej odrzuciłem, to najwyraźniej znów zmuszony jestem to zrobić. Żegnaj, zjawo."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1310 /* ~"Muszę już iść, Deionarro. Żegnaj."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1311 /* ~"Skoro cię już wcześniej odrzuciłem, to najwyraźniej znów zmuszony jestem to zrobić. Żegnaj, zjawo."~ */ GOTO 26
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #764 /* ~"Muszę już iść, Deionarro. Żegnaj."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.1
+  SAY #722 /* ~"Tak..." Wydaje się być pełna nadziei. "Jakie wspomnienia budzi w tobie me imię?~ */
+  IF ~~ THEN REPLY #700 /* ~"Żadne. Skłamałem."~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+~ GOTO 8
+  IF ~~ THEN REPLY #702 /* ~Kłamstwo: "Imię twe przywołuje namiętne wspomnienia, jednak ich istota jest dla mnie niejasna. Może gdybyś powiedziała mi więcej..."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_2","GLOBALGood",-1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_2","GLOBALLaw",-1)
+~ GOTO 9
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #723 /* ~"Nie jestem pewien... Ale wyczuwam jakieś przebłyski w mej pamięci, gdy rozmawiamy. Powiedz mi więcej. Być może twe słowa usuną zasłonę z mego umysłu, Deionarro."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #724 /* ~"Nie jestem pewien... Ale wyczuwam jakieś przebłyski w mej pamięci, gdy rozmawiamy. Powiedz mi więcej. Być może twe słowa usuną zasłonę z mego umysłu, Deionarro."~ */ GOTO 9
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1312 /* ~"Muszę już iść, Deionarro. Żegnaj."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6084 /* ~"Muszę już iść, Deionarro. Żegnaj."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.0 47.2
+  SAY #725 /* ~Twarz Deionarry przeistacza się w maskę wściekłości. "Ty parszywy psie! Zdrajco serca mego! Życzyłabym ci, byś został przeklęty... gdyby nie to, że udręka ściga cię w każdym twym wcieleniu bez pomocy mych klątw! Odejdź!" Krzyżuje ramiona i zamyka oczy.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #747 /* ~"Dobrze..."~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #1313 /* ~"Dobrze..."~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13255 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 3.2 3.3 6.1 6.2 7.1 7.2 7.3
+  SAY #726 /* ~"Och, w końcu los okazuje miłosierdzie! Nawet śmierć nie jest w stanie wymazać mnie z twego umysłu, Najdroższy! Nie rozumiesz? Twe wspomnienia powrócą! Powiedz mi, jak mogę ci pomóc, a uczynię to!"~ */
+  IF ~~ THEN REPLY #729 /* ~"Czy wiesz, kim jestem?"~ */ GOTO 11
+  IF ~~ THEN REPLY #730 /* ~"Możesz mi powiedzieć, gdzie jestem?"~ */ GOTO 12
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #731 /* ~"Muszę się wydostać z tego miejsca. Możesz mi pomóc?"~ */ GOTO 43
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #732 /* ~"Muszę się wydostać z tego miejsca. Możesz mi pomóc?"~ */ GOTO 44
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1314 /* ~"Nie w tej chwili, Deionarro. Ale jeszcze tu wrócę. Żegnaj."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6127 /* ~"Nie w tej chwili, Deionarro. Ale jeszcze tu wrócę. Żegnaj."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 10 // from: 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
+  SAY #733 /* ~"Czegoż chcesz się dowiedzieć?"~ */
+  IF ~~ THEN REPLY #734 /* ~"Kim jesteś?"~ */ GOTO 3
+  IF ~~ THEN REPLY #735 /* ~"Możesz mi powiedzieć, kim jestem?"~ */ GOTO 11
+  IF ~~ THEN REPLY #736 /* ~"Możesz mi powiedzieć, gdzie jestem?"~ */ GOTO 12
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #737 /* ~"Muszę się wydostać z tego miejsca. Możesz mi pomóc?"~ */ GOTO 43
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #738 /* ~"Muszę się wydostać z tego miejsca. Możesz mi pomóc?"~ */ GOTO 44
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #768 /* ~"Co to za wizja, o której wcześniej mówiłaś?"~ */ GOTO 22
+  IF ~  Global("Deionarra_Curse","GLOBAL",1)
+~ THEN REPLY #1315 /* ~"Czy jesteś w stanie zdjąć klątwę, którą na mnie nałożyłaś?"~ */ GOTO 41
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6107 /* ~"Na razie niczego, Deionarro. Ale jeszcze tu wrócę. Żegnaj."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6128 /* ~"Na razie niczego, Deionarro. Ale jeszcze tu wrócę. Żegnaj."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 11 // from: 6.0 9.0 10.1
+  SAY #739 /* ~"Tyś tym, którego i błogosławieństwem, i klątwą obłożono, Najdroższy. Tyś również tym, który nigdy myślom mym i sercu memu nie był zbyt odległy."~ */
+  IF ~~ THEN REPLY #740 /* ~"'Błogosławieństwem i klątwą obłożony'? Co przez to rozumiesz?"~ */ GOTO 13
+  IF ~~ THEN REPLY #741 /* ~"Mam do ciebie jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #742 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1316 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.1 10.2
+  SAY #743 /* ~"Gdzie jesteś? Jesteś przecież tu, ze mną, Najdroższy... Jak za czasów, gdy nasze życia splatały się ze sobą. Teraz zaś odgradza nas od siebie Ostateczna Granica."~ */
+  IF ~~ THEN REPLY #744 /* ~"'Ostateczna Granica'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #745 /* ~"Mam do ciebie jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #746 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #792 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 13 // from: 11.0
+  SAY #748 /* ~"Natura twego przekleństwa wydaje się być oczywista, Najdroższy. Spójrz na siebie." Wskazuje na ciebie. "Śmierć się ciebie wyrzekła. Wspomnienia cię porzuciły. Nie zatrzymasz się, by się zastanowić - dlaczego?"~ */
+  IF ~~ THEN REPLY #749 /* ~"Prawdę mówiąc, wciąż staram się ustalić, kim jestem. Co jeszcze możesz mi o mnie powiedzieć?"~ */ GOTO 27
+  IF ~~ THEN REPLY #750 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~~ THEN REPLY #751 /* ~"Wspomnienia odeszły... Przypuśćmy też, że śmierć się mnie wyrzekła... Czemu miałaby być to klątwa?"~ */ GOTO 25
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #790 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1318 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 14 // from: 12.0
+  SAY #752 /* ~W głosie Deionarry słychać smutek. "To bariera, której - jak się obawiam - nigdy ci się nie uda przełamać. To bariera pomiędzy twym życiem a tym, co ze mnie pozostało..."~ */
+  IF ~~ THEN REPLY #753 /* ~"Ro... zumiem. Może mogłabyś mi odpowiedzieć na parę innych pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #755 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1319 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 15 // from: 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
+  SAY #756 /* ~"Poczekaj chwilę... Wiele się nauczyłam, gdy z tobą podróżowałam, Najdroższy. I zachowałam to, co ty utraciłeś. Nie wyjawiłam ci wszystkiego, co wiem. Ja widzę wszystko wyraźnie... gdy ty wędrujesz po omacku w ciemności, szukając przebłysku myśli."~ */
+  IF ~~ THEN REPLY #757 /* ~"Cokolwiek wiesz, może to poczekać. Żegnaj."~ */ GOTO 26
+  IF ~~ THEN REPLY #758 /* ~"O czym mogłabyś mi powiedzieć, co byłoby godne mej uwagi?"~ */ GOTO 17
+  IF ~~ THEN REPLY #759 /* ~"Cóż widzi twój wzrok, czego ja nie dostrzegam?"~ */ GOTO 17
+  IF ~~ THEN REPLY #761 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 16 // from: 20.0 21.0
+  SAY #762 /* ~Deionarra wydaje się być zaskoczona. Jej głos zmienia się, przyjmując wręcz błagalny ton. "Ja... nie chciałam wymuszać na tobie przyrzeczenia, Najdroższy. Po prostu tak długo czekałam na ciebie, byś do mnie dołączył ponad..."~ */
+  IF ~~ THEN REPLY #763 /* ~"Skoro nie chcesz wymuszać na mnie przyrzeczenia, Deionarro, to tego nie rób. Opowiedz mi teraz o twojej wizji i nie rozmawiajmy już więcej o przyrzeczeniach i obietnicach."~ */ GOTO 40
+END
+
+IF ~~ THEN BEGIN 17 // from: 15.1 15.2
+  SAY #769 /* ~"Czas sam rozluźnia swoje okowy, gdy chłód zapomnienia powoli wysuwa po nas swoje ręce, Najdroższy. Przebłyski rzeczy, które mają nadejść, pojawiają się bardzo licznie w moich wizjach. Widzę cię, Najdroższy. Widzę cię, gdy tu jesteś i..." Deionarra milknie.~ */
+  IF ~~ THEN REPLY #770 /* ~"Czemuż tak nagle zamilkłaś? Czyżby zmęczyły cię twoje tyrady?"~ */ GOTO 18
+  IF ~~ THEN REPLY #771 /* ~"Co to? Co widzisz?"~ */ GOTO 18
+  IF ~~ THEN REPLY #772 /* ~"Nie interesują mnie wizje przyszłości. Żegnaj."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0 17.1
+  SAY #773 /* ~"Widzę, co na ciebie czeka. Faluje pośród sfer, a ma swój początek w tym oto miejscu. Mam mówić o tym, co widzę?"~ */
+  IF ~~ THEN REPLY #774 /* ~"Powiedz mi."~ */ GOTO 20
+  IF ~~ THEN REPLY #775 /* ~"Nie chcę wiedzieć. Przyszłość ujawni się sama... gdy przyjdzie na to czas."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.2 18.1
+  SAY #776 /* ~"Zawsze taki byłeś, Najdroższy. Nigdy nie zważałeś na wezwania śmierci. Czy następnym razem również je odrzucisz?" Zamyka oczy i, przy wtórze eterycznego szeptu, znika.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #803 /* ~Odejdź.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #6085 /* ~Odejdź.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13256 /* ~Odejdź.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 18.0
+  SAY #777 /* ~"Chcę najpierw, żebyś mi coś przyrzekł. Złóż mi przyrzeczenie, że powrócisz. Że znajdziesz sposób, by mnie uratować lub do mnie dołączyć."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #778 /* ~"Ciężko jest mi uwierzyć, że kobieta, którą kiedyś kochałem, szantażuje mnie, żądając mojego przyrzeczenia w zamian za swe informacje. Nie ufasz mi, Deionarro?"~ */ GOTO 16
+  IF ~~ THEN REPLY #779 /* ~"Cena tej obietnicy jest zbyt wygórowana."~ */ GOTO 21
+  IF ~~ THEN REPLY #780 /* ~Kłamstwo: "Przysięgam, że znajdę jakiś sposób, by cię uratować lub do ciebie dołączyć."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_3","GLOBALGood",-2)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_3","GLOBALLaw",-2)
+~ GOTO 22
+  IF ~~ THEN REPLY #781 /* ~"Nie złożę takiego przyrzeczenia, zjawo! Nie dręcz mnie przyszłością... Powiedz mi to, co chcę wiedzieć albo odejdź!"~ */ GOTO 26
+  IF ~~ THEN REPLY #782 /* ~"Zro... zrobię wszystko, co w mojej mocy."~ */ GOTO 40
+  IF ~~ THEN REPLY #6093 /* ~Przyrzeczenie: "Przysięgam, że znajdę jakiś sposób, by cię uratować lub do ciebie dołączyć."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Deionarra_1","GLOBALGood",2)
+IncrementGlobalOnceEx("GLOBALLawful_Deionarra_1","GLOBALLaw",2)
+~ GOTO 22
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.1
+  SAY #783 /* ~Deionarra krzyżuje ręce. "Tak niewątpliwie jest, Najdroższy. Pewne jest jednak, że cena nieśmiertelności nie była zbyt wysoka. Nie znajdziesz sposobu, by zachwiać swą integralnością?"~ */
+  IF ~~ THEN REPLY #804 /* ~"Ciężko jest mi uwierzyć, że kobieta, którą kiedyś kochałem, szantażuje mnie, żądając mojego przyrzeczenia w zamian za swe informacje. Nie ufasz mi, Deionarro?"~ */ GOTO 16
+  IF ~~ THEN REPLY #805 /* ~Kłamstwo: "Przysięgam, że znajdę jakiś sposób, by cię uratować lub do ciebie dołączyć."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_3","GLOBALGood",-2)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_3","GLOBALLaw",-2)
+~ GOTO 22
+  IF ~~ THEN REPLY #806 /* ~"Nie złożę takiego przyrzeczenia, zjawo! Nie dręcz mnie przyszłością... Powiedz mi to, co chcę wiedzieć albo odejdź!"~ */ GOTO 26
+  IF ~~ THEN REPLY #807 /* ~"Zro... zrobię wszystko, co w mojej mocy."~ */ GOTO 40
+  IF ~~ THEN REPLY #808 /* ~Przyrzeczenie: "Przysięgam, że znajdę jakiś sposób, by cię uratować lub do ciebie dołączyć."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Deionarra_1","GLOBALGood",2)
+IncrementGlobalOnceEx("GLOBALLawful_Deionarra_1","GLOBALLaw",2)
+~ GOTO 22
+  IF ~~ THEN REPLY #6094 /* ~"Być może. Żegnaj, Deionarro."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 22 // from: 10.5 20.2 20.5 21.1 21.4 40.0
+  SAY #784 /* ~"Oto, co widzą me oczy, Najdroższy, nieskrępowane przez czasu okowy..."~ [DEN020] */
+  IF ~~ THEN REPLY #786 /* ~Poczekaj, niech kontynuuje.~ */ DO ~SetGlobal("Prophecy","GLOBAL",1)
+~ GOTO 23
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+  SAY #785 /* ~"Trójkę nieprzyjaciół dane ci będzie spotkać... Żaden z nich jednakże niebezpieczniejszy nie będzie niż ty w pełni swojej chwały. To cienie zła, dobra i neutralności obdarzone życiem i zniekształcone zgodnie z prawami, jakimi się sfery rządzą."~ [DEN021] */
+  IF ~~ THEN REPLY #787 /* ~Poczekaj, niech kontynuuje.~ */ GOTO 24
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #788 /* ~"Dojdziesz do więzienia z żalu i płaczu powstałego, gdzie nawet cienie odchodzą od zmysłów. Zażądają tam od ciebie potwornej ofiary, Najdroższy. By móc w końcu spocząć, zmuszony będziesz unicestwić to, co utrzymuje cię wśród żywych i utracić nieśmiertelność."~ [DEN022] */
+  IF ~~ THEN REPLY #789 /* ~"'Unicestwić to, co utrzymuje mnie wśród żywych?'"~ */ GOTO 29
+END
+
+IF ~~ THEN BEGIN 25 // from: 13.2 29.0
+  SAY #791 /* ~"Nie wątpię w twą zdolność powstawania z martwych. Jestem jednak przekonana, że każde wcielenie osłabia twój umysł oraz pamięć. Twierdzisz, że utraciłeś wspomnienia. Być może jest to skutek uboczny niezliczonych zgonów? Jeśli tak, co jeszcze przyjdzie ci utracić przy kolejnych odejściach? Gdy utracisz swój umysł, nie będziesz miał nawet dostatecznej wiedzy, by być świadomym, że nie możesz umrzeć. To będzie kulminacja twej klęski."~ */
+  IF ~~ THEN REPLY #812 /* ~"'Niezliczone zgony'? Jak długo to już trwa?"~ */ GOTO 30
+  IF ~~ THEN REPLY #811 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #813 /* ~"Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1320 /* ~"Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 26 // from: 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
+  SAY #793 /* ~Deionarra wygląda na wściekłą. "W takim razie odejdź, jak to już bez mała trzysta razy wcześniej zrobiłeś! Przychodzisz jedynie po to, by mnie dręczyć?! Odejdź i nie wracaj!" Zamyka oczy i znika przy wtórze eterycznego szeptu.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #6081 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #6082 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13257 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 27 // from: 13.0
+  SAY #795 /* ~"Wiem, że kiedyś twierdziłeś, iż mnie kochasz i będziesz mnie kochał, póki śmierć się po nas dwoje nie upomni. Wierzyłam w to, nie znając prawdy kim byłeś, czym byłeś."~ */
+  IF ~  Global("Deionarra_Raise_Dead","GLOBAL",1)
+~ THEN REPLY #797 /* ~"A czym jestem?"~ */ GOTO 28
+  IF ~  Global("Deionarra_Raise_Dead","GLOBAL",0)
+~ THEN REPLY #66911 /* ~"A czym jestem?"~ */ GOTO 72
+  IF ~~ THEN REPLY #796 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #798 /* ~"Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1321 /* ~"Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0
+  SAY #799 /* ~"Rozmawialiśmy o twej naturze już wcześniej." Twarz Deionarry zdaje się patrzeć gdzieś w dal. "Drugi raz robić tego nie będziemy."~ */
+  IF ~~ THEN REPLY #800 /* ~"W porządku... Mam kilka innych pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #801 /* ~"Twierdzisz, że znasz mnie dobrze, mimo to w wielu kwestiach wydajesz się wiedzieć o mnie bardzo niewiele. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #802 /* ~"Twierdzisz, że znasz mnie dobrze, mimo to w wielu kwestiach wydajesz się wiedzieć o mnie bardzo niewiele. Żegnaj, Deionarro."~ */ GOTO 26
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1322 /* ~"W takim razie żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1323 /* ~"W takim razie żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 29 // from: 24.0
+  SAY #809 /* ~"Wiem, że musisz umrzeć... póki jeszcze masz taką możliwość. Krąg *musi* się zamknąć, Najdroższy. Nie przeznaczono ci takiego życia i śmierć już zbyt długo czeka na ciebie. Musisz odnaleźć to, co zostało ci odebrane i udać się w podróż poza granice tej egzystencji, do krainy umarłych."~ [DEN023] */
+  IF ~~ THEN REPLY #810 /* ~"'Umrzeć, póki jeszcze mam taką możliwość'?"~ */ JOURNAL #26087 /* ~Spotkałem ducha kobiety o imieniu Deionarra, która przepowiedziała mi spotkanie z trzema wrogami, lecz "nie bardziej niebezpiecznymi niż ja w pełni chwały". Są to cienie zła, dobra i neutralności, obdarzone życiem i pozmieniane przez prawa sfer. Powiedziała mi także, że pójdę do więzienia zbudowanego z "żalu i cierpienia" gdzie "cienie zatraciły się w szaleństwie". Tam zostanę poproszony o straszliwe poświęcenie... aby wszystko się zakończyło, muszę "zniszczyć to co utrzymuje mnie przy życiu i przestać być nieśmiertelnym."~ */ GOTO 25
+END
+
+IF ~~ THEN BEGIN 30 // from: 25.0
+  SAY #814 /* ~"Nie wiem dokładnie. Oprócz tego, iż trwa to już bardzo długo."~ */
+  IF ~~ THEN REPLY #815 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #816 /* ~"Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1324 /* ~"Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 31 // from: 45.0
+  SAY #817 /* ~"Portale to otwory w materii, wiodące do miejsc położonych w Wewnętrznych bądź Zewnętrznych Sferach... Gdybyś znalazł właściwy klucz, mógłbyś uciec przez jeden z nich."~ */
+  IF ~~ THEN REPLY #819 /* ~"Klucz?"~ */ GOTO 32
+  IF ~~ THEN REPLY #818 /* ~"Mam jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #820 /* ~"Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1325 /* ~"Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #821 /* ~Deionarra milknie na chwilę, jakby próbowała sobie przypomnieć. "Portale ujawnią się same, gdy będziesz miał odpowiedni *klucz*. Niestety, prawie wszystko może być takim kluczem... Uczucie, kawałek drewna, sztylet ze srebrzonego szkła, fragment ubrania; melodia, którą będziesz nucił do siebie... Obawiam się, że Grabarze są jedynymi znającymi klucze, dzięki którym mógłbyś opuścić ich włości, Najdroższy."~ */
+  IF ~~ THEN REPLY #824 /* ~"Rozumiem. Mam jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #823 /* ~"W takim razie powinienem spytać któregoś z nich. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1326 /* ~"W takim razie powinienem spytać któregoś z nich. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 33 // from: 4.0
+  SAY #6083 /* ~"Nie mam dla ciebie odpowiedzi! Skoro twe nieszczere serce zaprowadziło cię aż tak daleko, pozwól mu, by było twym przewodnikiem podczas dalszej drogi! Teraz odejdź!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6129 /* ~Kłamstwo: "To nie jest taka Deionarra, jaką pamiętam. Ta, którą kochałem, była miła, łagodna... I nigdy nie opuściła duszy w potrzebie. Doprawdy, czyżbyś aż tak dalece upadła?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_4","GLOBALLaw",-1)
+~ GOTO 35
+  IF ~~ THEN REPLY #6130 /* ~"Twa pomoc jest mi niezbędna, Deionarro. Czy odrzucisz mnie, gdy tak bardzo cię potrzebuję?"~ */ GOTO 37
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #6131 /* ~Blef: "Świetnie. Uszanuję twoje życzenia, Deionarro... Odejdę i nigdy już nie wrócę."~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_4","GLOBALLaw",-1)
+~ GOTO 34
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6132 /* ~Blef: "Świetnie. Uszanuję twoje życzenia, Deionarro... Odejdę i nigdy już nie wrócę."~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_4","GLOBALLaw",-1)
+~ GOTO 34
+  IF ~~ THEN REPLY #6133 /* ~"Przykro mi, że cię zraniłem, Deionarro. Odejdę i już nigdy więcej nie będę cię dręczyć."~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 34
+  IF ~~ THEN REPLY #6134 /* ~Odejdź po cichu.~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 33.2 33.3 33.4
+  SAY #6086 /* ~Gniewny grymas jej twarzy znika jak kamfora... Tempo, w jakim następuje ta zmiana, jest tak samo przerażające, jak obecny, pełen desperacji wyraz jej twarzy. "Nie! Poczekaj, Najdroższy." Jej głos przybiera błagalny ton. "Proszę, wybacz mi. Błagam cię! Nie odchodź!"~ */
+  IF ~~ THEN REPLY #6095 /* ~"Deionarro, ma wyrozumiałość wobec twoich napadów zaczyna się kończyć. Jeśli mamy kontynuować nasze rozmowy, *musisz* zacząć nad sobą panować. W przeciwnym razie więcej już ze sobą mówić nie będziemy. Zostaniesz sama. Czy wyraziłem się jasno?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_4","GLOBALGood",-1)
+~ GOTO 36
+  IF ~~ THEN REPLY #6096 /* ~"Przebaczam ci. Potrzebuję twojej pomocy, Deionarro."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 35 // from: 33.0
+  SAY #6087 /* ~Gniewny grymas jej twarzy znika jak kamfora... Tempo, w jakim następuje ta zmiana, jest tak samo przerażające, jak obecny, pełen desperacji wyraz jej twarzy. "Nie... nie... nie... Wciąż jestem tą Deionarrą, którą pamiętasz, Najdroższy. Proszę, wybacz mi. Błagam cię."~ */
+  IF ~~ THEN REPLY #6097 /* ~"Deionarro, ma wyrozumiałość wobec twoich napadów zaczyna się kończyć. Jeśli mamy kontynuować nasze rozmowy, *musisz* zacząć nad sobą panować. W przeciwnym razie więcej już ze sobą mówić nie będziemy. Zostaniesz sama. Czy wyraziłem się jasno?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_4","GLOBALGood",-1)
+~ GOTO 36
+  IF ~~ THEN REPLY #6098 /* ~"Przebaczam ci. Potrzebuję twojej pomocy, Deionarro."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 36 // from: 34.0 35.0
+  SAY #6088 /* ~Głos jej zniża się do ledwo słyszalnego szeptu. "Tak... Tak, proszę. Nie odchodź." Wygląd jej, gdy cię błaga, sprawia, że czujesz słabe dreszcze... nie ze strachu, ale z przyjemności. Wyczuwasz, że nie jest to pierwszy raz, gdy manipulujesz tą kobietą.~ */
+  IF ~~ THEN REPLY #6099 /* ~"Teraz słuchaj, Deionarro. Mam kilka pytań do ciebie..."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 37 // from: 33.1 47.0
+  SAY #6089 /* ~"Odrzucić *cię*?! ŚMIESZ podejrzewać mnie o to, że CIĘ odrzuciłam?!" Deionarra rozkłada ręce po bokach i formuje je na kształt łuku, po czym wyciąga je do przodu, wycelowując w ciebie wskazującymi palcami obu dłoni. Wygląda na to, iż przyzywa jakiś rodzaj magii. "OŚMIELIŁEŚ się...!"~ */
+  IF ~~ THEN REPLY #6100 /* ~"Zamilcz! Słuchaj, zjawo! Kończy mi się już cierpliwość wobec twoich gierek..."~ */ DO ~SetGlobal("Deionarra_Curse","GLOBAL",1)
+~ GOTO 38
+  IF ~~ THEN REPLY #6101 /* ~Przygotuj się do obrony.~ */ DO ~SetGlobal("Deionarra_Curse","GLOBAL",1)
+~ GOTO 38
+END
+
+IF ~~ THEN BEGIN 38 // from: 37.0 37.1
+  SAY #6090 /* ~"Płoń! Spłoń, jakby wszystkie ognie Baator wzięły cię w swoje objęcia. Płoń, będąc świadomym, że to zaledwie *cząstka* nienawiści, jaką do ciebie pałam! Przeklinam cię... Przeklinam cię całym sercem i całą duszą moją, byś nigdy nie wyzwolił się z kajdan swego żałosnego niebytu. Niechaj uschnie twe ciało i skona. Umysł twój niech obumrze, gdy ropiejące rany pokryją twe gnijące ciało!"~ */
+  IF ~~ THEN REPLY #6102 /* ~"Zważaj na swoje przekleństwa, kobieto! Straciłem już cierpliwość..."~ */ GOTO 39
+  IF ~~ THEN REPLY #6103 /* ~"Deionarro! Poczekaj, przyszedłem, żeby przeprosić..."~ */ GOTO 39
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0 38.1
+  SAY #6091 /* ~"Raz wypowiedzianej klątwy nie da się już cofnąć." Głos Deionarry przechodzi w syk. "Wiedz to: Ja mam całą wieczność, 'Najdroższy'. Będę na ciebie czekać w komnatach śmierci." Obdarza cię uśmiechem, nie ma w nim jednak radości. "Znów *będziemy* razem."~ */
+  IF ~~ THEN REPLY #6104 /* ~"Poczekaj chwilę! Chcę porozmawiać..."~ */ GOTO 48
+  IF ~~ THEN REPLY #6105 /* ~"Odwróć to, co uczyniłaś! Ostrzegam cię..."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from: 16.0 20.4 21.3
+  SAY #6092 /* ~Deionarra zamiera. Zdaje się, że chce coś powiedzieć, po czym wzdycha pokonana. "No dobrze, Najdroższy... Tak jak wcześniej, znów będę musiała ci zaufać." Zamyka oczy.~ */
+  IF ~~ THEN REPLY #6106 /* ~Poczekaj...~ */ GOTO 22
+END
+
+IF ~~ THEN BEGIN 41 // from: 10.6
+  SAY #6108 /* ~Deionarra potrząsa ze smutkiem głową. "Raz wypowiedzianej klątwy nie da się już cofnąć. Wybacz mi, Najdroższy."~ */
+  IF ~~ THEN REPLY #6110 /* ~"Czy istnieje ktoś, kto mógłby ją zdjąć?"~ */ GOTO 42
+  IF ~~ THEN REPLY #6111 /* ~"Ro... zumiem. Jest jeszcze coś, o co chcę cię spytać..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6112 /* ~"Sądzę, że jest już trochę za późno, by prosić o przebaczenie. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6113 /* ~"Być może ktoś będzie mógł mi pomóc. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6114 /* ~"Sądzę, że jest już trochę za późno, by prosić o przebaczenie. Żegnaj, Deionarro."~ */ GOTO 0
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6115 /* ~"Być może ktoś będzie mógł mi pomóc. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0
+  SAY #6109 /* ~"Jeśli tak, nic o tym nie wiem." Spogląda z nadzieją. "Ale istnieją inni, potężniejsi ode mnie, którzy mogą być w stanie ją zdjąć. Raz jeszcze proszę cię o przebaczenie, Najdroższy. Nie wiedziałam, co robię."~ */
+  IF ~~ THEN REPLY #6116 /* ~"Jest jeszcze coś, o co chcę cię spytać..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6117 /* ~"Sądzę, że jest już trochę za późno, by prosić o przebaczenie. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6118 /* ~"Być może ktoś będzie mógł mi pomóc. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6119 /* ~"Sądzę, że jest już trochę za późno, by prosić o przebaczenie. Żegnaj, Deionarro."~ */ GOTO 0
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6120 /* ~"Być może ktoś będzie mógł mi pomóc. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 43 // from: 9.2 10.3 44.0
+  SAY #6121 /* ~"Opuścić...?" Głos Deionarry przemienia się w syk, po czym ponownie wznosi się do normalnego tonu. "*Opuścić*?! Pytasz mnie, która jestem tu z twojego powodu uwięziona, jak *opuścić* to miejsce?!"~ */
+  IF ~~ THEN REPLY #6137 /* ~"Tak. Muszę się stąd wydostać. Wiesz, jak stąd uciec?"~ */ GOTO 47
+  IF ~~ THEN REPLY #6138 /* ~"Przepraszam za moją prośbę. Nie chciałem cię obrazić. Proszę, mam jeszcze parę innych pytań..."~ */ GOTO 10
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6139 /* ~"Deionarro, grozi mi niebezpieczeństwo. Czy mogłabyś skierować mnie w jakieś bezpieczne miejsce? Wrócę, gdy tylko będę mógł z tobą znów porozmawiać."~ */ GOTO 46
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6140 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6141 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 44 // from: 9.3 10.4
+  SAY #6122 /* ~Masz zamiar zadać Deionarze pytanie, więźnie ono jednak w twym gardle. Wydaje ci się, że gdybyś powiedział jej, że szukasz drogi ucieczki, pomyślałaby sobie, iż chcesz ją porzucić. Jeśli zamierzasz spytać ją o możliwość wydostania się z tego miejsca, musisz to zrobić bardzo delikatnie.~ */
+  IF ~~ THEN REPLY #6142 /* ~"Możesz mi powiedzieć, jak mogę opuścić to miejsce?"~ */ GOTO 43
+  IF ~~ THEN REPLY #6143 /* ~"Deionarro, grozi mi niebezpieczeństwo. Czy mogłabyś skierować mnie w jakieś bezpieczne miejsce? Wrócę, gdy tylko będę mógł z tobą znów porozmawiać."~ */ GOTO 46
+  IF ~~ THEN REPLY #6144 /* ~"Mam do ciebie jeszcze kilka pytań..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6145 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6146 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 45 // from: 46.0 46.1
+  SAY #6123 /* ~"Wyczuwam, że miejsce to kryje w sobie wiele drzwi ukrytych przed wzrokiem śmiertelników. Być może mógłbyś wykorzystać któryś z tych portali w celu ucieczki.~ */
+  IF ~~ THEN REPLY #6124 /* ~"Portali?"~ */ GOTO 31
+END
+
+IF ~~ THEN BEGIN 46 // from: 43.2 44.1 47.1
+  SAY #6125 /* ~"Niebezpieczeństwo?" Wygląda na pełną obawy. "Oczywiście, Najdroższy. Pomogę ci na tyle, na ile będę w stanie..." Zamyka na chwilę oczy, ty zaś dostrzegasz eteryczny podmuch, który przemyka przez jej ciało, unosząc jej włosy. Po chwili podmuch znika, zaś oczy jej powoli się otwierają. "Być może jest wyjście."~ */
+  IF ~  Global("Deionarra_Portal","GLOBAL",1)
+~ THEN REPLY #6147 /* ~"Tak?"~ */ GOTO 45
+  IF ~  Global("Deionarra_Portal","GLOBAL",0)
+~ THEN REPLY #6148 /* ~"Tak?"~ */ DO ~SetGlobal("Deionarra_Portal","GLOBAL",1)
+AddexperienceParty(500)
+~ GOTO 45
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.0
+  SAY #6135 /* ~"Przyszedłeś do mnie, umarłej, tylko po to, by mi powiedzieć, że potrzebujesz mej pomocy, by móc mnie znowu opuścić?!" Twarz jej formuje się w maskę gniewu. "*Umarłam* dla ciebie, Najdroższy. Nawet teraz wciąż *cierpię* z tego powodu!"~ */
+  IF ~~ THEN REPLY #6149 /* ~"Proszę, Deionarro... Twa pomoc jest mi niezbędna. Czy odrzucisz mnie, gdy tak bardzo cię potrzebuję?"~ */ GOTO 37
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6150 /* ~"Deionarro, pytam jedynie dlatego, że grozi mi niebezpieczeństwo. Czy mogłabyś skierować mnie w jakieś bezpieczne miejsce? Wrócę, gdy tylko będę mógł z tobą znów porozmawiać."~ */ GOTO 46
+  IF ~~ THEN REPLY #6151 /* ~"Mniejsza z tym. Słuchaj, mam jeszcze parę innych pytań..."~ */ GOTO 8
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6152 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6153 /* ~"Muszę już iść. Żegnaj, Deionarro."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 48 // from: 33.5 39.0 39.1
+  SAY #6136 /* ~Deionarra zamyka oczy i znika przy wtórze eterycznego westchnięcia.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #6154 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #6155 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13258 /* ~Odejdź.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1203)
+~ THEN BEGIN 49 // from:
+  SAY #63356 /* ~Widzisz przed sobą uderzająco piękną zjawę. Posiada długie, opadające włosy, suknia jej zaś zdaje się być poruszana przez eteryczne podmuchy. Oczy jej wpatrują się w twoje; doznajesz dziwnego uczucie rozproszenia - tak, jakbyś patrzył równocześnie na kilka par oczu.~ */
+  IF ~~ THEN REPLY #63357 /* ~"Tyś jest Deionarra...?"~ */ GOTO 51
+END
+
+IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1203)
+~ THEN BEGIN 50 // from:
+  SAY #63358 /* ~Przed tobą znajduje się zjawa Deionarry. Jej niematerialna suknia zdaje się być poruszana eterycznymi podmuchami, oczy jej wpatrują się w twoje; doznajesz dziwnego uczucie rozproszenia - tak, jakbyś patrzył równocześnie na kilka par oczu.~ */
+  IF ~~ THEN REPLY #63359 /* ~"Deionarra...?~ */ GOTO 51
+END
+
+IF ~~ THEN BEGIN 51 // from: 49.0 50.0
+  SAY #63360 /* ~"Najdroższy, w końcu cię *odnalazłam*... Poszukiwałam cię, odkąd zostałeś podzielony przez kryształ. Ta Forteca rozciąga się na setki kilometrów i bałam się, że cię straciłam." Jej niematerialne oczy lustrują twe ciało w poszukiwaniu nowych ran. "Wszystko w porządku?"~ */
+  IF ~~ THEN REPLY #63362 /* ~"Tak sądzę. Kryształ mnie podzielił, ale na powrót stanowię całość. Teraz jednak jestem tu uwięziony."~ */ GOTO 52
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+  SAY #63363 /* ~"Podejrzewam, że uwięzienie cię było głównym celem kryształu. Ale nie stanowi on przeszkody dla kogoś takiego, jak ja." Zamyka oczy. "Sporo me oczy widzą i dobrze znam sale tej Fortecy."~ */
+  IF ~~ THEN GOTO 53
+END
+
+IF ~~ THEN BEGIN 53 // from: 52.0 58.0 59.0
+  SAY #63364 /* ~"Skoro jesteś tu uwięziony, Najdroższy, postaram się, byś odzyskał wolność. Gdzie chciałbyś się udać?"~ */
+  IF ~~ THEN REPLY #63365 /* ~"Chciałbym odnaleźć mojego wroga i pokonać go."~ */ GOTO 54
+  IF ~~ THEN REPLY #63366 /* ~"Chciałbym się udać tam, gdzie spoczywa moja śmiertelność - i odzyskać ją."~ */ GOTO 54
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",1)
+!Global("Fortress_Ignus","GLOBAL",1)
+!Global("Fortress_Vhailor","GLOBAL",1)
+~ THEN REPLY #63367 /* ~"Chciałbym przyłączyć się do mych przyjaciół."~ */ GOTO 54
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",1)
+!Global("Fortress_Ignus","GLOBAL",1)
+!Global("Fortress_Vhailor","GLOBAL",1)
+~ THEN REPLY #63368 /* ~"Chciałbym przyłączyć się do mych przyjaciół. Jest kilka przedmiotów, które muszę od nich odebrać."~ */ GOTO 54
+  IF ~  GlobalGT("Deionarra_Death_Truth","GLOBAL",0)
+~ THEN REPLY #63369 /* ~"Chciałbym porozmawiać z tobą przez chwilę i powiedzieć ci, w jaki sposób umarłaś... i dlaczego."~ */ GOTO 55
+END
+
+IF ~~ THEN BEGIN 54 // from: 53.0 53.1 53.2 53.3
+  SAY #63370 /* ~"Jak sobie życzysz, Najdroższy." Wyciąga rękę. "Dotknij mej dłoni, a ściany tej Fortecy przestaną być nimi."~ */
+  IF ~  Global("Deionarra_Forgives","GLOBAL",1)
+~ THEN REPLY #63371 /* ~Dotknij jej dłoni...~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1203cd11",FALSE)
+~ EXIT
+  IF ~  Global("Deionarra_Forgives","GLOBAL",0)
+~ THEN REPLY #64594 /* ~Dotknij jej dłoni...~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1203cd21",FALSE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 55 // from: 53.4
+  SAY #63372 /* ~"O czym mówiesz?"~ */
+  IF ~~ THEN REPLY #63373 /* ~Prawda: "Kiedy przywiodłem cię do tej Fortecy, chciałem, być tu umarła. Potrzebowałem kogoś, kto by tu został i służył jako pomost do tego miejsca. Ponieważ tak bardzo mnie kochałaś, wiedziałem, że miłość twa odeprze śmierć i pozwoli ci stać się zjawą. To właśnie dlatego teraz cierpisz."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_2","GLOBALLaw",3)
+IncrementGlobalOnceEx("GLOBALGood_Deionarra_2","GLOBALGood",1)
+SetAnimState(Myself,ANIM_MIMESTAND)
+~ GOTO 56
+  IF ~~ THEN REPLY #63374 /* ~Kłamstwo: "Kiedy umarłaś tu, w Fortecy, stało się to z przyczyny oczekującego nas wroga. Chciał, byś umarła, byśmy zostali rozdzieleni. Wkrótce stawię mu czoła i pomszczę cię."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_5","GLOBALLaw",-3)
+IncrementGlobalOnceEx("GLOBALEvil_Deionarra_5","GLOBALGood",-1)
+~ GOTO 58
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0
+  SAY #63375 /* ~Gdy wymawiasz te słowa, twarz Deionarry zastyga w maskę.~ */
+  IF ~~ THEN REPLY #63376 /* ~Kłamstwo: "Bardzo mi przykro, Deionarro."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_6","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Deionarra_6","GLOBALGood",-2)
+~ GOTO 57
+  IF ~~ THEN REPLY #63377 /* ~Prawda: "Bardzo mi przykro, Deionarro."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_3","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Deionarra_3","GLOBALGood",1)
+~ GOTO 57
+  IF ~~ THEN REPLY #63378 /* ~Prawda: "To było konieczne, Deionarro. Przykro mi, że musiałaś cierpieć."~ */ GOTO 57
+END
+
+IF ~~ THEN BEGIN 57 // from: 56.0 56.1 56.2
+  SAY #63379 /* ~"*Kochasz* mnie? Jeśli powiesz tak, Najdroższy, wtedy nic, co się wydarzyło, nie będzie miało znaczenia."~ */
+  IF ~~ THEN REPLY #63380 /* ~Kłamstwo: "Oczywiście, że cię kocham. Nawet śmierć nie jest w stanie unicestwić istniejącej między nami więzi."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_7","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Deionarra_7","GLOBALGood",-1)
+~ GOTO 58
+  IF ~~ THEN REPLY #63381 /* ~Prawda: "Mimo iż na początku nie znałem cię, ostatecznie cię pokochałem. Twe cierpienie stało się mym własnym. Postanowiłem, że zrobię wszystko, by ci pomóc."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_4","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Deionarra_4","GLOBALGood",1)
+~ GOTO 58
+  IF ~~ THEN REPLY #63382 /* ~Prawda: "Przykro mi Deionarro. Nie kocham. Nigdy cię nie znałem. Może gdyby dane mi było poznać cię w innych okolicznościach..."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_5","GLOBALLaw",2)
+~ GOTO 59
+END
+
+IF ~~ THEN BEGIN 58 // from: 55.1 57.0 57.1
+  SAY #63383 /* ~"W takim razie pomogę ci, Najdroższy. Powiedz mi, co mogę dla ciebie zrobić, a uczynię to."~ */
+  IF ~~ THEN REPLY #63384 /* ~"Jestem tu uwięziony. Możesz mi pomóc w ucieczce?"~ */ DO ~SetGlobal("Deionarra_Forgives","GLOBAL",1)
+~ GOTO 53
+END
+
+IF ~~ THEN BEGIN 59 // from: 57.2
+  SAY #63385 /* ~"W takim razie... oznacza to koniec wszystkiego, co między nami istniało, Najdroższy. Zostałam tu dla ciebie - innego powodu nie było. Pomogę ci po raz ostatni i udam się poza Ostateczną Granicę, jak było mi przeznaczone."~ */
+  IF ~~ THEN REPLY #63386 /* ~"W takim razie poproszę cię o ostatnią rzecz i zostawię cię w spokoju: Jestem tu uwięziony. Możesz mi pomóc?"~ */ GOTO 53
+END
+
+IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */
+~  Global("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1200)
+Global("1200_Cut_Scene_2","GLOBAL",0)
+~ THEN BEGIN 60 // from:
+  SAY #63387 /* ~Widzisz przed sobą uderzająco piękną zjawę. Posiada długie, opadające włosy, suknia jej zaś zdaje się być poruszana przez eteryczne podmuchy. Stoi na krawędzi wykonanej z czarnego kamienia drogi, wpatrując się w pustkę Sfery.~ */
+  IF ~~ THEN REPLY #63388 /* ~"Kim jesteś?"~ */ DO ~SetGlobal("1200_Cut_Scene_2","GLOBAL",1)
+StartCutSceneMode()
+SetGlobal("cd_int_1","LOCALS",1)
+StartCutSceneEx("1200cut1",FALSE)
+~ GOTO 62
+  IF ~~ THEN REPLY #63389 /* ~Zostaw niematerialną istotę w spokoju.~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */
+~  GlobalGT("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1200)
+Global("1200_Cut_Scene_2","GLOBAL",0)
+~ THEN BEGIN 61 // from:
+  SAY #63390 /* ~Przed tobą znajduje się zjawa Deionarry; jej niematerialna suknia zdaje się być poruszana eterycznymi podmuchami. Stoi na krawędzi wykonanej z czarnego kamienia drogi, wpatrując się w pustkę Sfery.~ */
+  IF ~~ THEN REPLY #63391 /* ~"Deionarra...?"~ */ DO ~SetGlobal("1200_Cut_Scene_2","GLOBAL",1)
+StartCutSceneMode()
+SetGlobal("cd_int_1","LOCALS",1)
+StartCutSceneEx("1200cut1",FALSE)
+~ GOTO 62
+  IF ~~ THEN REPLY #63392 /* ~Zostaw Deionarrę w spokoju.~ */ EXIT
+END
+
+IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200)
+Global("1200_Cut_Scene_2","GLOBAL",1)
+~ THEN BEGIN 62 // from: 60.0 61.0
+  SAY #63393 /* ~"Najdroższy! *Nie* powinno cię tu być! Musisz natychmiast stąd odejść!"~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63394 /* ~"Dlaczego? Kim jesteś, zjawo...? Co to za miejsce?"~ */ GOTO 63
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63395 /* ~"Deionarro, co to za miejsce? Czy to Forteca?"~ */ GOTO 63
+END
+
+IF ~~ THEN BEGIN 63 // from: 62.0 62.1
+  SAY #63396 /* ~"To jest Forteca Żalu. To miejsce, które więzi chwilę mojej śmierci i daleko od tych sal odejść nie mogę. Jeśli jesteś w stanie odnaleźć drogę do Sigil, *musisz* to zrobić. Gdybyś tu został, Najdroższy, zginąłbyś."~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63397 /* ~"Jestem nieśmiertelny, zjawo. Cenię twe ostrzeżenie, śmierć jednak należy do ostatnich rzeczy, jakich się obawiam."~ */ GOTO 64
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63398 /* ~"Jestem nieśmiertelny, Deionarro. Nie sądzę, bym się musiał obawiać, nawet tutaj."~ */ GOTO 64
+  IF ~~ THEN REPLY #63399 /* ~"A co z moją nieśmiertelnością? Bez wątpienia wciąż jestem nieśmiertelny, nawet tutaj...?"~ */ GOTO 64
+END
+
+IF ~~ THEN BEGIN 64 // from: 63.0 63.1 63.2
+  SAY #63400 /* ~Potrząsa głową. "Nie, Najdroższy. Jest w tej Fortecy coś istotnego - osłona, która ją otacza, oddziela ją od reszty Sfer. To osłona, która jest dla twej nieśmiertelności zaporą."~ */
+  IF ~  Global("Know_Shadow_Player_Connection","GLOBAL",1)
+~ THEN REPLY #63401 /* ~"Osłona? Słup powiedział mi, że gdy umieram, ktoś inny kona zamiast mnie. I gdy nie będę mógł znaleźć kogoś, kto za mnie umrze..."~ */ GOTO 66
+  IF ~  Global("Know_Shadow_Player_Connection","GLOBAL",0)
+~ THEN REPLY #63402 /* ~"W jaki sposób osłona ta może działać jako przeszkoda? To nie ma sensu."~ */ GOTO 65
+END
+
+IF ~~ THEN BEGIN 65 // from: 64.1
+  SAY #63403 /* ~"Podczas mego długiego czuwania w tym miejscu, poznawałam naturę twej nieśmiertelności, Najdroższy. To coś, co łaknie bytów innych ludzi. W chwili twej śmierci, zabiera zamiast ciebie innego żywego, pozwalając tobie żyć. Dusza, która umiera zamiast ciebie, zostaje przygnana tu, do Fortecy, jako cień. Wierzę, że osłona ta uniemożliwia twej nieśmiertelności znalezienie kolejnej ofiary."~ */
+  IF ~~ THEN REPLY #63404 /* ~"A więc... kiedy umieram, zamiast mnie ginie ktoś inny. I jeśli nie znajdę kogoś żywego, by *za* mnie umarł..."~ */ GOTO 66
+END
+
+IF ~~ THEN BEGIN 66 // from: 64.0 65.0
+  SAY #63405 /* ~"W takim razie jeśli tu umrzesz, nastąpi twój kres, gdyż nie ma tu żadnej *żywej* istoty. Dlatego też musisz być ostrożny. Powróć do Sigil i opuść to przeklęte miejsce.~ */
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63406 /* ~"Ale - znajdują się tu moi sprzymierzeńcy. Oznacza to, iż są we wnętrzu osłony. Co się z *nimi* stanie, gdy umrę?"~ */ GOTO 67
+  IF ~  Global("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63407 /* ~"Ale - znajduje się tu jeden z mych sprzymierzeńców. Oznacza to, że jest we wnętrzu osłony. Co się stanie z mym towarzyszem, gdy umrę?"~ */ GOTO 67
+  IF ~  Global("Fortress_Party","GLOBAL",1)
+GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63408 /* ~"Deionarro, czy mogłobyś powiedzieć mi coś jeszcze, co mogłoby mi pomóc? Co się wewnątrz znajduje?"~ */ GOTO 68
+  IF ~  Global("Fortress_Party","GLOBAL",1)
+Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63409 /* ~"Zjawo, czy mogłobyś powiedzieć mi coś jeszcze, co mogłoby mi pomóc? Co się wewnątrz znajduje?"~ */ GOTO 68
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.0 66.1
+  SAY #63410 /* ~"Najdroższy, jeśli przywiodłeś do tego miejsca *cokolwiek* żywego, znajduje się to w śmiertelnym niebezpieczeństwie - zarówno ze strony cieni, jak i twojej. Jeśli tu umrzesz, twa nieśmiertelność wyruszy polować na najbliższą żywą istotę w tej Fortecy i to *ona* umrze zamiast ciebie. Musisz stąd odejść, natychmiast!"~ */
+  IF ~~ THEN REPLY #63411 /* ~"Nie mogę *udać* się w drogę powrotną. Mogłabyś powiedzieć mi o czymś, co by mi było pomocne? Co czeka na mnie we wnętrzu Fortecy?"~ */ GOTO 68
+END
+
+IF ~~ THEN BEGIN 68 // from: 66.2 66.3 67.0
+  SAY #63412 /* ~"W Fortecy nie ma naturalnych ciemności, Najdroższy. Są jedynie cienie tych, którzy miast ciebie umarli. Karmi ich energia tej Sfery, zaś ich nienawiść do ciebie stoi ponad wszystkim. Nie pozwolą ci odejść." Zerka na ściany Fortecy. "*Nie* wchodź, błagam cię!"~ */
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63413 /* ~"Ale - są tu moi sprzymierzeńcy. Nie mogę ich zostawić. Masz może jakiś pomysł, gdzie mogą się znajdować?"~ */ GOTO 69
+  IF ~  Global("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63414 /* ~"Ale - jest tu jeden z mych sprzymierzeńców. Nie mogę odejść. Masz może jakiś pomysł, gdzie może się znajdować?"~ */ GOTO 69
+  IF ~  Global("Fortress_Party","GLOBAL",1)
+~ THEN REPLY #63415 /* ~"Musze wkroczyć do Fortecy. Nie mogę się cofnąć."~ */ JOURNAL #68117 /* ~Deionarra ostrzegła mnie, że w pobliżu wejścia do Fortecy znajduje się wielki przedsionek, gdzie zamieszkują cienie. Powiedziała, że w komnacie tej znajduje się wiele ogromnych zegarów, które, wedle moich słów z poprzedniego żywota, pozwolą mi w jakiś sposób na wydostanie się z przedsionka. Muszę sobie to zakonotować, a kiedy trafię na tego zegary, skrupulatnie je sprawdzić.~ */ GOTO 75
+END
+
+IF ~~ THEN BEGIN 69 // from: 68.0 68.1
+  SAY #63416 /* ~"Jeśli przywiodłeś innych ze sobą, zostali od ciebie zabrani, gdy tu przybyłeś. W naturze tego miejsca leży rozdzielanie wszelkich żywych istot... następnie ich zabijanie." Widać trwogę na jej twarzy. "Ta Forteca to miejsce ciągnące się przez wiele kilometrów - odnalezienie twych przyjaciół może być ciężką sprawą."~ */
+  IF ~~ THEN REPLY #63417 /* ~"Muszę ich znaleźć. W tym względzie nie mam wyboru."~ */ JOURNAL #68117 /* ~Deionarra ostrzegła mnie, że w pobliżu wejścia do Fortecy znajduje się wielki przedsionek, gdzie zamieszkują cienie. Powiedziała, że w komnacie tej znajduje się wiele ogromnych zegarów, które, wedle moich słów z poprzedniego żywota, pozwolą mi w jakiś sposób na wydostanie się z przedsionka. Muszę sobie to zakonotować, a kiedy trafię na tego zegary, skrupulatnie je sprawdzić.~ */ GOTO 75
+END
+
+IF ~~ THEN BEGIN 70 // from: 75.0
+  SAY #63418 /* ~"Jeszcze jedna rzecz..." Deionarra przerywa, jakby chciała pochwycić przemykające wspomnienie. "W... W komnacie znajdują się ogromne zegary..." Jej głos stabilizuje się, nabiera pewności. "Zegary, o których mówiłeś kiedyś, że były dla ciebie kluczem umożliwiającym ucieczkę z tej komnaty... Gdy byłeś tam kiedyś uwięziony." Spogląda na ciebie. "Wiem, że nie mogę zwieść cię z twego kursu, Najdroższy... Będę cię obserwować i pomogę ci, jeśli będę w stanie."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+PartyHasItem("DwedRing")
+~ THEN REPLY #63419 /* ~"Przyniosłem ci pierścień, Deionarro. Odnalazłem twój testament."~ */ DO ~TransformPartyItem("Dwedring","DsupRing",1,0,0)
+~ GOTO 71
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63420 /* ~"Dziękuję, Zjawo. Muszę już iść."~ */ EXIT
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63421 /* ~"Dziękuję, Deionarro. Muszę już iść."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 71 // from: 70.0
+  SAY #63422 /* ~"Ten pierścień nadal zawiera w sobie cząstkę mnie samej, Najdroższy. Kiedy go będziesz nosił, me serce będzie zawsze przy tobie." Zamyka na chwilę oczy i czujesz nagle przypływające przez ciebie ciepło. Deionarra otwiera oczy, po czym uśmiecha się. "Wiedziałam, że powrócisz do mnie, mając go w swej opiece. Weź go teraz wraz z mym błogosławieństwem i trzymaj blisko serca swego. Poprzez niego, będę cię chronić."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63423 /* ~"Dziękuję, Deionarro. Muszę już iść."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 27.1
+  SAY #66912 /* ~"Ty... ja... nie..." Zamiera nagle i zaczyna przemawiać powoli, ostrożnie - jakby jej głos ją przerażał. "Oto prawda: jesteś tym, którego wiele śmierci zabrało. Śmierci owe umożliwiły ci poznanie wszelkich żywych rzeczy, i w rękach twych kryje się iskra życia... i śmierci. Ci, którzy umierają blisko ciebie, pozostawiają po sobie cień ich samych, dzięki któremu możesz ich ponownie przywołać..."~ */
+  IF ~~ THEN GOTO 73
+END
+
+IF ~~ THEN BEGIN 73 // from: 72.0
+  SAY #66913 /* ~Gdy Deionarra wymawia te słowa, dziwne mrowienie wzbiera w tyle twej czaszki... Odczuwasz nagły przymus, by spojrzeć na swoją rękę. Kiedy ją unosisz i *przyglądasz* się jej, WIDZISZ krew przepływającą powoli poprzez twoje ramie, wypełniającą twe muskuły, w końcu zaś - przydającą siłę twym kościom...~ */
+  IF ~~ THEN REPLY #66914 /* ~"Co s..."~ */ DO ~AddexperienceParty(1000)
+SetGlobal("Deionarra_Raise_Dead","GLOBAL",1)
+ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+~ JOURNAL #66917 /* ~Nie wiem, czy powinienem czuć lęk, czy też dumę... W rozmowie z duchem Deionarry w krypcie Kostnicy dowiedziałem się, że moje ciągłe zgony dały mi coś w rodzaju władzy nad życiem i śmiercią. Potrafię mianowicie dostrzec w zwłokach dogasające ogniki życia i rozbudzić je z powrotem. Z jakiegoś powodu ze zdolności takich mogę skorzystać jedynie w odniesieniu do istot, które towarzyszą mi w mojej włóczędze, a przy tym jedynie wówczas, gdy umierają w mojej obecności... Ciekawe czemu? Czyżby fakt odbywania wspólnych podróży miałby w jakiś sposób wiązać mnie duchowo z moimi kompanami?~ */ GOTO 74
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.0
+  SAY #66915 /* ~Wiesz, że Deionarra ma *rację*. Nagle przypominasz sobie, jak odnaleźć najmniejszą iskrę życia w ciele i wydobyć ją na wierzch... Ta myśl jednocześnie przeraża cię i intryguje.
+
+UWAGA: Przypomniałeś sobie, jak przywracać innych do życia. Aby użyć tej zdolności, wybierz 'Zdolności Specjalne' z Menu Podręcznego. Możesz jej użyć jedynie na tych spośród drużyny, przy których śmierci byłeś obecny. Nie będzie ona działać na kimś, kto z tobą nie podróżował, *nie* będzie też działać na tych z drużyny, których po ich śmierci z niej usunąłeś.~ */
+  IF ~~ THEN REPLY #66916 /* ~"M... M... Mam kilka innych pytań..."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 75 // from: 68.2 69.0
+  SAY #68114 /* ~"Dobrze, Najdroższy... Skoro zamierzasz iść dalej, wiedz jedno: Za wejściem wiodącym do Fortecy znajduje się wielki przedsionek wypełniony niezliczoną liczbą cieni. Musisz pokonać go szybko, inaczej cię otoczą i bez wątpienia zabiją!"~ */
+  IF ~~ THEN GOTO 70
+END

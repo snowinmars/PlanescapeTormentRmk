@@ -1,0 +1,63 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM396.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM396~
+
+IF ~  HasItem("Bandage","ZM396")
+~ THEN BEGIN 0 // from:
+  SAY #34931 /* ~Mrtvola přechází od desky k desce a obvazuje ležící těla. Do levého spánku má vyryto číslo "369", rty má pevně sešité. Všiml sis, že nese v ruce obvazy... vypadají použitelně.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #34932 /* ~"Můžu si půjčit ty obvazy?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #34935 /* ~"Můžu si půjčit ty obvazy?"~ */ GOTO 1
+  IF ~~ THEN REPLY #34936 /* ~Zkus ze zombie odmotat obvazy.~ */ DO ~GiveItem("Bandage",Protagonist)
+~ GOTO 3
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #34937 /* ~"Vím, že nejsi zombie. Takhle nikoho neoblbneš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #34940 /* ~Použij na mrtvolu Kosti-vyprávějte.~ */ GOTO 2
+  IF ~~ THEN REPLY #34941 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #45106 /* ~Nechej mrtvolu na pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.3 4.0 4.1 4.2
+  SAY #34933 /* ~Mrtvola na tebe dál zírá.~ */
+  IF ~  HasItem("Bandage","ZM396")
+~ THEN REPLY #34934 /* ~Zkus vytrhnout zombie z rukou obvazy.~ */ DO ~GiveItem("Bandage",Protagonist)
+~ GOTO 3
+  IF ~~ THEN REPLY #45107 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4 4.3
+  SAY #34938 /* ~Mrtvola se nehýbe. Asi už ti neodpoví na žádnou otázku.~ */
+  IF ~~ THEN REPLY #34939 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.2 1.0
+  SAY #45108 /* ~Nenápadně jsi natáhl ruku a vzal balíček obvazů nebožtíkovi z ruky. Mrtvola to zřejmě vůbec nepostřehla. Pořád dělá pohyby, jako by obvazovala.~ */
+  IF ~~ THEN REPLY #45109 /* ~Znovu prozkoumej mrtvolu.~ */ GOTO 4
+  IF ~~ THEN REPLY #45110 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END
+
+IF ~  !HasItem("Bandage","ZM396")
+~ THEN BEGIN 4 // from: 3.0
+  SAY #45111 /* ~Tahle zombie se přesouvá od stolu ke stolu a obvazuje ležící mrtvoly. Pořád plní svou povinnost, i když už nemá obvazy. Do levého spánku má vyryto číslo "369", rty má sešité dohromady.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45112 /* ~"Omlouvám se, že jsem si vzal ty obvazy, ale já je potřebuju víc než ty mrtvoly tady kolem."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45113 /* ~"Omlouvám se, že jsem si vzal ty obvazy, ale já je potřebuju víc než ty mrtvoly tady kolem."~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45114 /* ~"Hele, já vím, že nejsi zombie. Nikoho neoblbneš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45115 /* ~Použij na mrtvolu schopnost Kosti-vyprávějte.~ */ GOTO 2
+  IF ~~ THEN REPLY #45116 /* ~"Skvěle jsme si pokecali. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #45117 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END

@@ -1,0 +1,21 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #24708 /* ~Ten trup zatrzymuje się i beznamiętnie patrzy, kiedy doń podchodzisz. Na czole ma wyryty numer "782", a wargi zaszyte. Od ciała unosi się słaby odór formaliny.~ */
+IF ~  NearbyDialog("DMorte1") ~ THEN REPLY #24709 /* ~"Szukam klucza... czy ty przypadkiem go nie masz?"~ */ EXTERN ~DMORTE1~ 34
+IF ~  !NearbyDialog("DMorte1") ~ THEN REPLY #24712 /* ~"Szukam klucza... czy ty przypadkiem go nie masz?"~ */ GOTO 1
+IF ~~ THEN REPLY #24713 /* ~Obejrzyj truposza, sprawdź, czy nie ma klucza.~ */ GOTO 2
+IF ~~ THEN REPLY #24714 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ GOTO 2
+IF ~~ THEN REPLY #24717 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1
+SAY #24710 /* ~Trup nie odpowiada.~ */
+IF ~~ THEN REPLY #24711 /* ~"W takim razie trudno. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #42304 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.2 0.3
+SAY #24715 /* ~Ten truposz wygląda na tego, który ma klucz. Trzyma go mocno w lewej dłoni. Kciuk i palec wskazujący zacisnęły się na nim w śmiertelnym uścisku. Chyba będziesz musiał odrąbać mu rękę, aby zdobyć ten klucz.~ */
+IF ~~ THEN REPLY #24716 /* ~"Potrzebuję tego klucza, trupku... nie bardzo chyba tęskno ci do tego świata."~ */ DO ~ForceAttack(Protagonist,"ZM782") ~ EXIT
+IF ~~ THEN REPLY #42305 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END

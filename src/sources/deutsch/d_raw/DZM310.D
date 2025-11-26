@@ -1,0 +1,155 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM310.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM310~
+
+IF ~  Global("Oinosian","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #6495 /* ~Dieser wiederbelebten Leiche wurden die Lippen zugenäht und die Nummer "310" in die Stirn geritzt. Der Geruch von Formaldehyd umgibt sie. Die Leiche richtet ihre leblosen Augen auf dich, als du dich ihr in den Weg stellst.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6499 /* ~"Na... gibt's hier irgendwas Interessantes zu berichten?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6500 /* ~"Na... gibt's hier irgendwas Interessantes zu berichten?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6501 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6502 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ DO ~SetGlobal("Oinosian","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #6503 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #6504 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6496 /* ~Die Leiche starrt dich weiter an.~ */
+  IF ~~ THEN REPLY #6505 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6498 /* ~Einen Moment lang glaubst du, daß diese Leiche zu weit hinüber ist, um dir antworten zu können... aber plötzlich erkennst du, daß sich wahrhaftiges Leid in ihre Gesichtszüge gegraben hat und du spürst, daß sich dahinter eine so tiefe Verzweiflung verbirgt, daß der Geist wieder in seine alte, körperliche Hülle zurückkehren mußte.~ */
+  IF ~~ THEN REPLY #6506 /* ~"Ich würde dich gern was fragen..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9657 /* ~Laß den Geist in Ruhe.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 4.2 5.2 6.2 7.2 8.1 9.0 10.0 11.2 12.1 13.1 14.1 15.1 16.0 18.0
+  SAY #9642 /* ~Er spricht mit der langsamen, monotonen Stimme eines gebrochenen, hoffnungslosen Mannes. Selbst jetzt unterscheidet er sich kaum von einem seelenlosen Zombie. "Was möchtet Ihr wissen, mein Herr?"~ */
+  IF ~~ THEN REPLY #9658 /* ~"Wer bist du?"~ */ GOTO 4
+  IF ~~ THEN REPLY #9659 /* ~"Wo kommst du her?"~ */ GOTO 5
+  IF ~~ THEN REPLY #9660 /* ~"Wie bist du denn hier gelandet? Als Zombie, meine ich?"~ */ GOTO 6
+  IF ~~ THEN REPLY #9661 /* ~"Wo bist du... wo wohnt dein Geist... jetzt?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9662 /* ~"Warum bist du so verzweifelt?"~ */ GOTO 8
+  IF ~~ THEN REPLY #9663 /* ~"Was weißt du über diesen Ort?"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9664 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9665 /* ~"Ach nichts, ist schon gut."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #9643 /* ~Der Geist spricht so leise, daß du ihn nur schwer verstehst. Beim Sprechen bewegt sich der Mund seiner Hülle kaum. "Ich bin ein Niemand, mein Herr; ein elendes Insekt, das sich verzweifelt an den Turm der Einöde in Oinos klammert. Man nannte mich einst Arabhiem, mein Herr, aber... das ist lange, lange her."~ */
+  IF ~~ THEN REPLY #9666 /* ~"Turm der Einöde?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9667 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9668 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9669 /* ~"Da ist nichts, was ich sonst noch wissen wollte. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 5 // from: 3.1
+  SAY #9644 /* ~"Ich lebte in Sigil, mein Herr. Im Stock. Der Ort erscheint mir gar nicht mehr so schrecklich, wie ich einst glaubte, jetzt wo ich in... Oinos lebe." Die Leiche blinzelt so langsam, daß du kurz dachtest, sie würde einfach die Augen schließen.~ */
+  IF ~~ THEN REPLY #9670 /* ~"Der Stock?"~ */ GOTO 12
+  IF ~~ THEN REPLY #9671 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9672 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9673 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2
+  SAY #9645 /* ~"Ich wurde ermordet, mein Herr, von Räubern. Betrunken torkelte ich durch die Gassen des Stocks. Ich verirrte mich und fiel der Bande schließlich in die Hände. Na ja, egal. Mein Leben war wahrscheinlich sowieso weniger wert als die paar Kupfermünzen, die ein Sammler womöglich für meine Leiche bekommen hat."~ */
+  IF ~~ THEN REPLY #9674 /* ~"Warum hast du solch schlechte Meinung über dein eigenes Leben?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9675 /* ~"Ein Sammler?"~ */ GOTO 15
+  IF ~~ THEN REPLY #9676 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9677 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.3 4.1 5.1 8.0 12.0
+  SAY #9646 /* ~Als der Geist kurz die Augen schließt, geht ein leichtes Schaudern durch seine Hülle. "Im schrecklichen Oinos, mein Herr. In der Grauen Einöde. Dorthin wurde meine Seele verbannt, in den Schatten von Khin-Oin, dem Turm der Einöde."~ */
+  IF ~~ THEN REPLY #9678 /* ~"Erzähl mir mehr über dieses... Oinos."~ */ GOTO 11
+  IF ~~ THEN REPLY #9679 /* ~"Khin-Oin?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9680 /* ~"Ich hätte da noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9681 /* ~"Da ist nichts, was ich sonst noch wissen wollte. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 3.4
+  SAY #9647 /* ~"Es gibt keinen Ausweg für mich, mein Herr. Ich bin auf alle Ewigkeit in der schrecklichen Einöde von Oinos gefangen. Für jemanden wie mich gibt es keine Hoffnung." Der Geist bietet immer mehr ein Bild des Jammers. Die Schultern seiner Hülle sinken unter der Last seines Leids zusammen.~ */
+  IF ~~ THEN REPLY #9682 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9683 /* ~"Ich verstehe. Ich hätte noch eine andere Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9684 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 9 // from: 3.5 15.0
+  SAY #9648 /* ~"So gut wie nichts, mein Herr. Ich weiß nur, daß man die Toten hierher bringt, um sie zu begraben oder zu verbrennen... oder um sie als Arbeiter zu verwenden, wie in meinem Fall."~ */
+  IF ~~ THEN REPLY #9685 /* ~"Jetzt verstehe ich. Zu einer anderen Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9686 /* ~"Da ist nichts, was ich sonst noch wissen wollte. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 10 // from: 3.6
+  SAY #9649 /* ~Der Geist schüttelt langsam den Kopf von einer Seite zur anderen. "Nein, mein Herr. Ich kenne niemanden, der so heißt. Tut mir leid."~ */
+  IF ~~ THEN REPLY #9687 /* ~"Schon gut. Ich hätte noch eine andere Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9688 /* ~"Auf bald, dann."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 11 // from: 7.0
+  SAY #9650 /* ~"Da gibt es nicht viel zu sagen. Es ist das Land meines Meisters, des Herrn von Khin-Oin... eines Ortes voller Sorgen und Seuchen, wo Körper und Geist gleichermaßen verwesen, und wo nichts als Trostlosigkeit herrscht."~ */
+  IF ~~ THEN REPLY #9689 /* ~"Und wer ist dieser... 'Meister'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9690 /* ~"Khin-Oin?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9691 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9692 /* ~"Es hört sich dennoch so an. Leb wohl, Geist."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 12 // from: 5.0
+  SAY #9651 /* ~"Ja, mein Herr. Ein elender Ort, aber nicht so schrecklich wie Oinos."~ */
+  IF ~~ THEN REPLY #9693 /* ~"Oinos?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9694 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9695 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 13 // from: 4.0 7.1 11.1 14.0
+  SAY #9652 /* ~"Ja, mein Herr. Es ist ein großer Turm - noch höher als der höchste Turm Sigils. Er hat etwas Knochenartiges - wie die Wirbelsäule eines gigantischen Wesens. Dies ist der Ort, an dem ich schuften muß, um das wiederaufzubauen, was die Heere der Feinde meines Meisters, die rivalisierenden Fürsten, zerstört haben."~ */
+  IF ~~ THEN REPLY #9696 /* ~"Und wer ist dieser 'Meister'?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9697 /* ~"Ich verstehe. Ich hätte noch eine andere Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9698 /* ~"Ich verstehe. Ich werde dich jetzt verlassen, Geist, leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 11.0 13.0
+  SAY #9653 /* ~"Ich kenne ihn nur als den Meister, den Herrn von Khin-Oin. Er ist ein übler Fürst - ein Ausbund an furcherregender Macht. Er besitzt meine Seele und wird sie immer besitzen und so lang mit Füßen treten, bis die Ewigkeit der Vergessenheit weicht."~ */
+  IF ~~ THEN REPLY #9699 /* ~"Erzähl mir über diesen 'Khin-Oin'."~ */ GOTO 13
+  IF ~~ THEN REPLY #9700 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9701 /* ~"Da ist nichts, was ich sonst noch wissen wollte. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 6.1
+  SAY #9654 /* ~"Ja, mein Herr, ein Sammler. Einer von denen, die die Toten Sigils von den Straßen auflesen, und sie für eine Handvoll Geld an die Leichenhalle verkaufen, in der wir jetzt stehen." Der Geist hält kurz inne und blickt um sich, dann seufzt er leise.~ */
+  IF ~~ THEN REPLY #9702 /* ~"Was weißt Du über diese Leichenhalle?"~ */ GOTO 9
+  IF ~~ THEN REPLY #9703 /* ~"Ich verstehe. Ich hätte da noch eine andere Frage an dich..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9704 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.0
+  SAY #9655 /* ~"Darüber will ich nicht sprechen, mein Herr. Es lohnt sich nicht." Der Geist scheint sich nicht erweichen zu lassen.~ */
+  IF ~~ THEN REPLY #9705 /* ~"Also schön. Ich hätte da noch andere Fragen..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9706 /* ~"Dann leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.1 3.7 4.3 5.3 6.3 7.3 8.2 9.1 10.1 11.3 12.2 13.2 14.2 15.2 16.1
+  SAY #9656 /* ~Erst als der Zombie sich wieder an die Arbeit macht, merkst du, daß der Geist den Körper verlassen hat.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~  Global("Oinosian","GLOBAL",1)
+~ THEN BEGIN 18 // from:
+  SAY #20102 /* ~Die Leiche scheint zu schrumpfen, sie beugt sich unter dem Gewicht der Verzweiflung des Geistes.~ */
+  IF ~~ THEN REPLY #20103 /* ~"Ich hätte da ein paar Fragen..."~ */ GOTO 3
+  IF ~~ THEN REPLY #20104 /* ~"Komm nur gerade zufällig vorbei. Leb wohl."~ */ EXIT
+END

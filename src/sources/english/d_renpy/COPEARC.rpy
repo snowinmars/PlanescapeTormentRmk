@@ -1,0 +1,64 @@
+init 10 python:
+    from game.engine.runtime import (runtime)
+    from game.dlgs.copearc_logic import CopearcLogic
+    copearcLogic = CopearcLogic(runtime.global_state_manager)
+
+
+# ###
+# Original:  DLG/COPEARC.DLG
+# ###
+
+
+# s0 # say46723
+label copearc_s0: # - # IF ~  True()
+    nr 'This copper earring looks extremely old. It looks like it was meant to be worn, but there doesn„t seem to be a hook or any means of actually attaching it to your ear. There is a series of strange grooves on the inside of the earring, however.'
+
+    menu:
+        'Examine the grooves.':
+            # a0 # r46724
+            jump copearc_s1
+
+        'Insert your fingernail into the notch that matches where the triangle was pointing in the fanged circle you saw on zombie #79„s forehead.' if copearcLogic.r46725_condition():
+            # a1 # r46725
+            $ copearcLogic.r46725_action()
+            jump copearc_s2
+
+        'Put the earring away.':
+            # a2 # r46726
+            jump copearc_dispose
+
+
+# s1 # say46727
+label copearc_s1: # from 0.0
+    nr 'The grooves are evenly spaced along the inside of the earring - upon closer examination, they remind you of small fangs. They are definitely man-made, but you can„t figure out what they were intended for.'
+
+    menu:
+        'Insert your fingernail into the notch that matches where the triangle was pointing in the fanged circle you saw on zombie #79„s forehead.' if copearcLogic.r46728_condition():
+            # a3 # r46728
+            $ copearcLogic.r46728_action()
+            jump copearc_s2
+
+        'Put the earring away.':
+            # a4 # r46729
+            jump copearc_dispose
+
+
+# s2 # say46730
+label copearc_s2: # from 0.1 1.0
+    nr 'You hook your fingernail into the third groove from the top and press it inwards. As you do, there is a *click* and the top of the earring snaps open. Not only can you wear the earring now, it also looks like there is a secret compartment inside the earring.'
+
+    menu:
+        'Shake the earring, see if anything comes out.':
+            # a5 # r46731
+            jump copearc_s3
+
+
+# s3 # say46732
+label copearc_s3: # from 2.0
+    nr 'You shake the earring, but nothing comes out. Whatever was hidden in the earring is gone now.  ^NNOTE: Discovering the latch to the earring will now allow you to wear it. In addition, the secret compartment may make the earring more valuable to a merchant.^-'
+
+    menu:
+        'Put the earring away.':
+            # a6 # r46733
+            $ copearcLogic.r46733_action()
+            jump copearc_dispose

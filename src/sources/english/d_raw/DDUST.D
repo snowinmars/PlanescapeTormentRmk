@@ -1,0 +1,518 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DDUST.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DDUST~
+
+IF ~  Global("Appearance","GLOBAL",1)
+~ THEN BEGIN 0 // from:
+  SAY #300 /* ~The Dustman does not appear to notice you. He must mistake you for one of the cadaverous workers.~ */
+  IF ~~ THEN REPLY #302 /* ~"Greetings."~ */ GOTO 1
+  IF ~~ THEN REPLY #303 /* ~"Who are you?"~ */ GOTO 1
+  IF ~~ THEN REPLY #304 /* ~"What is this place?"~ */ GOTO 1
+  IF ~~ THEN REPLY #305 /* ~"I had some questions..."~ */ GOTO 1
+  IF ~~ THEN REPLY #306 /* ~Leave him in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #307 /* ~The Dustman jumps, then snaps his head around to stare at you. He looks shocked - your disguise must be quite good.~ */
+  IF ~~ THEN REPLY #310 /* ~Take advantage of his surprise and snap his neck before he can call out.~ */ GOTO 41
+  IF ~~ THEN REPLY #312 /* ~"I had some questions..."~ */ GOTO 2
+  IF ~~ THEN REPLY #1332 /* ~Leave. Quickly.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
+  SAY #309 /* ~The Dustman takes a step back, then claps his hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #313 /* ~"All right then..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+  SAY #314 /* ~This pale-faced man is dressed in long dark robes. He has a slight musty smell about him. His expression is blank, and he seems absorbed in his duties.~ */
+  IF ~~ THEN REPLY #315 /* ~"Greetings."~ */ GOTO 4
+  IF ~~ THEN REPLY #316 /* ~"Who are you?"~ */ GOTO 4
+  IF ~~ THEN REPLY #317 /* ~"What is this place?"~ */ GOTO 4
+  IF ~~ THEN REPLY #319 /* ~"I had some questions..."~ */ GOTO 4
+  IF ~~ THEN REPLY #382 /* ~Leave him in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1 3.2 3.3 40.2 40.3
+  SAY #321 /* ~The Dustman slowly lifts his head and turns toward you. "Are you lost?"~ */
+  IF ~~ THEN REPLY #322 /* ~"Yes."~ */ GOTO 5
+  IF ~~ THEN REPLY #323 /* ~"No."~ */ GOTO 6
+  IF ~~ THEN REPLY #324 /* ~"No, I'm not lost. I had some questions..."~ */ GOTO 6
+  IF ~~ THEN REPLY #325 /* ~"Farewell."~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 4.3 6.4 16.2 51.1
+  SAY #326 /* ~"I will summon a guard to direct you out. Hold a moment."~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #327 /* ~Snap his neck before he can call out.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #328 /* ~Snap his neck before he can call out.~ */ GOTO 41
+  IF ~~ THEN REPLY #329 /* ~Leave. Quickly.~ */ GOTO 2
+  IF ~~ THEN REPLY #1333 /* ~Wait.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 4.2 51.2 51.3
+  SAY #330 /* ~"If you are not lost, what is your business here?"~ */
+  IF ~~ THEN REPLY #331 /* ~"That is none of your concern."~ */ GOTO 7
+  IF ~~ THEN REPLY #332 /* ~"I awoke on one of the slabs in your preparation room."~ */ GOTO 8
+  IF ~~ THEN REPLY #333 /* ~"I'm here to see someone."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #334 /* ~"I was here for an interment, but there seems to have been a mistake."~ */ GOTO 16
+  IF ~~ THEN REPLY #337 /* ~Leave. Quickly.~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0 20.0
+  SAY #335 /* ~"I'm afraid that it is my concern. Mayhap the guards can loosen your tongue." The Dustman takes a step back; he looks like he is about to summon the guards.~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #344 /* ~Snap his neck before he can call out.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #3887 /* ~Snap his neck before he can call out.~ */ GOTO 41
+  IF ~~ THEN REPLY #3888 /* ~"Summon them, then. I'd like to meet them."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.1 16.0 20.1
+  SAY #336 /* ~"Do you speak in jest? Perhaps you would like to share it with the guards." The Dustman takes a step back; he looks like he is about to summon the guards.~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #358 /* ~Snap his neck before he can call out.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #3885 /* ~Snap his neck before he can call out.~ */ GOTO 41
+  IF ~~ THEN REPLY #3886 /* ~"Summon them, then. I'd like to meet them."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.2 20.2
+  SAY #338 /* ~"Who are you here to see?"~ */
+  IF ~~ THEN REPLY #3922 /* ~"It is none of your concern."~ */ GOTO 7
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #342 /* ~"I am here to see Dhall."~ */ GOTO 10
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+!Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #343 /* ~"I am here to see Dhall."~ */ GOTO 11
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #33183 /* ~"I am here to see Deionarra."~ */ GOTO 13
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+!Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #33185 /* ~"I am here to see Deionarra."~ */ GOTO 12
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #33186 /* ~"I am here to see Soego."~ */ GOTO 15
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+!Global("Current_Area","GLOBAL",201)
+~ THEN REPLY #33187 /* ~"I am here to see Soego."~ */ GOTO 14
+  IF ~  CheckStatGT(Protagonist,12,INT)
+NumTimesTalkedTo(1)
+~ THEN REPLY #33189 /* ~Lie: "Uh... Adahn. Does he still work here, or...?"~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 21
+  IF ~  CheckStatGT(Protagonist,12,INT)
+NumTimesTalkedToGT(1)
+~ THEN REPLY #33190 /* ~Lie: "Uh... Adahn. Does he still work here, or...?"~ */ GOTO 21
+  IF ~~ THEN REPLY #33191 /* ~"Uh, no one. I misspoke."~ */ GOTO 20
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+  SAY #345 /* ~"Dhall is in the receiving room on this floor. I must warn you... Dhall is quite busy with his duties and is not in the best of health. Unless you have pressing business, I would not disturb him."~ */
+  IF ~~ THEN REPLY #347 /* ~"Very well. Thanks for the information."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2
+  SAY #346 /* ~"Dhall is most likely in the receiving room on the second floor. He is quite busy and not in the best of health. Unless you have pressing business, I would not disturb him."~ */
+  IF ~~ THEN REPLY #348 /* ~"Very well. Thanks for the information."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.4 19.1
+  SAY #349 /* ~"Deionarra? I know there is a woman interred in the memorial hall on the first floor. Could that be she?"~ */
+  IF ~~ THEN REPLY #352 /* ~"Most likely. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+  SAY #350 /* ~"Deionarra? I know there is a woman interred in the northwest memorial hall. Could that be she?"~ */
+  IF ~~ THEN REPLY #353 /* ~"Most likely. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 14 // from: 9.6
+  SAY #351 /* ~"I believe Soego is by the front gate on the first floor. He is acting as a guide during the anti-peak hours."~ */
+  IF ~~ THEN REPLY #354 /* ~"Very well. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.5
+  SAY #355 /* ~"I believe Soego is by the front gate. He is acting as a guide during the anti-peak hours."~ */
+  IF ~~ THEN REPLY #356 /* ~"Very well. Thank you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.3 20.3
+  SAY #357 /* ~"Who was being interred? Perhaps the services are taking place somewhere else in the Mortuary."~ */
+  IF ~~ THEN REPLY #359 /* ~"You misunderstand... the mistaken interment was ME."~ */ GOTO 8
+  IF ~~ THEN REPLY #360 /* ~"That could be. Where are these other services taking place?"~ */ GOTO 17
+  IF ~~ THEN REPLY #361 /* ~"Can you show me the way out?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1
+  SAY #362 /* ~"Several interment chambers line the perimeter of the Mortuary. They follow the curve of the wall on the first and second floors. Do you know the name of the deceased?"~ */
+  IF ~~ THEN REPLY #363 /* ~"No."~ */ GOTO 18
+  IF ~~ THEN REPLY #364 /* ~"Yes."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+  SAY #365 /* ~"Then you should check with one of the guides at the front gate. They can assist you."~ */
+  IF ~~ THEN REPLY #366 /* ~"Very well. Thank you."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.1
+  SAY #367 /* ~The Dustman waits.~ */
+  IF ~~ THEN REPLY #369 /* ~"Pardon... I misspoke. I don't know the name of the deceased."~ */ GOTO 20
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #370 /* ~"The name is Deionarra."~ */ GOTO 12
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #371 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 21
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #372 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #373 /* ~Lean in as if to whisper something to him, then snap his neck.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1335 /* ~Lean in as if to whisper something to him, then snap his neck.~ */ GOTO 45
+  IF ~~ THEN REPLY #1336 /* ~Run for it.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 20 // from: 9.9 19.0
+  SAY #374 /* ~"I see. Now, what is your business here?"~ */
+  IF ~~ THEN REPLY #375 /* ~"None of your concern."~ */ GOTO 7
+  IF ~~ THEN REPLY #376 /* ~"I woke up on one of the slabs in your preparation room."~ */ GOTO 8
+  IF ~~ THEN REPLY #377 /* ~"I'm here to see someone."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #378 /* ~"I was here for an interment, but there seems to have been a mistake."~ */ GOTO 16
+  IF ~~ THEN REPLY #379 /* ~Run for it.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.7 9.8 19.2 19.3
+  SAY #368 /* ~"That name is not familiar to me. Check with one of the guides at the front gate... they may be able to direct you better than I."~ */
+  IF ~~ THEN REPLY #380 /* ~"Very well. I will do that. Farewell."~ */ GOTO 48
+END
+
+IF ~  Global("Appearance","GLOBAL",2)
+~ THEN BEGIN 22 // from:
+  SAY #294 /* ~This pale-faced man is dressed in long dark robes. He has a slight musty smell about him. His expression is blank, and he seems absorbed in his duties.~ */
+  IF ~~ THEN REPLY #295 /* ~"Greetings."~ */ GOTO 23
+  IF ~~ THEN REPLY #297 /* ~Leave him in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+  SAY #381 /* ~He slowly turns, and his eyes flicker to your robes. "Greetings, fellow initiate."~ */
+  IF ~~ THEN REPLY #383 /* ~"Who are you?"~ */ GOTO 24
+  IF ~~ THEN REPLY #384 /* ~"What is this place?"~ */ GOTO 25
+  IF ~~ THEN REPLY #391 /* ~"I had some questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #392 /* ~Leave him in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #393 /* ~"That is as much my question as yours. Your face is unknown to me. Who are you?"~ */
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #450 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #1337 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 49
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3904 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3905 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 25 // from: 23.1
+  SAY #394 /* ~"This is the Mortuary..." The Dustman looks at you for a moment, as if digesting what you've just said. "What did you say your name was again?"~ */
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #399 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #3906 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 49
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3907 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3908 /* ~"My name is not your concern. I must take my leave. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 26 // from: 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
+  SAY #400 /* ~The Dustman waits patiently for you to continue.~ */
+  IF ~~ THEN REPLY #401 /* ~"Can you direct me out of here?"~ */ GOTO 27
+  IF ~~ THEN REPLY #402 /* ~"Do you know someone named Pharod?"~ */ GOTO 28
+  IF ~~ THEN REPLY #403 /* ~"I'm missing a journal. Have you seen it?"~ */ GOTO 39
+  IF ~~ THEN REPLY #404 /* ~"Never mind. Sorry to trouble you."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.0
+  SAY #405 /* ~"You may simply leave by the front gate. It is on the first floor."~ */
+  IF ~~ THEN REPLY #406 /* ~"I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #407 /* ~"Thank you. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 28 // from: 26.1
+  SAY #408 /* ~"That name..." The Dustman pauses for a moment. "That name *sounds* familiar... I seem to recall a Collector by that name. Dhall the Scrivener might know of him."~ */
+  IF ~~ THEN REPLY #409 /* ~"Collector?"~ */ GOTO 29
+  IF ~~ THEN REPLY #410 /* ~"Dhall?"~ */ GOTO 30
+  IF ~~ THEN REPLY #411 /* ~"I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #425 /* ~"Thank you for your time. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0
+  SAY #412 /* ~"Collectors... they gather those who have died on the streets of Sigil and bring them to the Mortuary..." The Dustman pauses, then frowns. "You are not from around here. Who are you?"~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #413 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3918 /* ~"I'm... new here. I'm... trying to get my bearings."~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3919 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3920 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.1
+  SAY #414 /* ~"Dhall is one of the most revered of our faction. I can think of none who have meditated more on the nature of the True Death nor one more deserving of it than he. He has much wisdom to impart. If you do not know him, I suggest you speak to him at your earliest opportunity. He will not linger much longer in the shadow of this existence."~ */
+  IF ~~ THEN REPLY #415 /* ~"*He will not linger long in the shadow of this existence?*"~ */ GOTO 31
+  IF ~  Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #416 /* ~"Where can I find Dhall?"~ */ GOTO 32
+  IF ~  !Global("Current_Area","GLOBAL",202)
+~ THEN REPLY #417 /* ~"Where can I find Dhall?"~ */ GOTO 33
+  IF ~~ THEN REPLY #418 /* ~"I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #33204 /* ~"Thank you for the information. I will speak to him."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 31 // from: 30.0 32.0 33.0
+  SAY #419 /* ~Nods. "Dhall is ill. He is old, even by githzerai standards. Death will no doubt follow the wasting sickness he has contracted. He is fortunate, indeed."~ */
+  IF ~~ THEN REPLY #420 /* ~"Githzerai standards?"~ */ GOTO 34
+  IF ~~ THEN REPLY #421 /* ~"What is a *githzerai?*"~ */ GOTO 35
+  IF ~~ THEN REPLY #422 /* ~"Fortunate?"~ */ GOTO 36
+  IF ~~ THEN REPLY #423 /* ~"I see. I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #424 /* ~"Thank you for your time. I must take my leave."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 32 // from: 30.1
+  SAY #427 /* ~"Dhall is in the receiving room in the northwest corner of this floor. I must warn you... Dhall is quite busy... the time that is not consumed by his duties is taken in large measure by his wasting sickness."~ */
+  IF ~~ THEN REPLY #428 /* ~"Is Dhall ill?"~ */ GOTO 31
+  IF ~~ THEN REPLY #429 /* ~"Thank you for your time. I must take my leave. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 33 // from: 30.2
+  SAY #426 /* ~"Dhall is most likely in the receiving room on the second floor. I would not take too much of his time, as he is quite busy... the time that is not consumed by his duties is taken in large measure by his wasting sickness."~ */
+  IF ~~ THEN REPLY #430 /* ~"Is Dhall ill?"~ */ GOTO 31
+  IF ~~ THEN REPLY #431 /* ~"Thanks for your time. I must take my leave of you. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.0
+  SAY #432 /* ~"Yes, the githzerai have a much longer lifespan than humans."~ */
+  IF ~~ THEN REPLY #433 /* ~"What is a *githzerai?*"~ */ GOTO 35
+  IF ~~ THEN REPLY #437 /* ~"How is Dhall's death fortunate? Is he not well-liked?"~ */ GOTO 36
+  IF ~~ THEN REPLY #438 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #440 /* ~"Thank you for your time. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 35 // from: 31.1 34.0
+  SAY #435 /* ~"The githzerai are..." The Dustman pauses, then frowns, staring at you intently. "You are not from around here. Who are you?"~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #436 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3909 /* ~"I'm... new here. I'm... trying to get my bearings."~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3910 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3911 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 36 // from: 31.2 34.1
+  SAY #439 /* ~"He is fortunate in that he will achieve the True Death. No longer must he dwell within the shadow of this existence."~ */
+  IF ~~ THEN REPLY #441 /* ~"And... that's a good thing?"~ */ GOTO 37
+  IF ~~ THEN REPLY #442 /* ~"I see. Very fortunate, indeed. I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #443 /* ~"I see. Well, I must take my leave of you. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+  SAY #444 /* ~The Dustman nods. "Yes." He frowns, then studies you intently. "You are not from around here. Who are you?"~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #445 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #446 /* ~"I'm... new here. I'm... trying to get my bearings."~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3912 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3913 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 38 // from:
+  SAY #447 /* ~"You are not one of us, are you? What are you doing here? Are you a member of the Anarchists? Or a spy of another faction? Guards! Guards!"~ */
+  IF ~~ THEN REPLY #448 /* ~"Dammit!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~  NumTimesTalkedTo(1)
+~ THEN REPLY #449 /* ~"Shhhh! I can't answer you over all that shouting!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+IncrementGlobal("Law","GLOBAL",-1)
+~ EXIT
+  IF ~  NumTimesTalkedToGT(1)
+~ THEN REPLY #1339 /* ~"Shhhh! I can't answer you over all that shouting!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 26.2
+  SAY #398 /* ~"A journal? I have not seen one."~ */
+  IF ~~ THEN REPLY #451 /* ~"I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #452 /* ~"I must take my leave. Farewell."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from:
+  SAY #1419 /* ~This pale-faced man is dressed in long dark robes. He has a slight musty smell about him. His expression is blank, and he seems absorbed in his duties.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Warning","GLOBAL",0)
+~ THEN REPLY #1420 /* ~"Greetings."~ */ EXTERN ~DMORTE~ 61
+  IF ~  NearbyDialog("DMorte")
+Global("Warning","GLOBAL",1)
+~ THEN REPLY #1421 /* ~"Greetings."~ */ EXTERN ~DMORTE~ 63
+  IF ~  NearbyDialog("DMorte")
+GlobalGT("Warning","GLOBAL",1)
+~ THEN REPLY #1422 /* ~"Greetings."~ */ GOTO 4
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1423 /* ~"Greetings."~ */ GOTO 4
+  IF ~~ THEN REPLY #1424 /* ~Leave him in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 1.0 5.1 7.1 8.1 47.1
+  SAY #1425 /* ~Before the Dustman can utter a word, your hands clamp onto his temples, and you twist his head sharply to the left.~ */
+  IF ~~ THEN REPLY #1426 /* ~"Can't have you alerting your friends..."~ */ DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0 45.0
+  SAY #1427 /* ~There is a *crack,* and the Dustman falls limp in your arms.~ */
+  IF ~  Global("Choke_Memory","GLOBAL",0)
+~ THEN REPLY #1428 /* ~"Better you than me, Dustie."~ */ DO ~SetGlobal("Choke_Memory","GLOBAL",1)
+PlaySoundNotRanged("SPTR_01")
+IncrementGlobal("Choke_Dustman","GLOBAL",1)
+IncrementGlobal("Choke","GLOBAL",1)
+Kill(Myself)
+Deactivate(Myself)
+AddexperienceParty(15)
+~ GOTO 43
+  IF ~  GlobalGT("Choke_Memory","GLOBAL",0)
+~ THEN REPLY #1429 /* ~"Better you than me, Dustie."~ */ DO ~IncrementGlobal("Choke_Dustman","GLOBAL",1)
+IncrementGlobal("Choke","GLOBAL",1)
+Kill(Myself)
+Deactivate(Myself)
+AddexperienceParty(15)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+  SAY #1430 /* ~To your surprise, the act seemed instinctual, as if you had done it many times before... with this thought comes the stirring of a memory, but it is not strong enough to surface.~ */
+  IF ~~ THEN REPLY #3882 /* ~Leave the body, continue on.~ */ DO ~Kill(Myself)
+GiveExperience(Protagonist,250)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 5.0 7.0 8.0 19.4 47.0
+  SAY #3883 /* ~You are not fast enough, and the Dustman dodges as you lunge for him. Taking a step back, he claps his hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #3884 /* ~"All right then..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1)
+PlaySoundNotRanged("AMB_M01")
+Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 19.5
+  SAY #3889 /* ~As you lean in to 'whisper' to him, the Dustman leans in as well. As he comes within arm's reach, your hands clamp onto his temples, and you twist his head sharply to the left. ~ */
+  IF ~~ THEN REPLY #3890 /* ~"Can't have you alerting your friends..."~ */ DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 46 // from: 24.3 25.3 29.3 35.3 37.3 49.3 50.1
+  SAY #3891 /* ~The Dustman seems suspicious. He looks like he's about to say something, then shakes his head slightly and returns to his duties.~ */
+  IF ~~ THEN REPLY #3892 /* ~Walk away.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
+  SAY #3893 /* ~The Dustman studies you carefully. "You are not one of us. What are you doing here? Are you a member of the Anarchists? Or a spy of another faction? This seems to be a matter for the guards..."~ */
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #3914 /* ~Snap his neck before he can call out.~ */ GOTO 44
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #3915 /* ~Snap his neck before he can call out.~ */ GOTO 41
+  IF ~~ THEN REPLY #3916 /* ~"No, no... it's not, uh... I mean, I'm not a spy... you see, I woke up on one of the slabs... and..."~ */ GOTO 2
+  IF ~~ THEN REPLY #3917 /* ~Leave. Quickly.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 48 // from: 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
+  SAY #3894 /* ~The Dustman nods, then returns to his duties.~ */
+  IF ~~ THEN REPLY #3895 /* ~Walk away.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 24.0 24.1 25.0 25.1
+  SAY #3896 /* ~The Dustman frowns. "That name is unfamiliar to me."~ */
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3898 /* ~"I'm a recent initiate. Forgive my ignorance."~ */ GOTO 50
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3899 /* ~"I'm... new here. I'm... trying to learn the routine."~ */ GOTO 47
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #3900 /* ~"Yeah, well... what's in a name? Keep the faith, uh, fellow initiate."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #3901 /* ~"If you can't help me, then I will find someone else who can. Farewell."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 50 // from: 29.0 35.0 37.0 49.0
+  SAY #3897 /* ~The Dustman's frown remains, but he nods slightly. "Very well. How may I be of service to you, initiate?"~ */
+  IF ~~ THEN REPLY #3902 /* ~"I had some questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #3903 /* ~"Nothing this day. Farewell."~ */ GOTO 46
+END
+
+IF ~  Global("Appearance","GLOBAL",0)
+~ THEN BEGIN 51 // from:
+  SAY #66674 /* ~The Dustman regards you with a stony gaze. "Are you lost?"~ */
+  IF ~  Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66675 /* ~"No, I am a member of the faction. I am just touring the Mortuary."~ */ GOTO 52
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66676 /* ~"Yes."~ */ GOTO 5
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66677 /* ~"No."~ */ GOTO 6
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66678 /* ~"No, I'm not lost. I had some questions..."~ */ GOTO 6
+  IF ~  !Global("Join_Dustmen","GLOBAL",1)
+~ THEN REPLY #66679 /* ~"Farewell."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+  SAY #66681 /* ~The Dustman stares at you for a moment, then nods. "Very well. If you need assistance, let me know."~ */
+  IF ~~ THEN REPLY #66682 /* ~"I will do so. Farewell."~ */ EXIT
+END

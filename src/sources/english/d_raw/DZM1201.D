@@ -1,0 +1,67 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1201.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1201~
+
+IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #34953 /* ~The number "1201" has been inked on the forehead of this corpse, and the ink has run down its eyes, cheeks and jaw. As you follow the ink tears down the corpse's face, you notice it has run into the stitching sealing the corpse's lips and has caught on what looks like the corner of a note stuck in the corpse's mouth.~ */
+  IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
+~ THEN REPLY #34954 /* ~Try and pull the note out.~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #34957 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 3
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #34958 /* ~Use Stories-Bones-Tell on the corpse.~ */ GOTO 4
+  IF ~~ THEN REPLY #34959 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #34962 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY #34955 /* ~The note has mingled with the ichor in the zombie's mouth. If you tried to pull the paper out through the cross-stitches, it would tear the paper to shreds. Hacking up the corpse to get at it looks like it will destroy the note - you'll need to find a delicate way to remove the stitches before removing the note.~ */
+  IF ~  PartyHasItem("Scalpel")
+~ THEN REPLY #34956 /* ~Use the scalpel to cut through the stitches.~ */ DO ~SetGlobal("1201_Note_Retrieved","GLOBAL",1)
+GiveItemCreate("N1201",Protagonist,1,0,0)
+AddexperienceParty(250)
+~ GOTO 2
+  IF ~  !PartyHasItem("Scalpel")
+~ THEN REPLY #45122 /* ~"Hmmm. Perhaps there might be something around that can slice through those stitches..."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY #34960 /* ~You deftly slice through the stitches sealing the corpse's mouth, and the jaw sags open. You carefully pull the note from the corpse's mouth... despite the condition of the paper, the writing on it still appears legible.
+
+^NNOTE: <READSTUFF>^-~ */
+  IF ~~ THEN REPLY #34961 /* ~Examine the corpse again.~ */ GOTO 5
+  IF ~~ THEN REPLY #45123 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 5.0 5.1 5.2
+  SAY #45124 /* ~The corpse's milky-white eyes stare at you vacantly.~ */
+  IF ~~ THEN REPLY #45125 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 5.3
+  SAY #45126 /* ~The corpse does not stir. It looks like it is too far gone to answer any of your questions.~ */
+  IF ~~ THEN REPLY #45127 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
+~ THEN BEGIN 5 // from: 2.0
+  SAY #45128 /* ~The number "1201" has been inked on the forehead of this corpse, and the ink has run down across its eyes, cheeks and jaw, making it look as if it is crying. Its jaw is hanging open, and a trail of ichor is trickling from the corner of its mouth.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45129 /* ~"Sorry about slicing those stitches... I just had to see what was in your mouth."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 3
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45130 /* ~"Sorry about slicing those stitches... I just had to see what was in your mouth."~ */ GOTO 3
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45131 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 3
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45132 /* ~Use Stories-Bones-Tell on the corpse.~ */ GOTO 4
+  IF ~~ THEN REPLY #45133 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #45134 /* ~Leave the corpse in peace.~ */ EXIT
+END

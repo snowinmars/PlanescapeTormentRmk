@@ -1,0 +1,265 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DGIANTSK.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DGIANTSK~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #292 /* ~Před tebou je obří kostlivec v ozdobném bronzovém brnění, které je vpleteno do jeho žeber a přes kostlivcovu hruď bylo vyryto několik propracovaných symbolů. Zajímalo by tě, odkud pochází; nemáš povědomí, že by existovali lidé takových rozměrů. Mohutná šavle v jeho rukou vypadá, jako by vážila tolik, co nákladní vagón. ~ */
+  IF ~~ THEN REPLY #293 /* ~"Přemýšlím nad tím, kdybych měl držet tu šavli chvíli v ruce. Asi bych se jejím držením hodně rychle unavil."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Giant_Skel_Mort_1","GLOBALLaw",-1)
+~ GOTO 1
+  IF ~~ THEN REPLY #1165 /* ~"Takže jak dlouho už tady stojíš? Dlouho?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Giant_Skel_Mort_1","GLOBALLaw",-1)
+~ GOTO 1
+  IF ~~ THEN REPLY #3996 /* ~Prozkoumej gigantického kostlivce... opatrně.~ */ GOTO 4
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #3997 /* ~Zkus zrušit kouzla, zabudovaná do kostlivcovy zbroje.~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #3998 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #3999 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4000 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4001 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4002 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #4003 /* ~Použij na kostlivce schopnost Kosti-vyprávějte.~ */ GOTO 1
+  IF ~~ THEN REPLY #4004 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 1 // from: 0.0 0.1 0.9
+  SAY #1166 /* ~Kostlivec vypadá, že je příliš dlouho mrtev na to, aby ti odpověděl na tvou otázku. A dokonce i jeho hlava je příliš vysoko na to, aby tě uslyšel.~ */
+  IF ~~ THEN REPLY #1167 /* ~Prozkoumej obřího kostlivce... opatrně.~ */ GOTO 4
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4035 /* ~Zkus zrušit kouzla, zabudovaná do kostlivcovy zbroje.~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4036 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4037 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4038 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4039 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4040 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4041 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
+  SAY #4005 /* ~Když ses dotkl kostlivce, po celé márnici začaly hlasitě zvonit zvony... a s rychlostí dobře namazaného blesku se kostlivec probudil a pozvedl meč k útoku!~ */
+  IF ~~ THEN REPLY #4042 /* ~"Budeš si přát, abys zůstal mrtvý, Kostro..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
+  SAY #4006 /* ~Už jsi to skoro udělal, ale náhle ses zarazil... a tvé oči jsou přitahovány ke kostlivcově zbroji. Něco na symbolech vyrytých do hrudního plátu tě zastavilo. Pokud jsou tihle kostlivci stráže, mohl bys je... probudit.~ */
+  IF ~~ THEN REPLY #4043 /* ~"To je riziko, které jsem ochotný podstoupit..."~ */ GOTO 2
+  IF ~~ THEN REPLY #4044 /* ~Prozkoumej gigantického kostlivce... opatrně.~ */ GOTO 4
+  IF ~~ THEN REPLY #4046 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 1.0 3.1 7.1 15.1 16.3
+  SAY #4007 /* ~Složité bronzové brnění je přišroubováno ke kostlivcovým žebrům a lopatkám. Když si prohlížíš kostru pod zbrojí, všiml sis, že stejné svorky, které drží zbroj, jsou použity i na všech kloubech kostlivce. Kolem jeho rukou a nohou jsou omotané silné kožené pásy, ve vzoru, který připomíná svaly a šlachy.~ */
+  IF ~~ THEN REPLY #4045 /* ~Prozkoumej brnění.~ */ GOTO 5
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4048 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4049 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4050 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4051 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4052 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4053 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #4008 /* ~Navzdory zjevnému věku zbroje vypadá stále dobře. Lehce září, vyryté symboly jakoby plavaly, lehce se pohybují pokaždé, když se na ně pokoušíš zaostřit pohled.~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4054 /* ~Prostuduj si symboly.~ */ GOTO 6
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4055 /* ~Prostuduj si symboly.~ */ GOTO 6
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+CheckStatLT(Protagonist,13,INT)
+~ THEN REPLY #64293 /* ~Prostudovat symboly.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4056 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4057 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4058 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4059 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4060 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4061 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0 5.1
+  SAY #4009 /* ~Téměř nevědomě jsi uvolnil svůj zrak a zahleděl se na symboly. Po chvíli se symboly přestaly hýbat a změnily se na sérii run. Vzor run ti připomíná řetěz... a s touhle myšlenkou sis náhle uvědomil, že tyto runy tvoří nějaké ochranné očarování.~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+~ THEN REPLY #4062 /* ~Prozkoumej runy a zkus si vzpomenout na kouzlo.~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,16,INT)
+~ THEN REPLY #4063 /* ~Prozkoumej runy a zkus si vzpomenout na kouzlo.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4064 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4065 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4066 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4067 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4068 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4069 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.2 6.1 7.2
+  SAY #4010 /* ~Chvíli studuješ runy, ale nedaří se ti kouzlo rozšifrovat. Vypadá dost komplikovaně a ty máš problémy s koncentrací.~ */
+  IF ~  PartyHasItem("TomeBA")
+~ THEN REPLY #64294 /* ~Porovnat runy s runami v Knize kostí a popela. ~ */ GOTO 15
+  IF ~~ THEN REPLY #4070 /* ~Prozkoumej kostlivce ještě jednou.~ */ GOTO 4
+  IF ~~ THEN REPLY #4071 /* ~Prozkoumej ještě jednou runy.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4072 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4073 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4074 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4075 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4076 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4077 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.0
+  SAY #4011 /* ~Studuješ runy, jak se vlní po povrchu hrudního plátu. Na nejzákladnější úrovni jsou runy očarování slabší zbroje, ale několik run ve tvaru lebky a sférické stopy kolem okrajů zbroje znamenají, že je do kouzla přimotáno další nekromantické a ochranné zaklínadlo. Pokud se kostlivce dotkneš, pravděpodobně ho probudíš... a on se bude bránit.~ */
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4079 /* ~Podívej se, jestli můžeš kouzla nějak rozrušit.~ */ DO ~SetGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+AddexperienceParty(500)
+~ GOTO 9
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4080 /* ~Podívej se, jestli můžeš kouzla nějak rozrušit.~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4081 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4082 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4083 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4084 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4085 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4078 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 0.3 1.1 8.0 8.1
+  SAY #4012 /* ~Máš podezření že smazání runového vzoru by mohlo uvolnit zaklínadla, ale vypadá to složitě... vzor je komplikovaný a seškrábnutí špatné části by mohlo kostlivce probudit.~ */
+  IF ~  PartyHasItem("TomeBA")
+~ THEN REPLY #64296 /* ~Porovnej vzory s kouzly v Knize kostí a popela, podívej se, jestli se dá určit, jak by mohla být obrana prolomena.~ */ GOTO 16
+  IF ~~ THEN REPLY #4086 /* ~Nejprve zruš runy, které drží brnění, potom nekromantické a nakonec ochranné očarování.~ */ GOTO 10
+  IF ~  GlobalLT("Giant_Skeleton_Enchant","GLOBAL",2)
+~ THEN REPLY #4087 /* ~Nejprve zruš runy ochrany, potom jdi pozpátku po runovém vzoru a zruš necromancerské očarování brnění.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 11
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",1)
+~ THEN REPLY #4088 /* ~Nejprve zruš runy ochrany, potom jdi pozpátku po runovém vzoru a zruš necromancerské očarování brnění.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 13
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4089 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4090 /* ~Zkus vytáhnout kostlivci meč z rukou.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4091 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4092 /* ~Zkus vyrvat šrouby, které drží kostlivcovo brnění.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4093 /* ~"Hej, co TENHLE kostlivec, Morte? Bude ti jako tělo stačit?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4094 /* ~Nechej kostlivce být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1 16.0
+  SAY #4013 /* ~Když jsi začal mazat runy, zdobící hrudní plát, začaly po celé márnici zvonit zvony... a s kostlivec bleskově procitá a s napřaženým mečem útočí!~ */
+  IF ~~ THEN REPLY #4095 /* ~"Budeš si přát, abys zůstal mrtvý, Kostro..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2 16.1
+  SAY #4014 /* ~Ze začátku je práce složitá a pořádně ti brnká na nervy, ale tvá mysl se postupně zaostřuje a runy se pod tvým útokem začínají rozplétat. Během několika minut je gigantický skeleton zbaven kouzel, která ho drží pohromadě. Rozpadl se a dopadá na zem za zvuku tříštěných kostí a silného cinkání kovu!~ */
+  IF ~~ THEN REPLY #4096 /* ~"Zatracená hromada kostí!"~ */ DO ~AddexperienceParty(800)
+~ GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY #4015 /* ~Chvíli čekáš, ale na zvuk nikdo nezareagoval. Rychle jsi rozložil části kostlivce po zemi. Většina je příliš stará anebo příliš těžká, aby se daly použít, ale našel jsi kus kostlivcova prsního plátu s většinou run. Máš pocit, že by se to mohlo hodit.~ */
+  IF ~~ THEN REPLY #4097 /* ~"Tak si to zkrátka vezmu..."~ */ DO ~GiveItemCreate("Breast1",Protagonist,1,1,0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3 16.2
+  SAY #4016 /* ~Zrušení kouzla je tentokrát jednodušší, runy se pod tvým útokem rychle rozpletly. Během několika minut přišel kostlivec o kouzla, která ho držela pohromadě. Pamatuješ si, co se stalo poprvé, takže kostlivce chytáš, než spadne na zem a pomalu ho pokládáš. Je svinsky těžký.~ */
+  IF ~~ THEN REPLY #4098 /* ~"Uvidíme, co tady máme tentokrát..."~ */ DO ~AddexperienceParty(800)
+~ GOTO 14
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY #4017 /* ~Rychle ses prohrabal zbytky kostlivce a opět jsi našel kus hrudního plátu... stejně jako ten první na sobě ještě má fragment runového nápisu. Mohlo by se to ještě hodit.~ */
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",3)
+~ THEN REPLY #4099 /* ~"Tak si to zkrátka vezmu..."~ */ DO ~GiveItemCreate("Breast2",Protagonist,1,1,0)
+~ EXIT
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",4)
+~ THEN REPLY #4100 /* ~"Tak si to zkrátka vezmu..."~ */ DO ~GiveItemCreate("Breast3",Protagonist,1,1,0)
+~ EXIT
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",5)
+~ THEN REPLY #4101 /* ~"Tak si to zkrátka vezmu..."~ */ DO ~GiveItemCreate("Breast4",Protagonist,1,1,0)
+Kill(Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 7.0
+  SAY #64295 /* ~Radíš se se svazkem a porovnáváš nákresy se značkami na hrudním plátu. Pokud to správně chápeš, runy představují kouzlo malé zbroje, ale pár run ve tvaru lebky a kulovité nákresy podél hran zbroje naznačují, že v nich je také vetkáno několik silnějších nekromantických a ochraných kouzel. Dotknutí se kostlivce pravděpodobně způsobí, že se vzbudí... a začne se bránit.~ */
+  IF ~~ THEN REPLY #64298 /* ~Poradit se s Knihou kostí a popela, podívej se, jestli se dá určit, jak by mohlo být kouzlo zlomeno.~ */ GOTO 16
+  IF ~~ THEN REPLY #64299 /* ~Nech runy být a prozkoumej kostlivce znovu.~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 16 // from: 9.0 15.0
+  SAY #64297 /* ~Podle toho co jsi ze svazku zjistil se zdá, že kouzla zbroje platí jen pro hrudní plát, nekromantické kouzlo umožnuje kostlivci obživnout, ale jsou to ochranná kouzla, která mu propůjčí možnost omezeného vnímání svého okolí. Hádáš, že kdyby si poškodil jeho ochranu, bude to chápáno jako útok... ledaže bys ho učinil slepým na tvou přítomnost.~ */
+  IF ~~ THEN REPLY #64300 /* ~Nejprve znič runy udržující kouzlo zbroje, pak nekromantické, a pak ochranné. ~ */ GOTO 10
+  IF ~  GlobalLT("Giant_Skeleton_Enchant","GLOBAL",2)
+~ THEN REPLY #64301 /* ~Nejprve znič runy udržující kouzlo zbroje, pak v práci kvůli typu run přestaneš, anuluješ nekromancii, pak ochranné kouzlo.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 11
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",1)
+~ THEN REPLY #64302 /* ~Nejprve znič runy udržující kouzlo zbroje, pak v práci kvůli typu run přestaneš, anuluješ nekromancii, pak ochranné kouzlo.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 13
+  IF ~~ THEN REPLY #64303 /* ~Nech runy být a prozkoumej kostlivce znovu.~ */ GOTO 4
+END

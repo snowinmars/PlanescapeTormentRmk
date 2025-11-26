@@ -1,0 +1,39 @@
+IF ~  HasItem("Bandage","ZM396")
+~ THEN BEGIN 0 // from:
+SAY #34931 /* ~이 시체는 철판들 사이를 왔다갔다하며 그 위에 누워 있는 시체들을 붕대로 감고 있다. 그의 왼쪽 관자놀이에는 "396"이란 번호가 새겨져 있으며, 그의 입은 꿰매어져 있다. 당신은 시체의 손에 붕대가 들려 있다는 사실을 눈치챈다... 붕대는 쓸만해 보인다.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #34932 /* ~"그 붕대 좀 빌려도 괜찮겠소?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #34935 /* ~"그 붕대 좀 빌려도 괜찮겠소?"~ */ GOTO 1
+IF ~~ THEN REPLY #34936 /* ~좀비로부터 붕대를 풀어서 떼어내려고 시도한다.~ */ DO ~GiveItem("Bandage",Protagonist) ~ GOTO 3
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #34937 /* ~"난 당신이 좀비가 아니라는 것을 아오. 당신은 아무도 속이지 못할 거요."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #34940 /* ~시체에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 2
+IF ~~ THEN REPLY #34941 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXIT
+IF ~~ THEN REPLY #45106 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.3 4.0 4.1 4.2
+SAY #34933 /* ~시체는 계속 당신을 쳐다본다.~ */
+IF ~  HasItem("Bandage","ZM396") ~ THEN REPLY #34934 /* ~좀비로부터 붕대를 풀어서 떼어내려고 시도한다.~ */ DO ~GiveItem("Bandage",Protagonist) ~ GOTO 3
+IF ~~ THEN REPLY #45107 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4 4.3
+SAY #34938 /* ~시체는 움직이지 않는다. 당신의 질문에 대답할 정도의 정신은 이제 그것에게는 남아있지 않은 것 같다.~ */
+IF ~~ THEN REPLY #34939 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.2 1.0
+SAY #45108 /* ~당신은 손을 내밀어 시체의 손으로부터 붕대를 빼앗는다. 시체는 전혀 눈치를 채지 못하고 시체를 붕대로 감는 동작을 계속한다.~ */
+IF ~~ THEN REPLY #45109 /* ~시체를 다시 조사한다.~ */ GOTO 4
+IF ~~ THEN REPLY #45110 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~  !HasItem("Bandage","ZM396")
+~ THEN BEGIN 4 // from: 3.0
+SAY #45111 /* ~이 시체는 철판들 사이를 왔다갔다하며 그 위에 누워 있는 시체들을 '붕대로 감고' 있다. 그는 붕대가 없는데도 불구하고 자신의 임무를 계속 수행하고 있다. 그의 왼쪽 관자놀이에는 "396"이란 번호가 새겨져 있으며, 그의 입은 꿰매어져 있다. ~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #45112 /* ~"당신으로부터 붕대를 빼앗아 미안하오, 하지만 여기 있는 시체들보다는 내게 붕대가 더 필요하오."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45113 /* ~"당신으로부터 붕대를 빼앗아 미안하오, 하지만 여기 있는 시체들보다는 내게 붕대가 더 필요하오."~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45114 /* ~"난 당신이 좀비가 아니라는 것을 아오. 당신은 아무도 속이지 못할 거요."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45115 /* ~시체에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 2
+IF ~~ THEN REPLY #45116 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXIT
+IF ~~ THEN REPLY #45117 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END

@@ -1,0 +1,33 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #35210 /* ~Toto ženské tělo je v příšerném stavu. Její kůži pokrývá něco, co vypadá jako stovky malých kousnutí - nejspíš od krys. Podle stavu tkáně kolem ran soudíš, že byly nejspíš způsobeny před preparací těla. Její rty jsou pevně sešity a na její tváři je temně modrým inkoustem napsáno číslo "444".~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #35211 /* ~"Takže... cos dělala poslední dobou?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #35228 /* ~"Takže... cos dělal poslední dobou?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #35229 /* ~"Vím, že nejsi zombie. Takhle nikoho neoblbneš."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #35230 /* ~Použij na mrtvole tvou dovednost Kosti-vyprávějte.~ */ GOTO 2
+IF ~  NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35235 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXTERN ~DMORTE~ 358
+IF ~  NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35236 /* ~Nechej mrtvolu být.~ */ EXTERN ~DMORTE~ 358
+IF ~  Global("Morte_Quip","GLOBAL",1) ~ THEN REPLY #35237 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+IF ~  Global("Morte_Quip","GLOBAL",1) ~ THEN REPLY #35238 /* ~Nechej mrtvolu být.~ */ EXIT
+IF ~  !NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35239 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+IF ~  !NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35240 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #35212 /* ~Mrtvola na tebe dál zírá.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35213 /* ~"Sbohem tedy."~ */ EXTERN ~DMORTE~ 358
+IF ~  Global("Morte_Quip","GLOBAL",1) ~ THEN REPLY #35226 /* ~"Sbohem tedy."~ */ EXIT
+IF ~  !NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35227 /* ~"Sbohem tedy."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #35231 /* ~Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35232 /* ~"Sbohem tedy."~ */ EXTERN ~DMORTE~ 358
+IF ~  Global("Morte_Quip","GLOBAL",1) ~ THEN REPLY #35233 /* ~"Sbohem tedy."~ */ EXIT
+IF ~  !NearbyDialog("DMorte") Global("Morte_Quip","GLOBAL",0) ~ THEN REPLY #35234 /* ~"Sbohem tedy."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+SAY #35241 /* ~Mrtvola neodpovídá. Asi už shnila příliš, aby byla schopná odpovídat na otázky.~ */
+END

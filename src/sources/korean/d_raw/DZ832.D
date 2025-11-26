@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ832.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ko_KR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ832~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35146 /* ~비록 이 시체의 피부가 지금은 건조하고 가죽 같지만, 생전에 그녀는 아름다운 중년여성이었음이 틀림없다. 이 시체를 처리한 사람도 그녀를 동정했던지 그녀의 입술을 표가 별로 나지 않도록 깨끗하게 꿰맸으며, 이마의 "832"란 번호 역시 우아한 글씨체로 새겼다. ~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #35147 /* ~"그래... 나중에 다른 약속이라도 있소?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #35164 /* ~"그래... 나중에 다른 약속이라도 있소?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #35165 /* ~"난 당신이 좀비가 아니라는 것을 아오. 당신은 아무도 속이지 못할 거요."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35166 /* ~시체에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 2
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35171 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXTERN ~DMORTE~ 350
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35172 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXTERN ~DMORTE~ 350
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35173 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35174 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35175 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35176 /* ~시체를 그냥 내버려 두고 떠난다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #35148 /* ~시체는 계속 당신을 쳐다본다.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35149 /* ~"그럼 안녕히 계시오."~ */ EXTERN ~DMORTE~ 350
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35162 /* ~"그럼 안녕히 계시오."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35163 /* ~"그럼 안녕히 계시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #35167 /* ~시체는 아무런 응답을 하지 않는다. 당신의 질문에 대답할 수 있을 정도의 정신은 이미 그것에게는 남아있지 않는 듯하다.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35168 /* ~"그럼 안녕히 계시오."~ */ EXTERN ~DMORTE~ 350
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35169 /* ~"그럼 안녕히 계시오."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35170 /* ~"그럼 안녕히 계시오."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #35177 /* ~시체는 아무런 응답을 하지 않는다. 당신의 질문에 대답할 수 있을 정도의 정신은 이미 그것에게는 남아있지 않는 듯하다.~ */
+END

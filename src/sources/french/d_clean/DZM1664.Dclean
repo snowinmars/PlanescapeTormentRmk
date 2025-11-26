@@ -1,0 +1,42 @@
+IF ~  True()
+~ THEN BEGIN 0 // from: 5.0
+SAY #47002 /* ~L'impressionnant cadavre se dresse dans un coin de la pièce, face au mur. L'homme était manifestement jeune et solidement charpenté. S'il faut en croire l'état de sa dépouille, il est mort récemment. Le numéro '1664' a été récemment cousu sur son front. Ce zombi a l'air de faire office de bibliothécaire, à en juger par le nombre de livres qu'il porte.~ */
+IF ~  Global("Page_Taken","GLOBAL",0) ~ THEN REPLY #47003 /* ~Examine les livres.~ */ GOTO 3
+IF ~  Global("Page_Taken","GLOBAL",1) ~ THEN REPLY #47004 /* ~Examine les livres une nouvelle fois.~ */ GOTO 6
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #47005 /* ~"Je sais que tu n'es pas un zombi, tu sais. Personne n'est dupe."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #47006 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+IF ~~ THEN REPLY #47007 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXIT
+IF ~~ THEN REPLY #47008 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.2 6.0
+SAY #47009 /* ~Le cadavre fixe le mur d'un regard vide.~ */
+IF ~~ THEN REPLY #47010 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #47011 /* ~Il ne bouge pas. Bien que mort depuis peu, il semble incapable de répondre à tes questions.~ */
+IF ~~ THEN REPLY #47012 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+SAY #47013 /* ~Ces livres semblent être de vieux registres de la Morgue qui ne présentent pas le moindre intérêt. Toutefois, en les feuilletant, tu remarques une feuille volante coincée entre deux d'entre eux… et tu as le sentiment que quelqu'un l'a glissée là pour la cacher.~ */
+IF ~~ THEN REPLY #47014 /* ~Prends la page.~ */ DO ~GiveItemCreate("Logpage",Protagonist,1,0,0) SetGlobal("Page_Taken","GLOBAL",1) ~ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+SAY #47015 /* ~Cette page ne semble pas avoir été arrachée à l'un des registres, mais plutôt à un carnet. La déchirure est nette, ce qui indique vraisemblablement qu'elle a été sciemment découpée, par exemple à l'aide d'un couteau.~ */
+IF ~~ THEN REPLY #47016 /* ~Lis-la. ~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+SAY #47017 /* ~Tu prends le temps de lire la page… il s'agit d'une liste de corps apportés à la Morgue et conservés à la Réception. Les diverses entrées concernent des arrivées plutôt récentes.  ^NREMARQUE : <READSTUFF>^-~ */
+IF ~~ THEN REPLY #47018 /* ~Examine une nouvelle fois le zombi.~ */ GOTO 0
+IF ~~ THEN REPLY #47019 /* ~Prends la page et va-t'en.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.1
+SAY #47021 /* ~Ces livres semblent être de vieux registres de la Morgue, ils ne présentent pas le moindre intérêt. Tu parcours à nouveau les textes, en vain.~ */
+IF ~~ THEN REPLY #47022 /* ~"Alors, dis-moi, comment es-tu devenu bibliothécaire ? Tous les autres boulots étaient déjà pris ?"~ */ GOTO 1
+IF ~~ THEN REPLY #47023 /* ~Laisse le zombi tranquille.~ */ EXIT
+END

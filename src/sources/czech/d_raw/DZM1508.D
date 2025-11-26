@@ -1,0 +1,35 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1508.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1508~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #46745 /* ~Čelo této velice svalnaté mrtvoly tvoří masa zjizvené tkáně, jako kdyby zaživa používal svou hlavu na mlácení protivníků, či si v praxi ověřoval, zda platí přísloví Hlavou zeď neprorazíš. Přes čelo je rudou nití vyšito číslo "1508", ústa jsou pevně sešita hrubou černou nití. Lehce páchne balzamovací tekutinou.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #46746 /* ~"Takže... dělo se tady v poslední době něco zajímavého?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #46749 /* ~"Takže... dělo se tady v poslední době něco zajímavého?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #46750 /* ~"Vím, že nejsi zombie. Nikoho neoblbneš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #46751 /* ~Použij na těle svou schopnost Kosti-Vyprávějte~ */ GOTO 2
+  IF ~~ THEN REPLY #46754 /* ~"Skvěle jsme si pokecali. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #46755 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #46747 /* ~Mrtvola na tebe dál zírá.~ */
+  IF ~~ THEN REPLY #46748 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #46752 /* ~Mrtvola neodpovídá. Asi už shnila příliš.~ */
+  IF ~~ THEN REPLY #46753 /* ~Nechej mrtvolu být.~ */ EXIT
+END

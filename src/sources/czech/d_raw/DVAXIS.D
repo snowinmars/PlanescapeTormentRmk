@@ -1,0 +1,939 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DVAXIS.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DVAXIS~
+
+IF ~  Global("Vaxis","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #453 /* ~Belhající mrtvola na tebe civí svým prázdným pohledem. Má do čela vyryto číslo "821" a rty má sešity. Z těla vychází slabý zápach formaldehydu.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #454 /* ~"Tak... viděl jsi tu něco zajímavého?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 5
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #455 /* ~"Tak... viděl jsi tu něco zajímavého?"~ */ GOTO 5
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #456 /* ~"Já vím, že nejsi zombie, víš. Nikoho tím neoblafneš."~ */ GOTO 5
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #457 /* ~Použít tvojí schopnost Kosti-vyprávějte na mrtvolu.~ */ GOTO 1
+  IF ~~ THEN REPLY #458 /* ~"Bylo to skvělé s tebou pokecat. Sbohem."~ */ GOTO 5
+  IF ~~ THEN REPLY #459 /* ~Nechej mrtvolu na pokoji.~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 1 // from: 0.3
+  SAY #460 /* ~Docela náhodou, nevypadá to, že by tvoje schopnost na tohle tělo fungovala. ~ */
+  IF ~~ THEN REPLY #461 /* ~Hrábni mu do oka.~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #462 /* ~Nechej mrtvolu na pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY #463 /* ~Mrtvola vydala tlumené zasténání, když jsi jí sáhl do oka a prudce zdvihla ruce, aby si zakryla obličej. Začíná si mumlat různé nemravné nadávky, které jsou směřovány tobě. ~ */
+  IF ~~ THEN REPLY #464 /* ~"Ty nejsi zombie! Kdo jsi?"~ */ JOURNAL #64513 /* ~Jedna ze zombie v druhém patře Márnice není ve skutečnosti zombie, ale muž v přestrojení. Proč se někdo dobrovolně přestrojuje za zombie je pro mě záhadou. ~ */ GOTO 6
+  IF ~~ THEN REPLY #465 /* ~"Proč jsi maskovanej jako mrtvola?"~ */ JOURNAL #64513 /* ~Jedna ze zombie v druhém patře Márnice není ve skutečnosti zombie, ale muž v přestrojení. Proč se někdo dobrovolně přestrojuje za zombie je pro mě záhadou. ~ */ GOTO 6
+  IF ~~ THEN REPLY #466 /* ~Odejít. Rychle.~ */ JOURNAL #64513 /* ~Jedna ze zombie v druhém patře Márnice není ve skutečnosti zombie, ale muž v přestrojení. Proč se někdo dobrovolně přestrojuje za zombie je pro mě záhadou. ~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.2 5.2
+  SAY #467 /* ~Jak se chystáš k odchodu, 'zombie' si něco mumlá... vypadá to jako by se pokoušela něco říct, ale je to pro ni těžké, když má sešité rty. "Kdu ty? Cu ty chcuš?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #468 /* ~"Hledám odtud cestu ven. Můžeš mi pomoct?"~ */ GOTO 7
+  IF ~~ THEN REPLY #469 /* ~"Kdo jsi?"~ */ GOTO 7
+  IF ~~ THEN REPLY #470 /* ~"Řekni mi kdo jsi nebo zavolám stráže."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #472 /* ~Lež: "Proč... já jsem tě hledal."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 24
+  IF ~~ THEN REPLY #473 /* ~"Zeptám se na pár otázek, *zombie.* Řekni mi, kdo jsi, nebo se z převleku stane skutečnost."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 7
+  IF ~~ THEN REPLY #474 /* ~"Promiň, že jsem tě otravoval... ať už jsi kdokoliv. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
+  SAY #471 /* ~Když už jsi na odchodu, zombie ze svého hrdla vydá slabé zavrčení. "Tu nic neřúkneš o mně. Tu bút zticha. NIC neřúct Spaluvačům." Dává si prst před pusu. "Sssssst." Pak přejíždí prstem přes své hrdlo. "Nebu já tě navždu uspat. Slušíš mě?"~ */
+  IF ~~ THEN REPLY #475 /* ~"Tak ty si mi VYHROŽOVAL? Tak to jo... připrav se na smrrrrrrrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #476 /* ~Lež: "Vůbec jsem ani trošku *nepomyslel*, že bych o tobě řekl Spalovačům."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_2","GLOBALGood",-1)
+~ EXIT
+  IF ~~ THEN REPLY #477 /* ~Pravda: "Slibuju, že o tobě Spalovačům neřeknu."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_1","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_1","GLOBALGood",1)
+~ EXIT
+  IF ~~ THEN REPLY #478 /* ~"Jistěže. Ty si hleď svých věcí a já se budu starat o věci svoje."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.0 0.1 0.2 0.4
+  SAY #479 /* ~Jak jsi oslovil zombie, tak vypadá dost překvapeně. "Eh? Cu?"~ */
+  IF ~~ THEN REPLY #480 /* ~"Ty nejsi zombie! Kdo jsi?'~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ JOURNAL #64513 /* ~Jedna ze zombie v druhém patře Márnice není ve skutečnosti zombie, ale muž v přestrojení. Proč se někdo dobrovolně přestrojuje za zombie je pro mě záhadou. ~ */ GOTO 6
+  IF ~~ THEN REPLY #481 /* ~"Proč jsi převlečený jako mrtvola?"~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ JOURNAL #64513 /* ~Jedna ze zombie v druhém patře Márnice není ve skutečnosti zombie, ale muž v přestrojení. Proč se někdo dobrovolně přestrojuje za zombie je pro mě záhadou. ~ */ GOTO 6
+  IF ~~ THEN REPLY #482 /* ~Odejdi. Rychle.~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ JOURNAL #64513 /* ~Jedna ze zombie v druhém patře Márnice není ve skutečnosti zombie, ale muž v přestrojení. Proč se někdo dobrovolně přestrojuje za zombie je pro mě záhadou. ~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 2.1 5.0 5.1
+  SAY #483 /* ~'Zombie' se pokouší komunikovat skrz sešité rty; má podivný napůl vystrašený a napůl naštvaný výraz v obličeji. "Kdu TY? Cu ty chcuš?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #484 /* ~"Hledám odtud cestu ven. Můžeš mi pomoct?"~ */ GOTO 7
+  IF ~~ THEN REPLY #485 /* ~"Kdo jsi?"~ */ GOTO 7
+  IF ~~ THEN REPLY #486 /* ~"Řekni mi, kdo jsi nebo zavolám stráže."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #487 /* ~Lež: "Proč... já jsem tě hledal."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 24
+  IF ~~ THEN REPLY #488 /* ~"Zeptám se na pár otázek, *zombie.* Řekni mi, kdo jsi, nebo se z převleku stane skutečnost."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 7
+  IF ~~ THEN REPLY #489 /* ~"Promiň, že jsem tě otravoval... ať už jsi kdokoliv. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
+  SAY #490 /* ~Zombie nevypadá, že by tě slyšel. Prohlíží si tě na chvíli shora dolů a pak se zamračí. "Cu poslucháš?" Jeho oči se podezíravě zúžily. "Tu špuhujuš Spaluvuču?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #491 /* ~"Ne. Pokouším se utéct."~ */ GOTO 12
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #492 /* ~"Nejsem špeh. Zapadnul jsem sem náhodou. Můžeš mi pomoct odsud?"~ */ GOTO 31
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #493 /* ~Lež: "Ano, špehuju... Spalovače."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_2","GLOBALLaw",-1)
+~ GOTO 8
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #494 /* ~Lež: "Ano, špehuju... Spalovače."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_2","GLOBALLaw",-1)
+~ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #495 /* ~"Proč mi neřekneš co TU děláš než zavolám stráže."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #496 /* ~"Proč mi neřekneš co TU děláš než zavolám stráže."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #1306 /* ~"Podívej, já tu pokládám otázky *zombie.* Řekni mi, co tu děláš, nebo se všichni dozví, co skrývá pod tvým převlekem."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #1348 /* ~"Podívej, já tu pokládám otázky *zombie.* Řekni mi, co tu děláš, nebo se všichni dozví, co skrývá pod tvým převlekem."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #1349 /* ~"Musím odejít. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.2
+  SAY #1350 /* ~Pozorně tě studuje. "Ty fpeh? Ty deláf frandu?"~ */
+  IF ~~ THEN REPLY #4671 /* ~"Huh?"~ */ GOTO 10
+  IF ~~ THEN REPLY #1352 /* ~"Srandu?"~ */ GOTO 10
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1359 /* ~Lež: "Ano... zrovna jsem tě hledal. Jsem rád, že jsem tě konečně našel."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 24
+  IF ~  CheckStatGT(Protagonist,11,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #1360 /* ~Lež: "Ano... ale teď o tom nemůžu moc mluvit. Co tu *máš* za úkol?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1361 /* ~Lež: "Ano... ale teď o tom nemůžu moc mluvit. Co tu děláš?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~~ THEN REPLY #1362 /* ~"No, Teď nemám čas s tebou mluvit... možná někdy jindy."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 9 // from: 7.3
+  SAY #1363 /* ~Pozorně tě studuje. "Ty špeh? Ty děláš srandu?"~ */
+  IF ~~ THEN REPLY #4359 /* ~"Huh?"~ */ EXTERN ~DMORTE~ 85
+  IF ~~ THEN REPLY #4360 /* ~"Buňka?"~ */ EXTERN ~DMORTE~ 85
+END
+
+IF ~~ THEN BEGIN 10 // from: 8.0 8.1
+  SAY #4361 /* ~Zamračil se a pak na tebe zasyčel. "Ty né fpíón!" Mávl rukou. "Vmiv! Vmivni!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4362 /* ~"Nejdřív mi řekni, co tady děláš, nebo zavolám stráže."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4363 /* ~"Nejdřív mi řekni, co tady děláš, nebo zavolám stráže."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4364 /* ~"Odpověz na moje zatracené otázky, nebo z tebe udělám pravou zombie dřív, než si třikrát uprdneš."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4365 /* ~"Odpověz na moje zatracené otázky, nebo z tebe udělám pravou zombie dřív, než si třikrát uprdneš."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4367 /* ~"Dobře, dobře... Já jdu."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 11 // from:
+  SAY #4366 /* ~Zombie na tohle přikývla. Máš pocit, že za vším tím maskováním vidíš pýchu.~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4368 /* ~"Můžeš mi pomoct s útěkem?"~ */ GOTO 12
+  IF ~~ THEN REPLY #4369 /* ~"Tak co tady děláš?"~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #4370 /* ~Lži: "Takže ty špehuješ pro Anarchisty? No, já taky špehuju spalováky... ale teď o tom nemůžu mluvit, jestli mi rozumíš. Co tady máš za úkol ty?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4371 /* ~Lži: "Takže ty špehuješ pro Anarchisty? No, já taky špehuju spalováky... ale teď o tom nemůžu mluvit. Co tady děláš?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~~ THEN REPLY #4372 /* ~"Uh, zrovna nemám čas na pokec... možná později."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 12 // from: 7.0 11.0
+  SAY #4373 /* ~Vypadá to, že jsi zombie zaujal. "Máf problémy? Fo fe ftalo?"~ */
+  IF ~~ THEN REPLY #4374 /* ~"Probudil jsem se na jednom z kamenů nahoře."~ */ GOTO 13
+  IF ~~ THEN REPLY #4375 /* ~"Já... zůstal jsem tady uvězněný. Můžeš mi pomoct?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4376 /* ~"Možná ti o tom řeknu někdy jindy."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+  SAY #4377 /* ~Zombie se na tebe dívá, jako bys zešílel. "Ty blávnifej?"~ */
+  IF ~~ THEN REPLY #4378 /* ~"Ano, jsem blávnífej. Hodně blávnifej."~ */ GOTO 14
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4379 /* ~"'Blávnifej?' Co je to?"~ */ GOTO 16
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4380 /* ~"'Blávnifej?' Co je to?"~ */ EXTERN ~DMORTE~ 87
+  IF ~~ THEN REPLY #4381 /* ~"Vím, že to zní neuvěřitelně, ale vážně ti nelžu: Vstal jsem z mrtvých na jednom z náhrobků."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1)
+~ GOTO 14
+  IF ~~ THEN REPLY #4382 /* ~"Uh, ne... vlastně, tak nějak jsem tu uvíznul. Můžeš mi pomoct?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4383 /* ~"Zapomeň, žes mě potkal. Budu muset jít."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0 13.3 15.0
+  SAY #4384 /* ~Dívá se na tebe, pak zasyčel a mávl rukou. "Fef blávnifej! Vypadni vode mně!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4385 /* ~"Já nikam nejdu. Řekni mi, co tady děláš, nebo zavolám stráže."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4386 /* ~"Já nikam nejdu. Řekni mi, co tady děláš, nebo zavolám stráže."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4387 /* ~"Nejdřív mi odpovíš na moje zatracené otázky, nebo to tvoje maskování bude pravé. Pravá zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4388 /* ~"Nejdřív mi odpovíš na moje zatracené otázky, nebo to tvoje maskování bude pravé. Pravá zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4389 /* ~"Dobře, dobře... sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 15 // from:
+  SAY #4390 /* ~Falešná zombie se na tebe podezřívavě dívá.~ */
+  IF ~~ THEN REPLY #4391 /* ~"Je to pravda: Probral jsem se na náhrobku."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1)
+~ GOTO 14
+  IF ~~ THEN REPLY #4392 /* ~"Uh, promiň... Vlastně, tak nějak jsem tu uvíznul. Můžeš mi pomoct?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4393 /* ~"To nic. Už budu muset jít."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 16 // from: 13.1
+  SAY #4394 /* ~Dívá se na tebe, pak zasyčel a mávl rukou. "Fef blávnifej! Magor! Blbef! Vypadni vode mně!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4395 /* ~"Já nikam nejdu. Řekni mi, co tady děláš, nebo zavolám stráže."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4396 /* ~"Já nikam nejdu. Řekni mi, co tady děláš, nebo zavolám stráže."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4397 /* ~"Nejdřív mi odpovíš na moje zatracené otázky, nebo to tvoje maskování bude pravé. Pravá zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4398 /* ~"Nejdřív mi odpovíš na moje zatracené otázky, nebo to tvoje maskování bude pravé. Pravá zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4399 /* ~"Dobře, dobře... Jdu."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 17 // from: 7.5 10.1 14.1 16.1 25.3 27.3
+  SAY #4400 /* ~Na chvíli vypadá zastrašeně, ale rychle se vzpamatoval. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."~ */
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4401 /* ~"Neutečeš, jestli tě ZABIJU. A teď mi odpověz na mé otázky, nebo to tvoje maskování bude doopravdy. Zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 18
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4402 /* ~"Neutečeš, jestli tě ZABIJU. A teď mi odpověz na mé otázky, nebo to tvoje maskování bude doopravdy. Zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4403 /* ~"Tak si shoř v pekle. Já jdu."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+  SAY #4404 /* ~Oči zombie se rošířily, pak na tebe zasyčel. "VKUFÍF mě dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"~ */
+  IF ~~ THEN REPLY #4405 /* ~"Risknu to. Připrav se na smrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4406 /* ~"Tak si shoř v pekle. Já jdu. Radši si dávej pozor...*zombie*."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 19 // from: 7.6 10.2 14.2 16.2 25.4 27.4
+  SAY #4407 /* ~Oči zombie se rošířily, pak přejel očima po tvé postavě a zasyčel na tebe. "TY mě VKUFÍF dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"~ */
+  IF ~~ THEN REPLY #4408 /* ~"Risknu to. Připrav se na smrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4409 /* ~"Co když tvé maskování prozradím strážím?"~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4410 /* ~"Co když tvé maskování prozradím strážím?"~ */ GOTO 20
+  IF ~~ THEN REPLY #4411 /* ~"Tak si shoř v pekle. Já jdu. Radši si dávej pozor...*zombie*."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.2
+  SAY #4412 /* ~Oči zombie se rošířily, pak na tebe zasyčel. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."~ */
+  IF ~~ THEN REPLY #4413 /* ~"To byla tvoje poslední šance, mrtvolo. Připrav se na smrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4414 /* ~"Tak si shoř v pekle. Já jdu. Radši si dávej pozor, *zombie*."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 21 // from: 7.4 10.0 14.0 16.0 19.1 25.2 27.2
+  SAY #4415 /* ~V tvýh očích musí být něco, co způsobilo, že se zombie přikrčila. "Ne-ne-ne! Nevolej ftrávníky!" Vypadá vystrašeně. "Já fpehuju fpalovafe, víkám, fo vidím. Nif víf."~ */
+  IF ~~ THEN REPLY #4416 /* ~"Špehuješ? Pro koho?"~ */ GOTO 23
+  IF ~~ THEN REPLY #4417 /* ~"Co jsi viděl Spalovače dělat?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4418 /* ~"Mám nějaké otázky..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4419 /* ~"To je vše, co jsem chtěl vědět. Sbohem, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 7.7 10.3 14.3 16.3 17.1 25.5 27.5
+  SAY #4420 /* ~"Neh-neh-ne! Neublivuj mi!" Fakt, že vážíš o pár kilo svalů víc než zombie pravděpodobně zapůsobil. "Neublivuj mi! Já fpehuju fpalovafe, víkám, fo vidím. Nif víf."~ */
+  IF ~~ THEN REPLY #4421 /* ~"Špehuješ? Pro koho?"~ */ GOTO 23
+  IF ~~ THEN REPLY #4422 /* ~"Co jsi viděl Spalovače dělat?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4423 /* ~"Mám nějaké otázky..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4424 /* ~"To je vše, co jsem chtěl vědět. A teď mi jdi z cesty, *zombie*."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 21.0 22.0
+  SAY #4425 /* ~Zombie zmlkla, zjevně se bojí  Už nechce říct ani slovo.~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4426 /* ~"No tak. Proč to tady hlídáš?"~ */ GOTO 70
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4427 /* ~"No tak. Proč to tady hlídáš?"~ */ EXTERN ~DMORTE~ 89
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4428 /* ~"Bude pro tebe MNOHEM míň bolestivé, když mi řekneš, pro koho tady špehuješ."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 70
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4429 /* ~"Bude pro tebe MNOHEM míň bolestivé, když mi řekneš, pro koho tady špehuješ."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ EXTERN ~DMORTE~ 89
+  IF ~~ THEN REPLY #4430 /* ~"Tak to nic. Co jsi viděl Spalovače dělat?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4431 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4432 /* ~"Tak na to zapomeň. Sbohem, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 3.3 6.3 8.2
+  SAY #4433 /* ~"Hledáf mě? Prof?" Zašilhal na tebe. "Ty máf fprávu pro mě?"~ */
+  IF ~~ THEN REPLY #4434 /* ~Lži: "Ano, mám pro tebe zprávu."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_5","GLOBALLaw",-1)
+~ GOTO 26
+  IF ~~ THEN REPLY #4435 /* ~"Zprávu od koho?"~ */ GOTO 27
+  IF ~~ THEN REPLY #4436 /* ~"Ne, nemám zprávu."~ */ GOTO 25
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.2
+  SAY #4437 /* ~Zlostně zasyčel. "Tak fo chfef, vole?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4438 /* ~"Hledám cestu pryč. Můžeš mi pomoct?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4439 /* ~"Chci nějaké informace..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4440 /* ~"Řekni mi, co tady děláš, jinak zavolám stráže."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4441 /* ~"Řekni mi, co tady děláš, jinak zavolám stráže."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4442 /* ~"Odpověz na moje zatracené otázky, nebo z tebe udělám pravou zombie dřív, než si třikrát uprdneš."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4443 /* ~"Odpověz na moje zatracené otázky, nebo z tebe udělám pravou zombie dřív, než si třikrát uprdneš."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4444 /* ~"Omlouvám se, že jsem vyrušoval... ať už jsi kdokoli. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 26 // from: 24.0
+  SAY #4445 /* ~"Jaká fpráva?"~ */
+  IF ~  CheckStatLT(Protagonist,12,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #4446 /* ~"Řekneš mi o své misi."~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #4447 /* ~Lži: "Mám nové rozkazy."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",1)
+~ GOTO 30
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4448 /* ~Lži: "Já... mám nové rozkazy."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",1)
+~ GOTO 30
+  IF ~~ THEN REPLY #4449 /* ~"Promiň, nemám zprávu."~ */ GOTO 27
+  IF ~~ THEN REPLY #4450 /* ~"To nic. Omlouvám se, že jsem vyrušoval. Sbohem."~ */ GOTO 27
+END
+
+IF ~~ THEN BEGIN 27 // from: 24.1 26.3 26.4
+  SAY #4451 /* ~Jeho oči se zúžily. "Ty nejfi pofel. Kdo fef?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4452 /* ~"Hledám cestu pryč. Můžeš mi pomoct?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4453 /* ~"Chci nějaké informace..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4454 /* ~"Řekni mi, co tady děláš, jinak zavolám stráže."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4455 /* ~"Řekni mi, co tady děláš, jinak zavolám stráže."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4456 /* ~"Já tady dávám otázky, *zombie*. Řekni mi, kdo jsi, nebo už ten převlek nebudeš potřebovat, protože s tebe udělám opravdovou mrtvolu."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4457 /* ~"Já tady dávám otázky, *zombie*. Řekni mi, kdo jsi, nebo už ten převlek nebudeš potřebovat, protože s tebe udělám opravdovou mrtvolu."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4458 /* ~"Omlouvám se, že jsem vyrušoval... kdokoli jsi. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 28 // from: 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
+  SAY #4459 /* ~"Fpehuju Fpalovafe. Víkám, fo vidím. Nif víf."~ */
+  IF ~~ THEN REPLY #4460 /* ~"Co jsi viděl Spalovače dělat?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4461 /* ~"Aha. Ještě jsem se tě chtěl zeptat na něco jiného..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4462 /* ~"To je vše, co jsem chtěl vědět. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 29 // from: 21.1 22.1 23.4 28.0 70.1 71.2
+  SAY #4463 /* ~"Nif. Nedělaj nif. Nif fem nevjiftil. Mrtví, mrtví, akorát mrtví lidi. Fpalovafi nif nedělaj." Tváří se zklamaně. "Ftejně je ale hlídám."~ */
+  IF ~~ THEN REPLY #4464 /* ~"Aha. Ještě jsem se tě chtěl zeptat na něco jiného..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4465 /* ~"To je vše, co jsem chtěl vědět. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 30 // from: 26.1 26.2
+  SAY #4466 /* ~Zamračil se, jakoby nad něčím přemýšlel. "Jaký pvíkavy?"~ */
+  IF ~~ THEN REPLY #4467 /* ~"Řekni mi o své misi."~ */ GOTO 28
+  IF ~~ THEN REPLY #4468 /* ~"Potřebuji najít útěkovou cestu, kudy bych mohl odejít bez zpozorování."~ */ GOTO 49
+  IF ~  Global("Vaxis_Leave","GLOBAL",0)
+~ THEN REPLY #4469 /* ~"Jsem tady, abych tě vystřídal. Předej mi všechny informace, které jsi získal, tvé vybavení a jdi."~ */ DO ~SetGlobal("Vaxis_Leave","GLOBAL",1)
+GiveItemCreate("Bandage",Protagonist,1,0,0)
+GiveItemCreate("Bandage",Protagonist,1,0,0)
+GiveItemCreate("Bandage",Protagonist,1,0,0)
+GiveItemCreate("Embalm",Protagonist,1,0,0)
+GiveItemCreate("Needle",Protagonist,1,0,0)
+GiveItemCreate("Knife",Protagonist,1,0,0)
+AddexperienceParty(500)
+~ JOURNAL #64517 /* ~Zamaskovanému špiónovi jsem řekl, že jsem ho přišel vystřídat a on mi předal všechno, co dosud posbíral, hlavně hodně obvazů a léčivých itemů, které potřeboval pro udržování svého převleku. ~ */ GOTO 72
+  IF ~~ THEN REPLY #4470 /* ~"Přišel jsem ti pomoct."~ */ GOTO 35
+  IF ~~ THEN REPLY #4471 /* ~"Tvé rozkazy budou muset ještě chvíli počkat. Ještě se vrátím."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 7.1 12.1 13.4 15.1 25.0 27.0 50.0
+  SAY #4472 /* ~Je chvíli z ticha, pak přikývl, že rozumí. "Prof bych ti měl pomoft?"~ */
+  IF ~~ THEN REPLY #4473 /* ~"Protože potřebuju tvou pomoc."~ */ GOTO 32
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4474 /* ~"Možná bychom si mohli pomoct navzájem. Co chceš na oplátku?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Vaxis_3","GLOBALGood",1)
+~ GOTO 35
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4475 /* ~"Protože *nevyzradím* tvé maskování... pokud mi pomůžeš."~ */ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4476 /* ~"Protože *nevyzradím* tvé maskování... pokud mi pomůžeš."~ */ GOTO 34
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4477 /* ~"Vypadáš jako někdo, kdo je za mrtvolu zamaskovaný, než že JE mrtvola. Dostatečný důvod?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 75
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4478 /* ~"Vypadáš jako někdo, kdo je za mrtvolu zamaskovaný, než že JE mrtvola. Dostatečný důvod?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 33
+  IF ~~ THEN REPLY #4479 /* ~"Zapomeň, že jsme se potkali. Musím jít. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #4480 /* ~Zombie si odfrkla. "Kavdej něfo *potvebuje*, ale nikdo nif *nedá*. *Dej* mi něfo a já ti *movná* pomůvu."~ */
+  IF ~~ THEN REPLY #4481 /* ~"Co potřebuješ?"~ */ GOTO 35
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4482 /* ~"Co takhle mi pomoct a já nezavolám stráže?"~ */ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4483 /* ~"Co takhle mi pomoct a já nezavolám stráže?"~ */ GOTO 34
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4484 /* ~"Vypadáš jako někdo, kdo by radši dýchal, než mi řekl ne. Takže teď naposled: jak se odsud dostanu?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 75
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4485 /* ~"Vypadáš jako někdo, kdo by radši dýchal, než mi řekl ne. Takže teď naposled: jak se odsud dostanu?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 33
+  IF ~~ THEN REPLY #4486 /* ~"Nezájem. Sbohem."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 33 // from: 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
+  SAY #4487 /* ~Prohlíží si tě a uvažuje, jestli na tebe bude mít, pak si to ale raději rozmyslel. "Hmfff. Můvef utéft portálem."~ */
+  IF ~~ THEN REPLY #4672 /* ~"Portály?"~ */ DO ~SetGlobal("Strong_Arm_Vaxis","GLOBAL",1)
+~ GOTO 50
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.3 32.2 35.3
+  SAY #4491 /* ~Na chvíli vypadá zastrašeně, ale rychle se vzpamatoval. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."~ */
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4489 /* ~"Neutečeš, jestli tě ZABIJU. A teď mluv, nebo už to maskování nebudeš potřebovat... zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 74
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4490 /* ~"Neutečeš, jestli tě ZABIJU. A teď mluv, nebo už to maskování nebudeš potřebovat... zombie."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 33
+  IF ~~ THEN REPLY #4492 /* ~"Tak si shoř v pekle. Já jdu."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 35 // from: 30.3 31.1 32.0
+  SAY #4493 /* ~"Mufíf mi donéft *klíf*. Potvebuju velevnej klíf k balvamovafí míftnofti."~ */
+  IF ~  PartyHasItem("KeyEm")
+~ THEN REPLY #4494 /* ~"Myslíš tenhle klíč?"~ */ DO ~AddexperienceParty(250)
+GiveItem("KeyEm","Vaxis")
+~ GOTO 42
+  IF ~~ THEN REPLY #4495 /* ~"Dobře. Kde je ten klíč?"~ */ GOTO 36
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4496 /* ~"Na tohle nemám čas. Pomož mi utéct, nebo zavolám stráže."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4497 /* ~"Na tohle nemám čas. Pomož mi utéct, nebo zavolám stráže."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 34
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4498 /* ~"Nic ti nepřinesu. Pomož mi utéct, nebo ti přímo tady zlomím krk."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 75
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4499 /* ~"Nic ti nepřinesu. Pomož mi utéct, nebo ti přímo tady zlomím krk."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 33
+  IF ~~ THEN REPLY #4500 /* ~"Ne, děkuju. Možná příště."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 36 // from: 35.1 58.2
+  SAY #4501 /* ~"Fpalovafka ho má." Ukázal si na oči. "Má vlutý ofi..." Podivně zagestikuloval rukou, jako by se v nečem hrabal. "Na prftech má nove."~ */
+  IF ~  PartyHasItem("KeyEm")
+~ THEN REPLY #4502 /* ~"Už jsem se s ní setkal. Tady je klíč."~ */ DO ~AddexperienceParty(250)
+GiveItem("KeyEm","Vaxis")
+~ GOTO 42
+  IF ~  Global("EiVene","GLOBAL",1)
+~ THEN REPLY #64520 /* ~"Spalovačka... se žlutýma očima a čepelema na svých prstech? Už jsem se s ní setkal, v balzamovacím pokoji. Počkej -- hned se s klíčem vrátím."~ */ JOURNAL #64519 /* ~Výměnou za "zombieho" pomoc jsem souhlasil, že od jedné ze Spalovaček s ostřím na rukách a žlutýma očima, se kterou jsem se setkal v jednom z pokojů, Ei-Vene myslím, že se jmenovala, přinesu balzamovací klíč. Jak může používat balzamovací klíč s těmi svými čepelemi na rukách, to fakt nechápu.~ */ GOTO 38
+  IF ~  Global("EiVene","GLOBAL",0)
+~ THEN REPLY #4503 /* ~"Spalovačka... se žlutýma očima a noži na prstech? Dobrá tedy. Vrátím se s klíčem."~ */ JOURNAL #64518 /* ~Výměnou za "zombieho" pomoc jsem souhlasil, že od jedné ze Spalovaček s ostřím na rukách a žlutýma očima přinesu balzamovací klíč. ~ */ GOTO 38
+  IF ~~ THEN REPLY #4504 /* ~"Ta Spalovačka vypadá opravdu atraktivně. Jsi si jistý, že vás nemám představit?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_6","GLOBALLaw",-1)
+~ GOTO 37
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.3
+  SAY #4505 /* ~Zombie mrkl. Asi tě nepochopil.~ */
+  IF ~  Global("EiVene","GLOBAL",1)
+~ THEN REPLY #4506 /* ~"To byl jenom vtípek, měl bys... zapomeň na to. Zajdu ti pro ten klíč."~ */ JOURNAL #64519 /* ~Výměnou za "zombieho" pomoc jsem souhlasil, že od jedné ze Spalovaček s ostřím na rukách a žlutýma očima, se kterou jsem se setkal v jednom z pokojů, Ei-Vene myslím, že se jmenovala, přinesu balzamovací klíč. Jak může používat balzamovací klíč s těmi svými čepelemi na rukách, to fakt nechápu.~ */ GOTO 38
+  IF ~  Global("EiVene","GLOBAL",0)
+~ THEN REPLY #66150 /* ~"Byl to jenom fórek, mělo... zapomeň na to, půjdu hledat ten tvůj klíč."~ */ JOURNAL #64518 /* ~Výměnou za "zombieho" pomoc jsem souhlasil, že od jedné ze Spalovaček s ostřím na rukách a žlutýma očima přinesu balzamovací klíč. ~ */ GOTO 38
+END
+
+IF ~~ THEN BEGIN 38 // from: 36.1 36.2 37.0 37.1
+  SAY #4507 /* ~Zombie na tebe zašilhal. "Jefli tě chytěj, nif o mně nevíkej, nebo tě vabiju. Af budef fpát."~ */
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4508 /* ~"Donesu ti ten tvůj zatracený klíč... ale ty už mi radši nevyhrožuj, jasný?!"~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",1)
+~ EXIT
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4509 /* ~"Já se vrátím."~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",1)
+~ EXIT
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4510 /* ~"Donesu ti ten tvůj zatracený klíč... ale ty už mi radši nevyhrožuj, jasný?!"~ */ EXIT
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4511 /* ~"Já se vrátím."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 43.12
+  SAY #4512 /* ~"Já dobrej v mafkování. A taky mám jivvy. A napláfal fem na febe blvamovafí tekutinu. Já DOBRÁ vombie." Zombie se zasmál, jak mu to jenom sešitá pusa dovolila a pak si zaťukal na čelo. "Fpalovafi fou blllbíííí!"~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 93
+END
+
+IF ~~ THEN BEGIN 40 // from:
+  SAY #4514 /* ~"Pofkám na tebe. Donef klíf." Zombie se usmál. "Pak ti pomůvu."~ */
+  IF ~~ THEN REPLY #4515 /* ~"Jestli to najdu, vrátím se."~ */ EXIT
+  IF ~~ THEN REPLY #4516 /* ~"Tak na to zapomeň."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from:
+  SAY #4517 /* ~Zombieho oči se rozšířily, pak natáhl ruku a lusknul prsty. "Dej mi ho."~ */
+  IF ~~ THEN REPLY #4518 /* ~"Vydrž chvíli. Nejdřív něco chci."~ */ EXIT
+  IF ~~ THEN REPLY #4519 /* ~"Tady máš."~ */ DO ~AddexperienceParty(250)
+GiveItem("KeyEm","Vaxis")
+SetGlobal("Embalm_Key_Quest","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 42 // from: 35.0 36.0 58.0 58.1
+  SAY #4520 /* ~Zombieho oči se rozšířily. Popadl klíč z tvé dlaně. Pokyvuje si a obrací jej v dlani. "Dobve. Dobve."~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4521 /* ~"Tak... jak se odtud dostanu?"~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",3)
+~ JOURNAL #64521 /* ~Obstarat Vaxisovi jeho drahocenný balzamovací klíč. Potřebuje jej, aby si mohl doplňovat zásoby pro své maskování - kdyby mu došla balzamovací tekutina, mohl by se prozradit. ~ */ GOTO 49
+  IF ~  Global("Escape_Mortuary","GLOBAL",1)
+~ THEN REPLY #4522 /* ~"Tak... je tady něco, co bych rád věděl..."~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",3)
+~ JOURNAL #64521 /* ~Obstarat Vaxisovi jeho drahocenný balzamovací klíč. Potřebuje jej, aby si mohl doplňovat zásoby pro své maskování - kdyby mu došla balzamovací tekutina, mohl by se prozradit. ~ */ GOTO 43
+END
+
+IF ~~ THEN BEGIN 43 // from: 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
+  SAY #4523 /* ~"Fo chfef fědět?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+!Global("Vaxis_Help","GLOBAL",1)
+Global("Embalm_Key_Quest","GLOBAL",0)
+Global("Strong_Arm_Vaxis","GLOBAL",1)
+~ THEN REPLY #64508 /* ~"Jak odtud mohu uprchnout?"~ */ GOTO 49
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+!Global("Vaxis_Help","GLOBAL",1)
+Global("Embalm_Key_Quest","GLOBAL",0)
+Global("Strong_Arm_Vaxis","GLOBAL",0)
+~ THEN REPLY #4524 /* ~"Jak odtud můžu utéct?"~ */ GOTO 49
+  IF ~  Global("Vaxis_Help","GLOBAL",1)
+~ THEN REPLY #4525 /* ~"Kde že je ten portál, o kterém jsi mluvil?"~ */ GOTO 52
+  IF ~  Global("Vaxis_Zombie_Disguise","GLOBAL",1)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4526 /* ~"Můžeš mě taky zamaskovat jako zombii?"~ */ GOTO 63
+  IF ~  Global("Vaxis_Zombie_Disguise","GLOBAL",2)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4527 /* ~"Můžeš mě znovu zamaskovat jako zombii?"~ */ GOTO 63
+  IF ~  Global("Vaxis_Orders","GLOBAL",1)
+~ THEN REPLY #4528 /* ~"Co tady děláš?"~ */ GOTO 28
+  IF ~  GlobalLT("Pharod","GLOBAL",1)
+~ THEN REPLY #4673 /* ~"Znáš někoho jménem Pharod?"~ */ GOTO 44
+  IF ~  GlobalLT("Journal","GLOBAL",1)
+~ THEN REPLY #4530 /* ~"Ztratil jsem deník. Neviděl jsi ho?"~ */ GOTO 47
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #4531 /* ~"Můžeš mi něco říct o Dhallovi?"~ */ GOTO 53
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4532 /* ~"Můžeš mi něco říct o duchu Deionarry?"~ */ GOTO 54
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #4533 /* ~"Můžeš mi něco říct o Soegovi?"~ */ GOTO 55
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4534 /* ~"Jak jsi to udělal, že vypadáš takhle?"~ */ GOTO 60
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4535 /* ~"Jak jsi to udělal, že vypadáš takhle?"~ */ GOTO 39
+  IF ~~ THEN REPLY #4536 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.6
+  SAY #4537 /* ~"FÁ-ROD?" Zombie se na chvíli zamyšleně zamrači. "Já... flyfel fem, ve vije někde v Úlu. Nevím kde." Znovu se zamračil. "Fpálováfi móf naftvaní, némaj RÁDI Fá-roda."~ */
+  IF ~~ THEN REPLY #4538 /* ~"Úlu?"~ */ GOTO 45
+  IF ~~ THEN REPLY #4539 /* ~"Proč nemají Spalovači rádi Pharoda?"~ */ JOURNAL #64522 /* ~Zní to, jako by Pharod a Spalovači nebyli zrovna přátelé... Vaxis mi řekl, že Pharod do Márnice dopravuje příliš mnoho těl a Spalovači ho podezřívají, že vedle sběru mrtvol také sám lidi zabíjí. ~ */ GOTO 46
+  IF ~~ THEN REPLY #4540 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4541 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.0
+  SAY #4542 /* ~"Flum tam fenku."~ */
+  IF ~~ THEN REPLY #4543 /* ~"Proč nemají Spalovači rádi Pharoda?"~ */ JOURNAL #64522 /* ~Zní to, jako by Pharod a Spalovači nebyli zrovna přátelé... Vaxis mi řekl, že Pharod do Márnice dopravuje příliš mnoho těl a Spalovači ho podezřívají, že vedle sběru mrtvol také sám lidi zabíjí. ~ */ GOTO 46
+  IF ~~ THEN REPLY #4544 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4545 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 46 // from: 44.1 45.0
+  SAY #4546 /* ~"On je fběraf. Nofí mrtvoly do márnife, prodává je Fpalovafům. Nofí MOF mrtváků. Fpalovafi nevěděj, fodkud má mrtváky. Myflej fi, ve Fá-rod ftrká lidi do mrtvý knihy."~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4547 /* ~"Uh... co?"~ */ GOTO 48
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4548 /* ~"Uh... co?"~ */ EXTERN ~DMORTE~ 91
+  IF ~~ THEN REPLY #4549 /* ~"Oh. Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4550 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.7
+  SAY #4551 /* ~"Néfim. Nákej fůl tě fobral?"~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4552 /* ~"Uh... co?"~ */ GOTO 48
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4553 /* ~"Uh... co?"~ */ EXTERN ~DMORTE~ 92
+  IF ~~ THEN REPLY #4554 /* ~"Oh. Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4555 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 48 // from: 46.0 47.0
+  SAY #4556 /* ~Zombie se pokouší promluvit, zarazí se, promyslí si to a pak pokrčí rameny. Zjevně to nedovede lépe vysvětlit.~ */
+  IF ~~ THEN REPLY #4557 /* ~"Oh. Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4558 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 30.1 42.0 43.0 43.1
+  SAY #4559 /* ~Zombie zabručela. "Můvef utéft portálem." Zamával rukou. "Pufff."~ */
+  IF ~~ THEN REPLY #4560 /* ~"Portálem? Jakým portálem?"~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 50 // from: 33.0 49.0
+  SAY #4563 /* ~"Portály..." Zombie mávl rukou kolem. "Portály vfude."~ */
+  IF ~  Global("Strong_Arm_Vaxis","GLOBAL",0)
+Global("Embalm_Key_Quest","GLOBAL",0)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #4564 /* ~"Můžeš mi ukázat některý z portálů?"~ */ GOTO 31
+  IF ~  Global("Strong_Arm_Vaxis","GLOBAL",0)
+GlobalGT("Embalm_Key_Quest","GLOBAL",2)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #64509 /* ~"Můžeš mi ukázat jeden z těch portálů?"~ */ GOTO 51
+  IF ~  Global("Strong_Arm_Vaxis","GLOBAL",1)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #64510 /* ~"Můžeš mi ukázat jeden z těch portálů?"~ */ GOTO 51
+  IF ~  Global("Vaxis_Orders","GLOBAL",1)
+~ THEN REPLY #64511 /* ~"Můžeš mi ukázat jeden z těch portálů?"~ */ GOTO 51
+END
+
+IF ~~ THEN BEGIN 51 // from: 50.1 50.2 50.3 72.0
+  SAY #4567 /* ~Zombie kývl. "Chfef pryf, tak projdi vobloukem na prvním patve, feverovápadní míftnoft... Potvebujef koftěnej prft, vkroufenej..." Zvedl ukazováček a ohnul ho. "Av budef mít klíf, jdi do voblouku, fkrofíf do tajný krypty. Vodtamtud můvef utéft. Tajná útěková fefta. Můvef fi tam i FODPOFINOUT."~ */
+  IF ~  !PartyHasItem("BoneChrm")
+~ THEN REPLY #64527 /* ~"Křivou prstní kost? Kde něco takového najdu?"~ */ DO ~AddexperienceParty(250)
+SetGlobal("Vaxis_Help","GLOBAL",1)
+~ JOURNAL #64528 /* ~Vaxis mi řekl, že v severozápadní místnosti prvního patra Márnice je tajný portál - jestliže se k němu přiblížím s prstní kostí, zaktivuje se a přenese mě do tajné krypty, kde si, jak Vaxis říká, mohu dopřát "odpočinek." Sice neví, kde bych nějakou prstní kost mohl najít, nicméně mi navrhl, abych to zkusil někde v horním patře Márnice. ~ */ GOTO 77
+  IF ~  PartyHasItem("BoneChrm")
+~ THEN REPLY #4568 /* ~"Mám nějaké otázky..."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Vaxis_Help","GLOBAL",1)
+~ JOURNAL #64529 /* ~Vaxis mi řekl, že v severozápadní místnosti prvního patra Márnice je tajný portál - jestliže se k němu přiblížím s prstní kostí, zaktivuje se a vezme mě do tajné krypty, kde si, jak Vaxis říká, mohu dopřát "odpočinek." ~ */ GOTO 43
+  IF ~  PartyHasItem("BoneChrm")
+~ THEN REPLY #4569 /* ~"Oblouk na prvním patře, severozápadní místnost. Dobře, půjdu se tam podívat."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Vaxis_Help","GLOBAL",1)
+~ JOURNAL #64529 /* ~Vaxis mi řekl, že v severozápadní místnosti prvního patra Márnice je tajný portál - jestliže se k němu přiblížím s prstní kostí, zaktivuje se a vezme mě do tajné krypty, kde si, jak Vaxis říká, mohu dopřát "odpočinek." ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 52 // from: 43.2
+  SAY #4570 /* ~"Poflouchej! Pamatuj fi!" Zombie začíná být naštvaný. "Voblouk, první patro, feverovápadní míftnoft." Zvedl ukazováček a zkroutil jej. "Potvebujef prftní koft, vkroufenou. Fkonfíf v tajný mífntnosfti, odkud můvef utéft. Můvef tam taky vodpofívat."~ */
+  IF ~~ THEN REPLY #4571 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4572 /* ~"Oblouk na prvním patře, severozápadní místnost, otevírá se zkroucenou prstní kostí? Dobře, půjdu se tam podívat."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 53 // from: 43.8
+  SAY #4573 /* ~"Pífav." Pokrčil rameny. "Ftarej. Vlutej."~ */
+  IF ~~ THEN REPLY #4574 /* ~"Asi už se k tomu nedá víc dodat. Chtěl bych vědět ještě něco."~ */ GOTO 43
+  IF ~~ THEN REPLY #4575 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 54 // from: 43.9
+  SAY #4576 /* ~"Hunh?" Zamračil se. "Kdo ona?"~ */
+  IF ~~ THEN REPLY #4577 /* ~"Zapomeň na to. Chtěl bych vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4578 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 55 // from: 43.10
+  SAY #4579 /* ~"Průvodfe, u pvedních dveví márnife. Fo f ním?"~ */
+  IF ~~ THEN REPLY #4580 /* ~"Co o něm víš?"~ */ DO ~SetGlobal("Vaxis_Exposes_Soego","GLOBAL",1)
+~ JOURNAL #64530 /* ~Vaxis říkal, že Soego je nějaký divný - mluvil o tom, že má rád "krysy," ať už TO znamená cokoliv. Je paradoxní, že zrovna Vaxis o někom prohlašuje, že je divný. ~ */ GOTO 56
+  IF ~~ THEN REPLY #4581 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0
+  SAY #4582 /* ~"Je divnej, ne Fpalovaf, ne Anarchofta, má jiný vofi..." Pokrčil rameny. "Jako kryfa. Divnej."~ */
+  IF ~~ THEN REPLY #4583 /* ~"To je dobře, že je to jedinej divnej tady kolem. Ještě je tu něco, co bych chtěl vědět..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4584 /* ~"To nic. Možná budu mít nějaké otázky později. Nikam nechoď."~ */ EXIT
+END
+
+IF ~  GlobalGT("Vaxis","GLOBAL",0)
+~ THEN BEGIN 57 // from:
+  SAY #4585 /* ~Vidíš falešnou zombie. Žasneš nad kvalitním maskováním... jeho dýchání je tak potlačené, že je skoro nelze zpozorovat."~ */
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",1)
+~ THEN REPLY #4586 /* ~"Zdravím."~ */ GOTO 58
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",2)
+~ THEN REPLY #4587 /* ~"Zdravím."~ */ GOTO 58
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",1)
+!Global("Embalm_Key_Quest","GLOBAL",2)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #4588 /* ~"Zdravím."~ */ GOTO 59
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",1)
+!Global("Embalm_Key_Quest","GLOBAL",2)
+Global("Vaxis_Orders","GLOBAL",1)
+~ THEN REPLY #4589 /* ~"Zdravím."~ */ GOTO 58
+  IF ~~ THEN REPLY #4590 /* ~Nechej ho být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 58 // from: 57.0 57.1 57.3
+  SAY #4591 /* ~Zombie se rychle rozhlédl, jestli vás někdo nevidí, pak se k tobě otočil. "Fo je?"~ */
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",1)
+PartyHasItem("KeyEm")
+~ THEN REPLY #4592 /* ~"Tady je ten klíč, cos ho chtěl."~ */ DO ~AddexperienceParty(250)
+TakePartyItemNum("KeyEm",1)
+~ GOTO 42
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",2)
+PartyHasItem("KeyEm")
+~ THEN REPLY #4593 /* ~"Tady je ten klíč, cos ho chtěl."~ */ DO ~AddexperienceParty(250)
+TakePartyItemNum("KeyEm",1)
+~ GOTO 42
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",1)
+!PartyHasItem("KeyEm")
+~ THEN REPLY #4594 /* ~"Kdeže je ten klíč, cos o něm mluvil?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4595 /* ~"Mám pro tebe nějaké otázky..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4596 /* ~"To nic."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 59 // from: 57.2
+  SAY #4597 /* ~Zombie se rychle rozhlédl, jestli vás někdo nevidí, pak na tebe zamával. "Vypadni! Jdi pryf!"~ */
+  IF ~~ THEN REPLY #4598 /* ~"Ne. Nejdřív mám nějaké otázky..."~ */ GOTO 43
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4599 /* ~"Tak to nic."~ */ GOTO 4
+  IF ~  GlobalGT("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4600 /* ~"Tak to nic."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 60 // from: 43.11
+  SAY #4601 /* ~"Já dobrej v mafkování. A taky mám jivvy. A napláfal fem na febe blvamovafí tekutinu. Já DOBRÁ vombie." Zombie se zasmál, jak mu to jenom sešitá pusa dovolila a pak si zaťukal na čelo. "Fpalovafi fou blllbíííí!"~ */
+  IF ~~ THEN REPLY #4602 /* ~"Jo, jsou pořádně pitomí."~ */ GOTO 61
+  IF ~~ THEN REPLY #4603 /* ~"Nebolí to?"~ */ GOTO 62
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4604 /* ~"To maskování je dost dobrý. Hele, můžeš mě taky zamaskovat jako zombii?"~ */ GOTO 63
+  IF ~~ THEN REPLY #4605 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4606 /* ~"Musím jít. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 61 // from: 60.0
+  SAY #4607 /* ~Sarkasmus na zombie zjevně nezabral. "Blbí Fpalovafi. Já dobrá vombie."~ */
+  IF ~~ THEN REPLY #4608 /* ~"Nebude to bolet?"~ */ GOTO 62
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4609 /* ~"To maskování je dost dobrý. Můžeš mě taky zamaskovat jako zombii?"~ */ GOTO 63
+  IF ~  CheckStatLT(Protagonist,10,CHR)
+~ THEN REPLY #4610 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 64
+  IF ~  CheckStatLT(Protagonist,10,CHR)
+~ THEN REPLY #4611 /* ~"Musím jít. Sbohem."~ */ GOTO 64
+  IF ~  CheckStatGT(Protagonist,9,CHR)
+~ THEN REPLY #4612 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,9,CHR)
+~ THEN REPLY #4613 /* ~"Musím jít. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 62 // from: 60.1 61.0
+  SAY #4614 /* ~Podíval se na tvé jizvy. "Já fe tě prám to famý. Mě mof nebolelo." Poplácal se po hrudi. "Já TVRDEJ."~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4615 /* ~"To maskování je dost dobrý. Můžeš mě taky zamaskovat jako zombii?"~ */ GOTO 63
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4616 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 64
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4617 /* ~"Musím jít. Sbohem."~ */ GOTO 64
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4618 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4674 /* ~"Musím jít. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 63 // from: 43.3 43.4 60.2 61.1 62.0 64.1 64.2
+  SAY #4619 /* ~Chvíli si tě prohlíží a něco si mumlá, nakonec přikývl. "Jo. Potvebuju fklínku balvamovafí tekutiny." Ukázal na jizvy na tvém hrudníku. "A nějakou nit a jehlu."~ */
+  IF ~  PartyHasItem("Embalm")
+PartyHasItem("Needle")
+~ THEN REPLY #4620 /* ~"Tady máš."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",2)
+DestroyPartyItem("Embalm",FALSE)
+DestroyPartyItem("Needle",FALSE)
+~ GOTO 65
+  IF ~~ THEN REPLY #4621 /* ~"Promyslím si to. Mám nějaké otázky..."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ GOTO 43
+  IF ~~ THEN REPLY #4622 /* ~"Ne, děkuju. Možná příště... sbohem."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ EXIT
+  IF ~~ THEN REPLY #4623 /* ~"Blazamovací tekutinu a nit? Zkusím se po tom podívat."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 64 // from: 61.2 61.3 62.1 62.2
+  SAY #4624 /* ~Prohlédl si tě s podivným výrazem na tváři. "Ty budef DOBRÁ vombie. Můvu tě udělat vombie? Dobrej pvevlek."~ */
+  IF ~~ THEN REPLY #4625 /* ~"Ne. Ale stejně díky. Mám pro tebe ještě další otázky..."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ GOTO 43
+  IF ~~ THEN REPLY #4626 /* ~"Jistě. Dokážeš to?"~ */ GOTO 63
+  IF ~~ THEN REPLY #4627 /* ~"Proč ne? Stejně se už cítím jako chodící mrtvola."~ */ GOTO 63
+  IF ~~ THEN REPLY #4628 /* ~"Ne... no... to je v pořádku. Sbohem."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 65 // from: 63.0
+  SAY #4629 /* ~Zombie si od tebe vzal předměty a pak se pustil do práce...~ */
+  IF ~  !NearbyDialog("DMorte")
+Global("Vaxis_Zombie_XP","GLOBAL",0)
+~ THEN REPLY #4630 /* ~Zkus vydržet bez hnutí.~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+AddexperienceParty(500)
+SetGlobal("Vaxis_Zombie_XP","GLOBAL",1)
+~ GOTO 66
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_1","GLOBAL",0)
+~ THEN REPLY #4631 /* ~Zkus vydržet bez hnutí.~ */ DO ~SetGlobal("Morte_Vaxis_Quip_1","GLOBAL",1)
+~ EXTERN ~DMORTE~ 94
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_1","GLOBAL",1)
+~ THEN REPLY #4632 /* ~Zkus vydržet bez hnutí.~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+~ GOTO 66
+  IF ~  !NearbyDialog("DMorte")
+Global("Vaxis_Zombie_XP","GLOBAL",1)
+~ THEN REPLY #64533 /* ~Ještě se pokus vydržet.~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+~ GOTO 66
+END
+
+IF ~~ THEN BEGIN 66 // from: 65.0 65.2 65.3
+  SAY #4633 /* ~Zombie tě potřel balzamovací tekutinou a pak zašil některé z tvých jizev. Nakonec dokončil maskování sešitím tvých rtů."~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4634 /* ~"Mmm-hmmph-mmm... Víky."~ */ GOTO 67
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_2","GLOBAL",0)
+~ THEN REPLY #4635 /* ~"Mmm-hmmph-mmm... Víky."~ */ DO ~SetGlobal("Morte_Vaxis_Quip_2","GLOBAL",1)
+~ EXTERN ~DMORTE~ 95
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_2","GLOBAL",1)
+~ THEN REPLY #4636 /* ~"Mmm-hmmph-mmm... Víky."~ */ GOTO 67
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.0 66.2
+  SAY #4637 /* ~Zombie zvedl ruku. "Opatrň! Mluvení trhá ftehu, vnifí máafkování. Vombie nemluví. Mufíf mluvit? Mluv pomalu, opatrň."
+
+POZNÁMKA: Uvědom si, že nikdo nečeká, že budou zombie mluvit. Jestli si s někým promluvíš zamaskovaný jako zombie, pravděpodobně bude tvůj převlek odhalen.~ */
+  IF ~~ THEN REPLY #4638 /* ~"Mmph... mmm. Já... rovumím."~ */ JOURNAL #64531 /* ~Výměnou za několik jehel a nití a trochu balzamovací tekutiny mě Vaxis zamaskoval za zombie. Varoval mě, že jako zombie nesmím běhat, protože by běh zničil maskování, stejně jako nesmím mluvit, protože zombie "nemluví." ~ */ GOTO 68
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0
+  SAY #4639 /* ~Zombie se zamračil. "Mafkování nevydrví dlouho. Balvám ufchne, ftehy vypadají." Pokrčil rameny. "Afi ti to nevydrví, av fe doftanef ven. A neběhej. Běháf a vnifíf felý mafkování."
+
+POZNÁMKA: Nasazení zbraní nebo běhání okamžitě zruší tvé maskování za zombie. Pokud najdeš novou zbraň, nesnaž se ji použít, dokud budeš chtít zůstat zamaskovaný. Pokud máš zapnuto automatické běhání, rozhodně je vypni, jakmile domluvíš s Vaxisem, tedy pokud chceš zůstat v přestrojení.~ */
+  IF ~~ THEN REPLY #4640 /* ~Přikývni a odejdi.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 69 // from:
+  SAY #4641 /* ~'Zombie' se zamračil. "Ty vypadáf vnámě. Uf fem tě viděl?"~ */
+  IF ~~ THEN REPLY #4642 /* ~"Možná. Kde jsi mě viděl?"~ */ EXIT
+  IF ~~ THEN REPLY #4643 /* ~X. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 70 // from: 23.0 23.2 71.0 71.1
+  SAY #4644 /* ~K tvému překvapení se od tebe zombie otočil... a začíná se bojácně rozhlížet kolem.~ */
+  IF ~~ THEN REPLY #4645 /* ~"Nebudeš mluvit? Tak se připrav, naučím tě aspoň řvát!"~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4646 /* ~"Tak to nic. Co jsi viděl Spalovače dělat?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4647 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4648 /* ~"Tak na to zapomeň. Sbohem, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 71 // from:
+  SAY #4649 /* ~Zombie se vystrašeně dívá. Je stále potichu... ale něco v jeho výrazu ti říká, že Morteho poznámka byla přesná.~ */
+  IF ~~ THEN REPLY #4650 /* ~"Anarchisti, huh? To pro ně hlídáš tady tohle místo?"~ */ GOTO 70
+  IF ~~ THEN REPLY #4651 /* ~"Bude mnohem MÉNĚ bolestivé, když mi řekneš, proč tě sem Anarchisti poslali špehovat."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 70
+  IF ~~ THEN REPLY #4652 /* ~"Tak to nic. Co jsi viděl Spalovače dělat?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4653 /* ~"Chtěl jsem vědět ještě něco..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4654 /* ~"Tak na to zapomeň. Sbohem, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 30.2
+  SAY #4655 /* ~Zombie vypadá zklamaně, ale pak pokrčil rameny a sáhl do své špianvé tuniky. "Byl tu klid. Fpalovafi klidní, nif novýho od poflední fprávy." Po chvíli vyhrabal nějaké předměty, které ti podal. "Tady." Podle pachu byly schovány tak, aby nebyly objeveny v případě, že by ho někdo prohledával. "Va chvilku odejdu."~ */
+  IF ~  Global("Vaxis_Help","GLOBAL",0)
+~ THEN REPLY #4656 /* ~"Odejdeš? Jak?"~ */ GOTO 51
+  IF ~  Global("Vaxis_Help","GLOBAL",1)
+~ THEN REPLY #64532 /* ~"Výborně. Sbohem, Vaxisi."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 73 // from:
+  SAY #4658 /* ~Zombie zabručel. "Portál je v oblouku na prvním patve, feverováapdní míftnoft. Potvebujef vkroufenou koft v prftu, abyf ho otevvel. Hodně ftěftí."~ */
+  IF ~~ THEN REPLY #4659 /* ~"Uh... dobře."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 74 // from: 34.0
+  SAY #4660 /* ~Oči zombie se rošířily, pak na tebe zasyčel. "VKUFÍF mě dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"~ */
+  IF ~~ THEN REPLY #4661 /* ~"To byla tvá poslední šance. Připrav se na smrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4662 /* ~"Tak si shoř v pekle. Já jdu. Radši si dávej pozor...*zombie*."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 75 // from: 31.4 32.3 35.4
+  SAY #4663 /* ~Oči zombie se rošířily, pak přejel očima po tvé postavě a zasyčel na tebe. "TY mě VKUFÍF dát do knihy mrtvejch? Mám tu fchovaný kámofe, ty nemáf nikoho. Dotkni fě mě a kámofi tě vabijou!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4664 /* ~"Co kdybych tvůj převlek prozradil strážným?"~ */ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4665 /* ~"Co kdybych tvůj převlek prozradil strážným?"~ */ GOTO 76
+  IF ~~ THEN REPLY #4666 /* ~"Risknu to. Připrav se na smrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4667 /* ~"Tak si shoř v pekle. Já jdu. Radši si dávej pozor...*zombie*."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 76 // from: 75.1
+  SAY #4668 /* ~Oči zombie se rošířily, pak na tebe zasyčel. "Ty práfknef mě, já práfknu tebe. Já tu mám fchovaný kámofe, ty nemáf nikoho. Nemáf tu fo dělat. Fpalovafi tě vabijou. Já utefu."~ */
+  IF ~~ THEN REPLY #4669 /* ~"To byla tvoje poslední šance, mrtvolo. Připrav se na smrt."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4670 /* ~"Tak si shoř v pekle. Já jdu. Radši si dávej pozor...*zombie*."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 77 // from: 51.0
+  SAY #64523 /* ~Pokrčí rameny. "Mufí být někde kolem... podívej fe ve fkladiftích v hofním patfe. Mofná tam."~ */
+  IF ~~ THEN REPLY #64524 /* ~"Fajn. Mám další otázky..."~ */ GOTO 43
+  IF ~~ THEN REPLY #64525 /* ~"Výborně. Kouknu se po té křivé prstní kosti nahoře, pak si to namířím do prvního patra, k jednomu z oblouků v severozápadní místnosti. Mám to."~ */ EXIT
+END

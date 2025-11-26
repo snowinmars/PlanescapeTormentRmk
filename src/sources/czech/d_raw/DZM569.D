@@ -1,0 +1,53 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM569.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM569~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #24575 /* ~Tato belhající se mrtvola vypadá, že je mrtvá už několik let. Kůže kolem čela se už odloupala, čímž se odhalila její křídově bílá lebka. Někdo vyryl na odhalenou kost číslo "569". ~ */
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+NearbyDialog("DMorte1")
+~ THEN REPLY #24576 /* ~"Hledám klíč... je možné, abys ho měl ty?"~ */ EXTERN ~DMORTE1~ 31
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+!NearbyDialog("DMorte1")
+~ THEN REPLY #24579 /* ~"Hledám klíč... je možné, abys ho měl ty?"~ */ GOTO 1
+  IF ~  GlobalGT("Mortuary_Walkthrough","GLOBAL",0)
+~ THEN REPLY #24580 /* ~"Tak... viděl jsi něco zajímavého?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #24581 /* ~"Vím, že nejsi zombie, víš. Nikoho neoklameš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #24584 /* ~Použij na mrtvolu Kosti vyprávějte.~ */ GOTO 2
+  IF ~  Global("Mortuary_Walkthrough","GLOBAL",0)
+!PartyHasItem("KeyPr")
+~ THEN REPLY #24585 /* ~Prohledej mrtvolu, koukni se jestli nemá klíč.~ */ GOTO 3
+  IF ~~ THEN REPLY #42290 /* ~"Bylo skvělý si s tebou poklábosit. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #42291 /* ~Nechej mrtvolu odpočívat v pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 0.2 0.3 3.1
+  SAY #24577 /* ~Mrtvola na tebe tiše zírá..~ */
+  IF ~~ THEN REPLY #24578 /* ~"No, nevadí. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #42292 /* ~Nechej mrtvolu odpočívat v pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+  SAY #24582 /* ~Mrtvola se nehýbe. Vypadá to, že už je natolik hotová, že ti neodpoví na nějakou tvou otázku.~ */
+  IF ~~ THEN REPLY #24583 /* ~Nechej mrtvolu na pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+  SAY #42293 /* ~Nezdá se, že by tenhle mrtvák měl u sebe nějaký klíč... a stejně i kdyby měl, těžko by ho mohl používat. Má úplně zpřerážené prsty, jako by je někdo přetáhl kladivem. Nutno podotknout, že jeho levé rameno je silně zafačováno... obvazy by se daly použít, ale to by je napřed mrtvák musel chtít vydat.~ */
+  IF ~  NearbyDialog("DMorte1")
+~ THEN REPLY #42294 /* ~"Poslyš, nemáš náhodou - nebo spíš některý z tvých přátel mrtváků - klíč, kterým by se dalo odtud dostat?"~ */ EXTERN ~DMORTE1~ 31
+  IF ~  !NearbyDialog("DMorte1")
+~ THEN REPLY #42295 /* ~"Poslyš, nemáš náhodou - nebo spíš některý z tvých přátel mrtváků - klíč, kterým by se dalo odtud dostat?"~ */ GOTO 1
+  IF ~~ THEN REPLY #42296 /* ~"Skvěle jsem se si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #42297 /* ~Nechat mrtváka napokoji.~ */ EXIT
+END

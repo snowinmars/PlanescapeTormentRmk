@@ -1,0 +1,373 @@
+IF ~  Global("Appearance","GLOBAL",1)
+~ THEN BEGIN 0 // from:
+SAY #300 /* ~더스트맨은 당신의 존재를 알아차리지 못하고 있는 듯하다. 아마 그는 당신을 언데드 노동자들 중 하나로 착각한 모양이다. ~ */
+IF ~~ THEN REPLY #302 /* ~"안녕하시오."~ */ GOTO 1
+IF ~~ THEN REPLY #303 /* ~"당신은 누구요?"~ */ GOTO 1
+IF ~~ THEN REPLY #304 /* ~"이 곳은 어떤 곳이오?"~ */ GOTO 1
+IF ~~ THEN REPLY #305 /* ~"질문할 것들이 좀 있소..."~ */ GOTO 1
+IF ~~ THEN REPLY #306 /* ~그를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+SAY #307 /* ~더스트맨은 소스라치게 놀란다, 그리고 고개를 돌려 당신을 쳐다본다. 그는 심한 충격을 받은 듯하다. 아마 당신 변장이 너무 훌륭했던 것 같다.~ */
+IF ~~ THEN REPLY #310 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 41
+IF ~~ THEN REPLY #312 /* ~"질문하고 싶은 것이 좀 있소..."~ */ GOTO 2
+IF ~~ THEN REPLY #1332 /* ~재빨리 떠난다. ~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
+SAY #309 /* ~더스트맨은 한 걸음 물러선 후 손뼉을 세게 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #313 /* ~"그럼 좋소..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+SAY #314 /* ~이 창백한 얼굴의 사내는 긴 흑색 법복을 착용하고 있다. 그로부터는 약간의 곰팡이 냄새가 난다. 그는 무표정하며, 자신의 일에 몰두하고 있는 듯하다.~ */
+IF ~~ THEN REPLY #315 /* ~"안녕하시오."~ */ GOTO 4
+IF ~~ THEN REPLY #316 /* ~"당신은 누구요?"~ */ GOTO 4
+IF ~~ THEN REPLY #317 /* ~"이 곳은 어떤 곳이오?"~ */ GOTO 4
+IF ~~ THEN REPLY #319 /* ~"질문할 것들이 좀 있소..."~ */ GOTO 4
+IF ~~ THEN REPLY #382 /* ~그를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1 3.2 3.3 40.2 40.3
+SAY #321 /* ~더스트맨은 천천히 고개를 들어 당신 쪽을 향한다. "길을 잃었소?"~ */
+IF ~~ THEN REPLY #322 /* ~"그렇소."~ */ GOTO 5
+IF ~~ THEN REPLY #323 /* ~"아니오."~ */ GOTO 6
+IF ~~ THEN REPLY #324 /* ~"아니, 난 길을 잃지 않았소. 그런데 질문할 것들이 좀 있소."~ */ GOTO 6
+IF ~~ THEN REPLY #325 /* ~"안녕히 계시오."~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 4.3 6.4 16.2 51.1
+SAY #326 /* ~"당신을 밖으로 안내할 경비병을 부르겠소. 잠시만 기다리시오."~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #327 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #328 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 41
+IF ~~ THEN REPLY #329 /* ~재빨리 떠난다. ~ */ GOTO 2
+IF ~~ THEN REPLY #1333 /* ~기다린다.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 4.2 51.2 51.3
+SAY #330 /* ~"만약 길을 잃은 게 아니라면 여기에 온 용건은 뭐요?"~ */
+IF ~~ THEN REPLY #331 /* ~"당신과는 상관없는 일이오."~ */ GOTO 7
+IF ~~ THEN REPLY #332 /* ~"나는 당신네 준비실에 있는 철판 위에서 깨어났소."~ */ GOTO 8
+IF ~~ THEN REPLY #333 /* ~"누굴 좀 만나러 왔소."~ */ GOTO 9
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #334 /* ~"나는 이 곳에 장례식 때문에 왔소, 하지만 뭔가 착오가 있었던 듯하오."~ */ GOTO 16
+IF ~~ THEN REPLY #337 /* ~재빨리 떠난다. ~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0 20.0
+SAY #335 /* ~"미안하지만 그건 내가 알 바가 아니오. 경비병들이라면 당신이 입을 열도록 만들 수 있을 것 같소." 더스트맨은 한 걸음 물러선다. 당장이라도 경비병을 부를 것 같다.~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #344 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #3887 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 41
+IF ~~ THEN REPLY #3888 /* ~"그럼 그들을 부르시오. 난 그들을 만나고 싶소."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.1 16.0 20.1
+SAY #336 /* ~"농담을 하고 있는 거요? 그렇다면 경비병들하고 농담을 나누는 게 어떻겠소." 더스트맨은 한 걸음 물러선다. 당장이라도 경비병을 부를 것 같다.~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #358 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #3885 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 41
+IF ~~ THEN REPLY #3886 /* ~"그럼 그들을 부르시오. 난 그들을 만나고 싶소."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.2 20.2
+SAY #338 /* ~"당신은 이 곳에 누구를 만나러 왔소?"~ */
+IF ~~ THEN REPLY #3922 /* ~"당신과는 상관없는 일이오."~ */ GOTO 7
+IF ~  GlobalGT("Dhall","GLOBAL",0) Global("Current_Area","GLOBAL",202) ~ THEN REPLY #342 /* ~"나는 달을 만나러 왔소."~ */ GOTO 10
+IF ~  GlobalGT("Dhall","GLOBAL",0) !Global("Current_Area","GLOBAL",202) ~ THEN REPLY #343 /* ~"나는 달을 만나러 왔소."~ */ GOTO 11
+IF ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33183 /* ~"나는 데이오나라를 만나러 왔소."~ */ GOTO 13
+IF ~  GlobalGT("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33185 /* ~"나는 데이오나라를 만나러 왔소."~ */ GOTO 12
+IF ~  GlobalGT("Soego","GLOBAL",0) Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33186 /* ~"나는 소에고를 만나러 왔소."~ */ GOTO 15
+IF ~  GlobalGT("Soego","GLOBAL",0) !Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33187 /* ~"나는 소에고를 만나러 왔소."~ */ GOTO 14
+IF ~  CheckStatGT(Protagonist,12,INT) NumTimesTalkedTo(1) ~ THEN REPLY #33189 /* ~거짓말: "어... 아단. 그는 아직도 여기서 일하오, 아니면...?"~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 21
+IF ~  CheckStatGT(Protagonist,12,INT) NumTimesTalkedToGT(1) ~ THEN REPLY #33190 /* ~거짓말: "어... 아단. 그는 아직도 여기서 일하오, 아니면...?"~ */ GOTO 21
+IF ~~ THEN REPLY #33191 /* ~"아무도 아니오. 내가 말을 잘못 했소."~ */ GOTO 20
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+SAY #345 /* ~"달은 이 층에 있는 접수실에 있소. 하지만 명심하시오... 달은 일 때문에 매우 바쁘며, 건강이 별로 좋지 않소. 화급한 용건이 없다면 그를 방해하지 않는 것이 좋을 것이오."~ */
+IF ~~ THEN REPLY #347 /* ~"알겠소. 정보를 주어 고맙소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2
+SAY #346 /* ~"달은 아마 2층에 있는 접수실에 있을 것이오. 그는 일 때문에 매우 바쁘며, 건강이 별로 좋지 않소. 화급한 용건이 없다면 그를 방해하지 않는 것이 좋을 것이오."~ */
+IF ~~ THEN REPLY #348 /* ~"알겠소. 정보를 주어 고맙소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.4 19.1
+SAY #349 /* ~"데이오나라? 내가 알기로 1층 북서쪽 기념 홀에는 한 여인이 안장되었소. 혹시 그 여자가 당신이 말한 여자요?"~ */
+IF ~~ THEN REPLY #352 /* ~"아마 그럴거요. 고맙소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+SAY #350 /* ~"데이오나라? 내가 알기로 북서쪽 기념 홀에는 한 여인이 안장되었소. 혹시 그 여자가 당신이 말한 여자요?"~ */
+IF ~~ THEN REPLY #353 /* ~"아마 그럴거요. 고맙소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 14 // from: 9.6
+SAY #351 /* ~"내 생각에 소에고는 1층 정문 근처에 있을 것이오. 그는 일이 바쁘지 않을 때는 가이드 역할도 하오."~ */
+IF ~~ THEN REPLY #354 /* ~"알겠소. 고맙소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.5
+SAY #355 /* ~"내 생각에 소에고는 정문 근처에 있을 것이오. 그는 일이 바쁘지 않을 때는 가이드 역할도 하오."~ */
+IF ~~ THEN REPLY #356 /* ~"알겠소. 고맙소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.3 20.3
+SAY #357 /* ~"누구의 장례식이라고 했소? 아마 당신이 참석하려는 장례식은 시체안치소의 다른 곳에서 거행되고 있을지도 모르오."~ */
+IF ~~ THEN REPLY #359 /* ~"당신은 내 말을 이해하지 못한 것 같군... 내 말은 당신들 착오 때문에 내가 장례식을 당하게 될 뻔했다는 얘기요."~ */ GOTO 8
+IF ~~ THEN REPLY #360 /* ~"그런 것 같소. 다른 장례식들은 어디서 거행되고 있소?"~ */ GOTO 17
+IF ~~ THEN REPLY #361 /* ~"내게 나가는 길을 가르쳐 줄 수 있겠소?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1
+SAY #362 /* ~"시체안치소에는 영안실이 여러 군데 있으며 그것들은 1층과 2층의 벽을 따라 배치되어 있소. 고인의 이름은 아시오?"~ */
+IF ~~ THEN REPLY #363 /* ~"아니, 모르오."~ */ GOTO 18
+IF ~~ THEN REPLY #364 /* ~"그래, 알고 있소."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+SAY #365 /* ~"그럼 정문 근처에 있는 가이드들 중 한 사람과 얘기하시오. 그들이라면 당신을 도울 수 있을 것이오."~ */
+IF ~~ THEN REPLY #366 /* ~"알겠소. 고맙소."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.1
+SAY #367 /* ~더스트맨은 기다린다.~ */
+IF ~~ THEN REPLY #369 /* ~"미안하오... 내가 말을 잘못했소. 난 고인의 이름을 모르오."~ */ GOTO 20
+IF ~  GlobalGT("Deionarra","GLOBAL",0) ~ THEN REPLY #370 /* ~"고인의 이름은 데이오나라요."~ */ GOTO 12
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #371 /* ~거짓말: "이름은... 어, 아단이오."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 21
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #372 /* ~거짓말: "이름은... 어, 아단이오."~ */ GOTO 21
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #373 /* ~마치 그에게 뭔가 속삭이려는 것처럼 몸을 기울인 후 그의 목을 부러트린다.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1335 /* ~마치 그에게 뭔가 속삭이려는 것처럼 몸을 기울인 후 그의 목을 부러트린다.~ */ GOTO 45
+IF ~~ THEN REPLY #1336 /* ~도망친다.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 20 // from: 9.9 19.0
+SAY #374 /* ~"알겠소. 자, 당신이 이 곳에 온 용건은 무엇이오?"~ */
+IF ~~ THEN REPLY #375 /* ~"당신과는 상관없는 일이오."~ */ GOTO 7
+IF ~~ THEN REPLY #376 /* ~"나는 당신네 준비실에 있는 철판 위에서 깨어났소."~ */ GOTO 8
+IF ~~ THEN REPLY #377 /* ~"누굴 좀 만나러 왔소."~ */ GOTO 9
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #378 /* ~"나는 이 곳에 장례식 때문에 왔소, 하지만 뭔가 착오가 있었던 듯하오."~ */ GOTO 16
+IF ~~ THEN REPLY #379 /* ~도망친다.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.7 9.8 19.2 19.3
+SAY #368 /* ~"나는 그 이름을 잘 모르겠소. 정문 근처에 있는 가이드들 중 한 사람과 얘기하시오... 그들이라면 당신을 나보다 더 잘 안내할 수 있을 것이오."~ */
+IF ~~ THEN REPLY #380 /* ~"알겠소. 그러리다. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~  Global("Appearance","GLOBAL",2)
+~ THEN BEGIN 22 // from:
+SAY #294 /* ~이 창백한 얼굴의 사내는 긴 흑색 법복을 착용하고 있다. 그로부터는 약간의 곰팡이 냄새가 난다. 그는 무표정하며, 자신의 일에 몰두하고 있는 듯하다.~ */
+IF ~~ THEN REPLY #295 /* ~"안녕하시오."~ */ GOTO 23
+IF ~~ THEN REPLY #297 /* ~그를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+SAY #381 /* ~그는 천천히 몸을 돌린다, 그리고 당신이 착용한 법복을 눈을 깜박거리며 쳐다본다. "안녕하시오, 동료 참입자."~ */
+IF ~~ THEN REPLY #383 /* ~"당신은 누구요?"~ */ GOTO 24
+IF ~~ THEN REPLY #384 /* ~"이 곳은 어떤 곳이오?"~ */ GOTO 25
+IF ~~ THEN REPLY #391 /* ~"질문하고 싶은 것이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #392 /* ~그를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+SAY #393 /* ~"그건 내가 당신에게 묻고 싶소. 당신 얼굴은 내게 낯이 익지 않소. 당신은 누구요?"~ */
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #450 /* ~거짓말: "이름은... 어, 아단이오."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1337 /* ~거짓말: "이름은... 어, 아단이오."~ */ GOTO 49
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3904 /* ~"내 이름은 당신이 알 바가 아니오.이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3905 /* ~"내 이름은 당신이 알 바가 아니오.이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 25 // from: 23.1
+SAY #394 /* ~"이 곳은 시체안치소요..." 더스트맨은 당신이 한 말을 곰곰이 생각해 보려는 듯 당신을 잠시동안 쳐다본다. "당신 이름을 다시 한 번 말해주겠소?"~ */
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #399 /* ~거짓말: "이름은... 어, 아단이오."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #3906 /* ~거짓말: "이름은... 어, 아단이오."~ */ GOTO 49
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3907 /* ~"내 이름은 당신이 알 바가 아니오.이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3908 /* ~"내 이름은 당신이 알 바가 아니오.이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 26 // from: 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
+SAY #400 /* ~더스트맨은 당신이 계속하기를 인내심 있게 기다린다.~ */
+IF ~~ THEN REPLY #401 /* ~"내게 여기서 나가는 방법을 일러줄 수 있겠소?"~ */ GOTO 27
+IF ~~ THEN REPLY #402 /* ~"혹시 파로드란 자를 아시오?"~ */ GOTO 28
+IF ~~ THEN REPLY #403 /* ~"나는 일지를 잃어버렸소. 혹시 본 적이 있소?"~ */ GOTO 39
+IF ~~ THEN REPLY #404 /* ~"관두시오. 당신을 귀찮게 해 미안하오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.0
+SAY #405 /* ~"그냥 정문을 통해서 나갈 수가 있소. 정문은 1층에 있소."~ */
+IF ~~ THEN REPLY #406 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #407 /* ~"고맙소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 28 // from: 26.1
+SAY #408 /* ~"그 이름..." 더스트맨은 잠시 말을 멈춘다. "그 이름의 귀에 익소... 그런 이름을 가진 수집자에 대해 들은 적이 있소. 서기인 달이라면 아마 그에 대해 알 거요."~ */
+IF ~~ THEN REPLY #409 /* ~"수집자?"~ */ GOTO 29
+IF ~~ THEN REPLY #410 /* ~"달?"~ */ GOTO 30
+IF ~~ THEN REPLY #411 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #425 /* ~"시간을 내주어 고맙소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0
+SAY #412 /* ~"수집자들... 그들은 시길의 거리에서 죽은 자들의 시체를 거두어 시체안치소로 가져오는 자들이오..." 더스트맨은 일단 말을 멈추고 눈살을 찌푸린다. "당신은 이 근처 사람이 아니군. 당신은 누구요?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #413 /* ~"나는 최근에 온 참입자요. 내 무지를 용서해 주시오."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3918 /* ~"나는... 최근에 이 곳에 왔소. 그래서... 이 곳에 대해 배우고 있는 중이오."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3919 /* ~"그래, 좋소...뭐 이름에 무슨 문제라도? 믿음을 굳건히 가지시오, 어, 동료 참입자 양반."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3920 /* ~"만약 당신이 날 도울 수 없다면 날 도울 수 있는 사람을 찾아보도록 하겠소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.1
+SAY #414 /* ~"달은 우리 당파에서 가장 존경받는 사람들 중 하나요. 내가 알기로 그보다 진정한 죽음의 본질에 대해 더 많이 명상하고, 또 그보다 더 진정한 죽음을 맞이할 자격을 지닌 사람은 없소. 그는 지혜의 보고요. 당신은 가능한 한 빨리 그와 얘기를 나누는 것이 좋을 거요. 그는 현생의 그림자에서 오래 머무르지 않을 테니까."~ */
+IF ~~ THEN REPLY #415 /* ~"*이 존재의 그림자에서 오래 머물지 않을 것이다?*"~ */ GOTO 31
+IF ~  Global("Current_Area","GLOBAL",202) ~ THEN REPLY #416 /* ~"달은 어디에 있소?"~ */ GOTO 32
+IF ~  !Global("Current_Area","GLOBAL",202) ~ THEN REPLY #417 /* ~"달은 어디에 있소?"~ */ GOTO 33
+IF ~~ THEN REPLY #418 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #33204 /* ~"정보를 주어 고맙소. 그럼 난 그와 이야기를 하겠소.~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 31 // from: 30.0 32.0 33.0
+SAY #419 /* ~고개를 끄덕인다. "달은 병에 걸렸소. 그는 기스저라이의 기준으로 보아도 매우 늙었소. 그가 병 때문에 곧 죽을 것은 명백하오. 그는 정말로 운이 좋소."~ */
+IF ~~ THEN REPLY #420 /* ~"기스저라이의 기준?" ~ */ GOTO 34
+IF ~~ THEN REPLY #421 /* ~"*기스저라이*란 무엇이오?"~ */ GOTO 35
+IF ~~ THEN REPLY #422 /* ~"운이 좋아?"~ */ GOTO 36
+IF ~~ THEN REPLY #423 /* ~"알겠소. 그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #424 /* ~"시간을 내주어 고맙소. 이만 실례해야겠소."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 32 // from: 30.1
+SAY #427 /* ~"달은 이 층의 북서쪽 구석에 있는 접수실에 있소. 하지만 명심하시오... 달은 매우 바쁘오... 그는 자신의 책무를 다하는 데 쓰는 시간 외의 시간을 병 때문에 대부분 빼앗기고 있는 실정이오."~ */
+IF ~~ THEN REPLY #428 /* ~"달은 병에 걸렸소?"~ */ GOTO 31
+IF ~~ THEN REPLY #429 /* ~"시간을 내주어 고맙소. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 33 // from: 30.2
+SAY #426 /* ~"달은 2층의 북서쪽 구석에 있는 접수실에 있을 것이오. 그는 바쁘니까 그의 시간을 너무 뺏지는 마시오... 그는 자신의 책무를 다하는 데 쓰는 시간 외의 시간을 그의 몸을 좀먹는 병 때문에 대부분 빼앗기고 있는 실정이오."~ */
+IF ~~ THEN REPLY #430 /* ~"달은 병에 걸렸소?"~ */ GOTO 31
+IF ~~ THEN REPLY #431 /* ~"시간을 내주어 고맙소. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.0
+SAY #432 /* ~"그렇소... 기스저라이는 인간보다 훨씬 긴 수명을 지니고 있소."~ */
+IF ~~ THEN REPLY #433 /* ~"*기스저라이*란 무엇이오?"~ */ GOTO 35
+IF ~~ THEN REPLY #437 /* ~"왜 달이 죽는 게 운이 좋다는 거요? 사람들이 그를 싫어하기라도 하는 거요?"~ */ GOTO 36
+IF ~~ THEN REPLY #438 /* ~"아. 다른 질문이 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #440 /* ~"시간을 내주어 고맙소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 35 // from: 31.1 34.0
+SAY #435 /* ~"기스저라이는..." 더스트맨은 일단 말을 멈추고 눈살을 찌푸리며 당신을 골똘히 쳐다본다. "당신은 이 근처 사람이 아니군. 당신은 누구요?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #436 /* ~"나는 최근에 온 참입자요. 내 무지를 용서해 주시오."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3909 /* ~"나는... 최근에 이 곳에 왔소. 그래서... 이 곳에 대해 배우고 있는 중이오."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3910 /* ~"그래, 좋소...뭐 이름에 무슨 문제라도? 믿음을 굳건히 가지시오, 어, 동료 참입자 양반."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3911 /* ~"만약 당신이 날 도울 수 없다면 날 도울 수 있는 사람을 찾아보도록 하겠소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 36 // from: 31.2 34.1
+SAY #439 /* ~"그는 진정한 죽음에 도달할 것이기 때문에 운이 좋소. 그는 더 이상 현생의 그림자에서 살 필요가 없소."~ */
+IF ~~ THEN REPLY #441 /* ~"그리고... 그건 좋은 일이오?"~ */ GOTO 37
+IF ~~ THEN REPLY #442 /* ~"알겠소. 정말 다행스런 일이오. 그 밖에도 물어볼 것들이 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #443 /* ~"알겠소. 이만 실례해야겠소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+SAY #444 /* ~더스트맨은 고개를 끄덕인다. "그렇소." 그는 눈살을 찌푸린 다음, 당신을 골똘히 살펴본다. "당신은 이 근처 사람이 아니군. 당신은 누구요?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #445 /* ~"나는 최근에 온 참입자요. 내 무지를 용서해 주시오."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #446 /* ~"나는... 최근에 이 곳에 왔소. 그래서... 이 곳에 대해 배우고 있는 중이오."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3912 /* ~"그래, 좋소...뭐 이름에 무슨 문제라도? 믿음을 굳건히 가지시오, 어, 동료 참입자 양반."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3913 /* ~"만약 당신이 날 도울 수 없다면 날 도울 수 있는 사람을 찾아보도록 하겠소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 38 // from:
+SAY #447 /* ~"당신은 우리의 일원이 아니군. 당신은 여기서 무슨 짓을 하고 있는 거요? 당신은 아나키스트의 일원이오? 아니면 다른 당파의 스파이? 경비병! 경비병!"~ */
+IF ~~ THEN REPLY #448 /* ~"빌어먹을!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #449 /* ~"쉿! 그렇게 소리를 크게 지르면 내가 대답할 수가 없지 않소!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) IncrementGlobal("Law","GLOBAL",-1) ~ EXIT
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1339 /* ~"쉿! 그렇게 소리를 크게 지르면 내가 대답할 수가 없지 않소!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 26.2
+SAY #398 /* ~"일지? 아니, 그런 건 본 적이 없소."~ */
+IF ~~ THEN REPLY #451 /* ~"그 밖에도 물어보고 싶은 것들이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #452 /* ~"실례해야겠소. 안녕히 계시오."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from:
+SAY #1419 /* ~이 창백한 얼굴의 사내는 긴 흑색 법복을 착용하고 있다. 그로부터는 약간의 곰팡이 냄새가 난다. 그는 무표정하며, 자신의 일에 몰두하고 있는 듯하다.~ */
+IF ~  NearbyDialog("DMorte") Global("Warning","GLOBAL",0) ~ THEN REPLY #1420 /* ~"안녕하시오."~ */ EXTERN ~DMORTE~ 61
+IF ~  NearbyDialog("DMorte") Global("Warning","GLOBAL",1) ~ THEN REPLY #1421 /* ~"안녕하시오."~ */ EXTERN ~DMORTE~ 63
+IF ~  NearbyDialog("DMorte") GlobalGT("Warning","GLOBAL",1) ~ THEN REPLY #1422 /* ~"안녕하시오."~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #1423 /* ~"안녕하시오."~ */ GOTO 4
+IF ~~ THEN REPLY #1424 /* ~그를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 1.0 5.1 7.1 8.1 47.1
+SAY #1425 /* ~더스트맨이 입도 뻥끗하기 전에 당신은 양손으로 그의 관자놀이를 꽉 조인다, 그리고 그의 목을 왼쪽으로 세게 비튼다.~ */
+IF ~~ THEN REPLY #1426 /* ~"당신 동료들에게 알리도록 내버려둘 수는 없지..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0 45.0
+SAY #1427 /* ~*우지직*하는 소리가 나고 더스트는 맨은 당신 팔 안에서 맥없이 늘어진다. ~ */
+IF ~  Global("Choke_Memory","GLOBAL",0) ~ THEN REPLY #1428 /* ~"나보다는 당신이 죽는 게 낫지, 더스티."~ */ DO ~SetGlobal("Choke_Memory","GLOBAL",1) PlaySoundNotRanged("SPTR_01") IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself) AddexperienceParty(15) ~ GOTO 43
+IF ~  GlobalGT("Choke_Memory","GLOBAL",0) ~ THEN REPLY #1429 /* ~"나보다는 당신이 죽는 게 낫지, 더스티."~ */ DO ~IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself) AddexperienceParty(15) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+SAY #1430 /* ~놀랍게도 이러한 행동은 당신에게 있어 매우 자연스러운 일인 것 같다... 마치 전에도 여러 번 비슷한 일을 해본 것처럼. 그런 생각이 들자 기억이 자극이 받으나, 표면으로 떠오를 정도로 강하지는 않다. ~ */
+IF ~~ THEN REPLY #3882 /* ~시체를 놔두고 가던 길을 간다.~ */ DO ~Kill(Myself) GiveExperience(Protagonist,250) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 5.0 7.0 8.0 19.4 47.0
+SAY #3883 /* ~당신이 충분히 빠르지 못한 탓에 더스트맨은 당신의 돌격을 피한다. 한 걸음 물러선 후, 그는 손뼉을 세게 세 번 친다. 그에 응답하듯 시체안치소 안에서 거대한 철제 종소리가 울려 퍼지기 시작한다.~ */
+IF ~~ THEN REPLY #3884 /* ~"그럼 좋소..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 19.5
+SAY #3889 /* ~당신이 그에게 '속삭이려고' 몸을 구부리자 더스트맨 역시 몸을 구부린다. 그가 팔이 닿을 거리 내로 들어오자 당신은 양손으로 그의 관자놀이를 꽉 조인다, 그리고 그의 목을 왼쪽으로 세게 비튼다.~ */
+IF ~~ THEN REPLY #3890 /* ~"당신 동료들에게 알리도록 내버려둘 수는 없지..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 46 // from: 24.3 25.3 29.3 35.3 37.3 49.3 50.1
+SAY #3891 /* ~더스트맨은 의심을 하는 듯하다. 그는 뭐라고 말하려는 것 같다, 하지만 이내 고개를 젓고 하던 일로 돌아간다.~ */
+IF ~~ THEN REPLY #3892 /* ~다른 곳으로 간다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
+SAY #3893 /* ~더스트맨은 당신을 유심히 살펴본다. "당신은 우리들 중 하나가 아니군. 당신은 여기서 무슨 짓을 하고 있는 거요? 당신은 아나키스트의 일원이오? 아니면 다른 당파의 스파이? 경비병을 불러야겠군..."~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #3914 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #3915 /* ~그가 미처 소리를 지르기 전에 그의 목을 부러트린다.~ */ GOTO 41
+IF ~~ THEN REPLY #3916 /* ~"아니오... 그건... 어... 내 말은 내가 스파이가 아니라는 거요... 나는 철판들 중 하나에서 깨어나... 그리고..."~ */ GOTO 2
+IF ~~ THEN REPLY #3917 /* ~재빨리 떠난다. ~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 48 // from: 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
+SAY #3894 /* ~더스트맨은 고개를 끄덕인 후 하던 일로 돌아간다.~ */
+IF ~~ THEN REPLY #3895 /* ~다른 곳으로 간다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 24.0 24.1 25.0 25.1
+SAY #3896 /* ~더스트맨은 눈살을 찌푸린다: "그런 이름은 모르겠소."~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3898 /* ~"나는 최근에 온 참입자요. 내 무지를 용서해 주시오."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3899 /* ~"나는... 이 곳에 온지 얼마 안 되오. 난... 이 곳의 규칙을 배우는 중이오."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3900 /* ~"그래, 좋소...뭐 이름에 무슨 문제라도? 믿음을 굳건히 가지시오, 어, 동료 참입자 양반."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3901 /* ~"만약 당신이 날 도울 수 없다면 날 도울 수 있는 사람을 찾아보도록 하겠소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 50 // from: 29.0 35.0 37.0 49.0
+SAY #3897 /* ~더스트맨은 여전히 눈살을 찌푸리고있으나, 그는 가볍게 고개를 끄덕인다. "좋소. 어떤 도움을 원하시오, 참입자?"~ */
+IF ~~ THEN REPLY #3902 /* ~"질문하고 싶은 것이 좀 있소..."~ */ GOTO 26
+IF ~~ THEN REPLY #3903 /* ~"오늘은 아무런 용건도 없소. 안녕히 계시오."~ */ GOTO 46
+END
+
+IF ~  Global("Appearance","GLOBAL",0)
+~ THEN BEGIN 51 // from:
+SAY #66674 /* ~더스트맨은 차가운 눈으로 당신을 바라본다. "길을 잃었소?"~ */
+IF ~  Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66675 /* ~"아니오, 난 당파의 일원이오. 나는 시체안치소를 그냥 둘러보고 있었소."~ */ GOTO 52
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66676 /* ~"그렇소."~ */ GOTO 5
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66677 /* ~"아니오."~ */ GOTO 6
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66678 /* ~"아니오, 나는 길을 잃지 않았소. 물어볼 것이 좀 있소..."~ */ GOTO 6
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66679 /* ~"안녕히 계시오."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+SAY #66681 /* ~더스트맨은 잠시 당신을 바라본 후 고개를 끄덕인다. "좋소. 만약 도움이 필요하면 내게 말하시오."~ */
+IF ~~ THEN REPLY #66682 /* ~"그렇게 하리다. 안녕히 계시오."~ */ EXIT
+END

@@ -1,0 +1,373 @@
+IF ~  Global("Appearance","GLOBAL",1)
+~ THEN BEGIN 0 // from:
+SAY #300 /* ~Spalovač nevypadá, že by tě poznal. Musel si tě splést s jedním z mrtvých dělníků. ~ */
+IF ~~ THEN REPLY #302 /* ~"Zdravím."~ */ GOTO 1
+IF ~~ THEN REPLY #303 /* ~"Kdo jsi?"~ */ GOTO 1
+IF ~~ THEN REPLY #304 /* ~"Co je tohle za místo?"~ */ GOTO 1
+IF ~~ THEN REPLY #305 /* ~"Měl bych nějaké otázky..."~ */ GOTO 1
+IF ~~ THEN REPLY #306 /* ~Nechej ho být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+SAY #307 /* ~Spalovač se zvedne, nejdříve se rozhlíží a pak se jeho pohled zastaví na tobě. Vypadá šokovaný - tvůj převlek zřejmě vypadá celkem dobře. ~ */
+IF ~~ THEN REPLY #310 /* ~Využij výhody překvapení a chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 41
+IF ~~ THEN REPLY #312 /* ~"Měl bych nějaké otázky..."~ */ GOTO 2
+IF ~~ THEN REPLY #1332 /* ~Odejdi. Rychle.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.1 1.2 5.2 5.3 19.6 20.4 47.2 47.3 51.4
+SAY #309 /* ~Spalovač couvá, pak najednou třikrát krátce zatleská. Hned nato je slyšet v Márnici zvonění velkého železného zvonu.~ */
+IF ~~ THEN REPLY #313 /* ~"Nuže dobrá..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+SAY #314 /* ~Bledý muž je oblečen do dlouhých tmavých šatů. Vychází z něj slabý zatuchlý zápach. Jeho vzezření je nevýrazné a zdá se, že je zaměstnán svými povinnostmi.~ */
+IF ~~ THEN REPLY #315 /* ~"Zdravím."~ */ GOTO 4
+IF ~~ THEN REPLY #316 /* ~"Kdo jsi?"~ */ GOTO 4
+IF ~~ THEN REPLY #317 /* ~"Co je tohle za místo?"~ */ GOTO 4
+IF ~~ THEN REPLY #319 /* ~"Měl bych nějaké otázky..."~ */ GOTO 4
+IF ~~ THEN REPLY #382 /* ~Nechej ho být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1 3.2 3.3 40.2 40.3
+SAY #321 /* ~Spalovač pomalu zvedne hlavu a otočí se k tobě. "Ztratil ses?"~ */
+IF ~~ THEN REPLY #322 /* ~"Ano."~ */ GOTO 5
+IF ~~ THEN REPLY #323 /* ~"Ne."~ */ GOTO 6
+IF ~~ THEN REPLY #324 /* ~"Ne, neztratil jsem se. Měl bych nějaké otázky..."~ */ GOTO 6
+IF ~~ THEN REPLY #325 /* ~"Sbohem."~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 4.3 6.4 16.2 51.1
+SAY #326 /* ~"Zavolám stráže, aby tě nasměrovaly. Vydrž chvíli."~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #327 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #328 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 41
+IF ~~ THEN REPLY #329 /* ~Odejdi. Rychle.~ */ GOTO 2
+IF ~~ THEN REPLY #1333 /* ~Čekej.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 4.2 51.2 51.3
+SAY #330 /* ~"Když ses neztratil, tak co tu děláš?"~ */
+IF ~~ THEN REPLY #331 /* ~"To se tě netýká."~ */ GOTO 7
+IF ~~ THEN REPLY #332 /* ~"Probudil jsem se na jedné z kamenných desek ve vaší preparační místnosti."~ */ GOTO 8
+IF ~~ THEN REPLY #333 /* ~"Někoho tu hledám."~ */ GOTO 9
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #334 /* ~"Byl jsem sem umístěn, ale vypadá to, že se někde stala chyba."~ */ GOTO 16
+IF ~~ THEN REPLY #337 /* ~Odejdi. Rychle.~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0 20.0
+SAY #335 /* ~"Obávám se, že je to moje věc. Možná ti stráže rozvážou jazyk.." Spalovač začíná couvat; vypadá, že chce zavolat stráže.~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #344 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #3887 /* ~Zlom mu krk, než stačí někoho přivolat.~ */ GOTO 41
+IF ~~ THEN REPLY #3888 /* ~"Tak je tedy přivolej. Rád bych se s nimi setkal."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.1 16.0 20.1
+SAY #336 /* ~"Děláš si legraci, jo? Snad to tedy moc rád sdělíš strážím."  Spalovač začíná couvat. Vypadá, jako by chtěl zavolat stráže.~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #358 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #3885 /* ~Zlom mu krk, než stačí někoho přivolat.~ */ GOTO 41
+IF ~~ THEN REPLY #3886 /* ~"Tak je tedy přivolej. Rád bych se s nimi setkal."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.2 20.2
+SAY #338 /* ~"Koho tu hledáš?"~ */
+IF ~~ THEN REPLY #3922 /* ~"To není tvůj problém."~ */ GOTO 7
+IF ~  GlobalGT("Dhall","GLOBAL",0) Global("Current_Area","GLOBAL",202) ~ THEN REPLY #342 /* ~"Hledám Dhalla."~ */ GOTO 10
+IF ~  GlobalGT("Dhall","GLOBAL",0) !Global("Current_Area","GLOBAL",202) ~ THEN REPLY #343 /* ~"Hledám Dhalla."~ */ GOTO 11
+IF ~  GlobalGT("Deionarra","GLOBAL",0) Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33183 /* ~"Přišel jsem sem za Deionarrou."~ */ GOTO 13
+IF ~  GlobalGT("Deionarra","GLOBAL",0) !Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33185 /* ~"Přišel jsem sem za Deionarrou."~ */ GOTO 12
+IF ~  GlobalGT("Soego","GLOBAL",0) Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33186 /* ~"Přišel jsem sem za Soegem."~ */ GOTO 15
+IF ~  GlobalGT("Soego","GLOBAL",0) !Global("Current_Area","GLOBAL",201) ~ THEN REPLY #33187 /* ~"Přišel jsem sem za Soegem."~ */ GOTO 14
+IF ~  CheckStatGT(Protagonist,12,INT) NumTimesTalkedTo(1) ~ THEN REPLY #33189 /* ~Lži: "Uh... Adahn. Pracuje tu ještě, nebo...?"~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 21
+IF ~  CheckStatGT(Protagonist,12,INT) NumTimesTalkedToGT(1) ~ THEN REPLY #33190 /* ~Lži: "Uh... Adahn. Pracuje tu ještě, nebo...?"~ */ GOTO 21
+IF ~~ THEN REPLY #33191 /* ~"Uh, nikdo. Přeřekl jsem se."~ */ GOTO 20
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+SAY #345 /* ~"Dhall je v přijímací místnosti v tomhle patře. Musím tě varovat... Dhall je hodně zaneprázdněný svými povinnostmi a není zrovna v nejlepší formě, co se týče zdraví. Jestli nemáš nic obchodního, neměl bys ho vyrušovat."~ */
+IF ~~ THEN REPLY #347 /* ~"Dobře. Díky za informaci."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2
+SAY #346 /* ~"Dhall je docela určitě v přijímací místnosti v druhém patře. Je hodně zaneprázdněný a není zrovna v nejlepší formě, co se týče zdraví. Jestli nemáš nic obchodního, neměl bys ho vyrušovat."~ */
+IF ~~ THEN REPLY #348 /* ~"Dobře. Díky za informaci."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.4 19.1
+SAY #349 /* ~"Deionarra? Vím, že v prvním patře v pamětní síni je pohřbena nějaká žena. Mohla by to být ona?"~ */
+IF ~~ THEN REPLY #352 /* ~"Docela určitě. Díky."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+SAY #350 /* ~"Deionarra? Vím, že v prvním patře v pamětní síni je pohřbena nějaká žena. Mohla by to být ona?"~ */
+IF ~~ THEN REPLY #353 /* ~"Docela určitě. Díky."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 14 // from: 9.6
+SAY #351 /* ~"Myslím, že Soego je u vstupní brány v prvním patře. Funguje jako průvodce v hodinách, kdy není takový provoz."~ */
+IF ~~ THEN REPLY #354 /* ~"Dobře. Díky."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.5
+SAY #355 /* ~"Myslím, že Soego je u vstupní brány v prvním patře. Funguje jako průvodce v hodinách, kdy není takový provoz."~ */
+IF ~~ THEN REPLY #356 /* ~"Dobře. Díky."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.3 20.3
+SAY #357 /* ~"Kdo byl pohřben? Snad se bohoslužby uskutečňují někde jinde v Márnici."~ */
+IF ~~ THEN REPLY #359 /* ~"Ty jsi mi nerozuměl... to chybný umístění, to jsem byl JÁ."~ */ GOTO 8
+IF ~~ THEN REPLY #360 /* ~"To by mohlo být. Kde se tedy bohoslužby uskutečňují?"~ */ GOTO 17
+IF ~~ THEN REPLY #361 /* ~"Můžeš mi ukázat cestu ven?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1
+SAY #362 /* ~"Několik internačních místností lemuje obvod Márnice. Stáčí se podél zdí v prvním a druhém patře. Znáš jméno toho zemřelého?"~ */
+IF ~~ THEN REPLY #363 /* ~"Ne."~ */ GOTO 18
+IF ~~ THEN REPLY #364 /* ~"Ano."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+SAY #365 /* ~"Pak by sis to tedy měl ověřit u někoho z průvodců u vstupní brány. Můžou ti pomoct."~ */
+IF ~~ THEN REPLY #366 /* ~"Dobře. Děkuju."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.1
+SAY #367 /* ~Spalovač čeká.~ */
+IF ~~ THEN REPLY #369 /* ~"Promiň... nemluvil jsem pravdu. Neznám jméno toho zemřelého."~ */ GOTO 20
+IF ~  GlobalGT("Deionarra","GLOBAL",0) ~ THEN REPLY #370 /* ~"Jmenuje se Deionarra."~ */ GOTO 12
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #371 /* ~Lež: "Jmenuju se... ehm, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 21
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #372 /* ~Lež: "Jmenuju se... ehm, Adahn."~ */ GOTO 21
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #373 /* ~Nakloň se k němu, jakoby si mu chtěl něco pošeptat a pak ho chyť pod krkem.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #1335 /* ~Nakloň se k ní, jako bys jí chtěl něco pošeptat, pak ji chyť pod krkem.~ */ GOTO 45
+IF ~~ THEN REPLY #1336 /* ~Uteč.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 20 // from: 9.9 19.0
+SAY #374 /* ~"Aha. Takže, co tu vlastně děláš?"~ */
+IF ~~ THEN REPLY #375 /* ~"To se tě netýká."~ */ GOTO 7
+IF ~~ THEN REPLY #376 /* ~"Probudil jsem se na jedné z kamenných desek ve vaší preparační místnosti."~ */ GOTO 8
+IF ~~ THEN REPLY #377 /* ~"Někoho tu hledám."~ */ GOTO 9
+IF ~  CheckStatGT(Protagonist,11,INT) ~ THEN REPLY #378 /* ~"Byl jsem sem umístěn, ale vypadá to, že někde se musela stát chyba."~ */ GOTO 16
+IF ~~ THEN REPLY #379 /* ~Poptej se po tom.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.7 9.8 19.2 19.3
+SAY #368 /* ~"To jméno mi nic neříká. Ověř si to u někoho z průvodců u vstupní brány... měli by být schopni nasměrovat tě lépe než já."~ */
+IF ~~ THEN REPLY #380 /* ~"Dobře. Udělám to. Sbohem."~ */ GOTO 48
+END
+
+IF ~  Global("Appearance","GLOBAL",2)
+~ THEN BEGIN 22 // from:
+SAY #294 /* ~Bledý muž je oblečen do dlouhých tmavých šatů. Vychází z něj slabý zatuchlý zápach. Jeho vzezření je nevýrazné a zdá se, že je zaměstnán svými povinnostmi. ~ */
+IF ~~ THEN REPLY #295 /* ~"Zdravím."~ */ GOTO 23
+IF ~~ THEN REPLY #297 /* ~Nechej ho být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+SAY #381 /* ~Pomalu se otáčí a jeho oči přejíždí tvé šaty. "Zdravím, kolego."~ */
+IF ~~ THEN REPLY #383 /* ~"Kdo jsi?"~ */ GOTO 24
+IF ~~ THEN REPLY #384 /* ~"Co je tohle za místo?"~ */ GOTO 25
+IF ~~ THEN REPLY #391 /* ~"Měl bych nějaké otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #392 /* ~Nechej ho být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+SAY #393 /* ~"Spíš bych měl já otázku na tebe. Tvůj obličej jsem tu ještě neviděl. Kdo jsi?"~ */
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #450 /* ~Lež: "Jmenuju se... ehm, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1337 /* ~Lež: "Mé jméno je... ehm, Adahn."~ */ GOTO 49
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3904 /* ~"Jak se jmenuju tě nemusí zajímat. Já teď musím jít, takže sbohem."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3905 /* ~"Jak se jmenuju tě nemusí zajímat. Já teď musím jít, takže sbohem."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 25 // from: 23.1
+SAY #394 /* ~"Tohle je Márnice..." Spalovač na tebe chvíli zírá, jakoby zažíval, co jsi mu právě řekl. "Ještě jednou, jakže se to jmenuješ?" ~ */
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #399 /* ~Lež: "Jmenuju se... ehm, Adahn."~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) IncrementGlobal("Law","GLOBAL",-1) ~ GOTO 49
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #3906 /* ~Lži: "Jmenuju se... uh, Adahn."~ */ GOTO 49
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3907 /* ~"Jak se jmenuju tě nemusí zajímat. Já teď musím jít, takže sbohem."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3908 /* ~"Jak se jmenuju tě nemusí zajímat. Já teď musím jít, takže sbohem."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 26 // from: 23.2 27.0 28.2 30.3 31.3 34.2 36.1 39.0 50.0
+SAY #400 /* ~Spalovač trpělivě čeká na tvoje pokračování.~ */
+IF ~~ THEN REPLY #401 /* ~"Můžeš mi říct jak se odtud dostat pryč?"~ */ GOTO 27
+IF ~~ THEN REPLY #402 /* ~"Neznáš někoho, kdo se jmenuje Pharod?"~ */ GOTO 28
+IF ~~ THEN REPLY #403 /* ~"Hledám svůj deník. Neviděl si ho?"~ */ GOTO 39
+IF ~~ THEN REPLY #404 /* ~"Nevadí. Promiň, že jsem tě otravoval."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.0
+SAY #405 /* ~"Můžeš jednoduše odejít vstupní branou. Je v prvním patře."~ */
+IF ~~ THEN REPLY #406 /* ~"Mám ještě další otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #407 /* ~"Díky. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 28 // from: 26.1
+SAY #408 /* ~"To jméno..." Spalovač se na chvíli odmlčí. "To jméno *mi zní* povědomě... Myslím, že Sběrače toho jména před nedávnem odvolali. Dhall Scrivener by měl o něm vědět."~ */
+IF ~~ THEN REPLY #409 /* ~"Sběrač?"~ */ GOTO 29
+IF ~~ THEN REPLY #410 /* ~"Dhall?"~ */ GOTO 30
+IF ~~ THEN REPLY #411 /* ~"Měl bych ještě jiné otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #425 /* ~"Díky za tvůj čas. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0
+SAY #412 /* ~"Sběrači... sbírají ty, kdož zemřeli na ulicích Sigilu a přináší je do Márnice..." Spalovač se odmlčí, pak se zamračí. "Ty nejsi ze zdejšího okolí. Kdo jsi?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #413 /* ~"Jsem tady nový. Promiň mou neznalost."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3918 /* ~"Jsem... tady nový. Snažím se... zvyknout si."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3919 /* ~"No, ech... na co jméno? Ať je tvá víra pevná, uh, příteli zasvěcenče."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3920 /* ~"Pokud mi nemůžeš pomoct, budu si muset najít někoho schopnějšího. Sbohem."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.1
+SAY #414 /* ~"Dhall patří k nejváženějším osobám našeho společenstva. Když o tom uvažuju, nikdo nepřemýšlel o přirozenosti a zaslouženosti Pravé smrti více než právě on. Rozdává nám spoustu moudrosti. Jestliže ho neznáš, doporučuji ti, aby sis s ním při nejbližší příležitosti promluvil. On už nebude moc dlouho pobývat ve stínu této existence."~ */
+IF ~~ THEN REPLY #415 /* ~"*On nebude dlouho pobývat ve stínu této existence?*"~ */ GOTO 31
+IF ~  Global("Current_Area","GLOBAL",202) ~ THEN REPLY #416 /* ~"Kde bych mohl najít Dhalla?"~ */ GOTO 32
+IF ~  !Global("Current_Area","GLOBAL",202) ~ THEN REPLY #417 /* ~"Kde bych mohl najít Dhalla?"~ */ GOTO 33
+IF ~~ THEN REPLY #418 /* ~"Měl bych ještě jiné otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #33204 /* ~"Díky za informaci. Promluvím si s ním."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 31 // from: 30.0 32.0 33.0
+SAY #419 /* ~Přikyvuje. "Dhall je nemocný. Podle githzeraiských norem je už hodně starý. Při nemoci, kterou pochytil, bude nepochybně následovat smrt. A on je vskutku šťastný."~ */
+IF ~~ THEN REPLY #420 /* ~"Githzeraiských norem?"~ */ GOTO 34
+IF ~~ THEN REPLY #421 /* ~"Co je to *githzerai?*"~ */ GOTO 35
+IF ~~ THEN REPLY #422 /* ~"Šťastný?"~ */ GOTO 36
+IF ~~ THEN REPLY #423 /* ~"Aha. Měl bych ještě jiné otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #424 /* ~"Díky za tvůj čas. Teď musím jít."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 32 // from: 30.1
+SAY #427 /* ~"Dhall je docela určitě v přijímací místnosti v severozápadním rohu tohoto patra. Ale musím tě varovat... je docela zaneprázdněn... čas, který nespotřebují jeho povinnosti, velkou měrou vyplýtvá jeho nemoc."~ */
+IF ~~ THEN REPLY #428 /* ~"Dhall je nemocný?"~ */ GOTO 31
+IF ~~ THEN REPLY #429 /* ~"Díky za tvůj čas. Teď už musím jít. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 33 // from: 30.2
+SAY #426 /* ~"Dhall je docela určitě v přijímací místnosti v druhém patře. Být tebou, moc bych ho nezdržoval, je docela zaneprázdněn... čas, který nespotřebují jeho povinnosti, velkou měrou vyplýtvá jeho nemoc."~ */
+IF ~~ THEN REPLY #430 /* ~"Dhall je nemocný?"~ */ GOTO 31
+IF ~~ THEN REPLY #431 /* ~"Díky za tvůj čas. Teď už musím jít. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.0
+SAY #432 /* ~"Ano, githzeraiové mají mnohem delší život než obyčejní lidé."~ */
+IF ~~ THEN REPLY #433 /* ~"Kdo je to *githzerai?*"~ */ GOTO 35
+IF ~~ THEN REPLY #437 /* ~"Jakto, že je Dhallova smrt štěstím? On není snad oblíbený?"~ */ GOTO 36
+IF ~~ THEN REPLY #438 /* ~"Oh. Měl bych ještě jiné otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #440 /* ~"Díky za tvůj čas. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 35 // from: 31.1 34.0
+SAY #435 /* ~"Githzeraiové jsou..." Spalovač se odmlčí, zamračí se a překvapeně na tebe civí. "Ty nejsi ze zdejšího okolí. Kdo jsi?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #436 /* ~"Jsem tady nový. Odpusť mi mou neznalost."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3909 /* ~"Jsem... tady nový. Snažím se... zvyknout si."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3910 /* ~"No, ech... na co jméno? Ať je tvá víra pevná, uh, příteli zasvěcenče."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3911 /* ~"Pokud mi nemůžeš pomoct, budu si muset najít někoho schopnějšího. Sbohem."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 36 // from: 31.2 34.1
+SAY #439 /* ~"Je šťastný, že konečně dosáhne Pravé smrti. Už nemusí žít ve stínu této existence."~ */
+IF ~~ THEN REPLY #441 /* ~"A... to je dobrá věc?"~ */ GOTO 37
+IF ~~ THEN REPLY #442 /* ~"Aha. Velmi šťastné, vskutku. Měl bych ještě jiné otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #443 /* ~"Aha. Dobře, teď už tě musím opustit. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+SAY #444 /* ~Spalovač přikyvuje. "Ano." Zamračí se a pak si tě pozorně prohlíží. "Ty nejsi ze zdejšího okolí. Kdo jsi?"~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #445 /* ~"Jsem tady nový. Odpusť mi mou neznalost."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #446 /* ~"Jsem... tu nový. Já... pokouším se získat nějaké zkušenosti."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3912 /* ~"No, ech... na co jméno? Ať je tvá víra pevná, uh, příteli zasvěcenče."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3913 /* ~"Pokud mi nemůžeš pomoct, budu si muset najít někoho schopnějšího. Sbohem."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 38 // from:
+SAY #447 /* ~"Ty nejsi jedním z nás, že ne? Co tu děláš? Jsi členem Anarchistů? Nebo špeh jiného společenství? Stráže! Stráže!"~ */
+IF ~~ THEN REPLY #448 /* ~"Sakra!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+IF ~  NumTimesTalkedTo(1) ~ THEN REPLY #449 /* ~"Shhhh! Nemůžu ti odpovědět když křičíš!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) IncrementGlobal("Law","GLOBAL",-1) ~ EXIT
+IF ~  NumTimesTalkedToGT(1) ~ THEN REPLY #1339 /* ~"Shhhh! Nemůžu ti v tom křiku odpovědět!"~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 26.2
+SAY #398 /* ~"Deník? Žádný jsem neviděl."~ */
+IF ~~ THEN REPLY #451 /* ~"Měl bych ještě jiné otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #452 /* ~"Teď už musím jít. Sbohem."~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from:
+SAY #1419 /* ~Bledý muž je oblečen do dlouhých tmavých šatů. Vychází z něj slabý zatuchlý zápach. Jeho vzezření je nevýrazné a zdá se, že je zaměstnán svými povinnostmi.~ */
+IF ~  NearbyDialog("DMorte") Global("Warning","GLOBAL",0) ~ THEN REPLY #1420 /* ~"Zdravím."~ */ EXTERN ~DMORTE~ 61
+IF ~  NearbyDialog("DMorte") Global("Warning","GLOBAL",1) ~ THEN REPLY #1421 /* ~"Zdravím."~ */ EXTERN ~DMORTE~ 63
+IF ~  NearbyDialog("DMorte") GlobalGT("Warning","GLOBAL",1) ~ THEN REPLY #1422 /* ~"Zdravím."~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #1423 /* ~"Zdravím."~ */ GOTO 4
+IF ~~ THEN REPLY #1424 /* ~Nechej ho na pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 1.0 5.1 7.1 8.1 47.1
+SAY #1425 /* ~Dřív, než Spalovač stačí utrousit nějaké slovo, pevně ho chytíš za spánky a prudce mu trhneš hlavou.~ */
+IF ~~ THEN REPLY #1426 /* ~"Nemůžu tě nechat varovat tvé přátele..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0 45.0
+SAY #1427 /* ~Ozve se *křupnutí* a Spalovač padá nehybně do tvé náruče. ~ */
+IF ~  Global("Choke_Memory","GLOBAL",0) ~ THEN REPLY #1428 /* ~"Radši ty než já, Spalovači."~ */ DO ~SetGlobal("Choke_Memory","GLOBAL",1) PlaySoundNotRanged("SPTR_01") IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself) AddexperienceParty(15) ~ GOTO 43
+IF ~  GlobalGT("Choke_Memory","GLOBAL",0) ~ THEN REPLY #1429 /* ~"Radši ty než já, Spalovači."~ */ DO ~IncrementGlobal("Choke_Dustman","GLOBAL",1) IncrementGlobal("Choke","GLOBAL",1) Kill(Myself) Deactivate(Myself) AddexperienceParty(15) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+SAY #1430 /* ~K svému překvapení zjišťuješ, žes jednal naprosto instinktivně, jako bys to už dělal mnohokrát předtím... spolu s touto myšlenkou se ti vrací útržky paměti, ale nejsou dost silné na to, aby se úplně vynořily na povrch. ~ */
+IF ~~ THEN REPLY #3882 /* ~Nechej tělo být, jdi dál.~ */ DO ~Kill(Myself) GiveExperience(Protagonist,250) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 5.0 7.0 8.0 19.4 47.0
+SAY #3883 /* ~Nejsi dost rychlý a Spalovač tvému skoku uhnul. Ukročil zpátky a rychle třikrát zatleskal. Jako odpověď začaly v celé márnici zvonit zvony.~ */
+IF ~~ THEN REPLY #3884 /* ~"Dobrá tedy..."~ */ DO ~SetGlobal("Mortuary_Alert","GLOBAL",1) PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 19.5
+SAY #3889 /* ~Když ses naklonil, abys mu mohl něco 'pošeptat' do ouška, Spalovač se taky naklonil. Když se dostal na dosah, popadl jsi ho za spánek a prudce zakroutil jeho hlavou doleva.~ */
+IF ~~ THEN REPLY #3890 /* ~"Nemůžu ti dovolit spustit poplach..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 42
+END
+
+IF ~~ THEN BEGIN 46 // from: 24.3 25.3 29.3 35.3 37.3 49.3 50.1
+SAY #3891 /* ~Spalovač vypadá podezíravě. Vypadá, jako kdyby něco chtěl říci, pak lehce zakroutí hlavou a vrátí se zpátky ke svým povinnostem.~ */
+IF ~~ THEN REPLY #3892 /* ~Odejdi pryč.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 24.2 25.2 29.1 29.2 35.1 35.2 37.1 37.2 49.1 49.2
+SAY #3893 /* ~Spalovač tě pozorně sleduje. "Ty nejsi jeden z nás. Co tady děláš? Jsi člen Anarchistů? Nebo špión jiné frakce? Tohle vypadá na záležitost pro stráže..."~ */
+IF ~  CheckStatLT(Protagonist,13,DEX) ~ THEN REPLY #3914 /* ~Zlom mu krk, než stačí někoho přivolat.~ */ GOTO 44
+IF ~  CheckStatGT(Protagonist,12,DEX) ~ THEN REPLY #3915 /* ~Zlom mu krk, než stačí někoho přivolat.~ */ GOTO 41
+IF ~~ THEN REPLY #3916 /* ~"Ne, ne... tak ne... Já, ech, já nejsem špión... hele, probudil jsem se na jednom z kamenů tady a..."~ */ GOTO 2
+IF ~~ THEN REPLY #3917 /* ~Odejdi. Rychle.~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 48 // from: 10.0 11.0 12.0 13.0 14.0 15.0 21.0 26.3 27.1 28.3 30.4 31.4 32.1 33.1 34.3 36.2 39.1
+SAY #3894 /* ~Spalovač přikývl a vrátil se ke svým povinnostem.~ */
+IF ~~ THEN REPLY #3895 /* ~Odejdi pryč.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 24.0 24.1 25.0 25.1
+SAY #3896 /* ~Spalovač se zamračil. "To jméno neznám."~ */
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3898 /* ~"Jsem nový zasvěcený. Odpusť mi mou ignoranci."~ */ GOTO 50
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3899 /* ~"Jsem... tady nový. Snažím se... naučit se rutinu.."~ */ GOTO 47
+IF ~  CheckStatLT(Protagonist,13,CHR) ~ THEN REPLY #3900 /* ~"No, ech... na co jméno? Ať je tvá víra pevná, uh, příteli zasvěcenče."~ */ GOTO 47
+IF ~  CheckStatGT(Protagonist,12,CHR) ~ THEN REPLY #3901 /* ~"Pokud mi nemůžeš pomoct, budu si muset najít někoho schopnějšího. Sbohem."~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 50 // from: 29.0 35.0 37.0 49.0
+SAY #3897 /* ~Spalovač se dál mračí, ale přikývne. "Velmi dobře. Jak ti mohu pomoci, zasvěcenče?"~ */
+IF ~~ THEN REPLY #3902 /* ~"Mám nějaké otázky..."~ */ GOTO 26
+IF ~~ THEN REPLY #3903 /* ~"Dneska nic. Sbohem."~ */ GOTO 46
+END
+
+IF ~  Global("Appearance","GLOBAL",0)
+~ THEN BEGIN 51 // from:
+SAY #66674 /* ~Spalovač tě sleduje s kamenným výrazem na tváři. "Ztratil ses?"~ */
+IF ~  Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66675 /* ~"Ne, jsem členem společenstva, jenom si prohlížím Márnici."~ */ GOTO 52
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66676 /* ~"Ano."~ */ GOTO 5
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66677 /* ~"Ne."~ */ GOTO 6
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66678 /* ~"Ne, neztratil jsem se. Mám pár otázek..."~ */ GOTO 6
+IF ~  !Global("Join_Dustmen","GLOBAL",1) ~ THEN REPLY #66679 /* ~"Sbohem."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+SAY #66681 /* ~Spalovač tě chvíli sleduje, a nakonec přikývne. "Dobrá tedy. Pokud budeš s něčím potřebovat pomoct, dej mi vědět."~ */
+IF ~~ THEN REPLY #66682 /* ~"Udělám to tak. Sbohem."~ */ EXIT
+END

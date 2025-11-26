@@ -1,0 +1,26 @@
+IF ~  NearbyDialog("Dmorte")
+~ THEN BEGIN 0 // from:
+SAY #34920 /* ~This corpse is lumbering along a triangular path. Once it reaches one of the corners of the triangle, it pauses, then turns and staggers towards the next corner. It has "965" tattooed on the side of its skull. As you approach, it halts and stares at you.~ */
+IF ~~ THEN EXTERN ~DMORTE~ 477
+END
+
+IF ~  !NearbyDialog("Dmorte")
+~ THEN BEGIN 1 // from:
+SAY #34922 /* ~This corpse is lumbering along a triangular path. Once it reaches one of the corners of the triangle, it pauses, then turns and staggers towards the next corner. It has "965" tattooed on the side of its skull. As you approach, it halts and stares at you.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #34923 /* ~"So... why are you walking in a triangle?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 2
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45070 /* ~"So... why are you walking in a triangle?"~ */ GOTO 2
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45071 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 2
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45072 /* ~Use Stories-Bones-Tell on the corpse.~ */ GOTO 3
+IF ~~ THEN REPLY #45073 /* ~"It was great talking to you. Farewell."~ */ EXIT
+IF ~~ THEN REPLY #45074 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 1.2
+SAY #34927 /* ~The corpse stares at you blankly.~ */
+IF ~~ THEN REPLY #34928 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.3
+SAY #45069 /* ~The corpse does not stir. It looks like it is too far gone to answer any of your questions.~ */
+IF ~~ THEN REPLY #45075 /* ~Leave the corpse in peace.~ */ EXIT
+END

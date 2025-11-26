@@ -1,0 +1,1226 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DSOEGO.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DSOEGO~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Appearance","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+Global("Soego","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #1431 /* ~You see a tired-looking man in a faded black robe. His narrow face is extremely pale, and he doesn't look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes. He doesn't appear to notice you... he must mistake you for one of the cadaverous workers.~ */
+  IF ~~ THEN REPLY #1432 /* ~"Greetings."~ */ GOTO 1
+  IF ~~ THEN REPLY #1433 /* ~"Who are you?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1434 /* ~"What is this place?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1435 /* ~"I had some questions..."~ */ GOTO 1
+  IF ~~ THEN REPLY #1436 /* ~Leave him in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #1437 /* ~The Dustman's head snaps up as you address him. "Par... pardon? Did you just speak to me?"~ */
+  IF ~~ THEN REPLY #1438 /* ~"Yes, I did. I had some questions..."~ */ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 2
+  IF ~~ THEN REPLY #1439 /* ~"No. No, I didn't."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_1","GLOBALLaw",-1)
+~ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1440 /* ~Become deathly silent.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1441 /* ~Become deathly silent.~ */ GOTO 4
+  IF ~~ THEN REPLY #1442 /* ~Leave. Quickly.~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 3.0 3.3 4.0 4.1
+  SAY #1443 /* ~"By the powers!" The Dustman jumps, then stares intently at you. You notice his eyes aren't bloodshot as much as they have a red tinge to them. "Sirrah, you force an unflattering confession from me: you make a convincing zombie." He bows slightly. "I am Soego. May I ask your business here..." He glances at your scars. "...looking like that?" ~ */
+  IF ~~ THEN REPLY #1444 /* ~"It's none of your concern."~ */ GOTO 6
+  IF ~~ THEN REPLY #1445 /* ~"I'm not certain what I'm doing here. I woke up on one of the slabs upstairs, and my memory's... a little foggy."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1446 /* ~"I got turned around in the halls here, and I can't seem to find the exit. Can you help me?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1447 /* ~"I'm trying to get out of here."~ */ GOTO 13
+  IF ~~ THEN REPLY #1448 /* ~"I needed a change."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #4999 /* ~"I really don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.2
+  SAY #1449 /* ~The Dustman studies you for a moment, then shakes his head. "More imaginings..." He sighs and rubs his eyes. "These fever spells are getting worse..."~ */
+  IF ~~ THEN REPLY #1450 /* ~"It's not your imagination. I had some questions..."~ */ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1451 /* ~Snap his neck while he is distracted.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1452 /* ~Snap his neck while he is distracted.~ */ GOTO 22
+  IF ~~ THEN REPLY #1453 /* ~"I had some questions."~ */ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 2
+  IF ~~ THEN REPLY #1454 /* ~Leave quietly.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.3
+  SAY #1455 /* ~The Dustman looks carefully at you, then leans in... his lips peel back, revealing a row of dirty, sharp teeth, and he begins to sniff at you like a rat.~ */
+  IF ~~ THEN REPLY #1456 /* ~"Uh... why in hell's name are you sniffing me?"~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 2
+  IF ~~ THEN REPLY #1457 /* ~"Look, I had some questions for you..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1458 /* ~Snap his neck when he leans in.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1459 /* ~Snap his neck when he leans in.~ */ GOTO 22
+  IF ~~ THEN REPLY #1460 /* ~Leave. Quickly.~ */ GOTO 15
+END
+
+IF ~~ THEN BEGIN 5 // from: 1.4
+  SAY #1461 /* ~As you are turning to leave, the Dustman gives a slight hiss, then leans in and sniffs at you. "By the powers!" The Dustman step back, his eyes widening. You notice his eyes aren't bloodshot so much as they have a red tinge to them. "Sirrah, you force an unflattering confession from me: you make a convincing zombie." He bows slightly. "I am Soego. May I ask your business here... looking like that?" ~ */
+  IF ~~ THEN REPLY #1462 /* ~"It's none of your concern."~ */ GOTO 6
+  IF ~~ THEN REPLY #1463 /* ~"I'm not certain what I'm doing here. I woke up on one of the slabs upstairs, and my memory's... a little foggy."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1464 /* ~"I'm lost, and I'm looking for the exit. Can you help me?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1465 /* ~"I am trying to get out of here."~ */ GOTO 13
+  IF ~~ THEN REPLY #1466 /* ~"I needed a change."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #1467 /* ~"I really don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 5.0 15.0 41.1 43.0 50.1 115.1
+  SAY #1468 /* ~"Oh, but I'm afraid it *is* my concern." Soego's eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation. "Mayhap..." He sneers, displaying a row of sharp, dirty teeth. "Mayhap I should call the guards? Yes... yes, I think I will do that."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1469 /* ~"Hold a moment! I was lost... I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1470 /* ~"Stop! Don't call the guards! I just want to get out of here... can you help me?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1471 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1472 /* ~Snap his neck before he can call out.~ */ GOTO 22
+  IF ~~ THEN REPLY #1473 /* ~"Summon them, then. I'd like to meet them."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 7 // from: 2.1 5.1 13.3 15.1 42.1 57.0
+  SAY #1474 /* ~"Really?" The Dustman scrutinizes you. "You *do* look like you've been prepared. I don't know how you would have survived such pain... are you *in* pain? You look it."~ */
+  IF ~~ THEN REPLY #1475 /* ~"How would I have gotten here in the first place?"~ */ GOTO 54
+  IF ~~ THEN REPLY #1476 /* ~"I don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
+  SAY #1477 /* ~Soego nods, and the corner of his mouth twitches. "Why... of course. These halls *can* be confusing to visitors. No harm done, but you are not permitted here in the Mortuary after nine bells - let me open the front gate for you."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #1478 /* ~"Thank you."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #1479 /* ~"Thank you."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.1 56.1 60.1
+  SAY #1480 /* ~Soego reaches to his belt, fumbles at it for a moment, then hisses. "The key!" His eyes gleam a bright red, and his lips peel back in anger... his expression is almost animalistic. "Someone's stolen the key!" He turns to you and snarls. "You! You must have done this!" ~ */
+  IF ~~ THEN REPLY #1481 /* ~Bluff him: "Uh...wait! Why would I ask you for it if I'd stolen it?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1482 /* ~Lie: "What are you talking about?! I had nothing to do with it!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_3","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Soego_1","GLOBALGood",-1)
+~ GOTO 18
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1483 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1484 /* ~Snap his neck before he can call out.~ */ GOTO 22
+  IF ~~ THEN REPLY #1485 /* ~"So what if I did? What are you going to do about it?"~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 10 // from:
+  SAY #1486 /* ~Soego takes a large key from his belt and walks to the front gate. You can't help but notice his peculiar walk... he hunches forward, as if to keep balance. ~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #1487 /* ~"Odd walk he's got."~ */ EXTERN ~DMORTE~ 101
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1488 /* ~Wait for him to open the gate.~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.1
+  SAY #1489 /* ~Once he reaches the gate, Soego turns the key in the lock. A moment later, a grating sound comes from within the lock chamber... the sound carries throughout the main hall, echoing off the marble floors. ~ */
+  IF ~~ THEN REPLY #1490 /* ~Wait for him to return.~ */ DO ~SetDoorLocked("fakedoor",FALSE)
+~ GOTO 12
+END
+
+IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Gate_Open","GLOBAL",1)
+Global("Gate_Cut_Scene","AR0201",1)
+~ THEN BEGIN 12 // from: 11.0
+  SAY #1491 /* ~"Very well. The front gate is now unlocked, but you cannot re-enter."~ */
+  IF ~~ THEN REPLY #1492 /* ~"Can I ask you some questions before I leave?"~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2)
+~ GOTO 26
+  IF ~~ THEN REPLY #1493 /* ~"Thank you, Soego. I will leave now."~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
+  SAY #1494 /* ~"Get out?" Soego frowns. "How did you get in?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1495 /* ~"I was here for an interment earlier, paying my respects. I'm ready to leave... but I seem to have gotten turned around. Can you help me find the exit?"~ */ GOTO 8
+  IF ~  Global("Appearance","GLOBAL",2)
+~ THEN REPLY #1496 /* ~"I don't really know."~ */ GOTO 14
+  IF ~  !Global("Appearance","GLOBAL",2)
+~ THEN REPLY #1497 /* ~"I don't really know."~ */ GOTO 61
+  IF ~~ THEN REPLY #1498 /* ~"I woke up on one of the slabs upstairs, and my memory's... a little foggy."~ */ GOTO 7
+  IF ~~ THEN REPLY #1499 /* ~"I don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.1
+  SAY #1500 /* ~Soego clicks his tongue. "Most curious." He studies you again. "Is it possible that you are one of the Contracted?"~ */
+  IF ~~ THEN REPLY #1501 /* ~"Uh, 'Contracted'?"~ */ GOTO 23
+  IF ~~ THEN REPLY #1502 /* ~"I really don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 4.4
+  SAY #1503 /* ~As you are turning to leave, the Dustman stops sniffing you and gives a slight hiss. "By the powers!" The Dustman draws back, his eyes widening. You notice his eyes aren't bloodshot so much as they have a red tinge to them. "Sirrah, you force an unflattering confession from me: you make a convincing zombie." He bows slightly. "I am Soego. May I ask your business here... looking like that?" ~ */
+  IF ~~ THEN REPLY #1504 /* ~"It's none of your concern."~ */ GOTO 6
+  IF ~~ THEN REPLY #1505 /* ~"I'm not certain what I'm doing here. I woke up on one of the slabs upstairs, and my memory's... a little foggy."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1506 /* ~"I'm lost, and I'm looking for the exit. Can you help me?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1508 /* ~"I am trying to get out of here."~ */ GOTO 13
+  IF ~~ THEN REPLY #1509 /* ~"I needed a change."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #1510 /* ~"I really don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 2.4 5.4 15.4
+  SAY #1511 /* ~"I see..." Soego's eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation. "Mayhap..." He sneers, displaying a row of sharp, dirty teeth. "Mayhap I should call the guards? Yes... yes, I think I will do that."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1512 /* ~"Hold a moment! I was lost... I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1513 /* ~"Stop! Don't call the guards! I just want to get out of here... can you help me?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1514 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1515 /* ~Snap his neck before he can call out.~ */ GOTO 22
+  IF ~~ THEN REPLY #1516 /* ~"Summon them, then. I'd like to meet them."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
+  SAY #1517 /* ~As you turn to leave, Soego gives an angry hiss... then suddenly composes himself and raises his hand. "No, no, I'm afraid you can't leave. Something is amiss here. I think it is best we get this matter straightened out..." The corners of his lips twitch slightly, and his eyes gleam. "...mayhap the guards could help. Yes... mayhap I should call them."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1518 /* ~"Hold a moment! I was lost... I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1520 /* ~"Stop! Don't call the guards! I just want to get out of here... can you help me?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1521 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1522 /* ~Snap his neck before he can call out.~ */ GOTO 22
+  IF ~~ THEN REPLY #1523 /* ~"Summon them, then. I'd like to meet them."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 18 // from: 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
+  SAY #1524 /* ~Soego takes a step back, then claps his hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #1525 /* ~"All right then..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
+  SAY #1526 /* ~Before he can utter a word, your hands clamp onto his temples, and you twist his head sharply to the left. ~ */
+  IF ~~ THEN REPLY #1528 /* ~"Can't have you alerting your friends..."~ */ DO ~PlaySoundNotRanged("SPE_11")
+~ GOTO 20
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #1529 /* ~There is a *crack* as his neck snaps... but instead of falling limp, the Dustman gives a strangled cry and rips himself from your grip! ~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #1530 /* ~"What...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1)
+~ EXTERN ~DMORTE~ 100
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1531 /* ~"What...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1)
+~ GOTO 21
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.1
+  SAY #1532 /* ~The Dustman looks as shocked as you; his eyes are wild, and he is making a gurgling noise in his throat... you're certain you've snapped his neck, for his head is twisted at an unnatural angle, but he's still alive! As you watch, stunned, he claps his hands weakly three times. In response, a great iron bell begins tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #1533 /* ~"All right then..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
+  SAY #1534 /* ~*Something* must have alerted the Dustman... before you can even lunge for him, he leaps back, his eyes gleaming red and his teeth bared. With a hiss, he claps his hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #1535 /* ~"All right then..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 14.0
+  SAY #4792 /* ~"There are some that have signed a contract allowing the Dustmen to use their bodies once they have died. It is possible that you were caught in an... unusual mix-up. You seem much brighter than our regular zombies."~ */
+  IF ~~ THEN REPLY #4793 /* ~"People sell their bodies after death to you?"~ */ GOTO 24
+  IF ~~ THEN REPLY #4794 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~~ THEN REPLY #4795 /* ~"I don't have time for this. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #4796 /* ~"Oh, yes. In exchange for a small sum of copper, many are willing to sell a body they will no longer need when they reach the True Death."~ */
+  IF ~~ THEN REPLY #4797 /* ~"What do you do with these bodies?"~ */ GOTO 25
+  IF ~~ THEN REPLY #4798 /* ~"I... see. Do you mind if I ask you some other questions?"~ */ GOTO 25
+  IF ~~ THEN REPLY #4799 /* ~"Thanks for the information. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 24.1
+  SAY #4800 /* ~"The shells perform menial tasks around the Mortuary. They haul bodies, clean floors, assist us in preparing bodies for burial... relatively simple tasks. It is unfortunate, but they are not capable of following any complicated instructions."~ */
+  IF ~~ THEN REPLY #4801 /* ~"Well, 'Contracted' or not, how did I get here if I wasn't dead?"~ */ GOTO 54
+  IF ~~ THEN REPLY #4802 /* ~"I... see. Do you mind if I ask you some other questions?"~ */ GOTO 26
+  IF ~~ THEN REPLY #4803 /* ~"Thanks for the information. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 26 // from: 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
+  SAY #4804 /* ~Soego nods. "You may ask your questions."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4805 /* ~"I'd like to leave. Can you guide me to the exit?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4806 /* ~"Can you get me out of here?"~ */ GOTO 13
+  IF ~  Global("Vaxis","GLOBAL",1)
+!Dead("Vaxis")
+Global("Vaxis_Leave","GLOBAL",0)
+Global("Betray_Vaxis","GLOBAL",0)
+~ THEN REPLY #4807 /* ~"Do you know there's a corpse up on the second level that's a human in disguise?"~ */ GOTO 27
+  IF ~~ THEN REPLY #4809 /* ~"If I may ask... are you all right? You look tired."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_1","GLOBALGood",1)
+~ GOTO 31
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+Global("Vaxis_Exposes_Soego","GLOBAL",1)
+~ THEN REPLY #4810 /* ~"You're Soego, right? I heard you're a little odd for a Dustman. That you like rats."~ */ DO ~SetGlobal("Soego_exposed","GLOBAL",1)
+~ GOTO 30
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+Global("Vaxis_Exposes_Soego","GLOBAL",1)
+~ THEN REPLY #4811 /* ~"You're Soego, right? I heard you're a little odd for a Dustman. That you like rats."~ */ GOTO 29
+  IF ~  GlobalLT("Pharod","GLOBAL",1)
+~ THEN REPLY #4832 /* ~"Do you know someone named Pharod?"~ */ GOTO 33
+  IF ~  GlobalLT("Journal","GLOBAL",1)
+~ THEN REPLY #4833 /* ~"I'm missing a journal. Have you seen one?"~ */ GOTO 37
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4834 /* ~"Never mind. I must take my leave. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4835 /* ~"Never mind. I must take my leave. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.2
+  SAY #4808 /* ~"Pardon?"~ */
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",0)
+~ THEN REPLY #4836 /* ~"There's a man disguised as a corpse upstairs. I think he's spying on the Dustmen."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",1)
+~ GOTO 28
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",1)
+~ THEN REPLY #4837 /* ~"There's a man disguised as a corpse upstairs. I think he's spying on the Dustmen."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3)
+~ GOTO 28
+  IF ~~ THEN REPLY #4838 /* ~"Forget it. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4839 /* ~"Never mind. I must take my leave. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #916 /* ~"Never mind. I must take my leave. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0 27.1
+  SAY #4840 /* ~ "What? Why would anyone...?" Soego's voice suddenly drops to a hiss and his lips peel back to reveal a row of jagged teeth. "An *Anarchist.*" His eyes gleam a bright red. "An Anarchist. *Here.*" He suddenly seems to remember your presence, and he composes himself. "Thank you for informing me. I will see to it that the guards handle this matter." ~ */
+  IF ~~ THEN REPLY #4852 /* ~"No problem. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4853 /* ~"Never mind. I must take my leave. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4854 /* ~"Never mind. I must take my leave. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 29 // from: 26.5
+  SAY #4855 /* ~You are about to mention it, when suddenly you stop. You feel a strange prickling sensation as you look at Soego... for some reason, you don't think you should say anything. ~ */
+  IF ~~ THEN REPLY #4856 /* ~"I hear you're a strange one, Soego. That you like rats."~ */ GOTO 30
+  IF ~~ THEN REPLY #4857 /* ~"Uh... say, I wanted to ask you something."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4858 /* ~"Never mind. I must take my leave. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4859 /* ~"Never mind. I must take my leave. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 30 // from: 26.4 29.0
+  SAY #4860 /* ~Soego falls silent for a moment, studying you. His eyes gleam a bright red, and he gives a soft hiss. "I think you have outstayed your welcome." To your surprise, he takes a step back and claps his hands sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #4861 /* ~"What the...? What are you doing?"~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+  IF ~~ THEN REPLY #4862 /* ~"All right, then. Prepare to die, Soego."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 26.3
+  SAY #4863 /* ~Soego manages a weak smile, and the corners of his mouth twitch slightly. "I have recently taken ill... minor fevers, nothing more. Sometimes they make sleep... difficult."~ */
+  IF ~~ THEN REPLY #4864 /* ~"Anything I could do?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_2","GLOBALGood",1)
+~ GOTO 32
+  IF ~~ THEN REPLY #4865 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4866 /* ~"I see. Well, I must take my leave. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4867 /* ~"I see. Well, I must take my leave. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #4868 /* ~Soego shakes his head. "No, no, thank you for your concern... I will endure." He frowns slightly. "Was there something else you wanted?"~ */
+  IF ~~ THEN REPLY #4869 /* ~"Yes. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4870 /* ~"No, I won't trouble you anymore. Thanks for the information."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4871 /* ~"No, I won't trouble you anymore. Thanks for the information."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 33 // from: 26.6
+  SAY #4872 /* ~"Pharod? Of course I know him." He frowns, and his eyes gleam red. "A ghoulish man. No respect for the dead, and even less for the living. He is a scavenger. A Collector."~ */
+  IF ~~ THEN REPLY #4873 /* ~"Collector?"~ */ GOTO 34
+  IF ~~ THEN REPLY #4874 /* ~"Do you know where I could find him?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4875 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4876 /* ~"I see. Perhaps I should take my leave."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4877 /* ~"I see. Perhaps I should take my leave."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 34 // from: 33.0 36.0
+  SAY #4878 /* ~"Collectors make their living gathering corpses and bringing them here to the Mortuary. We then make sure the bodies receive a proper burial." ~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #4879 /* ~"So if a Collector found a body... mine, for example... they might have brought it here and sold it to you?"~ */ GOTO 35
+  IF ~~ THEN REPLY #4880 /* ~"So this Collector, Pharod... do you know where I could find him?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4881 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4882 /* ~"I see. Well, I must take my leave. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4883 /* ~"I see. Well, I must take my leave. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 35 // from: 34.0
+  SAY #4884 /* ~"Yes."~ */
+  IF ~~ THEN REPLY #4885 /* ~"Hmmmm. Suddenly it's extremely important that I find this Pharod. Do you know where I could find him?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4886 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4887 /* ~"Thanks for the information. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4888 /* ~"Thanks for the information. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 36 // from: 33.1 34.1 35.0
+  SAY #4889 /* ~"I know he resides in the Hive, the slums outside the Mortuary, but I do not know exactly where. Some of the other Collectors may know, if they'll talk to you." ~ */
+  IF ~~ THEN REPLY #4890 /* ~"What do Collectors do again?"~ */ GOTO 34
+  IF ~~ THEN REPLY #4891 /* ~"Oh. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4892 /* ~"Thanks for the information. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4893 /* ~"Thanks for the information. Farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 37 // from: 26.7
+  SAY #4894 /* ~"A journal?" Soego seems confused. "No, I have not seen one."~ */
+  IF ~~ THEN REPLY #4895 /* ~"Never mind then. I had some other questions..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4896 /* ~"Thanks anyway. Farewell."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4897 /* ~"Thanks anyway. Farewell."~ */ GOTO 17
+END
+
+IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+!Global("Appearance","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+Global("Soego","GLOBAL",0)
+~ THEN BEGIN 38 // from:
+  SAY #4898 /* ~You see a tired-looking man in a black robe. His narrow face is extremely pale, and he doesn't look as if he has been sleeping: his shoulders are slumped, and the flesh sags loosely beneath his bloodshot eyes. He looks so lost in thought he doesn't even notice you.~ */
+  IF ~  GlobalLT("Appearance","GLOBAL",2)
+~ THEN REPLY #66706 /* ~"Greetings..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 39
+  IF ~  Global("Appearance","GLOBAL",2)
+~ THEN REPLY #66707 /* ~"Greetings..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~I met a Dustman named Soego at the Mortuary front gate... he looks tired, as if he hasn't slept in weeks. Judging from the eyes and pallor of his skin, it looks like he has caught some sort of illness. ~ */ GOTO 113
+  IF ~~ THEN REPLY #66708 /* ~Leave him to his thoughts.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0
+  SAY #4904 /* ~"Greetings..." The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren't bloodshot so much as they have a red tinge to them. "I am Soego. How may I..." He suddenly seems to notice your scars, and the corner of his mouth twitches. "I'm sorry, sirrah, are you lost?"~ */
+  IF ~~ THEN REPLY #4905 /* ~"Yes."~ */ GOTO 40
+  IF ~~ THEN REPLY #4906 /* ~"No."~ */ GOTO 41
+  IF ~~ THEN REPLY #4907 /* ~"No, I'm not lost. I had some questions..."~ */ GOTO 41
+  IF ~~ THEN REPLY #4908 /* ~"No. I was merely looking for the exit. Farewell."~ */ GOTO 41
+END
+
+IF ~~ THEN BEGIN 40 // from: 39.0
+  SAY #4909 /* ~"Well, then..." The corners of Soego's mouth twitch again, as if in anticipation. "Let me call the guards to lead you out. Stand for a moment." He looks like he is about to call the guards.~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4910 /* ~"Hold a moment! Please... there's no need to call the guards. I came in for an interment earlier, and I just got turned around in the halls... Can you please just lead me out?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4911 /* ~"No! I'm not lost - I misspoke."~ */ GOTO 50
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4912 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4913 /* ~Snap his neck before he can call out.~ */ GOTO 22
+  IF ~~ THEN REPLY #4914 /* ~Leave. Quickly.~ */ GOTO 18
+  IF ~~ THEN REPLY #4915 /* ~Wait.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 41 // from: 39.1 39.2 39.3
+  SAY #4916 /* ~"I do not recall admitting you." Soego looks at you suspiciously, and his eyes gleam red in the light of the torches. "May I ask what you are doing here?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4917 /* ~"I was here for an interment earlier, paying my respects. I'm ready to leave... but I seem to have gotten turned around. Can you help me find the exit?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4918 /* ~"That is none of your concern."~ */ GOTO 6
+  IF ~~ THEN REPLY #4919 /* ~"I awoke on one of the slabs in your preparation room."~ */ GOTO 42
+  IF ~~ THEN REPLY #4920 /* ~"I'm here to see someone."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4921 /* ~"I was here for an interment, but there seems to have been a mistake."~ */ GOTO 53
+  IF ~~ THEN REPLY #4922 /* ~Lean in as if to whisper to him, then when he leans in, snap his neck.~ */ GOTO 51
+  IF ~~ THEN REPLY #4923 /* ~Leave. Quickly.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.2 50.2 115.0
+  SAY #4924 /* ~He seems surprised. "You... woke up on one of the slabs upstairs?"~ */
+  IF ~~ THEN REPLY #4925 /* ~"Uh, no. I misspoke."~ */ GOTO 50
+  IF ~~ THEN REPLY #4926 /* ~"Yes. I know this is hard to believe, but it's the truth: I woke up on one of your slabs upstairs."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Soego_1","GLOBALLaw",1)
+~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 43 // from: 41.3 50.3
+  SAY #4927 /* ~Soego nods. "Who are you here to see? I would be more than happy to direct you."~ */
+  IF ~~ THEN REPLY #4928 /* ~"It is none of your concern."~ */ GOTO 6
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #4929 /* ~"I am here to see Dhall."~ */ GOTO 44
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4930 /* ~"I am here to see Deionarra."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Soego_Adahn","AR0201",0)
+~ THEN REPLY #4931 /* ~Lie: "Uh... Adahn. Does he still work here, or...?"~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1)
+IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Soego_Adahn","AR0201",1)
+~ THEN REPLY #4932 /* ~Lie: "Uh... Adahn. Does he still work here, or...?"~ */ GOTO 49
+  IF ~~ THEN REPLY #4933 /* ~"Uh, no one. I misspoke."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.1
+  SAY #4934 /* ~"Dhall? Dhall the Scrivener can be found in the receiving room on the upper floor." The corner of Soego's mouth twitches briefly. "He is rather busy and his health is failing. Unless you have pressing business, I would not disturb him."~ */
+  IF ~~ THEN REPLY #4935 /* ~"What's wrong with Dhall?"~ */ GOTO 46
+  IF ~~ THEN REPLY #4936 /* ~"The receiving room?"~ */ GOTO 45
+  IF ~~ THEN REPLY #4937 /* ~"Very well. I will keep my visit with him brief. Farewell."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.1
+  SAY #4938 /* ~"Yes... the receiving room is where the bodies from the city are taken when they are brought here. They are recorded and then prepared for burial."~ */
+  IF ~~ THEN REPLY #4939 /* ~"What's wrong with Dhall?"~ */ GOTO 46
+  IF ~~ THEN REPLY #4940 /* ~"Thank you for your directions. I will keep my visit with Dhall brief. Farewell."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 46 // from: 44.0 45.0
+  SAY #4941 /* ~"Oh, there is nothing wrong with him. Dhall is..." Soego clicks his teeth. "...*old.* His long devotion to cataloging the dead has nearly run its course. Death will no doubt soon follow the wasting sickness he has contracted."~ */
+  IF ~~ THEN REPLY #4942 /* ~"Very well. I will keep my visit with him brief. Farewell."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.2 53.2
+  SAY #4943 /* ~"Deionarra? There is a woman by that name interred in the northwest memorial hall. Is that who you are looking for?"~ */
+  IF ~~ THEN REPLY #4944 /* ~"Yes... can you tell me what happened to her?"~ */ GOTO 48
+  IF ~~ THEN REPLY #4945 /* ~"Yes. I will go pay my respects now."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.0
+  SAY #4946 /* ~"I do not know, but she has been here for quite some time. Her father might know what befell her... he visits here from his offices in the Upper Ward frequently. It was his wish that she be placed in the memorial hall here."~ */
+  IF ~~ THEN REPLY #4947 /* ~"Thank you for the directions. I will go pay my respects."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 49 // from: 43.3 43.4 53.3 53.4
+  SAY #4948 /* ~"Adahn..." Soego's eyes narrow, and the red tinge you saw in them before seems more pronounced. "No one of that name resides within the Mortuary halls, living or dead." His mouth twitches, and to your surprise, he sniffs the air for a moment. ~ */
+  IF ~~ THEN REPLY #4949 /* ~"Uh... then I must have misspoke."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 50 // from: 40.1 42.0 43.5 49.0 53.1 57.1
+  SAY #4950 /* ~The corners of Soego's mouth twitch again, and his eyes gleam. "Then what is your business here?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4951 /* ~"I was here for an interment earlier, paying my respects. I'm ready to leave... but I seem to have gotten turned around. Can you help me find the exit?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4952 /* ~"None of your concern."~ */ GOTO 6
+  IF ~~ THEN REPLY #4953 /* ~"I woke up on one of the slabs in your preparation room."~ */ GOTO 42
+  IF ~~ THEN REPLY #4954 /* ~"I'm here to see someone."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4955 /* ~"I was here for an interment."~ */ GOTO 53
+  IF ~~ THEN REPLY #4956 /* ~Lean in as if to whisper to him, then when he leans in, snap his neck.~ */ GOTO 51
+  IF ~~ THEN REPLY #5028 /* ~Run for it.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 51 // from: 41.5 50.5 53.5
+  SAY #4957 /* ~Soego frowns as you lean in, and you notice he sniffs the air, as if testing it. His eyes suddenly narrow, and he looks like he is about to call for the guards.~ */
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4958 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4959 /* ~Snap his neck before he can call out.~ */ GOTO 52
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.1
+  SAY #4960 /* ~As you lunge for him, Soego leaps back, his eyes gleaming red and his teeth bared. With a hiss, he claps his hands together sharply three times. In response, a great iron bell starts tolling throughout the Mortuary.~ */
+  IF ~~ THEN REPLY #4961 /* ~"All right then..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 53 // from: 41.4 50.4
+  SAY #4962 /* ~"Who was being interred? Perhaps the services are taking place somewhere else in the Mortuary."~ */
+  IF ~~ THEN REPLY #4963 /* ~"You misunderstand... the interment was ME."~ */ GOTO 57
+  IF ~~ THEN REPLY #4964 /* ~"Pardon... I misspoke. I don't know the name of the deceased."~ */ GOTO 50
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4965 /* ~"The name is Deionarra."~ */ GOTO 47
+  IF ~  Global("Soego_Adahn","AR0201",0)
+~ THEN REPLY #4967 /* ~Lie: "The name is... uh, Adahn."~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1)
+IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  Global("Soego_Adahn","AR0201",1)
+~ THEN REPLY #4968 /* ~Lie: "The name is... uh, Adahn."~ */ GOTO 49
+  IF ~~ THEN REPLY #4969 /* ~Lean in as if to whisper something to him, then snap his neck.~ */ GOTO 51
+  IF ~~ THEN REPLY #4970 /* ~Run for it.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 54 // from: 7.0 25.0
+  SAY #4966 /* ~"Well..." Soego squints. He seems confused. "Obviously a mistake has been made. Either you were brought here by blood relatives, other Dustmen, or..." Soego suddenly hisses, as if an unpleasant thought had just occurred to him. "Or one of the *Collectors.*"~ */
+  IF ~~ THEN REPLY #4971 /* ~"Collectors?"~ */ GOTO 55
+END
+
+IF ~~ THEN BEGIN 55 // from: 54.0
+  SAY #4972 /* ~"Yes, Collectors... packs of scavengers that bring the bodies of the dead to us. They may have thought you dead..." Soego hisses, and his eyes gleam. "...and they are so copper-blind they wouldn't have cared to check before delivering you here." Soego studies you. "It is fortunate you awoke... or you may have reached the True Death before your time."~ */
+  IF ~~ THEN REPLY #4973 /* ~"Then there's been a mistake... and I'd like to leave. Now."~ */ GOTO 56
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0 59.1
+  SAY #4974 /* ~Soego nods, and the corner of his mouth twitches. "Why... of course, of course. Let me open the front gate for you."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #4975 /* ~"All right."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #4976 /* ~"All right."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 57 // from: 53.0
+  SAY #4977 /* ~"You?"~ */
+  IF ~~ THEN REPLY #4978 /* ~"Yes, *me.* I woke up on one of your slabs upstairs."~ */ GOTO 7
+  IF ~~ THEN REPLY #4979 /* ~"Pardon... I misspoke."~ */ GOTO 50
+END
+
+IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Gate_Open","GLOBAL",1)
+~ THEN BEGIN 58 // from:
+  SAY #4980 /* ~As you approach, Soego sniffs the air, and he looks up. When he sees you, he frowns. "I unlocked the gate for you. Why are you still here?"~ */
+  IF ~~ THEN REPLY #4981 /* ~"I had some questions for you before I left."~ */ GOTO 26
+  IF ~~ THEN REPLY #4982 /* ~"I am heading for the gate now. Farewell."~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Soego","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+~ THEN BEGIN 59 // from:
+  SAY #4983 /* ~As you approach, Soego sniffs the air, and he looks up. When he sees you, he bows slightly. "Did you find what you were looking for?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4984 /* ~"Yes, thank you. Pardon me, I've gotten all turned around in these halls... can you help me find the exit?"~ */ GOTO 60
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4985 /* ~"Yes. I want to leave now. Can you take me to the exit?"~ */ GOTO 56
+  IF ~~ THEN REPLY #4986 /* ~"Yes, and I am heading for the gate now. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 60 // from: 59.0
+  SAY #4987 /* ~Soego nods, and the corner of his mouth twitches. "Why... of course. These halls *can* be confusing to visitors. Let me open the front gate for you."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #4988 /* ~"Thank you."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #4989 /* ~"Thank you."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 61 // from: 13.2
+  SAY #4990 /* ~"This is most odd." Soego's eyes gleam red, and the corners of his mouth twitch slightly, as if in anticipation. "Mayhap..." He sneers, displaying a row of sharp, dirty teeth. "Mayhap I should call the guards? Yes... yes, I think I will do that."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4991 /* ~"Hold a moment! I was lost... I just got turned around in the halls here, and I can't seem to find the exit. Can you help me?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4992 /* ~"Stop! Don't call the guards! I just want to get out of here... can you help me?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4993 /* ~Snap his neck before he can call out.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4994 /* ~Snap his neck before he can call out.~ */ GOTO 22
+  IF ~~ THEN REPLY #4995 /* ~"Summon them, then. I'd like to meet them."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 62 // from: 44.2 45.1 46.0 47.1 48.0
+  SAY #4996 /* ~Soego nods... and his mouth twitches again. He doesn't even seem to be aware of it. "Return when you have paid your respects, and I will unlock the front gate for you. It is after nine bells, so you'll have to leave as soon as you conclude your business."~ */
+  IF ~~ THEN REPLY #4997 /* ~"You know, I could do this another time. Can you let me out now?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4998 /* ~"Thank you. I will return."~ */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+!Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 63 // from:
+  SAY #21653 /* ~"Ah, another member of the living. Most are slain by the ghouls, this far into the catacombs; you are fortunate."~ */
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #21655 /* ~"You're Soego, from the Mortuary. What are you doing here?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 72
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21656 /* ~"Who are you?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 64
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21657 /* ~"Where am I?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 77
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21658 /* ~"Why have I been made a prisoner here?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 78
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21660 /* ~"Perhaps. Farewell."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 64 // from: 63.1 77.0 78.0
+  SAY #21661 /* ~"I am Soego, factotum of the Dustmen. I am a missionary in these parts." He gives a half-bow.~ */
+  IF ~~ THEN REPLY #21662 /* ~"Missionary?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21663 /* ~"What are the Dustmen doing here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64595 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64596 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21665 /* ~"Greetings, and farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 65 // from: 64.0 72.2 73.2 74.0 101.3 104.1
+  SAY #21666 /* ~"Yes, I came to these catacombs after hearing rumors of undead that were *aware* in these parts. I hope to save them."~ */
+  IF ~~ THEN REPLY #21667 /* ~"Save them?"~ */ GOTO 67
+  IF ~~ THEN REPLY #64597 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64599 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21669 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 66 // from: 64.1 72.3 73.3 74.1 101.4 104.2 109.2
+  SAY #21670 /* ~"I am the only one. I came to these catacombs after hearing rumors of undead that were *aware* in these parts. I hope to save them."~ */
+  IF ~~ THEN REPLY #21671 /* ~"Save them?"~ */ GOTO 67
+  IF ~~ THEN REPLY #64600 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64601 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21673 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 67 // from: 65.0 66.0
+  SAY #21674 /* ~"Yes, passion ties them to this false life. I hope I can teach them to forsake these passions and leave this false life behind and reach the True Death."~ */
+  IF ~~ THEN REPLY #21675 /* ~"False life?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21676 /* ~"True Death?"~ */ GOTO 69
+  IF ~~ THEN REPLY #21767 /* ~"You want them to die?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64602 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64603 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21770 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0 69.0 70.0
+  SAY #21771 /* ~"These... dead ones... are so close to the True Death... yet they cling to this life. This false life is the lie of existence on this plane."~ */
+  IF ~~ THEN REPLY #21772 /* ~"True Death?"~ */ GOTO 69
+  IF ~~ THEN REPLY #21774 /* ~"You want them to die?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64604 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64605 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21776 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 69 // from: 67.1 68.0 70.1
+  SAY #21777 /* ~"A complete absence of passion, the True Death is the true life beyond this shadow of existence. It is to this place that these dead must reach to free themselves."~ */
+  IF ~~ THEN REPLY #21779 /* ~"What was that 'false life' you mentioned?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21780 /* ~"You want them to die?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64606 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64607 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21784 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 70 // from: 67.2 68.1 69.1
+  SAY #21786 /* ~"I wish them to transcend this plane of existence, divorce themselves from passion. It can save them."~ */
+  IF ~~ THEN REPLY #21788 /* ~"What was that 'false life' you mentioned?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21790 /* ~"You had mentioned the 'True Death'?"~ */ GOTO 69
+  IF ~~ THEN REPLY #64608 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64609 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21794 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 71 // from: 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
+  SAY #21799 /* ~"A moment of your time before you go. Do not attack any of the undead here in the catacombs; they will not harm you so long as you remain peaceful. Should you prove hostile they will defend themselves, and there are... many of them. Lastly, you may return here if you need to rest."~ */
+  IF ~  NumInParty(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21800 /* ~"Wait... can I rest now?"~ */ JOURNAL #21805 /* ~Soego told me not to attack any undead in the Dead Nations, for they shall not harm me so long as I remain peaceful.~ */ GOTO 84
+  IF ~  NumInPartyGT(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #64569 /* ~"Wait... can we rest now?"~ */ JOURNAL #21805 /* ~Soego told me not to attack any undead in the Dead Nations, for they shall not harm me so long as I remain peaceful.~ */ GOTO 84
+  IF ~~ THEN REPLY #64570 /* ~Leave.~ */ JOURNAL #21805 /* ~Soego told me not to attack any undead in the Dead Nations, for they shall not harm me so long as I remain peaceful.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 63.0
+  SAY #21806 /* ~"Your memory serves you well. I am no longer stationed in the Mortuary... instead, I have become a missionary in these parts."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64547 /* ~"But I thought I'd broken your neck..."~ */ GOTO 73
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #21808 /* ~"But I thought I'd *killed* you..."~ */ GOTO 73
+  IF ~~ THEN REPLY #21809 /* ~"Missionary?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21811 /* ~"What are the Dustmen doing here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64610 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64611 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21813 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 73 // from: 72.0 72.1 109.0 109.1
+  SAY #21814 /* ~"The wound you struck was not a mortal one. I recovered quickly... and found that I would like to distance myself from the Mortuary."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+~ THEN REPLY #21815 /* ~"Soego, I snapped your neck... not a mortal blow?"~ */ GOTO 101
+  IF ~~ THEN REPLY #21816 /* ~"Aren't you angry?"~ */ GOTO 74
+  IF ~~ THEN REPLY #21817 /* ~"Hmmm. So... you'd said you're a missionary?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21818 /* ~"Fine, then. What are the Dustmen doing here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64612 /* ~"All right... so where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64613 /* ~"I... see. Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21820 /* ~"Forget it; that's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.1 101.2 104.0
+  SAY #21821 /* ~"No... should I be? I am somewhat disappointed that it was not my time to leave this place. Nonetheless, you should not return to the Mortuary, for many of my fellow factotums would not be pleased to see you."~ */
+  IF ~~ THEN REPLY #64614 /* ~"You'd said you're a missionary?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21823 /* ~"What are the Dustmen doing here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64615 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64616 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21825 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 75 // from:
+  SAY #21716 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 76 // from:
+  SAY #21832 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 77 // from: 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
+  SAY #21837 /* ~"You are in the catacombs of the Dead Nations. The guards brought you here."~ */
+  IF ~~ THEN REPLY #21840 /* ~"And who were you?"~ */ GOTO 64
+  IF ~~ THEN REPLY #21841 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21843 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 78 // from: 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
+  SAY #21844 /* ~"I do not know. Ask some of the 'citizens,' here."~ */
+  IF ~~ THEN REPLY #21847 /* ~"And who were you?"~ */ GOTO 64
+  IF ~~ THEN REPLY #21848 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #21850 /* ~"Perhaps. Farewell."~ */ GOTO 71
+END
+
+IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 79 // from:
+  SAY #21851 /* ~"Ah, someone to aid our cause! I, as an agent of Many-as-One, was told of your coming. We need you to try and find a way into the throne room of the Silent King and kill him. Do this, and Many-as-One will reward you."~ */
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalGT("Soego","GLOBAL",0)
+GlobalLT("Soego","GLOBAL",3)
+~ THEN REPLY #66181 /* ~"Soego... Emoric wanted to know where you were."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 110
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+Global("Soego","GLOBAL",0)
+~ THEN REPLY #21852 /* ~"Wait: are you Soego? Emoric wanted to know where you were."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #21856 /* ~I found Soego. He was infected with lycanthropy, which drove him into the catacombs. His mind was no longer his own and his Dustman beliefs were lost.~ */ GOTO 110
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64623 /* ~"Wait a moment... didn't I break your neck in the Mortuary?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 112
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64624 /* ~"Wait a moment... I thought I'd *killed* you at the Mortuary..."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 112
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+!Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21853 /* ~"How do I get to the Silent King?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #21857 /* ~Soego told me that he does not know how to enter the Silent King's throne room, which I will have to do if I am to kill the Silent King.~ */ GOTO 80
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+!Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21854 /* ~"I see. Farewell, then."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 80 // from: 79.4 110.2 112.0
+  SAY #21858 /* ~"I do not know... I have been here for some time, and I still cannot find a way inside his throne room. Perhaps you will have better luck, unburdened by the hatred and bigotry that is directed toward me."~ */
+  IF ~~ THEN REPLY #21860 /* ~"Hatred and bigotry?"~ */ GOTO 81
+  IF ~~ THEN REPLY #21862 /* ~"I see. Farewell, then."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 81 // from: 80.0
+  SAY #21864 /* ~"My faction views are popular with some, but not all. The most important figureheads of this civilization do not hold them dear."~ */
+  IF ~~ THEN REPLY #21870 /* ~"I see. Farewell, then."~ */ GOTO 71
+END
+
+IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+Global("Met_Soego2","GLOBAL",1)
+~ THEN BEGIN 82 // from:
+  SAY #21913 /* ~"Ah, well met again."~ */
+  IF ~  Global("Silent_King","GLOBAL",1)
+Global("Soego_Told","GLOBAL",0)
+Global("Lawful_Hargrimm_1","GLOBAL",1)
+~ THEN REPLY #24206 /* ~"The Silent King is dead, and has been for some time. There *is* no Silent King."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Hargrimm_7","GLOBALLaw",-3)
+IncrementGlobalOnceEx("GLOBALEvil_Hargrimm_3","GLOBALGood",-1)
+~ GOTO 94
+  IF ~  Global("Silent_King","GLOBAL",1)
+Global("Soego_Told","GLOBAL",0)
+!Global("Lawful_Hargrimm_1","GLOBAL",1)
+~ THEN REPLY #21915 /* ~"The Silent King is dead, and has been for some time. There *is* no Silent King."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1)
+~ JOURNAL #21926 /* ~I confronted Soego with contents of his journal, and he transformed into a wererat and attacked me.~ */ GOTO 94
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalLT("Soego","GLOBAL",3)
+~ THEN REPLY #21914 /* ~"Are you Soego? Emoric wanted to know where you were."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+~ GOTO 109
+  IF ~  Global("Soego_Journal","GLOBAL",1)
+~ THEN REPLY #21916 /* ~"I was in your chamber, and saw your journal."~ */ DO ~SetGlobal("Soego_Fled","GLOBAL",1)
+Enemy()
+~ JOURNAL #21926 /* ~I confronted Soego with contents of his journal, and he transformed into a wererat and attacked me.~ */ GOTO 100
+  IF ~  Global("Doubtful_Skel","GLOBAL",1)
+~ THEN REPLY #21917 /* ~"I met a skeleton - in one of the hallways here - that seems on the brink of seeking the True Death."~ */ DO ~SetGlobal("Doubtful_Skel","GLOBAL",2)
+SetGlobal("Visit_Doubtful","AR1500",1)
+~ GOTO 97
+  IF ~  NumInParty(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21920 /* ~"I need to rest."~ */ GOTO 84
+  IF ~  NumInPartyGT(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21922 /* ~"We need to rest."~ */ GOTO 84
+  IF ~~ THEN REPLY #21924 /* ~"I had some questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21925 /* ~"Just passing by. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 83 // from: 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
+  SAY #21943 /* ~"I will answer what I can."~ */
+  IF ~  Global("Know_Hargrimm","GLOBAL",1)
+~ THEN REPLY #21944 /* ~"Tell me about Hargrimm."~ */ GOTO 88
+  IF ~  Global("Know_Acaste","GLOBAL",1)
+~ THEN REPLY #21945 /* ~"Tell me about Acaste."~ */ GOTO 89
+  IF ~  Global("Know_Stale_Mary","GLOBAL",1)
+~ THEN REPLY #21946 /* ~"Tell me about Stale Mary."~ */ GOTO 90
+  IF ~  Global("Know_Silent_King","GLOBAL",1)
+~ THEN REPLY #21947 /* ~"Tell me about the Silent King."~ */ GOTO 91
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #21948 /* ~"What do you know of this 'civilization'?"~ */ GOTO 92
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #21949 /* ~"What do you know of this 'civilization'?"~ */ GOTO 93
+  IF ~~ THEN REPLY #21951 /* ~"Never mind. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 84 // from: 71.0 71.1 82.5 82.6
+  SAY #21954 /* ~"Of course. You shall be safe in this chamber while you rest."~ */
+  IF ~~ THEN REPLY #21956 /* ~"Thanks..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+RestPartyEx(0,10,FALSE)
+FadeFromColor([20.0],0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 85 // from:
+  SAY #21958 /* ~Null Node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 86 // from:
+  SAY #21963 /* ~Null Node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 87 // from:
+  SAY #21969 /* ~Null Node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 88 // from: 83.0 91.0
+  SAY #21975 /* ~"A stubborn one, but admirable in his piety and devotion to duty. He is my strongest rival here, and he has kept this civilization together for many years. His passions stem from his piety and devotion to duty... admirable qualities, but misplaced."~ */
+  IF ~~ THEN REPLY #21976 /* ~"I had other questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21977 /* ~"That's all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 89 // from: 83.1
+  SAY #21978 /* ~"Acaste is a brute. Only the Silent King keeps her in check, I fear. Should his presence be removed, the ghouls would run rampant through the catacombs."~ */
+  IF ~~ THEN REPLY #21979 /* ~"Tell me about the Silent King."~ */ DO ~SetGlobal("Know_Silent_King","GLOBAL",1)
+~ GOTO 91
+  IF ~~ THEN REPLY #21980 /* ~"I had other questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21981 /* ~"That's all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 90 // from: 83.2
+  SAY #21982 /* ~"Stale Mary is a good-hearted soul, if slow. I cannot understand much of what she says, but she and the zombies are not prone to violence."~ */
+  IF ~~ THEN REPLY #21983 /* ~"I had other questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21984 /* ~"That's all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 91 // from: 83.3 89.0
+  SAY #21985 /* ~"I have never seen the Silent King. I wish I could tell you something about him, but I have never seen him. Presumably, his throne room lies beyond the crimson doors, but I cannot gain entrance... Hargrimm, the skeleton priest, will not let me."~ */
+  IF ~~ THEN REPLY #21986 /* ~"Tell me of Hargrimm."~ */ DO ~SetGlobal("Know_Hargrimm","GLOBAL",1)
+~ GOTO 88
+  IF ~~ THEN REPLY #21987 /* ~"I had other questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21988 /* ~"That's all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 92 // from: 83.4
+  SAY #21989 /* ~"They have been here many centuries, I think, taking care of those that have passed away in their halls. Such devotion to duty is no longer necessary... it is almost a crime."~ */
+  IF ~~ THEN REPLY #21990 /* ~"I had other questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21991 /* ~"That's all I wished to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 93 // from: 83.5
+  SAY #21992 /* ~"They have been here many centuries, I think, taking care of those that have passed away in their halls. Such devotion to duty is no longer necessary... it is almost a crime."~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 220
+END
+
+IF ~~ THEN BEGIN 94 // from: 82.0 82.1
+  SAY #21993 /* ~"What? Is this true? Ah, Many-as-One would surely reward you for such information..."~ */
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",0)
+~ THEN REPLY #25248 /* ~"Many-as-One?"~ */ JOURNAL #25254 /* ~I told Soego that the Silent King was nothing more than a wizened corpse. He said I should inform Many-as-One, and would be rewarded for doing so. Many-as-One is the hive mind of the cranium rats in the Warrens of Thought, east of the Weeping Stone catacombs.~ */ GOTO 111
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",1)
+~ THEN REPLY #25252 /* ~"Interesting. I had some questions..."~ */ JOURNAL #25254 /* ~I told Soego that the Silent King was nothing more than a wizened corpse. He said I should inform Many-as-One, and would be rewarded for doing so. Many-as-One is the hive mind of the cranium rats in the Warrens of Thought, east of the Weeping Stone catacombs.~ */ GOTO 83
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",1)
+~ THEN REPLY #25253 /* ~"Perhaps. Farewell."~ */ JOURNAL #25254 /* ~I told Soego that the Silent King was nothing more than a wizened corpse. He said I should inform Many-as-One, and would be rewarded for doing so. Many-as-One is the hive mind of the cranium rats in the Warrens of Thought, east of the Weeping Stone catacombs.~ */ EXIT
+  IF ~  Global("CR_Vic","GLOBAL",1)
+~ THEN REPLY #21994 /* ~"Good. I had some questions..."~ */ JOURNAL #21996 /* ~I told Soego that the Silent King was nothing more than a wizened corpse. I will have to inform Many-as-One myself as soon as the opportunity arises.~ */ GOTO 83
+  IF ~  Global("CR_Vic","GLOBAL",1)
+~ THEN REPLY #21995 /* ~"I will tell him myself, then. Farewell."~ */ JOURNAL #21996 /* ~I told Soego that the Silent King was nothing more than a wizened corpse. I will have to inform Many-as-One myself as soon as the opportunity arises.~ */ EXIT
+END
+
+IF WEIGHT #0 ~  CreatureInArea("AR1500")
+GlobalGT("Soego_Exposed","GLOBAL",0)
+~ THEN BEGIN 95 // from:
+  SAY #21997 /* ~"You... bastard!"~ */
+  IF ~~ THEN REPLY #21998 /* ~"Wha-"~ */ DO ~Enemy()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 96 // from:
+  SAY #22003 /* ~"Eh... that door leads to my private chambers. Please do not enter the chambers."~ */
+  IF ~~ THEN REPLY #22004 /* ~Leave.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 97 // from: 82.4
+  SAY #22005 /* ~"Oh! I will go speak with him, now!"~ */
+  IF ~~ THEN REPLY #22006 /* ~"Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 98 // from:
+  SAY #22007 /* ~"No, I am on my way."~ */
+  IF ~~ THEN REPLY #22008 /* ~"Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 99 // from:
+  SAY #22009 /* ~"Sadly, no. It may come around, however."~ */
+  IF ~~ THEN REPLY #22010 /* ~"I see. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 100 // from: 82.3
+  SAY #22011 /* ~Soego pauses for a moment. "I see." He suddenly begins a startling transformation...~ */
+  IF ~~ THEN REPLY #22012 /* ~"What the...?"~ */ DO ~ClearAllActions()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 101 // from: 73.0
+  SAY #22014 /* ~"Er... your memory does you a disservice. My neck was hurt, surely... sprained. But broken? Hardly."~ */
+  IF ~  !Global("Lawful_Soego_1","GLOBAL",1)
+~ THEN REPLY #22015 /* ~"I beg to differ. What are you, Soego?"~ */ GOTO 106
+  IF ~  Global("Lawful_Soego_1","GLOBAL",1)
+~ THEN REPLY #22016 /* ~"I beg to differ. What are you, Soego?"~ */ GOTO 103
+  IF ~~ THEN REPLY #22018 /* ~"Aren't you angry?"~ */ GOTO 74
+  IF ~~ THEN REPLY #22019 /* ~"You'd said you're a missionary?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #22020 /* ~"What are the Dustmen doing here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #22022 /* ~"That's all I wished to know. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 102 // from:
+  SAY #22023 /* ~He darts out of your grasp with preternatural speed. Sneering and spitting, he hisses "A foolish thing, to attack an agent of the cranium rat hive mind!" He suddenly begins a startling transformation...~ */
+  IF ~~ THEN REPLY #22024 /* ~"What the...?"~ */ DO ~SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Fled","GLOBAL",2)
+Enemy()
+~ JOURNAL #21856 /* ~I found Soego. He was infected with lycanthropy, which drove him into the catacombs. His mind was no longer his own and his Dustman beliefs were lost.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 103 // from: 101.1
+  SAY #22026 /* ~ "A ridiculous question! You woke on a preparation slab, in the Mortuary... you told me so, yourself. Certainly my wound could not have been worse than those which led Collectors to mistake you for a corpse, no?"~ */
+  IF ~~ THEN REPLY #22027 /* ~"True enough, but... never mind."~ */ GOTO 104
+  IF ~~ THEN REPLY #22028 /* ~"My condition is... unique."~ */ GOTO 105
+  IF ~~ THEN REPLY #22029 /* ~"No. Something is wrong here, and I'll find out what it is soon enough."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 104 // from: 103.0 103.2 105.0 105.1 106.1 107.0
+  SAY #22032 /* ~He shrugs. "Very well."~ */
+  IF ~~ THEN REPLY #22033 /* ~"Aren't you angry about what happened?"~ */ GOTO 74
+  IF ~~ THEN REPLY #22034 /* ~"You'd said you're a missionary?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #22035 /* ~"So what are the Dustmen doing here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #22038 /* ~"I'll take my leave, now. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 105 // from: 103.1
+  SAY #22039 /* ~He smiles. "Everyone's unique. Everyone. Surely you won't deny that?"~ */
+  IF ~~ THEN REPLY #22040 /* ~"True enough, but... never mind."~ */ GOTO 104
+  IF ~~ THEN REPLY #22041 /* ~"No. Something is wrong here, and I'll find out what it is soon enough."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 106 // from: 101.0
+  SAY #22043 /* ~"What am-? What sort of question is that?"~ */
+  IF ~~ THEN REPLY #22044 /* ~"You heard me. You're no ordinary Dustman... what *are* you, Soego?"~ */ GOTO 107
+  IF ~~ THEN REPLY #22045 /* ~"Forget it. Never mind."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 107 // from: 106.0
+  SAY #22047 /* ~Soego scowls at you. "I don't know *what* you speak of."~ */
+  IF ~~ THEN REPLY #22048 /* ~"Something is wrong here, and I'll find out what it is soon enough."~ */ GOTO 104
+END
+
+IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalLT("Soego","GLOBAL",3)
+!Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 108 // from:
+  SAY #22050 /* ~"Ah, another member of the living. Most are slain by the ghouls, this far into the catacombs; you are fortunate."~ */
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #22051 /* ~"Are you Soego? Emoric wanted to know where you were."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #22052 /* ~I found Soego. He has discovered a group of undead guardians who were protecting the catacombs. He is trying to convince them to join the True Death.~ */ GOTO 109
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #66173 /* ~"Soego... Emoric wanted to know where you were."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 109
+END
+
+IF ~~ THEN BEGIN 109 // from: 82.2 108.0 108.1
+  SAY #22053 /* ~"Yes, I am he. I am doing missionary work for the Dustmen, here."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64617 /* ~"All right. But... I thought I'd broken your neck..."~ */ GOTO 73
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64618 /* ~"Good. But... I thought I'd *killed* you..."~ */ GOTO 73
+  IF ~~ THEN REPLY #22054 /* ~"Are there other Dustmen here?"~ */ GOTO 66
+  IF ~~ THEN REPLY #50792 /* ~"Where am I?"~ */ GOTO 77
+  IF ~~ THEN REPLY #50793 /* ~"Why have I been made a prisoner here?"~ */ GOTO 78
+  IF ~~ THEN REPLY #22056 /* ~"I'll take my leave, now. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 110 // from: 79.0 79.1
+  SAY #22057 /* ~"Yes, I am he."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64625 /* ~"Wait a moment... didn't I break your neck in the Mortuary?"~ */ GOTO 112
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64626 /* ~"Wait a moment... I thought I'd *killed* you at the Mortuary..."~ */ GOTO 112
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #22058 /* ~"Good. Now, how do I get to the Silent King?"~ */ JOURNAL #21857 /* ~Soego told me that he does not know how to enter the Silent King's throne room, which I will have to do if I am to kill the Silent King.~ */ GOTO 80
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #22060 /* ~"Good. Farewell."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 111 // from: 94.0
+  SAY #25249 /* ~"Yes, the hive mind of the cranium rats. Go to the catacombs east of Weeping Stone. You shall find the way, there."~ */
+  IF ~~ THEN REPLY #25250 /* ~"Interesting. I had some questions..."~ */ GOTO 83
+  IF ~~ THEN REPLY #25251 /* ~"Perhaps. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 112 // from: 79.2 79.3 110.0 110.1
+  SAY #64620 /* ~He waves your words away. "Nothing; it was nothing to me. I had already been blessed with lycanthropy; the wounds healed in little time at all."~ */
+  IF ~~ THEN REPLY #64621 /* ~"I... see. So, how do I get to the Silent King?"~ */ GOTO 80
+  IF ~~ THEN REPLY #64622 /* ~"All right... farewell, then."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 113 // from: 38.1
+  SAY #66709 /* ~"Greetings..." The man turns to face you and makes a slight bow. You suddenly notice that his eyes aren't bloodshot so much as they have a red tinge to them. "I am Soego. How may I help you?"~ */
+  IF ~~ THEN REPLY #66712 /* ~"I would like to leave the Mortuary. Can you help me?"~ */ GOTO 114
+  IF ~~ THEN REPLY #66713 /* ~"I had some questions..."~ */ GOTO 114
+  IF ~~ THEN REPLY #66714 /* ~"I was merely passing by. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 114 // from: 113.0 113.1
+  SAY #66710 /* ~Halfway through your comment, Soego's lips suddenly peel back, revealing a row of dirty, sharp teeth, and he leans in, sniffing you. ~ */
+  IF ~~ THEN REPLY #66715 /* ~"Uh... why in the hells are you sniffing me?"~ */ GOTO 115
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #66716 /* ~Snap his neck when he leans in.~ */ GOTO 22
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #66717 /* ~Snap his neck when he leans in.~ */ GOTO 19
+  IF ~~ THEN REPLY #66718 /* ~"Never mind... farewell."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 115 // from: 114.0
+  SAY #66711 /* ~"Your clothes... those robes. They smell of another. They are not yours." Soego's lips seal into a strange smile, and his eyes gleam with an almost feral light. "Who *are* you?"~ */
+  IF ~~ THEN REPLY #66719 /* ~"I... only took these robes so I could leave in peace. I woke up on one of the preparation rooms upstairs."~ */ GOTO 42
+  IF ~~ THEN REPLY #66720 /* ~"You're correct. These robes aren't mine, but who they belong to is not your concern."~ */ GOTO 6
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #66721 /* ~Snap his neck before he can call for help.~ */ GOTO 22
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #66722 /* ~Snap his neck before he can call for help.~ */ GOTO 19
+  IF ~~ THEN REPLY #66723 /* ~"This is of no matter. I will take my leave now."~ */ GOTO 17
+END

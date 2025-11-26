@@ -1,0 +1,265 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DGIANTSK.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DGIANTSK~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #292 /* ~Widzisz przed sobą ogromny szkielet odziany w zdobioną zbroję z brązu. Przymocowano ją do kości nitami, a na napierśniku wygrawerowano serię skomplikowanych symboli. Zastanawiasz się nad pochodzeniem tego kościotrupa; nie miałeś pojęcia, że w wieloświecie istnieją ludzie o tym wzroście. Ogromny miecz w jego rękach wygląda tak, jakby ważył tyle, co powóz.~ */
+  IF ~~ THEN REPLY #293 /* ~"Nie obrazisz się, jeśli potrzymam trochę twój miecz? Musisz być zmęczony."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Giant_Skel_Mort_1","GLOBALLaw",-1)
+~ GOTO 1
+  IF ~~ THEN REPLY #1165 /* ~"No więc, od kiedy tu stoisz? Długo?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Giant_Skel_Mort_1","GLOBALLaw",-1)
+~ GOTO 1
+  IF ~~ THEN REPLY #3996 /* ~Przyjrzyj się ogromnemu szkieletowi... ale ostrożnie.~ */ GOTO 4
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #3997 /* ~Spróbuj unieszkodliwić zaklęcia, które wpleciono w napierśnik szkieletu.~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #3998 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #3999 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4000 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4001 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4002 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #4003 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 1
+  IF ~~ THEN REPLY #4004 /* ~Zostaw szkielet w spokoju.~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 1 // from: 0.0 0.1 0.9
+  SAY #1166 /* ~Wygląda na to, że ten szkielet jest już zbyt długo martwy, żeby mógł odpowiadać na twoje pytania. A może jego głowa znajduje się zbyt wysoko, żeby cię dosłyszeć.~ */
+  IF ~~ THEN REPLY #1167 /* ~Przyjrzyj się ogromnemu szkieletowi... ale ostrożnie.~ */ GOTO 4
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4035 /* ~Spróbuj unieszkodliwić zaklęcia, które wpleciono w napierśnik szkieletu.~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4036 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4037 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4038 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4039 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4040 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4041 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
+  SAY #4005 /* ~Kiedy dotykasz szkieletu, w całej Kostnicy odzywa się dzwon... a szkielet budzi się z szybkością błyskawicy i podnosi swój miecz do ataku!~ */
+  IF ~~ THEN REPLY #4042 /* ~"Lepiej było zostać martwym, Kościaku..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
+  SAY #4006 /* ~Kiedy już masz to zrobić, nagle się zatrzymujesz... A twoje oczy przyciąga jego zbroja. Coś w symbolach wygrawerowanych na płycie piersiowej sprawia, że przerywasz w pół ruchu. Jeśli te szkielety są strażnikami, to zmącenie ich spokoju może... je obudzić.~ */
+  IF ~~ THEN REPLY #4043 /* ~"Chcę zaryzykować..."~ */ GOTO 2
+  IF ~~ THEN REPLY #4044 /* ~Przyjrzyj się ogromnemu szkieletowi... ale ostrożnie.~ */ GOTO 4
+  IF ~~ THEN REPLY #4046 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 1.0 3.1 7.1 15.1 16.3
+  SAY #4007 /* ~Zdobioną zbroję z brązu przymocowano do jego żeber i łopatek za pomocą żelaznych nitów. Kiedy przyglądasz się jego kościom przez szpary w pancerzu, zauważasz, że takie same nity znajdują się w jego stawach, barkowym, łokciowym, miednicowym i kolanowym. Wzdłuż ramion i nóg szkieletu biegną grube, skórzane pasy i liny, które do złudzenia przypominają mięśnie i ścięgna.~ */
+  IF ~~ THEN REPLY #4045 /* ~Przyjrzyj się zbroi.~ */ GOTO 5
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4048 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4049 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4050 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4051 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4052 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4053 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #4008 /* ~Choć pancerz ma już swoje lata, wygląda na zadbany. Odbite od niego światło świeci jasno, a symbole wygrawerowane na napierśniku zdają się płynąć w ogniu pochodni, zmieniając lekko swoje położenie za każdym razem, kiedy próbujesz na nich skupić swój wzrok.~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4054 /* ~Uważnie przyjrzyj się symbolom.~ */ GOTO 6
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4055 /* ~Uważnie przyjrzyj się symbolom.~ */ GOTO 6
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+CheckStatLT(Protagonist,13,INT)
+~ THEN REPLY #64293 /* ~Uważnie przyjrzyj się symbolom.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4056 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4057 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4058 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4059 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4060 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4061 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0 5.1
+  SAY #4009 /* ~Kiedy spoglądasz na symbole, prawie podświadomie rozluźniasz wzrok. Po chwili symbole przestają się ruszać i układają się w ciąg runów, które biegną przez całą płytę piersiową. To dziwne, ale przeplatający się wzór przypomina łańcuch... Kiedy przychodzi ci to do głowy, nagle przypominasz sobie, że te runy tworzą jakieś zaklęcie strażnicze.~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+~ THEN REPLY #4062 /* ~Uważnie przyjrzyj się symbolom i spróbuj przypomnieć sobie zaklęcie.~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,16,INT)
+~ THEN REPLY #4063 /* ~Uważnie przyjrzyj się symbolom i spróbuj przypomnieć sobie zaklęcie.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4064 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4065 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4066 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4067 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4068 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4069 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.2 6.1 7.2
+  SAY #4010 /* ~Przez chwilę przyglądasz się runom uważnie, ale nie możesz odszyfrować zaklęcia. Wygląda na to, że jest bardzo skomplikowane, a w dodatku nie możesz się dobrze skoncentrować.~ */
+  IF ~  PartyHasItem("TomeBA")
+~ THEN REPLY #64294 /* ~Porównaj runy na pancerzu z runami w Księdze Kości i Popiołu.~ */ GOTO 15
+  IF ~~ THEN REPLY #4070 /* ~Zbadaj szkielet raz jeszcze.~ */ GOTO 4
+  IF ~~ THEN REPLY #4071 /* ~Jeszcze raz uważnie przyjrzyj się runom.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4072 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4073 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4074 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4075 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4076 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4077 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.0
+  SAY #4011 /* ~Przyglądasz się runom, które biegną przez całą płytę piersiową. Na pierwszy rzut oka, tworzą one jakieś mniejsze zaklęcie ochronne, ale kilka runów w kształcie czaszek i kuliste wzory wzdłuż brzegów zbroi każą ci podejrzewać, że w runy wpleciono także kilka potężniejszych zaklęć nekromanckich i strażniczych. Teraz nie masz już wątpliwości, że dotknięcie szkieletu obudzi go... i zmusi do obrony.~ */
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4079 /* ~Spróbuj, czy nie da się tych zaklęć jakoś unieszkodliwić.~ */ DO ~SetGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+AddexperienceParty(500)
+~ GOTO 9
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4080 /* ~Spróbuj, czy nie da się tych zaklęć jakoś unieszkodliwić.~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4081 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4082 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4083 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4084 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4085 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4078 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 0.3 1.1 8.0 8.1
+  SAY #4012 /* ~Podejrzewasz, że zatarcie wzoru runów wzdłuż płyty piersiowej mogłoby rozplątać zaklęcia, ale wygląda na to, że to nie jest takie łatwe... Wzór jest skomplikowany, a zarysowanie nie tych runów, co trzeba, mogłoby ożywić szkielet.~ */
+  IF ~  PartyHasItem("TomeBA")
+~ THEN REPLY #64296 /* ~Przejrzyj Księgę Kości i Popiołu i zobacz, czy nie da się tych zaklęć jakoś przełamać.~ */ GOTO 16
+  IF ~~ THEN REPLY #4086 /* ~Najpierw zamaż runy tworzące zaklęcie pancerza, potem zaklęcie nekromanckie, a potem strażnicze.~ */ GOTO 10
+  IF ~  GlobalLT("Giant_Skeleton_Enchant","GLOBAL",2)
+~ THEN REPLY #4087 /* ~Najpierw zamaż runy tworzące zaklęcie strażnicze, potem wypowiedz runy od tyłu, unieszkodliwiając w ten sposób najpierw zaklęcie nekromanckie, a potem zaklęcie pancerza.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 11
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",1)
+~ THEN REPLY #4088 /* ~Najpierw zamaż runy tworzące zaklęcie strażnicze, potem wypowiedz runy od tyłu, unieszkodliwiając w ten sposób najpierw zaklęcie nekromanckie, a potem zaklęcie pancerza.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 13
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4089 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4090 /* ~Spróbuj wyciągnąć miecz z rąk szkieletu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4091 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4092 /* ~Spróbuj wyciągnąć nity przytrzymujące zbroję na szkielecie.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4093 /* ~"Co powiesz na TEN szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4094 /* ~Zostaw ten szkielet w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1 16.0
+  SAY #4013 /* ~Kiedy zaczynasz majstrować przy runach dekorujących płytę piersiową, w całej Kostnicy odzywa się dzwon... a szkielet budzi się z szybkością błyskawicy i podnosi swój miecz do ataku!~ */
+  IF ~~ THEN REPLY #4095 /* ~"Lepiej było zostać martwym, Kościaku..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2 16.1
+  SAY #4014 /* ~Z początku zadanie jest trudne i stresujące, ale powoli twój umysł zaczyna się koncentrować, a runy zaczynają się rozplatać. Po kilku minutach szkielet zostaje pozbawiony zaklęć, które trzymały go w kupie. Pada na ziemię przy grzechocie kości, wydając przy tym ogromny huk!~ */
+  IF ~~ THEN REPLY #4096 /* ~"Przeklęta kupa kości...!"~ */ DO ~AddexperienceParty(800)
+~ GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY #4015 /* ~Czekasz przez chwilę, ale wygląda na to, że nikt nie zareagował na huk spadającego szkieletu. W pośpiechu przeszukujesz jego części leżące na podłodze. Większość z nich jest zbyt ciężka, żebyś mógł ich użyć, ale w końcu znajdujesz kawałek napierśnika, na którym znajduje się kilka nieuszkodzonych zaklęć. Masz przeczucie, że to może ci się przydać.~ */
+  IF ~~ THEN REPLY #4097 /* ~"Tylko to sobie wezmę..."~ */ DO ~GiveItemCreate("Breast1",Protagonist,1,1,0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3 16.2
+  SAY #4016 /* ~Tym razem unieszkodliwienie zaklęć jest łatwiejsze, a runy rozplątują się szybko. Po paru minutach ogromny szkielet jest już pozbawiony zaklęć, które go utrzymywały w całości. Mając w pamięci, co się stało przy pierwszym kościotrupie, łapiesz go zanim zdąży upaść i powoli opuszczasz na ziemię."~ */
+  IF ~~ THEN REPLY #4098 /* ~"Zobaczmy, co tu mamy tym razem..."~ */ DO ~AddexperienceParty(800)
+~ GOTO 14
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY #4017 /* ~Szybko przeszukujesz to, co zostało ze szkieletu i znowu odnajdujesz część napierśnika... Tak jak wcześniej, także na niej znajduje się fragment nieuszkodzonego zaklęcia. Może ci się to kiedyś do czegoś przydać.~ */
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",3)
+~ THEN REPLY #4099 /* ~"Tylko to sobie wezmę..."~ */ DO ~GiveItemCreate("Breast2",Protagonist,1,1,0)
+~ EXIT
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",4)
+~ THEN REPLY #4100 /* ~"Tylko to sobie wezmę..."~ */ DO ~GiveItemCreate("Breast3",Protagonist,1,1,0)
+~ EXIT
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",5)
+~ THEN REPLY #4101 /* ~"Tylko to sobie wezmę..."~ */ DO ~GiveItemCreate("Breast4",Protagonist,1,1,0)
+Kill(Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 7.0
+  SAY #64295 /* ~Spoglądasz do księgi i porównujesz wykresy ze znakami na płycie piersiowej. Z tego, co rozumiesz, runy składają się na mniejsze zaklęcie pancerza, ale kilka runów w kształcie czaszek i kuliste wzory wzdłuż brzegów zbroi każą ci podejrzewać, że w runy wpleciono także kilka potężniejszych zaklęć nekromanckich i strażniczych. Teraz nie masz już wątpliwości, że dotknięcie szkieletu obudzi go... i zmusi do obrony.~ */
+  IF ~~ THEN REPLY #64298 /* ~Przejrzyj Księgę Kości i Popiołu i zobacz, czy nie da się tych zaklęć jakoś przełamać.~ */ GOTO 16
+  IF ~~ THEN REPLY #64299 /* ~Zostaw runy w spokoju i jeszcze raz uważnie przyjrzyj się szkieletowi.~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 16 // from: 9.0 15.0
+  SAY #64297 /* ~Z tego, co możesz wyczytać w Księdze, wynika, że zaklęcie pancerza odnosi się tylko do napierśnika, zaklęcie nekromanckie pozwala ożywić szkielet, a zaklęcie strażnicze sprawia, że jego postrzeganie otoczenia jest ograniczone. Domyślasz się, że gdybyś spróbował go dotknąć, to szkielet wziąłby to za atak... chyba że najpierw udałoby ci się sprawić, żeby przestał cię zauważać.~ */
+  IF ~~ THEN REPLY #64300 /* ~Najpierw zamaż runy tworzące zaklęcie pancerza, potem zaklęcie nekromanckie, a potem strażnicze.~ */ GOTO 10
+  IF ~  GlobalLT("Giant_Skeleton_Enchant","GLOBAL",2)
+~ THEN REPLY #64301 /* ~Najpierw zamaż runy tworzące zaklęcie strażnicze, potem wypowiedz runy od tyłu, unieszkodliwiając w ten sposób najpierw zaklęcie nekromanckie, a potem zaklęcie pancerza.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 11
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",1)
+~ THEN REPLY #64302 /* ~Najpierw zamaż runy tworzące zaklęcie strażnicze, potem wypowiedz runy od tyłu, unieszkodliwiając w ten sposób najpierw zaklęcie nekromanckie, a potem zaklęcie pancerza.~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 13
+  IF ~~ THEN REPLY #64303 /* ~Zostaw runy w spokoju i jeszcze raz uważnie przyjrzyj się szkieletowi.~ */ GOTO 4
+END

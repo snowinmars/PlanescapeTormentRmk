@@ -1,0 +1,57 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DRODMM.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ko_KR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DRODMM~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF WEIGHT #2 /* Triggers after states #: 4 3 even though they appear after this state */
+~  RandomNum(2,0)
+~ THEN BEGIN 0 // from:
+  SAY #64181 /* ~이 마법의 석장은 사용자의 적과 싸울 모드론 로봇을 소환한다. 1-3 체의 로봇이 소환되며 이들은 두려움없이 죽을 때까지 싸운다. ~ */
+  IF ~~ THEN REPLY #64182 /* ~사용한다.~ */ DO ~CreateCreatureAtFeet("Csum")
+DestroyPartyItem("ModMite",FALSE)
+~ EXIT
+  IF ~~ THEN REPLY #64183 /* ~치운다.~ */ EXIT
+END
+
+IF WEIGHT #3 /* Triggers after states #: 4 3 even though they appear after this state */
+~  RandomNum(2,1)
+~ THEN BEGIN 1 // from:
+  SAY #64184 /* ~이 마법의 석장은 사용자의 적과 싸울 모드론 로봇을 소환한다. 1-3 체의 로봇이 소환되며 이들은 두려움없이 죽을 때까지 싸운다. ~ */
+  IF ~~ THEN REPLY #64185 /* ~사용한다.~ */ DO ~CreateCreatureAtFeet("Csum")
+CreateCreatureAtFeet("Csum")
+DestroyPartyItem("ModMite",FALSE)
+~ EXIT
+  IF ~~ THEN REPLY #64186 /* ~치운다.~ */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 4 3 even though they appear after this state */
+~  RandomNum(2,2)
+~ THEN BEGIN 2 // from:
+  SAY #64188 /* ~이 마법의 석장은 사용자의 적과 싸울 모드론 로봇을 소환한다. 1-3 체의 로봇이 소환되며 이들은 두려움없이 죽을 때까지 싸운다. ~ */
+  IF ~~ THEN REPLY #64189 /* ~사용한다.~ */ DO ~CreateCreatureAtFeet("Csum")
+CreateCreatureAtFeet("Csum")
+CreateCreatureAtFeet("Csum")
+DestroyPartyItem("ModMite",FALSE)
+~ EXIT
+  IF ~~ THEN REPLY #64191 /* ~치운다.~ */ EXIT
+END
+
+IF WEIGHT #0 ~  GlobalGT("Current_Area","GLOBAL",1199)
+GlobalLT("Current_Area","GLOBAL",1205)
+~ THEN BEGIN 3 // from:
+  SAY #67150 /* ~석장은 당신 손 안에서 차갑게 느껴지기만 할 뿐 아무런 반응도 보이지 않는다. 당신의 현재 위치에서는 작동하지 않을 것 같다.~ */
+  IF ~~ THEN REPLY #67151 /* ~그것을 치운다.~ */ EXIT
+END
+
+IF WEIGHT #1 ~  False()
+~ THEN BEGIN 4 // from:
+  SAY #67152 /* ~석장은 당신 손 안에서 차갑게 느껴지기만 할 뿐 아무런 반응도 보이지 않는다. 당신의 현재 위치에서는 작동하지 않을 것 같다.~ */
+  IF ~~ THEN REPLY #67153 /* ~그것을 치운다.~ */ EXIT
+END

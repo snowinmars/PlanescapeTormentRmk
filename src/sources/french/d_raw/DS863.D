@@ -1,0 +1,212 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DS863.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DS863~
+
+IF ~  !HasItem("DRemind","S863")
+~ THEN BEGIN 0 // from: 10.0
+  SAY #35537 /* ~Ce squelette paraît avoir beaucoup servi, soit au combat, soit à tomber dans des escaliers ; ses jambes et ses bras, brisés en plusieurs endroits, ont été redressés et renforcés à l'aide de sangles en cuir et de tiges de fer. Son front porte le numéro '863'… mais il a l'arrière du crâne défoncé.~ */
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",0)
+~ THEN REPLY #35538 /* ~"Désolé d'avoir pris ce parchemin, mais tu n'aurais sans doute pas pu l'apporter avant quelque temps."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Skeleton_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",1)
+~ THEN REPLY #35561 /* ~"Désolé d'avoir pris ce parchemin, mais tu n'aurais sans doute pas pu l'apporter avant quelque temps."~ */ GOTO 1
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",0)
+~ THEN REPLY #35562 /* ~"Il faut que je te demande : ces os brisés, c'est le résultat d'un combat ou d'une chute ?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Skeleton_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Skeleton_Chaotic","GLOBAL",1)
+~ THEN REPLY #35563 /* ~"Il faut que je te demande : ces os brisés, c'est le résultat d'un combat ou d'une chute ?"~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35564 /* ~Utilise Histoires-Os-Conter sur le squelette.~ */ GOTO 2
+  IF ~~ THEN REPLY #35569 /* ~Examine attentivement le squelette.~ */ DO ~SetGlobal("Skeleton_Examine","GLOBAL",1)
+~ GOTO 3
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",0)
+~ THEN REPLY #35602 /* ~Essaie de déboulonner les articulations du squelette.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1)
+~ EXTERN ~DMORTE~ 400
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35603 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 4
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35604 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 5
+  IF ~  Global("Skeleton_Examine","GLOBAL",1)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+PartyHasItem("Prybar")
+~ THEN REPLY #35605 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 6
+  IF ~  !NearbyDialog("DMorte")
+Global("Skeleton_Examine","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35606 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 4
+  IF ~  !NearbyDialog("DMorte")
+Global("Skeleton_Examine","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35607 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 5
+  IF ~  !NearbyDialog("DMorte")
+Global("Skeleton_Examine","GLOBAL",1)
+PartyHasItem("Prybar")
+~ THEN REPLY #35608 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 6
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35609 /* ~"Qu'est-ce que tu dis de ce squelette, Morte ? Ça t'ira comme corps ?"~ */ EXTERN ~DMORTE~ 396
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35610 /* ~Laisse le squelette tranquille.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 394
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35611 /* ~Laisse le squelette tranquille.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35612 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #35539 /* ~Le squelette ne répond pas.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35540 /* ~"C'était sympa de parler avec toi, Sac d'os. Prends soin de toi."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 394
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35559 /* ~"C'était sympa de parler avec toi, Sac d'os. Prends soin de toi."~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35560 /* ~"C'était sympa de parler avec toi, Sac d'os. Prends soin de toi."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+  SAY #35565 /* ~Ce squelette ne répond pas. Il semble qu'il soit trop absent pour répondre à tes questions.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35566 /* ~Laisse le squelette tranquille.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 394
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35567 /* ~Laisse le squelette tranquille.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35568 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+  SAY #35570 /* ~Quelqu'un a pris soin d'attacher les os de ce squelette avec des sangles de cuir, enroulées autour du corps de telle manière qu'elles ressemblent à des muscles et des tendons. Les sangles sont fixées à des boulons métalliques, enfoncés dans les articulations du squelette. Ce squelette semble avoir fait l'objet de nombreuses réparations. Nombre de ses os sont ébréchés, et ses innombrables fractures ont été réparées avec des colles puantes.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",0)
+~ THEN REPLY #35571 /* ~Essaie de déboulonner les articulations du squelette.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1)
+~ EXTERN ~DMORTE~ 400
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35593 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 4
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35594 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 5
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip2","GLOBAL",1)
+PartyHasItem("Prybar")
+~ THEN REPLY #35595 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 6
+  IF ~  !NearbyDialog("DMorte")
+!PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35596 /* ~"Je peux emprunter quelques sangles et boulons ?"~ */ GOTO 4
+  IF ~  !NearbyDialog("DMorte")
+!PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35597 /* ~"Je peux emprunter quelques sangles et boulons ?"~ */ GOTO 5
+  IF ~  !NearbyDialog("DMorte")
+PartyHasItem("Prybar")
+~ THEN REPLY #35598 /* ~"Je peux emprunter quelques sangles et boulons ?"~ */ GOTO 6
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35599 /* ~Laisse le squelette tranquille.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 394
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35600 /* ~Laisse le squelette tranquille.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35601 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.7 0.10 3.1 3.4
+  SAY #35576 /* ~Tu tires sur les boulons, mais tu n'es pas assez fort pour les extraire. Ils sont enfoncés assez serrés.~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35577 /* ~"Peut-être qu'avec l'outil adéquat, je pourrais les enlever… Hmmmm. Je vais peut-être revenir, Sac d'os."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 394
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35578 /* ~"Peut-être qu'avec l'outil adéquat, je pourrais les enlever… Hmmmm. Je vais peut-être revenir, Sac d'os."~ */ EXIT
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35579 /* ~"Peut-être qu'avec l'outil adéquat, je pourrais les enlever… Hmmmm. Je vais peut-être revenir, Sac d'os."~ */ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35580 /* ~Laisse le squelette tranquille.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ EXTERN ~DMORTE~ 394
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35581 /* ~Laisse le squelette tranquille.~ */ EXIT
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35582 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.8 0.11 3.2 3.5
+  SAY #35584 /* ~Tu tires sur les boulons de toutes tes forces, et après quelques instants, tu arraches le boulon des articulations. Le squelette s'effondre, certains de ses os remuant encore.~ */
+  IF ~~ THEN REPLY #35585 /* ~"Excuse-moi, Sac d'os…"~ */ DO ~Kill(Myself)
+GiveItemCreate("Spike",Protagonist,1,0,0)
+GiveItemCreate("Strap",Protagonist,1,0,0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.9 0.12 3.3 3.6
+  SAY #35587 /* ~Tu arraches les boulons des articulations du squelette avec ton pied-de-biche. Le squelette s'effondre, certains de ses os remuant encore.~ */
+  IF ~~ THEN REPLY #35588 /* ~"Excuse-moi, Sac d'os…"~ */ DO ~Kill(Myself)
+GiveItemCreate("Spike",Protagonist,1,0,0)
+GiveItemCreate("Strap",Protagonist,1,0,0)
+~ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 7 // from:
+  SAY #35613 /* ~Ce squelette ne répond pas. Il semble qu'il soit trop absent pour répondre à tes questions.~ */
+END
+
+IF ~  HasItem("DRemind","S863")
+~ THEN BEGIN 8 // from:
+  SAY #64262 /* ~Soit ce squelette a beaucoup combattu, soit il est trop souvent tombé dans des escaliers. Ses deux bras et ses deux jambes ont été brisés et réparés à l'aide de bouts de métal et de lanières de cuir. Sur son front, on peut lire le numéro '863'… l'arrière du crâne est défoncé et forme une cavité. Tu remarques que quelqu'un en a profité pour y glisser un parchemin.~ */
+  IF ~~ THEN REPLY #64263 /* ~Prends le parchemin dans le crâne du squelette.~ */ GOTO 9
+  IF ~~ THEN REPLY #64264 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+  SAY #64265 /* ~Tu extrais le parchemin du crâne - étrangement, il semble que la cavité était *prévue* pour recevoir des messages. Le parchemin est attaché avec une petite ficelle, elle-même fixée à un crochet dans le crâne, comme si on avait voulu éviter que le message ne tombe accidentellement de sa cachette.~ */
+  IF ~~ THEN REPLY #64266 /* ~Détache la ficelle et prends le parchemin.~ */ DO ~GiveItem("DRemind",Protagonist)
+~ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+  SAY #64267 /* ~Tu détaches la ficelle et examines le parchemin - cela semble être une note d'un des gardiens de la Morgue. Ce squelette devait être une sorte de messager ambulant. En y regardant à deux fois, tu te rends compte que le squelette s'est arrêté devant la dalle de pierre parce qu'il ne savait pas comment la franchir.
+
+^NREMARQUE : pour 'lire' des notes, des livres ou des parchemins, place-les dans ton inventaire, puis clique dessus avec le bouton droit de la souris pour faire apparaître leur panneau d'information.^-~ */
+  IF ~~ THEN REPLY #64268 /* ~Étudie encore le squelette.~ */ GOTO 0
+  IF ~~ THEN REPLY #64269 /* ~Laisse le squelette tranquille.~ */ EXIT
+END

@@ -1,0 +1,73 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM506.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM506~
+
+IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN BEGIN 0 // from: 3.2
+  SAY #45419 /* ~Ten pokryty szwami trup włóczy się leniwie pomiędzy dwoma płytami. Na czole... z boku karku... i na prawej ręce ktoś wyszył mu numer "506". W rzeczy samej, skóra tego obdartego truposza została pozszywana tak wieloma nićmi, że wygląda niczym dziwaczny plan ulic.~ */
+  IF ~  Global("506_Thread","GLOBAL",0)
+~ THEN REPLY #45420 /* ~Przyjrzyj się szwom.~ */ GOTO 3
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45421 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45422 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+  IF ~~ THEN REPLY #45423 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~~ THEN REPLY #45424 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.1 4.0 4.1 5.0 5.1 5.2
+  SAY #45425 /* ~Truposz patrzy przed siebie w zapomnieniu.~ */
+  IF ~~ THEN REPLY #45478 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.2 5.3
+  SAY #45426 /* ~Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+  IF ~~ THEN REPLY #45479 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+  SAY #45427 /* ~Szwy opasują całe ciało truposza, biegnąc od ramion, poprzez klatkę piersiową, po karku w górę i nikną w wilgotnej masie siwych włosów. Kiedy tak przypatrujesz się tej krzyżówce szwów, dostrzegasz, iż ktoś wbił igłę w czoło truposza... igła jest przytwierdzona do nici, która zszywa bok czaszki. Prawdopodobnie mógłbyś ją wyciągnąć, gdybyś miał czym przeciąć nić.~ */
+  IF ~  PartyHasItem("Scalpel")
+~ THEN REPLY #45480 /* ~Przetnij szwy przy pomocy skalpela, następnie wydobądź igłę i nić.~ */ DO ~SetGlobal("506_Thread","GLOBAL",1)
+GiveItemCreate("Needle",Protagonist,1,0,0)
+AddexperienceParty(100)
+~ GOTO 4
+  IF ~  !PartyHasItem("Scalpel")
+~ THEN REPLY #45481 /* ~"Hmmm. Może jest tu gdzieś coś, czym mógłbym przeciąć nić... Zaraz wrócę."~ */ EXIT
+  IF ~~ THEN REPLY #45482 /* ~Ponownie obejrzyj truposza.~ */ GOTO 0
+  IF ~~ THEN REPLY #45483 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #45428 /* ~Tniesz nić równo skalpelem, następnie wyłuskujesz igłę i wyjmujesz szwy. Gdy to robisz, skóra pokrywająca czoło nagle odgina się, odsłaniając kredowo-białą czaszkę, na której - ku twemu zdumieniu - ktoś wyrył numer "78".~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45484 /* ~"Wygląda na to, że masz dwa różne oznaczenia, trupku."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45496 /* ~"Wygląda na to, że masz dwa różne oznaczenia, trupku."~ */ GOTO 1
+  IF ~~ THEN REPLY #50097 /* ~Ponownie obejrzyj truposza.~ */ GOTO 5
+  IF ~~ THEN REPLY #66889 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~  Global("506_Thread","GLOBAL",1)
+~ THEN BEGIN 5 // from: 4.2
+  SAY #45429 /* ~Ten pokryty szwami trup włóczy się leniwie pomiędzy dwoma płytami. Mimo że ktoś wyszył mu numer "506" na całym ciele, skóra na jego czole odginając się, ukazała numer "78" wyryty na czaszce.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45502 /* ~"Wygląda na to, że masz dwa różne oznaczenia, trupku."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45508 /* ~"Wygląda na to, że masz dwa różne oznaczenia, trupku."~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45510 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45512 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+  IF ~~ THEN REPLY #45513 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~~ THEN REPLY #45514 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END

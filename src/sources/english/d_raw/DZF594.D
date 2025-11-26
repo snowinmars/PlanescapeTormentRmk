@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZF594.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZF594~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35018 /* ~The shambling corpse gazes at you with vacant eyes. Her skin is paper-thin, almost wispy... it's like someone draped a sheet of cobwebs across her frame. The number "594" has been scratched onto her forehead with a charcoal pencil. ~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #35019 /* ~"So... doing anything later?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #35036 /* ~"So... doing anything later?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #35037 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35038 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 2
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35043 /* ~"It was great talking to you. Farewell."~ */ EXTERN ~DMORTE~ 334
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35044 /* ~Leave the corpse in peace.~ */ EXTERN ~DMORTE~ 334
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35045 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35046 /* ~Leave the corpse in peace.~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35047 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35048 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #35020 /* ~The corpse continues to stare at you.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35021 /* ~"Farewell then."~ */ EXTERN ~DMORTE~ 334
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35034 /* ~"Farewell then."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35035 /* ~"Farewell then."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #35039 /* ~This corpse makes no reply. It looks like it is too far gone to answer any of your questions.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35040 /* ~"Farewell then."~ */ EXTERN ~DMORTE~ 334
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35041 /* ~"Farewell then."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35042 /* ~"Farewell then."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #35049 /* ~This corpse makes no reply. It looks like it is too far gone to answer any of your questions.~ */
+END

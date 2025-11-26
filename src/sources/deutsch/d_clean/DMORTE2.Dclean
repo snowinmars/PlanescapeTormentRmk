@@ -1,0 +1,225 @@
+IF WEIGHT #0 ~  Global("Mortuary_Walkthrough","GLOBAL",1) InParty("Morte")
+~ THEN BEGIN 0 // from:
+SAY #41144 /* ~"Pssst... 'n guter Ratschlag, Meister: Ich würd' mich ab jetzt zurückhalten - du mußt ja nicht mehr Leichen ins Totenbuch stecken als unbedingt notwendig... besonders die Ladies. Außerdem könnte es die Verwalter hier auf den Plan bringen, wenn du sie umbringst."~ */
+IF ~~ THEN REPLY #41145 /* ~"Ich glaube nicht, daß du's schon mal erwähnt hast... *Wer* sind diese Verwalter?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ GOTO 1
+IF ~~ THEN REPLY #41146 /* ~"Die Leichen hier... Wo kommen die alle her?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ GOTO 3
+IF ~~ THEN REPLY #41147 /* ~"Warum machst du dir um die weiblichen Leichen Sorgen?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ GOTO 4
+IF ~~ THEN REPLY #41148 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ GOTO 8
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 3.0 7.0
+SAY #41149 /* ~"Sie nennen sich selbst die 'Staubmenschen'. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine räudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte... je früher, desto besser."~ */
+IF ~~ THEN REPLY #41150 /* ~"Das versteh ich nicht... Was können diese Staubmenschen dagegen haben, wenn ich mich hier aus dem Staub mache?"~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+SAY #41151 /* ~"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher, desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"~ */
+IF ~~ THEN REPLY #41152 /* ~"Die Leichen hier... Wo kommen die alle her?"~ */ GOTO 3
+IF ~~ THEN REPLY #41153 /* ~"Vorhin hast du gesagt, daß ich aufpassen soll, keine *weiblichen* Leichen zu töten. Warum?"~ */ GOTO 4
+IF ~~ THEN REPLY #41154 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 2.0 7.1
+SAY #41155 /* ~"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese watschelnden Gerüste hier sind alles, was von den armen Schluckern übriggeblieben ist, die ihre Leichen nach ihrem Tod an die Verwalter verkauft haben."~ */
+IF ~~ THEN REPLY #41156 /* ~"Klär mich mal auf... *Wer* sind diese Verwalter?"~ */ GOTO 1
+IF ~~ THEN REPLY #41157 /* ~"Vorhin hast du gesagt, daß ich aufpassen soll, keine *weiblichen* Leichen zu töten. Warum?"~ */ GOTO 4
+IF ~~ THEN REPLY #41158 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 2.1 3.1
+SAY #41159 /* ~"Wa... im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein... und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."~ */
+IF ~~ THEN REPLY #41160 /* ~"Letzte Chance? Wovon *redest* du denn?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+SAY #41161 /* ~"Meister, SIE sind tot, WIR sind tot... verstehst du, worauf ich hinaus will? Nun?"~ */
+IF ~~ THEN REPLY #41162 /* ~"Nein... nein, eigentlich nicht."~ */ GOTO 6
+IF ~  CheckStatGT(Protagonist,12,INT) ~ THEN REPLY #41163 /* ~"Du *kannst* das nicht ernst meinen."~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0 5.1
+SAY #41164 /* ~"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."~ */
+IF ~~ THEN REPLY #41165 /* ~"Warte... Hast du vorhin nicht gesagt, daß ich *nicht* tot bin?"~ */ GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+SAY #41166 /* ~"Tja... okay, *du* bist vielleicht nicht tot, aber *ich* bin's. Und ich für meinen Teil hätte nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich..."~ */
+IF ~~ THEN REPLY #41167 /* ~"Wer sind diese Verwalter noch gleich?"~ */ GOTO 1
+IF ~~ THEN REPLY #41168 /* ~"Aber wo kommen all diese Leichen her?"~ */ GOTO 3
+IF ~~ THEN REPLY #41169 /* ~"In Ordnung... Ich versuche, mir das zu merken."~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 8 // from: 0.3 2.2 3.2 7.2 12.7 13.2 14.2 15.2 16.2 17.1 18.1 19.2 20.1 21.1 22.1
+SAY #41170 /* ~"Sieh mal, Meister. Offensichtlich bist du nach deinem Kuss mit dem Tod immer noch etwas verwirrt, sodass ich dir zwei kleine Ratschläge erteilen will: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"  ^NHINWEIS: <SPEAKTO>^-~ */
+IF ~~ THEN REPLY #41171 /* ~"Also gut... Wenn ich irgendwelche Fragen habe, wende ich mich an dich."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+SAY #41172 /* ~"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du den Eindruck machst, fang lieber an, dir Notizen zu machen - immer, wenn dir etwas begegnet, das wichtig sein *könnte*, schreib's dir auf, damit du es nicht wieder vergißt."~ */
+IF ~~ THEN REPLY #41173 /* ~"Wenn ich dieses Journal hätte, das ich eigentlich bei mir haben *sollte*, würde ich das tun."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+SAY #41174 /* ~"Dann fang ein neues an, Meister. Ist doch kein Problem. Hier gibt's genug Pergament und Tinte für dich."~ */
+IF ~~ THEN REPLY #41175 /* ~"Hmmmm. Also gut. Kann ja nicht schaden... Dann mache ich halt ein neues."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0
+SAY #41176 /* ~"Benutze es, um deine Bewegungen im Blick zu behalten. Falls du wichtige Dinge nicht mehr genau weißt, wie, wer du bist... oder viel wichtiger, wer *ich* bin... kannst du es benutzen, um deine Erinnerung aufzufrischen."  ^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-~ */
+IF ~~ THEN REPLY #41177 /* ~"In Ordnung... Ich hab's kapiert. Gehen wir."~ */ JOURNAL #39516 /* ~Mein eigentliches Journal ist verschwunden, also hab ich ein neues angefangen. Ich bin an einem Ort aufgewacht, der "Leichenhalle" genannt wird. Ich weiß nicht, wer ich bin, was ich hier mache, oder gar, wie ich hierher gekommen bin. Die einzige Person, die ich getroffen habe, ich ein plappernder Schädel namens Morte... Während er sich meine Wunden angesehen hat, hat er eine Reihe von 'Anweisungen' gefunden, die auf meinen Rücken tätowiert sind.  "Ich weiß, du fühlst dich, als hättest du ein paar Fässer Styx-Wasser getrunken, aber du mußt dich KONZENTRIEREN. In deinem Besitz befindet sich ein JOURNAL, das etwas Licht auf das Dunkel der Sache werfen sollte. PHAROD kann dir den Rest des Plausches liefern, sofern er nicht schon im Totenbuch gelandet ist."  "Verlier das Journal nicht oder wir landen wieder im Styx. Und was auch geschieht, erzähl KEINEM, WER du bist oder WAS dir widerfahren ist. Sonst schicken sie dich im Handumdrehen auf eine Pilgerfahrt ins Krematorium. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod."  Hab ich diese Nachricht für mich selbst hinterlassen? Sieht so aus, als müßte ich diesen 'Pharod' UND mein Journal finden.~ */ EXIT
+END 
+IF WEIGHT #1 ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) !Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
+~ THEN BEGIN 12 // from: 13.1 14.1 15.1 16.1 17.0 18.0 19.1 20.0 21.0 22.0 23.1 24.2 25.1 26.0
+SAY #41178 /* ~"Was nagt an dir, Meister?"~ */
+IF ~~ THEN REPLY #41179 /* ~"Kannst du mir noch mal vorlesen, was auf meinen Rücken tätowiert ist?~ */ GOTO 13
+IF ~~ THEN REPLY #41180 /* ~"Was ist das hier noch mal für ein Ort?"~ */ GOTO 18
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41181 /* ~"Dieser Ort ist riesig... Wer kümmert sich darum?"~ */ GOTO 19
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41182 /* ~"Wer kümmert sich doch gleich um diesen Ort?"~ */ GOTO 19
+IF ~~ THEN REPLY #41183 /* ~"Die Leichen hier... Wo kommen die alle her?"~ */ GOTO 22
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41184 /* ~"Vorhin hast du gesagt, daß ich aufpassen soll, keine *weiblichen* Leichen zu töten. Warum?"~ */ GOTO 23
+IF ~  PartyHasItem("Bandage") ~ THEN REPLY #41185 /* ~"Wie kann ich diese Bandagen benutzen?"~ */ GOTO 21
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41186 /* ~"Nichts, Morte. Ich wollte nur mal gucken, ob du noch da bist."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41187 /* ~"Nichts, Morte. Ich wollte nur mal gucken, ob du noch da bist."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+SAY #41188 /* ~"Ah, nun *komm* schon, Meister. Erzähl' mir nicht, daß du es schon vergessen hast."~ */
+IF ~~ THEN REPLY #41189 /* ~"Ich muß einfach mein Gedächtnis auffrischen, das ist alles."~ */ GOTO 14
+IF ~~ THEN REPLY #41190 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41191 /* ~"Dann vergiß es. Gehen wir."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41192 /* ~"Dann vergiß es. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+SAY #41193 /* ~"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen..."  'Ich weiß, daß du dich so fühlst, als hättest du 'n paar Eimer Styx-Wasser getrunken, aber du mußt dich KONZENTRIEREN. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.'~ */
+IF ~~ THEN REPLY #41194 /* ~"Pharod... hmmm. Lies weiter."~ */ GOTO 15
+IF ~~ THEN REPLY #41195 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41196 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41197 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0
+SAY #41198 /* ~"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück..."  'Verliere das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähle NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.'~ */
+IF ~~ THEN REPLY #41199 /* ~"Und ich hatte kein Journal bei mir, als ich aufgewacht bin?"~ */ GOTO 16
+IF ~~ THEN REPLY #41200 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41201 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41203 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 15.0
+SAY #41202 /* ~"Nein... du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."~ */
+IF ~~ THEN REPLY #41204 /* ~"Und du bist sicher, daß du niemanden namens Pharod kennst?"~ */ GOTO 17
+IF ~~ THEN REPLY #41205 /* ~"Wie wahr. Ich hätte da noch ein paar Fragen..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41206 /* ~"Also gut. Gehen wir."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41207 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0
+SAY #41208 /* ~"Nö. Trotzdem, irgendein Dussel muß ja wissen, wo man ihn finden kann. Fragen wir doch einfach rum... NACHDEM wir hier raus sind."~ */
+IF ~~ THEN REPLY #41209 /* ~"Bevor wir gehen hätte ich noch ein paar Fragen..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41210 /* ~"Also gut. Gehen wir."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41211 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 12.1
+SAY #41212 /* ~"Man nennt diesen Ort die 'Leichenhalle'... Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."~ */
+IF ~~ THEN REPLY #41213 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41214 /* ~"Das ist alles, was ich wissen wollte. Danke."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41215 /* ~"Das ist alles, was ich wissen wollte. Danke."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 12.2 12.3
+SAY #41216 /* ~"Sie nennen sich selbst die 'Staubmenschen'. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine räudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte... je früher, desto besser."~ */
+IF ~~ THEN REPLY #41217 /* ~"Das versteh ich nicht... Was können diese Staubmenschen dagegen haben, wenn ich mich hier aus dem Staub mache?"~ */ GOTO 20
+IF ~~ THEN REPLY #41218 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41219 /* ~"Verstehe. Dann bin ich eben vorsichtig."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41220 /* ~"Verstehe. Dann bin ich eben vorsichtig."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+SAY #41221 /* ~"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher, desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"~ */
+IF ~~ THEN REPLY #41222 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41223 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41224 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 21 // from: 12.6
+SAY #41225 /* ~"Nun, du... du *benutzt* sie. Blutung stillen, und so."  ^NHINWEIS: <BANDAGES2>^-~ */
+IF ~~ THEN REPLY #41226 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41227 /* ~"Danke. Ich glaube, damit werde ich schon fertig."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41228 /* ~"Danke. Ich glaube, damit werde ich schon fertig."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 12.4
+SAY #41229 /* ~"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese watschelnden Gerüste hier sind alles, was von den armen Schluckern übriggeblieben ist, die ihre Leichen nach ihrem Tod an die Verwalter verkauft haben."~ */
+IF ~~ THEN REPLY #41230 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 12
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0) ~ THEN REPLY #41231 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ GOTO 8
+IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1) ~ THEN REPLY #41232 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 12.5
+SAY #41233 /* ~"Wa... im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein... und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."~ */
+IF ~~ THEN REPLY #41234 /* ~"Letzte Chance? Wovon *redest* du denn?"~ */ GOTO 24
+IF ~~ THEN REPLY #41235 /* ~"Vergiß es. Ich hätte da noch ein paar andere Fragen an dich..."~ */ GOTO 12
+IF ~~ THEN REPLY #41236 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+SAY #41237 /* ~"Meister, SIE sind tot, WIR sind tot... verstehst du, worauf ich hinaus will? Nun?"~ */
+IF ~~ THEN REPLY #41238 /* ~"Nein... nein, eigentlich nicht."~ */ GOTO 25
+IF ~  CheckStatGT(Protagonist,12,INT) ~ THEN REPLY #41239 /* ~"Du *kannst* das nicht ernst meinen."~ */ GOTO 25
+IF ~~ THEN REPLY #41240 /* ~"Vergiß es. Ich hätte da noch ein paar andere Fragen an dich..."~ */ GOTO 12
+IF ~~ THEN REPLY #41241 /* ~"Ich habe genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 24.1
+SAY #41242 /* ~"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."~ */
+IF ~~ THEN REPLY #41243 /* ~"Warte... Hast du vorhin nicht gesagt, daß ich *nicht* tot bin?"~ */ GOTO 26
+IF ~~ THEN REPLY #41244 /* ~"Vergiß es. Ich hätte da noch ein paar andere Fragen an dich..."~ */ GOTO 12
+IF ~~ THEN REPLY #41245 /* ~"Ich habe genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 25.0
+SAY #41246 /* ~"Tja... okay, *du* bist vielleicht nicht tot, aber *ich* bin's. Und ich für meinen Teil hätte nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich..."~ */
+IF ~~ THEN REPLY #41247 /* ~"Ich hätte da noch ein paar Fragen an dich, Morte..."~ */ GOTO 12
+IF ~~ THEN REPLY #41248 /* ~"Ich habe genug gehört. Gehen wir."~ */ EXIT
+END 
+IF WEIGHT #3 /* Triggers after states #: 31 even though they appear after this state */ ~  !InParty("Morte")
+~ THEN BEGIN 27 // from:
+SAY #41250 /* ~"Ich wußte doch, daß du zurückkommst, Meister! Hast wohl endlich eingesehen, daß du mich brauchst, was?"~ */
+IF ~~ THEN REPLY #41251 /* ~"Ja... Gehen wir."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+IF ~~ THEN REPLY #41252 /* ~"Nein, Morte, im Moment brauche ich dich nicht."~ */ GOTO 28
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.1
+SAY #41253 /* ~"Hmmm. Na, ich werde hier nicht ewig warten. Also werde ich dir noch eine LETZTE Chance geben. Bist du sicher, daß du meine weisen Ratschläge und meinen scharfen Verstand nicht brauchst?"~ */
+IF ~~ THEN REPLY #41254 /* ~"Morte, du hast WEDER das eine noch das andere."~ */ GOTO 29
+IF ~~ THEN REPLY #41255 /* ~"Na gut, ich hab's mir anders überlegt. Komm, laß uns gehen."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+IF ~~ THEN REPLY #41256 /* ~"Ja, Morte, im Moment brauche ich weder das eine noch das andere. Aber vielleicht später."~ */ GOTO 29
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.0 28.2
+SAY #41257 /* ~"Willst du mich beleidigen, Meister? Habe ich was Falsches gesagt? Liegt es daran, daß ich keine Arme habe? Nun sag's mir schon!"~ */
+IF ~~ THEN REPLY #41258 /* ~"Na gut, ich hab's mir anders überlegt. Komm, laß uns gehen."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+IF ~~ THEN REPLY #41259 /* ~"Das hat überhaupt nichts damit zu tun. Ich brauche dich nur einfach im Moment nicht. Leb wohl, Morte."~ */ GOTO 30
+END
+
+IF ~~ THEN BEGIN 30 // from: 29.1
+SAY #41260 /* ~"Also, ich werde hier nicht EWIG warten. Solltest du dir's doch noch anders überlegen, dann mußt du dich beeilen."~ */
+IF ~~ THEN REPLY #41261 /* ~"Okay. Leb wohl, Morte."~ */ EXIT
+END 
+IF WEIGHT #2 ~  Global("Mortuary_Walkthrough","GLOBAL",3) InParty("Morte")
+~ THEN BEGIN 31 // from:
+SAY #41262 /* ~"Du Heiligster. Das ist ein HÖLLISCHES Buch."~ */
+IF ~~ THEN REPLY #41263 /* ~"Was ist es?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1) ~ GOTO 32
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+SAY #41264 /* ~"Wenn ich raten müßte, würde ich sagen, das ist das Buch, in das sie die Namen jedes armen Schluckers ritzen, der das Pech hat, hier abgeladen zu werden."~ */
+IF ~~ THEN REPLY #41265 /* ~"Könnte mein Name da drin sein?"~ */ GOTO 33
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+SAY #41266 /* ~"Äh... tja... *könnte* sein. Um das herauszufinden, mußt du deine Knochenschüssel mit dem schwebenden Staubie da drüben rasseln lassen. Ich bin aber nicht sicher, ob das so ne gute Idee ist."~ */
+IF ~~ THEN REPLY #41267 /* ~"Na ja, ich brauche Antworten. Ich werde mit ihm sprechen." ~ */ EXIT
+END

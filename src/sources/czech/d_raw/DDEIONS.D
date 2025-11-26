@@ -1,0 +1,785 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DDEIONS.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DDEIONS~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF ~~ THEN BEGIN 0 // from: 5.2 9.5 10.8 11.3 12.3 13.4 14.2 25.3 27.4 28.4 30.2 31.3 32.2 41.4 41.5 42.3 42.4 43.4 44.4
+  SAY #69459 /* ~"Budu na Tebe čekat v sálech smrti, má lásko." Usmívá se, ale přesto z jejích očí vyzařuje smutek. Zavřela oči a s lehkým šepotem se rozplynula.~ [DEN008B] */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #701 /* ~Odejdi.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #699 /* ~Odejdi.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #9616 /* ~Odejdi.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF WEIGHT #0 ~  Global("Deionarra","GLOBAL",0)
+!Global("Current_Area","GLOBAL",1203)
+!Global("Current_Area","GLOBAL",1200)
+~ THEN BEGIN 1 // from:
+  SAY #5 /* ~Vidíš před sebou přízrak neobyčejně krásné ženy; má zkřížené ruce a zavřené oči, dlouhé plavé vlasy a zdá se, že s jejími šaty si pohrává lehounký vánek. Vidíš, jak se lehounce hýbe a její řasy se chvějí.~ */
+  IF ~~ THEN REPLY #703 /* ~"Zdravím...?"~ */ GOTO 2
+  IF ~~ THEN REPLY #704 /* ~Počkej.~ */ GOTO 2
+  IF ~~ THEN REPLY #705 /* ~Odejdi předtím než se duch zorientuje.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1
+  SAY #706 /* ~Její oči se pomalu otevírají a v počátečním zmatku zamrká, jakoby si nebyla jistá, kde je. Rozhlíží se pomalu kolem a pak tě uvidí. Její poklidný obličej se náhle změnil. "Ty! Co *tebe* sem přivádí?! Přišel ses snad podívat na výsledek neštěstí, které jsi způsobil? Nebo snad, i po mé smrti, v tobě stále zůstal kousíček ze mne...?" Její hlas se změnil v šepot. "...'má lásko'."~ [DEN001] */
+  IF ~~ THEN REPLY #707 /* ~"Kdo jsi?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 3
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #708 /* ~"'Má lásko?' Znám tě snad?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 3
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #709 /* ~"'Má lásko?' Znám tě snad?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 2.1 2.2 10.0
+  SAY #710 /* ~Duch něco naznačuje rukama, nějaké tobě neznámé pohyby. "Jak se to mohlo stát, že ti zloději mysli ukradli z paměti mé jméno? *Nevzpomínáš* si na mne, má lásko?" Duch k tobě natahuje ruce. "Přemýšlej..." V jejím hlase je cítit zoufalost. "...jméno *Deionarra* musí přece v tobě vyvolávat nějaké vzpomínky."~ */
+  IF ~~ THEN REPLY #711 /* ~"Ne, promiň. Ztratil jsem paměť. "~ */ GOTO 6
+  IF ~~ THEN REPLY #712 /* ~Lež: "Ano... ano, to jméno mi *zní* hodně povědomě."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_1","GLOBALGood",-1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_1","GLOBALLaw",-1)
+~ GOTO 7
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #713 /* ~"*Myslím*, že se mi vrací útržky paměti... řekni mi něco víc. Snad mi tvá slova pomohou vyhnat stíny z mysli, Deionarro."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #714 /* ~"*Myslím*, že se mi vrací útržky paměti... řekni mi něco víc. Snad mi tvá slova pomohou vyhnat stíny z mysli, Deionarro."~ */ GOTO 9
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1308 /* ~"To ne. Sbohem... Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6080 /* ~"To nic. Sbohem... Deionarro."~ */ GOTO 26
+END
+
+IF WEIGHT #1 ~  Global("Deionarra","GLOBAL",2)
+!Global("Current_Area","GLOBAL",1203)
+!Global("Current_Area","GLOBAL",1200)
+~ THEN BEGIN 4 // from:
+  SAY #715 /* ~Deionarra se znovu zjevila... tentokrát má obličej naplněn zoufalstvím a ruce natažené vpřed, jakoby se chtěla něčeho dotknout. Když se zjevila úplně, její zoufalství se změnilo v zuřivost. "Už jsi zase přišel! Chceš mě znovu trápit?"~ [DEN002] */
+  IF ~~ THEN REPLY #765 /* ~"Potřebuju vědět mnohem více. Měl bych pro tebe nějaké otázky..."~ */ GOTO 33
+  IF ~~ THEN REPLY #1307 /* ~"Už tě nebudu víc trápit. Sbohem."~ */ GOTO 26
+END
+
+IF WEIGHT #2 ~  Global("Deionarra","GLOBAL",1)
+!Global("Current_Area","GLOBAL",1203)
+!Global("Current_Area","GLOBAL",1200)
+~ THEN BEGIN 5 // from:
+  SAY #716 /* ~Deionarra se znovu zjevila... tentokrát má obličej naplněn zoufalstvím a ruce natažené vpřed, jakoby se chtěla něčeho dotknout. Když se zjevila úplně, zoufalý výraz v jejím obličeji se změnil v úlevu. "Má lásko... vrátil ses ke mně! Je to snad tím, že se ti vrátila paměť?"~ [DEN003A] */
+  IF ~~ THEN REPLY #766 /* ~"Měl bych na tebe nějaké otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #767 /* ~"Ještě ne. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1309 /* ~"Teď ne. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.0
+  SAY #717 /* ~"Toho jsem se obávala. Opravdu jsem se v tobě zmýlila... a pak když máš potíže, použiješ jako omluvu, že si mne nemůžeš vybavit v hlavě proto, žes ztratil paměť!"~ */
+  IF ~~ THEN REPLY #720 /* ~"'Potíže?' 'Vybavit v hlavě?' Já tě neznám duchu... nemám vůbec žádné vzpomínky. Řekni mi... kdo jsi? Co o mně víš?"~ */ GOTO 11
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #718 /* ~"*Myslím*, že se mi vrací útržky paměti... řekni mi něco víc. Snad mi tvá slova pomohou vyhnat stíny z mysli, Deionarro."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #719 /* ~"*Myslím*, že se mi vrací útržky paměti... řekni mi něco víc. Snad mi tvá slova pomohou vyhnat stíny z mysli, Deionarro."~ */ GOTO 9
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #721 /* ~"Jestli jsem tě už jednou vypustil z hlavy, nevím proč bych to nemohl udělat znovu. Sbohem duchu."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1310 /* ~"Musím jít, Deionarro. Sbohem."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1311 /* ~"Už jsem tě jednou pustil z hlavy a vypadá to, že to budu muset udělat znovu. Sbohem duchu."~ */ GOTO 26
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #764 /* ~"Musím jít, Deionarro. Sbohem."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.1
+  SAY #722 /* ~"Ano..." Vypadá plná naděje. "Co mé jméno vyvolává?"~ */
+  IF ~~ THEN REPLY #700 /* ~"Nikdo. Lhal jsem."~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+~ GOTO 8
+  IF ~~ THEN REPLY #702 /* ~Lež: "Tvé jméno navozuje vášnivé myšlenky, i když jejich obsah je nečistý. Snad kdybys mi řekla víc..."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_2","GLOBALGood",-1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_2","GLOBALLaw",-1)
+~ GOTO 9
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #723 /* ~"Nejsem si jistý... ale když spolu mluvíme cítím, že se mi vrací útržky paměti. Řekni mi víc. Snad mi tvá slova pomohou vyhnat stíny z mysli, Deionarro."~ */ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #724 /* ~"Nejsem si jistý... ale když spolu mluvíme cítím, že se mi vrací útržky paměti. Řekni mi víc. Snad mi tvá slova pomohou vyhnat stíny z mysli, Deionarro."~ */ GOTO 9
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1312 /* ~"Musím jít, Deionarro. Sbohem."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6084 /* ~"Musím jít, Deionarro. Sbohem."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.0 47.2
+  SAY #725 /* ~Výraz Deionarry přechází do naštvaného šklebu. "Ty malomocný pse! Zrádče mého srdce! Přeju si, abys byl proklet a aby tě muka prokletí dostala při každé tvé inkarnaci i bez pomoci mé kletby.! Táhni!" Zkřížila ruce a zavřela oči. ~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #747 /* ~"Dobře..."~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #1313 /* ~"Dobře..."~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13255 /* ~Odejít.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 3.2 3.3 6.1 6.2 7.1 7.2 7.3
+  SAY #726 /* ~"Och, konečně je osud ke mně milosrdný! Dokonce ani smrt mne nemůže vymazat z tvé paměti, má lásko! Nevidíš? Tvé vzpomínky by se měly vrátit! Řekni mi, jak ti můžu pomoci a já to udělám!"~ */
+  IF ~~ THEN REPLY #729 /* ~"Víš, kdo jsem?"~ */ GOTO 11
+  IF ~~ THEN REPLY #730 /* ~"Můžeš mi říct kde jsem?"~ */ GOTO 12
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #731 /* ~"Potřebuju se dostat pryč z tohoto místa. Můžeš mi pomoct?"~ */ GOTO 43
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #732 /* ~"Potřebuju se dostat pryč z tohoto místa. Můžeš mi pomoct?"~ */ GOTO 44
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1314 /* ~"Teď nic, Deionarro, já se vrátím. Sbohem."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6127 /* ~"Zrovna teď nic, Deionarro, možná se vrátím. Sbohem."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 10 // from: 5.0 11.1 12.1 13.1 14.0 25.1 27.2 28.0 30.0 31.1 32.0 34.1 35.1 36.0 41.1 42.0 43.1 44.2 74.0
+  SAY #733 /* ~"Co si přeješ vědět?"~ */
+  IF ~~ THEN REPLY #734 /* ~"Kdo jsi?"~ */ GOTO 3
+  IF ~~ THEN REPLY #735 /* ~"Můžeš mi říct kdo jsem?"~ */ GOTO 11
+  IF ~~ THEN REPLY #736 /* ~"Můžeš mi říct kde jsem?"~ */ GOTO 12
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #737 /* ~"Potřebuju se dostat pryč z tohoto místa. Můžeš mi pomoct?"~ */ GOTO 43
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #738 /* ~"Potřebuju se dostat pryč z tohoto místa. Můžeš mi pomoct?"~ */ GOTO 44
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #768 /* ~"Co to bylo za vizi, o které jsi předtím mluvila?"~ */ GOTO 22
+  IF ~  Global("Deionarra_Curse","GLOBAL",1)
+~ THEN REPLY #1315 /* ~"Můžeš odstranit tu kletbu, kterou jsi na mne uvalila?"~ */ GOTO 41
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6107 /* ~"Teď nic, Deionarro, ale ještě se vrátím. Sbohem."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6128 /* ~"Zrovna teď nic, Deionarro, možná se vrátím. Sbohem."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 11 // from: 6.0 9.0 10.1
+  SAY #739 /* ~"Ty jsi jak požehnán, tak proklet, má lásko. A jsi ten, kdo nikdy není daleko od mých myšlenek a mého srdce."~ */
+  IF ~~ THEN REPLY #740 /* ~"'Požehnán a proklet?' Co tím myslíš?"~ */ GOTO 13
+  IF ~~ THEN REPLY #741 /* ~"Měl bych pro tebe nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #742 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1316 /* ~"Musím jít. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.1 10.2
+  SAY #743 /* ~"Kde jsi? Proč jsi tady se mnou, má lásko... jako za časů, kdy jsme spolu sdíleli náš život. Teď je to Nekonečná hranice, která nás obklopuje."~ */
+  IF ~~ THEN REPLY #744 /* ~"'Nekonečná hranice?'"~ */ GOTO 14
+  IF ~~ THEN REPLY #745 /* ~"Měl bych pro tebe nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #746 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #792 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 13 // from: 11.0
+  SAY #748 /* ~"Podstata tvého prokletí by měla být zjevná, má lásko. Podívej se na sebe." ukazuje na tebe prstem. "Smrt tě odmítla. Tvé vzpomínky tě opustily. Nepozastavil ses nad tím nebo nechtěl bys vědět proč?"~ */
+  IF ~~ THEN REPLY #749 /* ~"Pořád se ještě pokouším zorientovat. Co jiného mi můžeš o mé osobě říct?"~ */ GOTO 27
+  IF ~~ THEN REPLY #750 /* ~"Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~~ THEN REPLY #751 /* ~"Vzpomínky teď stranou... domýšlivá smrt mne zavrhla... proč je to prokletí?"~ */ GOTO 25
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #790 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1318 /* ~"Musím jít. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 14 // from: 12.0
+  SAY #752 /* ~Deionarra se smutkem promlouvá. "Bojím se, že je tu překážka, kterou asi nikdy nepřekonáš, má lásko. Je to překážka mezi tvým životem a tím, co ze mne zůstalo..."~ */
+  IF ~~ THEN REPLY #753 /* ~"A... ha. Snad bys mi mohla odpovědět na nějaké otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #755 /* ~"Musím jít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1319 /* ~"Musím jít. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 15 // from: 3.4 5.1 6.3 6.4 7.4 9.4 10.7 11.2 12.2 13.3 14.1 25.2 27.3 28.1 28.3 30.1 31.2 32.1 41.2 41.3 42.1 42.2 43.3 44.3 47.3
+  SAY #756 /* ~"Počkej chviličku... hodně jsem se naučila, když jsem s Tebou cestovala, má lásko a co ty jsi ztratil, jsem já zachovala. Neprozradila jsem ti všechno, co vím. Můj pohled je jasný... zatímco ty pořád tápeš v temnotách po útržcích myšlenek."~ */
+  IF ~~ THEN REPLY #757 /* ~"Cokoliv mi chceš říct, může počkat. Sbohem."~ */ GOTO 26
+  IF ~~ THEN REPLY #758 /* ~"Co mi můžeš říct, co by mne mohlo zajímat?"~ */ GOTO 17
+  IF ~~ THEN REPLY #759 /* ~"Vidí tvůj pohled něco, co nevidím já?"~ */ GOTO 17
+  IF ~~ THEN REPLY #761 /* ~"Musím jít. Sbohem, Deionarro."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 16 // from: 20.0 21.0
+  SAY #762 /* ~Deionarra vypadá zaraženě, ale následně se její tón změnil, její hlas se začíná téměř obhajovat. "Já... jsem to nemyslela tak, abych z tebe získala přísahu, má lásko. Řekla jsem to jenom proto, že jsem na tebe tak dlouho čekala, aby ses ke mně připojil do..."~ */
+  IF ~~ THEN REPLY #763 /* ~"Jestli jsi tedy nechtěla, abych přísahal, Deionarro, pak to ani nežádej. A teď mi řekni svou vizi a už nebudeme mluvit o žádných slibech ani přísahách."~ */ GOTO 40
+END
+
+IF ~~ THEN BEGIN 17 // from: 15.1 15.2
+  SAY #769 /* ~"Čas sám o sobě zmírňuje své sevření, jakoby nás pomalu obklopovalo mrazivé zapomnění, má lásko. Záblesky věcí najednou přicházejí houfně do mé vize. Vidím tě, má lásko. Vidím tě jako nyní, ale..." Deionarra najednou utichne.~ */
+  IF ~~ THEN REPLY #770 /* ~"Proč jsi najednou zticha? Že by tě tvoje řeč unavila?"~ */ GOTO 18
+  IF ~~ THEN REPLY #771 /* ~"Co to je? Co vidíš?"~ */ GOTO 18
+  IF ~~ THEN REPLY #772 /* ~"Nezajímají mě vize budoucnosti. Sbohem."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0 17.1
+  SAY #773 /* ~"Vidím, co na tebe čeká. Přichází to skrz sféry a zastavuje se to přesně tady. Mám mluvit o tom co vidím?"~ */
+  IF ~~ THEN REPLY #774 /* ~"Řekni mi to."~ */ GOTO 20
+  IF ~~ THEN REPLY #775 /* ~"Nechci to vědět. Budoucnost se zjeví sama... včas."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.2 18.1
+  SAY #776 /* ~"Ty jsi byl vždycky takový, má lásko. Už dokonce odmítáš dávat si pozor na volání smrti. Bude čas další věcí, kterou od sebe odeženeš?" Zavírá oči a s éterickým šepotem se rozplývá.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #803 /* ~Odejdi.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #6085 /* ~Odejdi.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13256 /* ~Odejít.~ */ DO ~SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 18.0
+  SAY #777 /* ~"Nejdříve potřebuji tvůj slib. Slib mi, že se vrátíš. Že najdeš nějaké prostředky, jak mně zachránit nebo se ke mně připojit."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #778 /* ~"Je těžké uvěřit tomu, že žena, kterou miluju, by po mně vyžadovala slib, že se sem vrátím. Ty mi snad nedůvěřuješ, Deionarro?"~ */ GOTO 16
+  IF ~~ THEN REPLY #779 /* ~"Ta cena slibu je pro mne moc vysoká."~ */ GOTO 21
+  IF ~~ THEN REPLY #780 /* ~Lež: "Přísahám, že najdu nějaký způsob, jak tě zachránit nebo se k tobě připojit."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_3","GLOBALGood",-2)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_3","GLOBALLaw",-2)
+~ GOTO 22
+  IF ~~ THEN REPLY #781 /* ~"Nebudu dělat žádné sliby, přízraku! Neotravuj mne s budoucností... mluv rozumně nebo táhni!"~ */ GOTO 26
+  IF ~~ THEN REPLY #782 /* ~"Já... udělám co budu moci."~ */ GOTO 40
+  IF ~~ THEN REPLY #6093 /* ~Přísahej: "Přísahám, že najdu způsob, jak tě zachránit, nebo se k tobě přidám."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Deionarra_1","GLOBALGood",2)
+IncrementGlobalOnceEx("GLOBALLawful_Deionarra_1","GLOBALLaw",2)
+~ GOTO 22
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.1
+  SAY #783 /* ~Deionarra si založila ruce. "Skutečně je to tak, má lásko. Cena nesmrtelnosti nebyla, bohužel, zřejmě tak vysoká. Je neporušenost opravdu tak moc za jednu tvou vzpomínku?" ~ */
+  IF ~~ THEN REPLY #804 /* ~"Je těžké uvěřit tomu, že žena, kterou miluju, by po mně vyžadovala slib, že se sem vrátím. Ty mi snad nedůvěřuješ, Deionarro?"~ */ GOTO 16
+  IF ~~ THEN REPLY #805 /* ~Lež: "Přísahám, že najdu nějaký způsob, jak tě zachránit nebo se k tobě připojit."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_3","GLOBALGood",-2)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_3","GLOBALLaw",-2)
+~ GOTO 22
+  IF ~~ THEN REPLY #806 /* ~"Nebudu dělat žádné sliby, přízraku! Neotravuj mne s budoucností... mluv rozumně nebo táhni!"~ */ GOTO 26
+  IF ~~ THEN REPLY #807 /* ~"Já... udělám co budu moci."~ */ GOTO 40
+  IF ~~ THEN REPLY #808 /* ~Přislíbit: "Přísahám, že najdu nějaký způsob, jak tě zachránit nebo se k tobě připojit."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Deionarra_1","GLOBALGood",2)
+IncrementGlobalOnceEx("GLOBALLawful_Deionarra_1","GLOBALLaw",2)
+~ GOTO 22
+  IF ~~ THEN REPLY #6094 /* ~"Možná ano. Sbohem, Deionarro."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 22 // from: 10.5 20.2 20.5 21.1 21.4 40.0
+  SAY #784 /* ~"Toto vidí mé oči, má lásko, osvobozená od pout času..."~ [DEN020] */
+  IF ~~ THEN REPLY #786 /* ~Čekej na její pokračování.~ */ DO ~SetGlobal("Prophecy","GLOBAL",1)
+~ GOTO 23
+END
+
+IF ~~ THEN BEGIN 23 // from: 22.0
+  SAY #785 /* ~"Měl bys potkat tři nepřátele, ale nikdo z nich není tak nebezpečný, jako ty sám v celé své kráse. Jsou to odstíny zla, dobra a neutrality, kterým byl dán život a jež jsou ovládány zákony sfér."~ [DEN021] */
+  IF ~~ THEN REPLY #787 /* ~Čekej na její pokračování.~ */ GOTO 24
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #788 /* ~"Měl bys přijít do věznice postavené z lítosti a žalu, kde samotné stíny zešílely. Tam budeš požádán, abys podstoupil strašlivou oběť, má lásko. K tomu, abys mohl konečně odpočívat v pokoji, potřebuješ zničit toho, kdo tě drží naživu, takže už potom nebudeš nesmrtelný."~ [DEN022] */
+  IF ~~ THEN REPLY #789 /* ~"'Zničit to, co mne drží naživu?'"~ */ GOTO 29
+END
+
+IF ~~ THEN BEGIN 25 // from: 13.2 29.0
+  SAY #791 /* ~"Nepochybuji o tom, že máš schopnost vstávat z mrtvých. Věřím totiž, že každá inkarnace zeslabuje tvé myšlenky a vzpomínky. Tvrdil jsi, žes ztratil paměť. Je to snad vedlejší efekt nesčetných úmrtí? Jestli ano, co dalšího ztratíš při těch následných? Když ztratíš svou mysl, nakonec si ani nebudeš vědom toho, že nemůžeš umřít. Jsi asi skutečně zatracen."~ */
+  IF ~~ THEN REPLY #812 /* ~"'Nesčetných smrtí?' Jak dlouho tohle už trvá?"~ */ GOTO 30
+  IF ~~ THEN REPLY #811 /* ~"Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #813 /* ~"Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1320 /* ~"Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 26 // from: 3.5 4.1 6.5 6.6 7.5 15.0 15.3 20.3 21.2 21.5 28.2 47.4
+  SAY #793 /* ~Deionarra vypadá rozzuřeně. "Pak tedy odejdi, jako jsi to předtím udělal již stotřikrát! Přišel jsi jen kvůli tomu, abys mne trápil?! Odejdi a už se nevracej!" Zavírá a v nadpozemském tichu se rozplynula.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #6081 /* ~Odejdi.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #6082 /* ~Odejdi.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13257 /* ~Odejít.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 27 // from: 13.0
+  SAY #795 /* ~"Vím, že jsi říkal, že mne miluješ, a že bys mne miloval, dokud by nás smrt nedostala oba dva. Věřila jsem tomu a nikdy jsem nevěděla pravdu o tom, kdo jsi byl a jaký jsi byl."~ */
+  IF ~  Global("Deionarra_Raise_Dead","GLOBAL",1)
+~ THEN REPLY #797 /* ~"A co jsem?"~ */ GOTO 28
+  IF ~  Global("Deionarra_Raise_Dead","GLOBAL",0)
+~ THEN REPLY #66911 /* ~"A co jsem?"~ */ GOTO 72
+  IF ~~ THEN REPLY #796 /* ~"Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #798 /* ~"Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1321 /* ~"Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0
+  SAY #799 /* ~"Už jsme o tvé osobě mluvili předtím." Obličej Deionarry nabral chladný výraz. "Už se o tom znovu bavit nehodlám."~ */
+  IF ~~ THEN REPLY #800 /* ~"V pořádku... Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #801 /* ~"Tvrdila jsi, že mne znáš, ale teď to vypadá, že v podstatě o mně opravdu víš jen velmi málo. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #802 /* ~"Tvrdila jsi, že mne znáš, ale teď to vypadá, že v podstatě o mně opravdu víš jen velmi málo. Sbohem, Deionarro."~ */ GOTO 26
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #1322 /* ~"Pak tedy sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1323 /* ~"Pak tedy sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 29 // from: 24.0
+  SAY #809 /* ~"Vím, že musíš umřít... dokud to stále ještě jde. Kruh se *musí* uzavřít, má lásko. Nejsi určen pro takovýto život. Musíš najít ten život, který ti byl odepřen a projít skrz, do země mrtvých."~ [DEN023] */
+  IF ~~ THEN REPLY #810 /* ~"'Zemřít dokud to stále ještě jde?'"~ */ JOURNAL #26087 /* ~Potkal jsem ducha ženy jménem Deionarra, která předpověděla, že potkám tři nepřátele, ale 'ne nebezpečnější než jsem já v celé své moci.' Jsou to stíny zla, dobra a neutrality, obdařené životem a pokřivené zákony sfér. Řekla, že přijdu do vězení postaveného z 'žalu a zármutku, kde se samotné stíny zbláznily.' Tam budu požádán o hroznou oběť... aby se vše vyřešilo, musím 'zničit to, co mě drží naživu a nebýt už více nesmrtelný.'~ */ GOTO 25
+END
+
+IF ~~ THEN BEGIN 30 // from: 25.0
+  SAY #814 /* ~"Já skutečně nevím. Výjimkou je ta, která trvala dostatečně dlouho."~ */
+  IF ~~ THEN REPLY #815 /* ~"Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #816 /* ~"Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1324 /* ~"Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 31 // from: 45.0
+  SAY #817 /* ~"Portály jsou díry v prostoru, vedoucí k cílům ve vnějších a vnitřních sférách... kdybys našel ten správný klíč, mohl bys utéct jedním z těchto portálů."~ */
+  IF ~~ THEN REPLY #819 /* ~"Klíč?"~ */ GOTO 32
+  IF ~~ THEN REPLY #818 /* ~"Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #820 /* ~"Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1325 /* ~"Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #821 /* ~Deionarra se na chvíli odmlčí, jakoby se pokoušela na něco vzpomenout. "Portály se zjevují, když máš u sebe ten správný 'klíč.' Bohužel, těmito klíči může být opravdu téměř cokoliv... vzrušení, kousek dřeva, stříbřitě třpytivá dýka, ústřižek látky nebo melodie, kterou si pobroukáváš... obávám se, že pouze Spalovači jsou ti, kdož vědí o klíči, který bys měl použít k útěku z jejich hal, má lásko."~ */
+  IF ~~ THEN REPLY #824 /* ~"Aha. Měl bych nějaké další otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #823 /* ~"Pak se tedy jednoho z nich na to zeptám. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #1326 /* ~"Pak se tedy jednoho z nich zeptám. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 33 // from: 4.0
+  SAY #6083 /* ~"Nemám pro tebe odpovědi! Tvé nevěrné srdce tě zavedlo sem, tak ať tě odtud i vyvede! A teď odejdi!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6129 /* ~Lež: "Tohle není Deionarra, na niž si vzpomínám. Deionarra, kterou jsem miloval byla laskavá, něžná... a nikdy neodmítla pomoci duši v nouzi. Opravdu jsi klesla tak hluboko?"~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_4","GLOBALLaw",-1)
+~ GOTO 35
+  IF ~~ THEN REPLY #6130 /* ~"Potřebuji tvou pomoc, Deionarro. Odvrhneš mne, když tě nejvíc potřebuju?"~ */ GOTO 37
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #6131 /* ~Bluf: "Tedy dobrá. Budu respektovat tvé přání, Deionarro... odejdu a nikdy se nevrátím."~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_4","GLOBALLaw",-1)
+~ GOTO 34
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6132 /* ~Bluf: "Tedy dobrá. Budu respektovat tvé přání, Deionarro... odejdu a nikdy se nevrátím."~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_4","GLOBALLaw",-1)
+~ GOTO 34
+  IF ~~ THEN REPLY #6133 /* ~"Je mi líto, že jsem ti ublížil, Deionarro. Odejdu a nebudu tě už mučit."~ */ DO ~SetGlobal("Deionarra","GLOBAL",1)
+~ GOTO 34
+  IF ~~ THEN REPLY #6134 /* ~Potichu odejdi.~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 34 // from: 33.2 33.3 33.4
+  SAY #6086 /* ~Zuřivý výraz v tváři Deionarry se rozplynul - rychlost změny je stejně strašidelná jako zoufalství, které se jí ve tváři zračí teď. "Ne! Počkej, má lásko." Její hlas zni prosebně. "Prosím odpusť! Prosím tě! Neopouštěj mě!"~ */
+  IF ~~ THEN REPLY #6095 /* ~"Deionarro, má trpělivost mizí, tvé výbuchy mě nebaví. Pokud máme mluvit dál, *budeš* se ovládat, nebo už si s tebou nikdy nepromluvím. Budeš sama. Je ti to jasné?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_4","GLOBALGood",-1)
+~ GOTO 36
+  IF ~~ THEN REPLY #6096 /* ~"Odpouštím ti. A teď potřebuju tvou pomoc, Deionarro."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 35 // from: 33.0
+  SAY #6087 /* ~Zuřivý výraz v tváři Deionarry se rozplynul - rychlost změny je stejně strašidelná jako zoufalství, které se jí ve tváři zračí teď. "Ne... ne, jsem stále ta Deionarra, kterou si pamatuješ, má lásko. Prosím, odpusť mi, má lásko. Prosím."~ */
+  IF ~~ THEN REPLY #6097 /* ~"Deionarro, má trpělivost mizí, tvé výbuchy mě nebaví. Pokud máme mluvit dál, *budeš* se ovládat, nebo už si s tebou nikdy nepromluvím. Budeš sama. Je ti to jasné?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Deionarra_4","GLOBALGood",-1)
+~ GOTO 36
+  IF ~~ THEN REPLY #6098 /* ~"Odpouštím ti. A teď potřebuju tvou pomoc, Deionarro."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 36 // from: 34.0 35.0
+  SAY #6088 /* ~Hlas jí přešel do slabého šeptání. "Ano... ano, prosím. Neopouštěj mě." Díky jejímu prosebnému výrazu ti přeběhl mráz po zádech - ale ne ze strachu. Je ti to příjemné. Máš pocit, že to není poprvé, kdy jsi touhle ženou takto manipuloval.~ */
+  IF ~~ THEN REPLY #6099 /* ~"Poslouchej, Deionarro. Mám pro tebe pár otázek..."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 37 // from: 33.1 47.0
+  SAY #6089 /* ~"Odvrhnout *tebe?!* Ty se OPOVAŽUJEŠ obvinit mě, že tě ODVRHUJU?!" Deionarra máchla rukama a zamířila je na tebe, ukazováčky ti míří přímo do obličeje. Vypadá to jako nějaký druh čarodějnictví. "Ty se OPOVAŽUJEŠ!"~ */
+  IF ~~ THEN REPLY #6100 /* ~"Ticho! Poslouchej, duchu! Ztrácím trpělivost---"~ */ DO ~SetGlobal("Deionarra_Curse","GLOBAL",1)
+~ GOTO 38
+  IF ~~ THEN REPLY #6101 /* ~Připrav se k obraně.~ */ DO ~SetGlobal("Deionarra_Curse","GLOBAL",1)
+~ GOTO 38
+END
+
+IF ~~ THEN BEGIN 38 // from: 37.0 37.1
+  SAY #6090 /* ~"Shoř! Ať shoříš, jakoby tě plameny Baatoru stravovaly zevnitř! Shoř a věz že je to jenom *zlomek* mé nenávisti, kterou k tobě cítím! Proklínám tě--- proklínám tě celým svým srdcem a svou duší. Nikdy se neuvolníš z řetězů svého odporného neživota. Trp a umírej a tvá mysl bude slábnout a rozpadat se stejně jako tvé hnijící tělo!"~ */
+  IF ~~ THEN REPLY #6102 /* ~"Dej si pozor na své kletby, ženo! Nemám trpělivost s---"~ */ GOTO 39
+  IF ~~ THEN REPLY #6103 /* ~"Deionarro! Počkej,přišel jsem se omluvit..."~ */ GOTO 39
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0 38.1
+  SAY #6091 /* ~"Jakmile je jednou kletba vyslovena, nedá se vrátit zpět." Deionařin hlas přešel do zasyčení: "Věz toto: já mám celou věčnost, 'má lásko.' Počkám si, až vejdeš do hal smrti." Usmála se, ale v tom úsměvu není žádná radost. "Zase *budeme* spolu."~ */
+  IF ~~ THEN REPLY #6104 /* ~"Vydrž chvíli! Chci si promluvit -"~ */ GOTO 48
+  IF ~~ THEN REPLY #6105 /* ~"Odvolej to! Varuju tě---"~ */ GOTO 48
+END
+
+IF ~~ THEN BEGIN 40 // from: 16.0 20.4 21.3
+  SAY #6092 /* ~Deionarra ztuhla. Vypadá to, že chtěla něco říct, ale pak to vzdala a vzdychla. "Dobrá, má lásko... stejně jako předtím ti musím důvěřovat." Zavřela oči.~ */
+  IF ~~ THEN REPLY #6106 /* ~Počkej...~ */ GOTO 22
+END
+
+IF ~~ THEN BEGIN 41 // from: 10.6
+  SAY #6108 /* ~Deionarra smutně zavrtěla hlavou. "Jakmile je tato kletba vyslovena, nedá se odvolat. Odpusť mi, má lásko."~ */
+  IF ~~ THEN REPLY #6110 /* ~"Copak ji nedokáže někdo odstranit?"~ */ GOTO 42
+  IF ~~ THEN REPLY #6111 /* ~"Já... aha. Chtěl jsem se tě ještě na něco zeptat."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6112 /* ~"Myslím, že teď už je trochu pozdě žádat odpuštění. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6113 /* ~"Možná mi někdo pomůže. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6114 /* ~"Myslím, že teď už je trochu pozdě žádat odpuštění. Sbohem, Deionarro."~ */ GOTO 0
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6115 /* ~"Možná mi někdo pomůže. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0
+  SAY #6109 /* ~"Pokud ano, nevím o tom." Deionarra se tváří nadějně. "Ale jsou jiní, mocnější než já, kteří by to mohli dokázat. Znovu tě prosím o odpuštění, má lásko. Nevěděla jsem, co dělám."~ */
+  IF ~~ THEN REPLY #6116 /* ~"Chtěl jsem se tě ještě na něco zeptat."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6117 /* ~"Myslím, že teď už je trochu pozdě žádat odpuštění. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6118 /* ~"Možná mi někdo pomůže. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6119 /* ~"Myslím, že teď už je trochu pozdě žádat odpuštění. Sbohem, Deionarro."~ */ GOTO 0
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6120 /* ~"Možná mi někdo pomůže. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 43 // from: 9.2 10.3 44.0
+  SAY #6121 /* ~"Odejít...?" Deionařin hlas přešel v zasyčení. Pak zvedla hlas: "*ODEJÍT?!* Ty se ptáš mě, která jsem zde uvězněná kvůli tobě, jak odejít z tohoto místa?!"~ */
+  IF ~~ THEN REPLY #6137 /* ~"Ano, musím odtud utéct. Znáš cestu ven?"~ */ GOTO 47
+  IF ~~ THEN REPLY #6138 /* ~"Omlouvám se za svoji prosbu. Nechtěl jsem tě nějak urazit. Prosím, měl bych ještě nějaké otázky..."~ */ GOTO 10
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6139 /* ~"Deionarro, jsem v nebezpečí. Mohla bys mne dovést na nějaké bezpečné místo? Vrátím se, abychom si spolu mohli opět promluvit, jak jen to bude možné."~ */ GOTO 46
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6140 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6141 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 44 // from: 9.3 10.4
+  SAY #6122 /* ~Už ses málem zeptal, když se ti slova najednou zadrhla v krku. Napadlo tě, že jestli se zeptáš, jak odtud uniknout, mohla by si myslet, že jí opouštíš. Pokud se jí chceš zeptat jak odejít, budeš muset být velice opatrný.~ */
+  IF ~~ THEN REPLY #6142 /* ~"Můžeš mi říct, jak se odtud dostanu?"~ */ GOTO 43
+  IF ~~ THEN REPLY #6143 /* ~"Deionarro, jsem v nebezpečí. Mohla bys mne dovést na nějaké bezpečné místo? Vrátím se, abychom si spolu mohli opět promluvit, jak jen to bude možné."~ */ GOTO 46
+  IF ~~ THEN REPLY #6144 /* ~"Mám na tebe nějaké jiné otázky..."~ */ GOTO 10
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6145 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6146 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 0
+END
+
+IF ~~ THEN BEGIN 45 // from: 46.0 46.1
+  SAY #6123 /* ~"Cítím, že toto místo má mnoho dveří zakrytých před zrakem smrtelníků. Možná bys mohl použít jeden z těchto portálů jako prostředek útěku."~ */
+  IF ~~ THEN REPLY #6124 /* ~"Portály?"~ */ GOTO 31
+END
+
+IF ~~ THEN BEGIN 46 // from: 43.2 44.1 47.1
+  SAY #6125 /* ~"V nebezpečí?" Deionarra vypadá zaujatě. "Samozřejmě, má lásko. Pomohu, jakkoliv budu moci..." Na chvíli zavřela oči a ty vidíš éterický vánek procházející jejím tělem, čechrajíce jí vlasy. Po chvíli vánek utichl a její oči se pomalu otevřely. "Možná by se to dalo udělat takto."~ */
+  IF ~  Global("Deionarra_Portal","GLOBAL",1)
+~ THEN REPLY #6147 /* ~"Ano?"~ */ GOTO 45
+  IF ~  Global("Deionarra_Portal","GLOBAL",0)
+~ THEN REPLY #6148 /* ~"Ano?"~ */ DO ~SetGlobal("Deionarra_Portal","GLOBAL",1)
+AddexperienceParty(500)
+~ GOTO 45
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.0
+  SAY #6135 /* ~"Přicházíš za mnou ve smrti jen proto, abys mi řekl, že potřebuješ moji pomoc, abys mne mohl *zase* opustit?!" Její tvář je maskou zuřivosti. "*Zemřela jsem* pro tebe, má lásko. Ještě teď za to *trpím!*"~ */
+  IF ~~ THEN REPLY #6149 /* ~"Deionarro, prosím... potřebuji tvou pomoc. Odvrhneš mne, když tě nejvíc potřebuju?"~ */ GOTO 37
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #6150 /* ~"Deionarro, ptám se jen proto, že jsem v nebezpečí. Mohla bys mne dovést na nějaké bezpečné místo? Vrátím se, abychom si spolu mohli opět promluvit, jak jen to bude možné."~ */ GOTO 46
+  IF ~~ THEN REPLY #6151 /* ~"Nevadí. Poslyš, mám ještě nějaké otázky..."~ */ GOTO 8
+  IF ~  Global("Prophecy","GLOBAL",0)
+~ THEN REPLY #6152 /* ~"Musím odejít. Sbohem, Deionarro."~ */ GOTO 15
+  IF ~  Global("Prophecy","GLOBAL",1)
+~ THEN REPLY #6153 /* ~" Musím odejít. Sbohem, Deionarro."~ */ GOTO 26
+END
+
+IF ~~ THEN BEGIN 48 // from: 33.5 39.0 39.1
+  SAY #6136 /* ~Deionarra zavřela oči a s nehmotným šuměním zmizela.~ */
+  IF ~  Global("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ THEN REPLY #6154 /* ~Odejdi.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #6155 /* ~Odejdi.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXTERN ~DMORTE~ 105
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Deionarra_Quip_1","GLOBAL",0)
+~ THEN REPLY #13258 /* ~Odejít.~ */ DO ~SetGlobal("Deionarra","GLOBAL",2)
+SetGlobal("Deio_Wake_Up","GLOBAL",0)
+~ EXIT
+END
+
+IF WEIGHT #3 ~  Global("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1203)
+~ THEN BEGIN 49 // from:
+  SAY #63356 /* ~Vidíš před sebou překvapivě krásnou spektrální formu; má dlouhé, uvolněné vlasy, a její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Její oči spočinuly na tobě, a ty získáváš cizí nesouvislý pocit, jako kdyby jsi se díval do několika párů očí najednou.~ */
+  IF ~~ THEN REPLY #63357 /* ~"Ty jsi Deionarra...?"~ */ GOTO 51
+END
+
+IF WEIGHT #4 ~  GlobalGT("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1203)
+~ THEN BEGIN 50 // from:
+  SAY #63358 /* ~Před tebou je spektrální forma Deionarry; její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Její oči spočinuly na tobě, a ty získáváš cizí nesouvislý pocit, jako kdyby jsi se díval do několika párů očí najednou.~ */
+  IF ~~ THEN REPLY #63359 /* ~"Deionarro...?"~ */ GOTO 51
+END
+
+IF ~~ THEN BEGIN 51 // from: 49.0 50.0
+  SAY #63360 /* ~"Má Lásko, konečně jsem tě *našla*... Hledala jsem tě od té doby, co jsi byl rozdělen krystalem - tato pevnost se rozpíná na stovkách mil, a já jsem se bála, že jsi pro mne ztracený." Její strašidelné oči si tě změřily, hledaje na tvém těle nová zranění. "Jsi v pořádku?"~ */
+  IF ~~ THEN REPLY #63362 /* ~"Myslím, že ano - krystal mne rozdělil, ale jsem zase jeden. Avšak teď jsem zde uvězněn."~ */ GOTO 52
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+  SAY #63363 /* ~"Mám podezření, že tvé uvěznění zde bylo skutečným účelem krystalu. Ale to není žádná překážka pro někoho jako jsem já." Zavřela oči. "Mé oči toho mnoho spatřily, a sály pevnosti znám velmi dobře."~ */
+  IF ~~ THEN GOTO 53
+END
+
+IF ~~ THEN BEGIN 53 // from: 52.0 58.0 59.0
+  SAY #63364 /* ~"Pokud jsi zde uvězněn, má Lásko, podívám se, jak tě vysvobodit. Kam chceš jít?"~ */
+  IF ~~ THEN REPLY #63365 /* ~"Chci najít svého protivníka a porazit ho."~ */ GOTO 54
+  IF ~~ THEN REPLY #63366 /* ~"Přál bych si jít tam, kde je má smrtelnost - a obnovit ji."~ */ GOTO 54
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",1)
+!Global("Fortress_Ignus","GLOBAL",1)
+!Global("Fortress_Vhailor","GLOBAL",1)
+~ THEN REPLY #63367 /* ~"Přál bych si se připojit ke svým přátelům."~ */ GOTO 54
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",1)
+!Global("Fortress_Ignus","GLOBAL",1)
+!Global("Fortress_Vhailor","GLOBAL",1)
+~ THEN REPLY #63368 /* ~"Přál bych si se připojit ke svým společníkům. Jsou určité věci, které od nich potřebuji."~ */ GOTO 54
+  IF ~  GlobalGT("Deionarra_Death_Truth","GLOBAL",0)
+~ THEN REPLY #63369 /* ~"Přál bych si s tebou chvíli povídat a říci ti jak jsi zemřela... a proč."~ */ GOTO 55
+END
+
+IF ~~ THEN BEGIN 54 // from: 53.0 53.1 53.2 53.3
+  SAY #63370 /* ~"Jak si přeješ, Má Lásko." Natáhla ruku. "Dotkni se mé ruky, a stěny této pevnosti již více stěny nebudou."~ */
+  IF ~  Global("Deionarra_Forgives","GLOBAL",1)
+~ THEN REPLY #63371 /* ~Dotkni se její ruky...~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1203cd11",FALSE)
+~ EXIT
+  IF ~  Global("Deionarra_Forgives","GLOBAL",0)
+~ THEN REPLY #64594 /* ~Dotkni se její ruky...~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1203cd21",FALSE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 55 // from: 53.4
+  SAY #63372 /* ~"O čem to mluvíš?"~ */
+  IF ~~ THEN REPLY #63373 /* ~Pravda: "Když jsem tě přivedl do této pevnosti, bylo mým záměrem, abys zde zemřela. Potřeboval jsem někoho, kdo by tady zůstal, aby mohl sloužit jako spojení s tímto místem. Já vím, že jsi mne tak moc milovala, že tvá láska odvrátí smrt a dovolí ti stát se duchem. A proto tu teď trpíš."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_2","GLOBALLaw",3)
+IncrementGlobalOnceEx("GLOBALGood_Deionarra_2","GLOBALGood",1)
+SetAnimState(Myself,ANIM_MIMESTAND)
+~ GOTO 56
+  IF ~~ THEN REPLY #63374 /* ~Lež: "Když jsi zemřela v této pevnosti, bylo to kvůli protivníkovi, který na nás čekal. Přál si, abys zde zemřela, takže bychom byli odděleni. Brzy se mu půjdu postavit a pomstím se mu."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_5","GLOBALLaw",-3)
+IncrementGlobalOnceEx("GLOBALEvil_Deionarra_5","GLOBALGood",-1)
+~ GOTO 58
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0
+  SAY #63375 /* ~Zatímco mluvíš, zůstává tvář Deionarry nehybná jako maska. ~ */
+  IF ~~ THEN REPLY #63376 /* ~Lež: "Je mi líto Deionarro."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_6","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Deionarra_6","GLOBALGood",-2)
+~ GOTO 57
+  IF ~~ THEN REPLY #63377 /* ~Pravda: "Je mi líto Deionarro."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_3","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Deionarra_3","GLOBALGood",1)
+~ GOTO 57
+  IF ~~ THEN REPLY #63378 /* ~Pravda: "Bylo to nezbytné, Deionarro - je mi líto, že jsi trpěla."~ */ GOTO 57
+END
+
+IF ~~ THEN BEGIN 57 // from: 56.0 56.1 56.2
+  SAY #63379 /* ~"*Miluješ* mne? Pokud řekneš ano, má Lásko, pak na ničem co se stalo nezáleží."~ */
+  IF ~~ THEN REPLY #63380 /* ~Lež: "Samozřejmě tě miluji. Dokonce ani smrt nemůže zničit pouto mezi námi."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Deionarra_7","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Deionarra_7","GLOBALGood",-1)
+~ GOTO 58
+  IF ~~ THEN REPLY #63381 /* ~Pravda: "Ačkoliv jsem to nejdříve nepoznal, zamiloval jsem se do tebe. Tvé utrpení se stalo i mým, a já jsem zjistil, že udělám co mohu abych ti pomohl."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_4","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Deionarra_4","GLOBALGood",1)
+~ GOTO 58
+  IF ~~ THEN REPLY #63382 /* ~Pravda: "Je mi líto, Deionarro. Ne. Nikdy jsem tě neznal. Snad kdybych se s tebou setkal za jiných okolností..."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Deionarra_5","GLOBALLaw",2)
+~ GOTO 59
+END
+
+IF ~~ THEN BEGIN 58 // from: 55.1 57.0 57.1
+  SAY #63383 /* ~"Pak ti pomohu, má Lásko. Řekni mi jak ti mohu pomoci, a já to udělám."~ */
+  IF ~~ THEN REPLY #63384 /* ~"Jsem zde uvězněn. Můžeš mi pomoci uniknout?"~ */ DO ~SetGlobal("Deionarra_Forgives","GLOBAL",1)
+~ GOTO 53
+END
+
+IF ~~ THEN BEGIN 59 // from: 57.2
+  SAY #63385 /* ~"Pak... tohle bude konec věcí mezi námi, má Lásko. Zůstávala jsem zde kvůli tobě - z žádného jiného důvodu. Naposledy ti pomohu, pak pocestuji za Hranici Věčnosti, jak jsem si předsevzala." ~ */
+  IF ~~ THEN REPLY #63386 /* ~"Pak se tě zeptám na poslední věc a odejdu v míru: Jsem zde uvězněn. Můžeš mi pomoci?"~ */ GOTO 53
+END
+
+IF WEIGHT #6 /* Triggers after states #: 62 even though they appear after this state */
+~  Global("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1200)
+Global("1200_Cut_Scene_2","GLOBAL",0)
+~ THEN BEGIN 60 // from:
+  SAY #63387 /* ~Vidíš překvapivě krásnou spektrální formu; má dlouhé, rozpuštěné vlasy, a její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Stojí na okraji cesty z černých kamenů a strnule zírá do prázdnoty Sféry.~ */
+  IF ~~ THEN REPLY #63388 /* ~"Kdo jsi?"~ */ DO ~SetGlobal("1200_Cut_Scene_2","GLOBAL",1)
+StartCutSceneMode()
+SetGlobal("cd_int_1","LOCALS",1)
+StartCutSceneEx("1200cut1",FALSE)
+~ GOTO 62
+  IF ~~ THEN REPLY #63389 /* ~Zanech spektrální postavu o samotě.~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 62 even though they appear after this state */
+~  GlobalGT("Deionarra","GLOBAL",0)
+Global("Current_Area","GLOBAL",1200)
+Global("1200_Cut_Scene_2","GLOBAL",0)
+~ THEN BEGIN 61 // from:
+  SAY #63390 /* ~Před tebou je spektrální forma Deionarry; její šaty vypadají, jako by se chvěly nějakým éterickým vánkem. Stojí na okraji cesty z černých kamenů a strnule zírá do prázdnoty Sféry.~ */
+  IF ~~ THEN REPLY #63391 /* ~"Deionarro...?"~ */ DO ~SetGlobal("1200_Cut_Scene_2","GLOBAL",1)
+StartCutSceneMode()
+SetGlobal("cd_int_1","LOCALS",1)
+StartCutSceneEx("1200cut1",FALSE)
+~ GOTO 62
+  IF ~~ THEN REPLY #63392 /* ~Zanech Deionarru o samotě.~ */ EXIT
+END
+
+IF WEIGHT #5 ~  Global("Current_Area","GLOBAL",1200)
+Global("1200_Cut_Scene_2","GLOBAL",1)
+~ THEN BEGIN 62 // from: 60.0 61.0
+  SAY #63393 /* ~"Má Lásko! *Neměl* bys tu být! Musíš okamžitě odejít!"~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63394 /* ~"Proč? Kdo jsi, duchu... co je tohle za místo?"~ */ GOTO 63
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63395 /* ~"Deionarro, co je tohle za místo? Je tohle Pevnost?"~ */ GOTO 63
+END
+
+IF ~~ THEN BEGIN 63 // from: 62.0 62.1
+  SAY #63396 /* ~"Tohle je Pevnost Lítosti. Tohle je místo, které drží v zajetí okamžik mé smrti, a já se nemohu vzdálit od jejich síní. Pokud můžeš najít cestu zpět do Sigilu pak *musíš* odejít; pokud zde zůstaneš, má Lásko, zemřeš."~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63397 /* ~"Jsem nesmrtelný, duchu; tvé varování oceňuji, ale smrt mi teď  dělá nejmenší starosti."~ */ GOTO 64
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63398 /* ~"Jsem nesmrtelný, Deionarro; Nemyslím, že si s tím musím dělat starosti, dokonce ani tady ne."~ */ GOTO 64
+  IF ~~ THEN REPLY #63399 /* ~"A co moje nesmrtelnost? Určitě jsem nesmrtelný, dokonce i tady...?"~ */ GOTO 64
+END
+
+IF ~~ THEN BEGIN 64 // from: 63.0 63.1 63.2
+  SAY #63400 /* ~Potřásla hlavou. "Ne, má Lásko. V této Pevnosti je něco - obal, který ji obklopuje ji odřezává od zbytku Sfér. Je to obal, který funguje jako zábrana k tvojí nesmrtelnosti."~ */
+  IF ~  Global("Know_Shadow_Player_Connection","GLOBAL",1)
+~ THEN REPLY #63401 /* ~"Skořápka? Sloup mi řekl, že pokud zemřu, zemře za mne někdo jiný. A pokud se nenajde nikdo, kdo by zemřel za mne -"~ */ GOTO 66
+  IF ~  Global("Know_Shadow_Player_Connection","GLOBAL",0)
+~ THEN REPLY #63402 /* ~"Jak může skořápka působit jako zábrana? To nedává smysl."~ */ GOTO 65
+END
+
+IF ~~ THEN BEGIN 65 // from: 64.1
+  SAY #63403 /* ~"Jak jsem se zde snažila udržet vzhůru, dozvěděla jsem se o povaze tvé nesmrtelnosti, má Lásko. Je to věc, která touží po životech jiných. V okamžiku tvé smrti, si vyžádá jinou živou věc z tvého okolí, umožňujíce ti žít. Duše, které zemře místo tebe je přenesena sem, do Pevnosti, jako stín. Věřím, že tato skořápka zabraňuje tvé nesmrtelnosti najít jinou oběť."  ~ */
+  IF ~~ THEN REPLY #63404 /* ~"Takže... když zemřu, zemře místo mne někdo jiný. A pokud nenajde jinou živou věc, která by zemřela *pro* mne..."~ */ GOTO 66
+END
+
+IF ~~ THEN BEGIN 66 // from: 64.0 65.0
+  SAY #63405 /* ~"Pak jestliže zde zemřeš, je to konec, protože zde není nic *živého* - takže musíš být opatrný. Vrať se do Sigilu a opusť tohle prokleté místo!"~ */
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63406 /* ~"Ale - moji spojenci jsou tady: a to znamená, že jsou uvnitř této skořápky. Co se *jim* stane, když zemřu?"~ */ GOTO 67
+  IF ~  Global("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63407 /* ~"Ale - jeden z mých spojenců je tady. To znamená, že je uvnitř této skořápky. Co se stane mému společníku pokud zemřu?"~ */ GOTO 67
+  IF ~  Global("Fortress_Party","GLOBAL",1)
+GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63408 /* ~"Deionarro, můžeš mi říci něco jiného, co by mi mohlo být ku pomoci? Co čeká uvnitř?"~ */ GOTO 68
+  IF ~  Global("Fortress_Party","GLOBAL",1)
+Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63409 /* ~"Duchu, můžeš mi říci něco jiného co by mi mohlo být ku pomoci? Co čeká uvnitř?"~ */ GOTO 68
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.0 66.1
+  SAY #63410 /* ~"Má Lásko, pokud jsi s sebou přivedl *cokoliv*, co s tebou tady žije, potom to je v příšerném nebezpečí - od obojího od stínů a od tebe. Kdybys tady zemřel, tvá nesmrtelnost bude pátrat po něčem živém zavřeném v této Pevnosti, a *to* bude to, co tady zemře. Musíš odtud odejít, hned!"~ */
+  IF ~~ THEN REPLY #63411 /* ~"Nemohu *jít* zpátky. Takže můžeš mi říci *něco* jiného co by mi mohlo pomoci? Co čeká uvnitř pevnosti?"~ */ GOTO 68
+END
+
+IF ~~ THEN BEGIN 68 // from: 66.2 66.3 67.0
+  SAY #63412 /* ~"Uvnitř Pevnosti je nepřirozená temnota, má Lásko, pouze stíny těch kteří zemřeli na tvém místě. Krmí je energie této Sféry, a jejich nenávist k tobě převažuje nad všemi těmi důvody. Nenechají tě odejít." Vrhla letmý pohled na zdi Pevnosti. "*Nevstupuj*, prosím tě!"~ */
+  IF ~  GlobalGT("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63413 /* ~"Ale - moji spojenci jsou tam uvnitř. Nemohu je opustit. Nenapadá tě, kde by mohli být?"~ */ GOTO 69
+  IF ~  Global("Fortress_Party","GLOBAL",2)
+~ THEN REPLY #63414 /* ~"Ale - moji spojenci jsou tam uvnitř. Nemohu odejít. Nenapadá tě, kde by mohli být moji druhové?"~ */ GOTO 69
+  IF ~  Global("Fortress_Party","GLOBAL",1)
+~ THEN REPLY #63415 /* ~"Musím vstoupit do Pevnosti. Nemohu se vrátit."~ */ JOURNAL #68117 /* ~Deionarra mě varovala, že za vchodem do Pevnosti je velká komnata plná stínů. Řekla mi, v komnatě je několik velkých hodin, o kterých jsem prý dříve tvrdil, že s jejich pomocí jsem z komnaty už uniknul. Budu se po nich muset podívat a podrobně je prozkoumat.~ */ GOTO 75
+END
+
+IF ~~ THEN BEGIN 69 // from: 68.0 68.1
+  SAY #63416 /* ~"Pokud jsi sem přivedl jiné, pak od tebe byli odvrženi, když jste přišli - to je povaha tohoto místa, rozdělit živé věci... pak je zabít." Vypadá rozrušeně. "Pevnost je věc mnoha mil - nalézt tvé přátele bude náročné."~ */
+  IF ~~ THEN REPLY #63417 /* ~"Musím je najít. V této věci nemám na vybranou."~ */ JOURNAL #68117 /* ~Deionarra mě varovala, že za vchodem do Pevnosti je velká komnata plná stínů. Řekla mi, v komnatě je několik velkých hodin, o kterých jsem prý dříve tvrdil, že s jejich pomocí jsem z komnaty už uniknul. Budu se po nich muset podívat a podrobně je prozkoumat.~ */ GOTO 75
+END
+
+IF ~~ THEN BEGIN 70 // from: 75.0
+  SAY #63418 /* ~"Ještě jedna věc..." Deionarra se odmlčela, jako kdyby se pokoušela zachytit letmou vzpomínku. "Uvnitř... uvnitř místnosti jsou veliké hodiny..." Její hlas se ustálil, zjistěl. "Hodiny, se kterými jsi již jednou mluvil, když jsi měl klič k útěku z této místnosti... když jsi tu byl jednou uvězněn předtím." Podívala se na tebe. "Já vím, že tě nemohu zdržovat na tvé cestě, má Lásko -- budu tě sledovat a pomohu ti, pokud budu moci."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+PartyHasItem("DwedRing")
+~ THEN REPLY #63419 /* ~"Přinesl jsem ti tvůj prsten, Deionarro. Našel jsem tvůj odkaz pro mne."~ */ DO ~TransformPartyItem("Dwedring","DsupRing",1,0,0)
+~ GOTO 71
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #63420 /* ~"Máš mé díky, duchu. Už musím jít."~ */ EXIT
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63421 /* ~"Máš mé díky, Deionarro. Už musím jít."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 71 // from: 70.0
+  SAY #63422 /* ~"Prsten ještě drží část mne v sobě, má Lásko. Když ho neseš, neseš s sebou moje srdce." Zavřela na chvíli oči, a najednou cítíš, jak tebou prochází teplo. Deionarra otevřela oči a usmála se. "Věděla jsem, že se ke mně vrátíš, když ho budeš mít u sebe. Nos ho teď s mým požehnáním, a drž si ho blízko svého srdce. Přes něho tě budu chránit."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #63423 /* ~"Máš mé díky, Deionarro. Teď musím jít."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 27.1
+  SAY #66912 /* ~"Ty... já...nemůžu..." Náhle se zarazila a pak promluvila pomalu, opatrně, jakoby ji ta slova děsila. "Pravda je tato: Ty jsi ten, jenž umírá mnohou smrtí. Tyto smrti ti daly znalost všech smrtelných věcí a v tvých dlaních leží jiskra života... a smrti. Ti, kdož zemřou blízko tebe, si uchovají jiskřičku života, kterou ty můžeš vytáhnout na povrch a vdechnout ji zpět do jejich těla..."~ */
+  IF ~~ THEN GOTO 73
+END
+
+IF ~~ THEN BEGIN 73 // from: 72.0
+  SAY #66913 /* ~Jak Deionarra promluvila tato slova, v hlavě se ti objevil nepříjemný pocit... máš nutkání podívat se na své ruce. Když jsi je zvedl a *podíval* se na ně, VIDÍŠ, jak krev protéká tvou paží, rozlévá se do svalů a dává sílu tvým kostem...~ */
+  IF ~~ THEN REPLY #66914 /* ~"Co..."~ */ DO ~AddexperienceParty(1000)
+SetGlobal("Deionarra_Raise_Dead","GLOBAL",1)
+ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+ApplySpell(Protagonist,SPECIAL_ADD_RAISE_DEAD)
+~ JOURNAL #66917 /* ~Nevím, jestli mám být vystrašený nebo potěšený. Mluvil jsem s Deionarrou a ona mi řekla, že mé smrti mi propůjčily určitou kontrolu nad životem a smrtí. Pokud uvidím tělo, dokážu v něm nalézt stopy života a vytáhnout je na povrch. Z nějakého důvodu to ale bude fungovat pouze na lidech, kteří se mnou budou cestovat a pouze v případě, že zemřeli v mé přítomnosti. Proč? Že by jejich cestování se mnou vytvářelo nějaký druh spojení s mou osobou?~ */ GOTO 74
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.0
+  SAY #66915 /* ~A náhle víš, že Deionarra má *pravdu*. Vzpomněl sis, jak rozdmýchat vyhaslou jiskřičku života v těle a vytáhnout ji na povrch. Potěšilo tě to, ale zároveň ses i zhrozil.
+POZNÁMKA: Vzpomněl sis, jak oživit jiné ze smrti. Abys mohl použít tuto schopnost, zvol tlačítko Zvláštní Schopnosti v Rychlém menu. Můžeš ji použít jenom na členy skupiny, kteří zemřou v tvé přítomnosti - nebude to fungovat na nikoho, kdo s tebou necestuje a *nebude* to fungovat na členy skupiny, které z party odstraníš poté, co zemřou.~ */
+  IF ~~ THEN REPLY #66916 /* ~"Já... já... Mám pár dalších otázek..."~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 75 // from: 68.2 69.0
+  SAY #68114 /* ~"Velmi dobře má, lásko... pokud ale chceš jít dále, musíš vědět toto -  za vchodem do Pevnosti je velká komnata, ve které je bezpočet stínů. Musíš se pohybovat rychle a nenechat je, aby tě obklíčili, jinak tě určitě zabijí!"~ */
+  IF ~~ THEN GOTO 70
+END

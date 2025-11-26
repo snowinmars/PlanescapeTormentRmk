@@ -1,0 +1,178 @@
+IF ~  Global("EiVene","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #3404 /* ~Widzisz młodą, drobną kobietę o bladej cerze. Zapadnięte policzki i skóra na szyi sprawiają, że wygląda jakby od dawna głodowała. Wydaje się być skupiona na rozczłonkowaniu leżącego przed nią ciała. Dźga palcami jego pierś.~ */
+IF ~~ THEN REPLY #3406 /* ~"Witaj."~ */ GOTO 1
+IF ~~ THEN REPLY #3407 /* ~Zostaw ją w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+SAY #3410 /* ~Kobieta nie reaguje... Wygląda na zbyt pochłoniętą leżącym przed nią ciałem. Gdy tak przyglądasz się jej pracy, nagle zwracasz uwagę na jej dłonie... zamiast palców ma szpony. Nagłymi ruchami rozcina klatkę piersiową ciała, wyciąga organy.~ */
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3412 /* ~"Powiedziałem 'witaj'."~ */ GOTO 2
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3413 /* ~"Powiedziałem 'witaj'."~ */ GOTO 3
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3414 /* ~"Co stało się z twoimi rękami?"~ */ GOTO 2
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3415 /* ~"Co stało się z twoimi rękami?"~ */ GOTO 19
+IF ~~ THEN REPLY #3416 /* ~Zostaw ją w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.2
+SAY #3417 /* ~Kobieta nie reaguje.~ */
+IF ~~ THEN REPLY #3418 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ DO ~FaceObject(Protagonist) ~ GOTO 4
+IF ~~ THEN REPLY #3419 /* ~Zostaw ją w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.1
+SAY #3420 /* ~Kobieta nie reaguje.~ */
+IF ~~ THEN EXTERN ~DMORTE~ 55
+END
+
+IF ~~ THEN BEGIN 4 // from: 2.0
+SAY #3421 /* ~Nagle kobieta podskakuje i odwraca się w waszą stronę... jej oczy są koloru zgniłej żółci, z małymi pomarańczowymi plamkami źrenic. Gdy cię dostrzega, wyraz jej twarzy zmienia się z zaskoczonego na rozdrażniony, krzywo na ciebie patrzy.~ */
+IF ~~ THEN REPLY #3422 /* ~"Uch... witaj."~ */ DO ~SetGlobal("EiVene","GLOBAL",1) ~ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+SAY #3423 /* ~Wygląda na to, że cię nie usłyszała. Pochyla się do przodu, patrząc przez zmrużone oczy, jakby nie mogła cię dostrzec... Cokolwiek stało się z jej oczami, musiało sprawić, że jest niemal ślepa. "Ty..." klaszcze, łącząc zakończone pazurami palce, wykonuje dziwny ruch rękami. "Znajdź NIĆ i płyn do balsamowania, przynieś TUTAJ, do Ei-Vene. Idź-idź."  Uwaga: Przydzielono ci zadanie. Zadania są wyświetlone w dzienniku, w części "Zadania". Aby zobaczyć wszystkie przydzielone ci zadania (i ich stan) wybierz po prostu w menu dziennika "Zadania".~ */
+IF ~  PartyHasItem("Embalm") PartyHasItem("Needle") ~ THEN REPLY #3424 /* ~Daj jej nić i płyn do balsamowania.~ */ DO ~TakePartyItemNum("Embalm",1) TakePartyItemNum("Needle",1) SetGlobal("EiVene_Delivery","GLOBAL",1) AddexperienceParty(250) JOURNAL #37701 /* ~W Kostnicy spotkałem Grabarza - balsamitkę o imieniu Ei-Vene. Miała długie szpony, ciało wysmarowane kolorowymi tłuszczami, a w dodatku była głucha, niedowidziała i pomyliła mnie z zombie. Chciała, żebym zdobył dla niej słój z płynem do balsamowania oraz igłę z nicią, bez których nie mogła pozszywać ciała leżącego na jej stole. Jak się okazało, znalazłem już te rzeczy, więc oddałem je Ei-Vene.~ */ GOTO 7
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3425 /* ~"Najpierw chciałbym zadać ci kilka pytań..."~ */ JOURNAL #37702 /* ~W Kostnicy spotkałem Grabarza - balsamitkę o imieniu Ei-Vene. Miała długie szpony, ciało wysmarowane kolorowymi tłuszczami, a w dodatku była głucha, niedowidziała i pomyliła mnie z zombie. Chciała, żebym zdobył dla niej słój z płynem do balsamowani oraz igłę z nicią, bez których nie mogła pozszywać ciała leżącego na jej stole. Tego rodzaju przedmioty muszą znajdować się na terenie Kostnicy, zapewne w którymś z sąsiednich pomieszczeń.~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3426 /* ~"Najpierw chciałbym zadać ci kilka pytań..."~ */ JOURNAL #37702 /* ~W Kostnicy spotkałem Grabarza - balsamitkę o imieniu Ei-Vene. Miała długie szpony, ciało wysmarowane kolorowymi tłuszczami, a w dodatku była głucha, niedowidziała i pomyliła mnie z zombie. Chciała, żebym zdobył dla niej słój z płynem do balsamowani oraz igłę z nicią, bez których nie mogła pozszywać ciała leżącego na jej stole. Tego rodzaju przedmioty muszą znajdować się na terenie Kostnicy, zapewne w którymś z sąsiednich pomieszczeń.~ */ GOTO 20
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3427 /* ~"Co stało się z twoimi rękami?"~ */ JOURNAL #37702 /* ~W Kostnicy spotkałem Grabarza - balsamitkę o imieniu Ei-Vene. Miała długie szpony, ciało wysmarowane kolorowymi tłuszczami, a w dodatku była głucha, niedowidziała i pomyliła mnie z zombie. Chciała, żebym zdobył dla niej słój z płynem do balsamowani oraz igłę z nicią, bez których nie mogła pozszywać ciała leżącego na jej stole. Tego rodzaju przedmioty muszą znajdować się na terenie Kostnicy, zapewne w którymś z sąsiednich pomieszczeń.~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3428 /* ~"Co stało się z twoimi rękami?"~ */ JOURNAL #37702 /* ~W Kostnicy spotkałem Grabarza - balsamitkę o imieniu Ei-Vene. Miała długie szpony, ciało wysmarowane kolorowymi tłuszczami, a w dodatku była głucha, niedowidziała i pomyliła mnie z zombie. Chciała, żebym zdobył dla niej słój z płynem do balsamowani oraz igłę z nicią, bez których nie mogła pozszywać ciała leżącego na jej stole. Tego rodzaju przedmioty muszą znajdować się na terenie Kostnicy, zapewne w którymś z sąsiednich pomieszczeń.~ */ GOTO 20
+IF ~~ THEN REPLY #3429 /* ~Odejdź.~ */ JOURNAL #37702 /* ~W Kostnicy spotkałem Grabarza - balsamitkę o imieniu Ei-Vene. Miała długie szpony, ciało wysmarowane kolorowymi tłuszczami, a w dodatku była głucha, niedowidziała i pomyliła mnie z zombie. Chciała, żebym zdobył dla niej słój z płynem do balsamowani oraz igłę z nicią, bez których nie mogła pozszywać ciała leżącego na jej stole. Tego rodzaju przedmioty muszą znajdować się na terenie Kostnicy, zapewne w którymś z sąsiednich pomieszczeń.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.1 5.3
+SAY #3430 /* ~Odwraca się... nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.~ */
+IF ~~ THEN REPLY #3431 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 17
+IF ~~ THEN REPLY #3432 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.0 17.0
+SAY #3433 /* ~Nie marnując ani chwili, Ei-Vene szybko zabiera nić z twojej ręki, nabija na jeden ze szponów i zaczyna zszywać klatkę piersiową leżących przed nią zwłok. Następnie bierze płyn do balsamowania i zaczyna preparować ciało.~ */
+IF ~~ THEN REPLY #3434 /* ~Poczekaj.~ */ GOTO 9
+IF ~~ THEN REPLY #3435 /* ~Odejdź.~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.1
+SAY #3436 /* ~Gdy już chcesz odejść, Ei-Vene odzywa się: "Zostań. Ty - następny."~ */
+IF ~~ THEN REPLY #3437 /* ~Poczekaj.~ */ GOTO 9
+IF ~~ THEN REPLY #3438 /* ~Odejdź. Jak najszybciej.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 7.0 8.0
+SAY #3439 /* ~Kończy w ciągu kilku minut. Klaszcze szponami i obraca się w twoją stronę. Ku twojemu zdziwieniu wyciąga ręce i obejmuje szponami twoje ramiona i klatkę piersiową.~ */
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3440 /* ~"Eee, nie żeby mi to nie schlebiało, ale..."~ */ GOTO 11
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3441 /* ~"Eee, nie żeby mi to nie schlebiało, ale..."~ */ EXTERN ~DMORTE~ 59
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3442 /* ~Dalej udawaj zombie.~ */ GOTO 11
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3443 /* ~Dalej udawaj zombie.~ */ EXTERN ~DMORTE~ 59
+IF ~~ THEN REPLY #3444 /* ~Odepchnij ją, odejdź.~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.4 12.1
+SAY #3445 /* ~Wygląda na zaskoczoną, gdy ją odpychasz. "Zombi? Ty nie zombi!" Cofa się o krok i zanim zdążysz zareagować klaszcze trzy razy. W odpowiedzi w całej Kostnicy odbija się echem bicie wielkiego dzwonu.~ */
+IF ~~ THEN REPLY #3491 /* ~"No dobrze..."~ */ DO ~PlaySoundNotRanged("AMB_M01") Enemy() Attack(Protagonist) ForceAttack(Protagonist,Myself) SetGlobal("Mortuary_Alert","GLOBAL",1) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.0 9.2
+SAY #3446 /* ~Gdy bada twoje ramiona i klatkę piersiową, nagle zauważasz, że chyba ogląda blizny. Cofa szpony, klaszcze nimi dwa razy, pochyla się do przodu i zaczyna studiować niektóre z tatuaży, które masz na piersiach. "Hmmf. Kto pisać na ty? Mieszkańcy Ula to zrobić? Nie mieć szacunek dla zombi. Zombi nie trzeba obrazy." Pociąga nosem i dotyka jednej z twoich blizn. "Ten być w kiepski stan, wiele blizn, bez konserwantów."~ */
+IF ~~ THEN REPLY #3447 /* ~Poczekaj.~ */ GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+SAY #3448 /* ~Nagle nabija na szpon przyniesioną przez ciebie nić i z szybkością błyskawicy wbija inny w skórę obok jednej z twoich blizn. Nie czujesz nic więcej niż przy ukłuciu szpilką, ale wygląda na to, że zaraz zacznie cię zszywać.~ */
+IF ~~ THEN REPLY #3449 /* ~Pozwól jej robić swoje.~ */ DO ~PermanentStatChange(Protagonist,MAXHITPOINTS,RAISE,1) FullHeal(Protagonist) SetGlobal("Ravel_EiVene","GLOBAL",1) JOURNAL #38199 /* ~Po dostarczeniu Ei-vene płynu do balsamowania oraz nici, zaszyła mi rany i wtarła płyn w moje ciało. Co dziwne, poczułem się po tym... zdrowszy.~ */ GOTO 13
+IF ~~ THEN REPLY #3450 /* ~Odepchnij ją, odejdź.~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+SAY #3451 /* ~Co ciekawe, nie czujesz żadnego bólu, gdy Ei-Vene zaczyna zszywać twe blizny.  Po skończeniu obwąchuje cię, marszczy brwi i zanurza palce w płynie do balsamowania. W ciągu kilku minut przemywa nim twoje ciało... To dziwne, ale czujesz się *lepiej*.~ */
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3452 /* ~Pozwól jej robić swoje.~ */ GOTO 14
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3453 /* ~Pozwól jej robić swoje.~ */ EXTERN ~DMORTE~ 60
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+SAY #3454 /* ~Ei-Vene dotyka cię po raz ostatni, jeszcze raz cię obwąchuje, kiwa głową i szponami robi ruch, jakby chciała coś pokazać. "Zrobione. Idź - idź."~ */
+IF ~  Global("Embalm_Key_Quest","GLOBAL",1) HasItem("KeyEm","EiVene") ~ THEN REPLY #3456 /* ~"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"~ */ DO ~AddexperienceParty(250) SetGlobal("Embalm_Key_Quest","GLOBAL",2) GiveItem("KeyEm",Protagonist) ~ GOTO 18
+IF ~  Global("Embalm_Key_Quest","GLOBAL",1) !HasItem("KeyEm","EiVene") ~ THEN REPLY #3457 /* ~"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"~ */ GOTO 24
+IF ~~ THEN REPLY #4350 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~  Global("EiVene","GLOBAL",1)
+~ THEN BEGIN 15 // from:
+SAY #3458 /* ~Widzisz Ei-Vene. Wciąż jest zajęta rozczłonkowywaniem leżących przed nią zwłok. Rytm, w jakim poruszają się jej szpony, coś ci przypomina, ale nie wiesz co.~ */
+IF ~  Global("42_Secret","GLOBAL",0) ~ THEN REPLY #3459 /* ~Obserwuj ją, zwróć uwagę na ruchy jej dłoni.~ */ DO ~PlaySoundNotRanged("SPTR_01") JOURNAL #61612 /* ~Obraz Ei-Vene preparującej zwłoki z pomocą nożycowych rąk ożywił na chwilę moją pamięć... Przypomniałem sobie samego siebie, wykonującego podobną operację na zwłokach, bardzo, bardzo dawno temu. Pamiętam tylko, że, w odróżnieniu od Ei-Vene, ja "wkładałem" coś do klatki piersiowej zmarłego, a nie opróżniałem jej. Zdaje się, że rzecz tę przeznaczałem na przyszłość, dla samego siebie. Pamiętam, że wtedy, kiedy skrzyżowałem ramionami, trup uczynił to samo. Miał na czerepie wyryty numer "42".~ */ GOTO 16
+IF ~  Global("EiVene_Delivery","GLOBAL",0) ~ THEN REPLY #3463 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 17
+IF ~  Global("EiVene_Delivery","GLOBAL",1) ~ THEN REPLY #4351 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 22
+IF ~~ THEN REPLY #4352 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 15.0
+SAY #3464 /* ~Gdy tak przyglądasz się ruchom dłoni Ei-Vene, czujesz ciarki z tyłu głowy i nagle twoja wizja wiruje, zamazuje się aż...~ */
+IF ~~ THEN DO ~FadeToColor([20.0],0) Wait(3) FadeFromColor([20.0],0) Wait(3) ~ GOTO 26
+END
+
+IF ~~ THEN BEGIN 17 // from: 6.0 15.1 25.0 27.0
+SAY #3468 /* ~Odwraca się, zauważa cię i marszczy brwi. "Głupie zombi." Niecierpliwie klaszcze szponami i robi ruch jakby coś zszywała. "Znajdź nić i płyn do balsamowania, przynieś tutaj, do Ei-Vene. Idź - idź."~ */
+IF ~  PartyHasItem("Embalm") PartyHasItem("Needle") ~ THEN REPLY #3469 /* ~Daj jej nić i płyn do balsamowania.~ */ DO ~TakePartyItemNum("Embalm",1) TakePartyItemNum("Needle",1) SetGlobal("EiVene_Delivery","GLOBAL",1) AddexperienceParty(250) JOURNAL #38202 /* ~Przyniosłem Ei-Vene płyn do balsamowania, igłę oraz nitkę. Nie wydawała się być szczególnie wdzięczna.~ */ GOTO 7
+IF ~  Global("Embalm_Key_Quest","GLOBAL",1) HasItem("KeyEm","EiVene") ~ THEN REPLY #3470 /* ~"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"~ */ DO ~AddexperienceParty(250) SetGlobal("Embalm_Key_Quest","GLOBAL",2) GiveItem("KeyEm",Protagonist) ~ GOTO 18
+IF ~  Global("Embalm_Key_Quest","GLOBAL",1) !HasItem("KeyEm","EiVene") ~ THEN REPLY #3497 /* ~"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"~ */ GOTO 24
+IF ~~ THEN REPLY #4357 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 14.0 17.1 22.0
+SAY #3471 /* ~Pochyla się, patrzy na ruchy twoich dłoni, pociąga nosem. Jej dłoń znika w fałdach togi, po chwili pojawia się z powrotem. Na ostrym jak brzytwa palcu wisi klucz. Strząsa go w twoją dłoń. "Przynieś z powrotem gdy skończysz. Idź - idź."~ */
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #3494 /* ~"Co stało się z twoimi rękami?"~ */ JOURNAL #38203 /* ~Przekonałem Ei-Vene, aby dała mi klucz do sali balsamowania.~ */ GOTO 23
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #3495 /* ~"Co stało się z twoimi rękami?"~ */ JOURNAL #38203 /* ~Przekonałem Ei-Vene, aby dała mi klucz do sali balsamowania.~ */ GOTO 21
+IF ~~ THEN REPLY #3496 /* ~Odejdź.~ */ JOURNAL #38203 /* ~Przekonałem Ei-Vene, aby dała mi klucz do sali balsamowania.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 1.3
+SAY #3472 /* ~Kobieta nie reaguje.~ */
+IF ~~ THEN JOURNAL #38205 /* ~Najwyraźniej, spotkana balsamitka jest "diabelstwem," osobą, w której żyłach płynie biesia krew. Wpływ tej krwi wypacza ciała, a czasami także i umysły. Z tego co mówił Morte wynika, że jest wiele diabelstw dookoła... co sugeruje, że istnieje także znaczna liczba biesów.~ */ EXTERN ~DMORTE~ 56
+END
+
+IF ~~ THEN BEGIN 20 // from: 5.2 5.4
+SAY #3485 /* ~Odwraca się... nie daje po sobie poznać, że cię usłyszała.~ */
+IF ~~ THEN EXTERN ~DMORTE~ 57
+END
+
+IF ~~ THEN BEGIN 21 // from: 18.1
+SAY #3486 /* ~Odwraca się... nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.~ */
+IF ~~ THEN JOURNAL #38205 /* ~Najwyraźniej, spotkana balsamitka jest "diabelstwem," osobą, w której żyłach płynie biesia krew. Wpływ tej krwi wypacza ciała, a czasami także i umysły. Z tego co mówił Morte wynika, że jest wiele diabelstw dookoła... co sugeruje, że istnieje także znaczna liczba biesów.~ */ EXTERN ~DMORTE~ 58
+END
+
+IF ~~ THEN BEGIN 22 // from: 15.2 25.1 27.1
+SAY #3493 /* ~Odwraca się, zauważa cię i marszczy brwi. "Głupie zombi." Niecierpliwie klaszcze szponiastymi palcami, robi ruch jakby coś zszywała. "Ty skończony. Wszystko zszyte. Idź - idź."~ */
+IF ~  Global("Embalm_Key_Quest","GLOBAL",1) HasItem("KeyEm","EiVene") ~ THEN REPLY #3501 /* ~"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"~ */ DO ~AddexperienceParty(250) SetGlobal("Embalm_Key_Quest","GLOBAL",2) GiveItem("KeyEm",Protagonist) ~ GOTO 18
+IF ~  Global("Embalm_Key_Quest","GLOBAL",1) !HasItem("KeyEm","EiVene") ~ THEN REPLY #3502 /* ~"Poczekaj chwilę." (Robisz ręką ruch jakbyś obracał klucz.) "Potrzebuję klucza, masz taki?"~ */ GOTO 24
+IF ~~ THEN REPLY #4358 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 18.0
+SAY #3498 /* ~Odwraca się... nie daje po sobie poznać, że cię usłyszała. Jej słuch musi być tak samo słaby jak jej wzrok.~ */
+IF ~~ THEN REPLY #3499 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 14.1 17.2 22.1
+SAY #4200 /* ~Pochyla się, patrzy na ruchy twoich dłoni, pociąga nosem. Jej dłoń znika w fałdach togi, szpera tam przez chwilę i wzrusza ramionami. "Nie mieć klucz." Robi ruch, jakby chciała coś pokazać. "Idź - idź - idź".~ */
+IF ~~ THEN REPLY #4201 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from:
+SAY #4353 /* ~Przyglądasz jej się przez chwilę, a rytm jej dłoni wywołuje dwa wspomnienia. Pierwsze - gry na jakimś instrumencie strunowym, może na harfie. Drugie o kradzieży sakiewki... ku twemu zdumieniu to wspomnienie wywołuje nagłą pokusę, by dobrać się do kieszeni Ei-Vene.  Uwaga: Odzyskałeś część pamięci. Wspomnienia mogą przynieść ci dodatkowe punkty doświadczenia, umiejętności, a nawet umożliwić dalsze odzyskiwanie pamięci.~ */
+IF ~  Global("EiVene_Delivery","GLOBAL",0) ~ THEN REPLY #4354 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 17
+IF ~  Global("EiVene_Delivery","GLOBAL",1) ~ THEN REPLY #4355 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 22
+IF ~~ THEN REPLY #4356 /* ~Odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 16.0
+SAY #63477 /* ~...stoisz przed świeżymi zwłokami, ich wargi wykrzywia stężenie pośmiertne; na głowie wydrapany został numer '42'. Zombi leży na płycie, a ty właśnie skończyłeś zszywać jego klatkę piersiową. Włożyłeś coś do środka, coś, co może okazać się przydatne, gdybyś jeszcze tędy przechodził...~ */
+IF ~  Global("42_Secret","GLOBAL",0) ~ THEN REPLY #63478 /* ~Echo: "Pilnuj tych rzeczy i poczekaj, aż wrócę."~ */ DO ~GiveExperience(Protagonist,250) SetGlobal("42_Secret","GLOBAL",1) ~ GOTO 27
+IF ~  Global("42_Secret","GLOBAL",1) ~ THEN REPLY #63479 /* ~Echo: "Pilnuj tych rzeczy i poczekaj, aż wrócę."~ */ GOTO 27
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.0 26.1
+SAY #63480 /* ~Wspomnienie głosu to dziwne puste echo w twych uszach. Krzyżujesz ramiona na piersiach i ku twemu zdumieniu zwłoki robią to samo. Po chwili jego ręce opadają z powrotem i wizja znika... do czasu, gdy jeszcze raz obserwujesz jak Ei-Vene robi ruchy jakby coś zszywała.~ */
+IF ~  Global("EiVene_Delivery","GLOBAL",0) ~ THEN REPLY #63482 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 17
+IF ~  Global("EiVene_Delivery","GLOBAL",1) ~ THEN REPLY #63481 /* ~Klepnij ją w ramię, ściągnij jej uwagę.~ */ GOTO 22
+IF ~~ THEN REPLY #63483 /* ~Odejdź.~ */ EXIT
+END

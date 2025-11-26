@@ -1,0 +1,69 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ257.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ257~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #6507 /* ~Oczy tego truposza są osadzone blisko siebie, natomiast same gałki oczne są nieco krzywe: jedna spogląda w lewo, druga w prawo. Ledwie możesz odczytać numer "257" nakreślony na jego czole - wygląda na to, że truposz otrzymał kilkanaście uderzeń w głowę, przez co jego numer jest tak trudno czytelny.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6510 /* ~"Czy nie kręci ci się w głowie od tego rozbieżnego patrzenia?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6511 /* ~"Czy nie kręci ci się w głowie od tego rozbieżnego patrzenia?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6512 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6513 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+  IF ~~ THEN REPLY #6514 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~~ THEN REPLY #6515 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6508 /* ~W oczach trupa nie ma nawet iskierki zrozumienia; wpatrują się nieruchomo w lewo i prawo.~ */
+  IF ~~ THEN REPLY #6516 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6509 /* ~Dusza wkracza z powrotem w ciało z taką gwałtownością, że jeden wielki skurcz mięśni odrzuca ciało w tył! W mgnieniu oka jednak ciało staje na nogi, tańcząc i rzucając się szaleńczo, machając rękami i zrywając szwy, a w miarę jak truposz skacze w przód i w tył, kawałki porwanego ciała fruwają dookoła. Trup wybałusza oczy, przewraca nimi i chichocze cały czas niczym szaleniec...~ */
+  IF ~~ THEN REPLY #6517 /* ~"Ee... Mam dla ciebie pytanie, duchu..."~ */ GOTO 3
+  IF ~~ THEN REPLY #9558 /* ~Zostaw ducha w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #9553 /* ~Opętany truposz śpiewa w miarę jak skacze i wije się dookoła. Głośność i wysokość jego głosu wznoszą się i opadają, poddane przypadkowemu rytmowi. "TY jesteś DUCH JA ŻYWY odpowiesz na moje pytania TY!" Twój zmieszany wyraz twarzy zdaje się sprawiać mu przyjemność; zahacza swoje kościste palce o wargi i rozszerza je w upiornym uśmiechu. Śmieje się niczym szaleniec i wywija swym upiornie bladym jęzorem.~ */
+  IF ~~ THEN REPLY #9559 /* ~"Doskonale... pytaj."~ */ GOTO 4
+  IF ~~ THEN REPLY #9560 /* ~"Nie. Ja pragnę zadać *tobie* pytanie..."~ */ GOTO 5
+  IF ~~ THEN REPLY #9561 /* ~Zostaw ducha w bezładzie.~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 4.0 5.0
+  SAY #9554 /* ~Wydaje się, że duch uspokoił się na chwilę, ale znów wybucha stekiem głośnych, porażających umysł, bełkotliwych bredni. Kakofonia przyprawia niemal o szaleństwo i może rzucić cię na kolana. Tak nagle, jak się rozpoczęła... tak szybko zamiera. Truposz stoi, drżąc cichutko.~ */
+  IF ~~ THEN REPLY #9562 /* ~"Nie do końca zrozumiałem. Czy mógłbyś mi to powtórzyć?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Zom257_1","GLOBALLaw",-1)
+~ GOTO 4
+  IF ~~ THEN REPLY #9563 /* ~"Nie rozumiem. Mam jednakowoż pytanie..."~ */ GOTO 5
+  IF ~~ THEN REPLY #9564 /* ~"Nie rozumiem cię. Żegnaj."~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 5 // from: 3.1 4.1 5.1
+  SAY #9555 /* ~Duch ponownie śpiewa: "Na pytania ŻYWYCH odpowiedzą UMARLI; TAK było, TAK jest, i TAK będzie. Ty moje ODPOWIESZ pytania na!" Wyraz twojej twarzy wydaje sprawiać mu dziką rozkosz; rozpoczyna tak szaleńcze baraszkowanie, że zaczynasz się zastanawiać, czy truposz może to wytrzymać. Prawie że słyszysz trzask i pękanie jego kości oraz łamanie ścięgien, kiedy tak wije się i rzuca dookoła.~ */
+  IF ~~ THEN REPLY #9565 /* ~"W porządku... pytaj."~ */ GOTO 4
+  IF ~~ THEN REPLY #9566 /* ~"Nie rozumiesz. To ja mam pytanie do *ciebie*..."~ */ GOTO 5
+  IF ~~ THEN REPLY #9567 /* ~Zrezygnuj i zostaw paplającego ducha samemu sobie.~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2 4.2 5.2
+  SAY #9556 /* ~Gdy dusza ulatuje z ciała, jego paplające usta wykrzywiają się w porozumiewawczy uśmiech. Jego dzikie, błyszczące oczy przewiercają cię na wylot niczym spojrzenie psychopaty. Truposz szepce jedno, uważnie wypowiadane słowo, przeciągając je niczym sznur cennych pereł: "Limbo..."~ */
+  IF ~~ THEN REPLY #9568 /* ~"Co?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9569 /* ~Zignoruj to i odwróć się.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+  SAY #9557 /* ~...i odchodzi, zostawiając cię w nie lepszym położeniu i samopoczuciu. Zombiak cicho wraca do pracy.~ */
+  IF ~~ THEN EXIT
+END

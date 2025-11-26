@@ -1,0 +1,105 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DN1201.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DN1201~
+
+IF ~  True()
+~ THEN BEGIN 0 // from: 1.6 3.0
+  SAY #44993 /* ~Na zapáchající poznámce je pod textem nakreslen podivný diagram. Jako by tě vyzýval, ať složíš růžky papíru tak, aby se dotýkaly středu. Na každém rohu je nějaká značka - jedna na horním pravém, dvě značky na dolním pravém, tři na dolním levém a na horním levém není žádná.~ */
+  IF ~~ THEN REPLY #44994 /* ~Založ pravý horní roh do středu.~ */ DO ~SetGlobal("UR_1201","GLOBAL",1)
+SetGlobal("1201_Note","GLOBAL",1)
+~ GOTO 1
+  IF ~~ THEN REPLY #44995 /* ~Založ pravý dolní roh do středu.~ */ DO ~SetGlobal("LR_1201","GLOBAL",1)
+~ GOTO 1
+  IF ~~ THEN REPLY #44996 /* ~Založ levý dolní roh do středu.~ */ DO ~SetGlobal("LL_1201","GLOBAL",1)
+~ GOTO 1
+  IF ~~ THEN REPLY #44997 /* ~Založ levý horní roh do středu.~ */ DO ~SetGlobal("UL_1201","GLOBAL",1)
+~ GOTO 1
+  IF ~~ THEN REPLY #44998 /* ~Nechej poznámku být.~ */ DO ~SetGlobal("UR_1201","GLOBAL",0)
+SetGlobal("LR_1201","GLOBAL",0)
+SetGlobal("LL_1201","GLOBAL",0)
+SetGlobal("UL_1201","GLOBAL",0)
+SetGlobal("1201_Note","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3 1.0 1.1 1.2 1.3 1.4
+  SAY #44999 /* ~Založil jsi roh tak, že se špička dotýká středu.~ */
+  IF ~  Global("UR_1201","GLOBAL",0)
+~ THEN REPLY #45000 /* ~Založ pravý horní roh do středu.~ */ DO ~SetGlobal("UR_1201","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("LR_1201","GLOBAL",0)
+Global("1201_Note","GLOBAL",1)
+~ THEN REPLY #45001 /* ~Založ pravý dolní roh do středu.~ */ DO ~SetGlobal("1201_Note","GLOBAL",2)
+SetGlobal("LR_1201","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("LR_1201","GLOBAL",0)
+!Global("1201_Note","GLOBAL",1)
+~ THEN REPLY #45002 /* ~Založ pravý dolní roh do středu.~ */ DO ~SetGlobal("LR_1201","GLOBAL",1)
+SetGlobal("1201_Note","GLOBAL",0)
+~ GOTO 1
+  IF ~  Global("LL_1201","GLOBAL",0)
+~ THEN REPLY #45003 /* ~Založ levý dolní roh do středu.~ */ DO ~SetGlobal("LL_1201","GLOBAL",1)
+SetGlobal("1201_Note","GLOBAL",0)
+~ GOTO 1
+  IF ~  Global("UL_1201","GLOBAL",0)
+!Global("1201_Note","GLOBAL",2)
+~ THEN REPLY #45004 /* ~Založ levý horní roh do středu.~ */ DO ~SetGlobal("UL_1201","GLOBAL",1)
+SetGlobal("1201_Note","GLOBAL",0)
+~ GOTO 1
+  IF ~  Global("UL_1201","GLOBAL",0)
+Global("1201_Note","GLOBAL",2)
+~ THEN REPLY #45005 /* ~Založ levý horní roh do středu.~ */ GOTO 2
+  IF ~~ THEN REPLY #45006 /* ~Rozbal papírek a začni od začátku.~ */ DO ~SetGlobal("UR_1201","GLOBAL",0)
+SetGlobal("LR_1201","GLOBAL",0)
+SetGlobal("LL_1201","GLOBAL",0)
+SetGlobal("UL_1201","GLOBAL",0)
+SetGlobal("1201_Note","GLOBAL",0)
+~ GOTO 0
+  IF ~~ THEN REPLY #45008 /* ~Rozbal papírek a nechej ho být.~ */ DO ~SetGlobal("UR_1201","GLOBAL",0)
+SetGlobal("LR_1201","GLOBAL",0)
+SetGlobal("LL_1201","GLOBAL",0)
+SetGlobal("UL_1201","GLOBAL",0)
+SetGlobal("1201_Note","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.5
+  SAY #45015 /* ~Jak jsi založil horní levý růže do prostřed papíru, všiml sis, jak se sám od sebe rozbalil pravý horní roh.~ */
+  IF ~~ THEN REPLY #45016 /* ~Založ horní pravý růžek do středu.~ */ GOTO 4
+  IF ~~ THEN REPLY #45017 /* ~Založ dolní levý růžek.~ */ DO ~SetGlobal("UR_1201","GLOBAL",0)
+SetGlobal("LR_1201","GLOBAL",0)
+SetGlobal("LL_1201","GLOBAL",0)
+SetGlobal("UL_1201","GLOBAL",0)
+SetGlobal("1201_Note","GLOBAL",0)
+~ GOTO 3
+  IF ~~ THEN REPLY #45018 /* ~Rozbal papírek a nechej ho být.~ */ DO ~SetGlobal("UR_1201","GLOBAL",0)
+SetGlobal("LR_1201","GLOBAL",0)
+SetGlobal("LL_1201","GLOBAL",0)
+SetGlobal("UL_1201","GLOBAL",0)
+SetGlobal("1201_Note","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.1
+  SAY #45019 /* ~Když jsi založil dolní levý růžek, chvíli tak zůstal a pak se druhé dva růžky rozbalily. Nic se nestalo.~ */
+  IF ~~ THEN REPLY #45020 /* ~Znovu prozkoumej papírek.~ */ GOTO 0
+  IF ~~ THEN REPLY #45021 /* ~Odlož poznámku. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 2.0
+  SAY #45022 /* ~Jak jsi založil horní pravý růžek zpátky do středu, pohnul se i levý dolní růžek, a tak se všechny rohy dotýkají středu. Po chvíli se začal papír zvedat a změnil se na malou čtyřstěnnou pyramidu. ~ */
+  IF ~~ THEN REPLY #45023 /* ~Otevři pyramidu-~ */ DO ~AddexperienceParty(250)
+~ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #45024 /* ~Rozevřel jsi stěny pyramidy a papír se rozpadl na prach. Uvnitř je malá náušnice trojúhelníkovitého tvaru. Odráží světlo a vrhá kolem třpytivé paprsky.~ */
+  IF ~~ THEN REPLY #45025 /* ~Vezmi si náušnici...~ */ DO ~GiveItemCreate("TEarring",Protagonist,3,0,0)
+DestroyPartyItem("N1201",TRUE)
+~ EXIT
+END

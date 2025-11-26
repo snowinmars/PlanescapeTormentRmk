@@ -1,0 +1,26 @@
+IF ~  NearbyDialog("Dmorte")
+~ THEN BEGIN 0 // from:
+SAY #34920 /* ~Tato mrtvola se belhá kolem po trojúhelníkové dráze. Jakmile dojde do rohu trojúhelníku, zarazí se, pak se otočí a jde do dalšího rohu. Na straně lebky má vytetováno číslo "965". Když se přiblížíš, zastaví se a zírá na tebe.~ */
+IF ~~ THEN EXTERN ~DMORTE~ 477
+END
+
+IF ~  !NearbyDialog("Dmorte")
+~ THEN BEGIN 1 // from:
+SAY #34922 /* ~Tato mrtvola se belhá kolem po trojúhelníkové dráze. Jakmile dojde do rohu trojúhelníku, zarazí se, pak se otočí a jde do dalšího rohu. Na straně lebky má vytetováno číslo "965". Když se přiblížíš, zastaví se a zírá na tebe.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #34923 /* ~"Hele... proč chodíš v trojúhelníku?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 2
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45070 /* ~"Hele... proč vlastně chodíš do trojúhelníku?"~ */ GOTO 2
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45071 /* ~"Hele, já vím, že nejsi zombie. Nikoho neoblbneš."~ */ GOTO 2
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45072 /* ~Použij na mrtvolu schopnost Kosti-vyprávějte.~ */ GOTO 3
+IF ~~ THEN REPLY #45073 /* ~"Skvěle jsme si pokecali. Sbohem."~ */ EXIT
+IF ~~ THEN REPLY #45074 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 1.2
+SAY #34927 /* ~Mrtvola na tebe prázdně zírá.~ */
+IF ~~ THEN REPLY #34928 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.3
+SAY #45069 /* ~Mrtvola se nepohnula. Asi už moc uhnila, anebo nemá náladu na povídání.~ */
+IF ~~ THEN REPLY #45075 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END

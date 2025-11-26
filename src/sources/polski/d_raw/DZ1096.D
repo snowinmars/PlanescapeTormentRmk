@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ1096.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ1096~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35082 /* ~Ten trup kobiety porusza się po pokoju od płyty do płyty. Włosy ma zaplecione w długi warkocz i zaplecione w pętlę wokół szyi. Ktoś wymalował jej na czole przez szablon numer "1096" i zaszył mocno wargi.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #35083 /* ~"Ehm... ładny warkocz."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #35100 /* ~"Ehm... ładny warkocz."~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #35101 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35102 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35107 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXTERN ~DMORTE~ 342
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35108 /* ~Zostaw truposza w spokoju.~ */ EXTERN ~DMORTE~ 342
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35109 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35110 /* ~Zostaw truposza w spokoju.~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35111 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35112 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #35084 /* ~Trup nie odpowiada. Wątpliwe, czy w ogóle wie, że tu jesteś.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35085 /* ~"A zatem żegnaj."~ */ EXTERN ~DMORTE~ 342
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35098 /* ~"A zatem żegnaj."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35099 /* ~"A zatem żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #35103 /* ~Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+  IF ~  InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35104 /* ~"A zatem żegnaj."~ */ EXTERN ~DMORTE~ 342
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35105 /* ~"A zatem żegnaj."~ */ EXIT
+  IF ~  !InParty("Morte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35106 /* ~"A zatem żegnaj."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #35113 /* ~Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+END

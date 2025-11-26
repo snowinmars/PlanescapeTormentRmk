@@ -1,0 +1,164 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZ1146.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZ1146~
+
+IF ~  Global("Crispy","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #6518 /* ~Do čela této chodící mrtvoly je vyřezáno číslo "1146", rty má sešity obyčejnou černou nití. Celé tělo je pokryto hroznými jizvami - snad dokonce horšími než jsou tvé vlastní - jako kdyby jeho vlastník byl upálen. Nos, uši a některé prsty zombii chybí, pravděpodobně shořely při nějakém dávném požáru. Když jí zablokuješ cestu, abys upoutal její 'pozornost,' zastaví se a zírá na tebe prázdnýma očima.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6521 /* ~"Tak... je tam dál vidět něco zajímavého?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6522 /* ~"Tak... je tam dál vidět něco zajímavého?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6523 /* ~"Vím, že nejsi zombie, jasný? Mě neoklameš."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6524 /* ~Použij svoji schopnost Kosti vyprávějte na mrtvolu.~ */ DO ~SetGlobal("Crispy","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #6525 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #6526 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6519 /* ~Mrtvola na tebe stále zírá.~ */
+  IF ~~ THEN REPLY #6527 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6520 /* ~Když se duch vrátil do svého někdejšího příbytku, zaplavil tvé smysly zápach dýmající síry, spálených chlupů a vařící krve. Mrtvola se téměř okamžitě zhroutila na podlahu, prudce se chvěje a uboze sténá. Téměř vidíš slabý proužek páchnoucího kouře vycházejícího z jejího těla a údů.~ */
+  IF ~~ THEN REPLY #6528 /* ~"Jsi... v pořádku?"~ */ GOTO 3
+  IF ~~ THEN REPLY #9413 /* ~"Měl bych pro tebe pár otázek..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9414 /* ~Opusť hořící duši.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #9398 /* ~Duch otevřel jedno oko. Oční bělmo přímo září v porovnání se šedí zvrásněného masa, které ho obklopuje. Pomalu otočil svou hlavu a zírá ne tebe; roztrhané a rozervané maso na hlavě i krku má pevně napnuto na kosti. Konečně se z jeho sešlého hrdla vydralo: "Ne. Ne... já ne, ty... pitomej... vylízanče."~ */
+  IF ~~ THEN REPLY #9415 /* ~"Můžu ti nějak pomoci?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Crispy_1","GLOBALGood",1)
+~ GOTO 4
+  IF ~~ THEN REPLY #9416 /* ~"Mám pár otázek..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9417 /* ~"Tak to má být, ty jedna smrdutá ohořelá trosko; takovýhle osud si zasloužíš. Sbohem."~ */ GOTO 6
+  IF ~~ THEN REPLY #9418 /* ~Opusť utrápenou duši.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #9399 /* ~"HA, hA-HURG!" Duch se hlasitě zasmál, když tu náhle ztichl, začal se svíjet v křečích a vyzvracel na zem směsici balzamovací tekutiny s hnilobou. Stále ještě zkroucen bolestí začal chrchlavě kašlat, přičemž chvílemi přestal, aby mohl ze svých zničených rtů vypravit další várku nažloutlé tekutiny a rozervaných stehů.~ */
+  IF ~~ THEN REPLY #9419 /* ~Trpělivě vyčkej, než záchvat skončí.~ */ GOTO 5
+  IF ~~ THEN REPLY #9421 /* ~"Ještě bych se chtěl na něco zeptat..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9422 /* ~Zanechej utrápenou duši v jejích mukách.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #9400 /* ~Duchovo příšerné kašlání konečně ustalo. "Ne, blbče... nemůžeš. Leda bys... leda bys odtancoval přímo do Baatoru a zachránil mě tam. Tam sem... sem oslep. Je čas k mýmu... mýmu pokání." Opět zavřel své oči a položil hlavu na zem.~ */
+  IF ~~ THEN REPLY #9423 /* ~"Ještě bych se chtěl na něco zeptat..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9424 /* ~"Dobrá. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2 17.0
+  SAY #9401 /* ~Duch se sebe vypravil chrchlavý zvuk, jeho zčernalé seschlé rty odhalily křivé žluté zuby. "Jen... jen počkej, než se dostanu... z tý díry... Pro tebe... si přídu jako pro prvního, blbče..."~ */
+  IF ~~ THEN REPLY #9425 /* ~"To klidně udělej. Nebojím se někoho, jako jsi ty."~ */ GOTO 7
+  IF ~~ THEN REPLY #9426 /* ~Kopni ho.~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Crispy_1","GLOBALGood",-1)
+IncrementGlobalOnceEx("GLOBALChaotic_Crispy_1","GLOBALLaw",-1)
+~ GOTO 8
+  IF ~~ THEN REPLY #9427 /* ~Ignoruj trosku, otoč se a odejdi.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+  SAY #9402 /* ~Duch slabě, ale nevrle zavrčel a plivl na tebe -- jeho špinavé sliny tě ale o pár stop minuly. Vyčerpaně sebou třískl na zem a z jeho těla opět začal vyprchávat všechen život.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.1
+  SAY #9403 /* ~Pohotově jsi mrtvolu nakopl do ledvin, ale patrně bez jakéhokoliv efektu; duch se zdá být nezraněný. "Ha, ha-ha," zachrčelo stvoření těsně předtím, než opustilo tělo. Takže tu teď jen tak stojíš s jistým pocitem neuspokojenosti.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 2.1 3.1 4.1 5.0 10.0 11.0 12.1 13.1 14.1 15.0 16.0 17.1 18.1 19.0 20.0
+  SAY #9404 /* ~"Tak... tak co bys ode mě teda potřeboval, blbečku?" Chvílemi se tělo opět zkroutí a hází sebou na zemi, jako by se pokoušelo uhasit malé ohníčky na vlastním těle.~ */
+  IF ~~ THEN REPLY #9428 /* ~"Kdo jsi?"~ */ GOTO 10
+  IF ~~ THEN REPLY #9429 /* ~"Odkud pocházíš?"~ */ GOTO 11
+  IF ~~ THEN REPLY #9430 /* ~"Jak ses sem dostal? Teda myslím tvoje tělo?"~ */ GOTO 12
+  IF ~~ THEN REPLY #9431 /* ~"Kde jsi... kde tvá duše spočívá... teď?"~ */ GOTO 13
+  IF ~~ THEN REPLY #9432 /* ~"Čím sis zasloužil takováto muka?"~ */ GOTO 14
+  IF ~~ THEN REPLY #9433 /* ~"Co všechno víš o tomto místě?"~ */ GOTO 15
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #9434 /* ~"Neznáš náhodou někoho jménem Pharod?"~ */ GOTO 16
+  IF ~~ THEN REPLY #9435 /* ~"Vlastně nic, zapomeň na to."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+  SAY #9405 /* ~"To neni tvoje starost... nech mě... bejt..."~ */
+  IF ~~ THEN REPLY #9436 /* ~"Ne. Mám ještě další otázku..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9437 /* ~"Tak tedy sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.1
+  SAY #9406 /* ~"Eh? Pro lásku mocnejch, kdo... se ptá? Ze Sigilu, ty... ty jedno hovado."~ */
+  IF ~~ THEN REPLY #9438 /* ~"Mám ještě další otázku..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9439 /* ~"Tak to by bylo prozatím vše. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.2
+  SAY #9407 /* ~"Sakra, přemejšlej trochu, idiote." Toto vybuchnutí přivedlo ducha až k dalšímu bolestivému záchvatu přerývaného kašle. "Takhle sem se proklel kvůli... pitomý hrstce prachů. Pitomý Spalovači... a ta jejich pravá smrt - PRAVÁ SMRT, taková hovadina - navíc se ňákej střelenej čaroděj rozhod usmažit Úl a zrovna já sem musel stát uprostřed toho ohnivýho pekla!" Začal si sám pro sebe zlostně pobroukávat, zatímco mu pochybná tekutina odkapává z mnoha puklin ve rtech.~ */
+  IF ~~ THEN REPLY #9440 /* ~"Nějaký čaroděj chtěl usmažit Úl?"~ */ GOTO 18
+  IF ~~ THEN REPLY #9441 /* ~"Mám ještě další otázku..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9465 /* ~"Tak to by bylo prozatím vše. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+  SAY #9408 /* ~"Kde asi... kde myslíš, hovado boží? Kde jinde než v Baatoru, v tý jedný smradlavý díře, kerý říkaj Phlegethos. Hořim, hořim... hořim... a nic jinýho tam nedělám. Uhořel sem za života a teď si hořim za smrti. Aaarrgh!" Mrtvola začala skřípat zubama - je to ke zbláznění. "Takovej hnusnej osud! Až se vodtaď dostanu, vynasnažim se dostat tam spoustu dalších nebožáků. Ha, ha-ha..."~ */
+  IF ~~ THEN REPLY #9442 /* ~"Proč si chceš svou zlost vylívat na jiných?"~ */ GOTO 17
+  IF ~~ THEN REPLY #9443 /* ~"Mám ještě další otázku..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9444 /* ~"Tak to by bylo prozatím vše. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 9.4
+  SAY #9409 /* ~"Zasloužil? TOHLE? Ničim! Já... jsem vážně nic neproved. Sem se jen tak procházel po ulici... jako každej normální člověk... a pak najednou 'vvmmmmžžžž!' Ňákej cvoklej kouzelníček začal pálit Úl!"~ */
+  IF ~~ THEN REPLY #9445 /* ~"Kouzelník... začal pálit... Úl?"~ */ GOTO 18
+  IF ~~ THEN REPLY #9446 /* ~"Aha. Chtěl bych se zeptat ještě na něco..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9745 /* ~"To je vše, co jsem chtěl vědět. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.5
+  SAY #9410 /* ~"Nic. Povidám nic, blbečku. Prostě... prostě mě nech, ať si v klidu hořim..."~ */
+  IF ~~ THEN REPLY #9447 /* ~"Fajn. Měl bych pro tebe ještě další otázečku..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9448 /* ~"Tak tedy sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 9.6
+  SAY #9411 /* ~"Koho? Co? NE! Jaks... jaks přišel na to, že ho znám... hovado jedno nedomrlý? Hmph..."~ */
+  IF ~~ THEN REPLY #9449 /* ~"Fajn. Měl bych pro tebe ještě další otázečku..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9450 /* ~"Tak to by bylo prozatím vše. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 13.0
+  SAY #9412 /* ~"Říká se tomu pomsta, vylízanče! Dostanu... dostanu tam všechny, co mě kdy rozzlobili. A hlavně toho čaroděje! Rozsekám ho na mrňavý kousíčky a ty mu potom narvu do držky! A pak ho zatáhnu do týhle zatracený díry - všechny ty kousíčky a potom nějaký další! Jeho a pár dalších... jen tak do počtu! Ha, ha-ha..."~ */
+  IF ~~ THEN REPLY #9420 /* ~"Nezávidím ti to, ale tvůj osud se zdá být zasloužený."~ */ GOTO 6
+  IF ~~ THEN REPLY #9451 /* ~"Aha. Chtěl bych se zeptat ještě na něco..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9452 /* ~"Tak to by bylo prozatím vše. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 12.0 14.0
+  SAY #9458 /* ~"Jo, Úl... tu nejhorší část Sigilu. V celym svym životě sem nikdy neviděl tolik vohně... zdrhal sem pryč, chtěl sem vocaď vypadnout, ale všechno bylo v jednom plameni! Baráky, ulice, lidi i jejich děti... a ten zpropadenej mág se celou tu dobu jenom chechtal! Pak sem uhnul za roh a myslel sem, že už je to za mnou, jenže ta příští věc, co sem si uvědomil byla, že mi hoří hlava! No a pak... už to se mnou šlo hezky rychle z kopce..." Duchovi oči září zlomyslným světlem.~ */
+  IF ~~ THEN REPLY #9459 /* ~"Co to bylo za mága?"~ */ GOTO 19
+  IF ~~ THEN REPLY #9464 /* ~"Aha. Měl bych pro tebe ještě pár otázek..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9746 /* ~"To je vše, co jsem chtěl vědět. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 18.0
+  SAY #9744 /* ~"Nevím. Byl jsem už docela propečenej, než ho kdosi zastavil, pokaď ho vůbec někdo zastavil. Pamatuju si, jak ho ňácí lidi ze začátku honili a řvali na něj jménem... ééé... jo! Ignis, myslím, že tak nějak. Ignis. Nebo něco podobnýho. Doufám, že je ten parchant v horší díře, než já!"~ */
+  IF ~~ THEN REPLY #9747 /* ~"Aha. Mám pro tebe víc otázek..."~ */ GOTO 9
+  IF ~~ THEN REPLY #9748 /* ~"To je vše, co jsem chtěl vědět. Sbohem."~ */ EXIT
+END
+
+IF ~  Global("Crispy","GLOBAL",1)
+~ THEN BEGIN 20 // from:
+  SAY #20099 /* ~"Zase?!"~ */
+  IF ~~ THEN REPLY #20100 /* ~"Mám pár otázek..."~ */ GOTO 9
+  IF ~~ THEN REPLY #20101 /* ~"Nic, jenom procházím. Sbohem."~ */ EXIT
+END

@@ -1,0 +1,20 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #6584 /* ~La tête légèrement difforme de ce cadavre semble être maintenue grâce à des bandes de métal étroites boulonnées directement sur le crâne. Une plaque de fer rouillée placée sur son œil gauche porte le numéro '475'. Ses lèvres sont cousues, et il empeste la lotion d'embaumement.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #6587 /* ~"Alors… Tu as vu quelque chose d'intéressant ?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #6588 /* ~"Alors… Tu as vu quelque chose d'intéressant ?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #6589 /* ~"Je sais que tu n'es pas un zombi, tu sais. Personne n'est dupe."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #6590 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+IF ~~ THEN REPLY #6591 /* ~"Ça m'a fait plaisir de parler avec toi. Au revoir."~ */ EXIT
+IF ~~ THEN REPLY #6592 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #6585 /* ~Le cadavre continue à te fixer.~ */
+IF ~~ THEN REPLY #6593 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #6586 /* ~Le cadavre ne répond pas. Il semble qu'il soit trop absent pour répondre à tes questions.~ */
+IF ~~ THEN REPLY #6594 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END

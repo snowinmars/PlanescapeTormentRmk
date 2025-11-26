@@ -1,0 +1,92 @@
+IF ~  !HasItem("DRemind","S863")
+~ THEN BEGIN 0 // from: 10.0
+SAY #35537 /* ~Dieses Skelett sieht aus, als hätte es turbulente Zeiten erlebt, entweder im Kampf oder beim Herunterfallen einer Treppe zu viel. Beide Arme und Beine sind gebrochen und mit Hilfe von Lederbändern und dünnen Eisenstangen wieder zusammengeflickt. Auf der Stirn trägt das Skelett die Zahl "863"... aber am Hinterkopf ist der Schädel eingedrückt und bildet eine leere Höhle.~ */
+IF ~  Global("Skeleton_Chaotic","GLOBAL",0) ~ THEN REPLY #35538 /* ~"Tut mir leid, daß ich mir das Pergament genommen habe, habe ich glaube kaum, daß du es in nächster Zeit abgeliefert hättest."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Skeleton_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",1) ~ THEN REPLY #35561 /* ~"Tut mir leid, daß ich mir das Pergament genommen habe, habe ich glaube kaum, daß du es in nächster Zeit abgeliefert hättest."~ */ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",0) ~ THEN REPLY #35562 /* ~"Ich muß das fragen: Hast du dir die Knochen im Kampf gebrochen, oder weil du irgendwo runtergefallen bist?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Skeleton_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",1) ~ THEN REPLY #35563 /* ~"Ich muß das fragen: Hast du dir die Knochen im Kampf gebrochen, oder weil du irgendwo runtergefallen bist?"~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #35564 /* ~Wende deine Erzählende-Knochen-Kraft auf das Skelett an.~ */ GOTO 2
+IF ~~ THEN REPLY #35569 /* ~Untersuche das Skelett gründlich.~ */ DO ~SetGlobal("Skeleton_Examine","GLOBAL",1) ~ GOTO 3
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",0) ~ THEN REPLY #35602 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ EXTERN ~DMORTE~ 400
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35603 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ GOTO 4
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35604 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ GOTO 5
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) PartyHasItem("Prybar") ~ THEN REPLY #35605 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ GOTO 6
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35606 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35607 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ GOTO 5
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) PartyHasItem("Prybar") ~ THEN REPLY #35608 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35609 /* ~"Was ist mit diesem Skelett, Morte? Ist es als Körper zu gebrauchen?"~ */ EXTERN ~DMORTE~ 396
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35610 /* ~Laß das Skelett in Ruhe.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35611 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35612 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+SAY #35539 /* ~Das Skelett reagiert nicht.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35540 /* ~"War nett, mit dir zu reden, Gerippe. Bleib gesund."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35559 /* ~"War nett, mit dir zu reden, Gerippe. Bleib gesund."~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35560 /* ~"War nett, mit dir zu reden, Gerippe. Bleib gesund."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+SAY #35565 /* ~Dieses Skelett antwortet nicht. Es sieht so aus, als ob es schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35566 /* ~Laß das Skelett in Ruhe.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35567 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35568 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+SAY #35570 /* ~Irgendwer hat sich die Mühe gemacht, die Knochen dieses Skeletts mit Lederbändern zu umwickeln. Sie sind so um das Gestell gewickelt, daß sie wie Muskeln und Sehnen aussehen. Die Bänder sind mit Metallbolzen an den Gelenken des Skeletts befestigt. Das Skelett sieht aus, als ob es eine harte Zeit hinter sich hätte: An vielen Stellen sind Teile der Knochen abgesprungen, und die zahlreichen Brüche sind mit Dichtungsmittel und stinkenden Klebstoffen repariert worden.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",0) ~ THEN REPLY #35571 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ EXTERN ~DMORTE~ 400
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35593 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ GOTO 4
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35594 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ GOTO 5
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) PartyHasItem("Prybar") ~ THEN REPLY #35595 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ GOTO 6
+IF ~  !NearbyDialog("DMorte") !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35596 /* ~"Was dagegen, wenn ich mir 'n paar von diesen Bändern und Bolzen borge?"~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35597 /* ~"Was dagegen, wenn ich mir 'n paar von diesen Bändern und Bolzen borge?"~ */ GOTO 5
+IF ~  !NearbyDialog("DMorte") PartyHasItem("Prybar") ~ THEN REPLY #35598 /* ~"Was dagegen, wenn ich mir 'n paar von diesen Bändern und Bolzen borge?"~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35599 /* ~Laß das Skelett in Ruhe.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35600 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35601 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.7 0.10 3.1 3.4
+SAY #35576 /* ~Du ziehst an den Eisenbolzen, aber du bist nicht stark genug, sie herauszuziehen. Sie sitzen bombenfest.~ */
+IF ~  CheckStatGT(Protagonist,12,INT) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35577 /* ~"Wenn ich das richtige Werkzeug hätte, würd ich sie vielleicht rauskriegen... hmmmn. Vielleicht komm ich wieder, Knochengestell."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  CheckStatGT(Protagonist,12,INT) !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35578 /* ~"Wenn ich das richtige Werkzeug hätte, würd ich sie vielleicht rauskriegen... hmmmn. Vielleicht komm ich wieder, Knochengestell."~ */ EXIT
+IF ~  CheckStatGT(Protagonist,12,INT) Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35579 /* ~"Wenn ich das richtige Werkzeug hätte, würd ich sie vielleicht rauskriegen... hmmmn. Vielleicht komm ich wieder, Knochengestell."~ */ EXIT
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35580 /* ~Laß das Skelett in Ruhe.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35581 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35582 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.8 0.11 3.2 3.5
+SAY #35584 /* ~Du ziehst mit aller Kraft an den Eisenbolzen, und nach kurzer Zeit heftigen Ziehens reißt du sie aus den Gelenken. Das Skelett fällt in sich zusammen; einige Knochen zucken noch.~ */
+IF ~~ THEN REPLY #35585 /* ~"Tut mir echt leid, Gerippe..."~ */ DO ~Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.9 0.12 3.3 3.6
+SAY #35587 /* ~Mit Hilfe deines Brecheisens reißt du die Bolzen aus den Gelenken des Skeletts. Das Skelett fällt zusammen; einige Knochen zucken noch.~ */
+IF ~~ THEN REPLY #35588 /* ~"Tut mir leid, Knochengestell..."~ */ DO ~Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0) ~ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 7 // from:
+SAY #35613 /* ~Dieses Skelett reagiert nicht. Es scheint schon zu weit hinüber zu sein, um irgendeine deiner Fragen beantworten zu können.~ */
+END
+
+IF ~  HasItem("DRemind","S863")
+~ THEN BEGIN 8 // from:
+SAY #64262 /* ~Das Skelett hat entweder eine Menge Kämpfe hinter sich oder ist ein paar Treppen zuviel hinuntergefallen.. Seine Arme und Beine sind beide gebrochen und wurden mit Hilfe von Lederriemen und Stangen zusammengeflickt. Auf der Vorderseite seines Schädels steht die Nummer "863"... aber die Rückseite des Schädels ist nach innen gewölbt und bildet eine leere Höhle. Du stellst fest, daß das jemand ausgenutzt hat und ein zusammengerolltes Stück Pergament in den Schädel gesteckt hat.~ */
+IF ~~ THEN REPLY #64263 /* ~Nimm das Pergament aus dem Schädel des Skeletts.~ */ GOTO 9
+IF ~~ THEN REPLY #64264 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+SAY #64265 /* ~Du ziehst das Pergament aus dem Schädel des Arbeiters - seltsamerweise sieht es so aus, als wäre der Schädel dazu *bestimmt,* Nachrichten aufzubewahren. Ein dünner Faden ist an dem Pergament befestigt und an einem Haken im Inneren des Schädels angebracht, damit das Pergament nicht versehentlich herausfällt.~ */
+IF ~~ THEN REPLY #64266 /* ~Löse den Haken und nimm das Pergament.~ */ DO ~GiveItem("DRemind",Protagonist) ~ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+SAY #64267 /* ~Du hakst die Schnur aus und überfliegst das Pergament - Es sieht wie eine Erinnerungshilfe von einem der Wächter der Leichenhalle aus. Der Notiz nach zu urteilen, ist dieses Skelett eine Art Laufbote. Als du einen zweiten Blick auf das Skelett wirfst, begreifst du, dass es vor der Tafel anhielt, weil es nicht weiß, wie es an ihr vorbeikommt.  ^NHINWEIS: <READSTUFF>^-~ */
+IF ~~ THEN REPLY #64268 /* ~Betrachte das Skelett genauer.~ */ GOTO 0
+IF ~~ THEN REPLY #64269 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END

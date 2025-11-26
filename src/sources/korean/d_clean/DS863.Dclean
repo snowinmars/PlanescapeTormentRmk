@@ -1,0 +1,92 @@
+IF ~  !HasItem("DRemind","S863")
+~ THEN BEGIN 0 // from: 10.0
+SAY #35537 /* ~이 스켈레톤은 엄청난 수난을 겪은 듯하다. 전투 때문인지 아니면 계단에서 여러 번 굴러 떨어져서인지는 알 수 없으나, 양쪽 팔과 다리가 부서져 금속 막대와 가죽끈으로 수선되었다. 해골의 이마에는 "863"이란 번호가 새겨져 있으나 후두부는 함몰되어 텅 빈 속이 들여다 보인다. ~ */
+IF ~  Global("Skeleton_Chaotic","GLOBAL",0) ~ THEN REPLY #35538 /* ~"그 양피지를 빼앗아 미안하네, 하지만 자네가 그걸 가까운 시일 내에 배달했으리라고는 생각되지 않는군."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Skeleton_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",1) ~ THEN REPLY #35561 /* ~"그 양피지를 빼앗아 미안하네, 하지만 자네가 그걸 가까운 시일 내에 배달했으리라고는 생각되지 않는군."~ */ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",0) ~ THEN REPLY #35562 /* ~"질문을 해야겠소. 뼈들이 그렇게 부서진 건 전투 때문이오, 아니면 높은 데서 떨어져서요?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Skeleton_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",1) ~ THEN REPLY #35563 /* ~"질문을 해야겠소. 뼈들이 그렇게 부서진 건 전투 때문이오, 아니면 높은 데서 떨어져서요?"~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #35564 /* ~스켈레톤에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 2
+IF ~~ THEN REPLY #35569 /* ~스켈레톤을 조심스럽게 살펴본다.~ */ DO ~SetGlobal("Skeleton_Examine","GLOBAL",1) ~ GOTO 3
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",0) ~ THEN REPLY #35602 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ EXTERN ~DMORTE~ 400
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35603 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 4
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35604 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 5
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) PartyHasItem("Prybar") ~ THEN REPLY #35605 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 6
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35606 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35607 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 5
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) PartyHasItem("Prybar") ~ THEN REPLY #35608 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35609 /* ~"이 해골은 어떤가, 모트? 자네 몸으로 쓸만하겠나?~ */ EXTERN ~DMORTE~ 396
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35610 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35611 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35612 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+SAY #35539 /* ~스켈레톤은 아무런 응답도 하지 않는다. ~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35540 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소, 해골 양반. 건강하게 지내시오."~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35559 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소, 해골 양반. 건강하게 지내시오."~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35560 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소, 해골 양반. 건강하게 지내시오."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+SAY #35565 /* ~스켈레톤은 아무런 응답을 하지 않는다. 당신의 질문에 대답할 수 있을 정도의 정신은 이미 그것에게는 남아있지 않는 듯하다.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35566 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35567 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35568 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5
+SAY #35570 /* ~누군가가 이 스켈레톤의 뼈들을 가죽끈들로 감았는데, 끈들은 실제의 근육과 근을 연상시키는 패턴으로 감겨졌다. 가죽끈들은 스켈레톤의 관절에 박힌 금속 볼트에 고정되어 있다. 이 스켈레톤은 오랫동안 사용된 것 같다. 그 뼈들 중 상당수가 깨졌으며 부서진 부분들은 봉함제와 악취가 나는 접착제로 봉합되어 있다.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",0) ~ THEN REPLY #35571 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ EXTERN ~DMORTE~ 400
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35593 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 4
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35594 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 5
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) PartyHasItem("Prybar") ~ THEN REPLY #35595 /* ~스켈레톤의 관절부를 잇는 볼트를 비틀어 뽑아본다. ~ */ GOTO 6
+IF ~  !NearbyDialog("DMorte") !PartyHasItem("Prybar") CheckStatLT(Protagonist,13,STR) ~ THEN REPLY #35596 /* ~"내가 당신 가죽끈과 볼트를 좀 빌려도 괜찮겠소?"~ */ GOTO 4
+IF ~  !NearbyDialog("DMorte") !PartyHasItem("Prybar") CheckStatGT(Protagonist,12,STR) ~ THEN REPLY #35597 /* ~"내가 당신 가죽끈과 볼트를 좀 빌려도 괜찮겠소?"~ */ GOTO 5
+IF ~  !NearbyDialog("DMorte") PartyHasItem("Prybar") ~ THEN REPLY #35598 /* ~"내가 당신 가죽끈과 볼트를 좀 빌려도 괜찮겠소?"~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35599 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35600 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35601 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.7 0.10 3.1 3.4
+SAY #35576 /* ~당신은 철제 볼트를 뽑아 내려고 시도하나, 당신은 그것들을 뽑아 낼 정도로 힘이 세지 못하다, 그것들은 매우 튼튼히 박혀 있다. ~ */
+IF ~  CheckStatGT(Protagonist,12,INT) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35577 /* ~"적당한 연장만 있으면 그것들을 빼낼 수가 있을 텐데... 흠... 나중에 다시 오리다, 해골 양반." ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  CheckStatGT(Protagonist,12,INT) !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35578 /* ~"적당한 연장만 있으면 그것들을 빼낼 수가 있을 텐데... 흠... 나중에 다시 오리다, 해골 양반." ~ */ EXIT
+IF ~  CheckStatGT(Protagonist,12,INT) Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35579 /* ~"적당한 연장만 있으면 그것들을 빼낼 수가 있을 텐데... 흠... 나중에 다시 오리다, 해골 양반." ~ */ EXIT
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35580 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 394
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #35581 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #35582 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.8 0.11 3.2 3.5
+SAY #35584 /* ~당신은 온몸의 힘을 다 기울여 철제 볼트를 뽑아 내려고 노력한다, 그리고 수 초간의 분투 끝에 마침내 관절로부터 볼트를 뽑아 낸다. 스켈레톤은 붕괴하나, 그 뼈들 중 일부는 아직도 씰룩거린다.~ */
+IF ~~ THEN REPLY #35585 /* ~"미안하네, 해골 양반..."~ */ DO ~Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.9 0.12 3.3 3.6
+SAY #35587 /* ~당신은 쇠 지렛대를 이용하여 관절로부터 볼트를 뽑아 낸다. 스켈레톤은 붕괴하나, 그 뼈들 중 일부는 아직도 씰룩거린다.~ */
+IF ~~ THEN REPLY #35588 /* ~"미안하네, 해골 양반..."~ */ DO ~Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0) ~ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 7 // from:
+SAY #35613 /* ~스켈레톤은 아무런 응답을 하지 않는다. 당신의 질문에 대답할 수 있을 정도의 정신은 이미 그것에게는 남아있지 않는 듯하다.~ */
+END
+
+IF ~  HasItem("DRemind","S863")
+~ THEN BEGIN 8 // from:
+SAY #64262 /* ~이 스켈레톤은 많은 전투를 겪었던지, 아니면 계단에서 여러 번 굴러 떨어진 것 같다. 양쪽 팔과 다리가 부서져 금속 막대와 가죽끈으로 수선되었다. 해골의 이마에는 "863"이란 번호가 새겨져 있으나 후두부는 함몰되어 텅 빈 속이 들여다 보인다. 당신은 누군가가 이를 이용하기로 작심하고 그 안에 양피지를 말아서 넣어 놓은 것을 발견한다.~ */
+IF ~~ THEN REPLY #64263 /* ~스켈레톤의 해골로부터 양피지를 꺼낸다.~ */ GOTO 9
+IF ~~ THEN REPLY #64264 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+SAY #64265 /* ~당신은 두루마리를 노동자의 해골로부터 꺼낸다. 묘하게도 해골의 공동은 매시지를 저장하기 위해 일부러 만든 것처럼 보인다. 두루마리가 우연히 떨어져 나오는 것을 방지하기 위해 두루마리는 해골 안에 달린 고리에 가는 실로 매여 있다. ~ */
+IF ~~ THEN REPLY #64266 /* ~묶인 끈을 풀고 양피지를 꺼낸다.~ */ DO ~GiveItem("DRemind",Protagonist) ~ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+SAY #64267 /* ~당신은 실을 풀고 두루마리를 훑어본다. 그것은 시체안치소의 관리인들 중 하나가 쓴 독촉장인 것 같다. 그 내용으로 감안할 때, 이 스켈레톤은 일종의 심부름꾼인 듯하다. 당신은 스켈레톤을 다시 흘긋 본다, 그리고 그가 철판 앞에서 멈춘 것은 그가 그것을 어떻게 지나가야 하는지 모르기 때문이라는 사실을 깨닫는다.  ^NNOTE: <READSTUFF>^-~ */
+IF ~~ THEN REPLY #64268 /* ~스켈레톤을 다시 조사한다.~ */ GOTO 0
+IF ~~ THEN REPLY #64269 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END

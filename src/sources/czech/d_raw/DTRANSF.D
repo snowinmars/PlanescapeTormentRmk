@@ -1,0 +1,105 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DTRANSF.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DTRANSF~
+
+IF ~  Global("Annah_Death_Scene","GLOBAL",1)
+!Global("Grace_Death_Scene","GLOBAL",3)
+~ THEN BEGIN 0 // from:
+  SAY #63314 /* ~AH... ĎÁBELSKÉ DĚVČE.~ */
+  IF ~~ THEN GOTO 1
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY #63315 /* ~KDE JE TEN KDO TĚ SEM PŘIVEDL?~ */
+  IF ~~ THEN EXTERN ~DANNAHF~ 0
+END
+
+IF ~~ THEN BEGIN 2 // from:
+  SAY #63316 /* ~TVÁ SLOVA MAJÍ SÍLU VÁŠNĚ. A VZÁCNĚ MALOU PŘÍČINU.~ */
+  IF ~~ THEN EXTERN ~DANNAHF~ 1
+END
+
+IF ~~ THEN BEGIN 3 // from:
+  SAY #63317 /* ~NEZVYKLÉ...~ */
+  IF ~~ THEN GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #63318 /* ~TVŮJ DŮVOD PRO TO, ABYS HO SEM NÁSLEDOVALA SE VYJASNIL -~ */
+  IF ~~ THEN EXTERN ~DANNAHF~ 2
+END
+
+IF ~~ THEN BEGIN 5 // from:
+  SAY #63319 /* ~MOHLO BY BÝT, ŽE JSI SI VŠIML SÁM SEBE JAKO NĚČEHO *ZVLÁŠTNÍHO* V JEHO OČÍCH?~ */
+  IF ~~ THEN EXTERN ~DANNAHF~ 3
+END
+
+IF ~~ THEN BEGIN 6 // from:
+  SAY #63320 /* ~FIENDKO, SLEDOVAL JSEM JEDNOHO, KTERÉHO JSI NÁSLEDOVALA NAPŘÍČ MNOHA ŽIVOTY. ZNÁM JEHO NITRO, A VÍM, ŽE TAM BYLO NESPOČETNĚ DALŠÍCH, KTEŘÍ PO NĚM TOUŽILI.~ */
+  IF ~~ THEN GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+  SAY #63321 /* ~Z NICH VŠECH, JSI URČITĚ *NEJNEPATRNĚJŠÍ.* JSI *VĚC,* ZMRZAČENÁ TVÝMI RODIČI A SFÉRAMI...~ */
+  IF ~~ THEN EXTERN ~DANNAHF~ 4
+END
+
+IF ~~ THEN BEGIN 8 // from:
+  SAY #63322 /* ~ODPOVĚZ MI NA TO, A POZNÁŠ TICHO, DÍTĚ. ~ */
+  IF ~~ THEN GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+  SAY #63323 /* ~DĚLÁ TI TEN, SE KTERÝM JDEŠ *STAROSTI*?~ */
+  IF ~~ THEN DO ~SetGlobal("Annah_Death_Scene","GLOBAL",1)
+StartCutSceneMode()
+StartCutSceneEx("1201CSA3",FALSE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from:
+  SAY #63336 /* ~NEPŘÍSLUŠÍ TI ZNÁT MÉ CÍLE, PADLÝ TANAR'RI. MOJE SHOVÍVAVOST JE TO JEDINÉ, CO DRŽÍ TVOJE ČERNÉ SRDCE BIJÍCÍ V TVÉM HRUDNÍKU. MŮŽEŠ TEĎ ODEJÍT SE SVÝM ŽIVOTEM, JESTLI CHCEŠ.~ */
+  IF ~~ THEN DO ~SetGlobal("Grace_Death_Scene","GLOBAL",2)
+StartCutSceneMode()
+StartCutSceneEx("1201csG5",FALSE)
+~ EXIT
+END
+
+IF ~  Global("Grace_Death_Scene","GLOBAL",3)
+~ THEN BEGIN 11 // from:
+  SAY #63337 /* ~ZDE NENÍ *ŽÁDNÝ* USPOKOJIVÝ ZÁVĚR PRO TUHLE BLÁZNIVOU ZÁLEŽITOST. OPUSTÍŠ TOTO MÍSTO A NECHÁŠ SVÉHO NESMRTELNÉHO SPOLEČNÍKA ZDE. ~ */
+  IF ~~ THEN GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY #63338 /* ~NEBOJ SE O JEHO ŽIVOT. JEDINÁ CENA KTEROU ZAPLATÍ JE ZTRÁTA PAMĚTI. ~ */
+  IF ~~ THEN EXTERN ~DGRACEF~ 6
+END
+
+IF ~~ THEN BEGIN 13 // from:
+  SAY #63339 /* ~*ON ZAPOMENE.* JE JEHO *OSUDEM* ZŮSTAT NEVĚDOUCÍ.~ */
+  IF ~~ THEN GOTO 14
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY #63340 /* ~ZAPOMENE NA TEBE, TANAR'RI, STEJNĚ JAKO ZAPOMNĚL NA VŠECHNY, KTEŘÍ ŠLI TU CESTU UTRPENÍ S NÍM. EXISTUJE PROTO ABY ZEMŘEL, ZAPOMNĚL, A ZASE ZEMŘEL. ON JE *NIC.*~ */
+  IF ~~ THEN EXTERN ~DGRACEF~ 8
+END
+
+IF ~~ THEN BEGIN 15 // from:
+  SAY #63341 /* ~TANAR'RI...~ */
+  IF ~~ THEN GOTO 16
+END
+
+IF ~~ THEN BEGIN 16 // from: 15.0
+  SAY #63342 /* ~MOŽNÁ, ŽE POCHYBUJEŠ O MÉ SÍLE ZDE, NA TOMTO MÍSTĚ. DEMONSTRACE BY MOHLA UMLČET TVÉ POCHYBY.~ */
+  IF ~~ THEN DO ~SetGlobal("Grace_Death_Scene","GLOBAL",4)
+StartCutSceneMode()
+StartCutSceneEx("1201csG7",FALSE)
+~ EXIT
+END

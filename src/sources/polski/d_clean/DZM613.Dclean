@@ -1,0 +1,20 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #6540 /* ~Numer "613" został głęboko wycięty na czole tego ciężko harującego truposza, ale kawałek postrzępionej, stwardniałej skóry rozdziela "1" i "3". Kiedy przyglądasz się cyfrom, z trudem dostrzegasz wyrytą tam "2".~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #6543 /* ~"Więc jak... widziałeś, żeby działo się tu coś interesującego?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #6544 /* ~"Więc jak... widziałeś, żeby działo się tu coś interesującego?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #6545 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #6546 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+IF ~~ THEN REPLY #6547 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #6548 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #6541 /* ~Trup wciąż się w ciebie wpatruje.~ */
+IF ~~ THEN REPLY #6549 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #6542 /* ~Truposz nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+IF ~~ THEN REPLY #6550 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END

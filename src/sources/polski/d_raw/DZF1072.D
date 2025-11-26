@@ -1,0 +1,68 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZF1072.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZF1072~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #35114 /* ~Woń formaliny, jaka unosi się od tej martwej kobiety jest szczególnie mocna... cuchnie tak, jakby zastosowano ją niedawno i z bardzo dobrego powodu: ciało wydaje się być w zaawansowanym stadium rozkładu. Trup nie ma szczęki; od czaszki odpadło kilka kawałków ciała, odsłaniając numer "1072" wygrawerowany na kości.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #35115 /* ~"Ta to chyba widywała już lepsze czasy..."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #35132 /* ~"Ta to chyba widywała już lepsze czasy..."~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #35133 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #35134 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35139 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXTERN ~DMORTE~ 346
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35140 /* ~Zostaw truposza w spokoju.~ */ EXTERN ~DMORTE~ 346
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35141 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35142 /* ~Zostaw truposza w spokoju.~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35143 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35144 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #35116 /* ~Trup nie odpowiada na twoje słowa, co może być spowodowane brakującą szczęką. Albo może nie ma nic do powiedzenia.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35117 /* ~"A zatem żegnaj."~ */ EXTERN ~DMORTE~ 346
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35130 /* ~"A zatem żegnaj."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35131 /* ~"A zatem żegnaj."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #35135 /* ~Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35136 /* ~"A zatem żegnaj."~ */ EXTERN ~DMORTE~ 346
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #35137 /* ~"A zatem żegnaj."~ */ EXIT
+  IF ~  !NearbyDialog("DMorte")
+Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #35138 /* ~"A zatem żegnaj."~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 3 // from:
+  SAY #35145 /* ~Trup nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+END

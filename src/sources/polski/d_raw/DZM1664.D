@@ -1,0 +1,59 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1664.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\pl_PL\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1664~
+
+IF ~  True()
+~ THEN BEGIN 0 // from: 5.0
+  SAY #47002 /* ~Ten olbrzymi truposz stoi cicho w rogu pokoju, twarzą do ściany. Wygląda na to, że kiedyś był potężnie zbudowanym mężczyzną w młodym wieku. Sądząc po stanie jego zwłok, umarł niedawno. Na czole ma świeżo wyszyty numer "1664". Wydaje się, że trup ten pełni funkcję bibliotekarza, ponieważ trzyma w rękach olbrzymi stos książek.~ */
+  IF ~  Global("Page_Taken","GLOBAL",0)
+~ THEN REPLY #47003 /* ~Zbadaj książki.~ */ GOTO 3
+  IF ~  Global("Page_Taken","GLOBAL",1)
+~ THEN REPLY #47004 /* ~Zbadaj książki ponownie.~ */ GOTO 6
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #47005 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #47006 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+  IF ~~ THEN REPLY #47007 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+  IF ~~ THEN REPLY #47008 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.2 6.0
+  SAY #47009 /* ~Truposz beznamiętnie wpatruje się w ścianę.~ */
+  IF ~~ THEN REPLY #47010 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #47011 /* ~Trup nie porusza się. Pomimo że wygląda na takiego, co to zmarł całkiem niedawno, nie wydaje się być w stanie odpowiedzieć na żadne z twoich pytań.~ */
+  IF ~~ THEN REPLY #47012 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+  SAY #47013 /* ~Książki wyglądają na stare księgi główne Kostnicy i żadna z nich nie jest szczególnie interesująca. Jednakowoż, kiedy tak wertujesz te teksty, zauważasz luźną stronę złożoną pomiędzy dwiema księgami. Nagle uderza cię myśl, że ktoś wcisnął ją tam, aby ją ukryć.~ */
+  IF ~~ THEN REPLY #47014 /* ~Weź stronicę.~ */ DO ~GiveItemCreate("Logpage",Protagonist,1,0,0)
+SetGlobal("Page_Taken","GLOBAL",1)
+~ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #47015 /* ~Strona nie wydaje się pochodzić z ksiąg głównych... wygląda na kartkę z dziennika rejestracyjnego. Rozdarcie jest gładkie, jakby od noża, więc podejrzewasz, że stronicę usunięto celowo.~ */
+  IF ~~ THEN REPLY #47016 /* ~Przeczytaj ją.~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #47017 /* ~Wertujesz stronicę przez kilka chwil… To lista trupów zniesionych do kostnicy i skatalogowanych w sali przyjęć. Listę sporządzono niedawno.
+
+^NNOTE: <READSTUFF>^-~ */
+  IF ~~ THEN REPLY #47018 /* ~Raz jeszcze zbadaj zombiaka.~ */ GOTO 0
+  IF ~~ THEN REPLY #47019 /* ~Weź stronicę ze sobą i odejdź.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.1
+  SAY #47021 /* ~Książki wyglądają na stare księgi główne Kostnicy i żadna z nich nie jest szczególnie interesująca. Ponownie przeglądasz teksty, ale nie znajdujesz już niczego więcej.~ */
+  IF ~~ THEN REPLY #47022 /* ~"No więc jak to się stało, że zostałeś bibliotekarzem? Wszystko inne było już zajęte?"~ */ GOTO 1
+  IF ~~ THEN REPLY #47023 /* ~Zostaw zombiaka w spokoju.~ */ EXIT
+END

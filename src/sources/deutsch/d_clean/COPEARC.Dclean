@@ -1,0 +1,23 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #46723 /* ~Dieser kupferne Ohrring sieht extrem alt aus. Er sieht aus als sollte er getragen werden, doch besitzt er weder einen Haken noch sonst was, mit dem du ihn am Ohr befestigen könntest. Dafür fallen dir ein paar merkwürdige Rillen auf der Innenseite des Ohrrings auf.~ */
+IF ~~ THEN REPLY #46724 /* ~Sieh dir die Rillen genau an.~ */ GOTO 1
+IF ~  Global("Know_Copper_Earring_Secret","GLOBAL",1) ~ THEN REPLY #46725 /* ~Leg deinen Fingernagel in die Kerbe an der Stelle, auf die das Dreieck in dem gezackten Kreis zeigte, den du auf der Stirn von Zombie Nr. 79 gesehen hast.~ */ DO ~AddexperienceParty(250) ~ GOTO 2
+IF ~~ THEN REPLY #46726 /* ~Leg den Ohrring beiseite.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+SAY #46727 /* ~Die Rillen laufen im jeweils selben Abstand über die Innenseite des Ohrrings. Bei genauerem Hinsehen sind sie leicht gezahnt. Sie sind sicher von Menschenhand gefertig, aber dir ist schleierhaft, zu welchem Zweck.~ */
+IF ~  Global("Know_Copper_Earring_Secret","GLOBAL",1) ~ THEN REPLY #46728 /* ~Leg deinen Fingernagel in die Kerbe an der Stelle, auf die das Dreieck in dem gezackten Kreis zeigte, den du auf der Stirn von Zombie Nr. 79 gesehen hast.~ */ DO ~AddexperienceParty(250) ~ GOTO 2
+IF ~~ THEN REPLY #46729 /* ~Leg den Ohrring beiseite.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.1 1.0
+SAY #46730 /* ~Du steckst deinen Fingernagel in die dritte Rille von oben und drückst fest darauf. Es macht *klick*, und der obere Teil des Ohrrings schnappt auf. Du kannst ihn jetzt tragen. Außerdem scheint sich in seinem Inneren ein Geheimfach zu befinden.~ */
+IF ~~ THEN REPLY #46731 /* ~Schüttle den Ohrring, um zu sehen, ob was herausfällt.~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+SAY #46732 /* ~Du schüttelst den Ohrring, aber es kommt nichts heraus. Was immer in dem Ohrring verborgen war ist verschwunden.  ^NHINWEIS: Jetzt, da du den Verschluß des Ohrrings gefunden hast, kannst du ihn tragen. Außerdem gewinnt er durch das Geheimfach an Wert, falls du erwägst, ihn zu verkaufen.^-~ */
+IF ~~ THEN REPLY #46733 /* ~Leg den Ohrring beiseite.~ */ DO ~TransformPartyItem("CopEarC","CopEarO",1,0,0) ~ EXIT
+END

@@ -1,0 +1,67 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1201.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1201~
+
+IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #34953 /* ~Na čele této mrtvoly stojí napsáno číslo "1021" inkoustem, který jí stekl do očí, na tváře a čelist. Když sleduješ inkoustové skvrny na tváři mrtvoly, všiml sis, že inkoust stekl do sešitých úst a zastavil se na něčem, co vypadá jako růžek papírku, nacpaného v ústech mrtvoly.~ */
+  IF ~  Global("1201_Note_Retrieved","GLOBAL",0)
+~ THEN REPLY #34954 /* ~Zkus papírek vytáhnout.~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #34957 /* ~"Vím, že nejsi zombie. Takhle nikoho neoblbneš."~ */ GOTO 3
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #34958 /* ~Použij na mrtvolu Kosti-vyprávějte.~ */ GOTO 4
+  IF ~~ THEN REPLY #34959 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #34962 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY #34955 /* ~Papírek je nacpaný v ústech zombie. Pokud by ses pokusil vytáhnout papír skrze mezeru mezi stehy, roztrhal bys jej. Rozsekáním mrtvoly taky nic nevyřešíš, asi bys papírek zničil. Potřebuješ najít nějaký jemný způsob, jak odstranit stehy, než budeš moci papírek vytáhnout.~ */
+  IF ~  PartyHasItem("Scalpel")
+~ THEN REPLY #34956 /* ~Prořezej stehy skalpelem.~ */ DO ~SetGlobal("1201_Note_Retrieved","GLOBAL",1)
+GiveItemCreate("N1201",Protagonist,1,0,0)
+AddexperienceParty(250)
+~ GOTO 2
+  IF ~  !PartyHasItem("Scalpel")
+~ THEN REPLY #45122 /* ~"Hmmm. Možná by se daly ty stehy přeříznout..."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY #34960 /* ~Šikovně jsi rozpáral stehy, sešívající ústa mrtvoly, čelist se rozevřela. Opatrně si vytáhl papírek z úst mrtvoly... navzdory špatnému stavu papíru je text ještě čitelný.
+
+Poznámka: "čtení" poznámek, knih a svitků provedeš tak, že si je dáš do inventáře a potom na ně klikneš pravým tlačítkem myši.~ */
+  IF ~~ THEN REPLY #34961 /* ~Prozkoumej mrtvolu znovu.~ */ GOTO 5
+  IF ~~ THEN REPLY #45123 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 5.0 5.1 5.2
+  SAY #45124 /* ~Mléčně bílé oči mrtvoly na tebe prázdně zírají.~ */
+  IF ~~ THEN REPLY #45125 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 5.3
+  SAY #45126 /* ~Mrtvola se nepohnula. Asi už moc uhnila, anebo nemá náladu na povídání.~ */
+  IF ~~ THEN REPLY #45127 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END
+
+IF ~  Global("1201_Note_Retrieved","GLOBAL",1)
+~ THEN BEGIN 5 // from: 2.0
+  SAY #45128 /* ~Na čele mrtvoly je inkoustem napsáno číslo "1201". Trochu inkoustu steklo dolů k očím a tvářím, takže to vypadá, jako by mrtvola plakala. Její čelist visí dolů a z koutku úst vychází nějaká nepříjemně vypadající tekutina.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45129 /* ~"Omlouvám se za ty stehy... ale potřeboval jsem se podívat, co to bylo v tvé puse."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 3
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45130 /* ~"Omlouvám se za ty stehy... ale potřeboval jsem se podívat, co to bylo v tvé puse."~ */ GOTO 3
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45131 /* ~"Hele, já vím, že nejsi zombie. Nikoho neoblbneš."~ */ GOTO 3
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45132 /* ~Použij na mrtvolu schopnost Kosti-vyprávějte.~ */ GOTO 4
+  IF ~~ THEN REPLY #45133 /* ~"Skvěle jsme si pokecali. Sbohem."~ */ EXIT
+  IF ~~ THEN REPLY #45134 /* ~Nechej mrtvolu v klidu odpočívat.~ */ EXIT
+END

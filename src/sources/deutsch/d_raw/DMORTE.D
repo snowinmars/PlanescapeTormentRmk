@@ -1,0 +1,5848 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DMORTE.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DMORTE~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF ~~ THEN BEGIN 0 // from:
+  SAY #986 /* ~"He, Meister. Du okay? Du spielen Leiche oder führen Staubmenschen in die Irre? Ich dachte wirklich, du seist ein Totenbüchler."~ */
+  IF ~~ THEN REPLY #987 /* ~"Wer bist du?"~ */ GOTO 1
+  IF ~~ THEN REPLY #989 /* ~Ignoriere den sprechenden Totenschädel und sieh dich im Raum um.
+~ */ EXIT
+  IF ~~ THEN REPLY #988 /* ~Hol tief Atem, schüttel den Kopf und ignoriere den Totenschädel, der zu dir spricht.~ */ EXIT
+  IF ~~ THEN REPLY #17833 /* ~"Ich bin sicher, daß du tausend schlaue Sachen zu sagen hast, Morte, aber jetzt mußt du mal die Klappe halten, deine Flagge hissen und mir helfen, und zwar SOFORT."~ */ DO ~GiveItem("KeyPR",Protagonist)
+SetGlobal("Morte","GLOBAL",1)
+SetGlobal("Scars","GLOBAL",1)
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 29.0 31.0
+  SAY #990 /* ~"Ich?" Der Totenschädel ist entrüstet. "Und *du*, Krätzegestalt? Wer bist du?"~ */
+  IF ~~ THEN REPLY #992 /* ~"Ich... weiß es nicht."~ */ GOTO 2
+  IF ~~ THEN REPLY #995 /* ~"Ich weiß es nicht... Ich kann mich einfach nicht erinnern."~ */ GOTO 3
+  IF ~~ THEN REPLY #993 /* ~"Ich habe dich zuerst gefragt, Totenschädel."~ */ GOTO 4
+  IF ~~ THEN REPLY #991 /* ~Ignoriere den Totenschädel, und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 4.0 5.0
+  SAY #997 /* ~"Du weißt nicht, wer du bist, wie? *Hättest* doch einfach sagen können, 'pack ein, Dussel'. Na, ist schon in Ordnung... tu ruhig so, als wüßtest du von nichts. Soll mich nicht weiter kratzen. Ich bin Morte. Sei gegrüßt, freut mich... und das ganze Gewäsch."~ */
+  IF ~~ THEN REPLY #998 /* ~"Wo bin ich, Morte?"~ */ GOTO 6
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1006 /* ~"Weißt du, wie ich hier rauskomme?"
+~ */ GOTO 21
+  IF ~~ THEN REPLY #1080 /* ~"Wie bin ich hierhergekommen?"~ */ GOTO 20
+  IF ~~ THEN REPLY #1087 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.1 4.1 5.1
+  SAY #999 /* ~"Du *erinnerst* dich nicht? Mußt ja ganz schön was durchgemacht haben letzte Nacht. Hoffentlich hast du niemandem wehgetan... ich bin Morte. Sei gegrüßt, freut mich, und das ganze Gewäsch." Er hält kurz inne. "Aber *sag*: bist du etwa einer dieser Sinnsaten mit diesem Selbstverstümmelungs-Tick oder woher hast du diese Narben?"~ */
+  IF ~~ THEN REPLY #1000 /* ~"Sinnsaten?"~ */ GOTO 12
+  IF ~~ THEN REPLY #1001 /* ~"Narben?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1002 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.2
+  SAY #1003 /* ~"Ja, und ich hab' dich als zweites gefragt. Wie heißt du?"~ */
+  IF ~~ THEN REPLY #1004 /* ~"Ich... weiß nicht."~ */ GOTO 2
+  IF ~~ THEN REPLY #1005 /* ~"Ich weiß es nicht... Ich kann mich nicht erinnern."~ */ GOTO 3
+  IF ~~ THEN REPLY #1007 /* ~"Du zuerst, Totenschädel."~ */ GOTO 5
+  IF ~~ THEN REPLY #994 /* ~Ignoriere den Totenschädel, und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.2
+  SAY #1008 /* ~"Mann, du bist ja stur wie ein Ochse. Na schön, na schön... Lassen wir den *netten* Typ raushängen... ich bin Morte. Morte Grinsbacke. Und du? Welcher Name hat das Pech, zu dir zu gehören?"~ */
+  IF ~~ THEN REPLY #1009 /* ~"Ich... weiß nicht."~ */ GOTO 2
+  IF ~~ THEN REPLY #1010 /* ~"Ich weiß es nicht... Ich kann mich einfach an nichts erinnern."~ */ GOTO 3
+  IF ~~ THEN REPLY #1011 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 29.1 31.1
+  SAY #1012 /* ~"Du bist in dieser Müllhalde namens Leichenhalle... diesem großen schwarzen Bau mit dem architektonischen Charme einer schwangeren Spinne."~ */
+  IF ~~ THEN REPLY #1013 /* ~"In der 'Leichenhalle'? Bin ich tot?"~ */ GOTO 7
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1015 /* ~"Wie komme ich hier heraus?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1085 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0 9.0
+  SAY #1014 /* ~"Das kann ich dir nicht sagen... jedenfalls ist die Leichenhalle der Ort, an dem du die meisten Toten in dieser Gegend findest... Irgendwelche Dussel schleppen sie hier an und begraben oder verbrennen sie. Und wenn du *wirkliches* Glück hast, wirst du als Sklave wiederbelebt. Die Leichenhalle ist nicht gerade der lauschigste Ort auf den Ebenen. An deiner Stelle würde ich den nächsten Ausgang aufsuchen und diesem Ort eins grinsen."~ */
+  IF ~~ THEN REPLY #1016 /* ~"Wie bitte... die 'Leichenhalle'? Was ist dies für ein Ort?"~ */ GOTO 10
+  IF ~~ THEN REPLY #1017 /* ~"Als Sklave wiederbelebt?"~ */ GOTO 9
+  IF ~~ THEN REPLY #1018 /* ~"So lange ich noch laufen kann?"~ */ GOTO 11
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1019 /* ~"Was du nicht sagst; Leute schleppen tote Körper hierher? Bin ich auch so hierhergekommen?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1020 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.3
+  SAY #1021 /* ~Zögernd. "Schon möglich. Irgendso ein Einödner hat dich wohl für einen Totenbüchler gehalten und dich hier abgeladen. Von deiner Leiche hab' selbst *ich* mich täuschen lassen... aber schnapp dir doch einfach den Dussel, der dich hier angeschleppt hat, und frag ihn selber." Morte nickt. "Gar nicht so dumm für einen, der gerade noch tot war... schön, daß deine Rübe noch intakt ist."~ */
+  IF ~~ THEN REPLY #1029 /* ~"Warum sollte mich jemand hierhergebracht haben?"~ */ GOTO 14
+  IF ~~ THEN REPLY #1030 /* ~"Ich hätte noch ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1137 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 7.1
+  SAY #1022 /* ~"Ja, läßt sich schon aushalten hier... wenn sie dir nicht ständig Formaldehyd verpassen und deine abfallenden Glieder zusammenflicken würden, wär es das reinste Paradies."~ */
+  IF ~~ THEN REPLY #1113 /* ~"Ist das richtig, daß ich hier bin? Bin ich tot?"~ */ GOTO 7
+  IF ~~ THEN REPLY #1114 /* ~"Wie seh ich denn aus? Hab' ich viele Narben?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1115 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1116 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 7.0
+  SAY #1023 /* ~"Sagte ich doch schon... die Leichenhalle. Alles klar, Meister? Hast schon besser ausgesehen."~ */
+  IF ~~ THEN REPLY #1109 /* ~"Ist das richtig, daß ich hier bin? Bin ich tot?"~ */ GOTO 16
+  IF ~~ THEN REPLY #1110 /* ~"Wie seh ich denn aus? Wie viele Narben hab' ich denn?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1111 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1112 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 7.2
+  SAY #1024 /* ~"Meister, so wahr ich Morte heiße, daß du von dieser Totenbank gekrochen bist, war ein Wunder. Du siehst aus, als würdest du gleich deine Zeche bezahlen, wenn du verstehst, was ich meine."~ */
+  IF ~~ THEN REPLY #1133 /* ~"Sollte ich etwa tot sein? Bin ich deshalb hier?"~ */ GOTO 16
+  IF ~~ THEN REPLY #1134 /* ~"Wie schlimm seh ich denn aus?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1135 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1136 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 3.0 33.0
+  SAY #1025 /* ~"Was, du weißt nicht, wer die Sinnsaten sind? Dann hör mal gut zu! Das sind diese Knochenbrecher, die alles ausprobieren müssen, was die Ebenen zu bieten haben, sogar... ach, lassen wir das. Was ist mit diesen Narben?"
+~ */
+  IF ~~ THEN REPLY #1027 /* ~"Narben?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1028 /* ~"Schon gut. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1143 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 3.1 9.1 10.1 11.1 12.0 33.1
+  SAY #1026 /* ~"Als hätte irgendein Knochenbrecher beschlossen, dir ein Muster einzuritzen. Du bist ja voll davon... selbst auf dem Rücken, außer..." Er zögert. "He, du hast ja 'ne ganze Galerie auf deinem Rücken eintätowiert, Dussel. Wenn das nichts zu bedeuten hat..."~ */
+  IF ~~ THEN REPLY #1088 /* ~"Was denn?"~ */ DO ~SetGlobal("Scars","GLOBAL",1)
+~ GOTO 34
+  IF ~~ THEN REPLY #1089 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1090 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 8.0 29.3
+  SAY #1031 /* ~"Es gibt Leute, die lesen die Totenbüchler von der Straße auf und verkaufen sie hier für etwas Klimper. Reich wird man davon nicht, aber wenn man im übelsten Loch der Ebenen lebt, kann man sich's nicht immer aussuchen."~ */
+  IF ~~ THEN REPLY #1032 /* ~"Klimper? Was ist 'Klimper'?"~ */ GOTO 15
+  IF ~~ THEN REPLY #1033 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1142 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0
+  SAY #1034 /* ~"Geld. Klimper ist Geld. Gibt's so was nicht, wo du herkommst?"~ */
+  IF ~~ THEN REPLY #1035 /* ~"Ich kann mich nicht erinnern, woher ich komme."~ */ GOTO 19
+  IF ~~ THEN REPLY #1036 /* ~"Vergiß es einfach. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1138 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 10.0 11.0
+  SAY #1037 /* ~Er zögert. "Keine Ahnung. Du *sprichst* mit mir... was man von den wandelnden Toten hier nicht unbedingt behaupten kann. Ich würde sagen, die Staubies haben sich ganz einfach geirrt, und du warst gar nicht tot. Erinnerst du dich, irgendeinen Vertrag unterschrieben zu haben? Ich meine, sie müssen normalerweise jede Menge Formulare ausfüllen, bevor sie einen aus dem Totenbuch holen können."~ */
+  IF ~~ THEN REPLY #1038 /* ~"Ähh... Vertrag? Nein, ich wüßte nicht, daß ich einen unterzeichnet hätte. Ich... erinnere mich überhaupt nicht an viel."~ */ GOTO 32
+  IF ~~ THEN REPLY #1039 /* ~"Totenbuch?"~ */ GOTO 17
+  IF ~~ THEN REPLY #1040 /* ~"Formulare?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1041 /* ~"Vergiß es. Ich hätte ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1150 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.1 18.0
+  SAY #1042 /* ~"Ja, das 'Totenbuch'. Weißt du? Na ja, vielleicht auch nicht. Vergiß das 'Totenbuch.' Du lebst ja, also steckst du nicht drin."~ */
+  IF ~~ THEN REPLY #1151 /* ~"Was war das doch gleich... was du über Formulare... und Verträge erzählt hast?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1152 /* ~"Ich hätte noch ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1153 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 16.2 17.0
+  SAY #1043 /* ~"Ja, macht dich das nicht fuchsteufelswild? In Sigil dreht sich alles nur um Gesetze und Vorschriften, nicht mal auf den Pott kannst du gehen, ohne erst irgendeinen Vertrag zu unterschreiben."~ */
+  IF ~~ THEN REPLY #1154 /* ~"Was hast du noch über das 'Totenbuch' gesagt?"~ */ GOTO 17
+  IF ~~ THEN REPLY #1155 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1156 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 15.0
+  SAY #1044 /* ~"Bei allen Göttern und ihren Müttern, *du* weißt ja überhaupt nichts. Hast du irgendeine Ahnung, woher du kommst? Irgendwo vermißt ein Land der Planlosen seinen König. Hast du deinen Verstand an der Pforte abgegeben oder warst du schon immer so blöd?"~ */
+  IF ~~ THEN REPLY #1139 /* ~"Ich weiß es nicht... Ich kann mich an nichts erinnern."~ */ GOTO 32
+  IF ~~ THEN REPLY #1140 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1141 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 2.2 31.2
+  SAY #1045 /* ~"Meister, ich hab' keinen blassen Schimmer. Aber du verstehst es, dich tot zu stellen. Als du dort lagst, habe ich kein einziges Mal gesehen, daß sich deine Brust bewegt hätte oder du geblinzelt hättest... nichts. Hast du getrunken? Ist es so passiert?"~ */
+  IF ~~ THEN REPLY #1097 /* ~"Ich weiß es nicht... Ich kann mich an nichts erinnern."~ */ GOTO 32
+  IF ~~ THEN REPLY #1098 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1099 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 21 // from: 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
+  SAY #1046 /* ~"Das *ist* wirklich eine gute Frage. Die Zeit rinnt dir durch die Finger, Meister. Wenn die Staubmenschen dich finden, werden sie versuchen, dein "Auferstehungsproblem" zu lösen, indem sie dich ins Krematorium werfen. Wenn du dich weiter tot stellst, wirst du ebenfalls eingeäschert. Eine Modronen-Entscheidung, was? Was nun?"~ */
+  IF ~~ THEN REPLY #1047 /* ~"Staubmenschen?"~ */ GOTO 30
+  IF ~~ THEN REPLY #1048 /* ~"Ich... verschwinde."~ */ GOTO 22
+  IF ~~ THEN REPLY #1049 /* ~"Ich werde die Situation diesen... Staubmenschen erklären."~ */ GOTO 25
+  IF ~  CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #1050 /* ~"Was soll ich tun?"~ */ GOTO 23
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1051 /* ~"Warum sagst du's mir nicht? Sieht so aus, als ob du's längst wüßtest."~ */ GOTO 23
+  IF ~~ THEN REPLY #1081 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 21.1
+  SAY #1052 /* ~"Oh, *gute* Idee, Meister! Warum bin *ich* da nicht selbst drauf gekommen? Wie du hier rauskommst? Ich geb dir 'nen Tip: Es erfordert etwas Zusammenarbeit."~ */
+  IF ~~ THEN REPLY #1053 /* ~"Ich bin interessiert. Red' weiter."~ */ GOTO 23
+  IF ~~ THEN REPLY #1054 /* ~"Vergiß es. Ich hätte ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1145 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 21.3 21.4 22.0 26.0
+  SAY #1055 /* ~"Wenn du mich fragst, bist du es, der hier raus muß. Ich selbst kann noch ein Weilchen warten. Die einzige Gefahr für mich ist, daß *ich* vor Langeweile sterbe. Wir könnten einander helfen."~ */
+  IF ~~ THEN REPLY #1058 /* ~Red' weiter..."~ */ GOTO 24
+  IF ~~ THEN REPLY #1059 /* ~"Du hast ja nicht mal Hände. Wie solltest DU wohl MIR helfen können?"~ */ GOTO 24
+  IF ~~ THEN REPLY #1060 /* ~"Vergiß es. Ich hätte ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1146 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0 23.1
+  SAY #1061 /* ~"Auch wenn es nicht so aussieht, ich könnte dir hier raus helfen, und du könntest dasselbe für mich tun. Ich bin in einer etwas mißlichen Lage, weil ich keine Hände habe. Du hast wenig Grips im Schädel, während ich erfahren genug bin, um zu wissen, wie ich dich aus diesem Loch rausbringen kann. Wir helfen uns gegenseitig, und wir haben *beide* was davon. Abgemacht, Dussel?"~ */
+  IF ~~ THEN REPLY #1057 /* ~"Abgemacht."~ */ GOTO 28
+  IF ~~ THEN REPLY #1062 /* ~"Abgemacht. Ich habe das dumpfe Gefühl, daß das Schicksal vorsieht, daß wir zusammen reisen, Morte."~ */ GOTO 27
+  IF ~~ THEN REPLY #1063 /* ~"Vergiß es. Ich hätte ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1147 /* ~"Nein danke. Mit dir zu reden ist schon schmerzhaft genug. Da suche ich lieber alleine nach einem Ausgang."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 21.2
+  SAY #1064 /* ~"Oh, *gute* Idee, Meister. Wieso bin *ich* da nicht selbst drauf gekommen?" Sein Ton wird spöttelnd. "Übrigens, Herr Staubmensch, ich bin gestorben und auf einer Totenbank in Eurer entzückenden Leichenhalle aufgewacht. Würdet Ihr mir vielleicht helfen?" Sie werden dir schon 'helfen': dich kurz anschauen, die Wachen rufen und dich in deinen ganz privaten Ofen stecken."~ */
+  IF ~~ THEN REPLY #1065 /* ~"Das hört sich aber etwas extrem an... warum sollten sie so was tun?"~ */ GOTO 26
+  IF ~~ THEN REPLY #1066 /* ~"Na, ich hoffe, ihre Wächter sind ordentlich stark, damit sie mich festhalten können."~ */ GOTO 26
+  IF ~~ THEN REPLY #1067 /* ~"Vergiß es. Ich hätte ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1149 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 25.0 25.1
+  SAY #1068 /* ~"Vertrau mir einfach... es spielt keine Rolle, für wie stark du dich hältst, oder was du ihnen sagst. Sie kriegen dich. Du bist nicht stark genug, aus einem mit Mauern umgebenen Grab auszubrechen oder die Hitze der Feuerebene zu überstehen. Von den Toten aufzuwachen ist schlimm genug, was die Verwalter hier betrifft. Sei doch nicht blöd."~ */
+  IF ~~ THEN REPLY #1069 /* ~"Und dein Plan ist also...?"~ */ GOTO 23
+  IF ~~ THEN REPLY #1070 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1148 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 27 // from: 24.1
+  SAY #1071 /* ~"Ich pfeif auf das Schicksal. Paß auf, Meister. Achte mal drauf, wie oft 'böse' und 'Schicksal' im selben Satz vorkommen, vielleicht hilft dir das, eines der kleinen Geheimnisse des Lebens zu lüften. Das Schicksal kann sich von mir aus in Klingenranken einhüllen; es gibt *immer* eine Möglichkeit, die das Schicksal nicht vorsieht."~ */
+  IF ~~ THEN REPLY #1073 /* ~"Ich werd's mir merken."~ */ GOTO 28
+  IF ~~ THEN REPLY #1074 /* ~"Genug geredet. Was ist also dein großer Plan?"~ */ GOTO 28
+END
+
+IF ~~ THEN BEGIN 28 // from: 24.0 27.0 27.1
+  SAY #1072 /* ~"Nun denn... komm schon. Grinsen wir diesem Ort eins. Die Türen nach draußen sind verschlossen; wir brauchen also den Schlüssel. Kann sein, daß eine der wandelnden Leichen in diesem Raum ihn hat."~ */
+  IF ~~ THEN REPLY #1079 /* ~"Wandelnde Leichen?"~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ GOTO 240
+END
+
+IF ~~ THEN BEGIN 29 // from:
+  SAY #996 /* ~"Ach, *jetzt* möchtest du also wieder mit Morte sprechen?"~ */
+  IF ~~ THEN REPLY #1075 /* ~"Wer bist du?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1076 /* ~"Wo bin ich?"~ */ GOTO 6
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1077 /* ~"Weißt du, wie ich hier rauskomme?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1078 /* ~"Wie bin ich hierhergekommen?"~ */ GOTO 14
+  IF ~~ THEN REPLY #1086 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 30 // from: 21.0
+  SAY #1082 /* ~"Die Staubies? Sie passen hier auf. Du kannst sie gar nicht verfehlen... sie sind verrückt nach schwarz und haben totenstarre Gesichter. Sie nennen sich 'die Staubmenschen' und tun so, als wären sie ein Bund. In Wirklichkeit sind sie nichts als ein übler Haufen makabrer Todesanbeter. Geh ihnen aus dem Weg."~ */
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1083 /* ~"Und wie komme ich hier raus?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1084 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1144 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
+  SAY #1091 /* ~"So? *Was* sind das denn für Fragen?"~ */
+  IF ~~ THEN REPLY #1092 /* ~"Wer bist du?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1093 /* ~"Wo bin ich?"~ */ GOTO 6
+  IF ~~ THEN REPLY #1094 /* ~"Wie bin ich hierhergekommen?"~ */ GOTO 20
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1095 /* ~"Wie komme ich hier heraus?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1096 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 32 // from: 16.0 19.0 20.0
+  SAY #1100 /* ~"Du erinnerst dich an *gar* nichts? Komm schon, das ist doch ein Haufen Tanar-Ri-Mist. Meinst du das ernst?"~ */
+  IF ~~ THEN REPLY #1101 /* ~"Ja."~ */ GOTO 33
+  IF ~~ THEN REPLY #1102 /* ~"Na, egal. Ich hätte noch ein paar andere Fragen..."
+~ */ GOTO 31
+  IF ~~ THEN REPLY #1103 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+  SAY #1104 /* ~"Bei allen Göttern und ihren Müttern... Tja, Meister, deine Erinnerungen scheinen sich ganz tief in deiner Rübe vergraben zu haben. Mit etwas Glück kommen sie ja bald nach oben, um Luft zu schnappen, glaub's mir. Muß ja ne ganz schöne Nacht gewesen sein für dich. Hoffen wir mal besser, daß du niemandem wehgetan hast oder mit dem Gesetz in Konflikt gekommen bist... Sag mal, wo wir gerade davon sprechen, bist du etwa einer von diesen Sinnsaten, die Selbstverstümmelung ganz toll finden, oder hat dir irgend jemand diese Narben zugefügt?" ~ */
+  IF ~~ THEN REPLY #1105 /* ~"Sinnsaten?"~ */ GOTO 12
+  IF ~~ THEN REPLY #1106 /* ~"Narben?"~ */ GOTO 13
+  IF ~~ THEN REPLY #1107 /* ~"Ich hätte noch ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1108 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 34 // from: 13.0
+  SAY #1117 /* ~"Sehen nach irgendwelchen Anweisungen aus..." Morte räuspert sich. "Schauen wir mal. Es geht los mit..."
+
+HINWEIS: "Ich weiß, daß du dich so fühlst, als hättest du 'n paar Eimer Styx-Wasser getrunken, aber du mußt dein Zentrum finden. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht. 
+
+Verlier dieses Stück Fleisch ODER das Journal nicht, sonst sind wir schon wieder den Styx hoch, verstanden? Und vertrau mir, was immer du tust, erzähl NIEMANDEM, WER du bist oder WOHER du stammst, denn sonst findest du dich im Handumdrehen im Krematorium wieder."~ */
+  IF ~~ THEN REPLY #1118 /* ~"Kein Wunder, daß mir der Rücken weh tut. Kennst du jemanden namens Pharod?"~ */ GOTO 36
+  IF ~~ THEN REPLY #1119 /* ~"Hast du vielleicht gesehen, ob ich ein Journal bei mir hatte, als ich hier lag?"~ */ GOTO 35
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1120 /* ~"Weißt du, wie ich hier rauskomme?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1121 /* ~"Ich hätte noch ein paar andere Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1122 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 35 // from: 34.1 36.0
+  SAY #1123 /* ~"Nein... du warst nackt bis auf die Haut, als du hier ankamst. Es sieht allerdings so aus, als hätte man dir ein ganzes Journal auf den Körper geschrieben."
+~ */
+  IF ~~ THEN REPLY #1124 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 36
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1125 /* ~"Wie komme ich hier heraus?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1126 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1127 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 36 // from: 34.0 35.0
+  SAY #1128 /* ~"Kenn ich nicht. Na ja, ich kenn auch nicht gerade viele Leute. Aber irgendein Dussel muß doch wissen, wo wir diesen Kerl finden... sobald wir hier raus sind, natürlich."~ */
+  IF ~~ THEN REPLY #1129 /* ~"Hast du vielleicht gesehen, ob ich ein Journal bei mir hatte, als ich hier lag?"~ */ GOTO 35
+  IF ~  Global("Scars","GLOBAL",1)
+~ THEN REPLY #1130 /* ~"Wie komme ich hier heraus?"~ */ GOTO 21
+  IF ~~ THEN REPLY #1131 /* ~"Vergiß es. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 31
+  IF ~~ THEN REPLY #1132 /* ~Ignoriere Morte und sieh dich im Raum um.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 37 // from:
+  SAY #1818 /* ~"Was für ein Glück! Wahrscheinlich haben wir das, wonach wir gesucht haben, in deiner Absteige verloren, Fräulein."~ */
+  IF ~~ THEN REPLY #1820 /* ~"Ehrlich gesagt: Ich vermisse ein Journal."~ */ EXTERN ~DHARLOTN~ 2
+  IF ~~ THEN REPLY #1819 /* ~"Vielleicht kannst du mir bei der Suche danach behilflich sein, Fräulein."~ */ EXTERN ~DHARLOTN~ 3
+  IF ~~ THEN REPLY #1821 /* ~"Ich suche gar nichts, aber ich hätte da ein paar Fragen..."~ */ EXTERN ~DHARLOTN~ 9
+  IF ~~ THEN REPLY #1822 /* ~"Ich muß mich verabschieden. Leb wohl."~ */ EXTERN ~DHARLOTN~ 11
+END
+
+IF ~~ THEN BEGIN 38 // from:
+  SAY #1844 /* ~"Meister, hast du nicht 'n bißchen Klimper übrig... is'... äh... is' schon 'n Weilchen her."~ */
+  IF ~~ THEN REPLY #1845 /* ~"Oh... na gut, ich denke, das wird mir nicht *wehtun*..."~ */ DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1)
+~ EXTERN ~DHARLOTN~ 7
+  IF ~~ THEN REPLY #1846 /* ~"Ich werde dich nicht mal fragen, wie du das anstellen willst."~ */ DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1)
+~ EXTERN ~DHARLOTN~ 7
+  IF ~~ THEN REPLY #1847 /* ~"Sieh mal... wir müssen wirklich los, Morte. Leb wohl, Fräulein."~ */ DO ~SetGlobal("Morte_Harlot_Quip_1","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from:
+  SAY #2000 /* ~"Sie meint Geld."~ */
+  IF ~~ THEN REPLY #2001 /* ~"Oh."~ */ EXTERN ~DANNAH~ 5
+END
+
+IF ~~ THEN BEGIN 40 // from:
+  SAY #2048 /* ~"Um so besser für dich, daß weder du noch dein Schwanz zu haben sind. Damit könntest du dir ohnehin keinen Lebensunterhalt verdienen."~ */
+  IF ~~ THEN REPLY #2049 /* ~"Äh..."~ */ EXTERN ~DANNAH~ 13
+END
+
+IF ~~ THEN BEGIN 41 // from:
+  SAY #2067 /* ~"Sie ist ein Tiefling, Meister. In ihren Adern fließt Teufelsblut, das sie paranoid und widerspenstig macht... aber der Schwanz ist nicht ohne. Ein Jammer, daß er an einem so häßlichen Körper klebt."~ */
+  IF ~~ THEN REPLY #2068 /* ~"Also, nun..."~ */ EXTERN ~DANNAH~ 17
+  IF ~~ THEN REPLY #2069 /* ~"Hey, Punkt für dich, Morte"~ */ EXTERN ~DANNAH~ 17
+END
+
+IF ~~ THEN BEGIN 42 // from:
+  SAY #2074 /* ~"Na, warum *traust* du dich denn nicht, du Rotzgöre?! Ich hör nichts als leeres Geschwätz von irgend einem Mistding aus dem Stock! Schlag doch zu! Trau dich! Dann beiß ich dir die Beine ab!"~ */
+  IF ~~ THEN REPLY #2076 /* ~"Genug!"~ */ EXTERN ~DANNAH~ 18
+  IF ~~ THEN REPLY #2075 /* ~"Genug! Wir gehen jetzt."~ */ EXTERN ~DANNAH~ 14
+END
+
+IF ~~ THEN BEGIN 43 // from:
+  SAY #2079 /* ~"Ein Mimir ist ein wandelndes Lexikon. So was wie ich, Meister."~ */
+  IF ~~ THEN REPLY #2080 /* ~"Schon kapiert."~ */ DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+SetGlobal("Morte_Mimir","GLOBAL",1)
+~ EXTERN ~DANNAH~ 21
+END
+
+IF ~~ THEN BEGIN 44 // from:
+  SAY #2348 /* ~"Gib's auf, Meister. Mit einem Gith zu sprechen ist genauso sinnlos, wie an einer Klingenranke hochzuklettern. Laß uns gehen."~ */
+  IF ~  Global("Know_Gith","GLOBAL",0)
+~ THEN REPLY #9029 /* ~"Gith?"~ */ DO ~SetGlobal("Know_Gith","GLOBAL",1)
+~ GOTO 135
+  IF ~  Global("Know_Gith","GLOBAL",1)
+~ THEN REPLY #9030 /* ~"Gith?"~ */ GOTO 135
+  IF ~~ THEN REPLY #9031 /* ~"Ich kann jetzt noch nicht gehen. Ich werde ihm erst ein paar Fragen stellen..."~ */ EXTERN ~DGITH~ 7
+  IF ~~ THEN REPLY #9032 /* ~Laß den Gith in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from:
+  SAY #2354 /* ~"Ich würde meine Zeit nicht damit verschwenden, den König der Unwissenden zur Raison bringen zu wollen. Laß uns verschwinden, Meister."~ */
+  IF ~~ THEN REPLY #9033 /* ~"Ich kann jetzt noch nicht gehen. Ich werde ihm erst ein paar Fragen stellen..."~ */ EXTERN ~DGITH~ 7
+  IF ~~ THEN REPLY #9034 /* ~Laß den Gith in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 46 // from:
+  SAY #2601 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #2603 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+  IF ~~ THEN REPLY #2602 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+END
+
+IF ~~ THEN BEGIN 47 // from: 46.0 46.1 121.1 121.2
+  SAY #2604 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #2605 /* ~"Wollte vielleicht, daß du WEGgehst. Sie war doch ganz eindeutig zu sehr mit mir beschäftigt, als daß sie so'n blöden Wackelkopf mit großer Klappe beachtet hätte.~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 49
+  IF ~~ THEN REPLY #2606 /* ~"Ich glaube, du bildest dir einiges ein. Sie ist ein Zombie. Eine Leiche. Eine tote Person. Ihre Sinne haben dich wahrscheinlich nicht mal aufgenommen."~ */ GOTO 48
+  IF ~~ THEN REPLY #2607 /* ~"Ich glaube, du und deine Einbildungskraft, ihr solltet euch mal ein Weilchen voneinander trennen."~ */ GOTO 48
+  IF ~~ THEN REPLY #2608 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.1 47.2
+  SAY #2609 /* ~"Ja, ja, red' du nur. Wenn du einmal so lang tot bin wie ich, dann kennst du die Signale. Sie sind vielleicht zu SUBTIL, als daß du sie bemerken könntest, aber deshalb verbringe ich MEINE Nächte mit einer knackigen Frischverstorbenen, während du hier rumstehst und winselst: 'Hä? 'Wasss ist los?' 'Wo ist me-me-meine Erinnerung?'"~ */
+  IF ~~ THEN REPLY #2610 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 47.0
+  SAY #2611 /* ~"Du? Klar doch! Glaube mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #2612 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 50 // from:
+  SAY #2709 /* ~"Was? Was ist los? Belästigt dich diese Tussi etwa?"~ */
+  IF ~~ THEN EXTERN ~DTEST~ 7
+END
+
+IF ~~ THEN BEGIN 51 // from:
+  SAY #2711 /* ~"Meinetwegen. Vielleicht sollte er lieber in dein Hauptmenü zurückkehren und mich aus dem Spiel lassen."~ */
+  IF ~~ THEN EXTERN ~DTEST~ 0
+END
+
+IF ~~ THEN BEGIN 52 // from:
+  SAY #2782 /* ~"Oh, bei den Mächten! Ein verfluchter Dabus."~ */
+  IF ~~ THEN REPLY #2783 /* ~"Was ist los?"~ */ GOTO 53
+END
+
+IF ~~ THEN BEGIN 53 // from: 52.0
+  SAY #2788 /* ~"Er ist ein Dabus. Sie 'sprechen' in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren... falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."~ */
+  IF ~~ THEN REPLY #2791 /* ~"Was ist ein Dabus?"~ */ GOTO 54
+END
+
+IF ~~ THEN BEGIN 54 // from: 53.0
+  SAY #2789 /* ~"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame... wütend."~ */
+  IF ~  Global("Know_Lady","GLOBAL",0)
+~ THEN REPLY #6952 /* ~"'Die Dame der Schmerzen'? Wer ist das?"~ */ DO ~SetGlobal("Know_Lady","GLOBAL",1)
+~ GOTO 113
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #6953 /* ~"Was kannst du mir über die Dame der Schmerzen erzählen?"~ */ GOTO 113
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #6954 /* ~"Aha."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 55 // from:
+  SAY #3473 /* ~"Ich glaube, diese Staubie-Tussi hat Tomaten auf den Ohren, Meister. Lassen wir sie doch in Ruhe, ja?"
+~ */
+  IF ~~ THEN REPLY #3474 /* ~"Was ist denn mit ihren Händen los?"~ */ JOURNAL #38205 /* ~Offensichtlich ist die Staubmenschen-Balsamiererin, die ich getroffen habe, ein "Tiefling," jemand mit dem Blut eines Scheusals in ihren Adern. Anscheinend läßt das Scheusalsblut ihren Körper und manchmal auch ihr Denken mutieren. Nach dem, was Morte mir so erzählt, scheinen so einige Tieflinge unterwegs zu sein... Was dann wohl auch bedeuten würde, daß es eine ganz schöne Reihe von Scheusalen geben muß. ~ */ GOTO 56
+  IF ~~ THEN REPLY #3475 /* ~Klopf der Frau auf die Schulter, damit sie dich bemerkt.~ */ EXTERN ~DEIVENE~ 4
+  IF ~~ THEN REPLY #3476 /* ~Laß sie in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0
+  SAY #3477 /* ~"He... sie ist ein *Tiefling*, Meister. In Tiefling-Adern fließt Scheusalsblut, ganz einfach deshalb, weil irgendwelche Vorfahren mit dem einen oder anderen Dämonen in die Kiste gestiegen sind. Manche werden davon ganz hohl im Kopf... und sehen auch hohlköpfig aus."
+~ */
+  IF ~~ THEN REPLY #3478 /* ~Klopf der Frau auf die Schulter, damit sie dich bemerkt.~ */ EXTERN ~DEIVENE~ 4
+  IF ~~ THEN REPLY #3479 /* ~Laß sie in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 57 // from:
+  SAY #3480 /* ~"Ich glaube, diese Staubie-Tussi hat Tomaten auf den Ohren, Meister. Lassen wir sie doch in Ruhe, ja?"~ */
+  IF ~~ THEN REPLY #3483 /* ~"Was ist denn mit ihren Händen los?"~ */ JOURNAL #38205 /* ~Offensichtlich ist die Staubmenschen-Balsamiererin, die ich getroffen habe, ein "Tiefling," jemand mit dem Blut eines Scheusals in ihren Adern. Anscheinend läßt das Scheusalsblut ihren Körper und manchmal auch ihr Denken mutieren. Nach dem, was Morte mir so erzählt, scheinen so einige Tieflinge unterwegs zu sein... Was dann wohl auch bedeuten würde, daß es eine ganz schöne Reihe von Scheusalen geben muß. ~ */ GOTO 58
+  IF ~~ THEN REPLY #3484 /* ~Verschwinde.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 58 // from: 57.0
+  SAY #3481 /* ~"He... sie ist ein *Tiefling*, Meister. In Tiefling-Adern fließt ein Schuß Scheusalsblut, ganz einfach deshalb, weil irgendwelche Vorfahren mit dem einen oder anderen Dämonen in die Kiste gestiegen sind. Manche werden davon ganz hohl im Kopf... und sehen normalerweise auch hohlköpfig aus."~ */
+  IF ~~ THEN REPLY #3482 /* ~Verschwinde.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 59 // from:
+  SAY #3487 /* ~"Sieht aus, als hättest du eine neue Freundin, Meister. Ihr beiden braucht doch etwas Zeit füreinander, oder...?"~ */
+  IF ~~ THEN REPLY #3488 /* ~"Halt's Maul, Morte."~ */ EXTERN ~DEIVENE~ 11
+  IF ~~ THEN REPLY #3489 /* ~Spiel weiter den Zombie.~ */ EXTERN ~DEIVENE~ 11
+  IF ~~ THEN REPLY #3490 /* ~Stoß die Frau zurück.~ */ EXTERN ~DEIVENE~ 10
+END
+
+IF ~~ THEN BEGIN 60 // from:
+  SAY #3492 /* ~"Dies könnte das zweite Mal in meinem Leben sein, daß ich dankbar dafür bin, keine Nase zu haben."~ */
+  IF ~~ THEN EXTERN ~DEIVENE~ 14
+END
+
+IF ~~ THEN BEGIN 61 // from:
+  SAY #3870 /* ~"He! Was machst du da?"~ */
+  IF ~~ THEN REPLY #3871 /* ~"Ich war *gerade* dabei, mit diesem Typen zu reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 62
+  IF ~~ THEN REPLY #3872 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 62 // from: 61.0
+  SAY #3873 /* ~"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen... und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."~ */
+  IF ~~ THEN REPLY #3874 /* ~"Danke für den Rat, aber ich werde *trotzdem* mit diesem Typen reden."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 64
+  IF ~~ THEN REPLY #3875 /* ~"Einverstanden, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 63 // from:
+  SAY #3876 /* ~"He! Du bist wohl taub, was? Was machst du da?"~ */
+  IF ~~ THEN REPLY #3877 /* ~"Paß auf, ich werde mit dem Typen reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 64
+  IF ~~ THEN REPLY #3878 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 64 // from: 62.0 63.0
+  SAY #3879 /* ~"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."~ */
+  IF ~~ THEN REPLY #3880 /* ~"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."~ */ EXTERN ~DDUST~ 3
+  IF ~~ THEN REPLY #3881 /* ~"Nein, du hast Recht. Vergiß es einfach. Laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 65 // from:
+  SAY #3964 /* ~"Uh, Meister. Das ist ja reiner Vandalismus. Dieses Knochengerüst wird doch nur durch die paar Bolzen zusammengehalten. So weit geht sonst nur die Nekromantie mit diesen alten Knackern, was?"~ */
+  IF ~~ THEN REPLY #3965 /* ~"Und?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 66
+  IF ~~ THEN REPLY #3966 /* ~"Oh... Ich wollte keinen bleibenden Schaden anrichten."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 66
+  IF ~~ THEN REPLY #3967 /* ~"Also gut, dann halt nicht. Vielleicht ein andermal."~ */ GOTO 66
+END
+
+IF ~~ THEN BEGIN 66 // from: 65.0 65.1 65.2
+  SAY #3968 /* ~"Ach was, ist doch überhaupt kein Problem." Morte macht eine merkwürdige Bewegung, die du als Achselzucken interpretierst. "Ich war einfach nicht sicher, ob du es weißt oder nicht. Und jetzt mach schon."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #3969 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DSKELW~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #3970 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DSKELW~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #3971 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DSKELW~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #3972 /* ~Macht nichts. Vielleicht ein andermal.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 67
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #3973 /* ~Macht nichts. Vielleicht ein andermal.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.3
+  SAY #3974 /* ~"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe..."~ */
+  IF ~~ THEN REPLY #3975 /* ~"Graubart?"~ */ GOTO 68
+  IF ~~ THEN REPLY #3976 /* ~"Ich glaube nicht, daß er auch nur die Chance hätte, was dagegen zu haben."~ */ GOTO 69
+  IF ~~ THEN REPLY #3977 /* ~"Ich werd das Gefühl nicht los, daß du doppelt so nervig wärst, wenn du Arme hättest. Laß uns gehen."~ */ GOTO 70
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0
+  SAY #3978 /* ~"Graubart... verstehst du, ein Opa, ein alter Knacker... ein Tattergreis."~ */
+  IF ~~ THEN REPLY #3979 /* ~"Nun, ich glaube nicht, daß er auch nur die Chance hätte, was dagegen zu haben. Warum sollten wir sein Knochengerüst nicht nehmen?"~ */ GOTO 69
+  IF ~~ THEN REPLY #3980 /* ~"Irgendwie habe ich den Eindruck, daß du doppelt so nervig wärst, wenn du Arme hättest. Gehen wir."~ */ GOTO 70
+END
+
+IF ~~ THEN BEGIN 69 // from: 67.1 68.0
+  SAY #3981 /* ~Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja... er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller... der hier ist ja völlig kaputt und klapperig."~ */
+  IF ~~ THEN REPLY #3982 /* ~"Du etwa nicht?"~ */ GOTO 70
+  IF ~~ THEN REPLY #3983 /* ~"Na komm schon. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 70 // from: 67.2 68.1 69.0 127.0
+  SAY #3984 /* ~"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."~ */
+  IF ~~ THEN REPLY #3985 /* ~"Oh, wirklich? Zumindest hab' *ich* alle meine Teile."~ */ GOTO 71
+  IF ~~ THEN REPLY #3986 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 71 // from: 70.0
+  SAY #3987 /* ~Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.~ */
+  IF ~~ THEN REPLY #3988 /* ~"Laß dir gesagt sein, Morte, daß es nichts Befriedigenderes gibt, als umherzugehen, die Arme schwingen zu lassen, frische Luft durch die Lungen zu atmen. Einfach KLASSE, einen Körper zu haben."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 72
+  IF ~~ THEN REPLY #3989 /* ~"Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 71.0
+  SAY #3990 /* ~"Daß ich dir damals geholfen habe, aus dem Vorbereitungsraum zu entkommen, ist eines der Dinge, die ich aufs Bitterste bereue." Morte schnaubt nochmals. "Ich hätte dich verrotten lassen sollen... noch mehr, meine ich."~ */
+  IF ~~ THEN REPLY #3991 /* ~"Schön, daß du so empfindest. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 73 // from:
+  SAY #4018 /* ~Morte grinst.~ */
+  IF ~~ THEN REPLY #4019 /* ~"Äh, war das ein 'ja' oder...?"~ */ GOTO 74
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.0
+  SAY #4020 /* ~"Oh... Verzeihung." Morte schwebt zum Kopf des Skeletts hinauf, begutachtet ihn und kommt wieder runter. Dabei mustert er die Rüstung und die Klinge. "Oh, ja. Oh, ja. Ich glaube, dieses hier ist ganz brauchbar.~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4023 /* ~"Also gut... gib mir 'ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."~ */ EXTERN ~DGIANTSK~ 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4024 /* ~"Also gut... gib mir 'ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."~ */ EXTERN ~DGIANTSK~ 3
+  IF ~~ THEN REPLY #4025 /* ~"Ich weiß nicht. Das Ding sieht aus, als wäre es ein bißchen viel für dich."~ */ GOTO 75
+  IF ~~ THEN REPLY #4026 /* ~"Ich denke, wir sollten lieber die Finger davon lassen."~ */ GOTO 75
+END
+
+IF ~~ THEN BEGIN 75 // from: 74.2 74.3
+  SAY #4021 /* ~"Zu Baator mit dir! Weshalb hast du mich dann GEFRAGT, ob ich es brauche? Nur um zu testen, wie grausam du sein kannst?" Morte zuckt wütend. "Nach alledem, was ich für dich getan habe..."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4027 /* ~"Also gut... gib mir 'ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."~ */ EXTERN ~DGIANTSK~ 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4028 /* ~"Also gut... gib mir 'ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."~ */ EXTERN ~DGIANTSK~ 3
+  IF ~~ THEN REPLY #4029 /* ~"Ich war nur um deine Sicherheit besorgt, Morte. Ich fürchte, du könntest Schaden erleiden, wenn wir deinen Kopf an diesem Ding befestigen."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Giant_Skel_Mort_1","GLOBALGood",1)
+~ GOTO 76
+  IF ~~ THEN REPLY #4030 /* ~"Ich denke trotzdem, wir sollten lieber die Finger davon lassen. Laß uns zusehen, daß wir hier rauskommen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 76 // from: 75.2
+  SAY #4022 /* ~Morte starrt dich kurz an. "Sag mal, hab' ich da was verpaßt? Sind wir etwa VERHEIRATET? Was soll dieses 'Ich-will-nicht-daß-dir-was-zustößt"-Gejammer?" Morte starrt dich an. "Wenn ich dir WIRKLICH wichtig wäre, hättest du schon längst dran gedacht, meinen Kopf auf dieses Riesenskelett zu setzen."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4031 /* ~"Also gut... gib mir 'ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."~ */ EXTERN ~DGIANTSK~ 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4032 /* ~"Also gut... gib mir 'ne Sekunde, ich muß von diesem Ding hier den Kopf runterkriegen."~ */ EXTERN ~DGIANTSK~ 3
+  IF ~~ THEN REPLY #4033 /* ~"Tut mir leid, aber so wichtig bist du mir dann doch nicht. Laß uns gehen."~ */ EXIT
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4034 /* ~"Ich würde sagen, wir sollten lieber die Finger davon lassen. Laß uns lieber zusehen, daß wir hier rauskommen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 77 // from:
+  SAY #4134 /* ~"He! Was machst du da?"~ */
+  IF ~~ THEN REPLY #4144 /* ~"Ich war *gerade* dabei, mit diesem Typen zu reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 78
+  IF ~~ THEN REPLY #4145 /* ~"Nichts, laß uns weiterziehn."~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 78 // from: 77.0
+  SAY #4135 /* ~"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen... und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."~ */
+  IF ~~ THEN REPLY #4142 /* ~"Danke für den Rat, aber ich werde *trotzdem* mit diesem Typen reden."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 80
+  IF ~~ THEN REPLY #4143 /* ~"Einverstanden, laß uns weiterziehn."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 79 // from:
+  SAY #4136 /* ~"He! Du bist wohl taub, was? Was machst du da?"~ */
+  IF ~~ THEN REPLY #4140 /* ~"Paß auf, ich werde mit dem Typen reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 80
+  IF ~~ THEN REPLY #4141 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 80 // from: 78.0 79.0
+  SAY #4137 /* ~"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."~ */
+  IF ~~ THEN REPLY #4138 /* ~"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."~ */ EXTERN ~DDUSTGU~ 12
+  IF ~~ THEN REPLY #4139 /* ~"Nein, du hast Recht. Vergiß es einfach. Laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 81 // from:
+  SAY #4338 /* ~"He! Was machst du da?"~ */
+  IF ~~ THEN REPLY #4339 /* ~"Ich war *gerade* dabei, mit dieser Dame zu reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 82
+  IF ~~ THEN REPLY #4340 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 82 // from: 81.0
+  SAY #4341 /* ~"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen... und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."~ */
+  IF ~~ THEN REPLY #4342 /* ~"Danke für den Rat, aber ich werde *trotzdem* mit dieser Dame reden."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 84
+  IF ~~ THEN REPLY #4343 /* ~"Einverstanden, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 83 // from:
+  SAY #4344 /* ~"He! Du bist wohl taub, was? Was machst du da?"~ */
+  IF ~~ THEN REPLY #4345 /* ~"Sieh mal, ich wollte nur mit dieser Dame reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 84
+  IF ~~ THEN REPLY #4346 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 84 // from: 82.0 83.0
+  SAY #4347 /* ~"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."~ */
+  IF ~~ THEN REPLY #4348 /* ~"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."~ */ EXTERN ~DDUSTFEM~ 3
+  IF ~~ THEN REPLY #4349 /* ~"Nein, du hast Recht. Vergiß es einfach. Laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 85 // from:
+  SAY #4675 /* ~Morte flüstert dazwischen: "Bei den Mächten... dieser Dussel ist ein *Anarchist.* Daß er sich als Zombie ausgibt, muß für diese Hohlköpfe wohl ganz was Neues sein."~ */
+  IF ~~ THEN REPLY #4676 /* ~"Anarchist?"~ */ JOURNAL #64512 /* ~Anscheinend ist der als Zombie verkleidete Mann ein Mitglied der Anarchisten. Das ist ein Bund, der darauf aus ist, sich Autoritätspersonen zu schnappen und alles niederzureißen, was auch nur im Entferntesten nach dem 'Establishment' riecht.~ */ GOTO 86
+END
+
+IF ~~ THEN BEGIN 86 // from: 85.0
+  SAY #4677 /* ~"Die Anarchisten... sie sind ein Bund..." Morte sieht aus, als würde er gleich eine Schimpftirade starten. Dann bemerkt er, daß der Zombie euch anschaut und aufmerksam zuhört. "...sie, äh, sie wollen alle von den Fesseln des Staates *befreien*. Die alte Ordnung zerstören und eine neue Ordnung errichten, die jeglicher Ordnung entbehrt."~ */
+  IF ~~ THEN REPLY #4678 /* ~Wahrheit: "Das scheint mir ein edles Streben. Die Ordnung sollte ruhig ab und zu mal richtig durcheinander geraten."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_3","GLOBALLaw",-3)
+~ EXTERN ~DVAXIS~ 11
+  IF ~~ THEN REPLY #4679 /* ~Lüge: "Das scheint mir ein edles Streben. Die Anarchisten, die sich einem solch hohen Ziel verschreiben, zähle ich *ganz bestimmt* zu meinen Freunden."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_4","GLOBALLaw",-1)
+~ EXTERN ~DVAXIS~ 11
+  IF ~~ THEN REPLY #4680 /* ~"Das hört sich ziemlich... widersprüchlich an."~ */ EXTERN ~DVAXIS~ 10
+  IF ~~ THEN REPLY #4681 /* ~"Das gehört eindeutig zu den dümmsten Sachen, die ich je zu hören bekommen habe."~ */ EXTERN ~DVAXIS~ 10
+  IF ~~ THEN REPLY #4682 /* ~Wahrheit: "Das scheint mir für niemanden konstruktiv zu sein. Ein bißchen Ordnung, ein paar Gesetze - das ist doch notwendig für den Fortschritt."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_3","GLOBALLaw",3)
+~ EXTERN ~DVAXIS~ 10
+END
+
+IF ~~ THEN BEGIN 87 // from:
+  SAY #4683 /* ~Im Flüsterton: "Er fragt sich, ob du verrückt bist, plemplem, hohl in der Birne... und ich frage mich dasselbe. Setzt du jetzt endlich einen Punkt unter dein Auferstehungs-Geschwätz?! Das ist ja peinlich."~ */
+  IF ~~ THEN REPLY #4684 /* ~"Ich bringe DICH in Verlegenheit?"~ */ GOTO 88
+  IF ~~ THEN REPLY #4685 /* ~"Ich wollte doch nur wissen, worüber diese... Leiche... redet. Okay?"~ */ GOTO 88
+  IF ~  CheckStatGT(Protagonist,13,INT)
+~ THEN REPLY #4686 /* ~"Ich kann doch nix dafür, daß niemand an diesem verrückten... 'übergeschnappten'... Ort wie ein normaler Mensch spricht... oder auch nur AUSSIEHT wie einer."~ */ GOTO 88
+  IF ~~ THEN REPLY #4687 /* ~"Hör mal, ich werde diesen Typen NICHT anlügen. Besser er weiß, wo er dran ist."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1)
+~ GOTO 88
+END
+
+IF ~~ THEN BEGIN 88 // from: 87.0 87.1 87.2 87.3
+  SAY #4688 /* ~Morte seufzt. "Hör mal zu, Meister... du mußt deine Gehirnzellen schon etwas anstrengen. Du kannst nicht allen ständig die WAHRHEIT sagen. Wir dürfen doch nicht zulassen, daß uns jeder Grinser, der uns über den Weg läuft, auf's Korn nimmt, klar?"~ */
+  IF ~~ THEN REPLY #4689 /* ~"'Grinser?' 'Auf's Korn?' Was zum - ach, schon gut."~ */ EXTERN ~DVAXIS~ 15
+  IF ~~ THEN REPLY #4690 /* ~"Halt's Maul, Morte."~ */ EXTERN ~DVAXIS~ 15
+  IF ~~ THEN REPLY #4691 /* ~"Ich... werd's mir merken. Ich will noch ein wenig mit diesem 'Zombie' reden."~ */ EXTERN ~DVAXIS~ 15
+END
+
+IF ~~ THEN BEGIN 89 // from:
+  SAY #4692 /* ~"Warte..." Morte wirkt überrascht. "Dieser Dussel muß ein *Anarchist* sein. Daß er sich als Zombie ausgibt, muß für diese Hohlköpfe ja ganz was Neues sein."~ */
+  IF ~~ THEN REPLY #4693 /* ~"Anarchist?"~ */ JOURNAL #64512 /* ~Anscheinend ist der als Zombie verkleidete Mann ein Mitglied der Anarchisten. Das ist ein Bund, der darauf aus ist, sich Autoritätspersonen zu schnappen und alles niederzureißen, was auch nur im Entferntesten nach dem 'Establishment' riecht.~ */ GOTO 90
+END
+
+IF ~~ THEN BEGIN 90 // from: 89.0
+  SAY #4694 /* ~"Die Anarchisten... sind ein Bund, der seine Zeit damit verschwendet, den Vertretern irgendwelcher Behörden nachzuspionieren und zu versuchen, alles niederzureißen, was nach Ordnung oder Kontrolle riecht." Morte schnaubt. "Die Anarchisten denken, daß jeder Dussel auf den Ebenen frei und glücklich sein wird, wenn er nach der Beseitigung des Establishments seine eigene 'Wahrheit' finden darf. Die Anarchisten wollen eine neue Ordnung errichten, die jeglicher Ordnung entbehrt."~ */
+  IF ~~ THEN REPLY #4695 /* ~Wahrheit: "Das scheint mir ein edles Streben. Die Ordnung sollte ruhig ab und zu mal richtig durcheinander geraten."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_3","GLOBALLaw",-3)
+~ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4696 /* ~"Das hört sich ziemlich... widersprüchlich an."~ */ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4697 /* ~"Das gehört eindeutig zu den dümmsten Sachen, die ich je zu hören bekommen habe."~ */ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4698 /* ~"Was auch immer."~ */ EXTERN ~DVAXIS~ 71
+  IF ~~ THEN REPLY #4699 /* ~Wahrheit: "Das scheint mir für niemanden konstruktiv zu sein. Ein bißchen Ordnung, ein paar Gesetze - das ist doch notwendig für den Fortschritt."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_3","GLOBALLaw",3)
+~ EXTERN ~DVAXIS~ 71
+END
+
+IF ~~ THEN BEGIN 91 // from:
+  SAY #4700 /* ~"Er meint, daß dieser Dussel namens Pharod den Staubmenschen schon viele Totenbüchler... Leichen... verkauft hat. Genau das ist auch die Aufgabe der Sammler: Sie sammeln tote Körper und verkaufen sie den Staubmenschen. Sieht aus, als hätte dieser Pharod schon so viele Totenbüchler verkauft, daß die Staubmenschen davon ausgehen, daß er einfach irgendwelche Stockbewohner ins Totenbuch steckt, bevor ihre Stunde geschlagen hat... das heißt, daß er sie tötet."~ */
+  IF ~~ THEN REPLY #4701 /* ~"Ich verstehe. "Da war noch was, was ich wissen wollte..."~ */ EXTERN ~DVAXIS~ 43
+  IF ~~ THEN REPLY #4702 /* ~"Hört sich an, als wäre Pharod ein Heiliger. Vielleicht fallen mir später noch ein paar Fragen ein. Rühr dich nicht vom Fleck."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 92 // from:
+  SAY #4703 /* ~"Er möchte wissen, ob du ausgeraubt wurdest, was wahrscheinlich der Fall ist."~ */
+  IF ~~ THEN REPLY #4704 /* ~"Ich verstehe. "Da war noch was, was ich wissen wollte..."~ */ EXTERN ~DVAXIS~ 43
+  IF ~~ THEN REPLY #4705 /* ~"Ja, ich freu mich schon drauf, diesen Dieb zu finden. Na, vielleicht fallen mir später noch ein paar Fragen ein. Rühr dich nicht vom Fleck."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 93 // from:
+  SAY #4706 /* ~"Ja, *sie* sind hier die Blöden, klar."~ */
+  IF ~~ THEN EXTERN ~DVAXIS~ 61
+END
+
+IF ~~ THEN BEGIN 94 // from:
+  SAY #4708 /* ~"Ich kann einfach nicht glauben, daß du das tust. Sag mal, wie übergeschnappt BIST du eigentlich?"~ */
+  IF ~  Global("Vaxis_Zombie_XP","GLOBAL",0)
+~ THEN REPLY #64535 /* ~"Ganz schön übergeschnappt, nehme ich an..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+AddexperienceParty(500)
+SetGlobal("Vaxis_Zombie_XP","GLOBAL",1)
+~ EXTERN ~DVAXIS~ 66
+  IF ~  Global("Vaxis_Zombie_XP","GLOBAL",1)
+~ THEN REPLY #64534 /* ~"Ganz schön übergeschnappt, nehme ich an..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+~ EXTERN ~DVAXIS~ 66
+END
+
+IF ~~ THEN BEGIN 95 // from:
+  SAY #4710 /* ~"Kannst du seine Lippen nicht etwas fester zusammennähen?"~ */
+  IF ~~ THEN REPLY #4711 /* ~"Hult's Muul, Murte -"~ */ EXTERN ~DVAXIS~ 67
+  IF ~~ THEN REPLY #4712 /* ~"Mmm-HMMPH!"~ */ EXTERN ~DVAXIS~ 67
+END
+
+IF ~~ THEN BEGIN 96 // from:
+  SAY #5029 /* ~"He! Was machst du da?"~ */
+  IF ~~ THEN REPLY #5030 /* ~"Ich war *gerade* dabei, mit diesem Typen zu reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",1)
+~ GOTO 97
+  IF ~~ THEN REPLY #5031 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 97 // from: 96.0
+  SAY #5032 /* ~"Wenn du schon mit den Staubies plaudern mußt, dann halte mich da gefälligst raus. Ich vertrag mich nicht allzu gut mit ihnen... und du solltest es auch nicht tun. Bevor sie dir Gehör schenken, verbrennen oder vergraben sie dich eher. Komm, sei nicht so bescheuert; laß uns abhauen."~ */
+  IF ~~ THEN REPLY #5033 /* ~"Danke für den Rat, aber ich werde *trotzdem* mit diesem Typen reden."~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 99
+  IF ~~ THEN REPLY #5034 /* ~"Einverstanden, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 98 // from:
+  SAY #5035 /* ~"He! Du bist wohl taub, was? Was machst du da?"~ */
+  IF ~~ THEN REPLY #5036 /* ~"Paß auf, ich werde mit dem Typen reden. Was dagegen?"~ */ DO ~SetGlobal("Warning","GLOBAL",2)
+~ GOTO 99
+  IF ~~ THEN REPLY #5037 /* ~"Nichts, laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 99 // from: 97.0 98.0
+  SAY #5038 /* ~"Gut, dann hör halt *nicht* auf mich - es ist schließlich deine Beerdigung."~ */
+  IF ~~ THEN REPLY #5039 /* ~"Jaa, dann kannst du gleich ein Trauerlied anstimmen. Jetzt sei endlich still."~ */ EXTERN ~DSOEGO~ 3
+  IF ~~ THEN REPLY #5040 /* ~"Nein, du hast Recht. Vergiß es einfach. Laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 100 // from:
+  SAY #5041 /* ~"Was *machst* du da?! Wenn du ihn töten willst, dann bitte richtig!"~ */
+  IF ~~ THEN REPLY #5042 /* ~"*Hab'* ich doch! Ich hab' ihm den Hals umgedreht! Der sollte sich nicht mehr rühren!"~ */ EXTERN ~DSOEGO~ 21
+END
+
+IF ~~ THEN BEGIN 101 // from:
+  SAY #5043 /* ~"Er *kann* wenigstens gehen." Morte schnaubt. "Dieses Herumschweben geht einem ganz schön auf den Keks, wenn man jemanden treten möchte."~ */
+  IF ~~ THEN EXTERN ~DSOEGO~ 11
+END
+
+IF ~~ THEN BEGIN 102 // from:
+  SAY #5049 /* ~"He, Meister! Was machst du?!"~ */
+  IF ~~ THEN REPLY #5050 /* ~"Wollt' nur grade mit diesem Schreiber reden. Der weiß vielleicht, wie ich hierhergekommen bin."~ */ GOTO 103
+END
+
+IF ~~ THEN BEGIN 103 // from: 102.0
+  SAY #5052 /* ~"Sich mit den Staubies abzugeben ist doch das ALLERLETZTE... "~ */
+  IF ~~ THEN EXTERN ~DDHALL~ 0
+END
+
+IF ~~ THEN BEGIN 104 // from:
+  SAY #5053 /* ~"Und wir sollten *vor allem* keinen Plausch mit kranken Staubies halten. Komm schon, haun wir ab. Je schneller wir diesem Ort eins grinsen, desto bess..."~ */
+  IF ~~ THEN EXTERN ~DDHALL~ 1
+END
+
+IF ~~ THEN BEGIN 105 // from:
+  SAY #6071 /* ~"Hörst du mir also wieder zu, Meister? Irgendwie schienst du den Faden verloren zu haben."~ */
+  IF ~~ THEN REPLY #6075 /* ~"Nein, mir geht's gut. Weißt du, wer dieser Geist war?"~ */ DO ~SetGlobal("Morte_Deionarra_Quip_1","GLOBAL",1)
+~ GOTO 106
+  IF ~~ THEN REPLY #6076 /* ~"Alles okay. Laß uns weiterziehn."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 106 // from: 105.0
+  SAY #6072 /* ~"Hä? Geist?"
+~ */
+  IF ~~ THEN REPLY #6077 /* ~"Das Gespenst, mit dem ich mich gerade unterhalten habe. Die Frau."~ */ GOTO 107
+END
+
+IF ~~ THEN BEGIN 107 // from: 106.0
+  SAY #6073 /* ~"Du hast dich mit einer Frau unterhalten? Wo?" Morte sieht sich aufgeregt um. "Wie hat sie ausgesehen?"~ */
+  IF ~~ THEN REPLY #6078 /* ~"Sie war grade hier oben auf der Bahre. Hast du sie denn nicht gesehen?"~ */ GOTO 108
+END
+
+IF ~~ THEN BEGIN 108 // from: 107.0
+  SAY #6074 /* ~"Äh... nein, du hast einfach den Faden verloren, hast einfach dagestanden, fast wie eine Statue. Ich hatte schon ein wenig Angst, daß du wieder übergeschnappt bist."~ */
+  IF ~~ THEN REPLY #6079 /* ~"Nein, mir geht's gut... glaub ich jedenfalls. Laß uns weiterziehn."
+~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 109 // from:
+  SAY #6324 /* ~"Erinnert mich an einen Job, den ich mal hatte." Er sieht peinlich berührt aus. "Naja, ich meine...ohne die Arme."
+~ */
+  IF ~  HasItem("Cobble","Post")
+~ THEN REPLY #6325 /* ~Untersuche die Leiche.~ */ EXTERN ~DPOST~ 3
+  IF ~  !HasItem("Cobble","Post")
+~ THEN REPLY #6326 /* ~Untersuche die Leiche.~ */ EXTERN ~DPOST~ 4
+  IF ~  CheckStatGT(Protagonist,11,INT)
+CheckStatLT(Protagonist,12,WIS)
+~ THEN REPLY #6327 /* ~"Hmmm. Ich frage mich, ob das auch mit den anderen Zetteln funktionieren würde..."~ */ EXTERN ~DPOST~ 5
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #6328 /* ~"Hmmmm. Ich frage mich, ob das auch mit den anderen Zetteln funktionieren würde..."~ */ EXTERN ~DPOST~ 5
+  IF ~  CheckStatLT(Protagonist,12,INT)
+CheckStatLT(Protagonist,12,WIS)
+~ THEN REPLY #6329 /* ~Sieh dir die anderen Zettel an.~ */ EXTERN ~DPOST~ 5
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6330 /* ~Wende deine Erzählende-Knochen-Kraft auf die Leiche an.~ */ EXTERN ~DPOST~ 2
+  IF ~~ THEN REPLY #6331 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 110 // from:
+  SAY #6609 /* ~"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"~ */
+  IF ~~ THEN REPLY #6658 /* ~"Und?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6659 /* ~"Oh... ich wollte wirklich keinen bleibenden Schaden anrichten."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6660 /* ~"Ist schon gut. Vielleicht ein andermal."~ */ EXTERN ~DS42~ 1
+END
+
+IF ~~ THEN BEGIN 111 // from:
+  SAY #6610 /* ~"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe..."~ */
+  IF ~~ THEN REPLY #6661 /* ~"'Graubart'?"~ */ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6662 /* ~"Ich glaube kaum, daß er in seiner Lage etwas dagegen haben wird."~ */ EXTERN ~DS42~ 1
+  IF ~~ THEN REPLY #6663 /* ~"Ich werd das Gefühl nicht los, daß du doppelt so nervig wärst, wenn du Arme hättest. Laß uns gehen."~ */ EXTERN ~DS42~ 1
+END
+
+IF ~~ THEN BEGIN 112 // from:
+  SAY #6611 /* ~"Könntest du damit aufhören? Seine Arme werden abbrechen."~ */
+  IF ~  Global("42_Secret","GLOBAL",1)
+~ THEN REPLY #6664 /* ~Verschränk die Arme vor der Brust.~ */ EXTERN ~DS42~ 4
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+Global("42_Secret","GLOBAL",0)
+~ THEN REPLY #6665 /* ~Imitier die Geste des Skeletts... warte ab, was passiert.~ */ EXTERN ~DS42~ 9
+  IF ~~ THEN REPLY #6666 /* ~"Äh..."~ */ EXTERN ~DS42~ 10
+  IF ~~ THEN REPLY #6667 /* ~Laß das Skelett in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 113 // from: 54.0 54.1
+  SAY #6771 /* ~"Sie hat in dieser Stadt die Macht. Du würdest sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt in Richtung des Dabus, der euch beide anschaut. "Keiner weiß etwas genaues über sie... sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."~ */
+  IF ~~ THEN REPLY #2784 /* ~"Ich verstehe."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 114 // from:
+  SAY #6784 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Ziegenköpfe sagen wollen. Du brauchst einen Übersetzer? Such dir einen Einwohner von Sigil."~ */
+  IF ~~ THEN REPLY #6955 /* ~"Aha."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 115 // from:
+  SAY #6786 /* ~"Oh, *natürlich* haben sie Namen. Da bin ich mir sicher."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 43
+END
+
+IF ~~ THEN BEGIN 116 // from:
+  SAY #6790 /* ~"Das glaubst *du*, du kleines Scheusal."~ */
+  IF ~~ THEN REPLY #6956 /* ~"Halt's Maul, Morte - kannst du ihm noch ein paar andere Fragen stellen, Annah?"
+~ */ EXTERN ~DANNAH~ 40
+  IF ~~ THEN REPLY #6957 /* ~"Vergiß es. Laß uns einfach gehen."~ */ DO ~SetGlobal("Translate_Dabus","GLOBAL",0)
+~ EXTERN ~DDABUS~ 6
+END
+
+IF ~~ THEN BEGIN 117 // from:
+  SAY #6794 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer? Soll doch das kleine Scheusal-Mädel hier den Job machen." Er nickt Annah zu. "Sie ist im Stock heimisch."~ */
+  IF ~~ THEN REPLY #6958 /* ~"Vielleicht..."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 118 // from:
+  SAY #6797 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer?" Er nickt Dak'kon zu. "Sag 'Heiliger-als-du-und-doppelt-so-schweigsam', er soll übersetzen."~ */
+  IF ~~ THEN REPLY #6959 /* ~"Vielleicht..."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 119 // from:
+  SAY #6800 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."~ */
+  IF ~~ THEN REPLY #6960 /* ~"Vielleicht..."~ */ EXTERN ~DDABUS~ 3
+END
+
+IF ~~ THEN BEGIN 120 // from:
+  SAY #7040 /* ~Als du dich abwendest, bemerkst du, daß Morte dich anstarrt. "He? He?"~ */
+  IF ~~ THEN REPLY #7055 /* ~"Was?"~ */ GOTO 121
+END
+
+IF ~~ THEN BEGIN 121 // from: 120.0
+  SAY #7041 /* ~"Hast du *gesehen* wie diese leichenstarre Schönheit mich angeschaut hat?" Mortes Zähnen fangen wie in freudiger Erwartung an zu klappern. "Sie hat nach irgendeinem Schleifer gesucht, der die Kälte aus ihrem Sarg vertreibt."~ */
+  IF ~  Global("Morte_Quip","GLOBAL",1)
+~ THEN REPLY #7056 /* ~"Nun fang *bitte* nicht schon wieder damit an."~ */ DO ~SetGlobal("Morte_Zombie_Female_Bar_Quip","GLOBAL",1)
+~ GOTO 122
+  IF ~  Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #7057 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+  IF ~  Global("Morte_Quip","GLOBAL",0)
+~ THEN REPLY #7058 /* ~"Was, dieses Starren-mit-leeren-Augen-über-das-Grab-hinaus?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 47
+END
+
+IF ~~ THEN BEGIN 122 // from: 121.0
+  SAY #7042 /* ~Morte ignoriert dich und wird nachdenklich. "Ich habe eigentlich nichts gegen Aufmerksamkeit... es ist nur so, daß ich als mehr als nur ein Totenschädel angesehen werden möchte, verstehst du? Ich habe Gefühle, die über meine einfachen, animalischen Instinkte hinausgehen. Ich möchte umworben werden, und keine kurze Affäre im Mausoleum."~ */
+  IF ~~ THEN REPLY #7059 /* ~"Wenn du weiter so dumm rumquatschst, verschaff ich dir ne dauerhafte Beziehung mit der nächstbesten Häuserwand ."~ */ GOTO 123
+  IF ~~ THEN REPLY #7060 /* ~"Morte, du *bist* nun mal ein Totenschädel. Und keiner kann's verhindern, dich als Totenschädel zu sehen. Akzeptier's einfach."~ */ GOTO 124
+  IF ~~ THEN REPLY #7061 /* ~"Versteh schon. Laß uns lieber zusehen, daß wir hier rauskommen, okay?"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 123 // from: 122.0
+  SAY #7043 /* ~"Whoa, Meister..." Morte weicht etwas zurück. "Frauen - die wollen Liebhaber und keine Muskelmänner."~ */
+  IF ~~ THEN REPLY #7062 /* ~"Du bist wahrscheinlich der *Letzte*, von dem ich je Ratschläge in Liebesdingen annehmen würde."~ */ GOTO 126
+  IF ~~ THEN REPLY #7063 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 124 // from: 122.1
+  SAY #7044 /* ~"Ja, ich bin vielleicht nur ein Totenschädel, aber ich habe ein großes Herz."~ */
+  IF ~~ THEN REPLY #7064 /* ~"Naja, eigentlich *hast* du ja gar keins."~ */ GOTO 125
+  IF ~~ THEN REPLY #7065 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 125 // from: 124.0
+  SAY #7045 /* ~"Was, bist du in mein Leben geplatzt, um auf meine Träume und Hoffnungen zu spucken?! Gut, dann soll es wohl so sein. Ich habe zwar kein Herz, *dafür* aber eine Seele."~ */
+  IF ~~ THEN REPLY #7066 /* ~"Nun, ehrlich gesagt wette ich, daß du k... ach, vergiß es. Laß uns gehen."~ */ EXIT
+  IF ~~ THEN REPLY #7067 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 126 // from: 123.0
+  SAY #7046 /* ~"Wenn du halb soviel Grips hättest wie zu deinen Lebzeiten, dann wüßtest du es besser." Mortes Stimme nimmt einen süffisanten Ton an. "In Sachen Liebe macht mir keiner etwas vor."~ */
+  IF ~~ THEN REPLY #7068 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 127 // from:
+  SAY #7071 /* ~Morte schaut sich das Skelett einen Moment lang an und schüttelt dann seinen Kopf. "Nein... es ist zu sauber... da ist fast überhaupt kein Fleisch mehr dran. Außerdem krieg ich nie die ganze Tünche von den Knochen."~ */
+  IF ~~ THEN REPLY #7076 /* ~"Ich weiß ja nicht, ob's 'zu sauber' ist... du könntest noch das eine oder andre über Reinheit lernen."~ */ GOTO 70
+  IF ~~ THEN REPLY #7077 /* ~"Also gut, gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 128 // from:
+  SAY #7130 /* ~"Jaa!"~ */
+  IF ~~ THEN EXTERN ~DHIVEF1~ 8
+END
+
+IF ~~ THEN BEGIN 129 // from:
+  SAY #7187 /* ~"Ein Mimir ist ein wandelndes Lexikon. So was wie ich, Meister."~ */
+  IF ~~ THEN REPLY #7483 /* ~"Verstehe ich gut. Nun, Morte, steiger dich da lieber nicht rein. So wie die aussieht, rette ich dich hier bestimmt vor einem zweiten Sterben."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
+~ EXTERN ~DHARLOTN~ 8
+  IF ~~ THEN REPLY #7484 /* ~"Laß uns einfach zusehen, daß wir hier rauskommen. Leb wohl, Fräulein."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 130 // from:
+  SAY #7188 /* ~Morte starrt wie hypnotisiert auf die Frau, über deren Lippen sich ein Schwall von Obszönitäten ergießt. Nach dem Ende des verbalen Ausbruchs schweigt Morte für einen Augenblick und wendet sich dann dir zu. "Wow, Meister. Ich hab' ein paar neue Flüche für meine Sammlung." Er wendet sich wieder der Frau zu, die eine Atempause eingelegt hat. "Außerdem bin ich verliebt."~ [MRT387] */
+  IF ~~ THEN REPLY #7485 /* ~Verschwinde.~ */ DO ~IncrementGlobal("Morte_Taunt","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 131 // from:
+  SAY #7775 /* ~"Whoa, Meister." Du willst mit dem Geschöpf sprechen, aber Morte unterbricht dich. "Schließ ab! Du solltest nicht mit jedem Scheusal auf der Straße schwafeln. Laß es sein."~ */
+  IF ~~ THEN REPLY #7776 /* ~"Ich wollt' ihm ein paar Fragen stellen..."~ */ GOTO 132
+  IF ~~ THEN REPLY #7777 /* ~Laß das Wesen in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 132 // from: 131.0
+  SAY #7778 /* ~"Nein, lieber nicht." Morte wirft einen Blick auf das Geschöpf, wendet sich wieder zu dir und flüstert dir zu: "Die sind leicht reizbar. Laß uns einfach gehen."~ */
+  IF ~~ THEN REPLY #7779 /* ~"Ich werd's wagen."~ */ EXTERN ~ABISHAB~ 11
+  IF ~~ THEN REPLY #7780 /* ~Laß das Wesen in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 133 // from:
+  SAY #7805 /* ~Morte seufzt, als du Anstalten machst, mit dem Geschöpf zu reden.~ */
+  IF ~~ THEN REPLY #7806 /* ~"Ja?"~ */ GOTO 134
+END
+
+IF ~~ THEN BEGIN 134 // from: 133.0
+  SAY #7807 /* ~"Oh, nichts... das Leben ist der beste Lehrmeister, weißt du." Er nickt in Richtung des Geschöpfs. "Mach weiter."~ */
+  IF ~~ THEN REPLY #7808 /* ~"Das werde ich."~ */ EXTERN ~ABISHAB~ 11
+  IF ~~ THEN REPLY #7809 /* ~"Also gut, dann nicht. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 135 // from: 44.0 44.1
+  SAY #2349 /* ~"Ja, 'n 'Gith'..." Morte sieht kurz zum Gith hinüber, der dich immer noch anstarrt. "Darüber sprechen wir 'n anderes Mal."~ */
+  IF ~~ THEN REPLY #9035 /* ~"Ich kann jetzt noch nicht gehen. Ich werde ihm erst ein paar Fragen stellen..."~ */ EXTERN ~DGITH~ 7
+  IF ~~ THEN REPLY #9036 /* ~Laß den Gith in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 136 // from:
+  SAY #9860 /* ~"He, Meister... du bringst den Fussler eher um, als daß du ihn aufweckst!"~ */
+  IF ~~ THEN REPLY #9882 /* ~"Du hast Recht, Morte - laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 137 // from:
+  SAY #11946 /* ~Morte schwebt zu dir herüber. "Was gibt's, Meister?"~ */
+  IF ~~ THEN REPLY #11974 /* ~"Siehst du diese Zähne?"~ */ GOTO 138
+  IF ~~ THEN REPLY #11975 /* ~"Ach nichts, ist schon gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 138 // from: 137.0
+  SAY #11947 /* ~Morte betrachtet deine Handfläche. "Iiihhh." Er scheint von einer morbiden Faszination ergriffen zu werden. "Lauter häßliche, kleine Dussel, was?"~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 139 // from:
+  SAY #11948 /* ~"Das fehlte ja gerade noch." Morte schaudert. "Würdest du die Dinger etwa in *dir* haben wollen?"~ */
+  IF ~~ THEN REPLY #11976 /* ~"Komm schon, Morte, sie scheinen dich zu mögen. Sieh mal, wie sie dich anstarren."~ */ GOTO 140
+  IF ~~ THEN REPLY #11977 /* ~Greif dir Morte und schieb ihm die Zähne in den Mund.~ */ DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Ingress_Teeth_2","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Ingress_Teeth_1","GLOBALGood",-1)
+~ GOTO 141
+  IF ~~ THEN REPLY #11978 /* ~"Egal."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 140 // from: 139.0
+  SAY #11949 /* ~"Bleib mir bloß mit diesen ekligen Dingern vom Hals, sonst..." Morte zögert. "Ich hab' keine Ahnung, wie man Zähnen drohen könnte."
+~ */
+  IF ~~ THEN REPLY #11979 /* ~Untersuche die Zähne.~ */ EXIT
+  IF ~~ THEN REPLY #11980 /* ~Greif dir Morte und schieb ihm die Zähne in den Mund.~ */ DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Ingress_Teeth_2","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Ingress_Teeth_1","GLOBALGood",-1)
+~ GOTO 141
+  IF ~~ THEN REPLY #11981 /* ~"Egal."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 141 // from: 139.1 140.1
+  SAY #11950 /* ~Es geht alles ganz schnell. Du nimmst Morte in den Schwitzkasten, weil das der einzige Griff ist, den du wirklich beherrschst. Als er sich losbeißen will, springen die Zähne aus deiner Hand heraus, hinein in seinen Kiefer. Morte heult vor Schmerz, als Ingress' Zähne seine alten Zähne herausreißen und in die entstandenen Hohlräume springen.~ */
+  IF ~~ THEN REPLY #11982 /* ~"Na, Morte. Das war doch gar nicht so schlimm, oder?"~ */ DO ~MoraleDec("Morte",1)
+~ GOTO 143
+END
+
+IF ~~ THEN BEGIN 142 // from: 149.0
+  SAY #11951 /* ~Morte heult noch immer. Die Zähne passen sich seinem Mund an und verankern ihre Wurzeln mit einem schrecklichen Bohrgeräusch.~ */
+  IF ~~ THEN REPLY #11983 /* ~"Morte? Bist du okay?"~ */ DO ~SetGlobal("Ingress_Teeth_Installed","GLOBAL",1)
+~ GOTO 143
+END
+
+IF ~~ THEN BEGIN 143 // from: 141.0 142.0
+  SAY #11952 /* ~Morte scheint dich nicht zu hören... er heult und heult. Plötzlich schlägt er seine Zähne aufeinander. Er beißt dreimal fest zu, bevor obere und untere Zahnreihe wieder aufeinanderschlagen, und Morte den Mund nicht mehr aufkriegt.~ */
+  IF ~~ THEN REPLY #11984 /* ~"Wow."~ */ GOTO 144
+END
+
+IF ~~ THEN BEGIN 144 // from: 143.0
+  SAY #11953 /* ~Morte murmelt dir mit weit aufgerissenen Augen etwas zu.~ */
+  IF ~  Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11985 /* ~"Also... gefallen sie dir?"~ */ GOTO 145
+  IF ~  Global("Good_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11986 /* ~"Morte, bist du okay?"~ */ GOTO 150
+END
+
+IF ~~ THEN BEGIN 145 // from: 144.0
+  SAY #11954 /* ~Die Zähne öffnen sich plötzlich wieder, und Morte holt tief Luft. "Dafür *bring ich dich um*," sagt er. "Das war echt mies von dir."~ */
+  IF ~~ THEN REPLY #11987 /* ~"Wie fühlen sie sich an?"~ */ GOTO 146
+END
+
+IF ~~ THEN BEGIN 146 // from: 145.0 150.0
+  SAY #11955 /* ~Morte spielt mit seinem Kiefer. "Ungewohnt. Aber nicht schlecht." Plötzlich verlängern sich die Zähne zu Fängen. "Ooooooh! Sie verändern sich!" Dann schrumpfen sie wieder auf ihre normale Größe zurück, werden wieder zu Fängen, dann wieder normal... "Ich glaube, sie werden mir gefallen."~ */
+  IF ~  Global("Good_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11988 /* ~"Es tut mir leid, Morte. Ich wollte dir nichts Böses tun."~ */ GOTO 147
+  IF ~  Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11989 /* ~"Und? Hatte ich nicht recht?"~ */ GOTO 147
+END
+
+IF ~~ THEN BEGIN 147 // from: 146.0 146.1
+  SAY #11956 /* ~"Oh, ganz ungeschoren kommst du mir trotzdem nicht davon," antwortet Morte. Als er grinst, werden seine Zähne wieder zu Fängen. "Wart's nur ab."~ */
+  IF ~  Global("Good_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11990 /* ~"Hey... Rache hat noch nie jemandem genützt, Morte... Komm, laß uns gehen."~ */ EXIT
+  IF ~  Global("Evil_Ingress_Teeth_1","GLOBAL",1)
+~ THEN REPLY #11991 /* ~"Du wirst mir noch dankbar dafür sein. Wirst schon sehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 148 // from:
+  SAY #11957 /* ~"Was ist?" Morte schwebt näher heran und schaut auf deine Handfläche. "Hey... die führen doch irgendwas im Schilde, oder?"~ */
+  IF ~~ THEN REPLY #11992 /* ~"Ja, du hast re-"~ */ GOTO 149
+END
+
+IF ~~ THEN BEGIN 149 // from: 148.0
+  SAY #11958 /* ~Was als nächstes passiert, ist schwer zu beschreiben... und schmerzvoll mit anzusehen. Bevor du deine Handfläche schließen kannst, springen die Zähne aus deiner Hand heraus, hinein in Mortes Kiefer. Morte heult vor Schmerz, als Ingress' Zähne seine alten Zähne herausreißen und in die entstandenen Hohlräume springen.~ */
+  IF ~~ THEN REPLY #11993 /* ~"Morte!"~ */ GOTO 142
+END
+
+IF ~~ THEN BEGIN 150 // from: 144.1
+  SAY #11959 /* ~Die Zähne öffnen sich plötzlich wieder. Morte ringt nach Luft. "Dafür *bring ich dich um*! Du hast es geplant! Ich weiß es!"~ */
+  IF ~~ THEN REPLY #11994 /* ~"Schau, ich wollte nicht, daß das passiert... Ich habe dich sogar gewarnt. Äh... wie fühlen sie sich an?"~ */ GOTO 146
+END
+
+IF ~~ THEN BEGIN 151 // from:
+  SAY #12389 /* ~Morte flüstert dir zu: "Meister, mir gefällt das gar nicht. Die sollten hier gar nicht sein. Der Blutkrieg hat den Himmelskreaturen nicht genug in den Hintern getreten, daß jedes Scheusal jederzeit in Urlaub gehen kann. Die *wollen* was. Sei vorsichtig." Inzwischen antwortet Tegar'in seinem Begleiter...~ */
+  IF ~~ THEN EXTERN ~DTEGARIN~ 12
+END
+
+IF ~~ THEN BEGIN 152 // from:
+  SAY #12449 /* ~"Meister, ich bin sicherer denn je, daß diese Dussel nicht ganz sauber sind. Klingt mir ganz so, als seien sie desertiert, als seien sie auf der Suche nach einem Winkel, der ihren Status in Baator erhöht. Mit denen solltest du nicht reden, Meister... du weißt ja nicht, was die für'n Spiel spielen, und du könntest dir die Pfoten verbrennen... im wahrsten Sinne des Wortes."~ */
+  IF ~~ THEN REPLY #12450 /* ~"In Ordnung, Morte. Nur noch ein paar Fragen an diese beiden..."~ */ EXTERN ~DAETHEL~ 11
+  IF ~~ THEN REPLY #12451 /* ~"In Ordnung, Morte. Ich bin fertig mit ihnen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 153 // from:
+  SAY #12466 /* ~Morte schwebt dicht an dich heran und flüstert dir ins Ohr: "Er *hat* recht, Meister... Ich weiß wirklich nicht, worüber du dich so aufregst."~ */
+  IF ~~ THEN REPLY #12553 /* ~"Wie du meinst... Ich wollte nur eine Frage stellen..."~ */ EXTERN ~DBARIA~ 4
+  IF ~~ THEN REPLY #12554 /* ~"Halt' die Klappe, du Jammerschädel! Und du, Ziegending. Verrecke..."~ */ DO ~MoraleDec("Morte",2)
+Enemy()
+Attack(Protagonist)
+ChangeAIScript("MDKTNO",DEFAULT)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #12555 /* ~"Oh nein... Das warst *du*, und jetzt wirst du dafür zahlen..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ChangeAIScript("MDKTNO",DEFAULT)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #12556 /* ~"Dann vergiß es. Leb wohl."~ */ DO ~SetGlobal("BariA","AR0400",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 154 // from:
+  SAY #12467 /* ~"Ja ja! Das gute Zeug!"~ */
+  IF ~~ THEN EXTERN ~DBARIA~ 20
+END
+
+IF ~~ THEN BEGIN 155 // from:
+  SAY #12621 /* ~Morte scheint erstaunt, als sich alle Blicke auf ihn richten. "Was? Was?" Du hast den Eindruck, daß er, wenn er Lippen hätte, unschuldig pfeifen würde.~ */
+  IF ~~ THEN REPLY #12854 /* ~"Hast du eine Erklärung dafür, Morte?"~ */ GOTO 156
+  IF ~  Global("Know_Mimir","GLOBAL",0)
+~ THEN REPLY #12855 /* ~"Was ist ein 'Mimir'?"~ */ DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+~ GOTO 157
+  IF ~~ THEN REPLY #12856 /* ~"Beachte ihn nicht... Weißt du die Antwort?"~ */ EXTERN ~DCREED~ 30
+END
+
+IF ~~ THEN BEGIN 156 // from: 155.0
+  SAY #12622 /* ~"Tja, ich würd' sagen, wir hören uns an, was dieser Mann zu sagen hat. Ja?" Morte dreht sich um und starrt den Rattenfänger eindringlich an.~ */
+  IF ~~ THEN REPLY #12857 /* ~"Nein... laß uns hören, was du dazu zu sagen hast, Morte."~ */ GOTO 158
+  IF ~  Global("Know_Mimir","GLOBAL",0)
+~ THEN REPLY #12858 /* ~"Gleich... was ist ein 'Mimir?'"~ */ DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+~ GOTO 157
+  IF ~~ THEN REPLY #12859 /* ~Wende dich dem Rattenfänger wieder zu.~ */ EXTERN ~DCREED~ 32
+END
+
+IF ~~ THEN BEGIN 157 // from: 155.1 156.1
+  SAY #12623 /* ~Morte rollt seine Augen, als sei es ihm peinlich. "Das ist... ne sprechende Enzyklopädie. Nichts, worauf ich stolz wäre. Und jetzt laß uns anhören, was dieser Kerl zu sagen hat, in Ordnung?"~ */
+  IF ~~ THEN REPLY #12860 /* ~"Wie du meinst."~ */ DO ~SetGlobal("Morte_Mimir","GLOBAL",1)
+~ EXTERN ~DCREED~ 32
+  IF ~~ THEN REPLY #12861 /* ~"Nein, ich hab' genug gehört. Leb wohl, Rattenfänger."~ */ DO ~SetGlobal("Morte_Mimir","GLOBAL",1)
+~ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 158 // from: 156.0
+  SAY #12624 /* ~"Ach, nun komm schon, Meister... warum sollte ich dir etwas verheimlichen? Ich hab' dir alles Nützliche erzählt, das *ich* weiß. Jetzt laß uns mal den Dussel hier die ganze Sache übernehmen."~ */
+  IF ~~ THEN REPLY #12862 /* ~"Wie du meinst."~ */ EXTERN ~DCREED~ 32
+  IF ~~ THEN REPLY #12863 /* ~"Egal. Gehen wir... Auf bald, Rattenfänger."~ */ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 159 // from:
+  SAY #12625 /* ~"Ja, Meister! So isses richtig!"~ */
+  IF ~~ THEN EXTERN ~DCREED~ 40
+END
+
+IF ~~ THEN BEGIN 160 // from:
+  SAY #12626 /* ~"Tot, Meister... tot."~ */
+  IF ~~ THEN REPLY #12864 /* ~"Du scheinst aber ganz in Ordnung zu sein, Rattenfänger..."~ */ EXTERN ~DCREED~ 49
+  IF ~~ THEN REPLY #12865 /* ~"Verstehe. Eine andere Frage..."~ */ EXTERN ~DCREED~ 15
+  IF ~~ THEN REPLY #12866 /* ~"Danke für die Information. Leb wohl."~ */ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 161 // from:
+  SAY #12627 /* ~"Tot, Meister... tot."~ */
+  IF ~~ THEN REPLY #12867 /* ~"Ah... Was war das nochmal für eine Geschichte über Leute, die für tote Ratten zahlen?"~ */ EXTERN ~DCREED~ 18
+  IF ~~ THEN REPLY #12868 /* ~"Ich verstehe. Ich hätte noch eine andere Frage..."~ */ EXTERN ~DCREED~ 15
+  IF ~~ THEN REPLY #12869 /* ~"Ich verstehe. Leb wohl."
+~ */ EXTERN ~DCREED~ 59
+END
+
+IF ~~ THEN BEGIN 162 // from:
+  SAY #13748 /* ~"Tja, da haben wir einen Baum, dem ein Ast zu viel abgebrochen ist." Morte rollt die Augen. "Hat gar keinen Zweck, mit Xaositekten zu plaudern, Meister. Das ist 'n völlig verrückter Haufen."~ */
+  IF ~  Global("Know_Chaosmen","GLOBAL",0)
+~ THEN REPLY #13774 /* ~"Xaositekten?"~ */ DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1)
+SetGlobal("Know_Chaosmen","GLOBAL",1)
+~ GOTO 163
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13775 /* ~"Wer sind die Xaositekten noch mal?"~ */ DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1)
+~ GOTO 163
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13776 /* ~"Dachte, ich könnte vielleicht was von ihm lernen. Na, egal, laß uns gehen."~ */ DO ~SetGlobal("Morte_SDThug_Quip_1","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 163 // from: 162.0 162.1
+  SAY #13749 /* ~"Das ist 'n 'Bund' ganz ohne Regeln... außer, keinen Gedanken zu lange im Kopf zu behalten. Manchmal werden sie auch 'Chaoten' genannt. Warum, muß ich wohl nicht erst erklären."~ */
+  IF ~~ THEN REPLY #13777 /* ~"Wie rekrutieren sie neue Mitglieder?"~ */ GOTO 164
+  IF ~~ THEN REPLY #13778 /* ~"Ich verstehe. Geh'n wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 164 // from: 163.0
+  SAY #13750 /* ~"Die scheinen einfach Mitglieder wie die Fliegen anzulocken... na ja, Mitglieder, die verrückt oder chaotisch genug sind, denk ich mal. Ich glaub nicht, daß die Leute haben, die extra rekrutieren... obwohl es nicht so einfach ist, sich bei denen über irgend etwas ganz sicher zu sein."~ */
+  IF ~~ THEN REPLY #13779 /* ~"Ich verstehe. Vielen Dank für die Informationen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 165 // from:
+  SAY #13828 /* ~"Tja, da haben wir einen Baum, dem ein Ast zu viel abgebrochen ist." Morte rollt die Augen. "Hat gar keinen Zweck, mit Xaositekten zu plaudern, Meister. Das ist 'n völlig verrückter Haufen."~ */
+  IF ~  Global("Know_Chaosmen","GLOBAL",0)
+~ THEN REPLY #13986 /* ~"Xaositekten?"~ */ DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1)
+SetGlobal("Know_Chaosmen","GLOBAL",1)
+~ GOTO 166
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13987 /* ~"Wer sind die Xaositekten noch mal?"~ */ DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1)
+~ GOTO 166
+  IF ~  Global("Know_Chaosmen","GLOBAL",1)
+~ THEN REPLY #13988 /* ~"Dachte, ich könnte vielleicht was von ihm lernen. Na, egal, laß uns gehen."~ */ DO ~SetGlobal("Morte_Wilder_Quip_1","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 166 // from: 165.0 165.1
+  SAY #13829 /* ~"Das ist 'n 'Bund' ganz ohne Regeln... außer, keinen Gedanken zu lange im Kopf zu behalten. Manchmal werden sie auch 'Chaoten' genannt. Warum, muß ich wohl nicht erst erklären."~ */
+  IF ~  Global("Join_Chaosmen","GLOBAL",0)
+~ THEN REPLY #13989 /* ~"Wie rekrutieren sie neue Mitglieder?"~ */ GOTO 167
+  IF ~~ THEN REPLY #13990 /* ~"Verstehe. Na dann, geh'n wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 167 // from: 166.0
+  SAY #13830 /* ~"Die scheinen einfach Mitglieder wie die Fliegen anzulocken... na ja, Mitglieder, die verrückt oder chaotisch genug sind, denk ich mal. Ich glaub nicht, daß die Leute haben, die extra rekrutieren... obwohl es nicht so einfach ist, sich bei denen über irgend etwas ganz sicher zu sein."~ */
+  IF ~~ THEN REPLY #13991 /* ~"Ich verstehe. Vielen Dank für die Informationen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 168 // from:
+  SAY #14075 /* ~"Also gut..." Morte zischt dich an. "Gehen wir, Meister. Dieser Staubie könnte genausogut Wurmfutter sein."~ */
+  IF ~  Global("Mortai_Contract","GLOBAL",1)
+GlobalGT("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14275 /* ~"Das ist nur gerecht. Verschwinden wir von hier."~ */ EXTERN ~DAWAIT~ 6
+  IF ~  Global("Mortai_Contract","GLOBAL",1)
+Global("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14276 /* ~"Das ist nur gerecht. Verschwinden wir von hier."~ */ EXTERN ~DAWAIT~ 6
+  IF ~  Global("Mortai_Contract","GLOBAL",0)
+GlobalGT("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14277 /* ~"Das ist nur gerecht. Verschwinden wir von hier."
+~ */ EXTERN ~DAWAIT~ 6
+  IF ~  Global("Mortai_Contract","GLOBAL",0)
+Global("Coppereyes_Contract","GLOBAL",0)
+~ THEN REPLY #14278 /* ~"Das ist nur gerecht. Verschwinden wir von hier."~ */ EXTERN ~DAWAIT~ 15
+END
+
+IF ~~ THEN BEGIN 169 // from:
+  SAY #15339 /* ~"Spieß ihn auf, diesen polierten Affenarsch! Gib's ihm!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 19
+END
+
+IF ~~ THEN BEGIN 170 // from:
+  SAY #15340 /* ~"Ja, du sollst antworten!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 13
+END
+
+IF ~~ THEN BEGIN 171 // from:
+  SAY #15341 /* ~"Ich setze zehn Kupfermünzen auf das Narbengesicht!" Morte schwebt heran und flüstert: "Das bist du, Meister. Ich hoffe, du enttäuschst uns nicht."~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 20
+END
+
+IF ~~ THEN BEGIN 172 // from:
+  SAY #15342 /* ~"Gut, Meister. Diesmal hast du ihn erwischt! Zeig's ihm!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 19
+END
+
+IF ~~ THEN BEGIN 173 // from:
+  SAY #15343 /* ~"Richtig, du hochglanzpoliertes Backpfeifengesicht... Du hast gehört, was er gesagt hat!"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 32
+END
+
+IF ~~ THEN BEGIN 174 // from:
+  SAY #15344 /* ~"Wer *ich* bin? Ha! Ich hätte dein Vater sein können, aber dieser Affe hat mich die Treppen hochgeprügelt!"~ */
+  IF ~~ THEN REPLY #15490 /* ~"Morte, sei ruhig."~ */ GOTO 175
+  IF ~~ THEN REPLY #15491 /* ~Laß Morte weiterreden.~ */ GOTO 175
+END
+
+IF ~~ THEN BEGIN 175 // from: 174.0 174.1
+  SAY #15345 /* ~"Was ist los, Prinzessin? Hat es dir die Sprache verschlagen? Und mach deine Klappe zu, bevor dir was in den Hals fliegt! Hast du nicht gehört? Pack deinen rosa Büstenhalter ein und verkriech dich unter dem schmutzigen Rock deiner Mutter, wo du hingehörst! Und grüß sie recht schön von mir, wenn du dort bist!"~ */
+  IF ~~ THEN REPLY #15492 /* ~"Morte: Halt' *jetzt* die Klappe."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",-1)
+~ GOTO 176
+  IF ~~ THEN REPLY #15493 /* ~Laß Morte weiterreden.~ */ GOTO 177
+END
+
+IF ~~ THEN BEGIN 176 // from: 175.0
+  SAY #15346 /* ~"Was? Oh... Tschuldigung, Meister. Bei solchen Typen kann ich einfach nur ausrasten..."~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 33
+END
+
+IF ~~ THEN BEGIN 177 // from: 175.1
+  SAY #15347 /* ~"Hm, wenn ich es nicht besser wüßte, würde ich sagen-"~ */
+  IF ~~ THEN EXTERN ~DADYZOEL~ 33
+END
+
+IF ~~ THEN BEGIN 178 // from:
+  SAY #15348 /* ~"Was? Ich bin nur ein Mimir, Meister! Ich kann mich nicht 'duellieren'!'"~ */
+  IF ~~ THEN DO ~SetGlobal("Know_Mimir","GLOBAL",1)
+~ EXTERN ~DADYZOEL~ 35
+END
+
+IF ~~ THEN BEGIN 179 // from:
+  SAY #15349 /* ~"Ein Mimir ist, äh... eine Art wandelndes Lexikon. Aber es ist mir wirklich peinlich, darüber zu sprechen."~ */
+  IF ~  GlobalLT("Morte_Mimir","GLOBAL",2)
+~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0)
+~ EXTERN ~DADYZOEL~ 36
+  IF ~  GlobalGT("Morte_Mimir","GLOBAL",1)
+~ THEN REPLY #65537 /* ~"Aber du bist KEIN Mimir, Morte..."~ */ EXTERN ~DADYZOEL~ 36
+END
+
+IF ~~ THEN BEGIN 180 // from:
+  SAY #15350 /* ~"Los, Meister... das wirst du ihm doch nicht durchgehen lassen? Dem Schnösel werden wir's zeigen! Ich kümmere mich um seine Augen, schaufel du nur in ihn rein!"~ */
+  IF ~~ THEN REPLY #15494 /* ~"Du hast recht... greifen wir ihn uns."~ */ EXTERN ~DADYZOEL~ 19
+  IF ~~ THEN REPLY #15495 /* ~"Jetzt ist nicht die Zeit dafür, Morte. Gehen wir."~ */ DO ~SetGlobal("Adyzoel","AR0400",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 181 // from: 185.0
+  SAY #16613 /* ~"Was? Oh, ja, Meister, klar - was auch immer du sagst."
+~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #16881 /* ~"Danke. Ich hätte da ein paar Fragen, Der um die Bäume trauert..."~ */ EXTERN ~DMFTREE~ 28
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #16882 /* ~"Ich mein's ernst, Morte. Könntest du dir die Mühe machen?"~ */ DO ~IncrementGlobal("Tree_Helpers","AR0400",1)
+~ GOTO 182
+  IF ~~ THEN REPLY #16883 /* ~"Danke, Morte. Leb wohl, Der um die Bäume trauert."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 182 // from: 181.1
+  SAY #16614 /* ~Morte schaut dich eine Weile stumm an - dann nickt er. "Ja, kann ich. Wenn es dir so viel bedeutet, mach' ich's."~ */
+  IF ~  NearbyDialog("DAnnah")
+Global("Tree_A","AR0400",0)
+~ THEN REPLY #16884 /* ~"Danke. Annah? Könntest du's?"~ */ DO ~SetGlobal("Tree_A","AR0400",1)
+~ EXTERN ~DANNAH~ 99
+  IF ~  NearbyDialog("DIgnus")
+Global("Tree_I","AR0400",0)
+~ THEN REPLY #16885 /* ~"Danke. Ignus?"~ */ DO ~SetGlobal("Tree_I","AR0400",1)
+~ EXTERN ~DIGNUS~ 11
+  IF ~  NearbyDialog("DGrace")
+Global("Tree_G","AR0400",0)
+~ THEN REPLY #16886 /* ~"Danke. Grace, könntest du drüber nachdenken?~ */ DO ~SetGlobal("Tree_G","AR0400",1)
+~ EXTERN ~DGRACE~ 14
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+~ THEN REPLY #16887 /* ~"Danke. Dak'kon, könntest du diesem Mann helfen?"~ */ DO ~SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 74
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+Global("Dakkon_Slave","Global",1)
+~ THEN REPLY #16888 /* ~"Danke. Dak'kon: Hilf diesem Mann."~ */ DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1)
+SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 75
+  IF ~  NearbyDialog("DNordom")
+Global("Tree_N","AR0400",0)
+~ THEN REPLY #16889 /* ~"Danke. Nordom, meinst du, du könntest helfen?"~ */ DO ~SetGlobal("Tree_N","AR0400",1)
+~ EXTERN ~DNORDOM~ 1
+  IF ~  NearbyDialog("DVhail")
+Global("Tree_V","AR0400",0)
+~ THEN REPLY #16890 /* ~"Danke. Vhailor, könntest du helfen?"~ */ DO ~SetGlobal("Tree_V","AR0400",1)
+~ EXTERN ~DVHAIL~ 1
+  IF ~~ THEN REPLY #16891 /* ~"Danke. Ich hätte da ein paar Fragen, Der um die Bäume trauert..."~ */ EXTERN ~DMFTREE~ 28
+  IF ~~ THEN REPLY #16892 /* ~"Danke, Morte. Leb wohl, Der um die Bäume trauert."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 183 // from:
+  SAY #16615 /* ~"Hey, ich weiß *wirklich* nicht, was das bringen soll. Ich halte nichts von solchen Wunderheilungsgeschichten, Meister - so einfach ist es nicht."~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 2
+END
+
+IF ~~ THEN BEGIN 184 // from:
+  SAY #16616 /* ~"Oh, Mann, das darf nicht wahr sein. Ich kann nicht *glauben*, daß du deine Zeit so vergeudest, Meister!"
+~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 3
+END
+
+IF ~~ THEN BEGIN 185 // from:
+  SAY #16617 /* ~"Hey, Meister, ich hab' ja schon so einiges erlebt... Aber daß so etwas *möglich* ist, gibt mir den Rest."~ */
+  IF ~  NearbyDialog("DMorte")
+Global("Tree_M","AR0400",0)
+~ THEN REPLY #16893 /* ~"Ich danke dir, Nordom. Morte? Was denkst du?"~ */ DO ~SetGlobal("Tree_M","AR0400",1)
+~ GOTO 181
+  IF ~  NearbyDialog("DAnnah")
+Global("Tree_A","AR0400",0)
+~ THEN REPLY #16894 /* ~"Ich danke dir, Nordom. Annah? Könntest du?"~ */ DO ~SetGlobal("Tree_A","AR0400",1)
+~ EXTERN ~DANNAH~ 99
+  IF ~  NearbyDialog("DIgnus")
+Global("Tree_I","AR0400",0)
+~ THEN REPLY #16895 /* ~"Ich danke dir, Nordom. Ignus?"~ */ DO ~SetGlobal("Tree_I","AR0400",1)
+~ EXTERN ~DIGNUS~ 11
+  IF ~  NearbyDialog("DGrace")
+Global("Tree_G","AR0400",0)
+~ THEN REPLY #16896 /* ~"Ich danke dir, Nordom. Grace, würdest du es angehen?"~ */ DO ~SetGlobal("Tree_G","AR0400",1)
+~ EXTERN ~DGRACE~ 14
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+~ THEN REPLY #16897 /* ~"Ich danke dir, Nordom. Dak'kon, könntest du diesem Mann helfen?"~ */ DO ~SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 74
+  IF ~  NearbyDialog("DDakkon")
+Global("Tree_D","AR0400",0)
+Global("Dakkon_Slave","Global",1)
+~ THEN REPLY #16898 /* ~"Ich danke dir, Nordom. Dak'kon: Hilf diesem Mann."~ */ DO ~IncrementGlobal("BD_DAKKON_MORALE","GLOBAL",-1)
+SetGlobal("Tree_D","AR0400",1)
+~ EXTERN ~DDAKKON~ 75
+  IF ~  NearbyDialog("DVhail")
+Global("Tree_V","AR0400",0)
+~ THEN REPLY #16899 /* ~"Ich danke dir, Nordom. Vhailor, könntest du helfen?"~ */ DO ~SetGlobal("Tree_V","AR0400",1)
+~ EXTERN ~DVHAIL~ 1
+  IF ~~ THEN REPLY #16900 /* ~"Ich danke dir, Nordom. Ich hätte da ein paar Fragen, Der um die Bäume trauert..."~ */ EXTERN ~DMFTREE~ 28
+  IF ~~ THEN REPLY #16901 /* ~"Ich bin dir dankbar, Nordom. Auf Wiedersehen, Der um die Bäume trauert."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 186 // from:
+  SAY #16618 /* ~"Mann! Ich darf gar nicht hinsehen!"~ */
+  IF ~~ THEN EXTERN ~DIGNUS~ 13
+END
+
+IF ~~ THEN BEGIN 187 // from:
+  SAY #17533 /* ~"Warum nicht, Meister? Man kann sich an denen bestimmt prima abreagieren, oder? Hmm... Na ja, du müßtest für mich das Treten und Werfen übernehmen. Außerdem würde ich gerne den fünf-Meter-Sprung mit den heißen Kohlen sehen!"~ */
+  IF ~  NearbyDialog("DAnnah")
+~ THEN REPLY #17583 /* ~"Was meinst du, Annah?"~ */ EXTERN ~DANNAH~ 107
+  IF ~  PartyGoldGT(39)
+~ THEN REPLY #17584 /* ~"Ich nehm eins, Händler."~ */ DO ~TakePartyGold(40)
+~ EXTERN ~D300MER5~ 5
+  IF ~  PartyGoldGT(39)
+~ THEN REPLY #17585 /* ~"Ich gebe meine Kupfermünzen lieber nicht aus. Ich hätte da ein paar Fragen, Händler..."~ */ EXTERN ~D300MER5~ 2
+  IF ~  PartyGoldGT(39)
+~ THEN REPLY #17586 /* ~"Ich behalte meine Kupfermünzen, Händler. Leb wohl."~ */ EXIT
+  IF ~  PartyGoldLT(40)
+~ THEN REPLY #17587 /* ~"Ich habe nicht genug Kupfermünzen, Händler. Aber ich hätte da ein paar Fragen..."~ */ EXTERN ~D300MER5~ 2
+  IF ~  PartyGoldLT(40)
+~ THEN REPLY #17588 /* ~"Vergiß es, Händler. Ich habe nicht genug Münzen für eins. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 188 // from:
+  SAY #18801 /* ~Morte dreht sich zu dem Stockbewohner um. "Hau ab."~ */
+  IF ~~ THEN REPLY #18802 /* ~"Du kriegst diesen Schädel nicht."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
+~ EXTERN ~DCOLYLFN~ 5
+  IF ~~ THEN REPLY #18803 /* ~"Das ist nicht dein Schädel."~ */ EXTERN ~DCOLYLFN~ 6
+  IF ~~ THEN REPLY #18804 /* ~Wahrheit: "Na los, nimm den Schädel."~ */ EXTERN ~DCOLYLFN~ 9
+  IF ~~ THEN REPLY #18805 /* ~Greif ihn an, wenn er gerade nicht aufpaßt: "Na los, nimm den Schädel."~ */ EXTERN ~DCOLYLFN~ 10
+  IF ~~ THEN REPLY #18578 /* ~Wahrheit: "Wenn du mir beweisen kannst, daß es dein Schädel ist, gebe ich ihn dir. Das ist ein faires Angebot."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Yellow_1","GLOBALLaw",1)
+~ EXTERN ~DCOLYLFN~ 12
+  IF ~~ THEN REPLY #18807 /* ~"Wer bist du?"~ */ EXTERN ~DCOLYLFN~ 13
+  IF ~~ THEN REPLY #18808 /* ~"Ich kaufe dir den Schädel ab. Das ist doch ein faires Angebot, oder?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Yellow_1","GLOBALGood",1)
+~ EXTERN ~DCOLYLFN~ 14
+END
+
+IF ~~ THEN BEGIN 189 // from:
+  SAY #18809 /* ~Morte hat einen Finger des Mannes wie eine Zigarre makaber zwischen die Zähne geklemmt. Er spricht um den Finger herum: "Wenn du mich nochmal anfaßt, geht's deiner ganzen Hand so wie dem Finger hier, Dussel."~ */
+  IF ~~ THEN REPLY #18810 /* ~"Morte! Gib dem Mann seinen Finger zurück."~ */ GOTO 190
+  IF ~~ THEN REPLY #18811 /* ~"Pech. Verzieh dich, Köter."~ */ EXTERN ~DCOLYLFN~ 11
+  IF ~~ THEN REPLY #18812 /* ~"Eine harte Lektion. Leb wohl."~ */ EXTERN ~DCOLYLFN~ 11
+END
+
+IF ~~ THEN BEGIN 190 // from: 189.0
+  SAY #18813 /* ~Morte spuckt den Finger auf den Mann. Er prallt an dessen Brust ab und fällt zu Boden.~ */
+  IF ~~ THEN REPLY #18814 /* ~"Pech. Verzieh dich, Köter."~ */ EXTERN ~DCOLYLFN~ 11
+  IF ~~ THEN REPLY #18815 /* ~"Eine harte Lektion. Leb wohl."~ */ EXTERN ~DCOLYLFN~ 11
+END
+
+IF ~~ THEN BEGIN 191 // from:
+  SAY #18816 /* ~Morte dreht sich schnell zu dir um: "Meister, gib dieser Ratte nichts."~ */
+  IF ~~ THEN REPLY #18817 /* ~"Ich..."~ */ EXTERN ~DCOLYLFN~ 15
+END
+
+IF ~~ THEN BEGIN 192 // from:
+  SAY #18818 /* ~Morte herrscht den Mann an: "Ich *hab nicht* mit dir geredet, du Rindvieh. Wenn ich mit dir rede, merkst du das daran, daß ich muhe und blöke. Damit du mich besser verstehen kannst."~ */
+  IF ~~ THEN EXTERN ~DCOLYLFN~ 16
+END
+
+IF ~~ THEN BEGIN 193 // from:
+  SAY #18819 /* ~"Meister, *nicht*."~ */
+  IF ~  PartyGoldGT(4)
+~ THEN REPLY #18820 /* ~Gib ihm fünf Kupfermünzen.~ */ DO ~TakePartyGold(5)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldGT(49)
+~ THEN REPLY #18821 /* ~Gib ihm fünfzig Kupfermünzen.~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldGT(99)
+~ THEN REPLY #18822 /* ~Gib ihm hundert Kupfermünzen.~ */ DO ~TakePartyGold(100)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldGT(499)
+~ THEN REPLY #18823 /* ~Gib ihm fünfhundert Kupfermünzen.~ */ DO ~TakePartyGold(500)
+~ EXTERN ~DCOLYLFN~ 18
+  IF ~  PartyGoldLT(5)
+~ THEN REPLY #18824 /* ~"Ich habe nicht mehr."~ */ EXTERN ~DCOLYLFN~ 19
+  IF ~~ THEN REPLY #18825 /* ~"Vergiß das Angebot. Das ist nicht dein Schädel, und du kriegst ihn nicht."~ */ EXTERN ~DCOLYLFN~ 6
+END
+
+IF ~~ THEN BEGIN 194 // from:
+  SAY #18826 /* ~"Ich schwebe mit dem größten Idioten durch das Multiversum."~ */
+  IF ~~ THEN REPLY #18827 /* ~"...wie, Gelbfinger? Ich bestehle dich und du tust *was*?"~ */ EXTERN ~DCOLYLFN~ 20
+  IF ~~ THEN REPLY #18828 /* ~"Jetzt, wo das geklärt wäre, Gelbfinger, hätte ich ein paar Fragen..."~ */ EXTERN ~DCOLYLFN~ 23
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #18829 /* ~"Leb wohl, Gelbfinger."~ */ EXTERN ~DCOLYLFN~ 41
+  IF ~  CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #18830 /* ~"Leb wohl, Gelbfinger."~ */ DO ~DestroyPartyGold(5)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 195 // from:
+  SAY #18831 /* ~"Meister! Komm!"~ */
+  IF ~~ THEN EXTERN ~DCOLYLFN~ 52
+END
+
+IF ~~ THEN BEGIN 196 // from:
+  SAY #18832 /* ~"Das Leben über den Straßen Sigils auch nicht."~ */
+  IF ~  PartyGoldGT(4)
+~ THEN REPLY #18833 /* ~Gib ihm fünf Kupfermünzen.~ */ DO ~TakePartyGold(5)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~  PartyGoldGT(9)
+~ THEN REPLY #18834 /* ~Gib ihm zehn Kupfermünzen.
+~ */ DO ~TakePartyGold(10)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~  PartyGoldGT(49)
+~ THEN REPLY #18835 /* ~Gib ihm fünfzig Kupfermünzen.~ */ DO ~TakePartyGold(50)
+IncrementGlobalOnceEx("GLOBALGood_Yellow_2","GLOBALGood",1)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~  PartyGoldGT(99)
+~ THEN REPLY #18836 /* ~Gib ihm hundert Kupfermünzen.~ */ DO ~TakePartyGold(100)
+IncrementGlobalOnceEx("GLOBALGood_Yellow_2","GLOBALGood",1)
+~ EXTERN ~DCOLYLFN~ 53
+  IF ~~ THEN REPLY #18837 /* ~"Ich nehm's zurück. Verschwinde und komm mir nie wieder unter die Augen."~ */ EXTERN ~DCOLYLFN~ 61
+END
+
+IF ~~ THEN BEGIN 197 // from:
+  SAY #19031 /* ~"Hey du, Schläger! Wie geht's deinem Freund in der Wand?"~ */
+  IF ~~ THEN EXTERN ~DOJO~ 11
+END
+
+IF ~~ THEN BEGIN 198 // from:
+  SAY #19032 /* ~Morte zieht den Kopf ein. "Was immer du sagst, Meister."~ */
+  IF ~~ THEN REPLY #19033 /* ~"Okay. Ojo, ich hätte da ein paar Fragen."
+~ */ EXTERN ~DOJO~ 12
+  IF ~~ THEN REPLY #19034 /* ~"Okay. Laß uns gehen."
+~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 199 // from:
+  SAY #19551 /* ~"Wow, Meister... was für 'ne Schönheit, nicht? So süße, kleine Mädels trifft man nicht überall, weißt du."~ */
+  IF ~~ THEN REPLY #19666 /* ~"Ich kann wenig Attraktives an verrottenden Leichen finden, Morte, sei sie nun weiblich oder nicht."~ */ GOTO 200
+  IF ~~ THEN REPLY #19667 /* ~"Vielleicht, wenn man über Dinge wie betäubend stinkende, madenzerfressene, verrottende Kadaver hinwegsehen kann." ~ */ GOTO 201
+END
+
+IF ~~ THEN BEGIN 200 // from: 199.0
+  SAY #19552 /* ~Mortes Augen rollen. "Hah! Eines Tages wirst du verstehen, was ich meine."~ */
+  IF ~  Global("Speak_With_Dead","GLOBAL",0)
+~ THEN REPLY #19668 /* ~Ignoriere ihn und begrüß den Zombie.~ */ EXTERN ~DZOMCITF~ 1
+  IF ~  Global("Speak_With_Dead","GLOBAL",1)
+~ THEN REPLY #19669 /* ~Ignoriere ihn und begrüß den Zombie.~ */ EXTERN ~DZOMCITF~ 3
+END
+
+IF ~~ THEN BEGIN 201 // from: 199.1
+  SAY #19553 /* ~"Ja, siehst du, das ist, was ich... hey!" Morte dreht sich abrupt zu dir um. "Kommst du mir jetzt etwa mit Sarkasmus?"~ */
+  IF ~  Global("Speak_With_Dead","GLOBAL",0)
+~ THEN REPLY #19670 /* ~Ignoriere ihn und begrüß den Zombie.~ */ EXTERN ~DZOMCITF~ 1
+  IF ~  Global("Speak_With_Dead","GLOBAL",1)
+~ THEN REPLY #19671 /* ~Ignoriere ihn und begrüß den Zombie.~ */ EXTERN ~DZOMCITF~ 3
+END
+
+IF ~~ THEN BEGIN 202 // from:
+  SAY #19681 /* ~"Eh... weiß nicht, ob du gerne mit diesem... Ding da reden willst."~ */
+  IF ~~ THEN REPLY #19691 /* ~"Warum nicht, Morte?"~ */ GOTO 203
+  IF ~~ THEN REPLY #19692 /* ~"Also gut. Gehen wir."~ */ EXIT
+  IF ~~ THEN REPLY #19693 /* ~Ignoriere Morte und grüß den Ghul.~ */ EXTERN ~DGHOCITM~ 1
+END
+
+IF ~~ THEN BEGIN 203 // from: 202.0
+  SAY #19682 /* ~"Sie waren mal Menschen... sie, oder ihre Vorfahren, haben sich von Leichen ernährt, und das ist aus ihnen geworden. Ganz schön übles Zeug, Meister... sie sind wirklich nicht viel mehr als Tiere. *Gefährliche* Tiere."~ */
+  IF ~~ THEN REPLY #19694 /* ~"Also gut. Gehen wir."~ */ EXIT
+  IF ~~ THEN REPLY #19695 /* ~"Ich red' trotzdem mit ihm."~ */ EXTERN ~DGHOCITM~ 1
+END
+
+IF ~~ THEN BEGIN 204 // from:
+  SAY #19702 /* ~"Eh... weiß nicht, ob du gerne mit diesem... Ding da reden willst."~ */
+  IF ~~ THEN REPLY #19713 /* ~"Ich bin überrascht, Morte... Hauptsache untot und weiblich. Mehr verlangst du doch normalerweise nicht."~ */ GOTO 206
+  IF ~~ THEN REPLY #19714 /* ~"Warum nicht, Morte?"~ */ GOTO 205
+  IF ~~ THEN REPLY #19715 /* ~"Also gut. Gehen wir."~ */ EXIT
+  IF ~~ THEN REPLY #19716 /* ~Ignoriere Morte und grüß den Ghul.~ */ EXTERN ~DGHOCITF~ 1
+END
+
+IF ~~ THEN BEGIN 205 // from: 204.1 206.0
+  SAY #19703 /* ~"Sie waren mal Menschen... sie, oder ihre Vorfahren, haben sich von Leichen ernährt, und das ist aus ihnen geworden. Ganz schön übles Zeug, Meister... sie sind wirklich nicht viel mehr als Tiere. *Gefährliche* Tiere."~ */
+  IF ~~ THEN REPLY #19717 /* ~"Also gut. Gehen wir."~ */ EXIT
+  IF ~~ THEN REPLY #19718 /* ~"Ich werd trotzdem mit ihr reden."~ */ EXTERN ~DGHOCITF~ 1
+END
+
+IF ~~ THEN BEGIN 206 // from: 204.0
+  SAY #19704 /* ~"Das ist nicht ganz Dasselbe, Meister..."~ */
+  IF ~~ THEN GOTO 205
+END
+
+IF ~~ THEN BEGIN 207 // from:
+  SAY #20469 /* ~"Diese Grabräuberin ist blind und fast taub."~ */
+  IF ~~ THEN EXTERN ~DMARTA~ 9
+END
+
+IF ~~ THEN BEGIN 208 // from:
+  SAY #20470 /* ~"Ich glaube, sie meint Organe. Ich hoffe, sie meint Organe."~ */
+  IF ~~ THEN EXTERN ~DMARTA~ 15
+END
+
+IF ~~ THEN BEGIN 209 // from:
+  SAY #20471 /* ~Morte dreht sich zu Marta um. "Ja, 'Dingerchen'." Dann dreht er sich zu dir. "Alles eine Frage der Semantik."~ */
+  IF ~  GlobalLT("Know_Marta_Work","GLOBAL",3)
+~ THEN REPLY #20612 /* ~"Marta, warum ziehst du der Leiche Zähne und Fäden?"~ */ DO ~SetGlobal("Know_Marta_Work","GLOBAL",3)
+~ JOURNAL #20538 /* ~Marta, die Näherin, scheint die Aufgabe zu haben, Leichen, die ihr gegeben werden, die Zähne herauszureißen, ihre Nähte aufzulösen, nach Wertsachen zu suchen, die sie an oder in der Leiche finden kann, und sie dann wieder zusammenzunähen.~ */ EXTERN ~DMARTA~ 16
+  IF ~  GlobalGT("Know_Marta_Work","GLOBAL",2)
+~ THEN REPLY #20613 /* ~"Marta, warum ziehst du der Leiche Zähne und Fäden?"~ */ JOURNAL #20538 /* ~Marta, die Näherin, scheint die Aufgabe zu haben, Leichen, die ihr gegeben werden, die Zähne herauszureißen, ihre Nähte aufzulösen, nach Wertsachen zu suchen, die sie an oder in der Leiche finden kann, und sie dann wieder zusammenzunähen.~ */ EXTERN ~DMARTA~ 16
+  IF ~~ THEN REPLY #20614 /* ~"Äh... also gut. Ich muß mich verabschieden, Marta. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 210 // from:
+  SAY #20472 /* ~"Ich werde mir das *nicht* ansehen."~ */
+  IF ~~ THEN EXTERN ~DMARTA~ 24
+END
+
+IF ~~ THEN BEGIN 211 // from:
+  SAY #21602 /* ~"Oh, bei allen Mächten...! Gräßlicher Dabus."~ */
+  IF ~~ THEN REPLY #24695 /* ~"Was ist los?"~ */ GOTO 212
+END
+
+IF ~~ THEN BEGIN 212 // from: 211.0
+  SAY #21603 /* ~"Er ist ein Dabus. Sie 'sprechen' in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren... falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."~ */
+  IF ~~ THEN REPLY #24696 /* ~"Was ist ein 'Dabus'?"~ */ GOTO 213
+END
+
+IF ~~ THEN BEGIN 213 // from: 212.0
+  SAY #21604 /* ~"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame... wütend."~ */
+  IF ~  Global("Know_Lady","GLOBAL",0)
+~ THEN REPLY #24697 /* ~"'Die Dame der Schmerzen'? Wer ist das?"~ */ DO ~SetGlobal("Know_Lady","GLOBAL",1)
+~ GOTO 214
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #24698 /* ~"Was kannst du mir über die Dame der Schmerzen erzählen?"~ */ GOTO 214
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #24699 /* ~"Verstehe."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 214 // from: 213.0 213.1
+  SAY #21605 /* ~"Sie hat in dieser Stadt die Macht. Du wirst sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt dem Dabus zu, der euch beide anschaut. "Keiner weiß etwas genaues über sie... sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."~ */
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #24700 /* ~"Äh... Moment mal. Du hast gesagt, die Dabus würden schweben, stimmt's? Nun, dieser läuft ganz normal auf der Erde."~ */ GOTO 215
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #24701 /* ~"Äh... einen Augenblick. Du hast doch gesagt, daß die Dabus schweben, stimmt's? Der hier bewegt sich aber auf dem Boden fort."~ */ GOTO 215
+  IF ~~ THEN REPLY #24702 /* ~"Ich verstehe."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 215 // from: 214.0 214.1
+  SAY #21606 /* ~Morte wirft einen Blick auf den Dabus, und seine Augen weiten sich. "Ah-ha! Ich hab' gewußt, daß ihr Bocksköpfe gehen könnt! Ich hab's gewußt!" Morte wendet sich fröhlich wieder dir zu. "Ha! Dieser hier ist wohl nicht abgehoben genug, um vom Boden wegzukommen."~ */
+  IF ~~ THEN REPLY #24703 /* ~"Ja, vielleicht..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 216 // from:
+  SAY #21607 /* ~Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was dieser Bockskopf zu sagen versucht. Du brauchst einen Übersetzer? Dann such dir einen Einheimischen Sigils."~ */
+  IF ~~ THEN REPLY #24704 /* ~"Verstehe."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 217 // from:
+  SAY #21608 /* ~Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was diese schwebenden Bocksköpfe zu sagen versuchen. Willst du einen Übersetzer? Laß dieses kleine Scheusal es machen." Er nickt in Richtung Annah. "Sie stammt aus dem Stock."~ */
+  IF ~~ THEN REPLY #24705 /* ~"Vielleicht werde ich das tun..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 218 // from:
+  SAY #21609 /* ~Morte spricht verächtlich: "Ich würde eher durch die Eingeweide eines Tanar-Ris gehen, als zu interpretieren, was diese schwebenden Bocksköpfe zu sagen versuchen. Willst du einen Übersetzer?" Er nickt in Richtung Dak'kon. "Laß 'Der heiliger ist als du und doppelt so schweigsam' übersetzen."~ */
+  IF ~~ THEN REPLY #24706 /* ~"Vielleicht werde ich das tun..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 219 // from:
+  SAY #21610 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."~ */
+  IF ~~ THEN REPLY #24707 /* ~"Vielleicht werde ich das tun..."~ */ EXTERN ~DFELL~ 8
+END
+
+IF ~~ THEN BEGIN 220 // from:
+  SAY #22061 /* ~"Du willst sie einfach töten. Vorahnung bedroht die Staubmenschen."~ */
+  IF ~~ THEN REPLY #22062 /* ~"Ich hätte da noch ein paar Fragen..."~ */ EXTERN ~DSOEGO~ 83
+  IF ~~ THEN REPLY #22063 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 221 // from:
+  SAY #22849 /* ~Morte starrt dich an und schüttelt mit dem Kopf.~ */
+  IF ~~ THEN REPLY #22850 /* ~"Was hast du gesagt, Würfelheld? 'Morte ist ein dummer Schädel?' Ja, sicher ist er das, nicht wahr, Würfelheld?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_3","GLOBALLaw",-1)
+~ GOTO 222
+  IF ~~ THEN REPLY #22851 /* ~Leg den Würfel weg.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 222 // from: 221.0
+  SAY #22852 /* ~"Hey! Das hat es nicht gesagt!"~ */
+  IF ~~ THEN REPLY #22853 /* ~"Und ob! Gerade eben hat er das gesagt!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_4","GLOBALLaw",-1)
+~ GOTO 223
+  IF ~~ THEN REPLY #22854 /* ~Leg den Würfel weg.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 223 // from: 222.0
+  SAY #22855 /* ~"W --?! Gib mir das Ding!"~ */
+  IF ~~ THEN REPLY #22856 /* ~"Nein, das ist meiner. Er will sowieso nur bei mir sein. Nicht wahr, Würfelheld? Genau!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Cube_5","GLOBALLaw",-1)
+~ GOTO 224
+  IF ~~ THEN REPLY #22857 /* ~Leg den Würfel weg.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 224 // from: 223.0
+  SAY #22858 /* ~"Ich. Will. Es. Nur. Mal. Kurz. In. Der. Hand. Halten."
+~ */
+  IF ~~ THEN REPLY #22859 /* ~"Aber du hast doch gar keine Hände."~ */ GOTO 225
+  IF ~~ THEN REPLY #22860 /* ~Leg den Würfel weg.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 225 // from: 224.0
+  SAY #22861 /* ~"Dann halt' ich es eben mit meinen ZÄHNEN."~ */
+  IF ~~ THEN REPLY #22862 /* ~"Nein, ich denke, ich steck ihn erst einmal ein."~ */ GOTO 226
+END
+
+IF ~~ THEN BEGIN 226 // from: 225.0
+  SAY #22863 /* ~"Ich werde diesen Modronwürfel in Stücke schlagen."~ [MRT251] */
+  IF ~~ THEN REPLY #22864 /* ~"Hast du was gehört, Würfelheld? Nein, ich auch nicht!"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 227 // from:
+  SAY #22892 /* ~"Oooooh!" Morte beißt seine Zähne zusammen, als Craddock vor Wut zu kochen anfängt... Man kann förmlich sehen, wie sich seine Gehirnwindungen verbiegen.~ [MRT387] */
+  IF ~~ THEN EXTERN ~DCRADDO~ 15
+END
+
+IF ~~ THEN BEGIN 228 // from:
+  SAY #24174 /* ~"Weißt du, Meister, ich konnte seine... ständigen... Pausen... eh nicht mehr ertragen. Jedenfalls... es ist... gut, daß er... jetzt... den Rand hält."~ */
+  IF ~~ THEN REPLY #24175 /* ~"Sehr lustig, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 229 // from:
+  SAY #24176 /* ~"Meister, wozu brauchen wir einen unerschöpflichen Vorrat an Wasser? Wo brennt's denn, hm?"
+~ */
+  IF ~~ THEN REPLY #24177 /* ~"Es könnte später von Nutzen sein, Morte. Gehen wir."~ */ EXIT
+  IF ~~ THEN REPLY #24178 /* ~"Das ist schon in Ordnung so, Morte."~ */ GOTO 230
+END
+
+IF ~~ THEN BEGIN 230 // from: 229.1
+  SAY #24179 /* ~"Schon in Ordnung? Falls du es schon vergessen hast, Meister, bist du selbst mit einer Aufgabe beschäftigt! Aber du hast ja letztendlich das Sagen hier. Puhh..."~ */
+  IF ~~ THEN REPLY #24180 /* ~"Danke, daß du mir da zustimmst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 231 // from:
+  SAY #24903 /* ~"He... geht's dir gut? Ich dachte wirklich, du seist ein Totenbüchler."~ */
+  IF ~~ THEN REPLY #24904 /* ~"W...? Wer bist du?"~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+~ GOTO 232
+  IF ~~ THEN REPLY #24905 /* ~"Ich bin sicher, daß du jede Menge schlaue Sprüche auf Lager hast, Morte, aber du hältst jetzt den Mund und kommst AUF DER STELLE mit."~ */ DO ~SetGlobal("Morte","GLOBAL",1)
+ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 232 // from: 231.0
+  SAY #24906 /* ~"Äh... wer ich bin? Wie wär's, wenn *du* dich zuerst vorstellst? Wer bist du?"~ */
+  IF ~~ THEN REPLY #24907 /* ~"Ich... weiß nicht. Ich kann mich nicht erinnern."~ */ GOTO 233
+  IF ~~ THEN REPLY #24908 /* ~"Ich hab' *dich* zuerst gefragt, Totenschädel."~ */ GOTO 234
+END
+
+IF ~~ THEN BEGIN 233 // from: 232.0 234.0 235.0
+  SAY #24909 /* ~"Du kannst dich nicht an deinen *Namen* erinnern? Heh. Also, wenn du das nächste Mal in der Stadt einen draufmachst, dann trink nicht so viel Fusel. Ich bin Morte. Ich bin auch hier gefangen."~ */
+  IF ~~ THEN REPLY #24910 /* ~"Gefangen?"~ */ GOTO 236
+END
+
+IF ~~ THEN BEGIN 234 // from: 232.1
+  SAY #24911 /* ~"Ja, und ich hab' dich als *Zweiter* gefragt. Wie heißt du?"~ */
+  IF ~~ THEN REPLY #24912 /* ~"Ich... weiß nicht. Ich kann mich nicht erinnern."~ */ GOTO 233
+  IF ~~ THEN REPLY #24913 /* ~"Du zuerst, Schädel. Ich frag dich zum letzten Mal."~ */ GOTO 235
+END
+
+IF ~~ THEN BEGIN 235 // from: 234.1
+  SAY #24914 /* ~"Tchhhh... du bist sturer als ein Esel. Also gut, dann spiel *ich* mal den Höflichen hier. Ich heiße Morte. Wer bist du?"~ */
+  IF ~~ THEN REPLY #24915 /* ~"Ich... weiß nicht. Ich kann mich nicht erinnern."~ */ GOTO 233
+END
+
+IF ~~ THEN BEGIN 236 // from: 233.0
+  SAY #24916 /* ~"Ja, da du dir noch nicht die Beine vertreten konntest, sag ich dir, was los ist: Ich hab's schon an jeder Tür probiert. Dieser Raum ist fester verschlossen als ein Keuschheitsgürtel."~ */
+  IF ~~ THEN REPLY #24917 /* ~"Und... wo sind wir hier eingesperrt? Was ist dies für ein Ort?"~ */ GOTO 237
+END
+
+IF ~~ THEN BEGIN 237 // from: 236.0
+  SAY #24918 /* ~"Man nennt diesen Ort die 'Leichenhalle'... Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."~ */
+  IF ~~ THEN REPLY #24919 /* ~"'Die Leichenhalle'? Was... bin ich tot?"~ */ GOTO 238
+END
+
+IF ~~ THEN BEGIN 238 // from: 237.0
+  SAY #24920 /* ~"Soweit ich weiß nicht. Du hast aber ganz schön viele Narben, du... sieht aus, als ob dich irgendein Dussel mit einem Messer verziert hat. Ein Grund mehr, diesem Ort eins zu grinsen, bevor derjenige, der dich so zugerichtet hat, wiederkommt, um sein Kunstwerk zu vollenden."~ */
+  IF ~~ THEN REPLY #24921 /* ~"Wie kommen wir hier wieder raus?"~ */ GOTO 239
+END
+
+IF ~~ THEN BEGIN 239 // from: 238.0
+  SAY #24922 /* ~"Nun, alle Türen sind verriegelt. Wir brauchen also den Schlüssel. Die Chancen stehen nicht schlecht, daß einer dieser wandelnden Leichen in diesem Raum ihn hat."~ */
+  IF ~~ THEN REPLY #24923 /* ~"Wandelnde Leichen?"~ */ GOTO 240
+END
+
+IF ~~ THEN BEGIN 240 // from: 28.0 239.0
+  SAY #24924 /* ~"Ja, die Leichenhallenwärter setzen die toten Körper als billige Arbeitskräfte ein. Die Leichen sind stumm wie Steine, aber völlig harmlos, und würden einen erst angreifen, wenn man ihnen zuerst auf die Pelle rückt."~ */
+  IF ~~ THEN REPLY #24925 /* ~"Gib's keinen anderen Weg? Ich will sie nicht für einen Schlüssel umbringen."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Morte_1","GLOBALGood",1)
+~ GOTO 241
+  IF ~~ THEN REPLY #24926 /* ~"Ich soll also eine dieser Leichen überwältigen und nach dem Schlüssel durchsuchen?"~ */ GOTO 242
+END
+
+IF ~~ THEN BEGIN 241 // from: 240.0
+  SAY #24927 /* ~"Was, du glaubst, das verletzt ihre Gefühle? Sie sind TOT. Aber von der positiven Seite gesehen: Wenn du sie umbringst, haben sie wenigstens ein Weilchen Ruhe, bevor ihre Wärter sie wieder zum Arbeiten aufpäppeln."~ */
+  IF ~~ THEN REPLY #24928 /* ~"Nun, also gut... Ich mach eine von ihnen platt und hol den Schlüssel."~ */ GOTO 242
+END
+
+IF ~~ THEN BEGIN 242 // from: 240.1 241.0
+  SAY #24929 /* ~"Nun, bewaffne dich lieber erst, bevor du das tust. Ich glaub, in einem der Regale hier liegt ein Skalpell."
+
+^NHINWEIS: Such in den Regalen dieses Raums nach einer Waffe, mit der du die Zombies angreifen kannst.^-~ */
+  IF ~~ THEN REPLY #24930 /* ~"In Ordnung. Ich such mir eine aus."~ */ GOTO 243
+END
+
+IF ~~ THEN BEGIN 243 // from: 242.0
+  SAY #24931 /* ~"Eine letzte Sache: Diese Leichen sind langsam wie Schnecken, aber von einem von ihnen geschlagen zu werden fühlt sich an, wie von einem Rammbock geküsst zu werden. Wenn sie beginnen, Oberhand über dich zu gewinnen, solltest du daran denken, dass du RENNEN kannst, sie aber nicht. Nutze diesen, um Abstand zu halten, wenn du dich erholen musst."
+
+^NHINWEIS: <RUNAWAY> Falls Gefahr besteht, dass du stirbst, solltest du rennen, um Abstand zu den Zombies zu halten, während du dich erholst.^-~ */
+  IF ~~ THEN REPLY #24932 /* ~"OK. Danke für den Tip."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ JOURNAL #24933 /* ~Ich habe begonnen, meine Erfahrungen aufzuschreiben, um einen klaren Kopf zu behalten, in der Hoffnung, daß ich in die Geschehnisse etwas Sinn bringen kann. Ich bin an einem Ort aufgewacht, der "Leichenhalle" genannt wird... Sieht aus wie eine Art Leichenschauhaus. Ich weiß nicht, wer ich bin, was ich hier tue oder wie ich hierher gekommen bin. Das Erste, was ich nach dem Aufwachen gefunden habe, war ein sprechender Totenkopf namens Morte. Er sagt, daß wir eingeschlossen seien und wahrscheinlich eine der trottenden Leichen im Raum den Schlüssel habe. Er schlug vor, ich solle die Regale im Raum nach einem Skalpell durchsuchen, und es dann in eine der Leichen stoßen, bis sie "stirbt".~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 244 // from:
+  SAY #25962 /* ~"Eine Art sprechendes Lexikon, Meister. Ich mag wirklich nicht darüber sprechen."~ */
+  IF ~  GlobalLT("Morte_Mimir","GLOBAL",2)
+~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0)
+~ EXTERN ~DCWRUSHF~ 27
+  IF ~  GlobalGT("Morte_Mimir","GLOBAL",1)
+~ THEN REPLY #66902 /* ~"Aber du bist KEIN Mimir, Morte..."~ */ EXTERN ~DCWRUSHF~ 27
+END
+
+IF ~~ THEN BEGIN 245 // from:
+  SAY #25964 /* ~Morte wackelt mit seinen Augenbrauen und fängt an, der Frau entgegenzuschweben. "Das ist noch nicht alles, was ich -"~ */
+  IF ~~ THEN REPLY #25965 /* ~"Das reicht, Morte."~ */ GOTO 246
+END
+
+IF ~~ THEN BEGIN 246 // from: 245.0
+  SAY #25966 /* ~"Ja, ja. Gut." Morte verdreht die Augen und fängt an zu murmeln. "Psst, ich schweige wie ein *Grab*..."~ */
+  IF ~  CheckStatGT(Protagonist,14,INT)
+~ THEN REPLY #25967 /* ~"Sag mal,... was hast du mit 'von alleine' gemeint? Tun sie das sonst nicht?"~ */ EXTERN ~DCWRUSHF~ 28
+  IF ~~ THEN REPLY #25968 /* ~"Ich hätte da ein paar Fragen an diese Frau..."~ */ EXTERN ~DCWRUSHF~ 2
+  IF ~~ THEN REPLY #25969 /* ~Laß die Frau in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 247 // from:
+  SAY #25970 /* ~Morte unterbricht sie: "Nun, weißt du, Meister, es gibt Unterschiede in der *Qualität* eines Mimir. Manche - wie ich - besitzen eben eine einnehmendere Persönlichkeit als andere. Sind eben... äh... 'selbstbewußter'. Das ist das richtige Wort."~ */
+  IF ~~ THEN REPLY #25971 /* ~"Hmm."~ */ EXTERN ~DCWRUSHF~ 29
+  IF ~~ THEN REPLY #25972 /* ~"Ich verstehe."~ */ EXTERN ~DCWRUSHF~ 29
+END
+
+IF ~~ THEN BEGIN 248 // from:
+  SAY #25973 /* ~"Hey! Ich will hier doch nur ein bißchen Spaß haben, Meister!"~ */
+  IF ~~ THEN EXTERN ~DCWRUSHF~ 27
+END
+
+IF ~~ THEN BEGIN 249 // from:
+  SAY #27285 /* ~"Nur ein Tip, Meister: Ich würd's jetzt ruhig angehen lassen. Es müssen ja nicht mehr Tote ins Totenbuch geschrieben werden als nötig... vor allem keine Frauen. Wenn sie getötet werden, könnte das außerdem die Verwalter anlocken."~ */
+  IF ~~ THEN REPLY #27303 /* ~"Ich glaube nicht, daß du's schon mal gesagt hast... *Wer* sind diese Verwalter?"~ */ GOTO 250
+  IF ~~ THEN REPLY #27304 /* ~"Die Leichen hier... Wo kommen die alle her?"~ */ GOTO 252
+  IF ~~ THEN REPLY #27305 /* ~"Warum machst du dir um die weiblichen Leichen Gedanken?"~ */ GOTO 253
+  IF ~~ THEN REPLY #27306 /* ~"In Ordnung... Ich... versuch, dran zu denken."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 250 // from: 249.0 252.0 256.0
+  SAY #27286 /* ~"Sie nennen sich selbst die 'Staubmenschen'. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine reudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte... je früher desto besser."~ */
+  IF ~~ THEN REPLY #27307 /* ~"Das versteh ich nicht... Was können diese Staubmenschen dagegen haben, wenn ich mich hier aus dem Staub mache?"~ */ GOTO 251
+END
+
+IF ~~ THEN BEGIN 251 // from: 250.0
+  SAY #27287 /* ~"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"~ */
+  IF ~~ THEN REPLY #27308 /* ~"Die Leichen hier... Wo kommen die alle her?"~ */ GOTO 252
+  IF ~~ THEN REPLY #27309 /* ~"Vorhin hast du gesagt, daß ich aufpassen soll, keine *weiblichen* Leichen zu töten. Warum?"~ */ GOTO 253
+  IF ~~ THEN REPLY #27310 /* ~"In Ordnung... Ich... versuch, dran zu denken."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 252 // from: 249.1 251.0 256.1
+  SAY #27288 /* ~"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese Tölpel sind alles, was von den armen Schweinen übriggeblieben ist, die ihre Körper nach dem Tod an die Verwalter verkauft haben."~ */
+  IF ~~ THEN REPLY #27311 /* ~"Klär mich mal auf... *Wer* sind diese Verwalter?"~ */ GOTO 250
+  IF ~~ THEN REPLY #27312 /* ~"Vorhin hast du gesagt, daß ich aufpassen soll, keine *weiblichen* Leichen zu töten. Warum?"~ */ GOTO 253
+  IF ~~ THEN REPLY #27313 /* ~"In Ordnung... Ich... versuch, dran zu denken."
+~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 253 // from: 249.2 251.1 252.1
+  SAY #27289 /* ~"Wa... im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein... und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."~ */
+  IF ~~ THEN REPLY #27314 /* ~"Letzte Chance? Wovon... wovon *redest* du?"~ */ GOTO 254
+END
+
+IF ~~ THEN BEGIN 254 // from: 253.0
+  SAY #27290 /* ~"Meister, SIE sind tot, WIR sind tot... verstehst du, worauf ich hinaus will? Nun?"~ */
+  IF ~~ THEN REPLY #27315 /* ~"Nein... nein, eigentlich nicht."~ */ GOTO 255
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #27316 /* ~"Das kann nicht dein Ernst sein."~ */ GOTO 255
+END
+
+IF ~~ THEN BEGIN 255 // from: 254.0 254.1
+  SAY #27291 /* ~"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."~ */
+  IF ~~ THEN REPLY #27317 /* ~"Aber... Moment... hast du nicht vorhin gesagt, daß ich *nicht* tot bin?"~ */ GOTO 256
+END
+
+IF ~~ THEN BEGIN 256 // from: 255.0
+  SAY #27292 /* ~"Nun... okay, *du* bist vielleicht nicht tot, aber *ich* bin's. Und von mir aus hätte ich nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich..."~ */
+  IF ~~ THEN REPLY #27318 /* ~"Wer sind diese Verwalter noch gleich?"~ */ GOTO 250
+  IF ~~ THEN REPLY #27319 /* ~"Aber wo kommen all diese Leichen her?"~ */ GOTO 252
+  IF ~~ THEN REPLY #27320 /* ~"In Ordnung... Ich versuch, dran zu denken."~ */ GOTO 257
+END
+
+IF ~~ THEN BEGIN 257 // from: 249.3 251.2 252.2 256.2
+  SAY #27293 /* ~"Sieh mal, Meister. Du bist immer noch etwas verwirrt nach deinem Kuss mit dem Tod. Also gebe ich dir zwei kleine Ratschläge: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"
+
+^NHINWEIS: <SPEAKTO>^-
+~ */
+  IF ~~ THEN REPLY #27321 /* ~"In Ordnung... Wenn ich Fragen hab', wende ich mich an dich."~ */ GOTO 258
+END
+
+IF ~~ THEN BEGIN 258 // from: 257.0
+  SAY #27294 /* ~"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du scheinst, mußt du dir eben alles notieren. Damit du's nicht vergißt."~ */
+  IF ~~ THEN REPLY #27322 /* ~"Zum Beispiel in ein Journal?"~ */ GOTO 259
+END
+
+IF ~~ THEN BEGIN 259 // from: 258.0
+  SAY #27295 /* ~"Ja, wie ein Tagebuch. Falls du wichtige Dinge wie deinen gegenwärtigen Aufenthaltsort nicht mehr genau weißt, blättere darin und frische deine Erinnerung auf. Verstanden?"
+
+^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-
+~ */
+  IF ~~ THEN REPLY #27323 /* ~"OK... Ich hab's kapiert. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 260 // from:
+  SAY #27296 /* ~"Auf einem der Regale müßte ein Skalpell rumliegen. Hol dir das, bevor du mit einer der Leichen hier die Klingen kreuzt."~ */
+  IF ~~ THEN REPLY #27324 /* ~"OK... Ich such weiter."~ */ EXIT
+END
+
+IF WEIGHT #8 /* Triggers after states #: 729 444 325 281 742 737 733 487 even though they appear after this state */
+~  Global("Mortuary_Walkthrough","GLOBAL",0)
+PartyHasItem("Scalpel")
+Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+~ THEN BEGIN 261 // from:
+  SAY #27297 /* ~"Prima, du hast das Skalpell gefunden! Und jetzt schnapp dir diese Leichen... und keine Bange, ich bleibe im Hintergrund und gebe dir taktische Ratschläge."~ */
+  IF ~~ THEN REPLY #27325 /* ~"Vielleicht könntest du mir *helfen,* Morte."~ */ GOTO 262
+  IF ~~ THEN REPLY #27326 /* ~"Also gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 262 // from: 261.0
+  SAY #27298 /* ~"Ich WERDE dir helfen. Guten Rat bekommt man nicht leicht."~ */
+  IF ~~ THEN REPLY #27327 /* ~"Ich meinte beim Angriff auf die *Leiche* helfen."~ */ GOTO 263
+  IF ~~ THEN REPLY #27328 /* ~"Nun gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 263 // from: 262.0
+  SAY #27299 /* ~"Ich? Ich bin ein Romantiker und kein Soldat. Ich würde dir nur im Weg stehen."~ */
+  IF ~~ THEN REPLY #27329 /* ~"Wenn ich die Leiche angreife, dann stehst du mir besser nicht im Weg rum, oder du bist der Nächste, dem ich dieses Skalpell reinjage."~ */ GOTO 264
+  IF ~~ THEN REPLY #27330 /* ~"Nun gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 264 // from: 263.0
+  SAY #27300 /* ~"Äh... okay. Ich helfe dir."
+
+^NHINWEIS: Wenn Morte mit dir kämpfen soll, müßt ihr beide angewählt sein, wenn du die Leiche angreifst. Morte greift dann mit an.^-
+~ */
+  IF ~~ THEN REPLY #27331 /* ~"Freut mich, daß wir uns verstehen. Und jetzt an die Arbeit."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 265 // from:
+  SAY #27301 /* ~"Prima, du hast wohl die richtige Leiche kaltgemacht. Jetzt mußt du nur noch den Schlüssel finden. Er müßte irgendwo an der Leiche sein. Sobald wir ihn haben, hauen wir ab."~ */
+  IF ~~ THEN REPLY #27332 /* ~"In Ordnung."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 266 // from:
+  SAY #27302 /* ~"Prima, das ist der Schlüssel. Er muß in eine der Türen im Raum passen."~ */
+  IF ~~ THEN REPLY #27333 /* ~"Ich probier dann mal sämtliche Türen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 267 // from:
+  SAY #27911 /* ~Morte zischt dir ins Ohr: "Anwalt."~ */
+  IF ~~ THEN EXTERN ~DCWCAFEF~ 15
+END
+
+IF ~~ THEN BEGIN 268 // from:
+  SAY #27912 /* ~"Eine Art sprechendes Lexikon, Meister. Ich mag wirklich nicht darüber sprechen."~ */
+  IF ~  GlobalLT("Morte_Mimir","GLOBAL",2)
+~ THEN DO ~IncrementGlobalOnceEx("GLOBALMorte_Mimir","GLOBALMorte_Mimir",0)
+~ EXTERN ~DCWCAFEF~ 50
+  IF ~  GlobalGT("Morte_Mimir","GLOBAL",1)
+~ THEN REPLY #65536 /* ~"Aber du bist KEIN Mimir, Morte..."~ */ EXTERN ~DCWCAFEF~ 50
+END
+
+IF ~~ THEN BEGIN 269 // from:
+  SAY #27913 /* ~Morte wackelt mit seinen Augenbrauen und fängt an, der Frau entgegenzuschweben. "Das ist noch nicht alles, was ich -"~ */
+  IF ~~ THEN REPLY #27914 /* ~"Das reicht, Morte."~ */ GOTO 270
+END
+
+IF ~~ THEN BEGIN 270 // from: 269.0
+  SAY #27915 /* ~"Ja, ja. Gut." Morte verdreht die Augen und fängt an zu murmeln. "Psst, ich schweige wie ein *Grab*..."~ */
+  IF ~  CheckStatGT(Protagonist,14,INT)
+~ THEN REPLY #27916 /* ~"Sag mal,... was hast du mit 'von alleine' gemeint? Tun sie das sonst nicht?"~ */ EXTERN ~DCWCAFEF~ 51
+  IF ~~ THEN REPLY #27917 /* ~"Ich hätte da ein paar Fragen an diese Frau..."~ */ EXTERN ~DCWCAFEF~ 4
+  IF ~~ THEN REPLY #27918 /* ~Laß die Frau in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 271 // from:
+  SAY #27919 /* ~Morte unterbricht sie: "Nun, weißt du, Meister, es gibt Unterschiede in der *Qualität* eines Mimir. Manche - wie ich - besitzen eben eine einnehmendere Persönlichkeit als andere. Sind eben... äh... 'selbstbewußter'. Das ist das richtige Wort."~ */
+  IF ~~ THEN REPLY #27920 /* ~"Hmm."~ */ EXTERN ~DCWCAFEF~ 52
+  IF ~~ THEN REPLY #27921 /* ~"Ich verstehe."~ */ EXTERN ~DCWCAFEF~ 52
+END
+
+IF ~~ THEN BEGIN 272 // from:
+  SAY #27922 /* ~"Hey! Ich will hier doch nur ein bißchen Spaß haben, Meister!"~ */
+  IF ~~ THEN EXTERN ~DCWCAFEF~ 50
+END
+
+IF ~~ THEN BEGIN 273 // from:
+  SAY #28036 /* ~Morte nickt anerkennend. "He, der Bursche ist nicht schlecht!"~ */
+  IF ~~ THEN REPLY #28041 /* ~"Gut... Hier hast du dein Geld zurück, Malmaner."~ */ DO ~TakePartyGold(10)
+~ EXTERN ~DMALMANR~ 13
+  IF ~~ THEN REPLY #28042 /* ~Wirf Malmaner die zehn Kupfermünzen hin.~ */ DO ~TakePartyGold(10)
+~ EXTERN ~DMALMANR~ 14
+  IF ~~ THEN REPLY #28043 /* ~"Wirklich? Ich hab' gar nichts gehört, Morte. Gehen wir."~ */ EXTERN ~DMALMANR~ 15
+END
+
+IF ~~ THEN BEGIN 274 // from:
+  SAY #28037 /* ~Morte nickt anerkennend. "He, der Bursche ist nicht schlecht!"~ */
+  IF ~  Global("Malmaner","GLOBAL",3)
+!Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28038 /* ~"Gut... hier hast du dein Geld zurück, Malmaner."~ */ DO ~TakePartyGold(30)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",3)
+!Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28039 /* ~Wirf Malmaner die dreißig Kupfermünzen hin.~ */ DO ~TakePartyGold(30)
+~ EXTERN ~DMALMANR~ 14
+  IF ~  Global("Malmaner","GLOBAL",3)
+Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28040 /* ~"Gut... hier hast du dein Geld zurück, Malmaner."~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",3)
+Global("Chaotic_Malmaner_1","GLOBAL",1)
+~ THEN REPLY #28044 /* ~Wirf Malmaner die fünfzig Kupfermünzen hin.~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 14
+  IF ~  Global("Malmaner","GLOBAL",5)
+!Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28045 /* ~"Gut... hier hast du dein Geld zurück, Malmaner."~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",5)
+!Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28046 /* ~Wirf Malmaner die fünfzig Kupfermünzen hin.~ */ DO ~TakePartyGold(50)
+~ EXTERN ~DMALMANR~ 14
+  IF ~  Global("Malmaner","GLOBAL",5)
+Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28047 /* ~"Gut... hier hast du dein Geld zurück, Malmaner."~ */ DO ~TakePartyGold(80)
+~ EXTERN ~DMALMANR~ 13
+  IF ~  Global("Malmaner","GLOBAL",5)
+Global("Chaotic_Malmaner_1","GLOBAL",3)
+~ THEN REPLY #28048 /* ~Wirf Malmaner die achtzig Kupfermünzen hin.~ */ DO ~TakePartyGold(80)
+~ EXTERN ~DMALMANR~ 14
+  IF ~~ THEN REPLY #28049 /* ~"Wirklich? Ich hab' gar nichts gehört, Morte. Gehen wir."~ */ EXTERN ~DMALMANR~ 15
+END
+
+IF ~~ THEN BEGIN 275 // from:
+  SAY #28630 /* ~"Hört sich langweilig an."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 60
+END
+
+IF ~~ THEN BEGIN 276 // from:
+  SAY #28631 /* ~"Sie ist 'ne Tanar-Ri... ein Sukkubus, Meister."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 72
+END
+
+IF ~~ THEN BEGIN 277 // from:
+  SAY #28632 /* ~"Schließ ab, du Scheusal!" Morte läßt seine Kiefer zusammenschnappen. "Ich bin völlig DAFÜR, daß der Sukkubus mitkommt... die Mächte wissen, daß *du* ungefähr so witzig bist, als ob man sich einen Reißnagel durch den Darm schieben würde."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 166
+END
+
+IF ~~ THEN BEGIN 278 // from:
+  SAY #28633 /* ~"He, warte! *Ich* bin hier derjenige, der sich mit den Ebenen auskennt! Das ist mein Job, Meister!"~ */
+  IF ~~ THEN REPLY #28634 /* ~"Ich finde, daß es eine ziemlich gute Idee ist, zwei Leute in der Gruppe zu haben, die sich mit den Ebenen auskennen. Außerdem hab' ich auch 'angenehm' gesagt, Morte."~ */ GOTO 279
+END
+
+IF ~~ THEN BEGIN 279 // from: 278.0
+  SAY #28635 /* ~"Angenehm fürs Auge vielleicht! Es scheint MIR fast so, als ob ein Mädel nur'n bißchen Haut zeigen muß, um dich um den Finger zu wickeln!" Morte schweigt. "Nicht, daß ich was dagegen hätte. Ich wollt' es nur mal gesagt haben."~ */
+  IF ~~ THEN REPLY #28636 /* ~"Okay Morte, ich hab's zur Kenntnis genommen. Liebe Grace... verzeih mir, wenn ich ein bißchen zu direkt bin, aber hättest du Lust, mit uns zu reisen?"~ */ EXTERN ~DGRACE~ 79
+END
+
+IF ~~ THEN BEGIN 280 // from:
+  SAY #28637 /* ~"Was mein vernarbter Gefährte meinte, war, mit UNS... Ich bin übrigens Morte. Bitte vergib meinem Gefährten dafür, uns nicht vorgestellt zu haben... ich halte es für eine AUSGEZEICHNETE Idee, wenn due mitkämst. Wir haben jede Menge Platz für einen Sukkubus. VIEL Platz."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 119
+END
+
+IF WEIGHT #4 /* Triggers after states #: 742 737 733 487 even though they appear after this state */
+~  Global("Morte_Stolen","GLOBAL",2)
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 281 // from:
+  SAY #28738 /* ~"Danke, Meister! Ich kann dir gar nicht sagen, wie froh ich bin, wieder bei dir zu sein." Seine Stimme trieft vor Sarkasmus. "Und ich hab' hier sogar noch 'n neuen Trick gelernt."~ */
+  IF ~~ THEN REPLY #28743 /* ~"Ich bin auch froh, dich wiederzuhaben."~ */ DO ~SetGlobal("Morte_Stolen","GLOBAL",3)
+~ EXIT
+  IF ~  CheckStatGT(Protagonist,14,CHR)
+~ THEN REPLY #28744 /* ~"Sorry, mein Freund. Ich wollte ihn nur bewußt irreführen."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",2)
+SetGlobal("Morte_Stolen","GLOBAL",3)
+~ GOTO 282
+  IF ~  CheckStatLT(Protagonist,15,CHR)
+~ THEN REPLY #28745 /* ~"Sorry, mein Freund, ich wollte ihn nur bewußt irreführen."~ */ DO ~SetGlobal("Morte_Stolen","GLOBAL",3)
+~ GOTO 283
+END
+
+IF ~~ THEN BEGIN 282 // from: 281.1
+  SAY #28739 /* ~"Wirklich? Das ist nett von dir, Meister. Ich will dir noch mal verzeihen. Aber tu's ja nicht wieder."~ */
+  IF ~~ THEN REPLY #28746 /* ~"Okay, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 283 // from: 281.2
+  SAY #28740 /* ~"Irgendwie glaub' ich dir das nicht. Aber Schwamm drüber! Laß uns gehen!"~ */
+  IF ~~ THEN REPLY #28747 /* ~"Schön."~ */ EXIT
+  IF ~~ THEN REPLY #28748 /* ~"Morte, ich habe ihn bewußt irregeführt. Glaub's mir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 284 // from:
+  SAY #28741 /* ~"Danke, Meister. Laß uns von hier verschwinden!" Morte hält inne. "Oh, übrigens, Meister... diese Typen waren wirklich nicht auf den Kopf gefallen. Die haben mir was Verschärftes beigebracht."~ */
+  IF ~~ THEN REPLY #28749 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 285 // from:
+  SAY #28962 /* ~"Äh... Meister? Du hast doch schon mal 'ne Statue geseh'n, oder? Weißt du dann nicht, daß Statuen nicht sprechen können?"~ */
+  IF ~  CheckStatGT(Protagonist,14,INT)
+~ THEN REPLY #28967 /* ~"Du bist vielleicht ein Witzbold, Morte: Du bist ein schwebender, sprechender Totenkopf und streitest ab, daß Statuen leben können."~ */ GOTO 286
+  IF ~  Global("CW_Sal_Hint","GLOBAL",1)
+~ THEN REPLY #28968 /* ~"Ich habe einen Magier namens Salabesh getroffen, der mir von einem Steinmann erzählte, der hier sein sollte. Bist du das?"~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 5
+  IF ~~ THEN REPLY #28969 /* ~"Ich bin mir da nicht so sicher, Morte. Ich berühr die Statue einfach mal..."~ */ EXTERN ~DQUISAI~ 3
+  IF ~~ THEN REPLY #28970 /* ~Geh.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 286 // from: 285.0
+  SAY #28963 /* ~"Nun... äh... hmm. Okay, okay, Meister."~ */
+  IF ~  Global("CW_Sal_Hint","GLOBAL",1)
+~ THEN REPLY #28971 /* ~"Ich habe einen Magier namens Salabesh getroffen, der mir von einem Steinmann erzählte, der hier sein sollte. Bist du das?"~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 5
+  IF ~~ THEN REPLY #28972 /* ~"Siehste! Ich berühr die Statue einfach mal..."~ */ EXTERN ~DQUISAI~ 3
+  IF ~~ THEN REPLY #28973 /* ~Geh.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 287 // from:
+  SAY #28964 /* ~"Vielleicht ist sie anatomisch ein bißchen zu korrekt, Meister?"~ */
+  IF ~~ THEN REPLY #28974 /* ~"War nur 'ne rhetorische Frage, Morte."~ */ GOTO 288
+END
+
+IF ~~ THEN BEGIN 288 // from: 287.0
+  SAY #28965 /* ~"Klar, Meister. Wußte ich doch."~ */
+  IF ~  Global("CW_Sal_Hint","GLOBAL",1)
+~ THEN REPLY #28975 /* ~"Ich habe einen Magier namens Salabesh getroffen, der mir von einem Steinmann erzählte, der hier sein sollte. Bist du das?"~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 5
+  IF ~~ THEN REPLY #28976 /* ~Schlage die Statue.~ */ DO ~SetGlobal("Qui_Sai","GLOBAL",2)
+~ EXTERN ~DQUISAI~ 23
+  IF ~~ THEN REPLY #28977 /* ~Geh.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 289 // from:
+  SAY #28966 /* ~Morte rollt mit den Augen und gibt Geräusche von sich, als ob er erstickt. "Bei allen Mächten! Bitte nicht schon wieder so ein Dussel, der... so... spricht!"~ */
+  IF ~~ THEN REPLY #28978 /* ~"Ich will dich was über dich fragen"...~ */ EXTERN ~DQUISAI~ 11
+  IF ~~ THEN REPLY #28979 /* ~"Ich will was über diesen Ort wissen."~ */ EXTERN ~DQUISAI~ 30
+  IF ~  Global("Know_Ravel","GLOBAL",1)
+~ THEN REPLY #28980 /* ~"Was weißt du von Ravel Rätselschön?"~ */ EXTERN ~DQUISAI~ 29
+  IF ~~ THEN REPLY #28981 /* ~"Darauf komm ich später noch mal zurück. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 290 // from:
+  SAY #29677 /* ~"He, Meister. Er hat seine Finger gekreuzt! Er lügt!"~ */
+  IF ~~ THEN EXTERN ~DQUELL~ 21
+END
+
+IF ~~ THEN BEGIN 291 // from:
+  SAY #30527 /* ~Morte meldet sich flüsternd zu Wort. "Er sagt, er ist Anwalt. Ein Berater in rechtlichen Angelegenheiten. Einer von diesen Dusseln, die vor Gericht labern."~ */
+  IF ~~ THEN EXTERN ~DIANNIS~ 10
+END
+
+IF ~~ THEN BEGIN 292 // from:
+  SAY #30816 /* ~Morte dreht sich um und schaut hinter sich. "Wo?! Wo?!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 2
+END
+
+IF ~~ THEN BEGIN 293 // from:
+  SAY #30817 /* ~Morte schnappt nach Luft. "Da, hinter dir! Da ist noch ein schwebender Schädel!"~ */
+  IF ~  CheckStatLT(Protagonist,9,INT)
+~ THEN REPLY #30822 /* ~Guck dich nach dem Schädel um.~ */ EXTERN ~DABLE~ 10
+  IF ~  CheckStatGT(Protagonist,8,INT)
+~ THEN REPLY #30823 /* ~Laß Morte seinen Spaß.~ */ EXTERN ~DABLE~ 10
+  IF ~  CheckStatGT(Protagonist,8,INT)
+~ THEN REPLY #30824 /* ~"Genug, Morte. Ich will ihn was fragen..."~ */ EXTERN ~DABLE~ 10
+END
+
+IF ~~ THEN BEGIN 294 // from:
+  SAY #30818 /* ~"Da, wo ich hinzeige! Da!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 11
+END
+
+IF ~~ THEN BEGIN 295 // from:
+  SAY #30819 /* ~Morte spricht in gespielter Verzweiflung: "Du hast sie gerade verpaßt! Eine ganze *Parade* von ihnen! So was wird wahrscheinlich in einer Million Umdrehungen des Großen Rings nicht wieder vorkommen!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 12
+END
+
+IF ~~ THEN BEGIN 296 // from:
+  SAY #30820 /* ~Morte wippt leicht, als ob er die Schultern zucken würde. "Ich würde es lieber als tiefe Einsichten in das Wesen des Menschen bezeichnen."~ */
+  IF ~  GlobalGT("Able","GLOBAL",0)
+~ THEN REPLY #30825 /* ~"Ich hätte ein paar Fragen..."~ */ EXTERN ~DABLE~ 16
+  IF ~  Global("Able","GLOBAL",0)
+~ THEN REPLY #30826 /* ~Erreg wieder die Aufmerksamkeit des Mannes.~ */ DO ~SetGlobal("Able","GLOBAL",1)
+~ EXTERN ~DABLE~ 13
+END
+
+IF ~~ THEN BEGIN 297 // from:
+  SAY #30821 /* ~"Weißt du, Meister, das IST VIELLEICHT GERADE VERRÜCKT GENUG, UM ZU FUNKTIONIEREN!"~ */
+  IF ~~ THEN EXTERN ~DABLE~ 65
+END
+
+IF ~~ THEN BEGIN 298 // from:
+  SAY #31566 /* ~"Bei den Klingenbrüsten der Dame, was..."
+
+Plötzlich wird alles still, als deine letzten Sinne flackern und zu Nichts ersterben.
+~ [MRT387] */
+  IF ~~ THEN REPLY #31567 /* ~Stirb einen grausamen Tod. Du bist ein Opfer von Gangroighydrons Schrecklichem Fluch geworden.~ */ DO ~OpenDoor("Statue")
+Kill(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 299 // from:
+  SAY #32367 /* ~"So ein Quatsch! Wir werden uns diesen Schwätzer doch nicht wirklich *anhören*, oder? Los... laß uns ein paar Sinnsaten-Mädels besuchen, die noch nie das Vergnügen hatten, die feurigen Lippen eines Totenschädels zu küssen." Er wackelt vor Freude mit den Augenbrauen.~ */
+  IF ~~ THEN REPLY #32368 /* ~"Sei ruhig, Morte. Wir bleiben... zumindest noch ein bißchen."~ */ EXTERN ~DDEATHAD~ 1
+  IF ~~ THEN REPLY #32369 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 1
+  IF ~~ THEN REPLY #32370 /* ~"Du hast recht, Morte. Laß uns von hier verschwinden."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 300 // from:
+  SAY #32371 /* ~Morte flüstert: "Der Anfang von noch mehr Leid."~ */
+  IF ~~ THEN REPLY #32372 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 2
+  IF ~~ THEN REPLY #32373 /* ~"Morte, sei ruhig."~ */ EXTERN ~DDEATHAD~ 2
+  IF ~~ THEN REPLY #32374 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 2
+  IF ~~ THEN REPLY #32375 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 301 // from:
+  SAY #32376 /* ~Morte flüstert: "Da kannst du Gift drauf nehmen."~ */
+  IF ~~ THEN REPLY #32377 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 3
+  IF ~~ THEN REPLY #32378 /* ~"Morte, sei ruhig."~ */ EXTERN ~DDEATHAD~ 3
+  IF ~~ THEN REPLY #32379 /* ~Ignoriere Morte und höre weiter zu.~ */ GOTO 303
+  IF ~~ THEN REPLY #32380 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 302 // from:
+  SAY #32381 /* ~Morte flüstert: "Und euch ewig langweilen."~ */
+  IF ~~ THEN REPLY #32382 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 5
+  IF ~~ THEN REPLY #32383 /* ~"Bitte, Morte, sei ruhig."~ */ EXTERN ~DDEATHAD~ 5
+  IF ~~ THEN REPLY #32384 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 5
+  IF ~~ THEN REPLY #32385 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 303 // from: 301.2
+  SAY #32386 /* ~Morte flüstert: "Dann weiß ich schon, wo wir beide mal hinkommen."~ */
+  IF ~~ THEN REPLY #32387 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 6
+  IF ~~ THEN REPLY #32388 /* ~"Morte: Hör auf zu reden."~ */ EXTERN ~DDEATHAD~ 6
+  IF ~~ THEN REPLY #32389 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 6
+  IF ~~ THEN REPLY #32390 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 304 // from:
+  SAY #32391 /* ~Morte flüstert: "Wenn man Glück hat."~ */
+  IF ~~ THEN REPLY #32392 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 8
+  IF ~~ THEN REPLY #32393 /* ~"Das reicht, Morte."~ */ EXTERN ~DDEATHAD~ 8
+  IF ~~ THEN REPLY #32394 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 8
+  IF ~~ THEN REPLY #32395 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 305 // from:
+  SAY #32396 /* ~Morte flüstert: "Und das soll so toll sein? Daß wir das alles *noch mal* durchmachen? He, ich kann's kaum abwarten, wieder ein schwebender Schädel zu werden. Was für ein Dummkopf. Klingt wie einer, der noch nie gestorben ist, ne?"~ */
+  IF ~~ THEN REPLY #32397 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 9
+  IF ~~ THEN REPLY #32398 /* ~"Morte, halt' endlich deinen Mund."~ */ EXTERN ~DDEATHAD~ 9
+  IF ~~ THEN REPLY #32399 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 9
+  IF ~~ THEN REPLY #32400 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 306 // from:
+  SAY #32401 /* ~Morte flüstert: "Mann, was für ein Blödsinn."~ */
+  IF ~~ THEN REPLY #32402 /* ~Nicke Morte zu, ohne etwas zu sagen.~ */ EXTERN ~DDEATHAD~ 11
+  IF ~~ THEN REPLY #32403 /* ~"Morte, sei ruhig."~ */ EXTERN ~DDEATHAD~ 11
+  IF ~~ THEN REPLY #32404 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DDEATHAD~ 11
+  IF ~~ THEN REPLY #32405 /* ~"Du hast recht. Laß uns von hier verschwinden, Morte."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 307 // from:
+  SAY #32406 /* ~Morte sagt laut: "Was für ein Geschwätz!"~ */
+  IF ~~ THEN EXTERN ~DDEATHAD~ 15
+END
+
+IF ~~ THEN BEGIN 308 // from:
+  SAY #32407 /* ~Morte duckt sich aus dem Blickfeld des Dozenten, dreht sich zu dir um und flüstert: "Los, Meister. Erzähl das Dunkel darüber."~ */
+  IF ~~ THEN REPLY #32408 /* ~"Ja, ich habe eine Frage..."~ */ EXTERN ~DDEATHAD~ 17
+  IF ~~ THEN REPLY #32409 /* ~"Wir haben keine Fragen. Mein Freund hat mit sich selbst geredet."~ */ EXTERN ~DDEATHAD~ 16
+END
+
+IF ~~ THEN BEGIN 309 // from:
+  SAY #32410 /* ~"Toll! Noch mal sterben! Ich bin dabei" Das Publikum lacht. Der Sprecher sieht verärgert aus.~ */
+  IF ~~ THEN REPLY #32411 /* ~"Was passiert, wenn sie sterben?"~ */ EXTERN ~DDEATHAD~ 26
+  IF ~~ THEN REPLY #32412 /* ~"Ich hätte noch eine andere Frage..."~ */ EXTERN ~DDEATHAD~ 17
+  IF ~~ THEN REPLY #32413 /* ~"Das ist alles, was ich wissen wollte."~ */ EXTERN ~DDEATHAD~ 18
+END
+
+IF ~~ THEN BEGIN 310 // from:
+  SAY #32651 /* ~"Soll ich diesem übergeschnappten jungen Ding eins über die Rübe ziehen, Meister?"~ */
+  IF ~~ THEN REPLY #32661 /* ~"Sei erbarmungslos, Morte."~ */ GOTO 316
+  IF ~~ THEN REPLY #32662 /* ~"Nein, Morte... ich übernehm die Sache."~ */ EXTERN ~DSARHAVA~ 3
+END
+
+IF ~~ THEN BEGIN 311 // from:
+  SAY #32652 /* ~"Mir gefällt deine benebelte Vorgehensweise, Meister."~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 4
+END
+
+IF ~~ THEN BEGIN 312 // from:
+  SAY #32653 /* ~Als du vor der Frau niederkniest, schreit Morte: "Meister! Das kann ja wohl nicht wahr sein! Außer du *stehst* auf so was..."~ */
+  IF ~~ THEN REPLY #32663 /* ~Ignoriere Morte und lecke am Stiefel der Frau.~ */ EXTERN ~DSARHAVA~ 14
+  IF ~~ THEN REPLY #32664 /* ~"Ich will nur keinen Ärger, Morte. Wenn ich nicht aufpasse, kommen noch die Wachen."~ */ GOTO 313
+  IF ~~ THEN REPLY #32665 /* ~"Du hast recht, Morte. Laß uns gehen."~ */ EXTERN ~DSARHAVA~ 13
+END
+
+IF ~~ THEN BEGIN 313 // from: 312.1
+  SAY #32654 /* ~"Naja, da muß ich dir recht geben... aber trotzdem..."~ */
+  IF ~~ THEN REPLY #32666 /* ~"Vergiß es, Morte. Meine liebe Frau... laß uns hiermit Schluß machen, bevor ich selbst die Wachen rufe."~ */ EXTERN ~DSARHAVA~ 7
+  IF ~~ THEN REPLY #32667 /* ~"Du hast recht, Morte. Laß uns einfach gehen."~ */ EXTERN ~DSARHAVA~ 13
+END
+
+IF ~~ THEN BEGIN 314 // from:
+  SAY #32655 /* ~Morte kichert und klappert mit den Zähnen. "Du bist ein richtiger Charmeur, was?"~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 315 // from:
+  SAY #32656 /* ~"Äh... oh..."~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 316 // from: 310.0
+  SAY #32657 /* ~Morte zwinkert dir zu und ruft der Frau zu: "He, du! Ja du, du freches kleines Flittchen... guck mich an, wenn ich mit dir rede! Wieso sind wir denn so verbiestert, hmm?"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 39
+END
+
+IF ~~ THEN BEGIN 317 // from:
+  SAY #32658 /* ~"Oh, ist die kleine Wüstenprinzessin vielleicht traurig, weil der Sultan lieber einen Sohn wollte? Sag mir, 'Wüstenprinzessin': Bist du jede Nacht betrunken und streitlustig? Und wirst du immer von einer Schar lüsternder Speichellecker verfolgt? Und versuchst du auf jämmerliche Weise, deine Existenz vor deinem Vater zu rechtfertigen, der dich nicht haben wollte?"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 40
+END
+
+IF ~~ THEN BEGIN 318 // from:
+  SAY #32659 /* ~"Glaubst du wirklich, daß du dich durch deine lächerlichen Schlägereien besser fühlen wirst? *Wertvoller*? IRRTUM, MEINE LIEBE! Wenn das deine armselige Art ist, besser damit klarzukommen, wer du *bist*, schlage ich vor, du gibst gleich auf, gehst nach Hause und heiratest in den Harem von irgendeinem Höfling ein!"~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 41
+END
+
+IF ~~ THEN BEGIN 319 // from:
+  SAY #32660 /* ~Morte wendet sich an dich. "Siehst du, Meister, ich *weiß*, was hier abgeht. Wir *alle* wissen, daß Morte genau ins Schwarze getroffen hat. Aber oh nein, die stolze kleine Wüstenprinzessin, öffentlich zurechtgestutzt, ernied..."~ */
+  IF ~~ THEN EXTERN ~DSARHAVA~ 42
+END
+
+IF ~~ THEN BEGIN 320 // from:
+  SAY #33073 /* ~"Über den Blutkrieg? Das ist ja noch langweiliger, als einem Herrschner zuzuhören, der Gesetze runterlabert. Laß uns ein paar junge Sinnsaten finden, die noch in die Doktrin der Leidenschaft eingeweiht werden müssen!" Er wackelt vor Freude mit den Augenbrauen.
+~ */
+  IF ~~ THEN REPLY #33074 /* ~"Nein, Morte... ich will mir das anhören."~ */ EXTERN ~DGHYSIS~ 1
+  IF ~~ THEN REPLY #33075 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~DGHYSIS~ 1
+  IF ~~ THEN REPLY #33076 /* ~"Na gut, Morte. Laß uns gehen."~ */ DO ~SetGlobal("Lecture_Ghysis","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 321 // from:
+  SAY #33300 /* ~Morte verdreht die Augen und schreit: "Oh! Da! Ein sprechender Scheißhaufen!"
+~ */
+  IF ~~ THEN EXTERN ~DGHIVEM~ 49
+END
+
+IF ~~ THEN BEGIN 322 // from:
+  SAY #33301 /* ~Morte hoppelt in deine Richtung und sagt zu dem Mann: "Ich meinte diesen großen narbenübersäten Dussel hier, Vollblut... nicht dich! Friede Freude Eierkuchen, ja?"~ */
+  IF ~~ THEN REPLY #33302 /* ~"Paß auf, Morte..."~ */ EXTERN ~DGHIVEM~ 51
+  IF ~~ THEN REPLY #33303 /* ~Ignoriere Morte.~ */ EXTERN ~DGHIVEM~ 51
+END
+
+IF ~~ THEN BEGIN 323 // from:
+  SAY #33423 /* ~Morte verdreht die Augen und schreit: "Oh! Da! Ein sprechender Scheißhaufen!"~ */
+  IF ~~ THEN EXTERN ~DGHIVEF~ 47
+END
+
+IF ~~ THEN BEGIN 324 // from:
+  SAY #33429 /* ~Morte hoppelt in deine Richtung und sagt zu dem Mann: "Ich meinte diesen großen narbenübersäten Dussel hier, Vollblut... nicht dich! Friede Freude Eierkuchen, ja?"~ */
+  IF ~~ THEN REPLY #33430 /* ~"Paß auf, Morte..."~ */ EXTERN ~DGHIVEF~ 49
+  IF ~~ THEN REPLY #33433 /* ~Ignoriere Morte.~ */ EXTERN ~DGHIVEF~ 49
+END
+
+IF WEIGHT #5 /* Triggers after states #: 742 737 733 487 even though they appear after this state */
+~  !InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 325 // from:
+  SAY #33958 /* ~"Ich wusste, du würdest zurückkommen, Meister! Endlich eingesehen, dass du mich brauchst, was?"~ [MRT516] */
+  IF ~~ THEN REPLY #33959 /* ~"Ja... laß uns gehen."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #33960 /* ~"Nein, Morte, im Moment brauche ich dich nicht."~ */ GOTO 326
+END
+
+IF ~~ THEN BEGIN 326 // from: 325.1
+  SAY #33961 /* ~"Hmmm. Nun, ich werde hier nicht ewig warten. Also werde ich dir noch eine LETZTE Chance geben. Bist du sicher, daß du meine weisen Ratschläge und meinen scharfen Verstand nicht brauchst?"~ */
+  IF ~~ THEN REPLY #33962 /* ~"Morte, du hast WEDER das eine noch das andere."~ */ GOTO 327
+  IF ~~ THEN REPLY #33963 /* ~"Na gut, ich hab's mir anders überlegt. Komm, laß uns gehen."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #33964 /* ~"Ja, Morte, im Moment brauche ich weder das eine noch das andere. Aber vielleicht später."~ */ GOTO 327
+END
+
+IF ~~ THEN BEGIN 327 // from: 326.0 326.2
+  SAY #33965 /* ~"Willst du mich beleidigen, Meister? Habe ich was Falsches gesagt? Liegt es daran, daß ich keine Arme habe? Nun sag's mir schon!"~ */
+  IF ~~ THEN REPLY #33966 /* ~"Na gut, ich hab's mir anders überlegt. Komm, laß uns gehen."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT)
+JoinPartyEx(TRUE)
+~ EXIT
+  IF ~~ THEN REPLY #33967 /* ~"Das hat überhaupt nichts damit zu tun. Ich brauche dich nur einfach im Moment nicht. Leb wohl, Morte."~ */ GOTO 328
+END
+
+IF ~~ THEN BEGIN 328 // from: 327.1
+  SAY #33968 /* ~"Also, ich werde hier nicht EWIG warten. Solltest du's dir noch noch anders überlegen, dann mußt du dich beeilen."~ */
+  IF ~~ THEN REPLY #33969 /* ~"Okay. Leb wohl, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 329 // from: 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
+  SAY #33970 /* ~"Was hast du denn, Meister?"~ */
+  IF ~~ THEN REPLY #65539 /* ~"Kannst du mir noch einmal vorlesen, was auf meinen Rücken tätowiert ist?"~ */ GOTO 649
+  IF ~~ THEN REPLY #65540 /* ~"Kannst du mir etwas über Sigil erzählen?"~ */ GOTO 659
+  IF ~  Global("Morte_Talent","GLOBAL",0)
+~ THEN REPLY #65541 /* ~"Morte... Es macht mir nichts aus, wenn du mich begleitest, aber kannst du vielleicht noch etwas *anderes* außer plappern?"~ */ GOTO 663
+  IF ~  Global("Morte_Talent","GLOBAL",1)
+~ THEN REPLY #65542 /* ~"Morte... Was sind noch mal deine besonderen Talente?"~ */ GOTO 666
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #65543 /* ~"Morte, warum hast du mir die andere Zeile meiner Tätowierungen verschwiegen?"~ */ GOTO 654
+  IF ~~ THEN REPLY #65544 /* ~"Ich könnte einen Rat brauchen. Was glaubst du sollten wir jetzt tun?"~ */ GOTO 669
+  IF ~  Global("Know_Mimir","GLOBAL",1)
+Global("Morte_Story","GLOBAL",0)
+~ THEN REPLY #65545 /* ~"Du hast gesagt, du seist ein Mimir, oder, Morte?"~ */ GOTO 684
+  IF ~  Global("Morte_Story","GLOBAL",1)
+~ THEN REPLY #65546 /* ~"Sag mir noch mal, wie du auf der Schädelsäule gelandet bist."~ */ GOTO 693
+  IF ~  Global("Know_Morte_Pillar","GLOBAL",1)
+~ THEN REPLY #65547 /* ~"Morte, warum bist du mir gefolgt, nachdem ich von der Säule weggegangen bin?"~ */ GOTO 715
+  IF ~  GlobalGT("Know_Blood_War","GLOBAL",0)
+~ THEN REPLY #65548 /* ~"Was weißt du über den Blutkrieg?"~ */ GOTO 723
+  IF ~  GlobalGT("Know_Ravel","GLOBAL",0)
+Global("Ravel","GLOBAL",0)
+~ THEN REPLY #65549 /* ~"Was weißt du über die Nachthexe Ravel?"~ */ GOTO 722
+  IF ~~ THEN REPLY #65550 /* ~"Wie bist du gestorben, Morte?"~ */ GOTO 726
+  IF ~~ THEN REPLY #65551 /* ~"Nichts, Morte. Ich wollte nur sehen, ob du mir noch folgst."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 330 // from:
+  SAY #34990 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #34991 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 331
+  IF ~~ THEN REPLY #35001 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 331
+END
+
+IF ~~ THEN BEGIN 331 // from: 330.0 330.1
+  SAY #34992 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #34993 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 332
+  IF ~~ THEN REPLY #34996 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 333
+  IF ~~ THEN REPLY #34999 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 333
+  IF ~~ THEN REPLY #35000 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 332 // from: 331.0
+  SAY #34994 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #34995 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 333 // from: 331.1 331.2
+  SAY #34997 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #34998 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 334 // from:
+  SAY #35022 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35023 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 335
+  IF ~~ THEN REPLY #35033 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 335
+END
+
+IF ~~ THEN BEGIN 335 // from: 334.0 334.1
+  SAY #35024 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35025 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 336
+  IF ~~ THEN REPLY #35028 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 337
+  IF ~~ THEN REPLY #35031 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 337
+  IF ~~ THEN REPLY #35032 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 336 // from: 335.0
+  SAY #35026 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35027 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 337 // from: 335.1 335.2
+  SAY #35029 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35030 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 338 // from:
+  SAY #35054 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35055 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 339
+  IF ~~ THEN REPLY #35065 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 339
+END
+
+IF ~~ THEN BEGIN 339 // from: 338.0 338.1
+  SAY #35056 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35057 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 340
+  IF ~~ THEN REPLY #35060 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 341
+  IF ~~ THEN REPLY #35063 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 341
+  IF ~~ THEN REPLY #35064 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 340 // from: 339.0
+  SAY #35058 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35059 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 341 // from: 339.1 339.2
+  SAY #35061 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35062 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 342 // from:
+  SAY #35086 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35087 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 343
+  IF ~~ THEN REPLY #35097 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 343
+END
+
+IF ~~ THEN BEGIN 343 // from: 342.0 342.1
+  SAY #35088 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35089 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 344
+  IF ~~ THEN REPLY #35092 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 345
+  IF ~~ THEN REPLY #35095 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 345
+  IF ~~ THEN REPLY #35096 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 344 // from: 343.0
+  SAY #35090 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35091 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 345 // from: 343.1 343.2
+  SAY #35093 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35094 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 346 // from:
+  SAY #35118 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35119 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 347
+  IF ~~ THEN REPLY #35129 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 347
+END
+
+IF ~~ THEN BEGIN 347 // from: 346.0 346.1
+  SAY #35120 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35121 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 348
+  IF ~~ THEN REPLY #35124 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 349
+  IF ~~ THEN REPLY #35127 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 349
+  IF ~~ THEN REPLY #35128 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 348 // from: 347.0
+  SAY #35122 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35123 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 349 // from: 347.1 347.2
+  SAY #35125 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35126 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 350 // from:
+  SAY #35150 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35151 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 351
+  IF ~~ THEN REPLY #35161 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 351
+END
+
+IF ~~ THEN BEGIN 351 // from: 350.0 350.1
+  SAY #35152 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35153 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 352
+  IF ~~ THEN REPLY #35156 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 353
+  IF ~~ THEN REPLY #35159 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 353
+  IF ~~ THEN REPLY #35160 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 352 // from: 351.0
+  SAY #35154 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35155 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 353 // from: 351.1 351.2
+  SAY #35157 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35158 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 354 // from:
+  SAY #35182 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35183 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 355
+  IF ~~ THEN REPLY #35193 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 355
+END
+
+IF ~~ THEN BEGIN 355 // from: 354.0 354.1
+  SAY #35184 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35185 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 356
+  IF ~~ THEN REPLY #35188 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 357
+  IF ~~ THEN REPLY #35191 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 357
+  IF ~~ THEN REPLY #35192 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 356 // from: 355.0
+  SAY #35186 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35187 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 357 // from: 355.1 355.2
+  SAY #35189 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35190 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 358 // from:
+  SAY #35214 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35215 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 359
+  IF ~~ THEN REPLY #35225 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 359
+END
+
+IF ~~ THEN BEGIN 359 // from: 358.0 358.1
+  SAY #35216 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35217 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 360
+  IF ~~ THEN REPLY #35220 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 361
+  IF ~~ THEN REPLY #35223 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 361
+  IF ~~ THEN REPLY #35224 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 360 // from: 359.0
+  SAY #35218 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35219 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 361 // from: 359.1 359.2
+  SAY #35221 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35222 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 362 // from:
+  SAY #35246 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35247 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 363
+  IF ~~ THEN REPLY #35257 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 363
+END
+
+IF ~~ THEN BEGIN 363 // from: 362.0 362.1
+  SAY #35248 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35249 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 364
+  IF ~~ THEN REPLY #35252 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 365
+  IF ~~ THEN REPLY #35255 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 365
+  IF ~~ THEN REPLY #35256 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 364 // from: 363.0
+  SAY #35250 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35251 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 365 // from: 363.1 363.2
+  SAY #35253 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35254 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 366 // from:
+  SAY #35278 /* ~"Psssst. Hast du gesehen, wie sie mich angeschaut hat? Hm? Siehst du? Wie ihre Augen der Rundung meines Hinterkopfes gefolgt sind?"~ */
+  IF ~~ THEN REPLY #35279 /* ~"Wovon *redest* du überhaupt?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 367
+  IF ~~ THEN REPLY #35289 /* ~"Du meinst diesen starren, hohläugigen Friedhofsblick?"~ */ DO ~SetGlobal("Morte_Quip","GLOBAL",1)
+~ GOTO 367
+END
+
+IF ~~ THEN BEGIN 367 // from: 366.0 366.1
+  SAY #35280 /* ~"Wa... bist du BLIND?! Hast du nicht gesehen, wie sie mich begutachtet hat! Dieses VERLANGEN in ihrem Blick war geradezu unverschämt."~ */
+  IF ~~ THEN REPLY #35281 /* ~"Vielleicht wollte sie, daß du *abhaust*. Sie war offensichtlich zu sehr abgelenkt durch MICH, um sich um einen albernen Flummikopf mit einem großen Mundwerk zu kümmern."~ */ DO ~IncrementGlobalOnceEx("GLOBALMorte_Zombie_1","GLOBALLaw",-1)
+~ GOTO 368
+  IF ~~ THEN REPLY #35284 /* ~"Ich glaube, du halluzinierst. Sie ist ein Zombie. Eine Leiche. Eine Tote. Sie hat dich höchstwahrscheinlich gar nicht wahrgenommen."~ */ GOTO 369
+  IF ~~ THEN REPLY #35287 /* ~"Ich glaube, du und deine Phantasie, ihr solltet mal eine Weile getrennte Wege gehen."~ */ GOTO 369
+  IF ~~ THEN REPLY #35288 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 368 // from: 367.0
+  SAY #35282 /* ~"Du? Klar doch! Glaub mir, wenn so 'ne Tussi mal das Zeitliche gesegnet hat, dann macht sie sich nicht mehr so viel aus 'Äußerlichkeiten' und Sprüchen wie 'Schau mal, was ich für einen Body habe' und 'ich bin voller Narben und hart im Nehmen.' Sie stehen auf Typen, die GEISTREICH sind. Und das bin ich, Meister. Du? Knochengerüste wie DEINES gibt es wie Sand am Meer."~ */
+  IF ~~ THEN REPLY #35283 /* ~"Wie du meinst, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 369 // from: 367.1 367.2
+  SAY #35285 /* ~"Na klar, wie Du meinst. Wenn du erstmal so lange tot bist wie ich, erkennst du die Zeichen. Sie mögen vielleicht zu SUBTIL für Leute wie dich sein, aber während ich MEINE Nächte mit so'n paar süßen, gerade erst gestorbenen jungen Mädels verbringe, stehst du draußen und machst nur 'Hä?' 'Was issn los?' 'Wo sind meine Er-Er-Erinnerungen?'"~ */
+  IF ~~ THEN REPLY #35286 /* ~"Wie du willst, Morte. Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 370 // from: 377.3
+  SAY #35310 /* ~"Hmmmm. Ob dieser Graubart wohl etwas dagegen hat, wenn *ich* mir dieses Knochengerüst mal ausborge..."~ */
+  IF ~~ THEN REPLY #35311 /* ~"Graubart?"~ */ GOTO 371
+  IF ~~ THEN REPLY #35326 /* ~"Ich glaube kaum, daß er in seiner Lage etwas dagegen haben wird."~ */ GOTO 372
+  IF ~~ THEN REPLY #35327 /* ~"Ich werd das Gefühl nicht los, daß du doppelt so nervig wärst, wenn du Arme hättest. Laß uns gehen."~ */ GOTO 373
+END
+
+IF ~~ THEN BEGIN 371 // from: 370.0
+  SAY #35312 /* ~"Graubart... du weißt schon, Opa, alter Knacker, grauer Köter... Alter."~ */
+  IF ~~ THEN REPLY #35313 /* ~"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"~ */ GOTO 372
+  IF ~~ THEN REPLY #35325 /* ~"Irgendwie habe ich den Eindruck, daß du doppelt so nervig wärst, wenn du Arme hättest. Gehen wir."~ */ GOTO 373
+END
+
+IF ~~ THEN BEGIN 372 // from: 370.1 371.0
+  SAY #35314 /* ~Morte guckt sich das Skelett genau an und schüttelt dann den Kopf. "Nee... Ich bräuchte schon ein frischeres als dies hier. Und eins mit ein bißchen mehr Würde... das hier ist ja ganz klapprig und kaputt."~ */
+  IF ~~ THEN REPLY #35315 /* ~"Und du etwa nicht?"~ */ GOTO 373
+  IF ~~ THEN REPLY #35324 /* ~"Also gut, gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 373 // from: 370.2 371.1 372.0
+  SAY #35316 /* ~"Oh Mann, ich lach mich tot." Morte starrt dich wütend an. "Und überhaupt, das mußt DU sagen, Dussel. Selbst die Spiegel flehen um Gnade, wenn du in der Nähe bist."~ */
+  IF ~~ THEN REPLY #35317 /* ~"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."~ */ GOTO 374
+  IF ~~ THEN REPLY #35323 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 374 // from: 373.0
+  SAY #35318 /* ~Morte schnaubt verächtlich. Da fragst du dich, wie er das macht, so ohne Lungen.~ */
+  IF ~~ THEN REPLY #35319 /* ~"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 375
+  IF ~~ THEN REPLY #35322 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 375 // from: 374.0
+  SAY #35320 /* ~"Also wirklich, daß ich dir geholfen habe, dem Vorbereitungsraum zu entkommen, habe ich schon längst bereut." Morte schnaubt noch einmal verächtlich. "Ich hätte dich verrotten lassen sollen... noch ein bißchen mehr, meine ich."~ */
+  IF ~~ THEN REPLY #35321 /* ~"Schön, daß du so empfindest. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 376 // from:
+  SAY #35341 /* ~"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"~ */
+  IF ~~ THEN REPLY #35342 /* ~"Und?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 377
+  IF ~~ THEN REPLY #35360 /* ~"Oh... ich wollte wirklich keinen bleibenden Schaden anrichten."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 377
+  IF ~~ THEN REPLY #35361 /* ~"Ist gut, macht nichts. Vielleicht ein andermal."~ */ GOTO 377
+END
+
+IF ~~ THEN BEGIN 377 // from: 376.0 376.1 376.2
+  SAY #35343 /* ~"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35344 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS1221~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35352 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DS1221~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35355 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS1221~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35358 /* ~Schon gut. Vielleicht ein andermal.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 370
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35359 /* ~Schon gut. Vielleicht ein andermal.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 378 // from: 385.3
+  SAY #35387 /* ~"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe..."~ */
+  IF ~~ THEN REPLY #35388 /* ~"Graubart?"~ */ GOTO 379
+  IF ~~ THEN REPLY #35403 /* ~"Ich glaube kaum, daß er in seiner Lage etwas dagegen haben wird."~ */ GOTO 380
+  IF ~~ THEN REPLY #35404 /* ~"Ich werd das Gefühl nicht los, daß du doppelt so nervig wärst, wenn du Arme hättest. Laß uns gehen."~ */ GOTO 381
+END
+
+IF ~~ THEN BEGIN 379 // from: 378.0
+  SAY #35389 /* ~"Graubart... verstehst du, ein Opa, ein alter Knacker... ein Tattergreis."~ */
+  IF ~~ THEN REPLY #35390 /* ~"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"~ */ GOTO 380
+  IF ~~ THEN REPLY #35402 /* ~"Irgendwie habe ich den Eindruck, daß du doppelt so nervig wärst, wenn du Arme hättest. Gehen wir."~ */ GOTO 381
+END
+
+IF ~~ THEN BEGIN 380 // from: 378.1 379.0
+  SAY #35391 /* ~Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja... er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller... der hier ist ja völlig kaputt und klapperig."~ */
+  IF ~~ THEN REPLY #35392 /* ~"Und du etwa nicht?"~ */ GOTO 381
+  IF ~~ THEN REPLY #35401 /* ~"Also gut, gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 381 // from: 378.2 379.1 380.0
+  SAY #35393 /* ~"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."~ */
+  IF ~~ THEN REPLY #35394 /* ~"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."~ */ GOTO 382
+  IF ~~ THEN REPLY #35400 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 382 // from: 381.0
+  SAY #35395 /* ~Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.~ */
+  IF ~~ THEN REPLY #35396 /* ~"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 383
+  IF ~~ THEN REPLY #35399 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 383 // from: 382.0
+  SAY #35397 /* ~"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen... noch mehr, als du es bereits bist, versteht sich."~ */
+  IF ~~ THEN REPLY #35398 /* ~"Schön, daß du so empfindest. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 384 // from:
+  SAY #35418 /* ~"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"~ */
+  IF ~~ THEN REPLY #35419 /* ~"Und?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 385
+  IF ~~ THEN REPLY #35437 /* ~"Oh... ich wollte wirklich keinen bleibenden Schaden anrichten."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 385
+  IF ~~ THEN REPLY #35438 /* ~"Ist gut, macht nichts. Vielleicht ein andermal."~ */ GOTO 385
+END
+
+IF ~~ THEN BEGIN 385 // from: 384.0 384.1 384.2
+  SAY #35420 /* ~"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35421 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS748~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35429 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DS748~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35432 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS748~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35435 /* ~Schon gut. Vielleicht ein andermal.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 378
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35436 /* ~Schon gut. Vielleicht ein andermal.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 386 // from: 393.3
+  SAY #35464 /* ~"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe..."
+~ */
+  IF ~~ THEN REPLY #35465 /* ~"Graubart?"~ */ GOTO 387
+  IF ~~ THEN REPLY #35480 /* ~"Ich glaube kaum, daß er in seiner Lage etwas dagegen haben wird."~ */ GOTO 388
+  IF ~~ THEN REPLY #35481 /* ~"Ich werd das Gefühl nicht los, daß du doppelt so nervig wärst, wenn du Arme hättest. Laß uns gehen."~ */ GOTO 389
+END
+
+IF ~~ THEN BEGIN 387 // from: 386.0
+  SAY #35466 /* ~"Graubart... verstehst du, ein Opa, ein alter Knacker... ein Tattergreis."~ */
+  IF ~~ THEN REPLY #35467 /* ~"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"~ */ GOTO 388
+  IF ~~ THEN REPLY #35479 /* ~"Irgendwie habe ich den Eindruck, daß du doppelt so nervig wärst, wenn du Arme hättest. Gehen wir."~ */ GOTO 389
+END
+
+IF ~~ THEN BEGIN 388 // from: 386.1 387.0
+  SAY #35468 /* ~Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja... er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller... der hier ist ja völlig kaputt und klapperig."~ */
+  IF ~~ THEN REPLY #35469 /* ~"Und du etwa nicht?"~ */ GOTO 389
+  IF ~~ THEN REPLY #35478 /* ~"Also gut, gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 389 // from: 386.2 387.1 388.0
+  SAY #35470 /* ~"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."~ */
+  IF ~~ THEN REPLY #35471 /* ~"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."~ */ GOTO 390
+  IF ~~ THEN REPLY #35477 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 390 // from: 389.0
+  SAY #35472 /* ~Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.~ */
+  IF ~~ THEN REPLY #35473 /* ~"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 391
+  IF ~~ THEN REPLY #35476 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 391 // from: 390.0
+  SAY #35474 /* ~"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen... noch mehr, als du es bereits bist, versteht sich."~ */
+  IF ~~ THEN REPLY #35475 /* ~"Schön, daß du so empfindest. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 392 // from:
+  SAY #35495 /* ~"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"~ */
+  IF ~~ THEN REPLY #35496 /* ~"Und?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 393
+  IF ~~ THEN REPLY #35514 /* ~"Oh... ich wollte wirklich keinen bleibenden Schaden anrichten."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 393
+  IF ~~ THEN REPLY #35515 /* ~"Ist gut, macht nichts. Vielleicht ein andermal."~ */ GOTO 393
+END
+
+IF ~~ THEN BEGIN 393 // from: 392.0 392.1 392.2
+  SAY #35497 /* ~"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35498 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS996~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35506 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DS996~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35509 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS996~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35512 /* ~Schon gut. Vielleicht ein andermal.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 386
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35513 /* ~Schon gut. Vielleicht ein andermal.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 394 // from: 401.3
+  SAY #35541 /* ~"Hmmmm. Ob dieser Graubart wohl was dagegen hat, daß *ich* mir sein Knochengerüst ausleihe..."~ */
+  IF ~~ THEN REPLY #35542 /* ~"Graubart?"~ */ GOTO 395
+  IF ~~ THEN REPLY #35557 /* ~"Ich glaube kaum, daß er in seiner Lage etwas dagegen haben wird."~ */ GOTO 396
+  IF ~~ THEN REPLY #35558 /* ~"Ich werd das Gefühl nicht los, daß du doppelt so nervig wärst, wenn du Arme hättest. Laß uns gehen."~ */ GOTO 397
+END
+
+IF ~~ THEN BEGIN 395 // from: 394.0
+  SAY #35543 /* ~"Graubart... verstehst du, ein Opa, ein alter Knacker... ein Tattergreis."~ */
+  IF ~~ THEN REPLY #35544 /* ~"Also ich glaube kaum, daß er in seiner Lage etwas dagegen einzuwenden hat. Warum solltest du seinen Körper also nicht nehmen?"~ */ GOTO 396
+  IF ~~ THEN REPLY #35556 /* ~"Irgendwie habe ich den Eindruck, daß du doppelt so nervig wärst, wenn du Arme hättest. Gehen wir."~ */ GOTO 397
+END
+
+IF ~~ THEN BEGIN 396 // from: 394.1 395.0
+  SAY #35545 /* ~Morte mustert kurz das Skelett, dann schüttelt er den Kopf. "Na ja... er sollte schon etwas frischer sein. Und vielleicht auch etwas würdevoller... der hier ist ja völlig kaputt und klapperig."~ */
+  IF ~~ THEN REPLY #35546 /* ~"Und du etwa nicht?"~ */ GOTO 397
+  IF ~~ THEN REPLY #35555 /* ~"Also gut, gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 397 // from: 394.2 395.1 396.0
+  SAY #35547 /* ~"Ach, sehr witzig." Morte starrt dich an. "Und gerade DU MUSST so was sagen, Dussel. Du bist so häßlich, da laufen sogar die Spiegel an."~ */
+  IF ~~ THEN REPLY #35548 /* ~"Ach ja? Zumindest habe *ich* noch alle meine Teile beisammen."~ */ GOTO 398
+  IF ~~ THEN REPLY #35554 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 398 // from: 397.0
+  SAY #35549 /* ~Morte schnaubt. Wie er das macht, so ganz ohne Lungen, ist dir ein ziemliches Rätsel.~ */
+  IF ~~ THEN REPLY #35550 /* ~"Eines kann ich dir sagen, Morte, es gibt nichts Besseres als so herumzulaufen, mit den Armen zu schlenkern und die frische Luft in den Lungen zu spüren. Es ist WUNDERBAR, einen Körper zu haben."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Skeleton_Mort_1","GLOBALLaw",-1)
+~ GOTO 399
+  IF ~~ THEN REPLY #35553 /* ~"Laß uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 399 // from: 398.0
+  SAY #35551 /* ~"Meine Beihilfe zu deiner Flucht aus dem Vorbereitungsraum steht sowieso schon ganz oben auf der Liste meiner persönlichen Irrtümer." Morte schnaubt erneut. "Ich hätte dich verrotten lassen sollen... noch mehr, als du es bereits bist, versteht sich."~ */
+  IF ~~ THEN REPLY #35552 /* ~"Schön, daß du so empfindest. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 400 // from:
+  SAY #35572 /* ~"Mann oh Mann, Meister. Das ist Vandalismus. Diese Bolzen hier sind wohl das einzige, was dieses Knochengerüst noch zusammenhält. Selbst die Nekromantie hat ihre Grenzen, findest du nicht?"~ */
+  IF ~~ THEN REPLY #35573 /* ~"Und?"~ */ DO ~IncrementGlobal("Good","GLOBAL",-1)
+~ GOTO 401
+  IF ~~ THEN REPLY #35591 /* ~"Oh... ich wollte wirklich keinen bleibenden Schaden anrichten."~ */ DO ~IncrementGlobal("Good","GLOBAL",1)
+~ GOTO 401
+  IF ~~ THEN REPLY #35592 /* ~"Ist gut, macht nichts. Vielleicht ein andermal."~ */ GOTO 401
+END
+
+IF ~~ THEN BEGIN 401 // from: 400.0 400.1 400.2
+  SAY #35574 /* ~"Oh, macht nichts." Morte macht eine seltsam ruckartige Bewegung, und du denkst es könnte ein Schulterzucken sein. "Ich war mir nur nicht ganz sicher, ob du das weißt oder nicht. Aber klar doch, versuchs."~ */
+  IF ~  !PartyHasItem("Prybar")
+CheckStatLT(Protagonist,13,STR)
+~ THEN REPLY #35575 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS863~ 4
+  IF ~  !PartyHasItem("Prybar")
+CheckStatGT(Protagonist,12,STR)
+~ THEN REPLY #35583 /* ~Versuch dem Skelett die Gelenkbolzen herauszunehmen.~ */ EXTERN ~DS863~ 5
+  IF ~  PartyHasItem("Prybar")
+~ THEN REPLY #35586 /* ~Versuch, die Bolzen aus den Gelenken des Skeletts herauszuhebeln.~ */ EXTERN ~DS863~ 6
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",0)
+~ THEN REPLY #35589 /* ~Schon gut. Vielleicht ein andermal.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ GOTO 394
+  IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #35590 /* ~Schon gut. Vielleicht ein andermal.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 402 // from:
+  SAY #38265 /* ~"Ich liebe diese Kleine schon jetzt!"~ */
+  IF ~~ THEN REPLY #38267 /* ~"Kannst du wenigstens schreiben? Oder Pantomime?"~ */ EXTERN ~DECCO~ 7
+END
+
+IF ~~ THEN BEGIN 403 // from:
+  SAY #38266 /* ~"Igitt!!"~ */
+  IF ~~ THEN REPLY #38268 /* ~"Hä?"~ */ EXTERN ~DECCO~ 34
+END
+
+IF ~~ THEN BEGIN 404 // from:
+  SAY #39000 /* ~Morte flüstert: "Das ist nicht gut, Meister. Paß auf, wo du hintrittst, oder die wischen dir dein Hirn einfach so aus dem Dasein... Die sind in größeren Gruppen mächtiger - jede einzelne ist dann Teil des Gruppenhirns. Die sind *tödlich*."~ */
+  IF ~~ THEN EXTERN ~DMANYAS1~ 5
+END
+
+IF ~~ THEN BEGIN 405 // from:
+  SAY #39001 /* ~Morte flüstert: "Das ist nicht gut, Meister. Paß auf, wo du hintrittst, oder die wischen dir dein Hirn einfach so aus dem Dasein... Die sind in größeren Gruppen mächtiger - jede einzelne ist dann Teil des Gruppenhirns. Die sind *tödlich*."~ */
+  IF ~~ THEN EXTERN ~DMANYAS1~ 58
+END
+
+IF ~~ THEN BEGIN 406 // from:
+  SAY #39002 /* ~Morte flüstert: "Ich weiß ja nicht, was die vorhaben, Meister, aber paß besser auf, was du so denkst. Die sind ein Gruppenhirn, und jede Ratte kommt noch zu diesem Gruppenhirn dazu, und die kämpfen wie - wenn du mir den Ausdruck mal verzeihst - in die Enge getriebene Ratten. Wir sind jetzt bei denen zu Hause, Meister, und die können nirgendwo hin. Mach jetzt nix Falsches."~ */
+  IF ~~ THEN EXTERN ~DMANYAS1~ 78
+END
+
+IF ~~ THEN BEGIN 407 // from:
+  SAY #39564 /* ~"Was für ein Zufall! Ich bin auch hinter hübschen Geschichten her."~ */
+  IF ~~ THEN EXTERN ~DYVES~ 2
+END
+
+IF ~~ THEN BEGIN 408 // from:
+  SAY #39565 /* ~"Ich? Warum soll *ich* denn eine Geschichte erzählen?"~ */
+  IF ~~ THEN REPLY #39713 /* ~"Dann vergiß es."~ */ GOTO 409
+  IF ~~ THEN REPLY #39714 /* ~"Erzähl einfach nur eine Geschichte, Morte."~ */ GOTO 413
+END
+
+IF ~~ THEN BEGIN 409 // from: 408.0
+  SAY #39566 /* ~"Nein, nein, ich tu's ja... Ich dachte bloß, ich beschwer mich ein bißchen, weil sich das so gehört. Außerdem liebe ich die Aufmerksamkeit."~ */
+  IF ~~ THEN REPLY #39715 /* ~"Nein, Morte - auf keinen Fall. Ich möchte sie nicht hören."~ */ GOTO 410
+  IF ~~ THEN REPLY #39716 /* ~"Also gut... dann erzähl schon."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 410 // from: 409.0
+  SAY #39567 /* ~"Bitte! Komm schon? Biiitte? Das is ne tolle Geschichte! Viele Personen, Action, retardierende Elemente und eine überraschende Auflösung!"~ */
+  IF ~~ THEN REPLY #39717 /* ~"So toll kann sie gar nicht sein."~ */ GOTO 411
+  IF ~~ THEN REPLY #39718 /* ~"Was sind denn retardierende Elemente?"~ */ GOTO 412
+  IF ~~ THEN REPLY #39719 /* ~"Also gut... dann erzähl."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 411 // from: 410.0
+  SAY #39568 /* ~"Wirklich! Echt! *Komm* schon!"~ */
+  IF ~~ THEN REPLY #39720 /* ~"Warte... Was sind denn 'retardierende Elemente'?"~ */ GOTO 412
+  IF ~~ THEN REPLY #39721 /* ~"Also gut, erzähl."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 412 // from: 410.1 411.0
+  SAY #39569 /* ~"Keine Ahnung! Aber es *klingt* jedenfalls beeindruckend!"~ */
+  IF ~~ THEN REPLY #39722 /* ~"Also gut, erzähl."~ */ DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 413 // from: 408.1
+  SAY #39570 /* ~"Na gut, na gut..."~ */
+  IF ~~ THEN DO ~SetGlobal("Yves_Shared","AR0605",1)
+~ GOTO 414
+END
+
+IF ~~ THEN BEGIN 414 // from: 409.1 410.2 411.1 412.0 413.0
+  SAY #39571 /* ~"Da saß einmal ein älterer Mann allein auf einem dunklen Pfad, OK? Er war sich nicht sicher, in welche Richtung er gehen sollte, und er hatte vergessen, wohin er reiste und wer er war. Er hatte sich 'n Moment hingesetzt, um seine müden Beine auszuruhen, als er plötzlich aufblickte und eine ältere Frau vor sich sah. Sie grinste zahnlos und sprach mit einem Gackern: 'Und jetzt zu deinem *dritten* Wunsch. Was wünschst du dir also?'"~ */
+  IF ~~ THEN REPLY #39724 /* ~"Erzähl weiter, Morte..."~ */ GOTO 415
+  IF ~~ THEN REPLY #39725 /* ~"Warte... Ich hätte da eine Frage an Yves..."~ */ EXTERN ~DYVES~ 4
+  IF ~~ THEN REPLY #39726 /* ~"Wir hören sie uns ein anderes Mal an, Morte. Leb wohl, Yves."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 415 // from: 414.0
+  SAY #39572 /* ~"'Dritter Wunsch?' Der Mann war perplex. 'Wie kann das denn ein dritter Wunsch sein, wenn ich noch keinen ersten und zweiten Wunsch hatte?'"~ */
+  IF ~~ THEN REPLY #39727 /* ~"Erzähl weiter, Morte..."~ */ GOTO 416
+  IF ~~ THEN REPLY #39728 /* ~"Warte... Ich hätte da eine Frage an Yves..."~ */ EXTERN ~DYVES~ 4
+  IF ~~ THEN REPLY #39729 /* ~"Wir hören sie uns ein anderes Mal an, Morte. Leb wohl, Yves."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 416 // from: 415.0
+  SAY #39573 /* ~"'Du hattest schon zwei Wünsche', sagte die Hexe, 'aber dein zweiter Wunsch war, daß alles wieder wie vor deinem ersten Wunsch sein sollte. Deshalb erinnerst du dich auch an nichts, weil alles wieder genauso ist wie vorher, bevor du deine Wünsche ausgesprochen hast.' Sie gackerte den armen Dussel an. 'Und deshalb hast du jetzt nur noch einen Wunsch übrig.'"~ */
+  IF ~~ THEN REPLY #39752 /* ~"Erzähl weiter, Morte..."~ */ GOTO 417
+  IF ~~ THEN REPLY #39753 /* ~"Warte... Ich hätte da eine Frage an Yves..."~ */ EXTERN ~DYVES~ 4
+  IF ~~ THEN REPLY #39754 /* ~"Wir hören sie uns ein anderes Mal an, Morte. Leb wohl, Yves."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 417 // from: 416.0
+  SAY #39574 /* ~"'Also gut', sagte der Mann, "ich glaub das zwar nicht, aber es kann ja nicht schaden, wenn ich mir was wünsche. Ich möchte wissen, wer ich bin.'"
+
+"'Putzig', sagte die alte Frau, 'Das war auch dein erster Wunsch gewesen.' Sprach's und verschwand für immer."
+~ */
+  IF ~~ THEN EXTERN ~DYVES~ 55
+END
+
+IF ~~ THEN BEGIN 418 // from:
+  SAY #39575 /* ~"Was zum Teufel war das denn, du blödes Vieleck?! Das war ja die langweiligste Geschichte, die ich je gehört hab!"~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 11
+END
+
+IF ~~ THEN BEGIN 419 // from:
+  SAY #39576 /* ~"Ausschmückungen?"~ */
+  IF ~~ THEN EXTERN ~DNORDOM~ 12
+END
+
+IF ~~ THEN BEGIN 420 // from:
+  SAY #39577 /* ~"*Komm* schon, kleines Scheusal. Mach hier keine Geschichten, sondern erzähl lieber eine, ja?"~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 196
+END
+
+IF ~~ THEN BEGIN 421 // from:
+  SAY #40068 /* ~Morte wirbelt um dich herum und macht sich über die offensichtliche Bemerkung des Mädchens lustig. "Bei allen Heiligen, Meister... sie hat recht! Das hab ich ja noch nie bemerkt... Du bist ja voller *Narben*!"~ */
+  IF ~  !NearbyDialog("DMorte")
+HPPercent(Protagonist,100)
+~ THEN REPLY #40069 /* ~"Das sind alles alte Narben. Mir geht's gut."~ */ EXTERN ~DNENNY~ 2
+  IF ~  !NearbyDialog("DMorte")
+HPPercentGT(Protagonist,49)
+~ THEN REPLY #40070 /* ~"Nur leicht verletzt. Ich bin schon in Ordnung."~ */ EXTERN ~DNENNY~ 2
+  IF ~  !NearbyDialog("DMorte")
+HPPercentLT(Protagonist,50)
+~ THEN REPLY #40071 /* ~"Ja, das bin ich, und zwar schwer."~ */ EXTERN ~DNENNY~ 2
+  IF ~~ THEN REPLY #40072 /* ~"Kümmer dich nicht drum. Ich hätte da ein paar Fragen..."~ */ EXTERN ~DNENNY~ 3
+  IF ~~ THEN REPLY #40073 /* ~"Mach dir darum keine Sorgen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 422 // from:
+  SAY #40074 /* ~Morte wackelt mit den Augenbrauen. "Du bist allerdings zu 'dreist'... Hat sicher was zu tun mit diesen schwingenden, hängenden Br-"~ */
+  IF ~~ THEN REPLY #40075 /* ~"Morte, das reicht."~ */ GOTO 423
+END
+
+IF ~~ THEN BEGIN 423 // from: 422.0
+  SAY #40076 /* ~Morte hält die Klappe.~ */
+  IF ~  Global("Nenny","GLOBAL",2)
+~ THEN REPLY #40077 /* ~"Das ist kein Problem, Nenny."~ */ EXTERN ~DNENNY~ 9
+  IF ~  Global("Nenny","GLOBAL",2)
+~ THEN REPLY #40078 /* ~"Sieh einfach zu, daß es nicht noch einmal passiert, Nenny."~ */ EXTERN ~DNENNY~ 9
+  IF ~  Global("Nenny","GLOBAL",1)
+~ THEN REPLY #40079 /* ~"Das ist kein Problem, Fräulein."~ */ EXTERN ~DNENNY~ 9
+  IF ~  Global("Nenny","GLOBAL",1)
+~ THEN REPLY #40080 /* ~"Sieh einfach zu, daß es nicht noch einmal passiert, Mädchen."~ */ EXTERN ~DNENNY~ 9
+END
+
+IF ~~ THEN BEGIN 424 // from:
+  SAY #40081 /* ~"Hey!"~ */
+  IF ~~ THEN EXTERN ~DNENNY~ 27
+END
+
+IF ~~ THEN BEGIN 425 // from:
+  SAY #40082 /* ~Morte murmelt vor sich hin. "Ich denke mal, es ist gut, daß *irgendwas* da drin is."~ */
+  IF ~~ THEN REPLY #40083 /* ~"Ich hätte da noch eine Frage, Nenny..."~ */ EXTERN ~DNENNY~ 3
+  IF ~~ THEN REPLY #40084 /* ~"Das ist alles, was ich wissen wollte, Nenny. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 426 // from:
+  SAY #40222 /* ~"Oooh, nein... Jetzt *mußt* du es uns erzählen."~ */
+  IF ~~ THEN REPLY #40223 /* ~"Ja... Bitte: Erzähl es mir."~ */ EXTERN ~DBROCUS4~ 4
+  IF ~~ THEN REPLY #40224 /* ~"Nun laß das schon, Morte. Ich hatte da noch eine Frage an ihn..."~ */ EXTERN ~DBROCUS4~ 2
+  IF ~~ THEN REPLY #40225 /* ~"Vergiß es, Morte. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 427 // from:
+  SAY #40275 /* ~Morte schwebt dicht an dich heran und flüstert dir zu: "Ich hab ja Mitleid mit ihrem Liebhaber. Der hat keine Ahnung, wie schlecht er es hat. 'N Mädel wie das hier bringt nichts als Ärger."~ */
+  IF ~~ THEN REPLY #40276 /* ~"Das klingt nicht sehr klug, Juliette. Sei doch einfach froh über das, was du hast."~ */ EXTERN ~DSADJULI~ 12
+  IF ~~ THEN REPLY #40277 /* ~"Woran hast du denn gedacht, Juliette?"~ */ EXTERN ~DSADJULI~ 13
+  IF ~~ THEN REPLY #40278 /* ~"Ich hätte da ein paar Fragen, Juliette..."~ */ EXTERN ~DSADJULI~ 24
+  IF ~~ THEN REPLY #40279 /* ~"Das ist alles, was ich wissen wollte, Juliette. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 428 // from:
+  SAY #40685 /* ~Morte flüstert leise: "Wow... unheimliche Braut."~ */
+  IF ~~ THEN REPLY #40686 /* ~"Ich entschuldige mich, meine Dame... Ich war nicht sicher, ob hier jemand drin ist."~ */ EXTERN ~DMARISSA~ 2
+  IF ~~ THEN REPLY #40687 /* ~"Ich hätte da ein paar Fragen, meine Dame..."~ */ EXTERN ~DMARISSA~ 3
+  IF ~~ THEN REPLY #40688 /* ~"Dann lebt wohl, meine Dame."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 429 // from:
+  SAY #40846 /* ~"Komm schon, Meister! Wir sind in 'nem Gebäude, das von einigen der aufregendsten Dinger auf dieser Seite des Multiversums wimmelt, und du hältst an, um mit *Modronen* zu sprechen?"~ */
+  IF ~~ THEN REPLY #40847 /* ~"Was kannst du mir über sie erzählen, Morte?"~ */ GOTO 430
+  IF ~~ THEN REPLY #40848 /* ~Ignoriere Morte, grüße den Modron.~ */ DO ~SetGlobal("Met_Modrons","GLOBAL",1)
+~ EXTERN ~DBROCUS6~ 3
+  IF ~~ THEN REPLY #40849 /* ~"Entschuldige bitte, Morte, aber ich unterhalte mich gerade mit dem Modron."~ */ GOTO 431
+  IF ~~ THEN REPLY #40850 /* ~"Also gut, gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 430 // from: 429.0
+  SAY #40851 /* ~Morte macht ein Geräusch des absoluten Ekels. "Was kann man da schon sagen? Nervendes kleines Uhrwerk-Ungeziefer... die arbeiten ständig daran, dem Multiversum Gesetz und Ordnung aufzudrücken. Nicht *Gutes*, wie gesagt, sondern nur das *Gesetz*. Vergessen wir sie einfach und reißen ein paar Mädels auf, OK?"~ */
+  IF ~~ THEN REPLY #40852 /* ~Ignoriere Morte, grüße den Modron.~ */ DO ~SetGlobal("Met_Modrons","GLOBAL",1)
+~ EXTERN ~DBROCUS6~ 3
+  IF ~~ THEN REPLY #40853 /* ~"Entschuldige bitte, Morte, aber ich unterhalte mich gerade mit dem Modron."~ */ GOTO 431
+  IF ~~ THEN REPLY #40854 /* ~"Also gut, gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 431 // from: 429.2 430.1
+  SAY #40855 /* ~Morte seufzt laut. "Also gut, wie du willst - aber sag dann nicht, ich hätte dich nicht gewarnt. Du wirst allerdings wahrscheinlich nicht weit mit ihnen kommen, Meister... Das is ne ganz komische Sorte zum Unterhalten."~ */
+  IF ~~ THEN REPLY #40856 /* ~"Sei gegrüßt..."~ */ DO ~SetGlobal("Met_Modrons","GLOBAL",1)
+~ EXTERN ~DBROCUS6~ 3
+END
+
+IF ~~ THEN BEGIN 432 // from:
+  SAY #41135 /* ~"Alles!" schreit Morte. "Tu alles, was du willst, mit mir!"~ */
+  IF ~~ THEN EXTERN ~DKESAI~ 2
+END
+
+IF ~~ THEN BEGIN 433 // from:
+  SAY #41136 /* ~"Das ist doch zum Heulen... Wo war diese Schnecke, als ich noch einen *Körper* hatte?!"~ */
+  IF ~~ THEN EXTERN ~DKESAI~ 11
+END
+
+IF ~~ THEN BEGIN 434 // from:
+  SAY #41632 /* ~"Mein Freund dachte, du seist attraktiv, aber *wow*! Da hat er sich ja wohl schrecklich geirrt!"~ */
+  IF ~~ THEN EXTERN ~DKIMASXI~ 2
+END
+
+IF ~~ THEN BEGIN 435 // from: 436.0
+  SAY #41633 /* ~"Klar, Meister, wie du willst. Was für ne Hexe, was?" Morte macht *hmph* und wackelt dann mit den Augenbrauen. "Ich *mag* das!"~ */
+  IF ~~ THEN REPLY #41634 /* ~"Ich bin sicher, daß du das tust, Morte, aber ich muß mit ihr sprechen."~ */ EXTERN ~DKIMASXI~ 14
+  IF ~~ THEN REPLY #41635 /* ~"Also gut... Gehen wir einfach, Morte."~ */ EXTERN ~DKIMASXI~ 4
+END
+
+IF ~~ THEN BEGIN 436 // from:
+  SAY #41636 /* ~"Als ob ich meinen irgendwo hier in der Nähe sehen lassen würde, wenn ich einen hätte! Was, hast du das Wort 'Bordell' gehört und gedacht, du könntest hier ein bißchen Klimper machen, du flohgeplagte Gossenhure? Ich kann nicht glauben, daß die dich auch nur zu Tür reinlassen, mit all den Zecken, die aus deinen zotteligen Beinen hüpfen!"~ */
+  IF ~~ THEN REPLY #41637 /* ~"Das reicht jetzt, ihr zwei."~ */ GOTO 435
+  IF ~~ THEN REPLY #41638 /* ~Laß sie machen.~ */ EXTERN ~DKIMASXI~ 3
+END
+
+IF ~~ THEN BEGIN 437 // from:
+  SAY #41639 /* ~"*Er*! Das heißt '*ER* kommt mir schon ziemlich großmäulig vor', Kimasxi 'Flatterdung'... du zottelige, hammelbeinige Hure!"~ */
+  IF ~~ THEN EXTERN ~DKIMASXI~ 18
+END
+
+IF ~~ THEN BEGIN 438 // from:
+  SAY #41640 /* ~"Besser als du vielleicht?" Morte blinzelt sie mit den Augenbrauen an. "Eh? Eh?"~ */
+  IF ~~ THEN EXTERN ~DKIMASXI~ 20
+END
+
+IF ~~ THEN BEGIN 439 // from:
+  SAY #41641 /* ~"Werd ich nicht tun, *Tiefling*. Ich geb aber zu, daß ich vielleicht ein oder zwei Dinge gelernt habe... guter Einfall, Meister!"~ [MRT387] */
+  IF ~~ THEN REPLY #41642 /* ~"Klar, Morte."~ */ EXTERN ~DKIMASXI~ 21
+END
+
+IF ~~ THEN BEGIN 440 // from: 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
+  SAY #41830 /* ~"Sieh mal, Meister. Offensichtlich bist du nach deinem Kuss mit dem Tod immer noch etwas verwirrt, sodass ich dir zwei kleine Ratschläge erteilen will: Erstens, wenn du Fragen hast, *fragst* du mich, in Ordnung?"
+
+^NHINWEIS: <SPEAKTO>^-~ */
+  IF ~~ THEN REPLY #41831 /* ~"Also gut... Wenn ich irgendwelche Fragen habe, wende ich mich an dich."~ */ GOTO 441
+END
+
+IF ~~ THEN BEGIN 441 // from: 440.0
+  SAY #41832 /* ~"Zweitens, wenn du nur *halb* so vergeßlich bist, wie du den Eindruck machst, fang lieber an, dir Notizen zu machen - immer, wenn dir etwas begegnet, das wichtig sein *könnte*, schreib's dir auf, damit du es nicht wieder vergißt."~ */
+  IF ~~ THEN REPLY #41833 /* ~"Wenn ich dieses Journal hätte, das ich eigentlich bei mir haben *sollte*, würde ich das tun."~ */ GOTO 442
+END
+
+IF ~~ THEN BEGIN 442 // from: 441.0
+  SAY #41834 /* ~"Dann fang ein neues an, Meister. Ist doch kein Verlust. Hier gibt's genug Pergament und Tinte für dich."~ */
+  IF ~~ THEN REPLY #41835 /* ~"Hmmmm. Also gut. Kann ja nicht schaden... Dann mache ich halt ein neues."~ */ GOTO 443
+END
+
+IF ~~ THEN BEGIN 443 // from: 442.0
+  SAY #41836 /* ~"Benutze es, um deine Bewegungen im Blick zu behalten. Falls du wichtige Dinge nicht mehr genau weißt, wie, wer du bist... oder viel wichtiger, wer *ich* bin... kannst du es benutzen, um deine Erinnerung aufzufrischen."
+
+^NHINWEIS: Um auf das Tagebuch zuzugreifen, wählst du die Tagebuch-Taste im Schnellmenü. Dein Tagebuch wird während des Spiels automatisch aktualisiert.^-~ */
+  IF ~~ THEN REPLY #41837 /* ~"OK... Ich hab's kapiert. Gehn wir."~ */ JOURNAL #39516 /* ~Mein eigentliches Journal ist verschwunden, also hab ich ein neues angefangen. Ich bin an einem Ort aufgewacht, der "Leichenhalle" genannt wird. Ich weiß nicht, wer ich bin, was ich hier mache, oder gar, wie ich hierher gekommen bin. Die einzige Person, die ich getroffen habe, ich ein plappernder Schädel namens Morte... Während er sich meine Wunden angesehen hat, hat er eine Reihe von 'Anweisungen' gefunden, die auf meinen Rücken tätowiert sind.
+
+"Ich weiß, du fühlst dich, als hättest du ein paar Fässer Styx-Wasser getrunken, aber du mußt dich KONZENTRIEREN. In deinem Besitz befindet sich ein JOURNAL, das etwas Licht auf das Dunkel der Sache werfen sollte. PHAROD kann dir den Rest des Plausches liefern, sofern er nicht schon im Totenbuch gelandet ist."
+
+"Verlier das Journal nicht oder wir landen wieder im Styx. Und was auch geschieht, erzähl KEINEM, WER du bist oder WAS dir widerfahren ist. Sonst schicken sie dich im Handumdrehen auf eine Pilgerfahrt ins Krematorium. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod."
+
+Hab ich diese Nachricht für mich selbst hinterlassen? Sieht so aus, als müßte ich diesen 'Pharod' UND mein Journal finden.~ */ EXIT
+END
+
+IF WEIGHT #6 /* Triggers after states #: 742 737 733 487 even though they appear after this state */
+~  !Global("Mortuary_Walkthrough","GLOBAL",0)
+!Global("Mortuary_Walkthrough","GLOBAL",1)
+Global("AR0200_Visited","GLOBAL",0)
+InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 444 // from: 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0
+  SAY #41838 /* ~"Was nagt an dir, Meister?"~ [MRT515] */
+  IF ~~ THEN REPLY #41840 /* ~"Kannst du mir noch mal vorlesen, was auf meinen Rücken tätowiert ist?~ */ GOTO 445
+  IF ~~ THEN REPLY #41841 /* ~"Was ist das hier noch mal für ein Ort?"~ */ GOTO 450
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41842 /* ~"Dieser Ort ist riesig... Wer kümmert sich darum?"~ */ GOTO 451
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41843 /* ~"Wer kümmert sich doch gleich um diesen Ort?"~ */ GOTO 451
+  IF ~~ THEN REPLY #41844 /* ~"Die Leichen hier... Wo kommen die alle her?"~ */ GOTO 454
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41845 /* ~"Vorhin hast du gesagt, daß ich aufpassen soll, keine *weiblichen* Leichen zu töten. Warum?"~ */ GOTO 455
+  IF ~  PartyHasItem("Bandage")
+~ THEN REPLY #41846 /* ~"Wie kann ich diese Bandagen benutzen?"~ */ GOTO 453
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41847 /* ~"Nichts, Morte. Ich wollte nur mal gucken, ob du noch da bist."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41848 /* ~"Nichts, Morte. Ich wollte nur mal gucken, ob du noch da bist."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 445 // from: 444.0
+  SAY #41849 /* ~"Ah, nun *komm* schon, Meister. Erzähl' mir nicht, daß du es schon vergessen hast."~ */
+  IF ~~ THEN REPLY #41850 /* ~"Ich muß einfach nur mein Gedächtnis auffrischen."~ */ GOTO 446
+  IF ~~ THEN REPLY #41851 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41852 /* ~"Dann vergiß es. Gehen wir."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41853 /* ~"Dann vergiß es. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 446 // from: 445.0
+  SAY #41854 /* ~"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen..."
+
+'Ich weiß, daß du dich so fühlst, als hättest du 'n paar Eimer Styx-Wasser getrunken, aber du mußt dich KONZENTRIEREN. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.'~ */
+  IF ~~ THEN REPLY #41855 /* ~"Pharod... hmmm. Lies weiter."~ */ GOTO 447
+  IF ~~ THEN REPLY #41856 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41857 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41858 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 447 // from: 446.0
+  SAY #41859 /* ~"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück..."
+
+'Verlier das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähl NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.'~ */
+  IF ~~ THEN REPLY #41860 /* ~"Und ich hatte kein Journal bei mir, als ich aufgewacht bin?"~ */ GOTO 448
+  IF ~~ THEN REPLY #41861 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41862 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41863 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 448 // from: 447.0
+  SAY #41864 /* ~"Nein... du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."~ */
+  IF ~~ THEN REPLY #41865 /* ~"Und du bist sicher, daß du niemanden namens Pharod kennst?"~ */ GOTO 449
+  IF ~~ THEN REPLY #41866 /* ~"Wie wahr. Ich hätte da noch ein paar Fragen..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41867 /* ~"Also gut. Gehen wir."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41868 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 449 // from: 448.0
+  SAY #41869 /* ~"Nee. Trotzdem, irgendein Dussel muß ja wissen, wo man ihn finden kann. Fragen wir doch einfach rum... NACHDEM wir hier raus sind."~ */
+  IF ~~ THEN REPLY #41870 /* ~"Bevor wir gehen hätte ich noch ein paar Fragen..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41871 /* ~"Also gut. Gehen wir."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41872 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 450 // from: 444.1
+  SAY #41873 /* ~"Man nennt diesen Ort die 'Leichenhalle'... Es ist ein großer schwarzer Bau mit dem architektonischen Charme einer schwangeren Spinne."~ */
+  IF ~~ THEN REPLY #41874 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41875 /* ~"Das ist alles, was ich wissen wollte. Danke."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41876 /* ~"Das ist alles, was ich wissen wollte. Danke."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 451 // from: 444.2 444.3
+  SAY #41877 /* ~"Sie nennen sich selbst die 'Staubmenschen'. Sie sind gar nicht zu übersehen: Sie stehen auf Schwarz und totenstarre Gesichter. Sie sind eine räudige Bande ghulischer Todesanbeter, die glauben, daß jeder sterben sollte... je früher, desto besser."~ */
+  IF ~~ THEN REPLY #41878 /* ~"Das verstehe ich nicht... Was können diese Staubmenschen dagegen haben, wenn ich mich hier aus dem Staub mache?"~ */ GOTO 452
+  IF ~~ THEN REPLY #41879 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41880 /* ~"Verstehe. Dann bin ich eben vorsichtig."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41881 /* ~"Verstehe. Dann bin ich eben vorsichtig."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 452 // from: 451.0
+  SAY #41882 /* ~"Hast du nicht zugehört?! Ich sagte, daß die Staubies glauben, daß JEDER sterben muß, je früher, desto besser. Glaubst du, daß die Leichen, die du gesehen hast, sich im Totenbuch besser fühlen als außerhalb des Buchs?"~ */
+  IF ~~ THEN REPLY #41883 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41884 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41885 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 453 // from: 444.6
+  SAY #41886 /* ~"Nun, du... du *benutzt* sie. Blutung stillen, und so."
+
+^NHINWEIS: <BANDAGES2>^-~ */
+  IF ~~ THEN REPLY #41887 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41888 /* ~"Danke. Ich glaube, damit werde ich schon fertig."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41889 /* ~"Danke. Ich glaube, damit werde ich schon fertig."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 454 // from: 444.4
+  SAY #41890 /* ~"Der Tod sucht die Ebenen jeden Tag heim, Meister. Diese watschelnden Gerüste hier sind alles, was von den armen Schluckern übriggeblieben ist, die ihre Leichen nach ihrem Tod an die Verwalter verkauft haben."~ */
+  IF ~~ THEN REPLY #41891 /* ~"Verstehe. Ich hätte da noch ein paar Fragen an dich..."~ */ GOTO 444
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",0)
+~ THEN REPLY #41892 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ GOTO 440
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #41893 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 455 // from: 444.5
+  SAY #41894 /* ~"Wa... im *Ernst*? Hör zu, Meister, diese toten Dinger sind die letzte Chance für ein paar hartgesottene Typen wie uns. Wir müssen *nett* sein... und nicht wegen ein paar Schlüsseln Kleinholz aus ihnen machen, ihnen die Gliedmaßen abhacken oder etwas Ähnliches tun."~ */
+  IF ~~ THEN REPLY #41895 /* ~"Letzte Chance? Wovon *redest* du denn?"~ */ GOTO 456
+  IF ~~ THEN REPLY #41896 /* ~"Vergiß es. Ich hätte da noch ein paar andere Fragen an dich..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41897 /* ~"In Ordnung... Ich... versuche, mir das zu merken."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 456 // from: 455.0
+  SAY #41898 /* ~"Meister, SIE sind tot, WIR sind tot... verstehst du, worauf ich hinaus will? Nun?"~ */
+  IF ~~ THEN REPLY #41899 /* ~"Nein... nein, eigentlich nicht."~ */ GOTO 457
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #41900 /* ~"Du *kannst* das nicht ernst meinen."~ */ GOTO 457
+  IF ~~ THEN REPLY #41901 /* ~"Vergiß es. Ich hätte da noch ein paar andere Fragen an dich..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41902 /* ~"Ich habe genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 457 // from: 456.0 456.1
+  SAY #41903 /* ~"Meister, wir haben bereits etwas mit diesen hinkenden Damen gemein. Wir sind *alle* mindestens einmal gestorben: da haben wir doch schon Gesprächsstoff. Sie schätzen Männer mit dieser Art von Erfahrung."~ */
+  IF ~~ THEN REPLY #41904 /* ~"Warte... Hast du vorhin nicht gesagt, daß ich *nicht* tot bin?"~ */ GOTO 458
+  IF ~~ THEN REPLY #41905 /* ~"Vergiß es. Ich hätte da noch ein paar andere Fragen an dich..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41906 /* ~"Ich habe genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 458 // from: 457.0
+  SAY #41907 /* ~"Tja... okay, *du* bist vielleicht nicht tot, aber *ich* bin's. Und ich für meinen Teil hätte nichts dagegen, einen Sarg mit einem dieser sehnigen Kadaver hier zu teilen." Morte fängt an, in freudiger Erwartung mit den Zähnen zu klappern. "Natürlich müßten die Verwalter sich erst von ihnen trennen, und das ist ziemlich unwahrscheinlich..."~ */
+  IF ~~ THEN REPLY #41908 /* ~"Ich hätte da noch ein paar Fragen an dich, Morte..."~ */ GOTO 444
+  IF ~~ THEN REPLY #41909 /* ~"Ich habe genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 459 // from:
+  SAY #41910 /* ~"Du Heiligster. Das ist ein HÖLLISCHES Buch."~ */
+  IF ~~ THEN REPLY #41911 /* ~"Was ist es?"~ */ DO ~SetGlobal("Morte_Mortuary_Walkthrough_2","GLOBAL",1)
+~ GOTO 460
+END
+
+IF ~~ THEN BEGIN 460 // from: 459.0
+  SAY #41913 /* ~"Wenn ich raten müßte, würde ich sagen, das ist das Buch, in das sie die Namen jedes armen Schluckers ritzen, der das Pech hat, hier abgeladen zu werden."~ */
+  IF ~~ THEN REPLY #41914 /* ~"Könnte mein Name da drin sein?"~ */ GOTO 461
+END
+
+IF ~~ THEN BEGIN 461 // from: 460.0
+  SAY #41915 /* ~"Äh... tja... *könnte* sein. Um das herauszufinden, mußt du deine Knochenschüssel mit dem schwebenden Staubie da drüben rasseln lassen. Ich bin aber nicht sicher, ob das so ne gute Idee ist."~ */
+  IF ~~ THEN REPLY #41916 /* ~"Na ja, ich brauche Antworten. Ich werde mit ihm sprechen." ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 462 // from:
+  SAY #41919 /* ~Morte flüstert: "In irgendeiner Klapsmühle fehlt jetzt ein Übergeschnappter."~ */
+  IF ~~ THEN REPLY #41920 /* ~"Ich hätte da ein paar Fragen, Jumble..."~ */ EXTERN ~DJUMBLE~ 2
+  IF ~  Global("Story_Reekwind_Curse","GLOBAL",1)
+Global("Jumble_Reekwind","GLOBAL",0)
+~ THEN REPLY #41921 /* ~"Du bist der Mann, der Übelwind verflucht hat, nicht wahr?"~ */ DO ~SetGlobal("Jumble_Reekwind","GLOBAL",1)
+~ JOURNAL #67862 /* ~Ich habe den Mann, der Übelwind verflucht hat, in der Städtischen Festhalle gefunden: Jumble Mördersinn.~ */ EXTERN ~DJUMBLE~ 8
+  IF ~  Global("Jumble_Reekwind","GLOBAL",1)
+~ THEN REPLY #67864 /* ~"Ich möchte, daß du Übelwinds Fluch aufhebst."~ */ EXTERN ~DJUMBLE~ 9
+  IF ~~ THEN REPLY #41922 /* ~"Ich geh dann jetzt mal, Jumble. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 463 // from:
+  SAY #41923 /* ~"Äh, oh... Siehst so aus, als ob du gerade mit einem Fluch belegt worden bist, Meister..."~ */
+  IF ~~ THEN REPLY #41924 /* ~"Was hast du mit mir gemacht, Jumble?"~ */ EXTERN ~DJUMBLE~ 7
+  IF ~~ THEN REPLY #41925 /* ~"Jumble... Bitte, mach das wieder rückgängig."~ */ EXTERN ~DJUMBLE~ 7
+  IF ~~ THEN REPLY #41926 /* ~"Was auch immer du getan hast, Jumble, mach es rückgängig - oder du wirst es bitter bereuen."~ */ EXTERN ~DJUMBLE~ 7
+  IF ~~ THEN REPLY #41927 /* ~"Gehen wir einfach, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 464 // from:
+  SAY #42929 /* ~"Ich würde sagen, ignoriere die Tussi... Bleib einfach cool. Das macht dich viel interessanter!"~ */
+  IF ~~ THEN EXTERN ~DMONTAGU~ 29
+END
+
+IF ~~ THEN BEGIN 465 // from:
+  SAY #42930 /* ~"Vertrau mir, Kleiner. Beachte sie einfach nicht, mach es ein wenig spannend und irritier sie. Ich sag dir, sie werden wie Kletten an dir hängen, um herauszufinden, was los ist. Nicht wahr, Meister?"~ */
+  IF ~~ THEN REPLY #42931 /* ~"Ja... Dann wird sie glauben, daß was nicht stimmt, und er wird zur Abwechslung mal bestimmen, nach welchen Regeln gespielt wird."~ */ EXTERN ~DMONTAGU~ 30
+  IF ~~ THEN REPLY #42932 /* ~"Nein... Das ist keine gute Idee."~ */ EXTERN ~DMONTAGU~ 31
+END
+
+IF ~~ THEN BEGIN 466 // from:
+  SAY #43543 /* ~"Genau deshalb sollten Giths sich nicht vermehren. Sie reden ständig davon und grübeln, 'wo man noch einen Gedankenschinder oder einen Githyanki töten könnte', und so weiter und so fort. Dabei tun sie's wahrscheinlich nicht mal gerne. Sie schnappen mit der Zeit alle über oder sind so verbissen, daß sie ihren Sinn für Humor verlieren. Sie schwafeln die ganze Zeit von Konzentration, von einem geeinten Geist, von gegenseitigem Vertrauen. Aber ist dir schon mal aufgefallen, daß die Rasse mit jedem davon gebrochen hat, sobald sie sich von den Gedankensaugern befreit hatte. Und da sage noch einer, Religion und Ideologie seien keine Gefahr für die Ebenen."~ */
+  IF ~~ THEN EXTERN ~DKIINA~ 35
+END
+
+IF ~~ THEN BEGIN 467 // from:
+  SAY #43908 /* ~"Wow."~ */
+  IF ~  PartyHasItem("Decant")
+Global("Seek_Word","GLOBAL",1)
+~ THEN REPLY #43909 /* ~"Bist du Nemelle? Ich habe gehört, du kennst das Befehlswort für diese Karaffe."~ */ EXTERN ~DNEML~ 4
+  IF ~  Global("Aelwyn","GLOBAL",2)
+!Dead("Aelwyn")
+~ THEN REPLY #43910 /* ~"Nemelle? Deine Freundin Aelwyn sucht dich."~ */ DO ~SetGlobal("Nemelle","GLOBAL",3)
+SetGlobal("Aelwyn","GLOBAL",4)
+~ JOURNAL #39490 /* ~Ich hab Nemelle erzählt, daß ihre Freundin, Aelwyn, nach ihr suchen würde. Sie belohnte mich mit einem magischen Kuß, der meine maximale Anzahl an Trefferpunkten um drei erhöht hat.~ */ EXTERN ~DNEML~ 6
+  IF ~  GlobalLT("Aelwyn","GLOBAL",2)
+~ THEN REPLY #43911 /* ~"Suchst du jemanden?"~ */ EXTERN ~DNEML~ 14
+  IF ~~ THEN REPLY #43912 /* ~"Ich hätte da ein paar Fragen..."~ */ EXTERN ~DNEML~ 11
+  IF ~~ THEN REPLY #43913 /* ~"Ich habe nichts benötigt, Nemelle. Lebe wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 468 // from:
+  SAY #43914 /* ~"Wow."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 209
+END
+
+IF ~~ THEN BEGIN 469 // from:
+  SAY #43915 /* ~"Ui. Du bist mir vielleicht 'ne heißblütige Braut! Und wohl scharf auf Aufmerksamkeit? Falls du eifersüchtig bist, kann ich dich auch etwas abschlabbern..." Morte schwebt auf Annah zu und macht dabei feuchte, sabbernde Geräusche...~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 210
+END
+
+IF ~~ THEN BEGIN 470 // from:
+  SAY #43916 /* ~Morte hält plötzlich inne. Er dreht sich weg und murmelt irgendwelches unverständliche Zeug vor sich hin.~ */
+  IF ~  PartyHasItem("Decant")
+Global("Seek_Word","GLOBAL",1)
+~ THEN REPLY #43917 /* ~"Bist du Nemelle? Ich habe gehört, du kennst das Befehlswort für diese Karaffe."~ */ EXTERN ~DNEML~ 4
+  IF ~  Global("Aelwyn","GLOBAL",2)
+!Dead("Aelwyn")
+~ THEN REPLY #43918 /* ~"Nemelle? Deine Freundin Aelwyn sucht dich."~ */ DO ~SetGlobal("Nemelle","GLOBAL",3)
+SetGlobal("Aelwyn","GLOBAL",4)
+~ JOURNAL #39490 /* ~Ich hab Nemelle erzählt, daß ihre Freundin, Aelwyn, nach ihr suchen würde. Sie belohnte mich mit einem magischen Kuß, der meine maximale Anzahl an Trefferpunkten um drei erhöht hat.~ */ EXTERN ~DNEML~ 6
+  IF ~  GlobalLT("Aelwyn","GLOBAL",2)
+~ THEN REPLY #43919 /* ~"Suchst du jemanden?"~ */ EXTERN ~DNEML~ 14
+  IF ~~ THEN REPLY #43920 /* ~"Ich hätte da ein paar Fragen..."~ */ EXTERN ~DNEML~ 11
+  IF ~~ THEN REPLY #43921 /* ~"Ich habe nichts benötigt, Nemelle. Lebe wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 471 // from:
+  SAY #43922 /* ~"Komm, Meister... Ich bin mir sicher, daß *uns* schon was einfällt. Was?"~ */
+  IF ~~ THEN REPLY #43923 /* ~"Vergiß es, Morte. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 472 // from:
+  SAY #44244 /* ~Morte schwebt näher und flüstert: "Also ich hab damit kein Problem. Was, Meister? Zwinker-zwinker..."~ */
+  IF ~~ THEN EXTERN ~DGONCAL~ 20
+END
+
+IF ~~ THEN BEGIN 473 // from:
+  SAY #44245 /* ~Morte geht dazwischen, völlig entsetzt. "Nein!!! Bist du *wahnsinnig*, Mann?! Du mußt übergeschnappt sein!"~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 214
+END
+
+IF ~~ THEN BEGIN 474 // from:
+  SAY #44677 /* ~Morte rollt mit den Augen. "Blinder Eifer schadet nur..."~ */
+  IF ~~ THEN EXTERN ~DYI'MINN~ 47
+END
+
+IF ~~ THEN BEGIN 475 // from:
+  SAY #44944 /* ~"Ich liiiiiebe die Festhalle."~ */
+  IF ~~ THEN EXTERN ~DUDESIRE~ 2
+END
+
+IF ~~ THEN BEGIN 476 // from:
+  SAY #45026 /* ~Morte seufzt laut hörbar. "Komm, Meister. Müssen wir uns das wirklich mitanhören?"~ */
+  IF ~~ THEN REPLY #45027 /* ~"Sei mal still, Morte. Ich will da zuhören."~ */ EXTERN ~D3PLANEA~ 1
+  IF ~~ THEN REPLY #45028 /* ~Ignoriere Morte und höre weiter zu.~ */ EXTERN ~D3PLANEA~ 1
+  IF ~~ THEN REPLY #45029 /* ~"Du hast Recht, Morte - laß uns gehen."~ */ DO ~SetGlobal("Lecture_Death","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 477 // from:
+  SAY #45088 /* ~"He. Sieht ganz so aus, als hätte man diesem Schlucker vergessen zu sagen, daß er mit der Regel der Drei aufhören kann."~ */
+  IF ~~ THEN REPLY #45089 /* ~"Was meinst du?"~ */ GOTO 478
+END
+
+IF ~~ THEN BEGIN 478 // from: 477.0
+  SAY #45091 /* ~"Diese Leichen haben nicht mehr so viel im Oberstübchen. Sie können immer nur eine Aufgabe auf einmal erledigen... Wenn man ihnen was aufträgt, tun sie es so lange, bis man ihnen sagt, daß sie aufhören können. Ich schätze, dieser arme Schlucker hat seine Aufgabe längst erfüllt, aber niemand hat es ihm gesagt."~ */
+  IF ~~ THEN REPLY #45092 /* ~"Wer sagt ihnen, was sie tun sollen?"~ */ GOTO 481
+  IF ~~ THEN REPLY #45093 /* ~"Du hast da was von der 'Regel der Drei' gesagt. Was meinst du damit?"~ */ JOURNAL #39477 /* ~Morte hat etwas von der 'Regel der Drei' erwähnt. Anscheinend glauben manche, daß alles immer in Dreiergruppen passiert, so daß sie der Zahl große Bedeutung beimessen.~ */ GOTO 479
+  IF ~~ THEN REPLY #45094 /* ~"Schon möglich. Komm, gehen wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 479 // from: 478.1 481.0
+  SAY #45095 /* ~"Was? Na ja, die Regel der Drei ist eines dieser 'Gesetze' über die Ebenen. Es besagt, daß immer alles dreimal vorkommt oder aus drei Teilen besteht, oder daß es immer drei Möglichkeiten gibt, und so weiter und so fort."~ */
+  IF ~~ THEN REPLY #45096 /* ~"Hört sich nicht an, als würdest du allzu viel davon halten."~ */ GOTO 480
+END
+
+IF ~~ THEN BEGIN 480 // from: 479.0
+  SAY #45098 /* ~"Ach, Kokolores! Man kann jede Zahl nehmen und eine Bedeutung in sie hineininterpretieren - irgendeine zufällige Übereinstimmung findet man immer."~ */
+  IF ~~ THEN REPLY #45099 /* ~"Verstehe. Vorhin sagtest du, jemand hätte dieser Leiche etwas aufgetragen und vergessen, ihr zu sagen, daß sie aufhören kann. Wer sagt den Leichen, was sie tun sollen?"~ */ GOTO 481
+  IF ~~ THEN REPLY #45100 /* ~"Verstehe. Ich wollte diesen Zombie mal etwas genauer unter die Lupe nehmen..."~ */ EXTERN ~DZM965~ 1
+  IF ~~ THEN REPLY #45101 /* ~"Schon möglich. Komm, gehen wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 481 // from: 478.0 480.0
+  SAY #45102 /* ~"Einer der Verwalter hier oder irgendein Nekromant, der sie aus dem Totenbuch geholt hat. Ich tippe auf die Verwalter... Schließlich sind sie es, die die ganzen billigen Arbeitskräfte brauchen."~ */
+  IF ~~ THEN REPLY #45103 /* ~"Verstehe. Und was hast du da vorhin über diese ... 'Regel der Drei' gesagt?"~ */ JOURNAL #39477 /* ~Morte hat etwas von der 'Regel der Drei' erwähnt. Anscheinend glauben manche, daß alles immer in Dreiergruppen passiert, so daß sie der Zahl große Bedeutung beimessen.~ */ GOTO 479
+  IF ~~ THEN REPLY #45104 /* ~"Verstehe. Ich wollte diesen Zombie mal etwas genauer unter die Lupe nehmen..."~ */ EXTERN ~DZM965~ 1
+  IF ~~ THEN REPLY #45105 /* ~"Schon möglich. Komm, gehen wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 482 // from:
+  SAY #45540 /* ~"He... Meister... vielleicht solltest du n-"~ */
+  IF ~~ THEN EXTERN ~DZM985~ 3
+END
+
+IF ~~ THEN BEGIN 483 // from:
+  SAY #45709 /* ~"Ooh, eine Auktion! Vielleicht können wir da ja Annah versteigern."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 215
+END
+
+IF ~~ THEN BEGIN 484 // from:
+  SAY #45710 /* ~"Ooh, eine Auktion! Vielleicht können wir da ja Dak'kon versteigern."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 163
+END
+
+IF ~~ THEN BEGIN 485 // from:
+  SAY #45711 /* ~"Ooh, eine Auktion! Vielleicht können wir da ja irgendein Knochengerüst für mich ersteigern."~ */
+  IF ~~ THEN REPLY #45712 /* ~"OK, Morte. Ich frag mal."~ */ EXTERN ~DGILTSP~ 4
+  IF ~~ THEN REPLY #45713 /* ~"Dann gehen wir am besten schnell weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 486 // from:
+  SAY #45714 /* ~"Das muß Liebe sein. Ist es Liebe, Meister?"~ */
+  IF ~~ THEN REPLY #45715 /* ~"Hört auf, ihr beiden. Ich muß hier ein paar Fragen stellen."~ */ EXTERN ~DGILTSP~ 4
+  IF ~~ THEN REPLY #45716 /* ~"Wie du meinst, Morte. Lassen wir ihn in Ruhe."~ */ EXIT
+END
+
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 487 // from:
+  SAY #45996 /* ~"He, sieh mal! Noch so ein schwebender Schädel."~ */
+  IF ~~ THEN EXTERN ~DVAULT9~ 0
+END
+
+IF ~~ THEN BEGIN 488 // from:
+  SAY #47813 /* ~"Klingt so, als ob dieser Streitkolben irgendwie neidisch auf anderer Leute Klugheit ist. Zisch ab, Waffe!"~ */
+  IF ~~ THEN REPLY #47814 /* ~"Sei still! Ich hätte da noch ein paar Fragen..."~ */ EXTERN ~DJUSTFER~ 8
+  IF ~~ THEN REPLY #47815 /* ~"Wir haben jetzt genug geredet."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 489 // from:
+  SAY #49443 /* ~"Ooh, ein Githyanki. Ich wette, Dak'kon wird bestimmt *gerne* helfen."~ */
+  IF ~~ THEN REPLY #49444 /* ~"Vielen Dank für deinen wertvollen Beitrag, Morte. Geh'n wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 490 // from:
+  SAY #50162 /* ~"Oh, sie *haben* Namen. Da bin ich mir sicher."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 242
+END
+
+IF ~~ THEN BEGIN 491 // from:
+  SAY #50164 /* ~"Das glaubst *du*, du kleines Scheusal."~ */
+  IF ~~ THEN REPLY #50165 /* ~"Halt's Maul, Morte - kannst du ihm noch ein paar andere Fragen stellen, Annah?"~ */ EXTERN ~DANNAH~ 240
+  IF ~~ THEN REPLY #50166 /* ~"Vergiß es. Laß uns einfach gehen."~ */ DO ~SetGlobal("Translate_Dabus","GLOBAL",0)
+~ EXTERN ~DADABUS~ 6
+END
+
+IF ~~ THEN BEGIN 492 // from:
+  SAY #50263 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Ziegenköpfe sagen wollen. Du brauchst einen Übersetzer? Such dir einen Einwohner von Sigil."~ */
+  IF ~~ THEN REPLY #50264 /* ~"Aha."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 493 // from:
+  SAY #50266 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer? Soll doch das kleine Scheusal-Mädel hier den Job machen." Er nickt Annah zu. "Sie ist im Stock heimisch." ~ */
+  IF ~~ THEN REPLY #50267 /* ~"Vielleicht werde ich das tun..."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 494 // from:
+  SAY #50269 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Du brauchst einen Übersetzer?" Er nickt Dak'kon zu. "Sag 'Heiliger-als-du-und-doppelt-so-schweigsam', er soll übersetzen."~ */
+  IF ~~ THEN REPLY #50270 /* ~"Vielleicht werde ich das tun..."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 495 // from:
+  SAY #50272 /* ~Morte spöttelt: "Eher soll mich ein Tanar-Ri fressen, als daß ich versuche herauszufinden, was diese schwebenden Bocksköpfe sagen wollen. Brauchst du einen Übersetzer? Soll das doch die Tanar-Ri tun." Er nickt Grace zu. "Wahrscheinlich mußte sie sich sowieso die ganze Zeit mit dem Geschwätz dieser Kerle herumschlagen."~ */
+  IF ~~ THEN REPLY #50273 /* ~"Vielleicht werde ich das tun..."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 496 // from:
+  SAY #50320 /* ~"Oh, bei den Mächten! Ein verfluchter Dabus."~ */
+  IF ~~ THEN REPLY #50321 /* ~"Was ist los?"~ */ GOTO 497
+END
+
+IF ~~ THEN BEGIN 497 // from: 496.0
+  SAY #50322 /* ~"Er ist ein Dabus. Sie 'sprechen' in Rebussen, diesen bescheuerten Worträtseln. Wenn *du* nicht verstehst, was er sagt, finden wir besser einen Einheimischen oder eine andere Möglichkeit, mit ihm zu kommunizieren... falls wir dies wünschen. Ein lästiger Haufen. Ich wette, sie *können* sprechen, gehen aber lieber allen auf die Nerven mit ihren Rätseln, über die man sich den Kopf zerbrechen muß."~ */
+  IF ~~ THEN REPLY #50323 /* ~"Was ist ein Dabus?"~ */ GOTO 498
+END
+
+IF ~~ THEN BEGIN 498 // from: 497.0
+  SAY #50324 /* ~"Man sagt, sie arbeiten als Hausmeister für die Dame der Schmerzen. Sie schwirren durch die Gegend, um Sigil nach ihren Launen abzureißen, zu reparieren und wieder aufzubauen. Sie sind schlimmer als Leichenfliegen." Morte seufzt. "Totschlagen darf man sie leider nicht, sonst wird die Dame... wütend."~ */
+  IF ~  Global("Know_Lady","GLOBAL",0)
+~ THEN REPLY #50325 /* ~"'Die Dame der Schmerzen'? Wer ist das?"~ */ DO ~SetGlobal("Know_Lady","GLOBAL",1)
+~ GOTO 499
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #50328 /* ~"Was kannst du mir über die Dame der Schmerzen erzählen?"~ */ GOTO 499
+  IF ~  Global("Know_Lady","GLOBAL",1)
+~ THEN REPLY #50329 /* ~"Verstehe."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 499 // from: 498.0 498.1
+  SAY #50326 /* ~"Sie hat in dieser Stadt die Macht. Du würdest sie gleich erkennen: Ihr Gesicht wird von Klingen umrahmt, sie hat die Größe eines Riesen und schwebt über der Erde, genau wie diese Kerle hier." Morte nickt in Richtung des Dabus, der euch beide anschaut. "Keiner weiß etwas genaues über sie... sie redet nicht viel. Das einzige, was du wissen mußt, ist, daß du sie besser nie wütend machst. Wenn du sie siehst, dann lautet mein Ratschlag: Lauf."~ */
+  IF ~~ THEN REPLY #50327 /* ~"Aha."~ */ EXTERN ~DADABUS~ 2
+END
+
+IF ~~ THEN BEGIN 500 // from:
+  SAY #50410 /* ~"Was? Was? Was steht drin, Meister?"~ */
+  IF ~~ THEN REPLY #50411 /* ~"Ich weiß nicht, was ich sagen soll, Morte..."~ */ GOTO 501
+  IF ~~ THEN REPLY #50412 /* ~"Nichts, was dich etwas anginge, Morte."~ */ GOTO 501
+  IF ~~ THEN REPLY #50413 /* ~Zeig ihm den Kodex.~ */ GOTO 503
+END
+
+IF ~~ THEN BEGIN 501 // from: 500.0 500.1
+  SAY #50414 /* ~"WAS?! Du machst bestimmt nur Witze, oder? Komm schon! Laß mich mal sehen!"~ */
+  IF ~~ THEN REPLY #50415 /* ~Zeig ihm den Kodex.~ */ GOTO 503
+  IF ~~ THEN REPLY #50416 /* ~"Nein, Morte. Vergiß einfach, daß du das Buch geseh'n hast."~ */ DO ~MoraleDec("Morte",1)
+~ GOTO 502
+END
+
+IF ~~ THEN BEGIN 502 // from: 501.1
+  SAY #50417 /* ~Morte murrt sauer vor sich hin... aber akzeptiert deine Antwort.~ */
+  IF ~~ THEN EXTERN ~DCODEXI~ 2
+END
+
+IF ~~ THEN BEGIN 503 // from: 500.2 501.0
+  SAY #50418 /* ~Morte schwebt über deine Schulter, um den Inhalt des Kodex zu studieren. Seine Augen springen fast aus ihren Höhlen heraus, als sie die Seiten überfliegen: "Ooh. Ooooooh. Oh, ich... aber... Mann!"~ */
+  IF ~~ THEN EXTERN ~DCODEXI~ 2
+END
+
+IF ~~ THEN BEGIN 504 // from:
+  SAY #50697 /* ~"Ha! Ha! Ha! Das ist doch wohl ein *Witz*, oder? Das kannst du *nicht* ernst meinen, Meister!"~ */
+  IF ~~ THEN REPLY #50698 /* ~"Ja. Nimmst du ihn, Vrischika?"~ */ EXTERN ~DVRISCH~ 45
+  IF ~~ THEN REPLY #50699 /* ~"Nein. Ich hätte noch eine Frage, Vrischika..."~ */ EXTERN ~DVRISCH~ 7
+  IF ~~ THEN REPLY #50700 /* ~"Du hast recht, Morte, es war eine blöde Idee. Laßt uns gehen."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 505 // from:
+  SAY #50701 /* ~"Ich kann es nicht glauben... Dein Niveau ist ja vorher schon mal ganz schön tief gesunken, Meister, aber das ist die Krönung. Ich sehe *dich* dann in Baator, du verrücktes, kurzgewachsenes, hinterhältiges, undankbares, pockennarbiges, mistfressendes, fetthaariges, krummzähniges, armseliges Stück hirnloser Abfall! Hör gut zu, blöder Schlucker: Mach weiter so, und du wirst bald genug *wirklich* tot sein... Und dann wirst du bekommen, was dir zusteht!"~ */
+  IF ~~ THEN DO ~DropInventory()
+LeaveParty()
+~ EXTERN ~DVRISCH~ 46
+END
+
+IF ~~ THEN BEGIN 506 // from:
+  SAY #52571 /* ~"Es hat ihn verschluckt, aber ich weiß nicht, ob er an *jenem* Ende rauskam."~ */
+  IF ~~ THEN REPLY #52572 /* ~"Es reicht. Hör zu, Ravel, du hast mir meine Sterblichkeit genommen, und es hat mehr geschadet als genützt. Ich möchte sie jetzt zurückhaben - du hattest sie nun lang genug, schon zu lang, wie ich finde."~ */ EXTERN ~DRAVEL~ 126
+END
+
+IF ~~ THEN BEGIN 507 // from:
+  SAY #52573 /* ~"Ich glaube, ich weiß, wer in einem Käfig sein sollte..."~ */
+  IF ~~ THEN EXTERN ~DRAVEL~ 189
+END
+
+IF ~~ THEN BEGIN 508 // from:
+  SAY #52574 /* ~"Also, ich hatte nichts BESSERES zu tun, als zu einem der Irrgänge der Dame zu gehen und eines der bösesten Wesen zu treffen, das jemals seinen Fuß auf Sigil gesetzt hat, also habe ich gesagt 'Sicher! Warum n-?'"~ */
+  IF ~~ THEN REPLY #52575 /* ~"Morte, sei still. Ravel, tu ich nicht..."~ */ GOTO 509
+END
+
+IF ~~ THEN BEGIN 509 // from: 508.0
+  SAY #52576 /* ~"'Sei still?!'" Morte klappert mit den Zähnen. "Den Teufel werde ich! Ich glaube, wir haben dieser Alten genug beim Klappern ihrer Knochenschüssel zugehört, und jetzt mokiert sie sich darüber, daß ich keine Haut habe! Na UND?! Offensichtlich hat die Tatsache, daß SIE Haut hat, bei IHREM Aussehen Wunder gewirkt! Meint sie, ich bin *gerne* ständig NACKT? Und *noch* etwas -" ~ */
+  IF ~  NearbyDialog("Dgrace")
+~ THEN REPLY #52577 /* ~"Morte! Schluß jetzt! Ravel, hör..."~ */ DO ~SetGlobal("Ravel_Grace","GLOBAL",2)
+~ EXTERN ~DRAVEL~ 66
+  IF ~  !NearbyDialog("DGrace")
+NearbyDialog("DAnnah")
+~ THEN REPLY #52578 /* ~"Morte! Schluß jetzt! Ravel, hör..."~ */ DO ~SetGlobal("Ravel_Annah","GLOBAL",2)
+~ EXTERN ~DRAVEL~ 67
+  IF ~  !NearbyDialog("DGrace")
+!NearbyDialog("DAnnah")
+~ THEN REPLY #52579 /* ~"Morte! Schluß jetzt! Ravel, hör..."~ */ EXTERN ~DRAVEL~ 68
+END
+
+IF ~~ THEN BEGIN 510 // from:
+  SAY #52644 /* ~"Verrückt. Wo stehen wir also theoretisch gesehen im Moment?"~ */
+  IF ~~ THEN REPLY #52771 /* ~"Die Antwort darauf will ich wirklich nicht wissen, Morte."~ */ EXTERN ~DPREGAL~ 10
+END
+
+IF ~~ THEN BEGIN 511 // from:
+  SAY #53623 /* ~"Oh, das ist ja *fantastisch*."~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 5
+END
+
+IF ~~ THEN BEGIN 512 // from: 522.0 523.0 524.0
+  SAY #53624 /* ~Als du einen Schritt näher an die Säule herantrittst, zischt dir Morte zu: "Pssst! Meister! Meister... Hör zu, das Ding darf mich nicht sehen. Du mußt mich hier wegschaffen, setz mich irgendwo ab und hol mich später wieder ab, oder so..."~ */
+  IF ~  Global("Morte_Story","GLOBAL",1)
+~ THEN REPLY #53625 /* ~"Vergiß es, Morte. Ich werde jetzt mit ihr sprechen..."~ */ DO ~MoraleDec("Morte",1)
+~ EXTERN ~DPILLAR~ 9
+  IF ~  Global("Morte_Story","GLOBAL",0)
+~ THEN REPLY #53627 /* ~"Warum, Morte? Was ist los?"~ */ GOTO 513
+  IF ~~ THEN REPLY #53628 /* ~"Na gut. Dann gehen wir halt."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 513 // from: 512.1
+  SAY #53626 /* ~"Ähh... Ich spreche da nicht so gern drüber. Gehen wir einfach, ja?" Mortes Stimme zittert vor Angst, seine Augen flackern unruhig zwischen dir und der massiven Schädelsäule hin und her.~ */
+  IF ~~ THEN REPLY #53629 /* ~"Es geht nicht, daß du so viele Geheimnisse vor mir hast, Morte. Du mußt mir sagen, was hier los ist."~ */ DO ~SetGlobal("Morte_Story","GLOBAL",1)
+~ JOURNAL #53633 /* ~Morte hat gesagt, daß ich es war, der ihn vor langer Zeit aus der Säule gezogen hat, obwohl er nicht genau wisse, wie. Er meinte auch, daß er dabei das gesamte in der Säule angesammelte Wissen verloren hätte... Was erklärt, warum er nicht *ganz* so nützlich ist, wie er meiner früheren Inkarnation versprochen hatte.~ */ GOTO 514
+  IF ~~ THEN REPLY #53630 /* ~"Schluß mit dem Versteckspiel, Morte. Sag mir *sofort*, was los ist, oder du wirst dir noch *wünschen*, wir hätten mit den Köpfen gesprochen."~ */ DO ~MoraleDec("Morte",1)
+SetGlobal("Morte_Story","GLOBAL",1)
+~ JOURNAL #53661 /* ~Es hat sich herausgestellt, daß Morte aus einer sogenannten Schädelsäule stammt, einem Haufen lebender, vom Körper abgetrennter Schädel auf Avernus, der ersten Unterebene von Baator. Sie besteht aus den Schädeln jener, deren Lügen andere in den Tod geschickt haben.~ */ GOTO 514
+  IF ~~ THEN REPLY #53631 /* ~"Na gut. Dann gehen wir halt."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 514 // from: 513.0 513.1
+  SAY #53632 /* ~Morte seufzt und kann deinem Blick nicht länger standhalten. Schließlich fügt er sich. "Okay, okay... Ich sag's dir. Da ist diese Säule auf Avernus, der ersten Unterebene von Baator. Sie ist aus den Köpfen derer gebaut, die andere durch ihre Lügen in den Tod gestürzt haben. Nun ja... da drüben steht sie. Und da bin ich damals gelandet. Den Rest kannst du dir zusammenreimen."~ */
+  IF ~  NearbyDialog("Dannah")
+~ THEN REPLY #53662 /* ~"Dann... warst du einer von diesen Köpfen?"~ */ GOTO 516
+  IF ~  !NearbyDialog("Dannah")
+~ THEN REPLY #53663 /* ~"Dann... warst du einer von diesen Köpfen?"~ */ GOTO 515
+END
+
+IF ~~ THEN BEGIN 515 // from: 514.1
+  SAY #53664 /* ~"Ja. Ich habe ein oder zweimal etwas... übertrieben. Nur leider hat eine meiner Äußerungen deinen Tod herbeigeführt. Eine von ihnen. Vielleicht auch mehrere. Ich weiß es nicht genau, die Erinnerungen sind jetzt verblaßt."~ */
+  IF ~~ THEN REPLY #53665 /* ~"Ich verstehe..."~ */ GOTO 518
+END
+
+IF ~~ THEN BEGIN 516 // from: 514.0
+  SAY #53666 /* ~"Ja. Ich habe einmal oder zweimal etwas... übertrieben, vielleicht auch zweimal. Leider hat eine meiner Äußerungen-"~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 269
+END
+
+IF ~~ THEN BEGIN 517 // from:
+  SAY #53667 /* ~Morte fährt ruhig fort: "... Eine meiner *Andeutungen* hat zu deinem Tod geführt. Eine von ihnen. Vielleicht auch mehrere. Ich weiß nicht genau, diese Erinnerungen sind jetzt verblaßt."~ */
+  IF ~~ THEN GOTO 518
+END
+
+IF ~~ THEN BEGIN 518 // from: 515.0 517.0
+  SAY #53668 /* ~Morte starrt auf deine Füße - noch nie hast du ihn so unglücklich gesehen. "Diese Erinnerungen, sie... Sieh mal, Meister, ich kann mich nicht einmal mehr daran erinnern, ein Mensch *gewesen* zu sein. Ich weiß nicht, wie mein Leben vor der Säule war..."~ */
+  IF ~  NearbyDialog("DDakkon")
+~ THEN EXTERN ~DDAKKON~ 183
+  IF ~  !NearbyDialog("DDakkon")
+~ THEN REPLY #54105 /* ~"Erzähl weiter..."~ */ GOTO 520
+END
+
+IF ~~ THEN BEGIN 519 // from:
+  SAY #53794 /* ~Morte blickt zu Dak'kon, dann zu dir. "Ja, ich glaube schon. So ist das, wenn man stirbt. Man... vergißt. Ich nehme an, ich war auch zu Lebzeiten kein Mustermitglied der Gemeinschaft... Aber wer ist das schon, zum Teufel?" Morte seufzt noch einmal. "Ich kann halt einfach nichts daran ändern. Nichts ist schlimmer, als immer die Wahrheit zu sagen. Aber sieh mal, Meister: Wenn dieser Haufen Köpfe mich sieht, dann will er mich wiederhaben - *unbedingt*. Das kannst du nicht zulassen!"~ */
+  IF ~~ THEN REPLY #53795 /* ~"Vergiß es, Morte. Ich werde jetzt mit ihr sprechen..."~ */ DO ~MoraleDec("Morte",1)
+~ EXTERN ~DPILLAR~ 9
+  IF ~~ THEN REPLY #53796 /* ~"Warte... Wie hast du dich aus der Säule befreit?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53797 /* ~"Moment mal... Warum hast du mir nicht schon in der Leichenhalle gesagt, daß du mich kennst?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53798 /* ~"Einen Augenblick. Wie lange genau kennst du mich schon, Morte?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53799 /* ~"In Ordnung. Gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 520 // from: 518.1
+  SAY #53800 /* ~"Naja, ich glaube, ich war zu Lebzeiten auch nicht gerade ein Mustermitglied der Gemeinschaft... Aber wer ist das schon, zum Teufel?" Morte seufzt wieder. "Ich kann einfach nichts machen. Nichts ist schlimmer, als die ganze Zeit ehrlich zu sein. Aber sieh mal, Meister: Wenn dieser Haufen Köpfe mich zu Gesicht kriegt, dann will er mich wiederhaben - *unbedingt*. Das kannst du nicht zulassen!"~ */
+  IF ~~ THEN REPLY #53801 /* ~"Vergiß es, Morte. Ich werde jetzt mit ihr sprechen..."~ */ DO ~MoraleDec("Morte",1)
+~ EXTERN ~DPILLAR~ 9
+  IF ~~ THEN REPLY #53802 /* ~"Warte... Wie hast du dich aus der Säule befreit?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53803 /* ~"Moment mal... Warum hast du mir nicht schon in der Leichenhalle gesagt, daß du mich kennst?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53804 /* ~"Einen Augenblick. Wie lange genau kennst du mich schon, Morte?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53805 /* ~"In Ordnung. Gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 521 // from: 519.1 520.1 523.1 524.1
+  SAY #53806 /* ~"Nun... du hast mich rausgezogen, Meister. Ich hab mich an die Oberfläche gekämpft - du warst schon einmal hier, weißt du - ich hab' gejammert und geschrien, bis du mich bemerkt hast. Ich habe dich angefleht, mich zu retten, und hab' geschworen, daß ich dir folgen und mein Wissen mit dir teilen würde, bis zu deiner letzten Stunde. Mir wurde aber erst, nachdem du mich rausgerissen hattest, klar, wie lang das sein würde."~ */
+  IF ~~ THEN REPLY #53807 /* ~"Und das ganze Wissen der Säule...?"~ */ JOURNAL #53633 /* ~Morte hat gesagt, daß ich es war, der ihn vor langer Zeit aus der Säule gezogen hat, obwohl er nicht genau wisse, wie. Er meinte auch, daß er dabei das gesamte in der Säule angesammelte Wissen verloren hätte... Was erklärt, warum er nicht *ganz* so nützlich ist, wie er meiner früheren Inkarnation versprochen hatte.~ */ GOTO 522
+END
+
+IF ~~ THEN BEGIN 522 // from: 521.0
+  SAY #53808 /* ~"Oh, das... Naja, mir war auch nicht klar, daß ich das meiste des angesammelten Wissens der Säule verlieren würde, wenn ich erst mal aus ihr raus wäre. Verdammte Mächte, *du* hast vielleicht getobt! Aber du hast mich trotzdem bei dir behalten. Zuerst habe ich mich an dich 'gebunden' gefühlt... Vielleicht dadurch, daß deine Zauberkräfte mich zu einer Art Vertrautem gemacht hätten. Ein paar hundert Jahre später habe ich gemerkt, daß es *mehr* als das war. Etwas Tieferes. Auch mehr als nur eine Schuld, obwohl das todsicher auch etwas damit zu tun hatte. Ich habe mich irgendwie mit dir *verbunden* gefühlt. Vielleicht ist es dein Leid, Meister... deine Qualen. Ich weiß es nicht. Vielleicht habe ich sie mit meinen verglichen, als ich in dieser Säule steckte."~ */
+  IF ~~ THEN REPLY #53809 /* ~"Ich werde jetzt mit der Säule reden..."~ */ GOTO 512
+  IF ~~ THEN REPLY #53810 /* ~"Warum hast du mir nicht schon in der Leichenhalle gesagt, daß du mich kennst?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53811 /* ~"Und wie lange genau kennst du mich schon, Morte?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53812 /* ~"In Ordnung. Gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 523 // from: 519.2 520.2 522.1 524.2
+  SAY #53813 /* ~Morte beginnt plötzlich, sich zu verteidigen. "Weil ich nie *weiß*, wer du sein wirst! Einige von deinen Inkarnationen waren echt total verrückt! Einmal bist du aufgewacht und warst davon überzeugt, daß *ich* dein Schädel wäre. Du hast mich um den Turm gejagt und wolltest mich fertigmachen und verschlingen... Gott sei Dank bist du dabei von einem Karren überfahren worden. Ein anderes Mal warst du 'gut und rechtschaffen' und wolltest mich zurück in die Säule zu stopfen, weil das der Ort sei, 'wo ich hingehöre'." Morte grinst. "*Deshalb*. Außerdem hat es nie etwas geschadet, daß du's nicht gewußt hast..."~ */
+  IF ~~ THEN REPLY #53814 /* ~"Ich werde jetzt mit der Säule reden..."~ */ GOTO 512
+  IF ~~ THEN REPLY #53815 /* ~"Wie hast du dich aus der Säule befreit?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53816 /* ~"Und wie lange genau kennst du mich schon, Morte?"~ */ GOTO 524
+  IF ~~ THEN REPLY #53817 /* ~"In Ordnung. Gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 524 // from: 519.3 520.3 522.2 523.2
+  SAY #53818 /* ~"Ich weiß nicht. Jahrtausende, vermutlich. Ich habe jedesmal getan, was ich konnte, um dir zu helfen, den Weg zu finden, aber..." Morte seufzt, dann schwebt er auf Augenhöhe und schaut dich fest an. "So weit schaffst du es selten, Meister. Ehrlich, nur vier oder fünf mal, glaube ich. Diesmal könntest du es schaffen.... Das 'du', das es schafft, findet heraus, was los ist."~ */
+  IF ~~ THEN REPLY #53819 /* ~"Ich werde jetzt mit der Säule reden..."~ */ GOTO 512
+  IF ~~ THEN REPLY #53820 /* ~"Wie hast du dich aus der Säule befreit?"~ */ GOTO 521
+  IF ~~ THEN REPLY #53821 /* ~"Warum hast du mir nicht schon in der Leichenhalle gesagt, daß du mich kennst?"~ */ GOTO 523
+  IF ~~ THEN REPLY #53822 /* ~"In Ordnung. Gehen wir, Morte."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 525 // from:
+  SAY #53823 /* ~"Oh, nein..."~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 10
+END
+
+IF ~~ THEN BEGIN 526 // from:
+  SAY #53824 /* ~Morte zittert vor Angst, seine Zähne klappern. "Ich kann nicht zurück, Meister! Ich kann nicht! Ich kann nicht! Ich kann nicht!"~ */
+  IF ~  NearbyDialog("Dgrace")
+~ THEN REPLY #53825 /* ~"Er ist nicht zu dir zurückgekommen. Aber ich habe ein paar Fragen, Schädelsäule..."~ */ DO ~SetGlobal("Pillar_Musk","AR1001",1)
+~ EXTERN ~DPILLAR~ 2
+  IF ~  NearbyDialog("Dannah")
+!NearbyDialog("Dgrace")
+~ THEN REPLY #53826 /* ~"Er ist nicht zu dir zurückgekommen. Aber ich habe ein paar Fragen, Schädelsäule..."~ */ DO ~SetGlobal("Pillar_Musk","AR1001",1)
+~ EXTERN ~DPILLAR~ 2
+  IF ~  !NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53827 /* ~"Er ist nicht zu dir zurückgekommen, Schädelsäule. Aber ich habe ein paar Fragen..."~ */ EXTERN ~DPILLAR~ 12
+  IF ~~ THEN REPLY #53828 /* ~"Gehen wir einfach, Morte. Komm schon."~ */ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 527 // from:
+  SAY #53829 /* ~"Na *los*, Meister, hab' ich dir nicht gerade *gesagt*, was das ist?! Sie besteht aus den Köpfen von Lügnern, deren 'Ratschläge' diejenigen, denen sie rieten, in den Tod führten. Sie kann fast jede Frage beantworten - sie weiß wahnsinnig viel - aber sie erwartet auch viel für ihre Dienste. Frag sie nicht einfach irgendwelche Fragen!"~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 14
+END
+
+IF ~~ THEN BEGIN 528 // from:
+  SAY #53830 /* ~"Ich will nicht wieder da rein, Meister. Bitte!"~ */
+  IF ~~ THEN EXTERN ~DPILLAR~ 17
+END
+
+IF ~~ THEN BEGIN 529 // from:
+  SAY #53831 /* ~"Meister?! Nein! Nein! Das *kannst* du nicht tun! Bitte nicht!"~ */
+  IF ~  Global("Specialist","GLOBAL",4)
+~ THEN REPLY #53832 /* ~"Keine Sorge, Morte - ich hol' dich nachher wieder raus."~ */ GOTO 530
+  IF ~  Global("Specialist","GLOBAL",5)
+~ THEN REPLY #53833 /* ~"Keine Sorge, Morte - ich hol' dich nachher wieder raus."~ */ GOTO 530
+  IF ~  Global("Specialist","GLOBAL",6)
+~ THEN REPLY #53834 /* ~"Keine Sorge, Morte - ich hol' dich nachher wieder raus."~ */ GOTO 530
+  IF ~  !Global("Specialist","GLOBAL",4)
+!Global("Specialist","GLOBAL",5)
+!Global("Specialist","GLOBAL",6)
+~ THEN REPLY #53835 /* ~"Keine Sorge, Morte - ich hol' dich nachher wieder raus."~ */ GOTO 531
+  IF ~  Global("Where_Fhjull","AR1001",0)
+~ THEN REPLY #53836 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~  Global("Where_Fhjull","AR1001",1)
+PartyHasItem("Cube")
+~ THEN REPLY #53837 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 20
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+NearbyDialog("Dgrace")
+~ THEN REPLY #53838 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 21
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+NearbyDialog("Dannah")
+~ THEN REPLY #53839 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 22
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53840 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 23
+  IF ~~ THEN REPLY #53841 /* ~"Gehen wir einfach, Morte. Komm schon."~ */ DO ~SetGlobal("Pillar_Question","AR1001",0)
+~ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 530 // from: 529.0 529.1 529.2
+  SAY #53842 /* ~Morte sieht dich skeptisch an. "Bist du *sicher?* *Schwörst* du es? He, was sag ich da?! Nein! Auf keinen Fall! Bitte, ich will da nicht wieder rein!"~ */
+  IF ~~ THEN REPLY #53843 /* ~Schnapp dir Morte und wirf ihn in die Schädelsäule.~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Pillar_2","GLOBALGood",-1)
+SetGlobal("Pillar ","GLOBAL",2)
+StartCutSceneMode()
+StartCutSceneEx("1001Cut1",FALSE)
+~ EXIT
+  IF ~  Global("Where_Fhjull","AR1001",0)
+~ THEN REPLY #53844 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~  Global("Where_Fhjull","AR1001",1)
+PartyHasItem("Cube")
+~ THEN REPLY #53863 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 20
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+NearbyDialog("Dgrace")
+~ THEN REPLY #53864 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 21
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+NearbyDialog("Dannah")
+~ THEN REPLY #53865 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 22
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53866 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 23
+  IF ~~ THEN REPLY #53867 /* ~"Gehen wir einfach, Morte. Komm schon."~ */ DO ~SetGlobal("Pillar_Question","AR1001",0)
+~ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 531 // from: 529.3
+  SAY #53849 /* ~Morte starrt dich mit weit aufgerissenem Mund stumm an. "WAS?! Keine Chance! Du bist nicht so stark wie damals. Paß auf, vergiß es, das schaffst du nie, das wird nicht geschehen! Bitte, ich *will* da nicht mehr rein!"~ */
+  IF ~~ THEN REPLY #53850 /* ~Schnapp dir Morte und wirf ihn in die Schädelsäule.~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Pillar_2","GLOBALGood",-1)
+SetGlobal("Pillar ","GLOBAL",2)
+StartCutSceneMode()
+StartCutSceneEx("1001Cut1",FALSE)
+~ EXIT
+  IF ~  Global("Where_Fhjull","AR1001",0)
+~ THEN REPLY #53851 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~  Global("Where_Fhjull","AR1001",1)
+PartyHasItem("Cube")
+~ THEN REPLY #53852 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 20
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+NearbyDialog("Dgrace")
+~ THEN REPLY #53853 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 21
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+NearbyDialog("Dannah")
+~ THEN REPLY #53854 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 22
+  IF ~  Global("Where_Fhjull","AR1001",1)
+!PartyHasItem("Cube")
+!NearbyDialog("Dgrace")
+!NearbyDialog("Dannah")
+~ THEN REPLY #53855 /* ~"In Ordnung Morte. Schädelsäule: Was für Geschenke würdest du sonst noch annehmen?"~ */ EXTERN ~DPILLAR~ 23
+  IF ~~ THEN REPLY #53856 /* ~"Gehen wir einfach, Morte. Komm schon."~ */ DO ~SetGlobal("Pillar_Question","AR1001",0)
+~ EXTERN ~DPILLAR~ 50
+END
+
+IF ~~ THEN BEGIN 532 // from:
+  SAY #53857 /* ~"Heh... Moment mal! Nicht so schnell! Säule... Ich könnte dir sagen, wo Fjhull Schlangenzunge ist! Komm schon, willst du das nicht wissen? Wie wär's, wenn er dir das gibt und nicht mich? Na? Was sagst du dazu?"~ */
+  IF ~~ THEN REPLY #53858 /* ~"Moment mal, Morte. Wir verraten Fhjull nicht."~ */ GOTO 533
+  IF ~~ THEN REPLY #53859 /* ~Warte auf die Antwort der Säule.~ */ EXTERN ~DPILLAR~ 19
+END
+
+IF ~~ THEN BEGIN 533 // from: 532.0
+  SAY #53860 /* ~"Was? Bist du *übergeschnappt*?! Du würdest *mich* opfern, aber nicht das *SCHEUSAL*?! Der einzige Grund, warum er dir geholfen hat, ist, daß er dazu verpflichtet, ja verflucht ist! Was ist mit *mir*? Wer hat dir aus der Leichenhalle geholfen, Kumpel? Wer steht - äh, schwebt - neben dir, wenn du den Gefahren in dieser Festung Soundso ins Auge siehst?! Hä?! Hä?! NICHT FHJULL DICKARSCH, DAS IST JA WOHL KLAR!"~ */
+  IF ~~ THEN REPLY #53861 /* ~"Gut, gut. Was meinst du dazu, Säule?"~ */ EXTERN ~DPILLAR~ 19
+  IF ~~ THEN REPLY #53862 /* ~"Tut mir leid, Morte. Du mußt da rein."~ */ EXTERN ~DPILLAR~ 18
+END
+
+IF ~~ THEN BEGIN 534 // from: 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
+  SAY #54155 /* ~"Warum nicht, Meister?" Morte schüttelt den Kopf. "Ich meine, wir sind auf jeder ANDEREN furchtbaren Ebene in diesem Multiversum gewesen, die ich kenne. Warum sollten wir also nicht über den Rand der Klippe schreiten?" Er seufzt klappernd. "Bist DU bereit? Wenn nicht..."~ */
+  IF ~~ THEN REPLY #54156 /* ~"Kannst du mir noch mal sagen, was du von der Gegend hinter dem Portal weißt?"~ */ GOTO 544
+  IF ~~ THEN REPLY #54157 /* ~"Ich bin bereit, Morte. Mehr kann ich nicht tun, um mich vorzubereiten. Bist du dabei?"~ */ GOTO 535
+  IF ~~ THEN REPLY #54158 /* ~"Vielleicht hast du recht... Ich werde mich noch besser vorbereiten."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 535 // from: 534.1
+  SAY #54159 /* ~"Nun, ich..." Morte schielt auf den leuchtenden blauen Vorhang und seufzt noch einmal klappernd. "Klar. Gehen wir. Ich meine, es ist wahrscheinlich alles besser, als in der Leichenhalle zu versauern, oder?"~ */
+  IF ~~ THEN REPLY #54160 /* ~"In Ordnung..."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 536 // from:
+  SAY #54161 /* ~"Äh..." Morte zögert. Er blickt zum Portal, dann zu dir, dann wieder zum Portal, dann seufzt er klappernd. "Sieh mal, ich will jetzt nicht *ZU* viel sagen, aber äh... naja, da ist etwas, was ich dir sagen muß..."~ */
+  IF ~~ THEN REPLY #54162 /* ~"Was ist los, Morte?"~ */ GOTO 537
+  IF ~~ THEN REPLY #54163 /* ~"Was? Komm schon, Morte, wir müssen weiter..."~ */ GOTO 537
+END
+
+IF ~~ THEN BEGIN 537 // from: 536.0 536.1
+  SAY #54164 /* ~"Naja, es geht darum, wo wir hingehen... oder, äh, besser gesagt, wo wir... *waren*."~ */
+  IF ~  !NearbyDialog("DDakkon")
+~ THEN REPLY #54165 /* ~"'Wo WIR gewesen sind?' Was erzählst du da?"~ */ GOTO 540
+  IF ~  NearbyDialog("DDakkon")
+CheckStatGT(Protagonist,13,WIS)
+~ THEN REPLY #54166 /* ~"'Wo WIR gewesen sind?' Was erzählst du da?"~ */ EXTERN ~DDAKKON~ 174
+  IF ~  NearbyDialog("DDakkon")
+CheckStatLT(Protagonist,14,WIS)
+~ THEN REPLY #54167 /* ~"'Wo WIR gewesen sind?' Was erzählst du da?"~ */ GOTO 540
+END
+
+IF ~~ THEN BEGIN 538 // from:
+  SAY #54168 /* ~"Äh... Meister?" Morte zögert, sieht zum Portal, dann zu dir, dann wieder zum Portal, dann seufzt er klappernd. "Sieh mal, ich will jetzt nicht *ZU* viel sagen, aber... naja, da ist etwas, was ich dir sagen muß..."~ */
+  IF ~~ THEN REPLY #54169 /* ~"Was ist los, Morte?"~ */ GOTO 539
+  IF ~~ THEN REPLY #54170 /* ~"Was? Komm schon, Morte, Ich muß los..."~ */ GOTO 539
+END
+
+IF ~~ THEN BEGIN 539 // from: 538.0 538.1
+  SAY #54171 /* ~"Naja, es geht darum, wohin wir gehen... oder, äh, besser gesagt, wo du... wo wir... *waren*."~ */
+  IF ~  !NearbyDialog("DDakkon")
+~ THEN REPLY #54172 /* ~"'Wo WIR gewesen sind?' Was erzählst du da?"~ */ GOTO 540
+  IF ~  NearbyDialog("DDakkon")
+CheckStatGT(Protagonist,13,WIS)
+~ THEN REPLY #54173 /* ~"'Wo WIR gewesen sind?' Was erzählst du da?"~ */ EXTERN ~DDAKKON~ 174
+  IF ~  NearbyDialog("DDakkon")
+CheckStatLT(Protagonist,14,WIS)
+~ THEN REPLY #54174 /* ~"'Wo WIR gewesen sind?' Was erzählst du da?"~ */ GOTO 540
+END
+
+IF ~~ THEN BEGIN 540 // from: 537.0 537.2 539.0 539.2
+  SAY #54175 /* ~"Wir... äh, wir sind nicht zum ERSTEN Mal hier. Sieh mal, wir waren schon einmal in dieser 'Festung der Reue'... Aber wir... ich... habe es damals nicht gewußt."~ */
+  IF ~~ THEN REPLY #54176 /* ~"Du hast es nicht *gewußt*? Wie ist das möglich?"~ */ GOTO 541
+  IF ~~ THEN REPLY #54177 /* ~"Dann hättest du mir also von ANFANG AN SAGEN können... wo das Portal ist, WAS der Portalschlüssel ist, WARUM ich unsterblich bin, WAS mit meiner Sterblichkeit passiert ist UND daß sie sich in dieser Festung befindet?! Morte, ich *BRING* dich um...!"~ */ GOTO 542
+  IF ~~ THEN REPLY #54178 /* ~"Morte, du schuldest mir eine Erklärung... Keine Lügen und Täuschungen mehr, nicht jetzt."~ */ GOTO 541
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54179 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54180 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 541 // from: 540.0 540.2
+  SAY #54181 /* ~"Das ist schwer zu erklären, wenn man nicht dort *gewesen* ist. Außerdem kanntest du dein *anderes* Ich nicht - er war nicht gerade ein sehr MITTEILSAMER Knochenbrecher. Ich meine, ich wußte, daß er einen BESTIMMTEN Ort gesucht hat, aber ich wußte weder warum, noch wo, noch WAS es war. Deshalb konnte ich dir NICHTS sagen: weil ich NICHTS wußte! Ich... weiß nur, was passiert ist, als wir ANKAMEN..."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54189 /* ~"Und... was ist passiert?"~ */ GOTO 544
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54190 /* ~"Und... was ist passiert?"~ */ GOTO 543
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54191 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54192 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 542 // from: 540.1
+  SAY #54193 /* ~Morte sieht erschrocken aus. "Nein! Nein! Wir... ich... habe davon nichts GEWUSST! Schließlich warst du nicht immer der mitteilsamste Kerl auf den Ebenen! Dein... dein *anderes* Ich hat VIEL vom Plausch für sich behalten, und wir haben nicht einmal gewußt, WARUM wir an diesen Ort gegangen sind und WAS das für ein Ort war! Ich weiß nur, was passiert ist, als wir dort ANKAMEN..."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54194 /* ~"Und... was ist passiert?"~ */ GOTO 544
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54195 /* ~"Und... was ist passiert?"~ */ GOTO 543
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54196 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54197 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 543 // from: 541.1 542.1
+  SAY #54198 /* ~"Nun, wir sind zu dieser - dieser FESTUNG gegangen, und bevor wir sie überhaupt betreten haben, wurden wir alle GETRENNT und haben um unser Leben gekämpft. Deshalb will ich dir *vor allem* folgendes sagen: Wenn du das wirklich durchziehen willst, dann ist es gut möglich, daß jeder, der durch das Portal geht, irgendwo *ganz* weit weg von den anderen landet. Die Sache ist nur die, daß du dort trotzdem Leute bei dir brauchst..."~ */
+  IF ~~ THEN REPLY #54199 /* ~"Warum sagst du das?"~ */ GOTO 545
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54200 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54201 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 544 // from: 534.0 541.0 542.0
+  SAY #54202 /* ~"Nun, wir sind zu dieser - dieser FESTUNG gegangen, und bevor wir sie überhaupt betreten haben, wurden wir alle GETRENNT haben um unser Leben gekämpft..." Er fröstelt. "Deshalb will ich dir *vor allem* folgendes sagen: Wenn du das wirklich durchziehen willst, dann ist es gut möglich, daß jeder, der durch das Portal geht, irgendwo *ganz* weit weg von den anderen landet. Die Sache ist nur die: Selbst wenn wir getrennt werden, sind wir womöglich deine einzige Hoffnung..."~ */
+  IF ~~ THEN REPLY #54203 /* ~"Warum sagst du das?"~ */ GOTO 545
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54204 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54205 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 545 // from: 543.0 544.0
+  SAY #54206 /* ~"Weil was auch immer in der Festung auf dich wartet, Meister, dich bereits einmal besiegt hat. Ich weiß bis heute nicht, wie du das überlebt hast, aber wenn du wieder verlierst, dann brauchst du jemanden, der dich aus der Festung schafft..."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54207 /* ~"Morte, du mußt mir alles sagen, was du über die Festung weißt... Es ist wichtig."~ */ GOTO 547
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54208 /* ~"Morte, du mußt mir alles sagen, was du über die Festung weißt... Es ist wichtig."~ */ GOTO 546
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54209 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54210 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 546 // from: 545.1
+  SAY #54211 /* ~"Diese 'Festung der Reue'... die erstreckt sich über MEILEN, Meister. Es ist eine Festung, aber es ist mehr wie eine eigene Ebene, ganz aus Stein, vollkommen dunkel, und voller Schatten - überall Schatten. Wenn du dahingehst, dann mußt du gut vorbereitet sein."~ */
+  IF ~~ THEN REPLY #54212 /* ~"Was ist passiert, als wir zum ersten Mal dorthin gegangen sind?"~ */ GOTO 548
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54213 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54214 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 547 // from: 545.0
+  SAY #54215 /* ~"Diese 'Festung der Reue'... die erstreckt sich über MEILEN, Meister. Es ist eine Festung, aber es ist mehr wie eine eigene Ebene, ganz aus Stein, vollkommen dunkel, und voller Schatten - überall Schatten. Wenn wir dahingehen, dann müssen wir gut vorbereitet sein."~ */
+  IF ~~ THEN REPLY #54216 /* ~"Was ist passiert, als wir zum ersten Mal dorthin gegangen sind?"~ */ GOTO 548
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54217 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54218 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 548 // from: 546.0 547.0
+  SAY #54219 /* ~"Meister, ich weiß nicht, was mit DIR geschehen ist, aber ich weiß, was mit MIR geschehen ist... Ich bin von Gewölbe zu Gewölbe gelaufen, diese Schatten waren überall, sie haben versucht, mich fertigzumachen... Dann... plötzlich waren wir 'draußen', als ob uns jemand zurückgeholt hätte..."~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+NearbyDialog("Ddakkon")
+~ THEN REPLY #54220 /* ~"Einen Moment mal. Wenn du 'wir' sagst, klingt das nicht, als ob du nur uns beide meinst."~ */ GOTO 565
+  IF ~  CheckStatGT(Protagonist,15,INT)
+!NearbyDialog("Ddakkon")
+GlobalGT("Dakkon","GLOBAL",0)
+~ THEN REPLY #54221 /* ~"Einen Moment mal. Wenn du 'wir' sagst, klingt das nicht, als ob du nur uns beide meinst."~ */ GOTO 549
+  IF ~  CheckStatGT(Protagonist,15,INT)
+!NearbyDialog("Ddakkon")
+Global("Dakkon","GLOBAL",0)
+~ THEN REPLY #54223 /* ~"Einen Moment mal. Wenn du 'wir' sagst, klingt das nicht, als ob du nur uns beide meinst."~ */ GOTO 550
+  IF ~~ THEN REPLY #54225 /* ~"Ich verstehe. Kannst du mir sonst noch was sagen?"~ */ GOTO 552
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54226 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54227 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 549 // from: 548.1
+  SAY #54229 /* ~Morte verstummt einen Moment lang. "Nein... Da waren noch mehr. Da war... Dak'kon, diese Sinnsaten-Braut, Deionarra, dieser blinde Bogenschütze, der die ganze Zeit halb betrunken war, und du und ich. Und dann ging's einmal in die Hölle und zurück. Anscheinend haben du, ich und Dak'kon es geschafft, aber die beiden anderen nicht. Ich weiß nicht, was mit ihnen passiert ist."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #54230 /* ~"Dak'kon? Aber warum... Ich muß ihn fragen. Aber du sagst, daß Deionarra und der Bogenschütze nicht von der Festung zurückgekehrt sind?"~ */ GOTO 551
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #54231 /* ~"Dak'kon? Aber warum... Ich muß ihn fragen. Aber du sagst, daß diese Frau, Deionarra, und dieser Bogenschütze nicht von der Festung zurückgekehrt sind?"~ */ GOTO 551
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54232 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54233 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 550 // from: 548.2
+  SAY #54234 /* ~Morte verstummt einen Moment lang. "Nein... Da waren noch mehr. Da war... dieser alte Gith, Dak'kon, diese Sinnsaten-Braut, Deionarra, dieser blinde Bogenschütze, der die ganze Zeit halb betrunken war, und du und ich. Und dann ging's einmal in die Hölle und zurück. Anscheinend haben du, ich und Dak'kon es geschafft, aber die beiden anderen nicht. Ich weiß nicht, was mit ihnen passiert ist."~ */
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #54235 /* ~"Du sagst, daß Deionarra und dieser Bogenschütze nie von der Festung zurückgekehrt sind?"~ */ GOTO 551
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #54236 /* ~"Du sagst, daß diese Frau, Deionarra, und dieser Bogenschütze nie von der Festung zurückgekehrt sind?"~ */ GOTO 551
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54237 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54238 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 551 // from: 549.0 549.1 550.0 550.1
+  SAY #54239 /* ~Morte schüttelt den Kopf. "Nicht daß ich wüßte."~ */
+  IF ~~ THEN REPLY #54240 /* ~"Kannst du mir noch mehr über die Festung erzählen?"~ */ GOTO 552
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54241 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54242 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 552 // from: 548.3 551.0
+  SAY #54243 /* ~"Mehr kann ich dir nicht sagen, Meister... Nur, daß wir unter Garantie getrennt werden, wenn wir ankommen, der Ort ist RIESIG, und es wimmelt dort nur so vor Schatten... Und irgendwo in der Festung ist etwas, das mächtiger ist als *jeder* von uns. Mehr gibt es nicht zu sagen..."~ */
+  IF ~~ THEN REPLY #54244 /* ~"Bist du *sicher*? Das ist vielleicht unsere letzte Gelegenheit, miteinander zu reden..."~ */ DO ~SetGlobal("Morte_Quip_Regret_Portal","GLOBAL",2)
+~ GOTO 553
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54245 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54246 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 553 // from: 552.0
+  SAY #54249 /* ~"Tja..." Morte hält eine Augenblick inne. "Ja, eine Sache solltest du noch wissen: Dein Ich, das ich früher gekannt habe, das Ich, das uns hierher geführt hat - der war nicht wie du. Überhaupt nicht."~ */
+  IF ~  GlobalGT("BD_MORTE_MORALE","GLOBAL",5)
+~ THEN REPLY #54250 /* ~"Was meinst du?"~ */ GOTO 554
+  IF ~  GlobalLT("BD_MORTE_MORALE","GLOBAL",6)
+~ THEN REPLY #54252 /* ~"Was meinst du?"~ */ GOTO 555
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54255 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54262 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 554 // from: 553.0
+  SAY #54263 /* ~"Dein anderes Ich, dem... dem waren die andern egal. Eigentlich alle. Wir hätten ALLE in der Festung draufgehen können, und er hätte nicht mit der Wimper gezuckt. Darum... möchte ich, daß du so bleibst, wie du bist... ich mag dich *so* nämlich lieber. VIEL lieber."~ */
+  IF ~  CheckStatGT(Protagonist,15,WIS)
+~ THEN REPLY #54264 /* ~"Aber das ist nicht alles, was du sagen willst, stimmt's?"~ */ GOTO 556
+  IF ~~ THEN REPLY #54265 /* ~"Ist das alles?"~ */ GOTO 556
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54266 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54267 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 555 // from: 553.1
+  SAY #54268 /* ~"Was ich sagen will ist, daß DU, trotz deines eselshaften Benehmens, mehr Geist besitzt, als er je hatte. Dein anderes Ich, der... der war so distanziert. Darum... will ich, daß du das nicht vergißt."~ */
+  IF ~  CheckStatGT(Protagonist,15,WIS)
+~ THEN REPLY #54269 /* ~"Aber das ist nicht alles, was du sagen willst, stimmt's?"~ */ GOTO 556
+  IF ~~ THEN REPLY #54270 /* ~"Ist das alles?"~ */ GOTO 556
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54271 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54272 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 556 // from: 554.0 554.1 555.0 555.1
+  SAY #54273 /* ~"Nein..." Morte hält inne. "Da ist noch etwas. Ich habe dieses *andere* Ich von dir damals vielleicht nicht besonders gemocht, aber er war ein ziemlich schlauer Kerl - der schlaueste, den ich je kannte. Der ging immer auf Nummer sicher. Wenn er in der Festung gestorben ist, dann heißt das... naja..."~ */
+  IF ~~ THEN REPLY #54274 /* ~"Du glaubst nicht, daß ich es schaffen kann, was?"~ */ GOTO 557
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+InParty("Morte")
+~ THEN REPLY #54275 /* ~"Mach dir nichts draus, Morte. Ich bin bereit, durch das Portal zu gehen - kommst du mit?"~ */ GOTO 534
+  IF ~  GlobalGT("Morte_Quip_Regret_Portal","GLOBAL",1)
+!InParty("Morte")
+~ THEN REPLY #54276 /* ~"Mach dir nichts draus, Morte. Was passiert ist, ist passiert. Ich gehe jetzt jedenfalls durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 557 // from: 556.0
+  SAY #54277 /* ~"Nein..." Morte schüttelt den Kopf. "Das ist es nicht, Meister. Weil es nicht immer darum geht, wer der Cleverste ist, oder wer der Mächtigste ist, oder wer der Härteste ist... Manchmal geht es einfach nur darum, wer du bist und was du *wirklich* willst. Ich meine, du wolltest einmal unsterblich werden - aber nach allem, ist das *wirklich*, was du wolltest? Sei dir diesmal einfach wirklich sicher, was du willst, mehr sag ich gar nicht."~ */
+  IF ~  InParty("Morte")
+Global("Morte_Morale_Fortress_Portal","AR0202",0)
+~ THEN REPLY #54278 /* ~"In Ordnung. Sieh mal, Morte... Wir haben noch nie darüber gesprochen, aber du mußt nicht mit mir mitkommen, okay? Ich verstehe, wenn du nicht willst."~ */ DO ~IncrementGlobal("BD_MORTE_MORALE","GLOBAL",1)
+SetGlobal("Morte_Morale_Fortress_Portal","AR0202",1)
+~ GOTO 558
+  IF ~  InParty("Morte")
+~ THEN REPLY #54279 /* ~"Verstanden. Wenn du dann fertig bist, können wir ja gehen. Also, bist du bereit?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54280 /* ~"Verstanden. Danke für den Ratschlag, Morte. Ich gehe jetzt durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 558 // from: 557.0
+  SAY #54281 /* ~"Ja... ich weiß, Meister. Und ich kann dich nicht anlügen... Ich will nicht gehen... aber ich werde. Du mußt wissen: Wenn wir erst durch dieses Portal geschritten sind, dann dreht sich nicht mehr alles um *dich*. Du spielst mit *unserem* Leben, und uns stellt keiner wieder her, wenn wir sterben."~ */
+  IF ~  GlobalGT("Ravel_Grace","GLOBAL",0)
+GlobalGT("Ravel_Morte","GLOBAL",0)
+GlobalLT("Torment_Fell","GLOBAL",2)
+NearbyDialog("Dgrace")
+~ THEN REPLY #54282 /* ~"Warum bist du dann..."~ */ EXTERN ~DGRACE~ 169
+  IF ~  GlobalGT("Ravel_Grace","GLOBAL",0)
+GlobalGT("Ravel_Morte","GLOBAL",0)
+Global("Torment_Fell","GLOBAL",2)
+NearbyDialog("Dgrace")
+~ THEN REPLY #54283 /* ~"Warum bist du dann..."~ */ EXTERN ~DGRACE~ 170
+  IF ~  GlobalGT("Ravel_Morte","GLOBAL",0)
+GlobalLT("Torment_Fell","GLOBAL",2)
+!NearbyDialog("Dgrace")
+~ THEN REPLY #54284 /* ~"Warum bist du dann..."~ */ GOTO 562
+  IF ~  GlobalGT("Ravel_Morte","GLOBAL",0)
+Global("Torment_Fell","GLOBAL",2)
+!NearbyDialog("Dgrace")
+~ THEN REPLY #54285 /* ~"Warum bist du dann..."~ */ GOTO 563
+  IF ~  Global("Ravel_Morte","GLOBAL",0)
+~ THEN REPLY #54286 /* ~"Warum bist du dann..."~ */ GOTO 564
+END
+
+IF ~~ THEN BEGIN 559 // from:
+  SAY #54762 /* ~Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?" ~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 176
+END
+
+IF ~~ THEN BEGIN 560 // from:
+  SAY #54763 /* ~Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?" ~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 177
+END
+
+IF ~~ THEN BEGIN 561 // from:
+  SAY #54764 /* ~Morte entgegnet: "Du riechst auch nicht besser. Wann hast du denn zum letzten Mal gebadet?" ~ */
+  IF ~~ THEN EXTERN ~DTRIAS~ 8
+END
+
+IF ~~ THEN BEGIN 562 // from: 558.2
+  SAY #54831 /* ~"Was Ravel sagte, im Irrgang - sie sagte, du ziehst Leute, die leiden, an wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es, weil *du* schon so lange leidest. Und vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54832 /* ~"Vielleicht. Dann... bist du dabei, Morte?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54833 /* ~"Verstanden. Danke für den Ratschlag, Morte. Ich gehe jetzt durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 563 // from: 558.3
+  SAY #54834 /* ~"Was Ravel gesagt hat, im Irrgang - und was Fell über das Symbol, Folter, gesagt hat? Sie sagen, du ziehst Leute, die leiden, an wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es, weil *du* schon so lange leidest. Und vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54835 /* ~"Vielleicht. Dann... bist du dabei, Morte?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54836 /* ~"Verstanden. Danke für den Ratschlag, Morte. Ich gehe jetzt durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 564 // from: 558.4
+  SAY #54837 /* ~"Ich kenne Dich jetzt schon sehr lange, Meister, und du hast *irgend etwas* an dir, das Leute, die leiden, anzieht wie ein Magnet." Morte schüttelt den Kopf. "Vielleicht ist es deshalb, weil *du* schon so lange leidest. Vielleicht werden *wir*, wenn du das alles geregelt hast, auch ein bißchen Frieden finden. Vielleicht."~ */
+  IF ~  InParty("Morte")
+~ THEN REPLY #54838 /* ~"Vielleicht. Dann... bist du dabei, Morte?"~ */ GOTO 534
+  IF ~  !InParty("Morte")
+~ THEN REPLY #54839 /* ~"Verstanden. Danke für den Ratschlag, Morte. Ich gehe jetzt durch das Portal."~ */ DO ~SetPortalCursor("Fort_Port",PORTAL_CURSOR_VISIBLE,TRUE)
+SetPortalCursor("Fort_Port",PORTAL_ENABLED,TRUE)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 565 // from: 548.0
+  SAY #54840 /* ~Morte verstummt.~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 175
+END
+
+IF ~~ THEN BEGIN 566 // from:
+  SAY #54841 /* ~"Der Schädel, das war ich," sagt Morte leise. "Die Frau war so eine Braut, die Deionarra hieß. Den Bogenschützen hab' ich nicht gekannt..."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 177
+END
+
+IF ~~ THEN BEGIN 567 // from:
+  SAY #54842 /* ~"Ja..." Morte klappert, als würde er frieren. "Meister, in dieser Festung sind *überall* Schatten..."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 178
+END
+
+IF ~~ THEN BEGIN 568 // from:
+  SAY #54843 /* ~"Sie haben mit mir gesprochen wie die Schädelsäule..." Morte senkt die Stimme. "Sie *wußten*..."~ */
+  IF ~~ THEN REPLY #54844 /* ~"Also, ihr beiden: Ich muß alles wissen, was ihr mir über diese Festung sagen könnt...~ */ EXTERN ~DDAKKON~ 179
+END
+
+IF ~~ THEN BEGIN 569 // from:
+  SAY #54845 /* ~"Mehr kann ich dir nicht sagen, Meister - außer, daß wir unter Garantie getrennt werden, sobald wir dort ankommen. Der Ort ist RIESIG, und er wimmelt von Schatten... Und irgendwo in dieser Festung ist etwas, das mächtiger ist als wir *alle*."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 182
+END
+
+IF ~~ THEN BEGIN 570 // from:
+  SAY #54846 /* ~"Ich kann dir nicht mehr sagen, Meister - nur, daß eine Gruppe, die da reingeht, unter Garantie getrennt wird, sobald sie dort ankommt. Der Ort ist RIESIG, und er wimmelt von Schatten... Und irgendwo in dieser Festung ist etwas, das mächtiger ist als alles, was du je getroffen hast."~ */
+  IF ~~ THEN EXTERN ~DDAKKON~ 182
+END
+
+IF ~~ THEN BEGIN 571 // from:
+  SAY #55832 /* ~"Meister, hier ist Ärger vorprogrammiert - dieser Modron ist abtrünnig geworden."~ */
+  IF ~~ THEN REPLY #55833 /* ~"Abtrünnig?"~ */ GOTO 572
+END
+
+IF ~~ THEN BEGIN 572 // from: 571.0
+  SAY #55834 /* ~"Ja, weißt du, manchmal bricht in so einem Modron so ein kleines Chaos aus, und wenn das passiert,... Naja., man könnte sagen, daß diese abtrünnigen Einzelgänger-Modronen eine Art... Rückwärts-Modronen sind."~ */
+  IF ~~ THEN REPLY #55836 /* ~"Dann ist das ein... Rückwärts-Modron?"~ */ EXTERN ~DNORDOM~ 21
+END
+
+IF ~~ THEN BEGIN 573 // from:
+  SAY #55837 /* ~"Meister, so viel Spaß das hier auch macht, ich schätze, einem Baatezu einen Barhocker unter dem Hintern wegzuziehen macht mehr Sinn, als mit diesem blöden Polygon mit unserer Knochenkiste zu klappern."~ */
+  IF ~~ THEN REPLY #55839 /* ~"Weißt *du*, was Getriebegeister sind, Morte?"~ */ GOTO 574
+END
+
+IF ~~ THEN BEGIN 574 // from: 573.0
+  SAY #55841 /* ~"Meister, ich habe keine Ahnung, was dieser Würfel da herumklappert."~ */
+  IF ~~ THEN REPLY #55842 /* ~"Ich dachte, du wärst der *Experte* zu den Ebenen."~ */ GOTO 575
+  IF ~~ THEN REPLY #55843 /* ~"Na gut. Nordom, ich wollte dir noch ein paar Fragen stellen..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55844 /* ~"Dann vergiß es. Weiter geht's."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 575 // from: 574.0
+  SAY #55845 /* ~"W - Ich weiß mehr als *du*, du stolpernder, krächzender Gedächtnisloser! Außerdem hab ich noch drei Wissensstückchen für dich, die dann in deiner leeren Hirnschachtel rumrasseln können: Erstens gibt es zu den Ebenen KEINE Experten, zweitens, ich komme so einem Experten mit Sicherheit am nächsten, und drittens, behandle mich mit etwas Respekt. Warum? Siehe Punkt zwei."~ */
+  IF ~~ THEN REPLY #55846 /* ~"Na gut. Nordom, ich wollte dir noch ein paar Fragen stellen..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55847 /* ~"Dann vergiß es. Weiter geht's."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 576 // from:
+  SAY #55848 /* ~"Mechanus? Sterbenslangweilig, Meister. Stell dir eine Ebene voller Modronen und riesiger Zahnradgetriebe vor, und du hast die große, LANGWEILIGE Ebene Mechanus. Zu viele Gesetze, zu nervig. Ein Ort, an den man nicht einmal denken will, geschweige denn, ihn besuchen.~ */
+  IF ~  NearbyDialog("DGrace")
+~ THEN DO ~SetGlobal("Know_Source","GLOBAL",1)
+~ EXTERN ~DGRACE~ 184
+  IF ~  !NearbyDialog("DGrace")
+~ THEN REPLY #55849 /* ~"Nordom, was hast du mit 'Null Heimat' gemeint?"~ */ EXTERN ~DNORDOM~ 65
+  IF ~  !NearbyDialog("DGrace")
+~ THEN REPLY #55850 /* ~"Ach, egal, Morte. Ich hab' genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 577 // from:
+  SAY #55855 /* ~"ENTSCHULDIGE, du Priesterin der Frömmigkeit, aber Mechanus IST die langweiligste Ebene im Universum... Das einzig Interessante daran wäre, wenn *du* zu Besuch kämst..." Morte rollt die Augen. "Aber ich glaube, auch *das* würde nach einer Weile seinen Reiz verlieren."~ */
+  IF ~~ THEN REPLY #55857 /* ~"Nordom, was hast du mit 'Null Heimat' gemeint?"~ */ EXTERN ~DNORDOM~ 65
+  IF ~~ THEN REPLY #55858 /* ~"Ach, egal, Morte. Ich hab' genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 578 // from:
+  SAY #55860 /* ~"Alle Modronen sind Teil dieser Quelle, Meister, ist so wie eine riesige Energiebank... Wenn einer von ihnen stirbt, wird die Energie, die man zu seiner Herstellung benötigt hat, in die Bank zurückabsorbiert, und ein neuer wird ausgespuckt. Die Sache ist... wenn so ein Modron ein bißchen plemplem wird, dann bricht er die Verbindung ab, behält aber ein bißchen Energie."~ */
+  IF ~  NearbyDialog("Dgrace")
+~ THEN EXTERN ~DGRACE~ 186
+  IF ~~ THEN REPLY #55862 /* ~"Also... Nordom, dieses Mechanus ist eine Energiequelle?"~ */ EXTERN ~DNORDOM~ 67
+  IF ~~ THEN REPLY #55864 /* ~"Ach so. Nordom, ich hätte noch einige Fragen an dich..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55865 /* ~"Mehr wollte ich gar nicht wissen. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 579 // from:
+  SAY #55867 /* ~Morte funkelt Grace, die Gefallene, zornig an. "Also *entschuldige* mal! Ich hatte die Frage bereits beantwortet, danke vielmals. *Ich* bin hier die Informationsquelle, NICHT du, ist das klar?"~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 187
+END
+
+IF ~~ THEN BEGIN 580 // from:
+  SAY #55870 /* ~"Oh, *schon* kapiert! Wenn ich vielleicht ein Sukkubus wäre, dann würdest du häufiger auf MICH hören, ja? Wenn ich vielleicht ab und zu ein bißchen mehr Haut zeigen würde, dann würdest du mir mehr Respekt entgegenbringen, was? Das ist ziemlich oberflächlich, Meister, Ziemlich oberflächlich! Ich sollte..."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 191
+END
+
+IF ~~ THEN BEGIN 581 // from:
+  SAY #55871 /* ~NULL NODE~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 582 // from:
+  SAY #55873 /* ~"Ach wirklich?! Ich...?! Naja...! Ja, du hast... hast du das gehört, Meister? Was die Sukkubusfrau gesagt hat? Sie hat recht. Ich bin leichter zu verstehen, redegewandter, verstehst du? Du bist also auf mich angewiesen, siehst du?"~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+~ THEN REPLY #55875 /* ~"In Ordnung, dann noch eine Frage: Ihr sagt beide, daß Nordom ein Teil der Quelle, aber von ihr abgeschnitten ist. Und wenn ein Modron stirbt, wird er zurückabsorbiert. Gilt das auch für Nordom?"~ */ GOTO 583
+  IF ~~ THEN REPLY #55876 /* ~"Ich habe nie etwas anderes behauptet, Morte. Also... Nordom, diese Energiequelle, von der du gesprochen hast... ist die von Mechanus?"~ */ EXTERN ~DNORDOM~ 67
+  IF ~~ THEN REPLY #55877 /* ~"In Ordnung. Nordom, ich wollte dich noch was fragen..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55879 /* ~"Mehr wollte ich gar nicht wissen. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 583 // from: 582.0
+  SAY #55882 /* ~Morte nickt. ~ */
+  IF ~~ THEN REPLY #55884 /* ~"Und wenn er stirbt, wird ein neuer Nordom erschaffen." ~ */ GOTO 584
+END
+
+IF ~~ THEN BEGIN 584 // from: 583.0
+  SAY #55886 /* ~"Äh... nein."~ */
+  IF ~~ THEN REPLY #55887 /* ~"Was passiert?"~ */ GOTO 585
+END
+
+IF ~~ THEN BEGIN 585 // from: 584.0
+  SAY #55890 /* ~"Naja, sie nehmen seine Energie, Meister, und dann spucken sie einen anderen Modron aus, aber das ist dann nicht Nordom, weil er eigentlich kein *richtiger* Modron mehr ist. Er hat zu viel von den Ebenen in sich. Sie würden ihn durch einen Nicht-Nordom ersetzen.~ */
+  IF ~~ THEN REPLY #55892 /* ~"Also... dadurch, daß er abtrünnig geworden ist, ist er... sterblich geworden?"~ */ GOTO 586
+  IF ~~ THEN REPLY #55894 /* ~"In Ordnung. Nordom, ich wollte dich noch was fragen..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55895 /* ~"Mehr wollte ich gar nicht wissen. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 586 // from: 585.0
+  SAY #55897 /* ~Morte ist einen Moment still. "Naja... so könnte man es sagen. Ich meine, wenn er nicht diese kleine Abtrünnigen-Rebellion abgezogen hätte, dann wäre alles in Ordnung... Wenn er stirbt, wird er einfach durch einen anderen Modron ersetzt. Aber wo er jetzt 'rückwärts' geworden ist, tja, dieser Teil von ihm verschwindet, wenn er stirbt."~ */
+  IF ~~ THEN REPLY #55898 /* ~"In Ordnung. Nordom, ich wollte dich noch was fragen..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55900 /* ~"Mehr wollte ich gar nicht wissen. Gehen wir."~ */ EXTERN ~DNORDOM~ 74
+END
+
+IF ~~ THEN BEGIN 587 // from:
+  SAY #55901 /* ~"Ahhhhhh! Bei allen Kräften und meinem Verstand, hör auf damit! Er wird noch völlig durchdrehen, wenn du ihn das immer wieder fragst!"~ */
+  IF ~~ THEN REPLY #55902 /* ~"Das hatte ich eigentlich *bezweckt*, Morte."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Nordom_5","GLOBALLaw",-1)
+~ GOTO 588
+  IF ~~ THEN REPLY #55905 /* ~"Naja, ich wollte die Antwort, und er hätte sie mir gegeben."~ */ GOTO 589
+  IF ~~ THEN REPLY #55906 /* ~"Macht nichts. Ich habe noch ein paar Fragen an Nordom..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55907 /* ~"Vergiß es. Gehen wir lieber."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 588 // from: 587.0
+  SAY #55909 /* ~"Oh." Morte 'grinst'. "Du hättest ja etwas SAGEN können. Mach doch bitte weiter. Natürlich..." Morte *klickt* mit den Zähnen in einer Imitation von Nordom. "Wenn du etwas über Modronen wissen willst, solltest du MICH fragen."~ */
+  IF ~~ THEN REPLY #55910 /* ~"Okay, Morte... Was kannst du mir über Modronen sagen?"~ */ GOTO 590
+  IF ~~ THEN REPLY #55912 /* ~"Macht nichts. Ich habe noch ein paar Fragen an Nordom..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55913 /* ~"Vergiß es. Gehen wir lieber."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 589 // from: 587.1
+  SAY #55914 /* ~"Paß auf, Meister, NORMALE Modronen kapieren fast gar nichts außer ihren Grundaufgaben, und dieses blöde Polygon hier kommt obendrein gerade aus den Ebenen. Verwirre diesen Würfel also nicht, okay? Zumindest nicht, solange er bewaffnet ist. Wenn du was über Modronen wissen willst, dann frag nicht ihn, sondern mich."~ */
+  IF ~~ THEN REPLY #55915 /* ~"Okay, Morte... Was kannst du mir über Modronen sagen?"~ */ GOTO 590
+  IF ~~ THEN REPLY #55917 /* ~"Macht nichts. Ich habe noch ein paar Fragen an Nordom..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55918 /* ~"Vergiß es. Gehen wir lieber."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 590 // from: 588.0 589.0
+  SAY #55921 /* ~"Das ist so, Meister: Modronen sind diese blöden geometrischen Figuren, die auf ihrer Heimatebene, Mechanus, herumrattern. Sie sind echt sauber, ordentlich, und sie wollen, daß der REST des Multiversums auch so ist. Deshalb sind sie so eine Plage."~ */
+  IF ~~ THEN REPLY #55923 /* ~"Was ist falsch daran, das Multiversum ordentlicher machen zu wollen?"~ */ GOTO 592
+  IF ~~ THEN REPLY #55925 /* ~"Was ist Mechanus?"~ */ DO ~SetGlobal("Know_Mechanus","GLOBAL",1)
+~ GOTO 591
+  IF ~~ THEN REPLY #55926 /* ~"Macht nichts. Ich habe noch ein paar Fragen an Nordom..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55928 /* ~"Vergiß es. Gehen wir lieber."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 591 // from: 590.1
+  SAY #55930 /* ~"Das ist der Ort, wo diese ganzen Uhrwerksdrohnen herkommen. Frag ihn ruhig danach und sieh mal, was er dazu sagt. Sie sitzen da herum und räumen die ganze Zeit nur auf... Dies katalogisieren, *das* in Ordnung bringen, *jenes* in Ordnung bringen, dieses neue Gesetz machen und so weiter und so weiter."~ */
+  IF ~~ THEN REPLY #55931 /* ~Wahrheit: "Das scheint mir ein edles Ziel zu sein. Was ist falsch daran, das Multiversum ordentlicher machen zu wollen?"~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Nordom_2","GLOBALLaw",2)
+~ GOTO 592
+  IF ~~ THEN REPLY #55935 /* ~"Du hörst dich nicht so an, als ob dich das besonders begeistern würde."~ */ GOTO 592
+  IF ~~ THEN REPLY #55936 /* ~"Ich hätte noch ein paar Fragen an Nordom..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55937 /* ~"Vergiß es. Gehen wir lieber."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 592 // from: 590.0 591.0 591.1
+  SAY #55938 /* ~Morte blickt zu Nordom hinüber, der seine linke Armbrust an die Seite seines Kopfes hält, als würde er ihr zuhören. ~ */
+  IF ~~ THEN GOTO 593
+END
+
+IF ~~ THEN BEGIN 593 // from: 592.0
+  SAY #55940 /* ~"Weil, Meister, das Chaos seinen Platz hat. Und wenn alles so wäre, wie ein *Modron* es sieht, dann wäre das hier kein richtiges Leben... oder zumindest kein Leben, das ich führen wollte. Sie wollen immer alles nur *strukturieren*. Bäh."~ */
+  IF ~~ THEN REPLY #55941 /* ~Wahrheit: "Das sehe ich auch so. Es muß auch Chaos geben.... Zu viele Gesetze, und wir würden völlig stagnieren. Hör mal, ich hätte da noch ein paar Fragen an Nordom..."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Nordom_4","GLOBALLaw",-2)
+~ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55942 /* ~"Verstehe. Hör mal, ich hätte noch ein paar Fragen an Nordom..."~ */ EXTERN ~DNORDOM~ 74
+  IF ~~ THEN REPLY #55944 /* ~"Na gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 594 // from:
+  SAY #56029 /* ~"Ich *mag* es, wie sie riecht. Das ist schön."~ */
+  IF ~~ THEN EXTERN ~DFHJULL~ 27
+END
+
+IF ~~ THEN BEGIN 595 // from:
+  SAY #56030 /* ~"Moment mal Meister... Baator, das hört sich GAR NICHT GUT an. Dieses Scheusal verheimlicht uns bestimmt etwas... Und selbst wenn es diese 'Schädelsäule' gibt, finden wir wahrscheinlich jemand anders, der weiß, wie wir zu der Festung kommen, *ohne* uns in eine der gefährlichsten Ebenen des Multiversums zu begeben.~ */
+  IF ~~ THEN REPLY #56031 /* ~"Verheimlichst du uns etwas, Schlangenzunge?"~ */ EXTERN ~DFHJULL~ 88
+  IF ~~ THEN REPLY #56032 /* ~"Warum willst du da nicht hingehen, Morte?"~ */ GOTO 596
+END
+
+IF ~~ THEN BEGIN 596 // from: 595.1
+  SAY #56033 /* ~"Das ist ein gefährlicher Ort, Meister. Ich würde da lieber nicht hingehen. Ich war mal dort, und es ist echt nicht nett da. In Ordnung?"~ */
+  IF ~~ THEN REPLY #56034 /* ~"Wir sprechen später darüber, Schlangenzunge. Ich hätte ein paar Fragen..."~ */ EXTERN ~DFHJULL~ 46
+END
+
+IF ~~ THEN BEGIN 597 // from:
+  SAY #56936 /* ~"Dieser Kerl taucht auch *überall* auf!"~ */
+  IF ~~ THEN REPLY #56937 /* ~"Ja, aber er hat uns geholfen. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 598 // from:
+  SAY #59827 /* ~(NULL NODE)~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 599 // from:
+  SAY #60950 /* ~"He, tot sein ist gar nicht so übel. Betrachte es doch mal von der positiven Seite... Wenigstens mußt du nicht mehr mit diesen lächerlichen Schnörkeln reden."~ */
+  IF ~~ THEN REPLY #61111 /* ~"Still, Morte. Ich regele das. Erzähl mir, was passiert ist."~ */ EXIT
+  IF ~~ THEN REPLY #61112 /* ~"Vergiß es. Ich lasse dich in Ruhe."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 600 // from:
+  SAY #61408 /* ~"Ähm... also, Meister... Was meinst du? Wie wär's, dem alten Morte ein bißchen Klimper zu geben? Es ist schon ein bißchen länger als eine Weile her, weißt du..."~ */
+  IF ~  PartyGoldGT(499)
+~ THEN REPLY #61411 /* ~"Sicher, warum nicht. Madam?"~ */ EXTERN ~DUCHO~ 9
+  IF ~  PartyGoldLT(500)
+~ THEN REPLY #61412 /* ~"Tut mir leid, Morte. Nicht genug Klimper. Laß uns gehen."~ */ EXIT
+  IF ~~ THEN REPLY #61413 /* ~"Wir müssen wirklich gehen, Morte. Lebt wohl, Madam."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 601 // from:
+  SAY #61409 /* ~"In Ordnung! Danke, Meister!" Morte dreht sich um und folgt der Frau hinaus.~ */
+  IF ~~ THEN REPLY #61414 /* ~Warte, daß er zurückkommt.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ EXTERN ~DUCHO~ 10
+END
+
+IF ~~ THEN BEGIN 602 // from:
+  SAY #61410 /* ~Morte scheint deine Anwesenheit nur halb wahrzunehmen. Abwechselnd kichert er vor sich hin oder seufzt zufrieden.~ */
+  IF ~~ THEN REPLY #61415 /* ~"In Ordnung... Ich nehme also an, daß alles gut gelaufen ist. Lebt wohl, Madam."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 603 // from:
+  SAY #61481 /* ~"Ich? Ich bin der Kopf des Vecna."~ [MRT562] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 604 // from:
+  SAY #61482 /* ~"Die Götter sind gnädig!!"~ [MRT485] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 605 // from:
+  SAY #61483 /* ~"Das ist eine lange Geschichte, in der es um den Kopf des Vecna geht. Ich will nicht darüber reden."~ [MRT559A] */
+  IF ~~ THEN EXTERN ~BGRACE~ 3
+END
+
+IF ~~ THEN BEGIN 606 // from:
+  SAY #61484 /* ~"Könnten wir *bitte* das Thema wechseln?"~ [MRT559B] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 607 // from:
+  SAY #61485 /* ~"Ich? Ich bin *le petit Morte*."~ [MRT560] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 608 // from:
+  SAY #61486 /* ~"Was soll ich erzählen? Ich bin ein *Memento Morte*."~ [MRT561] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 609 // from:
+  SAY #61487 /* ~"Nur, wenn ich mich auf deine Kissen setzen darf."~ [MRT486A] */
+  IF ~~ THEN EXTERN ~BGRACE~ 7
+END
+
+IF ~~ THEN BEGIN 610 // from:
+  SAY #61488 /* ~"Nichts! Gar nichts. Überhaupt nichts."~ [MRT486B] */
+  IF ~~ THEN DO ~IncrementGlobal("Grace_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 611 // from:
+  SAY #61489 /* ~"Arf! Arf! Heh! Heh! Heh!"~ [MRT484] */
+  IF ~~ THEN DO ~SetGlobal("Grace_Talked_Morte","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 612 // from:
+  SAY #62890 /* ~"Sie ist eine Tanar-Ri... ein Sukkubus, Meister."~ */
+  IF ~~ THEN EXTERN ~DGRACE~ 213
+END
+
+IF ~~ THEN BEGIN 613 // from:
+  SAY #63454 /* ~"Ich kann nirgends stehen. Hab Probleme mit den Beinen, weißt du."~ [MRT482] */
+  IF ~~ THEN EXTERN ~BANNAH~ 1
+END
+
+IF ~~ THEN BEGIN 614 // from:
+  SAY #63455 /* ~"Ich dachte, du sähest gut aus, aber da hab ich mich wohl geirrt."~ [MRT483] */
+  IF ~~ THEN EXTERN ~BANNAH~ 3
+END
+
+IF ~~ THEN BEGIN 615 // from:
+  SAY #63456 /* ~"Ich hab die Luft angehalten, seit ich dich das erste Mal gesehen habe, Scheusal."~ [MRT524] */
+  IF ~~ THEN DO ~SetGlobal("Annah_Talked_Morte","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 616 // from:
+  SAY #63457 /* ~"Ich habe einen NAMEN, weißt du."~ [MRT526] */
+  IF ~~ THEN EXTERN ~BANNAH~ 6
+END
+
+IF ~~ THEN BEGIN 617 // from:
+  SAY #63458 /* ~"Interessant, daß du das ansprichst... gerade neulich hab ich sie gefragt, was sie für dich bezahlen."~ [MRT531] */
+  IF ~~ THEN EXTERN ~BANNAH~ 8
+END
+
+IF ~~ THEN BEGIN 618 // from:
+  SAY #63459 /* ~"Weißt du, du wärst ein ganzes Stück sympathischer, wenn du den Mund zuließest."~ [MRT530] */
+  IF ~~ THEN EXTERN ~BANNAH~ 10
+END
+
+IF ~~ THEN BEGIN 619 // from:
+  SAY #63460 /* ~"Aber du hast mein Herz doch schon, Scheusal."~ [MRT532] */
+  IF ~~ THEN EXTERN ~BANNAH~ 12
+END
+
+IF ~~ THEN BEGIN 620 // from:
+  SAY #63462 /* ~"Ich kann mir schlimmere Arten vorstellen, zu gehen."~ [MRT525] */
+  IF ~~ THEN DO ~SetGlobal("Annah_Talked_Morte","GLOBAL",8)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 621 // from:
+  SAY #63463 /* ~"Weißt du, du *bist* schon ein halbes Scheusal."~ [MRT533A] */
+  IF ~~ THEN EXTERN ~BANNAH~ 15
+END
+
+IF ~~ THEN BEGIN 622 // from:
+  SAY #63464 /* ~"Von da, wo ich schwebe, sieht sie gut aus."~ [MRT533B] */
+  IF ~~ THEN DO ~SetGlobal("Annah_Talked_Morte","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 623 // from:
+  SAY #63666 /* ~"Ich habe es gemerkt. Warum teilst du deine Erkenntnis nicht dem Meister mit?"~ [MRT563] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 624 // from:
+  SAY #63667 /* ~"Flatulenz, du blödes Vieleck."~ [MRT468A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 2
+END
+
+IF ~~ THEN BEGIN 625 // from:
+  SAY #63668 /* ~"Dann tu uns allen einen Gefallen und sei 'effizienter.'"~ [MRT469A] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 626 // from:
+  SAY #63669 /* ~"Ich, äh, habe das nie gesagt!"~ [MRT470B] */
+  IF ~~ THEN EXTERN ~DANNAH~ 315
+END
+
+IF ~~ THEN BEGIN 627 // from:
+  SAY #63670 /* ~"Hat Annah noch Kleider an?"~ [MRT565A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 6
+END
+
+IF ~~ THEN BEGIN 628 // from:
+  SAY #63671 /* ~"Dann ist die Antwort ja."~ [MRT565B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",5)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 629 // from:
+  SAY #63672 /* ~"Ich geb dir gleich neunzehn, wenn du nicht die Klappe hältst."~ [MRT564] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",6)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 630 // from:
+  SAY #63673 /* ~"Wenn freier Wille bedeutet, meinen Befehlen ohne Frage zu gehorchen, dann ja."~ [MRT569A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 9
+END
+
+IF ~~ THEN BEGIN 631 // from:
+  SAY #63674 /* ~"Willkommen auf den Ebenen, Kind."~ [MRT569B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",7)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 632 // from:
+  SAY #63675 /* ~"Ist Fall-From-Grace nackt?"~ [MRT568A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 11
+END
+
+IF ~~ THEN BEGIN 633 // from:
+  SAY #63676 /* ~"Dann ist die Antwort auf deine Frage ja."~ [MRT568B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",8)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 634 // from:
+  SAY #63677 /* ~"Annah, Fall-From-Grace und ich, wie wir in einer Sumerischen Schlammkulisse baden."~ [MRT571A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 13
+END
+
+IF ~~ THEN BEGIN 635 // from:
+  SAY #63678 /* ~"Manche lesen Wörterbücher, andere schreiben sie."~ [MRT572B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",9)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 636 // from:
+  SAY #63679 /* ~"Annah, eine Flasche Furyanischen Feuerbernstein und eine Sitzgruppe in der Festhalle."~ [MRT573] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 15
+END
+
+IF ~~ THEN BEGIN 637 // from:
+  SAY #63680 /* ~"Oh, halt's *Maul*."~ [MRT471D] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 17
+END
+
+IF ~~ THEN BEGIN 638 // from:
+  SAY #63681 /* ~"Geh jemand anderem auf die Nerven, du blöde Zählschachtel."~ [MRT576A] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 19
+END
+
+IF ~~ THEN BEGIN 639 // from:
+  SAY #63682 /* ~"Ich weiß nicht, okay? Es ist einfach... weg."~ [MRT576B] */
+  IF ~~ THEN EXTERN ~BNORDOM~ 20
+END
+
+IF ~~ THEN BEGIN 640 // from:
+  SAY #63683 /* ~"Ich werd's dir zeigen, wenn du nicht die Klappe hältst."~ [MRT576C] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 641 // from:
+  SAY #63684 /* ~"Geh eine Bärenfalle küssen."~ [MRT575A] */
+  IF ~~ THEN EXTERN ~DGRACE~ 373
+END
+
+IF ~~ THEN BEGIN 642 // from:
+  SAY #63685 /* ~"Vertrau mir. Annah hat nichts dagegen."~ [MRT575B] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Morte","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 643 // from:
+  SAY #63686 /* ~::pfeift unschuldig::~ [MRT472A] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Annah","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 644 // from:
+  SAY #63688 /* ~"Keiner! Das hat ihm keiner gesagt!"~ [MRT473D] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Grace","GLOBAL",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 645 // from:
+  SAY #63689 /* ~"Es ist völlig freiwillig von ihrer Seite, du Idiot. Äh... nicht daß ich wüßte."~ [MRT577] */
+  IF ~~ THEN DO ~SetGlobal("Nordom_Talked_Grace","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 646 // from:
+  SAY #63858 /* ~"Vertrau mir, du hast ihn noch nie gesehen."~ [MRT475AA] */
+  IF ~~ THEN EXTERN ~BVHAILOR~ 1
+END
+
+IF ~~ THEN BEGIN 647 // from:
+  SAY #64990 /* ~"Hey Meister... sieh dir das an." Als du nach unten siehst, bemerkst du eine Reihe von dreckigen Fußabdrücken, die zum Torbogen führen... und nicht zurückkommen. "Dort muß ein Portal oder so etwas sein."~ */
+  IF ~~ THEN REPLY #64991 /* ~"Ein Portal? Wie kriegen wir es auf?"~ */ GOTO 648
+  IF ~~ THEN REPLY #64993 /* ~"Vielleicht. Los geht's."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 648 // from: 647.0
+  SAY #64992 /* ~"Keine Ahnung, Meister. Es muß aber ein gewöhnlicher Schlüssel sein. Sie dir den Verkehr an, der hier durchgegangen ist! Vielleicht kann uns eines der niederen Wesen hier helfen..."~ */
+  IF ~~ THEN REPLY #64994 /* ~"Dann frag ich mich durch. Los geht's."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 649 // from: 329.0 729.0
+  SAY #65552 /* ~"Ach *komm schon*, Meister. Sag bloß, du hast es schon wieder vergessen."~ */
+  IF ~~ THEN REPLY #65553 /* ~"Ich muß einfach nur mein Gedächtnis auffrischen."~ */ GOTO 650
+  IF ~  Global("Morte_Warning","GLOBAL",1)
+~ THEN REPLY #65554 /* ~"Nein, diesmal will ich *alles* hören - mach weiter, hilf meiner Erinnerung auf die Sprünge."~ */ GOTO 650
+  IF ~~ THEN REPLY #65555 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65556 /* ~"Dann vergiß es. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 650 // from: 649.0 649.1
+  SAY #65557 /* ~"Ich wette, daß ich DAS oft zu hören bekommen werde." Morte räuspert sich. "Laß mal sehen..."
+
+'Ich weiß, daß du dich so fühlst, als hättest du 'n paar Eimer Styx-Wasser getrunken, aber du mußt dein ZENTRUM finden. In deinem Besitz sollte sich ein JOURNAL befinden, das ein wenig Licht in das Dunkel dieser Angelegenheit bringen kann. PHAROD sollte dir den restlichen Plausch liefern können, wenn er nicht bereits im Totenbuch steht.'~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #65558 /* ~"Pharod... hmmm. Lies weiter."~ */ GOTO 651
+  IF ~  GlobalGT("Pharod","GLOBAL",0)
+~ THEN REPLY #65559 /* ~"Fahre fort."~ */ GOTO 651
+  IF ~~ THEN REPLY #65560 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65561 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 651 // from: 650.0 650.1
+  SAY #65562 /* ~"Mach ich ja, mach ich ja, warte." Morte hält einen Augenblick lang inne. "Also gut, das letzte Stück..."
+
+'Verlier das Journal nicht, sonst sind wir schon wieder den Styx hoch. Und was auch immer du tust, erzähl NIEMANDEM, WER du bist oder WAS mit dir geschieht, denn sonst wirst du auf eine schnelle Pilgerfahrt zum Krematorium geschickt. Tu, was ich dir sage: LIES das Journal, und dann FINDE Pharod.'~ */
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN GOTO 653
+  IF ~  Global("Morte_Warning","GLOBAL",1)
+~ THEN REPLY #65566 /* ~"Weiter. Was kommt danach?"~ */ GOTO 652
+  IF ~  Global("Journal","GLOBAL",0)
+~ THEN REPLY #65565 /* ~"Und ich hatte kein Journal bei mir, als ich aufgewacht bin?"~ */ GOTO 682
+  IF ~~ THEN REPLY #65567 /* ~"Also gut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65568 /* ~"Vergiß es. Ich hab genug gehört. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 652 // from: 651.1
+  SAY #65563 /* ~"Wovon redest du, Meister? Mehr gibt es nicht."~ */
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",0)
+~ THEN REPLY #65569 /* ~"Wie wär's mit 'Trau keinem Totenschädel'?"~ */ DO ~SetGlobal("Morte_Tattoo_XP","GLOBAL",1)
+AddexperienceParty(1000)
+~ JOURNAL #65573 /* ~Ich habe Morte mit der zusätzlichen Textzeile auf meinem Rücken konfrontiert, die er "vergessen" hatte mir vorzulesen. Er behauptete, sie sei völlig unwichtig und daß er sie mir deshalb nicht vorgelesen hätte. Ich bin sicher, daß er lügt, aber ich weiß noch nicht warum.~ */ GOTO 654
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #65570 /* ~"Wie wär's mit 'Trau keinem Totenschädel'?"~ */ GOTO 654
+  IF ~~ THEN REPLY #65571 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65572 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 653 // from: 651.0
+  SAY #65564 /* ~"Und natürlich dieser kleine Teil am Ende über 'traue keinem Schädel' und so."~ */
+  IF ~~ THEN REPLY #65574 /* ~"Was hat dieser Teil zu bedeuten? Glaubst du, es geht um *dich*?"~ */ GOTO 655
+  IF ~~ THEN REPLY #65575 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65576 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 654 // from: 329.4 652.0 652.1 729.4
+  SAY #65577 /* ~"Oh... *dieser* Teil am Ende? Nun, ich dachte, es sei ein Fleck, also habe ich diese Zeile nicht vorgelesen."~ */
+  IF ~~ THEN REPLY #65578 /* ~"Ach wirklich? Und was bedeutet es? Glaubst du, es geht um *dich*?"~ */ GOTO 655
+  IF ~~ THEN REPLY #65579 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65580 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 655 // from: 653.0 654.0
+  SAY #65581 /* ~"Ich bezweifle es. Ich meine, du kannst *mir* vertrauen, oder, Meister?"~ */
+  IF ~~ THEN REPLY #65582 /* ~"Du *lügst* mich doch nicht etwa an, Morte?"~ */ GOTO 656
+  IF ~~ THEN REPLY #65583 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65584 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 656 // from: 655.0
+  SAY #65585 /* ~"Nein! Komm schon, was ist los, Meister? Ich habe dich noch nie falsch geleitet."~ */
+  IF ~~ THEN REPLY #65587 /* ~"*Noch* nicht. Es gefällt mir nicht, daß du mir diese Zeile nicht vorgelesen hast, und wer weiß, was du mir *noch* verschwiegen hast, seitdem wir unterwegs sind."~ */ GOTO 657
+  IF ~~ THEN REPLY #65586 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65588 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 657 // from: 656.0
+  SAY #65589 /* ~"Nichts! Ich habe dir alles gesagt... nun, FAST alles, aber nichts, sagen wir, *Gefährliches*."~ */
+  IF ~~ THEN REPLY #65590 /* ~"Wenn es NOCH ETWAS gibt, dann erzähl es besser gleich."~ */ GOTO 658
+  IF ~~ THEN REPLY #65591 /* ~"Naja, nichts für ungut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65592 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 658 // from: 657.0
+  SAY #65593 /* ~"Meister, im Ernst, sonst gibt es nichts. Ich würde dir nichts verheimlichen."~ */
+  IF ~~ THEN REPLY #65594 /* ~"Also gut, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65595 /* ~"Hoffentlich nicht. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 659 // from: 329.1 729.1
+  SAY #65596 /* ~"Sigil ist eine ringförmige Stadt, die auf einem unendlich hohen Turm liegt, der angeblich im Zentrum der Ebenen steht... Natürlich wirft dies die Frage auf, *wie* sie auf der Spitze eines unendlich hohen Turms und im Zentrum der Ebenen liegen kann."~ */
+  IF ~~ THEN REPLY #65597 /* ~"Sonst noch was?"~ */ GOTO 660
+  IF ~~ THEN REPLY #65598 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65599 /* ~"Das ist alles, was ich wissen wollte. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 660 // from: 659.0
+  SAY #65600 /* ~"Sigil wird die 'Stadt der Tore' genannt, vor allem weil es dort VIELE unsichtbare Tore gibt, die hinein- und hinausführen - fast jeder Torbogen, jeder Türrahmen, jeder Faßreifen, jedes Bücherregal oder offene Fenster kann unter den entsprechenden Bedingungen ein Portal sein. Es hängt nur davon ab, ob du den passenden Schlüssel hast."~ */
+  IF ~~ THEN REPLY #65601 /* ~"Schlüssel?"~ */ GOTO 661
+  IF ~~ THEN REPLY #65602 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65603 /* ~"Das ist alles, was ich wissen wollte. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 661 // from: 660.0
+  SAY #65604 /* ~"Nun, wie soll ich das erklären - die meisten Portale 'schlafen', okay? Du könntest durchlaufen, vorbeilaufen, drüberlaufen, und nichts würde geschehen. Aber jedes Portal hat etwas, das es 'aufweckt'. Das kann eine Melodie oder ein Summen sein, ein Laib altes bytopianisches Brot, die Erinnerung an deinen ersten Kuß, und - ZACK - das Portal erwacht zum Leben, und du kannst hindurchgehen, wo immer es auch hinführt."~ */
+  IF ~~ THEN REPLY #65605 /* ~"Wo zum Beispiel?"~ */ GOTO 662
+  IF ~~ THEN REPLY #65606 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65607 /* ~"Das ist alles, was ich wissen wollte. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 662 // from: 661.0
+  SAY #65608 /* ~"Überall, Meister. Buchstäblich. An jedem erdenklichen Ort gibt es ein Portal dort. Darum ist Sigil überall in den Ebenen so beliebt."~ */
+  IF ~~ THEN REPLY #65609 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65610 /* ~"Das ist alles, was ich wissen wollte. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 663 // from: 329.2 729.2
+  SAY #65611 /* ~"Hey! Plappern ist meine Spezialität." Er klappert kurz mit den Zähnen, dann 'grinst' er. "Hä? Hä?"~ */
+  IF ~~ THEN REPLY #65612 /* ~"Oh, *das* freut mich zu hören."~ */ GOTO 664
+  IF ~  GlobalGT("Morte_Stolen","GLOBAL",2)
+~ THEN REPLY #65613 /* ~"Ja, ich kenne die Litanei der Flüche, Morte. Mich interessiert mehr, was du bei Lothar herausgefunden hast."~ */ GOTO 667
+  IF ~~ THEN REPLY #65614 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65615 /* ~"Macht nichts. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 664 // from: 663.0
+  SAY #65616 /* ~"Nein, aber jetzt im Ernst, Meister - Ich habe ein Talent für das immer passende Geplapper. Ich kann jemandem wirklich das Ohr heißreden, wenn du verstehst, was ich meine. Ich habe Beleidigungen auf Lager, Frechheiten - Sachen, die einem das Ohr in den Schädel schraubt, weißt du?"~ */
+  IF ~~ THEN REPLY #65617 /* ~"Ah... was soll *das* nützen?"~ */ GOTO 665
+  IF ~~ THEN REPLY #65618 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65619 /* ~"Macht nichts. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 665 // from: 664.0
+  SAY #65620 /* ~"Es ist eines meiner vielen Talente... Ich nenne es meine 'Litanei der Flüche'. Weißt du, manchmal kann ich jemanden mit *genau* der richtigen Bemerkung vollsülzen. Natürlich muß ich mich danach meistens ziemlich schnell aus dem Staub machen... aber du verstehst, was ich meine."~ */
+  IF ~~ THEN REPLY #65621 /* ~"Wie funktioniert das?"~ */ DO ~SetGlobal("Morte_Talent","GLOBAL",1)
+~ JOURNAL #65625 /* ~Morte hat mir gesagt, daß er eine gewisse "Macht" hat, Leute in Rage zu versetzen, die Litanei der Flüche heißt. Anscheinend hat er im Laufe seines Lebens so viele Beleidigungen gesammelt, daß er genau weiß, wie er Leute so provozieren kann, daß sie ihn angreifen. Wenn er sie wütend macht, sind sie leichter zu treffen, und sie haben einen Strafpunkt auf ihre Trefferpunkte gegen andere. Außerdem werden sie nichts anderes tun als Morte zu jagen und zu versuchen, mit bloßen Händen auf ihn einzutrommeln. Hört sich so an, als ob er sich als ein nützlicher Begleiter erweisen könnte, wenn ich Zauberwerfern begegne. Und da sein Talent nicht magischer Natur ist, könnte es auch bei Wesen wirksam sein, die Zauber mit einem Schulterzucken abschütteln können. Ich nehme an, daß Mortes Fähigkeit immer besser wird, je mehr Beleidigungen er von den Leuten, die ich treffe, hört.~ */ GOTO 666
+  IF ~  GlobalGT("Morte_Stolen","GLOBAL",2)
+~ THEN REPLY #65622 /* ~"Sonst noch was?"~ */ GOTO 667
+  IF ~~ THEN REPLY #65623 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65624 /* ~"Hmmm. Das könnte nützlich sein. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 666 // from: 329.3 665.0 729.3
+  SAY #65626 /* ~"Nun, ich kann jemandem Beleidigungen ins Gesicht schleudern, bis er durchdreht und mich verfolgt."
+
+^NHINWEIS: Morte besitzt eine Fähigkeit, die 'Litanei der Flüche' genannt wird. Dies ist eine Verspottung ohne Zauber, und wenn der Gegner ihr nicht widerstehen kann, erhält er Strafpunkte auf Rüstungsklasse und Angriffsstärke, und er wird nichts anderes mehr tun als zu versuchen, Morte in einen Nahkampf zu verwickeln. Je mehr Beleidigungen Morte hört, desto besser wird seine Litanei der Flüche. Die Litanei der Flüche ist SEHR wirksam gegen Magier.^-~ */
+  IF ~  GlobalGT("Morte_Stolen","GLOBAL",2)
+~ THEN REPLY #65627 /* ~"Kannst du noch etwas anderes?"~ */ GOTO 667
+  IF ~~ THEN REPLY #65628 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65629 /* ~"Hmmm. Das könnte nützlich sein. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 667 // from: 663.1 665.1 666.0
+  SAY #65630 /* ~"Nun, ich habe ein paar Freunde kennengelernt, als ich bei Lothar im Regal stand und darauf wartete, daß du mich befreist - danke übrigens, daß du deine wertvolle Zeit geopfert hast - und sie sagten, wenn ich jemals Hilfe bräuchte, könne ich sie rufen."~ */
+  IF ~~ THEN REPLY #65631 /* ~"Freunde? Was meinst du?"~ */ JOURNAL #65637 /* ~Morte hat mir erzählt, daß er während seines Aufenthalts auf Lothars Regal eine neue Fähigkeit dazugewonnen hat, die "Schädelmob" heißt. Anscheinend kann er ein paarmal am Tag einige Freunde heraufbeschwören, die er bei Lothar getroffen hat. Sie greifen dann einen Gegner Mortes Wahl an, beißen ihn und rennen dann weg. Der Schaden, den sie anrichten, hängt von Mortes Erfahrungsstufe ab.~ */ GOTO 668
+  IF ~~ THEN REPLY #65632 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65633 /* ~"Gut zu wissen. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 668 // from: 667.0
+  SAY #65634 /* ~"Ich muß nur pfeifen, und dann tauchen sie irgendwie auf. Sie sind eine ganz nette Truppe von Knochenbrechern - und giftig wie *Schlangen*."
+
+^NHINWEIS: Morte besitzt (inzwischen) eine spezielle Fähigkeit, den "Schädelmob". Wenn er sie beschwört, kann er eine Horde von Schädeln aus dem Hintergrund herbeirufen, die den Gegner mehrmals beißen. Stärke und Schadenspunkte der Schädel schwanken je nach Mortes Stufe, und die Macht kann pro Tag nur eine begrenzte Anzahl von Malen eingesetzt werden.^-~ */
+  IF ~~ THEN REPLY #65635 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65636 /* ~"Gut zu wissen. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 669 // from: 329.5 729.5
+  SAY #65638 /* ~"Also, ich sag dir mal, wie *ich* die Sache sehe..."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #65639 /* ~"Erzähl weiter..."~ */ GOTO 671
+  IF ~  Global("Pharod","GLOBAL",1)
+Global("Pharod_Quest","GLOBAL",1)
+~ THEN REPLY #65640 /* ~"Erzähl weiter..."~ */ GOTO 672
+  IF ~  GlobalGT("Pharod_Quest","GLOBAL",1)
+!Global("AR0401_Visited","GLOBAL",1)
+~ THEN REPLY #65641 /* ~"Erzähl weiter..."~ */ GOTO 673
+  IF ~  Global("AR0401_Visited","GLOBAL",1)
+Global("AR0500_Visited","GLOBAL",0)
+~ THEN REPLY #65642 /* ~"Erzähl weiter..."~ */ GOTO 670
+  IF ~  Global("AR0500_Visited","GLOBAL",1)
+Global("Know_Ravel","GLOBAL",0)
+~ THEN REPLY #65643 /* ~"Erzähl weiter..."~ */ GOTO 674
+  IF ~  Global("Know_Ravel","GLOBAL",1)
+Global("Know_Ravel_Key","GLOBAL",0)
+~ THEN REPLY #65644 /* ~"Erzähl weiter..."~ */ GOTO 675
+  IF ~  Global("Know_Ravel","GLOBAL",1)
+GlobalGT("Know_Ravel_Key","GLOBAL",0)
+Global("AR0610_Visited","GLOBAL",0)
+~ THEN REPLY #65645 /* ~"Erzähl weiter..."~ */ GOTO 677
+  IF ~  Global("AR0610_Visited","GLOBAL",1)
+Global("AR0700_Visited","GLOBAL",0)
+~ THEN REPLY #65646 /* ~"Erzähl weiter..."~ */ GOTO 680
+  IF ~  Global("AR0700_Visited","GLOBAL",1)
+~ THEN REPLY #65647 /* ~"Erzähl weiter..."~ */ GOTO 681
+  IF ~~ THEN REPLY #65648 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65649 /* ~"Genauer betrachtet... vergiß es. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 670 // from: 669.3
+  SAY #65650 /* ~"Wenn du mich fragst, dann ist das hier deine Show, Meister. Ich kann im Moment nicht viel sagen, was uns weiterbringen könnte."~ */
+  IF ~~ THEN REPLY #65651 /* ~"*Das* ist mal eine Abwechslung. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65652 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 671 // from: 669.0
+  SAY #65653 /* ~"Ich glaube, du solltest diesen 'Pharod' aufspüren, wo immer er auch sein mag. Du hättest nicht diese tätowierten Anweisungen auf dem Rücken, wenn er nicht eine Ahnung hätte, was mit dir los ist. Irgend jemand hier MUSS doch wissen, wo er ist."~ */
+  IF ~~ THEN REPLY #65654 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65655 /* ~"In Ordnung. Suchen wir ihn also weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 672 // from: 669.1
+  SAY #65656 /* ~"Ich würde sagen, wir versuchen diese 'Bronzekugel' so schnell wie möglich zu klauen und sie dem alten Stotterer zurückzubringen."~ */
+  IF ~~ THEN REPLY #65657 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65658 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 673 // from: 669.2
+  SAY #65659 /* ~"Ich würde sagen, wir finden heraus, wo deine Leiche geblieben ist. Vielleicht finden wir heraus, wie du ins Totenbuch geraten bist."~ */
+  IF ~~ THEN REPLY #65660 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65661 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 674 // from: 669.4
+  SAY #65662 /* ~"Ich würde sagen, wir suchen jemanden, der mehr über dich weiß - und darüber, wie du hierher gekommen bist. Es muß doch in einem der Bezirke ein paar schlaue Knochenbrecher geben, die etwas mehr über dich wissen."~ */
+  IF ~~ THEN REPLY #65663 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65664 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 675 // from: 669.5
+  SAY #65665 /* ~"Es sieht so aus, als müßten wir mehr über diese Nachthexe Ravel herausfinden - Und ich muß dir sagen, Meister, daß ich mich darauf *nicht* gerade freue. Aber vielleicht können uns die Weisen der Festhalle und die Sinnessteine etwas sagen."~ */
+  IF ~  Global("AR0601_Visited","GLOBAL",0)
+~ THEN REPLY #65666 /* ~"Festhalle? Sinnessteine?"~ */ JOURNAL #65669 /* ~Morte hat vorgeschlagen, ich solle mal die Städtische Festhalle im Bezirk der Kuratoren aufsuchen und sehen, ob ich dort mehr über die Nachthexe Ravel herausfinden kann.~ */ GOTO 676
+  IF ~~ THEN REPLY #65667 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65668 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 676 // from: 675.0
+  SAY #65670 /* ~"Sorry, Meister. Ich vergesse immer, daß du das Wissen eines Grünschnabels hast. Paß auf, die Festhalle ist der Hauptstützpunkt der Sinnsaten im Bezirk der Kuratoren. Sie haben Bibliotheken aus Sinnessteinen, die Erfahrungen speichern, und sie haben jede Menge Weise, Lehrer und Trainer, die uns vielleicht Näheres über Ravel erzählen können."~ */
+  IF ~~ THEN REPLY #65671 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65672 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 677 // from: 669.6
+  SAY #65673 /* ~"Nun, Ravel ist in einem Irrgang gefangen. Aber wahrscheinlich gibt es EINEN Schlüssel und EIN Portal, das uns zu ihr führt, wenn du immer noch gehen willst."~ */
+  IF ~  Global("Know_Ravel_Key","GLOBAL",1)
+~ THEN REPLY #65674 /* ~"Weißt du, was der Schlüssel zu ihrem Irrgang sein könnte?"~ */ JOURNAL #65678 /* ~Morte hat angedeutet, daß jemand im Bezirk der Kuratoren wissen könnte, wo man ein Stück von Ravel bekommen kann. Wenn nicht, könnten wir die Festhalle und die Sinnessteine dort ausprobieren. Und wenn *das* auch nicht hilft, können wir wahrscheinlich immer noch ein paar Prostituierte besuchen... Das wäre auf jeden Fall netter als diese Rumrennerei und das Reden mit all diesen Leuten.~ */ GOTO 678
+  IF ~~ THEN REPLY #65675 /* ~"Weißt du, wo ich ein Portal zu ihrem Irrgang finde?"~ */ GOTO 679
+  IF ~~ THEN REPLY #65676 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65677 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 678 // from: 677.0
+  SAY #65679 /* ~"Keine Ahnung - Ich meine, ein 'Stückchen Ravel'? Das könnte alles sein, von einer ihrer vertrockneten Warzen bis zu einem Kunstwerk, das sie angefertigt hat, oder ein bißchen Sabber aus ihrem Mund. Das ist zu vage. Und trotzdem: Ich wette, daß IRGEND JEMAND im Bezirk etwas darüber wissen muß, wie man an ein Stück dieser blödsinnigen Hexe kommt. Und wenn das nicht klappt, dann können wir die Sinnessteine in der Festhalle benutzen. Vielleicht kann uns einer der Steine etwas Nützliches mitteilen."~ */
+  IF ~~ THEN REPLY #65680 /* ~"Weißt du, wo ich ein Portal zu ihrem Irrgang finde?"~ */ GOTO 679
+  IF ~~ THEN REPLY #65681 /* ~"Gutes Argument. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65682 /* ~"Also gut. Suchen wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 679 // from: 677.1 678.0
+  SAY #65683 /* ~"Keine Ahnung, Meister. Es gibt haufenweise Portale in Sigil. Ich würde sagen, wir versuchen es in der Festhalle. Ich glaube zwar nicht, daß dort das Portal ist, aber vielleicht kann uns einer der Sinnessteine etwas sagen. Wenn das nichts nützt, dann sollten wir vielleicht aufhören herumzusuchen und uns von jemandem ein Portal BAUEN lassen."~ */
+  IF ~~ THEN REPLY #65684 /* ~"Gut. Ich hätte noch ein paar andere Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65685 /* ~"In Ordnung. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 680 // from: 669.7
+  SAY #65686 /* ~"Ich würde sagen, wir holen uns, was wir brauchen, und dann nichts wie raus, Meister. Dieser Ort macht mir Gänsehaut, dabei habe ich noch nicht mal Haut. Einverstanden?"~ */
+  IF ~~ THEN REPLY #65687 /* ~"Wie wahr. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65688 /* ~"Also gut. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 681 // from: 669.8
+  SAY #65689 /* ~"Genau, Meister. Das hier ist deine Show. Ich folge dir nur."~ */
+  IF ~~ THEN REPLY #65690 /* ~"Wie wahr. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65691 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 682 // from: 651.2
+  SAY #65692 /* ~"Nein... du warst nackt bis auf die Haut. Wie ich bereits gesagt habe, sieht so aus, als ob genug von einem Journal direkt auf deinen Körper geschrieben ist."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #65693 /* ~"Und du bist sicher, daß du niemanden namens Pharod kennst?"~ */ GOTO 683
+  IF ~~ THEN REPLY #65694 /* ~"Wie wahr. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65695 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 683 // from: 682.0
+  SAY #65696 /* ~"Nein. Und trotzdem muß doch irgendein Dussel wissen, wo er ist. Fragen wir ein paar Einheimische."~ */
+  IF ~~ THEN REPLY #65697 /* ~"Bevor wir gehen hätte ich noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65698 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 684 // from: 329.6 729.6
+  SAY #65699 /* ~"Ja... ein Mimir ist eine wandelnde Enzyklopädie. Du gibst Informationen hinein, und du bekommst Informationen heraus."~ */
+  IF ~  Global("Grace_Silver_Mimir","GLOBAL",1)
+~ THEN REPLY #65700 /* ~"Aber sind denn Mimiren nicht aus silbrigem Metall?"~ */ GOTO 685
+  IF ~~ THEN REPLY #65701 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65702 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 685 // from: 684.0
+  SAY #65703 /* ~"Und? Manche vielleicht, aber *ich* nicht. Und es gibt seltsamere Dinge auf den Ebenen als das, Meister."~ */
+  IF ~~ THEN REPLY #65704 /* ~"Ich glaube kaum, daß du ein Mimir bist, Morte. Was also bist du?"~ */ GOTO 686
+  IF ~~ THEN REPLY #65705 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65706 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 686 // from: 685.0
+  SAY #65707 /* ~"Was soll die Fragerei? Was weißt *du* denn überhaupt über Mimiren?"~ */
+  IF ~  Global("Grace_Smell_Mimir","GLOBAL",1)
+~ THEN REPLY #65708 /* ~"Ich weiß genug, um zu glauben, daß du mich anlügst."~ */ GOTO 687
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #65709 /* ~"Ich weiß genug, um zu glauben, daß du mich anlügst. Erst sagt mir die fehlende Zeile auf meinem Rücken, daß ich dir nicht trauen kann, und nun das. Was soll ich davon halten?"~ */ GOTO 687
+  IF ~~ THEN REPLY #65710 /* ~"Nichts, denke ich. Ich hätte noch ein paar Fragen..."~ */ JOURNAL #65712 /* ~Ich habe Morte damit konfrontiert, daß er mir gesagt hat, er wäre ein Mimir, aber ich habe nichts, womit ich ihn festnageln kann. Ich glaube, ich muß ihn bei einer Lüge ertappen, um die Wahrheit aus ihm herauszubekommen.~ */ GOTO 329
+  IF ~~ THEN REPLY #65711 /* ~"Ist schon gut. Laß uns gehen."~ */ JOURNAL #65712 /* ~Ich habe Morte damit konfrontiert, daß er mir gesagt hat, er wäre ein Mimir, aber ich habe nichts, womit ich ihn festnageln kann. Ich glaube, ich muß ihn bei einer Lüge ertappen, um die Wahrheit aus ihm herauszubekommen.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 687 // from: 686.0 686.1
+  SAY #65713 /* ~"Okay, ich bin *kein* Mimir, aber ich weiß viele Dinge, also *könnte* ich auch einer sein."~ */
+  IF ~~ THEN REPLY #65714 /* ~"Was *bist* du denn dann?"~ */ GOTO 688
+  IF ~~ THEN REPLY #65715 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65716 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 688 // from: 687.0
+  SAY #65717 /* ~"Ich bin ein wandelnder Schädel, der einen Haufen weiß."~ */
+  IF ~  Global("Grace_Smell_Mimir","GLOBAL",1)
+Global("AR1000_Visited","GLOBAL",0)
+~ THEN REPLY #65718 /* ~"Was hat's mit deinem baatorischen Geruch auf sich?"~ */ GOTO 690
+  IF ~  Global("Grace_Smell_Mimir","GLOBAL",1)
+Global("AR1000_Visited","GLOBAL",1)
+~ THEN REPLY #65719 /* ~"Was hat's mit deinem baatorischen Geruch auf sich?"~ */ GOTO 689
+  IF ~~ THEN REPLY #65720 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65721 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 689 // from: 688.1
+  SAY #65722 /* ~"Woher weißt DU schon, wie Baator riecht?!"~ */
+  IF ~~ THEN REPLY #65723 /* ~"Weil ich dort schon *war*, Morte. Ich war auf Avernus."~ */ GOTO 691
+  IF ~~ THEN REPLY #65724 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65725 /* ~"Vergiß es. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 690 // from: 688.0
+  SAY #65726 /* ~"Woher weißt DU schon, wie Baator riecht? Es sei denn - hey, du hast mit dieser Tanar-Ri über mich gesprochen, oder?! Was weiß sie?!"~ */
+  IF ~~ THEN REPLY #65727 /* ~"Nun, sie ist offenbar auf etwas gestoßen. Das riecht nach Baator, oder?"~ */ GOTO 691
+  IF ~~ THEN REPLY #65728 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65729 /* ~"Vergiß es. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 691 // from: 689.0 690.0
+  SAY #65730 /* ~"Nun, ja, aber - also, ja. Also rieche ich ein bißchen. *Entschuldige* bitte."~ */
+  IF ~~ THEN REPLY #65731 /* ~"*Warum* riechst du nach Baator?"~ */ DO ~SetGlobal("Morte_Story","GLOBAL",1)
+~ GOTO 692
+END
+
+IF ~~ THEN BEGIN 692 // from: 691.0
+  SAY #65732 /* ~"Ich war eine Zeit in den Höllen. Ziemlich lange. Man nimmt den Gestank mit der Zeit an."~ */
+  IF ~~ THEN REPLY #65733 /* ~"Du warst in den Höllen? Was hast du dort GEMACHT?"~ */ DO ~AddexperienceParty(12000)
+~ GOTO 693
+END
+
+IF ~~ THEN BEGIN 693 // from: 329.7 692.0 729.7
+  SAY #65734 /* ~"Weißt du, nun, da ist diese *Säule* auf Avernus, der ersten Ebene von Baator. Man nennt sie die Schädelsäule, aber es ist mehr eine Säule aus Köpfen."~ */
+  IF ~~ THEN GOTO 694
+END
+
+IF ~~ THEN BEGIN 694 // from: 693.0
+  SAY #65735 /* ~"Manche Knochenbrecher sagen, sie besteht *angeblich* aus den Köpfen von Dusseln, vorwiegend Weise und Gelehrte, die ihr Wissen zu Lebzeiten nutzten, um die Wahrheit ein bißchen zu verbiegen... so sehr, daß sie dadurch sogar jemanden verletzt oder, äh, getötet haben könnten. Jedenfalls, als ich *gestorben* bin, bin ich dort gelandet. Komisch, oder?"~ */
+  IF ~~ THEN REPLY #65846 /* ~"Nö."~ */ GOTO 695
+END
+
+IF ~~ THEN BEGIN 695 // from: 694.0
+  SAY #65736 /* ~"Äh..." Morte schweigt kurz. "Ja, du hast Recht. Es ist überhaupt nicht komisch. Weißt du, ich glaube, daß ich viel wußte, als ich noch am Leben war. Und vielleicht habe ich nicht immer die Wahrheit über das gesagt, was ich wußte. Ich glaube, als ich die Wahrheit ein- zweimal verdreht habe, könnte das dazu geführt haben, daß jemand vorzeitig ins Totenbuch aufgenommen wurde."~ */
+  IF ~~ THEN REPLY #65737 /* ~"Weißt du noch, wer?"~ */ GOTO 697
+  IF ~  CheckStatGT(Protagonist,13,WIS)
+~ THEN REPLY #65738 /* ~"Ich war es, oder?"~ */ GOTO 696
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65739 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65740 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 696 // from: 695.1
+  SAY #65741 /* ~Morte sieht dich kurz an. "Ja. Ich kann nicht sagen, *woher* ich es weiß, Meister, aber ich weiß es eben. Ich glaube, daß du der Grund bist, warum ich hergeschickt wurde. Das letzte Puzzlesteinchen im Mosaik. Das Dumme ist nur: Ich kann mich nicht daran erinnern, was geschehen ist. Ich kann mich nicht einmal daran erinnern, Mensch gewesen zu sein, oder wie mein Leben war, bevor ich auf der Säule aufgewacht bin."~ */
+  IF ~~ THEN REPLY #65742 /* ~"Warum hast du das vergessen?"~ */ GOTO 698
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65743 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65744 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 697 // from: 695.0
+  SAY #65745 /* ~"Ich kann nicht sagen, woher ich es weiß, Meister, aber ich glaube, *du* warst es. Zumindest einmal. Das Dumme ist nur: Ich kann mich nicht daran erinnern, was geschehen ist. Ich kann mich nicht einmal daran erinnern, Mensch gewesen zu sein, oder wie mein Leben war, bevor ich auf der Säule aufgewacht bin."~ */
+  IF ~~ THEN REPLY #65746 /* ~"Warum hast du das vergessen?"~ */ GOTO 698
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65747 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65748 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 698 // from: 696.0 697.0
+  SAY #65749 /* ~"So läuft das nun mal, wenn man stirbt, wie du ja sicher selbst weißt. Du... vergißt einfach. Ich denke, ich war im Leben wohl kein gediegenes Mitglied der Gemeinschaft... aber wer ist das schon?" Morte seufzt. "Ich kann nicht anders. Es gibt nichts Schlimmeres, als die ganze Zeit *ehrlich* zu sein."~ */
+  IF ~  Global("Chaotic_Morte_1","GLOBAL",0)
+~ THEN REPLY #65750 /* ~"Außer man wird in die Höllen geschickt. Das klingt schlimmer als die Wahrheit zu erzählen."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Morte_1","GLOBALLaw",1)
+~ GOTO 699
+  IF ~  Global("Lawful_Morte_1","GLOBAL",0)
+~ THEN REPLY #65751 /* ~"Nun, das ist wahr... Aber du mußt deine Lügen sorgfältiger wählen."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Morte_1","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Morte_1","GLOBALGood",-1)
+~ GOTO 699
+END
+
+IF ~~ THEN BEGIN 699 // from: 698.0 698.1
+  SAY #65752 /* ~"Ja... du hast Recht. *Schon wieder*." Morte klappert mit den Zähnen. Er tut das so, wie jemand anders, der mit den Fingern trommelt. "Ich glaube, daß alles Gute und Böse, alles Lügen und Betrügen einen eines Tages einholt. Und als ich ins Totenbuch gesteckt wurde, war ich eben an der Reihe."~ */
+  IF ~~ THEN REPLY #65753 /* ~"Also wie bist du dann der Säule entkommen?"~ */ JOURNAL #53633 /* ~Morte hat gesagt, daß ich es war, der ihn vor langer Zeit aus der Säule gezogen hat, obwohl er nicht genau wisse, wie. Er meinte auch, daß er dabei das gesamte in der Säule angesammelte Wissen verloren hätte... Was erklärt, warum er nicht *ganz* so nützlich ist, wie er meiner früheren Inkarnation versprochen hatte.~ */ GOTO 700
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65754 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65755 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 700 // from: 699.0
+  SAY #65757 /* ~"Nun... du hast mir geholfen, Meister. Als du an der Schädelsäule aufgekreuzt bist, habe ich mich nach vorne gedrängelt. Mein offensichtlicher Wissensschatz und Charme haben deine Aufmerksamkeit erregt. Du wußtest, daß *ich* der Schädel war, der am meisten wußte. Also habe ich eine Abmachung mit dir getroffen."~ */
+  IF ~~ THEN REPLY #65758 /* ~"Abmachung...?"~ */ DO ~PlaySoundNotRanged("SPTR_01")
+FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 701
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65759 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65760 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 701 // from: 700.0
+  SAY #65761 /* ~Während Morte spricht, wird dir ganz Rot vor Augen, und du hörst ein heulendes, ein fürchterlich *schreiendes* Meer von Stimmen, durchdringend, kreischend, hämmernd, und ALLE betteln und schreien nach Befreiung, und Mortes Stimme... blaß, fast nicht zu hören in der Menge. Er klingt verzweifelt, verängstigt und... auf klägliche, tragische Weise *verloren*. ~ */
+  IF ~~ THEN REPLY #65762 /* ~Echo: "Du. Schädel. Sprich."~ */ GOTO 702
+  IF ~~ THEN REPLY #65763 /* ~Mach dich von der Erinnerung frei.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 702 // from: 701.0
+  SAY #65764 /* ~Die heulenden Stimmen verstummen, und du siehst diesen kleinen Schädel, seine rissige Oberfläche in höllisches Licht getaucht, wie er seine Augen auf dich richtet. Blut und Eiter überströmen den Schädel, und seine Zähne klappern, als wäre ihm kalt. "Ich... ich k-k-kann dir helfen. Ich weiß, w-w-was du suchst... all diese Köpfe... all ihr Wissen... aber bitte, ich *flehe* dich an, befreie mich. Laß mich dir *helfen*. Ich sage dir alles, *alles.*"~ */
+  IF ~~ THEN REPLY #65765 /* ~Echo: "*Wirklich*? SCHWÖRE es, Schädel. SCHWÖRE, daß du mir bis ans Ende meiner Tage dienst, oder du bleibst für immer hier."~ */ GOTO 703
+  IF ~~ THEN REPLY #65766 /* ~Mach dich von der Erinnerung frei.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 703 // from: 702.0
+  SAY #65767 /* ~"Ich schwöre. Ich schwöre... aber bitte, *bitte* befreie mich... Ich..." Morte schluckt schwer, sein Stolz ist regelrecht greifbar. "Ich... *flehe* dich an. Laß mich dir *helfen*. Bitte."~ */
+  IF ~~ THEN REPLY #65768 /* ~Echo: "Sehr gut. Ich werde dich befreien."~ */ GOTO 704
+  IF ~~ THEN REPLY #65769 /* ~Mach dich von der Erinnerung frei.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 704 // from: 703.0
+  SAY #65770 /* ~Dein Blick verschiebt sich, als ob du dich bewegen würdest, und das heulende, schreiende Stimmengewirr setzt wieder ein, ein Alptraum aus Heulen, Katzenjammer, Flüchen und Beschimpfungen... du fühlst, wie deine Hände in den schleimigen Sumpf der Säule gleiten, die Bisse von Zähnen, Kiefern, und deine Hände umfassen den kleinen Schädel und ziehen, reißen ihn von der Säule wie alten Schorf...~ */
+  IF ~~ THEN REPLY #65771 /* ~Echo: "Es ist VOLLBRACHT."~ */ GOTO 705
+  IF ~~ THEN REPLY #65772 /* ~Mach dich von der Erinnerung frei.~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 705 // from: 704.0
+  SAY #65773 /* ~Du siehst den blutigen Schädel in deinen Händen an, seine Augen verklebt vom Eiter der Säule, und seine Zähne klappern, einmal, zweimal. Er erinnert dich an ein schreiendes Neugeborenes, hilflos - und in deinen Augen erbärmlich.~ */
+  IF ~  Global("Memory_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65774 /* ~Echo: "Ich habe dich befreit. Nun bestimme ich über dein Leben... und deinen Tod, Morte."~ */ DO ~SetGlobal("Memory_Morte_Pillar","GLOBAL",1)
+GiveExperience(Protagonist,12000)
+FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+  IF ~  Global("Memory_Morte_Pillar","GLOBAL",1)
+~ THEN REPLY #65775 /* ~Echo: "Ich habe dich befreit. Nun bestimme ich über dein Leben... und deinen Tod, Morte."~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 706
+END
+
+IF ~~ THEN BEGIN 706 // from: 701.1 702.1 703.1 704.1 705.0 705.1
+  SAY #65776 /* ~Deine Sicht wird unscharf, der Nebel der Vergangenheit verzieht sich, und Morte plappert noch immer. "Wir haben eine ganze Zeit darüber geredet, Meister, du und ich, ob die Abmachung funktionieren würde, und ich glaube, wir waren beide voneinander beeindruckt, also hast du mich von der Säule befreit, und seitdem bin ich nun bei dir."~ */
+  IF ~~ THEN REPLY #65777 /* ~"Aha... Und was geschah dann?"~ */ GOTO 707
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65778 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65779 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 707 // from: 706.0
+  SAY #65780 /* ~"Nun, ich habe nicht gewußt, daß ich alles Wissen der Säule verlieren würde, wenn ich sie verlasse... Ich meine, wie hätte ich das wissen können? Ich bin ja noch nie vorher außerhalb dieses verdammten Dings gewesen... Aber du hattest viel Verständnis dafür..."~ */
+  IF ~~ THEN REPLY #65781 /* ~"Du hast all dein Wissen verloren...?"~ */ DO ~PlaySoundNotRanged("SPTR_01")
+FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 708
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65782 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65783 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 708 // from: 707.0
+  SAY #65784 /* ~Deine Sicht wird wieder unscharf, dir wird schwindlig, und dein Magen dreht sich dir um - Du hörst das Knacken und Brechen von Knochen, und Mortes Heulen - Er heult vor Schmerz, schreit jemanden an, daß er aufhören soll, aufhören, ihn zu *töten*... und du schlägst um dich, wieder und wieder und...~ */
+  IF ~~ THEN REPLY #65785 /* ~Echo: "VERDAMMT seist du, Schädel, du hast mich BELOGEN. Ich RAMME DICH ZURÜCK IN DIESE VERFLUCHTE SÄULE UND LASS DICH DORT *STERBEN*."~ */ GOTO 709
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65786 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65787 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 709 // from: 708.0
+  SAY #65788 /* ~Du hörst das Geräusch von Knochen, die gegen etwas wie Metall schlagen - ein Boden oder eine Wand, und das Klappern von losen Zähnen. Du hörst Morte, der dich wie ein Hund jaulend anfleht aufzu...~ */
+  IF ~~ THEN REPLY #65789 /* ~Echo: "DEIN LEID IN DER SÄULE IST *NICHTS* GEGEN DIE *QUALEN*, DIE DU BEI MIR ERLEIDEN WIRST."~ */ DO ~FadeToColor([20.0],0)
+Wait(3)
+FadeFromColor([20.0],0)
+~ GOTO 710
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65790 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65791 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 710 // from: 709.0
+  SAY #65792 /* ~Deine Sicht wird verschwommen, und Mortes Schreie verstummen und blenden sich in den Rhythmus seines Plapperns ein. "Dann hast du gemerkt, daß ich immer noch zu etwas gut bin, also bin ich mit dir gegangen und seitdem immer bei dir geblieben."~ */
+  IF ~~ THEN REPLY #65793 /* ~"Morte, was wollte ich von der Säule? Und wie lange ist es her, daß ich dich befreit habe?"~ */ GOTO 711
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65794 /* ~"Ach... vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65795 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 711 // from: 710.0
+  SAY #65796 /* ~Morte denkt einen Moment nach. "Nun, ich weiß nicht genau, wie lange... Ewig, würde ich sagen. Ich habe immer alles getan, um dir zu helfen, aber..." Morte seufzt. "Es ist nicht leicht. Und was du an der Säule wolltest, weiß ich auch nicht. In dem Moment, als du mich befreitest, konnte ich mich nicht mehr erinnern."~ */
+  IF ~~ THEN REPLY #65797 /* ~"Morte, warum hast du nichts GESAGT, als wir in der Leichenhalle waren?" ~ */ GOTO 712
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65798 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65799 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 712 // from: 711.0
+  SAY #65800 /* ~Morte beginnt plötzlich, sich zu verteidigen. "Weil ich nie *weiß*, wer du sein wirst! Einige von deinen Inkarnationen waren echt total verrückt! Einmal bist du aufgewacht und warst davon überzeugt, daß *ich* dein Schädel wäre. Du hast mich um den Turm gejagt und wolltest mich fertigmachen und verschlingen... Gott sei Dank bist du dabei von einem Karren überfahren worden. Ein anderes Mal warst du 'gut und rechtschaffen' und wolltest mich zurück in die Säule zu stopfen, weil das der Ort sei, 'wo ich hingehöre'." Morte grinst. "*Deshalb*. Außerdem hat es nie etwas geschadet, daß du's nicht gewußt hast..."~ */
+  IF ~  Global("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65801 /* ~"Und du bist die ganze Zeit über bei mir geblieben?"~ */ GOTO 713
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65802 /* ~"Vergiß es, Morte. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~  GlobalGT("Know_Morte_Pillar","GLOBAL",0)
+~ THEN REPLY #65803 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 713 // from: 712.0
+  SAY #65804 /* ~"Ja klar, Meister. Ich hab's dir doch gesagt. Morte hält immer seine Versprechen." Er macht eine Pause. "Nun, meistens. He-he. Da war dieses junge Ding auf Arborea, die..."~ */
+  IF ~~ THEN DO ~SetGlobal("Know_Morte_Pillar","GLOBAL",1)
+~ GOTO 714
+END
+
+IF ~~ THEN BEGIN 714 // from: 713.0
+  SAY #65805 /* ~Du merkst plötzlich, daß sich Mortes Tonfall verändert hat. Hinter dem Witz bemerkst du, daß er etwas zu verbergen versucht. Etwas darüber, warum er bei dir ist.~ */
+  IF ~~ THEN REPLY #65806 /* ~"Morte, mal im Ernst, warum bist du immer noch bei mir?"~ */ GOTO 715
+  IF ~~ THEN REPLY #65807 /* ~"Also gut. Ich hätte noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65808 /* ~"Macht nichts, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 715 // from: 329.8 714.0 729.8
+  SAY #65809 /* ~"Meister, ich sagte, es ist, weil ich's dir versprochen habe, in Ordnung?" Er schaut verstört. "Was soll denn sonst der Grund sein?"~ */
+  IF ~~ THEN REPLY #65810 /* ~"Ich weiß es nicht. Du hättest nicht bei mir bleiben müssen, nachdem ich dich befreit hatte."~ */ GOTO 716
+  IF ~~ THEN REPLY #65811 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65812 /* ~"Vergiß es, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 716 // from: 715.0
+  SAY #65813 /* ~"Nun, natürlich nicht, Meister, aber ich..." Und plötzlich geht dir durch seinen Tonfall ein Licht auf, und du weißt *warum* er all die Zeit über bei dir geblieben ist.~ */
+  IF ~~ THEN REPLY #65814 /* ~"Du fühlst dich *schuldig*, weil du mich vor so langer Zeit in den Tod geführt hast, oder? Und seitdem leidest du darunter."~ */ GOTO 717
+END
+
+IF ~~ THEN BEGIN 717 // from: 716.0
+  SAY #65815 /* ~"Ach komm schon, Meister. Ich und *schuldig*? Ich bin's: Morte."~ */
+  IF ~~ THEN REPLY #65816 /* ~"Nein, ich glaube, das war alles. Als ich dich vor deinem wohlverdienten Schicksal rettete, *konntest* du einfach nicht anders, als mir helfen zu wollen. Und als du hättest verschwinden können, bist du bei mir geblieben, weil du dich mir verpflichtet fühlst."~ */ GOTO 718
+END
+
+IF ~~ THEN BEGIN 718 // from: 717.0
+  SAY #65817 /* ~Morte schweigt einen Moment und sieht dich an. "Vielleicht. Weißt du, was komisch ist? Am Anfang wußte ich nicht, was für ein Gefühl das ist. Es nagt irgendwie langsam an dir, weißt du?"~ */
+  IF ~~ THEN GOTO 719
+END
+
+IF ~~ THEN BEGIN 719 // from: 718.0
+  SAY #65818 /* ~"Ich meine, erst dachte ich, es wäre eine Nebenwirkung irgendeines Zaubers, der mich an dich gebunden hat... Aber nach ein paar hundert Jahren merkte ich, es ist *mehr* als das... etwas Tieferes. Ich fühlte mich einfach irgendwie gebunden, *verbunden* mit dir. Vielleicht ist es all dein Leid, Meister... deine Qualen. Ich weiß es nicht. Vielleicht fühlte ich mich... ich weiß es nicht, *verantwortlich* für was auch immer ich getan habe. Was, wenn ich etwas getan habe, das dich in diese Situation gebracht hat?"~ */
+  IF ~~ THEN DO ~SetGlobal("Know_Morte_Pillar","GLOBAL",2)
+~ GOTO 720
+END
+
+IF ~~ THEN BEGIN 720 // from: 719.0
+  SAY #65820 /* ~"Das Dumme ist, ich glaube nicht, daß ich - oder wer immer ich war - jemals *sehen* mußte, welche Auswirkungen meine Lügen und Betrügereien haben, und als ich dich zum ersten Mal gesehen habe, als ich gefangen in der Säule war, da *wußte* ich irgendwie, daß du derjenige warst, den ich verraten habe. Damals... vor langer Zeit." Morte seufzt. "Und das ist alles, was ich weiß."~ */
+  IF ~~ THEN REPLY #65821 /* ~"Verstehe. Danke für die Klärung, Morte."~ */ DO ~AddexperienceParty(12000)
+MoraleInc("Morte",3)
+PermanentStatChange("Morte",STR,RAISE,4)
+PermanentStatChange("Morte",DEX,RAISE,2)
+PermanentStatChange("Morte",CON,RAISE,2)
+SetGlobal("BD_MorteStory","GLOBAL",1)
+~ JOURNAL #65825 /* ~Ich habe entdeckt, warum Morte die ganze Zeit bei mir geblieben ist... Er fühlt sich schuldig, weil er mich einmal, als er noch lebte, getötet hat. Als ich ihn mit seinen Schuldgefühlen konfrontierte, schien er eine ziemliche Last loszuwerden, und nun scheint er deshalb viel stärker zu sein.~ */ GOTO 721
+END
+
+IF ~~ THEN BEGIN 721 // from: 720.0
+  SAY #65822 /* ~"Pah, dank nicht mir..." Morte seufzt. Und zu deiner Überraschung scheint seine Stimme nun irgendwie stärker zu sein, zuversichtlicher. Einige Risse und Brüche seines Schädels sind verschwunden, als wären sie verheilt. "Ich muß dir danken. Ich fühle mich jetzt von einer tonnenschweren Last befreit..."~ */
+  IF ~~ THEN REPLY #65823 /* ~"Ich hätte da noch ein paar Fragen."~ */ GOTO 329
+  IF ~~ THEN REPLY #65824 /* ~"Also gut, Morte. Gehn wir weiter."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 722 // from: 329.10 729.10
+  SAY #65826 /* ~"Nun, sie ist eine Nachthexe. Und sie war zweifellos dumm genug, DICH unsterblich zu machen, ausgerechnet dich. Ich meine, sie hätte doch auch mich auswählen können." Morte verdreht die Augen. "Trotzdem: Jemand, der verblödet genug ist, sich mit der Dame der Schmerzen anzulegen, ist nicht unbedingt jemand, den wir suchen sollten."~ */
+  IF ~~ THEN REPLY #65827 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65828 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 723 // from: 329.9 729.9
+  SAY #65829 /* ~"Es ist ein Krieg. Ein riesiger, blutiger, chaotischer Krieg. Er findet überall statt, obwohl du ihn nicht immer sehen kannst."~ */
+  IF ~~ THEN REPLY #65830 /* ~"Erzähl weiter..."~ */ GOTO 724
+  IF ~~ THEN REPLY #65831 /* ~"Macht nichts. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65832 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 724 // from: 723.0
+  SAY #65833 /* ~"Also, Meister, es ist ein Krieg zwischen zwei bösen Rassen: Dämonen und Teufel. Vor langer Zeit wußten sie nichts voneinander. Die Teufel waren böse, aber es war eine Art 'geregelte' Bosheit. Die Dämonen waren auch böse, aber sie gingen lockerer damit um - impulsiver, chaotischer, weniger organisiert. Die Teufel waren wie Politiker, die Dämonen waren wie Metzger."~ */
+  IF ~~ THEN GOTO 725
+END
+
+IF ~~ THEN BEGIN 725 // from: 724.0
+  SAY #65834 /* ~"Dann eines Tages trafen sich die beiden Rassen. Sie sahen sich an, und es gefiel ihnen nicht, wie die jeweils andere Rasse mit dem Bösen umging. Und seitdem kämpfen sie. Es ist ein einziger Alptraum. Aber es beschäftigt diese beiden Rassen wenigstens, also fallen sie nicht über die ganzen Ebenen her."~ */
+  IF ~~ THEN REPLY #65835 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65836 /* ~"Das ist alles, was ich wissen wollte. Gehn wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 726 // from: 329.11 729.11
+  SAY #65837 /* ~"Keine Ahnung, Meister. Ich hab es irgendwie vergessen, als ich starb. Und es macht mir auch nicht viel aus. Wenigstens hat nach meinem Tod etwas auf mich gewartet, auch wenn es das Leben als wandelnder Schädel ist. Ich glaube, es hätte schlimmer kommen können."~ */
+  IF ~~ THEN REPLY #65839 /* ~"Was ist mit deinem Körper geschehen?"~ */ GOTO 727
+  IF ~~ THEN REPLY #65840 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65841 /* ~"Also gut. Gehen wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 727 // from: 726.0
+  SAY #65838 /* ~"Hey... Ich weiß es nicht, okay? Es ist einfach weg." Morte schaut dich böse an. "Glaub bloß nicht, daß ich es VERMISSE. Mir geht es gut, so wie ich bin, und ich brauche deine halbseidenen Urteile und spitzen Bemerkungen nicht, verstanden?"~ */
+  IF ~~ THEN REPLY #65842 /* ~"Verstehe. Ich hätte da noch ein paar Fragen..."~ */ GOTO 329
+  IF ~~ THEN REPLY #65843 /* ~"Egal. Gehn wir. Los, beweg deine Knochen."~ */ GOTO 728
+END
+
+IF ~~ THEN BEGIN 728 // from: 727.1
+  SAY #65844 /* ~Morte sieht dich böse an. "Ich bin noch nicht überzeugt, daß du nicht eine Art wandelnder Fluch bist, der dazu verdammt wurde, mir zu folgen."~ */
+  IF ~~ THEN REPLY #65845 /* ~"Wie schön er redet... Gehn wir."~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 742 737 733 even though they appear after this state */
+~  Global("AR0200_Visited","GLOBAL",1)
+InParty("Morte")
+!GlobalGT("Fortress_Morte","GLOBAL",2)
+~ THEN BEGIN 729 // from:
+  SAY #66344 /* ~"Was nagt an dir, Meister?"~ [MRT515] */
+  IF ~~ THEN REPLY #66345 /* ~"Kannst du mir noch einmal vorlesen, was auf meinen Rücken tätowiert ist?"~ */ GOTO 649
+  IF ~~ THEN REPLY #66346 /* ~"Kannst du mir etwas über Sigil erzählen?"~ */ GOTO 659
+  IF ~  Global("Morte_Talent","GLOBAL",0)
+~ THEN REPLY #66347 /* ~"Morte... Es macht mir nichts aus, wenn du mich begleitest, aber kannst du vielleicht noch etwas *anderes* außer plappern?"~ */ GOTO 663
+  IF ~  Global("Morte_Talent","GLOBAL",1)
+~ THEN REPLY #66348 /* ~"Morte... Was sind noch mal deine besonderen Talente?"~ */ GOTO 666
+  IF ~  Global("Morte_Tattoo_XP","GLOBAL",1)
+~ THEN REPLY #66349 /* ~"Morte, warum hast du mir die andere Zeile meiner Tätowierungen verschwiegen?"~ */ GOTO 654
+  IF ~~ THEN REPLY #66350 /* ~"Ich könnte einen Rat brauchen. Was glaubst du sollten wir jetzt tun?"~ */ GOTO 669
+  IF ~  Global("Know_Mimir","GLOBAL",1)
+Global("Morte_Story","GLOBAL",0)
+~ THEN REPLY #66351 /* ~"Du hast gesagt, du seist ein Mimir, oder, Morte?"~ */ GOTO 684
+  IF ~  Global("Morte_Story","GLOBAL",1)
+~ THEN REPLY #66352 /* ~"Sag mir noch mal, wie du auf der Schädelsäule gelandet bist."~ */ GOTO 693
+  IF ~  Global("Know_Morte_Pillar","GLOBAL",1)
+~ THEN REPLY #66353 /* ~"Morte, warum bist du mir gefolgt, nachdem ich von der Säule weggegangen bin?"~ */ GOTO 715
+  IF ~  GlobalGT("Know_Blood_War","GLOBAL",0)
+~ THEN REPLY #66354 /* ~"Was weißt du über den Blutkrieg?"~ */ GOTO 723
+  IF ~  GlobalGT("Know_Ravel","GLOBAL",0)
+Global("Ravel","GLOBAL",0)
+~ THEN REPLY #66355 /* ~"Was weißt du über die Nachthexe Ravel?"~ */ GOTO 722
+  IF ~~ THEN REPLY #66356 /* ~"Wie bist du gestorben, Morte?"~ */ GOTO 726
+  IF ~~ THEN REPLY #66357 /* ~"Nichts, Morte. Ich wollte nur sehen, ob du mir noch folgst."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 730 // from:
+  SAY #66816 /* ~"Hey, Meister, nimmst du das diesen beiden ab? Sie könnten *mir* noch das eine oder andere beibringen..."~ [MRT387] */
+  IF ~~ THEN REPLY #66817 /* ~"Ich glaub es, Morte. Geh'n wir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 731 // from:
+  SAY #67510 /* ~"Ich möchte hier nur mal eine Bemerkung einschieben und darauf hinweisen, daß ich nichts sagen werde, das die allgemeine Stimmung vernichten könnte, Meister. Ich werde hier einfach schweben und beobachten. Kümmere dich nicht um mich - mich hier drüben,wie ich hier schwebe und beobachte, ja, das bin ich."~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 418
+END
+
+IF ~~ THEN BEGIN 732 // from:
+  SAY #67600 /* ~"Würdet ihr beide wohl den Quatsch sein lassen, bevor ich gezwungen bin einen Dabus hierherzuholen, um euch auseinanderzubringen!" Morte brummt. "Oder laßt mich zumindest mitquatschen."
+
+~ */
+  IF ~~ THEN EXTERN ~DANNAH~ 446
+END
+
+IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3)
+Global("Absorb","GLOBAL",0)
+~ THEN BEGIN 733 // from:
+  SAY #68171 /* ~Als du die Macht anwendest, beginnt Morte plötzlich zu sprechen. "Warte einen Moment, Meister. Da gibt es... ein paar Dinge, die du wissen musst."~ [MRT242] */
+  IF ~~ THEN REPLY #68176 /* ~"Morte...?! Du bist gar nicht tot!"~ */ DO ~SetGlobal("Fortress_Morte","GLOBAL",4)
+JoinPartyEx(TRUE)
+~ GOTO 734
+END
+
+IF ~~ THEN BEGIN 734 // from: 733.0
+  SAY #68172 /* ~"Also, ja...Wenn du erst mal so lange tot bist wie ich, dann kannst du es auch sehr gut imitieren. Ich habe praktisch eure ganze Unterhaltung angehört. Wende deine Macht auf jemand anderen an... Ich brauch' das nicht."~ */
+  IF ~~ THEN REPLY #68177 /* ~"Also wolltest du hier *rumliegen*, während sie mir das Fell über die Ohren ziehen?"~ */ GOTO 735
+END
+
+IF ~~ THEN BEGIN 735 // from: 734.0
+  SAY #68173 /* ~"Nun, *ja*, Meister. Es ist nicht so, als ob du stirbst. Ich meine, wenn du versagt hast, dann brauchst du jemanden, der sich für dich erinnert. Und schließlich weißt du, wie nutzlos ich im Kampf bin... zumindest, wenn ich nicht gerade den einen oder anderen Magier beleidige..."~ */
+  IF ~  Global("Trans_Vanish","GLOBAL",0)
+GlobalGT("Fortress_Party_Roof","GLOBAL",1)
+~ THEN REPLY #68178 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ GOTO 736
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+GlobalGT("Fortress_Dakkon","GLOBAL",0)
+~ THEN REPLY #68189 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204d0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+GlobalGT("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68190 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204a0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+GlobalGT("Fortress_Grace","GLOBAL",0)
+~ THEN REPLY #68191 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204g0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",0)
+~ THEN REPLY #68192 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204i0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+~ THEN REPLY #68193 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Vhailor","GLOBAL",0)
+GlobalGT("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68194 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204n0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68239 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204tr",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",1)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68438 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204tr",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68439 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204tr",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",1)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+~ THEN REPLY #68446 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  Global("Trans_Vanish","GLOBAL",0)
+Global("Fortress_Party_Roof","GLOBAL",1)
+~ THEN REPLY #68503 /* ~"Dann ist das vielleicht genau das, was du für mich tun mußt. Wir reden *später* darüber, Morte..."~ */ EXTERN ~DTRANS~ 142
+END
+
+IF ~~ THEN BEGIN 736 // from: 735.0
+  SAY #68174 /* ~Du wendest deine Macht wieder an...~ */
+  IF ~  GlobalGT("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68175 /* ~Belebe Annah wieder.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204a0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Dakkon","GLOBAL",0)
+~ THEN REPLY #68179 /* ~Belebe Dak'kon wieder.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204d0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Grace","GLOBAL",0)
+~ THEN REPLY #68180 /* ~Belebe Grace, die Gefallene, wieder.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204g0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68181 /* ~Belebe Nordom wieder.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204n0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",0)
+~ THEN REPLY #68182 /* ~Belebe Ignus wieder.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204i0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+~ THEN REPLY #68183 /* ~Belebe Vhailor wieder.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+END
+
+IF WEIGHT #2 ~  Global("Fortress_Morte","GLOBAL",3)
+GlobalGT("Absorb","GLOBAL",0)
+~ THEN BEGIN 737 // from:
+  SAY #68310 /* ~Als du deine Macht anwendest, schwebt Morte plötzlich in die Luft. "Äh... Warte, Meister. Du mußt mich nicht zum Leben erwecken. Ich habe hier nur so ein bißchen, äh, rumgelegen und habe eurem Gespräch gelauscht."~ */
+  IF ~~ THEN REPLY #68311 /* ~DU HAST DEINEN TOD VORGETÄUSCHT.~ */ GOTO 738
+END
+
+IF ~~ THEN BEGIN 738 // from: 737.0
+  SAY #68312 /* ~"Nun, ja, ich meine, ich *bin* doch schon tot und... äh, Meister, was ist mit deiner *Stimme* los?"~ */
+  IF ~~ THEN REPLY #68313 /* ~ICH... BIN NUN ETWAS ANDERES. DIE ZEIT WIRD KNAPP, UND BALD WERDEN MICH DIE ZEIT UND DAS SCHICKSAL EINHOLEN. ICH WERDE DICH ZURÜCK NACH SIGIL BRINGEN, MORTE, WENN DU DAS WÜNSCHST.~ */ GOTO 739
+END
+
+IF ~~ THEN BEGIN 739 // from: 738.0
+  SAY #68314 /* ~"Wa...? Mich zurückbringen? Und was ist mit *dir*? Komm schon, Meister, ich mag vielleicht ein *Feigling* sein, aber ich werde dich keinesfalls hier zurücklassen."~ */
+  IF ~~ THEN REPLY #68315 /* ~VIELE VERBRECHEN WURDEN BEGANGEN, ALS ICH UND MEINE STERBLICHKEIT GETRENNT WAREN. DIESE VERBRECHEN HABEN IHREN... PREIS. WO ICH BALD SEIN WERDE, KANNST DU NICHT HINGEHEN. ~ */ GOTO 740
+END
+
+IF ~~ THEN BEGIN 740 // from: 739.0
+  SAY #68316 /* ~"Nun, ich *könnte* trotzdem mit dir gehen, Meister, wenn du möchtest. Ich meine, wir haben schon Schlimmeres erl..."~ */
+  IF ~~ THEN REPLY #68317 /* ~NICHT DIESES MAL. VIELLEICHT TREFFEN WIR UNS EINES TAGES WIEDER, AUF EINER ANDEREN EBENE. ABER NICHT JETZT.~ */ GOTO 741
+END
+
+IF ~~ THEN BEGIN 741 // from: 740.0
+  SAY #68318 /* ~Morte starrt dich kurz an und seufzt. "Ohne jetzt sentimental zu werden... aber es war mir ein Vergnügen, Meister."~ [MRT109] */
+  IF ~  GlobalGT("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68319 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204a0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68320 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204d0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68321 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204g0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68322 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204n0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68323 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204i0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68324 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+~ THEN REPLY #68325 /* ~LEB WOHL, MORTE.~ */ DO ~QuitGame(FINALE,0,0)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",0)
+GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+~ THEN REPLY #68490 /* ~LEB WOHL, MORTE.~ */ DO ~StartCutSceneMode()
+StartCutSceneEx("1204v0",FALSE)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Vhailor_Battle","GLOBAL",1)
+Global("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68491 /* ~LEB WOHL, MORTE.~ */ DO ~QuitGame(FINALE,0,0)
+~ EXIT
+  IF ~  GlobalGT("Fortress_Ignus","GLOBAL",0)
+Global("Fortress_Ignus_Battle","GLOBAL",1)
+Global("Fortress_Vhailor","GLOBAL",0)
+Global("Fortress_Grace","GLOBAL",0)
+Global("Fortress_Dakkon","GLOBAL",0)
+Global("Fortress_Annah","GLOBAL",0)
+Global("Fortress_Nordom","GLOBAL",0)
+~ THEN REPLY #68492 /* ~LEB WOHL, MORTE.~ */ DO ~QuitGame(FINALE,0,0)
+~ EXIT
+END
+
+IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
+~ THEN BEGIN 742 // from:
+  SAY #68408 /* ~Morte starrt dich kurz an und seufzt. "Ohne jetzt sentimental zu werden... aber es war mir ein Vergnügen, Meister."~ [MRT109] */
+  IF ~~ THEN REPLY #68409 /* ~"Dann machen wir uns an die Arbeit..."~ */ EXIT
+END

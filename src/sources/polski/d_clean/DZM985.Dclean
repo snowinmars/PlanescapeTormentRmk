@@ -1,0 +1,53 @@
+IF ~  Global("Topple_985","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #45515 /* ~Ten trup - numer "985" - nagle zamarł; sądząc po stanie jego lewej nogi, wydaje się, że jakiś proces gnicia albo coś w tym rodzaju przegryzło mu się przez kolano. Truposz chwieje się w przód i w tył, usiłując zachować równowagę.~ */
+IF ~  NearbyDialog("Dmorte") ~ THEN REPLY #45516 /* ~Popchnij truposza.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_ZM985_1","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_ZM985_1","GLOBALGood",-1) PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482
+IF ~  !NearbyDialog("Dmorte") ~ THEN REPLY #45517 /* ~Popchnij truposza.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_ZM985_1","GLOBALLaw",-1) IncrementGlobalOnceEx("GLOBALEvil_ZM985_1","GLOBALGood",-1) PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 3
+IF ~  NearbyDialog("Dmorte") ~ THEN REPLY #45518 /* ~Postaraj się pomóc truposzowi złapać równowagę.~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_ZM985_1","GLOBALLaw",1) IncrementGlobalOnceEx("GLOBALGood_ZM985_1","GLOBALGood",1) ~ GOTO 4
+IF ~  !NearbyDialog("Dmorte") ~ THEN REPLY #45519 /* ~Postaraj się pomóc truposzowi złapać równowagę.~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_ZM985_1","GLOBALLaw",1) IncrementGlobalOnceEx("GLOBALGood_ZM985_1","GLOBALGood",1) ~ GOTO 6
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45520 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45521 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+IF ~~ THEN REPLY #45522 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #45523 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.4 5.0 5.1 5.2
+SAY #45524 /* ~Trup patrzy przed siebie w zapomnieniu. Nie daje żadnych oznak, że cię usłyszał.~ */
+IF ~~ THEN REPLY #45525 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.5 5.3
+SAY #45526 /* ~Truposz nie rusza się. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.~ */
+IF ~~ THEN REPLY #45527 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 6.0
+SAY #45528 /* ~Słychać *trzask* z lewej nogi truposza i cały pada na ziemię niczym martwe drzewo. Jego tors uderza w kamienną posadzkę i roztrzaskuje się niczym zgniły arbuz, a z dziury z głośnym gulgotem wylewa się posoka i cuchnąca maź. Ku twemu zdziwieniu nie wydaje się, aby ktokolwiek zauważył upadek truposza... a co dziwniejsze, lewa noga wciąż tkwi w tym samym miejscu, gdzie była przed upadkiem całego ciała, jak gdyby stała na baczność. Po chwili, noga przewraca się z wilgotnym stuknięciem.~ */
+IF ~~ THEN DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) CreateItem("Limb985",1,0,0) SetGlobal("Topple_985","GLOBAL",1) Kill(Myself) Deactivate(Myself) ~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2
+SAY #45530 /* ~Wyciągasz rękę w kierunku lewego ramienia truposza, aby pomóc mu złapać równowagę. Jednakże, gdy chwytasz jego ramię, truposz nagle przechyla się w prawo, i wszystko kończy się na tym, że zamiast pomagać mu złapać równowagę, popychasz go.~ */
+IF ~~ THEN DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ EXTERN ~DMORTE~ 482
+END
+
+IF ~  GlobalGT("Topple_985","GLOBAL",0)
+~ THEN BEGIN 5 // from:
+SAY #45531 /* ~Wygląda na to, że ktoś zamienił lewą rękę i lewą nogę truposza na jakieś kończyny wymienne wzięte od innych truposzy. Lewa noga jest krótsza niż ta stara, ale teraz truposz jest przynajmniej w stanie stać.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #45532 /* ~"Przepraszam, że cię wcześniej przewróciłem. To był wypadek."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #45533 /* ~"Przepraszam, że cię wcześniej przewróciłem. To był wypadek."~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #45534 /* ~"Przecież wiem, że nie jesteś zombie. Nikogo nie oszukasz."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #45535 /* ~Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.~ */ GOTO 2
+IF ~~ THEN REPLY #45536 /* ~"Miło było z tobą pogadać. Żegnaj."~ */ EXIT
+IF ~~ THEN REPLY #45537 /* ~Zostaw truposza w spokoju.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.3
+SAY #45538 /* ~Wyciągasz rękę w kierunku lewego ramienia truposza, aby pomóc mu złapać równowagę. Jednakże, gdy chwytasz jego ramię, truposz nagle przechyla się w prawo, i wszystko kończy się na tym, że zamiast pomagać mu złapać równowagę, popychasz go.~ */
+IF ~~ THEN REPLY #45539 /* ~"Uh-oh..."~ */ DO ~PlaySoundNotRanged("SPE_11") SetAnimState(Myself,ANIM_MIMEDIE) ~ GOTO 3
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.0
+SAY #64205 /* ~Gdy tak patrzysz na przegniłe szczątki truposza, zauważasz, iż jego lewa ręka chyba wyszła z upadku bez szwanku - urwała się od korpusu w trakcie upadku i wygląda na to, że nie została tknięta przez żaden proces gnicia, który zaatakował resztę ciała.~ */
+IF ~~ THEN REPLY #64206 /* ~"Hmmm. Zastanawiam się, czy nie można by w jakiś sposób zrobić pożytku z tej ręki..."~ */ EXIT
+END

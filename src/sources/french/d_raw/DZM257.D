@@ -1,0 +1,69 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM257.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM257~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #6507 /* ~Les yeux de ce cadavre sont rapprochés et il souffre d'un léger strabisme divergent : l'un de ses yeux donne sur la gauche, l'autre sur la droite. Tu peux tout juste déchiffrer le numéro '257' gravé sur son front meurtri ; on dirait qu'il a reçu plusieurs coups sur la tête, ce qui rend le numéro difficile à déchiffrer.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #6510 /* ~"Ça ne te donne pas le mal de mer, le fait d'avoir les yeux qui foutent le camp comme ça ?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #6511 /* ~"Ça ne te donne pas le mal de mer, le fait d'avoir les yeux qui foutent le camp comme ça ?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #6512 /* ~"Je sais que tu n'es pas un zombi. Tu ne trompes personne."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #6513 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+  IF ~~ THEN REPLY #6514 /* ~"Je suis heureux de t'avoir parlé. Au revoir."~ */ EXIT
+  IF ~~ THEN REPLY #6515 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+  SAY #6508 /* ~Il ne semble pas y avoir une seule lueur de compréhension dans les yeux du cadavre ; ils regardent en silence vers la droite et la gauche.~ */
+  IF ~~ THEN REPLY #6516 /* ~Laisse le cadavre tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #6509 /* ~L'esprit resurgit dans le corps avec une violence telle que, d'une simple contraction musculaire, le corps est projeté en arrière ! Il se remet debout en un instant, dansant et gesticulant frénétiquement, bougeant les bras ; il arrache ses points de suture, et des morceaux de chair flasque virevoltent. Ses yeux globuleux tournent dans sa tête et il ne cesse de rire sottement…~ */
+  IF ~~ THEN REPLY #6517 /* ~"Euh… j'ai une question à te poser, esprit…"~ */ GOTO 3
+  IF ~~ THEN REPLY #9558 /* ~Laisse l'esprit tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #9553 /* ~Le corps possédé sautille et gambade en chantant d'une voix qui enfle et retombe de manière aléatoire. "TU es l'ESPRIT, je suis le VIVANT, tu DOIS répondre à mes QUESTIONS !" Ta perplexité semble le ravir ; il met deux doigts dans sa bouche, l'étire en un affreux sourire avec un rire maniaque tout en tirant une langue blanche qui te paraît très chargée.~ */
+  IF ~~ THEN REPLY #9559 /* ~"Très bien… Pose tes questions."~ */ GOTO 4
+  IF ~~ THEN REPLY #9560 /* ~"Non. Je voudrais *te* poser une question…"~ */ GOTO 5
+  IF ~~ THEN REPLY #9561 /* ~Laisse l'esprit à son chaos.~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 4.0 5.0
+  SAY #9554 /* ~L'esprit paraît se calmer, mais ça ne dure qu'un instant, car il se met à hurler une litanie de mots sans suite, à pleins poumons. La cacophonie est telle que tu en as la tête qui tourne ; tu vas tomber à genoux quand elle cesse, aussi soudainement qu'elle a débuté. Le cadavre ne fait plus que tressaillir de temps en temps.~ */
+  IF ~~ THEN REPLY #9562 /* ~"Je n'ai pas tout compris. Tu peux répéter ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Zom257_1","GLOBALLaw",-1)
+~ GOTO 4
+  IF ~~ THEN REPLY #9563 /* ~"Je ne comprends pas. Mais, j'ai une question…"~ */ GOTO 5
+  IF ~~ THEN REPLY #9564 /* ~"Je ne te comprends pas. Au revoir."~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 5 // from: 3.1 4.1 5.1
+  SAY #9555 /* ~De nouveau, l'esprit chantonne : "Questions des VIVANTS AUX doivent les MORTS répondre ; c'était AINSI, AINSI c'est, sera en toujours ainsi IL. Tu dois mes questions RÉPONDRE à !" Ton expression paraît le réjouir ; il cabriole maintenant avec un tel enthousiasme que tu songes que le cadavre ne résistera pas. Tu entends presque ses os casser et ses tendons se briser tandis qu'il tourbillonne autour de toi.~ */
+  IF ~~ THEN REPLY #9565 /* ~"Très bien… Pose tes questions."~ */ GOTO 4
+  IF ~~ THEN REPLY #9566 /* ~"Tu ne comprends pas. J'ai une question à *te* poser…"~ */ GOTO 5
+  IF ~~ THEN REPLY #9567 /* ~Abandonne et laisse l'esprit à son bavardage.~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 3.2 4.2 5.2
+  SAY #9556 /* ~Alors que l'esprit déserte le cadavre, ses lèvres déchiquetées s'étirent en un sourire sagace et ses yeux brillants te fixent du regard acéré d'un psychopathe, puis il murmure deux mots, en tout trois syllabes prononcées avec une extrême précision : "Les Limbes…"~ */
+  IF ~~ THEN REPLY #9568 /* ~"Quoi ?"~ */ GOTO 7
+  IF ~~ THEN REPLY #9569 /* ~Ignore-le, tourne les talon.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+  SAY #9557 /* ~… et il disparaît. Tu n'es guère plus avancé, et tu te sens même un peu mal à l'aise. Quant au zombi, il reprend son travail.~ */
+  IF ~~ THEN EXIT
+END

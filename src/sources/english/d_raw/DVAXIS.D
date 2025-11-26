@@ -1,0 +1,939 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DVAXIS.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DVAXIS~
+
+IF ~  Global("Vaxis","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #453 /* ~The shambling corpse gazes at you with vacant eyes. The number "821" is carved into his forehead, and his lips have been stitched closed. The faint smell of formaldehyde emanates from the body.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #454 /* ~"So... seen anything interesting going on?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 5
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #455 /* ~"So... seen anything interesting going on?"~ */ GOTO 5
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #456 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 5
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #457 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 1
+  IF ~~ THEN REPLY #458 /* ~"It was great talking to you. Farewell."~ */ GOTO 5
+  IF ~~ THEN REPLY #459 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 1 // from: 0.3
+  SAY #460 /* ~Oddly enough, your ability does not seem to work on this corpse.~ */
+  IF ~~ THEN REPLY #461 /* ~Poke it in the eye.~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ GOTO 2
+  IF ~~ THEN REPLY #462 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY #463 /* ~The corpse gives a muffled yelp as you jab it in the eye, and its hands shoot up to cover its face. It begins mumbling what you take for obscenities under its breath.~ */
+  IF ~~ THEN REPLY #464 /* ~"You're not a zombie! Who are you?"~ */ JOURNAL #64513 /* ~One of the zombies on the second floor of the Mortuary wasn't a zombie at all, but a man in disguise. Why anyone would disguise themselves as a zombie is beyond me. ~ */ GOTO 6
+  IF ~~ THEN REPLY #465 /* ~"Why are you disguised as a corpse?"~ */ JOURNAL #64513 /* ~One of the zombies on the second floor of the Mortuary wasn't a zombie at all, but a man in disguise. Why anyone would disguise themselves as a zombie is beyond me. ~ */ GOTO 6
+  IF ~~ THEN REPLY #466 /* ~Leave. Quickly.~ */ JOURNAL #64513 /* ~One of the zombies on the second floor of the Mortuary wasn't a zombie at all, but a man in disguise. Why anyone would disguise themselves as a zombie is beyond me. ~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.2 5.2
+  SAY #467 /* ~As you turn to leave, the 'zombie' mumbles something... it looks like he's trying to say something, but it's difficult with his lips stitched closed. "Hoo YU? Wut yu wunt?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #468 /* ~"I'm looking for a way out of here. Can you help me?"~ */ GOTO 7
+  IF ~~ THEN REPLY #469 /* ~"Who are you?"~ */ GOTO 7
+  IF ~~ THEN REPLY #470 /* ~"Tell me who you are, or I'll call the guards."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #472 /* ~Lie: "Why... I was looking for you."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 24
+  IF ~~ THEN REPLY #473 /* ~"I'm asking the questions here, *zombie.* Tell me who you are, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 7
+  IF ~~ THEN REPLY #474 /* ~"Sorry to trouble you... whoever you are. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.5 6.5 7.8 8.5 10.4 11.4 12.2 13.5 14.4 15.2 16.4 17.2 18.1 19.3 20.1 25.6 27.6 31.6 32.5 34.2 35.6 59.1 74.1 75.3 76.1
+  SAY #471 /* ~As you are turning to leave, the zombie makes a low growl in his throat. "Yoo say nuthin to nuh-whun bout ME. Yoo bee kwi-it. Say NUTHIN t'Duhstees." He puts his finger across lips. "Shhhhhh." He then draws the finger across his throat. "Or I gut yuu in yer sleep. You HEER me?"~ */
+  IF ~~ THEN REPLY #475 /* ~"Did you just THREATEN me? That does it... prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #476 /* ~Lie: "I wouldn't even *think* of telling the Dustmen about you."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_2","GLOBALGood",-1)
+~ EXIT
+  IF ~~ THEN REPLY #477 /* ~Truth: "I promise I won't say anything to the Dustmen about you."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_1","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_1","GLOBALGood",1)
+~ EXIT
+  IF ~~ THEN REPLY #478 /* ~"Whatever. You mind your affairs, and I'll mind mine."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.0 0.1 0.2 0.4
+  SAY #479 /* ~As you address the zombie, it blinks in surprise. "Eh? Wut?"~ */
+  IF ~~ THEN REPLY #480 /* ~"You're not a zombie! Who are you?"~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ JOURNAL #64513 /* ~One of the zombies on the second floor of the Mortuary wasn't a zombie at all, but a man in disguise. Why anyone would disguise themselves as a zombie is beyond me. ~ */ GOTO 6
+  IF ~~ THEN REPLY #481 /* ~"Why are you disguised as a corpse?"~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ JOURNAL #64513 /* ~One of the zombies on the second floor of the Mortuary wasn't a zombie at all, but a man in disguise. Why anyone would disguise themselves as a zombie is beyond me. ~ */ GOTO 6
+  IF ~~ THEN REPLY #482 /* ~Leave. Quickly.~ */ DO ~SetGlobal("Vaxis","GLOBAL",1)
+~ JOURNAL #64513 /* ~One of the zombies on the second floor of the Mortuary wasn't a zombie at all, but a man in disguise. Why anyone would disguise themselves as a zombie is beyond me. ~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 2.1 5.0 5.1
+  SAY #483 /* ~The 'zombie' is trying to respond behind stitched lips; he has a peculiar half-frightened, half-angry expression. "Hoo YU? Wut yu wunt?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #484 /* ~"I'm looking for a way out of here. Can you help me?"~ */ GOTO 7
+  IF ~~ THEN REPLY #485 /* ~"Who are you?"~ */ GOTO 7
+  IF ~~ THEN REPLY #486 /* ~"Tell me who you are, or I'll call the guards."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #487 /* ~Lie: "Why... I was looking for you."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 24
+  IF ~~ THEN REPLY #488 /* ~"I'm asking the questions here, *zombie.* Tell me who you are, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 7
+  IF ~~ THEN REPLY #489 /* ~"Sorry to trouble you... whoever you are. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.0 3.1 3.2 3.4 6.0 6.1 6.2 6.4
+  SAY #490 /* ~The zombie doesn't seem to have heard you. He looks you up and down for a few moments, then frowns. "Wut yu do heer?" His eyes narrow suspiciously. "Yu spy on Duhstees?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #491 /* ~"No. I'm trying to escape."~ */ GOTO 12
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #492 /* ~"I'm not a spy. I got sealed in here by accident. Can you help me out?"~ */ GOTO 31
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #493 /* ~Lie: "Yes, I'm spying on the... Dusties."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_2","GLOBALLaw",-1)
+~ GOTO 8
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #494 /* ~Lie: "Yes, I'm spying on the... Dusties."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_2","GLOBALLaw",-1)
+~ GOTO 9
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #495 /* ~"Why don't you tell me what YOU'RE doing here before I call the guards."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #496 /* ~"Why don't you tell me what YOU'RE doing here before I call the guards."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #1306 /* ~"Look, I'm the one asking the questions here, *zombie.* Tell me what you're doing here, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #1348 /* ~"Look, I'm the one asking the questions here, *zombie.* Tell me what you're doing here, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #1349 /* ~"I must take my leave. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.2
+  SAY #1350 /* ~He studies you more intently. "Yu spy? Yu wit cell?"~ */
+  IF ~~ THEN REPLY #4671 /* ~"Huh?"~ */ GOTO 10
+  IF ~~ THEN REPLY #1352 /* ~"Cell?"~ */ GOTO 10
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1359 /* ~Lie: "Yes... I've been looking for you. I'm glad I finally found you."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 24
+  IF ~  CheckStatGT(Protagonist,11,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #1360 /* ~Lie: "Yes... but I can't speak too much about it right now, if you catch my meaning. What's *your* mission here?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #1361 /* ~Lie: "Yes... but I can't speak too much about it right now. What are you doing here?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~~ THEN REPLY #1362 /* ~"Uh, I don't have time to talk right now... maybe some other time."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 9 // from: 7.3
+  SAY #1363 /* ~He studies you more intently. "Yu spy? Yu wit cell?"~ */
+  IF ~~ THEN REPLY #4359 /* ~"Huh?"~ */ EXTERN ~DMORTE~ 85
+  IF ~~ THEN REPLY #4360 /* ~"Cell?"~ */ EXTERN ~DMORTE~ 85
+END
+
+IF ~~ THEN BEGIN 10 // from: 8.0 8.1
+  SAY #4361 /* ~Frowns, then hisses at you. "Yu no spy!" He makes a shooing motion. "Git! Git!" ~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4362 /* ~"First, you'll tell me what you're doing here, or I'll call the guards."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4363 /* ~"First, you'll tell me what you're doing here, or I'll call the guards."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4364 /* ~"Answer my damn questions, or I'll make that disguise a reality before you get three paces."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4365 /* ~"Answer my damn questions, or I'll make that disguise a reality before you get three paces."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4367 /* ~"All right, all right... I'm leaving."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 11 // from:
+  SAY #4366 /* ~The zombie nods at this, and you think you detect him puffing up a little in pride behind his zombie disguise.~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4368 /* ~"Can you help me escape?"~ */ GOTO 12
+  IF ~~ THEN REPLY #4369 /* ~"So what are you doing here?"~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #4370 /* ~Lie: "So you're a spy for the Anarchists? Well, I'm spying on the Dusties, too... but I can't speak too much about it right now, if you catch my meaning. What's *your* mission here?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4371 /* ~Lie: "So you're a spy for the Anarchists? I'm spying on the Dusties... but I can't speak too much about it right now. What are you doing here?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_1","GLOBALLaw",-1)
+~ GOTO 28
+  IF ~~ THEN REPLY #4372 /* ~"Uh, I don't have time to talk right now... maybe some other time."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 12 // from: 7.0 11.0
+  SAY #4373 /* ~The zombie seems interested. "Yu in trouble? Wutt yu do?"~ */
+  IF ~~ THEN REPLY #4374 /* ~"I woke up on one of the slabs upstairs."~ */ GOTO 13
+  IF ~~ THEN REPLY #4375 /* ~"I got... trapped in here somehow. Can you help me out?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4376 /* ~"Maybe I'll speak of it another time."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+  SAY #4377 /* ~The zombie's looking at you like you're crazy. "Yu barmee?"~ */
+  IF ~~ THEN REPLY #4378 /* ~"Yes, I am barmee. Very barmee."~ */ GOTO 14
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4379 /* ~"'Barmee'? What's that?"~ */ GOTO 16
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4380 /* ~"'Barmee'? What's that?"~ */ EXTERN ~DMORTE~ 87
+  IF ~~ THEN REPLY #4381 /* ~"I know it's hard to believe, but I'm not going to lie to you: I woke up from the dead on one of the slabs upstairs."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1)
+~ GOTO 14
+  IF ~~ THEN REPLY #4382 /* ~"Uh, no... actually, I was trapped in here somehow. Can you help me out?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4383 /* ~"Forget we spoke. I must be taking my leave."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0 13.3 15.0
+  SAY #4384 /* ~He looks at you, then hisses and makes a shooing motion. "Yu barmee! Git away frum me!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4385 /* ~"I'm not going anywhere. Tell me what you're doing here, or I'll call the guards."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4386 /* ~"I'm not going anywhere. Tell me what you're doing here, or I'll call the guards."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4387 /* ~"You'll answer my damn questions first, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4388 /* ~"You'll answer my damn questions first, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4389 /* ~"All right, all right... farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 15 // from:
+  SAY #4390 /* ~The fake zombie is looking at you both suspiciously.~ */
+  IF ~~ THEN REPLY #4391 /* ~"It's the truth - I woke up on one of the slabs here."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Vaxis_2","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_Vaxis_2","GLOBALGood",1)
+~ GOTO 14
+  IF ~~ THEN REPLY #4392 /* ~"Uh, sorry. Actually, I was trapped in here somehow. Can you help me out?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4393 /* ~"Never mind. I must take my leave now."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 16 // from: 13.1
+  SAY #4394 /* ~He looks at you, then hisses and makes a shooing motion. "Addle-cuve! Idjit! Git awuh frum me, burk! Guh!"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4395 /* ~"I'm not going anywhere. Tell me what you're doing here, or I'll call the guards."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4396 /* ~"I'm not going anywhere. Tell me what you're doing here, or I'll call the guards."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4397 /* ~"You'll answer my damn questions first, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4398 /* ~"You'll answer my damn questions first, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4399 /* ~"All right, all right... I'm going."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 17 // from: 7.5 10.1 14.1 16.1 25.3 27.3
+  SAY #4400 /* ~He seems frightened for a moment, then studies you and a sneer crawls across his face. "Yu spill th' dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Yu not s'posd be heer. Duhstees kill yu. Me escape."~ */
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4401 /* ~"You won't escape if I KILL you. Now answer my questions, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 18
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4402 /* ~"You won't escape if I KILL you. Now answer my questions, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4403 /* ~"Burn in hell, then. I'm leaving."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+  SAY #4404 /* ~The zombie's eyes narrow, and he hisses at you. "Yu TRY n' put me in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."~ */
+  IF ~~ THEN REPLY #4405 /* ~"I'll risk it. Prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4406 /* ~"Burn in hell, then. I'm leaving. You better watch yourself... *zombie.*"~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 19 // from: 7.6 10.2 14.2 16.2 25.4 27.4
+  SAY #4407 /* ~He seems frightened for a moment, then studies your build, and a sneer crawls across his face. "YOO try n' put ME in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."~ */
+  IF ~~ THEN REPLY #4408 /* ~"I'll risk it. Prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4409 /* ~"What if I expose your disguise to the guards?"~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4410 /* ~"What if I expose your disguise to the guards?"~ */ GOTO 20
+  IF ~~ THEN REPLY #4411 /* ~"Burn in hell, then. I'm leaving. You better watch yourself... *zombie.*"~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.2
+  SAY #4412 /* ~The zombie's eyes narrow, and he hisses at you. "Yu spill th' dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Duhstees kill yu. Me escape."~ */
+  IF ~~ THEN REPLY #4413 /* ~"That was your last chance, corpse. Prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4414 /* ~"Burn in hell, then. I'm leaving. You better watch yourself *zombie.*"~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 21 // from: 7.4 10.0 14.0 16.0 19.1 25.2 27.2
+  SAY #4415 /* ~There must be something in your eye that makes the zombie's expression crumble. "Nuh-nuh-no! Dun't cull th' gards!" He looks frightened. "Muh-muh-me spy un Duhstees, say wut I see. Nuh-Nuthin' more."~ */
+  IF ~~ THEN REPLY #4416 /* ~"Spy? For who?"~ */ GOTO 23
+  IF ~~ THEN REPLY #4417 /* ~"What have you seen the Dustmen do?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4418 /* ~"I had some other questions..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4419 /* ~"That's all I wanted to know. Farewell, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 7.7 10.3 14.3 16.3 17.1 25.5 27.5
+  SAY #4420 /* ~"Nuh-nuh-no! Dun't huurt me!" The fact you outweigh the zombie by several pounds of raw muscle seems to influence his decision, and his expression crumbles. "Dunht huurt me! Muh-muh-me spy un Duhstees, say wut I see. Nuh-Nuthin' more."~ */
+  IF ~~ THEN REPLY #4421 /* ~"Spy? For who?"~ */ GOTO 23
+  IF ~~ THEN REPLY #4422 /* ~"What have you seen the Dustmen do?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4423 /* ~"I had some other questions..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4424 /* ~"That's all I wanted to know. Now stay out of my way, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 21.0 22.0
+  SAY #4425 /* ~The zombie falls into a frightened silence. He seems unwilling to say any more.~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4426 /* ~"C'mon. Who are you watching this place for?"~ */ GOTO 70
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4427 /* ~"C'mon. Who are you watching this place for?"~ */ EXTERN ~DMORTE~ 89
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4428 /* ~"It'll be a LOT less painful for you if you tell me now who you're spying for."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 70
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4429 /* ~"It'll be a LOT less painful for you if you tell me now who you're spying for."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ EXTERN ~DMORTE~ 89
+  IF ~~ THEN REPLY #4430 /* ~"Never mind then. What have you seen the Dustmen do?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4431 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4432 /* ~"Forget it, then. Farewell, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 3.3 6.3 8.2
+  SAY #4433 /* ~"Luukin' fur me? Why?" He squints at you. "Yu gut muhssage fur me?"~ */
+  IF ~~ THEN REPLY #4434 /* ~Lie: "Yes, I have a message for you."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_5","GLOBALLaw",-1)
+~ GOTO 26
+  IF ~~ THEN REPLY #4435 /* ~"Message from who?"~ */ GOTO 27
+  IF ~~ THEN REPLY #4436 /* ~"No, I don't have a message."~ */ GOTO 25
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.2
+  SAY #4437 /* ~Hisses angrily. "Then wut yu *want,* burk?!"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4438 /* ~"I'm looking for a way out of here. Can you help me?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4439 /* ~"I wanted some information..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4440 /* ~"Tell me what you're doing here, or I'll call the guards."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4441 /* ~"Tell me what you're doing here, or I'll call the guards."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4442 /* ~"I want you to answer my damn questions, or I'll make that disguise a reality before you get three paces."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4443 /* ~"I want you to answer my damn questions, or I'll make that disguise a reality before you get three paces."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4444 /* ~"Sorry to trouble you... whoever you are. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 26 // from: 24.0
+  SAY #4445 /* ~"Wut muhssage?"~ */
+  IF ~  CheckStatLT(Protagonist,12,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #4446 /* ~"You are to tell me your mission."~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,11,CHR)
+CheckStatLT(Protagonist,12,INT)
+~ THEN REPLY #4447 /* ~Lie: "I have your new orders."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",1)
+~ GOTO 30
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4448 /* ~Lie: "I... have your new orders."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",1)
+~ GOTO 30
+  IF ~~ THEN REPLY #4449 /* ~"Sorry, I don't have a message."~ */ GOTO 27
+  IF ~~ THEN REPLY #4450 /* ~"Never mind. Sorry to trouble you. Farewell."~ */ GOTO 27
+END
+
+IF ~~ THEN BEGIN 27 // from: 24.1 26.3 26.4
+  SAY #4451 /* ~His eyes narrow angrily. "Yu NO muhssagerr. Hoo yu?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4452 /* ~"I'm looking for a way out of here. Can you help me?"~ */ GOTO 31
+  IF ~~ THEN REPLY #4453 /* ~"I wanted some information..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4454 /* ~"Tell me what you're doing here, or I'll call the guards."~ */ GOTO 21
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4455 /* ~"Tell me what you're doing here, or I'll call the guards."~ */ GOTO 17
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4456 /* ~"I'm asking the questions here, *zombie.* Tell me who you are, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 19
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4457 /* ~"I'm asking the questions here, *zombie.* Tell me who you are, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 22
+  IF ~~ THEN REPLY #4458 /* ~"Sorry to trouble you... whoever you are. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 28 // from: 8.3 8.4 11.1 11.2 11.3 26.0 30.0 43.5
+  SAY #4459 /* ~"Me spy on Duhstees. Say wut I see. Nuthin' more."~ */
+  IF ~~ THEN REPLY #4460 /* ~"What have you seen the Dustmen do?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4461 /* ~"I see. There was something else I wanted to ask you..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4462 /* ~"That's all I wanted to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 29 // from: 21.1 22.1 23.4 28.0 70.1 71.2
+  SAY #4463 /* ~"Nuthin'. They do nuthin'. Can't find nuthin'. Dead, dead, juhst dead people, Duhstees do *nuthin'.*" Eyes narrow in conviction. "Still I watch."~ */
+  IF ~~ THEN REPLY #4464 /* ~"I see. There was something else I wanted to ask you..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4465 /* ~"That's all I wanted to know. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 30 // from: 26.1 26.2
+  SAY #4466 /* ~He narrows his eyes, like he's trying to figure you out. "Wut ordrs?"~ */
+  IF ~~ THEN REPLY #4467 /* ~"Tell me your mission."~ */ GOTO 28
+  IF ~~ THEN REPLY #4468 /* ~"I need to find an escape route where I may leave unobserved."~ */ GOTO 49
+  IF ~  Global("Vaxis_Leave","GLOBAL",0)
+~ THEN REPLY #4469 /* ~"I am here to relieve you. Give me all the information you've gathered, all your possessions, then leave."~ */ DO ~SetGlobal("Vaxis_Leave","GLOBAL",1)
+GiveItemCreate("Bandage",Protagonist,1,0,0)
+GiveItemCreate("Bandage",Protagonist,1,0,0)
+GiveItemCreate("Bandage",Protagonist,1,0,0)
+GiveItemCreate("Embalm",Protagonist,1,0,0)
+GiveItemCreate("Needle",Protagonist,1,0,0)
+GiveItemCreate("Knife",Protagonist,1,0,0)
+AddexperienceParty(500)
+~ JOURNAL #64517 /* ~I told the disguised spy that I was there to "relieve" him, and he handed over everything he had collected, mostly a lot of bandages and healing items, which he must have needed to maintain his disguise. ~ */ GOTO 72
+  IF ~~ THEN REPLY #4470 /* ~"I am here to help you in any way you need."~ */ GOTO 35
+  IF ~~ THEN REPLY #4471 /* ~"Your orders will have to wait for another time. I will be back."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 7.1 12.1 13.4 15.1 25.0 27.0 50.0
+  SAY #4472 /* ~He is silent for a moment, then nods slightly, as if in understanding. "Why shud I hulp yu?"~ */
+  IF ~~ THEN REPLY #4473 /* ~"Because I need your help."~ */ GOTO 32
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4474 /* ~"Maybe we could help each other out. What do you want in return?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Vaxis_3","GLOBALGood",1)
+~ GOTO 35
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4475 /* ~"Because I won't *expose* your little disguise... if you help me."~ */ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4476 /* ~"Because I won't *expose* your little disguise... if you help me."~ */ GOTO 34
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4477 /* ~"You look like someone who'd much rather disguise themselves as a corpse than BE one. That reason enough?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 75
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4478 /* ~"You look like someone who'd much rather disguise themselves as a corpse than BE one. That reason enough?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 33
+  IF ~~ THEN REPLY #4479 /* ~"Forget we met. I must take my leave. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #4480 /* ~The zombie gives a half-sneer. "Everybodee *needs* sumthin', but nubudy *gives* anything. Yu *give* me sumfin', *maybee* I help."~ */
+  IF ~~ THEN REPLY #4481 /* ~"What is it you need?"~ */ GOTO 35
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4482 /* ~"How about you help me, and I won't call the guards?"~ */ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4483 /* ~"How about you help me, and I won't call the guards?"~ */ GOTO 34
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4484 /* ~"You look like someone who'd much rather be breathing than saying no to me. Now... for the last time: How do I get out of this place?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 75
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4485 /* ~"You look like someone who'd much rather be breathing than saying no to me. Now... for the last time: How do I get out of this place?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 33
+  IF ~~ THEN REPLY #4486 /* ~"Not interested. Farewell."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 33 // from: 31.2 31.5 32.1 32.4 34.1 35.2 35.5 75.0
+  SAY #4487 /* ~He looks you up and down as if wondering if he can take you, stares at your scars, then decides against it. "Hmmph. Yu kin escape through portalz."~ */
+  IF ~~ THEN REPLY #4672 /* ~"Portals?"~ */ DO ~SetGlobal("Strong_Arm_Vaxis","GLOBAL",1)
+~ GOTO 50
+END
+
+IF ~~ THEN BEGIN 34 // from: 31.3 32.2 35.3
+  SAY #4491 /* ~He seems frightened for a moment, then studies you and a sneer crawls across his face. "Yu spill th' dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Yu not s'posd be heer. Duhstees kill yu. Me escape."~ */
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4489 /* ~"You won't escape if I KILL you. Now start talking, or I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 74
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4490 /* ~"You won't escape if I KILL you. Now start talking, I'll make that disguise a reality."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 33
+  IF ~~ THEN REPLY #4492 /* ~"Burn in hell, then. I'm leaving."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 35 // from: 30.3 31.1 32.0
+  SAY #4493 /* ~"Uh need you t'git a *key* fur me. Wunt iron key tuh embulmuh's rum."~ */
+  IF ~  PartyHasItem("KeyEm")
+~ THEN REPLY #4494 /* ~"You mean this key?"~ */ DO ~AddexperienceParty(250)
+GiveItem("KeyEm","Vaxis")
+~ GOTO 42
+  IF ~~ THEN REPLY #4495 /* ~"All right. Where is this key?"~ */ GOTO 36
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4496 /* ~"I don't have time for this. Help me escape, or I'll call the guards."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4497 /* ~"I don't have time for this. Help me escape, or I'll call the guards."~ */ DO ~SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 34
+  IF ~  CheckStatLT(Protagonist,12,STR)
+~ THEN REPLY #4498 /* ~"I'm not going to go fetch anything for you. Help me escape, or I'll snap your neck right here and now."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 75
+  IF ~  CheckStatGT(Protagonist,11,STR)
+~ THEN REPLY #4499 /* ~"I'm not going to go fetch anything for you. Help me escape, or I'll snap your neck right here and now."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+SetGlobal("Vaxis_Orders","GLOBAL",0)
+~ GOTO 33
+  IF ~~ THEN REPLY #4500 /* ~"No thanks. Maybe some other time."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 36 // from: 35.1 58.2
+  SAY #4501 /* ~"A dusstie chit hazzit." He points at his eyes. "She haz yuhllo eyez..." He then makes a motion with his hands that reminds you of a pair of cutting shears. "Bladezz on fingerzz."~ */
+  IF ~  PartyHasItem("KeyEm")
+~ THEN REPLY #4502 /* ~"We already crossed paths. Here's the key."~ */ DO ~AddexperienceParty(250)
+GiveItem("KeyEm","Vaxis")
+~ GOTO 42
+  IF ~  Global("EiVene","GLOBAL",1)
+~ THEN REPLY #64520 /* ~"A Dustman woman... with yellow eyes and blades on her fingers? I already met her in the embalming room. Hold on - I'll be back with the key shortly."~ */ JOURNAL #64519 /* ~In exchange for the "zombie's" help, I agreed to go get an embalming key from that Dustwoman embalmer I met in the other room, Ei-Vene, I think her name was. How she could possibly use an embalming key with those blades for her hands is beyond me. ~ */ GOTO 38
+  IF ~  Global("EiVene","GLOBAL",0)
+~ THEN REPLY #4503 /* ~"A Dustman woman... with yellow eyes and blades on her fingers? All right then. I'll be back with the key."~ */ JOURNAL #64518 /* ~In exchange for the "zombie's" help, I agreed to go get an embalming key from some Dustwoman with blades for hands and yellow eyes. ~ */ GOTO 38
+  IF ~~ THEN REPLY #4504 /* ~"This Dustman woman sounds really attractive. Are you sure you don't want me to introduce the two of you?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Vaxis_6","GLOBALLaw",-1)
+~ GOTO 37
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.3
+  SAY #4505 /* ~The zombie blinks. He doesn't seem to have understood you.~ */
+  IF ~  Global("EiVene","GLOBAL",1)
+~ THEN REPLY #4506 /* ~"That was a joke, see, you're sup... forget it, I'll go find your key."~ */ JOURNAL #64519 /* ~In exchange for the "zombie's" help, I agreed to go get an embalming key from that Dustwoman embalmer I met in the other room, Ei-Vene, I think her name was. How she could possibly use an embalming key with those blades for her hands is beyond me. ~ */ GOTO 38
+  IF ~  Global("EiVene","GLOBAL",0)
+~ THEN REPLY #66150 /* ~"That was a joke, see, you're sup... forget it, I'll go find your key."~ */ JOURNAL #64518 /* ~In exchange for the "zombie's" help, I agreed to go get an embalming key from some Dustwoman with blades for hands and yellow eyes. ~ */ GOTO 38
+END
+
+IF ~~ THEN BEGIN 38 // from: 36.1 36.2 37.0 37.1
+  SAY #4507 /* ~The zombie squints at you. "If yu're cught, dun't say nothin' bout me, or me gut yu in yur sleep."~ */
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4508 /* ~"I'll get your damned key... but you had best watch your threats, you hear me?"~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",1)
+~ EXIT
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4509 /* ~"I'll be back."~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",1)
+~ EXIT
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4510 /* ~"I'll get your damned key... but you had best watch your threats, you hear me?"~ */ EXIT
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4511 /* ~"I'll be back."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 43.12
+  SAY #4512 /* ~"Me gud at duh-guise. Me ulso gut scars. Me wuhr lots of embalming fluid. Me make GUD zumbie." The zombie giggles through stitched lips, then taps his head. "Duhstees stuh-pud."~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 93
+END
+
+IF ~~ THEN BEGIN 40 // from:
+  SAY #4514 /* ~"I wait heer fur yu. Get key." The zombie gives you a stomach-churning smile. "Then I help yu."~ */
+  IF ~~ THEN REPLY #4515 /* ~"If I can find it, I'll bring it back."~ */ EXIT
+  IF ~~ THEN REPLY #4516 /* ~"Forget it, then."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from:
+  SAY #4517 /* ~The zombie's eyes widen, then he holds his hand out and snaps his fingers. "Gife it t'me."~ */
+  IF ~~ THEN REPLY #4518 /* ~"Hold a moment. There's something I want first."~ */ EXIT
+  IF ~~ THEN REPLY #4519 /* ~"Here you go."~ */ DO ~AddexperienceParty(250)
+GiveItem("KeyEm","Vaxis")
+SetGlobal("Embalm_Key_Quest","GLOBAL",3)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 42 // from: 35.0 36.0 58.0 58.1
+  SAY #4520 /* ~The zombie's eyes widen, and he snatches the key from your hand. He turns it over, nodding all the while. "Gud... gud."~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+~ THEN REPLY #4521 /* ~"Now... how do I get out of here?"~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",3)
+~ JOURNAL #64521 /* ~Got Vaxis his precious embalming key. He must need it to get new supplies to maintain his disguise, if the embalming fluid smell coming off of him is any indication. ~ */ GOTO 49
+  IF ~  Global("Escape_Mortuary","GLOBAL",1)
+~ THEN REPLY #4522 /* ~"Now... there was something I wanted to know..."~ */ DO ~SetGlobal("Embalm_Key_Quest","GLOBAL",3)
+~ JOURNAL #64521 /* ~Got Vaxis his precious embalming key. He must need it to get new supplies to maintain his disguise, if the embalming fluid smell coming off of him is any indication. ~ */ GOTO 43
+END
+
+IF ~~ THEN BEGIN 43 // from: 21.2 22.2 23.5 25.1 27.1 28.1 29.0 42.1 44.2 45.1 46.2 47.2 48.0 51.1 52.0 53.0 54.0 56.0 58.3 59.0 60.3 61.4 62.3 63.1 64.0 70.2 71.3 77.0
+  SAY #4523 /* ~"Wut yu want tuh knuw?"~ */
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+!Global("Vaxis_Help","GLOBAL",1)
+Global("Embalm_Key_Quest","GLOBAL",0)
+Global("Strong_Arm_Vaxis","GLOBAL",1)
+~ THEN REPLY #64508 /* ~"How can I escape from here?"~ */ GOTO 49
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+!Global("Vaxis_Help","GLOBAL",1)
+Global("Embalm_Key_Quest","GLOBAL",0)
+Global("Strong_Arm_Vaxis","GLOBAL",0)
+~ THEN REPLY #4524 /* ~"How can I escape from here?"~ */ GOTO 49
+  IF ~  Global("Vaxis_Help","GLOBAL",1)
+~ THEN REPLY #4525 /* ~"Where was that portal you mentioned again?"~ */ GOTO 52
+  IF ~  Global("Vaxis_Zombie_Disguise","GLOBAL",1)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4526 /* ~"Can you disguise me as a zombie?"~ */ GOTO 63
+  IF ~  Global("Vaxis_Zombie_Disguise","GLOBAL",2)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4527 /* ~"Can you disguise me as a zombie again?"~ */ GOTO 63
+  IF ~  Global("Vaxis_Orders","GLOBAL",1)
+~ THEN REPLY #4528 /* ~"What are you doing here?"~ */ GOTO 28
+  IF ~  GlobalLT("Pharod","GLOBAL",1)
+~ THEN REPLY #4673 /* ~"Do you know someone named Pharod?"~ */ GOTO 44
+  IF ~  GlobalLT("Journal","GLOBAL",1)
+~ THEN REPLY #4530 /* ~"I'm missing a journal. Have you seen it?"~ */ GOTO 47
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #4531 /* ~"Can you tell me anything about Dhall?"~ */ GOTO 53
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4532 /* ~"Can you tell me anything about Deionarra?"~ */ GOTO 54
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #4533 /* ~"Can you tell me anything about Soego?"~ */ GOTO 55
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4534 /* ~"How did you get to look like that?"~ */ GOTO 60
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4535 /* ~"How did you get to look like that?"~ */ GOTO 39
+  IF ~~ THEN REPLY #4536 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.6
+  SAY #4537 /* ~"Fuh-AROD?" The zombie frowns briefly in thought. "Me... heer he live in Hive somewhere." He shakes his head. "Not know where." He frowns again. "Dushties vare-ee mad, thay not LIKE Fuh-arod."~ */
+  IF ~~ THEN REPLY #4538 /* ~"Hive?"~ */ GOTO 45
+  IF ~~ THEN REPLY #4539 /* ~"Why don't the Dustmen like Pharod?"~ */ JOURNAL #64522 /* ~It sounds like the Dustmen and Pharod aren't on the best of terms... Vaxis told me Pharod's bringing a lot of bodies to the Mortuary, and the Dustmen suspect that he's killing people before their hour's up. ~ */ GOTO 46
+  IF ~~ THEN REPLY #4540 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4541 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.0
+  SAY #4542 /* ~"Slumz ousside this place."~ */
+  IF ~~ THEN REPLY #4543 /* ~"Why don't the Dustmen like Pharod?"~ */ JOURNAL #64522 /* ~It sounds like the Dustmen and Pharod aren't on the best of terms... Vaxis told me Pharod's bringing a lot of bodies to the Mortuary, and the Dustmen suspect that he's killing people before their hour's up. ~ */ GOTO 46
+  IF ~~ THEN REPLY #4544 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4545 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 46 // from: 44.1 45.0
+  SAY #4546 /* ~"He'z a Cullector. Bringz deaderz to Mortuaree, sellz 'em to Dustmen. Bringz LOT uf deaderz. Dushties not know where he getz deaderz. Think he'z puttin' berks in dead-book."~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4547 /* ~"Uh... what?"~ */ GOTO 48
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4548 /* ~"Uh... what?"~ */ EXTERN ~DMORTE~ 91
+  IF ~~ THEN REPLY #4549 /* ~"Oh. There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4550 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.7
+  SAY #4551 /* ~"Do' kno. Sum berk peel you?"~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4552 /* ~"Uh... what?"~ */ GOTO 48
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #4553 /* ~"Uh... what?"~ */ EXTERN ~DMORTE~ 92
+  IF ~~ THEN REPLY #4554 /* ~"Oh. There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4555 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 48 // from: 46.0 47.0
+  SAY #4556 /* ~The zombie tries to speak, pauses, tries again, then shrugs. Apparently, he can't explain it any better.~ */
+  IF ~~ THEN REPLY #4557 /* ~"Oh. There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4558 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 30.1 42.0 43.0 43.1
+  SAY #4559 /* ~The zombie grunts. "Yu kin escape through portalz." He waves his hands. "Phoof."~ */
+  IF ~~ THEN REPLY #4560 /* ~"Portals? What portals?"~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 50 // from: 33.0 49.0
+  SAY #4563 /* ~"Portalz..." The zombie waves around the area. "Portalz evereewheer."~ */
+  IF ~  Global("Strong_Arm_Vaxis","GLOBAL",0)
+Global("Embalm_Key_Quest","GLOBAL",0)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #4564 /* ~"Can you show me one of these portals?"~ */ GOTO 31
+  IF ~  Global("Strong_Arm_Vaxis","GLOBAL",0)
+GlobalGT("Embalm_Key_Quest","GLOBAL",2)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #64509 /* ~"Can you show me one of these portals?"~ */ GOTO 51
+  IF ~  Global("Strong_Arm_Vaxis","GLOBAL",1)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #64510 /* ~"Can you show me one of these portals?"~ */ GOTO 51
+  IF ~  Global("Vaxis_Orders","GLOBAL",1)
+~ THEN REPLY #64511 /* ~"Can you show me one of these portals?"~ */ GOTO 51
+END
+
+IF ~~ THEN BEGIN 51 // from: 50.1 50.2 50.3 72.0
+  SAY #4567 /* ~The zombie nods. "Yu wunt out, go tuh arch on firzzt fluur, nurthwezzt ruum... Yuh need fungur-bone, shape of crook..." He holds up his index finger and bends it into a crook. "When yuh have key, guh to arch, jump ta sucret cryp and ken escape frum here. Secret escape route." He nods eagerly. "Yuh can REST there."~ */
+  IF ~  !PartyHasItem("BoneChrm")
+~ THEN REPLY #64527 /* ~"Crooked finger bone? Where am I going to find one of those?"~ */ DO ~AddexperienceParty(250)
+SetGlobal("Vaxis_Help","GLOBAL",1)
+~ JOURNAL #64528 /* ~Vaxis told me there's a secret portal in the northwest room of the first floor of the Mortuary - if you take a crooked finger bone up to it, it will activate and take me to a secret crypt, where Vaxis says I can "rest." He doesn't know where I could find a crooked finger bone, however, but he suggested I try the upper floor of the Mortuary. ~ */ GOTO 77
+  IF ~  PartyHasItem("BoneChrm")
+~ THEN REPLY #4568 /* ~"I had some other questions..."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Vaxis_Help","GLOBAL",1)
+~ JOURNAL #64529 /* ~Vaxis told me there's a secret portal in the northwest room of the first floor of the Mortuary - if you take a crooked finger bone up to it, it will activate and take me to a secret crypt, where Vaxis says I can "rest." ~ */ GOTO 43
+  IF ~  PartyHasItem("BoneChrm")
+~ THEN REPLY #4569 /* ~"An arch on the first floor, northwest room? All right, I'll go check it out."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Vaxis_Help","GLOBAL",1)
+~ JOURNAL #64529 /* ~Vaxis told me there's a secret portal in the northwest room of the first floor of the Mortuary - if you take a crooked finger bone up to it, it will activate and take me to a secret crypt, where Vaxis says I can "rest." ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 52 // from: 43.2
+  SAY #4570 /* ~"Lissen! R'member!" The zombie sounds angry. "Arch, firzzzt fluur, nurthwezzt ruum..." He holds up his index finger and bends it. "Yuh need finger bone, bent. Yuh guh ta sucret cryp. Escape route. Yuh ken REST there." ~ */
+  IF ~~ THEN REPLY #4571 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4572 /* ~"Arch, first floor, northwest room, opens with a crooked finger bone? All right, I got it this time."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 53 // from: 43.8
+  SAY #4573 /* ~"Scribe." Shrugs. "Old. Yellow."~ */
+  IF ~~ THEN REPLY #4574 /* ~"There's nothing more to be said, I suppose. I wanted to know something else..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4575 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 54 // from: 43.9
+  SAY #4576 /* ~"Hunh?" Frowns. "Hoo shee?"~ */
+  IF ~~ THEN REPLY #4577 /* ~"Forget it. I wanted to know something else..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4578 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 55 // from: 43.10
+  SAY #4579 /* ~"Guide. He at Mortuary frunt door. Wut yu wunt wi' him?"~ */
+  IF ~~ THEN REPLY #4580 /* ~"What do you know about him?"~ */ DO ~SetGlobal("Vaxis_Exposes_Soego","GLOBAL",1)
+~ JOURNAL #64530 /* ~Vaxis said something about Soego being strange - saying that he liked "rats," whatever THAT means. Vaxis accusing anyone of being strange is ironic enough. ~ */ GOTO 56
+  IF ~~ THEN REPLY #4581 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0
+  SAY #4582 /* ~"Actz strange, not Duhstie, not Anarchizt, eyez changed..." Shrugs. "Likez ratz. Strange."~ */
+  IF ~~ THEN REPLY #4583 /* ~"Good thing he's the only strange one around here. There's something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4584 /* ~"Never mind. I may have some questions later. Don't go anywhere."~ */ EXIT
+END
+
+IF ~  GlobalGT("Vaxis","GLOBAL",0)
+~ THEN BEGIN 57 // from:
+  SAY #4585 /* ~You see the false zombie. You're amazed at the man's disguise... his breathing is so subdued, you can barely see it.~ */
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",1)
+~ THEN REPLY #4586 /* ~"Greetings."~ */ GOTO 58
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",2)
+~ THEN REPLY #4587 /* ~"Greetings."~ */ GOTO 58
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",1)
+!Global("Embalm_Key_Quest","GLOBAL",2)
+Global("Vaxis_Orders","GLOBAL",0)
+~ THEN REPLY #4588 /* ~"Greetings."~ */ GOTO 59
+  IF ~  !Global("Embalm_Key_Quest","GLOBAL",1)
+!Global("Embalm_Key_Quest","GLOBAL",2)
+Global("Vaxis_Orders","GLOBAL",1)
+~ THEN REPLY #4589 /* ~"Greetings."~ */ GOTO 58
+  IF ~~ THEN REPLY #4590 /* ~Leave him alone.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 58 // from: 57.0 57.1 57.3
+  SAY #4591 /* ~The zombie quickly glances around to see if anyone is watching, then turns to face you. "Wut?"~ */
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",1)
+PartyHasItem("KeyEm")
+~ THEN REPLY #4592 /* ~"Here's that embalming room key you wanted."~ */ DO ~AddexperienceParty(250)
+TakePartyItemNum("KeyEm",1)
+~ GOTO 42
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",2)
+PartyHasItem("KeyEm")
+~ THEN REPLY #4593 /* ~"Here's that embalming room key you wanted."~ */ DO ~AddexperienceParty(250)
+TakePartyItemNum("KeyEm",1)
+~ GOTO 42
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",1)
+!PartyHasItem("KeyEm")
+~ THEN REPLY #4594 /* ~"Where is that key you mentioned again?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4595 /* ~"I had some questions for you..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4596 /* ~"Never mind."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 59 // from: 57.2
+  SAY #4597 /* ~The zombie glances around to see if anyone is watching, then makes a shooing motion and hisses at you. "Guh 'way! Git!"~ */
+  IF ~~ THEN REPLY #4598 /* ~"No. I had some questions for you, first..."~ */ GOTO 43
+  IF ~  Global("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4599 /* ~"Never mind then."~ */ GOTO 4
+  IF ~  GlobalGT("Embalm_Key_Quest","GLOBAL",0)
+~ THEN REPLY #4600 /* ~"Never mind then."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 60 // from: 43.11
+  SAY #4601 /* ~"Me gud at duh-guise. Me ulso gut scars. Me wuhr lots of embalming fluid. Me make GUD zumbie." The zombie giggles through stitched lips, then taps his head. "Duhstees stuh-pud."~ */
+  IF ~~ THEN REPLY #4602 /* ~"Yeah, they're the stupid ones all right."~ */ GOTO 61
+  IF ~~ THEN REPLY #4603 /* ~"Doesn't that hurt?"~ */ GOTO 62
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4604 /* ~"That disguise is pretty good. Say... can you disguise me as a zombie, too?"~ */ GOTO 63
+  IF ~~ THEN REPLY #4605 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4606 /* ~"I have to leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 61 // from: 60.0
+  SAY #4607 /* ~The sarcasm is evidently lost on the zombie, who nods eagerly. "Stuh-pud Duhstees. Me make GUD zumbie." ~ */
+  IF ~~ THEN REPLY #4608 /* ~"Doesn't that hurt?"~ */ GOTO 62
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4609 /* ~"That disguise is pretty good. Can you disguise me as a zombie?"~ */ GOTO 63
+  IF ~  CheckStatLT(Protagonist,10,CHR)
+~ THEN REPLY #4610 /* ~"There was something else I wanted to know..."~ */ GOTO 64
+  IF ~  CheckStatLT(Protagonist,10,CHR)
+~ THEN REPLY #4611 /* ~"I have to leave. Farewell."~ */ GOTO 64
+  IF ~  CheckStatGT(Protagonist,9,CHR)
+~ THEN REPLY #4612 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,9,CHR)
+~ THEN REPLY #4613 /* ~"I have to leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 62 // from: 60.1 61.0
+  SAY #4614 /* ~He looks at your scars. "I ask yu same question. Me, it not hurt much." Claps his chest. "Me TUFF."~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+!Global("Appearance","GLOBAL",1)
+~ THEN REPLY #4615 /* ~"That disguise is pretty good. Can you disguise me as a zombie?"~ */ GOTO 63
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4616 /* ~"There was something else I wanted to know..."~ */ GOTO 64
+  IF ~  CheckStatLT(Protagonist,13,CHR)
+~ THEN REPLY #4617 /* ~"I have to leave. Farewell."~ */ GOTO 64
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4618 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,12,CHR)
+~ THEN REPLY #4674 /* ~"I have to leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 63 // from: 43.3 43.4 60.2 61.1 62.0 64.1 64.2
+  SAY #4619 /* ~He looks you up and down for a few moments, mumbling to himself, then nods. "U-huh. Me need jar uf embalming flew-id." Points at the scars on your chest. "N' some needle and thread." ~ */
+  IF ~  PartyHasItem("Embalm")
+PartyHasItem("Needle")
+~ THEN REPLY #4620 /* ~"Here you go."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",2)
+DestroyPartyItem("Embalm",FALSE)
+DestroyPartyItem("Needle",FALSE)
+~ GOTO 65
+  IF ~~ THEN REPLY #4621 /* ~"I'll think about it. I had some other questions..."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ GOTO 43
+  IF ~~ THEN REPLY #4622 /* ~"No thanks. Maybe some other time... farewell."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ EXIT
+  IF ~~ THEN REPLY #4623 /* ~"Some embalming fluid and some thread? I'll go see if I can find some."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 64 // from: 61.2 61.3 62.1 62.2
+  SAY #4624 /* ~He looks you up and down with a strange expression. "U be GUD zumbie. I cud make u a zumbie? GUD dis-gize."~ */
+  IF ~~ THEN REPLY #4625 /* ~"Thanks anyway. I had some other questions for you..."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ GOTO 43
+  IF ~~ THEN REPLY #4626 /* ~"Sure. Can you do it?"~ */ GOTO 63
+  IF ~~ THEN REPLY #4627 /* ~"Why not? I already feel like one of the walking dead."~ */ GOTO 63
+  IF ~~ THEN REPLY #4628 /* ~"No... no... that's all right. Farewell."~ */ DO ~SetGlobal("Vaxis_Zombie_Disguise","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 65 // from: 63.0
+  SAY #4629 /* ~The zombie takes the items from you, then sets to work...~ */
+  IF ~  !NearbyDialog("DMorte")
+Global("Vaxis_Zombie_XP","GLOBAL",0)
+~ THEN REPLY #4630 /* ~Try to hold still.~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+AddexperienceParty(500)
+SetGlobal("Vaxis_Zombie_XP","GLOBAL",1)
+~ GOTO 66
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_1","GLOBAL",0)
+~ THEN REPLY #4631 /* ~Try to hold still.~ */ DO ~SetGlobal("Morte_Vaxis_Quip_1","GLOBAL",1)
+~ EXTERN ~DMORTE~ 94
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_1","GLOBAL",1)
+~ THEN REPLY #4632 /* ~Try to hold still.~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+~ GOTO 66
+  IF ~  !NearbyDialog("DMorte")
+Global("Vaxis_Zombie_XP","GLOBAL",1)
+~ THEN REPLY #64533 /* ~Try to hold still.~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+SetNamelessDisguise(ZOMBIE)
+Wait(2)
+FadeFromColor([20.0],0)
+~ GOTO 66
+END
+
+IF ~~ THEN BEGIN 66 // from: 65.0 65.2 65.3
+  SAY #4633 /* ~The zombie liberally applies the embalming fluid to your body, then stitches up several of your scars. Working from your feet upwards, he stitches up your scars, then finishes off the disguise by stitching up your lips.~ */
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #4634 /* ~"Mmm-hmmph-mmm... Fanks."~ */ GOTO 67
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_2","GLOBAL",0)
+~ THEN REPLY #4635 /* ~"Mmm-hmmph-mmm... Fanks."~ */ DO ~SetGlobal("Morte_Vaxis_Quip_2","GLOBAL",1)
+~ EXTERN ~DMORTE~ 95
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Vaxis_Quip_2","GLOBAL",1)
+~ THEN REPLY #4636 /* ~"Mmm-hmmph-mmm... Fanks."~ */ GOTO 67
+END
+
+IF ~~ THEN BEGIN 67 // from: 66.0 66.2
+  SAY #4637 /* ~The zombie holds up his hand. "Curful! Talk pulls stitches out, ruin diz-gize. Zumbie no talk. Yoo got to talk? Talk slow, curful."
+
+^NNOTE: Take heed that no one expects zombies to talk. If you speak to someone as a zombie, you run the risk of exposing your disguise.^-~ */
+  IF ~~ THEN REPLY #4638 /* ~"Mmph... mmm. I... understand."~ */ JOURNAL #64531 /* ~In exchange for some needle and thread and some embalming fluid, Vaxis disguised me as a zombie. He warned me that running would ruin the disguise, and that I shouldn't talk to others while disguised, as zombies don't "talk." ~ */ GOTO 68
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0
+  SAY #4639 /* ~The zombie frowns. "Diz-gize wun't last long... um-balming fluid dry up, stitchez fall out." He shrugs. "Prob-lee not last ousside Mortuaree. Uhnd no running! Yoo run, yoo ruin whole diz-gize."
+
+^NNOTE: Equipping weapons and/or running will instantly nullify your zombie disguise. If you find a new weapon, hold off on equipping it until you no longer wish to be disguised. If you have Always Run on, be sure to switch it off if you want to maintain the disguise when you finish speaking to Vaxis.^-~ */
+  IF ~~ THEN REPLY #4640 /* ~Nod again, leave.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 69 // from:
+  SAY #4641 /* ~The 'zombie' frowns. "Yu look familer. Me see yoo beefor?"~ */
+  IF ~~ THEN REPLY #4642 /* ~"Maybe. Where have you seen me?"~ */ EXIT
+  IF ~~ THEN REPLY #4643 /* ~X. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 70 // from: 23.0 23.2 71.0 71.1
+  SAY #4644 /* ~To your surprise, the zombie turns away from you... he is starting to glance around fearfully.~ */
+  IF ~~ THEN REPLY #4645 /* ~"You won't talk? Then get ready to start screaming."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4646 /* ~"Never mind then. What have you seen the Dustmen do?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4647 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4648 /* ~"Forget it, then. Farewell, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 71 // from:
+  SAY #4649 /* ~The zombie is watching you both fearfully. He is still silent... but something in his expression tells you Morte's guess was right on the mark.~ */
+  IF ~~ THEN REPLY #4650 /* ~"The Anarchists, huh? That who you're watching this place for?"~ */ GOTO 70
+  IF ~~ THEN REPLY #4651 /* ~"It'll be a LOT less painful for you if you tell me now why the Anarchists want you to spy on this place."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Vaxis_1","GLOBALGood",-1)
+~ GOTO 70
+  IF ~~ THEN REPLY #4652 /* ~"Never mind then. What have you seen the Dustmen do?"~ */ GOTO 29
+  IF ~~ THEN REPLY #4653 /* ~"There was something else I wanted to know..."~ */ GOTO 43
+  IF ~~ THEN REPLY #4654 /* ~"Forget it, then. Farewell, *zombie.*"~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 30.2
+  SAY #4655 /* ~The zombie looks disappointed, but he shrugs and begins to fish deeply into his stained tunic. "Beehn quiet, Duhsties beehn quiet, nuthin' new since lahst rehport." After a few moments, he hands you some items, then grunts. "Heer." Judging by the smell, they must have been hidden so as to avoid turning up if he was searched. "Me leeve in shurt while."~ */
+  IF ~  Global("Vaxis_Help","GLOBAL",0)
+~ THEN REPLY #4656 /* ~"Leave? How?"~ */ GOTO 51
+  IF ~  Global("Vaxis_Help","GLOBAL",1)
+~ THEN REPLY #64532 /* ~"Very well. Farewell, Vaxis."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 73 // from:
+  SAY #4658 /* ~The zombie grunts. "Portal's an arch - fizzzt floor, nurthwest ruhm, needs skel-tun finger bone tuh open." He nods. "Guud luhk."~ */
+  IF ~~ THEN REPLY #4659 /* ~"Uh... all right."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 74 // from: 34.0
+  SAY #4660 /* ~The zombie's eyes narrow, and he hisses at you. "Yu TRY n' put me in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."~ */
+  IF ~~ THEN REPLY #4661 /* ~"That was your last chance. Prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4662 /* ~"Burn in hell, then. I'm leaving. You better watch yourself... *zombie!*"~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 75 // from: 31.4 32.3 35.4
+  SAY #4663 /* ~He seems frightened for a moment, then studies your build, and a sneer crawls across his face. "YOO try n' put ME in dead-book? I have frens hid heer, yu got *nubudy.* Yu tuch me, my frends kill YU."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4664 /* ~"How about I expose your disguise to the guards?"~ */ GOTO 33
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4665 /* ~"How about I expose your disguise to the guards?"~ */ GOTO 76
+  IF ~~ THEN REPLY #4666 /* ~"I'll risk it. Prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4667 /* ~"Burn in hell, then. I'm leaving. You better watch yourself... *zombie.*"~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 76 // from: 75.1
+  SAY #4668 /* ~The zombie's eyes narrow, and he hisses at you. "Yu spill th' dark on me, me spill dark on *yu.* I have friends hid heer, yu got *nubudy.* Duhstees kill yu. Me escape."~ */
+  IF ~~ THEN REPLY #4669 /* ~"That was your last chance, corpse. Prepare to die."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+~ EXIT
+  IF ~~ THEN REPLY #4670 /* ~"Burn in hell, then. I'm leaving. You better watch yourself... *zombie.*"~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 77 // from: 51.0
+  SAY #64523 /* ~He shrugs. "Mhust be one 'round sumwhere... look in storage roomz on upper floor. Maybe there."~ */
+  IF ~~ THEN REPLY #64524 /* ~"All right. I had some other questions..."~ */ GOTO 43
+  IF ~~ THEN REPLY #64525 /* ~"Very well. I'll check upstairs for this crooked finger bone, then head to the first floor, to one of the arches in the northwest room. Got it."~ */ EXIT
+END

@@ -1,0 +1,185 @@
+IF WEIGHT #1 /* Triggers after states #: 26 even though they appear after this state */ ~  !InParty("Morte") Global("Morte","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #39792 /* ~"Hé, chef, ça va ? Tu fais l'mort ou t'essaies d'bluffer les Hommes-Poussière ? J'ai vraiment cru qu't'étais clamsé."~ [MRT001] */
+IF ~~ THEN REPLY #39793 /* ~"Qu… ? Qui es-tu ?"~ */ DO ~SetGlobal("Morte","GLOBAL",1) ~ GOTO 1
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+SAY #39795 /* ~"Euh… qui *je* suis ? Et pourquoi *tu* ne commencerais pas ? Qui tu es, toi ?"~ */
+IF ~~ THEN REPLY #39796 /* ~"Je… ne me rappelle pas. J'arrive pas à m'en rappeler."~ */ GOTO 2
+IF ~~ THEN REPLY #39797 /* ~"C'est à *toi* que j'ai demandé en premier, crâne."~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 3.0 4.0
+SAY #39798 /* ~"Tu ne te souviens pas de ton *nom* ? Hé ben ! La PROCHAINE fois que tu passes la nuit dans ce bled, vas-y doucement sur la bibe. J'm'appelle Morte. Moi aussi, j'suis piégé ici."~ */
+IF ~~ THEN REPLY #39799 /* ~"Piégé ?"~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.1
+SAY #39800 /* ~"Ouais, et je t'ai demandé en *deuxième*. Comment tu t'appelles ?"~ */
+IF ~~ THEN REPLY #39801 /* ~"Je… ne me rappelle pas. J'arrive pas à m'en rappeler."~ */ GOTO 2
+IF ~~ THEN REPLY #39802 /* ~"Toi d'abord, crâne. C'est la dernière fois que je te le demande."~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.1
+SAY #39803 /* ~"Pffff… c'que t'es têtu. Très bien, c'est *moi* qui vais jouer les gentils. Je m'appelle Morte. Et toi ?"~ */
+IF ~~ THEN REPLY #39804 /* ~"Je… ne me rappelle pas. J'arrive pas à m'en rappeler."~ */ GOTO 2
+END
+
+IF ~~ THEN BEGIN 5 // from: 2.0
+SAY #39805 /* ~"Ouais, comme t'as pas encore eu le temps de te remettre d'aplomb, voilà la chanson : j'ai essayé toutes les portes et cette salle est fermée à clé plus sûrement qu'une ceinture de chasteté."~ */
+IF ~~ THEN REPLY #39806 /* ~"On est enfermés… où ? Quel est cet endroit ?"~ */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0
+SAY #39807 /* ~"Ça s'appelle la 'Morgue'… c'est un grand édifice noir avec tout le charme architectural d'une araignée pleine."~ */
+IF ~~ THEN REPLY #39808 /* ~"'La Morgue' ? Qu'est-ce… suis-je mort ?"~ */ GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.0
+SAY #39809 /* ~"Pas de mon point de vue. Tu as plein de cicatrices… on dirait qu'un bige t'a peint avec un couteau. Raison de plus pour jouer un air à cet endroit avant que celui qui a commencé la gravure revienne finir son boulot."~ */
+IF ~~ THEN REPLY #39810 /* ~"Des cicatrices ? Profondes comment ?"~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.0
+SAY #39811 /* ~"Ben… les trucs gravés sur ta poitrine ne sont pas TROP moches… mais ceux que tu as dans le dos…" Morte s'interrompt. "En gros, on dirait que tu as une galerie entière de tatouages sur le dos, chef. Comme si ça voulait dire quelque chose…"~ */
+IF ~~ THEN REPLY #39812 /* ~"Des tatouages dans le dos ? Qu'est-ce qu'ils disent ?"~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.0
+SAY #39813 /* ~"Hé ! C'est comme si t'avais été livré avec le mode d'emploi…" Morte s'éclaircit la voix. "Voyons… ça commence par…  'Je sais que tu as l'impression d'avoir bu plusieurs barils d'eau du Styx, mais il faut te RESSAISIR. Parmi tes biens, tu dois avoir un JOURNAL qui pourra éclaircir le soltif de cette affaire. PHAROD devrait pouvoir te donner les dernières notes de la chanson, s'il n'est pas déjà inscrit dans le livre des morts.'~ */
+IF ~~ THEN REPLY #39814 /* ~"Pharod ? Ça dit autre chose ?"~ */ GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+SAY #39815 /* ~"Ouais, c'est pas fini…" Morte s'interrompt. "Voyons… ça continue…"  "Ne perds pas le journal ou on se retrouvera encore à traverser le Styx. Et quoi que tu fasses, NE raconte à personne QUI tu es et CE qui t'arrive, ou on t'enverra faire un rapide pèlerinage vers le crématorium. Fais ce que je te dis : LIS le journal, puis TROUVE Pharod."~ */
+IF ~~ THEN REPLY #39816 /* ~"Je comprends maintenant pourquoi j'ai mal au dos ; il y a un bon sang d'roman écrit dessus. Et ce journal que je suis supposé avoir sur moi… est-ce que j'en avais un quand tu m'as vu allongé là ?"~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0
+SAY #39817 /* ~"Non… t'étais nu comme un ver quand t'es arrivé ici. De toute façon, t'as déjà un journal écrit sur le corps."~ */
+IF ~~ THEN REPLY #39818 /* ~"Et Pharod ? Tu le connais ?"~ */ GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+SAY #39819 /* ~"Ça m'dit rien… mais ceci dit, j'connais pas grand monde. Enfin, y a bien un bige qui doit savoir où trouver Pharod… euh, une fois qu'on sera sorti d'ici, j'veux dire."~ */
+IF ~~ THEN REPLY #39820 /* ~"Et comment on va *faire* pour sortir d'ici ?"~ */ GOTO 13
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.0
+SAY #39821 /* ~"Bon, toutes les portes sont fermées, nous avons donc besoin de la clé. Il y a des chances qu'un des cadavres errants ici l'ait."~ */
+IF ~~ THEN REPLY #39822 /* ~"Des cadavres errants ?"~ */ GOTO 14
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+SAY #39823 /* ~"Ouais, les gardiens de la Morgue utilisent les corps morts comme main-d'œuvre bon marché. Les cadavres sont aussi muets que des pierres, ils sont inoffensifs et n'attaqueront que si tu les provoques."~ */
+IF ~~ THEN REPLY #39824 /* ~"Y a-t-il un autre moyen ? Je ne veux pas les tuer juste pour une clé."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Morte_1","GLOBALGood",1) ~ GOTO 15
+IF ~~ THEN REPLY #39825 /* ~"Je devrais donc attaquer un de ces cadavres et lui faucher la clé ?"~ */ GOTO 16
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0
+SAY #39826 /* ~"Quoi, tu penses que ça va les vexer ? Ils sont MORTS. Mais le point positif, c'est que si tu les tues, ils pourront au moins se reposer avant que leurs gardiens les ressuscitent pour les remettre au travail."~ */
+IF ~~ THEN REPLY #39827 /* ~"Bon, d'accord… J'en descendrai un et je prendrai la clé."~ */ GOTO 16
+END
+
+IF ~~ THEN BEGIN 16 // from: 14.1 15.0
+SAY #39828 /* ~"Bon, avant de faire ça, arme-toi. Je crois avoir vu un scalpel sur une des étagères par ici."  ^NREMARQUE : Fouille les étagères dans la pièce et trouve une arme pour attaquer les zombis. <SEARCH_WEAPON>^-~ */
+IF ~~ THEN REPLY #39829 /* ~"D'accord, j'en chercherai un."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0
+SAY #39830 /* ~"Une dernière chose : ces cadavres sont aussi lents que de la mélasse, mais un seul coup de poing et tu comprendras ta douleur. S'ils commencent à prendre l'avantage, souviens-toi que tu peux COURIR et qu'eux ne peuvent pas. Utilise cet avantage pour maintenir les distances si t'as besoin de reprendre ton souffle".  ^NREMARQUE : <RUNAWAY> Si tu es en danger de mort, mets de la distance entre toi et les zombis en courant, le temps de récupérer.^-~ */
+IF ~~ THEN REPLY #39831 /* ~"D'accord. Merci du conseil."~ */ DO ~ShowFirstTimeHelp() ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+END 
+IF WEIGHT #2 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+~ THEN BEGIN 18 // from:
+SAY #39832 /* ~"Il devrait y avoir un scalpel sur l'une de ces étagères. Je le trouverais avant d'en découdre avec un de ces cadavres."  ^NREMARQUE : Fouille les étagères dans la pièce et trouve une arme pour attaquer les zombis. <SEARCH_WEAPON>^-~ */
+IF ~~ THEN REPLY #39833 /* ~"Très bien… Je vais continuer à chercher."~ */ EXIT
+END 
+IF WEIGHT #3 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
+~ THEN BEGIN 19 // from:
+SAY #39834 /* ~"Bien, tu as trouvé le scalpel ! Bon, va chercher ces cadavres… et ne t'en fais pas, je resterai derrière et te fournirai de précieux conseils tactiques."~ */
+IF ~~ THEN REPLY #39835 /* ~"Tu pourrais peut-être *m'aider*, Morte."~ */ GOTO 20
+IF ~~ THEN REPLY #39836 /* ~"D'accord."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+SAY #39837 /* ~"Je t'aiderai. Les bons conseils ne sont pas si évidents."~ */
+IF ~~ THEN REPLY #39838 /* ~"Je voulais dire m'aider à attaquer le *cadavre*."~ */ GOTO 21
+IF ~~ THEN REPLY #39839 /* ~"Bon, d'accord."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.0
+SAY #39840 /* ~"Moi ? Mais je suis un romantique, pas un soldat. Je te gênerai."~ */
+IF ~~ THEN REPLY #39841 /* ~"Quand je vais attaquer ce cadavre, tu as intérêt à être là, sinon c'est toi qui vas recevoir le coup de scalpel suivant."~ */ GOTO 22
+IF ~~ THEN REPLY #39842 /* ~"Bon, d'accord."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 22 // from: 21.0
+SAY #39843 /* ~"Bon… d'accord. Je vais t'aider."  ^NREMARQUE : si tu veux que Morte t'aide à attaquer, il te suffit de vérifier que vous êtes tous deux sélectionnés lorsque vous attaquez le cadavre. Morte se joindra à l'attaque.^-~ */
+IF ~~ THEN REPLY #39844 /* ~"Je suis content qu'on se comprenne."~ */ GOTO 23
+END
+
+IF ~~ THEN BEGIN 23 // from: 19.1 20.1 21.1 22.0
+SAY #39845 /* ~"Le moment est venu de renvoyer ces cadavres dans l'au-delà…"  ^NREMARQUE : <ATTACKNOTE>^-~ */
+IF ~~ THEN REPLY #39846 /* ~"Allons-y."~ */ EXIT
+END 
+IF WEIGHT #4 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) !PartyHasItem("KeyPr") Global("ZM782_Dead_KAPUTZ","GLOBAL",1)
+~ THEN BEGIN 24 // from:
+SAY #39847 /* ~"D'accord, on dirait que tu t'es occupé du bon cadavre. Maintenant il faut que tu trouves la clé. Elle aurait dû être sur lui. Une fois qu'on l'aura, on pourra sortir d'ici."  ^NREMARQUE : <DEADPILE>^-~ */
+IF ~~ THEN REPLY #39848 /* ~"D'accord."~ */ EXIT
+END 
+IF WEIGHT #5 /* Triggers after states #: 26 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("KeyPr")
+~ THEN BEGIN 25 // from:
+SAY #39849 /* ~"Parfait, voilà la clé. Elle doit rentrer dans le verrou de l'une des portes de la salle."~ */
+IF ~~ THEN REPLY #39850 /* ~"Bon, je vais essayer toutes les portes."~ */ EXIT
+END 
+IF WEIGHT #0 ~  !InParty("Morte") GlobalGT("Morte","GLOBAL",0)
+~ THEN BEGIN 26 // from:
+SAY #39851 /* ~"Je savais que tu reviendrais, chef ! T'as finalement réalisé que t'avais besoin de moi, hein ?"~ [MRT516] */
+IF ~~ THEN REPLY #39852 /* ~"Ouais… on y va."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+IF ~~ THEN REPLY #39853 /* ~"Pas pour le moment, Morte."~ */ GOTO 27
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.1
+SAY #39854 /* ~"Hmmff. Bien, je ne sais pas combien de temps je vais attendre ici, alors je vais te donner un DERNIÈRE chance. Tu es sûr que tu ne veux pas de mes sages conseils et de mon vif esprit ?"~ */
+IF ~~ THEN REPLY #39855 /* ~"Morte, tu n'as RIEN de tout ça."~ */ GOTO 28
+IF ~~ THEN REPLY #39856 /* ~"Très bien, j'ai changé d'avis. Allez, partons."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+IF ~~ THEN REPLY #39857 /* ~"Pas pour le moment, Morte. Peut-être plus tard."~ */ GOTO 28
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0 27.2
+SAY #39858 /* ~"Est-ce que tu essaies de me vexer, chef ? Qu'est-ce qu'il y a, c'est quelque chose que j'ai dit ? Le fait que je n'aie pas de bras ? Quoi ?"~ */
+IF ~~ THEN REPLY #39859 /* ~"Très bien, j'ai changé d'avis. Allez, partons."~ */ DO ~ChangeAIScript("pcmorte",DEFAULT) JoinPartyEx(TRUE) ~ EXIT
+IF ~~ THEN REPLY #39860 /* ~"Non, ce n'est pas ça. C'est juste que je n'ai pas besoin de ta compagnie pour le moment. Au revoir, Morte."~ */ GOTO 29
+END
+
+IF ~~ THEN BEGIN 29 // from: 28.1
+SAY #39861 /* ~"Bien, je ne vais pas attendre pour TOUJOURS, alors tu ferais mieux de revenir, dès que tu auras changé d'avis."~ */
+IF ~~ THEN REPLY #39862 /* ~"Je le ferai. Au revoir, Morte."~ */ EXIT
+END 
+IF WEIGHT #6 ~  Global("Mortuary_Walkthrough","GLOBAL",1)
+~ THEN BEGIN 30 // from:
+SAY #39863 /* ~"Qu'est-ce qui te dérange, chef ?"~ [MRT515] */
+IF ~~ THEN REPLY #39864 /* ~"Rien pour le moment, Morte. Je voulais juste savoir si je pouvais toujours compter sur toi."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from:
+SAY #42298 /* ~"Euh, chef… Ils ne peuvent pas t'entendre, d'accord ? Ils sont morts."~ */
+IF ~~ THEN REPLY #42299 /* ~"Mais toi aussi tu es mort. Et ça ne t'empêche pas de me parler."~ */ GOTO 32
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+SAY #42300 /* ~"Ouais, mais *je suis* spécial. Ce n'est pas la mort qui pourrait m'ôter mon goût de vivre. Ces cadavres, là…" Morte roule les yeux. "Ils ne devaient déjà pas avoir beaucoup de personnalité à l'origine."~ */
+IF ~~ THEN REPLY #42301 /* ~"Je… je vois."~ */ GOTO 33
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+SAY #42302 /* ~"Écoute, chef… Te regarder essayer de parler avec ces cadavres, c'est pas très bon pour mon moral. Laissons ça aux azimutés, d'accord ?"~ */
+IF ~~ THEN REPLY #42303 /* ~"Bon, très bien. Allons-y."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 34 // from:
+SAY #42306 /* ~"On dirait que c'est le suppliant chanceux, chef. Regarde… Il tient la clé dans sa main."~ */
+IF ~~ THEN EXTERN ~DZM782~ 2
+END

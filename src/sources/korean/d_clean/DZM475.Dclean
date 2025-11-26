@@ -1,0 +1,20 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #6584 /* ~이 시체의 머리는 여러 개의 얇은 철판을 볼트로 해골에 직접 덧대 놓은 기형적인 모습을 하고 있다. 왼쪽 눈을 덮고 있는 녹슨 철판에는 "475"라는 숫자가 새겨져 있다. 볼트로 굳게 닫아 놓은 입에서는 방부제의 악취가 나고 있다.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #6587 /* ~"그래... 뭐 재미있는 일은 없소?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #6588 /* ~"그래... 뭐 재미있는 일은 없소?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #6589 /* ~"난 당신이 좀비가 아니라는 것을 아오. 당신은 아무도 속이지 못할 거요."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #6590 /* ~시체에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 2
+IF ~~ THEN REPLY #6591 /* ~"당신과 얘기를 나눌 수 있어 즐거웠소. 안녕히 계시오."~ */ EXIT
+IF ~~ THEN REPLY #6592 /* ~시체를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #6585 /* ~시체는 계속 당신을 쳐다본다.~ */
+IF ~~ THEN REPLY #6593 /* ~시체를 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #6586 /* ~시체는 아무런 응답을 하지 않는다. 당신의 질문에 대답할 수 있을 정도의 정신은 이미 그것에게는 남아있지 않는 듯하다.~ */
+IF ~~ THEN REPLY #6594 /* ~시체를 그냥 내버려 두고 떠난다.~ */ EXIT
+END

@@ -1,0 +1,1226 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DSOEGO.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\cs_CZ\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DSOEGO~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Appearance","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+Global("Soego","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #1431 /* ~Vidíš unaveně vypadajícího muže ve vybledlých černých šatech. Jeho úzký obličej je velmi bledý a vypadá to, že asi dlouho nespal: ramena má pokleslá a pod nateklýma očima jsou kruhy. Zdá se, že tě nepoznal... musel si tě splést s některým z pracujících dělníků.~ */
+  IF ~~ THEN REPLY #1432 /* ~"Zdravím."~ */ GOTO 1
+  IF ~~ THEN REPLY #1433 /* ~"Kdo jsi?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1434 /* ~"Co je tohle za místo?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1435 /* ~"Měl bych nějaké otázky..."~ */ GOTO 1
+  IF ~~ THEN REPLY #1436 /* ~Nechej ho na pokoji.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #1437 /* ~Spalovač se k tobě otočí, když ho oslovíš. "Par... pardon? To mluvíš se mmnou?"~ */
+  IF ~~ THEN REPLY #1438 /* ~"Jo, mluvil. Měl bych nějaké otázky..."~ */ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 2
+  IF ~~ THEN REPLY #1439 /* ~"Ne. Nemluvil."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_1","GLOBALLaw",-1)
+~ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1440 /* ~Zůstaň potichu.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1441 /* ~Zůstaň potichu.~ */ GOTO 4
+  IF ~~ THEN REPLY #1442 /* ~Odejdi. Rychle.~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 3.0 3.3 4.0 4.1
+  SAY #1443 /* ~"U všech Mocností!" Spalovač nejdříve uskočí a pak si tě pozorně prohlíží. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš..." Kouká na tvé jizvy. "Vypadáš tak, že?" ~ */
+  IF ~~ THEN REPLY #1444 /* ~"To tě nemusí zajímat."~ */ GOTO 6
+  IF ~~ THEN REPLY #1445 /* ~"Nejsem si jistý co tu vůbec dělám. Probudil jsem se na jedné z těch kamenných desek v hořejším patře a moje paměť je... trošičku zmatená."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1446 /* ~"Trošku sem se tady v těch halách zamotal a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1447 /* ~"Snažím se odtud dostat pryč."~ */ GOTO 13
+  IF ~~ THEN REPLY #1448 /* ~"Potřeboval jsem změnu."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #4999 /* ~Na tohle opravdu nemám čas. Sbohem.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.2
+  SAY #1449 /* ~Spalovač tě chvíli pozoruje a pak potřese hlavou. "Další přeludy..." Nadechne se a promne si oči. "Ty moje horečky se stále zhoršují..."~ */
+  IF ~~ THEN REPLY #1450 /* ~"To není přelud. Měl bych nějaké otázky..."~ */ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1451 /* ~Chyť ho pod krkem, když odvrátil pozornost.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1452 /* ~Chyť ho pod krkem, když odvrátil pozornost.~ */ GOTO 22
+  IF ~~ THEN REPLY #1453 /* ~"Měl bych nějaké otázky."~ */ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 2
+  IF ~~ THEN REPLY #1454 /* ~Tiše odejdi.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.3
+  SAY #1455 /* ~Spalovač se na tebe opatrně podívá, pak se k tobě nakloní... ohrne rty, odkryje tím řadu ostrých, špinavých zubů a začne tě očichávat jakoby byl krysa.~ */
+  IF ~~ THEN REPLY #1456 /* ~"Fuj... proč mě, krucinál, očucháváš?"~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 2
+  IF ~~ THEN REPLY #1457 /* ~"Podívej, měl bych k tobě nějaké otázky..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1458 /* ~Chyť ho pod krkem, když se k tobě naklání.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1459 /* ~Chyť ho pod krkem, když se k tobě naklání.~ */ GOTO 22
+  IF ~~ THEN REPLY #1460 /* ~Odejdi. Rychle.~ */ GOTO 15
+END
+
+IF ~~ THEN BEGIN 5 // from: 1.4
+  SAY #1461 /* ~Když už se chystáš odejít, Spalovač přestane s očicháváním a potichu zašeptá. "U všech Mocností!" Stáhl se zpět a oči se mu rozšířily. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš... alespoň to tak vypadá?" ~ */
+  IF ~~ THEN REPLY #1462 /* ~"To tě nemusí zajímat."~ */ GOTO 6
+  IF ~~ THEN REPLY #1463 /* ~"Nejsem si jistý co tu vůbec dělám. Probudil jsem se na jedné z těch kamenných desek v hořejším patře a moje paměť je... trošičku zmatená."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1464 /* ~"Ztratil jsem se a hledám odtud východ. Můžeš mi pomoci?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1465 /* ~"Snažím se dostat odtud pryč."~ */ GOTO 13
+  IF ~~ THEN REPLY #1466 /* ~"Potřeboval jsem změnu."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #1467 /* ~"Opravdu na tohle nemám čas. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 5.0 15.0 41.1 43.0 50.1 115.1
+  SAY #1468 /* ~"Oh, ale obávám se, že to *je* moje věc." Soegovy oči září rudě a koutky úst mu lehce poškubávají, jakoby něco tušil. "Možná..." ušklíbl se a odkryl tím řadu ostrých nečistých zubů. "Možná bych měl zavolat stráže? Ano... ano, myslím, že to udělám."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1469 /* ~"Počkej chvíli! Ztratil jsem se... trošku sem se tady v těch halách zamotal a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1470 /* ~"Zastav! Nevolej stráže! Jenom se chci dostat odtud pryč... můžeš mi pomoci?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1471 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1472 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 22
+  IF ~~ THEN REPLY #1473 /* ~"Tak je tedy zavolej. Rád se s nimi setkám."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 7 // from: 2.1 5.1 13.3 15.1 42.1 57.0
+  SAY #1474 /* ~"Opravdu?" Spalovač tě zkoumá. "*Vypadá to* jako by tě už zašívali. Nevím, jak jsi mohl přežít takovou bolest... *bolí* tě to? Vypadá to hrozně."~ */
+  IF ~~ THEN REPLY #1475 /* ~"Jak jsem se sem dostal?"~ */ GOTO 54
+  IF ~~ THEN REPLY #1476 /* ~"Na tohle fakt nemám čas. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
+  SAY #1477 /* ~Soego kývne a koutky úst mu lehce poškubávají.  "Proč... no samozřejmě. Tyto haly *mohou* zmást každého návštěvníka. Sice jsi neuděl nic špatného, ale ty nemáš povolen vstup do Márnice po devátém zvonění zvonu - počkej, hned ti odemknu bránu."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #1478 /* ~"Děkuju."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #1479 /* ~"Děkuju."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.1 56.1 60.1
+  SAY #1480 /* ~Soego se dotkne svého pásku, nervózně po něm tápe a pak zasyčí. "Klíč!" Jeho oči září jasně rudě a jeho rty se ve vzteku ohrnou... jeho výraz připomíná rozzuřené zvíře. "Někdo mi ukradl klíč!" Obrátí se k tobě a zabručí. "Ty! Tys to musel udělat!" ~ */
+  IF ~~ THEN REPLY #1481 /* ~Blafuj: "No... počkej! Proč bych se tě na něj ptal, kdybych ti to ukradl?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1482 /* ~Lež: "O čem to mluvíš?! Nemám s tím nic společného!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_3","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Soego_1","GLOBALGood",-1)
+~ GOTO 18
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1483 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1484 /* ~Chyť ho pod krkem, než může někoho zavolat.~ */ GOTO 22
+  IF ~~ THEN REPLY #1485 /* ~"A co kdybych ho ukradl? Co bys s tím mohl dělat?"~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 10 // from:
+  SAY #1486 /* ~Soego si bere velký klíč, který má zastrčený za páskem, a odchází směrem ke vstupní bráně. Nemůžeš nic dělat, ale povšiml sis jeho podivné chůze... je nahrbený dopředu, jako kdyby chtěl udržet rovnováhu. ~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #1487 /* ~"Jak zvláštní chůzi má."~ */ EXTERN ~DMORTE~ 101
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1488 /* ~Počkej na něj než odemkne bránu.~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.1
+  SAY #1489 /* ~Soego odchází k bráně a strká klíč do zámku. O chvilku později se ze zámku ozve skřípavý zvuk... zvuk se nese celou hlavní halou a mramorovými podlažími pronikla ozvěna. ~ */
+  IF ~~ THEN REPLY #1490 /* ~Čekej na něj až se vrátí.~ */ DO ~SetDoorLocked("fakedoor",FALSE)
+~ GOTO 12
+END
+
+IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Gate_Open","GLOBAL",1)
+Global("Gate_Cut_Scene","AR0201",1)
+~ THEN BEGIN 12 // from: 11.0
+  SAY #1491 /* ~"Dobře. Vstupní brána je teď odemčená, ale už se sem nemůžeš vrátit."~ */
+  IF ~~ THEN REPLY #1492 /* ~"Můžu ti položit pár otázek předtím než odejdu?"~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2)
+~ GOTO 26
+  IF ~~ THEN REPLY #1493 /* ~"Díky Soego. Teď už půjdu."~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
+  SAY #1494 /* ~"Dostat se pryč?" Soego se zamračí. "Jak ses dostal dovnitř?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1495 /* ~"Byl jsem sem přivezen už dříve, čemuž se dost divím. Jsem připraven odejít... ale vypadá to, že jsem zabloudil. Můžeš mi pomoci najít východ?"~ */ GOTO 8
+  IF ~  Global("Appearance","GLOBAL",2)
+~ THEN REPLY #1496 /* ~"Opravdu nevím."~ */ GOTO 14
+  IF ~  !Global("Appearance","GLOBAL",2)
+~ THEN REPLY #1497 /* ~"Opravdu nevím."~ */ GOTO 61
+  IF ~~ THEN REPLY #1498 /* ~"Probudil jsem se na jedné z těch kamenných desek v hořejším patře a moje paměť je... trošičku zmatená."~ */ GOTO 7
+  IF ~~ THEN REPLY #1499 /* ~"Na tohle opravdu nemám čas. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.1
+  SAY #1500 /* ~Soego se podivil. "Velice podivné." Znovu tě studuje. "Je možné, že jsi jeden z těch, co uzavřeli smlouvu?"~ */
+  IF ~~ THEN REPLY #1501 /* ~"Ech, 'co uzavřeli smlouvu'?"~ */ GOTO 23
+  IF ~~ THEN REPLY #1502 /* ~"Na tohle opravdu nemám čas. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 4.4
+  SAY #1503 /* ~Když už se chystáš odejít, Spalovač přestane s očicháváním a potichu zašeptá. "U všech Mocností!" Stáhl se zpět a oči se mu rozšířily. Všiml sis, že jeho oči nejsou podlité krví, ale jsou rudě zbrarveny. "Sirrah, vysloužila sis ode mne nelichotivé uznání: vytvořila jsi dokonalého zombie." Trochu se uklonil. "Já jsem Soego. Smím se zeptat, co tu hledáš... alespoň to tak vypadá?" ~ */
+  IF ~~ THEN REPLY #1504 /* ~"To tě nemusí zajímat."~ */ GOTO 6
+  IF ~~ THEN REPLY #1505 /* ~"Nejsem si jistý co tu vůbec dělám. Probudil jsem se na jedné z těch kamenných desek v hořejším patře a moje paměť je... trošičku pomatená."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1506 /* ~"Ztratil jsem se a hledám východ. Můžeš mi pomoci?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1508 /* ~"Snažím se dostat odtud pryč."~ */ GOTO 13
+  IF ~~ THEN REPLY #1509 /* ~"Potřeboval jsem změnu."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #1510 /* ~"Na tohle opravdu nemám čas. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 2.4 5.4 15.4
+  SAY #1511 /* ~"Aha..." Soegovy oči září rudě a koutky jeho úst sebou lehce poškubávahjí jako kdyby něco tušil. "Možná..." ušklíbl se a odkryl tím řadu ostrých nečistých zubů. "Možná bych měl zavolat stráže? Ano... ano, myslím, že to udělám."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1512 /* ~"Počkej chvíli! Ztratil jsem se... zabloudil jsem tady v těch halách a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1513 /* ~"Zastav! Nevolej stráže! Chci se dostat odtud pryč... můžeš mi pomoci?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1514 /* ~Chyť ho pod krkem než může někoho zavolat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1515 /* ~Chyť ho pod krkem než může někoho zavolat.~ */ GOTO 22
+  IF ~~ THEN REPLY #1516 /* ~"Tak je teda zavolej. Rád se s nimi setkám."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
+  SAY #1517 /* ~Když už se chystáš odejít, Soego zasyčí... pak se náhle utiší a pozvedne ruku. "Ne, ne. Obávám se, že nemůžeš odejít. Něco tu není v pořádku. Myslím, že bude nejlepší tuhle záležitost vyjasnit..." Koutky úst mu lehce poškubávají a oči se lesknou. "...možná by nám s tím mohli stráže pomoci. Ano... možná bych je měl zavolat."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1518 /* ~"Počkej chvíli! Ztratil jsem se... zabloudil jsem tady v těch halách a vypadá to, že nemůžu najít východ. Můžeš mi pomoci?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1520 /* ~"Zastav! Nevolej stráže! Chci se dostat odtud pryč... můžeš mi pomoci?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1521 /* ~Chyť ho pod krkem než může někoho zavolat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1522 /* ~Chyť ho pod krkem než může někoho zavolat.~ */ GOTO 22
+  IF ~~ THEN REPLY #1523 /* ~"Tak je teda zavolej. Rád se s nimi setkám."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 18 // from: 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
+  SAY #1524 /* ~Soego udělal krok zpět a třikrát krátce tlesknul. Krátce nato je Márnicí slyšet zvonění velkého železného zvonu.~ */
+  IF ~~ THEN REPLY #1525 /* ~"Nuže dobrá..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
+  SAY #1526 /* ~Dřív, než stačí cokoliv říci, pevně ho chytíš za spánky a prudce mu trhneš hlavou.~ */
+  IF ~~ THEN REPLY #1528 /* ~"Nemůžu tě nechat varovat tvé přátele..."~ */ DO ~PlaySoundNotRanged("SPE_11")
+~ GOTO 20
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #1529 /* ~Ozvalo se *křupnutí*, když jsi mu zlomil vaz... ale místo toho, aby padl mrtev k zemi, vydává Spalovač ze sebe přidušené výkřiky a snaží se vytrhnout z tvého sevření! ~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #1530 /* ~"Co...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1)
+~ EXTERN ~DMORTE~ 100
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1531 /* ~"Co...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1)
+~ GOTO 21
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.1
+  SAY #1532 /* ~Spalovač vypadá překvapeně jako ty; oči má divoce otevřené a z hrdla mu vychází bublání... víš jistě, žes mu zlomil vaz, nakonec tomu napovídá i jeho krk, zkroucený v nepřirozeném úhlu. Ale stále je živý! Jak na něj ohromeně zíráš, třikrát za sebou slabě zatleská. Krátce na to ze v halách Márnice začne rozléhat zvonění velkého železného zvonu.~ */
+  IF ~~ THEN REPLY #1533 /* ~"Nuže dobrá..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
+  SAY #1534 /* ~*Něco* muselo Spalovače varovat... předtím než ses mohl na něj vrhnout, uskočil dozadu, oči se mu rudě zableskly a vycenil ostré zuby. Se zasyčením krátce třikrát tlesknul. Krátce na to ze v halách Márnice začne rozléhat zvonění velkého železného zvonu.~ */
+  IF ~~ THEN REPLY #1535 /* ~"Nuže dobrá..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 14.0
+  SAY #4792 /* ~"Jsou takoví, kteří podepsali kontrakt, který dovoluje Spalovačům použít po smrti jejich těla. Je možné, že jsi byl zachycen... v drobné administrativní chybičce, někdo to asi popletl. Jsi mnohem bystřejší, než naše zombie."~ */
+  IF ~~ THEN REPLY #4793 /* ~"Lidé vám po smrti prodávají svá těla?"~ */ GOTO 24
+  IF ~~ THEN REPLY #4794 /* ~"Och. Mám nějaké otázky..."~ */ GOTO 26
+  IF ~~ THEN REPLY #4795 /* ~"Na tohle nemám čas. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #4796 /* ~"Och, ano. Výměnou za malou sumu v mědi je mnoho osob ochotno prodat své tělo, které nebudou potřebovat, až dosáhnou Pravé Smrti."~ */
+  IF ~~ THEN REPLY #4797 /* ~"Co s těmi těly děláte?"~ */ GOTO 25
+  IF ~~ THEN REPLY #4798 /* ~"Aha. Nebude ti vadit, jestli se tě na něco zeptám?"~ */ GOTO 25
+  IF ~~ THEN REPLY #4799 /* ~"Díky za informace. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 24.1
+  SAY #4800 /* ~"Provádějí v márnici dělnické práce. Přenášejí těla, čistí podlahy, pomáhají nám v přípravě těl na pohřbení... relativně jednoduché úkoly. Je to nešťastné, ale nejsou schopni poslechnout komplikované instrukce."~ */
+  IF ~~ THEN REPLY #4801 /* ~"No,  'Kontraktovaný' nebo ne, jak se odtud dostanu, když nejsem mrtvý?"~ */ GOTO 54
+  IF ~~ THEN REPLY #4802 /* ~"Aha. Nebude ti vadit, jestli se tě na něco zeptám?"~ */ GOTO 26
+  IF ~~ THEN REPLY #4803 /* ~"Díky za informace. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 26 // from: 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
+  SAY #4804 /* ~Soego přikývl. "Můžeš položit svou otázku."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4805 /* ~"Rád bych odešel. Můžeš mě navést k východu?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4806 /* ~"Můžeš mě odtud dostat?"~ */ GOTO 13
+  IF ~  Global("Vaxis","GLOBAL",1)
+!Dead("Vaxis")
+Global("Vaxis_Leave","GLOBAL",0)
+Global("Betray_Vaxis","GLOBAL",0)
+~ THEN REPLY #4807 /* ~"Víš o tom, že v druhém patře je mrtvola, která je ve skutečnosti zamaskovaný člověk?"~ */ GOTO 27
+  IF ~~ THEN REPLY #4809 /* ~"Jestli se můžu zeptat... jsi v pořádku? Vypadáš unaveně."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_1","GLOBALGood",1)
+~ GOTO 31
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+Global("Vaxis_Exposes_Soego","GLOBAL",1)
+~ THEN REPLY #4810 /* ~"Jseš Soego, viď? Slyšel jsem, že jsi na Spalovače trochu divný. Že máš rád krysy."~ */ DO ~SetGlobal("Soego_exposed","GLOBAL",1)
+~ GOTO 30
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+Global("Vaxis_Exposes_Soego","GLOBAL",1)
+~ THEN REPLY #4811 /* ~"Jseš Soego, viď? Slyšel jsem, že jsi na Spalovače trochu divný. Že máš rád krysy."~ */ GOTO 29
+  IF ~  GlobalLT("Pharod","GLOBAL",1)
+~ THEN REPLY #4832 /* ~"Neznáš někoho jménem Pharod?"~ */ GOTO 33
+  IF ~  GlobalLT("Journal","GLOBAL",1)
+~ THEN REPLY #4833 /* ~"Ztratil jsem deník. Neviděl jsi někde nějaký?"~ */ GOTO 37
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4834 /* ~"To nic. Už musím jít. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4835 /* ~"To nic. Už musím jít. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.2
+  SAY #4808 /* ~"Pardon?"~ */
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",0)
+~ THEN REPLY #4836 /* ~"O patro výš je jeden muž maskovaný jako mrtvola. Myslím si, že je tady, aby špehoval Spalovače."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",1)
+~ GOTO 28
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",1)
+~ THEN REPLY #4837 /* ~"O patro výš je jeden muž maskovaný jako mrtvola. Myslím si, že je tady, aby špehoval Spalovače."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3)
+~ GOTO 28
+  IF ~~ THEN REPLY #4838 /* ~"Zapomeň na to.  Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4839 /* ~"To nic. Už musím jít. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #916 /* ~"Nevadí. Musím teď jít. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0 27.1
+  SAY #4840 /* ~"Co? Proč by...?" Soegův hlas náhle přešel do syčení, rty se mu odhrnuly a odhalily řadu křivých zubů. "*Anarchista.*" Oči mu rudě zazářily. "Anarchista. *Tady.*" Najednou si uvědomil tvou přítomnost a ovládl se. "Děkuji ti za informaci. Dohlédnu na to, aby stráže tuto záležitost vyřešily."~ */
+  IF ~~ THEN REPLY #4852 /* ~"Žádný problém. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4853 /* ~"To nic. Už musím jít. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4854 /* ~"To nic. Už musím jít. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 29 // from: 26.5
+  SAY #4855 /* ~Už jsi to málem řekl, ale pak ses zarazil. Když se díváš na Soega, máš podivný pocit... z nějakého důvodu jsi přesvědčen, že bys neměl nic říct.~ */
+  IF ~~ THEN REPLY #4856 /* ~"Slyšel jsem, že jsi divný, Soego. Že máš rád krysy."~ */ GOTO 30
+  IF ~~ THEN REPLY #4857 /* ~"Uh... hele, chtěl jsem se na něco zeptat."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4858 /* ~"To nic. Už musím jít. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4859 /* ~"To nic. Už musím jít. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 30 // from: 26.4 29.0
+  SAY #4860 /* ~Soego je chvíli zticha a pečlivě si tě prohlíží. Oči mu rudě září a z koutku úst mu vychází tiché syčení. "Myslím, že tvá návštěva je už u konce." Překvapil tě, protože ustoupil a rychle třikrát zatleskal. Jako odpověď se začíná Márnicí rozléhat zvonění ohromného železného zvonu.~ */
+  IF ~~ THEN REPLY #4861 /* ~"Co to...? Co to děláš?"~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+  IF ~~ THEN REPLY #4862 /* ~"Tak teda fajn. Připrav se chcípnout, Soego."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 26.3
+  SAY #4863 /* ~Soegovi se podařilo vykouzlit chabý úsměv, koutky úst se mu cukají. "Nedávno jsem onemocněl... jenom zvýšená teplota, nic vážného. Někdy se mi špatně... spí."~ */
+  IF ~~ THEN REPLY #4864 /* ~"Mohl bych nějak pomoci?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_2","GLOBALGood",1)
+~ GOTO 32
+  IF ~~ THEN REPLY #4865 /* ~"Oh. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4866 /* ~"Aha. No, já už musím jít. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4867 /* ~"Aha. No, já už musím jít. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #4868 /* ~Soego zavrtěl hlavou. "Ne, ne, ale díky za starost... Vydržím to." Zamračil se. "Chtěl jsi ještě něco?"~ */
+  IF ~~ THEN REPLY #4869 /* ~"Ano. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4870 /* ~"Ne, už tě nebudu zdržovat. Díky za informace."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4871 /* ~"Ne, už tě nebudu zdržovat. Děkuji za informace.."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 33 // from: 26.6
+  SAY #4872 /* ~"Pharod? Samozřejmě že ho znám." Zamračil se a jeho oči rudě zazářily. "Zvrhlý muž. Nemá žádný respekt k mrtvým a k živým toho cítí ještě méně. Je to mrchožrout. Sběrač."~ */
+  IF ~~ THEN REPLY #4873 /* ~"Sběrač?"~ */ GOTO 34
+  IF ~~ THEN REPLY #4874 /* ~"Nevíš, kde bych ho mohl najít?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4875 /* ~"Oh. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4876 /* ~"Aha. Možná už bych měl jít."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4877 /* ~"Aha. Možná už bych měl jít."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 34 // from: 33.0 36.0
+  SAY #4878 /* ~"Sběrači si vydělávají na živobytí tak, že sbírají mrtvé a nosí je sem do Márnice. My se pak postaráme, že se tělům dostane správného pohřbu."~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #4879 /* ~"Takže kdyby Sběrač našel tělo... například moje... tak by ho sem přinesl a prodal vám ho?"~ */ GOTO 35
+  IF ~~ THEN REPLY #4880 /* ~"Takže tenhle Sběrač Pharod... nevíš, kde bych ho mohl najít?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4881 /* ~"Oh. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4882 /* ~"Aha. No, já už musím jít. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4883 /* ~"Aha. No, já už musím jít. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 35 // from: 34.0
+  SAY #4884 /* ~"Ano."~ */
+  IF ~~ THEN REPLY #4885 /* ~"Hmmmm. Najednou je extrémně důležité, abych toho Pharoda našel. Nevíš, kde bych ho měl hledat?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4886 /* ~"Oh. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4887 /* ~"Díky za informace. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4888 /* ~"Díky za informace. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 36 // from: 33.1 34.1 35.0
+  SAY #4889 /* ~"Vím, že přebývá v Úlu, ve slumech kolem Márnice, ale nevím kde přesně. Někteří ze Sběračů by to ale vědět mohli, pokud s tebou budou chtít ovšem mluvit."~ */
+  IF ~~ THEN REPLY #4890 /* ~"Co to ti Sběrači dělají?"~ */ GOTO 34
+  IF ~~ THEN REPLY #4891 /* ~"Oh. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4892 /* ~"Díky za informace. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4893 /* ~"Díky za informace. Sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 37 // from: 26.7
+  SAY #4894 /* ~"Deník?" Soego se tváří zmateně. "Ne, žádný jsem neviděl."~ */
+  IF ~~ THEN REPLY #4895 /* ~"No tak to nic. Mám ještě nějaké otázky..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4896 /* ~"Stejně díky. Sbohem."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4897 /* ~"Stejně díky. Sbohem."~ */ GOTO 17
+END
+
+IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+!Global("Appearance","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+Global("Soego","GLOBAL",0)
+~ THEN BEGIN 38 // from:
+  SAY #4898 /* ~Vidíš unaveného muže v černém rouchu. Má úzkou a velice bledou tvář a vypadá to, že se asi v poslední době moc nevyspal: má svěšená ramena a pod krvavýma očima váčky. Je ztracený ve svých myšlenkách, vůbec si tě nevšiml.~ */
+  IF ~  GlobalLT("Appearance","GLOBAL",2)
+~ THEN REPLY #66706 /* ~"Zdravím..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 39
+  IF ~  Global("Appearance","GLOBAL",2)
+~ THEN REPLY #66707 /* ~"Zdravím..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Před přední branou Márnice jsem se setkal se Spalovačem jménem Soego... vypadal unaveně, jako by týdny nespal. Podle barvy očí a bledosti jeho kůže usuzuji, že chytil nějaký druh nemoci.~ */ GOTO 113
+  IF ~~ THEN REPLY #66708 /* ~Zanechej ho o samotě s jeho myšlenkami.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0
+  SAY #4904 /* ~"Zdravím..." Muž se k tobě otočil a mírně se uklonil. Najednou sis uvědomil, že nemá oči podlité krví, ale že mu rudě září. "Jsem Soego. Jak ti mohu..." Najednou si všiml tvých jizev a jeho ústa sebou zaškubala. "Omlouvám se, pane, ale ztratil ses?"~ */
+  IF ~~ THEN REPLY #4905 /* ~"Ano."~ */ GOTO 40
+  IF ~~ THEN REPLY #4906 /* ~"Ne."~ */ GOTO 41
+  IF ~~ THEN REPLY #4907 /* ~"Ne, neztratil jsem se. Chtěl bych se zeptat..."~ */ GOTO 41
+  IF ~~ THEN REPLY #4908 /* ~"Ne. Jenom hledám východ. Sbohem."~ */ GOTO 41
+END
+
+IF ~~ THEN BEGIN 40 // from: 39.0
+  SAY #4909 /* ~"Tak dobrá tedy..." Koutky Soegových úst sebou zaškubaly, jakoby v nějaké předtuše. "Tak v tom případě zavolám stráže, aby tě odvedly. Počkej chvíli." Opravdu to vypadá, že se chystá volat stráže.~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4910 /* ~"Počkej chvíli! Prosím... Není nutné volat stráže. Přišel jsem na pohřeb a teď jsem se tady nějak zamotal... Můžeš mě prosím tě vyvést ven?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4911 /* ~"Ne! Neztratil jsem se, přeřekl jsem se."~ */ GOTO 50
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4912 /* ~Zlom mu vaz, než stačí zařvat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4913 /* ~Zlom mu vaz, než stačí zařvat.~ */ GOTO 22
+  IF ~~ THEN REPLY #4914 /* ~Odejdi. Rychle.~ */ GOTO 18
+  IF ~~ THEN REPLY #4915 /* ~Počkej.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 41 // from: 39.1 39.2 39.3
+  SAY #4916 /* ~"Nevzpomínám si, že bych tě přijímal." Soego si tě podezřívavě prohlíží, jeho oči ve světle loučí rudě září. "Mohu se tě zeptat, co tady děláš?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4917 /* ~"Přišel jsem sem na pohřeb, vzdát úctu zesnulému. Chystám se odejít... ale nějak jsem se tady zamotal. Můžeš mi poradit, jak se dostanu k východu?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4918 /* ~"To není tvoje starost."~ */ GOTO 6
+  IF ~~ THEN REPLY #4919 /* ~"Probral jsem se na stole ve vaší preparační místnosti."~ */ GOTO 42
+  IF ~~ THEN REPLY #4920 /* ~"Přišel jsem sem na návštěvu."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4921 /* ~"Přišel jsem na pohřeb, ale asi jsem to popletl."~ */ GOTO 53
+  IF ~~ THEN REPLY #4922 /* ~Nakloň se k němu, jako bys mu chtěl něco zašeptat do ucha a pak mu ve vhodné chvíli zlom vaz.~ */ GOTO 51
+  IF ~~ THEN REPLY #4923 /* ~Odejdi. Rychle.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.2 50.2 115.0
+  SAY #4924 /* ~Tváří se překvapeně. "Ty... ses probral na stole v preparační místnosti?"~ */
+  IF ~~ THEN REPLY #4925 /* ~"Uh, ne. Přeřekl jsem se."~ */ GOTO 50
+  IF ~~ THEN REPLY #4926 /* ~"Ano. Vím, že se tomu dá jenom těžko uvěřit, ale je to pravda. Opravdu jsem se tam probudil."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Soego_1","GLOBALLaw",1)
+~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 43 // from: 41.3 50.3
+  SAY #4927 /* ~Soego přikývl. "Za kým jsi přišel? S potěšením ti ukážu cestu."~ */
+  IF ~~ THEN REPLY #4928 /* ~"Po tom ti nic není."~ */ GOTO 6
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #4929 /* ~"Přišel jsem za Dhallem."~ */ GOTO 44
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4930 /* ~"Přišel jsem za Deionarrou."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Soego_Adahn","AR0201",0)
+~ THEN REPLY #4931 /* ~Lež: "Uh... Adahn. Ještě tady pracuje, nebo...?"~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1)
+IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Soego_Adahn","AR0201",1)
+~ THEN REPLY #4932 /* ~Lež: "Uh... Adahn. Ještě tady pracuje, nebo...?"~ */ GOTO 49
+  IF ~~ THEN REPLY #4933 /* ~"Uh, za nikým. Přeřekl jsem se."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.1
+  SAY #4934 /* ~"Dhall? Dhalla najdeš v přijímací místnosti o patro výš." Koutek Soegových úst sebou zaškubal. "Má dost práce a s jeho zdravím to není moc slavné. Pokud to není opravdu nutné, raději ho neobtěžuj."~ */
+  IF ~~ THEN REPLY #4935 /* ~"Co je s Dhallem špatného?"~ */ GOTO 46
+  IF ~~ THEN REPLY #4936 /* ~"Přijímací místnost?"~ */ GOTO 45
+  IF ~~ THEN REPLY #4937 /* ~"Dobrá tedy. Budu se snažit, aby byla má návštěva co nejkratší. Sbohem."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.1
+  SAY #4938 /* ~"Ano... do Přijímací místnosti se přinášejí mrtvoly nalezené ve městě. Jsou tam zapsány a připraveny na pohřeb."~ */
+  IF ~~ THEN REPLY #4939 /* ~"Co je s Dhallem špatného?"~ */ GOTO 46
+  IF ~~ THEN REPLY #4940 /* ~"Děkuju za informace. Budu se snažit, aby byla má návštěva co nejkratší. Sbohem."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 46 // from: 44.0 45.0
+  SAY #4941 /* ~"Oh, není s ním nic špatného. Dhall je..." Soego zacvakal zuby. "...*starý.* Jeho nadšení pro katalogizování mrtvých už brzy skončí. Trpí chorobou, po které bude bez pochyby brzy následovat smrt."~ */
+  IF ~~ THEN REPLY #4942 /* ~"Dobrá tedy. Budu se snažit, aby byla má návštěva co nejkratší. Sbohem."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.2 53.2
+  SAY #4943 /* ~"Deionarra? V severozápadní pamětní hale je pohřbena žena tohoto jména. To jí hledáš?"~ */
+  IF ~~ THEN REPLY #4944 /* ~"Ano... můžeš mi říct, co se jí stalo?"~ */ GOTO 48
+  IF ~~ THEN REPLY #4945 /* ~"Ano. Půjdu jí vzdát úctu."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.0
+  SAY #4946 /* ~"Nevím, ale už je tady nějaký čas. Její otec by mohl vědět, co jí potkalo... často sem přichází ze své kanceláře v Horní čtvrti. Bylo to jeho přání, aby byla umístěna zde v pamětní hale."~ */
+  IF ~~ THEN REPLY #4947 /* ~"Děkuju za informace. Půjdu jí vzdát úctu."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 49 // from: 43.3 43.4 53.3 53.4
+  SAY #4948 /* ~"Adahn..." Soegovy oči se zúžily a rudý nádech, kterého sis všiml již předtím, zesílil. "Nikdo tohoto jména v halách Márnice nepřebývá, ať živý či mrtvý." Jeho ústa sebou zaškubala a pak najednou překvapivě zavětřil.~ */
+  IF ~~ THEN REPLY #4949 /* ~"Uh... tak to jsem se musel přeřeknout."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 50 // from: 40.1 42.0 43.5 49.0 53.1 57.1
+  SAY #4950 /* ~Soegovy ústa sebou znovu zaškubala a jeho oči začaly zářit. "Tak co tady tedy pohledáváš?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4951 /* ~"Byl jsem tady na pohřbu, vzdát úctu. Chystám se odejít, ale nějak jsem se ztratil. Můžeš mi poradit, jak najdu východ?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4952 /* ~"Po tom ti nic není."~ */ GOTO 6
+  IF ~~ THEN REPLY #4953 /* ~"Probral jsem se na stole ve vaší preparační místnosti."~ */ GOTO 42
+  IF ~~ THEN REPLY #4954 /* ~"Přišel jsem sem na návštěvu."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4955 /* ~"Přišel jsem sem na pohřeb."~ */ GOTO 53
+  IF ~~ THEN REPLY #4956 /* ~Nakloň se k němu, jako bys mu chtěl něco zašeptat do ucha a pak mu ve vhodné chvíli zlom vaz.~ */ GOTO 51
+  IF ~~ THEN REPLY #5028 /* ~Zdrhej.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 51 // from: 41.5 50.5 53.5
+  SAY #4957 /* ~Soego se zamračil, když ses naklonil. Všiml sis, že zavětřil. Oči se mu náhle zúžily a vypadá to, že začne volat stráže.~ */
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4958 /* ~Zlom mu vaz, než stačí zařvat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4959 /* ~Zlom mu vaz, než stačí zařvat.~ */ GOTO 52
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.1
+  SAY #4960 /* ~Vrhl ses po něm. Soego uskočil, oči mu rudě září a má vyceněné zuby. Se zasyčením třikrát zatleskal. Jako odpověď se začíná Márnicí rozléhat zvonění ohromného železného zvonu.~ */
+  IF ~~ THEN REPLY #4961 /* ~"Dobrá tedy..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 53 // from: 41.4 50.4
+  SAY #4962 /* ~"Koho pohřbívali? Možná, že se obřad odehrává na nějakém jiném místě Márnice."~ */
+  IF ~~ THEN REPLY #4963 /* ~"Nerozuměl jsi mi... to MĚ pohřbívali."~ */ GOTO 57
+  IF ~~ THEN REPLY #4964 /* ~"Omlouvám se... přeřekl jsem se. Neznám jméno zesnulého."~ */ GOTO 50
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4965 /* ~"Jmenuje se Deionarra."~ */ GOTO 47
+  IF ~  Global("Soego_Adahn","AR0201",0)
+~ THEN REPLY #4967 /* ~Lež: "Jmenuje se... uh, Adahn."~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1)
+IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  Global("Soego_Adahn","AR0201",1)
+~ THEN REPLY #4968 /* ~Lež: "Jmenuje se... uh, Adahn."~ */ GOTO 49
+  IF ~~ THEN REPLY #4969 /* ~Nakloň se k němu, jako bys mu chtěl něco zašeptat do ucha a pak mu ve vhodné chvíli zlom vaz.~ */ GOTO 51
+  IF ~~ THEN REPLY #4970 /* ~Zdrhej.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 54 // from: 7.0 25.0
+  SAY #4966 /* ~"Dobrá..." Soego zašilhal. Vypadá zmateně. "Určitě tady došlo k omylu. Buď tě sem přivedli pokrevní příbuzní, nějaký Spalovač, nebo..." Soego najednou zasyčel, jako by ho napadlo něco nepříjemného. "Nebo jeden ze *Sběračů*."~ */
+  IF ~~ THEN REPLY #4971 /* ~"Sběrači?"~ */ GOTO 55
+END
+
+IF ~~ THEN BEGIN 55 // from: 54.0
+  SAY #4972 /* ~"Ano, Sběrači... banda mrchožroutů, kteří sem přinášejí mrtvoly. Možná si mysleli, že jsi mrtvý..." Soego zasyčel a v očích se mu zablesklo. "... a byli tak zaslepení blýskáním měďáků, že je ani nenapadlo ověřit si to, než tě sem přitáhli." Soego si tě prohlíží. "Máš štěstí, že ses probral... jinak by ses možná dočkal Pravé Smrti dřív, než by nastal tvůj čas."~ */
+  IF ~~ THEN REPLY #4973 /* ~"Tak v tom případě došlo k omylu... a já bych rád odešel. Teď."~ */ GOTO 56
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0 59.1
+  SAY #4974 /* ~Soego přikývl a v koutcích úst mu zacukalo. "Proč... jistě, jistě. Počkej, otevřu ti bránu."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #4975 /* ~"Dobrá."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #4976 /* ~"Dobrá."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 57 // from: 53.0
+  SAY #4977 /* ~"Ty?"~ */
+  IF ~~ THEN REPLY #4978 /* ~"Ano, *já*. Probral jsem se na jednom stole nahoře."~ */ GOTO 7
+  IF ~~ THEN REPLY #4979 /* ~"Omlouvám se... přeřekl jsem se."~ */ GOTO 50
+END
+
+IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Gate_Open","GLOBAL",1)
+~ THEN BEGIN 58 // from:
+  SAY #4980 /* ~Když ses přiblížil, Soego zavětřil a vzhlédnul. Když tě uviděl, zamračil se. "Odemknul jsem ti bránu. Proč tady ještě pořád jsi?"~ */
+  IF ~~ THEN REPLY #4981 /* ~"Než odejdu, mám pro tebe pár otázek."~ */ GOTO 26
+  IF ~~ THEN REPLY #4982 /* ~"Právě jsem na cestě k bráně. Sbohem."~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Soego","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+~ THEN BEGIN 59 // from:
+  SAY #4983 /* ~Když ses přiblížil, Soego zavětřil a vzhlédnul. Když tě uviděl, lehce se uklonil. "Našel jsi, cos hledal?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4984 /* ~"Ano, děkuji ti. Omlouvám se, ale nějak jsem se zamotal... můžeš mě navést k východu?"~ */ GOTO 60
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4985 /* ~"Ano, rád bych teď odešel. Můžeš mě zavést k východu."~ */ GOTO 56
+  IF ~~ THEN REPLY #4986 /* ~"Ano a teď už mířím k východu. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 60 // from: 59.0
+  SAY #4987 /* ~Soego přikývl a koutek úst mu zacukal. "Proč... jistě. Tohle místo může návštěvníky zmást. Pojď, otevřu ti bránu ven."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #4988 /* ~"Děkuju ti."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #4989 /* ~"Děkuju ti."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 61 // from: 13.2
+  SAY #4990 /* ~"To je podivné." V Soegovýh očích se rudě zablesklo a koutek jeho úst sebou zaškubal, jakoby v nějaké předtuše. "Možná..." Odfrkl si a odhalil řadu ostrých a špinavých zubů. Možná bych měl zavolat stráže? Ano... ano, myslím, že to udělám."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4991 /* ~"Počkej chvíli! Ztratil jsem se... nějak jsem se tady zamotal a teď nemůžu najít východ. Můžeš mi pomoct?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4992 /* ~"Stop! Nevolej stráže! Já se jenom chci dostat pryč... můžeš mi pomoct?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4993 /* ~Zlom mu vaz, než stačí zařvat.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4994 /* ~Zlom mu vaz, než stačí zařvat.~ */ GOTO 22
+  IF ~~ THEN REPLY #4995 /* ~"Tak je zavolej. Rád se s nimi seznámím."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 62 // from: 44.2 45.1 46.0 47.1 48.0
+  SAY #4996 /* ~Soego přikývl... a v koutcích úst mu znovu zacukalo. Zřejmě si to ani neuvědomuje. "Vrať se, až vzdáš úctu zesnulému a já ti pak otevřu bránu. Je po devíti zazvoněních, takže budeš muset odejít, jakmile si vyřídíš svou věc."~ */
+  IF ~~ THEN REPLY #4997 /* ~"Víš, vlastně bych to mohl udělat jindy. Můžeš mě pustit ven?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4998 /* ~"Děkuju ti. Vrátím se."~ */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+!Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 63 // from:
+  SAY #21653 /* ~"Hele, další živý člověk. Většinu zabijou ghúlové, takhle daleko v katakombách; měl jsi štěstí."~ */
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #21655 /* ~"Ty jsi Soego, z Márnice. Co tady děláš?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 72
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21656 /* ~"Kdopak jsi?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 64
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21657 /* ~"Kde to jsem?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 77
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21658 /* ~"Proč jsem tady uvězněný?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 78
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21660 /* ~"Snad. Sbohem."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 64 // from: 63.1 77.0 78.0
+  SAY #21661 /* ~"Já jsem Soego, ze Společenství Spalovačů. Jsem tady jako misionář." Uklání se.~ */
+  IF ~~ THEN REPLY #21662 /* ~"Misionář?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21663 /* ~"Co tady Spalovači dělají?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64595 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64596 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21665 /* ~"Nazdar, a sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 65 // from: 64.0 72.2 73.2 74.0 101.3 104.1
+  SAY #21666 /* ~"Ano, přišel jsem do těchto katakomb poté, co jsem slyšel pověsti o nemrtvých, kteří jsou v těchto končinách. Doufám, že je zachráním."~ */
+  IF ~~ THEN REPLY #21667 /* ~"Zachráníš?"~ */ GOTO 67
+  IF ~~ THEN REPLY #64597 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64599 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21669 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 66 // from: 64.1 72.3 73.3 74.1 101.4 104.2 109.2
+  SAY #21670 /* ~"Jsem tu sám. Přišel jsem do těchto katakomb poté, co jsem slyšel pověsti o nemrtvých kteří jsou v těchto končinách. Doufám, že je zachráním."~ */
+  IF ~~ THEN REPLY #21671 /* ~"Zachráníš?"~ */ GOTO 67
+  IF ~~ THEN REPLY #64600 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64601 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21673 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 67 // from: 65.0 66.0
+  SAY #21674 /* ~"Ano, vášeň je váže k tomuto falešnému životu. Doufám, že je naučím zapomenout tyto vášně, opustit tento falešný život a dosáhnout Pravé smrti."~ */
+  IF ~~ THEN REPLY #21675 /* ~"Falešný život?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21676 /* ~"Pravá smrt?"~ */ GOTO 69
+  IF ~~ THEN REPLY #21767 /* ~"Chceš aby zemřeli?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64602 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64603 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21770 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0 69.0 70.0
+  SAY #21771 /* ~"Tito... mrtví... jsou tak blízko Pravé smrti... ale přesto tíhnou k tomuto životu. Tento falešný život je slepá ulička existence v této sféře."~ */
+  IF ~~ THEN REPLY #21772 /* ~"Pravá smrt?"~ */ GOTO 69
+  IF ~~ THEN REPLY #21774 /* ~"Ty chceš aby zemřeli?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64604 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64605 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21776 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 69 // from: 67.1 68.0 70.1
+  SAY #21777 /* ~"Úplná nepřítomnost vášně, pravá smrt je pravý život za tímto stínem bytí. To je to místo, kam se tito mrtví musí dostat, aby se osvobodili."~ */
+  IF ~~ THEN REPLY #21779 /* ~"Co je ten 'falešný život,' o kterém jsi mluvil?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21780 /* ~"Ty chceš aby zemřeli?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64606 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64607 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21784 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 70 // from: 67.2 68.1 69.1
+  SAY #21786 /* ~"Já po nich chci, aby překonali tuto sféru existence a oddělili se od vášní. To je může zachránit."~ */
+  IF ~~ THEN REPLY #21788 /* ~"Co byl ten 'falešný život' o kterém jsi mluvil?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21790 /* ~"Mluvil jsi o 'Pravé smrti?'"~ */ GOTO 69
+  IF ~~ THEN REPLY #64608 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64609 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21794 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 71 // from: 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
+  SAY #21799 /* ~"Ještě trochu tvého času, před tím než půjdeš. Neútoč na žádné nemrtvé tady v katakombách; nezaútočí na tebe, dokud zůstaneš mírumilovný. Když se ukážeš být nepřátelský, tak se budou bránit, a je jich tady... mnoho. Nakonec, můžeš se sem vrátit, když si budeš chtít odpočinout."~ */
+  IF ~  NumInParty(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21800 /* ~"Počkej... můžu si teď odpočinout?"~ */ JOURNAL #21805 /* ~Soego mi řekl, abych neútočil na žádné nemrtvé v Mrtvých národech, protože mi neublíží, dokud budu mírumilovný.~ */ GOTO 84
+  IF ~  NumInPartyGT(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #64569 /* ~"Počkej... můžeme si odpočinout?"~ */ JOURNAL #21805 /* ~Soego mi řekl, abych neútočil na žádné nemrtvé v Mrtvých národech, protože mi neublíží, dokud budu mírumilovný.~ */ GOTO 84
+  IF ~~ THEN REPLY #64570 /* ~Odejdi.~ */ JOURNAL #21805 /* ~Soego mi řekl, abych neútočil na žádné nemrtvé v Mrtvých národech, protože mi neublíží, dokud budu mírumilovný.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 63.0
+  SAY #21806 /* ~"Paměť ti slouží dobře. Já už nejsem zařazen v Márnici... místo toho, jsem se stal misionářem v těchto končinách."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64547 /* ~"Ale já jsem myslel, že jsem ti zlomil krk..."~ */ GOTO 73
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #21808 /* ~"Ale já jsem si myslel, že jsem tě *zabil*..."~ */ GOTO 73
+  IF ~~ THEN REPLY #21809 /* ~"Misionář?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21811 /* ~"Co tady Spalovači dělají?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64610 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64611 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21813 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 73 // from: 72.0 72.1 109.0 109.1
+  SAY #21814 /* ~"Zranění, které jsi mi způsobil, nebylo smrtelné. Rychle jsem se uzdravil... a zjistil jsem, že bych měl odejít z Márnice."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+~ THEN REPLY #21815 /* ~"Soego, zlomil jsem ti vaz... to nebyla smrtelná rána?"~ */ GOTO 101
+  IF ~~ THEN REPLY #21816 /* ~"A nenaštvalo tě to?"~ */ GOTO 74
+  IF ~~ THEN REPLY #21817 /* ~"Hmmm. Takže... povídal jsi, že jsi misionář?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21818 /* ~"Tak dobře. Co tady spalovači dělají?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64612 /* ~"Dobrá... tak kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64613 /* ~"Já... jasně. Proč jsem tu byl uvězněn?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21820 /* ~"Zapomeň na to; To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.1 101.2 104.0
+  SAY #21821 /* ~"Ne... mělo by? Jsem poněkud zklamaný, že jsem odtamtud musel odejít. Nicméně, už by ses neměl vracet do Márnice, protože mnoho z mých bližních by tě nerado vidělo."~ */
+  IF ~~ THEN REPLY #64614 /* ~"Říkal si, že jsi misionář?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21823 /* ~"Co tady Spalovači dělají?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64615 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64616 /* ~"Proč jsem tu byl uvězněn"~ */ GOTO 78
+  IF ~~ THEN REPLY #21825 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 75 // from:
+  SAY #21716 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 76 // from:
+  SAY #21832 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 77 // from: 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
+  SAY #21837 /* ~"Jsi v katakombách Mrtvých národů. Stráže tě sem přivedly."~ */
+  IF ~~ THEN REPLY #21840 /* ~"A kdopak jsi byl ty?"~ */ GOTO 64
+  IF ~~ THEN REPLY #21841 /* ~"Proč jsem tady uvězněný?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21843 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 78 // from: 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
+  SAY #21844 /* ~"To já nevím. Zeptej se někoho ze zdejších 'občanů'."~ */
+  IF ~~ THEN REPLY #21847 /* ~"A kdopak jsi ty?"~ */ GOTO 64
+  IF ~~ THEN REPLY #21848 /* ~"Kde to jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #21850 /* ~"Možná. Sbohem."~ */ GOTO 71
+END
+
+IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 79 // from:
+  SAY #21851 /* ~"Á, někdo na pomoc naší věci! Já, jako agent Mnohojednoho, jsem byl informován, že přijdeš. Potřebujeme, abys zkusil najít cestu do trůnního sálu Tichého krále a zabil ho. Udělej to, a Mnohojeden tě dobře odmění."~ */
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalGT("Soego","GLOBAL",0)
+GlobalLT("Soego","GLOBAL",3)
+~ THEN REPLY #66181 /* ~"Soego... Emoric chtěl vědět, kde jsi."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 110
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+Global("Soego","GLOBAL",0)
+~ THEN REPLY #21852 /* ~"Počkej: ty jsi Soego? Emoric chtěl vědět kde jsi."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #21856 /* ~Našel jsem Soega. Nakazil se lykantropií, která ho dovedla do katakomb. Jeho mysl už nebyla jeho a jeho víra Spalovače byla ztracena.~ */ GOTO 110
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64623 /* ~"Moment... nezlomil jsem ti vaz v Márnici?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 112
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64624 /* ~"Počkej... myslel jsem, že jsem tě *zabil* v Márnici..."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 112
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+!Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21853 /* ~"Jak se dostanu k Tichému králi?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #21857 /* ~Soego mi řekl, že neví, jak se dostat do trůnního sálu Tichého krále, což budu muset udělat, jestli chci Tichého krále zabít.~ */ GOTO 80
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+!Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21854 /* ~"Aha. Sbohem."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 80 // from: 79.4 110.2 112.0
+  SAY #21858 /* ~"Já nevím... Už jsem tady nějakou dobu, a stejně nemůžu najít cestu do jeho trůnního sálu. Třeba budeš mít víc štěstí ty, nezatížen záští a fanatismem jako já."~ */
+  IF ~~ THEN REPLY #21860 /* ~"Záští a fanatismem?"~ */ GOTO 81
+  IF ~~ THEN REPLY #21862 /* ~"Aha. Tak sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 81 // from: 80.0
+  SAY #21864 /* ~"Názory našeho společenství jsou pro některé lidi oblíbené, ale ne pro všechny. Nejdůležitější vůdci této civilizace je nemají příliš v oblibě."~ */
+  IF ~~ THEN REPLY #21870 /* ~"Aha. Sbohem."~ */ GOTO 71
+END
+
+IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+Global("Met_Soego2","GLOBAL",1)
+~ THEN BEGIN 82 // from:
+  SAY #21913 /* ~"Á, vítej zpět."~ */
+  IF ~  Global("Silent_King","GLOBAL",1)
+Global("Soego_Told","GLOBAL",0)
+Global("Lawful_Hargrimm_1","GLOBAL",1)
+~ THEN REPLY #24206 /* ~"Tichý král je mrtev, a to už nějaký čas. Tichý král už *není* ."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Hargrimm_7","GLOBALLaw",-3)
+IncrementGlobalOnceEx("GLOBALEvil_Hargrimm_3","GLOBALGood",-1)
+~ GOTO 94
+  IF ~  Global("Silent_King","GLOBAL",1)
+Global("Soego_Told","GLOBAL",0)
+!Global("Lawful_Hargrimm_1","GLOBAL",1)
+~ THEN REPLY #21915 /* ~"Tichý král je mrtev, a už nějaký čas byl. *Není* žádný Tichý král."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1)
+~ JOURNAL #21926 /* ~Konfrontoval jsem Soega s obsahem jeho deníku, a on se proměnil v krysodlaka a zaútočil na mě.~ */ GOTO 94
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalLT("Soego","GLOBAL",3)
+~ THEN REPLY #21914 /* ~"Ty jsi Soego? Emoric chtěl vědět kde jsi."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+~ GOTO 109
+  IF ~  Global("Soego_Journal","GLOBAL",1)
+~ THEN REPLY #21916 /* ~"Byl jsem v tvé komnatě a viděl jsem tvůj deník."~ */ DO ~SetGlobal("Soego_Fled","GLOBAL",1)
+Enemy()
+~ JOURNAL #21926 /* ~Konfrontoval jsem Soega s obsahem jeho deníku, a on se proměnil v krysodlaka a zaútočil na mě.~ */ GOTO 100
+  IF ~  Global("Doubtful_Skel","GLOBAL",1)
+~ THEN REPLY #21917 /* ~"Potkal jsem kostlivce -- v jedné z těchto chodeb -- který se zdál být blízko nalezení Pravé smrti."~ */ DO ~SetGlobal("Doubtful_Skel","GLOBAL",2)
+SetGlobal("Visit_Doubtful","AR1500",1)
+~ GOTO 97
+  IF ~  NumInParty(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21920 /* ~"Potřebuju si odpočinout."~ */ GOTO 84
+  IF ~  NumInPartyGT(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21922 /* ~"Potřebuju si odpočinout."~ */ GOTO 84
+  IF ~~ THEN REPLY #21924 /* ~"Chtěl bych se na něco zeptat..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21925 /* ~"Jenom procházím. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 83 // from: 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
+  SAY #21943 /* ~"Jestli to budu vědět, tak ti odpovím."~ */
+  IF ~  Global("Know_Hargrimm","GLOBAL",1)
+~ THEN REPLY #21944 /* ~"Řekni mi něco o Hargrimmovi."~ */ GOTO 88
+  IF ~  Global("Know_Acaste","GLOBAL",1)
+~ THEN REPLY #21945 /* ~"Řekni mi něco o Acaste."~ */ GOTO 89
+  IF ~  Global("Know_Stale_Mary","GLOBAL",1)
+~ THEN REPLY #21946 /* ~"Řekni mi něco o Ošuntělé Mary."~ */ GOTO 90
+  IF ~  Global("Know_Silent_King","GLOBAL",1)
+~ THEN REPLY #21947 /* ~"Řekni mi něco o Tichém Králi."~ */ GOTO 91
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #21948 /* ~"Co víš o téhle 'civilizaci?'"~ */ GOTO 92
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #21949 /* ~"Co víš o téhle 'civilizaci?'"~ */ GOTO 93
+  IF ~~ THEN REPLY #21951 /* ~"Nevadí. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 84 // from: 71.0 71.1 82.5 82.6
+  SAY #21954 /* ~"Samozřejmě. V této místnosti budeš během spánku v bezpečí."~ */
+  IF ~~ THEN REPLY #21956 /* ~"Díky..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+RestPartyEx(0,10,FALSE)
+FadeFromColor([20.0],0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 85 // from:
+  SAY #21958 /* ~Null Node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 86 // from:
+  SAY #21963 /* ~Null Node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 87 // from:
+  SAY #21969 /* ~Null Node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 88 // from: 83.0 91.0
+  SAY #21975 /* ~"Tvrdohlavý, ale obdivuhodný ve své zbožnosti a oddanosti povinnostem. Je to můj největší rival tady, a držel tuto civilizaci pohromadě po mnoho let. Jeho vášně pramení z jeho zbožnosti a oddanosti povinnostem... obdivuhodné kvality, ale na špatném místě."~ */
+  IF ~~ THEN REPLY #21976 /* ~"Ještě bych se chtěl zeptat..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21977 /* ~"To je všechno. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 89 // from: 83.1
+  SAY #21978 /* ~"Acaste je hovado. Obávám se, že jenom Tichý král ji drží na uzdě. Kdyby tady nebyl, ghúlové by blbnuli po katakombách"~ */
+  IF ~~ THEN REPLY #21979 /* ~"Řekni mi něco o Tichém Králi."~ */ DO ~SetGlobal("Know_Silent_King","GLOBAL",1)
+~ GOTO 91
+  IF ~~ THEN REPLY #21980 /* ~"Ještě bych se chtěl zeptat..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21981 /* ~"To je všechno. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 90 // from: 83.2
+  SAY #21982 /* ~"Ošuntělá Mary je dobrosrdečná duše, když zpomalí. Nerozumím mnohému z toho co povídá, ale ona a zombie nejsou náchylní k násilí."~ */
+  IF ~~ THEN REPLY #21983 /* ~"Ještě bych se chtěl zeptat..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21984 /* ~"To je všechno. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 91 // from: 83.3 89.0
+  SAY #21985 /* ~"Já jsem nikdy Tichého Krále neviděl. Myslím, že ti o něm mohu něco říct, ale nikdy jsem ho neviděl na vlastní oči. Pravděpodobně jeho trůnní sál leží za karmínovými dveřmi, ale já tam nemám přístup... Hargrimm, kostliveckej kněz, mě tam nepustí."~ */
+  IF ~~ THEN REPLY #21986 /* ~"Řekni mi něco o Hargrimmovi."~ */ DO ~SetGlobal("Know_Hargrimm","GLOBAL",1)
+~ GOTO 88
+  IF ~~ THEN REPLY #21987 /* ~"Ještě bych se chtěl zeptat..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21988 /* ~"To je všechno. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 92 // from: 83.4
+  SAY #21989 /* ~"Byli tu po mnoho století, myslím, starali se o ty, kteří pominuli v jejich halách. Taková oddanost k povinnostem není dále třeba... je to téměř zločin."~ */
+  IF ~~ THEN REPLY #21990 /* ~"Ještě bych se chtěl zeptat..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21991 /* ~"To je všechno. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 93 // from: 83.5
+  SAY #21992 /* ~"Byli tu po mnoho století, myslím, starali se o ty, kteří pominuli v jejich halách. Taková oddanost k povinnostem není dále třeba... je to téměř zločin."~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 220
+END
+
+IF ~~ THEN BEGIN 94 // from: 82.0 82.1
+  SAY #21993 /* ~"Cože? To snad není pravda? Á, Mnohojeden tě za tuhle informaci určitě odmění..."~ */
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",0)
+~ THEN REPLY #25248 /* ~"Mnohojeden?"~ */ JOURNAL #25254 /* ~Řekl jsem Soegovi, že Tichý Král nebyl ničím jiným než vyschlou mrtvolou. Řekl mi, že budu odměněn Mnohojedním, když mu to řeknu. Mnohojeden je vlastně společná mysl kraniových krys na Místě neustálého rozjímání, jižně od katakomb Truchlícího kamene.~ */ GOTO 111
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",1)
+~ THEN REPLY #25252 /* ~"Zajímavý. Mám nějaké další otázky..."~ */ JOURNAL #25254 /* ~Řekl jsem Soegovi, že Tichý Král nebyl ničím jiným než vyschlou mrtvolou. Řekl mi, že budu odměněn Mnohojedním, když mu to řeknu. Mnohojeden je vlastně společná mysl kraniových krys na Místě neustálého rozjímání, jižně od katakomb Truchlícího kamene.~ */ GOTO 83
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",1)
+~ THEN REPLY #25253 /* ~"Možná. Sbohem."~ */ JOURNAL #25254 /* ~Řekl jsem Soegovi, že Tichý Král nebyl ničím jiným než vyschlou mrtvolou. Řekl mi, že budu odměněn Mnohojedním, když mu to řeknu. Mnohojeden je vlastně společná mysl kraniových krys na Místě neustálého rozjímání, jižně od katakomb Truchlícího kamene.~ */ EXIT
+  IF ~  Global("CR_Vic","GLOBAL",1)
+~ THEN REPLY #21994 /* ~"Dobře. Chtěl bych se na něco zeptat..."~ */ JOURNAL #21996 /* ~Řekl jsem Soegovi, že Tichý král nebyl nic jiného, než vysušená mrtvola. Musím taky sám informovat Mnohojednoho hned, jak k tomu budu mít příležitost.~ */ GOTO 83
+  IF ~  Global("CR_Vic","GLOBAL",1)
+~ THEN REPLY #21995 /* ~"Tak já mu to řeknu sám. Sbohem."~ */ JOURNAL #21996 /* ~Řekl jsem Soegovi, že Tichý král nebyl nic jiného, než vysušená mrtvola. Musím taky sám informovat Mnohojednoho hned, jak k tomu budu mít příležitost.~ */ EXIT
+END
+
+IF WEIGHT #0 ~  CreatureInArea("AR1500")
+GlobalGT("Soego_Exposed","GLOBAL",0)
+~ THEN BEGIN 95 // from:
+  SAY #21997 /* ~"Ty... parchante!"~ */
+  IF ~~ THEN REPLY #21998 /* ~"Co-"~ */ DO ~Enemy()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 96 // from:
+  SAY #22003 /* ~"Hé... tyto dveře vedou do soukromých pokojů. Musím vás požádat, abyste tam nechodil."~ */
+  IF ~~ THEN REPLY #22004 /* ~Odejdi.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 97 // from: 82.4
+  SAY #22005 /* ~"Oh! Hned si s ním půjdu promluvit!"~ */
+  IF ~~ THEN REPLY #22006 /* ~"Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 98 // from:
+  SAY #22007 /* ~"Ne, já zas jdu."~ */
+  IF ~~ THEN REPLY #22008 /* ~"Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 99 // from:
+  SAY #22009 /* ~"Bohužel, ne. Může přijít okolo."~ */
+  IF ~~ THEN REPLY #22010 /* ~"Aha. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 100 // from: 82.3
+  SAY #22011 /* ~Soego se na chvíli odmlčí. "Aha." Náhle začne překvapivá přeměna...~ */
+  IF ~~ THEN REPLY #22012 /* ~"Co t...?"~ */ DO ~ClearAllActions()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 101 // from: 73.0
+  SAY #22014 /* ~"Éé... tvoje paměť ti prokázala špatnou službu. Můj krk byl poškozen, jistě... vymknutý. Ale zlomený? Těžko."~ */
+  IF ~  !Global("Lawful_Soego_1","GLOBAL",1)
+~ THEN REPLY #22015 /* ~"Já mám jiný názor. Co jsi, Soego?"~ */ GOTO 106
+  IF ~  Global("Lawful_Soego_1","GLOBAL",1)
+~ THEN REPLY #22016 /* ~"Já mám jiný názor. Co jsi, Soego?"~ */ GOTO 103
+  IF ~~ THEN REPLY #22018 /* ~"A nejsi naštvanej?"~ */ GOTO 74
+  IF ~~ THEN REPLY #22019 /* ~"Povídals že jsi misionář?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #22020 /* ~"Co tady spalovači dělají?"~ */ GOTO 66
+  IF ~~ THEN REPLY #22022 /* ~"To je všechno. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 102 // from:
+  SAY #22023 /* ~Vytrhává se z tvého sevření nadpřirozenou rychlostí. Prskající a plivající, zasyčí "Bláznivá věc, zaútočit na agenta společného vědomí psionických krys!" Náhle začíná překvapivá proměna...~ */
+  IF ~~ THEN REPLY #22024 /* ~"Co...?"~ */ DO ~SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Fled","GLOBAL",2)
+Enemy()
+~ JOURNAL #21856 /* ~Našel jsem Soega. Nakazil se lykantropií, která ho dovedla do katakomb. Jeho mysl už nebyla jeho a jeho víra Spalovače byla ztracena.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 103 // from: 101.1
+  SAY #22026 /* ~"Legrační otázka! Probudil ses na přípravném stole, v Márnici... sám jsi mi to řekl. Jistě mé zranění nemohlo být horší než ty, diky kterým si tě Sběrači spletli s mrtvolou, ne?"~ */
+  IF ~~ THEN REPLY #22027 /* ~"Máš pravdu, ale... nevadí."~ */ GOTO 104
+  IF ~~ THEN REPLY #22028 /* ~"Mé schopnosti jsou... unikátní."~ */ GOTO 105
+  IF ~~ THEN REPLY #22029 /* ~"Ne. Něco je tady špatně, a já dříve nebo později zjistím co."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 104 // from: 103.0 103.2 105.0 105.1 106.1 107.0
+  SAY #22032 /* ~Krčí rameny. "Výborně."~ */
+  IF ~~ THEN REPLY #22033 /* ~"Nejsi rozzlobený kvůli tomu co se stalo?"~ */ GOTO 74
+  IF ~~ THEN REPLY #22034 /* ~"Říkal jsi, že jsi misionář?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #22035 /* ~"Tak co tu Spalovači dělají?"~ */ GOTO 66
+  IF ~~ THEN REPLY #22038 /* ~"Rozloučím se, hned. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 105 // from: 103.1
+  SAY #22039 /* ~Usmívá se. "Každý je jedinečný. Každý. Určitě to nebudeš popírat?"~ */
+  IF ~~ THEN REPLY #22040 /* ~"Pravdaže ne, ale... nevadí."~ */ GOTO 104
+  IF ~~ THEN REPLY #22041 /* ~"Ne. Něco tady je špatně a už brzy přijdu na to, co to je."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 106 // from: 101.0
+  SAY #22043 /* ~"Co jsem-? Co je to za otázku?"~ */
+  IF ~~ THEN REPLY #22044 /* ~"Slyšel jsi mě. Ty nejsi žádný řádný Spalovač... co *jsi*, Soego?"~ */ GOTO 107
+  IF ~~ THEN REPLY #22045 /* ~"Zapomeň na to. Nevadí."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 107 // from: 106.0
+  SAY #22047 /* ~Soego se na tebe zamračí. "Já nevím, *o čem* to mluvíš."~ */
+  IF ~~ THEN REPLY #22048 /* ~"Něco tady je špatně a už brzy přijdu na to, co to je."~ */ GOTO 104
+END
+
+IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalLT("Soego","GLOBAL",3)
+!Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 108 // from:
+  SAY #22050 /* ~"Ah, další člen živých. Většina je zavražděna ghúly, takhle hluboko v katakombách; jsi šťastlivec."~ */
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #22051 /* ~"Ty jsi Soego? Emoric potřeboval vědět, kde jsi."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #22052 /* ~Našel jsem Soega. Objevil skupinu nemrtvých strážců, kteří ochraňují katakomby. Snažil se je přesvědčit, aby se přidali k Pravé smrti.~ */ GOTO 109
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #66173 /* ~"Soego... Emoric chtěl vědět, kde jsi."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 109
+END
+
+IF ~~ THEN BEGIN 109 // from: 82.2 108.0 108.1
+  SAY #22053 /* ~"Ano, já jsem on. Dělám tu misionářskou práci pro Spalovače."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64617 /* ~"Dobrá. Ale... Myslel jsem, že jsem ti zlomil krk..."~ */ GOTO 73
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64618 /* ~"Dobře. Ale... Myslel jsem, že jsem tě *zabil*..."~ */ GOTO 73
+  IF ~~ THEN REPLY #22054 /* ~"Jsou tu také jiní Spalovači?"~ */ GOTO 66
+  IF ~~ THEN REPLY #50792 /* ~"Kde jsem?"~ */ GOTO 77
+  IF ~~ THEN REPLY #50793 /* ~"Proč jsem zde byl uvězněn?"~ */ GOTO 78
+  IF ~~ THEN REPLY #22056 /* ~"Rozloučím se, hned. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 110 // from: 79.0 79.1
+  SAY #22057 /* ~"Ano, já jsem on."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64625 /* ~"Moment... nezlomil jsem ti vaz v Márnici?"~ */ GOTO 112
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64626 /* ~"Počkej... myslel jsem, že jsem tě *zabil* v Márnici..."~ */ GOTO 112
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #22058 /* ~"Dobře. A teď, jak se dostanu k Tichému králi?"~ */ JOURNAL #21857 /* ~Soego mi řekl, že neví, jak se dostat do trůnního sálu Tichého krále, což budu muset udělat, jestli chci Tichého krále zabít.~ */ GOTO 80
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #22060 /* ~"Dobře. Sbohem."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 111 // from: 94.0
+  SAY #25249 /* ~"Jasně, společná mysl kraniových krys. Běž do katakomb jižně od Truchlícího kamene. Jistě najdeš cestu."~ */
+  IF ~~ THEN REPLY #25250 /* ~"Zajímavý. Mám nějaké další otázky..."~ */ GOTO 83
+  IF ~~ THEN REPLY #25251 /* ~"Možná. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 112 // from: 79.2 79.3 110.0 110.1
+  SAY #64620 /* ~Odvane tvá slova pryč. "Nic; to není nic pro mě. Já už jsem byl obdařen lykantropií; zranění hojivšími se v krátké chvíli."~ */
+  IF ~~ THEN REPLY #64621 /* ~"Já... vím. Tak, jak se dostanu k Tichému králi?"~ */ GOTO 80
+  IF ~~ THEN REPLY #64622 /* ~"V pořádku... Sbohem, tedy."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 113 // from: 38.1
+  SAY #66709 /* ~"Zdravím..." Muž se k tobě otočil a mírně se uklonil. Všiml sis, že jeho oči nejsou podlité krví, jak se ti zdálo na první pohled. Spíše to vypadá, že jsou narudlé od přírody. "Jsem Soego. Jak ti mohu pomoci?"~ */
+  IF ~~ THEN REPLY #66712 /* ~"Chtěl bych opustit Márnici. Můžeš mi pomoct?"~ */ GOTO 114
+  IF ~~ THEN REPLY #66713 /* ~"Mám pár otázek..."~ */ GOTO 114
+  IF ~~ THEN REPLY #66714 /* ~"Jenom procházím. Sbohem."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 114 // from: 113.0 113.1
+  SAY #66710 /* ~Během tvé řeči se náhle Soegovy rty shrnuly a odhalily řadu špinavých ostrých zubů. Naklonil se k tobě a očichává tě.~ */
+  IF ~~ THEN REPLY #66715 /* ~"Uh... proč mě ksakru očicháváš?"~ */ GOTO 115
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #66716 /* ~Když se nakloní, zlom mu krk.~ */ GOTO 22
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #66717 /* ~Když se nakloní, zlom mu krk.~ */ GOTO 19
+  IF ~~ THEN REPLY #66718 /* ~"No tak nic... sbohem."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 115 // from: 114.0
+  SAY #66711 /* ~"Tvé oblečení... ta róba. Páchnou někým jiným. Nejsou tvoje." Soego stiskl rty a podivně se usmívá, jeho oči září podivným světlem. "Kdo *jsi*?"~ */
+  IF ~~ THEN REPLY #66719 /* ~"Já... jenom jsem si vzal tu róbu, abych mohl v klidu odejít. Probudil jsem se nahoře v jedné z přípraven."~ */ GOTO 42
+  IF ~~ THEN REPLY #66720 /* ~"Máš pravdu. Tahle róba není moje, ale to, komu patří, to se tě netýká."~ */ GOTO 6
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #66721 /* ~Zlom mu krk, než stačí zavolat o pomoc.~ */ GOTO 22
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #66722 /* ~Zlom mu krk, než stačí zavolat o pomoc.~ */ GOTO 19
+  IF ~~ THEN REPLY #66723 /* ~"Na tom nezáleží. Teď už půjdu."~ */ GOTO 17
+END

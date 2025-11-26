@@ -23,6 +23,9 @@ def build(lang):
     folder_with_game = os.path.normpath(os.path.join(cwd, 'game'))
     folder_with_python_settings = os.path.join(folder_with_game, 'engine_data', 'settings')
 
+    Path(folder_with_cleaned_infinity_engine_dialogues).mkdir(parents=True, exist_ok=True)
+    Path(folder_with_renpy_dialogues).mkdir(parents=True, exist_ok=True)
+
     print('Warming up')
     replacer = DialogueReplacer()
     transformer = DialogueTransformer()

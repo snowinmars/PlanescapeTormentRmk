@@ -1,0 +1,201 @@
+IF ~  Global("Asonje","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+SAY #6562 /* ~Dieser wandelnden Leiche wurde die Nummer "1094" in die Stirn eingeritzt. Ihr Mund wurde fest zugenäht und der Geruch von frischem Formaldehyd umgibt sie wie eine Wolke. Trotz ihrer bleichen, eingefallenen Gesichtszüge und leblosen, milchigen Augen kann man noch gut erkennen, daß dies einmal ein ansehnlicher junger Mann gewesen sein muß.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #6565 /* ~"Na... irgendwas Interessantes passiert?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #6566 /* ~"Na... gibt's hier irgendwas Interessantes zu berichten?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #6567 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #6568 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ DO ~SetGlobal("Asonje","GLOBAL",1) ~ GOTO 2
+IF ~~ THEN REPLY #6569 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+IF ~~ THEN REPLY #6570 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #6563 /* ~Die Leiche starrt dich weiter an.~ */
+IF ~~ THEN REPLY #6571 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #6564 /* ~Die Leiche zuckt einen Moment lang und wird still, als der Geist noch einmal in die sterbliche Hülle zurückkehrt. Innerhalb von Sekunden scheint so etwas wie Leben in den Augen des Zombies aufzuflackern, und er beginnt, sich mit erstauntem Gesichtsausdruck umzublicken. Der Körper scheint jetzt von einer weichen, goldenen Aura umgeben zu sein.~ */
+IF ~~ THEN REPLY #6572 /* ~"Ich würde dich gern was fragen..."~ */ GOTO 3
+IF ~~ THEN REPLY #9246 /* ~Verlaß den Geist.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+SAY #9224 /* ~Der Geist scheint dich plötzlich bemerkt zu haben. Er grinst so breit, daß die Nähte um seinen Mund herum aufplatzen und die Fäden herabhängen. Angesichts dieser Überraschung hält er sich die Hand vor den Mund, zuckt mit den Achseln und nickt dir zur Begrüßung zu. "Wo... wo bin ich? Was ist das für ein merkwürdiger Ort" Er hustet leise und reibt seine Kehle.~ */
+IF ~~ THEN REPLY #9247 /* ~"Du bist hier, um *meine* Fragen zu beantworten, Geist."~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Asonje_1","GLOBALGood",-1) SetGlobal("Asonje","GLOBAL",3) ~ GOTO 4
+IF ~~ THEN REPLY #9248 /* ~"Du... naja, zumindest deine Überreste... sind in einer Leichenhalle."~ */ GOTO 13
+IF ~~ THEN REPLY #9249 /* ~"Nein, ich bezweifle, daß du mich kennst. Ich hätte aber eine Frage an dich..."~ */ GOTO 14
+IF ~~ THEN REPLY #9250 /* ~"Das möchte ich bezweifeln. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+SAY #9225 /* ~Der freundliche Ton des Geistes erstirbt plötzlich. Er schaut dich einen Moment lang geringschätzig an, während die losen Fäden von seinen grauen, verwelkten Lippen herabhängen. "Na schön, fragt was Ihr wollt." Er schaut gelangweilt weg.~ */
+IF ~~ THEN REPLY #9251 /* ~"Wer bist du?"~ */ GOTO 5
+IF ~~ THEN REPLY #9252 /* ~"Wo kommst du her?"~ */ GOTO 6
+IF ~~ THEN REPLY #9253 /* ~"Wie bist du denn hier gelandet? Als Zombie, meine ich?"~ */ GOTO 7
+IF ~~ THEN REPLY #9254 /* ~"Wo bist du... wo wohnt dein Geist... jetzt?"~ */ GOTO 8
+IF ~~ THEN REPLY #9255 /* ~"Was weißt du über diesen Ort?"~ */ GOTO 9
+IF ~  Global("Pharod","GLOBAL",0) ~ THEN REPLY #9256 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 10
+IF ~~ THEN REPLY #9257 /* ~"Ach nichts, ist schon gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 11.0
+SAY #9226 /* ~"Mein Name war Asonje. Darf ich gehen?"~ */
+IF ~~ THEN REPLY #9258 /* ~"Nein, ich hätte da noch eine andere Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9259 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.1 11.1
+SAY #9227 /* ~"Ich kann mich nicht erinnern. Sonst noch was?"~ */
+IF ~~ THEN REPLY #9260 /* ~"Ja, ich hätte da noch eine andere Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9261 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 4.2 11.2
+SAY #9228 /* ~Der Geist zuckt mit den Achseln und blickt in den Himmel. "Das kann ich nicht sagen. Aber was macht das überhaupt aus?" Er preßt seine Lippen gereizt zusammen und wirft dir einen strafenden Blick zu; seine toten Augen funkeln böse. "Wollt Ihr noch etwas von mir?"~ */
+IF ~~ THEN REPLY #9262 /* ~"Ja, ich hätte da noch eine andere Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9263 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 4.3 11.3
+SAY #9229 /* ~"Mein Geist existiert in Arborea..." Er hält kurz inne, ganz in Erinnerungen versunken. "Selbst jetzt sehne ich mich danach, wieder an diesen Ort zurückkehren, weit weg von deiner eigennützigen, respektlosen und ziemlich lästigen Neugier. Darf ich wieder dorthin zurückkehren?"~ */
+IF ~~ THEN REPLY #9264 /* ~"Nein, ich hätte da noch eine andere Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9265 /* ~"Ja, geh nur. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 4.4 11.4
+SAY #9230 /* ~Der Geist wirft dir einen verzweifelten Blick zu. "Natürlich nichts!" Er schüttelt ärgerlich den Kopf, wobei die losen Fäden seiner Nähte bei jeder Bewegung hin und her fliegen.~ */
+IF ~~ THEN REPLY #9266 /* ~"Und wie ist dann deine Hülle hierhergekommen, um in diesen öden Hallen zu arbeiten?"~ */ GOTO 12
+IF ~~ THEN REPLY #9267 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9268 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 4.5 11.5
+SAY #9231 /* ~"Nein." Der Geist scheint dir kaum Aufmerksamkeit zu schenken.~ */
+IF ~~ THEN REPLY #9269 /* ~"Dann hätte ich da noch eine andere Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9270 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 5.0 6.0 7.0 8.0 9.1 10.0 12.0 27.0
+SAY #9232 /* ~Der Geist seufzt laut. Dabei füllt sich die Luft mit dem Formaldehydgeruch aus der Lunge der Leiche. "Ja, ja... schieß los."~ */
+IF ~~ THEN REPLY #9271 /* ~"Wer bist du?"~ */ GOTO 5
+IF ~~ THEN REPLY #9272 /* ~"Wo kommst du her?"~ */ GOTO 6
+IF ~~ THEN REPLY #9273 /* ~"Wie bist du denn hier gelandet? Als Zombie, meine ich?"~ */ GOTO 7
+IF ~~ THEN REPLY #9274 /* ~"Wo bist du... wo wohnt dein Geist... jetzt?"~ */ GOTO 8
+IF ~~ THEN REPLY #9275 /* ~"Was weißt du über diesen Ort?"~ */ GOTO 9
+IF ~  Global("Pharod","GLOBAL",0) ~ THEN REPLY #9276 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 10
+IF ~~ THEN REPLY #9277 /* ~"Ach nichts, ist schon gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 9.0
+SAY #9233 /* ~"Das möchte ich auch gerne wissen, Dummkopf. Und wenn du erlaubst, würde ich jetzt gern gehen."~ */
+IF ~~ THEN REPLY #9278 /* ~"Nein, ich hätte da noch eine andere Frage..."~ */ GOTO 11
+IF ~~ THEN REPLY #9279 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 3.1
+SAY #9234 /* ~Er denkt kurz darüber nach und lacht. "Ja! Das würde Sinn ergeben, nicht wahr? Sag mal, kenne ich dich überhaupt?" Er legt den Kopf auf die Seite und schaut dich prüfend an. Es scheint ihm Spaß zu machen, deine Identität zu erraten.~ */
+IF ~~ THEN REPLY #9280 /* ~"Nein, ich bezweifle, daß du mich kennst. Ich hätte aber eine Frage an dich..."~ */ GOTO 14
+IF ~~ THEN REPLY #9281 /* ~"Das möchte ich bezweifeln. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 3.2 13.0
+SAY #9235 /* ~Der Geist zuckt mit den Achseln und kichert leise. "Da magst du recht haben! Was wolltest du mich fragen?" Abwesend beginnt er, die restlichen Fäden aus seinen Lippen zu ziehen und einen nach dem anderen zu Boden fallen zu lassen.~ */
+IF ~  !Global("Asonje","GLOBAL",2) ~ THEN REPLY #9282 /* ~"Wer bist du?"~ */ GOTO 15
+IF ~  Global("Asonje","GLOBAL",2) ~ THEN REPLY #9286 /* ~"Wer bist du?"~ */ GOTO 25
+IF ~~ THEN REPLY #9287 /* ~"Wo kommst du her?"~ */ GOTO 16
+IF ~~ THEN REPLY #9288 /* ~"Wie bist du denn hier gelandet? Als Zombie, meine ich?"~ */ GOTO 17
+IF ~~ THEN REPLY #9317 /* ~"Wo bist du... wo wohnt dein Geist... jetzt?"~ */ GOTO 18
+IF ~~ THEN REPLY #9318 /* ~"Was weißt du über diesen Ort?"~ */ GOTO 19
+IF ~  Global("Pharod","GLOBAL",0) ~ THEN REPLY #9319 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 20
+IF ~~ THEN REPLY #9320 /* ~"Ach nichts, ist schon gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 14.0 22.0
+SAY #9236 /* ~" Mein Name war Asonje. Und mit wem habe ich das Vergnügen?"~ */
+IF ~~ THEN REPLY #9289 /* ~"Ich... ich weiß es nicht."~ */ DO ~SetGlobal("Asonje","GLOBAL",2) ~ GOTO 21
+IF ~~ THEN REPLY #9290 /* ~"Das werde ich dir ein andermal sagen. Ich hätte eine Frage..."~ */ DO ~SetGlobal("Asonje","GLOBAL",2) ~ GOTO 22
+IF ~~ THEN REPLY #9291 /* ~"Vielleicht ein andermal. Leb wohl."~ */ DO ~SetGlobal("Asonje","GLOBAL",2) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 14.2 22.2
+SAY #9237 /* ~"Ich komme von vielen Orten! Ehrlich gesagt weiß ich nicht, wo ich geboren bin. Ich bin in meinem Leben viel gereist und an vielen Orten zu Hause gewesen. Jetzt darf ich ganz Arborea erkunden..." Der Geist macht einen zufriedenen Eindruck. ~ */
+IF ~~ THEN REPLY #9292 /* ~"Ich verstehe. Ich hätte noch eine andere Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9293 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 14.3 22.3
+SAY #9238 /* ~Das Lächeln auf dem Gesicht des Geistes erstirbt, und er wirkt besorgt. "Merkwürdig... ich weiß es nicht! Ich hab' keine Ahnung, wie ich gestorben bin." Er zuckt mit den Achseln: "Na ja, was soll's!" Auf sein fahles Gesicht kehrt ein freudiges Grinsen zurück, das für eine Leiche erstaunlich strahlend ist.~ */
+IF ~~ THEN REPLY #9294 /* ~"Ich hätte noch eine andere Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9295 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 14.4 22.4
+SAY #9239 /* ~"In Arborea! Einen schöneren Ort gibt es für mich nicht. Nirgends sonst in meinem sterblichen Leben habe ich einen Ort von ähnlicher Leidenschaft... ähnlicher Pracht gesehen..." Er hält inne, ganz in angenehme Erinnerungen versunken. "Die Schönheit des Landes, der Menschen - ein Traum. Selbst in diesem Augenblick vermisse ich Arborea!"~ */
+IF ~~ THEN REPLY #9296 /* ~"Ich verstehe. Ich hätte noch eine andere Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9297 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 14.5 22.5
+SAY #9240 /* ~"Nicht besonders viel. Ich habe aus einer Laune heraus einen Vertrag bei einer Staubmenschen-Frau unterzeichnet... sie hatte mich einst auf den schrecklichen Ort aufmerksam gemacht und gesagt, mein Körper würde nach meinem Tod als Arbeiter verwendet. Ich dachte, ich könnte ihn im nächsten Leben ohnehin nicht mehr gebrauchen, warum also nicht? Kann ich genauso gut den Klimper nehmen und in Saus und Braus leben!" Bei der Vorstellung kichert er, und der geisterhafte Schalk schaut ihm aus den Augen.~ */
+IF ~~ THEN REPLY #9298 /* ~"Weißt du irgendetwas über die Stadt um die Leichenhalle herum?"~ */ GOTO 24
+IF ~~ THEN REPLY #9299 /* ~"Ich verstehe. Ich hätte noch eine andere Frage..." ~ */ GOTO 22
+IF ~~ THEN REPLY #9300 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 14.6 22.6
+SAY #9241 /* ~Der Geist denkt kurz nach. "Nein, tut mir leid, dieser Name sagt mir nichts. Ein Freund von dir?"~ */
+IF ~~ THEN REPLY #9301 /* ~"Vielleicht. Ich hätte noch eine andere Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9302 /* ~"Ich weiß es nicht. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 21 // from: 15.0
+SAY #9242 /* ~Er wirkt überrascht. "Komisch! Schade, eigentlich. Aber *irgendwie* muß ich dich doch nennen, oder?" Der Geist sieht dich erwartungsvoll an.~ */
+IF ~~ THEN REPLY #9303 /* ~"Ich bin sicher, daß dir was einfallen wird. Ich hätte eine Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9304 /* ~Erfinde einen Namen: "Ich weiß nicht... 'Adahn'?"~ */ DO ~IncrementGlobal("Adahn","GLOBAL",1) ~ GOTO 23
+IF ~~ THEN REPLY #9305 /* ~"Nein, das ist nicht wichtig. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 15.1 16.0 17.0 18.0 19.1 20.0 21.0 23.0 24.0 25.0 26.0
+SAY #9243 /* ~"Selbstverständlich. Schieß los!" Mit einem zufriedenen Lächeln wartet er gespannt auf deine Frage. Jetzt, wo alle Nähte aufgetrennt sind, wirkt sein Grinsen nicht mehr ganz so schaurig.~ */
+IF ~  !Global("Asonje","GLOBAL",2) ~ THEN REPLY #9306 /* ~"Wer bist du?"~ */ GOTO 15
+IF ~  Global("Asonje","GLOBAL",2) ~ THEN REPLY #9307 /* ~"Wer bist du?"~ */ GOTO 25
+IF ~~ THEN REPLY #9308 /* ~"Wo kommst du her?"~ */ GOTO 16
+IF ~~ THEN REPLY #9309 /* ~"Wie bist du denn hier gelandet? Als Zombie, meine ich?"~ */ GOTO 17
+IF ~~ THEN REPLY #9310 /* ~"Wo bist du... wo wohnt dein Geist... jetzt?"~ */ GOTO 18
+IF ~~ THEN REPLY #9311 /* ~"Was weißt du über diesen Ort?"~ */ GOTO 19
+IF ~  Global("Pharod","GLOBAL",0) ~ THEN REPLY #9312 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 20
+IF ~~ THEN REPLY #9321 /* ~"Ach nichts, ist schon gut."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 21.1
+SAY #9244 /* ~Der Geist spürt deine Verzweiflung und lacht gutherzig. "Armer Schlucker! Adahn also. Aber wolltest du mich nicht was fragen?"~ */
+IF ~~ THEN REPLY #9313 /* ~"Ja..."~ */ GOTO 22
+IF ~~ THEN REPLY #9314 /* ~"Nein, habe ich nicht. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 19.0
+SAY #9245 /* ~"Du meinst Sigil?" Als du nickst, verzieht sich sein Lächeln zu einem breiten, hinterhältigen Grinsen. "Oh, ich will dir nicht den Spaß verderben! Am besten findest du selbst etwas über diesen Ort raus! Verliere dich in seinen Straßen, Tavernen und Menschen... aber sieh dich vor! Sigil ist gefährlich und wunderschön zugleich. Aber gerade das macht es ja so aufregend."~ */
+IF ~~ THEN REPLY #9315 /* ~"Ich... nehme es an. Ich habe da noch eine andere Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9316 /* ~"Vielleicht. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 14.1 22.1
+SAY #9283 /* ~"Mein Name war Asonje."~ */
+IF ~~ THEN REPLY #9284 /* ~"Ich hätte noch eine Frage..."~ */ GOTO 22
+IF ~~ THEN REPLY #9285 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ EXIT
+END
+
+IF ~  GlobalGT("Asonje","GLOBAL",0) GlobalLT("Asonje","GLOBAL",3)
+~ THEN BEGIN 26 // from:
+SAY #20061 /* ~"Wieder da, was?" Er lächelt breit.~ */
+IF ~~ THEN REPLY #20063 /* ~"Ich hätte da ein paar Fragen..."~ */ GOTO 22
+IF ~~ THEN REPLY #20064 /* ~"Ich war zufällig in der Gegend. Leb wohl."~ */ EXIT
+END
+
+IF ~  Global("Asonje","GLOBAL",3)
+~ THEN BEGIN 27 // from:
+SAY #20062 /* ~"Oh, du... schon wieder." Er runzelt die Stirn und schaut weg.~ */
+IF ~~ THEN REPLY #20065 /* ~"Ich hätte da ein paar Fragen..."~ */ GOTO 11
+IF ~~ THEN REPLY #20066 /* ~"Ich war zufällig in der Gegend. Leb wohl."~ */ EXIT
+END

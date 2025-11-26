@@ -1,0 +1,265 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DGIANTSK.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ko_KR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DGIANTSK~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #292 /* ~당신 앞에는 화려한 청동 갑옷을 입은 자이언트 스켈레톤이 서 있다. 갑옷은 스켈레톤의 골격에 볼트로 고정되어 있으며, 그 가슴받이의 표면 전체에 걸쳐 일련의 정교한 심벌들이 새겨져 있다. 당신은 그 뼈들의 출처가 궁금하다. 당신이 알기로 그토록 거대한 골격을 지닌 인간은 존재하지 않기 때문이다. 그것이 손에 들고 있는 거대한 칼의 무게는 마차 한 대의 무게에 필적할 것처럼 보인다.~ */
+  IF ~~ THEN REPLY #293 /* ~"내가 잠깐 그 칼을 들고 있어도 괜찮겠소? 틀림없이 당신은 그것을 들고 있는데 지쳤을 거요."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Giant_Skel_Mort_1","GLOBALLaw",-1)
+~ GOTO 1
+  IF ~~ THEN REPLY #1165 /* ~"그래 얼마나 오랫동안 여기서 서 있었소? 꽤 오랜 시간 동안?"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Giant_Skel_Mort_1","GLOBALLaw",-1)
+~ GOTO 1
+  IF ~~ THEN REPLY #3996 /* ~자이언트 스켈레톤을 조사한다... 조심스럽게.~ */ GOTO 4
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #3997 /* ~스켈레톤에 가슴받이에 걸린 마법을 당신이 풀 수 있는지 본다. ~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #3998 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #3999 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4000 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4001 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4002 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #4003 /* ~스켈레톤에게 당신의 뼈들이 해주는 이야기 능력을 사용한다.~ */ GOTO 1
+  IF ~~ THEN REPLY #4004 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 1 // from: 0.0 0.1 0.9
+  SAY #1166 /* ~스켈레톤은 당신 질문에 대답하기에는 너무 오래 전에 죽은 듯하다. 아니면 그의 머리는 당신 얘기를 듣기에는 너무 높은 곳에 있든지.~ */
+  IF ~~ THEN REPLY #1167 /* ~자이언트 스켈레톤을 조사한다... 조심스럽게.~ */ GOTO 4
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4035 /* ~스켈레톤에 가슴받이에 걸린 마법을 당신이 풀 수 있는지 본다. ~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4036 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4037 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4038 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4039 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4040 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4041 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4 0.6 1.2 1.4 3.0 4.1 4.3 5.3 5.5 6.2 6.4 7.3 7.5 8.2 8.4 9.4 9.6
+  SAY #4005 /* ~당신이 스켈레톤을 만지자 철제 종소리가 시체안치소 안에 울려 퍼지기 시작한다... 그리고 스켈레톤은 번개같은 속도로 깨어나, 칼을 들어 공격한다!~ */
+  IF ~~ THEN REPLY #4042 /* ~"그냥 죽어있는 게 나을 뻔했다고 생각하게 될 것이네, 해골..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5 0.7 1.3 1.5 4.2 4.4 5.4 5.6 6.3 6.5 7.4 7.6 8.3 8.5 9.5 9.7
+  SAY #4006 /* ~그렇게 하려던 순간 당신은 갑자기 멈춘다... 그리고 당신의 시선은 스켈레톤의 갑옷으로 쏠린다. 그것의 가슴받이에 새겨진 심벌들에는 당신으로 하여금 멈추고 생각하게 만드는 무엇인가가 있다. 만약 이 스켈레톤들이 수호자라면, 그들을 건드릴 경우... 그들이 깨어날지도 모른다.~ */
+  IF ~~ THEN REPLY #4043 /* ~"그런 위험은 감수할 각오가 되어 있지 ..."~ */ GOTO 2
+  IF ~~ THEN REPLY #4044 /* ~자이언트 스켈레톤을 조사한다... 조심스럽게.~ */ GOTO 4
+  IF ~~ THEN REPLY #4046 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2 1.0 3.1 7.1 15.1 16.3
+  SAY #4007 /* ~스켈레톤의 정교한 청동 갑옷은 스켈레톤의 흉곽과 어깨뼈에 일련의 철제 볼트들로 고정되어 있다. 갑옷 안의 골격을 살펴보던 중 당신은 전술한 철제 볼트와 동일한 볼트가 스켈레톤의 어깨, 팔꿈치, 골반, 그리고 무릎 관절에도 박혀 있다는 사실을 발견한다. 그리고 스켈레톤의 팔과 다리에는 다량의 두꺼운 가죽끈과 마디가 있는 로프가 마치 근육 및 건과 흡사한 형태로 감겨져 있다.~ */
+  IF ~~ THEN REPLY #4045 /* ~갑옷을 살펴본다.~ */ GOTO 5
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4048 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4049 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4050 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4051 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4052 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4053 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #4008 /* ~갑옷은 오래된 것임에도 불구하고 그 보존 상태가 양호하다. 그것은 환히 반짝이고 있으며, 가슴받이에 새겨진 심벌들은 불빛 아래서 마치 흐르는 것처럼 움직여, 당신이 그것들에게 집중을 하려고 할 때마다 약간씩 그 형체가 변화한다.~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4054 /* ~심벌들을 연구한다.~ */ GOTO 6
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4055 /* ~심벌들을 연구한다.~ */ GOTO 6
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+CheckStatLT(Protagonist,13,INT)
+~ THEN REPLY #64293 /* ~기호들을 연구한다.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4056 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4057 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4058 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4059 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4060 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4061 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.0 5.1
+  SAY #4009 /* ~심벌들을 바라보면서 당신은 거의 무의식적으로 시선의 긴장이 풀리도록 한다. 잠시 후 심벌들은 변화하는 것을 멈추고, 가슴받이를 아래위로 왕복하는 룬들의 패턴이 모습을 드러낸다. 기묘하게도 서로 연결된 룬들의 패턴은 당신에게 사슬을 연상시킨다... 그리고 당신은 그 생각으로부터 이 룬들은 일종의 수호 마법이란 사실을 갑자기 기억해낸다.~ */
+  IF ~  CheckStatGT(Protagonist,15,INT)
+~ THEN REPLY #4062 /* ~룬들을 연구하여, 마법을 상기시키려고 시도한다. ~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,16,INT)
+~ THEN REPLY #4063 /* ~룬들을 연구하여, 마법을 상기시키려고 시도한다. ~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4064 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4065 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4066 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4067 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4068 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4069 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.2 6.1 7.2
+  SAY #4010 /* ~당신은 한동안 룬들을 연구하지만 그 마법을 해독할 수가 없다. 그것은 매우 복잡한 듯하며 당신은 집중하는 데 어려움을 겪고 있다.~ */
+  IF ~  PartyHasItem("TomeBA")
+~ THEN REPLY #64294 /* ~그 룬들을 뼈와 재의 책에 있는 룬들과 비교한다.~ */ GOTO 15
+  IF ~~ THEN REPLY #4070 /* ~스켈레톤을 다시 살펴본다.~ */ GOTO 4
+  IF ~~ THEN REPLY #4071 /* ~룬들을 다시 살펴본다.~ */ GOTO 7
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4072 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4073 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4074 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4075 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4076 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4077 /* ~스켈레톤을 그냥 내버려 둔다. ~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.0
+  SAY #4011 /* ~당신은 룬들이 가슴받이 표면 전체에 걸쳐 전개되는 패턴을 연구한다. 가장 기본적인 레벨의 룬들은 하급 갑옷의 주문이나, 갑옷의 가장자리 부분에 있는 여러 개의 해골 모양의 룬들과 원형 기호들은 당신으로 하여금 갑옷에는 여러 종류의 상급 사령술과 상급 보호 마법 역시 걸려 있는 것이 아닌가 하고 생각하게 만든다. 스켈레톤을 만지면 그것이 깨어나... 자신을 방어할 가능성이 높다.~ */
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4079 /* ~마법을 어떤 방법으로든 풀 수가 있을지 본다. ~ */ DO ~SetGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+AddexperienceParty(500)
+~ GOTO 9
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",0)
+~ THEN REPLY #4080 /* ~마법을 어떤 방법으로든 풀 수가 있을지 본다. ~ */ GOTO 9
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4081 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4082 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4083 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4084 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4085 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4078 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 0.3 1.1 8.0 8.1
+  SAY #4012 /* ~가슴받이에 새겨진 룬들의 패턴을 훼손하면 마법을 깨트릴 수 있다는 생각이 드나, 쉽지는 않을 듯하다... 패턴은 복잡하며, 엉뚱한 부분을 훼손할 경우 스켈레톤이 깨어날 수도 있다.~ */
+  IF ~  PartyHasItem("TomeBA")
+~ THEN REPLY #64296 /* ~그 패턴을 뼈와 재의 책에 있는 마법들과 비교하여 그것들을 깨트릴 수 있는 방법을 발견할 수 있는지를 알아본다. ~ */ GOTO 16
+  IF ~~ THEN REPLY #4086 /* ~우선 갑옷의 마법을 유지하는 룬들을 훼손하고, 그 다음에는 사령술과 보호의 마법의 순으로 룬들을 훼손한다.~ */ GOTO 10
+  IF ~  GlobalLT("Giant_Skeleton_Enchant","GLOBAL",2)
+~ THEN REPLY #4087 /* ~우선 보호의 마법을 유지하는 룬들을 훼손한 후, 룬 패턴과는 역순으로 작업하여 사령술과 갑옷의 마법의 순으로 마법을 해제한다. ~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 11
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",1)
+~ THEN REPLY #4088 /* ~우선 보호의 마법을 유지하는 룬들을 훼손한 후, 룬 패턴과는 역순으로 작업하여 사령술과 갑옷의 마법의 순으로 마법을 해제한다. ~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 13
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4089 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4090 /* ~스켈레톤의 칼을 그의 손에서 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #4091 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #4092 /* ~스켈레톤의 갑옷을 고정시키고 있는 볼트들을 비틀어 빼내려고 시도한다.~ */ GOTO 3
+  IF ~  NearbyDialog("DMorte")
+Global("Morte_Skel_Mort_Quip","GLOBAL",1)
+~ THEN REPLY #4093 /* ~"이봐, 이 해골은 어떤가, 모트? 몸으로 쓸만하겠나?"~ */ EXTERN ~DMORTE~ 73
+  IF ~~ THEN REPLY #4094 /* ~스켈레톤을 그냥 내버려 두고 떠난다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1 16.0
+  SAY #4013 /* ~당신이 가슴받이를 장식하는 룬들을 훼손하기 시작하자 철제 종소리가 시체안치소 안에 울려 퍼지기 시작한다... 그리고 스켈레톤은 번개같은 속도로 깨어나, 칼을 들어 공격한다!~ */
+  IF ~~ THEN REPLY #4095 /* ~"그냥 죽어있는 게 나을 뻔했다고 생각하게 될 것이네, 해골..."~ */ DO ~Enemy()
+Attack(Protagonist)
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 9.2 16.1
+  SAY #4014 /* ~그 작업은 처음에는 고통스러울 정도로 어려우나. 서서히 당신은 일에 정신을 집중할 수 있게 되며, 룬들은 당신의 공세 앞에 무릎을 꿇기 시작한다. 몇 분 안에 자이언트 스켈레톤에 걸려 있던 모든 마법은 제거된다. 그것은 무너지면서 굉음과 함께 바닥에 쓰러진다!~ */
+  IF ~~ THEN REPLY #4096 /* ~"빌어먹을 뼈들...!"~ */ DO ~AddexperienceParty(800)
+~ GOTO 12
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY #4015 /* ~당신은 잠시 기다린다, 하지만 다행히 아무도 그 소리에 반응하지 않는다. 당신은 빠른 동작으로 바닥에 널린 스켈레톤의 잔해들을 살펴본다. 그것들은 대부분 쓸모가 있기에는 너무 낡았거나 무겁다. 하지만 당신은 그 중에서 스켈레톤의 가슴받이의 일부분을 발견하는데, 그것에는 깨어진 마법들 중 하나의 내용 대부분이 새겨져 있다. 당신에게는 그것이 쓸모가 있을 거라는 생각이 든다.~ */
+  IF ~~ THEN REPLY #4097 /* ~"그럼 그냥 가져가기로 하지..."~ */ DO ~GiveItemCreate("Breast1",Protagonist,1,1,0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3 16.2
+  SAY #4016 /* ~이번에는 마법을 해제하는 일이 한층 쉽다, 그리고 룬들은 당신의 공세 앞에 금새 무릎을 꿇는다. 불과 몇 분 안에 자이언트 스켈레톤에 걸려 있던 모든 마법은 제거된다. 이전에 무슨 일이 일어났는지를 기억하고 있는 당신은 스켈레톤이 쓰러지기 전에 그것을 잡은 다음, 툴툴거리며 천천히 바닥에 내려놓는다. ~ */
+  IF ~~ THEN REPLY #4098 /* ~"이번에는 뭐가 나오나 한 번 볼까..."~ */ DO ~AddexperienceParty(800)
+~ GOTO 14
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY #4017 /* ~당신은 재빠르게 스켈레톤의 잔해를 뒤지기 시작한다, 그리고 이번에도 가슴받이의 일부를 발견한다... 첫 번째 것과 마찬가지로 이것에도 깨어진 마법의 일부가 새겨져 있다. 그것은 쓸모가 있을지도 모른다.~ */
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",3)
+~ THEN REPLY #4099 /* ~"그럼 그냥 가져가기로 하지..."~ */ DO ~GiveItemCreate("Breast2",Protagonist,1,1,0)
+~ EXIT
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",4)
+~ THEN REPLY #4100 /* ~"그럼 그냥 가져가기로 하지..."~ */ DO ~GiveItemCreate("Breast3",Protagonist,1,1,0)
+~ EXIT
+  IF ~  Global("Giant_Skeleton_Enchant","GLOBAL",5)
+~ THEN REPLY #4101 /* ~"그럼 그냥 가져가기로 하지..."~ */ DO ~GiveItemCreate("Breast4",Protagonist,1,1,0)
+Kill(Myself)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 7.0
+  SAY #64295 /* ~당신이 책에 있는 그림들과 가슴받이 표면에 새겨진 심벌들을 비교한다. 가장 기본적인 레벨의 룬들은 하급 갑옷의 주문이나, 갑옷의 가장자리 부분에 있는 여러 개의 해골 모양의 룬들과 원형 기호들은 당신으로 하여금 갑옷에는 여러 종류의 상급 사령술과 상급 보호 마법 역시 걸려 있는 것이 아닌가 하고 생각하게 만든다. 스켈레톤을 만지면 그것이 깨어나... 자신을 방어할 가능성이 높다.~ */
+  IF ~~ THEN REPLY #64298 /* ~뼈와 재의 책을 참조하여 그들을 깨트릴 수 있는 방법을 발견할 수 있는지를 알아본다. ~ */ GOTO 16
+  IF ~~ THEN REPLY #64299 /* ~룬들을 그냥 내버려 두고 스켈레톤을 다시 조사한다.~ */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 16 // from: 9.0 15.0
+  SAY #64297 /* ~당신이 책으로부터 이해한 바에 따르면, 갑옷의 마법은 가슴받이에만 걸려 있고, 스켈레톤이 다시 일어나 움직이게 하는 것은 사령술이나, 그것에게 주변 환경에 대한 기본적인 인지 능력을 부여하고 있는 것은 보호의 마법이다. 만약 당신이 스켈레톤의 룬을 훼손하면 그 행위가 스켈레톤에 의해 공격으로 간주될 것이다... 하지만 사전에 그것이 당신의 존재를 인지할 수 없게 한다면...~ */
+  IF ~~ THEN REPLY #64300 /* ~우선 갑옷의 마법을 유지하는 룬들을 훼손하고, 그 다음에는 사령술과 보호의 마법의 순으로 룬들을 훼손한다.~ */ GOTO 10
+  IF ~  GlobalLT("Giant_Skeleton_Enchant","GLOBAL",2)
+~ THEN REPLY #64301 /* ~우선 보호의 마법을 유지하는 룬들을 훼손한 후, 룬 패턴과는 역순으로 작업하여 사령술과 갑옷의 마법의 순으로 마법을 해제한다. ~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 11
+  IF ~  GlobalGT("Giant_Skeleton_Enchant","GLOBAL",1)
+~ THEN REPLY #64302 /* ~우선 보호의 마법을 유지하는 룬들을 훼손한 후, 룬 패턴과는 역순으로 작업하여 사령술과 갑옷의 마법의 순으로 마법을 해제한다. ~ */ DO ~PlaySound("Armsk08")
+IncrementGlobal("Giant_Skeleton_Enchant","GLOBAL",1)
+Kill(Myself)
+~ GOTO 13
+  IF ~~ THEN REPLY #64303 /* ~룬들을 그냥 내버려 두고 스켈레톤을 다시 조사한다.~ */ GOTO 4
+END

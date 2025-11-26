@@ -1,0 +1,39 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DCOPEARC.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\ko_KR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DCOPEARC~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #46723 /* ~이 구리 귀걸이는 매우 오래된 것처럼 보인다. 달기 위한 귀걸이는 분명하나 귀에 달기 위한 고리나 그 비슷한 것이 전혀 보이지 않는다. 하지만 귀걸이 안쪽에는 일련의 홈들이 파여 있다.~ */
+  IF ~~ THEN REPLY #46724 /* ~홈들을 살펴본다.~ */ GOTO 1
+  IF ~  Global("Know_Copper_Earring_Secret","GLOBAL",1)
+~ THEN REPLY #46725 /* ~당신 손톱을 좀비 #79의 이마에서 본 이빨 달린 원에서 삼각형이 가리키는 방향에 있는 금에 끼워 넣는다. ~ */ DO ~AddexperienceParty(250)
+~ GOTO 2
+  IF ~~ THEN REPLY #46726 /* ~귀걸이를 치운다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY #46727 /* ~홈들은 귀걸이 안쪽에 일정한 간격으로 파여 있다. 자세히 보니 그것들을 엄니와 비슷하게 생겼다. 그것들은 사람의 손에 의해 만들어진 것은 분명하나 그 정확한 목적은 알 수가 없다. ~ */
+  IF ~  Global("Know_Copper_Earring_Secret","GLOBAL",1)
+~ THEN REPLY #46728 /* ~당신 손톱을 좀비 #79의 이마에서 본 이빨 달린 원에서 삼각형이 가리키는 방향에 있는 금에 끼워 넣는다. ~ */ DO ~AddexperienceParty(250)
+~ GOTO 2
+  IF ~~ THEN REPLY #46729 /* ~귀걸이를 치운다.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.1 1.0
+  SAY #46730 /* ~당신은 손톱을 위에서 세 번째 홈에 끼우고 안쪽으로 누른다. 그러자 *짤까닥* 소리와 함께 귀걸이 위쪽이 열린다. 이제 그 귀걸이는 달 수가 있을 뿐만 아니라, 그 안에는 비밀의 공간도 있는 듯하다. ~ */
+  IF ~~ THEN REPLY #46731 /* ~귀걸이를 흔들어 뭔가 나오는지 본다.~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #46732 /* ~당신은 귀걸이를 흔든다, 그러나 아무 것도 나오지는 않는다. 그 안에 숨겨져 있던 것은 이미 없어진 듯하다. 
+
+주: 귀걸이의 걸쇠를 발견하면 하면 귀걸이를 달 수 있게 된다. 또한 비밀 공간이 있는 귀걸이는 상인에게 보다 좋은 값을 받고 팔 수가 있다. ~ */
+  IF ~~ THEN REPLY #46733 /* ~귀걸이를 치운다.~ */ DO ~TransformPartyItem("CopEarC","CopEarO",1,0,0)
+~ EXIT
+END

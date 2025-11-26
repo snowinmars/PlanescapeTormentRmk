@@ -1,0 +1,494 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DDHALL.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DDHALL~
+
+IF ~~ THEN BEGIN 0 // from:
+  SAY #822 /* ~Avant que Morte finisse sa phrase, le scribe tousse violemment. Après un moment, sa toux se calme et la respiration du scribe reprend son sifflement saccadé.~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 104
+END
+
+IF ~~ THEN BEGIN 1 // from:
+  SAY #826 /* ~Avant que Morte finisse sa phrase, les yeux gris du scribe se posent sur toi. "Le poids des ans se fait lourdement ressentir, le Sans Repos." Il pose sa plume. "… mais je ne suis pas encore atteint de surdité."~ */
+  IF ~~ THEN REPLY #827 /* ~"'Le Sans Repos' ? Tu me connais ?"~ */ DO ~SetGlobal("0202_Dhall_Face_Player","AR0202",1)
+~ GOTO 44
+END
+
+IF ~~ THEN BEGIN 2 // from: 21.0
+  SAY #829 /* ~"Tu ne connais pas le cadavre de la femme enterrée dans la Salle de Commémoration ? Je pensais qu'elle avait voyagé avec toi dans le passé…" Dhall semble prêt à tousser, puis il reprend son souffle. "Est-ce que je me trompe ?"~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5070 /* ~"Où est son corps ?"~ */ GOTO 42
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5071 /* ~"Jamais entendu parler d'elle."~ */ GOTO 43
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #5072 /* ~"Elle prétend me connaître, mais je ne me souviens pas d'elle."~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #5073 /* ~"Tu as dit qu'il y en avait d'autres. Qui d'autre est là ?"~ */ GOTO 12
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #5074 /* ~"Tu as dit qu'il y en avait d'autres. Qui d'autre est là ?"~ */ GOTO 12
+  IF ~~ THEN REPLY #6063 /* ~"Peut-être. J'ai d'autres questions à te poser…"~ */ GOTO 9
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #6064 /* ~"Je vais descendre dans la Salle de Commémoration pour voir si je trouve son corps."~ */ GOTO 11
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #13288 /* ~"Peut-être pas. Au revoir."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 3 // from: 9.0
+  SAY #832 /* ~Dhall te fixe du regard. "En es-tu certain ?"~ */
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",0)
+~ THEN REPLY #830 /* ~"Oui. C'est un bon déguisement."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",2)
+~ JOURNAL #39468 /* ~J'ai parlé à Dhall de Vaxis et de son déguisement. Dhall devrait bientôt envoyer les Hommes-Poussière appréhender Vaxis.~ */ GOTO 4
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",1)
+~ THEN REPLY #831 /* ~"Oui. C'est un bon déguisement."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",2)
+IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3)
+~ JOURNAL #39469 /* ~Je sais bien que j'ai promis à Vaxis que je ne le dénoncerais pas aux Hommes-Poussière. Et alors ? J'ai dit à Dhall, le scribe, qu'il était déguisé. Ce dernier devrait bientôt envoyer les Hommes-Poussière l'appréhender. ~ */ GOTO 4
+  IF ~~ THEN REPLY #834 /* ~"Non, tout bien réfléchi, peut-être que je l'ai imaginé. Écoute, j'ai d'autres questions…"~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0 3.1
+  SAY #833 /* ~"Je…" Dhall est repris d'une quinte de toux. Après quelques minutes, il reprend son souffle. "Je… je vais en informer les gardes sur-le-champ."~ */
+  IF ~~ THEN REPLY #836 /* ~"Merci. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #837 /* ~"Excellent. Au revoir."~ */ GOTO 11
+END
+
+IF ~  Global("Dhall","GLOBAL",0)
+~ THEN BEGIN 5 // from:
+  SAY #838 /* ~Ce scribe a l'air très âgé… sa peau ridée a une légère teinte jaune, telle un vieux parchemin. Ses yeux gris foncé brillent au milieu d'un visage anguleux et une grande barbe blanche tombe telle une cascade sur sa robe noire. Il a le souffle court et saccadé, mais même ses quintes de toux occasionnelles ne ralentissent pas la cadence de sa plume sur le parchemin.~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #839 /* ~"Bonjour."~ */ EXTERN ~DMORTE~ 102
+  IF ~  !NearbyDialog("DMorte")
+Global("Mortuary_Alert","GLOBAL",0)
+~ THEN REPLY #835 /* ~"Bonjour."~ */ GOTO 7
+  IF ~  !NearbyDialog("DMorte")
+Global("Mortuary_Alert","GLOBAL",1)
+~ THEN REPLY #5058 /* ~"Bonjour."~ */ GOTO 6
+  IF ~~ THEN REPLY #5060 /* ~Laisse le vieux scribe tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.2
+  SAY #841 /* ~Il te dévisage par-dessus son livre et ses yeux gris cillent. "Je te suspectais d'être responsable des attaques dans la Morgue…" Il tousse légèrement, puis anhèle. "Ce n'est pas une façon d'entrer dans la prochaine vie."~ */
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #842 /* ~"Je ne faisais que me défendre. J'ai d'autres questions à te poser avant de m'éclipser…"~ */ GOTO 9
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #843 /* ~"Le fait de partager un peu la mort avec tes adorateurs de cadavres n'est pas un crime en ce qui me concerne. Bon, j'ai d'autres questions à te poser…"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_1","GLOBALGood",-1)
+~ GOTO 9
+  IF ~  Global("Dhall","GLOBAL",0)
+~ THEN REPLY #5062 /* ~"Tu me connais ?"~ */ GOTO 44
+  IF ~~ THEN REPLY #5063 /* ~"Au revoir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.1
+  SAY #844 /* ~Le scribe arrête de griffonner son livre et lève les yeux, qui sont comme deux clous enfoncés dans son crâne. "Bon…" Il a l'air fatigué, comme s'il avait répété la même chose bien des fois. "Tu es sorti de ton sommeil et tu es retourné dans ton rêve." Il continue avec plus de respect. "Bienvenue… à nouveau, le Sans Repos."~ */
+  IF ~~ THEN REPLY #845 /* ~"'Le Sans Repos' ? Tu me connais ?"~ */ GOTO 44
+END
+
+IF ~~ THEN BEGIN 8 // from: 22.0
+  SAY #851 /* ~"Essaye de comprendre. Ton existence est un blasphème pour eux. Plusieurs personnes de notre faction voudraient te voir incinéré… s'ils connaissaient ta détresse."~ */
+  IF ~~ THEN REPLY #940 /* ~"Tu es un Homme-Poussière. Mais tu n'as pas l'air de vouloir me tuer. Pourquoi ?"~ */ GOTO 23
+  IF ~~ THEN REPLY #911 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #913 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6038 /* ~"J'en ai assez entendu. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 9 // from: 2.5 3.2 4.0 6.0 6.1 8.2 10.5 12.1 13.0 14.4 15.2 16.3 17.3 18.2 19.2 20.2 21.1 22.2 23.2 24.1 25.2 26.2 27.0 28.1 29.2 30.0 31.1 32.6 33.3 34.2 35.2 36.2 37.1 38.2 39.0 40.0 41.3 42.4 43.3 45.0 47.4 48.2 49.2 51.2 52.2 53.1
+  SAY #852 /* ~"Très bien. Que désires-tu savoir ?"~ */
+  IF ~  Global("Vaxis","GLOBAL",1)
+!Dead("Vaxis")
+Global("Vaxis_Leave","GLOBAL",0)
+Global("Betray_Vaxis","GLOBAL",0)
+~ THEN REPLY #854 /* ~"Tu savais qu'il y avait quelqu'un déguisé en zombi dans les chambres de l'est ?"~ */ GOTO 3
+  IF ~~ THEN REPLY #857 /* ~"Qu'est-ce que c'est que cet endroit ?"~ */ GOTO 10
+  IF ~~ THEN REPLY #855 /* ~"Comment j'ai atterri ici ?"~ */ GOTO 15
+  IF ~  Global("Escape_Mortuary","GLOBAL",0)
+Global("AR0200_Visited","GLOBAL",0)
+~ THEN REPLY #858 /* ~"Tu m'expliques comment on fait pour sortir d'ici ?"~ */ GOTO 13
+  IF ~~ THEN REPLY #5069 /* ~"Sais-tu qui je suis ?"~ */ JOURNAL #39460 /* ~J'ai demandé à Dhall s'il me connaissait, et il m'a répondu qu'il ne savait que peu de choses à mon sujet, et moins encore au sujet de ceux qui m'ont accompagné de par le passé. Apparemment, ils reposent à la Morgue. La mémoire me reviendra peut-être en voyant leur dépouille.~ */ GOTO 21
+  IF ~~ THEN REPLY #5748 /* ~"Qu'est-ce que tu fais ici ?"~ */ GOTO 25
+  IF ~~ THEN REPLY #6065 /* ~"Tu as l'air malade. Ça ne va pas ?"~ */ GOTO 26
+  IF ~~ THEN REPLY #41663 /* ~"Rien… Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.1
+  SAY #859 /* ~"Tu es dans la Morgue, le Sans Repos. Tu es… revenu." Avant d'avoir pu finir, Dhall est pris d'une quinte de toux. Après quelques instants, il se calme et sa respiration reprend son sifflement saccadé. "… voici la salle d'attente pour ceux qui sont sur le point de quitter l'ombre de cette vie."~ */
+  IF ~~ THEN REPLY #861 /* ~"Parle-moi de la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #860 /* ~"*Le Sans Repos* ?"~ */ GOTO 38
+  IF ~~ THEN REPLY #862 /* ~"L'ombre de cette vie ?"~ */ GOTO 33
+  IF ~~ THEN REPLY #863 /* ~"Encore… ? Ce n'est pas la première fois que je viens ici ?"~ */ GOTO 14
+  IF ~~ THEN REPLY #864 /* ~"Comment j'ai atterri ici ?"~ */ GOTO 15
+  IF ~~ THEN REPLY #865 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #866 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 2.6 2.7 4.1 8.3 9.7 10.6 12.2 14.5 15.3 16.4 19.3 20.3 21.2 22.3 23.3 24.2 25.3 26.3 27.1 28.2 29.4 30.1 31.3 32.7 33.4 34.3 35.3 36.3 37.2 38.3 41.4 42.5 43.4 47.5 48.3 49.3 51.3 52.3 53.2
+  SAY #867 /* ~Tu te retournes, prêt à partir, lorsque Dhall dit : "Sache une chose : je ne t'envie pas, le Sans Repos. Me réincarner ainsi serait une malédiction que je ne supporterais pas. Tu dois l'accepter. Un jour, ton parcours te ramènera ici." Dhall tousse. Ses paroles s'étranglent dans sa gorge. "C'est le sort de tout ce qui est fait de chair et d'os."~ */
+  IF ~~ THEN REPLY #41564 /* ~"Alors, on se reverra peut-être, Dhall."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 2.3 2.4 42.2 42.3 43.1 43.2
+  SAY #868 /* ~"Je suis sûr qu'il doit y en avoir, mais je ne connais ni leur nom, ni leur emplacement. Un être tel que toi a quitté le chemin que beaucoup ont suivi, et auquel peu ont survécu." Dhall gesticule autour de toi. "Tous les morts viennent ici. Certains d'entre eux ont dû voyager avec toi."~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #870 /* ~"Où est cette femme dont tu as parlé ?"~ */ GOTO 42
+  IF ~~ THEN REPLY #871 /* ~"Ton raisonnement me semble tout à fait correct. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #872 /* ~"Alors, je vais essayer de les trouver. Peut-être qu'ils raviveront ma mémoire. Au revoir."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 13 // from: 9.3
+  SAY #875 /* ~"Hmmm… l'entrée principale est la sortie la plus évidente, mais ils ne laissent passer personne, à part les Hommes-Poussière…" Dhall est pris d'une quinte de toux violente, puis il continue. "… l'un des guides de l'entrée principale a une clé, mais ça m'étonnerait qu'il t'ouvre, à moins que tu ne sois extrêmement persuasif."~ */
+  IF ~~ THEN REPLY #876 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #877 /* ~"Eh bien, au revoir, Dhall."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 10.3
+  SAY #878 /* ~"Oui, *encore.* On t'a amené ici bien des fois déjà, le Sans Repos. J'espérais que cette fois-ci serait la dernière, vu les blessures que tu as reçues." Il soupire. "Quand vas-tu enfin abandonner tes passions et quitter cette ombre de vie ?"~ */
+  IF ~~ THEN REPLY #880 /* ~"*Le Sans Repos* ?"~ */ GOTO 38
+  IF ~~ THEN REPLY #881 /* ~"Mes blessures ?"~ */ GOTO 34
+  IF ~~ THEN REPLY #883 /* ~"L'ombre de la vie ?"~ */ GOTO 33
+  IF ~~ THEN REPLY #879 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5751 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5752 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 15 // from: 9.2 10.4 32.5
+  SAY #885 /* ~Dhall grogne de mépris, comme s'il trouvait ce souvenir répugnant. "Ton chariot moisi t'a conduit jusqu'à la Morgue, le Sans Repos. On aurait dit que tu étais un roi soutenu par ses sujets, empestant et suppurant, sur le chariot qui t'a mené ici."~ */
+  IF ~~ THEN REPLY #886 /* ~"J'ai atterri ici en chariot ?"~ */ JOURNAL #39463 /* ~Apparemment, Pharod m'a amené ici dans une charrette, en compagnie d'autres cadavres. Mais étais-je vraiment *mort* à ce moment-là ?~ */ GOTO 16
+  IF ~~ THEN REPLY #887 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #888 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #889 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 16 // from: 15.0
+  SAY #890 /* ~"Oui… ton cadavre était au milieu d'un tas, et échangeait ses fluides avec les autres corps amoncelés." Dhall est repris d'une violente quinte de toux. Enfin, il reprend son souffle. "Ton 'Sénéchal', Pharod, était comme toujours heureux d'accepter quelques malheureuses pièces pour porter ce tas devant l'entrée de la Morgue."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #891 /* ~"C'est qui ce Pharod ?"~ */ GOTO 17
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #892 /* ~"On dirait que tu n'apprécies guère Pharod."~ */ GOTO 35
+  IF ~~ THEN REPLY #893 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #894 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5753 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0
+  SAY #895 /* ~"C'est un… Récupérateur. Il ramasse les morts." Dhall anhèle, puis continue. "Dans cette cité, des personnes ramassent les corps de ceux qui ont pris le chemin de la Vraie Mort et nous les ramènent afin qu'ils soient enterrés comme il se doit."~ */
+  IF ~~ THEN REPLY #897 /* ~"Où est-ce que je peux trouver ce 'Pharod' ?"~ */ GOTO 18
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #898 /* ~"On dirait que tu n'apprécies guère Pharod."~ */ GOTO 35
+  IF ~~ THEN REPLY #899 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5754 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6031 /* ~"Alors, je vais chercher ce Pharod. Au revoir, Dhall."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0 29.1 31.0 35.1 36.1
+  SAY #900 /* ~"Si rien ne change, le Sans Repos, il y a plus de chance que Pharod te trouve et te ramène à nous avant que tu ne découvres dans quelle mare boueuse il se vautre à cet instant."~ */
+  IF ~~ THEN REPLY #902 /* ~"Pourtant, je dois le trouver."~ */ GOTO 19
+  IF ~~ THEN REPLY #903 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #904 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5755 /* ~"J'ai le pressentiment que nos chemins vont se croiser. Au revoir, Dhall."~ */ GOTO 19
+END
+
+IF ~~ THEN BEGIN 19 // from: 17.4 18.0 18.3 29.3 31.2
+  SAY #901 /* ~"Ne cherche pas Pharod, le Sans Repos," te prévient Dhall. "Je suis sûr que tout recommencera encore ; toi, tu n'en seras pas plus avancé, et Pharod sera riche de quelques pièces de cuivre de plus. Accepte la mort, le Sans Repos. Ne perpétue pas ton cercle de douleur."~ */
+  IF ~~ THEN REPLY #906 /* ~"Je *dois* le trouver. Tu sais où il est ?"~ */ JOURNAL #39464 /* ~Dhall m'a dit qu'il était possible de trouver Pharod au-delà de la Morgue, dans un lieu qu'ils appellent la 'Ruche'. Dhall n'avait pas envie que je me mette en chasse de Pharod, mais ce n'est pas lui qui a perdu la mémoire et qui vient juste de revenir d'entre les morts, alors son opinion, il peut se la garder. Il m'a suggéré de demander aux habitants de la Ruche où je pourrais trouver Pharod.~ */ GOTO 20
+  IF ~~ THEN REPLY #905 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #907 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5756 /* ~"Je ne peux plus parler avec toi. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #908 /* ~Dhall reste silencieux. Puis, il reprend la parole, semble-t-il à contrecœur. "Je ne sais pas dans quel coupe-gorge Pharod a établi son repère, mais j'imagine qu'on peut le trouver quelque part, passé l'entrée de la Morgue, dans la Ruche. Là-bas, quelqu'un sera peut-être en mesure de te dire où il se trouve."~ */
+  IF ~  CheckStatGT(Protagonist,11,WIS)
+~ THEN REPLY #910 /* ~"On dirait que tu n'apprécies guère Pharod."~ */ GOTO 35
+  IF ~~ THEN REPLY #909 /* ~"Tu peux m'en dire plus sur la Morgue ?"~ */ GOTO 32
+  IF ~~ THEN REPLY #5757 /* ~"Merci. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6030 /* ~"Alors, je vais aller me renseigner là-bas. Au revoir."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 21 // from: 9.4
+  SAY #914 /* ~"Je te connais peu, le Sans Repos. Je ne connais pas beaucoup plus ceux qui ont voyagé avec toi et qui reposent aujourd'hui sous notre garde." Dhall soupire. "Je te prie de ne plus demander aux autres de se joindre à toi, le Sans Repos - partout où tu vas, la souffrance t'accompagne. Garde ton fardeau pour toi."~ */
+  IF ~~ THEN REPLY #921 /* ~"D'autres ont voyagé avec moi ? Et ils sont ici ?"~ */ JOURNAL #39461 /* ~Dhall m'a appris que l'une des femmes qui m'accompagnaient est enterrée dans la Salle de Commémoration, au rez-de-chaussée de la Morgue.~ */ GOTO 2
+  IF ~~ THEN REPLY #922 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #923 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 22 // from: 47.0
+  SAY #915 /* ~Dhall soupire. "Il est dit qu'il existe des âmes qui n'atteignent jamais la Vraie Mort. La mort les a abandonnées et leur nom ne sera jamais inscrit dans le livre des morts. Le fait que tu te sois réveillé comme tu l'as fait après ton décès… laisse à penser que tu es l'une de ces âmes. Ton existence est inacceptable pour notre faction."~ */
+  IF ~~ THEN REPLY #917 /* ~"'Inacceptable' ? Ça ne me laisse pas dans une position avantageuse, on dirait."~ */ GOTO 8
+  IF ~~ THEN REPLY #918 /* ~"Je vois. Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #919 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #920 /* ~"Je crois que j'en ai assez entendu. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 23 // from: 8.0
+  SAY #924 /* ~"Parce que t'imposer nos croyances serait injuste. Tu dois abandonner l'ombre de cette vie de ton propre chef, non parce que l'on t'y aura forcé." Dhall semble être repris d'une quinte de toux mais, non sans difficulté, il parvient à la réprimer. "Tant que je serai à mon poste, je protégerai ton droit de chercher ta vérité."~ */
+  IF ~~ THEN REPLY #927 /* ~"C'est quoi ta fonction ?"~ */ GOTO 25
+  IF ~~ THEN REPLY #928 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #925 /* ~"Très bien. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6039 /* ~"J'en ai assez entendu. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 24 // from: 25.0
+  SAY #929 /* ~"Je suis celui qui classe les dépouilles qui arrivent dans nos salles, le Sans Repos." Dhall est pris d'une quinte de toux, puis se calme. "Je suis le seul à voir les visages de ceux qui reposent sur nos dalles. Les noirs secrets de ton existence sont en bonnes mains avec moi."~ */
+  IF ~~ THEN REPLY #1305 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #6041 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6042 /* ~"Je crois que j'ai une dette envers toi. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 25 // from: 9.5 23.0
+  SAY #930 /* ~"Je suis scribe, je répertorie toutes les dépouilles qui arrivent à la Morgue." Dhall tousse de nouveau, puis inspire profondément. "Tant que le flot de cadavres passera par la Morgue, je resterai à mon poste."~ */
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #931 /* ~"Tu dis que ce n'est pas la première fois que je me retrouve ici. Alors pourquoi les Hommes-Poussière ne me reconnaissent-ils pas ?"~ */ JOURNAL #39462 /* ~Dhall m'a dit que c'est grâce à lui que les Hommes-Poussière ignorent que je suis revenu plusieurs fois à la Morgue. En sa qualité de scribe de la réception, il est en effet l'un des seuls à voir mon corps revenir à chaque fois.~ */ GOTO 24
+  IF ~~ THEN REPLY #932 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #933 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6040 /* ~"Très bien. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 26 // from: 9.6
+  SAY #934 /* ~"Je me rapproche de la Vraie Mort, le Sans Repos. Bientôt, je traverserai la Frontière Éternelle et je trouverai la paix que j'ai toujours recherchée. Je suis fatigué de cette sphère mortelle…" Dhall lâche un râle. "Les plans n'ont plus aucun secret pour quelqu'un comme moi."~ */
+  IF ~~ THEN REPLY #935 /* ~"La Frontière Éternelle ?"~ */ GOTO 41
+  IF ~~ THEN REPLY #936 /* ~"Vraiment ? Je devrais pouvoir trouver un moyen de t'aider."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Dhall_1","GLOBALGood",1)
+~ GOTO 27
+  IF ~~ THEN REPLY #937 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #960 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.1
+  SAY #938 /* ~"Je ne désire ni vivre éternellement, ni ressusciter, le Sans Repos. Je ne le supporterai pas."~ */
+  IF ~~ THEN REPLY #1303 /* ~"Très bien. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #1304 /* ~"Soit ! Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 28 // from: 2.2 42.1
+  SAY #939 /* ~"Elle t'a *parlé* ?" Dhall murmure : "La *fièvre* se serait-elle emparée de toi, le Sans Repos ? Elle a rejoint la Vraie Mort et se trouve hors de ta portée."~ */
+  IF ~~ THEN REPLY #981 /* ~"Elle m'a parlé, Dhall. Son esprit vit ici."~ */ GOTO 30
+  IF ~~ THEN REPLY #982 /* ~"Je l'ai peut-être imaginé, alors. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #873 /* ~"Je ne suis pas certain qu'elle ait atteint la Vraie Mort. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 29 // from: 36.0
+  SAY #941 /* ~Dhall s'arrête et réfléchit. "Très probablement. Te manque-t-il quelque chose… quelque chose de valeur ?" Sa voix tombe et il fronce les sourcils. "Pharod ne ferait aucune exception à moins que la chose ne soit greffée directement sur ton corps. Et parfois, cela ne suffit pas à calmer son esprit vorace."~ */
+  IF ~  Global("Journal","GLOBAL",0)
+~ THEN REPLY #942 /* ~"J'ai perdu un journal."~ */ GOTO 31
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #943 /* ~"Hmmm. Tu sais où je peux trouver Pharod ?"~ */ GOTO 18
+  IF ~~ THEN REPLY #944 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #6026 /* ~"Je devrais peut-être parler à Pharod. Au revoir, Dhall."~ */ GOTO 19
+  IF ~  GlobalGT("Pharod","GLOBAL",0)
+~ THEN REPLY #874 /* ~"Je vois. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 30 // from: 28.0
+  SAY #945 /* ~Dhall dessine un demi-cercle imaginaire en l'air. "C'est un mauvais présage, le Sans Repos. Je prie pour que tu aies imaginé cette conversation… mais j'ai bien peur que ce ne soit pas le cas."~ */
+  IF ~~ THEN REPLY #946 /* ~"Je l'ai peut-être imaginé. J'ai d'autres questions."~ */ GOTO 9
+  IF ~~ THEN REPLY #947 /* ~"On en reparlera peut-être plus tard. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 31 // from: 29.0
+  SAY #850 /* ~"Un journal ? S'il a de la valeur, il doit se trouver entre les mains de Pharod."~ */
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #948 /* ~"Où est-ce que je peux trouver ce Pharod ?"~ */ GOTO 18
+  IF ~~ THEN REPLY #949 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #6027 /* ~"Alors, je vais me mettre à sa recherche. Au revoir, Dhall."~ */ GOTO 19
+  IF ~  GlobalGT("Pharod","GLOBAL",0)
+~ THEN REPLY #6066 /* ~"Je vois. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 32 // from: 8.1 10.0 14.3 15.1 16.2 17.2 18.1 19.1 20.1 22.1 23.1 24.0 25.1 33.2 34.1 37.0 38.1 41.2 47.3 48.1 49.1 51.1 52.1 53.0
+  SAY #950 /* ~"C'est ici que l'on apporte les morts qui doivent être enterrés ou incinérés. Il est de notre devoir, en tant qu'Hommes-Poussière, de nous occuper des morts, ceux qui ont quitté cette ombre de vie et pris le chemin de la Vraie Mort." Dhall baisse le ton ; il se fait du souci pour toi. "Tes blessures t'ont fait payer un lourd tribut si tu ne reconnais pas ce lieu. C'est presque chez toi."~ */
+  IF ~~ THEN REPLY #951 /* ~"L'ombre de la vie ?"~ */ GOTO 33
+  IF ~~ THEN REPLY #953 /* ~"La Vraie Mort ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #954 /* ~"Des Hommes-Poussière ?"~ */ GOTO 47
+  IF ~~ THEN REPLY #955 /* ~"Sigil ?"~ */ GOTO 37
+  IF ~~ THEN REPLY #956 /* ~"Mes blessures ?"~ */ GOTO 34
+  IF ~~ THEN REPLY #846 /* ~"Comment ai-je atterri ici ?"~ */ GOTO 15
+  IF ~~ THEN REPLY #5735 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6062 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 33 // from: 10.2 14.2 32.0 41.0 47.2 49.0
+  SAY #957 /* ~"Oui, une ombre. Tu comprends, le Sans Repos, cette vie… elle n'est pas réelle. Ton existence ou la mienne ne sont que des ombres vacillantes de ce qu'était autrefois la vie. Cette 'vie', c'est là que nous finissons *après* la mort. Et c'est là que nous restons… piégés. En cage. Jusqu'à ce que nous puissions parvenir à la Vraie Mort."~ */
+  IF ~~ THEN REPLY #958 /* ~"La Vraie Mort ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #959 /* ~"Qu'est-ce qui te fait croire que cette vie n'est pas réelle ?"~ */ GOTO 50
+  IF ~~ THEN REPLY #5736 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5737 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5738 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 34 // from: 14.1 32.4
+  SAY #961 /* ~"Oui, les blessures qui ornent ton corps… il semble qu'elles auraient envoyé un simple mortel sur le chemin de la Vraie Mort. Mais on dirait que beaucoup d'entre elles ont déjà cicatrisé." Dhall tousse violemment, puis se calme. "Mais ce ne sont que des blessures visibles."~ */
+  IF ~~ THEN REPLY #1301 /* ~"Des blessures visibles ? Qu'est-ce que tu veux dire ?"~ */ JOURNAL #39470 /* ~Dhall a dit que mes blessures physiques sont mineures en comparaison de celles que j'ai subies au niveau mental. Il a ajouté que mes blessures étaient peut-être directement responsables de ma perte de mémoire, auquel cas je ne souffrirais pas d'une simple amnésie. Cela me met mal à l'aise. J'aimerais bien qu'on me donne quelques bonnes nouvelles, de temps en temps…~ */ GOTO 53
+  IF ~~ THEN REPLY #1302 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5746 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5747 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 35 // from: 16.1 17.1 20.0
+  SAY #962 /* ~"Il y en a certains que je respecte, le Sans Repos." Dhall anhèle puis se calme. "Pharod n'en fait pas partie. Il porte sa mauvaise réputation comme une médaille d'honneur et prend certaines libertés avec les biens des morts. C'est un chevalier de la gueuserie qui commerce des ordures de la pire sorte."~ */
+  IF ~~ THEN REPLY #963 /* ~"Un 'chevalier de la gueuserie' ?"~ */ GOTO 36
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #964 /* ~"Tu sais où je peux trouver Pharod ?"~ */ GOTO 18
+  IF ~~ THEN REPLY #965 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6028 /* ~"Encourageant. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 36 // from: 35.0
+  SAY #966 /* ~"Un chevalier de la gueuserie…" Dhall tousse. "… un escroc. Tous ceux que Pharod apporte dans ces murs sont dépouillés du peu de dignité qui leur restait. Pharod s'empare de tout ce qu'il peut arracher à leurs doigts crispés."~ */
+  IF ~~ THEN REPLY #967 /* ~"Ce Pharod m'a pris quelque chose ?"~ */ GOTO 29
+  IF ~  Global("Pharod","GLOBAL",0)
+~ THEN REPLY #968 /* ~"Tu sais où je peux trouver Pharod ?"~ */ GOTO 18
+  IF ~~ THEN REPLY #969 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6029 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 37 // from: 32.3
+  SAY #970 /* ~"Sigil est notre bonne cité, le Sans Repos."~ */
+  IF ~~ THEN REPLY #971 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #972 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5758 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 38 // from: 10.1 14.0
+  SAY #973 /* ~"Sans Repos est un nom aussi convenable qu'un autre." Dhall anhèle. "Quelque chose te retient ici, n'est-ce pas ? Quelque chose que tu dois accomplir, une passion que tu dois assouvir avant de rejoindre la Vraie Mort ?"~ */
+  IF ~~ THEN REPLY #974 /* ~"La Vraie Mort ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #975 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5749 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5750 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 39 // from:
+  SAY #884 /* ~"Tu feras ce que tu as toujours fait, le Sans Repos. Tu chercheras cet idiot de Poil-d'asticot et lui demanderas de te restituer tes biens. Puis, tu reprendras ta quête inutile, tu tenteras d'accomplir des tâches inutiles, tu rassembleras des objets inutiles, et tu seras terrassé et tu nous reviendras. Gagne du temps et parle-moi. Cela nous évitera de reprendre cette conversation quand tu auras à nouveau perdu la mémoire."~ */
+  IF ~~ THEN REPLY #976 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #977 /* ~"Au revoir, Dhall."~ */ EXIT
+END
+
+IF ~  Global("Dhall","GLOBAL",1)
+~ THEN BEGIN 40 // from:
+  SAY #978 /* ~Dhall lève les yeux à ton approche. "Alors, tu es revenu…" Dhall anhèle, puis est pris d'une violente quinte de toux. Après quelques instants, sa toux se calme et Dhall reprend son souffle saccadé. "Sois le bienvenu, une nouvelle fois, le Sans Repos."~ */
+  IF ~~ THEN REPLY #979 /* ~"J'ai d'autres questions pour toi, Dhall."~ */ GOTO 9
+  IF ~~ THEN REPLY #980 /* ~"Peu importe. Au revoir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 26.0 52.0
+  SAY #983 /* ~"La frontière entre l'ombre de cette vie et la Vraie Mort."~ */
+  IF ~~ THEN REPLY #984 /* ~"L'ombre de cette vie ?"~ */ GOTO 33
+  IF ~~ THEN REPLY #985 /* ~"La Vraie Mort ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #5739 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5740 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5741 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 42 // from: 2.0 12.0 43.0
+  SAY #5075 /* ~"Dans la Salle de Commémoration du nord-ouest à l'étage en dessous. Vérifie les cercueils… son nom doit figurer sur l'une des plaques commémoratives. Peut-être que ça te rafraîchira la mémoire."~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5076 /* ~"Je ne sais pas. Je ne me souviens pas avoir jamais voyagé avec une femme."~ */ GOTO 43
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #5077 /* ~"Eh bien, elle prétend me connaître, mais je ne me souviens pas d'elle."~ */ GOTO 28
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #5078 /* ~"Tu as dit qu'il y en avait d'autres. Qui d'autre est là ?"~ */ GOTO 12
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #5079 /* ~"Tu as dit qu'il y en avait d'autres. Qui d'autre est là ?"~ */ GOTO 12
+  IF ~~ THEN REPLY #6067 /* ~"J'irai peut-être à sa recherche. J'ai d'autres questions à te poser avant de partir…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6068 /* ~"Je vais descendre dans la Salle de Commémoration pour voir si je trouve son corps."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 43 // from: 2.1 42.0
+  SAY #5080 /* ~Dhall ne répond pas. Il se contente de t'observer en silence.~ */
+  IF ~  Global("Deionarra","GLOBAL",0)
+~ THEN REPLY #5081 /* ~"Où est-ce que je peux la trouver ?"~ */ GOTO 42
+  IF ~  CheckStatGT(Protagonist,12,INT)
+CheckStatLT(Protagonist,13,WIS)
+~ THEN REPLY #5082 /* ~"Tu as dit tout à l'heure qu'il y en avait d'autres enterrés ici qui avaient voyagé avec moi. Où sont-ils ?"~ */ GOTO 12
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+~ THEN REPLY #5083 /* ~"Tu as dit tout à l'heure qu'il y en avait d'autres enterrés ici qui avaient voyagé avec moi. Où sont-ils ?"~ */ GOTO 12
+  IF ~~ THEN REPLY #6069 /* ~"J'ai d'autres questions à te poser…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6070 /* ~"Alors, au revoir."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 44 // from: 1.0 6.2 7.0
+  SAY #840 /* ~"Si je te connais ? Je…" Il y a de l'amertume dans la voix du scribe. "Je ne te connais *pas*, le Sans Repos. Pas plus que tu ne te connais toi-même." Il reste un moment sans rien dire. "Car tu l'as oublié, n'est-ce pas ?"~ */
+  IF ~~ THEN REPLY #1327 /* ~"*Qui* es-tu ?"~ */ DO ~SetGlobal("Dhall","GLOBAL",1)
+~ GOTO 45
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.0
+  SAY #5728 /* ~"Comme toujours, la question. Et la mauvaise question, comme toujours." Dhall s'incline légèrement, mais ce mouvement lui donne soudain une quinte de toux. "Je…" Il s'arrête un instant pour reprendre son souffle. "Je… m'appelle Dhall."~ */
+  IF ~~ THEN REPLY #5731 /* ~"Tu peux peut-être répondre à quelques questions pour moi, Dhall…"~ */ JOURNAL #39459 /* ~J'ai rencontré un scribe blafard à la Morgue. Il savait que j'avais tout oublié avant même que je lui adresse la parole. Mais l'avais-je connu avant de perdre la mémoire ? J'espérais obtenir des réponses, mais ce lieu semble juste propice à la multiplication des questions.~ */ GOTO 9
+  IF ~~ THEN REPLY #5732 /* ~"Je n'ai pas le temps. Au revoir."~ */ JOURNAL #39459 /* ~J'ai rencontré un scribe blafard à la Morgue. Il savait que j'avais tout oublié avant même que je lui adresse la parole. Mais l'avais-je connu avant de perdre la mémoire ? J'espérais obtenir des réponses, mais ce lieu semble juste propice à la multiplication des questions.~ */ GOTO 46
+END
+
+IF ~~ THEN BEGIN 46 // from: 45.1
+  SAY #5730 /* ~"D'accord, le Sans Repos." acquiesce Dhall. "Mais j'ai peur que le temps ne soit pas ton ennemi dans cette affaire." Il reprend sa plume. "Quand tu voudras parler, je serai là."~ */
+  IF ~~ THEN REPLY #40005 /* ~"Je reviendrai peut-être. Au revoir."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 32.2
+  SAY #847 /* ~"Nous autres Hommes-Poussière sommes une faction, un rassemblement de ceux d'entre nous qui reconnaissons l'illusion de cette vie. Nous attendons la vie ultérieure et assistons les autres dans leur voyage."~ */
+  IF ~  Global("Morte_Mortuary_Walkthrough_1","GLOBAL",1)
+~ THEN REPLY #6032 /* ~"Tu peux peut-être m'expliquer pourquoi les Hommes-Poussière veulent ma mort."~ */ GOTO 22
+  IF ~~ THEN REPLY #6033 /* ~"La Vraie Mort ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALKnow_Dustmen","GLOBALKnow_Dustmen",0)
+~ GOTO 48
+  IF ~~ THEN REPLY #6034 /* ~"L'ombre de cette vie ?"~ */ GOTO 33
+  IF ~~ THEN REPLY #6035 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #6036 /* ~"J'ai d'autres questions à te poser…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6037 /* ~"Alors, au revoir."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 48 // from: 32.1 33.0 38.0 41.1 47.1
+  SAY #848 /* ~"La Vraie Mort est une non-existence. Un état dépourvu de raison, de sensations, de passion." Dhall tousse, puis respire de façon saccadée. "Un état de pureté."~ */
+  IF ~~ THEN REPLY #6043 /* ~"Ça ressemble à l'état d'oubli. Comment peut-on vouloir ça ?"~ */ GOTO 49
+  IF ~~ THEN REPLY #6044 /* ~"Oh. Peux-tu m'en dire plus sur la Morgue ?"~ */ GOTO 32
+  IF ~~ THEN REPLY #6045 /* ~"Je… je vois. J'ai d'autres questions."~ */ GOTO 9
+  IF ~~ THEN REPLY #6046 /* ~"Je dois partir. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 49 // from: 48.0
+  SAY #849 /* ~"Est-ce que c'est pire que de rester dans cette ombre de vie ? Je ne pense pas."~ */
+  IF ~~ THEN REPLY #6047 /* ~"L'ombre de la vie ?"~ */ GOTO 33
+  IF ~~ THEN REPLY #6048 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #6049 /* ~"Je… je vois. J'ai d'autres questions."~ */ GOTO 9
+  IF ~~ THEN REPLY #6050 /* ~"Je dois partir. Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 50 // from: 33.1
+  SAY #853 /* ~"Qu'est-ce qui te fait croire que cette vie *est* vraie ? Regarde en toi. Tu ne sens pas qu'il manque quelque chose ?" Dhall secoue la tête. "Ici, c'est un purgatoire. On n'y trouve que le chagrin, la douleur, les tourments… ce ne sont pas les éléments qui constituent la 'vie'. Ils font partie de la cage qui nous retient prisonniers de cette ombre."~ */
+  IF ~~ THEN REPLY #6051 /* ~"Je crois que ton fatalisme a eu raison de toi. Ces choses font partie de la vie, mais pas de toute la vie."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Dhall_2","GLOBALGood",1)
+~ GOTO 51
+  IF ~~ THEN REPLY #6052 /* ~"Qui nous retient prisonniers ? Comment ?"~ */ GOTO 51
+  IF ~~ THEN REPLY #6053 /* ~"J'en ai assez de ta philosophie. Qu'est-ce que ça vient faire avec le fait que je me suis réveillé ici ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALEvil_Dhall_3","GLOBALGood",-1)
+~ GOTO 51
+END
+
+IF ~~ THEN BEGIN 51 // from: 50.0 50.1 50.2
+  SAY #5733 /* ~Dhall secoue la tête. "Les passions sont un véritable fardeau. Nombreux sont ceux qui leur doivent de se retrouver enterrés dans cette ombre de vie. Tant qu'on se cramponne à ses émotions, on renaît continuellement dans cette 'vie', souffrant éternellement, sans jamais connaître la pureté de la Vraie Mort."~ */
+  IF ~~ THEN REPLY #6054 /* ~"Je… je vois. Comment échappe-t-on au cycle de la renaissance pour atteindre cette… Vraie Mort ?"~ */ GOTO 52
+  IF ~~ THEN REPLY #6055 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #6056 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6057 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.0
+  SAY #5734 /* ~"Débarrasse-toi de tes passions et de ton besoin de sensations. Lorsque tu seras complètement nettoyé, le cycle de la renaissance prendra alors fin, et la paix pourra enfin s'installer." Dhall émet un soupir… tel un râle d'agonie dans sa gorge. "Au-delà de la carapace qui nous enferme, de la Frontière Éternelle, gît la paix que toute âme recherche."~ */
+  IF ~~ THEN REPLY #6058 /* ~"La Frontière Éternelle ?"~ */ GOTO 41
+  IF ~~ THEN REPLY #6059 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #6060 /* ~"J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #6061 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 53 // from: 34.0
+  SAY #5742 /* ~"Je parle des blessures de l'esprit. Tu as oublié bien des choses, n'est-ce pas ? Peut-être que tes véritables blessures sont bien plus profondes que les cicatrices que tu portes à la surface…" Dhall tousse de nouveau. "… mais c'est quelque chose que tu es le seul à savoir."~ */
+  IF ~~ THEN REPLY #5743 /* ~"Dis-m'en plus sur la Morgue."~ */ GOTO 32
+  IF ~~ THEN REPLY #5744 /* ~"Je vois. J'ai d'autres questions…"~ */ GOTO 9
+  IF ~~ THEN REPLY #5745 /* ~"Au revoir, Dhall."~ */ GOTO 11
+END

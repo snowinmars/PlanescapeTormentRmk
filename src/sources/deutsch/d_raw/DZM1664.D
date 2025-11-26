@@ -1,0 +1,59 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM1664.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM1664~
+
+IF ~  True()
+~ THEN BEGIN 0 // from: 5.0
+  SAY #47002 /* ~Diese riesige Leiche steht still und mit dem Gesicht zur Wand in einer Ecke des Raums. Sie muß einmal ein Mann gewesen sein, der in jungen Jahren sehr kräftig war. Nach dem Zustand der Leiche zu urteilen ist sie erst vor kurzem gestorben. Die frisch eingenähte Nummer auf der Stirn lautet "1664." Diese Leiche scheint die Funktion eines Bibliothekars zu erfüllen, denn sie trägt einen riesigen Stapel Bücher auf dem Arm.~ */
+  IF ~  Global("Page_Taken","GLOBAL",0)
+~ THEN REPLY #47003 /* ~Sieh dir die Bücher genau an.~ */ GOTO 3
+  IF ~  Global("Page_Taken","GLOBAL",1)
+~ THEN REPLY #47004 /* ~Sieh dir die Bücher noch einmal genau an.~ */ GOTO 6
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #47005 /* ~"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #47006 /* ~Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.~ */ GOTO 2
+  IF ~~ THEN REPLY #47007 /* ~"Es war nett, mit dir gesprochen zu haben. Leb wohl."~ */ EXIT
+  IF ~~ THEN REPLY #47008 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.2 6.0
+  SAY #47009 /* ~Die Leiche starrt ausdruckslos gegen die Wand.~ */
+  IF ~~ THEN REPLY #47010 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #47011 /* ~Die Leiche rührt sich nicht. Obwohl sie aussieht, als wäre sie noch nicht lange tot, scheint sie keine deiner Fragen beantworten zu können.~ */
+  IF ~~ THEN REPLY #47012 /* ~Laß die Leiche in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.0
+  SAY #47013 /* ~Die Bücher scheinen alte Dienstbücher der Leichenhalle zu sein, von denen keines besonders auffällig ist. Als du die Eintragungen durchgehst, bemerkst du eine lose Seite, die zusammengefaltet zwischen zwei Büchern liegt. Du hast den Verdacht, daß sie jemand absichtlich dort versteckt hat. ~ */
+  IF ~~ THEN REPLY #47014 /* ~Nimm die Seite.~ */ DO ~GiveItemCreate("Logpage",Protagonist,1,0,0)
+SetGlobal("Page_Taken","GLOBAL",1)
+~ GOTO 4
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.0
+  SAY #47015 /* ~Die Seite sieht nicht aus, als gehöre sie zu den Dienstbüchern... Sie scheint eher aus irgendeinem Verzeichnis zu stammen. Die Kante ist so sauber, als wäre die Seite mit einem Messer abgetrennt worden. Sie muß absichtlich herausgenommen worden sein.~ */
+  IF ~~ THEN REPLY #47016 /* ~Lies sie durch. ~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #47017 /* ~Du liest dir die Seite kurz durch... Es ist eine Liste von Leichen, die zur Leichenhalle gebracht und im Empfangsraum protokolliert wurden. Alle Einträge scheinen Neuzugänge zu sein.
+
+^NHINWEIS: <READSTUFF>^-~ */
+  IF ~~ THEN REPLY #47018 /* ~Sieh dir den Zombie noch einmal genau an.~ */ GOTO 0
+  IF ~~ THEN REPLY #47019 /* ~Nimm die Seite mit und geh weg.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.1
+  SAY #47021 /* ~Die Bücher scheinen alte Dienstbücher der Leichenhalle zu sein, von denen keines besonders auffällig ist. Du gehst die Eintragungen noch einmal durch, findest aber nichts mehr.~ */
+  IF ~~ THEN REPLY #47022 /* ~"Wie kommt's, das du dich ausgerechnet als Bibliothekar verdingst? War sonst nichts frei?"~ */ GOTO 1
+  IF ~~ THEN REPLY #47023 /* ~Laß den Zombie in Ruhe.~ */ EXIT
+END

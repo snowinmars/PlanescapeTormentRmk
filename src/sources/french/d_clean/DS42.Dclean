@@ -1,0 +1,108 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #6595 /* ~Le squelette se retourne face à toi. Le numéro '42' a été buriné sur son front et certains os, tels que les maxillaires et les articulations, ont été ficelés à l'aide de lanières de cuir. Une blouse noire recouvre le corps.~ */
+IF ~  Global("42_Secret","GLOBAL",1) ~ THEN REPLY #6612 /* ~"Je *crois* que c'est le cadavre dont je me souvenais."~ */ GOTO 1
+IF ~~ THEN REPLY #6613 /* ~"Excuse-moi, tu n'aurais pas vu de squelettes errants dans le coin ?"~ */ DO ~IncrementGlobalOnceEx("GLOBALSkeleton_Chaotic","GLOBALLaw",-1) ~ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",0) ~ THEN REPLY #6614 /* ~"Il faut que je te demande : pourquoi ce sarrau ? Je veux dire, ce n'est pas comme si tu avais quelque chose à cacher."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Skeleton_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Skeleton_Chaotic","GLOBAL",1) ~ THEN REPLY #6615 /* ~"Il faut que je te demande : pourquoi ce sarrau ? Je veux dire, ce n'est pas comme si tu avais quelque chose à cacher."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #6616 /* ~Utilise Histoires-Os-Conter sur le cadavre.~ */ GOTO 2
+IF ~~ THEN REPLY #6617 /* ~Examine attentivement le squelette.~ */ DO ~SetGlobal("Skeleton_Examine","GLOBAL",1) ~ GOTO 3
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",0) ~ THEN REPLY #6618 /* ~Essaie de déboulonner les articulations du squelette.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ EXTERN ~DMORTE~ 110
+IF ~  Global("Skeleton_Examine","GLOBAL",1) NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ THEN REPLY #6619 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 6
+IF ~  !NearbyDialog("DMorte") Global("Skeleton_Examine","GLOBAL",1) ~ THEN REPLY #6620 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 6
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #6621 /* ~"Qu'est-ce que tu dis de ce squelette, Morte ? Ça t'ira comme corps ?"~ */ GOTO 1
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #6622 /* ~Laisse le squelette tranquille.~ */ EXTERN ~DMORTE~ 111
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #6623 /* ~Laisse le squelette tranquille.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #6624 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3 0.9 3.0 3.3
+SAY #6596 /* ~En entendant ta voix, le squelette se redresse brusquement. Il croise les bras sur sa poitrine et ses doigts sont enfoncés dans sa cage thoracique.~ */
+IF ~  Global("42_Secret","GLOBAL",1) ~ THEN REPLY #6625 /* ~Croise les bras sur la poitrine.~ */ GOTO 4
+IF ~  CheckStatGT(Protagonist,12,WIS) Global("42_Secret","GLOBAL",0) ~ THEN REPLY #6626 /* ~Imite le geste… Attends de voir ce qui se passe.~ */ GOTO 9
+IF ~~ THEN REPLY #6627 /* ~"Euh…"~ */ GOTO 10
+IF ~~ THEN REPLY #6628 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.4
+SAY #6597 /* ~Ce squelette ne répond pas. Il semble qu'il soit trop absent pour répondre à tes questions.~ */
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #6629 /* ~Laisse le squelette tranquille.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 111
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #6630 /* ~Laisse le squelette tranquille.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #6631 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.5 10.2
+SAY #6598 /* ~Tu t'étonnes que ce tas d'os soit toujours en une seule pièce. Il est recouvert de plâtre et de plusieurs couches de colle puante… Le peu que tu peux voir de ce tas d'ossements révèle des centaines de fêlures. Bien que quelqu'un ait pris la peine d'envelopper ce squelette dans des lanières de cuir et de renforcer les articulations à l'aide de boulons, l'ensemble paraît sur le point de s'écrouler.~ */
+IF ~  Global("42_Secret","GLOBAL",1) ~ THEN REPLY #63495 /* ~"Je *crois* que c'est le cadavre dont je me souvenais."~ */ GOTO 1
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",0) ~ THEN REPLY #6632 /* ~Essaie de déboulonner les articulations du squelette.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ EXTERN ~DMORTE~ 110
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip2","GLOBAL",1) ~ THEN REPLY #6633 /* ~Essaie de déboulonner les articulations du squelette.~ */ GOTO 6
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #6634 /* ~"Je peux emprunter quelques sangles et boulons ?"~ */ GOTO 1
+IF ~  NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #6635 /* ~Laisse le squelette tranquille.~ */ DO ~SetGlobal("Morte_Skel_Mort_Quip","GLOBAL",1) ~ EXTERN ~DMORTE~ 111
+IF ~  !NearbyDialog("DMorte") Global("Morte_Skel_Mort_Quip","GLOBAL",0) ~ THEN REPLY #6636 /* ~Laisse le squelette tranquille.~ */ EXIT
+IF ~  Global("Morte_Skel_Mort_Quip","GLOBAL",1) ~ THEN REPLY #6637 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.0 12.0
+SAY #6599 /* ~En guise de réponse, le squelette laisse tomber ses bras. Les lanières de cuir qui maintenaient le torse se rompent et la cage thoracique s'ouvre telle une porte battante.~ */
+IF ~~ THEN REPLY #6638 /* ~Va jusqu'à la cage thoracique et fouille.~ */ GOTO 5
+IF ~~ THEN REPLY #6639 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0 9.0
+SAY #6600 /* ~À ta grande surprise, ta main disparaît lorsque tu l'introduis dans la cage thoracique… tu as l'étrange impression qu'elle se trouve *ailleurs*. Une fois à l'intérieur de la cage thoracique, elle se cogne contre un objet invisible. Gros comme un poing, ce dernier semble relié à la colonne vertébrale du squelette.~ */
+IF ~~ THEN REPLY #6640 /* ~Prends l'objet.~ */ DO ~Kill(Myself) ~ GOTO 7
+IF ~~ THEN REPLY #6641 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.7 0.8 3.2
+SAY #6601 /* ~Les boulons sortent facilement des articulations. Le squelette s'effondre, tandis que certains os continuent de bouger.~ */
+IF ~~ THEN REPLY #6642 /* ~"Excuse-moi, Sac d'os…"~ */ DO ~Kill(Myself) GiveItemCreate("Spike",Protagonist,1,0,0) GiveItemCreate("Strap",Protagonist,1,0,0) ~ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 5.0
+SAY #6602 /* ~Lorsque tu retires l'objet, le squelette se désintègre soudain, et les boulons qui maintenaient les articulations tombent bruyamment par terre. Quel que soit cet objet, il semble que c'était le seul élément qui maintenait l'ensemble.~ */
+IF ~  Global("42_Secret","GLOBAL",0) ~ THEN REPLY #6643 /* ~Examine l'objet.~ */ GOTO 8
+IF ~  Global("42_Secret","GLOBAL",1) ~ THEN REPLY #6644 /* ~Examine l'objet.~ */ GOTO 8
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.0 7.1
+SAY #6603 /* ~On dirait un morceau de fer quelconque. Impossible d'imaginer pourquoi quelqu'un voudrait le cacher dans la cage thoracique d'un squelette.~ */
+IF ~~ THEN REPLY #6645 /* ~Examine le morceau de fer.~ */ DO ~AddexperienceParty(250) ~ GOTO 14
+END
+
+IF ~~ THEN BEGIN 9 // from: 1.1 12.1
+SAY #6604 /* ~En guise de réponse, le squelette laisse tomber ses bras. Les lanières de cuir qui maintenaient le torse se rompent et la cage thoracique s'ouvre telle une porte battante. Sans pouvoir l'expliquer, il te prend une envie soudaine de mettre la main dans la cage thoracique.~ */
+IF ~~ THEN REPLY #6646 /* ~Va jusqu'à la cage thoracique et fouille.~ */ GOTO 5
+IF ~~ THEN REPLY #6647 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 1.2 12.2
+SAY #6605 /* ~Les bras du squelette retombent.~ */
+IF ~  !NearbyDialog("DMorte") ~ THEN REPLY #6648 /* ~"Euh… bonjour ?"~ */ GOTO 12
+IF ~  NearbyDialog("DMorte") ~ THEN REPLY #6649 /* ~"Euh… bonjour ?"~ */ GOTO 13
+IF ~~ THEN REPLY #6650 /* ~Examine attentivement le squelette.~ */ DO ~SetGlobal("Skeleton_Examine","GLOBAL",1) ~ GOTO 3
+IF ~~ THEN REPLY #6651 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from:
+SAY #6606 /* ~On dirait un morceau de fer quelconque. Ton incarnation précédente doit avoir eu intérêt à le cacher à cet endroit.~ */
+IF ~~ THEN REPLY #6652 /* ~Examine ce morceau de fer attentivement. ~ */ DO ~AddexperienceParty(250) ~ GOTO 14
+END
+
+IF ~~ THEN BEGIN 12 // from: 10.0
+SAY #6607 /* ~Le squelette croise de nouveau les bras sur sa poitrine.~ */
+IF ~  Global("42_Secret","GLOBAL",1) ~ THEN REPLY #6653 /* ~Croise les bras sur la poitrine.~ */ GOTO 4
+IF ~  CheckStatGT(Protagonist,12,WIS) Global("42_Secret","GLOBAL",0) ~ THEN REPLY #6654 /* ~Imite le geste… Attends de voir ce qui se passe.~ */ GOTO 9
+IF ~~ THEN REPLY #6655 /* ~"Euh…"~ */ GOTO 10
+IF ~~ THEN REPLY #6656 /* ~Laisse le squelette tranquille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 10.1
+SAY #6608 /* ~Le squelette croise de nouveau les bras sur sa poitrine.~ */
+IF ~~ THEN EXTERN ~DMORTE~ 112
+END
+
+IF ~~ THEN BEGIN 14 // from: 8.0 11.0
+SAY #58983 /* ~Lorsque que tu mets tes mains sur le morceau métallique pour l'examiner, un *hssssss* se produit, et le métal s'évapore, laissant derrière une étrange dague, une poignée de pièces enrobées dans un chiffon crasseux, et deux larmes de sang. On dirait que tout cela se trouvait *à l'intérieur* du morceau de fer.~ */
+IF ~~ THEN REPLY #58984 /* ~Prends les objets et pars.~ */ DO ~GiveItemCreate("GSKnife",Protagonist,1,0,0) GiveItemCreate("Rags",Protagonist,1,0,0) GiveItemCreate("Clotchrm",Protagonist,1,0,0) GiveItemCreate("Clotchrm",Protagonist,1,0,0) GiveGoldForce(99) ~ EXIT
+END

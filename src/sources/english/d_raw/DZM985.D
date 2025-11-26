@@ -1,0 +1,96 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DZM985.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DZM985~
+
+IF ~  Global("Topple_985","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #45515 /* ~This corpse - "985" - has stopped dead in its tracks; judging from the condition of its left leg, it looks as if some sort of tomb rot or corpse mold has eaten through its knee. The corpse is wobbling unsteadily back and forth, trying to keep its balance. ~ */
+  IF ~  NearbyDialog("Dmorte")
+~ THEN REPLY #45516 /* ~Give the corpse a push.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_ZM985_1","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_ZM985_1","GLOBALGood",-1)
+PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ EXTERN ~DMORTE~ 482
+  IF ~  !NearbyDialog("Dmorte")
+~ THEN REPLY #45517 /* ~Give the corpse a push.~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_ZM985_1","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_ZM985_1","GLOBALGood",-1)
+PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ GOTO 3
+  IF ~  NearbyDialog("Dmorte")
+~ THEN REPLY #45518 /* ~Try and help the corpse balance.~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_ZM985_1","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_ZM985_1","GLOBALGood",1)
+~ GOTO 4
+  IF ~  !NearbyDialog("Dmorte")
+~ THEN REPLY #45519 /* ~Try and help the corpse balance.~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_ZM985_1","GLOBALLaw",1)
+IncrementGlobalOnceEx("GLOBALGood_ZM985_1","GLOBALGood",1)
+~ GOTO 6
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45520 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45521 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 2
+  IF ~~ THEN REPLY #45522 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #45523 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.4 5.0 5.1 5.2
+  SAY #45524 /* ~The corpse stares straight ahead, oblivious. It makes no sign that it has heard you.~ */
+  IF ~~ THEN REPLY #45525 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.5 5.3
+  SAY #45526 /* ~The corpse does not stir. It looks like it is too far gone to answer any of your questions.~ */
+  IF ~~ THEN REPLY #45527 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.1 6.0
+  SAY #45528 /* ~There is a *crack* from the corpse's left leg, and the body falls like a dead tree. Its torso strikes the stone flagstones and shatters like a rotten melon, filth and ichor gurgling from the cavity. To your surprise, no one seems to have noticed the corpse's collapse... and even stranger, the left leg remains standing where the body was, as if at attention. After a moment, the leg falls over with a wet *thump.*~ */
+  IF ~~ THEN DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+CreateItem("Limb985",1,0,0)
+SetGlobal("Topple_985","GLOBAL",1)
+Kill(Myself)
+Deactivate(Myself)
+~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2
+  SAY #45530 /* ~You reach out for the corpse's left arm to help steady it. As you grab its arm, however, the corpse suddenly sways to the right, and you end up tugging the corpse rather than steadying it...~ */
+  IF ~~ THEN DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ EXTERN ~DMORTE~ 482
+END
+
+IF ~  GlobalGT("Topple_985","GLOBAL",0)
+~ THEN BEGIN 5 // from:
+  SAY #45531 /* ~It looks like someone has replaced this corpse's left arm and left leg with some spare limbs taken from other corpses. The left leg is shorter than the old one, but at least the corpse is able to stand now.~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #45532 /* ~"Sorry about knocking you over before. It was an accident."~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #45533 /* ~"Sorry about knocking you over before. It was an accident."~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #45534 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #45535 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 2
+  IF ~~ THEN REPLY #45536 /* ~"It was great talking to you. Farewell."~ */ EXIT
+  IF ~~ THEN REPLY #45537 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.3
+  SAY #45538 /* ~You reach out for the corpse's left arm to help steady it. As you grab its arm, however, the corpse suddenly sways to the right, and you end up tugging the corpse rather than steadying it...~ */
+  IF ~~ THEN REPLY #45539 /* ~"Uh-oh..."~ */ DO ~PlaySoundNotRanged("SPE_11")
+SetAnimState(Myself,ANIM_MIMEDIE)
+~ GOTO 3
+END
+
+IF ~~ THEN BEGIN 7 // from: 3.0
+  SAY #64205 /* ~As you gaze upon the putrefied remains of the corpse, you notice that its left arm seems intact - it has snapped from the torso during the fall, and it doesn't appear to have been touched by the tomb rot that had spread through the rest of the body.~ */
+  IF ~~ THEN REPLY #64206 /* ~"Hmmm. I wonder if I could make use of that arm..."~ */ EXIT
+END

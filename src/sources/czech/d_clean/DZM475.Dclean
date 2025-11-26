@@ -1,0 +1,20 @@
+IF ~  True()
+~ THEN BEGIN 0 // from:
+SAY #6584 /* ~Lehce znetvořená hlava této mrtvoly vypadá, že drží pohromadě díky spoustě úzkých kovových pásků přišroubovaných přímo k lebce. Na rezavé kovové destičce umístěné přes levé oko je vyryto číslo "475". Mrtvola má sešitá ústa a je cítit balzamovací tekutinou.~ */
+IF ~  Global("Zombie_Chaotic","GLOBAL",0) ~ THEN REPLY #6587 /* ~"Tak... je tam dál vidět něco zajímavého?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1) SetGlobal("Zombie_Chaotic","GLOBAL",1) ~ GOTO 1
+IF ~  Global("Zombie_Chaotic","GLOBAL",1) ~ THEN REPLY #6588 /* ~"Tak... je tam dál vidět něco zajímavého?"~ */ GOTO 1
+IF ~  Global("Vaxis_Exposed","GLOBAL",1) ~ THEN REPLY #6589 /* ~"Vím, že nejsi zombie, jasný? Nikoho neoklameš."~ */ GOTO 1
+IF ~  Global("Speak_with_Dead","GLOBAL",1) ~ THEN REPLY #6590 /* ~Použij svou schopnost Kosti vyprávějte na mrtvolu.~ */ GOTO 2
+IF ~~ THEN REPLY #6591 /* ~"Rád jsem si s tebou popovídal. Sbohem."~ */ EXIT
+IF ~~ THEN REPLY #6592 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2
+SAY #6585 /* ~Mrtvola na tebe stále zírá.~ */
+IF ~~ THEN REPLY #6593 /* ~Nechej mrtvolu být.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+SAY #6586 /* ~Mrtvola neodpovídá. Vypadá to, že je mrtvá příliš dlouho na to, aby byla schopna odpovědět na nějakou tvou otázku.~ */
+IF ~~ THEN REPLY #6594 /* ~Nechej mrtvolu být.~ */ EXIT
+END

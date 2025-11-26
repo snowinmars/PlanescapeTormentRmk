@@ -1,0 +1,39 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : COPEARC.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\fr_FR\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~COPEARC~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #46723 /* ~Cette boucle d'oreille en cuivre a l'air extrêmement vieille. On dirait qu'elle est faite pour être portée, mais elle ne possède ni crochet, ni autre moyen visible pour la fixer à ton oreille. Une série de rainures orne toutefois sa face intérieure.~ */
+  IF ~~ THEN REPLY #46724 /* ~Examine les rainures. ~ */ GOTO 1
+  IF ~  Global("Know_Copper_Earring_Secret","GLOBAL",1)
+~ THEN REPLY #46725 /* ~Insère ton ongle dans l'encoche qui était indiquée par le triangle dans le cercle denté que tu as vu sur le front du zombi 79.~ */ DO ~AddexperienceParty(250)
+~ GOTO 2
+  IF ~~ THEN REPLY #46726 /* ~Range la boucle d'oreille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY #46727 /* ~Les rainures sont espacées à intervalle régulier. En les observant de plus près, elles feraient presque penser à de minuscules dents de rouage. Elles sont manifestement artificielles, mais tu ignores quelle est leur raison d'être.~ */
+  IF ~  Global("Know_Copper_Earring_Secret","GLOBAL",1)
+~ THEN REPLY #46728 /* ~Insère ton ongle dans l'encoche qui était indiquée par le triangle dans le cercle denté que tu as vu sur le front du zombi 79.~ */ DO ~AddexperienceParty(250)
+~ GOTO 2
+  IF ~~ THEN REPLY #46729 /* ~Range la boucle d'oreille.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.1 1.0
+  SAY #46730 /* ~Tu glisses ton ongle dans la troisième rainure et tu pousses. Aussitôt, un léger cliquetis retentit et le haut de la boucle d'oreille s'ouvre. D'un seul coup, tu peux la porter… et on dirait bien qu'elle cache un compartiment secret.~ */
+  IF ~~ THEN REPLY #46731 /* ~Secoue la boucle d'oreille et regarde si quelque chose en tombe.~ */ GOTO 3
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #46732 /* ~Tu secoues la boucle d'oreille en vain : rien n'en sort. Ce qui se trouvait caché dedans a disparu.
+
+^NREMARQUE : maintenant que tu as compris le fonctionnement de la boucle d'oreille, tu peux la porter. De plus, le compartiment secret augmentera sans doute sa valeur marchande.^-~ */
+  IF ~~ THEN REPLY #46733 /* ~Range la boucle d'oreille.~ */ DO ~TransformPartyItem("CopEarC","CopEarO",1,0,0)
+~ EXIT
+END

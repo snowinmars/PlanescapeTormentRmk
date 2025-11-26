@@ -1,0 +1,1233 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DSOEGO.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\de_DE\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DSOEGO~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
+
+IF WEIGHT #8 /* Triggers after states #: 59 58 12 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Appearance","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+Global("Soego","GLOBAL",0)
+~ THEN BEGIN 0 // from:
+  SAY #1431 /* ~Du siehst einen müde wirkenden Mann in einer ausgebleichten, schwarzen Robe. Sein schmales Gesicht ist extrem blaß. Er sieht aus, als hätte er lange nicht geschlafen: seine Schultern hängen herab, und seine schlaffen Wangen unterstreichen die blutunterlaufenden Augen. Er scheint dich nicht zu bemerken... wahrscheinlich hält er dich für eine dieser lebenden Leichen, die hier arbeiten.~ */
+  IF ~~ THEN REPLY #1432 /* ~"Sei gegrüßt."~ */ GOTO 1
+  IF ~~ THEN REPLY #1433 /* ~"Wer bist du?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1434 /* ~"Wo bin ich hier?"~ */ GOTO 1
+  IF ~~ THEN REPLY #1435 /* ~"Ich hätte ein paar Fragen..."~ */ GOTO 1
+  IF ~~ THEN REPLY #1436 /* ~Laß ihn in Ruhe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.3
+  SAY #1437 /* ~Der Staubmensch blickt blitzschnell auf, als du ihn ansprichst. "Wie...wie bitte? Habt Ihr mit mir gesprochen?"~ */
+  IF ~~ THEN REPLY #1438 /* ~"Ja, hab' ich. Ich hätte da ein paar Fragen..."~ */ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 2
+  IF ~~ THEN REPLY #1439 /* ~"Nein. Nein, hab' ich nicht."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_1","GLOBALLaw",-1)
+~ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1440 /* ~Verhalt dich totenstill.~ */ GOTO 3
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1441 /* ~Verhalt dich totenstill.~ */ GOTO 4
+  IF ~~ THEN REPLY #1442 /* ~Geh. Und zwar schnell.~ */ GOTO 5
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0 1.1 3.0 3.3 4.0 4.1
+  SAY #1443 /* ~"Bei den Mächten!" Der Staubmensch zuckt zusammen; dann schaut er dich durchdringend an. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt...", er starrt auf deine Narben, "...so, wie Ihr ausseht?"~ */
+  IF ~~ THEN REPLY #1444 /* ~"Das geht dich gar nichts an."~ */ GOTO 6
+  IF ~~ THEN REPLY #1445 /* ~"Ich bin mir selbst nicht sicher, was ich hier tue. Ich bin auf einer der Totenbänke oben aufgewacht, und meine Erinnerung ist... ein wenig umnachtet."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1446 /* ~"Ich finde mich in diesen Hallen hier irgendwie nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1447 /* ~"Ich versuche, hier rauszukommen."~ */ GOTO 13
+  IF ~~ THEN REPLY #1448 /* ~"Ich brauchte mal 'ne Luftveränderung."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #4999 /* ~Für so was hab' ich wirklich keine Zeit. Leb wohl.~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.2
+  SAY #1449 /* ~Der Staubmensch schaut dich kurz prüfend an, dann schüttelt er den Kopf. "Meine Einbildung..." Er seufzt und reibt sich die Augen. "Diese Fieberzustände werden immer schlimmer..."~ */
+  IF ~~ THEN REPLY #1450 /* ~"Es ist keine Einbildung. Ich hätte da ein paar Fragen..."~ */ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1451 /* ~Brich ihm das Genick, so lange er abgelenkt ist.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1452 /* ~Brich ihm das Genick, so lange er abgelenkt ist.~ */ GOTO 22
+  IF ~~ THEN REPLY #1453 /* ~"Ich hätte ein paar Fragen."~ */ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 2
+  IF ~~ THEN REPLY #1454 /* ~Geh ganz leise fort.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 1.3
+  SAY #1455 /* ~Der Staubmensch betrachtet dich aufmerksam, dann beugt er sich vor... er zieht seine Lippen auseinander, unter denen seine schmutzigen, spitzen Zähne zum Vorschein kommen. Dann beschnuppert er dich wie eine Ratte.~ */
+  IF ~~ THEN REPLY #1456 /* ~"Äh... warum, zum Teufel, schnüffelst du so an mir?"~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 2
+  IF ~~ THEN REPLY #1457 /* ~"Sieh mal, ich hätte da ein paar Fragen an dich..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 2
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1458 /* ~Brich ihm das Genick, wenn er sich vorbeugt.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1459 /* ~Brich ihm das Genick, wenn er sich vorbeugt.~ */ GOTO 22
+  IF ~~ THEN REPLY #1460 /* ~Geh. Und zwar schnell.~ */ GOTO 15
+END
+
+IF ~~ THEN BEGIN 5 // from: 1.4
+  SAY #1461 /* ~Als du dich umdrehst und gehen willst, läßt der Staubmensch ein leises Zischen hören, streckt seinen Kopf nach vorn und beschnuppert dich. "Bei den Mächten!" Der Staubmensch geht mit weit geöffneten Augen einen Schritt zurück. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt... so, wie Ihr ausseht?"~ */
+  IF ~~ THEN REPLY #1462 /* ~"Das geht dich gar nichts an."~ */ GOTO 6
+  IF ~~ THEN REPLY #1463 /* ~"Ich bin mir selbst nicht sicher, was ich hier tue. Ich bin auf einer der Totenbänke oben aufgewacht, und meine Erinnerung ist... ein wenig umnachtet."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1464 /* ~"Ich habe mich verirrt und suche nach dem Ausgang. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1465 /* ~"Ich versuche, hier rauszukommen."~ */ GOTO 13
+  IF ~~ THEN REPLY #1466 /* ~"Ich brauchte mal 'ne Luftveränderung."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #1467 /* ~"Für so was hab' ich wirklich keine Zeit. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.0 5.0 15.0 41.1 43.0 50.1 115.1
+  SAY #1468 /* ~"Oh, ich fürchte, dies *geht* mich sehr wohl etwas an." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht...", er grinst höhnisch, wobei er seine spitzen, schmutzigen Zähne zeigt, "vielleicht sollte ich die Wache rufen, oder? Ja... genau. Ich glaube, das werde ich tun."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1469 /* ~"Einen Moment mal! Ich hatte mich verirrt... Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1470 /* ~"Stop! Ruf nicht die Wache! Ich will doch nur hier raus... kannst du mir helfen?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1471 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1472 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 22
+  IF ~~ THEN REPLY #1473 /* ~"Dann ruf sie doch zusammen. Würde sie gerne kennenlernen."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 7 // from: 2.1 5.1 13.3 15.1 42.1 57.0
+  SAY #1474 /* ~"Wirklich?" Der Staubmensch mustert dich. "Ihr seht definitiv aus, als hätte man Euch präpariert. Ich weiß nicht, wie Ihr diese Schmerzen sonst hättet ertragen können... Ihr habt doch *Schmerzen,* oder? Scheint jedenfalls so."~ */
+  IF ~~ THEN REPLY #1475 /* ~"Wie soll ich denn überhaupt hierher gekommen sein?"~ */ GOTO 54
+  IF ~~ THEN REPLY #1476 /* ~"Für so was hab' ich keine Zeit. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 8 // from: 2.2 5.2 6.0 13.0 15.2 16.0 17.0 26.0 40.0 41.0 50.0 61.0 62.0
+  SAY #1477 /* ~Soego nickt, und seine Mundwinkel zucken. "Hm... gewiß. Diese Hallen *können* für Besucher ganz schön verwirrend sein. Nehmt's mir nicht übel, aber nach dem neunten Glockenschlag dürft Ihr Euch nicht mehr in der Leichenhalle aufhalten - wartet, ich öffne Euch das Haupttor."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #1478 /* ~"Vielen Dank."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #1479 /* ~"Vielen Dank."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.1 56.1 60.1
+  SAY #1480 /* ~Soego faßt an seinen Gürtel, nestelt kurz daran herum und zischt: "Der Schlüssel!" Seine Augen leuchten rot; wütend verzieht er seinen Mund... seine Fratze erinnert an ein wildes Tier. "Jemand hat den Schlüssel gestohlen!" Er dreht sich zu dir um und faucht. "Ihr! Ihr müßt es getan haben!"~ */
+  IF ~~ THEN REPLY #1481 /* ~Täusch ihn: "Äh... warte mal! Warum sollte ich dich danach fragen, wenn ich ihn gestohlen hätte?"~ */ GOTO 18
+  IF ~~ THEN REPLY #1482 /* ~Lüge: "Wovon sprichst du?! Ich habe damit nichts zu tun!"~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_3","GLOBALLaw",-1)
+IncrementGlobalOnceEx("GLOBALEvil_Soego_1","GLOBALGood",-1)
+~ GOTO 18
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1483 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1484 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 22
+  IF ~~ THEN REPLY #1485 /* ~"Und wenn ich's war? Was würdest du dann tun?"~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 10 // from:
+  SAY #1486 /* ~Soego nimmt einen großen Schlüssel von seinem Gürtel ab und geht zum Haupttor. Jetzt fällt dir sein merkwürdiger Gang auf... er krümmt sich nach vorn, als versuche er so, das Gleichgewicht zu halten.~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #1487 /* ~"Komischen Gang hat der."~ */ EXTERN ~DMORTE~ 101
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1488 /* ~Warte, bis er das Tor geöffnet hat.~ */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.1
+  SAY #1489 /* ~Am Tor angelangt, dreht Soego den Schlüssel im Schloß um. Kurz darauf knirrscht es im Schloßkasten... das Geräusch hallt von den Marmorfußböden der Haupthalle wider.
+~ */
+  IF ~~ THEN REPLY #1490 /* ~Warte, bis er wiederkommt.~ */ DO ~SetDoorLocked("fakedoor",FALSE)
+~ GOTO 12
+END
+
+IF WEIGHT #5 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Gate_Open","GLOBAL",1)
+Global("Gate_Cut_Scene","AR0201",1)
+~ THEN BEGIN 12 // from: 11.0
+  SAY #1491 /* ~"Gut. Das Haupttor ist jetzt aufgeschlossen, aber Ihr könnt nicht wieder hineingehen."~ */
+  IF ~~ THEN REPLY #1492 /* ~"Kann ich dich vielleicht was fragen, bevor ich gehe?"~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2)
+~ GOTO 26
+  IF ~~ THEN REPLY #1493 /* ~"Vielen Dank, Soego. Ich werde jetzt gehen."~ */ DO ~SetGlobal("Gate_Cut_Scene","AR0201",2)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 2.3 5.3 6.1 15.3 16.1 17.1 26.1 61.1
+  SAY #1494 /* ~"Ihr wollt hier raus?" Soego runzelt die Stirn. "Wie seid Ihr reingekommen?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1495 /* ~"Ich war für eine Bestattung vorhin hier, um jemandem die letzte Ehre zu erweisen. Ich wollte gehen... aber ich glaube, ich habe mich verirrt. Kannst du mir helfen, den Ausgang zu finden?"~ */ GOTO 8
+  IF ~  Global("Appearance","GLOBAL",2)
+~ THEN REPLY #1496 /* ~"Ich weiß es auch nicht."~ */ GOTO 14
+  IF ~  !Global("Appearance","GLOBAL",2)
+~ THEN REPLY #1497 /* ~"Ich weiß es auch nicht."~ */ GOTO 61
+  IF ~~ THEN REPLY #1498 /* ~"Ich wachte auf einer der Totenbänke auf, und meine Erinnerung ist... ein wenig umnachtet."~ */ GOTO 7
+  IF ~~ THEN REPLY #1499 /* ~"Für so was hab' ich keine Zeit. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.1
+  SAY #1500 /* ~Soego schnalzt mit der Zunge. "Sehr merkwürdig." Er betrachtet dich wieder mit prüfendem Blick. "Ist es möglich, daß Ihr einer der Vertragsarbeiter seid?"~ */
+  IF ~~ THEN REPLY #1501 /* ~"Ähh... 'Vertragsarbeiter'?"~ */ GOTO 23
+  IF ~~ THEN REPLY #1502 /* ~"Für so was hab' ich wirklich keine Zeit. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 15 // from: 4.4
+  SAY #1503 /* ~Als du dich umdrehst und gehen willst, hört der Staubmensch auf, dich zu beschnuppern und zischt: "Bei den Mächten!" Der Staubmensch geht mit weit geöffneten Augen einen Schritt zurück. Dir fällt auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Mein Herr, Ihr entlockt mir eine wenig schmeichelhafte Bemerkung: Ihr wirkt durchaus überzeugend als Zombie." Er verbeugt sich leicht. "Ich bin Soego. Darf ich fragen, was Euch hierher führt...so, wie Ihr ausseht?"~ */
+  IF ~~ THEN REPLY #1504 /* ~"Das geht dich gar nichts an."~ */ GOTO 6
+  IF ~~ THEN REPLY #1505 /* ~"Ich bin mir selbst nicht sicher, was ich hier tue. Ich bin auf einer der Totenbänke oben aufgewacht, und meine Erinnerung ist... ein wenig umnachtet."~ */ GOTO 7
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1506 /* ~"Ich habe mich verirrt und suche nach dem Ausgang. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~~ THEN REPLY #1508 /* ~"Ich versuche, hier rauszukommen."~ */ GOTO 13
+  IF ~~ THEN REPLY #1509 /* ~"Ich brauchte mal 'ne Luftveränderung."~ */ DO ~IncrementGlobalOnceEx("GLOBALChaotic_Soego_2","GLOBALLaw",-1)
+~ GOTO 16
+  IF ~~ THEN REPLY #1510 /* ~"Für so was hab' ich wirklich keine Zeit. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 16 // from: 2.4 5.4 15.4
+  SAY #1511 /* ~"Aha..." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht..." Er grinst höhnisch, wobei er seine spitzen, schmutzigen Zähne zeigt. "Vielleicht sollte ich die Wache rufen, oder? Ja... genau. Ich glaube, das werde ich tun."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1512 /* ~"Einen Moment mal! Ich hatte mich verirrt... Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1513 /* ~"Stop! Ruf nicht die Wache! Ich will doch nur hier raus... kannst du mir helfen?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1514 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1515 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 22
+  IF ~~ THEN REPLY #1516 /* ~"Dann ruf sie doch zusammen. Würde sie gerne kennenlernen."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 17 // from: 2.5 5.5 7.1 13.4 14.1 15.5 23.2 24.2 25.2 26.9 27.4 28.2 29.3 31.3 32.2 33.4 34.4 35.3 36.3 37.2 114.3 115.4
+  SAY #1517 /* ~Als du dich umdrehst und gehen willst, faucht Soego dich an... doch dann beruhigt er sich plötzlich und erhebt die Hand. "Nein, nein. Ihr könnt leider nicht einfach gehen. Wir vermissen hier etwas. Vielleicht sollten wir diese Angelegenheit erst einmal klären..." Seine Mundwinkel zucken leicht, und seine Augen leuchten. "...vielleicht können die Wächter helfen. Ja... ich glaube, ich sollte sie rufen."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #1518 /* ~"Einen Moment mal! Ich hatte mich verirrt... Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #1520 /* ~"Stop! Ruf nicht die Wache! Ich will doch nur hier raus... kannst du mir helfen?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #1521 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #1522 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 22
+  IF ~~ THEN REPLY #1523 /* ~"Dann ruf sie doch zusammen. Würde sie gerne kennenlernen."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 18 // from: 6.4 9.0 9.1 9.4 16.4 17.4 40.4 40.5 41.6 50.6 53.6 61.4
+  SAY #1524 /* ~Soego geht einen Schritt zurück, dann klatscht er dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.~ */
+  IF ~~ THEN REPLY #1525 /* ~"In Ordnung..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 3.1 4.2 6.2 9.2 16.2 17.2 40.2 51.0 61.2 114.2 115.3
+  SAY #1526 /* ~Bevor er auch nur ein Wort sagen kann, packst du ihn an den Schläfen und drehst seinen Kopf ruckartig nach links.~ */
+  IF ~~ THEN REPLY #1528 /* ~"Ich kann nicht zulassen, daß du deine Freunde warnst..."~ */ DO ~PlaySoundNotRanged("SPE_11")
+~ GOTO 20
+END
+
+IF ~~ THEN BEGIN 20 // from: 19.0
+  SAY #1529 /* ~In seinem Genick macht es *Knacks*... aber anstatt zusammenzusacken gibt der Staubmensch nur einen Würgelaut von sich und reißt sich von dir los!~ */
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #1530 /* ~"Was...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1)
+~ EXTERN ~DMORTE~ 100
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #1531 /* ~"Was...?!"~ */ DO ~SetGlobal("Soego_Strangle","GLOBAL",1)
+~ GOTO 21
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.1
+  SAY #1532 /* ~Der Staubmensch macht einen genauso schockierten Eindruck wie du. Sein Blick ist irre, und aus seiner Kehle kommt ein gurgelndes Geräusch... du bist sicher, daß du ihm das Genick gebrochen hast, da sein Kopf in einem unnatürlichen Winkel auf dem Rumpf sitzt, aber er lebt noch! Als du ihn fassungslos anschaust, klatscht er dreimal schwach in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.~ */
+  IF ~~ THEN REPLY #1533 /* ~"In Ordnung..."
+~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 3.2 4.3 6.3 9.3 16.3 17.3 40.3 61.3 114.1 115.2
+  SAY #1534 /* ~*Irgendetwas* muß den Staubmenschen in Alarmbereitschaft versetzt haben... bevor du auf ihn losstürzen kannst, beginnen seine Augen rot zu leuchten, und er fletscht die Zähne. Er zischt und klatscht dreimal hintereinander fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.~ */
+  IF ~~ THEN REPLY #1535 /* ~"In Ordnung..."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 14.0
+  SAY #4792 /* ~"Es gibt Leute, die haben einen Vertrag unterzeichnet, mit dem sie den Staubmenschen erlauben, ihren Körper nach dem Tod zu verwenden. Es ist möglich, daß Ihr einem... Mißverständnis zum Opfer gefallen seid. Ihr seht viel intelligenter aus als unsere gewöhnlichen Zombies."~ */
+  IF ~~ THEN REPLY #4793 /* ~"Leute verkaufen euch ihre Leiche?"~ */ GOTO 24
+  IF ~~ THEN REPLY #4794 /* ~"Oh. Ich hätte noch ein paar Fragen..."~ */ GOTO 26
+  IF ~~ THEN REPLY #4795 /* ~"Für so was hab' ich keine Zeit. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 24 // from: 23.0
+  SAY #4796 /* ~"Oh ja. Für ein paar Kupfermünzen erklären sich viele bereit, einen Körper zu verkaufen, den sie im Wahren Tod ohnehin nicht mehr gebrauchen können."~ */
+  IF ~~ THEN REPLY #4797 /* ~"Was macht ihr mit diesen Leichen?"~ */ GOTO 25
+  IF ~~ THEN REPLY #4798 /* ~"Ich... verstehe. Dürfte ich dir vielleicht noch ein paar Fragen stellen?"~ */ GOTO 25
+  IF ~~ THEN REPLY #4799 /* ~"Vielen Dank für die Informationen. Auf bald."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 24.1
+  SAY #4800 /* ~"Diese Zombies erledigen niedrige Aufgaben in der Leichenhalle. Sie transportieren Leichen, putzen den Boden und helfen uns, Leichen für die Bestattung vorzubereiten... alles ziemlich simple Aufgaben. Es ist ein Pech, daß sie keine komplizierteren Anweisungen befolgen können."~ */
+  IF ~~ THEN REPLY #4801 /* ~"Nun, 'Vertragsarbeiter' oder auch nicht; wie sollte ich denn hierhergekommen sein, wenn ich nicht tot war?"~ */ GOTO 54
+  IF ~~ THEN REPLY #4802 /* ~"Ich... verstehe. Dürfte ich dir vielleicht noch ein paar Fragen stellen?"~ */ GOTO 26
+  IF ~~ THEN REPLY #4803 /* ~"Vielen Dank für die Informationen. Auf bald."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 26 // from: 12.0 23.1 25.1 27.2 28.0 29.1 31.1 32.0 33.2 34.2 35.1 36.1 37.0 58.0
+  SAY #4804 /* ~Soego nickt. "Stellt Eure Fragen."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4805 /* ~"Ich würde gerne gehen. Kannst du mich zum Ausgang bringen?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4806 /* ~"Kannst du mir zeigen, wie ich hier rauskomme?"~ */ GOTO 13
+  IF ~  Global("Vaxis","GLOBAL",1)
+!Dead("Vaxis")
+Global("Vaxis_Leave","GLOBAL",0)
+Global("Betray_Vaxis","GLOBAL",0)
+~ THEN REPLY #4807 /* ~"Wußtest du schon, daß die eine Leiche im ersten Stock eigentlich ein verkleideter Mensch ist?"~ */ GOTO 27
+  IF ~~ THEN REPLY #4809 /* ~"Dürfte ich fragen...alles okay? Du siehst müde aus."~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_1","GLOBALGood",1)
+~ GOTO 31
+  IF ~  CheckStatLT(Protagonist,13,WIS)
+Global("Vaxis_Exposes_Soego","GLOBAL",1)
+~ THEN REPLY #4810 /* ~"Du bis Soego, stimmt's? Mir wurde gesagt, du wärst ein etwas merkwürdiger Staubmensch. Daß du Ratten magst."~ */ DO ~SetGlobal("Soego_exposed","GLOBAL",1)
+~ GOTO 30
+  IF ~  CheckStatGT(Protagonist,12,WIS)
+Global("Vaxis_Exposes_Soego","GLOBAL",1)
+~ THEN REPLY #4811 /* ~"Du bis Soego, stimmt's? Mir wurde gesagt, du wärst ein etwas merkwürdiger Staubmensch. Daß du Ratten magst."~ */ GOTO 29
+  IF ~  GlobalLT("Pharod","GLOBAL",1)
+~ THEN REPLY #4832 /* ~"Kennst du jemanden mit dem Namen Pharod?"~ */ GOTO 33
+  IF ~  GlobalLT("Journal","GLOBAL",1)
+~ THEN REPLY #4833 /* ~"Ich vermisse ein Journal. Hast du zufällig eins gesehen?"~ */ GOTO 37
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4834 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4835 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 27 // from: 26.2
+  SAY #4808 /* ~"Wie bitte?"~ */
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",0)
+~ THEN REPLY #4836 /* ~"Da oben ist ein Mann, der sich als Leiche verkleidet hat. "Ich glaub, er bespitzelt die Staubmenschen."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",1)
+~ GOTO 28
+  IF ~  Global("Lawful_Vaxis_1","GLOBAL",1)
+~ THEN REPLY #4837 /* ~"Da oben ist ein Mann, der sich als Leiche verkleidet hat. "Ich glaub, er bespitzelt die Staubmenschen."~ */ DO ~AddexperienceParty(250)
+SetGlobal("Betray_Vaxis","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALEvil_Dhall_2","GLOBALGood",-3)
+~ GOTO 28
+  IF ~~ THEN REPLY #4838 /* ~"Vergiß es. Ich hätte ein paar andere Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4839 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #916 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 28 // from: 27.0 27.1
+  SAY #4840 /* ~"Was? Weshalb sollte...?" Soegos Stimme wird plötzlich zischend. Er zieht seine Lippen auseinander, unter denen seine gezackten Zähne zum Vorschein kommen. "Ein *Anarchist*." Seine Augen leuchten grell rot. "Ein Anarchist. *Hier*." Plötzlich scheint er sich an deine Anwesenheit zu erinnern und reißt sich zusammen. "Danke für die Information. Ich werde dafür sorgen, daß die Wächter sich um diese Angelegenheit kümmern."~ */
+  IF ~~ THEN REPLY #4852 /* ~"Kein Problem. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4853 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4854 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 29 // from: 26.5
+  SAY #4855 /* ~Du willst es gerade erwähnen, als du plötzlich zögerst. Dich überkommt ein merkwürdiges Gefühl, als du Soego betrachtest... irgendwie glaubst du, daß es am besten wäre, jetzt nichts zu sagen.~ */
+  IF ~~ THEN REPLY #4856 /* ~"Hab' gehört, du wärst ein bißchen komisch, Soego. Daß du Ratten magst."~ */ GOTO 30
+  IF ~~ THEN REPLY #4857 /* ~"Äh... hör mal, da war noch was, was ich dich fragen wollte..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4858 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4859 /* ~"Macht nichts. Ich muß mich verabschieden. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 30 // from: 26.4 29.0
+  SAY #4860 /* ~Soego verstummt kurz, während er dich prüfend betrachtet. Seine Augen leuchten grell rot, und er zischt leise. "Ich glaube, Ihr habt die Gastfreundschaft überstrapaziert." Zu deinem Erstaunen geht er einen Schritt zurück und klatscht dreimal fest in die Hände. Daraufhin ertönt der Klang einer großen Eisenglocke durch die ganze Leichenhalle.~ */
+  IF ~~ THEN REPLY #4861 /* ~"Was zum...? Was machst du da?"~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+  IF ~~ THEN REPLY #4862 /* ~"Also gut. Bereite dich schon mal auf den Tod vor, Soego."~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 26.3
+  SAY #4863 /* ~Soego zwingt sich zu einem Lächeln; seine Mundwinkel zucken leicht. "Ich bin in letzter Zeit öfter krank... leichtes Fieber, nichts Ernstes. Nur kann ich oft... nicht gut schlafen."~ */
+  IF ~~ THEN REPLY #4864 /* ~"Kann ich vielleicht irgendwas tun?"~ */ DO ~IncrementGlobalOnceEx("GLOBALGood_Soego_2","GLOBALGood",1)
+~ GOTO 32
+  IF ~~ THEN REPLY #4865 /* ~"Oh. Ich hätte noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4866 /* ~"Ich verstehe. Nun, ich muß mich verabschieden. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4867 /* ~"Ich verstehe. Nun, ich muß mich verabschieden. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 32 // from: 31.0
+  SAY #4868 /* ~Soego schüttelt den Kopf. "Nein, nein, danke der Nachfrage... ich komm schon zurecht." Mit einem leichten Stirnrunzeln: "Was kann ich sonst für Euch tun?"~ */
+  IF ~~ THEN REPLY #4869 /* ~"Ja. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4870 /* ~"Nein, ich werde dich nicht länger belästigen. Danke für die Auskunft."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4871 /* ~"Nein, ich werde dich nicht länger belästigen. Danke für die Auskunft."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 33 // from: 26.6
+  SAY #4872 /* ~"Pharod? Klar kenne ich ihn." Er runzelt die Stirn, und seine Augen leuchten rot. "Ein teuflischer Mensch ohne Respekt vor den Toten, und mit noch weniger Respekt vor den Lebenden. Er ist ein Aasgeier. Ein Sammler."~ */
+  IF ~~ THEN REPLY #4873 /* ~"Sammler?"~ */ GOTO 34
+  IF ~~ THEN REPLY #4874 /* ~"Weißt du, wo ich ihn finden könnte?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4875 /* ~"Oh. Ich hätte noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4876 /* ~"Ich verstehe. Vielleicht sollte ich jetzt lieber gehen."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4877 /* ~"Ich verstehe. Vielleicht sollte ich jetzt lieber gehen."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 34 // from: 33.0 36.0
+  SAY #4878 /* ~"Sammler bestreiten ihren Lebensunterhalt, indem sie Leichen sammeln und sie zur Leichenhalle bringen. Wir kümmern uns dann darum, daß sie ordnungsgemäß bestattet werden."~ */
+  IF ~  CheckStatGT(Protagonist,12,INT)
+~ THEN REPLY #4879 /* ~"Also, wenn ein Sammler eine Leiche findet... meine, zum Beispiel... dann könnte er sie hierherbringen und euch verkaufen?"~ */ GOTO 35
+  IF ~~ THEN REPLY #4880 /* ~"Und dieser Sammler, Pharod... hast du 'ne Ahnung, wo ich ihn finden könnte?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4881 /* ~"Oh. Ich hätte noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4882 /* ~"Ich verstehe. Nun, ich muß mich verabschieden. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4883 /* ~"Ich verstehe. Nun, ich muß mich verabschieden. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 35 // from: 34.0
+  SAY #4884 /* ~"Ja."~ */
+  IF ~~ THEN REPLY #4885 /* ~"Hmmmm. Plötzlich scheint es äußerst wichtig zu werden, daß ich diesen Pharod finde. Weißt du, wo er sein könnte?"~ */ GOTO 36
+  IF ~~ THEN REPLY #4886 /* ~"Oh. Ich hätte noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4887 /* ~"Danke für die Information. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4888 /* ~"Danke für die Information. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 36 // from: 33.1 34.1 35.0
+  SAY #4889 /* ~"Ich weiß, daß er im Stock wohnt, in den Elendsvierteln außerhalb der Leichenhalle. Wo genau, weiß ich aber nicht. Vielleicht kann Euch einer der anderen Sammler weiterhelfen, falls er mit Euch spricht."~ */
+  IF ~~ THEN REPLY #4890 /* ~"Was machen diese Sammler nochmal?"~ */ GOTO 34
+  IF ~~ THEN REPLY #4891 /* ~"Oh. Ich hätte noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4892 /* ~"Danke für die Information. Leb wohl."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4893 /* ~"Danke für die Information. Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 37 // from: 26.7
+  SAY #4894 /* ~"Ein Journal?" Soego scheint verwirrt. "Nein, ich habe keines gesehen."~ */
+  IF ~~ THEN REPLY #4895 /* ~"Auch egal. Ich hätte aber noch ein paar Fragen..."~ */ GOTO 26
+  IF ~  Global("Gate_Open","GLOBAL",1)
+~ THEN REPLY #4896 /* ~"Trotzdem vielen Dank. Auf bald."~ */ EXIT
+  IF ~  Global("Gate_Open","GLOBAL",0)
+~ THEN REPLY #4897 /* ~"Trotzdem vielen Dank. Auf bald."~ */ GOTO 17
+END
+
+IF WEIGHT #9 /* Triggers after states #: 59 58 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+!Global("Appearance","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+Global("Soego","GLOBAL",0)
+~ THEN BEGIN 38 // from:
+  SAY #4898 /* ~Du siehst einen müde wirkenden Mann in einer schwarzen Robe. Sein schmales Gesicht ist extrem blaß. Er sieht aus, als hätte er lange nicht geschlafen: Seine Schultern hängen herab und seine schlaffen Wangen unterstreichen die blutunterlaufenen Augen. Er scheint in Gedanken versunken.~ */
+  IF ~  GlobalLT("Appearance","GLOBAL",2)
+~ THEN REPLY #66706 /* ~"Sei gegrüßt..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 39
+  IF ~  Global("Appearance","GLOBAL",2)
+~ THEN REPLY #66707 /* ~"Sei gegrüßt..."~ */ DO ~SetGlobal("Soego","Global",1)
+~ JOURNAL #63982 /* ~Ich habe am Eingangstor zur Leichenhalle einen Staubmenschen namens Soego getroffen... Er sieht müde aus, als ob er schon seit Wochen nicht mehr geschlafen hätte. Seinen Augen und der Blässe seiner Haut nach zu urteilen scheint er sich irgendeine Krankheit eingefangen zu haben.~ */ GOTO 113
+  IF ~~ THEN REPLY #66708 /* ~Laß ihn allein mit seinen Gedanken.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0
+  SAY #4904 /* ~"Seid gegrüßt..." Der Mann dreht sich zu dir um und verbeugt sich leicht. Dir fällt plötzlich auf, daß seine Augen nicht blutunterlaufen sind, sondern einen Rotstich haben. "Ich bin Soego. Wie kann ich..." Als er deine Narben bemerkt, zucken seine Mundwinkel. "Verzeihung, mein Herr, habt Ihr Euch verlaufen?"~ */
+  IF ~~ THEN REPLY #4905 /* ~"Ja."~ */ GOTO 40
+  IF ~~ THEN REPLY #4906 /* ~"Nein."~ */ GOTO 41
+  IF ~~ THEN REPLY #4907 /* ~"Nein, ich habe mich nicht verirrt. Ich hätte da ein paar Fragen..."~ */ GOTO 41
+  IF ~~ THEN REPLY #4908 /* ~"Nein. Ich suchte bloß nach dem Ausgang. Leb wohl."~ */ GOTO 41
+END
+
+IF ~~ THEN BEGIN 40 // from: 39.0
+  SAY #4909 /* ~"Na gut..." Soegos Mundwinkel zucken erneut. "Ich rufe jetzt die Wächter, die Euch rausbringen werden. Wartet einen Moment." Er sieht aus, als würde er jeden Moment die Wache rufen.~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4910 /* ~"Einen Moment mal! Bitte... du brauchst wirklich nicht die Wache zu rufen. Ich bin wegen einer Bestattung hergekommen, und dann muß ich mich irgendwie in den Hallen verirrt haben... Kannst du mir vielleicht den Weg hier raus zeigen?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4911 /* ~"Nein! Ich habe mich nicht verlaufen - ich habe mich versprochen."~ */ GOTO 50
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4912 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4913 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 22
+  IF ~~ THEN REPLY #4914 /* ~Geh. Und zwar schnell.~ */ GOTO 18
+  IF ~~ THEN REPLY #4915 /* ~Warte.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 41 // from: 39.1 39.2 39.3
+  SAY #4916 /* ~"Ich kann mich nicht dran erinnern, Euch je hereingelassen zu haben." Soego begutachtet dich mißtrauisch; im Licht der Fackeln leuchten seine Augen rot. "Darf ich fragen, was Euch hierher führt?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4917 /* ~"Ich war für eine Bestattung vorhin hier, um jemandem die letzte Ehre zu erweisen. Ich wollte gehen... aber ich glaube, ich habe mich verirrt. Kannst du mir helfen, den Ausgang zu finden?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4918 /* ~"Das geht dich nichts an."~ */ GOTO 6
+  IF ~~ THEN REPLY #4919 /* ~"Ich bin auf einer der Totenbänke in eurem Vorbereitungsraum aufgewacht."~ */ GOTO 42
+  IF ~~ THEN REPLY #4920 /* ~"Ich bin hier, um jemandem zu treffen."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4921 /* ~"Ich bin wegen einer Bestattung hier, aber da scheint etwas schiefgelaufen zu sein."~ */ GOTO 53
+  IF ~~ THEN REPLY #4922 /* ~Beug dich nach vorne, als ob du ihm etwas zuflüstern wolltest, und brich ihm das Genick, wenn er sich vorbeugt.~ */ GOTO 51
+  IF ~~ THEN REPLY #4923 /* ~Geh. Und zwar schnell.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.2 50.2 115.0
+  SAY #4924 /* ~Er wirkt überrascht. "Ihr... Ihr seid auf einer dieser Totenbänke oben aufgewacht?"~ */
+  IF ~~ THEN REPLY #4925 /* ~"Äh, nein. Ich habe mich versprochen."~ */ GOTO 50
+  IF ~~ THEN REPLY #4926 /* ~"Ja. Ich weiß, daß das unglaublich klingt, aber es ist die Wahrheit. Ich bin auf einer eurer Totenbänke da oben aufgewacht."~ */ DO ~IncrementGlobalOnceEx("GLOBALLawful_Soego_1","GLOBALLaw",1)
+~ GOTO 7
+END
+
+IF ~~ THEN BEGIN 43 // from: 41.3 50.3
+  SAY #4927 /* ~Soego nickt. "Wen sucht Ihr hier? Es wäre mir ein Vergnügen, Euch weiterzuhelfen."~ */
+  IF ~~ THEN REPLY #4928 /* ~"Das geht dich nichts an."~ */ GOTO 6
+  IF ~  GlobalGT("Dhall","GLOBAL",0)
+~ THEN REPLY #4929 /* ~"Ich bin hier, um Dhall zu treffen."~ */ GOTO 44
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4930 /* ~"Ich bin hier, um Deionarra zu treffen."~ */ GOTO 47
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Soego_Adahn","AR0201",0)
+~ THEN REPLY #4931 /* ~Lüge: "Ähh... Adahn. Arbeitet er noch hier, oder...?"~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1)
+IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  CheckStatGT(Protagonist,12,INT)
+Global("Soego_Adahn","AR0201",1)
+~ THEN REPLY #4932 /* ~Lüge: "Ähh... Adahn. Arbeitet er noch hier, oder...?"~ */ GOTO 49
+  IF ~~ THEN REPLY #4933 /* ~"Äh, niemanden. Ich habe mich versprochen."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.1
+  SAY #4934 /* ~"Dhall? Dhall der Schreiberling ist im Empfangsraum im oberen Stockwerk." Soegos Mundwinkel zucken leicht. "Er hat alle Hände voll zu tun und ist nicht bei bester Gesundheit. Wenn es nicht furchtbar dringend ist, würde ich ihn lieber nicht stören."~ */
+  IF ~~ THEN REPLY #4935 /* ~"Was fehlt Dhall?"~ */ GOTO 46
+  IF ~~ THEN REPLY #4936 /* ~"Im Empfangsraum?"~ */ GOTO 45
+  IF ~~ THEN REPLY #4937 /* ~"Also gut. Ich werden meinen Besuch bei ihm kurz halten. Leb wohl."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 45 // from: 44.1
+  SAY #4938 /* ~"Ja... der Empfangsraum. Dorthin werden die Leichen aus der Stadt gebracht, nachdem sie hier angeliefert wurden. Sie werden registriert und zum Bestatten vorbereitet."~ */
+  IF ~~ THEN REPLY #4939 /* ~"Was fehlt Dhall?"~ */ GOTO 46
+  IF ~~ THEN REPLY #4940 /* ~"Danke für deine Hinweise. Ich werden meinen Besuch bei Dhall kurz halten. Leb wohl."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 46 // from: 44.0 45.0
+  SAY #4941 /* ~"Ach, im Grunde ist alles in Ordnung mit ihm. Dhall ist..." Soego klappert mit den Zähnen. "...*alt*. Lange hat er die Toten katalogisiert, aber diese Zeit neigt sich langsam aber sicher dem Ende zu. Der Tod ist ihm gewiß nach seinem Siechtum."~ */
+  IF ~~ THEN REPLY #4942 /* ~"Also gut. Ich werden meinen Besuch bei ihm kurz halten. Leb wohl."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 47 // from: 43.2 53.2
+  SAY #4943 /* ~"Deionarra? Eine Frau, die so heißt, ist im Nordwesten der Gedenkhalle bestattet. Ist das die Person, die Ihr sucht?"~ */
+  IF ~~ THEN REPLY #4944 /* ~"Ja... kannst du mir sagen, was mit ihr passiert ist?"~ */ GOTO 48
+  IF ~~ THEN REPLY #4945 /* ~"Ja. Ich werde ihr jetzt meine letzte Ehre erweisen."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.0
+  SAY #4946 /* ~"Ich weiß nicht, aber sie war eine ganze Weile hier. Vielleicht weiß ihr Vater, was sie hatte... auf dem Weg zu seinem Büro im Oberen Bezirk kommt er oft hier vorbei. Es war sein Wunsch, sie hier in der Gedenkhalle zu bestatten."~ */
+  IF ~~ THEN REPLY #4947 /* ~"Danke für die Hinweise. Ich werd gehen, um ihr die letzte Ehre zu erweisen."~ */ GOTO 62
+END
+
+IF ~~ THEN BEGIN 49 // from: 43.3 43.4 53.3 53.4
+  SAY #4948 /* ~"Adahn..." Soego kneift seine Augen zusammen, und der Rotstich scheint jetzt noch ausgeprägter als zuvor. "Niemand, der so heißt, weder tot noch lebendig, befindet sich in der Leichenhalle." Seine Mundwinkel zucken, und zu deiner Überraschung schnüffelt er die Luft.~ */
+  IF ~~ THEN REPLY #4949 /* ~"Äh... da muß ich mich wohl versprochen haben."~ */ GOTO 50
+END
+
+IF ~~ THEN BEGIN 50 // from: 40.1 42.0 43.5 49.0 53.1 57.1
+  SAY #4950 /* ~Soegos Mundwinkel zucken erneut, und seine Augen leuchten. "Was führt Euch dann hierher?"
+~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4951 /* ~"Ich war für eine Bestattung vorhin hier, um jemandem die letzte Ehre zu erweisen. Ich wollte gehen... aber ich glaube, ich habe mich verirrt. Kannst du mir helfen, den Ausgang zu finden?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4952 /* ~"Geht dich nichts an."~ */ GOTO 6
+  IF ~~ THEN REPLY #4953 /* ~"Ich bin auf einer der Totenbänke in eurem Vorbereitungsraum aufgewacht."~ */ GOTO 42
+  IF ~~ THEN REPLY #4954 /* ~"Ich bin hier, um jemandem zu treffen."~ */ GOTO 43
+  IF ~  CheckStatGT(Protagonist,11,INT)
+~ THEN REPLY #4955 /* ~"Ich kam wegen einer Bestattung her."~ */ GOTO 53
+  IF ~~ THEN REPLY #4956 /* ~Beug dich nach vorne, als ob du ihm etwas zuflüstern wolltest, und brich ihm das Genick, wenn er sich vorbeugt.~ */ GOTO 51
+  IF ~~ THEN REPLY #5028 /* ~Lauf weg, so schnell du kannst.~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 51 // from: 41.5 50.5 53.5
+  SAY #4957 /* ~Soego runzelt die Stirn, als du dich vorbeugst. Dir fällt auf, daß er die Luft schnüffelt, als wollte er sie testen. Plötzlich kneift er die Augen zusammen; er sieht aus, als würde er jeden Moment die Wache rufen.~ */
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4958 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4959 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 52
+END
+
+IF ~~ THEN BEGIN 52 // from: 51.1
+  SAY #4960 /* ~Als du auf ihn losgehen willst, macht Soego einen Satz zurück. Seine Augen leuchten rot, und er fletscht die Zähne. Er zischt und klatscht dreimal hintereinander fest in die Hände. Daraufhin ertönt durch die ganze Leichenhalle der Klang einer großen Eisenglocke.~ */
+  IF ~~ THEN REPLY #4961 /* ~"Nun gut..."
+~ */ DO ~PlaySoundNotRanged("AMB_M01")
+Enemy()
+ForceAttack(Protagonist,Myself)
+SetGlobal("Mortuary_Alert","GLOBAL",1)
+Attack(Protagonist)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 53 // from: 41.4 50.4
+  SAY #4962 /* ~"Wer sollte bestattet werden? Vielleicht finden die Feierlichkeiten woanders in der Leichenhalle statt."~ */
+  IF ~~ THEN REPLY #4963 /* ~"Du verstehst mich falsch... ICH sollte bestattet werden."~ */ GOTO 57
+  IF ~~ THEN REPLY #4964 /* ~"Entschuldigung... Ich hab' mich versprochen. Ich kenne den Namen des Verstorbenen nicht."~ */ GOTO 50
+  IF ~  GlobalGT("Deionarra","GLOBAL",0)
+~ THEN REPLY #4965 /* ~"Ihr Name ist Deionarra."~ */ GOTO 47
+  IF ~  Global("Soego_Adahn","AR0201",0)
+~ THEN REPLY #4967 /* ~Lüge: "Sein Name ist... äh, Adahn."~ */ DO ~SetGlobal("Soego_Adahn","AR0201",1)
+IncrementGlobal("Adahn","GLOBAL",1)
+IncrementGlobal("Law","GLOBAL",-1)
+~ GOTO 49
+  IF ~  Global("Soego_Adahn","AR0201",1)
+~ THEN REPLY #4968 /* ~Lüge: "Sein Name ist... äh, Adahn."~ */ GOTO 49
+  IF ~~ THEN REPLY #4969 /* ~Beug dich nach vorne, als wenn du ihm etwas zuflüstern wolltest, und brich ihm das Genick.~ */ GOTO 51
+  IF ~~ THEN REPLY #4970 /* ~Lauf weg, so schnell du kannst.
+~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 54 // from: 7.0 25.0
+  SAY #4966 /* ~"Hm..." Soego schielt dich an. Er scheint verwirrt. "Offensichtlich ist hier ein Fehler unterlaufen. Hierhergebracht haben Euch entweder Eure Blutsverwandten, andere Staubmenschen oder...", Soego fängt plötzlich an zu zischen, als hätte er soeben einen unangenehmen Gedanken gehabt, "oder einer der *Sammler*."~ */
+  IF ~~ THEN REPLY #4971 /* ~"Sammler?"~ */ GOTO 55
+END
+
+IF ~~ THEN BEGIN 55 // from: 54.0
+  SAY #4972 /* ~"Ja, Sammler... ein Haufen Aasgeier, die die Leichen der Toten zu uns bringen. Sie haben Euch wohl für tot gehalten...", Soego zischt mit leuchtenden Augen, "...und sie sind so geldsüchtig, daß sie Euch nicht einmal genau angeschaut haben, bevor sie Euch abgeliefert haben." Soego mustert dich. "Zum Glück seid Ihr rechtzeitig aufgewacht... sonst hättet Ihr den Wahren Tod zu früh erlangt."~ */
+  IF ~~ THEN REPLY #4973 /* ~"Dann muß da jemandem ein Fehler unterlaufen sein... und ich würde gerne gehen. Und zwar sofort."~ */ GOTO 56
+END
+
+IF ~~ THEN BEGIN 56 // from: 55.0 59.1
+  SAY #4974 /* ~Soego nickt, wobei er mit den Mundwinkeln zuckt. "Hm... na gut. Kein Problem. Ich mach Euch das Haupttor auf."
+~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #4975 /* ~"In Ordnung."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #4976 /* ~"Also gut."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 57 // from: 53.0
+  SAY #4977 /* ~"Ihr?"~ */
+  IF ~~ THEN REPLY #4978 /* ~"Ja, ICH. Ich bin auf einer eurer Totenbänke da oben aufgewacht."~ */ GOTO 7
+  IF ~~ THEN REPLY #4979 /* ~"Pardon... Ich muß mich wohl versprochen haben."~ */ GOTO 50
+END
+
+IF WEIGHT #6 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Gate_Open","GLOBAL",1)
+~ THEN BEGIN 58 // from:
+  SAY #4980 /* ~Als du näherkommst, schnüffelt Soego die Luft und blickt auf. Als er dich sieht, runzelt er die Stirn. "Ich hab' Euch doch das Tor aufgeschlossen. Weshalb seid Ihr immer noch hier?"~ */
+  IF ~~ THEN REPLY #4981 /* ~"Ich hätte da noch ein paar Fragen an dich, bevor ich gehe."~ */ GOTO 26
+  IF ~~ THEN REPLY #4982 /* ~"Ich werde mich sofort auf den Weg zum Tor machen. Leb wohl."~ */ EXIT
+END
+
+IF WEIGHT #7 /* Triggers after states #: 63 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR0201")
+Global("Soego","GLOBAL",1)
+Global("Gate_Open","GLOBAL",0)
+~ THEN BEGIN 59 // from:
+  SAY #4983 /* ~Als du näherkommst, schnüffelt Soego die Luft und blickt auf. Als er dich sieht, beugt er sich leicht nach vorn: "Habt Ihr gefunden, wonach Ihr gesucht habt?"~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4984 /* ~"Ja, vielen Dank. Verzeih mir, aber ich muß mich in diesen Hallen irgendwie verirrt haben... kannst du mir helfen, den Ausgang zu finden?"~ */ GOTO 60
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4985 /* ~"Ja. "Ich würde jetzt gern gehen. Kannst du mich zum Ausgang bringen?"~ */ GOTO 56
+  IF ~~ THEN REPLY #4986 /* ~"Ja, und ich werde mich sofort auf den Weg zum Tor machen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 60 // from: 59.0
+  SAY #4987 /* ~Soego nickt, und seine Mundwinkel zucken. "Hm... stimmt schon. Diese Hallen *können* für Besucher schon verwirrend sein. Wartet, ich öffne Euch das Haupttor."~ */
+  IF ~  HasItem("KeyMo",Myself)
+~ THEN REPLY #4988 /* ~"Vielen Dank."~ */ DO ~AddexperienceParty(500)
+SetGlobal("Gate_Open","GLOBAL",1)
+SetGlobal("Gate_Cut_Scene","AR0201",1)
+StartCutSceneMode()
+StartCutSceneEx("0201cut1",FALSE)
+~ EXIT
+  IF ~  !HasItem("KeyMo",Myself)
+~ THEN REPLY #4989 /* ~"Vielen Dank."~ */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 61 // from: 13.2
+  SAY #4990 /* ~"Das ist aber merkwürdig." Soegos Augen leuchten rot, und seine Mundwinkel zucken leicht. "Vielleicht...", er grinst höhnisch und zeigt dabei seine spitzen, schmutzigen Zähne, "vielleicht sollte ich die Wache rufen, oder? Ja... genau. Ich glaube, das werde ich tun."~ */
+  IF ~  CheckStatGT(Protagonist,10,CHR)
+~ THEN REPLY #4991 /* ~"Einen Moment mal! Ich hatte mich verirrt... Ich finde mich in diesen Hallen hier einfach nicht zurecht und weiß nicht, wo der Ausgang ist. Kannst du mir helfen?"~ */ GOTO 8
+  IF ~  CheckStatLT(Protagonist,11,CHR)
+~ THEN REPLY #4992 /* ~"Stop! Ruf nicht die Wache! Ich will doch nur hier raus... kannst du mir helfen?"~ */ GOTO 13
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #4993 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 19
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #4994 /* ~Brich ihm das Genick, bevor er rufen kann.~ */ GOTO 22
+  IF ~~ THEN REPLY #4995 /* ~"Dann ruf sie doch zusammen. Würde sie gerne kennenlernen."~ */ GOTO 18
+END
+
+IF ~~ THEN BEGIN 62 // from: 44.2 45.1 46.0 47.1 48.0
+  SAY #4996 /* ~Soego nickt... und seine Mundwinkel zucken leicht, was er nicht einmal zu bemerken scheint. "Kommt zurück, wenn Ihr Euren Totenbesuch beendet habt, dann schließ ich Euch das Haupttor auf. Es hat schon neunmal geläutet - wenn Ihr fertig seid, müßt Ihr uns sofort verlassen."~ */
+  IF ~~ THEN REPLY #4997 /* ~"Weißt du, das könnte ich ein andermal tun. Kannst du mich jetzt hier rauslassen?"~ */ GOTO 8
+  IF ~~ THEN REPLY #4998 /* ~"Vielen Dank. Ich werde wiederkommen."~ */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 108 79 82 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+!Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 63 // from:
+  SAY #21653 /* ~"Aha, ein weiteres Mitglied der Lebenden. Die meisten, die soweit in die Katakomben vordringen, werden von Ghulen getötet; du hast Glück."~ */
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #21655 /* ~"Du bist Soego, aus der Leichenhalle. Was machst du hier?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 72
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21656 /* ~"Wer bist du?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 64
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21657 /* ~"Wo bin ich?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 77
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21658 /* ~"Warum werde ich hier festgehalten?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 78
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #21660 /* ~"Vielleicht. Leb wohl."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 64 // from: 63.1 77.0 78.0
+  SAY #21661 /* ~"Ich bin Soego Totenhimmel, Faktotum der Staubmenschen. Ich bin Missionar in dieser Gegend." Er verbeugt sich leicht.~ */
+  IF ~~ THEN REPLY #21662 /* ~"Missionar?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21663 /* ~"Was machen die Staubmenschen hier?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64595 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64596 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21665 /* ~"Sei gegrüßt und leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 65 // from: 64.0 72.2 73.2 74.0 101.3 104.1
+  SAY #21666 /* ~"Ja, ich kam in diese Katakomben, nachdem ich Gerüchte gehört hatte, daß es in dieser Gegend Untote mit *Bewußtsein* geben soll. Ich hoffe, sie retten zu können."~ */
+  IF ~~ THEN REPLY #21667 /* ~"Sie retten?"~ */ GOTO 67
+  IF ~~ THEN REPLY #64597 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64599 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21669 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 66 // from: 64.1 72.3 73.3 74.1 101.4 104.2 109.2
+  SAY #21670 /* ~"Ich bin der einzige. Ich kam in diese Katakomben, nachdem ich Gerüchte gehört hatte, daß es in dieser Gegend Untote mit *Bewußtsein* geben soll. Ich hoffe, sie retten zu können."~ */
+  IF ~~ THEN REPLY #21671 /* ~"Sie retten?"~ */ GOTO 67
+  IF ~~ THEN REPLY #64600 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64601 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21673 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 67 // from: 65.0 66.0
+  SAY #21674 /* ~"Ja, Leidenschaft bindet sie an dieses falsche Leben. Ich hoffe, ich kann ihnen beibringen, diesen Leidenschaften zu entsagen, dieses falsche Leben hinter sich zu lassen und den Wahren Tod zu erreichen."~ */
+  IF ~~ THEN REPLY #21675 /* ~"Falsches Leben?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21676 /* ~"Wahrer Tod?"~ */ GOTO 69
+  IF ~~ THEN REPLY #21767 /* ~"Du willst sie tot sehen?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64602 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64603 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21770 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 68 // from: 67.0 69.0 70.0
+  SAY #21771 /* ~"Diese... Toten... sind so nah am Wahren Tod... Trotzdem klammern sie sich an dieses Leben. Dieses falsche Leben ist die Lüge der Existenz auf dieser Ebene."~ */
+  IF ~~ THEN REPLY #21772 /* ~"Wahrer Tod?"~ */ GOTO 69
+  IF ~~ THEN REPLY #21774 /* ~"Du willst sie tot sehen?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64604 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64605 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21776 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 69 // from: 67.1 68.0 70.1
+  SAY #21777 /* ~"Der Wahre Tod ist die völlige Abwesenheit von Leidenschaft, das wahre Leben jenseits dieses Schattendaseins. Nach diesem Ort müssen diese Toten streben, um sich selbst zu befreien."~ */
+  IF ~~ THEN REPLY #21779 /* ~"Was war das für ein 'falsches Leben', von dem du gesprochen hast?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21780 /* ~"Du willst sie tot sehen?"~ */ GOTO 70
+  IF ~~ THEN REPLY #64606 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64607 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21784 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 70 // from: 67.2 68.1 69.1
+  SAY #21786 /* ~"Ich wünsche mir, daß sie diese Existenzebene überschreiten, sich von der Leidenschaft lossagen. Das kann sie retten."~ */
+  IF ~~ THEN REPLY #21788 /* ~"Was war das für ein 'falsches Leben', von dem du gesprochen hast?"~ */ GOTO 68
+  IF ~~ THEN REPLY #21790 /* ~"Du hattest den 'Wahren Tod' erwähnt?'"~ */ GOTO 69
+  IF ~~ THEN REPLY #64608 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64609 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21794 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 71 // from: 63.4 64.4 65.3 66.3 67.5 68.4 69.4 70.4 72.6 73.6 74.4 77.2 78.2 79.5 80.1 81.0 101.5 104.3 109.5 110.3 112.1
+  SAY #21799 /* ~"Bitte gib mir noch einen Moment deiner Zeit, bevor du gehst. Greife keinen der Untoten hier in den Katakomben an. Sie werden dir nichts antun, solange du friedlich bleibst. Wenn du sie angreifst, werden sie sich verteidigen, und sie sind... viele. Du kannst hierher zurückkommen, wenn du dich ausruhen willst."~ */
+  IF ~  NumInParty(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21800 /* ~"Warte... Kann ich mich jetzt ausruhen?"~ */ JOURNAL #21805 /* ~Soego hat mir gesagt, ich solle nicht die Untoten in den Toten Landen angreifen, da er sie überzeugt hat, mir keinen Schaden zuzufügen, solange ich friedlich bleibe.~ */ GOTO 84
+  IF ~  NumInPartyGT(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #64569 /* ~"Warte... können wir uns ausruhen?"~ */ JOURNAL #21805 /* ~Soego hat mir gesagt, ich solle nicht die Untoten in den Toten Landen angreifen, da er sie überzeugt hat, mir keinen Schaden zuzufügen, solange ich friedlich bleibe.~ */ GOTO 84
+  IF ~~ THEN REPLY #64570 /* ~Geh weg.~ */ JOURNAL #21805 /* ~Soego hat mir gesagt, ich solle nicht die Untoten in den Toten Landen angreifen, da er sie überzeugt hat, mir keinen Schaden zuzufügen, solange ich friedlich bleibe.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 72 // from: 63.0
+  SAY #21806 /* ~"Du hast ein gutes Gedächtnis. Ich bin nicht mehr in der Leichenhalle beschäftigt... Statt dessen bin ich jetzt hier Missionar."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64547 /* ~"Aber ich dachte, ich hätte dir das Genick gebrochen..."~ */ GOTO 73
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #21808 /* ~"Aber ich dachte, ich hätte dich *getötet*..."~ */ GOTO 73
+  IF ~~ THEN REPLY #21809 /* ~"Missionar?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21811 /* ~"Was machen die Staubmenschen hier?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64610 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64611 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21813 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 73 // from: 72.0 72.1 109.0 109.1
+  SAY #21814 /* ~"Die Wunde, die du mir beigebracht hast, war nicht tödlich. Ich habe mich schnell erholt... und festgestellt, daß ich Abstand zur Leichenhalle gewinnen wollte."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+~ THEN REPLY #21815 /* ~"Soego, ich hab' dir das Genick gebrochen... und trotzdem lebst du noch?"~ */ GOTO 101
+  IF ~~ THEN REPLY #21816 /* ~"Bist du nicht wütend?"~ */ GOTO 74
+  IF ~~ THEN REPLY #21817 /* ~"Hmmm... Du hast gesagt, du seist ein Missionar?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21818 /* ~"Na gut. Was machen die Staubmenschen hier?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64612 /* ~"In Ordnung... Also, wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64613 /* ~"Ich... verstehe. Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21820 /* ~"Vergiß es, mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 74 // from: 73.1 101.2 104.0
+  SAY #21821 /* ~"Nein... sollte ich? Ich bin etwas enttäuscht, daß es nicht an der Zeit für mich war, diesen Ort zu verlassen. Trotzdem solltest du nicht zur Leichenhalle zurückkehren, denn vieler meiner Faktotum-Kollegen wären nicht erfreut, dich zu sehen."~ */
+  IF ~~ THEN REPLY #64614 /* ~"Du hattest gesagt, daß du ein Missionar bist?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21823 /* ~"Was machen die Staubmenschen hier?"~ */ GOTO 66
+  IF ~~ THEN REPLY #64615 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #64616 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21825 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 75 // from:
+  SAY #21716 /* ~"Du hast ein gutes Gedächtnis. Ich bin nicht mehr in der Leichenhalle beschäftigt... Statt dessen bin ich jetzt hier Missionar. Du solltest nicht zur Leichenhalle zurückkehren, denn viele meiner Faktotum-Kollegen wären nicht erfreut, dich nach deinem Angriff auf das Hauptquartier unseres Bundes zu sehen."~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 76 // from:
+  SAY #21832 /* ~"Du bist bereits tot, Namenloser. Wiederaufzuerstehen war sehr... unhöflich."~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 77 // from: 63.2 64.2 65.1 66.1 67.3 68.2 69.2 70.2 72.4 73.4 74.2 78.1 109.3
+  SAY #21837 /* ~"Du bist in den Katakomben der Toten Lande. Die Wächter haben dich hergebracht."~ */
+  IF ~~ THEN REPLY #21840 /* ~"Und wer warst du?"~ */ GOTO 64
+  IF ~~ THEN REPLY #21841 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #21843 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 78 // from: 63.3 64.3 65.2 66.2 67.4 68.3 69.3 70.3 72.5 73.5 74.3 77.1 109.4
+  SAY #21844 /* ~"Ich weiß es nicht. Frag einen der Bürger hier."~ */
+  IF ~~ THEN REPLY #21847 /* ~"Und wer warst du?"~ */ GOTO 64
+  IF ~~ THEN REPLY #21848 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #21850 /* ~"Vielleicht. Leb wohl."~ */ GOTO 71
+END
+
+IF WEIGHT #2 /* Triggers after states #: 82 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 79 // from:
+  SAY #21851 /* ~"Ach, jemand, der uns in unserem Anliegen unterstützt! Ich, als Agent von Viele-als-Einer, wurde über dein Kommen informiert. Du mußt für uns versuchen, einen Weg in den Thronsaal des Schweigenden Königs zu finden, und ihn töten. Tu das, und Viele-als-Einer wird dich belohnen."~ */
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalGT("Soego","GLOBAL",0)
+GlobalLT("Soego","GLOBAL",3)
+~ THEN REPLY #66181 /* ~"Soego... Emoric wollte wissen, wo du steckst."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 110
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+Global("Soego","GLOBAL",0)
+~ THEN REPLY #21852 /* ~"Warte - bist du nicht Soego? Emoric wollte wissen, wo du gewesen bist."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #21856 /* ~Ich habe Soego gefunden. Er war Lycanthropy infiziert, und das hatte ihn in die Katakomben getrieben. Er war nicht mehr er selbst, und sein Staubmenschen-Glaube hatte ihn verlassen.~ */ GOTO 110
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64623 /* ~"Warte mal... Hab ich dir nicht in der Leichenhalle das Genick gebrochen?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 112
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64624 /* ~"Warte mal... Ich dachte, ich hätte dich in der Leichenhalle getötet..."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 112
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+!Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21853 /* ~"Wie gelange ich zum Schweigenden König?"~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #21857 /* ~Soego hat mir gesagt, daß er nicht weiß, wie man in den Thronsaal des Schweigenden Königs gelangt. Ich muß mir dort jedoch Zugang verschaffen, wenn ich den Schweigenden König töten soll.~ */ GOTO 80
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+!Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #21854 /* ~"Ich verstehe. Dann leb wohl."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 71
+END
+
+IF ~~ THEN BEGIN 80 // from: 79.4 110.2 112.0
+  SAY #21858 /* ~"Ich weiß es nicht... Ich bin schon einige Zeit hier, und ich habe immer noch keinen Weg in seinen Thronsaal gefunden. Vielleicht hast du mehr Glück, weil sie dir nicht den Haß und die Borniertheit entgegenbringen, die sie mir gegenüber zeigen."~ */
+  IF ~~ THEN REPLY #21860 /* ~"Haß und Borniertheir?"~ */ GOTO 81
+  IF ~~ THEN REPLY #21862 /* ~"Ich verstehe. Dann leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 81 // from: 80.0
+  SAY #21864 /* ~"Die Ansichten meines Bundes werden von einigen geteilt, aber nicht allen. Die wichtigsten Galionsfiguren dieser Zivilisation schätzen sie nicht besonders."~ */
+  IF ~~ THEN REPLY #21870 /* ~"Ich verstehe. Dann leb wohl."~ */ GOTO 71
+END
+
+IF WEIGHT #1 /* Triggers after states #: 95 even though they appear after this state */
+~  CreatureInArea("AR1500")
+Global("Met_Soego2","GLOBAL",1)
+~ THEN BEGIN 82 // from:
+  SAY #21913 /* ~"Ah, wir treffen uns wieder."~ */
+  IF ~  Global("Silent_King","GLOBAL",1)
+Global("Soego_Told","GLOBAL",0)
+Global("Lawful_Hargrimm_1","GLOBAL",1)
+~ THEN REPLY #24206 /* ~"Der Schweigende König ist tot, und das schon eine ganze Weile. Es *gibt* keinen Schweigenden König."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1)
+IncrementGlobalOnceEx("GLOBALChaotic_Hargrimm_7","GLOBALLaw",-3)
+IncrementGlobalOnceEx("GLOBALEvil_Hargrimm_3","GLOBALGood",-1)
+~ GOTO 94
+  IF ~  Global("Silent_King","GLOBAL",1)
+Global("Soego_Told","GLOBAL",0)
+!Global("Lawful_Hargrimm_1","GLOBAL",1)
+~ THEN REPLY #21915 /* ~"Der Schweigende König ist tot, und das schon eine ganze Weile. Es *gibt* keinen Schweigenden König."~ */ DO ~SetGlobal("Soego_Told","GLOBAL",1)
+~ JOURNAL #21926 /* ~Ich habe Soego mit dem Inhalt seines Journals konfrontiert, und er hat sich in eine Wer-Ratte verwandelt und mich angegriffen.~ */ GOTO 94
+  IF ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalLT("Soego","GLOBAL",3)
+~ THEN REPLY #21914 /* ~"Bist du Soego? Emoric wollte wissen, wo du gewesen bist."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+~ GOTO 109
+  IF ~  Global("Soego_Journal","GLOBAL",1)
+~ THEN REPLY #21916 /* ~"Ich war in deinen Gemächern und hab' dein Journal gesehen."~ */ DO ~SetGlobal("Soego_Fled","GLOBAL",1)
+Enemy()
+~ JOURNAL #21926 /* ~Ich habe Soego mit dem Inhalt seines Journals konfrontiert, und er hat sich in eine Wer-Ratte verwandelt und mich angegriffen.~ */ GOTO 100
+  IF ~  Global("Doubtful_Skel","GLOBAL",1)
+~ THEN REPLY #21917 /* ~"Ich habe ein Skelett getroffen - in einem der Gänge hier - das kurz davor zu sein schien, den Wahren Tod zu suchen."~ */ DO ~SetGlobal("Doubtful_Skel","GLOBAL",2)
+SetGlobal("Visit_Doubtful","AR1500",1)
+~ GOTO 97
+  IF ~  NumInParty(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21920 /* ~"Ich muß mich ausruhen."~ */ GOTO 84
+  IF ~  NumInPartyGT(1)
+!Global("Visit_Doubtful","AR1500",1)
+~ THEN REPLY #21922 /* ~"Wir müssen uns ausruhen."~ */ GOTO 84
+  IF ~~ THEN REPLY #21924 /* ~"Ich hätte da ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21925 /* ~"Komm' nur gerade zufällig vorbei. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 83 // from: 82.7 88.0 89.1 90.0 91.1 92.0 94.1 94.3 111.0
+  SAY #21943 /* ~"Ich werde antworten, so gut ich kann."~ */
+  IF ~  Global("Know_Hargrimm","GLOBAL",1)
+~ THEN REPLY #21944 /* ~"Erzähl mir was über Hargrimm."~ */ GOTO 88
+  IF ~  Global("Know_Acaste","GLOBAL",1)
+~ THEN REPLY #21945 /* ~"Erzähl mir was über Akaste."~ */ GOTO 89
+  IF ~  Global("Know_Stale_Mary","GLOBAL",1)
+~ THEN REPLY #21946 /* ~"Erzähl mir was über die Muffige Mary."~ */ GOTO 90
+  IF ~  Global("Know_Silent_King","GLOBAL",1)
+~ THEN REPLY #21947 /* ~"Erzähl mir was über den Schweigenden König."~ */ GOTO 91
+  IF ~  !NearbyDialog("DMorte")
+~ THEN REPLY #21948 /* ~"Was weißt du von dieser 'Zivilisation'?"~ */ GOTO 92
+  IF ~  NearbyDialog("DMorte")
+~ THEN REPLY #21949 /* ~"Was weißt du von dieser 'Zivilisation'?"~ */ GOTO 93
+  IF ~~ THEN REPLY #21951 /* ~"Vergiß es. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 84 // from: 71.0 71.1 82.5 82.6
+  SAY #21954 /* ~"Natürlich. In dieser Kammer bist du sicher, während du dich ausruhst."~ */
+  IF ~~ THEN REPLY #21956 /* ~"Danke..."~ */ DO ~FadeToColor([20.0],0)
+Wait(1)
+RestPartyEx(0,10,FALSE)
+FadeFromColor([20.0],0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 85 // from:
+  SAY #21958 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 86 // from:
+  SAY #21963 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 87 // from:
+  SAY #21969 /* ~Null node.~ */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 88 // from: 83.0 91.0
+  SAY #21975 /* ~"Ein Starrköpfiger, aber bewundernswert in seiner Frömmigkeit und seinem Pflichtbewußtsein. Er ist hier mein stärkster Rivale, und er hat viele Jahre lang die Zivilisation zusammengehalten. Seine Leidenschaften stammen von seiner Frömmigkeit und seinem Pflichtbewußtsein... bewundernswerte Qualitäten, aber fehl am Platz."~ */
+  IF ~~ THEN REPLY #21976 /* ~"Ich hätte noch ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21977 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 89 // from: 83.1
+  SAY #21978 /* ~"Akaste ist ein Scheusal. Nur der Schweigende König hält sie in Schach, fürchte ich. Ohne seine Anwesenheit würden die Ghule in den Katakomben Amok laufen."~ */
+  IF ~~ THEN REPLY #21979 /* ~"Erzähl mir was über den Schweigenden König."~ */ DO ~SetGlobal("Know_Silent_King","GLOBAL",1)
+~ GOTO 91
+  IF ~~ THEN REPLY #21980 /* ~"Ich hätte da noch ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21981 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 90 // from: 83.2
+  SAY #21982 /* ~"Die Muffige Mary ist eine gute Seele, wenn auch langsam. Ich verstehe nicht viel von dem, was sie sagt, aber sie und die Zombies neigen nicht zu Gewalt."~ */
+  IF ~~ THEN REPLY #21983 /* ~"Ich hätte noch ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21984 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 91 // from: 83.3 89.0
+  SAY #21985 /* ~"Ich habe den Schweigenden König nie gesehen. Ich wünschte, ich könnte dir etwas über ihn erzählen, aber ich habe ihn nie gesehen. Vermutlich liegt sein Thronsaal hinter den purpurfarbenen Türen, aber ich erhalte keinen Zutritt... Hargrimm, der Skelettpriester, läßt mich nicht."~ */
+  IF ~~ THEN REPLY #21986 /* ~"Erzähl mir was über Hargrimm."~ */ DO ~SetGlobal("Know_Hargrimm","GLOBAL",1)
+~ GOTO 88
+  IF ~~ THEN REPLY #21987 /* ~"Ich hätte da noch ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21988 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 92 // from: 83.4
+  SAY #21989 /* ~"Sie sind seit vielen Jahrhunderten hier, glaube ich, und kümmern sich um die, die in ihren Hallen verstorben sind. Solch ein Pflichtbewußtsein ist nicht mehr nötig... es ist beinahe ein Verbrechen."~ */
+  IF ~~ THEN REPLY #21990 /* ~"Ich hätte noch ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #21991 /* ~"Das ist alles, was ich wissen wollte. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 93 // from: 83.5
+  SAY #21992 /* ~"Sie sind seit vielen Jahrhunderten hier, glaube ich, und kümmern sich um die, die in ihren Hallen verstorben sind. Solch ein Pflichtbewußtsein ist nicht mehr nötig... es ist beinahe ein Verbrechen."~ */
+  IF ~~ THEN EXTERN ~DMORTE~ 220
+END
+
+IF ~~ THEN BEGIN 94 // from: 82.0 82.1
+  SAY #21993 /* ~"Was? Ist das wahr? Ah, Viele-als-Einer würde dich gewiß für solche Informationen belohnen..."~ */
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",0)
+~ THEN REPLY #25248 /* ~"Viele-als-Einer?"~ */ JOURNAL #25254 /* ~Ich habe Soego erzählt, daß der Schweigende König nichts als eine verschrumpelte Leiche sei. Er sagte, das solle ich Viele-als-Einer erzählen, er würde mich dafür belohnen. Viele-als-Einer ist das Gehirn des Stocks der Schädelratten im Gedankenlabyrinth, westlich der Katakomben der Weinenden Steine.~ */ GOTO 111
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",1)
+~ THEN REPLY #25252 /* ~"Interessant. Ich hätte da ein paar Fragen..."~ */ JOURNAL #25254 /* ~Ich habe Soego erzählt, daß der Schweigende König nichts als eine verschrumpelte Leiche sei. Er sagte, das solle ich Viele-als-Einer erzählen, er würde mich dafür belohnen. Viele-als-Einer ist das Gehirn des Stocks der Schädelratten im Gedankenlabyrinth, westlich der Katakomben der Weinenden Steine.~ */ GOTO 83
+  IF ~  !Global("CR_Vic","GLOBAL",1)
+Global("Know_Many","GLOBAL",1)
+~ THEN REPLY #25253 /* ~"Vielleicht. Leb wohl."~ */ JOURNAL #25254 /* ~Ich habe Soego erzählt, daß der Schweigende König nichts als eine verschrumpelte Leiche sei. Er sagte, das solle ich Viele-als-Einer erzählen, er würde mich dafür belohnen. Viele-als-Einer ist das Gehirn des Stocks der Schädelratten im Gedankenlabyrinth, westlich der Katakomben der Weinenden Steine.~ */ EXIT
+  IF ~  Global("CR_Vic","GLOBAL",1)
+~ THEN REPLY #21994 /* ~"Gut. Ich hätte ein paar Fragen..."~ */ JOURNAL #21996 /* ~Ich habe Soego erzählt, daß der Schweigende König nur eine verschrumpelte Leiche ist. Ich muß Viele-als-Einer selbst informieren, sobald sich eine Gelegenheit ergibt.~ */ GOTO 83
+  IF ~  Global("CR_Vic","GLOBAL",1)
+~ THEN REPLY #21995 /* ~"Dann werd ich's ihm selbst sagen. Leb wohl."~ */ JOURNAL #21996 /* ~Ich habe Soego erzählt, daß der Schweigende König nur eine verschrumpelte Leiche ist. Ich muß Viele-als-Einer selbst informieren, sobald sich eine Gelegenheit ergibt.~ */ EXIT
+END
+
+IF WEIGHT #0 ~  CreatureInArea("AR1500")
+GlobalGT("Soego_Exposed","GLOBAL",0)
+~ THEN BEGIN 95 // from:
+  SAY #21997 /* ~"Du... Bastard!"~ */
+  IF ~~ THEN REPLY #21998 /* ~"Wa-"~ */ DO ~Enemy()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 96 // from:
+  SAY #22003 /* ~"Äh... diese Tür führt in meine Privatgemächer. Bitte betrete diese Gemächer nicht."~ */
+  IF ~~ THEN REPLY #22004 /* ~Geh weg.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 97 // from: 82.4
+  SAY #22005 /* ~"Oh! Ich werde gleich mit ihm reden!"~ */
+  IF ~~ THEN REPLY #22006 /* ~"Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 98 // from:
+  SAY #22007 /* ~"Nein, aber ich bin schon unterwegs."~ */
+  IF ~~ THEN REPLY #22008 /* ~"Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 99 // from:
+  SAY #22009 /* ~"Leider nein. Aber vielleicht kommt es irgendwann mal her."~ */
+  IF ~~ THEN REPLY #22010 /* ~"Ich verstehe. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 100 // from: 82.3
+  SAY #22011 /* ~Soego hält einen Moment lang inne. "Ich verstehe." Plötzlich beginnt er mit einer überraschenden Umwandlung...~ */
+  IF ~~ THEN REPLY #22012 /* ~"Was zum...?"~ */ DO ~ClearAllActions()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 101 // from: 73.0
+  SAY #22014 /* ~"Ähm... Dein Gedächtnis ist nicht sehr gut. Mein Hals war verletzt, das schon... verrenkt. Aber gebrochen? Wohl kaum."~ */
+  IF ~  !Global("Lawful_Soego_1","GLOBAL",1)
+~ THEN REPLY #22015 /* ~"Mit Verlaub, das seh ich anders. Was bist du, Soego?"~ */ GOTO 106
+  IF ~  Global("Lawful_Soego_1","GLOBAL",1)
+~ THEN REPLY #22016 /* ~"Mit Verlaub, das seh ich anders. Was bist du, Soego?"~ */ GOTO 103
+  IF ~~ THEN REPLY #22018 /* ~"Bist du nicht wütend?"~ */ GOTO 74
+  IF ~~ THEN REPLY #22019 /* ~"Du hattest gesagt, daß du ein Missionar bist?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #22020 /* ~"Was machen die Staubmenschen hier?"~ */ GOTO 66
+  IF ~~ THEN REPLY #22022 /* ~"Mehr wollt' ich gar nicht wissen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 102 // from:
+  SAY #22023 /* ~Er entzieht sich deinem Griff mit übernatürlicher Schnelligkeit. Höhnisch grinsend und ausspuckend zischt er: "Töricht, einen Agenten des geeinten Geistes der Schädelratten anzugreifen!" Unvermittelt setzt bei ihm eine erstaunliche Verwandlung ein...~ */
+  IF ~~ THEN REPLY #22024 /* ~"Was zum...?"~ */ DO ~SetGlobal("Soego","GLOBAL",4)
+SetGlobal("Soego_Fled","GLOBAL",2)
+Enemy()
+~ JOURNAL #21856 /* ~Ich habe Soego gefunden. Er war Lycanthropy infiziert, und das hatte ihn in die Katakomben getrieben. Er war nicht mehr er selbst, und sein Staubmenschen-Glaube hatte ihn verlassen.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 103 // from: 101.1
+  SAY #22026 /* ~"Lächerliche Frage! Du bist auf einer Totenbank aufgewacht, in der Leichenhalle... Das hast du mir selbst gesagt. Sicher konnten meine Wunden nicht schlimmer sein als die, wegen der dich die Sammler für eine Leiche gehalten haben, oder?"~ */
+  IF ~~ THEN REPLY #22027 /* ~"Das stimmt natürlich, aber... ach, egal."~ */ GOTO 104
+  IF ~~ THEN REPLY #22028 /* ~"Mein Zustand ist... einzigartig."~ */ GOTO 105
+  IF ~~ THEN REPLY #22029 /* ~"Nein. Irgendwas stimmt hier nicht, und ich werd schon früh genug herausfinden, was es ist."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 104 // from: 103.0 103.2 105.0 105.1 106.1 107.0
+  SAY #22032 /* ~Er zuckt mit den Schultern. "Wie du meinst."~ */
+  IF ~~ THEN REPLY #22033 /* ~"Bist du nicht wütend über das, was geschehen ist?"~ */ GOTO 74
+  IF ~~ THEN REPLY #22034 /* ~"Du hattest gesagt, daß du ein Missionar bist?"~ */ GOTO 65
+  IF ~  !Global("Dustman_Initiation","GLOBAL",5)
+~ THEN REPLY #22035 /* ~"Also was tun die Staubmenschen hier?"~ */ GOTO 66
+  IF ~~ THEN REPLY #22038 /* ~"Ich werd dann mal gehen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 105 // from: 103.1
+  SAY #22039 /* ~Er lächelt. "Jeder ist einzigartig. Jeder. Das willst du doch sicher nicht bestreiten?"
+~ */
+  IF ~~ THEN REPLY #22040 /* ~"Das stimmt natürlich, aber... ach, egal."~ */ GOTO 104
+  IF ~~ THEN REPLY #22041 /* ~"Nein. Irgendwas stimmt hier nicht, und ich werd schon früh genug herausfinden, was es ist."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 106 // from: 101.0
+  SAY #22043 /* ~"Was ich -? Was für eine Frage ist das?"~ */
+  IF ~~ THEN REPLY #22044 /* ~"Du hast gehört, was ich gesagt habe. Du bist kein gewöhnlicher Staubmensch... also, was *bist* du, Soego?"~ */ GOTO 107
+  IF ~~ THEN REPLY #22045 /* ~"Ach, vergiß es. Ist nicht wichtig."~ */ GOTO 104
+END
+
+IF ~~ THEN BEGIN 107 // from: 106.0
+  SAY #22047 /* ~Soego sieht dich finster an. "Ich weiß nicht, *was* du meinst."~ */
+  IF ~~ THEN REPLY #22048 /* ~"Irgendwas stimmt hier nicht, und ich werd schon früh genug herausfinden, was es ist."~ */ GOTO 104
+END
+
+IF WEIGHT #3 ~  Global("Dustman_Initiation","GLOBAL",5)
+GlobalLT("Soego","GLOBAL",3)
+!Global("CR_Vic","GLOBAL",1)
+~ THEN BEGIN 108 // from:
+  SAY #22050 /* ~"Aha, ein weiteres Mitglied der Lebenden. Die meisten, die soweit in die Katakomben vordringen, werden von Ghulen getötet; du hast Glück."~ */
+  IF ~  Global("Soego","GLOBAL",0)
+~ THEN REPLY #22051 /* ~"Bist du Soego? Emoric wollte wissen, wo du gewesen bist."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ JOURNAL #22052 /* ~Ich habe Soego gefunden. Er hat eine Gruppe untoter Wächter gefunden, die die Katakomben bewachten. Er versucht sie zu überzeugen, zum Wahren Tod überzuwechseln.~ */ GOTO 109
+  IF ~  GlobalGT("Soego","GLOBAL",0)
+~ THEN REPLY #66173 /* ~"Soego... Emoric wollte wissen, wo du steckst."~ */ DO ~SetGlobal("Met_Soego2","GLOBAL",1)
+SetGlobal("Soego","GLOBAL",3)
+SetGlobal("Soego_Talk","AR1500",2)
+EndCutSceneMode()
+~ GOTO 109
+END
+
+IF ~~ THEN BEGIN 109 // from: 82.2 108.0 108.1
+  SAY #22053 /* ~"Ja, das bin ich. Ich leiste hier Missionsarbeit für die Staubmenschen."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64617 /* ~"In Ordnung. Aber... Ich dachte, ich hätte dir das Genick gebrochen..."~ */ GOTO 73
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64618 /* ~"Gut. Aber... Ich dachte, ich hätte dich getötet..."~ */ GOTO 73
+  IF ~~ THEN REPLY #22054 /* ~"Gibt's hier noch andere Staubmenschen?"~ */ GOTO 66
+  IF ~~ THEN REPLY #50792 /* ~"Wo bin ich?"~ */ GOTO 77
+  IF ~~ THEN REPLY #50793 /* ~"Warum werde ich hier festgehalten?"~ */ GOTO 78
+  IF ~~ THEN REPLY #22056 /* ~"Ich muß jetzt gehen. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 110 // from: 79.0 79.1
+  SAY #22057 /* ~"Ja, das bin ich."~ */
+  IF ~  Global("Soego_Strangle","GLOBAL",1)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #64625 /* ~"Warte mal... Hab ich dir nicht in der Leichenhalle das Genick gebrochen?"~ */ GOTO 112
+  IF ~  Global("Mortuary_Soego_Killed","GLOBAL",1)
+~ THEN REPLY #64626 /* ~"Warte mal... Ich dachte, ich hätte dich in der Leichenhalle getötet..."~ */ GOTO 112
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #22058 /* ~"Gut. Also, wie komme ich zum Schweigenden König?"~ */ JOURNAL #21857 /* ~Soego hat mir gesagt, daß er nicht weiß, wie man in den Thronsaal des Schweigenden Königs gelangt. Ich muß mir dort jedoch Zugang verschaffen, wenn ich den Schweigenden König töten soll.~ */ GOTO 80
+  IF ~  Global("Soego_Strangle","GLOBAL",0)
+Global("Mortuary_Soego_Killed","GLOBAL",0)
+~ THEN REPLY #22060 /* ~"Gut. Leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 111 // from: 94.0
+  SAY #25249 /* ~"Ja, das Gehirn des Stocks für die Schädelratten. Geh zu den Katakomben östlich des Weinenden Steins. Von da aus wirst den Weg schon finden."~ */
+  IF ~~ THEN REPLY #25250 /* ~"Interessant. Ich hätte da ein paar Fragen..."~ */ GOTO 83
+  IF ~~ THEN REPLY #25251 /* ~"Vielleicht. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 112 // from: 79.2 79.3 110.0 110.1
+  SAY #64620 /* ~Er winkt ab, als du sprichst. "Nichts, es war nichts für mich. Ich war bereits mit Lykanthropie gesegnet, die Wunden verheilten fast sofort."~ */
+  IF ~~ THEN REPLY #64621 /* ~"Ich... verstehe. Also, wie komme ich zum Schweigenden König?"~ */ GOTO 80
+  IF ~~ THEN REPLY #64622 /* ~"In Ordnung... dann leb wohl."~ */ GOTO 71
+END
+
+IF ~~ THEN BEGIN 113 // from: 38.1
+  SAY #66709 /* ~"Sei gegrüßt..." Der Mann dreht sich zu dir um und macht eine kurze Verbeugung. Plötzlich bemerkst du, daß seine Augen nicht so blutunterlaufen sind, da sie nur eine leichte rötliche Färbung aufweisen. "Ich bin Soego. Womit kann ich dir helfen?"~ */
+  IF ~~ THEN REPLY #66712 /* ~"Ich möchte die Leichenhalle verlassen. Kannt du mir helfen?"~ */ GOTO 114
+  IF ~~ THEN REPLY #66713 /* ~"Ich hätte da ein paar Fragen..."~ */ GOTO 114
+  IF ~~ THEN REPLY #66714 /* ~"Ich bin nur zufällig vorbeigekommen. Leb wohl."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 114 // from: 113.0 113.1
+  SAY #66710 /* ~Mitten in deiner Antwort kommt hinter Soegos Lippen plötzlich eine Reihe dunkler, scharfer Zähne zum Vorschein, und er beugt sich vor und beschnüffelt dich. ~ */
+  IF ~~ THEN REPLY #66715 /* ~"Äh... Warum zum Teufel beschnupperst du mich?"~ */ GOTO 115
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #66716 /* ~Brich ihm das Genick, wenn er sich vorbeugt.~ */ GOTO 22
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #66717 /* ~Brich ihm das Genick, wenn er sich vorbeugt.~ */ GOTO 19
+  IF ~~ THEN REPLY #66718 /* ~"Vergiß es... Leb wohl."~ */ GOTO 17
+END
+
+IF ~~ THEN BEGIN 115 // from: 114.0
+  SAY #66711 /* ~"Deine Kleidung,... diese Roben! Sie riechen nach jemand anders. Das sind nicht deine." Soego schließt die Lippen zu einem merkwürdigen Lächeln, und seine Augen glühen beinahe wild. "Wer *bist* du?"~ */
+  IF ~~ THEN REPLY #66719 /* ~"Ich... hab diese Roben nur genommen, damit ich hier in Ruhe verschwinden kann. Ich bin in einem der Vorbereitungsräume oben aufgewacht."~ */ GOTO 42
+  IF ~~ THEN REPLY #66720 /* ~"Du hast recht. Diese Roben gehören mir nicht, aber wem sie gehör'n, geht dich nichts an."~ */ GOTO 6
+  IF ~  CheckStatLT(Protagonist,13,DEX)
+~ THEN REPLY #66721 /* ~Brich ihm das Genick, bevor er um Hilfe rufen kann.~ */ GOTO 22
+  IF ~  CheckStatGT(Protagonist,12,DEX)
+~ THEN REPLY #66722 /* ~Brich ihm das Genick, bevor er um Hilfe rufen kann.~ */ GOTO 19
+  IF ~~ THEN REPLY #66723 /* ~"Das ist unerheblich. Ich gehe jetzt."~ */ GOTO 17
+END

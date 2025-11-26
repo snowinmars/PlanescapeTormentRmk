@@ -1,0 +1,500 @@
+// creator  : D:\Games\NearInfinity-exp\app\NearInfinity.jar (v2.4-20250611)
+// game     : D:\Games\Steam\steamapps\common\Project P
+// resource : DXACH.DLG
+// source   : data\DLGFiles.bif
+// dialog   : lang\en_US\dialog.tlk
+// dialogF  : (none)
+
+BEGIN ~DXACH~
+
+IF ~  True()
+~ THEN BEGIN 0 // from:
+  SAY #500 /* ~You see a male corpse with the number "331" chiseled into his skull. His eyes and lips are stitched closed, and there is a gaping hole torn in his throat. He smells *foul.*~ */
+  IF ~  Global("Zombie_Chaotic","GLOBAL",0)
+~ THEN REPLY #502 /* ~"So... seen anything interesting going on?"~ */ DO ~IncrementGlobal("Law","GLOBAL",-1)
+SetGlobal("Zombie_Chaotic","GLOBAL",1)
+~ GOTO 1
+  IF ~  Global("Zombie_Chaotic","GLOBAL",1)
+~ THEN REPLY #503 /* ~"So... seen anything interesting going on?"~ */ GOTO 1
+  IF ~  Global("Vaxis_Exposed","GLOBAL",1)
+~ THEN REPLY #1354 /* ~"I know you're not a zombie, you know. You're not fooling anyone."~ */ GOTO 1
+  IF ~  Global("Speak_with_Dead","GLOBAL",1)
+~ THEN REPLY #1355 /* ~Use your Stories-Bones-Tell ability on the corpse.~ */ GOTO 2
+  IF ~~ THEN REPLY #1357 /* ~"It was great talking to you. Farewell."~ */ GOTO 1
+  IF ~~ THEN REPLY #1358 /* ~Leave the corpse in peace.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 1 // from: 0.0 0.1 0.2 0.4
+  SAY #501 /* ~The corpse stares ahead silently with its sightless eyes.~ */
+  IF ~~ THEN REPLY #505 /* ~"Farewell, then."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.3
+  SAY #504 /* ~"Wh-wh..." The zombie is awkwardly getting his voice back, and he sounds alarmed. "Who's there?! Answer me!"~ */
+  IF ~~ THEN REPLY #507 /* ~"Can you not see me?"~ */ GOTO 3
+  IF ~  CheckStatGT(Player1,16,INT)
+CheckStatLT(Player1,17,CHR)
+~ THEN REPLY #508 /* ~Improvise: "It is I. Do you not recognize my voice?"~ */ GOTO 30
+  IF ~  CheckStatGT(Player1,16,CHR)
+~ THEN REPLY #63307 /* ~Improvise: "It is I. Do you not recognize my voice?"~ */ GOTO 30
+  IF ~~ THEN REPLY #519 /* ~"Who are you?"~ */ GOTO 31
+  IF ~  Global("Xachariah_Name","GLOBAL",1)
+~ THEN REPLY #506 /* ~"Xachariah?"~ */ GOTO 4
+  IF ~~ THEN REPLY #520 /* ~"You shall have no answers this day, corpse. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0
+  SAY #509 /* ~"Blind I am, in death as I was in life... now answer me. Who are you?"~ */
+  IF ~  CheckStatGT(Player1,16,INT)
+CheckStatLT(Player1,17,CHR)
+~ THEN REPLY #510 /* ~Improvise: "It is I. Do you not recognize my voice?"~ */ GOTO 30
+  IF ~  CheckStatGT(Player1,16,CHR)
+~ THEN REPLY #63308 /* ~Improvise: "It is I. Do you not recognize my voice?"~ */ GOTO 30
+  IF ~~ THEN REPLY #511 /* ~"Who are you?"~ */ GOTO 31
+  IF ~  Global("Xachariah_Name","GLOBAL",1)
+~ THEN REPLY #521 /* ~"Xachariah?"~ */ GOTO 4
+  IF ~~ THEN REPLY #522 /* ~"You shall have no answers this day, corpse. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 2.4 3.3 30.0 31.0
+  SAY #512 /* ~"Wha... you!" The zombie seems shocked, but gladdened. "By the Lady's Gaze..." His tone takes on a sense of wonder. "Aren't you *dead,* cutter?"~ */
+  IF ~~ THEN REPLY #515 /* ~"Who are you?"~ */ GOTO 5
+  IF ~~ THEN REPLY #516 /* ~"What are you doing here?"~ */ GOTO 47
+  IF ~~ THEN REPLY #517 /* ~"What is this place?"~ */ GOTO 6
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #518 /* ~"I can't speak long. I must leave. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1394 /* ~"I can't speak long. I must leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 4.0
+  SAY #514 /* ~"So, it's hard to peel away this filthy shroudskin an' see ol' Xachariah the Fool beneath? It is I, cutter. Blessed be the powers, I thought never to see you again... but you've changed too, as far as my ears can tell... have you been making poor choices again?" Xachariah wheezes from his throat hole. "Be you dead, too?"~ */
+  IF ~~ THEN REPLY #685 /* ~"It's a long tale... but no, I'm not dead."~ */ GOTO 46
+  IF ~~ THEN REPLY #686 /* ~"What are you doing here?"~ */ GOTO 47
+  IF ~~ THEN REPLY #687 /* ~"What is this place?"~ */ GOTO 6
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #688 /* ~"I have no more time to talk, Xachariah. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1393 /* ~"I have no more time to talk, Xachariah. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 4.2 5.2
+  SAY #513 /* ~"In the Mortuary, cutter. Did you not know that?"~ */
+  IF ~~ THEN REPLY #523 /* ~"What led you to this state?"~ */ GOTO 8
+  IF ~  CheckStatGT(Player1,12,INT)
+~ THEN REPLY #524 /* ~"What can you tell me about the Mortuary?"~ */ DO ~SetGlobal("Vaxis_Exposed","GLOBAL",1)
+~ GOTO 9
+  IF ~~ THEN REPLY #525 /* ~"What can you tell me about my previous life?"~ */ GOTO 16
+  IF ~~ THEN REPLY #526 /* ~"What can you tell me about my previous companions?"~ */ GOTO 23
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #527 /* ~"I must leave. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1392 /* ~"I must leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 8.0 9.1 10.2 11.1 12.1 13.0 14.0 15.0 16.2 17.1 18.1 19.3 22.1 23.5 24.2 25.0 26.2 27.4 28.1 29.1 32.1 33.2 35.0 36.1 40.0 46.1 47.1 48.0 49.1
+  SAY #528 /* ~"Aye?"~ */
+  IF ~  Global("Xachariah_Ring","GLOBAL",1)
+~ THEN REPLY #63484 /* ~"I wanted to retrieve that object now, Xachariah..."~ */ GOTO 34
+  IF ~~ THEN REPLY #637 /* ~"What led you to this state?"~ */ GOTO 8
+  IF ~~ THEN REPLY #638 /* ~"What can you tell me about the Mortuary?"~ */ GOTO 9
+  IF ~~ THEN REPLY #639 /* ~"What can you tell me about my previous life?"~ */ GOTO 16
+  IF ~~ THEN REPLY #640 /* ~"What can you tell me about my previous companions?"~ */ GOTO 23
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1391 /* ~"I must leave. Farewell, Xachariah."~ */ EXIT
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #641 /* ~"I must leave. Farewell, Xachariah."~ */ GOTO 41
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.0 7.1
+  SAY #529 /* ~His voice drops, as if ashamed. "It's a hard path following in your footsteps, cutter, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. Once, when I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward."~ */
+  IF ~~ THEN REPLY #531 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #545 /* ~"I've heard enough. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1390 /* ~"I've heard enough. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 9 // from: 6.1 7.2
+  SAY #533 /* ~"A place of the dead run by the Dead... there's some things not right here, though..."~ */
+  IF ~~ THEN REPLY #534 /* ~"Like what?"~ */ GOTO 10
+  IF ~~ THEN REPLY #536 /* ~"I had some other questions for you..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #537 /* ~"I have no more time to speak with you. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1389 /* ~"I have no more time to speak with you. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+  SAY #535 /* ~"I'll tell you the dark of it: There's a zombie that pretends to be a zombie, but isn't. I don't care much for knowing the reason why, but it's a strange thing."~ */
+  IF ~  CheckStatGT(Player1,15,INT)
+~ THEN REPLY #538 /* ~"Anything else?"~ */ GOTO 11
+  IF ~~ THEN REPLY #539 /* ~"Which zombie is it?"~ */ GOTO 12
+  IF ~~ THEN REPLY #540 /* ~"Interesting. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #546 /* ~"I have no more time to speak with you. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1388 /* ~"I have no more time to speak with you. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0 12.0
+  SAY #541 /* ~"Another thing, that old githzerai... the one that keeps the preparation room... Dhall. He's saved you from cremation a score of times. You're lucky to have a friend in that one."~ */
+  IF ~  CheckStatGT(Player1,17,INT)
+~ THEN REPLY #542 /* ~"What did Dhall do to save me, exactly?"~ */ GOTO 13
+  IF ~~ THEN REPLY #543 /* ~"I know. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #544 /* ~"I have no more time to speak with you. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1387 /* ~"I have no more time to speak with you. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from: 10.1
+  SAY #547 /* ~"Even if my eyes allowed me to see 'em, I can't make sense of numbers. Here's how you'll know him, cutter: his voice is wrong for a zombie... he doesn't respond the same way as the others."~ */
+  IF ~  CheckStatGT(Player1,15,INT)
+~ THEN REPLY #548 /* ~"Anything else strange about the Mortuary you've noticed?"~ */ GOTO 11
+  IF ~~ THEN REPLY #554 /* ~"Hmmm. Interesting. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #549 /* ~"I'll go look for this zombie. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1386 /* ~"I'll go look for this zombie. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 11.0
+  SAY #550 /* ~"He just postponed your cremation until you popped up off the slab. Not certain why, really."~ */
+  IF ~~ THEN REPLY #552 /* ~"Interesting. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #553 /* ~"I have to go. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1385 /* ~"I have to go. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from:
+  SAY #555 /* ~"He thought it necessary to prevent... to... I... I can't quite remember why it was necessary."~ */
+  IF ~~ THEN REPLY #557 /* ~"Hmmm. Suspicious... I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #556 /* ~"I see. I wonder if it *was* necessary. Dhall and I should discuss this... farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1384 /* ~"I see. I wonder if it *was* necessary. Dhall and I should discuss this... farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from:
+  SAY #558 /* ~His voice drops, as if ashamed. "When we split paths, cutter, not much life was left in me. It's a hard path following in your footsteps, and many terrible things did I see. I took to drink, and became half-sodden with the stuff. When I was sodding drunk, I signed my body off to the Dusties. Fate decided ta kick me when I was down, and I died shortly afterward."~ */
+  IF ~~ THEN REPLY #559 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #560 /* ~"I have to go. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1383 /* ~"I have to go. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 16 // from: 6.2 7.3
+  SAY #561 /* ~"Why? Have you forgotten yourself?"~ */
+  IF ~~ THEN REPLY #562 /* ~"In a manner of speaking... yes."~ */ GOTO 17
+  IF ~~ THEN REPLY #563 /* ~"No... I just wanted to see if you were really who you said you were."~ */ GOTO 20
+  IF ~~ THEN REPLY #564 /* ~"Never mind. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #565 /* ~"I have to go. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1382 /* ~"I have to go. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 17 // from: 16.0 21.0 22.0
+  SAY #566 /* ~"Well... you were a strange one, always suspicious and watching for something... reckon somebody like you had got enough enemies in yer lifetimes. And there was no denying that anybody who messed with you ended up in the black chapters of the dead-book."~ */
+  IF ~~ THEN REPLY #569 /* ~"Anything else? Any specifics..."~ */ GOTO 18
+  IF ~~ THEN REPLY #570 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #571 /* ~"I must leave. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1381 /* ~"I must leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 17.0
+  SAY #567 /* ~"You could be damnably ruthless, too... like when you made me sign that contract, or abandoned that one mewling chit on Avernus. We had a balor of a time, as well. None of us ever even entertained the notion to jump ship on your watch, son."~ */
+  IF ~~ THEN REPLY #572 /* ~"I... see. What else? Anything you could tell me would help."~ */ GOTO 19
+  IF ~~ THEN REPLY #573 /* ~"Never mind. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #574 /* ~"I must leave. Farewell."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1380 /* ~"I must leave. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 19 // from: 18.0
+  SAY #568 /* ~"At your core, you looked at what happened to you like taking territory in a war; everything was like a battle to you, and you were the most ruthless bastard I ever near met. Naught else mattered except for solving that goal. Poor Deionarra with her sobbing and pleading with you didn't sway you none, the gith warning you about your strategies, and poor Xachariah just trying to hold on when we hit the planes. You were tough like you couldn't die, but we were only human. Now I guess we're all in the dead-book... or in and out of it, so to speak."~ */
+  IF ~  GlobalLT("Xachariah_Ring","GLOBAL",2)
+~ THEN REPLY #63234 /* ~"Anything else?"~ */ GOTO 32
+  IF ~~ THEN REPLY #576 /* ~"Deionarra?"~ */ GOTO 26
+  IF ~~ THEN REPLY #577 /* ~"The 'gith'? Who do you mean?"~ */ GOTO 24
+  IF ~~ THEN REPLY #578 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #579 /* ~"I see... I have to go now. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1379 /* ~"I see... I have to go now. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 20 // from: 16.1
+  SAY #580 /* ~"Well, what is it that I can say to you that'll prove myself... now, see, not all the memories are there, so: how about this... remember when we were carving that trek through Avernus and we ran across that crew of abishai in that maggot-ridden pit?"~ */
+  IF ~~ THEN REPLY #581 /* ~Lie: "Yes."~ */ GOTO 21
+  IF ~~ THEN REPLY #582 /* ~"No."~ */ GOTO 22
+END
+
+IF ~~ THEN BEGIN 21 // from: 20.0
+  SAY #583 /* ~"Well, now, then I'm glad one of us remembers that, because I sure as Balor don't. Who are you, cutter, and what do you expect to find fishing in the memories of dead men?"~ */
+  IF ~~ THEN REPLY #584 /* ~"I expect to find myself. I truly have forgotten who I am, Xachariah, and I believe you did know me. What can you tell me of my previous life?"~ */ GOTO 17
+  IF ~~ THEN REPLY #586 /* ~"Forget it. I had some questions."~ */ EXIT
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #587 /* ~"Nothing... I have to leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1378 /* ~"Nothing... I have to leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 22 // from: 20.1
+  SAY #588 /* ~"Hmmm. Well maybe that event didn't happen the way I 'member then. How's this: 'member when Deionarra nearly got herself penned in the dead-book trying to stop you from entering Curst?"~ */
+  IF ~~ THEN REPLY #590 /* ~"No, not really... but that's fine; I believe you did know me. So can you tell me of my previous life?"~ */ GOTO 17
+  IF ~~ THEN REPLY #591 /* ~"Never mind... I had some other questions."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #592 /* ~"I must leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1377 /* ~"I must leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 23 // from: 6.3 7.4
+  SAY #589 /* ~"A motley crew we were... a half-dead man who couldn't get himself penned in the dead-book if he tried - so ugly all the powers of death wouldn't take 'em - a wailing advocate's daughter, a gith exile, a bobbing jackal-tongued skull, and a half-sodden blind archer like myself."~ */
+  IF ~~ THEN REPLY #593 /* ~"Gith?"~ */ GOTO 24
+  IF ~~ THEN REPLY #594 /* ~"Wailing advocate's daughter?"~ */ GOTO 26
+  IF ~~ THEN REPLY #595 /* ~"A floating skull?"~ */ GOTO 28
+  IF ~~ THEN REPLY #596 /* ~"You were a blind archer?"~ */ GOTO 49
+  IF ~~ THEN REPLY #597 /* ~"Do you know what happened to my journal?"~ */ GOTO 29
+  IF ~~ THEN REPLY #598 /* ~"Never mind. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #599 /* ~"I have to go. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1376 /* ~"I have to go. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 24 // from: 19.2 23.0 27.0
+  SAY #600 /* ~"Grim-lookin' gith... unfriendly and silent, like all their kind. Didn't trust that gith a lick, I didn't. See, cutter, them spindly giths care only about two things: keeping out of slavery and killing them squid-headed illithids. Everything else is just lower down the slope, and he didn't give a damn about any of us other than you."~ */
+  IF ~  Global("Dakkon_Slave","GLOBAL",1)
+~ THEN REPLY #601 /* ~"Why was that?"~ */ GOTO 25
+  IF ~~ THEN REPLY #602 /* ~"About some of my other companions..."~ */ GOTO 27
+  IF ~~ THEN REPLY #603 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #604 /* ~"Hmmm. Interesting. Thank you, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1375 /* ~"Hmmm. Interesting. Thank you, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 25 // from: 24.0 26.0
+  SAY #605 /* ~"One of the darks I never did bring to light, cutter. Perhaps you tell me?"~ */
+  IF ~~ THEN REPLY #606 /* ~"I don't know myself. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #607 /* ~"Maybe I better find out. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1374 /* ~"Maybe I better find out. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 26 // from: 19.1 23.1 27.1
+  SAY #608 /* ~"That feisty chit-who-would-be-a-soldier swore she'd follow you to Baator and back, and by the powers, she was so addled by the thought of you without her she did just that. Cared little for me or the gith, and a bare little it was. She was wild with heart poison for you, she was, proof she was barmy. I don't understand what the womenfolk saw in yer scarred mug, but it set their blood a-boil. She was some rich scut from the Clerk's Ward, and you needed something from her, and the only price was that she came with you."~ */
+  IF ~  Global("Deionarra_Death_Truth","GLOBAL",0)
+~ THEN REPLY #609 /* ~"What did I want from her?"~ */ GOTO 25
+  IF ~~ THEN REPLY #610 /* ~"About some of my other companions..."~ */ GOTO 27
+  IF ~~ THEN REPLY #614 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #611 /* ~"I've heard enough. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1373 /* ~"I've heard enough. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 27 // from: 24.1 26.1 28.0 29.0 33.1 49.0
+  SAY #612 /* ~"Aye, which one?"~ */
+  IF ~~ THEN REPLY #613 /* ~"The gith."~ */ GOTO 24
+  IF ~~ THEN REPLY #615 /* ~"The 'wailing advocate's daughter.'"~ */ GOTO 26
+  IF ~~ THEN REPLY #616 /* ~"The floating skull."~ */ GOTO 28
+  IF ~~ THEN REPLY #617 /* ~"You... you were a... blind archer?"~ */ GOTO 49
+  IF ~~ THEN REPLY #618 /* ~"Never mind. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #619 /* ~"I've heard enough. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1372 /* ~"I've heard enough. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 28 // from: 23.2 27.2
+  SAY #620 /* ~"That filthy-talking skull was hankering for a bruising, so it was! Always smarting off, it was, and making fun of my condition!"~ */
+  IF ~~ THEN REPLY #622 /* ~"About some of my other companions..."~ */ GOTO 27
+  IF ~~ THEN REPLY #623 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #624 /* ~"I've heard enough. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  GlobalGT("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #1371 /* ~"I've heard enough. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 29 // from: 23.4
+  SAY #625 /* ~"That scrapbook that you'd stitched together outta yer own flesh and had more pages than I had years in my life?! Good fortune indeed if you've lost that ghoulish book! Always scribbling in it, you were, and it smelled a fright. It was like you were afraid that at any moment someone would take it away... you wrote in it till skin tore from your fingers and I wondered if you were trying to spill out your brain-box through your pen. Sometimes we would hold up for days while you wrote. I hated that infernal book. It seemed to hold you by the heart, and not in a kind way. The last I saw of it, cutter, it was in your possession. If you don't carry it, I don't know where on the planes it could be."~ */
+  IF ~~ THEN REPLY #626 /* ~"About those companions of mine..."~ */ GOTO 27
+  IF ~~ THEN REPLY #627 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #628 /* ~"Thanks for the information. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1370 /* ~"Thanks for the information. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 30 // from: 2.1 2.2 3.0 3.1
+  SAY #629 /* ~"It sounds familiar... but if you are who I think you are, then... who..." The zombie becomes silent for a moment. "Who am I?"~ */
+  IF ~  Global("Xachariah_Name","GLOBAL",1)
+~ THEN REPLY #631 /* ~"Xachariah?"~ */ GOTO 4
+  IF ~  Global("Xachariah_Name","GLOBAL",0)
+~ THEN REPLY #632 /* ~"Your name is not known to me. I may return if I can find it. Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 31 // from: 2.3 3.2
+  SAY #630 /* ~"I..." The zombie becomes silent. "...my name... has fled me. I... can no longer remember who I am."~ */
+  IF ~  Global("Xachariah_Name","GLOBAL",1)
+~ THEN REPLY #634 /* ~"Xachariah?"~ */ GOTO 4
+  IF ~  Global("Xachariah_Name","GLOBAL",0)
+~ THEN REPLY #635 /* ~"I do not know your name. I may return when I have found it. Farewell."~ */ EXIT
+  IF ~  Global("Xachariah_Name","GLOBAL",1)
+~ THEN REPLY #636 /* ~"Farewell."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 32 // from: 19.0
+  SAY #642 /* ~"You left something when you left us, cutter... you left Dak'kon without a master, and the skull without a friend. Me? You stabbed something so deep inside me, it never came out when I was alive. Caused my blood to run cold, it did, that thing sitting like a lump of lead in my chest."~ */
+  IF ~~ THEN REPLY #645 /* ~"What is it?"~ */ DO ~SetGlobal("Xachariah_Ring","GLOBAL",1)
+~ GOTO 33
+  IF ~~ THEN REPLY #646 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #648 /* ~"I must leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1369 /* ~"I must leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 33 // from: 32.0
+  SAY #643 /* ~"I... I don't know. But it changed me, somehow. Changed my insides. I was already dying when you put it in me, so I wasn't too concerned about it at the time."~ */
+  IF ~~ THEN REPLY #649 /* ~"Can I have it back?"~ */ GOTO 34
+  IF ~~ THEN REPLY #650 /* ~"About my other companions..."~ */ GOTO 27
+  IF ~~ THEN REPLY #651 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #652 /* ~"I must leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1368 /* ~"I must leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 34 // from: 7.0 33.0
+  SAY #644 /* ~"It's buried pretty deep, but I have an idea of where it is. Without a scalpel and some directions from me, you won't be able to get it out. You got a scalpel?"~ */
+  IF ~  PartyHasItem("Scalpel")
+~ THEN REPLY #647 /* ~"Yes."~ */ GOTO 36
+  IF ~  !PartyHasItem("Scalpel")
+~ THEN REPLY #653 /* ~"No... but I ought to be able to just tear the stitches."~ */ GOTO 36
+END
+
+IF ~~ THEN BEGIN 35 // from:
+  SAY #654 /* ~"Well, return when you can snag one, and we can see about prying that pretty outta there."~ */
+  IF ~~ THEN REPLY #655 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~~ THEN REPLY #656 /* ~"I'll go look for one. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 36 // from: 34.0 34.1
+  SAY #657 /* ~"Then open me up half a hand's width below the sternum, and feel around for it."~ */
+  IF ~~ THEN REPLY #658 /* ~Do it.~ */ GOTO 37
+  IF ~~ THEN REPLY #659 /* ~"Never mind, Xachariah... I had some questions to ask you, instead..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #660 /* ~"I can't now, I must leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1367 /* ~"I can't now, I must leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 37 // from: 36.0
+  SAY #661 /* ~"A little more to the left... a little more..." Your hand closes on an object.~ */
+  IF ~~ THEN REPLY #663 /* ~Pull it out.~ */ DO ~GiveItemCreate("XacLiver",Protagonist,0,0,0)
+~ GOTO 38
+END
+
+IF ~~ THEN BEGIN 38 // from: 37.0
+  SAY #662 /* ~You pull out a zombie liver. "By the Lady's gaze! Apologies, cutter... I thought them Dustmen took all those organs outta us before pulling us out of the dead-book. Give it another go. Maybe it's to the right."~ */
+  IF ~~ THEN REPLY #664 /* ~Do it again.~ */ GOTO 39
+END
+
+IF ~~ THEN BEGIN 39 // from: 38.0
+  SAY #665 /* ~"There ya go... now go a little to the right and back... a little more..." You feel something hard and cold, slightly larger than you expected. "I think that's it. Pull it out."~ */
+  IF ~~ THEN REPLY #666 /* ~Pull it out.~ */ DO ~SetGlobal("Xachariah_Ring","GLOBAL",2)
+GiveItemCreate("XacHeart",Protagonist,1,0,0)
+~ GOTO 40
+END
+
+IF ~~ THEN BEGIN 40 // from: 39.0
+  SAY #667 /* ~You are holding a blackened, fist-sized object that is extremely heavy for its size. "That's it all right. Huh. Bigger than I thought it'd be. Is that... what is that? Looks like... a heart."~ */
+  IF ~~ THEN REPLY #668 /* ~"I think so, yes. Thanks, Xachariah. I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #669 /* ~"Looks like it. I must go now. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1366 /* ~"Looks like it. I must go now. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 41 // from: 4.3 5.3 6.4 7.6 8.1 9.2 10.3 11.2 12.2 13.1 14.1 15.1 16.3 17.2 18.2 19.4 21.2 22.2 23.6 24.3 25.1 26.3 27.5 28.2 29.2 32.2 33.3 36.2 40.1 46.2 47.2 48.1 49.2
+  SAY #670 /* ~"Before you go: I need you to do me a slight favor, cutter."~ */
+  IF ~~ THEN REPLY #672 /* ~"What is it?"~ */ DO ~SetGlobal("Xachariah_Request","GLOBAL",1)
+~ GOTO 42
+  IF ~~ THEN REPLY #671 /* ~"I already have enough favors and quests to last me... I have to go, Xachariah. Farewell."~ */ DO ~SetGlobal("Xachariah_Request","GLOBAL",1)
+~ GOTO 45
+END
+
+IF ~~ THEN BEGIN 42 // from: 41.0
+  SAY #673 /* ~His voice drops, as if ashamed. "I made some mistakes, some damned bad ones to be sure, and one of my biggest was signing that Dustman contract. If I hadn't been so sodden with bub, I never woulda done it. I regret it, and I was hoping you could set it aright."~ */
+  IF ~~ THEN REPLY #675 /* ~"How?"~ */ GOTO 43
+  IF ~~ THEN REPLY #676 /* ~"I already have enough favors and quests to last me... I have to go, Xachariah. Farewell."~ */ GOTO 45
+END
+
+IF ~~ THEN BEGIN 43 // from: 42.0
+  SAY #677 /* ~"Way I reckon, this body's gonna last a long time... and every day's too long to me. Couldja maybe gut me again, cutter... for old time's sake? The thought of spending another batch of years here in the Mortuary with these whitefaces is a mighty cold one. Can you see fit to put me back in the dead-book where I belong?"~ */
+  IF ~~ THEN REPLY #679 /* ~"If that is your wish..."~ */ DO ~Kill(Myself)
+~ GOTO 44
+  IF ~~ THEN REPLY #680 /* ~"Xachariah, I won't kill you. Again. Farewell."~ */ GOTO 45
+END
+
+IF ~~ THEN BEGIN 44 // from: 43.0
+  SAY #678 /* ~You gut him, and Xachariah falls to the floor with a heavy thud. There is a faint hiss from the body, and you see the chest heave once, then with a faint rattle, the corpse goes silent.~ */
+  IF ~~ THEN REPLY #681 /* ~"Rest in peace, Xachariah."~ */ DO ~SetGlobal("Xachariah_Gutted","GLOBAL",0)
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 45 // from: 41.1 42.1 43.1
+  SAY #682 /* ~"Aye, well, never you mind then. No more use am I to you, I suppose."~ */
+  IF ~~ THEN REPLY #684 /* ~Leave.~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 46 // from: 5.0
+  SAY #683 /* ~"Well, cutter, I suppose being dead's not something one would doubt, though how can you talk to me? Your voice is as clear as a knife..."~ */
+  IF ~~ THEN REPLY #689 /* ~"What are you doing here?"~ */ GOTO 47
+  IF ~~ THEN REPLY #690 /* ~"I had some questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #691 /* ~"I must leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1365 /* ~"I must leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 47 // from: 4.1 5.1 46.0
+  SAY #692 /* ~"I am a stable hand in the most lifeless place of all. Be it that I could pass beyond the Eternal Boundary and have a Plane to call my home, but much of my soul was squandered, and now I am here."~ */
+  IF ~~ THEN REPLY #693 /* ~"What's it like being a zombie?"~ */ GOTO 48
+  IF ~~ THEN REPLY #695 /* ~"I had some questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #696 /* ~"I must leave. Farewell, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #1364 /* ~"I must leave. Farewell, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 48 // from: 47.0
+  SAY #694 /* ~"It's honest work..." The stitching comes undone from Xachariah's mouth and his lips peel back in what might be a smile. "...I care little for it."~ */
+  IF ~~ THEN REPLY #697 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #698 /* ~"Farewell then, Xachariah."~ */ DO ~SetGlobal("Xachariah_Request","GLOBAL",1)
+~ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #633 /* ~"Farewell then, Xachariah."~ */ EXIT
+END
+
+IF ~~ THEN BEGIN 49 // from: 23.3 27.3
+  SAY #63625 /* ~"That I was. You truly have forgotten, haven't you? All men see with more than their eyes, cutter... some of them better than others. I sensed the hearts of my foes - *your* foes - and my arrows always struck true. Ah, those were some times..."~ */
+  IF ~~ THEN REPLY #63626 /* ~"About some of my other companions..."~ */ GOTO 27
+  IF ~~ THEN REPLY #63627 /* ~"I had some other questions..."~ */ GOTO 7
+  IF ~  Global("Xachariah_Request","GLOBAL",0)
+~ THEN REPLY #63628 /* ~"Hmmm. Interesting. Thank you, Xachariah."~ */ GOTO 41
+  IF ~  Global("Xachariah_Request","GLOBAL",1)
+~ THEN REPLY #63629 /* ~"Hmmm. Interesting. Thank you, Xachariah."~ */ EXIT
+END
