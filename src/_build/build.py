@@ -15,14 +15,14 @@ from _build.restore_dialogue_tree import (restore_dialogue_tree)
 
 cwd = os.getcwd()
 
-folder_with_infinity_engine_dialogues = os.path.normpath(os.path.join(cwd, 'd_raw'))
-folder_with_cleaned_infinity_engine_dialogues = os.path.normpath(os.path.join(cwd, 'd_clean'))
-folder_with_renpy_dialogues = os.path.normpath(os.path.join(cwd, 'd_renpy'))
-folder_with_game = os.path.normpath(os.path.join(cwd, 'game'))
-folder_with_python_settings = os.path.join(folder_with_game, 'engine_data', 'settings')
 
+def build(lang):
+    folder_with_infinity_engine_dialogues = os.path.normpath(os.path.join(cwd, f'sources/{lang}/d_raw'))
+    folder_with_cleaned_infinity_engine_dialogues = os.path.normpath(os.path.join(cwd, f'sources/{lang}/d_clean'))
+    folder_with_renpy_dialogues = os.path.normpath(os.path.join(cwd, f'sources/{lang}/d_renpy'))
+    folder_with_game = os.path.normpath(os.path.join(cwd, 'game'))
+    folder_with_python_settings = os.path.join(folder_with_game, 'engine_data', 'settings')
 
-def build():
     print('Warming up')
     replacer = DialogueReplacer()
     transformer = DialogueTransformer()
