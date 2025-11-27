@@ -61,7 +61,7 @@ screen inventory_screen():
                         imagebutton:
                             idle item.grid_image
                             hover Transform(item.grid_image, matrixcolor=BrightnessMatrix(0.1))
-                            action runtime.global_inventory_manager.set_selected_item(item)
+                            action runtime.global_inventory_manager.set_selected_item(item.settings_id)
                             xsize 150
                             ysize 150
 

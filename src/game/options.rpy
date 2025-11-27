@@ -13,6 +13,8 @@
 ## Символы "_()", окружающие название, отмечают его как пригодное для перевода.
 
 define config.name = _("PlanescapeTormentRmk")
+define config.language = "russian"
+define config.default_language = "russian"
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
 ## Установите на False, чтобы спрятать заголовок.

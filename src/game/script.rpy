@@ -65,7 +65,7 @@ init 3 python:
     runtime.global_characters_manager = CharactersManager(runtime.global_events_manager)
     runtime.global_journal_manager = JournalManager(runtime.global_events_manager)
     runtime.global_world_manager = WorldManager(runtime.global_events_manager)
-    runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_state_manager.get_setting_value(x))
+    runtime.global_inventory_manager = InventoryManager(runtime.global_events_manager, lambda x: runtime.global_world_manager.get_setting_value(x))
     runtime.global_state_manager = StateManager(
         runtime.global_events_manager,
         runtime.global_world_manager,
@@ -169,10 +169,10 @@ label dev:
     # $ gsm.world_manager.set_mortualy_alarmed(True)
     # $ gsm.world_manager.set_has_mortuary_key(True)
     # $ gsm.world_manager.set_has_tome_ba(True)
-    # $ gsm.world_manager.set_has_copper_earring_closed(True)
+    $ gsm.world_manager.set_has_copper_earring_closed(True)
     # $ gsm.world_manager.set_has_scalpel(True)
     # $ gsm.world_manager.set_has_needle(True)
-    # $ gsm.world_manager.set_has_1201_note(True)
+    $ gsm.world_manager.set_has_1201_note(True)
     # $ gsm.world_manager.set_has_zm1664_page(True)
     # $ gsm.world_manager.set_has_bandages(True)
     # $ gsm.world_manager.set_has_embalm(True)
