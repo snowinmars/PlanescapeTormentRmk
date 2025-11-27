@@ -136,7 +136,6 @@ def _parse_english_file(english_content):
 
 
 def _process_translation_file(trans_file, english_content):
-
     with open(trans_file, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -203,7 +202,6 @@ def _process_translation_file(trans_file, english_content):
 
     with open(trans_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_content))
-    # print(new_content)
 
 
 def _find_english_content(base_label, english_content):
@@ -238,12 +236,14 @@ def _parse_english_dialogue(eng_content):
 
     return dialogue_lines
 
+
 def _is_empty_dialogue_line(line):
     line = line.strip()
     # Проверяем шаблоны: character "" или new ""
     return (re.match(r'^[a-zA-Z_]+\s+""', line) or
             re.match(r'^new\s+""', line) or
             re.match(r'^old\s+""', line))
+
 
 def _extract_character_name(line):
     line = line.strip()
