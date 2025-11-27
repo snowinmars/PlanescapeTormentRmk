@@ -11,22 +11,22 @@ init 10 python:
 
 # s0 # say986
 label morte_s0: # -
-    nr '"Hej, šéfe. Seš v pořádku? Hraješ si na mrtváka nebo se jenom snažíš oblbnout Spalovače? Už jsem si v jednu chvíli fakt myslel, že seš úplně tuhej."'
+    nr '"Hej, šéfe. Seš v pořádku? Hraješ si na mrtváka nebo se jenom snažíš oblbnout Spalovače? Už jsem si v jednu chvíli fakt myslel, že seš úplně tuhej."{#morte_s0_}'
 
     menu:
-        '"Kdo jsi?"':
+        '"Kdo jsi?"{#morte_s0_r987}':
             # a0 # r987
             jump morte_s1
 
-        'Ignoruj tu ukecanou lebku a prohledej místnost.':
+        'Ignoruj tu ukecanou lebku a prohledej místnost.{#morte_s0_r989}':
             # a1 # r989
             jump morte_dispose
 
-        'Zhluboka se nadýchni, zakruť hlavou a ignoruj lebku, která na tebe mluví.':
+        'Zhluboka se nadýchni, zakruť hlavou a ignoruj lebku, která na tebe mluví.{#morte_s0_r988}':
             # a2 # r988
             jump morte_dispose
 
-        '"Jsem si jist, že máš tisíc "mouder", která chceš říct, Morte, ale já potřebuju abys zavřel klapačku a připojil se ke mně, TEĎ HNED."':
+        '"Jsem si jist, že máš tisíc "mouder", která chceš říct, Morte, ale já potřebuju abys zavřel klapačku a připojil se ke mně, TEĎ HNED."{#morte_s0_r17833}':
             # a3 # r17833
             $ morteLogic.r17833_action()
             jump morte_dispose
@@ -34,557 +34,557 @@ label morte_s0: # -
 
 # s1 # say990
 label morte_s1: # from 0.0 29.0 31.0
-    nr '"Já?" Lebka vypadá pobouřeně. "Co kdybys začal *ty* první, zjizvenče? Kdo seš?"'
+    nr '"Já?" Lebka vypadá pobouřeně. "Co kdybys začal *ty* první, zjizvenče? Kdo seš?"{#morte_s1_}'
 
     menu:
-        '"Já… nevím."':
+        '"Já… nevím."{#morte_s1_r992}':
             # a4 # r992
             jump morte_s2
 
-        '"Já nevím… nemůžu si vzpomenout."':
+        '"Já nevím… nemůžu si vzpomenout."{#morte_s1_r995}':
             # a5 # r995
             jump morte_s3
 
-        '"Já se tě ptal první, lebko."':
+        '"Já se tě ptal první, lebko."{#morte_s1_r993}':
             # a6 # r993
             jump morte_s4
 
-        'Ignoruj lebku a prohledej místnost.':
+        'Ignoruj lebku a prohledej místnost.{#morte_s1_r991}':
             # a7 # r991
             jump morte_dispose
 
 
 # s2 # say997
 label morte_s2: # from 1.0 4.0 5.0
-    nr '"Ty nevíš, kdo seš, jo? Tos mi *měl* rovnou říct, „vyliž si, kámo.“ Dobře, to je v pohodě… předstírejme, že seš úplně mimo. Uvidím jestli jsem ve formě. Já jsem Morte. Zdravím tě, vítej a tak dále a tak dále."'
+    nr '"Ty nevíš, kdo seš, jo? Tos mi *měl* rovnou říct, „vyliž si, kámo.“ Dobře, to je v pohodě… předstírejme, že seš úplně mimo. Uvidím jestli jsem ve formě. Já jsem Morte. Zdravím tě, vítej a tak dále a tak dále."{#morte_s2_}'
 
     menu:
-        '"Kde to jsem, Morte?"':
+        '"Kde to jsem, Morte?"{#morte_s2_r998}':
             # a8 # r998
             jump morte_s6
 
-        '"Víš, jak se odtud můžu teď dostat pryč?"' if morteLogic.r1006_condition():
+        '"Víš, jak se odtud můžu teď dostat pryč?"{#morte_s2_r1006}' if morteLogic.r1006_condition():
             # a9 # r1006
             jump morte_s21
 
-        '"Jak jsem se sem dostal?"':
+        '"Jak jsem se sem dostal?"{#morte_s2_r1080}':
             # a10 # r1080
             jump morte_s20
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s2_r1087}':
             # a11 # r1087
             jump morte_dispose
 
 
 # s3 # say999
 label morte_s3: # from 1.1 4.1 5.1
-    nr '"Ty si *nevzpomínáš?* To teda musela bejt noc. Doufám, žes nikoho nezranil… jmenuju se Morte. Zdravím tě, vítej a tak dále a tak dále." Na chvíli mlčí. "Řekněme, že se tě *musím* na něco zeptat: seš jeden z těch Vnímavejch co sami sebe mrzačej nebo tě někdo podaroval těmahle hezkejma jizvama?"'
+    nr '"Ty si *nevzpomínáš?* To teda musela bejt noc. Doufám, žes nikoho nezranil… jmenuju se Morte. Zdravím tě, vítej a tak dále a tak dále." Na chvíli mlčí. "Řekněme, že se tě *musím* na něco zeptat: seš jeden z těch Vnímavejch co sami sebe mrzačej nebo tě někdo podaroval těmahle hezkejma jizvama?"{#morte_s3_}'
 
     menu:
-        '"Vnímavejch?"':
+        '"Vnímavejch?"{#morte_s3_r1000}':
             # a12 # r1000
             jump morte_s12
 
-        '"Jizvy?"':
+        '"Jizvy?"{#morte_s3_r1001}':
             # a13 # r1001
             jump morte_s13
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s3_r1002}':
             # a14 # r1002
             jump morte_dispose
 
 
 # s4 # say1003
 label morte_s4: # from 1.2
-    nr '"Jo a já se tě ptal druhej. Jak se menuješ?"'
+    nr '"Jo a já se tě ptal druhej. Jak se menuješ?"{#morte_s4_}'
 
     menu:
-        '"Já… nevím."':
+        '"Já… nevím."{#morte_s4_r1004}':
             # a15 # r1004
             jump morte_s2
 
-        '"Já nevím… nemůžu si vzpomenout."':
+        '"Já nevím… nemůžu si vzpomenout."{#morte_s4_r1005}':
             # a16 # r1005
             jump morte_s3
 
-        '"Ty první, lebko."':
+        '"Ty první, lebko."{#morte_s4_r1007}':
             # a17 # r1007
             jump morte_s5
 
-        'Ignoruj lebku a prohledej místnost.':
+        'Ignoruj lebku a prohledej místnost.{#morte_s4_r994}':
             # a18 # r994
             jump morte_dispose
 
 
 # s5 # say1008
 label morte_s5: # from 4.2
-    nr '"Chlape, ty seš víc kluzkej než mokrá guma. Dobře, dobře… *budu* teda hodnej kluk… já, já sem Morte. Morte Rictusgrin. A teď mi řekni to svoje nešťastný méno?"'
+    nr '"Chlape, ty seš víc kluzkej než mokrá guma. Dobře, dobře… *budu* teda hodnej kluk… já, já sem Morte. Morte Rictusgrin. A teď mi řekni to svoje nešťastný méno?"{#morte_s5_}'
 
     menu:
-        '"Já… nevím."':
+        '"Já… nevím."{#morte_s5_r1009}':
             # a19 # r1009
             jump morte_s2
 
-        '"Já nevím… nemůžu si na nic vzpomenout."':
+        '"Já nevím… nemůžu si na nic vzpomenout."{#morte_s5_r1010}':
             # a20 # r1010
             jump morte_s3
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s5_r1011}':
             # a21 # r1011
             jump morte_dispose
 
 
 # s6 # say1012
 label morte_s6: # from 2.0 29.1 31.1
-    nr '"Teď seš v díře zvané Márnice… je to velká černá stavba připomínající svou architekturou gravidního pavouka."'
+    nr '"Teď seš v díře zvané Márnice… je to velká černá stavba připomínající svou architekturou gravidního pavouka."{#morte_s6_}'
 
     menu:
-        '"„Márnice?“ Jsem mrtvý?"':
+        '"„Márnice?“ Jsem mrtvý?"{#morte_s6_r1013}':
             # a22 # r1013
             jump morte_s7
 
-        '"Jak se odtud dostanu pryč?"' if morteLogic.r1015_condition():
+        '"Jak se odtud dostanu pryč?"{#morte_s6_r1015}' if morteLogic.r1015_condition():
             # a23 # r1015
             jump morte_s21
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s6_r1085}':
             # a24 # r1085
             jump morte_dispose
 
 
 # s7 # say1014
 label morte_s7: # from 6.0 9.0
-    nr '"No, teď to sám nevím… ale Márnice má prostě nejblíž k márnici, nic jinýho v tom šéfe nehledej. Chlapíci sem tahaj mrtvoly, jiní je pohřbívaj a spalujou a kdybys měl *opravdový* štěstí, probudil by ses jako otrok. Není to zrovna nejlepší místo na Sférách. Bejt tebou, prokopal bych se nejbližším východem ven a dal bych tomudle místu sbohem."'
+    nr '"No, teď to sám nevím… ale Márnice má prostě nejblíž k márnici, nic jinýho v tom šéfe nehledej. Chlapíci sem tahaj mrtvoly, jiní je pohřbívaj a spalujou a kdybys měl *opravdový* štěstí, probudil by ses jako otrok. Není to zrovna nejlepší místo na Sférách. Bejt tebou, prokopal bych se nejbližším východem ven a dal bych tomudle místu sbohem."{#morte_s7_}'
 
     menu:
-        '"Promiň… „Márnice?“ Co je tohle za místo?"':
+        '"Promiň… „Márnice?“ Co je tohle za místo?"{#morte_s7_r1016}':
             # a25 # r1016
             jump morte_s10
 
-        '"Probudit se jako otrok?"':
+        '"Probudit se jako otrok?"{#morte_s7_r1017}':
             # a26 # r1017
             jump morte_s9
 
-        '"Dokud ještě můžu chodit?"':
+        '"Dokud ještě můžu chodit?"{#morte_s7_r1018}':
             # a27 # r1018
             jump morte_s11
 
-        '"Říkáš, že sem lidi tahají mrtvá těla? Takhle jsem se sem dostal?"' if morteLogic.r1019_condition():
+        '"Říkáš, že sem lidi tahají mrtvá těla? Takhle jsem se sem dostal?"{#morte_s7_r1019}' if morteLogic.r1019_condition():
             # a28 # r1019
             jump morte_s8
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s7_r1020}':
             # a29 # r1020
             jump morte_dispose
 
 
 # s8 # say1021
 label morte_s8: # from 7.3
-    nr 'Zmlkne. "Joo, myslím, že jo. Možná si nějakej povaleč myslel, žes byl mrtvej a sebral tě z ulice. To tvoje zjizvený tělo *mě* dost zblblo… možná bys měl najít toho chlápka, co tě sem dotáhnul a zeptat se ho, ne?" Morte přikyvuje. "Sem rád, že je tvoje hlava ještě vcelku."'
+    nr 'Zmlkne. "Joo, myslím, že jo. Možná si nějakej povaleč myslel, žes byl mrtvej a sebral tě z ulice. To tvoje zjizvený tělo *mě* dost zblblo… možná bys měl najít toho chlápka, co tě sem dotáhnul a zeptat se ho, ne?" Morte přikyvuje. "Sem rád, že je tvoje hlava ještě vcelku."{#morte_s8_}'
 
     menu:
-        '"Proč by mě sem někdo přivedl?"':
+        '"Proč by mě sem někdo přivedl?"{#morte_s8_r1029}':
             # a30 # r1029
             jump morte_s14
 
-        '"Měl bych nějaké další otázky…"':
+        '"Měl bych nějaké další otázky…"{#morte_s8_r1030}':
             # a31 # r1030
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s8_r1137}':
             # a32 # r1137
             jump morte_dispose
 
 
 # s9 # say1022
 label morte_s9: # from 7.1
-    nr '"Joo, vypadáš naprosto rozkošně… s výjimkou použití toho smradlavýho formaldehydu a zpětnýho přišití tvý nohy, která ti upadla, je to paráda."'
+    nr '"Joo, vypadáš naprosto rozkošně… s výjimkou použití toho smradlavýho formaldehydu a zpětnýho přišití tvý nohy, která ti upadla, je to paráda."{#morte_s9_}'
 
     menu:
-        '"Předpokládám, že jsem tady? Jsem mrtvý?"':
+        '"Předpokládám, že jsem tady? Jsem mrtvý?"{#morte_s9_r1113}':
             # a33 # r1113
             jump morte_s7
 
-        '"Jak vypadám? Jsem hodně zjizvený?"':
+        '"Jak vypadám? Jsem hodně zjizvený?"{#morte_s9_r1114}':
             # a34 # r1114
             jump morte_s13
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s9_r1115}':
             # a35 # r1115
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s9_r1116}':
             # a36 # r1116
             jump morte_dispose
 
 
 # s10 # say1023
 label morte_s10: # from 7.0
-    nr '"No… přesně jak sem řek, Márnice. Seš v pohodě, šéfe? Nevypadáš moc dobře."'
+    nr '"No… přesně jak sem řek, Márnice. Seš v pohodě, šéfe? Nevypadáš moc dobře."{#morte_s10_}'
 
     menu:
-        '"Předpokládám, že jsem tady? Jsem mrtvý?"':
+        '"Předpokládám, že jsem tady? Jsem mrtvý?"{#morte_s10_r1109}':
             # a37 # r1109
             jump morte_s16
 
-        '"Jak *vypadám*? Jak hodně jsem zjizvený?"':
+        '"Jak *vypadám*? Jak hodně jsem zjizvený?"{#morte_s10_r1110}':
             # a38 # r1110
             jump morte_s13
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s10_r1111}':
             # a39 # r1111
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s10_r1112}':
             # a40 # r1112
             jump morte_dispose
 
 
 # s11 # say1024
 label morte_s11: # from 7.2
-    nr '"Šéfe, já bych to viděl tak, že tvoje povalování na tomhle šutru bylo pouze mrhání časem. Jestli chceš vědět můj názor, vypadáš, jako bys v noci souložil s chlastem."'
+    nr '"Šéfe, já bych to viděl tak, že tvoje povalování na tomhle šutru bylo pouze mrhání časem. Jestli chceš vědět můj názor, vypadáš, jako bys v noci souložil s chlastem."{#morte_s11_}'
 
     menu:
-        '"Je to možný, že jsem mrtvý? A proto jsem tady?"':
+        '"Je to možný, že jsem mrtvý? A proto jsem tady?"{#morte_s11_r1133}':
             # a41 # r1133
             jump morte_s16
 
-        '"Jak moc špatně vypadám?"':
+        '"Jak moc špatně vypadám?"{#morte_s11_r1134}':
             # a42 # r1134
             jump morte_s13
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s11_r1135}':
             # a43 # r1135
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s11_r1136}':
             # a44 # r1136
             jump morte_dispose
 
 
 # s12 # say1025
 label morte_s12: # from 3.0 33.0
-    nr '"Ty nevíš kdo jsou to Vnímaví? Aaaa, *běž* se léčit! Je to skupina hňupů, která všechno co se na sférách vyskytuje, musí odzkoušet, včetně… no teď to nebudu rozebírat. Jak jsi k těm jizvám přišel?"'
+    nr '"Ty nevíš kdo jsou to Vnímaví? Aaaa, *běž* se léčit! Je to skupina hňupů, která všechno co se na sférách vyskytuje, musí odzkoušet, včetně… no teď to nebudu rozebírat. Jak jsi k těm jizvám přišel?"{#morte_s12_}'
 
     menu:
-        '"Jizvy?"':
+        '"Jizvy?"{#morte_s12_r1027}':
             # a45 # r1027
             jump morte_s13
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s12_r1028}':
             # a46 # r1028
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s12_r1143}':
             # a47 # r1143
             jump morte_dispose
 
 
 # s13 # say1026
 label morte_s13: # from 3.1 9.1 10.1 11.1 12.0 33.1
-    nr '"To je jako by se nějakej čipera rozhodl, že tě pomaluje nožem. Máš jizvy opravdu všude… dokonce i na zádech, jizvy nemáš snad jenom na…" Zmlkne. "Řekněme, že máš na zádech celou tetovací galerii, šéfe. Snad se to dá i přečíst…"'
+    nr '"To je jako by se nějakej čipera rozhodl, že tě pomaluje nožem. Máš jizvy opravdu všude… dokonce i na zádech, jizvy nemáš snad jenom na…" Zmlkne. "Řekněme, že máš na zádech celou tetovací galerii, šéfe. Snad se to dá i přečíst…"{#morte_s13_}'
 
     menu:
-        '"Co se říká?"':
+        '"Co se říká?"{#morte_s13_r1088}':
             # a48 # r1088
             $ morteLogic.r1088_action()
             jump morte_s34
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s13_r1089}':
             # a49 # r1089
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s13_r1090}':
             # a50 # r1090
             jump morte_dispose
 
 
 # s14 # say1031
 label morte_s14: # from 8.0 29.3
-    nr '"Někteří lidi sbíraj mrtvoly z ulic a prodávají je sem za škváru. Není to zrovna nejlepší způsob obživy, ale když žiješ v týdle díře na Sférách, tvý možnosti jsou hodně omezený."'
+    nr '"Někteří lidi sbíraj mrtvoly z ulic a prodávají je sem za škváru. Není to zrovna nejlepší způsob obživy, ale když žiješ v týdle díře na Sférách, tvý možnosti jsou hodně omezený."{#morte_s14_}'
 
     menu:
-        '"Škváru? Jakou škváru„?"':
+        '"Škváru? Jakou škváru„?"{#morte_s14_r1032}':
             # a51 # r1032
             jump morte_s15
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s14_r1033}':
             # a52 # r1033
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s14_r1142}':
             # a53 # r1142
             jump morte_dispose
 
 
 # s15 # say1034
 label morte_s15: # from 14.0
-    nr '"No… prachy. Škvára jsou prachy. Tam odkud pocházíš, to snad neměli?"'
+    nr '"No… prachy. Škvára jsou prachy. Tam odkud pocházíš, to snad neměli?"{#morte_s15_}'
 
     menu:
-        '"Nemůžu si vzpomenout, odkud sem."':
+        '"Nemůžu si vzpomenout, odkud sem."{#morte_s15_r1035}':
             # a54 # r1035
             jump morte_s19
 
-        '"Zapomeň na to. Měl bych nějaké další otázky…"':
+        '"Zapomeň na to. Měl bych nějaké další otázky…"{#morte_s15_r1036}':
             # a55 # r1036
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s15_r1138}':
             # a56 # r1138
             jump morte_dispose
 
 
 # s16 # say1037
 label morte_s16: # from 10.0 11.0
-    nr 'Odmlčí se. "Nevím. Ty se mnou *mluvíš*… ty chodící mrtvoly tady okolo to obvykle nedělají. Já bych to viděl tak, že Spalovači udělali chybu a tys nebyl ještě mrtvej. Nevzpomeneš si, nepodepsal jsi nějakej druh smlouvy? Když se nad tím zamyslím, obvykle si nechaj podepisovat různý druhy legálních papírů před tím, než můžou někoho zapsat do Knihy mrtvejch."'
+    nr 'Odmlčí se. "Nevím. Ty se mnou *mluvíš*… ty chodící mrtvoly tady okolo to obvykle nedělají. Já bych to viděl tak, že Spalovači udělali chybu a tys nebyl ještě mrtvej. Nevzpomeneš si, nepodepsal jsi nějakej druh smlouvy? Když se nad tím zamyslím, obvykle si nechaj podepisovat různý druhy legálních papírů před tím, než můžou někoho zapsat do Knihy mrtvejch."{#morte_s16_}'
 
     menu:
-        '"Co… smlouva? Ne, nevzpomínám si, že bych nějakou podepisoval. Já… si nevzpomínám totiž skoro na nic."':
+        '"Co… smlouva? Ne, nevzpomínám si, že bych nějakou podepisoval. Já… si nevzpomínám totiž skoro na nic."{#morte_s16_r1038}':
             # a57 # r1038
             jump morte_s32
 
-        '"Knihy mrtvých?"':
+        '"Knihy mrtvých?"{#morte_s16_r1039}':
             # a58 # r1039
             jump morte_s17
 
-        '"Legálních?"':
+        '"Legálních?"{#morte_s16_r1040}':
             # a59 # r1040
             jump morte_s18
 
-        '"Zapomeň na to. Měl bych nějaké další otázky…"':
+        '"Zapomeň na to. Měl bych nějaké další otázky…"{#morte_s16_r1041}':
             # a60 # r1041
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s16_r1150}':
             # a61 # r1150
             jump morte_dispose
 
 
 # s17 # say1042
 label morte_s17: # from 16.1 18.0
-    nr '"Joo, „knihy mrtvejch.“ Znáš to? Hmm, možná taky ne. Podívej, zapomeň na „knihu mrtvejch.“ Ty seš naživu, takže v ní zapsanej nejseš."'
+    nr '"Joo, „knihy mrtvejch.“ Znáš to? Hmm, možná taky ne. Podívej, zapomeň na „knihu mrtvejch.“ Ty seš naživu, takže v ní zapsanej nejseš."{#morte_s17_}'
 
     menu:
-        '"Co to bylo ta legální… smlouva… o které ses zmiňoval?"':
+        '"Co to bylo ta legální… smlouva… o které ses zmiňoval?"{#morte_s17_r1151}':
             # a62 # r1151
             jump morte_s18
 
-        '"Měl bych nějaké další otázky…"':
+        '"Měl bych nějaké další otázky…"{#morte_s17_r1152}':
             # a63 # r1152
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s17_r1153}':
             # a64 # r1153
             jump morte_dispose
 
 
 # s18 # say1043
 label morte_s18: # from 16.2 17.0
-    nr '"Jo, nechtěl bys náhodou rozbít tyhle cihly? V Sigilu platí takový práva, že nemůžeš ani vypustit duši bez toho aniž bys nepodepsal jednu z těchhle smluv."'
+    nr '"Jo, nechtěl bys náhodou rozbít tyhle cihly? V Sigilu platí takový práva, že nemůžeš ani vypustit duši bez toho aniž bys nepodepsal jednu z těchhle smluv."{#morte_s18_}'
 
     menu:
-        '"Cos to říkal o „knize mrtvých?“"':
+        '"Cos to říkal o „knize mrtvých?“"{#morte_s18_r1154}':
             # a65 # r1154
             jump morte_s17
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s18_r1155}':
             # a66 # r1155
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s18_r1156}':
             # a67 # r1156
             jump morte_dispose
 
 
 # s19 # say1044
 label morte_s19: # from 15.0
-    nr '"U všemocnýho Boha a jeho mámy, *ty* seš úplně mimo. Vůbec tě nenapadá odkud pocházíš? Někde v neznámý dáli, národ Blbců postrádá svýho krále. To jsi byl vždycky takhle neznalej?"'
+    nr '"U všemocnýho Boha a jeho mámy, *ty* seš úplně mimo. Vůbec tě nenapadá odkud pocházíš? Někde v neznámý dáli, národ Blbců postrádá svýho krále. To jsi byl vždycky takhle neznalej?"{#morte_s19_}'
 
     menu:
-        '"Já nevím… nemůžu si na nic vzpomenout."':
+        '"Já nevím… nemůžu si na nic vzpomenout."{#morte_s19_r1139}':
             # a68 # r1139
             jump morte_s32
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s19_r1140}':
             # a69 # r1140
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s19_r1141}':
             # a70 # r1141
             jump morte_dispose
 
 
 # s20 # say1045
 label morte_s20: # from 2.2 31.2
-    nr '"Šéfe, nic kloudnýho mě nenapadá. I když musím uznat, pěkně sis tu hrál na mrtvolku. Když jsi tu ležel, vůbec sem neviděl hejbat se tvou hruď, oči ani nemrkly… no prostě nic. Tys chlastal? Tak ses sem dostal?"'
+    nr '"Šéfe, nic kloudnýho mě nenapadá. I když musím uznat, pěkně sis tu hrál na mrtvolku. Když jsi tu ležel, vůbec sem neviděl hejbat se tvou hruď, oči ani nemrkly… no prostě nic. Tys chlastal? Tak ses sem dostal?"{#morte_s20_}'
 
     menu:
-        '"Já nevím… nemůžu si na nic vzpomenout."':
+        '"Já nevím… nemůžu si na nic vzpomenout."{#morte_s20_r1097}':
             # a71 # r1097
             jump morte_s32
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s20_r1098}':
             # a72 # r1098
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s20_r1099}':
             # a73 # r1099
             jump morte_dispose
 
 
 # s21 # say1046
 label morte_s21: # from 2.1 6.1 29.2 30.0 31.3 34.2 35.1 36.1
-    nr '"Jo, to *je* dobrá otázka. Ubíhá ti čas, šéfe. Spalovači tě najdou a budou se snažit napravit ten "problém" s tvým vzkříšením tak, že tě hoděj do krematoria. A jestli si chceš dál tady hrát na mrtváka, dostaneš se do krematoria stejně. Takže co budem teď dělat?"'
+    nr '"Jo, to *je* dobrá otázka. Ubíhá ti čas, šéfe. Spalovači tě najdou a budou se snažit napravit ten "problém" s tvým vzkříšením tak, že tě hoděj do krematoria. A jestli si chceš dál tady hrát na mrtváka, dostaneš se do krematoria stejně. Takže co budem teď dělat?"{#morte_s21_}'
 
     menu:
-        '"Spalovači?"':
+        '"Spalovači?"{#morte_s21_r1047}':
             # a74 # r1047
             jump morte_s30
 
-        '"Já… uteču."':
+        '"Já… uteču."{#morte_s21_r1048}':
             # a75 # r1048
             jump morte_s22
 
-        '"Vysvětlím ti postavení těchhle… Spalovačů."':
+        '"Vysvětlím ti postavení těchhle… Spalovačů."{#morte_s21_r1049}':
             # a76 # r1049
             jump morte_s25
 
-        '"Co mám dělat?"' if morteLogic.r1050_condition():
+        '"Co mám dělat?"{#morte_s21_r1050}' if morteLogic.r1050_condition():
             # a77 # r1050
             jump morte_s23
 
-        '"Proč mi to neřekneš? Zní to jako bys už znal odpověď."' if morteLogic.r1051_condition():
+        '"Proč mi to neřekneš? Zní to jako bys už znal odpověď."{#morte_s21_r1051}' if morteLogic.r1051_condition():
             # a78 # r1051
             jump morte_s23
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s21_r1081}':
             # a79 # r1081
             jump morte_dispose
 
 
 # s22 # say1052
 label morte_s22: # from 21.1
-    nr '"Ooo, *skvělej* nápad, šéfe! Proč *sem* na tohle nepřišel dřív? Jak chceš asi utýct, co? Dám ti takový malý vodítko: to vyžaduje trochu spolupráce."'
+    nr '"Ooo, *skvělej* nápad, šéfe! Proč *sem* na tohle nepřišel dřív? Jak chceš asi utýct, co? Dám ti takový malý vodítko: to vyžaduje trochu spolupráce."{#morte_s22_}'
 
     menu:
-        '"To mě zajímá. Pokračuj."':
+        '"To mě zajímá. Pokračuj."{#morte_s22_r1053}':
             # a80 # r1053
             jump morte_s23
 
-        '"Zapomeň na to. Měl bych nějaké další otázky…"':
+        '"Zapomeň na to. Měl bych nějaké další otázky…"{#morte_s22_r1054}':
             # a81 # r1054
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s22_r1145}':
             # a82 # r1145
             jump morte_dispose
 
 
 # s23 # say1055
 label morte_s23: # from 21.3 21.4 22.0 26.0
-    nr '"Jak tak koukám, je úplně jasný, že musíš odtud vypadnout. Co se týče mě, já si můžu dovolit tady ještě počkat. Jediný nebezpečí *pro mne* je to, že tu chcípnu nudou. Mohli bysme si navzájem podat pomocnou ruku."'
+    nr '"Jak tak koukám, je úplně jasný, že musíš odtud vypadnout. Co se týče mě, já si můžu dovolit tady ještě počkat. Jediný nebezpečí *pro mne* je to, že tu chcípnu nudou. Mohli bysme si navzájem podat pomocnou ruku."{#morte_s23_}'
 
     menu:
-        '"Mluv dál…"':
+        '"Mluv dál…"{#morte_s23_r1058}':
             # a83 # r1058
             jump morte_s24
 
-        '"Vždyť nemáš žádný ruce. Jak bys mi *ty* mohl pomoct?"':
+        '"Vždyť nemáš žádný ruce. Jak bys mi *ty* mohl pomoct?"{#morte_s23_r1059}':
             # a84 # r1059
             jump morte_s24
 
-        '"Zapomeň na to. Měl bych nějaké další otázky…"':
+        '"Zapomeň na to. Měl bych nějaké další otázky…"{#morte_s23_r1060}':
             # a85 # r1060
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s23_r1146}':
             # a86 # r1146
             jump morte_dispose
 
 
 # s24 # say1061
 label morte_s24: # from 23.0 23.1
-    nr '"Možná to tak nevypadá, ale mohl bych ti pomoct vocaď vypadnout a ty bys zase mohl pomoct vocaď mně. Sice nemám ruce, takže sem trošku v nevýhodě, ale ty máš zase v hlavě prázdno. Já mám hodně zkušeností a vědomostí o tom, jak se z týdle díry dostat ven. Spolupracujme a dejme *naše hlavy dohromady.* Domluveno, šéfe?"'
+    nr '"Možná to tak nevypadá, ale mohl bych ti pomoct vocaď vypadnout a ty bys zase mohl pomoct vocaď mně. Sice nemám ruce, takže sem trošku v nevýhodě, ale ty máš zase v hlavě prázdno. Já mám hodně zkušeností a vědomostí o tom, jak se z týdle díry dostat ven. Spolupracujme a dejme *naše hlavy dohromady.* Domluveno, šéfe?"{#morte_s24_}'
 
     menu:
-        '"Dohodnuto."':
+        '"Dohodnuto."{#morte_s24_r1057}':
             # a87 # r1057
             jump morte_s28
 
-        '"Domluveno. Mám takový divný pocit, že osud tomu chtěl, abychom cestovali spolu, Morte."':
+        '"Domluveno. Mám takový divný pocit, že osud tomu chtěl, abychom cestovali spolu, Morte."{#morte_s24_r1062}':
             # a88 # r1062
             jump morte_s27
 
-        '"Zapomeň na to. Měl bych nějaké další otázky…"':
+        '"Zapomeň na to. Měl bych nějaké další otázky…"{#morte_s24_r1063}':
             # a89 # r1063
             jump morte_s31
 
-        '"Ne díky. Povídání s tebou je dost únavný. Najdu si cestu odtud sám."':
+        '"Ne díky. Povídání s tebou je dost únavný. Najdu si cestu odtud sám."{#morte_s24_r1147}':
             # a90 # r1147
             jump morte_dispose
 
 
 # s25 # say1064
 label morte_s25: # from 21.2
-    nr '"Ooo, *skvělej* nápad, šéfe! Proč *jsem* na to nepřišel dřív?" Jeho tón hlasu zní posměvačně. "Mimochodem, pane Spalovač, zemřel sem a pak sem se probudil na kamenný desce vaší malý Márničky. Můžete mi prosím pomoct?" Jo, oni ti pomůžou, to teda joo. Budou se na tebe pár sekund dívat, pak zavolaj stráže a mrsknou tě do tvojí soukromý pece."'
+    nr '"Ooo, *skvělej* nápad, šéfe! Proč *jsem* na to nepřišel dřív?" Jeho tón hlasu zní posměvačně. "Mimochodem, pane Spalovač, zemřel sem a pak sem se probudil na kamenný desce vaší malý Márničky. Můžete mi prosím pomoct?" Jo, oni ti pomůžou, to teda joo. Budou se na tebe pár sekund dívat, pak zavolaj stráže a mrsknou tě do tvojí soukromý pece."{#morte_s25_}'
 
     menu:
-        '"To zní trošku přehnaně drsně… proč by to dělali?"':
+        '"To zní trošku přehnaně drsně… proč by to dělali?"{#morte_s25_r1065}':
             # a91 # r1065
             jump morte_s26
 
-        '"Nno, jejich strážní by museli být zatraceně dobří hoši, aby mě dostali."':
+        '"Nno, jejich strážní by museli být zatraceně dobří hoši, aby mě dostali."{#morte_s25_r1066}':
             # a92 # r1066
             jump morte_s26
 
-        '"Zapomeň na to. Měl bych nějaké další otázky…"':
+        '"Zapomeň na to. Měl bych nějaké další otázky…"{#morte_s25_r1067}':
             # a93 # r1067
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s25_r1149}':
             # a94 # r1149
             jump morte_dispose
 
 
 # s26 # say1068
 label morte_s26: # from 25.0 25.1
-    nr '"Věř mi… vůbec nezáleží na tom, jestli si myslíš, jakej seš tvrdej chlapák nebo co jim řekneš, oni tě zkrátka dostanou. Nemáš dost síly na to, aby ses proboural zdima týdle krypty a ani nemůžeš přežít žár Ohně z Elementární sféry. Probuzení z mrtvých je dost velkej problém, co se týče tady těch hlídačů. Nebuď idiot."'
+    nr '"Věř mi… vůbec nezáleží na tom, jestli si myslíš, jakej seš tvrdej chlapák nebo co jim řekneš, oni tě zkrátka dostanou. Nemáš dost síly na to, aby ses proboural zdima týdle krypty a ani nemůžeš přežít žár Ohně z Elementární sféry. Probuzení z mrtvých je dost velkej problém, co se týče tady těch hlídačů. Nebuď idiot."{#morte_s26_}'
 
     menu:
-        '"Takže tvůj plán je…?"':
+        '"Takže tvůj plán je…?"{#morte_s26_r1069}':
             # a95 # r1069
             jump morte_s23
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s26_r1070}':
             # a96 # r1070
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s26_r1148}':
             # a97 # r1148
             jump morte_dispose
 
 
 # s27 # say1071
 label morte_s27: # from 24.1
-    nr '"Osud může nakopat prdel každýmu, koho znáš. Poslouchej, šéfe. Podívej se na to, jak často se „zlo“ a „osud“ dostavujou spolu v jedný chvíli, a pak porozumíš jednomu z malých životních tajemství. Nejlepší věcí, kterou můžeš udělat, je říct osudu, aby si sbalil svejch pět švestek a šel o dům dál; je tu *vždycky* jiná volba, kterou ti osud nemůže nabídnout."'
+    nr '"Osud může nakopat prdel každýmu, koho znáš. Poslouchej, šéfe. Podívej se na to, jak často se „zlo“ a „osud“ dostavujou spolu v jedný chvíli, a pak porozumíš jednomu z malých životních tajemství. Nejlepší věcí, kterou můžeš udělat, je říct osudu, aby si sbalil svejch pět švestek a šel o dům dál; je tu *vždycky* jiná volba, kterou ti osud nemůže nabídnout."{#morte_s27_}'
 
     menu:
-        '"Budu si to pamatovat."':
+        '"Budu si to pamatovat."{#morte_s27_r1073}':
             # a98 # r1073
             jump morte_s28
 
-        '"Už bylo dost keců. Jakej máš plán?"':
+        '"Už bylo dost keců. Jakej máš plán?"{#morte_s27_r1074}':
             # a99 # r1074
             jump morte_s28
 
 
 # s28 # say1072
 label morte_s28: # from 24.0 27.0 27.1
-    nr '"Fajn… tak padáme pryč, dejme tomuhle místu sbohem. Všechny dveře jsou zavřený, takže by se nám šiknul klíč. Možný je, že ho bude mít jedna z těch chodících mrtvol."'
+    nr '"Fajn… tak padáme pryč, dejme tomuhle místu sbohem. Všechny dveře jsou zavřený, takže by se nám šiknul klíč. Možný je, že ho bude mít jedna z těch chodících mrtvol."{#morte_s28_}'
 
     menu:
-        '"Chodící mrtvoly?"':
+        '"Chodící mrtvoly?"{#morte_s28_r1079}':
             # a100 # r1079
             $ morteLogic.r1079_action()
             jump morte_s240
@@ -592,222 +592,222 @@ label morte_s28: # from 24.0 27.0 27.1
 
 # s29 # say996
 label morte_s29: # -
-    nr '"Ooo, takže *teď* by sis chtěl znova pokecat s Mortem, joo?"'
+    nr '"Ooo, takže *teď* by sis chtěl znova pokecat s Mortem, joo?"{#morte_s29_}'
 
     menu:
-        '"Kdo jsi?"':
+        '"Kdo jsi?"{#morte_s29_r1075}':
             # a101 # r1075
             jump morte_s1
 
-        '"Kde to jsem?"':
+        '"Kde to jsem?"{#morte_s29_r1076}':
             # a102 # r1076
             jump morte_s6
 
-        '"Víš, jak se můžu dostat odtud ven?"' if morteLogic.r1077_condition():
+        '"Víš, jak se můžu dostat odtud ven?"{#morte_s29_r1077}' if morteLogic.r1077_condition():
             # a103 # r1077
             jump morte_s21
 
-        '"Jak jsem se sem dostal?"':
+        '"Jak jsem se sem dostal?"{#morte_s29_r1078}':
             # a104 # r1078
             jump morte_s14
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s29_r1086}':
             # a105 # r1086
             jump morte_dispose
 
 
 # s30 # say1082
 label morte_s30: # from 21.0
-    nr '"Spalovači? Oni hlídaj tohle místo tady. Nemůžeš je přehlídnout… jsou to ty lidičky s přičmoudlejma ksichtama. Říkaj si „Spalovači“ a hrajou si na to, že jsou společenství, ale je to jenom zkažená banda zbožňovatelů mrtvol. Já jen abys věděl, s kým máš tu čest."'
+    nr '"Spalovači? Oni hlídaj tohle místo tady. Nemůžeš je přehlídnout… jsou to ty lidičky s přičmoudlejma ksichtama. Říkaj si „Spalovači“ a hrajou si na to, že jsou společenství, ale je to jenom zkažená banda zbožňovatelů mrtvol. Já jen abys věděl, s kým máš tu čest."{#morte_s30_}'
 
     menu:
-        '"Takže jak se odtud dostanu pryč?"' if morteLogic.r1083_condition():
+        '"Takže jak se odtud dostanu pryč?"{#morte_s30_r1083}' if morteLogic.r1083_condition():
             # a106 # r1083
             jump morte_s21
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s30_r1084}':
             # a107 # r1084
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s30_r1144}':
             # a108 # r1144
             jump morte_dispose
 
 
 # s31 # say1091
 label morte_s31: # from 8.1 9.2 10.2 11.2 12.1 13.1 14.1 15.1 16.3 17.1 18.1 19.1 20.1 22.1 23.2 24.2 25.2 26.1 30.1 32.1 33.2 34.3 35.2 36.2
-    nr '"Jooo? *Jaký* otázky?"'
+    nr '"Jooo? *Jaký* otázky?"{#morte_s31_}'
 
     menu:
-        '"Kdo jsi?"':
+        '"Kdo jsi?"{#morte_s31_r1092}':
             # a109 # r1092
             jump morte_s1
 
-        '"Kde to jsem?"':
+        '"Kde to jsem?"{#morte_s31_r1093}':
             # a110 # r1093
             jump morte_s6
 
-        '"Jak jsem se sem dostal?"':
+        '"Jak jsem se sem dostal?"{#morte_s31_r1094}':
             # a111 # r1094
             jump morte_s20
 
-        '"Jak se odtud dostanu pryč?"' if morteLogic.r1095_condition():
+        '"Jak se odtud dostanu pryč?"{#morte_s31_r1095}' if morteLogic.r1095_condition():
             # a112 # r1095
             jump morte_s21
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s31_r1096}':
             # a113 # r1096
             jump morte_dispose
 
 
 # s32 # say1100
 label morte_s32: # from 16.0 19.0 20.0
-    nr '"Ty si nepamatuješ *nic?* Ale no taak, to je kupa tanarijských sraček. To myslíš vážně?"'
+    nr '"Ty si nepamatuješ *nic?* Ale no taak, to je kupa tanarijských sraček. To myslíš vážně?"{#morte_s32_}'
 
     menu:
-        '"Ano."':
+        '"Ano."{#morte_s32_r1101}':
             # a114 # r1101
             jump morte_s33
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s32_r1102}':
             # a115 # r1102
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s32_r1103}':
             # a116 # r1103
             jump morte_dispose
 
 
 # s33 # say1104
 label morte_s33: # from 32.0
-    nr '"U všemocnýho Boha a jeho matky… dobře šéfe, s největší pravděpodobností se tvoje vzpomínky ponořily někam do neznáma. Se štěstím zase brzo vyplujou na povrch, věř mi. Tos teda musel mít krušnou noc. Doufám, žes nikoho nezranil nebo neporušil zákon… když už spolu mluvíme, řekni mi, seš jeden z těch Vnímavejch, co sebe mrzačej nebo ti někdo daroval tyhle nádherný jizvy?"'
+    nr '"U všemocnýho Boha a jeho matky… dobře šéfe, s největší pravděpodobností se tvoje vzpomínky ponořily někam do neznáma. Se štěstím zase brzo vyplujou na povrch, věř mi. Tos teda musel mít krušnou noc. Doufám, žes nikoho nezranil nebo neporušil zákon… když už spolu mluvíme, řekni mi, seš jeden z těch Vnímavejch, co sebe mrzačej nebo ti někdo daroval tyhle nádherný jizvy?"{#morte_s33_}'
 
     menu:
-        '"Vnímavý?"':
+        '"Vnímavý?"{#morte_s33_r1105}':
             # a117 # r1105
             jump morte_s12
 
-        '"Jizvy?"':
+        '"Jizvy?"{#morte_s33_r1106}':
             # a118 # r1106
             jump morte_s13
 
-        '"Měl bych nějaké další otázky…"':
+        '"Měl bych nějaké další otázky…"{#morte_s33_r1107}':
             # a119 # r1107
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s33_r1108}':
             # a120 # r1108
             jump morte_dispose
 
 
 # s34 # say1117
 label morte_s34: # from 13.0
-    nr '"Hohó! Tak se mi zdá, že tu máš napsaný pokyny…" prohodil Morte. "Tak se na to podíváme… začíná to…  POZNÁMKA: "Vím, že se cítíš, jako bys vypil několik džberů bahna z řeky Styx, ale teď by ses měl trošičku soustředit. Někde kolem tebe by se měl povalovat deník, který ti osvětlí, co se vlastně děje. Zbytek ti dopoví Pharod, pokud tedy ještě není zapsán v Knize mrtvých.  Hlavně ten deník neztrať, protože pak bychom zase byli ve styxském bahně. A ať už děláš cokoliv, neříkej NIKOMU, kdo jsi nebo co se ti stalo, jinak by ses taky mohl pěkně rychle podívat do krematoria."'
+    nr '"Hohó! Tak se mi zdá, že tu máš napsaný pokyny…" prohodil Morte. "Tak se na to podíváme… začíná to…  POZNÁMKA: "Vím, že se cítíš, jako bys vypil několik džberů bahna z řeky Styx, ale teď by ses měl trošičku soustředit. Někde kolem tebe by se měl povalovat deník, který ti osvětlí, co se vlastně děje. Zbytek ti dopoví Pharod, pokud tedy ještě není zapsán v Knize mrtvých.  Hlavně ten deník neztrať, protože pak bychom zase byli ve styxském bahně. A ať už děláš cokoliv, neříkej NIKOMU, kdo jsi nebo co se ti stalo, jinak by ses taky mohl pěkně rychle podívat do krematoria."{#morte_s34_}'
 
     menu:
-        '"No už se nedivím, že mě ta záda tak bolí. Znáš člověka jménem Pharod?"':
+        '"No už se nedivím, že mě ta záda tak bolí. Znáš člověka jménem Pharod?"{#morte_s34_r1118}':
             # a121 # r1118
             jump morte_s36
 
-        '"Neviděl jsi tady někde můj deník když jsem tady ležel?"':
+        '"Neviděl jsi tady někde můj deník když jsem tady ležel?"{#morte_s34_r1119}':
             # a122 # r1119
             jump morte_s35
 
-        '"Nevíš jak se odtud dostanu pryč?"' if morteLogic.r1120_condition():
+        '"Nevíš jak se odtud dostanu pryč?"{#morte_s34_r1120}' if morteLogic.r1120_condition():
             # a123 # r1120
             jump morte_s21
 
-        '"Měl bych nějaké další otázky…"':
+        '"Měl bych nějaké další otázky…"{#morte_s34_r1121}':
             # a124 # r1121
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s34_r1122}':
             # a125 # r1122
             jump morte_dispose
 
 
 # s35 # say1123
 label morte_s35: # from 34.1 36.0
-    nr '"Ne… byl jsi svlečenej až na kůži když tě sem přivezli. Ostatně, vypadá to, že máš kus deníku napsanýho na tvým těle."'
+    nr '"Ne… byl jsi svlečenej až na kůži když tě sem přivezli. Ostatně, vypadá to, že máš kus deníku napsanýho na tvým těle."{#morte_s35_}'
 
     menu:
-        '"Znáš někoho jménem Pharod?"':
+        '"Znáš někoho jménem Pharod?"{#morte_s35_r1124}':
             # a126 # r1124
             jump morte_s36
 
-        '"Jak se odtud dostanu pryč?"' if morteLogic.r1125_condition():
+        '"Jak se odtud dostanu pryč?"{#morte_s35_r1125}' if morteLogic.r1125_condition():
             # a127 # r1125
             jump morte_s21
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s35_r1126}':
             # a128 # r1126
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s35_r1127}':
             # a129 # r1127
             jump morte_dispose
 
 
 # s36 # say1128
 label morte_s36: # from 34.0 35.0
-    nr '"Nikdo, koho bych měl znát. Ještě jednou, neznám hodně lidí. Ale nějaký troubové určitě budou vědět, kde toho chlapa najít… až se dostanem tady vocaď, tak potom."'
+    nr '"Nikdo, koho bych měl znát. Ještě jednou, neznám hodně lidí. Ale nějaký troubové určitě budou vědět, kde toho chlapa najít… až se dostanem tady vocaď, tak potom."{#morte_s36_}'
 
     menu:
-        '"Měl jsem u sebe deník, když sem tu ležel?"':
+        '"Měl jsem u sebe deník, když sem tu ležel?"{#morte_s36_r1129}':
             # a130 # r1129
             jump morte_s35
 
-        '"Jak se odtud dostanu pryč?"' if morteLogic.r1130_condition():
+        '"Jak se odtud dostanu pryč?"{#morte_s36_r1130}' if morteLogic.r1130_condition():
             # a131 # r1130
             jump morte_s21
 
-        '"Nevadí. Měl bych nějaké další otázky…"':
+        '"Nevadí. Měl bych nějaké další otázky…"{#morte_s36_r1131}':
             # a132 # r1131
             jump morte_s31
 
-        'Ignoruj Morteho a zkontroluj místnost.':
+        'Ignoruj Morteho a zkontroluj místnost.{#morte_s36_r1132}':
             # a133 # r1132
             jump morte_dispose
 
 
 # s37 # say1818
 label morte_s37: # -
-    nr '"To je ale štěstí! To, co hledáme, jsme asi ztratili v tvém bytě."'
+    nr '"To je ale štěstí! To, co hledáme, jsme asi ztratili v tvém bytě."{#morte_s37_}'
 
     menu:
-        '"Vlastně jsem někde přišel o deník."':
+        '"Vlastně jsem někde přišel o deník."{#morte_s37_r1820}':
             # a134 # r1820
             jump harlotn_s2  # EXTERN
 
-        '"Možná bys mi mohla pomoct najít jednu věc, která mi chybí."':
+        '"Možná bys mi mohla pomoct najít jednu věc, která mi chybí."{#morte_s37_r1819}':
             # a135 # r1819
             jump harlotn_s3  # EXTERN
 
-        '"Nic mi nechybí, ale mám nějaké otázky…"':
+        '"Nic mi nechybí, ale mám nějaké otázky…"{#morte_s37_r1821}':
             # a136 # r1821
             jump harlotn_s9  # EXTERN
 
-        '"Už musím jít. Sbohem."':
+        '"Už musím jít. Sbohem."{#morte_s37_r1822}':
             # a137 # r1822
             jump harlotn_s11  # EXTERN
 
 
 # s38 # say1844
 label morte_s38: # -
-    nr '"Hele, náčelníku, mohl bys mi pučit nějaký ty drobný, hm… víš… vono už to bylo fakt strašně dlouho, co sem naposled…"'
+    nr '"Hele, náčelníku, mohl bys mi pučit nějaký ty drobný, hm… víš… vono už to bylo fakt strašně dlouho, co sem naposled…"{#morte_s38_}'
 
     menu:
-        '"Uh… no, řekl bych, že *moc* velkou škodu tím nenapáchám…"':
+        '"Uh… no, řekl bych, že *moc* velkou škodu tím nenapáchám…"{#morte_s38_r1845}':
             # a138 # r1845
             $ morteLogic.r1845_action()
             jump harlotn_s7  # EXTERN
 
-        '"Ani se tě nechci zeptat, jak to chceš provést."':
+        '"Ani se tě nechci zeptat, jak to chceš provést."{#morte_s38_r1846}':
             # a139 # r1846
             $ morteLogic.r1846_action()
             jump harlotn_s7  # EXTERN
 
-        '"Hele… my už opravdu musíme jít, Morte. Sbohem, slečno."':
+        '"Hele… my už opravdu musíme jít, Morte. Sbohem, slečno."{#morte_s38_r1847}':
             # a140 # r1847
             $ morteLogic.r1847_action()
             jump morte_dispose
@@ -815,58 +815,58 @@ label morte_s38: # -
 
 # s39 # say2000
 label morte_s39: # -
-    nr '"Myslí peníze."'
+    nr '"Myslí peníze."{#morte_s39_}'
 
     menu:
-        '"Oh."':
+        '"Oh."{#morte_s39_r2001}':
             # a141 # r2001
             jump annah_s5  # EXTERN
 
 
 # s40 # say2048
 label morte_s40: # -
-    nr '"Nedivím se, že nejste ty a tvůj ocas na prodej. Pochybuju, že by měl někdo zájem…"'
+    nr '"Nedivím se, že nejste ty a tvůj ocas na prodej. Pochybuju, že by měl někdo zájem…"{#morte_s40_}'
 
     menu:
-        '"Uh…"':
+        '"Uh…"{#morte_s40_r2049}':
             # a142 # r2049
             jump annah_s13  # EXTERN
 
 
 # s41 # say2067
 label morte_s41: # -
-    nr '"Je to tiefling, náčelníku. Maj v sobě krev fienda a tak sou paranoidní a střelený… ale má hezkej vocas, to jo. Škoda že je přilepenej na tak hnusným těle."'
+    nr '"Je to tiefling, náčelníku. Maj v sobě krev fienda a tak sou paranoidní a střelený… ale má hezkej vocas, to jo. Škoda že je přilepenej na tak hnusným těle."{#morte_s41_}'
 
     menu:
-        '"Uau…"':
+        '"Uau…"{#morte_s41_r2068}':
             # a143 # r2068
             jump annah_s17  # EXTERN
 
-        '"Hej, to bylo dobrý, Morte."':
+        '"Hej, to bylo dobrý, Morte."{#morte_s41_r2069}':
             # a144 # r2069
             jump annah_s17  # EXTERN
 
 
 # s42 # say2074
 label morte_s42: # -
-    nr '"Proč to *nezkusíš* a neurveš mi tu čelist, kočičko?! Slyším tady akorát prázdný držkování ňáký sračky z Úlu! No tak, jednu mi vraž! Zkus to! A uhryžu ti nohy!"'
+    nr '"Proč to *nezkusíš* a neurveš mi tu čelist, kočičko?! Slyším tady akorát prázdný držkování ňáký sračky z Úlu! No tak, jednu mi vraž! Zkus to! A uhryžu ti nohy!"{#morte_s42_}'
 
     menu:
-        '"Dost!"':
+        '"Dost!"{#morte_s42_r2076}':
             # a145 # r2076
             jump annah_s18  # EXTERN
 
-        '"Dost! Jdeme pryč."':
+        '"Dost! Jdeme pryč."{#morte_s42_r2075}':
             # a146 # r2075
             jump annah_s14  # EXTERN
 
 
 # s43 # say2079
 label morte_s43: # -
-    nr '"Mimir je mluvící encyklopedie. To jsem jako já, šéfe."'
+    nr '"Mimir je mluvící encyklopedie. To jsem jako já, šéfe."{#morte_s43_}'
 
     menu:
-        '"Rozumím."':
+        '"Rozumím."{#morte_s43_r2080}':
             # a147 # r2080
             $ morteLogic.r2080_action()
             jump annah_s21  # EXTERN
@@ -874,52 +874,52 @@ label morte_s43: # -
 
 # s44 # say2348
 label morte_s44: # -
-    nr '"Vzdej to, šéfe. Mluvit na githa, to je jako zkoušet se pomilovat s plamenometem. Pojďme."'
+    nr '"Vzdej to, šéfe. Mluvit na githa, to je jako zkoušet se pomilovat s plamenometem. Pojďme."{#morte_s44_}'
 
     menu:
-        '"Gith?"' if morteLogic.r9029_condition():
+        '"Gith?"{#morte_s44_r9029}' if morteLogic.r9029_condition():
             # a148 # r9029
             $ morteLogic.r9029_action()
             jump morte_s135
 
-        '"Gith?"' if morteLogic.r9030_condition():
+        '"Gith?"{#morte_s44_r9030}' if morteLogic.r9030_condition():
             # a149 # r9030
             jump morte_s135
 
-        '"Ještě nejsem připravený odejít. Nejdřív se ho na něco zeptám…"':
+        '"Ještě nejsem připravený odejít. Nejdřív se ho na něco zeptám…"{#morte_s44_r9031}':
             # a150 # r9031
             jump gith_s7  # EXTERN
 
-        'Nechej githa být.':
+        'Nechej githa být.{#morte_s44_r9032}':
             # a151 # r9032
             jump morte_dispose
 
 
 # s45 # say2354
 label morte_s45: # -
-    nr '"Já bych se nevobtěžoval vykecáváním s tímdle… ignorantem. Vypadněme vocaď, šéfe. Bordely čekají."'
+    nr '"Já bych se nevobtěžoval vykecáváním s tímdle… ignorantem. Vypadněme vocaď, šéfe. Bordely čekají."{#morte_s45_}'
 
     menu:
-        '"Ještě nejsem připravený odejít. Nejdřív se ho na něco zeptám…"':
+        '"Ještě nejsem připravený odejít. Nejdřív se ho na něco zeptám…"{#morte_s45_r9033}':
             # a152 # r9033
             jump gith_s7  # EXTERN
 
-        'Nechej githa být.':
+        'Nechej githa být.{#morte_s45_r9034}':
             # a153 # r9034
             jump morte_dispose
 
 
 # s46 # say2601
 label morte_s46: # externs zf916_s2 zf916_s1 zf916_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s46_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s46_r2603}':
             # a154 # r2603
             $ morteLogic.r2603_action()
             jump morte_s47
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s46_r2602}':
             # a155 # r2602
             $ morteLogic.r2602_action()
             jump morte_s47
@@ -927,462 +927,462 @@ label morte_s46: # externs zf916_s2 zf916_s1 zf916_s0
 
 # s47 # say2604
 label morte_s47: # from 46.0 46.1 121.1 121.2
-    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"{#morte_s47_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNĚ, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNĚ, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s47_r2605}':
             # a156 # r2605
             $ morteLogic.r2605_action()
             jump morte_s49
 
-        '"Myslím, že si to jenom namlouváš. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to jenom namlouváš. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s47_r2606}':
             # a157 # r2606
             jump morte_s48
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s47_r2607}':
             # a158 # r2607
             jump morte_s48
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s47_r2608}':
             # a159 # r2608
             jump morte_dispose
 
 
 # s48 # say2609
 label morte_s48: # from 47.1 47.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak poflakuješ, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak poflakuješ, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s48_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s48_r2610}':
             # a160 # r2610
             jump morte_dispose
 
 
 # s49 # say2611
 label morte_s49: # from 47.0
-    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s49_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s49_r2612}':
             # a161 # r2612
             jump morte_dispose
 
 
 # s50 # say2709
 label morte_s50: # -
-    nr '"Co? Co je to? Otravuje tě ta holka?"'
+    nr '"Co? Co je to? Otravuje tě ta holka?"{#morte_s50_}'
 
     jump test_s7  # EXTERN
 
 
 # s51 # say2711
 label morte_s51: # -
-    nr '"I believe it. Maybe he„d better return to your main menu and leave me out of it."'
+    nr '"I believe it. Maybe he„d better return to your main menu and leave me out of it."{#morte_s51_}'
 
     jump test_s0  # EXTERN
 
 
 # s52 # say2782
 label morte_s52: # -
-    nr '"Oh, u všech Mocností! Zatracenej dabus."'
+    nr '"Oh, u všech Mocností! Zatracenej dabus."{#morte_s52_}'
 
     menu:
-        '"Co se děje?"':
+        '"Co se děje?"{#morte_s52_r2783}':
             # a162 # r2783
             jump morte_s53
 
 
 # s53 # say2788
 label morte_s53: # from 52.0
-    nr '"Je to dabus. „Mluví“ v rébusech, těch pitomých slovních hříčkách. Jestli mu nerozumíš, budeme muset najít nějakého domorodce, nebo jiný způsob, jak se s ním domluvit… teda jestli to chceme. Otravná banda. Podle mě *uměj* mluvit, ale baví je srát ostatní těma pitomejma rébusama."'
+    nr '"Je to dabus. „Mluví“ v rébusech, těch pitomých slovních hříčkách. Jestli mu nerozumíš, budeme muset najít nějakého domorodce, nebo jiný způsob, jak se s ním domluvit… teda jestli to chceme. Otravná banda. Podle mě *uměj* mluvit, ale baví je srát ostatní těma pitomejma rébusama."{#morte_s53_}'
 
     menu:
-        '"Co je to dabus?"':
+        '"Co je to dabus?"{#morte_s53_r2791}':
             # a163 # r2791
             jump morte_s54
 
 
 # s54 # say2789
 label morte_s54: # from 53.0
-    nr '"Prej sou to mluvčí Paní Bolesti. Poletujou kolem, bouraj, opravujou a záplatujou Sigil podle toho, jak jim zrovna v kebuli cinká. Jsou horší než mouchy." Morte si povzdychl. "Ale nemůžeš je nasekat do hambáče. Paní by to… rozzlobilo."'
+    nr '"Prej sou to mluvčí Paní Bolesti. Poletujou kolem, bouraj, opravujou a záplatujou Sigil podle toho, jak jim zrovna v kebuli cinká. Jsou horší než mouchy." Morte si povzdychl. "Ale nemůžeš je nasekat do hambáče. Paní by to… rozzlobilo."{#morte_s54_}'
 
     menu:
-        '"„Paní Bolesti?“ Kdo to je?"' if morteLogic.r6952_condition():
+        '"„Paní Bolesti?“ Kdo to je?"{#morte_s54_r6952}' if morteLogic.r6952_condition():
             # a164 # r6952
             $ morteLogic.r6952_action()
             jump morte_s113
 
-        '"Co bys mi mohl říci o Paní Bolesti?"' if morteLogic.r6953_condition():
+        '"Co bys mi mohl říci o Paní Bolesti?"{#morte_s54_r6953}' if morteLogic.r6953_condition():
             # a165 # r6953
             jump morte_s113
 
-        '"Aha."' if morteLogic.r6954_condition():
+        '"Aha."{#morte_s54_r6954}' if morteLogic.r6954_condition():
             # a166 # r6954
             jump dabus_s3  # EXTERN
 
 
 # s55 # say3473
 label morte_s55: # externs eivene_s3
-    nr '"Myslím, že ta kočka může bejt kapku nahluchlá, šéfíku. Vykašlem se na to, ne?"'
+    nr '"Myslím, že ta kočka může bejt kapku nahluchlá, šéfíku. Vykašlem se na to, ne?"{#morte_s55_}'
 
     menu:
-        '"Co to má s rukama?"':
+        '"Co to má s rukama?"{#morte_s55_r3474}':
             # a167 # r3474
             $ morteLogic.j38205_s55_r3474_action()
             jump morte_s56
 
-        'Zaťukej jí na rameno, získej její pozornost.':
+        'Zaťukej jí na rameno, získej její pozornost.{#morte_s55_r3475}':
             # a168 # r3475
             jump eivene_s4  # EXTERN
 
-        'Nechej ji být.':
+        'Nechej ji být.{#morte_s55_r3476}':
             # a169 # r3476
             jump morte_dispose
 
 
 # s56 # say3477
 label morte_s56: # from 55.0
-    nr '"Eh… je to *tiefling*, šéfe. Maj v žilách fiendskou krev, většinou proto, že se někerej jejich předek zapletl s nějakým fiendem. Maj z toho kapku pomotanou hlavu… a taky pomotaně vypadaj."'
+    nr '"Eh… je to *tiefling*, šéfe. Maj v žilách fiendskou krev, většinou proto, že se někerej jejich předek zapletl s nějakým fiendem. Maj z toho kapku pomotanou hlavu… a taky pomotaně vypadaj."{#morte_s56_}'
 
     menu:
-        'Zaťukej jí na rameno, získej její pozornost.':
+        'Zaťukej jí na rameno, získej její pozornost.{#morte_s56_r3478}':
             # a170 # r3478
             jump eivene_s4  # EXTERN
 
-        'Nechej ji být.':
+        'Nechej ji být.{#morte_s56_r3479}':
             # a171 # r3479
             jump morte_dispose
 
 
 # s57 # say3480
 label morte_s57: # externs eivene_s20
-    nr '"Myslím, že ta kočka může bejt kapku nahluchlá, náčelníku. Vykašlem se na to, ne?"'
+    nr '"Myslím, že ta kočka může bejt kapku nahluchlá, náčelníku. Vykašlem se na to, ne?"{#morte_s57_}'
 
     menu:
-        '"Co to má s rukama?"':
+        '"Co to má s rukama?"{#morte_s57_r3483}':
             # a172 # r3483
             $ morteLogic.j38205_s57_r3483_action()
             jump morte_s58
 
-        'Odejdi.':
+        'Odejdi.{#morte_s57_r3484}':
             # a173 # r3484
             jump morte_dispose
 
 
 # s58 # say3481
 label morte_s58: # from 57.0
-    nr '"Eh… je to *tiefling*, šéfe. Maj v žilách fiendskou krev, většinou proto, že se někerej jejich předek zapletl s nějakým fiendem. Maj z toho kapku pomotanou hlavu… a taky pomotaně vypadaj."'
+    nr '"Eh… je to *tiefling*, šéfe. Maj v žilách fiendskou krev, většinou proto, že se někerej jejich předek zapletl s nějakým fiendem. Maj z toho kapku pomotanou hlavu… a taky pomotaně vypadaj."{#morte_s58_}'
 
     menu:
-        'Odejdi.':
+        'Odejdi.{#morte_s58_r3482}':
             # a174 # r3482
             jump morte_dispose
 
 
 # s59 # say3487
 label morte_s59: # externs eivene_s9
-    nr '"Vypadá to, že máš novou kámošku, náčelníku. Mám vás nechat chvilku o samotě…?"'
+    nr '"Vypadá to, že máš novou kámošku, náčelníku. Mám vás nechat chvilku o samotě…?"{#morte_s59_}'
 
     menu:
-        '"Kašli na to, Morte."':
+        '"Kašli na to, Morte."{#morte_s59_r3488}':
             # a175 # r3488
             jump eivene_s11  # EXTERN
 
-        'Hrej si dál na zombie.':
+        'Hrej si dál na zombie.{#morte_s59_r3489}':
             # a176 # r3489
             jump eivene_s11  # EXTERN
 
-        'Odstrč ženu od sebe.':
+        'Odstrč ženu od sebe.{#morte_s59_r3490}':
             # a177 # r3490
             jump eivene_s10  # EXTERN
 
 
 # s60 # say3492
 label morte_s60: # externs eivene_s13
-    nr '"Tohle je podruhé v životě, kdy děkuju za to, že nemám nos."'
+    nr '"Tohle je podruhé v životě, kdy děkuju za to, že nemám nos."{#morte_s60_}'
 
     jump eivene_s14  # EXTERN
 
 
 # s61 # say3870
 label morte_s61: # externs dust_s40
-    nr '"Hej! Hej! Co děláš?"'
+    nr '"Hej! Hej! Co děláš?"{#morte_s61_}'
 
     menu:
-        '"*Chtěl* jsem si s tím chlápkem promluvit. Nějaký problém?"':
+        '"*Chtěl* jsem si s tím chlápkem promluvit. Nějaký problém?"{#morte_s61_r3871}':
             # a178 # r3871
             $ morteLogic.r3871_action()
             jump morte_s62
 
-        '"Nic, pokračujme dál."':
+        '"Nic, pokračujme dál."{#morte_s61_r3872}':
             # a179 # r3872
             jump morte_dispose
 
 
 # s62 # say3873
 label morte_s62: # from 61.0
-    nr '"Pokud chceš kecat s Spalovákama, tak mě z toho teda vynech. Oni a já nejsme zrovna kámoši. A ty by ses s nima taky neměl nějak moc bratříčkovat. Než si stačíš uvědomit, pohřběj tě nebo ugriluj v kremačce. Nebuď debil, vypadněme vocaď."'
+    nr '"Pokud chceš kecat s Spalovákama, tak mě z toho teda vynech. Oni a já nejsme zrovna kámoši. A ty by ses s nima taky neměl nějak moc bratříčkovat. Než si stačíš uvědomit, pohřběj tě nebo ugriluj v kremačce. Nebuď debil, vypadněme vocaď."{#morte_s62_}'
 
     menu:
-        '"Díky za radu, ale já si s tím chlápkem stejně promluvím."':
+        '"Díky za radu, ale já si s tím chlápkem stejně promluvím."{#morte_s62_r3874}':
             # a180 # r3874
             $ morteLogic.r3874_action()
             jump morte_s64
 
-        '"Souhlasím, pojďme dál."':
+        '"Souhlasím, pojďme dál."{#morte_s62_r3875}':
             # a181 # r3875
             jump morte_dispose
 
 
 # s63 # say3876
 label morte_s63: # externs dust_s40
-    nr '"Hej! Jsi hluchý? Co děláš?"'
+    nr '"Hej! Jsi hluchý? Co děláš?"{#morte_s63_}'
 
     menu:
-        '"Hele, chci si promluvit s tímhle chlápkem. Nějaký problém?"':
+        '"Hele, chci si promluvit s tímhle chlápkem. Nějaký problém?"{#morte_s63_r3877}':
             # a182 # r3877
             $ morteLogic.r3877_action()
             jump morte_s64
 
-        '"Nic, pokračujme dál."':
+        '"Nic, pokračujme dál."{#morte_s63_r3878}':
             # a183 # r3878
             jump morte_dispose
 
 
 # s64 # say3879
 label morte_s64: # from 62.0 63.0
-    nr '"No tak mě *neposlouchej* - je to tvůj pohřeb."'
+    nr '"No tak mě *neposlouchej* - je to tvůj pohřeb."{#morte_s64_}'
 
     menu:
-        '"Jo, a ty mi zazpíváš rekviem. A teď buď zticha."':
+        '"Jo, a ty mi zazpíváš rekviem. A teď buď zticha."{#morte_s64_r3880}':
             # a184 # r3880
             jump dust_s3  # EXTERN
 
-        '"Nah, máš pravdu. Zapomeň na to. Jdeme dál."':
+        '"Nah, máš pravdu. Zapomeň na to. Jdeme dál."{#morte_s64_r3881}':
             # a185 # r3881
             jump morte_dispose
 
 
 # s65 # say3964
 label morte_s65: # -
-    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"'
+    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"{#morte_s65_}'
 
     menu:
-        '"Takže?"':
+        '"Takže?"{#morte_s65_r3965}':
             # a186 # r3965
             $ morteLogic.r3965_action()
             jump morte_s66
 
-        '"Oh… nechtěl jsem způsobit žádnou trvalou škodu."':
+        '"Oh… nechtěl jsem způsobit žádnou trvalou škodu."{#morte_s65_r3966}':
             # a187 # r3966
             $ morteLogic.r3966_action()
             jump morte_s66
 
-        '"No dobrá, tak nic. Možná příště."':
+        '"No dobrá, tak nic. Možná příště."{#morte_s65_r3967}':
             # a188 # r3967
             jump morte_s66
 
 
 # s66 # say3968
 label morte_s66: # from 65.0 65.1 65.2
-    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."'
+    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."{#morte_s66_}'
 
     menu:
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r3969_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s66_r3969}' if morteLogic.r3969_condition():
             # a189 # r3969
             jump skelw_s4  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r3970_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s66_r3970}' if morteLogic.r3970_condition():
             # a190 # r3970
             jump skelw_s5  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r3971_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s66_r3971}' if morteLogic.r3971_condition():
             # a191 # r3971
             jump skelw_s6  # EXTERN
 
-        'To nic. Možná příště.' if morteLogic.r3972_condition():
+        'To nic. Možná příště.{#morte_s66_r3972}' if morteLogic.r3972_condition():
             # a192 # r3972
             $ morteLogic.r3972_action()
             jump morte_s67
 
-        'To nic. Možná příště.' if morteLogic.r3973_condition():
+        'To nic. Možná příště.{#morte_s66_r3973}' if morteLogic.r3973_condition():
             # a193 # r3973
             jump morte_dispose
 
 
 # s67 # say3974
 label morte_s67: # from 66.3
-    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"'
+    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"{#morte_s67_}'
 
     menu:
-        '"Šedovous?"':
+        '"Šedovous?"{#morte_s67_r3975}':
             # a194 # r3975
             jump morte_s68
 
-        '"No, myslím si, že není v pozici, kdy by mohl něco namítat."':
+        '"No, myslím si, že není v pozici, kdy by mohl něco namítat."{#morte_s67_r3976}':
             # a195 # r3976
             jump morte_s69
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s67_r3977}':
             # a196 # r3977
             jump morte_s70
 
 
 # s68 # say3978
 label morte_s68: # from 67.0
-    nr '"Šedovous… to víš, starej paprika, dědek… zkrátka někdo starej."'
+    nr '"Šedovous… to víš, starej paprika, dědek… zkrátka někdo starej."{#morte_s68_}'
 
     menu:
-        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."':
+        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."{#morte_s68_r3979}':
             # a197 # r3979
             jump morte_s69
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s68_r3980}':
             # a198 # r3980
             jump morte_s70
 
 
 # s69 # say3981
 label morte_s69: # from 67.1 68.0
-    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Ne… potřebuju trochu čerstvějšího. A něco s trochou víc důstojnosti… tendle je celej popraskanej a polámanej."'
+    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Ne… potřebuju trochu čerstvějšího. A něco s trochou víc důstojnosti… tendle je celej popraskanej a polámanej."{#morte_s69_}'
 
     menu:
-        '"A ty ne?"':
+        '"A ty ne?"{#morte_s69_r3982}':
             # a199 # r3982
             jump morte_s70
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s69_r3983}':
             # a200 # r3983
             jump morte_dispose
 
 
 # s70 # say3984
 label morte_s70: # from 67.2 68.1 69.0 127.0
-    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."'
+    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."{#morte_s70_}'
 
     menu:
-        '"Jo tak? No *JÁ* mám alespoň všechny své části."':
+        '"Jo tak? No *JÁ* mám alespoň všechny své části."{#morte_s70_r3985}':
             # a201 # r3985
             jump morte_s71
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s70_r3986}':
             # a202 # r3986
             jump morte_dispose
 
 
 # s71 # say3987
 label morte_s71: # from 70.0
-    nr 'Morte si odfrkl. Nejsi si zrovna jistý, jak to dokázal bez plic.'
+    nr 'Morte si odfrkl. Nejsi si zrovna jistý, jak to dokázal bez plic.{#morte_s71_}'
 
     menu:
-        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."':
+        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."{#morte_s71_r3988}':
             # a203 # r3988
             $ morteLogic.r3988_action()
             jump morte_s72
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s71_r3989}':
             # a204 # r3989
             jump morte_dispose
 
 
 # s72 # say3990
 label morte_s72: # from 71.0
-    nr '"Musím ti říct, že mé rozhodnutí pomoct ti utéct z přípravny, jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."'
+    nr '"Musím ti říct, že mé rozhodnutí pomoct ti utéct z přípravny, jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."{#morte_s72_}'
 
     menu:
-        '"Jsem rád, že to tak cítíš. Pojďme."':
+        '"Jsem rád, že to tak cítíš. Pojďme."{#morte_s72_r3991}':
             # a205 # r3991
             jump morte_dispose
 
 
 # s73 # say4018
 label morte_s73: # externs giantsk_s9 giantsk_s8 giantsk_s7 giantsk_s6 giantsk_s5 giantsk_s4 giantsk_s1 giantsk_s0
-    nr 'Morte se zašklebil.'
+    nr 'Morte se zašklebil.{#morte_s73_}'
 
     menu:
-        '"Uh, je to ano, nebo…?"':
+        '"Uh, je to ano, nebo…?"{#morte_s73_r4019}':
             # a206 # r4019
             jump morte_s74
 
 
 # s74 # say4020
 label morte_s74: # from 73.0
-    nr '"Oh… sorry." Morte přiletěl k hlavě kostlivce, chvíli na ní zírá a pak sletěl dolů, studujíc zbroj a meč. "Jo, ano. Ano, myslím, že tenhle bude akorát."'
+    nr '"Oh… sorry." Morte přiletěl k hlavě kostlivce, chvíli na ní zírá a pak sletěl dolů, studujíc zbroj a meč. "Jo, ano. Ano, myslím, že tenhle bude akorát."{#morte_s74_}'
 
     menu:
-        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."' if morteLogic.r4023_condition():
+        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."{#morte_s74_r4023}' if morteLogic.r4023_condition():
             # a207 # r4023
             jump giantsk_s2  # EXTERN
 
-        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."' if morteLogic.r4024_condition():
+        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."{#morte_s74_r4024}' if morteLogic.r4024_condition():
             # a208 # r4024
             jump giantsk_s3  # EXTERN
 
-        '"No, já nevím. Připadá mi to, že tohle bys asi nezvládl."':
+        '"No, já nevím. Připadá mi to, že tohle bys asi nezvládl."{#morte_s74_r4025}':
             # a209 # r4025
             jump morte_s75
 
-        '"Myslím, že bude lepší, když ho necháme být."':
+        '"Myslím, že bude lepší, když ho necháme být."{#morte_s74_r4026}':
             # a210 # r4026
             jump morte_s75
 
 
 # s75 # say4021
 label morte_s75: # from 74.2 74.3
-    nr '"Tak proč ses mě PTAL, jestli ho chci? Cvičíš si krutost, parchante?" Morte se rozhořčeně zakýval. "Po všem, co jsem pro tebe udělal…"'
+    nr '"Tak proč ses mě PTAL, jestli ho chci? Cvičíš si krutost, parchante?" Morte se rozhořčeně zakýval. "Po všem, co jsem pro tebe udělal…"{#morte_s75_}'
 
     menu:
-        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."' if morteLogic.r4027_condition():
+        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."{#morte_s75_r4027}' if morteLogic.r4027_condition():
             # a211 # r4027
             jump giantsk_s2  # EXTERN
 
-        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."' if morteLogic.r4028_condition():
+        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."{#morte_s75_r4028}' if morteLogic.r4028_condition():
             # a212 # r4028
             jump giantsk_s3  # EXTERN
 
-        '"Myslím na tvé bezpečí, Morte. Bojím se, že kdybych tvoji hlavu připevnil k té věci, mohlo by ti to nějak ublížit…"':
+        '"Myslím na tvé bezpečí, Morte. Bojím se, že kdybych tvoji hlavu připevnil k té věci, mohlo by ti to nějak ublížit…"{#morte_s75_r4029}':
             # a213 # r4029
             $ morteLogic.r4029_action()
             jump morte_s76
 
-        '"Stejně si myslím, že bychom ho raději měli nechat být. Pojďme odtud."':
+        '"Stejně si myslím, že bychom ho raději měli nechat být. Pojďme odtud."{#morte_s75_r4030}':
             # a214 # r4030
             jump morte_dispose
 
 
 # s76 # say4022
 label morte_s76: # from 75.2
-    nr 'Morte na tebe chvíli zírá. "Co? Copak jsme se snad VZALI? Co je to za kecy „Nechci, aby sis ublížil“?" Morte se tváří zlostně. "Kdyby ses OPRAVDU staral, našel bys způsob, jak přidělat moji hlavu na toho kostlivce."'
+    nr 'Morte na tebe chvíli zírá. "Co? Copak jsme se snad VZALI? Co je to za kecy „Nechci, aby sis ublížil“?" Morte se tváří zlostně. "Kdyby ses OPRAVDU staral, našel bys způsob, jak přidělat moji hlavu na toho kostlivce."{#morte_s76_}'
 
     menu:
-        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."' if morteLogic.r4031_condition():
+        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."{#morte_s76_r4031}' if morteLogic.r4031_condition():
             # a215 # r4031
             jump giantsk_s2  # EXTERN
 
-        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."' if morteLogic.r4032_condition():
+        '"Dobrá tedy… dej mi vteřinku, ať mu můžu urvat hlavu."{#morte_s76_r4032}' if morteLogic.r4032_condition():
             # a216 # r4032
             jump giantsk_s3  # EXTERN
 
-        '"Promiň, ale tolik se o tebe nestarám. Pojďme."':
+        '"Promiň, ale tolik se o tebe nestarám. Pojďme."{#morte_s76_r4033}':
             # a217 # r4033
             jump morte_dispose
 
-        '"A já bych řekl, že ho raději necháme být. Pojďme."' if morteLogic.r4034_condition():
+        '"A já bych řekl, že ho raději necháme být. Pojďme."{#morte_s76_r4034}' if morteLogic.r4034_condition():
             # a218 # r4034
             jump morte_dispose
 
 
 # s77 # say4134
 label morte_s77: # -
-    nr '"Hej! Hej! Co děláš?"'
+    nr '"Hej! Hej! Co děláš?"{#morte_s77_}'
 
     menu:
-        '"*Chtěl* jsem si s tím chlápkem promluvit. Nějaký problém?"':
+        '"*Chtěl* jsem si s tím chlápkem promluvit. Nějaký problém?"{#morte_s77_r4144}':
             # a219 # r4144
             $ morteLogic.r4144_action()
             jump morte_s78
 
-        '"Nic, pokračujme dál."':
+        '"Nic, pokračujme dál."{#morte_s77_r4145}':
             # a220 # r4145
             $ morteLogic.r4145_action()
             jump morte_dispose
@@ -1390,15 +1390,15 @@ label morte_s77: # -
 
 # s78 # say4135
 label morte_s78: # from 77.0
-    nr '"Pokud chceš kecat s Spalovákama, tak mě z toho teda vynech. Oni a já nejsme zrovna kámoši. A ty by ses s nima taky neměl nějak moc bratříčkovat. Než si stačíš uvědomit, pohřběj tě nebo ugriluj v kremačce. Nebuď debil, vypadněme vocaď."'
+    nr '"Pokud chceš kecat s Spalovákama, tak mě z toho teda vynech. Oni a já nejsme zrovna kámoši. A ty by ses s nima taky neměl nějak moc bratříčkovat. Než si stačíš uvědomit, pohřběj tě nebo ugriluj v kremačce. Nebuď debil, vypadněme vocaď."{#morte_s78_}'
 
     menu:
-        '"Díky za radu, ale já si s ním stejně promluvím."':
+        '"Díky za radu, ale já si s ním stejně promluvím."{#morte_s78_r4142}':
             # a221 # r4142
             $ morteLogic.r4142_action()
             jump morte_s80
 
-        '"Souhlasím, pojďme dál."':
+        '"Souhlasím, pojďme dál."{#morte_s78_r4143}':
             # a222 # r4143
             $ morteLogic.r4143_action()
             jump morte_dispose
@@ -1406,98 +1406,98 @@ label morte_s78: # from 77.0
 
 # s79 # say4136
 label morte_s79: # -
-    nr '"Hej! Jsi hluchý? Co děláš?"'
+    nr '"Hej! Jsi hluchý? Co děláš?"{#morte_s79_}'
 
     menu:
-        '"Hele, chci si promluvit s tímhle chlápkem. Nějaký problém?"':
+        '"Hele, chci si promluvit s tímhle chlápkem. Nějaký problém?"{#morte_s79_r4140}':
             # a223 # r4140
             $ morteLogic.r4140_action()
             jump morte_s80
 
-        '"Nic, pokračujme dál."':
+        '"Nic, pokračujme dál."{#morte_s79_r4141}':
             # a224 # r4141
             jump morte_dispose
 
 
 # s80 # say4137
 label morte_s80: # from 78.0 79.0
-    nr '"No tak mě *neposlouchej* - je to tvůj pohřeb."'
+    nr '"No tak mě *neposlouchej* - je to tvůj pohřeb."{#morte_s80_}'
 
     menu:
-        '"Jo, a ty mi zazpíváš rekviem. A teď buď zticha."':
+        '"Jo, a ty mi zazpíváš rekviem. A teď buď zticha."{#morte_s80_r4138}':
             # a225 # r4138
             jump dustgu_s12  # EXTERN
 
-        '"Nah, máš pravdu. Zapomeň na to. Jdeme dál."':
+        '"Nah, máš pravdu. Zapomeň na to. Jdeme dál."{#morte_s80_r4139}':
             # a226 # r4139
             jump morte_dispose
 
 
 # s81 # say4338
 label morte_s81: # externs dustfem_s40
-    nr '"Hej! Hej! Co děláš?"'
+    nr '"Hej! Hej! Co děláš?"{#morte_s81_}'
 
     menu:
-        '"Hele, chci si promluvit s touhle ženskou. Nějaký problém?"':
+        '"Hele, chci si promluvit s touhle ženskou. Nějaký problém?"{#morte_s81_r4339}':
             # a227 # r4339
             $ morteLogic.r4339_action()
             jump morte_s82
 
-        '"Nic, pokračujme dál."':
+        '"Nic, pokračujme dál."{#morte_s81_r4340}':
             # a228 # r4340
             jump morte_dispose
 
 
 # s82 # say4341
 label morte_s82: # from 81.0
-    nr '"Pokud chceš kecat s Spalovákama, tak mě z toho teda vynech. Oni a já nejsme zrovna kámoši. A ty by ses s nima taky neměl nějak moc bratříčkovat. Než si stačíš uvědomit, pohřběj tě nebo ugriluj v kremačce. Nebuď debil, vypadněme vocaď."'
+    nr '"Pokud chceš kecat s Spalovákama, tak mě z toho teda vynech. Oni a já nejsme zrovna kámoši. A ty by ses s nima taky neměl nějak moc bratříčkovat. Než si stačíš uvědomit, pohřběj tě nebo ugriluj v kremačce. Nebuď debil, vypadněme vocaď."{#morte_s82_}'
 
     menu:
-        '"Díky za radu, ale já si s ní *stejně* promluvím."':
+        '"Díky za radu, ale já si s ní *stejně* promluvím."{#morte_s82_r4342}':
             # a229 # r4342
             $ morteLogic.r4342_action()
             jump morte_s84
 
-        '"Souhlasím, pojďme dál."':
+        '"Souhlasím, pojďme dál."{#morte_s82_r4343}':
             # a230 # r4343
             jump morte_dispose
 
 
 # s83 # say4344
 label morte_s83: # externs dustfem_s40
-    nr '"Hej! Jsi hluchá? Co děláš?"'
+    nr '"Hej! Jsi hluchá? Co děláš?"{#morte_s83_}'
 
     menu:
-        '"Hele, jdu si promluvit s touhle ženskou. Nějaký problém?"':
+        '"Hele, jdu si promluvit s touhle ženskou. Nějaký problém?"{#morte_s83_r4345}':
             # a231 # r4345
             $ morteLogic.r4345_action()
             jump morte_s84
 
-        '"Nic, pokračujme dál."':
+        '"Nic, pokračujme dál."{#morte_s83_r4346}':
             # a232 # r4346
             jump morte_dispose
 
 
 # s84 # say4347
 label morte_s84: # from 82.0 83.0
-    nr '"Tak mě *neposlouchej* - je to tvůj pohřeb."'
+    nr '"Tak mě *neposlouchej* - je to tvůj pohřeb."{#morte_s84_}'
 
     menu:
-        '"Jo, a ty mi zazpíváš rekviem. A teď buď zticha."':
+        '"Jo, a ty mi zazpíváš rekviem. A teď buď zticha."{#morte_s84_r4348}':
             # a233 # r4348
             jump dustfem_s3  # EXTERN
 
-        '"Nah, máš pravdu. Zapomeň na to. Jdeme dál."':
+        '"Nah, máš pravdu. Zapomeň na to. Jdeme dál."{#morte_s84_r4349}':
             # a234 # r4349
             jump morte_dispose
 
 
 # s85 # say4675
 label morte_s85: # externs vaxis_s9
-    nr 'Morte se šeptem vložil do řeči. "U mocností… ten vůl je *Anarchista.* Maskovat se za zombie, to je první věc, která by ty vypatlané blbečky napadla."'
+    nr 'Morte se šeptem vložil do řeči. "U mocností… ten vůl je *Anarchista.* Maskovat se za zombie, to je první věc, která by ty vypatlané blbečky napadla."{#morte_s85_}'
 
     menu:
-        '"Anarchista?"':
+        '"Anarchista?"{#morte_s85_r4676}':
             # a235 # r4676
             $ morteLogic.j64512_s85_r4676_action()
             jump morte_s86
@@ -1505,28 +1505,28 @@ label morte_s85: # externs vaxis_s9
 
 # s86 # say4677
 label morte_s86: # from 85.0
-    nr '"Anarchisti… to je frakce…" Morte se tváří, jako by chtěl dlouze zanadávat, ale pak si všiml, že ho zombie pozorně poslouchá. "…oni, ehm, chtěj *osvobodit* každého od vlády. Zničit starý řád a zavést nový, který by neměl vůbec žádný řád."'
+    nr '"Anarchisti… to je frakce…" Morte se tváří, jako by chtěl dlouze zanadávat, ale pak si všiml, že ho zombie pozorně poslouchá. "…oni, ehm, chtěj *osvobodit* každého od vlády. Zničit starý řád a zavést nový, který by neměl vůbec žádný řád."{#morte_s86_}'
 
     menu:
-        'Pravdivě: "To zní docela ušlechtile - pořádek občas potřebuje pořádnou likvidaci."':
+        'Pravdivě: "To zní docela ušlechtile - pořádek občas potřebuje pořádnou likvidaci."{#morte_s86_r4678}':
             # a236 # r4678
             $ morteLogic.r4678_action()
             jump vaxis_s11  # EXTERN
 
-        'Lži: "To zní ušlechtile. Kterýkoli anarchista, který usiluje o takový cíl je *rozhodně* můj přítel."':
+        'Lži: "To zní ušlechtile. Kterýkoli anarchista, který usiluje o takový cíl je *rozhodně* můj přítel."{#morte_s86_r4679}':
             # a237 # r4679
             $ morteLogic.r4679_action()
             jump vaxis_s11  # EXTERN
 
-        '"To zní docela… nefunkčně."':
+        '"To zní docela… nefunkčně."{#morte_s86_r4680}':
             # a238 # r4680
             jump vaxis_s10  # EXTERN
 
-        '"To je jedna z největších hovadin, jaké jsem kdy slyšel."':
+        '"To je jedna z největších hovadin, jaké jsem kdy slyšel."{#morte_s86_r4681}':
             # a239 # r4681
             jump vaxis_s10  # EXTERN
 
-        'Pravdivě: "To mi nepřipadá rozumné. Nějaký pořádek, řád, musí být vždycky.':
+        'Pravdivě: "To mi nepřipadá rozumné. Nějaký pořádek, řád, musí být vždycky.{#morte_s86_r4682}':
             # a240 # r4682
             $ morteLogic.r4682_action()
             jump vaxis_s10  # EXTERN
@@ -1534,22 +1534,22 @@ label morte_s86: # from 85.0
 
 # s87 # say4683
 label morte_s87: # externs vaxis_s13
-    nr 'ŠEptá: "Myslí tím, že jsi šílený, blázen, magor, hňup… a já si to myslím taky. A teď se vykašli na ty řeči typu „Vstal jsem z mrtvých“, jasný?! Štveš mě s tím."'
+    nr 'ŠEptá: "Myslí tím, že jsi šílený, blázen, magor, hňup… a já si to myslím taky. A teď se vykašli na ty řeči typu „Vstal jsem z mrtvých“, jasný?! Štveš mě s tím."{#morte_s87_}'
 
     menu:
-        '"Já štvu TEBE?"':
+        '"Já štvu TEBE?"{#morte_s87_r4684}':
             # a241 # r4684
             jump morte_s88
 
-        '"Chtěl jsem jenom vědět, o čem ta… mrtvola mluvila. Jasný?"':
+        '"Chtěl jsem jenom vědět, o čem ta… mrtvola mluvila. Jasný?"{#morte_s87_r4685}':
             # a242 # r4685
             jump morte_s88
 
-        '"To není moje vina, že nikdo na tomhle šíleném místě nemluví jako normální osoba… nebo VYPADÁ jako normál."' if morteLogic.r4686_condition():
+        '"To není moje vina, že nikdo na tomhle šíleném místě nemluví jako normální osoba… nebo VYPADÁ jako normál."{#morte_s87_r4686}' if morteLogic.r4686_condition():
             # a243 # r4686
             jump morte_s88
 
-        '"Hele, já mu NEBUDU lhát. Chci s ním jednat na rovinu."':
+        '"Hele, já mu NEBUDU lhát. Chci s ním jednat na rovinu."{#morte_s87_r4687}':
             # a244 # r4687
             $ morteLogic.r4687_action()
             jump morte_s88
@@ -1557,28 +1557,28 @@ label morte_s87: # externs vaxis_s13
 
 # s88 # say4688
 label morte_s88: # from 87.0 87.1 87.2 87.3
-    nr 'Morte si povzdychl. "Hele, šéfe. Vem rozum do hrsti. Nemůžeš chodit kolem a říkat každýmu pokaždé PRAVDU. Nemůžeme si dovolit, aby si nás vomarkoval každej čórovač, kterýho potkáme, ne?"'
+    nr 'Morte si povzdychl. "Hele, šéfe. Vem rozum do hrsti. Nemůžeš chodit kolem a říkat každýmu pokaždé PRAVDU. Nemůžeme si dovolit, aby si nás vomarkoval každej čórovač, kterýho potkáme, ne?"{#morte_s88_}'
 
     menu:
-        '"Čórovač? Omarkoval? Co to - uh, no nic."':
+        '"Čórovač? Omarkoval? Co to - uh, no nic."{#morte_s88_r4689}':
             # a245 # r4689
             jump vaxis_s15  # EXTERN
 
-        '" Nechej toho, Morte."':
+        '" Nechej toho, Morte."{#morte_s88_r4690}':
             # a246 # r4690
             jump vaxis_s15  # EXTERN
 
-        '"Já si to… zapamatuju. A teď si chci promluvit s tou „zombie“."':
+        '"Já si to… zapamatuju. A teď si chci promluvit s tou „zombie“."{#morte_s88_r4691}':
             # a247 # r4691
             jump vaxis_s15  # EXTERN
 
 
 # s89 # say4692
 label morte_s89: # externs vaxis_s23
-    nr '"Počkej…" Morte zní překvapeně. "Ten vůl je *Anarchista.* Maskovat se za zombie, to je první věc, která by ty vymazané blbečky napadla."'
+    nr '"Počkej…" Morte zní překvapeně. "Ten vůl je *Anarchista.* Maskovat se za zombie, to je první věc, která by ty vymazané blbečky napadla."{#morte_s89_}'
 
     menu:
-        '"Anarchista?"':
+        '"Anarchista?"{#morte_s89_r4693}':
             # a248 # r4693
             $ morteLogic.j64512_s89_r4693_action()
             jump morte_s90
@@ -1586,27 +1586,27 @@ label morte_s89: # externs vaxis_s23
 
 # s90 # say4694
 label morte_s90: # from 89.0
-    nr '"Anarchisti jsou společenstvím, které se snaží likvidovat místní autority a hledají způsob, jak zničit cokoli, co smrdí řádem nebo kontrolou." Morte si odfrkl. "Anarchisti si myslej, že každej vůl ve sférách bude volnej a šťastnej, když si bude moct najít vlastní „pravdu“, jakmile bude všechna vláda zlikvidována. Chtěj nastolit novej pořádek - vůbec žádnej."'
+    nr '"Anarchisti jsou společenstvím, které se snaží likvidovat místní autority a hledají způsob, jak zničit cokoli, co smrdí řádem nebo kontrolou." Morte si odfrkl. "Anarchisti si myslej, že každej vůl ve sférách bude volnej a šťastnej, když si bude moct najít vlastní „pravdu“, jakmile bude všechna vláda zlikvidována. Chtěj nastolit novej pořádek - vůbec žádnej."{#morte_s90_}'
 
     menu:
-        'Pravdivě: "To zní docela ušlechtile - pořádek občas potřebuje pořádnou likvidaci."':
+        'Pravdivě: "To zní docela ušlechtile - pořádek občas potřebuje pořádnou likvidaci."{#morte_s90_r4695}':
             # a249 # r4695
             $ morteLogic.r4695_action()
             jump vaxis_s71  # EXTERN
 
-        '"To zní docela… nefunkčně."':
+        '"To zní docela… nefunkčně."{#morte_s90_r4696}':
             # a250 # r4696
             jump vaxis_s71  # EXTERN
 
-        '"To je jedna z největších hovadin, jaké jsem kdy slyšel."':
+        '"To je jedna z největších hovadin, jaké jsem kdy slyšel."{#morte_s90_r4697}':
             # a251 # r4697
             jump vaxis_s71  # EXTERN
 
-        '"No jo."':
+        '"No jo."{#morte_s90_r4698}':
             # a252 # r4698
             jump vaxis_s71  # EXTERN
 
-        'Pravdivě: "To mi nepřipadá rozumné. Nějaký pořádek, řád, musí být vždycky.':
+        'Pravdivě: "To mi nepřipadá rozumné. Nějaký pořádek, řád, musí být vždycky.{#morte_s90_r4699}':
             # a253 # r4699
             $ morteLogic.r4699_action()
             jump vaxis_s71  # EXTERN
@@ -1614,50 +1614,50 @@ label morte_s90: # from 89.0
 
 # s91 # say4700
 label morte_s91: # externs vaxis_s46
-    nr '"Ten vůl Pharod prý prodává spoustu mrtváků - mrtvol - Spalovačům. To dělaj Sběrači - sbírají mrtvý těla a prodávají je Spalovačům. Ale ten Pharod jich prej prodává tolik, že si Spalovači myslej, že je strká do knihy mrtvejch lidi dřív, než nadešel jejich čas - to jako že je zabíjí."'
+    nr '"Ten vůl Pharod prý prodává spoustu mrtváků - mrtvol - Spalovačům. To dělaj Sběrači - sbírají mrtvý těla a prodávají je Spalovačům. Ale ten Pharod jich prej prodává tolik, že si Spalovači myslej, že je strká do knihy mrtvejch lidi dřív, než nadešel jejich čas - to jako že je zabíjí."{#morte_s91_}'
 
     menu:
-        '"Aha. Chtěl jsem vědět ještě něco…"':
+        '"Aha. Chtěl jsem vědět ještě něco…"{#morte_s91_r4701}':
             # a254 # r4701
             jump vaxis_s43  # EXTERN
 
-        '"Ten Pharod zní jako světec. Možná budu mít nějaké otázky později. Nikam nechoď."':
+        '"Ten Pharod zní jako světec. Možná budu mít nějaké otázky později. Nikam nechoď."{#morte_s91_r4702}':
             # a255 # r4702
             jump morte_dispose
 
 
 # s92 # say4703
 label morte_s92: # externs vaxis_s47
-    nr '"Chce vědět, jestli tě někdo okradl. Což se asi stalo."'
+    nr '"Chce vědět, jestli tě někdo okradl. Což se asi stalo."{#morte_s92_}'
 
     menu:
-        '"Aha. Chtěl jsem vědět ještě něco…"':
+        '"Aha. Chtěl jsem vědět ještě něco…"{#morte_s92_r4704}':
             # a256 # r4704
             jump vaxis_s43  # EXTERN
 
-        '"Jo, už se těším, až toho zloděje najdu. Hele, možná budu mít nějaké otázky později. Nikam nechoď."':
+        '"Jo, už se těším, až toho zloděje najdu. Hele, možná budu mít nějaké otázky později. Nikam nechoď."{#morte_s92_r4705}':
             # a257 # r4705
             jump morte_dispose
 
 
 # s93 # say4706
 label morte_s93: # externs vaxis_s39
-    nr '"Jó, sou pěkně blbí."'
+    nr '"Jó, sou pěkně blbí."{#morte_s93_}'
 
     jump vaxis_s61  # EXTERN
 
 
 # s94 # say4708
 label morte_s94: # externs vaxis_s65
-    nr '"Nemůžu uvěřit, že si to necháš udělat. Seš totálně bláznivej?"'
+    nr '"Nemůžu uvěřit, že si to necháš udělat. Seš totálně bláznivej?"{#morte_s94_}'
 
     menu:
-        '"Připouštím, je to pěkně tvrdý…"' if morteLogic.r64535_condition():
+        '"Připouštím, je to pěkně tvrdý…"{#morte_s94_r64535}' if morteLogic.r64535_condition():
             # a258 # r64535
             $ morteLogic.r64535_action()
             jump vaxis_s66  # EXTERN
 
-        '"Připouštím, je to pěkně tvrdý…"' if morteLogic.r64534_condition():
+        '"Připouštím, je to pěkně tvrdý…"{#morte_s94_r64534}' if morteLogic.r64534_condition():
             # a259 # r64534
             $ morteLogic.r64534_action()
             jump vaxis_s66  # EXTERN
@@ -1665,294 +1665,294 @@ label morte_s94: # externs vaxis_s65
 
 # s95 # say4710
 label morte_s95: # externs vaxis_s66
-    nr '"Nemůžeš ty stehy na jeho tlamě pořádně utáhnout?"'
+    nr '"Nemůžeš ty stehy na jeho tlamě pořádně utáhnout?"{#morte_s95_}'
 
     menu:
-        '"Fer na to, Murte --"':
+        '"Fer na to, Murte --"{#morte_s95_r4711}':
             # a260 # r4711
             jump vaxis_s67  # EXTERN
 
-        '"Mmm-HMMPH!"':
+        '"Mmm-HMMPH!"{#morte_s95_r4712}':
             # a261 # r4712
             jump vaxis_s67  # EXTERN
 
 
 # s96 # say5029
 label morte_s96: # -
-    nr '"Hej! Hej! Co to děláš?"'
+    nr '"Hej! Hej! Co to děláš?"{#morte_s96_}'
 
     menu:
-        '"*Chtěl* jsem si s tím chlápkem promluvit. Problém?"':
+        '"*Chtěl* jsem si s tím chlápkem promluvit. Problém?"{#morte_s96_r5030}':
             # a262 # r5030
             $ morteLogic.r5030_action()
             jump morte_s97
 
-        '"Nic, jdeme dál."':
+        '"Nic, jdeme dál."{#morte_s96_r5031}':
             # a263 # r5031
             jump morte_dispose
 
 
 # s97 # say5032
 label morte_s97: # from 96.0
-    nr '"Jestli si chceš vykecávat držku se Spalovákama, tak mě z toho teda vynech, jo? Já a voni nejsme zrovna nejlepší kámoši, to teda ne. A ty bys s nima taky neměl nějak moc kámošit. Vypadáš jako něco, co by nejraděj upálili nebo někam pohřbili. A nejspíš by na příležitost moc nečekali. Nebuď magor, zkrátka se seber a poď, vypadnem."'
+    nr '"Jestli si chceš vykecávat držku se Spalovákama, tak mě z toho teda vynech, jo? Já a voni nejsme zrovna nejlepší kámoši, to teda ne. A ty bys s nima taky neměl nějak moc kámošit. Vypadáš jako něco, co by nejraděj upálili nebo někam pohřbili. A nejspíš by na příležitost moc nečekali. Nebuď magor, zkrátka se seber a poď, vypadnem."{#morte_s97_}'
 
     menu:
-        '"Dík za radu, ale já si s tímhle chlápkem *stejně* promluvím."':
+        '"Dík za radu, ale já si s tímhle chlápkem *stejně* promluvím."{#morte_s97_r5033}':
             # a264 # r5033
             $ morteLogic.r5033_action()
             jump morte_s99
 
-        '"Souhlasím, jdeme dál."':
+        '"Souhlasím, jdeme dál."{#morte_s97_r5034}':
             # a265 # r5034
             jump morte_dispose
 
 
 # s98 # say5035
 label morte_s98: # -
-    nr '"Hej! Jsi hluchej? Co to děláš?"'
+    nr '"Hej! Jsi hluchej? Co to děláš?"{#morte_s98_}'
 
     menu:
-        '"Podívej, já si s tímhle chlápkem chci promluvit. Problém?"':
+        '"Podívej, já si s tímhle chlápkem chci promluvit. Problém?"{#morte_s98_r5036}':
             # a266 # r5036
             $ morteLogic.r5036_action()
             jump morte_s99
 
-        '"Nic. Pojďme dál."':
+        '"Nic. Pojďme dál."{#morte_s98_r5037}':
             # a267 # r5037
             jump morte_dispose
 
 
 # s99 # say5038
 label morte_s99: # from 97.0 98.0
-    nr '"Tak mě teda *neposlouchej*. Je to tvůj pohřeb."'
+    nr '"Tak mě teda *neposlouchej*. Je to tvůj pohřeb."{#morte_s99_}'
 
     menu:
-        '"Jo, a ty mi můžeš zazpívat žalozpěvy. A teď buď zticha."':
+        '"Jo, a ty mi můžeš zazpívat žalozpěvy. A teď buď zticha."{#morte_s99_r5039}':
             # a268 # r5039
             jump soego_s3  # EXTERN
 
-        '"Pchá, máš pravdu. Zapomeň na to. Jdeme dál."':
+        '"Pchá, máš pravdu. Zapomeň na to. Jdeme dál."{#morte_s99_r5040}':
             # a269 # r5040
             jump morte_dispose
 
 
 # s100 # say5041
 label morte_s100: # externs soego_s20
-    nr '"Co to *děláš?!* Jestli ho chceš zabít, tak to udělej!"'
+    nr '"Co to *děláš?!* Jestli ho chceš zabít, tak to udělej!"{#morte_s100_}'
 
     menu:
-        '"Já to *udělal*! Zlomil jsem mu vaz! Neměl by se hýbat!"':
+        '"Já to *udělal*! Zlomil jsem mu vaz! Neměl by se hýbat!"{#morte_s100_r5042}':
             # a270 # r5042
             jump soego_s21  # EXTERN
 
 
 # s101 # say5043
 label morte_s101: # externs soego_s10
-    nr '"Alespoň že dokáže chodit." Morte si odfrkl. "Poletování kolem je docela zábava, ale ztrácí to svůj půvab, když dostaneš chuť někomu nakopat prdel."'
+    nr '"Alespoň že dokáže chodit." Morte si odfrkl. "Poletování kolem je docela zábava, ale ztrácí to svůj půvab, když dostaneš chuť někomu nakopat prdel."{#morte_s101_}'
 
     jump soego_s11  # EXTERN
 
 
 # s102 # say5049
 label morte_s102: # externs dhall_s5
-    nr '"Hele, šéfe! Co to děláš?!"'
+    nr '"Hele, šéfe! Co to děláš?!"{#morte_s102_}'
 
     menu:
-        '"Chtěl bych si s tímhle písařem promluvit. Mohl by vědět něco o tom, jak jsem se sem dostal."':
+        '"Chtěl bych si s tímhle písařem promluvit. Mohl by vědět něco o tom, jak jsem se sem dostal."{#morte_s102_r5050}':
             # a271 # r5050
             jump morte_s103
 
 
 # s103 # say5052
 label morte_s103: # from 102.0
-    nr '"Hele, vykecávání držky se Spalovákáma by měla bejt ta POSLEDNÍ věc --"'
+    nr '"Hele, vykecávání držky se Spalovákáma by měla bejt ta POSLEDNÍ věc --"{#morte_s103_}'
 
     jump dhall_s0  # EXTERN
 
 
 # s104 # say5053
 label morte_s104: # externs dhall_s0
-    nr '"A už vůbec bys neměl kecat s nemocnejma Spalovákama. No tak, pojď, vypadneme. Čím rychlejc z tohodle místa vypadneme, tím líp --"'
+    nr '"A už vůbec bys neměl kecat s nemocnejma Spalovákama. No tak, pojď, vypadneme. Čím rychlejc z tohodle místa vypadneme, tím líp --"{#morte_s104_}'
 
     jump dhall_s1  # EXTERN
 
 
 # s105 # say6071
 label morte_s105: # externs deionarra_s8 deionarra_s48 deionarra_s26 deionarra_s19 deionarra_s0
-    nr '"Seš zpátky se mnou, šéfe? Si byl tak ňák kapku mimo."'
+    nr '"Seš zpátky se mnou, šéfe? Si byl tak ňák kapku mimo."{#morte_s105_}'
 
     menu:
-        '"Ne, jsem v pořádku. Nevíš, co to bylo za ducha?"':
+        '"Ne, jsem v pořádku. Nevíš, co to bylo za ducha?"{#morte_s105_r6075}':
             # a272 # r6075
             $ morteLogic.r6075_action()
             jump morte_s106
 
-        '"Jsem v pořádku. Jdeme dál."':
+        '"Jsem v pořádku. Jdeme dál."{#morte_s105_r6076}':
             # a273 # r6076
             jump morte_dispose
 
 
 # s106 # say6072
 label morte_s106: # from 105.0
-    nr '"Eh? Duch?"'
+    nr '"Eh? Duch?"{#morte_s106_}'
 
     menu:
-        '"Ten přelud, s kterým jsem mluvil. Žena."':
+        '"Ten přelud, s kterým jsem mluvil. Žena."{#morte_s106_r6077}':
             # a274 # r6077
             jump morte_s107
 
 
 # s107 # say6073
 label morte_s107: # from 106.0
-    nr '"Ty ses vykecával s nějakou ženskou? Kde? Kde?" Morte se rozhlíží, vypadá rozrušeně. "Jak vypadala?"'
+    nr '"Ty ses vykecával s nějakou ženskou? Kde? Kde?" Morte se rozhlíží, vypadá rozrušeně. "Jak vypadala?"{#morte_s107_}'
 
     menu:
-        '"Stála na hrobu, tys ji neviděl?"':
+        '"Stála na hrobu, tys ji neviděl?"{#morte_s107_r6078}':
             # a275 # r6078
             jump morte_s108
 
 
 # s108 # say6074
 label morte_s108: # from 107.0
-    nr '"Eh… ne, akorát si chvilku stál jako socha. Sem měl tak trochu strach, že seš zase ňákej popletenej."'
+    nr '"Eh… ne, akorát si chvilku stál jako socha. Sem měl tak trochu strach, že seš zase ňákej popletenej."{#morte_s108_}'
 
     menu:
-        '"Ne, jsem v pořádku. Myslím. Pojďme dál."':
+        '"Ne, jsem v pořádku. Myslím. Pojďme dál."{#morte_s108_r6079}':
             # a276 # r6079
             jump morte_dispose
 
 
 # s109 # say6324
 label morte_s109: # -
-    nr '"Připomíná mi to práci, kterou jsem kdysi měl." Vypadá zmateně. "Chmm, chci říci… bez rukou."'
+    nr '"Připomíná mi to práci, kterou jsem kdysi měl." Vypadá zmateně. "Chmm, chci říci… bez rukou."{#morte_s109_}'
 
     menu:
-        'Prozkoumej mrtvolu.' if morteLogic.r6325_condition():
+        'Prozkoumej mrtvolu.{#morte_s109_r6325}' if morteLogic.r6325_condition():
             # a277 # r6325
             jump post_s3  # EXTERN
 
-        'Prozkoumej mrtvolu.' if morteLogic.r6326_condition():
+        'Prozkoumej mrtvolu.{#morte_s109_r6326}' if morteLogic.r6326_condition():
             # a278 # r6326
             jump post_s4  # EXTERN
 
-        '"Hmmm. Jestlipak to funguje i s jinými letáky…"' if morteLogic.r6327_condition():
+        '"Hmmm. Jestlipak to funguje i s jinými letáky…"{#morte_s109_r6327}' if morteLogic.r6327_condition():
             # a279 # r6327
             jump post_s5  # EXTERN
 
-        '"Hmmm. Jestlipak to funguje i s jinými letáky…"' if morteLogic.r6328_condition():
+        '"Hmmm. Jestlipak to funguje i s jinými letáky…"{#morte_s109_r6328}' if morteLogic.r6328_condition():
             # a280 # r6328
             jump post_s5  # EXTERN
 
-        'Prozkoumej jiné letáky.' if morteLogic.r6329_condition():
+        'Prozkoumej jiné letáky.{#morte_s109_r6329}' if morteLogic.r6329_condition():
             # a281 # r6329
             jump post_s5  # EXTERN
 
-        'Použij schopnost Kosti vyprávějte na mrtvolu.' if morteLogic.r6330_condition():
+        'Použij schopnost Kosti vyprávějte na mrtvolu.{#morte_s109_r6330}' if morteLogic.r6330_condition():
             # a282 # r6330
             jump post_s2  # EXTERN
 
-        'Nechej mrtvolu být.':
+        'Nechej mrtvolu být.{#morte_s109_r6331}':
             # a283 # r6331
             jump morte_dispose
 
 
 # s110 # say6609
 label morte_s110: # externs s42_s3 s42_s0
-    nr '"Hej, šéfe. Takovej vandalismus. Tydle šrouby byly asi jediná věc, co držela ten pytel kostí pohromadě. Necromancie s těmahle starejma kostma víc nesvede, chápeš?"'
+    nr '"Hej, šéfe. Takovej vandalismus. Tydle šrouby byly asi jediná věc, co držela ten pytel kostí pohromadě. Necromancie s těmahle starejma kostma víc nesvede, chápeš?"{#morte_s110_}'
 
     menu:
-        '"Tak?"':
+        '"Tak?"{#morte_s110_r6658}':
             # a284 # r6658
             $ morteLogic.r6658_action()
             jump s42_s1  # EXTERN
 
-        '"Oh… Nechtěl jsem způsobit trvalé poškození."':
+        '"Oh… Nechtěl jsem způsobit trvalé poškození."{#morte_s110_r6659}':
             # a285 # r6659
             $ morteLogic.r6659_action()
             jump s42_s1  # EXTERN
 
-        '"Tak dobrá, nevadí. Snad někdy příště."':
+        '"Tak dobrá, nevadí. Snad někdy příště."{#morte_s110_r6660}':
             # a286 # r6660
             jump s42_s1  # EXTERN
 
 
 # s111 # say6610
 label morte_s111: # externs s42_s3 s42_s2 s42_s0
-    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si *já* půjčil jeho tělo…"'
+    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si *já* půjčil jeho tělo…"{#morte_s111_}'
 
     menu:
-        '"„Staroch?“"':
+        '"„Staroch?“"{#morte_s111_r6661}':
             # a287 # r6661
             jump s42_s1  # EXTERN
 
-        '"Nemyslím, že k tomu má nějaký vztah."':
+        '"Nemyslím, že k tomu má nějaký vztah."{#morte_s111_r6662}':
             # a288 # r6662
             jump s42_s1  # EXTERN
 
-        '"Něco mi říká, že bys byl dvakrát tak otravný, kdybys měl ruce. Jdeme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravný, kdybys měl ruce. Jdeme."{#morte_s111_r6663}':
             # a289 # r6663
             jump s42_s1  # EXTERN
 
 
 # s112 # say6611
 label morte_s112: # externs s42_s13
-    nr '"Mohl bys to odříznout? Jeho paže odpadnou."'
+    nr '"Mohl bys to odříznout? Jeho paže odpadnou."{#morte_s112_}'
 
     menu:
-        'Překřiž si ruce na hrudníku.' if morteLogic.r6664_condition():
+        'Překřiž si ruce na hrudníku.{#morte_s112_r6664}' if morteLogic.r6664_condition():
             # a290 # r6664
             jump s42_s4  # EXTERN
 
-        'Napodob gesto kostlivce… sleduj co se stane.' if morteLogic.r6665_condition():
+        'Napodob gesto kostlivce… sleduj co se stane.{#morte_s112_r6665}' if morteLogic.r6665_condition():
             # a291 # r6665
             jump s42_s9  # EXTERN
 
-        '"Uh…"':
+        '"Uh…"{#morte_s112_r6666}':
             # a292 # r6666
             jump s42_s10  # EXTERN
 
-        'Nechej kostlivce být.':
+        'Nechej kostlivce být.{#morte_s112_r6667}':
             # a293 # r6667
             jump morte_dispose
 
 
 # s113 # say6771
 label morte_s113: # from 54.0 54.1
-    nr '"Vona vládne tomudle městu. Poznáš ji, až ji uvidíš: Má čepele kolem ksichtu, je velikánská jako vobr, lítá nad zemí, právě jako tidle." Morte kývl na dabuse, který se na vás oba díval. "Nikdo vo ní moc neví… vona toho moc nenakecá. Všecko, co vo ní potřebuješ vědět je, že ji nemáš nasrat. Dyž ji uvidíš, tak ti doporučuju: zdrhej."'
+    nr '"Vona vládne tomudle městu. Poznáš ji, až ji uvidíš: Má čepele kolem ksichtu, je velikánská jako vobr, lítá nad zemí, právě jako tidle." Morte kývl na dabuse, který se na vás oba díval. "Nikdo vo ní moc neví… vona toho moc nenakecá. Všecko, co vo ní potřebuješ vědět je, že ji nemáš nasrat. Dyž ji uvidíš, tak ti doporučuju: zdrhej."{#morte_s113_}'
 
     menu:
-        '"Aha."':
+        '"Aha."{#morte_s113_r2784}':
             # a294 # r2784
             jump dabus_s3  # EXTERN
 
 
 # s114 # say6784
 label morte_s114: # -
-    nr 'Morte se pohrdavě ušklíbl. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tadle kozí hlava chce říct. Chceš tlumočníka? Najdi si nějakýho Sigilana."'
+    nr 'Morte se pohrdavě ušklíbl. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tadle kozí hlava chce říct. Chceš tlumočníka? Najdi si nějakýho Sigilana."{#morte_s114_}'
 
     menu:
-        '"Aha."':
+        '"Aha."{#morte_s114_r6955}':
             # a295 # r6955
             jump dabus_s3  # EXTERN
 
 
 # s115 # say6786
 label morte_s115: # -
-    nr '"Oh, oni *mají* jména. Jsem si tím jistý."'
+    nr '"Oh, oni *mají* jména. Jsem si tím jistý."{#morte_s115_}'
 
     jump annah_s43  # EXTERN
 
 
 # s116 # say6790
 label morte_s116: # -
-    nr '"To říkáš *ty*, fiendskej spratku."'
+    nr '"To říkáš *ty*, fiendskej spratku."{#morte_s116_}'
 
     menu:
-        '"Nech toho, Morte - mohla by ses ho ještě na něco zeptat, Annah?"':
+        '"Nech toho, Morte - mohla by ses ho ještě na něco zeptat, Annah?"{#morte_s116_r6956}':
             # a296 # r6956
             jump annah_s40  # EXTERN
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s116_r6957}':
             # a297 # r6957
             $ morteLogic.r6957_action()
             jump dabus_s6  # EXTERN
@@ -1960,60 +1960,60 @@ label morte_s116: # -
 
 # s117 # say6794
 label morte_s117: # -
-    nr 'Morte se pohrdavě ušklíbne. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to tohle fiendský mrně." Ukazuje na Annah. "Ona je z Úlu."'
+    nr 'Morte se pohrdavě ušklíbne. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to tohle fiendský mrně." Ukazuje na Annah. "Ona je z Úlu."{#morte_s117_}'
 
     menu:
-        '"Možná udělám…"':
+        '"Možná udělám…"{#morte_s117_r6958}':
             # a298 # r6958
             jump dabus_s3  # EXTERN
 
 
 # s118 # say6797
 label morte_s118: # -
-    nr 'Morte se pohrdavě ušklíbne. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka?" Ukáže na Dak“kona. "Vem si Svatějšího-než-ty-a-dvakrát-klidnějšího aby ti to přeložil."'
+    nr 'Morte se pohrdavě ušklíbne. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka?" Ukáže na Dak“kona. "Vem si Svatějšího-než-ty-a-dvakrát-klidnějšího aby ti to přeložil."{#morte_s118_}'
 
     menu:
-        '"Možná splním…"':
+        '"Možná splním…"{#morte_s118_r6959}':
             # a299 # r6959
             jump dabus_s3  # EXTERN
 
 
 # s119 # say6800
 label morte_s119: # -
-    nr 'Morte se pohrdavě ušklíbne. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to tanar“riho." Ukazuje na Fall-from-Grace. "Pravděpodobně si s tady těma hochama musela celou dobu vyměňovat novinky."'
+    nr 'Morte se pohrdavě ušklíbne. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to tanar“riho." Ukazuje na Fall-from-Grace. "Pravděpodobně si s tady těma hochama musela celou dobu vyměňovat novinky."{#morte_s119_}'
 
     menu:
-        '"Snad vyhovím…"':
+        '"Snad vyhovím…"{#morte_s119_r6960}':
             # a300 # r6960
             jump dabus_s3  # EXTERN
 
 
 # s120 # say7040
 label morte_s120: # -
-    nr 'Odvracíš se, když tu náhle koutkem oka postřehneš, jak na tebe Morte civí. "He?"'
+    nr 'Odvracíš se, když tu náhle koutkem oka postřehneš, jak na tebe Morte civí. "He?"{#morte_s120_}'
 
     menu:
-        '"Co to je?"':
+        '"Co to je?"{#morte_s120_r7055}':
             # a301 # r7055
             jump morte_s121
 
 
 # s121 # say7041
 label morte_s121: # from 120.0
-    nr '"*Všiml* sis, jak na mě ta krásná mrtvola zírala?" Morte klape svými zuby pln očekávání. "Určitě hledá ňákýho šťastlivce, co by jí pomoh vyhřát rakev."'
+    nr '"*Všiml* sis, jak na mě ta krásná mrtvola zírala?" Morte klape svými zuby pln očekávání. "Určitě hledá ňákýho šťastlivce, co by jí pomoh vyhřát rakev."{#morte_s121_}'
 
     menu:
-        '"*Prosím*, nezačínej s tím zase."' if morteLogic.r7056_condition():
+        '"*Prosím*, nezačínej s tím zase."{#morte_s121_r7056}' if morteLogic.r7056_condition():
             # a302 # r7056
             $ morteLogic.r7056_action()
             jump morte_s122
 
-        '"O čem to *mluvíš*?"' if morteLogic.r7057_condition():
+        '"O čem to *mluvíš*?"{#morte_s121_r7057}' if morteLogic.r7057_condition():
             # a303 # r7057
             $ morteLogic.r7057_action()
             jump morte_s47
 
-        '"Co ten tvůj prázdný pohled upřený někam do záhrobí?"' if morteLogic.r7058_condition():
+        '"Co ten tvůj prázdný pohled upřený někam do záhrobí?"{#morte_s121_r7058}' if morteLogic.r7058_condition():
             # a304 # r7058
             $ morteLogic.r7058_action()
             jump morte_s47
@@ -2021,116 +2021,116 @@ label morte_s121: # from 120.0
 
 # s122 # say7042
 label morte_s122: # from 121.0
-    nr 'Morte tě nebere na vědomí a pokračuje dále v poněkud zamyšlenějším tónu: "Ve skutečnosti nepotřebuju bejt středem pozornosti… jen bych chtěl bejt vnímanej jako něco víc než jen pouhopouhá lebka, chápeš? Krom základních instinktů, co má každá živá bytost, mám taky city. Chci zkrátka klasický námluvy, nejen čtrnáctidenní flám v mauzoleu."'
+    nr 'Morte tě nebere na vědomí a pokračuje dále v poněkud zamyšlenějším tónu: "Ve skutečnosti nepotřebuju bejt středem pozornosti… jen bych chtěl bejt vnímanej jako něco víc než jen pouhopouhá lebka, chápeš? Krom základních instinktů, co má každá živá bytost, mám taky city. Chci zkrátka klasický námluvy, nejen čtrnáctidenní flám v mauzoleu."{#morte_s122_}'
 
     menu:
-        '"Ještě chvilku, já tě *drapnu* a někam zahodím, prevíte."':
+        '"Ještě chvilku, já tě *drapnu* a někam zahodím, prevíte."{#morte_s122_r7059}':
             # a305 # r7059
             jump morte_s123
 
-        '"Morte, ty *jsi* prostě lebka. Každý tě bude brát čistě jako lebku. Tak už se s tím smiř."':
+        '"Morte, ty *jsi* prostě lebka. Každý tě bude brát čistě jako lebku. Tak už se s tím smiř."{#morte_s122_r7060}':
             # a306 # r7060
             jump morte_s124
 
-        '"Rozumím. Tak už pojďme odsud, fajn?"':
+        '"Rozumím. Tak už pojďme odsud, fajn?"{#morte_s122_r7061}':
             # a307 # r7061
             jump morte_dispose
 
 
 # s123 # say7043
 label morte_s123: # from 122.0
-    nr '"Prrr, šéfíku…" Morte se nenápadně vzdálil z dosahu. "Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Prrr, šéfíku…" Morte se nenápadně vzdálil z dosahu. "Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s123_}'
 
     menu:
-        '"Ty seš ten *poslední*, kerej by mi měl radit ohledně lásky."':
+        '"Ty seš ten *poslední*, kerej by mi měl radit ohledně lásky."{#morte_s123_r7062}':
             # a308 # r7062
             jump morte_s126
 
-        '"Jasně, Morte. Jdeme."':
+        '"Jasně, Morte. Jdeme."{#morte_s123_r7063}':
             # a309 # r7063
             jump morte_dispose
 
 
 # s124 # say7044
 label morte_s124: # from 122.1
-    nr '"No teda dobře, jsem jen pouhopouhá lebka, ale mám skutečně vřelý srdce."'
+    nr '"No teda dobře, jsem jen pouhopouhá lebka, ale mám skutečně vřelý srdce."{#morte_s124_}'
 
     menu:
-        '"Abych pravdu řekl, stejně žádné *nemáš*."':
+        '"Abych pravdu řekl, stejně žádné *nemáš*."{#morte_s124_r7064}':
             # a310 # r7064
             jump morte_s125
 
-        '"To víš že jo, Morte. Padáme."':
+        '"To víš že jo, Morte. Padáme."{#morte_s124_r7065}':
             # a311 # r7065
             jump morte_dispose
 
 
 # s125 # say7045
 label morte_s125: # from 124.0
-    nr '"Čeho, vmontoval ses do mýho života jen kvůli tomu, abys poplival a pošlapal mý sny a tužby? Budiž tedy po tvém. Srdce teda nemám, zato však duši *rozhodně* jo."'
+    nr '"Čeho, vmontoval ses do mýho života jen kvůli tomu, abys poplival a pošlapal mý sny a tužby? Budiž tedy po tvém. Srdce teda nemám, zato však duši *rozhodně* jo."{#morte_s125_}'
 
     menu:
-        '"No, vlastně bych si i vsadil, že ty… ale nech to plavat. Vyrážíme."':
+        '"No, vlastně bych si i vsadil, že ty… ale nech to plavat. Vyrážíme."{#morte_s125_r7066}':
             # a312 # r7066
             jump morte_dispose
 
-        '"Jasně, Morte. Jdeme."':
+        '"Jasně, Morte. Jdeme."{#morte_s125_r7067}':
             # a313 # r7067
             jump morte_dispose
 
 
 # s126 # say7046
 label morte_s126: # from 123.0
-    nr '"Kdyby ti zbyla aspoň část rozumu z doby, než posledně umřels, věděl bys to líp." Nevěřil bys, že něčí hlas může obsahovat takovou dávku samolibosti, Morte trhá rekordy. "Ve věcech lásky sem napsal naučnou brožuru."'
+    nr '"Kdyby ti zbyla aspoň část rozumu z doby, než posledně umřels, věděl bys to líp." Nevěřil bys, že něčí hlas může obsahovat takovou dávku samolibosti, Morte trhá rekordy. "Ve věcech lásky sem napsal naučnou brožuru."{#morte_s126_}'
 
     menu:
-        '"To víš že jo, Morte. Padáme."':
+        '"To víš že jo, Morte. Padáme."{#morte_s126_r7068}':
             # a314 # r7068
             jump morte_dispose
 
 
 # s127 # say7071
 label morte_s127: # -
-    nr 'Morte chvíli kostru studuje, pak zavrtí hlavou. "Mmm.. tato je moc čistá… nezůstal na ní ani kousek masa. A taky bych nebyl schopný dostat z kostí to bělidlo."'
+    nr 'Morte chvíli kostru studuje, pak zavrtí hlavou. "Mmm.. tato je moc čistá… nezůstal na ní ani kousek masa. A taky bych nebyl schopný dostat z kostí to bělidlo."{#morte_s127_}'
 
     menu:
-        '"Nejsem schopný posoudit, jestli je „příliš čistá“… ale měl by ses naučit pár věcí o čistotnosti, to rozhodně. Neublížilo by ti to."':
+        '"Nejsem schopný posoudit, jestli je „příliš čistá“… ale měl by ses naučit pár věcí o čistotnosti, to rozhodně. Neublížilo by ti to."{#morte_s127_r7076}':
             # a315 # r7076
             jump morte_s70
 
-        '"Dobrá tedy. Jdeme."':
+        '"Dobrá tedy. Jdeme."{#morte_s127_r7077}':
             # a316 # r7077
             jump morte_dispose
 
 
 # s128 # say7130
 label morte_s128: # -
-    nr '"Joo!"'
+    nr '"Joo!"{#morte_s128_}'
 
     jump hivef1_s8  # EXTERN
 
 
 # s129 # say7187
 label morte_s129: # -
-    nr '"Mimir - mluvící encyklopedie. To sem já, šéfe."'
+    nr '"Mimir - mluvící encyklopedie. To sem já, šéfe."{#morte_s129_}'
 
     menu:
-        '"Rozumím. A ty si to koukej zapsat za uši, Morte. Podle toho, jak vypadala, jsem tě od smrti zachránil podruhé."':
+        '"Rozumím. A ty si to koukej zapsat za uši, Morte. Podle toho, jak vypadala, jsem tě od smrti zachránil podruhé."{#morte_s129_r7483}':
             # a317 # r7483
             $ morteLogic.r7483_action()
             jump harlotn_s8  # EXTERN
 
-        '"Vypadnem odsud. Sbohem, slečno."':
+        '"Vypadnem odsud. Sbohem, slečno."{#morte_s129_r7484}':
             # a318 # r7484
             jump morte_dispose
 
 
 # s130 # say7188
 label morte_s130: # -
-    nr 'Morte jenom civí zcela hypnotizován, zatímco ta děvka uvolnila stavidla a spustila na tebe lavinu verbálního hnoje. Nakonec jí došel dech. Morte je chvilku zticha, pak se však otočí k tobě a celou situaci komentuje: "Fíha, šéfíku, to teda bylo něco. Zas mám ňáký skvělý přírůstky do svýho starýho dobrýho výběru nejlepčích urážek a posměšků." Nato se přiblíží k běhně, která lapá po dechu. "Taky tě miluju."~ [MRT387]'
+    nr 'Morte jenom civí zcela hypnotizován, zatímco ta děvka uvolnila stavidla a spustila na tebe lavinu verbálního hnoje. Nakonec jí došel dech. Morte je chvilku zticha, pak se však otočí k tobě a celou situaci komentuje: "Fíha, šéfíku, to teda bylo něco. Zas mám ňáký skvělý přírůstky do svýho starýho dobrýho výběru nejlepčích urážek a posměšků." Nato se přiblíží k běhně, která lapá po dechu. "Taky tě miluju."~ [MRT387]{#morte_s130_}'
 
     menu:
-        'Odejdi.':
+        'Odejdi.{#morte_s130_r7485}':
             # a319 # r7485
             $ morteLogic.r7485_action()
             jump morte_dispose
@@ -2138,145 +2138,145 @@ label morte_s130: # -
 
 # s131 # say7775
 label morte_s131: # -
-    nr '"Teda náčelníku," vložil se Morte předtím, než si můžeš se stvořením promluvit. "Vykašli se na to. Nechceš přece vykecávat s každým fiendem na ulici. Nech to plavat."'
+    nr '"Teda náčelníku," vložil se Morte předtím, než si můžeš se stvořením promluvit. "Vykašli se na to. Nechceš přece vykecávat s každým fiendem na ulici. Nech to plavat."{#morte_s131_}'
 
     menu:
-        '"Můžeš mi odpovědět na…"':
+        '"Můžeš mi odpovědět na…"{#morte_s131_r7776}':
             # a320 # r7776
             jump morte_s132
 
-        'Odejdi od bytosti.':
+        'Odejdi od bytosti.{#morte_s131_r7777}':
             # a321 # r7777
             jump morte_dispose
 
 
 # s132 # say7778
 label morte_s132: # from 131.0
-    nr '"Ne, nedělej to." Morte pohlédl na stvoření, pak se otočil k tobě a ztišil hlas do šepotu. "Jsou vznětliví. Pojďme pryč."'
+    nr '"Ne, nedělej to." Morte pohlédl na stvoření, pak se otočil k tobě a ztišil hlas do šepotu. "Jsou vznětliví. Pojďme pryč."{#morte_s132_}'
 
     menu:
-        '"Já to risknu."':
+        '"Já to risknu."{#morte_s132_r7779}':
             # a322 # r7779
             jump bishab_s11  # EXTERN
 
-        'Odejdi od stvoření.':
+        'Odejdi od stvoření.{#morte_s132_r7780}':
             # a323 # r7780
             jump morte_dispose
 
 
 # s133 # say7805
 label morte_s133: # -
-    nr 'Morte si povzdechl zrovna ve chvíli, když ses chystal promluvit s démonem.'
+    nr 'Morte si povzdechl zrovna ve chvíli, když ses chystal promluvit s démonem.{#morte_s133_}'
 
     menu:
-        '"Ano?"':
+        '"Ano?"{#morte_s133_r7806}':
             # a324 # r7806
             jump morte_s134
 
 
 # s134 # say7807
 label morte_s134: # from 133.0
-    nr '"Och, nic… víš, znáš to - chybami se člověk učí." Pokynul hlavou ke stvoření. "Jen do toho."'
+    nr '"Och, nic… víš, znáš to - chybami se člověk učí." Pokynul hlavou ke stvoření. "Jen do toho."{#morte_s134_}'
 
     menu:
-        '"Já chci."':
+        '"Já chci."{#morte_s134_r7808}':
             # a325 # r7808
             jump bishab_s11  # EXTERN
 
-        '"Dobrá, nech to být. Jdeme."':
+        '"Dobrá, nech to být. Jdeme."{#morte_s134_r7809}':
             # a326 # r7809
             jump morte_dispose
 
 
 # s135 # say2349
 label morte_s135: # from 44.0 44.1
-    nr '"Jo, „gith“…" Morte se podíval na githa, který na tebe stále zírá. "Promluvíme si o tom později."'
+    nr '"Jo, „gith“…" Morte se podíval na githa, který na tebe stále zírá. "Promluvíme si o tom později."{#morte_s135_}'
 
     menu:
-        '"Ještě nejsem připravený odejít. Nejdřív se ho na něco zeptám…"':
+        '"Ještě nejsem připravený odejít. Nejdřív se ho na něco zeptám…"{#morte_s135_r9035}':
             # a327 # r9035
             jump gith_s7  # EXTERN
 
-        'Nechej githa být.':
+        'Nechej githa být.{#morte_s135_r9036}':
             # a328 # r9036
             jump morte_dispose
 
 
 # s136 # say9860
 label morte_s136: # -
-    nr '"No tak, šéfe… zabiješ toho hňupa, než se ti ho podaří probrat!"'
+    nr '"No tak, šéfe… zabiješ toho hňupa, než se ti ho podaří probrat!"{#morte_s136_}'
 
     menu:
-        '"Máš pravdu, Morte - pojďme."':
+        '"Máš pravdu, Morte - pojďme."{#morte_s136_r9882}':
             # a329 # r9882
             jump morte_dispose
 
 
 # s137 # say11946
 label morte_s137: # -
-    nr 'Morte připlul blíž. "Vo co gou, šéfe?"'
+    nr 'Morte připlul blíž. "Vo co gou, šéfe?"{#morte_s137_}'
 
     menu:
-        '"Vidíš tyhle zuby?"':
+        '"Vidíš tyhle zuby?"{#morte_s137_r11974}':
             # a330 # r11974
             jump morte_s138
 
-        '"Nic, kašli na to."':
+        '"Nic, kašli na to."{#morte_s137_r11975}':
             # a331 # r11975
             jump morte_dispose
 
 
 # s138 # say11947
 label morte_s138: # from 137.0
-    nr 'Morte se podíval na tvou dlaň. "Eeeeee." Vypadá to, že ho zuby morbidně fascinují. "To jsou ale malí hnusáci, co?"'
+    nr 'Morte se podíval na tvou dlaň. "Eeeeee." Vypadá to, že ho zuby morbidně fascinují. "To jsou ale malí hnusáci, co?"{#morte_s138_}'
 
     jump morte_dispose
 
 
 # s139 # say11948
 label morte_s139: # -
-    nr '"Zapomeň na to." Morte se otřásl. "Ty bys chtěl takový malý hajzlíky v *sobě*?"'
+    nr '"Zapomeň na to." Morte se otřásl. "Ty bys chtěl takový malý hajzlíky v *sobě*?"{#morte_s139_}'
 
     menu:
-        '"No tak, Morte, vypadá to, že se jim líbíš. Podívej se, jak se na tebe dívají."':
+        '"No tak, Morte, vypadá to, že se jim líbíš. Podívej se, jak se na tebe dívají."{#morte_s139_r11976}':
             # a332 # r11976
             jump morte_s140
 
-        'Popadni Morteho a narvi mu zuby do tlamy.':
+        'Popadni Morteho a narvi mu zuby do tlamy.{#morte_s139_r11977}':
             # a333 # r11977
             $ morteLogic.r11977_action()
             jump morte_s141
 
-        '"Tak to nic."':
+        '"Tak to nic."{#morte_s139_r11978}':
             # a334 # r11978
             jump morte_dispose
 
 
 # s140 # say11949
 label morte_s140: # from 139.0
-    nr '"Ti malí parchanti ať se ke mně radši nepřibližujou, nebo…" Morte se odmlčel. "Hm, hele, nemám tušáka, čím vyhrožovat zubům."'
+    nr '"Ti malí parchanti ať se ke mně radši nepřibližujou, nebo…" Morte se odmlčel. "Hm, hele, nemám tušáka, čím vyhrožovat zubům."{#morte_s140_}'
 
     menu:
-        'Prozkoumej zuby.':
+        'Prozkoumej zuby.{#morte_s140_r11979}':
             # a335 # r11979
             jump morte_dispose
 
-        'Popadni Morteho a narvi mu zuby do tlamy.':
+        'Popadni Morteho a narvi mu zuby do tlamy.{#morte_s140_r11980}':
             # a336 # r11980
             $ morteLogic.r11980_action()
             jump morte_s141
 
-        '"Tak to nic."':
+        '"Tak to nic."{#morte_s140_r11981}':
             # a337 # r11981
             jump morte_dispose
 
 
 # s141 # say11950
 label morte_s141: # from 139.1 140.1
-    nr 'Boj je krátký. Popadl jsi Morteho za hlavu - vlastně jediným způsobem, jak ho můžeš chytit - a když se pokoušel prokousat se na svobodu, zuby vyskočily z tvé dlaně a narvaly se mu do čelisti. Morte vyje, protože Ingressiny zuby okamžitě vyrvaly jeho vlastní zuby a nacpaly se do vzniklých otvorů.'
+    nr 'Boj je krátký. Popadl jsi Morteho za hlavu - vlastně jediným způsobem, jak ho můžeš chytit - a když se pokoušel prokousat se na svobodu, zuby vyskočily z tvé dlaně a narvaly se mu do čelisti. Morte vyje, protože Ingressiny zuby okamžitě vyrvaly jeho vlastní zuby a nacpaly se do vzniklých otvorů.{#morte_s141_}'
 
     menu:
-        '"Tak, Morte. Nebylo to zas tak zlý, co?"':
+        '"Tak, Morte. Nebylo to zas tak zlý, co?"{#morte_s141_r11982}':
             # a338 # r11982
             $ morteLogic.r11982_action()
             jump morte_s143
@@ -2284,10 +2284,10 @@ label morte_s141: # from 139.1 140.1
 
 # s142 # say11951
 label morte_s142: # from 149.0
-    nr 'Morte dál vyje. Zuby se usazují, vyrovnávají a zapouštějí kořeny s hrozivým vrtavým kvílením.'
+    nr 'Morte dál vyje. Zuby se usazují, vyrovnávají a zapouštějí kořeny s hrozivým vrtavým kvílením.{#morte_s142_}'
 
     menu:
-        '"Morte? Jsi okej?"':
+        '"Morte? Jsi okej?"{#morte_s142_r11983}':
             # a339 # r11983
             $ morteLogic.r11983_action()
             jump morte_s143
@@ -2295,137 +2295,137 @@ label morte_s142: # from 149.0
 
 # s143 # say11952
 label morte_s143: # from 141.0 142.0
-    nr 'Vypadá to, že tě Morte neslyší… vyje a vyje, pak náhle začal zuby bušit o sebe. Podařilo se mu vydat ze sebe tři mohutná, mocná kousnutí, než se horní a spodní zuby navzájem zablokovaly a zabránily mu v otvírání čelistí.'
+    nr 'Vypadá to, že tě Morte neslyší… vyje a vyje, pak náhle začal zuby bušit o sebe. Podařilo se mu vydat ze sebe tři mohutná, mocná kousnutí, než se horní a spodní zuby navzájem zablokovaly a zabránily mu v otvírání čelistí.{#morte_s143_}'
 
     menu:
-        '"Uau."':
+        '"Uau."{#morte_s143_r11984}':
             # a340 # r11984
             jump morte_s144
 
 
 # s144 # say11953
 label morte_s144: # from 143.0
-    nr 'Morte si pro sebe něco mumlá, oči má rozšířené.'
+    nr 'Morte si pro sebe něco mumlá, oči má rozšířené.{#morte_s144_}'
 
     menu:
-        '"Takže… líbí se ti?"' if morteLogic.r11985_condition():
+        '"Takže… líbí se ti?"{#morte_s144_r11985}' if morteLogic.r11985_condition():
             # a341 # r11985
             jump morte_s145
 
-        '"Morte, jsi okej?"' if morteLogic.r11986_condition():
+        '"Morte, jsi okej?"{#morte_s144_r11986}' if morteLogic.r11986_condition():
             # a342 # r11986
             jump morte_s150
 
 
 # s145 # say11954
 label morte_s145: # from 144.0
-    nr 'Zuby se náhle rozdělily a Morte se zhluboka nadechl. "Za tohle tě *zabiju," řekl. "Tohle od tebe bylo fakt hnusný."'
+    nr 'Zuby se náhle rozdělily a Morte se zhluboka nadechl. "Za tohle tě *zabiju," řekl. "Tohle od tebe bylo fakt hnusný."{#morte_s145_}'
 
     menu:
-        '"Jaké jsou?"':
+        '"Jaké jsou?"{#morte_s145_r11987}':
             # a343 # r11987
             jump morte_s146
 
 
 # s146 # say11955
 label morte_s146: # from 145.0 150.0
-    nr 'Morte zkušebně pohybuje čelistí. "Divný. Ale ne zlý." Náhle se zuby prodloužily do dlouhých ostrých tesáků. "Ooooh! Změnily se.!" Smrskly se na normální velikost, pak opět na tesáky, nakonec zase zpět. "Myslím, že se mi docela líbí."'
+    nr 'Morte zkušebně pohybuje čelistí. "Divný. Ale ne zlý." Náhle se zuby prodloužily do dlouhých ostrých tesáků. "Ooooh! Změnily se.!" Smrskly se na normální velikost, pak opět na tesáky, nakonec zase zpět. "Myslím, že se mi docela líbí."{#morte_s146_}'
 
     menu:
-        '"Promiň, Morte. Nechtěl jsem ti nijak ublížit."' if morteLogic.r11988_condition():
+        '"Promiň, Morte. Nechtěl jsem ti nijak ublížit."{#morte_s146_r11988}' if morteLogic.r11988_condition():
             # a344 # r11988
             jump morte_s147
 
-        '"Vidíš? Neměl jsem pravdu?"' if morteLogic.r11989_condition():
+        '"Vidíš? Neměl jsem pravdu?"{#morte_s146_r11989}' if morteLogic.r11989_condition():
             # a345 # r11989
             jump morte_s147
 
 
 # s147 # say11956
 label morte_s147: # from 146.0 146.1
-    nr '"Oh,ale stejně tě za to dostanu." Odpověděl Morte, vyceněné zuby se opět prodloužily na tesáky. "Jen si počkej."'
+    nr '"Oh,ale stejně tě za to dostanu." Odpověděl Morte, vyceněné zuby se opět prodloužily na tesáky. "Jen si počkej."{#morte_s147_}'
 
     menu:
-        '"Uh… pomsta nikdy nikomu nepomohla, Morte… uh, pojďme."' if morteLogic.r11990_condition():
+        '"Uh… pomsta nikdy nikomu nepomohla, Morte… uh, pojďme."{#morte_s147_r11990}' if morteLogic.r11990_condition():
             # a346 # r11990
             jump morte_dispose
 
-        '"Však mi později poděkuješ. Uvidíš."' if morteLogic.r11991_condition():
+        '"Však mi později poděkuješ. Uvidíš."{#morte_s147_r11991}' if morteLogic.r11991_condition():
             # a347 # r11991
             jump morte_dispose
 
 
 # s148 # say11957
 label morte_s148: # -
-    nr '"Co je špatně?" Morte připlul blíž a podíval se na tvou dlaň. "Hej… vypadá to, jako by se na něco chystaly, že jo?"'
+    nr '"Co je špatně?" Morte připlul blíž a podíval se na tvou dlaň. "Hej… vypadá to, jako by se na něco chystaly, že jo?"{#morte_s148_}'
 
     menu:
-        '"To jo, viď ---"':
+        '"To jo, viď ---"{#morte_s148_r11992}':
             # a348 # r11992
             jump morte_s149
 
 
 # s149 # say11958
 label morte_s149: # from 148.0
-    nr 'Co se stalo poté, to se dá jenom těžce popsat… a že to byl bolestný pocit. Rychle, nedávajíce ti šanci sevřít je v ruce, zuby vyskočily z tvé dlaně a narvaly se Mortemu do čelisti. Morte vyje, protože Ingressiny zuby okamžitě vyrvaly jeho vlastní chrup a nacpaly se do vzniklých otvorů.'
+    nr 'Co se stalo poté, to se dá jenom těžce popsat… a že to byl bolestný pocit. Rychle, nedávajíce ti šanci sevřít je v ruce, zuby vyskočily z tvé dlaně a narvaly se Mortemu do čelisti. Morte vyje, protože Ingressiny zuby okamžitě vyrvaly jeho vlastní chrup a nacpaly se do vzniklých otvorů.{#morte_s149_}'
 
     menu:
-        '"Morte!"':
+        '"Morte!"{#morte_s149_r11993}':
             # a349 # r11993
             jump morte_s142
 
 
 # s150 # say11959
 label morte_s150: # from 144.1
-    nr 'Zuby se náhle rozevřely a Morte se zhluboka nadechl. "Za tohle tě *zabiju*! Ty jsi to plánoval! Já to věděl, že na mě něco chystáš!"'
+    nr 'Zuby se náhle rozevřely a Morte se zhluboka nadechl. "Za tohle tě *zabiju*! Ty jsi to plánoval! Já to věděl, že na mě něco chystáš!"{#morte_s150_}'
 
     menu:
-        '"Hele, nechtěl jsem, ať se to stane… dokonce jsem tě varoval. Uh… jaké jsou?"':
+        '"Hele, nechtěl jsem, ať se to stane… dokonce jsem tě varoval. Uh… jaké jsou?"{#morte_s150_r11994}':
             # a350 # r11994
             jump morte_s146
 
 
 # s151 # say12389
 label morte_s151: # -
-    nr 'Morte ti zašeptal: "Šéfe, tohle se mi nelíbí. Neměli by tady být. Válka Krve určitě neprobíhá tak, že by nějaký fiend mohl jít na dovolenou. Něco *chcou*. Dej si majzla." Mezitím Tegar„in odpovídá dál svému společníkovi…'
+    nr 'Morte ti zašeptal: "Šéfe, tohle se mi nelíbí. Neměli by tady být. Válka Krve určitě neprobíhá tak, že by nějaký fiend mohl jít na dovolenou. Něco *chcou*. Dej si majzla." Mezitím Tegar„in odpovídá dál svému společníkovi…{#morte_s151_}'
 
     jump tegarin_s12  # EXTERN
 
 
 # s152 # say12449
 label morte_s152: # -
-    nr '"Šéfe, jsem si jistej, že ti dva volové něco chystaj. Mám pocit, že dezertovali a teď hledají něco, co by jim pomohlo v Baatoru povýšit. Nemluv s nima, šéfe… nevíš, jakou hru to hrajou, a mohl by ses spálit… doslova."'
+    nr '"Šéfe, jsem si jistej, že ti dva volové něco chystaj. Mám pocit, že dezertovali a teď hledají něco, co by jim pomohlo v Baatoru povýšit. Nemluv s nima, šéfe… nevíš, jakou hru to hrajou, a mohl by ses spálit… doslova."{#morte_s152_}'
 
     menu:
-        '"Dobrá, Morte. Mám pro ty dva už jenom pár otázek…"':
+        '"Dobrá, Morte. Mám pro ty dva už jenom pár otázek…"{#morte_s152_r12450}':
             # a351 # r12450
             jump aethel_s11  # EXTERN
 
-        '"Dobrá, Morte. Skončil jsem s nimi."':
+        '"Dobrá, Morte. Skončil jsem s nimi."{#morte_s152_r12451}':
             # a352 # r12451
             jump morte_dispose
 
 
 # s153 # say12466
 label morte_s153: # -
-    nr 'Morte připlul blíž a zašeptal ti do ucha: "*Má* pravdu, šéfe… nechápu, co tě tak vytočilo."'
+    nr 'Morte připlul blíž a zašeptal ti do ucha: "*Má* pravdu, šéfe… nechápu, co tě tak vytočilo."{#morte_s153_}'
 
     menu:
-        '"Velmi dobře… jenom jsem se chtěl na něco zeptat…"':
+        '"Velmi dobře… jenom jsem se chtěl na něco zeptat…"{#morte_s153_r12553}':
             # a353 # r12553
             jump baria_s4  # EXTERN
 
-        '"Sklapni, ty ukňučená lebko! A ty, kozí-hlavo: Chcípni…"':
+        '"Sklapni, ty ukňučená lebko! A ty, kozí-hlavo: Chcípni…"{#morte_s153_r12554}':
             # a354 # r12554
             $ morteLogic.r12554_action()
             jump morte_dispose
 
-        '"Och, ne… to jsi byl *ty*, a budeš toho litovat…"':
+        '"Och, ne… to jsi byl *ty*, a budeš toho litovat…"{#morte_s153_r12555}':
             # a355 # r12555
             $ morteLogic.r12555_action()
             jump morte_dispose
 
-        '"Pak na to zapomeň. Sbohem."':
+        '"Pak na to zapomeň. Sbohem."{#morte_s153_r12556}':
             # a356 # r12556
             $ morteLogic.r12556_action()
             jump morte_dispose
@@ -2433,60 +2433,60 @@ label morte_s153: # -
 
 # s154 # say12467
 label morte_s154: # -
-    nr '"Jo, jo! Dobrý!"'
+    nr '"Jo, jo! Dobrý!"{#morte_s154_}'
 
     jump baria_s20  # EXTERN
 
 
 # s155 # say12621
 label morte_s155: # -
-    nr 'Morte vypadá vyveden z konceptu, jak se na něho upřely všechny oči. "Co? Cože?" Máš pocit, že kdyby měl rty, nevinně by si pískal.'
+    nr 'Morte vypadá vyveden z konceptu, jak se na něho upřely všechny oči. "Co? Cože?" Máš pocit, že kdyby měl rty, nevinně by si pískal.{#morte_s155_}'
 
     menu:
-        '"Máš nějaké vysvětlení, Morte?"':
+        '"Máš nějaké vysvětlení, Morte?"{#morte_s155_r12854}':
             # a357 # r12854
             jump morte_s156
 
-        '"Co je „mimir?“"' if morteLogic.r12855_condition():
+        '"Co je „mimir?“"{#morte_s155_r12855}' if morteLogic.r12855_condition():
             # a358 # r12855
             $ morteLogic.r12855_action()
             jump morte_s157
 
-        '"Nestarej se o něj… mohl bys mi odpovědět?"':
+        '"Nestarej se o něj… mohl bys mi odpovědět?"{#morte_s155_r12856}':
             # a359 # r12856
             jump creed_s30  # EXTERN
 
 
 # s156 # say12622
 label morte_s156: # from 155.0
-    nr '"Dobrá. Hele, ještě si poslechnem toho chlapika, jo?" Morte se otočil a upírá na krysaře tvrdý pohled.'
+    nr '"Dobrá. Hele, ještě si poslechnem toho chlapika, jo?" Morte se otočil a upírá na krysaře tvrdý pohled.{#morte_s156_}'
 
     menu:
-        '"Ne… pojďme si poslechnout, co nám vyklopíš, Morte."':
+        '"Ne… pojďme si poslechnout, co nám vyklopíš, Morte."{#morte_s156_r12857}':
             # a360 # r12857
             jump morte_s158
 
-        '"Na minutku… co je „mimir?“"' if morteLogic.r12858_condition():
+        '"Na minutku… co je „mimir?“"{#morte_s156_r12858}' if morteLogic.r12858_condition():
             # a361 # r12858
             $ morteLogic.r12858_action()
             jump morte_s157
 
-        'Otoč se zpět na krysaře.':
+        'Otoč se zpět na krysaře.{#morte_s156_r12859}':
             # a362 # r12859
             jump creed_s32  # EXTERN
 
 
 # s157 # say12623
 label morte_s157: # from 155.1 156.1
-    nr 'Morte koulí očima, jakoby rozpačitě. "To je… mluvící encyklopedie. Nic, na co bych byl pyšný. Hele, ještě si poslechnem toho chlapika, jo?"'
+    nr 'Morte koulí očima, jakoby rozpačitě. "To je… mluvící encyklopedie. Nic, na co bych byl pyšný. Hele, ještě si poslechnem toho chlapika, jo?"{#morte_s157_}'
 
     menu:
-        '"Velmi dobře."':
+        '"Velmi dobře."{#morte_s157_r12860}':
             # a363 # r12860
             $ morteLogic.r12860_action()
             jump creed_s32  # EXTERN
 
-        '"Ne, už jsem slyšel dost. Sbohem, krysaři."':
+        '"Ne, už jsem slyšel dost. Sbohem, krysaři."{#morte_s157_r12861}':
             # a364 # r12861
             $ morteLogic.r12861_action()
             jump creed_s59  # EXTERN
@@ -2494,77 +2494,77 @@ label morte_s157: # from 155.1 156.1
 
 # s158 # say12624
 label morte_s158: # from 156.0
-    nr '"Oh,  ve svý podstatě šéfe… proč bych ti pomáhal? Už jsem ti řek všechno užitečný, co *Já* vím. Ať se ten hlupák stará o svoje malichernosti."'
+    nr '"Oh,  ve svý podstatě šéfe… proč bych ti pomáhal? Už jsem ti řek všechno užitečný, co *Já* vím. Ať se ten hlupák stará o svoje malichernosti."{#morte_s158_}'
 
     menu:
-        '"Velmi dobře."':
+        '"Velmi dobře."{#morte_s158_r12862}':
             # a365 # r12862
             jump creed_s32  # EXTERN
 
-        '"Nevadí. Pojďme… sbohem, krysaři."':
+        '"Nevadí. Pojďme… sbohem, krysaři."{#morte_s158_r12863}':
             # a366 # r12863
             jump creed_s59  # EXTERN
 
 
 # s159 # say12625
 label morte_s159: # -
-    nr '"Ano šéfe! To je postoj!"'
+    nr '"Ano šéfe! To je postoj!"{#morte_s159_}'
 
     jump creed_s40  # EXTERN
 
 
 # s160 # say12626
 label morte_s160: # -
-    nr '"Mrtvý, šéfe… mrtvý."'
+    nr '"Mrtvý, šéfe… mrtvý."{#morte_s160_}'
 
     menu:
-        '"Na krysaře vypadáš celkem přátelsky…"':
+        '"Na krysaře vypadáš celkem přátelsky…"{#morte_s160_r12864}':
             # a367 # r12864
             jump creed_s49  # EXTERN
 
-        '"Rozumím. Jiná otázka…"':
+        '"Rozumím. Jiná otázka…"{#morte_s160_r12865}':
             # a368 # r12865
             jump creed_s15  # EXTERN
 
-        '"Díky za informace. Sbohem."':
+        '"Díky za informace. Sbohem."{#morte_s160_r12866}':
             # a369 # r12866
             jump creed_s59  # EXTERN
 
 
 # s161 # say12627
 label morte_s161: # -
-    nr '"Umřít, šéfe… umřít."'
+    nr '"Umřít, šéfe… umřít."{#morte_s161_}'
 
     menu:
-        '"Ah… Co jsi to říkal o lidech platících za mrtvé krysy?"':
+        '"Ah… Co jsi to říkal o lidech platících za mrtvé krysy?"{#morte_s161_r12867}':
             # a370 # r12867
             jump creed_s18  # EXTERN
 
-        '"Aha. Mám otázku o něčem jiném…"':
+        '"Aha. Mám otázku o něčem jiném…"{#morte_s161_r12868}':
             # a371 # r12868
             jump creed_s15  # EXTERN
 
-        '"Rozumím. Sbohem."':
+        '"Rozumím. Sbohem."{#morte_s161_r12869}':
             # a372 # r12869
             jump creed_s59  # EXTERN
 
 
 # s162 # say13748
 label morte_s162: # -
-    nr '"Nuže, je to strom s příliš mnoha prasklejma větvema." Morte koulí očima. "Rozhovor s Chaotiky nemá žádný smysl, šéfíku. Je to banda pitomců."'
+    nr '"Nuže, je to strom s příliš mnoha prasklejma větvema." Morte koulí očima. "Rozhovor s Chaotiky nemá žádný smysl, šéfíku. Je to banda pitomců."{#morte_s162_}'
 
     menu:
-        '"Chaotici?"' if morteLogic.r13774_condition():
+        '"Chaotici?"{#morte_s162_r13774}' if morteLogic.r13774_condition():
             # a373 # r13774
             $ morteLogic.r13774_action()
             jump morte_s163
 
-        '"Ještě jednou, kdo že jsou Chaotici?"' if morteLogic.r13775_condition():
+        '"Ještě jednou, kdo že jsou Chaotici?"{#morte_s162_r13775}' if morteLogic.r13775_condition():
             # a374 # r13775
             $ morteLogic.r13775_action()
             jump morte_s163
 
-        '"Stejně si myslím, že bych se od něj mohl něco dozvědět. No nic, pojďme."' if morteLogic.r13776_condition():
+        '"Stejně si myslím, že bych se od něj mohl něco dozvědět. No nic, pojďme."{#morte_s162_r13776}' if morteLogic.r13776_condition():
             # a375 # r13776
             $ morteLogic.r13776_action()
             jump morte_dispose
@@ -2572,44 +2572,44 @@ label morte_s162: # -
 
 # s163 # say13749
 label morte_s163: # from 162.0 162.1
-    nr '"Jsou společenství, co nemají žádná pravidla… krom toho, aby jim žádná myšlenka příliš dlouho netrápila hlavu. Někdy se jim říká „Chaotici“. Není třeba vysvětlovat proč."'
+    nr '"Jsou společenství, co nemají žádná pravidla… krom toho, aby jim žádná myšlenka příliš dlouho netrápila hlavu. Někdy se jim říká „Chaotici“. Není třeba vysvětlovat proč."{#morte_s163_}'
 
     menu:
-        '"Jak nabírají členy?"':
+        '"Jak nabírají členy?"{#morte_s163_r13777}':
             # a376 # r13777
             jump morte_s164
 
-        '"Aha. Pojďme."':
+        '"Aha. Pojďme."{#morte_s163_r13778}':
             # a377 # r13778
             jump morte_dispose
 
 
 # s164 # say13750
 label morte_s164: # from 163.0
-    nr '"Zdá se, že prostě vábí členy jako mouchy… tedy, členy dostatečně bláznivé a zmatené, předpokládám. Nemyslím, že by měli nějaké náběrčí… ačkoliv o nich se vlastně nic jistého říct nedá."'
+    nr '"Zdá se, že prostě vábí členy jako mouchy… tedy, členy dostatečně bláznivé a zmatené, předpokládám. Nemyslím, že by měli nějaké náběrčí… ačkoliv o nich se vlastně nic jistého říct nedá."{#morte_s164_}'
 
     menu:
-        '"Aha. Díky za informaci."':
+        '"Aha. Díky za informaci."{#morte_s164_r13779}':
             # a378 # r13779
             jump morte_dispose
 
 
 # s165 # say13828
 label morte_s165: # -
-    nr '"No, je to strom s příliš mnoha prasklými větvemi." Morte koulí očima. "Rozhovor s Chaotiky nemá žádný smysl, šéfíku. Je to přitroublá banda."'
+    nr '"No, je to strom s příliš mnoha prasklými větvemi." Morte koulí očima. "Rozhovor s Chaotiky nemá žádný smysl, šéfíku. Je to přitroublá banda."{#morte_s165_}'
 
     menu:
-        '"Xaositectové?"' if morteLogic.r13986_condition():
+        '"Xaositectové?"{#morte_s165_r13986}' if morteLogic.r13986_condition():
             # a379 # r13986
             $ morteLogic.r13986_action()
             jump morte_s166
 
-        '"Ještě jednou, kdo že jsou Xaositectové?"' if morteLogic.r13987_condition():
+        '"Ještě jednou, kdo že jsou Xaositectové?"{#morte_s165_r13987}' if morteLogic.r13987_condition():
             # a380 # r13987
             $ morteLogic.r13987_action()
             jump morte_s166
 
-        '"Stejně si myslím, že bych se od něj mohl něco dozvědět. No nic, pojďme."' if morteLogic.r13988_condition():
+        '"Stejně si myslím, že bych se od něj mohl něco dozvědět. No nic, pojďme."{#morte_s165_r13988}' if morteLogic.r13988_condition():
             # a381 # r13988
             $ morteLogic.r13988_action()
             jump morte_dispose
@@ -2617,131 +2617,131 @@ label morte_s165: # -
 
 # s166 # say13829
 label morte_s166: # from 165.0 165.1
-    nr '"Jsou společenství, co nemá žádná pravidla… krom toho, aby jim žádná myšlenka příliš dlouho netrápila hlavu. Někdy se jim říká „Chaotici“. Není třeba vysvětlovat proč."'
+    nr '"Jsou společenství, co nemá žádná pravidla… krom toho, aby jim žádná myšlenka příliš dlouho netrápila hlavu. Někdy se jim říká „Chaotici“. Není třeba vysvětlovat proč."{#morte_s166_}'
 
     menu:
-        '"Jak nabírají členy?"' if morteLogic.r13989_condition():
+        '"Jak nabírají členy?"{#morte_s166_r13989}' if morteLogic.r13989_condition():
             # a382 # r13989
             jump morte_s167
 
-        '"Aha. Tak teda pojďme."':
+        '"Aha. Tak teda pojďme."{#morte_s166_r13990}':
             # a383 # r13990
             jump morte_dispose
 
 
 # s167 # say13830
 label morte_s167: # from 166.0
-    nr '"Zdá se, že prostě vábí členy jako mouchy… tedy, členy dostatečně bláznivé a zmatené, předpokládám. Nemyslím, že by měli nějaké náboráře… ačkoliv o nich se vlastně nic jistého říct nedá."'
+    nr '"Zdá se, že prostě vábí členy jako mouchy… tedy, členy dostatečně bláznivé a zmatené, předpokládám. Nemyslím, že by měli nějaké náboráře… ačkoliv o nich se vlastně nic jistého říct nedá."{#morte_s167_}'
 
     menu:
-        '"Aha. Díky za informaci."':
+        '"Aha. Díky za informaci."{#morte_s167_r13991}':
             # a384 # r13991
             jump morte_dispose
 
 
 # s168 # say14075
 label morte_s168: # -
-    nr '"Tak teda fajn…" Zasyčel na tebe Morte. "Pojďme, šéfe. Tento Spalovač by mohl sloužit jako hnojivo."'
+    nr '"Tak teda fajn…" Zasyčel na tebe Morte. "Pojďme, šéfe. Tento Spalovač by mohl sloužit jako hnojivo."{#morte_s168_}'
 
     menu:
-        '"Dobře. Vypadněme odsud."' if morteLogic.r14275_condition():
+        '"Dobře. Vypadněme odsud."{#morte_s168_r14275}' if morteLogic.r14275_condition():
             # a385 # r14275
             jump await_s6  # EXTERN
 
-        '"Dobře. Vypadněme odsud."' if morteLogic.r14276_condition():
+        '"Dobře. Vypadněme odsud."{#morte_s168_r14276}' if morteLogic.r14276_condition():
             # a386 # r14276
             jump await_s6  # EXTERN
 
-        '"Dobře. Vypadněme odsud."' if morteLogic.r14277_condition():
+        '"Dobře. Vypadněme odsud."{#morte_s168_r14277}' if morteLogic.r14277_condition():
             # a387 # r14277
             jump await_s6  # EXTERN
 
-        '"Dobře. Vypadněme odsud."' if morteLogic.r14278_condition():
+        '"Dobře. Vypadněme odsud."{#morte_s168_r14278}' if morteLogic.r14278_condition():
             # a388 # r14278
             jump await_s15  # EXTERN
 
 
 # s169 # say15339
 label morte_s169: # -
-    nr '"Roztrhni ho na dva kousky, šéfe. Ukaž mu, jak se to dělá!"'
+    nr '"Roztrhni ho na dva kousky, šéfe. Ukaž mu, jak se to dělá!"{#morte_s169_}'
 
     jump adyzoel_s19  # EXTERN
 
 
 # s170 # say15340
 label morte_s170: # -
-    nr '"Jo, odpověz na otázky!"'
+    nr '"Jo, odpověz na otázky!"{#morte_s170_}'
 
     jump adyzoel_s13  # EXTERN
 
 
 # s171 # say15341
 label morte_s171: # -
-    nr '"Vsadím deset měděnejch na toho velkýho zjizvenýho!" Morte přilétne k tobě a zašeptá: To jsi jako ty, šéfe. Nepotop nás."'
+    nr '"Vsadím deset měděnejch na toho velkýho zjizvenýho!" Morte přilétne k tobě a zašeptá: To jsi jako ty, šéfe. Nepotop nás."{#morte_s171_}'
 
     jump adyzoel_s20  # EXTERN
 
 
 # s172 # say15342
 label morte_s172: # -
-    nr '"Dobře, šéfíku: Dej mu! Zkus na něj nějaký finty!"'
+    nr '"Dobře, šéfíku: Dej mu! Zkus na něj nějaký finty!"{#morte_s172_}'
 
     jump adyzoel_s19  # EXTERN
 
 
 # s173 # say15343
 label morte_s173: # -
-    nr '"To je pravda ty nafoukanej, navoněnej, cukroprdelatej elitisto… slyšels ho!"'
+    nr '"To je pravda ty nafoukanej, navoněnej, cukroprdelatej elitisto… slyšels ho!"{#morte_s173_}'
 
     jump adyzoel_s32  # EXTERN
 
 
 # s174 # say15344
 label morte_s174: # -
-    nr '"Kdo že *jsem*? Mohl jsem být tvůj otec, ale ta opice mě předběhla na schodech!"'
+    nr '"Kdo že *jsem*? Mohl jsem být tvůj otec, ale ta opice mě předběhla na schodech!"{#morte_s174_}'
 
     menu:
-        '"Morte, buď už zticha."':
+        '"Morte, buď už zticha."{#morte_s174_r15490}':
             # a389 # r15490
             jump morte_s175
 
-        'Nechej Morteho pokračovat.':
+        'Nechej Morteho pokračovat.{#morte_s174_r15491}':
             # a390 # r15491
             jump morte_s175
 
 
 # s175 # say15345
 label morte_s175: # from 174.0 174.1
-    nr '"Copak princezno? Ztráta slov? Rač si zvednout spadlou čelist, než ti něco vlítne do krku! Jo, jo, slyšelas dobře! Sbal si svý zdobený podprsenky a běž se schovat pod maminčinu sukni, kam patříš! A vyřiď jí že ji pozdravu."'
+    nr '"Copak princezno? Ztráta slov? Rač si zvednout spadlou čelist, než ti něco vlítne do krku! Jo, jo, slyšelas dobře! Sbal si svý zdobený podprsenky a běž se schovat pod maminčinu sukni, kam patříš! A vyřiď jí že ji pozdravu."{#morte_s175_}'
 
     menu:
-        '"Morte! ztichni už"':
+        '"Morte! ztichni už"{#morte_s175_r15492}':
             # a391 # r15492
             $ morteLogic.r15492_action()
             jump morte_s176
 
-        'Nechej Morteho pokračovat.':
+        'Nechej Morteho pokračovat.{#morte_s175_r15493}':
             # a392 # r15493
             jump morte_s177
 
 
 # s176 # say15346
 label morte_s176: # from 175.0
-    nr '"Co? Ó… promiň, šéfíku. Tenhle druh chlápka mě nebere…"'
+    nr '"Co? Ó… promiň, šéfíku. Tenhle druh chlápka mě nebere…"{#morte_s176_}'
 
     jump adyzoel_s33  # EXTERN
 
 
 # s177 # say15347
 label morte_s177: # from 175.1
-    nr '"Proč, jestli jsem neznal nic lepšího, řekl bych-"'
+    nr '"Proč, jestli jsem neznal nic lepšího, řekl bych-"{#morte_s177_}'
 
     jump adyzoel_s33  # EXTERN
 
 
 # s178 # say15348
 label morte_s178: # -
-    nr '"Co? Já jsem jenom mimir, šéfíku! Neumím se bít!„"'
+    nr '"Co? Já jsem jenom mimir, šéfíku! Neumím se bít!„"{#morte_s178_}'
 
     $ morteLogic.s178_action()
     jump adyzoel_s35  # EXTERN
@@ -2749,27 +2749,27 @@ label morte_s178: # -
 
 # s179 # say15349
 label morte_s179: # -
-    nr '"To je, uuh… druh mluvící encyklopedie. Nerad o tom mluvím; je to trapné, skutečně."'
+    nr '"To je, uuh… druh mluvící encyklopedie. Nerad o tom mluvím; je to trapné, skutečně."{#morte_s179_}'
 
     if morteLogic.s179_condition():
         $ morteLogic.s179_action()
         jump adyzoel_s36  # EXTERN
     menu:
-        '"Ale ty NEJSI mimir, Morte…"' if morteLogic.r65537_condition():
+        '"Ale ty NEJSI mimir, Morte…"{#morte_s179_r65537}' if morteLogic.r65537_condition():
             # a393 # r65537
             jump adyzoel_s36  # EXTERN
 
 
 # s180 # say15350
 label morte_s180: # -
-    nr '"Hele, šéfíku… Ty ho necháš jen tak odejít? Pojď mu nakopat prdel! Půjdu mu po očích, zatímco ty po něm vyjedeš!"'
+    nr '"Hele, šéfíku… Ty ho necháš jen tak odejít? Pojď mu nakopat prdel! Půjdu mu po očích, zatímco ty po něm vyjedeš!"{#morte_s180_}'
 
     menu:
-        '"Máš pravdu… jdeme na něj."':
+        '"Máš pravdu… jdeme na něj."{#morte_s180_r15494}':
             # a394 # r15494
             jump adyzoel_s19  # EXTERN
 
-        '"Už je čas, Morte. Jdeme."':
+        '"Už je čas, Morte. Jdeme."{#morte_s180_r15495}':
             # a395 # r15495
             $ morteLogic.r15495_action()
             jump morte_dispose
@@ -2777,205 +2777,205 @@ label morte_s180: # -
 
 # s181 # say16613
 label morte_s181: # from 185.0
-    nr '"He? Hm, jistě, náčelníku, samo -- jak poroučíš."'
+    nr '"He? Hm, jistě, náčelníku, samo -- jak poroučíš."{#morte_s181_}'
 
     menu:
-        '"Díky. Ale ještě něco mi leží na mysli, Truchlící…"' if morteLogic.r16881_condition():
+        '"Díky. Ale ještě něco mi leží na mysli, Truchlící…"{#morte_s181_r16881}' if morteLogic.r16881_condition():
             # a396 # r16881
             jump mftree_s28  # EXTERN
 
-        '"Morte, já to myslím vážně. Tak mohl bys vyvinout nějakou snahu?"' if morteLogic.r16882_condition():
+        '"Morte, já to myslím vážně. Tak mohl bys vyvinout nějakou snahu?"{#morte_s181_r16882}' if morteLogic.r16882_condition():
             # a397 # r16882
             $ morteLogic.r16882_action()
             jump morte_s182
 
-        '"Díky Morte. Sbohem, Truchlící za Stromy."':
+        '"Díky Morte. Sbohem, Truchlící za Stromy."{#morte_s181_r16883}':
             # a398 # r16883
             jump morte_dispose
 
 
 # s182 # say16614
 label morte_s182: # from 181.1
-    nr 'Morte na tebe chvíli v tichosti hledí a pak přitaká. "Jistě, můžu. Je-li to pro tebe důležité, udělám to."'
+    nr 'Morte na tebe chvíli v tichosti hledí a pak přitaká. "Jistě, můžu. Je-li to pro tebe důležité, udělám to."{#morte_s182_}'
 
     menu:
-        '"Díky. Annah? Mohla bys?"' if morteLogic.r16884_condition():
+        '"Díky. Annah? Mohla bys?"{#morte_s182_r16884}' if morteLogic.r16884_condition():
             # a399 # r16884
             $ morteLogic.r16884_action()
             jump annah_s99  # EXTERN
 
-        '"Díky. Ignusi?"' if morteLogic.r16885_condition():
+        '"Díky. Ignusi?"{#morte_s182_r16885}' if morteLogic.r16885_condition():
             # a400 # r16885
             $ morteLogic.r16885_action()
             jump ignus_s11  # EXTERN
 
-        '"Díky. Grace, zvážila bys to?"' if morteLogic.r16886_condition():
+        '"Díky. Grace, zvážila bys to?"{#morte_s182_r16886}' if morteLogic.r16886_condition():
             # a401 # r16886
             $ morteLogic.r16886_action()
             jump grace_s14  # EXTERN
 
-        '"Díky. Dak„kone, mohl bys pomoci tomuto muži?"' if morteLogic.r16887_condition():
+        '"Díky. Dak„kone, mohl bys pomoci tomuto muži?"{#morte_s182_r16887}' if morteLogic.r16887_condition():
             # a402 # r16887
             $ morteLogic.r16887_action()
             jump dakkon_s74  # EXTERN
 
-        '"Díky. Dak„kone, pomož tomuto muži."' if morteLogic.r16888_condition():
+        '"Díky. Dak„kone, pomož tomuto muži."{#morte_s182_r16888}' if morteLogic.r16888_condition():
             # a403 # r16888
             $ morteLogic.r16888_action()
             jump dakkon_s75  # EXTERN
 
-        '"Díky. Nordome, myslíš, že bys mohl pomoci tomuto muži?"' if morteLogic.r16889_condition():
+        '"Díky. Nordome, myslíš, že bys mohl pomoci tomuto muži?"{#morte_s182_r16889}' if morteLogic.r16889_condition():
             # a404 # r16889
             $ morteLogic.r16889_action()
             jump nordom_s1  # EXTERN
 
-        '"Díky. Vhailore, zvládl bys pomoci?"' if morteLogic.r16890_condition():
+        '"Díky. Vhailore, zvládl bys pomoci?"{#morte_s182_r16890}' if morteLogic.r16890_condition():
             # a405 # r16890
             $ morteLogic.r16890_action()
             jump vhail_s1  # EXTERN
 
-        '"Díky. Ale ještě něco mi leží na mysli, Truchlící…"':
+        '"Díky. Ale ještě něco mi leží na mysli, Truchlící…"{#morte_s182_r16891}':
             # a406 # r16891
             jump mftree_s28  # EXTERN
 
-        '"Díky Morte. Sbohem, Truchlící za Stromy."':
+        '"Díky Morte. Sbohem, Truchlící za Stromy."{#morte_s182_r16892}':
             # a407 # r16892
             jump morte_dispose
 
 
 # s183 # say16615
 label morte_s183: # -
-    nr '"Víš, já *fakt* nevidím, že by to někam vedlo. Já si myslím - co tě nepálí, nehas. Stejnak tahle sorta lidí bude po špičkách obcházet na zahradě květák a v žádném případě nezahubí mola nebo červotoče - jsou to přece živé bytosti!"'
+    nr '"Víš, já *fakt* nevidím, že by to někam vedlo. Já si myslím - co tě nepálí, nehas. Stejnak tahle sorta lidí bude po špičkách obcházet na zahradě květák a v žádném případě nezahubí mola nebo červotoče - jsou to přece živé bytosti!"{#morte_s183_}'
 
     jump nordom_s2  # EXTERN
 
 
 # s184 # say16616
 label morte_s184: # -
-    nr '"No, kluku a je to tady. Nemůžu *uveřit* tomu, že se hodláš babrat s takovým nesmyslem!"'
+    nr '"No, kluku a je to tady. Nemůžu *uveřit* tomu, že se hodláš babrat s takovým nesmyslem!"{#morte_s184_}'
 
     jump nordom_s3  # EXTERN
 
 
 # s185 # say16617
 label morte_s185: # -
-    nr '"Víš, šéfíku, nejsem včerejší, už jsem leccos zažil… ale fakt, že to bylo *možné* mi moc klidné spaní nepřinese.'
+    nr '"Víš, šéfíku, nejsem včerejší, už jsem leccos zažil… ale fakt, že to bylo *možné* mi moc klidné spaní nepřinese.{#morte_s185_}'
 
     menu:
-        '"Děkuji ti, Nordome. Morte, jaký je tvůj názor?"' if morteLogic.r16893_condition():
+        '"Děkuji ti, Nordome. Morte, jaký je tvůj názor?"{#morte_s185_r16893}' if morteLogic.r16893_condition():
             # a408 # r16893
             $ morteLogic.r16893_action()
             jump morte_s181
 
-        '"Děkuji ti, Nordome. Annah, můžeš?"' if morteLogic.r16894_condition():
+        '"Děkuji ti, Nordome. Annah, můžeš?"{#morte_s185_r16894}' if morteLogic.r16894_condition():
             # a409 # r16894
             $ morteLogic.r16894_action()
             jump annah_s99  # EXTERN
 
-        '"Děkuji ti, Nordome. Ignusi?"' if morteLogic.r16895_condition():
+        '"Děkuji ti, Nordome. Ignusi?"{#morte_s185_r16895}' if morteLogic.r16895_condition():
             # a410 # r16895
             $ morteLogic.r16895_action()
             jump ignus_s11  # EXTERN
 
-        '"Děkuji ti, Nordome. Grace, mohla bys to zvážit?"' if morteLogic.r16896_condition():
+        '"Děkuji ti, Nordome. Grace, mohla bys to zvážit?"{#morte_s185_r16896}' if morteLogic.r16896_condition():
             # a411 # r16896
             $ morteLogic.r16896_action()
             jump grace_s14  # EXTERN
 
-        '"Děkuji ti, Nordome. Dak„kone, dokázal bys pomoci tomuto muži?"' if morteLogic.r16897_condition():
+        '"Děkuji ti, Nordome. Dak„kone, dokázal bys pomoci tomuto muži?"{#morte_s185_r16897}' if morteLogic.r16897_condition():
             # a412 # r16897
             $ morteLogic.r16897_action()
             jump dakkon_s74  # EXTERN
 
-        '"Děkuji ti, Nordome. Dak„kone: pomož tomuto muži."' if morteLogic.r16898_condition():
+        '"Děkuji ti, Nordome. Dak„kone: pomož tomuto muži."{#morte_s185_r16898}' if morteLogic.r16898_condition():
             # a413 # r16898
             $ morteLogic.r16898_action()
             jump dakkon_s75  # EXTERN
 
-        '"Děkuji ti, Nordome. Vhailore, mohl bys pomoci?"' if morteLogic.r16899_condition():
+        '"Děkuji ti, Nordome. Vhailore, mohl bys pomoci?"{#morte_s185_r16899}' if morteLogic.r16899_condition():
             # a414 # r16899
             $ morteLogic.r16899_action()
             jump vhail_s1  # EXTERN
 
-        '"Děkuji ti, Nordome. Ještě bych se na něco přeptal, Truchlící…"':
+        '"Děkuji ti, Nordome. Ještě bych se na něco přeptal, Truchlící…"{#morte_s185_r16900}':
             # a415 # r16900
             jump mftree_s28  # EXTERN
 
-        '"Jsem ti vděčný, Nordome. Sbohem, Truchlící za Stromy."':
+        '"Jsem ti vděčný, Nordome. Sbohem, Truchlící za Stromy."{#morte_s185_r16901}':
             # a416 # r16901
             jump morte_dispose
 
 
 # s186 # say16618
 label morte_s186: # -
-    nr '"Sakra! Na to se nemůžu dívat!"'
+    nr '"Sakra! Na to se nemůžu dívat!"{#morte_s186_}'
 
     jump ignus_s13  # EXTERN
 
 
 # s187 # say17533
 label morte_s187: # -
-    nr '"Proč ne, šéfe? Až se budem nudit, můžem do nich kopat, ne? Hmm… No, vlastně do nich budeš kopat za mě. A taky bych chtěl vidět ten patnáct stop dlouhej skok!"'
+    nr '"Proč ne, šéfe? Až se budem nudit, můžem do nich kopat, ne? Hmm… No, vlastně do nich budeš kopat za mě. A taky bych chtěl vidět ten patnáct stop dlouhej skok!"{#morte_s187_}'
 
     menu:
-        '"Co myslíš, Annah?"' if morteLogic.r17583_condition():
+        '"Co myslíš, Annah?"{#morte_s187_r17583}' if morteLogic.r17583_condition():
             # a417 # r17583
             jump annah_s107  # EXTERN
 
-        '"Jednoho si vezmu, obchodníku."' if morteLogic.r17584_condition():
+        '"Jednoho si vezmu, obchodníku."{#morte_s187_r17584}' if morteLogic.r17584_condition():
             # a418 # r17584
             $ morteLogic.r17584_action()
             jump 300mer5_s5  # EXTERN
 
-        '"Nechce se mi utrácet. Mám pár otázek, obchodníku…"' if morteLogic.r17585_condition():
+        '"Nechce se mi utrácet. Mám pár otázek, obchodníku…"{#morte_s187_r17585}' if morteLogic.r17585_condition():
             # a419 # r17585
             jump 300mer5_s2  # EXTERN
 
-        '"Nechám si svoje měďáky, obchodníku. Sbohem."' if morteLogic.r17586_condition():
+        '"Nechám si svoje měďáky, obchodníku. Sbohem."{#morte_s187_r17586}' if morteLogic.r17586_condition():
             # a420 # r17586
             jump morte_dispose
 
-        '"Nemám dost peněz, obchodníku, ale mám pár otázek…"' if morteLogic.r17587_condition():
+        '"Nemám dost peněz, obchodníku, ale mám pár otázek…"{#morte_s187_r17587}' if morteLogic.r17587_condition():
             # a421 # r17587
             jump 300mer5_s2  # EXTERN
 
-        '"Zapomeň na to obchodníku; Nemám na něj peníze. Sbohem."' if morteLogic.r17588_condition():
+        '"Zapomeň na to obchodníku; Nemám na něj peníze. Sbohem."{#morte_s187_r17588}' if morteLogic.r17588_condition():
             # a422 # r17588
             jump morte_dispose
 
 
 # s188 # say18801
 label morte_s188: # -
-    nr 'Morte se otočí k Úlanovi. "Vypadni."'
+    nr 'Morte se otočí k Úlanovi. "Vypadni."{#morte_s188_}'
 
     menu:
-        '"Nedostaneš tu lebku."':
+        '"Nedostaneš tu lebku."{#morte_s188_r18802}':
             # a423 # r18802
             $ morteLogic.r18802_action()
             jump colylfn_s5  # EXTERN
 
-        '"Toto není tvá lebka."':
+        '"Toto není tvá lebka."{#morte_s188_r18803}':
             # a424 # r18803
             jump colylfn_s6  # EXTERN
 
-        'Pravda: "Běž, vezmi si ji."':
+        'Pravda: "Běž, vezmi si ji."{#morte_s188_r18804}':
             # a425 # r18804
             jump colylfn_s9  # EXTERN
 
-        'Zaútoč na něj, dokud se nebrání: "Běž, vezmi si ji."':
+        'Zaútoč na něj, dokud se nebrání: "Běž, vezmi si ji."{#morte_s188_r18805}':
             # a426 # r18805
             jump colylfn_s10  # EXTERN
 
-        'Pravda: "Pokud mi nějak dokážeš, že tahle lebka ti právem patří, vrátím ti ji. To je fér"':
+        'Pravda: "Pokud mi nějak dokážeš, že tahle lebka ti právem patří, vrátím ti ji. To je fér"{#morte_s188_r18578}':
             # a427 # r18578
             $ morteLogic.r18578_action()
             jump colylfn_s12  # EXTERN
 
-        '"Kdo jsi?"':
+        '"Kdo jsi?"{#morte_s188_r18807}':
             # a428 # r18807
             jump colylfn_s13  # EXTERN
 
-        '"Koupím od tebe tu lebku. Platí?"':
+        '"Koupím od tebe tu lebku. Platí?"{#morte_s188_r18808}':
             # a429 # r18808
             $ morteLogic.r18808_action()
             jump colylfn_s14  # EXTERN
@@ -2983,105 +2983,105 @@ label morte_s188: # -
 
 # s189 # say18809
 label morte_s189: # -
-    nr 'Morte drží jeden z mužových prstů mezi zuby jako cigáro. Kecá přes tento prst: "Dotkni se mě ještě jednou a tvá ruka se přidá k tomuto prstu."'
+    nr 'Morte drží jeden z mužových prstů mezi zuby jako cigáro. Kecá přes tento prst: "Dotkni se mě ještě jednou a tvá ruka se přidá k tomuto prstu."{#morte_s189_}'
 
     menu:
-        '"Morte! Vrať tomu chlapovi jeho prst."':
+        '"Morte! Vrať tomu chlapovi jeho prst."{#morte_s189_r18810}':
             # a430 # r18810
             jump morte_s190
 
-        '"Chmm. Vypadni, ty psisko."':
+        '"Chmm. Vypadni, ty psisko."{#morte_s189_r18811}':
             # a431 # r18811
             jump colylfn_s11  # EXTERN
 
-        '"To byla těžká zkouška. Sbohem."':
+        '"To byla těžká zkouška. Sbohem."{#morte_s189_r18812}':
             # a432 # r18812
             jump colylfn_s11  # EXTERN
 
 
 # s190 # say18813
 label morte_s190: # from 189.0
-    nr 'Morte vyplivne prst zpět na chlapa. Prst brnkne o mužovu hruď  a spadne na zem.'
+    nr 'Morte vyplivne prst zpět na chlapa. Prst brnkne o mužovu hruď  a spadne na zem.{#morte_s190_}'
 
     menu:
-        '"Vypadni, pse."':
+        '"Vypadni, pse."{#morte_s190_r18814}':
             # a433 # r18814
             jump colylfn_s11  # EXTERN
 
-        '"To byla těžká zkouška. Sbohem."':
+        '"To byla těžká zkouška. Sbohem."{#morte_s190_r18815}':
             # a434 # r18815
             jump colylfn_s11  # EXTERN
 
 
 # s191 # say18816
 label morte_s191: # -
-    nr 'Morte zahaleká: "Šéfiku, nic tomu mrzákovi nedávej."'
+    nr 'Morte zahaleká: "Šéfiku, nic tomu mrzákovi nedávej."{#morte_s191_}'
 
     menu:
-        '"Já…"':
+        '"Já…"{#morte_s191_r18817}':
             # a435 # r18817
             jump colylfn_s15  # EXTERN
 
 
 # s192 # say18818
 label morte_s192: # -
-    nr 'Morte se otočí k chlapovi. "*Nemluvil* jsem s tebou, ty vypatlanej mozku. Až s tebou budu mluvit, tak to poznáš, protože budu vrčet a supět. Pochopils, doufám."'
+    nr 'Morte se otočí k chlapovi. "*Nemluvil* jsem s tebou, ty vypatlanej mozku. Až s tebou budu mluvit, tak to poznáš, protože budu vrčet a supět. Pochopils, doufám."{#morte_s192_}'
 
     jump colylfn_s16  # EXTERN
 
 
 # s193 # say18819
 label morte_s193: # -
-    nr '"Šéfe, *ne*"'
+    nr '"Šéfe, *ne*"{#morte_s193_}'
 
     menu:
-        'Dej mu pět měďáků.' if morteLogic.r18820_condition():
+        'Dej mu pět měďáků.{#morte_s193_r18820}' if morteLogic.r18820_condition():
             # a436 # r18820
             $ morteLogic.r18820_action()
             jump colylfn_s18  # EXTERN
 
-        'Dej mu padesát měďáků.' if morteLogic.r18821_condition():
+        'Dej mu padesát měďáků.{#morte_s193_r18821}' if morteLogic.r18821_condition():
             # a437 # r18821
             $ morteLogic.r18821_action()
             jump colylfn_s18  # EXTERN
 
-        'Dej mu sto měďáků.' if morteLogic.r18822_condition():
+        'Dej mu sto měďáků.{#morte_s193_r18822}' if morteLogic.r18822_condition():
             # a438 # r18822
             $ morteLogic.r18822_action()
             jump colylfn_s18  # EXTERN
 
-        'Dej mu pět set měďáků.' if morteLogic.r18823_condition():
+        'Dej mu pět set měďáků.{#morte_s193_r18823}' if morteLogic.r18823_condition():
             # a439 # r18823
             $ morteLogic.r18823_action()
             jump colylfn_s18  # EXTERN
 
-        '"Nemám tolik peněz"' if morteLogic.r18824_condition():
+        '"Nemám tolik peněz"{#morte_s193_r18824}' if morteLogic.r18824_condition():
             # a440 # r18824
             jump colylfn_s19  # EXTERN
 
-        '"Zapomeň na nabídku. Tahle lebka ti nepatří, takže na ni zapomeň"':
+        '"Zapomeň na nabídku. Tahle lebka ti nepatří, takže na ni zapomeň"{#morte_s193_r18825}':
             # a441 # r18825
             jump colylfn_s6  # EXTERN
 
 
 # s194 # say18826
 label morte_s194: # -
-    nr '"Putuju s největším idiotem v mnohovesmíru."'
+    nr '"Putuju s největším idiotem v mnohovesmíru."{#morte_s194_}'
 
     menu:
-        '"…a co teď, Žlutoprstej, hm? Okradu tě, a co ty teď uděláš, hm??"*':
+        '"…a co teď, Žlutoprstej, hm? Okradu tě, a co ty teď uděláš, hm??"*{#morte_s194_r18827}':
             # a442 # r18827
             jump colylfn_s20  # EXTERN
 
-        '"A teď z jiného soudku, Žlutoprstej, mám pár otázek…"':
+        '"A teď z jiného soudku, Žlutoprstej, mám pár otázek…"{#morte_s194_r18828}':
             # a443 # r18828
             jump colylfn_s23  # EXTERN
 
-        '"Sbohem, Žlutoprstej."' if morteLogic.r18829_condition():
+        '"Sbohem, Žlutoprstej."{#morte_s194_r18829}' if morteLogic.r18829_condition():
             # a444 # r18829
             jump colylfn_s41  # EXTERN
 
-        '"Sbohem, Žlutoprstej."' if morteLogic.r18830_condition():
+        '"Sbohem, Žlutoprstej."{#morte_s194_r18830}' if morteLogic.r18830_condition():
             # a445 # r18830
             $ morteLogic.r18830_action()
             jump morte_dispose
@@ -3089,472 +3089,472 @@ label morte_s194: # -
 
 # s195 # say18831
 label morte_s195: # -
-    nr '"Šéfe. Jdem"'
+    nr '"Šéfe. Jdem"{#morte_s195_}'
 
     jump colylfn_s52  # EXTERN
 
 
 # s196 # say18832
 label morte_s196: # -
-    nr '"Není to vůbec  pěkný, v co se měním."'
+    nr '"Není to vůbec  pěkný, v co se měním."{#morte_s196_}'
 
     menu:
-        'Dej mu pět měďáků.' if morteLogic.r18833_condition():
+        'Dej mu pět měďáků.{#morte_s196_r18833}' if morteLogic.r18833_condition():
             # a446 # r18833
             $ morteLogic.r18833_action()
             jump colylfn_s53  # EXTERN
 
-        'Dej mu deset měďáků.' if morteLogic.r18834_condition():
+        'Dej mu deset měďáků.{#morte_s196_r18834}' if morteLogic.r18834_condition():
             # a447 # r18834
             $ morteLogic.r18834_action()
             jump colylfn_s53  # EXTERN
 
-        'Dej mu padesát měďáků.' if morteLogic.r18835_condition():
+        'Dej mu padesát měďáků.{#morte_s196_r18835}' if morteLogic.r18835_condition():
             # a448 # r18835
             $ morteLogic.r18835_action()
             jump colylfn_s53  # EXTERN
 
-        'Dej mu sto měďáků.' if morteLogic.r18836_condition():
+        'Dej mu sto měďáků.{#morte_s196_r18836}' if morteLogic.r18836_condition():
             # a449 # r18836
             $ morteLogic.r18836_action()
             jump colylfn_s53  # EXTERN
 
-        '"Beru to zpět. Odejdi a nechci tě už vidět."':
+        '"Beru to zpět. Odejdi a nechci tě už vidět."{#morte_s196_r18837}':
             # a450 # r18837
             jump colylfn_s61  # EXTERN
 
 
 # s197 # say19031
 label morte_s197: # -
-    nr '"Haló bouchači! Jak se daří tvému příteli ze stěny?"'
+    nr '"Haló bouchači! Jak se daří tvému příteli ze stěny?"{#morte_s197_}'
 
     jump ojo_s11  # EXTERN
 
 
 # s198 # say19032
 label morte_s198: # -
-    nr 'Morte sklopil hlavu. "Nepovídej, šéfe."'
+    nr 'Morte sklopil hlavu. "Nepovídej, šéfe."{#morte_s198_}'
 
     menu:
-        '"Dobrá. Ojo, mám nějaké otázky."':
+        '"Dobrá. Ojo, mám nějaké otázky."{#morte_s198_r19033}':
             # a451 # r19033
             jump ojo_s12  # EXTERN
 
-        '"To je v pořádku. Pojďme."':
+        '"To je v pořádku. Pojďme."{#morte_s198_r19034}':
             # a452 # r19034
             jump morte_dispose
 
 
 # s199 # say19551
 label morte_s199: # -
-    nr '"Jů, šéfe… jaká to krása, eh? Ne všude se můžeš setkat s takovým lístečkem, jako je tento, víš."'
+    nr '"Jů, šéfe… jaká to krása, eh? Ne všude se můžeš setkat s takovým lístečkem, jako je tento, víš."{#morte_s199_}'
 
     menu:
-        '"Na shnilých mrtvolách toho nacházím málo atraktivního, Morte, ať už jsou to ženy nebo ne."':
+        '"Na shnilých mrtvolách toho nacházím málo atraktivního, Morte, ať už jsou to ženy nebo ne."{#morte_s199_r19666}':
             # a453 # r19666
             jump morte_s200
 
-        '"No, když zapomeneme na ten pach hniloby, červy, rozpadající se maso…"':
+        '"No, když zapomeneme na ten pach hniloby, červy, rozpadající se maso…"{#morte_s199_r19667}':
             # a454 # r19667
             jump morte_s201
 
 
 # s200 # say19552
 label morte_s200: # from 199.0
-    nr 'Morte koulí očima uvnitř celé lebky. "Huh! Jednou uvidíš, co tím myslím."'
+    nr 'Morte koulí očima uvnitř celé lebky. "Huh! Jednou uvidíš, co tím myslím."{#morte_s200_}'
 
     menu:
-        'Ignoruj ho a pozdrav zombie.' if morteLogic.r19668_condition():
+        'Ignoruj ho a pozdrav zombie.{#morte_s200_r19668}' if morteLogic.r19668_condition():
             # a455 # r19668
             jump zomcitf_s1  # EXTERN
 
-        'Ignoruj ho a pozdrav zombie.' if morteLogic.r19669_condition():
+        'Ignoruj ho a pozdrav zombie.{#morte_s200_r19669}' if morteLogic.r19669_condition():
             # a456 # r19669
             jump zomcitf_s3  # EXTERN
 
 
 # s201 # say19553
 label morte_s201: # from 199.1
-    nr '"Jo, koukej, to je důvod, proč jsem… hej!" Morte se k tobě otočil čelem. "Pokračuješ v utahování si ze mě?"'
+    nr '"Jo, koukej, to je důvod, proč jsem… hej!" Morte se k tobě otočil čelem. "Pokračuješ v utahování si ze mě?"{#morte_s201_}'
 
     menu:
-        'Ignoruj ho a pozdrav zombie.' if morteLogic.r19670_condition():
+        'Ignoruj ho a pozdrav zombie.{#morte_s201_r19670}' if morteLogic.r19670_condition():
             # a457 # r19670
             jump zomcitf_s1  # EXTERN
 
-        'Ignoruj ho a pozdrav zombie.' if morteLogic.r19671_condition():
+        'Ignoruj ho a pozdrav zombie.{#morte_s201_r19671}' if morteLogic.r19671_condition():
             # a458 # r19671
             jump zomcitf_s3  # EXTERN
 
 
 # s202 # say19681
 label morte_s202: # -
-    nr '"Eh… nejsem si jistý, že si chceš promluvit s tou… věcí."'
+    nr '"Eh… nejsem si jistý, že si chceš promluvit s tou… věcí."{#morte_s202_}'
 
     menu:
-        '"Proč ne, Morte?"':
+        '"Proč ne, Morte?"{#morte_s202_r19691}':
             # a459 # r19691
             jump morte_s203
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s202_r19692}':
             # a460 # r19692
             jump morte_dispose
 
-        'Ignoruj Morteho a pozdrav ghúla.':
+        'Ignoruj Morteho a pozdrav ghúla.{#morte_s202_r19693}':
             # a461 # r19693
             jump ghocitm_s1  # EXTERN
 
 
 # s203 # say19682
 label morte_s203: # from 202.0
-    nr '"Dřív to bývali lidi… oni nebo jejich předci se krmili těly a stalo se z nich tohleto. Pěkně odporná banda, šéfe… nejsou fakt nic víc než zvířata. *Nebezpečný* zvířata, náčelníku. Hodně nebezpečný, zvlášť když ty vypadáš, jako jejich oblíbená potrava."'
+    nr '"Dřív to bývali lidi… oni nebo jejich předci se krmili těly a stalo se z nich tohleto. Pěkně odporná banda, šéfe… nejsou fakt nic víc než zvířata. *Nebezpečný* zvířata, náčelníku. Hodně nebezpečný, zvlášť když ty vypadáš, jako jejich oblíbená potrava."{#morte_s203_}'
 
     menu:
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s203_r19694}':
             # a462 # r19694
             jump morte_dispose
 
-        '"Stejně si s ním promluvím."':
+        '"Stejně si s ním promluvím."{#morte_s203_r19695}':
             # a463 # r19695
             jump ghocitm_s1  # EXTERN
 
 
 # s204 # say19702
 label morte_s204: # -
-    nr '"Eh… nejsem si jistý, že si chceš promluvit s tou… věcí."'
+    nr '"Eh… nejsem si jistý, že si chceš promluvit s tou… věcí."{#morte_s204_}'
 
     menu:
-        '"Překvapuješ mne, Morte… je to nemrtvé, je to ženská. To tě většinou přece bere."':
+        '"Překvapuješ mne, Morte… je to nemrtvé, je to ženská. To tě většinou přece bere."{#morte_s204_r19713}':
             # a464 # r19713
             jump morte_s206
 
-        '"Proč ne, Morte?"':
+        '"Proč ne, Morte?"{#morte_s204_r19714}':
             # a465 # r19714
             jump morte_s205
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s204_r19715}':
             # a466 # r19715
             jump morte_dispose
 
-        'Ignoruj Morteho a pozdrav ghúla.':
+        'Ignoruj Morteho a pozdrav ghúla.{#morte_s204_r19716}':
             # a467 # r19716
             jump ghocitf_s1  # EXTERN
 
 
 # s205 # say19703
 label morte_s205: # from 204.1 206.0
-    nr '"Dřív to bývali lidi… oni nebo jejich předci se krmili těly a stalo se z nich tohleto. Pěkně odporná banda, šéfe… nejsou fakt nic víc než zvířata. *Nebezpečný* zvířata, náčelníku. Hodně nebezpečný, zvlášť když ty vypadáš jako jejich oblíbená potrava."'
+    nr '"Dřív to bývali lidi… oni nebo jejich předci se krmili těly a stalo se z nich tohleto. Pěkně odporná banda, šéfe… nejsou fakt nic víc než zvířata. *Nebezpečný* zvířata, náčelníku. Hodně nebezpečný, zvlášť když ty vypadáš jako jejich oblíbená potrava."{#morte_s205_}'
 
     menu:
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s205_r19717}':
             # a468 # r19717
             jump morte_dispose
 
-        '"Stejně si s ní promluvím."':
+        '"Stejně si s ní promluvím."{#morte_s205_r19718}':
             # a469 # r19718
             jump ghocitf_s1  # EXTERN
 
 
 # s206 # say19704
 label morte_s206: # from 204.0
-    nr '"Není to zrovna to samý. šéfe…"'
+    nr '"Není to zrovna to samý. šéfe…"{#morte_s206_}'
 
     jump morte_s205
 
 
 # s207 # say20469
 label morte_s207: # -
-    nr '"Je slepá a skoro hluchá."'
+    nr '"Je slepá a skoro hluchá."{#morte_s207_}'
 
     jump marta_s9  # EXTERN
 
 
 # s208 # say20470
 label morte_s208: # -
-    nr '"Myslím, že mluví o orgánech. Doufám, že mluví o orgánech."'
+    nr '"Myslím, že mluví o orgánech. Doufám, že mluví o orgánech."{#morte_s208_}'
 
     jump marta_s15  # EXTERN
 
 
 # s209 # say20471
 label morte_s209: # -
-    nr 'Morte se otočil k Martě. "Ano, „věcičky“." Pak se otočil k tobě. "Jde o sémantiku."'
+    nr 'Morte se otočil k Martě. "Ano, „věcičky“." Pak se otočil k tobě. "Jde o sémantiku."{#morte_s209_}'
 
     menu:
-        '"Marto, proč vytahuješ z mrtvol stehy a zuby?"' if morteLogic.r20612_condition():
+        '"Marto, proč vytahuješ z mrtvol stehy a zuby?"{#morte_s209_r20612}' if morteLogic.r20612_condition():
             # a470 # r20612
             $ morteLogic.r20612_action()
             jump marta_s16  # EXTERN
 
-        '"Marto, proč vytahuješ z mrtvol stehy a zuby?"' if morteLogic.r20613_condition():
+        '"Marto, proč vytahuješ z mrtvol stehy a zuby?"{#morte_s209_r20613}' if morteLogic.r20613_condition():
             # a471 # r20613
             $ morteLogic.j20538_s209_r20613_action()
             jump marta_s16  # EXTERN
 
-        '"Uh… dobrá. Musím jít, Marto. Sbohem."':
+        '"Uh… dobrá. Musím jít, Marto. Sbohem."{#morte_s209_r20614}':
             # a472 # r20614
             jump morte_dispose
 
 
 # s210 # say20472
 label morte_s210: # -
-    nr '"Na tohle se dívat *nebudu*."'
+    nr '"Na tohle se dívat *nebudu*."{#morte_s210_}'
 
     jump marta_s24  # EXTERN
 
 
 # s211 # say21602
 label morte_s211: # -
-    nr '"Oh, Při Mocnostech…! Zatracený dabus."'
+    nr '"Oh, Při Mocnostech…! Zatracený dabus."{#morte_s211_}'
 
     menu:
-        '"Co se stalo?"':
+        '"Co se stalo?"{#morte_s211_r24695}':
             # a473 # r24695
             jump morte_s212
 
 
 # s212 # say21603
 label morte_s212: # from 211.0
-    nr '"Je to dabus. Oni „mluví“ v rébusech, tedy v těch debilních hádankách. Jestli nevíš co říká, tak bude lepší najít někoho zdejšího nebo jinej způsob k domluvě s ním… jestli s ním chceme mluvit. Nepříjemná banda. Můj tip? On *umí* mluvit, jenom radši každýho pošle do prdele tou svojí hádankou."'
+    nr '"Je to dabus. Oni „mluví“ v rébusech, tedy v těch debilních hádankách. Jestli nevíš co říká, tak bude lepší najít někoho zdejšího nebo jinej způsob k domluvě s ním… jestli s ním chceme mluvit. Nepříjemná banda. Můj tip? On *umí* mluvit, jenom radši každýho pošle do prdele tou svojí hádankou."{#morte_s212_}'
 
     menu:
-        '"Co je „dabus?“"':
+        '"Co je „dabus?“"{#morte_s212_r24696}':
             # a474 # r24696
             jump morte_s213
 
 
 # s213 # say21604
 label morte_s213: # from 212.0
-    nr '"Jsou to sluhové Paní bolesti. Vznášejí se ve vzduchu okolo a rozbíjejí, opravují a záplatují Sigil podle jejích přání. Jsou méně než mouchy." Morte vzdychá. "Nicméně je nemůžeš zaplácnout, jinak by Paní byla… rozčarovaná."'
+    nr '"Jsou to sluhové Paní bolesti. Vznášejí se ve vzduchu okolo a rozbíjejí, opravují a záplatují Sigil podle jejích přání. Jsou méně než mouchy." Morte vzdychá. "Nicméně je nemůžeš zaplácnout, jinak by Paní byla… rozčarovaná."{#morte_s213_}'
 
     menu:
-        '"„Paní Bolesti?“ Kdo to je?"' if morteLogic.r24697_condition():
+        '"„Paní Bolesti?“ Kdo to je?"{#morte_s213_r24697}' if morteLogic.r24697_condition():
             # a475 # r24697
             $ morteLogic.r24697_action()
             jump morte_s214
 
-        '"Co mi můžeš říct o Paní Bolesti?"' if morteLogic.r24698_condition():
+        '"Co mi můžeš říct o Paní Bolesti?"{#morte_s213_r24698}' if morteLogic.r24698_condition():
             # a476 # r24698
             jump morte_s214
 
-        '"Vím."' if morteLogic.r24699_condition():
+        '"Vím."{#morte_s213_r24699}' if morteLogic.r24699_condition():
             # a477 # r24699
             jump fell_s8  # EXTERN
 
 
 # s214 # say21605
 label morte_s214: # from 213.0 213.1
-    nr '"Řídí tohle město. Až ji uvidíš, tak ji poznáš: Má takový čepele kolem obličeje, je vysoká asi jako obr, a vznáší se nad zemí, zrovna jako tady ty chlápkové." Morte ukazuje na dabuse, který vás pozoruje. "Nikdo toho o ní moc neví… ona moc nemluví. Všechno co potřebuješ vědět je, že jí nechceš nasrat. Až jí uvidíš, radím ti: utíkej."'
+    nr '"Řídí tohle město. Až ji uvidíš, tak ji poznáš: Má takový čepele kolem obličeje, je vysoká asi jako obr, a vznáší se nad zemí, zrovna jako tady ty chlápkové." Morte ukazuje na dabuse, který vás pozoruje. "Nikdo toho o ní moc neví… ona moc nemluví. Všechno co potřebuješ vědět je, že jí nechceš nasrat. Až jí uvidíš, radím ti: utíkej."{#morte_s214_}'
 
     menu:
-        '"Uh… počkej chvíli. Řekl jsi, že dabusové se vznáší, správně? Jenže tenhle chodí po zemi."' if morteLogic.r24700_condition():
+        '"Uh… počkej chvíli. Řekl jsi, že dabusové se vznáší, správně? Jenže tenhle chodí po zemi."{#morte_s214_r24700}' if morteLogic.r24700_condition():
             # a478 # r24700
             jump morte_s215
 
-        '"Uh… počkej chvíli. Řekl jsi, že dabusové se vznáší, správně? Jenže tenhle chodí po zemi."' if morteLogic.r24701_condition():
+        '"Uh… počkej chvíli. Řekl jsi, že dabusové se vznáší, správně? Jenže tenhle chodí po zemi."{#morte_s214_r24701}' if morteLogic.r24701_condition():
             # a479 # r24701
             jump morte_s215
 
-        '"Vím."':
+        '"Vím."{#morte_s214_r24702}':
             # a480 # r24702
             jump fell_s8  # EXTERN
 
 
 # s215 # say21606
 label morte_s215: # from 214.0 214.1
-    nr 'Morte kouká na Daba, a jeho oči se rozšíří. "Á-há! Já vím, že vy kozí hlavy umíte chodit! Já to vím!" Morte se k tobě nadšeně otáčí. "Cha! Tady ten nemůže bejt dost daleko, aby se zvednul ze země."'
+    nr 'Morte kouká na Daba, a jeho oči se rozšíří. "Á-há! Já vím, že vy kozí hlavy umíte chodit! Já to vím!" Morte se k tobě nadšeně otáčí. "Cha! Tady ten nemůže bejt dost daleko, aby se zvednul ze země."{#morte_s215_}'
 
     menu:
-        '"Možná je to tak…"':
+        '"Možná je to tak…"{#morte_s215_r24703}':
             # a481 # r24703
             jump fell_s8  # EXTERN
 
 
 # s216 # say21607
 label morte_s216: # -
-    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tadle kozí hlava chce říct. Chceš tlumočníka? Najdi si nějakýho Sigilana."'
+    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tadle kozí hlava chce říct. Chceš tlumočníka? Najdi si nějakýho Sigilana."{#morte_s216_}'
 
     menu:
-        '"Vím."':
+        '"Vím."{#morte_s216_r24704}':
             # a482 # r24704
             jump fell_s8  # EXTERN
 
 
 # s217 # say21608
 label morte_s217: # -
-    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to to fiendský mrně." Ukazuje na Annah. "Ona je z Úlu."'
+    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to to fiendský mrně." Ukazuje na Annah. "Ona je z Úlu."{#morte_s217_}'
 
     menu:
-        '"Možná, že…"':
+        '"Možná, že…"{#morte_s217_r24705}':
             # a483 # r24705
             jump fell_s8  # EXTERN
 
 
 # s218 # say21609
 label morte_s218: # -
-    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka?" Ukáže na Dak“kona. "Vem si Svatějšího-než-ty-a-dvakrát-klidnějšího aby ti to přeložil."'
+    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka?" Ukáže na Dak“kona. "Vem si Svatějšího-než-ty-a-dvakrát-klidnějšího aby ti to přeložil."{#morte_s218_}'
 
     menu:
-        '"Možná, že…"':
+        '"Možná, že…"{#morte_s218_r24706}':
             # a484 # r24706
             jump fell_s8  # EXTERN
 
 
 # s219 # say21610
 label morte_s219: # -
-    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to tanar“riho." Ukazuje na Fall-from-Grace. "Pravděpodobně si s tady těma hochama musela celou dobu vyměňovat novinky."'
+    nr 'Morte se šklebí. "To dřív prolezu vnitřnostma tanar„riho než rozluštím co tyhle lítající kozí hlavy zkoušej říct. Chceš tlumočníka? Vem si na to tanar“riho." Ukazuje na Fall-from-Grace. "Pravděpodobně si s tady těma hochama musela celou dobu vyměňovat novinky."{#morte_s219_}'
 
     menu:
-        '"Možná, že…"':
+        '"Možná, že…"{#morte_s219_r24707}':
             # a485 # r24707
             jump fell_s8  # EXTERN
 
 
 # s220 # say22061
 label morte_s220: # externs soego_s93
-    nr '"Chceš je jen zabít. Vnímaví ohrožují Spalovače."'
+    nr '"Chceš je jen zabít. Vnímaví ohrožují Spalovače."{#morte_s220_}'
 
     menu:
-        '"Měl bych jiné otázky…"':
+        '"Měl bych jiné otázky…"{#morte_s220_r22062}':
             # a486 # r22062
             jump soego_s83  # EXTERN
 
-        '"To je vše, co jsem si přál vědět. Sbohem."':
+        '"To je vše, co jsem si přál vědět. Sbohem."{#morte_s220_r22063}':
             # a487 # r22063
             jump morte_dispose
 
 
 # s221 # say22849
 label morte_s221: # -
-    nr 'Morte na tebe třeští oči a kýve hlavou.'
+    nr 'Morte na tebe třeští oči a kýve hlavou.{#morte_s221_}'
 
     menu:
-        '"Co to je, krychlohrdino? „Morte je stupidní lebka?“ Proč, ano to je, nebo ne, krychlohrdino?"':
+        '"Co to je, krychlohrdino? „Morte je stupidní lebka?“ Proč, ano to je, nebo ne, krychlohrdino?"{#morte_s221_r22850}':
             # a488 # r22850
             $ morteLogic.r22850_action()
             jump morte_s222
 
-        'Dej krychli pryč.':
+        'Dej krychli pryč.{#morte_s221_r22851}':
             # a489 # r22851
             jump morte_dispose
 
 
 # s222 # say22852
 label morte_s222: # from 221.0
-    nr '"Hej! To jsem neřekl!"'
+    nr '"Hej! To jsem neřekl!"{#morte_s222_}'
 
     menu:
-        '"Ale jo! Řekl!"':
+        '"Ale jo! Řekl!"{#morte_s222_r22853}':
             # a490 # r22853
             $ morteLogic.r22853_action()
             jump morte_s223
 
-        'Dej krychli pryč.':
+        'Dej krychli pryč.{#morte_s222_r22854}':
             # a491 # r22854
             jump morte_dispose
 
 
 # s223 # say22855
 label morte_s223: # from 222.0
-    nr '"Což --?! Dej mi tu věc!"'
+    nr '"Což --?! Dej mi tu věc!"{#morte_s223_}'
 
     menu:
-        '"Ne, je moje. Každopádně mi tě chtěl vzít. Nemyslíš, krychlohrdino? Jasně, že jo!"':
+        '"Ne, je moje. Každopádně mi tě chtěl vzít. Nemyslíš, krychlohrdino? Jasně, že jo!"{#morte_s223_r22856}':
             # a492 # r22856
             $ morteLogic.r22856_action()
             jump morte_s224
 
-        'Dej krychli pryč.':
+        'Dej krychli pryč.{#morte_s223_r22857}':
             # a493 # r22857
             jump morte_dispose
 
 
 # s224 # say22858
 label morte_s224: # from 223.0
-    nr '"Já. Si. To. Jen. Chci. Na. Chvíli. Podržet."'
+    nr '"Já. Si. To. Jen. Chci. Na. Chvíli. Podržet."{#morte_s224_}'
 
     menu:
-        '"Ale ty nemáš žádný ruce."':
+        '"Ale ty nemáš žádný ruce."{#morte_s224_r22859}':
             # a494 # r22859
             jump morte_s225
 
-        'Dej krychli pryč.':
+        'Dej krychli pryč.{#morte_s224_r22860}':
             # a495 # r22860
             jump morte_dispose
 
 
 # s225 # say22861
 label morte_s225: # from 224.0
-    nr '"Podržím to v ZUBECH."'
+    nr '"Podržím to v ZUBECH."{#morte_s225_}'
 
     menu:
-        '"Ne, myslím, že už to radši schovám."':
+        '"Ne, myslím, že už to radši schovám."{#morte_s225_r22862}':
             # a496 # r22862
             jump morte_s226
 
 
 # s226 # say22863
 label morte_s226: # from 225.0
-    nr '"Rozmlátím tu modronskou krychli na kousíčky."~ [MRT251]'
+    nr '"Rozmlátím tu modronskou krychli na kousíčky."~ [MRT251]{#morte_s226_}'
 
     menu:
-        '"Slyšíš něco, krychlohrdino? Ani já ne!"':
+        '"Slyšíš něco, krychlohrdino? Ani já ne!"{#morte_s226_r22864}':
             # a497 # r22864
             jump morte_dispose
 
 
 # s227 # say22892
 label morte_s227: # -
-    nr '"Oooooh!" Jak Craddock upouští páru, Mortemu scvaknou zuby… skoro slyšíš, jak si ve své lebce zapisuje poznámky.~ [MRT387]'
+    nr '"Oooooh!" Jak Craddock upouští páru, Mortemu scvaknou zuby… skoro slyšíš, jak si ve své lebce zapisuje poznámky.~ [MRT387]{#morte_s227_}'
 
     jump craddo_s15  # EXTERN
 
 
 # s228 # say24174
 label morte_s228: # -
-    nr '"Víš, šéfe, dělá se mi na nic z těch jeho… pravidelných… pauz… konec konců… je to … dobrá věc… že zavřel klapačku… teď."'
+    nr '"Víš, šéfe, dělá se mi na nic z těch jeho… pravidelných… pauz… konec konců… je to … dobrá věc… že zavřel klapačku… teď."{#morte_s228_}'
 
     menu:
-        '"Moc legrační, Morte. Jdeme."':
+        '"Moc legrační, Morte. Jdeme."{#morte_s228_r24175}':
             # a498 # r24175
             jump morte_dispose
 
 
 # s229 # say24176
 label morte_s229: # -
-    nr '"Šéfe, co budeme dělat s nevyčerpatelným zdrojem vody? Kde je ten oheň, huh?"'
+    nr '"Šéfe, co budeme dělat s nevyčerpatelným zdrojem vody? Kde je ten oheň, huh?"{#morte_s229_}'
 
     menu:
-        '"Může to být užitečné později, Morte. Jdeme."':
+        '"Může to být užitečné později, Morte. Jdeme."{#morte_s229_r24177}':
             # a499 # r24177
             jump morte_dispose
 
-        '"Děláme správnou věc, Morte."':
+        '"Děláme správnou věc, Morte."{#morte_s229_r24178}':
             # a500 # r24178
             jump morte_s230
 
 
 # s230 # say24179
 label morte_s230: # from 229.1
-    nr '"Děláme správnou věc? V tom případě jsi asi zapomněl, šéfe, žes podnikl vlastní výpravu, aby ses postaral! Hej, cokoliv chceš dělat, tady velíš samozřejmě ty. Tsss…"'
+    nr '"Děláme správnou věc? V tom případě jsi asi zapomněl, šéfe, žes podnikl vlastní výpravu, aby ses postaral! Hej, cokoliv chceš dělat, tady velíš samozřejmě ty. Tsss…"{#morte_s230_}'
 
     menu:
-        '"Díky za tvůj souhlas, Morte. Jdeme."':
+        '"Díky za tvůj souhlas, Morte. Jdeme."{#morte_s230_r24180}':
             # a501 # r24180
             jump morte_dispose
 
 
 # s231 # say24903
 label morte_s231: # -
-    nr '"Hej… jsi v pořádku? Myslel jsem, že je z tebe určitě chladná mrtvola."'
+    nr '"Hej… jsi v pořádku? Myslel jsem, že je z tebe určitě chladná mrtvola."{#morte_s231_}'
 
     menu:
-        '"Co…? Kdo jsi?"':
+        '"Co…? Kdo jsi?"{#morte_s231_r24904}':
             # a502 # r24904
             $ morteLogic.r24904_action()
             jump morte_s232
 
-        '"Jsem si jist, že se chystáš vyslovit ještě stovky moudrostí, Morte, ale já potřebuji, abys už, proboha, držel hubu a TEĎ se ke mně přidal."':
+        '"Jsem si jist, že se chystáš vyslovit ještě stovky moudrostí, Morte, ale já potřebuji, abys už, proboha, držel hubu a TEĎ se ke mně přidal."{#morte_s231_r24905}':
             # a503 # r24905
             $ morteLogic.r24905_action()
             jump morte_dispose
@@ -3562,133 +3562,133 @@ label morte_s231: # -
 
 # s232 # say24906
 label morte_s232: # from 231.0
-    nr '"Oh… kdo jsem? Co kdybys začal *ty?* Jaké je tvé ctěné jméno?"'
+    nr '"Oh… kdo jsem? Co kdybys začal *ty?* Jaké je tvé ctěné jméno?"{#morte_s232_}'
 
     menu:
-        '"Já… nevím. Nemohu si vzpomenout."':
+        '"Já… nevím. Nemohu si vzpomenout."{#morte_s232_r24907}':
             # a504 # r24907
             jump morte_s233
 
-        '"Ptal jsem se tě *první* lebko."':
+        '"Ptal jsem se tě *první* lebko."{#morte_s232_r24908}':
             # a505 # r24908
             jump morte_s234
 
 
 # s233 # say24909
 label morte_s233: # from 232.0 234.0 235.0
-    nr '"Nemůžeš si vzpomenout na svoje *jméno?* Hehe. Mno, příště, až strávíš noc ve městě, snaž se vyhnout hospodě. Jmenuju se Morte. Jsem tu taky uvězněnej."'
+    nr '"Nemůžeš si vzpomenout na svoje *jméno?* Hehe. Mno, příště, až strávíš noc ve městě, snaž se vyhnout hospodě. Jmenuju se Morte. Jsem tu taky uvězněnej."{#morte_s233_}'
 
     menu:
-        '"Uvězněnej?"':
+        '"Uvězněnej?"{#morte_s233_r24910}':
             # a506 # r24910
             jump morte_s236
 
 
 # s234 # say24911
 label morte_s234: # from 232.1
-    nr '"Jo, jenže já jsem se tě ptal *druhej.* Jak se jmenuješ?"'
+    nr '"Jo, jenže já jsem se tě ptal *druhej.* Jak se jmenuješ?"{#morte_s234_}'
 
     menu:
-        '"Já… nevím. nemůžu si vzpomenout."':
+        '"Já… nevím. nemůžu si vzpomenout."{#morte_s234_r24912}':
             # a507 # r24912
             jump morte_s233
 
-        '"Ty první, lebko. Tohle je naposledy, co se tě ptám."':
+        '"Ty první, lebko. Tohle je naposledy, co se tě ptám."{#morte_s234_r24913}':
             # a508 # r24913
             jump morte_s235
 
 
 # s235 # say24914
 label morte_s235: # from 234.1
-    nr '"Tssss… seš otravnější, než muchomůrka zelená. Ale no dobře, *budu* hodnej kluk a řeknu ti to. Jmenuju se Morte. Kdo seš ty?"'
+    nr '"Tssss… seš otravnější, než muchomůrka zelená. Ale no dobře, *budu* hodnej kluk a řeknu ti to. Jmenuju se Morte. Kdo seš ty?"{#morte_s235_}'
 
     menu:
-        '"Já… nevím. nemůžu si vzpomenout."':
+        '"Já… nevím. nemůžu si vzpomenout."{#morte_s235_r24915}':
             # a509 # r24915
             jump morte_s233
 
 
 # s236 # say24916
 label morte_s236: # from 233.0
-    nr '"Jo, zatím co sis tu válel prdel, tak sem  to tu trochu vobhlídl: vyzkoušel jsem všechny dveře, ale tahle místnost je zamčená líp, než kterejkoliv pás cudnosti."'
+    nr '"Jo, zatím co sis tu válel prdel, tak sem  to tu trochu vobhlídl: vyzkoušel jsem všechny dveře, ale tahle místnost je zamčená líp, než kterejkoliv pás cudnosti."{#morte_s236_}'
 
     menu:
-        '"Jsme zamčeni… kde? Co je tohle za místo?"':
+        '"Jsme zamčeni… kde? Co je tohle za místo?"{#morte_s236_r24917}':
             # a510 # r24917
             jump morte_s237
 
 
 # s237 # say24918
 label morte_s237: # from 236.0
-    nr '"Jmenuje se to tady „Márnice“… Je to velká černá stavba připomínající svou architekturou gravidního pavouka."'
+    nr '"Jmenuje se to tady „Márnice“… Je to velká černá stavba připomínající svou architekturou gravidního pavouka."{#morte_s237_}'
 
     menu:
-        '"„Márnice?“ Cože… jsem mrtev?"':
+        '"„Márnice?“ Cože… jsem mrtev?"{#morte_s237_r24919}':
             # a511 # r24919
             jump morte_s238
 
 
 # s238 # say24920
 label morte_s238: # from 237.0
-    nr '"Z mýho pohledu ne. Máš hodně jizev… vypadáš, jako by po tobě nějakej debil maloval nožem. Přestože všechny důvody, aby sem kdokoliv přišel a dokončil svou vyřezávací práci, jsou k smíchu."'
+    nr '"Z mýho pohledu ne. Máš hodně jizev… vypadáš, jako by po tobě nějakej debil maloval nožem. Přestože všechny důvody, aby sem kdokoliv přišel a dokončil svou vyřezávací práci, jsou k smíchu."{#morte_s238_}'
 
     menu:
-        '"Jak se odtud dostaneme pryč?"':
+        '"Jak se odtud dostaneme pryč?"{#morte_s238_r24921}':
             # a512 # r24921
             jump morte_s239
 
 
 # s239 # say24922
 label morte_s239: # from 238.0
-    nr '"No, všechny dveře jsou zamčené, takže potřebujeme klíč. Je tu šance, že některá z chodících mrtvol v této místnosti ho má."'
+    nr '"No, všechny dveře jsou zamčené, takže potřebujeme klíč. Je tu šance, že některá z chodících mrtvol v této místnosti ho má."{#morte_s239_}'
 
     menu:
-        '"Chodící mrtvoly?"':
+        '"Chodící mrtvoly?"{#morte_s239_r24923}':
             # a513 # r24923
             jump morte_s240
 
 
 # s240 # say24924
 label morte_s240: # from 28.0 239.0
-    nr '"Jo, majitelé Márnice používají mrtvá těla jako levnou pracovní silu. Mrtvoly jsou úplně pitomý, ale jsou neškodné, nezaútočí na tebe, dokud nezaútočíš ty první."'
+    nr '"Jo, majitelé Márnice používají mrtvá těla jako levnou pracovní silu. Mrtvoly jsou úplně pitomý, ale jsou neškodné, nezaútočí na tebe, dokud nezaútočíš ty první."{#morte_s240_}'
 
     menu:
-        '"Je tu nějaká jiná cesta? Nechci je pozabíjet jenom kvůli klíči."':
+        '"Je tu nějaká jiná cesta? Nechci je pozabíjet jenom kvůli klíči."{#morte_s240_r24925}':
             # a514 # r24925
             $ morteLogic.r24925_action()
             jump morte_s241
 
-        '"Takže mám napadnout jednu z těch mrtvol a obrat ji o klíč?"':
+        '"Takže mám napadnout jednu z těch mrtvol a obrat ji o klíč?"{#morte_s240_r24926}':
             # a515 # r24926
             jump morte_s242
 
 
 # s241 # say24927
 label morte_s241: # from 240.0
-    nr '"Cože, myslíš si snad, že jim bude vadit, když je zabiješ? Oni jsou už MRTVÍ. Ale má to vlastně i světlou stránku: když je zabiješ, můžou si na chvíli odpočinout, než je majitelé pošlou opět do roboty."'
+    nr '"Cože, myslíš si snad, že jim bude vadit, když je zabiješ? Oni jsou už MRTVÍ. Ale má to vlastně i světlou stránku: když je zabiješ, můžou si na chvíli odpočinout, než je majitelé pošlou opět do roboty."{#morte_s241_}'
 
     menu:
-        '"Dobře, v pořádku… já tedy jednu sundám a seberu ten klíč."':
+        '"Dobře, v pořádku… já tedy jednu sundám a seberu ten klíč."{#morte_s241_r24928}':
             # a516 # r24928
             jump morte_s242
 
 
 # s242 # say24929
 label morte_s242: # from 240.1 241.0
-    nr '"Dobře, ale než to spravíš, měl by ses vyzbrojit. Myslím, že v některé z polic jsem viděl skalpel."  POZNÁMKA: Prohledej police v téhle místnosti, abys našel zbraň na mrtvoly.'
+    nr '"Dobře, ale než to spravíš, měl by ses vyzbrojit. Myslím, že v některé z polic jsem viděl skalpel."  POZNÁMKA: Prohledej police v téhle místnosti, abys našel zbraň na mrtvoly.{#morte_s242_}'
 
     menu:
-        '"V pořádku, poohlédnu se po něm."':
+        '"V pořádku, poohlédnu se po něm."{#morte_s242_r24930}':
             # a517 # r24930
             jump morte_s243
 
 
 # s243 # say24931
 label morte_s243: # from 242.0
-    nr '"Ještě něco: Tyhle mrtvoly jsou pomalý jako šneci, ale když nějakou praštíš, je to, jako bys kopl do vosího hnízda. Když tě začnou otravovat, pamatuj si, že můžeš UTÍKAT, ale oni nemůžou. Používej to k vytvoření odstupu od nich, když si budeš chtít oddechnout."  POZNÁMKA: Pro BĚH drž klávesu CTRL a levým tlačítkem myši klikni na místo kam chceš utíkat. Když jsi už blízko smrti, používej běh na útěk před zombie, aby sis  mohl odpočinout.'
+    nr '"Ještě něco: Tyhle mrtvoly jsou pomalý jako šneci, ale když nějakou praštíš, je to, jako bys kopl do vosího hnízda. Když tě začnou otravovat, pamatuj si, že můžeš UTÍKAT, ale oni nemůžou. Používej to k vytvoření odstupu od nich, když si budeš chtít oddechnout."  POZNÁMKA: Pro BĚH drž klávesu CTRL a levým tlačítkem myši klikni na místo kam chceš utíkat. Když jsi už blízko smrti, používej běh na útěk před zombie, aby sis  mohl odpočinout.{#morte_s243_}'
 
     menu:
-        '"Dobře. Díky za radu."':
+        '"Dobře. Díky za radu."{#morte_s243_r24932}':
             # a518 # r24932
             $ morteLogic.r24932_action()
             jump morte_dispose
@@ -3696,501 +3696,501 @@ label morte_s243: # from 242.0
 
 # s244 # say25962
 label morte_s244: # -
-    nr '"Něco jako mluvící encyklopedie, šéfe. Ale vo tom fakt nechci mluvit."'
+    nr '"Něco jako mluvící encyklopedie, šéfe. Ale vo tom fakt nechci mluvit."{#morte_s244_}'
 
     if morteLogic.s244_condition():
         $ morteLogic.s244_action()
         jump cwrushf_s27  # EXTERN
     menu:
-        '"Ale ty NEJSI mimir, Morte…"' if morteLogic.r66902_condition():
+        '"Ale ty NEJSI mimir, Morte…"{#morte_s244_r66902}' if morteLogic.r66902_condition():
             # a519 # r66902
             jump cwrushf_s27  # EXTERN
 
 
 # s245 # say25964
 label morte_s245: # -
-    nr 'Morte zakýval obočím a rozletěl se k ženě. "To není všechno, co."'
+    nr 'Morte zakýval obočím a rozletěl se k ženě. "To není všechno, co."{#morte_s245_}'
 
     menu:
-        '"Už dost, Morte."':
+        '"Už dost, Morte."{#morte_s245_r25965}':
             # a520 # r25965
             jump morte_s246
 
 
 # s246 # say25966
 label morte_s246: # from 245.0
-    nr '"Jó, Jó. Jasan." Morte zatočil očima a začal si mumlat pod nos. "Pfff. Stejně tak bysem moh bejt *mrtvej*…"'
+    nr '"Jó, Jó. Jasan." Morte zatočil očima a začal si mumlat pod nos. "Pfff. Stejně tak bysem moh bejt *mrtvej*…"{#morte_s246_}'
 
     menu:
-        '"Hele, řekla jsi sám o sobě? To oni normálně nedělají?"' if morteLogic.r25967_condition():
+        '"Hele, řekla jsi sám o sobě? To oni normálně nedělají?"{#morte_s246_r25967}' if morteLogic.r25967_condition():
             # a521 # r25967
             jump cwrushf_s28  # EXTERN
 
-        '"Mám pro tu ženu nějaké otázky…"':
+        '"Mám pro tu ženu nějaké otázky…"{#morte_s246_r25968}':
             # a522 # r25968
             jump cwrushf_s2  # EXTERN
 
-        'Nechej ženu být.':
+        'Nechej ženu být.{#morte_s246_r25969}':
             # a523 # r25969
             jump morte_dispose
 
 
 # s247 # say25970
 label morte_s247: # -
-    nr 'Morte ji přerušil: "No hele, náčelníku, vono to všechno záleží na *kvalitě* mimira. Někerý, jako třeba já, jsou víc očarovaní, než ostatní, to je všechno… Oni si víc… uh… uvědomují sami sebe, tak je to přesný."'
+    nr 'Morte ji přerušil: "No hele, náčelníku, vono to všechno záleží na *kvalitě* mimira. Někerý, jako třeba já, jsou víc očarovaní, než ostatní, to je všechno… Oni si víc… uh… uvědomují sami sebe, tak je to přesný."{#morte_s247_}'
 
     menu:
-        '"Hmm."':
+        '"Hmm."{#morte_s247_r25971}':
             # a524 # r25971
             jump cwrushf_s29  # EXTERN
 
-        '"Aha."':
+        '"Aha."{#morte_s247_r25972}':
             # a525 # r25972
             jump cwrushf_s29  # EXTERN
 
 
 # s248 # say25973
 label morte_s248: # -
-    nr '"Hej! Já se jenom snažím kapku pobavit, šéfe!"'
+    nr '"Hej! Já se jenom snažím kapku pobavit, šéfe!"{#morte_s248_}'
 
     jump cwrushf_s27  # EXTERN
 
 
 # s249 # say27285
 label morte_s249: # -
-    nr '"Dám ti radu, šéfku: Držel bych teď zobák - netřeba víc zdechlin do knihy smrti, než je nutné… zvlášť ženskejch. Navíc, zabíjení by sem mohlo přivést zřízence."'
+    nr '"Dám ti radu, šéfku: Držel bych teď zobák - netřeba víc zdechlin do knihy smrti, než je nutné… zvlášť ženskejch. Navíc, zabíjení by sem mohlo přivést zřízence."{#morte_s249_}'
 
     menu:
-        '"Myslím, že ses o tom ještě nezmínil. *Kdo* jsou ti zřízenci?"':
+        '"Myslím, že ses o tom ještě nezmínil. *Kdo* jsou ti zřízenci?"{#morte_s249_r27303}':
             # a526 # r27303
             jump morte_s250
 
-        '"Ta těla tady… odkud se vzala?"':
+        '"Ta těla tady… odkud se vzala?"{#morte_s249_r27304}':
             # a527 # r27304
             jump morte_s252
 
-        '"Proč se zajímáš o těla žen?"':
+        '"Proč se zajímáš o těla žen?"{#morte_s249_r27305}':
             # a528 # r27305
             jump morte_s253
 
-        '"Dobře… Já… zkusím si to zapamatovat."':
+        '"Dobře… Já… zkusím si to zapamatovat."{#morte_s249_r27306}':
             # a529 # r27306
             jump morte_s257
 
 
 # s250 # say27286
 label morte_s250: # from 249.0 252.0 256.0
-    nr '"Říkají si „Spalovači.“ Nemůžeš je minout: Sou posedlí černou a na xichtě mají rigor mortis. Je to zkažená banda ghúlských uctívačů smrti. Věří, že každej má zemřít… čím dřív tim líp."'
+    nr '"Říkají si „Spalovači.“ Nemůžeš je minout: Sou posedlí černou a na xichtě mají rigor mortis. Je to zkažená banda ghúlských uctívačů smrti. Věří, že každej má zemřít… čím dřív tim líp."{#morte_s250_}'
 
     menu:
-        '"To mě trochu mate… proč by se měli tihle Spalovači starat o to, jestli uteču, nebo ne?"':
+        '"To mě trochu mate… proč by se měli tihle Spalovači starat o to, jestli uteču, nebo ne?"{#morte_s250_r27307}':
             # a530 # r27307
             jump morte_s251
 
 
 # s251 # say27287
 label morte_s251: # from 250.0
-    nr '"Neposlouchals? Říkal sem, že Spalovači věřej, že KAŽDEJ má zemřít, a čím dřív tím líp. Myslíš si, že těla, cos viděl knize mrtvejch sou šťastnější než ty venku?"'
+    nr '"Neposlouchals? Říkal sem, že Spalovači věřej, že KAŽDEJ má zemřít, a čím dřív tím líp. Myslíš si, že těla, cos viděl knize mrtvejch sou šťastnější než ty venku?"{#morte_s251_}'
 
     menu:
-        '"Ta těla, která jsem tady viděl… odkud se sem dostala?"':
+        '"Ta těla, která jsem tady viděl… odkud se sem dostala?"{#morte_s251_r27308}':
             # a531 # r27308
             jump morte_s252
 
-        '"Předtím jsi říkal něco o tom, že bych neměl zabíjet žádná *ženská* těla. Proč?"':
+        '"Předtím jsi říkal něco o tom, že bych neměl zabíjet žádná *ženská* těla. Proč?"{#morte_s251_r27309}':
             # a532 # r27309
             jump morte_s253
 
-        '"Dobře… Já… zkusím si to zapamatovat."':
+        '"Dobře… Já… zkusím si to zapamatovat."{#morte_s251_r27310}':
             # a533 # r27310
             jump morte_s257
 
 
 # s252 # say27288
 label morte_s252: # from 249.1 251.0 256.1
-    nr '"Smrť  navštěvuje sféry každej den, šéfe. Tihleti to je všechno, co zbylo z ubožáků, kteří po smrti prodali svý těla zřízencům."'
+    nr '"Smrť  navštěvuje sféry každej den, šéfe. Tihleti to je všechno, co zbylo z ubožáků, kteří po smrti prodali svý těla zřízencům."{#morte_s252_}'
 
     menu:
-        '"Pouč mě…*kdo* jsou ti zřízenci?"':
+        '"Pouč mě…*kdo* jsou ti zřízenci?"{#morte_s252_r27311}':
             # a534 # r27311
             jump morte_s250
 
-        '"Předtím jsi říkal něco o tom, že bych neměl zabíjet žádná *ženská* těla. Proč?"':
+        '"Předtím jsi říkal něco o tom, že bych neměl zabíjet žádná *ženská* těla. Proč?"{#morte_s252_r27312}':
             # a535 # r27312
             jump morte_s253
 
-        '"Dobře… Já… zkusím si to zapamatovat."':
+        '"Dobře… Já… zkusím si to zapamatovat."{#morte_s252_r27313}':
             # a536 # r27313
             jump morte_s257
 
 
 # s253 # say27289
 label morte_s253: # from 249.2 251.1 252.1
-    nr '"Ccc - děláš si *srandu?* Hele, šéfe, tyhle mrtvý škvrňata sou poslední šance pro bandu tvrdejch mlátiček jako jsme my. Musíme bejt *rytířští* - žádný vosekávání kvůli klíčům, žádný ořezávání hnátů a takový ty věci."'
+    nr '"Ccc - děláš si *srandu?* Hele, šéfe, tyhle mrtvý škvrňata sou poslední šance pro bandu tvrdejch mlátiček jako jsme my. Musíme bejt *rytířští* - žádný vosekávání kvůli klíčům, žádný ořezávání hnátů a takový ty věci."{#morte_s253_}'
 
     menu:
-        '"Poslední šance? Co… o čem to mluvíš?"':
+        '"Poslední šance? Co… o čem to mluvíš?"{#morte_s253_r27314}':
             # a537 # r27314
             jump morte_s254
 
 
 # s254 # say27290
 label morte_s254: # from 253.0
-    nr '"Šéfe, sou MRTVÍ, MY SME mrtví… chápeš, co tím myslím? Jo?"'
+    nr '"Šéfe, sou MRTVÍ, MY SME mrtví… chápeš, co tím myslím? Jo?"{#morte_s254_}'
 
     menu:
-        '"Ne… ne, vlastně ne."':
+        '"Ne… ne, vlastně ne."{#morte_s254_r27315}':
             # a538 # r27315
             jump morte_s255
 
-        '"To nemůžeš myslet vážně."' if morteLogic.r27316_condition():
+        '"To nemůžeš myslet vážně."{#morte_s254_r27316}' if morteLogic.r27316_condition():
             # a539 # r27316
             jump morte_s255
 
 
 # s255 # say27291
 label morte_s255: # from 254.0 254.1
-    nr '"Šéfe, už se nám tady hrne řada těch kulhajících dám. *Všichni* jsme zemřeli aspoň jednou: máme si o čem vyprávět. Oceňujou chlapy, co maj zkušenost se smrtí jako my."'
+    nr '"Šéfe, už se nám tady hrne řada těch kulhajících dám. *Všichni* jsme zemřeli aspoň jednou: máme si o čem vyprávět. Oceňujou chlapy, co maj zkušenost se smrtí jako my."{#morte_s255_}'
 
     menu:
-        '"Ale… počkej… neříkal jsi předtím, že já *nejsem* mrtvý?"':
+        '"Ale… počkej… neříkal jsi předtím, že já *nejsem* mrtvý?"{#morte_s255_r27317}':
             # a540 # r27317
             jump morte_s256
 
 
 # s256 # say27292
 label morte_s256: # from 255.0
-    nr '"No… dobře, *ty* možná nejseš mrtvej, ale *JÁ* jsem. A jak se tak koukám, vůbec by mi nevadilo sdílet rakev s některou z těchle fajnovejch houževnatejch mrtovolek." Morte začal obdivně klapat zuby. " Jasně, zřízenci by se s nima nejdřív museli rozloučit a to nejni zrovna pravděpodobný."'
+    nr '"No… dobře, *ty* možná nejseš mrtvej, ale *JÁ* jsem. A jak se tak koukám, vůbec by mi nevadilo sdílet rakev s některou z těchle fajnovejch houževnatejch mrtovolek." Morte začal obdivně klapat zuby. " Jasně, zřízenci by se s nima nejdřív museli rozloučit a to nejni zrovna pravděpodobný."{#morte_s256_}'
 
     menu:
-        '"Kdo že jsou to ti zřízenci?"':
+        '"Kdo že jsou to ti zřízenci?"{#morte_s256_r27318}':
             # a541 # r27318
             jump morte_s250
 
-        '"Ale odkud se tady vzala všechna ta těla?"':
+        '"Ale odkud se tady vzala všechna ta těla?"{#morte_s256_r27319}':
             # a542 # r27319
             jump morte_s252
 
-        '"Dobře… Já… zkusím si to zapamatovat."':
+        '"Dobře… Já… zkusím si to zapamatovat."{#morte_s256_r27320}':
             # a543 # r27320
             jump morte_s257
 
 
 # s257 # say27293
 label morte_s257: # from 249.3 251.2 252.2 256.2
-    nr '"Hele, šéfe. Po tom polibku smrti seš furt kapku zmatenej. Takže tady máš dvě rady: Zaprvý, jestli se chceš na něco zeptat, *zeptej* se mě, oukej?"  POZNÁMKA: Jestli si chceš promluvit se členem své party, vyber si „mluv“ z menu a pak klikni levým tlačítkem na toho, s kým chceš hovořit.'
+    nr '"Hele, šéfe. Po tom polibku smrti seš furt kapku zmatenej. Takže tady máš dvě rady: Zaprvý, jestli se chceš na něco zeptat, *zeptej* se mě, oukej?"  POZNÁMKA: Jestli si chceš promluvit se členem své party, vyber si „mluv“ z menu a pak klikni levým tlačítkem na toho, s kým chceš hovořit.{#morte_s257_}'
 
     menu:
-        '"Dobře… jestli budu mít nějaké otázky, zeptám se tě."':
+        '"Dobře… jestli budu mít nějaké otázky, zeptám se tě."{#morte_s257_r27321}':
             # a544 # r27321
             jump morte_s258
 
 
 # s258 # say27294
 label morte_s258: # from 257.0
-    nr '"Zadruhý, jestli si jenom *z poloviny* tak zapomětlivej, jak mi připadáš, začni si šecko zapisovat. Nikdy nevíš, kdy narazíš na něco důležitýho, tak ať na to nezapomeneš."'
+    nr '"Zadruhý, jestli si jenom *z poloviny* tak zapomětlivej, jak mi připadáš, začni si šecko zapisovat. Nikdy nevíš, kdy narazíš na něco důležitýho, tak ať na to nezapomeneš."{#morte_s258_}'
 
     menu:
-        '"Jako deník?"':
+        '"Jako deník?"{#morte_s258_r27322}':
             # a545 # r27322
             jump morte_s259
 
 
 # s259 # say27295
 label morte_s259: # from 258.0
-    nr '"Jo, jako deník. Jestli začneš bejt zmatenej v důležitejch věcech, jako třebas kde seš, prolistuj ho a osvěž si paměť. Jasný?"  POZNÁMKA: Ke svému deníku se dostaneš tlačítkem deník ve spodním pravém rohu světové obrazovky, nebo si vyber tlačítko deník z rychlého menu.'
+    nr '"Jo, jako deník. Jestli začneš bejt zmatenej v důležitejch věcech, jako třebas kde seš, prolistuj ho a osvěž si paměť. Jasný?"  POZNÁMKA: Ke svému deníku se dostaneš tlačítkem deník ve spodním pravém rohu světové obrazovky, nebo si vyber tlačítko deník z rychlého menu.{#morte_s259_}'
 
     menu:
-        '"Dobře… Pochopil jsem. Pojďme."':
+        '"Dobře… Pochopil jsem. Pojďme."{#morte_s259_r27323}':
             # a546 # r27323
             jump morte_dispose
 
 
 # s260 # say27296
 label morte_s260: # -
-    nr '"Někde tady kolem na poličce by měl bejt skalpel. Já bych ho nejdřív našel, než bych si dal taneček s některou zdechlinou tady kolem."'
+    nr '"Někde tady kolem na poličce by měl bejt skalpel. Já bych ho nejdřív našel, než bych si dal taneček s některou zdechlinou tady kolem."{#morte_s260_}'
 
     menu:
-        '"Dobře… budu hledat dál."':
+        '"Dobře… budu hledat dál."{#morte_s260_r27324}':
             # a547 # r27324
             jump morte_dispose
 
 
 # s261 # say27297
 label morte_s261: # - # IF WEIGHT #8 /* Triggers after states #: 729 444 325 281 742 737 733 487 even though they appear after this state */ ~  Global("Mortuary_Walkthrough","GLOBAL",0) PartyHasItem("Scalpel") Global("ZM782_Dead_KAPUTZ","GLOBAL",0)
-    nr '"Super, našels skalpel, máš bod. A teď jdem na ty mrtvoly… neměj strach, zůstanu vzádu a budu ti dodávat cenný taktický rady."'
+    nr '"Super, našels skalpel, máš bod. A teď jdem na ty mrtvoly… neměj strach, zůstanu vzádu a budu ti dodávat cenný taktický rady."{#morte_s261_}'
 
     menu:
-        '"Možná bys mi mohl *pomoct*, Morte."':
+        '"Možná bys mi mohl *pomoct*, Morte."{#morte_s261_r27325}':
             # a548 # r27325
             jump morte_s262
 
-        '"Dobře."':
+        '"Dobře."{#morte_s261_r27326}':
             # a549 # r27326
             jump morte_dispose
 
 
 # s262 # say27298
 label morte_s262: # from 261.0
-    nr '"Já ti BUDU pomáhat. Dobrá rada, na tu jen tak nenatrefíš, šéfe."'
+    nr '"Já ti BUDU pomáhat. Dobrá rada, na tu jen tak nenatrefíš, šéfe."{#morte_s262_}'
 
     menu:
-        '"Myslel jsem pomoct s útokem na *mrtvolu*."':
+        '"Myslel jsem pomoct s útokem na *mrtvolu*."{#morte_s262_r27327}':
             # a550 # r27327
             jump morte_s263
 
-        '"Dobrá tedy."':
+        '"Dobrá tedy."{#morte_s262_r27328}':
             # a551 # r27328
             jump morte_dispose
 
 
 # s263 # say27299
 label morte_s263: # from 262.0
-    nr '"Já? Já  jsem romantik, ne voják. Jenom bych překážel."'
+    nr '"Já? Já  jsem romantik, ne voják. Jenom bych překážel."{#morte_s263_}'
 
     menu:
-        '"Až zaútočím na to tělo, bude lepší, když budeš se mnou, nebo budeš ta další věc, do které vrazím tenhle skalpel."':
+        '"Až zaútočím na to tělo, bude lepší, když budeš se mnou, nebo budeš ta další věc, do které vrazím tenhle skalpel."{#morte_s263_r27329}':
             # a552 # r27329
             jump morte_s264
 
-        '"Dobrá tedy."':
+        '"Dobrá tedy."{#morte_s263_r27330}':
             # a553 # r27330
             jump morte_dispose
 
 
 # s264 # say27300
 label morte_s264: # from 263.0
-    nr '"Eh… dobře. Píchnu ti s nima."  POZNÁMKA: Jestli chceš, aby Morte zaútočil s tebou, stačí, abyste byli oba označení, když zaútočíš na mrtvolu. Morte se přidá k útoku.'
+    nr '"Eh… dobře. Píchnu ti s nima."  POZNÁMKA: Jestli chceš, aby Morte zaútočil s tebou, stačí, abyste byli oba označení, když zaútočíš na mrtvolu. Morte se přidá k útoku.{#morte_s264_}'
 
     menu:
-        '"Jsem rád, že si rozumíme. Takže do toho."':
+        '"Jsem rád, že si rozumíme. Takže do toho."{#morte_s264_r27331}':
             # a554 # r27331
             jump morte_dispose
 
 
 # s265 # say27301
 label morte_s265: # -
-    nr '"Dobře, postaral ses vo tu správnou zdechlinu. Teď musíš najít klíč. Měl by bejt někde na těle. Jakmile ho dostaneme, můžeme vocaď vypadnout."'
+    nr '"Dobře, postaral ses vo tu správnou zdechlinu. Teď musíš najít klíč. Měl by bejt někde na těle. Jakmile ho dostaneme, můžeme vocaď vypadnout."{#morte_s265_}'
 
     menu:
-        '"Dobře."':
+        '"Dobře."{#morte_s265_r27332}':
             # a555 # r27332
             jump morte_dispose
 
 
 # s266 # say27302
 label morte_s266: # -
-    nr '"Dobře, to je ten klíč. Musí pasovat do zámku některejch dveří."'
+    nr '"Dobře, to je ten klíč. Musí pasovat do zámku některejch dveří."{#morte_s266_}'
 
     menu:
-        '"Tak tedy zkusím všechny dveře."':
+        '"Tak tedy zkusím všechny dveře."{#morte_s266_r27333}':
             # a556 # r27333
             jump morte_dispose
 
 
 # s267 # say27911
 label morte_s267: # -
-    nr 'Morte do tvého ucha zasyčel: "Právník."'
+    nr 'Morte do tvého ucha zasyčel: "Právník."{#morte_s267_}'
 
     jump cwcafef_s15  # EXTERN
 
 
 # s268 # say27912
 label morte_s268: # -
-    nr '"Druh mluvící encyklopedie, šéfe. O tom opravdu nerad mluvím."'
+    nr '"Druh mluvící encyklopedie, šéfe. O tom opravdu nerad mluvím."{#morte_s268_}'
 
     if morteLogic.s268_condition():
         $ morteLogic.s268_action()
         jump cwcafef_s50  # EXTERN
     menu:
-        '"Ale ty NEJSI mimir, Morte…"' if morteLogic.r65536_condition():
+        '"Ale ty NEJSI mimir, Morte…"{#morte_s268_r65536}' if morteLogic.r65536_condition():
             # a557 # r65536
             jump cwcafef_s50  # EXTERN
 
 
 # s269 # say27913
 label morte_s269: # -
-    nr 'Morte zakmital obočím a začal plout k ženě. "To není všechno co jsem-"'
+    nr 'Morte zakmital obočím a začal plout k ženě. "To není všechno co jsem-"{#morte_s269_}'
 
     menu:
-        '"To stačí, Morte."':
+        '"To stačí, Morte."{#morte_s269_r27914}':
             # a558 # r27914
             jump morte_s270
 
 
 # s270 # say27915
 label morte_s270: # from 269.0
-    nr '"Jo, jo. Dobrá." Morte zakoulel očima a začal mumlat. "Tss, já také můžu být *mrtvý*…"'
+    nr '"Jo, jo. Dobrá." Morte zakoulel očima a začal mumlat. "Tss, já také můžu být *mrtvý*…"{#morte_s270_}'
 
     menu:
-        '"Říkáš… řekla jsi „samo“? Oni obvykle nemluví?"' if morteLogic.r27916_condition():
+        '"Říkáš… řekla jsi „samo“? Oni obvykle nemluví?"{#morte_s270_r27916}' if morteLogic.r27916_condition():
             # a559 # r27916
             jump cwcafef_s51  # EXTERN
 
-        '"Chci se něco zeptat této ženy…"':
+        '"Chci se něco zeptat této ženy…"{#morte_s270_r27917}':
             # a560 # r27917
             jump cwcafef_s4  # EXTERN
 
-        'Odejdi od ženy v klidu.':
+        'Odejdi od ženy v klidu.{#morte_s270_r27918}':
             # a561 # r27918
             jump morte_dispose
 
 
 # s271 # say27919
 label morte_s271: # -
-    nr 'Morte ji přerušil: "No vidíš, šéfe, je to všechno jenom o rozdílech v *kvalitě* tvého mimira. Někteří - jako já -- jsou více okouzlující než jiní, to je všechno. A navíc… hmm… „vědom si sám sebe,“ to je to správné slovo."'
+    nr 'Morte ji přerušil: "No vidíš, šéfe, je to všechno jenom o rozdílech v *kvalitě* tvého mimira. Někteří - jako já -- jsou více okouzlující než jiní, to je všechno. A navíc… hmm… „vědom si sám sebe,“ to je to správné slovo."{#morte_s271_}'
 
     menu:
-        '"Hmm."':
+        '"Hmm."{#morte_s271_r27920}':
             # a562 # r27920
             jump cwcafef_s52  # EXTERN
 
-        '"Aha."':
+        '"Aha."{#morte_s271_r27921}':
             # a563 # r27921
             jump cwcafef_s52  # EXTERN
 
 
 # s272 # say27922
 label morte_s272: # -
-    nr '"Hej! Jenom se to tady snažím pobavit, šéfe!"'
+    nr '"Hej! Jenom se to tady snažím pobavit, šéfe!"{#morte_s272_}'
 
     jump cwcafef_s50  # EXTERN
 
 
 # s273 # say28036
 label morte_s273: # -
-    nr 'Morte na tebe znalecky kývl. "Hej, tenhle chlápek není špatnej."'
+    nr 'Morte na tebe znalecky kývl. "Hej, tenhle chlápek není špatnej."{#morte_s273_}'
 
     menu:
-        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."':
+        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."{#morte_s273_r28041}':
             # a564 # r28041
             $ morteLogic.r28041_action()
             jump malmanr_s13  # EXTERN
 
-        'Hoď deset měďáků po Malmanerovi.':
+        'Hoď deset měďáků po Malmanerovi.{#morte_s273_r28042}':
             # a565 # r28042
             $ morteLogic.r28042_action()
             jump malmanr_s14  # EXTERN
 
-        '"Opravdu? Nic takového jsem neslyšel, Morte. Jdeme."':
+        '"Opravdu? Nic takového jsem neslyšel, Morte. Jdeme."{#morte_s273_r28043}':
             # a566 # r28043
             jump malmanr_s15  # EXTERN
 
 
 # s274 # say28037
 label morte_s274: # -
-    nr 'Morte na tebe znalecky kývl. "Hej, tento chlápek není špatný."'
+    nr 'Morte na tebe znalecky kývl. "Hej, tento chlápek není špatný."{#morte_s274_}'
 
     menu:
-        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."' if morteLogic.r28038_condition():
+        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."{#morte_s274_r28038}' if morteLogic.r28038_condition():
             # a567 # r28038
             $ morteLogic.r28038_action()
             jump malmanr_s13  # EXTERN
 
-        'Hoď třicet měďáků po Malmanerovi.' if morteLogic.r28039_condition():
+        'Hoď třicet měďáků po Malmanerovi.{#morte_s274_r28039}' if morteLogic.r28039_condition():
             # a568 # r28039
             $ morteLogic.r28039_action()
             jump malmanr_s14  # EXTERN
 
-        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."' if morteLogic.r28040_condition():
+        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."{#morte_s274_r28040}' if morteLogic.r28040_condition():
             # a569 # r28040
             $ morteLogic.r28040_action()
             jump malmanr_s13  # EXTERN
 
-        'Hoď padesát měďáků po Malmanerovi.' if morteLogic.r28044_condition():
+        'Hoď padesát měďáků po Malmanerovi.{#morte_s274_r28044}' if morteLogic.r28044_condition():
             # a570 # r28044
             $ morteLogic.r28044_action()
             jump malmanr_s14  # EXTERN
 
-        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."' if morteLogic.r28045_condition():
+        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."{#morte_s274_r28045}' if morteLogic.r28045_condition():
             # a571 # r28045
             $ morteLogic.r28045_action()
             jump malmanr_s13  # EXTERN
 
-        'Hoď padesát měďáků po Malmanerovi.' if morteLogic.r28046_condition():
+        'Hoď padesát měďáků po Malmanerovi.{#morte_s274_r28046}' if morteLogic.r28046_condition():
             # a572 # r28046
             $ morteLogic.r28046_action()
             jump malmanr_s14  # EXTERN
 
-        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."' if morteLogic.r28047_condition():
+        '"Dobrá, tu máš… vem si své peníze zpět, Malmanere."{#morte_s274_r28047}' if morteLogic.r28047_condition():
             # a573 # r28047
             $ morteLogic.r28047_action()
             jump malmanr_s13  # EXTERN
 
-        'Hoď osmdesát měďáků po Malmanerovi.' if morteLogic.r28048_condition():
+        'Hoď osmdesát měďáků po Malmanerovi.{#morte_s274_r28048}' if morteLogic.r28048_condition():
             # a574 # r28048
             $ morteLogic.r28048_action()
             jump malmanr_s14  # EXTERN
 
-        '"Opravdu? Nic takového jsem neslyšel, Morte. Jdeme."':
+        '"Opravdu? Nic takového jsem neslyšel, Morte. Jdeme."{#morte_s274_r28049}':
             # a575 # r28049
             jump malmanr_s15  # EXTERN
 
 
 # s275 # say28630
 label morte_s275: # -
-    nr '"To zní blbě."'
+    nr '"To zní blbě."{#morte_s275_}'
 
     jump grace_s60  # EXTERN
 
 
 # s276 # say28631
 label morte_s276: # -
-    nr '"Je tanar„ri… sukuba šéfiku."'
+    nr '"Je tanar„ri… sukuba šéfiku."{#morte_s276_}'
 
     jump grace_s72  # EXTERN
 
 
 # s277 # say28632
 label morte_s277: # -
-    nr '"To si piš dáblice!" Morte cvaknul zuby. "Jsem PRO aby ta sukuba šla s náma… A bohové vědí, že ty Annah seš vtipná, jako dyby se ti ve střevech producíroval ježek."'
+    nr '"To si piš dáblice!" Morte cvaknul zuby. "Jsem PRO aby ta sukuba šla s náma… A bohové vědí, že ty Annah seš vtipná, jako dyby se ti ve střevech producíroval ježek."{#morte_s277_}'
 
     jump annah_s166  # EXTERN
 
 
 # s278 # say28633
 label morte_s278: # -
-    nr '"Hej, počkej minutku! *JÁ* jsem znalec Sfér! Je to má práce šéfiku!"'
+    nr '"Hej, počkej minutku! *JÁ* jsem znalec Sfér! Je to má práce šéfiku!"{#morte_s278_}'
 
     menu:
-        '"Mít v partě dva lidi znalé Sfér, mi připadá celkem mazané. A navíc bych Morte řekl, že to bude větší zábava."':
+        '"Mít v partě dva lidi znalé Sfér, mi připadá celkem mazané. A navíc bych Morte řekl, že to bude větší zábava."{#morte_s278_r28634}':
             # a576 # r28634
             jump morte_s279
 
 
 # s279 # say28635
 label morte_s279: # from 278.0
-    nr '"Ty to možna vidíš jako zábavu! JÁ to spíš vidím tak, že kdejaké žábě stačí, když na tebe zakoulí očima a ty seš z toho hned celej vedle!" Morte se utišil. "A piš si, že sem to myslel vážně. A sem rád, že sem to zmínil."'
+    nr '"Ty to možna vidíš jako zábavu! JÁ to spíš vidím tak, že kdejaké žábě stačí, když na tebe zakoulí očima a ty seš z toho hned celej vedle!" Morte se utišil. "A piš si, že sem to myslel vážně. A sem rád, že sem to zmínil."{#morte_s279_}'
 
     menu:
-        '"Budu si to pamatovat Morte. Slečno Grace, omluv mě pokud budu nějak neomalený, ale nemáš chuť cestovat s námi?"':
+        '"Budu si to pamatovat Morte. Slečno Grace, omluv mě pokud budu nějak neomalený, ale nemáš chuť cestovat s námi?"{#morte_s279_r28636}':
             # a577 # r28636
             jump grace_s79  # EXTERN
 
 
 # s280 # say28637
 label morte_s280: # -
-    nr '"Co se můj zjizvený společník pokouší říct je, že DVA z nás… Mimochodem, já jsem Morte: omluvte prosím společníkovu nevychovanost, že nás nepředstavil… se domnívají, že by byl opravdu VÝBORNÝ nápad, kdyby ses k nám připojila. Máme spoustu místa pro sukubu. SPOUSTU místa."'
+    nr '"Co se můj zjizvený společník pokouší říct je, že DVA z nás… Mimochodem, já jsem Morte: omluvte prosím společníkovu nevychovanost, že nás nepředstavil… se domnívají, že by byl opravdu VÝBORNÝ nápad, kdyby ses k nám připojila. Máme spoustu místa pro sukubu. SPOUSTU místa."{#morte_s280_}'
 
     jump grace_s119  # EXTERN
 
 
 # s281 # say28738
 label morte_s281: # - # IF WEIGHT #4 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  Global("Morte_Stolen","GLOBAL",2) !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Díkes, šéfíku. Neumíš si představit, jak rád zase lítám s tebou." V jeho hlase to zavání sarkasmem. "Naučil sem se novej trik, zatimco jsem tu trčel."'
+    nr '"Díkes, šéfíku. Neumíš si představit, jak rád zase lítám s tebou." V jeho hlase to zavání sarkasmem. "Naučil sem se novej trik, zatimco jsem tu trčel."{#morte_s281_}'
 
     menu:
-        '"Hurá, sláva. Konečně tě mám zpátky."':
+        '"Hurá, sláva. Konečně tě mám zpátky."{#morte_s281_r28743}':
             # a578 # r28743
             $ morteLogic.r28743_action()
             jump morte_dispose
 
-        '"Promiň, kámo. Zkoušel jsem ho oblafnout."' if morteLogic.r28744_condition():
+        '"Promiň, kámo. Zkoušel jsem ho oblafnout."{#morte_s281_r28744}' if morteLogic.r28744_condition():
             # a579 # r28744
             $ morteLogic.r28744_action()
             jump morte_s282
 
-        '"Promiň, kámo. Zkoušel jsem ho oblafnout."' if morteLogic.r28745_condition():
+        '"Promiň, kámo. Zkoušel jsem ho oblafnout."{#morte_s281_r28745}' if morteLogic.r28745_condition():
             # a580 # r28745
             $ morteLogic.r28745_action()
             jump morte_s283
@@ -4198,195 +4198,195 @@ label morte_s281: # - # IF WEIGHT #4 /* Triggers after states #: 742 737 733 487
 
 # s282 # say28739
 label morte_s282: # from 281.1
-    nr '"Vážně? To se ti podobá, šéfe. Skvělej nápad. Ale protentokrát ti odpouštím. Hlavně to už nedělej znova."'
+    nr '"Vážně? To se ti podobá, šéfe. Skvělej nápad. Ale protentokrát ti odpouštím. Hlavně to už nedělej znova."{#morte_s282_}'
 
     menu:
-        '"Jak myslíš, Morte. Můžem jít."':
+        '"Jak myslíš, Morte. Můžem jít."{#morte_s282_r28746}':
             # a581 # r28746
             jump morte_dispose
 
 
 # s283 # say28740
 label morte_s283: # from 281.2
-    nr '"Hele, nevěřím ti ani slůvko. Prostě zapomenem, co se stalo, jo? Teď už bysme měli jít."'
+    nr '"Hele, nevěřím ti ani slůvko. Prostě zapomenem, co se stalo, jo? Teď už bysme měli jít."{#morte_s283_}'
 
     menu:
-        '"Fajn."':
+        '"Fajn."{#morte_s283_r28747}':
             # a582 # r28747
             jump morte_dispose
 
-        '"Morte, jenom jsem blafoval. To pochopíš."':
+        '"Morte, jenom jsem blafoval. To pochopíš."{#morte_s283_r28748}':
             # a583 # r28748
             jump morte_dispose
 
 
 # s284 # say28741
 label morte_s284: # -
-    nr '"Díky šéfe. A teď se odsaď vypaříme!" Morte na chvíli ztichl. "Jo, a jen tak mimochodem… tidle hoši dali hlavy dohromady. Naučili mě něco pěkně mazanýho."'
+    nr '"Díky šéfe. A teď se odsaď vypaříme!" Morte na chvíli ztichl. "Jo, a jen tak mimochodem… tidle hoši dali hlavy dohromady. Naučili mě něco pěkně mazanýho."{#morte_s284_}'
 
     menu:
-        '"Tak jdeme."':
+        '"Tak jdeme."{#morte_s284_r28749}':
             # a584 # r28749
             jump morte_dispose
 
 
 # s285 # say28962
 label morte_s285: # -
-    nr '"Eh… šéfíku? Už jsi někdy viděl sochu, že jo? Víš snad, že sochy nechodí a tak podobně."'
+    nr '"Eh… šéfíku? Už jsi někdy viděl sochu, že jo? Víš snad, že sochy nechodí a tak podobně."{#morte_s285_}'
 
     menu:
-        '"Podívej, Morte: ty jsi létající mluvící lebka, která zavrhuje možnost existence živých soch."' if morteLogic.r28967_condition():
+        '"Podívej, Morte: ty jsi létající mluvící lebka, která zavrhuje možnost existence živých soch."{#morte_s285_r28967}' if morteLogic.r28967_condition():
             # a585 # r28967
             jump morte_s286
 
-        '"Potkal jsem mága jménem Salabesh, který mluvil o jistém kamenném muži. Jsi to ty?"' if morteLogic.r28968_condition():
+        '"Potkal jsem mága jménem Salabesh, který mluvil o jistém kamenném muži. Jsi to ty?"{#morte_s285_r28968}' if morteLogic.r28968_condition():
             # a586 # r28968
             $ morteLogic.r28968_action()
             jump quisai_s5  # EXTERN
 
-        '"Vím, Morte. Jenom se jí dotknu…"':
+        '"Vím, Morte. Jenom se jí dotknu…"{#morte_s285_r28969}':
             # a587 # r28969
             jump quisai_s3  # EXTERN
 
-        'Odejdi.':
+        'Odejdi.{#morte_s285_r28970}':
             # a588 # r28970
             jump morte_dispose
 
 
 # s286 # say28963
 label morte_s286: # from 285.0
-    nr '"No… eh… hmm. Dělej, jak myslíš."'
+    nr '"No… eh… hmm. Dělej, jak myslíš."{#morte_s286_}'
 
     menu:
-        '"Potkal jsem mága jménem Salabesh, který mluvil o jistém kamenném muži. Jsi to ty?"' if morteLogic.r28971_condition():
+        '"Potkal jsem mága jménem Salabesh, který mluvil o jistém kamenném muži. Jsi to ty?"{#morte_s286_r28971}' if morteLogic.r28971_condition():
             # a589 # r28971
             $ morteLogic.r28971_action()
             jump quisai_s5  # EXTERN
 
-        '"Hele, Morte, prostě se ho dotknu, jasný?"':
+        '"Hele, Morte, prostě se ho dotknu, jasný?"{#morte_s286_r28972}':
             # a590 # r28972
             jump quisai_s3  # EXTERN
 
-        'Odejdi.':
+        'Odejdi.{#morte_s286_r28973}':
             # a591 # r28973
             jump morte_dispose
 
 
 # s287 # say28964
 label morte_s287: # -
-    nr '"Snad, že by to oblečení bylo na správným místě, šéfíku?"'
+    nr '"Snad, že by to oblečení bylo na správným místě, šéfíku?"{#morte_s287_}'
 
     menu:
-        '"To byla řečnická otázka, Morte."':
+        '"To byla řečnická otázka, Morte."{#morte_s287_r28974}':
             # a592 # r28974
             jump morte_s288
 
 
 # s288 # say28965
 label morte_s288: # from 287.0
-    nr '"Já vím, šéfi. Já vim."'
+    nr '"Já vím, šéfi. Já vim."{#morte_s288_}'
 
     menu:
-        '"Potkal jsem mága jménem Salabesh, který mluvil o jistém kamenném muži. Jsi to ty?"' if morteLogic.r28975_condition():
+        '"Potkal jsem mága jménem Salabesh, který mluvil o jistém kamenném muži. Jsi to ty?"{#morte_s288_r28975}' if morteLogic.r28975_condition():
             # a593 # r28975
             $ morteLogic.r28975_action()
             jump quisai_s5  # EXTERN
 
-        'Uhoď sochu.':
+        'Uhoď sochu.{#morte_s288_r28976}':
             # a594 # r28976
             $ morteLogic.r28976_action()
             jump quisai_s23  # EXTERN
 
-        'Odejdi.':
+        'Odejdi.{#morte_s288_r28977}':
             # a595 # r28977
             jump morte_dispose
 
 
 # s289 # say28966
 label morte_s289: # -
-    nr 'Morte obrátil oči v sloup a vydal ze sebe kdákavý zvuk. "Síly, ne! Už ne další mluvící něco… jako… tohle!"'
+    nr 'Morte obrátil oči v sloup a vydal ze sebe kdákavý zvuk. "Síly, ne! Už ne další mluvící něco… jako… tohle!"{#morte_s289_}'
 
     menu:
-        '"Mám pár dotazů o tobě samém"…':
+        '"Mám pár dotazů o tobě samém"…{#morte_s289_r28978}':
             # a596 # r28978
             jump quisai_s11  # EXTERN
 
-        '"Chtěl bych se zeptat na něco ohledně tohoto místa."':
+        '"Chtěl bych se zeptat na něco ohledně tohoto místa."{#morte_s289_r28979}':
             # a597 # r28979
             jump quisai_s30  # EXTERN
 
-        '"Nevíš něco o Ravel Puzzlewell?"' if morteLogic.r28980_condition():
+        '"Nevíš něco o Ravel Puzzlewell?"{#morte_s289_r28980}' if morteLogic.r28980_condition():
             # a598 # r28980
             jump quisai_s29  # EXTERN
 
-        '"Ještě se stavím později. Sbohem."':
+        '"Ještě se stavím později. Sbohem."{#morte_s289_r28981}':
             # a599 # r28981
             jump morte_dispose
 
 
 # s290 # say29677
 label morte_s290: # -
-    nr '"Hej, šéfe - má zkřížené prsty!"'
+    nr '"Hej, šéfe - má zkřížené prsty!"{#morte_s290_}'
 
     jump quell_s21  # EXTERN
 
 
 # s291 # say30527
 label morte_s291: # -
-    nr 'Morte zašeptal. "Říká, že je právník, poradce. Jeden s těch magorů, co se vykecává na soudech."'
+    nr 'Morte zašeptal. "Říká, že je právník, poradce. Jeden s těch magorů, co se vykecává na soudech."{#morte_s291_}'
 
     jump iannis_s10  # EXTERN
 
 
 # s292 # say30816
 label morte_s292: # -
-    nr 'Morte se otočil a dívá se za sebe. "Kde?! Kde?!!"'
+    nr 'Morte se otočil a dívá se za sebe. "Kde?! Kde?!!"{#morte_s292_}'
 
     jump able_s2  # EXTERN
 
 
 # s293 # say30817
 label morte_s293: # -
-    nr 'Morte polknul. "Hele, za tebou! Další lítající lebka!"'
+    nr 'Morte polknul. "Hele, za tebou! Další lítající lebka!"{#morte_s293_}'
 
     menu:
-        'Podívej se po lebce.' if morteLogic.r30822_condition():
+        'Podívej se po lebce.{#morte_s293_r30822}' if morteLogic.r30822_condition():
             # a600 # r30822
             jump able_s10  # EXTERN
 
-        'Nechej Morteho, ať se baví.' if morteLogic.r30823_condition():
+        'Nechej Morteho, ať se baví.{#morte_s293_r30823}' if morteLogic.r30823_condition():
             # a601 # r30823
             jump able_s10  # EXTERN
 
-        '"No tak, Morte. Chci se ho na něco zeptat…"' if morteLogic.r30824_condition():
+        '"No tak, Morte. Chci se ho na něco zeptat…"{#morte_s293_r30824}' if morteLogic.r30824_condition():
             # a602 # r30824
             jump able_s10  # EXTERN
 
 
 # s294 # say30818
 label morte_s294: # -
-    nr '"Přímo tam, jak ukazuju! Támhle!"'
+    nr '"Přímo tam, jak ukazuju! Támhle!"{#morte_s294_}'
 
     jump able_s11  # EXTERN
 
 
 # s295 # say30819
 label morte_s295: # -
-    nr 'Morte podrážděně prohlásil: "Minul jsi je! Celý *průvod* jich byl! To už se asi nikdy nepřihodí, ani za milión otáček Velkého Prstence!"'
+    nr 'Morte podrážděně prohlásil: "Minul jsi je! Celý *průvod* jich byl! To už se asi nikdy nepřihodí, ani za milión otáček Velkého Prstence!"{#morte_s295_}'
 
     jump able_s12  # EXTERN
 
 
 # s296 # say30820
 label morte_s296: # -
-    nr 'Morte trochu poskočil, jako by naznačoval pokrčení rameny. "Raději tomu říkám pronikavý vhled do lidské nátury."'
+    nr 'Morte trochu poskočil, jako by naznačoval pokrčení rameny. "Raději tomu říkám pronikavý vhled do lidské nátury."{#morte_s296_}'
 
     menu:
-        '"Mám nějaké otázky…"' if morteLogic.r30825_condition():
+        '"Mám nějaké otázky…"{#morte_s296_r30825}' if morteLogic.r30825_condition():
             # a603 # r30825
             jump able_s16  # EXTERN
 
-        'Získej znovu mužovu pozornost.' if morteLogic.r30826_condition():
+        'Získej znovu mužovu pozornost.{#morte_s296_r30826}' if morteLogic.r30826_condition():
             # a604 # r30826
             $ morteLogic.r30826_action()
             jump able_s13  # EXTERN
@@ -4394,17 +4394,17 @@ label morte_s296: # -
 
 # s297 # say30821
 label morte_s297: # -
-    nr '"Hele, šéfe, to JE DOST PRAŠTĚNÝ, ABY TO MOHLO FUNGOVAT!"'
+    nr '"Hele, šéfe, to JE DOST PRAŠTĚNÝ, ABY TO MOHLO FUNGOVAT!"{#morte_s297_}'
 
     jump able_s65  # EXTERN
 
 
 # s298 # say31566
 label morte_s298: # -
-    nr '"U ostnatých bradavek Paní Bolesti, to je---"  Všechno náhle utichlo, když i poslední tvůj smysl selhal a zmizel do nicoty. ~ [MRT387]'
+    nr '"U ostnatých bradavek Paní Bolesti, to je---"  Všechno náhle utichlo, když i poslední tvůj smysl selhal a zmizel do nicoty. ~ [MRT387]{#morte_s298_}'
 
     menu:
-        'Zemři hrozivou smrtí, oběti Gangroighydonovy Příšerné Kletby.':
+        'Zemři hrozivou smrtí, oběti Gangroighydonovy Příšerné Kletby.{#morte_s298_r31567}':
             # a605 # r31567
             $ morteLogic.r31567_action()
             jump morte_dispose
@@ -4412,18 +4412,18 @@ label morte_s298: # -
 
 # s299 # say32367
 label morte_s299: # -
-    nr '"„Tajemství?!“ Na to ti seru! Snad nebudeme *poslouchat* tyhlety kecy, ne? No ták… pojď, podíváme se po ňáký Vnímavý kočce, která nikdy neměla to potěšení ochutnat vášnivý polibek, jakej dokáže dát jenom lebka." Zavrtěl obočím a slastně zamručel při té (pro něj) nadmíru příjemné představě.'
+    nr '"„Tajemství?!“ Na to ti seru! Snad nebudeme *poslouchat* tyhlety kecy, ne? No ták… pojď, podíváme se po ňáký Vnímavý kočce, která nikdy neměla to potěšení ochutnat vášnivý polibek, jakej dokáže dát jenom lebka." Zavrtěl obočím a slastně zamručel při té (pro něj) nadmíru příjemné představě.{#morte_s299_}'
 
     menu:
-        '"Tiše, Morte. Zůstaneme tady… alespoň na chvíli."':
+        '"Tiše, Morte. Zůstaneme tady… alespoň na chvíli."{#morte_s299_r32368}':
             # a606 # r32368
             jump deathad_s1  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s299_r32369}':
             # a607 # r32369
             jump deathad_s1  # EXTERN
 
-        '"Máš pravdu, Morte - jdeme pryč."':
+        '"Máš pravdu, Morte - jdeme pryč."{#morte_s299_r32370}':
             # a608 # r32370
             $ morteLogic.r32370_action()
             jump morte_dispose
@@ -4431,22 +4431,22 @@ label morte_s299: # -
 
 # s300 # say32371
 label morte_s300: # -
-    nr 'Morte šeptá:"A začíná další utrpení."'
+    nr 'Morte šeptá:"A začíná další utrpení."{#morte_s300_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s300_r32372}':
             # a609 # r32372
             jump deathad_s2  # EXTERN
 
-        '"Morte - uklidni se."':
+        '"Morte - uklidni se."{#morte_s300_r32373}':
             # a610 # r32373
             jump deathad_s2  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s300_r32374}':
             # a611 # r32374
             jump deathad_s2  # EXTERN
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s300_r32375}':
             # a612 # r32375
             $ morteLogic.r32375_action()
             jump morte_dispose
@@ -4454,22 +4454,22 @@ label morte_s300: # -
 
 # s301 # say32376
 label morte_s301: # -
-    nr 'Morte šeptá: "To určo."'
+    nr 'Morte šeptá: "To určo."{#morte_s301_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s301_r32377}':
             # a613 # r32377
             jump deathad_s3  # EXTERN
 
-        '"Morte - buď zticha."':
+        '"Morte - buď zticha."{#morte_s301_r32378}':
             # a614 # r32378
             jump deathad_s3  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s301_r32379}':
             # a615 # r32379
             jump morte_s303
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s301_r32380}':
             # a616 # r32380
             $ morteLogic.r32380_action()
             jump morte_dispose
@@ -4477,22 +4477,22 @@ label morte_s301: # -
 
 # s302 # say32381
 label morte_s302: # -
-    nr 'Morte zašeptal: "A nekonečná nuda."'
+    nr 'Morte zašeptal: "A nekonečná nuda."{#morte_s302_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s302_r32382}':
             # a617 # r32382
             jump deathad_s5  # EXTERN
 
-        '"Prosím, Morte: ticho."':
+        '"Prosím, Morte: ticho."{#morte_s302_r32383}':
             # a618 # r32383
             jump deathad_s5  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s302_r32384}':
             # a619 # r32384
             jump deathad_s5  # EXTERN
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s302_r32385}':
             # a620 # r32385
             $ morteLogic.r32385_action()
             jump morte_dispose
@@ -4500,22 +4500,22 @@ label morte_s302: # -
 
 # s303 # say32386
 label morte_s303: # from 301.2
-    nr 'Morte zašeptal: "Mám pocit, že voba už tušíme, kde to zarazíme, až tady zdechnem."'
+    nr 'Morte zašeptal: "Mám pocit, že voba už tušíme, kde to zarazíme, až tady zdechnem."{#morte_s303_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s303_r32387}':
             # a621 # r32387
             jump deathad_s6  # EXTERN
 
-        '"Morte: přestaň mluvit."':
+        '"Morte: přestaň mluvit."{#morte_s303_r32388}':
             # a622 # r32388
             jump deathad_s6  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s303_r32389}':
             # a623 # r32389
             jump deathad_s6  # EXTERN
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s303_r32390}':
             # a624 # r32390
             $ morteLogic.r32390_action()
             jump morte_dispose
@@ -4523,22 +4523,22 @@ label morte_s303: # from 301.2
 
 # s304 # say32391
 label morte_s304: # -
-    nr 'Morte zašeptal: "A to dyž máš štěstí."'
+    nr 'Morte zašeptal: "A to dyž máš štěstí."{#morte_s304_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s304_r32392}':
             # a625 # r32392
             jump deathad_s8  # EXTERN
 
-        '"To už je dost, Morte."':
+        '"To už je dost, Morte."{#morte_s304_r32393}':
             # a626 # r32393
             jump deathad_s8  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s304_r32394}':
             # a627 # r32394
             jump deathad_s8  # EXTERN
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s304_r32395}':
             # a628 # r32395
             $ morteLogic.r32395_action()
             jump morte_dispose
@@ -4546,22 +4546,22 @@ label morte_s304: # -
 
 # s305 # say32396
 label morte_s305: # -
-    nr 'Morte zašeptal: "A to má bejt podněcující, jo? Musíme to šecko dělat *znova?* Pffff, ty vole, už se nemůžu dočkat, až ze mě zasejc bude lítající lebka. Serem na něj. To je ale pako. Se mu to mluví, ale von sám nikdá předtím nezdechnul, hm?"'
+    nr 'Morte zašeptal: "A to má bejt podněcující, jo? Musíme to šecko dělat *znova?* Pffff, ty vole, už se nemůžu dočkat, až ze mě zasejc bude lítající lebka. Serem na něj. To je ale pako. Se mu to mluví, ale von sám nikdá předtím nezdechnul, hm?"{#morte_s305_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s305_r32397}':
             # a629 # r32397
             jump deathad_s9  # EXTERN
 
-        '"No, tak, Morte. Ticho."':
+        '"No, tak, Morte. Ticho."{#morte_s305_r32398}':
             # a630 # r32398
             jump deathad_s9  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s305_r32399}':
             # a631 # r32399
             jump deathad_s9  # EXTERN
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s305_r32400}':
             # a632 # r32400
             $ morteLogic.r32400_action()
             jump morte_dispose
@@ -4569,22 +4569,22 @@ label morte_s305: # -
 
 # s306 # say32401
 label morte_s306: # -
-    nr 'Morte zašeptal: "Oh, tohle je ale velkej náklad. Pf."'
+    nr 'Morte zašeptal: "Oh, tohle je ale velkej náklad. Pf."{#morte_s306_}'
 
     menu:
-        'Tiše kývni na Morteho.':
+        'Tiše kývni na Morteho.{#morte_s306_r32402}':
             # a633 # r32402
             jump deathad_s11  # EXTERN
 
-        '"Morte - uklidni se."':
+        '"Morte - uklidni se."{#morte_s306_r32403}':
             # a634 # r32403
             jump deathad_s11  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s306_r32404}':
             # a635 # r32404
             jump deathad_s11  # EXTERN
 
-        '"Hmmm, žádná sranda. Zmizíme, Morte."':
+        '"Hmmm, žádná sranda. Zmizíme, Morte."{#morte_s306_r32405}':
             # a636 # r32405
             $ morteLogic.r32405_action()
             jump morte_dispose
@@ -4592,152 +4592,152 @@ label morte_s306: # -
 
 # s307 # say32406
 label morte_s307: # -
-    nr 'Morte řekl nahlas: "To je ale něco!"'
+    nr 'Morte řekl nahlas: "To je ale něco!"{#morte_s307_}'
 
     jump deathad_s15  # EXTERN
 
 
 # s308 # say32407
 label morte_s308: # -
-    nr 'Morte se snížil, aby ho mluvčí neviděl a pak ti zašeptal: "No tak, náčelníku. Řekni mu, jaký to je ve skutečnosti."'
+    nr 'Morte se snížil, aby ho mluvčí neviděl a pak ti zašeptal: "No tak, náčelníku. Řekni mu, jaký to je ve skutečnosti."{#morte_s308_}'
 
     menu:
-        '"Ano, já mám otázku…"':
+        '"Ano, já mám otázku…"{#morte_s308_r32408}':
             # a637 # r32408
             jump deathad_s17  # EXTERN
 
-        '"Žádné otázky. Můj přítel se přeřekl."':
+        '"Žádné otázky. Můj přítel se přeřekl."{#morte_s308_r32409}':
             # a638 # r32409
             jump deathad_s16  # EXTERN
 
 
 # s309 # say32410
 label morte_s309: # -
-    nr '"Skvělý! Další smrt! Zapište si mě taky!" Z publika se ozývá smích. Mluvčí vypadá rozzuřeně.'
+    nr '"Skvělý! Další smrt! Zapište si mě taky!" Z publika se ozývá smích. Mluvčí vypadá rozzuřeně.{#morte_s309_}'
 
     menu:
-        '"Co se stane, když zemřou?"':
+        '"Co se stane, když zemřou?"{#morte_s309_r32411}':
             # a639 # r32411
             jump deathad_s26  # EXTERN
 
-        '"Mám další otázku…"':
+        '"Mám další otázku…"{#morte_s309_r32412}':
             # a640 # r32412
             jump deathad_s17  # EXTERN
 
-        '"To je vše, co jsem chtěl vědět."':
+        '"To je vše, co jsem chtěl vědět."{#morte_s309_r32413}':
             # a641 # r32413
             jump deathad_s18  # EXTERN
 
 
 # s310 # say32651
 label morte_s310: # -
-    nr '"Mám tý pitomý kočce naplácat na prdel, šéfe?"'
+    nr '"Mám tý pitomý kočce naplácat na prdel, šéfe?"{#morte_s310_}'
 
     menu:
-        '"Bez slitování, Morte."':
+        '"Bez slitování, Morte."{#morte_s310_r32661}':
             # a642 # r32661
             jump morte_s316
 
-        '"Ne, Morte… Já to zvládnu."':
+        '"Ne, Morte… Já to zvládnu."{#morte_s310_r32662}':
             # a643 # r32662
             jump sarhava_s3  # EXTERN
 
 
 # s311 # say32652
 label morte_s311: # -
-    nr '"Miluju tvoje zkažený způsoby, náčelníku."'
+    nr '"Miluju tvoje zkažený způsoby, náčelníku."{#morte_s311_}'
 
     jump sarhava_s4  # EXTERN
 
 
 # s312 # say32653
 label morte_s312: # -
-    nr 'Jak si klekáš před ženou, Morte vykřiknul: "Šéfe! Ty si děláš srandu! Teda, pokud něco nechystáš, nebo tak…"'
+    nr 'Jak si klekáš před ženou, Morte vykřiknul: "Šéfe! Ty si děláš srandu! Teda, pokud něco nechystáš, nebo tak…"{#morte_s312_}'
 
     menu:
-        'Ignoruj Morteho a polib ženě botu.':
+        'Ignoruj Morteho a polib ženě botu.{#morte_s312_r32663}':
             # a644 # r32663
             jump sarhava_s14  # EXTERN
 
-        '"Já zkrátka nechci vyvolávat nějaké problémy, Morte. Když si nedám pozor, mohly by sem přijít stráže."':
+        '"Já zkrátka nechci vyvolávat nějaké problémy, Morte. Když si nedám pozor, mohly by sem přijít stráže."{#morte_s312_r32664}':
             # a645 # r32664
             jump morte_s313
 
-        '"Máš pravdu, Morte. Pojďme."':
+        '"Máš pravdu, Morte. Pojďme."{#morte_s312_r32665}':
             # a646 # r32665
             jump sarhava_s13  # EXTERN
 
 
 # s313 # say32654
 label morte_s313: # from 312.1
-    nr '"No, máš pravdu… ale…"'
+    nr '"No, máš pravdu… ale…"{#morte_s313_}'
 
     menu:
-        '"Zapomeň na to, Morte. Podívejte, madam… skončeme to, nebo zavolám stráže sám."':
+        '"Zapomeň na to, Morte. Podívejte, madam… skončeme to, nebo zavolám stráže sám."{#morte_s313_r32666}':
             # a647 # r32666
             jump sarhava_s7  # EXTERN
 
-        '"Máš pravdu, Morte. Pojďme."':
+        '"Máš pravdu, Morte. Pojďme."{#morte_s313_r32667}':
             # a648 # r32667
             jump sarhava_s13  # EXTERN
 
 
 # s314 # say32655
 label morte_s314: # -
-    nr 'Morte se zašklebil a zacvakal zubama. "Zkrátka obyčejnej chlápek, co, šéfe?"'
+    nr 'Morte se zašklebil a zacvakal zubama. "Zkrátka obyčejnej chlápek, co, šéfe?"{#morte_s314_}'
 
     jump morte_dispose
 
 
 # s315 # say32656
 label morte_s315: # -
-    nr '"Uh-oh…"'
+    nr '"Uh-oh…"{#morte_s315_}'
 
     jump morte_dispose
 
 
 # s316 # say32657
 label morte_s316: # from 310.0
-    nr 'Morte na tebe mrkl a zavolal na ženu: "Hej, ty! Jo, ty tam, ty drzá malá couro… koukej se na mne, když s tebou mluvím! Z čeho seš taková zahořklá?"'
+    nr 'Morte na tebe mrkl a zavolal na ženu: "Hej, ty! Jo, ty tam, ty drzá malá couro… koukej se na mne, když s tebou mluvím! Z čeho seš taková zahořklá?"{#morte_s316_}'
 
     jump sarhava_s39  # EXTERN
 
 
 # s317 # say32658
 label morte_s317: # -
-    nr '"Á, naše malá Pouštní Princezna je mimo, páč Sultán chtěl dalšího syna? Řekni mi, „Pouštní Princezno“, trávíš každou noc ožralá a skoro mrtvá vzteky, následovaná bandou chtivých patolízalů? Snažíš se takhle ospravedlnit svoji mizernou existenci svýmu fotříkovi? Ha? Nebo sama sobě?"'
+    nr '"Á, naše malá Pouštní Princezna je mimo, páč Sultán chtěl dalšího syna? Řekni mi, „Pouštní Princezno“, trávíš každou noc ožralá a skoro mrtvá vzteky, následovaná bandou chtivých patolízalů? Snažíš se takhle ospravedlnit svoji mizernou existenci svýmu fotříkovi? Ha? Nebo sama sobě?"{#morte_s317_}'
 
     jump sarhava_s40  # EXTERN
 
 
 # s318 # say32659
 label morte_s318: # -
-    nr '"Fakt si myslíš, že se díky těm svejm blbejm rvačkám budeš cítit líp? Cejtit se, že máš nějakou cenu, že na něco máš? NE! Pokud je tohle tvůj smutnej patetickej způsob, jak si o sobě zvednout mínění, doporučuju ti, ať to zapíchneš, jdeš domů a vdáš se do harému nějakýho dvořana!"'
+    nr '"Fakt si myslíš, že se díky těm svejm blbejm rvačkám budeš cítit líp? Cejtit se, že máš nějakou cenu, že na něco máš? NE! Pokud je tohle tvůj smutnej patetickej způsob, jak si o sobě zvednout mínění, doporučuju ti, ať to zapíchneš, jdeš domů a vdáš se do harému nějakýho dvořana!"{#morte_s318_}'
 
     jump sarhava_s41  # EXTERN
 
 
 # s319 # say32660
 label morte_s319: # -
-    nr 'Morte se obrátil k tobě. "Vidíš, šéfe, já *vím*, co se tady stane. My *všichni* víme, že v tomhle má starej Morte recht. Ale, oh ne, pyšná malá Pouštní Princezna, zničená na veřejnosti, pokoře-"'
+    nr 'Morte se obrátil k tobě. "Vidíš, šéfe, já *vím*, co se tady stane. My *všichni* víme, že v tomhle má starej Morte recht. Ale, oh ne, pyšná malá Pouštní Princezna, zničená na veřejnosti, pokoře-"{#morte_s319_}'
 
     jump sarhava_s42  # EXTERN
 
 
 # s320 # say33073
 label morte_s320: # -
-    nr '"Válka Krve? Nudnější než poslouchat Guvnera, jak povídá o zákonech. Najděme ňáký mladý vnímavý, který potřebujou poučit vo vášni!" Při té představě chtivě zakroutil obočím.'
+    nr '"Válka Krve? Nudnější než poslouchat Guvnera, jak povídá o zákonech. Najděme ňáký mladý vnímavý, který potřebujou poučit vo vášni!" Při té představě chtivě zakroutil obočím.{#morte_s320_}'
 
     menu:
-        '"Ne, Morte… Chci si to vyslechnout."':
+        '"Ne, Morte… Chci si to vyslechnout."{#morte_s320_r33074}':
             # a649 # r33074
             jump ghysis_s1  # EXTERN
 
-        'Ignoruj Morteho a poslouchej dál.':
+        'Ignoruj Morteho a poslouchej dál.{#morte_s320_r33075}':
             # a650 # r33075
             jump ghysis_s1  # EXTERN
 
-        '"Dobře, Morte - půjdeme."':
+        '"Dobře, Morte - půjdeme."{#morte_s320_r33076}':
             # a651 # r33076
             $ morteLogic.r33076_action()
             jump morte_dispose
@@ -4745,174 +4745,174 @@ label morte_s320: # -
 
 # s321 # say33300
 label morte_s321: # -
-    nr 'Morte zakroutil očima a zařval. "Oj! Hele! Mluvící hovno!"'
+    nr 'Morte zakroutil očima a zařval. "Oj! Hele! Mluvící hovno!"{#morte_s321_}'
 
     jump ghivem_s49  # EXTERN
 
 
 # s322 # say33301
 label morte_s322: # -
-    nr 'Morte kývl tvým směrem a promluvil na muže: "Mluvil jsem vo támdle tom zjizveným volovi, kámo… ne vo tobě! Žádnej problém, ne?"'
+    nr 'Morte kývl tvým směrem a promluvil na muže: "Mluvil jsem vo támdle tom zjizveným volovi, kámo… ne vo tobě! Žádnej problém, ne?"{#morte_s322_}'
 
     menu:
-        '"Sleduj, Morte…"':
+        '"Sleduj, Morte…"{#morte_s322_r33302}':
             # a652 # r33302
             jump ghivem_s51  # EXTERN
 
-        'Ignoruj Morteho.':
+        'Ignoruj Morteho.{#morte_s322_r33303}':
             # a653 # r33303
             jump ghivem_s51  # EXTERN
 
 
 # s323 # say33423
 label morte_s323: # -
-    nr 'Morte zakroutil očima a zařval. "Oj! Hele! Mluvící hovno!"'
+    nr 'Morte zakroutil očima a zařval. "Oj! Hele! Mluvící hovno!"{#morte_s323_}'
 
     jump ghivef_s47  # EXTERN
 
 
 # s324 # say33429
 label morte_s324: # -
-    nr 'Morte kývl tvým směrem a promluvil na muže: "Mluvil jsem vo támdle tom zjizveným volovi, kámo… ne vo tobě! Žádnej problém, ne?"'
+    nr 'Morte kývl tvým směrem a promluvil na muže: "Mluvil jsem vo támdle tom zjizveným volovi, kámo… ne vo tobě! Žádnej problém, ne?"{#morte_s324_}'
 
     menu:
-        '"Sleduj, Morte…"':
+        '"Sleduj, Morte…"{#morte_s324_r33430}':
             # a654 # r33430
             jump ghivef_s49  # EXTERN
 
-        'Ignoruj Morteho.':
+        'Ignoruj Morteho.{#morte_s324_r33433}':
             # a655 # r33433
             jump ghivef_s49  # EXTERN
 
 
 # s325 # say33958
 label morte_s325: # - # IF WEIGHT #5 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Věděl jsem, že se vrátíš, šéfe! Konečně sis uvědomil, jak moc mě potřebuješ, co?"~ [MRT516]'
+    nr '"Věděl jsem, že se vrátíš, šéfe! Konečně sis uvědomil, jak moc mě potřebuješ, co?"~ [MRT516]{#morte_s325_}'
 
     menu:
-        '"Jo… pojďme."':
+        '"Jo… pojďme."{#morte_s325_r33959}':
             # a656 # r33959
             $ morteLogic.r33959_action()
             jump morte_dispose
 
-        '"Teď zrovna ne, Morte."':
+        '"Teď zrovna ne, Morte."{#morte_s325_r33960}':
             # a657 # r33960
             jump morte_s326
 
 
 # s326 # say33961
 label morte_s326: # from 325.1
-    nr '"Hmmmph. Dobře, nevím, jak dlouho tady počkám, takže ti dávám POSLEDNÍ šanci. Seš si jistej, že nepotřebuješ mou asistenci jakožto mudrce a všeznalce, o mým bystrým rozumu nemluvě?"'
+    nr '"Hmmmph. Dobře, nevím, jak dlouho tady počkám, takže ti dávám POSLEDNÍ šanci. Seš si jistej, že nepotřebuješ mou asistenci jakožto mudrce a všeznalce, o mým bystrým rozumu nemluvě?"{#morte_s326_}'
 
     menu:
-        '"Morte, ty nejsi ani mudrc, ANI nemáš bystrý rozum."':
+        '"Morte, ty nejsi ani mudrc, ANI nemáš bystrý rozum."{#morte_s326_r33962}':
             # a658 # r33962
             jump morte_s327
 
-        '"Dobře, rozmyslel jsem si to. No tak, pojďme."':
+        '"Dobře, rozmyslel jsem si to. No tak, pojďme."{#morte_s326_r33963}':
             # a659 # r33963
             $ morteLogic.r33963_action()
             jump morte_dispose
 
-        '"Teď ne, Morte. Možná později."':
+        '"Teď ne, Morte. Možná později."{#morte_s326_r33964}':
             # a660 # r33964
             jump morte_s327
 
 
 # s327 # say33965
 label morte_s327: # from 326.0 326.2
-    nr '"Pokoušíš se zranit mé pocity, náčelníku? Proč? Bylo to něco, co sem ti řek? Nebo je to proto, že nemám ruce? Tak co?"'
+    nr '"Pokoušíš se zranit mé pocity, náčelníku? Proč? Bylo to něco, co sem ti řek? Nebo je to proto, že nemám ruce? Tak co?"{#morte_s327_}'
 
     menu:
-        '"Dobře, rozmyslel jsem si to. No tak, pojďme."':
+        '"Dobře, rozmyslel jsem si to. No tak, pojďme."{#morte_s327_r33966}':
             # a661 # r33966
             $ morteLogic.r33966_action()
             jump morte_dispose
 
-        '"Nic z toho. Zkrátka teď nepotřebuju tvoji společnost. Sbohem, Morte."':
+        '"Nic z toho. Zkrátka teď nepotřebuju tvoji společnost. Sbohem, Morte."{#morte_s327_r33967}':
             # a662 # r33967
             jump morte_s328
 
 
 # s328 # say33968
 label morte_s328: # from 327.1
-    nr '"No, já nebudu čekat VĚČNĚ, takže si to rychle rozmysli a vrať se sem pro mě."'
+    nr '"No, já nebudu čekat VĚČNĚ, takže si to rychle rozmysli a vrať se sem pro mě."{#morte_s328_}'
 
     menu:
-        '"Sbohem, Morte."':
+        '"Sbohem, Morte."{#morte_s328_r33969}':
             # a663 # r33969
             jump morte_dispose
 
 
 # s329 # say33970
 label morte_s329: # from 649.2 650.2 651.3 652.2 653.1 654.1 655.1 656.1 657.1 658.0 659.1 660.1 661.1 662.0 663.2 664.1 665.2 666.1 667.1 668.0 669.9 670.0 671.0 672.0 673.0 674.0 675.1 676.0 677.2 678.1 679.0 680.0 681.0 682.1 683.0 684.1 685.1 686.2 687.1 688.2 689.1 690.1 695.2 696.1 697.1 699.1 700.1 706.1 707.1 708.1 709.1 710.1 711.1 712.1 714.1 715.1 721.0 722.0 723.1 725.0 726.1 727.0
-    nr '"Co tě žere, náčelníku?"'
+    nr '"Co tě žere, náčelníku?"{#morte_s329_}'
 
     menu:
-        '"Můžeš mi znovu přečíst co mám vytetováno na zádech?"':
+        '"Můžeš mi znovu přečíst co mám vytetováno na zádech?"{#morte_s329_r65539}':
             # a664 # r65539
             jump morte_s649
 
-        '"Můžeš mi říct aspoň trošku o Sigilu?"':
+        '"Můžeš mi říct aspoň trošku o Sigilu?"{#morte_s329_r65540}':
             # a665 # r65540
             jump morte_s659
 
-        '"Morte… Nechci ti do toho kecat, ale mohl by jsi dělat něco *jiného*, kromě toho tlachání?"' if morteLogic.r65541_condition():
+        '"Morte… Nechci ti do toho kecat, ale mohl by jsi dělat něco *jiného*, kromě toho tlachání?"{#morte_s329_r65541}' if morteLogic.r65541_condition():
             # a666 # r65541
             jump morte_s663
 
-        '"Morte… které jsou tvé speciální vlohy?"' if morteLogic.r65542_condition():
+        '"Morte… které jsou tvé speciální vlohy?"{#morte_s329_r65542}' if morteLogic.r65542_condition():
             # a667 # r65542
             jump morte_s666
 
-        '"Morte, proč si mi neřekl o té poslední řádce tetování na mých zádech?"' if morteLogic.r65543_condition():
+        '"Morte, proč si mi neřekl o té poslední řádce tetování na mých zádech?"{#morte_s329_r65543}' if morteLogic.r65543_condition():
             # a668 # r65543
             jump morte_s654
 
-        '"Chtělo by to nějakou radu. Co si myslíš, že bychom měli dělat teď?"':
+        '"Chtělo by to nějakou radu. Co si myslíš, že bychom měli dělat teď?"{#morte_s329_r65544}':
             # a669 # r65544
             jump morte_s669
 
-        '"Říkal si, že seš mimir, je to tak, Morte?"' if morteLogic.r65545_condition():
+        '"Říkal si, že seš mimir, je to tak, Morte?"{#morte_s329_r65545}' if morteLogic.r65545_condition():
             # a670 # r65545
             jump morte_s684
 
-        '"Řekni mi znova jak jsi skončil na Pilíři lebek."' if morteLogic.r65546_condition():
+        '"Řekni mi znova jak jsi skončil na Pilíři lebek."{#morte_s329_r65546}' if morteLogic.r65546_condition():
             # a671 # r65546
             jump morte_s693
 
-        '"Morte, proč nechceš déle se mnou cestovat, když jsem tě sundal z pilíře?"' if morteLogic.r65547_condition():
+        '"Morte, proč nechceš déle se mnou cestovat, když jsem tě sundal z pilíře?"{#morte_s329_r65547}' if morteLogic.r65547_condition():
             # a672 # r65547
             jump morte_s715
 
-        '"Co víš o Válce krve?"' if morteLogic.r65548_condition():
+        '"Co víš o Válce krve?"{#morte_s329_r65548}' if morteLogic.r65548_condition():
             # a673 # r65548
             jump morte_s723
 
-        '"Co víš o čarodějnici Ravel?"' if morteLogic.r65549_condition():
+        '"Co víš o čarodějnici Ravel?"{#morte_s329_r65549}' if morteLogic.r65549_condition():
             # a674 # r65549
             jump morte_s722
 
-        '"Jak si zemřel, Morte?"':
+        '"Jak si zemřel, Morte?"{#morte_s329_r65550}':
             # a675 # r65550
             jump morte_s726
 
-        '"To nic, Morte. Jen zkouším, či si stále se mnou."':
+        '"To nic, Morte. Jen zkouším, či si stále se mnou."{#morte_s329_r65551}':
             # a676 # r65551
             jump morte_dispose
 
 
 # s330 # say34990
 label morte_s330: # externs zf114_s2 zf114_s1 zf114_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s330_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s330_r34991}':
             # a677 # r34991
             $ morteLogic.r34991_action()
             jump morte_s331
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s330_r35001}':
             # a678 # r35001
             $ morteLogic.r35001_action()
             jump morte_s331
@@ -4920,58 +4920,58 @@ label morte_s330: # externs zf114_s2 zf114_s1 zf114_s0
 
 # s331 # say34992
 label morte_s331: # from 330.0 330.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"{#morte_s331_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s331_r34993}':
             # a679 # r34993
             $ morteLogic.r34993_action()
             jump morte_s332
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s331_r34996}':
             # a680 # r34996
             jump morte_s333
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s331_r34999}':
             # a681 # r34999
             jump morte_s333
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s331_r35000}':
             # a682 # r35000
             jump morte_dispose
 
 
 # s332 # say34994
 label morte_s332: # from 331.0
-    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, ty si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, ty si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s332_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s332_r34995}':
             # a683 # r34995
             jump morte_dispose
 
 
 # s333 # say34997
 label morte_s333: # from 331.1 331.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s333_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s333_r34998}':
             # a684 # r34998
             jump morte_dispose
 
 
 # s334 # say35022
 label morte_s334: # externs zf594_s2 zf594_s1 zf594_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s334_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s334_r35023}':
             # a685 # r35023
             $ morteLogic.r35023_action()
             jump morte_s335
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s334_r35033}':
             # a686 # r35033
             $ morteLogic.r35033_action()
             jump morte_s335
@@ -4979,58 +4979,58 @@ label morte_s334: # externs zf594_s2 zf594_s1 zf594_s0
 
 # s335 # say35024
 label morte_s335: # from 334.0 334.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"{#morte_s335_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s335_r35025}':
             # a687 # r35025
             $ morteLogic.r35025_action()
             jump morte_s336
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s335_r35028}':
             # a688 # r35028
             jump morte_s337
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s335_r35031}':
             # a689 # r35031
             jump morte_s337
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s335_r35032}':
             # a690 # r35032
             jump morte_dispose
 
 
 # s336 # say35026
 label morte_s336: # from 335.0
-    nr '"Z tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s336_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s336_r35027}':
             # a691 # r35027
             jump morte_dispose
 
 
 # s337 # say35029
 label morte_s337: # from 335.1 335.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s337_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s337_r35030}':
             # a692 # r35030
             jump morte_dispose
 
 
 # s338 # say35054
 label morte_s338: # externs zf626_s2 zf626_s1 zf626_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s338_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s338_r35055}':
             # a693 # r35055
             $ morteLogic.r35055_action()
             jump morte_s339
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s338_r35065}':
             # a694 # r35065
             $ morteLogic.r35065_action()
             jump morte_s339
@@ -5038,58 +5038,58 @@ label morte_s338: # externs zf626_s2 zf626_s1 zf626_s0
 
 # s339 # say35056
 label morte_s339: # from 338.0 338.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"{#morte_s339_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s339_r35057}':
             # a695 # r35057
             $ morteLogic.r35057_action()
             jump morte_s340
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s339_r35060}':
             # a696 # r35060
             jump morte_s341
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s339_r35063}':
             # a697 # r35063
             jump morte_s341
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s339_r35064}':
             # a698 # r35064
             jump morte_dispose
 
 
 # s340 # say35058
 label morte_s340: # from 339.0
-    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s340_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s340_r35059}':
             # a699 # r35059
             jump morte_dispose
 
 
 # s341 # say35061
 label morte_s341: # from 339.1 339.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s341_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s341_r35062}':
             # a700 # r35062
             jump morte_dispose
 
 
 # s342 # say35086
 label morte_s342: # externs zf1096_s2 zf1096_s1 zf1096_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s342_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s342_r35087}':
             # a701 # r35087
             $ morteLogic.r35087_action()
             jump morte_s343
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s342_r35097}':
             # a702 # r35097
             $ morteLogic.r35097_action()
             jump morte_s343
@@ -5097,58 +5097,58 @@ label morte_s342: # externs zf1096_s2 zf1096_s1 zf1096_s0
 
 # s343 # say35088
 label morte_s343: # from 342.0 342.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mě!  Chtěla mě! CHTĚLA!"{#morte_s343_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s343_r35089}':
             # a703 # r35089
             $ morteLogic.r35089_action()
             jump morte_s344
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s343_r35092}':
             # a704 # r35092
             jump morte_s345
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s343_r35095}':
             # a705 # r35095
             jump morte_s345
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s343_r35096}':
             # a706 # r35096
             jump morte_dispose
 
 
 # s344 # say35090
 label morte_s344: # from 343.0
-    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Tebou? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kterej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s344_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s344_r35091}':
             # a707 # r35091
             jump morte_dispose
 
 
 # s345 # say35093
 label morte_s345: # from 343.1 343.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÝ noci s nějakejma nadrženejma právě zemřelejma kočkama, zatímco ty se někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s345_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s345_r35094}':
             # a708 # r35094
             jump morte_dispose
 
 
 # s346 # say35118
 label morte_s346: # externs zf1072_s2 zf1072_s1 zf1072_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s346_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s346_r35119}':
             # a709 # r35119
             $ morteLogic.r35119_action()
             jump morte_s347
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s346_r35129}':
             # a710 # r35129
             $ morteLogic.r35129_action()
             jump morte_s347
@@ -5156,58 +5156,58 @@ label morte_s346: # externs zf1072_s2 zf1072_s1 zf1072_s0
 
 # s347 # say35120
 label morte_s347: # from 346.0 346.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"{#morte_s347_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s347_r35121}':
             # a711 # r35121
             $ morteLogic.r35121_action()
             jump morte_s348
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s347_r35124}':
             # a712 # r35124
             jump morte_s349
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s347_r35127}':
             # a713 # r35127
             jump morte_s349
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s347_r35128}':
             # a714 # r35128
             jump morte_dispose
 
 
 # s348 # say35122
 label morte_s348: # from 347.0
-    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s348_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s348_r35123}':
             # a715 # r35123
             jump morte_dispose
 
 
 # s349 # say35125
 label morte_s349: # from 347.1 347.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s349_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s349_r35126}':
             # a716 # r35126
             jump morte_dispose
 
 
 # s350 # say35150
 label morte_s350: # externs zf832_s2 zf832_s1 zf832_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s350_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s350_r35151}':
             # a717 # r35151
             $ morteLogic.r35151_action()
             jump morte_s351
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s350_r35161}':
             # a718 # r35161
             $ morteLogic.r35161_action()
             jump morte_s351
@@ -5215,58 +5215,58 @@ label morte_s350: # externs zf832_s2 zf832_s1 zf832_s0
 
 # s351 # say35152
 label morte_s351: # from 350.0 350.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"{#morte_s351_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s351_r35153}':
             # a719 # r35153
             $ morteLogic.r35153_action()
             jump morte_s352
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s351_r35156}':
             # a720 # r35156
             jump morte_s353
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s351_r35159}':
             # a721 # r35159
             jump morte_s353
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s351_r35160}':
             # a722 # r35160
             jump morte_dispose
 
 
 # s352 # say35154
 label morte_s352: # from 351.0
-    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s352_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s352_r35155}':
             # a723 # r35155
             jump morte_dispose
 
 
 # s353 # say35157
 label morte_s353: # from 351.1 351.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s353_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s353_r35158}':
             # a724 # r35158
             jump morte_dispose
 
 
 # s354 # say35182
 label morte_s354: # externs zf679_s2 zf679_s1 zf679_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s354_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s354_r35183}':
             # a725 # r35183
             $ morteLogic.r35183_action()
             jump morte_s355
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s354_r35193}':
             # a726 # r35193
             $ morteLogic.r35193_action()
             jump morte_s355
@@ -5274,58 +5274,58 @@ label morte_s354: # externs zf679_s2 zf679_s1 zf679_s0
 
 # s355 # say35184
 label morte_s355: # from 354.0 354.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"{#morte_s355_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s355_r35185}':
             # a727 # r35185
             $ morteLogic.r35185_action()
             jump morte_s356
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s355_r35188}':
             # a728 # r35188
             jump morte_s357
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s355_r35191}':
             # a729 # r35191
             jump morte_s357
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s355_r35192}':
             # a730 # r35192
             jump morte_dispose
 
 
 # s356 # say35186
 label morte_s356: # from 355.0
-    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s356_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s356_r35187}':
             # a731 # r35187
             jump morte_dispose
 
 
 # s357 # say35189
 label morte_s357: # from 355.1 355.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s357_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s357_r35190}':
             # a732 # r35190
             jump morte_dispose
 
 
 # s358 # say35214
 label morte_s358: # externs zf444_s2 zf444_s1 zf444_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s358_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s358_r35215}':
             # a733 # r35215
             $ morteLogic.r35215_action()
             jump morte_s359
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s358_r35225}':
             # a734 # r35225
             $ morteLogic.r35225_action()
             jump morte_s359
@@ -5333,58 +5333,58 @@ label morte_s358: # externs zf444_s2 zf444_s1 zf444_s0
 
 # s359 # say35216
 label morte_s359: # from 358.0 358.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"{#morte_s359_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s359_r35217}':
             # a735 # r35217
             $ morteLogic.r35217_action()
             jump morte_s360
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s359_r35220}':
             # a736 # r35220
             jump morte_s361
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s359_r35223}':
             # a737 # r35223
             jump morte_s361
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s359_r35224}':
             # a738 # r35224
             jump morte_dispose
 
 
 # s360 # say35218
 label morte_s360: # from 359.0
-    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s360_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s360_r35219}':
             # a739 # r35219
             jump morte_dispose
 
 
 # s361 # say35221
 label morte_s361: # from 359.1 359.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s361_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s361_r35222}':
             # a740 # r35222
             jump morte_dispose
 
 
 # s362 # say35246
 label morte_s362: # externs zf1148_s2 zf1148_s1 zf1148_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s362_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s362_r35247}':
             # a741 # r35247
             $ morteLogic.r35247_action()
             jump morte_s363
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s362_r35257}':
             # a742 # r35257
             $ morteLogic.r35257_action()
             jump morte_s363
@@ -5392,58 +5392,58 @@ label morte_s362: # externs zf1148_s2 zf1148_s1 zf1148_s0
 
 # s363 # say35248
 label morte_s363: # from 362.0 362.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"{#morte_s363_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s363_r35249}':
             # a743 # r35249
             $ morteLogic.r35249_action()
             jump morte_s364
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s363_r35252}':
             # a744 # r35252
             jump morte_s365
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s363_r35255}':
             # a745 # r35255
             jump morte_s365
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s363_r35256}':
             # a746 # r35256
             jump morte_dispose
 
 
 # s364 # say35250
 label morte_s364: # from 363.0
-    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s364_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s364_r35251}':
             # a747 # r35251
             jump morte_dispose
 
 
 # s365 # say35253
 label morte_s365: # from 363.1 363.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s365_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s365_r35254}':
             # a748 # r35254
             jump morte_dispose
 
 
 # s366 # say35278
 label morte_s366: # externs zf891_s2 zf891_s1 zf891_s0
-    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"'
+    nr '"Pssst. Viděls, jak se na mě dívala? Huh? Viděls to? Jak sledovala křivku mé týlní kosti?"{#morte_s366_}'
 
     menu:
-        '"O čem to *mluvíš*?"':
+        '"O čem to *mluvíš*?"{#morte_s366_r35279}':
             # a749 # r35279
             $ morteLogic.r35279_action()
             jump morte_s367
 
-        '"Tím myslíš ten prázdný hrobový pohled?"':
+        '"Tím myslíš ten prázdný hrobový pohled?"{#morte_s366_r35289}':
             # a750 # r35289
             $ morteLogic.r35289_action()
             jump morte_s367
@@ -5451,647 +5451,647 @@ label morte_s366: # externs zf891_s2 zf891_s1 zf891_s0
 
 # s367 # say35280
 label morte_s367: # from 366.0 366.1
-    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"'
+    nr '"Co? Seš SLEPEJ?! Mrkala na mne! Chtěla mě! CHTĚLA!"{#morte_s367_}'
 
     menu:
-        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."':
+        '"Možná chtěla, abys *šel pryč.* Byla příliš rozrušená ze MNE, než aby věnovala pozornost nějaké pitomé poletující hlavě s velkou hubou."{#morte_s367_r35281}':
             # a751 # r35281
             $ morteLogic.r35281_action()
             jump morte_s368
 
-        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."':
+        '"Myslím, že si to představuješ. Je zombie. Mrtvola. Mrtvá osoba. Nejspíš tě ani nezaregistrovala."{#morte_s367_r35284}':
             # a752 # r35284
             jump morte_s369
 
-        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."':
+        '"Myslím si, že ty a tvoje představivost byste se měli na čas rozejít a dát si pauzu."{#morte_s367_r35287}':
             # a753 # r35287
             jump morte_s369
 
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s367_r35288}':
             # a754 # r35288
             jump morte_dispose
 
 
 # s368 # say35282
 label morte_s368: # from 367.0
-    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."'
+    nr '"Z Tebe? Jo, to určo! Věř mi, holky, co si prošly hrobem, si na fyzičnost moc nepotrpí, nesere je „Já mám tělo“ a „Jsem zjizvenej tvrďák“. Chtějí chlápka, kerej má DUCHA! To sem já, šéfe. Mrtvoly jako TY sou běžnější než zlomená grešle."{#morte_s368_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s368_r35283}':
             # a755 # r35283
             jump morte_dispose
 
 
 # s369 # say35285
 label morte_s369: # from 367.1 367.2
-    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"'
+    nr '"Jo, jasně. Když seš mrtvej tak dlouho jako já, naučíš se to poznávat. Ty signály jsou pro tebe možná moc NEZŘETELNÝ, ale proto já trávím SVÉ noci s nějakýma nadrženýma právě zemřelýma kočkama, zatímco ty někde jen tak obstáváš, huh? Co je? Co-se-děje? Kde je m-m-moje pamm-mmměť?"{#morte_s369_}'
 
     menu:
-        '"No jo, Morte. Pojďme."':
+        '"No jo, Morte. Pojďme."{#morte_s369_r35286}':
             # a756 # r35286
             jump morte_dispose
 
 
 # s370 # say35310
 label morte_s370: # from 377.3
-    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"'
+    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"{#morte_s370_}'
 
     menu:
-        '"Šedovous?"':
+        '"Šedovous?"{#morte_s370_r35311}':
             # a757 # r35311
             jump morte_s371
 
-        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."':
+        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."{#morte_s370_r35326}':
             # a758 # r35326
             jump morte_s372
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s370_r35327}':
             # a759 # r35327
             jump morte_s373
 
 
 # s371 # say35312
 label morte_s371: # from 370.0
-    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."'
+    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."{#morte_s371_}'
 
     menu:
-        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"':
+        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"{#morte_s371_r35313}':
             # a760 # r35313
             jump morte_s372
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s371_r35325}':
             # a761 # r35325
             jump morte_s373
 
 
 # s372 # say35314
 label morte_s372: # from 370.1 371.0
-    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."'
+    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."{#morte_s372_}'
 
     menu:
-        '"A ty ne?"':
+        '"A ty ne?"{#morte_s372_r35315}':
             # a762 # r35315
             jump morte_s373
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s372_r35324}':
             # a763 # r35324
             jump morte_dispose
 
 
 # s373 # say35316
 label morte_s373: # from 370.2 371.1 372.0
-    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho, TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."'
+    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho, TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."{#morte_s373_}'
 
     menu:
-        '"Jo tak? No *JÁ* mám alespoň všechny své části."':
+        '"Jo tak? No *JÁ* mám alespoň všechny své části."{#morte_s373_r35317}':
             # a764 # r35317
             jump morte_s374
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s373_r35323}':
             # a765 # r35323
             jump morte_dispose
 
 
 # s374 # say35318
 label morte_s374: # from 373.0
-    nr 'Morte si odfrkl. Nemáš potuchy, jak to bez plic dokázal.'
+    nr 'Morte si odfrkl. Nemáš potuchy, jak to bez plic dokázal.{#morte_s374_}'
 
     menu:
-        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."':
+        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."{#morte_s374_r35319}':
             # a766 # r35319
             $ morteLogic.r35319_action()
             jump morte_s375
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s374_r35322}':
             # a767 # r35322
             jump morte_dispose
 
 
 # s375 # say35320
 label morte_s375: # from 374.0
-    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."'
+    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."{#morte_s375_}'
 
     menu:
-        '"Jsem rád, že to tak cítíš. Pojďme."':
+        '"Jsem rád, že to tak cítíš. Pojďme."{#morte_s375_r35321}':
             # a768 # r35321
             jump morte_dispose
 
 
 # s376 # say35341
 label morte_s376: # externs s1221_s3 s1221_s0
-    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"'
+    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"{#morte_s376_}'
 
     menu:
-        '"Takže?"':
+        '"Takže?"{#morte_s376_r35342}':
             # a769 # r35342
             $ morteLogic.r35342_action()
             jump morte_s377
 
-        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."':
+        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."{#morte_s376_r35360}':
             # a770 # r35360
             $ morteLogic.r35360_action()
             jump morte_s377
 
-        '"Dobra tedy, to nevadí. Možná někdy jindy."':
+        '"Dobra tedy, to nevadí. Možná někdy jindy."{#morte_s376_r35361}':
             # a771 # r35361
             jump morte_s377
 
 
 # s377 # say35343
 label morte_s377: # from 376.0 376.1 376.2
-    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."'
+    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."{#morte_s377_}'
 
     menu:
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35344_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s377_r35344}' if morteLogic.r35344_condition():
             # a772 # r35344
             jump s1221_s4  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35352_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s377_r35352}' if morteLogic.r35352_condition():
             # a773 # r35352
             jump s1221_s5  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35355_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s377_r35355}' if morteLogic.r35355_condition():
             # a774 # r35355
             jump s1221_s6  # EXTERN
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35358_condition():
+        'To nic. Možná někdy jindy.{#morte_s377_r35358}' if morteLogic.r35358_condition():
             # a775 # r35358
             $ morteLogic.r35358_action()
             jump morte_s370
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35359_condition():
+        'To nic. Možná někdy jindy.{#morte_s377_r35359}' if morteLogic.r35359_condition():
             # a776 # r35359
             jump morte_dispose
 
 
 # s378 # say35387
 label morte_s378: # from 385.3
-    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"'
+    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"{#morte_s378_}'
 
     menu:
-        '"Šedovous?"':
+        '"Šedovous?"{#morte_s378_r35388}':
             # a777 # r35388
             jump morte_s379
 
-        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."':
+        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."{#morte_s378_r35403}':
             # a778 # r35403
             jump morte_s380
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s378_r35404}':
             # a779 # r35404
             jump morte_s381
 
 
 # s379 # say35389
 label morte_s379: # from 378.0
-    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."'
+    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."{#morte_s379_}'
 
     menu:
-        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"':
+        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"{#morte_s379_r35390}':
             # a780 # r35390
             jump morte_s380
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s379_r35402}':
             # a781 # r35402
             jump morte_s381
 
 
 # s380 # say35391
 label morte_s380: # from 378.1 379.0
-    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."'
+    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."{#morte_s380_}'
 
     menu:
-        '"A ty ne?"':
+        '"A ty ne?"{#morte_s380_r35392}':
             # a782 # r35392
             jump morte_s381
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s380_r35401}':
             # a783 # r35401
             jump morte_dispose
 
 
 # s381 # say35393
 label morte_s381: # from 378.2 379.1 380.0
-    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobmě zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."'
+    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobmě zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."{#morte_s381_}'
 
     menu:
-        '"Jo tak? No *JÁ* mám alespoň všechny své části."':
+        '"Jo tak? No *JÁ* mám alespoň všechny své části."{#morte_s381_r35394}':
             # a784 # r35394
             jump morte_s382
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s381_r35400}':
             # a785 # r35400
             jump morte_dispose
 
 
 # s382 # say35395
 label morte_s382: # from 381.0
-    nr 'Morte si odfrkl. Nemáš ponětí, jak to bez plic dokázal.'
+    nr 'Morte si odfrkl. Nemáš ponětí, jak to bez plic dokázal.{#morte_s382_}'
 
     menu:
-        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."':
+        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."{#morte_s382_r35396}':
             # a786 # r35396
             $ morteLogic.r35396_action()
             jump morte_s383
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s382_r35399}':
             # a787 # r35399
             jump morte_dispose
 
 
 # s383 # say35397
 label morte_s383: # from 382.0
-    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."'
+    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."{#morte_s383_}'
 
     menu:
-        '"Jsem rád, že to tak cítíš. Pojďme."':
+        '"Jsem rád, že to tak cítíš. Pojďme."{#morte_s383_r35398}':
             # a788 # r35398
             jump morte_dispose
 
 
 # s384 # say35418
 label morte_s384: # externs s748_s3 s748_s0
-    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"'
+    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"{#morte_s384_}'
 
     menu:
-        '"Takže?"':
+        '"Takže?"{#morte_s384_r35419}':
             # a789 # r35419
             $ morteLogic.r35419_action()
             jump morte_s385
 
-        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."':
+        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."{#morte_s384_r35437}':
             # a790 # r35437
             $ morteLogic.r35437_action()
             jump morte_s385
 
-        '"Dobra tedy, to nevadí. Možná někdy jindy."':
+        '"Dobra tedy, to nevadí. Možná někdy jindy."{#morte_s384_r35438}':
             # a791 # r35438
             jump morte_s385
 
 
 # s385 # say35420
 label morte_s385: # from 384.0 384.1 384.2
-    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."'
+    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."{#morte_s385_}'
 
     menu:
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35421_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s385_r35421}' if morteLogic.r35421_condition():
             # a792 # r35421
             jump s748_s4  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35429_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s385_r35429}' if morteLogic.r35429_condition():
             # a793 # r35429
             jump s748_s5  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35432_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s385_r35432}' if morteLogic.r35432_condition():
             # a794 # r35432
             jump s748_s6  # EXTERN
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35435_condition():
+        'To nic. Možná někdy jindy.{#morte_s385_r35435}' if morteLogic.r35435_condition():
             # a795 # r35435
             $ morteLogic.r35435_action()
             jump morte_s378
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35436_condition():
+        'To nic. Možná někdy jindy.{#morte_s385_r35436}' if morteLogic.r35436_condition():
             # a796 # r35436
             jump morte_dispose
 
 
 # s386 # say35464
 label morte_s386: # from 393.3
-    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"'
+    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"{#morte_s386_}'
 
     menu:
-        '"Šedovous?"':
+        '"Šedovous?"{#morte_s386_r35465}':
             # a797 # r35465
             jump morte_s387
 
-        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."':
+        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."{#morte_s386_r35480}':
             # a798 # r35480
             jump morte_s388
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s386_r35481}':
             # a799 # r35481
             jump morte_s389
 
 
 # s387 # say35466
 label morte_s387: # from 386.0
-    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."'
+    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."{#morte_s387_}'
 
     menu:
-        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"':
+        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"{#morte_s387_r35467}':
             # a800 # r35467
             jump morte_s388
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s387_r35479}':
             # a801 # r35479
             jump morte_s389
 
 
 # s388 # say35468
 label morte_s388: # from 386.1 387.0
-    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."'
+    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."{#morte_s388_}'
 
     menu:
-        '"A ty ne?"':
+        '"A ty ne?"{#morte_s388_r35469}':
             # a802 # r35469
             jump morte_s389
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s388_r35478}':
             # a803 # r35478
             jump morte_dispose
 
 
 # s389 # say35470
 label morte_s389: # from 386.2 387.1 388.0
-    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."'
+    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."{#morte_s389_}'
 
     menu:
-        '"Jo tak? No *JÁ* mám alespoň všechny své části."':
+        '"Jo tak? No *JÁ* mám alespoň všechny své části."{#morte_s389_r35471}':
             # a804 # r35471
             jump morte_s390
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s389_r35477}':
             # a805 # r35477
             jump morte_dispose
 
 
 # s390 # say35472
 label morte_s390: # from 389.0
-    nr 'Morte si odfrkl. Nemáš ponětí, jak to bez plic dokázal.'
+    nr 'Morte si odfrkl. Nemáš ponětí, jak to bez plic dokázal.{#morte_s390_}'
 
     menu:
-        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."':
+        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."{#morte_s390_r35473}':
             # a806 # r35473
             $ morteLogic.r35473_action()
             jump morte_s391
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s390_r35476}':
             # a807 # r35476
             jump morte_dispose
 
 
 # s391 # say35474
 label morte_s391: # from 390.0
-    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."'
+    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."{#morte_s391_}'
 
     menu:
-        '"Jsem rád, že to tak cítíš. Pojďme."':
+        '"Jsem rád, že to tak cítíš. Pojďme."{#morte_s391_r35475}':
             # a808 # r35475
             jump morte_dispose
 
 
 # s392 # say35495
 label morte_s392: # externs s996_s3 s996_s0
-    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"'
+    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"{#morte_s392_}'
 
     menu:
-        '"Takže?"':
+        '"Takže?"{#morte_s392_r35496}':
             # a809 # r35496
             $ morteLogic.r35496_action()
             jump morte_s393
 
-        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."':
+        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."{#morte_s392_r35514}':
             # a810 # r35514
             $ morteLogic.r35514_action()
             jump morte_s393
 
-        '"Dobra tedy, to nevadí. Možná někdy jindy."':
+        '"Dobra tedy, to nevadí. Možná někdy jindy."{#morte_s392_r35515}':
             # a811 # r35515
             jump morte_s393
 
 
 # s393 # say35497
 label morte_s393: # from 392.0 392.1 392.2
-    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."'
+    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."{#morte_s393_}'
 
     menu:
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35498_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s393_r35498}' if morteLogic.r35498_condition():
             # a812 # r35498
             jump s996_s4  # EXTERN
 
-        'Zkus kostlivcovi vytáhnout svorky z kloubů.' if morteLogic.r35506_condition():
+        'Zkus kostlivcovi vytáhnout svorky z kloubů.{#morte_s393_r35506}' if morteLogic.r35506_condition():
             # a813 # r35506
             jump s996_s5  # EXTERN
 
-        'Zkus kostlivcovi vytáhnout svorky z kloubů.' if morteLogic.r35509_condition():
+        'Zkus kostlivcovi vytáhnout svorky z kloubů.{#morte_s393_r35509}' if morteLogic.r35509_condition():
             # a814 # r35509
             jump s996_s6  # EXTERN
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35512_condition():
+        'To nic. Možná někdy jindy.{#morte_s393_r35512}' if morteLogic.r35512_condition():
             # a815 # r35512
             $ morteLogic.r35512_action()
             jump morte_s386
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35513_condition():
+        'To nic. Možná někdy jindy.{#morte_s393_r35513}' if morteLogic.r35513_condition():
             # a816 # r35513
             jump morte_dispose
 
 
 # s394 # say35541
 label morte_s394: # from 401.3
-    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"'
+    nr '"Hmmm. Zajímalo by mě, jestli by tomuhle šedovousovi vadilo, kdybych si půjčil jeho tělo…"{#morte_s394_}'
 
     menu:
-        '"Šedovous?"':
+        '"Šedovous?"{#morte_s394_r35542}':
             # a817 # r35542
             jump morte_s395
 
-        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."':
+        '"Nemyslím si, že je v postavení, kdy by mohl něco namítat."{#morte_s394_r35557}':
             # a818 # r35557
             jump morte_s396
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s394_r35558}':
             # a819 # r35558
             jump morte_s397
 
 
 # s395 # say35543
 label morte_s395: # from 394.0
-    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."'
+    nr '"Šedovous… no, víš, starej paprika, dědek… zkrátka někdo věkovitej."{#morte_s395_}'
 
     menu:
-        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"':
+        '"No, myslím si, že není v pozici, kdy by mohl něco namítat.  Proč si nevzít jeho tělo?"{#morte_s395_r35544}':
             # a820 # r35544
             jump morte_s396
 
-        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."':
+        '"Něco mi říká, že bys byl dvakrát tak otravnější, kdybys měl ruce. Pojďme."{#morte_s395_r35556}':
             # a821 # r35556
             jump morte_s397
 
 
 # s396 # say35545
 label morte_s396: # from 394.1 395.0
-    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."'
+    nr 'Morte si chvíli prohlíží kostlivce, pak zavrtí hlavou. "Pche… potřebuju trochu čerstvějšího. A něco, co má o trochu víc důstojnosti… tendle je celej popraskanej a polámanej."{#morte_s396_}'
 
     menu:
-        '"A ty ne?"':
+        '"A ty ne?"{#morte_s396_r35546}':
             # a822 # r35546
             jump morte_s397
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s396_r35555}':
             # a823 # r35555
             jump morte_dispose
 
 
 # s397 # say35547
 label morte_s397: # from 394.2 395.1 396.0
-    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."'
+    nr '"Oh, seš hromada směšnosti." Morte na tebe zlobně zírá. "Kromě toho,  TY MÁŠ tak co mluvit, vole. Lituju všechny chudinky zrcadla, který potkáš."{#morte_s397_}'
 
     menu:
-        '"Jo tak? No *JÁ* mám alespoň všechny své části."':
+        '"Jo tak? No *JÁ* mám alespoň všechny své části."{#morte_s397_r35548}':
             # a824 # r35548
             jump morte_s398
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s397_r35554}':
             # a825 # r35554
             jump morte_dispose
 
 
 # s398 # say35549
 label morte_s398: # from 397.0
-    nr 'Morte si odfrkl. Nemáš ponětí, jak to bez plic dokázal.'
+    nr 'Morte si odfrkl. Nemáš ponětí, jak to bez plic dokázal.{#morte_s398_}'
 
     menu:
-        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."':
+        '"Víš, Morte, není nic lepšího a uspokojujícího, než chodit kolem, rozhazovat rukama, dýchat plícemi ostrý vzduch. Je to SKVĚLÝ, mít tělo."{#morte_s398_r35550}':
             # a826 # r35550
             $ morteLogic.r35550_action()
             jump morte_s399
 
-        '"Pojďme."':
+        '"Pojďme."{#morte_s398_r35553}':
             # a827 # r35553
             jump morte_dispose
 
 
 # s399 # say35551
 label morte_s399: # from 398.0
-    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."'
+    nr '"Musím ti říct, že svý rozhodnutí pomoct ti na útěku z přípravny jsem přidal do svýho narůstajícího seznamu věcí, kterejch lituju." Morte si znovu odfrkl. "Měl jsem tě nechat shnít… aspoň o trochu víc."{#morte_s399_}'
 
     menu:
-        '"Jsem rád, že to tak cítíš. Pojďme."':
+        '"Jsem rád, že to tak cítíš. Pojďme."{#morte_s399_r35552}':
             # a828 # r35552
             jump morte_dispose
 
 
 # s400 # say35572
 label morte_s400: # externs s863_s3 s863_s0
-    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"'
+    nr '"Uau, šéfe. To je vandalismus! Ty nesmysly byly asi to jediný, co tu kupu kostí drželo pohromadě. Nekromancie s takovejma funguje jenom do určitý míry, víš?"{#morte_s400_}'
 
     menu:
-        '"Takže?"':
+        '"Takže?"{#morte_s400_r35573}':
             # a829 # r35573
             $ morteLogic.r35573_action()
             jump morte_s401
 
-        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."':
+        '"Oh… Nechtěl jsem způsobit žádnou trvalou škodu."{#morte_s400_r35591}':
             # a830 # r35591
             $ morteLogic.r35591_action()
             jump morte_s401
 
-        '"Dobra tedy, to nevadí. Možná někdy jindy."':
+        '"Dobra tedy, to nevadí. Možná někdy jindy."{#morte_s400_r35592}':
             # a831 # r35592
             jump morte_s401
 
 
 # s401 # say35574
 label morte_s401: # from 400.0 400.1 400.2
-    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."'
+    nr '"Oh, to není problém." Morte se podivně zakýval, jako by krčil rameny. "Jenom sem si nebyl jistej, estli to víš, nebo ne. No, jen pokračuj."{#morte_s401_}'
 
     menu:
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35575_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s401_r35575}' if morteLogic.r35575_condition():
             # a832 # r35575
             jump s863_s4  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35583_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s401_r35583}' if morteLogic.r35583_condition():
             # a833 # r35583
             jump s863_s5  # EXTERN
 
-        'Zkus kostlivci vytáhnout svorky z kloubů.' if morteLogic.r35586_condition():
+        'Zkus kostlivci vytáhnout svorky z kloubů.{#morte_s401_r35586}' if morteLogic.r35586_condition():
             # a834 # r35586
             jump s863_s6  # EXTERN
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35589_condition():
+        'To nic. Možná někdy jindy.{#morte_s401_r35589}' if morteLogic.r35589_condition():
             # a835 # r35589
             $ morteLogic.r35589_action()
             jump morte_s394
 
-        'To nic. Možná někdy jindy.' if morteLogic.r35590_condition():
+        'To nic. Možná někdy jindy.{#morte_s401_r35590}' if morteLogic.r35590_condition():
             # a836 # r35590
             jump morte_dispose
 
 
 # s402 # say38265
 label morte_s402: # -
-    nr '"Zbožňuju tudle holku!"'
+    nr '"Zbožňuju tudle holku!"{#morte_s402_}'
 
     menu:
-        '"A můžeš aspoň psát, nebo dělat pantomimu?"':
+        '"A můžeš aspoň psát, nebo dělat pantomimu?"{#morte_s402_r38267}':
             # a837 # r38267
             jump ecco_s7  # EXTERN
 
 
 # s403 # say38266
 label morte_s403: # -
-    nr '"Joj!"'
+    nr '"Joj!"{#morte_s403_}'
 
     menu:
-        '"Eh?"':
+        '"Eh?"{#morte_s403_r38268}':
             # a838 # r38268
             jump ecco_s34  # EXTERN
 
 
 # s404 # say39000
 label morte_s404: # -
-    nr 'Morte šeptá, "Tohle není dobrý, šéfe. Sleduj svý kroky, nebo zcela odstraní, smetou tvojí mysl ze života… jsou příliš silný ve velkejch skupinách - každej z nich přidá do skupiny mozek. Jsou *smrtící*."'
+    nr 'Morte šeptá, "Tohle není dobrý, šéfe. Sleduj svý kroky, nebo zcela odstraní, smetou tvojí mysl ze života… jsou příliš silný ve velkejch skupinách - každej z nich přidá do skupiny mozek. Jsou *smrtící*."{#morte_s404_}'
 
     jump manyas1_s5  # EXTERN
 
 
 # s405 # say39001
 label morte_s405: # -
-    nr 'Morte šeptá, "Tohle není dobrý, šéfe. Sleduj svý kroky, nebo zcela odstraní, smetou tvojí mysl ze života… jsou příliš silný ve velkejch skupinách - každej z nich přidá do skupiny mozek. Jsou *smrtící*."'
+    nr 'Morte šeptá, "Tohle není dobrý, šéfe. Sleduj svý kroky, nebo zcela odstraní, smetou tvojí mysl ze života… jsou příliš silný ve velkejch skupinách - každej z nich přidá do skupiny mozek. Jsou *smrtící*."{#morte_s405_}'
 
     jump manyas1_s58  # EXTERN
 
 
 # s406 # say39002
 label morte_s406: # -
-    nr 'Morte šeptá, "Nevím co jsou zač, šéfe, ale sledujou tvý myšlenky. Jsou skupina mysli a každá krysa přidá víc k celkový mysli, a bojujou jako - omlouvám se za ten výraz - krysy zahnaný do kouta. Teď jsou ve svým domě, šéfe, a nemůžou nikam jít. Nebojuj."'
+    nr 'Morte šeptá, "Nevím co jsou zač, šéfe, ale sledujou tvý myšlenky. Jsou skupina mysli a každá krysa přidá víc k celkový mysli, a bojujou jako - omlouvám se za ten výraz - krysy zahnaný do kouta. Teď jsou ve svým domě, šéfe, a nemůžou nikam jít. Nebojuj."{#morte_s406_}'
 
     jump manyas1_s78  # EXTERN
 
 
 # s407 # say39564
 label morte_s407: # -
-    nr '"To je ale náhoda! Já taky vodchytávám pěkný pohádky."'
+    nr '"To je ale náhoda! Já taky vodchytávám pěkný pohádky."{#morte_s407_}'
 
     jump yves_s2  # EXTERN
 
 
 # s408 # say39565
 label morte_s408: # -
-    nr '"Já? Proč bych zrovna *já* měl povídat ňáký veršovánky?"'
+    nr '"Já? Proč bych zrovna *já* měl povídat ňáký veršovánky?"{#morte_s408_}'
 
     menu:
-        '"Zapomeň na to."':
+        '"Zapomeň na to."{#morte_s408_r39713}':
             # a839 # r39713
             jump morte_s409
 
-        '"Prostě pověz nějakou historku, Morte."':
+        '"Prostě pověz nějakou historku, Morte."{#morte_s408_r39714}':
             # a840 # r39714
             jump morte_s413
 
 
 # s409 # say39566
 label morte_s409: # from 408.0
-    nr '"Ne, ne, já to teda udělám… jenom jsem to tu chtěl trošku oživit. Mám totiž rád, když mě ostatní poslouchaj."'
+    nr '"Ne, ne, já to teda udělám… jenom jsem to tu chtěl trošku oživit. Mám totiž rád, když mě ostatní poslouchaj."{#morte_s409_}'
 
     menu:
-        '"Nic takového, Morte. Nechci to slyšet."':
+        '"Nic takového, Morte. Nechci to slyšet."{#morte_s409_r39715}':
             # a841 # r39715
             jump morte_s410
 
-        '"Tak dobrá… začni."':
+        '"Tak dobrá… začni."{#morte_s409_r39716}':
             # a842 # r39716
             $ morteLogic.r39716_action()
             jump morte_s414
@@ -6099,18 +6099,18 @@ label morte_s409: # from 408.0
 
 # s410 # say39567
 label morte_s410: # from 409.0
-    nr '"Prosím! No tak? Proooooosím? Je to vážně úžasná historka! Spousta postav, akce, je to takový tajemný a má to výborný zauzlení!"'
+    nr '"Prosím! No tak? Proooooosím? Je to vážně úžasná historka! Spousta postav, akce, je to takový tajemný a má to výborný zauzlení!"{#morte_s410_}'
 
     menu:
-        '"Nemůže to být tak skvělé."':
+        '"Nemůže to být tak skvělé."{#morte_s410_r39717}':
             # a843 # r39717
             jump morte_s411
 
-        '"Co je to zauzlení?"':
+        '"Co je to zauzlení?"{#morte_s410_r39718}':
             # a844 # r39718
             jump morte_s412
 
-        '"Dobrá… začni."':
+        '"Dobrá… začni."{#morte_s410_r39719}':
             # a845 # r39719
             $ morteLogic.r39719_action()
             jump morte_s414
@@ -6118,14 +6118,14 @@ label morte_s410: # from 409.0
 
 # s411 # say39568
 label morte_s411: # from 410.0
-    nr '"To teda je! To bys koukal! Já to povim, jo?"'
+    nr '"To teda je! To bys koukal! Já to povim, jo?"{#morte_s411_}'
 
     menu:
-        '"Počkej… co je to zauzlení?"':
+        '"Počkej… co je to zauzlení?"{#morte_s411_r39720}':
             # a846 # r39720
             jump morte_s412
 
-        '"Dobrá… začni."':
+        '"Dobrá… začni."{#morte_s411_r39721}':
             # a847 # r39721
             $ morteLogic.r39721_action()
             jump morte_s414
@@ -6133,10 +6133,10 @@ label morte_s411: # from 410.0
 
 # s412 # say39569
 label morte_s412: # from 410.1 411.0
-    nr '"Vím já? Ale zní to zajímavě!"'
+    nr '"Vím já? Ale zní to zajímavě!"{#morte_s412_}'
 
     menu:
-        '"Dobrá… začni."':
+        '"Dobrá… začni."{#morte_s412_r39722}':
             # a848 # r39722
             $ morteLogic.r39722_action()
             jump morte_s414
@@ -6144,7 +6144,7 @@ label morte_s412: # from 410.1 411.0
 
 # s413 # say39570
 label morte_s413: # from 408.1
-    nr '"Dobrá, dobrá…"'
+    nr '"Dobrá, dobrá…"{#morte_s413_}'
 
     $ morteLogic.s413_action()
     jump morte_s414
@@ -6152,271 +6152,271 @@ label morte_s413: # from 408.1
 
 # s414 # say39571
 label morte_s414: # from 409.1 410.2 411.1 412.0 413.0
-    nr '"To takhle seděl stařec v temnotě na cestě, jasný? Nebyl si totiž jistej, kterym směrem má jít, a navíc zapomněl, kdo vlastně je a kam jde. Na chviličku si sednul, aby odpočinul nohám když tu najednou zvedne zrak a co to nevidí? Před ním stojí nějaká postarší ženská, cení na něj zuby, který stejně nemá, a do toho štěbetá: „A teď tvé třetí přání. Co to bude?“"'
+    nr '"To takhle seděl stařec v temnotě na cestě, jasný? Nebyl si totiž jistej, kterym směrem má jít, a navíc zapomněl, kdo vlastně je a kam jde. Na chviličku si sednul, aby odpočinul nohám když tu najednou zvedne zrak a co to nevidí? Před ním stojí nějaká postarší ženská, cení na něj zuby, který stejně nemá, a do toho štěbetá: „A teď tvé třetí přání. Co to bude?“"{#morte_s414_}'
 
     menu:
-        '"Pokračuj, Morte…"':
+        '"Pokračuj, Morte…"{#morte_s414_r39724}':
             # a849 # r39724
             jump morte_s415
 
-        '"Počkej… měl bych dotaz na Yves…"':
+        '"Počkej… měl bych dotaz na Yves…"{#morte_s414_r39725}':
             # a850 # r39725
             jump yves_s4  # EXTERN
 
-        '"Zbytek si poslechneme jindy, Morte. Sbohem, Yves."':
+        '"Zbytek si poslechneme jindy, Morte. Sbohem, Yves."{#morte_s414_r39726}':
             # a851 # r39726
             jump morte_dispose
 
 
 # s415 # say39572
 label morte_s415: # from 414.0
-    nr '"„Třetí přání?“ Koukal na ní dědouš jako čerstvě vyvoraná myš. „Jak můžu mít třetí přání, když jsem ještě neměl první ani druhé přání?“"'
+    nr '"„Třetí přání?“ Koukal na ní dědouš jako čerstvě vyvoraná myš. „Jak můžu mít třetí přání, když jsem ještě neměl první ani druhé přání?“"{#morte_s415_}'
 
     menu:
-        '"Pokračuj, Morte…"':
+        '"Pokračuj, Morte…"{#morte_s415_r39727}':
             # a852 # r39727
             jump morte_s416
 
-        '"Počkej… měl bych dotaz na Yves…"':
+        '"Počkej… měl bych dotaz na Yves…"{#morte_s415_r39728}':
             # a853 # r39728
             jump yves_s4  # EXTERN
 
-        '"Zbytek si poslechneme jindy, Morte. Sbohem, Yves."':
+        '"Zbytek si poslechneme jindy, Morte. Sbohem, Yves."{#morte_s415_r39729}':
             # a854 # r39729
             jump morte_dispose
 
 
 # s416 # say39573
 label morte_s416: # from 415.0
-    nr '"„Už jsi měl dvě přání,“ odpověděla mu ta stará babizna, „ale tvé druhé přání bylo, abych vše uvedla do stavu před tvým prvním přáním. To proto si nic nepamatuješ; zapomněl jsi totiž všechno, co se stalo po tvém úplně prvním přání.“ Vykulila na toho nebohýho dědulu oči. Asi takhle…" Morte na tebe vyvalil oči." Takže teď už ti zbývá jen jedno přání.„"'
+    nr '"„Už jsi měl dvě přání,“ odpověděla mu ta stará babizna, „ale tvé druhé přání bylo, abych vše uvedla do stavu před tvým prvním přáním. To proto si nic nepamatuješ; zapomněl jsi totiž všechno, co se stalo po tvém úplně prvním přání.“ Vykulila na toho nebohýho dědulu oči. Asi takhle…" Morte na tebe vyvalil oči." Takže teď už ti zbývá jen jedno přání.„"{#morte_s416_}'
 
     menu:
-        '"Pokračuj, Morte…"':
+        '"Pokračuj, Morte…"{#morte_s416_r39752}':
             # a855 # r39752
             jump morte_s417
 
-        '"Vydrž… měl bych dotaz pro Yves…"':
+        '"Vydrž… měl bych dotaz pro Yves…"{#morte_s416_r39753}':
             # a856 # r39753
             jump yves_s4  # EXTERN
 
-        '"Poslechnem si to jindy, Morte. Sbohem, Yves."':
+        '"Poslechnem si to jindy, Morte. Sbohem, Yves."{#morte_s416_r39754}':
             # a857 # r39754
             jump morte_dispose
 
 
 # s417 # say39574
 label morte_s417: # from 416.0
-    nr '"„Tak dobrá,“ řekl jí ten chlap, "Sice tomu nevěřím, ale jak mi může přání ublížit. Přeju si vědět, kdo vlastně jsem.„"  "“Legrační,„ stihla ještě říct čarodějka, než splnila to přání a nastálo zmizela. “Takové bylo tvé první přání.„"'
+    nr '"„Tak dobrá,“ řekl jí ten chlap, "Sice tomu nevěřím, ale jak mi může přání ublížit. Přeju si vědět, kdo vlastně jsem.„"  "“Legrační,„ stihla ještě říct čarodějka, než splnila to přání a nastálo zmizela. “Takové bylo tvé první přání.„"{#morte_s417_}'
 
     jump yves_s55  # EXTERN
 
 
 # s418 # say39575
 label morte_s418: # -
-    nr '"Co to himlhergotkrucifix bylo, ty pitomej mnohoúhelníku?! Nic nudnějšího jsem v životě… jsem ještě neslyšel!"'
+    nr '"Co to himlhergotkrucifix bylo, ty pitomej mnohoúhelníku?! Nic nudnějšího jsem v životě… jsem ještě neslyšel!"{#morte_s418_}'
 
     jump nordom_s11  # EXTERN
 
 
 # s419 # say39576
 label morte_s419: # -
-    nr '"Přikrášlené?"'
+    nr '"Přikrášlené?"{#morte_s419_}'
 
     jump nordom_s12  # EXTERN
 
 
 # s420 # say39577
 label morte_s420: # -
-    nr '"Ale no tak, fiendko. Přece by ses nestyděla před cizími lidmi."'
+    nr '"Ale no tak, fiendko. Přece by ses nestyděla před cizími lidmi."{#morte_s420_}'
 
     jump annah_s196  # EXTERN
 
 
 # s421 # say40068
 label morte_s421: # -
-    nr 'Morte tě oblétl, napodobujíc dívčinu naivnost. "Klobouk dolů, šéfe… má pravdu! Nikdy předtím jsem si to nevšiml… všude máš *jizvy!*"'
+    nr 'Morte tě oblétl, napodobujíc dívčinu naivnost. "Klobouk dolů, šéfe… má pravdu! Nikdy předtím jsem si to nevšiml… všude máš *jizvy!*"{#morte_s421_}'
 
     menu:
-        '"To jsou všechno staré jizvy. Jsem v pořádku."' if morteLogic.r40069_condition():
+        '"To jsou všechno staré jizvy. Jsem v pořádku."{#morte_s421_r40069}' if morteLogic.r40069_condition():
             # a858 # r40069
             jump nenny_s2  # EXTERN
 
-        '"Jen lehce; Budu v pořádku."' if morteLogic.r40070_condition():
+        '"Jen lehce; Budu v pořádku."{#morte_s421_r40070}' if morteLogic.r40070_condition():
             # a859 # r40070
             jump nenny_s2  # EXTERN
 
-        '"Ano, jsem. A těžce."' if morteLogic.r40071_condition():
+        '"Ano, jsem. A těžce."{#morte_s421_r40071}' if morteLogic.r40071_condition():
             # a860 # r40071
             jump nenny_s2  # EXTERN
 
-        '"Zapomeň na to. Mám nějaké otázky…"':
+        '"Zapomeň na to. Mám nějaké otázky…"{#morte_s421_r40072}':
             # a861 # r40072
             jump nenny_s3  # EXTERN
 
-        '"Nestarej se. Sbohem."':
+        '"Nestarej se. Sbohem."{#morte_s421_r40073}':
             # a862 # r40073
             jump morte_dispose
 
 
 # s422 # say40074
 label morte_s422: # -
-    nr 'Morte protočil panenky. "Jsi trochu vepředu, jasně… možná s tím mají co dělat ty tvoje velký kulatý pr-"'
+    nr 'Morte protočil panenky. "Jsi trochu vepředu, jasně… možná s tím mají co dělat ty tvoje velký kulatý pr-"{#morte_s422_}'
 
     menu:
-        '"Morte, drž hubu."':
+        '"Morte, drž hubu."{#morte_s422_r40075}':
             # a863 # r40075
             jump morte_s423
 
 
 # s423 # say40076
 label morte_s423: # from 422.0
-    nr 'Morte drží hubu.'
+    nr 'Morte drží hubu.{#morte_s423_}'
 
     menu:
-        '"To není problém, Nenny."' if morteLogic.r40077_condition():
+        '"To není problém, Nenny."{#morte_s423_r40077}' if morteLogic.r40077_condition():
             # a864 # r40077
             jump nenny_s9  # EXTERN
 
-        '"Dohlédni, aby se to nestalo znovu, Nenny."' if morteLogic.r40078_condition():
+        '"Dohlédni, aby se to nestalo znovu, Nenny."{#morte_s423_r40078}' if morteLogic.r40078_condition():
             # a865 # r40078
             jump nenny_s9  # EXTERN
 
-        '"Bez problému, slečno."' if morteLogic.r40079_condition():
+        '"Bez problému, slečno."{#morte_s423_r40079}' if morteLogic.r40079_condition():
             # a866 # r40079
             jump nenny_s9  # EXTERN
 
-        '"Dohlédni, aby se to nestalo znovu, dívko."' if morteLogic.r40080_condition():
+        '"Dohlédni, aby se to nestalo znovu, dívko."{#morte_s423_r40080}' if morteLogic.r40080_condition():
             # a867 # r40080
             jump nenny_s9  # EXTERN
 
 
 # s424 # say40081
 label morte_s424: # -
-    nr '"Hej!"'
+    nr '"Hej!"{#morte_s424_}'
 
     jump nenny_s27  # EXTERN
 
 
 # s425 # say40082
 label morte_s425: # -
-    nr 'Morte si mumlá pro sebe. "Myslím si, že je dobrý, že tam je alespoň *něco*."'
+    nr 'Morte si mumlá pro sebe. "Myslím si, že je dobrý, že tam je alespoň *něco*."{#morte_s425_}'
 
     menu:
-        '"Mám další otázku, Nenny…"':
+        '"Mám další otázku, Nenny…"{#morte_s425_r40083}':
             # a868 # r40083
             jump nenny_s3  # EXTERN
 
-        '"To je všechno co jsem chtěl vědět, Nenny. Sbohem."':
+        '"To je všechno co jsem chtěl vědět, Nenny. Sbohem."{#morte_s425_r40084}':
             # a869 # r40084
             jump morte_dispose
 
 
 # s426 # say40222
 label morte_s426: # -
-    nr '"Oooh, ne… řekni nám to teď."'
+    nr '"Oooh, ne… řekni nám to teď."{#morte_s426_}'
 
     menu:
-        '"Ano… prosím, pane: mluv."':
+        '"Ano… prosím, pane: mluv."{#morte_s426_r40223}':
             # a870 # r40223
             jump brocus4_s4  # EXTERN
 
-        '"Nech toho Morte. Mám pro něj jinou otázku…"':
+        '"Nech toho Morte. Mám pro něj jinou otázku…"{#morte_s426_r40224}':
             # a871 # r40224
             jump brocus4_s2  # EXTERN
 
-        '"Zapomeň na to, Morte; jdeme."':
+        '"Zapomeň na to, Morte; jdeme."{#morte_s426_r40225}':
             # a872 # r40225
             jump morte_dispose
 
 
 # s427 # say40275
 label morte_s427: # -
-    nr 'Morte přiletěl blíž k tobě šeptaje: "Cejtím k jejímu milenci lítost. Neví, jak to má zlý. Mrně, jako je todle, to není nic než potíž."'
+    nr 'Morte přiletěl blíž k tobě šeptaje: "Cejtím k jejímu milenci lítost. Neví, jak to má zlý. Mrně, jako je todle, to není nic než potíž."{#morte_s427_}'
 
     menu:
-        '"Nezní to moc rozumně, Juliette. Uvaž, co říkáš."':
+        '"Nezní to moc rozumně, Juliette. Uvaž, co říkáš."{#morte_s427_r40276}':
             # a873 # r40276
             jump sadjuli_s12  # EXTERN
 
-        '"Co jsi měla na mysli, Juliette?"':
+        '"Co jsi měla na mysli, Juliette?"{#morte_s427_r40277}':
             # a874 # r40277
             jump sadjuli_s13  # EXTERN
 
-        '"Mám nějaké otázky, Juliette…"':
+        '"Mám nějaké otázky, Juliette…"{#morte_s427_r40278}':
             # a875 # r40278
             jump sadjuli_s24  # EXTERN
 
-        '"To je všechno co jsem chtěl vědět, Juliette. Sbohem."':
+        '"To je všechno co jsem chtěl vědět, Juliette. Sbohem."{#morte_s427_r40279}':
             # a876 # r40279
             jump morte_dispose
 
 
 # s428 # say40685
 label morte_s428: # -
-    nr 'Morte tiše zašeptal: "Uau… drsný kotě."'
+    nr 'Morte tiše zašeptal: "Uau… drsný kotě."{#morte_s428_}'
 
     menu:
-        '"Omlouvám se, má lady… nebyl jsem si jistý, jestli tady někdo je."':
+        '"Omlouvám se, má lady… nebyl jsem si jistý, jestli tady někdo je."{#morte_s428_r40686}':
             # a877 # r40686
             jump marissa_s2  # EXTERN
 
-        '"Mám nějaké otázky, má lady…"':
+        '"Mám nějaké otázky, má lady…"{#morte_s428_r40687}':
             # a878 # r40687
             jump marissa_s3  # EXTERN
 
-        '"Tak tedy sbohem, má lady."':
+        '"Tak tedy sbohem, má lady."{#morte_s428_r40688}':
             # a879 # r40688
             jump morte_dispose
 
 
 # s429 # say40846
 label morte_s429: # -
-    nr '"No tak, šéfe! Sme v baráku plným kočiček, kerý sou nejvíc sexy na týdle straně mnohovesmíru a ty se zastavuješ, abys pokecal s *modronama*?"'
+    nr '"No tak, šéfe! Sme v baráku plným kočiček, kerý sou nejvíc sexy na týdle straně mnohovesmíru a ty se zastavuješ, abys pokecal s *modronama*?"{#morte_s429_}'
 
     menu:
-        '"Co mi o nich můžeš říct, Morte?"':
+        '"Co mi o nich můžeš říct, Morte?"{#morte_s429_r40847}':
             # a880 # r40847
             jump morte_s430
 
-        'Ignoruj Morteho a pozdrav modrony.':
+        'Ignoruj Morteho a pozdrav modrony.{#morte_s429_r40848}':
             # a881 # r40848
             $ morteLogic.r40848_action()
             jump brocus6_s3  # EXTERN
 
-        '"Promiň, Morte, ale já si s těmi modrony chci promluvit."':
+        '"Promiň, Morte, ale já si s těmi modrony chci promluvit."{#morte_s429_r40849}':
             # a882 # r40849
             jump morte_s431
 
-        '"Dobře, Morte. Tak pojďme."':
+        '"Dobře, Morte. Tak pojďme."{#morte_s429_r40850}':
             # a883 # r40850
             jump morte_dispose
 
 
 # s430 # say40851
 label morte_s430: # from 429.0
-    nr 'Morte vydal zvuk, znamenající nejvyšší znechucení. "Co k nim říct? Otravný malý chodící hodinový strojky… dycinky se pokoušej udržovat řád a zákon a takový nesmysly po celým mnohovesmíru. A to není *dobrý*, to ne… jenom *řád*. Hele, vykašleme se na ně a půjdeme hodit pokec s nějakým tím sexy kotětem, kerých je tady spousta, co?"'
+    nr 'Morte vydal zvuk, znamenající nejvyšší znechucení. "Co k nim říct? Otravný malý chodící hodinový strojky… dycinky se pokoušej udržovat řád a zákon a takový nesmysly po celým mnohovesmíru. A to není *dobrý*, to ne… jenom *řád*. Hele, vykašleme se na ně a půjdeme hodit pokec s nějakým tím sexy kotětem, kerých je tady spousta, co?"{#morte_s430_}'
 
     menu:
-        'Ignoruj Morteho a pozdrav modrony.':
+        'Ignoruj Morteho a pozdrav modrony.{#morte_s430_r40852}':
             # a884 # r40852
             $ morteLogic.r40852_action()
             jump brocus6_s3  # EXTERN
 
-        '"Omlouvám se, Morte, ale já si s těmi modrony chci promluvit."':
+        '"Omlouvám se, Morte, ale já si s těmi modrony chci promluvit."{#morte_s430_r40853}':
             # a885 # r40853
             jump morte_s431
 
-        '"Dobře, Morte. Tak pojďme."':
+        '"Dobře, Morte. Tak pojďme."{#morte_s430_r40854}':
             # a886 # r40854
             jump morte_dispose
 
 
 # s431 # say40855
 label morte_s431: # from 429.2 430.1
-    nr 'Morte si hlasitě povzdechl. "Fajn, no jó, jak chceš. Ale pak mi neříkej, že sem tě nevaroval, jasný? Stejně z nich nejspíš nic nevytáhneš, náčelníku… je to divná banda, domluva s nima zrovna není, to se spíš domluvíš s hromadou kamení, ta dává srozumitelnější odpovědi. Někdy."'
+    nr 'Morte si hlasitě povzdechl. "Fajn, no jó, jak chceš. Ale pak mi neříkej, že sem tě nevaroval, jasný? Stejně z nich nejspíš nic nevytáhneš, náčelníku… je to divná banda, domluva s nima zrovna není, to se spíš domluvíš s hromadou kamení, ta dává srozumitelnější odpovědi. Někdy."{#morte_s431_}'
 
     menu:
-        '"Zdravím…"':
+        '"Zdravím…"{#morte_s431_r40856}':
             # a887 # r40856
             $ morteLogic.r40856_action()
             jump brocus6_s3  # EXTERN
@@ -6424,113 +6424,113 @@ label morte_s431: # from 429.2 430.1
 
 # s432 # say41135
 label morte_s432: # -
-    nr '"Cokoliv!" Zařval Morte. "Udělej mi cokoliv chceš!"'
+    nr '"Cokoliv!" Zařval Morte. "Udělej mi cokoliv chceš!"{#morte_s432_}'
 
     jump kesai_s2  # EXTERN
 
 
 # s433 # say41136
 label morte_s433: # -
-    nr '"Je toho dost, abych začal ronit slzy… kdy bylo tohle škvrně, když jsem měl *tělo?!*"'
+    nr '"Je toho dost, abych začal ronit slzy… kdy bylo tohle škvrně, když jsem měl *tělo?!*"{#morte_s433_}'
 
     jump kesai_s11  # EXTERN
 
 
 # s434 # say41632
 label morte_s434: # -
-    nr '"Můj přítel se domnívá, že jsi atraktivní, ale ouha! On občas dokáže dost kecat!"'
+    nr '"Můj přítel se domnívá, že jsi atraktivní, ale ouha! On občas dokáže dost kecat!"{#morte_s434_}'
 
     jump kimasxi_s2  # EXTERN
 
 
 # s435 # say41633
 label morte_s435: # from 436.0
-    nr '"Jasně šéfiku, cokoli. To je ježibaba, co?" Zahuhňal Morte a zakoulel očima. "Takovýhle miluju!"'
+    nr '"Jasně šéfiku, cokoli. To je ježibaba, co?" Zahuhňal Morte a zakoulel očima. "Takovýhle miluju!"{#morte_s435_}'
 
     menu:
-        '"Je mi to jasný Morte, ale potřebuju si s ní teď promluvit."':
+        '"Je mi to jasný Morte, ale potřebuju si s ní teď promluvit."{#morte_s435_r41634}':
             # a888 # r41634
             jump kimasxi_s14  # EXTERN
 
-        '"V pořádku… dělej si co chceš Morte."':
+        '"V pořádku… dělej si co chceš Morte."{#morte_s435_r41635}':
             # a889 # r41635
             jump kimasxi_s4  # EXTERN
 
 
 # s436 # say41636
 label morte_s436: # -
-    nr '"Tys slyšela slovo „bordel“ a hned sis myslela, že si tady vyděláš nějaký prachy, ty zablešená kozí děvko? Heh! Nemůžu uvěřit, že tě vůbec pustili do dveří, zvlášť, když ještě klapeš těma svejma vochrnutejma chundelatejma hnátama!"'
+    nr '"Tys slyšela slovo „bordel“ a hned sis myslela, že si tady vyděláš nějaký prachy, ty zablešená kozí děvko? Heh! Nemůžu uvěřit, že tě vůbec pustili do dveří, zvlášť, když ještě klapeš těma svejma vochrnutejma chundelatejma hnátama!"{#morte_s436_}'
 
     menu:
-        '"To už by stačilo, nechte toho vy dva."':
+        '"To už by stačilo, nechte toho vy dva."{#morte_s436_r41637}':
             # a890 # r41637
             jump morte_s435
 
-        'Nechej je pokračovat.':
+        'Nechej je pokračovat.{#morte_s436_r41638}':
             # a891 # r41638
             jump kimasxi_s3  # EXTERN
 
 
 # s437 # say41639
 label morte_s437: # -
-    nr '"*On!* Copak *ON* vypadá dost sprostě,„ Kimasxi Naufouknutýhovno“… ty vypelichaná kozí děvko!"'
+    nr '"*On!* Copak *ON* vypadá dost sprostě,„ Kimasxi Naufouknutýhovno“… ty vypelichaná kozí děvko!"{#morte_s437_}'
 
     jump kimasxi_s18  # EXTERN
 
 
 # s438 # say41640
 label morte_s438: # -
-    nr '"Možná lepší než ty?" Morte na ni zaviklal obočím "Jo? Joo?"'
+    nr '"Možná lepší než ty?" Morte na ni zaviklal obočím "Jo? Joo?"{#morte_s438_}'
 
     jump kimasxi_s20  # EXTERN
 
 
 # s439 # say41641
 label morte_s439: # -
-    nr '"Nechci. Ale musím připustit, že sem se jednu nebo dvě věci naučil… dobrej nápad šéfe!"~ [MRT387]'
+    nr '"Nechci. Ale musím připustit, že sem se jednu nebo dvě věci naučil… dobrej nápad šéfe!"~ [MRT387]{#morte_s439_}'
 
     menu:
-        '"Jasná věc Morte."':
+        '"Jasná věc Morte."{#morte_s439_r41642}':
             # a892 # r41642
             jump kimasxi_s21  # EXTERN
 
 
 # s440 # say41830
 label morte_s440: # from 444.7 445.2 446.2 447.2 448.2 449.1 450.1 451.2 452.1 453.1 454.1
-    nr '"Koukni, šéfíku. Zdá se, že ses poněkud rozhozenej po tom polibku smrti, tak pro tebe mám malou radu: Až budeš mít votázku, klidně se mě zeptej, jo?"  POZNÁMKA: Pokud si budeš chtít promluvit se členem družiny, vyber volbu „mluvení“ z rychlého menu a poté levým tlačítkem zvol postavu, se kterou chceš hovořit.'
+    nr '"Koukni, šéfíku. Zdá se, že ses poněkud rozhozenej po tom polibku smrti, tak pro tebe mám malou radu: Až budeš mít votázku, klidně se mě zeptej, jo?"  POZNÁMKA: Pokud si budeš chtít promluvit se členem družiny, vyber volbu „mluvení“ z rychlého menu a poté levým tlačítkem zvol postavu, se kterou chceš hovořit.{#morte_s440_}'
 
     menu:
-        '"V pořádku… když budu mít nějaké otázky, tak se zeptám."':
+        '"V pořádku… když budu mít nějaké otázky, tak se zeptám."{#morte_s440_r41831}':
             # a893 # r41831
             jump morte_s441
 
 
 # s441 # say41832
 label morte_s441: # from 440.0
-    nr '"Zadruhé, pokud seš aspoň z poloviny tak zapomětlivej jak vypadáš, začni si informace zapisovat - když se dovíš něco co by mohlo bejt důležitý, zapiš si to a nezapomeneš."'
+    nr '"Zadruhé, pokud seš aspoň z poloviny tak zapomětlivej jak vypadáš, začni si informace zapisovat - když se dovíš něco co by mohlo bejt důležitý, zapiš si to a nezapomeneš."{#morte_s441_}'
 
     menu:
-        '"Kdybych měl ten deník, který sem měl mít, dělal bych to tak."':
+        '"Kdybych měl ten deník, který sem měl mít, dělal bych to tak."{#morte_s441_r41833}':
             # a894 # r41833
             jump morte_s442
 
 
 # s442 # say41834
 label morte_s442: # from 441.0
-    nr '"Tak si udělej novej šéfe. Žádnej problém. Všude kolem se válí spousta pergamenů a ingoustu."'
+    nr '"Tak si udělej novej šéfe. Žádnej problém. Všude kolem se válí spousta pergamenů a ingoustu."{#morte_s442_}'
 
     menu:
-        '"Hmmmm. Dobře. To mi neublíží… založím si teda nový."':
+        '"Hmmmm. Dobře. To mi neublíží… založím si teda nový."{#morte_s442_r41835}':
             # a895 # r41835
             jump morte_s443
 
 
 # s443 # say41836
 label morte_s443: # from 442.0
-    nr '"Používej ho, aby ses na cestách neztratil. A až si nebudeš jistej v nějakech důležitejch bodech, třeba jako kdo seš… nebo ještě líp, kdo sem *já*… pomůže ti osvěžit paměť."  POZNÁMKA: Pro přístup do deníku zvol přislušnou ikonu v právém dolním rohu na světové obrazovce, nebo vyber ikonu z rychlého menu. Tvůj deník se bude automaticky aktualizovat během hry.'
+    nr '"Používej ho, aby ses na cestách neztratil. A až si nebudeš jistej v nějakech důležitejch bodech, třeba jako kdo seš… nebo ještě líp, kdo sem *já*… pomůže ti osvěžit paměť."  POZNÁMKA: Pro přístup do deníku zvol přislušnou ikonu v právém dolním rohu na světové obrazovce, nebo vyber ikonu z rychlého menu. Tvůj deník se bude automaticky aktualizovat během hry.{#morte_s443_}'
 
     menu:
-        '"V pořádku… Mám to. Pojďme."':
+        '"V pořádku… Mám to. Pojďme."{#morte_s443_r41837}':
             # a896 # r41837
             $ morteLogic.j39516_s443_r41837_action()
             jump morte_dispose
@@ -6538,324 +6538,324 @@ label morte_s443: # from 442.0
 
 # s444 # say41838
 label morte_s444: # from 445.1 446.1 447.1 448.1 449.0 450.0 451.1 452.0 453.0 454.0 455.1 456.2 457.1 458.0 # IF WEIGHT #6 /* Triggers after states #: 742 737 733 487 even though they appear after this state */ ~  !Global("Mortuary_Walkthrough","GLOBAL",0) !Global("Mortuary_Walkthrough","GLOBAL",1) Global("AR0200_Visited","GLOBAL",0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Co tě žere šéfiku?"~ [MRT515]'
+    nr '"Co tě žere šéfiku?"~ [MRT515]{#morte_s444_}'
 
     menu:
-        '"Můžeš mi znovu přečíst co mám vytetováno na zádech?':
+        '"Můžeš mi znovu přečíst co mám vytetováno na zádech?{#morte_s444_r41840}':
             # a897 # r41840
             jump morte_s445
 
-        '"Řekni mi ještě jednou co je tohle za místo?"':
+        '"Řekni mi ještě jednou co je tohle za místo?"{#morte_s444_r41841}':
             # a898 # r41841
             jump morte_s450
 
-        '"Je to tu obrovské… Kdo se tady o všechno stará?"' if morteLogic.r41842_condition():
+        '"Je to tu obrovské… Kdo se tady o všechno stará?"{#morte_s444_r41842}' if morteLogic.r41842_condition():
             # a899 # r41842
             jump morte_s451
 
-        '"Můžeš mi znovu říct kdo to tu spravuje?"' if morteLogic.r41843_condition():
+        '"Můžeš mi znovu říct kdo to tu spravuje?"{#morte_s444_r41843}' if morteLogic.r41843_condition():
             # a900 # r41843
             jump morte_s451
 
-        '"Ty mrtvoly… Odkud pocházejí?"':
+        '"Ty mrtvoly… Odkud pocházejí?"{#morte_s444_r41844}':
             # a901 # r41844
             jump morte_s454
 
-        '"Předtím si říkal cosi o tom, abych nezabíjel "ženské" zombie. Proč?"' if morteLogic.r41845_condition():
+        '"Předtím si říkal cosi o tom, abych nezabíjel "ženské" zombie. Proč?"{#morte_s444_r41845}' if morteLogic.r41845_condition():
             # a902 # r41845
             jump morte_s455
 
-        '"Jak mám použít tyhle obvazy?"' if morteLogic.r41846_condition():
+        '"Jak mám použít tyhle obvazy?"{#morte_s444_r41846}' if morteLogic.r41846_condition():
             # a903 # r41846
             jump morte_s453
 
-        '"Teď nic, Morte. Jen jsem se chtěl ujistit, že seš pořád se mnou."' if morteLogic.r41847_condition():
+        '"Teď nic, Morte. Jen jsem se chtěl ujistit, že seš pořád se mnou."{#morte_s444_r41847}' if morteLogic.r41847_condition():
             # a904 # r41847
             jump morte_s440
 
-        '"Teď nic, Morte. Jen jsem se chtěl ujistit, že seš pořád se mnou."' if morteLogic.r41848_condition():
+        '"Teď nic, Morte. Jen jsem se chtěl ujistit, že seš pořád se mnou."{#morte_s444_r41848}' if morteLogic.r41848_condition():
             # a905 # r41848
             jump morte_dispose
 
 
 # s445 # say41849
 label morte_s445: # from 444.0
-    nr '"Ale no tak, šéfe. Neříkej, žes to už všecko zas zapomněl."'
+    nr '"Ale no tak, šéfe. Neříkej, žes to už všecko zas zapomněl."{#morte_s445_}'
 
     menu:
-        '"Potřebuju si jen osvěžit pamět."':
+        '"Potřebuju si jen osvěžit pamět."{#morte_s445_r41850}':
             # a906 # r41850
             jump morte_s446
 
-        '"Kašli na to. Mám nějaký jiný otázky…"':
+        '"Kašli na to. Mám nějaký jiný otázky…"{#morte_s445_r41851}':
             # a907 # r41851
             jump morte_s444
 
-        '"Zapomeň na to. Půjdem."' if morteLogic.r41852_condition():
+        '"Zapomeň na to. Půjdem."{#morte_s445_r41852}' if morteLogic.r41852_condition():
             # a908 # r41852
             jump morte_s440
 
-        '"Zapomeň na to. Půjdem."' if morteLogic.r41853_condition():
+        '"Zapomeň na to. Půjdem."{#morte_s445_r41853}' if morteLogic.r41853_condition():
             # a909 # r41853
             jump morte_dispose
 
 
 # s446 # say41854
 label morte_s446: # from 445.0
-    nr '"Vsaď se že už sem toho slyšel dost." Morte si odchrchlal. "Tak se na to junkem…"  „Vím že se cítíš, jak dybys vypil pár sudů Styxskejch chcánek, ale musíš se SOUSTŘEDIT. Máš u sebe DENÍK, kterej ti může vnýst do života trochu světla. PHAROD ti může pomoct obnovit paměť, esli už ale není v knize mrtvejch.“'
+    nr '"Vsaď se že už sem toho slyšel dost." Morte si odchrchlal. "Tak se na to junkem…"  „Vím že se cítíš, jak dybys vypil pár sudů Styxskejch chcánek, ale musíš se SOUSTŘEDIT. Máš u sebe DENÍK, kterej ti může vnýst do života trochu světla. PHAROD ti může pomoct obnovit paměť, esli už ale není v knize mrtvejch.“{#morte_s446_}'
 
     menu:
-        '"Pharod… hmmm. Pojďme dál."':
+        '"Pharod… hmmm. Pojďme dál."{#morte_s446_r41855}':
             # a910 # r41855
             jump morte_s447
 
-        '"Nevadí. Mám jiný otázky…"':
+        '"Nevadí. Mám jiný otázky…"{#morte_s446_r41856}':
             # a911 # r41856
             jump morte_s444
 
-        '"Kašli na to, už sem slyšel dost. Jdem."' if morteLogic.r41857_condition():
+        '"Kašli na to, už sem slyšel dost. Jdem."{#morte_s446_r41857}' if morteLogic.r41857_condition():
             # a912 # r41857
             jump morte_s440
 
-        '"Kašli na to, už sem slyšel dost. Jdem."' if morteLogic.r41858_condition():
+        '"Kašli na to, už sem slyšel dost. Jdem."{#morte_s446_r41858}' if morteLogic.r41858_condition():
             # a913 # r41858
             jump morte_dispose
 
 
 # s447 # say41859
 label morte_s447: # from 446.0
-    nr '"Pudu, pudu… vydrž." Morte se na chvilku odmlčel. "V pohodě, tady je poslední kousek…"  „Neztrať deník, nebo to zase zalomíš ve Styxu. A ať budeš dělat cokoliv, nikomu NEŘÍKEJ KDO seš ani co se ti stalo, jináč tě fofrem pošlou na cyhlídkovou cestu krematoriem. Dělej co řeknu: PŘEČTI deník a najdi Pharoda.“'
+    nr '"Pudu, pudu… vydrž." Morte se na chvilku odmlčel. "V pohodě, tady je poslední kousek…"  „Neztrať deník, nebo to zase zalomíš ve Styxu. A ať budeš dělat cokoliv, nikomu NEŘÍKEJ KDO seš ani co se ti stalo, jináč tě fofrem pošlou na cyhlídkovou cestu krematoriem. Dělej co řeknu: PŘEČTI deník a najdi Pharoda.“{#morte_s447_}'
 
     menu:
-        '"A to sem u sebe neměl žádnej deník když sem se probral?"':
+        '"A to sem u sebe neměl žádnej deník když sem se probral?"{#morte_s447_r41860}':
             # a914 # r41860
             jump morte_s448
 
-        '"V pohodě. Mám ještě jiný otázky…"':
+        '"V pohodě. Mám ještě jiný otázky…"{#morte_s447_r41861}':
             # a915 # r41861
             jump morte_s444
 
-        '"Kašli na to, už sem slyšel dost. Jdem."' if morteLogic.r41862_condition():
+        '"Kašli na to, už sem slyšel dost. Jdem."{#morte_s447_r41862}' if morteLogic.r41862_condition():
             # a916 # r41862
             jump morte_s440
 
-        '"Kašli na to, už sem slyšel dost. Jdem."' if morteLogic.r41863_condition():
+        '"Kašli na to, už sem slyšel dost. Jdem."{#morte_s447_r41863}' if morteLogic.r41863_condition():
             # a917 # r41863
             jump morte_dispose
 
 
 # s448 # say41864
 label morte_s448: # from 447.0
-    nr '"Ne… byls nahej. Jak už sem říkal, podstatnou část deníku máš napsanou na těle."'
+    nr '"Ne… byls nahej. Jak už sem říkal, podstatnou část deníku máš napsanou na těle."{#morte_s448_}'
 
     menu:
-        '"A seš si jistej, že neznáš nikoho jménem Pharod?"':
+        '"A seš si jistej, že neznáš nikoho jménem Pharod?"{#morte_s448_r41865}':
             # a918 # r41865
             jump morte_s449
 
-        '"Pravda. Mám ještě jiný otázky…"':
+        '"Pravda. Mám ještě jiný otázky…"{#morte_s448_r41866}':
             # a919 # r41866
             jump morte_s444
 
-        '"No dobrá. Jdeme"' if morteLogic.r41867_condition():
+        '"No dobrá. Jdeme"{#morte_s448_r41867}' if morteLogic.r41867_condition():
             # a920 # r41867
             jump morte_s440
 
-        '"No dobrá. Jdeme"' if morteLogic.r41868_condition():
+        '"No dobrá. Jdeme"{#morte_s448_r41868}' if morteLogic.r41868_condition():
             # a921 # r41868
             jump morte_dispose
 
 
 # s449 # say41869
 label morte_s449: # from 448.0
-    nr '"Ne. Ale nákej kretén ho určitě zná. Musíš se ptát… Teda až vodsaď vypadnem."'
+    nr '"Ne. Ale nákej kretén ho určitě zná. Musíš se ptát… Teda až vodsaď vypadnem."{#morte_s449_}'
 
     menu:
-        '"Než půjdeme, mám ještě jiný otázky…"':
+        '"Než půjdeme, mám ještě jiný otázky…"{#morte_s449_r41870}':
             # a922 # r41870
             jump morte_s444
 
-        '"No dobrá. Jdeme"' if morteLogic.r41871_condition():
+        '"No dobrá. Jdeme"{#morte_s449_r41871}' if morteLogic.r41871_condition():
             # a923 # r41871
             jump morte_s440
 
-        '"No dobrá. Jdeme"' if morteLogic.r41872_condition():
+        '"No dobrá. Jdeme"{#morte_s449_r41872}' if morteLogic.r41872_condition():
             # a924 # r41872
             jump morte_dispose
 
 
 # s450 # say41873
 label morte_s450: # from 444.1
-    nr '"Říká se mu „Márnice“… je to velká černá barabizna kerou postavil někdo s architektonickým vkusem těhotnýho pavouka."'
+    nr '"Říká se mu „Márnice“… je to velká černá barabizna kerou postavil někdo s architektonickým vkusem těhotnýho pavouka."{#morte_s450_}'
 
     menu:
-        '"Jasně. Ještě se chci na něco zeptat…"':
+        '"Jasně. Ještě se chci na něco zeptat…"{#morte_s450_r41874}':
             # a925 # r41874
             jump morte_s444
 
-        '"Přesně to sem chtěl vědět. Dík."' if morteLogic.r41875_condition():
+        '"Přesně to sem chtěl vědět. Dík."{#morte_s450_r41875}' if morteLogic.r41875_condition():
             # a926 # r41875
             jump morte_s440
 
-        '"Přesně to sem chtěl vědět. Dík."' if morteLogic.r41876_condition():
+        '"Přesně to sem chtěl vědět. Dík."{#morte_s450_r41876}' if morteLogic.r41876_condition():
             # a927 # r41876
             jump morte_dispose
 
 
 # s451 # say41877
 label morte_s451: # from 444.2 444.3
-    nr '"Říkaj si „Spalovači.“ Nemůžeš je minout: Sou posedlí temnotou a záhrobním chladem. Sou nějakej druh ghúlskejch poskoků; věří, že všecko musí umřít… a čím dřív, tím líp."'
+    nr '"Říkaj si „Spalovači.“ Nemůžeš je minout: Sou posedlí temnotou a záhrobním chladem. Sou nějakej druh ghúlskejch poskoků; věří, že všecko musí umřít… a čím dřív, tím líp."{#morte_s451_}'
 
     menu:
-        '"Z toho sem zmatený… proč by mělo Spalovače zajímat jestli odejdu?"':
+        '"Z toho sem zmatený… proč by mělo Spalovače zajímat jestli odejdu?"{#morte_s451_r41878}':
             # a928 # r41878
             jump morte_s452
 
-        '"Jasně. Mám na tebe ještě nějaký otázky…"':
+        '"Jasně. Mám na tebe ještě nějaký otázky…"{#morte_s451_r41879}':
             # a929 # r41879
             jump morte_s444
 
-        '"Chápu. Budu opatrný."' if morteLogic.r41880_condition():
+        '"Chápu. Budu opatrný."{#morte_s451_r41880}' if morteLogic.r41880_condition():
             # a930 # r41880
             jump morte_s440
 
-        '"Chápu. Budu opatrný."' if morteLogic.r41881_condition():
+        '"Chápu. Budu opatrný."{#morte_s451_r41881}' if morteLogic.r41881_condition():
             # a931 # r41881
             jump morte_dispose
 
 
 # s452 # say41882
 label morte_s452: # from 451.0
-    nr '"Copa si neposlouchal?! Říkal sem že Spalovači věří, že všechno živý musí umřít. A to radši dřív než pozdějc. Myslíš že mrtvoly cos viděl jsou štastnější v knize mrtvejch, nebo mimo ni?"'
+    nr '"Copa si neposlouchal?! Říkal sem že Spalovači věří, že všechno živý musí umřít. A to radši dřív než pozdějc. Myslíš že mrtvoly cos viděl jsou štastnější v knize mrtvejch, nebo mimo ni?"{#morte_s452_}'
 
     menu:
-        '"Chápu. Mám pár dalších otázek…"':
+        '"Chápu. Mám pár dalších otázek…"{#morte_s452_r41883}':
             # a932 # r41883
             jump morte_s444
 
-        '"V pohodě… pokusím si to zapamatovat."' if morteLogic.r41884_condition():
+        '"V pohodě… pokusím si to zapamatovat."{#morte_s452_r41884}' if morteLogic.r41884_condition():
             # a933 # r41884
             jump morte_s440
 
-        '"V pohodě… pokusím si to zapamatovat."' if morteLogic.r41885_condition():
+        '"V pohodě… pokusím si to zapamatovat."{#morte_s452_r41885}' if morteLogic.r41885_condition():
             # a934 # r41885
             jump morte_dispose
 
 
 # s453 # say41886
 label morte_s453: # from 444.6
-    nr '"No v podstatě… je *použiješ*. Zastaví krvácení a tak."  POZNÁMKA: Pokud chceš obvazy použít na sebe, klikni na ně pravým tlačítkem v inventáři. Když budeš chtíl léčit jinou postavu, dej si obvazy do některého z rychlých slotů v inventáři, vyber tlačítko "použij" z rychlého menu na obrazovce světa, a poté zvol cíl.'
+    nr '"No v podstatě… je *použiješ*. Zastaví krvácení a tak."  POZNÁMKA: Pokud chceš obvazy použít na sebe, klikni na ně pravým tlačítkem v inventáři. Když budeš chtíl léčit jinou postavu, dej si obvazy do některého z rychlých slotů v inventáři, vyber tlačítko "použij" z rychlého menu na obrazovce světa, a poté zvol cíl.{#morte_s453_}'
 
     menu:
-        '"Chápu. Mám pár dalších otázek…"':
+        '"Chápu. Mám pár dalších otázek…"{#morte_s453_r41887}':
             # a935 # r41887
             jump morte_s444
 
-        '"Dík. Myslím, že to zvládnu."' if morteLogic.r41888_condition():
+        '"Dík. Myslím, že to zvládnu."{#morte_s453_r41888}' if morteLogic.r41888_condition():
             # a936 # r41888
             jump morte_s440
 
-        '"Dík. Myslím, že to zvládnu."' if morteLogic.r41889_condition():
+        '"Dík. Myslím, že to zvládnu."{#morte_s453_r41889}' if morteLogic.r41889_condition():
             # a937 # r41889
             jump morte_dispose
 
 
 # s454 # say41890
 label morte_s454: # from 444.4
-    nr '"Smrt chodí po Sférách každej den šéfe. Tihle šmajdalové sou to, co zbylo z jejich ubohejch tělních schránek, kterejma se zaprodali."'
+    nr '"Smrt chodí po Sférách každej den šéfe. Tihle šmajdalové sou to, co zbylo z jejich ubohejch tělních schránek, kterejma se zaprodali."{#morte_s454_}'
 
     menu:
-        '"Chápu. Mám pár dalších otázek…"':
+        '"Chápu. Mám pár dalších otázek…"{#morte_s454_r41891}':
             # a938 # r41891
             jump morte_s444
 
-        '"V pohodě… pokusím si to zapamatovat."' if morteLogic.r41892_condition():
+        '"V pohodě… pokusím si to zapamatovat."{#morte_s454_r41892}' if morteLogic.r41892_condition():
             # a939 # r41892
             jump morte_s440
 
-        '"V pohodě… pokusím si to zapamatovat."' if morteLogic.r41893_condition():
+        '"V pohodě… pokusím si to zapamatovat."{#morte_s454_r41893}' if morteLogic.r41893_condition():
             # a940 # r41893
             jump morte_dispose
 
 
 # s455 # say41894
 label morte_s455: # from 444.5
-    nr '"Co - to myslíš *vážně?* Hele šéfe, tydle mrtvý žabky sou poslední šance pro takový fešáky jako sme my. Musíme být *gentlemani*… nebudem je rozsekávat kvůli klíčům, utrhávat jejich ruce a tak podobně ."'
+    nr '"Co - to myslíš *vážně?* Hele šéfe, tydle mrtvý žabky sou poslední šance pro takový fešáky jako sme my. Musíme být *gentlemani*… nebudem je rozsekávat kvůli klíčům, utrhávat jejich ruce a tak podobně ."{#morte_s455_}'
 
     menu:
-        '"Poslední šance? Co to meleš?"':
+        '"Poslední šance? Co to meleš?"{#morte_s455_r41895}':
             # a941 # r41895
             jump morte_s456
 
-        '"Nevadí. Mám ještě nějaký otázky…"':
+        '"Nevadí. Mám ještě nějaký otázky…"{#morte_s455_r41896}':
             # a942 # r41896
             jump morte_s444
 
-        '"V pohodě… pokusím si to zapamatovat."':
+        '"V pohodě… pokusím si to zapamatovat."{#morte_s455_r41897}':
             # a943 # r41897
             jump morte_dispose
 
 
 # s456 # say41898
 label morte_s456: # from 455.0
-    nr '"Šéfe, VONY sou mrtvý, MY sme mrtvý… chápeš kam tím mířím? Co?'
+    nr '"Šéfe, VONY sou mrtvý, MY sme mrtvý… chápeš kam tím mířím? Co?{#morte_s456_}'
 
     menu:
-        '"Ne… vlastně ani ne."':
+        '"Ne… vlastně ani ne."{#morte_s456_r41899}':
             # a944 # r41899
             jump morte_s457
 
-        '"To nemyslíš vážně."' if morteLogic.r41900_condition():
+        '"To nemyslíš vážně."{#morte_s456_r41900}' if morteLogic.r41900_condition():
             # a945 # r41900
             jump morte_s457
 
-        '"Nevadí. Mám ještě nějaký otázky…"':
+        '"Nevadí. Mám ještě nějaký otázky…"{#morte_s456_r41901}':
             # a946 # r41901
             jump morte_s444
 
-        '"Už sem slyšel dost. Jdeme."':
+        '"Už sem slyšel dost. Jdeme."{#morte_s456_r41902}':
             # a947 # r41902
             jump morte_dispose
 
 
 # s457 # say41903
 label morte_s457: # from 456.0 456.1
-    nr '"Šéfe, teď máme u těchhle slečinek jedinečnou šanci. Všichni sme aspoň jednou zaklepali bačkorama: máme si vo čem poklábosit. Vony upřednostňujou chlapy s náším druhem zkušeností."'
+    nr '"Šéfe, teď máme u těchhle slečinek jedinečnou šanci. Všichni sme aspoň jednou zaklepali bačkorama: máme si vo čem poklábosit. Vony upřednostňujou chlapy s náším druhem zkušeností."{#morte_s457_}'
 
     menu:
-        '"Počkej… neříkal jsi předtím že já *nejsem* mrtvý?"':
+        '"Počkej… neříkal jsi předtím že já *nejsem* mrtvý?"{#morte_s457_r41904}':
             # a948 # r41904
             jump morte_s458
 
-        '"Nevadí. Mám ještě nějaký otázky…"':
+        '"Nevadí. Mám ještě nějaký otázky…"{#morte_s457_r41905}':
             # a949 # r41905
             jump morte_s444
 
-        '"Už sem slyšel dost. Jdeme."':
+        '"Už sem slyšel dost. Jdeme."{#morte_s457_r41906}':
             # a950 # r41906
             jump morte_dispose
 
 
 # s458 # say41907
 label morte_s458: # from 457.0
-    nr '"No… dobře, možná že *ty* nejseš mrtvej, ale já jo. A z toho důvodu mě nebude vadit, když se s těmadle kráskama co vokolo vidím pomuchlám v nějaké rakvi." Morte začal jakoby v předtuše cvakat zuby. "„Samo že napřed si s nima pohrajou Spalovači, to je jasná věc…"'
+    nr '"No… dobře, možná že *ty* nejseš mrtvej, ale já jo. A z toho důvodu mě nebude vadit, když se s těmadle kráskama co vokolo vidím pomuchlám v nějaké rakvi." Morte začal jakoby v předtuše cvakat zuby. "„Samo že napřed si s nima pohrajou Spalovači, to je jasná věc…"{#morte_s458_}'
 
     menu:
-        '"Mám ještě nějaký otázky Morte.."':
+        '"Mám ještě nějaký otázky Morte.."{#morte_s458_r41908}':
             # a951 # r41908
             jump morte_s444
 
-        '"Už sem slyšel dost. Jdeme."':
+        '"Už sem slyšel dost. Jdeme."{#morte_s458_r41909}':
             # a952 # r41909
             jump morte_dispose
 
 
 # s459 # say41910
 label morte_s459: # -
-    nr '"Při bozích. To je ksakru knížka."'
+    nr '"Při bozích. To je ksakru knížka."{#morte_s459_}'
 
     menu:
-        '"Co to je?"':
+        '"Co to je?"{#morte_s459_r41911}':
             # a953 # r41911
             $ morteLogic.r41911_action()
             jump morte_s460
@@ -6863,217 +6863,217 @@ label morte_s459: # -
 
 # s460 # say41913
 label morte_s460: # from 459.0
-    nr '"Dybych moh hádat, řek bych že to je ta knížka kde sou zapsaný všichni ti chudáci, keří neměli to štestí a zalomili to tady."'
+    nr '"Dybych moh hádat, řek bych že to je ta knížka kde sou zapsaný všichni ti chudáci, keří neměli to štestí a zalomili to tady."{#morte_s460_}'
 
     menu:
-        '"Může tam být i moje jméno?"':
+        '"Může tam být i moje jméno?"{#morte_s460_r41914}':
             # a954 # r41914
             jump morte_s461
 
 
 # s461 # say41915
 label morte_s461: # from 460.0
-    nr '"Ech… no asi jo. Abys to zjistil, měl bys protrénovat klapačku s tamtím Spalovačem. Ale nevím esli je to zrovna dobrej nápad."'
+    nr '"Ech… no asi jo. Abys to zjistil, měl bys protrénovat klapačku s tamtím Spalovačem. Ale nevím esli je to zrovna dobrej nápad."{#morte_s461_}'
 
     menu:
-        '"No, potřebuju odpovědi. Promluvím si s ním."':
+        '"No, potřebuju odpovědi. Promluvím si s ním."{#morte_s461_r41916}':
             # a955 # r41916
             jump morte_dispose
 
 
 # s462 # say41919
 label morte_s462: # -
-    nr 'Morte zašeptal: "Občas je i blázinec malej."'
+    nr 'Morte zašeptal: "Občas je i blázinec malej."{#morte_s462_}'
 
     menu:
-        '"Jumble mám pár otázek…"':
+        '"Jumble mám pár otázek…"{#morte_s462_r41920}':
             # a956 # r41920
             jump jumble_s2  # EXTERN
 
-        '"Ty jsi ten kdo proklel Smradodecha, že jo?"' if morteLogic.r41921_condition():
+        '"Ty jsi ten kdo proklel Smradodecha, že jo?"{#morte_s462_r41921}' if morteLogic.r41921_condition():
             # a957 # r41921
             $ morteLogic.r41921_action()
             jump jumble_s8  # EXTERN
 
-        '"Byl bych rád, kdybys sejmul Smradodechovu kletbu."' if morteLogic.r67864_condition():
+        '"Byl bych rád, kdybys sejmul Smradodechovu kletbu."{#morte_s462_r67864}' if morteLogic.r67864_condition():
             # a958 # r67864
             jump jumble_s9  # EXTERN
 
-        '"Musím jít. Sbohem."':
+        '"Musím jít. Sbohem."{#morte_s462_r41922}':
             # a959 # r41922
             jump morte_dispose
 
 
 # s463 # say41923
 label morte_s463: # -
-    nr '"Ech, och… zdá se, že sis právě vykoledoval nějakou tu kletbu, šéfe…"'
+    nr '"Ech, och… zdá se, že sis právě vykoledoval nějakou tu kletbu, šéfe…"{#morte_s463_}'
 
     menu:
-        '"Jumble, cos mi to udělal?"':
+        '"Jumble, cos mi to udělal?"{#morte_s463_r41924}':
             # a960 # r41924
             jump jumble_s7  # EXTERN
 
-        '"Jumble… prosím, vezmi to, cos udělal, zase zpátky."':
+        '"Jumble… prosím, vezmi to, cos udělal, zase zpátky."{#morte_s463_r41925}':
             # a961 # r41925
             jump jumble_s7  # EXTERN
 
-        '"Jumble aťs udělal cokoli, vem to zpátky - nebo se ti strašně pomstím."':
+        '"Jumble aťs udělal cokoli, vem to zpátky - nebo se ti strašně pomstím."{#morte_s463_r41926}':
             # a962 # r41926
             jump jumble_s7  # EXTERN
 
-        '"Jdeme Morte."':
+        '"Jdeme Morte."{#morte_s463_r41927}':
             # a963 # r41927
             jump morte_dispose
 
 
 # s464 # say42929
 label morte_s464: # -
-    nr '"Říkám nevšímej si té žáby… jednej rezervovaně a bezstarostně. Podstatně to věci okoření!"'
+    nr '"Říkám nevšímej si té žáby… jednej rezervovaně a bezstarostně. Podstatně to věci okoření!"{#morte_s464_}'
 
     jump montagu_s29  # EXTERN
 
 
 # s465 # say42930
 label morte_s465: # -
-    nr '"Věř mi, dítě. Začni ji ignorovat, vytvoř nějaké napětí, nech ji, ať začne být zvědavá, a oni budou škrábat všude kolem, jen aby zjistili, co je to za záležitost. Jasný, šéfe?"'
+    nr '"Věř mi, dítě. Začni ji ignorovat, vytvoř nějaké napětí, nech ji, ať začne být zvědavá, a oni budou škrábat všude kolem, jen aby zjistili, co je to za záležitost. Jasný, šéfe?"{#morte_s465_}'
 
     menu:
-        '"Ano… ona si bude myslet, že něco je špatně, a pro jednou, on bude hrát podle pravidel, spíš než kdyby byl cíl."':
+        '"Ano… ona si bude myslet, že něco je špatně, a pro jednou, on bude hrát podle pravidel, spíš než kdyby byl cíl."{#morte_s465_r42931}':
             # a964 # r42931
             jump montagu_s30  # EXTERN
 
-        '"Ne… to je ubohý nápad."':
+        '"Ne… to je ubohý nápad."{#morte_s465_r42932}':
             # a965 # r42932
             jump montagu_s31  # EXTERN
 
 
 # s466 # say43543
 label morte_s466: # -
-    nr '"Tohle je důvod, proč by se githové neměli množit. Pořád pokračují v tom, nebo si to myslí, že „kde jinde bych mohl zabít nějakého mindflayera nebo githyanki“ a tak dále a tak podobně. Myslím, že dokonce neradi pomlouvají jeden druhého. Jsou natvrdlí a často se naštvou, nebo zůstávají stále tak přímí a soustředění, že ztrácí smysl pro humor. Chvástají se svým soustředěním a tím, že mají jedno vědomí a společnou důvěru, jenže všimněte si, že se tato rasa sama rozdělila hned poté, co se rozdělila i jejich mysl. A teď mi řekni, která víra a ideologie nepřinese Sférám zkázu."'
+    nr '"Tohle je důvod, proč by se githové neměli množit. Pořád pokračují v tom, nebo si to myslí, že „kde jinde bych mohl zabít nějakého mindflayera nebo githyanki“ a tak dále a tak podobně. Myslím, že dokonce neradi pomlouvají jeden druhého. Jsou natvrdlí a často se naštvou, nebo zůstávají stále tak přímí a soustředění, že ztrácí smysl pro humor. Chvástají se svým soustředěním a tím, že mají jedno vědomí a společnou důvěru, jenže všimněte si, že se tato rasa sama rozdělila hned poté, co se rozdělila i jejich mysl. A teď mi řekni, která víra a ideologie nepřinese Sférám zkázu."{#morte_s466_}'
 
     jump kiina_s35  # EXTERN
 
 
 # s467 # say43908
 label morte_s467: # -
-    nr '"Paráda."'
+    nr '"Paráda."{#morte_s467_}'
 
     menu:
-        '"Jmenuješ se Nemelle? "Bylo mi řečeno, že znáš ovládací slovo pro tuto láhev."' if morteLogic.r43909_condition():
+        '"Jmenuješ se Nemelle? "Bylo mi řečeno, že znáš ovládací slovo pro tuto láhev."{#morte_s467_r43909}' if morteLogic.r43909_condition():
             # a966 # r43909
             jump neml_s4  # EXTERN
 
-        '"Ty jsi Nemelle? Tvá přítelkyně Aelwyn  se po tobě shání."' if morteLogic.r43910_condition():
+        '"Ty jsi Nemelle? Tvá přítelkyně Aelwyn  se po tobě shání."{#morte_s467_r43910}' if morteLogic.r43910_condition():
             # a967 # r43910
             $ morteLogic.r43910_action()
             jump neml_s6  # EXTERN
 
-        '"Hledáš někoho?"' if morteLogic.r43911_condition():
+        '"Hledáš někoho?"{#morte_s467_r43911}' if morteLogic.r43911_condition():
             # a968 # r43911
             jump neml_s14  # EXTERN
 
-        '"Mám nějaké otázky…"':
+        '"Mám nějaké otázky…"{#morte_s467_r43912}':
             # a969 # r43912
             jump neml_s11  # EXTERN
 
-        '"Nechci nic, Nemelle. Sbohem."':
+        '"Nechci nic, Nemelle. Sbohem."{#morte_s467_r43913}':
             # a970 # r43913
             jump morte_dispose
 
 
 # s468 # say43914
 label morte_s468: # -
-    nr '"Paráda."'
+    nr '"Paráda."{#morte_s468_}'
 
     jump annah_s209  # EXTERN
 
 
 # s469 # say43915
 label morte_s469: # -
-    nr '"No ne! Jaká malá horkokrevná žabka! Prahnoucí po pozornosti? Můžu slintat blahem i k tobě, estli jenom žárlíš…" Morte začal s mlaskáním plout k Annah…'
+    nr '"No ne! Jaká malá horkokrevná žabka! Prahnoucí po pozornosti? Můžu slintat blahem i k tobě, estli jenom žárlíš…" Morte začal s mlaskáním plout k Annah…{#morte_s469_}'
 
     jump annah_s210  # EXTERN
 
 
 # s470 # say43916
 label morte_s470: # -
-    nr 'Morte se náhle zastavil a odvrátil se s nesrozumitelným mumláním.'
+    nr 'Morte se náhle zastavil a odvrátil se s nesrozumitelným mumláním.{#morte_s470_}'
 
     menu:
-        '"Jmenuješ se Nemelle?" Bylo mi řečeno, že znáš ovládací slovo pro tuto láhev."' if morteLogic.r43917_condition():
+        '"Jmenuješ se Nemelle?" Bylo mi řečeno, že znáš ovládací slovo pro tuto láhev."{#morte_s470_r43917}' if morteLogic.r43917_condition():
             # a971 # r43917
             jump neml_s4  # EXTERN
 
-        '"Ty jsi Nemelle? Tvá přítelkyně Aelwyn  se po tobě shání."' if morteLogic.r43918_condition():
+        '"Ty jsi Nemelle? Tvá přítelkyně Aelwyn  se po tobě shání."{#morte_s470_r43918}' if morteLogic.r43918_condition():
             # a972 # r43918
             $ morteLogic.r43918_action()
             jump neml_s6  # EXTERN
 
-        '"Hledáš někoho?"' if morteLogic.r43919_condition():
+        '"Hledáš někoho?"{#morte_s470_r43919}' if morteLogic.r43919_condition():
             # a973 # r43919
             jump neml_s14  # EXTERN
 
-        '"Mám nějaké otázky…"':
+        '"Mám nějaké otázky…"{#morte_s470_r43920}':
             # a974 # r43920
             jump neml_s11  # EXTERN
 
-        '"Nechci nic, Nemelle. Sbohem."':
+        '"Nechci nic, Nemelle. Sbohem."{#morte_s470_r43921}':
             # a975 # r43921
             jump morte_dispose
 
 
 # s471 # say43922
 label morte_s471: # -
-    nr '"Ale di, šéfiku… Jsem si jistej, že bysme *něco* vymysleli. Co? Co?"'
+    nr '"Ale di, šéfiku… Jsem si jistej, že bysme *něco* vymysleli. Co? Co?"{#morte_s471_}'
 
     menu:
-        '"Zapomeň na to, Morte. Jdeme."':
+        '"Zapomeň na to, Morte. Jdeme."{#morte_s471_r43923}':
             # a976 # r43923
             jump morte_dispose
 
 
 # s472 # say44244
 label morte_s472: # -
-    nr 'Morte připlul blíž a zašeptal: "Ne, já. Vyřídím to. Co, Šéfe? Mrky mrk, šťouchy šťouch…"'
+    nr 'Morte připlul blíž a zašeptal: "Ne, já. Vyřídím to. Co, Šéfe? Mrky mrk, šťouchy šťouch…"{#morte_s472_}'
 
     jump goncal_s20  # EXTERN
 
 
 # s473 # say44245
 label morte_s473: # -
-    nr 'Morte se zděsil a skočil do potyčky. "Ne!!! Člověče, *zešílels?!* Hloupě plácáš!"'
+    nr 'Morte se zděsil a skočil do potyčky. "Ne!!! Člověče, *zešílels?!* Hloupě plácáš!"{#morte_s473_}'
 
     jump annah_s214  # EXTERN
 
 
 # s474 # say44677
 label morte_s474: # -
-    nr 'Morte obrátil oči v sloup. "Debilové kupředu…"'
+    nr 'Morte obrátil oči v sloup. "Debilové kupředu…"{#morte_s474_}'
 
     jump yi'minn_s47  # EXTERN
 
 
 # s475 # say44944
 label morte_s475: # -
-    nr '"Miluju Halu!"'
+    nr '"Miluju Halu!"{#morte_s475_}'
 
     jump udesire_s2  # EXTERN
 
 
 # s476 # say45026
 label morte_s476: # -
-    nr 'Morte hlasitě vzdychl. "Ale no tak sakra, šéfe. To tady fakt zůstanem a budem poslouchat ty debility?"'
+    nr 'Morte hlasitě vzdychl. "Ale no tak sakra, šéfe. To tady fakt zůstanem a budem poslouchat ty debility?"{#morte_s476_}'
 
     menu:
-        '"Buď chvíli zticha, Morte. Chci si to poslechnout."':
+        '"Buď chvíli zticha, Morte. Chci si to poslechnout."{#morte_s476_r45027}':
             # a977 # r45027
             jump 3planea_s1  # EXTERN
 
-        'Ignoruj Morta a poslouchej dál.':
+        'Ignoruj Morta a poslouchej dál.{#morte_s476_r45028}':
             # a978 # r45028
             jump 3planea_s1  # EXTERN
 
-        '"Máš pravdu, Morte - pojďme."':
+        '"Máš pravdu, Morte - pojďme."{#morte_s476_r45029}':
             # a979 # r45029
             $ morteLogic.r45029_action()
             jump morte_dispose
@@ -7081,177 +7081,177 @@ label morte_s476: # -
 
 # s477 # say45088
 label morte_s477: # externs zm965_s0
-    nr '"Hehe. Vypadá to, že tomu tupounovi někdo zapomněl říct, ať už nechodí podle Zákona tří."'
+    nr '"Hehe. Vypadá to, že tomu tupounovi někdo zapomněl říct, ať už nechodí podle Zákona tří."{#morte_s477_}'
 
     menu:
-        '"Co tím myslíš?"':
+        '"Co tím myslíš?"{#morte_s477_r45089}':
             # a980 # r45089
             jump morte_s478
 
 
 # s478 # say45091
 label morte_s478: # from 477.0
-    nr '"Tydlecty mrtvoly toho pod čepicí moc nemaj, takže najednou dokážou dělat akorát jednu věc… když jim někdo něco přikáže, tak to budou dělat, dokavad jim někdo nedá jinej rozkaz. Nebo dokud neshnijou a nerozpadnou se na sračky. Tendle kus hniloby asi už dodělal svůj úkol, ale nějak mu někdo zapomněl říct, co má dělat."'
+    nr '"Tydlecty mrtvoly toho pod čepicí moc nemaj, takže najednou dokážou dělat akorát jednu věc… když jim někdo něco přikáže, tak to budou dělat, dokavad jim někdo nedá jinej rozkaz. Nebo dokud neshnijou a nerozpadnou se na sračky. Tendle kus hniloby asi už dodělal svůj úkol, ale nějak mu někdo zapomněl říct, co má dělat."{#morte_s478_}'
 
     menu:
-        '"Kdo dává mrtvolám rozkazy?"':
+        '"Kdo dává mrtvolám rozkazy?"{#morte_s478_r45092}':
             # a981 # r45092
             jump morte_s481
 
-        '"Říkal jsi něco o Zákonu Tří. Cos tím myslel?"':
+        '"Říkal jsi něco o Zákonu Tří. Cos tím myslel?"{#morte_s478_r45093}':
             # a982 # r45093
             $ morteLogic.j39477_s478_r45093_action()
             jump morte_s479
 
-        '"Dobrá. Tak pojď, jdeme dál."':
+        '"Dobrá. Tak pojď, jdeme dál."{#morte_s478_r45094}':
             # a983 # r45094
             jump morte_dispose
 
 
 # s479 # say45095
 label morte_s479: # from 478.1 481.0
-    nr '"Eh? No tak Zákon tří, to je jeden z těch „zákonů“ ve Sférách, co povídá, že se věci dějou třikrát… nebo že se všecko skládá ze tří částí… nebo že jsou vždycky na výběr tři věci a tak dál."'
+    nr '"Eh? No tak Zákon tří, to je jeden z těch „zákonů“ ve Sférách, co povídá, že se věci dějou třikrát… nebo že se všecko skládá ze tří částí… nebo že jsou vždycky na výběr tři věci a tak dál."{#morte_s479_}'
 
     menu:
-        '"Mám pocit, že ty tomu moc nevěříš."':
+        '"Mám pocit, že ty tomu moc nevěříš."{#morte_s479_r45096}':
             # a984 # r45096
             jump morte_s480
 
 
 # s480 # say45098
 label morte_s480: # from 479.0
-    nr '"Je to pěkná hovadina, esli se ptáš mě. Když si vezmeš jakýkoli číslo a budeš se k němu snažit připlácnout ňákej smysl, dycinky najdeš spoustu náhodnejch shod."'
+    nr '"Je to pěkná hovadina, esli se ptáš mě. Když si vezmeš jakýkoli číslo a budeš se k němu snažit připlácnout ňákej smysl, dycinky najdeš spoustu náhodnejch shod."{#morte_s480_}'
 
     menu:
-        '"Aha. Říkal jsi něco o tom, že ta mrtvola dostala rozkaz a někdo jí zapomněl přikázat, ať se zastaví. Kdo jim dává rozkazy?"':
+        '"Aha. Říkal jsi něco o tom, že ta mrtvola dostala rozkaz a někdo jí zapomněl přikázat, ať se zastaví. Kdo jim dává rozkazy?"{#morte_s480_r45099}':
             # a985 # r45099
             jump morte_s481
 
-        '"Rozumím. Chci si tuhle zombii ještě prohlídnout…"':
+        '"Rozumím. Chci si tuhle zombii ještě prohlídnout…"{#morte_s480_r45100}':
             # a986 # r45100
             jump zm965_s1  # EXTERN
 
-        '"Dobrá. Tak pojď, jdeme dál."':
+        '"Dobrá. Tak pojď, jdeme dál."{#morte_s480_r45101}':
             # a987 # r45101
             jump morte_dispose
 
 
 # s481 # say45102
 label morte_s481: # from 478.0 480.0
-    nr '"Buďto jeden z dozorců nebo jakejkoli nekrofilní nekromancer, co toho chcípáka oživil z Knihy mrtvejch. Nejspíš jeden ze zřízenců… nakonec právě voni potřebujou levnou pracovní sílu. Anebo sexuální rozptýlení…"'
+    nr '"Buďto jeden z dozorců nebo jakejkoli nekrofilní nekromancer, co toho chcípáka oživil z Knihy mrtvejch. Nejspíš jeden ze zřízenců… nakonec právě voni potřebujou levnou pracovní sílu. Anebo sexuální rozptýlení…"{#morte_s481_}'
 
     menu:
-        '"Aha. Co jsi to říkal o tom zákonu tří?"':
+        '"Aha. Co jsi to říkal o tom zákonu tří?"{#morte_s481_r45103}':
             # a988 # r45103
             $ morteLogic.j39477_s481_r45103_action()
             jump morte_s479
 
-        '"Rozumím. Chci si tuhle zombii ještě prohlédnout…"':
+        '"Rozumím. Chci si tuhle zombii ještě prohlédnout…"{#morte_s481_r45104}':
             # a989 # r45104
             jump zm965_s1  # EXTERN
 
-        '"Dobrá. Tak pojď, jdeme dál."':
+        '"Dobrá. Tak pojď, jdeme dál."{#morte_s481_r45105}':
             # a990 # r45105
             jump morte_dispose
 
 
 # s482 # say45540
 label morte_s482: # externs zm985_s4 zm985_s0
-    nr '"Uch… šéfe… neměl bys…"'
+    nr '"Uch… šéfe… neměl bys…"{#morte_s482_}'
 
     jump zm985_s3  # EXTERN
 
 
 # s483 # say45709
 label morte_s483: # -
-    nr '"Ooh, aukce! Možná bychom tady mohli prodat Annah."'
+    nr '"Ooh, aukce! Možná bychom tady mohli prodat Annah."{#morte_s483_}'
 
     jump annah_s215  # EXTERN
 
 
 # s484 # say45710
 label morte_s484: # -
-    nr '"Ooh, aukce! Možná bychom tady mohli prodat Dak„kona."'
+    nr '"Ooh, aukce! Možná bychom tady mohli prodat Dak„kona."{#morte_s484_}'
 
     jump dakkon_s163  # EXTERN
 
 
 # s485 # say45711
 label morte_s485: # -
-    nr '"Ooh, aukce! Možná bychom tady mohli najít nějaké tělo, které by se mi hodilo."'
+    nr '"Ooh, aukce! Možná bychom tady mohli najít nějaké tělo, které by se mi hodilo."{#morte_s485_}'
 
     menu:
-        '"Jasně, Morte. Určitě se zeptám."':
+        '"Jasně, Morte. Určitě se zeptám."{#morte_s485_r45712}':
             # a991 # r45712
             jump giltsp_s4  # EXTERN
 
-        '"Jenom pojďme dál."':
+        '"Jenom pojďme dál."{#morte_s485_r45713}':
             # a992 # r45713
             jump morte_dispose
 
 
 # s486 # say45714
 label morte_s486: # -
-    nr '"To musí být láska. Je to láska, že jo, šéfe?"'
+    nr '"To musí být láska. Je to láska, že jo, šéfe?"{#morte_s486_}'
 
     menu:
-        '"Nechte toho, vy dva. Potřebuju se tady zeptat na pár věcí."':
+        '"Nechte toho, vy dva. Potřebuju se tady zeptat na pár věcí."{#morte_s486_r45715}':
             # a993 # r45715
             jump giltsp_s4  # EXTERN
 
-        '"No jo, Morte. Nech ho být."':
+        '"No jo, Morte. Nech ho být."{#morte_s486_r45716}':
             # a994 # r45716
             jump morte_dispose
 
 
 # s487 # say45996
 label morte_s487: # - # IF WEIGHT #0 ~  NumTimesTalkedTo(0) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Hej, dívejte se! Další lítající hlava!"'
+    nr '"Hej, dívejte se! Další lítající hlava!"{#morte_s487_}'
 
     jump vault9_s0  # EXTERN
 
 
 # s488 # say47813
 label morte_s488: # -
-    nr '"Vypadá to, že tenhle palcát má cosi jako touhu rozumovat."'
+    nr '"Vypadá to, že tenhle palcát má cosi jako touhu rozumovat."{#morte_s488_}'
 
     menu:
-        '"Ticho. Mám další otázky…"':
+        '"Ticho. Mám další otázky…"{#morte_s488_r47814}':
             # a995 # r47814
             jump justfer_s8  # EXTERN
 
-        '"Pro tentokrát jsme domluvili."':
+        '"Pro tentokrát jsme domluvili."{#morte_s488_r47815}':
             # a996 # r47815
             jump morte_dispose
 
 
 # s489 # say49443
 label morte_s489: # -
-    nr '"Ááá, githyanki. Vsadím se, že Dak„kon bude *celý* žhavý pomoct."'
+    nr '"Ááá, githyanki. Vsadím se, že Dak„kon bude *celý* žhavý pomoct."{#morte_s489_}'
 
     menu:
-        '"Díky za tvůj neocenitelný vstup, Morte. Jdeme."':
+        '"Díky za tvůj neocenitelný vstup, Morte. Jdeme."{#morte_s489_r49444}':
             # a997 # r49444
             jump morte_dispose
 
 
 # s490 # say50162
 label morte_s490: # -
-    nr '"Och, *mají* jména. Jsem si tím jistý."'
+    nr '"Och, *mají* jména. Jsem si tím jistý."{#morte_s490_}'
 
     jump annah_s242  # EXTERN
 
 
 # s491 # say50164
 label morte_s491: # -
-    nr '"Jak říkáš *ty*, fiendko."'
+    nr '"Jak říkáš *ty*, fiendko."{#morte_s491_}'
 
     menu:
-        '"Klid, Morte - Annah, můžeš se ho zeptat na další otázky?"':
+        '"Klid, Morte - Annah, můžeš se ho zeptat na další otázky?"{#morte_s491_r50165}':
             # a998 # r50165
             jump annah_s240  # EXTERN
 
-        '"Nechejme toho. Raději pojďme."':
+        '"Nechejme toho. Raději pojďme."{#morte_s491_r50166}':
             # a999 # r50166
             $ morteLogic.r50166_action()
             jump adabus_s6  # EXTERN
@@ -7259,121 +7259,121 @@ label morte_s491: # -
 
 # s492 # say50263
 label morte_s492: # -
-    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„ri než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Najdi si rodilýho Sigilana."'
+    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„ri než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Najdi si rodilýho Sigilana."{#morte_s492_}'
 
     menu:
-        '"Chápu."':
+        '"Chápu."{#morte_s492_r50264}':
             # a1000 # r50264
             jump adabus_s2  # EXTERN
 
 
 # s493 # say50266
 label morte_s493: # -
-    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„riho než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Máš tady to fiendský mrně." Kývl k Annah. "Ta se narodila v Sigilu."'
+    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„riho než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Máš tady to fiendský mrně." Kývl k Annah. "Ta se narodila v Sigilu."{#morte_s493_}'
 
     menu:
-        '"Možná ano…"':
+        '"Možná ano…"{#morte_s493_r50267}':
             # a1001 # r50267
             jump adabus_s2  # EXTERN
 
 
 # s494 # say50269
 label morte_s494: # -
-    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„ri než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Kývl k Dak“konovi. "Přemluv k tlumočení tady toho svatějšího-než-ty-a-dvakrát-tak-tichého."'
+    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„ri než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Kývl k Dak“konovi. "Přemluv k tlumočení tady toho svatějšího-než-ty-a-dvakrát-tak-tichého."{#morte_s494_}'
 
     menu:
-        '"Možná ano…"':
+        '"Možná ano…"{#morte_s494_r50270}':
             # a1002 # r50270
             jump adabus_s2  # EXTERN
 
 
 # s495 # say50272
 label morte_s495: # -
-    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„ri než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Přemluv tady tu sukubu." Kývl k Fall-from-Grace. "Možná si s těmi chlapíky celou dobu vyměňovala klepy."'
+    nr 'Morte se zasmál. "To bych dřív prošel vnitřnostma tanar„ri než bych rozluštil, co se ty lítající kozohlavci snaží říct. Chceš překladatele? Přemluv tady tu sukubu." Kývl k Fall-from-Grace. "Možná si s těmi chlapíky celou dobu vyměňovala klepy."{#morte_s495_}'
 
     menu:
-        '"Možná ano…"':
+        '"Možná ano…"{#morte_s495_r50273}':
             # a1003 # r50273
             jump adabus_s2  # EXTERN
 
 
 # s496 # say50320
 label morte_s496: # -
-    nr '"Och, ke všem Silám! Přiblblý dabus."'
+    nr '"Och, ke všem Silám! Přiblblý dabus."{#morte_s496_}'
 
     menu:
-        '"Co se děje?"':
+        '"Co se děje?"{#morte_s496_r50321}':
             # a1004 # r50321
             jump morte_s497
 
 
 # s497 # say50322
 label morte_s497: # from 496.0
-    nr '"Je to dabus. „Mluví“ v rébusech, v těch otravnejch slovních hlavolamech. Jestli *ty* nevíš, co říká, pak bysme si měli raděj najít nějakýho místního nebo přijít na jinej způsob komunikace s ním… když to budeme chtít. Můj názor? Oni *uměj* mluvit, jenom se snažej radši každýho nasrat luštěním toho, co říkaj."'
+    nr '"Je to dabus. „Mluví“ v rébusech, v těch otravnejch slovních hlavolamech. Jestli *ty* nevíš, co říká, pak bysme si měli raděj najít nějakýho místního nebo přijít na jinej způsob komunikace s ním… když to budeme chtít. Můj názor? Oni *uměj* mluvit, jenom se snažej radši každýho nasrat luštěním toho, co říkaj."{#morte_s497_}'
 
     menu:
-        '"Co je „dabus?“"':
+        '"Co je „dabus?“"{#morte_s497_r50323}':
             # a1005 # r50323
             jump morte_s498
 
 
 # s498 # say50324
 label morte_s498: # from 497.0
-    nr '"Říká se, že jsou to domovníci Paní Bolesti. Poletují okolo a bořej, spravují a záplatují Sigil podle jejích vrtochů. Jsou horší než masařky." Morte vzdechl. "Ale zaplácnout je nemůžeš, jinak se Paní… nasere."'
+    nr '"Říká se, že jsou to domovníci Paní Bolesti. Poletují okolo a bořej, spravují a záplatují Sigil podle jejích vrtochů. Jsou horší než masařky." Morte vzdechl. "Ale zaplácnout je nemůžeš, jinak se Paní… nasere."{#morte_s498_}'
 
     menu:
-        '"„Paní Bolesti?“ Kdo to je?"' if morteLogic.r50325_condition():
+        '"„Paní Bolesti?“ Kdo to je?"{#morte_s498_r50325}' if morteLogic.r50325_condition():
             # a1006 # r50325
             $ morteLogic.r50325_action()
             jump morte_s499
 
-        '"Co mi můžeš povědět o Paní Bolesti?"' if morteLogic.r50328_condition():
+        '"Co mi můžeš povědět o Paní Bolesti?"{#morte_s498_r50328}' if morteLogic.r50328_condition():
             # a1007 # r50328
             jump morte_s499
 
-        '"Chápu."' if morteLogic.r50329_condition():
+        '"Chápu."{#morte_s498_r50329}' if morteLogic.r50329_condition():
             # a1008 # r50329
             jump adabus_s2  # EXTERN
 
 
 # s499 # say50326
 label morte_s499: # from 498.0 498.1
-    nr '"Vede město. Poznáš ji, když ji uvidíš: Má kolem vobličeje takový ty čepele, má velikost obra a poletuje nad zemí zrovna jako tihle chlápci." Morte kývl k dabusovi, který se na vás dva dívá. "Nikdo vo ní moc neví… vona moc nemluví. Všechno co potřebuješ vědět je to, že ji určitě nechceš nasrat. A když ji zmerkneš, pak radím: zdrhej."'
+    nr '"Vede město. Poznáš ji, když ji uvidíš: Má kolem vobličeje takový ty čepele, má velikost obra a poletuje nad zemí zrovna jako tihle chlápci." Morte kývl k dabusovi, který se na vás dva dívá. "Nikdo vo ní moc neví… vona moc nemluví. Všechno co potřebuješ vědět je to, že ji určitě nechceš nasrat. A když ji zmerkneš, pak radím: zdrhej."{#morte_s499_}'
 
     menu:
-        '"Chápu."':
+        '"Chápu."{#morte_s499_r50327}':
             # a1009 # r50327
             jump adabus_s2  # EXTERN
 
 
 # s500 # say50410
 label morte_s500: # -
-    nr '"Cože? Cože? Co v něm bylo, šéfe?"'
+    nr '"Cože? Cože? Co v něm bylo, šéfe?"{#morte_s500_}'
 
     menu:
-        '"Nevím co říct, Morte…"':
+        '"Nevím co říct, Morte…"{#morte_s500_r50411}':
             # a1010 # r50411
             jump morte_s501
 
-        '"Nic, co by tě zajímalo, Morte."':
+        '"Nic, co by tě zajímalo, Morte."{#morte_s500_r50412}':
             # a1011 # r50412
             jump morte_s501
 
-        'Ukaž mu Kodex.':
+        'Ukaž mu Kodex.{#morte_s500_r50413}':
             # a1012 # r50413
             jump morte_s503
 
 
 # s501 # say50414
 label morte_s501: # from 500.0 500.1
-    nr '"COŽE?! Ty si snad děláš srandu, ne? No ták, ukaž mi to!"'
+    nr '"COŽE?! Ty si snad děláš srandu, ne? No ták, ukaž mi to!"{#morte_s501_}'
 
     menu:
-        'Ukaž mu Kodex.':
+        'Ukaž mu Kodex.{#morte_s501_r50415}':
             # a1013 # r50415
             jump morte_s503
 
-        '"Ne, Morte. Prostě zapomeň na to, že jsi to viděl."':
+        '"Ne, Morte. Prostě zapomeň na to, že jsi to viděl."{#morte_s501_r50416}':
             # a1014 # r50416
             $ morteLogic.r50416_action()
             jump morte_s502
@@ -7381,39 +7381,39 @@ label morte_s501: # from 500.0 500.1
 
 # s502 # say50417
 label morte_s502: # from 501.1
-    nr 'Morte mrzutě zamručel… ale nechal ptaní.'
+    nr 'Morte mrzutě zamručel… ale nechal ptaní.{#morte_s502_}'
 
     jump codexi_s2  # EXTERN
 
 
 # s503 # say50418
 label morte_s503: # from 500.2 501.0
-    nr 'Morte veplul nad tvé rameno, aby si prohlédl obsah Kodexu. Jeho oči téměř vypadly ze svých důlků, jak prohlížejí stránky: "Ooo. Oooooooo. Och, já… ale… jů."'
+    nr 'Morte veplul nad tvé rameno, aby si prohlédl obsah Kodexu. Jeho oči téměř vypadly ze svých důlků, jak prohlížejí stránky: "Ooo. Oooooooo. Och, já… ale… jů."{#morte_s503_}'
 
     jump codexi_s2  # EXTERN
 
 
 # s504 # say50697
 label morte_s504: # -
-    nr '"Huh! Huh! Huh! *Musíš* si dělat srandu, že? To přece *nemůžeš* myslet vážně, šéfe!"'
+    nr '"Huh! Huh! Huh! *Musíš* si dělat srandu, že? To přece *nemůžeš* myslet vážně, šéfe!"{#morte_s504_}'
 
     menu:
-        '"Myslím. Bereš ho, Vrischiko?"':
+        '"Myslím. Bereš ho, Vrischiko?"{#morte_s504_r50698}':
             # a1015 # r50698
             jump vrisch_s45  # EXTERN
 
-        '"Ne, nemyslím. Měl bych jinou otázku, Vrischiko…"':
+        '"Ne, nemyslím. Měl bych jinou otázku, Vrischiko…"{#morte_s504_r50699}':
             # a1016 # r50699
             jump vrisch_s7  # EXTERN
 
-        '"Máš pravdu, Morte; nebyl to dobrý nápad. Jdeme."':
+        '"Máš pravdu, Morte; nebyl to dobrý nápad. Jdeme."{#morte_s504_r50700}':
             # a1017 # r50700
             jump morte_dispose
 
 
 # s505 # say50701
 label morte_s505: # -
-    nr '"Nemůžu tomu uvěřit… už jsi klesl pěkně hluboko, šéfe, ale toto už přesahuje všecky meze. Uvidím *tě* v Baatoru, ty zašpérovanej, krátkobrkej, podrazáckej, nevděčnej, poďobanej, hovnožroutskej, umaštěnej, křivozubej ubohej kuse vygumovanýho odpadu! Pamatuj na má slova, ty zasranej hajzle, pokračuj tak dál a brzo budeš mrtvej *nadobro*… a, och, pak budeš mít cos chtěl!"'
+    nr '"Nemůžu tomu uvěřit… už jsi klesl pěkně hluboko, šéfe, ale toto už přesahuje všecky meze. Uvidím *tě* v Baatoru, ty zašpérovanej, krátkobrkej, podrazáckej, nevděčnej, poďobanej, hovnožroutskej, umaštěnej, křivozubej ubohej kuse vygumovanýho odpadu! Pamatuj na má slova, ty zasranej hajzle, pokračuj tak dál a brzo budeš mrtvej *nadobro*… a, och, pak budeš mít cos chtěl!"{#morte_s505_}'
 
     $ morteLogic.s505_action()
     jump vrisch_s46  # EXTERN
@@ -7421,217 +7421,217 @@ label morte_s505: # -
 
 # s506 # say52571
 label morte_s506: # -
-    nr '"Polklo ho to, ale nevím, jestli vyšel z *tamtoho* konce."'
+    nr '"Polklo ho to, ale nevím, jestli vyšel z *tamtoho* konce."{#morte_s506_}'
 
     menu:
-        '"Už dost - podívej, Ravel, vzala jsi mi mou smrtelnost, a způsobilo to více škody než užitku. Vezmu si jí zpátky. Myslím, že už jsi ji měla dost dlouho."':
+        '"Už dost - podívej, Ravel, vzala jsi mi mou smrtelnost, a způsobilo to více škody než užitku. Vezmu si jí zpátky. Myslím, že už jsi ji měla dost dlouho."{#morte_s506_r52572}':
             # a1018 # r52572
             jump ravel_s126  # EXTERN
 
 
 # s507 # say52573
 label morte_s507: # -
-    nr '"Myslím, že vím, kdo by měl být zavřený v kleci…"'
+    nr '"Myslím, že vím, kdo by měl být zavřený v kleci…"{#morte_s507_}'
 
     jump ravel_s189  # EXTERN
 
 
 # s508 # say52574
 label morte_s508: # -
-    nr '"No, neměl jsem na práci nic LEPŠÍHO než jít do jednoho z bludišť Paní Bolesti a tam se potkat s nejhrozivějším stvořením, který kdy strčilo čumák do Sigilu, tak sem si řek, no proč ne? Proč n-"'
+    nr '"No, neměl jsem na práci nic LEPŠÍHO než jít do jednoho z bludišť Paní Bolesti a tam se potkat s nejhrozivějším stvořením, který kdy strčilo čumák do Sigilu, tak sem si řek, no proč ne? Proč n-"{#morte_s508_}'
 
     menu:
-        '"Morte, zmlkni. Ravel, já…"':
+        '"Morte, zmlkni. Ravel, já…"{#morte_s508_r52575}':
             # a1019 # r52575
             jump morte_s509
 
 
 # s509 # say52576
 label morte_s509: # from 508.0
-    nr '"„Zmlkni?!“" Morte zacvakal zubama. "A to sakra teda ne! Myslím, že už jsme slyšeli dost držkování tý báby, která tady mele něco vo tom, že nemám žádnou kůži! Tak CO že nemám?! Je jasný. VONA kůži má, ale copak jí to nějak pomohlo v jejím skvělým VZHLEDU? Myslí si snad, že se mi *líbí* bejt celou dobu NAHATEJ? A *ještě* jedna věc-"'
+    nr '"„Zmlkni?!“" Morte zacvakal zubama. "A to sakra teda ne! Myslím, že už jsme slyšeli dost držkování tý báby, která tady mele něco vo tom, že nemám žádnou kůži! Tak CO že nemám?! Je jasný. VONA kůži má, ale copak jí to nějak pomohlo v jejím skvělým VZHLEDU? Myslí si snad, že se mi *líbí* bejt celou dobu NAHATEJ? A *ještě* jedna věc-"{#morte_s509_}'
 
     menu:
-        '"Morte! Vykašli se na to! Ravel, podívej --"' if morteLogic.r52577_condition():
+        '"Morte! Vykašli se na to! Ravel, podívej --"{#morte_s509_r52577}' if morteLogic.r52577_condition():
             # a1020 # r52577
             $ morteLogic.r52577_action()
             jump ravel_s66  # EXTERN
 
-        '"Morte! Vykašli se na to! Ravel, podívej --"' if morteLogic.r52578_condition():
+        '"Morte! Vykašli se na to! Ravel, podívej --"{#morte_s509_r52578}' if morteLogic.r52578_condition():
             # a1021 # r52578
             $ morteLogic.r52578_action()
             jump ravel_s67  # EXTERN
 
-        '"Morte! Vykašli se na to! Ravel, podívej --"' if morteLogic.r52579_condition():
+        '"Morte! Vykašli se na to! Ravel, podívej --"{#morte_s509_r52579}' if morteLogic.r52579_condition():
             # a1022 # r52579
             jump ravel_s68  # EXTERN
 
 
 # s510 # say52644
 label morte_s510: # -
-    nr '"Úchylný. Takže technicky vzato, kde vlastně jsme?"'
+    nr '"Úchylný. Takže technicky vzato, kde vlastně jsme?"{#morte_s510_}'
 
     menu:
-        '"Odpověď na tohle opravdu nechci znát, Morte."':
+        '"Odpověď na tohle opravdu nechci znát, Morte."{#morte_s510_r52771}':
             # a1023 # r52771
             jump pregal_s10  # EXTERN
 
 
 # s511 # say53623
 label morte_s511: # -
-    nr '"Oh, tak to je *skvělý.*"'
+    nr '"Oh, tak to je *skvělý.*"{#morte_s511_}'
 
     jump pillar_s5  # EXTERN
 
 
 # s512 # say53624
 label morte_s512: # from 522.0 523.0 524.0
-    nr 'Když jsi přistoupil blíže k Pilíři, Morte na tebe zasyčel: "Pssst! Šéfe! Šéfe… poslouchej, ta věc mě nesmí vidět. Musíš mě odsud dostat… nechat mě někde jinde a pak si mě vyzvednout, nebo tak něco…"'
+    nr 'Když jsi přistoupil blíže k Pilíři, Morte na tebe zasyčel: "Pssst! Šéfe! Šéfe… poslouchej, ta věc mě nesmí vidět. Musíš mě odsud dostat… nechat mě někde jinde a pak si mě vyzvednout, nebo tak něco…"{#morte_s512_}'
 
     menu:
-        '"Zapomeň na to, Morte. Jdu si s tím promluvit…"' if morteLogic.r53625_condition():
+        '"Zapomeň na to, Morte. Jdu si s tím promluvit…"{#morte_s512_r53625}' if morteLogic.r53625_condition():
             # a1024 # r53625
             $ morteLogic.r53625_action()
             jump pillar_s9  # EXTERN
 
-        '"Proč, Morte? Co se děje?"' if morteLogic.r53627_condition():
+        '"Proč, Morte? Co se děje?"{#morte_s512_r53627}' if morteLogic.r53627_condition():
             # a1025 # r53627
             jump morte_s513
 
-        '"Fajn. Tak půjdeme pryč."':
+        '"Fajn. Tak půjdeme pryč."{#morte_s512_r53628}':
             # a1026 # r53628
             jump morte_dispose
 
 
 # s513 # say53626
 label morte_s513: # from 512.1
-    nr '"Eh… Já bych o tom nejraděj nemluvil. Zkrátka pojďme, jo?" Morteho hlas se třese hrůzou. Jeho oči přelétají mezi tebou a obrovským pilířem hlav.'
+    nr '"Eh… Já bych o tom nejraděj nemluvil. Zkrátka pojďme, jo?" Morteho hlas se třese hrůzou. Jeho oči přelétají mezi tebou a obrovským pilířem hlav.{#morte_s513_}'
 
     menu:
-        '"Nemůžeš mít přede mnou tolik tajemství, Morte. Musíš mi říct, o co tady jde."':
+        '"Nemůžeš mít přede mnou tolik tajemství, Morte. Musíš mi říct, o co tady jde."{#morte_s513_r53629}':
             # a1027 # r53629
             $ morteLogic.r53629_action()
             jump morte_s514
 
-        '"Žádné uhýbání, Morte. *Hned* mi řekneš, o co tady jde, nebo si budeš *přát*, abychom si s těma hlavama promluvili."':
+        '"Žádné uhýbání, Morte. *Hned* mi řekneš, o co tady jde, nebo si budeš *přát*, abychom si s těma hlavama promluvili."{#morte_s513_r53630}':
             # a1028 # r53630
             $ morteLogic.r53630_action()
             jump morte_s514
 
-        '"Fajn. Tak půjdeme pryč."':
+        '"Fajn. Tak půjdeme pryč."{#morte_s513_r53631}':
             # a1029 # r53631
             jump morte_dispose
 
 
 # s514 # say53632
 label morte_s514: # from 513.0 513.1
-    nr 'Morte si povzdychl, není schopen podívat se ti do očí. Nakonec se podvolil. "Fajn, fajn… Povím ti to. Tenhle pilíř v Avernu, první vrstvě Baatoru, je postavenej z kebulí těch, kteří dovedli jiný na smrt tím, že jim lhali. No… je to právě támdle. Víš, tam jsem skončil. Zbytek si snad domyslíš."'
+    nr 'Morte si povzdychl, není schopen podívat se ti do očí. Nakonec se podvolil. "Fajn, fajn… Povím ti to. Tenhle pilíř v Avernu, první vrstvě Baatoru, je postavenej z kebulí těch, kteří dovedli jiný na smrt tím, že jim lhali. No… je to právě támdle. Víš, tam jsem skončil. Zbytek si snad domyslíš."{#morte_s514_}'
 
     menu:
-        '"Takže… ty jsi byl jednou z těch hlav?"' if morteLogic.r53662_condition():
+        '"Takže… ty jsi byl jednou z těch hlav?"{#morte_s514_r53662}' if morteLogic.r53662_condition():
             # a1030 # r53662
             jump morte_s516
 
-        '"Takže… ty jsi byl jednou z těch hlav?"' if morteLogic.r53663_condition():
+        '"Takže… ty jsi byl jednou z těch hlav?"{#morte_s514_r53663}' if morteLogic.r53663_condition():
             # a1031 # r53663
             jump morte_s515
 
 
 # s515 # say53664
 label morte_s515: # from 514.1
-    nr '"Jo. Trocha jsem upravil skutečnosti… jednou nebo dvakrát. Jenže jeden z mejch návrhů ved k tvý smrti. Jedný z nich. Možná vícero. Fakt nevím, tydle vzpomínky jsou už dávno pryč."'
+    nr '"Jo. Trocha jsem upravil skutečnosti… jednou nebo dvakrát. Jenže jeden z mejch návrhů ved k tvý smrti. Jedný z nich. Možná vícero. Fakt nevím, tydle vzpomínky jsou už dávno pryč."{#morte_s515_}'
 
     menu:
-        '"Aha…"':
+        '"Aha…"{#morte_s515_r53665}':
             # a1032 # r53665
             jump morte_s518
 
 
 # s516 # say53666
 label morte_s516: # from 514.0
-    nr '"Jo. Trocha jsem upravil skutečnosti… jednou nebo dvakrát. Jenže jeden z mejch návrhů-"'
+    nr '"Jo. Trocha jsem upravil skutečnosti… jednou nebo dvakrát. Jenže jeden z mejch návrhů-"{#morte_s516_}'
 
     jump annah_s269  # EXTERN
 
 
 # s517 # say53667
 label morte_s517: # -
-    nr 'Morte pokračuje dál. "… jeden z mejch *návrhů* vedl k tvý smrti. Jedné z nich. Možná vícero. Fakt nevím, tydle vzpomínky jsou už dávno pryč."'
+    nr 'Morte pokračuje dál. "… jeden z mejch *návrhů* vedl k tvý smrti. Jedné z nich. Možná vícero. Fakt nevím, tydle vzpomínky jsou už dávno pryč."{#morte_s517_}'
 
     jump morte_s518
 
 
 # s518 # say53668
 label morte_s518: # from 515.0 517.0
-    nr 'Morte zírá před tvé nohy - nikdy jsi ho neviděl tak zoufalého. "Tydle vzpomínky… hele, šéfe, já si dokonce nepamatuju, že bych *byl* člověk. Nepamatuju si, jakej byl život před Pilířem…"'
+    nr 'Morte zírá před tvé nohy - nikdy jsi ho neviděl tak zoufalého. "Tydle vzpomínky… hele, šéfe, já si dokonce nepamatuju, že bych *byl* člověk. Nepamatuju si, jakej byl život před Pilířem…"{#morte_s518_}'
 
     if morteLogic.s518_condition():
         jump dakkon_s183  # EXTERN
     menu:
-        '"Pokračuj…"' if morteLogic.r54105_condition():
+        '"Pokračuj…"{#morte_s518_r54105}' if morteLogic.r54105_condition():
             # a1033 # r54105
             jump morte_s520
 
 
 # s519 # say53794
 label morte_s519: # -
-    nr 'Morte se podíval na Dak„kona, pak na tebe. "Jo. Asi jo. A tak už je to s věcma, když umřeš. Ty… zapomínáš. Řek bych, že sem nebyl zrovna vrchol ctností, když sem byl naživu… ale sakra, kdo je?" Morte si znovu povzdychl. "Já si zkrátka nemůžu pomoct. Není nic horšího, než bejt furt upřímnej. Ale koukni, šéfe, esli mě ta hromada hlav zmerčí, bude mě chtít zpátky - *moc*! To nesmíš dopustit!"'
+    nr 'Morte se podíval na Dak„kona, pak na tebe. "Jo. Asi jo. A tak už je to s věcma, když umřeš. Ty… zapomínáš. Řek bych, že sem nebyl zrovna vrchol ctností, když sem byl naživu… ale sakra, kdo je?" Morte si znovu povzdychl. "Já si zkrátka nemůžu pomoct. Není nic horšího, než bejt furt upřímnej. Ale koukni, šéfe, esli mě ta hromada hlav zmerčí, bude mě chtít zpátky - *moc*! To nesmíš dopustit!"{#morte_s519_}'
 
     menu:
-        '"Zapomeň na to, Morte. Jdu si s nimi promluvit…"':
+        '"Zapomeň na to, Morte. Jdu si s nimi promluvit…"{#morte_s519_r53795}':
             # a1034 # r53795
             $ morteLogic.r53795_action()
             jump pillar_s9  # EXTERN
 
-        '"Počkej… jak ses dostal z Pilíře?"':
+        '"Počkej… jak ses dostal z Pilíře?"{#morte_s519_r53796}':
             # a1035 # r53796
             jump morte_s521
 
-        '"Vydrž… proč jsi mi to neřekl všechno už před tím, v Márnici?"':
+        '"Vydrž… proč jsi mi to neřekl všechno už před tím, v Márnici?"{#morte_s519_r53797}':
             # a1036 # r53797
             jump morte_s523
 
-        '"Chviličku. Jak dlouho už mě znáš, Morte?"':
+        '"Chviličku. Jak dlouho už mě znáš, Morte?"{#morte_s519_r53798}':
             # a1037 # r53798
             jump morte_s524
 
-        '"Dobrá. Jdeme, Morte."':
+        '"Dobrá. Jdeme, Morte."{#morte_s519_r53799}':
             # a1038 # r53799
             jump morte_dispose
 
 
 # s520 # say53800
 label morte_s520: # from 518.1
-    nr '"No, každopádně bych řek, že sem nebyl zrovna vrchol ctností, když sem byl naživu… ale sakra, kdo je?" Morte si znovu povzdychl. "Já si zkrátka nemůžu pomoct. Není nic horšího, než bejt furt upřímnej. Ale koukni, šéfe, esli mě ta hromada hlav zmerčí, bude mě chtít zpátky - *moc*! To nesmíš dopustit!"'
+    nr '"No, každopádně bych řek, že sem nebyl zrovna vrchol ctností, když sem byl naživu… ale sakra, kdo je?" Morte si znovu povzdychl. "Já si zkrátka nemůžu pomoct. Není nic horšího, než bejt furt upřímnej. Ale koukni, šéfe, esli mě ta hromada hlav zmerčí, bude mě chtít zpátky - *moc*! To nesmíš dopustit!"{#morte_s520_}'
 
     menu:
-        '"Zapomeň na to, Morte. Jdu si s nimi promluvit…"':
+        '"Zapomeň na to, Morte. Jdu si s nimi promluvit…"{#morte_s520_r53801}':
             # a1039 # r53801
             $ morteLogic.r53801_action()
             jump pillar_s9  # EXTERN
 
-        '"Počkej… jak ses dostal z Pilíře?"':
+        '"Počkej… jak ses dostal z Pilíře?"{#morte_s520_r53802}':
             # a1040 # r53802
             jump morte_s521
 
-        '"Vydrž… proč jsi mi to neřekl všechno už před tím, v Márnici?"':
+        '"Vydrž… proč jsi mi to neřekl všechno už před tím, v Márnici?"{#morte_s520_r53803}':
             # a1041 # r53803
             jump morte_s523
 
-        '"Chviličku. Jak dlouho už mě znáš, Morte?"':
+        '"Chviličku. Jak dlouho už mě znáš, Morte?"{#morte_s520_r53804}':
             # a1042 # r53804
             jump morte_s524
 
-        '"Dobrá. Jdeme, Morte."':
+        '"Dobrá. Jdeme, Morte."{#morte_s520_r53805}':
             # a1043 # r53805
             jump morte_dispose
 
 
 # s521 # say53806
 label morte_s521: # from 519.1 520.1 523.1 524.1
-    nr '"No… tys mě vytáh ven, náčelníku. Proboxoval sem se na předek Pilíře - byl si tam už dřív, víš - řval sem a ječel, dokud sis mě nevšim. Škemral sem, ať mě vyndáš, přisahal sem, že tě budu následovat, podělím se s tebou o své znalosti až do konce tvých dnů… neuvědomil jsem si, jak dlouho to bude, dokud jsi mě nakonec nevytáh."'
+    nr '"No… tys mě vytáh ven, náčelníku. Proboxoval sem se na předek Pilíře - byl si tam už dřív, víš - řval sem a ječel, dokud sis mě nevšim. Škemral sem, ať mě vyndáš, přisahal sem, že tě budu následovat, podělím se s tebou o své znalosti až do konce tvých dnů… neuvědomil jsem si, jak dlouho to bude, dokud jsi mě nakonec nevytáh."{#morte_s521_}'
 
     menu:
-        '"A znalosti Pilíře…?"':
+        '"A znalosti Pilíře…?"{#morte_s521_r53807}':
             # a1044 # r53807
             $ morteLogic.j53633_s521_r53807_action()
             jump morte_s522
@@ -7639,157 +7639,157 @@ label morte_s521: # from 519.1 520.1 523.1 524.1
 
 # s522 # say53808
 label morte_s522: # from 521.0
-    nr '"Oh, to… no, taky sem si neuvědomil, že přindu o většinu vědomostí Pilíře, jakmile budu mimo. U mizernejch mocností, *to* tě teda vytočilo! Ale stejně sis mě nechal u sebe. Nejprv sem se k tobě cítil „vázanej“… jakoby mě tvá magie změnila na ňákýho služebníčka, magického otroka. Ale za pár set let sem si uvědomil, že je toho *víc*… něco mnohem hlubšího. Více než jenom vděčnost, i když ta s tím taky měla co dělat. Cítil sem, že mě k tobě něco táhne, něco *spojuje* s tebou. Možná všecko tvý utrpení, šéfe… tvý muka. Nevím. Možná mi to připomínalo moje vlastní, když sem byl v Pilíři.'
+    nr '"Oh, to… no, taky sem si neuvědomil, že přindu o většinu vědomostí Pilíře, jakmile budu mimo. U mizernejch mocností, *to* tě teda vytočilo! Ale stejně sis mě nechal u sebe. Nejprv sem se k tobě cítil „vázanej“… jakoby mě tvá magie změnila na ňákýho služebníčka, magického otroka. Ale za pár set let sem si uvědomil, že je toho *víc*… něco mnohem hlubšího. Více než jenom vděčnost, i když ta s tím taky měla co dělat. Cítil sem, že mě k tobě něco táhne, něco *spojuje* s tebou. Možná všecko tvý utrpení, šéfe… tvý muka. Nevím. Možná mi to připomínalo moje vlastní, když sem byl v Pilíři.{#morte_s522_}'
 
     menu:
-        '"Teď si půjdu promluvit s Pilířem…"':
+        '"Teď si půjdu promluvit s Pilířem…"{#morte_s522_r53809}':
             # a1045 # r53809
             jump morte_s512
 
-        '"Proč jsi mi to neřekl už v Márnici, že mě znáš?"':
+        '"Proč jsi mi to neřekl už v Márnici, že mě znáš?"{#morte_s522_r53810}':
             # a1046 # r53810
             jump morte_s523
 
-        '"Jak dlouho už mě znáš, Morte?"':
+        '"Jak dlouho už mě znáš, Morte?"{#morte_s522_r53811}':
             # a1047 # r53811
             jump morte_s524
 
-        '"Dobrá. Pojďme pryč, Morte."':
+        '"Dobrá. Pojďme pryč, Morte."{#morte_s522_r53812}':
             # a1048 # r53812
             jump morte_dispose
 
 
 # s523 # say53813
 label morte_s523: # from 519.2 520.2 522.1 524.2
-    nr 'Morte se náhle začal bránit. "Protože sem *nevěděl*, kdo budeš! Některý z tvých inkarnací byli magoři, zuřiví šílenci! Jednou ses probral přesvědčený, že *já* jsem tvoje lebka a honil jsi mě kolem dokola, zkoušel jsi mě rozmlátit a sežrat… naštěstí tě na ulici srazil vůz. Jiná inkarnace, „dobrá a zákonná“ se mě snažila narvat do Pilíře, protože „to je místo, kam patřím“." Morte si odfrkl. "*Proto*. Krom toho ti nijak neublížilo, když jsi to nevěděl…"'
+    nr 'Morte se náhle začal bránit. "Protože sem *nevěděl*, kdo budeš! Některý z tvých inkarnací byli magoři, zuřiví šílenci! Jednou ses probral přesvědčený, že *já* jsem tvoje lebka a honil jsi mě kolem dokola, zkoušel jsi mě rozmlátit a sežrat… naštěstí tě na ulici srazil vůz. Jiná inkarnace, „dobrá a zákonná“ se mě snažila narvat do Pilíře, protože „to je místo, kam patřím“." Morte si odfrkl. "*Proto*. Krom toho ti nijak neublížilo, když jsi to nevěděl…"{#morte_s523_}'
 
     menu:
-        '"Teď si půjdu promluvit s Pílířem…"':
+        '"Teď si půjdu promluvit s Pílířem…"{#morte_s523_r53814}':
             # a1049 # r53814
             jump morte_s512
 
-        '"Jak ses dostal z Pilíře ven?"':
+        '"Jak ses dostal z Pilíře ven?"{#morte_s523_r53815}':
             # a1050 # r53815
             jump morte_s521
 
-        '"Jak dlouho už mě znáš, Morte?"':
+        '"Jak dlouho už mě znáš, Morte?"{#morte_s523_r53816}':
             # a1051 # r53816
             jump morte_s524
 
-        '"Dobrá. Pojďme pryč, Morte."':
+        '"Dobrá. Pojďme pryč, Morte."{#morte_s523_r53817}':
             # a1052 # r53817
             jump morte_dispose
 
 
 # s524 # say53818
 label morte_s524: # from 519.3 520.3 522.2 523.2
-    nr '"Nevím. Věky, řek bych. Dělal sem, co sem moh, abych ti pomoh najít cestu, pokaždý ale…" Morte si povzdychl, pozvedl se, aby se ti mohl podívat do očí. "Málokdy ses dostal takhle daleko, šéfe. Vážně. Jenom čtyřikrát nebo pětkrát. Možná že tentokrát… možná tohle „tu“ zjistí, o co tady vlastně jde."'
+    nr '"Nevím. Věky, řek bych. Dělal sem, co sem moh, abych ti pomoh najít cestu, pokaždý ale…" Morte si povzdychl, pozvedl se, aby se ti mohl podívat do očí. "Málokdy ses dostal takhle daleko, šéfe. Vážně. Jenom čtyřikrát nebo pětkrát. Možná že tentokrát… možná tohle „tu“ zjistí, o co tady vlastně jde."{#morte_s524_}'
 
     menu:
-        '"Teď si půjdu promluvit s Pílířem…"':
+        '"Teď si půjdu promluvit s Pílířem…"{#morte_s524_r53819}':
             # a1053 # r53819
             jump morte_s512
 
-        '"Jak ses dostal z Pilíře ven?"':
+        '"Jak ses dostal z Pilíře ven?"{#morte_s524_r53820}':
             # a1054 # r53820
             jump morte_s521
 
-        '"Proč jsi mi to neřekl už v Márnici, že mě znáš?"':
+        '"Proč jsi mi to neřekl už v Márnici, že mě znáš?"{#morte_s524_r53821}':
             # a1055 # r53821
             jump morte_s523
 
-        '"Dobrá. Pojďme pryč, Morte."':
+        '"Dobrá. Pojďme pryč, Morte."{#morte_s524_r53822}':
             # a1056 # r53822
             jump morte_dispose
 
 
 # s525 # say53823
 label morte_s525: # -
-    nr '"Oh, ne…"'
+    nr '"Oh, ne…"{#morte_s525_}'
 
     jump pillar_s10  # EXTERN
 
 
 # s526 # say53824
 label morte_s526: # -
-    nr 'Morte se otřásl hrůzou a zaskřípal zuby. "Nemůžu jít zpátky, šéfe! Nemůžu! Nemůžu! Nemůžu!"'
+    nr 'Morte se otřásl hrůzou a zaskřípal zuby. "Nemůžu jít zpátky, šéfe! Nemůžu! Nemůžu! Nemůžu!"{#morte_s526_}'
 
     menu:
-        '"Nevrátil se k tobě. Ale já mám nějaké otázky, Pilíři lebek…"' if morteLogic.r53825_condition():
+        '"Nevrátil se k tobě. Ale já mám nějaké otázky, Pilíři lebek…"{#morte_s526_r53825}' if morteLogic.r53825_condition():
             # a1057 # r53825
             $ morteLogic.r53825_action()
             jump pillar_s2  # EXTERN
 
-        '"Nevrátil se k tobě. Ale já mám nějaké otázky, Pilíři lebek…"' if morteLogic.r53826_condition():
+        '"Nevrátil se k tobě. Ale já mám nějaké otázky, Pilíři lebek…"{#morte_s526_r53826}' if morteLogic.r53826_condition():
             # a1058 # r53826
             $ morteLogic.r53826_action()
             jump pillar_s2  # EXTERN
 
-        '"Nevrátil se k tobě, Pilíři lebek. Ale já mám nějaké otázky…"' if morteLogic.r53827_condition():
+        '"Nevrátil se k tobě, Pilíři lebek. Ale já mám nějaké otázky…"{#morte_s526_r53827}' if morteLogic.r53827_condition():
             # a1059 # r53827
             jump pillar_s12  # EXTERN
 
-        '"Zkrátka pojďme, Morte. No tak pojď."':
+        '"Zkrátka pojďme, Morte. No tak pojď."{#morte_s526_r53828}':
             # a1060 # r53828
             jump pillar_s50  # EXTERN
 
 
 # s527 # say53829
 label morte_s527: # -
-    nr '"*No* tak, šéfe. Copak jsem ti právě neřekl, co to je? Je to z hlav lhářů, kteří dávali „rady“, které posílaly na smrt. Může ti odpovědět prakticky na každou otázku - ví toho hromadu - ale očekává jako platbu obrovskou cenu! Neptej se ho na takový věci!"'
+    nr '"*No* tak, šéfe. Copak jsem ti právě neřekl, co to je? Je to z hlav lhářů, kteří dávali „rady“, které posílaly na smrt. Může ti odpovědět prakticky na každou otázku - ví toho hromadu - ale očekává jako platbu obrovskou cenu! Neptej se ho na takový věci!"{#morte_s527_}'
 
     jump pillar_s14  # EXTERN
 
 
 # s528 # say53830
 label morte_s528: # -
-    nr '"Nedávej mě zpátky, náčelníku. Prosím!"'
+    nr '"Nedávej mě zpátky, náčelníku. Prosím!"{#morte_s528_}'
 
     jump pillar_s17  # EXTERN
 
 
 # s529 # say53831
 label morte_s529: # -
-    nr '"Šéfe?! Ne! Ne! To *nemůžeš*! No tak!"'
+    nr '"Šéfe?! Ne! Ne! To *nemůžeš*! No tak!"{#morte_s529_}'
 
     menu:
-        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."' if morteLogic.r53832_condition():
+        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."{#morte_s529_r53832}' if morteLogic.r53832_condition():
             # a1061 # r53832
             jump morte_s530
 
-        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."' if morteLogic.r53833_condition():
+        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."{#morte_s529_r53833}' if morteLogic.r53833_condition():
             # a1062 # r53833
             jump morte_s530
 
-        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."' if morteLogic.r53834_condition():
+        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."{#morte_s529_r53834}' if morteLogic.r53834_condition():
             # a1063 # r53834
             jump morte_s530
 
-        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."' if morteLogic.r53835_condition():
+        '"Neboj se, Morte - zkrátka tě později zase vytáhnu."{#morte_s529_r53835}' if morteLogic.r53835_condition():
             # a1064 # r53835
             jump morte_s531
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53836_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s529_r53836}' if morteLogic.r53836_condition():
             # a1065 # r53836
             jump pillar_s19  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53837_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s529_r53837}' if morteLogic.r53837_condition():
             # a1066 # r53837
             jump pillar_s20  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53838_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s529_r53838}' if morteLogic.r53838_condition():
             # a1067 # r53838
             jump pillar_s21  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53839_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s529_r53839}' if morteLogic.r53839_condition():
             # a1068 # r53839
             jump pillar_s22  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53840_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s529_r53840}' if morteLogic.r53840_condition():
             # a1069 # r53840
             jump pillar_s23  # EXTERN
 
-        '"Zkrátka pojďme, Morte. No tak pojď."':
+        '"Zkrátka pojďme, Morte. No tak pojď."{#morte_s529_r53841}':
             # a1070 # r53841
             $ morteLogic.r53841_action()
             jump pillar_s50  # EXTERN
@@ -7797,35 +7797,35 @@ label morte_s529: # -
 
 # s530 # say53842
 label morte_s530: # from 529.0 529.1 529.2
-    nr 'Morte se na tebe pochybovačně podíval. "Seš si *jistej*? Přísaháš? Hej, co to povídám?! Ne! Ne! No tak, *nemůžeš* mě dát zpátky!"'
+    nr 'Morte se na tebe pochybovačně podíval. "Seš si *jistej*? Přísaháš? Hej, co to povídám?! Ne! Ne! No tak, *nemůžeš* mě dát zpátky!"{#morte_s530_}'
 
     menu:
-        'Popadni Morteho a vraž ho do Pilíře lebek.':
+        'Popadni Morteho a vraž ho do Pilíře lebek.{#morte_s530_r53843}':
             # a1071 # r53843
             $ morteLogic.r53843_action()
             jump morte_dispose
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53844_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s530_r53844}' if morteLogic.r53844_condition():
             # a1072 # r53844
             jump pillar_s19  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53863_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s530_r53863}' if morteLogic.r53863_condition():
             # a1073 # r53863
             jump pillar_s20  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53864_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s530_r53864}' if morteLogic.r53864_condition():
             # a1074 # r53864
             jump pillar_s21  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53865_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s530_r53865}' if morteLogic.r53865_condition():
             # a1075 # r53865
             jump pillar_s22  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53866_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s530_r53866}' if morteLogic.r53866_condition():
             # a1076 # r53866
             jump pillar_s23  # EXTERN
 
-        '"Zkrátka pojďme, Morte. No tak pojď."':
+        '"Zkrátka pojďme, Morte. No tak pojď."{#morte_s530_r53867}':
             # a1077 # r53867
             $ morteLogic.r53867_action()
             jump pillar_s50  # EXTERN
@@ -7833,35 +7833,35 @@ label morte_s530: # from 529.0 529.1 529.2
 
 # s531 # say53849
 label morte_s531: # from 529.3
-    nr 'Morte se na tebe chvíli tiše dívá, ústa dokořán. "COŽE?! Ani omylem! Nejseš ani tak mocnej, jak si bejval… hele, zapomeň na to, to nemůžeš udělat, to nejde! No tak, *nemůžeš* mě dát zpátky!"'
+    nr 'Morte se na tebe chvíli tiše dívá, ústa dokořán. "COŽE?! Ani omylem! Nejseš ani tak mocnej, jak si bejval… hele, zapomeň na to, to nemůžeš udělat, to nejde! No tak, *nemůžeš* mě dát zpátky!"{#morte_s531_}'
 
     menu:
-        'Popadni Morteho a vraž ho do Pilíře lebek.':
+        'Popadni Morteho a vraž ho do Pilíře lebek.{#morte_s531_r53850}':
             # a1078 # r53850
             $ morteLogic.r53850_action()
             jump morte_dispose
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53851_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s531_r53851}' if morteLogic.r53851_condition():
             # a1079 # r53851
             jump pillar_s19  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53852_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s531_r53852}' if morteLogic.r53852_condition():
             # a1080 # r53852
             jump pillar_s20  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53853_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s531_r53853}' if morteLogic.r53853_condition():
             # a1081 # r53853
             jump pillar_s21  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53854_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s531_r53854}' if morteLogic.r53854_condition():
             # a1082 # r53854
             jump pillar_s22  # EXTERN
 
-        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"' if morteLogic.r53855_condition():
+        '"Dobře, Morte. Pilíři lebek: co jiného přijmeš?"{#morte_s531_r53855}' if morteLogic.r53855_condition():
             # a1083 # r53855
             jump pillar_s23  # EXTERN
 
-        '"Zkrátka pojďme, Morte. No tak pojď."':
+        '"Zkrátka pojďme, Morte. No tak pojď."{#morte_s531_r53856}':
             # a1084 # r53856
             $ morteLogic.r53856_action()
             jump pillar_s50  # EXTERN
@@ -7869,56 +7869,56 @@ label morte_s531: # from 529.3
 
 # s532 # say53857
 label morte_s532: # -
-    nr '"Uau… počkej! Ne tak rychle! Pilíři… Můžu ti říct, kde je Fjhull Jedovatý Jazyk! No tak, nechceš to vědět? Co kdyby ti dal tohle, místo mně? Eh? Co povíš?"'
+    nr '"Uau… počkej! Ne tak rychle! Pilíři… Můžu ti říct, kde je Fjhull Jedovatý Jazyk! No tak, nechceš to vědět? Co kdyby ti dal tohle, místo mně? Eh? Co povíš?"{#morte_s532_}'
 
     menu:
-        '"Nech toho, Morte. Fhjulla neprodáme."':
+        '"Nech toho, Morte. Fhjulla neprodáme."{#morte_s532_r53858}':
             # a1085 # r53858
             jump morte_s533
 
-        'Počkej na odpověď Pilíře.':
+        'Počkej na odpověď Pilíře.{#morte_s532_r53859}':
             # a1086 # r53859
             jump pillar_s19  # EXTERN
 
 
 # s533 # say53860
 label morte_s533: # from 532.0
-    nr '"Co? Seš *blázen*?! Prodáš *mě*, ale ne toho *FIENDA*?! Pomáhá ti jenom proto, že musí, protože je prokletej! A co *já*? Kdo tě dostal z Márnice, šéfe? Kdo u tebe zůstane stát - eh, vznášet se - až budeš bojovat proti čemukoli nebo komukoli v Pevnosti Bůhvíčeho? Huh?! Huh?! FHJULL TLUSTOPRD URČITĚ NE, NA TO SI, SAKRA, MŮŽEŠ VSADIT!"'
+    nr '"Co? Seš *blázen*?! Prodáš *mě*, ale ne toho *FIENDA*?! Pomáhá ti jenom proto, že musí, protože je prokletej! A co *já*? Kdo tě dostal z Márnice, šéfe? Kdo u tebe zůstane stát - eh, vznášet se - až budeš bojovat proti čemukoli nebo komukoli v Pevnosti Bůhvíčeho? Huh?! Huh?! FHJULL TLUSTOPRD URČITĚ NE, NA TO SI, SAKRA, MŮŽEŠ VSADIT!"{#morte_s533_}'
 
     menu:
-        '"Fajn, fajn. Co na to řekneš, Pilíři?"':
+        '"Fajn, fajn. Co na to řekneš, Pilíři?"{#morte_s533_r53861}':
             # a1087 # r53861
             jump pillar_s19  # EXTERN
 
-        '"Promiň, Morte. Jdeš dovnitř."':
+        '"Promiň, Morte. Jdeš dovnitř."{#morte_s533_r53862}':
             # a1088 # r53862
             jump pillar_s18  # EXTERN
 
 
 # s534 # say54155
 label morte_s534: # from 540.3 541.2 542.2 543.1 544.1 545.2 546.1 547.1 548.4 549.2 550.2 551.1 552.1 553.2 554.2 555.2 556.1 557.1 562.0 563.0 564.0
-    nr '"Proč ne, šéfe?" Morte zavrtěl hlavou. "Víš, už jsme byli na mnoha DALŠÍCH děsnejch sférach mnohovesmíru, na který si vzpomenu. Tak proč neudělat další krůček?" Rachotivě si povzdychl. "Jseš připravenej TY? Protože jestli ne…"'
+    nr '"Proč ne, šéfe?" Morte zavrtěl hlavou. "Víš, už jsme byli na mnoha DALŠÍCH děsnejch sférach mnohovesmíru, na který si vzpomenu. Tak proč neudělat další krůček?" Rachotivě si povzdychl. "Jseš připravenej TY? Protože jestli ne…"{#morte_s534_}'
 
     menu:
-        '"Můžeš mi znovu říct vše, co víš o tom, co je za portálem?"':
+        '"Můžeš mi znovu říct vše, co víš o tom, co je za portálem?"{#morte_s534_r54156}':
             # a1089 # r54156
             jump morte_s544
 
-        '"Jsem připravený, Morte. Není už nic, co bych mohl udělat. Jsi se mnou?"':
+        '"Jsem připravený, Morte. Není už nic, co bych mohl udělat. Jsi se mnou?"{#morte_s534_r54157}':
             # a1090 # r54157
             jump morte_s535
 
-        '"Možná máš pravdu… měl bych se nejdřív připravit."':
+        '"Možná máš pravdu… měl bych se nejdřív připravit."{#morte_s534_r54158}':
             # a1091 # r54158
             jump morte_dispose
 
 
 # s535 # say54159
 label morte_s535: # from 534.1
-    nr '"No, já…" Morte se podíval na blýskající závoj a vydal ze sebe další rachotivý vzdych. "Jasně. Pojďme. Kde jinde bychom si mohli pokecat líp, než v Márnici, že?"'
+    nr '"No, já…" Morte se podíval na blýskající závoj a vydal ze sebe další rachotivý vzdych. "Jasně. Pojďme. Kde jinde bychom si mohli pokecat líp, než v Márnici, že?"{#morte_s535_}'
 
     menu:
-        '"Dobrá tedy…"':
+        '"Dobrá tedy…"{#morte_s535_r54160}':
             # a1092 # r54160
             $ morteLogic.r54160_action()
             jump morte_dispose
@@ -7926,90 +7926,90 @@ label morte_s535: # from 534.1
 
 # s536 # say54161
 label morte_s536: # -
-    nr '"Eh…" Morte zaváhal, kouknul na portál, na tebe, znovu na portál, pak si rachotivě povzdychl. "Hele, tady ti toho *moc* neřeknu, ale… no, je tady něco, co ti musím říct…"'
+    nr '"Eh…" Morte zaváhal, kouknul na portál, na tebe, znovu na portál, pak si rachotivě povzdychl. "Hele, tady ti toho *moc* neřeknu, ale… no, je tady něco, co ti musím říct…"{#morte_s536_}'
 
     menu:
-        '"Co je to, Morte?"':
+        '"Co je to, Morte?"{#morte_s536_r54162}':
             # a1093 # r54162
             jump morte_s537
 
-        '"Co? No tak, Morte, musíme jít…"':
+        '"Co? No tak, Morte, musíme jít…"{#morte_s536_r54163}':
             # a1094 # r54163
             jump morte_s537
 
 
 # s537 # say54164
 label morte_s537: # from 536.0 536.1
-    nr '"No, je to o místě, kam jdeme… nebo vlastně kde… už jsme… *byli.*"'
+    nr '"No, je to o místě, kam jdeme… nebo vlastně kde… už jsme… *byli.*"{#morte_s537_}'
 
     menu:
-        '"„Kde jsme BYLI?“ O čem to mluvíš?"' if morteLogic.r54165_condition():
+        '"„Kde jsme BYLI?“ O čem to mluvíš?"{#morte_s537_r54165}' if morteLogic.r54165_condition():
             # a1095 # r54165
             jump morte_s540
 
-        '"„Kde jsme BYLI?“ O čem to mluvíš?"' if morteLogic.r54166_condition():
+        '"„Kde jsme BYLI?“ O čem to mluvíš?"{#morte_s537_r54166}' if morteLogic.r54166_condition():
             # a1096 # r54166
             jump dakkon_s174  # EXTERN
 
-        '"„Kde jsme BYLI?“ O čem to mluvíš?"' if morteLogic.r54167_condition():
+        '"„Kde jsme BYLI?“ O čem to mluvíš?"{#morte_s537_r54167}' if morteLogic.r54167_condition():
             # a1097 # r54167
             jump morte_s540
 
 
 # s538 # say54168
 label morte_s538: # -
-    nr '"Uh… šéfe?" Morte zaváhal, kouknul na portál, na tebe, znovu na portál, pak si rachotivě povzdychl. "Hele, tady ti toho *moc* neřeknu, ale… no, je tady něco, co ti musím říct…"'
+    nr '"Uh… šéfe?" Morte zaváhal, kouknul na portál, na tebe, znovu na portál, pak si rachotivě povzdychl. "Hele, tady ti toho *moc* neřeknu, ale… no, je tady něco, co ti musím říct…"{#morte_s538_}'
 
     menu:
-        '"Co je to, Morte?"':
+        '"Co je to, Morte?"{#morte_s538_r54169}':
             # a1098 # r54169
             jump morte_s539
 
-        '"Co? No tak, Morte, musíme jít…"':
+        '"Co? No tak, Morte, musíme jít…"{#morte_s538_r54170}':
             # a1099 # r54170
             jump morte_s539
 
 
 # s539 # say54171
 label morte_s539: # from 538.0 538.1
-    nr '"No, je to o místě, kam jdeme… nebo vlastně kde… už jsme… *byli.*"'
+    nr '"No, je to o místě, kam jdeme… nebo vlastně kde… už jsme… *byli.*"{#morte_s539_}'
 
     menu:
-        '"„Kde jsme BYLI?“ O čem to mluvíš?"' if morteLogic.r54172_condition():
+        '"„Kde jsme BYLI?“ O čem to mluvíš?"{#morte_s539_r54172}' if morteLogic.r54172_condition():
             # a1100 # r54172
             jump morte_s540
 
-        '"„Kde jsme BYLI?“ O čem to mluvíš?"' if morteLogic.r54173_condition():
+        '"„Kde jsme BYLI?“ O čem to mluvíš?"{#morte_s539_r54173}' if morteLogic.r54173_condition():
             # a1101 # r54173
             jump dakkon_s174  # EXTERN
 
-        '"„Kde jsme BYLI?“ O čem to mluvíš?"' if morteLogic.r54174_condition():
+        '"„Kde jsme BYLI?“ O čem to mluvíš?"{#morte_s539_r54174}' if morteLogic.r54174_condition():
             # a1102 # r54174
             jump morte_s540
 
 
 # s540 # say54175
 label morte_s540: # from 537.0 537.2 539.0 539.2
-    nr '"Tohle… uh, není to POPRVÉ, co tímhle procházíme… víš, už jsme v tý „Pevnosti Lítosti“ byli dřív… i když… my… já… tenkrát jsem to nevěděl."'
+    nr '"Tohle… uh, není to POPRVÉ, co tímhle procházíme… víš, už jsme v tý „Pevnosti Lítosti“ byli dřív… i když… my… já… tenkrát jsem to nevěděl."{#morte_s540_}'
 
     menu:
-        '"Ty jsi *nevěděl*? Jak je to možné?"':
+        '"Ty jsi *nevěděl*? Jak je to možné?"{#morte_s540_r54176}':
             # a1103 # r54176
             jump morte_s541
 
-        '"Takže, ÚPLNĚ OD ZAČÁTKU… jsi mi mohl ŘÍCT, kde je ten portál, JAKÝ je klíč k portálu, PROČ jsem nesmrtelný, CO se stalo mé smrtelnosti a skutečnost, že je v té Pevnosti?! Morte! Já tě *ZABIJU*!!!!"':
+        '"Takže, ÚPLNĚ OD ZAČÁTKU… jsi mi mohl ŘÍCT, kde je ten portál, JAKÝ je klíč k portálu, PROČ jsem nesmrtelný, CO se stalo mé smrtelnosti a skutečnost, že je v té Pevnosti?! Morte! Já tě *ZABIJU*!!!!"{#morte_s540_r54177}':
             # a1104 # r54177
             jump morte_s542
 
-        '"Morte, očekávám vysvětlení… žádné lži nebo okliky. Teď ne. Mluv."':
+        '"Morte, očekávám vysvětlení… žádné lži nebo okliky. Teď ne. Mluv."{#morte_s540_r54178}':
             # a1105 # r54178
             jump morte_s541
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54179_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s540_r54179}' if morteLogic.r54179_condition():
             # a1106 # r54179
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54180_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s540_r54180}' if morteLogic.r54180_condition():
             # a1107 # r54180
             $ morteLogic.r54180_action()
             jump morte_dispose
@@ -8017,22 +8017,22 @@ label morte_s540: # from 537.0 537.2 539.0 539.2
 
 # s541 # say54181
 label morte_s541: # from 540.0 540.2
-    nr '"Těžko se to vysvětluje, dokud jsi tam *nebyl*… kromě toho, nevěděl jsi, uh, *druhej* ty -- on nebyl zrovna chlápek, kterej by nám něco ŘEKL. Víš, věděl jsem, že hledal STEJNÝ místo, ale nevěděl jsem proč, kde to bylo, nebo CO to bylo, takže jsem ti nemohl říct NIC, protože jsem NIC nevěděl! Já…  jenom vím, co se stalo, když jsme se tam DOSTALI…'
+    nr '"Těžko se to vysvětluje, dokud jsi tam *nebyl*… kromě toho, nevěděl jsi, uh, *druhej* ty -- on nebyl zrovna chlápek, kterej by nám něco ŘEKL. Víš, věděl jsem, že hledal STEJNÝ místo, ale nevěděl jsem proč, kde to bylo, nebo CO to bylo, takže jsem ti nemohl říct NIC, protože jsem NIC nevěděl! Já…  jenom vím, co se stalo, když jsme se tam DOSTALI…{#morte_s541_}'
 
     menu:
-        '"A… co se stalo?"' if morteLogic.r54189_condition():
+        '"A… co se stalo?"{#morte_s541_r54189}' if morteLogic.r54189_condition():
             # a1108 # r54189
             jump morte_s544
 
-        '"A… co se stalo?"' if morteLogic.r54190_condition():
+        '"A… co se stalo?"{#morte_s541_r54190}' if morteLogic.r54190_condition():
             # a1109 # r54190
             jump morte_s543
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54191_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s541_r54191}' if morteLogic.r54191_condition():
             # a1110 # r54191
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54192_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s541_r54192}' if morteLogic.r54192_condition():
             # a1111 # r54192
             $ morteLogic.r54192_action()
             jump morte_dispose
@@ -8040,22 +8040,22 @@ label morte_s541: # from 540.0 540.2
 
 # s542 # say54193
 label morte_s542: # from 540.1
-    nr 'Morte zpanikařil. "Ne! Ne! My… já… nic z toho jsem NEVĚDĚL! Ne vždycky jsi nám všechno povídal. Ten… ten *jinej* ty si toho SPOUSTU nechal pro sebe, a my nevěděli PROČ tam jdeme nebo CO je to za místo! Já jenom vím, co se stalo, když jsme se tam dostali…"'
+    nr 'Morte zpanikařil. "Ne! Ne! My… já… nic z toho jsem NEVĚDĚL! Ne vždycky jsi nám všechno povídal. Ten… ten *jinej* ty si toho SPOUSTU nechal pro sebe, a my nevěděli PROČ tam jdeme nebo CO je to za místo! Já jenom vím, co se stalo, když jsme se tam dostali…"{#morte_s542_}'
 
     menu:
-        '"A… co se stalo?"' if morteLogic.r54194_condition():
+        '"A… co se stalo?"{#morte_s542_r54194}' if morteLogic.r54194_condition():
             # a1112 # r54194
             jump morte_s544
 
-        '"A… co se stalo?"' if morteLogic.r54195_condition():
+        '"A… co se stalo?"{#morte_s542_r54195}' if morteLogic.r54195_condition():
             # a1113 # r54195
             jump morte_s543
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54196_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s542_r54196}' if morteLogic.r54196_condition():
             # a1114 # r54196
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54197_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s542_r54197}' if morteLogic.r54197_condition():
             # a1115 # r54197
             $ morteLogic.r54197_action()
             jump morte_dispose
@@ -8063,18 +8063,18 @@ label morte_s542: # from 540.1
 
 # s543 # say54198
 label morte_s543: # from 541.1 542.1
-    nr '"No, šli jsme to té - té PEVNOSTI, a než jsme stačili dopadnout na zem, byli jsme ROZDĚLENÍ, bojovali jsme o život… takže *první* věc, kterou ti chci říct, jestli jsi odhodlaný jít dál, že je docela jistý, že každý, kdo projde portálem skončí někde *daleko* od všech ostatních. Ale ty potřebuješ, aby tam s tebou někdo byl…"'
+    nr '"No, šli jsme to té - té PEVNOSTI, a než jsme stačili dopadnout na zem, byli jsme ROZDĚLENÍ, bojovali jsme o život… takže *první* věc, kterou ti chci říct, jestli jsi odhodlaný jít dál, že je docela jistý, že každý, kdo projde portálem skončí někde *daleko* od všech ostatních. Ale ty potřebuješ, aby tam s tebou někdo byl…"{#morte_s543_}'
 
     menu:
-        '"Proč to říkáš?"':
+        '"Proč to říkáš?"{#morte_s543_r54199}':
             # a1116 # r54199
             jump morte_s545
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54200_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s543_r54200}' if morteLogic.r54200_condition():
             # a1117 # r54200
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54201_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s543_r54201}' if morteLogic.r54201_condition():
             # a1118 # r54201
             $ morteLogic.r54201_action()
             jump morte_dispose
@@ -8082,18 +8082,18 @@ label morte_s543: # from 541.1 542.1
 
 # s544 # say54202
 label morte_s544: # from 534.0 541.0 542.0
-    nr '"No, šli jsme to té - té PEVNOSTI, a než jsme stačili dopadnout na zem, byli jsme ROZDĚLENÍ, bojovali jsme o život… takže *první* věc, kterou ti chci říct, jestli jsi odhodlaný jít dál, že je docela jistý, že každý, kdo projde portálem skončí někde *daleko* od všech ostatních. Ale i když se rozdělíme, můžeme být tvá jediná naděje."'
+    nr '"No, šli jsme to té - té PEVNOSTI, a než jsme stačili dopadnout na zem, byli jsme ROZDĚLENÍ, bojovali jsme o život… takže *první* věc, kterou ti chci říct, jestli jsi odhodlaný jít dál, že je docela jistý, že každý, kdo projde portálem skončí někde *daleko* od všech ostatních. Ale i když se rozdělíme, můžeme být tvá jediná naděje."{#morte_s544_}'
 
     menu:
-        '"Proč to říkáš?"':
+        '"Proč to říkáš?"{#morte_s544_r54203}':
             # a1119 # r54203
             jump morte_s545
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54204_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s544_r54204}' if morteLogic.r54204_condition():
             # a1120 # r54204
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54205_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s544_r54205}' if morteLogic.r54205_condition():
             # a1121 # r54205
             $ morteLogic.r54205_action()
             jump morte_dispose
@@ -8101,22 +8101,22 @@ label morte_s544: # from 534.0 541.0 542.0
 
 # s545 # say54206
 label morte_s545: # from 543.0 544.0
-    nr '"Protože ať už tě tam čeká cokoli, v tý Pevnosti, už tě to jednou porazilo… dodneška nevím, jak se ti podařilo přežít, ale jestli znovu padneš, budeš potřebovat někoho, kdo tě z té pevnosti odtáhne…"'
+    nr '"Protože ať už tě tam čeká cokoli, v tý Pevnosti, už tě to jednou porazilo… dodneška nevím, jak se ti podařilo přežít, ale jestli znovu padneš, budeš potřebovat někoho, kdo tě z té pevnosti odtáhne…"{#morte_s545_}'
 
     menu:
-        '"Morte, potřebuju, abys mi řekl všechno co o té Pevnosti víš… je to důležité."' if morteLogic.r54207_condition():
+        '"Morte, potřebuju, abys mi řekl všechno co o té Pevnosti víš… je to důležité."{#morte_s545_r54207}' if morteLogic.r54207_condition():
             # a1122 # r54207
             jump morte_s547
 
-        '"Morte, potřebuju, abys mi řekl všechno co o té Pevnosti víš… je to důležité."' if morteLogic.r54208_condition():
+        '"Morte, potřebuju, abys mi řekl všechno co o té Pevnosti víš… je to důležité."{#morte_s545_r54208}' if morteLogic.r54208_condition():
             # a1123 # r54208
             jump morte_s546
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54209_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s545_r54209}' if morteLogic.r54209_condition():
             # a1124 # r54209
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54210_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s545_r54210}' if morteLogic.r54210_condition():
             # a1125 # r54210
             $ morteLogic.r54210_action()
             jump morte_dispose
@@ -8124,18 +8124,18 @@ label morte_s545: # from 543.0 544.0
 
 # s546 # say54211
 label morte_s546: # from 545.1
-    nr '"Tahle „Pevnost Lítosti“… je velká, na MÍLE, šéfe. Je to Pevnost, ale je to spíš jako samostatná SFÉRA, všechno kamenný, temný, a stíny - všude, úplně všude stíny. Jestli tam půjdeš - měl bys být pořádně připravenej."'
+    nr '"Tahle „Pevnost Lítosti“… je velká, na MÍLE, šéfe. Je to Pevnost, ale je to spíš jako samostatná SFÉRA, všechno kamenný, temný, a stíny - všude, úplně všude stíny. Jestli tam půjdeš - měl bys být pořádně připravenej."{#morte_s546_}'
 
     menu:
-        '"Co se stalo, když jsme tam byli poprvé?"':
+        '"Co se stalo, když jsme tam byli poprvé?"{#morte_s546_r54212}':
             # a1126 # r54212
             jump morte_s548
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54213_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s546_r54213}' if morteLogic.r54213_condition():
             # a1127 # r54213
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54214_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s546_r54214}' if morteLogic.r54214_condition():
             # a1128 # r54214
             $ morteLogic.r54214_action()
             jump morte_dispose
@@ -8143,18 +8143,18 @@ label morte_s546: # from 545.1
 
 # s547 # say54215
 label morte_s547: # from 545.0
-    nr '"Tahle „Pevnost Lítosti“… je velká, na MÍLE, šéfe. Je to Pevnost, ale je to spíš jako samostatná SFÉRA, všechno kamenný, temný, a stíny - všude, úplně všude stíny. Jestli tam půjdeš - měl bys být pořádně připravenej."'
+    nr '"Tahle „Pevnost Lítosti“… je velká, na MÍLE, šéfe. Je to Pevnost, ale je to spíš jako samostatná SFÉRA, všechno kamenný, temný, a stíny - všude, úplně všude stíny. Jestli tam půjdeš - měl bys být pořádně připravenej."{#morte_s547_}'
 
     menu:
-        '"Co se stalo, když jsme tam byli poprvé?"':
+        '"Co se stalo, když jsme tam byli poprvé?"{#morte_s547_r54216}':
             # a1129 # r54216
             jump morte_s548
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54217_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s547_r54217}' if morteLogic.r54217_condition():
             # a1130 # r54217
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54218_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s547_r54218}' if morteLogic.r54218_condition():
             # a1131 # r54218
             $ morteLogic.r54218_action()
             jump morte_dispose
@@ -8162,30 +8162,30 @@ label morte_s547: # from 545.0
 
 # s548 # say54219
 label morte_s548: # from 546.0 547.0
-    nr '"Śéfe, nevím, co se stalo TOBĚ, ale vím, co se stalo MNĚ… Celou dobu jsem pobíhal z chodby do chodby, všude za mnou byly ty stíny, snažily se mě dostat… a pak najednou… najednou jsme byli „venku“, jako by nás někdo vytáhnul zpátky…"'
+    nr '"Śéfe, nevím, co se stalo TOBĚ, ale vím, co se stalo MNĚ… Celou dobu jsem pobíhal z chodby do chodby, všude za mnou byly ty stíny, snažily se mě dostat… a pak najednou… najednou jsme byli „venku“, jako by nás někdo vytáhnul zpátky…"{#morte_s548_}'
 
     menu:
-        '"Počkej chvíli. Když říkáš „my“, nezní mi to, jako bys myslel jenom sebe a mně."' if morteLogic.r54220_condition():
+        '"Počkej chvíli. Když říkáš „my“, nezní mi to, jako bys myslel jenom sebe a mně."{#morte_s548_r54220}' if morteLogic.r54220_condition():
             # a1132 # r54220
             jump morte_s565
 
-        '"Počkej chvíli. Když říkáš „my“, nezní mi to, jako bys myslel jenom sebe a mně."' if morteLogic.r54221_condition():
+        '"Počkej chvíli. Když říkáš „my“, nezní mi to, jako bys myslel jenom sebe a mně."{#morte_s548_r54221}' if morteLogic.r54221_condition():
             # a1133 # r54221
             jump morte_s549
 
-        '"Počkej chvíli. Když říkáš „my“, nezní mi to, jako bys myslel jenom sebe a mně."' if morteLogic.r54223_condition():
+        '"Počkej chvíli. Když říkáš „my“, nezní mi to, jako bys myslel jenom sebe a mně."{#morte_s548_r54223}' if morteLogic.r54223_condition():
             # a1134 # r54223
             jump morte_s550
 
-        '"Aha. Je tady ještě něco, co mi můžeš říct?"':
+        '"Aha. Je tady ještě něco, co mi můžeš říct?"{#morte_s548_r54225}':
             # a1135 # r54225
             jump morte_s552
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54226_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s548_r54226}' if morteLogic.r54226_condition():
             # a1136 # r54226
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54227_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s548_r54227}' if morteLogic.r54227_condition():
             # a1137 # r54227
             $ morteLogic.r54227_action()
             jump morte_dispose
@@ -8193,22 +8193,22 @@ label morte_s548: # from 546.0 547.0
 
 # s549 # say54229
 label morte_s549: # from 548.1
-    nr 'Morte je chvíli zticha. "Ne… byli tam další. Byl tam… Dak„kon, ta Vnímavá kočka Deionarra, ten slepej lučištník, kterej byl celou dobu ožralej skoro do mrtva a já… a celý to šlo do pekla a zpátky. Je jasný, že jsme to ty, já a Dak“kon zvládli, ale ti druzí dva ne. Nevím, co se jim stalo."'
+    nr 'Morte je chvíli zticha. "Ne… byli tam další. Byl tam… Dak„kon, ta Vnímavá kočka Deionarra, ten slepej lučištník, kterej byl celou dobu ožralej skoro do mrtva a já… a celý to šlo do pekla a zpátky. Je jasný, že jsme to ty, já a Dak“kon zvládli, ale ti druzí dva ne. Nevím, co se jim stalo."{#morte_s549_}'
 
     menu:
-        '"Dak„kon? Ale proč… budu se ho na to muset zeptat. Říkáš, že Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"' if morteLogic.r54230_condition():
+        '"Dak„kon? Ale proč… budu se ho na to muset zeptat. Říkáš, že Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"{#morte_s549_r54230}' if morteLogic.r54230_condition():
             # a1138 # r54230
             jump morte_s551
 
-        '"Dak„kon? Ale proč… budu se ho na to muset zeptat. Říkáš, že Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"' if morteLogic.r54231_condition():
+        '"Dak„kon? Ale proč… budu se ho na to muset zeptat. Říkáš, že Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"{#morte_s549_r54231}' if morteLogic.r54231_condition():
             # a1139 # r54231
             jump morte_s551
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54232_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s549_r54232}' if morteLogic.r54232_condition():
             # a1140 # r54232
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54233_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s549_r54233}' if morteLogic.r54233_condition():
             # a1141 # r54233
             $ morteLogic.r54233_action()
             jump morte_dispose
@@ -8216,22 +8216,22 @@ label morte_s549: # from 548.1
 
 # s550 # say54234
 label morte_s550: # from 548.2
-    nr 'Morte je chvíli zticha. "Ne… byli tam další. Byl tam… ten starej gith Dak„kon, ta Vnímavá kočka Deionarra, ten slepej lučištník, kterej byl celou dobu ožralej skoro do mrtva a já… a celý to šlo do pekla a zpátky. Je jasný, že jsme to ty, já a Dak“kon zvládli, ale ti druzí dva ne. Nevím, co se jim stalo."'
+    nr 'Morte je chvíli zticha. "Ne… byli tam další. Byl tam… ten starej gith Dak„kon, ta Vnímavá kočka Deionarra, ten slepej lučištník, kterej byl celou dobu ožralej skoro do mrtva a já… a celý to šlo do pekla a zpátky. Je jasný, že jsme to ty, já a Dak“kon zvládli, ale ti druzí dva ne. Nevím, co se jim stalo."{#morte_s550_}'
 
     menu:
-        '"Říkáš, že Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"' if morteLogic.r54235_condition():
+        '"Říkáš, že Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"{#morte_s550_r54235}' if morteLogic.r54235_condition():
             # a1142 # r54235
             jump morte_s551
 
-        '"Říkáš, že ta žena Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"' if morteLogic.r54236_condition():
+        '"Říkáš, že ta žena Deionarra a ten lučištník se z Pevnosti nikdy nevrátili?"{#morte_s550_r54236}' if morteLogic.r54236_condition():
             # a1143 # r54236
             jump morte_s551
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54237_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s550_r54237}' if morteLogic.r54237_condition():
             # a1144 # r54237
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54238_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s550_r54238}' if morteLogic.r54238_condition():
             # a1145 # r54238
             $ morteLogic.r54238_action()
             jump morte_dispose
@@ -8239,18 +8239,18 @@ label morte_s550: # from 548.2
 
 # s551 # say54239
 label morte_s551: # from 549.0 549.1 550.0 550.1
-    nr 'Morte zavrtěl hlavou. "O ničem nevím."'
+    nr 'Morte zavrtěl hlavou. "O ničem nevím."{#morte_s551_}'
 
     menu:
-        '"Je ještě něco, co mi můžeš říct o té Pevnosti?"':
+        '"Je ještě něco, co mi můžeš říct o té Pevnosti?"{#morte_s551_r54240}':
             # a1146 # r54240
             jump morte_s552
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54241_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s551_r54241}' if morteLogic.r54241_condition():
             # a1147 # r54241
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54242_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s551_r54242}' if morteLogic.r54242_condition():
             # a1148 # r54242
             $ morteLogic.r54242_action()
             jump morte_dispose
@@ -8258,19 +8258,19 @@ label morte_s551: # from 549.0 549.1 550.0 550.1
 
 # s552 # say54243
 label morte_s552: # from 548.3 551.0
-    nr '"Nemá ti co říct, náčelníku - akorát že se hned, jak tam dorazíme, rozdělíme. A to místo je VELKÝ a plný plížících se stínů… a někde v té Pevnosti je něco silnější než *kdokoli* z nás. Není co víc říct…"'
+    nr '"Nemá ti co říct, náčelníku - akorát že se hned, jak tam dorazíme, rozdělíme. A to místo je VELKÝ a plný plížících se stínů… a někde v té Pevnosti je něco silnější než *kdokoli* z nás. Není co víc říct…"{#morte_s552_}'
 
     menu:
-        '"Máš *jstotu*? Možná je to poslední příležitost k rozmluvě, kterou máme…"':
+        '"Máš *jstotu*? Možná je to poslední příležitost k rozmluvě, kterou máme…"{#morte_s552_r54244}':
             # a1149 # r54244
             $ morteLogic.r54244_action()
             jump morte_s553
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54245_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s552_r54245}' if morteLogic.r54245_condition():
             # a1150 # r54245
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54246_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s552_r54246}' if morteLogic.r54246_condition():
             # a1151 # r54246
             $ morteLogic.r54246_action()
             jump morte_dispose
@@ -8278,22 +8278,22 @@ label morte_s552: # from 548.3 551.0
 
 # s553 # say54249
 label morte_s553: # from 552.0
-    nr '"No…" Morte se odmlčel. "Jo, je tady jedna věc, kterou bys měl vědět - TY, kterýho jsem znal dřív, TY, který nás sem ved, ten vůbec nebyl jako ty. Vůbec ne."'
+    nr '"No…" Morte se odmlčel. "Jo, je tady jedna věc, kterou bys měl vědět - TY, kterýho jsem znal dřív, TY, který nás sem ved, ten vůbec nebyl jako ty. Vůbec ne."{#morte_s553_}'
 
     menu:
-        '"Co tím myslíš?"' if morteLogic.r54250_condition():
+        '"Co tím myslíš?"{#morte_s553_r54250}' if morteLogic.r54250_condition():
             # a1152 # r54250
             jump morte_s554
 
-        '"Co tím myslíš?"' if morteLogic.r54252_condition():
+        '"Co tím myslíš?"{#morte_s553_r54252}' if morteLogic.r54252_condition():
             # a1153 # r54252
             jump morte_s555
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54255_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s553_r54255}' if morteLogic.r54255_condition():
             # a1154 # r54255
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54262_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s553_r54262}' if morteLogic.r54262_condition():
             # a1155 # r54262
             $ morteLogic.r54262_action()
             jump morte_dispose
@@ -8301,22 +8301,22 @@ label morte_s553: # from 552.0
 
 # s554 # say54263
 label morte_s554: # from 553.0
-    nr '"Ten jinej TY, on… jemu na nikom nezáleželo. Na nikom. Klidně jsme mohli v Pevnosti VŠICHNI umřít, a on by ani nemrknul. Takže… já jenom chci, aby ses držel toho rozdílu, protože… no, takhle *tě* mám raději. MNOHEM raději."'
+    nr '"Ten jinej TY, on… jemu na nikom nezáleželo. Na nikom. Klidně jsme mohli v Pevnosti VŠICHNI umřít, a on by ani nemrknul. Takže… já jenom chci, aby ses držel toho rozdílu, protože… no, takhle *tě* mám raději. MNOHEM raději."{#morte_s554_}'
 
     menu:
-        '"Ale to není vše, co mi chceš říct, že?"' if morteLogic.r54264_condition():
+        '"Ale to není vše, co mi chceš říct, že?"{#morte_s554_r54264}' if morteLogic.r54264_condition():
             # a1156 # r54264
             jump morte_s556
 
-        '"To je vše?"':
+        '"To je vše?"{#morte_s554_r54265}':
             # a1157 # r54265
             jump morte_s556
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54266_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s554_r54266}' if morteLogic.r54266_condition():
             # a1158 # r54266
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54267_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s554_r54267}' if morteLogic.r54267_condition():
             # a1159 # r54267
             $ morteLogic.r54267_action()
             jump morte_dispose
@@ -8324,22 +8324,22 @@ label morte_s554: # from 553.0
 
 # s555 # say54268
 label morte_s555: # from 553.1
-    nr '"Všechno, co chci říct je, že navzdory svýmu chování, TY máš silnějšího ducha, než kdy on měl. Ten jinej TY,on… on byl takovej vzdálenej od všeho. Takže… chci, abys na to pamatoval."'
+    nr '"Všechno, co chci říct je, že navzdory svýmu chování, TY máš silnějšího ducha, než kdy on měl. Ten jinej TY,on… on byl takovej vzdálenej od všeho. Takže… chci, abys na to pamatoval."{#morte_s555_}'
 
     menu:
-        '"Ale to není vše, co mi chceš říct, že?"' if morteLogic.r54269_condition():
+        '"Ale to není vše, co mi chceš říct, že?"{#morte_s555_r54269}' if morteLogic.r54269_condition():
             # a1160 # r54269
             jump morte_s556
 
-        '"To je vše?"':
+        '"To je vše?"{#morte_s555_r54270}':
             # a1161 # r54270
             jump morte_s556
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54271_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s555_r54271}' if morteLogic.r54271_condition():
             # a1162 # r54271
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54272_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s555_r54272}' if morteLogic.r54272_condition():
             # a1163 # r54272
             $ morteLogic.r54272_action()
             jump morte_dispose
@@ -8347,18 +8347,18 @@ label morte_s555: # from 553.1
 
 # s556 # say54273
 label morte_s556: # from 554.0 554.1 555.0 555.1
-    nr '"Ne…" Morte se odmlčel. "Ještě jedna věc - možná jsem toho *druhého* neměl moc rád, ale byl to jeden zatraceně chytrej parchant - nejchytřejší, jakého jsem kdy znal, počítal úplně se vším. Pokud umřel v Pevnosti, znamená to… no…"'
+    nr '"Ne…" Morte se odmlčel. "Ještě jedna věc - možná jsem toho *druhého* neměl moc rád, ale byl to jeden zatraceně chytrej parchant - nejchytřejší, jakého jsem kdy znal, počítal úplně se vším. Pokud umřel v Pevnosti, znamená to… no…"{#morte_s556_}'
 
     menu:
-        '"Nemyslíš si, že mám šanci na úspěch, viď?"':
+        '"Nemyslíš si, že mám šanci na úspěch, viď?"{#morte_s556_r54274}':
             # a1164 # r54274
             jump morte_s557
 
-        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"' if morteLogic.r54275_condition():
+        '"To nic, Morte. Jsem připraven jít portálem. Jdeš se mnou?"{#morte_s556_r54275}' if morteLogic.r54275_condition():
             # a1165 # r54275
             jump morte_s534
 
-        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."' if morteLogic.r54276_condition():
+        '"To nic, Morte. Co se stalo, stalo se. Teď jdu skrz portál."{#morte_s556_r54276}' if morteLogic.r54276_condition():
             # a1166 # r54276
             $ morteLogic.r54276_action()
             jump morte_dispose
@@ -8366,19 +8366,19 @@ label morte_s556: # from 554.0 554.1 555.0 555.1
 
 # s557 # say54277
 label morte_s557: # from 556.0
-    nr '"Ne…" Morte zavrtěl hlavou. "O tohle nejde, šéfe. Protože ne vždycky je ten nejchytřejší zároveň i nesilnější nebo nejodolnější… někdy dojde na to, kdo jsi, a co *doopravdy* chceš. Tím myslím, kdysi jsi chtěl být nesmrtelný - ale nakonec - je to *opravdu* to, cos chtěl? Zkrátka, buď si jist tím, co tentokrát chceš, to ti říkám."'
+    nr '"Ne…" Morte zavrtěl hlavou. "O tohle nejde, šéfe. Protože ne vždycky je ten nejchytřejší zároveň i nesilnější nebo nejodolnější… někdy dojde na to, kdo jsi, a co *doopravdy* chceš. Tím myslím, kdysi jsi chtěl být nesmrtelný - ale nakonec - je to *opravdu* to, cos chtěl? Zkrátka, buď si jist tím, co tentokrát chceš, to ti říkám."{#morte_s557_}'
 
     menu:
-        '"Rozumím. Podívej, Morte… nikdy jsme o tom vlastně nemluvili, ale víš, že tam se mnou nemusíš jít, že jo? Pochopím to, jestli nebudeš chtít."' if morteLogic.r54278_condition():
+        '"Rozumím. Podívej, Morte… nikdy jsme o tom vlastně nemluvili, ale víš, že tam se mnou nemusíš jít, že jo? Pochopím to, jestli nebudeš chtít."{#morte_s557_r54278}' if morteLogic.r54278_condition():
             # a1167 # r54278
             $ morteLogic.r54278_action()
             jump morte_s558
 
-        '"Rozumím. Pokud ses vymluvil, pojďme. Jsi připravený?"' if morteLogic.r54279_condition():
+        '"Rozumím. Pokud ses vymluvil, pojďme. Jsi připravený?"{#morte_s557_r54279}' if morteLogic.r54279_condition():
             # a1168 # r54279
             jump morte_s534
 
-        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."' if morteLogic.r54280_condition():
+        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."{#morte_s557_r54280}' if morteLogic.r54280_condition():
             # a1169 # r54280
             $ morteLogic.r54280_action()
             jump morte_dispose
@@ -8386,61 +8386,61 @@ label morte_s557: # from 556.0
 
 # s558 # say54281
 label morte_s558: # from 557.0
-    nr '"Jo… já vím, šéfe. A nemůžu ti lhát… nechci tam jít… ale půjdu. Jenom si pamatuj, že jakmile projdeme tím portálem, už to nebude jenom o *tobě*. Teď si hraješ i s našima životama a my se zpátky nedostaneme, jestli umřeme."'
+    nr '"Jo… já vím, šéfe. A nemůžu ti lhát… nechci tam jít… ale půjdu. Jenom si pamatuj, že jakmile projdeme tím portálem, už to nebude jenom o *tobě*. Teď si hraješ i s našima životama a my se zpátky nedostaneme, jestli umřeme."{#morte_s558_}'
 
     menu:
-        '"Tak proč jsi…"' if morteLogic.r54282_condition():
+        '"Tak proč jsi…"{#morte_s558_r54282}' if morteLogic.r54282_condition():
             # a1170 # r54282
             jump grace_s169  # EXTERN
 
-        '"Tak proč jsi…"' if morteLogic.r54283_condition():
+        '"Tak proč jsi…"{#morte_s558_r54283}' if morteLogic.r54283_condition():
             # a1171 # r54283
             jump grace_s170  # EXTERN
 
-        '"Tak proč jsi…"' if morteLogic.r54284_condition():
+        '"Tak proč jsi…"{#morte_s558_r54284}' if morteLogic.r54284_condition():
             # a1172 # r54284
             jump morte_s562
 
-        '"Tak proč jsi…"' if morteLogic.r54285_condition():
+        '"Tak proč jsi…"{#morte_s558_r54285}' if morteLogic.r54285_condition():
             # a1173 # r54285
             jump morte_s563
 
-        '"Tak proč jsi…"' if morteLogic.r54286_condition():
+        '"Tak proč jsi…"{#morte_s558_r54286}' if morteLogic.r54286_condition():
             # a1174 # r54286
             jump morte_s564
 
 
 # s559 # say54762
 label morte_s559: # -
-    nr 'Morte zařval. "Ty nevoníš o moc líp. Kdy ses naposled koupal?"'
+    nr 'Morte zařval. "Ty nevoníš o moc líp. Kdy ses naposled koupal?"{#morte_s559_}'
 
     jump grace_s176  # EXTERN
 
 
 # s560 # say54763
 label morte_s560: # -
-    nr 'Morte zařval. "Ty nevoníš o moc líp. Kdy ses naposled koupal?"'
+    nr 'Morte zařval. "Ty nevoníš o moc líp. Kdy ses naposled koupal?"{#morte_s560_}'
 
     jump grace_s177  # EXTERN
 
 
 # s561 # say54764
 label morte_s561: # -
-    nr 'Morte zařval. "Ty nevoníš o moc líp. Kdy ses naposled koupal?"'
+    nr 'Morte zařval. "Ty nevoníš o moc líp. Kdy ses naposled koupal?"{#morte_s561_}'
 
     jump trias_s8  # EXTERN
 
 
 # s562 # say54831
 label morte_s562: # from 558.2
-    nr '"To, co Ravel řekla v bludišti - řekla, že k sobě přitahuješ trpící lidi, jako magnet." Morte zavrtěl hlavou. "Možná proto, že *ty* trpíš celou dobu. Možná, že až to vyřešíš… možná, že *všichni* poznáme kousek míru. Možná."'
+    nr '"To, co Ravel řekla v bludišti - řekla, že k sobě přitahuješ trpící lidi, jako magnet." Morte zavrtěl hlavou. "Možná proto, že *ty* trpíš celou dobu. Možná, že až to vyřešíš… možná, že *všichni* poznáme kousek míru. Možná."{#morte_s562_}'
 
     menu:
-        '"Možná. Takže… jsi se mnou, Morte?"' if morteLogic.r54832_condition():
+        '"Možná. Takže… jsi se mnou, Morte?"{#morte_s562_r54832}' if morteLogic.r54832_condition():
             # a1175 # r54832
             jump morte_s534
 
-        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."' if morteLogic.r54833_condition():
+        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."{#morte_s562_r54833}' if morteLogic.r54833_condition():
             # a1176 # r54833
             $ morteLogic.r54833_action()
             jump morte_dispose
@@ -8448,14 +8448,14 @@ label morte_s562: # from 558.2
 
 # s563 # say54834
 label morte_s563: # from 558.3
-    nr '"To, co Ravel řekla v bludišti, a to, co nám Fell řekl o tom symbolu - že k sobě přitahuješ trpící lidi, jako magnet." Morte zavrtěl hlavou. "Možná proto, že *ty* trpíš celou dobu. Možná, že až to vyřešíš… možná, že *všichni* poznáme kousek míru. Možná."'
+    nr '"To, co Ravel řekla v bludišti, a to, co nám Fell řekl o tom symbolu - že k sobě přitahuješ trpící lidi, jako magnet." Morte zavrtěl hlavou. "Možná proto, že *ty* trpíš celou dobu. Možná, že až to vyřešíš… možná, že *všichni* poznáme kousek míru. Možná."{#morte_s563_}'
 
     menu:
-        '"Možná. Takže… jsi se mnou, Morte?"' if morteLogic.r54835_condition():
+        '"Možná. Takže… jsi se mnou, Morte?"{#morte_s563_r54835}' if morteLogic.r54835_condition():
             # a1177 # r54835
             jump morte_s534
 
-        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."' if morteLogic.r54836_condition():
+        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."{#morte_s563_r54836}' if morteLogic.r54836_condition():
             # a1178 # r54836
             $ morteLogic.r54836_action()
             jump morte_dispose
@@ -8463,14 +8463,14 @@ label morte_s563: # from 558.3
 
 # s564 # say54837
 label morte_s564: # from 558.4
-    nr '"Znám tě dlouho, šéfe. *Něco* na tobě je - přitajuješ k sobě trpící lidi jako magnet." Morte zavrtěl hlavou. "Možná proto, že *ty* trpíš celou dobu. Možná, že až to vyřešíš… možná že *všichni* poznáme kousek míru. Možná."'
+    nr '"Znám tě dlouho, šéfe. *Něco* na tobě je - přitajuješ k sobě trpící lidi jako magnet." Morte zavrtěl hlavou. "Možná proto, že *ty* trpíš celou dobu. Možná, že až to vyřešíš… možná že *všichni* poznáme kousek míru. Možná."{#morte_s564_}'
 
     menu:
-        '"Možná. Takže… jsi se mnou, Morte?"' if morteLogic.r54838_condition():
+        '"Možná. Takže… jsi se mnou, Morte?"{#morte_s564_r54838}' if morteLogic.r54838_condition():
             # a1179 # r54838
             jump morte_s534
 
-        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."' if morteLogic.r54839_condition():
+        '"Rozumím; díky za radu, Morte. Jsem připravený projít portálem."{#morte_s564_r54839}' if morteLogic.r54839_condition():
             # a1180 # r54839
             $ morteLogic.r54839_action()
             jump morte_dispose
@@ -8478,474 +8478,474 @@ label morte_s564: # from 558.4
 
 # s565 # say54840
 label morte_s565: # from 548.0
-    nr 'Morte ztichl.'
+    nr 'Morte ztichl.{#morte_s565_}'
 
     jump dakkon_s175  # EXTERN
 
 
 # s566 # say54841
 label morte_s566: # -
-    nr '"Lebka, to jsem byl já," řekl MOrte potichu. "Žena byla nějaká kočka jménem Deionarra; toho lučištníka jsem nikdy neznal…"'
+    nr '"Lebka, to jsem byl já," řekl MOrte potichu. "Žena byla nějaká kočka jménem Deionarra; toho lučištníka jsem nikdy neznal…"{#morte_s566_}'
 
     jump dakkon_s177  # EXTERN
 
 
 # s567 # say54842
 label morte_s567: # -
-    nr '"Jo…" Morte se otřásl. "Šéfe, ta Pevnost - *všude* jsou tam stíny…" stíny *všude*…"'
+    nr '"Jo…" Morte se otřásl. "Šéfe, ta Pevnost - *všude* jsou tam stíny…" stíny *všude*…"{#morte_s567_}'
 
     jump dakkon_s178  # EXTERN
 
 
 # s568 # say54843
 label morte_s568: # -
-    nr '"Mluvili ke mně jako Pilíř lebek…" Mortův hlas ztichl. "Oni *věděli*…"'
+    nr '"Mluvili ke mně jako Pilíř lebek…" Mortův hlas ztichl. "Oni *věděli*…"{#morte_s568_}'
 
     menu:
-        '"Dobře; hele vy dva: potřebuju, abyste mi řekli o Pevnosti všechno, co víte…"':
+        '"Dobře; hele vy dva: potřebuju, abyste mi řekli o Pevnosti všechno, co víte…"{#morte_s568_r54844}':
             # a1181 # r54844
             jump dakkon_s179  # EXTERN
 
 
 # s569 # say54845
 label morte_s569: # -
-    nr '"Nemůžu ti víc říct, šéfe - jenom, že se rozdělíme, jakmile tam dorazíme. A to je VELKÝ místo a všude tam lezou stíny… a někde v té pevnosti je něco mnohem mocnější než *kdokoli* z nás."'
+    nr '"Nemůžu ti víc říct, šéfe - jenom, že se rozdělíme, jakmile tam dorazíme. A to je VELKÝ místo a všude tam lezou stíny… a někde v té pevnosti je něco mnohem mocnější než *kdokoli* z nás."{#morte_s569_}'
 
     jump dakkon_s182  # EXTERN
 
 
 # s570 # say54846
 label morte_s570: # -
-    nr '"Nemůžu ti víc říct, šéfe - jenom, že se rozdělíme, jakmile tam dorazíme. A to je VELKÝ místo a všude tam lezou stíny… a někde v té pevnosti je něco mnohem mocnější než cokoli, na co jsi kdy narazil."'
+    nr '"Nemůžu ti víc říct, šéfe - jenom, že se rozdělíme, jakmile tam dorazíme. A to je VELKÝ místo a všude tam lezou stíny… a někde v té pevnosti je něco mnohem mocnější než cokoli, na co jsi kdy narazil."{#morte_s570_}'
 
     jump dakkon_s182  # EXTERN
 
 
 # s571 # say55832
 label morte_s571: # -
-    nr '"Šéfe, máme tady problém - tenhle modron se vzbouřil."'
+    nr '"Šéfe, máme tady problém - tenhle modron se vzbouřil."{#morte_s571_}'
 
     menu:
-        '"Vzbouřil?"':
+        '"Vzbouřil?"{#morte_s571_r55833}':
             # a1182 # r55833
             jump morte_s572
 
 
 # s572 # say55834
 label morte_s572: # from 571.0
-    nr '"Víš, někdy se do modrona dostane kousek chaosu a pak se to stane… no, řekl bych, že *nejlepší* vysvětlení je, že vzbouřenej modron je něco jako… nazpátek modron, převrácenej modron."'
+    nr '"Víš, někdy se do modrona dostane kousek chaosu a pak se to stane… no, řekl bych, že *nejlepší* vysvětlení je, že vzbouřenej modron je něco jako… nazpátek modron, převrácenej modron."{#morte_s572_}'
 
     menu:
-        '"Takže tohle je… převrácený modron?"':
+        '"Takže tohle je… převrácený modron?"{#morte_s572_r55836}':
             # a1183 # r55836
             jump nordom_s21  # EXTERN
 
 
 # s573 # say55837
 label morte_s573: # -
-    nr '"Šéfe, i když je to sranda, páčení stoličky z držky nějakýho baatezu by bylo asi užitečnější, než vykecávání se s tím pitomým polygonem."'
+    nr '"Šéfe, i když je to sranda, páčení stoličky z držky nějakýho baatezu by bylo asi užitečnější, než vykecávání se s tím pitomým polygonem."{#morte_s573_}'
 
     menu:
-        '"*Ty* víš, co jsou mechaničtí duchové, Morte?"':
+        '"*Ty* víš, co jsou mechaničtí duchové, Morte?"{#morte_s573_r55839}':
             # a1184 # r55839
             jump morte_s574
 
 
 # s574 # say55841
 label morte_s574: # from 573.0
-    nr '"Šéfe, nemám tušáka, vo čem to ta krychle točí."'
+    nr '"Šéfe, nemám tušáka, vo čem to ta krychle točí."{#morte_s574_}'
 
     menu:
-        '"Myslel jsem, že ty jsi *expert* na Sféry."':
+        '"Myslel jsem, že ty jsi *expert* na Sféry."{#morte_s574_r55842}':
             # a1185 # r55842
             jump morte_s575
 
-        '"Dobrá tedy. Nordome, mám pro tebe ještě další otázky…"':
+        '"Dobrá tedy. Nordome, mám pro tebe ještě další otázky…"{#morte_s574_r55843}':
             # a1186 # r55843
             jump nordom_s74  # EXTERN
 
-        '"Tak na to zapomeň. Pojďme."':
+        '"Tak na to zapomeň. Pojďme."{#morte_s574_r55844}':
             # a1187 # r55844
             jump morte_dispose
 
 
 # s575 # say55845
 label morte_s575: # from 574.0
-    nr '"Cco- Vím víc, než *ty*, ty vymazanej amneziaku! Kromě toho, tady máš tři kousky znalostí, ať ti v kebuli rachotí aspoň něco: za prvé, nejsou ŽÁDNÍ experti na sféry, za druhé, jsem tomu tvýmu expertovi blíž než kdokoli jiný, koho kdy potkáš, a za třetí, očekávám od tebe nějaký respekt. Proč? Viz druhej kousek."'
+    nr '"Cco- Vím víc, než *ty*, ty vymazanej amneziaku! Kromě toho, tady máš tři kousky znalostí, ať ti v kebuli rachotí aspoň něco: za prvé, nejsou ŽÁDNÍ experti na sféry, za druhé, jsem tomu tvýmu expertovi blíž než kdokoli jiný, koho kdy potkáš, a za třetí, očekávám od tebe nějaký respekt. Proč? Viz druhej kousek."{#morte_s575_}'
 
     menu:
-        '"Dobrá tedy. Nordome, mám pro tebe ještě další otázky…"':
+        '"Dobrá tedy. Nordome, mám pro tebe ještě další otázky…"{#morte_s575_r55846}':
             # a1188 # r55846
             jump nordom_s74  # EXTERN
 
-        '"Tak na to zapomeň. Pojďme."':
+        '"Tak na to zapomeň. Pojďme."{#morte_s575_r55847}':
             # a1189 # r55847
             jump morte_dispose
 
 
 # s576 # say55848
 label morte_s576: # -
-    nr '"Mechanus? Nudný v každým slova smyslu, náčelníku. Představ si plac plnej modronů a velkejch votáčejících se koleček a máš velkou NUDNOU sféru Mechanus. Příliš mnoho zákonů, strašná otrava. Místo, na který nechceš ani myslet, natož ho navštívit."'
+    nr '"Mechanus? Nudný v každým slova smyslu, náčelníku. Představ si plac plnej modronů a velkejch votáčejících se koleček a máš velkou NUDNOU sféru Mechanus. Příliš mnoho zákonů, strašná otrava. Místo, na který nechceš ani myslet, natož ho navštívit."{#morte_s576_}'
 
     if morteLogic.s576_condition():
         $ morteLogic.s576_action()
         jump grace_s184  # EXTERN
     menu:
-        '"Nordome, co jsi to před tím myslel tím „Nulovým domovem?“"' if morteLogic.r55849_condition():
+        '"Nordome, co jsi to před tím myslel tím „Nulovým domovem?“"{#morte_s576_r55849}' if morteLogic.r55849_condition():
             # a1190 # r55849
             jump nordom_s65  # EXTERN
 
-        '"To nic, Morte. Už jsem slyšel dost. Pojďme."' if morteLogic.r55850_condition():
+        '"To nic, Morte. Už jsem slyšel dost. Pojďme."{#morte_s576_r55850}' if morteLogic.r55850_condition():
             # a1191 # r55850
             jump morte_dispose
 
 
 # s577 # say55855
 label morte_s577: # -
-    nr '"Promiňte MI, Slečno Kněžko Zbožnosti, ale Mechanus JE nejnudnější místo ve vesmíru… jediná zajímavá věc na něm by byla, kdybys ji navštívila *ty*…" Morte zkroutil očima. "Ale mám pocit že i *to* by za chvíli ztratilo své kouzlo."'
+    nr '"Promiňte MI, Slečno Kněžko Zbožnosti, ale Mechanus JE nejnudnější místo ve vesmíru… jediná zajímavá věc na něm by byla, kdybys ji navštívila *ty*…" Morte zkroutil očima. "Ale mám pocit že i *to* by za chvíli ztratilo své kouzlo."{#morte_s577_}'
 
     menu:
-        '"Nordome, co jsi to před tím myslel tím „Nulovým domovem?“"':
+        '"Nordome, co jsi to před tím myslel tím „Nulovým domovem?“"{#morte_s577_r55857}':
             # a1192 # r55857
             jump nordom_s65  # EXTERN
 
-        '"To nic, Morte. Už jsem slyšel dost. Pojďme."':
+        '"To nic, Morte. Už jsem slyšel dost. Pojďme."{#morte_s577_r55858}':
             # a1193 # r55858
             jump morte_dispose
 
 
 # s578 # say55860
 label morte_s578: # -
-    nr '"Všichni modroni jsou součásti té „rezervy,“ šéfe, je to něco jako velká energetická banka… když jeden z nich zemře, energie použitá na vytvoření modrona je absorbovaná do banky zpátky a je zní udělanej novej modron. Ale jde o to, že… když modron kapku zblbne, tak se nějak přeruší to spojení, ale modronovi zůstane trochu té energie."'
+    nr '"Všichni modroni jsou součásti té „rezervy,“ šéfe, je to něco jako velká energetická banka… když jeden z nich zemře, energie použitá na vytvoření modrona je absorbovaná do banky zpátky a je zní udělanej novej modron. Ale jde o to, že… když modron kapku zblbne, tak se nějak přeruší to spojení, ale modronovi zůstane trochu té energie."{#morte_s578_}'
 
     if morteLogic.s578_condition():
         jump grace_s186  # EXTERN
     menu:
-        '"Takže… Nordome, je ten Mechanus zdrojem energie?"':
+        '"Takže… Nordome, je ten Mechanus zdrojem energie?"{#morte_s578_r55862}':
             # a1194 # r55862
             jump nordom_s67  # EXTERN
 
-        '"Aha. Nordome, mám pro tebe ještě další otázky…"':
+        '"Aha. Nordome, mám pro tebe ještě další otázky…"{#morte_s578_r55864}':
             # a1195 # r55864
             jump nordom_s74  # EXTERN
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s578_r55865}':
             # a1196 # r55865
             jump morte_dispose
 
 
 # s579 # say55867
 label morte_s579: # -
-    nr 'Morte vrhl na Fall-From-Grace vražedný pohled. "*Dovolíš?* Já na tu otázku odpověděl. *JÁ jsem* tady zdroj informací, NE ty, jasný?"'
+    nr 'Morte vrhl na Fall-From-Grace vražedný pohled. "*Dovolíš?* Já na tu otázku odpověděl. *JÁ jsem* tady zdroj informací, NE ty, jasný?"{#morte_s579_}'
 
     jump grace_s187  # EXTERN
 
 
 # s580 # say55870
 label morte_s580: # -
-    nr '"Oh, už to chápu. Možná kdybych byl sukuba, poslouchal bys MĚ častějc, že jo? Možná kdybych ti ukázal sem tam kousek holý kůže, konečně bys mě trochu respektoval, he? To je pěkně slabý šéfe, pěkně slabý! Měl bych - "'
+    nr '"Oh, už to chápu. Možná kdybych byl sukuba, poslouchal bys MĚ častějc, že jo? Možná kdybych ti ukázal sem tam kousek holý kůže, konečně bys mě trochu respektoval, he? To je pěkně slabý šéfe, pěkně slabý! Měl bych - "{#morte_s580_}'
 
     jump grace_s191  # EXTERN
 
 
 # s581 # say55871
 label morte_s581: # -
-    nr 'NULOVÝ UZEL'
+    nr 'NULOVÝ UZEL{#morte_s581_}'
 
     jump morte_dispose
 
 
 # s582 # say55873
 label morte_s582: # -
-    nr '"Oh, tak?! Já…?! No…! Jo, ty zkrátka… jo, slyšíš to, šéfe, co ta sukuba řekla? Má pravdu. Snáz se mi rozumí, jasný? Takže mě potřebuješ blízko sebe, jasan?"'
+    nr '"Oh, tak?! Já…?! No…! Jo, ty zkrátka… jo, slyšíš to, šéfe, co ta sukuba řekla? Má pravdu. Snáz se mi rozumí, jasný? Takže mě potřebuješ blízko sebe, jasan?"{#morte_s582_}'
 
     menu:
-        '"Správně, takže mám další otázku: oba říkáte, že Nordom je částí toho Zdroje, ale je od něj odříznutý. A když modron zemře, tak ho Zdroj absorbuje. Jak to bude se Nordomem?"' if morteLogic.r55875_condition():
+        '"Správně, takže mám další otázku: oba říkáte, že Nordom je částí toho Zdroje, ale je od něj odříznutý. A když modron zemře, tak ho Zdroj absorbuje. Jak to bude se Nordomem?"{#morte_s582_r55875}' if morteLogic.r55875_condition():
             # a1197 # r55875
             jump morte_s583
 
-        '"Nikdy jsem netvrdil opak, Morte… Takže, Nordome, ten zdroj enegie, o kterém jsi mluvil, ten je z Mechanu?"':
+        '"Nikdy jsem netvrdil opak, Morte… Takže, Nordome, ten zdroj enegie, o kterém jsi mluvil, ten je z Mechanu?"{#morte_s582_r55876}':
             # a1198 # r55876
             jump nordom_s67  # EXTERN
 
-        '"Dobrá. Nordome, mám pro tebe ještě další otázky…"':
+        '"Dobrá. Nordome, mám pro tebe ještě další otázky…"{#morte_s582_r55877}':
             # a1199 # r55877
             jump nordom_s74  # EXTERN
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s582_r55879}':
             # a1200 # r55879
             jump morte_dispose
 
 
 # s583 # say55882
 label morte_s583: # from 582.0
-    nr 'Morte přikývl.'
+    nr 'Morte přikývl.{#morte_s583_}'
 
     menu:
-        '"A když zemře, je vytvořen další Nordom."':
+        '"A když zemře, je vytvořen další Nordom."{#morte_s583_r55884}':
             # a1201 # r55884
             jump morte_s584
 
 
 # s584 # say55886
 label morte_s584: # from 583.0
-    nr '"Eh… ne."'
+    nr '"Eh… ne."{#morte_s584_}'
 
     menu:
-        '"Co se stane?"':
+        '"Co se stane?"{#morte_s584_r55887}':
             # a1202 # r55887
             jump morte_s585
 
 
 # s585 # say55890
 label morte_s585: # from 584.0
-    nr '"No, vezmou si jeho energii, náčelníku, a vyplivnou dalšího modrona, ale už to nebude Nordom, protože on už vlastně není modron. Má v sobě moc ze Sfér. Udělají náhradu, ale nebude jako Nordom."'
+    nr '"No, vezmou si jeho energii, náčelníku, a vyplivnou dalšího modrona, ale už to nebude Nordom, protože on už vlastně není modron. Má v sobě moc ze Sfér. Udělají náhradu, ale nebude jako Nordom."{#morte_s585_}'
 
     menu:
-        '"Takže… tím, že se vzbouřil, se stal… smrtelným?"':
+        '"Takže… tím, že se vzbouřil, se stal… smrtelným?"{#morte_s585_r55892}':
             # a1203 # r55892
             jump morte_s586
 
-        '"Dobrá. Nordome, mám pro tebe ještě další otázky…"':
+        '"Dobrá. Nordome, mám pro tebe ještě další otázky…"{#morte_s585_r55894}':
             # a1204 # r55894
             jump nordom_s74  # EXTERN
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s585_r55895}':
             # a1205 # r55895
             jump morte_dispose
 
 
 # s586 # say55897
 label morte_s586: # from 585.0
-    nr 'Morte se na chvíli odmlčel. "No… jo, dalo by se to tak říct. Kdyby si nevzal do hlavy, že si zahraje na odpadlíka, byl by v pohodě… kdyby umřel, objevil by se úplně stejnej modron. Ale jelikož je „naopak“ - no, ta jeho část, kvůli který je on, bude fuč, jestli umře."'
+    nr 'Morte se na chvíli odmlčel. "No… jo, dalo by se to tak říct. Kdyby si nevzal do hlavy, že si zahraje na odpadlíka, byl by v pohodě… kdyby umřel, objevil by se úplně stejnej modron. Ale jelikož je „naopak“ - no, ta jeho část, kvůli který je on, bude fuč, jestli umře."{#morte_s586_}'
 
     menu:
-        '"Dobrá. Nordome, mám pro tebe ještě další otázky…"':
+        '"Dobrá. Nordome, mám pro tebe ještě další otázky…"{#morte_s586_r55898}':
             # a1206 # r55898
             jump nordom_s74  # EXTERN
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s586_r55900}':
             # a1207 # r55900
             jump nordom_s74  # EXTERN
 
 
 # s587 # say55901
 label morte_s587: # -
-    nr '"Aighhhh! Pro rány boží a kvůli mému zdravému rozumu, nech toho! Zadřou se mu kolečka, jestli se ho na to budeš vyptávat pořád dokola!"'
+    nr '"Aighhhh! Pro rány boží a kvůli mému zdravému rozumu, nech toho! Zadřou se mu kolečka, jestli se ho na to budeš vyptávat pořád dokola!"{#morte_s587_}'
 
     menu:
-        '"O *to* mi taky jde, Morte."':
+        '"O *to* mi taky jde, Morte."{#morte_s587_r55902}':
             # a1208 # r55902
             $ morteLogic.r55902_action()
             jump morte_s588
 
-        '"No, chci znát odpověď, tak se jí z něj snažím vypáčit."':
+        '"No, chci znát odpověď, tak se jí z něj snažím vypáčit."{#morte_s587_r55905}':
             # a1209 # r55905
             jump morte_s589
 
-        '"To nic. Mám pro Nordoma nějaké jiné otázky…"':
+        '"To nic. Mám pro Nordoma nějaké jiné otázky…"{#morte_s587_r55906}':
             # a1210 # r55906
             jump nordom_s74  # EXTERN
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s587_r55907}':
             # a1211 # r55907
             jump morte_dispose
 
 
 # s588 # say55909
 label morte_s588: # from 587.0
-    nr '"Oh." Morte se „zašklebil.“ "Mohls něco ŘÍCT. No, jen pokračuj. Jasně…" Morte *zacvakal* zubama v ubohé imitaci Nordoma. "Jestli chceš o modronech něco vědět, měl by ses zeptat MNE."'
+    nr '"Oh." Morte se „zašklebil.“ "Mohls něco ŘÍCT. No, jen pokračuj. Jasně…" Morte *zacvakal* zubama v ubohé imitaci Nordoma. "Jestli chceš o modronech něco vědět, měl by ses zeptat MNE."{#morte_s588_}'
 
     menu:
-        '"Dobře, Morte… co mi můžeš říct o modronech?"':
+        '"Dobře, Morte… co mi můžeš říct o modronech?"{#morte_s588_r55910}':
             # a1212 # r55910
             jump morte_s590
 
-        '"To nic. Mám pro Nordoma nějaké jiné otázky…"':
+        '"To nic. Mám pro Nordoma nějaké jiné otázky…"{#morte_s588_r55912}':
             # a1213 # r55912
             jump nordom_s74  # EXTERN
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s588_r55913}':
             # a1214 # r55913
             jump morte_dispose
 
 
 # s589 # say55914
 label morte_s589: # from 587.1
-    nr '"Hele, šéfe, NORMÁLNÍ modroni skoro vůbec nerozumí ničemu kromě svých základních úkolů, a tímdleten blbej polygon právě vlezl do Sfér. Nesnaž se tu krychli zmást, okej? Alespoň proto, že je docela dobře ozbrojenej. Jestli se chceš na něco zeptat ohledně modronů, ptej se mně, ne jeho."'
+    nr '"Hele, šéfe, NORMÁLNÍ modroni skoro vůbec nerozumí ničemu kromě svých základních úkolů, a tímdleten blbej polygon právě vlezl do Sfér. Nesnaž se tu krychli zmást, okej? Alespoň proto, že je docela dobře ozbrojenej. Jestli se chceš na něco zeptat ohledně modronů, ptej se mně, ne jeho."{#morte_s589_}'
 
     menu:
-        '"Dobře, Morte… co mi můžeš říct o modronech?"':
+        '"Dobře, Morte… co mi můžeš říct o modronech?"{#morte_s589_r55915}':
             # a1215 # r55915
             jump morte_s590
 
-        '"To nic. Mám pro Nordoma nějaké jiné otázky…"':
+        '"To nic. Mám pro Nordoma nějaké jiné otázky…"{#morte_s589_r55917}':
             # a1216 # r55917
             jump nordom_s74  # EXTERN
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s589_r55918}':
             # a1217 # r55918
             jump morte_dispose
 
 
 # s590 # say55921
 label morte_s590: # from 588.0 589.0
-    nr '"Je to takhle, šéfe: Modroni, to sou tydle pitomý geometrický tvary, který pocvakávaj po svý domovský sféře Mechanus -- jsou tak organizovaní, uhlazení, a chtěli by, aby takovej byl i ZBYTEK mnohovesmíru. Proto jsou tak otravní."'
+    nr '"Je to takhle, šéfe: Modroni, to sou tydle pitomý geometrický tvary, který pocvakávaj po svý domovský sféře Mechanus -- jsou tak organizovaní, uhlazení, a chtěli by, aby takovej byl i ZBYTEK mnohovesmíru. Proto jsou tak otravní."{#morte_s590_}'
 
     menu:
-        '"Co je špatného na tom, když se někdo snaží mnohovesmír víc zorganizovat?"':
+        '"Co je špatného na tom, když se někdo snaží mnohovesmír víc zorganizovat?"{#morte_s590_r55923}':
             # a1218 # r55923
             jump morte_s592
 
-        '"Co je Mechanus?"':
+        '"Co je Mechanus?"{#morte_s590_r55925}':
             # a1219 # r55925
             $ morteLogic.r55925_action()
             jump morte_s591
 
-        '"To nic. Mám pro Nordoma nějaké jiné otázky…"':
+        '"To nic. Mám pro Nordoma nějaké jiné otázky…"{#morte_s590_r55926}':
             # a1220 # r55926
             jump nordom_s74  # EXTERN
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s590_r55928}':
             # a1221 # r55928
             jump morte_dispose
 
 
 # s591 # say55930
 label morte_s591: # from 590.1
-    nr '"Je to sféra, odkud jsou všechny tydle pružinkový mechanismy. Zeptej se ho na to, uvidíš, co ti řekne. Tam seděj a všechno uhlazujou a organizujou… zkatalogizuj tohle, dej *tohle* do pořádku, dej *támto* do pořádku, ať je to podle řádu a tak dále."'
+    nr '"Je to sféra, odkud jsou všechny tydle pružinkový mechanismy. Zeptej se ho na to, uvidíš, co ti řekne. Tam seděj a všechno uhlazujou a organizujou… zkatalogizuj tohle, dej *tohle* do pořádku, dej *támto* do pořádku, ať je to podle řádu a tak dále."{#morte_s591_}'
 
     menu:
-        'Pravdivě: "To mi zní jako ušlechtilý cíl. Co je špatného na tom, když se někdo snaží mnohovesmír víc zorganizovat?"':
+        'Pravdivě: "To mi zní jako ušlechtilý cíl. Co je špatného na tom, když se někdo snaží mnohovesmír víc zorganizovat?"{#morte_s591_r55931}':
             # a1222 # r55931
             $ morteLogic.r55931_action()
             jump morte_s592
 
-        '"Asi tě to zrovna nenadchlo."':
+        '"Asi tě to zrovna nenadchlo."{#morte_s591_r55935}':
             # a1223 # r55935
             jump morte_s592
 
-        '"Mám pro Nordoma nějaké jiné otázky…"':
+        '"Mám pro Nordoma nějaké jiné otázky…"{#morte_s591_r55936}':
             # a1224 # r55936
             jump nordom_s74  # EXTERN
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s591_r55937}':
             # a1225 # r55937
             jump morte_dispose
 
 
 # s592 # say55938
 label morte_s592: # from 590.0 591.0 591.1
-    nr 'Morte přejel pohledem Nordoma, který drží svou levou kuši u hlavy, jako by jí naslouchal.'
+    nr 'Morte přejel pohledem Nordoma, který drží svou levou kuši u hlavy, jako by jí naslouchal.{#morte_s592_}'
 
     jump morte_s593
 
 
 # s593 # say55940
 label morte_s593: # from 592.0
-    nr '"Protože, šéfe, chaos má svý místo. A dyž bude všecko tak, jak to vidí *modroni*, nebude to zrovna život, kerej by za cosi stál… teda alespoň ne pro mě. Chtěj mít všechno *strukturalizovaný*. Pfuj."'
+    nr '"Protože, šéfe, chaos má svý místo. A dyž bude všecko tak, jak to vidí *modroni*, nebude to zrovna život, kerej by za cosi stál… teda alespoň ne pro mě. Chtěj mít všechno *strukturalizovaný*. Pfuj."{#morte_s593_}'
 
     menu:
-        'Pravdivě: "Souhlasím, chaos má své místo… příliš mnoho řádu a vše bude stagnovat. Hele, mám pro Nordoma nějaké jiné otázky…"':
+        'Pravdivě: "Souhlasím, chaos má své místo… příliš mnoho řádu a vše bude stagnovat. Hele, mám pro Nordoma nějaké jiné otázky…"{#morte_s593_r55941}':
             # a1226 # r55941
             $ morteLogic.r55941_action()
             jump nordom_s74  # EXTERN
 
-        '"Aha. Hele, mám pro Nordoma nějaké jiné otázky…"':
+        '"Aha. Hele, mám pro Nordoma nějaké jiné otázky…"{#morte_s593_r55942}':
             # a1227 # r55942
             jump nordom_s74  # EXTERN
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s593_r55944}':
             # a1228 # r55944
             jump morte_dispose
 
 
 # s594 # say56029
 label morte_s594: # -
-    nr '"*Líbí* se mi, jak voní. Je to hezké."'
+    nr '"*Líbí* se mi, jak voní. Je to hezké."{#morte_s594_}'
 
     jump fhjull_s27  # EXTERN
 
 
 # s595 # say56030
 label morte_s595: # -
-    nr '"Vydrž, šéfe… Baator, to jsou ŠPATNÉ zprávy. Ten fiend nám nejspíš lže… a i kdyby byl nějaký „Pilíř Lebek“, určitě najdeme někoho dalšího, kdo ví, jak dosáhnout Pevnosti *bez* toho, že bychom museli jít na jedno z nejnebezpečnějších míst v mnohovesmíru."'
+    nr '"Vydrž, šéfe… Baator, to jsou ŠPATNÉ zprávy. Ten fiend nám nejspíš lže… a i kdyby byl nějaký „Pilíř Lebek“, určitě najdeme někoho dalšího, kdo ví, jak dosáhnout Pevnosti *bez* toho, že bychom museli jít na jedno z nejnebezpečnějších míst v mnohovesmíru."{#morte_s595_}'
 
     menu:
-        '"Lžeš mi, Jedovatý Jazyku?"':
+        '"Lžeš mi, Jedovatý Jazyku?"{#morte_s595_r56031}':
             # a1229 # r56031
             jump fhjull_s88  # EXTERN
 
-        '"Proč tam nechceš jít, Morte?"':
+        '"Proč tam nechceš jít, Morte?"{#morte_s595_r56032}':
             # a1230 # r56032
             jump morte_s596
 
 
 # s596 # say56033
 label morte_s596: # from 595.1
-    nr '"Je to nebezpečné místo, šéfe. Radši bych tam nešel. Už sem tam byl a vůbec to tam není hezký. Jasný?"'
+    nr '"Je to nebezpečné místo, šéfe. Radši bych tam nešel. Už sem tam byl a vůbec to tam není hezký. Jasný?"{#morte_s596_}'
 
     menu:
-        '"Promluvíme si o tom ještě později. Jedovatý Jazyku, mám nějaké otázky…"':
+        '"Promluvíme si o tom ještě později. Jedovatý Jazyku, mám nějaké otázky…"{#morte_s596_r56034}':
             # a1231 # r56034
             jump fhjull_s46  # EXTERN
 
 
 # s597 # say56936
 label morte_s597: # -
-    nr '"Ten chlápek je *všude*!"'
+    nr '"Ten chlápek je *všude*!"{#morte_s597_}'
 
     menu:
-        '"Ano, ale pomohl nám. Pojďme."':
+        '"Ano, ale pomohl nám. Pojďme."{#morte_s597_r56937}':
             # a1232 # r56937
             jump morte_dispose
 
 
 # s598 # say59827
 label morte_s598: # -
-    nr '(Prázdný)'
+    nr '(Prázdný){#morte_s598_}'
 
     jump morte_dispose
 
 
 # s599 # say60950
 label morte_s599: # -
-    nr '"Hej, být mrtvej zas nejni tak špatný. Koukni na to z tý světlý stránky… konečně už nebudeš muset debatovat s těma směšnejma kreténama."'
+    nr '"Hej, být mrtvej zas nejni tak špatný. Koukni na to z tý světlý stránky… konečně už nebudeš muset debatovat s těma směšnejma kreténama."{#morte_s599_}'
 
     menu:
-        '"Ticho Morte. Já to zařídím. Můžeš mi říct co se stalo?"':
+        '"Ticho Morte. Já to zařídím. Můžeš mi říct co se stalo?"{#morte_s599_r61111}':
             # a1233 # r61111
             jump morte_dispose
 
-        '"Zapomeň na to. Odejdu v míru."':
+        '"Zapomeň na to. Odejdu v míru."{#morte_s599_r61112}':
             # a1234 # r61112
             jump morte_dispose
 
 
 # s600 # say61408
 label morte_s600: # -
-    nr '"Eh… no tak šéfiku… co na to říkáš? Co dybys pučil starýmu Mortemu zepár drobáků? Už si ani nepamatuju, kdy sem naposled, no však víš…"'
+    nr '"Eh… no tak šéfiku… co na to říkáš? Co dybys pučil starýmu Mortemu zepár drobáků? Už si ani nepamatuju, kdy sem naposled, no však víš…"{#morte_s600_}'
 
     menu:
-        '"Jistě, proč ne. Slečno?"' if morteLogic.r61411_condition():
+        '"Jistě, proč ne. Slečno?"{#morte_s600_r61411}' if morteLogic.r61411_condition():
             # a1235 # r61411
             jump ucho_s9  # EXTERN
 
-        '"Promiň Morte; ale nejsme na tom nejlíp."' if morteLogic.r61412_condition():
+        '"Promiň Morte; ale nejsme na tom nejlíp."{#morte_s600_r61412}' if morteLogic.r61412_condition():
             # a1236 # r61412
             jump morte_dispose
 
-        '"Morte, už vážně musíme jít. Sbohem slečno."':
+        '"Morte, už vážně musíme jít. Sbohem slečno."{#morte_s600_r61413}':
             # a1237 # r61413
             jump morte_dispose
 
 
 # s601 # say61409
 label morte_s601: # -
-    nr '"Paráda! Dík šéfiku!" Morte se otočil aby následoval ženu.'
+    nr '"Paráda! Dík šéfiku!" Morte se otočil aby následoval ženu.{#morte_s601_}'
 
     menu:
-        'Počkej dokud se nevrátí.':
+        'Počkej dokud se nevrátí.{#morte_s601_r61414}':
             # a1238 # r61414
             $ morteLogic.r61414_action()
             jump ucho_s10  # EXTERN
@@ -8953,17 +8953,17 @@ label morte_s601: # -
 
 # s602 # say61410
 label morte_s602: # -
-    nr 'Zdá se, že Morte jen matně zaregistroval tvou přítomnost a střídavě se pochichtává, nebo vzdychá.'
+    nr 'Zdá se, že Morte jen matně zaregistroval tvou přítomnost a střídavě se pochichtává, nebo vzdychá.{#morte_s602_}'
 
     menu:
-        '"Fajn… nakonec to všechno dobře dopadlo. Sbohem slečno."':
+        '"Fajn… nakonec to všechno dobře dopadlo. Sbohem slečno."{#morte_s602_r61415}':
             # a1239 # r61415
             jump morte_dispose
 
 
 # s603 # say61481
 label morte_s603: # -
-    nr '"Já? Já jsem hlava Vecny."~ [MRT562]'
+    nr '"Já? Já jsem hlava Vecny."~ [MRT562]{#morte_s603_}'
 
     $ morteLogic.s603_action()
     jump morte_dispose
@@ -8971,7 +8971,7 @@ label morte_s603: # -
 
 # s604 # say61482
 label morte_s604: # -
-    nr '"Bohové jsou milosrdní!!"~ [MRT485]'
+    nr '"Bohové jsou milosrdní!!"~ [MRT485]{#morte_s604_}'
 
     $ morteLogic.s604_action()
     jump morte_dispose
@@ -8979,14 +8979,14 @@ label morte_s604: # -
 
 # s605 # say61483
 label morte_s605: # -
-    nr '"Je to dlouhej příběh kterej zahrnuje Hlavu Vecny. Nechci o tom mluvit."~ [MRT559A]'
+    nr '"Je to dlouhej příběh kterej zahrnuje Hlavu Vecny. Nechci o tom mluvit."~ [MRT559A]{#morte_s605_}'
 
     jump grace_s3  # EXTERN
 
 
 # s606 # say61484
 label morte_s606: # -
-    nr '"Můžeme *prosím* změnit téma?"~ [MRT559B]'
+    nr '"Můžeme *prosím* změnit téma?"~ [MRT559B]{#morte_s606_}'
 
     $ morteLogic.s606_action()
     jump morte_dispose
@@ -8994,7 +8994,7 @@ label morte_s606: # -
 
 # s607 # say61485
 label morte_s607: # -
-    nr '"Já? Já jsem *slaďoušek Morte.*"~ [MRT560]'
+    nr '"Já? Já jsem *slaďoušek Morte.*"~ [MRT560]{#morte_s607_}'
 
     $ morteLogic.s607_action()
     jump morte_dispose
@@ -9002,7 +9002,7 @@ label morte_s607: # -
 
 # s608 # say61486
 label morte_s608: # -
-    nr '"Co mám říct? Jsem *strážníček Morte.*"~ [MRT561]'
+    nr '"Co mám říct? Jsem *strážníček Morte.*"~ [MRT561]{#morte_s608_}'
 
     $ morteLogic.s608_action()
     jump morte_dispose
@@ -9010,14 +9010,14 @@ label morte_s608: # -
 
 # s609 # say61487
 label morte_s609: # -
-    nr '"Jen když si budu moct odpočinout na tvých poduškách."~ [MRT486A]'
+    nr '"Jen když si budu moct odpočinout na tvých poduškách."~ [MRT486A]{#morte_s609_}'
 
     jump grace_s7  # EXTERN
 
 
 # s610 # say61488
 label morte_s610: # -
-    nr '"Nic! Vůbec nic. Absolutně nic."~ [MRT486B]'
+    nr '"Nic! Vůbec nic. Absolutně nic."~ [MRT486B]{#morte_s610_}'
 
     $ morteLogic.s610_action()
     jump morte_dispose
@@ -9025,7 +9025,7 @@ label morte_s610: # -
 
 # s611 # say61489
 label morte_s611: # -
-    nr '"Arf! Arf! Heh! Heh! Heh!"~ [MRT484]'
+    nr '"Arf! Arf! Heh! Heh! Heh!"~ [MRT484]{#morte_s611_}'
 
     $ morteLogic.s611_action()
     jump morte_dispose
@@ -9033,28 +9033,28 @@ label morte_s611: # -
 
 # s612 # say62890
 label morte_s612: # -
-    nr '"Ona je tanar„ri… sukuba, šefí."'
+    nr '"Ona je tanar„ri… sukuba, šefí."{#morte_s612_}'
 
     jump grace_s213  # EXTERN
 
 
 # s613 # say63454
 label morte_s613: # -
-    nr '"No, hele, já se jaksi jen tak někam nepostavím. Víš, to je práce pro nohy."~ [MRT482]'
+    nr '"No, hele, já se jaksi jen tak někam nepostavím. Víš, to je práce pro nohy."~ [MRT482]{#morte_s613_}'
 
     jump annah_s1  # EXTERN
 
 
 # s614 # say63455
 label morte_s614: # -
-    nr '"Myslel jsem, že vypadáš dobře, ale už vim, že jsem měl šedej zákal!"~ [MRT483]'
+    nr '"Myslel jsem, že vypadáš dobře, ale už vim, že jsem měl šedej zákal!"~ [MRT483]{#morte_s614_}'
 
     jump annah_s3  # EXTERN
 
 
 # s615 # say63456
 label morte_s615: # -
-    nr '"Když si mi poprvý vlezla na oči, myslel sem, že z toho šoku přestanu dejchat."~ [MRT524]'
+    nr '"Když si mi poprvý vlezla na oči, myslel sem, že z toho šoku přestanu dejchat."~ [MRT524]{#morte_s615_}'
 
     $ morteLogic.s615_action()
     jump morte_dispose
@@ -9062,35 +9062,35 @@ label morte_s615: # -
 
 # s616 # say63457
 label morte_s616: # -
-    nr '"Jak se tak říká… NARODIL JSEM SE S MÉNEM!"~ [MRT526]'
+    nr '"Jak se tak říká… NARODIL JSEM SE S MÉNEM!"~ [MRT526]{#morte_s616_}'
 
     jump annah_s6  # EXTERN
 
 
 # s617 # say63458
 label morte_s617: # -
-    nr '"Divný, že to vůbec vytahuješ… no, jenom jsem se jich ptal, kolik by za tebe zaplatili."~ [MRT531]'
+    nr '"Divný, že to vůbec vytahuješ… no, jenom jsem se jich ptal, kolik by za tebe zaplatili."~ [MRT531]{#morte_s617_}'
 
     jump annah_s8  # EXTERN
 
 
 # s618 # say63459
 label morte_s618: # -
-    nr '"Poslyš, možná by bylo lepší neotvírat vůbec hubu. Vypadáš tak líp."~ [MRT530]'
+    nr '"Poslyš, možná by bylo lepší neotvírat vůbec hubu. Vypadáš tak líp."~ [MRT530]{#morte_s618_}'
 
     jump annah_s10  # EXTERN
 
 
 # s619 # say63460
 label morte_s619: # -
-    nr '"Oh, ale ty už sis získala mé srdce."~ [MRT532]'
+    nr '"Oh, ale ty už sis získala mé srdce."~ [MRT532]{#morte_s619_}'
 
     jump annah_s12  # EXTERN
 
 
 # s620 # say63462
 label morte_s620: # -
-    nr '"Nenapadá mě pitomější možnost."~ [MRT525]'
+    nr '"Nenapadá mě pitomější možnost."~ [MRT525]{#morte_s620_}'
 
     $ morteLogic.s620_action()
     jump morte_dispose
@@ -9098,14 +9098,14 @@ label morte_s620: # -
 
 # s621 # say63463
 label morte_s621: # -
-    nr '"Víš, ty si taky tak *trochu* fiend."~ [MRT533A]'
+    nr '"Víš, ty si taky tak *trochu* fiend."~ [MRT533A]{#morte_s621_}'
 
     jump annah_s15  # EXTERN
 
 
 # s622 # say63464
 label morte_s622: # -
-    nr '"Hele, mám takovou otázečku. Nejseš náhodou taky tak trochu fiend?"~ [MRT533B]'
+    nr '"Hele, mám takovou otázečku. Nejseš náhodou taky tak trochu fiend?"~ [MRT533B]{#morte_s622_}'
 
     $ morteLogic.s622_action()
     jump morte_dispose
@@ -9113,7 +9113,7 @@ label morte_s622: # -
 
 # s623 # say63666
 label morte_s623: # -
-    nr '"To už jsem postřeh. Proč nejdeš taky pro změnu otravovat šéfíka, co?"~ [MRT563]'
+    nr '"To už jsem postřeh. Proč nejdeš taky pro změnu otravovat šéfíka, co?"~ [MRT563]{#morte_s623_}'
 
     $ morteLogic.s623_action()
     jump morte_dispose
@@ -9121,14 +9121,14 @@ label morte_s623: # -
 
 # s624 # say63667
 label morte_s624: # -
-    nr '"Kvůli levitaci, ty stupidní pikslo."~ [MRT468A]'
+    nr '"Kvůli levitaci, ty stupidní pikslo."~ [MRT468A]{#morte_s624_}'
 
     jump nordom_s2  # EXTERN
 
 
 # s625 # say63668
 label morte_s625: # -
-    nr '"Tak proč nejseš i ty výřečnějsí než samotný slova, chrastící pikslo?"~ [MRT469A]'
+    nr '"Tak proč nejseš i ty výřečnějsí než samotný slova, chrastící pikslo?"~ [MRT469A]{#morte_s625_}'
 
     $ morteLogic.s625_action()
     jump morte_dispose
@@ -9136,21 +9136,21 @@ label morte_s625: # -
 
 # s626 # say63669
 label morte_s626: # -
-    nr '"Počkej, počkej. Nic takovýho bych já z huby nevypustil!"~ [MRT470B]'
+    nr '"Počkej, počkej. Nic takovýho bych já z huby nevypustil!"~ [MRT470B]{#morte_s626_}'
 
     jump annah_s315  # EXTERN
 
 
 # s627 # say63670
 label morte_s627: # -
-    nr '"Ještě nosí Annah oblečení?"~ [MRT565A]'
+    nr '"Ještě nosí Annah oblečení?"~ [MRT565A]{#morte_s627_}'
 
     jump nordom_s6  # EXTERN
 
 
 # s628 # say63671
 label morte_s628: # -
-    nr '"Takže odpovídám: mám cíl."~ [MRT565B]'
+    nr '"Takže odpovídám: mám cíl."~ [MRT565B]{#morte_s628_}'
 
     $ morteLogic.s628_action()
     jump morte_dispose
@@ -9158,7 +9158,7 @@ label morte_s628: # -
 
 # s629 # say63672
 label morte_s629: # -
-    nr '"Budeš mít i devatenáctej, jestli nesklapneš poklop."~ [MRT564]'
+    nr '"Budeš mít i devatenáctej, jestli nesklapneš poklop."~ [MRT564]{#morte_s629_}'
 
     $ morteLogic.s629_action()
     jump morte_dispose
@@ -9166,14 +9166,14 @@ label morte_s629: # -
 
 # s630 # say63673
 label morte_s630: # -
-    nr '"Jestli myslíš, že mě otravuješ, kdy se ti zachce, pak jo."~ [MRT569A]'
+    nr '"Jestli myslíš, že mě otravuješ, kdy se ti zachce, pak jo."~ [MRT569A]{#morte_s630_}'
 
     jump nordom_s9  # EXTERN
 
 
 # s631 # say63674
 label morte_s631: # -
-    nr '"Vítam tě ve sférách, chlapče."~ [MRT569B]'
+    nr '"Vítam tě ve sférách, chlapče."~ [MRT569B]{#morte_s631_}'
 
     $ morteLogic.s631_action()
     jump morte_dispose
@@ -9181,14 +9181,14 @@ label morte_s631: # -
 
 # s632 # say63675
 label morte_s632: # -
-    nr '"Už je Fall-From-Grace nahá?"~ [MRT568A]'
+    nr '"Už je Fall-From-Grace nahá?"~ [MRT568A]{#morte_s632_}'
 
     jump nordom_s11  # EXTERN
 
 
 # s633 # say63676
 label morte_s633: # -
-    nr '"Ano, mám cíl."~ [MRT568B]'
+    nr '"Ano, mám cíl."~ [MRT568B]{#morte_s633_}'
 
     $ morteLogic.s633_action()
     jump morte_dispose
@@ -9196,14 +9196,14 @@ label morte_s633: # -
 
 # s634 # say63677
 label morte_s634: # -
-    nr '"Když se ty, Annah a Fall-From-Grace koupete v Cimmerianským bahně."~ [MRT571A]'
+    nr '"Když se ty, Annah a Fall-From-Grace koupete v Cimmerianským bahně."~ [MRT571A]{#morte_s634_}'
 
     jump nordom_s13  # EXTERN
 
 
 # s635 # say63678
 label morte_s635: # -
-    nr '"Počkej, počkej. Někdo si slovník přečtě, někdo ho ale napíše, víš."~ [MRT572B]'
+    nr '"Počkej, počkej. Někdo si slovník přečtě, někdo ho ale napíše, víš."~ [MRT572B]{#morte_s635_}'
 
     $ morteLogic.s635_action()
     jump morte_dispose
@@ -9211,35 +9211,35 @@ label morte_s635: # -
 
 # s636 # say63679
 label morte_s636: # -
-    nr '"Annah, flaška Furyondianskýho ohnivýho jantaru a průvod na Radnici."~ [MRT573]'
+    nr '"Annah, flaška Furyondianskýho ohnivýho jantaru a průvod na Radnici."~ [MRT573]{#morte_s636_}'
 
     jump nordom_s15  # EXTERN
 
 
 # s637 # say63680
 label morte_s637: # -
-    nr '"Drrrrrrrrrrrrrrrrž Hubu!"~ [MRT471D]'
+    nr '"Drrrrrrrrrrrrrrrrž Hubu!"~ [MRT471D]{#morte_s637_}'
 
     jump nordom_s17  # EXTERN
 
 
 # s638 # say63681
 label morte_s638: # -
-    nr '"Hele, bež otravovat někoho jinýho, příteli Bedno."~ [MRT576A]'
+    nr '"Hele, bež otravovat někoho jinýho, příteli Bedno."~ [MRT576A]{#morte_s638_}'
 
     jump nordom_s19  # EXTERN
 
 
 # s639 # say63682
 label morte_s639: # -
-    nr '"Sakra já nevim. Pochop to. Právě je… je… vždyť víš…  no někam si odskočilo."~ [MRT576B]'
+    nr '"Sakra já nevim. Pochop to. Právě je… je… vždyť víš…  no někam si odskočilo."~ [MRT576B]{#morte_s639_}'
 
     jump nordom_s20  # EXTERN
 
 
 # s640 # say63683
 label morte_s640: # -
-    nr '"Já ti ukážu, jestli nezavřeš hubu, err, teda víko."~ [MRT576C]'
+    nr '"Já ti ukážu, jestli nezavřeš hubu, err, teda víko."~ [MRT576C]{#morte_s640_}'
 
     $ morteLogic.s640_action()
     jump morte_dispose
@@ -9247,14 +9247,14 @@ label morte_s640: # -
 
 # s641 # say63684
 label morte_s641: # -
-    nr '"Polib mědvědí prdel."~ [MRT575A]'
+    nr '"Polib mědvědí prdel."~ [MRT575A]{#morte_s641_}'
 
     jump grace_s373  # EXTERN
 
 
 # s642 # say63685
 label morte_s642: # -
-    nr '"Věř mi. Annah by se ten polibek hodil."~ [MRT575B]'
+    nr '"Věř mi. Annah by se ten polibek hodil."~ [MRT575B]{#morte_s642_}'
 
     $ morteLogic.s642_action()
     jump morte_dispose
@@ -9262,7 +9262,7 @@ label morte_s642: # -
 
 # s643 # say63686
 label morte_s643: # -
-    nr '::Prapodivně zaskřípal::~ [MRT472A]'
+    nr '::Prapodivně zaskřípal::~ [MRT472A]{#morte_s643_}'
 
     $ morteLogic.s643_action()
     jump morte_dispose
@@ -9270,7 +9270,7 @@ label morte_s643: # -
 
 # s644 # say63688
 label morte_s644: # -
-    nr '"Přiznej se, že sis to vymyslel!"~ [MRT473D]'
+    nr '"Přiznej se, že sis to vymyslel!"~ [MRT473D]{#morte_s644_}'
 
     $ morteLogic.s644_action()
     jump morte_dispose
@@ -9278,7 +9278,7 @@ label morte_s644: # -
 
 # s645 # say63689
 label morte_s645: # -
-    nr '"To je čistě biologická záležitost, bedno skopová. No… nic, co bys pochopil."~ [MRT577]'
+    nr '"To je čistě biologická záležitost, bedno skopová. No… nic, co bys pochopil."~ [MRT577]{#morte_s645_}'
 
     $ morteLogic.s645_action()
     jump morte_dispose
@@ -9286,736 +9286,736 @@ label morte_s645: # -
 
 # s646 # say63858
 label morte_s646: # -
-    nr '"Věř mi, nikdy si se s ním nesetkal."~ [MRT475AA]'
+    nr '"Věř mi, nikdy si se s ním nesetkal."~ [MRT475AA]{#morte_s646_}'
 
     jump vhailor_s1  # EXTERN
 
 
 # s647 # say64990
 label morte_s647: # -
-    nr '"Počkej, šéfe… podívej na tohle." Upřením zraku dolů, sis všiml množství špinavých stop, které vedly do výklenku… a neotáčely se. "Musí tu být portál nebo něco."'
+    nr '"Počkej, šéfe… podívej na tohle." Upřením zraku dolů, sis všiml množství špinavých stop, které vedly do výklenku… a neotáčely se. "Musí tu být portál nebo něco."{#morte_s647_}'
 
     menu:
-        '"Portál? Jak ho můžeme otevřít?"':
+        '"Portál? Jak ho můžeme otevřít?"{#morte_s647_r64991}':
             # a1240 # r64991
             jump morte_s648
 
-        '"Možná. Pojďme tedy."':
+        '"Možná. Pojďme tedy."{#morte_s647_r64993}':
             # a1241 # r64993
             jump morte_dispose
 
 
 # s648 # say64992
 label morte_s648: # from 647.0
-    nr '"Nepropadej panice šéfe. Může to být nějaký obyčejný klíč - podívej se na ten provoz, co tudy prochází! Možná by to mohl vědět někdo z těch níže žijících…"'
+    nr '"Nepropadej panice šéfe. Může to být nějaký obyčejný klíč - podívej se na ten provoz, co tudy prochází! Možná by to mohl vědět někdo z těch níže žijících…"{#morte_s648_}'
 
     menu:
-        '"Poptám se kolem. Pojďme tedy."':
+        '"Poptám se kolem. Pojďme tedy."{#morte_s648_r64994}':
             # a1242 # r64994
             jump morte_dispose
 
 
 # s649 # say65552
 label morte_s649: # from 329.0 729.0
-    nr '"Ah, *no tak,* šéfe. Neříkej mi, že si znovu zapomněl."'
+    nr '"Ah, *no tak,* šéfe. Neříkej mi, že si znovu zapomněl."{#morte_s649_}'
 
     menu:
-        '"Potřebuji si jen vzpomenout."':
+        '"Potřebuji si jen vzpomenout."{#morte_s649_r65553}':
             # a1243 # r65553
             jump morte_s650
 
-        '"Ne, myslím, že jsem už o tom slyšel už všechno - pokračuj, připomeň mi to."' if morteLogic.r65554_condition():
+        '"Ne, myslím, že jsem už o tom slyšel už všechno - pokračuj, připomeň mi to."{#morte_s649_r65554}' if morteLogic.r65554_condition():
             # a1244 # r65554
             jump morte_s650
 
-        '"V pořádku. Mám nějaké další otázky…"':
+        '"V pořádku. Mám nějaké další otázky…"{#morte_s649_r65555}':
             # a1245 # r65555
             jump morte_s329
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s649_r65556}':
             # a1246 # r65556
             jump morte_dispose
 
 
 # s650 # say65557
 label morte_s650: # from 649.0 649.1
-    nr '"Sázím se, že to budu poslouchat ještě dlouho." Morte křičí zplna hrdla. "Podívejme se…"  "Vím, že se cítíš, jako bys vypil několik džberů bahna z řeky Styx, ale teď by ses měl trošičku soustředit. Někde kolem tebe by se měl válet deník, který ti osvětlí, co se vlastně děje. Zbytek ti dopoví Pharod, pokud tedy ještě není zapsán v Knize mrtvých."'
+    nr '"Sázím se, že to budu poslouchat ještě dlouho." Morte křičí zplna hrdla. "Podívejme se…"  "Vím, že se cítíš, jako bys vypil několik džberů bahna z řeky Styx, ale teď by ses měl trošičku soustředit. Někde kolem tebe by se měl válet deník, který ti osvětlí, co se vlastně děje. Zbytek ti dopoví Pharod, pokud tedy ještě není zapsán v Knize mrtvých."{#morte_s650_}'
 
     menu:
-        '"Pharod… hmmm. Nepřestávej."' if morteLogic.r65558_condition():
+        '"Pharod… hmmm. Nepřestávej."{#morte_s650_r65558}' if morteLogic.r65558_condition():
             # a1247 # r65558
             jump morte_s651
 
-        '"Nepřestávej."' if morteLogic.r65559_condition():
+        '"Nepřestávej."{#morte_s650_r65559}' if morteLogic.r65559_condition():
             # a1248 # r65559
             jump morte_s651
 
-        '"V pořádku. Chci se tě ještě na něco zeptat…"':
+        '"V pořádku. Chci se tě ještě na něco zeptat…"{#morte_s650_r65560}':
             # a1249 # r65560
             jump morte_s329
 
-        '"Zapomeň na to. Slyšel jsem dost. Pojďme."':
+        '"Zapomeň na to. Slyšel jsem dost. Pojďme."{#morte_s650_r65561}':
             # a1250 # r65561
             jump morte_dispose
 
 
 # s651 # say65562
 label morte_s651: # from 650.0 650.1
-    nr '"Budu, budu, vydrž." Morte na chvíli zmlkl. "V pořádku, toto je poslední…"  "Hlavně ten deník neztrať, protože pak bychom zase byli v bahně Styxu. A ať už děláš cokoliv, neříkej NIKOMU, kdo jsi nebo co se ti stalo, jinak by ses taky mohl pěkně rychle podívat do krematoria. Udělej, co ti říkám: PŘEČTI si deník, pak NAJDI Pharoda."'
+    nr '"Budu, budu, vydrž." Morte na chvíli zmlkl. "V pořádku, toto je poslední…"  "Hlavně ten deník neztrať, protože pak bychom zase byli v bahně Styxu. A ať už děláš cokoliv, neříkej NIKOMU, kdo jsi nebo co se ti stalo, jinak by ses taky mohl pěkně rychle podívat do krematoria. Udělej, co ti říkám: PŘEČTI si deník, pak NAJDI Pharoda."{#morte_s651_}'
 
     if morteLogic.s651_condition():
         jump morte_s653
     menu:
-        '"No tak. Co je tam dál?"' if morteLogic.r65566_condition():
+        '"No tak. Co je tam dál?"{#morte_s651_r65566}' if morteLogic.r65566_condition():
             # a1251 # r65566
             jump morte_s652
 
-        '"A neměl jsem u sebe deník když jsem se probral?"' if morteLogic.r65565_condition():
+        '"A neměl jsem u sebe deník když jsem se probral?"{#morte_s651_r65565}' if morteLogic.r65565_condition():
             # a1252 # r65565
             jump morte_s682
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s651_r65567}':
             # a1253 # r65567
             jump morte_s329
 
-        '"Zapomeň na to. Slyšel jsem dost. Pojďme."':
+        '"Zapomeň na to. Slyšel jsem dost. Pojďme."{#morte_s651_r65568}':
             # a1254 # r65568
             jump morte_dispose
 
 
 # s652 # say65563
 label morte_s652: # from 651.1
-    nr '"O čem to hovoříš, šéfe? Tam není nic víc."'
+    nr '"O čem to hovoříš, šéfe? Tam není nic víc."{#morte_s652_}'
 
     menu:
-        '"Co například, „Nevěř lebce?“"' if morteLogic.r65569_condition():
+        '"Co například, „Nevěř lebce?“"{#morte_s652_r65569}' if morteLogic.r65569_condition():
             # a1255 # r65569
             $ morteLogic.j65573_s652_r65569_action()
             $ morteLogic.r65569_action()
             jump morte_s654
 
-        '"Co například, „Nevěř lebce?“"' if morteLogic.r65570_condition():
+        '"Co například, „Nevěř lebce?“"{#morte_s652_r65570}' if morteLogic.r65570_condition():
             # a1256 # r65570
             jump morte_s654
 
-        '"Nevadí. Mám další otázky…"':
+        '"Nevadí. Mám další otázky…"{#morte_s652_r65571}':
             # a1257 # r65571
             jump morte_s329
 
-        '"V pořádku, tedy. Pojďme."':
+        '"V pořádku, tedy. Pojďme."{#morte_s652_r65572}':
             # a1258 # r65572
             jump morte_dispose
 
 
 # s653 # say65564
 label morte_s653: # from 651.0
-    nr '"A samozřejmě, tahle troška nakonec, o nevěřících lebkách."'
+    nr '"A samozřejmě, tahle troška nakonec, o nevěřících lebkách."{#morte_s653_}'
 
     menu:
-        '"Co si myslíš, že tahle část znamená? Myslíš, že se to vztahuje na *tebe?*"':
+        '"Co si myslíš, že tahle část znamená? Myslíš, že se to vztahuje na *tebe?*"{#morte_s653_r65574}':
             # a1259 # r65574
             jump morte_s655
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s653_r65575}':
             # a1260 # r65575
             jump morte_s329
 
-        '"V pořádku, tedy. Pojďme."':
+        '"V pořádku, tedy. Pojďme."{#morte_s653_r65576}':
             # a1261 # r65576
             jump morte_dispose
 
 
 # s654 # say65577
 label morte_s654: # from 329.4 652.0 652.1 729.4
-    nr '"Oh… *ještě* trocha na konec? Považoval jsem to za smyté, tak jsem tuhle řádku nečetl nahlas."'
+    nr '"Oh… *ještě* trocha na konec? Považoval jsem to za smyté, tak jsem tuhle řádku nečetl nahlas."{#morte_s654_}'
 
     menu:
-        '"Oh, skutečně? A co myslíš, že to znamená? Myslíš, že se to vztahuje na *tebe?*"':
+        '"Oh, skutečně? A co myslíš, že to znamená? Myslíš, že se to vztahuje na *tebe?*"{#morte_s654_r65578}':
             # a1262 # r65578
             jump morte_s655
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s654_r65579}':
             # a1263 # r65579
             jump morte_s329
 
-        '"V pořádku, tedy. Pojďme."':
+        '"V pořádku, tedy. Pojďme."{#morte_s654_r65580}':
             # a1264 # r65580
             jump morte_dispose
 
 
 # s655 # say65581
 label morte_s655: # from 653.0 654.0
-    nr '"Pochybuji. Myslím, že *mi* teď můžeš věřit, šéfe?"'
+    nr '"Pochybuji. Myslím, že *mi* teď můžeš věřit, šéfe?"{#morte_s655_}'
 
     menu:
-        '"Ty mi *lžeš*, Morte?"':
+        '"Ty mi *lžeš*, Morte?"{#morte_s655_r65582}':
             # a1265 # r65582
             jump morte_s656
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s655_r65583}':
             # a1266 # r65583
             jump morte_s329
 
-        '"V pořádku, tedy. Pojďme."':
+        '"V pořádku, tedy. Pojďme."{#morte_s655_r65584}':
             # a1267 # r65584
             jump morte_dispose
 
 
 # s656 # say65585
 label morte_s656: # from 655.0
-    nr '"Ne! No tak, šéfe, co máš za problém? Doteď jsem tě nevedl zlou cestou."'
+    nr '"Ne! No tak, šéfe, co máš za problém? Doteď jsem tě nevedl zlou cestou."{#morte_s656_}'
 
     menu:
-        '"*Doteď.* Nelíbí se mi fakt, že jsi mi ten řádek nepřečetl a rád by jsem věděl, co jsi mi *ještě* nepovažoval za nutné říci, co spolu cestujeme ."':
+        '"*Doteď.* Nelíbí se mi fakt, že jsi mi ten řádek nepřečetl a rád by jsem věděl, co jsi mi *ještě* nepovažoval za nutné říci, co spolu cestujeme ."{#morte_s656_r65587}':
             # a1268 # r65587
             jump morte_s657
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s656_r65586}':
             # a1269 # r65586
             jump morte_s329
 
-        '"Tedy v pořádku. Pojďme."':
+        '"Tedy v pořádku. Pojďme."{#morte_s656_r65588}':
             # a1270 # r65588
             jump morte_dispose
 
 
 # s657 # say65589
 label morte_s657: # from 656.0
-    nr '"Nic! Řekl jsem ti všechno… tedy, SKORO všechno, alespoň nic, víš, *nebezpečného.*"'
+    nr '"Nic! Řekl jsem ti všechno… tedy, SKORO všechno, alespoň nic, víš, *nebezpečného.*"{#morte_s657_}'
 
     menu:
-        '"Když je tu JEŠTĚ něco, navrhuji ti říct mi to teď."':
+        '"Když je tu JEŠTĚ něco, navrhuji ti říct mi to teď."{#morte_s657_r65590}':
             # a1271 # r65590
             jump morte_s658
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s657_r65591}':
             # a1272 # r65591
             jump morte_s329
 
-        '"Tedy v pořádku. Pojďme."':
+        '"Tedy v pořádku. Pojďme."{#morte_s657_r65592}':
             # a1273 # r65592
             jump morte_dispose
 
 
 # s658 # say65593
 label morte_s658: # from 657.0
-    nr '"Šéfe, vážně, je to všechno. Nechtěl bych tě natáhnout."'
+    nr '"Šéfe, vážně, je to všechno. Nechtěl bych tě natáhnout."{#morte_s658_}'
 
     menu:
-        '"Tedy v pořádku Morte. Mám ještě nějaké otázky…"':
+        '"Tedy v pořádku Morte. Mám ještě nějaké otázky…"{#morte_s658_r65594}':
             # a1274 # r65594
             jump morte_s329
 
-        '"Doufám, že ne. Pojďme."':
+        '"Doufám, že ne. Pojďme."{#morte_s658_r65595}':
             # a1275 # r65595
             jump morte_dispose
 
 
 # s659 # say65596
 label morte_s659: # from 329.1 729.1
-    nr '"Sigil je město ve tvaru prstenu, který se krčí na vrchole nekonečně vysoké věže, která, jak někteří tvrdí, je středem Sfér… samozřejmě, *jak* může být na vrcholu nekonečně vysoké věže a zároveň být středem Sfér je otázkou."'
+    nr '"Sigil je město ve tvaru prstenu, který se krčí na vrchole nekonečně vysoké věže, která, jak někteří tvrdí, je středem Sfér… samozřejmě, *jak* může být na vrcholu nekonečně vysoké věže a zároveň být středem Sfér je otázkou."{#morte_s659_}'
 
     menu:
-        '"Ještě něco?"':
+        '"Ještě něco?"{#morte_s659_r65597}':
             # a1276 # r65597
             jump morte_s660
 
-        '"V pořádku, tedy. Mám nějaké další otázky…"':
+        '"V pořádku, tedy. Mám nějaké další otázky…"{#morte_s659_r65598}':
             # a1277 # r65598
             jump morte_s329
 
-        '"To je všechno co jsem chtěl vědět. Pojďme."':
+        '"To je všechno co jsem chtěl vědět. Pojďme."{#morte_s659_r65599}':
             # a1278 # r65599
             jump morte_dispose
 
 
 # s660 # say65600
 label morte_s660: # from 659.0
-    nr '"Sigil je taky nazýváno „Městem Dveří,“ hlavně proto, že tam je MNOHO neviditelných dveří, které z něho vedou dovnitř a ven - jako například klenba , dveřní rám, obruč ze sudu, police na knihy, nebo otevřené okno může být portál, při splnění správných podmínek. Zaleží na tom, jestli máš klíč na otevření."'
+    nr '"Sigil je taky nazýváno „Městem Dveří,“ hlavně proto, že tam je MNOHO neviditelných dveří, které z něho vedou dovnitř a ven - jako například klenba , dveřní rám, obruč ze sudu, police na knihy, nebo otevřené okno může být portál, při splnění správných podmínek. Zaleží na tom, jestli máš klíč na otevření."{#morte_s660_}'
 
     menu:
-        '"Klíče?"':
+        '"Klíče?"{#morte_s660_r65601}':
             # a1279 # r65601
             jump morte_s661
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s660_r65602}':
             # a1280 # r65602
             jump morte_s329
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s660_r65603}':
             # a1281 # r65603
             jump morte_dispose
 
 
 # s661 # say65604
 label morte_s661: # from 660.0
-    nr '"Hele, asi nejlíp se to dá vysvětlit takhle - většina portálů „spí,“ jasný? Zkrátka chrápou a nedělaj ani prrd. Můžeš projít skrze ně, kolem nich nebo přes ně, kopat do nich, ulevit si na ně močák,  a nic se nestane. Každý portál potřebuje něco, co ho „probudí.“ Může to být písnička, kterou si musíš zapískat, pecen týden starého chleba z Bytopie, vzpomínka na to, jak jsi dal svý první číslo s nějakou blonďatou kočkou, cokoli. A pak - BUM - portálem teče šťáva, je vzhůru, celej nažhavenej jako ženská, která mně vidí, a ty si zkrátka skočíš skrz na druhou stranu, ať už je tam cokoli."'
+    nr '"Hele, asi nejlíp se to dá vysvětlit takhle - většina portálů „spí,“ jasný? Zkrátka chrápou a nedělaj ani prrd. Můžeš projít skrze ně, kolem nich nebo přes ně, kopat do nich, ulevit si na ně močák,  a nic se nestane. Každý portál potřebuje něco, co ho „probudí.“ Může to být písnička, kterou si musíš zapískat, pecen týden starého chleba z Bytopie, vzpomínka na to, jak jsi dal svý první číslo s nějakou blonďatou kočkou, cokoli. A pak - BUM - portálem teče šťáva, je vzhůru, celej nažhavenej jako ženská, která mně vidí, a ty si zkrátka skočíš skrz na druhou stranu, ať už je tam cokoli."{#morte_s661_}'
 
     menu:
-        '"Jako třeba kam?"':
+        '"Jako třeba kam?"{#morte_s661_r65605}':
             # a1282 # r65605
             jump morte_s662
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s661_r65606}':
             # a1283 # r65606
             jump morte_s329
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s661_r65607}':
             # a1284 # r65607
             jump morte_dispose
 
 
 # s662 # say65608
 label morte_s662: # from 661.0
-    nr '"Kdekoli, šéfe. Doslova. Jakýkoli místo, co ti přijde na mozek, tak i tam vede portál. Proto je Sigil ve Sférách tak populární, náčelníku. Se můžeš dostat kamkoli, akorát musíš mít šajnu jak."'
+    nr '"Kdekoli, šéfe. Doslova. Jakýkoli místo, co ti přijde na mozek, tak i tam vede portál. Proto je Sigil ve Sférách tak populární, náčelníku. Se můžeš dostat kamkoli, akorát musíš mít šajnu jak."{#morte_s662_}'
 
     menu:
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s662_r65609}':
             # a1285 # r65609
             jump morte_s329
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s662_r65610}':
             # a1286 # r65610
             jump morte_dispose
 
 
 # s663 # say65611
 label morte_s663: # from 329.2 729.2
-    nr '"Hej! Chřestění držkou, to je moje nejlepší schopnost!" Zacvakal zuby a pak se zašklebil. "Eh? Eh?"'
+    nr '"Hej! Chřestění držkou, to je moje nejlepší schopnost!" Zacvakal zuby a pak se zašklebil. "Eh? Eh?"{#morte_s663_}'
 
     menu:
-        '"No, to opravdu rád *slyším*."':
+        '"No, to opravdu rád *slyším*."{#morte_s663_r65612}':
             # a1287 # r65612
             jump morte_s664
 
-        '"Jo, vím o tvé Litanii Kleteb, ale spíš by mě zajímalo, co ses přiučil, když jsi byl u Lothara."' if morteLogic.r65613_condition():
+        '"Jo, vím o tvé Litanii Kleteb, ale spíš by mě zajímalo, co ses přiučil, když jsi byl u Lothara."{#morte_s663_r65613}' if morteLogic.r65613_condition():
             # a1288 # r65613
             jump morte_s667
 
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s663_r65614}':
             # a1289 # r65614
             jump morte_s329
 
-        '"To nic. Pojďme."':
+        '"To nic. Pojďme."{#morte_s663_r65615}':
             # a1290 # r65615
             jump morte_dispose
 
 
 # s664 # say65616
 label morte_s664: # from 663.0
-    nr '"Teďkonc vážně, šéfe. Mám talent na to správný klapání hubou. Zachřestím hubou, vyjde ze mě pár zajímavostí a divil byses, co to dokáže udělat s nějakým citlivým ouškem, co mě slyšelo. Dokážu nadávat, oblbovat, vyhrožovat, posmívat se, dělat z někoho úplnýho magora. Umím bejt sprostej jako kanál plnej nemrtvejch dlaždičů. Dokonce umím i pár nadávek a kleteb, co prej používal nejsprostější kněz Sféry Eagleville. Když se do někoho pustím, vynadám mu tak, že by se červenala i židle v uchyláckým pornošopu."'
+    nr '"Teďkonc vážně, šéfe. Mám talent na to správný klapání hubou. Zachřestím hubou, vyjde ze mě pár zajímavostí a divil byses, co to dokáže udělat s nějakým citlivým ouškem, co mě slyšelo. Dokážu nadávat, oblbovat, vyhrožovat, posmívat se, dělat z někoho úplnýho magora. Umím bejt sprostej jako kanál plnej nemrtvejch dlaždičů. Dokonce umím i pár nadávek a kleteb, co prej používal nejsprostější kněz Sféry Eagleville. Když se do někoho pustím, vynadám mu tak, že by se červenala i židle v uchyláckým pornošopu."{#morte_s664_}'
 
     menu:
-        '"Uh… a jak může být *tohle* užitečné?"':
+        '"Uh… a jak může být *tohle* užitečné?"{#morte_s664_r65617}':
             # a1291 # r65617
             jump morte_s665
 
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s664_r65618}':
             # a1292 # r65618
             jump morte_s329
 
-        '"To nic. Pojďme."':
+        '"To nic. Pojďme."{#morte_s664_r65619}':
             # a1293 # r65619
             jump morte_dispose
 
 
 # s665 # say65620
 label morte_s665: # from 664.0
-    nr '"To je jeden z mých mnoha talentů. Říkám tomu Litanie Kleteb. Víš, někdy opravdu dokážeš někoho vytočit jako parní turbínu jediným vhodným komentářem nebo nadávkou. Řeknu pár věcí a z uší jde pára. No je fakt, že potom se většinou příšerně naběhám kolem a bolej mě uši z těch skřeků, co na mě ten chudák řve, ale… chápeš, ne?"'
+    nr '"To je jeden z mých mnoha talentů. Říkám tomu Litanie Kleteb. Víš, někdy opravdu dokážeš někoho vytočit jako parní turbínu jediným vhodným komentářem nebo nadávkou. Řeknu pár věcí a z uší jde pára. No je fakt, že potom se většinou příšerně naběhám kolem a bolej mě uši z těch skřeků, co na mě ten chudák řve, ale… chápeš, ne?"{#morte_s665_}'
 
     menu:
-        '"Jak to funguje?"':
+        '"Jak to funguje?"{#morte_s665_r65621}':
             # a1294 # r65621
             $ morteLogic.r65621_action()
             jump morte_s666
 
-        '"Ještě něco?"' if morteLogic.r65622_condition():
+        '"Ještě něco?"{#morte_s665_r65622}' if morteLogic.r65622_condition():
             # a1295 # r65622
             jump morte_s667
 
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s665_r65623}':
             # a1296 # r65623
             jump morte_s329
 
-        '"Hmmm. To by mohlo být užitečné. Pojďme."':
+        '"Hmmm. To by mohlo být užitečné. Pojďme."{#morte_s665_r65624}':
             # a1297 # r65624
             jump morte_dispose
 
 
 # s666 # say65626
 label morte_s666: # from 329.3 665.0 729.3
-    nr '"No, můžu na někoho naplivat tolik nadávek, že bude vidět rudě a pak mě bude honit kolem dokola, aby mi ty kecy narval zpátky do huby."  POZNÁMKA: Morte má speciální schopnost jménem Litanie Kleteb. Je to nemagický výsměch. Pokud cíl neodolá, má postih na brnění, útoky a nebude dělat nic jiného, než že se bude snažit zasáhnout Morta zbraní. Čím více nadávek Morte uslyší, tím lepší bude jeho schopnost. Litanie Kleteb je VELMI efektivní proti mágům.'
+    nr '"No, můžu na někoho naplivat tolik nadávek, že bude vidět rudě a pak mě bude honit kolem dokola, aby mi ty kecy narval zpátky do huby."  POZNÁMKA: Morte má speciální schopnost jménem Litanie Kleteb. Je to nemagický výsměch. Pokud cíl neodolá, má postih na brnění, útoky a nebude dělat nic jiného, než že se bude snažit zasáhnout Morta zbraní. Čím více nadávek Morte uslyší, tím lepší bude jeho schopnost. Litanie Kleteb je VELMI efektivní proti mágům.{#morte_s666_}'
 
     menu:
-        '"Můžeš dělat ještě něco dalšího?"' if morteLogic.r65627_condition():
+        '"Můžeš dělat ještě něco dalšího?"{#morte_s666_r65627}' if morteLogic.r65627_condition():
             # a1298 # r65627
             jump morte_s667
 
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s666_r65628}':
             # a1299 # r65628
             jump morte_s329
 
-        '"Hmmm. To by mohlo být užitečné. Pojďme."':
+        '"Hmmm. To by mohlo být užitečné. Pojďme."{#morte_s666_r65629}':
             # a1300 # r65629
             jump morte_dispose
 
 
 # s667 # say65630
 label morte_s667: # from 663.1 665.1 666.0
-    nr '"No, když jsem tak seděl na pr… teda když jsem odpočíval na Lotharově poličce a čekal, až mě najdeš, zatímco ty sis někde užíval - mimochodem dík, ten odpočinek a nudu jsem fakt potřeboval - tak jsem si našel pár kámošů. Říkali, že kdybych prej potřeboval píchnout, tak že s nima můžu počítat, že stačí zavolat."'
+    nr '"No, když jsem tak seděl na pr… teda když jsem odpočíval na Lotharově poličce a čekal, až mě najdeš, zatímco ty sis někde užíval - mimochodem dík, ten odpočinek a nudu jsem fakt potřeboval - tak jsem si našel pár kámošů. Říkali, že kdybych prej potřeboval píchnout, tak že s nima můžu počítat, že stačí zavolat."{#morte_s667_}'
 
     menu:
-        '"Kamarády? Co tím myslíš?"':
+        '"Kamarády? Co tím myslíš?"{#morte_s667_r65631}':
             # a1301 # r65631
             $ morteLogic.j65637_s667_r65631_action()
             jump morte_s668
 
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s667_r65632}':
             # a1302 # r65632
             jump morte_s329
 
-        '"Tak to rád slyším. Pojďme."':
+        '"Tak to rád slyším. Pojďme."{#morte_s667_r65633}':
             # a1303 # r65633
             jump morte_dispose
 
 
 # s668 # say65634
 label morte_s668: # from 667.0
-    nr '"No já jenom zapískám a oni se tak nějak ukážou. Je to dobrá banda třískačů. A hryžou jako hladoví psi."  POZNÁMKA: Morte má (teď) speciální schopnost "Dotěrná lebka." Když ji použije, přivolá bandu lebek, která se přihrne a několikrát si zakousne do nepřítele. Síla  a způsobované poškození záleží na Mortově úrovni. Schopnost se dá použít jenom několikrát denně.'
+    nr '"No já jenom zapískám a oni se tak nějak ukážou. Je to dobrá banda třískačů. A hryžou jako hladoví psi."  POZNÁMKA: Morte má (teď) speciální schopnost "Dotěrná lebka." Když ji použije, přivolá bandu lebek, která se přihrne a několikrát si zakousne do nepřítele. Síla  a způsobované poškození záleží na Mortově úrovni. Schopnost se dá použít jenom několikrát denně.{#morte_s668_}'
 
     menu:
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s668_r65635}':
             # a1304 # r65635
             jump morte_s329
 
-        '"Tak to rád slyším. Pojďme."':
+        '"Tak to rád slyším. Pojďme."{#morte_s668_r65636}':
             # a1305 # r65636
             jump morte_dispose
 
 
 # s669 # say65638
 label morte_s669: # from 329.5 729.5
-    nr '"No, tak *já* bych to viděl takhle…"'
+    nr '"No, tak *já* bych to viděl takhle…"{#morte_s669_}'
 
     menu:
-        '"Pokračuj…"' if morteLogic.r65639_condition():
+        '"Pokračuj…"{#morte_s669_r65639}' if morteLogic.r65639_condition():
             # a1306 # r65639
             jump morte_s671
 
-        '"Pokračuj…"' if morteLogic.r65640_condition():
+        '"Pokračuj…"{#morte_s669_r65640}' if morteLogic.r65640_condition():
             # a1307 # r65640
             jump morte_s672
 
-        '"Pokračuj…"' if morteLogic.r65641_condition():
+        '"Pokračuj…"{#morte_s669_r65641}' if morteLogic.r65641_condition():
             # a1308 # r65641
             jump morte_s673
 
-        '"Pokračuj…"' if morteLogic.r65642_condition():
+        '"Pokračuj…"{#morte_s669_r65642}' if morteLogic.r65642_condition():
             # a1309 # r65642
             jump morte_s670
 
-        '"Pokračuj…"' if morteLogic.r65643_condition():
+        '"Pokračuj…"{#morte_s669_r65643}' if morteLogic.r65643_condition():
             # a1310 # r65643
             jump morte_s674
 
-        '"Pokračuj…"' if morteLogic.r65644_condition():
+        '"Pokračuj…"{#morte_s669_r65644}' if morteLogic.r65644_condition():
             # a1311 # r65644
             jump morte_s675
 
-        '"Pokračuj…"' if morteLogic.r65645_condition():
+        '"Pokračuj…"{#morte_s669_r65645}' if morteLogic.r65645_condition():
             # a1312 # r65645
             jump morte_s677
 
-        '"Pokračuj…"' if morteLogic.r65646_condition():
+        '"Pokračuj…"{#morte_s669_r65646}' if morteLogic.r65646_condition():
             # a1313 # r65646
             jump morte_s680
 
-        '"Pokračuj…"' if morteLogic.r65647_condition():
+        '"Pokračuj…"{#morte_s669_r65647}' if morteLogic.r65647_condition():
             # a1314 # r65647
             jump morte_s681
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s669_r65648}':
             # a1315 # r65648
             jump morte_s329
 
-        '"No, když nad tím tak přemýšlím, radši na to zapomeň. Pojďme."':
+        '"No, když nad tím tak přemýšlím, radši na to zapomeň. Pojďme."{#morte_s669_r65649}':
             # a1316 # r65649
             jump morte_dispose
 
 
 # s670 # say65650
 label morte_s670: # from 669.3
-    nr '"Podle toho, jak to vidím já, je to tvoje šou, náčelníku. Nemůžu ti říct skoro nic, co by ti nějak píchlo. Můžu ti vynadat, jestli chceš, ale asi by to nepomohlo. Zkrátka: ničevó! Budeš si muset poradit sám."'
+    nr '"Podle toho, jak to vidím já, je to tvoje šou, náčelníku. Nemůžu ti říct skoro nic, co by ti nějak píchlo. Můžu ti vynadat, jestli chceš, ale asi by to nepomohlo. Zkrátka: ničevó! Budeš si muset poradit sám."{#morte_s670_}'
 
     menu:
-        '"Tak to je fakt velká *změna*. Mám ještě nějaké otázky…"':
+        '"Tak to je fakt velká *změna*. Mám ještě nějaké otázky…"{#morte_s670_r65651}':
             # a1317 # r65651
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s670_r65652}':
             # a1318 # r65652
             jump morte_dispose
 
 
 # s671 # say65653
 label morte_s671: # from 669.0
-    nr '"Si myslím, že bys měl vyčuchat tohohle Pharoda, ať už má prdel schovanou kdekoli. Neměl bys na zádech ten manuál, hehe,  to je dobrý, manuál, kdyby tenhle Pharod o tobě nevěděl něco zajímavýho. Některej z místních MUSÍ vědět, kde bysme ho našli."'
+    nr '"Si myslím, že bys měl vyčuchat tohohle Pharoda, ať už má prdel schovanou kdekoli. Neměl bys na zádech ten manuál, hehe,  to je dobrý, manuál, kdyby tenhle Pharod o tobě nevěděl něco zajímavýho. Některej z místních MUSÍ vědět, kde bysme ho našli."{#morte_s671_}'
 
     menu:
-        '"Pravda. Mám ještě nějaké otázky…"':
+        '"Pravda. Mám ještě nějaké otázky…"{#morte_s671_r65654}':
             # a1319 # r65654
             jump morte_s329
 
-        '"Dobrá. Tak ho tedy budeme dál hledat."':
+        '"Dobrá. Tak ho tedy budeme dál hledat."{#morte_s671_r65655}':
             # a1320 # r65655
             jump morte_dispose
 
 
 # s672 # say65656
 label morte_s672: # from 669.1
-    nr '"Bysem řek, že bysme měli najít tudletu bronzovou kouli co nejdřív a pak se s ní vrátit k tomu starýmu kulhavci."'
+    nr '"Bysem řek, že bysme měli najít tudletu bronzovou kouli co nejdřív a pak se s ní vrátit k tomu starýmu kulhavci."{#morte_s672_}'
 
     menu:
-        '"Pravda. Mám ještě nějaké otázky…"':
+        '"Pravda. Mám ještě nějaké otázky…"{#morte_s672_r65657}':
             # a1321 # r65657
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s672_r65658}':
             # a1322 # r65658
             jump morte_dispose
 
 
 # s673 # say65659
 label morte_s673: # from 669.2
-    nr '"Bysem řek, že bysme měli zjistit, kde skončila tvá chcíplotina. Možná pak nějak přídem na to, kdo a jak tě napsal do knihy mrtvejch."'
+    nr '"Bysem řek, že bysme měli zjistit, kde skončila tvá chcíplotina. Možná pak nějak přídem na to, kdo a jak tě napsal do knihy mrtvejch."{#morte_s673_}'
 
     menu:
-        '"Máš pravdu. Mám ještě nějaké otázky…"':
+        '"Máš pravdu. Mám ještě nějaké otázky…"{#morte_s673_r65660}':
             # a1323 # r65660
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s673_r65661}':
             # a1324 # r65661
             jump morte_dispose
 
 
 # s674 # say65662
 label morte_s674: # from 669.4
-    nr '"Asi bysme měli najít někoho, kdo vo tobě ví něco víc - a taky jak se z tebe stalo… todle." Morte zakroutil očima. "Někde tady ve Čtvrtích musí bejt nějakej bouchač, co vo tobě bude něco vědět."'
+    nr '"Asi bysme měli najít někoho, kdo vo tobě ví něco víc - a taky jak se z tebe stalo… todle." Morte zakroutil očima. "Někde tady ve Čtvrtích musí bejt nějakej bouchač, co vo tobě bude něco vědět."{#morte_s674_}'
 
     menu:
-        '"Máš pravdu. Mám ještě nějaké otázky…"':
+        '"Máš pravdu. Mám ještě nějaké otázky…"{#morte_s674_r65663}':
             # a1325 # r65663
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s674_r65664}':
             # a1326 # r65664
             jump morte_dispose
 
 
 # s675 # say65665
 label morte_s675: # from 669.5
-    nr '"Asi bysme měli zjistit víc vo tý noční čarodějnici Ravel - a já ti povídám, šéfe, že já se na to *netěším*. Nějaký ti zaprášený mudrcové z Občanský Haly by mohli mít nějakýho tušáka, nebo možná bude něco zajímavýho v některým senzorickým šutráku."'
+    nr '"Asi bysme měli zjistit víc vo tý noční čarodějnici Ravel - a já ti povídám, šéfe, že já se na to *netěším*. Nějaký ti zaprášený mudrcové z Občanský Haly by mohli mít nějakýho tušáka, nebo možná bude něco zajímavýho v některým senzorickým šutráku."{#morte_s675_}'
 
     menu:
-        '"Občanská Hala? Senzorické… kameny?"' if morteLogic.r65666_condition():
+        '"Občanská Hala? Senzorické… kameny?"{#morte_s675_r65666}' if morteLogic.r65666_condition():
             # a1327 # r65666
             $ morteLogic.j65669_s675_r65666_action()
             jump morte_s676
 
-        '"Máš pravdu. Mám ještě nějaké otázky…"':
+        '"Máš pravdu. Mám ještě nějaké otázky…"{#morte_s675_r65667}':
             # a1328 # r65667
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s675_r65668}':
             # a1329 # r65668
             jump morte_dispose
 
 
 # s676 # say65670
 label morte_s676: # from 675.0
-    nr '"Soráč, náčelníku. Sem zapomněl, že víš sotva tolik, co totální zelenáč přímo ze Základní materiální. Hele, Hala, to je hlavní bejvák Vnímavejch, je to v Úřednický čtvrti. Mají tam knihovny plný senzorickejch šutráků, ve kterých sou uložený zážitky a zkušenosti, a taky tam smrdí hromada mudrců, vědátorů, učitelů a profesorů, kteří by nám mohli prásknout nějaký zajímavosti na tu Ravel."'
+    nr '"Soráč, náčelníku. Sem zapomněl, že víš sotva tolik, co totální zelenáč přímo ze Základní materiální. Hele, Hala, to je hlavní bejvák Vnímavejch, je to v Úřednický čtvrti. Mají tam knihovny plný senzorickejch šutráků, ve kterých sou uložený zážitky a zkušenosti, a taky tam smrdí hromada mudrců, vědátorů, učitelů a profesorů, kteří by nám mohli prásknout nějaký zajímavosti na tu Ravel."{#morte_s676_}'
 
     menu:
-        '"Máš pravdu. Mám ještě nějaké otázky…"':
+        '"Máš pravdu. Mám ještě nějaké otázky…"{#morte_s676_r65671}':
             # a1330 # r65671
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s676_r65672}':
             # a1331 # r65672
             jump morte_dispose
 
 
 # s677 # say65673
 label morte_s677: # from 669.6
-    nr '"No, Ravel skončila v bludišti. Takže asi bude NĚJAKEJ portál a NĚJAKEJ klíč, který by nás tam mohli dostat, teda pokud eště furt chceš."'
+    nr '"No, Ravel skončila v bludišti. Takže asi bude NĚJAKEJ portál a NĚJAKEJ klíč, který by nás tam mohli dostat, teda pokud eště furt chceš."{#morte_s677_}'
 
     menu:
-        '"Nevíš, co by mohl být klíč k jejímu bludišti?"' if morteLogic.r65674_condition():
+        '"Nevíš, co by mohl být klíč k jejímu bludišti?"{#morte_s677_r65674}' if morteLogic.r65674_condition():
             # a1332 # r65674
             $ morteLogic.j65678_s677_r65674_action()
             jump morte_s678
 
-        '"Nevíš, kde bych našel portál, který vede do toho bludiště?"':
+        '"Nevíš, kde bych našel portál, který vede do toho bludiště?"{#morte_s677_r65675}':
             # a1333 # r65675
             jump morte_s679
 
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s677_r65676}':
             # a1334 # r65676
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s677_r65677}':
             # a1335 # r65677
             jump morte_dispose
 
 
 # s678 # say65679
 label morte_s678: # from 677.0
-    nr '"Nemám tušáka - hele, přece si to vem: „kousek Ravel?“ To může být cokoli od její uschlý bradavice přes nějaký umělecký dílo, co spáchala, až po trochu uschlejch slin, co jí steklo z pysku. Je to moc povšechný, chápeš? Ale vsadil bych se, že NĚKDO v Občanský Hale by o tom mohl mít tušáka, jak sehnat kousek tý šílený čarodějnice. Pokud to nevyjde, můžem prolízt senzorický šutry, co tam maj. Možná že některej z těch šutráků bude něco vědět."'
+    nr '"Nemám tušáka - hele, přece si to vem: „kousek Ravel?“ To může být cokoli od její uschlý bradavice přes nějaký umělecký dílo, co spáchala, až po trochu uschlejch slin, co jí steklo z pysku. Je to moc povšechný, chápeš? Ale vsadil bych se, že NĚKDO v Občanský Hale by o tom mohl mít tušáka, jak sehnat kousek tý šílený čarodějnice. Pokud to nevyjde, můžem prolízt senzorický šutry, co tam maj. Možná že některej z těch šutráků bude něco vědět."{#morte_s678_}'
 
     menu:
-        '"Nevíš, kde bych našel portál, který vede do toho bludiště?"':
+        '"Nevíš, kde bych našel portál, který vede do toho bludiště?"{#morte_s678_r65680}':
             # a1336 # r65680
             jump morte_s679
 
-        '"Máš pravdu. Mám ještě nějaké otázky…"':
+        '"Máš pravdu. Mám ještě nějaké otázky…"{#morte_s678_r65681}':
             # a1337 # r65681
             jump morte_s329
 
-        '"Dobrá. Tak budeme hledat dál."':
+        '"Dobrá. Tak budeme hledat dál."{#morte_s678_r65682}':
             # a1338 # r65682
             jump morte_dispose
 
 
 # s679 # say65683
 label morte_s679: # from 677.1 678.0
-    nr '"Nemám tušáka, náčelníku. V Sigilu sou tisíce portálů, milióny. Bysem řek, že můžem prubnout Občanskou Halu. Tam asi nebude, ale některej ze senzorickejch šutráků by moh něco vědět. A pokud to nevyjde, tak já povídám todle: Vykašlem se na todleto pobíhání. Dyž nemůžeš něco vyřešit, najdi si někoho schopnýho a otravuj ho tak dlouho, až to vyřeší za tebe. Zkrátka najdeme někoho, kdo nám ten blbej portál UDĚLÁ."'
+    nr '"Nemám tušáka, náčelníku. V Sigilu sou tisíce portálů, milióny. Bysem řek, že můžem prubnout Občanskou Halu. Tam asi nebude, ale některej ze senzorickejch šutráků by moh něco vědět. A pokud to nevyjde, tak já povídám todle: Vykašlem se na todleto pobíhání. Dyž nemůžeš něco vyřešit, najdi si někoho schopnýho a otravuj ho tak dlouho, až to vyřeší za tebe. Zkrátka najdeme někoho, kdo nám ten blbej portál UDĚLÁ."{#morte_s679_}'
 
     menu:
-        '"Dobrá tedy. Mám ještě nějaké otázky…"':
+        '"Dobrá tedy. Mám ještě nějaké otázky…"{#morte_s679_r65684}':
             # a1339 # r65684
             jump morte_s329
 
-        '"Dobrá. Tak tedy pojďme dál."':
+        '"Dobrá. Tak tedy pojďme dál."{#morte_s679_r65685}':
             # a1340 # r65685
             jump morte_dispose
 
 
 # s680 # say65686
 label morte_s680: # from 669.7
-    nr '"Bysem řek, že bysme měli najít, co potřebujem a pak prásknout do bot, až se nám bude vod zadků kouřit, náčelníku. Z tohodle místa mi běhá mráz po zádech a to nemám záda. Jasný?"'
+    nr '"Bysem řek, že bysme měli najít, co potřebujem a pak prásknout do bot, až se nám bude vod zadků kouřit, náčelníku. Z tohodle místa mi běhá mráz po zádech a to nemám záda. Jasný?"{#morte_s680_}'
 
     menu:
-        '"To je fakt. Mám ještě nějaké otázky…"':
+        '"To je fakt. Mám ještě nějaké otázky…"{#morte_s680_r65687}':
             # a1341 # r65687
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme dál."':
+        '"Dobrá tedy. Pojďme dál."{#morte_s680_r65688}':
             # a1342 # r65688
             jump morte_dispose
 
 
 # s681 # say65689
 label morte_s681: # from 669.8
-    nr '"Dostals mě, náčelníku. Teď je to tvoje šou - já si tu akorát poletuju někde kolem tebe."'
+    nr '"Dostals mě, náčelníku. Teď je to tvoje šou - já si tu akorát poletuju někde kolem tebe."{#morte_s681_}'
 
     menu:
-        '"To je fakt. Mám ještě nějaké otázky…"':
+        '"To je fakt. Mám ještě nějaké otázky…"{#morte_s681_r65690}':
             # a1343 # r65690
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s681_r65691}':
             # a1344 # r65691
             jump morte_dispose
 
 
 # s682 # say65692
 label morte_s682: # from 651.2
-    nr '"Ne… málem tě stáhli i z kůže. Jak už sem povídal, vypadá to, jako bys měl ten deník naškrábanej na vlastní kůži."'
+    nr '"Ne… málem tě stáhli i z kůže. Jak už sem povídal, vypadá to, jako bys měl ten deník naškrábanej na vlastní kůži."{#morte_s682_}'
 
     menu:
-        '"A ty si seš jistý, že neznáš nikoho jménem Pharod?"' if morteLogic.r65693_condition():
+        '"A ty si seš jistý, že neznáš nikoho jménem Pharod?"{#morte_s682_r65693}' if morteLogic.r65693_condition():
             # a1345 # r65693
             jump morte_s683
 
-        '"To je fakt. Mám ještě nějaké otázky…"':
+        '"To je fakt. Mám ještě nějaké otázky…"{#morte_s682_r65694}':
             # a1346 # r65694
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s682_r65695}':
             # a1347 # r65695
             jump morte_dispose
 
 
 # s683 # say65696
 label morte_s683: # from 682.0
-    nr '"Ne-e. Ale někdo by to moh vědět. Zeptáme se domorodců."'
+    nr '"Ne-e. Ale někdo by to moh vědět. Zeptáme se domorodců."{#morte_s683_}'
 
     menu:
-        '"Než půjdeme, mám ještě nějaké otázky…"':
+        '"Než půjdeme, mám ještě nějaké otázky…"{#morte_s683_r65697}':
             # a1348 # r65697
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s683_r65698}':
             # a1349 # r65698
             jump morte_dispose
 
 
 # s684 # say65699
 label morte_s684: # from 329.6 729.6
-    nr '"Jo… mimir je lítající encyklopedie. Dáš do něj informaci, vytáhneš z něj informaci."'
+    nr '"Jo… mimir je lítající encyklopedie. Dáš do něj informaci, vytáhneš z něj informaci."{#morte_s684_}'
 
     menu:
-        '"Ale nejsou mimirové udělaní z nějakého stříbřitého kovu?"' if morteLogic.r65700_condition():
+        '"Ale nejsou mimirové udělaní z nějakého stříbřitého kovu?"{#morte_s684_r65700}' if morteLogic.r65700_condition():
             # a1350 # r65700
             jump morte_s685
 
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s684_r65701}':
             # a1351 # r65701
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s684_r65702}':
             # a1352 # r65702
             jump morte_dispose
 
 
 # s685 # say65703
 label morte_s685: # from 684.0
-    nr '"A co? Možná někerý sou, ale *já ne*. A ve Sférách sou i divnější věci, šéfe. Třeba chlast, co některý šílení magoři chlastaj."'
+    nr '"A co? Možná někerý sou, ale *já ne*. A ve Sférách sou i divnější věci, šéfe. Třeba chlast, co některý šílení magoři chlastaj."{#morte_s685_}'
 
     menu:
-        '"Nemyslím si, že jsi mimir, Morte. Co jsi?"':
+        '"Nemyslím si, že jsi mimir, Morte. Co jsi?"{#morte_s685_r65704}':
             # a1353 # r65704
             jump morte_s686
 
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s685_r65705}':
             # a1354 # r65705
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s685_r65706}':
             # a1355 # r65706
             jump morte_dispose
 
 
 # s686 # say65707
 label morte_s686: # from 685.0
-    nr '"Co je to za výslech? Co *ty* vůbec víš o mimirech?"'
+    nr '"Co je to za výslech? Co *ty* vůbec víš o mimirech?"{#morte_s686_}'
 
     menu:
-        '"Vím dost, abych poznal, že mi lžeš."' if morteLogic.r65708_condition():
+        '"Vím dost, abych poznal, že mi lžeš."{#morte_s686_r65708}' if morteLogic.r65708_condition():
             # a1356 # r65708
             jump morte_s687
 
-        '"Vím dost, abych poznal, že mi lžeš. Nejdřív ten řádek na mých zádech, co jsi mi nepřečetl, tvrdil, že ti nemám věřit, teď tohle. Co si mám podle tebe myslet?"' if morteLogic.r65709_condition():
+        '"Vím dost, abych poznal, že mi lžeš. Nejdřív ten řádek na mých zádech, co jsi mi nepřečetl, tvrdil, že ti nemám věřit, teď tohle. Co si mám podle tebe myslet?"{#morte_s686_r65709}' if morteLogic.r65709_condition():
             # a1357 # r65709
             jump morte_s687
 
-        '"No řekl bych že nic. Mám ještě nějaké otázky…"':
+        '"No řekl bych že nic. Mám ještě nějaké otázky…"{#morte_s686_r65710}':
             # a1358 # r65710
             $ morteLogic.j65712_s686_r65710_action()
             jump morte_s329
 
-        '"No tak to nic. Pojďme."':
+        '"No tak to nic. Pojďme."{#morte_s686_r65711}':
             # a1359 # r65711
             $ morteLogic.j65712_s686_r65711_action()
             jump morte_dispose
@@ -10023,86 +10023,86 @@ label morte_s686: # from 685.0
 
 # s687 # say65713
 label morte_s687: # from 686.0 686.1
-    nr '"Oukej, *nejsem* mimir, ale vím spoustu věcí, takže bych klidně *mohl* bejt mimir."'
+    nr '"Oukej, *nejsem* mimir, ale vím spoustu věcí, takže bych klidně *mohl* bejt mimir."{#morte_s687_}'
 
     menu:
-        '"Tak co tedy jsi?"':
+        '"Tak co tedy jsi?"{#morte_s687_r65714}':
             # a1360 # r65714
             jump morte_s688
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s687_r65715}':
             # a1361 # r65715
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s687_r65716}':
             # a1362 # r65716
             jump morte_dispose
 
 
 # s688 # say65717
 label morte_s688: # from 687.0
-    nr '"Jsem lítající lebka, co toho spoustu ví."'
+    nr '"Jsem lítající lebka, co toho spoustu ví."{#morte_s688_}'
 
     menu:
-        '"A co ten Baatorianský zápach, který se kolem tebe šíří?"' if morteLogic.r65718_condition():
+        '"A co ten Baatorianský zápach, který se kolem tebe šíří?"{#morte_s688_r65718}' if morteLogic.r65718_condition():
             # a1363 # r65718
             jump morte_s690
 
-        '"A co ten Baatorianský zápach, který se kolem tebe šíří?"' if morteLogic.r65719_condition():
+        '"A co ten Baatorianský zápach, který se kolem tebe šíří?"{#morte_s688_r65719}' if morteLogic.r65719_condition():
             # a1364 # r65719
             jump morte_s689
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s688_r65720}':
             # a1365 # r65720
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s688_r65721}':
             # a1366 # r65721
             jump morte_dispose
 
 
 # s689 # say65722
 label morte_s689: # from 688.1
-    nr '"Jak TY víš, jak smrdí Baator?!"'
+    nr '"Jak TY víš, jak smrdí Baator?!"{#morte_s689_}'
 
     menu:
-        '"Protože jsem tam *byl*, Morte. Procházel jsem Avernem."':
+        '"Protože jsem tam *byl*, Morte. Procházel jsem Avernem."{#morte_s689_r65723}':
             # a1367 # r65723
             jump morte_s691
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s689_r65724}':
             # a1368 # r65724
             jump morte_s329
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s689_r65725}':
             # a1369 # r65725
             jump morte_dispose
 
 
 # s690 # say65726
 label morte_s690: # from 688.0
-    nr '"Jak TY víš, jak smrdí Baator?! Pokud - hej, ty ses o mě bavil s tou tanar„ri, že jo?! Co ví?!!"'
+    nr '"Jak TY víš, jak smrdí Baator?! Pokud - hej, ty ses o mě bavil s tou tanar„ri, že jo?! Co ví?!!"{#morte_s690_}'
 
     menu:
-        '"No, rozhodně se v něčem trefila. Je to zápach Baatoru, že?"':
+        '"No, rozhodně se v něčem trefila. Je to zápach Baatoru, že?"{#morte_s690_r65727}':
             # a1370 # r65727
             jump morte_s691
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s690_r65728}':
             # a1371 # r65728
             jump morte_s329
 
-        '"Zapomeň na to. Pojďme."':
+        '"Zapomeň na to. Pojďme."{#morte_s690_r65729}':
             # a1372 # r65729
             jump morte_dispose
 
 
 # s691 # say65730
 label morte_s691: # from 689.0 690.0
-    nr '"No, jo, ale - no jo, no. Tak trochu smrdím. *Promiň*."'
+    nr '"No, jo, ale - no jo, no. Tak trochu smrdím. *Promiň*."{#morte_s691_}'
 
     menu:
-        '"*Proč* smrdíš po Baatoru?"':
+        '"*Proč* smrdíš po Baatoru?"{#morte_s691_r65731}':
             # a1373 # r65731
             $ morteLogic.r65731_action()
             jump morte_s692
@@ -10110,10 +10110,10 @@ label morte_s691: # from 689.0 690.0
 
 # s692 # say65732
 label morte_s692: # from 691.0
-    nr '"Byl jsem nějakou dobu v pekle. Dost dlouhou dobu. A toho smradu se už pak jen tak nezbavíš."'
+    nr '"Byl jsem nějakou dobu v pekle. Dost dlouhou dobu. A toho smradu se už pak jen tak nezbavíš."{#morte_s692_}'
 
     menu:
-        '"Ty jsi byl v pekle? Co jsi tam DĚLAL?"':
+        '"Ty jsi byl v pekle? Co jsi tam DĚLAL?"{#morte_s692_r65733}':
             # a1374 # r65733
             $ morteLogic.r65733_action()
             jump morte_s693
@@ -10121,90 +10121,90 @@ label morte_s692: # from 691.0
 
 # s693 # say65734
 label morte_s693: # from 329.7 692.0 729.7
-    nr '"No víš, v Avernu, první vrstvě  Baatoru je takovej *pilíř*. Říká se mu Pilíř Lebek, ale je to spíš velká hromada hlav."'
+    nr '"No víš, v Avernu, první vrstvě  Baatoru je takovej *pilíř*. Říká se mu Pilíř Lebek, ale je to spíš velká hromada hlav."{#morte_s693_}'
 
     jump morte_s694
 
 
 # s694 # say65735
 label morte_s694: # from 693.0
-    nr '"Podle toho, co jsem slyšel, tak je *prý* většinou z hlav mudrců, učenců a takovejch týpků, kteří zaživa použili svý znalosti tohodle a támhletoho, aby trošinku pokroutili pravdu… tak moc, že díky tomu pak někomu ublížili nebo dokonce někoho zabili. No, když jsem *umřel*, skončil jsem tam. Sranda, co?"'
+    nr '"Podle toho, co jsem slyšel, tak je *prý* většinou z hlav mudrců, učenců a takovejch týpků, kteří zaživa použili svý znalosti tohodle a támhletoho, aby trošinku pokroutili pravdu… tak moc, že díky tomu pak někomu ublížili nebo dokonce někoho zabili. No, když jsem *umřel*, skončil jsem tam. Sranda, co?"{#morte_s694_}'
 
     menu:
-        '"Ani ne."':
+        '"Ani ne."{#morte_s694_r65846}':
             # a1375 # r65846
             jump morte_s695
 
 
 # s695 # say65736
 label morte_s695: # from 694.0
-    nr '"Eh…" Morte je chvíli zticha. "Jo, máš pravdu. Vůbec to není sranda. Hele, myslím, že sem toho zaživa spoustu věděl. A možná když jsem něco věděl, neřekl sem o tom pravdu. Možná sem pravdu trošinku překroutil, jednou nebo dvakrát a možná díky tomu někdo skončil v knize mrtvejch o chvilinku dřív, než by měl."'
+    nr '"Eh…" Morte je chvíli zticha. "Jo, máš pravdu. Vůbec to není sranda. Hele, myslím, že sem toho zaživa spoustu věděl. A možná když jsem něco věděl, neřekl sem o tom pravdu. Možná sem pravdu trošinku překroutil, jednou nebo dvakrát a možná díky tomu někdo skončil v knize mrtvejch o chvilinku dřív, než by měl."{#morte_s695_}'
 
     menu:
-        '"Pamatuješ si kdo?"':
+        '"Pamatuješ si kdo?"{#morte_s695_r65737}':
             # a1376 # r65737
             jump morte_s697
 
-        '"Byl jsem to já, že?"' if morteLogic.r65738_condition():
+        '"Byl jsem to já, že?"{#morte_s695_r65738}' if morteLogic.r65738_condition():
             # a1377 # r65738
             jump morte_s696
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65739_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s695_r65739}' if morteLogic.r65739_condition():
             # a1378 # r65739
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65740_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s695_r65740}' if morteLogic.r65740_condition():
             # a1379 # r65740
             jump morte_dispose
 
 
 # s696 # say65741
 label morte_s696: # from 695.1
-    nr 'Morte se na tebe chvíli mlčky dívá. "Jo. Nevím, *jak* to vím, šéfe, ale… myslím si to. Myslím si, že to kvůli tobě mě tam poslali. Ale nemůžu si vzpomenout, co se stalo. Dokonce si ani nepamatuju, jaký to bylo, když jsem byl člověk, vlastně si nepamatuju nic před tím. Než jsem se probral v Pilíři."'
+    nr 'Morte se na tebe chvíli mlčky dívá. "Jo. Nevím, *jak* to vím, šéfe, ale… myslím si to. Myslím si, že to kvůli tobě mě tam poslali. Ale nemůžu si vzpomenout, co se stalo. Dokonce si ani nepamatuju, jaký to bylo, když jsem byl člověk, vlastně si nepamatuju nic před tím. Než jsem se probral v Pilíři."{#morte_s696_}'
 
     menu:
-        '"Proč jsi zapomněl?"':
+        '"Proč jsi zapomněl?"{#morte_s696_r65742}':
             # a1380 # r65742
             jump morte_s698
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65743_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s696_r65743}' if morteLogic.r65743_condition():
             # a1381 # r65743
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65744_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s696_r65744}' if morteLogic.r65744_condition():
             # a1382 # r65744
             jump morte_dispose
 
 
 # s697 # say65745
 label morte_s697: # from 695.0
-    nr '"Nedokážu říct proč, ale myslím si, že jsi to byl *ty*. Alespoň jednou. Ale nemůžu si vzpomenout, co se stalo. Dokonce si ani nepamatuju, jaký to bylo, když jsem byl člověk, vlastně si nepamatuju nic před tím. Než jsem se probral v Pilíři."'
+    nr '"Nedokážu říct proč, ale myslím si, že jsi to byl *ty*. Alespoň jednou. Ale nemůžu si vzpomenout, co se stalo. Dokonce si ani nepamatuju, jaký to bylo, když jsem byl člověk, vlastně si nepamatuju nic před tím. Než jsem se probral v Pilíři."{#morte_s697_}'
 
     menu:
-        '"Proč jsi zapomněl?"':
+        '"Proč jsi zapomněl?"{#morte_s697_r65746}':
             # a1383 # r65746
             jump morte_s698
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65747_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s697_r65747}' if morteLogic.r65747_condition():
             # a1384 # r65747
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65748_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s697_r65748}' if morteLogic.r65748_condition():
             # a1385 # r65748
             jump morte_dispose
 
 
 # s698 # say65749
 label morte_s698: # from 696.0 697.0
-    nr '"To už tak bývá, když jeden zdechne. Řek bych, že ty o tom víš taky svý. Zkrátka… zapomeneš. Řek bych, že sem zaživa nebyl zrovna zářným příkladem společnosti… ale ksakru, kdo je?" Morte vzdychl. "Si zkrátka nemůžu pomoct. Nic není tak hnusný, jako bejt furt… *upřímnej.*"'
+    nr '"To už tak bývá, když jeden zdechne. Řek bych, že ty o tom víš taky svý. Zkrátka… zapomeneš. Řek bych, že sem zaživa nebyl zrovna zářným příkladem společnosti… ale ksakru, kdo je?" Morte vzdychl. "Si zkrátka nemůžu pomoct. Nic není tak hnusný, jako bejt furt… *upřímnej.*"{#morte_s698_}'
 
     menu:
-        '"Kromě odsouzení do pekel. To mi připadá jako mnohem horší, než říkat pravdu."' if morteLogic.r65750_condition():
+        '"Kromě odsouzení do pekel. To mi připadá jako mnohem horší, než říkat pravdu."{#morte_s698_r65750}' if morteLogic.r65750_condition():
             # a1386 # r65750
             $ morteLogic.r65750_action()
             jump morte_s699
 
-        '"No, to je pravda… ale musíš si vybírat lži opatrně."' if morteLogic.r65751_condition():
+        '"No, to je pravda… ale musíš si vybírat lži opatrně."{#morte_s698_r65751}' if morteLogic.r65751_condition():
             # a1387 # r65751
             $ morteLogic.r65751_action()
             jump morte_s699
@@ -10212,52 +10212,52 @@ label morte_s698: # from 696.0 697.0
 
 # s699 # say65752
 label morte_s699: # from 698.0 698.1
-    nr '"Jo… máš pravdu. *Zase.*" Morte zacvakal zubama. "Bych řek, že všechno to dobro a zlo a lhaní a podvádění tě nakonec ťapnou. A když jsem skončil v knize mrtvejch, byl sem na řadě se splátkama."'
+    nr '"Jo… máš pravdu. *Zase.*" Morte zacvakal zubama. "Bych řek, že všechno to dobro a zlo a lhaní a podvádění tě nakonec ťapnou. A když jsem skončil v knize mrtvejch, byl sem na řadě se splátkama."{#morte_s699_}'
 
     menu:
-        '"Jak jsi utekl z Pilíře?"':
+        '"Jak jsi utekl z Pilíře?"{#morte_s699_r65753}':
             # a1388 # r65753
             $ morteLogic.j53633_s699_r65753_action()
             jump morte_s700
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65754_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s699_r65754}' if morteLogic.r65754_condition():
             # a1389 # r65754
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65755_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s699_r65755}' if morteLogic.r65755_condition():
             # a1390 # r65755
             jump morte_dispose
 
 
 # s700 # say65757
 label morte_s700: # from 699.0
-    nr '"No… ty si mi pomoh, šéfe. Když ses ukázal u Pilíře, prorval sem se dopředu. Moje skvělý knouhau a okouzlující osobnost připoutaly tvou pozornost - věděl jsi, že *já* jsem ta hlava, která ví nejvíc. A tak sme se dohodli."'
+    nr '"No… ty si mi pomoh, šéfe. Když ses ukázal u Pilíře, prorval sem se dopředu. Moje skvělý knouhau a okouzlující osobnost připoutaly tvou pozornost - věděl jsi, že *já* jsem ta hlava, která ví nejvíc. A tak sme se dohodli."{#morte_s700_}'
 
     menu:
-        '"Dohodli?"':
+        '"Dohodli?"{#morte_s700_r65758}':
             # a1391 # r65758
             $ morteLogic.r65758_action()
             jump morte_s701
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65759_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s700_r65759}' if morteLogic.r65759_condition():
             # a1392 # r65759
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65760_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s700_r65760}' if morteLogic.r65760_condition():
             # a1393 # r65760
             jump morte_dispose
 
 
 # s701 # say65761
 label morte_s701: # from 700.0
-    nr 'Jak Morte mluví, tvůj pohled zrudnul, slyšíš vytí, příšerný *skřek*, který vznikl splynutím tisíců hlasů, které ječí, vřískají, řvou a VŠECHNY tě prosí, ječí, žebrají o osvobození, a Mortův hlas… slabý, téměř se v tom rámusu ztrácí. Jeho hlas zní zoufale, vyděšeně a… pateticky, tragicky, *ztraceně.*'
+    nr 'Jak Morte mluví, tvůj pohled zrudnul, slyšíš vytí, příšerný *skřek*, který vznikl splynutím tisíců hlasů, které ječí, vřískají, řvou a VŠECHNY tě prosí, ječí, žebrají o osvobození, a Mortův hlas… slabý, téměř se v tom rámusu ztrácí. Jeho hlas zní zoufale, vyděšeně a… pateticky, tragicky, *ztraceně.*{#morte_s701_}'
 
     menu:
-        'Ozvěna: "Ty. Lebko. Mluv."':
+        'Ozvěna: "Ty. Lebko. Mluv."{#morte_s701_r65762}':
             # a1394 # r65762
             jump morte_s702
 
-        'Zažeň vzpomínku.':
+        'Zažeň vzpomínku.{#morte_s701_r65763}':
             # a1395 # r65763
             $ morteLogic.r65763_action()
             jump morte_s706
@@ -10265,14 +10265,14 @@ label morte_s701: # from 700.0
 
 # s702 # say65764
 label morte_s702: # from 701.0
-    nr 'Ječící hlasy pozvolna utichly. Sleduješ malou zrudlou lebku, zkroucené rysy tváře, v pekelném světle podivně deformované. Obrátila k tobě své oči. Po tváři jí stéká krev a nějaký odporný výtok, zuby drkotají, jakoby zimou. "Já… já… m-m-m-můžu ti p-p-p-om-moct. Vím-m-m, c-c-co hledáš. Všechny ty h-h-hlavy… všechno vědění… p-prosím, *prosím* tě, uvolni m-mě. Nech mě, ať ti *pomůžu*. Řeknu ti všechno, *všechno*."'
+    nr 'Ječící hlasy pozvolna utichly. Sleduješ malou zrudlou lebku, zkroucené rysy tváře, v pekelném světle podivně deformované. Obrátila k tobě své oči. Po tváři jí stéká krev a nějaký odporný výtok, zuby drkotají, jakoby zimou. "Já… já… m-m-m-můžu ti p-p-p-om-moct. Vím-m-m, c-c-co hledáš. Všechny ty h-h-hlavy… všechno vědění… p-prosím, *prosím* tě, uvolni m-mě. Nech mě, ať ti *pomůžu*. Řeknu ti všechno, *všechno*."{#morte_s702_}'
 
     menu:
-        'Ozvěna: "*Řekneš*? PŘÍSAHEJ, lebko. PŘÍSAHEJ, že mi budeš sloužit až do konce mých dnů, jinak tě tady nechám."':
+        'Ozvěna: "*Řekneš*? PŘÍSAHEJ, lebko. PŘÍSAHEJ, že mi budeš sloužit až do konce mých dnů, jinak tě tady nechám."{#morte_s702_r65765}':
             # a1396 # r65765
             jump morte_s703
 
-        'Zažeň vzpomínku.':
+        'Zažeň vzpomínku.{#morte_s702_r65766}':
             # a1397 # r65766
             $ morteLogic.r65766_action()
             jump morte_s706
@@ -10280,14 +10280,14 @@ label morte_s702: # from 701.0
 
 # s703 # say65767
 label morte_s703: # from 702.0
-    nr '"Přísahám… přísahám, jenom mě prosím, *prosím* uvolni… já…" Vidíš, jak Morte slabě polkl, zahání zbytečky své hrdosti. "Já… já tě prosím. Nech mě, ať ti pomůžu. Prosím."'
+    nr '"Přísahám… přísahám, jenom mě prosím, *prosím* uvolni… já…" Vidíš, jak Morte slabě polkl, zahání zbytečky své hrdosti. "Já… já tě prosím. Nech mě, ať ti pomůžu. Prosím."{#morte_s703_}'
 
     menu:
-        'Ozvěna: "Dobrá tedy. Uvolním tě."':
+        'Ozvěna: "Dobrá tedy. Uvolním tě."{#morte_s703_r65768}':
             # a1398 # r65768
             jump morte_s704
 
-        'Zažeň vzpomínku.':
+        'Zažeň vzpomínku.{#morte_s703_r65769}':
             # a1399 # r65769
             $ morteLogic.r65769_action()
             jump morte_s706
@@ -10295,14 +10295,14 @@ label morte_s703: # from 702.0
 
 # s704 # say65770
 label morte_s704: # from 703.0
-    nr 'Pohled se posunul, jako byses pohyboval. Znovu začíná to šílené řvaní a skřehotání, znovu se ozývá ten jek z noční můry, plný výkřiků, nadávek, hrozeb a proseb… cítíš, jak tvé ruce vnikají do špinavé struktury pilíře, cítíš, jak se ti do kůže zarývají zuby, jak ti sežvýkávají kůži a pak… Cítíš, jak se tvé ruce sevřely kolem malé lebky a začínají ji rvát ven, rvou , tahají a vytrhávají ven z pilíře…'
+    nr 'Pohled se posunul, jako byses pohyboval. Znovu začíná to šílené řvaní a skřehotání, znovu se ozývá ten jek z noční můry, plný výkřiků, nadávek, hrozeb a proseb… cítíš, jak tvé ruce vnikají do špinavé struktury pilíře, cítíš, jak se ti do kůže zarývají zuby, jak ti sežvýkávají kůži a pak… Cítíš, jak se tvé ruce sevřely kolem malé lebky a začínají ji rvát ven, rvou , tahají a vytrhávají ven z pilíře…{#morte_s704_}'
 
     menu:
-        'Ozvěna: "Je VYKONÁNO."':
+        'Ozvěna: "Je VYKONÁNO."{#morte_s704_r65771}':
             # a1400 # r65771
             jump morte_s705
 
-        'Zažeň vzpomínku.':
+        'Zažeň vzpomínku.{#morte_s704_r65772}':
             # a1401 # r65772
             $ morteLogic.r65772_action()
             jump morte_s706
@@ -10310,15 +10310,15 @@ label morte_s704: # from 703.0
 
 # s705 # say65773
 label morte_s705: # from 704.0
-    nr 'Díváš se na krvavou lebku, která spočívá v tvých zjizvených dlaních, pokrytá slizem z pilíře. Zuby jí zacvakaly. Jednou, dvakrát. Připomíná ti to nářek bezmocného novorozeněte a připadá ti to - v očích muže, kterým jsi kdysi býval - neuvěřitelně patetické.'
+    nr 'Díváš se na krvavou lebku, která spočívá v tvých zjizvených dlaních, pokrytá slizem z pilíře. Zuby jí zacvakaly. Jednou, dvakrát. Připomíná ti to nářek bezmocného novorozeněte a připadá ti to - v očích muže, kterým jsi kdysi býval - neuvěřitelně patetické.{#morte_s705_}'
 
     menu:
-        'Ozvěna: "Uvolnil jsem tě. Teď je tvůj život… a tvá smrt mým majetkem… Morte."' if morteLogic.r65774_condition():
+        'Ozvěna: "Uvolnil jsem tě. Teď je tvůj život… a tvá smrt mým majetkem… Morte."{#morte_s705_r65774}' if morteLogic.r65774_condition():
             # a1402 # r65774
             $ morteLogic.r65774_action()
             jump morte_s706
 
-        'Ozvěna: "Uvolnil jsem tě. Teď je tvůj život… a tvá smrt mým majetkem… Morte."' if morteLogic.r65775_condition():
+        'Ozvěna: "Uvolnil jsem tě. Teď je tvůj život… a tvá smrt mým majetkem… Morte."{#morte_s705_r65775}' if morteLogic.r65775_condition():
             # a1403 # r65775
             $ morteLogic.r65775_action()
             jump morte_s706
@@ -10326,135 +10326,135 @@ label morte_s705: # from 704.0
 
 # s706 # say65776
 label morte_s706: # from 701.1 702.1 703.1 704.1 705.0 705.1
-    nr 'Pohled se ti zamlžil, přeludy minulosti odplouvají pryč. Morte pořád něco povídá. "Chvilku jsme si povídali, ty a já, šéfe, vypracovávali jsme dohodu, která bude vyhovovat mně i tobě. Myslím, že oba jsme na toho druhého udělali dojem. Ty jsi mi potom nabídnul, abych šel s tebou. No a do té doby jsem s tebou tak nějak pořád."'
+    nr 'Pohled se ti zamlžil, přeludy minulosti odplouvají pryč. Morte pořád něco povídá. "Chvilku jsme si povídali, ty a já, šéfe, vypracovávali jsme dohodu, která bude vyhovovat mně i tobě. Myslím, že oba jsme na toho druhého udělali dojem. Ty jsi mi potom nabídnul, abych šel s tebou. No a do té doby jsem s tebou tak nějak pořád."{#morte_s706_}'
 
     menu:
-        '"Uh… co se stalo pak?"':
+        '"Uh… co se stalo pak?"{#morte_s706_r65777}':
             # a1404 # r65777
             jump morte_s707
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65778_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s706_r65778}' if morteLogic.r65778_condition():
             # a1405 # r65778
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65779_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s706_r65779}' if morteLogic.r65779_condition():
             # a1406 # r65779
             jump morte_dispose
 
 
 # s707 # say65780
 label morte_s707: # from 706.0
-    nr '"No, nevěděl jsem, že když vyjdu ven z Pilíře, ztratím většinu jeho znalostí… teda, jak jsem to jenom mohl vědět, nikdy jsem mimo tu hnusnou věc nebyl. Ale tys to naštěstí pochopil…"'
+    nr '"No, nevěděl jsem, že když vyjdu ven z Pilíře, ztratím většinu jeho znalostí… teda, jak jsem to jenom mohl vědět, nikdy jsem mimo tu hnusnou věc nebyl. Ale tys to naštěstí pochopil…"{#morte_s707_}'
 
     menu:
-        '"Ztratil jsi znalosti, které jsi měl…?"':
+        '"Ztratil jsi znalosti, které jsi měl…?"{#morte_s707_r65781}':
             # a1407 # r65781
             $ morteLogic.r65781_action()
             jump morte_s708
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65782_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s707_r65782}' if morteLogic.r65782_condition():
             # a1408 # r65782
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65783_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s707_r65783}' if morteLogic.r65783_condition():
             # a1409 # r65783
             jump morte_dispose
 
 
 # s708 # say65784
 label morte_s708: # from 707.0
-    nr 'Tvůj pohled se znovu zkroutil a zamlžil, zamotala se ti hlava. Cítíš, jak se ti svírají vnitřnosti. A slyšíš praskání a lámání kostí a Mortovo vytí. Vyje bolestí, ječí, prosí někoho, aby toho nechal, aby ho *nezabíjel*.. a tvá ruka znovu udeřila a znovu a znovu…"'
+    nr 'Tvůj pohled se znovu zkroutil a zamlžil, zamotala se ti hlava. Cítíš, jak se ti svírají vnitřnosti. A slyšíš praskání a lámání kostí a Mortovo vytí. Vyje bolestí, ječí, prosí někoho, aby toho nechal, aby ho *nezabíjel*.. a tvá ruka znovu udeřila a znovu a znovu…"{#morte_s708_}'
 
     menu:
-        'Ozvěna: "PROKLÍNÁM tě, lebko. LHALA jsi mi. VRAZÍM TĚ ZPÁTKY DO TOHO PROKLETÉHO PILÍŘE A NECHÁM TĚ TAM *CHCÍPNOUT!*"':
+        'Ozvěna: "PROKLÍNÁM tě, lebko. LHALA jsi mi. VRAZÍM TĚ ZPÁTKY DO TOHO PROKLETÉHO PILÍŘE A NECHÁM TĚ TAM *CHCÍPNOUT!*"{#morte_s708_r65785}':
             # a1410 # r65785
             jump morte_s709
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65786_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s708_r65786}' if morteLogic.r65786_condition():
             # a1411 # r65786
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65787_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s708_r65787}' if morteLogic.r65787_condition():
             # a1412 # r65787
             jump morte_dispose
 
 
 # s709 # say65788
 label morte_s709: # from 708.0
-    nr 'Je slyšet chřestění kostí na něčem, co zní jako kov - podlaha nebo zeď. A taky zachřestění vyražených zubů. Slyšíš Morta, jak kňourá jako zmlácený pes a prosí tě, abys-'
+    nr 'Je slyšet chřestění kostí na něčem, co zní jako kov - podlaha nebo zeď. A taky zachřestění vyražených zubů. Slyšíš Morta, jak kňourá jako zmlácený pes a prosí tě, abys-{#morte_s709_}'
 
     menu:
-        'Ozvěna: "VĚZ, ŽE TVÉ UTRPENÍ V PILÍŘI JE *NIC* PROTI MUKÁM, KTERÉ TI PŘIPRAVÍM. BUDEŠ *TRPĚT*."':
+        'Ozvěna: "VĚZ, ŽE TVÉ UTRPENÍ V PILÍŘI JE *NIC* PROTI MUKÁM, KTERÉ TI PŘIPRAVÍM. BUDEŠ *TRPĚT*."{#morte_s709_r65789}':
             # a1413 # r65789
             $ morteLogic.r65789_action()
             jump morte_s710
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65790_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s709_r65790}' if morteLogic.r65790_condition():
             # a1414 # r65790
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65791_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s709_r65791}' if morteLogic.r65791_condition():
             # a1415 # r65791
             jump morte_dispose
 
 
 # s710 # say65792
 label morte_s710: # from 709.0
-    nr 'Pohled se znovu zamlžil a Mortův nářek přešel do rytmického blábolení. "Uvědomil sis, že pořád jsem použitelný ke spoustě věcí, a tak jsem zůstal s tebou a od té doby jsem pořád s tebou."'
+    nr 'Pohled se znovu zamlžil a Mortův nářek přešel do rytmického blábolení. "Uvědomil sis, že pořád jsem použitelný ke spoustě věcí, a tak jsem zůstal s tebou a od té doby jsem pořád s tebou."{#morte_s710_}'
 
     menu:
-        '"Morte, co jsem chtěl od Pilíře? A jak je to dlouho, co jsem tě uvolnil?"':
+        '"Morte, co jsem chtěl od Pilíře? A jak je to dlouho, co jsem tě uvolnil?"{#morte_s710_r65793}':
             # a1416 # r65793
             jump morte_s711
 
-        '"Uh… zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65794_condition():
+        '"Uh… zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s710_r65794}' if morteLogic.r65794_condition():
             # a1417 # r65794
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65795_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s710_r65795}' if morteLogic.r65795_condition():
             # a1418 # r65795
             jump morte_dispose
 
 
 # s711 # say65796
 label morte_s711: # from 710.0
-    nr 'Morte chvíli přemýšlí. "No, pokud jde o to, jak přesně dlouho, tak to nevím, šéfe - celý věky, řek bych. Pokaždý jsem dělal, co jsem moh, abych ti pomoh, ale…" Morte vzdychl. "Není to lehký. A co týče toho, cos teda jako chtěl od Pilíře, tak to nevím. Jakmile jsi mě vyrval ven, zapomněl jsem to."'
+    nr 'Morte chvíli přemýšlí. "No, pokud jde o to, jak přesně dlouho, tak to nevím, šéfe - celý věky, řek bych. Pokaždý jsem dělal, co jsem moh, abych ti pomoh, ale…" Morte vzdychl. "Není to lehký. A co týče toho, cos teda jako chtěl od Pilíře, tak to nevím. Jakmile jsi mě vyrval ven, zapomněl jsem to."{#morte_s711_}'
 
     menu:
-        '"Morte, proč jsi mi něco NEŘEKL, když jsme byli ještě v Márnici?"':
+        '"Morte, proč jsi mi něco NEŘEKL, když jsme byli ještě v Márnici?"{#morte_s711_r65797}':
             # a1419 # r65797
             jump morte_s712
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65798_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s711_r65798}' if morteLogic.r65798_condition():
             # a1420 # r65798
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65799_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s711_r65799}' if morteLogic.r65799_condition():
             # a1421 # r65799
             jump morte_dispose
 
 
 # s712 # say65800
 label morte_s712: # from 711.0
-    nr 'Morte se najednou stáhl do obrany. "Protože nikdy *nevím*, co jsi zač! Některé z tvých inkarnací byly šílený, totálně mimo mísu! Jednou ses probral a byl si přesvědčenej, že *já* jsem tvoje lebka a pak jsi mě honil kolem dokola, chtěls mě rozmlátit a sežrat! Naštěstí tě na ulici srazil vůz. Jiná inkarnace, dobrá a zákonná,„ se mě snažila vrazit zpátky do Pilíře, protože “to je místo, kam patřím.„" Morte se zašklebil. "*Proto.* Kromě toho, nic ti to neudělalo, žes to nevěděl…"'
+    nr 'Morte se najednou stáhl do obrany. "Protože nikdy *nevím*, co jsi zač! Některé z tvých inkarnací byly šílený, totálně mimo mísu! Jednou ses probral a byl si přesvědčenej, že *já* jsem tvoje lebka a pak jsi mě honil kolem dokola, chtěls mě rozmlátit a sežrat! Naštěstí tě na ulici srazil vůz. Jiná inkarnace, dobrá a zákonná,„ se mě snažila vrazit zpátky do Pilíře, protože “to je místo, kam patřím.„" Morte se zašklebil. "*Proto.* Kromě toho, nic ti to neudělalo, žes to nevěděl…"{#morte_s712_}'
 
     menu:
-        '"Takže ty jsi se mnou byl celou tu dobu?"' if morteLogic.r65801_condition():
+        '"Takže ty jsi se mnou byl celou tu dobu?"{#morte_s712_r65801}' if morteLogic.r65801_condition():
             # a1422 # r65801
             jump morte_s713
 
-        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"' if morteLogic.r65802_condition():
+        '"Zapomeň na to, Morte. Mám ještě nějaké otázky…"{#morte_s712_r65802}' if morteLogic.r65802_condition():
             # a1423 # r65802
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."' if morteLogic.r65803_condition():
+        '"To nic, Morte. Pojďme dál."{#morte_s712_r65803}' if morteLogic.r65803_condition():
             # a1424 # r65803
             jump morte_dispose
 
 
 # s713 # say65804
 label morte_s713: # from 712.0
-    nr '"No, jó, šéfe. Říkal jsem, že budu. Morte vždycky dodržuje svý sliby." Odmlčel se. "No, většinu z nich. To bylo jednou jedno kotě v Arboree, která ---"'
+    nr '"No, jó, šéfe. Říkal jsem, že budu. Morte vždycky dodržuje svý sliby." Odmlčel se. "No, většinu z nich. To bylo jednou jedno kotě v Arboree, která ---"{#morte_s713_}'
 
     $ morteLogic.s713_action()
     jump morte_s714
@@ -10462,70 +10462,70 @@ label morte_s713: # from 712.0
 
 # s714 # say65805
 label morte_s714: # from 713.0
-    nr 'Uvědomil sis, že se Mortův tón změnil - přes jeho vtípky jsi poznal, že se snaží něco ukrýt. Něco o tom, proč je s tebou.'
+    nr 'Uvědomil sis, že se Mortův tón změnil - přes jeho vtípky jsi poznal, že se snaží něco ukrýt. Něco o tom, proč je s tebou.{#morte_s714_}'
 
     menu:
-        '"Morte, vážně. Proč se mnou pořád cestuješ?"':
+        '"Morte, vážně. Proč se mnou pořád cestuješ?"{#morte_s714_r65806}':
             # a1425 # r65806
             jump morte_s715
 
-        '"Dobrá tedy. Mám ještě nějaké otázky…"':
+        '"Dobrá tedy. Mám ještě nějaké otázky…"{#morte_s714_r65807}':
             # a1426 # r65807
             jump morte_s329
 
-        '"To nic, Morte. Pojďme dál."':
+        '"To nic, Morte. Pojďme dál."{#morte_s714_r65808}':
             # a1427 # r65808
             jump morte_dispose
 
 
 # s715 # say65809
 label morte_s715: # from 329.8 714.0 729.8
-    nr '"Šéfe, říkal jsem ti, že jsem to slíbil, ne?" Vypadá podrážděně. "Proč jinak?"'
+    nr '"Šéfe, říkal jsem ti, že jsem to slíbil, ne?" Vypadá podrážděně. "Proč jinak?"{#morte_s715_}'
 
     menu:
-        '"Já nevím. Nemusel jsi se mnou zůstat, po tom, co jsem tě uvolnil."':
+        '"Já nevím. Nemusel jsi se mnou zůstat, po tom, co jsem tě uvolnil."{#morte_s715_r65810}':
             # a1428 # r65810
             jump morte_s716
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s715_r65811}':
             # a1429 # r65811
             jump morte_s329
 
-        '"Zapomeň na to, Morte. Pojďme dál."':
+        '"Zapomeň na to, Morte. Pojďme dál."{#morte_s715_r65812}':
             # a1430 # r65812
             jump morte_dispose
 
 
 # s716 # say65813
 label morte_s716: # from 715.0
-    nr '"No jasně že ne, šéfe, ale - " A najednou ti hlavou bleskl nápad, snad tě na něj přivedl jeho tón, ale teď už víš, *proč* s tebou zůstal celou tu dobu.'
+    nr '"No jasně že ne, šéfe, ale - " A najednou ti hlavou bleskl nápad, snad tě na něj přivedl jeho tón, ale teď už víš, *proč* s tebou zůstal celou tu dobu.{#morte_s716_}'
 
     menu:
-        '"Cítíš *vinu*. Protože jsi mě před dávnou dobou přivedl na smrt, proto, že ano? A od té doby neustále trpíš."':
+        '"Cítíš *vinu*. Protože jsi mě před dávnou dobou přivedl na smrt, proto, že ano? A od té doby neustále trpíš."{#morte_s716_r65814}':
             # a1431 # r65814
             jump morte_s717
 
 
 # s717 # say65815
 label morte_s717: # from 716.0
-    nr '"Ale, no ták, šéfe. Já? Cítit *vinu*? Neblbni, dyť já jsem Morte."'
+    nr '"Ale, no ták, šéfe. Já? Cítit *vinu*? Neblbni, dyť já jsem Morte."{#morte_s717_}'
 
     menu:
-        '"Ne, myslím si, že je to tohle. Když jsem tě přišel osvobodit od osudu, který sis zasloužil, nemohl jsi jinak, než mi zkusit pomoct. A když jsi mohl odejít, poté, co jsem tě uvolnil, zůstal jsi. Protože jsi cítil, že mi to dlužíš."':
+        '"Ne, myslím si, že je to tohle. Když jsem tě přišel osvobodit od osudu, který sis zasloužil, nemohl jsi jinak, než mi zkusit pomoct. A když jsi mohl odejít, poté, co jsem tě uvolnil, zůstal jsi. Protože jsi cítil, že mi to dlužíš."{#morte_s717_r65816}':
             # a1432 # r65816
             jump morte_s718
 
 
 # s718 # say65817
 label morte_s718: # from 717.0
-    nr 'Morte se na tebe chvilku mlčky dívá. "Možná. Víš co je srandovní? Nejdřív jsem nevěděl, co je to za pocit - ono tě to tak nějak pomalu požírá, víš?"'
+    nr 'Morte se na tebe chvilku mlčky dívá. "Možná. Víš co je srandovní? Nejdřív jsem nevěděl, co je to za pocit - ono tě to tak nějak pomalu požírá, víš?"{#morte_s718_}'
 
     jump morte_s719
 
 
 # s719 # say65818
 label morte_s719: # from 718.0
-    nr '"Víš, nejdřív sem si myslel, že je to nějakej vedlejší efekt kouzla, co jsi na mě poslal… ale o pár set let později sem si uvědomil, že je to *víc* než to… něco hlubšího. Cítil sem, že mě to k tobě táhne, že sem k tobě nějak *připojenej*. Možná je to všechno to tvý utrpení, šéfe… tvý muka. Já nevím. Možná sem cítil… já fakt nevím, možná sem se cítil *zodpovědnej* za to, co jsem udělal. Co když tě do tohohle stavu dostalo něco, co jsem udělal?"'
+    nr '"Víš, nejdřív sem si myslel, že je to nějakej vedlejší efekt kouzla, co jsi na mě poslal… ale o pár set let později sem si uvědomil, že je to *víc* než to… něco hlubšího. Cítil sem, že mě to k tobě táhne, že sem k tobě nějak *připojenej*. Možná je to všechno to tvý utrpení, šéfe… tvý muka. Já nevím. Možná sem cítil… já fakt nevím, možná sem se cítil *zodpovědnej* za to, co jsem udělal. Co když tě do tohohle stavu dostalo něco, co jsem udělal?"{#morte_s719_}'
 
     $ morteLogic.s719_action()
     jump morte_s720
@@ -10533,10 +10533,10 @@ label morte_s719: # from 718.0
 
 # s720 # say65820
 label morte_s720: # from 719.0
-    nr '"Nemyslím si, že bych - ať už jsem byl kdokoli - měl kdy *vidět* následky svýho lhaní a podvádění. No a když jsem tě viděl poprvé, ještě strčenej v Pilíři, nějak jsem *věděl*, že tebe jsem kdysi zradil. Kdysi… před dávnou dobou." Morte vzdychl. "A to je všechno, co vím."'
+    nr '"Nemyslím si, že bych - ať už jsem byl kdokoli - měl kdy *vidět* následky svýho lhaní a podvádění. No a když jsem tě viděl poprvé, ještě strčenej v Pilíři, nějak jsem *věděl*, že tebe jsem kdysi zradil. Kdysi… před dávnou dobou." Morte vzdychl. "A to je všechno, co vím."{#morte_s720_}'
 
     menu:
-        '"Aha. Díky, žes mi to vyjasnil, Morte."':
+        '"Aha. Díky, žes mi to vyjasnil, Morte."{#morte_s720_r65821}':
             # a1433 # r65821
             $ morteLogic.r65821_action()
             jump morte_s721
@@ -10544,201 +10544,201 @@ label morte_s720: # from 719.0
 
 # s721 # say65822
 label morte_s721: # from 720.0
-    nr '"Né, neděkuj mi…" Morte vzdychl a k tvému překvapení jeho hlas zní silněji, sebevědoměji. Některé praskliny v jeho lebce zmizely, jako by se zahojily. "Kdepak, já bych měl děkovat… Cítím se, jako by mi někdo z ramen sundal váhu všech Sfér - obrazně řečeno, to je jasný."'
+    nr '"Né, neděkuj mi…" Morte vzdychl a k tvému překvapení jeho hlas zní silněji, sebevědoměji. Některé praskliny v jeho lebce zmizely, jako by se zahojily. "Kdepak, já bych měl děkovat… Cítím se, jako by mi někdo z ramen sundal váhu všech Sfér - obrazně řečeno, to je jasný."{#morte_s721_}'
 
     menu:
-        '"Mám ještě nějaké otázky…"':
+        '"Mám ještě nějaké otázky…"{#morte_s721_r65823}':
             # a1434 # r65823
             jump morte_s329
 
-        '"Dobrá, Morte. Pojďme dál."':
+        '"Dobrá, Morte. Pojďme dál."{#morte_s721_r65824}':
             # a1435 # r65824
             jump morte_dispose
 
 
 # s722 # say65826
 label morte_s722: # from 329.10 729.10
-    nr '"No, je to noční čarodějnice - a určitě byla dost střelená, aby TĚ udělala nesmrtelným, zrovna tebe ze všech lidí. Víš, myslím jako, že si mohla vybrat třeba mně." Morte zakroutil očima. "No ale kdokoli, kdo je dost praštěnej, aby se zkusil porvat s Paní Bolesti, zkrátka není někdo, koho bysme doopravdy chtěli najít."'
+    nr '"No, je to noční čarodějnice - a určitě byla dost střelená, aby TĚ udělala nesmrtelným, zrovna tebe ze všech lidí. Víš, myslím jako, že si mohla vybrat třeba mně." Morte zakroutil očima. "No ale kdokoli, kdo je dost praštěnej, aby se zkusil porvat s Paní Bolesti, zkrátka není někdo, koho bysme doopravdy chtěli najít."{#morte_s722_}'
 
     menu:
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s722_r65827}':
             # a1436 # r65827
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s722_r65828}':
             # a1437 # r65828
             jump morte_dispose
 
 
 # s723 # say65829
 label morte_s723: # from 329.9 729.9
-    nr '"Je to válka. Velká, krvavá, hnusná várka. Odehrává se všude, ale ne vždycky ji můžeš vidět."'
+    nr '"Je to válka. Velká, krvavá, hnusná várka. Odehrává se všude, ale ne vždycky ji můžeš vidět."{#morte_s723_}'
 
     menu:
-        '"Pokračuj…"':
+        '"Pokračuj…"{#morte_s723_r65830}':
             # a1438 # r65830
             jump morte_s724
 
-        '"To nic. Mám ještě nějaké otázky…"':
+        '"To nic. Mám ještě nějaké otázky…"{#morte_s723_r65831}':
             # a1439 # r65831
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s723_r65832}':
             # a1440 # r65832
             jump morte_dispose
 
 
 # s724 # say65833
 label morte_s724: # from 723.0
-    nr '"Hele, šéfe, je to válka mezi dvěma hnusnejma rasama: démonama a ďáblama. Bylo nebylo, před dávnejma dobama o sobě nevěděli. Ďáblové byli zlí, ale byli to „řádní“ zlí. Démoni sou taky zlí, ale jsou to větší pohodáři - jsou impulzivnější, chaotičtí, neorganizovaný. Ďáblové sou jako politici, démoni jako řezníci."'
+    nr '"Hele, šéfe, je to válka mezi dvěma hnusnejma rasama: démonama a ďáblama. Bylo nebylo, před dávnejma dobama o sobě nevěděli. Ďáblové byli zlí, ale byli to „řádní“ zlí. Démoni sou taky zlí, ale jsou to větší pohodáři - jsou impulzivnější, chaotičtí, neorganizovaný. Ďáblové sou jako politici, démoni jako řezníci."{#morte_s724_}'
 
     jump morte_s725
 
 
 # s725 # say65834
 label morte_s725: # from 724.0
-    nr '"No a pak se jednoho dne potkali. Podívali se na sebe a ani jedněm se nelíbilo, jak ti druzí provozují zlo. A od tý doby se bijou. Je to jako velká hnusná noční můra. Má to ale přece jenom jednu výhodu. Alespoň se tak bijou mezi sebou a nemají čas otravovat celý Sféry."'
+    nr '"No a pak se jednoho dne potkali. Podívali se na sebe a ani jedněm se nelíbilo, jak ti druzí provozují zlo. A od tý doby se bijou. Je to jako velká hnusná noční můra. Má to ale přece jenom jednu výhodu. Alespoň se tak bijou mezi sebou a nemají čas otravovat celý Sféry."{#morte_s725_}'
 
     menu:
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s725_r65835}':
             # a1441 # r65835
             jump morte_s329
 
-        '"To je všechno, co jsem chtěl vědět. Pojďme."':
+        '"To je všechno, co jsem chtěl vědět. Pojďme."{#morte_s725_r65836}':
             # a1442 # r65836
             jump morte_dispose
 
 
 # s726 # say65837
 label morte_s726: # from 329.11 729.11
-    nr '"Nemám tušáka, šéfe. Sem tak nějak zapomněl, když sem umřel. Ale nedá se říct, že by mě to moc štvalo - alespoň na mě něco po smrti čekalo, i když je to žít jako lítající lebka. Víš, myslím tím, že to klidně mohlo bejt horší."'
+    nr '"Nemám tušáka, šéfe. Sem tak nějak zapomněl, když sem umřel. Ale nedá se říct, že by mě to moc štvalo - alespoň na mě něco po smrti čekalo, i když je to žít jako lítající lebka. Víš, myslím tím, že to klidně mohlo bejt horší."{#morte_s726_}'
 
     menu:
-        '"Co se stalo s tvým tělem?"':
+        '"Co se stalo s tvým tělem?"{#morte_s726_r65839}':
             # a1443 # r65839
             jump morte_s727
 
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s726_r65840}':
             # a1444 # r65840
             jump morte_s329
 
-        '"Dobrá tedy. Pojďme."':
+        '"Dobrá tedy. Pojďme."{#morte_s726_r65841}':
             # a1445 # r65841
             jump morte_dispose
 
 
 # s727 # say65838
 label morte_s727: # from 726.0
-    nr '"Eh… já nevím, jasný? Je to zkrátka fuč." Morte se na tebe naštvaně dívá. "Ale nemyslí si, že mi CHYBÍ, protože já jsem šťastnej s tím, jakej sem a nepotřebuju tvý přiblblý rozumování nebo trapný poznámky, jasný?"'
+    nr '"Eh… já nevím, jasný? Je to zkrátka fuč." Morte se na tebe naštvaně dívá. "Ale nemyslí si, že mi CHYBÍ, protože já jsem šťastnej s tím, jakej sem a nepotřebuju tvý přiblblý rozumování nebo trapný poznámky, jasný?"{#morte_s727_}'
 
     menu:
-        '"Aha. Mám ještě nějaké otázky…"':
+        '"Aha. Mám ještě nějaké otázky…"{#morte_s727_r65842}':
             # a1446 # r65842
             jump morte_s329
 
-        '"No jo. Pojďme. Pohni kostrou."':
+        '"No jo. Pojďme. Pohni kostrou."{#morte_s727_r65843}':
             # a1447 # r65843
             jump morte_s728
 
 
 # s728 # say65844
 label morte_s728: # from 727.1
-    nr 'Morte tě spaluje pohledem. "Nejsem si zrovna jistý, jestli nejseš nějakej druh chodící kletby, kterou mě někdo proklel, aby mě furt sledovala."'
+    nr 'Morte tě spaluje pohledem. "Nejsem si zrovna jistý, jestli nejseš nějakej druh chodící kletby, kterou mě někdo proklel, aby mě furt sledovala."{#morte_s728_}'
 
     menu:
-        '"Hele, kdo to mluví. Pojďme."':
+        '"Hele, kdo to mluví. Pojďme."{#morte_s728_r65845}':
             # a1448 # r65845
             jump morte_dispose
 
 
 # s729 # say66344
 label morte_s729: # - # IF WEIGHT #7 /* Triggers after states #: 742 737 733 even though they appear after this state */ ~  Global("AR0200_Visited","GLOBAL",1) InParty("Morte") !GlobalGT("Fortress_Morte","GLOBAL",2)
-    nr '"Co tě žere, náčelníku?"~ [MRT515]'
+    nr '"Co tě žere, náčelníku?"~ [MRT515]{#morte_s729_}'
 
     menu:
-        '"Můžeš mi znovu přečíst, co mám vytetováno na zádech?"':
+        '"Můžeš mi znovu přečíst, co mám vytetováno na zádech?"{#morte_s729_r66345}':
             # a1449 # r66345
             jump morte_s649
 
-        '"Můžeš mi říct něco málo o Sigilu?"':
+        '"Můžeš mi říct něco málo o Sigilu?"{#morte_s729_r66346}':
             # a1450 # r66346
             jump morte_s659
 
-        '"Morte… nevadí mi, že jsi se mnou, ale je tady *ještě* něco jiného co dokážeš, kromě kecání?"' if morteLogic.r66347_condition():
+        '"Morte… nevadí mi, že jsi se mnou, ale je tady *ještě* něco jiného co dokážeš, kromě kecání?"{#morte_s729_r66347}' if morteLogic.r66347_condition():
             # a1451 # r66347
             jump morte_s663
 
-        '"Morte… jaké že jsou ty tvoje speciální schopnosti?"' if morteLogic.r66348_condition():
+        '"Morte… jaké že jsou ty tvoje speciální schopnosti?"{#morte_s729_r66348}' if morteLogic.r66348_condition():
             # a1452 # r66348
             jump morte_s666
 
-        '"Morte, proč jsi mi nepřečetl to poslední tetování na mých zádech?"' if morteLogic.r66349_condition():
+        '"Morte, proč jsi mi nepřečetl to poslední tetování na mých zádech?"{#morte_s729_r66349}' if morteLogic.r66349_condition():
             # a1453 # r66349
             jump morte_s654
 
-        '"Hodila by se mi nějaká rada. Co myslíš, co bychom měli udělat teď?"':
+        '"Hodila by se mi nějaká rada. Co myslíš, co bychom měli udělat teď?"{#morte_s729_r66350}':
             # a1454 # r66350
             jump morte_s669
 
-        '"Tys říkal, že jsi mimir, že jo, Morte?"' if morteLogic.r66351_condition():
+        '"Tys říkal, že jsi mimir, že jo, Morte?"{#morte_s729_r66351}' if morteLogic.r66351_condition():
             # a1455 # r66351
             jump morte_s684
 
-        '"Zopakuj mi, jak jsi skončil v Pilíři Lebek."' if morteLogic.r66352_condition():
+        '"Zopakuj mi, jak jsi skončil v Pilíři Lebek."{#morte_s729_r66352}' if morteLogic.r66352_condition():
             # a1456 # r66352
             jump morte_s693
 
-        '"Morte, proč se mnou pořád cestuješ?"' if morteLogic.r66353_condition():
+        '"Morte, proč se mnou pořád cestuješ?"{#morte_s729_r66353}' if morteLogic.r66353_condition():
             # a1457 # r66353
             jump morte_s715
 
-        '"Co víš o Válce Krve?"' if morteLogic.r66354_condition():
+        '"Co víš o Válce Krve?"{#morte_s729_r66354}' if morteLogic.r66354_condition():
             # a1458 # r66354
             jump morte_s723
 
-        '"Co víš o čarodějnici Ravel?"' if morteLogic.r66355_condition():
+        '"Co víš o čarodějnici Ravel?"{#morte_s729_r66355}' if morteLogic.r66355_condition():
             # a1459 # r66355
             jump morte_s722
 
-        '"Jak jsi zemřel, Morte?"':
+        '"Jak jsi zemřel, Morte?"{#morte_s729_r66356}':
             # a1460 # r66356
             jump morte_s726
 
-        '"Nic, Morte. Jenom kontroluju, jestli jsi se mnou."':
+        '"Nic, Morte. Jenom kontroluju, jestli jsi se mnou."{#morte_s729_r66357}':
             # a1461 # r66357
             jump morte_dispose
 
 
 # s730 # say66816
 label morte_s730: # -
-    nr '"Hej, šéfe, věřil bys tomu? Mohli by dokonce i *mě* něco málo naučit…"~ [MRT387]'
+    nr '"Hej, šéfe, věřil bys tomu? Mohli by dokonce i *mě* něco málo naučit…"~ [MRT387]{#morte_s730_}'
 
     menu:
-        '"Věřím tomu, Morte. Pojďme."':
+        '"Věřím tomu, Morte. Pojďme."{#morte_s730_r66817}':
             # a1462 # r66817
             jump morte_dispose
 
 
 # s731 # say67510
 label morte_s731: # -
-    nr '"Jenom bych se rád na chvilinku vmísil a oznámil vám, že nebudu říkat nic, čím bych vám pokazil zábavu, šéfíku. Jenom tady budu obletovat a koukat se. Nevšímejte si mě - jenom tady poletuju a koukám se, to jsem já."'
+    nr '"Jenom bych se rád na chvilinku vmísil a oznámil vám, že nebudu říkat nic, čím bych vám pokazil zábavu, šéfíku. Jenom tady budu obletovat a koukat se. Nevšímejte si mě - jenom tady poletuju a koukám se, to jsem já."{#morte_s731_}'
 
     jump annah_s418  # EXTERN
 
 
 # s732 # say67600
 label morte_s732: # -
-    nr '"Necháte toho, než budu muset sehnat Dabuse, aby vás od sebe oddělil?" Morte si odfrkl. "Nebo mi aspoň dovolte, ať se k vám přidám."'
+    nr '"Necháte toho, než budu muset sehnat Dabuse, aby vás od sebe oddělil?" Morte si odfrkl. "Nebo mi aspoň dovolte, ať se k vám přidám."{#morte_s732_}'
 
     jump annah_s446  # EXTERN
 
 
 # s733 # say68171
 label morte_s733: # - # IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3) Global("Absorb","GLOBAL",0)
-    nr 'Když ses po něm natáhnul, Morte náhle promluvil. "Hou hou! Počkej, šéfe.. Je tady uh… pár věcí, který ti musím říct."~ [MRT242]'
+    nr 'Když ses po něm natáhnul, Morte náhle promluvil. "Hou hou! Počkej, šéfe.. Je tady uh… pár věcí, který ti musím říct."~ [MRT242]{#morte_s733_}'
 
     menu:
-        '"Morte…?! Ty nejsi mrtvý!"':
+        '"Morte…?! Ty nejsi mrtvý!"{#morte_s733_r68176}':
             # a1463 # r68176
             $ morteLogic.r68176_action()
             jump morte_s734
@@ -10746,109 +10746,109 @@ label morte_s733: # - # IF WEIGHT #1 ~  Global("Fortress_Morte","GLOBAL",3) Glob
 
 # s734 # say68172
 label morte_s734: # from 733.0
-    nr '"No, jo -- když seš tak dlouho mrtvej jako já, naučíš se to fakt dobře předstírat. Tak ňák sem poslouchal celou tu vaši řeč. Tu moc, co máš, tak tu použij na někoho jinýho - já ji nepotřebuju."'
+    nr '"No, jo -- když seš tak dlouho mrtvej jako já, naučíš se to fakt dobře předstírat. Tak ňák sem poslouchal celou tu vaši řeč. Tu moc, co máš, tak tu použij na někoho jinýho - já ji nepotřebuju."{#morte_s734_}'
 
     menu:
-        '"Takže ty bys tady jen tak *ležel*, zatímco já bych dostával nakopáno do prdele?!"':
+        '"Takže ty bys tady jen tak *ležel*, zatímco já bych dostával nakopáno do prdele?!"{#morte_s734_r68177}':
             # a1464 # r68177
             jump morte_s735
 
 
 # s735 # say68173
 label morte_s735: # from 734.0
-    nr '"No *jo*, šéfe. Myslím, jako že kdybys zklamal, budeš potřebovat někoho, kdo si za tebe bude pamatovat. Navíc, víš jak jsem neschopnej v boji - teda pokaď nenadávám ňákýmu kouzelníkovi nebo tak…"'
+    nr '"No *jo*, šéfe. Myslím, jako že kdybys zklamal, budeš potřebovat někoho, kdo si za tebe bude pamatovat. Navíc, víš jak jsem neschopnej v boji - teda pokaď nenadávám ňákýmu kouzelníkovi nebo tak…"{#morte_s735_}'
 
     menu:
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68178_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68178}' if morteLogic.r68178_condition():
             # a1465 # r68178
             jump morte_s736
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68189_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68189}' if morteLogic.r68189_condition():
             # a1466 # r68189
             $ morteLogic.r68189_action()
             jump morte_dispose
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68190_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68190}' if morteLogic.r68190_condition():
             # a1467 # r68190
             $ morteLogic.r68190_action()
             jump morte_dispose
 
-        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68191_condition():
+        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68191}' if morteLogic.r68191_condition():
             # a1468 # r68191
             $ morteLogic.r68191_action()
             jump morte_dispose
 
-        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68192_condition():
+        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68192}' if morteLogic.r68192_condition():
             # a1469 # r68192
             $ morteLogic.r68192_action()
             jump morte_dispose
 
-        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68193_condition():
+        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68193}' if morteLogic.r68193_condition():
             # a1470 # r68193
             $ morteLogic.r68193_action()
             jump morte_dispose
 
-        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68194_condition():
+        '" Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68194}' if morteLogic.r68194_condition():
             # a1471 # r68194
             $ morteLogic.r68194_action()
             jump morte_dispose
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68239_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68239}' if morteLogic.r68239_condition():
             # a1472 # r68239
             $ morteLogic.r68239_action()
             jump morte_dispose
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68438_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68438}' if morteLogic.r68438_condition():
             # a1473 # r68438
             $ morteLogic.r68438_action()
             jump morte_dispose
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68439_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68439}' if morteLogic.r68439_condition():
             # a1474 # r68439
             $ morteLogic.r68439_action()
             jump morte_dispose
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68446_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68446}' if morteLogic.r68446_condition():
             # a1475 # r68446
             $ morteLogic.r68446_action()
             jump morte_dispose
 
-        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"' if morteLogic.r68503_condition():
+        '"Tak to je možná to, co potřebuju, abys udělal. O tomhle si promluvíme *později*, Morte…"{#morte_s735_r68503}' if morteLogic.r68503_condition():
             # a1476 # r68503
             jump trans_s142  # EXTERN
 
 
 # s736 # say68174
 label morte_s736: # from 735.0
-    nr 'Znovu ses natáhnul svou mocí…'
+    nr 'Znovu ses natáhnul svou mocí…{#morte_s736_}'
 
     menu:
-        'Oživ Annah.' if morteLogic.r68175_condition():
+        'Oživ Annah.{#morte_s736_r68175}' if morteLogic.r68175_condition():
             # a1477 # r68175
             $ morteLogic.r68175_action()
             jump morte_dispose
 
-        'Oživ Dak„kona.' if morteLogic.r68179_condition():
+        'Oživ Dak„kona.{#morte_s736_r68179}' if morteLogic.r68179_condition():
             # a1478 # r68179
             $ morteLogic.r68179_action()
             jump morte_dispose
 
-        'Oživ Fall-From-Grace.' if morteLogic.r68180_condition():
+        'Oživ Fall-From-Grace.{#morte_s736_r68180}' if morteLogic.r68180_condition():
             # a1479 # r68180
             $ morteLogic.r68180_action()
             jump morte_dispose
 
-        'Oživ Nordoma.' if morteLogic.r68181_condition():
+        'Oživ Nordoma.{#morte_s736_r68181}' if morteLogic.r68181_condition():
             # a1480 # r68181
             $ morteLogic.r68181_action()
             jump morte_dispose
 
-        'Oživ Ignuse.' if morteLogic.r68182_condition():
+        'Oživ Ignuse.{#morte_s736_r68182}' if morteLogic.r68182_condition():
             # a1481 # r68182
             $ morteLogic.r68182_action()
             jump morte_dispose
 
-        'Oživ Vhailora.' if morteLogic.r68183_condition():
+        'Oživ Vhailora.{#morte_s736_r68183}' if morteLogic.r68183_condition():
             # a1482 # r68183
             $ morteLogic.r68183_action()
             jump morte_dispose
@@ -10856,95 +10856,95 @@ label morte_s736: # from 735.0
 
 # s737 # say68310
 label morte_s737: # - # IF WEIGHT #2 ~  Global("Fortress_Morte","GLOBAL",3) GlobalGT("Absorb","GLOBAL",0)
-    nr 'Když jsi nasměroval svou moc, Morte se náhle vznesl do vzduchu. ""Eh… momentík, šéfe. Nemusíš mě oživovat, já tady, uh, jenom tak ležel, víš, poslouchal vás dva."'
+    nr 'Když jsi nasměroval svou moc, Morte se náhle vznesl do vzduchu. ""Eh… momentík, šéfe. Nemusíš mě oživovat, já tady, uh, jenom tak ležel, víš, poslouchal vás dva."{#morte_s737_}'
 
     menu:
-        'TY JSI PŘEDSTÍRAL SMRT.':
+        'TY JSI PŘEDSTÍRAL SMRT.{#morte_s737_r68311}':
             # a1483 # r68311
             jump morte_s738
 
 
 # s738 # say68312
 label morte_s738: # from 737.0
-    nr '"No, jo, víš já *už* jsem mrtvej a … uh, šéfe, co se ti to stalo s hlasem?"'
+    nr '"No, jo, víš já *už* jsem mrtvej a … uh, šéfe, co se ti to stalo s hlasem?"{#morte_s738_}'
 
     menu:
-        'JÁ… TEĎ JSEM NĚČÍM JINÝM. ČAS BĚŽÍ A BRZY MĚ ČAS A MŮJ OSUD DOŽENOU. VRÁTÍM TĚ DO SIGILU, MORTE, JESTLI CHCEŠ.':
+        'JÁ… TEĎ JSEM NĚČÍM JINÝM. ČAS BĚŽÍ A BRZY MĚ ČAS A MŮJ OSUD DOŽENOU. VRÁTÍM TĚ DO SIGILU, MORTE, JESTLI CHCEŠ.{#morte_s738_r68313}':
             # a1484 # r68313
             jump morte_s739
 
 
 # s739 # say68314
 label morte_s739: # from 738.0
-    nr '"Co --? Vrátíš mě? A co *ty*? No tak, šéfe, možná sem *zbabělec*, ale nemůžu tě jen tak opustiti."'
+    nr '"Co --? Vrátíš mě? A co *ty*? No tak, šéfe, možná sem *zbabělec*, ale nemůžu tě jen tak opustiti."{#morte_s739_}'
 
     menu:
-        'MNOHO JE ZLOČINŮ, KTERÉ BYLY SPÁCHÁNY, KDYŽ JSEM BYL ODDĚLEN OD SVÉ SMRTELNOSTI. A TY ZLOČINY… NĚCO STOJÍ. TAM, KDE JÁ BRZY BUDU, TY JÍT NEMŮŽEŠ.':
+        'MNOHO JE ZLOČINŮ, KTERÉ BYLY SPÁCHÁNY, KDYŽ JSEM BYL ODDĚLEN OD SVÉ SMRTELNOSTI. A TY ZLOČINY… NĚCO STOJÍ. TAM, KDE JÁ BRZY BUDU, TY JÍT NEMŮŽEŠ.{#morte_s739_r68315}':
             # a1485 # r68315
             jump morte_s740
 
 
 # s740 # say68316
 label morte_s740: # from 739.0
-    nr '"No, stejně bych s tebou *mohl* jít, šéfe, jestli chceš - víš, už za sebou máme horší-"'
+    nr '"No, stejně bych s tebou *mohl* jít, šéfe, jestli chceš - víš, už za sebou máme horší-"{#morte_s740_}'
 
     menu:
-        'TENTOKRÁT NE. MOŽNÁ SE ZASE JEDNOHO DNE SETKÁME, TY A JÁ, V JINÉ SFÉŘE. ALE NE TEĎ.':
+        'TENTOKRÁT NE. MOŽNÁ SE ZASE JEDNOHO DNE SETKÁME, TY A JÁ, V JINÉ SFÉŘE. ALE NE TEĎ.{#morte_s740_r68317}':
             # a1486 # r68317
             jump morte_s741
 
 
 # s741 # say68318
 label morte_s741: # from 740.0
-    nr 'Morte tě chvilku upřeně sleduje, pak vzdychl. "Ne snad, že bych měl zamlžený oči, ale, no, bylo to fakt fajn, šéfe."~ [MRT109]'
+    nr 'Morte tě chvilku upřeně sleduje, pak vzdychl. "Ne snad, že bych měl zamlžený oči, ale, no, bylo to fakt fajn, šéfe."~ [MRT109]{#morte_s741_}'
 
     menu:
-        'SBOHEM, MORTE.' if morteLogic.r68319_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68319}' if morteLogic.r68319_condition():
             # a1487 # r68319
             $ morteLogic.r68319_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68320_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68320}' if morteLogic.r68320_condition():
             # a1488 # r68320
             $ morteLogic.r68320_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68321_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68321}' if morteLogic.r68321_condition():
             # a1489 # r68321
             $ morteLogic.r68321_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68322_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68322}' if morteLogic.r68322_condition():
             # a1490 # r68322
             $ morteLogic.r68322_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68323_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68323}' if morteLogic.r68323_condition():
             # a1491 # r68323
             $ morteLogic.r68323_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68324_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68324}' if morteLogic.r68324_condition():
             # a1492 # r68324
             $ morteLogic.r68324_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68325_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68325}' if morteLogic.r68325_condition():
             # a1493 # r68325
             $ morteLogic.r68325_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68490_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68490}' if morteLogic.r68490_condition():
             # a1494 # r68490
             $ morteLogic.r68490_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68491_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68491}' if morteLogic.r68491_condition():
             # a1495 # r68491
             $ morteLogic.r68491_action()
             jump morte_dispose
 
-        'SBOHEM, MORTE.' if morteLogic.r68492_condition():
+        'SBOHEM, MORTE.{#morte_s741_r68492}' if morteLogic.r68492_condition():
             # a1496 # r68492
             $ morteLogic.r68492_action()
             jump morte_dispose
@@ -10952,9 +10952,9 @@ label morte_s741: # from 740.0
 
 # s742 # say68408
 label morte_s742: # - # IF WEIGHT #3 ~  Global("Fortress_Morte","GLOBAL",4)
-    nr 'Morte tě chvilku upřeně sleduje, pak vzdychl. "Ne snad, že bych měl zamlžený oči, ale, no, bylo to fakt fajn, šéfe."~ [MRT109]'
+    nr 'Morte tě chvilku upřeně sleduje, pak vzdychl. "Ne snad, že bych měl zamlžený oči, ale, no, bylo to fakt fajn, šéfe."~ [MRT109]{#morte_s742_}'
 
     menu:
-        '"Tak jdeme na to…"':
+        '"Tak jdeme na to…"{#morte_s742_r68409}':
             # a1497 # r68409
             jump morte_dispose

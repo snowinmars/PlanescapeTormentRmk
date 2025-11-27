@@ -156,7 +156,8 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
             0
         )
         dialog_tree.append('\n')
-        cues = _format_cues(state_body, 'nr', npc_name)
+        cues_id = f'{npc_name}{state_prefix}{state_id}'
+        cues = _format_cues(state_body, 'nr', npc_name, cues_id)
         _render_with_shift(
             dialog_tree,
             cues,
@@ -376,7 +377,8 @@ def abstract2renpy(states, area, state_prefix, dialogue_transformer, warnings):
             action = answer['action']
             target_id = _form_jump(answer, npc_name, state_prefix)
 
-            menu_option = _build_menu_option(npc_name, answer, logic_conditions, global_response_counter)
+            reply_id = f'{npc_name}{state_prefix}{state_id}_r{answer_id}'
+            menu_option = _build_menu_option(npc_name, answer, logic_conditions, global_response_counter, reply_id)
             _render_with_shift(
                 dialog_tree,
                 menu_option,
@@ -580,7 +582,7 @@ def _form_jump(answer, npc_name, state_prefix):
         return f'{npc_name}{state_prefix}{target_state_id}'
 
 
-def _build_menu_option(npc_name, answer, logic_conditions, global_response_counter):
+def _build_menu_option(npc_name, answer, logic_conditions, global_response_counter, reply_id):
     answer_condition = answer['condition']
     answer_id = answer['answer_id']
     answer_body = answer['answer_body']
@@ -591,9 +593,9 @@ def _build_menu_option(npc_name, answer, logic_conditions, global_response_count
             4
         )
         logic_conditions.append('\n\n')
-        return menu_option_with_condition_template.format(ab=replace_single_quotes(answer_body),tnpc=npc_name,aid=answer_id,grc=global_response_counter)
+        return menu_option_with_condition_template.format(ab=replace_single_quotes(answer_body),tnpc=npc_name,aid=answer_id,grc=global_response_counter,id=reply_id)
     else:
-        return menu_option_template.format(ab=replace_single_quotes(answer_body),aid=answer_id,grc=global_response_counter)
+        return menu_option_template.format(ab=replace_single_quotes(answer_body),aid=answer_id,grc=global_response_counter,id=reply_id)
 
 
 def capitalize_first(s):
@@ -660,13 +662,13 @@ def process_inside_quote(text, nr, npc):
     return segments
 
 
-def _format_cue(line, nr, npc):
+def _format_cue(line, nr, npc, label_id):
     line = line.strip()
     if not line:
         return ''
 
     if '«' not in line and '»' not in line:
-        return f'{nr} \'{replace_single_quotes(capitalize_first(line))}\''
+        return f'{nr} \'{replace_single_quotes(capitalize_first(line))}{{#{label_id}_}}\''
 
     parts = []
     depth = 0
@@ -736,17 +738,17 @@ def _format_cue(line, nr, npc):
 
     output_str = ''
     for tag, text in tokens:
-        output_str += f'{tag} \'{text}\'\n'
+        output_str += f'{tag} \'{text}{{#{label_id}_}}\'\n'
     return output_str.strip()
 
 
-def _format_cues(text, nr, npc):
+def _format_cues(text, nr, npc, label_id):
     lines = text.strip().split('\n')
     output_lines = []
     for line in lines:
         if line.strip() == '':
             output_lines.append('')
         else:
-            parsed_line = _format_cue(line, nr, npc)
+            parsed_line = _format_cue(line, nr, npc, label_id)
             output_lines.append(parsed_line)
     return '\n'.join(output_lines)

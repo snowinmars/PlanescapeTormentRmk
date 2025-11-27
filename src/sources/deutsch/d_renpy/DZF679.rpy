@@ -11,89 +11,89 @@ init 10 python:
 
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
-    nr 'Dies scheint die Leiche einer alten, ja uralten Frau zu sein. Abgesehen von dem Gestank des Balsamierungsöls, den Stichen, die ihren Mund versiegeln und der Zahl "679", die auf ihre rechte Wange gestickt wurde, sieht sie jetzt wahrscheinlich kaum anders aus als in den letzten Jahren ihres Lebens.'
+    nr 'Dies scheint die Leiche einer alten, ja uralten Frau zu sein. Abgesehen von dem Gestank des Balsamierungsöls, den Stichen, die ihren Mund versiegeln und der Zahl "679", die auf ihre rechte Wange gestickt wurde, sieht sie jetzt wahrscheinlich kaum anders aus als in den letzten Jahren ihres Lebens.{#zf679_s0_}'
 
     menu:
-        '"Sag mal… hast du nachher schon was vor?"' if zf679Logic.r35179_condition():
+        '"Sag mal… hast du nachher schon was vor?"{#zf679_s0_r35179}' if zf679Logic.r35179_condition():
             # a0 # r35179
             $ zf679Logic.r35179_action()
             jump zf679_s1
 
-        '"Sag mal… hast du nachher schon was vor?"' if zf679Logic.r35196_condition():
+        '"Sag mal… hast du nachher schon was vor?"{#zf679_s0_r35196}' if zf679Logic.r35196_condition():
             # a1 # r35196
             jump zf679_s1
 
-        '"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."' if zf679Logic.r35197_condition():
+        '"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."{#zf679_s0_r35197}' if zf679Logic.r35197_condition():
             # a2 # r35197
             jump zf679_s1
 
-        'Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.' if zf679Logic.r35198_condition():
+        'Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.{#zf679_s0_r35198}' if zf679Logic.r35198_condition():
             # a3 # r35198
             jump zf679_s2
 
-        '"Es war nett, sich mit dir zu unterhalten. Leb wohl."' if zf679Logic.r35203_condition():
+        '"Es war nett, sich mit dir zu unterhalten. Leb wohl."{#zf679_s0_r35203}' if zf679Logic.r35203_condition():
             # a4 # r35203
             jump morte_s354  # EXTERN
 
-        'Laß die Leiche in Ruhe.' if zf679Logic.r35204_condition():
+        'Laß die Leiche in Ruhe.{#zf679_s0_r35204}' if zf679Logic.r35204_condition():
             # a5 # r35204
             jump morte_s354  # EXTERN
 
-        'Danke für die anregende Unterhaltung. Leb wohl.' if zf679Logic.r35205_condition():
+        'Danke für die anregende Unterhaltung. Leb wohl.{#zf679_s0_r35205}' if zf679Logic.r35205_condition():
             # a6 # r35205
             jump zf679_dispose
 
-        'Laß die Leiche in Ruhe.' if zf679Logic.r35206_condition():
+        'Laß die Leiche in Ruhe.{#zf679_s0_r35206}' if zf679Logic.r35206_condition():
             # a7 # r35206
             jump zf679_dispose
 
-        'Es war nett, sich mit dir zu unterhalten. Leb wohl.' if zf679Logic.r35207_condition():
+        'Es war nett, sich mit dir zu unterhalten. Leb wohl.{#zf679_s0_r35207}' if zf679Logic.r35207_condition():
             # a8 # r35207
             jump zf679_dispose
 
-        'Laß die Leiche in Ruhe.' if zf679Logic.r35208_condition():
+        'Laß die Leiche in Ruhe.{#zf679_s0_r35208}' if zf679Logic.r35208_condition():
             # a9 # r35208
             jump zf679_dispose
 
 
 # s1 # say35180
 label zf679_s1: # from 0.0 0.1 0.2
-    nr 'Die Leiche starrt dich weiter an.'
+    nr 'Die Leiche starrt dich weiter an.{#zf679_s1_}'
 
     menu:
-        '"Dann leb wohl."' if zf679Logic.r35181_condition():
+        '"Dann leb wohl."{#zf679_s1_r35181}' if zf679Logic.r35181_condition():
             # a10 # r35181
             jump morte_s354  # EXTERN
 
-        '"Na dann leb wohl."' if zf679Logic.r35194_condition():
+        '"Na dann leb wohl."{#zf679_s1_r35194}' if zf679Logic.r35194_condition():
             # a11 # r35194
             jump zf679_dispose
 
-        '"Na dann leb wohl."' if zf679Logic.r35195_condition():
+        '"Na dann leb wohl."{#zf679_s1_r35195}' if zf679Logic.r35195_condition():
             # a12 # r35195
             jump zf679_dispose
 
 
 # s2 # say35199
 label zf679_s2: # from 0.3
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf679_s2_}'
 
     menu:
-        '"Dann leb wohl."' if zf679Logic.r35200_condition():
+        '"Dann leb wohl."{#zf679_s2_r35200}' if zf679Logic.r35200_condition():
             # a13 # r35200
             jump morte_s354  # EXTERN
 
-        '"Dann leb wohl."' if zf679Logic.r35201_condition():
+        '"Dann leb wohl."{#zf679_s2_r35201}' if zf679Logic.r35201_condition():
             # a14 # r35201
             jump zf679_dispose
 
-        '"Dann leb wohl."' if zf679Logic.r35202_condition():
+        '"Dann leb wohl."{#zf679_s2_r35202}' if zf679Logic.r35202_condition():
             # a15 # r35202
             jump zf679_dispose
 
 
 # s3 # say35209
 label zf679_s3: # - # IF ~  False()
-    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.'
+    nr 'Diese Leiche antwortet nicht. Es sieht so aus, als ob sie schon zu tot ist, um noch auf irgendeine deiner Fragen zu antworten.{#zf679_s3_}'
 
     menu:

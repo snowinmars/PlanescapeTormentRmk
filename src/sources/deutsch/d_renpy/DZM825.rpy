@@ -11,83 +11,83 @@ init 10 python:
 
 # s0 # say24564
 label zm825_s0: # - # IF ~  True()
-    nr 'Der Kopf dieser Leiche rollt auf ihren Schultern vor und zurück. Vom Winkel des Halses zu urteilen, wurde dieser Mann wahrscheinlich aufgehängt. Die Zahl "825" ist auf die Seite seines Kopfes gemalt worden.'
+    nr 'Der Kopf dieser Leiche rollt auf ihren Schultern vor und zurück. Vom Winkel des Halses zu urteilen, wurde dieser Mann wahrscheinlich aufgehängt. Die Zahl "825" ist auf die Seite seines Kopfes gemalt worden.{#zm825_s0_}'
 
     menu:
-        '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"' if zm825Logic.r24565_condition():
+        '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"{#zm825_s0_r24565}' if zm825Logic.r24565_condition():
             # a0 # r24565
             jump morte1_s31  # EXTERN
 
-        '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"' if zm825Logic.r24568_condition():
+        '"Ich suche nach einem Schlüssel… Hast du zufällig einen?"{#zm825_s0_r24568}' if zm825Logic.r24568_condition():
             # a1 # r24568
             jump zm825_s1
 
-        '"Na… gibt„s hier irgendwas Interessantes zu berichten?"' if zm825Logic.r24569_condition():
+        '"Na… gibt„s hier irgendwas Interessantes zu berichten?"{#zm825_s0_r24569}' if zm825Logic.r24569_condition():
             # a2 # r24569
             jump zm825_s1
 
-        '"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."' if zm825Logic.r24570_condition():
+        '"Ich weiß, daß du kein Zombie bist, verstehst du. Du führst hier keinen an der Nase herum."{#zm825_s0_r24570}' if zm825Logic.r24570_condition():
             # a3 # r24570
             jump zm825_s1
 
-        'Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.' if zm825Logic.r24573_condition():
+        'Wende deine Erzählende-Knochen-Fähigkeit auf die Leiche an.{#zm825_s0_r24573}' if zm825Logic.r24573_condition():
             # a4 # r24573
             jump zm825_s2
 
-        'Untersuche die Leiche und sieh nach, ob sie einen Schlüssel bei sich hat.' if zm825Logic.r24574_condition():
+        'Untersuche die Leiche und sieh nach, ob sie einen Schlüssel bei sich hat.{#zm825_s0_r24574}' if zm825Logic.r24574_condition():
             # a5 # r24574
             jump zm825_s3
 
-        '"Es war nett, mit dir gesprochen zu haben. Leb wohl."':
+        '"Es war nett, mit dir gesprochen zu haben. Leb wohl."{#zm825_s0_r42308}':
             # a6 # r42308
             jump zm825_dispose
 
-        'Laß die Leiche in Ruhe.':
+        'Laß die Leiche in Ruhe.{#zm825_s0_r42309}':
             # a7 # r42309
             jump zm825_dispose
 
 
 # s1 # say24566
 label zm825_s1: # from 0.1 0.2 0.3 3.1
-    nr 'Die Leiche starrt auf den Boden und antwortet nicht.'
+    nr 'Die Leiche starrt auf den Boden und antwortet nicht.{#zm825_s1_}'
 
     menu:
-        '"Ach, vergiß es. Leb wohl."':
+        '"Ach, vergiß es. Leb wohl."{#zm825_s1_r24567}':
             # a8 # r24567
             jump zm825_dispose
 
-        'Laß die Leiche in Ruhe.':
+        'Laß die Leiche in Ruhe.{#zm825_s1_r42310}':
             # a9 # r42310
             jump zm825_dispose
 
 
 # s2 # say24571
 label zm825_s2: # from 0.4
-    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.'
+    nr 'Die Leiche rührt sich nicht. Sie sieht so aus, als sei sie schon ein bißchen zu weit hinüber, um deine Fragen zu beantworten.{#zm825_s2_}'
 
     menu:
-        'Laß die Leiche in Ruhe.':
+        'Laß die Leiche in Ruhe.{#zm825_s2_r24572}':
             # a10 # r24572
             jump zm825_dispose
 
 
 # s3 # say42311
 label zm825_s3: # from 0.5
-    nr 'Diese Leiche hat überhaupt nichts bei sich… Zufällig bemerkst du, daß ihre Hände dick bandagiert sind. Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.'
+    nr 'Diese Leiche hat überhaupt nichts bei sich… Zufällig bemerkst du, daß ihre Hände dick bandagiert sind. Den Verband könnte man sicher noch gebrauchen, wenn man vorher die Leiche loswerden könnte.{#zm825_s3_}'
 
     menu:
-        '"Ich vermute, du hast den Schlüssel nicht… Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"' if zm825Logic.r42312_condition():
+        '"Ich vermute, du hast den Schlüssel nicht… Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"{#zm825_s3_r42312}' if zm825Logic.r42312_condition():
             # a11 # r42312
             jump morte1_s31  # EXTERN
 
-        '"Ich vermute, du hast den Schlüssel nicht… Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"' if zm825Logic.r42313_condition():
+        '"Ich vermute, du hast den Schlüssel nicht… Weißt du zufällig, wer von deinen Leichenfreunden den Schlüssel hat, mit dem man hier rauskommt?"{#zm825_s3_r42313}' if zm825Logic.r42313_condition():
             # a12 # r42313
             jump zm825_s1
 
-        '"Es war nett, mit dir gesprochen zu haben. Leb wohl."':
+        '"Es war nett, mit dir gesprochen zu haben. Leb wohl."{#zm825_s3_r42314}':
             # a13 # r42314
             jump zm825_dispose
 
-        'Laß die Leiche in Ruhe.':
+        'Laß die Leiche in Ruhe.{#zm825_s3_r42315}':
             # a14 # r42315
             jump zm825_dispose

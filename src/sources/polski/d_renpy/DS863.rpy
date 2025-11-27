@@ -11,207 +11,207 @@ init 10 python:
 
 # s0 # say35537
 label s863_s0: # from 10.0 # IF ~  !HasItem("DRemind","S863")
-    nr 'Ten szkielet wygląda tak, jakby wiele przeszedł, albo wskutek udziału w walkach, albo też wskutek spadnięcia ze zbyt dużej liczby schodów; i ręce, i nogi miał złamane, ale teraz zostało to naprawione przy pomocy skórzanych pasków i cieniutkich żelaznych prętów. Z przodu czaszki ma numer „863“… ale tył czaszki się zapadł, tworząc wydrążoną dziurę.'
+    nr 'Ten szkielet wygląda tak, jakby wiele przeszedł, albo wskutek udziału w walkach, albo też wskutek spadnięcia ze zbyt dużej liczby schodów; i ręce, i nogi miał złamane, ale teraz zostało to naprawione przy pomocy skórzanych pasków i cieniutkich żelaznych prętów. Z przodu czaszki ma numer „863“… ale tył czaszki się zapadł, tworząc wydrążoną dziurę.{#s863_s0_}'
 
     menu:
-        '"Przepraszam, że zabrałem ci ten pergamin, ale wątpię, czy dostarczyłbyś go w terminie."' if s863Logic.r35538_condition():
+        '"Przepraszam, że zabrałem ci ten pergamin, ale wątpię, czy dostarczyłbyś go w terminie."{#s863_s0_r35538}' if s863Logic.r35538_condition():
             # a0 # r35538
             $ s863Logic.r35538_action()
             jump s863_s1
 
-        '"Przepraszam, że zabrałem ci ten pergamin, ale wątpię, czy dostarczyłbyś go w terminie."' if s863Logic.r35561_condition():
+        '"Przepraszam, że zabrałem ci ten pergamin, ale wątpię, czy dostarczyłbyś go w terminie."{#s863_s0_r35561}' if s863Logic.r35561_condition():
             # a1 # r35561
             jump s863_s1
 
-        '"Muszę ci zadać to pytanie: czy twoje połamane kości to efekt walk czy spadnięcia ze schodów?"' if s863Logic.r35562_condition():
+        '"Muszę ci zadać to pytanie: czy twoje połamane kości to efekt walk czy spadnięcia ze schodów?"{#s863_s0_r35562}' if s863Logic.r35562_condition():
             # a2 # r35562
             $ s863Logic.r35562_action()
             jump s863_s1
 
-        '"Muszę ci zadać to pytanie: czy twoje połamane kości to efekt walk czy spadnięcia ze schodów?"' if s863Logic.r35563_condition():
+        '"Muszę ci zadać to pytanie: czy twoje połamane kości to efekt walk czy spadnięcia ze schodów?"{#s863_s0_r35563}' if s863Logic.r35563_condition():
             # a3 # r35563
             jump s863_s1
 
-        'Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.' if s863Logic.r35564_condition():
+        'Posłuż się swoją umiejętnością Gadaj-Kości-Opowieści.{#s863_s0_r35564}' if s863Logic.r35564_condition():
             # a4 # r35564
             jump s863_s2
 
-        'Dokładnie obejrzyj szkielet.':
+        'Dokładnie obejrzyj szkielet.{#s863_s0_r35569}':
             # a5 # r35569
             $ s863Logic.r35569_action()
             jump s863_s3
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35602_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35602}' if s863Logic.r35602_condition():
             # a6 # r35602
             $ s863Logic.r35602_action()
             jump morte_s400  # EXTERN
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35603_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35603}' if s863Logic.r35603_condition():
             # a7 # r35603
             jump s863_s4
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35604_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35604}' if s863Logic.r35604_condition():
             # a8 # r35604
             jump s863_s5
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35605_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35605}' if s863Logic.r35605_condition():
             # a9 # r35605
             jump s863_s6
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35606_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35606}' if s863Logic.r35606_condition():
             # a10 # r35606
             jump s863_s4
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35607_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35607}' if s863Logic.r35607_condition():
             # a11 # r35607
             jump s863_s5
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35608_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s0_r35608}' if s863Logic.r35608_condition():
             # a12 # r35608
             jump s863_s6
 
-        '"Co powiesz na ten szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"' if s863Logic.r35609_condition():
+        '"Co powiesz na ten szkielet, Morte? Może z niego będzie dla ciebie dobre ciało?"{#s863_s0_r35609}' if s863Logic.r35609_condition():
             # a13 # r35609
             jump morte_s396  # EXTERN
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35610_condition():
+        'Zostaw szkielet w spokoju.{#s863_s0_r35610}' if s863Logic.r35610_condition():
             # a14 # r35610
             $ s863Logic.r35610_action()
             jump morte_s394  # EXTERN
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35611_condition():
+        'Zostaw szkielet w spokoju.{#s863_s0_r35611}' if s863Logic.r35611_condition():
             # a15 # r35611
             jump s863_dispose
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35612_condition():
+        'Zostaw szkielet w spokoju.{#s863_s0_r35612}' if s863Logic.r35612_condition():
             # a16 # r35612
             jump s863_dispose
 
 
 # s1 # say35539
 label s863_s1: # from 0.0 0.1 0.2 0.3
-    nr 'Szkielet nie odpowiada.'
+    nr 'Szkielet nie odpowiada.{#s863_s1_}'
 
     menu:
-        '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."' if s863Logic.r35540_condition():
+        '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."{#s863_s1_r35540}' if s863Logic.r35540_condition():
             # a17 # r35540
             $ s863Logic.r35540_action()
             jump morte_s394  # EXTERN
 
-        '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."' if s863Logic.r35559_condition():
+        '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."{#s863_s1_r35559}' if s863Logic.r35559_condition():
             # a18 # r35559
             jump s863_dispose
 
-        '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."' if s863Logic.r35560_condition():
+        '"Świetnie się z tobą gadało, Kostuszku. Bądź zdrów."{#s863_s1_r35560}' if s863Logic.r35560_condition():
             # a19 # r35560
             jump s863_dispose
 
 
 # s2 # say35565
 label s863_s2: # from 0.4
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s863_s2_}'
 
     menu:
-        'Zostaw szkielet w spokoju.' if s863Logic.r35566_condition():
+        'Zostaw szkielet w spokoju.{#s863_s2_r35566}' if s863Logic.r35566_condition():
             # a20 # r35566
             $ s863Logic.r35566_action()
             jump morte_s394  # EXTERN
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35567_condition():
+        'Zostaw szkielet w spokoju.{#s863_s2_r35567}' if s863Logic.r35567_condition():
             # a21 # r35567
             jump s863_dispose
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35568_condition():
+        'Zostaw szkielet w spokoju.{#s863_s2_r35568}' if s863Logic.r35568_condition():
             # a22 # r35568
             jump s863_dispose
 
 
 # s3 # say35570
 label s863_s3: # from 0.5
-    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.'
+    nr 'Ktoś związał kości tego szkieletu skórzanymi paskami tak, że teraz przypominają muskuły i ścięgna. Paski te są przymocowane do żelaznych nitów wetkniętych w stawy kościotrupa. Wygląda na to, że już swoje odpracował: wiele kości jest połamanych, a liczne pęknięcia wypełniono cuchnącym klejem.{#s863_s3_}'
 
     menu:
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35571_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s3_r35571}' if s863Logic.r35571_condition():
             # a23 # r35571
             $ s863Logic.r35571_action()
             jump morte_s400  # EXTERN
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35593_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s3_r35593}' if s863Logic.r35593_condition():
             # a24 # r35593
             jump s863_s4
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35594_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s3_r35594}' if s863Logic.r35594_condition():
             # a25 # r35594
             jump s863_s5
 
-        'Spróbuj wyciągnąć nity ze stawów szkieletu.' if s863Logic.r35595_condition():
+        'Spróbuj wyciągnąć nity ze stawów szkieletu.{#s863_s3_r35595}' if s863Logic.r35595_condition():
             # a26 # r35595
             jump s863_s6
 
-        '"Nie masz nic przeciwko, żebym sobie pożyczył parę skórzanych pasków i kilka nitów?"' if s863Logic.r35596_condition():
+        '"Nie masz nic przeciwko, żebym sobie pożyczył parę skórzanych pasków i kilka nitów?"{#s863_s3_r35596}' if s863Logic.r35596_condition():
             # a27 # r35596
             jump s863_s4
 
-        '"Nie masz nic przeciwko, żebym sobie pożyczył parę skórzanych pasków i kilka nitów?"' if s863Logic.r35597_condition():
+        '"Nie masz nic przeciwko, żebym sobie pożyczył parę skórzanych pasków i kilka nitów?"{#s863_s3_r35597}' if s863Logic.r35597_condition():
             # a28 # r35597
             jump s863_s5
 
-        '"Nie masz nic przeciwko, żebym sobie pożyczył parę skórzanych pasków i kilka nitów?"' if s863Logic.r35598_condition():
+        '"Nie masz nic przeciwko, żebym sobie pożyczył parę skórzanych pasków i kilka nitów?"{#s863_s3_r35598}' if s863Logic.r35598_condition():
             # a29 # r35598
             jump s863_s6
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35599_condition():
+        'Zostaw szkielet w spokoju.{#s863_s3_r35599}' if s863Logic.r35599_condition():
             # a30 # r35599
             $ s863Logic.r35599_action()
             jump morte_s394  # EXTERN
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35600_condition():
+        'Zostaw szkielet w spokoju.{#s863_s3_r35600}' if s863Logic.r35600_condition():
             # a31 # r35600
             jump s863_dispose
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35601_condition():
+        'Zostaw szkielet w spokoju.{#s863_s3_r35601}' if s863Logic.r35601_condition():
             # a32 # r35601
             jump s863_dispose
 
 
 # s4 # say35576
 label s863_s4: # from 0.7 0.10 3.1 3.4
-    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.'
+    nr 'Ciągniesz za żelazne nity, ale nie masz na tyle siły, żeby je wyciągnąć. Wygląda na to, że ktoś wbił je bardzo solidnie.{#s863_s4_}'
 
     menu:
-        '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."' if s863Logic.r35577_condition():
+        '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."{#s863_s4_r35577}' if s863Logic.r35577_condition():
             # a33 # r35577
             $ s863Logic.r35577_action()
             jump morte_s394  # EXTERN
 
-        '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."' if s863Logic.r35578_condition():
+        '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."{#s863_s4_r35578}' if s863Logic.r35578_condition():
             # a34 # r35578
             jump s863_dispose
 
-        '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."' if s863Logic.r35579_condition():
+        '"Może udałoby mi się je wyciągnąć, gdybym miał odpowiednie narzędzie… hmm. Może tu jeszcze wrócę, Kostuszku."{#s863_s4_r35579}' if s863Logic.r35579_condition():
             # a35 # r35579
             jump s863_dispose
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35580_condition():
+        'Zostaw szkielet w spokoju.{#s863_s4_r35580}' if s863Logic.r35580_condition():
             # a36 # r35580
             $ s863Logic.r35580_action()
             jump morte_s394  # EXTERN
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35581_condition():
+        'Zostaw szkielet w spokoju.{#s863_s4_r35581}' if s863Logic.r35581_condition():
             # a37 # r35581
             jump s863_dispose
 
-        'Zostaw szkielet w spokoju.' if s863Logic.r35582_condition():
+        'Zostaw szkielet w spokoju.{#s863_s4_r35582}' if s863Logic.r35582_condition():
             # a38 # r35582
             jump s863_dispose
 
 
 # s5 # say35584
 label s863_s5: # from 0.8 0.11 3.2 3.5
-    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.'
+    nr 'Z całej siły ciągniesz za żelazne nity i po chwili wyrywasz je ze stawów. Szkielet przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s863_s5_}'
 
     menu:
-        '"Przykro mi, Kostuszku…"':
+        '"Przykro mi, Kostuszku…"{#s863_s5_r35585}':
             # a39 # r35585
             $ s863Logic.r35585_action()
             jump s863_dispose
@@ -219,10 +219,10 @@ label s863_s5: # from 0.8 0.11 3.2 3.5
 
 # s6 # say35587
 label s863_s6: # from 0.9 0.12 3.3 3.6
-    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.'
+    nr 'Używając łomu, wyciągasz nity ze stawów szkieletu. Ten przewraca się na ziemię, a niektóre jego kości wciąż podrygują.{#s863_s6_}'
 
     menu:
-        '"Przykro mi, Kostuszku…"':
+        '"Przykro mi, Kostuszku…"{#s863_s6_r35588}':
             # a40 # r35588
             $ s863Logic.r35588_action()
             jump s863_dispose
@@ -230,30 +230,30 @@ label s863_s6: # from 0.9 0.12 3.3 3.6
 
 # s7 # say35613
 label s863_s7: # - # IF ~  False()
-    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.'
+    nr 'Szkielet nie odpowiada. Wygląda na to, że jest w zbyt daleko posuniętym stadium rozkładu, aby odpowiedzieć na twoje pytania.{#s863_s7_}'
 
     menu:
 
 # s8 # say64262
 label s863_s8: # - # IF ~  HasItem("DRemind","S863")
-    nr 'Ten szkielet uczestniczył w wielu walkach albo też zbyt często spadał ze schodów; ręce i nogi miał złamane, a teraz funkcjonują dobrze tylko dzięki rzemieniom i cienkim żelaznym prętom. Na przedniej części czaszki widnieje numer "863"… lecz jej tylna część jest rozbita, tworząc pustą czeluść. Widzisz, że ktoś to wykorzystał i wcisnął do środka kawałek pergaminu.'
+    nr 'Ten szkielet uczestniczył w wielu walkach albo też zbyt często spadał ze schodów; ręce i nogi miał złamane, a teraz funkcjonują dobrze tylko dzięki rzemieniom i cienkim żelaznym prętom. Na przedniej części czaszki widnieje numer "863"… lecz jej tylna część jest rozbita, tworząc pustą czeluść. Widzisz, że ktoś to wykorzystał i wcisnął do środka kawałek pergaminu.{#s863_s8_}'
 
     menu:
-        'Wyjmij pergamin z czaszki szkieletu.':
+        'Wyjmij pergamin z czaszki szkieletu.{#s863_s8_r64263}':
             # a41 # r64263
             jump s863_s9
 
-        'Zostaw szkielet w spokoju.':
+        'Zostaw szkielet w spokoju.{#s863_s8_r64264}':
             # a42 # r64264
             jump s863_dispose
 
 
 # s9 # say64265
 label s863_s9: # from 8.0
-    nr 'Wyjmujesz pergamin z czaszki robotnika - co dziwniejsze, wygląda ona tak, aby *celowo* przechowywała wiadomości; maleńki sznurek jest przytwierdzony do pergaminu przy pomocy haczyka wbitego do czaszki od środka, chyba po to, aby zapobiegać przypadkowemu wypadnięciu pergaminu.'
+    nr 'Wyjmujesz pergamin z czaszki robotnika - co dziwniejsze, wygląda ona tak, aby *celowo* przechowywała wiadomości; maleńki sznurek jest przytwierdzony do pergaminu przy pomocy haczyka wbitego do czaszki od środka, chyba po to, aby zapobiegać przypadkowemu wypadnięciu pergaminu.{#s863_s9_}'
 
     menu:
-        'Odczep sznurek, weź pergamin.':
+        'Odczep sznurek, weź pergamin.{#s863_s9_r64266}':
             # a43 # r64266
             $ s863Logic.r64266_action()
             jump s863_s10
@@ -261,13 +261,13 @@ label s863_s9: # from 8.0
 
 # s10 # say64267
 label s863_s10: # from 9.0
-    nr 'Rozwiązujesz sznurek i rzucasz okiem na pergamin – wygląda na notatkę jednego z pracowników kostnicy. Mając to na uwadze, dochodzisz do wniosku, że ten szkielet jest czymś w rodzaju posłańca. Kiedy się mu przyglądasz, zauważasz, że zatrzymał się przy katafalku, nie mogąc zdecydować, w jaki sposób go ominąć.  ^NNOTE: <READSTUFF>^-'
+    nr 'Rozwiązujesz sznurek i rzucasz okiem na pergamin – wygląda na notatkę jednego z pracowników kostnicy. Mając to na uwadze, dochodzisz do wniosku, że ten szkielet jest czymś w rodzaju posłańca. Kiedy się mu przyglądasz, zauważasz, że zatrzymał się przy katafalku, nie mogąc zdecydować, w jaki sposób go ominąć.  ^NNOTE: <READSTUFF>^-{#s863_s10_}'
 
     menu:
-        'Zbadaj szkielet raz jeszcze.':
+        'Zbadaj szkielet raz jeszcze.{#s863_s10_r64268}':
             # a44 # r64268
             jump s863_s0
 
-        'Zostaw szkielet w spokoju.':
+        'Zostaw szkielet w spokoju.{#s863_s10_r64269}':
             # a45 # r64269
             jump s863_dispose

@@ -11,50 +11,50 @@ init 10 python:
 
 # s0 # say34975
 label zm199_s0: # - # IF ~  True()
-    nr 'Ce cadavre réanimé dégage une puanteur de viande carbonisée et de textiles qui brûlent. Il porte sur tout le côté droit des marques de brûlures assez récentes ; peut-être est-il resté trop près d„un feu et qu“il a commencé à s„enflammer. Le numéro “199„ est gravé sur son front et ses lèvres sont cousues ensemble.'
+    nr 'Ce cadavre réanimé dégage une puanteur de viande carbonisée et de textiles qui brûlent. Il porte sur tout le côté droit des marques de brûlures assez récentes ; peut-être est-il resté trop près d„un feu et qu“il a commencé à s„enflammer. Le numéro “199„ est gravé sur son front et ses lèvres sont cousues ensemble.{#zm199_s0_}'
 
     menu:
-        '"Alors… Tu as vu quelque chose d„intéressant ?"' if zm199Logic.r34976_condition():
+        '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm199_s0_r34976}' if zm199Logic.r34976_condition():
             # a0 # r34976
             $ zm199Logic.r34976_action()
             jump zm199_s1
 
-        '"Alors… Tu as vu quelque chose d„intéressant ?"' if zm199Logic.r34979_condition():
+        '"Alors… Tu as vu quelque chose d„intéressant ?"{#zm199_s0_r34979}' if zm199Logic.r34979_condition():
             # a1 # r34979
             jump zm199_s1
 
-        '"Je sais que tu n„es pas un zombi, tu sais. Personne n“est dupe."' if zm199Logic.r34980_condition():
+        '"Je sais que tu n„es pas un zombi, tu sais. Personne n“est dupe."{#zm199_s0_r34980}' if zm199Logic.r34980_condition():
             # a2 # r34980
             jump zm199_s1
 
-        'Utilise Histoires-Os-Conter sur le cadavre.' if zm199Logic.r34981_condition():
+        'Utilise Histoires-Os-Conter sur le cadavre.{#zm199_s0_r34981}' if zm199Logic.r34981_condition():
             # a3 # r34981
             jump zm199_s2
 
-        '"Ça m„a fait plaisir de parler avec toi. Au revoir."':
+        '"Ça m„a fait plaisir de parler avec toi. Au revoir."{#zm199_s0_r34984}':
             # a4 # r34984
             jump zm199_dispose
 
-        'Laisse le cadavre tranquille.':
+        'Laisse le cadavre tranquille.{#zm199_s0_r34985}':
             # a5 # r34985
             jump zm199_dispose
 
 
 # s1 # say34977
 label zm199_s1: # from 0.0 0.1 0.2
-    nr 'Le cadavre continue à te fixer.'
+    nr 'Le cadavre continue à te fixer.{#zm199_s1_}'
 
     menu:
-        'Laisse le cadavre tranquille.':
+        'Laisse le cadavre tranquille.{#zm199_s1_r34978}':
             # a6 # r34978
             jump zm199_dispose
 
 
 # s2 # say34982
 label zm199_s2: # from 0.3
-    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.'
+    nr 'Le cadavre ne répond pas. Il semble qu„il soit trop absent pour répondre à tes questions.{#zm199_s2_}'
 
     menu:
-        'Laisse le cadavre tranquille.':
+        'Laisse le cadavre tranquille.{#zm199_s2_r34983}':
             # a7 # r34983
             jump zm199_dispose

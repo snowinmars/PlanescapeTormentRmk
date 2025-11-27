@@ -11,89 +11,89 @@ init 10 python:
 
 # s0 # say35178
 label zf679_s0: # - # IF ~  True()
-    nr 'This looks to be the corpse of a well-aged, even ancient woman. Aside from the embalming fluid stink, the stitches sealing her mouth, and the number "679" stitched onto her right cheek, it„s likely she looks only slightly different now than she did in her final years.'
+    nr 'This looks to be the corpse of a well-aged, even ancient woman. Aside from the embalming fluid stink, the stitches sealing her mouth, and the number "679" stitched onto her right cheek, it„s likely she looks only slightly different now than she did in her final years.{#zf679_s0_}'
 
     menu:
-        '"So… doing anything later?"' if zf679Logic.r35179_condition():
+        '"So… doing anything later?"{#zf679_s0_r35179}' if zf679Logic.r35179_condition():
             # a0 # r35179
             $ zf679Logic.r35179_action()
             jump zf679_s1
 
-        '"So… doing anything later?"' if zf679Logic.r35196_condition():
+        '"So… doing anything later?"{#zf679_s0_r35196}' if zf679Logic.r35196_condition():
             # a1 # r35196
             jump zf679_s1
 
-        '"I know you„re not a zombie, you know. You“re not fooling anyone."' if zf679Logic.r35197_condition():
+        '"I know you„re not a zombie, you know. You“re not fooling anyone."{#zf679_s0_r35197}' if zf679Logic.r35197_condition():
             # a2 # r35197
             jump zf679_s1
 
-        'Use your Stories-Bones-Tell ability on the corpse.' if zf679Logic.r35198_condition():
+        'Use your Stories-Bones-Tell ability on the corpse.{#zf679_s0_r35198}' if zf679Logic.r35198_condition():
             # a3 # r35198
             jump zf679_s2
 
-        '"It was great talking to you. Farewell."' if zf679Logic.r35203_condition():
+        '"It was great talking to you. Farewell."{#zf679_s0_r35203}' if zf679Logic.r35203_condition():
             # a4 # r35203
             jump morte_s354  # EXTERN
 
-        'Leave the corpse in peace.' if zf679Logic.r35204_condition():
+        'Leave the corpse in peace.{#zf679_s0_r35204}' if zf679Logic.r35204_condition():
             # a5 # r35204
             jump morte_s354  # EXTERN
 
-        '"It was great talking to you. Farewell."' if zf679Logic.r35205_condition():
+        '"It was great talking to you. Farewell."{#zf679_s0_r35205}' if zf679Logic.r35205_condition():
             # a6 # r35205
             jump zf679_dispose
 
-        'Leave the corpse in peace.' if zf679Logic.r35206_condition():
+        'Leave the corpse in peace.{#zf679_s0_r35206}' if zf679Logic.r35206_condition():
             # a7 # r35206
             jump zf679_dispose
 
-        '"It was great talking to you. Farewell."' if zf679Logic.r35207_condition():
+        '"It was great talking to you. Farewell."{#zf679_s0_r35207}' if zf679Logic.r35207_condition():
             # a8 # r35207
             jump zf679_dispose
 
-        'Leave the corpse in peace.' if zf679Logic.r35208_condition():
+        'Leave the corpse in peace.{#zf679_s0_r35208}' if zf679Logic.r35208_condition():
             # a9 # r35208
             jump zf679_dispose
 
 
 # s1 # say35180
 label zf679_s1: # from 0.0 0.1 0.2
-    nr 'The corpse continues to stare at you.'
+    nr 'The corpse continues to stare at you.{#zf679_s1_}'
 
     menu:
-        '"Farewell then."' if zf679Logic.r35181_condition():
+        '"Farewell then."{#zf679_s1_r35181}' if zf679Logic.r35181_condition():
             # a10 # r35181
             jump morte_s354  # EXTERN
 
-        '"Farewell then."' if zf679Logic.r35194_condition():
+        '"Farewell then."{#zf679_s1_r35194}' if zf679Logic.r35194_condition():
             # a11 # r35194
             jump zf679_dispose
 
-        '"Farewell then."' if zf679Logic.r35195_condition():
+        '"Farewell then."{#zf679_s1_r35195}' if zf679Logic.r35195_condition():
             # a12 # r35195
             jump zf679_dispose
 
 
 # s2 # say35199
 label zf679_s2: # from 0.3
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf679_s2_}'
 
     menu:
-        '"Farewell then."' if zf679Logic.r35200_condition():
+        '"Farewell then."{#zf679_s2_r35200}' if zf679Logic.r35200_condition():
             # a13 # r35200
             jump morte_s354  # EXTERN
 
-        '"Farewell then."' if zf679Logic.r35201_condition():
+        '"Farewell then."{#zf679_s2_r35201}' if zf679Logic.r35201_condition():
             # a14 # r35201
             jump zf679_dispose
 
-        '"Farewell then."' if zf679Logic.r35202_condition():
+        '"Farewell then."{#zf679_s2_r35202}' if zf679Logic.r35202_condition():
             # a15 # r35202
             jump zf679_dispose
 
 
 # s3 # say35209
 label zf679_s3: # - # IF ~  False()
-    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.'
+    nr 'This corpse makes no reply. It looks like it is too far gone to answer any of your questions.{#zf679_s3_}'
 
     menu:
